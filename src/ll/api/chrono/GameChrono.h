@@ -39,7 +39,7 @@ struct GameTickClock {
     LLNDAPI static time_point now() noexcept;
 
     static constexpr time_point fromTick(Tick const& tick) noexcept {
-        return time_point(duration(static_cast<int64>(tick.t)));
+        return time_point(duration(static_cast<int64>(tick.tickID)));
     }
 };
 

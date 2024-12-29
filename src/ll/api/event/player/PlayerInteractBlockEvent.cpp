@@ -29,27 +29,22 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerInteractBlockEventHook,
     HookPriority::Normal,
     GameMode,
-    &GameMode::useItemOn$,
+    &GameMode::$useItemOn,
     InteractionResult,
     ItemStack&      item,
     BlockPos const& blockPos,
     uchar           face,
     Vec3 const&     clickPos,
-    Block const*    block
+    Block const*    block,
+    bool            isFirstEvent
 ) {
-    auto ev = PlayerInteractBlockEvent(
-        this->getPlayer(),
-        item,
-        blockPos,
-        *reinterpret_cast<FacingID*>(&face),
-        clickPos,
-        block
-    );
+    auto ev =
+        PlayerInteractBlockEvent(this->mPlayer, item, blockPos, *reinterpret_cast<FacingID*>(&face), clickPos, block);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return {InteractionResult::Result::Fail};
     }
-    return origin(item, blockPos, face, clickPos, block);
+    return origin(item, blockPos, face, clickPos, block, isFirstEvent);
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

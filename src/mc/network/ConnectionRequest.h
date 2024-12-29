@@ -37,11 +37,6 @@ public:
     ConnectionRequest& operator=(ConnectionRequest const&);
     ConnectionRequest();
 
-    std::unique_ptr<class UnverifiedCertificate> mCertificateData;
-    std::unique_ptr<class Certificate>           mCertificate;
-    std::unique_ptr<class WebToken>              mRawToken;
-    uchar                                        mClientSubId;
-
 public:
     // member functions
     // NOLINTBEGIN

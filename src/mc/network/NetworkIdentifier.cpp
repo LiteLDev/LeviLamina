@@ -1,6 +1,7 @@
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/deps/raknet/RakNet.h"
 #include "mc/deps/raknet/RakPeer.h"
+#include "mc/deps/raknet/SystemAddress.h"
 
 #include "ll/api/service/Bedrock.h"
 
@@ -9,7 +10,7 @@ std::string NetworkIdentifier::getIPAndPort() const {
         .and_then([&](auto& peer) -> std::optional<std::string> {
             auto address = peer.GetSystemAddressFromGuid(mGuid);
             if (address != RakNet::UNASSIGNED_SYSTEM_ADDRESS()) {
-                return address;
+                return address.ToString(':');
             }
             return std::nullopt;
         })

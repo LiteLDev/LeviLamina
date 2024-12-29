@@ -2,14 +2,15 @@
 
 #include <bit>
 #include <cstddef>
+#include <memory>
 #include <type_traits>
 #include <utility>
 
 namespace ll {
 
-template <size_t Size>
+template <size_t Align, size_t Size>
 struct UntypedStorage {
-    std::byte data[Size];
+    alignas(Align) std::byte data[Size];
 
     template <class T>
     [[nodiscard]] T& as() & {
@@ -29,9 +30,17 @@ struct UntypedStorage {
     }
 };
 
-template <size_t Size, class T>
-struct TypedStorage {
-    std::byte data[Size];
+template <size_t Align, size_t Size, class T>
+struct TypedStorageImpl {
+    alignas(Align) std::byte data[Size];
+
+    template <class... Args>
+        requires(std::is_constructible_v<T, Args...>)
+    constexpr TypedStorageImpl(Args&&... args) {
+        std::construct_at(this->operator->(), std::forward<Args>(args)...);
+    }
+
+    constexpr ~TypedStorageImpl() { std::destroy_at(this->operator->()); }
 
     [[nodiscard]] T*        operator->() { return reinterpret_cast<T*>(data); }
     [[nodiscard]] T const*  operator->() const { return reinterpret_cast<T const*>(data); }
@@ -44,5 +53,30 @@ struct TypedStorage {
     [[nodiscard]] T&&       operator*() && { return std::move(get()); }
     [[nodiscard]] T const&& operator*() const&& { return std::move(get()); }
 };
+
+template <size_t A, size_t S, class T>
+struct TypedStorageType {
+    using Type = TypedStorageImpl<A, S, T>;
+};
+template <size_t A, size_t S, class T>
+    requires(std::is_reference_v<T> || std::is_scalar_v<T>)
+struct TypedStorageType<A, S, T> {
+    using Type = T;
+};
+template <size_t A, size_t S, class T>
+struct TypedStorageType<A, S, std::unique_ptr<T>> {
+    using Type = std::unique_ptr<T>;
+};
+template <size_t A, size_t S, class T>
+struct TypedStorageType<A, S, std::shared_ptr<T>> {
+    using Type = std::shared_ptr<T>;
+};
+template <size_t A, size_t S, class T>
+struct TypedStorageType<A, S, std::weak_ptr<T>> {
+    using Type = std::weak_ptr<T>;
+};
+
+template <size_t A, size_t S, class T>
+using TypedStorage = TypedStorageType<A, S, T>::Type;
 
 } // namespace ll

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/math/Vec3.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,25 +11,57 @@ struct AABBHitResult;
 struct ClipCollideResult;
 // clang-format on
 
-class AABB {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> min;
-    ::ll::TypedStorage<4, 12, ::Vec3> max;
-    // NOLINTEND
+class BoundingBox;
 
+class AABB : public ll::math::CommutativeGroup<AABB, Vec3, Vec3> {
 public:
-    // prevent constructor by default
-    AABB& operator=(AABB const&);
-    AABB(AABB const&);
-    AABB();
+    union {
+        Vec3 min, x, r, s;
+    };
+    union {
+        Vec3 max, y, g, t, z, b, p;
+    };
+
+    [[nodiscard]] constexpr AABB() noexcept : min(0), max(0) {}
+    [[nodiscard]] constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max) {}
+    [[nodiscard]] constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max) {}
+
+    inline AABB& merge(AABB const& a) noexcept {
+        *this = AABB{ll::math::min(a.min, min), ll::math::max(a.max, max)};
+        return *this;
+    }
+
+    inline AABB& merge(Vec3 const& a) noexcept {
+        *this = AABB{ll::math::min(a, min), ll::math::max(a, max)};
+        return *this;
+    }
+
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) noexcept {
+        if (index == 1) {
+            return (T&)z;
+        }
+        return (T&)x;
+    }
+    template <typename T>
+    [[nodiscard]] constexpr T const& get(size_t index) const noexcept {
+        if (index == 1) {
+            return (T const&)z;
+        }
+        return (T const&)x;
+    }
+
+    [[nodiscard]] constexpr bool contains(Vec3 const& a) const noexcept { return a.ge(min).all() && a.le(max).all(); }
+
+    [[nodiscard]] constexpr bool contains(AABB const& a) const noexcept {
+        return a.min.ge(min).all() && a.max.le(max).all();
+    }
+
+    LLAPI explicit operator BoundingBox() const;
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AABB(::Vec3 const& min, ::Vec3 const& max);
-
     MCAPI AABB(::Vec3 const& min, float side);
 
     MCAPI AABB(float minX, float minY, float minZ, float maxX, float maxY, float maxZ);
@@ -52,10 +85,6 @@ public:
     MCAPI ::AABB cloneAndShrink(::Vec3 const& offset) const;
 
     MCAPI ::AABB cloneAndTransformByMatrix(::Matrix const& transform) const;
-
-    MCAPI bool contains(::AABB const& bb) const;
-
-    MCAPI bool contains(::Vec3 const& p) const;
 
     MCAPI float distanceTo(::AABB const& aabb) const;
 

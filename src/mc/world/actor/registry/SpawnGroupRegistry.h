@@ -30,9 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    std::vector<std::unique_ptr<class SpawnGroupData>>     mSpawnGroupRegistry;  // this+0x48
-    std::unordered_map<std::string, class SpawnGroupData*> mSpawnGroupLookupMap; // this+0x60
-
     // prevent constructor by default
     SpawnGroupRegistry& operator=(SpawnGroupRegistry const&);
     SpawnGroupRegistry(SpawnGroupRegistry const&);

@@ -22,7 +22,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerAddExperienceEventHook,
     HookPriority::Normal,
     Player,
-    &Player::addExperience$,
+    &Player::$addExperience,
     void,
     int exp
 ) {

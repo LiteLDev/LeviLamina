@@ -25,9 +25,6 @@ public:
     CraftingContainer(CraftingContainer const&);
     CraftingContainer();
 
-    std::vector<ItemStack> mItems; // this+0xE0
-    int                    mWidth; // this+0xF8
-
 public:
     // virtual functions
     // NOLINTBEGIN

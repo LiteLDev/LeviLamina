@@ -33,7 +33,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::string&> mBuffer;
+    ::std::string& mBuffer;
     // NOLINTEND
 
 public:

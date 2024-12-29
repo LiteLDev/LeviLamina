@@ -29,7 +29,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerPlacingBlockEventHook,
     HookPriority::Normal,
     BlockSource,
-    &BlockSource::checkBlockPermissions$,
+    &BlockSource::$checkBlockPermissions,
     bool,
     Actor&               actor,
     BlockPos const&      blockpos,

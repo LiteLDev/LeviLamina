@@ -7,6 +7,8 @@
 #include "ll/api/event/player/ServerPlayerEvent.h"
 #include "ll/core/LeviLamina.h"
 
+#include "mc/server/commands/CommandOrigin.h"
+
 #include "magic_enum.hpp"
 
 namespace ll {

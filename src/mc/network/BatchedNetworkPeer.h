@@ -41,10 +41,6 @@ public:
         DataCallback(DataCallback const&);
         DataCallback();
 
-        std::string           data;         // this+0x0
-        Compressibility       compressible; // this+0x20
-        std::function<void()> callback;     // this+0x28
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -88,18 +84,6 @@ public:
     BatchedNetworkPeer& operator=(BatchedNetworkPeer const&);
     BatchedNetworkPeer(BatchedNetworkPeer const&);
     BatchedNetworkPeer();
-
-
-    BinaryStream                                     mOutgoingData;       // this+0x18
-    uint64_t                                         mCompressibleBytes;  // this+0x80
-    std::string                                      mIncomingDataBuffer; // this+0x88
-    std::unique_ptr<ReadOnlyBinaryStream>            mIncomingData;       // this+0xA8
-    std::unique_ptr<TaskGroup>                       mTaskGroup;          // this+0xB0
-    SPSCQueue<BatchedNetworkPeer::DataCallback, 512> mSendQueue;          // this+0xB8
-    std::atomic_bool                                 mTaskRunning;        // this+0x108
-    std::atomic_uint64_t                             mQueuedPackets;      // this+0x110
-    uint64                                           mSentPackets;        // this+0x118
-    bool                                             mAsyncEnabled;       // this+0x120
 
 public:
     // virtual functions

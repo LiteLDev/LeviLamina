@@ -31,6 +31,26 @@ namespace br::worldgen { struct StructureTemplateBlockPalette; }
 
 class StructureTemplate : public ::IStructureTemplate {
 public:
+    LLAPI void placeInWorld(
+        BlockSource&    blockSource,
+        BlockPos const& minCorner,
+        Mirror          mirror         = Mirror::None,
+        Rotation        rotation       = Rotation::None,
+        bool            ignoreBlocks   = false,
+        bool            ignoreEntities = false
+    ) const;
+
+    LLNDAPI static std::unique_ptr<StructureTemplate> create(const std::string& name, CompoundTag const& tag);
+
+    LLNDAPI static std::unique_ptr<StructureTemplate> create(
+        const std::string& name,
+        BlockSource&       blockSource,
+        BoundingBox const& boundingBox,
+        bool               ignoreBlocks   = false,
+        bool               ignoreEntities = false
+    );
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                           mName;
@@ -77,7 +97,8 @@ public:
     virtual ::BlockPos rawSize() const /*override*/;
 
     // vIndex: 1
-    virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos randomPosSeed) const /*override*/;
+    virtual ::br::worldgen::StructureTemplateBlockPalette randomPalette(::BlockPos randomPosSeed) const
+        /*override*/;
     // NOLINTEND
 
 public:

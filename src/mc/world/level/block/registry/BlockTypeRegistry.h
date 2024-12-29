@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
@@ -37,22 +38,15 @@ public:
 
     struct BlockComplexAliasBlockState {
     public:
+        BlockComplexAliasBlockState(HashedString const& stateName, int value) noexcept
+        : stateName(stateName),
+          value(value) {}
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 48, ::HashedString> stateName;
-        ::ll::TypedStorage<4, 4, int>             value;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockComplexAliasBlockState& operator=(BlockComplexAliasBlockState const&);
-        BlockComplexAliasBlockState(BlockComplexAliasBlockState const&);
-        BlockComplexAliasBlockState();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~BlockComplexAliasBlockState();
+        ::HashedString stateName;
+        int            value;
         // NOLINTEND
 
     public:
@@ -179,7 +173,7 @@ public:
         ::HashedString const&                        name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,
-        bool                                         logNotFound
+        bool                                         logNotFound = false
     );
 
     MCAPI static ::Block const* _lookupByNameImplSetNewBlockStates(
@@ -202,7 +196,7 @@ public:
     MCAPI static ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasPostSplitBlockNames(::HashedString const& oldName);
 
-    MCAPI static ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound);
+    MCAPI static ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound = false);
 
     MCAPI static ::BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks();
 
@@ -212,15 +206,15 @@ public:
 
     MCAPI static bool isComplexAliasBlock(::HashedString const& blockName);
 
-    MCAPI static ::Block const* lookupByName(::HashedString const& name, int data, bool logNotFound);
+    MCAPI static ::Block const* lookupByName(::HashedString const& name, int data, bool logNotFound = false);
 
     MCAPI static ::Block const* lookupByName(
         ::HashedString const&                                                  name,
         ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states,
-        bool                                                                   logNotFound
+        bool                                                                   logNotFound = false
     );
 
-    MCAPI static ::WeakPtr<::BlockLegacy> lookupByName(::HashedString const& name, bool logNotFound);
+    MCAPI static ::WeakPtr<::BlockLegacy> lookupByName(::HashedString const& name, bool logNotFound = false);
 
     MCAPI static void prepareBlocks(uint latestUpdaterVersion);
 

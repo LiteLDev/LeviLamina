@@ -7,8 +7,5 @@
 
 class CommandPositionFloat : public ::CommandPosition {
 public:
-    // prevent constructor by default
-    CommandPositionFloat& operator=(CommandPositionFloat const&);
-    CommandPositionFloat(CommandPositionFloat const&);
-    CommandPositionFloat();
+    using CommandPosition::CommandPosition;
 };

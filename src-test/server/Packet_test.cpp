@@ -44,7 +44,8 @@ inline void forEachPacket(
         if (packet) {
             auto size = ll::memory::getUsableSize(packet);
 
-            auto className = getVTableName(packet.get());
+            // auto className = getVTableName(packet.get());
+            auto className = packet->getName();
             if (output) {
                 auto enumName = magic_enum::enum_name((MinecraftPacketIds)packetId);
 
@@ -158,6 +159,8 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main"_sym, int, i
 #include "mc/network/packet/BlockPickRequestPacket.h"
 #include "mc/network/packet/BookEditPacket.h"
 #include "mc/network/packet/BossEventPacket.h"
+#include "mc/network/packet/CameraAimAssistPacket.h"
+#include "mc/network/packet/CameraAimAssistPresetsPacket.h"
 #include "mc/network/packet/CameraInstructionPacket.h"
 #include "mc/network/packet/CameraPacket.h"
 #include "mc/network/packet/CameraPresetsPacket.h"
@@ -181,11 +184,13 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main"_sym, int, i
 #include "mc/network/packet/CompressedBiomeDefinitionListPacket.h"
 #include "mc/network/packet/ContainerClosePacket.h"
 #include "mc/network/packet/ContainerOpenPacket.h"
+#include "mc/network/packet/ContainerRegistryCleanupPacket.h"
 #include "mc/network/packet/ContainerSetDataPacket.h"
 #include "mc/network/packet/CorrectPlayerMovePredictionPacket.h"
 #include "mc/network/packet/CraftingDataPacket.h"
 #include "mc/network/packet/CreatePhotoPacket.h"
 #include "mc/network/packet/CreativeContentPacket.h"
+#include "mc/network/packet/CurrentStructureFeaturePacket.h"
 #include "mc/network/packet/DeathInfoPacket.h"
 #include "mc/network/packet/DebugInfoPacket.h"
 #include "mc/network/packet/DimensionDataPacket.h"
@@ -208,6 +213,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main"_sym, int, i
 #include "mc/network/packet/ItemComponentPacket.h"
 #include "mc/network/packet/ItemStackRequestPacket.h"
 #include "mc/network/packet/ItemStackResponsePacket.h"
+#include "mc/network/packet/JigsawStructureDataPacket.h"
 #include "mc/network/packet/LabTablePacket.h"
 #include "mc/network/packet/LecternUpdatePacket.h"
 #include "mc/network/packet/LegacyTelemetryEventPacket.h"
@@ -230,6 +236,7 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main"_sym, int, i
 #include "mc/network/packet/MoveActorAbsolutePacket.h"
 #include "mc/network/packet/MoveActorDeltaPacket.h"
 #include "mc/network/packet/MovePlayerPacket.h"
+#include "mc/network/packet/MovementEffectPacket.h"
 #include "mc/network/packet/MultiplayerSettingsPacket.h"
 #include "mc/network/packet/NetworkChunkPublisherUpdatePacket.h"
 #include "mc/network/packet/NetworkSettingsPacket.h"
@@ -273,10 +280,13 @@ LL_AUTO_STATIC_HOOK(GeneratePacketHook, HookPriority::Normal, "main"_sym, int, i
 #include "mc/network/packet/ResourcePacksInfoPacket.h"
 #include "mc/network/packet/RespawnPacket.h"
 #include "mc/network/packet/ScriptMessagePacket.h"
+#include "mc/network/packet/ServerPlayerPostMovePositionPacket.h"
 #include "mc/network/packet/ServerSettingsRequestPacket.h"
 #include "mc/network/packet/ServerSettingsResponsePacket.h"
 #include "mc/network/packet/ServerStatsPacket.h"
 #include "mc/network/packet/ServerToClientHandshakePacket.h"
+#include "mc/network/packet/ServerboundDiagnosticsPacket.h"
+#include "mc/network/packet/ServerboundLoadingScreenPacket.h"
 #include "mc/network/packet/SetActorDataPacket.h"
 #include "mc/network/packet/SetActorLinkPacket.h"
 #include "mc/network/packet/SetActorMotionPacket.h"
@@ -341,17 +351,18 @@ PACKET_SIZE_ASSERT(LoginPacket, 0x40);
 PACKET_SIZE_ASSERT(PlayStatusPacket, 0x38);
 PACKET_SIZE_ASSERT(ServerToClientHandshakePacket, 0x50);
 PACKET_SIZE_ASSERT(ClientToServerHandshakePacket, 0x30);
-PACKET_SIZE_ASSERT(DisconnectPacket, 0x60);
-PACKET_SIZE_ASSERT(ResourcePacksInfoPacket, 0x80);
+PACKET_SIZE_ASSERT(DisconnectPacket, 0x88);
+PACKET_SIZE_ASSERT(ResourcePacksInfoPacket, 0xD8);
 PACKET_SIZE_ASSERT(ResourcePackStackPacket, 0x130);
 PACKET_SIZE_ASSERT(ResourcePackClientResponsePacket, 0x48);
 PACKET_SIZE_ASSERT(TextPacket, 0x100);
 PACKET_SIZE_ASSERT(SetTimePacket, 0x38);
-PACKET_SIZE_ASSERT(StartGamePacket, 0x6C0);
-PACKET_SIZE_ASSERT(AddPlayerPacket, 0x620);
+PACKET_SIZE_ASSERT(StartGamePacket, 0x6E0);
+PACKET_SIZE_ASSERT(AddPlayerPacket, 0x708);
 PACKET_SIZE_ASSERT(AddActorPacket, 0x1B0);
 PACKET_SIZE_ASSERT(RemoveActorPacket, 0x38);
 PACKET_SIZE_ASSERT(AddItemActorPacket, 0xE0);
+PACKET_SIZE_ASSERT(ServerPlayerPostMovePositionPacket, 0x40);
 PACKET_SIZE_ASSERT(TakeItemActorPacket, 0x40);
 PACKET_SIZE_ASSERT(MoveActorAbsolutePacket, 0x50);
 PACKET_SIZE_ASSERT(MovePlayerPacket, 0x70);
@@ -366,7 +377,7 @@ PACKET_SIZE_ASSERT(MobEffectPacket, 0x58);
 PACKET_SIZE_ASSERT(UpdateAttributesPacket, 0x58);
 PACKET_SIZE_ASSERT(InventoryTransactionPacket, 0x68);
 PACKET_SIZE_ASSERT(MobEquipmentPacket, 0xA8);
-PACKET_SIZE_ASSERT(MobArmorEquipmentPacket, 0x1B8);
+PACKET_SIZE_ASSERT(MobArmorEquipmentPacket, 0x218);
 PACKET_SIZE_ASSERT(InteractPacket, 0x50);
 PACKET_SIZE_ASSERT(BlockPickRequestPacket, 0x40);
 PACKET_SIZE_ASSERT(ActorPickRequestPacket, 0x40);
@@ -382,8 +393,8 @@ PACKET_SIZE_ASSERT(RespawnPacket, 0x48);
 PACKET_SIZE_ASSERT(ContainerOpenPacket, 0x48);
 PACKET_SIZE_ASSERT(ContainerClosePacket, 0x38);
 PACKET_SIZE_ASSERT(PlayerHotbarPacket, 0x38);
-PACKET_SIZE_ASSERT(InventoryContentPacket, 0x50);
-PACKET_SIZE_ASSERT(InventorySlotPacket, 0x98);
+PACKET_SIZE_ASSERT(InventoryContentPacket, 0xB8);
+PACKET_SIZE_ASSERT(InventorySlotPacket, 0x108);
 PACKET_SIZE_ASSERT(ContainerSetDataPacket, 0x40);
 PACKET_SIZE_ASSERT(CraftingDataPacket, 0x98);
 PACKET_SIZE_ASSERT(GuiDataPickItemPacket, 0x78);
@@ -392,7 +403,7 @@ PACKET_SIZE_ASSERT(PlayerInputPacket, 0x40);
 PACKET_SIZE_ASSERT(LevelChunkPacket, 0x88);
 PACKET_SIZE_ASSERT(SetCommandsEnabledPacket, 0x38);
 PACKET_SIZE_ASSERT(SetDifficultyPacket, 0x38);
-PACKET_SIZE_ASSERT(ChangeDimensionPacket, 0x48);
+PACKET_SIZE_ASSERT(ChangeDimensionPacket, 0x50);
 PACKET_SIZE_ASSERT(SetPlayerGameTypePacket, 0x38);
 PACKET_SIZE_ASSERT(PlayerListPacket, 0x50);
 PACKET_SIZE_ASSERT(SimpleEventPacket, 0x38);
@@ -418,12 +429,12 @@ PACKET_SIZE_ASSERT(ResourcePackChunkRequestPacket, 0x58);
 PACKET_SIZE_ASSERT(TransferPacket, 0x58);
 PACKET_SIZE_ASSERT(PlaySoundPacket, 0x68);
 PACKET_SIZE_ASSERT(StopSoundPacket, 0x58);
-PACKET_SIZE_ASSERT(SetTitlePacket, 0xA8);
+PACKET_SIZE_ASSERT(SetTitlePacket, 0xD0);
 PACKET_SIZE_ASSERT(AddBehaviorTreePacket, 0x50);
 PACKET_SIZE_ASSERT(StructureBlockUpdatePacket, 0xF8);
 PACKET_SIZE_ASSERT(ShowStoreOfferPacket, 0x48);
 PACKET_SIZE_ASSERT(PurchaseReceiptPacket, 0x48);
-PACKET_SIZE_ASSERT(PlayerSkinPacket, 0x2E0);
+PACKET_SIZE_ASSERT(PlayerSkinPacket, 0x2E8);
 PACKET_SIZE_ASSERT(SubClientLoginPacket, 0x38);
 PACKET_SIZE_ASSERT(AutomationClientConnectPacket, 0x50);
 PACKET_SIZE_ASSERT(SetLastHurtByPacket, 0x38);
@@ -462,13 +473,13 @@ PACKET_SIZE_ASSERT(StructureTemplateDataResponsePacket, 0x60);
 PACKET_SIZE_ASSERT(ClientCacheBlobStatusPacket, 0x60);
 PACKET_SIZE_ASSERT(ClientCacheMissResponsePacket, 0x88);
 PACKET_SIZE_ASSERT(EducationSettingsPacket, 0x170);
-PACKET_SIZE_ASSERT(EmotePacket, 0xA0);
+PACKET_SIZE_ASSERT(EmotePacket, 0xA8);
 PACKET_SIZE_ASSERT(MultiplayerSettingsPacket, 0x38);
 PACKET_SIZE_ASSERT(SettingsCommandPacket, 0x58);
 PACKET_SIZE_ASSERT(AnvilDamagePacket, 0x40);
 PACKET_SIZE_ASSERT(CompletedUsingItemPacket, 0x38);
 PACKET_SIZE_ASSERT(NetworkSettingsPacket, 0x48);
-PACKET_SIZE_ASSERT(PlayerAuthInputPacket, 0xC8);
+PACKET_SIZE_ASSERT(PlayerAuthInputPacket, 0xE0);
 PACKET_SIZE_ASSERT(CreativeContentPacket, 0x50);
 PACKET_SIZE_ASSERT(PlayerEnchantOptionsPacket, 0x48);
 PACKET_SIZE_ASSERT(ItemStackRequestPacket, 0x38);
@@ -485,11 +496,11 @@ PACKET_SIZE_ASSERT(MotionPredictionHintsPacket, 0x48);
 PACKET_SIZE_ASSERT(AnimateEntityPacket, 0xD8);
 PACKET_SIZE_ASSERT(CameraShakePacket, 0x40);
 PACKET_SIZE_ASSERT(PlayerFogPacket, 0x48);
-PACKET_SIZE_ASSERT(CorrectPlayerMovePredictionPacket, 0x60);
+PACKET_SIZE_ASSERT(CorrectPlayerMovePredictionPacket, 0x68);
 PACKET_SIZE_ASSERT(ItemComponentPacket, 0x48);
 PACKET_SIZE_ASSERT(ClientboundDebugRendererPacket, 0x88);
 PACKET_SIZE_ASSERT(SyncActorPropertyPacket, 0x48);
-PACKET_SIZE_ASSERT(AddVolumeEntityPacket, 0x120);
+PACKET_SIZE_ASSERT(AddVolumeEntityPacket, 0x128);
 PACKET_SIZE_ASSERT(RemoveVolumeEntityPacket, 0x38);
 PACKET_SIZE_ASSERT(SimulationTypePacket, 0x38);
 PACKET_SIZE_ASSERT(NpcDialoguePacket, 0xC0);
@@ -512,16 +523,16 @@ PACKET_SIZE_ASSERT(ToastRequestPacket, 0x70);
 PACKET_SIZE_ASSERT(UpdateAbilitiesPacket, 0x58);
 PACKET_SIZE_ASSERT(UpdateAdventureSettingsPacket, 0x38);
 PACKET_SIZE_ASSERT(DeathInfoPacket, 0x68);
-PACKET_SIZE_ASSERT(EditorNetworkPacket, 0x48);
+PACKET_SIZE_ASSERT(EditorNetworkPacket, 0x50);
 PACKET_SIZE_ASSERT(FeatureRegistryPacket, 0x48);
 PACKET_SIZE_ASSERT(ServerStatsPacket, 0x38);
 PACKET_SIZE_ASSERT(RequestNetworkSettingsPacket, 0x38);
 PACKET_SIZE_ASSERT(GameTestRequestPacket, 0x90);
 PACKET_SIZE_ASSERT(GameTestResultsPacket, 0x78);
 PACKET_SIZE_ASSERT(UpdateClientInputLocksPacket, 0x40);
-PACKET_SIZE_ASSERT(CameraPresetsPacket, 0x68);
+PACKET_SIZE_ASSERT(CameraPresetsPacket, 0x60);
 PACKET_SIZE_ASSERT(UnlockedRecipesPacket, 0x50);
-PACKET_SIZE_ASSERT(CameraInstructionPacket, 0xA0);
+PACKET_SIZE_ASSERT(CameraInstructionPacket, 0xD8);
 PACKET_SIZE_ASSERT(CompressedBiomeDefinitionListPacket, 0x68);
 PACKET_SIZE_ASSERT(TrimDataPacket, 0x60);
 PACKET_SIZE_ASSERT(OpenSignPacket, 0x40);
@@ -532,6 +543,14 @@ PACKET_SIZE_ASSERT(SetPlayerInventoryOptionsPacket, 0x48);
 PACKET_SIZE_ASSERT(SetHudPacket, 0x50);
 PACKET_SIZE_ASSERT(AwardAchievementPacket, 0x38);
 PACKET_SIZE_ASSERT(ClientboundCloseFormPacket, 0x30);
+PACKET_SIZE_ASSERT(ServerboundLoadingScreenPacket, 0x40);
+PACKET_SIZE_ASSERT(JigsawStructureDataPacket, 0x48);
+PACKET_SIZE_ASSERT(CurrentStructureFeaturePacket, 0x50);
+PACKET_SIZE_ASSERT(ServerboundDiagnosticsPacket, 0x60);
+PACKET_SIZE_ASSERT(CameraAimAssistPacket, 0x60);
+PACKET_SIZE_ASSERT(ContainerRegistryCleanupPacket, 0x48);
+PACKET_SIZE_ASSERT(MovementEffectPacket, 0x48);
+PACKET_SIZE_ASSERT(CameraAimAssistPresetsPacket, 0x60);
 
 #pragma endregion
 

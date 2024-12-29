@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -19,9 +20,9 @@ class ModalFormResponsePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                                     mFormId;
-    ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>>          mJSONResponse;
-    ::ll::TypedStorage<1, 2, ::std::optional<::ModalFormCancelReason>> mFormCancelReason;
+    uint                                     mFormId;
+    ::std::optional<::Json::Value>           mJSONResponse;
+    ::std::optional<::ModalFormCancelReason> mFormCancelReason;
     // NOLINTEND
 
 public:

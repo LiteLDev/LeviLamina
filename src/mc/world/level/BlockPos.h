@@ -15,27 +15,25 @@ class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class BlockPos {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> x;
-    ::ll::TypedStorage<4, 4, int> y;
-    ::ll::TypedStorage<4, 4, int> z;
-    // NOLINTEND
+class AABB;
+class BoundingBox;
 
+class BlockPos : public ll::math::intN3<BlockPos> {
 public:
-    // prevent constructor by default
-    BlockPos& operator=(BlockPos const&);
-    BlockPos(BlockPos const&);
-    BlockPos();
+    using intN3::intN3;
+
+    LLNDAPI operator AABB() const;
+    LLNDAPI operator BoundingBox() const;
+
+    LLNDAPI Vec3 bottomCenter() const;
+    LLNDAPI Vec3 center() const;
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockPos(::SubChunkPos const& subChunkPos);
+    MCAPI BlockPos(::SubChunkPos const& subChunkPos);
 
-    MCAPI explicit BlockPos(::Vec3 const& v);
+    MCAPI BlockPos(::Vec3 const& v);
 
     MCAPI BlockPos(::ChunkPos const& cp, int y);
 
@@ -44,8 +42,6 @@ public:
     MCAPI BlockPos(float x, float y, float z);
 
     MCAPI ::BlockPos above() const;
-
-    MCAPI ::Vec3 bottomCenter() const;
 
     MCAPI ::BlockPos neighbor(uchar direction) const;
 
@@ -58,8 +54,6 @@ public:
     MCAPI ::BlockPos relative(uchar facing, int steps) const;
 
     MCAPI ::std::string toCommandString() const;
-
-    MCAPI ::std::string toString() const;
 
     MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
     // NOLINTEND

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -8,17 +9,25 @@ class EntityContext;
 class EntityRegistry;
 // clang-format on
 
+class Actor;
+
 class OwnerStorageEntity {
+public:
+    template <class Entity = Actor, bool IncludeRemoved = false>
+    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
+        if (*this) {
+            return Entity::tryGetFromEntity(const_cast<EntityContext&>(*mContext), IncludeRemoved);
+        }
+        return nullptr;
+    }
+
+    [[nodiscard]] inline operator bool() const noexcept { return mContext.has_value(); }
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::optional<::EntityContext>> mContext;
+    ::std::optional<::EntityContext> mContext;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OwnerStorageEntity& operator=(OwnerStorageEntity const&);
-    OwnerStorageEntity(OwnerStorageEntity const&);
 
 public:
     // member functions

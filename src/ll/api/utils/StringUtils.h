@@ -140,7 +140,7 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
 }
 
 [[nodiscard]] constexpr std::string strToHexStr(std::string_view value, bool upperCase = false, bool addSpace = false) {
-    std::string    hex;
+    std::string hex;
     hex.reserve(value.size() * (addSpace ? 3 : 2));
     for (uchar x : value) {
         hex += charFromInt(upperCase, x / 16);

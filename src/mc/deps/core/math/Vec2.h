@@ -2,26 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec2 {
+class Vec2 : public ll::math::floatN2<Vec2> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> x;
-    ::ll::TypedStorage<4, 4, float> y;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Vec2& operator=(Vec2 const&);
-    Vec2(Vec2 const&);
-    Vec2();
+    using floatN2::floatN2;
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string toJsonString() const;
-
-    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:

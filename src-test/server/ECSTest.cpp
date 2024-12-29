@@ -45,7 +45,7 @@ void registerTimingCommand() {
         auto thread = std::thread([] {
             auto& system = ::ll::service::getLevel()->getEntitySystems();
 
-            auto& collection = system.getDefaultCollection();
+            auto& collection = static_cast<DefaultEntitySystemsCollection&>(*system.mSystems);
             {
                 std::lock_guard lock(collection.mTimingMutex);
                 system.mEnableTimingCapture = true;

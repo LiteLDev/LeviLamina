@@ -7,20 +7,9 @@
 class Vec2;
 // clang-format on
 
-class Vec3 {
+class Vec3 : public ll::math::floatN3<Vec3> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> x;
-    ::ll::TypedStorage<4, 4, float> y;
-    ::ll::TypedStorage<4, 4, float> z;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Vec3& operator=(Vec3 const&);
-    Vec3(Vec3 const&);
-    Vec3();
+    using floatN3::floatN3;
 
 public:
     // member functions
@@ -31,8 +20,6 @@ public:
 
     MCAPI float distanceToLineSquared(::Vec3 const& p0, ::Vec3 const& p1) const;
 
-    MCAPI float distanceToSqr(::Vec3 const& p) const;
-
     MCAPI ::Vec3 floor(float offset) const;
 
     MCAPI bool isNan() const;
@@ -41,11 +28,7 @@ public:
 
     MCAPI float maxComponent() const;
 
-    MCAPI ::Vec3 normalized() const;
-
     MCAPI ::std::string toJsonString() const;
-
-    MCAPI ::std::string toString() const;
 
     MCAPI ::Vec3 xz() const;
     // NOLINTEND

@@ -8,14 +8,9 @@ struct RakNetGUID {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64> g;
-    ::ll::TypedStorage<2, 2, ushort> systemIndex;
+    uint64 g;
+    ushort systemIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RakNetGUID& operator=(RakNetGUID const&);
-    RakNetGUID(RakNetGUID const&);
 
 public:
     // member functions

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandOutputMessage.h"
+#include "mc/server/commands/CommandOutputParameter.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandOutputMessageType.h"
@@ -18,12 +20,48 @@ class CommandOutput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CommandOutputType>                     mType;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandPropertyBag>> mBag;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandOutputMessage>>  mMessages;
-    ::ll::TypedStorage<4, 4, int>                                     mSuccessCount;
-    ::ll::TypedStorage<1, 1, bool>                                    mHasPlayerText;
+    CommandOutputType                   mType;
+    std::unique_ptr<CommandPropertyBag> mBag;
+    std::vector<CommandOutputMessage>   mMessages;
+    int                                 mSuccessCount;
+    bool                                mHasPlayerText;
     // NOLINTEND
+
+    template <class First, class... Args>
+        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
+    void success(fmt::format_string<First, Args...> fmt, First&& _args, Args&&... args) {
+        success(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
+    }
+
+    template <class First, class... Args>
+        requires(!std::is_same_v<std::remove_cvref_t<First>, std::vector<class CommandOutputParameter>>)
+    void error(fmt::format_string<First, Args...> fmt, First&& _args, Args&&... args) {
+        error(fmt::vformat(fmt.get(), fmt::make_format_args(_args, args...)));
+    }
+
+    void error(std::string_view str) { mMessages.emplace_back(CommandOutputMessageType::Error, std::string{str}); }
+    void success(std::string_view str) {
+        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{str});
+        mSuccessCount++;
+    }
+
+    void error(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
+        std::vector<std::string> args;
+        args.reserve(params.size());
+        for (auto& param : params) {
+            args.emplace_back(param);
+        }
+        mMessages.emplace_back(CommandOutputMessageType::Error, std::string{msgId}, std::move(args));
+    }
+    void success(std::string_view msgId, std::vector<class CommandOutputParameter> const& params) {
+        std::vector<std::string> args;
+        args.reserve(params.size());
+        for (auto& param : params) {
+            args.emplace_back(param);
+        }
+        mMessages.emplace_back(CommandOutputMessageType::Success, std::string{msgId}, std::move(args));
+        mSuccessCount++;
+    }
 
 public:
     // prevent constructor by default

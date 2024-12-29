@@ -8,10 +8,7 @@
 
 class BigEndianStringByteInput : public ::StringByteInput {
 public:
-    // prevent constructor by default
-    BigEndianStringByteInput& operator=(BigEndianStringByteInput const&);
-    BigEndianStringByteInput(BigEndianStringByteInput const&);
-    BigEndianStringByteInput();
+    using StringByteInput::StringByteInput;
 
 public:
     // virtual functions

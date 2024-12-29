@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,11 +15,11 @@ class WebToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mHeader;
-    ::ll::TypedStorage<8, 16, ::Json::Value> mHeaderInfo;
-    ::ll::TypedStorage<8, 32, ::std::string> mData;
-    ::ll::TypedStorage<8, 16, ::Json::Value> mDataInfo;
-    ::ll::TypedStorage<8, 32, ::std::string> mSignature;
+    ::std::string mHeader;
+    ::Json::Value mHeaderInfo;
+    ::std::string mData;
+    ::Json::Value mDataInfo;
+    ::std::string mSignature;
     // NOLINTEND
 
 public:

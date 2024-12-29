@@ -1,7 +1,7 @@
 #include "mc/world/actor/item/ItemActor.h"
 
-ItemStack&       ItemActor::item() { return mItem; }
-ItemStack const& ItemActor::item() const { return mItem; }
+ItemStack&       ItemActor::item() { return *mItem; }
+ItemStack const& ItemActor::item() const { return *mItem; }
 int&             ItemActor::age() { return mAge; }
 int const&       ItemActor::age() const { return mAge; }
 int&             ItemActor::pickupDelay() { return mPickupDelay; }

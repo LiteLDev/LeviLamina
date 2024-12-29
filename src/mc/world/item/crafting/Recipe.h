@@ -132,16 +132,6 @@ public:
     Recipe(Recipe const&);
     Recipe();
 
-    std::string                   mRecipeId;      // this+0x8
-    mce::UUID                     mMyId;          // this+0x28
-    int                           mWidth;         // this+0x38
-    int                           mHeight;        // this+0x3C
-    int                           mPriority;      // this+0x40
-    RecipeNetId                   mRecipeNetId;   // this+0x44
-    std::vector<RecipeIngredient> mMyIngredients; // this+0x48
-    RecipeUnlockingRequirement    mUnlockingRequirement;
-    HashedString                  mTag;
-
 public:
     // virtual functions
     // NOLINTBEGIN

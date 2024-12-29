@@ -34,7 +34,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     TESTAAAA,
     HookPriority::Normal,
     Item,
-    &Item::appendFormattedHovertext$,
+    &Item::$appendFormattedHovertext,
     void,
     class ItemStackBase const& stack,
     Level&                     level,

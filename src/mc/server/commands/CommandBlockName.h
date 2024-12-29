@@ -17,15 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandBlockName& operator=(CommandBlockName const&);
-    CommandBlockName(CommandBlockName const&);
-    CommandBlockName();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandBlockName(uint64 blockNameHash);
+    MCAPI CommandBlockName(uint64 blockNameHash = 0);
 
     MCAPI ::std::string getDescriptionId() const;
 

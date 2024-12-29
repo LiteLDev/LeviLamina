@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorRuntimeID.h"
+#include "mc/network/packet/PlayerInputTick.h"
+#include "mc/world/actor/DataItem.h"
+#include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -23,10 +27,10 @@ class SetActorDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mPackedItems;
-    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                             mTick;
+    ::ActorRuntimeID                             mId;
+    ::std::vector<::std::unique_ptr<::DataItem>> mPackedItems;
+    ::PropertySyncData                           mSynchedProperties;
+    ::PlayerInputTick                            mTick;
     // NOLINTEND
 
 public:

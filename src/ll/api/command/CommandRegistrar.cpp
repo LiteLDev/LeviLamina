@@ -98,7 +98,7 @@ bool CommandRegistrar::tryRegisterEnum(
     std::string const&                          name,
     std::vector<std::pair<std::string, uint64>> values,
     Bedrock::typeid_t<CommandRegistry>          type,
-    CommandRegistry::ParseFn                    parser
+    CommandRegistry::ParseFunction              parser
 ) {
     auto& registry = getRegistry();
     if (auto iter = registry.mEnumLookup.find(name); iter != registry.mEnumLookup.end()) {

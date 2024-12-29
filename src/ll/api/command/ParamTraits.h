@@ -21,13 +21,13 @@
 namespace ll::command {
 template <class T>
 struct ParamTraitsBase {
-    static constexpr CommandParameterDataType dataType() { return CommandParameterDataType::Basic; }
-    static constexpr CommandParameterOption   options() { return CommandParameterOption::None; }
-    static inline CommandRegistry::ParseFn    parseFn() { return &CommandRegistry::parse<T>; }
-    static constexpr std::string_view         enumNameOrPostfix() { return {}; }
-    static constexpr std::string_view         subChain() { return {}; }
-    static Bedrock::typeid_t<CommandRegistry> typeId() { return Bedrock::type_id<CommandRegistry, T>(); }
-    static constexpr void                     transformData(CommandParameterData&) {}
+    static constexpr CommandParameterDataType    dataType() { return CommandParameterDataType::Basic; }
+    static constexpr CommandParameterOption      options() { return CommandParameterOption::None; }
+    static inline CommandRegistry::ParseFunction parseFn() { return &CommandRegistry::parse<T>; }
+    static constexpr std::string_view            enumNameOrPostfix() { return {}; }
+    static constexpr std::string_view            subChain() { return {}; }
+    static Bedrock::typeid_t<CommandRegistry>    typeId() { return Bedrock::type_id<CommandRegistry, T>(); }
+    static constexpr void                        transformData(CommandParameterData&) {}
 };
 template <class T>
 struct ParamTraits : ParamTraitsBase<T> {};
@@ -50,12 +50,12 @@ struct ParamTraits<T> : ParamTraitsBase<T> {
 };
 template <concepts::Specializes<SoftEnum> T>
 struct ParamTraits<T> : ParamTraitsBase<T> {
-    static constexpr CommandParameterDataType dataType() { return CommandParameterDataType::SoftEnum; }
-    static constexpr CommandParameterOption   options() { return CommandParameterOption::EnumAutocompleteExpansion; }
-    static inline CommandRegistry::ParseFn    parseFn() { return &CommandRegistry::parse<std::string>; }
-    static constexpr std::string_view         enumNameOrPostfix() { return enum_name_v<T>; }
-    static Bedrock::typeid_t<CommandRegistry> typeId() { return Bedrock::type_id<CommandRegistry, std::string>(); }
-    static void                               transformData(CommandParameterData&) {
+    static constexpr CommandParameterDataType    dataType() { return CommandParameterDataType::SoftEnum; }
+    static constexpr CommandParameterOption      options() { return CommandParameterOption::EnumAutocompleteExpansion; }
+    static inline CommandRegistry::ParseFunction parseFn() { return &CommandRegistry::parse<std::string>; }
+    static constexpr std::string_view            enumNameOrPostfix() { return enum_name_v<T>; }
+    static Bedrock::typeid_t<CommandRegistry>    typeId() { return Bedrock::type_id<CommandRegistry, std::string>(); }
+    static void                                  transformData(CommandParameterData&) {
         CommandRegistrar::getInstance().template tryRegisterSoftEnum<T>();
     }
 };

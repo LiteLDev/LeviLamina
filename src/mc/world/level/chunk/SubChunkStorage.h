@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/util/IDataOutput.h"
-#include "mc/world/level/chunk/ISubChunkStoragePaletted.h"
 #include "mc/world/level/chunk/sub_chunk_storage_unit/PruneType.h"
 #include "mc/world/level/chunk/sub_chunk_storage_unit/Type.h"
 
@@ -31,10 +30,6 @@ public:
     virtual size_t getMemoryEstimate() const = 0;
 
     virtual std::unique_ptr<SubChunkStorage<T>> makePrunedCopy(SubChunkStorageUnit::PruneType) const = 0;
-
-    virtual ISubChunkStoragePaletted<T>* asPalettedStorage();
-
-    virtual ISubChunkStoragePaletted<T> const* asPalettedStorage() const;
 
     // NOLINTEND
 };

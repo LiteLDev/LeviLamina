@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/components/UserEntityIdentifierComponent.h"
+#include "mc/network/NetworkPeer.h"
+#include "mc/world/inventory/EnderChestContainer.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -118,6 +121,8 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
+class ConnectionRequest;
+
 class Player : public ::Mob {
 public:
     // Player inner types declare
@@ -229,43 +234,111 @@ public:
         // NOLINTEND
     };
 
+    using ContainerManagerSubscriber = ::Bedrock::PubSub::
+        Publisher<void(::ContainerManagerModel const*), ::Bedrock::PubSub::ThreadModel::SingleThreaded>;
+
+public:
+    LLNDAPI UserEntityIdentifierComponent const& getUserEntityIdentifier() const;
+
+    LLNDAPI UserEntityIdentifierComponent& getUserEntityIdentifier();
+
+    LLNDAPI optional_ref<ConnectionRequest const> getConnectionRequest() const;
+
+    LLNDAPI NetworkIdentifier const& getNetworkIdentifier() const;
+
+    LLNDAPI optional_ref<Certificate const> getCertificate() const;
+
+    LLNDAPI SubClientId const& getClientSubId() const;
+
+    /**
+     * @brief Get the player's uuid
+     * @return Player's uuid
+     */
+    LLNDAPI mce::UUID const& getUuid() const;
+
+    /**
+     * @brief Get the player's IP and port
+     * @return player's IP and port
+     */
+    LLNDAPI std::string getIPAndPort() const;
+
+    /**
+     * @brief Get the player's real in-game nickname
+     * @return player's real in-game nickname
+     */
+    LLNDAPI std::string getRealName() const;
+
+    /**
+     * @brief Get the name of the player's langtext.
+     * @return The name of the player's langtext.
+     * @warning This is not the player's in-game nickname.
+     */
+    LLNDAPI std::string getLocaleCode() const;
+
+    LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
+
+    /**
+     * @brief Disconnect player's client
+     */
+    LLAPI void disconnect(std::string_view reason) const;
+    /**
+     * @brief Send a message to player
+     */
+    LLAPI void sendMessage(std::string_view msg) const;
+
+    LLAPI void setAbility(::AbilitiesIndex index, bool value);
+
+    /**
+     * @brief Determine if a player is an administrator of the server
+     * @return Returns true if the player is an administrator of the server; otherwise returns false
+     * @warning Custom permissions are not considered administrators
+     */
+    LLNDAPI bool isOperator() const;
+
+    /**
+     * @brief Give player item and refresh.
+     * @return Whether it is a complete success
+     *         (e.g. returning false if the quantity of items given to the player does not match the expectation).
+     * @warning The return value does not take into account whether the refresh was successful.
+     *          You can use Player::add, but it will not refresh the item, which may lead to potential issues.
+     */
+    LLAPI bool addAndRefresh(class ItemStack& item);
+
+    LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer();
+
+    LLNDAPI optional_ref<EnderChestContainer const> getEnderChestContainer() const;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                      mOceanBiomes;
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                      mFroglights;
-    ::ll::TypedStorage<4, 4, float const>                                 mSneakHeight;
-    ::ll::TypedStorage<4, 4, float const>                                 mSneakOffset;
-    ::ll::TypedStorage<4, 4, int>                                         mScore;
-    ::ll::TypedStorage<4, 4, float>                                       mOBob;
-    ::ll::TypedStorage<4, 4, float>                                       mBob;
-    ::ll::TypedStorage<4, 4, ::BuildPlatform>                             mBuildPlatform;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mUniqueName;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mServerId;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mSelfSignedId;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mPlatformOfflineId;
-    ::ll::TypedStorage<8, 8, uint64>                                      mClientRandomId;
-    ::ll::TypedStorage<8, 32, ::std::string>                              mPlatformId;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mPendingVehicleID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mPendingLeftShoulderPassengerID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mPendingRightShoulderPassengerID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mInteractTarget;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                     mInteractTargetPos;
-    ::ll::TypedStorage<1, 1, bool>                                        mHasFakeInventory;
-    ::ll::TypedStorage<1, 1, bool>                                        mIsRegionSuspended;
-    ::ll::TypedStorage<1, 1, bool>                                        mUpdateMobs;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>       mChunkSource;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>       mSpawnChunkSource;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                     mCapePosO;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                     mCapePos;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerManagerModel>> mContainerManager;
-    ::ll::TypedStorage<
-        8,
-        8,
-        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
-            void(::ContainerManagerModel const*),
-            ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
-                                                                             mContainerManagerSubscribers;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                         mOceanBiomes;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                         mFroglights;
+    ::ll::TypedStorage<4, 4, float const>                                    mSneakHeight;
+    ::ll::TypedStorage<4, 4, float const>                                    mSneakOffset;
+    ::ll::TypedStorage<4, 4, int>                                            mScore;
+    ::ll::TypedStorage<4, 4, float>                                          mOBob;
+    ::ll::TypedStorage<4, 4, float>                                          mBob;
+    ::ll::TypedStorage<4, 4, ::BuildPlatform>                                mBuildPlatform;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mUniqueName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mServerId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mSelfSignedId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mPlatformOfflineId;
+    ::ll::TypedStorage<8, 8, uint64>                                         mClientRandomId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mPlatformId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mPendingVehicleID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mPendingLeftShoulderPassengerID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mPendingRightShoulderPassengerID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mInteractTarget;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mInteractTargetPos;
+    ::ll::TypedStorage<1, 1, bool>                                           mHasFakeInventory;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsRegionSuspended;
+    ::ll::TypedStorage<1, 1, bool>                                           mUpdateMobs;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>          mChunkSource;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>>          mSpawnChunkSource;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mCapePosO;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mCapePos;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerManagerModel>>    mContainerManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<ContainerManagerSubscriber>>  mContainerManagerSubscribers;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerInventory>>           mInventory;
     ::ll::TypedStorage<4, 20, ::InventoryOptions>                            mInventoryOptions;
     ::ll::TypedStorage<4, 4, float>                                          mDistanceSinceTransformEvent;

@@ -36,10 +36,6 @@ public:
     DimensionFactory(DimensionFactory const&);
     DimensionFactory();
 
-    Bedrock::NotNullNonOwnerPtr<ILevel>             mLevel;
-    Bedrock::NotNullNonOwnerPtr<Scheduler>          mScheduler;
-    OwnerPtrFactory<Dimension, ILevel&, Scheduler&> mDimensionFactory;
-
 public:
     // virtual functions
     // NOLINTBEGIN

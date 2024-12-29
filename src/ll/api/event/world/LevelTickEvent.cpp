@@ -5,7 +5,7 @@
 #include "mc/server/ServerLevel.h"
 
 namespace ll::event::inline world {
-LL_TYPE_INSTANCE_HOOK(LevelTickEventHook, HookPriority::Normal, ServerLevel, &ServerLevel::_subTick, void) {
+LL_TYPE_INSTANCE_HOOK(LevelTickEventHook, HookPriority::Normal, ServerLevel, &ServerLevel::$_subTick, void) {
     EventBus::getInstance().publish(LevelTickEvent(*this));
     origin();
 }

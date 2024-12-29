@@ -13,49 +13,49 @@ void FireSpreadEvent::serialize(CompoundTag& nbt) const {
 }
 
 BlockPos const& FireSpreadEvent::pos() const { return mPos; }
+// TODO:
+//  thread_local bool onFireSpreadWhenOnPlace = false;
 
-thread_local bool onFireSpreadWhenOnPlace = false;
+// LL_TYPE_INSTANCE_HOOK(
+//     FireSpreadEventHook1,
+//     HookPriority::Normal,
+//     FireBlock,
+//     &FireBlock::$onPlace,
+//     void,
+//     BlockSource&    blockSource,
+//     BlockPos const& blockPos
+// ) {
+//     onFireSpreadWhenOnPlace = true;
+//     origin(blockSource, blockPos);
+//     onFireSpreadWhenOnPlace = false;
+// }
 
-LL_TYPE_INSTANCE_HOOK(
-    FireSpreadEventHook1,
-    HookPriority::Normal,
-    FireBlock,
-    &FireBlock::onPlace$,
-    void,
-    BlockSource&    blockSource,
-    BlockPos const& blockPos
-) {
-    onFireSpreadWhenOnPlace = true;
-    origin(blockSource, blockPos);
-    onFireSpreadWhenOnPlace = false;
-}
+// LL_TYPE_INSTANCE_HOOK(
+//     FireSpreadEventHook2,
+//     HookPriority::Normal,
+//     FireBlock,
+//     &FireBlock::$mayPlace,
+//     bool,
+//     BlockSource&    blockSource,
+//     BlockPos const& blockPos
+// ) {
+//     auto res = origin(blockSource, blockPos);
+//     if (!onFireSpreadWhenOnPlace || !res) return res;
 
-LL_TYPE_INSTANCE_HOOK(
-    FireSpreadEventHook2,
-    HookPriority::Normal,
-    FireBlock,
-    &FireBlock::mayPlace$,
-    bool,
-    BlockSource&    blockSource,
-    BlockPos const& blockPos
-) {
-    auto res = origin(blockSource, blockPos);
-    if (!onFireSpreadWhenOnPlace || !res) return res;
+//     auto event = FireSpreadEvent{blockSource, blockPos};
+//     EventBus::getInstance().publish(event);
+//     if (event.isCancelled()) {
+//         return false;
+//     }
+//     return res;
+// }
 
-    auto event = FireSpreadEvent{blockSource, blockPos};
-    EventBus::getInstance().publish(event);
-    if (event.isCancelled()) {
-        return false;
-    }
-    return res;
-}
+// static std::unique_ptr<EmitterBase> emitterFactory();
+// class FireSpreadEventEmitter : public Emitter<emitterFactory, FireSpreadEvent> {
+//     memory::HookRegistrar<FireSpreadEventHook1> hook1;
+//     memory::HookRegistrar<FireSpreadEventHook2> hook2;
+// };
 
-static std::unique_ptr<EmitterBase> emitterFactory();
-class FireSpreadEventEmitter : public Emitter<emitterFactory, FireSpreadEvent> {
-    memory::HookRegistrar<FireSpreadEventHook1> hook1;
-    memory::HookRegistrar<FireSpreadEventHook2> hook2;
-};
-
-static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<FireSpreadEventEmitter>(); }
+// static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<FireSpreadEventEmitter>(); }
 
 } // namespace ll::event::inline world

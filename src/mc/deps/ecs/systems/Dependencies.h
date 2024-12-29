@@ -18,9 +18,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                   mBlocking;
-    ::ll::TypedStorage<1, 1, bool>                                   mUsesEntityFactory;
-    ::ll::TypedStorage<8, 144, ::std::array<::std::vector<uint>, 6>> mAccessGroups;
+    bool                                 mBlocking;
+    bool                                 mUsesEntityFactory;
+    ::std::array<::std::vector<uint>, 6> mAccessGroups;
     // NOLINTEND
 
 public:

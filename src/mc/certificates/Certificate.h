@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/certificates/UnverifiedCertificate.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,10 +15,10 @@ class Certificate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 136, ::UnverifiedCertificate>        mUnverifiedCertificate;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mParentCertificate;
-    ::ll::TypedStorage<1, 1, bool>                             mIsValid;
-    ::ll::TypedStorage<1, 1, bool>                             mIsSelfSigned;
+    ::UnverifiedCertificate          mUnverifiedCertificate;
+    ::std::unique_ptr<::Certificate> mParentCertificate;
+    bool                             mIsValid;
+    bool                             mIsSelfSigned;
     // NOLINTEND
 
 public:

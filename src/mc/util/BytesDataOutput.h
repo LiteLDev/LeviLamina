@@ -7,12 +7,6 @@
 
 class BytesDataOutput : public ::IDataOutput {
 public:
-    // prevent constructor by default
-    BytesDataOutput& operator=(BytesDataOutput const&);
-    BytesDataOutput(BytesDataOutput const&);
-    BytesDataOutput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -43,7 +37,7 @@ public:
     virtual void writeBytes(void const*, uint64) = 0;
 
     // vIndex: 0
-    virtual ~BytesDataOutput() /*override*/;
+    virtual ~BytesDataOutput() /*override*/ = default;
     // NOLINTEND
 
 public:

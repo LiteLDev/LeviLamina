@@ -58,9 +58,25 @@ struct Tick;
 namespace BlockSourceVisitor { struct CollisionShape; }
 // clang-format on
 
+class Mob;
+class Container;
+class CompoundTag;
+
 class BlockSource : public ::IBlockSource,
                     public ::EnableGetWeakRef<::BlockSource>,
                     public ::std::enable_shared_from_this<::BlockSource> {
+public:
+    LLNDAPI std::vector<Actor*> getEntities(
+        AABB const& range,
+        float       extendDistance = 2.0f,
+        ActorType   actorType      = ActorType::TypeMask,
+        bool        ignoreType     = false
+    ) const;
+
+    LLNDAPI optional_ref<Container> tryGetContainer(BlockPos const& pos);
+
+    LLAPI optional_ref<Actor> spawnActor(CompoundTag const&);
+
 public:
     // member variables
     // NOLINTBEGIN

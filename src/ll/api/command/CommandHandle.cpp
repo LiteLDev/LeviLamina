@@ -94,9 +94,7 @@ std::vector<std::string> CommandHandle::alias() const {
     return impl->registrar.getRegistry().getAliases(impl->signature.name);
 }
 CommandHandle& CommandHandle::finalizeChainedSubcommandOverloadRules() {
-    if (!impl->signature.finalizedChainedSubcommands) {
-        // impl->registrar.getRegistry().finalizeChainedSubcommandOverloadRules(impl->signature.name.c_str());
-    }
+    impl->registrar.getRegistry().finalizeChainedSubcommandOverloadRules(impl->signature.name.c_str());
     return *this;
 }
 } // namespace ll::command

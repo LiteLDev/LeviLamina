@@ -10,15 +10,11 @@ class StringByteInput : public ::BytesDataInput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>              mIdx;
-    ::ll::TypedStorage<8, 16, ::std::string_view> mBuffer;
+    size_t           mIdx;
+    std::string_view mBuffer;
     // NOLINTEND
 
-public:
-    // prevent constructor by default
-    StringByteInput& operator=(StringByteInput const&);
-    StringByteInput(StringByteInput const&);
-    StringByteInput();
+    StringByteInput(std::string_view sv, size_t offset = 0) noexcept : mIdx(offset), mBuffer(sv) {}
 
 public:
     // virtual functions

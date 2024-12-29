@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityRefTraits.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
@@ -12,16 +13,19 @@ class EntityContext;
 
 class WeakEntityRef {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mWeakEntity;
-    // NOLINTEND
+    template <class Entity = Actor, bool IncludeRemoved = false>
+    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
+        return mWeakEntity.tryUnwrap<Entity, IncludeRemoved>();
+    }
+
+    WeakEntityRef(::WeakEntityRef&&)      = default;
+    WeakEntityRef(::WeakEntityRef const&) = default;
 
 public:
-    // prevent constructor by default
-    WeakEntityRef& operator=(WeakEntityRef const&);
-    WeakEntityRef(WeakEntityRef const&);
-    WeakEntityRef();
+    // member variables
+    // NOLINTBEGIN
+    ::WeakRef<::EntityContext> mWeakEntity;
+    // NOLINTEND
 
 public:
     // member functions

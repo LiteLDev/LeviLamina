@@ -62,9 +62,6 @@ public:
         // NOLINTEND
     };
 
-    std::unordered_map<ChunkPos, Descriptions> mDescriptionsToProcess; // this+0x0
-    std::shared_mutex                          mMutex;                 // this+0x40
-
 public:
     // member variables
     // NOLINTBEGIN

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/file/PathPart.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
@@ -32,26 +33,24 @@ public:
     };
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Core::PathPart> mPathPart;
-    // NOLINTEND
+    Path(std::filesystem::path const& path) : Path(path.u8string()) {}
+    Path(std::u8string const& path) { mPathPart.mUtf8StdString = *reinterpret_cast<std::string const*>(&path); }
+    Path(std::string const& path) { mPathPart.mUtf8StdString = path; }
+    Path(char const* path) { mPathPart.mUtf8StdString = path; }
+    Path() = default;
 
 public:
-    // prevent constructor by default
-    Path& operator=(Path const&);
-    Path(Path const&);
+    // member variables
+    // NOLINTBEGIN
+    ::Core::PathPart mPathPart;
+    // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Path();
-
     MCAPI explicit Path(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
 
     MCAPI explicit Path(::Core::PathBuffer<::std::string> const&);
-
-    MCAPI ~Path();
     // NOLINTEND
 
 public:

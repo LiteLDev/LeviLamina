@@ -10,71 +10,69 @@ MCAPI ::std::string_view const FormatCodeFromName(::std::string const& str);
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& AQUA();
+constexpr inline std::string_view AQUA = "§b";
 
-MCAPI ::std::string const& BLACK();
+constexpr inline std::string_view BLACK = "§0";
 
-MCAPI ::std::string const& BLUE();
+constexpr inline std::string_view BLUE = "§9";
 
-MCAPI ::std::string const& BOLD();
+constexpr inline std::string_view BOLD = "§l";
 
-MCAPI ::std::string const& DARK_AQUA();
+constexpr inline std::string_view DARK_AQUA = "§3";
 
-MCAPI ::std::string const& DARK_BLUE();
+constexpr inline std::string_view DARK_BLUE = "§1";
 
-MCAPI ::std::string const& DARK_GRAY();
+constexpr inline std::string_view DARK_GRAY = "§8";
 
-MCAPI ::std::string const& DARK_GREEN();
+constexpr inline std::string_view DARK_GREEN = "§2";
 
-MCAPI ::std::string const& DARK_PURPLE();
+constexpr inline std::string_view DARK_PURPLE = "§5";
 
-MCAPI ::std::string const& DARK_RED();
+constexpr inline std::string_view DARK_RED = "§4";
 
-MCAPI ::std::string const& ESCAPE();
+constexpr inline std::string_view ESCAPE = "§";
 
-MCAPI ::std::string const& GOLD();
+constexpr inline std::string_view GOLD = "§6";
 
-MCAPI ::std::string const& GRAY();
+constexpr inline std::string_view GRAY = "§7";
 
-MCAPI ::std::string const& GREEN();
+constexpr inline std::string_view GREEN = "§a";
 
-MCAPI ::std::string const& ITALIC();
+constexpr inline std::string_view ITALIC = "§o";
 
-MCAPI ::std::string const& LIGHT_PURPLE();
+constexpr inline std::string_view LIGHT_PURPLE = "§d";
 
-MCAPI ::std::string const& MATERIAL_AMETHYST();
+constexpr inline std::string_view MATERIAL_AMETHYST = "§u";
 
-MCAPI ::std::string const& MATERIAL_COPPER();
+constexpr inline std::string_view MATERIAL_COPPER = "§n";
 
-MCAPI ::std::string const& MATERIAL_DIAMOND();
+constexpr inline std::string_view MATERIAL_DIAMOND = "§s";
 
-MCAPI ::std::string const& MATERIAL_EMERALD();
+constexpr inline std::string_view MATERIAL_EMERALD = "§q";
 
-MCAPI ::std::string const& MATERIAL_GOLD();
+constexpr inline std::string_view MATERIAL_GOLD = "§p";
 
-MCAPI ::std::string const& MATERIAL_IRON();
+constexpr inline std::string_view MATERIAL_IRON = "§i";
 
-MCAPI ::std::string const& MATERIAL_LAPIS();
+constexpr inline std::string_view MATERIAL_LAPIS = "§t";
 
-MCAPI ::std::string const& MATERIAL_NETHERITE();
+constexpr inline std::string_view MATERIAL_NETHERITE = "§j";
 
-MCAPI ::std::string const& MATERIAL_QUARTZ();
+constexpr inline std::string_view MATERIAL_QUARTZ = "§h";
 
-MCAPI ::std::string const& MATERIAL_REDSTONE();
+constexpr inline std::string_view MATERIAL_REDSTONE = "§m";
 
-MCAPI ::std::string const& MATERIAL_RESIN();
+constexpr inline std::string_view MINECOIN_GOLD = "§g";
 
-MCAPI ::std::string const& MINECOIN_GOLD();
+constexpr inline std::string_view OBFUSCATED = "§k";
 
-MCAPI ::std::string const& OBFUSCATED();
+constexpr inline std::string_view RED = "§c";
 
-MCAPI ::std::string const& RED();
+constexpr inline std::string_view RESET = "§r";
 
-MCAPI ::std::string const& RESET();
+constexpr inline std::string_view WHITE = "§f";
 
-MCAPI ::std::string const& WHITE();
-
-MCAPI ::std::string const& YELLOW();
+constexpr inline std::string_view YELLOW = "§e";
 // NOLINTEND
 
 } // namespace ColorFormat

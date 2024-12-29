@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ContainerIterator.h"
+#include "mc/world/ContainerOwner.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
@@ -61,23 +63,47 @@ public:
     using ItemStackNetIdChangedCallback = ::std::function<void(int, ::ItemStack const&)>;
 
 public:
+    [[nodiscard]] std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
+
+    LLNDAPI optional_ref<ItemStack> getItemNonConst(int index);
+
+    [[nodiscard]] ItemStack& operator[](int index) { return this->getItemNonConst(index); }
+
+    [[nodiscard]] ItemStack const& operator[](int index) const { return this->getItem(index); }
+
+    using TransactionContext = std::function<void(Container&, int, ItemStack const&, ItemStack const&)>;
+
+public:
+    using Iterator      = ContainerIterator<Container>;
+    using ConstIterator = ContainerIterator<Container const>;
+
+    using ReverseIterator      = std::reverse_iterator<Iterator>;
+    using ConstReverseIterator = std::reverse_iterator<ConstIterator>;
+
+    [[nodiscard]] constexpr Iterator      begin() noexcept { return {this, 0}; }
+    [[nodiscard]] constexpr ConstIterator cbegin() const noexcept { return {this, 0}; }
+    [[nodiscard]] constexpr Iterator      end() noexcept { return {this, getContainerSize()}; }
+    [[nodiscard]] constexpr ConstIterator cend() const noexcept { return {this, getContainerSize()}; }
+
+    [[nodiscard]] constexpr ReverseIterator      rbegin() noexcept { return ReverseIterator{end()}; }
+    [[nodiscard]] constexpr ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator{cend()}; }
+    [[nodiscard]] constexpr ReverseIterator      rend() noexcept { return ReverseIterator{begin()}; }
+    [[nodiscard]] constexpr ConstReverseIterator crend() const noexcept { return ConstReverseIterator{cbegin()}; }
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerType>                                          mContainerType;
-    ::ll::TypedStorage<1, 1, ::ContainerType>                                          mGameplayContainerType;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerContentChangeListener*>> mContentChangeListeners;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerSizeChangeListener*>>    mSizeChangeListeners;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerCloseListener*>>         mCloseListeners;
-    ::ll::TypedStorage<8, 128, ::Container::PublisherWrapper>                          mRemovedPublisher;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::deque<::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>>>
-                                                   mTransactionContextStack;
-    ::ll::TypedStorage<8, 32, ::std::string>       mName;
-    ::ll::TypedStorage<1, 1, bool>                 mCustomName;
-    ::ll::TypedStorage<8, 24, ::ContainerOwner>    mContainerOwner;
-    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId> mContainerRuntimeId;
+    ::ContainerType                                         mContainerType;
+    ::ContainerType                                         mGameplayContainerType;
+    ::std::unordered_set<::ContainerContentChangeListener*> mContentChangeListeners;
+    ::std::unordered_set<::ContainerSizeChangeListener*>    mSizeChangeListeners;
+    ::std::unordered_set<::ContainerCloseListener*>         mCloseListeners;
+    ::Container::PublisherWrapper                           mRemovedPublisher;
+    ::std::deque<TransactionContext>                        mTransactionContextStack;
+    ::std::string                                           mName;
+    bool                                                    mCustomName;
+    ::ContainerOwner                                        mContainerOwner;
+    ::ContainerRuntimeId                                    mContainerRuntimeId;
     // NOLINTEND
 
 public:

@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MCRESULT& operator=(MCRESULT const&);
-    MCRESULT(MCRESULT const&);
-    MCRESULT();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI int getFullCode() const;

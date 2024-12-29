@@ -2,6 +2,7 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
+#include "mc/common/Globals.h"
 #include "mc/nbt/CompoundTag.h"
 
 namespace ll::event::inline command {

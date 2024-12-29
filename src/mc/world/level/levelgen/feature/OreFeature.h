@@ -22,16 +22,6 @@ struct ReplaceRule;
 
 class OreFeature : public ::IFeature {
 public:
-    int                      mCount;
-    float                    mCountf;
-    float                    mCountfInv;
-    float                    mDiscardChanceOnAirExposure;
-    std::vector<ReplaceRule> mReplaceRules;
-
-    // Bedrock::Threading::InstancedThreadLocal<OreFeature::Helper, std::allocator<OreFeature::Helper>>;
-    char mHelper[0xE0 - 48];
-
-public:
     // OreFeature inner types declare
     // clang-format off
     struct Helper;
@@ -47,9 +37,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Block const*, ::std::vector<::BlockLegacy const*>>>>
             mRules;
         // NOLINTEND
-
-    public:
-        std::vector<std::pair<Block const*, std::vector<BlockLegacy const*>>> mRules;
 
     public:
         // prevent constructor by default

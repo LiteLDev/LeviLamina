@@ -303,17 +303,11 @@ MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag, uint i)
 
 MCAPI ::ActorType lookupActualEntityType(::ActorType entityType);
 
-MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
-
-MCAPI bool operator<(::HashedString const& lhs, ::HashedString const& rhs);
-
 MCAPI ::std::ostream& operator<<(::std::ostream& os, ::ActorFlags const& flag);
 
 MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
 
 MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
-
-MCAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI ::BlockProperty operator|(::BlockProperty lhs, ::BlockProperty b);
 

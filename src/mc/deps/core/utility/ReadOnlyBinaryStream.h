@@ -9,10 +9,10 @@ class ReadOnlyBinaryStream {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>      mOwnedBuffer;
-    ::ll::TypedStorage<8, 16, ::std::string_view> mView;
-    ::ll::TypedStorage<8, 8, uint64>              mReadPointer;
-    ::ll::TypedStorage<1, 1, bool>                mHasOverflowed;
+    ::std::string      mOwnedBuffer;
+    ::std::string_view mView;
+    uint64             mReadPointer;
+    bool               mHasOverflowed;
     // NOLINTEND
 
 public:

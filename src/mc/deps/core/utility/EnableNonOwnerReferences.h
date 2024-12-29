@@ -16,7 +16,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkeefdff;
+        bool mIsValid;
         // NOLINTEND
 
     public:
@@ -29,7 +29,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::EnableNonOwnerReferences::ControlBlock>> mControlBlock;
+    ::std::shared_ptr<::Bedrock::EnableNonOwnerReferences::ControlBlock> mControlBlock;
     // NOLINTEND
 
 public:

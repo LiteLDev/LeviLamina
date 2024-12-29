@@ -14,20 +14,14 @@ class CommandVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mFrom;
-    ::ll::TypedStorage<4, 4, int> mTo;
+    int mFrom;
+    int mTo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandVersion& operator=(CommandVersion const&);
-    CommandVersion(CommandVersion const&);
-    CommandVersion();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandVersion(int from, int to);
+    MCAPI CommandVersion(int from = 0, int to = CurrentVersion());
     // NOLINTEND
 
 public:

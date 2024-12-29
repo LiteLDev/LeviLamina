@@ -59,7 +59,7 @@ public:
         // NOLINTBEGIN
         MCAPI CZString();
 
-        MCAPI explicit CZString(char const* cstr);
+        MCAPI CZString(char const* cstr);
 
         MCAPI CZString(::Json::Value::CZString&& other);
 
@@ -127,35 +127,31 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Value();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Value(::Json::Value const& other);
 
     MCAPI Value(::Json::Value&& other);
 
-    MCAPI explicit Value(::Json::Value::CZString* str);
+    MCAPI Value(::Json::Value::CZString* str);
 
-    MCAPI explicit Value(::Json::ValueType type);
+    MCAPI Value(::Json::ValueType type = ::Json::ValueType::NullValue);
 
-    MCAPI explicit Value(char const* value);
+    MCAPI Value(char const* value);
 
-    MCAPI explicit Value(int value);
+    MCAPI Value(int value);
 
-    MCAPI explicit Value(uint value);
+    MCAPI Value(uint value);
 
-    MCAPI explicit Value(double value);
+    MCAPI Value(double value);
 
-    MCAPI explicit Value(::std::string const& value);
+    MCAPI Value(::std::string const& value);
 
-    MCAPI explicit Value(uint64 value);
+    MCAPI Value(uint64 value);
 
-    MCAPI explicit Value(int64 value);
+    MCAPI Value(int64 value);
 
-    MCAPI explicit Value(bool value);
+    MCAPI Value(bool value);
 
     MCAPI void _insert(::Json::Value::CZString&& key, ::Json::Value&& value, bool overwrite);
 

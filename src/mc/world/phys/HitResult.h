@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/world/phys/HitResultType.h"
@@ -16,25 +19,29 @@ struct AABBHitResult;
 
 class HitResult {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>          mStartPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>          mRayDir;
-    ::ll::TypedStorage<4, 4, ::HitResultType>  mType;
-    ::ll::TypedStorage<1, 1, uchar>            mFacing;
-    ::ll::TypedStorage<4, 12, ::BlockPos>      mBlock;
-    ::ll::TypedStorage<4, 12, ::Vec3>          mPos;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
-    ::ll::TypedStorage<1, 1, bool>             mIsHitLiquid;
-    ::ll::TypedStorage<1, 1, uchar>            mLiquidFacing;
-    ::ll::TypedStorage<4, 12, ::BlockPos>      mLiquid;
-    ::ll::TypedStorage<4, 12, ::Vec3>          mLiquidPos;
-    ::ll::TypedStorage<1, 1, bool>             mIndirectHit;
-    // NOLINTEND
+    [[nodiscard]] constexpr explicit operator bool() const {
+        return mType == HitResultType::Tile || mType == HitResultType::Entity;
+    }
+
+    HitResult(::HitResult&&)      = default;
+    HitResult(::HitResult const&) = default;
 
 public:
-    // prevent constructor by default
-    HitResult(HitResult const&);
+    // member variables
+    // NOLINTBEGIN
+    ::Vec3          mStartPos;
+    ::Vec3          mRayDir;
+    ::HitResultType mType;
+    uchar           mFacing;
+    ::BlockPos      mBlock;
+    ::Vec3          mPos;
+    ::WeakEntityRef mEntity;
+    bool            mIsHitLiquid;
+    uchar           mLiquidFacing;
+    ::BlockPos      mLiquid;
+    ::Vec3          mLiquidPos;
+    bool            mIndirectHit;
+    // NOLINTEND
 
 public:
     // member functions

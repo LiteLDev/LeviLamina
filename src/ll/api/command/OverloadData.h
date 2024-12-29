@@ -27,7 +27,7 @@ class OverloadData {
     std::unique_ptr<Impl> impl;
 
 protected:
-    LLNDAPI CommandRegistry::FactoryFn* getFactory();
+    LLNDAPI CommandRegistry::Overload::AllocFunction getFactory();
     LLNDAPI std::vector<CommandParameterData>& getParams();
     LLNDAPI CommandHandle&                     getHandle();
     LLNDAPI std::weak_ptr<mod::Mod>& getMod();
@@ -41,7 +41,7 @@ protected:
 
     LLAPI CommandParameterData& addParamImpl(
         Bedrock::typeid_t<CommandRegistry> id,
-        CommandRegistry::ParseFn           parser,
+        CommandRegistry::ParseFunction     parser,
         std::string_view                   name,
         CommandParameterDataType           type,
         char const*                        enumNameOrPostfix,
@@ -52,7 +52,7 @@ protected:
 
     LLAPI CommandParameterData& addParamImpl(
         Bedrock::typeid_t<CommandRegistry> id,
-        CommandRegistry::ParseFn           parser,
+        CommandRegistry::ParseFunction     parser,
         std::string_view                   name,
         CommandParameterDataType           type,
         std::string_view                   enumNameOrPostfix,

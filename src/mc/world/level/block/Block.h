@@ -58,6 +58,23 @@ namespace mce { class Color; }
 
 class Block {
 public:
+    using BlockStateValueType = std::variant<int, float, bool, std::string>;
+    using BlockStatesType     = std::vector<std::pair<std::string, BlockStateValueType>>;
+
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint runtimeID);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, ushort legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint legacyBlockID, ushort legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
+
+    [[nodiscard]] inline std::string const& getTypeName() const { return getLegacyBlock().getTypeName(); }
+
+    [[nodiscard]] inline short getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
+
+    [[nodiscard]] inline short getData() const { return ll::memory::dAccess<ushort>(this, 8); }
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 104, ::BlockComponentStorage>       mComponents;

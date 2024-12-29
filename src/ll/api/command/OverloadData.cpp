@@ -20,11 +20,12 @@
 namespace ll::command {
 
 struct OverloadData::Impl {
-    CommandHandle&                                                       handle;
-    std::weak_ptr<mod::Mod>                                              mod;
-    std::optional<memory::FunctionalClosure<CommandRegistry::FactoryFn>> factoryClosure{}; // for delay emplace
-    std::vector<CommandParameterData>                                    params;
-    std::recursive_mutex                                                 mutex;
+    CommandHandle&          handle;
+    std::weak_ptr<mod::Mod> mod;
+    std::optional<memory::FunctionalClosure<std::remove_pointer_t<CommandRegistry::Overload::AllocFunction>>>
+                                      factoryClosure{}; // for delay emplace
+    std::vector<CommandParameterData> params;
+    std::recursive_mutex              mutex;
 };
 
 OverloadData::OverloadData(CommandHandle& handle, std::weak_ptr<mod::Mod> mod)
@@ -34,10 +35,10 @@ OverloadData& OverloadData::operator=(OverloadData&&) = default;
 OverloadData::OverloadData(OverloadData&&)            = default;
 OverloadData::~OverloadData()                         = default;
 
-CommandRegistry::FactoryFn*        OverloadData::getFactory() { return impl->factoryClosure.value().get(); }
-std::vector<CommandParameterData>& OverloadData::getParams() { return impl->params; }
-CommandHandle&                     OverloadData::getHandle() { return impl->handle; }
-std::weak_ptr<mod::Mod>&           OverloadData::getMod() { return impl->mod; }
+CommandRegistry::Overload::AllocFunction OverloadData::getFactory() { return impl->factoryClosure.value().get(); }
+std::vector<CommandParameterData>&       OverloadData::getParams() { return impl->params; }
+CommandHandle&                           OverloadData::getHandle() { return impl->handle; }
+std::weak_ptr<mod::Mod>&                 OverloadData::getMod() { return impl->mod; }
 
 char const* OverloadData::storeStr(std::string_view str) {
     if (str.empty()) {
@@ -52,7 +53,7 @@ CommandParameterData& OverloadData::back() { return impl->params.back(); }
 
 CommandParameterData& OverloadData::addParamImpl(
     Bedrock::typeid_t<CommandRegistry> id,
-    CommandRegistry::ParseFn           parser,
+    CommandRegistry::ParseFunction     parser,
     std::string_view                   name,
     CommandParameterDataType           type,
     char const*                        enumNameOrPostfix,
@@ -83,7 +84,7 @@ CommandParameterData& OverloadData::addParamImpl(
 
 CommandParameterData& OverloadData::addParamImpl(
     Bedrock::typeid_t<CommandRegistry> id,
-    CommandRegistry::ParseFn           parser,
+    CommandRegistry::ParseFunction     parser,
     std::string_view                   name,
     CommandParameterDataType           type,
     std::string_view                   enumNameOrPostfix,

@@ -26,9 +26,6 @@ public:
     // prevent constructor by default
     ItemStackRequestAction() = delete;
 
-    ::ItemStackRequestActionType mActionType; // this+0x8
-
-
 public:
     // virtual functions
     // NOLINTBEGIN

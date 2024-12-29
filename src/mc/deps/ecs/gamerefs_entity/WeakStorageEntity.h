@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/ecs/EntityId.h"
+#include "mc/deps/ecs/gamerefs_entity/StackResultStorageEntity.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
@@ -14,18 +16,24 @@ class OwnerStorageEntity;
 class StackResultStorageEntity;
 // clang-format on
 
+class Actor;
+
 class WeakStorageEntity {
+public:
+    template <class Entity = Actor, bool IncludeRemoved = false>
+    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
+        return StackResultStorageEntity(*this).tryUnwrap<Entity, IncludeRemoved>();
+    }
+
+    WeakStorageEntity(::WeakStorageEntity&&)      = default;
+    WeakStorageEntity(::WeakStorageEntity const&) = default;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>> mRegistry;
-    ::ll::TypedStorage<4, 4, ::EntityId>                   mEntity;
+    ::WeakRef<::EntityRegistry> mRegistry;
+    ::EntityId                  mEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeakStorageEntity& operator=(WeakStorageEntity const&);
-    WeakStorageEntity(WeakStorageEntity const&);
 
 public:
     // member functions

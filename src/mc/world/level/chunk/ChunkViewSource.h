@@ -34,11 +34,6 @@ public:
     ChunkViewSource& operator=(ChunkViewSource const&);
     ChunkViewSource();
 
-
-    ::ChunkSource::LoadMode               mParentLoadMode;
-    GridArea<std::shared_ptr<LevelChunk>> mArea;
-    ChunkSource&                          mMainSource;
-
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -30,16 +30,19 @@ LL_TYPE_INSTANCE_HOOK(
     HookPriority::High,
     DedicatedServer,
     &DedicatedServer::runDedicatedServerLoop,
-    DedicatedServer::StartResult,
-    Core::FilePathManager&            filePathManager,
-    PropertiesSettings&               properties,
-    LevelSettings&                    settings,
-    AllowListFile&                    allowListFile,
-    std::unique_ptr<PermissionsFile>& permissionsFile
+    ::DedicatedServer::StartResult,
+    ::Core::FilePathManager&              filePathManager,
+    ::PropertiesSettings&                 properties,
+    ::LevelSettings&                      settings,
+    ::AllowListFile&                      userAllowList,
+    ::std::unique_ptr<::PermissionsFile>& permissionsFile,
+    ::Bedrock::ActivationArguments const& args,
+    ::TestConfig&                         testConfig
 ) {
-    propertiesSettings               = &properties;
-    DedicatedServer::StartResult res = origin(filePathManager, properties, settings, allowListFile, permissionsFile);
-    propertiesSettings               = nullptr;
+    propertiesSettings = &properties;
+    DedicatedServer::StartResult res =
+        origin(filePathManager, properties, settings, userAllowList, permissionsFile, args, testConfig);
+    propertiesSettings = nullptr;
     return res;
 }
 
@@ -51,7 +54,7 @@ LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::
     minecraft = this;
     origin();
 }
-LL_TYPE_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, Minecraft, &Minecraft::dtor$, void) {
+LL_TYPE_INSTANCE_HOOK(MinecraftDestructor, HookPriority::High, Minecraft, &Minecraft::$dtor, void) {
     minecraft = nullptr;
     origin();
 }
@@ -76,7 +79,7 @@ LL_TYPE_INSTANCE_HOOK(
     ServerNetworkHandlerDestructor,
     HookPriority::High,
     ServerNetworkHandler,
-    &ServerNetworkHandler::dtor$,
+    &ServerNetworkHandler::$dtor,
     void
 ) {
     serverNetworkHandler = nullptr;
@@ -90,7 +93,7 @@ LL_TYPE_INSTANCE_HOOK(
     NetworkSystemConstructor,
     HookPriority::High,
     NetworkSystem,
-    &NetworkSystem::ctor$,
+    &NetworkSystem::$ctor,
     void*,
     struct NetworkSystem::Dependencies&& dependencies
 ) {
@@ -98,7 +101,7 @@ LL_TYPE_INSTANCE_HOOK(
     networkSystem = this;
     return res;
 }
-LL_TYPE_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, NetworkSystem, &NetworkSystem::dtor$, void) {
+LL_TYPE_INSTANCE_HOOK(NetworkSystemDestructor, HookPriority::High, NetworkSystem, &NetworkSystem::$dtor, void) {
     networkSystem = nullptr;
     origin();
 }
@@ -117,7 +120,7 @@ LL_TYPE_INSTANCE_HOOK(
     level = getMinecraft()->getLevel();
     origin(ins);
 }
-LL_TYPE_INSTANCE_HOOK(LevelDestructor, HookPriority::High, Level, &Level::dtor$, void) {
+LL_TYPE_INSTANCE_HOOK(LevelDestructor, HookPriority::High, Level, &Level::$dtor, void) {
     level = nullptr;
     origin();
 }
@@ -125,14 +128,14 @@ LL_TYPE_INSTANCE_HOOK(LevelDestructor, HookPriority::High, Level, &Level::dtor$,
 // RakNet::RakPeer
 static std::atomic<RakNet::RakPeer*> rakPeer;
 
-LL_TYPE_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, RakNet::RakPeer, &RakNet::RakPeer::ctor$, void*) {
+LL_TYPE_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, RakNet::RakPeer, &RakNet::RakPeer::$ctor, void*) {
     unhook();
     auto res = origin();
     rakPeer  = this;
     return res;
 }
 
-LL_TYPE_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, RakNet::RakPeer, &RakNet::RakPeer::dtor$, void) {
+LL_TYPE_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, RakNet::RakPeer, &RakNet::RakPeer::$dtor, void) {
     if ((void*)this == (void*)getRakPeer()) rakPeer = nullptr;
     origin();
 }
@@ -154,7 +157,7 @@ LL_TYPE_INSTANCE_HOOK(
     ResourcePackRepositoryDestructor,
     HookPriority::High,
     ResourcePackRepository,
-    &ResourcePackRepository::dtor$,
+    &ResourcePackRepository::$dtor,
     void
 ) {
     resourcePackRepository = nullptr;
@@ -168,7 +171,7 @@ LL_TYPE_INSTANCE_HOOK(
     CommandRegistryConstructor,
     HookPriority::High,
     CommandRegistry,
-    &CommandRegistry::ctor$,
+    &CommandRegistry::$ctor,
     void*,
     bool eduMode
 ) {
@@ -176,7 +179,7 @@ LL_TYPE_INSTANCE_HOOK(
     commandRegistry = this;
     return res;
 }
-LL_TYPE_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, CommandRegistry, &CommandRegistry::dtor$, void) {
+LL_TYPE_INSTANCE_HOOK(CommandRegistryDestructor, HookPriority::High, CommandRegistry, &CommandRegistry::$dtor, void) {
     commandRegistry = nullptr;
     origin();
 }
@@ -188,16 +191,16 @@ LL_TYPE_INSTANCE_HOOK(
     ServerInstanceConstructor,
     HookPriority::High,
     ServerInstance,
-    &ServerInstance::ctor$,
+    &ServerInstance::$ctor,
     void*,
-    IMinecraftApp&                                                     app,
-    Bedrock::NotNullNonOwnerPtr<ServerInstanceEventCoordinator> const& coordinator
+    ::IMinecraftApp&                                                       app,
+    ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> const& coordinator
 ) {
     auto res       = origin(app, coordinator);
     serverInstance = this;
     return res;
 }
-LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstance, &ServerInstance::dtor$, void) {
+LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ServerInstance, &ServerInstance::$dtor, void) {
     serverInstance = nullptr;
     origin();
 }

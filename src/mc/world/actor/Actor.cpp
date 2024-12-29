@@ -9,10 +9,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
-#include "mc/entity/components/FlagComponent.h"
 #include "mc/entity/systems/OnFireSystem.h"
+#include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandUtils.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
@@ -66,10 +67,7 @@ class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head);
 
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
-bool Actor::isSimulatedPlayer() const {
-    return isPlayer() && static_cast<Player const*>(this)->isSimulated();
-    //  return getEntityContext().hasComponent<FlagComponent<SimulatedPlayerFlag>>();
-}
+bool Actor::isSimulatedPlayer() const { return isPlayer() && static_cast<Player const*>(this)->isSimulated(); }
 
 bool Actor::isOnGround() const { return ActorCollision::isOnGround(getEntityContext()); }
 
@@ -101,7 +99,7 @@ class HitResult Actor::traceRay(
     Vec3      rayDir{getViewVector()};
     HitResult result{};
     if (includeBlock) {
-        result = getDimensionBlockSource().clip$(
+        result = getDimensionBlockSource().clip(
             origin,
             origin + rayDir * tMax,
             true,
@@ -130,7 +128,8 @@ class HitResult Actor::traceRay(
             (Player*)(this),
             resDistance,
             resActor,
-            resPos
+            resPos,
+            false
         );
         if (resActor != nullptr && resDistance >= 0 && resDistance <= tMax) {
             result = HitResult{origin, rayDir, *resActor, resPos};
@@ -169,5 +168,6 @@ void Actor::setName(std::string const& name) {
 }
 
 float Actor::evalMolang(std::string const& expression) {
-    return ExpressionNode(expression).evalAsFloat(getRenderParams());
+    return ExpressionNode(expression, MolangVersion::Latest, {{HashedString{"default"}}})
+        .evalAsFloat(getRenderParams());
 }

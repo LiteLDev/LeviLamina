@@ -2,7 +2,7 @@
 
 CommandParameterData::CommandParameterData(
     Bedrock::typeid_t<CommandRegistry> typeIndex,
-    ParseFn                            parser,
+    ParseFunction                      parser,
     std::string                        name,
     ::CommandParameterDataType         type,
     char const*                        enumNameOrPostfix,
@@ -16,16 +16,16 @@ CommandParameterData::CommandParameterData(
   mParse(parser),
   mName(std::move(name)),
   mEnumNameOrPostfix(enumNameOrPostfix),
-  mSubChain(subChain),
+  mChainedSubcommand(subChain),
   mParamType(type),
   mOffset(offset),
-  mSettedOffset(flagOffset),
+  mSetOffset(flagOffset),
   mIsOptional(optional),
   mOptions(options) {}
 
 bool CommandParameterData::operator==(CommandParameterData const& other) const {
     if (mTypeIndex != other.mTypeIndex || mName != other.mName || mOffset != other.mOffset
-        || mSettedOffset != other.mSettedOffset) {
+        || mSetOffset != other.mSetOffset) {
         return false;
     }
     if (mParamType == CommandParameterDataType::Postfix && other.mParamType == mParamType) {

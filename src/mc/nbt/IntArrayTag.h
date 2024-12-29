@@ -19,53 +19,60 @@ public:
     [[nodiscard]] constexpr IntArrayTag(std::initializer_list<int> val) : Array(val) {}
 
 public:
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~IntArrayTag() = default;
-
-    // vIndex: 2
-    virtual void write(class IDataOutput& dos) const;
-
-    // vIndex: 3
-    virtual class Bedrock::Result<void> load(class IDataInput& dis);
+    // vIndex: 5
+    virtual ::Tag::Type getId() const /*override*/;
 
     // vIndex: 4
-    virtual std::string toString() const;
-
-    // vIndex: 5
-    virtual ::Tag::Type getId() const { return Tag::IntArray; }
+    virtual ::std::string toString() const /*override*/;
 
     // vIndex: 6
-    virtual bool equals(class Tag const& rhs) const;
+    virtual bool equals(::Tag const& rhs) const /*override*/;
 
     // vIndex: 9
-    virtual std::unique_ptr<class Tag> copy() const;
+    virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
+
+    // vIndex: 2
+    virtual void write(::IDataOutput& dos) const /*override*/;
+
+    // vIndex: 3
+    virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
     // vIndex: 10
-    virtual uint64 hash() const;
+    virtual uint64 hash() const /*override*/;
 
+    // vIndex: 0
+    virtual ~IntArrayTag() /*override*/ = default;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI void dtor$();
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Tag::Type $getId() const;
 
-    MCAPI std::unique_ptr<class Tag> copy$() const;
+    MCAPI ::std::string $toString() const;
 
-    MCAPI bool equals$(class Tag const& rhs) const;
+    MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCAPI ::Tag::Type getId$() const;
+    MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
-    MCAPI uint64 hash$() const;
+    MCAPI void $write(::IDataOutput& dos) const;
 
-    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+    MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI std::string toString$() const;
+    MCAPI uint64 $hash() const;
+    // NOLINTEND
 
-    MCAPI void write$(class IDataOutput& dos) const;
-
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

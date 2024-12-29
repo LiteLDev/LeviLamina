@@ -8,53 +8,60 @@
 
 class EndTag : public ::Tag {
 public:
-    constexpr EndTag() = default;
-
+    // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~EndTag() = default;
+    // vIndex: 3
+    virtual ::Bedrock::Result<void> load(::IDataInput& dis) /*override*/;
 
     // vIndex: 2
-    virtual void write(class IDataOutput&) const {}
-
-    // vIndex: 3
-    virtual class Bedrock::Result<void> load(class IDataInput& dis);
-
-    // vIndex: 4
-    virtual std::string toString() const;
+    virtual void write(::IDataOutput& dos) const /*override*/;
 
     // vIndex: 5
-    virtual ::Tag::Type getId() const { return Tag::End; }
+    virtual ::Tag::Type getId() const /*override*/;
 
-    // vIndex: 6
-    virtual bool equals(class Tag const& rhs) const;
+    // vIndex: 4
+    virtual ::std::string toString() const /*override*/;
 
     // vIndex: 9
-    virtual std::unique_ptr<class Tag> copy() const;
+    virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
+
+    // vIndex: 6
+    virtual bool equals(::Tag const& rhs) const /*override*/;
 
     // vIndex: 10
-    virtual uint64 hash() const { return 0; }
+    virtual uint64 hash() const /*override*/;
 
+    // vIndex: 0
+    virtual ~EndTag() /*override*/ = default;
     // NOLINTEND
 
-    // thunks
 public:
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static void** vftable();
+    MCAPI void $dtor();
+    // NOLINTEND
 
-    MCAPI std::unique_ptr<class Tag> copy$() const;
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI bool equals$(class Tag const& rhs) const;
+    MCAPI void $write(::IDataOutput& dos) const;
 
-    MCAPI ::Tag::Type getId$() const;
+    MCAPI ::Tag::Type $getId() const;
 
-    MCAPI uint64 hash$() const;
+    MCAPI ::std::string $toString() const;
 
-    MCAPI class Bedrock::Result<void> load$(class IDataInput& dis);
+    MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
-    MCAPI std::string toString$() const;
+    MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCAPI void write$(class IDataOutput& dos) const;
+    MCAPI uint64 $hash() const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

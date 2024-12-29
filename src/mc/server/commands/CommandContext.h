@@ -11,9 +11,9 @@ class CommandContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                     mCommand;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
-    ::ll::TypedStorage<4, 4, int>                                mVersion;
+    ::std::string                      mCommand;
+    ::std::unique_ptr<::CommandOrigin> mOrigin;
+    int                                mVersion;
     // NOLINTEND
 
 public:

@@ -5,7 +5,10 @@
 
 #include "mc/certificates/ExtendedCertificate.h"
 #include "mc/certificates/WebToken.h"
+#include "mc/common/ActorUniqueID.h"
 #include "mc/deps/core/utility/BinaryStream.h"
+#include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
+#include "mc/deps/json/Value.h"
 #include "mc/locale/I18n.h"
 #include "mc/locale/Localization.h"
 #include "mc/nbt/CompoundTag.h"
@@ -75,6 +78,7 @@ void Player::disconnect(std::string_view reason) const {
             getNetworkIdentifier(),
             Connection::DisconnectFailReason::Unknown,
             std::string{reason},
+            std::nullopt,
             false
         );
         return true;

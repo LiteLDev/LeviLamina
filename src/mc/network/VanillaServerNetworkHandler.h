@@ -31,9 +31,6 @@ public:
     VanillaServerNetworkHandler(VanillaServerNetworkHandler const&);
     VanillaServerNetworkHandler();
 
-    Bedrock::NotNullNonOwnerPtr<ServerNetworkHandler> mBedrockHandler; // this+0x8
-    ServerInstance&                                   mServer;         // this+0x18
-
 public:
     // virtual functions
     // NOLINTBEGIN

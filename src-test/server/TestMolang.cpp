@@ -10,6 +10,7 @@
 
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandBlockName.h"
 
@@ -53,8 +54,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         {}
     );
     auto parm = RenderParams();
-    logger.info("query.is_levilamina: {}", ExpressionNode("query.is_levilamina").evalAsFloat(parm));
-    logger.info("query.homo_number: {}", ExpressionNode("query.homo_number").evalAsFloat(parm));
+    logger.info(
+        "query.is_levilamina: {}",
+        ExpressionNode("query.is_levilamina", MolangVersion::Latest, {{HashedString{"default"}}}).evalAsFloat(parm)
+    );
+    logger.info(
+        "query.homo_number: {}",
+        ExpressionNode("query.homo_number", MolangVersion::Latest, {{HashedString{"default"}}}).evalAsFloat(parm)
+    );
     origin(ins);
 }
 } // namespace

@@ -2,6 +2,7 @@
 #include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/nbt/NbtIo.h"
 #include "mc/nbt/detail/SnbtErrorCode.h"
+#include "mc/network/serialize/serialize.h"
 #include "mc/util/BigEndianStringByteInput.h"
 #include "mc/util/BigEndianStringByteOutput.h"
 #include "mc/util/VarIntDataInput.h"
@@ -82,13 +83,15 @@ public:
 
 std::string CompoundTag::toNetworkNbt() const {
     BinaryStream stream;
-    stream.writeType(*this);
+    serialize<CompoundTag>::write(*this, stream);
     return stream.getAndReleaseData();
 }
 ll::Expected<CompoundTag> CompoundTag::fromNetworkNbt(std::string const& data) noexcept try {
     auto                      stream = ReadOnlyBinaryStream{data, false};
     ll::Expected<CompoundTag> result;
-    if (auto r = stream.readType(*result); !r) {
+    if (auto r = serialize<CompoundTag>::read(stream); r) {
+        result = std::move(*r);
+    } else {
         result = ll::makeErrorCodeError(r.error().code());
     }
     return result;

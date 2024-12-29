@@ -19,24 +19,76 @@ class NetworkIdentifier;
 class ReadOnlyBinaryStream;
 // clang-format on
 
+class Player;
+class ServerPlayer;
+class Actor;
+class BlockPos;
+struct NetworkIdentifierWithSubId;
+
 class Packet {
+public:
+    [[nodiscard]] constexpr explicit Packet(
+        PacketPriority           priority    = PacketPriority::MediumPriority,
+        NetworkPeer::Reliability reliability = NetworkPeer::Reliability::ReliableOrdered,
+        SubClientId              clientSubId = SubClientId::PrimaryClient,
+        bool                     compress    = true
+    )
+    : mPriority(priority),
+      mReliability(reliability),
+      mClientSubId(clientSubId),
+      mCompressible(compress ? Compressibility::Compressible : Compressibility::Incompressible) {}
+
+    /**
+     * Send the packet to a specific server player.
+     *
+     * @param player The server player to send the packet to.
+     */
+    LLAPI void sendTo(ServerPlayer const& player) const;
+
+    /**
+     * Send the packet to all relevant players in a 2D plane at a position in a given dimension.
+     * @param pos The position to send the packet to.
+     * @param dimId The type of dimension to send the packet in.
+     * @param except exclude this player.
+     */
+    LLAPI void sendTo(BlockPos const& pos, DimensionType dimId, optional_ref<Player const> except = std::nullopt) const;
+
+    /**
+     * Send the packet to all relevant players within a specific actor.
+     *
+     * @param actor The actor to send the packet to.
+     * @param except exclude this player.
+     */
+    LLAPI void sendTo(Actor const& actor, optional_ref<Player const> except = std::nullopt) const;
+
+    /**
+     * Send the packet to a specific client identified by network identifier and sub-client ID.
+     *
+     * @param id The network identifier of the client to send the packet to.
+     * @param clientId The sub-client ID of the client to send the packet to.
+     */
+    LLAPI void sendToClient(NetworkIdentifier const& identifier, ::SubClientId clientId) const;
+
+    LLAPI void sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const;
+
+    /**
+     * Send the packet to all clients connected to the server.
+     */
+    LLAPI void sendToClients() const;
+
+    LLAPI void sendToClients(NetworkIdentifier const& exceptId, ::SubClientId exceptSubid) const;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::PacketPriority>                        mPriority;
-    ::ll::TypedStorage<4, 4, ::NetworkPeer::Reliability>              mReliability;
-    ::ll::TypedStorage<1, 1, ::SubClientId>                           mClientSubId;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsHandled;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mReceiveTimepoint;
-    ::ll::TypedStorage<8, 8, ::IPacketHandlerDispatcher const*>       mHandler;
-    ::ll::TypedStorage<4, 4, ::Compressibility>                       mCompressible;
+    ::PacketPriority                        mPriority;
+    ::NetworkPeer::Reliability              mReliability;
+    ::SubClientId                           mClientSubId;
+    bool                                    mIsHandled;
+    ::std::chrono::steady_clock::time_point mReceiveTimepoint;
+    ::IPacketHandlerDispatcher const*       mHandler;
+    ::Compressibility                       mCompressible;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Packet& operator=(Packet const&);
-    Packet(Packet const&);
-    Packet();
 
 public:
     // virtual functions

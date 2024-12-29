@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
@@ -65,23 +66,27 @@ public:
     };
 
 public:
+    LLNDAPI std::string getTypeName() const;
+    LLNDAPI std::string getDescriptionName() const;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::Item>>                       mItem;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>>        mUserData;
-    ::ll::TypedStorage<8, 8, ::Block const*>                          mBlock;
-    ::ll::TypedStorage<2, 2, short>                                   mAuxValue;
-    ::ll::TypedStorage<1, 1, uchar>                                   mCount;
-    ::ll::TypedStorage<1, 1, bool>                                    mValid_DeprecatedSeeComment;
-    ::ll::TypedStorage<1, 1, bool>                                    mShowPickUp;
-    ::ll::TypedStorage<1, 1, bool>                                    mWasPickedUp;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mPickupTime;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockLegacy const*>>    mCanPlaceOn;
-    ::ll::TypedStorage<8, 8, uint64>                                  mCanPlaceOnHash;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockLegacy const*>>    mCanDestroy;
-    ::ll::TypedStorage<8, 8, uint64>                                  mCanDestroyHash;
-    ::ll::TypedStorage<8, 8, ::Tick>                                  mBlockingTick;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemInstance>>       mChargedItem;
+    ::WeakPtr<::Item>                       mItem;
+    ::std::unique_ptr<::CompoundTag>        mUserData;
+    ::Block const*                          mBlock;
+    short                                   mAuxValue;
+    uchar                                   mCount;
+    bool                                    mValid_DeprecatedSeeComment;
+    bool                                    mShowPickUp;
+    bool                                    mWasPickedUp;
+    ::std::chrono::steady_clock::time_point mPickupTime;
+    ::std::vector<::BlockLegacy const*>     mCanPlaceOn;
+    uint64                                  mCanPlaceOnHash;
+    ::std::vector<::BlockLegacy const*>     mCanDestroy;
+    uint64                                  mCanDestroyHash;
+    ::Tick                                  mBlockingTick;
+    ::std::unique_ptr<::ItemInstance>       mChargedItem;
     // NOLINTEND
 
 public:

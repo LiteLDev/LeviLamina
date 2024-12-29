@@ -24,8 +24,6 @@ public:
     BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&);
     BlockEventDispatcherToken(BlockEventDispatcherToken const&);
 
-    int                         mHandle;     // this+0x0
-    class BlockEventDispatcher* mDispatcher; // this+0x8
 public:
     // member functions
     // NOLINTBEGIN

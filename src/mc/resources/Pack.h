@@ -41,13 +41,6 @@ public:
     Pack(Pack const&);
     Pack();
 
-    std::unique_ptr<class PackManifest>          mManifest;             // this+0x18
-    std::unique_ptr<class PackAccessStrategy>    mAccessStrategy;       // this+0x20
-    std::unique_ptr<class SubpackInfoCollection> mSubpackInfoStack;     // this+0x28
-    std::unique_ptr<class PackMetadata>          mMetadata;             // this+0x30
-    std::map<void*, std::function<void(Pack&)>>  mPackUpdatedCallbacks; // this+0x38
-    std::map<void*, std::function<void(Pack&)>>  mPackDeletedCallbacks; // this+0x48
-
 public:
     // virtual functions
     // NOLINTBEGIN

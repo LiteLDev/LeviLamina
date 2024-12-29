@@ -1,26 +1,23 @@
 #include "ll/core/form/FormHandler.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/form/CustomForm.h"
+#include "ll/api/form/FormIdManager.h"
 #include "ll/api/form/SimpleForm.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
+
 #include "mc/deps/json/Value.h"
+#include "mc/deps/json/ValueConstIterator.h"
 #include "mc/network/PacketHandlerDispatcherInstance.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/ModalFormResponsePacket.h"
 #include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
+#include "mc/server/ServerPlayer.h"
 
-#include "ll/api/form/FormIdManager.h"
-#include "mc/deps/json/Value.h"
-#include "mc/deps/json/ValueConstIterator.h"
+#include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
-#include <exception>
-#include <iostream>
-#include <nlohmann/json.hpp>
-#include <optional>
-#include <utility>
 
 namespace ll::form::handler {
 
@@ -158,11 +155,12 @@ LL_TYPE_INSTANCE_HOOK(
     NetEventCallback&        callback,
     std::shared_ptr<Packet>& packet
 ) {
-    if (auto player = ((ServerNetworkHandler&)callback).getServerPlayer(source, SubClientId::PrimaryClient); player) {
+    if (auto player = static_cast<ServerNetworkHandler&>(callback)._getServerPlayer(source, SubClientId::PrimaryClient);
+        player) {
         auto& modalPacket = (ModalFormResponsePacket&)*packet;
 
         if (ll::form::handler::handleFormPacket(
-                player,
+                *player,
                 modalPacket.mFormId,
                 modalPacket.mJSONResponse,
                 modalPacket.mFormCancelReason

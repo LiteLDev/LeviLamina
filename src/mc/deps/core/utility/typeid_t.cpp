@@ -33,6 +33,9 @@ std::atomic_ushort& Bedrock::typeid_t<CommandRegistry>::_getCounter() {
         return *id;                                                                                                    \
     }
 
+LL_TYPEID_STORAGE_SYMBOL(CommandItem, "VCommandItem@@");
+LL_TYPEID_STORAGE_SYMBOL(MobEffect const*, "PEBVMobEffect@@");
+LL_TYPEID_STORAGE_SYMBOL(DimensionType, "V?$AutomaticID@VDimension@@");
 LL_TYPEID_STORAGE_SYMBOL(CommandIntegerRange, "VCommandIntegerRange@@");
 LL_TYPEID_STORAGE_SYMBOL(ActorDefinitionIdentifier const*, "PEBUActorDefinitionIdentifier@@");
 

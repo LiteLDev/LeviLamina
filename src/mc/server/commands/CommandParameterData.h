@@ -24,35 +24,44 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::CommandRegistry>> mTypeIndex;
-    ::ll::TypedStorage<
-        8,
-        8,
-        bool (::CommandRegistry::*)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const>
-                                                         mParse;
-    ::ll::TypedStorage<8, 32, ::std::string>             mName;
-    ::ll::TypedStorage<8, 8, char const*>                mEnumNameOrPostfix;
-    ::ll::TypedStorage<4, 4, int>                        mEnumOrPostfixSymbol;
-    ::ll::TypedStorage<8, 8, char const*>                mChainedSubcommand;
-    ::ll::TypedStorage<4, 4, int>                        mChainedSubcommandSymbol;
-    ::ll::TypedStorage<4, 4, ::CommandParameterDataType> mParamType;
-    ::ll::TypedStorage<4, 4, int>                        mOffset;
-    ::ll::TypedStorage<4, 4, int>                        mSetOffset;
-    ::ll::TypedStorage<1, 1, bool>                       mIsOptional;
-    ::ll::TypedStorage<1, 1, ::CommandParameterOption>   mOptions;
+    ::Bedrock::typeid_t<::CommandRegistry> mTypeIndex;
+    ParseFunction                          mParse;
+    ::std::string                          mName;
+    char const*                            mEnumNameOrPostfix;
+    CommandRegistry::Symbol                mEnumOrPostfixSymbol;
+    char const*                            mChainedSubcommand;
+    CommandRegistry::Symbol                mChainedSubcommandSymbol;
+    ::CommandParameterDataType             mParamType;
+    int                                    mOffset;
+    int                                    mSetOffset;
+    bool                                   mIsOptional;
+    ::CommandParameterOption               mOptions;
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandParameterData& operator=(CommandParameterData const&);
-    CommandParameterData();
+    CommandParameterData() = default;
+
+    LLNDAPI CommandParameterData(
+        Bedrock::typeid_t<CommandRegistry> typeIndex,
+        ParseFunction                      parser,
+        std::string                        name,
+        ::CommandParameterDataType         type,
+        char const*                        enumNameOrPostfix,
+        char const*                        subChain,
+        int                                offset,
+        bool                               optional,
+        int                                flagOffset,
+        CommandParameterOption             options
+    );
+
+    LLNDAPI bool operator==(CommandParameterData const& other) const;
+
+    CommandParameterData(CommandParameterData const&)            = default;
+    CommandParameterData& operator=(CommandParameterData const&) = default;
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandParameterData(::CommandParameterData const& p);
-
     MCAPI CommandParameterData(
         ::Bedrock::typeid_t<::CommandRegistry> typeIndex,
         bool (CommandRegistry::*

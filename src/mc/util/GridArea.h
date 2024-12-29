@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/utility/buffer_span.h"
-#include "mc/deps/core/utility/buffer_span_mut.h"
 #include "mc/util/Bounds.h"
 #include "mc/world/Pos.h"
 

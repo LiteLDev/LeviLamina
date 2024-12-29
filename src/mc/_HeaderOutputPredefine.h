@@ -4,6 +4,7 @@
 
 #pragma warning(disable : 4099) // for MOJANG : type name first seen using 'class' now seen using 'struct'
 #pragma warning(disable : 4201) // for MOJANG : nonstandard extension used : nameless struct/union
+#pragma warning(disable : 4373) // for MOJANG : override virtual function with different const/volatile params
 
 #include "ll/api/base/Macro.h"
 

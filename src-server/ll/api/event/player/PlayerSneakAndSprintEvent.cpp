@@ -12,25 +12,25 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerActionEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::handle$,
+    &ServerNetworkHandler::$handle,
     void,
     NetworkIdentifier const&  id,
     PlayerActionPacket const& packet
 ) {
     switch (packet.mAction) {
     case PlayerActionType::StartSprinting:
-        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            EventBus::getInstance().publish(PlayerSprintingEvent(player));
+        if (auto player = this->_getServerPlayer(id, packet.mClientSubId); player) {
+            EventBus::getInstance().publish(PlayerSprintingEvent(*player));
             break;
         }
     case PlayerActionType::StopSprinting:
-        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            EventBus::getInstance().publish(PlayerSprintedEvent(player));
+        if (auto player = this->_getServerPlayer(id, packet.mClientSubId); player) {
+            EventBus::getInstance().publish(PlayerSprintedEvent(*player));
             break;
         }
     case PlayerActionType::StartSneaking:
-        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            auto ev = PlayerSneakingEvent(player);
+        if (auto player = this->_getServerPlayer(id, packet.mClientSubId); player) {
+            auto ev = PlayerSneakingEvent(*player);
             EventBus::getInstance().publish(ev);
             if (ev.isCancelled()) {
                 return;
@@ -38,8 +38,8 @@ LL_TYPE_INSTANCE_HOOK(
             break;
         }
     case PlayerActionType::StopSneaking:
-        if (auto player = this->getServerPlayer(id, packet.mClientSubId); player) {
-            auto ev = PlayerSneakedEvent(player);
+        if (auto player = this->_getServerPlayer(id, packet.mClientSubId); player) {
+            auto ev = PlayerSneakedEvent(*player);
             EventBus::getInstance().publish(ev);
             if (ev.isCancelled()) {
                 return;

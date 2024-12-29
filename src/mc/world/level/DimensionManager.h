@@ -38,13 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    std::unordered_map<DimensionType, OwnerPtr<Dimension>> mDimensions;
-    Bedrock::NotNullNonOwnerPtr<IDimensionFactory>         mDimensionFactory;
-    // Bedrock::PubSub::Publisher<void (Dimension &),Bedrock::PubSub::ThreadModel::MultiThreaded>
-    // mOnNewDimensionCreatedPublisher;
-    char                                    unk[128];
-    std::optional<DimensionDefinitionGroup> mDimensionDefinitions;
-
     // prevent constructor by default
     DimensionManager& operator=(DimensionManager const&);
     DimensionManager(DimensionManager const&);

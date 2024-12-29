@@ -94,7 +94,7 @@ void registerTpdimCommand() {
                 actor->teleport(pos, param.dimension);
             }
             output.success("Teleported {0} to {1} {2}"_tr(
-                CommandOutputParameter{victim}.str,
+                CommandOutputParameter{victim}.mString,
                 VanillaDimensions::toString(param.dimension),
                 pos.toString()
             ));

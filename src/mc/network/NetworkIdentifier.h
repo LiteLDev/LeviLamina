@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/raknet/RakNetGUID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,18 +20,16 @@ public:
     };
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                    mNetherNetIdValue;
-    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     mGuid;
-    ::ll::TypedStorage<8, 128, ::sockaddr_storage>      mSock;
-    ::ll::TypedStorage<4, 4, ::NetworkIdentifier::Type> mType;
-    // NOLINTEND
+    LLNDAPI std::string getIPAndPort() const;
 
 public:
-    // prevent constructor by default
-    NetworkIdentifier& operator=(NetworkIdentifier const&);
-    NetworkIdentifier(NetworkIdentifier const&);
+    // member variables
+    // NOLINTBEGIN
+    uint64                       mNetherNetIdValue;
+    ::RakNet::RakNetGUID         mGuid;
+    ::ll::UntypedStorage<8, 128> mSock;
+    ::NetworkIdentifier::Type    mType;
+    // NOLINTEND
 
 public:
     // member functions

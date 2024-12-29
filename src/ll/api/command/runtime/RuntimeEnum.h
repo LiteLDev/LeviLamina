@@ -28,9 +28,9 @@ struct ParamTraits<RuntimeEnum> : ParamTraitsBase<RuntimeEnum> {
 };
 template <>
 struct ParamTraits<RuntimeSoftEnum> : ParamTraitsBase<RuntimeSoftEnum> {
-    static constexpr CommandParameterDataType dataType() { return CommandParameterDataType::SoftEnum; }
-    static constexpr CommandParameterOption   options() { return CommandParameterOption::EnumAutocompleteExpansion; }
-    static inline CommandRegistry::ParseFn    parseFn() { return &CommandRegistry::parse<std::string>; }
-    static Bedrock::typeid_t<CommandRegistry> typeId() { return Bedrock::type_id<CommandRegistry, std::string>(); }
+    static constexpr CommandParameterDataType    dataType() { return CommandParameterDataType::SoftEnum; }
+    static constexpr CommandParameterOption      options() { return CommandParameterOption::EnumAutocompleteExpansion; }
+    static inline CommandRegistry::ParseFunction parseFn() { return &CommandRegistry::parse<std::string>; }
+    static Bedrock::typeid_t<CommandRegistry>    typeId() { return Bedrock::type_id<CommandRegistry, std::string>(); }
 };
 } // namespace ll::command

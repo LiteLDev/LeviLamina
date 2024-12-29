@@ -1,5 +1,6 @@
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/Bedrock.h"
+#include "mc/common/ActorRuntimeID.h"
 #include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/network/MinecraftPackets.h"
 #include "mc/network/packet/SetActorDataPacket.h"

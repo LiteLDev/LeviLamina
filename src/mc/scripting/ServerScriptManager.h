@@ -101,11 +101,6 @@ public:
     // NOLINTEND
 
 public:
-    uchar                                     filler[640];
-    std::unique_ptr<ScriptFormPromiseTracker> mFormPromiseTracker;
-    uchar                                     filler1[96];
-
-public:
     // prevent constructor by default
     ServerScriptManager& operator=(ServerScriptManager const&);
     ServerScriptManager(ServerScriptManager const&);

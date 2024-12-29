@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/json/Value.h"
 
 // auto generated inclusion list
 #include "mc/deps/json/Value.h"
@@ -25,6 +24,14 @@ public:
     using iterator_category = ::std::bidirectional_iterator_tag;
 
 public:
+    ValueIteratorBase& operator++() {
+        increment();
+        return *this;
+    }
+
+    Json::Value& operator*() const { return deref(); }
+
+public:
     // member variables
     // NOLINTBEGIN
     union {
@@ -39,27 +46,6 @@ public:
     };
     ::ll::TypedStorage<1, 1, bool> isArray_;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ValueIteratorBase& operator=(ValueIteratorBase const&);
-    ValueIteratorBase();
-
-    using iterator_category = std::forward_iterator_tag;
-
-    Value::ObjectValues::iterator current_;
-    bool                          isNull_;
-
-    bool operator==(ValueIteratorBase const& other) const { return isEqual(other); }
-    bool operator!=(ValueIteratorBase const& other) const { return !isEqual(other); }
-
-
-    ValueIteratorBase& operator++() {
-        increment();
-        return *this;
-    }
-
-    Json::Value& operator*() const { return deref(); }
 
 public:
     // member functions

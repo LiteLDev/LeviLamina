@@ -2,5 +2,5 @@
 
 void Mob::refreshInventory() {
     sendInventory(true);
-    sendArmor(std::bitset<4>{"1111"});
+    sendArmor(std::bitset<5>{"11111"});
 }

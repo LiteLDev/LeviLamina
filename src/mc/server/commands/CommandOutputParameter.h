@@ -22,14 +22,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mString;
-    ::ll::TypedStorage<4, 4, int>            mCount;
+    ::std::string mString;
+    int           mCount;
     // NOLINTEND
 
-public:
-    // prevent constructor by default
-    CommandOutputParameter& operator=(CommandOutputParameter const&);
-    CommandOutputParameter();
+    operator std::string const&() const { return mString; }
 
 public:
     // member functions

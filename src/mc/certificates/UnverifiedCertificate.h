@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/certificates/WebToken.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,8 +14,8 @@ class UnverifiedCertificate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::WebToken const>                         mRawToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mParentUnverifiedCertificate;
+    ::WebToken const                           mRawToken;
+    ::std::unique_ptr<::UnverifiedCertificate> mParentUnverifiedCertificate;
     // NOLINTEND
 
 public:

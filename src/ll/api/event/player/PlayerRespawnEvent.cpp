@@ -4,7 +4,7 @@
 
 namespace ll::event::inline player {
 
-LL_TYPE_INSTANCE_HOOK(PlayerRespawnEventHook, HookPriority::Normal, Player, &Player::respawn$, void) {
+LL_TYPE_INSTANCE_HOOK(PlayerRespawnEventHook, HookPriority::Normal, Player, &Player::$respawn, void) {
     // If the player returns from end or just joins server, his health will > 0
     if (this->getHealth() <= 0) {
         EventBus::getInstance().publish(PlayerRespawnEvent(*this));

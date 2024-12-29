@@ -362,6 +362,12 @@ public:
     };
 
 public:
+    LLNDAPI std::string const& getTypeName() const;
+
+    LLNDAPI static optional_ref<BlockLegacy>       tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<BlockLegacy const> tryGetFromRegistry(uint legacyBlockID);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                 mDescriptionId;

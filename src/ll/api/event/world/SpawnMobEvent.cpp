@@ -2,7 +2,7 @@
 #include "ll/api/event/Emitter.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/world/level/Spawner.h"
+#include "mc/world/level/BedrockSpawner.h"
 
 #include "mc/nbt/CompoundTag.h"
 
@@ -47,8 +47,8 @@ optional_ref<Mob> SpawnedMobEvent::mob() const { return mMob; }
 LL_TYPE_INSTANCE_HOOK(
     SpawningMobEventHook,
     HookPriority::Normal,
-    Spawner,
-    &Spawner::spawnMob,
+    BedrockSpawner,
+    &BedrockSpawner::$spawnMob,
     Mob*,
     BlockSource&                     blockSource,
     ActorDefinitionIdentifier const& id,
@@ -69,8 +69,8 @@ LL_TYPE_INSTANCE_HOOK(
 LL_TYPE_INSTANCE_HOOK(
     SpawnedMobEventHook,
     HookPriority::Low,
-    Spawner,
-    &Spawner::spawnMob,
+    BedrockSpawner,
+    &BedrockSpawner::$spawnMob,
     Mob*,
     BlockSource&                     blockSource,
     ActorDefinitionIdentifier const& id,

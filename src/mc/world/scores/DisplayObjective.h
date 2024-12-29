@@ -24,10 +24,6 @@ public:
 
 public:
     // prevent constructor by default
-    Objective const*   mObjective; // this+0x0
-    ObjectiveSortOrder mSortOrder; // this+0x8
-public:
-    // prevent constructor by default
     DisplayObjective() = delete;
 
 public:

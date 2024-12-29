@@ -120,13 +120,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::RakNet::RakPeerInterface&>                                          mRakPeer;
-        ::ll::TypedStorage<8, 160, ::NetworkIdentifier>                                                mId;
-        ::ll::TypedStorage<8, 32, ::std::string>                                                       mSendBuffer;
-        ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::RakNetNetworkPeer::ReadBufferData>> mReadBufferDatas;
-        ::ll::TypedStorage<4, 4, int> mApproximateMaxBps;
-        ::ll::TypedStorage<4, 4, int> mLastPing;
-        ::ll::TypedStorage<4, 4, int> mAveragePing;
+        ::RakNet::RakPeerInterface&   mRakPeer;
+        ::NetworkIdentifier           mId;
+        ::std::string                 mSendBuffer;
+        ::std::vector<ReadBufferData> mReadBufferDatas;
+        int                           mApproximateMaxBps;
+        int                           mLastPing;
+        int                           mAveragePing;
         // NOLINTEND
 
     public:
@@ -134,14 +134,6 @@ public:
         RakNetNetworkPeer& operator=(RakNetNetworkPeer const&);
         RakNetNetworkPeer(RakNetNetworkPeer const&);
         RakNetNetworkPeer();
-
-        RakNet::RakPeerInterface&   mRakPeer;           // this+0x18
-        NetworkIdentifier           mId;                // this+0x20
-        std::string                 mSendBuffer;        // this+0xC0
-        std::vector<ReadBufferData> mReadBufferDatas;   // this+0xE0
-        int                         mApproximateMaxBps; // this+0xF8
-        int                         mLastPing;          // this+0xFC
-        int                         mAveragePing;       // this+0x100
 
     public:
         // virtual functions

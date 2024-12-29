@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/server/commands/CommandPosition.h"
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/EquipmentSlot.h"
@@ -30,37 +32,30 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                                             mVersion;
-    ::ll::TypedStorage<4, 4, ::CommandSelectionType>                                          mType;
-    ::ll::TypedStorage<4, 4, ::CommandSelectionOrder>                                         mOrder;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>>               mNameFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::ActorDefinitionIdentifier>>> mTypeFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::HashedString>>>              mFamilyFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>>               mTagFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>>>
-                                                 mFilterChain;
-    ::ll::TypedStorage<4, 16, ::CommandPosition> mPosition;
-    ::ll::TypedStorage<4, 12, ::Vec3>            mBoxDeltas;
-    ::ll::TypedStorage<4, 4, float>              mRadiusMinSqr;
-    ::ll::TypedStorage<4, 4, float>              mRadiusMaxSqr;
-    ::ll::TypedStorage<8, 8, uint64>             mCount;
-    ::ll::TypedStorage<1, 1, bool>               mIncludeDeadPlayers;
-    ::ll::TypedStorage<1, 1, bool>               mIsPositionBound;
-    ::ll::TypedStorage<1, 1, bool>               mDistanceFiltered;
-    ::ll::TypedStorage<1, 1, bool>               mPositionFiltered;
-    ::ll::TypedStorage<1, 1, bool>               mCountFiltered;
-    ::ll::TypedStorage<1, 1, bool>               mHaveDeltas;
-    ::ll::TypedStorage<1, 1, bool>               mForcePlayer;
-    ::ll::TypedStorage<1, 1, bool>               mExcludeAgents;
-    ::ll::TypedStorage<1, 1, bool>               mIsExplicitIdSelector;
-    ::ll::TypedStorage<1, 1, bool>               mForceDimensionFiltering;
+    int                                                                          mVersion;
+    ::CommandSelectionType                                                       mType;
+    ::CommandSelectionOrder                                                      mOrder;
+    ::std::vector<::InvertableFilter<::std::string>>                             mNameFilters;
+    ::std::vector<::InvertableFilter<::ActorDefinitionIdentifier>>               mTypeFilters;
+    ::std::vector<::InvertableFilter<::HashedString>>                            mFamilyFilters;
+    ::std::vector<::InvertableFilter<::std::string>>                             mTagFilters;
+    ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>> mFilterChain;
+    ::CommandPosition                                                            mPosition;
+    ::Vec3                                                                       mBoxDeltas;
+    float                                                                        mRadiusMinSqr;
+    float                                                                        mRadiusMaxSqr;
+    uint64                                                                       mCount;
+    bool                                                                         mIncludeDeadPlayers;
+    bool                                                                         mIsPositionBound;
+    bool                                                                         mDistanceFiltered;
+    bool                                                                         mPositionFiltered;
+    bool                                                                         mCountFiltered;
+    bool                                                                         mHaveDeltas;
+    bool                                                                         mForcePlayer;
+    bool                                                                         mExcludeAgents;
+    bool                                                                         mIsExplicitIdSelector;
+    bool                                                                         mForceDimensionFiltering;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandSelectorBase& operator=(CommandSelectorBase const&);
-    CommandSelectorBase(CommandSelectorBase const&);
-    CommandSelectorBase();
 
 public:
     // member functions

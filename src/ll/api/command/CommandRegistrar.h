@@ -61,7 +61,7 @@ public:
         std::string const&                          name,
         std::vector<std::pair<std::string, uint64>> values,
         Bedrock::typeid_t<CommandRegistry>          type,
-        CommandRegistry::ParseFn                    parser
+        CommandRegistry::ParseFunction              parser
     );
     LLAPI bool addEnumValues(
         std::string const&                          name,

@@ -51,6 +51,9 @@ namespace mce { class UUID; }
 
 class Mob : public ::Actor {
 public:
+    LLAPI void refreshInventory();
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>                        mHurtDuration;

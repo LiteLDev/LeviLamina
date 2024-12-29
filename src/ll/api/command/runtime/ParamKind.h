@@ -7,6 +7,7 @@
 
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/typeid_t.h"
+#include "mc/deps/json/Value.h"
 #include "mc/server/commands/BlockStateCommandParam.h"
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandBlockName.h"

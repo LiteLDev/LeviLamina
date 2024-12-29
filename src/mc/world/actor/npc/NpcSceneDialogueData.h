@@ -28,9 +28,6 @@ public:
     NpcSceneDialogueData(NpcSceneDialogueData const&);
     NpcSceneDialogueData();
 
-    WeakEntityRef mOwner;     // this+0x8
-    std::string   mSceneName; // this+0x20
-
 public:
     // virtual functions
     // NOLINTBEGIN

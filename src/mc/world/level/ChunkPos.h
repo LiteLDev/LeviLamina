@@ -8,24 +8,13 @@ class BlockPos;
 class Vec3;
 // clang-format on
 
-class ChunkPos {
+class ChunkPos : public ll::math::intN2<ChunkPos> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    union {
-        ::ll::TypedStorage<8, 8, int64> packed;
-        struct {
-            ::ll::TypedStorage<4, 4, int> x;
-            ::ll::TypedStorage<4, 4, int> z;
-        };
-    };
-    // NOLINTEND
+    template <std::floating_point T0, std::floating_point T1>
+    [[nodiscard]] constexpr ChunkPos(T0 x, T1 z)
+    : intN2((static_cast<int>(std::floor(x)) >> 4), (static_cast<int>(std::floor(z)) >> 4)) {}
 
-public:
-    // prevent constructor by default
-    ChunkPos& operator=(ChunkPos const&);
-    ChunkPos(ChunkPos const&);
-    ChunkPos();
+    using intN2::intN2;
 
 public:
     // member functions

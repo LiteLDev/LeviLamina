@@ -29,11 +29,6 @@ public:
     CompressedNetworkPeer(CompressedNetworkPeer const&);
     CompressedNetworkPeer();
 
-    std::string           mSendBuffer;         // this+0x18
-    std::string           mReceiveBuffer;      // this+0x38
-    bool                  mCompressionEnabled; // this+0x58
-    NetworkSettingOptions mNetworkSettings;    // this+0x5C
-
 public:
     // virtual functions
     // NOLINTBEGIN

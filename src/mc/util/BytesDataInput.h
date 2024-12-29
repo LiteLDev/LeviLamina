@@ -8,12 +8,6 @@
 
 class BytesDataInput : public ::IDataInput {
 public:
-    // prevent constructor by default
-    BytesDataInput& operator=(BytesDataInput const&);
-    BytesDataInput(BytesDataInput const&);
-    BytesDataInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -44,7 +38,7 @@ public:
     virtual ::Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
 
     // vIndex: 0
-    virtual ~BytesDataInput() /*override*/;
+    virtual ~BytesDataInput() /*override*/ = default;
     // NOLINTEND
 
 public:

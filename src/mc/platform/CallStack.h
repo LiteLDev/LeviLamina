@@ -22,31 +22,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64>              mFilenameHash;
-        ::ll::TypedStorage<8, 16, ::std::string_view> mFilename;
-        ::ll::TypedStorage<4, 4, uint>                mLine;
+        uint64             mFilenameHash;
+        ::std::string_view mFilename;
+        uint               mLine;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Frame& operator=(Frame const&);
-        Frame(Frame const&);
-        Frame();
     };
 
     struct Context {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                       mValue;
-        ::ll::TypedStorage<4, 8, ::std::optional<::Bedrock::LogLevel>> mLogLevel;
-        ::ll::TypedStorage<4, 8, ::std::optional<::LogAreaID>>         mLogArea;
+        ::std::string                        mValue;
+        ::std::optional<::Bedrock::LogLevel> mLogLevel;
+        ::std::optional<::LogAreaID>         mLogArea;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Context& operator=(Context const&);
-        Context();
 
     public:
         // member functions
@@ -82,15 +71,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::Bedrock::CallStack::Frame>                    mFrame;
-        ::ll::TypedStorage<8, 56, ::std::optional<::Bedrock::CallStack::Context>> mContext;
+        ::Bedrock::CallStack::Frame                    mFrame;
+        ::std::optional<::Bedrock::CallStack::Context> mContext;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FrameWithContext& operator=(FrameWithContext const&);
-        FrameWithContext(FrameWithContext const&);
-        FrameWithContext();
 
     public:
         // member functions
@@ -118,14 +101,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::CallStack::FrameWithContext>> mFrames;
+    ::std::vector<::Bedrock::CallStack::FrameWithContext> mFrames;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CallStack& operator=(CallStack const&);
-    CallStack(CallStack const&);
-    CallStack();
 
 public:
     // member functions

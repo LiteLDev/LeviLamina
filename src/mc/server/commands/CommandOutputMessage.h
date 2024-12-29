@@ -9,15 +9,10 @@ class CommandOutputMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CommandOutputMessageType>    mType;
-    ::ll::TypedStorage<8, 32, ::std::string>                mMessageId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mParams;
+    ::CommandOutputMessageType   mType;
+    ::std::string                mMessageId;
+    ::std::vector<::std::string> mParams;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandOutputMessage& operator=(CommandOutputMessage const&);
-    CommandOutputMessage();
 
 public:
     // member functions
@@ -29,7 +24,7 @@ public:
     MCAPI CommandOutputMessage(
         ::CommandOutputMessageType     type,
         ::std::string const&           msgId,
-        ::std::vector<::std::string>&& params
+        ::std::vector<::std::string>&& params = {}
     );
 
     MCAPI ::std::string const& getMessageId() const;

@@ -7,10 +7,7 @@
 
 class BigEndianStringByteOutput : public ::StringByteOutput {
 public:
-    // prevent constructor by default
-    BigEndianStringByteOutput& operator=(BigEndianStringByteOutput const&);
-    BigEndianStringByteOutput(BigEndianStringByteOutput const&);
-    BigEndianStringByteOutput();
+    using StringByteOutput::StringByteOutput;
 
 public:
     // virtual functions

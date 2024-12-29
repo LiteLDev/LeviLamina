@@ -5,6 +5,7 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
+#include "mc/world/phys/HitResult.h"
 
 optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     std::string const&         name,
@@ -41,5 +42,5 @@ bool SimulatedPlayer::simulateDestroyLookAt(float handLength) {
     if (hitResult.mType != HitResultType::Tile) {
         return false;
     }
-    return simulateDestroyBlock(hitResult.mBlockPos, (ScriptModuleMinecraft::ScriptFacing)hitResult.mFacing);
+    return simulateDestroyBlock(hitResult.mBlock, (ScriptModuleMinecraft::ScriptFacing)hitResult.mFacing);
 }

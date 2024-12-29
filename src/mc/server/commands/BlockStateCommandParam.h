@@ -1,6 +1,8 @@
 #pragma once
 
+#include "ll/api/Expected.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/Block.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,18 +25,17 @@ public:
     };
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                 mBlockState;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mValue;
-    ::ll::TypedStorage<4, 4, ::BlockStateCommandParam::Type> mType;
-    // NOLINTEND
+    LLNDAPI ll::Expected<Block::BlockStateValueType> toStateValue() const;
+
+    LLNDAPI static ll::Expected<Block::BlockStatesType> toStateMap(std::vector<BlockStateCommandParam> const&);
 
 public:
-    // prevent constructor by default
-    BlockStateCommandParam& operator=(BlockStateCommandParam const&);
-    BlockStateCommandParam(BlockStateCommandParam const&);
-    BlockStateCommandParam();
+    // member variables
+    // NOLINTBEGIN
+    ::std::string                  mBlockState;
+    ::std::string                  mValue;
+    ::BlockStateCommandParam::Type mType;
+    // NOLINTEND
 
 public:
     // member functions

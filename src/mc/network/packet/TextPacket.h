@@ -19,16 +19,24 @@ namespace PlayerCapabilities { struct ISharedController; }
 
 class TextPacket : public ::Packet {
 public:
+    [[nodiscard]] inline static TextPacket createRawMessage(std::string_view msg) {
+        auto res  = TextPacket{};
+        res.mType = TextPacketType::Raw;
+        res.mMessage.assign(msg);
+        return res;
+    }
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::TextPacketType>                mType;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mAuthor;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mMessage;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredMessage;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   params;
-    ::ll::TypedStorage<1, 1, bool>                            mLocalize;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mXuid;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mPlatformId;
+    ::TextPacketType               mType;
+    ::std::string                  mAuthor;
+    ::std::string                  mMessage;
+    ::std::optional<::std::string> mFilteredMessage;
+    ::std::vector<::std::string>   params;
+    bool                           mLocalize;
+    ::std::string                  mXuid;
+    ::std::string                  mPlatformId;
     // NOLINTEND
 
 public:

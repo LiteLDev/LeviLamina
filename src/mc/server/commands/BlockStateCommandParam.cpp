@@ -1,5 +1,6 @@
 #include "mc/server/commands/BlockStateCommandParam.h"
 #include "ll/api/utils/StringUtils.h"
+#include "mc/world/level/block/Block.h"
 
 ll::Expected<Block::BlockStateValueType> BlockStateCommandParam::toStateValue() const {
     switch (mType) {

@@ -10,10 +10,6 @@ struct Dependencies;
 // clang-format on
 
 struct SystemInfo {
-    std::string  mName;
-    Dependencies mDependencies;
-    void*        mGenerateDetailedInfo;
-
 public:
     // SystemInfo inner types define
     using GenerateComponentInfoVectorFunction = ::std::vector<::ComponentInfo> (*)();
@@ -21,8 +17,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                       mName;
-    ::ll::TypedStorage<8, 152, ::Dependencies>                     mDependencies;
+    ::std::string                                                  mName;
+    ::Dependencies                                                 mDependencies;
     ::ll::TypedStorage<8, 8, ::std::vector<::ComponentInfo> (*)()> mGenerateDetailedInfo;
     // NOLINTEND
 

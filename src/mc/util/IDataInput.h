@@ -7,16 +7,10 @@
 
 class IDataInput {
 public:
-    // prevent constructor by default
-    IDataInput& operator=(IDataInput const&);
-    IDataInput(IDataInput const&);
-    IDataInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDataInput();
+    virtual ~IDataInput() = default;
 
     // vIndex: 1
     virtual ::Bedrock::Result<::std::string> readStringResult() = 0;

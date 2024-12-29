@@ -7,11 +7,12 @@
 #include "ll/api/base/Meta.h"
 
 template <typename T>
-    requires(!std::is_reference_v<T>)
 class optional_ref {
 private:
     T* mPtr = nullptr;
     // NOLINTBEGIN
+    static_assert(!std::is_reference_v<T>);
+
 public:
     [[nodiscard]] constexpr optional_ref() noexcept = default;
 

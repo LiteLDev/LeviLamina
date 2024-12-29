@@ -23,7 +23,7 @@ LL_TYPE_INSTANCE_HOOK(
     bool,
     ItemStack& item
 ) {
-    auto ev = PlayerUseItemEvent(this->getPlayer(), item);
+    auto ev = PlayerUseItemEvent(this->mPlayer, item);
     EventBus::getInstance().publish(ev);
     if (ev.isCancelled()) {
         return false;

@@ -4,62 +4,136 @@
 
 class HashedString {
 public:
+    [[nodiscard]] static constexpr uint64 computeHash(std::string_view str) {
+        if (str.empty()) return 0;
+        uint64 hash = 0xCBF29CE484222325ull;
+        for (char s : str) {
+            hash = s ^ (0x100000001B3ull * hash);
+        }
+        return hash;
+    }
+
+    // Constructors
+    [[nodiscard]] constexpr HashedString(std::nullptr_t = nullptr) noexcept : mStrHash(0), mLastMatch(nullptr) {}
+
+    [[nodiscard]] constexpr HashedString(uint64 h, char const* mStr) noexcept
+    : mStrHash(h),
+      mStr(mStr),
+      mLastMatch(nullptr) {}
+
+    [[nodiscard]] constexpr HashedString(std::string_view mStr) noexcept
+    : mStrHash(computeHash(mStr)),
+      mStr(mStr),
+      mLastMatch(nullptr) {}
+
+    [[nodiscard]] constexpr HashedString(std::string&& s) noexcept
+    : mStrHash(computeHash(s)),
+      mStr(std::move(s)),
+      mLastMatch(nullptr) {}
+    [[nodiscard]] constexpr HashedString(char const* mStr) noexcept : HashedString(std::string{mStr}) {}
+
+    [[nodiscard]] constexpr HashedString(HashedString const& other) noexcept
+    : mStrHash(other.mStrHash),
+      mStr(other.mStr),
+      mLastMatch(nullptr) {}
+
+    [[nodiscard]] constexpr HashedString(HashedString&& other) noexcept
+    : mStrHash(other.mStrHash),
+      mStr(std::move(other.mStr)),
+      mLastMatch(other.mLastMatch) {
+        other.mStrHash   = 0;
+        other.mLastMatch = nullptr;
+    }
+
+    [[nodiscard]] constexpr HashedString& operator=(HashedString const& other) noexcept {
+        if (this == &other) {
+            return *this;
+        }
+        mStrHash   = other.mStrHash;
+        mStr       = other.mStr;
+        mLastMatch = nullptr;
+        return *this;
+    }
+
+    [[nodiscard]] constexpr HashedString& operator=(HashedString&& other) noexcept {
+        if (this == &other) {
+            return *this;
+        }
+        mStrHash         = other.mStrHash;
+        mStr             = std::move(other.mStr);
+        mLastMatch       = other.mLastMatch;
+        other.mStrHash   = 0;
+        other.mLastMatch = nullptr;
+        return *this;
+    }
+
+    // Accessors
+    [[nodiscard]] constexpr char const* c_str() const noexcept { return mStr.c_str(); }
+
+    [[nodiscard]] constexpr std::string const& getString() const noexcept { return mStr; }
+
+    [[nodiscard]] constexpr uint64 getHash() const noexcept { return mStrHash; }
+
+    [[nodiscard]] constexpr bool empty() const noexcept { return mStr.empty(); }
+
+    // Mutators
+    constexpr void clear() noexcept {
+        mStrHash = 0;
+        mStr.clear();
+        mLastMatch = nullptr;
+    }
+
+    // Operators
+    template <typename StringType>
+    [[nodiscard]] constexpr bool operator==(StringType const& rhs) const noexcept {
+        return mStr == rhs;
+    }
+
+    [[nodiscard]] constexpr bool operator==(HashedString const& other) const noexcept {
+        if (mStrHash == other.mStrHash) {
+            if (mLastMatch == std::addressof(other) && other.mLastMatch == this) {
+                return true;
+            }
+            if (mStr == other.mStr) {
+                mLastMatch       = std::addressof(other);
+                other.mLastMatch = this;
+                return true;
+            }
+        }
+        mLastMatch = nullptr;
+        return false;
+    }
+
+    template <typename StringType>
+    [[nodiscard]] constexpr bool operator!=(StringType const& rhs) const noexcept {
+        return mStr != rhs;
+    }
+
+    [[nodiscard]] constexpr bool operator!=(HashedString const& other) const noexcept { return !(*this == other); }
+
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(HashedString const& other) const noexcept {
+        if (mStrHash != other.mStrHash) {
+            return mStrHash <=> other.mStrHash;
+        }
+        return mStr <=> other.mStr;
+    }
+
+    // Convertors
+    [[nodiscard]] constexpr operator std::string const&() const { return mStr; }
+
+    [[nodiscard]] constexpr operator std::string_view() const { return std::string_view(mStr); }
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                mStrHash;
-    ::ll::TypedStorage<8, 32, ::std::string>        mStr;
-    ::ll::TypedStorage<8, 8, ::HashedString const*> mLastMatch;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HashedString();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit HashedString(nullptr_t);
-
-    MCAPI HashedString(::HashedString&& rhs);
-
-    MCAPI HashedString(::HashedString const& rhs);
-
-    MCAPI explicit HashedString(::std::string const& str);
-
-    MCAPI explicit HashedString(char const* str);
-
-    MCAPI explicit HashedString(::std::string_view str);
-
-    MCAPI HashedString(uint64 hash, char const* str);
-
-    MCAPI char const* c_str() const;
-
-    MCAPI void clear();
-
-    MCAPI bool empty() const;
-
-    MCAPI uint64 getHash() const;
-
-    MCAPI ::std::string const& getString() const;
-
-    MCAPI bool isEmpty() const;
-
-    MCAPI explicit operator ::std::string_view() const;
-
-    MCAPI ::HashedString& operator=(::HashedString const& rhs);
-
-    MCAPI ::HashedString& operator=(::HashedString&& rhs);
-
-    MCAPI ~HashedString();
+    uint64                        mStrHash;
+    ::std::string                 mStr;
+    mutable ::HashedString const* mLastMatch;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 computeHash(char const* str);
-
-    MCAPI static uint64 computeHash(::std::string const& str);
-
     MCAPI static ::HashedString const& getEmptyString();
     // NOLINTEND
 
@@ -93,3 +167,12 @@ public:
     MCAPI void $dtor();
     // NOLINTEND
 };
+
+namespace std {
+
+template <>
+struct hash<HashedString> {
+    size_t operator()(HashedString const& str) const noexcept { return str.getHash(); }
+};
+
+} // namespace std

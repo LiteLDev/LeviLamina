@@ -14,14 +14,10 @@ class VarIntDataOutput : public ::BytesDataOutput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BinaryStream&> mStream;
+    ::BinaryStream& mStream;
     // NOLINTEND
 
-public:
-    // prevent constructor by default
-    VarIntDataOutput& operator=(VarIntDataOutput const&);
-    VarIntDataOutput(VarIntDataOutput const&);
-    VarIntDataOutput();
+    VarIntDataOutput(BinaryStream& bs) : mStream(bs) {}
 
 public:
     // virtual functions

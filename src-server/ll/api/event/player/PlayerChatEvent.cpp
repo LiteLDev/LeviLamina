@@ -25,13 +25,13 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerSendMessageEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::handle$,
+    &ServerNetworkHandler::$handle,
     void,
     NetworkIdentifier const& identifier,
     TextPacket const&        packet
 ) {
-    if (auto player = getServerPlayer(identifier, packet.mClientSubId); player) {
-        auto event = PlayerChatEvent{player, const_cast<TextPacket&>(packet).mMessage};
+    if (auto player = _getServerPlayer(identifier, packet.mClientSubId); player) {
+        auto event = PlayerChatEvent{*player, const_cast<TextPacket&>(packet).mMessage};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {
             return;

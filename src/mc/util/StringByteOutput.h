@@ -9,14 +9,10 @@ class StringByteOutput : public ::BytesDataOutput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::string&> mBuffer;
+    std::string& mBuffer;
     // NOLINTEND
 
-public:
-    // prevent constructor by default
-    StringByteOutput& operator=(StringByteOutput const&);
-    StringByteOutput(StringByteOutput const&);
-    StringByteOutput();
+    StringByteOutput(std::string& str) noexcept : mBuffer(str) {}
 
 public:
     // virtual functions

@@ -23,7 +23,6 @@ public:
     ItemStackDescriptor& operator=(ItemStackDescriptor const&);
     ItemStackDescriptor(ItemStackDescriptor const&);
 
-    std::unique_ptr<CompoundTag, std::default_delete<CompoundTag>> mUserData; // this+0x18
 public:
     // virtual functions
     // NOLINTBEGIN

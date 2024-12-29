@@ -11,13 +11,13 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerJoinEventHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::handle$,
+    &ServerNetworkHandler::$handle,
     void,
     NetworkIdentifier const&                 identifier,
     SetLocalPlayerAsInitializedPacket const& packet
 ) {
-    if (auto player = getServerPlayer(identifier, packet.mClientSubId); player) {
-        auto event = PlayerJoinEvent{player};
+    if (auto player = _getServerPlayer(identifier, packet.mClientSubId); player) {
+        auto event = PlayerJoinEvent{*player};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {
             return;

@@ -113,6 +113,52 @@ public:
         ::std::function<void(::BlockSource&, ::Block const&, ::BlockPos const&, ::Actor&)>;
 
 public:
+    LLNDAPI class EntityContext&       getEntityContext();
+    LLNDAPI class EntityContext const& getEntityContext() const;
+
+    LLAPI void refresh();
+
+    LLAPI optional_ref<Actor> clone(Vec3 const& pos, std::optional<DimensionType> dimId = std::nullopt) const;
+
+    LLNDAPI std::string const& getTypeName() const;
+
+    LLNDAPI class Vec3 getFeetPos() const;
+
+    LLNDAPI class Vec3 getHeadPos() const;
+
+    LLNDAPI class BlockPos getFeetBlockPos() const;
+
+    LLNDAPI bool isSimulatedPlayer() const;
+
+    LLNDAPI bool isOnGround() const;
+
+    LLAPI void setOnFire(int time, bool isEffect = true);
+    LLAPI void stopFire();
+
+    LLNDAPI float getPosDeltaPerSecLength() const;
+
+    LLAPI bool hurtByCause(
+        float               damage,
+        ActorDamageCause    cause    = ActorDamageCause::Override,
+        optional_ref<Actor> attacker = std::nullopt
+    );
+
+    LLNDAPI class HitResult traceRay(
+        float                                                                          tMax         = 5.5f,
+        bool                                                                           includeActor = true,
+        bool                                                                           includeBlock = true,
+        std::function<bool(class BlockSource const&, class Block const&, bool)> const& blockCheckFunction =
+            [](auto&&...) -> bool { return true; }
+    ) const;
+
+    LLAPI void teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 const& rotation);
+    LLAPI void teleport(class Vec3 const& pos, DimensionType dimId);
+
+    LLAPI void setName(std::string const& name);
+
+    LLNDAPI float evalMolang(std::string const& expression);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::EntityContext>                               mEntityContext;
@@ -260,13 +306,13 @@ public:
     virtual ::Vec3 getFiringPos() const;
 
     // vIndex: 13
-    virtual float getInterpolatedBodyRot(float a) const;
+    virtual float getInterpolatedBodyRot(float a = 0.0f) const;
 
     // vIndex: 14
-    virtual float getInterpolatedHeadRot(float) const;
+    virtual float getInterpolatedHeadRot(float = 0.0f) const;
 
     // vIndex: 15
-    virtual float getInterpolatedBodyYaw(float) const;
+    virtual float getInterpolatedBodyYaw(float = 0.0f) const;
 
     // vIndex: 16
     virtual float getYawSpeedInDegreesPerSecond() const;
@@ -332,7 +378,7 @@ public:
     virtual float getShadowRadius() const;
 
     // vIndex: 37
-    virtual ::Vec3 getHeadLookVector(float a) const;
+    virtual ::Vec3 getHeadLookVector(float a = 0.0f) const;
 
     // vIndex: 38
     virtual bool canInteractWithOtherEntitiesInGame() const;
@@ -845,7 +891,7 @@ public:
 
     MCAPI ::Block const& getBlockWhenClimbing();
 
-    MCAPI float getBrightness(float a) const;
+    MCAPI float getBrightness(float a = 0.0f) const;
 
     MCAPI bool getCanPickupItems() const;
 
@@ -919,11 +965,11 @@ public:
 
     MCAPI ::ActorInitializationMethod getInitializationMethod();
 
-    MCAPI ::Vec3 getInterpolatedPosition(float a) const;
+    MCAPI ::Vec3 getInterpolatedPosition(float a = 0.0f) const;
 
-    MCAPI ::Vec3 getInterpolatedRidingPosition(float a) const;
+    MCAPI ::Vec3 getInterpolatedRidingPosition(float a = 0.0f) const;
 
-    MCAPI ::Vec2 getInterpolatedRotation(float a) const;
+    MCAPI ::Vec2 getInterpolatedRotation(float a = 0.0f) const;
 
     MCAPI int getInventorySize() const;
 
@@ -1037,7 +1083,7 @@ public:
 
     MCAPI int getStructuralIntegrity() const;
 
-    MCAPI float getSwimAmount(float a) const;
+    MCAPI float getSwimAmount(float a = 0.0f) const;
 
     MCAPI ::std::vector<::std::string> const getTags() const;
 
@@ -1061,7 +1107,7 @@ public:
 
     MCAPI float getVerticalSpeedInMetersPerSecond() const;
 
-    MCAPI ::Vec3 getViewVector(float a) const;
+    MCAPI ::Vec3 getViewVector(float a = 0.0f) const;
 
     MCAPI ::WeakRef<::EntityContext> const getWeakEntity() const;
 

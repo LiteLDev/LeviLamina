@@ -33,9 +33,6 @@ public:
     BlockEventDispatcher& operator=(BlockEventDispatcher const&);
     BlockEventDispatcher(BlockEventDispatcher const&);
 
-    std::unordered_map<int, std::unique_ptr<class ListenerInfo>> mRegisteredListeners;
-    int                                                          mHandleCounter;
-
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -36,6 +36,13 @@ public:
     using MapTypeId = ::std::map<::BlockActorType, ::std::string>;
 
 public:
+    LLAPI void refresh(optional_ref<class BlockSource> blockSource = std::nullopt);
+
+    LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt);
+
+    LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt, class BlockPos const& pos);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>                          mTickCount;

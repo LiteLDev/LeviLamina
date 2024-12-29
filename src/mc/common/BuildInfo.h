@@ -8,10 +8,10 @@ struct BuildInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mBuildId;
-    ::ll::TypedStorage<8, 32, ::std::string> mCommitId;
-    ::ll::TypedStorage<8, 32, ::std::string> mBranchId;
-    ::ll::TypedStorage<8, 32, ::std::string> mFlavor;
+    ::std::string mBuildId;
+    ::std::string mCommitId;
+    ::std::string mBranchId;
+    ::std::string mFlavor;
     // NOLINTEND
 
 public:

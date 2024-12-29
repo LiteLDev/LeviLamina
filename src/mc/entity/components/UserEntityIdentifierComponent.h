@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/certificates/Certificate.h"
+#include "mc/network/NetworkIdentifier.h"
+#include "mc/platform/UUID.h"
+
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -17,11 +21,11 @@ class UserEntityIdentifierComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier>            mNetworkId;
-    ::ll::TypedStorage<1, 1, ::SubClientId>                    mClientSubId;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                     mClientUUID;
-    ::ll::TypedStorage<8, 32, ::std::string>                   mPlayFabIdUnverified;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mCertificate;
+    ::NetworkIdentifier              mNetworkId;
+    ::SubClientId                    mClientSubId;
+    ::mce::UUID                      mClientUUID;
+    ::std::string                    mPlayFabIdUnverified;
+    ::std::unique_ptr<::Certificate> mCertificate;
     // NOLINTEND
 
 public:

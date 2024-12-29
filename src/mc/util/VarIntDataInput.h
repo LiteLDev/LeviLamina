@@ -15,14 +15,10 @@ class VarIntDataInput : public ::BytesDataInput {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ReadOnlyBinaryStream&> mStream;
+    ::ReadOnlyBinaryStream& mStream;
     // NOLINTEND
 
-public:
-    // prevent constructor by default
-    VarIntDataInput& operator=(VarIntDataInput const&);
-    VarIntDataInput(VarIntDataInput const&);
-    VarIntDataInput();
+    VarIntDataInput(ReadOnlyBinaryStream& bs) : mStream(bs) {}
 
 public:
     // virtual functions

@@ -31,9 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    std::unordered_map<std::string, int> mCategoryLookup; // this+0x48
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
