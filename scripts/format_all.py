@@ -3,6 +3,7 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor
 import multiprocessing
 
+
 def get_all_code_files(directory, extensions):
     """获取指定目录及其子目录下的所有代码文件"""
     code_files = []
@@ -12,13 +13,24 @@ def get_all_code_files(directory, extensions):
                 code_files.append(os.path.join(root, file))
     return code_files
 
+
 def format_file(file_path, clang_format_path):
     """使用 clang-format 格式化单个文件"""
     try:
+        with open(file_path, "r") as f:
+            content = f.read()
+        with open(file_path, "w") as f:
+            if not content.endswith("\n"):
+                content += "\n"
+            if file_path.endswith(".h") and not content.startswith("#pragma once"):
+                content = "#pragma once\n" + content
+            f.write(content)
+            f.close()
         subprocess.run([clang_format_path, "-i", file_path], check=True)
         print(f"Formatted: {file_path}")
     except subprocess.CalledProcessError as e:
         print(f"Failed to format {file_path}: {e}")
+
 
 def format_code_files(
     directory, clang_format_path, extensions=(".cpp", ".c", ".h"), threads=None
@@ -32,7 +44,9 @@ def format_code_files(
         print(f"Using {threads} threads (number of CPU cores).")
 
     with ThreadPoolExecutor(max_workers=threads) as executor:
-        executor.map(lambda file: format_file(file, clang_format_path), code_files)
+        executor.map(lambda file: format_file(
+            file, clang_format_path), code_files)
+
 
 if __name__ == "__main__":
     clang_format_path = r"clang-format"
