@@ -1,16 +1,16 @@
 {
     "format_version": 2,
     "tooth": "github.com/LiteLDev/LeviLamina",
-    "version": "0.13.5",
+    "version": "1.0.0-rc1",
     "info": {
         "name": "LeviLamina",
         "description": "A lightweight, modular and versatile mod loader for Minecraft Bedrock Edition.",
         "author": "LiteLDev",
         "tags": []
     },
-    "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v0.13.5/levilamina-release-windows-x64.zip",
+    "asset_url": "https://github.com/LiteLDev/LeviLamina/releases/download/v1.0.0-rc1/levilamina-release-windows-x64.zip",
     "dependencies": {
-        "github.com/LiteLDev/bds": ">=1.21.2 <1.21.10",
+        "github.com/LiteLDev/bds": "1.21.50",
         "github.com/LiteLDev/CrashLogger": "1.1.x",
         "github.com/LiteLDev/levilamina-loc": "1.5.x",
         "github.com/LiteLDev/PeEditor": "3.7.x",

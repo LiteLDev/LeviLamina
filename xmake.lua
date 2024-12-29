@@ -9,8 +9,12 @@ local is_iphoneos = is_plat("iphoneos")
 local is_x64      = is_arch("x64", "x86_64")
 local is_arm64    = is_arch("arm64", "arm64-v8a")
 
-local is_server = is_config("target_type", "server")
-local is_client = is_config("target_type", "client")
+-- TODO:
+-- local is_server = is_config("target_type", "server")
+-- local is_client = is_config("target_type", "client")
+
+local is_server = true
+local is_client = false
 
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
@@ -52,14 +56,14 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata 1.21.3.1-server")
+        add_requires("bedrockdata 1.21.50.10-server")
     end
 else
     if is_windows then
         add_requires("bedrockdata 1.21.0.3-client")
     end
     if is_windows then
-        add_requires("imgui v1.91.0-docking", {configs = {dx11 = true, dx12 = true}})
+        add_requires("imgui[dx11=y,dx12=y] v1.91.0-docking")
     end
 end
 
