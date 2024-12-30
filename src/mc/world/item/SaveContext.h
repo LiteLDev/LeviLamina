@@ -19,14 +19,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb8ccb8;
+    ::ll::TypedStorage<1, 1, ::SaveContext::SaveUseCase> mSaveUseCase;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SaveContext& operator=(SaveContext const&);
-    SaveContext(SaveContext const&);
-    SaveContext();
 
 public:
     // member functions
