@@ -235,7 +235,12 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
+class ServerLevel;
+
 class Level : public ::ILevel, public ::BlockSourceListener, public ::IWorldRegistriesProvider {
+public:
+    [[nodiscard]] ServerLevel& asServer() { return *reinterpret_cast<ServerLevel*>(this); }
+
 public:
     // Level inner types define
     using RegionSet = ::std::unordered_set<::BlockSource*>;
