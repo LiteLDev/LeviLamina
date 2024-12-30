@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/platform/UUID.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -33,11 +34,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandOrigin& operator=(CommandOrigin const&);
-    CommandOrigin(CommandOrigin const&);
 
 public:
     // virtual functions
