@@ -138,7 +138,7 @@ constexpr auto signatureCache = []() {
     constexpr size_t N = []() {
         size_t i = 0;
         string_utils::splitByPattern(
-            [&](std::string_view sv) {
+            [&](std::string_view) {
                 i++;
                 return true;
             },

@@ -16,7 +16,7 @@ public:
 
     virtual void setFormatter(Polymorphic<Formatter> fmter) = 0;
 
-    virtual void setFlushLevel(LogLevel level) {}
+    virtual void setFlushLevel(LogLevel) {}
 };
 class Sink : public SinkBase {
 protected:

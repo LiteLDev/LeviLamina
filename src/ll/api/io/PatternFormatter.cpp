@@ -1,5 +1,4 @@
 #include "ll/api/io/PatternFormatter.h"
-
 #include "ll/api/utils/StringUtils.h"
 
 template <class T>

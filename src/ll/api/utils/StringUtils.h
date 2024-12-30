@@ -11,8 +11,6 @@
 #include <utility>
 #include <vector>
 
-#include "fmt/color.h"
-
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
@@ -131,7 +129,7 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
     if (!no0x) result += "0x";
     bool leadingZero = true;
     for (int i = sizeof(T) * 2; i > 0; --i) {
-        auto hex = (value >> (i - 1) * 4) & 0xF;
+        auto hex = static_cast<uchar>((value >> (i - 1) * 4) & 0xF);
         if (noLeadingZero && leadingZero && hex == 0) continue;
         leadingZero  = false;
         result      += charFromInt(upperCase, hex);
@@ -149,29 +147,6 @@ intToHexStr(T value, bool upperCase = true, bool no0x = true, bool noLeadingZero
     }
     if (addSpace && hex.ends_with(' ')) hex.pop_back();
     return hex;
-}
-
-[[nodiscard]] constexpr std::string applyTextStyle(fmt::text_style const& ts, std::string_view str) {
-    std::string res;
-    bool        has_style = false;
-    if (ts.has_emphasis()) {
-        has_style     = true;
-        auto emphasis = fmt::detail::make_emphasis<char>(ts.get_emphasis());
-        res.append(emphasis.begin(), emphasis.end());
-    }
-    if (ts.has_foreground()) {
-        has_style       = true;
-        auto foreground = fmt::detail::make_foreground_color<char>(ts.get_foreground());
-        res.append(foreground.begin(), foreground.end());
-    }
-    if (ts.has_background()) {
-        has_style       = true;
-        auto background = fmt::detail::make_background_color<char>(ts.get_background());
-        res.append(background.begin(), background.end());
-    }
-    res += str;
-    if (has_style) res += "\x1b[0m";
-    return res;
 }
 
 LLNDAPI std::string removeEscapeCode(std::string_view str);

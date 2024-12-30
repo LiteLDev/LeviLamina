@@ -13,6 +13,7 @@
 #include "pl/dependency/DependencyWalker.h"
 
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/memory/Memory.h"
 #include "ll/api/mod/Manifest.h"
 #include "ll/api/mod/Mod.h"
 #include "ll/api/mod/ModManager.h"

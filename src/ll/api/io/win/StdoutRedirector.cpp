@@ -2,6 +2,8 @@
 #include "ll/api/utils/ErrorUtils.h"
 
 #include "Windows.h"
+#include "fcntl.h"
+#include "io.h"
 
 namespace ll::io {
 

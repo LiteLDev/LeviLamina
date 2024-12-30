@@ -13,7 +13,7 @@
 #include "ll/api/base/Meta.h"
 #include "ll/api/utils/HashUtils.h"
 
-#include "fmt/core.h"
+#include "fmt/format.h"
 
 namespace ll::math {
 

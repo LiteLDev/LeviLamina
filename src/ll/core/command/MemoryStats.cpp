@@ -3,6 +3,7 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/memory/Memory.h"
 #include "ll/core/Config.h"
 
 #include "mc/deps/core/memory/IMemoryAllocator.h"

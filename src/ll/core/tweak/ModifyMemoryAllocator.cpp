@@ -1,3 +1,4 @@
+#include "ll/api/memory/Memory.h"
 #include "mc/deps/core/memory/InternalHeapAllocator.h"
 
 namespace ll::memory {

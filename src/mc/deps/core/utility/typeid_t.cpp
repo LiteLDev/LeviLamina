@@ -2,6 +2,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 
 #include "ll/api/base/Containers.h"
+#include "ll/api/memory/Memory.h"
 
 using namespace ll::literals;
 

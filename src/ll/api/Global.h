@@ -9,4 +9,3 @@
 #include "ll/api/base/Meta.h"       // IWYU pragma: keep
 #include "ll/api/base/StdInt.h"     // IWYU pragma: keep
 #include "ll/api/base/ToString.h"   // IWYU pragma: keep
-#include "ll/api/io/Logger.h"       // IWYU pragma: keep
