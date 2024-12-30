@@ -11,7 +11,9 @@ void Event::serializeWithCancel(CompoundTag& nbt) const { nbt["cancelled"] = mCa
 
 void Event::deserialize(CompoundTag const&) {}
 
-EventId Event::getId() const { return EventId{reflection::removeTypePrefix(reflection::getDynamicRawName(*this))}; }
+EventId Event::getId() const {
+    return EventId{reflection::removeTypePrefix(reflection::getDynamicRawName(*this))};
+}
 
 void Event::deserializeWithCancel(CompoundTag const& nbt) { mCancelled = nbt["cancelled"]; }
 

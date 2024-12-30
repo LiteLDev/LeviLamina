@@ -1,5 +1,6 @@
 #pragma once
 
+#include <compare>
 #include <string_view>
 #include <type_traits>
 #include <vector>
@@ -9,9 +10,29 @@
 
 namespace ll::inline utils::hash_utils {
 
+class HashedIdBase {
+protected:
+    [[nodiscard]] constexpr explicit HashedIdBase(size_t hash) noexcept : hash(hash) {}
+
+public:
+    size_t hash;
+
+    [[nodiscard]] constexpr bool operator==(HashedIdBase const& other) const noexcept { return hash == other.hash; }
+
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(HashedIdBase const& other) const noexcept {
+        return hash <=> other.hash;
+    }
+};
+
 template <class T>
 constexpr void hashCombine(T const& v, size_t& seed) {
     seed ^= v + 0x9e3779b9ull + (seed << 6ull) + (seed >> 2ull);
+}
+
+template <class T>
+constexpr size_t hashCombineTo(T const& v, size_t seed) {
+    seed ^= v + 0x9e3779b9ull + (seed << 6ull) + (seed >> 2ull);
+    return seed;
 }
 
 [[nodiscard]] constexpr uint64 doHash(std::string_view x) {
@@ -54,3 +75,11 @@ template <class T>
 namespace ll::inline literals::inline hash_literals {
 [[nodiscard]] consteval uint64 operator""_h(char const* x, size_t len) { return ll::hash_utils::doHash({x, len}); }
 } // namespace ll::inline literals::inline hash_literals
+
+namespace std {
+template <class T>
+    requires(std::is_base_of_v<ll::hash_utils::HashedIdBase, T>)
+struct hash<T> {
+    size_t operator()(T const& id) const noexcept { return id.hash; }
+};
+} // namespace std

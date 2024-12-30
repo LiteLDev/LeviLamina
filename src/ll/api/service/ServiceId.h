@@ -8,42 +8,46 @@ namespace ll::service {
 template <class T>
 struct auto_name_t {};
 
-class ServiceId {
+class ServiceIdView;
+class ServiceId : public hash_utils::HashedIdBase {
 public:
-    std::string_view name;
-    size_t           version{};
-    size_t           hash{};
+    size_t      version;
+    std::string name;
 
-    [[nodiscard]] constexpr ServiceId(std::string_view name, size_t version) noexcept
-    : name(name),
-      version(version),
-      hash(ll::hash_utils::doHash(name)) {
-        ll::hash_utils::hashCombine(version, hash);
-    }
+    [[nodiscard]] constexpr explicit ServiceId(std::string_view id, size_t ver) noexcept
+    : HashedIdBase(hash_utils::hashCombineTo(ver, hash_utils::doHash(id))),
+      name(id),
+      version(ver) {}
+
+    [[nodiscard]] constexpr ServiceId(ServiceIdView const& id) noexcept;
+};
+class ServiceIdView : public hash_utils::HashedIdBase {
+public:
+    size_t           version;
+    std::string_view name;
+
+    [[nodiscard]] constexpr explicit ServiceIdView(std::string_view id, size_t ver) noexcept
+    : HashedIdBase(hash_utils::hashCombineTo(ver, hash_utils::doHash(id))),
+      name(id),
+      version(ver) {}
+    [[nodiscard]] constexpr ServiceIdView(ServiceId const& id) noexcept
+    : HashedIdBase(id.hash),
+      name(id.name),
+      version(id.version) {}
 
     template <class T>
-    [[nodiscard]] constexpr ServiceId(auto_name_t<T>, size_t version) noexcept
-    : ServiceId{ll::reflection::type_raw_name_v<T>, version} {}
-
-    [[nodiscard]] constexpr bool operator==(ServiceId const& other) const noexcept {
-        return hash == other.hash && version == other.version && name == other.name;
-    }
-
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(ServiceId const& other) const noexcept {
-        if (hash != other.hash) {
-            return hash <=> other.hash;
-        }
-        if (version != other.version) {
-            return version <=> other.version;
-        }
-        return name <=> other.name;
-    }
+    [[nodiscard]] constexpr ServiceIdView(auto_name_t<T>, size_t version) noexcept
+    : ServiceIdView{ll::reflection::type_unprefix_name_v<T>, version} {}
 };
+[[nodiscard]] constexpr ServiceId::ServiceId(ServiceIdView const& id) noexcept
+: HashedIdBase(id.hash),
+  name(id.name),
+  version(id.version) {}
 
-constexpr ServiceId EmptyServiceId{{}, 0};
+constexpr ServiceIdView EmptyServiceId{{}, 0};
 
 template <class T>
-constexpr ServiceId getServiceId = []() -> ServiceId {
+constexpr ServiceIdView getServiceId = []() -> ServiceIdView {
     using self = std::remove_cvref_t<T>;
     if constexpr (requires { self::ServiceId; } && self::ServiceId != EmptyServiceId) {
         return self::ServiceId;
@@ -52,10 +56,3 @@ constexpr ServiceId getServiceId = []() -> ServiceId {
     }
 }();
 } // namespace ll::service
-
-namespace std {
-template <>
-struct hash<ll::service::ServiceId> {
-    size_t operator()(ll::service::ServiceId const& id) const noexcept { return id.hash; }
-};
-} // namespace std

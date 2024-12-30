@@ -4,10 +4,12 @@
 #include "ll/api/event/Event.h"
 
 namespace ll::event {
-template <std::derived_from<Event> T>
+template <class T>
 class Cancellable : public T {
 protected:
     using T::T;
+
+    static_assert(std::derived_from<T, Event>);
 
     static_assert(
         !traits::is_derived_from_specialization_of_v<T, Cancellable>,

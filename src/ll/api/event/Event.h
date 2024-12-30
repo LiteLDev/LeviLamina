@@ -8,13 +8,12 @@
 class CompoundTag;
 
 namespace ll::event {
-class Event;
-template <std::derived_from<Event> T>
+template <class T>
 class Cancellable;
 
 class Event {
 private:
-    template <std::derived_from<Event> T>
+    template <class T>
     friend class ::ll::event::Cancellable;
 
     bool mCancelled{false};
@@ -33,6 +32,6 @@ public:
 
     LLAPI virtual EventId getId() const;
 
-    static constexpr EventId CustomEventId{EmptyEventId};
+    static constexpr EventIdView CustomEventId{EmptyEventId};
 };
 } // namespace ll::event

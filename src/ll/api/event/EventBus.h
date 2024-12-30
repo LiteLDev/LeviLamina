@@ -35,22 +35,17 @@ public:
 
     LLNDAPI static EventBus& getInstance();
 
-    LLAPI void publish(Event&, EventId);
+    LLAPI void publish(Event&, EventIdView const&);
 
-    LLAPI void publish(std::string_view modName, Event&, EventId);
+    LLAPI void publish(std::string_view modName, Event&, EventIdView const&);
 
-    LLAPI bool setEventEmitter(FactoryFn fn, EventId eventId, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current());
+    LLAPI bool
+    setEventEmitter(FactoryFn fn, EventIdView const& eventId, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current());
 
     template <std::derived_from<Event> T>
     bool setEventEmitter(FactoryFn fn, std::weak_ptr<mod::Mod> mod = mod::NativeMod::current()) {
         return setEventEmitter(std::move(fn), getEventId<T>, std::move(mod));
     }
-
-    [[deprecated]] LLAPI void setEventEmitter(
-        std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
-        EventId                                                    eventId,
-        std::weak_ptr<mod::Mod>                                    mod = mod::NativeMod::current()
-    );
 
     template <class T>
         requires(std::derived_from<std::remove_cvref_t<T>, Event>)
@@ -66,7 +61,7 @@ public:
         publish(modName, event, getEventId<T>);
     }
 
-    LLNDAPI size_t getListenerCount(EventId);
+    LLNDAPI size_t getListenerCount(EventIdView const&);
 
     template <std::derived_from<Event> T>
     [[nodiscard]] size_t getListenerCount() {
@@ -74,7 +69,7 @@ public:
         return getListenerCount(getEventId<T>);
     }
 
-    LLAPI bool addListener(ListenerPtr const&, EventId);
+    LLAPI bool addListener(ListenerPtr const&, EventIdView const&);
 
     template <class T, template <class...> class L, class... LT>
         requires((std::derived_from<T, LT> || ...) && std::derived_from<L<LT...>, ListenerBase>)
@@ -96,7 +91,7 @@ public:
         return res;
     }
 
-    LLAPI bool removeListener(ListenerPtr const&, EventId);
+    LLAPI bool removeListener(ListenerPtr const&, EventIdView const&);
 
     bool removeListener(ListenerPtr const& listener) { return removeListener(listener, EmptyEventId); }
     template <std::derived_from<Event> T>
@@ -130,7 +125,7 @@ public:
         return false;
     }
 
-    LLNDAPI bool hasListener(ListenerId, EventId) const;
+    LLNDAPI bool hasListener(ListenerId, EventIdView const&) const;
 
     [[nodiscard]] bool hasListener(ListenerId id) const { return hasListener(id, EmptyEventId); }
 

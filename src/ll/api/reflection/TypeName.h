@@ -44,16 +44,16 @@ consteval std::string_view getRawName() noexcept {
 
 constexpr std::string_view removeTypePrefix(std::string_view s) noexcept {
     if (s.starts_with("enum ")) {
-        s.remove_prefix(sizeof("enum ") - 1);
+        s.remove_prefix(sizeof("enum"));
     }
     if (s.starts_with("class ")) {
-        s.remove_prefix(sizeof("class ") - 1);
+        s.remove_prefix(sizeof("class"));
     }
     if (s.starts_with("union ")) {
-        s.remove_prefix(sizeof("union ") - 1);
+        s.remove_prefix(sizeof("union"));
     }
     if (s.starts_with("struct ")) {
-        s.remove_prefix(sizeof("struct ") - 1);
+        s.remove_prefix(sizeof("struct"));
     }
     return s;
 }

@@ -30,8 +30,6 @@ public:
 
     LLNDAPI size_t getModCount() const;
 
-    [[deprecated]] LLAPI void forEachMod(std::function<bool(std::string_view name, Mod&)> const& fn);
-
     LLNDAPI coro::Generator<Mod&> mods() const;
 
 protected:

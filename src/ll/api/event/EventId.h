@@ -4,44 +4,37 @@
 #include "ll/api/utils/HashUtils.h"
 
 namespace ll::event {
-class EventId {
+class EventIdView;
+class EventId : public hash_utils::HashedIdBase {
 public:
-    std::string_view const name;
-    size_t const           hash;
+    std::string name;
 
-    [[nodiscard]] constexpr explicit EventId(std::string_view name) noexcept
-    : name(name),
-      hash(ll::hash_utils::doHash(name)) {}
-
-    [[nodiscard]] constexpr bool operator==(EventId other) const noexcept {
-        return hash == other.hash && name == other.name;
-    }
-
-    [[nodiscard]] constexpr std::strong_ordering operator<=>(EventId other) const noexcept {
-        if (hash != other.hash) {
-            return hash <=> other.hash;
-        }
-        return name <=> other.name;
-    }
+    [[nodiscard]] constexpr explicit EventId(std::string_view id) noexcept
+    : HashedIdBase(hash_utils::doHash(id)),
+      name(id) {}
+    [[nodiscard]] constexpr EventId(EventIdView const& id) noexcept;
 };
+class EventIdView : public hash_utils::HashedIdBase {
+public:
+    std::string_view name;
 
-static constexpr inline EventId EmptyEventId{{}};
+    [[nodiscard]] constexpr explicit EventIdView(std::string_view id) noexcept
+    : HashedIdBase(hash_utils::doHash(id)),
+      name(id) {}
+    [[nodiscard]] constexpr EventIdView(EventId const& id) noexcept : HashedIdBase(id.hash), name(id.name) {}
+};
+[[nodiscard]] constexpr EventId::EventId(EventIdView const& id) noexcept : HashedIdBase(id.hash), name(id.name) {}
+
+static constexpr inline EventIdView EmptyEventId{{}};
 
 template <class T>
-constexpr EventId getEventId = []() -> EventId {
+constexpr EventIdView getEventId = []() -> EventIdView {
     using self = std::remove_cvref_t<T>;
     if constexpr (self::CustomEventId != EmptyEventId) {
         return self::CustomEventId;
     } else {
         static_assert(std::is_final_v<self>, "Only final classes can use getEventId");
-        return EventId{ll::reflection::type_unprefix_name_v<self>};
+        return EventIdView{ll::reflection::type_unprefix_name_v<self>};
     }
 }();
 } // namespace ll::event
-
-namespace std {
-template <>
-struct hash<ll::event::EventId> {
-    size_t operator()(ll::event::EventId const& id) const noexcept { return id.hash; }
-};
-} // namespace std

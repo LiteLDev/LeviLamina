@@ -124,7 +124,7 @@ public:
     DenseMap<std::string, ModInfo>     modInfos;
     DenseMap<ListenerId, ListenerInfo> listenerInfos;
 
-    bool removeListenerImpl(ListenerPtr const& listener, EventId eventId) {
+    bool removeListenerImpl(ListenerPtr const& listener, EventIdView const& eventId) {
         bool result{false};
         events.modify_if(eventId, [&](auto& pair) {
             if (pair.second.getStream()
@@ -154,14 +154,7 @@ EventBus& EventBus::getInstance() {
     static EventBus instance;
     return instance;
 }
-void EventBus::setEventEmitter(
-    std::function<std::unique_ptr<EmitterBase>(ListenerBase&)> fn,
-    EventId                                                    eventId,
-    std::weak_ptr<mod::Mod>                                    mod
-) {
-    setEventEmitter([fn = std::move(fn)]() { return fn(*(ListenerBase*)(nullptr)); }, eventId, std::move(mod));
-}
-bool EventBus::setEventEmitter(FactoryFn fn, EventId eventId, std::weak_ptr<mod::Mod> weakMod) {
+bool EventBus::setEventEmitter(FactoryFn fn, EventIdView const& eventId, std::weak_ptr<mod::Mod> weakMod) {
     if (auto mod = weakMod.lock(); mod) {
         std::lock_guard lock(impl->infoMutex);
         return impl->events.lazy_emplace_l(
@@ -175,21 +168,21 @@ bool EventBus::setEventEmitter(FactoryFn fn, EventId eventId, std::weak_ptr<mod:
     }
     return false;
 }
-void EventBus::publish(Event& event, EventId eventId) {
+void EventBus::publish(Event& event, EventIdView const& eventId) {
     std::shared_ptr<CallbackStream> stream;
     impl->events.if_contains(eventId, [&](auto& pair) { stream = pair.second.getSharedStream(); });
     if (stream) {
         stream->publish(event);
     }
 }
-void EventBus::publish(std::string_view modName, Event& event, EventId eventId) {
+void EventBus::publish(std::string_view modName, Event& event, EventIdView const& eventId) {
     std::shared_ptr<CallbackStream> stream;
     impl->events.if_contains(eventId, [&](auto& pair) { stream = pair.second.getSharedStream(); });
     if (stream) {
         stream->publish(modName, event);
     }
 }
-size_t EventBus::getListenerCount(EventId eventId) {
+size_t EventBus::getListenerCount(EventIdView const& eventId) {
     if (eventId == EmptyEventId) {
         return impl->listenerInfos.size();
     }
@@ -202,7 +195,7 @@ size_t EventBus::getListenerCount(EventId eventId) {
     });
     return result;
 }
-bool EventBus::addListener(ListenerPtr const& listener, EventId eventId) {
+bool EventBus::addListener(ListenerPtr const& listener, EventIdView const& eventId) {
     if (!listener || eventId == EmptyEventId) {
         return false;
     }
@@ -225,7 +218,7 @@ bool EventBus::addListener(ListenerPtr const& listener, EventId eventId) {
     }
     return result;
 }
-bool EventBus::removeListener(ListenerPtr const& listener, EventId eventId) {
+bool EventBus::removeListener(ListenerPtr const& listener, EventIdView const& eventId) {
     if (!listener) {
         return false;
     }
@@ -261,7 +254,7 @@ ListenerPtr EventBus::getListener(ListenerId id) const {
     impl->listenerInfos.if_contains(id, [&](auto& pair) { result = pair.second.weak.lock(); });
     return result;
 }
-bool EventBus::hasListener(ListenerId id, EventId eventId) const {
+bool EventBus::hasListener(ListenerId id, EventIdView const& eventId) const {
     std::lock_guard lock(impl->infoMutex);
     if (!impl->listenerInfos.contains(id)) {
         return false;

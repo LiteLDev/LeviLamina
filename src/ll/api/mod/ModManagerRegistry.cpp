@@ -143,24 +143,6 @@ coro::Generator<Mod&> ModManagerRegistry::mods() const {
     }
 }
 
-void ModManagerRegistry::forEachManager(std::function<bool(std::string_view type, ModManager&)> const& fn) const {
-    for (auto& manager : managers()) {
-        if (!fn(manager.getType(), manager)) {
-            return;
-        }
-    }
-}
-
-void ModManagerRegistry::forEachModWithType(
-    std::function<bool(std::string_view type, std::string_view name, Mod&)> const& fn
-) const {
-    for (auto& mod : mods()) {
-        if (!fn(mod.getType(), mod.getName(), mod)) {
-            return;
-        }
-    }
-}
-
 bool ModManagerRegistry::hasMod(std::string_view name) const {
     std::lock_guard lock(impl->modMtx);
     return impl->loadedMods.contains(name) && hasManager(impl->loadedMods.find(name)->second);

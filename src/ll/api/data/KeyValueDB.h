@@ -48,8 +48,6 @@ public:
 
     LLAPI bool del(std::string_view key);
 
-    [[deprecated]] LLAPI void iter(std::function<bool(std::string_view, std::string_view)> const& fn) const;
-
     LLNDAPI coro::Generator<std::pair<std::string_view, std::string_view>> iter() const;
 };
 

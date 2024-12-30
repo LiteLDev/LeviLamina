@@ -37,6 +37,6 @@ public:
     }
 
 private:
-    SmallDenseMap<EventId, callback_fn> callback;
+    SmallDenseMap<EventIdView, callback_fn> callback;
 };
 } // namespace ll::event

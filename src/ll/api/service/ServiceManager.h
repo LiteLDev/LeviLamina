@@ -71,7 +71,7 @@ public:
         return std::static_pointer_cast<T>(*res);
     }
 
-    LLNDAPI Expected<std::shared_ptr<Service>> getService(ServiceId const& id);
+    LLNDAPI Expected<std::shared_ptr<Service>> getService(ServiceIdView const& id);
 
     LLNDAPI std::optional<QueryServiceResult> queryService(std::string_view name);
 
@@ -80,7 +80,7 @@ public:
         std::shared_ptr<mod::Mod> const& mod = mod::NativeMod::current()
     );
 
-    LLAPI bool unregisterService(ServiceId const& id);
+    LLAPI bool unregisterService(ServiceIdView const& id);
 
     LLAPI void unregisterService(mod::Mod const& mod);
 

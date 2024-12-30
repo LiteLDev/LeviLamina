@@ -107,18 +107,11 @@ Expected<> NativeModManager::load(Manifest manifest) {
             )
         );
     }
-    // TODO: remove in release
-    if (auto addr = lib.getAddress<Mod::callback_t*>("ll_plugin_load"); addr) {
-        currentLoadingMod->onLoad(addr);
-        currentLoadingMod->onUnload(lib.getAddress<Mod::callback_t*>("ll_plugin_unload"));
-        currentLoadingMod->onEnable(lib.getAddress<Mod::callback_t*>("ll_plugin_enable"));
-        currentLoadingMod->onDisable(lib.getAddress<Mod::callback_t*>("ll_plugin_disable"));
-    } else {
-        currentLoadingMod->onLoad(lib.getAddress<Mod::callback_t*>("ll_mod_load"));
-        currentLoadingMod->onUnload(lib.getAddress<Mod::callback_t*>("ll_mod_unload"));
-        currentLoadingMod->onEnable(lib.getAddress<Mod::callback_t*>("ll_mod_enable"));
-        currentLoadingMod->onDisable(lib.getAddress<Mod::callback_t*>("ll_mod_disable"));
-    }
+    currentLoadingMod->onLoad(lib.getAddress<Mod::callback_t*>("ll_mod_load"));
+    currentLoadingMod->onUnload(lib.getAddress<Mod::callback_t*>("ll_mod_unload"));
+    currentLoadingMod->onEnable(lib.getAddress<Mod::callback_t*>("ll_mod_enable"));
+    currentLoadingMod->onDisable(lib.getAddress<Mod::callback_t*>("ll_mod_disable"));
+
     return currentLoadingMod->onLoad().transform([&, this] {
         addMod(currentLoadingMod->getName(), currentLoadingMod);
         handleMap[lib.handle()] = currentLoadingMod;

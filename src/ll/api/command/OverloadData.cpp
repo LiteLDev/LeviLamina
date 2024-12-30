@@ -56,37 +56,6 @@ CommandParameterData& OverloadData::addParamImpl(
     CommandRegistry::ParseFunction     parser,
     std::string_view                   name,
     CommandParameterDataType           type,
-    char const*                        enumNameOrPostfix,
-    int                                offset,
-    int                                flagOffset,
-    bool                               optional
-) {
-    // TODO: remove in release
-    auto& param = addParamImpl(
-        id,
-        parser,
-        name,
-        type,
-        enumNameOrPostfix ? enumNameOrPostfix : "",
-        {},
-        offset,
-        flagOffset,
-        optional,
-        type == CommandParameterDataType::Enum ? CommandParameterOption::EnumAutocompleteExpansion
-                                               : CommandParameterOption::None
-    );
-    if (id == Bedrock::type_id<CommandRegistry, CommandBlockName>()
-        || id == Bedrock::type_id<CommandRegistry, CommandItem>()) {
-        param.addOptions(CommandParameterOption::HasSemanticConstraint);
-    }
-    return param;
-}
-
-CommandParameterData& OverloadData::addParamImpl(
-    Bedrock::typeid_t<CommandRegistry> id,
-    CommandRegistry::ParseFunction     parser,
-    std::string_view                   name,
-    CommandParameterDataType           type,
     std::string_view                   enumNameOrPostfix,
     std::string_view                   subChain,
     int                                offset,
@@ -116,9 +85,11 @@ CommandParameterData& OverloadData::addTextImpl(std::string_view text, int offse
         text,
         CommandParameterDataType::Enum,
         impl->handle.addText(text),
+        {},
         offset,
         -1,
-        false
+        false,
+        CommandParameterOption::EnumAutocompleteExpansion
     );
 }
 void OverloadData::setFactory(std::function<std::unique_ptr<::Command>()>&& fn) {

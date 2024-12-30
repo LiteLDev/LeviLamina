@@ -18,25 +18,18 @@ std::string GetServiceError::message() const noexcept {
 
 // to avoid a lifetime dependency on external Mod
 struct ServiceInfo {
-    std::string              name;
-    size_t                   version;
+    ServiceId                id;
     std::string              modName;
     std::shared_ptr<Service> service;
 
-    ServiceInfo(std::string name, size_t version, std::string modName, std::shared_ptr<Service> const& service)
-    : name(std::move(name)),
-      version(version),
+    ServiceInfo(ServiceIdView const& id, std::string modName, std::shared_ptr<Service> const& service)
+    : id(id),
       modName(std::move(modName)),
       service(service) {}
 
-    ServiceInfo(ServiceId const& id, std::string modName, std::shared_ptr<Service> const& service)
-    : ServiceInfo(std::string{id.name}, id.version, std::move(modName), service) {}
+    bool operator==(ServiceInfo const& other) const noexcept { return id == other && modName == other.modName; }
 
-    bool operator==(ServiceInfo const& other) const noexcept {
-        return name == other.name && version == other.version && modName == other.modName;
-    }
-
-    bool operator==(ServiceId const& other) const noexcept { return name == other.name && version == other.version; }
+    bool operator==(ServiceIdView const& other) const noexcept { return id == other; }
 };
 } // namespace ll::service
 
@@ -44,10 +37,7 @@ namespace std {
 template <>
 struct hash<ll::service::ServiceInfo> {
     size_t operator()(ll::service::ServiceInfo const& info) const noexcept {
-        size_t hash = std::hash<std::string_view>{}(info.name);
-        ll::hash_utils::hashCombine(std::hash<size_t>{}(info.version), hash);
-        ll::hash_utils::hashCombine(std::hash<std::string_view>{}(info.modName), hash);
-        return hash;
+        return ll::hash_utils::hashCombineTo(std::hash<std::string_view>{}(info.modName), info.id.hash);
     }
 };
 } // namespace std
@@ -58,9 +48,9 @@ class ServiceManager::Impl {
 public:
     std::recursive_mutex mutex;
 
-    DenseMap<std::string_view, std::unique_ptr<ServiceInfo>> services;
+    DenseMap<std::string, std::unique_ptr<ServiceInfo>> services;
 
-    DenseMap<std::string_view, SmallDenseSet<ServiceInfo*>> modServices; // mod name -> services
+    DenseMap<std::string, SmallDenseSet<ServiceInfo*>> modServices; // mod name -> services
 
     bool addService(std::shared_ptr<Service> const& service, std::shared_ptr<mod::Mod> const& mod) {
         std::lock_guard lock(mutex);
@@ -71,7 +61,7 @@ public:
 
         auto info = std::make_unique<ServiceInfo>(id, mod ? mod->getName() : "", service);
         modServices[info->modName].insert(info.get());
-        services.emplace(info->name, std::move(info));
+        services.emplace(info->id.name, std::move(info));
 
         // notify the service that it has been registered or updated
         event::EventBus::getInstance().publish(event::ServiceRegisterEvent{service});
@@ -79,7 +69,7 @@ public:
         return true;
     }
 
-    bool removeService(ServiceId const& id) {
+    bool removeService(ServiceIdView const& id) {
         std::lock_guard lock(mutex);
 
         auto it = services.find(id.name);
@@ -103,21 +93,21 @@ public:
         std::lock_guard lock(mutex);
         if (auto it = modServices.find(modName); it != modServices.end()) {
             for (auto& info : it->second) {
-                services.erase(info->name);
+                services.erase(info->id.name);
             }
             modServices.erase(it);
         }
     }
 };
 
-Expected<std::shared_ptr<Service>> ServiceManager::getService(ServiceId const& id) {
+Expected<std::shared_ptr<Service>> ServiceManager::getService(ServiceIdView const& id) {
     std::lock_guard lock(impl->mutex);
     if (!impl->services.contains(id.name)) {
         return makeError<GetServiceError>(GetServiceError::NotExist);
     }
     auto& info = impl->services[id.name];
-    if (info->version != id.version) {
-        return makeError<GetServiceError>(GetServiceError::VersionMismatch, info->version);
+    if (info->id.version != id.version) {
+        return makeError<GetServiceError>(GetServiceError::VersionMismatch, info->id.version);
     }
     return info->service;
 }
@@ -125,12 +115,12 @@ Expected<std::shared_ptr<Service>> ServiceManager::getService(ServiceId const& i
 std::optional<QueryServiceResult> ServiceManager::queryService(std::string_view name) {
     std::lock_guard lock(impl->mutex);
     if (auto it = impl->services.find(name); it != impl->services.end()) {
-        return QueryServiceResult{it->second->name, it->second->version, it->second->modName, it->second->service};
+        return QueryServiceResult{it->second->id.name, it->second->id.version, it->second->modName, it->second->service};
     }
     return std::nullopt;
 }
 
-bool ServiceManager::unregisterService(ServiceId const& id) {
+bool ServiceManager::unregisterService(ServiceIdView const& id) {
     std::lock_guard lock(impl->mutex);
     return impl->removeService(id);
 }

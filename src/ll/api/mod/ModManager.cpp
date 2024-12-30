@@ -57,15 +57,6 @@ Expected<> ModManager::disable(std::string_view name) {
     return impl->mods.size();
 }
 
-void ModManager::forEachMod(std::function<bool(std::string_view name, Mod&)> const& fn) {
-    auto l(lock());
-    for (auto& [name, mod] : impl->mods) {
-        if (!fn(name, *mod)) {
-            return;
-        }
-    }
-}
-
 coro::Generator<Mod&> ModManager::mods() const {
     auto l(lock());
     for (auto& p : impl->mods) {

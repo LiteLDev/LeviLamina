@@ -103,17 +103,6 @@ bool KeyValueDB::del(std::string_view key) {
     return impl->db->Delete(impl->writeOptions, leveldb::Slice(key.data(), key.size())).ok();
 }
 
-void KeyValueDB::iter(std::function<bool(std::string_view, std::string_view)> const& fn) const {
-    std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
-    for (it->SeekToFirst(); it->Valid(); it->Next()) {
-        auto k = it->key();
-        auto v = it->value();
-        if (!fn({k.data(), k.size()}, {v.data(), v.size()})) {
-            break;
-        }
-    }
-}
-
 coro::Generator<std::pair<std::string_view, std::string_view>> KeyValueDB::iter() const {
     std::unique_ptr<leveldb::Iterator> it(impl->db->NewIterator(impl->readOptions));
     for (it->SeekToFirst(); it->Valid(); it->Next()) {

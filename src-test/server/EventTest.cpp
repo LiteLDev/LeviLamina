@@ -54,9 +54,9 @@ public:
 
 class TestEvent1 final : public TestEventB {
 public:
-    static constexpr ll::event::EventId CustomEventId{"My custom Id"};
+    static constexpr ll::event::EventIdView CustomEventId{"My custom Id"};
 
-    ll::event::EventId getId() const override { return CustomEventId; }
+    ll::event::EventIdView getId() const override { return CustomEventId; }
 
     TestEvent1() { some = "TestEvent1 haha"; }
 };
