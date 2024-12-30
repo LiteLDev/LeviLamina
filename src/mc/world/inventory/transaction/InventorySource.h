@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InventorySource& operator=(InventorySource const&);
-    InventorySource(InventorySource const&);
-    InventorySource();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator==(::InventorySource const& rhs) const;
