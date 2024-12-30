@@ -1,40 +1,25 @@
 #include "mc/world/actor/Actor.h"
 
-#include <functional>
 #include <optional>
-#include <string>
-
-#include "ll/api/memory/Memory.h"
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
-#include "mc/entity/components/FlagComponent.h"
 #include "mc/entity/systems/OnFireSystem.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/server/commands/CommandUtils.h"
 #include "mc/server/commands/standard/TeleportCommand.h"
-#include "mc/server/commands/standard/TeleportTarget.h" // IWYU pragma: keep for TeleportCommand::computeTarget
-#include "mc/util/ExpressionNode.h"
-#include "mc/util/rotation_command_utils/RotationData.h"
 #include "mc/world//actor/player/Player.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
-#include "mc/world/actor/ActorDamageCause.h"
-#include "mc/world/actor/ActorDefinitionIdentifier.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/actor/provider/ActorCollision.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
-#include "mc/world/level/ClipDefaults.h"
-#include "mc/world/level/ShapeType.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
 
-class EntityContext&       Actor::getEntityContext() { return ll::memory::dAccess<EntityContext>(this, 8); }
-class EntityContext const& Actor::getEntityContext() const { return ll::memory::dAccess<EntityContext>(this, 8); }
+class EntityContext&       Actor::getEntityContext() { return mEntityContext.get(); }
+class EntityContext const& Actor::getEntityContext() const { return mEntityContext.get(); }
 
 void Actor::refresh() { _sendDirtyActorData(); }
 

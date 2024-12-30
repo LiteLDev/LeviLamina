@@ -1,19 +1,13 @@
 #include "mc/world/actor/player/Player.h"
 
-#include "ll/api/memory/Memory.h"
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/certificates/ExtendedCertificate.h"
 #include "mc/certificates/WebToken.h"
 #include "mc/common/ActorUniqueID.h"
-#include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/json/Value.h"
-#include "mc/locale/I18n.h"
-#include "mc/locale/Localization.h"
-#include "mc/nbt/CompoundTag.h"
 #include "mc/network/ConnectionRequest.h"
-#include "mc/network/MinecraftPackets.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/network/NetworkSystem.h"
@@ -119,10 +113,7 @@ bool Player::addAndRefresh(class ItemStack& item) {
 }
 
 optional_ref<EnderChestContainer> Player::getEnderChestContainer() {
-    return ll::memory::dAccess<EnderChestContainer*>(this, sizeof(Actor) + 2072);
-    // ida: Player::Player : EnderChestContainer::EnderChestContainer
+    return const_cast<EnderChestContainer*>(mEnderChestInventory.get());
 }
 
-optional_ref<EnderChestContainer const> Player::getEnderChestContainer() const {
-    return const_cast<Player*>(this)->getEnderChestContainer();
-}
+optional_ref<EnderChestContainer const> Player::getEnderChestContainer() const { return mEnderChestInventory.get(); }

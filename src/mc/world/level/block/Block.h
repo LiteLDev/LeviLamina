@@ -72,7 +72,7 @@ public:
 
     [[nodiscard]] inline short getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
 
-    [[nodiscard]] inline short getData() const { return ll::memory::dAccess<ushort>(this, 8); }
+    [[nodiscard]] inline ushort getData() const { return mData; }
 
 public:
     // member variables

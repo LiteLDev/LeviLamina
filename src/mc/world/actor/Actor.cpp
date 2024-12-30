@@ -4,8 +4,6 @@
 #include <optional>
 #include <string>
 
-#include "ll/api/memory/Memory.h"
-
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
@@ -34,10 +32,9 @@
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
 
-class EntityContext&       Actor::getEntityContext() { return ll::memory::dAccess<EntityContext>(this, 8); }
-class EntityContext const& Actor::getEntityContext() const { return ll::memory::dAccess<EntityContext>(this, 8); }
-
-void Actor::refresh() { _sendDirtyActorData(); }
+class EntityContext&       Actor::getEntityContext() { return mEntityContext.get(); }
+class EntityContext const& Actor::getEntityContext() const { return mEntityContext.get(); }
+void                       Actor::refresh() { _sendDirtyActorData(); }
 
 optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> dimId) const {
     WeakRef<Dimension> dim{};
