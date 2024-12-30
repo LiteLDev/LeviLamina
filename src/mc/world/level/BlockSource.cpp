@@ -19,8 +19,8 @@
 #include "mc/world/level/material/Material.h"
 #include "mc/world/phys/AABB.h"
 
-std::vector<class Actor*>
-BlockSource::getEntities(class AABB const& range, float extendDistance, ActorType actorType, bool ignoreType) const {
+std::vector<Actor*>
+BlockSource::getEntities(AABB const& range, float extendDistance, ActorType actorType, bool ignoreType) const {
     std::vector<Actor*> entities;
 
     ChunkPos minChunk{range.min.x - extendDistance, range.min.z - extendDistance};
@@ -44,7 +44,6 @@ BlockSource::getEntities(class AABB const& range, float extendDistance, ActorTyp
 }
 
 optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) {
-    // This function didn't use 'this' pointer
     return DropperBlockActor::getContainerAt(*this, pos.center());
 }
 

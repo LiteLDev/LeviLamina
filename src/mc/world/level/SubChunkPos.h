@@ -7,25 +7,14 @@
 class BlockPos;
 // clang-format on
 
-class SubChunkPos {
+class SubChunkPos : public ll::math::intN3<SubChunkPos> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> x;
-    ::ll::TypedStorage<4, 4, int> y;
-    ::ll::TypedStorage<4, 4, int> z;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkPos& operator=(SubChunkPos const&);
-    SubChunkPos(SubChunkPos const&);
-    SubChunkPos();
+    using intN3::intN3;
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SubChunkPos(::BlockPos const& bp);
+    MCAPI SubChunkPos(::BlockPos const& bp);
 
     MCAPI explicit operator ::BlockPos() const;
     // NOLINTEND

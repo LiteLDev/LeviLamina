@@ -32,8 +32,8 @@
 #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
 
-class EntityContext&       Actor::getEntityContext() { return mEntityContext.get(); }
-class EntityContext const& Actor::getEntityContext() const { return mEntityContext.get(); }
+class EntityContext&       Actor::getEntityContext() { return *mEntityContext; }
+class EntityContext const& Actor::getEntityContext() const { return *mEntityContext; }
 void                       Actor::refresh() { _sendDirtyActorData(); }
 
 optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> dimId) const {

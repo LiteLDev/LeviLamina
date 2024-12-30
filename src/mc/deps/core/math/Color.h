@@ -260,8 +260,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::mce::Color const& c) const;
-
     MCAPI int toABGR() const;
 
     MCAPI int toARGB() const;

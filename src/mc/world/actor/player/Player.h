@@ -304,9 +304,7 @@ public:
      */
     LLAPI bool addAndRefresh(class ItemStack& item);
 
-    LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer();
-
-    LLNDAPI optional_ref<EnderChestContainer const> getEnderChestContainer() const;
+    LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer() const;
 
 public:
     // member variables

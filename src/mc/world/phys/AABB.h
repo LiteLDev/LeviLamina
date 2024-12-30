@@ -119,10 +119,6 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI bool operator!=(::AABB const& rhs) const;
-
-    MCAPI bool operator==(::AABB const& rhs) const;
-
     MCAPI ::AABB& set(::AABB const& b);
 
     MCAPI ::AABB& set(::Vec3 const& min, ::Vec3 const& max);

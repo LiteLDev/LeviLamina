@@ -45,8 +45,6 @@ public:
 
     MCAPI ::BlockPos neighbor(uchar direction) const;
 
-    MCAPI bool operator!=(::BlockPos const& rhs) const;
-
     MCAPI int randomSeed() const;
 
     MCAPI int64 randomSeed64() const;
