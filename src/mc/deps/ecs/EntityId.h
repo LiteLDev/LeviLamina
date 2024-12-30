@@ -13,9 +13,9 @@ class EntityId : public entt::entt_traits<EntityId> {
 public:
     entity_type mRawId{};
 
-    template <std::integral T>
-        requires(!std::is_same_v<std::remove_cvref_t<T>, bool>)
-    [[nodiscard]] constexpr EntityId(T rawId) : mRawId(static_cast<entity_type>(rawId)) {}
+    [[nodiscard]] constexpr EntityId() = default;
+
+    [[nodiscard]] constexpr EntityId(entity_type rawId) : mRawId(rawId) {}
 
     [[nodiscard]] constexpr bool isNull() const { return *this == entt::null; }
 
