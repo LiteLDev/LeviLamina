@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/SaveContext.h"
 
 // auto generated forward declare list
 // clang-format off
