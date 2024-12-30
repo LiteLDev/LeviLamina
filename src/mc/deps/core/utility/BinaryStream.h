@@ -77,13 +77,13 @@ public:
         char const*                              docFieldNotes
     );
 
-    MCAPI void _writeInteger(short value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void _writeInteger(short value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
     MCAPI void _writeInteger(ushort, char const*, char const*);
 
-    MCAPI void _writeInteger(uchar value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void _writeInteger(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void _writeInteger(int value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void _writeInteger(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
     MCAPI void _writeInteger(uint, char const*, char const*);
 
@@ -93,39 +93,45 @@ public:
 
     MCAPI void write(void const* origin, uint64 num);
 
-    MCAPI void writeBool(bool value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeBool(bool value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeByte(uchar value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeByte(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeDouble(double value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeDouble(double value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeFloat(float value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeFloat(float value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeSignedBigEndianInt(int value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void
+    writeSignedBigEndianInt(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeSignedInt(int value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeSignedInt(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeSignedInt64(int64 value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeSignedInt64(int64 value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeSignedShort(short value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeSignedShort(short value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeString(::std::string_view value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void
+    writeString(::std::string_view value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedChar(uchar value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeUnsignedChar(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedInt(uint value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeUnsignedInt(uint value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedInt64(uint64 value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void
+    writeUnsignedInt64(uint64 value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedShort(ushort value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void
+    writeUnsignedShort(ushort value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedVarInt(uint uvalue, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void
+    writeUnsignedVarInt(uint uvalue, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedVarInt64(uint64 uvalue, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void
+    writeUnsignedVarInt64(uint64 uvalue, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeVarInt(int value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeVarInt(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeVarInt64(int64 value, char const* docFieldName, char const* docFieldNotes);
+    MCAPI void writeVarInt64(int64 value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
     // NOLINTEND
 
 public:
