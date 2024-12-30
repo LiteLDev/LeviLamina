@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/serialize/serialize.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
@@ -40,6 +41,16 @@ public:
     // prevent constructor by default
     BinaryStream& operator=(BinaryStream const&);
     BinaryStream(BinaryStream const&);
+
+    template <typename T>
+    inline void writeType(T const& x, char const* = nullptr, char const* = nullptr) {
+        serialize<T>::write(x, *this);
+    }
+
+    MCTAPI void writeType(class NetworkItemStackDescriptor const&, char const*, char const*);
+    MCTAPI void writeType(class MoveActorAbsoluteData const&, char const*, char const*);
+    MCTAPI void writeType(class NetworkItemInstanceDescriptor const&, char const*, char const*);
+    MCTAPI void writeType(struct PropertySyncData const&, char const*, char const*);
 
 public:
     // virtual functions
