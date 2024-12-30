@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/platform/OSError.h"
 
 // auto generated inclusion list
 #include "mc/platform/ErrorInfo.h"
