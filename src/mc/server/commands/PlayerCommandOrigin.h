@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/world/actor/player/Player.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -30,6 +32,10 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPlayerId;
     ::ll::TypedStorage<8, 8, ::Level&>        mLevel;
     // NOLINTEND
+
+public:
+    PlayerCommandOrigin(::Level& level, ::ActorUniqueID playerId) : mPlayerId(playerId), mLevel(level) {}
+    PlayerCommandOrigin(::Player& player) : mPlayerId(player.getOrCreateUniqueID()), mLevel(player.getLevel()) {}
 
 public:
     // prevent constructor by default
