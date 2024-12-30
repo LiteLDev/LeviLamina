@@ -6,10 +6,8 @@
 namespace test {
 
 class MyMod {
-    ll::mod::Mod& self;
-
 public:
-    explicit MyMod(ll::mod::Mod& self) : self(self) {}
+    explicit MyMod() {}
 
     ~MyMod() = default;
 
@@ -24,8 +22,11 @@ public:
     void doSomething();
 };
 
-std::unique_ptr<class MyMod> myMod114;
+MyMod& getMyMod() {
+    static MyMod ins;
+    return ins;
+}
 
-LL_REGISTER_MOD(MyMod, myMod114);
+LL_REGISTER_MOD(MyMod, getMyMod());
 
 } // namespace test
