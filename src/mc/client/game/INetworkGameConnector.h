@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~INetworkGameConnector();
+    virtual ~INetworkGameConnector() = default;
 
     // vIndex: 1
     virtual void joinRealmsGame(::Realms::World const&, ::Social::GameConnectionInfo const&, bool) = 0;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

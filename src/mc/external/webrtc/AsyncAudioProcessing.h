@@ -34,13 +34,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
-        virtual ~Factory() /*override*/;
+        virtual ~Factory() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 

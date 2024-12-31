@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
-    virtual ~Horse() /*override*/;
+    virtual ~Horse() /*override*/ = default;
 
     // vIndex: 125
     virtual void die(::ActorDamageSource const& damagesource) /*override*/;
@@ -98,7 +98,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
 
     // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& _onBlock) /*override*/;
+    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -163,7 +163,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -207,7 +207,7 @@ public:
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& _onBlock);
+    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND

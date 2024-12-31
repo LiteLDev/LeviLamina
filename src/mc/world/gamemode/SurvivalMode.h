@@ -79,7 +79,7 @@ public:
     virtual void registerUpsellScreenCallback(::std::function<void(bool)> callback) /*override*/;
 
     // vIndex: 0
-    virtual ~SurvivalMode() /*override*/;
+    virtual ~SurvivalMode() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -107,7 +107,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

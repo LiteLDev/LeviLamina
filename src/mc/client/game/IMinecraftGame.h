@@ -176,7 +176,7 @@ public:
     virtual void initialize(int, char**) = 0;
 
     // vIndex: 0
-    virtual ~IMinecraftGame() /*override*/;
+    virtual ~IMinecraftGame() /*override*/ = default;
 
     // vIndex: 2
     virtual void update() = 0;
@@ -980,7 +980,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

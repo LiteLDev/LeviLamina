@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ObserverBlock() /*override*/;
+    virtual ~ObserverBlock() /*override*/ = default;
 
     // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -113,7 +113,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

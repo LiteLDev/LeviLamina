@@ -36,22 +36,18 @@ public:
     virtual void fromJsonResponse(::Json::Value const&) /*override*/;
 
     // vIndex: 0
-    virtual ~CheckReceiptDetailsAmazonAppStore() /*override*/;
+    virtual ~CheckReceiptDetailsAmazonAppStore() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getPath() const;
 
-    MCAPI ::Json::Value $toPostBody() const;
-
-    MCAPI void $fromJsonResponse(::Json::Value const&);
     // NOLINTEND
 };

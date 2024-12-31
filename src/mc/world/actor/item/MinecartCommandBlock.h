@@ -55,7 +55,7 @@ public:
     virtual void _lazyInitDisplayBlock() /*override*/;
 
     // vIndex: 8
-    virtual ~MinecartCommandBlock() /*override*/;
+    virtual ~MinecartCommandBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

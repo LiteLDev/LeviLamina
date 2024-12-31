@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkLinkRtcpObserver();
+    virtual ~NetworkLinkRtcpObserver() = default;
 
     // vIndex: 1
     virtual void OnTransportFeedback(::webrtc::Timestamp, ::webrtc::rtcp::TransportFeedback const&);
@@ -42,19 +42,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnTransportFeedback(::webrtc::Timestamp, ::webrtc::rtcp::TransportFeedback const&);
 
-    MCAPI void $OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp, ::webrtc::DataRate);
-
-    MCAPI void $OnReport(::webrtc::Timestamp, ::rtc::ArrayView<::webrtc::ReportBlockData const>);
-
-    MCAPI void $OnRttUpdate(::webrtc::Timestamp, ::webrtc::TimeDelta);
     // NOLINTEND
 };
 

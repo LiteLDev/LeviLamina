@@ -31,13 +31,13 @@ public:
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
     // vIndex: 1
-    virtual ~Constraint() /*override*/;
+    virtual ~Constraint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

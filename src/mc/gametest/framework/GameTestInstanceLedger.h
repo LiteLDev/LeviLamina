@@ -34,7 +34,7 @@ public:
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     // vIndex: 0
-    virtual ~GameTestInstanceLedger() /*override*/;
+    virtual ~GameTestInstanceLedger() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

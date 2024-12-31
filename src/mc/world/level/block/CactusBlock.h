@@ -65,7 +65,7 @@ public:
     virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const /*override*/;
 
     // vIndex: 0
-    virtual ~CactusBlock() /*override*/;
+    virtual ~CactusBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -83,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

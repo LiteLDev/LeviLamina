@@ -26,7 +26,7 @@ public:
     virtual bool createAIGoals() /*override*/;
 
     // vIndex: 8
-    virtual ~Salmon() /*override*/;
+    virtual ~Salmon() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

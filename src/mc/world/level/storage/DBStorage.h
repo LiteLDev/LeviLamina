@@ -360,8 +360,6 @@ public:
 
     MCAPI ::Core::LevelStorageResult $getState() const;
 
-    MCAPI ::std::unique_ptr<::ChunkSource> $createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion);
-
     MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);

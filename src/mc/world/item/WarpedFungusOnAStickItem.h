@@ -33,7 +33,7 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 0
-    virtual ~WarpedFungusOnAStickItem() /*override*/;
+    virtual ~WarpedFungusOnAStickItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -37,7 +37,7 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
     // vIndex: 0
-    virtual ~StoneBricksBlock() /*override*/;
+    virtual ~StoneBricksBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

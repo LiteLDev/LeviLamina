@@ -66,7 +66,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ICameraAPI();
+    virtual ~ICameraAPI() = default;
 
     // vIndex: 1
     virtual ::std::optional<::Vec3> tryGetActorInterpolatedPosition(::WeakRef<::EntityContext>, float) const = 0;
@@ -115,7 +115,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

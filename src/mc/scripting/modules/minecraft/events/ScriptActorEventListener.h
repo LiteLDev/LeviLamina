@@ -69,13 +69,13 @@ public:
     virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptActorEventListener() /*override*/;
+    virtual ~ScriptActorEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

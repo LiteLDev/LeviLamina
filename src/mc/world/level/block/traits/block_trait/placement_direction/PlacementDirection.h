@@ -56,13 +56,13 @@ public:
         ) const /*override*/;
 
         // vIndex: 0
-        virtual ~UpdateCardinalGetPlacementBlockCallback() /*override*/;
+        virtual ~UpdateCardinalGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -112,13 +112,13 @@ public:
         ) const /*override*/;
 
         // vIndex: 0
-        virtual ~UpdateFacingGetPlacementBlockCallback() /*override*/;
+        virtual ~UpdateFacingGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

@@ -23,7 +23,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~BufferAllocator();
+        virtual ~BufferAllocator() = default;
 
         // vIndex: 1
         virtual void* _allocateBuffer() = 0;
@@ -35,7 +35,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

@@ -33,7 +33,7 @@ public:
         const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockDestructibleByExplosion11920Upgrade() /*override*/;
+    virtual ~BlockDestructibleByExplosion11920Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

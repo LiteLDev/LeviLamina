@@ -40,23 +40,19 @@ public:
     virtual void notifyDoneWithSession(::std::string_view) /*override*/;
 
     // vIndex: 0
-    virtual ~CrashHandlerImpl() /*override*/;
+    virtual ~CrashHandlerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::SessionInfo> $findCrashedSessionInfo(::std::string_view) const;
 
-    MCAPI void $notifyCrashUploadStatus(::Bedrock::CrashFileProcessor::CrashHandler::StatusUpdate const&);
-
-    MCAPI void $notifyDoneWithSession(::std::string_view);
     // NOLINTEND
 };
 

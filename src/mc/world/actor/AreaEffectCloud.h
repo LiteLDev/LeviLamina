@@ -50,7 +50,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     // vIndex: 56
-    virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -65,7 +65,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual ~AreaEffectCloud() /*override*/;
+    virtual ~AreaEffectCloud() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -121,15 +121,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
-
-    MCAPI void $setOwner(::ActorUniqueID const ownerID);
+    MCAPI void $setOwner(::ActorUniqueID const ownerId);
 
     MCAPI void $normalTick();
 

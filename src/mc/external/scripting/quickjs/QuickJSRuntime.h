@@ -261,9 +261,6 @@ public:
         ::entt::meta_any&                                        arg
     );
 
-    MCAPI ::Scripting::FutureStatus
-        $getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const;
-
     MCAPI ::Scripting::ResultAny $getFutureResult(
         ::Scripting::ContextId                                  contextId,
         ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,

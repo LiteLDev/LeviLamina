@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptRGB();
+    virtual ~ScriptRGB() = default;
 
     // vIndex: 1
     virtual bool isValid() const;
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

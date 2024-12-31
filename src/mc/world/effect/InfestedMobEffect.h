@@ -26,13 +26,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~InfestedMobEffect() /*override*/;
+    virtual ~InfestedMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

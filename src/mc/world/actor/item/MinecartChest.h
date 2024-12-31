@@ -39,7 +39,7 @@ public:
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
     // vIndex: 8
-    virtual ~MinecartChest() /*override*/;
+    virtual ~MinecartChest() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

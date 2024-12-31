@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorServerCommandOrigin() /*override*/;
+    virtual ~ActorServerCommandOrigin() /*override*/ = default;
 
     // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

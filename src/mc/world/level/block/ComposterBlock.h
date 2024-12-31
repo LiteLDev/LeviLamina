@@ -105,7 +105,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~ComposterBlock() /*override*/;
+    virtual ~ComposterBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -177,7 +177,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -195,10 +195,6 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI ::HitResult
-    $clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
-
     MCAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
@@ -215,8 +211,6 @@ public:
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
-
-    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCAPI int $getVariant(::Block const& block) const;
 

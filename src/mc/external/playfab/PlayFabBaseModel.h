@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayFabBaseModel();
+    virtual ~PlayFabBaseModel() = default;
 
     // vIndex: 1
     virtual void FromJson(::Json::Value&) = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

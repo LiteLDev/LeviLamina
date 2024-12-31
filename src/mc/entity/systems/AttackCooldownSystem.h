@@ -24,13 +24,13 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 0
-    virtual ~AttackCooldownSystem() /*override*/;
+    virtual ~AttackCooldownSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

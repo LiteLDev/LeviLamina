@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RTCCertificateGenerator() /*override*/;
+    virtual ~RTCCertificateGenerator() /*override*/ = default;
 
     // vIndex: 1
     virtual void
@@ -64,14 +64,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $GenerateCertificateAsync(::rtc::KeyParams const&, ::std::optional<uint64> const&, ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&>);
+
     // NOLINTEND
 
 public:

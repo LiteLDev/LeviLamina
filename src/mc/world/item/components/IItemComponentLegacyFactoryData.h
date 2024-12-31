@@ -40,12 +40,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IItemComponentLegacyFactoryData();
+    virtual ~IItemComponentLegacyFactoryData() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

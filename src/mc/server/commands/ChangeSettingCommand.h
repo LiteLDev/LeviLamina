@@ -42,7 +42,7 @@ public:
     virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
 
     // vIndex: 0
-    virtual ~ChangeSettingCommand() /*override*/;
+    virtual ~ChangeSettingCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

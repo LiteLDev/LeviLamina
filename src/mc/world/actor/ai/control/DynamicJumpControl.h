@@ -47,7 +47,7 @@ public:
     virtual void resetSpeedModifier(::JumpControlComponent const& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 0
-    virtual ~DynamicJumpControl() /*override*/;
+    virtual ~DynamicJumpControl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

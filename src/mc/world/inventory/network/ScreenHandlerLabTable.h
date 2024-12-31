@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScreenHandlerLabTable() /*override*/;
+    virtual ~ScreenHandlerLabTable() /*override*/ = default;
 
     // vIndex: 1
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

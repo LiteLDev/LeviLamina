@@ -39,7 +39,7 @@ public:
     virtual void _playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos) /*override*/;
 
     // vIndex: 0
-    virtual ~StompEggGoal() /*override*/;
+    virtual ~StompEggGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

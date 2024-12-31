@@ -21,19 +21,19 @@ public:
     virtual void _initializePlatform(bool const) /*override*/;
 
     // vIndex: 0
-    virtual ~DeviceIdManager_Win32() /*override*/;
+    virtual ~DeviceIdManager_Win32() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializePlatform(bool const);
+
     // NOLINTEND
 };
 

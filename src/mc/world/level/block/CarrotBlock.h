@@ -44,7 +44,7 @@ public:
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const /*override*/;
 
     // vIndex: 0
-    virtual ~CarrotBlock() /*override*/;
+    virtual ~CarrotBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

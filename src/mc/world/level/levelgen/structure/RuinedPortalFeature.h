@@ -63,7 +63,7 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~RuinedPortalFeature() /*override*/;
+    virtual ~RuinedPortalFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

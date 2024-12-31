@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BeaconPaymentContainerController() /*override*/;
+    virtual ~BeaconPaymentContainerController() /*override*/ = default;
 
     // vIndex: 4
     virtual bool isItemFiltered(::Recipes const&, ::ItemStackBase const&) const /*override*/;
@@ -31,12 +31,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
+
     // NOLINTEND
 };

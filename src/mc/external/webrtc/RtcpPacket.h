@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtcpPacket();
+    virtual ~RtcpPacket() = default;
 
     // vIndex: 1
     virtual uint64 BlockLength() const = 0;
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

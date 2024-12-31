@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SwimIdleDefinition() /*override*/;
+    virtual ~SwimIdleDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

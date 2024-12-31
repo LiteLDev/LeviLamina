@@ -55,7 +55,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~LanternBlock() /*override*/;
+    virtual ~LanternBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

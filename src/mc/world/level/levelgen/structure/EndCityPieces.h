@@ -141,13 +141,13 @@ public:
         generate(::Bedrock::NotNullNonOwnerPtr<::StructureManager>, ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>> const&, int, ::EndCityPieces::EndCityPiece*, ::BlockPos const&, ::std::vector<::std::unique_ptr<::StructurePiece>>&, ::Random&) = 0;
 
         // vIndex: 1
-        virtual ~SectionGenerator();
+        virtual ~SectionGenerator() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -192,13 +192,13 @@ public:
         ) /*override*/;
 
         // vIndex: 1
-        virtual ~TowerGenerator() /*override*/;
+        virtual ~TowerGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -244,13 +244,13 @@ public:
         ) /*override*/;
 
         // vIndex: 1
-        virtual ~FatTowerGenerator() /*override*/;
+        virtual ~FatTowerGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -302,13 +302,13 @@ public:
         ) /*override*/;
 
         // vIndex: 1
-        virtual ~TowerBridgeGenerator() /*override*/;
+        virtual ~TowerBridgeGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -354,13 +354,13 @@ public:
         ) /*override*/;
 
         // vIndex: 1
-        virtual ~HouseTowerGenerator() /*override*/;
+        virtual ~HouseTowerGenerator() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

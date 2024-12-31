@@ -38,7 +38,7 @@ public:
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 0
-    virtual ~ShulkerBoxBlockItem() /*override*/;
+    virtual ~ShulkerBoxBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

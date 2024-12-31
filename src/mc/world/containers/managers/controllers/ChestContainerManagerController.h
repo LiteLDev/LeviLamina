@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ChestContainerManagerController() /*override*/;
+    virtual ~ChestContainerManagerController() /*override*/ = default;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
@@ -40,14 +40,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
 
-    MCAPI void $_onItemPlaced(::ItemInstance const&, ::SlotData const&);
     // NOLINTEND
 };

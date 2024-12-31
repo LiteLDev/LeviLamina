@@ -231,10 +231,6 @@ public:
         ::PlayerInteractWithEntityBeforeEvent const& eventData
     );
 
-    MCAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    $onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType);
-
     MCAPI void $onBeforeWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&
             blockComponentRegistry,

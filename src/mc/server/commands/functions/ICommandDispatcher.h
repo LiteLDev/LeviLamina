@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ICommandDispatcher();
+    virtual ~ICommandDispatcher() = default;
 
     // vIndex: 1
     virtual int performCommand(::CommandOrigin const&, ::Command&) = 0;
@@ -28,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

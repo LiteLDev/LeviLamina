@@ -67,7 +67,7 @@ public:
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
     // vIndex: 0
-    virtual ~SkullItem() /*override*/;
+    virtual ~SkullItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

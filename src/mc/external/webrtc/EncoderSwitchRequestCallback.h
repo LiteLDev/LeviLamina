@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EncoderSwitchRequestCallback();
+    virtual ~EncoderSwitchRequestCallback() = default;
 
     // vIndex: 1
     virtual void RequestEncoderFallback() = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

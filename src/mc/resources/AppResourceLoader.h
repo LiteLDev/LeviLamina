@@ -45,33 +45,18 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~AppResourceLoader() /*override*/;
+    virtual ~AppResourceLoader() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $load(::ResourceLocation const&, ::std::string&) const;
 
-    MCAPI bool $load(::ResourceLocation const&, ::std::string&, ::gsl::span<::std::string const>) const;
-
-    MCAPI bool $load(
-        ::ResourceLocationPair const&    resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
-    ) const;
-
-    MCAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const&) const;
-
-    MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
     // NOLINTEND
 };

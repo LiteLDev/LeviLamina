@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftReportGameListener() /*override*/;
+    virtual ~MinecraftReportGameListener() /*override*/ = default;
 
     // vIndex: 1
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance& testInstance) /*override*/;
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

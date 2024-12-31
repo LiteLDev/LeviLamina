@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BatteryMonitorInterface();
+    virtual ~BatteryMonitorInterface() = default;
 
     // vIndex: 1
     virtual ::BatteryStatus getBatteryStatus() const = 0;
@@ -28,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

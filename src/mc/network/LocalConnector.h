@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LocalConnector() /*override*/;
+    virtual ~LocalConnector() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::vector<::std::string> getLocalIps() const /*override*/;
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -108,8 +108,6 @@ public:
     MCAPI ushort $getIPv4Port() const;
 
     MCAPI ushort $getIPv6Port() const;
-
-    MCAPI ::TransportLayer $getNetworkType() const;
     // NOLINTEND
 
 public:

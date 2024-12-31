@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IUserDataObject();
+    virtual ~IUserDataObject() = default;
 
     // vIndex: 1
     virtual ::std::string const& getObjectName() const = 0;
@@ -35,7 +35,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -55,13 +55,13 @@ public:
     virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~SculkShriekerVibrationConfig() /*override*/;
+    virtual ~SculkShriekerVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

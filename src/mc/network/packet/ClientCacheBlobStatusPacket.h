@@ -43,13 +43,13 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
-    virtual ~ClientCacheBlobStatusPacket() /*override*/;
+    virtual ~ClientCacheBlobStatusPacket() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

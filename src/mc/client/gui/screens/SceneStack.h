@@ -50,13 +50,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~SceneStackEvent();
+        virtual ~SceneStackEvent() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -78,13 +78,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~PushScreenEvent() /*override*/;
+        virtual ~PushScreenEvent() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -107,13 +107,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~PopScreenEvent() /*override*/;
+        virtual ~PopScreenEvent() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -136,13 +136,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~PopRangeOfTypeScreenEvent() /*override*/;
+        virtual ~PopRangeOfTypeScreenEvent() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -164,13 +164,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~FlushScreenEvent() /*override*/;
+        virtual ~FlushScreenEvent() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -192,13 +192,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~SceneElement();
+        virtual ~SceneElement() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -244,7 +244,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SceneStack() /*override*/;
+    virtual ~SceneStack() /*override*/ = default;
 
     // vIndex: 1
     virtual void registerSceneChangeCallback(void*, ::std::function<void(::AbstractScene&)>) /*override*/;
@@ -318,54 +318,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerSceneChangeCallback(void*, ::std::function<void(::AbstractScene&)>);
 
-    MCAPI void $unregisterSceneChangeCallback(void*);
-
-    MCAPI void $registerPrePushSceneCallback(void*, ::std::function<void(::AbstractScene&)>);
-
-    MCAPI void $unregisterPrePushSceneCallback(void*);
-
-    MCAPI void
-    $registerPushSceneCallback(void*, ::std::function<void(::std::shared_ptr<::AbstractScene>, ::std::optional<::OreUI::RouteAction>)>);
-
-    MCAPI void $unregisterPushSceneCallback(void*);
-
-    MCAPI void $registerPrePopSceneCallback(void*, ::std::function<void(::AbstractScene*)>);
-
-    MCAPI void $unregisterPrePopSceneCallback(void*);
-
-    MCAPI void
-    $registerPopSceneCallback(void*, ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>);
-
-    MCAPI void $unregisterPopSceneCallback(void*);
-
-    MCAPI void $pushScreenWithRouteAction(::std::shared_ptr<::AbstractScene>, ::OreUI::RouteAction const&);
-
-    MCAPI void $popScreenWithRouteAction(::OreUI::RouteAction const&);
-
-    MCAPI void $pushScreen(::std::shared_ptr<::AbstractScene>, bool);
-
-    MCAPI void $schedulePopScreen(int);
-
-    MCAPI void $schedulePopScreenWithExpectedNames(::std::vector<::std::string> const&);
-
-    MCAPI void $flushStack(bool, bool, bool);
-
-    MCAPI bool $isEmpty() const;
-
-    MCAPI ::AbstractScene* $getTopScene();
-
-    MCAPI ::AbstractScene const* $getTopScene() const;
-
-    MCAPI ::std::shared_ptr<::AbstractScene> $getTopSceneShared() const;
-
-    MCAPI void $setBufferTextCharEvents(bool);
     // NOLINTEND
 };

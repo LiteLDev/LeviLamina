@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScriptItemCustomComponentRegistry();
+    virtual ~IScriptItemCustomComponentRegistry() = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<
@@ -72,13 +72,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setCerealContext(::cereal::ReflectionCtx&);
+
     // NOLINTEND
 };
 

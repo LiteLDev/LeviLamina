@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISettingStorageStrategy();
+    virtual ~ISettingStorageStrategy() = default;
 
     // vIndex: 1
     virtual ::Json::Value clientConfig() const = 0;
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

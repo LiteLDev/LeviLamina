@@ -67,7 +67,7 @@ public:
         ) /*override*/;
 
         // vIndex: 0
-        virtual ~OceanRuinPiece() /*override*/;
+        virtual ~OceanRuinPiece() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -103,7 +103,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

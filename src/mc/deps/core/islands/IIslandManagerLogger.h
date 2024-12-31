@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IIslandManagerLogger();
+    virtual ~IIslandManagerLogger() = default;
 
     // vIndex: 1
     virtual void transitionSignaled(::Bedrock::IslandTransition) = 0;
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

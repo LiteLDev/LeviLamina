@@ -59,7 +59,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PortAllocator() /*override*/;
+    virtual ~PortAllocator() /*override*/ = default;
 
     // vIndex: 1
     virtual void Initialize();
@@ -123,23 +123,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Initialize();
 
-    MCAPI void $set_restrict_ice_credentials_change(bool);
-
-    MCAPI void $SetVpnPreference(::webrtc::VpnPreference);
-
-    MCAPI void $SetVpnList(::std::vector<::rtc::NetworkMask> const&);
-
-    MCAPI void $GetCandidateStatsFromPooledSessions(::std::vector<::cricket::CandidateStats>*);
-
-    MCAPI bool $MdnsObfuscationEnabled() const;
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IActorEventCoordinatorDependencies();
+    virtual ~IActorEventCoordinatorDependencies() = default;
 
     // vIndex: 1
     virtual void sendActorUseItemEvent(::EntityContext&, ::ItemStack&, ::ItemUseMethod) = 0;
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

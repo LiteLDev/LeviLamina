@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DeferredCommand() /*override*/;
+    virtual ~DeferredCommand() /*override*/ = default;
 
     // vIndex: 1
     virtual void execute(::MinecraftCommands& commands) /*override*/;
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -26,13 +26,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorldGenMultiNoiseClimateAttributes() /*override*/;
+    virtual ~WorldGenMultiNoiseClimateAttributes() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

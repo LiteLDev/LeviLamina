@@ -34,13 +34,13 @@ public:
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
     // vIndex: 0
-    virtual ~FlyDefinition() /*override*/;
+    virtual ~FlyDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

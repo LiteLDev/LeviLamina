@@ -28,7 +28,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~InteractionMappingBase();
+        virtual ~InteractionMappingBase() = default;
 
         // vIndex: 1
         virtual bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
@@ -37,7 +37,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

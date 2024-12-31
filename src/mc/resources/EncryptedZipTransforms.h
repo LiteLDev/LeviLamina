@@ -34,7 +34,7 @@ public:
     virtual bool writeTransform(::std::vector<uchar>& stream) const /*override*/;
 
     // vIndex: 0
-    virtual ~EncryptedZipTransforms() /*override*/;
+    virtual ~EncryptedZipTransforms() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

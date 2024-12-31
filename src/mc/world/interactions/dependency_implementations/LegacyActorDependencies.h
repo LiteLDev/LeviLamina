@@ -27,13 +27,13 @@ public:
     virtual bool isRemoved() /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyActorDependencies() /*override*/;
+    virtual ~LegacyActorDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

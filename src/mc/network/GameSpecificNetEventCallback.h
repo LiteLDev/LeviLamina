@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameSpecificNetEventCallback();
+    virtual ~GameSpecificNetEventCallback() = default;
 
     // vIndex: 1
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
@@ -28,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

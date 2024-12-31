@@ -57,7 +57,7 @@ public:
     virtual bool isSignalSource() const /*override*/;
 
     // vIndex: 0
-    virtual ~DetectorRailBlock() /*override*/;
+    virtual ~DetectorRailBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

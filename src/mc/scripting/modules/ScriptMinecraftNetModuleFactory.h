@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptMinecraftNetModuleFactory() /*override*/;
+    virtual ~ScriptMinecraftNetModuleFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

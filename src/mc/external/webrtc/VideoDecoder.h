@@ -61,7 +61,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VideoDecoder();
+    virtual ~VideoDecoder() = default;
 
     // vIndex: 1
     virtual bool Configure(::webrtc::VideoDecoder::Settings const&) = 0;
@@ -88,19 +88,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $Decode(::webrtc::EncodedImage const&, int64);
 
-    MCAPI int $Decode(::webrtc::EncodedImage const&, bool, int64);
-
-    MCAPI ::webrtc::VideoDecoder::DecoderInfo $GetDecoderInfo() const;
-
-    MCAPI char const* $ImplementationName() const;
     // NOLINTEND
 };
 

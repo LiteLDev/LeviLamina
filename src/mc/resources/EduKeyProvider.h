@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EduKeyProvider() /*override*/;
+    virtual ~EduKeyProvider() /*override*/ = default;
 
     // vIndex: 6
     virtual bool canAccess(::ContentIdentity const&) const /*override*/;
@@ -52,22 +52,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canAccess(::ContentIdentity const&) const;
 
-    MCAPI ::std::string $getContentKey(::ContentIdentity const&) const;
-
-    MCAPI ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
-
-    MCAPI void $setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&);
-
-    MCAPI void $clearTempContentKeys();
-
-    MCAPI bool $requireEncryptedReads() const;
     // NOLINTEND
 };

@@ -32,7 +32,7 @@ public:
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 0
-    virtual ~SmithingTableBlock() /*override*/;
+    virtual ~SmithingTableBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

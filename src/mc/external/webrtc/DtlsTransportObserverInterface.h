@@ -27,13 +27,13 @@ public:
     virtual void OnError(::webrtc::RTCError) = 0;
 
     // vIndex: 2
-    virtual ~DtlsTransportObserverInterface();
+    virtual ~DtlsTransportObserverInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

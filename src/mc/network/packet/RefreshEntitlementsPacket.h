@@ -36,13 +36,13 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
 
     // vIndex: 0
-    virtual ~RefreshEntitlementsPacket() /*override*/;
+    virtual ~RefreshEntitlementsPacket() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

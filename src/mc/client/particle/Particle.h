@@ -58,7 +58,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Particle();
+    virtual ~Particle() = default;
 
     // vIndex: 1
     virtual void init(::Vec3 const&, ::Vec3 const&, int, ::ParticleEngine&) = 0;
@@ -88,24 +88,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addTagData(::CompoundTag const&);
 
-    MCAPI void $normalTick();
-
-    MCAPI void $tessellate(::ParticleRenderContext const&);
-
-    MCAPI ::mce::TexturePtr const& $getParticleTexture() const;
-
-    MCAPI void $setEmittingEntity(::Actor&);
-
-    MCAPI bool $_shouldUpdateVertexData(float);
-
-    MCAPI void $_calculateAmbientLight(float);
     // NOLINTEND
 };

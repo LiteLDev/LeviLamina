@@ -25,7 +25,7 @@ public:
     getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptListBlockVolume() /*override*/;
+    virtual ~ScriptListBlockVolume() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -67,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

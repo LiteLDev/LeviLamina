@@ -27,7 +27,7 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 0
-    virtual ~InstantDespawnSystem() /*override*/;
+    virtual ~InstantDespawnSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

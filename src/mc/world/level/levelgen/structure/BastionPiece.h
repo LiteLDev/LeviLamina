@@ -49,7 +49,7 @@ public:
     virtual ::AdjustmentEffect getTerrainAdjustmentEffect() const /*override*/;
 
     // vIndex: 0
-    virtual ~BastionPiece() /*override*/;
+    virtual ~BastionPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

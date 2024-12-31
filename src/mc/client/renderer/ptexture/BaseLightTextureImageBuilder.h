@@ -50,7 +50,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseLightTextureImageBuilder();
+    virtual ~BaseLightTextureImageBuilder() = default;
 
     // vIndex: 1
     virtual void init(::Dimension*);
@@ -68,18 +68,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::Dimension*);
 
-    MCAPI bool $hasBrightnessModifier() const;
-
-    MCAPI void $getModifiedBlockBrightnessColor(::BlockPos const&, ::BrightnessPair&) const;
-
-    MCAPI ::std::unique_ptr<::BaseLightData> $createBaseLightTextureData(::IClientInstance*, ::BaseLightData const&);
     // NOLINTEND
 };

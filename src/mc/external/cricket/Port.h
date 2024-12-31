@@ -89,7 +89,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Port() /*override*/;
+    virtual ~Port() /*override*/ = default;
 
     // vIndex: 1
     virtual ::webrtc::IceCandidateType Type() const /*override*/;
@@ -315,84 +315,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::IceCandidateType $Type() const;
 
-    MCAPI ::rtc::Network const* $Network() const;
-
-    MCAPI ::cricket::IceRole $GetIceRole() const;
-
-    MCAPI void $SetIceRole(::cricket::IceRole);
-
-    MCAPI void $SetIceTiebreaker(uint64);
-
-    MCAPI uint64 $IceTiebreaker() const;
-
-    MCAPI bool $SharedSocket() const;
-
-    MCAPI ::webrtc::TaskQueueBase* $thread();
-
-    MCAPI ::rtc::PacketSocketFactory* $socket_factory() const;
-
-    MCAPI ::std::string const& $content_name() const;
-
-    MCAPI bool $send_retransmit_count_attribute() const;
-
-    MCAPI uint $generation() const;
-
-    MCAPI void $set_generation(uint);
-
-    MCAPI ::std::vector<::cricket::Candidate> const& $Candidates() const;
-
-    MCAPI void $SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)>);
-
-    MCAPI ::cricket::Connection* $GetConnection(::rtc::SocketAddress const&);
-
-    MCAPI void $DestroyConnection(::cricket::Connection*);
-
-    MCAPI void $DestroyConnectionAsync(::cricket::Connection*);
-
-    MCAPI bool $HandleIncomingPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&);
-
-    MCAPI bool $CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
-
-    MCAPI void $SendBindingErrorResponse(::cricket::StunMessage*, ::rtc::SocketAddress const&, int, ::std::string_view);
-
-    MCAPI ::std::string const& $user_agent();
-
-    MCAPI ::rtc::ProxyInfo const& $proxy();
-
-    MCAPI void $EnablePortPackets();
-
-    MCAPI ::std::string $ToString() const;
-
-    MCAPI bool $ParseStunUsername(::cricket::StunMessage const*, ::std::string*, ::std::string*) const;
-
-    MCAPI ::std::string $CreateStunUsername(::std::string_view) const;
-
-    MCAPI bool $MaybeIceRoleConflict(::rtc::SocketAddress const&, ::cricket::IceMessage*, ::std::string_view);
-
-    MCAPI void $AddPrflxCandidate(::cricket::Candidate const&);
-
-    MCAPI short $network_cost() const;
-
-    MCAPI void $GetStunStats(::std::optional<::cricket::StunStats>*);
-
-    MCAPI void $UpdateNetworkCost();
-
-    MCAPI void $PostAddAddress(bool);
-
-    MCAPI bool
-    $GetStunMessage(char const*, uint64, ::rtc::SocketAddress const&, ::std::unique_ptr<::cricket::IceMessage>*, ::std::string*);
-
-    MCAPI ::rtc::DiffServCodePoint $StunDscpValue() const;
-
-    MCAPI void $HandleConnectionDestroyed(::cricket::Connection*);
     // NOLINTEND
 
 public:

@@ -40,7 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~LevelContainerModel() /*override*/;
+    virtual ~LevelContainerModel() /*override*/ = default;
 
     // vIndex: 3
     virtual void releaseResources() /*override*/;
@@ -121,7 +121,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

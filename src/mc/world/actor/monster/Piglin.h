@@ -32,7 +32,7 @@ public:
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 8
-    virtual ~Piglin() /*override*/;
+    virtual ~Piglin() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

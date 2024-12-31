@@ -31,24 +31,18 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~ClientScratchContainer() /*override*/;
+    virtual ~ClientScratchContainer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
     // NOLINTEND
 };

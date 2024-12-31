@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ICommandOriginLoader();
+    virtual ~ICommandOriginLoader() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const&) = 0;
@@ -28,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

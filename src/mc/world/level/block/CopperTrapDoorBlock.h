@@ -45,7 +45,7 @@ public:
     virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 0
-    virtual ~CopperTrapDoorBlock() /*override*/;
+    virtual ~CopperTrapDoorBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

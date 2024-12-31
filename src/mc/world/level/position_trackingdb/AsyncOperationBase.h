@@ -64,13 +64,13 @@ public:
     _quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
 
     // vIndex: 0
-    virtual ~AsyncOperationBase() /*override*/;
+    virtual ~AsyncOperationBase() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -84,12 +84,6 @@ public:
     MCAPI bool $isAsync() const;
 
     MCAPI bool $isComplete() const;
-
-    MCAPI bool
-    $_init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
-
-    MCAPI bool
-    $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
     MCAPI bool
     $_quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);

@@ -20,13 +20,13 @@ public:
     virtual void setDynamicPackageRoot(::Core::PathBuffer<::std::string>) = 0;
 
     // vIndex: 0
-    virtual ~IDynamicPackagePacks() /*override*/;
+    virtual ~IDynamicPackagePacks() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

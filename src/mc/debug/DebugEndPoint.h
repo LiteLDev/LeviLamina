@@ -113,7 +113,7 @@ public:
     virtual void contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
 
     // vIndex: 0
-    virtual ~DebugEndPoint() /*override*/;
+    virtual ~DebugEndPoint() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -139,7 +139,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

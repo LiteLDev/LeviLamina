@@ -41,7 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockEventCoordinator() /*override*/;
+    virtual ~BlockEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -92,7 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

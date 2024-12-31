@@ -90,13 +90,13 @@ public:
         virtual void reset() /*override*/;
 
         // vIndex: 0
-        virtual ~Timer() /*override*/;
+        virtual ~Timer() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

@@ -40,7 +40,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~MossBlock() /*override*/;
+    virtual ~MossBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

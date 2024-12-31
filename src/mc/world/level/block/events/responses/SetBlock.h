@@ -43,7 +43,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~SetBlock() /*override*/;
+    virtual ~SetBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

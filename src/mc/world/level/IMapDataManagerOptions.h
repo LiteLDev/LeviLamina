@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IMapDataManagerOptions();
+    virtual ~IMapDataManagerOptions() = default;
 
     // vIndex: 1
     virtual bool isPremiumWorldTemplate() const = 0;
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

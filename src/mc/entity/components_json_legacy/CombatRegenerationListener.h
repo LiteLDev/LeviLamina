@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CombatRegenerationListener() /*override*/;
+    virtual ~CombatRegenerationListener() /*override*/ = default;
 
     // vIndex: 1
     virtual ::EventResult onEvent(::ActorNotificationEvent const& event) /*override*/;
@@ -40,7 +40,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

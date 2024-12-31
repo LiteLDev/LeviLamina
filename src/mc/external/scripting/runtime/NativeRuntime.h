@@ -53,7 +53,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NativeRuntime() /*override*/;
+    virtual ~NativeRuntime() /*override*/ = default;
 
     // vIndex: 3
     virtual ::std::optional<::Scripting::ScriptContext>
@@ -155,7 +155,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MockDebugEndPoint() /*override*/;
+    virtual ~MockDebugEndPoint() /*override*/ = default;
 
     // vIndex: 1
     virtual void log(::LogArea const, ::LogLevel const, char const*) /*override*/;
@@ -27,12 +27,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $log(::LogArea const, ::LogLevel const, char const*);
+
     // NOLINTEND
 };

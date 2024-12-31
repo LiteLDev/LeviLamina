@@ -43,7 +43,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptBlockGameplayHandler() /*override*/;
+    virtual ~ScriptBlockGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

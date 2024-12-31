@@ -27,7 +27,7 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
     // vIndex: 0
-    virtual ~PumpkinBlockItem() /*override*/;
+    virtual ~PumpkinBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

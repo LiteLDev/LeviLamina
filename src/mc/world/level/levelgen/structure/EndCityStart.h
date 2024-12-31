@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EndCityStart() /*override*/;
+    virtual ~EndCityStart() /*override*/ = default;
 
     // vIndex: 2
     virtual bool isValid() const /*override*/;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

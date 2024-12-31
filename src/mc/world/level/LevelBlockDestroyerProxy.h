@@ -35,13 +35,13 @@ public:
     virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) /*override*/;
 
     // vIndex: 0
-    virtual ~LevelBlockDestroyerProxy() /*override*/;
+    virtual ~LevelBlockDestroyerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

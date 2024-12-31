@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFlightingToggles();
+    virtual ~IFlightingToggles() = default;
 
     // vIndex: 1
     virtual ::gsl::not_null<::Option const*> get(::FlightingToggleId) const = 0;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

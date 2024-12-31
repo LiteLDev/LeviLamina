@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncDnsResolverFactoryInterface();
+    virtual ~AsyncDnsResolverFactoryInterface() = default;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -35,7 +35,7 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
-    virtual ~DecoratedPotBlockItem() /*override*/;
+    virtual ~DecoratedPotBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

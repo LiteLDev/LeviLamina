@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftingContainerController() /*override*/;
+    virtual ~CraftingContainerController() /*override*/ = default;
 
     // vIndex: 1
     virtual ::ItemInstance const& getRecipeItem(int) const = 0;
@@ -55,20 +55,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRecipeSelected(::Recipe const*, uint64, bool);
 
-    MCAPI void $clearSelectedRecipe();
-
-    MCAPI ::Recipe const* $getSelectedRecipe() const;
-
-    MCAPI void $setGhostItem(::ItemInstance const&, int, bool);
-
-    MCAPI ::ItemInstance const& $getGhostItem(int) const;
     // NOLINTEND
 };

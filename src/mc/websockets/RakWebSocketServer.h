@@ -63,24 +63,18 @@ public:
     virtual uint _genMaskingKey() const /*override*/;
 
     // vIndex: 0
-    virtual ~RakWebSocketServer() /*override*/;
+    virtual ~RakWebSocketServer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isReady() const;
 
-    MCAPI void $tick();
-
-    MCAPI void $_updateState();
-
-    MCAPI uint $_genMaskingKey() const;
     // NOLINTEND
 };

@@ -39,7 +39,7 @@ public:
     virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
 
     // vIndex: 0
-    virtual ~ServerScriptDebugCommand() /*override*/;
+    virtual ~ServerScriptDebugCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

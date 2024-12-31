@@ -38,7 +38,7 @@ public:
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
     // vIndex: 0
-    virtual ~GetInteractionPositionForBlockNode() /*override*/;
+    virtual ~GetInteractionPositionForBlockNode() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

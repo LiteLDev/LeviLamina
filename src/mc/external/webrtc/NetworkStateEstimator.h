@@ -35,19 +35,19 @@ public:
     virtual void OnRouteChange(::webrtc::NetworkRouteChange const&) = 0;
 
     // vIndex: 4
-    virtual ~NetworkStateEstimator();
+    virtual ~NetworkStateEstimator() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnReceivedPacket(::webrtc::PacketResult const&);
+
     // NOLINTEND
 };
 

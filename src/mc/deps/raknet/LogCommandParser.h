@@ -54,7 +54,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LogCommandParser() /*override*/;
+    virtual ~LogCommandParser() /*override*/ = default;
 
     // vIndex: 5
     virtual bool
@@ -80,24 +80,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $OnCommand(char const*, uint, char**, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&, char const*);
 
-    MCAPI char const* $GetName() const;
-
-    MCAPI void $SendHelp(::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
-
-    MCAPI void $OnNewIncomingConnection(::RakNet::SystemAddress const&, ::RakNet::TransportInterface*);
-
-    MCAPI void $OnConnectionLost(::RakNet::SystemAddress const&, ::RakNet::TransportInterface*);
-
-    MCAPI void $OnTransportChange(::RakNet::TransportInterface*);
     // NOLINTEND
 };
 

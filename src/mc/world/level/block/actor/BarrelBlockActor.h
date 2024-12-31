@@ -41,7 +41,7 @@ public:
     virtual void playCloseSound(::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~BarrelBlockActor() /*override*/;
+    virtual ~BarrelBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

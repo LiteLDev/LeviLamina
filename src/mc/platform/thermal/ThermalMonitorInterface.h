@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ThermalMonitorInterface();
+    virtual ~ThermalMonitorInterface() = default;
 
     // vIndex: 1
     virtual ::ThermalState getThermalState() const = 0;
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

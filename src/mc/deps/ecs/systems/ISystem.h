@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISystem();
+    virtual ~ISystem() = default;
 
     // vIndex: 1
     virtual void registerEvents(::entt::dispatcher& dispatcher);
@@ -22,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

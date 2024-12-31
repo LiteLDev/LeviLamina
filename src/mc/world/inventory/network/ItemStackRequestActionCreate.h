@@ -35,7 +35,7 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
-    virtual ~ItemStackRequestActionCreate() /*override*/;
+    virtual ~ItemStackRequestActionCreate() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

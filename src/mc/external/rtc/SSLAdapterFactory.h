@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SSLAdapterFactory();
+    virtual ~SSLAdapterFactory() = default;
 
     // vIndex: 1
     virtual void SetMode(::rtc::SSLMode) = 0;
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

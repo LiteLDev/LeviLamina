@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RNS2_Berkley() /*override*/;
+    virtual ~RNS2_Berkley() /*override*/ = default;
 
     // vIndex: 2
     virtual void SetMulticastInterface(int interfaceIndex) /*override*/;
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorldTemplatePackSource() /*override*/;
+    virtual ~WorldTemplatePackSource() /*override*/ = default;
 
     // vIndex: 5
     virtual ::PackSourceReport load(
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -72,7 +72,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~DaylightDetectorBlock() /*override*/;
+    virtual ~DaylightDetectorBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -92,7 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

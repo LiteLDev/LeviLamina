@@ -34,23 +34,19 @@ public:
     virtual void fireCommandDoneEvent() /*override*/;
 
     // vIndex: 0
-    virtual ~InspectCommand() /*override*/;
+    virtual ~InspectCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute();
 
-    MCAPI bool $isDone();
-
-    MCAPI void $fireCommandDoneEvent();
     // NOLINTEND
 };
 

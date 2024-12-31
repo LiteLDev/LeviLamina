@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IContainerTransfer();
+    virtual ~IContainerTransfer() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::ContainerTransferScope> preTransfer() = 0;
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

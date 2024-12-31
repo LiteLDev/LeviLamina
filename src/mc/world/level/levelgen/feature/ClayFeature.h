@@ -32,7 +32,7 @@ public:
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 0
-    virtual ~ClayFeature() /*override*/;
+    virtual ~ClayFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

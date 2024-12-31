@@ -65,7 +65,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~MangrovePropaguleBlock() /*override*/;
+    virtual ~MangrovePropaguleBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

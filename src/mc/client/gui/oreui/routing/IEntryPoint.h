@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IEntryPoint();
+    virtual ~IEntryPoint() = default;
 
     // vIndex: 1
     virtual bool shouldAddToConfiguration() const = 0;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

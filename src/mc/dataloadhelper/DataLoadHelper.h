@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DataLoadHelper();
+    virtual ~DataLoadHelper() = default;
 
     // vIndex: 1
     virtual ::Vec3 loadPosition(::Vec3 const&) = 0;
@@ -86,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

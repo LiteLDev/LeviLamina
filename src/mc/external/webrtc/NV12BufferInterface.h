@@ -37,25 +37,19 @@ public:
     virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> CropAndScale(int, int, int, int, int, int) /*override*/;
 
     // vIndex: 2
-    virtual ~NV12BufferInterface() /*override*/;
+    virtual ~NV12BufferInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoFrameBuffer::Type $type() const;
 
-    MCAPI int $ChromaWidth() const;
-
-    MCAPI int $ChromaHeight() const;
-
-    MCAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> $CropAndScale(int, int, int, int, int, int);
     // NOLINTEND
 };
 

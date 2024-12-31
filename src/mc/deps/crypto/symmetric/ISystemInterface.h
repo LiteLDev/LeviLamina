@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISystemInterface();
+    virtual ~ISystemInterface() = default;
 
     // vIndex: 1
     virtual void init(::std::string const&, ::std::string const&) = 0;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

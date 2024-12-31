@@ -40,7 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StreamFileDownloader() /*override*/;
+    virtual ~StreamFileDownloader() /*override*/ = default;
 
     // vIndex: 1
     virtual void update() /*override*/;
@@ -82,33 +82,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
 
-    MCAPI void
-    $initRealmsFileDownloader(::std::string const&, int const, ::std::string const&, ::FileInfo const&, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>);
-
-    MCAPI void
-    $initFileDownloader(::std::string const&, ::std::string const&, ::FileInfo const&, uint64, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>);
-
-    MCAPI void
-        $downloadFile(::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>, ::std::function<void(::DownloaderState)>);
-
-    MCAPI bool $canCancelDownload() const;
-
-    MCAPI void $cancelDownload();
-
-    MCAPI uint64 $getDownloadTotalSize() const;
-
-    MCAPI uint64 $getDownloadReceivedSize() const;
-
-    MCAPI float $getDownloadProgress() const;
-
-    MCAPI ::Bedrock::Http::Request $_makeRequest();
     // NOLINTEND
 };

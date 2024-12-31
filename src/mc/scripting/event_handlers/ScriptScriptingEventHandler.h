@@ -43,7 +43,7 @@ public:
     handleEvent(::ScriptModuleShutdownEvent const& moduleShutdownEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptScriptingEventHandler() /*override*/;
+    virtual ~ScriptScriptingEventHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

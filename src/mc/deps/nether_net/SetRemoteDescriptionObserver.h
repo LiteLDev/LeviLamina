@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ~SetRemoteDescriptionObserver() /*override*/;
+    virtual ~SetRemoteDescriptionObserver() /*override*/ = default;
 
     // vIndex: 3
     virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError error) /*override*/;
@@ -48,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -53,7 +53,7 @@ public:
     virtual bool GetDefaultLocalAddress(int, ::rtc::IPAddress*) const /*override*/;
 
     // vIndex: 1
-    virtual ~NetworkManagerBase() /*override*/;
+    virtual ~NetworkManagerBase() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -86,19 +86,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::rtc::Network const*> $GetNetworks() const;
 
-    MCAPI ::std::vector<::rtc::Network const*> $GetAnyAddressNetworks();
-
-    MCAPI ::rtc::NetworkManager::EnumerationPermission $enumeration_permission() const;
-
-    MCAPI bool $GetDefaultLocalAddress(int, ::rtc::IPAddress*) const;
     // NOLINTEND
 
 public:

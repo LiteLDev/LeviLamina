@@ -67,7 +67,7 @@ public:
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
     // vIndex: 0
-    virtual ~TeleportCommand() /*override*/;
+    virtual ~TeleportCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -109,7 +109,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

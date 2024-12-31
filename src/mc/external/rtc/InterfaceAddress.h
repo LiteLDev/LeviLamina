@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InterfaceAddress() /*override*/;
+    virtual ~InterfaceAddress() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -40,7 +40,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

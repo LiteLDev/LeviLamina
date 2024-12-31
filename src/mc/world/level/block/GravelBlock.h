@@ -47,7 +47,7 @@ public:
     virtual bool canBeOriginalSurface() const /*override*/;
 
     // vIndex: 0
-    virtual ~GravelBlock() /*override*/;
+    virtual ~GravelBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

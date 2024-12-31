@@ -40,25 +40,19 @@ public:
         _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) /*override*/;
 
     // vIndex: 0
-    virtual ~FIFODeferredSubscriptionHub() /*override*/;
+    virtual ~FIFODeferredSubscriptionHub() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $flushPendingEvents();
 
-    MCAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
-
-    MCAPI bool $_runOneEvent();
-
-    MCAPI void $_enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>);
     // NOLINTEND
 };
 

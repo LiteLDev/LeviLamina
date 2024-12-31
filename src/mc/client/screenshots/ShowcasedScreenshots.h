@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShowcasedScreenshots() /*override*/;
+    virtual ~ShowcasedScreenshots() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> loadGallery() /*override*/;
@@ -62,29 +62,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> $loadGallery();
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> $loadCount();
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> $loadShowcasedScreenshot(::std::string const&);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> $loadFeaturedScreenshot();
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>>
-    $addScreenshotToShowcase(int64, bool, ::Core::PathBuffer<::std::string> const&);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
-    $removeShowcasedScreenshot(::std::string const&, bool);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> $setFeaturedScreenshot(::std::string const&);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> $removeFeaturedScreenshot();
     // NOLINTEND
 };
 

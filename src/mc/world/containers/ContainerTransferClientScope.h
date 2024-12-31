@@ -31,18 +31,18 @@ public:
     virtual void createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>) /*override*/;
 
     // vIndex: 0
-    virtual ~ContainerTransferClientScope() /*override*/;
+    virtual ~ContainerTransferClientScope() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>);
+
     // NOLINTEND
 };

@@ -39,19 +39,19 @@ public:
     virtual void WakeUp() = 0;
 
     // vIndex: 0
-    virtual ~SocketServer() /*override*/;
+    virtual ~SocketServer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetMessageQueue(::rtc::Thread*);
+
     // NOLINTEND
 };
 

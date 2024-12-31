@@ -101,13 +101,13 @@ public:
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const /*override*/;
 
     // vIndex: 0
-    virtual ~NullSoundPlayer() /*override*/;
+    virtual ~NullSoundPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

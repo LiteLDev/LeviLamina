@@ -109,7 +109,7 @@ public:
         virtual bool isLegacyStructure() const /*override*/;
 
         // vIndex: 0
-        virtual ~LazyTemplate() /*override*/;
+        virtual ~LazyTemplate() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -144,15 +144,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
-
-        MCAPI ::BlockPos $getSize(::Rotation) const;
 
         MCAPI bool $isLegacyStructure() const;
         // NOLINTEND
@@ -379,8 +377,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $getSize(::Rotation) const;
-
     MCAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
     MCAPI ::std::vector<::JigsawBlockInfo>

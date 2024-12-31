@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~INpcDialogueData();
+    virtual ~INpcDialogueData() = default;
 
     // vIndex: 1
     virtual ::std::string const& getDialogueText() const = 0;
@@ -59,15 +59,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string const& $getRawDialogueText() const;
-
-    MCAPI ::std::string const& $getNameRawText() const;
 
     MCAPI bool $isRemoteFire();
     // NOLINTEND

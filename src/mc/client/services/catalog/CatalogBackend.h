@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CatalogBackend();
+    virtual ~CatalogBackend() = default;
 
     // vIndex: 1
     virtual ::std::string const& getCachedFilePrefix() const = 0;
@@ -103,7 +103,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

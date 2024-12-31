@@ -258,7 +258,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~FloorRoomCollection();
+        virtual ~FloorRoomCollection() = default;
 
         // vIndex: 1
         virtual ::std::string get1x1(::Random&) = 0;
@@ -285,7 +285,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -398,7 +398,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~FirstFloorRoomCollection() /*override*/;
+        virtual ~FirstFloorRoomCollection() /*override*/ = default;
 
         // vIndex: 1
         virtual ::std::string get1x1(::Random& random) /*override*/;
@@ -425,7 +425,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -464,7 +464,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~SecondFloorRoomCollection() /*override*/;
+        virtual ~SecondFloorRoomCollection() /*override*/ = default;
 
         // vIndex: 1
         virtual ::std::string get1x1(::Random& random) /*override*/;
@@ -491,7 +491,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -530,13 +530,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~ThirdFloorRoomCollection() /*override*/;
+        virtual ~ThirdFloorRoomCollection() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

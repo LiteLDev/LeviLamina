@@ -36,13 +36,13 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~VanillaGameModuleDedicatedServer() /*override*/;
+    virtual ~VanillaGameModuleDedicatedServer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

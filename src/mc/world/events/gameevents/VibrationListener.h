@@ -64,7 +64,7 @@ public:
     virtual ::GameEvents::PositionSource const& getPositionSource() const /*override*/;
 
     // vIndex: 0
-    virtual ~VibrationListener() /*override*/;
+    virtual ~VibrationListener() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -123,7 +123,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

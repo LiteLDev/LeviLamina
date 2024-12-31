@@ -1957,8 +1957,6 @@ public:
 
     MCAPI void $buildDebugInfo(::std::string&) const;
 
-    MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
-
     MCAPI int $getDeathTime() const;
 
     MCAPI bool $canBeAffected(uint id) const;

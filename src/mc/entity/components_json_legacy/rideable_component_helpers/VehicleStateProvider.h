@@ -34,7 +34,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~VehicleStateProvider() /*override*/;
+    virtual ~VehicleStateProvider() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

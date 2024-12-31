@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ZipPackAccessStrategyOwningFileAccess() /*override*/;
+    virtual ~ZipPackAccessStrategyOwningFileAccess() /*override*/ = default;
 
     // vIndex: 17
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

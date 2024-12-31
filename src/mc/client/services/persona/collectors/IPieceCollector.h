@@ -69,7 +69,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPieceCollector();
+    virtual ~IPieceCollector() = default;
 
     // vIndex: 1
     virtual bool isFeatured() const;
@@ -93,23 +93,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isFeatured() const;
 
-    MCAPI void $_addCollectionEventPage();
-
-    MCAPI void $_addOfferIdToDiscoveredSet(::persona::PieceOfferWrapper const&);
-
-    MCAPI bool $_hasDiscoveredOffer(::mce::UUID const&) const;
-
-    MCAPI bool $_hasPriorityOffer() const;
-
-    MCAPI ::mce::UUID const& $_getPriorityOfferProductId() const;
     // NOLINTEND
 };
 

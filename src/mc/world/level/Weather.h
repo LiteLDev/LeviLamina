@@ -43,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Weather() /*override*/;
+    virtual ~Weather() /*override*/ = default;
 
     // vIndex: 25
     virtual void levelEvent(::LevelEvent, ::Vec3 const&, int) /*override*/;
@@ -117,13 +117,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $levelEvent(::LevelEvent, ::Vec3 const&, int);
+
     // NOLINTEND
 
 public:

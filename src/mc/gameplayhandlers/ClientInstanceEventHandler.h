@@ -21,13 +21,13 @@ public:
     virtual ::HandlerResult handleEvent(::ClientInstanceGameplayEvent<void> const&) = 0;
 
     // vIndex: 0
-    virtual ~ClientInstanceEventHandler() /*override*/;
+    virtual ~ClientInstanceEventHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

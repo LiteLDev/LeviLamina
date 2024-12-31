@@ -63,13 +63,13 @@ public:
     virtual void SetStereoChannelSwapping(bool) = 0;
 
     // vIndex: 2
-    virtual ~AudioState() /*override*/;
+    virtual ~AudioState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerInstanceEventHandler() /*override*/;
+    virtual ~ServerInstanceEventHandler() /*override*/ = default;
 
     // vIndex: 1
     virtual ::HandlerResult handleEvent(::ServerInstanceGameplayEvent<void> const&) = 0;
@@ -27,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

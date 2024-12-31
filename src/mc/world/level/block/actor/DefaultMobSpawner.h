@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DefaultMobSpawner() /*override*/;
+    virtual ~DefaultMobSpawner() /*override*/ = default;
 
     // vIndex: 4
     virtual ::BlockPos const& getPos() /*override*/;
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

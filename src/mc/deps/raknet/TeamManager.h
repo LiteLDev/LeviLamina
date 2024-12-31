@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TeamManager() /*override*/;
+    virtual ~TeamManager() /*override*/ = default;
 
     // vIndex: 3
     virtual void Update() /*override*/;
@@ -58,20 +58,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Update();
 
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
-
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
-
-    MCAPI void $OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool);
     // NOLINTEND
 };
 

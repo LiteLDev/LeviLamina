@@ -113,13 +113,13 @@ public:
     virtual ::DepenetrationComponent& getDepenetrationComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~PlayerTransactionSubject() /*override*/;
+    virtual ~PlayerTransactionSubject() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

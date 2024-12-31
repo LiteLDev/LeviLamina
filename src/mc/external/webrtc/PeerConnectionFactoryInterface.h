@@ -126,39 +126,20 @@ public:
     virtual void StopAecDump() = 0;
 
     // vIndex: 2
-    virtual ~PeerConnectionFactoryInterface() /*override*/;
+    virtual ~PeerConnectionFactoryInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>> $CreatePeerConnectionOrError(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::webrtc::PeerConnectionDependencies
-    );
-
-    MCAPI ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface> $CreatePeerConnection(
-        ::webrtc::PeerConnectionInterface::RTCConfiguration const&,
-        ::webrtc::PeerConnectionDependencies
-    );
-
-    MCAPI ::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>
-    $CreatePeerConnection(::webrtc::PeerConnectionInterface::RTCConfiguration const&, ::std::unique_ptr<::cricket::PortAllocator>, ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface>, ::webrtc::PeerConnectionObserver*);
-
-    MCAPI ::webrtc::RtpCapabilities $GetRtpSenderCapabilities(::cricket::MediaType) const;
-
-    MCAPI ::webrtc::RtpCapabilities $GetRtpReceiverCapabilities(::cricket::MediaType) const;
-
     MCAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
     $CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
-
-    MCAPI bool $StartAecDump(::_iobuf*, int64);
     // NOLINTEND
 };
 

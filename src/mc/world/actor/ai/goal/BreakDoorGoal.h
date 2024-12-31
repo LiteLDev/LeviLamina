@@ -48,7 +48,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~BreakDoorGoal() /*override*/;
+    virtual ~BreakDoorGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

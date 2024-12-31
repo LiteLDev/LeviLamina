@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FoodItemComponentLegacyFactoryData() /*override*/;
+    virtual ~FoodItemComponentLegacyFactoryData() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

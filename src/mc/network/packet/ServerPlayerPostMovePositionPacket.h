@@ -46,13 +46,13 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
-    virtual ~ServerPlayerPostMovePositionPacket() /*override*/;
+    virtual ~ServerPlayerPostMovePositionPacket() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

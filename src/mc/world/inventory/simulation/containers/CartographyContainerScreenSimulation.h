@@ -60,34 +60,18 @@ public:
     virtual void _registerAutoPlaceOrder() /*override*/;
 
     // vIndex: 0
-    virtual ~CartographyContainerScreenSimulation() /*override*/;
+    virtual ~CartographyContainerScreenSimulation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerScreenActionResult
-    $tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
 
-    MCAPI ::ContainerScreenActionResult
-    $tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour);
-
-    MCAPI ::ContainerValidationCraftResult $getCraftPreview();
-
-    MCAPI void $_registerCoalesceOrder();
-
-    MCAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

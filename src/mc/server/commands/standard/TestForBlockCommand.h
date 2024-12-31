@@ -35,7 +35,7 @@ public:
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
     // vIndex: 0
-    virtual ~TestForBlockCommand() /*override*/;
+    virtual ~TestForBlockCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

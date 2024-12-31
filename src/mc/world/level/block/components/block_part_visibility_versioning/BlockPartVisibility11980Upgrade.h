@@ -33,25 +33,19 @@ public:
         const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockPartVisibility11980Upgrade() /*override*/;
+    virtual ~BlockPartVisibility11980Upgrade() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(::rapidjson::GenericValue<
-                               ::rapidjson::UTF8<char>,
-                               ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&) const;
 
-    MCAPI void
-    $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>&, ::SemVersion const&)
-        const;
     // NOLINTEND
 };
 

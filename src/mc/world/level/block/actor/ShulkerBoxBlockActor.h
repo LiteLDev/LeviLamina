@@ -42,7 +42,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShulkerBoxBlockActor() /*override*/;
+    virtual ~ShulkerBoxBlockActor() /*override*/ = default;
 
     // vIndex: 26
     virtual ::std::string getName() const /*override*/;
@@ -133,7 +133,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

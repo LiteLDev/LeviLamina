@@ -41,7 +41,7 @@ public:
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
     // vIndex: 0
-    virtual ~MesaSurfaceBuilder() /*override*/;
+    virtual ~MesaSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -67,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

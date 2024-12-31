@@ -169,7 +169,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~EntityInside() /*override*/;
+    virtual ~EntityInside() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -251,7 +251,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

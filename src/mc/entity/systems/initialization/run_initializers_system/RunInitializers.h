@@ -40,13 +40,13 @@ public:
     virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext) /*override*/;
 
     // vIndex: 0
-    virtual ~RunInitializers() /*override*/;
+    virtual ~RunInitializers() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

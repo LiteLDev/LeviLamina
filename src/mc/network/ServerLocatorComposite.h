@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerLocatorComposite() /*override*/;
+    virtual ~ServerLocatorComposite() /*override*/ = default;
 
     // vIndex: 3
     virtual void startAnnouncingServer(
@@ -86,43 +86,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $startAnnouncingServer(
-        ::std::string const&,
-        ::std::string const&,
-        ::Bedrock::NonOwnerPointer<::AppPlatform>,
-        ::GameType,
-        int,
-        int,
-        bool,
-        bool,
-        bool
-    );
 
-    MCAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform>);
-
-    MCAPI void $startServerDiscovery(::PortPair);
-
-    MCAPI void $stopServerDiscovery();
-
-    MCAPI void $addCustomServer(::AsynchronousIPResolver const&, int);
-
-    MCAPI void $addCustomServer(::std::string const&, int);
-
-    MCAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
-
-    MCAPI void $clearServerList();
-
-    MCAPI void $update();
-
-    MCAPI float $getPingTimeForGUID(::std::string const&);
-
-    MCAPI void
-    $checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>);
     // NOLINTEND
 };

@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorPlayerExtensionServiceProvider();
+    virtual ~EditorPlayerExtensionServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> startExtensions(::std::optional<::Scripting::ContextId>) = 0;
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

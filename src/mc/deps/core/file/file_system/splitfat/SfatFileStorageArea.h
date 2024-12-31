@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SfatFileStorageArea() /*override*/;
+    virtual ~SfatFileStorageArea() /*override*/ = default;
 
     // vIndex: 5
     virtual ::Core::Result getUsedSize(uint64&) /*override*/;
@@ -47,17 +47,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::Result $getUsedSize(uint64&);
 
-    MCAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
-
-    MCAPI ::Core::Result $_commit();
     // NOLINTEND
 };
 

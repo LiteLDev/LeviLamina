@@ -43,13 +43,13 @@ public:
     virtual ::rtc::SocketAddress GetLocalAddress() const = 0;
 
     // vIndex: 0
-    virtual ~AsyncListenSocket() /*override*/;
+    virtual ~AsyncListenSocket() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

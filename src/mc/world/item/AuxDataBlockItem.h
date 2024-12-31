@@ -36,7 +36,7 @@ public:
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 0
-    virtual ~AuxDataBlockItem() /*override*/;
+    virtual ~AuxDataBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -63,7 +63,7 @@ public:
     virtual bool doHurtTarget(::Actor* target, ::ActorDamageCause const& cause) /*override*/;
 
     // vIndex: 8
-    virtual ~Warden() /*override*/;
+    virtual ~Warden() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -89,7 +89,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

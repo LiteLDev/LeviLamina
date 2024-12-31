@@ -26,13 +26,13 @@ public:
     virtual bool SendRtcp(::rtc::ArrayView<uchar const>) = 0;
 
     // vIndex: 2
-    virtual ~Transport();
+    virtual ~Transport() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

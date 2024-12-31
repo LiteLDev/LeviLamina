@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DateManager() /*override*/;
+    virtual ~DateManager() /*override*/ = default;
 
     // vIndex: 1
     virtual int64 _getUnixTime();
@@ -78,12 +78,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int64 $_getUnixTime();
+
     // NOLINTEND
 };

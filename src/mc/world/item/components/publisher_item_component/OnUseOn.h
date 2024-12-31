@@ -48,13 +48,13 @@ public:
     virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     // vIndex: 0
-    virtual ~OnUseOn() /*override*/;
+    virtual ~OnUseOn() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

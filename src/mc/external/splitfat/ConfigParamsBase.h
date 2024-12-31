@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ConfigParamsBase();
+    virtual ~ConfigParamsBase() = default;
 
     // vIndex: 1
     virtual uint getClusterSize() const = 0;
@@ -39,13 +39,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isLargeWritesEmulated() const;
+
     // NOLINTEND
 };
 

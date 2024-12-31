@@ -57,7 +57,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IInPackagePacks();
+    virtual ~IInPackagePacks() = default;
 
     // vIndex: 1
     virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const = 0;
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

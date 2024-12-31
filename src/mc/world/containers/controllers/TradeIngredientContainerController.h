@@ -30,18 +30,18 @@ public:
     virtual bool isItemAllowed(::ItemStackBase const&) const /*override*/;
 
     // vIndex: 0
-    virtual ~TradeIngredientContainerController() /*override*/;
+    virtual ~TradeIngredientContainerController() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isItemAllowed(::ItemStackBase const&) const;
+
     // NOLINTEND
 };

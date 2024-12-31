@@ -35,7 +35,7 @@ public:
     virtual uint64 size() const /*override*/;
 
     // vIndex: 2
-    virtual ~EncodedImageBuffer() /*override*/;
+    virtual ~EncodedImageBuffer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,17 +63,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uchar const* $data() const;
 
-    MCAPI uchar* $data();
-
-    MCAPI uint64 $size() const;
     // NOLINTEND
 
 public:

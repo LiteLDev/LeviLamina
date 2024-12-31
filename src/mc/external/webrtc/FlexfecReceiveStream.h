@@ -50,7 +50,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FlexfecReceiveStream() /*override*/;
+    virtual ~FlexfecReceiveStream() /*override*/ = default;
 
     // vIndex: 2
     virtual void SetRtcpMode(::webrtc::RtcpMode) = 0;
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

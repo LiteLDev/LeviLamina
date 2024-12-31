@@ -37,7 +37,7 @@ public:
     virtual void notify(int64 type) /*override*/;
 
     // vIndex: 0
-    virtual ~HungerAttributeDelegate() /*override*/;
+    virtual ~HungerAttributeDelegate() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

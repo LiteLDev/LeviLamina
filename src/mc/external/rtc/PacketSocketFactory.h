@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PacketSocketFactory();
+    virtual ~PacketSocketFactory() = default;
 
     // vIndex: 1
     virtual ::rtc::AsyncPacketSocket* CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort) = 0;
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

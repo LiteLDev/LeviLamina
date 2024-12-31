@@ -48,14 +48,14 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const /*override*/;
 
     // vIndex: 47
     virtual bool isDestructive(int) const /*override*/;
 
     // vIndex: 0
-    virtual ~FireworksItem() /*override*/;
+    virtual ~FireworksItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -96,7 +96,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -113,7 +113,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const;
 
     MCAPI bool $isDestructive(int) const;

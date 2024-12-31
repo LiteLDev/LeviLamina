@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorTickingAreaService() /*override*/;
+    virtual ~EditorTickingAreaService() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> init() /*override*/;
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

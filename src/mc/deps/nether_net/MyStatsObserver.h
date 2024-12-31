@@ -40,13 +40,13 @@ public:
     virtual void OnComplete(::std::vector<::webrtc::StatsReport const*> const& reports) /*override*/;
 
     // vIndex: 2
-    virtual ~MyStatsObserver() /*override*/;
+    virtual ~MyStatsObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

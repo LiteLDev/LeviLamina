@@ -63,38 +63,18 @@ public:
     virtual bool isRemoteFire() /*override*/;
 
     // vIndex: 0
-    virtual ~NpcComponentDialogueData() /*override*/;
+    virtual ~NpcComponentDialogueData() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getDialogueText() const;
 
-    MCAPI ::std::string const& $getRawDialogueText() const;
-
-    MCAPI ::std::string const& $getNameText() const;
-
-    MCAPI ::std::string const& $getNameRawText() const;
-
-    MCAPI ::std::string const& $getSceneName() const;
-
-    MCAPI ::npc::ActionContainer* $getActionsContainer();
-
-    MCAPI ::npc::ActionContainer const* $getActionsContainer() const;
-
-    MCAPI ::ActorUniqueID $getActorUniqueID();
-
-    MCAPI ::Actor* $getActor();
-
-    MCAPI ::Actor const* $getActor() const;
-
-    MCAPI bool $isRemoteFire();
     // NOLINTEND
 };

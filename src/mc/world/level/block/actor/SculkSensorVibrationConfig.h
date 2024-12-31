@@ -49,7 +49,7 @@ public:
     virtual bool canReceiveOnlyIfAdjacentChunksAreTicking() const /*override*/;
 
     // vIndex: 0
-    virtual ~SculkSensorVibrationConfig() /*override*/;
+    virtual ~SculkSensorVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -67,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

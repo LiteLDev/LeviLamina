@@ -57,7 +57,7 @@ public:
     virtual ::ItemInstance _getItemInstance() const /*override*/;
 
     // vIndex: 0
-    virtual ~HangingSignBlock() /*override*/;
+    virtual ~HangingSignBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -91,7 +91,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -162,7 +162,7 @@ public:
     virtual int buildIdAux(short auxValue, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 0
-    virtual ~HumanoidArmorItem() /*override*/;
+    virtual ~HumanoidArmorItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -228,7 +228,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

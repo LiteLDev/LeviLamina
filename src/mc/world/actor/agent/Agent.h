@@ -111,7 +111,7 @@ public:
     virtual void kill() /*override*/;
 
     // vIndex: 56
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    virtual void setOwner(::ActorUniqueID const id) /*override*/;
 
     // vIndex: 139
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
@@ -120,7 +120,7 @@ public:
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
     // vIndex: 8
-    virtual ~Agent() /*override*/;
+    virtual ~Agent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -196,7 +196,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -211,8 +211,6 @@ public:
     MCAPI bool $canBeAffected(uint id) const;
 
     MCAPI void $knockback(::Actor*, int, float, float, float, float, float);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
@@ -234,7 +232,7 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerId);
+    MCAPI void $setOwner(::ActorUniqueID const id);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

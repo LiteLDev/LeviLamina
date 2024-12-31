@@ -34,7 +34,7 @@ public:
     virtual void onTestFailed(::gametest::BaseGameTestInstance&) /*override*/;
 
     // vIndex: 0
-    virtual ~TestSummaryDisplayer() /*override*/;
+    virtual ~TestSummaryDisplayer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -48,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

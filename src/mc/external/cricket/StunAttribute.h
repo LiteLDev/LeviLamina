@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StunAttribute();
+    virtual ~StunAttribute() = default;
 
     // vIndex: 1
     virtual ::cricket::StunAttributeValueType value_type() const = 0;
@@ -84,13 +84,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetOwner(::cricket::StunMessage*);
+
     // NOLINTEND
 
 public:

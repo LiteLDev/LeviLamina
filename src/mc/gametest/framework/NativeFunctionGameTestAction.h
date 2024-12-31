@@ -32,13 +32,13 @@ public:
     virtual ::std::optional<::gametest::GameTestError> run() /*override*/;
 
     // vIndex: 0
-    virtual ~NativeFunctionGameTestAction() /*override*/;
+    virtual ~NativeFunctionGameTestAction() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

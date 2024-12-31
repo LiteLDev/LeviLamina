@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BeaconPaymentContainerValidation() /*override*/;
+    virtual ~BeaconPaymentContainerValidation() /*override*/ = default;
 
     // vIndex: 2
     virtual bool isItemAllowedInSlot(
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

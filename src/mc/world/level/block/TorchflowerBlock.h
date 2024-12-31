@@ -34,7 +34,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~TorchflowerBlock() /*override*/;
+    virtual ~TorchflowerBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

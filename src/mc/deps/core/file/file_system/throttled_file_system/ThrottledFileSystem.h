@@ -42,7 +42,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ThrottledFileSystem() /*override*/;
+    virtual ~ThrottledFileSystem() /*override*/ = default;
 
     // vIndex: 7
     virtual ::Core::Result _openFile(
@@ -121,61 +121,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::Result $_openFile(
-        ::std::unique_ptr<::Core::FileImpl>&,
-        ::Core::Path const&,
-        ::Core::FileOpenMode,
-        ::Core::FileBufferingMode
-    );
 
-    MCAPI bool $_fileExists(::Core::Path const&);
-
-    MCAPI ::Core::Result $_deleteFile(::Core::Path const&);
-
-    MCAPI ::Core::Result $_getFileSize(::Core::Path const&, uint64*);
-
-    MCAPI ::Core::Result $_renameFile(::Core::Path const&, ::Core::Path const&);
-
-    MCAPI ::Core::Result $_createEmptyFile(::Core::Path const& fileName);
-
-    MCAPI ::Core::Result $_createOneDirectory(::Core::Path const&);
-
-    MCAPI ::Core::Result $_createDirectoryRecursively(::Core::Path const& directoryPath);
-
-    MCAPI bool $_directoryExists(::Core::Path const&);
-
-    MCAPI ::Core::Result $_deleteEmptyDirectory(::Core::Path const&);
-
-    MCAPI ::Core::Result $_renameDirectory(::Core::Path const&, ::Core::Path const&);
-
-    MCAPI ::Core::Result
-    $_iterateOverDirectory(::Core::Path const&, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>);
-
-    MCAPI bool $_fileOrDirectoryExists(::Core::Path const&);
-
-    MCAPI ::Core::Result $_getEntryType(::Core::Path const&, ::Core::FileType&);
-
-    MCAPI ::Core::Result $_getLastModificationTime(::Core::Path const&, int64*);
-
-    MCAPI ::Core::Result $_copyTimeAndAccessRights(::Core::Path const&, ::Core::Path const&);
-
-    MCAPI ::Core::Result $_addIgnoredThrottlePath(::Core::Path const&);
-
-    MCAPI ::Core::Result $_removeIgnoredThrottlePath(::Core::Path const&);
-
-    MCAPI ::Core::Result $_endTransaction();
-
-    MCAPI bool $shouldCommit();
-
-    MCAPI ::Core::CrossStorageCopyMode $getCrossStorageCopyMode();
-
-    MCAPI void $_initializeInternal();
     // NOLINTEND
 };
 

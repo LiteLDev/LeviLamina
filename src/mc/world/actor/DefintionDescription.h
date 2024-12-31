@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DefintionDescription();
+    virtual ~DefintionDescription() = default;
 
     // vIndex: 1
     virtual char const* getJsonName() const = 0;
@@ -22,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

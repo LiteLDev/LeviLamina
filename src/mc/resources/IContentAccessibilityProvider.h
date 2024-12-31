@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IContentAccessibilityProvider() /*override*/;
+    virtual ~IContentAccessibilityProvider() /*override*/ = default;
 
     // vIndex: 6
     virtual bool canAccess(::ContentIdentity const&) const = 0;
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

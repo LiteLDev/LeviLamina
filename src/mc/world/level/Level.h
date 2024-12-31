@@ -1157,13 +1157,13 @@ public:
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
     // vIndex: 208
-    virtual void onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk) /*override*/;
+    virtual void onChunkReloaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
     // vIndex: 226
     virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() /*override*/;
 
     // vIndex: 224
-    virtual void onChunkDiscarded(::LevelChunk& levelChunk) /*override*/;
+    virtual void onChunkDiscarded(::LevelChunk& lc) /*override*/;
 
     // vIndex: 225
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> getLevelChunkEventManager() /*override*/;
@@ -2169,10 +2169,6 @@ public:
 
     MCAPI ::BlockPos const& $getDefaultSpawn() const;
 
-    MCAPI void $setDefaultGameType(::GameType);
-
-    MCAPI ::GameType $getDefaultGameType() const;
-
     MCAPI void $setDifficulty(::Difficulty difficulty);
 
     MCAPI void $setMultiplayerGameIntent(bool multiplayerGame);
@@ -2191,27 +2187,11 @@ public:
 
     MCAPI bool $getLANBroadcast() const;
 
-    MCAPI void $setXBLBroadcastIntent(::Social::GamePublishSetting);
-
-    MCAPI ::Social::GamePublishSetting $getXBLBroadcastIntent() const;
-
     MCAPI bool $hasXBLBroadcastIntent() const;
-
-    MCAPI void $setXBLBroadcastMode(::Social::GamePublishSetting);
-
-    MCAPI ::Social::GamePublishSetting $getXBLBroadcastMode() const;
 
     MCAPI bool $hasXBLBroadcast() const;
 
-    MCAPI void $setPlatformBroadcastIntent(::Social::GamePublishSetting);
-
-    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastIntent() const;
-
     MCAPI bool $hasPlatformBroadcastIntent() const;
-
-    MCAPI void $setPlatformBroadcastMode(::Social::GamePublishSetting);
-
-    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastMode() const;
 
     MCAPI bool $hasPlatformBroadcast() const;
 
@@ -2422,11 +2402,11 @@ public:
 
     MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void $onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+    MCAPI void $onChunkReloaded(::ChunkSource& source, ::LevelChunk& lc);
 
     MCAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
 
-    MCAPI void $onChunkDiscarded(::LevelChunk& levelChunk);
+    MCAPI void $onChunkDiscarded(::LevelChunk& lc);
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> $getLevelChunkEventManager();
 

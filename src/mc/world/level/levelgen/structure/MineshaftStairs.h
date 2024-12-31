@@ -38,13 +38,13 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 0
-    virtual ~MineshaftStairs() /*override*/;
+    virtual ~MineshaftStairs() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

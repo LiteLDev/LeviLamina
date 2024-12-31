@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerNetworkEventCoordinator() /*override*/;
+    virtual ~ServerNetworkEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

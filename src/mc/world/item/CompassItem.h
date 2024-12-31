@@ -30,7 +30,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~CompassItem() /*override*/;
+    virtual ~CompassItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -48,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

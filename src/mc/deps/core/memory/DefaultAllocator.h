@@ -39,31 +39,19 @@ public:
     virtual void* _realloc(::gsl::not_null<void*>, uint64) /*override*/;
 
     // vIndex: 0
-    virtual ~DefaultAllocator() /*override*/;
+    virtual ~DefaultAllocator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $allocate(uint64);
 
-    MCAPI void $release(void*);
-
-    MCAPI void* $alignedAllocate(uint64, uint64);
-
-    MCAPI void $alignedRelease(void*);
-
-    MCAPI uint64 $getUsableSize(void*);
-
-    MCAPI void $logCurrentState();
-
-    MCAPI void* $_realloc(::gsl::not_null<void*>, uint64);
     // NOLINTEND
 };
 

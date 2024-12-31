@@ -42,7 +42,7 @@ public:
     virtual float getBuffValueWithModifiers(::AttributeBuff const& buff) const /*override*/;
 
     // vIndex: 0
-    virtual ~HealthAttributeDelegate() /*override*/;
+    virtual ~HealthAttributeDelegate() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IBlockSourceValidityProxy();
+    virtual ~IBlockSourceValidityProxy() = default;
 
     // vIndex: 1
     virtual void updateDimensionBlockSourceTick(::Dimension&) = 0;
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -35,7 +35,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~CopperGrateBlock() /*override*/;
+    virtual ~CopperGrateBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

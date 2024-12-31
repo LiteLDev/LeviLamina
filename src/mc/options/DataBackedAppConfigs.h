@@ -80,7 +80,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DataBackedAppConfigs() /*override*/;
+    virtual ~DataBackedAppConfigs() /*override*/ = default;
 
     // vIndex: 2
     virtual bool arePremiumSkinPacksAllowed() const /*override*/;
@@ -176,70 +176,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $arePremiumSkinPacksAllowed() const;
 
-    MCAPI bool $areResourcePacksAllowed() const;
-
-    MCAPI bool $isPlayScreenAllowed() const;
-
-    MCAPI bool $areEmotesSupported() const;
-
-    MCAPI bool $canUseAzureNotebooks() const;
-
-    MCAPI ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
-
-    MCAPI bool $useNormalizedFontSize() const;
-
-    MCAPI bool $useFullScreenByDefault() const;
-
-    MCAPI bool $muteByDefault() const;
-
-    MCAPI bool $isCoursesCacheEnabled() const;
-
-    MCAPI bool $isChatScreenAllowed() const;
-
-    MCAPI bool $shouldPromptBeforeExit() const;
-
-    MCAPI bool $gameArgumentsNeedAuthentication() const;
-
-    MCAPI ::EducationEditionOffer $getEducationEditionOffering() const;
-
-    MCAPI bool $worldsAreSingleUse() const;
-
-    MCAPI bool $isSaveToCloudOn() const;
-
-    MCAPI bool $isEduAIOn() const;
-
-    MCAPI bool $requireEduLevelSettings() const;
-
-    MCAPI bool $requireTrustedContent() const;
-
-    MCAPI bool $supports3DExport() const;
-
-    MCAPI bool $isExternalPlayerCommunicationAllowed() const;
-
-    MCAPI ::ConnectionDefinition $getConnectionDefinition() const;
-
-    MCAPI bool $supportsChangingMultiplayerDuringPlay() const;
-
-    MCAPI bool $worldBuilderDisabled() const;
-
-    MCAPI bool $webSocketsDisabled() const;
-
-    MCAPI bool $sendPermissionsTelemetry() const;
-
-    MCAPI bool $useEduDemoUpsellDialog() const;
-
-    MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
-
-    MCAPI ::std::string $getFeedbackURL() const;
-
-    MCAPI void $applyLevelDataOverride(::LevelData&) const;
     // NOLINTEND
 };

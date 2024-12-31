@@ -63,7 +63,7 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~PillagerOutpostFeature() /*override*/;
+    virtual ~PillagerOutpostFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

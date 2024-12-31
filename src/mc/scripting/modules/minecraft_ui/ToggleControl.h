@@ -38,7 +38,7 @@ public:
     buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
     // vIndex: 0
-    virtual ~ToggleControl() /*override*/;
+    virtual ~ToggleControl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

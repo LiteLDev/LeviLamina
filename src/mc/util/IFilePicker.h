@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFilePicker();
+    virtual ~IFilePicker() = default;
 
     // vIndex: 1
     virtual void initFilePick(::Core::Path const&, ::std::function<void(bool, ::FileInfo)>) = 0;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

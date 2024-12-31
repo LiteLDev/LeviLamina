@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MoveTowardsRestrictionGoal() /*override*/;
+    virtual ~MoveTowardsRestrictionGoal() /*override*/ = default;
 
     // vIndex: 2
     virtual bool canContinueToUse() /*override*/;
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptWidgetComponentRenderPrimType_Box() /*override*/;
+    virtual ~ScriptWidgetComponentRenderPrimType_Box() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

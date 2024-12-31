@@ -34,13 +34,13 @@ public:
     virtual void _handleModeChangedPayload(::Editor::Network::ModeChangedPayload const& payload) /*override*/;
 
     // vIndex: 0
-    virtual ~ServerModeService() /*override*/;
+    virtual ~ServerModeService() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

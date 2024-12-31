@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RemotePlayer() /*override*/;
+    virtual ~RemotePlayer() /*override*/ = default;
 
     // vIndex: 182
     virtual void prepareRegion(::ChunkSource& mainChunkSource) /*override*/;
@@ -115,52 +115,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $prepareRegion(::ChunkSource& mainChunkSource);
 
-    MCAPI void $destroyRegion();
-
-    MCAPI void $suspendRegion();
-
-    MCAPI void $aiStep();
-
-    MCAPI void $normalTick();
-
-    MCAPI void $tickWorld(::Tick const&);
-
-    MCAPI void $frameUpdate(::FrameUpdateContextBase&);
-
-    MCAPI void $setContainerData(::IContainerManager&, int, int);
-
-    MCAPI void $slotChanged(::IContainerManager&, ::Container&, int, ::ItemStack const&, ::ItemStack const&, bool);
-
-    MCAPI void $refreshContainer(::IContainerManager&);
-
-    MCAPI void $initHUDContainerManager();
-
-    MCAPI bool $isTeacher() const;
-
-    MCAPI void $playEmote(::std::string const&, bool const);
-
-    MCAPI void $sendInventoryTransaction(::InventoryTransaction const&) const;
-
-    MCAPI void $feed(int itemId);
-
-    MCAPI void $sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction>) const;
-
-    MCAPI ::PlayerEventCoordinator& $getPlayerEventCoordinator();
-
-    MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> $getEditorPlayer() const;
-
-    MCAPI void $destroyEditorPlayer();
-
-    MCAPI void $onMovePlayerPacketNormal(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
-
-    MCAPI void $onRegionDestroyed();
     // NOLINTEND
 };

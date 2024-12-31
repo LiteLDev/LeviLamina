@@ -36,7 +36,7 @@ public:
     virtual bool isDiscoverable() const /*override*/;
 
     // vIndex: 0
-    virtual ~SwiftSneakEnchant() /*override*/;
+    virtual ~SwiftSneakEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -48,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

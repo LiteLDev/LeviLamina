@@ -58,7 +58,7 @@ public:
     virtual bool shouldAlwaysRender();
 
     // vIndex: 8
-    virtual ~LightningBolt() /*override*/;
+    virtual ~LightningBolt() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

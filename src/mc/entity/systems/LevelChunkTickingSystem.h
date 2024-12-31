@@ -31,7 +31,7 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 0
-    virtual ~LevelChunkTickingSystem() /*override*/;
+    virtual ~LevelChunkTickingSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

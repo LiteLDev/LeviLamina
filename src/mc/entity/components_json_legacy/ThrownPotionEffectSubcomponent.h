@@ -32,13 +32,13 @@ public:
     virtual char const* getName() /*override*/;
 
     // vIndex: 0
-    virtual ~ThrownPotionEffectSubcomponent() /*override*/;
+    virtual ~ThrownPotionEffectSubcomponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

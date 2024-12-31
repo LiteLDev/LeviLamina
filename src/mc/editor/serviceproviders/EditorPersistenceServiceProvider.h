@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorPersistenceServiceProvider();
+    virtual ~EditorPersistenceServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> addOrUpdatePersistData(::Editor::Persistence::PersistentData const&) = 0;
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

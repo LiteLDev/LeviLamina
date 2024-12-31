@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExperienceCostCommitObject() /*override*/;
+    virtual ~ExperienceCostCommitObject() /*override*/ = default;
 
     // vIndex: 1
     virtual bool append(::ContainerValidationCommitObject* other) /*override*/;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -28,7 +28,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 8
-    virtual ~ThrownIceBomb() /*override*/;
+    virtual ~ThrownIceBomb() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

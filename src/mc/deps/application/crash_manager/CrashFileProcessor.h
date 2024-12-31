@@ -57,7 +57,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~CrashHandler();
+        virtual ~CrashHandler() = default;
 
         // vIndex: 1
         virtual ::std::shared_ptr<::Bedrock::SessionInfo> findCrashedSessionInfo(::std::string_view) const = 0;
@@ -72,7 +72,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -97,7 +97,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CrashFileProcessor();
+    virtual ~CrashFileProcessor() = default;
 
     // vIndex: 1
     virtual bool getSessionIDFromFile(::std::string&, ::Core::PathBuffer<::std::string> const&) const = 0;
@@ -117,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

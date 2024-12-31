@@ -27,13 +27,13 @@ public:
     virtual ::Bedrock::Result<void> toBuffer(::gsl::span<uchar>) const = 0;
 
     // vIndex: 0
-    virtual ~Builder() /*override*/;
+    virtual ~Builder() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

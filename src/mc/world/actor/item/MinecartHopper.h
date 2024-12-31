@@ -48,7 +48,7 @@ public:
     virtual int getDefaultDisplayOffset() const /*override*/;
 
     // vIndex: 8
-    virtual ~MinecartHopper() /*override*/;
+    virtual ~MinecartHopper() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

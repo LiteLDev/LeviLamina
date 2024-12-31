@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LatencyNetworkPeer() /*override*/;
+    virtual ~LatencyNetworkPeer() /*override*/ = default;
 
     // vIndex: 1
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
@@ -42,17 +42,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility);
 
-    MCAPI ::NetworkPeer::DataStatus
-    $receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&);
-
-    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
     // NOLINTEND
 };

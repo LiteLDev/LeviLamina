@@ -43,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FilterGroup();
+    virtual ~FilterGroup() = default;
 
     // vIndex: 1
     virtual bool parse(::Json::Value const& jsonVal);
@@ -113,7 +113,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemReleaseInventoryTransaction() /*override*/;
+    virtual ~ItemReleaseInventoryTransaction() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

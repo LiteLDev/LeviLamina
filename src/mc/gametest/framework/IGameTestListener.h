@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGameTestListener();
+    virtual ~IGameTestListener() = default;
 
     // vIndex: 1
     virtual void onTestStructureLoaded(::gametest::BaseGameTestInstance&);
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

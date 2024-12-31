@@ -55,7 +55,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtcEvent();
+    virtual ~RtcEvent() = default;
 
     // vIndex: 1
     virtual ::webrtc::RtcEvent::Type GetType() const = 0;
@@ -82,13 +82,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint $GetGroupKey() const;
+
     // NOLINTEND
 
 public:

@@ -49,7 +49,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameTestRuleHelper() /*override*/;
+    virtual ~GameTestRuleHelper() /*override*/ = default;
 
     // vIndex: 1
     virtual void addRuleToClear(int ruleID) /*override*/;
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

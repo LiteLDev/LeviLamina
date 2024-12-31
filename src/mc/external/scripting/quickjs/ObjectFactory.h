@@ -39,13 +39,13 @@ public:
     makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type dataType) /*override*/;
 
     // vIndex: 0
-    virtual ~ObjectFactory() /*override*/;
+    virtual ~ObjectFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -59,7 +59,7 @@ public:
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 0
-    virtual ~RedStoneOreBlock() /*override*/;
+    virtual ~RedStoneOreBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

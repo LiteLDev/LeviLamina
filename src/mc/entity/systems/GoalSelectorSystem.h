@@ -25,7 +25,7 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 0
-    virtual ~GoalSelectorSystem() /*override*/;
+    virtual ~GoalSelectorSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

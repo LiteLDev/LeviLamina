@@ -23,13 +23,13 @@ public:
     virtual ::std::unique_ptr<::webrtc::NetworkStatePredictor> CreateNetworkStatePredictor() = 0;
 
     // vIndex: 1
-    virtual ~NetworkStatePredictorFactoryInterface();
+    virtual ~NetworkStatePredictorFactoryInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

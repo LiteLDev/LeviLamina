@@ -29,13 +29,13 @@ public:
     virtual ::rtc::BufferT<uchar, 0> Serialize(::webrtc::NetworkStateEstimate const&) const = 0;
 
     // vIndex: 2
-    virtual ~RemoteEstimateSerializer();
+    virtual ~RemoteEstimateSerializer() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -94,7 +94,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TcpServerSignalingInterfaceImpl() /*override*/;
+    virtual ~TcpServerSignalingInterfaceImpl() /*override*/ = default;
 
     // vIndex: 0
     virtual void
@@ -129,7 +129,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

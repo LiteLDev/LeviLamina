@@ -44,7 +44,7 @@ public:
     virtual void initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     // vIndex: 0
-    virtual ~BlockLightDampeningDescription() /*override*/;
+    virtual ~BlockLightDampeningDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

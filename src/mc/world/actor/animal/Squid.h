@@ -112,8 +112,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
-
     MCAPI bool $checkSpawnObstruction() const;
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);

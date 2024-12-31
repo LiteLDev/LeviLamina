@@ -35,7 +35,7 @@ public:
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     // vIndex: 8
-    virtual ~Pillager() /*override*/;
+    virtual ~Pillager() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

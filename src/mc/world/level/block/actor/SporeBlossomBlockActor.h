@@ -25,7 +25,7 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~SporeBlossomBlockActor() /*override*/;
+    virtual ~SporeBlossomBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

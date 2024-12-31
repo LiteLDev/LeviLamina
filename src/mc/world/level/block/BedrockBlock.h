@@ -19,7 +19,7 @@ public:
     virtual bool canBeOriginalSurface() const /*override*/;
 
     // vIndex: 0
-    virtual ~BedrockBlock() /*override*/;
+    virtual ~BedrockBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

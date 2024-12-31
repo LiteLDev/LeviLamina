@@ -27,13 +27,13 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 0
-    virtual ~ActorIsRaiderTest() /*override*/;
+    virtual ~ActorIsRaiderTest() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

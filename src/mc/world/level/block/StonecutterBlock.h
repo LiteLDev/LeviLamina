@@ -39,7 +39,7 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
     // vIndex: 0
-    virtual ~StonecutterBlock() /*override*/;
+    virtual ~StonecutterBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

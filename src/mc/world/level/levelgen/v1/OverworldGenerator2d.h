@@ -96,7 +96,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~OverworldGenerator2d() /*override*/;
+    virtual ~OverworldGenerator2d() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -117,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -43,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ConduitBlockActor() /*override*/;
+    virtual ~ConduitBlockActor() /*override*/ = default;
 
     // vIndex: 7
     virtual void tick(::BlockSource& region) /*override*/;
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

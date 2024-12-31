@@ -36,7 +36,7 @@ public:
     virtual bool isCandle() const /*override*/;
 
     // vIndex: 0
-    virtual ~CandleBlockItem() /*override*/;
+    virtual ~CandleBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

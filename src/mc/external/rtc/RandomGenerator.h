@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RandomGenerator();
+    virtual ~RandomGenerator() = default;
 
     // vIndex: 1
     virtual bool Init(void const*, uint64) = 0;
@@ -27,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

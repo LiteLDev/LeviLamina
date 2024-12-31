@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IWorldTransfer();
+    virtual ~IWorldTransfer() = default;
 
     // vIndex: 1
     virtual void setWorldTransferAction(::std::variant<
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

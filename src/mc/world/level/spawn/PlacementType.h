@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlacementType();
+    virtual ~PlacementType() = default;
 
     // vIndex: 1
     virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const = 0;
@@ -34,13 +34,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos) const;
+
     // NOLINTEND
 };
 

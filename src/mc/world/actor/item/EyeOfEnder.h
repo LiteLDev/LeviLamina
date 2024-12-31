@@ -49,7 +49,7 @@ public:
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 8
-    virtual ~EyeOfEnder() /*override*/;
+    virtual ~EyeOfEnder() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

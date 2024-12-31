@@ -25,7 +25,7 @@ public:
     virtual void onActorDied(::Actor& target, int amplifier) const /*override*/;
 
     // vIndex: 0
-    virtual ~WeavingMobEffect() /*override*/;
+    virtual ~WeavingMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

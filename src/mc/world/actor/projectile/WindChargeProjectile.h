@@ -47,7 +47,7 @@ public:
     virtual void outOfWorld() /*override*/;
 
     // vIndex: 8
-    virtual ~WindChargeProjectile() /*override*/;
+    virtual ~WindChargeProjectile() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

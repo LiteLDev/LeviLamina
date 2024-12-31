@@ -142,7 +142,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~AudioSendStream() /*override*/;
+    virtual ~AudioSendStream() /*override*/ = default;
 
     // vIndex: 2
     virtual ::webrtc::AudioSendStream::Config const& GetConfig() const = 0;
@@ -173,7 +173,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

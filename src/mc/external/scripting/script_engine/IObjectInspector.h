@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IObjectInspector();
+    virtual ~IObjectInspector() = default;
 
     // vIndex: 1
     virtual bool isSameObject(::Scripting::ObjectHandle, ::Scripting::ObjectHandle) const = 0;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -53,7 +53,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~WitherTargetHighestDamage() /*override*/;
+    virtual ~WitherTargetHighestDamage() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

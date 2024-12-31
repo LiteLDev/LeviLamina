@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SendPacketObserver();
+    virtual ~SendPacketObserver() = default;
 
     // vIndex: 1
     virtual void OnSendPacket(::std::optional<ushort>, ::webrtc::Timestamp, uint) = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

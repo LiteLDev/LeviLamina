@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StreamInterface();
+    virtual ~StreamInterface() = default;
 
     // vIndex: 1
     virtual ::rtc::StreamState GetState() const = 0;
@@ -59,13 +59,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $Flush();
+
     // NOLINTEND
 
 public:

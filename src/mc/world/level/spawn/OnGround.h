@@ -31,21 +31,19 @@ public:
     virtual ::BlockPos adjustSpawnPos(::BlockSource&, ::BlockPos) const /*override*/;
 
     // vIndex: 0
-    virtual ~OnGround() /*override*/;
+    virtual ~OnGround() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const;
 
-    MCAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos) const;
     // NOLINTEND
 };
 

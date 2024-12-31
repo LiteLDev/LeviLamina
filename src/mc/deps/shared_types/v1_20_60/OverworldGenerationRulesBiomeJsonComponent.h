@@ -117,7 +117,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OverworldGenerationRulesBiomeJsonComponent() /*override*/;
+    virtual ~OverworldGenerationRulesBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -147,7 +147,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

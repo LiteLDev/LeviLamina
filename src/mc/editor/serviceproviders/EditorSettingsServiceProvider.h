@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorSettingsServiceProvider();
+    virtual ~EditorSettingsServiceProvider() = default;
 
     // vIndex: 2
     virtual ::Editor::Settings::Graphics& getGraphicsSettings() = 0;
@@ -84,7 +84,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

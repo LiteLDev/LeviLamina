@@ -48,7 +48,7 @@ public:
     virtual ::std::vector<::Editor::LogMessage> const& getMessages() const /*override*/;
 
     // vIndex: 0
-    virtual ~ServerLoggingService() /*override*/;
+    virtual ~ServerLoggingService() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

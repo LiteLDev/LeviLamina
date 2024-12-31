@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScriptPluginSource();
+    virtual ~IScriptPluginSource() = default;
 
     // vIndex: 1
     virtual ::PackManifest const& getManifest() = 0;
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

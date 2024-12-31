@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTestInstance() /*override*/;
+    virtual ~MinecraftGameTestInstance() /*override*/ = default;
 
     // vIndex: 14
     virtual ::BlockSource& getBlockSource() const;
@@ -76,7 +76,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

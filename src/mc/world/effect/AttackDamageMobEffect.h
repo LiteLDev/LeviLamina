@@ -24,7 +24,7 @@ public:
     virtual float getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const /*override*/;
 
     // vIndex: 0
-    virtual ~AttackDamageMobEffect() /*override*/;
+    virtual ~AttackDamageMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

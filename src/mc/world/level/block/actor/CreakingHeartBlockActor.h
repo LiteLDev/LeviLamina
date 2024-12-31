@@ -50,7 +50,7 @@ public:
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~CreakingHeartBlockActor() /*override*/;
+    virtual ~CreakingHeartBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

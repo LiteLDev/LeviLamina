@@ -34,19 +34,19 @@ public:
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
 
     // vIndex: 0
-    virtual ~MemoryFileStorageArea() /*override*/;
+    virtual ~MemoryFileStorageArea() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
+
     // NOLINTEND
 };
 

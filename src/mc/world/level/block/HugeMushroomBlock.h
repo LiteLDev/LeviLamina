@@ -24,7 +24,7 @@ public:
     virtual ::BlockLegacy& init() /*override*/;
 
     // vIndex: 0
-    virtual ~HugeMushroomBlock() /*override*/;
+    virtual ~HugeMushroomBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

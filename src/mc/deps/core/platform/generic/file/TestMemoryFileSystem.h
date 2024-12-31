@@ -29,20 +29,19 @@ public:
     _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64) /*override*/;
 
     // vIndex: 0
-    virtual ~TestMemoryFileSystem() /*override*/;
+    virtual ~TestMemoryFileSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Core::FileImpl>
-    $_createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64);
+
     // NOLINTEND
 };
 

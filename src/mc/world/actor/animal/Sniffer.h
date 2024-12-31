@@ -27,7 +27,7 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
     // vIndex: 8
-    virtual ~Sniffer() /*override*/;
+    virtual ~Sniffer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ParticleCurveBase();
+    virtual ~ParticleCurveBase() = default;
 
     // vIndex: 1
     virtual void initializeFromData(::SharedTypes::v1_21::ParticleCurveBase&, ::HashedString const&) = 0;
@@ -53,13 +53,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ParticleSystem::ParticleCurveType $getCurveType() const;
+
     // NOLINTEND
 };
 

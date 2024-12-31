@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ILevelChunkSaveManagerProxy();
+    virtual ~ILevelChunkSaveManagerProxy() = default;
 
     // vIndex: 1
     virtual ::WeakRef<::Dimension> getRandomDimension(::DimensionManager&) const = 0;
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

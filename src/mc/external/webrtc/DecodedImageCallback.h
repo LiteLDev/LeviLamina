@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DecodedImageCallback();
+    virtual ~DecodedImageCallback() = default;
 
     // vIndex: 3
     virtual int Decoded(::webrtc::VideoFrame&) = 0;
@@ -35,15 +35,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $Decoded(::webrtc::VideoFrame&, int64);
 
-    MCAPI void $Decoded(::webrtc::VideoFrame&, ::std::optional<int>, ::std::optional<uchar>);
     // NOLINTEND
 };
 

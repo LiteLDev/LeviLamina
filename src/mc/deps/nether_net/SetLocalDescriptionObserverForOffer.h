@@ -33,13 +33,13 @@ public:
     virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError error) /*override*/;
 
     // vIndex: 2
-    virtual ~SetLocalDescriptionObserverForOffer() /*override*/;
+    virtual ~SetLocalDescriptionObserverForOffer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

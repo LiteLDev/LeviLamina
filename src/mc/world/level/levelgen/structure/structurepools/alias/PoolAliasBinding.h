@@ -65,7 +65,7 @@ public:
     virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const&) const = 0;
 
     // vIndex: 2
-    virtual ~PoolAliasBinding();
+    virtual ~PoolAliasBinding() = default;
     // NOLINTEND
 
 public:
@@ -97,7 +97,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

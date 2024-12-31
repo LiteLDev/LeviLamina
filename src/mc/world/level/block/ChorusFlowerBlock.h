@@ -54,7 +54,7 @@ public:
     virtual bool isLavaBlocking() const /*override*/;
 
     // vIndex: 0
-    virtual ~ChorusFlowerBlock() /*override*/;
+    virtual ~ChorusFlowerBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -102,7 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

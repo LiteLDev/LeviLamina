@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IWatchdog();
+    virtual ~IWatchdog() = default;
 
     // vIndex: 1
     virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)>) = 0;
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

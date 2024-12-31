@@ -40,7 +40,7 @@ public:
     assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const /*override*/;
 
     // vIndex: 0
-    virtual ~SmithingTransformRecipe() /*override*/;
+    virtual ~SmithingTransformRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

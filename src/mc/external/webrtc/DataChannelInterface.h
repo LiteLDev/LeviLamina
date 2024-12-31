@@ -108,7 +108,7 @@ public:
     virtual void SendAsync(::webrtc::DataBuffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
 
     // vIndex: 2
-    virtual ~DataChannelInterface() /*override*/;
+    virtual ~DataChannelInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -120,33 +120,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $ordered() const;
 
-    MCAPI ushort $maxRetransmitTime() const;
-
-    MCAPI ushort $maxRetransmits() const;
-
-    MCAPI ::std::optional<int> $maxRetransmitsOpt() const;
-
-    MCAPI ::std::optional<int> $maxPacketLifeTime() const;
-
-    MCAPI ::std::string $protocol() const;
-
-    MCAPI bool $negotiated() const;
-
-    MCAPI ::webrtc::Priority $priority() const;
-
-    MCAPI ::webrtc::RTCError $error() const;
-
-    MCAPI bool $Send(::webrtc::DataBuffer const&);
-
-    MCAPI void $SendAsync(::webrtc::DataBuffer, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
     // NOLINTEND
 };
 

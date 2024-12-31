@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientScriptEventListener();
+    virtual ~ClientScriptEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onScriptKeyEvent(::std::string const&, ::std::string const&);
@@ -25,12 +25,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onScriptKeyEvent(::std::string const&, ::std::string const&);
+
     // NOLINTEND
 };

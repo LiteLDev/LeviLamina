@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PhysicalSocket() /*override*/;
+    virtual ~PhysicalSocket() /*override*/ = default;
 
     // vIndex: 18
     virtual bool Create(int, int);
@@ -147,59 +147,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $Create(int, int);
 
-    MCAPI ::rtc::SocketAddress $GetLocalAddress() const;
-
-    MCAPI ::rtc::SocketAddress $GetRemoteAddress() const;
-
-    MCAPI int $Bind(::rtc::SocketAddress const&);
-
-    MCAPI int $Connect(::rtc::SocketAddress const&);
-
-    MCAPI int $GetError() const;
-
-    MCAPI void $SetError(int);
-
-    MCAPI ::rtc::Socket::ConnState $GetState() const;
-
-    MCAPI int $GetOption(::rtc::Socket::Option, int*);
-
-    MCAPI int $SetOption(::rtc::Socket::Option, int);
-
-    MCAPI int $Send(void const*, uint64);
-
-    MCAPI int $SendTo(void const*, uint64, ::rtc::SocketAddress const&);
-
-    MCAPI int $Recv(void*, uint64, int64*);
-
-    MCAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
-
-    MCAPI int $RecvFrom(::rtc::Socket::ReceiveBuffer&);
-
-    MCAPI int $Listen(int);
-
-    MCAPI ::rtc::Socket* $Accept(::rtc::SocketAddress*);
-
-    MCAPI int $Close();
-
-    MCAPI uint64 $DoAccept(uint64, ::sockaddr*, int*);
-
-    MCAPI int $DoSend(uint64, char const*, int, int);
-
-    MCAPI int $DoSendTo(uint64, char const*, int, int, ::sockaddr const*, int);
-
-    MCAPI void $SetEnabledEvents(uchar);
-
-    MCAPI void $EnableEvents(uchar);
-
-    MCAPI void $DisableEvents(uchar);
     // NOLINTEND
 
 public:

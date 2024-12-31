@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientNetworkEventListener();
+    virtual ~ClientNetworkEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onMessage(::ClientMessageEvent const&);
@@ -30,12 +30,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onMessage(::ClientMessageEvent const&);
+
     // NOLINTEND
 };

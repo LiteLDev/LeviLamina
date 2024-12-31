@@ -44,23 +44,19 @@ public:
     virtual void OnDecoderInfoChanged(::webrtc::VideoDecoder::DecoderInfo const&);
 
     // vIndex: 4
-    virtual ~VCMReceiveCallback();
+    virtual ~VCMReceiveCallback() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnDroppedFrames(uint);
 
-    MCAPI void $OnIncomingPayloadType(int);
-
-    MCAPI void $OnDecoderInfoChanged(::webrtc::VideoDecoder::DecoderInfo const&);
     // NOLINTEND
 };
 

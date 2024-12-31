@@ -2468,18 +2468,6 @@ public:
         ::std::string const& status
     );
 
-    MCAPI void $fireEventPacketViolationDetected(
-        uint64,
-        ::std::string,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
-        ::NetworkIdentifier const&,
-        uint,
-        ::SubClientId,
-        ::SubClientId,
-        uint
-    );
-
     MCAPI void $fireEventJoinCanceled(::LoadingState currentState);
 
     MCAPI void $fireEvent(
@@ -2504,8 +2492,6 @@ public:
         ::Social::MultiplayerServiceIdentifier const friendWorldType
     );
 
-    MCAPI void $fireEventPlayerJoinWorld(uint const&, ::SubClientId const, bool, ::std::optional<bool>, ::IConnectionEventing::PlayerJoinWorldAttemptState const, int, ::Connection::DisconnectFailReason, ::TransportLayer, ::IMinecraftEventing::NetworkType, ::Social::MultiplayerState, bool, ::Social::MultiplayerServiceIdentifier, ::std::string const&, ::std::string const&);
-
     MCAPI void $fireEventSignalServiceConnect(
         ::SignalServiceConnectStage stage,
         bool                        bIsSigningInAsHost,
@@ -2513,11 +2499,6 @@ public:
         uint64                      netherNetId,
         ::std::string const&        correlationId
     );
-
-    MCAPI void $fireEventOnClientDisconnect(::SubClientId, bool, ::Connection::DisconnectFailReason);
-
-    MCAPI void
-    $fireEventOnServerDisconnect(::Connection::DisconnectFailReason, ::std::string const&, ::SubClientId, ::std::string const&, uint64, ::std::string const&);
 
     MCAPI void $fireEventConnectionFailed(::IConnectionEventing::ConnectionFailureReason failure);
 
@@ -2541,16 +2522,6 @@ public:
         ::std::string const&                    accountId,
         ::std::string const&                    errorCode
     );
-
-    MCAPI void
-    $fireEventSignInEdu(::std::string const&, ::edu::Role, ::Identity::EduSignInStage, ::std::string const&, ::std::string const&, ::std::vector<::std::pair<::std::string, ::std::string>> const&);
-
-    MCAPI void
-    $fireEventSignOutEdu(::std::string const&, ::edu::Role, ::std::string const&, ::std::string const&, ::std::string const&);
-
-    MCAPI void $fireEventSwitchAccountEdu(::std::string const&, ::edu::Role, ::std::string const&);
-
-    MCAPI void $fireEventEduDemoConversion(::edu::Role, ::LastClickedSource);
 
     MCAPI void $fireEventCloudOperationStartedEdu(
         ::EduCloudUtils::Operation const      operation,
@@ -2612,8 +2583,6 @@ public:
         bool                 isTransfer,
         ::std::string const& serverAddress
     );
-
-    MCAPI void $fireEventServerPlayerJoinedGame(::NetworkIdentifier const&, ::SubClientId, ::std::string const&);
 
     MCAPI void $fireEventScriptPluginDiscovery(::ScriptPluginResult const& pluginResult, bool client);
 

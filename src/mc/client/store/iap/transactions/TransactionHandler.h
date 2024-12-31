@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TransactionHandler();
+    virtual ~TransactionHandler() = default;
 
     // vIndex: 1
     virtual void update();
@@ -57,18 +57,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
 
-    MCAPI void $transactPurchase(::Offer&, ::TransactionContext&, ::PurchasePath);
-
-    MCAPI bool $tryParseTransactionPayload(::std::shared_ptr<::Purchase>&, ::std::string&) const;
-
-    MCAPI void $onPurchaseComplete(::Offer&, ::std::string const&, ::PurchasePath, ::PurchaseResult);
     // NOLINTEND
 };

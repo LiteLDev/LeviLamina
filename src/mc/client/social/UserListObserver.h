@@ -35,24 +35,19 @@ public:
     onUserStorageAreaChanged(::std::shared_ptr<::Social::User> const&, ::std::shared_ptr<::Core::FileStorageArea>&);
 
     // vIndex: 0
-    virtual ~UserListObserver() /*override*/;
+    virtual ~UserListObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onUserAdded(::std::shared_ptr<::Social::User> const&);
 
-    MCAPI void $onUserRemoved(::std::shared_ptr<::Social::User> const&);
-
-    MCAPI void
-    $onUserStorageAreaChanged(::std::shared_ptr<::Social::User> const&, ::std::shared_ptr<::Core::FileStorageArea>&);
     // NOLINTEND
 };
 

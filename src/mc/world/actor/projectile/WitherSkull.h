@@ -52,7 +52,7 @@ public:
     virtual float getInertia() /*override*/;
 
     // vIndex: 8
-    virtual ~WitherSkull() /*override*/;
+    virtual ~WitherSkull() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

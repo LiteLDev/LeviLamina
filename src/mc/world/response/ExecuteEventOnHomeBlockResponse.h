@@ -44,7 +44,7 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     // vIndex: 0
-    virtual ~ExecuteEventOnHomeBlockResponse() /*override*/;
+    virtual ~ExecuteEventOnHomeBlockResponse() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -52,25 +52,18 @@ public:
                       ::EntityFactoryT<>>&) /*override*/;
 
     // vIndex: 0
-    virtual ~CurrentlyStandingOnBlockSystemImpl() /*override*/;
+    virtual ~CurrentlyStandingOnBlockSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::ShouldPlayStepSoundComponent>,
-                     ::Read<::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
-                     ::Write<>,
-                     ::AddRemove<::CurrentlyStandingOnBlockComponent>,
-                     ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>&);
+
     // NOLINTEND
 };

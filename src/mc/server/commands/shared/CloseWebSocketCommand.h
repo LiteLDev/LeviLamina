@@ -27,7 +27,7 @@ public:
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput&) const /*override*/;
 
     // vIndex: 0
-    virtual ~CloseWebSocketCommand() /*override*/;
+    virtual ~CloseWebSocketCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

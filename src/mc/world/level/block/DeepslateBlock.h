@@ -27,7 +27,7 @@ public:
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
     // vIndex: 0
-    virtual ~DeepslateBlock() /*override*/;
+    virtual ~DeepslateBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

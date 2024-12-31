@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetherDimension() /*override*/;
+    virtual ~NetherDimension() /*override*/ = default;
 
     // vIndex: 12
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
@@ -99,7 +99,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

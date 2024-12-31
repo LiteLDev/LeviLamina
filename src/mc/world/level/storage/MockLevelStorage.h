@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MockLevelStorage() /*override*/;
+    virtual ~MockLevelStorage() /*override*/ = default;
 
     // vIndex: 1
     virtual void addStorageObserver(::std::unique_ptr<::LevelStorageObserver>) /*override*/;
@@ -122,66 +122,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStorageObserver(::std::unique_ptr<::LevelStorageObserver>);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const&, ::DBHelpers::Category);
-
-    MCAPI bool $hasKey(::std::string_view, ::DBHelpers::Category) const;
-
-    MCAPI void
-    $forEachKeyWithPrefix(::std::string_view, ::DBHelpers::Category, ::std::function<void(::std::string_view, ::std::string_view)> const&)
-        const;
-
-    MCAPI bool $loadLevelData(::LevelData&);
-
-    MCAPI ::std::unique_ptr<::ChunkSource> $createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion);
-
-    MCAPI void $saveLevelData(::LevelData const&);
-
-    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    $saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $saveData(::LevelStorageWriteBatch const&);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    $deleteData(::std::string const&, ::DBHelpers::Category);
-
-    MCAPI void $getStatistics(::std::string&, ::LevelStorage::StatsType) const;
-
-    MCAPI ::Core::LevelStorageResult $getLevelStorageState() const;
-
-    MCAPI void $startShutdown();
-
-    MCAPI bool $isShuttingDown() const;
-
-    MCAPI bool $checkShutdownDone();
-
-    MCAPI ::Core::LevelStorageResult $getState() const;
-
-    MCAPI ::std::vector<::SnapshotFilenameAndLength> $createSnapshot(::std::string const&, bool);
-
-    MCAPI void $releaseSnapshot();
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $compactStorage();
-
-    MCAPI void $syncAndSuspendStorage();
-
-    MCAPI void $resumeStorage();
-
-    MCAPI void $setFlushAllowed(bool);
-
-    MCAPI void $flushToPermanentStorage();
-
-    MCAPI void $setCompactionCallback(::std::function<void(::CompactionStatus)>);
-
-    MCAPI void $setCriticalSyncSaveCallback(::std::function<void()>);
     // NOLINTEND
 };

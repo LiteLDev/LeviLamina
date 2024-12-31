@@ -517,7 +517,7 @@ public:
     virtual ::rtc::Thread* signaling_thread() const = 0;
 
     // vIndex: 2
-    virtual ~PeerConnectionInterface() /*override*/;
+    virtual ~PeerConnectionInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -529,33 +529,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::RTCError $RemoveTrackOrError(::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>);
 
-    MCAPI void $ClearStatsCache();
-
-    MCAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::DataChannelInterface>>
-    $CreateDataChannelOrError(::std::string const&, ::webrtc::DataChannelInit const*);
-
-    MCAPI ::webrtc::scoped_refptr<::webrtc::DataChannelInterface>
-    $CreateDataChannel(::std::string const&, ::webrtc::DataChannelInit const*);
-
-    MCAPI void
-        $SetLocalDescription(::std::unique_ptr<::webrtc::SessionDescriptionInterface>, ::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>);
-
-    MCAPI void $SetLocalDescription(::webrtc::scoped_refptr<::webrtc::SetLocalDescriptionObserverInterface>);
-
-    MCAPI void $SetLocalDescription(::webrtc::SetSessionDescriptionObserver*);
-
-    MCAPI void $SetRemoteDescription(::webrtc::SetSessionDescriptionObserver*, ::webrtc::SessionDescriptionInterface*);
-
-    MCAPI void
-        $AddIceCandidate(::std::unique_ptr<::webrtc::IceCandidateInterface>, ::std::function<void(::webrtc::RTCError)>);
     // NOLINTEND
 };
 

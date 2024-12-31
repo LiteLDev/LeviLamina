@@ -59,7 +59,7 @@ public:
     virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 52
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 157
     virtual float getMaxHeadXRot() /*override*/;
@@ -136,7 +136,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool);
 
-    MCAPI void $setTarget(::Actor* target);
+    MCAPI void $setTarget(::Actor* entity);
 
     MCAPI float $getMaxHeadXRot();
 

@@ -32,18 +32,18 @@ public:
     virtual void onAppResumed() /*override*/;
 
     // vIndex: 0
-    virtual ~WebSocketCommManager() /*override*/;
+    virtual ~WebSocketCommManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppResumed();
+
     // NOLINTEND
 };

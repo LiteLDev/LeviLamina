@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NullSSLpkcs7Interface() /*override*/;
+    virtual ~NullSSLpkcs7Interface() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::vector<uchar> verifyAndReadPKCS7Data(::std::string const&) const /*override*/;
@@ -27,13 +27,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<uchar> $verifyAndReadPKCS7Data(::std::string const&) const;
+
     // NOLINTEND
 };
 

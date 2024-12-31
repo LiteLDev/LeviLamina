@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGameModuleShared();
+    virtual ~IGameModuleShared() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::GameModuleServer> createGameModuleServer() = 0;
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

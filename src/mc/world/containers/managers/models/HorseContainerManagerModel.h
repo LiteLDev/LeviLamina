@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HorseContainerManagerModel() /*override*/;
+    virtual ~HorseContainerManagerModel() /*override*/ = default;
 
     // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

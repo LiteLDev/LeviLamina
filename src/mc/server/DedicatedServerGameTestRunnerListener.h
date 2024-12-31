@@ -42,7 +42,7 @@ public:
     virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     // vIndex: 0
-    virtual ~DedicatedServerGameTestRunnerListener() /*override*/;
+    virtual ~DedicatedServerGameTestRunnerListener() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

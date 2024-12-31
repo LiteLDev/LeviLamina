@@ -525,7 +525,7 @@ public:
     virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const;
 
     // vIndex: 116
-    virtual bool calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
+    virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     // vIndex: 117
     virtual bool
@@ -743,8 +743,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
-
     MCAPI void $tearDown();
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
@@ -774,8 +772,6 @@ public:
     MCAPI bool $isDyeable() const;
 
     MCAPI bool $isDye() const;
-
-    MCAPI ::ItemColor $getItemColor() const;
 
     MCAPI bool $isFertilizer() const;
 
@@ -861,8 +857,6 @@ public:
     MCAPI int $getArmorValue() const;
 
     MCAPI int $getToughnessValue() const;
-
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
 
     MCAPI bool $isComplex() const;
 
@@ -957,15 +951,11 @@ public:
 
     MCAPI ::ActorLocation $getEquipLocation() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
-
     MCAPI bool $shouldSendInteractionGameEvents() const;
 
     MCAPI bool $useInterruptedByAttacking() const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
-
-    MCAPI void $initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
@@ -985,7 +975,7 @@ public:
 
     MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const&) const;
 
-    MCAPI bool $calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
+    MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     MCAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;

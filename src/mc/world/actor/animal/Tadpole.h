@@ -35,7 +35,7 @@ public:
     virtual float getFlopHorizontalVelocityFactor() const /*override*/;
 
     // vIndex: 8
-    virtual ~Tadpole() /*override*/;
+    virtual ~Tadpole() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

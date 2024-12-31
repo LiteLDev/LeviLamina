@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TextStyle() /*override*/;
+    virtual ~TextStyle() /*override*/ = default;
 
     // vIndex: 1
     virtual void parse(::Json::Value const&) /*override*/;
@@ -46,16 +46,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $parse(::Json::Value const&);
 
-    MCAPI void $parse(::Json::Value const&, ::Offer&);
-
-    MCAPI void $parse(::Json::Value const&, ::std::shared_ptr<::MainMenuScreenModel>);
     // NOLINTEND
 };

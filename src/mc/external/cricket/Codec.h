@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Codec();
+    virtual ~Codec() = default;
 
     // vIndex: 1
     virtual ::webrtc::RtpCodecParameters ToCodecParameters() const;
@@ -112,13 +112,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::RtpCodecParameters $ToCodecParameters() const;
+
     // NOLINTEND
 
 public:

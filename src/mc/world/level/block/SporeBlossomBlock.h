@@ -50,7 +50,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~SporeBlossomBlock() /*override*/;
+    virtual ~SporeBlossomBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

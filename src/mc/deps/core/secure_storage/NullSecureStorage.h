@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NullSecureStorage() /*override*/;
+    virtual ~NullSecureStorage() /*override*/ = default;
 
     // vIndex: 1
     virtual bool add(::std::string const& key, ::std::string const& value) /*override*/;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

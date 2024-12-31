@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorldLimitChunkSource() /*override*/;
+    virtual ~WorldLimitChunkSource() /*override*/ = default;
 
     // vIndex: 7
     virtual ::std::shared_ptr<::LevelChunk>
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

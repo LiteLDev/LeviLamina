@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Trade2ContainerManagerController() /*override*/;
+    virtual ~Trade2ContainerManagerController() /*override*/ = default;
 
     // vIndex: 27
     virtual bool isOutputSlot(::std::string const&) const /*override*/;
@@ -77,31 +77,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isOutputSlot(::std::string const&) const;
 
-    MCAPI int
-    $handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const&) const;
-
-    MCAPI void $handleTakeAll(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handleTakeAmount(::SlotData const&, int, ::SlotData const&);
-
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceOne(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType);
-
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
-
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
     // NOLINTEND
 };

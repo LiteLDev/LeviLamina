@@ -24,13 +24,13 @@ public:
     virtual void removeActor(::Actor& actor) /*override*/;
 
     // vIndex: 0
-    virtual ~ActorManagerProxy() /*override*/;
+    virtual ~ActorManagerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

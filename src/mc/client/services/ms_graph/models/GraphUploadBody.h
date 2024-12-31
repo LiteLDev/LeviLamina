@@ -22,19 +22,19 @@ public:
     virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar>) /*override*/;
 
     // vIndex: 0
-    virtual ~GraphUploadBody() /*override*/;
+    virtual ~GraphUploadBody() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar>);
+
     // NOLINTEND
 };
 

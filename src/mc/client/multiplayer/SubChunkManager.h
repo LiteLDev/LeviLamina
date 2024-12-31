@@ -60,19 +60,18 @@ public:
     getOnSubChunkLoadedConnector() /*override*/;
 
     // vIndex: 0
-    virtual ~SubChunkManager() /*override*/;
+    virtual ~SubChunkManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, short, bool)>&
-    $getOnSubChunkLoadedConnector();
+
     // NOLINTEND
 };

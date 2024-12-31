@@ -54,7 +54,7 @@ public:
     shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
 
     // vIndex: 0
-    virtual ~WardenVibrationConfig() /*override*/;
+    virtual ~WardenVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

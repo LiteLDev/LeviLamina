@@ -40,13 +40,13 @@ public:
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 0
-    virtual ~Trade1Ingredient1ContainerValidation() /*override*/;
+    virtual ~Trade1Ingredient1ContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

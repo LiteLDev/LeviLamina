@@ -64,7 +64,7 @@ public:
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
 
     // vIndex: 8
-    virtual ~Skeleton() /*override*/;
+    virtual ~Skeleton() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -98,7 +98,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

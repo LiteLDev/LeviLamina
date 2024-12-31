@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftableElements();
+    virtual ~CraftableElements() = default;
 
     // vIndex: 1
     virtual void registerElements();
@@ -35,14 +35,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerElements();
 
-    MCAPI void $_registerElement(int, int, ::ElementType);
     // NOLINTEND
 };

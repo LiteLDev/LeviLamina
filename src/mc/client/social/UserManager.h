@@ -75,7 +75,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UserManager() /*override*/;
+    virtual ~UserManager() /*override*/ = default;
 
     // vIndex: 34
     virtual void removeUser(int, bool) /*override*/;
@@ -311,163 +311,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $removeUser(int, bool);
 
-    MCAPI void $removeClient(::std::shared_ptr<::IClientInstance> const&);
-
-    MCAPI void $setUserClient(int, ::std::shared_ptr<::IClientInstance> const&);
-
-    MCAPI bool $userHasClient(int);
-
-    MCAPI ::Social::PlayFabEnvironment $getEnvironment() const;
-
-    MCAPI ::std::string_view $getPlayFabTitleId() const;
-
-    MCAPI ::std::shared_ptr<::Social::User> $getPrimaryUser() const;
-
-    MCAPI ::std::shared_ptr<::Social::User> $getUserFromUserId(uint);
-
-    MCAPI ::std::shared_ptr<::Social::User const> const $getUserFromUserId(uint) const;
-
-    MCAPI ::std::shared_ptr<::Social::User> $getUserFromControllerId(int) const;
-
-    MCAPI ::std::shared_ptr<::Social::User> $getUser(::IClientInstance const&) const;
-
-    MCAPI ::std::shared_ptr<::Social::User> $getUser(::Social::XboxLiveUser const&);
-
-    MCAPI ::GameUserType $getUserTypeFromUserId(uint) const;
-
-    MCAPI bool $isChatAllowedWhenBlockedByPlatform() const;
-
-    MCAPI ::std::vector<::std::shared_ptr<::Social::User>> const& $getUsers() const;
-
-    MCAPI bool $isUserSignedIn(uint);
-
-    MCAPI bool $isPrimaryUserInitialSignInInProgress() const;
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-        $createPrimaryUserAsync(::std::shared_ptr<::Options>);
-
-    MCAPI void $initPrimaryIdentity();
-
-    MCAPI bool $isSecondaryUserCreationAllowed(int) const;
-
-    MCAPI void $setSecondaryUserCreationAllowed(int);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    $addSecondaryUserAsync(int, ::std::shared_ptr<::Options>, ::std::function<void(::Social::UserPlatformConnectionResult)>);
-
-    MCAPI void $tick(::IMinecraftGame&);
-
-    MCAPI void $updateMapping(bool, bool);
-
-    MCAPI bool $isPrimaryUserReady();
-
-    MCAPI bool $canAccessPlayScreen();
-
-    MCAPI bool $needToShowPlatformStoreConnectConfirmationScreen();
-
-    MCAPI bool $canAccessSettingsScreen();
-
-    MCAPI bool $canAccessAchievementsScreen();
-
-    MCAPI bool $canAccessSkinScreen();
-
-    MCAPI bool $canAccessStoreScreen();
-
-    MCAPI bool $canAccessRealmsPendingInvitesScreen();
-
-    MCAPI bool $canHandleInvites();
-
-    MCAPI bool $needPlatformConnectionBeforeXBLSignIn();
-
-    MCAPI bool $needPlatformConnectionForMultiplayer() const;
-
-    MCAPI bool $needPlatformConnectionForSplitScreenMultiplayer() const;
-
-    MCAPI bool $needPlatformConnectionBeforeServerSearch() const;
-
-    MCAPI bool $canChangePrimaryUserFromStartMenuScreen() const;
-
-    MCAPI bool $hasPlatformPremiumAccess() const;
-
-    MCAPI bool $hasPlatformIcons() const;
-
-    MCAPI bool $hasPlatformProfileCards() const;
-
-    MCAPI void
-    $getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const;
-
-    MCAPI void
-    $getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&)
-        const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> $retrieveCIDToClientMap();
-
-    MCAPI int $getClientCID(::IClientInstance const&) const;
-
-    MCAPI void $registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&);
-
-    MCAPI void $registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&);
-
-    MCAPI ::Bedrock::PubSub::Subscription
-        $registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>);
-
-    MCAPI ::Bedrock::PubSub::Subscription
-        $registerIdentitySignOutCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>);
-
-    MCAPI ::Bedrock::PubSub::Subscription
-        $registerProfileImageChangedCallback(::std::function<
-                                             void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>);
-
-    MCAPI bool $needGamepadDisconnectScreen(int);
-
-    MCAPI void $onAppResumed();
-
-    MCAPI void $onAppSuspended();
-
-    MCAPI void $onAppFocusLost();
-
-    MCAPI void $forceCloudSaveOnWorld(::std::string const&);
-
-    MCAPI bool $needsAsyncUserSelection(int, bool);
-
-    MCAPI void $getAsyncUserSelection(::std::function<void(int)>, int);
-
-    MCAPI void $getAsyncUserSelectionForNewPrimaryUser(int, bool);
-
-    MCAPI ::Core::Subject<::Social::UserListObserver, ::Core::SingleThreadedLock>& $getUserListSubject();
-
-    MCAPI bool $controllerChanged(int&, int&);
-
-    MCAPI void $registerLevelLocationObserver(::ILevelListCache&);
-
-    MCAPI ::Social::MultiplayerServiceObserver& $getMultiplayerServiceObserver();
-
-    MCAPI ::Social::MultiplayerServiceIdentifier $getPlatformMultiplayerServiceIdentifier() const;
-
-    MCAPI bool $willSyncUserDataStorage() const;
-
-    MCAPI void $onLevelAdded(::std::string const&);
-
-    MCAPI void $onLevelUpdated(::std::string const&);
-
-    MCAPI void $onLevelDeleted(::std::string const&);
-
-    MCAPI void $_onAppResumed();
-
-    MCAPI void $_onAppSuspended();
-
-    MCAPI ::std::shared_ptr<::Social::UserCreationData>
-    $_prepareUserCreationData(::GameUserType, int, ::std::shared_ptr<::Options>, uint);
-
-    MCAPI void $_onUserAdded(::std::shared_ptr<::Social::User> const&);
     // NOLINTEND
 };
 

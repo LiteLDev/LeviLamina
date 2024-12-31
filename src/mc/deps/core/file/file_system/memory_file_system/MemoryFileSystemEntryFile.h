@@ -36,21 +36,19 @@ public:
     virtual uint64 getSize() const /*override*/;
 
     // vIndex: 0
-    virtual ~MemoryFileSystemEntryFile() /*override*/;
+    virtual ~MemoryFileSystemEntryFile() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::Result $canRemove();
 
-    MCAPI uint64 $getSize() const;
     // NOLINTEND
 };
 

@@ -34,20 +34,18 @@ public:
     virtual ::Json::Value toPostBody() const /*override*/;
 
     // vIndex: 0
-    virtual ~ReceiptDetailsAppleAppStore() /*override*/;
+    virtual ~ReceiptDetailsAppleAppStore() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getPath() const;
 
-    MCAPI ::Json::Value $toPostBody() const;
     // NOLINTEND
 };

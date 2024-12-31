@@ -34,23 +34,19 @@ public:
     virtual bool _shouldUnLockForSharedAccess(::std::thread::id) /*override*/;
 
     // vIndex: 0
-    virtual ~SharedRecursiveMapMutex() /*override*/;
+    virtual ~SharedRecursiveMapMutex() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_threadHoldsSharedLock(::std::thread::id);
 
-    MCAPI bool $_shouldLockForSharedAccess(::std::thread::id);
-
-    MCAPI bool $_shouldUnLockForSharedAccess(::std::thread::id);
     // NOLINTEND
 };
 

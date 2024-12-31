@@ -19,13 +19,13 @@ public:
     virtual float getBaseAmbientValue() const /*override*/;
 
     // vIndex: 0
-    virtual ~NetherBrightnessRamp() /*override*/;
+    virtual ~NetherBrightnessRamp() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

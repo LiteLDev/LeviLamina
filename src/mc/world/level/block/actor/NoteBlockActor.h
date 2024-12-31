@@ -40,7 +40,7 @@ public:
     virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 0
-    virtual ~NoteBlockActor() /*override*/;
+    virtual ~NoteBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

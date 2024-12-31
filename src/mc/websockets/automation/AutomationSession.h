@@ -92,7 +92,7 @@ public:
     encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request) /*override*/;
 
     // vIndex: 9
-    virtual void subscribe(::std::string const&, ::std::string const& subscriptionId) /*override*/;
+    virtual void subscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
     // vIndex: 10
     virtual void unsubscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
@@ -176,7 +176,7 @@ public:
 
     MCAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
 
-    MCAPI void $subscribe(::std::string const&, ::std::string const& subscriptionId);
+    MCAPI void $subscribe(::std::string const& requestId, ::std::string const& eventId);
 
     MCAPI void $unsubscribe(::std::string const& requestId, ::std::string const& eventId);
 

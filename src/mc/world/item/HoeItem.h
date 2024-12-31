@@ -20,7 +20,7 @@ public:
     virtual int getEnchantSlot() const /*override*/;
 
     // vIndex: 0
-    virtual ~HoeItem() /*override*/;
+    virtual ~HoeItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

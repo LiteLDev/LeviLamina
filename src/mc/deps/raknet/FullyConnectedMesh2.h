@@ -111,7 +111,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FullyConnectedMesh2() /*override*/;
+    virtual ~FullyConnectedMesh2() /*override*/ = default;
 
     // vIndex: 17
     virtual void StartVerifiedJoin(::RakNet::RakNetGUID);
@@ -174,48 +174,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $StartVerifiedJoin(::RakNet::RakNetGUID);
 
-    MCAPI void $RespondOnVerifiedJoinCapable(::RakNet::Packet*, bool, ::RakNet::BitStream*);
-
-    MCAPI void
-    $GetVerifiedJoinRequiredProcessingList(::RakNet::RakNetGUID, ::DataStructures::List<::RakNet::SystemAddress>&, ::DataStructures::List<::RakNet::RakNetGUID>&, ::DataStructures::List<::RakNet::BitStream*>&);
-
-    MCAPI void
-    $GetVerifiedJoinAcceptedAdditionalData(::RakNet::Packet*, bool*, ::DataStructures::List<::RakNet::RakNetGUID>&, ::RakNet::BitStream*);
-
-    MCAPI void $GetVerifiedJoinRejectedAdditionalData(::RakNet::Packet*, ::RakNet::BitStream*);
-
-    MCAPI void $WriteVJCUserData(::RakNet::BitStream*);
-
-    MCAPI void $WriteVJSUserData(::RakNet::BitStream*, ::RakNet::RakNetGUID);
-
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
-
-    MCAPI void $OnRakPeerStartup();
-
-    MCAPI void $OnAttach();
-
-    MCAPI void $OnRakPeerShutdown();
-
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
-
-    MCAPI void $OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool);
-
-    MCAPI void $OnFailedConnectionAttempt(::RakNet::Packet*, ::RakNet::PI2_FailedConnectionAttemptReason);
-
-    MCAPI void $OnVerifiedJoinFailed(::RakNet::RakNetGUID, bool);
-
-    MCAPI void $OnVerifiedJoinAccepted(::RakNet::Packet*);
-
-    MCAPI void $OnVerifiedJoinRejected(::RakNet::Packet*);
     // NOLINTEND
 };
 

@@ -66,38 +66,19 @@ public:
     fireEventRealmsStoriesOptIn(::std::string const&, ::std::string const&, ::std::string const&, bool) /*override*/;
 
     // vIndex: 0
-    virtual ~Telemetry() /*override*/;
+    virtual ~Telemetry() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $fireEvent(
-        ::std::string const&,
-        ::std::vector<::Social::Events::Property> const&,
-        ::std::vector<::Social::Events::Measurement> const&,
-        bool
-    );
 
-    MCAPI void $fireEventOreUIScreenLoadFailed();
-
-    MCAPI void $fireEventOreUIJsException();
-
-    MCAPI void $fireEventOreUIScreenPerformance(::OreUI::DataTracker const&);
-
-    MCAPI void $fireEventButtonPressed(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&);
-
-    MCAPI void $fireEventModalShown(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&);
-
-    MCAPI void $fireEventOptionsChanged(::std::string const&, ::std::unordered_map<::std::string, int> const&);
-
-    MCAPI void $fireEventRealmsStoriesOptIn(::std::string const&, ::std::string const&, ::std::string const&, bool);
     // NOLINTEND
 };
 

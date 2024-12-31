@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemComponent() /*override*/;
+    virtual ~ItemComponent() /*override*/ = default;
 
     // vIndex: 1
     virtual bool checkComponentDataForContentErrors() const;
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

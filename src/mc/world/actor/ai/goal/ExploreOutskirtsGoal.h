@@ -62,7 +62,7 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 0
-    virtual ~ExploreOutskirtsGoal() /*override*/;
+    virtual ~ExploreOutskirtsGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -80,7 +80,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

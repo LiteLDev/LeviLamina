@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~ArmorContainerModel() /*override*/;
+    virtual ~ArmorContainerModel() /*override*/ = default;
 
     // vIndex: 2
     virtual void postInit() /*override*/;
@@ -56,24 +56,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postInit();
 
-    MCAPI void $releaseResources();
-
-    MCAPI void $containerContentChanged(int);
-
-    MCAPI bool $isValid();
-
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
-
-    MCAPI ::Container* $_getContainer() const;
-
-    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
 };

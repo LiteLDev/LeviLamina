@@ -50,13 +50,13 @@ public:
     virtual bool SenderNonSenderRttEnabled() const = 0;
 
     // vIndex: 0
-    virtual ~VoiceMediaSendChannelInterface() /*override*/;
+    virtual ~VoiceMediaSendChannelInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

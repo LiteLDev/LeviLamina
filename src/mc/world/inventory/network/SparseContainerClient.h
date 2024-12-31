@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SparseContainerClient() /*override*/;
+    virtual ~SparseContainerClient() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,6 +49,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

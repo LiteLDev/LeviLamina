@@ -24,18 +24,18 @@ public:
     virtual ::ContainerScreenActionResult tryActivate();
 
     // vIndex: 0
-    virtual ~ContainerScreenSimulationActivate() /*override*/;
+    virtual ~ContainerScreenSimulationActivate() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerScreenActionResult $tryActivate();
+
     // NOLINTEND
 };

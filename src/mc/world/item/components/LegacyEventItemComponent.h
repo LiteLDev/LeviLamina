@@ -32,7 +32,7 @@ public:
     virtual void _initializeComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyEventItemComponent() /*override*/;
+    virtual ~LegacyEventItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

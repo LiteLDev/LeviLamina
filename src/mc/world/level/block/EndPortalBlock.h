@@ -64,7 +64,7 @@ public:
     virtual bool isLavaBlocking() const /*override*/;
 
     // vIndex: 0
-    virtual ~EndPortalBlock() /*override*/;
+    virtual ~EndPortalBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -84,7 +84,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

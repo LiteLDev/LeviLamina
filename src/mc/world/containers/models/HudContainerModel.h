@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~HudContainerModel() /*override*/;
+    virtual ~HudContainerModel() /*override*/ = default;
 
     // vIndex: 0
     virtual void containerContentChanged(int slot) /*override*/;
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

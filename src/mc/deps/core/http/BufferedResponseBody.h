@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BufferedResponseBody() /*override*/;
+    virtual ~BufferedResponseBody() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::error_code start(::std::optional<uint64> size) /*override*/;
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

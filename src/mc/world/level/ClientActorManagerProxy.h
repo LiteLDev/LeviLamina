@@ -43,7 +43,7 @@ public:
     virtual void deleteActorFromWorldInLevelChunk(::Actor const&) /*override*/;
 
     // vIndex: 0
-    virtual ~ClientActorManagerProxy() /*override*/;
+    virtual ~ClientActorManagerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -66,7 +66,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelChunkAndSubChunkLoggingData() /*override*/;
+    virtual ~LevelChunkAndSubChunkLoggingData() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -80,6 +80,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

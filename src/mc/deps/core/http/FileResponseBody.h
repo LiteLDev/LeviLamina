@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileResponseBody() /*override*/;
+    virtual ~FileResponseBody() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::error_code start(::std::optional<uint64>) /*override*/;
@@ -62,25 +62,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::error_code $start(::std::optional<uint64>);
 
-    MCAPI ::std::error_code $write(::gsl::span<uchar const>);
-
-    MCAPI void $complete();
-
-    MCAPI void $cancel();
-
-    MCAPI ::std::string const& $getLoggableDestination() const;
-
-    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
-
-    MCAPI ::Bedrock::Http::ResponseBodyType $getType() const;
     // NOLINTEND
 };
 

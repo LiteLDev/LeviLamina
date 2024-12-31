@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IResponseBody();
+    virtual ~IResponseBody() = default;
 
     // vIndex: 1
     virtual ::std::error_code start(::std::optional<uint64>) = 0;
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

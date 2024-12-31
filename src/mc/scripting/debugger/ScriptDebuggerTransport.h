@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptDebuggerTransport() /*override*/;
+    virtual ~ScriptDebuggerTransport() /*override*/ = default;
 
     // vIndex: 1
     virtual bool listen(ushort port) /*override*/;
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

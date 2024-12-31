@@ -32,7 +32,7 @@ public:
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 0
-    virtual ~SculkCatalystBlock() /*override*/;
+    virtual ~SculkCatalystBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

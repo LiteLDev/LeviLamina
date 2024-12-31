@@ -35,13 +35,13 @@ public:
     run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptAsyncGameTestFunction() /*override*/;
+    virtual ~ScriptAsyncGameTestFunction() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -94,7 +94,7 @@ public:
     virtual ::Dimension* getDimension() const /*override*/;
 
     // vIndex: 0
-    virtual ~ExecuteContextCommandOrigin() /*override*/;
+    virtual ~ExecuteContextCommandOrigin() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -154,7 +154,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

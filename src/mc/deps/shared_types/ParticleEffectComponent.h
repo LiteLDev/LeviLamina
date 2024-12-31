@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ParticleEffectComponent();
+    virtual ~ParticleEffectComponent() = default;
 
     // vIndex: 1
     virtual ::HashedString const& getIdentifier() const;
@@ -29,13 +29,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
+
     // NOLINTEND
 };
 

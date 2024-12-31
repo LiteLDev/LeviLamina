@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGameConnectionInfoProvider();
+    virtual ~IGameConnectionInfoProvider() = default;
 
     // vIndex: 1
     virtual ::Social::GameConnectionInfo const& getConnectionInfo() const = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

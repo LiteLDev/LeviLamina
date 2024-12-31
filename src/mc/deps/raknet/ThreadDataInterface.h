@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ThreadDataInterface();
+    virtual ~ThreadDataInterface() = default;
 
     // vIndex: 1
     virtual void* PerThreadFactory(void*) = 0;
@@ -25,7 +25,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

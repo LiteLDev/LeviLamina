@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UpdateEntityAfterFallOnInterface();
+    virtual ~UpdateEntityAfterFallOnInterface() = default;
 
     // vIndex: 1
     virtual ::Vec3& getPosDeltaNonConst() = 0;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

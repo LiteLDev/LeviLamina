@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ILevelStorageManagerConnector();
+    virtual ~ILevelStorageManagerConnector() = default;
 
     // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& getOnSaveConnector() = 0;
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

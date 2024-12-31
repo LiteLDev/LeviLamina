@@ -62,27 +62,18 @@ public:
     virtual bool isEncrypted() const /*override*/;
 
     // vIndex: 0
-    virtual ~LocalNetworkPeer() /*override*/;
+    virtual ~LocalNetworkPeer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility);
 
-    MCAPI ::NetworkPeer::DataStatus
-    $receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&);
-
-    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
-
-    MCAPI bool $isLocal() const;
-
-    MCAPI bool $isEncrypted() const;
     // NOLINTEND
 };

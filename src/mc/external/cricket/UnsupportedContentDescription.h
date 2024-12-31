@@ -40,27 +40,19 @@ public:
     virtual ::cricket::UnsupportedContentDescription* CloneInternal() const /*override*/;
 
     // vIndex: 0
-    virtual ~UnsupportedContentDescription() /*override*/;
+    virtual ~UnsupportedContentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::MediaType $type() const;
 
-    MCAPI ::cricket::UnsupportedContentDescription* $as_unsupported();
-
-    MCAPI ::cricket::UnsupportedContentDescription const* $as_unsupported() const;
-
-    MCAPI bool $has_codecs() const;
-
-    MCAPI ::cricket::UnsupportedContentDescription* $CloneInternal() const;
     // NOLINTEND
 
 public:

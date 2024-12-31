@@ -48,7 +48,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VoidGenerator() /*override*/;
+    virtual ~VoidGenerator() /*override*/ = default;
 
     // vIndex: 41
     virtual ::BiomeSource const& getBiomeSource() const /*override*/;
@@ -117,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

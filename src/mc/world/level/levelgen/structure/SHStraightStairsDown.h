@@ -38,7 +38,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~SHStraightStairsDown() /*override*/;
+    virtual ~SHStraightStairsDown() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

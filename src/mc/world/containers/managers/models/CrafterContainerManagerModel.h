@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CrafterContainerManagerModel() /*override*/;
+    virtual ~CrafterContainerManagerModel() /*override*/ = default;
 
     // vIndex: 8
     virtual void setSlot(int slot, ::ItemStack const& item, bool fromNetwork) /*override*/;
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PacketSender() /*override*/;
+    virtual ~PacketSender() /*override*/ = default;
 
     // vIndex: 1
     virtual bool isInitialized() const = 0;
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

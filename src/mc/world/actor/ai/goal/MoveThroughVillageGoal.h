@@ -44,7 +44,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~MoveThroughVillageGoal() /*override*/;
+    virtual ~MoveThroughVillageGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

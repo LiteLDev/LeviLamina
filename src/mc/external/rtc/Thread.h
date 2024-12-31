@@ -146,7 +146,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual ~Thread() /*override*/;
+    virtual ~Thread() /*override*/ = default;
 
     // vIndex: 4
     virtual void Quit();
@@ -265,35 +265,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Quit();
 
-    MCAPI bool $IsQuitting();
-
-    MCAPI void $Restart();
-
-    MCAPI bool $IsProcessingMessagesForTesting();
-
-    MCAPI int $GetDelay();
-
-    MCAPI void $Stop();
-
-    MCAPI void $Run();
-
-    MCAPI void $Delete();
-
-    MCAPI void
-    $PostTaskImpl(::absl::AnyInvocable<void() &&>, ::webrtc::TaskQueueBase::PostTaskTraits const&, ::webrtc::Location const&);
-
-    MCAPI void
-    $PostDelayedTaskImpl(::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::TaskQueueBase::PostDelayedTaskTraits const&, ::webrtc::Location const&);
-
-    MCAPI void $BlockingCallImpl(::rtc::FunctionView<void()>, ::webrtc::Location const&);
     // NOLINTEND
 
 public:

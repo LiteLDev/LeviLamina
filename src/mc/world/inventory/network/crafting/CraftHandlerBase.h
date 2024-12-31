@@ -99,10 +99,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $handleConsumedItem(::FullContainerName const&, uchar const, ::ItemStack const&);
-
-    MCAPI ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType);
-
     MCAPI void $endRequestBatch();
 
     MCAPI void $_postCraftRequest(bool const wasSuccess);

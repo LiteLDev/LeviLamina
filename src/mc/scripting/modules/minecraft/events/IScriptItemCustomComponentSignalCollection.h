@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScriptItemCustomComponentSignalCollection() /*override*/;
+    virtual ~IScriptItemCustomComponentSignalCollection() /*override*/ = default;
 
     // vIndex: 12
     virtual void
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

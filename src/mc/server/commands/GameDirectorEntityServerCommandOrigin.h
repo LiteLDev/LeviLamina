@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameDirectorEntityServerCommandOrigin() /*override*/;
+    virtual ~GameDirectorEntityServerCommandOrigin() /*override*/ = default;
 
     // vIndex: 9
     virtual ::CommandPermissionLevel getPermissionsLevel() const /*override*/;
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

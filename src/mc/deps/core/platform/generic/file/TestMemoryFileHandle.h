@@ -32,19 +32,19 @@ public:
     virtual ::Core::Result _write(void const*, uint64) /*override*/;
 
     // vIndex: 0
-    virtual ~TestMemoryFileHandle() /*override*/;
+    virtual ~TestMemoryFileHandle() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::Result $_write(void const*, uint64);
+
     // NOLINTEND
 };
 

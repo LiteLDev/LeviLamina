@@ -31,7 +31,7 @@ public:
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
     // vIndex: 8
-    virtual ~Villager() /*override*/;
+    virtual ~Villager() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SimpleBlockVolumeIterator() /*override*/;
+    virtual ~SimpleBlockVolumeIterator() /*override*/ = default;
 
     // vIndex: 2
     virtual bool isValid() const /*override*/;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

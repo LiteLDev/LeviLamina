@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IRideableActorActions();
+    virtual ~IRideableActorActions() = default;
 
     // vIndex: 1
     virtual bool startRiding(::RideableComponentHelpers::IActorWrapper&) = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

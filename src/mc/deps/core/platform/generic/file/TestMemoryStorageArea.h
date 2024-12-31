@@ -37,25 +37,19 @@ public:
     virtual uint64 getTotalSize() const /*override*/;
 
     // vIndex: 0
-    virtual ~TestMemoryStorageArea() /*override*/;
+    virtual ~TestMemoryStorageArea() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
 
-    MCAPI bool $supportsSizeQuery() const;
-
-    MCAPI ::Core::Result $getUsedSize(uint64&);
-
-    MCAPI uint64 $getTotalSize() const;
     // NOLINTEND
 };
 

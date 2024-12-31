@@ -80,7 +80,7 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 0
-    virtual ~WorkerPoolManagerImpl() /*override*/;
+    virtual ~WorkerPoolManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -98,7 +98,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

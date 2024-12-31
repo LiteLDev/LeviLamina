@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PendingConditional() /*override*/;
+    virtual ~PendingConditional() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Bedrock::Threading::AsyncStatus getStatus() const /*override*/;
@@ -46,19 +46,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::AsyncStatus $getStatus() const;
 
-    MCAPI ::std::error_code $getError() const;
-
-    MCAPI void $cancel();
-
-    MCAPI void $addOnComplete(::std::function<void(::Bedrock::Threading::IAsyncResult<void> const&)>);
     // NOLINTEND
 };
 

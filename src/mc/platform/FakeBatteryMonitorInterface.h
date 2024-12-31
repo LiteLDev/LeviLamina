@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FakeBatteryMonitorInterface() /*override*/;
+    virtual ~FakeBatteryMonitorInterface() /*override*/ = default;
 
     // vIndex: 1
     virtual ::BatteryStatus getBatteryStatus() const /*override*/;
@@ -40,7 +40,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

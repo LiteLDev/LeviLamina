@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SubscriptionContext();
+    virtual ~SubscriptionContext() = default;
 
     // vIndex: 1
     virtual void to_string(::std::string&) = 0;
@@ -24,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

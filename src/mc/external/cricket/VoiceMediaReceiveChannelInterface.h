@@ -63,13 +63,13 @@ public:
     virtual void SetReceiveNonSenderRttEnabled(bool) = 0;
 
     // vIndex: 0
-    virtual ~VoiceMediaReceiveChannelInterface() /*override*/;
+    virtual ~VoiceMediaReceiveChannelInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTestHelper() /*override*/;
+    virtual ~MinecraftGameTestHelper() /*override*/ = default;
 
     // vIndex: 2
     virtual void succeedWhenEntityPresent(
@@ -363,7 +363,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

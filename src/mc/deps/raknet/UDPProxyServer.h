@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UDPProxyServer() /*override*/;
+    virtual ~UDPProxyServer() /*override*/ = default;
 
     // vIndex: 1
     virtual void OnAttach() /*override*/;
@@ -69,26 +69,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnAttach();
 
-    MCAPI void $OnDetach();
-
-    MCAPI void $Update();
-
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
-
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
-
-    MCAPI void $OnRakPeerStartup();
-
-    MCAPI void $OnRakPeerShutdown();
     // NOLINTEND
 };
 

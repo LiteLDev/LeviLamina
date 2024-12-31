@@ -24,13 +24,13 @@ public:
     virtual ::rtc::NetworkMonitorInterface* CreateNetworkMonitor(::webrtc::FieldTrialsView const&) = 0;
 
     // vIndex: 1
-    virtual ~NetworkMonitorFactory();
+    virtual ~NetworkMonitorFactory() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

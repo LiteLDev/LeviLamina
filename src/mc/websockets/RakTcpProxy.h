@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RakTcpProxy() /*override*/;
+    virtual ~RakTcpProxy() /*override*/ = default;
 
     // vIndex: 1
     virtual bool start(ushort port, ushort maxIncomming, ushort maxOutgoing) /*override*/;
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

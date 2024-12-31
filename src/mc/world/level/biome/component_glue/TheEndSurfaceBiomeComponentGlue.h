@@ -30,13 +30,13 @@ public:
     virtual void applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const /*override*/;
 
     // vIndex: 0
-    virtual ~TheEndSurfaceBiomeComponentGlue() /*override*/;
+    virtual ~TheEndSurfaceBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -58,13 +58,13 @@ public:
     virtual void updatePath(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 0
-    virtual ~HoverPathNavigation() /*override*/;
+    virtual ~HoverPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

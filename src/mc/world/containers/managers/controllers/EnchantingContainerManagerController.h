@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EnchantingContainerManagerController() /*override*/;
+    virtual ~EnchantingContainerManagerController() /*override*/ = default;
 
     // vIndex: 11
     virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
@@ -49,14 +49,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
 
-    MCAPI void $registerContainerCallbacks();
     // NOLINTEND
 };

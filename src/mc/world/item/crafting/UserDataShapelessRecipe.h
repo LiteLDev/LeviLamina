@@ -39,7 +39,7 @@ public:
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const /*override*/;
 
     // vIndex: 0
-    virtual ~UserDataShapelessRecipe() /*override*/;
+    virtual ~UserDataShapelessRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

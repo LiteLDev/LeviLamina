@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDlcBatchModel();
+    virtual ~IDlcBatchModel() = default;
 
     // vIndex: 1
     virtual void searchForProductIds(::std::function<void(bool)>) = 0;
@@ -131,7 +131,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

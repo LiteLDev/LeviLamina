@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
-    virtual ~WanderingTrader() /*override*/;
+    virtual ~WanderingTrader() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

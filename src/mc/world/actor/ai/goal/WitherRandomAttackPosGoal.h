@@ -39,7 +39,7 @@ public:
     virtual bool canContinueToUse() /*override*/;
 
     // vIndex: 0
-    virtual ~WitherRandomAttackPosGoal() /*override*/;
+    virtual ~WitherRandomAttackPosGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

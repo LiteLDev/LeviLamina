@@ -105,36 +105,19 @@ public:
     virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
 
     // vIndex: 0
-    virtual ~HandleCounter() /*override*/;
+    virtual ~HandleCounter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint);
 
-    MCAPI void
-    $onDestroyObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint);
-
-    MCAPI void
-    $onTrackObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint);
-
-    MCAPI void
-    $onUntrackObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint);
-
-    MCAPI void $onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
-
-    MCAPI void $onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
-
-    MCAPI void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
-
-    MCAPI void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
     // NOLINTEND
 };
 

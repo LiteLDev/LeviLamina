@@ -28,20 +28,18 @@ public:
         const /*override*/;
 
     // vIndex: 0
-    virtual ~NetherOperationNode() /*override*/;
+    virtual ~NetherOperationNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $_fillArea(::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>&, ::Pos2d const&, ::Pos2d const&)
-        const;
+
     // NOLINTEND
 };

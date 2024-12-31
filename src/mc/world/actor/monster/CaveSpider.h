@@ -29,7 +29,7 @@ public:
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
 
     // vIndex: 8
-    virtual ~CaveSpider() /*override*/;
+    virtual ~CaveSpider() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

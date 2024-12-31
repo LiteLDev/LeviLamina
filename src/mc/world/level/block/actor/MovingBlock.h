@@ -58,7 +58,7 @@ public:
     virtual bool isMovingBlock() const /*override*/;
 
     // vIndex: 0
-    virtual ~MovingBlock() /*override*/;
+    virtual ~MovingBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

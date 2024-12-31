@@ -36,7 +36,7 @@ public:
     virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ItemUseEvent& itemEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptItemGameplayHandler() /*override*/;
+    virtual ~ScriptItemGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

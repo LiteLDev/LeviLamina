@@ -84,7 +84,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AudioEncoder();
+    virtual ~AudioEncoder() = default;
 
     // vIndex: 1
     virtual int SampleRateHz() const = 0;
@@ -175,51 +175,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $RtpTimestampRateHz() const;
 
-    MCAPI bool $SetFec(bool);
-
-    MCAPI bool $SetDtx(bool);
-
-    MCAPI bool $GetDtx() const;
-
-    MCAPI bool $SetApplication(::webrtc::AudioEncoder::Application);
-
-    MCAPI void $SetMaxPlaybackRate(int);
-
-    MCAPI void $SetTargetBitrate(int);
-
-    MCAPI ::rtc::ArrayView<::std::unique_ptr<::webrtc::AudioEncoder>> $ReclaimContainedEncoders();
-
-    MCAPI bool $EnableAudioNetworkAdaptor(::std::string const&, ::webrtc::RtcEventLog*);
-
-    MCAPI void $DisableAudioNetworkAdaptor();
-
-    MCAPI void $OnReceivedUplinkPacketLossFraction(float);
-
-    MCAPI void $OnReceivedUplinkRecoverablePacketLossFraction(float);
-
-    MCAPI void $OnReceivedTargetAudioBitrate(int);
-
-    MCAPI void $OnReceivedUplinkBandwidth(int, ::std::optional<int64>);
-
-    MCAPI void $OnReceivedUplinkAllocation(::webrtc::BitrateAllocationUpdate);
-
-    MCAPI void $OnReceivedRtt(int);
-
-    MCAPI void $OnReceivedOverhead(uint64);
-
-    MCAPI void $SetReceiverFrameLengthRange(int, int);
-
-    MCAPI ::webrtc::ANAStats $GetANAStats() const;
-
-    MCAPI ::std::optional<::std::pair<::webrtc::DataRate, ::webrtc::DataRate>> $GetBitrateRange() const;
     // NOLINTEND
 };
 

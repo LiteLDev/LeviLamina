@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IConfigListener();
+    virtual ~IConfigListener() = default;
 
     // vIndex: 1
     virtual void onConfigChanged(::Config const&) = 0;
@@ -27,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

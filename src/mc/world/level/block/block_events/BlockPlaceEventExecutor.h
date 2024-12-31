@@ -26,13 +26,13 @@ public:
     virtual void dispatch(::BlockEvents::BlockEventBase& eventData) const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockPlaceEventExecutor() /*override*/;
+    virtual ~BlockPlaceEventExecutor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

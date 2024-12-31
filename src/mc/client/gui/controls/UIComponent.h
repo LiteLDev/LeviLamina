@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UIComponent();
+    virtual ~UIComponent() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::UIComponent> clone(::UIControl&) const = 0;
@@ -80,35 +80,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ComponentReceiveActionType
-    $receive(::VisualTree&, ::ScreenInputContext&, ::UIAnimationController&, ::ScreenEvent const&);
 
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const&);
-
-    MCAPI void $onNotifyChildAdded();
-
-    MCAPI void $onNotifyChildRemoved();
-
-    MCAPI void $onRemoved();
-
-    MCAPI void $onAdded();
-
-    MCAPI void $onVisibilityChanged(bool);
-
-    MCAPI void $onEnabledChanged(bool);
-
-    MCAPI bool $isRenderableComponent();
-
-    MCAPI bool $onLayoutChange();
-
-    MCAPI void $reload(::UIComponent const&);
-
-    MCAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

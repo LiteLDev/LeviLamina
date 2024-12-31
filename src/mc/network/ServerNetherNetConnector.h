@@ -37,13 +37,13 @@ public:
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) /*override*/;
 
     // vIndex: 0
-    virtual ~ServerNetherNetConnector() /*override*/;
+    virtual ~ServerNetherNetConnector() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StoreListenerMultistore() /*override*/;
+    virtual ~StoreListenerMultistore() /*override*/ = default;
 
     // vIndex: 14
     virtual void onQueryPurchasesSuccessMultistore(::std::string const&, ::std::vector<::PurchaseInfo> const&) = 0;
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

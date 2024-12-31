@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SignalPublisher();
+    virtual ~SignalPublisher() = default;
 
     // vIndex: 1
     virtual void send(void const*) = 0;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

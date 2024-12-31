@@ -32,7 +32,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
-        virtual ~Flag() /*override*/;
+        virtual ~Flag() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -54,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

@@ -70,7 +70,7 @@ public:
          ::EntityFactoryT<>>& strictContext) /*override*/;
 
     // vIndex: 0
-    virtual ~MonsterAiStepSystem() /*override*/;
+    virtual ~MonsterAiStepSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -93,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

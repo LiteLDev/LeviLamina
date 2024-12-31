@@ -69,7 +69,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
-    virtual ~Wolf() /*override*/;
+    virtual ~Wolf() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -116,7 +116,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -131,8 +131,6 @@ public:
     MCAPI void $onSynchedDataUpdate(int dataId);
 
     MCAPI void $setSitting(bool value);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isAlliedTo(::Mob* other);
 

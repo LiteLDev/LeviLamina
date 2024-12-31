@@ -85,13 +85,13 @@ public:
     virtual bool hasByHashId(uint64 id) const /*override*/;
 
     // vIndex: 0
-    virtual ~BiomeSource3d() /*override*/;
+    virtual ~BiomeSource3d() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

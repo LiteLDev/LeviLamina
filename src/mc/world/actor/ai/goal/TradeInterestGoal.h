@@ -61,7 +61,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~TradeInterestGoal() /*override*/;
+    virtual ~TradeInterestGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

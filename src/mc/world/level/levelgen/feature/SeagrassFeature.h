@@ -26,13 +26,13 @@ public:
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 0
-    virtual ~SeagrassFeature() /*override*/;
+    virtual ~SeagrassFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

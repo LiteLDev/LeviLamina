@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISparseContainerSetListener();
+    virtual ~ISparseContainerSetListener() = default;
 
     // vIndex: 1
     virtual void preSetItem(::Container*, int, bool, ::ItemStack*) = 0;
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

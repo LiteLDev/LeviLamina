@@ -86,13 +86,13 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const = 0;
 
     // vIndex: 0
-    virtual ~WorldRecovery() /*override*/;
+    virtual ~WorldRecovery() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

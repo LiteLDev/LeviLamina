@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StoreLocalizationDictionary() /*override*/;
+    virtual ~StoreLocalizationDictionary() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::string getLocString(::std::string const&) const /*override*/;
@@ -55,22 +55,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getLocString(::std::string const&) const;
 
-    MCAPI bool $isLocalizationReady() const;
-
-    MCAPI void $onLanguageChanged(::std::string const&, bool);
-
-    MCAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const&);
-
-    MCAPI void $onLanguagesLoaded();
-
-    MCAPI void $_updateLoc();
     // NOLINTEND
 };

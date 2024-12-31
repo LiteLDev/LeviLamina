@@ -24,23 +24,19 @@ public:
     virtual int NumPreferredChannels() const;
 
     // vIndex: 3
-    virtual ~AudioTrackSinkInterface();
+    virtual ~AudioTrackSinkInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnData(void const*, int, int, uint64, uint64);
 
-    MCAPI void $OnData(void const*, int, int, uint64, uint64, ::std::optional<int64>);
-
-    MCAPI int $NumPreferredChannels() const;
     // NOLINTEND
 
 public:

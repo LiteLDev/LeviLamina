@@ -49,7 +49,7 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const /*override*/;
 
     // vIndex: 8
-    virtual ~GlowSquid() /*override*/;
+    virtual ~GlowSquid() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -77,15 +77,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $normalTick();
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 

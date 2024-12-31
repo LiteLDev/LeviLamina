@@ -38,23 +38,18 @@ public:
     virtual ::ActorType getEntityType() const /*override*/;
 
     // vIndex: 0
-    virtual ~RemovedActorDamageByType() /*override*/;
+    virtual ~RemovedActorDamageByType() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
-    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
-
-    MCAPI ::ActorType $getEntityType() const;
     // NOLINTEND
 };

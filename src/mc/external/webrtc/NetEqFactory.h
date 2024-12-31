@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetEqFactory();
+    virtual ~NetEqFactory() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::NetEq>
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

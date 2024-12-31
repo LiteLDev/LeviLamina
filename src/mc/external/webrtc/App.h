@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~App() /*override*/;
+    virtual ~App() /*override*/ = default;
 
     // vIndex: 1
     virtual uint64 BlockLength() const /*override*/;
@@ -58,15 +58,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $BlockLength() const;
 
-    MCAPI bool $Create(uchar*, uint64*, uint64, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>) const;
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FLP_Printf() /*override*/;
+    virtual ~FLP_Printf() /*override*/ = default;
 
     // vIndex: 1
     virtual void OnAddFilesFromDirectoryStarted(::RakNet::FileList*, char*) /*override*/;
@@ -42,19 +42,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnAddFilesFromDirectoryStarted(::RakNet::FileList*, char*);
 
-    MCAPI void $OnDirectory(::RakNet::FileList*, char*, uint);
-
-    MCAPI void $OnFilePushesComplete(::RakNet::SystemAddress, ushort);
-
-    MCAPI void $OnSendAborted(::RakNet::SystemAddress);
     // NOLINTEND
 };
 

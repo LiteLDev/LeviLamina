@@ -21,13 +21,13 @@ public:
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
 
     // vIndex: 0
-    virtual ~StringRequestBody() /*override*/;
+    virtual ~StringRequestBody() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

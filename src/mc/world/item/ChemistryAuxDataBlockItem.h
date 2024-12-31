@@ -24,18 +24,18 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
-    virtual ~ChemistryAuxDataBlockItem() /*override*/;
+    virtual ~ChemistryAuxDataBlockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+
     // NOLINTEND
 };

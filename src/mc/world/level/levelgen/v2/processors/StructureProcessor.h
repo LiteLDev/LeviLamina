@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StructureProcessor();
+    virtual ~StructureProcessor() = default;
 
     // vIndex: 1
     virtual ::std::optional<::br::worldgen::StructureBlockInfo>
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

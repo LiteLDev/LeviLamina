@@ -37,13 +37,13 @@ public:
     MakeAudioEncoder(int, ::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
 
     // vIndex: 2
-    virtual ~AudioEncoderFactory() /*override*/;
+    virtual ~AudioEncoderFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

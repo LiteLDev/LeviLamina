@@ -28,13 +28,13 @@ public:
     virtual void onEndTakingPicture(::Player&, ::Actor*, ::Actor*) = 0;
 
     // vIndex: 3
-    virtual ~CameraCallbacks();
+    virtual ~CameraCallbacks() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

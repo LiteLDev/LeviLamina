@@ -61,7 +61,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual ~Painting() /*override*/;
+    virtual ~Painting() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -89,7 +89,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -25,13 +25,13 @@ public:
     virtual bool travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za) /*override*/;
 
     // vIndex: 0
-    virtual ~FloatNavigation() /*override*/;
+    virtual ~FloatNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

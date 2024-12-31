@@ -70,7 +70,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~RangedAttackGoal() /*override*/;
+    virtual ~RangedAttackGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

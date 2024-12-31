@@ -71,7 +71,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkChunkPublisher();
+    virtual ~NetworkChunkPublisher() = default;
     // NOLINTEND
 
 public:
@@ -121,7 +121,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

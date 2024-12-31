@@ -47,7 +47,7 @@ public:
     virtual void baseTick() /*override*/;
 
     // vIndex: 8
-    virtual ~OminousItemSpawner() /*override*/;
+    virtual ~OminousItemSpawner() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

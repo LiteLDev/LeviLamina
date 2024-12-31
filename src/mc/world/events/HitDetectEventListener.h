@@ -31,18 +31,18 @@ public:
     virtual ::EventResult onContinuousHitResult(::HitResult&) /*override*/;
 
     // vIndex: 0
-    virtual ~HitDetectEventListener() /*override*/;
+    virtual ~HitDetectEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onContinuousHitResult(::HitResult&);
+
     // NOLINTEND
 };

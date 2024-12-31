@@ -29,13 +29,13 @@ public:
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
     // vIndex: 0
-    virtual ~OverworldDefaultSurfaceBuilder() /*override*/;
+    virtual ~OverworldDefaultSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

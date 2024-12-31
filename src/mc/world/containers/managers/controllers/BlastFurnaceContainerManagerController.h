@@ -16,12 +16,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlastFurnaceContainerManagerController() /*override*/;
+    virtual ~BlastFurnaceContainerManagerController() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

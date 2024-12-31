@@ -35,7 +35,7 @@ public:
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~DropperBlockActor() /*override*/;
+    virtual ~DropperBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

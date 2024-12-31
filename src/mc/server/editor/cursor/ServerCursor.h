@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerCursor() /*override*/;
+    virtual ~ServerCursor() /*override*/ = default;
 
     // vIndex: 2
     virtual void setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

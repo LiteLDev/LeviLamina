@@ -66,13 +66,13 @@ public:
     virtual void placeEntities(::BlockSource& region, ::BoundingBox const& overlapBB) const /*override*/;
 
     // vIndex: 0
-    virtual ~PoolElementStructureSection() /*override*/;
+    virtual ~PoolElementStructureSection() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

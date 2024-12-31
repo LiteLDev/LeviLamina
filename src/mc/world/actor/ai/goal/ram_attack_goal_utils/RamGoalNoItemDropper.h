@@ -32,13 +32,13 @@ public:
     virtual void dontDropHorn() /*override*/;
 
     // vIndex: 0
-    virtual ~RamGoalNoItemDropper() /*override*/;
+    virtual ~RamGoalNoItemDropper() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

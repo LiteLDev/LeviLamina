@@ -103,7 +103,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~ShieldItem() /*override*/;
+    virtual ~ShieldItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -137,7 +137,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

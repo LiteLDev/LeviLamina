@@ -29,7 +29,7 @@ public:
     virtual void executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const /*override*/;
 
     // vIndex: 0
-    virtual ~PickaxeItem() /*override*/;
+    virtual ~PickaxeItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

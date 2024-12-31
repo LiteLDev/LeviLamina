@@ -26,13 +26,13 @@ public:
     virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError) = 0;
 
     // vIndex: 2
-    virtual ~SetRemoteDescriptionObserverInterface() /*override*/;
+    virtual ~SetRemoteDescriptionObserverInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

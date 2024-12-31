@@ -66,7 +66,7 @@ public:
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 0
-    virtual ~ZippedEncryptedFilesAccessStrategy() /*override*/;
+    virtual ~ZippedEncryptedFilesAccessStrategy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -108,7 +108,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

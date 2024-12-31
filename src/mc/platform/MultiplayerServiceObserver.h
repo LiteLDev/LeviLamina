@@ -43,8 +43,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const&, ::std::string const&);
-
     MCAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
     // NOLINTEND
 };

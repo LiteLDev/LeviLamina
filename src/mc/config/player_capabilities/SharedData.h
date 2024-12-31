@@ -37,13 +37,13 @@ public:
     virtual ::ChatRestrictionLevel getChatRestrictionLevel() const /*override*/;
 
     // vIndex: 0
-    virtual ~SharedData() /*override*/;
+    virtual ~SharedData() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

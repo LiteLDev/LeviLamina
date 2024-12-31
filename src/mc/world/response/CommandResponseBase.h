@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandResponseBase();
+    virtual ~CommandResponseBase() = default;
 
     // vIndex: 1
     virtual ::CommandOriginSystem _getCommandOriginSystem() const;
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

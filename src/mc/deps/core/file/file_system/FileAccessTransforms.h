@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileAccessTransforms();
+    virtual ~FileAccessTransforms() = default;
 
     // vIndex: 1
     virtual bool readTransform(::std::vector<uchar>& stream) const;
@@ -25,7 +25,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

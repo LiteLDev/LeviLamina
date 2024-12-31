@@ -23,7 +23,7 @@ public:
     virtual void clientTick(::Mob& mob) /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyBodyControl() /*override*/;
+    virtual ~LegacyBodyControl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

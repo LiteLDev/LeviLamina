@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorkerPoolHandleImpl() /*override*/;
+    virtual ~WorkerPoolHandleImpl() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> get() const /*override*/;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

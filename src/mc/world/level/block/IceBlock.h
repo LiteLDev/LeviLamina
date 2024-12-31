@@ -46,7 +46,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
-    virtual ~IceBlock() /*override*/;
+    virtual ~IceBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

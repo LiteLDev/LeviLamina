@@ -27,13 +27,13 @@ public:
     virtual uint64 size() const = 0;
 
     // vIndex: 2
-    virtual ~EncodedImageBufferInterface() /*override*/;
+    virtual ~EncodedImageBufferInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -32,13 +32,13 @@ public:
     virtual bool isDone() /*override*/;
 
     // vIndex: 0
-    virtual ~TransferToCommand() /*override*/;
+    virtual ~TransferToCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

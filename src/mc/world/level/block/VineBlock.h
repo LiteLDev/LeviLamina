@@ -76,7 +76,7 @@ public:
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
 
     // vIndex: 0
-    virtual ~VineBlock() /*override*/;
+    virtual ~VineBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -130,7 +130,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

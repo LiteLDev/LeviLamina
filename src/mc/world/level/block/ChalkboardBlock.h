@@ -74,7 +74,7 @@ public:
     virtual bool getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
-    virtual ~ChalkboardBlock() /*override*/;
+    virtual ~ChalkboardBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -98,7 +98,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

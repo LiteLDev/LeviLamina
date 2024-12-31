@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PayloadServiceProvider();
+    virtual ~PayloadServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> dispatchToSelf(::Editor::Network::INetworkPayload&) = 0;
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

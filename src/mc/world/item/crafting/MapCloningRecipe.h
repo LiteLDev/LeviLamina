@@ -50,7 +50,7 @@ public:
     virtual ::RecipeIngredient const& getIngredient(int x, int y) const /*override*/;
 
     // vIndex: 0
-    virtual ~MapCloningRecipe() /*override*/;
+    virtual ~MapCloningRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -76,7 +76,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

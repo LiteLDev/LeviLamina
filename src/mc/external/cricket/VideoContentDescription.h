@@ -34,27 +34,19 @@ public:
     virtual ::cricket::VideoContentDescription* CloneInternal() const /*override*/;
 
     // vIndex: 0
-    virtual ~VideoContentDescription() /*override*/;
+    virtual ~VideoContentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $set_protocol(::std::string_view);
 
-    MCAPI ::cricket::MediaType $type() const;
-
-    MCAPI ::cricket::VideoContentDescription* $as_video();
-
-    MCAPI ::cricket::VideoContentDescription const* $as_video() const;
-
-    MCAPI ::cricket::VideoContentDescription* $CloneInternal() const;
     // NOLINTEND
 
 public:

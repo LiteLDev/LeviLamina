@@ -57,7 +57,7 @@ public:
     virtual uint64 getHash() const /*override*/;
 
     // vIndex: 16
-    virtual ~InternalItemDescriptor() /*override*/;
+    virtual ~InternalItemDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

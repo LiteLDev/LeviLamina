@@ -43,7 +43,7 @@ public:
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 0
-    virtual ~CompoundItem() /*override*/;
+    virtual ~CompoundItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VideoEngineInterface() /*override*/;
+    virtual ~VideoEngineInterface() /*override*/ = default;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>
@@ -56,21 +56,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::cricket::VideoMediaSendChannelInterface>
-    $CreateSendChannel(::webrtc::Call*, ::cricket::MediaConfig const&, ::cricket::VideoOptions const&, ::webrtc::CryptoOptions const&, ::webrtc::VideoBitrateAllocatorFactory*);
 
-    MCAPI ::std::unique_ptr<::cricket::VideoMediaReceiveChannelInterface>
-    $CreateReceiveChannel(::webrtc::Call*, ::cricket::MediaConfig const&, ::cricket::VideoOptions const&, ::webrtc::CryptoOptions const&);
-
-    MCAPI ::std::vector<::cricket::Codec> $send_codecs(bool) const;
-
-    MCAPI ::std::vector<::cricket::Codec> $recv_codecs(bool) const;
     // NOLINTEND
 };
 

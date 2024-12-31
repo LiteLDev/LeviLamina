@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IModuleBindingFactory();
+    virtual ~IModuleBindingFactory() = default;
 
     // vIndex: 1
     virtual ::std::string getName() const = 0;
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

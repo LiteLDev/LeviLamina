@@ -36,13 +36,13 @@ public:
     runString(::Scripting::ContextId, ::std::string const&, ::std::string const&, ::std::optional<::Scripting::Privilege>) = 0;
 
     // vIndex: 0
-    virtual ~StringBasedRuntime() /*override*/;
+    virtual ~StringBasedRuntime() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

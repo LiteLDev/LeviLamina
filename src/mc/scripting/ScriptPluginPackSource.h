@@ -41,7 +41,7 @@ public:
     virtual ::std::string removeRootFromPath(::std::string const& path) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptPluginPackSource() /*override*/;
+    virtual ~ScriptPluginPackSource() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -31,20 +31,18 @@ public:
     virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const /*override*/;
 
     // vIndex: 0
-    virtual ~VanillaDynamicPackagePacks() /*override*/;
+    virtual ~VanillaDynamicPackagePacks() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setDynamicPackageRoot(::Core::PathBuffer<::std::string>);
 
-    MCAPI ::std::vector<::IInPackagePacks::MetaData> $getPacks(::PackType) const;
     // NOLINTEND
 };

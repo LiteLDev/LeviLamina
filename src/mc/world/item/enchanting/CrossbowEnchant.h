@@ -31,7 +31,7 @@ public:
     virtual bool _isValidEnchantmentTypeForCategory(::Enchant::Type type) const /*override*/;
 
     // vIndex: 0
-    virtual ~CrossbowEnchant() /*override*/;
+    virtual ~CrossbowEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

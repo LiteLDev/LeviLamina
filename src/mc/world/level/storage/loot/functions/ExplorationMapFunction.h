@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExplorationMapFunction() /*override*/;
+    virtual ~ExplorationMapFunction() /*override*/ = default;
 
     // vIndex: 4
     virtual void apply(::ItemStack& item, ::Random&, ::LootTableContext& context) /*override*/;
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

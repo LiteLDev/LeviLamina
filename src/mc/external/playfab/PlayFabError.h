@@ -43,21 +43,19 @@ public:
     virtual ::Json::Value ToJson() const /*override*/;
 
     // vIndex: 0
-    virtual ~PlayFabError() /*override*/;
+    virtual ~PlayFabError() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $FromJson(::Json::Value&);
 
-    MCAPI ::Json::Value $ToJson() const;
     // NOLINTEND
 };
 

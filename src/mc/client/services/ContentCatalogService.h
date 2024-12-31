@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContentCatalogService() /*override*/;
+    virtual ~ContentCatalogService() /*override*/ = default;
 
     // vIndex: 5
     virtual void reviewSummary(::ReviewSummaryParams const&, ::std::function<void(::ReviewSummaryResponse&)>);
@@ -51,14 +51,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reviewSummary(::ReviewSummaryParams const&, ::std::function<void(::ReviewSummaryResponse&)>);
 
-    MCAPI void $_submitRequest(::std::shared_ptr<::HttpRequestHandler>);
     // NOLINTEND
 };

@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WriteBufferedFileStorageArea() /*override*/;
+    virtual ~WriteBufferedFileStorageArea() /*override*/ = default;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
@@ -87,39 +87,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
 
-    MCAPI bool $supportsSizeQuery() const;
-
-    MCAPI uint64 $getTotalSize() const;
-
-    MCAPI ::Core::Result $getUsedSize(uint64&);
-
-    MCAPI uint64 $getTransactionWriteSizeLimit() const;
-
-    MCAPI bool $handlesPendingWrites() const;
-
-    MCAPI void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
-
-    MCAPI void $informStorageAreaCopy(uint64 storageAreaSize);
-
-    MCAPI ::Core::Result $setSaveDataIcon(::Core::Path const& iconPath);
-
-    MCAPI ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
-
-    MCAPI void $flushImmediately();
-
-    MCAPI void $enableFlushToDisk(bool);
-
-    MCAPI bool $checkCorrupt(bool handleCorruption);
-
-    MCAPI void $_onTeardown();
     // NOLINTEND
 };
 

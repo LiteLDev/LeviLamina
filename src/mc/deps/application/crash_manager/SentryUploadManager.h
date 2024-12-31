@@ -40,13 +40,13 @@ public:
     virtual ::std::string const& getMinidumpUploadUri() const = 0;
 
     // vIndex: 0
-    virtual ~SentryUploadManager() /*override*/;
+    virtual ~SentryUploadManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

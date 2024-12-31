@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncDnsResolverResult();
+    virtual ~AsyncDnsResolverResult() = default;
 
     // vIndex: 1
     virtual bool GetResolvedAddress(int, ::rtc::SocketAddress*) const = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

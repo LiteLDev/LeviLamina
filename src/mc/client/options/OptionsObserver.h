@@ -30,13 +30,13 @@ public:
     virtual void onOptionsLoadComplete() = 0;
 
     // vIndex: 0
-    virtual ~OptionsObserver() /*override*/;
+    virtual ~OptionsObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -86,7 +86,7 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~StrongholdFeature() /*override*/;
+    virtual ~StrongholdFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -128,7 +128,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SettingsScreenControllerBase() /*override*/;
+    virtual ~SettingsScreenControllerBase() /*override*/ = default;
 
     // vIndex: 27
     virtual void addStaticScreenVars(::Json::Value&) /*override*/;
@@ -33,14 +33,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value&);
 
-    MCAPI void $_displayLockedWorldPopup();
     // NOLINTEND
 };

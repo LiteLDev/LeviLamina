@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UInt64Option() /*override*/;
+    virtual ~UInt64Option() /*override*/ = default;
 
     // vIndex: 1
     virtual void save(::std::vector<::std::pair<::std::string, ::std::string>>&) /*override*/;
@@ -40,14 +40,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>&);
 
-    MCAPI void $load(::std::string const&);
     // NOLINTEND
 };

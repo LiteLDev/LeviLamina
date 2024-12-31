@@ -29,13 +29,13 @@ public:
     send(::Bedrock::Http::Request&& request) /*override*/;
 
     // vIndex: 0
-    virtual ~HttpUrlValidator() /*override*/;
+    virtual ~HttpUrlValidator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

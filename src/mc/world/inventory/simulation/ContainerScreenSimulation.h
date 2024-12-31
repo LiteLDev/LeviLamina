@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContainerScreenSimulation() /*override*/;
+    virtual ~ContainerScreenSimulation() /*override*/ = default;
 
     // vIndex: 1
     virtual ::ContainerScreenActionResult
@@ -111,58 +111,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerScreenActionResult
-    $tryPlaceOne(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
 
-    MCAPI ::ContainerScreenActionResult
-    $tryPlaceAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryPlaceAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryTakeAmount(::ContainerValidationSlotData const&, int, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryTakeAll(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryTakeHalf(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $trySwap(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryAddToStack(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&, ::ItemTakeType);
-
-    MCAPI ::ContainerScreenActionResult $tryCoalesce(::ContainerValidationSlotData const&, ::ContainerEnumName);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryAutoPlace(::ContainerValidationSlotData const&, ::ItemTransferAmount, ::ContainerScreenAutoplaceBehaviour);
-
-    MCAPI ::ContainerScreenActionResult
-    $trySplitSingle(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const&, ::std::vector<::ContainerSimulationSplitStack>&);
-
-    MCAPI ::ContainerScreenActionResult
-    $trySplitMultiple(::ContainerValidationSlotData const&, int, ::ItemInstance const&, ::ContainerValidationSlotData const&, ::std::vector<::ContainerSimulationSplitStack>&, int&);
-
-    MCAPI ::ContainerScreenActionResult
-    $tryDrop(::ContainerValidationSlotData const&, ::ItemTransferAmount const, bool);
-
-    MCAPI ::ContainerScreenActionResult $tryDestroy(::ContainerValidationSlotData const&, ::ItemTransferAmount const);
-
-    MCAPI ::ContainerScreenActionResult $tryConsume(::ContainerValidationSlotData const&, ::ItemTransferAmount const);
-
-    MCAPI ::ContainerScreenActionResult $tryConsumeExpected(::ContainerValidationSlotData const&);
-
-    MCAPI void $_registerCoalesceOrder();
-
-    MCAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

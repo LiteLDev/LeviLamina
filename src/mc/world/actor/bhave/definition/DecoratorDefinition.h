@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DecoratorDefinition() /*override*/;
+    virtual ~DecoratorDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,6 +42,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

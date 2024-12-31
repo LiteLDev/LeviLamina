@@ -36,21 +36,18 @@ public:
     _allocateAndFill(uint64, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     // vIndex: 0
-    virtual ~Convert2dTo3dOperationNode() /*override*/;
+    virtual ~Convert2dTo3dOperationNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(int64 seed);
 
-    MCAPI ::OperationNodeDetails::TransferData<::Biome*>
-    $_allocateAndFill(uint64, ::BlockPos const&, ::BlockPos const&) const;
     // NOLINTEND
 };

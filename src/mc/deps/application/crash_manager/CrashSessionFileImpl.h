@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CrashSessionFileImpl() /*override*/;
+    virtual ~CrashSessionFileImpl() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Core::PathBuffer<::std::string> const& configure(::Core::Path const&) /*override*/;
@@ -40,13 +40,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::PathBuffer<::std::string> const& $configure(::Core::Path const&);
+
     // NOLINTEND
 };
 

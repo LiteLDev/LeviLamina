@@ -59,7 +59,7 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~BastionFeature() /*override*/;
+    virtual ~BastionFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -77,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -47,7 +47,7 @@ public:
     virtual void setOutputSignal(int value);
 
     // vIndex: 0
-    virtual ~ComparatorBlockActor() /*override*/;
+    virtual ~ComparatorBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

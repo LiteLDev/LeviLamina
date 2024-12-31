@@ -31,7 +31,7 @@ public:
     virtual void containerContentChanged(int) /*override*/;
 
     // vIndex: 1
-    virtual ~LegacyActorArmorChangedListener() /*override*/;
+    virtual ~LegacyActorArmorChangedListener() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -51,7 +51,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~BlockChangeListener() /*override*/;
+        virtual ~BlockChangeListener() /*override*/ = default;
 
         // vIndex: 4
         virtual void
@@ -62,14 +62,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void
-        $onBlockChanged(::BlockSource&, ::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangedEventTarget, ::Actor*);
+
         // NOLINTEND
     };
 
@@ -106,7 +105,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftingContainerManagerController() /*override*/;
+    virtual ~CraftingContainerManagerController() /*override*/ = default;
 
     // vIndex: 27
     virtual bool isOutputSlot(::std::string const&) const /*override*/;
@@ -158,40 +157,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isOutputSlot(::std::string const&) const;
 
-    MCAPI void $handleTakeAmount(::SlotData const&, int, ::SlotData const&);
-
-    MCAPI void $handleTakeAll(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
-
-    MCAPI void $handleTakeHalf(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceOne(::SlotData const&, ::SlotData const&);
-
-    MCAPI int
-    $handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI int
-    $handleAutoPlaceStack(::SlotData const&, ::ItemTakeType, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI void $handleSplitSingle(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handleSplitMultiple(::SelectedSlotInfo const&, ::ItemInstance const&, ::SlotData const&);
-
-    MCAPI void $handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType);
-
-    MCAPI bool $handleDrop(::SlotData const&, ::ItemTransferAmount const);
-
-    MCAPI void $closeContainers();
-
-    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const&) const;
     // NOLINTEND
 };

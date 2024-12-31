@@ -65,7 +65,7 @@ public:
     virtual uint64 getHash() const /*override*/;
 
     // vIndex: 16
-    virtual ~ComplexAliasDescriptor() /*override*/;
+    virtual ~ComplexAliasDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

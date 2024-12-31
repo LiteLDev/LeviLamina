@@ -32,7 +32,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~MaterialHelper();
+        virtual ~MaterialHelper() = default;
 
         // vIndex: 1
         virtual bool isFoundationBlock(::Block const& block) const;
@@ -47,7 +47,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -90,7 +90,7 @@ public:
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
     // vIndex: 0
-    virtual ~CappedSurfaceBuilder() /*override*/;
+    virtual ~CappedSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -108,7 +108,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -36,13 +36,13 @@ public:
     virtual ::EventResult onScoreboardIdentityRemoved(::ScoreboardId const& id) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptScoreboardListener() /*override*/;
+    virtual ~ScriptScoreboardListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

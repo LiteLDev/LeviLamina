@@ -56,7 +56,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~EndGatewayBlock() /*override*/;
+    virtual ~EndGatewayBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -48,13 +48,13 @@ public:
         virtual int PreferredSampleRate() const = 0;
 
         // vIndex: 3
-        virtual ~Source();
+        virtual ~Source() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -83,13 +83,13 @@ public:
     virtual void Mix(uint64, ::webrtc::AudioFrame*) = 0;
 
     // vIndex: 2
-    virtual ~AudioMixer() /*override*/;
+    virtual ~AudioMixer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

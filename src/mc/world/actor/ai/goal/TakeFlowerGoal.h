@@ -45,7 +45,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~TakeFlowerDefinition() /*override*/;
+        virtual ~TakeFlowerDefinition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -61,7 +61,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -116,7 +116,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~TakeFlowerGoal() /*override*/;
+    virtual ~TakeFlowerGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -134,7 +134,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

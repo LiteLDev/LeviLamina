@@ -88,29 +88,19 @@ public:
         SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const>) = 0;
 
     // vIndex: 2
-    virtual ~RtpTransceiverInterface() /*override*/;
+    virtual ~RtpTransceiverInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetDirection(::webrtc::RtpTransceiverDirection);
 
-    MCAPI ::webrtc::RTCError $SetDirectionWithError(::webrtc::RtpTransceiverDirection);
-
-    MCAPI ::std::optional<::webrtc::RtpTransceiverDirection> $fired_direction() const;
-
-    MCAPI ::webrtc::RTCError $StopStandard();
-
-    MCAPI void $StopInternal();
-
-    MCAPI void $Stop();
     // NOLINTEND
 };
 

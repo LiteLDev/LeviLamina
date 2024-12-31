@@ -45,25 +45,19 @@ public:
     virtual void onLoadingBegin(::std::function<void(::std::string)>) /*override*/;
 
     // vIndex: 0
-    virtual ~TelemetryExtension() /*override*/;
+    virtual ~TelemetryExtension() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)>);
 
-    MCAPI bool $shouldProcessMessage(::std::string const&, ::std::string const&);
-
-    MCAPI bool $onMessageReceived(::std::string const&, ::std::string const&, ::std::optional<::Json::Value>);
-
-    MCAPI void $onLoadingBegin(::std::function<void(::std::string)>);
     // NOLINTEND
 };
 

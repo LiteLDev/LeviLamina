@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IStructurePoolBlockPredicate();
+    virtual ~IStructurePoolBlockPredicate() = default;
 
     // vIndex: 2
     virtual bool test(::Block const&, ::Randomize&) const = 0;
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

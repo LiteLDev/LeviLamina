@@ -50,7 +50,7 @@ public:
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
 
     // vIndex: 0
-    virtual ~WallClimberPathNavigation() /*override*/;
+    virtual ~WallClimberPathNavigation() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

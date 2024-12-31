@@ -41,7 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TestCommandOrigin() /*override*/;
+    virtual ~TestCommandOrigin() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::string const& getRequestId() const /*override*/;
@@ -101,46 +101,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getRequestId() const;
 
-    MCAPI ::std::string $getName() const;
-
-    MCAPI ::BlockPos $getBlockPosition() const;
-
-    MCAPI ::Vec3 $getWorldPosition() const;
-
-    MCAPI ::std::optional<::Vec2> $getRotation() const;
-
-    MCAPI ::Level* $getLevel() const;
-
-    MCAPI ::Dimension* $getDimension() const;
-
-    MCAPI ::Actor* $getEntity() const;
-
-    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
-
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
-
-    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
-
-    MCAPI bool $isSelectorExpansionAllowed() const;
-
-    MCAPI ::NetworkIdentifier const& $getSourceId() const;
-
-    MCAPI ::SubClientId $getSourceSubId() const;
-
-    MCAPI ::CommandOriginType $getOriginType() const;
-
-    MCAPI ::CommandOriginData $toCommandOriginData() const;
-
-    MCAPI ::CompoundTag $serialize() const;
-
-    MCAPI bool $isValid() const;
     // NOLINTEND
 };

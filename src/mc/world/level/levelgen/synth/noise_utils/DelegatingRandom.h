@@ -51,13 +51,13 @@ public:
     virtual ::std::unique_ptr<::IRandom> fork() /*override*/;
 
     // vIndex: 0
-    virtual ~DelegatingRandom() /*override*/;
+    virtual ~DelegatingRandom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -70,8 +70,6 @@ public:
     MCAPI int64 $nextLong();
 
     MCAPI bool $nextBoolean();
-
-    MCAPI float $nextFloat();
 
     MCAPI double $nextDouble();
 

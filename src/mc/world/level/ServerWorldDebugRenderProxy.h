@@ -38,26 +38,18 @@ public:
     virtual void debugRendererEndTick() /*override*/;
 
     // vIndex: 0
-    virtual ~ServerWorldDebugRenderProxy() /*override*/;
+    virtual ~ServerWorldDebugRenderProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $renderActorsDebugServerState(::Options const&, ::Dimension const&);
 
-    MCAPI void $renderSimulatedPlayerDebugServerState(::Options const&, ::Player&);
-
-    MCAPI void $debugRenderDimension(::Dimension&);
-
-    MCAPI void $debugRendererStartTick();
-
-    MCAPI void $debugRendererEndTick();
     // NOLINTEND
 };

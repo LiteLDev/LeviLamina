@@ -242,13 +242,13 @@ public:
     virtual void UpdateRtxSsrc(uint) = 0;
 
     // vIndex: 0
-    virtual ~VideoReceiveStreamInterface() /*override*/;
+    virtual ~VideoReceiveStreamInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

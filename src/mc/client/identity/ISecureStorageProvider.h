@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISecureStorageProvider();
+    virtual ~ISecureStorageProvider() = default;
 
     // vIndex: 1
     virtual ::gsl::not_null<::std::shared_ptr<::SecureStorage>> getSecureStorage() = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -41,7 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~glTFExporter();
+    virtual ~glTFExporter() = default;
     // NOLINTEND
 
 public:
@@ -59,6 +59,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

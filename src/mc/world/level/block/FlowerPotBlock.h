@@ -68,7 +68,7 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
 
     // vIndex: 0
-    virtual ~FlowerPotBlock() /*override*/;
+    virtual ~FlowerPotBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -104,7 +104,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

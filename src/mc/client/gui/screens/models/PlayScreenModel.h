@@ -74,25 +74,19 @@ public:
         virtual void onStorageChanged() /*override*/;
 
         // vIndex: 0
-        virtual ~PlayScreenLevelListCacheObserver() /*override*/;
+        virtual ~PlayScreenLevelListCacheObserver() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onLevelAdded(::std::string const&);
 
-        MCAPI void $onLevelUpdated(::std::string const&);
-
-        MCAPI void $onLevelDeleted(::std::string const&);
-
-        MCAPI void $onStorageChanged();
         // NOLINTEND
     };
 
@@ -180,7 +174,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayScreenModel() /*override*/;
+    virtual ~PlayScreenModel() /*override*/ = default;
 
     // vIndex: 1
     virtual int getWorldCount(::WorldType, ::NetworkWorldType) const /*override*/;
@@ -207,24 +201,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getWorldCount(::WorldType, ::NetworkWorldType) const;
 
-    MCAPI ::LocalWorldInfo const* $getLocalWorldAtIndex(int const) const;
-
-    MCAPI ::LocalWorldInfo const* $getLocalWorldById(::std::string const&) const;
-
-    MCAPI bool $refresh(::WorldType);
-
-    MCAPI void $startLocalWorld(::LocalWorldInfo, ::LevelSettings const*);
-
-    MCAPI bool $isDirty() const;
-
-    MCAPI ::IMinecraftEventing& $getMinecraftEventing() const;
     // NOLINTEND
 };

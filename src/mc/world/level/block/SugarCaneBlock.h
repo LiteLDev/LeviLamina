@@ -74,7 +74,7 @@ public:
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
     // vIndex: 0
-    virtual ~SugarCaneBlock() /*override*/;
+    virtual ~SugarCaneBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -92,7 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

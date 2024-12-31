@@ -46,7 +46,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftingContainerManagerModel() /*override*/;
+    virtual ~CraftingContainerManagerModel() /*override*/ = default;
 
     // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
@@ -76,26 +76,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int, ::ItemStack const&, bool);
-
-    MCAPI ::ItemStack const& $getSlot(int) const;
-
-    MCAPI void $setData(int, int);
-
-    MCAPI void $broadcastChanges();
-
-    MCAPI bool $isValid(float pickRange);
-
-    MCAPI bool $tick();
-
-    MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 };

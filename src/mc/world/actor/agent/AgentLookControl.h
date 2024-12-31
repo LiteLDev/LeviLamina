@@ -26,7 +26,7 @@ public:
     virtual void tick(::Mob& mob) /*override*/;
 
     // vIndex: 0
-    virtual ~AgentLookControl() /*override*/;
+    virtual ~AgentLookControl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

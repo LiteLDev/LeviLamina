@@ -51,7 +51,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~FollowFlockGoal() /*override*/;
+    virtual ~FollowFlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

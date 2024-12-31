@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BrewingStandContainerManagerController() /*override*/;
+    virtual ~BrewingStandContainerManagerController() /*override*/ = default;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
@@ -37,12 +37,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
+
     // NOLINTEND
 };

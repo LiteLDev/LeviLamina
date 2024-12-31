@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IObjectFactory();
+    virtual ~IObjectFactory() = default;
 
     // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> makePromise() = 0;
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -77,39 +77,19 @@ public:
     virtual bool isMigrationUIActive() const /*override*/;
 
     // vIndex: 0
-    virtual ~StorageMigrationServiceImpl() /*override*/;
+    virtual ~StorageMigrationServiceImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize(::Core::Path const&, ::Core::Path const&, ::Bedrock::StorageMigration::StorageMigrationType);
 
-    MCAPI bool $checkMigrationPreviouslyCompleted();
-
-    MCAPI bool $checkMigrationInProgress();
-
-    MCAPI ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData> $loadManifest();
-
-    MCAPI void $setMigrationUIActive(bool);
-
-    MCAPI ::Core::PathBuffer<::std::string> const& $getSource() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const& $getDestination() const;
-
-    MCAPI ::Bedrock::StorageMigration::StorageMigrationType $getMigrationType() const;
-
-    MCAPI ::std::shared_ptr<::Bedrock::StorageMigration::MigrationDetector> $getDetector() const;
-
-    MCAPI ::std::shared_ptr<::Bedrock::StorageMigration::StorageMigrator> $getMigrator() const;
-
-    MCAPI bool $isMigrationUIActive() const;
     // NOLINTEND
 };
 

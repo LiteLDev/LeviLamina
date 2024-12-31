@@ -187,7 +187,7 @@ public:
                       ::EntityFactoryT<>>& executionContext) /*override*/;
 
     // vIndex: 0
-    virtual ~ExitVehicleSystemImpl() /*override*/;
+    virtual ~ExitVehicleSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -256,7 +256,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

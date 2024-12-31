@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MaterialReducerOutputContainerController() /*override*/;
+    virtual ~MaterialReducerOutputContainerController() /*override*/ = default;
 
     // vIndex: 3
     virtual bool isItemAllowed(::ItemStackBase const&) const /*override*/;
@@ -36,12 +36,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isItemAllowed(::ItemStackBase const&) const;
+
     // NOLINTEND
 };

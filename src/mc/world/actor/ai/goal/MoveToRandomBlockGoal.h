@@ -53,7 +53,7 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 0
-    virtual ~MoveToRandomBlockGoal() /*override*/;
+    virtual ~MoveToRandomBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

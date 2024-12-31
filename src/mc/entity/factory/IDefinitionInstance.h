@@ -42,7 +42,7 @@ public:
     virtual void _reload(::EntityRegistry&, ::EntityContext&) const = 0;
 
     // vIndex: 5
-    virtual ~IDefinitionInstance();
+    virtual ~IDefinitionInstance() = default;
 
     // vIndex: 6
     virtual ushort getDefinitionTypeId() const = 0;
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

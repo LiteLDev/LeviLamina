@@ -35,13 +35,13 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 0
-    virtual ~TurnCommand() /*override*/;
+    virtual ~TurnCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

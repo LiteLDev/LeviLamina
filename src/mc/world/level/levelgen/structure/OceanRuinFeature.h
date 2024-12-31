@@ -70,7 +70,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~OceanRuinFeature() /*override*/;
+    virtual ~OceanRuinFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -88,7 +88,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

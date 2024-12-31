@@ -50,7 +50,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorExtensionService() /*override*/;
+    virtual ~EditorExtensionService() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> init() /*override*/;
@@ -133,7 +133,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

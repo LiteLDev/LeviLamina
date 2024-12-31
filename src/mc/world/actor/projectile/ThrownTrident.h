@@ -75,7 +75,7 @@ public:
     virtual ::ItemStack _getPickupItem() const /*override*/;
 
     // vIndex: 8
-    virtual ~ThrownTrident() /*override*/;
+    virtual ~ThrownTrident() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -109,7 +109,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

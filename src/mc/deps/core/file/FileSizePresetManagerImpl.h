@@ -39,13 +39,13 @@ public:
     virtual ::std::optional<uint64> checkFileInitialSize(::Core::Path const& filePath) /*override*/;
 
     // vIndex: 0
-    virtual ~FileSizePresetManagerImpl() /*override*/;
+    virtual ~FileSizePresetManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

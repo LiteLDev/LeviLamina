@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SocketLayerOverride();
+    virtual ~SocketLayerOverride() = default;
 
     // vIndex: 1
     virtual int RakNetSendTo(char const*, int, ::RakNet::SystemAddress const&) = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

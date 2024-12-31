@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorBlockSource() /*override*/;
+    virtual ~EditorBlockSource() /*override*/ = default;
 
     // vIndex: 26
     virtual void addListener(::BlockSourceListener&) /*override*/;
@@ -61,25 +61,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addListener(::BlockSourceListener&);
 
-    MCAPI void $removeListener(::BlockSourceListener&);
-
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>> $fetchEntities(::Actor const*, ::AABB const&, bool, bool);
-
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
-    $fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>);
-
-    MCAPI bool $hasChunksAt(::Bounds const&, bool) const;
-
-    MCAPI bool $hasChunksAt(::BlockPos const&, int, bool) const;
-
-    MCAPI bool $hasChunksAt(::AABB const&, bool) const;
     // NOLINTEND
 };

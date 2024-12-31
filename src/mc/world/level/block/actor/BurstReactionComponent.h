@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BurstReactionComponent() /*override*/;
+    virtual ~BurstReactionComponent() /*override*/ = default;
 
     // vIndex: 3
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

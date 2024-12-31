@@ -34,7 +34,7 @@ public:
     virtual void _initializeComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~DamageItemComponent() /*override*/;
+    virtual ~DamageItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

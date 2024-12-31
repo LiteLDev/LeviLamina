@@ -41,22 +41,19 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~Gameplay() /*override*/;
+    virtual ~Gameplay() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void
-    $addToMatcher(::OreUI::RouteMatcher&, ::SceneFactory&, ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&) const;
     // NOLINTEND
 };
 

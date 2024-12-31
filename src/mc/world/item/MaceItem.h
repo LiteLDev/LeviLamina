@@ -47,7 +47,7 @@ public:
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
     // vIndex: 0
-    virtual ~MaceItem() /*override*/;
+    virtual ~MaceItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

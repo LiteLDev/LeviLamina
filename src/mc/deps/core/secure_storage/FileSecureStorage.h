@@ -40,13 +40,13 @@ public:
         virtual void setData(::std::string const& data, ::Core::Path path);
 
         // vIndex: 2
-        virtual ~StorageSystem();
+        virtual ~StorageSystem() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -87,13 +87,13 @@ public:
         virtual void setData(::std::string const& data, ::Core::Path path) /*override*/;
 
         // vIndex: 2
-        virtual ~FileStorageSystem() /*override*/;
+        virtual ~FileStorageSystem() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

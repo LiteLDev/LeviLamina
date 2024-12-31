@@ -31,20 +31,18 @@ public:
         const /*override*/;
 
     // vIndex: 0
-    virtual ~TestStructureMockLevelStorage() /*override*/;
+    virtual ~TestStructureMockLevelStorage() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $forEachKeyWithPrefix(::std::string_view, ::DBHelpers::Category, ::std::function<void(::std::string_view, ::std::string_view)> const&)
-        const;
+
     // NOLINTEND
 };

@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IStructurePoolBlockTagPredicate();
+    virtual ~IStructurePoolBlockTagPredicate() = default;
 
     // vIndex: 1
     virtual bool test(::Block const&, ::CompoundTag const&) const = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

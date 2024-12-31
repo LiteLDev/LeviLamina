@@ -34,18 +34,18 @@ public:
     // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
+                                               root,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~ActorCommandResponse() /*override*/;
+    virtual ~ActorCommandResponse() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 
     MCAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
+                                               root,
         ::Factory<::ActorEventResponse> const& factory
     ) const;
     // NOLINTEND

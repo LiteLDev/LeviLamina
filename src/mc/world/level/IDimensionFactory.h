@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDimensionFactory();
+    virtual ~IDimensionFactory() = default;
 
     // vIndex: 1
     virtual ::OwnerPtr<::Dimension> create(::std::string const&) const = 0;
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

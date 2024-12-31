@@ -27,7 +27,7 @@ public:
     virtual float causeFallDamageToActor(float fallDistance, float, ::ActorDamageSource) /*override*/;
 
     // vIndex: 8
-    virtual ~Breeze() /*override*/;
+    virtual ~Breeze() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -65,7 +65,7 @@ public:
     virtual ::ActorType _getActorType() const;
 
     // vIndex: 0
-    virtual ~BoatItem() /*override*/;
+    virtual ~BoatItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -83,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

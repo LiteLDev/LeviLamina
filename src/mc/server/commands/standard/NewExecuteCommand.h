@@ -86,7 +86,7 @@ public:
         virtual ::std::string getCommandName() const /*override*/;
 
         // vIndex: 0
-        virtual ~ExecuteChainedSubcommand() /*override*/;
+        virtual ~ExecuteChainedSubcommand() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -167,7 +167,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

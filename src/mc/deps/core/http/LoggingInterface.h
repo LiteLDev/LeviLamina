@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LoggingInterface() /*override*/;
+    virtual ~LoggingInterface() /*override*/ = default;
 
     // vIndex: 1
     virtual uint64 threadId() = 0;
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

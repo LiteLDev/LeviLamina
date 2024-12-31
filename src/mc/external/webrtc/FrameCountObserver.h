@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FrameCountObserver();
+    virtual ~FrameCountObserver() = default;
 
     // vIndex: 1
     virtual void FrameCountUpdated(::webrtc::FrameCounts const&, uint) = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

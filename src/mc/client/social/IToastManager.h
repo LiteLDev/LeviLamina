@@ -27,13 +27,13 @@ public:
     virtual bool isEditorModeEnabled() const = 0;
 
     // vIndex: 0
-    virtual ~IToastManager() /*override*/;
+    virtual ~IToastManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

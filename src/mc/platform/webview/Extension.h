@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Extension();
+    virtual ~Extension() = default;
 
     // vIndex: 1
     virtual void setupMessageSender(::std::function<void(::std::string, ::std::string, ::std::string)>) = 0;
@@ -44,17 +44,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isShutdownInProgress();
 
-    MCAPI void $onShutdown();
-
-    MCAPI void $onLoadingBegin(::std::function<void(::std::string)>);
     // NOLINTEND
 };
 

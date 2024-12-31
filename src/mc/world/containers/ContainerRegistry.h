@@ -44,7 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ~ContainerRegistry() /*override*/;
+    virtual ~ContainerRegistry() /*override*/ = default;
 
     // vIndex: 0
     virtual ::std::unique_ptr<::ListTag>
@@ -114,7 +114,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

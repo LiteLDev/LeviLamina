@@ -105,7 +105,7 @@ public:
     PostDelayedTaskImpl(::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::TaskQueueBase::PostDelayedTaskTraits const&, ::webrtc::Location const&) = 0;
 
     // vIndex: 3
-    virtual ~TaskQueueBase();
+    virtual ~TaskQueueBase() = default;
     // NOLINTEND
 
 public:
@@ -128,7 +128,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

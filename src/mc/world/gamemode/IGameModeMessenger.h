@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGameModeMessenger();
+    virtual ~IGameModeMessenger() = default;
 
     // vIndex: 1
     virtual ::gsl::final_action<::std::function<void()>>
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -41,7 +41,7 @@ public:
     virtual ::BlockPos getRandomNearbyBlockPos(::Vec3 const& centerPos) const;
 
     // vIndex: 0
-    virtual ~EndermanTakeBlockGoal() /*override*/;
+    virtual ~EndermanTakeBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

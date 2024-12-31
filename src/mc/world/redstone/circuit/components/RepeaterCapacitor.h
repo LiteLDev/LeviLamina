@@ -80,7 +80,7 @@ public:
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
     // vIndex: 0
-    virtual ~RepeaterCapacitor() /*override*/;
+    virtual ~RepeaterCapacitor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -100,7 +100,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

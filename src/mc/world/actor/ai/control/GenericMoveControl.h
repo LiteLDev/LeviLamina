@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GenericMoveControl() /*override*/;
+    virtual ~GenericMoveControl() /*override*/ = default;
 
     // vIndex: 1
     virtual void initializeInternal(::Mob& mob, ::MoveControlDescription* description) /*override*/;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

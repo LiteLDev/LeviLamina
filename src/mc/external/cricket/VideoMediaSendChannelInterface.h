@@ -57,13 +57,13 @@ public:
     virtual ::std::optional<int> SendCodecRtxTime() const = 0;
 
     // vIndex: 0
-    virtual ~VideoMediaSendChannelInterface() /*override*/;
+    virtual ~VideoMediaSendChannelInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

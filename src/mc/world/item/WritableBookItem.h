@@ -32,7 +32,7 @@ public:
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
     // vIndex: 0
-    virtual ~WritableBookItem() /*override*/;
+    virtual ~WritableBookItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

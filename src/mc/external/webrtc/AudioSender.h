@@ -23,13 +23,13 @@ public:
     virtual void SendAudioData(::std::unique_ptr<::webrtc::AudioFrame>) = 0;
 
     // vIndex: 1
-    virtual ~AudioSender();
+    virtual ~AudioSender() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

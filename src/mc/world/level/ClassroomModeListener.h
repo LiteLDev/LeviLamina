@@ -57,7 +57,7 @@ public:
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
 
     // vIndex: 0
-    virtual ~ClassroomModeListener() /*override*/;
+    virtual ~ClassroomModeListener() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

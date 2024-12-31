@@ -47,13 +47,13 @@ public:
     virtual bool _canReach(::BlockPos const& pos) /*override*/;
 
     // vIndex: 0
-    virtual ~InspectBookshelfGoal() /*override*/;
+    virtual ~InspectBookshelfGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

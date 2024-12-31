@@ -56,7 +56,7 @@ public:
     virtual bool canLaunchTasks() const /*override*/;
 
     // vIndex: 0
-    virtual ~NetworkChunkSource() /*override*/;
+    virtual ~NetworkChunkSource() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

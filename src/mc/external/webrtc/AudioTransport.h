@@ -28,20 +28,19 @@ public:
     virtual void PullRenderData(int, int, uint64, uint64, void*, int64*, int64*) = 0;
 
     // vIndex: 4
-    virtual ~AudioTransport();
+    virtual ~AudioTransport() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int
-    $RecordedDataIsAvailable(void const*, uint64, uint64, uint64, uint, uint, int, uint, bool, uint&, ::std::optional<int64>);
+
     // NOLINTEND
 };
 

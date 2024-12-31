@@ -21,13 +21,13 @@ public:
     virtual void OnLogMessage(::std::string const& message) /*override*/;
 
     // vIndex: 0
-    virtual ~SimpleLogSink() /*override*/;
+    virtual ~SimpleLogSink() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

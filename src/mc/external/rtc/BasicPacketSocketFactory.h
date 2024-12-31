@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BasicPacketSocketFactory() /*override*/;
+    virtual ~BasicPacketSocketFactory() /*override*/ = default;
 
     // vIndex: 1
     virtual ::rtc::AsyncPacketSocket* CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort) /*override*/;
@@ -71,20 +71,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::rtc::AsyncPacketSocket* $CreateUdpSocket(::rtc::SocketAddress const&, ushort, ushort);
 
-    MCAPI ::rtc::AsyncListenSocket* $CreateServerTcpSocket(::rtc::SocketAddress const&, ushort, ushort, int);
-
-    MCAPI ::rtc::AsyncPacketSocket*
-    $CreateClientTcpSocket(::rtc::SocketAddress const&, ::rtc::SocketAddress const&, ::rtc::ProxyInfo const&, ::std::string const&, ::rtc::PacketSocketTcpOptions const&);
-
-    MCAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAsyncDnsResolver();
     // NOLINTEND
 
 public:

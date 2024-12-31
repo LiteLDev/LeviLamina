@@ -35,13 +35,13 @@ public:
     virtual ::std::optional<::gametest::GameTestError> getError() /*override*/;
 
     // vIndex: 0
-    virtual ~SyncGameTestFunctionRunResult() /*override*/;
+    virtual ~SyncGameTestFunctionRunResult() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -25,18 +25,18 @@ public:
     virtual void exportImagesToAlbum(::PDFOptions, ::std::function<void(::std::optional<::PDFError>)>) /*override*/;
 
     // vIndex: 1
-    virtual ~PDFWriterWindows() /*override*/;
+    virtual ~PDFWriterWindows() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $exportImagesToAlbum(::PDFOptions, ::std::function<void(::std::optional<::PDFError>)>);
+
     // NOLINTEND
 };

@@ -34,13 +34,13 @@ public:
     virtual bool remote() const = 0;
 
     // vIndex: 2
-    virtual ~MediaSourceInterface() /*override*/;
+    virtual ~MediaSourceInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

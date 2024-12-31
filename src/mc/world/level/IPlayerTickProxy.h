@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPlayerTickProxy();
+    virtual ~IPlayerTickProxy() = default;
 
     // vIndex: 1
     virtual void preReplicationTick(::ServerPlayer&, ::Tick const&, ::EntityContext&) = 0;
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

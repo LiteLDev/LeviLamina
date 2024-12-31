@@ -87,7 +87,7 @@ public:
     onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants) /*override*/;
 
     // vIndex: 0
-    virtual ~RealmsStoriesGameplayEventListener() /*override*/;
+    virtual ~RealmsStoriesGameplayEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -127,7 +127,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

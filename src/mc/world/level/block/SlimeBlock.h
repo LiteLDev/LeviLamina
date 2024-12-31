@@ -42,7 +42,7 @@ public:
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 0
-    virtual ~SlimeBlock() /*override*/;
+    virtual ~SlimeBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

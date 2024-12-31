@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SSLCertificateVerifier();
+    virtual ~SSLCertificateVerifier() = default;
 
     // vIndex: 1
     virtual bool Verify(::rtc::SSLCertificate const&) = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

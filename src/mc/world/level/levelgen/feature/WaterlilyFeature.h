@@ -26,13 +26,13 @@ public:
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const /*override*/;
 
     // vIndex: 0
-    virtual ~WaterlilyFeature() /*override*/;
+    virtual ~WaterlilyFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

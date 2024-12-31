@@ -157,13 +157,13 @@ public:
     virtual void postGameEvent(::Actor*, ::GameEvent const&, ::BlockPos const&, ::Block const*) = 0;
 
     // vIndex: 0
-    virtual ~IBlockSource() /*override*/;
+    virtual ~IBlockSource() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

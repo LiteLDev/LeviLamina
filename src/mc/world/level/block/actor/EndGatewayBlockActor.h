@@ -63,7 +63,7 @@ public:
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~EndGatewayBlockActor() /*override*/;
+    virtual ~EndGatewayBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -109,7 +109,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

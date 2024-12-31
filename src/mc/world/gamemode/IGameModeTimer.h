@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGameModeTimer();
+    virtual ~IGameModeTimer() = default;
 
     // vIndex: 1
     virtual double getDestroyProgressSeconds() const = 0;
@@ -28,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -74,7 +74,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ValidatorRegistry() /*override*/;
+    virtual ~ValidatorRegistry() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -96,7 +96,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StorageMigrator_DiskDisk() /*override*/;
+    virtual ~StorageMigrator_DiskDisk() /*override*/ = default;
 
     // vIndex: 1
     virtual bool doQuickCompletionCheck() /*override*/;
@@ -47,17 +47,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $doQuickCompletionCheck();
 
-    MCAPI void
-        $_runMigration(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>, ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>, ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>, ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>)
-            const;
     // NOLINTEND
 };
 

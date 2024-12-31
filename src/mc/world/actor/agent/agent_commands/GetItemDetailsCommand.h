@@ -33,13 +33,13 @@ public:
     virtual void fireCommandDoneEvent() /*override*/;
 
     // vIndex: 0
-    virtual ~GetItemDetailsCommand() /*override*/;
+    virtual ~GetItemDetailsCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

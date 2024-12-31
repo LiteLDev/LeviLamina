@@ -31,18 +31,18 @@ public:
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const&) /*override*/;
 
     // vIndex: 0
-    virtual ~ChunkSingleViewSource() /*override*/;
+    virtual ~ChunkSingleViewSource() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const&);
+
     // NOLINTEND
 };

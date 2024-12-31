@@ -36,7 +36,7 @@ public:
     sendActorUseItemEvent(::EntityContext& actor, ::ItemStack& item, ::ItemUseMethod useMethod) /*override*/;
 
     // vIndex: 0
-    virtual ~ActorEventCoordinatorDependencies() /*override*/;
+    virtual ~ActorEventCoordinatorDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

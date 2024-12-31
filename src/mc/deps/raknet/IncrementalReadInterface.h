@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IncrementalReadInterface();
+    virtual ~IncrementalReadInterface() = default;
 
     // vIndex: 1
     virtual uint GetFilePart(char const*, uint, uint, void*, ::FileListNodeContext);
@@ -29,13 +29,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint $GetFilePart(char const*, uint, uint, void*, ::FileListNodeContext);
+
     // NOLINTEND
 };
 

@@ -29,7 +29,7 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
 
     // vIndex: 0
-    virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING() /*override*/;
+    virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

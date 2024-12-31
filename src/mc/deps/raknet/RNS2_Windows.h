@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RNS2_Windows() /*override*/;
+    virtual ~RNS2_Windows() /*override*/ = default;
 
     // vIndex: 3
     virtual ::RakNet::RNS2BindResult
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

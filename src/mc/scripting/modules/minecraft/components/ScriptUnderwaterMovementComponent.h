@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptUnderwaterMovementComponent() /*override*/;
+    virtual ~ScriptUnderwaterMovementComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

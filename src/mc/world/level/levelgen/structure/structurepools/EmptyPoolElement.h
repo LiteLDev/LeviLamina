@@ -48,13 +48,13 @@ public:
     virtual ::StructurePoolElementType type() const /*override*/;
 
     // vIndex: 14
-    virtual ~EmptyPoolElement() /*override*/;
+    virtual ~EmptyPoolElement() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

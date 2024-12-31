@@ -58,7 +58,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MediaContentDescription();
+    virtual ~MediaContentDescription() = default;
 
     // vIndex: 1
     virtual ::cricket::MediaType type() const = 0;
@@ -128,31 +128,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::AudioContentDescription* $as_audio();
 
-    MCAPI ::cricket::AudioContentDescription const* $as_audio() const;
-
-    MCAPI ::cricket::VideoContentDescription* $as_video();
-
-    MCAPI ::cricket::VideoContentDescription const* $as_video() const;
-
-    MCAPI ::cricket::SctpDataContentDescription* $as_sctp();
-
-    MCAPI ::cricket::SctpDataContentDescription const* $as_sctp() const;
-
-    MCAPI ::cricket::UnsupportedContentDescription* $as_unsupported();
-
-    MCAPI ::cricket::UnsupportedContentDescription const* $as_unsupported() const;
-
-    MCAPI void $set_protocol(::std::string_view);
-
-    MCAPI bool $has_codecs() const;
     // NOLINTEND
 
 public:

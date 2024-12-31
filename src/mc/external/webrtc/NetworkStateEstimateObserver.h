@@ -23,13 +23,13 @@ public:
     virtual void OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate) = 0;
 
     // vIndex: 1
-    virtual ~NetworkStateEstimateObserver();
+    virtual ~NetworkStateEstimateObserver() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

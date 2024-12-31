@@ -48,7 +48,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ~FrameDecryptorInterface() /*override*/;
+    virtual ~FrameDecryptorInterface() /*override*/ = default;
 
     // vIndex: 3
     virtual ::webrtc::FrameDecryptorInterface::Result
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

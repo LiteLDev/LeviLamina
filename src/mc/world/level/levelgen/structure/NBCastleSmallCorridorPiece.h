@@ -38,7 +38,7 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 0
-    virtual ~NBCastleSmallCorridorPiece() /*override*/;
+    virtual ~NBCastleSmallCorridorPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

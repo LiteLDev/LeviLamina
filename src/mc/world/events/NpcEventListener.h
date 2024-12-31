@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NpcEventListener();
+    virtual ~NpcEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData>);
@@ -34,14 +34,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData>);
 
-    MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID, bool);
     // NOLINTEND
 };

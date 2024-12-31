@@ -26,7 +26,7 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 0
-    virtual ~AmbientSoundServerSystem() /*override*/;
+    virtual ~AmbientSoundServerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

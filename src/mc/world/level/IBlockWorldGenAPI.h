@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IBlockWorldGenAPI();
+    virtual ~IBlockWorldGenAPI() = default;
 
     // vIndex: 1
     virtual bool canGetChunk() const;
@@ -118,7 +118,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

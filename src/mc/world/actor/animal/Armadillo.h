@@ -28,7 +28,7 @@ public:
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 8
-    virtual ~Armadillo() /*override*/;
+    virtual ~Armadillo() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

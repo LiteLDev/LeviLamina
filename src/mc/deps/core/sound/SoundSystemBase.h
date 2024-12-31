@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SoundSystemBase();
+    virtual ~SoundSystemBase() = default;
 
     // vIndex: 1
     virtual bool preinit();
@@ -242,151 +242,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $preinit();
 
-    MCAPI void $init();
-
-    MCAPI void $destroy();
-
-    MCAPI void $setOutputDevice(::SoundSystemGUID&);
-
-    MCAPI void $setAsyncLoadFunction(::std::function<void(::SoundItem const&, ::std::function<void()>)>);
-
-    MCAPI void $enable(bool);
-
-    MCAPI void $mute(bool);
-
-    MCAPI bool $addListener(int const);
-
-    MCAPI void $removeListener(int const);
-
-    MCAPI void $setListenerDirection(int const, ::glm::vec3 const&, ::glm::vec3 const&);
-
-    MCAPI void $setListenerPos(int const, float, float, float);
-
-    MCAPI void $setListenerVelocity(int const, float, float, float);
-
-    MCAPI void $setMainVolume(float);
-
-    MCAPI void $setMusicVolume(float);
-
-    MCAPI void $setSoundVolume(float);
-
-    MCAPI void $setSoundCategoryVolume(::std::string const&, float);
-
-    MCAPI void $setTTSVolume(float);
-
-    MCAPI bool $load(::Core::Path const&, bool);
-
-    MCAPI bool $loadRawFromMemory(::Core::Path const&, char const*, uint64, int, int, ::SoundFormat);
-
-    MCAPI bool $loadFromMemory(::Core::Path const&, char const*, uint64);
-
-    MCAPI bool $loadExternalEvent(::std::string const&);
-
-    MCAPI void $unload(::Core::Path const&);
-
-    MCAPI void $unloadAll();
-
-    MCAPI bool $isSoundLoaded(::Core::Path const&);
-
-    MCAPI bool $usesSoundBanks();
-
-    MCAPI void $loadSoundBank(::std::string const&, bool);
-
-    MCAPI void $unloadSoundBank(::std::string const&);
-
-    MCAPI void $play(::std::string const&);
-
-    MCAPI void $pause(::std::string const&);
-
-    MCAPI void $stop(::std::string const&);
-
-    MCAPI void $stop(uint64);
-
-    MCAPI uint64 $playEvent(::SoundEvent const&, ::std::string const&, float, float);
-
-    MCAPI uint64 $playEventAt(::SoundEvent const&, ::std::string const&, float, float, float, float, float);
-
-    MCAPI uint64 $playAt(
-        ::Core::Path const&,
-        ::SoundEvent const*,
-        ::std::string const&,
-        uint64,
-        float,
-        float,
-        float,
-        float,
-        float,
-        bool,
-        float,
-        float,
-        bool,
-        bool
-    );
-
-    MCAPI uint64
-    $playEventAttached(::SoundEvent const&, ::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
-
-    MCAPI bool $isPlayingSound(uint64) const;
-
-    MCAPI void $fadeOut(uint64, float) const;
-
-    MCAPI void $playMusic(::std::string const&, ::SoundItem const&);
-
-    MCAPI bool $isPlayingMusicEvent(::std::string const&) const;
-
-    MCAPI bool $isPlayingMusic(::Core::Path const&) const;
-
-    MCAPI bool $isLoadingMusic() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> const& $getCurrentlyPlayingMusicName() const;
-
-    MCAPI ::std::string $getCurrentlyPlayingEventName() const;
-
-    MCAPI void $stopMusic();
-
-    MCAPI void $stopRecords();
-
-    MCAPI void $stopAllSounds();
-
-    MCAPI void $fadeMusicOut(float);
-
-    MCAPI bool $isMusicChannelPlaying() const;
-
-    MCAPI void $pauseMusic(bool);
-
-    MCAPI void $update(float);
-
-    MCAPI uint64 $registerLoop(
-        ::SoundItem const&,
-        ::std::weak_ptr<::SoundEvent> const,
-        ::std::string const&,
-        ::std::function<void(::LoopingSoundState&)>,
-        float,
-        float
-    );
-
-    MCAPI void $unregisterLoop(uint64, bool);
-
-    MCAPI void $displayDebugStats(::std::string&) const;
-
-    MCAPI void $startSnapshot(::std::string const&);
-
-    MCAPI void $stopSnapshot(::std::string const&);
-
-    MCAPI void $stopAllSnapshots();
-
-    MCAPI uint64 $getNewSoundHandle();
-
-    MCAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64) const;
-
-    MCAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64) const;
     // NOLINTEND
 };

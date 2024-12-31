@@ -31,13 +31,13 @@ public:
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
     // vIndex: 0
-    virtual ~Passthrough() /*override*/;
+    virtual ~Passthrough() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

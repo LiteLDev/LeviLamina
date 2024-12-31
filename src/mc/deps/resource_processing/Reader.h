@@ -31,13 +31,13 @@ public:
     virtual void forEachIn(::brstd::function_ref<void(::std::string_view, ::gsl::span<uchar const>)>) const = 0;
 
     // vIndex: 0
-    virtual ~Reader() /*override*/;
+    virtual ~Reader() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

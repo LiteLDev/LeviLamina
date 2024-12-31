@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EduWebService() /*override*/;
+    virtual ~EduWebService() /*override*/ = default;
 
     // vIndex: 1
     virtual void setEula() /*override*/;
@@ -65,26 +65,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setEula();
 
-    MCAPI void $setPurchaseReceipt(::std::string const&, ::std::function<void(bool)> const&, ::std::string const&);
-
-    MCAPI void $setSkin(::std::string const&);
-
-    MCAPI void $signinForDemo(::std::function<void(::std::variant<
-                                                   ::WebServices::EduSignin::SigninResponse,
-                                                   ::WebServices::EduSignin::SigninError>)>);
-
-    MCAPI void
-    $signin(::std::function<void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>, ::std::string const&);
-
-    MCAPI void $sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)>);
     // NOLINTEND
 };
 

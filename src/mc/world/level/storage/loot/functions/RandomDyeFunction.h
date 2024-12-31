@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RandomDyeFunction() /*override*/;
+    virtual ~RandomDyeFunction() /*override*/ = default;
 
     // vIndex: 4
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext&) /*override*/;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

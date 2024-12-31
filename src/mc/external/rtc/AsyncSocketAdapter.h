@@ -91,7 +91,7 @@ public:
     virtual void OnCloseEvent(::rtc::Socket*, int);
 
     // vIndex: 0
-    virtual ~AsyncSocketAdapter() /*override*/;
+    virtual ~AsyncSocketAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -109,51 +109,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::rtc::SocketAddress $GetLocalAddress() const;
 
-    MCAPI ::rtc::SocketAddress $GetRemoteAddress() const;
-
-    MCAPI int $Bind(::rtc::SocketAddress const&);
-
-    MCAPI int $Connect(::rtc::SocketAddress const&);
-
-    MCAPI int $Send(void const*, uint64);
-
-    MCAPI int $SendTo(void const*, uint64, ::rtc::SocketAddress const&);
-
-    MCAPI int $Recv(void*, uint64, int64*);
-
-    MCAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
-
-    MCAPI int $Listen(int);
-
-    MCAPI ::rtc::Socket* $Accept(::rtc::SocketAddress*);
-
-    MCAPI int $Close();
-
-    MCAPI int $GetError() const;
-
-    MCAPI void $SetError(int);
-
-    MCAPI ::rtc::Socket::ConnState $GetState() const;
-
-    MCAPI int $GetOption(::rtc::Socket::Option, int*);
-
-    MCAPI int $SetOption(::rtc::Socket::Option, int);
-
-    MCAPI void $OnConnectEvent(::rtc::Socket*);
-
-    MCAPI void $OnReadEvent(::rtc::Socket*);
-
-    MCAPI void $OnWriteEvent(::rtc::Socket*);
-
-    MCAPI void $OnCloseEvent(::rtc::Socket*, int);
     // NOLINTEND
 
 public:

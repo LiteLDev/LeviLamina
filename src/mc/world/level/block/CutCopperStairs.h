@@ -46,7 +46,7 @@ public:
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
-    virtual ~CutCopperStairs() /*override*/;
+    virtual ~CutCopperStairs() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -96,7 +96,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGameTestRuleHelper();
+    virtual ~IGameTestRuleHelper() = default;
 
     // vIndex: 1
     virtual void addRuleToClear(int) = 0;
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -66,38 +66,19 @@ public:
     virtual ::std::shared_ptr<::Bedrock::SessionInfo> deserializeSession(::std::string_view) const /*override*/;
 
     // vIndex: 0
-    virtual ~SessionInfoManagerImpl() /*override*/;
+    virtual ~SessionInfoManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
 
-    MCAPI void $beginNewSession();
-
-    MCAPI ::std::shared_ptr<::Bedrock::SessionInfo const> $getCurrentSession() const;
-
-    MCAPI ::Bedrock::AccessUpdateEditor<
-        ::std::shared_ptr<::Bedrock::SessionInfo>,
-        ::Bedrock::SessionInfoManagerImpl,
-        ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
-        ::Bedrock::Threading::Mutex>
-    $editCurrentSession();
-
-    MCAPI ::Bedrock::PubSub::Connector<
-        void(::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&, ::std::shared_ptr<::Bedrock::SessionInfo const> const&)>&
-    $onCurrentSessionChanged();
-
-    MCAPI ::std::string $serializeSession(::Bedrock::SessionInfo const&) const;
-
-    MCAPI ::std::shared_ptr<::Bedrock::SessionInfo> $deserializeSession(::std::string_view) const;
     // NOLINTEND
 };
 

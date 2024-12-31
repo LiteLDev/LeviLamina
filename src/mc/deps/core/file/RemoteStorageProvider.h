@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RemoteStorageProvider();
+    virtual ~RemoteStorageProvider() = default;
 
     // vIndex: 1
     virtual void shutdown();
@@ -98,13 +98,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $shutdown();
+
     // NOLINTEND
 };
 

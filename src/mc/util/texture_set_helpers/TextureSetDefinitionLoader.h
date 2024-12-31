@@ -42,7 +42,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~ResourceHelper();
+        virtual ~ResourceHelper() = default;
 
         // vIndex: 1
         virtual ::ResourceLocation getBackCompatResourceLocation(::ResourceLocation const&) const;
@@ -70,27 +70,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::ResourceLocation $getBackCompatResourceLocation(::ResourceLocation const&) const;
 
-        MCAPI ::std::optional<uint> $getPackStackIndexOfNoExtensionOrImage(::ResourceLocation const&) const;
-
-        MCAPI ::std::optional<uint> $getPackStackIndexOfTextureSet(::ResourceLocation const&) const;
-
-        MCAPI bool
-        $loadResourceOfExtensions(::ResourceLocationPair const&, ::std::string&, ::gsl::span<::std::string const>)
-            const;
-
-        MCAPI bool $loadResource(::ResourceLocation const&, ::std::string&) const;
-
-        MCAPI bool $loadImageFromMemory(::mce::Image&, ::std::string const&) const;
-
-        MCAPI bool $loadCompressedImageFromMemory(::cg::CompressedImageBuffer&, ::std::string const&) const;
         // NOLINTEND
     };
 

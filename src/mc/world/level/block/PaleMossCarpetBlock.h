@@ -70,7 +70,7 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
     // vIndex: 0
-    virtual ~PaleMossCarpetBlock() /*override*/;
+    virtual ~PaleMossCarpetBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -96,7 +96,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

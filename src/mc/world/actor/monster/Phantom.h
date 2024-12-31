@@ -32,7 +32,7 @@ public:
     virtual bool shouldRender() const /*override*/;
 
     // vIndex: 8
-    virtual ~Phantom() /*override*/;
+    virtual ~Phantom() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

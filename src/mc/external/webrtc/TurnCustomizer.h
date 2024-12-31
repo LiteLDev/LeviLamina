@@ -27,13 +27,13 @@ public:
     virtual bool AllowChannelData(::cricket::PortInterface*, void const*, uint64, bool) = 0;
 
     // vIndex: 2
-    virtual ~TurnCustomizer();
+    virtual ~TurnCustomizer() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -32,13 +32,13 @@ public:
     virtual void advanceFrame(::EntityContext& entity) const /*override*/;
 
     // vIndex: 0
-    virtual ~AddMovementEffectReplay() /*override*/;
+    virtual ~AddMovementEffectReplay() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

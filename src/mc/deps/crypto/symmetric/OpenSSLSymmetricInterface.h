@@ -49,13 +49,13 @@ public:
     encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
 
     // vIndex: 0
-    virtual ~OpenSSLSymmetricInterface() /*override*/;
+    virtual ~OpenSSLSymmetricInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

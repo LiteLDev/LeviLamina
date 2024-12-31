@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerContainerSetter() /*override*/;
+    virtual ~PlayerContainerSetter() /*override*/ = default;
 
     // vIndex: 1
     virtual void setArmor(int slot, ::ItemStack const& item) /*override*/;
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

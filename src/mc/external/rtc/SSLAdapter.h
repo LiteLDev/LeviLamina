@@ -61,7 +61,7 @@ public:
     virtual ::rtc::Socket* Accept(::rtc::SocketAddress*) /*override*/;
 
     // vIndex: 0
-    virtual ~SSLAdapter() /*override*/;
+    virtual ~SSLAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,15 +73,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $Listen(int);
 
-    MCAPI ::rtc::Socket* $Accept(::rtc::SocketAddress*);
     // NOLINTEND
 };
 

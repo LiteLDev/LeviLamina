@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncDnsResolverInterface();
+    virtual ~AsyncDnsResolverInterface() = default;
 
     // vIndex: 2
     virtual void Start(::rtc::SocketAddress const&, ::absl::AnyInvocable<void()>) = 0;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

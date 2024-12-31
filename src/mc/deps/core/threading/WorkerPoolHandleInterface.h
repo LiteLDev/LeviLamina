@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorkerPoolHandleInterface();
+    virtual ~WorkerPoolHandleInterface() = default;
 
     // vIndex: 1
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorkerPool> get() const = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

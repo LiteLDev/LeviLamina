@@ -60,7 +60,7 @@ public:
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
     // vIndex: 0
-    virtual ~NetherSurfaceBuilder() /*override*/;
+    virtual ~NetherSurfaceBuilder() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

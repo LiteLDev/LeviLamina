@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetherNetTransportStub() /*override*/;
+    virtual ~NetherNetTransportStub() /*override*/ = default;
 
     // vIndex: 1
     virtual bool IsSignedIntoSignalingService() const /*override*/;
@@ -98,50 +98,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $IsSignedIntoSignalingService() const;
 
-    MCAPI bool $SendPacket(::NetherNet::NetworkID, uint64, char const*, uint, ::NetherNet::ESendType);
-
-    MCAPI bool $IsPacketAvailable(::NetherNet::NetworkID, uint64, uint*);
-
-    MCAPI void $ClearPacketData(::NetherNet::NetworkID, uint64);
-
-    MCAPI bool $ReadPacket(::NetherNet::NetworkID, uint64, void*, uint, uint*);
-
-    MCAPI bool $OpenSessionWithUser(::NetherNet::NetworkID);
-
-    MCAPI bool $CloseSessionWithUser(::NetherNet::NetworkID, uint64);
-
-    MCAPI bool $GetSessionState(::NetherNet::NetworkID, uint64, ::NetherNet::SessionState*);
-
-    MCAPI void $SetWebRTCSignalingInterface(::std::shared_ptr<::NetherNet::IWebRTCSignalingInterface> const&);
-
-    MCAPI void
-    $SignIntoSignalingService(::std::function<void(::std::error_code)> const&, ::std::function<void(::NetherNet::SignalingHostConnectionStatus, uint)> const&, ::NetherNet::IWebRTCSignalingInterface::SignalingConfiguration const&);
-
-    MCAPI void $SignOutFromSignalingService();
-
-    MCAPI void $RegisterRelayServerCredentialsReadyCallback(::std::function<
-                                                            void(::NetherNet::ERelayServerConfigurationResult)> const&);
-
-    MCAPI bool $IsBroadcastDiscoveryEnabled();
-
-    MCAPI void $EnableBroadcastDiscovery();
-
-    MCAPI void $DisableBroadcastDiscovery();
-
-    MCAPI void $EnableSignalingOverLAN();
-
-    MCAPI void $DisableSignalingOverLAN();
-
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler*);
-
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler*);
     // NOLINTEND
 };

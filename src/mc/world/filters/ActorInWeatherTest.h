@@ -51,13 +51,13 @@ public:
     virtual ::Json::Value _serializeValue() const /*override*/;
 
     // vIndex: 0
-    virtual ~ActorInWeatherTest() /*override*/;
+    virtual ~ActorInWeatherTest() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

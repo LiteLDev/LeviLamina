@@ -108,8 +108,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $allChanged();
 
-    MCAPI void $sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
-
     MCAPI void
     $addParticleEffect(::HashedString const&, ::Actor const&, ::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&);
 
@@ -137,10 +135,6 @@ public:
     MCAPI void $onChunkUnloaded(::LevelChunk&);
 
     MCAPI void $onLevelDestruction(::std::string const&);
-
-    MCAPI void $levelEvent(::LevelEvent, ::Vec3 const&, int);
-
-    MCAPI void $levelEvent(::LevelEvent, ::CompoundTag const&);
 
     MCAPI void $takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&);
 

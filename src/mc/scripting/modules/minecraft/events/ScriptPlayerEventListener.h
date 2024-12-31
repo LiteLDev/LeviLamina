@@ -72,13 +72,13 @@ public:
     virtual ::EventResult onEvent(::PlayerScriptInputEvent const& e) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptPlayerEventListener() /*override*/;
+    virtual ~ScriptPlayerEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

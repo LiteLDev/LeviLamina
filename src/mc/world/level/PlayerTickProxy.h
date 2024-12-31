@@ -44,13 +44,13 @@ public:
     virtual void postReplicationtick(::ServerPlayer& serverPlayer, ::Tick const& currentTick) /*override*/;
 
     // vIndex: 0
-    virtual ~PlayerTickProxy() /*override*/;
+    virtual ~PlayerTickProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

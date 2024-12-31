@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IAddDisplayActorEntityProxy();
+    virtual ~IAddDisplayActorEntityProxy() = default;
 
     // vIndex: 1
     virtual void initializeActor(::Actor&) const = 0;
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

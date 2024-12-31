@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LoggingServiceProvider();
+    virtual ~LoggingServiceProvider() = default;
 
     // vIndex: 1
     virtual void log(::std::string&&, ::Player*, ::Editor::LogLevel, ::std::vector<::HashedString>&&) = 0;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

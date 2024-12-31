@@ -44,7 +44,7 @@ public:
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 8
-    virtual ~EvocationFang() /*override*/;
+    virtual ~EvocationFang() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -81,8 +81,6 @@ public:
     MCAPI void $normalTick();
 
     MCAPI ::ActorUniqueID $getSourceUniqueID() const;
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI float $getShadowRadius() const;
     // NOLINTEND

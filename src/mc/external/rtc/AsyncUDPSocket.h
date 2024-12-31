@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncUDPSocket() /*override*/;
+    virtual ~AsyncUDPSocket() /*override*/ = default;
 
     // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
@@ -87,31 +87,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::rtc::SocketAddress $GetLocalAddress() const;
 
-    MCAPI ::rtc::SocketAddress $GetRemoteAddress() const;
-
-    MCAPI int $Send(void const*, uint64, ::rtc::PacketOptions const&);
-
-    MCAPI int $SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&);
-
-    MCAPI int $Close();
-
-    MCAPI ::rtc::AsyncPacketSocket::State $GetState() const;
-
-    MCAPI int $GetOption(::rtc::Socket::Option, int*);
-
-    MCAPI int $SetOption(::rtc::Socket::Option, int);
-
-    MCAPI int $GetError() const;
-
-    MCAPI void $SetError(int);
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
     virtual ::std::string_view getStructureName() const /*override*/;
 
     // vIndex: 0
-    virtual ~RuinedPortalStart() /*override*/;
+    virtual ~RuinedPortalStart() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

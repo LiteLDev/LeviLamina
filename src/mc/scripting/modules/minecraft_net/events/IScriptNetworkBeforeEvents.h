@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScriptNetworkBeforeEvents();
+    virtual ~IScriptNetworkBeforeEvents() = default;
 
     // vIndex: 1
     virtual ::std::optional<
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

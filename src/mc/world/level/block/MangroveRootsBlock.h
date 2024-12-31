@@ -25,7 +25,7 @@ public:
     virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
     // vIndex: 0
-    virtual ~MangroveRootsBlock() /*override*/;
+    virtual ~MangroveRootsBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

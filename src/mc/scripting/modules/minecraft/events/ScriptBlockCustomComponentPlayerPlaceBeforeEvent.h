@@ -45,7 +45,7 @@ public:
     virtual bool shouldCancel() const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptBlockCustomComponentPlayerPlaceBeforeEvent() /*override*/;
+    virtual ~ScriptBlockCustomComponentPlayerPlaceBeforeEvent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

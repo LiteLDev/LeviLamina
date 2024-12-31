@@ -109,7 +109,7 @@ public:
     virtual void _runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
 
     // vIndex: 0
-    virtual ~PriorityDeferredSubscriptionHub() /*override*/;
+    virtual ~PriorityDeferredSubscriptionHub() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -127,7 +127,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

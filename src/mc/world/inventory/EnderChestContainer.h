@@ -40,7 +40,7 @@ public:
     virtual bool hasRemovedSubscribers() const /*override*/;
 
     // vIndex: 0
-    virtual ~EnderChestContainer() /*override*/;
+    virtual ~EnderChestContainer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

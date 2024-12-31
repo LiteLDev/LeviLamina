@@ -36,13 +36,13 @@ public:
     virtual float getAfterBreachArmorFraction(int level, float const armorFraction) const /*override*/;
 
     // vIndex: 0
-    virtual ~BreachEnchant() /*override*/;
+    virtual ~BreachEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -39,7 +39,7 @@ public:
     virtual ::Json::Value _serializeValue() const /*override*/;
 
     // vIndex: 0
-    virtual ~SimpleTagIDFilterTest() /*override*/;
+    virtual ~SimpleTagIDFilterTest() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

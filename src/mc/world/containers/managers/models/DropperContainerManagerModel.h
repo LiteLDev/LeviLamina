@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DropperContainerManagerModel() /*override*/;
+    virtual ~DropperContainerManagerModel() /*override*/ = default;
 
     // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -84,7 +84,7 @@ public:
 
     MCAPI void pushVolume(::CompoundBlockVolumeItem&& item);
 
-    MCAPI void pushVolume(::CompoundBlockVolumeItem const& item);
+    MCAPI void pushVolume(::CompoundBlockVolumeItem const&);
 
     MCAPI void setOrigin(::BlockPos const& newPos, bool preserveExistingVolumes);
 

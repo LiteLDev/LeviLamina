@@ -49,13 +49,13 @@ public:
     virtual uint64 _getRepathTime() const /*override*/;
 
     // vIndex: 0
-    virtual ~HideGoal() /*override*/;
+    virtual ~HideGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

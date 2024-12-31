@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SplitFATFileStorage() /*override*/;
+    virtual ~SplitFATFileStorage() /*override*/ = default;
 
     // vIndex: 1
     virtual bool fileExists(char const*) /*override*/;
@@ -82,40 +82,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $fileExists(char const*);
 
-    MCAPI bool $directoryExists(char const*);
-
-    MCAPI bool $fileOrDirectoryExists(char const*);
-
-    MCAPI ::SFAT::ErrorCode $deleteFile(char const*);
-
-    MCAPI ::SFAT::ErrorCode $removeDirectory(char const*);
-
-    MCAPI ::SFAT::ErrorCode $createDirectory(char const*);
-
-    MCAPI ::SFAT::ErrorCode $renameFile(char const*, char const*);
-
-    MCAPI ::SFAT::ErrorCode $renameDirectory(char const*, char const*);
-
-    MCAPI ::SFAT::ErrorCode $getFileSize(char const*, uint64&);
-
-    MCAPI bool $isFile(char const*);
-
-    MCAPI bool $isDirectory(char const*);
-
-    MCAPI ::SFAT::ErrorCode
-    $iterateThroughDirectory(char const*, uint, ::std::function<::SFAT::ErrorCode(bool&, ::SFAT::FileDescriptorRecord const&, ::std::string const&)>);
-
-    MCAPI ::SFAT::ErrorCode $getFreeSpace(uint64&);
-
-    MCAPI ::SFAT::ErrorCode $createFileImpl(::std::shared_ptr<::SFAT::FileBase>&);
     // NOLINTEND
 };
 

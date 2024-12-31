@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPlayerDimensionTransferProxy();
+    virtual ~IPlayerDimensionTransferProxy() = default;
 
     // vIndex: 1
     virtual void playerDimensionChangedEvent(::Player&, ::DimensionType, ::DimensionType) = 0;
@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

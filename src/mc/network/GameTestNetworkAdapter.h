@@ -45,13 +45,13 @@ public:
         virtual void onTestFailed(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
         // vIndex: 0
-        virtual ~GameTestNetworkListener() /*override*/;
+        virtual ~GameTestNetworkListener() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

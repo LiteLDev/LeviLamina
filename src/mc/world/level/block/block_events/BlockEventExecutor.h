@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockEventExecutor();
+    virtual ~BlockEventExecutor() = default;
 
     // vIndex: 1
     virtual void dispatch(::BlockEvents::BlockEventBase& eventData) const;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

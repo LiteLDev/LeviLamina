@@ -41,13 +41,13 @@ public:
     virtual ::Bedrock::DeviceIdContext const& getDeviceIdContext() const = 0;
 
     // vIndex: 0
-    virtual ~DeviceIdManager() /*override*/;
+    virtual ~DeviceIdManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

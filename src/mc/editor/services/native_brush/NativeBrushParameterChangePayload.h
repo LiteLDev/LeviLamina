@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NativeBrushParameterChangePayload() /*override*/;
+    virtual ~NativeBrushParameterChangePayload() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

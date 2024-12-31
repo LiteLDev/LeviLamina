@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ITickDelegate();
+    virtual ~ITickDelegate() = default;
 
     // vIndex: 1
     virtual void onLand(::FallingBlock const&, ::IBlockSource&, ::BlockPos const&) = 0;
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

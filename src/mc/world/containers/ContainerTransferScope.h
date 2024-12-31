@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContainerTransferScope();
+    virtual ~ContainerTransferScope() = default;
 
     // vIndex: 1
     virtual void createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>);
@@ -28,12 +28,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $createItem(::ItemStack const&, ::std::shared_ptr<::SimpleSparseContainer>);
+
     // NOLINTEND
 };

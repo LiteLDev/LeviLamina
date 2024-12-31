@@ -39,7 +39,7 @@ public:
     virtual void OnMessage(::webrtc::DataBuffer const& message) /*override*/;
 
     // vIndex: 4
-    virtual ~MyDataChannelObserver() /*override*/;
+    virtual ~MyDataChannelObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

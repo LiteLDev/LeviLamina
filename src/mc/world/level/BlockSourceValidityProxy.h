@@ -28,13 +28,13 @@ public:
     virtual void updateBlockSourceTick(::Player& player) /*override*/;
 
     // vIndex: 0
-    virtual ~BlockSourceValidityProxy() /*override*/;
+    virtual ~BlockSourceValidityProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

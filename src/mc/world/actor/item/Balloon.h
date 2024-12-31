@@ -35,7 +35,7 @@ public:
     virtual void remove() /*override*/;
 
     // vIndex: 8
-    virtual ~Balloon() /*override*/;
+    virtual ~Balloon() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

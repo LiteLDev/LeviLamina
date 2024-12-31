@@ -95,13 +95,13 @@ public:
                       ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 0
-    virtual ~SoundEventSystemImpl() /*override*/;
+    virtual ~SoundEventSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -24,18 +24,18 @@ public:
     virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny) const /*override*/;
 
     // vIndex: 0
-    virtual ~ComponentItemUpgraderToStrict() /*override*/;
+    virtual ~ComponentItemUpgraderToStrict() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Puv::LoadResultAny $doUpgrade(::Puv::LoadResultAny) const;
+
     // NOLINTEND
 };

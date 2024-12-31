@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VillageStart() /*override*/;
+    virtual ~VillageStart() /*override*/ = default;
 
     // vIndex: 2
     virtual bool isValid() const /*override*/;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

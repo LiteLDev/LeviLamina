@@ -31,7 +31,7 @@ public:
     virtual char const* getJsonName() const /*override*/;
 
     // vIndex: 0
-    virtual ~IsSummonableDescription() /*override*/;
+    virtual ~IsSummonableDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

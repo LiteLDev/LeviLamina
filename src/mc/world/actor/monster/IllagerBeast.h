@@ -28,7 +28,7 @@ public:
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
     // vIndex: 8
-    virtual ~IllagerBeast() /*override*/;
+    virtual ~IllagerBeast() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

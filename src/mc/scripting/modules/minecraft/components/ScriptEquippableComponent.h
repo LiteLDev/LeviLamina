@@ -32,7 +32,7 @@ public:
     virtual bool _isValid() const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptEquippableComponent() /*override*/;
+    virtual ~ScriptEquippableComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

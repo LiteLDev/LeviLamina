@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RegisterPlayFabUserRequest() /*override*/;
+    virtual ~RegisterPlayFabUserRequest() /*override*/ = default;
 
     // vIndex: 1
     virtual void FromJson(::Json::Value&) /*override*/;
@@ -49,15 +49,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $FromJson(::Json::Value&);
 
-    MCAPI ::Json::Value $ToJson() const;
     // NOLINTEND
 };
 

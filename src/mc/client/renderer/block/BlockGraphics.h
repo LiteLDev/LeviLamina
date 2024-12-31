@@ -80,7 +80,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockGraphics();
+    virtual ~BlockGraphics() = default;
 
     // vIndex: 1
     virtual ::BlockRenderLayer getRenderLayer(::BlockSource&, ::BlockPos const&) const;
@@ -122,34 +122,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockRenderLayer $getRenderLayer(::BlockSource&, ::BlockPos const&) const;
 
-    MCAPI int $getColor(int) const;
-
-    MCAPI int $getColor(::BlockSource&, ::BlockPos const&) const;
-
-    MCAPI bool $isSeasonTinted(::BlockSource&, ::BlockPos const&) const;
-
-    MCAPI void $onGraphicsModeChanged(bool, bool);
-
-    MCAPI int $getExtraRenderLayers();
-
-    MCAPI ::TextureUVCoordinateSet const& $getCarriedTexture(uint64, int) const;
-
-    MCAPI void $animateTick(::BlockSource&, ::BlockPos const&, ::Random&);
-
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const&, int&) const;
-
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const&) const;
-
-    MCAPI void $setVisualShape(::AABB const&);
-
-    MCAPI void $setVisualShape(::Vec3 const&, ::Vec3 const&);
     // NOLINTEND
 };

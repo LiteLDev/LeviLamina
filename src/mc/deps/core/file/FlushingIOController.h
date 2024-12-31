@@ -28,7 +28,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Flusher();
+        virtual ~Flusher() = default;
 
         // vIndex: 1
         virtual ::Core::Result _flushBuffer(void const*, uint64) = 0;
@@ -37,7 +37,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

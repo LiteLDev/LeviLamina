@@ -38,7 +38,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~StrippedLogBlock() /*override*/;
+    virtual ~StrippedLogBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

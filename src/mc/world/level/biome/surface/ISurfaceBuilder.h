@@ -95,7 +95,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISurfaceBuilder();
+    virtual ~ISurfaceBuilder() = default;
 
     // vIndex: 1
     virtual void init(::Biome&, uint) = 0;
@@ -107,7 +107,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptingEventListener();
+    virtual ~ScriptingEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onEvent(::ScriptingNotificationEvent const&);
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

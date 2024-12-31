@@ -38,13 +38,13 @@ public:
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
     // vIndex: 0
-    virtual ~BreakBlockNode() /*override*/;
+    virtual ~BreakBlockNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

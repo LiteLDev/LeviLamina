@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RayTracingOptions() /*override*/;
+    virtual ~RayTracingOptions() /*override*/ = default;
 
     // vIndex: 1
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
@@ -90,32 +90,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
 
-    MCAPI bool $isHardwareRayTracingCompatible() const;
-
-    MCAPI bool $isHardwareDeferredCompatible() const;
-
-    MCAPI bool $areRayTracingResourcesAvailable() const;
-
-    MCAPI bool $arePBRResourcesAvailable() const;
-
-    MCAPI bool $isPlatformCompatible() const;
-
-    MCAPI bool $isRayTracingAvailable() const;
-
-    MCAPI bool $isDeferredShadingAvailable() const;
-
-    MCAPI bool $isUpscalingAvailable() const;
-
-    MCAPI ::dragon::rendering::LightingModels $getLightingModel() const;
-
-    MCAPI void $setLightingModel(::dragon::rendering::LightingModels const);
     // NOLINTEND
 };

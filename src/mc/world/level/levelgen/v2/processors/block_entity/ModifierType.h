@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ModifierType();
+    virtual ~ModifierType() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom&, ::CompoundTag const*) const = 0;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IGameServerShutdown();
+    virtual ~IGameServerShutdown() = default;
 
     // vIndex: 1
     virtual void requestLeaveGame(bool, bool) = 0;
@@ -22,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

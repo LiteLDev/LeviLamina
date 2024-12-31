@@ -95,7 +95,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShooterItemComponent() /*override*/;
+    virtual ~ShooterItemComponent() /*override*/ = default;
 
     // vIndex: 7
     virtual void _initializeComponent() /*override*/;
@@ -147,7 +147,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -34,7 +34,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
     // vIndex: 8
-    virtual ~DragonFireball() /*override*/;
+    virtual ~DragonFireball() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 8
-    virtual ~Sheep() /*override*/;
+    virtual ~Sheep() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,13 +69,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+
     // NOLINTEND
 
 public:

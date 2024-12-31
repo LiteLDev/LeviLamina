@@ -48,7 +48,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~ScriptWidgetComponentClipboard() /*override*/;
+    virtual ~ScriptWidgetComponentClipboard() /*override*/ = default;
 
     // vIndex: 2
     virtual ::Editor::Widgets::WidgetComponentType const getComponentType() const /*override*/;
@@ -111,7 +111,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

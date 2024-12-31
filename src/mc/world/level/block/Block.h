@@ -100,7 +100,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Block();
+    virtual ~Block() = default;
 
     // vIndex: 1
     virtual ::BlockRenderLayer getRenderLayer() const;
@@ -535,7 +535,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

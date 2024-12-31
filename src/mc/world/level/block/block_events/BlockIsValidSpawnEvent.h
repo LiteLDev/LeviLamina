@@ -39,21 +39,19 @@ public:
     virtual ::BlockSource const& getBlockSource() const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockIsValidSpawnEvent() /*override*/;
+    virtual ~BlockIsValidSpawnEvent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getBlock() const;
 
-    MCAPI ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 };
 

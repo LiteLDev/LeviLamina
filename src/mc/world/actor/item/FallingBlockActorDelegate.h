@@ -30,20 +30,18 @@ public:
     virtual void breakBlock(::FallingBlockActor&) /*override*/;
 
     // vIndex: 0
-    virtual ~FallingBlockActorDelegate() /*override*/;
+    virtual ~FallingBlockActorDelegate() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLand(::FallingBlock const&, ::IBlockSource&, ::BlockPos const&);
 
-    MCAPI void $breakBlock(::FallingBlockActor&);
     // NOLINTEND
 };

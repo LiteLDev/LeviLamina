@@ -32,7 +32,7 @@ public:
     virtual void dispatch(::BlockEvents::BlockEventBase& eventData) const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockEntityFallOnEventExecutor() /*override*/;
+    virtual ~BlockEntityFallOnEventExecutor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

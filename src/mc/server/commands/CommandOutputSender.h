@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandOutputSender();
+    virtual ~CommandOutputSender() = default;
 
     // vIndex: 1
     virtual void send(::CommandOrigin const& origin, ::CommandOutput const& output);
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

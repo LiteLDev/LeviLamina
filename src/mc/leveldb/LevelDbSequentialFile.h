@@ -25,13 +25,13 @@ public:
     virtual ::leveldb::Status Skip(uint64 n) /*override*/;
 
     // vIndex: 0
-    virtual ~LevelDbSequentialFile() /*override*/;
+    virtual ~LevelDbSequentialFile() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

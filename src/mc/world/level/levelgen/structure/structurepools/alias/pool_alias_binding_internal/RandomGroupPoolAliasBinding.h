@@ -38,13 +38,13 @@ public:
         /*override*/;
 
     // vIndex: 2
-    virtual ~RandomGroupPoolAliasBinding() /*override*/;
+    virtual ~RandomGroupPoolAliasBinding() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

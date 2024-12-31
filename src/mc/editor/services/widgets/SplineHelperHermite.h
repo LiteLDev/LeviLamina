@@ -28,13 +28,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~SplineHelperHermite() /*override*/;
+    virtual ~SplineHelperHermite() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

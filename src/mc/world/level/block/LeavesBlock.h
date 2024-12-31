@@ -118,7 +118,7 @@ public:
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
 
     // vIndex: 0
-    virtual ~LeavesBlock() /*override*/;
+    virtual ~LeavesBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -156,7 +156,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

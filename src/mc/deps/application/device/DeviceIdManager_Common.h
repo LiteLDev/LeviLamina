@@ -52,27 +52,19 @@ public:
     virtual void _initializePlatform(bool const) = 0;
 
     // vIndex: 0
-    virtual ~DeviceIdManager_Common() /*override*/;
+    virtual ~DeviceIdManager_Common() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize(::Bedrock::NonOwnerPointer<::Core::FileSystem>);
 
-    MCAPI void $updateDeviceId(bool const);
-
-    MCAPI ::std::string const& $getDeviceId() const;
-
-    MCAPI ::std::string const& $getDeviceIdWarning() const;
-
-    MCAPI ::Bedrock::DeviceIdContext const& $getDeviceIdContext() const;
     // NOLINTEND
 };
 

@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SelectionServiceProvider();
+    virtual ~SelectionServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Scripting::Result_deprecated<::WeakRef<::Editor::Selection::SelectionContainer>> createContainer() = 0;
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

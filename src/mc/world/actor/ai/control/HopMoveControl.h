@@ -35,7 +35,7 @@ public:
     setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed) /*override*/;
 
     // vIndex: 0
-    virtual ~HopMoveControl() /*override*/;
+    virtual ~HopMoveControl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

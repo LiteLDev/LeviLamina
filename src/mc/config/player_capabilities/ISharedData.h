@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISharedData();
+    virtual ~ISharedData() = default;
 
     // vIndex: 1
     virtual ::std::optional<bool> isGameRuleEnabled(::GameRuleId) const = 0;
@@ -35,7 +35,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

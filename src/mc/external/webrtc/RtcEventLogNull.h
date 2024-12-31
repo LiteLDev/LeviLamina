@@ -33,23 +33,19 @@ public:
     virtual void Log(::std::unique_ptr<::webrtc::RtcEvent>) /*override*/;
 
     // vIndex: 0
-    virtual ~RtcEventLogNull() /*override*/;
+    virtual ~RtcEventLogNull() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $StartLogging(::std::unique_ptr<::webrtc::RtcEventLogOutput>, int64);
 
-    MCAPI void $StopLogging();
-
-    MCAPI void $Log(::std::unique_ptr<::webrtc::RtcEvent>);
     // NOLINTEND
 
 public:

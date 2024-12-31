@@ -34,13 +34,13 @@ public:
     virtual bool fromNBT(::CompoundTag const& tag, int& outValue) const /*override*/;
 
     // vIndex: 0
-    virtual ~CustomBlockStateVariant() /*override*/;
+    virtual ~CustomBlockStateVariant() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

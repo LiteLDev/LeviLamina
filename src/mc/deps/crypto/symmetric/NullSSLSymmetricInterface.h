@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NullSSLSymmetricInterface() /*override*/;
+    virtual ~NullSSLSymmetricInterface() /*override*/ = default;
 
     // vIndex: 1
     virtual void init(::std::string const&, ::std::string const&) /*override*/;
@@ -51,25 +51,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::std::string const&, ::std::string const&);
 
-    MCAPI void $encrypt(::std::string const&, ::std::string&);
-
-    MCAPI void $decrypt(::std::string const&, ::std::string&);
-
-    MCAPI uint64 $getKeySize() const;
-
-    MCAPI uint64 $getBlockSize() const;
-
-    MCAPI uint64 $getEncryptionBufferSize(uint64) const;
-
-    MCAPI bool $encryptToBuffer(::gsl::span<char const>, ::gsl::span<char>, uint64&);
     // NOLINTEND
 };
 

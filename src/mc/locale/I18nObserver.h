@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~I18nObserver() /*override*/;
+    virtual ~I18nObserver() /*override*/ = default;
 
     // vIndex: 2
     virtual void onLanguageChanged(::std::string const&, bool) = 0;
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RakNetRandomSync();
+    virtual ~RakNetRandomSync() = default;
 
     // vIndex: 1
     virtual void SerializeConstruction(::RakNet::BitStream*);
@@ -48,19 +48,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SerializeConstruction(::RakNet::BitStream*);
 
-    MCAPI bool $DeserializeConstruction(::RakNet::BitStream*);
-
-    MCAPI void $Serialize(::RakNet::BitStream*);
-
-    MCAPI void $Deserialize(::RakNet::BitStream*);
     // NOLINTEND
 };
 

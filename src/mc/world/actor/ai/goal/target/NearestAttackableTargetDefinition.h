@@ -40,7 +40,7 @@ public:
     virtual bool validate(::Mob& mob) const /*override*/;
 
     // vIndex: 0
-    virtual ~NearestAttackableTargetDefinition() /*override*/;
+    virtual ~NearestAttackableTargetDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

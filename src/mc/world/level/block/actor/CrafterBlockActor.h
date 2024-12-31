@@ -96,7 +96,7 @@ public:
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
 
     // vIndex: 0
-    virtual ~CrafterBlockActor() /*override*/;
+    virtual ~CrafterBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -125,7 +125,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

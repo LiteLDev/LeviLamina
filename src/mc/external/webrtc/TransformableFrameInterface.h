@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TransformableFrameInterface();
+    virtual ~TransformableFrameInterface() = default;
 
     // vIndex: 1
     virtual ::rtc::ArrayView<uchar const> GetData() const = 0;
@@ -61,15 +61,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::webrtc::Timestamp> $GetCaptureTimeIdentifier() const;
 
-    MCAPI ::webrtc::TransformableFrameInterface::Direction $GetDirection() const;
     // NOLINTEND
 };
 

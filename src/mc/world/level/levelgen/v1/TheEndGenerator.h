@@ -82,10 +82,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TheEndGenerator() /*override*/;
+    virtual ~TheEndGenerator() /*override*/ = default;
 
     // vIndex: 11
-    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
 
     // vIndex: 9
     virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
@@ -170,13 +170,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
 

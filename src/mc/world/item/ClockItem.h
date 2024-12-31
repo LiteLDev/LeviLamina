@@ -38,7 +38,7 @@ public:
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool const) const /*override*/;
 
     // vIndex: 0
-    virtual ~ClockItem() /*override*/;
+    virtual ~ClockItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
     virtual void tick(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 0
-    virtual ~BreakBlocksSystem() /*override*/;
+    virtual ~BreakBlocksSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

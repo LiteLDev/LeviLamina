@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Replica3() /*override*/;
+    virtual ~Replica3() /*override*/ = default;
 
     // vIndex: 7
     virtual void WriteAllocationID(::RakNet::Connection_RM3*, ::RakNet::BitStream*) const = 0;
@@ -166,63 +166,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::RakNet::RM3DestructionState $QueryDestruction(::RakNet::Connection_RM3*, ::RakNet::ReplicaManager3*);
 
-    MCAPI bool $QueryRelayDestruction(::RakNet::Connection_RM3*) const;
-
-    MCAPI void $SerializeConstructionExisting(::RakNet::BitStream*, ::RakNet::Connection_RM3*);
-
-    MCAPI void $DeserializeConstructionExisting(::RakNet::BitStream*, ::RakNet::Connection_RM3*);
-
-    MCAPI void $OnPoppedConnection(::RakNet::Connection_RM3*);
-
-    MCAPI void $OnUserReplicaPreSerializeTick();
-
-    MCAPI void $OnSerializeTransmission(::RakNet::BitStream*, ::RakNet::Connection_RM3*, uint*, uint64);
-
-    MCAPI void $PostSerializeConstruction(::RakNet::BitStream*, ::RakNet::Connection_RM3*);
-
-    MCAPI void $PostDeserializeConstruction(::RakNet::BitStream*, ::RakNet::Connection_RM3*);
-
-    MCAPI void $PostSerializeConstructionExisting(::RakNet::BitStream*, ::RakNet::Connection_RM3*);
-
-    MCAPI void $PostDeserializeConstructionExisting(::RakNet::BitStream*, ::RakNet::Connection_RM3*);
-
-    MCAPI void $PreDestruction(::RakNet::Connection_RM3*);
-
-    MCAPI ::RakNet::RM3ConstructionState $QueryConstruction_ClientConstruction(::RakNet::Connection_RM3*, bool);
-
-    MCAPI bool $QueryRemoteConstruction_ClientConstruction(::RakNet::Connection_RM3*, bool);
-
-    MCAPI ::RakNet::RM3ConstructionState $QueryConstruction_ServerConstruction(::RakNet::Connection_RM3*, bool);
-
-    MCAPI bool $QueryRemoteConstruction_ServerConstruction(::RakNet::Connection_RM3*, bool);
-
-    MCAPI ::RakNet::RM3ConstructionState
-    $QueryConstruction_PeerToPeer(::RakNet::Connection_RM3*, ::RakNet::Replica3P2PMode);
-
-    MCAPI bool $QueryRemoteConstruction_PeerToPeer(::RakNet::Connection_RM3*);
-
-    MCAPI ::RakNet::RM3QuerySerializationResult $QuerySerialization_ClientSerializable(::RakNet::Connection_RM3*, bool);
-
-    MCAPI ::RakNet::RM3QuerySerializationResult $QuerySerialization_ServerSerializable(::RakNet::Connection_RM3*, bool);
-
-    MCAPI ::RakNet::RM3QuerySerializationResult
-    $QuerySerialization_PeerToPeer(::RakNet::Connection_RM3*, ::RakNet::Replica3P2PMode);
-
-    MCAPI ::RakNet::RM3ActionOnPopConnection $QueryActionOnPopConnection_Client(::RakNet::Connection_RM3*) const;
-
-    MCAPI ::RakNet::RM3ActionOnPopConnection $QueryActionOnPopConnection_Server(::RakNet::Connection_RM3*) const;
-
-    MCAPI ::RakNet::RM3ActionOnPopConnection $QueryActionOnPopConnection_PeerToPeer(::RakNet::Connection_RM3*) const;
-
-    MCAPI void $BroadcastDestruction();
     // NOLINTEND
 };
 

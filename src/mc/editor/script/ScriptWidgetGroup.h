@@ -56,7 +56,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual ~ScriptWidgetGroup();
+    virtual ~ScriptWidgetGroup() = default;
 
     // vIndex: 0
     virtual void _performDeleteGroup() /*override*/;
@@ -153,7 +153,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

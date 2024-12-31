@@ -46,7 +46,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContainerManagerController();
+    virtual ~ContainerManagerController() = default;
 
     // vIndex: 1
     virtual void postInit(::std::weak_ptr<::ContainerManagerController>);
@@ -165,81 +165,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postInit(::std::weak_ptr<::ContainerManagerController>);
 
-    MCAPI void $registerContainerCallbacks();
-
-    MCAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const&);
-
-    MCAPI void $setItemName(::Bedrock::Safety::RedactableString const&);
-
-    MCAPI ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
-
-    MCAPI ::Bedrock::Safety::RedactableString const& $getItemName() const;
-
-    MCAPI void $updatePreviewItem();
-
-    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const&) const;
-
-    MCAPI void $handleTakeAmount(::SlotData const&, int, ::SlotData const&);
-
-    MCAPI void $handleTakeAll(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
-
-    MCAPI void $handleTakeHalf(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceOne(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceAmount(::SlotData const&, int, ::SlotData const&);
-
-    MCAPI int
-    $handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI int
-    $handleAutoPlaceStack(::SlotData const&, ::ItemTakeType, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI void $handleSplitSingle(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handleSplitMultiple(::SelectedSlotInfo const&, ::ItemInstance const&, ::SlotData const&);
-
-    MCAPI bool $handleCoalesce(::SlotData const&, ::std::vector<::std::string> const&, ::std::string const&);
-
-    MCAPI bool $handleSwap(::SlotData const&, ::SlotData const&);
-
-    MCAPI bool $handleDrop(::SlotData const&, ::ItemTransferAmount const);
-
-    MCAPI bool $handleDestroy(::SelectedSlotInfo const&, ::ItemTransferAmount const);
-
-    MCAPI bool $handleDestroy(::SlotData const&, ::ItemTransferAmount const);
-
-    MCAPI bool $handleConsume(::SlotData const&, ::ItemTransferAmount const);
-
-    MCAPI void $handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType);
-
-    MCAPI void $closeContainers();
-
-    MCAPI bool $isOutputSlot(::std::string const&) const;
-
-    MCAPI void
-    $_updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&);
-
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
-
-    MCAPI void $_onItemTransferredFrom(::ItemInstance const&, ::SlotData const&);
-
-    MCAPI void $_onItemTransferredTo(::ItemInstance const&, ::SlotData const&);
-
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
-
-    MCAPI void $_onItemPlaced(::ItemInstance const&, ::SlotData const&);
-
-    MCAPI void $_onContainerScreenAction(::ContainerScreenActionResult const&);
     // NOLINTEND
 };

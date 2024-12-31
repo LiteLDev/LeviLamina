@@ -27,18 +27,18 @@ public:
     virtual void onNetworkConfigurationChanged() /*override*/;
 
     // vIndex: 0
-    virtual ~NetworkConnectionTypeChangeObserver() /*override*/;
+    virtual ~NetworkConnectionTypeChangeObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onNetworkConfigurationChanged();
+
     // NOLINTEND
 };

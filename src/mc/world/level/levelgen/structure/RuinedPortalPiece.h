@@ -69,7 +69,7 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 0
-    virtual ~RuinedPortalPiece() /*override*/;
+    virtual ~RuinedPortalPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -122,7 +122,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

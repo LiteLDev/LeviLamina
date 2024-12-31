@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IEduAuth();
+    virtual ~IEduAuth() = default;
 
     // vIndex: 1
     virtual void
@@ -68,15 +68,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $authenticateSilentlyCredentialed();
 
-    MCAPI void $setAppSessionId(::std::string const&);
     // NOLINTEND
 };
 

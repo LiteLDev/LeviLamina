@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsFileDownloader() /*override*/;
+    virtual ~RealmsFileDownloader() /*override*/ = default;
 
     // vIndex: 2
     virtual void
@@ -49,18 +49,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $initRealmsFileDownloader(::std::string const&, int const, ::std::string const&, ::FileInfo const&, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>);
 
-    MCAPI void
-    $initFileDownloader(::std::string const&, ::std::string const&, ::FileInfo const&, uint64, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>);
-
-    MCAPI ::Bedrock::Http::Request $_makeRequest();
     // NOLINTEND
 };

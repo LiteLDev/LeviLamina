@@ -969,18 +969,6 @@ public:
 
     MCAPI void $onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>);
 
-    MCAPI void $sendPacketViolationDetectedTelemetryData(
-        uint64,
-        ::std::string,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
-        ::NetworkIdentifier const&,
-        uint,
-        ::SubClientId,
-        ::SubClientId,
-        uint
-    );
-
     MCAPI void $onTransferRequest(::NetworkIdentifier const&, ::std::string const&, int);
 
     MCAPI bool $getIsConnectedToApplicationLayer() const;

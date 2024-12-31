@@ -80,7 +80,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Options() /*override*/;
+    virtual ~Options() /*override*/ = default;
 
     // vIndex: 2
     virtual void load(::Core::PathBuffer<::std::string>) /*override*/;
@@ -249,118 +249,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Core::PathBuffer<::std::string>);
 
-    MCAPI void $tickSaveTimer();
-
-    MCAPI void $notifySaveAllowed();
-
-    MCAPI void $saveIfNeeded();
-
-    MCAPI ::OptionSaveDeferral $requestSaveDeferral();
-
-    MCAPI void $reset(::OptionResetFlags, ::InputMode);
-
-    MCAPI bool $getPrimaryUserStatus() const;
-
-    MCAPI void $setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const&);
-
-    MCAPI ::FileStorageDirectory $getFileStorageLocation() const;
-
-    MCAPI void $setFileStorageLocation(::FileStorageDirectory, ::std::function<void(bool)>);
-
-    MCAPI void $onScreenSizeChanged(int, int);
-
-    MCAPI bool $isValidOption(::OptionID) const;
-
-    MCAPI ::gsl::not_null<::Option*> $get(::OptionID);
-
-    MCAPI ::gsl::not_null<::Option const*> $get(::OptionID) const;
-
-    MCAPI ::std::optional<::Option*> $getIfValid(::OptionID);
-
-    MCAPI ::std::optional<::Option const*> $getIfValid(::OptionID) const;
-
-    MCAPI void $getTelemetryOptions(::std::vector<::OptionID>&);
-
-    MCAPI void $refreshRenderDistanceLevels();
-
-    MCAPI bool $isLoadInProgress();
-
-    MCAPI void $addObserver(::OptionsObserver&);
-
-    MCAPI void $loadOptionsFromString(::std::string);
-
-    MCAPI void $elevateSaveRequestMode(::IOptions::SaveRequestMode);
-
-    MCAPI ::ChatOptions const& $getChatOptions() const;
-
-    MCAPI ::ChatOptions& $getChatOptions();
-
-    MCAPI ::std::array<::std::unique_ptr<::Option>, 767> const& $getAllRegisteredOptions();
-
-    MCAPI void $forEachOption(::std::function<void(::Option*)>);
-
-    MCAPI int $getViewDistanceChunks() const;
-
-    MCAPI int $getDefaultViewDistanceChunks(bool, ::GraphicsMode) const;
-
-    MCAPI int $getMaxViewDistanceChunks() const;
-
-    MCAPI int $getMaxViewDistanceChunksRaw() const;
-
-    MCAPI bool $getVRMirrorTexture();
-
-    MCAPI bool $getRayTracing() const;
-
-    MCAPI bool $getDeferred() const;
-
-    MCAPI ::GamePadRemappingLayout& $getGamePadRemappingByType(::VRControllerType);
-
-    MCAPI ::std::shared_ptr<::KeyboardRemappingLayout> $getCurrentKeyboardRemapping() const;
-
-    MCAPI ::std::shared_ptr<::KeyboardRemappingLayout> $getKeyboardRemappingByType(::KeyboardType) const;
-
-    MCAPI ::GamePadRemappingLayout& $getMotionControllerRemapping();
-
-    MCAPI void $setLanguage(::std::string const&);
-
-    MCAPI ::std::string $getLanguage() const;
-
-    MCAPI void $setPlayerViewPerspective(int);
-
-    MCAPI void $setOverrideUsername(::std::string const&);
-
-    MCAPI bool $hasOverrideUsername() const;
-
-    MCAPI ::std::string const& $getDisplayedUsername() const;
-
-    MCAPI void $setRecentSkinIds(::std::vector<::std::string> const&);
-
-    MCAPI ::std::vector<::std::string> const& $getRecentSkinIds();
-
-    MCAPI float $getDefaultPlatformSafeZoneX() const;
-
-    MCAPI float $getDefaultPlatformSafeZoneY() const;
-
-    MCAPI bool $getServerboundClientDiagnosticsEnabled() const;
-
-    MCAPI ::ScriptDebuggerSettings $getScriptDebuggerSettings() const;
-
-    MCAPI ::Scripting::WatchdogSettings $getScriptWatchdogSettings() const;
-
-    MCAPI ::GraphicsMode $getGraphicsMode() const;
-
-    MCAPI void $setSaveDeferralCount(int);
-
-    MCAPI int $getSaveDeferralCount() const;
-
-    MCAPI ::std::optional<::DeviceMemoryTier> $getScriptingMemoryTierOverride() const;
     // NOLINTEND
 };

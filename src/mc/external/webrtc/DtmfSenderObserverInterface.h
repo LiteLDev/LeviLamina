@@ -21,21 +21,19 @@ public:
     virtual void OnToneChange(::std::string const&);
 
     // vIndex: 2
-    virtual ~DtmfSenderObserverInterface();
+    virtual ~DtmfSenderObserverInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnToneChange(::std::string const&, ::std::string const&);
 
-    MCAPI void $OnToneChange(::std::string const&);
     // NOLINTEND
 };
 

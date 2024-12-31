@@ -45,7 +45,7 @@ public:
     virtual bool logOnlyOnce() const /*override*/;
 
     // vIndex: 0
-    virtual ~WorldSessionEndPoint() /*override*/;
+    virtual ~WorldSessionEndPoint() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

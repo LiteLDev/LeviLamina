@@ -44,7 +44,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~SHRoomCrossing() /*override*/;
+    virtual ~SHRoomCrossing() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

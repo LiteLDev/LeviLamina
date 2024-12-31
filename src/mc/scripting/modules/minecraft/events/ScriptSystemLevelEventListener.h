@@ -28,13 +28,13 @@ public:
     virtual bool onRunSystemTick() /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptSystemLevelEventListener() /*override*/;
+    virtual ~ScriptSystemLevelEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
