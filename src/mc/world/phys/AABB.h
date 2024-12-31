@@ -36,19 +36,26 @@ public:
         return *this;
     }
 
-    template <typename T>
-    [[nodiscard]] constexpr T& get(size_t index) noexcept {
-        if (index == 1) {
-            return (T&)z;
+    template <typename T, size_t N>
+    [[nodiscard]] constexpr T& get() noexcept {
+        if constexpr (N == 0) {
+            return x;
+        } else if constexpr (N == 1) {
+            return y;
+        } else {
+            static_assert(ll::traits::always_false<T>);
         }
-        return (T&)x;
     }
-    template <typename T>
-    [[nodiscard]] constexpr T const& get(size_t index) const noexcept {
-        if (index == 1) {
-            return (T const&)z;
+
+    template <typename T, size_t N>
+    [[nodiscard]] constexpr T const& get() const noexcept {
+        if constexpr (N == 0) {
+            return x;
+        } else if constexpr (N == 1) {
+            return y;
+        } else {
+            static_assert(ll::traits::always_false<T>);
         }
-        return (T const&)x;
     }
 
     [[nodiscard]] constexpr bool contains(Vec3 const& a) const noexcept { return a.ge(min).all() && a.le(max).all(); }
