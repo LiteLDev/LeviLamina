@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StunUInt16ListAttribute() /*override*/;
+    virtual ~StunUInt16ListAttribute() /*override*/ = default;
 
     // vIndex: 1
     virtual ::cricket::StunAttributeValueType value_type() const /*override*/;
@@ -66,17 +66,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::StunAttributeValueType $value_type() const;
 
-    MCAPI bool $Read(::rtc::ByteBufferReader*);
-
-    MCAPI bool $Write(::rtc::ByteBufferWriter*) const;
     // NOLINTEND
 
 public:

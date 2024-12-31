@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientUnknownBlockTypeRegistry() /*override*/;
+    virtual ~ClientUnknownBlockTypeRegistry() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Block const& getUnknownBlock(::CompoundTag const&) /*override*/;
@@ -31,12 +31,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getUnknownBlock(::CompoundTag const&);
+
     // NOLINTEND
 };

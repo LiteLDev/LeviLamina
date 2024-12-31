@@ -39,7 +39,7 @@ public:
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
     // vIndex: 0
-    virtual ~JigsawReplacement() /*override*/;
+    virtual ~JigsawReplacement() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

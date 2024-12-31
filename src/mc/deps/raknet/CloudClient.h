@@ -40,7 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CloudClient() /*override*/;
+    virtual ~CloudClient() /*override*/ = default;
 
     // vIndex: 17
     virtual void SetDefaultCallbacks(::RakNet::CloudAllocator*, ::RakNet::CloudClientCallback*);
@@ -104,53 +104,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetDefaultCallbacks(::RakNet::CloudAllocator*, ::RakNet::CloudClientCallback*);
 
-    MCAPI void $Post(::RakNet::CloudKey*, uchar const*, uint, ::RakNet::RakNetGUID);
-
-    MCAPI void $Release(::DataStructures::List<::RakNet::CloudKey>&, ::RakNet::RakNetGUID);
-
-    MCAPI bool $Get(::RakNet::CloudQuery*, ::RakNet::RakNetGUID);
-
-    MCAPI bool $Get(::RakNet::CloudQuery*, ::DataStructures::List<::RakNet::RakNetGUID>&, ::RakNet::RakNetGUID);
-
-    MCAPI bool $Get(::RakNet::CloudQuery*, ::DataStructures::List<::RakNet::CloudQueryRow*>&, ::RakNet::RakNetGUID);
-
-    MCAPI void $Unsubscribe(::DataStructures::List<::RakNet::CloudKey>&, ::RakNet::RakNetGUID);
-
-    MCAPI void $Unsubscribe(
-        ::DataStructures::List<::RakNet::CloudKey>&,
-        ::DataStructures::List<::RakNet::RakNetGUID>&,
-        ::RakNet::RakNetGUID
-    );
-
-    MCAPI void $Unsubscribe(
-        ::DataStructures::List<::RakNet::CloudKey>&,
-        ::DataStructures::List<::RakNet::CloudQueryRow*>&,
-        ::RakNet::RakNetGUID
-    );
-
-    MCAPI void $OnGetReponse(::RakNet::Packet*, ::RakNet::CloudClientCallback*, ::RakNet::CloudAllocator*);
-
-    MCAPI void $OnGetReponse(::RakNet::CloudQueryResult*, ::RakNet::Packet*, ::RakNet::CloudAllocator*);
-
-    MCAPI void
-    $OnSubscriptionNotification(::RakNet::Packet*, ::RakNet::CloudClientCallback*, ::RakNet::CloudAllocator*);
-
-    MCAPI void
-    $OnSubscriptionNotification(bool*, ::RakNet::CloudQueryRow*, ::RakNet::Packet*, ::RakNet::CloudAllocator*);
-
-    MCAPI void $DeallocateWithDefaultAllocator(::RakNet::CloudQueryResult*);
-
-    MCAPI void $DeallocateWithDefaultAllocator(::RakNet::CloudQueryRow*);
-
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
     // NOLINTEND
 };
 

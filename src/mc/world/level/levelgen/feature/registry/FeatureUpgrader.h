@@ -24,13 +24,13 @@ public:
     virtual ::Puv::LoadResultAny doUpgrade(::Puv::LoadResultAny source) const /*override*/;
 
     // vIndex: 0
-    virtual ~FeatureUpgrader() /*override*/;
+    virtual ~FeatureUpgrader() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

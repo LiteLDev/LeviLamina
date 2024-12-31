@@ -67,7 +67,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~GrassBlock() /*override*/;
+    virtual ~GrassBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -95,7 +95,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

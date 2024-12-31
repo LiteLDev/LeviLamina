@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SubClientLoginPacket() /*override*/;
+    virtual ~SubClientLoginPacket() /*override*/ = default;
 
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

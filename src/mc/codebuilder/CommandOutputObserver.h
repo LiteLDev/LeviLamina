@@ -29,13 +29,13 @@ public:
     virtual void onCommand(::CommandOrigin const&, ::CommandOutput const&) = 0;
 
     // vIndex: 0
-    virtual ~CommandOutputObserver() /*override*/;
+    virtual ~CommandOutputObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

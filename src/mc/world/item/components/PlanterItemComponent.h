@@ -53,7 +53,7 @@ public:
     virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     // vIndex: 0
-    virtual ~PlanterItemComponent() /*override*/;
+    virtual ~PlanterItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -108,7 +108,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

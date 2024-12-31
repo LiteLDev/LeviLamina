@@ -32,13 +32,13 @@ public:
     virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
 
     // vIndex: 0
-    virtual ~PlaceBlockNode() /*override*/;
+    virtual ~PlaceBlockNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

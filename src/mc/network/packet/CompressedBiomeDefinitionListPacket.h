@@ -42,7 +42,7 @@ public:
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
 
     // vIndex: 0
-    virtual ~CompressedBiomeDefinitionListPacket() /*override*/;
+    virtual ~CompressedBiomeDefinitionListPacket() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

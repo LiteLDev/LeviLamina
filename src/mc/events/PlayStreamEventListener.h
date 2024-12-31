@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayStreamEventListener() /*override*/;
+    virtual ~PlayStreamEventListener() /*override*/ = default;
 
     // vIndex: 5
     virtual void sendEvent(::Social::Events::Event const&) /*override*/;
@@ -41,19 +41,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendEvent(::Social::Events::Event const&);
 
-    MCAPI int $getEventTagsFilter() const;
-
-    MCAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
-
-    MCAPI bool $_isListenerReadyForEvents() const;
     // NOLINTEND
 };
 

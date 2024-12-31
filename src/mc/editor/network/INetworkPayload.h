@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~INetworkPayload();
+    virtual ~INetworkPayload() = default;
 
     // vIndex: 1
     virtual char const* getPayloadName() const = 0;
@@ -35,7 +35,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

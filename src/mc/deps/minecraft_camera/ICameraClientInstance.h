@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ICameraClientInstance();
+    virtual ~ICameraClientInstance() = default;
 
     // vIndex: 1
     virtual float getFrameAlpha() = 0;
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

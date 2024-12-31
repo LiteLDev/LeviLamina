@@ -18,13 +18,13 @@ public:
     virtual void SetFecAllowed(bool) = 0;
 
     // vIndex: 1
-    virtual ~FecControllerOverride();
+    virtual ~FecControllerOverride() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandParserInterface();
+    virtual ~CommandParserInterface() = default;
 
     // vIndex: 1
     virtual char const* GetName() const = 0;
@@ -84,34 +84,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnNewIncomingConnection(::RakNet::SystemAddress const&, ::RakNet::TransportInterface*);
 
-    MCAPI void $OnConnectionLost(::RakNet::SystemAddress const&, ::RakNet::TransportInterface*);
-
-    MCAPI void $OnTransportChange(::RakNet::TransportInterface*);
-
-    MCAPI bool $GetRegisteredCommand(char const*, ::RakNet::RegisteredCommand*);
-
-    MCAPI void $SendCommandList(::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
-
-    MCAPI void $RegisterCommand(uchar, char const*, char const*);
-
-    MCAPI void $ReturnResult(bool, char const*, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
-
-    MCAPI void $ReturnResult(char*, char const*, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
-
-    MCAPI void
-    $ReturnResult(::RakNet::SystemAddress, char const*, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
-
-    MCAPI void $ReturnResult(int, char const*, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
-
-    MCAPI void $ReturnResult(char const*, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
     // NOLINTEND
 };
 

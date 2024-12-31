@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISignalingEventHandler();
+    virtual ~ISignalingEventHandler() = default;
 
     // vIndex: 7
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageSent const&);
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

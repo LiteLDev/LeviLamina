@@ -38,7 +38,7 @@ public:
     virtual void _moveToBlock() /*override*/;
 
     // vIndex: 0
-    virtual ~MoveToLandGoal() /*override*/;
+    virtual ~MoveToLandGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

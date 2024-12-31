@@ -86,53 +86,19 @@ public:
     virtual bool isSequenceWriter() const /*override*/;
 
     // vIndex: 0
-    virtual ~BinarySchemaWriter() /*override*/;
+    virtual ~BinarySchemaWriter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $write(bool, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(char, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(uchar, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(short, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(ushort, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(int, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(uint, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(int64, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(uint64, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(float, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(double, ::cereal::PropertyReader const&);
-
-    MCAPI bool $write(::std::string_view const, ::cereal::PropertyReader const&);
-
-    MCAPI bool $pushMember(::std::string_view const, ::cereal::PropertyReader const&);
-
-    MCAPI void $popMember();
-
-    MCAPI bool $openObject(::cereal::PropertyReader const&);
-
-    MCAPI bool $openArray(uint64, ::cereal::PropertyReader const&);
-
-    MCAPI void $close();
-
-    MCAPI bool $isSequenceWriter() const;
     // NOLINTEND
 };
 

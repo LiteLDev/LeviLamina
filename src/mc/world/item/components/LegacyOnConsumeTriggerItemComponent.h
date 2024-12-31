@@ -26,13 +26,13 @@ public:
     virtual void _initializeComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyOnConsumeTriggerItemComponent() /*override*/;
+    virtual ~LegacyOnConsumeTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

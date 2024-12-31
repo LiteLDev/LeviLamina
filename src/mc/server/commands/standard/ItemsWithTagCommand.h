@@ -31,18 +31,18 @@ public:
     virtual void execute(::CommandOrigin const&, ::CommandOutput&) const /*override*/;
 
     // vIndex: 0
-    virtual ~ItemsWithTagCommand() /*override*/;
+    virtual ~ItemsWithTagCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput&) const;
+
     // NOLINTEND
 };

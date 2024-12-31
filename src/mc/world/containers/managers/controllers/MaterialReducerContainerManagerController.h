@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MaterialReducerContainerManagerController() /*override*/;
+    virtual ~MaterialReducerContainerManagerController() /*override*/ = default;
 
     // vIndex: 27
     virtual bool isOutputSlot(::std::string const&) const /*override*/;
@@ -56,21 +56,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isOutputSlot(::std::string const&) const;
 
-    MCAPI void $closeContainers();
-
-    MCAPI void $handlePlaceOne(::SlotData const&, ::SlotData const&);
-
-    MCAPI int
-    $handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI bool $handleSwap(::SlotData const&, ::SlotData const&);
     // NOLINTEND
 };

@@ -32,7 +32,7 @@ public:
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
     // vIndex: 1
-    virtual ~WaterMovementDescription() /*override*/;
+    virtual ~WaterMovementDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

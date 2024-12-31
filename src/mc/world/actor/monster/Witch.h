@@ -41,7 +41,7 @@ public:
     virtual float getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const /*override*/;
 
     // vIndex: 8
-    virtual ~Witch() /*override*/;
+    virtual ~Witch() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,14 +69,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
-
     MCAPI ::Vec3 $getFiringPos() const;
 
     MCAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;

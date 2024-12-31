@@ -181,13 +181,13 @@ public:
     virtual void GenerateKeyFrame(::std::vector<::std::string> const&) = 0;
 
     // vIndex: 10
-    virtual ~VideoSendStream();
+    virtual ~VideoSendStream() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BehaviorDefinition();
+    virtual ~BehaviorDefinition() = default;
 
     // vIndex: 1
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory);
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

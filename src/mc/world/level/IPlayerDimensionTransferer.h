@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ~IPlayerDimensionTransferer();
+    virtual ~IPlayerDimensionTransferer() = default;
 
     // vIndex: 3
     virtual void
@@ -81,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

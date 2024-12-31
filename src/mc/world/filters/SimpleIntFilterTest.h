@@ -34,13 +34,13 @@ public:
     virtual ::Json::Value _serializeValue() const /*override*/;
 
     // vIndex: 0
-    virtual ~SimpleIntFilterTest() /*override*/;
+    virtual ~SimpleIntFilterTest() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

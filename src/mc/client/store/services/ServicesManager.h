@@ -40,19 +40,19 @@ public:
         virtual void _onEntitlementChanged() /*override*/;
 
         // vIndex: 0
-        virtual ~InventoryEntitlementChangeListener() /*override*/;
+        virtual ~InventoryEntitlementChangeListener() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $_onEntitlementChanged();
+
         // NOLINTEND
     };
 
@@ -125,12 +125,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServicesManager() /*override*/;
+    virtual ~ServicesManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

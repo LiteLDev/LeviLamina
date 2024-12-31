@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EncodedFrame();
+    virtual ~EncodedFrame() = default;
 
     // vIndex: 1
     virtual int64 ReceivedTime() const;
@@ -46,17 +46,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int64 $ReceivedTime() const;
 
-    MCAPI int64 $RenderTime() const;
-
-    MCAPI bool $delayed_by_retransmission() const;
     // NOLINTEND
 };
 

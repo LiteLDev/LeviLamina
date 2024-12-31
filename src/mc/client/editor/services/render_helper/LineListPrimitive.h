@@ -73,7 +73,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual ~LineListPrimitive() /*override*/;
+    virtual ~LineListPrimitive() /*override*/ = default;
 
     // vIndex: 0
     virtual ::Editor::RenderHelper::PrimitiveType getType() const /*override*/;
@@ -94,21 +94,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Editor::RenderHelper::PrimitiveType $getType() const;
 
-    MCAPI ::Vec3 const& $getPosition() const;
-
-    MCAPI void $updateBoundingBox(::Vec3 const&, ::AABB&) const;
-
-    MCAPI void $_rebuild();
-
-    MCAPI void $_getVertices(::std::vector<::Editor::RenderHelper::Vertex>&);
     // NOLINTEND
 };
 

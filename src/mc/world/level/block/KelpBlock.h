@@ -79,7 +79,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~KelpBlock() /*override*/;
+    virtual ~KelpBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -103,7 +103,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPlayerDeathManagerProxy();
+    virtual ~IPlayerDeathManagerProxy() = default;
 
     // vIndex: 1
     virtual ::Actor* fetchActor(::ActorUniqueID) const = 0;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

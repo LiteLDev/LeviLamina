@@ -51,7 +51,7 @@ public:
     virtual void notifyOfExternalCorrection(uint64) /*override*/;
 
     // vIndex: 0
-    virtual ~ClientReplayStatePolicy() /*override*/;
+    virtual ~ClientReplayStatePolicy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

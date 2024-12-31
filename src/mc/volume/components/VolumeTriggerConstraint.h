@@ -28,20 +28,18 @@ public:
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
     // vIndex: 1
-    virtual ~VolumeTriggerConstraint() /*override*/;
+    virtual ~VolumeTriggerConstraint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 };

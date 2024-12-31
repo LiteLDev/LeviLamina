@@ -38,7 +38,7 @@ public:
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
     // vIndex: 8
-    virtual ~Creeper() /*override*/;
+    virtual ~Creeper() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -76,7 +76,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

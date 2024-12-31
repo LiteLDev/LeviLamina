@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerCursorServiceProvider();
+    virtual ~ServerCursorServiceProvider() = default;
 
     // vIndex: 1
     virtual ::StackRefResult<::Editor::Cursor::ServerCursor> getCursor() const = 0;
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

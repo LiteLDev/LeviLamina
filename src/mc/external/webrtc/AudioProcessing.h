@@ -467,7 +467,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ~AudioProcessing() /*override*/;
+    virtual ~AudioProcessing() /*override*/ = default;
 
     // vIndex: 4
     virtual int Initialize() = 0;
@@ -571,7 +571,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

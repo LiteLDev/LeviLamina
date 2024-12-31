@@ -85,7 +85,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~CampfireBlock() /*override*/;
+    virtual ~CampfireBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -115,7 +115,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -130,8 +130,6 @@ public:
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
-
-    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 

@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorTickingAreaServiceProvider();
+    virtual ~EditorTickingAreaServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<bool, ::Scripting::Error>
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

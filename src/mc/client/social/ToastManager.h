@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ToastManager() /*override*/;
+    virtual ~ToastManager() /*override*/ = default;
 
     // vIndex: 1
     virtual void pushToast(::ToastMessage&&) /*override*/;
@@ -66,16 +66,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $pushToast(::ToastMessage&&);
 
-    MCAPI bool $isEditorModeEnabled() const;
-
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };

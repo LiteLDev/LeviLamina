@@ -37,7 +37,7 @@ public:
     virtual void onLanguagesLoaded() /*override*/;
 
     // vIndex: 0
-    virtual ~NpcI18nObserver() /*override*/;
+    virtual ~NpcI18nObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompoundCreatorInputValidation() /*override*/;
+    virtual ~CompoundCreatorInputValidation() /*override*/ = default;
 
     // vIndex: 2
     virtual bool isItemAllowedInSlot(
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

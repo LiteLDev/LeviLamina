@@ -201,7 +201,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
-        virtual ~IdBase() /*override*/;
+        virtual ~IdBase() /*override*/ = default;
 
         // vIndex: 3
         virtual bool Equals(::webrtc::StatsReport::IdBase const&) const;
@@ -227,13 +227,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $Equals(::webrtc::StatsReport::IdBase const&) const;
+
         // NOLINTEND
 
     public:

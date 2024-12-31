@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PublisherDisconnector();
+    virtual ~PublisherDisconnector() = default;
 
     // vIndex: 1
     virtual void _disconnect(::Bedrock::PubSub::Detail::SubscriptionBodyBase&) = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

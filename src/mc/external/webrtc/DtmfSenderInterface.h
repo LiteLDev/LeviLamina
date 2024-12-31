@@ -50,23 +50,19 @@ public:
     virtual int comma_delay() const;
 
     // vIndex: 2
-    virtual ~DtmfSenderInterface() /*override*/;
+    virtual ~DtmfSenderInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $InsertDtmf(::std::string const&, int, int);
 
-    MCAPI bool $InsertDtmf(::std::string const&, int, int, int);
-
-    MCAPI int $comma_delay() const;
     // NOLINTEND
 };
 

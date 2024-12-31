@@ -65,33 +65,19 @@ public:
     virtual bool RemoveTrack(::webrtc::VideoTrackInterface*);
 
     // vIndex: 2
-    virtual ~MediaStreamInterface() /*override*/;
+    virtual ~MediaStreamInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>);
 
-    MCAPI bool $AddTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>);
-
-    MCAPI bool $AddTrack(::webrtc::AudioTrackInterface*);
-
-    MCAPI bool $AddTrack(::webrtc::VideoTrackInterface*);
-
-    MCAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>);
-
-    MCAPI bool $RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>);
-
-    MCAPI bool $RemoveTrack(::webrtc::AudioTrackInterface*);
-
-    MCAPI bool $RemoveTrack(::webrtc::VideoTrackInterface*);
     // NOLINTEND
 };
 

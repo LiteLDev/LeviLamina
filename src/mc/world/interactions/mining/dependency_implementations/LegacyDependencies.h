@@ -30,13 +30,13 @@ public:
     virtual void hurtAndBreak(int damage) /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyDependencies() /*override*/;
+    virtual ~LegacyDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

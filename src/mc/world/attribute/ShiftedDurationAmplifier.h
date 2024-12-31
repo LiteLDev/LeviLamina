@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShiftedDurationAmplifier() /*override*/;
+    virtual ~ShiftedDurationAmplifier() /*override*/ = default;
 
     // vIndex: 2
     virtual bool shouldBuff(int remainingDuration, int amplification) const /*override*/;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

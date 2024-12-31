@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServiceClient() /*override*/;
+    virtual ~ServiceClient() /*override*/ = default;
 
     // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>>
@@ -58,20 +58,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>>
-    $getAuthorizationHeader(::std::shared_ptr<::Social::User>, ::std::string const&) const;
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>>
-    $getAuthorizationHeader(::std::string const&) const;
-
-    MCAPI void $update();
-
-    MCAPI void $_submitRequest(::std::shared_ptr<::HttpRequestHandler>);
     // NOLINTEND
 };

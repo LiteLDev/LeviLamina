@@ -65,12 +65,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerRenderChunkModificationLatencyTracker() /*override*/;
+    virtual ~PlayerRenderChunkModificationLatencyTracker() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

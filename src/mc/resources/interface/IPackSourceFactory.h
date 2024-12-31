@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPackSourceFactory();
+    virtual ~IPackSourceFactory() = default;
 
     // vIndex: 1
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -38,13 +38,13 @@ public:
     virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 0
-    virtual ~NetherReactorBlockActor() /*override*/;
+    virtual ~NetherReactorBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

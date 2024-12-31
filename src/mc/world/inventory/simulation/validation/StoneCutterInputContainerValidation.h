@@ -24,13 +24,13 @@ public:
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 0
-    virtual ~StoneCutterInputContainerValidation() /*override*/;
+    virtual ~StoneCutterInputContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

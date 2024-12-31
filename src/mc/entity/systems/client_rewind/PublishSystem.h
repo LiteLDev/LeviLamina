@@ -71,33 +71,19 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~PublishSystem() /*override*/;
+    virtual ~PublishSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::ActorMovementTickNeededComponent>,
-                     ::Read<
-                         ::ActorDataFlagComponent,
-                         ::ActorDataHorseFlagComponent,
-                         ::ActorDataJumpDurationComponent,
-                         ::ActorDataBoundingBoxComponent,
-                         ::ActorDataSeatOffsetComponent>,
-                     ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>&);
 
-    MCAPI void $singleTick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent>, ::Read<::ActorDataFlagComponent, ::ActorDataHorseFlagComponent, ::ActorDataJumpDurationComponent, ::ActorDataBoundingBoxComponent, ::ActorDataSeatOffsetComponent>, ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>&, ::StrictEntityContext&);
     // NOLINTEND
 };
 

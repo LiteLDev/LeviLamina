@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LookAtActorGoal() /*override*/;
+    virtual ~LookAtActorGoal() /*override*/ = default;
 
     // vIndex: 1
     virtual bool canUse() /*override*/;
@@ -91,7 +91,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

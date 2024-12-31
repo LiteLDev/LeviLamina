@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISceneStack() /*override*/;
+    virtual ~ISceneStack() /*override*/ = default;
 
     // vIndex: 1
     virtual void registerSceneChangeCallback(void*, ::std::function<void(::AbstractScene&)>) = 0;
@@ -93,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

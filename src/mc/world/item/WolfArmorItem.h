@@ -61,7 +61,7 @@ public:
     virtual ::SharedTypes::Legacy::LevelSoundEvent getBreakSound() const /*override*/;
 
     // vIndex: 0
-    virtual ~WolfArmorItem() /*override*/;
+    virtual ~WolfArmorItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

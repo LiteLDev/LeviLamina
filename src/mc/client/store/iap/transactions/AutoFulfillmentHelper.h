@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AutoFulfillmentHelper();
+    virtual ~AutoFulfillmentHelper() = default;
 
     // vIndex: 1
     virtual void execute(::TransactionStatus);
@@ -25,12 +25,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::TransactionStatus);
+
     // NOLINTEND
 };

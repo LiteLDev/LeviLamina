@@ -33,11 +33,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ITreeFeature() /*override*/;
+    virtual ~ITreeFeature() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const = 0;
+    place(::IBlockWorldGenAPI&, ::BlockPos const&, ::Random&, ::RenderParams&) const = 0;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

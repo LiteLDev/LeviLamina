@@ -62,7 +62,7 @@ public:
     virtual uint64 getHash() const /*override*/;
 
     // vIndex: 16
-    virtual ~MolangDescriptor() /*override*/;
+    virtual ~MolangDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -77,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

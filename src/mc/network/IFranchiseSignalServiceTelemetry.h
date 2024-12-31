@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFranchiseSignalServiceTelemetry();
+    virtual ~IFranchiseSignalServiceTelemetry() = default;
 
     // vIndex: 1
     virtual void fireEvent(::SignalServiceConnectStage, ::NetherNet::NetworkID, ::std::string const&) const = 0;
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

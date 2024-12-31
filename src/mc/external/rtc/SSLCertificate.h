@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SSLCertificate();
+    virtual ~SSLCertificate() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::rtc::SSLCertificate> Clone() const = 0;
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

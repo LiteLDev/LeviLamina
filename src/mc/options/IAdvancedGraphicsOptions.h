@@ -35,13 +35,13 @@ public:
     virtual void setLightingModel(::dragon::rendering::LightingModels const) = 0;
 
     // vIndex: 0
-    virtual ~IAdvancedGraphicsOptions() /*override*/;
+    virtual ~IAdvancedGraphicsOptions() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

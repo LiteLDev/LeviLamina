@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NullSocketServer() /*override*/;
+    virtual ~NullSocketServer() /*override*/ = default;
 
     // vIndex: 3
     virtual bool Wait(::webrtc::TimeDelta, bool) /*override*/;
@@ -56,17 +56,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $Wait(::webrtc::TimeDelta, bool);
 
-    MCAPI void $WakeUp();
-
-    MCAPI ::rtc::Socket* $CreateSocket(int, int);
     // NOLINTEND
 
 public:

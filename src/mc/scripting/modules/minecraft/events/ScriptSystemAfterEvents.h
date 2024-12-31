@@ -75,13 +75,13 @@ public:
         virtual bool onFlushSystemAfterEvents() /*override*/;
 
         // vIndex: 0
-        virtual ~ScriptSystemAfterEventsDeferredEventListener() /*override*/;
+        virtual ~ScriptSystemAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

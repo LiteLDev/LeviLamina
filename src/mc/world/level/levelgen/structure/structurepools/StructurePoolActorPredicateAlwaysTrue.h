@@ -27,20 +27,18 @@ public:
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
 
     // vIndex: 0
-    virtual ~StructurePoolActorPredicateAlwaysTrue() /*override*/;
+    virtual ~StructurePoolActorPredicateAlwaysTrue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::std::string const&) const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash&) const;
     // NOLINTEND
 };

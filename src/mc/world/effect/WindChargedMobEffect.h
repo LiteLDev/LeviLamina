@@ -24,13 +24,13 @@ public:
     virtual void onActorDied(::Actor& target, int amplifier) const /*override*/;
 
     // vIndex: 0
-    virtual ~WindChargedMobEffect() /*override*/;
+    virtual ~WindChargedMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

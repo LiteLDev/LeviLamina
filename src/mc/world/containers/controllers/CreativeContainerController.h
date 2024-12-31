@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CreativeContainerController() /*override*/;
+    virtual ~CreativeContainerController() /*override*/ = default;
 
     // vIndex: 5
     virtual int getBackgroundStyle(int, bool) const /*override*/;
@@ -41,18 +41,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getBackgroundStyle(int, bool) const;
 
-    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
-
-    MCAPI ::ItemInstance const& $getRecipeItem(int) const;
-
-    MCAPI bool $canRemove(int, int) const;
     // NOLINTEND
 };

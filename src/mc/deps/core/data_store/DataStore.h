@@ -84,7 +84,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Viewer();
+        virtual ~Viewer() = default;
 
         // vIndex: 2
         virtual ::gsl::not_null<::Bedrock::DataStore const*> getOwningDataStore() const = 0;
@@ -99,7 +99,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -133,13 +133,13 @@ public:
         setValueForKey(::std::string_view, ::Bedrock::JSONObject::ValueWrapper const&) = 0;
 
         // vIndex: 0
-        virtual ~Editor() /*override*/;
+        virtual ~Editor() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

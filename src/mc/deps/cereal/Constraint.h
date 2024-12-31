@@ -24,7 +24,7 @@ public:
     virtual void doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const = 0;
 
     // vIndex: 1
-    virtual ~Constraint();
+    virtual ~Constraint() = default;
 
     // vIndex: 2
     virtual ::cereal::internal::ConstraintDescription description() const = 0;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

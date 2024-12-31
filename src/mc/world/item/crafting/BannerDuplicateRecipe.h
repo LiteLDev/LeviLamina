@@ -50,7 +50,7 @@ public:
     virtual int size() const /*override*/;
 
     // vIndex: 0
-    virtual ~BannerDuplicateRecipe() /*override*/;
+    virtual ~BannerDuplicateRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -44,13 +44,13 @@ public:
     virtual ::Bedrock::Result<void> readBytesResult(void*, uint64) = 0;
 
     // vIndex: 0
-    virtual ~BytesDataInput() /*override*/;
+    virtual ~BytesDataInput() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

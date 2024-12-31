@@ -67,7 +67,7 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 0
-    virtual ~FarmBlock() /*override*/;
+    virtual ~FarmBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -97,7 +97,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -124,8 +124,6 @@ public:
     $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
     // NOLINTEND
 
 public:

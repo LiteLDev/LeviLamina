@@ -49,7 +49,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~BedItem() /*override*/;
+    virtual ~BedItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

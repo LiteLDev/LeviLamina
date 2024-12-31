@@ -47,13 +47,13 @@ public:
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     // vIndex: 0
-    virtual ~MineshaftRoom() /*override*/;
+    virtual ~MineshaftRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

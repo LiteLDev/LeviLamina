@@ -108,7 +108,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetEq();
+    virtual ~NetEq() = default;
 
     // vIndex: 1
     virtual int InsertPacket(::webrtc::RTPHeader const&, ::rtc::ArrayView<uchar const>) = 0;
@@ -189,7 +189,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

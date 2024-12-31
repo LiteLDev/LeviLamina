@@ -40,7 +40,7 @@ public:
     virtual bool canChangePermission(::mce::UUID const& playerId, ::ServerPlayer const& player) const /*override*/;
 
     // vIndex: 0
-    virtual ~ServerNetworkController() /*override*/;
+    virtual ~ServerNetworkController() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

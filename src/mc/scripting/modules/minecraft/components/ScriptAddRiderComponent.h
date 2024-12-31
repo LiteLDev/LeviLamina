@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptAddRiderComponent() /*override*/;
+    virtual ~ScriptAddRiderComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

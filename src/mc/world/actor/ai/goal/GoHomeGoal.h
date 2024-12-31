@@ -44,7 +44,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~GoHomeDefinition() /*override*/;
+        virtual ~GoHomeDefinition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -66,7 +66,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -118,7 +118,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~GoHomeGoal() /*override*/;
+    virtual ~GoHomeGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -140,7 +140,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

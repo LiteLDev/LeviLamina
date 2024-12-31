@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~FilteredContainerModel() /*override*/;
+    virtual ~FilteredContainerModel() /*override*/ = default;
 
     // vIndex: 0
     virtual void containerContentChanged(int) /*override*/;
@@ -67,28 +67,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int);
 
-    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
-
-    MCAPI void $setItemInstance(int, ::ItemInstance const&);
-
-    MCAPI void $refreshContainer(bool);
-
-    MCAPI int $getContainerSize() const;
-
-    MCAPI int $getFilteredContainerSize() const;
-
-    MCAPI bool $isExpanableItemFiltered(int index) const;
-
-    MCAPI int $getIndexForCreativeItem(::ItemStackBase const&) const;
-
-    MCAPI void $_init();
     // NOLINTEND
 };

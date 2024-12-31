@@ -39,13 +39,13 @@ public:
     virtual bool canOpenChat(::PlayerCapabilities::IPlayerData const& player) const /*override*/;
 
     // vIndex: 0
-    virtual ~SharedController() /*override*/;
+    virtual ~SharedController() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

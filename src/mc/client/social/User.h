@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~User();
+    virtual ~User() = default;
 
     // vIndex: 1
     virtual void initStorageAreas() = 0;
@@ -394,7 +394,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

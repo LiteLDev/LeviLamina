@@ -37,7 +37,7 @@ public:
     virtual bool _setWantedPosition() /*override*/;
 
     // vIndex: 0
-    virtual ~RandomFlyingGoal() /*override*/;
+    virtual ~RandomFlyingGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

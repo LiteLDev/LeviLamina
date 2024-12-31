@@ -86,19 +86,19 @@ public:
     virtual void SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface>) = 0;
 
     // vIndex: 2
-    virtual ~RtpSenderInterface() /*override*/;
+    virtual ~RtpSenderInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetParametersAsync(::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
+
     // NOLINTEND
 };
 

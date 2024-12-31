@@ -42,7 +42,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~MultifaceFeature() /*override*/;
+    virtual ~MultifaceFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

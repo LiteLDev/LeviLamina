@@ -50,7 +50,7 @@ public:
     virtual bool canUseAzureNotebooks() const /*override*/;
 
     // vIndex: 0
-    virtual ~EduAppConfigs() /*override*/;
+    virtual ~EduAppConfigs() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,21 +62,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadFromData(::IAppConfigData const&);
 
-    MCAPI ::EducationEditionOffer $getEducationEditionOffering() const;
-
-    MCAPI void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
-
-    MCAPI ::std::unique_ptr<::IContentAccessibilityProvider>
-    $createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
-
-    MCAPI bool $canUseAzureNotebooks() const;
     // NOLINTEND
 };

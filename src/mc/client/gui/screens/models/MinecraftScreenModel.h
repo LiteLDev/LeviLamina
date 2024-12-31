@@ -98,7 +98,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftScreenModel() /*override*/;
+    virtual ~MinecraftScreenModel() /*override*/ = default;
 
     // vIndex: 4
     virtual void
@@ -144,37 +144,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $navigateToDisconnectScreen(::std::string const&, ::std::string const&, ::Connection::DisconnectFailReason);
 
-    MCAPI bool $isInGame() const;
-
-    MCAPI bool $isSelectedSkinInitialized() const;
-
-    MCAPI bool $platformTTSExists() const;
-
-    MCAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::DlcId> const&);
-
-    MCAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::std::string> const&);
-
-    MCAPI ::IDlcBatchModel& $getDlcBatchModel(::std::vector<::PackIdVersion> const&);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalogRepository() const;
-
-    MCAPI float $getStoreNetworkFailureTimeout() const;
-
-    MCAPI bool $isAdhocEnabled() const;
-
-    MCAPI bool $isDirty() const;
-
-    MCAPI ::SkinHandle const& $getSelectedSkinHandle() const;
-
-    MCAPI ::std::string const& $getLastPoppedScreenName() const;
     // NOLINTEND
 };

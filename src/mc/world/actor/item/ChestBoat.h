@@ -33,7 +33,7 @@ public:
     virtual ::std::string getEntityLocNameString() const /*override*/;
 
     // vIndex: 8
-    virtual ~ChestBoat() /*override*/;
+    virtual ~ChestBoat() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

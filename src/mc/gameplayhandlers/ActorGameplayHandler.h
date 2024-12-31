@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorGameplayHandler() /*override*/;
+    virtual ~ActorGameplayHandler() /*override*/ = default;
 
     // vIndex: 3
     virtual ::HandlerResult handleEvent(::ActorGameplayEvent<void> const&) = 0;
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

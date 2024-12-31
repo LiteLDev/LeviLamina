@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExternalDataSnapshot() /*override*/;
+    virtual ~ExternalDataSnapshot() /*override*/ = default;
 
     // vIndex: 1
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
@@ -58,24 +58,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
 
-    MCAPI ::AdventureSettings const& $getAdventureSettings() const;
-
-    MCAPI ::ClientPlayMode $getPlayMode() const;
-
-    MCAPI ::InputMode $getInputMode() const;
-
-    MCAPI ::GameType $getDefaultGameType() const;
-
-    MCAPI float $getSmoothRotationSpeed() const;
-
-    MCAPI ::Vec3 $getWorldSpaceVRRealityGazeDir() const;
     // NOLINTEND
 };

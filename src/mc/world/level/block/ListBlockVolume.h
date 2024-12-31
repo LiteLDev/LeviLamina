@@ -55,7 +55,7 @@ public:
     virtual ::std::set<::ChunkPos> getChunks() const /*override*/;
 
     // vIndex: 0
-    virtual ~ListBlockVolume() /*override*/;
+    virtual ~ListBlockVolume() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -93,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

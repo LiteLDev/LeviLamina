@@ -66,7 +66,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ReplicaManager3() /*override*/;
+    virtual ~ReplicaManager3() /*override*/ = default;
 
     // vIndex: 17
     virtual ::RakNet::Connection_RM3* AllocConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID) const = 0;
@@ -100,24 +100,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Update();
 
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
-
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
-
-    MCAPI void $OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool);
-
-    MCAPI void $OnRakPeerShutdown();
-
-    MCAPI void $OnDetach();
     // NOLINTEND
 };
 

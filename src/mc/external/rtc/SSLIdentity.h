@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SSLIdentity();
+    virtual ~SSLIdentity() = default;
 
     // vIndex: 1
     virtual ::rtc::SSLCertificate const& certificate() const = 0;
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

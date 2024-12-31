@@ -57,28 +57,18 @@ public:
     virtual void setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler) /*override*/;
 
     // vIndex: 0
-    virtual ~RetryingRakWebSocketClient() /*override*/;
+    virtual ~RetryingRakWebSocketClient() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::WSConnectionResult $connect(::std::string const& uri);
 
-    MCAPI ::WSConnectionResult $connect(::std::string const& uri, ::std::vector<::std::string> const& subProtocols);
-
-    MCAPI void $tick();
-
-    MCAPI void $setOnMessageReceivedHandler(::std::function<void(::RakWebSocketDataFrame const&)> const& handler);
-
-    MCAPI void $setOnCloseHandler(::std::function<void(::CloseStatusCode, ::std::string const&)> const& handler);
-
-    MCAPI void $setOnConnectedHandler(::std::function<void(::std::string const&)> const& handler);
     // NOLINTEND
 };

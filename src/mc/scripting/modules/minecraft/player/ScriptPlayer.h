@@ -82,7 +82,7 @@ public:
     virtual ::ScoreboardId const& _getScoreboardId(::Scoreboard const& scoreboard) const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptPlayer() /*override*/;
+    virtual ~ScriptPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -243,7 +243,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

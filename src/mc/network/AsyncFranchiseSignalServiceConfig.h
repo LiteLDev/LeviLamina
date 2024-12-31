@@ -44,12 +44,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncFranchiseSignalServiceConfig() /*override*/;
+    virtual ~AsyncFranchiseSignalServiceConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

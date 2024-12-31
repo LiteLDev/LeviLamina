@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ITickingSystem() /*override*/;
+    virtual ~ITickingSystem() /*override*/ = default;
 
     // vIndex: 2
     virtual void tick(::EntityRegistry& registry) = 0;
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

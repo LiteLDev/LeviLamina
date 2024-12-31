@@ -62,7 +62,7 @@ public:
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
     // vIndex: 0
-    virtual ~WrittenBookItem() /*override*/;
+    virtual ~WrittenBookItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -118,7 +118,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

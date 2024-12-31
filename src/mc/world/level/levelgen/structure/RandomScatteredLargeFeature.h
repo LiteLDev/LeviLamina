@@ -72,7 +72,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~RandomScatteredLargeFeature() /*override*/;
+    virtual ~RandomScatteredLargeFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

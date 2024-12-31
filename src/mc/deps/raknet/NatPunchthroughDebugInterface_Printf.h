@@ -21,19 +21,19 @@ public:
     virtual void OnClientMessage(char const*) /*override*/;
 
     // vIndex: 0
-    virtual ~NatPunchthroughDebugInterface_Printf() /*override*/;
+    virtual ~NatPunchthroughDebugInterface_Printf() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnClientMessage(char const*);
+
     // NOLINTEND
 };
 

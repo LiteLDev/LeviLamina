@@ -28,19 +28,19 @@ public:
     virtual ::SFAT::ErrorCode moveCluster(uint, uint) /*override*/;
 
     // vIndex: 0
-    virtual ~DataPlacementStrategyBase() /*override*/;
+    virtual ~DataPlacementStrategyBase() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SFAT::ErrorCode $moveCluster(uint, uint);
+
     // NOLINTEND
 };
 

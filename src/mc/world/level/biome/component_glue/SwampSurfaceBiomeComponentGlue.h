@@ -43,13 +43,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~SwampSurfaceBiomeComponentGlue() /*override*/;
+    virtual ~SwampSurfaceBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

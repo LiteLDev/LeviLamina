@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LogSettingsUpdater();
+    virtual ~LogSettingsUpdater() = default;
 
     // vIndex: 1
     virtual void save() = 0;
@@ -112,7 +112,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

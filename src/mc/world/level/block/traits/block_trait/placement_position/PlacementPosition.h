@@ -50,13 +50,13 @@ public:
         ) const /*override*/;
 
         // vIndex: 0
-        virtual ~UpdateBlockFaceGetPlacementBlockCallback() /*override*/;
+        virtual ~UpdateBlockFaceGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -100,13 +100,13 @@ public:
         ) const /*override*/;
 
         // vIndex: 0
-        virtual ~UpdateVerticalHalfGetPlacementBlockCallback() /*override*/;
+        virtual ~UpdateVerticalHalfGetPlacementBlockCallback() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

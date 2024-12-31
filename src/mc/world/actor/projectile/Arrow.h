@@ -79,7 +79,7 @@ public:
     virtual ::mce::Color getEffectColor();
 
     // vIndex: 8
-    virtual ~Arrow() /*override*/;
+    virtual ~Arrow() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -119,7 +119,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

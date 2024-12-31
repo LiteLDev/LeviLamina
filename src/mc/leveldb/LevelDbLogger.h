@@ -16,13 +16,13 @@ public:
     virtual void Logv(char const* format, char* ap) /*override*/;
 
     // vIndex: 0
-    virtual ~LevelDbLogger() /*override*/;
+    virtual ~LevelDbLogger() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

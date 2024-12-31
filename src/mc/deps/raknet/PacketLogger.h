@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PacketLogger() /*override*/;
+    virtual ~PacketLogger() /*override*/ = default;
 
     // vIndex: 18
     virtual void FormatLine(
@@ -124,77 +124,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $FormatLine(
-        char*,
-        char const*,
-        char const*,
-        uint,
-        uint,
-        uchar,
-        uint const,
-        uint64,
-        ::RakNet::SystemAddress const&,
-        ::RakNet::SystemAddress const&,
-        uint,
-        uint,
-        uint,
-        uint
-    );
 
-    MCAPI void $FormatLine(
-        char*,
-        char const*,
-        char const*,
-        uint,
-        uint,
-        char const*,
-        uint const,
-        uint64,
-        ::RakNet::SystemAddress const&,
-        ::RakNet::SystemAddress const&,
-        uint,
-        uint,
-        uint,
-        uint
-    );
-
-    MCAPI void $OnDirectSocketSend(char const*, uint const, ::RakNet::SystemAddress);
-
-    MCAPI void $OnDirectSocketReceive(char const*, uint const, ::RakNet::SystemAddress);
-
-    MCAPI void $OnReliabilityLayerNotification(char const*, uint const, ::RakNet::SystemAddress, bool);
-
-    MCAPI void $OnInternalPacket(::RakNet::InternalPacket*, uint, ::RakNet::SystemAddress, uint, int);
-
-    MCAPI void $OnAck(uint, ::RakNet::SystemAddress, uint);
-
-    MCAPI void $OnPushBackPacket(char const*, uint const, ::RakNet::SystemAddress);
-
-    MCAPI void $LogHeader();
-
-    MCAPI void $WriteLog(char const*);
-
-    MCAPI void $WriteMiscellaneous(char const*, char const*);
-
-    MCAPI void $SetPrintID(bool);
-
-    MCAPI void $SetPrintAcks(bool);
-
-    MCAPI void $SetPrefix(char const*);
-
-    MCAPI void $SetSuffix(char const*);
-
-    MCAPI bool $UsesReliabilityLayer() const;
-
-    MCAPI void $AddToLog(char const*);
-
-    MCAPI char const* $UserIDTOString(uchar);
     // NOLINTEND
 };
 

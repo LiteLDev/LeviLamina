@@ -48,7 +48,7 @@ public:
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const /*override*/;
 
     // vIndex: 0
-    virtual ~CherrySaplingBlock() /*override*/;
+    virtual ~CherrySaplingBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

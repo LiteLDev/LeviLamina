@@ -75,7 +75,7 @@ public:
     getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context) /*override*/;
 
     // vIndex: 27
-    virtual void setCustomName(::std::string const& str) /*override*/;
+    virtual void setCustomName(::std::string const& name) /*override*/;
 
     // vIndex: 43
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
@@ -87,7 +87,7 @@ public:
     virtual bool _playerCanUpdate(::Player const& player) const /*override*/;
 
     // vIndex: 0
-    virtual ~CommandBlockActor() /*override*/;
+    virtual ~CommandBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -153,7 +153,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -178,7 +178,7 @@ public:
     MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context
     );
 
-    MCAPI void $setCustomName(::std::string const& str);
+    MCAPI void $setCustomName(::std::string const& name);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 

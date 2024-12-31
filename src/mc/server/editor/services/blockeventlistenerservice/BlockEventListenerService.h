@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockEventListenerService() /*override*/;
+    virtual ~BlockEventListenerService() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> init() /*override*/;
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

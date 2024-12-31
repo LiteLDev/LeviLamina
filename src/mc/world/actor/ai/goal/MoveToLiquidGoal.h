@@ -45,7 +45,7 @@ public:
     virtual bool findTargetBlock() /*override*/;
 
     // vIndex: 0
-    virtual ~MoveToLiquidGoal() /*override*/;
+    virtual ~MoveToLiquidGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

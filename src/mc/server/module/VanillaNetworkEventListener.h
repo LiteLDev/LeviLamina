@@ -28,18 +28,18 @@ public:
     virtual ::EventResult onEvent(::PlayerDamageEvent const&) /*override*/;
 
     // vIndex: 0
-    virtual ~VanillaNetworkEventListener() /*override*/;
+    virtual ~VanillaNetworkEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PlayerDamageEvent const&);
+
     // NOLINTEND
 };

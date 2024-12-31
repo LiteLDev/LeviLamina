@@ -51,7 +51,7 @@ public:
     virtual int size() const /*override*/;
 
     // vIndex: 0
-    virtual ~MapExtendingRecipe() /*override*/;
+    virtual ~MapExtendingRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -77,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

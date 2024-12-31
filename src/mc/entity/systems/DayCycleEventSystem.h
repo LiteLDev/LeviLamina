@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DayCycleEventSystem() /*override*/;
+    virtual ~DayCycleEventSystem() /*override*/ = default;
 
     // vIndex: 2
     virtual void tick(::EntityRegistry& registry) /*override*/;
@@ -30,12 +30,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+
     // NOLINTEND
 };

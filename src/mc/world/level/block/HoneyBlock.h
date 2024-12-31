@@ -48,7 +48,7 @@ public:
     virtual ::AABB const& getVisualShape(::Block const&, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 0
-    virtual ~HoneyBlock() /*override*/;
+    virtual ~HoneyBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

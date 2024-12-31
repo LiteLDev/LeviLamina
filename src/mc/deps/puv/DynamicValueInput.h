@@ -35,21 +35,19 @@ public:
     virtual ::Puv::Input::Data data() const /*override*/;
 
     // vIndex: 0
-    virtual ~DynamicValueInput() /*override*/;
+    virtual ~DynamicValueInput() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SemVersion $version() const;
 
-    MCAPI ::Puv::Input::Data $data() const;
     // NOLINTEND
 };
 

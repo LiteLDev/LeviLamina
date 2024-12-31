@@ -68,13 +68,13 @@ public:
     virtual ::EventResult onLevelRemovedActor(::Actor& actor) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptLevelEventListener() /*override*/;
+    virtual ~ScriptLevelEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

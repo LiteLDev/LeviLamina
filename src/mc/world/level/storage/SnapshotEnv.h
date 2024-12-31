@@ -88,7 +88,7 @@ public:
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
     // vIndex: 0
-    virtual ~SnapshotEnv() /*override*/;
+    virtual ~SnapshotEnv() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -112,7 +112,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

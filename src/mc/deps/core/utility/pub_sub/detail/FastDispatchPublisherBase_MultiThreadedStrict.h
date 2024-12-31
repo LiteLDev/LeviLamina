@@ -26,13 +26,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FastDispatchPublisherBase_MultiThreadedStrict() /*override*/;
+    virtual ~FastDispatchPublisherBase_MultiThreadedStrict() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };
 

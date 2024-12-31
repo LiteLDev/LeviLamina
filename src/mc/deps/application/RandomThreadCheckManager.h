@@ -25,7 +25,7 @@ public:
     virtual void onAppResumed() /*override*/;
 
     // vIndex: 0
-    virtual ~RandomThreadCheckManager() /*override*/;
+    virtual ~RandomThreadCheckManager() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

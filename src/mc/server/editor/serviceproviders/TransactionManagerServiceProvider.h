@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TransactionManagerServiceProvider();
+    virtual ~TransactionManagerServiceProvider() = default;
 
     // vIndex: 1
     virtual void addTransaction(::std::unique_ptr<::Editor::Transactions::TransactionContext>) = 0;
@@ -110,7 +110,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -63,7 +63,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~SystemImpl() /*override*/;
+    virtual ~SystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

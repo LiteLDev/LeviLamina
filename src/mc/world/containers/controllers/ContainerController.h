@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContainerController();
+    virtual ~ContainerController() = default;
 
     // vIndex: 1
     virtual ::ItemInstance const& getRecipeItem(int) const;
@@ -66,29 +66,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance const& $getRecipeItem(int) const;
 
-    MCAPI bool $canRemove(int, int) const;
-
-    MCAPI bool $isItemAllowed(::ItemStackBase const&) const;
-
-    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const&) const;
-
-    MCAPI int $getBackgroundStyle(int, bool) const;
-
-    MCAPI ::ItemSetType
-    $_canSet(::ContainerScreenContext const&, int, ::ItemStackBase const&, ::ItemTransferAmount) const;
-
-    MCAPI int $_getAvailableSetCount(::ContainerScreenContext const&, int, ::ItemStackBase const&) const;
-
-    MCAPI bool $_canRemove(int, int) const;
-
-    MCAPI void $_onItemChanged(int);
     // NOLINTEND
 };

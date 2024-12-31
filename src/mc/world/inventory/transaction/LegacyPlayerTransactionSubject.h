@@ -33,13 +33,13 @@ public:
     virtual bool destroyBlock(::BlockPos const& pos, uchar face) /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyPlayerTransactionSubject() /*override*/;
+    virtual ~LegacyPlayerTransactionSubject() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -36,13 +36,13 @@ public:
     virtual void _onDeleteFile(::Core::Path const&) = 0;
 
     // vIndex: 0
-    virtual ~FileStorageAreaObserver() /*override*/;
+    virtual ~FileStorageAreaObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

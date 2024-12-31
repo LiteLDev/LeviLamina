@@ -47,7 +47,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual ~ZombieVillager() /*override*/;
+    virtual ~ZombieVillager() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,15 +73,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

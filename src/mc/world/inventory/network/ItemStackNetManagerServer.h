@@ -59,7 +59,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemStackNetManagerServer() /*override*/;
+    virtual ~ItemStackNetManagerServer() /*override*/ = default;
 
     // vIndex: 2
     virtual ::ItemStackRequestId getRequestId() const /*override*/;
@@ -134,7 +134,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

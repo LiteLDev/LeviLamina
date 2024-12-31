@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkChangeObserver() /*override*/;
+    virtual ~NetworkChangeObserver() /*override*/ = default;
 
     // vIndex: 2
     virtual void onNetworkConfigurationChanged() = 0;
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

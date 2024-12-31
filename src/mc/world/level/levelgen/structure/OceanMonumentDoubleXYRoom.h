@@ -30,13 +30,13 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 0
-    virtual ~OceanMonumentDoubleXYRoom() /*override*/;
+    virtual ~OceanMonumentDoubleXYRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

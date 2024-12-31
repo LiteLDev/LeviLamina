@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseBlockLocationIterator();
+    virtual ~BaseBlockLocationIterator() = default;
 
     // vIndex: 1
     virtual ::BaseBlockLocationIterator& operator++();
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

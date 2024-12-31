@@ -39,13 +39,13 @@ public:
     virtual uint64 valueCount() const /*override*/;
 
     // vIndex: 0
-    virtual ~RemovedStringState() /*override*/;
+    virtual ~RemovedStringState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

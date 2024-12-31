@@ -49,7 +49,7 @@ public:
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 8
-    virtual ~Goat() /*override*/;
+    virtual ~Goat() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -95,7 +95,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -110,8 +110,6 @@ public:
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getDeathSound();
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
     // NOLINTEND
 
 public:

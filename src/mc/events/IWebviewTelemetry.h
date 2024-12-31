@@ -37,7 +37,7 @@ public:
     virtual void onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo) /*override*/;
 
     // vIndex: 0
-    virtual ~IWebviewTelemetry() /*override*/;
+    virtual ~IWebviewTelemetry() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

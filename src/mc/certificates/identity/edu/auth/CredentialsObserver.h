@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CredentialsObserver() /*override*/;
+    virtual ~CredentialsObserver() /*override*/ = default;
 
     // vIndex: 9
     virtual void onNotify(::edu::auth::CredentialsAcquired const&);
@@ -63,27 +63,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onNotify(::edu::auth::CredentialsAcquired const&);
 
-    MCAPI void $onNotify(::edu::auth::CredentialsRefreshSuccess const&);
-
-    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::SignInCredsRefreshFailed> const&);
-
-    MCAPI void $onNotify(::EDUConfigData const&);
-
-    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const&);
-
-    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const&);
-
-    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsExpired> const&);
-
-    MCAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::GraphCredsRefreshFailed> const&);
     // NOLINTEND
 };
 

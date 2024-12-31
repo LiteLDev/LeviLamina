@@ -56,7 +56,7 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~AncientCityFeature() /*override*/;
+    virtual ~AncientCityFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

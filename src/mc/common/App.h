@@ -42,26 +42,18 @@ public:
     virtual void initImpl() = 0;
 
     // vIndex: 0
-    virtual ~App() /*override*/;
+    virtual ~App() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
 
-    MCAPI bool $isInited();
-
-    MCAPI void $changeContext();
-
-    MCAPI void $quit(::std::string const&, ::std::string const&);
-
-    MCAPI bool $wantToQuit();
     // NOLINTEND
 };

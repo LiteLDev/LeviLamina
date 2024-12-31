@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SchemaWriter();
+    virtual ~SchemaWriter() = default;
 
     // vIndex: 12
     virtual bool write(bool, ::cereal::PropertyReader const&) = 0;
@@ -80,7 +80,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

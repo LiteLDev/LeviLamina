@@ -46,7 +46,7 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     // vIndex: 8
-    virtual ~Endermite() /*override*/;
+    virtual ~Endermite() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

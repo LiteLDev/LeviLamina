@@ -50,7 +50,7 @@ public:
     virtual uint64 hash() const /*override*/;
 
     // vIndex: 0
-    virtual ~Int64Tag() /*override*/;
+    virtual ~Int64Tag() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

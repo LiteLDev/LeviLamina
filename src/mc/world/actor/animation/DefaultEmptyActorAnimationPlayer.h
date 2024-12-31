@@ -47,32 +47,18 @@ public:
     virtual ::HashedString const& getRawName() const /*override*/;
 
     // vIndex: 0
-    virtual ~DefaultEmptyActorAnimationPlayer() /*override*/;
+    virtual ~DefaultEmptyActorAnimationPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyToPose(
-        ::RenderParams&,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
-        float
-    );
 
-    MCAPI void $resetAnimation();
-
-    MCAPI bool $hasAnimationFinished() const;
-
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const&);
-
-    MCAPI ::ActorAnimationType $getAnimationType() const;
-
-    MCAPI ::HashedString const& $getRawName() const;
     // NOLINTEND
 };

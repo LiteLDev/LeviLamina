@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IWorldRegistriesProvider();
+    virtual ~IWorldRegistriesProvider() = default;
 
     // vIndex: 2
     virtual ::BiomeRegistry const& getBiomeRegistry() const = 0;
@@ -103,7 +103,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

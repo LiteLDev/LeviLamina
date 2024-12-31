@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContentLogFileEndPoint() /*override*/;
+    virtual ~ContentLogFileEndPoint() /*override*/ = default;
 
     // vIndex: 1
     virtual void log(::LogArea const area, ::LogLevel const level, char const* message) /*override*/;
@@ -77,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

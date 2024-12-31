@@ -35,7 +35,7 @@ public:
     virtual int getCooldownTime() const /*override*/;
 
     // vIndex: 0
-    virtual ~EnderpearlItem() /*override*/;
+    virtual ~EnderpearlItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

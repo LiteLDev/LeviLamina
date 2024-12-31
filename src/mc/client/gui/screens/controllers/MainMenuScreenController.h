@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MainMenuScreenController() /*override*/;
+    virtual ~MainMenuScreenController() /*override*/ = default;
 
     // vIndex: 6
     virtual void onOpen() /*override*/;
@@ -43,14 +43,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
 
-    MCAPI void $showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)>);
     // NOLINTEND
 };

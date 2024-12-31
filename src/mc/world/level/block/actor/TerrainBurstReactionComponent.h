@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TerrainBurstReactionComponent() /*override*/;
+    virtual ~TerrainBurstReactionComponent() /*override*/ = default;
 
     // vIndex: 3
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

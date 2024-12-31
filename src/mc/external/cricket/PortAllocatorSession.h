@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PortAllocatorSession() /*override*/;
+    virtual ~PortAllocatorSession() /*override*/ = default;
 
     // vIndex: 1
     virtual void SetCandidateFilter(uint) = 0;
@@ -116,29 +116,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $IsCleared() const;
 
-    MCAPI bool $IsStopped() const;
-
-    MCAPI void $RegatherOnFailedNetworks();
-
-    MCAPI void $GetCandidateStatsFromReadyPorts(::std::vector<::cricket::CandidateStats>*) const;
-
-    MCAPI void $SetStunKeepaliveIntervalForReadyPorts(::std::optional<int> const&);
-
-    MCAPI void $PruneAllPorts();
-
-    MCAPI uint $generation();
-
-    MCAPI void $set_generation(uint);
-
-    MCAPI void $UpdateIceParametersInternal();
     // NOLINTEND
 
 public:

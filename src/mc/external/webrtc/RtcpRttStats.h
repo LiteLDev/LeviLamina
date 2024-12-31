@@ -21,13 +21,13 @@ public:
     virtual int64 LastProcessedRtt() const = 0;
 
     // vIndex: 2
-    virtual ~RtcpRttStats();
+    virtual ~RtcpRttStats() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

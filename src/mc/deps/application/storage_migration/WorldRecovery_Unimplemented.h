@@ -43,30 +43,19 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const /*override*/;
 
     // vIndex: 0
-    virtual ~WorldRecovery_Unimplemented() /*override*/;
+    virtual ~WorldRecovery_Unimplemented() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
 
-    MCAPI ::Bedrock::PubSub::DeferredSubscription $notifyOnUpdate(
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>,
-        ::std::function<void(::Bedrock::WorldRecovery::RecoveryUpdate const&)>,
-        ::Bedrock::PubSub::DeferralType
-    );
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>
-        $doRecovery(::std::string_view);
-
-    MCAPI ::Core::PathBuffer<::std::string> const& $getRecoveryDestinationPath() const;
     // NOLINTEND
 };
 

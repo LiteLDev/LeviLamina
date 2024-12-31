@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TestPackAccessStrategy() /*override*/;
+    virtual ~TestPackAccessStrategy() /*override*/ = default;
 
     // vIndex: 1
     virtual uint64 getPackSize() const /*override*/;
@@ -90,42 +90,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getPackSize() const;
 
-    MCAPI ::std::string const& $getPackName() const;
-
-    MCAPI ::ResourceLocation const& $getPackLocation() const;
-
-    MCAPI bool $isWritable() const;
-
-    MCAPI bool $isTrusted() const;
-
-    MCAPI void $setIsTrusted(bool);
-
-    MCAPI bool $hasAsset(::Core::Path const&, bool, bool) const;
-
-    MCAPI bool $hasFolder(::Core::Path const&) const;
-
-    MCAPI bool $getAsset(::Core::Path const&, ::std::string&, bool) const;
-
-    MCAPI bool $deleteAsset(::Core::Path const&);
-
-    MCAPI bool $writeAsset(::Core::Path const&, ::std::string const&);
-
-    MCAPI void $forEachIn(::Core::Path const&, ::std::function<void(::Core::Path const&)>, bool) const;
-
-    MCAPI ::PackAccessStrategyType $getStrategyType() const;
-
-    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const&) const;
-
-    MCAPI ::PackAccessAssetGenerationResult $generateAssetSet();
-
-    MCAPI void $unload();
     // NOLINTEND
 };

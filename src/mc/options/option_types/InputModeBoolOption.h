@@ -32,22 +32,18 @@ public:
     virtual void load(::std::map<::std::string, ::std::string>& propertyMap) /*override*/;
 
     // vIndex: 0
-    virtual ~InputModeBoolOption() /*override*/;
+    virtual ~InputModeBoolOption() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>&);
 
-    MCAPI void $load(::std::string const&);
-
-    MCAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
     // NOLINTEND
 };

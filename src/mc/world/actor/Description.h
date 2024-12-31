@@ -21,7 +21,7 @@ public:
     virtual char const* getJsonName() const = 0;
 
     // vIndex: 1
-    virtual ~Description();
+    virtual ~Description() = default;
 
     // vIndex: 2
     virtual void deserializeData(::DeserializeDataParams);
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

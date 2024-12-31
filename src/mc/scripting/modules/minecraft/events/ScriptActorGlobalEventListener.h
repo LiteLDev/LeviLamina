@@ -59,7 +59,7 @@ public:
     virtual ::EventResult onEvent(::ActorAddEffectEvent const& actorAddEffectEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptActorGlobalEventListener() /*override*/;
+    virtual ~ScriptActorGlobalEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

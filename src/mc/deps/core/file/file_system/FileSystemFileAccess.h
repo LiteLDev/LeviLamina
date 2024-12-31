@@ -36,13 +36,13 @@ public:
         virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const /*override*/;
 
         // vIndex: 0
-        virtual ~FileSystemFileReadAccess() /*override*/;
+        virtual ~FileSystemFileReadAccess() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -72,13 +72,13 @@ public:
         virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) /*override*/;
 
         // vIndex: 0
-        virtual ~FileSystemFileWriteAccess() /*override*/;
+        virtual ~FileSystemFileWriteAccess() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -112,7 +112,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileSystemFileAccess() /*override*/;
+    virtual ~FileSystemFileAccess() /*override*/ = default;
 
     // vIndex: 1
     virtual void* fopen(::Core::Path const& filePath, ::std::string const& mode) /*override*/;
@@ -151,7 +151,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

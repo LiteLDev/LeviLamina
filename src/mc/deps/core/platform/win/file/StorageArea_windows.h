@@ -77,7 +77,7 @@ public:
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo() /*override*/;
 
     // vIndex: 0
-    virtual ~StorageArea_windows() /*override*/;
+    virtual ~StorageArea_windows() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -95,7 +95,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

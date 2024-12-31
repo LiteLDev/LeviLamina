@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorChunkSource() /*override*/;
+    virtual ~EditorChunkSource() /*override*/ = default;
 
     // vIndex: 28
     virtual bool canCreateViews() const /*override*/;
@@ -51,22 +51,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canCreateViews() const;
 
-    MCAPI ::std::shared_ptr<::LevelChunk>
-    $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
-
-    MCAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
-
-    MCAPI ::std::shared_ptr<::LevelChunk>
-    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
-
-    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const&);
     // NOLINTEND
 };

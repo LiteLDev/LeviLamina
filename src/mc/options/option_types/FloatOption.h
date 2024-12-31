@@ -32,20 +32,18 @@ public:
     virtual void load(::std::string const&) /*override*/;
 
     // vIndex: 0
-    virtual ~FloatOption() /*override*/;
+    virtual ~FloatOption() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>&);
 
-    MCAPI void $load(::std::string const&);
     // NOLINTEND
 };

@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~CraftingInputUIContainerModel() /*override*/;
+    virtual ~CraftingInputUIContainerModel() /*override*/ = default;
 
     // vIndex: 22
     virtual int _getContainerOffset() const /*override*/;
@@ -31,12 +31,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $_getContainerOffset() const;
+
     // NOLINTEND
 };

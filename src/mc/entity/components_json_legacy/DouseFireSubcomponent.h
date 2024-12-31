@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DouseFireSubcomponent() /*override*/;
+    virtual ~DouseFireSubcomponent() /*override*/ = default;
 
     // vIndex: 1
     virtual void readfromJSON(::Json::Value&) /*override*/;
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

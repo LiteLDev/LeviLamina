@@ -37,7 +37,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~UpgraderFrom_v1_13_To_v1_20_60() /*override*/;
+    virtual ~UpgraderFrom_v1_13_To_v1_20_60() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

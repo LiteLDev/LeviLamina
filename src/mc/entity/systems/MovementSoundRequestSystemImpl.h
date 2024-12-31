@@ -77,35 +77,18 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~MovementSoundRequestSystemImpl() /*override*/;
+    virtual ~MovementSoundRequestSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<::ShouldPlayMovementSoundComponent>,
-                     ::Read<
-                         ::ActorDefinitionIdentifierComponent,
-                         ::DimensionTypeComponent,
-                         ::SoundEventPlayerComponent,
-                         ::ActorDataFlagComponent,
-                         ::StateVectorComponent,
-                         ::MovementSoundComponent,
-                         ::ClimbingLadderBlockComponent,
-                         ::CurrentlyStandingOnBlockComponent>,
-                     ::Write<>,
-                     ::AddRemove<::ShouldPlayStepSoundComponent>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>&);
 
-    MCAPI void $singleTick(::StrictExecutionContext<::Filter<::ShouldPlayMovementSoundComponent>, ::Read<::ActorDefinitionIdentifierComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent, ::ActorDataFlagComponent, ::StateVectorComponent, ::MovementSoundComponent, ::ClimbingLadderBlockComponent, ::CurrentlyStandingOnBlockComponent>, ::Write<>, ::AddRemove<::ShouldPlayStepSoundComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>&, ::StrictEntityContext&);
     // NOLINTEND
 };

@@ -39,7 +39,7 @@ public:
     virtual bool validateMobType(::Mob& mob) const /*override*/;
 
     // vIndex: 0
-    virtual ~GuardianAttackDefinition() /*override*/;
+    virtual ~GuardianAttackDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IConstBlockSource();
+    virtual ~IConstBlockSource() = default;
 
     // vIndex: 3
     virtual ::Block const& getBlock(int, int, int) const = 0;
@@ -115,7 +115,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

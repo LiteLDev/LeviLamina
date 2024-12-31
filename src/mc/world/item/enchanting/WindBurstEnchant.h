@@ -42,13 +42,13 @@ public:
     virtual bool isDiscoverable() const /*override*/;
 
     // vIndex: 0
-    virtual ~WindBurstEnchant() /*override*/;
+    virtual ~WindBurstEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -40,7 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StonecutterContainerManagerController() /*override*/;
+    virtual ~StonecutterContainerManagerController() /*override*/ = default;
 
     // vIndex: 1
     virtual void postInit(::std::weak_ptr<::ContainerManagerController>) /*override*/;
@@ -90,38 +90,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postInit(::std::weak_ptr<::ContainerManagerController>);
 
-    MCAPI bool $isOutputSlot(::std::string const&) const;
-
-    MCAPI void $handleTakeAmount(::SlotData const&, int, ::SlotData const&);
-
-    MCAPI void $handleTakeAll(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
-
-    MCAPI void $handleTakeHalf(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handlePlaceOne(::SlotData const&, ::SlotData const&);
-
-    MCAPI int
-    $handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const&) const;
-
-    MCAPI void $_onContainerScreenAction(::ContainerScreenActionResult const&);
-
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
-
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
-
-    MCAPI void
-    $_updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&);
     // NOLINTEND
 };

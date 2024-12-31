@@ -46,7 +46,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtpTransportControllerSendInterface();
+    virtual ~RtpTransportControllerSendInterface() = default;
 
     // vIndex: 1
     virtual ::webrtc::PacketRouter* packet_router() = 0;
@@ -133,7 +133,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

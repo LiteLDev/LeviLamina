@@ -91,29 +91,19 @@ public:
     virtual void set_vpn_list(::std::vector<::rtc::NetworkMask> const&);
 
     // vIndex: 0
-    virtual ~NetworkManager() /*override*/;
+    virtual ~NetworkManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Initialize();
 
-    MCAPI ::rtc::NetworkManager::EnumerationPermission $enumeration_permission() const;
-
-    MCAPI void $DumpNetworks();
-
-    MCAPI bool $GetDefaultLocalAddress(int, ::rtc::IPAddress*) const;
-
-    MCAPI ::webrtc::MdnsResponderInterface* $GetMdnsResponder() const;
-
-    MCAPI void $set_vpn_list(::std::vector<::rtc::NetworkMask> const&);
     // NOLINTEND
 
 public:

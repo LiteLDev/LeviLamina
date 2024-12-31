@@ -73,7 +73,7 @@ public:
     ) /*override*/;
 
     // vIndex: 8
-    virtual ~LeashFenceKnotActor() /*override*/;
+    virtual ~LeashFenceKnotActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -103,16 +103,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
-
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod);
-
     MCAPI float $getShadowRadius() const;
 
     MCAPI int $getWidth() const;

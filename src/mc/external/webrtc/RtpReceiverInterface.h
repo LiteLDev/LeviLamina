@@ -74,33 +74,19 @@ public:
     virtual void SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>);
 
     // vIndex: 2
-    virtual ~RtpReceiverInterface() /*override*/;
+    virtual ~RtpReceiverInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> $dtls_transport() const;
 
-    MCAPI ::std::vector<::std::string> $stream_ids() const;
-
-    MCAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> $streams() const;
-
-    MCAPI bool $SetParameters(::webrtc::RtpParameters const&);
-
-    MCAPI ::std::vector<::webrtc::RtpSource> $GetSources() const;
-
-    MCAPI void $SetFrameDecryptor(::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface>);
-
-    MCAPI ::webrtc::scoped_refptr<::webrtc::FrameDecryptorInterface> $GetFrameDecryptor() const;
-
-    MCAPI void $SetDepacketizerToDecoderFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>);
     // NOLINTEND
 };
 

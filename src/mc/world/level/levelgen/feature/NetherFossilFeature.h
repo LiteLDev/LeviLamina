@@ -33,7 +33,7 @@ public:
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
 
     // vIndex: 0
-    virtual ~NetherFossilFeature() /*override*/;
+    virtual ~NetherFossilFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -28,7 +28,7 @@ public:
     place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
 
     // vIndex: 0
-    virtual ~PointedDripstoneFeature() /*override*/;
+    virtual ~PointedDripstoneFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

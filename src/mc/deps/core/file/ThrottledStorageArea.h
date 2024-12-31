@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ThrottledStorageArea() /*override*/;
+    virtual ~ThrottledStorageArea() /*override*/ = default;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
@@ -59,23 +59,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType);
 
-    MCAPI void $tick();
-
-    MCAPI void $flushImmediately();
-
-    MCAPI void $_onTeardown();
-
-    MCAPI void $_initialize(::Scheduler&, ::WorkerPool&);
-
-    MCAPI void $_finalize();
     // NOLINTEND
 };
 

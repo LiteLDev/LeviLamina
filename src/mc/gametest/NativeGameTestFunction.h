@@ -38,21 +38,18 @@ public:
     run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const /*override*/;
 
     // vIndex: 0
-    virtual ~NativeGameTestFunction() /*override*/;
+    virtual ~NativeGameTestFunction() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionContext> $createContext(::gametest::BaseGameTestHelper&) const;
 
-    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
-    $run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext&) const;
     // NOLINTEND
 };

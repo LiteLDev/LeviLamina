@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptTickListener() /*override*/;
+    virtual ~ScriptTickListener() /*override*/ = default;
 
     // vIndex: 6
     virtual ::EventResult onLevelTickStart(::Level& level) /*override*/;
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

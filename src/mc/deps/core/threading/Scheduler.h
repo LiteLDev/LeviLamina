@@ -60,7 +60,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Scheduler() /*override*/;
+    virtual ~Scheduler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -94,7 +94,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

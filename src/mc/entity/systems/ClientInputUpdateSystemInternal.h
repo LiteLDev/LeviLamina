@@ -166,13 +166,13 @@ public:
                       ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 0
-    virtual ~ClientInputUpdateSystemInternal() /*override*/;
+    virtual ~ClientInputUpdateSystemInternal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

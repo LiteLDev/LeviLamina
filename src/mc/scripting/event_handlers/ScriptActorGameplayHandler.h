@@ -38,7 +38,7 @@ public:
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptActorGameplayHandler() /*override*/;
+    virtual ~ScriptActorGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

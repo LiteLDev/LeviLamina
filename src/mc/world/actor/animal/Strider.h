@@ -84,7 +84,7 @@ public:
     virtual void normalTick() /*override*/;
 
     // vIndex: 8
-    virtual ~Strider() /*override*/;
+    virtual ~Strider() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -110,7 +110,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompositePackSource() /*override*/;
+    virtual ~CompositePackSource() /*override*/ = default;
 
     // vIndex: 1
     virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

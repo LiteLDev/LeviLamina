@@ -83,13 +83,13 @@ public:
     virtual ::DataLoadHelperType getType() const /*override*/;
 
     // vIndex: 0
-    virtual ~DefaultDataLoadHelper() /*override*/;
+    virtual ~DefaultDataLoadHelper() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -114,10 +114,6 @@ public:
     MCAPI ::Vec3 $loadDirection(::Vec3 const& direction);
 
     MCAPI ::Direction::Type $loadDirection(::Direction::Type direction);
-
-    MCAPI ::Rotation $loadRotation(::Rotation);
-
-    MCAPI ::Mirror $loadMirror(::Mirror);
 
     MCAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 

@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SoundPlayerInterface() /*override*/;
+    virtual ~SoundPlayerInterface() /*override*/ = default;
 
     // vIndex: 1
     virtual uint64 play(::std::string const&, ::Vec3 const&, float, float) = 0;
@@ -106,7 +106,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

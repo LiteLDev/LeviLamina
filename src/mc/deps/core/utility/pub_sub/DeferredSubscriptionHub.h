@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DeferredSubscriptionHub();
+    virtual ~DeferredSubscriptionHub() = default;
 
     // vIndex: 1
     virtual uint64 runDeferredEvents(uint64) = 0;
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

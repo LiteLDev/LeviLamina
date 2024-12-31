@@ -44,7 +44,7 @@ public:
     virtual bool shouldCancel() const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptItemCustomComponentBeforeDurabilityDamageEvent() /*override*/;
+    virtual ~ScriptItemCustomComponentBeforeDurabilityDamageEvent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

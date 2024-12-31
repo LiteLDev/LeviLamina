@@ -28,23 +28,19 @@ public:
     virtual int ChromaHeight() const /*override*/;
 
     // vIndex: 2
-    virtual ~I410BufferInterface() /*override*/;
+    virtual ~I410BufferInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoFrameBuffer::Type $type() const;
 
-    MCAPI int $ChromaWidth() const;
-
-    MCAPI int $ChromaHeight() const;
     // NOLINTEND
 };
 

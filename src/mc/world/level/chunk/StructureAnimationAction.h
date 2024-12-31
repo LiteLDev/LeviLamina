@@ -46,7 +46,7 @@ public:
     virtual void serialize(::CompoundTag& tag) /*override*/;
 
     // vIndex: 0
-    virtual ~StructureAnimationAction() /*override*/;
+    virtual ~StructureAnimationAction() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -89,7 +89,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

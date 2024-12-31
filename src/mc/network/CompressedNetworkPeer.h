@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CompressedNetworkPeer() /*override*/;
+    virtual ~CompressedNetworkPeer() /*override*/ = default;
 
     // vIndex: 1
     virtual void sendPacket(
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

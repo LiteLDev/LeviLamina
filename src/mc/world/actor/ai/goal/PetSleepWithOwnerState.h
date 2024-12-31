@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PetSleepWithOwnerState();
+    virtual ~PetSleepWithOwnerState() = default;
 
     // vIndex: 1
     virtual void tick();
@@ -34,14 +34,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
-
     MCAPI void $start();
 
     MCAPI void $stop();

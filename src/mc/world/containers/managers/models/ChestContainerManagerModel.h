@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ChestContainerManagerModel() /*override*/;
+    virtual ~ChestContainerManagerModel() /*override*/ = default;
 
     // vIndex: 19
     virtual bool isValid(float pickRange) /*override*/;
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

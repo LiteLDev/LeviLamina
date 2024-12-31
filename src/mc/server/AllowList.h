@@ -72,7 +72,7 @@ public:
     virtual void deserialize(::Json::Value& root) /*override*/;
 
     // vIndex: 0
-    virtual ~AllowList() /*override*/;
+    virtual ~AllowList() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -94,7 +94,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -33,13 +33,13 @@ public:
     virtual void clearTempContentKeys() /*override*/;
 
     // vIndex: 0
-    virtual ~ServerContentKeyProvider() /*override*/;
+    virtual ~ServerContentKeyProvider() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

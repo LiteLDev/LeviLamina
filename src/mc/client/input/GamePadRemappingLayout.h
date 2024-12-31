@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GamePadRemappingLayout() /*override*/;
+    virtual ~GamePadRemappingLayout() /*override*/ = default;
 
     // vIndex: 1
     virtual void setMappingWithRawInput(::std::string const&, int, ::RawInputType) /*override*/;
@@ -65,28 +65,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMappingWithRawInput(::std::string const&, int, ::RawInputType);
 
-    MCAPI ::std::string $getMappedKeyName(int) const;
-
-    MCAPI ::std::string $getMappedKeyName(int, bool) const;
-
-    MCAPI ::std::string $getMappedKeyName(::Keymapping const&) const;
-
-    MCAPI ::std::string $getSaveString(::std::string const&) const;
-
-    MCAPI int $getAdjustedKey(int) const;
-
-    MCAPI ::std::string $getKeySpriteLocation(int, ::IconSize) const;
-
-    MCAPI ::std::string $getKeySpriteLocation(::Keymapping const&) const;
-
-    MCAPI int $_rawKeyToKey(int, ::RawInputType) const;
     // NOLINTEND
 };

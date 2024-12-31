@@ -49,7 +49,7 @@ public:
     virtual ::std::tuple<::Pos2d, ::Pos2d> _getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
 
     // vIndex: 0
-    virtual ~OceanMixerOperationNode() /*override*/;
+    virtual ~OceanMixerOperationNode() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

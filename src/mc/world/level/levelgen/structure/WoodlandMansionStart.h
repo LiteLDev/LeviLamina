@@ -39,7 +39,7 @@ public:
     virtual ::std::string_view getStructureName() const /*override*/;
 
     // vIndex: 0
-    virtual ~WoodlandMansionStart() /*override*/;
+    virtual ~WoodlandMansionStart() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

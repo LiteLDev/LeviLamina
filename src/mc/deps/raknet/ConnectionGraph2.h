@@ -73,7 +73,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ConnectionGraph2() /*override*/;
+    virtual ~ConnectionGraph2() /*override*/ = default;
 
     // vIndex: 7
     virtual void OnClosedConnection(
@@ -92,18 +92,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
 
-    MCAPI void $OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool);
-
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
     // NOLINTEND
 };
 

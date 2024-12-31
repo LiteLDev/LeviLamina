@@ -30,7 +30,7 @@ public:
     virtual ::StructurePieceType getType() const /*override*/;
 
     // vIndex: 0
-    virtual ~JunglePyramidPiece() /*override*/;
+    virtual ~JunglePyramidPiece() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -48,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -47,7 +47,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockReducer();
+    virtual ~BlockReducer() = default;
 
     // vIndex: 1
     virtual void registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

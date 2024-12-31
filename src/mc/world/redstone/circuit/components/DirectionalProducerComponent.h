@@ -31,7 +31,7 @@ public:
     allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 0
-    virtual ~DirectionalProducerComponent() /*override*/;
+    virtual ~DirectionalProducerComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

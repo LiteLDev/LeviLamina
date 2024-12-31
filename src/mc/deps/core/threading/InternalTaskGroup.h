@@ -54,13 +54,13 @@ public:
     virtual void taskComplete(::gsl::not_null<::BackgroundTaskBase*> task) /*override*/;
 
     // vIndex: 0
-    virtual ~InternalTaskGroup() /*override*/;
+    virtual ~InternalTaskGroup() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

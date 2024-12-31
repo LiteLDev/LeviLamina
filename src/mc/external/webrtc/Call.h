@@ -151,20 +151,19 @@ public:
     virtual ::webrtc::TaskQueueBase* worker_thread() const = 0;
 
     // vIndex: 26
-    virtual ~Call();
+    virtual ~Call() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoSendStream*
-        $CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig, ::std::unique_ptr<::webrtc::FecController>);
+
     // NOLINTEND
 };
 

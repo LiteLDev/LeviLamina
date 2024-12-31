@@ -30,13 +30,13 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~AddOceanTemperatureOperationNode() /*override*/;
+    virtual ~AddOceanTemperatureOperationNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

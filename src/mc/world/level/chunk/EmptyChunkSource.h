@@ -28,20 +28,18 @@ public:
     virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
 
     // vIndex: 0
-    virtual ~EmptyChunkSource() /*override*/;
+    virtual ~EmptyChunkSource() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
     // NOLINTEND
 };

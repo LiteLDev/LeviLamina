@@ -32,13 +32,13 @@ public:
     virtual bool IsOkToCallOnTheNetworkThread();
 
     // vIndex: 4
-    virtual ~DataChannelObserver();
+    virtual ~DataChannelObserver() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

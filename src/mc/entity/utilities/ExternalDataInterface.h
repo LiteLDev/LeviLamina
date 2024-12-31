@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExternalDataInterface();
+    virtual ~ExternalDataInterface() = default;
 
     // vIndex: 1
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const = 0;
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

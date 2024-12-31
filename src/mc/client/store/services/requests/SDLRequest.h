@@ -48,7 +48,7 @@ public:
     virtual void _processResponse(::Bedrock::Http::Response) = 0;
 
     // vIndex: 0
-    virtual ~SDLRequest() /*override*/;
+    virtual ~SDLRequest() /*override*/ = default;
 
     // vIndex: 2
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>> getAuthToken() /*override*/;
@@ -61,14 +61,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>> $getAuthToken();
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> $send(::std::string);
     // NOLINTEND
 };

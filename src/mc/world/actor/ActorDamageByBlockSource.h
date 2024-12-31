@@ -39,7 +39,7 @@ public:
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
 
     // vIndex: 0
-    virtual ~ActorDamageByBlockSource() /*override*/;
+    virtual ~ActorDamageByBlockSource() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

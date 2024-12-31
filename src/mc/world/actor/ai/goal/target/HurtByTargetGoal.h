@@ -34,7 +34,7 @@ public:
     virtual void alertOther(::Mob* other, ::Mob* hurtByMob);
 
     // vIndex: 0
-    virtual ~HurtByTargetGoal() /*override*/;
+    virtual ~HurtByTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

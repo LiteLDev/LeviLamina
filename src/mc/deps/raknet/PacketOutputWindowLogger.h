@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PacketOutputWindowLogger() /*override*/;
+    virtual ~PacketOutputWindowLogger() /*override*/ = default;
 
     // vIndex: 20
     virtual void WriteLog(char const*) /*override*/;
@@ -27,13 +27,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $WriteLog(char const*);
+
     // NOLINTEND
 };
 

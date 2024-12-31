@@ -29,13 +29,13 @@ public:
     virtual void applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const /*override*/;
 
     // vIndex: 0
-    virtual ~AbsorptionMobEffect() /*override*/;
+    virtual ~AbsorptionMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -32,13 +32,13 @@ public:
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 0
-    virtual ~MaterialReducerOutputValidation() /*override*/;
+    virtual ~MaterialReducerOutputValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

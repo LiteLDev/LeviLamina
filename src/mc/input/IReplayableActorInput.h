@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IReplayableActorInput();
+    virtual ~IReplayableActorInput() = default;
 
     // vIndex: 1
     virtual void advanceFrame(::EntityContext&) const = 0;
@@ -27,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

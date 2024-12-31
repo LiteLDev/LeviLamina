@@ -63,7 +63,7 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 0
-    virtual ~ChorusPlantBlock() /*override*/;
+    virtual ~ChorusPlantBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -95,7 +95,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

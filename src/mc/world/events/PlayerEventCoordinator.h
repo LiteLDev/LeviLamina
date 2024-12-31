@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerEventCoordinator() /*override*/;
+    virtual ~PlayerEventCoordinator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -105,7 +105,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

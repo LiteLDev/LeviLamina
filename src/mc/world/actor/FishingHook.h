@@ -46,7 +46,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
-    virtual ~FishingHook() /*override*/;
+    virtual ~FishingHook() /*override*/ = default;
 
     // vIndex: 11
     virtual void remove() /*override*/;
@@ -122,7 +122,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -130,15 +130,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $remove();
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
-
     MCAPI float $getShadowRadius() const;
 
     MCAPI ::ActorUniqueID $getSourceUniqueID() const;
 
     MCAPI bool $shouldDropDeathLoot() const;
-
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
     // NOLINTEND
 
 public:

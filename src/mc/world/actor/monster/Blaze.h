@@ -50,7 +50,7 @@ public:
     virtual void normalTick() /*override*/;
 
     // vIndex: 8
-    virtual ~Blaze() /*override*/;
+    virtual ~Blaze() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

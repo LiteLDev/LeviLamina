@@ -97,7 +97,7 @@ public:
     virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptFormPromiseTracker() /*override*/;
+    virtual ~ScriptFormPromiseTracker() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -131,7 +131,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

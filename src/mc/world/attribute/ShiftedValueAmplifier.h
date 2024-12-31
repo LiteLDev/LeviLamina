@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShiftedValueAmplifier() /*override*/;
+    virtual ~ShiftedValueAmplifier() /*override*/ = default;
 
     // vIndex: 1
     virtual float getAmount(int amplification, float scale) const /*override*/;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

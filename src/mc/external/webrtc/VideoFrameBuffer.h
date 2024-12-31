@@ -60,24 +60,19 @@ public:
         GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type>);
 
     // vIndex: 2
-    virtual ~VideoFrameBuffer() /*override*/;
+    virtual ~VideoFrameBuffer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::I420BufferInterface const* $GetI420() const;
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> $CropAndScale(int, int, int, int, int, int);
-
-    MCAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-        $GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type>);
     // NOLINTEND
 };
 

@@ -57,13 +57,13 @@ public:
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
     // vIndex: 0
-    virtual ~BaseRailTransporter() /*override*/;
+    virtual ~BaseRailTransporter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

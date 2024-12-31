@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkIDObject();
+    virtual ~NetworkIDObject() = default;
 
     // vIndex: 1
     virtual void SetNetworkIDManager(::RakNet::NetworkIDManager*);
@@ -53,23 +53,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetNetworkIDManager(::RakNet::NetworkIDManager*);
 
-    MCAPI ::RakNet::NetworkIDManager* $GetNetworkIDManager() const;
-
-    MCAPI uint64 $GetNetworkID();
-
-    MCAPI void $SetNetworkID(uint64);
-
-    MCAPI void $SetParent(void*);
-
-    MCAPI void* $GetParent() const;
     // NOLINTEND
 };
 

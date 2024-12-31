@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseGameTestHelper() /*override*/;
+    virtual ~BaseGameTestHelper() /*override*/ = default;
 
     // vIndex: 2
     virtual void succeedWhenEntityPresent(::ActorDefinitionIdentifier const&, int, int, int, bool) = 0;
@@ -339,7 +339,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

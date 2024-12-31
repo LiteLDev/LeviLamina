@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IEduSsoStrategy();
+    virtual ~IEduSsoStrategy() = default;
 
     // vIndex: 1
     virtual ::Json::Value clientConfig(::Json::Value const&) const = 0;
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

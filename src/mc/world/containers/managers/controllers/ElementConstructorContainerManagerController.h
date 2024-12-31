@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ElementConstructorContainerManagerController() /*override*/;
+    virtual ~ElementConstructorContainerManagerController() /*override*/ = default;
 
     // vIndex: 8
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
@@ -71,27 +71,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const&) const;
 
-    MCAPI void $handleTakeAll(::SlotData const&, ::SlotData const&);
-
-    MCAPI void $handleTakeHalf(::SlotData const&, ::SlotData const&);
-
-    MCAPI int
-    $handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
-
-    MCAPI void $handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType);
-
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
-
-    MCAPI bool $isOutputSlot(::std::string const&) const;
-
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
     // NOLINTEND
 };

@@ -28,19 +28,19 @@ public:
     virtual int StrideA() const = 0;
 
     // vIndex: 2
-    virtual ~I420ABufferInterface() /*override*/;
+    virtual ~I420ABufferInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoFrameBuffer::Type $type() const;
+
     // NOLINTEND
 };
 

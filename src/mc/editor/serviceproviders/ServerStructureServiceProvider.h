@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerStructureServiceProvider();
+    virtual ~ServerStructureServiceProvider() = default;
 
     // vIndex: 1
     virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const&) = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CandidatePairInterface();
+    virtual ~CandidatePairInterface() = default;
 
     // vIndex: 1
     virtual ::cricket::Candidate const& local_candidate() const = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

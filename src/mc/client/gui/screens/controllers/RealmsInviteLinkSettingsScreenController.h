@@ -41,7 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsInviteLinkSettingsScreenController() /*override*/;
+    virtual ~RealmsInviteLinkSettingsScreenController() /*override*/ = default;
 
     // vIndex: 2
     virtual ::ui::DirtyFlag tick() /*override*/;
@@ -53,14 +53,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI bool $_doesScreenHaveExitBehavior() const;
     // NOLINTEND
 };

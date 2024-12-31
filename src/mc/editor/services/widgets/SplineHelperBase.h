@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SplineHelperBase();
+    virtual ~SplineHelperBase() = default;
 
     // vIndex: 1
     virtual ::std::optional<::std::vector<::Vec3>>
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -196,7 +196,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CloudServer() /*override*/;
+    virtual ~CloudServer() /*override*/ = default;
 
     // vIndex: 3
     virtual void Update() /*override*/;
@@ -236,32 +236,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Update();
 
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
-
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
-
-    MCAPI void $OnRakPeerShutdown();
-
-    MCAPI void $OnPostRequest(::RakNet::Packet*);
-
-    MCAPI void $OnReleaseRequest(::RakNet::Packet*);
-
-    MCAPI void $OnGetRequest(::RakNet::Packet*);
-
-    MCAPI void $OnUnsubscribeRequest(::RakNet::Packet*);
-
-    MCAPI void $OnServerToServerGetRequest(::RakNet::Packet*);
-
-    MCAPI void $OnServerToServerGetResponse(::RakNet::Packet*);
     // NOLINTEND
 };
 

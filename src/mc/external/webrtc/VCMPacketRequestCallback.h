@@ -18,13 +18,13 @@ public:
     virtual int ResendPackets(ushort const*, ushort) = 0;
 
     // vIndex: 1
-    virtual ~VCMPacketRequestCallback();
+    virtual ~VCMPacketRequestCallback() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

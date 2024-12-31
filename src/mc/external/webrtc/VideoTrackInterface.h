@@ -53,25 +53,19 @@ public:
     virtual void set_content_hint(::webrtc::VideoTrackInterface::ContentHint);
 
     // vIndex: 0
-    virtual ~VideoTrackInterface() /*override*/;
+    virtual ~VideoTrackInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>*, ::rtc::VideoSinkWants const&);
 
-    MCAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>*);
-
-    MCAPI ::webrtc::VideoTrackInterface::ContentHint $content_hint() const;
-
-    MCAPI void $set_content_hint(::webrtc::VideoTrackInterface::ContentHint);
     // NOLINTEND
 };
 

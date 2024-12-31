@@ -51,7 +51,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~FlintAndSteelItem() /*override*/;
+    virtual ~FlintAndSteelItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

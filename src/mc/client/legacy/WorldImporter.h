@@ -65,17 +65,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $deleteWorld(::std::shared_ptr<::Social::User>, ::std::string const&, ::std::function<void()>);
 
-    MCAPI ::Core::Result $_createWorld(::Core::Path const&, uint64 const);
-
-    MCAPI void $_setupImport(::Core::Path const&);
     // NOLINTEND
 };
 

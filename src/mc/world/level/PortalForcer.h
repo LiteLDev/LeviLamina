@@ -67,7 +67,7 @@ public:
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
     // vIndex: 0
-    virtual ~PortalForcer() /*override*/;
+    virtual ~PortalForcer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -125,7 +125,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

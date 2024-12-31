@@ -30,13 +30,13 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~CalibratedSculkSensorVibrationConfig() /*override*/;
+    virtual ~CalibratedSculkSensorVibrationConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

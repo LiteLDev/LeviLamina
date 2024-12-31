@@ -30,13 +30,13 @@ public:
     virtual void load(::std::string const& valueString) /*override*/;
 
     // vIndex: 0
-    virtual ~BoolOption() /*override*/;
+    virtual ~BoolOption() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

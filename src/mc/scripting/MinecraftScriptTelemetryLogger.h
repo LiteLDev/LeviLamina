@@ -41,7 +41,7 @@ public:
     virtual void onDebuggerConnect(bool autoAttach, int retries) /*override*/;
 
     // vIndex: 0
-    virtual ~MinecraftScriptTelemetryLogger() /*override*/;
+    virtual ~MinecraftScriptTelemetryLogger() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

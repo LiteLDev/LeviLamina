@@ -35,13 +35,13 @@ public:
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
     // vIndex: 0
-    virtual ~FindActorNode() /*override*/;
+    virtual ~FindActorNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

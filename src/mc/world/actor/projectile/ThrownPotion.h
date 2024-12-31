@@ -44,7 +44,7 @@ public:
     virtual ::HashedString const& queryEntityRenderer() const /*override*/;
 
     // vIndex: 8
-    virtual ~ThrownPotion() /*override*/;
+    virtual ~ThrownPotion() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -80,7 +80,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

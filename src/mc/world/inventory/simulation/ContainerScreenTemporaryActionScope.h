@@ -16,12 +16,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContainerScreenTemporaryActionScope() /*override*/;
+    virtual ~ContainerScreenTemporaryActionScope() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

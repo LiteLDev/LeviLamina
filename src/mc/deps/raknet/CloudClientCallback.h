@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CloudClientCallback();
+    virtual ~CloudClientCallback() = default;
 
     // vIndex: 1
     virtual void OnGet(::RakNet::CloudQueryResult*, bool*);
@@ -33,15 +33,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnGet(::RakNet::CloudQueryResult*, bool*);
 
-    MCAPI void $OnSubscriptionNotification(::RakNet::CloudQueryRow*, bool, bool*);
     // NOLINTEND
 };
 

@@ -74,19 +74,19 @@ public:
     virtual void ProcessConstraints(::webrtc::VideoTrackSourceConstraints const&);
 
     // vIndex: 0
-    virtual ~VideoTrackSourceInterface() /*override*/;
+    virtual ~VideoTrackSourceInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $ProcessConstraints(::webrtc::VideoTrackSourceConstraints const&);
+
     // NOLINTEND
 };
 

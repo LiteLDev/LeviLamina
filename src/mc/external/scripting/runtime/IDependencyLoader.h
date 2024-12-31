@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDependencyLoader();
+    virtual ~IDependencyLoader() = default;
 
     // vIndex: 1
     virtual ::std::optional<::Scripting::ScriptData>
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

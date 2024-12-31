@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExternalDataServerLevel() /*override*/;
+    virtual ~ExternalDataServerLevel() /*override*/ = default;
 
     // vIndex: 1
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

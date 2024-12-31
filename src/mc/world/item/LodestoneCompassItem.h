@@ -40,7 +40,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~LodestoneCompassItem() /*override*/;
+    virtual ~LodestoneCompassItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

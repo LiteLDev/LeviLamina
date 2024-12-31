@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPlayFabEventRouter();
+    virtual ~IPlayFabEventRouter() = default;
 
     // vIndex: 1
     virtual void RouteEvent(::std::shared_ptr<::PlayFab::IPlayFabEmitEventRequest const>) const = 0;
@@ -35,7 +35,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

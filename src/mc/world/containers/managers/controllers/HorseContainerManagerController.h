@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HorseContainerManagerController() /*override*/;
+    virtual ~HorseContainerManagerController() /*override*/ = default;
 
     // vIndex: 11
     virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
@@ -38,12 +38,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
+
     // NOLINTEND
 };

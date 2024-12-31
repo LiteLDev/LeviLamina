@@ -19,7 +19,7 @@ public:
     virtual ::std::string const& getName() const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockPartVisibilityDescription() /*override*/;
+    virtual ~BlockPartVisibilityDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -31,12 +31,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+
     // NOLINTEND
 };

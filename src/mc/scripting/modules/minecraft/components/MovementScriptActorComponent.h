@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MovementScriptActorComponent() /*override*/;
+    virtual ~MovementScriptActorComponent() /*override*/ = default;
 
     // vIndex: 2
     virtual ::Scripting::Result_deprecated<float> getMaxTurn() const;
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommonBlockUtilityServiceProvider();
+    virtual ~CommonBlockUtilityServiceProvider() = default;
 
     // vIndex: 1
     virtual ::std::set<::ChunkPos> getChunksFromAABB(::AABB const&) const = 0;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

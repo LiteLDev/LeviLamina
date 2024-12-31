@@ -28,13 +28,13 @@ public:
     virtual bool isCompatibleWith(::Enchant::Type type) const /*override*/;
 
     // vIndex: 0
-    virtual ~TridentChannelingEnchant() /*override*/;
+    virtual ~TridentChannelingEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

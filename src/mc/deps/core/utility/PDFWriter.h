@@ -22,13 +22,13 @@ public:
     virtual void exportImagesToAlbum(::PDFOptions, ::std::function<void(::std::optional<::PDFError>)>) = 0;
 
     // vIndex: 1
-    virtual ~PDFWriter();
+    virtual ~PDFWriter() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

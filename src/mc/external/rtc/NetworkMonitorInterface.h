@@ -53,7 +53,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkMonitorInterface();
+    virtual ~NetworkMonitorInterface() = default;
 
     // vIndex: 1
     virtual void Start() = 0;
@@ -74,15 +74,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $SupportsBindSocketToNetwork() const;
 
-    MCAPI ::rtc::NetworkBindingResult $BindSocketToNetwork(int, ::rtc::IPAddress const&, ::std::string_view);
     // NOLINTEND
 };
 

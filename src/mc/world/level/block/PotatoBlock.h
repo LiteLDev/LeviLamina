@@ -43,7 +43,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~PotatoBlock() /*override*/;
+    virtual ~PotatoBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

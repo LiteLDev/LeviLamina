@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VideoBitrateAllocator();
+    virtual ~VideoBitrateAllocator() = default;
 
     // vIndex: 1
     virtual ::webrtc::VideoBitrateAllocation GetAllocation(uint, uint);
@@ -36,17 +36,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoBitrateAllocation $GetAllocation(uint, uint);
 
-    MCAPI ::webrtc::VideoBitrateAllocation $Allocate(::webrtc::VideoBitrateAllocationParameters);
-
-    MCAPI void $SetLegacyConferenceMode(bool);
     // NOLINTEND
 };
 

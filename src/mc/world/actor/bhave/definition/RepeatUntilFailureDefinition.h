@@ -25,13 +25,13 @@ public:
     virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
     // vIndex: 0
-    virtual ~RepeatUntilFailureDefinition() /*override*/;
+    virtual ~RepeatUntilFailureDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

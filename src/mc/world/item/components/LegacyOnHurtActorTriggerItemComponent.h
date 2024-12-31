@@ -26,13 +26,13 @@ public:
     virtual void _initializeComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyOnHurtActorTriggerItemComponent() /*override*/;
+    virtual ~LegacyOnHurtActorTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MineshaftFeature() /*override*/;
+    virtual ~MineshaftFeature() /*override*/ = default;
 
     // vIndex: 4
     virtual bool isFeatureChunk(
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

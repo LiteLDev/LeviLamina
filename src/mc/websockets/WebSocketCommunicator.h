@@ -41,7 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WebSocketCommunicator();
+    virtual ~WebSocketCommunicator() = default;
 
     // vIndex: 1
     virtual bool shouldSerialize();
@@ -65,22 +65,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldSerialize();
 
-    MCAPI void $onSerialize();
-
-    MCAPI void $onReceive(::RakWebSocketDataFrame const&);
-
-    MCAPI void $onClose(::CloseStatusCode, ::std::string const&);
-
-    MCAPI void $onConnected(::std::string const&);
-
-    MCAPI void $onPostClosed();
     // NOLINTEND
 };

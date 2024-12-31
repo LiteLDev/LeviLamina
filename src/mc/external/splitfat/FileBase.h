@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileBase();
+    virtual ~FileBase() = default;
 
     // vIndex: 1
     virtual bool isOpen() const = 0;
@@ -68,17 +68,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SFAT::ErrorCode $readAtPosition(void*, uint64, int64, uint64&);
 
-    MCAPI ::SFAT::ErrorCode $writeAtPosition(void const*, uint64, int64, uint64&);
-
-    MCAPI ::SFAT::ErrorCode $open(char const*, char const*);
     // NOLINTEND
 };
 

@@ -54,7 +54,7 @@ public:
     virtual bool doPlayLandSound() /*override*/;
 
     // vIndex: 8
-    virtual ~LavaSlime() /*override*/;
+    virtual ~LavaSlime() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -80,7 +80,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

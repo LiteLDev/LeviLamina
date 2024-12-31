@@ -38,7 +38,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~SHRightTurn() /*override*/;
+    virtual ~SHRightTurn() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

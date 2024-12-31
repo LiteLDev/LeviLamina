@@ -37,23 +37,19 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~RecursiveFIFODeferredSubscriptionHub() /*override*/;
+    virtual ~RecursiveFIFODeferredSubscriptionHub() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
 
-    MCAPI void $_enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>);
-
-    MCAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const& entry);
     // NOLINTEND
 };
 

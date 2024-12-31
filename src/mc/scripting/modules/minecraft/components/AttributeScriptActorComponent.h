@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AttributeScriptActorComponent() /*override*/;
+    virtual ~AttributeScriptActorComponent() /*override*/ = default;
 
     // vIndex: 2
     virtual ::Scripting::Result_deprecated<float> getCurrent() const;
@@ -95,7 +95,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

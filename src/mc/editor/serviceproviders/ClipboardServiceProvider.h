@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClipboardServiceProvider();
+    virtual ~ClipboardServiceProvider() = default;
 
     // vIndex: 1
     virtual ::mce::UUID const& getPrimaryItemId() = 0;
@@ -94,7 +94,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

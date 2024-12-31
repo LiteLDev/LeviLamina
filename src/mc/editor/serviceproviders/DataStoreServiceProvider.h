@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DataStoreServiceProvider();
+    virtual ~DataStoreServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Scripting::Result<void>
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

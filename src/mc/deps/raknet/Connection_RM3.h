@@ -57,7 +57,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Connection_RM3();
+    virtual ~Connection_RM3() = default;
 
     // vIndex: 1
     virtual ::RakNet::Replica3* AllocReplica(::RakNet::BitStream*, ::RakNet::ReplicaManager3*) = 0;
@@ -120,53 +120,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $GetConstructedReplicas(::DataStructures::List<::RakNet::Replica3*>&);
 
-    MCAPI void $SerializeOnDownloadStarted(::RakNet::BitStream*);
-
-    MCAPI void $DeserializeOnDownloadStarted(::RakNet::BitStream*);
-
-    MCAPI void $SerializeOnDownloadComplete(::RakNet::BitStream*);
-
-    MCAPI void $DeserializeOnDownloadComplete(::RakNet::BitStream*);
-
-    MCAPI bool $QueryGroupDownloadMessages() const;
-
-    MCAPI ::RakNet::Connection_RM3::ConstructionMode $QueryConstructionMode() const;
-
-    MCAPI void
-    $QueryReplicaList(::DataStructures::List<::RakNet::Replica3*>&, ::DataStructures::List<::RakNet::Replica3*>&);
-
-    MCAPI bool $QuerySerializationList(::DataStructures::List<::RakNet::Replica3*>&);
-
-    MCAPI ::RakNet::SendSerializeIfChangedResult $SendSerialize(
-        ::RakNet::Replica3*,
-        bool*,
-        ::RakNet::BitStream*,
-        uint64,
-        ::RakNet::PRO*,
-        ::RakNet::RakPeerInterface*,
-        uchar,
-        uint64
-    );
-
-    MCAPI ::RakNet::SendSerializeIfChangedResult $SendSerializeIfChanged(
-        ::RakNet::LastSerializationResult*,
-        ::RakNet::SerializeParameters*,
-        ::RakNet::RakPeerInterface*,
-        uchar,
-        ::RakNet::ReplicaManager3*,
-        uint64
-    );
-
-    MCAPI void
-    $SendConstruction(::DataStructures::List<::RakNet::Replica3*>&, ::DataStructures::List<::RakNet::Replica3*>&, ::RakNet::PRO, ::RakNet::RakPeerInterface*, uchar, ::RakNet::ReplicaManager3*);
     // NOLINTEND
 };
 

@@ -57,7 +57,7 @@ public:
                       ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 0
-    virtual ~ValidationSystem() /*override*/;
+    virtual ~ValidationSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

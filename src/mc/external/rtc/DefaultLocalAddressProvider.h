@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DefaultLocalAddressProvider();
+    virtual ~DefaultLocalAddressProvider() = default;
 
     // vIndex: 1
     virtual bool GetDefaultLocalAddress(int, ::rtc::IPAddress*) const = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

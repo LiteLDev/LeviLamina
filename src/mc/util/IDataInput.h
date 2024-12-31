@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDataInput();
+    virtual ~IDataInput() = default;
 
     // vIndex: 1
     virtual ::Bedrock::Result<::std::string> readStringResult() = 0;
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

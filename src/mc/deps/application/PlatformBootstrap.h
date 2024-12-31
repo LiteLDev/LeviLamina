@@ -87,7 +87,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlatformBootstrap();
+    virtual ~PlatformBootstrap() = default;
 
     // vIndex: 1
     virtual void initialize() = 0;
@@ -159,7 +159,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

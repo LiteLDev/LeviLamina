@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IServerWorldDebugRenderProxy();
+    virtual ~IServerWorldDebugRenderProxy() = default;
 
     // vIndex: 1
     virtual void renderActorsDebugServerState(::Options const&, ::Dimension const&) = 0;
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

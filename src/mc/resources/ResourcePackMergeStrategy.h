@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ResourcePackMergeStrategy();
+    virtual ~ResourcePackMergeStrategy() = default;
 
     // vIndex: 1
     virtual void mergeFiles(::std::vector<::LoadedResourceData> const&) = 0;
@@ -27,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

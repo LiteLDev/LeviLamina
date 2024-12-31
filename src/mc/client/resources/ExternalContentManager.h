@@ -96,7 +96,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ExternalContentManager() /*override*/;
+    virtual ~ExternalContentManager() /*override*/ = default;
 
     // vIndex: 1
     virtual void
@@ -106,13 +106,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $importContent(::std::shared_ptr<::ImportContext>, ::Core::PathBuffer<::std::string> const&, bool, ::LoadImportedLevelData, bool, bool, ::std::string const&);
+
     // NOLINTEND
 };

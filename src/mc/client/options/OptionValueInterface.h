@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OptionValueInterface();
+    virtual ~OptionValueInterface() = default;
 
     // vIndex: 1
     virtual ::std::vector<int> const getRenderDistanceLevels(int&) const = 0;
@@ -122,7 +122,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

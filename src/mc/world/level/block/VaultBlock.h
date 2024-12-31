@@ -54,7 +54,7 @@ public:
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
     // vIndex: 0
-    virtual ~VaultBlock() /*override*/;
+    virtual ~VaultBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

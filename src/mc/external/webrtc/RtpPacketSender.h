@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtpPacketSender();
+    virtual ~RtpPacketSender() = default;
 
     // vIndex: 1
     virtual void EnqueuePackets(::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>) = 0;
@@ -32,13 +32,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $RemovePacketsForSsrc(uint);
+
     // NOLINTEND
 };
 

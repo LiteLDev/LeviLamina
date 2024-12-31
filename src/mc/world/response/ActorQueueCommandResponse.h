@@ -43,7 +43,7 @@ public:
     virtual ::CommandOriginSystem _getCommandOriginSystem() const /*override*/;
 
     // vIndex: 0
-    virtual ~ActorQueueCommandResponse() /*override*/;
+    virtual ~ActorQueueCommandResponse() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

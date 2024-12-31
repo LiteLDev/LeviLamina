@@ -102,7 +102,7 @@ public:
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
 
     // vIndex: 0
-    virtual ~HopperBlockActor() /*override*/;
+    virtual ~HopperBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -136,7 +136,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

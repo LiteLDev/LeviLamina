@@ -35,19 +35,19 @@ public:
     virtual void SetRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting);
 
     // vIndex: 4
-    virtual ~CustomProcessing();
+    virtual ~CustomProcessing() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetRuntimeSetting(::webrtc::AudioProcessing::RuntimeSetting);
+
     // NOLINTEND
 };
 

@@ -47,7 +47,7 @@ public:
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
     // vIndex: 0
-    virtual ~WeightedPressurePlateBlock() /*override*/;
+    virtual ~WeightedPressurePlateBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

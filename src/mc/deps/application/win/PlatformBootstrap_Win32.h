@@ -79,13 +79,13 @@ public:
     rawCreateDirectory(char const* path, char* errorBuffer, uint64 errorBufferSize) /*override*/;
 
     // vIndex: 0
-    virtual ~PlatformBootstrap_Win32() /*override*/;
+    virtual ~PlatformBootstrap_Win32() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

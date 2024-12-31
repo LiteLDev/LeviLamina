@@ -183,7 +183,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~LocalPlayerFilterAutoJumpInternal() /*override*/;
+    virtual ~LocalPlayerFilterAutoJumpInternal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -290,7 +290,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

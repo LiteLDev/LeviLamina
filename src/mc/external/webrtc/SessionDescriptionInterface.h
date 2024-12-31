@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SessionDescriptionInterface();
+    virtual ~SessionDescriptionInterface() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::SessionDescriptionInterface> Clone() const;
@@ -80,17 +80,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface> $Clone() const;
 
-    MCAPI ::webrtc::SdpType $GetType() const;
-
-    MCAPI uint64 $RemoveCandidates(::std::vector<::cricket::Candidate> const&);
     // NOLINTEND
 
 public:

@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TheEndDimension() /*override*/;
+    virtual ~TheEndDimension() /*override*/ = default;
 
     // vIndex: 37
     virtual void startLeaveGame() /*override*/;
@@ -133,7 +133,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

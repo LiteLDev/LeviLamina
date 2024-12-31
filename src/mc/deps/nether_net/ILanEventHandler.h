@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ILanEventHandler();
+    virtual ~ILanEventHandler() = default;
 
     // vIndex: 4
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
@@ -41,19 +41,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
-
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const&);
-
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const&);
-
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const&);
     // NOLINTEND
 };
 

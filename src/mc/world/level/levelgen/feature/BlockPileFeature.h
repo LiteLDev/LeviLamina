@@ -36,7 +36,7 @@ public:
     virtual ::Block const& getBlockToPlace(::Random& random) const;
 
     // vIndex: 0
-    virtual ~BlockPileFeature() /*override*/;
+    virtual ~BlockPileFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

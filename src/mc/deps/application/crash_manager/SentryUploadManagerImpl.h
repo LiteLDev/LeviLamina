@@ -47,24 +47,19 @@ public:
     virtual ::std::string const& getMinidumpUploadUri() const /*override*/;
 
     // vIndex: 0
-    virtual ~SentryUploadManagerImpl() /*override*/;
+    virtual ~SentryUploadManagerImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const;
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Copyable<::Bedrock::Result<void>>>>
-    $uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const;
-
-    MCAPI ::std::string const& $getMinidumpUploadUri() const;
     // NOLINTEND
 };
 

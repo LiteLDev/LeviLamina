@@ -121,7 +121,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~CauldronBlock() /*override*/;
+    virtual ~CauldronBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -196,7 +196,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -210,10 +210,6 @@ public:
         ::std::vector<::AABB>&                             inoutBoxes,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
-
-    MCAPI ::HitResult
-    $clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
 
     MCAPI void $addAABBs(
         ::Block const&             block,

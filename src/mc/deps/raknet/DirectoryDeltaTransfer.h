@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DirectoryDeltaTransfer() /*override*/;
+    virtual ~DirectoryDeltaTransfer() /*override*/ = default;
 
     // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
@@ -45,13 +45,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
+
     // NOLINTEND
 };
 

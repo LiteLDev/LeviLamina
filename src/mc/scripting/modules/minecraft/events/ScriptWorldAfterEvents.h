@@ -123,13 +123,13 @@ public:
         virtual bool onFlushWorldAfterEvents() /*override*/;
 
         // vIndex: 0
-        virtual ~ScriptWorldAfterEventsDeferredEventListener() /*override*/;
+        virtual ~ScriptWorldAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

@@ -65,7 +65,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~EndRodBlock() /*override*/;
+    virtual ~EndRodBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -83,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

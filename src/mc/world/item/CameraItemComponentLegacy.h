@@ -52,7 +52,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CameraItemComponentLegacy() /*override*/;
+    virtual ~CameraItemComponentLegacy() /*override*/ = default;
 
     // vIndex: 8
     virtual void takePictureNow(::Player& player, ::Actor* camera, ::Actor* target) /*override*/;
@@ -114,7 +114,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

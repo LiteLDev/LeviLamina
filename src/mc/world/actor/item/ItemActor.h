@@ -53,7 +53,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     // vIndex: 8
-    virtual ~ItemActor() /*override*/;
+    virtual ~ItemActor() /*override*/ = default;
 
     // vIndex: 40
     virtual void playerTouch(::Player& player) /*override*/;
@@ -135,7 +135,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -152,8 +152,6 @@ public:
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI bool $canSynchronizeNewEntity() const;
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isFireImmune() const;
 

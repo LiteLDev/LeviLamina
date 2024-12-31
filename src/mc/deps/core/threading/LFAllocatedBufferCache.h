@@ -54,21 +54,19 @@ public:
     virtual void _deallocateBuffer(void*) /*override*/;
 
     // vIndex: 0
-    virtual ~LFAllocatedBufferCache() /*override*/;
+    virtual ~LFAllocatedBufferCache() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $_allocateBuffer();
 
-    MCAPI void $_deallocateBuffer(void*);
     // NOLINTEND
 };
 

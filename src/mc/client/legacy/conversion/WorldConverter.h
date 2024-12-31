@@ -41,7 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorldConverter();
+    virtual ~WorldConverter() = default;
 
     // vIndex: 1
     virtual ::std::shared_future<void>
@@ -60,15 +60,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setEstimatedBlobCount(uint64);
 
-    MCAPI void $setBlobNames(::std::vector<::std::string> const&);
     // NOLINTEND
 };
 

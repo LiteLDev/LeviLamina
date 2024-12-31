@@ -48,7 +48,7 @@ public:
     virtual ::Block const* tryLegacyUpgrade(ushort extraData) const /*override*/;
 
     // vIndex: 0
-    virtual ~ElementBlock() /*override*/;
+    virtual ~ElementBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -92,7 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

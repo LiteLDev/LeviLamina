@@ -57,7 +57,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual ~FireworksRocketActor() /*override*/;
+    virtual ~FireworksRocketActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -119,7 +119,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -128,8 +128,6 @@ public:
     MCAPI float $getShadowRadius() const;
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 

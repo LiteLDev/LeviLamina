@@ -38,16 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<::Bedrock::Memory::IVirtualAllocator::ReservationInfo>
-    $reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64);
 
-    MCAPI ::Bedrock::Result<void> $commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64);
-
-    MCAPI ::Bedrock::Result<void> $decommit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64);
-
-    MCAPI ::Bedrock::Result<void> $release(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64);
-
-    MCAPI ::Bedrock::Memory::IVirtualAllocator::Flags $getDefaultFlags();
     // NOLINTEND
 };
 

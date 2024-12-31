@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScreenshotGalleryHttpCall();
+    virtual ~IScreenshotGalleryHttpCall() = default;
 
     // vIndex: 1
     virtual ::std::shared_ptr<
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

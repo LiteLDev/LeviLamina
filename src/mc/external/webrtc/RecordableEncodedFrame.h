@@ -48,7 +48,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RecordableEncodedFrame();
+    virtual ~RecordableEncodedFrame() = default;
 
     // vIndex: 1
     virtual ::webrtc::scoped_refptr<::webrtc::EncodedImageBufferInterface const> encoded_buffer() const = 0;
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

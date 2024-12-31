@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AppPlatformNetworkSettings() /*override*/;
+    virtual ~AppPlatformNetworkSettings() /*override*/ = default;
 
     // vIndex: 1
     virtual bool requiresNetworkOutageMessaging() const;
@@ -25,7 +25,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

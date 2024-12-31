@@ -28,13 +28,13 @@ public:
     virtual void onEffectExpired(::Actor& target) const /*override*/;
 
     // vIndex: 0
-    virtual ~RaidOmenMobEffect() /*override*/;
+    virtual ~RaidOmenMobEffect() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISystemInterface();
+    virtual ~ISystemInterface() = default;
 
     // vIndex: 1
     virtual ::std::vector<uchar> verifyAndReadPKCS7Data(::std::string const&) const = 0;
@@ -24,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

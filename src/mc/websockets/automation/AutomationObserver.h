@@ -35,13 +35,13 @@ public:
     virtual void onDuplicateRequestCancel() = 0;
 
     // vIndex: 0
-    virtual ~AutomationObserver() /*override*/;
+    virtual ~AutomationObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

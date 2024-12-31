@@ -71,19 +71,19 @@ public:
         virtual ::Bedrock::Http::Internal::IRequestBody::ReadResult read(::gsl::span<uchar>) /*override*/;
 
         // vIndex: 0
-        virtual ~RealmUploadInfo() /*override*/;
+        virtual ~RealmUploadInfo() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar>);
+
         // NOLINTEND
     };
 
@@ -110,7 +110,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsFileUploader() /*override*/;
+    virtual ~RealmsFileUploader() /*override*/ = default;
 
     // vIndex: 1
     virtual void update() /*override*/;
@@ -144,30 +144,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
 
-    MCAPI void
-    $initFileUploader(::std::string const&, ::FileInfo const&, int, ::Json::Value const&, ::std::function<void(bool)>);
-
-    MCAPI void $uploadStream(
-        ::FileInfo const&                                               file,
-        uint64                                                          streamSize,
-        ::std::string const&                                            boundary,
-        ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
-    );
-
-    MCAPI bool $canCancelUpload(::FileInfo const&) const;
-
-    MCAPI void $cancelUpload(::FileInfo const&);
-
-    MCAPI ::UploadError $getInitErrorCode() const;
-
-    MCAPI float $getUploadProgress(::FileInfo const&) const;
     // NOLINTEND
 };

@@ -30,13 +30,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~FileStorageAreaFetcher() /*override*/;
+    virtual ~FileStorageAreaFetcher() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

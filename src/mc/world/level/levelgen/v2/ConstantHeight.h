@@ -33,13 +33,13 @@ public:
     virtual int sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const /*override*/;
 
     // vIndex: 0
-    virtual ~ConstantHeight() /*override*/;
+    virtual ~ConstantHeight() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

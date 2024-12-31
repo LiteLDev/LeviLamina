@@ -34,23 +34,18 @@ public:
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
     // vIndex: 0
-    virtual ~ObservingNetworkPeer() /*override*/;
+    virtual ~ObservingNetworkPeer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility);
 
-    MCAPI ::NetworkPeer::DataStatus
-    $receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&);
-
-    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FurnaceContainerManagerController() /*override*/;
+    virtual ~FurnaceContainerManagerController() /*override*/ = default;
 
     // vIndex: 11
     virtual void handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&) /*override*/;
@@ -45,16 +45,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handlePlaceAll(::SelectedSlotInfo const&, ::SlotData const&);
 
-    MCAPI bool $isOutputSlot(::std::string const&) const;
-
-    MCAPI void $_onItemAcquired(::ItemInstance const&, ::SlotData const&);
     // NOLINTEND
 };

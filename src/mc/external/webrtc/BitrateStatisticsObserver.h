@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BitrateStatisticsObserver();
+    virtual ~BitrateStatisticsObserver() = default;
 
     // vIndex: 1
     virtual void Notify(uint, uint, uint) = 0;
@@ -24,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

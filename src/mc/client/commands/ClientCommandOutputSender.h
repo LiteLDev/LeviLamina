@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientCommandOutputSender() /*override*/;
+    virtual ~ClientCommandOutputSender() /*override*/ = default;
 
     // vIndex: 1
     virtual void send(::CommandOrigin const& origin, ::CommandOutput const& output) /*override*/;
@@ -41,14 +41,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
-    MCAPI void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
     // NOLINTEND
 };

@@ -162,7 +162,7 @@ public:
         virtual ::Block const* setState(::BlockLegacy const&, int, int) const = 0;
 
         // vIndex: 2
-        virtual ~AlteredStateCollection();
+        virtual ~AlteredStateCollection() = default;
         // NOLINTEND
 
     public:
@@ -174,7 +174,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -242,7 +242,7 @@ public:
             /*override*/;
 
         // vIndex: 2
-        virtual ~RemovedStateCollection() /*override*/;
+        virtual ~RemovedStateCollection() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -257,7 +257,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -306,7 +306,7 @@ public:
             /*override*/;
 
         // vIndex: 2
-        virtual ~RearrangedStateCollection() /*override*/;
+        virtual ~RearrangedStateCollection() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -343,7 +343,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -1246,10 +1246,6 @@ public:
     MCAPI bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-    MCAPI ::HitResult
-    $clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
-
     MCAPI ::AABB
     $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
@@ -1313,8 +1309,6 @@ public:
     MCAPI bool $isStrippable(::Block const& srcBlock) const;
 
     MCAPI ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
-
-    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 

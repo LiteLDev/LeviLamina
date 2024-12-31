@@ -71,7 +71,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScriptWorldAfterEvents();
+    virtual ~IScriptWorldAfterEvents() = default;
 
     // vIndex: 1
     virtual ::Level& getLevel() const = 0;
@@ -263,7 +263,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

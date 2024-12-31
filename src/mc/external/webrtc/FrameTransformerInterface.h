@@ -41,25 +41,19 @@ public:
     virtual void UnregisterTransformedFrameSinkCallback(uint);
 
     // vIndex: 2
-    virtual ~FrameTransformerInterface() /*override*/;
+    virtual ~FrameTransformerInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $RegisterTransformedFrameCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>);
 
-    MCAPI void $RegisterTransformedFrameSinkCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>, uint);
-
-    MCAPI void $UnregisterTransformedFrameCallback();
-
-    MCAPI void $UnregisterTransformedFrameSinkCallback(uint);
     // NOLINTEND
 };
 

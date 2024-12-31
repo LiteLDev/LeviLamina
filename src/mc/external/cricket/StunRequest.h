@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StunRequest();
+    virtual ~StunRequest() = default;
 
     // vIndex: 1
     virtual void OnResponse(::cricket::StunMessage*);
@@ -81,21 +81,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnResponse(::cricket::StunMessage*);
 
-    MCAPI void $OnErrorResponse(::cricket::StunMessage*);
-
-    MCAPI void $OnTimeout();
-
-    MCAPI void $OnSent();
-
-    MCAPI int $resend_delay();
     // NOLINTEND
 
 public:

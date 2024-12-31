@@ -50,7 +50,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OverworldHeightBiomeJsonComponent() /*override*/;
+    virtual ~OverworldHeightBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

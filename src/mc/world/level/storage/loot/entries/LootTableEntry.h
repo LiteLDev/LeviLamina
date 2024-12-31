@@ -33,13 +33,13 @@ public:
         /*override*/;
 
     // vIndex: 1
-    virtual ~LootTableEntry() /*override*/;
+    virtual ~LootTableEntry() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

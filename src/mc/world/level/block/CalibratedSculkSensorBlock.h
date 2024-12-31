@@ -36,7 +36,7 @@ public:
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
-    virtual ~CalibratedSculkSensorBlock() /*override*/;
+    virtual ~CalibratedSculkSensorBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

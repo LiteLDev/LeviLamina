@@ -67,19 +67,19 @@ public:
     virtual bool ActiveProcessing() const = 0;
 
     // vIndex: 8
-    virtual ~EchoControl();
+    virtual ~EchoControl() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetCaptureOutputUsage(bool);
+
     // NOLINTEND
 };
 

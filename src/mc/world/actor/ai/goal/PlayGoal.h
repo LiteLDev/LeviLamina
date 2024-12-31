@@ -47,7 +47,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~PlayDefinition() /*override*/;
+        virtual ~PlayDefinition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -71,7 +71,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -125,7 +125,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~PlayGoal() /*override*/;
+    virtual ~PlayGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -143,7 +143,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

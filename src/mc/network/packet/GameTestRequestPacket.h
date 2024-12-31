@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameTestRequestPacket() /*override*/;
+    virtual ~GameTestRequestPacket() /*override*/ = default;
 
     // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -24,13 +24,13 @@ public:
     virtual ::ContainerValidationResult tryActivate() /*override*/;
 
     // vIndex: 0
-    virtual ~ContainerScreenValidationActivate() /*override*/;
+    virtual ~ContainerScreenValidationActivate() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

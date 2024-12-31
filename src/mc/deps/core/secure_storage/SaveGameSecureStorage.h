@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SaveGameSecureStorage() /*override*/;
+    virtual ~SaveGameSecureStorage() /*override*/ = default;
 
     // vIndex: 1
     virtual bool add(::std::string const&, ::std::string const&) /*override*/;
@@ -42,18 +42,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $add(::std::string const&, ::std::string const&);
 
-    MCAPI bool $addOrUpdate(::std::string const&, ::std::string const&);
-
-    MCAPI bool $remove(::std::string const&);
-
-    MCAPI bool $get(::std::string const&, ::std::string&);
     // NOLINTEND
 };

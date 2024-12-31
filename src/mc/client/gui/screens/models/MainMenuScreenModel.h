@@ -42,7 +42,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MainMenuScreenModel() /*override*/;
+    virtual ~MainMenuScreenModel() /*override*/ = default;
 
     // vIndex: 1
     virtual void navigateToDlcProgressScreen(
@@ -107,44 +107,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $navigateToDlcProgressScreen(::std::vector<::DlcId> const&, ::std::function<void(bool, bool)>, bool, bool, bool);
 
-    MCAPI void
-    $navigateToDisconnectScreen(::std::string const&, ::std::string const&, ::Connection::DisconnectFailReason);
-
-    MCAPI ::std::string const& $getLastPoppedScreenName() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalogRepository() const;
-
-    MCAPI bool $doesPlatformSupportRealms() const;
-
-    MCAPI bool $isSelectedSkinInitialized() const;
-
-    MCAPI void $repopulateWorldTemplates();
-
-    MCAPI ::WorldTemplateInfo const* $findWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const;
-
-    MCAPI ::WorldTemplateInfo* $findWorldTemplateByPackUUIDNonConst(::std::vector<::mce::UUID> const&) const;
-
-    MCAPI bool $isPackIdInRealmsPlus(::std::string const&) const;
-
-    MCAPI float $getStoreNetworkFailureTimeout() const;
-
-    MCAPI bool $isInGame() const;
-
-    MCAPI ::IMinecraftEventing& $getMinecraftEventing() const;
-
-    MCAPI bool $isAdhocEnabled() const;
-
-    MCAPI bool $isNetworkEnabled(::NetworkFilter) const;
-
-    MCAPI bool $platformTTSExists() const;
     // NOLINTEND
 };

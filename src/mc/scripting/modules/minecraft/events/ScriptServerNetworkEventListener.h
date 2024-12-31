@@ -39,13 +39,13 @@ public:
     virtual ::EventResult onMessage(::MessageEvent const& messageEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptServerNetworkEventListener() /*override*/;
+    virtual ~ScriptServerNetworkEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

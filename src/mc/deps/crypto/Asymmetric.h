@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Asymmetric() /*override*/;
+    virtual ~Asymmetric() /*override*/ = default;
 
     // vIndex: 1
     virtual bool generateKeyPair(::std::string& privateKey, ::std::string& publicKey) /*override*/;
@@ -88,7 +88,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

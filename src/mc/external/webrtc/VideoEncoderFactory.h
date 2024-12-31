@@ -48,7 +48,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~EncoderSelectorInterface();
+        virtual ~EncoderSelectorInterface() = default;
 
         // vIndex: 1
         virtual void OnCurrentEncoder(::webrtc::SdpVideoFormat const&) = 0;
@@ -66,13 +66,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::optional<::webrtc::SdpVideoFormat> $OnResolutionChange(::webrtc::RenderResolution const&);
+
         // NOLINTEND
     };
 
@@ -106,29 +106,19 @@ public:
     virtual ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> GetEncoderSelector() const;
 
     // vIndex: 6
-    virtual ~VideoEncoderFactory();
+    virtual ~VideoEncoderFactory() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::webrtc::SdpVideoFormat> $GetImplementations() const;
 
-    MCAPI ::webrtc::VideoEncoderFactory::CodecSupport
-    $QueryCodecSupport(::webrtc::SdpVideoFormat const&, ::std::optional<::std::string>) const;
-
-    MCAPI ::std::unique_ptr<::webrtc::VideoEncoder>
-    $Create(::webrtc::Environment const&, ::webrtc::SdpVideoFormat const&);
-
-    MCAPI ::std::unique_ptr<::webrtc::VideoEncoder> $CreateVideoEncoder(::webrtc::SdpVideoFormat const&);
-
-    MCAPI ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> $GetEncoderSelector() const;
     // NOLINTEND
 };
 

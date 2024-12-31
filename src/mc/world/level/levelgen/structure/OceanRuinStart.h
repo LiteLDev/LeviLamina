@@ -31,7 +31,7 @@ public:
     virtual ::std::string_view getStructureName() const /*override*/;
 
     // vIndex: 0
-    virtual ~OceanRuinStart() /*override*/;
+    virtual ~OceanRuinStart() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -31,7 +31,7 @@ public:
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 0
-    virtual ~CartographyTableBlock() /*override*/;
+    virtual ~CartographyTableBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

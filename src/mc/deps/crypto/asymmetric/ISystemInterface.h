@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISystemInterface();
+    virtual ~ISystemInterface() = default;
 
     // vIndex: 1
     virtual bool generateKeyPair(::std::string&, ::std::string&) = 0;
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

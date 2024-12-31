@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ParticleSystemInterface();
+    virtual ~ParticleSystemInterface() = default;
 
     // vIndex: 1
     virtual float getDistanceToCameraSqr(::Vec3 const&) const = 0;
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

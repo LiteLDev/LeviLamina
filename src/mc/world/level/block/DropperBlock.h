@@ -25,7 +25,7 @@ public:
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
-    virtual ~DropperBlock() /*override*/;
+    virtual ~DropperBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

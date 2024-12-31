@@ -29,19 +29,19 @@ public:
     virtual void StartShortCircuiting();
 
     // vIndex: 2
-    virtual ~TransformedFrameCallback() /*override*/;
+    virtual ~TransformedFrameCallback() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $StartShortCircuiting();
+
     // NOLINTEND
 };
 

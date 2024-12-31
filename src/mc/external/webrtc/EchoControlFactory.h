@@ -23,13 +23,13 @@ public:
     virtual ::std::unique_ptr<::webrtc::EchoControl> Create(int, int, int) = 0;
 
     // vIndex: 1
-    virtual ~EchoControlFactory();
+    virtual ~EchoControlFactory() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ICameraItemComponent();
+    virtual ~ICameraItemComponent() = default;
 
     // vIndex: 1
     virtual float blackBarsDuration() const = 0;
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

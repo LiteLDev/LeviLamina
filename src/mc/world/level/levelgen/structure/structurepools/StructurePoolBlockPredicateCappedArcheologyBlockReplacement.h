@@ -48,7 +48,7 @@ public:
     virtual bool operator!=(::StructurePoolBlockPredicateCappedArcheologyBlockReplacement const& other) const;
 
     // vIndex: 0
-    virtual ~StructurePoolBlockPredicateCappedArcheologyBlockReplacement() /*override*/;
+    virtual ~StructurePoolBlockPredicateCappedArcheologyBlockReplacement() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

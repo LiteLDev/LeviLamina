@@ -98,7 +98,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScreenController() /*override*/;
+    virtual ~ScreenController() /*override*/ = default;
 
     // vIndex: 2
     virtual ::ui::DirtyFlag tick() /*override*/;
@@ -225,91 +225,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $preFrameTick();
-
-    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent&);
-
-    MCAPI ::std::optional<::std::string> $getRoute() const;
-
-    MCAPI void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
-
-    MCAPI void $onOpen();
-
-    MCAPI void $queueTitleNarration();
-
-    MCAPI void $onTerminate();
-
-    MCAPI void $onInit();
-
-    MCAPI void $onDelete();
-
-    MCAPI bool $canExit();
-
-    MCAPI ::ui::ViewRequest $tryExit();
-
-    MCAPI void $onCreation();
-
-    MCAPI void $onReload();
-
-    MCAPI void $onLeave();
-
-    MCAPI void $leaveScreen(::std::string const&);
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification);
-
-    MCAPI bool
-    $bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
-
-    MCAPI bool $bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
-
-    MCAPI void $handleLicenseChanged();
-
-    MCAPI void $onDictationEvent(::std::string const&);
-
-    MCAPI void $setAssociatedBlockPos(::BlockPos const&);
-
-    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const);
-
-    MCAPI void $setSuspendInput(bool);
-
-    MCAPI void $setSuspendDirectionalInput(bool);
-
-    MCAPI void $setViewCommand(::ScreenViewCommand const&);
-
-    MCAPI void $addStaticScreenVars(::Json::Value&);
-
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
-
-    MCAPI ::std::string $getTelemetryOverride() const;
-
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
-
-    MCAPI ::ui::SceneType $getSceneType() const;
-
-    MCAPI int $getScreenVersion() const;
-
-    MCAPI uint $getSceneId() const;
-
-    MCAPI bool $screenHandlesGamepadMenuButton() const;
-
-    MCAPI ::ScreenControllerProxy* $getProxy();
-
-    MCAPI void $onEntered();
-
-    MCAPI void $onScreenPushedAbove();
-
-    MCAPI void $onEntering();
-
-    MCAPI bool $_doesScreenHaveExitBehavior() const;
-
-    MCAPI bool $_isContainerScreen() const;
     // NOLINTEND
 };

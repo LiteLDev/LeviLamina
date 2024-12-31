@@ -43,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Identity();
+    virtual ~Identity() = default;
 
     // vIndex: 1
     virtual ::Social::IdentityEventResponse initialize(::std::weak_ptr<::Social::User>);
@@ -229,132 +229,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Social::IdentityEventResponse $initialize(::std::weak_ptr<::Social::User>);
 
-    MCAPI void $tick();
-
-    MCAPI void $signIn(::Social::IdentitySignInProperties const&);
-
-    MCAPI void $cancelSignIn();
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> $signOut();
-
-    MCAPI void $doDisconnect();
-
-    MCAPI bool $isSignedIn() const;
-
-    MCAPI bool $isNewAccount() const;
-
-    MCAPI bool $isSignInInProgress() const;
-
-    MCAPI bool $isGuest() const;
-
-    MCAPI bool $isRemote() const;
-
-    MCAPI void $onDisplayNameUpdate(::std::string const&);
-
-    MCAPI ::gsl::span<::Social::IdentityType const> $getDependencies() const;
-
-    MCAPI ::Social::IdentityEventResponse $onIdentitySignIn(::Social::Identity&);
-
-    MCAPI ::Social::IdentityEventResponse $onIdentitySignOut(::Social::IdentityType);
-
-    MCAPI ::std::string const& $getId() const;
-
-    MCAPI ::Social::PlayerIDs $getIds() const;
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Social::AuthToken>>
-    $getAuthToken(::std::string const&) const;
-
-    MCAPI void $getUserDataObject(::Social::IUserDataObject&) const;
-
-    MCAPI void $setUserDataObject(::Social::IUserDataObject const&);
-
-    MCAPI ::Social::UserData const $getUserData(::std::string const&) const;
-
-    MCAPI void $setUserData(::std::string const&, ::Social::UserData const&);
-
-    MCAPI bool $hasCachedCredentials() const;
-
-    MCAPI void $clearCachedCredentials();
-
-    MCAPI ::std::string const& $getDisplayName() const;
-
-    MCAPI void $setPresence(::std::string const&);
-
-    MCAPI void $clearPresence();
-
-    MCAPI bool $hasPlayedLegacyGame() const;
-
-    MCAPI bool $getLegacyOptionsData(::std::vector<uchar>&);
-
-    MCAPI void $checkIsLegacyPlayer(::std::weak_ptr<::Social::User>);
-
-    MCAPI bool $hasPremiumPlatformAccess() const;
-
-    MCAPI void $checkPremiumPlatformStatusAsync(::std::function<void(bool)>);
-
-    MCAPI bool $hasPlatformIcons() const;
-
-    MCAPI bool $hasPlatformProfileCards() const;
-
-    MCAPI ::std::string $getPlatformId() const;
-
-    MCAPI ::std::string $getPlatformOfflineID() const;
-
-    MCAPI ::std::string $getPlatformOnlineID() const;
-
-    MCAPI ::Social::PermissionDenyReason $isMultiplayerAllowed() const;
-
-    MCAPI ::Social::PermissionDenyReason $isChatAllowed() const;
-
-    MCAPI ::Social::PermissionDenyReason $isAddFriendAllowed() const;
-
-    MCAPI ::Social::PermissionDenyReason $isUserGeneratedContentAllowed() const;
-
-    MCAPI ::Social::PermissionDenyReason $isCreateAndJoinClubsAllowed() const;
-
-    MCAPI ::Social::PermissionDenyReason $isViewingProfilesAllowed() const;
-
-    MCAPI ::Social::PermissionDenyReason $isUploadCapturesAllowed() const;
-
-    MCAPI int $addPermissionsChangeListener(::std::function<void()>);
-
-    MCAPI void $removePermissionsChangeListener(int);
-
-    MCAPI bool $isPlatformParentalControlsEnabled() const;
-
-    MCAPI void $refreshPlatformParentalControlsSetting();
-
-    MCAPI void $refreshFriendListProfileDataIfAllowed();
-
-    MCAPI bool $isBlockingUser(::std::string const&) const;
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Social::PlatformUserProfileData>>
-    $getProfile(::std::string const&);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::vector<::Social::PlatformUserProfileData>>>
-    $getProfiles(::std::vector<::std::string> const&);
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::vector<::Social::PlatformUserProfileData>>>
-    $getFriendProfiles();
-
-    MCAPI void $pruneProfileImageCache();
-
-    MCAPI void $getLinkedXuids(
-        ::std::function<void(::std::string, ::std::string)>,
-        ::std::vector<::std::string> const&,
-        ::std::shared_ptr<::Social::Identity> const
-    );
-
-    MCAPI void
-    $getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&);
     // NOLINTEND
 };
 

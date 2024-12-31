@@ -64,7 +64,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~DecoratedPotBlock() /*override*/;
+    virtual ~DecoratedPotBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -93,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -47,13 +47,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~PredictiveContainer();
+        virtual ~PredictiveContainer() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -74,13 +74,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~OwningPredictiveContainer() /*override*/;
+        virtual ~OwningPredictiveContainer() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -138,7 +138,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemStackNetManagerClient() /*override*/;
+    virtual ~ItemStackNetManagerClient() /*override*/ = default;
 
     // vIndex: 8
     virtual ::SparseContainer*
@@ -164,22 +164,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
-    MCAPI ::ItemStackRequestId $getRequestId() const;
-
-    MCAPI bool $allowInventoryTransactionManager() const;
-
-    MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
-
-    MCAPI void $_addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::ContainerType, int);
-
-    MCAPI void $_initScreen(::ItemStackNetManagerScreen&);
     // NOLINTEND
 };

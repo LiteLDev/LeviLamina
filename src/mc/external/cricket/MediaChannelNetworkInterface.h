@@ -40,13 +40,13 @@ public:
     virtual int SetOption(::cricket::MediaChannelNetworkInterface::SocketType, ::rtc::Socket::Option, int) = 0;
 
     // vIndex: 3
-    virtual ~MediaChannelNetworkInterface();
+    virtual ~MediaChannelNetworkInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

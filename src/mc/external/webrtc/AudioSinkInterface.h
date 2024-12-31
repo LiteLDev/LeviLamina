@@ -40,7 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AudioSinkInterface();
+    virtual ~AudioSinkInterface() = default;
 
     // vIndex: 1
     virtual void OnData(::webrtc::AudioSinkInterface::Data const&) = 0;
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

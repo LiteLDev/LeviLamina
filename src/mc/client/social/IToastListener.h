@@ -27,13 +27,13 @@ public:
     virtual void refreshToast() = 0;
 
     // vIndex: 3
-    virtual ~IToastListener();
+    virtual ~IToastListener() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

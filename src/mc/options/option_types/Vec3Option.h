@@ -37,22 +37,18 @@ public:
     virtual void load(::Json::Value const& valueJson) /*override*/;
 
     // vIndex: 0
-    virtual ~Vec3Option() /*override*/;
+    virtual ~Vec3Option() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>&);
 
-    MCAPI void $load(::std::string const&);
-
-    MCAPI void $load(::Json::Value const& valueJson);
     // NOLINTEND
 };

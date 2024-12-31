@@ -39,7 +39,7 @@ public:
     virtual void HandleIncomingConnection(::rtc::Socket*);
 
     // vIndex: 0
-    virtual ~AsyncTcpListenSocket() /*override*/;
+    virtual ~AsyncTcpListenSocket() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,17 +59,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::rtc::AsyncListenSocket::State $GetState() const;
 
-    MCAPI ::rtc::SocketAddress $GetLocalAddress() const;
-
-    MCAPI void $HandleIncomingConnection(::rtc::Socket*);
     // NOLINTEND
 
 public:

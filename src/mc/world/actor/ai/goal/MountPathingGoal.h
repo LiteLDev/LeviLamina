@@ -35,7 +35,7 @@ public:
     virtual float _getAttackReachSqr();
 
     // vIndex: 0
-    virtual ~MountPathingGoal() /*override*/;
+    virtual ~MountPathingGoal() /*override*/ = default;
 
     // vIndex: 1
     virtual bool canUse() /*override*/;
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

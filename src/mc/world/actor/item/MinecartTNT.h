@@ -49,7 +49,7 @@ public:
     virtual float causeFallDamageToActor(float distance, float, ::ActorDamageSource) /*override*/;
 
     // vIndex: 8
-    virtual ~MinecartTNT() /*override*/;
+    virtual ~MinecartTNT() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -83,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -92,8 +92,6 @@ public:
     MCAPI void $normalTick();
 
     MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI ::MinecartType $getType();
 

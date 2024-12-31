@@ -65,7 +65,7 @@ public:
         /*override*/;
 
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
@@ -74,7 +74,7 @@ public:
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
 
     // vIndex: 0
-    virtual ~SparklerItem() /*override*/;
+    virtual ~SparklerItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -100,7 +100,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -114,7 +114,7 @@ public:
 
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI bool $isHandEquipped() const;
 

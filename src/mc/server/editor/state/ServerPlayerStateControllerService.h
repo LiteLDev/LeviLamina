@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerPlayerStateControllerService() /*override*/;
+    virtual ~ServerPlayerStateControllerService() /*override*/ = default;
 
     // vIndex: 2
     virtual ::Scripting::Result<void> ready() /*override*/;
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

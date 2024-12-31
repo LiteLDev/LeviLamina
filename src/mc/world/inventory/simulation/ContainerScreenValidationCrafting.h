@@ -33,7 +33,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~ContainerScreenValidationCrafting() /*override*/;
+    virtual ~ContainerScreenValidationCrafting() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

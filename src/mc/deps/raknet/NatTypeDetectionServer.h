@@ -81,7 +81,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NatTypeDetectionServer() /*override*/;
+    virtual ~NatTypeDetectionServer() /*override*/ = default;
 
     // vIndex: 3
     virtual void Update() /*override*/;
@@ -109,24 +109,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Update();
 
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
-
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
-
-    MCAPI void $OnRNS2Recv(::RakNet::RNS2RecvStruct*);
-
-    MCAPI void $DeallocRNS2RecvStruct(::RakNet::RNS2RecvStruct*, char const*, uint);
-
-    MCAPI ::RakNet::RNS2RecvStruct* $AllocRNS2RecvStruct(char const*, uint);
     // NOLINTEND
 };
 

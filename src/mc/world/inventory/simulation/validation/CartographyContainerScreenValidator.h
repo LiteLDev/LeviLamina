@@ -35,13 +35,13 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~CartographyContainerScreenValidator() /*override*/;
+    virtual ~CartographyContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

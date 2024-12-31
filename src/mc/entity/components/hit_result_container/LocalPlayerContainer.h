@@ -38,23 +38,19 @@ public:
     virtual ::gsl::span<::std::pair<::HitResult, ::HitResult> const> getHits() const /*override*/;
 
     // vIndex: 0
-    virtual ~LocalPlayerContainer() /*override*/;
+    virtual ~LocalPlayerContainer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addHitResult(::HitResult, ::HitResult);
 
-    MCAPI void $clear();
-
-    MCAPI ::gsl::span<::std::pair<::HitResult, ::HitResult> const> $getHits() const;
     // NOLINTEND
 };
 

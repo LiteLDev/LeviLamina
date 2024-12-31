@@ -33,13 +33,13 @@ public:
     virtual int StrideV() const = 0;
 
     // vIndex: 2
-    virtual ~PlanarYuvBuffer() /*override*/;
+    virtual ~PlanarYuvBuffer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

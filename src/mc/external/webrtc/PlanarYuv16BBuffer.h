@@ -27,13 +27,13 @@ public:
     virtual ushort const* DataV() const = 0;
 
     // vIndex: 2
-    virtual ~PlanarYuv16BBuffer() /*override*/;
+    virtual ~PlanarYuv16BBuffer() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

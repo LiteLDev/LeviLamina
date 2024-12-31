@@ -114,7 +114,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~SweetBerryBushBlock() /*override*/;
+    virtual ~SweetBerryBushBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -142,7 +142,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

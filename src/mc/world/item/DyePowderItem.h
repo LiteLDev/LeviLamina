@@ -45,7 +45,7 @@ public:
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 0
-    virtual ~DyePowderItem() /*override*/;
+    virtual ~DyePowderItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftHandlerAnvil() /*override*/;
+    virtual ~CraftHandlerAnvil() /*override*/ = default;
 
     // vIndex: 4
     virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
@@ -45,16 +45,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const&);
 
-    MCAPI void $_postCraftRequest(bool const wasSuccess);
-
-    MCAPI ::Recipes const* $_getLevelRecipes() const;
     // NOLINTEND
 };

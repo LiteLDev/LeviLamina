@@ -52,13 +52,13 @@ public:
     virtual ::webrtc::EchoDetector::Metrics GetMetrics() const = 0;
 
     // vIndex: 2
-    virtual ~EchoDetector() /*override*/;
+    virtual ~EchoDetector() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

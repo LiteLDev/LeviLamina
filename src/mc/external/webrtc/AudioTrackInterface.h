@@ -41,21 +41,19 @@ public:
     virtual ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> GetAudioProcessor();
 
     // vIndex: 2
-    virtual ~AudioTrackInterface() /*override*/;
+    virtual ~AudioTrackInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $GetSignalLevel(int*);
 
-    MCAPI ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> $GetAudioProcessor();
     // NOLINTEND
 };
 

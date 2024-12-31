@@ -423,8 +423,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
-
     MCAPI void $tearDown();
 
     MCAPI bool $isComponentBased() const;
@@ -538,15 +536,11 @@ public:
 
     MCAPI int $getCooldownTime() const;
 
-    MCAPI ::ActorLocation $getEquipLocation() const;
-
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCAPI bool $useVariant(int, int, bool) const;
 
     MCAPI int $getVariant(int, int, bool) const;
-
-    MCAPI void $initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
 

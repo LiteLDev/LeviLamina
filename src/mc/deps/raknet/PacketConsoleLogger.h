@@ -35,21 +35,19 @@ public:
     virtual void WriteLog(char const*) /*override*/;
 
     // vIndex: 0
-    virtual ~PacketConsoleLogger() /*override*/;
+    virtual ~PacketConsoleLogger() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetLogCommandParser(::RakNet::LogCommandParser*);
 
-    MCAPI void $WriteLog(char const*);
     // NOLINTEND
 };
 

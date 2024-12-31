@@ -28,13 +28,13 @@ public:
     handleEvent(::ScriptingGameplayEvent<::CoordinatorResult> const&) = 0;
 
     // vIndex: 0
-    virtual ~ScriptingEventHandler() /*override*/;
+    virtual ~ScriptingEventHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

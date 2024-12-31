@@ -143,13 +143,13 @@ public:
         virtual bool isOnGround() const /*override*/;
 
         // vIndex: 0
-        virtual ~MoveHistoryItem() /*override*/;
+        virtual ~MoveHistoryItem() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -223,31 +223,19 @@ public:
         virtual bool isOnGround() const /*override*/;
 
         // vIndex: 0
-        virtual ~MotionHistoryItem() /*override*/;
+        virtual ~MotionHistoryItem() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $isValidStartItem() const;
 
-        MCAPI bool $isAddedActorItem() const;
-
-        MCAPI bool $isMotionHintItem() const;
-
-        MCAPI ::Vec3 const& $getPos() const;
-
-        MCAPI ::Vec2 const& $getRot() const;
-
-        MCAPI float $getYHeadRot() const;
-
-        MCAPI bool $isOnGround() const;
         // NOLINTEND
     };
 
@@ -370,7 +358,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~RuntimePredictionData();
+        virtual ~RuntimePredictionData() = default;
         // NOLINTEND
 
     public:
@@ -382,7 +370,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

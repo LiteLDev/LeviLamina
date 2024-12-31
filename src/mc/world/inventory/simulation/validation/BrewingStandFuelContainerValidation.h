@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BrewingStandFuelContainerValidation() /*override*/;
+    virtual ~BrewingStandFuelContainerValidation() /*override*/ = default;
 
     // vIndex: 2
     virtual bool
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

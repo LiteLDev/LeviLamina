@@ -34,13 +34,13 @@ public:
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
 
     // vIndex: 0
-    virtual ~HotbarContainerValidation() /*override*/;
+    virtual ~HotbarContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

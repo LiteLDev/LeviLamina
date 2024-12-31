@@ -36,7 +36,7 @@ public:
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 8
-    virtual ~PolarBear() /*override*/;
+    virtual ~PolarBear() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

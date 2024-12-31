@@ -68,7 +68,7 @@ public:
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 0
-    virtual ~CocoaBlock() /*override*/;
+    virtual ~CocoaBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -94,7 +94,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

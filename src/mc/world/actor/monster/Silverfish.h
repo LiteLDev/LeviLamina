@@ -44,7 +44,7 @@ public:
     virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
-    virtual ~Silverfish() /*override*/;
+    virtual ~Silverfish() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,14 +70,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
-
     MCAPI bool $isDarkEnoughToSpawn() const;
 
     MCAPI void $spawnAnim();

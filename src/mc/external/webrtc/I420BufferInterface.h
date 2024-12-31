@@ -35,27 +35,19 @@ public:
     virtual ::webrtc::I420BufferInterface const* GetI420() const /*override*/;
 
     // vIndex: 2
-    virtual ~I420BufferInterface() /*override*/;
+    virtual ~I420BufferInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoFrameBuffer::Type $type() const;
 
-    MCAPI int $ChromaWidth() const;
-
-    MCAPI int $ChromaHeight() const;
-
-    MCAPI ::webrtc::scoped_refptr<::webrtc::I420BufferInterface> $ToI420();
-
-    MCAPI ::webrtc::I420BufferInterface const* $GetI420() const;
     // NOLINTEND
 };
 

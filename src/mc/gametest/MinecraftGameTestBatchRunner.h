@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTestBatchRunner() /*override*/;
+    virtual ~MinecraftGameTestBatchRunner() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

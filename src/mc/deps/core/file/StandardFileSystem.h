@@ -269,7 +269,7 @@ public:
     virtual ::std::optional<uint64> _checkFileInitialSize(::Core::Path const& path) /*override*/;
 
     // vIndex: 0
-    virtual ~StandardFileSystem() /*override*/;
+    virtual ~StandardFileSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -287,7 +287,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

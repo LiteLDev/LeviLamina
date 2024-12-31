@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseGameTestAction();
+    virtual ~BaseGameTestAction() = default;
 
     // vIndex: 1
     virtual ::std::optional<::gametest::GameTestError> run() = 0;
@@ -35,7 +35,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -56,34 +56,18 @@ public:
     virtual ::Actor const* getActor() const /*override*/;
 
     // vIndex: 0
-    virtual ~NpcOverrideDialogueData() /*override*/;
+    virtual ~NpcOverrideDialogueData() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getDialogueText() const;
 
-    MCAPI ::std::string const& $getSceneName() const;
-
-    MCAPI ::std::string const& $getNameText() const;
-
-    MCAPI ::npc::ActionContainer* $getActionsContainer();
-
-    MCAPI ::npc::ActionContainer const* $getActionsContainer() const;
-
-    MCAPI bool $isRemoteFire();
-
-    MCAPI ::ActorUniqueID $getActorUniqueID();
-
-    MCAPI ::Actor* $getActor();
-
-    MCAPI ::Actor const* $getActor() const;
     // NOLINTEND
 };

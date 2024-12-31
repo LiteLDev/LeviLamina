@@ -32,13 +32,13 @@ public:
         DeliverRtpPacket(::webrtc::MediaType, ::webrtc::RtpPacketReceived, ::absl::AnyInvocable<bool(::webrtc::RtpPacketReceived const&)>) = 0;
 
     // vIndex: 2
-    virtual ~PacketReceiver();
+    virtual ~PacketReceiver() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

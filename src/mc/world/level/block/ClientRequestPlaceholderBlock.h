@@ -34,7 +34,7 @@ public:
         const /*override*/;
 
     // vIndex: 0
-    virtual ~ClientRequestPlaceholderBlock() /*override*/;
+    virtual ~ClientRequestPlaceholderBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

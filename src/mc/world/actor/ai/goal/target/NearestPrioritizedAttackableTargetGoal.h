@@ -29,7 +29,7 @@ public:
     virtual ::ActorUniqueID _findTarget(::MobDescriptor const** outMobDescriptor) /*override*/;
 
     // vIndex: 0
-    virtual ~NearestPrioritizedAttackableTargetGoal() /*override*/;
+    virtual ~NearestPrioritizedAttackableTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

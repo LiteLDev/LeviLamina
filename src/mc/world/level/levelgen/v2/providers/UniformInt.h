@@ -38,7 +38,7 @@ public:
     virtual int minValue() const /*override*/;
 
     // vIndex: 0
-    virtual ~UniformInt() /*override*/;
+    virtual ~UniformInt() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

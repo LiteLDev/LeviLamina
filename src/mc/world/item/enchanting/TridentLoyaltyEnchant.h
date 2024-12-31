@@ -25,13 +25,13 @@ public:
     virtual int getMaxLevel() const /*override*/;
 
     // vIndex: 0
-    virtual ~TridentLoyaltyEnchant() /*override*/;
+    virtual ~TridentLoyaltyEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -83,7 +83,7 @@ public:
     virtual bool hasTellPerms() const /*override*/;
 
     // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
 
     // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
@@ -114,7 +114,7 @@ public:
     virtual bool isValid() const /*override*/;
 
     // vIndex: 0
-    virtual ~VirtualCommandOrigin() /*override*/;
+    virtual ~VirtualCommandOrigin() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -178,7 +178,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -210,7 +210,7 @@ public:
 
     MCAPI bool $hasTellPerms() const;
 
-    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 

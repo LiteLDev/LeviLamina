@@ -38,13 +38,13 @@ public:
     virtual void UnregisterObserver() = 0;
 
     // vIndex: 2
-    virtual ~DtlsTransportInterface() /*override*/;
+    virtual ~DtlsTransportInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

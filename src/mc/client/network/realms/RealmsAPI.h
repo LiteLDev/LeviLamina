@@ -105,7 +105,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsAPI() /*override*/;
+    virtual ~RealmsAPI() /*override*/ = default;
 
     // vIndex: 1
     virtual void
@@ -151,34 +151,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
-    $initializeWorld(::Realms::RealmId, ::std::string const&, ::std::string const&, ::std::function<void(::Realms::GenericStatus, ::Realms::FailureReason)>);
 
-    MCAPI void
-        $openWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>);
-
-    MCAPI void
-        $closeWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>);
-
-    MCAPI void
-        $resetWorld(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus)>, ::std::function<void(int)>);
-
-    MCAPI void
-    $applyContentOnRealm(::Realms::RealmId const, ::std::vector<::Realms::Content> const&, ::std::function<void(::Realms::GenericStatus)>);
-
-    MCAPI void
-        $fetchAppliedPacks(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus, ::std::vector<::Realms::Content>)>);
-
-    MCAPI void
-    $checkForExistingPack(::std::string const&, ::std::string const&, ::std::function<void(::Realms::GenericStatus, bool)>);
-
-    MCAPI void
-        $getSubscriptionDetails(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus, ::Realms::SubscriptionInfo)>);
     // NOLINTEND
 };

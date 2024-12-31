@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PeerConnectionObserver();
+    virtual ~PeerConnectionObserver() = default;
 
     // vIndex: 1
     virtual void OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState) = 0;
@@ -102,7 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -112,15 +112,9 @@ public:
 
     MCAPI void $OnRemoveStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
 
-    MCAPI void $OnRenegotiationNeeded();
-
     MCAPI void $OnNegotiationNeededEvent(uint event_id);
 
-    MCAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState);
-
     MCAPI void $OnStandardizedIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
-
-    MCAPI void $OnConnectionChange(::webrtc::PeerConnectionInterface::PeerConnectionState);
 
     MCAPI void $OnIceCandidateError(
         ::std::string const& address,
@@ -129,10 +123,6 @@ public:
         int                  error_code,
         ::std::string const& error_text
     );
-
-    MCAPI void $OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
-
-    MCAPI void $OnIceConnectionReceivingChange(bool);
 
     MCAPI void $OnIceSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const& event);
 

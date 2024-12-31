@@ -44,7 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FranchiseSignalServiceSigninJob() /*override*/;
+    virtual ~FranchiseSignalServiceSigninJob() /*override*/ = default;
 
     // vIndex: 7
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageSent const&) /*override*/;
@@ -74,26 +74,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageSent const&);
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const&);
-
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::PingSent const&);
-
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageAccepted const&);
-
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageDelivered const&);
-
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::ErrorReceived const&);
-
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
-
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const&);
     // NOLINTEND
 };

@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IContentKeyProvider() /*override*/;
+    virtual ~IContentKeyProvider() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::string getContentKey(::ContentIdentity const&) const = 0;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

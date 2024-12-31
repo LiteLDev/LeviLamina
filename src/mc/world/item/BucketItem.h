@@ -56,7 +56,7 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 80
-    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
+    virtual void releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const /*override*/;
 
     // vIndex: 79
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
@@ -96,7 +96,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~BucketItem() /*override*/;
+    virtual ~BucketItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -150,7 +150,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -164,9 +164,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
-
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
     MCAPI bool $uniqueAuxValues() const;
 

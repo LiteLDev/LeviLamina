@@ -26,7 +26,7 @@ public:
     virtual void execute(::CommandOrigin const&, ::CommandOutput& output) const /*override*/;
 
     // vIndex: 0
-    virtual ~GetEduServerInfoCommand() /*override*/;
+    virtual ~GetEduServerInfoCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

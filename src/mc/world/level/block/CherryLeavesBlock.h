@@ -26,13 +26,13 @@ public:
     virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 0
-    virtual ~CherryLeavesBlock() /*override*/;
+    virtual ~CherryLeavesBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

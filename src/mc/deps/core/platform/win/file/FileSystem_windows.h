@@ -89,7 +89,7 @@ public:
     _copyTimeAndAccessRights(::Core::Path const& sourceEntryPath, ::Core::Path const& targetEntryPath) /*override*/;
 
     // vIndex: 0
-    virtual ~FileSystem_windows() /*override*/;
+    virtual ~FileSystem_windows() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -124,7 +124,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

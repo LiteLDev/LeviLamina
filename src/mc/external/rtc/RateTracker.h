@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RateTracker();
+    virtual ~RateTracker() = default;
 
     // vIndex: 1
     virtual int64 Time() const;
@@ -60,13 +60,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int64 $Time() const;
+
     // NOLINTEND
 
 public:

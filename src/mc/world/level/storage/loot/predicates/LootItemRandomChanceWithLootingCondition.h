@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LootItemRandomChanceWithLootingCondition() /*override*/;
+    virtual ~LootItemRandomChanceWithLootingCondition() /*override*/ = default;
 
     // vIndex: 1
     virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

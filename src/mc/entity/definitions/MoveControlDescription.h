@@ -30,13 +30,13 @@ public:
     virtual void deserializeData(::DeserializeDataParams deserializeDataParams) /*override*/;
 
     // vIndex: 1
-    virtual ~MoveControlDescription() /*override*/;
+    virtual ~MoveControlDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

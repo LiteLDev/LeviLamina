@@ -104,7 +104,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~FlatWorldGenerator() /*override*/;
+    virtual ~FlatWorldGenerator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -124,7 +124,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

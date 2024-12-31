@@ -64,7 +64,7 @@ public:
     virtual bool isStemBlock() const /*override*/;
 
     // vIndex: 0
-    virtual ~StemBlock() /*override*/;
+    virtual ~StemBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

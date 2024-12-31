@@ -36,13 +36,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~ShulkerBoxContainerValidation() /*override*/;
+    virtual ~ShulkerBoxContainerValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

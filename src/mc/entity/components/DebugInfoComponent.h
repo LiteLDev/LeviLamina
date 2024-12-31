@@ -73,7 +73,7 @@ public:
     virtual ::EventResult onEvent(::ActorDefinitionTriggeredEvent const& actorDefinitionEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~DebugInfoComponent() /*override*/;
+    virtual ~DebugInfoComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -103,7 +103,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

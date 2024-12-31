@@ -71,7 +71,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
-    virtual ~RedstoneTorchBlock() /*override*/;
+    virtual ~RedstoneTorchBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -93,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BeaconBlock() /*override*/;
+    virtual ~BeaconBlock() /*override*/ = default;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -42,23 +42,19 @@ public:
     virtual ::CorrectionType getCorrectionType() const /*override*/;
 
     // vIndex: 0
-    virtual ~MovementEffectsReplay() /*override*/;
+    virtual ~MovementEffectsReplay() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $advanceFrame(::EntityContext&) const;
 
-    MCAPI void $advanceLiveFrame(::Actor&, ::std::optional<uint64>);
-
-    MCAPI ::CorrectionType $getCorrectionType() const;
     // NOLINTEND
 };
 

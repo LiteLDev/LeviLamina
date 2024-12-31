@@ -33,20 +33,18 @@ public:
     virtual void deserializeData(::DeserializeDataParams) /*override*/;
 
     // vIndex: 1
-    virtual ~DanceDescription() /*override*/;
+    virtual ~DanceDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
 
-    MCAPI void $deserializeData(::DeserializeDataParams);
     // NOLINTEND
 };

@@ -54,7 +54,7 @@ public:
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 0
-    virtual ~FertilizeFarmBlockGoal() /*override*/;
+    virtual ~FertilizeFarmBlockGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -76,7 +76,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

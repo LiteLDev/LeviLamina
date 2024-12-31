@@ -39,13 +39,13 @@ public:
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 0
-    virtual ~LabTableInputValidation() /*override*/;
+    virtual ~LabTableInputValidation() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

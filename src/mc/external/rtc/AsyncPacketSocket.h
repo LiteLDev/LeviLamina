@@ -49,7 +49,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncPacketSocket() /*override*/;
+    virtual ~AsyncPacketSocket() /*override*/ = default;
 
     // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const = 0;
@@ -108,7 +108,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

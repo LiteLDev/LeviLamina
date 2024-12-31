@@ -27,7 +27,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~CryingObsidianBlock() /*override*/;
+    virtual ~CryingObsidianBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

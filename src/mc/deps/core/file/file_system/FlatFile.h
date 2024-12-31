@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FlatFile() /*override*/;
+    virtual ~FlatFile() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
@@ -111,7 +111,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

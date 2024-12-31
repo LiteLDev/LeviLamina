@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Cursor();
+    virtual ~Cursor() = default;
 
     // vIndex: 2
     virtual void setCursorState(::Editor::Cursor::CursorState&& state);
@@ -74,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

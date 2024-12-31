@@ -174,7 +174,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Connection() /*override*/;
+    virtual ~Connection() /*override*/ = default;
 
     // vIndex: 1
     virtual ::cricket::Candidate const& local_candidate() const /*override*/;
@@ -387,23 +387,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::Candidate const& $local_candidate() const;
 
-    MCAPI ::cricket::Candidate const& $remote_candidate() const;
-
-    MCAPI ::rtc::Network const* $network() const;
-
-    MCAPI int $generation() const;
-
-    MCAPI uint64 $priority() const;
-
-    MCAPI void $OnConnectionRequestResponse(::cricket::StunRequest*, ::cricket::StunMessage*);
     // NOLINTEND
 
 public:

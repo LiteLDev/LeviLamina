@@ -56,7 +56,7 @@ public:
     virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
-    virtual ~IronGolem() /*override*/;
+    virtual ~IronGolem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -82,15 +82,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $die(::ActorDamageSource const& source);
 

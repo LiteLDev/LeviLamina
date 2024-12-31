@@ -39,7 +39,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setCrashDumpLogStringID(::CrashDumpLogStringID) const;
+
     // NOLINTEND
 
 public:

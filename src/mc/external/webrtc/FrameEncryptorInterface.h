@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ~FrameEncryptorInterface() /*override*/;
+    virtual ~FrameEncryptorInterface() /*override*/ = default;
 
     // vIndex: 3
     virtual int
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

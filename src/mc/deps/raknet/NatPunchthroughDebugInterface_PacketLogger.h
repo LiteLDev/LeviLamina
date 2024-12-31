@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NatPunchthroughDebugInterface_PacketLogger() /*override*/;
+    virtual ~NatPunchthroughDebugInterface_PacketLogger() /*override*/ = default;
 
     // vIndex: 1
     virtual void OnClientMessage(char const*) /*override*/;
@@ -33,13 +33,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnClientMessage(char const*);
+
     // NOLINTEND
 };
 

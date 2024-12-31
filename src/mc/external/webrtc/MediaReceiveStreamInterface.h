@@ -42,13 +42,13 @@ public:
     virtual ::std::vector<::webrtc::RtpSource> GetSources() const = 0;
 
     // vIndex: 0
-    virtual ~MediaReceiveStreamInterface() /*override*/;
+    virtual ~MediaReceiveStreamInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

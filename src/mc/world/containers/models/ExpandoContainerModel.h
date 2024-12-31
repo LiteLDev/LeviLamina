@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~ExpandoContainerModel() /*override*/;
+    virtual ~ExpandoContainerModel() /*override*/ = default;
 
     // vIndex: 0
     virtual void containerContentChanged(int) /*override*/;
@@ -88,42 +88,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int);
 
-    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
-
-    MCAPI void $setItemInstance(int, ::ItemInstance const&);
-
-    MCAPI bool $isItemInstanceBased() const;
-
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
-
-    MCAPI ::ItemStack const& $getItemStack(int modelSlot) const;
-
-    MCAPI ::std::vector<::ItemStack> const& $getItems() const;
-
-    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
-
-    MCAPI int $getContainerSize() const;
-
-    MCAPI int $getFilteredContainerSize() const;
-
-    MCAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
-
-    MCAPI ::std::string const& $getItemGroupName(int itemId) const;
-
-    MCAPI void $switchItemExpando(int itemId);
-
-    MCAPI void $refreshContainer(bool);
-
-    MCAPI int $getIndexForCreativeItem(::ItemStackBase const&) const;
-
-    MCAPI void $_init();
     // NOLINTEND
 };

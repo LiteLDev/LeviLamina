@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileLogEndPoint() /*override*/;
+    virtual ~FileLogEndPoint() /*override*/ = default;
 
     // vIndex: 1
     virtual void log(char const*) /*override*/;
@@ -48,19 +48,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $log(char const*);
 
-    MCAPI void $flush();
-
-    MCAPI void $setEnabled(bool enabled);
-
-    MCAPI bool $isEnabled() const;
     // NOLINTEND
 };
 

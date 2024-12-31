@@ -151,7 +151,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
-    virtual ~WitherBoss() /*override*/;
+    virtual ~WitherBoss() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -237,7 +237,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -272,8 +272,6 @@ public:
     MCAPI void $remove();
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 

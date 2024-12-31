@@ -59,7 +59,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RedstoneTorchCapacitor() /*override*/;
+    virtual ~RedstoneTorchCapacitor() /*override*/ = default;
 
     // vIndex: 26
     virtual uchar getPoweroutDirection() const /*override*/;
@@ -122,7 +122,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

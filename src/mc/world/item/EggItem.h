@@ -41,13 +41,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~EggItem() /*override*/;
+    virtual ~EggItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

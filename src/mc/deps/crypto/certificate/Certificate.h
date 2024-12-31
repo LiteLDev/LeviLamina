@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Certificate() /*override*/;
+    virtual ~Certificate() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::string serialize(::Crypto::Certificate::Encoding) const /*override*/;
@@ -58,27 +58,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $serialize(::Crypto::Certificate::Encoding) const;
 
-    MCAPI ::std::string $extractPublicKey(::Crypto::Certificate::Encoding) const;
-
-    MCAPI ::std::string $extractPrivateKey(::Crypto::Certificate::Encoding) const;
-
-    MCAPI ::std::string $getIssuer() const;
-
-    MCAPI bool $hasValidCertChain() const;
-
-    MCAPI ::std::string
-        $generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const;
-
-    MCAPI ::std::string
-        $generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const;
     // NOLINTEND
 };
 

@@ -28,7 +28,7 @@ public:
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
     // vIndex: 0
-    virtual ~CompactionListenerEnv() /*override*/;
+    virtual ~CompactionListenerEnv() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -40,7 +40,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

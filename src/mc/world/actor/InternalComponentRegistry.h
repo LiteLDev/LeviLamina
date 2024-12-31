@@ -66,7 +66,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InternalComponentRegistry();
+    virtual ~InternalComponentRegistry() = default;
 
     // vIndex: 1
     virtual void registerComponents();
@@ -97,7 +97,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

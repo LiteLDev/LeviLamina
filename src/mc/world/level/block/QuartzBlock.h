@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~QuartzBlock() /*override*/;
+    virtual ~QuartzBlock() /*override*/ = default;
 
     // vIndex: 121
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

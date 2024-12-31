@@ -30,13 +30,13 @@ public:
     virtual ::EventResult onLevelAddedPlayer(::Player& player) /*override*/;
 
     // vIndex: 0
-    virtual ~WardenSpawnTrackerSystem() /*override*/;
+    virtual ~WardenSpawnTrackerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

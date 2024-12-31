@@ -29,13 +29,13 @@ public:
     virtual ::std::string ToString() const = 0;
 
     // vIndex: 3
-    virtual ~CustomAudioAnalyzer();
+    virtual ~CustomAudioAnalyzer() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

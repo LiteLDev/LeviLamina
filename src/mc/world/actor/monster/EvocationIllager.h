@@ -30,7 +30,7 @@ public:
     virtual int getArmorValue() const /*override*/;
 
     // vIndex: 8
-    virtual ~EvocationIllager() /*override*/;
+    virtual ~EvocationIllager() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

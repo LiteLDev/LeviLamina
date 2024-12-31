@@ -34,20 +34,18 @@ public:
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
 
     // vIndex: 0
-    virtual ~FindRecipeNode() /*override*/;
+    virtual ~FindRecipeNode() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BehaviorStatus $tick(::Actor&);
 
-    MCAPI void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 };

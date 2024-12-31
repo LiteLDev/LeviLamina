@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~PhotoManager();
+    virtual ~PhotoManager() = default;
 
     // vIndex: 0
     virtual ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&)>&
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

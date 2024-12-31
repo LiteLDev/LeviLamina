@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BrushShapeManagerServiceProvider();
+    virtual ~BrushShapeManagerServiceProvider() = default;
 
     // vIndex: 1
     virtual ::std::shared_ptr<::Editor::Brush::BrushShape> getCurrentBrushShape() const = 0;
@@ -102,7 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

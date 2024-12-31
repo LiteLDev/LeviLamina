@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerInstanceEventListener();
+    virtual ~ServerInstanceEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onServerInitializeStart(::ServerInstance& instance);
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

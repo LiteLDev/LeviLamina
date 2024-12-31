@@ -56,7 +56,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OSWriteThrottleTracker();
+    virtual ~OSWriteThrottleTracker() = default;
 
     // vIndex: 1
     virtual bool isWriteThrottledOS() const;
@@ -87,28 +87,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isWriteThrottledOS() const;
 
-    MCAPI ::Core::WriteThrottledOS::OSWriteThrottleTracker::OSWriteThrottleStats
-        $getCurrentWriteThrottleStats(::std::optional<uint64>) const;
-
-    MCAPI uint64 $getEstimatedUnthrottledWriteSpeedBytes() const;
-
-    MCAPI uint64 $getBudgetAccrualBytesPerSecond() const;
-
-    MCAPI uint64 $getMaxBudgetBytes() const;
-
-    MCAPI uint64 $getMinBudgetForPlayableExperience(int) const;
-
-    MCAPI uint64 $getBudgetForWriteBudgetReplenished() const;
-
-    MCAPI uint64 $getBudgetForWriteBudgetLow() const;
     // NOLINTEND
 };
 

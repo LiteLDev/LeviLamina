@@ -40,22 +40,18 @@ public:
     virtual void _preMergeTransform(::Json::Value&);
 
     // vIndex: 0
-    virtual ~JsonMergeStrategy() /*override*/;
+    virtual ~JsonMergeStrategy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $mergeFiles(::std::vector<::LoadedResourceData> const&);
 
-    MCAPI bool $_parseJson(::Json::Reader&, ::std::string const&, ::Json::Value&) const;
-
-    MCAPI void $_preMergeTransform(::Json::Value&);
     // NOLINTEND
 };

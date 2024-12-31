@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AsyncTCPSocket() /*override*/;
+    virtual ~AsyncTCPSocket() /*override*/ = default;
 
     // vIndex: 3
     virtual int Send(void const*, uint64, ::rtc::PacketOptions const&) /*override*/;
@@ -48,15 +48,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $Send(void const*, uint64, ::rtc::PacketOptions const&);
 
-    MCAPI uint64 $ProcessInput(::rtc::ArrayView<uchar const>);
     // NOLINTEND
 
 public:

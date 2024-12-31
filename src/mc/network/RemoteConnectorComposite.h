@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RemoteConnectorComposite() /*override*/;
+    virtual ~RemoteConnectorComposite() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::vector<::std::string> getLocalIps() const /*override*/;
@@ -102,52 +102,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::string> $getLocalIps() const;
 
-    MCAPI ::std::string $getLocalIp();
-
-    MCAPI ushort $getPort() const;
-
-    MCAPI ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
-
-    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
-
-    MCAPI bool $isIPv4Supported() const;
-
-    MCAPI bool $isIPv6Supported() const;
-
-    MCAPI ushort $getIPv4Port() const;
-
-    MCAPI ushort $getIPv6Port() const;
-
-    MCAPI bool $host(::ConnectionDefinition const& definition);
-
-    MCAPI bool $connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&);
-
-    MCAPI void $disconnect();
-
-    MCAPI void $tick();
-
-    MCAPI void $runEvents();
-
-    MCAPI bool $isServer() const;
-
-    MCAPI void $closeNetworkConnection(::NetworkIdentifier const&);
-
-    MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
-
-    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
-
-    MCAPI void $_onDisable();
-
-    MCAPI void $_onEnable();
-
-    MCAPI ::TransportLayer $getNetworkType() const;
     // NOLINTEND
 };

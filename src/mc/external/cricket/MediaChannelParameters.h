@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MediaChannelParameters();
+    virtual ~MediaChannelParameters() = default;
 
     // vIndex: 1
     virtual ::std::map<::std::string, ::std::string> ToStringMap() const;
@@ -33,13 +33,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::map<::std::string, ::std::string> $ToStringMap() const;
+
     // NOLINTEND
 
 public:

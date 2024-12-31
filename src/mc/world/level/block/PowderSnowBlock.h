@@ -64,7 +64,7 @@ public:
     virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
     // vIndex: 0
-    virtual ~PowderSnowBlock() /*override*/;
+    virtual ~PowderSnowBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -94,7 +94,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -114,8 +114,6 @@ public:
     MCAPI bool $causesFreezeEffect() const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
-
-    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCAPI bool $isLavaBlocking() const;
 

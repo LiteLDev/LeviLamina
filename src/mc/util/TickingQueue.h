@@ -32,7 +32,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Stage();
+        virtual ~Stage() = default;
 
         // vIndex: 1
         virtual void init() = 0;
@@ -44,7 +44,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -77,21 +77,19 @@ public:
         virtual bool tick() /*override*/;
 
         // vIndex: 0
-        virtual ~OneshotStage() /*override*/;
+        virtual ~OneshotStage() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $init();
 
-        MCAPI bool $tick();
         // NOLINTEND
     };
 
@@ -119,21 +117,19 @@ public:
         virtual bool tick() /*override*/;
 
         // vIndex: 0
-        virtual ~PollingStage() /*override*/;
+        virtual ~PollingStage() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $init();
 
-        MCAPI bool $tick();
         // NOLINTEND
     };
 
@@ -161,21 +157,19 @@ public:
         virtual bool tick() /*override*/;
 
         // vIndex: 0
-        virtual ~WaitForCallbackStage() /*override*/;
+        virtual ~WaitForCallbackStage() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $init();
 
-        MCAPI bool $tick();
         // NOLINTEND
     };
 
@@ -202,21 +196,19 @@ public:
         virtual bool tick() /*override*/;
 
         // vIndex: 0
-        virtual ~WaitForSignalStage() /*override*/;
+        virtual ~WaitForSignalStage() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $init();
 
-        MCAPI bool $tick();
         // NOLINTEND
     };
 
@@ -243,21 +235,19 @@ public:
         virtual bool tick() /*override*/;
 
         // vIndex: 0
-        virtual ~SleepStage() /*override*/;
+        virtual ~SleepStage() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $init();
 
-        MCAPI bool $tick();
         // NOLINTEND
     };
 

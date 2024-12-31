@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RenderMaterialBase();
+    virtual ~RenderMaterialBase() = default;
 
     // vIndex: 1
     virtual void parseRuntimeStates(::Json::Value const&) = 0;
@@ -57,15 +57,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $buildHeader(::std::set<::std::string> const&);
 
-    MCAPI void $parseShader(::Json::Value const&);
     // NOLINTEND
 };
 

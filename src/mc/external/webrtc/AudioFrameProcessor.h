@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AudioFrameProcessor();
+    virtual ~AudioFrameProcessor() = default;
 
     // vIndex: 1
     virtual void Process(::std::unique_ptr<::webrtc::AudioFrame>) = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

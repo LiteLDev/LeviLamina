@@ -188,7 +188,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IClientInstance() /*override*/;
+    virtual ~IClientInstance() /*override*/ = default;
 
     // vIndex: 1
     virtual void onInitMinecraftGame() = 0;
@@ -1549,12 +1549,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadEntityRenderers(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&);
+
     // NOLINTEND
 };

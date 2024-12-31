@@ -300,10 +300,6 @@ public:
 
     MCAPI ::TradeTables* $getTradeTables();
 
-    MCAPI void $runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const);
-
-    MCAPI void $runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem);
-
     MCAPI void
     $decrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
 

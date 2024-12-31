@@ -33,13 +33,13 @@ public:
     virtual float getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const /*override*/;
 
     // vIndex: 0
-    virtual ~DensityEnchant() /*override*/;
+    virtual ~DensityEnchant() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -93,7 +93,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~ComparatorBlock() /*override*/;
+    virtual ~ComparatorBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -117,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

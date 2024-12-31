@@ -45,7 +45,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~SHStraight() /*override*/;
+    virtual ~SHStraight() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

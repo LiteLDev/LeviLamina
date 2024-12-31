@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContentCatalogPackSource() /*override*/;
+    virtual ~ContentCatalogPackSource() /*override*/ = default;
 
     // vIndex: 1
     virtual void forEachPackConst(::std::function<void(::Pack const&)>) const /*override*/;
@@ -70,19 +70,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $forEachPackConst(::std::function<void(::Pack const&)>) const;
 
-    MCAPI void $forEachPack(::std::function<void(::Pack&)>);
-
-    MCAPI ::PackSourceReport
-    $load(::IPackManifestFactory&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&);
-
-    MCAPI ::PackType $getPackType() const;
     // NOLINTEND
 };

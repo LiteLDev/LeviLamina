@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NatPunchthroughDebugInterface();
+    virtual ~NatPunchthroughDebugInterface() = default;
 
     // vIndex: 1
     virtual void OnClientMessage(char const*) = 0;
@@ -24,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

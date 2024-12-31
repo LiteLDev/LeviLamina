@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PacketizedTCP() /*override*/;
+    virtual ~PacketizedTCP() /*override*/ = default;
 
     // vIndex: 1
     virtual void
@@ -57,23 +57,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
 
-    MCAPI bool $SendList(
-        char const**                   data,
-        uint const*                    lengths,
-        int const                      numParameters,
-        ::RakNet::SystemAddress const& systemAddress,
-        bool                           broadcast
-    );
-
-    MCAPI ::RakNet::Packet* $Receive();
     // NOLINTEND
 };
 

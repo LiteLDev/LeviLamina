@@ -36,7 +36,7 @@ public:
     virtual void start() /*override*/;
 
     // vIndex: 0
-    virtual ~OwnerHurtTargetGoal() /*override*/;
+    virtual ~OwnerHurtTargetGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

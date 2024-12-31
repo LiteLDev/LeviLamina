@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IReplayStatePolicy();
+    virtual ~IReplayStatePolicy() = default;
 
     // vIndex: 1
     virtual bool isReplayNeeded(::AdvanceFrameResult) const = 0;
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

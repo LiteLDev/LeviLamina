@@ -50,7 +50,7 @@ public:
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 0
-    virtual ~MineshaftCorridor() /*override*/;
+    virtual ~MineshaftCorridor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

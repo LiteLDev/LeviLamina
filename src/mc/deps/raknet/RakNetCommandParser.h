@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RakNetCommandParser() /*override*/;
+    virtual ~RakNetCommandParser() /*override*/ = default;
 
     // vIndex: 5
     virtual bool
@@ -47,18 +47,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $OnCommand(char const*, uint, char**, ::RakNet::TransportInterface*, ::RakNet::SystemAddress const&, char const*);
 
-    MCAPI char const* $GetName() const;
-
-    MCAPI void $SendHelp(::RakNet::TransportInterface*, ::RakNet::SystemAddress const&);
     // NOLINTEND
 };
 

@@ -29,13 +29,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~VinesSingleFaceFeature() /*override*/;
+    virtual ~VinesSingleFaceFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

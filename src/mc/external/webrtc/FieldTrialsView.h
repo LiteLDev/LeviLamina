@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FieldTrialsView();
+    virtual ~FieldTrialsView() = default;
 
     // vIndex: 1
     virtual ::std::string Lookup(::std::string_view) const = 0;
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

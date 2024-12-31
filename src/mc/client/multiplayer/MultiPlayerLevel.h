@@ -61,7 +61,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MultiPlayerLevel() /*override*/;
+    virtual ~MultiPlayerLevel() /*override*/ = default;
 
     // vIndex: 1
     virtual bool
@@ -144,60 +144,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initialize(::std::string const&, ::LevelSettings const&, ::Experiments const&, ::std::string const*);
 
-    MCAPI ::Tick const $getCurrentServerTick() const;
-
-    MCAPI void $startLeaveGame();
-
-    MCAPI ::Actor* $addEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
-
-    MCAPI ::OwnerPtr<::EntityContext> $removeActorFromWorldAndTakeEntity(::WeakEntityRef);
-
-    MCAPI ::OwnerPtr<::EntityContext> $takeEntity(::WeakEntityRef, ::LevelChunk&);
-
-    MCAPI ::Actor* $addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
-
-    MCAPI void $removeDisplayEntity(::WeakEntityRef);
-
-    MCAPI ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
-
-    MCAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
-
-    MCAPI ::PlayerSleepManager& $getPlayerSleepManager();
-
-    MCAPI void $notifySubChunkRequestManager(::SubChunkPacket const&);
-
-    MCAPI ::SubChunkRequestManager* $getSubChunkRequestManager();
-
-    MCAPI void $onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
-
-    MCAPI ::Bedrock::NonOwnerPointer<::SubChunkManager> $getSubChunkManager();
-
-    MCAPI bool $canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> $getTrustedSkinHelper() const;
-
-    MCAPI ::MultiPlayerLevel* $asMultiPlayerLevel();
-
-    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
-
-    MCAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
-
-    MCAPI ::ArmorTrimUnloader* $getArmorTrimUnloader();
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
-
-    MCAPI ::MapDataManager& $_getMapDataManager();
-
-    MCAPI void $_subTick();
     // NOLINTEND
 };

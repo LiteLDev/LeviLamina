@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MineshaftStart() /*override*/;
+    virtual ~MineshaftStart() /*override*/ = default;
 
     // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

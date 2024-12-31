@@ -52,7 +52,7 @@ public:
     virtual void setLightningTime(int lightningTime) /*override*/;
 
     // vIndex: 0
-    virtual ~WeatherManagerProxy() /*override*/;
+    virtual ~WeatherManagerProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

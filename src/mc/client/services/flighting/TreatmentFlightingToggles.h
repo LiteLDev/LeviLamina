@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TreatmentFlightingToggles() /*override*/;
+    virtual ~TreatmentFlightingToggles() /*override*/ = default;
 
     // vIndex: 5
     virtual void _updateToggle(::std::vector<::std::string> const&, ::FlightingToggles::FlightingToggle&) /*override*/;
@@ -25,12 +25,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_updateToggle(::std::vector<::std::string> const&, ::FlightingToggles::FlightingToggle&);
+
     // NOLINTEND
 };

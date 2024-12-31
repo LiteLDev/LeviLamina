@@ -38,7 +38,7 @@ public:
         /*override*/;
 
     // vIndex: 1
-    virtual ~LootItem() /*override*/;
+    virtual ~LootItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

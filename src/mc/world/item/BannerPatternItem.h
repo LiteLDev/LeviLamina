@@ -44,7 +44,7 @@ public:
     virtual int getPatternIndex() const /*override*/;
 
     // vIndex: 0
-    virtual ~BannerPatternItem() /*override*/;
+    virtual ~BannerPatternItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

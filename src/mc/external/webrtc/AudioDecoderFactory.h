@@ -36,13 +36,13 @@ public:
     MakeAudioDecoder(::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
 
     // vIndex: 2
-    virtual ~AudioDecoderFactory() /*override*/;
+    virtual ~AudioDecoderFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GetCollisionShapeInterface();
+    virtual ~GetCollisionShapeInterface() = default;
 
     // vIndex: 1
     virtual float getFeetAttachPosY() const = 0;
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

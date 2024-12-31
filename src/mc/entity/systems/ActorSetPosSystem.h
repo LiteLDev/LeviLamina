@@ -137,7 +137,7 @@ public:
                       ::EntityFactoryT<>>& executionContext) /*override*/;
 
     // vIndex: 0
-    virtual ~ActorSetPosSystem() /*override*/;
+    virtual ~ActorSetPosSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -157,7 +157,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -87,7 +87,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UDPProxyClient() /*override*/;
+    virtual ~UDPProxyClient() /*override*/ = default;
 
     // vIndex: 3
     virtual void Update() /*override*/;
@@ -102,17 +102,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Update();
 
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
-
-    MCAPI void $OnRakPeerShutdown();
     // NOLINTEND
 };
 

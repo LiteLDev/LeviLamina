@@ -63,13 +63,13 @@ public:
     virtual bool isMigrationUIActive() const = 0;
 
     // vIndex: 0
-    virtual ~StorageMigrationService() /*override*/;
+    virtual ~StorageMigrationService() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

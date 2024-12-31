@@ -43,13 +43,13 @@ public:
     virtual void writeBytes(void const*, uint64) = 0;
 
     // vIndex: 0
-    virtual ~BytesDataOutput() /*override*/;
+    virtual ~BytesDataOutput() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

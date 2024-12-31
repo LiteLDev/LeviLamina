@@ -22,20 +22,18 @@ public:
     virtual ::std::unordered_map<int, ::std::string> const& getEventErrorMessageMap() const /*override*/;
 
     // vIndex: 0
-    virtual ~UIPackError() /*override*/;
+    virtual ~UIPackError() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
-    MCAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
     // NOLINTEND
 };

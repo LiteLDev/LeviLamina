@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetworkProblemSimulator() /*override*/;
+    virtual ~NetworkProblemSimulator() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
@@ -49,18 +49,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
-    $send(::Bedrock::Http::Request&&);
 
-    MCAPI void $initialize();
-
-    MCAPI void $shutdown();
     // NOLINTEND
 };
 

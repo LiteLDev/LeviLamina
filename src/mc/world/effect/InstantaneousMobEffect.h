@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InstantaneousMobEffect() /*override*/;
+    virtual ~InstantaneousMobEffect() /*override*/ = default;
 
     // vIndex: 7
     virtual bool isInstantaneous() const /*override*/;
@@ -28,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -247,21 +247,19 @@ public:
     virtual ::std::optional<::webrtc::AudioDeviceModule::Stats> GetStats() const;
 
     // vIndex: 2
-    virtual ~AudioDeviceModule() /*override*/;
+    virtual ~AudioDeviceModule() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $GetPlayoutUnderrunCount() const;
 
-    MCAPI ::std::optional<::webrtc::AudioDeviceModule::Stats> $GetStats() const;
     // NOLINTEND
 };
 

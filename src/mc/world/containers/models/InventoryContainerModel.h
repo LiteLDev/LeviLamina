@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~InventoryContainerModel() /*override*/;
+    virtual ~InventoryContainerModel() /*override*/ = default;
 
     // vIndex: 2
     virtual void postInit() /*override*/;
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SpawnChanceSubcomponent() /*override*/;
+    virtual ~SpawnChanceSubcomponent() /*override*/ = default;
 
     // vIndex: 1
     virtual void readfromJSON(::Json::Value& component) /*override*/;
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

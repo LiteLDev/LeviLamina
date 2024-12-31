@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StructureSection();
+    virtual ~StructureSection() = default;
 
     // vIndex: 1
     virtual void appendJunctions(::BoundingBox const&, ::std::vector<::br::worldgen::JigsawJunction>&) = 0;
@@ -76,7 +76,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

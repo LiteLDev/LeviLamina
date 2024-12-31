@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SetItemDamageFunction() /*override*/;
+    virtual ~SetItemDamageFunction() /*override*/ = default;
 
     // vIndex: 4
     virtual void apply(::ItemStack& item, ::Random& random, ::LootTableContext& context) /*override*/;
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

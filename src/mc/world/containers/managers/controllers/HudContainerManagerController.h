@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HudContainerManagerController() /*override*/;
+    virtual ~HudContainerManagerController() /*override*/ = default;
 
     // vIndex: 2
     virtual void registerContainerCallbacks() /*override*/;
@@ -32,12 +32,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerContainerCallbacks();
+
     // NOLINTEND
 };

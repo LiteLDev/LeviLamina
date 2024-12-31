@@ -28,7 +28,7 @@ public:
     virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
 
     // vIndex: 0
-    virtual ~HoldBlockSystem() /*override*/;
+    virtual ~HoldBlockSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -40,7 +40,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

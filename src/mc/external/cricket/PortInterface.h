@@ -53,7 +53,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PortInterface();
+    virtual ~PortInterface() = default;
 
     // vIndex: 1
     virtual ::webrtc::IceCandidateType Type() const = 0;
@@ -194,7 +194,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

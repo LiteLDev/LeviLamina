@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SkinInfoData();
+    virtual ~SkinInfoData() = default;
 
     // vIndex: 1
     virtual void updateSkin(::SerializedSkin const&, ::mce::Image const*, ::mce::Image const*) = 0;
@@ -49,12 +49,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $validateAndResizeSkinData(::mce::Image&, bool);
+
     // NOLINTEND
 };

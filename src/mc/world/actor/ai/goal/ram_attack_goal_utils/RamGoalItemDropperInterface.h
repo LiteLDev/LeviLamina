@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RamGoalItemDropperInterface();
+    virtual ~RamGoalItemDropperInterface() = default;
 
     // vIndex: 1
     virtual void tryDropHorn(::Vec3) const = 0;
@@ -35,7 +35,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

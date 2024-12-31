@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftingInputContainerController() /*override*/;
+    virtual ~CraftingInputContainerController() /*override*/ = default;
 
     // vIndex: 5
     virtual int getBackgroundStyle(int, bool) const /*override*/;
@@ -42,16 +42,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getBackgroundStyle(int, bool) const;
 
-    MCAPI ::ItemInstance const& $getRecipeItem(int) const;
-
-    MCAPI void $clearSelectedRecipe();
     // NOLINTEND
 };

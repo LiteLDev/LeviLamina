@@ -37,7 +37,7 @@ public:
     virtual ::HandlerResult handleEvent(::ScriptingWorldInitializeEvent const& event) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptLevelGameplayHandler() /*override*/;
+    virtual ~ScriptLevelGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

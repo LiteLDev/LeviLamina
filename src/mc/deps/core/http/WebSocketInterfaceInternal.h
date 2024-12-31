@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WebSocketInterfaceInternal() /*override*/;
+    virtual ~WebSocketInterfaceInternal() /*override*/ = default;
 
     // vIndex: 1
     virtual HRESULT
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

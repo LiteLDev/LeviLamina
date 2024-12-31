@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDlcBatcher();
+    virtual ~IDlcBatcher() = default;
 
     // vIndex: 3
     virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::DlcId> const&) = 0;
@@ -35,7 +35,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

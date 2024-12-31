@@ -90,7 +90,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileListTransferCBInterface();
+    virtual ~FileListTransferCBInterface() = default;
 
     // vIndex: 1
     virtual bool OnFile(::RakNet::FileListTransferCBInterface::OnFileStruct*) = 0;
@@ -111,17 +111,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $Update();
 
-    MCAPI bool $OnDownloadComplete(::RakNet::FileListTransferCBInterface::DownloadCompleteStruct*);
-
-    MCAPI void $OnDereference();
     // NOLINTEND
 };
 

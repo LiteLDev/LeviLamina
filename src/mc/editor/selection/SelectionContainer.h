@@ -58,19 +58,19 @@ public:
     virtual void setVisible(bool visible) = 0;
 
     // vIndex: 2
-    virtual void setOutlineColor(::mce::Color color) = 0;
+    virtual void setOutlineColor(::mce::Color) = 0;
 
     // vIndex: 3
-    virtual void setFillColor(::mce::Color color) = 0;
+    virtual void setFillColor(::mce::Color) = 0;
 
     // vIndex: 4
-    virtual ::Scripting::Result<void> pushVolume(::CompoundBlockVolumeItem const& item) = 0;
+    virtual ::Scripting::Result<void> pushVolume(::CompoundBlockVolumeItem const&) = 0;
 
     // vIndex: 5
     virtual ::Scripting::Result<void> popVolume() = 0;
 
     // vIndex: 6
-    virtual ::Scripting::Result<void> replaceOrAddLastVolume(::CompoundBlockVolumeItem const& item) = 0;
+    virtual ::Scripting::Result<void> replaceOrAddLastVolume(::CompoundBlockVolumeItem const&) = 0;
 
     // vIndex: 7
     virtual ::std::optional<::CompoundBlockVolumeItem>
@@ -83,14 +83,13 @@ public:
     virtual ::Scripting::Result<void> clearContainer() = 0;
 
     // vIndex: 11
-    virtual ::Scripting::Result<void> replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer> other
-    ) = 0;
+    virtual ::Scripting::Result<void> replaceContainerContents(::WeakRef<::Editor::Selection::SelectionContainer>) = 0;
 
     // vIndex: 10
-    virtual ::Scripting::Result<void> replaceContainerContents(::CompoundBlockVolume const& other) = 0;
+    virtual ::Scripting::Result<void> replaceContainerContents(::CompoundBlockVolume const&) = 0;
 
     // vIndex: 12
-    virtual ::Scripting::Result<void> translateContainer(int dx, int dy, int dz) = 0;
+    virtual ::Scripting::Result<void> translateContainer(int, int, int) = 0;
 
     // vIndex: 13
     virtual ::Scripting::Result<void> moveContainerToLocation(::BlockPos const& newPos);

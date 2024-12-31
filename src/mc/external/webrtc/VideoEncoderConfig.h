@@ -47,23 +47,19 @@ public:
         virtual void FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
 
         // vIndex: 2
-        virtual ~EncoderSpecificSettings() /*override*/;
+        virtual ~EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const;
 
-        MCAPI void $FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const;
-
-        MCAPI void $FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
         // NOLINTEND
     };
 
@@ -87,19 +83,19 @@ public:
         virtual void FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const /*override*/;
 
         // vIndex: 2
-        virtual ~Vp8EncoderSpecificSettings() /*override*/;
+        virtual ~Vp8EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $FillVideoCodecVp8(::webrtc::VideoCodecVP8*) const;
+
         // NOLINTEND
     };
 
@@ -123,19 +119,19 @@ public:
         virtual void FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const /*override*/;
 
         // vIndex: 2
-        virtual ~Vp9EncoderSpecificSettings() /*override*/;
+        virtual ~Vp9EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $FillVideoCodecVp9(::webrtc::VideoCodecVP9*) const;
+
         // NOLINTEND
     };
 
@@ -159,19 +155,19 @@ public:
         virtual void FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const /*override*/;
 
         // vIndex: 2
-        virtual ~Av1EncoderSpecificSettings() /*override*/;
+        virtual ~Av1EncoderSpecificSettings() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const;
+
         // NOLINTEND
     };
 
@@ -195,13 +191,13 @@ public:
         CreateEncoderStreams(int, int, ::webrtc::VideoEncoderConfig const&) = 0;
 
         // vIndex: 2
-        virtual ~VideoStreamFactoryInterface() /*override*/;
+        virtual ~VideoStreamFactoryInterface() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

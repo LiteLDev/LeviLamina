@@ -41,7 +41,7 @@ public:
     virtual ::RecordItem& setDescriptionId(::std::string const& description) /*override*/;
 
     // vIndex: 0
-    virtual ~RecordItem() /*override*/;
+    virtual ~RecordItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -181,13 +181,13 @@ public:
     virtual uint remote_ssrc() const = 0;
 
     // vIndex: 0
-    virtual ~AudioReceiveStreamInterface() /*override*/;
+    virtual ~AudioReceiveStreamInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

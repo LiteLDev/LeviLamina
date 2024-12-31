@@ -43,7 +43,7 @@ public:
     handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptPlayerGameplayHandler() /*override*/;
+    virtual ~ScriptPlayerGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

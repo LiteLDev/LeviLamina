@@ -24,13 +24,13 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
-    virtual ~RapidFertilizerItem() /*override*/;
+    virtual ~RapidFertilizerItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

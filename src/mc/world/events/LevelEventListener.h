@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelEventListener();
+    virtual ~LevelEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onLevelInitialized(::Level& level);
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

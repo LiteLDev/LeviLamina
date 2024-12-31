@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UIProfanityContext() /*override*/;
+    virtual ~UIProfanityContext() /*override*/ = default;
 
     // vIndex: 1
     virtual void handleLocalFilterToggle(bool);
@@ -66,22 +66,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleLocalFilterToggle(bool);
 
-    MCAPI void $handleRemoteFilterToggle(bool);
-
-    MCAPI void $handlePlayerFilterToggle(bool);
-
-    MCAPI ::std::string $_doMaskProfanity(::std::string const&) const;
-
-    MCAPI bool $_doFindProfanity(::std::string const&) const;
-
-    MCAPI void $_fireEventProfanityFilter() const;
     // NOLINTEND
 };

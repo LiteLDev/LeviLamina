@@ -52,7 +52,7 @@ public:
     virtual ::CircuitComponentType getCircuitComponentType() const /*override*/;
 
     // vIndex: 0
-    virtual ~ProducerComponent() /*override*/;
+    virtual ~ProducerComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -57,7 +57,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FlightingToggles() /*override*/;
+    virtual ~FlightingToggles() /*override*/ = default;
 
     // vIndex: 1
     virtual ::gsl::not_null<::Option const*> get(::FlightingToggleId) const /*override*/;
@@ -80,19 +80,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::gsl::not_null<::Option const*> $get(::FlightingToggleId) const;
 
-    MCAPI void $initialize();
-
-    MCAPI void
-    $registerOptionObserverCallback(::Bedrock::PubSub::Subscription&, ::FlightingToggleId, ::std::function<void(::Option const&)>);
-
-    MCAPI void $visit(::std::function<void(::FlightingToggleMetadata const&)> const&) const;
     // NOLINTEND
 };

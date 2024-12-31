@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TickDeltaTimeManagerProxy() /*override*/;
+    virtual ~TickDeltaTimeManagerProxy() /*override*/ = default;
 
     // vIndex: 1
     virtual void start() /*override*/;
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

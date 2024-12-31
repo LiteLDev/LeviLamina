@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPrinter();
+    virtual ~IPrinter() = default;
 
     // vIndex: 1
     virtual void onInfo(::Scripting::ContextId, ::std::string_view) const = 0;
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

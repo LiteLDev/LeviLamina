@@ -29,7 +29,7 @@ public:
     virtual bool isThrowable() const /*override*/;
 
     // vIndex: 0
-    virtual ~EnderEyeItem() /*override*/;
+    virtual ~EnderEyeItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

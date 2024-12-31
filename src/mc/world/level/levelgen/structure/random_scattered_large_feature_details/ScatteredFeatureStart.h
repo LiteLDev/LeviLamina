@@ -45,7 +45,7 @@ public:
     virtual ::std::string_view getStructureName() const /*override*/;
 
     // vIndex: 0
-    virtual ~ScatteredFeatureStart() /*override*/;
+    virtual ~ScatteredFeatureStart() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

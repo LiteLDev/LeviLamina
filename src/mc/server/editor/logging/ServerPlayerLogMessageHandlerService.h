@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerPlayerLogMessageHandlerService() /*override*/;
+    virtual ~ServerPlayerLogMessageHandlerService() /*override*/ = default;
 
     // vIndex: 4
     virtual ::std::string_view getServiceName() const /*override*/;
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

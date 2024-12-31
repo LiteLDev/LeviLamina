@@ -36,7 +36,7 @@ public:
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
     // vIndex: 0
-    virtual ~StructurePoolBlockPredicateAlwaysTrue() /*override*/;
+    virtual ~StructurePoolBlockPredicateAlwaysTrue() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

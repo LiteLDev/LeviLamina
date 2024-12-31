@@ -16,7 +16,7 @@ public:
     virtual void Logv(char const* format, char* ap) /*override*/;
 
     // vIndex: 0
-    virtual ~NullLogger() /*override*/;
+    virtual ~NullLogger() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -28,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

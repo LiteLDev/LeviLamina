@@ -66,13 +66,13 @@ public:
     place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
 
     // vIndex: 0
-    virtual ~LargeDripstoneFeature() /*override*/;
+    virtual ~LargeDripstoneFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFileStorageAreaFetcher();
+    virtual ~IFileStorageAreaFetcher() = default;
 
     // vIndex: 1
     virtual ::Core::Result
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

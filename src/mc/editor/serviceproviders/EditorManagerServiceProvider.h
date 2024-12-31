@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorManagerServiceProvider();
+    virtual ~EditorManagerServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

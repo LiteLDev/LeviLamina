@@ -48,13 +48,13 @@ public:
         virtual bool onFlushEditorDataStoreAfterEvents() /*override*/;
 
         // vIndex: 0
-        virtual ~ScriptDataStoreAfterEventsDeferredEventListener() /*override*/;
+        virtual ~ScriptDataStoreAfterEventsDeferredEventListener() /*override*/ = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

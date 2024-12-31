@@ -89,7 +89,7 @@ public:
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 0
-    virtual ~FenceGateBlock() /*override*/;
+    virtual ~FenceGateBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -126,7 +126,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

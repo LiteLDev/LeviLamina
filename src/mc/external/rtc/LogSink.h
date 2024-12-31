@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LogSink();
+    virtual ~LogSink() = default;
 
     // vIndex: 7
     virtual void OnLogMessage(::std::string const&, ::rtc::LoggingSeverity, char const*);
@@ -57,23 +57,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnLogMessage(::std::string const&, ::rtc::LoggingSeverity, char const*);
 
-    MCAPI void $OnLogMessage(::std::string const&, ::rtc::LoggingSeverity);
-
-    MCAPI void $OnLogMessage(::std::string_view, ::rtc::LoggingSeverity, char const*);
-
-    MCAPI void $OnLogMessage(::std::string_view, ::rtc::LoggingSeverity);
-
-    MCAPI void $OnLogMessage(::std::string_view);
-
-    MCAPI void $OnLogMessage(::rtc::LogLineRef const&);
     // NOLINTEND
 
 public:

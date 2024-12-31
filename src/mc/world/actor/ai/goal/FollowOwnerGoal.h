@@ -66,7 +66,7 @@ public:
     onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
 
     // vIndex: 0
-    virtual ~FollowOwnerGoal() /*override*/;
+    virtual ~FollowOwnerGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

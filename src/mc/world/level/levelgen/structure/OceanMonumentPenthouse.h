@@ -33,13 +33,13 @@ public:
     virtual void postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 0
-    virtual ~OceanMonumentPenthouse() /*override*/;
+    virtual ~OceanMonumentPenthouse() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

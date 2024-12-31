@@ -26,13 +26,13 @@ public:
     virtual void UnregisterObserver(::webrtc::ObserverInterface*) = 0;
 
     // vIndex: 2
-    virtual ~NotifierInterface();
+    virtual ~NotifierInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

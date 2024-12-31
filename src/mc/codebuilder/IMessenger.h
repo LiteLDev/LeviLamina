@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IMessenger() /*override*/;
+    virtual ~IMessenger() /*override*/ = default;
 
     // vIndex: 1
     virtual void onAgentAction(::AgentActionType, ::std::string const&, ::Json::Value const&) const = 0;
@@ -140,7 +140,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

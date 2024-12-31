@@ -96,7 +96,7 @@ public:
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 8
-    virtual ~ArmorStand() /*override*/;
+    virtual ~ArmorStand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -172,7 +172,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -207,7 +207,7 @@ public:
 
     // vIndex: 208
     virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
@@ -556,7 +556,7 @@ public:
     );
 
     MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& textObject,
+        ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
@@ -590,8 +590,6 @@ public:
     MCAPI void $checkMovementStats(::Vec3 const& d);
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 

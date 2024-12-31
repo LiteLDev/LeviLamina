@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptDebuggerCommandOrigin() /*override*/;
+    virtual ~ScriptDebuggerCommandOrigin() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::string const& getRequestId() const /*override*/;
@@ -112,7 +112,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EntitlementChangeListener();
+    virtual ~EntitlementChangeListener() = default;
 
     // vIndex: 1
     virtual void onEntitlementReset();
@@ -31,14 +31,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onEntitlementReset();
 
-    MCAPI void $_onEntitlementChanged();
     // NOLINTEND
 };

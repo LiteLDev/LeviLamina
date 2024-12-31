@@ -38,16 +38,16 @@ public:
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&                                      random,
-        ::ChunkPos const&                              chunkPos,
+        ::ChunkPos const&                              pos,
         ::Vec3 const&                                  startPos,
         ::BoundingBox const&                           volume,
         float                                          rad,
         float                                          yRad,
-        ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
+        ::CaveFeatureUtils::CarvingParameters const&   carveValues
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~UnderwaterCaveFeature() /*override*/;
+    virtual ~UnderwaterCaveFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -69,12 +69,12 @@ public:
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&                                      random,
-        ::ChunkPos const&                              chunkPos,
+        ::ChunkPos const&                              pos,
         ::Vec3 const&                                  startPos,
         ::BoundingBox const&                           volume,
         float                                          rad,
         float                                          yRad,
-        ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
+        ::CaveFeatureUtils::CarvingParameters const&   carveValues
     ) const;
     // NOLINTEND
 

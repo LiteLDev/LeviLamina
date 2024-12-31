@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ApplicationInitHandler();
+    virtual ~ApplicationInitHandler() = default;
 
     // vIndex: 1
     virtual void onFatalInitializationError(char const*) = 0;
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

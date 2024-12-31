@@ -47,7 +47,7 @@ public:
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
 
     // vIndex: 0
-    virtual ~StructurePoolBlockPredicateAxisAlignedPosition() /*override*/;
+    virtual ~StructurePoolBlockPredicateAxisAlignedPosition() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

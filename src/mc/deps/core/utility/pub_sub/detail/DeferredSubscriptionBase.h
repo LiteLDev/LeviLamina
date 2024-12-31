@@ -28,13 +28,13 @@ public:
     virtual ::Bedrock::PubSub::DeferralType getDeferralType() const = 0;
 
     // vIndex: 0
-    virtual ~DeferredSubscriptionBase() /*override*/;
+    virtual ~DeferredSubscriptionBase() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

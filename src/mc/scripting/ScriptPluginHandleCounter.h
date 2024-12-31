@@ -119,7 +119,7 @@ public:
     virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptPluginHandleCounter() /*override*/;
+    virtual ~ScriptPluginHandleCounter() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -145,7 +145,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

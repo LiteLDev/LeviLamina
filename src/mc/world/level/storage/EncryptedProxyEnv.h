@@ -37,13 +37,13 @@ public:
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
     // vIndex: 0
-    virtual ~EncryptedProxyEnv() /*override*/;
+    virtual ~EncryptedProxyEnv() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

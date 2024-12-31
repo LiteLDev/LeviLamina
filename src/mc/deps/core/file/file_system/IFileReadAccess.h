@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFileReadAccess();
+    virtual ~IFileReadAccess() = default;
 
     // vIndex: 1
     virtual uint64 fread(void*, uint64, uint64, void*) const = 0;
@@ -22,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -103,44 +103,18 @@ public:
                       ::EntityFactoryT<>>&) /*override*/;
 
     // vIndex: 0
-    virtual ~CameraAimAssistCachePositionDataSystem() /*override*/;
+    virtual ~CameraAimAssistCachePositionDataSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::LocalPlayerComponent,
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent,
-                         ::PlayerComponent>,
-                     ::Read<
-                         ::StateVectorComponent,
-                         ::ActorRotationComponent,
-                         ::CameraAimAssistTickComponent,
-                         ::MobBodyRotationComponent,
-                         ::PassengerComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::ActorDataFlagComponent,
-                         ::AABBShapeComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent>,
-                     ::Write<::CameraAimAssistCachedPositionDataComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>&);
+
     // NOLINTEND
 };

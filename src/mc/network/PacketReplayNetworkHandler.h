@@ -46,7 +46,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PacketReplayNetworkHandler() /*override*/;
+    virtual ~PacketReplayNetworkHandler() /*override*/ = default;
 
     // vIndex: 7
     virtual ::IncomingPacketFilterResult
@@ -89,35 +89,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::IncomingPacketFilterResult
-    $allowIncomingPacketId(::NetworkIdentifierWithSubId const&, ::MinecraftPacketIds, uint64);
 
-    MCAPI ::OutgoingPacketFilterResult
-    $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&);
-
-    MCAPI void $onUnableToConnect(::Connection::DisconnectFailReason, ::std::string const&);
-
-    MCAPI void
-    $onDisconnect(::NetworkIdentifier const&, ::Connection::DisconnectFailReason const, ::std::string const&, bool, ::std::string const&);
-
-    MCAPI void $handle(::NetworkIdentifier const&, ::DisconnectPacket const&);
-
-    MCAPI void $handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&);
-
-    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&);
-
-    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&);
-
-    MCAPI void $handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&);
-
-    MCAPI void $handle(::NetworkIdentifier const&, ::StartGamePacket const&);
-
-    MCAPI void $onConnect(::NetworkIdentifier const&);
     // NOLINTEND
 };

@@ -40,7 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CherryTreeTrunk() /*override*/;
+    virtual ~CherryTreeTrunk() /*override*/ = default;
 
     // vIndex: 2
     virtual int getTreeHeight(::Random& random) const /*override*/;
@@ -77,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

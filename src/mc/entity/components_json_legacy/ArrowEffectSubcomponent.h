@@ -41,13 +41,13 @@ public:
     virtual char const* getName() /*override*/;
 
     // vIndex: 0
-    virtual ~ArrowEffectSubcomponent() /*override*/;
+    virtual ~ArrowEffectSubcomponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -19,13 +19,13 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 0
-    virtual ~WalkState() /*override*/;
+    virtual ~WalkState() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

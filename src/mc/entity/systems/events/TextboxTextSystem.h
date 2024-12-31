@@ -27,20 +27,18 @@ public:
     virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
 
     // vIndex: 0
-    virtual ~TextboxTextSystem() /*override*/;
+    virtual ~TextboxTextSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
 
-    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
 };

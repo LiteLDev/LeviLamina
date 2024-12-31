@@ -32,13 +32,13 @@ public:
     handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>&) = 0;
 
     // vIndex: 0
-    virtual ~PlayerGameplayHandler() /*override*/;
+    virtual ~PlayerGameplayHandler() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

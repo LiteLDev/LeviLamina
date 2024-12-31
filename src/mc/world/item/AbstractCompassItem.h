@@ -43,7 +43,7 @@ public:
     virtual int getEnchantSlot() const /*override*/;
 
     // vIndex: 0
-    virtual ~AbstractCompassItem() /*override*/;
+    virtual ~AbstractCompassItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

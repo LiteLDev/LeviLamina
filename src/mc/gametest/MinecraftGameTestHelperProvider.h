@@ -29,13 +29,13 @@ public:
     virtual ::std::unique_ptr<::gametest::IGameTestHelperProvider> clone() /*override*/;
 
     // vIndex: 0
-    virtual ~MinecraftGameTestHelperProvider() /*override*/;
+    virtual ~MinecraftGameTestHelperProvider() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

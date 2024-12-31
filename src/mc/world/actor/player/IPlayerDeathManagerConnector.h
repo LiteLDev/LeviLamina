@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPlayerDeathManagerConnector();
+    virtual ~IPlayerDeathManagerConnector() = default;
 
     // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(::Player&)>& getOnPlayerDeathConnector() = 0;
@@ -30,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

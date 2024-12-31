@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CandidatePair() /*override*/;
+    virtual ~CandidatePair() /*override*/ = default;
 
     // vIndex: 1
     virtual ::cricket::Candidate const& local_candidate() const /*override*/;
@@ -42,15 +42,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::Candidate const& $local_candidate() const;
 
-    MCAPI ::cricket::Candidate const& $remote_candidate() const;
     // NOLINTEND
 
 public:

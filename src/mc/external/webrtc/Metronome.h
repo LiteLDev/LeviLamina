@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Metronome();
+    virtual ~Metronome() = default;
 
     // vIndex: 1
     virtual void RequestCallOnNextTick(::absl::AnyInvocable<void() &&>);
@@ -35,13 +35,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $RequestCallOnNextTick(::absl::AnyInvocable<void() &&>);
+
     // NOLINTEND
 };
 

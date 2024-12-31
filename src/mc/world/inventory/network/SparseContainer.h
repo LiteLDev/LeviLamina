@@ -43,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SparseContainer() /*override*/;
+    virtual ~SparseContainer() /*override*/ = default;
 
     // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
@@ -95,32 +95,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI int $getContainerSize() const;
-
-    MCAPI int $getMaxStackSize() const;
-
-    MCAPI void $containerContentChanged(int);
-
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
-
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
-
-    MCAPI void $startOpen(::Player&);
-
-    MCAPI void $stopOpen(::Player& player);
-
-    MCAPI void $removeItem(int slot, int count);
     // NOLINTEND
 };

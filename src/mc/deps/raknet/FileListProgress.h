@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileListProgress();
+    virtual ~FileListProgress() = default;
 
     // vIndex: 1
     virtual void OnAddFilesFromDirectoryStarted(::RakNet::FileList*, char*);
@@ -45,23 +45,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnAddFilesFromDirectoryStarted(::RakNet::FileList*, char*);
 
-    MCAPI void $OnDirectory(::RakNet::FileList*, char*, uint);
-
-    MCAPI void $OnFile(::RakNet::FileList*, char*, char*, uint);
-
-    MCAPI void $OnFilePush(char const*, uint, uint, uint, bool, ::RakNet::SystemAddress, ushort);
-
-    MCAPI void $OnFilePushesComplete(::RakNet::SystemAddress, ushort);
-
-    MCAPI void $OnSendAborted(::RakNet::SystemAddress);
     // NOLINTEND
 };
 

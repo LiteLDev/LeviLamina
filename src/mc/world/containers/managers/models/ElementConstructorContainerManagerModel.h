@@ -52,7 +52,7 @@ public:
     virtual ::ContainerScreenContext _postInit() /*override*/;
 
     // vIndex: 0
-    virtual ~ElementConstructorContainerManagerModel() /*override*/;
+    virtual ~ElementConstructorContainerManagerModel() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

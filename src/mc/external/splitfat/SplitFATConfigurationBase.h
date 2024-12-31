@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SplitFATConfigurationBase();
+    virtual ~SplitFATConfigurationBase() = default;
 
     // vIndex: 1
     virtual ::SFAT::ErrorCode shutdown() = 0;
@@ -112,33 +112,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::SFAT::ErrorCode $defragmentationOnTransactionEnd();
 
-    MCAPI bool $isTransactionSupported() const;
-
-    MCAPI ::SFAT::ErrorCode $createTransactionFiles();
-
-    MCAPI ::SFAT::ErrorCode $tryOpenDirectoryTransactionFile(::SFAT::FileHandle&);
-
-    MCAPI ::SFAT::ErrorCode $tryOpenDataTransactionFile(::SFAT::FileHandle&);
-
-    MCAPI ::SFAT::ErrorCode $cleanupDirectoryTransactionFile();
-
-    MCAPI ::SFAT::ErrorCode $cleanupDataTransactionFile();
-
-    MCAPI ::SFAT::ErrorCode $cleanupTempTransactionFile();
-
-    MCAPI ::SFAT::ErrorCode $finalizeTransactionFile();
-
-    MCAPI void $getTempTransactionFile(::SFAT::FileHandle&) const;
-
-    MCAPI void $getDirectoryTransactionFile(::SFAT::FileHandle&) const;
     // NOLINTEND
 };
 

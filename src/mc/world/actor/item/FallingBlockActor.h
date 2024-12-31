@@ -91,7 +91,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
-    virtual ~FallingBlockActor() /*override*/;
+    virtual ~FallingBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -129,7 +129,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

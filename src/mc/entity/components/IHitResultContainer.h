@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IHitResultContainer();
+    virtual ~IHitResultContainer() = default;
 
     // vIndex: 1
     virtual void addHitResult(::HitResult, ::HitResult) = 0;
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

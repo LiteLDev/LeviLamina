@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MediaSendChannelInterface();
+    virtual ~MediaSendChannelInterface() = default;
 
     // vIndex: 1
     virtual ::cricket::VideoMediaSendChannelInterface* AsVideoSendChannel() = 0;
@@ -107,13 +107,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetEncoderSelector(uint, ::webrtc::VideoEncoderFactory::EncoderSelectorInterface*);
+
     // NOLINTEND
 };
 

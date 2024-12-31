@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommandChainedSubcommand();
+    virtual ~CommandChainedSubcommand() = default;
 
     // vIndex: 1
     virtual ::std::string getCommandName() const = 0;
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -38,7 +38,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~StoneCutterContainerScreenValidator() /*override*/;
+    virtual ~StoneCutterContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

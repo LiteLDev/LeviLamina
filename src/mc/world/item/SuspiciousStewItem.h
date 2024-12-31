@@ -52,7 +52,7 @@ public:
     virtual bool uniqueAuxValues() const /*override*/;
 
     // vIndex: 0
-    virtual ~SuspiciousStewItem() /*override*/;
+    virtual ~SuspiciousStewItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

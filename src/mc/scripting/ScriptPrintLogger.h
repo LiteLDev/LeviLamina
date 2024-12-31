@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptPrintLogger() /*override*/;
+    virtual ~ScriptPrintLogger() /*override*/ = default;
 
     // vIndex: 1
     virtual void onInfo(::Scripting::ContextId, ::std::string_view message) const /*override*/;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

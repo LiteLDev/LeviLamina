@@ -37,7 +37,7 @@ public:
     virtual ::Json::Value resolve(::ResolveData const& resolveData) const /*override*/;
 
     // vIndex: 0
-    virtual ~TextObjectLocalizedText() /*override*/;
+    virtual ~TextObjectLocalizedText() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

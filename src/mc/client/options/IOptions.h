@@ -57,7 +57,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IOptions();
+    virtual ~IOptions() = default;
 
     // vIndex: 1
     virtual ::Option& _registerOption(::std::unique_ptr<::Option>) = 0;
@@ -1176,7 +1176,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

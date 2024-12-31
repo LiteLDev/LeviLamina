@@ -66,7 +66,7 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~ShipwreckFeature() /*override*/;
+    virtual ~ShipwreckFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -84,7 +84,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

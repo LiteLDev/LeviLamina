@@ -25,13 +25,13 @@ public:
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction) /*override*/;
 
     // vIndex: 0
-    virtual ~ScreenHandlerHUD() /*override*/;
+    virtual ~ScreenHandlerHUD() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

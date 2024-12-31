@@ -125,7 +125,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VillageManager() /*override*/;
+    virtual ~VillageManager() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::weak_ptr<::Village>
@@ -221,7 +221,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -27,7 +27,7 @@ public:
     virtual bool isValid() const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptRGBA() /*override*/;
+    virtual ~ScriptRGBA() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

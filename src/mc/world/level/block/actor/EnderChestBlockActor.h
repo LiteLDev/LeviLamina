@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EnderChestBlockActor() /*override*/;
+    virtual ~EnderChestBlockActor() /*override*/ = default;
 
     // vIndex: 48
     virtual void openBy(::Player& p) /*override*/;
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

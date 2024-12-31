@@ -60,7 +60,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BrushableBlockActor() /*override*/;
+    virtual ~BrushableBlockActor() /*override*/ = default;
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
@@ -135,7 +135,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -47,7 +47,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~ConnectionCallbacks() /*override*/;
+        virtual ~ConnectionCallbacks() /*override*/ = default;
 
         // vIndex: 4
         virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) = 0;
@@ -65,7 +65,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -160,7 +160,7 @@ public:
         virtual bool isEncrypted() const /*override*/;
 
         // vIndex: 0
-        virtual ~RakNetNetworkPeer() /*override*/;
+        virtual ~RakNetNetworkPeer() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -180,7 +180,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

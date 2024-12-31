@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MeleeBoxAttackGoal() /*override*/;
+    virtual ~MeleeBoxAttackGoal() /*override*/ = default;
 
     // vIndex: 6
     virtual void tick() /*override*/;
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

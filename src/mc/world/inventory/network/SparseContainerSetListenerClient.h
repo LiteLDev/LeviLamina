@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SparseContainerSetListenerClient() /*override*/;
+    virtual ~SparseContainerSetListenerClient() /*override*/ = default;
 
     // vIndex: 1
     virtual void preSetItem(::Container*, int, bool, ::ItemStack*) /*override*/;
@@ -40,14 +40,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $preSetItem(::Container*, int, bool, ::ItemStack*);
 
-    MCAPI bool $postSetItem(::Container*, ::ItemStack&);
     // NOLINTEND
 };

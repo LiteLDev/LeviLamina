@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MultifaceSpreader();
+    virtual ~MultifaceSpreader() = default;
 
     // vIndex: 1
     virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const;
@@ -115,7 +115,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

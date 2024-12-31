@@ -35,24 +35,18 @@ public:
     virtual bool isUpscalingAvailable() const /*override*/;
 
     // vIndex: 0
-    virtual ~RayTracingHardwareOptions() /*override*/;
+    virtual ~RayTracingHardwareOptions() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isHardwareRayTracingCompatible() const;
 
-    MCAPI bool $isHardwareDeferredCompatible() const;
-
-    MCAPI bool $isPlatformCompatible() const;
-
-    MCAPI bool $isUpscalingAvailable() const;
     // NOLINTEND
 };

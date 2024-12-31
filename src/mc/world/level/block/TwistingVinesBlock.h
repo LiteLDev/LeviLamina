@@ -70,7 +70,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~TwistingVinesBlock() /*override*/;
+    virtual ~TwistingVinesBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -94,7 +94,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

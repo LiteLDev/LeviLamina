@@ -37,7 +37,7 @@ public:
     virtual bool isLavaBlocking() const /*override*/;
 
     // vIndex: 0
-    virtual ~UnderwaterTorchBlock() /*override*/;
+    virtual ~UnderwaterTorchBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

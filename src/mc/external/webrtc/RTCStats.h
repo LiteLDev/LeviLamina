@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RTCStats();
+    virtual ~RTCStats() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RTCStats> copy() const = 0;
@@ -57,13 +57,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::webrtc::Attribute> $AttributesImpl(uint64) const;
+
     // NOLINTEND
 
 public:

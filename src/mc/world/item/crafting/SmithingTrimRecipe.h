@@ -43,7 +43,7 @@ public:
     virtual bool hasDataDrivenResult() const /*override*/;
 
     // vIndex: 0
-    virtual ~SmithingTrimRecipe() /*override*/;
+    virtual ~SmithingTrimRecipe() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

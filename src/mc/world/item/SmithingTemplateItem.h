@@ -46,7 +46,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 0
-    virtual ~SmithingTemplateItem() /*override*/;
+    virtual ~SmithingTemplateItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

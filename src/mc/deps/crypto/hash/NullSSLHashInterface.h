@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NullSSLHashInterface() /*override*/;
+    virtual ~NullSSLHashInterface() /*override*/ = default;
 
     // vIndex: 1
     virtual void reset() /*override*/;
@@ -42,19 +42,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reset();
 
-    MCAPI void $update(void const*, uint);
-
-    MCAPI void $final(uchar*);
-
-    MCAPI uint64 $resultSize() const;
     // NOLINTEND
 };
 

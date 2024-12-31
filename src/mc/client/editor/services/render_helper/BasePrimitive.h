@@ -45,7 +45,7 @@ public:
     virtual void updateBoundingBox(::Vec3 const&, ::AABB&) const;
 
     // vIndex: 4
-    virtual ~BasePrimitive();
+    virtual ~BasePrimitive() = default;
 
     // vIndex: 5
     virtual void _rebuild() = 0;
@@ -57,15 +57,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setPosition(::Vec3 const&);
 
-    MCAPI void $updateBoundingBox(::Vec3 const&, ::AABB&) const;
     // NOLINTEND
 };
 

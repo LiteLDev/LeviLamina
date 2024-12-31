@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NullSSLInterface() /*override*/;
+    virtual ~NullSSLInterface() /*override*/ = default;
 
     // vIndex: 1
     virtual bool generateKeyPair(::std::string&, ::std::string&) /*override*/;
@@ -58,33 +58,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $generateKeyPair(::std::string&, ::std::string&);
 
-    MCAPI ::std::string $encryptData(
-        ::std::string const&,
-        ::std::string const&,
-        ::Crypto::Asymmetric::Padding,
-        ::Crypto::Asymmetric::PubKeyFormat
-    );
-
-    MCAPI ::std::string $decryptData(::std::string const&, ::std::string const&, ::Crypto::Asymmetric::Padding);
-
-    MCAPI ::std::string $signData(
-        ::std::string const&,
-        ::std::string const&,
-        ::Crypto::Hash::HashType,
-        ::Crypto::Asymmetric::PrivateKeySigningFormat
-    );
-
-    MCAPI bool $verifyData(::std::string const&, ::std::string const&, ::std::string const&, ::Crypto::Hash::HashType);
-
-    MCAPI ::std::string $computeSharedSecret(::std::string const&, ::std::string const&);
     // NOLINTEND
 };
 

@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~AzureFileStorageEndpoint();
+    virtual ~AzureFileStorageEndpoint() = default;
 
     // vIndex: 1
     virtual ::Bedrock::Http::Request makeListFilesRequest(::Core::Path const&) const;
@@ -50,19 +50,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Http::Request $makeListFilesRequest(::Core::Path const&) const;
 
-    MCAPI void
-    $sendListFilesRequest(::Bedrock::Http::Request&, ::TaskGroup&, ::std::function<void(::Bedrock::Http::Response const&, ::std::string const&)>)
-        const;
-
-    MCAPI void
-    $downloadSingleFile(::Core::Path const&, ::AzureFileDownloader&, ::std::function<void(::DownloaderResult)>) const;
     // NOLINTEND
 };

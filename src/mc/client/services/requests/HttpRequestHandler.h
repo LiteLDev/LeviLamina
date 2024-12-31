@@ -53,7 +53,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HttpRequestHandler();
+    virtual ~HttpRequestHandler() = default;
 
     // vIndex: 1
     virtual bool trySend(bool const);
@@ -86,20 +86,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $trySend(bool const);
 
-    MCAPI void $sendCachedRequest();
-
-    MCAPI bool $isDone() const;
-
-    MCAPI bool $canSendRequest() const;
-
-    MCAPI void $fireTelemetry(::Bedrock::NonOwnerPointer<::IMinecraftEventing> const&);
     // NOLINTEND
 };

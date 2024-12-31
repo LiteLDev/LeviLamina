@@ -52,7 +52,7 @@ public:
     virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(uint memberId) const /*override*/;
 
     // vIndex: 0
-    virtual ~DefaultCompositeSchema() /*override*/;
+    virtual ~DefaultCompositeSchema() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

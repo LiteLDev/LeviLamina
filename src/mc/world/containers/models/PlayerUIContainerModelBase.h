@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~PlayerUIContainerModelBase() /*override*/;
+    virtual ~PlayerUIContainerModelBase() /*override*/ = default;
 
     // vIndex: 2
     virtual void postInit() /*override*/;
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

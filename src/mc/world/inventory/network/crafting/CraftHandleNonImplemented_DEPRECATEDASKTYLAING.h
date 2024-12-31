@@ -26,7 +26,7 @@ public:
     virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const&) /*override*/;
 
     // vIndex: 0
-    virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() /*override*/;
+    virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

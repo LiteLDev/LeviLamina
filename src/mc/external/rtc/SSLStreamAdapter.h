@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SSLStreamAdapter() /*override*/;
+    virtual ~SSLStreamAdapter() /*override*/ = default;
 
     // vIndex: 6
     virtual void SetIdentity(::std::unique_ptr<::rtc::SSLIdentity>) = 0;
@@ -103,19 +103,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $GetSslCipherSuite(int*);
 
-    MCAPI bool $ExportKeyingMaterial(::std::string_view, uchar const*, uint64, bool, uchar*, uint64);
-
-    MCAPI bool $SetDtlsSrtpCryptoSuites(::std::vector<int> const&);
-
-    MCAPI bool $GetDtlsSrtpCryptoSuite(int*);
     // NOLINTEND
 
 public:

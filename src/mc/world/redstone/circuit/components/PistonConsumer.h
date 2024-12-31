@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PistonConsumer() /*override*/;
+    virtual ~PistonConsumer() /*override*/ = default;
 
     // vIndex: 6
     virtual bool canConsumePowerAnyDirection() const /*override*/;
@@ -67,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

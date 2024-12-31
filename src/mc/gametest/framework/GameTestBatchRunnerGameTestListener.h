@@ -41,13 +41,13 @@ public:
     virtual void onTestRetryFinished(::gametest::BaseGameTestInstance&) /*override*/;
 
     // vIndex: 0
-    virtual ~GameTestBatchRunnerGameTestListener() /*override*/;
+    virtual ~GameTestBatchRunnerGameTestListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

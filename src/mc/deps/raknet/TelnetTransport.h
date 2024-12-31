@@ -58,7 +58,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TelnetTransport() /*override*/;
+    virtual ~TelnetTransport() /*override*/ = default;
 
     // vIndex: 1
     virtual bool Start(ushort, bool) /*override*/;
@@ -91,29 +91,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $Start(ushort, bool);
 
-    MCAPI void $Stop();
-
-    MCAPI void $Send(::RakNet::SystemAddress, char const*, ...);
-
-    MCAPI void $CloseConnection(::RakNet::SystemAddress);
-
-    MCAPI ::RakNet::Packet* $Receive();
-
-    MCAPI void $DeallocatePacket(::RakNet::Packet*);
-
-    MCAPI ::RakNet::SystemAddress $HasNewIncomingConnection();
-
-    MCAPI ::RakNet::SystemAddress $HasLostConnection();
-
-    MCAPI ::RakNet::CommandParserInterface* $GetCommandParser();
     // NOLINTEND
 };
 

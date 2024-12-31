@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ICerealDefinitionSerializer();
+    virtual ~ICerealDefinitionSerializer() = default;
 
     // vIndex: 2
     virtual ::std::shared_ptr<::IDefinitionInstance>
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

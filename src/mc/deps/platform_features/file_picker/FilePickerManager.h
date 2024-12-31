@@ -66,13 +66,13 @@ public:
     pickDirectory(::Bedrock::DirectoryPickerConfig const&) = 0;
 
     // vIndex: 0
-    virtual ~FilePickerManager() /*override*/;
+    virtual ~FilePickerManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IslandManager() /*override*/;
+    virtual ~IslandManager() /*override*/ = default;
 
     // vIndex: 1
     virtual bool registerIsland(::Bedrock::IslandRegistrationInfo&) /*override*/;
@@ -66,27 +66,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $registerIsland(::Bedrock::IslandRegistrationInfo&);
 
-    MCAPI ::std::shared_ptr<::Bedrock::IIslandCore> $getIsland(ushort) const;
-
-    MCAPI void $start();
-
-    MCAPI void $suspend();
-
-    MCAPI void $resume();
-
-    MCAPI void $stop();
-
-    MCAPI bool $isTransitionComplete() const;
-
-    MCAPI void $update();
     // NOLINTEND
 };
 

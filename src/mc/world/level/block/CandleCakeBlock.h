@@ -73,7 +73,7 @@ public:
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
     // vIndex: 0
-    virtual ~CandleCakeBlock() /*override*/;
+    virtual ~CandleCakeBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -104,7 +104,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

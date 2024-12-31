@@ -57,7 +57,7 @@ public:
     virtual int getRandomEatingEnd() const;
 
     // vIndex: 0
-    virtual ~SnackGoal() /*override*/;
+    virtual ~SnackGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -99,7 +99,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

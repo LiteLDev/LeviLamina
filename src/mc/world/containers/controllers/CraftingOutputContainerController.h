@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftingOutputContainerController() /*override*/;
+    virtual ~CraftingOutputContainerController() /*override*/ = default;
 
     // vIndex: 5
     virtual int getBackgroundStyle(int, bool) const /*override*/;
@@ -50,20 +50,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getBackgroundStyle(int, bool) const;
 
-    MCAPI void $onRecipeSelected(::Recipe const*, uint64, bool);
-
-    MCAPI ::ItemInstance const& $getRecipeItem(int) const;
-
-    MCAPI void $clearSelectedRecipe();
-
-    MCAPI bool $_canRemove(int, int) const;
     // NOLINTEND
 };

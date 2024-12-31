@@ -74,7 +74,7 @@ public:
     virtual ::HashedString const& getRawName() const /*override*/;
 
     // vIndex: 0
-    virtual ~ActorSkeletalAnimationPlayer() /*override*/;
+    virtual ~ActorSkeletalAnimationPlayer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -102,7 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

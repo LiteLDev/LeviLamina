@@ -41,27 +41,19 @@ public:
     virtual ::gsl::span<uchar const> getLoggableData() const /*override*/;
 
     // vIndex: 0
-    virtual ~FileRequestBody() /*override*/;
+    virtual ~FileRequestBody() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Http::Internal::IRequestBody::ReadResult $read(::gsl::span<uchar>);
 
-    MCAPI uint64 $getSize();
-
-    MCAPI void $cancel();
-
-    MCAPI ::std::string const& $getLoggableSource() const;
-
-    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
     // NOLINTEND
 };
 

@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ITickDeltaTimeManagerProxy();
+    virtual ~ITickDeltaTimeManagerProxy() = default;
 
     // vIndex: 1
     virtual void start() = 0;
@@ -25,7 +25,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MemoryFileSystemEntry();
+    virtual ~MemoryFileSystemEntry() = default;
 
     // vIndex: 1
     virtual ::Core::Result canRemove() = 0;
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

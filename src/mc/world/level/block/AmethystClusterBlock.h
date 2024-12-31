@@ -64,7 +64,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~AmethystClusterBlock() /*override*/;
+    virtual ~AmethystClusterBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -84,7 +84,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

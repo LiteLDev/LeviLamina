@@ -64,7 +64,7 @@ public:
     virtual ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> resolve() const /*override*/;
 
     // vIndex: 16
-    virtual ~DeferredDescriptor() /*override*/;
+    virtual ~DeferredDescriptor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -85,7 +85,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

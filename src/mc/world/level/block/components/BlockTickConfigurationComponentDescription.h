@@ -36,7 +36,7 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockTickConfigurationComponentDescription() /*override*/;
+    virtual ~BlockTickConfigurationComponentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

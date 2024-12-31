@@ -38,7 +38,7 @@ public:
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
     // vIndex: 0
-    virtual ~SeasonsAgnosticLeavesBlock() /*override*/;
+    virtual ~SeasonsAgnosticLeavesBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

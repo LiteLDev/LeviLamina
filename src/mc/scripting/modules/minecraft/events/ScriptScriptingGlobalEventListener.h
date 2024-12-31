@@ -34,13 +34,13 @@ public:
     virtual ::EventResult onEvent(::ScriptCommandMessageEvent const& scriptCommandMessageEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptScriptingGlobalEventListener() /*override*/;
+    virtual ~ScriptScriptingGlobalEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

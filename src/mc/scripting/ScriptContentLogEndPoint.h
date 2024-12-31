@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptContentLogEndPoint() /*override*/;
+    virtual ~ScriptContentLogEndPoint() /*override*/ = default;
 
     // vIndex: 1
     virtual void log(::LogArea const, ::LogLevel const logLevel, char const* message) /*override*/;
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

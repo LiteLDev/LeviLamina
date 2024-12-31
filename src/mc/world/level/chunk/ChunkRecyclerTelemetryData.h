@@ -141,7 +141,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ChunkRecyclerTelemetryData() /*override*/;
+    virtual ~ChunkRecyclerTelemetryData() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -175,7 +175,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -30,13 +30,13 @@ public:
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
     // vIndex: 1
-    virtual ~EnchantSlotConstraint() /*override*/;
+    virtual ~EnchantSlotConstraint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

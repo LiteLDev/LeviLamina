@@ -30,7 +30,7 @@ public:
     virtual void useWorkstation() /*override*/;
 
     // vIndex: 0
-    virtual ~WorkComposterGoal() /*override*/;
+    virtual ~WorkComposterGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

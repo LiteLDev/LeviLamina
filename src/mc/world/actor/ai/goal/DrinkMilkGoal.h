@@ -40,7 +40,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~DrinkMilkDefinition() /*override*/;
+        virtual ~DrinkMilkDefinition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -62,7 +62,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -110,7 +110,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~DrinkMilkGoal() /*override*/;
+    virtual ~DrinkMilkGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -128,7 +128,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

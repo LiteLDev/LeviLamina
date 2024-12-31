@@ -36,26 +36,18 @@ public:
     virtual void onStorageChanged();
 
     // vIndex: 0
-    virtual ~LevelListCacheObserver() /*override*/;
+    virtual ~LevelListCacheObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLevelAdded(::std::string const&);
 
-    MCAPI void $onLevelUpdated(::std::string const&);
-
-    MCAPI void $onLevelDeleted(::std::string const&);
-
-    MCAPI void $onSummaryUpdated(::std::string const&);
-
-    MCAPI void $onStorageChanged();
     // NOLINTEND
 };

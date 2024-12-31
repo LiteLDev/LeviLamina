@@ -26,13 +26,13 @@ public:
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 0
-    virtual ~IceSpikeFeature() /*override*/;
+    virtual ~IceSpikeFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

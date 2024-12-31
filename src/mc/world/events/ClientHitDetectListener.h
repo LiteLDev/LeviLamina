@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientHitDetectListener();
+    virtual ~ClientHitDetectListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onChangedHitResult(::HitResult&);
@@ -39,18 +39,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onChangedHitResult(::HitResult&);
 
-    MCAPI ::EventResult $onContinuousHitResult(::HitResult&);
-
-    MCAPI ::EventResult $onChangedPickHitResult(::HitResult&);
-
-    MCAPI ::EventResult $onContinuousPickHitResult(::HitResult&);
     // NOLINTEND
 };

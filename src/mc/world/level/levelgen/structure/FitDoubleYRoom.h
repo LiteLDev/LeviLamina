@@ -30,13 +30,13 @@ public:
     create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
 
     // vIndex: 0
-    virtual ~FitDoubleYRoom() /*override*/;
+    virtual ~FitDoubleYRoom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -18,13 +18,13 @@ public:
     virtual void OnChanged() = 0;
 
     // vIndex: 1
-    virtual ~ObserverInterface();
+    virtual ~ObserverInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

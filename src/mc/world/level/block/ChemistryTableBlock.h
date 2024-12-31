@@ -58,7 +58,7 @@ public:
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 0
-    virtual ~ChemistryTableBlock() /*override*/;
+    virtual ~ChemistryTableBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -83,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

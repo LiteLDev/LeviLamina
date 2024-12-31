@@ -92,7 +92,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual ~ScriptWidget();
+    virtual ~ScriptWidget() = default;
 
     // vIndex: 0
     virtual void _performDeleteWidget(bool suppressClientMessage) /*override*/;
@@ -329,7 +329,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

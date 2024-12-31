@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientPlayerReadyPayload() /*override*/;
+    virtual ~ClientPlayerReadyPayload() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

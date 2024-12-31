@@ -48,7 +48,7 @@ public:
     virtual bool shouldTickOnSetBlock() const /*override*/;
 
     // vIndex: 0
-    virtual ~MagmaBlock() /*override*/;
+    virtual ~MagmaBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

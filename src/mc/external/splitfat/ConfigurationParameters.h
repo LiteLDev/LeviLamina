@@ -33,27 +33,19 @@ public:
     virtual uint getFirstFileDataBlockIndex() const /*override*/;
 
     // vIndex: 0
-    virtual ~ConfigurationParameters() /*override*/;
+    virtual ~ConfigurationParameters() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint $getClusterSize() const;
 
-    MCAPI uint $getChunkSize() const;
-
-    MCAPI uint $getDataBlockSize() const;
-
-    MCAPI uint $getTotalBlocksCount() const;
-
-    MCAPI uint $getFirstFileDataBlockIndex() const;
     // NOLINTEND
 };
 

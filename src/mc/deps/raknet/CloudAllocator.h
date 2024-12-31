@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CloudAllocator();
+    virtual ~CloudAllocator() = default;
 
     // vIndex: 1
     virtual ::RakNet::CloudQueryRow* AllocateCloudQueryRow();
@@ -38,19 +38,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::RakNet::CloudQueryRow* $AllocateCloudQueryRow();
 
-    MCAPI void $DeallocateCloudQueryRow(::RakNet::CloudQueryRow*);
-
-    MCAPI uchar* $AllocateRowData(uint);
-
-    MCAPI void $DeallocateRowData(void*);
     // NOLINTEND
 };
 

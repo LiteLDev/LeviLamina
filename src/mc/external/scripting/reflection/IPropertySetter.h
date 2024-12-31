@@ -27,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPropertySetter();
+    virtual ~IPropertySetter() = default;
 
     // vIndex: 1
     virtual ::Scripting::ResultAny set(::entt::meta_handle, ::entt::meta_any) = 0;
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

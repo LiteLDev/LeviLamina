@@ -44,7 +44,7 @@ public:
         virtual void _cancel() /*override*/;
 
         // vIndex: 0
-        virtual ~AsyncQueueResult() /*override*/;
+        virtual ~AsyncQueueResult() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -62,7 +62,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

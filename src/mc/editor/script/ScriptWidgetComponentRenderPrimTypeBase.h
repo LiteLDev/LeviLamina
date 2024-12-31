@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptWidgetComponentRenderPrimTypeBase();
+    virtual ~ScriptWidgetComponentRenderPrimTypeBase() = default;
     // NOLINTEND
 
 public:
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

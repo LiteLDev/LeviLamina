@@ -62,7 +62,7 @@ public:
     virtual bool hasByHashId(uint64 id) const /*override*/;
 
     // vIndex: 0
-    virtual ~FixedBiomeSource() /*override*/;
+    virtual ~FixedBiomeSource() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -80,7 +80,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InMemoryEnv() /*override*/;
+    virtual ~InMemoryEnv() /*override*/ = default;
 
     // vIndex: 1
     virtual ::leveldb::Status NewSequentialFile(::std::string const& f, ::leveldb::SequentialFile** r) /*override*/;
@@ -41,7 +41,8 @@ public:
     virtual ::leveldb::Status NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
     // vIndex: 4
-    virtual ::leveldb::Status NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
+    virtual ::leveldb::Status
+    NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
     // vIndex: 7
     virtual ::leveldb::Status DeleteFileA(::std::string const& f) /*override*/;
@@ -76,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -88,7 +89,7 @@ public:
 
     MCAPI ::leveldb::Status $NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCAPI ::leveldb::Status $NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r);
+    MCAPI ::leveldb::Status $NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result);
 
     MCAPI ::leveldb::Status $DeleteFileA(::std::string const& f);
 

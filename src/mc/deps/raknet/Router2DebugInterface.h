@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Router2DebugInterface();
+    virtual ~Router2DebugInterface() = default;
 
     // vIndex: 1
     virtual void ShowFailure(char const*);
@@ -27,15 +27,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $ShowFailure(char const*);
 
-    MCAPI void $ShowDiagnostic(char const*);
     // NOLINTEND
 };
 

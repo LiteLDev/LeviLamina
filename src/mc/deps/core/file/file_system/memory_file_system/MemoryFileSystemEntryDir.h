@@ -57,21 +57,19 @@ public:
     virtual ::Core::Result canRemove() /*override*/;
 
     // vIndex: 0
-    virtual ~MemoryFileSystemEntryDir() /*override*/;
+    virtual ~MemoryFileSystemEntryDir() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getSize() const;
 
-    MCAPI ::Core::Result $canRemove();
     // NOLINTEND
 };
 

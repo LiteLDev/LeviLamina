@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UIEventListener();
+    virtual ~UIEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onPushedScreen(::AbstractScene&);
@@ -33,14 +33,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onPushedScreen(::AbstractScene&);
 
-    MCAPI ::EventResult $onPoppedScreen(::AbstractScene&);
     // NOLINTEND
 };

@@ -34,7 +34,7 @@ public:
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 0
-    virtual ~GlowStickItem() /*override*/;
+    virtual ~GlowStickItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

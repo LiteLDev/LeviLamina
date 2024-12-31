@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemEventResponseFactory() /*override*/;
+    virtual ~ItemEventResponseFactory() /*override*/ = default;
 
     // vIndex: 1
     virtual void initializeFactory(::IPackLoadContext const& packLoadContext) /*override*/;
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

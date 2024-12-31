@@ -69,9 +69,6 @@ public:
 
     MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCAPI void
-    $onBlockChanged(::BlockSource&, ::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangedEventTarget, ::Actor*);
-
     MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
     MCAPI void $onBlockEntityChanged(::BlockSource& source, ::BlockActor& te);

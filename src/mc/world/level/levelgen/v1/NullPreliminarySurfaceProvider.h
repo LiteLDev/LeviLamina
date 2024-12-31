@@ -20,18 +20,18 @@ public:
     virtual ::std::optional<short> getPreliminarySurfaceLevel(::DividedPos2d<4>) const /*override*/;
 
     // vIndex: 0
-    virtual ~NullPreliminarySurfaceProvider() /*override*/;
+    virtual ~NullPreliminarySurfaceProvider() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4>) const;
+
     // NOLINTEND
 };

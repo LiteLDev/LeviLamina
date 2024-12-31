@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DragonBaseGoalDefinition() /*override*/;
+    virtual ~DragonBaseGoalDefinition() /*override*/ = default;
 
     // vIndex: 1
     virtual bool validateMobType(::Mob& mob) const /*override*/;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

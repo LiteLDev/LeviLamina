@@ -52,7 +52,7 @@ public:
     virtual bool _needsPostProcessing(::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~VillagePiece() /*override*/;
+    virtual ~VillagePiece() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

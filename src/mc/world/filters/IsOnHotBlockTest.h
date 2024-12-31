@@ -27,13 +27,13 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 0
-    virtual ~IsOnHotBlockTest() /*override*/;
+    virtual ~IsOnHotBlockTest() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

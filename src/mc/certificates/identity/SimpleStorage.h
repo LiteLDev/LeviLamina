@@ -72,45 +72,19 @@ public:
     virtual void userHint(::std::string const&) const /*override*/;
 
     // vIndex: 0
-    virtual ~SimpleStorage() /*override*/;
+    virtual ~SimpleStorage() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Json::Value $clientConfig() const;
 
-    MCAPI bool $hasDemoSignedInEver() const;
-
-    MCAPI void $hasDemoSignedInEver(bool) const;
-
-    MCAPI bool $hasSignedInEver() const;
-
-    MCAPI void $hasSignedInEver(bool) const;
-
-    MCAPI int64 $maxSignInExpiration() const;
-
-    MCAPI int64 $maxGraphExpiration() const;
-
-    MCAPI bool $rememberMe() const;
-
-    MCAPI void $rememberMe(bool) const;
-
-    MCAPI bool $signedIn() const;
-
-    MCAPI void $signedIn(bool) const;
-
-    MCAPI int64 $tokenRefreshThreshold() const;
-
-    MCAPI ::std::string $userHint() const;
-
-    MCAPI void $userHint(::std::string const&) const;
     // NOLINTEND
 };
 

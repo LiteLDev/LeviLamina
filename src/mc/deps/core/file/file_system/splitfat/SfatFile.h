@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SfatFile() /*override*/;
+    virtual ~SfatFile() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
@@ -79,39 +79,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::PathBuffer<::std::string> $_getPath() const;
 
-    MCAPI uint64 $_getBlockSize() const;
-
-    MCAPI bool $_isOpen();
-
-    MCAPI ::Core::Result $_close();
-
-    MCAPI ::Core::Result $_read(void*, uint64, uint64*);
-
-    MCAPI ::Core::Result $_readExactly(void*, uint64);
-
-    MCAPI ::Core::Result $_readAtPosition(uint64, void*, uint64, uint64*);
-
-    MCAPI ::Core::Result $_write(void const*, uint64);
-
-    MCAPI ::Core::Result $_setPosition(uint64);
-
-    MCAPI ::Core::Result $_getPosition(uint64*);
-
-    MCAPI ::Core::Result $_skip(uint64);
-
-    MCAPI ::Core::Result $_flush();
-
-    MCAPI ::Core::Result $_getSize(uint64*);
-
-    MCAPI ::Core::Result $_getRemainingSize(uint64*);
     // NOLINTEND
 };
 

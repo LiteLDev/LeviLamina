@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FecController();
+    virtual ~FecController() = default;
 
     // vIndex: 1
     virtual void SetProtectionCallback(::webrtc::VCMProtectionCallback*) = 0;
@@ -47,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

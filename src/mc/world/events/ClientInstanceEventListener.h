@@ -24,7 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClientInstanceEventListener();
+    virtual ~ClientInstanceEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onClientInitializeStart(::ClientInstance&);
@@ -60,30 +60,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onClientInitializeStart(::ClientInstance&);
 
-    MCAPI ::EventResult $onClientInitializeEnd(::ClientInstance&);
-
-    MCAPI ::EventResult $onClientMinecraftInitialized(::ClientInstance&, ::Minecraft&);
-
-    MCAPI ::EventResult $onClientCreatedLevel(::ClientInstance&, ::Level&);
-
-    MCAPI ::EventResult $onClientUpdateStart(::ClientInstance&);
-
-    MCAPI ::EventResult $onClientUpdateEnd(::ClientInstance&);
-
-    MCAPI ::EventResult $onClientSuspend(::ClientInstance&);
-
-    MCAPI ::EventResult $onClientEnteredWorld(::ClientInstance&);
-
-    MCAPI ::EventResult $onStartLeaveGame(::ClientInstance&);
-
-    MCAPI ::EventResult $onEvent(::ClientInstanceNotificationEvent const&);
     // NOLINTEND
 };

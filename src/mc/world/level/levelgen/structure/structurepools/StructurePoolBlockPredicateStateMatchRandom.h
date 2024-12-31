@@ -40,22 +40,18 @@ public:
     virtual void appendMetadataKey(::Util::XXHash&) const /*override*/;
 
     // vIndex: 0
-    virtual ~StructurePoolBlockPredicateStateMatchRandom() /*override*/;
+    virtual ~StructurePoolBlockPredicateStateMatchRandom() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const&, ::Randomize&) const;
 
-    MCAPI bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
-
-    MCAPI void $appendMetadataKey(::Util::XXHash&) const;
     // NOLINTEND
 };

@@ -18,13 +18,13 @@ public:
     virtual int RequestKeyFrame() = 0;
 
     // vIndex: 1
-    virtual ~VCMFrameTypeCallback();
+    virtual ~VCMFrameTypeCallback() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

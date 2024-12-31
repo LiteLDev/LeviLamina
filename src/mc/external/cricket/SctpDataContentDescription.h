@@ -45,29 +45,19 @@ public:
     virtual ::cricket::SctpDataContentDescription* CloneInternal() const /*override*/;
 
     // vIndex: 0
-    virtual ~SctpDataContentDescription() /*override*/;
+    virtual ~SctpDataContentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::MediaType $type() const;
 
-    MCAPI ::cricket::SctpDataContentDescription* $as_sctp();
-
-    MCAPI ::cricket::SctpDataContentDescription const* $as_sctp() const;
-
-    MCAPI bool $has_codecs() const;
-
-    MCAPI void $set_protocol(::std::string_view);
-
-    MCAPI ::cricket::SctpDataContentDescription* $CloneInternal() const;
     // NOLINTEND
 
 public:

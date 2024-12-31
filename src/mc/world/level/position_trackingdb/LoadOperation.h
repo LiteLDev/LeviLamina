@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LoadOperation() /*override*/;
+    virtual ~LoadOperation() /*override*/ = default;
 
     // vIndex: 2
     virtual char const* getDescription() const /*override*/;
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

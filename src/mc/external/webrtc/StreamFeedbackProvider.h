@@ -26,13 +26,13 @@ public:
     virtual void DeRegisterStreamFeedbackObserver(::webrtc::StreamFeedbackObserver*) = 0;
 
     // vIndex: 2
-    virtual ~StreamFeedbackProvider();
+    virtual ~StreamFeedbackProvider() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

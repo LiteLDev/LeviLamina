@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FileDownloadManager();
+    virtual ~FileDownloadManager() = default;
 
     // vIndex: 1
     virtual void update();
@@ -45,16 +45,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
 
-    MCAPI void $cancelDownload();
-
-    MCAPI float $getDownloadProgress() const;
     // NOLINTEND
 };

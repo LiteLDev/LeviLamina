@@ -41,7 +41,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
-        virtual ~TransportForMediaChannels() /*override*/;
+        virtual ~TransportForMediaChannels() /*override*/ = default;
 
         // vIndex: 0
         virtual bool SendRtp(::rtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&) /*override*/;
@@ -53,15 +53,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $SendRtp(::rtc::ArrayView<uchar const>, ::webrtc::PacketOptions const&);
 
-        MCAPI bool $SendRtcp(::rtc::ArrayView<uchar const>);
         // NOLINTEND
     };
 
@@ -82,7 +80,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MediaChannelUtil();
+    virtual ~MediaChannelUtil() = default;
 
     // vIndex: 1
     virtual int GetRtpSendTimeExtnId() const;
@@ -91,13 +89,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $GetRtpSendTimeExtnId() const;
+
     // NOLINTEND
 };
 

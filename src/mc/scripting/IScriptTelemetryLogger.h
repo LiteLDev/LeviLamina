@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScriptTelemetryLogger();
+    virtual ~IScriptTelemetryLogger() = default;
 
     // vIndex: 1
     virtual void onPluginDiscovery(::ScriptPluginManagerResult const&);
@@ -36,18 +36,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPluginDiscovery(::ScriptPluginManagerResult const&);
 
-    MCAPI void $onPluginRun(::ScriptPluginManagerResult const&);
-
-    MCAPI void $onDebuggerListen(bool);
-
-    MCAPI void $onDebuggerConnect(bool, int);
     // NOLINTEND
 };

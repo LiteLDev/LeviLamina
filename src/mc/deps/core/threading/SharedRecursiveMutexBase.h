@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SharedRecursiveMutexBase();
+    virtual ~SharedRecursiveMutexBase() = default;
 
     // vIndex: 1
     virtual bool _threadHoldsSharedLock(::std::thread::id) = 0;
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

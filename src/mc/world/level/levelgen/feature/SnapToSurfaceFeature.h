@@ -42,7 +42,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SnapToSurfaceFeature() /*override*/;
+    virtual ~SnapToSurfaceFeature() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::optional<::BlockPos>
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

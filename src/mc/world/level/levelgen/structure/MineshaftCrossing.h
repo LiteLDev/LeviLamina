@@ -45,7 +45,7 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 0
-    virtual ~MineshaftCrossing() /*override*/;
+    virtual ~MineshaftCrossing() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

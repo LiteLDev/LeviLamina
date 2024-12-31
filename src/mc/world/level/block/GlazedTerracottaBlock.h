@@ -32,7 +32,7 @@ public:
     virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 0
-    virtual ~GlazedTerracottaBlock() /*override*/;
+    virtual ~GlazedTerracottaBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

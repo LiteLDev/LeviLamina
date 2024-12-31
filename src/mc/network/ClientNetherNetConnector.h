@@ -37,26 +37,18 @@ public:
     virtual void OnSessionOpen(::NetherNet::NetworkID, uint64) /*override*/;
 
     // vIndex: 0
-    virtual ~ClientNetherNetConnector() /*override*/;
+    virtual ~ClientNetherNetConnector() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&);
 
-    MCAPI void $disconnect();
-
-    MCAPI bool $isServer() const;
-
-    MCAPI bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
-
-    MCAPI void $OnSessionOpen(::NetherNet::NetworkID, uint64);
     // NOLINTEND
 };

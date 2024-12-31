@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SharedSpawnGetter() /*override*/;
+    virtual ~SharedSpawnGetter() /*override*/ = default;
 
     // vIndex: 1
     virtual ::BlockPos const& getSharedSpawnPosition() const /*override*/;
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

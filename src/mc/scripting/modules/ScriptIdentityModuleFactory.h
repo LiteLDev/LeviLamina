@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptIdentityModuleFactory() /*override*/;
+    virtual ~ScriptIdentityModuleFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -35,6 +35,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

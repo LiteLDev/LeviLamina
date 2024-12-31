@@ -70,7 +70,7 @@ public:
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
     // vIndex: 0
-    virtual ~CodeBuilderCommand() /*override*/;
+    virtual ~CodeBuilderCommand() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -82,7 +82,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

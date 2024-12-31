@@ -27,13 +27,13 @@ public:
     virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
 
     // vIndex: 0
-    virtual ~DwellerSystem() /*override*/;
+    virtual ~DwellerSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

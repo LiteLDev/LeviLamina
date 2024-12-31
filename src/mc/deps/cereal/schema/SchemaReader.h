@@ -57,7 +57,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SchemaReader();
+    virtual ~SchemaReader() = default;
 
     // vIndex: 1
     virtual bool isValid() const = 0;
@@ -135,7 +135,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

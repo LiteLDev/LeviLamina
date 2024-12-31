@@ -72,38 +72,19 @@ public:
         ;
 
     // vIndex: 0
-    virtual ~EduSso() /*override*/;
+    virtual ~EduSso() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Json::Value $clientConfig(::Json::Value const&) const;
 
-    MCAPI ::Identity::_TokenRefreshState::Enum
-    $refreshToken(::Identity::IEduAuth&, ::AccessTokenInfo const&, int64, ::Identity::EduResourceType, ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>, ::std::function<void()>);
-
-    MCAPI void $onRefreshedToken(bool, ::Identity::EduResourceType);
-
-    MCAPI ::Identity::SsoPromptMode
-    $signIn(::Identity::IEduAuth&, int64, ::std::function<void()>, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>);
-
-    MCAPI void $signInSuccess(::std::string const&);
-
-    MCAPI void $demoSignInSuccess();
-
-    MCAPI void $resetAuthentication(::Identity::IEduAuth&, bool);
-
-    MCAPI bool $isDemoConversion() const;
-
-    MCAPI void
-    $signInGraph(::Identity::IEduAuth&, ::std::string const&, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>);
     // NOLINTEND
 };
 

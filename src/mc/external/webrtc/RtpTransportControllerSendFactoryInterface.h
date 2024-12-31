@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RtpTransportControllerSendFactoryInterface();
+    virtual ~RtpTransportControllerSendFactoryInterface() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

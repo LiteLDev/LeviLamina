@@ -77,7 +77,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~BrushableBlock() /*override*/;
+    virtual ~BrushableBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -101,7 +101,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

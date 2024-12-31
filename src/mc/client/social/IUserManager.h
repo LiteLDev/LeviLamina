@@ -43,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IUserManager() /*override*/;
+    virtual ~IUserManager() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
@@ -247,7 +247,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

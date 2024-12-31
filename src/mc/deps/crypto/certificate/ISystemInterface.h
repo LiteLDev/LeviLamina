@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ISystemInterface();
+    virtual ~ISystemInterface() = default;
 
     // vIndex: 1
     virtual ::std::string serialize(::Crypto::Certificate::Encoding) const = 0;
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

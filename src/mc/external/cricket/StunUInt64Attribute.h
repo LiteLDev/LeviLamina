@@ -40,7 +40,7 @@ public:
     virtual bool Write(::rtc::ByteBufferWriter*) const /*override*/;
 
     // vIndex: 0
-    virtual ~StunUInt64Attribute() /*override*/;
+    virtual ~StunUInt64Attribute() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -62,17 +62,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::StunAttributeValueType $value_type() const;
 
-    MCAPI bool $Read(::rtc::ByteBufferReader*);
-
-    MCAPI bool $Write(::rtc::ByteBufferWriter*) const;
     // NOLINTEND
 
 public:

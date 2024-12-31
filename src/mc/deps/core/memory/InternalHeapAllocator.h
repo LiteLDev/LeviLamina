@@ -39,13 +39,13 @@ public:
     virtual void* _realloc(::gsl::not_null<void*> p, uint64 newSize) /*override*/;
 
     // vIndex: 0
-    virtual ~InternalHeapAllocator() /*override*/;
+    virtual ~InternalHeapAllocator() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

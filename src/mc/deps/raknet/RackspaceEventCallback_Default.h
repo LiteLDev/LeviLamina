@@ -104,73 +104,19 @@ public:
     virtual void OnConnectionAttemptFailure(::RakNet::RackspaceOperationType, char const*) /*override*/;
 
     // vIndex: 0
-    virtual ~RackspaceEventCallback_Default() /*override*/;
+    virtual ~RackspaceEventCallback_Default() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $ExecuteDefault(char const*, ::RakNet::RackspaceEventType, char const*);
 
-    MCAPI void $OnAuthenticationResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnListServersResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnListServersWithDetailsResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnCreateServerResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnGetServerDetails(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnUpdateServerNameOrPassword(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnDeleteServer(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnListServerAddresses(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnShareServerAddress(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnDeleteServerAddress(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnRebootServer(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnRebuildServer(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnResizeServer(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnConfirmResizedServer(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnRevertResizedServer(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnListFlavorsResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnGetFlavorDetailsResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnListImagesResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnCreateImageResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnGetImageDetailsResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnDeleteImageResult(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnListSharedIPGroups(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnListSharedIPGroupsWithDetails(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnCreateSharedIPGroup(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnGetSharedIPGroupDetails(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnDeleteSharedIPGroup(::RakNet::RackspaceEventType, char const*);
-
-    MCAPI void $OnConnectionAttemptFailure(::RakNet::RackspaceOperationType, char const*);
     // NOLINTEND
 };
 

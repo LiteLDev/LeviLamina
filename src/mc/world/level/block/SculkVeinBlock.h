@@ -33,7 +33,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~SculkVeinBlock() /*override*/;
+    virtual ~SculkVeinBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -25,13 +25,13 @@ public:
     virtual float getAmount(int amplification, float scale) const /*override*/;
 
     // vIndex: 0
-    virtual ~MultiplyValueAmplifier() /*override*/;
+    virtual ~MultiplyValueAmplifier() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

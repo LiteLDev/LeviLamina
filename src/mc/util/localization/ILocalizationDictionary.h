@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ILocalizationDictionary();
+    virtual ~ILocalizationDictionary() = default;
 
     // vIndex: 1
     virtual ::std::string getLocString(::std::string const&) const = 0;
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

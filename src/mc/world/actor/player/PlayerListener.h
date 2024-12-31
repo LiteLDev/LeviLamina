@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerListener();
+    virtual ~PlayerListener() = default;
 
     // vIndex: 1
     virtual void onWillChangeDimension(::Player&);
@@ -33,16 +33,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onWillChangeDimension(::Player&);
 
-    MCAPI void $onDimensionChanged(::Player&);
-
-    MCAPI void $onPlayerDestruction(::Player&);
     // NOLINTEND
 };

@@ -35,13 +35,13 @@ public:
         virtual void OnSetVolume(double) = 0;
 
         // vIndex: 1
-        virtual ~AudioObserver();
+        virtual ~AudioObserver() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -85,29 +85,19 @@ public:
     virtual ::cricket::AudioOptions const options() const;
 
     // vIndex: 2
-    virtual ~AudioSourceInterface() /*override*/;
+    virtual ~AudioSourceInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetVolume(double);
 
-    MCAPI void $RegisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver*);
-
-    MCAPI void $UnregisterAudioObserver(::webrtc::AudioSourceInterface::AudioObserver*);
-
-    MCAPI void $AddSink(::webrtc::AudioTrackSinkInterface*);
-
-    MCAPI void $RemoveSink(::webrtc::AudioTrackSinkInterface*);
-
-    MCAPI ::cricket::AudioOptions const $options() const;
     // NOLINTEND
 };
 

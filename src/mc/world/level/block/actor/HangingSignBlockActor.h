@@ -25,7 +25,7 @@ public:
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
     // vIndex: 0
-    virtual ~HangingSignBlockActor() /*override*/;
+    virtual ~HangingSignBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

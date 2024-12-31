@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UDPProxyServerResultHandler();
+    virtual ~UDPProxyServerResultHandler() = default;
 
     // vIndex: 1
     virtual void OnLoginSuccess(::RakNet::RakString, ::RakNet::UDPProxyServer*) = 0;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

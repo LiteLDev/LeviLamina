@@ -41,7 +41,7 @@ public:
     virtual ::BlockPlanterItem& setDescriptionId(::std::string const& description) /*override*/;
 
     // vIndex: 0
-    virtual ~BlockPlanterItem() /*override*/;
+    virtual ~BlockPlanterItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

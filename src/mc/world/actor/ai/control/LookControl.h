@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LookControl() /*override*/;
+    virtual ~LookControl() /*override*/ = default;
 
     // vIndex: 1
     virtual void initializeInternal(::Mob& mob);
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -86,7 +86,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CrashManagerImpl() /*override*/;
+    virtual ~CrashManagerImpl() /*override*/ = default;
 
     // vIndex: 1
     virtual void initialize(::std::string_view) /*override*/;
@@ -127,33 +127,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize(::std::string_view);
 
-    MCAPI void $setCrashProcessorForFileType(::std::string_view, ::std::shared_ptr<::Bedrock::CrashFileProcessor>);
-
-    MCAPI void $setCrashTelemetryProcessor(::gsl::not_null<::Bedrock::CrashTelemetryProcessor*>);
-
-    MCAPI void $processCrashes(::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>, ::Scheduler&, bool);
-
-    MCAPI void $notifyCrashed();
-
-    MCAPI void $notifyMemoryIssue(uint, ::std::string const&);
-
-    MCAPI void $recordCrashedSession(::std::string_view, ::std::string_view, int64);
-
-    MCAPI void $stopProcessingCrashes();
-
-    MCAPI bool $isCrashProcessingActive() const;
-
-    MCAPI ::std::string const& $getCrashDataRoot() const;
-
-    MCAPI ::std::string const& $getCrashedSessionFileSuffix() const;
     // NOLINTEND
 };
 

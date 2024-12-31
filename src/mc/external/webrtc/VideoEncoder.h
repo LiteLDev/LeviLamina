@@ -137,13 +137,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~RateControlParameters();
+        virtual ~RateControlParameters() = default;
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
     };
 
@@ -205,7 +205,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VideoEncoder();
+    virtual ~VideoEncoder() = default;
 
     // vIndex: 1
     virtual void SetFecControllerOverride(::webrtc::FecControllerOverride*);
@@ -244,23 +244,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetFecControllerOverride(::webrtc::FecControllerOverride*);
 
-    MCAPI int $InitEncode(::webrtc::VideoCodec const*, int, uint64);
-
-    MCAPI int $InitEncode(::webrtc::VideoCodec const*, ::webrtc::VideoEncoder::Settings const&);
-
-    MCAPI void $OnPacketLossRateUpdate(float);
-
-    MCAPI void $OnRttUpdate(int64);
-
-    MCAPI void $OnLossNotification(::webrtc::VideoEncoder::LossNotification const&);
     // NOLINTEND
 };
 

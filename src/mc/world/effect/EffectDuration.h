@@ -6,7 +6,7 @@ struct EffectDuration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk178312;
+    ::ll::TypedStorage<4, 4, int> mValue;
     // NOLINTEND
 
 public:

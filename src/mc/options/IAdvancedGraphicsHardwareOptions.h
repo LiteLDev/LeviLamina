@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IAdvancedGraphicsHardwareOptions() /*override*/;
+    virtual ~IAdvancedGraphicsHardwareOptions() /*override*/ = default;
 
     // vIndex: 1
     virtual bool isHardwareRayTracingCompatible() const = 0;
@@ -34,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

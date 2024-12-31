@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPositionalRandomFactory();
+    virtual ~IPositionalRandomFactory() = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::IRandom> forBlockPos(::BlockPos const&) const = 0;
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

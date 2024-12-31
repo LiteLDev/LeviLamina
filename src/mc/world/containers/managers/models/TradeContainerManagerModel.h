@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TradeContainerManagerModel() /*override*/;
+    virtual ~TradeContainerManagerModel() /*override*/ = default;
 
     // vIndex: 7
     virtual ::std::vector<::ItemStack> getItemCopies() const /*override*/;
@@ -67,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

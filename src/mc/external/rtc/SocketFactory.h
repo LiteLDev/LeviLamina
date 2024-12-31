@@ -20,7 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SocketFactory();
+    virtual ~SocketFactory() = default;
 
     // vIndex: 1
     virtual ::rtc::Socket* CreateSocket(int, int) = 0;
@@ -29,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

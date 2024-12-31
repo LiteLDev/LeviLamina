@@ -41,7 +41,7 @@ public:
     virtual ::webrtc::MediaStreamTrackInterface::TrackState state() const = 0;
 
     // vIndex: 2
-    virtual ~MediaStreamTrackInterface() /*override*/;
+    virtual ~MediaStreamTrackInterface() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

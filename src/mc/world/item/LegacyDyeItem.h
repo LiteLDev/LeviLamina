@@ -26,7 +26,7 @@ public:
     virtual bool isDye() const /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyDyeItem() /*override*/;
+    virtual ~LegacyDyeItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -44,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

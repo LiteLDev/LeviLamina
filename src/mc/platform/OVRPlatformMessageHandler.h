@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OVRPlatformMessageHandler();
+    virtual ~OVRPlatformMessageHandler() = default;
 
     // vIndex: 1
     virtual bool handleMessage(::ovrMessage&) = 0;
@@ -27,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

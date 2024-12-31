@@ -47,7 +47,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WebSocketSignalingInterfaceImpl() /*override*/;
+    virtual ~WebSocketSignalingInterfaceImpl() /*override*/ = default;
 
     // vIndex: 0
     virtual void SignIn(
@@ -105,7 +105,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

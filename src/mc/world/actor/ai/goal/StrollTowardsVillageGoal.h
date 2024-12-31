@@ -37,7 +37,7 @@ public:
     virtual ::BlockPos _selectRandomPosInVillage() /*override*/;
 
     // vIndex: 0
-    virtual ~StrollTowardsVillageGoal() /*override*/;
+    virtual ~StrollTowardsVillageGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

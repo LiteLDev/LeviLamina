@@ -50,13 +50,13 @@ public:
     virtual char const* getName() /*override*/;
 
     // vIndex: 0
-    virtual ~FreezeOnHitSubcomponent() /*override*/;
+    virtual ~FreezeOnHitSubcomponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

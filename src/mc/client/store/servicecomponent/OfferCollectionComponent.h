@@ -46,7 +46,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OfferCollectionComponent() /*override*/;
+    virtual ~OfferCollectionComponent() /*override*/ = default;
 
     // vIndex: 5
     virtual void getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>&) /*override*/;
@@ -73,24 +73,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>&);
 
-    MCAPI void $tick(::ui::DirtyFlag&);
-
-    MCAPI bool $canRemove() const;
-
-    MCAPI int $getReadyCount() const;
-
-    MCAPI ::ImageTelemetryInfo $getImageTelemetry() const;
-
-    MCAPI void $_registerBindsAndEvents(::StoreDataDrivenScreenController&);
-
-    MCAPI void $_parseData(::Json::Value const&);
     // NOLINTEND
 };

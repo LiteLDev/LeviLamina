@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Rackspace2EventCallback();
+    virtual ~Rackspace2EventCallback() = default;
 
     // vIndex: 1
     virtual void OnAuthenticationResult(::RakNet::RackspaceEventType, char const*) = 0;
@@ -106,7 +106,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
     // vIndex: 8
-    virtual ~Rabbit() /*override*/;
+    virtual ~Rabbit() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

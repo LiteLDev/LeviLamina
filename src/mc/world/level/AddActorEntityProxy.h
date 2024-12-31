@@ -36,7 +36,7 @@ public:
     virtual void reloadActor(::Actor& actor) /*override*/;
 
     // vIndex: 0
-    virtual ~AddActorEntityProxy() /*override*/;
+    virtual ~AddActorEntityProxy() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

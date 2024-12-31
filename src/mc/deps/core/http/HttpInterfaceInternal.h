@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~HttpInterfaceInternal() /*override*/;
+    virtual ~HttpInterfaceInternal() /*override*/ = default;
 
     // vIndex: 1
     virtual void send(
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

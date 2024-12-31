@@ -61,7 +61,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CachedHttpRequest() /*override*/;
+    virtual ~CachedHttpRequest() /*override*/ = default;
 
     // vIndex: 3
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> send(::std::string
@@ -98,20 +98,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> $send(::std::string);
 
-    MCAPI void $processResponse(::Bedrock::Http::Response);
-
-    MCAPI void $_recordTelemetry(::Bedrock::Http::Response const&) const;
-
-    MCAPI bool $_tryUseCachedResponse();
-
-    MCAPI void $_writeToCache(::Json::Value const&, ::Json::Value const&) const;
     // NOLINTEND
 };

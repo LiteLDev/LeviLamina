@@ -40,31 +40,19 @@ public:
     virtual ::Bedrock::Http::ResponseBodyType getType() const /*override*/;
 
     // vIndex: 0
-    virtual ~IgnoredResponseBody() /*override*/;
+    virtual ~IgnoredResponseBody() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::error_code $start(::std::optional<uint64>);
 
-    MCAPI ::std::error_code $write(::gsl::span<uchar const>);
-
-    MCAPI void $complete();
-
-    MCAPI void $cancel();
-
-    MCAPI ::std::string const& $getLoggableDestination() const;
-
-    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
-
-    MCAPI ::Bedrock::Http::ResponseBodyType $getType() const;
     // NOLINTEND
 };
 

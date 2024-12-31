@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RemoveVolumeEntityPacket() /*override*/;
+    virtual ~RemoveVolumeEntityPacket() /*override*/ = default;
 
     // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -52,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

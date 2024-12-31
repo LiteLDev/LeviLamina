@@ -41,7 +41,7 @@ public:
     virtual void singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext) /*override*/;
 
     // vIndex: 0
-    virtual ~AuthorityDependentSystemImpl() /*override*/;
+    virtual ~AuthorityDependentSystemImpl() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

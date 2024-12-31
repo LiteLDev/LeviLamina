@@ -51,7 +51,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~BasicNetworkManager() /*override*/;
+    virtual ~BasicNetworkManager() /*override*/ = default;
 
     // vIndex: 3
     virtual void StartUpdating() /*override*/;
@@ -102,21 +102,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $StartUpdating();
 
-    MCAPI void $StopUpdating();
-
-    MCAPI void $DumpNetworks();
-
-    MCAPI void $set_vpn_list(::std::vector<::rtc::NetworkMask> const&);
-
-    MCAPI ::rtc::NetworkBindingResult $BindSocketToNetwork(int, ::rtc::IPAddress const&);
     // NOLINTEND
 
 public:

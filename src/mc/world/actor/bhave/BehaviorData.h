@@ -28,7 +28,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~DataProxy();
+        virtual ~DataProxy() = default;
 
         // vIndex: 1
         virtual ::std::unique_ptr<::BehaviorData::DataProxy> copy() = 0;
@@ -37,7 +37,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:

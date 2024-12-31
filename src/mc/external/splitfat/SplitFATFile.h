@@ -26,7 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SplitFATFile() /*override*/;
+    virtual ~SplitFATFile() /*override*/ = default;
 
     // vIndex: 1
     virtual bool isOpen() const /*override*/;
@@ -59,29 +59,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isOpen() const;
 
-    MCAPI ::SFAT::ErrorCode $close();
-
-    MCAPI ::SFAT::ErrorCode $read(void*, uint64, uint64&);
-
-    MCAPI ::SFAT::ErrorCode $write(void const*, uint64, uint64&);
-
-    MCAPI ::SFAT::ErrorCode $seek(int64, ::SFAT::SeekMode);
-
-    MCAPI ::SFAT::ErrorCode $getPosition(int64&);
-
-    MCAPI ::SFAT::ErrorCode $getSize(uint64&);
-
-    MCAPI ::SFAT::ErrorCode $flush();
-
-    MCAPI ::SFAT::ErrorCode $open(char const*, uint);
     // NOLINTEND
 };
 

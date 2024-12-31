@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ITaskExecutionContext();
+    virtual ~ITaskExecutionContext() = default;
 
     // vIndex: 1
     virtual bool isAsync() const = 0;
@@ -25,7 +25,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

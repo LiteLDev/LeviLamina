@@ -63,13 +63,13 @@ public:
     virtual ::EventResult onEvent(::ItemStopUseEvent const& itemEvent) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptItemEventListener() /*override*/;
+    virtual ~ScriptItemEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

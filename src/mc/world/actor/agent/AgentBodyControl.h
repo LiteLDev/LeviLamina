@@ -24,13 +24,13 @@ public:
     virtual void clientTick(::Mob& mob) /*override*/;
 
     // vIndex: 0
-    virtual ~AgentBodyControl() /*override*/;
+    virtual ~AgentBodyControl() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -137,10 +137,6 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
-
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod);
-
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;

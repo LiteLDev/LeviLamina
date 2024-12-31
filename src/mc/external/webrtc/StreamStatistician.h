@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StreamStatistician();
+    virtual ~StreamStatistician() = default;
 
     // vIndex: 1
     virtual ::webrtc::RtpReceiveStats GetStats() const = 0;
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

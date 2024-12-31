@@ -45,13 +45,13 @@ public:
     virtual int RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp) /*override*/;
 
     // vIndex: 0
-    virtual ~OpenSSLAesAdapter() /*override*/;
+    virtual ~OpenSSLAesAdapter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

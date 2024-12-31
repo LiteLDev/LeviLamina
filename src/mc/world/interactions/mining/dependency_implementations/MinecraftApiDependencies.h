@@ -30,13 +30,13 @@ public:
     virtual void finishMiningHook() /*override*/;
 
     // vIndex: 0
-    virtual ~MinecraftApiDependencies() /*override*/;
+    virtual ~MinecraftApiDependencies() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

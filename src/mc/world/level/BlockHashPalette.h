@@ -40,7 +40,7 @@ public:
     virtual void assignBlockNetworkId(::Block const& block, uint64 networkId) const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockHashPalette() /*override*/;
+    virtual ~BlockHashPalette() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

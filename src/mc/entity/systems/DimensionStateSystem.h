@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DimensionStateSystem() /*override*/;
+    virtual ~DimensionStateSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -36,6 +36,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 };

@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IAsyncInfo();
+    virtual ~IAsyncInfo() = default;
 
     // vIndex: 1
     virtual ::Bedrock::Threading::AsyncStatus getStatus() const = 0;
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

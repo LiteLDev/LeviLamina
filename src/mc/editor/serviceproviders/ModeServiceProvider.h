@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ModeServiceProvider();
+    virtual ~ModeServiceProvider() = default;
 
     // vIndex: 1
     virtual ::Editor::Mode getMode() const = 0;
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

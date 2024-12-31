@@ -67,7 +67,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~FurnaceBlock() /*override*/;
+    virtual ~FurnaceBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -98,7 +98,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -105,7 +105,7 @@ public:
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     // vIndex: 9
-    virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
+    virtual bool postProcess(::ChunkViewSource& neighborhoodIn) /*override*/;
 
     // vIndex: 48
     virtual ::Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(::ChunkPos const& chunkPos
@@ -205,7 +205,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
+    MCAPI bool $postProcess(::ChunkViewSource& neighborhoodIn);
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 

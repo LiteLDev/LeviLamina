@@ -35,7 +35,7 @@ public:
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockEntityFallOnConfigurationComponentDescription() /*override*/;
+    virtual ~BlockEntityFallOnConfigurationComponentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

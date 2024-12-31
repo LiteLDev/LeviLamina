@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockChangedPendingOperation() /*override*/;
+    virtual ~BlockChangedPendingOperation() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::Editor::Transactions::IOperation> _commit(::Editor::ServiceProviderCollection& services
@@ -57,7 +57,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

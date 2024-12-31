@@ -32,7 +32,7 @@ public:
     virtual float getThrowUpAngleOffset() /*override*/;
 
     // vIndex: 8
-    virtual ~ExperiencePotion() /*override*/;
+    virtual ~ExperiencePotion() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

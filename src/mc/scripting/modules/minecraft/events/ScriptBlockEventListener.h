@@ -102,13 +102,13 @@ public:
     ) /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptBlockEventListener() /*override*/;
+    virtual ~ScriptBlockEventListener() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

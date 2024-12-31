@@ -44,7 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftHandlerCrafting() /*override*/;
+    virtual ~CraftHandlerCrafting() /*override*/ = default;
 
     // vIndex: 1
     virtual ::ItemStackNetResult handleConsumedItem(
@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

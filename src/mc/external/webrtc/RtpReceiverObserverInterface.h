@@ -21,13 +21,13 @@ public:
     virtual void OnFirstPacketReceived(::cricket::MediaType) = 0;
 
     // vIndex: 1
-    virtual ~RtpReceiverObserverInterface();
+    virtual ~RtpReceiverObserverInterface() = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

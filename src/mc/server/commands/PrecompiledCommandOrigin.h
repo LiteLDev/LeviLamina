@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PrecompiledCommandOrigin() /*override*/;
+    virtual ~PrecompiledCommandOrigin() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::string const& getRequestId() const /*override*/;
@@ -93,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

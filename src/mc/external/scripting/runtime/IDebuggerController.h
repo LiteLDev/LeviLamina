@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IDebuggerController();
+    virtual ~IDebuggerController() = default;
 
     // vIndex: 1
     virtual bool attach(bool, ::std::optional<::std::string>, ::std::function<void(::std::string_view)>) = 0;
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

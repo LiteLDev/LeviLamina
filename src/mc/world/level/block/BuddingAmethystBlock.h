@@ -36,7 +36,7 @@ public:
     virtual bool isSilentWhenJumpingOff() const /*override*/;
 
     // vIndex: 0
-    virtual ~BuddingAmethystBlock() /*override*/;
+    virtual ~BuddingAmethystBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

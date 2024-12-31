@@ -74,7 +74,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ReadyEvent() /*override*/;
+    virtual ~ReadyEvent() /*override*/ = default;
 
     // vIndex: 4
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
@@ -93,18 +93,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::RakNet::PluginReceiveResult $OnReceive(::RakNet::Packet*);
 
-    MCAPI void
-    $OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason);
-
-    MCAPI void $OnRakPeerShutdown();
     // NOLINTEND
 };
 

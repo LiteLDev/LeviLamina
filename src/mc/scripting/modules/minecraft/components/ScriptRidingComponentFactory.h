@@ -36,13 +36,13 @@ public:
     virtual bool hasComponent(::WeakEntityRef entity) const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptRidingComponentFactory() /*override*/;
+    virtual ~ScriptRidingComponentFactory() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

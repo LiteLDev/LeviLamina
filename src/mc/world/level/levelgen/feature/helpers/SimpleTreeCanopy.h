@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SimpleTreeCanopy() /*override*/;
+    virtual ~SimpleTreeCanopy() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::optional<::BlockPos> placeCanopy(
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

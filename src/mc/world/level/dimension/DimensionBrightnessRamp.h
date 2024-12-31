@@ -19,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DimensionBrightnessRamp();
+    virtual ~DimensionBrightnessRamp() = default;
 
     // vIndex: 1
     virtual void buildBrightnessRamp();
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

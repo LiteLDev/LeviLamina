@@ -31,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UpdateOperation() /*override*/;
+    virtual ~UpdateOperation() /*override*/ = default;
 
     // vIndex: 1
     virtual bool
@@ -45,16 +45,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
-    MCAPI char const* $getDescription() const;
     // NOLINTEND
 };
 

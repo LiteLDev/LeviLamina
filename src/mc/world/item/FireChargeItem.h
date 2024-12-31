@@ -48,7 +48,7 @@ public:
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& actor, uchar& face, ::BlockPos& pos) const /*override*/;
 
     // vIndex: 0
-    virtual ~FireChargeItem() /*override*/;
+    virtual ~FireChargeItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

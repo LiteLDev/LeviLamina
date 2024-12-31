@@ -33,20 +33,18 @@ public:
     virtual ::CorrectionType getCorrectionType() const = 0;
 
     // vIndex: 0
-    virtual ~IMovementCorrection() /*override*/;
+    virtual ~IMovementCorrection() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AdvanceFrameResult $getAdvanceFrameResult(::MovementDataExtractionUtility::SnapshotAccessor const&);
 
-    MCAPI void $advanceLiveFrame(::Actor&, ::std::optional<uint64>);
     // NOLINTEND
 };

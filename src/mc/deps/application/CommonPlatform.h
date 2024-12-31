@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CommonPlatform();
+    virtual ~CommonPlatform() = default;
 
     // vIndex: 1
     virtual bool updatePlatformInfo() = 0;
@@ -138,51 +138,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $issueShutdown();
 
-    MCAPI void $issueSuspend();
-
-    MCAPI void $issueResume();
-
-    MCAPI void $issueBack();
-
-    MCAPI void $issueLowMemory();
-
-    MCAPI void $issueFocusLost();
-
-    MCAPI void $issueFocusGained();
-
-    MCAPI void $issueInputPaneVisible();
-
-    MCAPI void $issueInputPaneHidden();
-
-    MCAPI void $issueSuspendWarning();
-
-    MCAPI void $issueVisibilityChange(bool);
-
-    MCAPI void $issueWindowSizeChange(int, int);
-
-    MCAPI void $issueDPIChange(float);
-
-    MCAPI void $issueOrientationChange(::DisplayOrientation const&);
-
-    MCAPI void $feedButtonPress(int const&);
-
-    MCAPI void $feedKeyPress(char const);
-
-    MCAPI void $setTextboxText(::std::string const&);
-
-    MCAPI void $setStorageDirectory(::FileStorageDirectory, bool, ::PropertyBag const&, ::std::function<void(bool)>);
-
-    MCAPI ::FileStorageDirectory $setInitialStorageDirectory(::FileStorageDirectory);
-
-    MCAPI ::FileStorageDirectory $getStorageDirectory() const;
     // NOLINTEND
 };
 

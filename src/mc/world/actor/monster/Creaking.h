@@ -29,7 +29,7 @@ public:
     virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 8
-    virtual ~Creaking() /*override*/;
+    virtual ~Creaking() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

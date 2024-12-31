@@ -60,7 +60,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Input();
+    virtual ~Input() = default;
 
     // vIndex: 1
     virtual ::SemVersion version() const = 0;
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

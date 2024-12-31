@@ -68,7 +68,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
     // vIndex: 8
-    virtual ~Npc() /*override*/;
+    virtual ~Npc() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -101,7 +101,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

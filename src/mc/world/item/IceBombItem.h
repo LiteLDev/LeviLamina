@@ -48,7 +48,7 @@ public:
     virtual int getCooldownTime() const /*override*/;
 
     // vIndex: 0
-    virtual ~IceBombItem() /*override*/;
+    virtual ~IceBombItem() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -72,7 +72,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

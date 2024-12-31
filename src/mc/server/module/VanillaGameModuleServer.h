@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VanillaGameModuleServer() /*override*/;
+    virtual ~VanillaGameModuleServer() /*override*/ = default;
 
     // vIndex: 1
     virtual void init(::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
@@ -117,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

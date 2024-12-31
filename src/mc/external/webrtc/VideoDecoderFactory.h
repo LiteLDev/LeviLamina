@@ -44,7 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VideoDecoderFactory();
+    virtual ~VideoDecoderFactory() = default;
 
     // vIndex: 1
     virtual ::std::vector<::webrtc::SdpVideoFormat> GetSupportedFormats() const = 0;
@@ -60,13 +60,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::VideoDecoderFactory::CodecSupport $QueryCodecSupport(::webrtc::SdpVideoFormat const&, bool) const;
+
     // NOLINTEND
 };
 

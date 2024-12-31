@@ -61,7 +61,7 @@ public:
     virtual ::StructurePoolElementType type() const /*override*/;
 
     // vIndex: 14
-    virtual ~FeaturePoolElement() /*override*/;
+    virtual ~FeaturePoolElement() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -83,14 +83,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $getSize(::Rotation) const;
-
     MCAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 

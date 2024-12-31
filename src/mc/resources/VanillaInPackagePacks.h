@@ -20,19 +20,19 @@ public:
     virtual ::std::vector<::IInPackagePacks::MetaData> getPacks(::PackType) const /*override*/;
 
     // vIndex: 0
-    virtual ~VanillaInPackagePacks() /*override*/;
+    virtual ~VanillaInPackagePacks() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::IInPackagePacks::MetaData> $getPacks(::PackType) const;
+
     // NOLINTEND
 
 public:

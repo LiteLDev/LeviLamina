@@ -92,13 +92,13 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~SurfaceMaterialAdjustmentsBiomeComponentGlue() /*override*/;
+    virtual ~SurfaceMaterialAdjustmentsBiomeComponentGlue() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

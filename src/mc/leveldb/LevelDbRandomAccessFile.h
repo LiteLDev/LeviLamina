@@ -23,13 +23,13 @@ public:
     virtual ::leveldb::Status Read(uint64 offset, uint64 n, ::leveldb::Slice* result, char* scratch) const /*override*/;
 
     // vIndex: 0
-    virtual ~LevelDbRandomAccessFile() /*override*/;
+    virtual ~LevelDbRandomAccessFile() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

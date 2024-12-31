@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TargetTransferRateObserver();
+    virtual ~TargetTransferRateObserver() = default;
 
     // vIndex: 1
     virtual void OnTargetTransferRate(::webrtc::TargetTransferRate) = 0;
@@ -33,13 +33,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnStartRateUpdate(::webrtc::DataRate);
+
     // NOLINTEND
 };
 

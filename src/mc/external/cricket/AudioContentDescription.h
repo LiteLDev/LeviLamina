@@ -34,27 +34,19 @@ public:
     virtual ::cricket::AudioContentDescription* CloneInternal() const /*override*/;
 
     // vIndex: 0
-    virtual ~AudioContentDescription() /*override*/;
+    virtual ~AudioContentDescription() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $set_protocol(::std::string_view);
 
-    MCAPI ::cricket::MediaType $type() const;
-
-    MCAPI ::cricket::AudioContentDescription* $as_audio();
-
-    MCAPI ::cricket::AudioContentDescription const* $as_audio() const;
-
-    MCAPI ::cricket::AudioContentDescription* $CloneInternal() const;
     // NOLINTEND
 
 public:

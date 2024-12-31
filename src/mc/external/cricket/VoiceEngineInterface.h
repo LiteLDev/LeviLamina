@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VoiceEngineInterface() /*override*/;
+    virtual ~VoiceEngineInterface() /*override*/ = default;
 
     // vIndex: 2
     virtual void Init() = 0;
@@ -79,27 +79,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface> $CreateSendChannel(
-        ::webrtc::Call*,
-        ::cricket::MediaConfig const&,
-        ::cricket::AudioOptions const&,
-        ::webrtc::CryptoOptions const&,
-        ::webrtc::AudioCodecPairId
-    );
 
-    MCAPI ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface> $CreateReceiveChannel(
-        ::webrtc::Call*,
-        ::cricket::MediaConfig const&,
-        ::cricket::AudioOptions const&,
-        ::webrtc::CryptoOptions const&,
-        ::webrtc::AudioCodecPairId
-    );
     // NOLINTEND
 };
 

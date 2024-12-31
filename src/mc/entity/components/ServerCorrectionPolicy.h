@@ -51,13 +51,13 @@ public:
     virtual void notifyOfExternalCorrection(uint64 frame) /*override*/;
 
     // vIndex: 0
-    virtual ~ServerCorrectionPolicy() /*override*/;
+    virtual ~ServerCorrectionPolicy() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

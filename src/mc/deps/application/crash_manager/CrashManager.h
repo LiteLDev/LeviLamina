@@ -59,13 +59,13 @@ public:
     virtual ::std::string const& getCrashedSessionFileSuffix() const = 0;
 
     // vIndex: 0
-    virtual ~CrashManager() /*override*/;
+    virtual ~CrashManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

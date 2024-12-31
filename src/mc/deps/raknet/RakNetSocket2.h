@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RakNetSocket2();
+    virtual ~RakNetSocket2() = default;
 
     // vIndex: 1
     virtual int Send(::RakNet::RNS2_SendParameters*, char const*, uint) = 0;
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

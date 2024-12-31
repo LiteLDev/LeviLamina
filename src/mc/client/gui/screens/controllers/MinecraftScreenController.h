@@ -70,7 +70,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftScreenController() /*override*/;
+    virtual ~MinecraftScreenController() /*override*/ = default;
 
     // vIndex: 12
     virtual ::ui::ViewRequest tryExit() /*override*/;
@@ -159,65 +159,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $tryExit();
 
-    MCAPI ::ui::DirtyFlag $tick();
-
-    MCAPI uint $getSceneId() const;
-
-    MCAPI void $setSuspendInput(bool);
-
-    MCAPI void $setSuspendDirectionalInput(bool);
-
-    MCAPI void $leaveScreen(::std::string const&);
-
-    MCAPI void $onInit();
-
-    MCAPI void $onDelete();
-
-    MCAPI void $onOpen();
-
-    MCAPI void $onDictationEvent(::std::string const&);
-
-    MCAPI bool
-    $bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
-
-    MCAPI bool $bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
-
-    MCAPI bool $_doesScreenHaveExitBehavior() const;
-
-    MCAPI bool $_isStillValid() const;
-
-    MCAPI bool $_getGamepadHelperVisible() const;
-
-    MCAPI bool $_getMixedHelperVisible() const;
-
-    MCAPI bool $_getKeyboardHelperVisible() const;
-
-    MCAPI bool $_getGestureControlEnabled() const;
-
-    MCAPI ::std::string $_getButtonStartDescription();
-
-    MCAPI ::std::string $_getButtonADescription();
-
-    MCAPI ::std::string $_getButtonBDescription();
-
-    MCAPI ::std::string $_getButtonXDescription();
-
-    MCAPI ::std::string $_getButtonYDescription();
-
-    MCAPI ::std::string $_getButtonKeyboardDescription();
-
-    MCAPI void $showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)>);
-
-    MCAPI ::std::string $_getScreenName() const;
-
-    MCAPI ::ui::ViewRequest $promptConnect(bool, ::std::function<void(::Social::UserPlatformConnectionResult)>);
     // NOLINTEND
 };

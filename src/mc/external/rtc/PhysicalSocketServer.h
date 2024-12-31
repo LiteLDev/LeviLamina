@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PhysicalSocketServer() /*override*/;
+    virtual ~PhysicalSocketServer() /*override*/ = default;
 
     // vIndex: 1
     virtual ::rtc::Socket* CreateSocket(int, int) /*override*/;
@@ -78,19 +78,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::rtc::Socket* $CreateSocket(int, int);
 
-    MCAPI ::rtc::Socket* $WrapSocket(uint64);
-
-    MCAPI bool $Wait(::webrtc::TimeDelta, bool);
-
-    MCAPI void $WakeUp();
     // NOLINTEND
 
 public:

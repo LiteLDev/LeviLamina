@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StoreUIComponent();
+    virtual ~StoreUIComponent() = default;
 
     // vIndex: 1
     virtual void onScreenClosed();
@@ -90,44 +90,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onScreenClosed();
 
-    MCAPI void $onScreenEntered();
-
-    MCAPI void $onScreenEntering();
-
-    MCAPI void $onScreenOpened();
-
-    MCAPI void $getComponentDependanciesToAdd(::std::vector<::std::shared_ptr<::StoreUIComponent>>&);
-
-    MCAPI bool $isValid() const;
-
-    MCAPI void $tick(::ui::DirtyFlag&);
-
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification);
-
-    MCAPI bool $canRemove() const;
-
-    MCAPI int $getReadyCount() const;
-
-    MCAPI ::std::string $getTelemetryData() const;
-
-    MCAPI ::ImageTelemetryInfo $getImageTelemetry() const;
-
-    MCAPI void $_onInit(::StoreDataDrivenScreenController&);
-
-    MCAPI void $_onPostInit();
-
-    MCAPI void $_parseData(::Json::Value const&);
-
-    MCAPI void $_registerBindsAndEvents();
-
-    MCAPI void $_registerBindsAndEvents(::StoreDataDrivenScreenController&);
     // NOLINTEND
 };

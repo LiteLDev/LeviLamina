@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FoodItemComponent() /*override*/;
+    virtual ~FoodItemComponent() /*override*/ = default;
 
     // vIndex: 7
     virtual void _initializeComponent() /*override*/;
@@ -93,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -110,8 +110,6 @@ public:
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
     MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
-
-    MCAPI ::Item const* $useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&);
     // NOLINTEND
 
 public:

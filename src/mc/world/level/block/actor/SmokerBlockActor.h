@@ -24,7 +24,7 @@ public:
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 0
-    virtual ~SmokerBlockActor() /*override*/;
+    virtual ~SmokerBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

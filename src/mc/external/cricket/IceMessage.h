@@ -25,21 +25,19 @@ public:
     virtual ::cricket::StunMessage* CreateNew() const /*override*/;
 
     // vIndex: 0
-    virtual ~IceMessage() /*override*/;
+    virtual ~IceMessage() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cricket::StunAttributeValueType $GetAttributeValueType(int) const;
 
-    MCAPI ::cricket::StunMessage* $CreateNew() const;
     // NOLINTEND
 
 public:
