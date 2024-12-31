@@ -70,9 +70,9 @@ inline Expected<J> serialize_impl(T&& vec, meta::PriorityTag<5>)
     requires(concepts::IsVectorBase<std::remove_cvref_t<T>>)
 {
     Expected<J> res{J::array()};
-    std::remove_cvref_t<T>::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+    std::remove_cvref_t<T>::forEachComponent([&]<typename axis_type, size_t iter> {
         if (res) {
-            if (auto v = serialize<J>(std::forward<T>(vec).template get<axis_type>(iter)); v) {
+            if (auto v = serialize<J>(std::forward<T>(vec).template get<axis_type, iter>()); v) {
                 res->push_back(*std::move(v));
             } else {
                 res = makeSerIndexError(iter, v.error());

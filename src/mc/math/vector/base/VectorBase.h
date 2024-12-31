@@ -49,6 +49,9 @@ class boolN;
 
 template <typename T, typename... Components>
 struct LL_EBO VectorBase : concepts::VectorBaseTag {
+
+    static_assert((std::is_trivially_copyable_v<Components> && ...));
+
     using first_type = typename ll::traits::max_type<Components...>::type;
 
     using size_type = size_t;
@@ -57,13 +60,13 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
 
     template <typename F>
     static constexpr void forEachComponent(F&& func) noexcept {
-        ll::meta::unrollWithArgs<Components...>(func);
+        meta::unrollType<Components...>(func);
     }
 
     [[nodiscard]] constexpr std::string toString() const noexcept {
         std::string res("(");
-        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res  = fmt::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type>(iter));
+        forEachComponent([&]<typename axis_type, size_t iter> {
+            res  = fmt::format("{}{}", res, static_cast<T const*>(this)->template get<axis_type, iter>());
             res += ((iter < size() - 1) ? ", " : ")");
         });
         return res;
@@ -71,9 +74,9 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
 
     [[nodiscard]] constexpr bool operator==(T const& b) const noexcept {
         bool res = true;
-        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res =
-                res && (b.template get<axis_type>(iter) == static_cast<T const*>(this)->template get<axis_type>(iter));
+        forEachComponent([&]<typename axis_type, size_t iter> {
+            res = res
+               && (b.template get<axis_type, iter>() == static_cast<T const*>(this)->template get<axis_type, iter>());
         });
         return res;
     }
@@ -85,23 +88,27 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
     [[nodiscard]] constexpr first_type& operator[](size_t index) noexcept
         requires(traits::is_all_same_v<first_type, Components...>)
     {
-        return static_cast<T*>(this)->template get<first_type>(index);
+        return ::ll::meta::visitIndex<size()>(index, [&]<size_t I>() -> first_type& {
+            return static_cast<T*>(this)->template get<first_type, I>();
+        });
     }
 
-    [[nodiscard]] constexpr first_type operator[](size_t index) const noexcept
+    [[nodiscard]] constexpr first_type const& operator[](size_t index) const noexcept
         requires(traits::is_all_same_v<first_type, Components...>)
     {
-        return static_cast<T const*>(this)->template get<first_type>(index);
+        return ::ll::meta::visitIndex<size()>(index, [&]<size_t I>() -> first_type const& {
+            return static_cast<T*>(this)->template get<first_type, I>();
+        });
     }
 
     [[nodiscard]] constexpr size_t hash() const noexcept {
         size_t res = 0;
-        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        forEachComponent([&]<typename axis_type, size_t iter> {
             if constexpr (has_hash<axis_type>::value) {
-                hash_utils::hashCombine(static_cast<T const*>(this)->template get<axis_type>(iter).hash(), res);
+                hash_utils::hashCombine(static_cast<T const*>(this)->template get<axis_type, iter>().hash(), res);
             } else {
                 hash_utils::hashCombine(
-                    std::hash<axis_type>()(static_cast<T const*>(this)->template get<axis_type>(iter)),
+                    std::hash<axis_type>()(static_cast<T const*>(this)->template get<axis_type, iter>()),
                     res
                 );
             }
@@ -120,8 +127,9 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
     {
         boolN<sizeof...(Components)> res = true;
-        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) == static_cast<T const*>(this)->template get<axis_type>(iter));
+        forEachComponent([&]<typename axis_type, size_t iter> {
+            res[iter] =
+                (b.template get<axis_type, iter>() == static_cast<T const*>(this)->template get<axis_type, iter>());
         });
         return res;
     }
@@ -130,8 +138,9 @@ struct LL_EBO VectorBase : concepts::VectorBaseTag {
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
     {
         boolN<sizeof...(Components)> res = true;
-        forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (b.template get<axis_type>(iter) != static_cast<T const*>(this)->template get<axis_type>(iter));
+        forEachComponent([&]<typename axis_type, size_t iter> {
+            res[iter] =
+                (b.template get<axis_type, iter>() != static_cast<T const*>(this)->template get<axis_type, iter>());
         });
         return res;
     }

@@ -23,11 +23,11 @@ public:
     [[nodiscard]] constexpr std::array<T, Field::size() * 2> getNeighbors() const noexcept {
         std::array<T, Field::size() * 2> res;
         size_t                           i = 0;
-        Field::forEachComponent([&]<typename axis_type>(size_t axis) constexpr {
-            ll::meta::unroll<2>([&](size_t iter) {
-                T tmp                              = *(static_cast<T const*>(this));
-                tmp.template get<axis_type>(axis) += static_cast<axis_type>(iter * 2 - 1);
-                res[i]                             = tmp;
+        Field::forEachComponent([&]<typename axis_type, size_t axis> {
+            ll::meta::unroll<2>([&]<size_t iter> {
+                T tmp                                = *(static_cast<T const*>(this));
+                tmp.template get<axis_type, axis>() += static_cast<axis_type>(iter * 2 - 1);
+                res[i]                               = tmp;
                 i++;
             });
         });
@@ -35,15 +35,15 @@ public:
     }
 
     constexpr T& operator*=(T const& b) noexcept {
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<axis_type>(iter) *= b.template get<axis_type>(iter);
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<axis_type, iter>() *= b.template get<axis_type, iter>();
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
     constexpr T& operator/=(T const& b) noexcept {
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<axis_type>(iter) /= b.template get<axis_type>(iter);
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<axis_type, iter>() /= b.template get<axis_type, iter>();
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
@@ -62,16 +62,16 @@ public:
 
     template <std::convertible_to<first_type> V>
     constexpr T& operator*=(V const& b) noexcept {
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<first_type>(iter) *= static_cast<first_type>(b);
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<first_type, iter>() *= static_cast<first_type>(b);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
     template <std::convertible_to<first_type> V>
     constexpr T& operator/=(V const& b) noexcept {
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<first_type>(iter) /= static_cast<first_type>(b);
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<first_type, iter>() /= static_cast<first_type>(b);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
@@ -106,9 +106,9 @@ public:
 
     [[nodiscard]] constexpr double dot(T const& b) const noexcept {
         double res = 0.0;
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res +=
-                (double)(static_cast<T const*>(this)->template get<axis_type>(iter)) * b.template get<axis_type>(iter);
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            res += (double)(static_cast<T const*>(this)->template get<axis_type, iter>())
+                 * b.template get<axis_type, iter>();
         });
         return res;
     }
@@ -116,8 +116,8 @@ public:
     template <std::convertible_to<first_type> V>
     [[nodiscard]] constexpr double dot(V const& b) const noexcept {
         double res = 0.0;
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res += (double)(static_cast<T const*>(this)->template get<axis_type>(iter)) * static_cast<first_type>(b);
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            res += (double)(static_cast<T const*>(this)->template get<axis_type, iter>()) * static_cast<first_type>(b);
         });
         return res;
     }
@@ -146,8 +146,9 @@ public:
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
     {
         boolN<sizeof...(Components)> res = true;
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) < b.template get<axis_type>(iter));
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            res.template get<bool, iter>() =
+                (static_cast<T const*>(this)->template get<axis_type, iter>() < b.template get<axis_type, iter>());
         });
         return res;
     }
@@ -156,8 +157,9 @@ public:
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
     {
         boolN<sizeof...(Components)> res = true;
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) <= b.template get<axis_type>(iter));
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            res.template get<bool, iter>() =
+                (static_cast<T const*>(this)->template get<axis_type, iter>() <= b.template get<axis_type, iter>());
         });
         return res;
     }
@@ -166,8 +168,9 @@ public:
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
     {
         boolN<sizeof...(Components)> res = true;
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) > b.template get<axis_type>(iter));
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            res.template get<bool, iter>() =
+                (static_cast<T const*>(this)->template get<axis_type, iter>() > b.template get<axis_type, iter>());
         });
         return res;
     }
@@ -176,8 +179,9 @@ public:
         requires(sizeof...(Components) >= 2 && sizeof...(Components) <= 4)
     {
         boolN<sizeof...(Components)> res = true;
-        Field::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res[iter] = (static_cast<T const*>(this)->template get<axis_type>(iter) >= b.template get<axis_type>(iter));
+        Field::forEachComponent([&]<typename axis_type, size_t iter> {
+            res.template get<bool, iter>() =
+                (static_cast<T const*>(this)->template get<axis_type, iter>() >= b.template get<axis_type, iter>());
         });
         return res;
     }
@@ -197,8 +201,9 @@ template <IsField T, std::convertible_to<typename T::first_type> V>
     template <TYPE T>                                                                                                  \
     [[nodiscard]] constexpr T NAME(T const& x) noexcept {                                                              \
         T tmp;                                                                                                         \
-        T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                           \
-            tmp.template get<axis_type>(iter) = static_cast<axis_type>(std::NAME(x.template get<axis_type>(iter)));    \
+        T::forEachComponent([&]<typename axis_type, size_t iter> {                                                     \
+            tmp.template get<axis_type, iter>() =                                                                      \
+                static_cast<axis_type>(std::NAME(x.template get<axis_type, iter>()));                                  \
         });                                                                                                            \
         return tmp;                                                                                                    \
     }

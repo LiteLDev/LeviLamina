@@ -36,8 +36,8 @@ public:
         requires(T::size() >= 2 && T::size() <= 4)                                                                     \
     {                                                                                                                  \
         doubleN<T::size()> tmp;                                                                                        \
-        T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                           \
-            tmp.template get<double>(iter) = static_cast<double>(std::NAME(x.template get<axis_type>(iter)));          \
+        T::forEachComponent([&]<typename axis_type, size_t iter> {                                                     \
+            tmp.template get<double, iter>() = static_cast<double>(std::NAME(x.template get<axis_type, iter>()));      \
         });                                                                                                            \
         return tmp;                                                                                                    \
     }

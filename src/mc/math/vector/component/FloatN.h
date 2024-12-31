@@ -36,11 +36,11 @@ public:
 template <IsFloatN T>
 [[nodiscard]] constexpr T lerp(T const& a, T const& b, T const& x) noexcept {
     T tmp;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = std::lerp(
-            a.template get<axis_type>(iter),
-            b.template get<axis_type>(iter),
-            x.template get<axis_type>(iter)
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
+        tmp.template get<axis_type, iter>() = std::lerp(
+            a.template get<axis_type, iter>(),
+            b.template get<axis_type, iter>(),
+            x.template get<axis_type, iter>()
         );
     });
     return tmp;
@@ -77,9 +77,9 @@ LL_VEC_GEN_BASIC_MATH_FUNC_FLOAT(IsFloatN, tanh)
 template <IsFloatN T>
 [[nodiscard]] constexpr T atan2(T const& a, T const& b) noexcept {
     T tmp;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) =
-            std::atan2(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
+        tmp.template get<axis_type, iter>() =
+            std::atan2(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
     });
     return tmp;
 }
@@ -87,8 +87,9 @@ template <IsFloatN T>
 template <IsFloatN T>
 [[nodiscard]] constexpr T fmod(T const& a, T const& b) noexcept {
     T tmp;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = std::fmod(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
+        tmp.template get<axis_type, iter>() =
+            std::fmod(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
     });
     return tmp;
 }
@@ -96,8 +97,9 @@ template <IsFloatN T>
 template <IsFloatN T>
 [[nodiscard]] constexpr T modf(T const& a, T const& b) noexcept {
     T tmp;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = std::modf(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
+        tmp.template get<axis_type, iter>() =
+            std::modf(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
     });
     return tmp;
 }
@@ -105,8 +107,9 @@ template <IsFloatN T>
 template <IsFloatN T>
 [[nodiscard]] constexpr T pow(T const& a, T const& b) noexcept {
     T tmp;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) = std::pow(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
+        tmp.template get<axis_type, iter>() =
+            std::pow(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
     });
     return tmp;
 }

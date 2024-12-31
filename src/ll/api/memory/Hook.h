@@ -85,10 +85,8 @@ constexpr FuncPtr resolveIdentifier(void* address) {
     return address;
 }
 
-template <class T>
-concept NonMemFuncPtrT = !std::is_member_function_pointer_v<T>;
-
-template <NonMemFuncPtrT, auto>
+template <class T, auto>
+    requires(!std::is_member_function_pointer_v<T>)
 consteval bool virtualDetector() noexcept {
     return false;
 }

@@ -124,7 +124,7 @@ Expected<CompoundTagVariant> checkRange(ldouble& num) {
     }
     return makeSnbtError(SnbtErrorCode::NumberOutOfRange);
 }
-//TODO: use better parse alg
+// TODO: use better parse alg
 Expected<CompoundTagVariant> parseNumber(std::string_view& s) {
 
     size_t n = 0;

@@ -57,9 +57,9 @@ template <class T, class J>
 template <concepts::IsVectorBase T, class J>
 inline Expected<> deserialize_impl(T& vec, J&& j, meta::PriorityTag<5>) {
     Expected<> res{};
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
         if (res) {
-            res = deserialize<axis_type>(vec.template get<axis_type>(iter), static_cast<J&&>(j[iter]));
+            res = deserialize<axis_type>(vec.template get<axis_type, iter>(), static_cast<J&&>(j[iter]));
             if (!res) res = makeSerIndexError(iter, res.error());
         }
     });

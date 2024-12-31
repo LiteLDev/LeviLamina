@@ -115,7 +115,12 @@ Expected<std::shared_ptr<Service>> ServiceManager::getService(ServiceIdView cons
 std::optional<QueryServiceResult> ServiceManager::queryService(std::string_view name) {
     std::lock_guard lock(impl->mutex);
     if (auto it = impl->services.find(name); it != impl->services.end()) {
-        return QueryServiceResult{it->second->id.name, it->second->id.version, it->second->modName, it->second->service};
+        return QueryServiceResult{
+            it->second->id.name,
+            it->second->id.version,
+            it->second->modName,
+            it->second->service
+        };
     }
     return std::nullopt;
 }

@@ -21,8 +21,8 @@ public:
     constexpr T& operator+=(T const& b) noexcept
         requires(!IsCommutativeGroup<first_type>)
     {
-        CommutativeGroup::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<axis_type>(iter) += b.template get<axis_type>(iter);
+        CommutativeGroup::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<axis_type, iter>() += b.template get<axis_type, iter>();
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
@@ -30,8 +30,8 @@ public:
     constexpr T& operator-=(T const& b) noexcept
         requires(!IsCommutativeGroup<first_type>)
     {
-        CommutativeGroup::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<axis_type>(iter) -= b.template get<axis_type>(iter);
+        CommutativeGroup::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<axis_type, iter>() -= b.template get<axis_type, iter>();
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
@@ -53,8 +53,8 @@ public:
     }
     template <std::convertible_to<first_type> V>
     constexpr T& operator+=(V const& b) noexcept {
-        CommutativeGroup::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<first_type>(iter) += static_cast<first_type>(b);
+        CommutativeGroup::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<first_type, iter>() += static_cast<first_type>(b);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
@@ -62,8 +62,8 @@ public:
 
     template <std::convertible_to<first_type> V>
     constexpr T& operator-=(V const& b) noexcept {
-        CommutativeGroup::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            static_cast<T*>(this)->template get<first_type>(iter) -= static_cast<first_type>(b);
+        CommutativeGroup::forEachComponent([&]<typename axis_type, size_t iter> {
+            static_cast<T*>(this)->template get<first_type, iter>() -= static_cast<first_type>(b);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
@@ -118,13 +118,13 @@ template <IsCommutativeGroup T, std::convertible_to<typename T::first_type> V>
 template <IsCommutativeGroup T>
 [[nodiscard]] constexpr T min(T const& a, T const& b) noexcept {
     T tmp;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
         if constexpr (std::is_base_of_v<CommutativeGroupTag, axis_type>) {
-            tmp.template get<axis_type>(iter) =
-                min<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+            tmp.template get<axis_type, iter>() =
+                min<axis_type>(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
         } else {
-            tmp.template get<axis_type>(iter) =
-                std::min<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+            tmp.template get<axis_type, iter>() =
+                std::min<axis_type>(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
         }
     });
     return tmp;
@@ -133,13 +133,13 @@ template <IsCommutativeGroup T>
 template <IsCommutativeGroup T>
 [[nodiscard]] constexpr T max(T const& a, T const& b) noexcept {
     T tmp;
-    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+    T::forEachComponent([&]<typename axis_type, size_t iter> {
         if constexpr (std::is_base_of_v<CommutativeGroupTag, axis_type>) {
-            tmp.template get<axis_type>(iter) =
-                max<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+            tmp.template get<axis_type, iter>() =
+                max<axis_type>(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
         } else {
-            tmp.template get<axis_type>(iter) =
-                std::max<axis_type>(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+            tmp.template get<axis_type, iter>() =
+                std::max<axis_type>(a.template get<axis_type, iter>(), b.template get<axis_type, iter>());
         }
     });
     return tmp;

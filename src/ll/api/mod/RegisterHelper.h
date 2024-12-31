@@ -31,7 +31,7 @@ concept Disableable = requires(T t) {
 #define LL_REGISTER_MOD(CLAZZ, BINDER)                                                                                 \
     extern "C" {                                                                                                       \
     LL_SHARED_EXPORT bool ll_mod_load(ll::mod::NativeMod& self) {                                                      \
-        static_assert(::ll::mod::Loadable<CLAZZ>, #CLAZZ " must be Loadable");                                           \
+        static_assert(::ll::mod::Loadable<CLAZZ>, #CLAZZ " must be Loadable");                                         \
         ::ll::mod::bindToMod((BINDER), self);                                                                          \
         return (BINDER).load();                                                                                        \
     }                                                                                                                  \

@@ -47,21 +47,33 @@
         [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
             requires((IsIntN<T> || IsFloatN<T> || IsBoolN<T>) && T::size() == 2)                                       \
         : NAME() {                                                                                                     \
-            T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                       \
+            T::forEachComponent([&]<typename axis_type, size_t iter> {                                                 \
                 if constexpr (std::is_floating_point_v<axis_type> && !std::is_floating_point_v<TYPE>) {                \
-                    this->get<TYPE>(iter) = static_cast<TYPE>(std::floor(vec.template get<axis_type>(iter)));          \
+                    this->get<TYPE, iter>() = static_cast<TYPE>(std::floor(vec.template get<axis_type, iter>()));      \
                 } else {                                                                                               \
-                    this->get<TYPE>(iter) = static_cast<TYPE>((vec.template get<axis_type>(iter)));                    \
+                    this->get<TYPE, iter>() = static_cast<TYPE>((vec.template get<axis_type, iter>()));                \
                 }                                                                                                      \
             });                                                                                                        \
         }                                                                                                              \
-        template <typename T>                                                                                          \
-        [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            return (T&)((&x)[index]);                                                                                  \
+        template <typename T, size_t N>                                                                                \
+        [[nodiscard]] constexpr T& get() noexcept {                                                                    \
+            if constexpr (N == 0) {                                                                                    \
+                return x;                                                                                              \
+            } else if constexpr (N == 1) {                                                                             \
+                return y;                                                                                              \
+            } else {                                                                                                   \
+                static_assert(ll::traits::always_false<T>);                                                            \
+            }                                                                                                          \
         }                                                                                                              \
-        template <typename T>                                                                                          \
-        [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            return (T&)((&x)[index]);                                                                                  \
+        template <typename T, size_t N>                                                                                \
+        [[nodiscard]] constexpr T const& get() const noexcept {                                                        \
+            if constexpr (N == 0) {                                                                                    \
+                return x;                                                                                              \
+            } else if constexpr (N == 1) {                                                                             \
+                return y;                                                                                              \
+            } else {                                                                                                   \
+                static_assert(ll::traits::always_false<T>);                                                            \
+            }                                                                                                          \
         }                                                                                                              \
     }
 
@@ -89,21 +101,37 @@
         [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
             requires((IsIntN<T> || IsFloatN<T> || IsBoolN<T>) && T::size() == 3)                                       \
         : NAME() {                                                                                                     \
-            T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                       \
+            T::forEachComponent([&]<typename axis_type, size_t iter> {                                                 \
                 if constexpr (std::is_floating_point_v<axis_type> && !std::is_floating_point_v<TYPE>) {                \
-                    this->get<TYPE>(iter) = static_cast<TYPE>(std::floor(vec.template get<axis_type>(iter)));          \
+                    this->get<TYPE, iter>() = static_cast<TYPE>(std::floor(vec.template get<axis_type, iter>()));      \
                 } else {                                                                                               \
-                    this->get<TYPE>(iter) = static_cast<TYPE>((vec.template get<axis_type>(iter)));                    \
+                    this->get<TYPE, iter>() = static_cast<TYPE>((vec.template get<axis_type, iter>()));                \
                 }                                                                                                      \
             });                                                                                                        \
         }                                                                                                              \
-        template <typename T>                                                                                          \
-        [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            return (T&)((&x)[index]);                                                                                  \
+        template <typename T, size_t N>                                                                                \
+        [[nodiscard]] constexpr T& get() noexcept {                                                                    \
+            if constexpr (N == 0) {                                                                                    \
+                return x;                                                                                              \
+            } else if constexpr (N == 1) {                                                                             \
+                return y;                                                                                              \
+            } else if constexpr (N == 2) {                                                                             \
+                return z;                                                                                              \
+            } else {                                                                                                   \
+                static_assert(ll::traits::always_false<T>);                                                            \
+            }                                                                                                          \
         }                                                                                                              \
-        template <typename T>                                                                                          \
-        [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            return (T&)((&x)[index]);                                                                                  \
+        template <typename T, size_t N>                                                                                \
+        [[nodiscard]] constexpr T const& get() const noexcept {                                                        \
+            if constexpr (N == 0) {                                                                                    \
+                return x;                                                                                              \
+            } else if constexpr (N == 1) {                                                                             \
+                return y;                                                                                              \
+            } else if constexpr (N == 2) {                                                                             \
+                return z;                                                                                              \
+            } else {                                                                                                   \
+                static_assert(ll::traits::always_false<T>);                                                            \
+            }                                                                                                          \
         }                                                                                                              \
     }
 
@@ -137,21 +165,41 @@
         [[nodiscard]] constexpr NAME(T const& vec)                                                                     \
             requires((IsIntN<T> || IsFloatN<T> || IsBoolN<T>) && T::size() == 4)                                       \
         : NAME() {                                                                                                     \
-            T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {                                       \
+            T::forEachComponent([&]<typename axis_type, size_t iter> {                                                 \
                 if constexpr (std::is_floating_point_v<axis_type> && !std::is_floating_point_v<TYPE>) {                \
-                    this->get<TYPE>(iter) = static_cast<TYPE>(std::floor(vec.template get<axis_type>(iter)));          \
+                    this->get<TYPE, iter>() = static_cast<TYPE>(std::floor(vec.template get<axis_type, iter>()));      \
                 } else {                                                                                               \
-                    this->get<TYPE>(iter) = static_cast<TYPE>((vec.template get<axis_type>(iter)));                    \
+                    this->get<TYPE, iter>() = static_cast<TYPE>((vec.template get<axis_type, iter>()));                \
                 }                                                                                                      \
             });                                                                                                        \
         }                                                                                                              \
-        template <typename T>                                                                                          \
-        [[nodiscard]] constexpr T& get(size_t index) noexcept {                                                        \
-            return (T&)((&x)[index]);                                                                                  \
+        template <typename T, size_t N>                                                                                \
+        [[nodiscard]] constexpr T& get() noexcept {                                                                    \
+            if constexpr (N == 0) {                                                                                    \
+                return x;                                                                                              \
+            } else if constexpr (N == 1) {                                                                             \
+                return y;                                                                                              \
+            } else if constexpr (N == 2) {                                                                             \
+                return z;                                                                                              \
+            } else if constexpr (N == 3) {                                                                             \
+                return w;                                                                                              \
+            } else {                                                                                                   \
+                static_assert(ll::traits::always_false<T>);                                                            \
+            }                                                                                                          \
         }                                                                                                              \
-        template <typename T>                                                                                          \
-        [[nodiscard]] constexpr T get(size_t index) const noexcept {                                                   \
-            return (T&)((&x)[index]);                                                                                  \
+        template <typename T, size_t N>                                                                                \
+        [[nodiscard]] constexpr T const& get() const noexcept {                                                        \
+            if constexpr (N == 0) {                                                                                    \
+                return x;                                                                                              \
+            } else if constexpr (N == 1) {                                                                             \
+                return y;                                                                                              \
+            } else if constexpr (N == 2) {                                                                             \
+                return z;                                                                                              \
+            } else if constexpr (N == 3) {                                                                             \
+                return w;                                                                                              \
+            } else {                                                                                                   \
+                static_assert(ll::traits::always_false<T>);                                                            \
+            }                                                                                                          \
         }                                                                                                              \
     }
 

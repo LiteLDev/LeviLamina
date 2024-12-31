@@ -3,6 +3,7 @@
 #include <memory>
 
 #include "ll/api/base/Macro.h"
+#include "ll/api/coro/Generator.h"
 
 #include "mc/platform/UUID.h"
 
@@ -26,6 +27,6 @@ public:
     LLNDAPI optional_ref<PlayerInfoEntry const> fromUuid(mce::UUID) const;
     LLNDAPI optional_ref<PlayerInfoEntry const> fromXuid(std::string_view) const;
     LLNDAPI optional_ref<PlayerInfoEntry const> fromName(std::string_view) const;
-    LLAPI void                                  forEach(std::function<bool(PlayerInfoEntry const&)> const& fn) const;
+    LLNDAPI coro::Generator<PlayerInfoEntry const&> entries() const;
 };
 } // namespace ll::service

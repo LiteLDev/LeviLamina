@@ -11,11 +11,6 @@
 
 namespace ll::meta {
 namespace detail {
-template <class Fn, size_t... N>
-constexpr void unrollImpl(Fn&& fn, std::integer_sequence<size_t, N...>) {
-    (void(std::forward<Fn>(fn)(N)), ...);
-}
-
 template <size_t N, int Strategy>
 struct VisitStrategy;
 
@@ -166,20 +161,18 @@ struct PriorityTag : PriorityTag<N - 1> {};
 template <>
 struct PriorityTag<0> {};
 
-template <class... Components, class F>
-constexpr void unrollWithArgs(F&& func) {
-    size_t i = 0;
-    ((std::forward<F>(func).template operator()<Components>(i++)), ...);
-}
-
-template <class... Components, class F>
-constexpr void unrollWithArgsNoIndex(F&& func) {
-    ((std::forward<F>(func).template operator()<Components>()), ...);
+template <class... Ts, class Fn>
+constexpr void unrollType(Fn&& fn) {
+    [&]<size_t... I>(std::index_sequence<I...>) {
+        (void(std::forward<Fn>(fn).template operator()<Ts, I>()), ...);
+    }(std::index_sequence_for<Ts...>());
 }
 
 template <size_t N, class Fn>
 constexpr void unroll(Fn&& fn) {
-    detail::unrollImpl(std::forward<Fn>(fn), std::make_index_sequence<N>());
+    [&]<size_t... I>(std::index_sequence<I...>) {
+        (void(std::forward<Fn>(fn).template operator()<I>()), ...);
+    }(std::make_index_sequence<N>());
 }
 
 template <size_t N, class Fn, class... Args>
@@ -232,16 +225,10 @@ public:
     template <template <class...> class U>
     using to = U<Ts...>;
 
-    template <class Func>
-    static void constexpr forEach(Func&& func) {
-        unrollWithArgsNoIndex<Ts...>(func);
+    template <class Fn>
+    static void constexpr forEach(Fn&& func) {
+        unrollType<Ts...>(func);
     }
-
-    template <class Func>
-    static void constexpr forEachIndexed(Func&& func) {
-        unrollWithArgs<Ts...>(func);
-    }
-
     template <class T>
     static constexpr size_t index = traits::index_of<T, Ts...>::value;
 };

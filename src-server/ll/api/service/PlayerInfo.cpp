@@ -110,12 +110,10 @@ optional_ref<PlayerInfo::PlayerInfoEntry const> PlayerInfo::fromName(std::string
     }
     return nullptr;
 }
-void PlayerInfo::forEach(std::function<bool(PlayerInfoEntry const&)> const& fn) const {
+coro::Generator<PlayerInfo::PlayerInfoEntry const&> PlayerInfo::entries() const {
     std::lock_guard lock(impl->mutex);
     for (auto& [id, ptr] : impl->uuids) {
-        if (!fn(*ptr)) {
-            return;
-        }
+        co_yield *ptr;
     }
 }
 } // namespace ll::service

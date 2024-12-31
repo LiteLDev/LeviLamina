@@ -17,78 +17,78 @@ public:
     using first_type = bool;
     [[nodiscard]] constexpr bool any() const noexcept {
         bool res = false;
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res = res || static_cast<T const*>(this)->template get<bool>(iter);
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            res = res || static_cast<T const*>(this)->template get<bool, iter>();
         });
         return res;
     }
     [[nodiscard]] constexpr bool all() const noexcept {
         bool res = true;
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            res = res && static_cast<T const*>(this)->template get<bool>(iter);
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            res = res && static_cast<T const*>(this)->template get<bool, iter>();
         });
         return res;
     }
     [[nodiscard]] constexpr T operator!() const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = !(tmp.template get<bool>(iter));
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = !(tmp.template get<bool, iter>());
         });
         return tmp;
     }
     [[nodiscard]] constexpr T operator||(T const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = tmp.template get<bool>(iter) || x.template get<bool>(iter);
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = tmp.template get<bool, iter>() || x.template get<bool, iter>();
         });
         return tmp;
     }
     [[nodiscard]] constexpr T operator&&(T const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = tmp.template get<bool>(iter) && x.template get<bool>(iter);
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = tmp.template get<bool, iter>() && x.template get<bool, iter>();
         });
         return tmp;
     }
     [[nodiscard]] constexpr T operator xor(T const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = tmp.template get<bool>(iter) xor x.template get<bool>(iter);
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = tmp.template get<bool, iter>() xor x.template get<bool, iter>();
         });
         return tmp;
     }
     [[nodiscard]] constexpr T xnor(T const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = !(tmp.template get<bool>(iter) xor x.template get<bool>(iter));
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = !(tmp.template get<bool, iter>() xor x.template get<bool, iter>());
         });
         return tmp;
     }
     [[nodiscard]] constexpr T operator||(first_type const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = tmp.template get<bool>(iter) || x;
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = tmp.template get<bool, iter>() || x;
         });
         return tmp;
     }
     [[nodiscard]] constexpr T operator&&(first_type const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = tmp.template get<bool>(iter) && x;
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = tmp.template get<bool, iter>() && x;
         });
         return tmp;
     }
     [[nodiscard]] constexpr T operator xor(first_type const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = tmp.template get<bool>(iter) xor x;
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = tmp.template get<bool, iter>() xor x;
         });
         return tmp;
     }
     [[nodiscard]] constexpr T xnor(first_type const& x) const noexcept {
         T tmp = *(static_cast<T const*>(this));
-        BoolN::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-            tmp.template get<bool>(iter) = !(tmp.template get<bool>(iter) xor x);
+        BoolN::forEachComponent([&]<typename axis_type, size_t iter> {
+            tmp.template get<bool, iter>() = !(tmp.template get<bool, iter>() xor x);
         });
         return tmp;
     }
@@ -110,9 +110,9 @@ template <IsBoolN T, concepts::IsVectorBase T2>
     requires(T::size() == T2::size())
 {
     T2 tmp;
-    T2::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
-        tmp.template get<axis_type>(iter) =
-            x.template get<bool>(iter) ? a.template get<axis_type>(iter) : b.template get<axis_type>(iter);
+    T2::forEachComponent([&]<typename axis_type, size_t iter> {
+        tmp.template get<axis_type, iter>() =
+            x.template get<bool, iter>() ? a.template get<axis_type, iter>() : b.template get<axis_type, iter>();
     });
     return tmp;
 }
