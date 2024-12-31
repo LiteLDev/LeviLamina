@@ -33,11 +33,11 @@ static std::shared_ptr<NativeMod> currentLoadingMod;
 
 std::shared_ptr<NativeMod> NativeModManager::getModByHandle(Handle handle) {
     auto l(lock());
-    if (currentLoadingMod) { // for getCurrent before main
-        return currentLoadingMod;
-    }
     if (handleMap.contains(handle)) {
         return handleMap.at(handle);
+    }
+    if (currentLoadingMod) { // for getCurrent before main
+        return currentLoadingMod;
     }
     return {};
 }
