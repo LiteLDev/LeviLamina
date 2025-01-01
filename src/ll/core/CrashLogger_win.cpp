@@ -274,6 +274,10 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.date       = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.settings   = ll::getLeviConfig().modules.crashLogger;
         crashInfo.path       = file_utils::u8path(pl::pl_log_path) / u8"crash";
+        if (!std::filesystem::is_directory(crashInfo.path)) {
+            std::filesystem::create_directory(crashInfo.path);
+        }
+
         auto formatter       = makePolymorphic<io::PatternFormatter>("{tm:.3%T.} [{lvl}] {msg}");
         formatter->styles[1] = {
             {
