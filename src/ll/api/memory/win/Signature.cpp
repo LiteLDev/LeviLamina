@@ -14,6 +14,6 @@ void* SignatureView::resolve(std::span<std::byte> range, bool disableErrorOutput
         getLogger().fatal("Couldn't find: {}", toString());
         getLogger().fatal("In module: {}", sys_utils::getCallerModuleFileName());
     }
-    return (void*)result.get();
+    return result.has_result() ? (void*)result.get() : nullptr;
 }
 } // namespace ll::memory
