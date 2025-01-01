@@ -12,6 +12,9 @@ struct MolangLoopContinue;
 
 union MolangScriptArgPOD {
 public:
+    constexpr ~MolangScriptArgPOD() {}
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, float>                mFloat;

@@ -5,7 +5,7 @@
 namespace Core {
 
 class PathPart {
-public::
+public:
     // member variables
     // NOLINTBEGIN
     ::std::string mUtf8StdString;
