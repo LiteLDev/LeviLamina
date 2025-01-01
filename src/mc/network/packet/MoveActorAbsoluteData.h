@@ -38,11 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MoveActorAbsoluteData& operator=(MoveActorAbsoluteData const&);
-    MoveActorAbsoluteData(MoveActorAbsoluteData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MoveActorAbsoluteData();

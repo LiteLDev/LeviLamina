@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateClientInputLocksPacket& operator=(UpdateClientInputLocksPacket const&);
-    UpdateClientInputLocksPacket(UpdateClientInputLocksPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

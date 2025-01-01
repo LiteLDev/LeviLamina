@@ -24,12 +24,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Point& operator=(Point const&);
-        Point(Point const&);
-        Point();
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCAPI static float getContinents(::TerrainShaper::Point const& point);
@@ -63,11 +57,6 @@ public:
     ::ll::TypedStorage<4, 4, float const>                                       GLOBAL_OFFSET;
     ::ll::TypedStorage<4, 4, float const>                                       FACTOR_SCALER;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TerrainShaper& operator=(TerrainShaper const&);
-    TerrainShaper();
 
 public:
     // member functions

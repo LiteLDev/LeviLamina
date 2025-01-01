@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorUniqueID& operator=(ActorUniqueID const&);
-    ActorUniqueID(ActorUniqueID const&);
-    ActorUniqueID();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint64 getHash() const;

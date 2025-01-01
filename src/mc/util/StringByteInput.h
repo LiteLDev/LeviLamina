@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StringByteInput& operator=(StringByteInput const&);
-    StringByteInput(StringByteInput const&);
-    StringByteInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

@@ -27,12 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VillageFeature& operator=(VillageFeature const&);
-    VillageFeature(VillageFeature const&);
-    VillageFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

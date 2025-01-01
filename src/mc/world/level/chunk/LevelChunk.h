@@ -101,11 +101,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Neighbors& operator=(Neighbors const&);
-        Neighbors(Neighbors const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Neighbors();
@@ -267,12 +262,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                     mActorStorageUpdatedAfterCheckingForReplacementData;
     ::ll::TypedStorage<8, 856, ::LevelChunkVolumeData> mLevelChunkVolumeData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunk& operator=(LevelChunk const&);
-    LevelChunk(LevelChunk const&);
-    LevelChunk();
 
 public:
     // member functions

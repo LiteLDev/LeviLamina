@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetActorDataPacket& operator=(SetActorDataPacket const&);
-    SetActorDataPacket(SetActorDataPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

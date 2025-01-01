@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&);
-    ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

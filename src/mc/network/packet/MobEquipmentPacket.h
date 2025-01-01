@@ -32,11 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MobEquipmentPacket& operator=(MobEquipmentPacket const&);
-    MobEquipmentPacket(MobEquipmentPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

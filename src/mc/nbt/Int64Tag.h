@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Int64Tag& operator=(Int64Tag const&);
-    Int64Tag(Int64Tag const&);
-    Int64Tag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

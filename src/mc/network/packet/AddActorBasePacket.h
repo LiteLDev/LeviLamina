@@ -14,12 +14,6 @@ class ReadOnlyBinaryStream;
 
 class AddActorBasePacket : public ::Packet {
 public:
-    // prevent constructor by default
-    AddActorBasePacket& operator=(AddActorBasePacket const&);
-    AddActorBasePacket(AddActorBasePacket const&);
-    AddActorBasePacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

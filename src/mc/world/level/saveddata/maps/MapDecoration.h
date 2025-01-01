@@ -56,12 +56,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MapDecoration& operator=(MapDecoration const&);
-    MapDecoration(MapDecoration const&);
-    MapDecoration();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MapDecoration(

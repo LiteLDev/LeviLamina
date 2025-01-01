@@ -41,12 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemActor& operator=(ItemActor const&);
-    ItemActor(ItemActor const&);
-    ItemActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

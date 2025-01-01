@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScorePacketInfo& operator=(ScorePacketInfo const&);
-    ScorePacketInfo(ScorePacketInfo const&);
-    ScorePacketInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScorePacketInfo();

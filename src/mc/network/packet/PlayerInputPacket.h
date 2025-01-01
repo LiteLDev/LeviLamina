@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerInputPacket& operator=(PlayerInputPacket const&);
-    PlayerInputPacket(PlayerInputPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

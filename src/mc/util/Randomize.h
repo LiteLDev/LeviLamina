@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Randomize& operator=(Randomize const&);
-    Randomize(Randomize const&);
-    Randomize();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Randomize(::Random& random);

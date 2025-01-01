@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&);
-    ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&);
-    ClientCacheBlobStatusPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

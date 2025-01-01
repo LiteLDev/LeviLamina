@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackSettings& operator=(PackSettings const&);
-    PackSettings(PackSettings const&);
-    PackSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _initPackSetting(::std::string const& name, ::Json::Value const& value);

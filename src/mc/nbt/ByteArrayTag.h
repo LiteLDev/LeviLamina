@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ByteArrayTag& operator=(ByteArrayTag const&);
-    ByteArrayTag(ByteArrayTag const&);
-    ByteArrayTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

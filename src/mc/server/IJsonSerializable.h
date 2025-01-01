@@ -9,12 +9,6 @@ namespace Json { class Value; }
 
 class IJsonSerializable {
 public:
-    // prevent constructor by default
-    IJsonSerializable& operator=(IJsonSerializable const&);
-    IJsonSerializable(IJsonSerializable const&);
-    IJsonSerializable();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

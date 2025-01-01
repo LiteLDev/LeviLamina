@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FastWriter& operator=(FastWriter const&);
-    FastWriter(FastWriter const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

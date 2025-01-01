@@ -31,12 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorSpawnRuleGroup& operator=(ActorSpawnRuleGroup const&);
-    ActorSpawnRuleGroup(ActorSpawnRuleGroup const&);
-    ActorSpawnRuleGroup();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

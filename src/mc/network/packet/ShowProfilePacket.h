@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShowProfilePacket& operator=(ShowProfilePacket const&);
-    ShowProfilePacket(ShowProfilePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

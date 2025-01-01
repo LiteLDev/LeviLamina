@@ -37,11 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BinaryStream& operator=(BinaryStream const&);
-    BinaryStream(BinaryStream const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

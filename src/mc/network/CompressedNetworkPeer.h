@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompressedNetworkPeer& operator=(CompressedNetworkPeer const&);
-    CompressedNetworkPeer(CompressedNetworkPeer const&);
-    CompressedNetworkPeer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

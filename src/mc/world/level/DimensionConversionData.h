@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DimensionConversionData& operator=(DimensionConversionData const&);
-    DimensionConversionData(DimensionConversionData const&);
-    DimensionConversionData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI int getNetherScale() const;

@@ -59,11 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StartGamePacket& operator=(StartGamePacket const&);
-    StartGamePacket(StartGamePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

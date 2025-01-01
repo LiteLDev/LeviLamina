@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Pack& operator=(Pack const&);
-    Pack(Pack const&);
-    Pack();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

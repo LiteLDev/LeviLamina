@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SimplexNoise& operator=(SimplexNoise const&);
-    SimplexNoise(SimplexNoise const&);
-    SimplexNoise();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SimplexNoise(::IRandom& random, bool parityInitialization);

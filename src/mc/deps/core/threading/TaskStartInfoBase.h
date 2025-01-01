@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TaskStartInfoBase& operator=(TaskStartInfoBase const&);
-    TaskStartInfoBase(TaskStartInfoBase const&);
-    TaskStartInfoBase();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::thread::id const& NoAffinity();

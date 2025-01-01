@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetLocalPlayerAsInitializedPacket& operator=(SetLocalPlayerAsInitializedPacket const&);
-    SetLocalPlayerAsInitializedPacket(SetLocalPlayerAsInitializedPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

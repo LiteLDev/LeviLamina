@@ -74,12 +74,6 @@ public:
         };
 
     public:
-        // prevent constructor by default
-        ExecuteChainedSubcommand& operator=(ExecuteChainedSubcommand const&);
-        ExecuteChainedSubcommand(ExecuteChainedSubcommand const&);
-        ExecuteChainedSubcommand();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
@@ -213,11 +207,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>>                                  mCommand;
     ::ll::TypedStorage<8, 16, ::NewExecuteCommand::ExecuteChainedSubcommand>                mChainedCommand;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NewExecuteCommand& operator=(NewExecuteCommand const&);
-    NewExecuteCommand(NewExecuteCommand const&);
 
 public:
     // virtual functions

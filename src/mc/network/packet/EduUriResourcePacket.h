@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EduUriResourcePacket& operator=(EduUriResourcePacket const&);
-    EduUriResourcePacket(EduUriResourcePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

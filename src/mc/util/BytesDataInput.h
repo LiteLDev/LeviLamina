@@ -8,12 +8,6 @@
 
 class BytesDataInput : public ::IDataInput {
 public:
-    // prevent constructor by default
-    BytesDataInput& operator=(BytesDataInput const&);
-    BytesDataInput(BytesDataInput const&);
-    BytesDataInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -90,12 +90,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerScriptManager& operator=(ServerScriptManager const&);
-    ServerScriptManager(ServerScriptManager const&);
-    ServerScriptManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13

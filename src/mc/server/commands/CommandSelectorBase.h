@@ -57,12 +57,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandSelectorBase& operator=(CommandSelectorBase const&);
-    CommandSelectorBase(CommandSelectorBase const&);
-    CommandSelectorBase();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CommandSelectorBase(bool forcePlayer);

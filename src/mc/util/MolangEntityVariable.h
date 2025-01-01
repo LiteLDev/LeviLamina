@@ -19,12 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangEntityVariable& operator=(MolangEntityVariable const&);
-    MolangEntityVariable(MolangEntityVariable const&);
-    MolangEntityVariable();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit MolangEntityVariable(::HashedString const& value);

@@ -28,12 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandBlockNameResult& operator=(CommandBlockNameResult const&);
-    CommandBlockNameResult(CommandBlockNameResult const&);
-    CommandBlockNameResult();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Block const* getBlock() const;

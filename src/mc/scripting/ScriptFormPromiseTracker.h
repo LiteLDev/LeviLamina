@@ -57,12 +57,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        FromRequest& operator=(FromRequest const&);
-        FromRequest(FromRequest const&);
-        FromRequest();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~FromRequest();
@@ -81,11 +75,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                                                 mLastRequestId;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::ScriptFormPromiseTracker::FromRequest>> mFormRequests;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptFormPromiseTracker& operator=(ScriptFormPromiseTracker const&);
-    ScriptFormPromiseTracker(ScriptFormPromiseTracker const&);
 
 public:
     // virtual functions

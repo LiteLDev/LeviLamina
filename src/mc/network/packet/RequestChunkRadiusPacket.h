@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RequestChunkRadiusPacket& operator=(RequestChunkRadiusPacket const&);
-    RequestChunkRadiusPacket(RequestChunkRadiusPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

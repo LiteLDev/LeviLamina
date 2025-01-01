@@ -33,12 +33,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CameraList& operator=(CameraList const&);
-        CameraList(CameraList const&);
-        CameraList();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~CameraList();
@@ -57,11 +51,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::CameraPreset>>              mPresets;
     ::ll::TypedStorage<8, 24, ::std::vector<::CameraPresets::CameraList>> mLists;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraPresets(CameraPresets const&);
-    CameraPresets();
 
 public:
     // member functions

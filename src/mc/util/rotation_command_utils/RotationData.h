@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RotationData& operator=(RotationData const&);
-    RotationData(RotationData const&);
-    RotationData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RotationData(

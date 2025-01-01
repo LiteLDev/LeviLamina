@@ -38,11 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Ability& operator=(Ability const&);
-    Ability(Ability const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Ability();

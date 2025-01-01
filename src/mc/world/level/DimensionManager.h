@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DimensionManager& operator=(DimensionManager const&);
-    DimensionManager(DimensionManager const&);
-    DimensionManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

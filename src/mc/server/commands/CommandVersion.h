@@ -19,12 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandVersion& operator=(CommandVersion const&);
-    CommandVersion(CommandVersion const&);
-    CommandVersion();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandVersion(int from, int to);

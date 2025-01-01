@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkPos& operator=(ChunkPos const&);
-    ChunkPos(ChunkPos const&);
-    ChunkPos();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChunkPos(::BlockPos const& pos);

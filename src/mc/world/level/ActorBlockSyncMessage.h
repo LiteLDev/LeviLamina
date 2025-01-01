@@ -22,10 +22,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                    mEntityUniqueID;
     ::ll::TypedStorage<4, 4, ::ActorBlockSyncMessage::MessageId> mMessage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorBlockSyncMessage& operator=(ActorBlockSyncMessage const&);
-    ActorBlockSyncMessage(ActorBlockSyncMessage const&);
-    ActorBlockSyncMessage();
 };

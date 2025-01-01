@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackIdVersion& operator=(PackIdVersion const&);
-    PackIdVersion(PackIdVersion const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PackIdVersion();

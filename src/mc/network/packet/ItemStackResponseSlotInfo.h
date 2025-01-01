@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackResponseSlotInfo& operator=(ItemStackResponseSlotInfo const&);
-    ItemStackResponseSlotInfo(ItemStackResponseSlotInfo const&);
-    ItemStackResponseSlotInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ItemStackResponseSlotInfo();

@@ -13,11 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RakNetGUID& operator=(RakNetGUID const&);
-    RakNetGUID(RakNetGUID const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool FromString(char const* source);

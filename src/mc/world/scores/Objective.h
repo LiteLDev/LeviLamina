@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Objective& operator=(Objective const&);
-    Objective(Objective const&);
-    Objective();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

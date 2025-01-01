@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerPlayerMovementComponent& operator=(ServerPlayerMovementComponent const&);
-    ServerPlayerMovementComponent(ServerPlayerMovementComponent const&);
-    ServerPlayerMovementComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool addInteractPacket(::InteractPacket const& packet);

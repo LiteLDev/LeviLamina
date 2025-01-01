@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WeakStorageEntity& operator=(WeakStorageEntity const&);
-    WeakStorageEntity(WeakStorageEntity const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI WeakStorageEntity();

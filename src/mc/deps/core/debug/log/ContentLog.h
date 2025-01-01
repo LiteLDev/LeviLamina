@@ -52,12 +52,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ContentLogScope& operator=(ContentLogScope const&);
-        ContentLogScope(ContentLogScope const&);
-        ContentLogScope();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit ContentLogScope(::Bedrock::StaticOptimizedString scope);
@@ -84,12 +78,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::gsl::not_null<::ContentLogEndPoint*>> mContentLogEndPoint;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ContentLogEndPointData& operator=(ContentLogEndPointData const&);
-        ContentLogEndPointData(ContentLogEndPointData const&);
-        ContentLogEndPointData();
 
     public:
         // member functions
@@ -133,12 +121,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::ContentLog::ThreadSpecificData::ScopeData>> mScope;
         ::ll::TypedStorage<8, 24, ::std::vector<::ContextMessageLogger*>>                     mMessageLoggers;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ThreadSpecificData& operator=(ThreadSpecificData const&);
-        ThreadSpecificData(ThreadSpecificData const&);
-        ThreadSpecificData();
     };
 
 public:
@@ -155,11 +137,6 @@ public:
         ::std::unordered_map<::LogLevel, ::std::unordered_map<::LogArea, ::std::unordered_set<uint64>>>>
         mOnceOnlyMessages;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContentLog& operator=(ContentLog const&);
-    ContentLog(ContentLog const&);
 
 public:
     // virtual functions

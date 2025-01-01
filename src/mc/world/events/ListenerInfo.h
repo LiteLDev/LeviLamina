@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ListenerInfo& operator=(ListenerInfo const&);
-    ListenerInfo(ListenerInfo const&);
-    ListenerInfo();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static float const& SQRT_FLT_MAX();

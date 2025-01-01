@@ -10,11 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerScoreboardId& operator=(PlayerScoreboardId const&);
-    PlayerScoreboardId(PlayerScoreboardId const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerScoreboardId();

@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IntArrayTag& operator=(IntArrayTag const&);
-    IntArrayTag(IntArrayTag const&);
-    IntArrayTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

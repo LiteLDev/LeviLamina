@@ -89,12 +89,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EntitySystems& operator=(EntitySystems const&);
-    EntitySystems(EntitySystems const&);
-    EntitySystems();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

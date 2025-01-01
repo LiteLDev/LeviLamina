@@ -106,11 +106,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        RemoteSystemStruct& operator=(RemoteSystemStruct const&);
-        RemoteSystemStruct(RemoteSystemStruct const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI RemoteSystemStruct();
@@ -168,12 +163,6 @@ public:
             Connect = 1,
         } actionToTake;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RequestedConnectionStruct& operator=(RequestedConnectionStruct const&);
-        RequestedConnectionStruct(RequestedConnectionStruct const&);
-        RequestedConnectionStruct();
     };
 
     struct BufferedCommandStruct {
@@ -205,12 +194,6 @@ public:
             DoNothing           = 4,
         } command;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BufferedCommandStruct& operator=(BufferedCommandStruct const&);
-        BufferedCommandStruct(BufferedCommandStruct const&);
-        BufferedCommandStruct();
     };
 
     struct SocketQueryOutput {
@@ -219,12 +202,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RakNetSocket2*>> sockets;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SocketQueryOutput& operator=(SocketQueryOutput const&);
-        SocketQueryOutput(SocketQueryOutput const&);
-        SocketQueryOutput();
     };
 
     enum : int {
@@ -302,11 +279,6 @@ public:
     ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                          sendReceiptSerialMutex;
     ::ll::TypedStorage<4, 4, uint>                                            sendReceiptSerial;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RakPeer& operator=(RakPeer const&);
-    RakPeer(RakPeer const&);
 
 public:
     // virtual functions

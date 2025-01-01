@@ -29,12 +29,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ComponentInfo& operator=(ComponentInfo const&);
-        ComponentInfo(ComponentInfo const&);
-        ComponentInfo();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
@@ -55,12 +49,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo>>
         mRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InternalComponentRegistry& operator=(InternalComponentRegistry const&);
-    InternalComponentRegistry(InternalComponentRegistry const&);
-    InternalComponentRegistry();
 
 public:
     // virtual functions

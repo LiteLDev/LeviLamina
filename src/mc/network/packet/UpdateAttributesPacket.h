@@ -28,11 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateAttributesPacket& operator=(UpdateAttributesPacket const&);
-    UpdateAttributesPacket(UpdateAttributesPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayStatusPacket& operator=(PlayStatusPacket const&);
-    PlayStatusPacket(PlayStatusPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -57,12 +57,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureManager& operator=(StructureManager const&);
-    StructureManager(StructureManager const&);
-    StructureManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

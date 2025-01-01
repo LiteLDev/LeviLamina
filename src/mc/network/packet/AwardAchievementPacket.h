@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AwardAchievementPacket& operator=(AwardAchievementPacket const&);
-    AwardAchievementPacket(AwardAchievementPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

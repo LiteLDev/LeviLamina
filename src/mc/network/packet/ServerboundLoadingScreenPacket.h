@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerboundLoadingScreenPacket& operator=(ServerboundLoadingScreenPacket const&);
-    ServerboundLoadingScreenPacket(ServerboundLoadingScreenPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

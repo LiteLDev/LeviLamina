@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RespawnPacket& operator=(RespawnPacket const&);
-    RespawnPacket(RespawnPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

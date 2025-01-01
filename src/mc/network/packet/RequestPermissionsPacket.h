@@ -40,11 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RequestPermissionsPacket& operator=(RequestPermissionsPacket const&);
-    RequestPermissionsPacket(RequestPermissionsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -17,12 +17,6 @@ class ResourcePackManager;
 
 class I18n {
 public:
-    // prevent constructor by default
-    I18n& operator=(I18n const&);
-    I18n(I18n const&);
-    I18n();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

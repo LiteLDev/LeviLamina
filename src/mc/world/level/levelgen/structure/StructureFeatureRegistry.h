@@ -28,11 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureFeatureRegistry& operator=(StructureFeatureRegistry const&);
-    StructureFeatureRegistry(StructureFeatureRegistry const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI StructureFeatureRegistry();

@@ -59,12 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompoundTagVariant& operator=(CompoundTagVariant const&);
-    CompoundTagVariant(CompoundTagVariant const&);
-    CompoundTagVariant();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Tag& emplace(::Tag&& tag);

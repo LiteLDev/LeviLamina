@@ -12,12 +12,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComponentInfo& operator=(ComponentInfo const&);
-    ComponentInfo(ComponentInfo const&);
-    ComponentInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ComponentInfo();

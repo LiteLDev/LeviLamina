@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetScoreboardIdentityPacket& operator=(SetScoreboardIdentityPacket const&);
-    SetScoreboardIdentityPacket(SetScoreboardIdentityPacket const&);
-    SetScoreboardIdentityPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

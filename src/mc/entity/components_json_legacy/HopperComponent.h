@@ -19,11 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HopperComponent& operator=(HopperComponent const&);
-    HopperComponent(HopperComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI HopperComponent();

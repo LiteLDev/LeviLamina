@@ -10,12 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Tick& operator=(Tick const&);
-    Tick(Tick const&);
-    Tick();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Tick const& MAX();

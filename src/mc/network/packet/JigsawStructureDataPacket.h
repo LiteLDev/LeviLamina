@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    JigsawStructureDataPacket& operator=(JigsawStructureDataPacket const&);
-    JigsawStructureDataPacket(JigsawStructureDataPacket const&);
-    JigsawStructureDataPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RecipeUnlockingRequirement& operator=(RecipeUnlockingRequirement const&);
-    RecipeUnlockingRequirement(RecipeUnlockingRequirement const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RecipeUnlockingRequirement();

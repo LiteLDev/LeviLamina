@@ -18,10 +18,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ChunkPos>      mPos;
     ::ll::TypedStorage<4, 4, ::DimensionType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkPositionAndDimension& operator=(ChunkPositionAndDimension const&);
-    ChunkPositionAndDimension(ChunkPositionAndDimension const&);
-    ChunkPositionAndDimension();
 };

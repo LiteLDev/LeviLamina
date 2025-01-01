@@ -14,10 +14,4 @@ public:
     ::ll::TypedStorage<8, 8, ::Actor*> mActor;
     ::ll::TypedStorage<4, 4, float>    mDistanceSquared;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DistanceSortedActor& operator=(DistanceSortedActor const&);
-    DistanceSortedActor(DistanceSortedActor const&);
-    DistanceSortedActor();
 };

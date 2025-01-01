@@ -19,12 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TeleportTarget& operator=(TeleportTarget const&);
-    TeleportTarget(TeleportTarget const&);
-    TeleportTarget();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~TeleportTarget();

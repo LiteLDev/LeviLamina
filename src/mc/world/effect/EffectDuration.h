@@ -10,12 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EffectDuration& operator=(EffectDuration const&);
-    EffectDuration(EffectDuration const&);
-    EffectDuration();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<int> getValue() const;

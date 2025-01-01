@@ -49,12 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Bounds& operator=(Bounds const&);
-    Bounds(Bounds const&);
-    Bounds();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Bounds(::ChunkPos const& min, ::ChunkPos const& max);

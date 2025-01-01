@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SharedController& operator=(SharedController const&);
-    SharedController(SharedController const&);
-    SharedController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

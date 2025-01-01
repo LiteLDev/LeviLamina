@@ -32,11 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RequestAbilityPacket& operator=(RequestAbilityPacket const&);
-    RequestAbilityPacket(RequestAbilityPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

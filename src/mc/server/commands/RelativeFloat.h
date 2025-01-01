@@ -11,11 +11,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RelativeFloat& operator=(RelativeFloat const&);
-    RelativeFloat(RelativeFloat const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RelativeFloat();

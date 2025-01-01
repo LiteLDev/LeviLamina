@@ -13,12 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Vec4& operator=(Vec4 const&);
-    Vec4(Vec4 const&);
-    Vec4();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Vec4 const& MAX();

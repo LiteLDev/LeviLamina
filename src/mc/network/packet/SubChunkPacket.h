@@ -52,12 +52,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        HeightmapData& operator=(HeightmapData const&);
-        HeightmapData(HeightmapData const&);
-        HeightmapData();
-
-    public:
         // static variables
         // NOLINTBEGIN
         MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
@@ -74,12 +68,6 @@ public:
         ::ll::TypedStorage<1, 1, char> mY;
         ::ll::TypedStorage<1, 1, char> mZ;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SubChunkPosOffset& operator=(SubChunkPosOffset const&);
-        SubChunkPosOffset(SubChunkPosOffset const&);
-        SubChunkPosOffset();
     };
 
     struct SubChunkPacketData {
@@ -92,12 +80,6 @@ public:
         ::ll::TypedStorage<1, 257, ::SubChunkPacket::HeightmapData>         mHeightMapData;
         ::ll::TypedStorage<8, 8, uint64>                                    mBlobId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SubChunkPacketData& operator=(SubChunkPacketData const&);
-        SubChunkPacketData(SubChunkPacketData const&);
-        SubChunkPacketData();
 
     public:
         // member functions
@@ -120,11 +102,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPacket::SubChunkPacketData>> mSubChunkData;
     ::ll::TypedStorage<4, 12, ::SubChunkPos>                                       mCenterPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkPacket& operator=(SubChunkPacket const&);
-    SubChunkPacket(SubChunkPacket const&);
 
 public:
     // virtual functions

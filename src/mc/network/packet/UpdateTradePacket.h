@@ -34,11 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateTradePacket& operator=(UpdateTradePacket const&);
-    UpdateTradePacket(UpdateTradePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

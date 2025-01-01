@@ -27,12 +27,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                    mDirectlyPowered;
         ::ll::TypedStorage<4, 4, int>                     mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Item& operator=(Item const&);
-        Item(Item const&);
-        Item();
     };
 
 public:
@@ -40,12 +34,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::CircuitComponentList::Item>> mComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CircuitComponentList& operator=(CircuitComponentList const&);
-    CircuitComponentList(CircuitComponentList const&);
-    CircuitComponentList();
 
 public:
     // member functions

@@ -40,11 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ValueIteratorBase& operator=(ValueIteratorBase const&);
-    ValueIteratorBase();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ValueIteratorBase(::Json::ValueIteratorBase const& other);

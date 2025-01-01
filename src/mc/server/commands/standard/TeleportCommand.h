@@ -55,12 +55,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TeleportCommand& operator=(TeleportCommand const&);
-    TeleportCommand(TeleportCommand const&);
-    TeleportCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

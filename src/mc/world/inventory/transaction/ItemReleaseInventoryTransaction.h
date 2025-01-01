@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemReleaseInventoryTransaction& operator=(ItemReleaseInventoryTransaction const&);
-    ItemReleaseInventoryTransaction(ItemReleaseInventoryTransaction const&);
-    ItemReleaseInventoryTransaction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

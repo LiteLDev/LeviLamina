@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WebToken& operator=(WebToken const&);
-    WebToken(WebToken const&);
-    WebToken();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WebToken(::std::string token);

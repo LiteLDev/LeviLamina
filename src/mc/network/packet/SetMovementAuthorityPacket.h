@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetMovementAuthorityPacket& operator=(SetMovementAuthorityPacket const&);
-    SetMovementAuthorityPacket(SetMovementAuthorityPacket const&);
-    SetMovementAuthorityPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

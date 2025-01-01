@@ -32,12 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HopperBlockActor& operator=(HopperBlockActor const&);
-    HopperBlockActor(HopperBlockActor const&);
-    HopperBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

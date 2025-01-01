@@ -50,11 +50,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        CZString& operator=(CZString const&);
-        CZString(CZString const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI CZString();
@@ -93,12 +88,6 @@ public:
     public:
         // CZStringCompare inner types define
         using is_transparent = void;
-
-    public:
-        // prevent constructor by default
-        CZStringCompare& operator=(CZStringCompare const&);
-        CZStringCompare(CZStringCompare const&);
-        CZStringCompare();
     };
 
     using ObjectValues = ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>;
@@ -125,10 +114,6 @@ public:
     ::ll::TypedStorage<8, 8, ::Json::Value::ValueHolder> value_;
     ::ll::TypedStorage<1, 1, ::Json::ValueType>          type_;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Value();
 
 public:
     // member functions

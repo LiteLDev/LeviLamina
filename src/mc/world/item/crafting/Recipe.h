@@ -47,12 +47,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Results& operator=(Results const&);
-        Results(Results const&);
-        Results();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit Results(::std::vector<::ItemInstance> const& results);
@@ -88,12 +82,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ConstructionContext& operator=(ConstructionContext const&);
-        ConstructionContext(ConstructionContext const&);
-        ConstructionContext();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ConstructionContext();
@@ -121,12 +109,6 @@ public:
     ::ll::TypedStorage<8, 112, ::SemVersion>                     mRecipeDataVersion;
     ::ll::TypedStorage<8, 48, ::HashedString>                    mTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Recipe& operator=(Recipe const&);
-    Recipe(Recipe const&);
-    Recipe();
 
 public:
     // virtual functions

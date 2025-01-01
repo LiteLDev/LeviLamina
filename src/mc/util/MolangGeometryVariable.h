@@ -7,12 +7,6 @@
 
 struct MolangGeometryVariable : public ::MolangHashStringVariable<::MolangGeometryVariable> {
 public:
-    // prevent constructor by default
-    MolangGeometryVariable& operator=(MolangGeometryVariable const&);
-    MolangGeometryVariable(MolangGeometryVariable const&);
-    MolangGeometryVariable();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~MolangGeometryVariable();

@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraInstructionPacket& operator=(CameraInstructionPacket const&);
-    CameraInstructionPacket(CameraInstructionPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

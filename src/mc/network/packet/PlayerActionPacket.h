@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerActionPacket& operator=(PlayerActionPacket const&);
-    PlayerActionPacket(PlayerActionPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

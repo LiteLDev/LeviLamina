@@ -46,11 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddActorPacket& operator=(AddActorPacket const&);
-    AddActorPacket(AddActorPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

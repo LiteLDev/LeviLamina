@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&);
-    PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

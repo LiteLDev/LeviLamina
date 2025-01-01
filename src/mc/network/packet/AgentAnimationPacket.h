@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AgentAnimationPacket& operator=(AgentAnimationPacket const&);
-    AgentAnimationPacket(AgentAnimationPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -14,10 +14,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint> mRawId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityId& operator=(EntityId const&);
-    EntityId(EntityId const&);
-    EntityId();
 };

@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlatWorldGeneratorOptions& operator=(FlatWorldGeneratorOptions const&);
-    FlatWorldGeneratorOptions(FlatWorldGeneratorOptions const&);
-    FlatWorldGeneratorOptions();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI FlatWorldGeneratorOptions(::Json::Value const& root, ::LevelData const& levelData);

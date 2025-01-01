@@ -28,12 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TestParameters& operator=(TestParameters const&);
-    TestParameters(TestParameters const&);
-    TestParameters();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~TestParameters();

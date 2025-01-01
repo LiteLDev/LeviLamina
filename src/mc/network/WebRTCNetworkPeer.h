@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WebRTCNetworkPeer& operator=(WebRTCNetworkPeer const&);
-    WebRTCNetworkPeer(WebRTCNetworkPeer const&);
-    WebRTCNetworkPeer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

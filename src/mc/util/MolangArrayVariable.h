@@ -7,12 +7,6 @@
 
 struct MolangArrayVariable : public ::MolangHashStringVariable<::MolangArrayVariable> {
 public:
-    // prevent constructor by default
-    MolangArrayVariable& operator=(MolangArrayVariable const&);
-    MolangArrayVariable(MolangArrayVariable const&);
-    MolangArrayVariable();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~MolangArrayVariable();

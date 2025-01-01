@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LoginPacket& operator=(LoginPacket const&);
-    LoginPacket(LoginPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

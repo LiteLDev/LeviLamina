@@ -10,11 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EducationLocalLevelSettings(EducationLocalLevelSettings const&);
-    EducationLocalLevelSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings const&);

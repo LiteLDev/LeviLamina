@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SaveContext& operator=(SaveContext const&);
-    SaveContext(SaveContext const&);
-    SaveContext();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::SaveContext::SaveOperation getOperation() const;

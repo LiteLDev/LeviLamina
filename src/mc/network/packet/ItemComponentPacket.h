@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemComponentPacket& operator=(ItemComponentPacket const&);
-    ItemComponentPacket(ItemComponentPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

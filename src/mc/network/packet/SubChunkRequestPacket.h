@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubChunkRequestPacket& operator=(SubChunkRequestPacket const&);
-    SubChunkRequestPacket(SubChunkRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

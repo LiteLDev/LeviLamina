@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Color& operator=(Color const&);
-    Color(Color const&);
-    Color();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Color(float r_, float g_, float b_, float a_);

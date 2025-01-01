@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateBlockPacket& operator=(UpdateBlockPacket const&);
-    UpdateBlockPacket(UpdateBlockPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

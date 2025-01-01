@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandBlockName& operator=(CommandBlockName const&);
-    CommandBlockName(CommandBlockName const&);
-    CommandBlockName();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CommandBlockName(uint64 blockNameHash);

@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangVariable& operator=(MolangVariable const&);
-    MolangVariable(MolangVariable const&);
-    MolangVariable();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangVariable(::MolangVariableIndex index, ::HashedString name, ::MolangScriptArg value);

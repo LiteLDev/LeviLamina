@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TransporterComponent& operator=(TransporterComponent const&);
-    TransporterComponent(TransporterComponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 15

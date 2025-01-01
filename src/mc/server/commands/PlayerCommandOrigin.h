@@ -32,12 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerCommandOrigin& operator=(PlayerCommandOrigin const&);
-    PlayerCommandOrigin(PlayerCommandOrigin const&);
-    PlayerCommandOrigin();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

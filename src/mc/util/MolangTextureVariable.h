@@ -7,12 +7,6 @@
 
 struct MolangTextureVariable : public ::MolangHashStringVariable<::MolangTextureVariable> {
 public:
-    // prevent constructor by default
-    MolangTextureVariable& operator=(MolangTextureVariable const&);
-    MolangTextureVariable(MolangTextureVariable const&);
-    MolangTextureVariable();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~MolangTextureVariable();

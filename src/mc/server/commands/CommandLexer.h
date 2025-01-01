@@ -55,12 +55,6 @@ public:
         ::ll::TypedStorage<4, 4, uint>                      length;
         ::ll::TypedStorage<4, 4, ::CommandLexer::TokenType> type;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Token& operator=(Token const&);
-        Token(Token const&);
-        Token();
     };
 
 public:
@@ -69,12 +63,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::string const&>   mInput;
     ::ll::TypedStorage<8, 16, ::CommandLexer::Token> mToken;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandLexer& operator=(CommandLexer const&);
-    CommandLexer(CommandLexer const&);
-    CommandLexer();
 
 public:
     // member functions

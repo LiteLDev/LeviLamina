@@ -35,11 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandOrigin& operator=(CommandOrigin const&);
-    CommandOrigin(CommandOrigin const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

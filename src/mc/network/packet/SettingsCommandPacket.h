@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SettingsCommandPacket& operator=(SettingsCommandPacket const&);
-    SettingsCommandPacket(SettingsCommandPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

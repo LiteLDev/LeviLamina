@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkViewSource& operator=(ChunkViewSource const&);
-    ChunkViewSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

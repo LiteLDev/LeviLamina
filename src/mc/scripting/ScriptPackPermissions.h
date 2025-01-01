@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPackPermissions& operator=(ScriptPackPermissions const&);
-    ScriptPackPermissions(ScriptPackPermissions const&);
-    ScriptPackPermissions();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool isModuleAllowed(::std::string const& moduleName) const;

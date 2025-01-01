@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Vec3& operator=(Vec3 const&);
-    Vec3(Vec3 const&);
-    Vec3();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Vec3 abs() const;

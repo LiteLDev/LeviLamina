@@ -153,12 +153,6 @@ public:
         ::ll::TypedStorage<4, 12, ::Vec3>                   mPosition;
         ::ll::TypedStorage<4, 4, ::PlayerSpawnFallbackType> mSpawnFallbackType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FixedSpawnPositionData& operator=(FixedSpawnPositionData const&);
-        FixedSpawnPositionData(FixedSpawnPositionData const&);
-        FixedSpawnPositionData();
     };
 
     enum class SpawnPositionState : int {
@@ -214,12 +208,6 @@ public:
         ::ll::TypedStorage<4, 12, ::BlockPos>     mPlayerPosition;
         ::ll::TypedStorage<4, 4, ::DimensionType> mDimension;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerSpawnPoint& operator=(PlayerSpawnPoint const&);
-        PlayerSpawnPoint(PlayerSpawnPoint const&);
-        PlayerSpawnPoint();
 
     public:
         // member functions
@@ -352,12 +340,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                  mUsedPotion;
     ::ll::TypedStorage<8, 8, ::PlayerDestroyProgressCacheComponent&>                mDestroyProgressCache;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Player& operator=(Player const&);
-    Player(Player const&);
-    Player();
 
 public:
     // virtual functions

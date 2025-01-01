@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetDisplayObjectivePacket& operator=(SetDisplayObjectivePacket const&);
-    SetDisplayObjectivePacket(SetDisplayObjectivePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

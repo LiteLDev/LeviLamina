@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpawnGroupRegistry& operator=(SpawnGroupRegistry const&);
-    SpawnGroupRegistry(SpawnGroupRegistry const&);
-    SpawnGroupRegistry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

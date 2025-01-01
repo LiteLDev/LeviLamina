@@ -46,12 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CircuitTrackingInfo& operator=(CircuitTrackingInfo const&);
-    CircuitTrackingInfo(CircuitTrackingInfo const&);
-    CircuitTrackingInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CircuitTrackingInfo(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);

@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameRulesChangedPacket& operator=(GameRulesChangedPacket const&);
-    GameRulesChangedPacket(GameRulesChangedPacket const&);
-    GameRulesChangedPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

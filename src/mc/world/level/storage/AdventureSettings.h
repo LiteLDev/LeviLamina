@@ -14,11 +14,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AdventureSettings& operator=(AdventureSettings const&);
-    AdventureSettings(AdventureSettings const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AdventureSettings();

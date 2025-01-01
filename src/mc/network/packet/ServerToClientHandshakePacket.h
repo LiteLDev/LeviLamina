@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerToClientHandshakePacket& operator=(ServerToClientHandshakePacket const&);
-    ServerToClientHandshakePacket(ServerToClientHandshakePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

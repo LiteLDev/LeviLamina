@@ -39,12 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    VoidGenerator& operator=(VoidGenerator const&);
-    VoidGenerator(VoidGenerator const&);
-    VoidGenerator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

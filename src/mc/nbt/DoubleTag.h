@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DoubleTag& operator=(DoubleTag const&);
-    DoubleTag(DoubleTag const&);
-    DoubleTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

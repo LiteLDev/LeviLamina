@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ReplaceRule& operator=(ReplaceRule const&);
-    ReplaceRule(ReplaceRule const&);
-    ReplaceRule();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ReplaceRule(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);

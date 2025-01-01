@@ -212,12 +212,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Actor& operator=(Actor const&);
-    Actor(Actor const&);
-    Actor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

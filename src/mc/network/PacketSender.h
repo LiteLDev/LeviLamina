@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PacketSender& operator=(PacketSender const&);
-    PacketSender(PacketSender const&);
-    PacketSender();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

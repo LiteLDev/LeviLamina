@@ -47,12 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Scoreboard& operator=(Scoreboard const&);
-    Scoreboard(Scoreboard const&);
-    Scoreboard();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

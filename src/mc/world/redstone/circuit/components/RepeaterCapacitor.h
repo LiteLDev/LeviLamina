@@ -40,11 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RepeaterCapacitor& operator=(RepeaterCapacitor const&);
-    RepeaterCapacitor(RepeaterCapacitor const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

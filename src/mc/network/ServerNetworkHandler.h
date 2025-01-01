@@ -183,12 +183,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Client& operator=(Client const&);
-        Client(Client const&);
-        Client();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void removeSubClientRequest(::SubClientId subClientId);
@@ -249,12 +243,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                           mScenarioId;
     ::ll::TypedStorage<8, 32, ::std::string>                           mWorldId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerNetworkHandler& operator=(ServerNetworkHandler const&);
-    ServerNetworkHandler(ServerNetworkHandler const&);
-    ServerNetworkHandler();
 
 public:
     // virtual functions

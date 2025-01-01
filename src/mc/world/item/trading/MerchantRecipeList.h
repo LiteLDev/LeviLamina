@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MerchantRecipeList& operator=(MerchantRecipeList const&);
-    MerchantRecipeList(MerchantRecipeList const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

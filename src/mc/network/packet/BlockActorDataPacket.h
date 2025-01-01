@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockActorDataPacket& operator=(BlockActorDataPacket const&);
-    BlockActorDataPacket(BlockActorDataPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

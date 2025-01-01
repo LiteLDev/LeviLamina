@@ -34,12 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureDataLoadHelper& operator=(StructureDataLoadHelper const&);
-    StructureDataLoadHelper(StructureDataLoadHelper const&);
-    StructureDataLoadHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

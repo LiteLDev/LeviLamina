@@ -56,12 +56,6 @@ public:
         ::ll::TypedStorage<1, 1, bool> mCompareRelevantUserData;
         ::ll::TypedStorage<1, 1, bool> mCompareDamage;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ComparisonOptions& operator=(ComparisonOptions const&);
-        ComparisonOptions(ComparisonOptions const&);
-        ComparisonOptions();
     };
 
 public:

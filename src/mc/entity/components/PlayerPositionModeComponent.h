@@ -17,10 +17,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::PlayerPositionModeComponent::PositionMode> mPositionMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerPositionModeComponent& operator=(PlayerPositionModeComponent const&);
-    PlayerPositionModeComponent(PlayerPositionModeComponent const&);
-    PlayerPositionModeComponent();
 };

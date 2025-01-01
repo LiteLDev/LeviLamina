@@ -19,12 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AABB& operator=(AABB const&);
-    AABB(AABB const&);
-    AABB();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AABB(::Vec3 const& min, ::Vec3 const& max);

@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PistonConsumer& operator=(PistonConsumer const&);
-    PistonConsumer(PistonConsumer const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

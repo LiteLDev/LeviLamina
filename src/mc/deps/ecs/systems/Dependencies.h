@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Dependencies& operator=(Dependencies const&);
-    Dependencies(Dependencies const&);
-    Dependencies();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~Dependencies();

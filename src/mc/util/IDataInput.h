@@ -7,12 +7,6 @@
 
 class IDataInput {
 public:
-    // prevent constructor by default
-    IDataInput& operator=(IDataInput const&);
-    IDataInput(IDataInput const&);
-    IDataInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

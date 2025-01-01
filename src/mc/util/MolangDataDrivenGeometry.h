@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangDataDrivenGeometry& operator=(MolangDataDrivenGeometry const&);
-    MolangDataDrivenGeometry(MolangDataDrivenGeometry const&);
-    MolangDataDrivenGeometry();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator==(::MolangDataDrivenGeometry const& rhs) const;

@@ -104,12 +104,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        NameInfo& operator=(NameInfo const&);
-        NameInfo(NameInfo const&);
-        NameInfo();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~NameInfo();
@@ -131,12 +125,6 @@ public:
         ::ll::TypedStorage<1, 1, bool> mSouth;
         ::ll::TypedStorage<1, 1, bool> mWest;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HorizontalDirectionBits& operator=(HorizontalDirectionBits const&);
-        HorizontalDirectionBits(HorizontalDirectionBits const&);
-        HorizontalDirectionBits();
     };
 
     struct AlteredStateCollection {
@@ -145,12 +133,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::BlockState const>> mBlockState;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AlteredStateCollection& operator=(AlteredStateCollection const&);
-        AlteredStateCollection(AlteredStateCollection const&);
-        AlteredStateCollection();
 
     public:
         // virtual functions
@@ -201,12 +183,6 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            SplitBlock& operator=(SplitBlock const&);
-            SplitBlock(SplitBlock const&);
-            SplitBlock();
-
-        public:
             // member functions
             // NOLINTBEGIN
             MCAPI SplitBlock(int data, ::BlockLegacy& blockLegacyRef);
@@ -224,12 +200,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock>> mSplitBlocks;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RemovedStateCollection& operator=(RemovedStateCollection const&);
-        RemovedStateCollection(RemovedStateCollection const&);
-        RemovedStateCollection();
 
     public:
         // virtual functions
@@ -288,12 +258,6 @@ public:
         ::ll::TypedStorage<8, 64, ::std::function<::std::optional<int>(::BlockLegacy const&, int)>> mGetter;
         ::ll::TypedStorage<8, 64, ::std::function<::Block const*(::BlockLegacy const&, int, int)>>  mSetter;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RearrangedStateCollection& operator=(RearrangedStateCollection const&);
-        RearrangedStateCollection(RearrangedStateCollection const&);
-        RearrangedStateCollection();
 
     public:
         // virtual functions
@@ -437,12 +401,6 @@ public:
     ::ll::TypedStorage<4, 4, ::EnumBitset<::BlockClientPredictionOverrides, 7>> mClientPredictionOverrides;
     ::ll::TypedStorage<8, 32, ::BlockEvents::BlockEventManager>                 mEventManager;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockLegacy& operator=(BlockLegacy const&);
-    BlockLegacy(BlockLegacy const&);
-    BlockLegacy();
 
 public:
     // virtual functions

@@ -31,12 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CorrectPlayerMovePredictionPacket& operator=(CorrectPlayerMovePredictionPacket const&);
-    CorrectPlayerMovePredictionPacket(CorrectPlayerMovePredictionPacket const&);
-    CorrectPlayerMovePredictionPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

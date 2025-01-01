@@ -52,11 +52,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        FactorCalculationData(FactorCalculationData const&);
-        FactorCalculationData();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
@@ -104,12 +99,6 @@ public:
                                                                   mAttributeModifiers;
     ::ll::TypedStorage<8, 96, ::MobEffect::FactorCalculationData> mFactorCalculationData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffect& operator=(MobEffect const&);
-    MobEffect(MobEffect const&);
-    MobEffect();
 
 public:
     // virtual functions

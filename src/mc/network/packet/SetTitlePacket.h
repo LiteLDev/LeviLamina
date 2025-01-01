@@ -43,10 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetTitlePacket& operator=(SetTitlePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

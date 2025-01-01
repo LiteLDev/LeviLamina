@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameTestBatch& operator=(GameTestBatch const&);
-    GameTestBatch(GameTestBatch const&);
-    GameTestBatch();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~GameTestBatch();

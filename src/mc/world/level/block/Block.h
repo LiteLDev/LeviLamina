@@ -74,12 +74,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Block& operator=(Block const&);
-    Block(Block const&);
-    Block();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -11,12 +11,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ExternalLinkSettings& operator=(ExternalLinkSettings const&);
-    ExternalLinkSettings(ExternalLinkSettings const&);
-    ExternalLinkSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ExternalLinkSettings();

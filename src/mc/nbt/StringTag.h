@@ -20,11 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StringTag& operator=(StringTag const&);
-    StringTag(StringTag const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

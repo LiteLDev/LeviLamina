@@ -39,12 +39,6 @@ public:
         ::ll::TypedStorage<4, 4, float>                                               mFlySpeed;
         ::ll::TypedStorage<4, 4, float>                                               mWalkSpeed;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SerializedLayer& operator=(SerializedLayer const&);
-        SerializedLayer(SerializedLayer const&);
-        SerializedLayer();
     };
 
 public:
@@ -55,11 +49,6 @@ public:
     ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel>                                    mPlayerPermissions;
     ::ll::TypedStorage<8, 24, ::std::vector<::SerializedAbilitiesData::SerializedLayer>> mLayers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SerializedAbilitiesData& operator=(SerializedAbilitiesData const&);
-    SerializedAbilitiesData(SerializedAbilitiesData const&);
 
 public:
     // member functions

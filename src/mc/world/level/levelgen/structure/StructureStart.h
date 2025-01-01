@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureStart& operator=(StructureStart const&);
-    StructureStart(StructureStart const&);
-    StructureStart();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

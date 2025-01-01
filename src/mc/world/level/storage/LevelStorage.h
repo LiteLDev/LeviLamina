@@ -34,12 +34,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    LevelStorage& operator=(LevelStorage const&);
-    LevelStorage(LevelStorage const&);
-    LevelStorage();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestAction& operator=(ItemStackRequestAction const&);
-    ItemStackRequestAction(ItemStackRequestAction const&);
-    ItemStackRequestAction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

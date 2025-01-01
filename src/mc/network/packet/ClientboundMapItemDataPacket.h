@@ -52,11 +52,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientboundMapItemDataPacket& operator=(ClientboundMapItemDataPacket const&);
-    ClientboundMapItemDataPacket(ClientboundMapItemDataPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

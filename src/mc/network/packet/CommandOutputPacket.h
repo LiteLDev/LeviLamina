@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandOutputPacket& operator=(CommandOutputPacket const&);
-    CommandOutputPacket(CommandOutputPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

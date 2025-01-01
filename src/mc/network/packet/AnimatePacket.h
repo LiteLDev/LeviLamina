@@ -37,11 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AnimatePacket& operator=(AnimatePacket const&);
-    AnimatePacket(AnimatePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

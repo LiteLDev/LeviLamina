@@ -18,10 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPackConfiguration& operator=(ScriptPackConfiguration const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptPackConfiguration();

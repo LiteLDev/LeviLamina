@@ -28,11 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InventoryTransaction& operator=(InventoryTransaction const&);
-    InventoryTransaction();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI InventoryTransaction(::InventoryTransaction const&);

@@ -19,10 +19,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                         mEncryptionDisabled;
     ::ll::TypedStorage<4, 4, ::DevConnectionQuality>       mDevConnectionQuality;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkSettingOptions& operator=(NetworkSettingOptions const&);
-    NetworkSettingOptions(NetworkSettingOptions const&);
-    NetworkSettingOptions();
 };

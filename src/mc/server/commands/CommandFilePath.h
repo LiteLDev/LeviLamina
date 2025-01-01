@@ -10,11 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandFilePath& operator=(CommandFilePath const&);
-    CommandFilePath(CommandFilePath const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandFilePath();

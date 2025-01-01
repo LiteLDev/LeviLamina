@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HurtArmorPacket& operator=(HurtArmorPacket const&);
-    HurtArmorPacket(HurtArmorPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

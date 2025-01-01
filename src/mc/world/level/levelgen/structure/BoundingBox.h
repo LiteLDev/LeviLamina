@@ -19,11 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BoundingBox& operator=(BoundingBox const&);
-    BoundingBox(BoundingBox const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BoundingBox();

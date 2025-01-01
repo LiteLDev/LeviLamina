@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SavedData& operator=(SavedData const&);
-    SavedData(SavedData const&);
-    SavedData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

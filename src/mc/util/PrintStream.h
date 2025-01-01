@@ -4,12 +4,6 @@
 
 class PrintStream {
 public:
-    // prevent constructor by default
-    PrintStream& operator=(PrintStream const&);
-    PrintStream(PrintStream const&);
-    PrintStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

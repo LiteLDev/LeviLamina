@@ -29,12 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Random& operator=(Random const&);
-    Random(Random const&);
-    Random();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -75,12 +75,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Parser& operator=(Parser const&);
-        Parser(Parser const&);
-        Parser();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Parser(::CommandRegistry const& registry, int version);
@@ -243,12 +237,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Symbol& operator=(Symbol const&);
-        Symbol(Symbol const&);
-        Symbol();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit Symbol(uint64 value);
@@ -265,13 +253,7 @@ public:
         // NOLINTEND
     };
 
-    struct SymbolHasher {
-    public:
-        // prevent constructor by default
-        SymbolHasher& operator=(SymbolHasher const&);
-        SymbolHasher(SymbolHasher const&);
-        SymbolHasher();
-    };
+    struct SymbolHasher {};
 
     struct SymbolPairHasher {
     public:
@@ -309,12 +291,6 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                      isChaining;
         ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> paramsSymbol;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Overload& operator=(Overload const&);
-        Overload(Overload const&);
-        Overload();
 
     public:
         // member functions
@@ -361,12 +337,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Signature& operator=(Signature const&);
-        Signature(Signature const&);
-        Signature();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Signature(::CommandRegistry::Signature&&);
@@ -399,12 +369,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        LexicalToken& operator=(LexicalToken const&);
-        LexicalToken(LexicalToken const&);
-        LexicalToken();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
@@ -422,12 +386,6 @@ public:
         ::ll::TypedStorage<4, 4, uint>                                             length;
         ::ll::TypedStorage<4, 4, ::CommandRegistry::Symbol>                        type;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ParseToken& operator=(ParseToken const&);
-        ParseToken(ParseToken const&);
-        ParseToken();
 
     public:
         // member functions
@@ -452,12 +410,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> derivation;
         ::ll::TypedStorage<4, 8, ::CommandVersion>                          versions;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ParseRule& operator=(ParseRule const&);
-        ParseRule(ParseRule const&);
-        ParseRule();
 
     public:
         // member functions
@@ -520,12 +472,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Enum& operator=(Enum const&);
-        Enum(Enum const&);
-        Enum();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Enum();
@@ -556,12 +502,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ChainedSubcommand& operator=(ChainedSubcommand const&);
-        ChainedSubcommand(ChainedSubcommand const&);
-        ChainedSubcommand();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ChainedSubcommand();
@@ -581,12 +521,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                mName;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mValues;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SoftEnum& operator=(SoftEnum const&);
-        SoftEnum(SoftEnum const&);
-        SoftEnum();
     };
 
     struct ConstrainedValue {
@@ -637,11 +571,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ParamSymbols& operator=(ParamSymbols const&);
-        ParamSymbols(ParamSymbols const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ParamSymbols();
@@ -675,12 +604,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uint>> constrainedValueCount;
         ::ll::TypedStorage<8, 24, ::std::vector<uint>> softEnumValuesCount;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RegistryState& operator=(RegistryState const&);
-        RegistryState(RegistryState const&);
-        RegistryState();
 
     public:
         // member functions
@@ -730,12 +653,6 @@ public:
                                                              predict;
         ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> buildDuration;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ParseTable& operator=(ParseTable const&);
-        ParseTable(ParseTable const&);
-        ParseTable();
     };
 
     struct SemanticInfo {
@@ -799,12 +716,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::CommandFlag&, ::std::string const&)>> mCommandOverrideFunctor;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRunStats>>                         mCommandRunStats;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandRegistry& operator=(CommandRegistry const&);
-    CommandRegistry(CommandRegistry const&);
-    CommandRegistry();
 
 public:
     // member functions

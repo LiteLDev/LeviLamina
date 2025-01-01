@@ -14,11 +14,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CapacitorComponent& operator=(CapacitorComponent const&);
-    CapacitorComponent(CapacitorComponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 26

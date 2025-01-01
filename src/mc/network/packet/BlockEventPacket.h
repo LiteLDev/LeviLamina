@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockEventPacket& operator=(BlockEventPacket const&);
-    BlockEventPacket(BlockEventPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

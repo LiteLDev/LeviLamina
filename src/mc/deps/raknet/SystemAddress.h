@@ -18,10 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SystemAddress(SystemAddress const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void CopyPort(::RakNet::SystemAddress const& right);

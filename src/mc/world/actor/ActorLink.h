@@ -25,10 +25,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>            mPassengerInitiated;
     ::ll::TypedStorage<4, 4, float>           mVehicleAngularVelocity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorLink& operator=(ActorLink const&);
-    ActorLink(ActorLink const&);
-    ActorLink();
 };

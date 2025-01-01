@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PacksInfoData& operator=(PacksInfoData const&);
-    PacksInfoData(PacksInfoData const&);
-    PacksInfoData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint64 getRequiredResourcePackSize() const;

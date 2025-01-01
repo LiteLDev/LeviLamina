@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ProducerComponent& operator=(ProducerComponent const&);
-    ProducerComponent(ProducerComponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 14

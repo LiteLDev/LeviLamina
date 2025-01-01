@@ -31,11 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EntityRegistry& operator=(EntityRegistry const&);
-    EntityRegistry(EntityRegistry const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI EntityRegistry();

@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&);
-    SpawnExperienceOrbPacket(SpawnExperienceOrbPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

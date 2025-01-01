@@ -7,12 +7,6 @@
 
 struct GameRuleId : public ::NewType<int> {
 public:
-    // prevent constructor by default
-    GameRuleId& operator=(GameRuleId const&);
-    GameRuleId(GameRuleId const&);
-    GameRuleId();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit GameRuleId(int value);

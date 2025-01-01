@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    XoroshiroPositionalRandomFactory& operator=(XoroshiroPositionalRandomFactory const&);
-    XoroshiroPositionalRandomFactory(XoroshiroPositionalRandomFactory const&);
-    XoroshiroPositionalRandomFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

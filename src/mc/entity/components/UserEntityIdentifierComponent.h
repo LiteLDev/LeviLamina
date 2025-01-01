@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&);
-    UserEntityIdentifierComponent(UserEntityIdentifierComponent const&);
-    UserEntityIdentifierComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI UserEntityIdentifierComponent(

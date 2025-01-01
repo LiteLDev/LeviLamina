@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorEventPacket& operator=(ActorEventPacket const&);
-    ActorEventPacket(ActorEventPacket const&);
-    ActorEventPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

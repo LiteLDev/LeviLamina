@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourcePackChunkRequestPacket& operator=(ResourcePackChunkRequestPacket const&);
-    ResourcePackChunkRequestPacket(ResourcePackChunkRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OnScreenTextureAnimationPacket& operator=(OnScreenTextureAnimationPacket const&);
-    OnScreenTextureAnimationPacket(OnScreenTextureAnimationPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

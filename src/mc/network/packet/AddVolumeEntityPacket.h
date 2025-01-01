@@ -35,11 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&);
-    AddVolumeEntityPacket(AddVolumeEntityPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AnvilDamagePacket& operator=(AnvilDamagePacket const&);
-    AnvilDamagePacket(AnvilDamagePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

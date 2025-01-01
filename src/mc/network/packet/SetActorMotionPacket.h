@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetActorMotionPacket& operator=(SetActorMotionPacket const&);
-    SetActorMotionPacket(SetActorMotionPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

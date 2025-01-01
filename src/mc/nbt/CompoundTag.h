@@ -31,11 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompoundTag& operator=(CompoundTag const&);
-    CompoundTag(CompoundTag const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

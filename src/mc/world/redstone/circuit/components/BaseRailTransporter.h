@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BaseRailTransporter& operator=(BaseRailTransporter const&);
-    BaseRailTransporter(BaseRailTransporter const&);
-    BaseRailTransporter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 12

@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubChunkPos& operator=(SubChunkPos const&);
-    SubChunkPos(SubChunkPos const&);
-    SubChunkPos();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SubChunkPos(::BlockPos const& bp);

@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DimensionDataPacket& operator=(DimensionDataPacket const&);
-    DimensionDataPacket(DimensionDataPacket const&);
-    DimensionDataPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

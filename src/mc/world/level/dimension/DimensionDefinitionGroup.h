@@ -28,12 +28,6 @@ public:
         ::ll::TypedStorage<4, 4, int>             mHeightMaximum;
         ::ll::TypedStorage<4, 4, ::GeneratorType> mGeneratorType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DimensionDefinition& operator=(DimensionDefinition const&);
-        DimensionDefinition(DimensionDefinition const&);
-        DimensionDefinition();
     };
 
 public:
@@ -42,11 +36,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::DimensionDefinitionGroup::DimensionDefinition>>
         mDimensionDefinitions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
-    DimensionDefinitionGroup();
 
 public:
     // member functions

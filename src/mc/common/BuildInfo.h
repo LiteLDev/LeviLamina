@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BuildInfo& operator=(BuildInfo const&);
-    BuildInfo(BuildInfo const&);
-    BuildInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~BuildInfo();

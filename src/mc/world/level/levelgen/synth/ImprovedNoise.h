@@ -41,12 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ImprovedNoise& operator=(ImprovedNoise const&);
-    ImprovedNoise(ImprovedNoise const&);
-    ImprovedNoise();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _blendCubeCorners(

@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OpenSignPacket& operator=(OpenSignPacket const&);
-    OpenSignPacket(OpenSignPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

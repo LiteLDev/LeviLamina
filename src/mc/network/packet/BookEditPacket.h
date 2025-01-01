@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BookEditPacket& operator=(BookEditPacket const&);
-    BookEditPacket(BookEditPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

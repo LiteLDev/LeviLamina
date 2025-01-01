@@ -16,11 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TaskResult& operator=(TaskResult const&);
-    TaskResult(TaskResult const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TaskResult();

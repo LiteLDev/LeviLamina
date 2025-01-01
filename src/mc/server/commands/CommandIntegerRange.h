@@ -13,11 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandIntegerRange& operator=(CommandIntegerRange const&);
-    CommandIntegerRange(CommandIntegerRange const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandIntegerRange();

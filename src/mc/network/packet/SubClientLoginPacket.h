@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubClientLoginPacket& operator=(SubClientLoginPacket const&);
-    SubClientLoginPacket(SubClientLoginPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

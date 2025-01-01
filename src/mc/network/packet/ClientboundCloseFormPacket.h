@@ -15,12 +15,6 @@ class ReadOnlyBinaryStream;
 
 class ClientboundCloseFormPacket : public ::Packet {
 public:
-    // prevent constructor by default
-    ClientboundCloseFormPacket& operator=(ClientboundCloseFormPacket const&);
-    ClientboundCloseFormPacket(ClientboundCloseFormPacket const&);
-    ClientboundCloseFormPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

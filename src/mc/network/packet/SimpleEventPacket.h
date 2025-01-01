@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SimpleEventPacket& operator=(SimpleEventPacket const&);
-    SimpleEventPacket(SimpleEventPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -15,11 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TintMapColor& operator=(TintMapColor const&);
-    TintMapColor(TintMapColor const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TintMapColor();

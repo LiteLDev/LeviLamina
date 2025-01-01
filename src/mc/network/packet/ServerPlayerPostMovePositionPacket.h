@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerPlayerPostMovePositionPacket& operator=(ServerPlayerPostMovePositionPacket const&);
-    ServerPlayerPostMovePositionPacket(ServerPlayerPostMovePositionPacket const&);
-    ServerPlayerPostMovePositionPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

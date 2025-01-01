@@ -13,12 +13,6 @@ struct ScoreboardId;
 
 class ScoreboardEventCoordinator : public ::EventCoordinator<::ScoreboardEventListener> {
 public:
-    // prevent constructor by default
-    ScoreboardEventCoordinator& operator=(ScoreboardEventCoordinator const&);
-    ScoreboardEventCoordinator(ScoreboardEventCoordinator const&);
-    ScoreboardEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

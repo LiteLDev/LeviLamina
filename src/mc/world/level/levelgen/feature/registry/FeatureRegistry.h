@@ -32,12 +32,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&);
-        FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&);
-        FeatureBinaryJsonFormat();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~FeatureBinaryJsonFormat();
@@ -61,11 +55,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                              mLargeFeaturePasses;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                              mSmallFeaturePasses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FeatureRegistry& operator=(FeatureRegistry const&);
-    FeatureRegistry(FeatureRegistry const&);
 
 public:
     // member functions

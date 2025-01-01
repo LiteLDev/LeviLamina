@@ -7,12 +7,6 @@
 
 class BytesDataOutput : public ::IDataOutput {
 public:
-    // prevent constructor by default
-    BytesDataOutput& operator=(BytesDataOutput const&);
-    BytesDataOutput(BytesDataOutput const&);
-    BytesDataOutput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

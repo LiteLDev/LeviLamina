@@ -13,12 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Features& operator=(Features const&);
-    Features(Features const&);
-    Features();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Json::Features strictMode();

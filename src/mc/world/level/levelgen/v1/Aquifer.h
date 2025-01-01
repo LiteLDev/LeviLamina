@@ -39,12 +39,6 @@ public:
         ::ll::TypedStorage<4, 4, int>                               blockLevel;
         ::ll::TypedStorage<1, 1, ::Aquifer::FluidSample::FluidType> fluidType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FluidSample& operator=(FluidSample const&);
-        FluidSample(FluidSample const&);
-        FluidSample();
     };
 
     struct LocalRegistry {
@@ -80,12 +74,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Aquifer::FluidSample>> mFluidLevelCache;
     ::ll::TypedStorage<8, 32, ::Aquifer::LocalRegistry>              mLocalRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Aquifer& operator=(Aquifer const&);
-    Aquifer(Aquifer const&);
-    Aquifer();
 
 public:
     // member functions

@@ -16,11 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EduSharedUriResource& operator=(EduSharedUriResource const&);
-    EduSharedUriResource(EduSharedUriResource const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI EduSharedUriResource();

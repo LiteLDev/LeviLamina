@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ListTagIntAdder& operator=(ListTagIntAdder const&);
-    ListTagIntAdder(ListTagIntAdder const&);
-    ListTagIntAdder();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ListTagIntAdder& operator()(int i);

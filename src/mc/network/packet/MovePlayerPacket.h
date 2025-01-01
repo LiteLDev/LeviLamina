@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MovePlayerPacket& operator=(MovePlayerPacket const&);
-    MovePlayerPacket(MovePlayerPacket const&);
-    MovePlayerPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -33,10 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IdentityDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI IdentityDefinition(::IdentityDefinition&& o);

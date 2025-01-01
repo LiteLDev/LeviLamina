@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FixedBiomeSource& operator=(FixedBiomeSource const&);
-    FixedBiomeSource(FixedBiomeSource const&);
-    FixedBiomeSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

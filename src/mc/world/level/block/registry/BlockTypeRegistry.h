@@ -44,12 +44,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        BlockComplexAliasBlockState& operator=(BlockComplexAliasBlockState const&);
-        BlockComplexAliasBlockState(BlockComplexAliasBlockState const&);
-        BlockComplexAliasBlockState();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~BlockComplexAliasBlockState();
@@ -73,12 +67,6 @@ public:
         ::ll::TypedStorage<8, 112, ::SemVersion>                        mFlattenedInBlocksJsonVersion;
         ::ll::TypedStorage<4, 4, int>                                   mStartVariant;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockComplexAliasContent& operator=(BlockComplexAliasContent const&);
-        BlockComplexAliasContent(BlockComplexAliasContent const&);
-        BlockComplexAliasContent();
 
     public:
         // member functions
@@ -106,12 +94,6 @@ public:
         ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>> mBlockLegacy;
         ::ll::TypedStorage<8, 8, ::Block const*>                 mBlock;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LookupByNameImplReturnType& operator=(LookupByNameImplReturnType const&);
-        LookupByNameImplReturnType(LookupByNameImplReturnType const&);
-        LookupByNameImplReturnType();
 
     public:
         // member functions
@@ -149,24 +131,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BlockLegacy const&> mAirBlock;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DirectAccessBlocks& operator=(DirectAccessBlocks const&);
-        DirectAccessBlocks(DirectAccessBlocks const&);
-        DirectAccessBlocks();
     };
 
     enum class LookupByNameImplResolve : int {
         BlockLegacy = 0,
         Block       = 1,
     };
-
-public:
-    // prevent constructor by default
-    BlockTypeRegistry& operator=(BlockTypeRegistry const&);
-    BlockTypeRegistry(BlockTypeRegistry const&);
-    BlockTypeRegistry();
 
 public:
     // static functions

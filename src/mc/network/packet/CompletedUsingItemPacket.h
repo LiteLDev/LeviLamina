@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompletedUsingItemPacket& operator=(CompletedUsingItemPacket const&);
-    CompletedUsingItemPacket(CompletedUsingItemPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

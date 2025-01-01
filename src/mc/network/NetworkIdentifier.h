@@ -28,11 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NetworkIdentifier& operator=(NetworkIdentifier const&);
-    NetworkIdentifier(NetworkIdentifier const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI NetworkIdentifier();

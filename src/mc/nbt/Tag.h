@@ -32,12 +32,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    Tag& operator=(Tag const&);
-    Tag(Tag const&);
-    Tag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

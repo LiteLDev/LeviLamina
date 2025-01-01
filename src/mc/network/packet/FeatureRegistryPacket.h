@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FeatureRegistryPacket& operator=(FeatureRegistryPacket const&);
-    FeatureRegistryPacket(FeatureRegistryPacket const&);
-    FeatureRegistryPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

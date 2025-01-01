@@ -31,12 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockStateCommandParam& operator=(BlockStateCommandParam const&);
-    BlockStateCommandParam(BlockStateCommandParam const&);
-    BlockStateCommandParam();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockStateCommandParam(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);

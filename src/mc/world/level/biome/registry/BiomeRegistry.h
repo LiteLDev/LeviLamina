@@ -96,12 +96,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeRegistry& operator=(BiomeRegistry const&);
-    BiomeRegistry(BiomeRegistry const&);
-    BiomeRegistry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

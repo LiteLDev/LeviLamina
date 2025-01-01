@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CanyonFeature& operator=(CanyonFeature const&);
-    CanyonFeature(CanyonFeature const&);
-    CanyonFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

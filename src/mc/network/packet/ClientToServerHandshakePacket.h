@@ -15,11 +15,6 @@ class ReadOnlyBinaryStream;
 
 class ClientToServerHandshakePacket : public ::Packet {
 public:
-    // prevent constructor by default
-    ClientToServerHandshakePacket& operator=(ClientToServerHandshakePacket const&);
-    ClientToServerHandshakePacket(ClientToServerHandshakePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

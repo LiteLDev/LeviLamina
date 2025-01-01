@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptNavigationResult& operator=(ScriptNavigationResult const&);
-    ScriptNavigationResult(ScriptNavigationResult const&);
-    ScriptNavigationResult();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::vector<::Vec3> getPath() const;

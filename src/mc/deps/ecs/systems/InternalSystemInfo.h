@@ -7,12 +7,6 @@
 
 struct InternalSystemInfo : public ::SystemInfo {
 public:
-    // prevent constructor by default
-    InternalSystemInfo& operator=(InternalSystemInfo const&);
-    InternalSystemInfo(InternalSystemInfo const&);
-    InternalSystemInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~InternalSystemInfo();

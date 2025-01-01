@@ -4,11 +4,6 @@
 
 struct BeardKernel {
 public:
-    // prevent constructor by default
-    BeardKernel& operator=(BeardKernel const&);
-    BeardKernel(BeardKernel const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BeardKernel();

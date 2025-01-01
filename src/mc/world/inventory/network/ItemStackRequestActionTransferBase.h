@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestActionTransferBase& operator=(ItemStackRequestActionTransferBase const&);
-    ItemStackRequestActionTransferBase(ItemStackRequestActionTransferBase const&);
-    ItemStackRequestActionTransferBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

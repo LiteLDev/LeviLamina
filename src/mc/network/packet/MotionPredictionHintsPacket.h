@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MotionPredictionHintsPacket& operator=(MotionPredictionHintsPacket const&);
-    MotionPredictionHintsPacket(MotionPredictionHintsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

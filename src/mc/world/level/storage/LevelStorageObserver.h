@@ -10,12 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelStorageObserver& operator=(LevelStorageObserver const&);
-    LevelStorageObserver(LevelStorageObserver const&);
-    LevelStorageObserver();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onSave(::std::string const& levelId);

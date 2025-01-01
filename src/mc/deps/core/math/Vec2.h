@@ -11,12 +11,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Vec2& operator=(Vec2 const&);
-    Vec2(Vec2 const&);
-    Vec2();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string toJsonString() const;

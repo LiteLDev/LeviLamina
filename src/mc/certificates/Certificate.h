@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Certificate& operator=(Certificate const&);
-    Certificate();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Certificate(::Certificate const& other);

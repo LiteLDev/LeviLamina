@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&);
-    MaterialReducerDataEntry(MaterialReducerDataEntry const&);
-    MaterialReducerDataEntry();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~MaterialReducerDataEntry();

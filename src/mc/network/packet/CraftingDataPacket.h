@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingDataPacket& operator=(CraftingDataPacket const&);
-    CraftingDataPacket(CraftingDataPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

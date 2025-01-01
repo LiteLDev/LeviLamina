@@ -33,11 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ConnectionRequest& operator=(ConnectionRequest const&);
-    ConnectionRequest();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ConnectionRequest(::ConnectionRequest const& other);

@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangMemberVariable& operator=(MolangMemberVariable const&);
-    MolangMemberVariable(MolangMemberVariable const&);
-    MolangMemberVariable();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~MolangMemberVariable();

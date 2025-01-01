@@ -39,11 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BaseCircuitComponent& operator=(BaseCircuitComponent const&);
-    BaseCircuitComponent(BaseCircuitComponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

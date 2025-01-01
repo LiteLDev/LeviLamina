@@ -33,10 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EducationLevelSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI EducationLevelSettings(::EducationLevelSettings const&);

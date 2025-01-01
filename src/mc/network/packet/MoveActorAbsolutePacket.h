@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MoveActorAbsolutePacket& operator=(MoveActorAbsolutePacket const&);
-    MoveActorAbsolutePacket(MoveActorAbsolutePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -33,12 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Packet& operator=(Packet const&);
-    Packet(Packet const&);
-    Packet();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ModalFormResponsePacket& operator=(ModalFormResponsePacket const&);
-    ModalFormResponsePacket(ModalFormResponsePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

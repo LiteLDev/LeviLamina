@@ -20,11 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ByteTag& operator=(ByteTag const&);
-    ByteTag(ByteTag const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

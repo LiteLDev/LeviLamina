@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameTestResultsPacket& operator=(GameTestResultsPacket const&);
-    GameTestResultsPacket(GameTestResultsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

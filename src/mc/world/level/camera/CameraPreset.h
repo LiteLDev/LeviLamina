@@ -49,10 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraPreset();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CameraPreset(::CameraPreset const&);

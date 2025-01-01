@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RequestNetworkSettingsPacket& operator=(RequestNetworkSettingsPacket const&);
-    RequestNetworkSettingsPacket(RequestNetworkSettingsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

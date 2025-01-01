@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShortTag& operator=(ShortTag const&);
-    ShortTag(ShortTag const&);
-    ShortTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

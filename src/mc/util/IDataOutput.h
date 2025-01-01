@@ -4,12 +4,6 @@
 
 class IDataOutput {
 public:
-    // prevent constructor by default
-    IDataOutput& operator=(IDataOutput const&);
-    IDataOutput(IDataOutput const&);
-    IDataOutput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

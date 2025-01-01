@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ListTag& operator=(ListTag const&);
-    ListTag(ListTag const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RemoveObjectivePacket& operator=(RemoveObjectivePacket const&);
-    RemoveObjectivePacket(RemoveObjectivePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

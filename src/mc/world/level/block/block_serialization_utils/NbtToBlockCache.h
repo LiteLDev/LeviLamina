@@ -61,12 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NbtToBlockCache& operator=(NbtToBlockCache const&);
-    NbtToBlockCache(NbtToBlockCache const&);
-    NbtToBlockCache();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~NbtToBlockCache();

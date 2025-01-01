@@ -28,12 +28,6 @@ public:
         ::ll::TypedStorage<4, 4, float> temperature;
         ::ll::TypedStorage<4, 4, float> humidity;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CacheEntry& operator=(CacheEntry const&);
-        CacheEntry(CacheEntry const&);
-        CacheEntry();
     };
 
 public:
@@ -43,11 +37,6 @@ public:
     ::ll::TypedStorage<4, 4, int const>                                          mCellCountXZ;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkLocalNoiseCache::CacheEntry>> mNoiseCacheEntries;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkLocalNoiseCache& operator=(ChunkLocalNoiseCache const&);
-    ChunkLocalNoiseCache(ChunkLocalNoiseCache const&);
 
 public:
     // member functions

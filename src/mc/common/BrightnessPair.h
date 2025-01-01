@@ -14,10 +14,4 @@ public:
     ::ll::TypedStorage<1, 1, ::Brightness> sky;
     ::ll::TypedStorage<1, 1, ::Brightness> block;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BrightnessPair& operator=(BrightnessPair const&);
-    BrightnessPair(BrightnessPair const&);
-    BrightnessPair();
 };

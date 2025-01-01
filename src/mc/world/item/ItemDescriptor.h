@@ -37,12 +37,6 @@ public:
         ::ll::TypedStorage<8, 8, ::Item const*> mItem;
         ::ll::TypedStorage<2, 2, short>         mAuxValue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ItemEntry& operator=(ItemEntry const&);
-        ItemEntry(ItemEntry const&);
-        ItemEntry();
     };
 
     enum class InternalType : uchar {
@@ -55,12 +49,6 @@ public:
     };
 
     struct BaseDescriptor {
-    public:
-        // prevent constructor by default
-        BaseDescriptor& operator=(BaseDescriptor const&);
-        BaseDescriptor(BaseDescriptor const&);
-        BaseDescriptor();
-
     public:
         // virtual functions
         // NOLINTBEGIN

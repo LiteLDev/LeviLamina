@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockPickRequestPacket& operator=(BlockPickRequestPacket const&);
-    BlockPickRequestPacket(BlockPickRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -12,12 +12,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UUID& operator=(UUID const&);
-    UUID(UUID const&);
-    UUID();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string asString() const;

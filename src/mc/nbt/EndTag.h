@@ -14,12 +14,6 @@ class IDataOutput;
 
 class EndTag : public ::Tag {
 public:
-    // prevent constructor by default
-    EndTag& operator=(EndTag const&);
-    EndTag(EndTag const&);
-    EndTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

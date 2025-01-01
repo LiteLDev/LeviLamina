@@ -38,11 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NpcRequestPacket& operator=(NpcRequestPacket const&);
-    NpcRequestPacket(NpcRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

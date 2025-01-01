@@ -20,11 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IntTag& operator=(IntTag const&);
-    IntTag(IntTag const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

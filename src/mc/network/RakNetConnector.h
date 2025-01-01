@@ -38,12 +38,6 @@ public:
     // RakNetConnector inner types define
     struct ConnectionCallbacks : public ::Connector::ConnectionCallbacks {
     public:
-        // prevent constructor by default
-        ConnectionCallbacks& operator=(ConnectionCallbacks const&);
-        ConnectionCallbacks(ConnectionCallbacks const&);
-        ConnectionCallbacks();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -98,12 +92,6 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            ReadBufferData& operator=(ReadBufferData const&);
-            ReadBufferData(ReadBufferData const&);
-            ReadBufferData();
-
-        public:
             // member functions
             // NOLINTBEGIN
             MCAPI ~ReadBufferData();
@@ -127,12 +115,6 @@ public:
         ::ll::TypedStorage<4, 4, int> mLastPing;
         ::ll::TypedStorage<4, 4, int> mAveragePing;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RakNetNetworkPeer& operator=(RakNetNetworkPeer const&);
-        RakNetNetworkPeer(RakNetNetworkPeer const&);
-        RakNetNetworkPeer();
 
     public:
         // virtual functions
@@ -216,12 +198,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>               mAddress;
         ::ll::TypedStorage<8, 64, ::std::function<void(uint)>> mAction;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PingCallbackData& operator=(PingCallbackData const&);
-        PingCallbackData(PingCallbackData const&);
-        PingCallbackData();
     };
 
 public:
@@ -251,12 +227,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::PingCallbackData>>     mPingTimeCallbacks;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MPMCQueue<::std::function<void()>>>> mOwnedThreadWork;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RakNetConnector& operator=(RakNetConnector const&);
-    RakNetConnector(RakNetConnector const&);
-    RakNetConnector();
 
 public:
     // virtual functions

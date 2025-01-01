@@ -15,10 +15,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>               mValid;
     ::ll::TypedStorage<4, 4, int>                mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScoreInfo& operator=(ScoreInfo const&);
-    ScoreInfo(ScoreInfo const&);
-    ScoreInfo();
 };

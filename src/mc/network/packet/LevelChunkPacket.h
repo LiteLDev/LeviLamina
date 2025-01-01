@@ -54,11 +54,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelChunkPacket& operator=(LevelChunkPacket const&);
-    LevelChunkPacket(LevelChunkPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

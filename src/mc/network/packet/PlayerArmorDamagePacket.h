@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerArmorDamagePacket& operator=(PlayerArmorDamagePacket const&);
-    PlayerArmorDamagePacket(PlayerArmorDamagePacket const&);
-    PlayerArmorDamagePacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

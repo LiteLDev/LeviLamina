@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemDescriptorCount& operator=(ItemDescriptorCount const&);
-    ItemDescriptorCount(ItemDescriptorCount const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -21,12 +21,6 @@ public:
         variant<::std::reference_wrapper<::ClientNetworkSystem>, ::std::reference_wrapper<::ServerNetworkSystem>>;
 
 public:
-    // prevent constructor by default
-    ClientOrServerNetworkSystemRef& operator=(ClientOrServerNetworkSystemRef const&);
-    ClientOrServerNetworkSystemRef(ClientOrServerNetworkSystemRef const&);
-    ClientOrServerNetworkSystemRef();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ServerNetworkSystem& toServerNetworkSystem();

@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScoreboardIdentityRef& operator=(ScoreboardIdentityRef const&);
-    ScoreboardIdentityRef(ScoreboardIdentityRef const&);
-    ScoreboardIdentityRef();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ActorUniqueID const& getEntityId() const;

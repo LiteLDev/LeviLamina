@@ -24,12 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PoweredBlockComponent& operator=(PoweredBlockComponent const&);
-    PoweredBlockComponent(PoweredBlockComponent const&);
-    PoweredBlockComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 12

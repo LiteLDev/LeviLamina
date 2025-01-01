@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CompositePackSource& operator=(CompositePackSource const&);
-    CompositePackSource(CompositePackSource const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

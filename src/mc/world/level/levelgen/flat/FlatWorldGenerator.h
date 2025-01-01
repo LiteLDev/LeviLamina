@@ -43,12 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlatWorldGenerator& operator=(FlatWorldGenerator const&);
-    FlatWorldGenerator(FlatWorldGenerator const&);
-    FlatWorldGenerator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

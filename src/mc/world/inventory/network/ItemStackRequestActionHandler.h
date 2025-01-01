@@ -63,12 +63,6 @@ public:
         ::ll::TypedStorage<1, 1, uchar>            mSlot;
         ::ll::TypedStorage<4, 4, ::ItemStackNetId> mServerNetId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RequestSlotIdAssignment& operator=(RequestSlotIdAssignment const&);
-        RequestSlotIdAssignment(RequestSlotIdAssignment const&);
-        RequestSlotIdAssignment();
     };
 
     struct RequestIdAssignments {
@@ -94,12 +88,6 @@ public:
         ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const> mContainerRuntimeId;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemStackLegacyRequestId, ::ItemStackNetId>>> mSlots;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerLegacyRequestSlotIdAssignment& operator=(PlayerLegacyRequestSlotIdAssignment const&);
-        PlayerLegacyRequestSlotIdAssignment(PlayerLegacyRequestSlotIdAssignment const&);
-        PlayerLegacyRequestSlotIdAssignment();
 
     public:
         // member functions
@@ -137,12 +125,6 @@ public:
             ::std::unordered_map<::ItemStackRequestId, ::ItemStackRequestActionHandler::RequestIdAssignments>>
             mRecentRequests;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ScreenData& operator=(ScreenData const&);
-        ScreenData(ScreenData const&);
-        ScreenData();
 
     public:
         // member functions
@@ -185,12 +167,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mStrings;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenValidation>>           mScreenValidation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionHandler& operator=(ItemStackRequestActionHandler const&);
-    ItemStackRequestActionHandler(ItemStackRequestActionHandler const&);
-    ItemStackRequestActionHandler();
 
 public:
     // member functions

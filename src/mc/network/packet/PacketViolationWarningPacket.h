@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PacketViolationWarningPacket& operator=(PacketViolationWarningPacket const&);
-    PacketViolationWarningPacket(PacketViolationWarningPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

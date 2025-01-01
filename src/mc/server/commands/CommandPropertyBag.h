@@ -14,12 +14,6 @@ namespace Json { class Value; }
 
 class CommandPropertyBag : public ::PropertyBag {
 public:
-    // prevent constructor by default
-    CommandPropertyBag& operator=(CommandPropertyBag const&);
-    CommandPropertyBag(CommandPropertyBag const&);
-    CommandPropertyBag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

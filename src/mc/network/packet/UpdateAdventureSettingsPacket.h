@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateAdventureSettingsPacket& operator=(UpdateAdventureSettingsPacket const&);
-    UpdateAdventureSettingsPacket(UpdateAdventureSettingsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

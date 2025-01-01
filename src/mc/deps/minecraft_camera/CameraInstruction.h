@@ -46,12 +46,6 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            EaseOption& operator=(EaseOption const&);
-            EaseOption(EaseOption const&);
-            EaseOption();
-
-        public:
             // static functions
             // NOLINTBEGIN
             MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -67,12 +61,6 @@ public:
             // NOLINTBEGIN
             ::ll::TypedStorage<4, 12, ::Vec3> mPos;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            PosOption& operator=(PosOption const&);
-            PosOption(PosOption const&);
-            PosOption();
 
         public:
             // static functions
@@ -91,12 +79,6 @@ public:
             ::ll::TypedStorage<4, 4, float> mRotX;
             ::ll::TypedStorage<4, 4, float> mRotY;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            RotOption& operator=(RotOption const&);
-            RotOption(RotOption const&);
-            RotOption();
 
         public:
             // static functions
@@ -165,12 +147,6 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            FacingOption& operator=(FacingOption const&);
-            FacingOption(FacingOption const&);
-            FacingOption();
-
-        public:
             // static functions
             // NOLINTBEGIN
             MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -193,12 +169,6 @@ public:
                                                         mEntityOffset;
         ::ll::TypedStorage<1, 2, ::std::optional<bool>> mDefault;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SetInstruction& operator=(SetInstruction const&);
-        SetInstruction(SetInstruction const&);
-        SetInstruction();
 
     public:
         // member functions
@@ -236,12 +206,6 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            TimeOption& operator=(TimeOption const&);
-            TimeOption(TimeOption const&);
-            TimeOption();
-
-        public:
             // static functions
             // NOLINTBEGIN
             MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -261,12 +225,6 @@ public:
             // NOLINTEND
 
         public:
-            // prevent constructor by default
-            ColorOption& operator=(ColorOption const&);
-            ColorOption(ColorOption const&);
-            ColorOption();
-
-        public:
             // static functions
             // NOLINTBEGIN
             MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
@@ -282,12 +240,6 @@ public:
         ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::TimeOption>>  mTime;
         ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::ColorOption>> mColor;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FadeInstruction& operator=(FadeInstruction const&);
-        FadeInstruction(FadeInstruction const&);
-        FadeInstruction();
 
     public:
         // member functions
@@ -336,12 +288,6 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                    mClear;
     ::ll::TypedStorage<4, 36, ::std::optional<::CameraInstruction::FadeInstruction>>   mFade;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraInstruction& operator=(CameraInstruction const&);
-    CameraInstruction(CameraInstruction const&);
-    CameraInstruction();
 
 public:
     // member functions

@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkKey& operator=(ChunkKey const&);
-    ChunkKey(ChunkKey const&);
-    ChunkKey();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ChunkKey(::LevelChunk const& lc);

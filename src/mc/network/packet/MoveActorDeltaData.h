@@ -41,10 +41,4 @@ public:
     ::ll::TypedStorage<1, 1, char>                         mRotYHead;
     ::ll::TypedStorage<8, 32, ::MoveActorAbsoluteData>     mPreviousData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveActorDeltaData& operator=(MoveActorDeltaData const&);
-    MoveActorDeltaData(MoveActorDeltaData const&);
-    MoveActorDeltaData();
 };

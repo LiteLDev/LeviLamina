@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StackResultStorageEntity& operator=(StackResultStorageEntity const&);
-    StackResultStorageEntity(StackResultStorageEntity const&);
-    StackResultStorageEntity();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI StackResultStorageEntity(::StackResultStorageEntity&& other);

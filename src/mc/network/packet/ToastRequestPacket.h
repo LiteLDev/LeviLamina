@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ToastRequestPacket& operator=(ToastRequestPacket const&);
-    ToastRequestPacket(ToastRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

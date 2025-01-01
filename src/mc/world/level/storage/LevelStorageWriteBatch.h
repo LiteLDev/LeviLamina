@@ -47,12 +47,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        BatchEntry& operator=(BatchEntry const&);
-        BatchEntry(BatchEntry const&);
-        BatchEntry();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~BatchEntry();
@@ -80,12 +74,6 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::LevelStorageWriteBatch::BatchEntry>> mBatch;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mFlushCallbacksMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelStorageWriteBatch& operator=(LevelStorageWriteBatch const&);
-    LevelStorageWriteBatch(LevelStorageWriteBatch const&);
-    LevelStorageWriteBatch();
 
 public:
     // virtual functions

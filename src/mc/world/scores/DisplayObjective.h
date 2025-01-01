@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DisplayObjective& operator=(DisplayObjective const&);
-    DisplayObjective(DisplayObjective const&);
-    DisplayObjective();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string const getBelowNameStringForId(::ScoreboardId const& scoreboardId) const;

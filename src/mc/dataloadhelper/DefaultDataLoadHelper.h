@@ -20,12 +20,6 @@ struct ActorUniqueID;
 
 class DefaultDataLoadHelper : public ::DataLoadHelper {
 public:
-    // prevent constructor by default
-    DefaultDataLoadHelper& operator=(DefaultDataLoadHelper const&);
-    DefaultDataLoadHelper(DefaultDataLoadHelper const&);
-    DefaultDataLoadHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

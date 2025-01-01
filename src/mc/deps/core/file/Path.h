@@ -38,11 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Path& operator=(Path const&);
-    Path(Path const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Path();

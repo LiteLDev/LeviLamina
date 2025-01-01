@@ -51,12 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Scheduler& operator=(Scheduler const&);
-    Scheduler(Scheduler const&);
-    Scheduler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

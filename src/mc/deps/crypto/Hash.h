@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Hash& operator=(Hash const&);
-    Hash(Hash const&);
-    Hash();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

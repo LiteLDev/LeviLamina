@@ -14,12 +14,6 @@ public:
     ::ll::TypedStorage<4, 4, ::CanyonFeatureUtils::TerrainGenVersion> version;
     ::ll::TypedStorage<4, 4, int>                                     minHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CanyonConfiguration& operator=(CanyonConfiguration const&);
-    CanyonConfiguration(CanyonConfiguration const&);
-    CanyonConfiguration();
 };
 
 } // namespace CanyonFeatureUtils

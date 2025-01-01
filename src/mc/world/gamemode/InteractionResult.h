@@ -15,10 +15,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int> mResult;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InteractionResult& operator=(InteractionResult const&);
-    InteractionResult(InteractionResult const&);
-    InteractionResult();
 };

@@ -12,12 +12,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PathPart& operator=(PathPart const&);
-    PathPart(PathPart const&);
-    PathPart();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~PathPart();

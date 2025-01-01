@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetHudPacket& operator=(SetHudPacket const&);
-    SetHudPacket(SetHudPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

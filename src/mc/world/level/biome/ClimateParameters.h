@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClimateParameters& operator=(ClimateParameters const&);
-    ClimateParameters(ClimateParameters const&);
-    ClimateParameters();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ClimateParameters(

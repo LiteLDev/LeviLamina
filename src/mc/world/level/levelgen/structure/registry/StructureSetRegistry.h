@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureSetRegistry& operator=(StructureSetRegistry const&);
-    StructureSetRegistry(StructureSetRegistry const&);
-    StructureSetRegistry();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void record(::std::string_view key, ::std::shared_ptr<::br::worldgen::StructureSet>&& set);

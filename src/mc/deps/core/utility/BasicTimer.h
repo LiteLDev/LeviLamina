@@ -12,12 +12,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BasicTimer& operator=(BasicTimer const&);
-    BasicTimer(BasicTimer const&);
-    BasicTimer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);

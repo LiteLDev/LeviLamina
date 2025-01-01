@@ -37,12 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComplexInventoryTransaction& operator=(ComplexInventoryTransaction const&);
-    ComplexInventoryTransaction(ComplexInventoryTransaction const&);
-    ComplexInventoryTransaction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

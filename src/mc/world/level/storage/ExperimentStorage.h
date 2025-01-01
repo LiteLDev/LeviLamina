@@ -16,11 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ExperimentStorage(ExperimentStorage const&);
-    ExperimentStorage();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ExperimentStorage& operator=(::ExperimentStorage&&);

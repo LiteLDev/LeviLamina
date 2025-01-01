@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetDifficultyPacket& operator=(SetDifficultyPacket const&);
-    SetDifficultyPacket(SetDifficultyPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

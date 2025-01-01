@@ -32,11 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UnlockedRecipesPacket& operator=(UnlockedRecipesPacket const&);
-    UnlockedRecipesPacket(UnlockedRecipesPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

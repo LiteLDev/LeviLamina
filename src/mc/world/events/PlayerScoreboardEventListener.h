@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerScoreboardEventListener& operator=(PlayerScoreboardEventListener const&);
-    PlayerScoreboardEventListener(PlayerScoreboardEventListener const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

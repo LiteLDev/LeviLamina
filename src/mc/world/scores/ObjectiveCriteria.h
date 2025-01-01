@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ObjectiveCriteria& operator=(ObjectiveCriteria const&);
-    ObjectiveCriteria(ObjectiveCriteria const&);
-    ObjectiveCriteria();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string const& getName() const;

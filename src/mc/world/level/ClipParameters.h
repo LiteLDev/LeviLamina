@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClipParameters& operator=(ClipParameters const&);
-    ClipParameters(ClipParameters const&);
-    ClipParameters();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ClipParameters(::Vec3 const& a, ::Vec3 const& b);

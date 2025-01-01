@@ -10,12 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandRawText& operator=(CommandRawText const&);
-    CommandRawText(CommandRawText const&);
-    CommandRawText();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string const& getText() const;

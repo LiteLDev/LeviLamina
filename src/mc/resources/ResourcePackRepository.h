@@ -53,12 +53,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPastHashes;
         ::ll::TypedStorage<8, 136, ::PackIdVersion>             mIdentity;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        KnownPackInfo& operator=(KnownPackInfo const&);
-        KnownPackInfo(KnownPackInfo const&);
-        KnownPackInfo();
     };
 
     using EventingCallback = ::std::function<::IMinecraftEventing&()>;
@@ -100,12 +94,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>               mRefreshPacksRequested;
     ::ll::TypedStorage<8, 24, ::ContentIdentity> mCurrentPremiumWorldTemplateIdentity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ResourcePackRepository& operator=(ResourcePackRepository const&);
-    ResourcePackRepository(ResourcePackRepository const&);
-    ResourcePackRepository();
 
 public:
     // virtual functions

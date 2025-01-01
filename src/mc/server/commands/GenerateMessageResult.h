@@ -11,12 +11,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GenerateMessageResult& operator=(GenerateMessageResult const&);
-    GenerateMessageResult(GenerateMessageResult const&);
-    GenerateMessageResult();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~GenerateMessageResult();

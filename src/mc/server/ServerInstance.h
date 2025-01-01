@@ -122,12 +122,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerInstance& operator=(ServerInstance const&);
-    ServerInstance(ServerInstance const&);
-    ServerInstance();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

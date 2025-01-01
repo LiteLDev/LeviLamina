@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PhotoTransferPacket& operator=(PhotoTransferPacket const&);
-    PhotoTransferPacket(PhotoTransferPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

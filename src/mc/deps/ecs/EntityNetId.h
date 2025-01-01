@@ -19,12 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EntityNetId& operator=(EntityNetId const&);
-    EntityNetId(EntityNetId const&);
-    EntityNetId();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::EntityNetId _serverGetEntityNetId(::EntityContext const& entity);
