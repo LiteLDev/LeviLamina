@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetTimePacket& operator=(SetTimePacket const&);
-    SetTimePacket(SetTimePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

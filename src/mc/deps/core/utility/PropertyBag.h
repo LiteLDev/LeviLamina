@@ -16,11 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PropertyBag& operator=(PropertyBag const&);
-    PropertyBag(PropertyBag const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PropertyBag();

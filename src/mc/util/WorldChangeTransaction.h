@@ -39,12 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldChangeTransaction& operator=(WorldChangeTransaction const&);
-    WorldChangeTransaction(WorldChangeTransaction const&);
-    WorldChangeTransaction();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);

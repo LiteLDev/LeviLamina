@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerSetDataPacket& operator=(ContainerSetDataPacket const&);
-    ContainerSetDataPacket(ContainerSetDataPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

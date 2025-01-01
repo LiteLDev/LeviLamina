@@ -26,12 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetScorePacket& operator=(SetScorePacket const&);
-    SetScorePacket(SetScorePacket const&);
-    SetScorePacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

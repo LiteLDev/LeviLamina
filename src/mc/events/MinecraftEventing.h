@@ -373,12 +373,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MinecraftEventing& operator=(MinecraftEventing const&);
-    MinecraftEventing(MinecraftEventing const&);
-    MinecraftEventing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TickNextTickData& operator=(TickNextTickData const&);
-    TickNextTickData(TickNextTickData const&);
-    TickNextTickData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TickNextTickData(::BlockPos const& pos, ::Block const& block, ::Tick const& tick, int pOffset);

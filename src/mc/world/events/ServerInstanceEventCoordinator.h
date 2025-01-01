@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerInstanceEventCoordinator& operator=(ServerInstanceEventCoordinator const&);
-    ServerInstanceEventCoordinator(ServerInstanceEventCoordinator const&);
-    ServerInstanceEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

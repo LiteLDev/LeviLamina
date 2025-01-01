@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WebSocketPacketData& operator=(WebSocketPacketData const&);
-    WebSocketPacketData(WebSocketPacketData const&);
-    WebSocketPacketData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WebSocketPacketData(::std::string const& ip);

@@ -35,11 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddItemActorPacket& operator=(AddItemActorPacket const&);
-    AddItemActorPacket(AddItemActorPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

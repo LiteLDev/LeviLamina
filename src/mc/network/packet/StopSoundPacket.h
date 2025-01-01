@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StopSoundPacket& operator=(StopSoundPacket const&);
-    StopSoundPacket(StopSoundPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

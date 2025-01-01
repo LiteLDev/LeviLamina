@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureBlockUpdatePacket& operator=(StructureBlockUpdatePacket const&);
-    StructureBlockUpdatePacket(StructureBlockUpdatePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

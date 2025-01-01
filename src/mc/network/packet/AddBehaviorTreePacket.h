@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddBehaviorTreePacket& operator=(AddBehaviorTreePacket const&);
-    AddBehaviorTreePacket(AddBehaviorTreePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

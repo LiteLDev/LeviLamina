@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerboundDiagnosticsPacket& operator=(ServerboundDiagnosticsPacket const&);
-    ServerboundDiagnosticsPacket(ServerboundDiagnosticsPacket const&);
-    ServerboundDiagnosticsPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

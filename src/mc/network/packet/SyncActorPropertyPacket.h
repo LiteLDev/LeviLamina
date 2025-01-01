@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SyncActorPropertyPacket& operator=(SyncActorPropertyPacket const&);
-    SyncActorPropertyPacket(SyncActorPropertyPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

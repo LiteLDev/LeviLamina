@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MapCreateLockedCopyPacket& operator=(MapCreateLockedCopyPacket const&);
-    MapCreateLockedCopyPacket(MapCreateLockedCopyPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

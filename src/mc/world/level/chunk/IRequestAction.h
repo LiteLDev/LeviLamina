@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IRequestAction& operator=(IRequestAction const&);
-    IRequestAction(IRequestAction const&);
-    IRequestAction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,11 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActionValue& operator=(ActionValue const&);
-    ActionValue(ActionValue const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActionValue();

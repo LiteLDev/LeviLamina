@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateAbilitiesPacket& operator=(UpdateAbilitiesPacket const&);
-    UpdateAbilitiesPacket(UpdateAbilitiesPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

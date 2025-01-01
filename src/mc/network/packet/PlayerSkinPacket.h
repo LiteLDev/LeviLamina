@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerSkinPacket& operator=(PlayerSkinPacket const&);
-    PlayerSkinPacket(PlayerSkinPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

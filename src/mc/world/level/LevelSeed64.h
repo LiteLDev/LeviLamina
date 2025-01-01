@@ -14,12 +14,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelSeed64& operator=(LevelSeed64 const&);
-    LevelSeed64(LevelSeed64 const&);
-    LevelSeed64();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint to32BitRandomSeed() const;

@@ -13,12 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Parameter& operator=(Parameter const&);
-    Parameter(Parameter const&);
-    Parameter();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Parameter(float min, float max);

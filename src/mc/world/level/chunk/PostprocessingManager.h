@@ -28,12 +28,6 @@ public:
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunk>>                               mChunk;
         ::ll::TypedStorage<8, 16, ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>> mChunkLock;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LockedChunk& operator=(LockedChunk const&);
-        LockedChunk(LockedChunk const&);
-        LockedChunk();
     };
 
 public:
@@ -41,11 +35,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::PostprocessingManager::LockedChunk>> mLockedChunks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PostprocessingManager& operator=(PostprocessingManager const&);
-    PostprocessingManager(PostprocessingManager const&);
 
 public:
     // member functions

@@ -11,12 +11,6 @@ namespace PlayerCapabilities {
 
 struct ISharedController {
 public:
-    // prevent constructor by default
-    ISharedController& operator=(ISharedController const&);
-    ISharedController(ISharedController const&);
-    ISharedController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

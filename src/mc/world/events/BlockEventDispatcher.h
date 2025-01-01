@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockEventDispatcher& operator=(BlockEventDispatcher const&);
-    BlockEventDispatcher(BlockEventDispatcher const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

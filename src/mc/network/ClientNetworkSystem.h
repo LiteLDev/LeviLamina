@@ -28,12 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientNetworkSystem& operator=(ClientNetworkSystem const&);
-    ClientNetworkSystem(ClientNetworkSystem const&);
-    ClientNetworkSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

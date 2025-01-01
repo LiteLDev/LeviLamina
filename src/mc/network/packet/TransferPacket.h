@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TransferPacket& operator=(TransferPacket const&);
-    TransferPacket(TransferPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

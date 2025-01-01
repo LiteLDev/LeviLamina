@@ -85,12 +85,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Mob& operator=(Mob const&);
-    Mob(Mob const&);
-    Mob();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

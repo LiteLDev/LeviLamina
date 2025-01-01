@@ -41,12 +41,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ValidationError& operator=(ValidationError const&);
-        ValidationError(ValidationError const&);
-        ValidationError();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ValidationError();
@@ -79,11 +73,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<bool(::GameRule::Value const&, ::GameRule::ValidationError*)>>
         mValidateValueCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameRule(GameRule const&);
-    GameRule();
 
 public:
     // member functions

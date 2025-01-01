@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraShakePacket& operator=(CameraShakePacket const&);
-    CameraShakePacket(CameraShakePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

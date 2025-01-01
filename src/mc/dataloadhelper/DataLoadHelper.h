@@ -19,12 +19,6 @@ struct ActorUniqueID;
 
 class DataLoadHelper {
 public:
-    // prevent constructor by default
-    DataLoadHelper& operator=(DataLoadHelper const&);
-    DataLoadHelper(DataLoadHelper const&);
-    DataLoadHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DisconnectPacket& operator=(DisconnectPacket const&);
-    DisconnectPacket(DisconnectPacket const&);
-    DisconnectPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

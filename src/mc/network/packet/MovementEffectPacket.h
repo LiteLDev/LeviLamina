@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MovementEffectPacket& operator=(MovementEffectPacket const&);
-    MovementEffectPacket(MovementEffectPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

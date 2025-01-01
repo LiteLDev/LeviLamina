@@ -20,11 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockEventDispatcherToken& operator=(BlockEventDispatcherToken const&);
-    BlockEventDispatcherToken(BlockEventDispatcherToken const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BlockEventDispatcherToken();

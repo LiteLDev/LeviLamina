@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EditorNetworkPacket& operator=(EditorNetworkPacket const&);
-    EditorNetworkPacket(EditorNetworkPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

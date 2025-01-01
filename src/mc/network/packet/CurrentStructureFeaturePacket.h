@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CurrentStructureFeaturePacket& operator=(CurrentStructureFeaturePacket const&);
-    CurrentStructureFeaturePacket(CurrentStructureFeaturePacket const&);
-    CurrentStructureFeaturePacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

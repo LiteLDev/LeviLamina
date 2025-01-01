@@ -14,12 +14,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PrioritizeSharedOwnership& operator=(PrioritizeSharedOwnership const&);
-    PrioritizeSharedOwnership(PrioritizeSharedOwnership const&);
-    PrioritizeSharedOwnership();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void lock();

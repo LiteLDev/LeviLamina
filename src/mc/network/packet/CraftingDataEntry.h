@@ -27,12 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CraftingDataEntry& operator=(CraftingDataEntry const&);
-    CraftingDataEntry(CraftingDataEntry const&);
-    CraftingDataEntry();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CraftingDataEntry(::CraftingDataEntry&& entry);

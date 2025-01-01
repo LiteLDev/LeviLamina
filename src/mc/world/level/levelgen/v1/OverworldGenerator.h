@@ -56,11 +56,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ThreadData& operator=(ThreadData const&);
-        ThreadData(ThreadData const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ThreadData();
@@ -88,12 +83,6 @@ public:
     ::ll::TypedStorage<2, 16, ::CanyonFeature>           canyonFeature;
     ::ll::TypedStorage<2, 16, ::UnderwaterCanyonFeature> underwaterCanyonFeature;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OverworldGenerator& operator=(OverworldGenerator const&);
-    OverworldGenerator(OverworldGenerator const&);
-    OverworldGenerator();
 
 public:
     // virtual functions

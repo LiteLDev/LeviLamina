@@ -23,12 +23,6 @@ public:
     // RakPeerHelper inner types define
     class IPSupportInterface {
     public:
-        // prevent constructor by default
-        IPSupportInterface& operator=(IPSupportInterface const&);
-        IPSupportInterface(IPSupportInterface const&);
-        IPSupportInterface();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -86,12 +80,6 @@ public:
     ::ll::TypedStorage<2, 4, ushort[2]>                            mBoundPorts;
     ::ll::TypedStorage<8, 8, ::RakPeerHelper::IPSupportInterface&> mIPSupportInterface;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RakPeerHelper& operator=(RakPeerHelper const&);
-    RakPeerHelper(RakPeerHelper const&);
-    RakPeerHelper();
 
 public:
     // member functions

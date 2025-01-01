@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraAimAssistPresetsPacket& operator=(CameraAimAssistPresetsPacket const&);
-    CameraAimAssistPresetsPacket(CameraAimAssistPresetsPacket const&);
-    CameraAimAssistPresetsPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

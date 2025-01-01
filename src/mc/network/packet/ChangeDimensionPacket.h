@@ -28,11 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChangeDimensionPacket& operator=(ChangeDimensionPacket const&);
-    ChangeDimensionPacket(ChangeDimensionPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

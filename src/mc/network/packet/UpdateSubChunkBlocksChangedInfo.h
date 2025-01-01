@@ -19,11 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateSubChunkBlocksChangedInfo& operator=(UpdateSubChunkBlocksChangedInfo const&);
-    UpdateSubChunkBlocksChangedInfo(UpdateSubChunkBlocksChangedInfo const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI UpdateSubChunkBlocksChangedInfo();

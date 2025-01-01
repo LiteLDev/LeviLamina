@@ -63,12 +63,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureTemplate& operator=(StructureTemplate const&);
-    StructureTemplate(StructureTemplate const&);
-    StructureTemplate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

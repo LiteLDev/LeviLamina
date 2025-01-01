@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AllowListEntry& operator=(AllowListEntry const&);
-    AllowListEntry(AllowListEntry const&);
-    AllowListEntry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

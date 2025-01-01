@@ -20,12 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WorldGenContext& operator=(WorldGenContext const&);
-    WorldGenContext(WorldGenContext const&);
-    WorldGenContext();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~WorldGenContext();

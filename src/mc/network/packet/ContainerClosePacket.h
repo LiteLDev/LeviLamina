@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerClosePacket& operator=(ContainerClosePacket const&);
-    ContainerClosePacket(ContainerClosePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

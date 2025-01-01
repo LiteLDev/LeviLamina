@@ -47,15 +47,15 @@ public:
         return create(key, (schar)value);
     }
 
+protected:
+    constexpr DataItem(::DataItemType type, ::ActorDataIDs id) : mType(type), mId(id) {}
+
 public:
     // member variables
     // NOLINTBEGIN
     ::DataItemType mType;
     ::ActorDataIDs mId;
     // NOLINTEND
-
-protected:
-    constexpr DataItem(::DataItemType type, ::ActorDataIDs id) : mType(type), mId(id) {}
 
 public:
     // virtual functions

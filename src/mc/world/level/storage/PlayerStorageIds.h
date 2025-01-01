@@ -15,11 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerStorageIds& operator=(PlayerStorageIds const&);
-    PlayerStorageIds(PlayerStorageIds const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerStorageIds();

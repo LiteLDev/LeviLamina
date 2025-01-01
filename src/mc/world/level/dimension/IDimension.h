@@ -21,12 +21,6 @@ struct ActorUniqueID;
 
 class IDimension {
 public:
-    // prevent constructor by default
-    IDimension& operator=(IDimension const&);
-    IDimension(IDimension const&);
-    IDimension();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

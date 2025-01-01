@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandPosition& operator=(CommandPosition const&);
-    CommandPosition(CommandPosition const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandPosition();

@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SimulationTypePacket& operator=(SimulationTypePacket const&);
-    SimulationTypePacket(SimulationTypePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

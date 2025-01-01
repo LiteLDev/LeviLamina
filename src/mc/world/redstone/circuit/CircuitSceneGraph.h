@@ -39,12 +39,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        PendingEntry& operator=(PendingEntry const&);
-        PendingEntry(PendingEntry const&);
-        PendingEntry();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~PendingEntry();
@@ -69,11 +63,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::vector<::BlockPos>>> mComponentsToReEvaluate;
     ::ll::TypedStorage<8, 24, ::std::vector<::CircuitSceneGraph::PendingEntry>>            mPendingRemoves;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CircuitSceneGraph& operator=(CircuitSceneGraph const&);
-    CircuitSceneGraph(CircuitSceneGraph const&);
 
 public:
     // member functions

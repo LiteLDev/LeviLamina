@@ -13,10 +13,4 @@ public:
     ::ll::TypedStorage<2, 2, ::MolangVariableIndex>                   mIndex;
     ::ll::TypedStorage<4, 4, ::MolangVariableSetting_AccessSpecifier> mAccessSpecifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangVariableSettings& operator=(MolangVariableSettings const&);
-    MolangVariableSettings(MolangVariableSettings const&);
-    MolangVariableSettings();
 };

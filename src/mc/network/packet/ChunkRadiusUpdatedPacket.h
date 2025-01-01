@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkRadiusUpdatedPacket& operator=(ChunkRadiusUpdatedPacket const&);
-    ChunkRadiusUpdatedPacket(ChunkRadiusUpdatedPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

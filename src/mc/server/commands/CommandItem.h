@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandItem& operator=(CommandItem const&);
-    CommandItem(CommandItem const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandItem();

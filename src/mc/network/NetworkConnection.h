@@ -47,12 +47,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        PausedPacket& operator=(PausedPacket const&);
-        PausedPacket(PausedPacket const&);
-        PausedPacket();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~PausedPacket();
@@ -89,12 +83,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                               mShouldCloseConnection;
     ::ll::TypedStorage<1, 1, bool>                                                               mEncryptionDisabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkConnection& operator=(NetworkConnection const&);
-    NetworkConnection(NetworkConnection const&);
-    NetworkConnection();
 
 public:
     // member functions

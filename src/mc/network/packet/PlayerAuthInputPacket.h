@@ -121,11 +121,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&);
-    PlayerAuthInputPacket(PlayerAuthInputPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

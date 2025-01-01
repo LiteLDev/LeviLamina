@@ -181,11 +181,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Data& operator=(Data const&);
-        Data(Data const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Data();
@@ -214,11 +209,6 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mPlayerId;
     ::ll::TypedStorage<8, 264, ::LegacyTelemetryEventPacket::Data> mEventData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyTelemetryEventPacket& operator=(LegacyTelemetryEventPacket const&);
-    LegacyTelemetryEventPacket(LegacyTelemetryEventPacket const&);
 
 public:
     // virtual functions

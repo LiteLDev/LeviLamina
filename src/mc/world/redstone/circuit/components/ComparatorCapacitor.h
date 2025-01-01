@@ -38,11 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ComparatorCapacitor& operator=(ComparatorCapacitor const&);
-    ComparatorCapacitor(ComparatorCapacitor const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

@@ -23,10 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestAction() = delete;
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

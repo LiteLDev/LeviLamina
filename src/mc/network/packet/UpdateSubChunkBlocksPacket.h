@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&);
-    UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

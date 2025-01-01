@@ -17,12 +17,6 @@ struct ItemTag;
 
 class RecipeIngredient : public ::ItemDescriptorCount {
 public:
-    RecipeIngredient() = delete;
-
-    RecipeIngredient& operator=(RecipeIngredient&&)      = default;
-    RecipeIngredient& operator=(RecipeIngredient const&) = default;
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

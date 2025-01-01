@@ -81,12 +81,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackSourceFactory& operator=(PackSourceFactory const&);
-    PackSourceFactory(PackSourceFactory const&);
-    PackSourceFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -15,12 +15,6 @@ class ReadOnlyBinaryStream;
 
 class RefreshEntitlementsPacket : public ::Packet {
 public:
-    // prevent constructor by default
-    RefreshEntitlementsPacket& operator=(RefreshEntitlementsPacket const&);
-    RefreshEntitlementsPacket(RefreshEntitlementsPacket const&);
-    RefreshEntitlementsPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

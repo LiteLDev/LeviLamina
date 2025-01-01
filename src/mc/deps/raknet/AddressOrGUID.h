@@ -19,11 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddressOrGUID& operator=(AddressOrGUID const&);
-    AddressOrGUID();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);

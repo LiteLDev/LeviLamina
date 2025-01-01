@@ -28,12 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NewUniqueIdsDataLoadHelper& operator=(NewUniqueIdsDataLoadHelper const&);
-    NewUniqueIdsDataLoadHelper(NewUniqueIdsDataLoadHelper const&);
-    NewUniqueIdsDataLoadHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

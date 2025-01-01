@@ -49,12 +49,6 @@ public:
         ::ll::TypedStorage<8, 8, char const*>               end_;
         ::ll::TypedStorage<1, 1, bool>                      stringHasEscape_;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Token& operator=(Token const&);
-        Token(Token const&);
-        Token();
     };
 
     class ErrorInfo {
@@ -65,12 +59,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>         message_;
         ::ll::TypedStorage<8, 8, char const*>            extra_;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ErrorInfo& operator=(ErrorInfo const&);
-        ErrorInfo(ErrorInfo const&);
-        ErrorInfo();
 
     public:
         // member functions
@@ -104,11 +92,6 @@ public:
     ::ll::TypedStorage<1, 2, ::Json::Features>                                            features_;
     ::ll::TypedStorage<1, 1, bool>                                                        collectComments_;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Reader& operator=(Reader const&);
-    Reader(Reader const&);
 
 public:
     // member functions

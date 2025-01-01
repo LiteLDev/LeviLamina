@@ -41,12 +41,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        State& operator=(State const&);
-        State(State const&);
-        State();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI State(::HashedString name, int intState);
@@ -103,12 +97,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BlockDescriptor&> mBlockDescriptor;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResolveHelper& operator=(ResolveHelper const&);
-        ResolveHelper(ResolveHelper const&);
-        ResolveHelper();
 
     public:
         // member functions

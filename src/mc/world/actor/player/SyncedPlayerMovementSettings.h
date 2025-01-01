@@ -20,11 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SyncedPlayerMovementSettings& operator=(SyncedPlayerMovementSettings const&);
-    SyncedPlayerMovementSettings(SyncedPlayerMovementSettings const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SyncedPlayerMovementSettings();

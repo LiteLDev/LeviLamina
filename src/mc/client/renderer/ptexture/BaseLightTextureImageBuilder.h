@@ -41,12 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BaseLightTextureImageBuilder& operator=(BaseLightTextureImageBuilder const&);
-    BaseLightTextureImageBuilder(BaseLightTextureImageBuilder const&);
-    BaseLightTextureImageBuilder();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

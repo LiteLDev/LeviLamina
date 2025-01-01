@@ -11,11 +11,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandWildcardInt& operator=(CommandWildcardInt const&);
-    CommandWildcardInt(CommandWildcardInt const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandWildcardInt();

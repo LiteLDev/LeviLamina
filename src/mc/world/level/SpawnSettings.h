@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpawnSettings& operator=(SpawnSettings const&);
-    SpawnSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SpawnSettings(::SpawnSettings const&);

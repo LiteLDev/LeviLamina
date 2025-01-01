@@ -10,10 +10,4 @@ public:
     ::ll::TypedStorage<4, 4, int> y;
     ::ll::TypedStorage<4, 4, int> z;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Pos& operator=(Pos const&);
-    Pos(Pos const&);
-    Pos();
 };

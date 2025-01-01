@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ConsumerComponent& operator=(ConsumerComponent const&);
-    ConsumerComponent(ConsumerComponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 14

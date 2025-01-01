@@ -38,10 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MerchantRecipe();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MerchantRecipe(::MerchantRecipe const&);

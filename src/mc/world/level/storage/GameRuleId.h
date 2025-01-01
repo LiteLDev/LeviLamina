@@ -7,9 +7,6 @@
 
 struct GameRuleId : public ::NewType<int> {
 public:
-    int value;
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit GameRuleId(int value);

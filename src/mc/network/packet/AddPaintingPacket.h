@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AddPaintingPacket& operator=(AddPaintingPacket const&);
-    AddPaintingPacket(AddPaintingPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

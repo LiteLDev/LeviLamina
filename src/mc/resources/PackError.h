@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackError& operator=(PackError const&);
-    PackError(PackError const&);
-    PackError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -17,12 +17,6 @@ struct ActorBlockSyncMessage;
 
 class BlockSourceListener {
 public:
-    // prevent constructor by default
-    BlockSourceListener& operator=(BlockSourceListener const&);
-    BlockSourceListener(BlockSourceListener const&);
-    BlockSourceListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

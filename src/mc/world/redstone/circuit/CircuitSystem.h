@@ -43,11 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CircuitSystem& operator=(CircuitSystem const&);
-    CircuitSystem(CircuitSystem const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CircuitSystem();

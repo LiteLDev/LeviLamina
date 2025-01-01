@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpawnGroupData& operator=(SpawnGroupData const&);
-    SpawnGroupData(SpawnGroupData const&);
-    SpawnGroupData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SpawnGroupData(::std::string const& identifier, ::MobSpawnRules& spawnRules);

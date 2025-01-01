@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetCommandsEnabledPacket& operator=(SetCommandsEnabledPacket const&);
-    SetCommandsEnabledPacket(SetCommandsEnabledPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameRulesChangedPacketData& operator=(GameRulesChangedPacketData const&);
-    GameRulesChangedPacketData(GameRulesChangedPacketData const&);
-    GameRulesChangedPacketData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addRule(::GameRule const& rule);

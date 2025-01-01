@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TrimDataPacket& operator=(TrimDataPacket const&);
-    TrimDataPacket(TrimDataPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

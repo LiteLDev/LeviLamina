@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Timer& operator=(Timer const&);
-    Timer(Timer const&);
-    Timer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Timer(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);

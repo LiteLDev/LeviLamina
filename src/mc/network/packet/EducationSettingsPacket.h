@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EducationSettingsPacket& operator=(EducationSettingsPacket const&);
-    EducationSettingsPacket(EducationSettingsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

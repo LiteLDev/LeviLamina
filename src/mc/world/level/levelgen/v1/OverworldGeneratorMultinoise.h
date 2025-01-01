@@ -58,12 +58,6 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const*> block;
         ::ll::TypedStorage<1, 1, bool const>     shouldTickUpdate;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockGenerationResult& operator=(BlockGenerationResult const&);
-        BlockGenerationResult(BlockGenerationResult const&);
-        BlockGenerationResult();
     };
 
     struct Noises {
@@ -80,12 +74,6 @@ public:
         ::ll::TypedStorage<8, 904, ::OverworldNoises3d const>      mCommonNoise;
         ::ll::TypedStorage<8, 32, ::DepthBasedBlockSupplier const> mDeepslateSupplier;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Noises& operator=(Noises const&);
-        Noises(Noises const&);
-        Noises();
 
     public:
         // member functions
@@ -125,12 +113,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkBlender>>                          mFixedChunkBlender;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkBlenderFactory>>                   mChunkBlenderFactory;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OverworldGeneratorMultinoise& operator=(OverworldGeneratorMultinoise const&);
-    OverworldGeneratorMultinoise(OverworldGeneratorMultinoise const&);
-    OverworldGeneratorMultinoise();
 
 public:
     // virtual functions

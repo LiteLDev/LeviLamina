@@ -73,12 +73,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UIPropertyBag& operator=(UIPropertyBag const&);
-    UIPropertyBag(UIPropertyBag const&);
-    UIPropertyBag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

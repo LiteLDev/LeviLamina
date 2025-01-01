@@ -23,12 +23,6 @@ namespace mce { class Color; }
 
 class OverworldDimension : public ::Dimension {
 public:
-    // prevent constructor by default
-    OverworldDimension& operator=(OverworldDimension const&);
-    OverworldDimension(OverworldDimension const&);
-    OverworldDimension();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

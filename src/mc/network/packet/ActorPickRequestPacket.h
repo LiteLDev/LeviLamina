@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorPickRequestPacket& operator=(ActorPickRequestPacket const&);
-    ActorPickRequestPacket(ActorPickRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

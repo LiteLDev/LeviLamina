@@ -10,12 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DimensionBrightnessRamp& operator=(DimensionBrightnessRamp const&);
-    DimensionBrightnessRamp(DimensionBrightnessRamp const&);
-    DimensionBrightnessRamp();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

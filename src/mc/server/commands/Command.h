@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Command& operator=(Command const&);
-    Command(Command const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

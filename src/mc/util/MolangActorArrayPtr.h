@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangActorArrayPtr& operator=(MolangActorArrayPtr const&);
-    MolangActorArrayPtr(MolangActorArrayPtr const&);
-    MolangActorArrayPtr();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit MolangActorArrayPtr(::std::vector<::Actor*> actors);

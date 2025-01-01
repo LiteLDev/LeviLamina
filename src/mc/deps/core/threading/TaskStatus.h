@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TaskStatus& operator=(TaskStatus const&);
-    TaskStatus(TaskStatus const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TaskStatus();

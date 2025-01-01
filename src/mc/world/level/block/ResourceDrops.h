@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourceDrops& operator=(ResourceDrops const&);
-    ResourceDrops(ResourceDrops const&);
-    ResourceDrops();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ResourceDrops();

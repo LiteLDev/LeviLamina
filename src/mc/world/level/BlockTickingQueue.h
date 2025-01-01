@@ -58,12 +58,6 @@ public:
     class TickDataSet
     : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {
     public:
-        // prevent constructor by default
-        TickDataSet& operator=(TickDataSet const&);
-        TickDataSet(TickDataSet const&);
-        TickDataSet();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void _pruneQueueForMemory();
@@ -89,12 +83,6 @@ public:
     ::ll::TypedStorage<1, 1, ::TickingQueueType>                mQueueType;
     ::ll::TypedStorage<1, 1, bool>                              mInstaTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockTickingQueue& operator=(BlockTickingQueue const&);
-    BlockTickingQueue(BlockTickingQueue const&);
-    BlockTickingQueue();
 
 public:
     // member functions

@@ -52,12 +52,6 @@ public:
     using SpawnTickCallback = ::std::function<void(::BlockPos, ::SpawnConditions)>;
 
 public:
-    // prevent constructor by default
-    Spawner& operator=(Spawner const&);
-    Spawner(Spawner const&);
-    Spawner();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

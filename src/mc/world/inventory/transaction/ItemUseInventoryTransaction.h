@@ -60,10 +60,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemUseInventoryTransaction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

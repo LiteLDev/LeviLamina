@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateEquipPacket& operator=(UpdateEquipPacket const&);
-    UpdateEquipPacket(UpdateEquipPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

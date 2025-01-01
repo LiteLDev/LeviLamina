@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UpdateSoftEnumPacket& operator=(UpdateSoftEnumPacket const&);
-    UpdateSoftEnumPacket(UpdateSoftEnumPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

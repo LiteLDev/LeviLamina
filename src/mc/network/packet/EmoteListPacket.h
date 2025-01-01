@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EmoteListPacket& operator=(EmoteListPacket const&);
-    EmoteListPacket(EmoteListPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

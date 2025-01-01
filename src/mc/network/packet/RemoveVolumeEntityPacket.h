@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&);
-    RemoveVolumeEntityPacket(RemoveVolumeEntityPacket const&);
-    RemoveVolumeEntityPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

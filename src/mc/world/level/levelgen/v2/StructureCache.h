@@ -30,12 +30,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        StructurePair& operator=(StructurePair const&);
-        StructurePair(StructurePair const&);
-        StructurePair();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~StructurePair();
@@ -58,12 +52,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance>>> mInstances;
         ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                                  mMutex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        StructureTempOwner& operator=(StructureTempOwner const&);
-        StructureTempOwner(StructureTempOwner const&);
-        StructureTempOwner();
     };
 
 public:
@@ -78,11 +66,6 @@ public:
     ::ll::TypedStorage<8, 56, ::br::worldgen::StructureCache::StructureTempOwner> mWaitingToBeClaimed;
     ::ll::TypedStorage<4, 4, int>                                                 mGcTimer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureCache& operator=(StructureCache const&);
-    StructureCache(StructureCache const&);
 
 public:
     // member functions

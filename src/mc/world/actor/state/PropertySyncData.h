@@ -49,12 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PropertySyncData& operator=(PropertySyncData const&);
-    PropertySyncData(PropertySyncData const&);
-    PropertySyncData();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::PropertySyncData& operator=(::PropertySyncData&&);

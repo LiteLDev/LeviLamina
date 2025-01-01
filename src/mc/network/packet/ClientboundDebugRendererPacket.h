@@ -54,11 +54,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientboundDebugRendererPacket& operator=(ClientboundDebugRendererPacket const&);
-    ClientboundDebugRendererPacket(ClientboundDebugRendererPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

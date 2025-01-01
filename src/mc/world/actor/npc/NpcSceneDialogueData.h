@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NpcSceneDialogueData& operator=(NpcSceneDialogueData const&);
-    NpcSceneDialogueData(NpcSceneDialogueData const&);
-    NpcSceneDialogueData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

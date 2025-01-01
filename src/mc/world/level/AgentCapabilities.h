@@ -8,10 +8,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 2, ::std::optional<bool>> canModifyBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AgentCapabilities& operator=(AgentCapabilities const&);
-    AgentCapabilities(AgentCapabilities const&);
-    AgentCapabilities();
 };

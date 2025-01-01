@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/scores/Objective.h"
 
 // auto generated inclusion list
 #include "mc/world/scores/ObjectiveSortOrder.h"
@@ -21,10 +20,6 @@ public:
     ::ll::TypedStorage<8, 8, ::Objective const*>   mObjective;
     ::ll::TypedStorage<1, 1, ::ObjectiveSortOrder> mSortOrder;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DisplayObjective() = delete;
 
 public:
     // member functions

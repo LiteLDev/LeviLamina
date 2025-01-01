@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StackResultStorageFeature& operator=(StackResultStorageFeature const&);
-    StackResultStorageFeature(StackResultStorageFeature const&);
-    StackResultStorageFeature();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit StackResultStorageFeature(::WeakStorageFeature const& weakStorage);

@@ -39,11 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MobEffectPacket& operator=(MobEffectPacket const&);
-    MobEffectPacket(MobEffectPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

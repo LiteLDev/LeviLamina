@@ -7,12 +7,6 @@
 
 class NetherBrightnessRamp : public ::DimensionBrightnessRamp {
 public:
-    // prevent constructor by default
-    NetherBrightnessRamp& operator=(NetherBrightnessRamp const&);
-    NetherBrightnessRamp(NetherBrightnessRamp const&);
-    NetherBrightnessRamp();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -11,12 +11,6 @@ class Packet;
 
 class IPacketHandlerDispatcher {
 public:
-    // prevent constructor by default
-    IPacketHandlerDispatcher& operator=(IPacketHandlerDispatcher const&);
-    IPacketHandlerDispatcher(IPacketHandlerDispatcher const&);
-    IPacketHandlerDispatcher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

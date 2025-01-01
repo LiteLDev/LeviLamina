@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestPacket& operator=(ItemStackRequestPacket const&);
-    ItemStackRequestPacket(ItemStackRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

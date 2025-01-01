@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerStatsPacket& operator=(ServerStatsPacket const&);
-    ServerStatsPacket(ServerStatsPacket const&);
-    ServerStatsPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

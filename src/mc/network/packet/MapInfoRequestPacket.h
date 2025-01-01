@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MapInfoRequestPacket& operator=(MapInfoRequestPacket const&);
-    MapInfoRequestPacket(MapInfoRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

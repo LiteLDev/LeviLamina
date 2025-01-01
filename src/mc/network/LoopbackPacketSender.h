@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LoopbackPacketSender& operator=(LoopbackPacketSender const&);
-    LoopbackPacketSender(LoopbackPacketSender const&);
-    LoopbackPacketSender();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

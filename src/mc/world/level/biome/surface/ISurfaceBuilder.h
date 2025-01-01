@@ -43,12 +43,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        BuildParameters& operator=(BuildParameters const&);
-        BuildParameters(BuildParameters const&);
-        BuildParameters();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI BuildParameters(
@@ -84,12 +78,6 @@ public:
         );
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    ISurfaceBuilder& operator=(ISurfaceBuilder const&);
-    ISurfaceBuilder(ISurfaceBuilder const&);
-    ISurfaceBuilder();
 
 public:
     // virtual functions

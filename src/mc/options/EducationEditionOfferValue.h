@@ -13,12 +13,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EducationEditionOfferValue& operator=(EducationEditionOfferValue const&);
-    EducationEditionOfferValue(EducationEditionOfferValue const&);
-    EducationEditionOfferValue();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::EducationEditionOfferValue& operator=(::EducationEditionOffer value);

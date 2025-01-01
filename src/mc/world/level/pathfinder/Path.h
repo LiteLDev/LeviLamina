@@ -28,12 +28,6 @@ public:
         ::ll::TypedStorage<4, 12, ::BlockPos> pos;
         ::ll::TypedStorage<4, 4, ::NodeType>  type;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Node& operator=(Node const&);
-        Node(Node const&);
-        Node();
     };
 
     using NodeArray = ::std::vector<::Path::Node>;
@@ -45,11 +39,6 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                       mIndex;
     ::ll::TypedStorage<1, 1, ::PathCompletionType>         mCompletionType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Path& operator=(Path const&);
-    Path(Path const&);
 
 public:
     // member functions

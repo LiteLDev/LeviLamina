@@ -28,11 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&);
-    SpawnParticleEffectPacket(SpawnParticleEffectPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

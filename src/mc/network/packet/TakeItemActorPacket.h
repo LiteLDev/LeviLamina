@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TakeItemActorPacket& operator=(TakeItemActorPacket const&);
-    TakeItemActorPacket(TakeItemActorPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

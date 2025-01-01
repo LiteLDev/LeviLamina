@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PulseCapacitor& operator=(PulseCapacitor const&);
-    PulseCapacitor(PulseCapacitor const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

@@ -26,13 +26,7 @@ public:
     // clang-format on
 
     // BlockPalette inner types define
-    struct ConstructorToken {
-    public:
-        // prevent constructor by default
-        ConstructorToken& operator=(ConstructorToken const&);
-        ConstructorToken(ConstructorToken const&);
-        ConstructorToken();
-    };
+    struct ConstructorToken {};
 
     enum class PaletteType : int {
         Sequential = 0,
@@ -47,12 +41,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>     mBlockFromNetworkId;
     ::ll::TypedStorage<8, 8, ::Level*>                           mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPalette& operator=(BlockPalette const&);
-    BlockPalette(BlockPalette const&);
-    BlockPalette();
 
 public:
     // virtual functions

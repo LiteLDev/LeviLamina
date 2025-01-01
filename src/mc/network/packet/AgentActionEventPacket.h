@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AgentActionEventPacket& operator=(AgentActionEventPacket const&);
-    AgentActionEventPacket(AgentActionEventPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -64,12 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerScoreboard& operator=(ServerScoreboard const&);
-    ServerScoreboard(ServerScoreboard const&);
-    ServerScoreboard();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

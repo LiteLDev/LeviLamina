@@ -55,12 +55,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChunkSource& operator=(ChunkSource const&);
-    ChunkSource(ChunkSource const&);
-    ChunkSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

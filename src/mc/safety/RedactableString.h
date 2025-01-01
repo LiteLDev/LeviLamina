@@ -11,13 +11,9 @@ class RedactableString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkff6587;
-    ::ll::UntypedStorage<8, 40> mUnkfd5c68;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mUnredactedString;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRedactedString;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RedactableString& operator=(RedactableString const&);
 
 public:
     // member functions

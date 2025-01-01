@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PassengerJumpPacket& operator=(PassengerJumpPacket const&);
-    PassengerJumpPacket(PassengerJumpPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -37,12 +37,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        EnumData& operator=(EnumData const&);
-        EnumData(EnumData const&);
-        EnumData();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~EnumData();
@@ -62,12 +56,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                          name;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint, uint>>> values;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChainedSubcommandData& operator=(ChainedSubcommandData const&);
-        ChainedSubcommandData(ChainedSubcommandData const&);
-        ChainedSubcommandData();
     };
 
     struct SoftEnumData {
@@ -77,12 +65,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                name;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> values;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SoftEnumData& operator=(SoftEnumData const&);
-        SoftEnumData(SoftEnumData const&);
-        SoftEnumData();
 
     public:
         // member functions
@@ -105,12 +87,6 @@ public:
         ::ll::TypedStorage<4, 4, uint>                  enumSymbol;
         ::ll::TypedStorage<8, 24, ::std::vector<uchar>> constraints;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConstrainedValueData& operator=(ConstrainedValueData const&);
-        ConstrainedValueData(ConstrainedValueData const&);
-        ConstrainedValueData();
 
     public:
         // member functions
@@ -136,12 +112,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ParamData& operator=(ParamData const&);
-        ParamData(ParamData const&);
-        ParamData();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ParamData();
@@ -161,12 +131,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::ParamData>> params;
         ::ll::TypedStorage<1, 1, bool>                                                 isChaining;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OverloadData& operator=(OverloadData const&);
-        OverloadData(OverloadData const&);
-        OverloadData();
 
     public:
         // member functions
@@ -193,12 +157,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<uint>>                                    chainedSubcommandIndexes;
         ::ll::TypedStorage<4, 4, int>                                                     aliasEnum;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CommandData& operator=(CommandData const&);
-        CommandData(CommandData const&);
-        CommandData();
 
     public:
         // member functions
@@ -233,11 +191,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::SoftEnumData>>          mSoftEnums;
     ::ll::TypedStorage<8, 24, ::std::vector<::AvailableCommandsPacket::ConstrainedValueData>>  mConstraints;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AvailableCommandsPacket& operator=(AvailableCommandsPacket const&);
-    AvailableCommandsPacket(AvailableCommandsPacket const&);
 
 public:
     // virtual functions

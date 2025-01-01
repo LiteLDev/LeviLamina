@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ModalFormRequestPacket& operator=(ModalFormRequestPacket const&);
-    ModalFormRequestPacket(ModalFormRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

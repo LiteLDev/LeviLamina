@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DebugInfoPacket& operator=(DebugInfoPacket const&);
-    DebugInfoPacket(DebugInfoPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

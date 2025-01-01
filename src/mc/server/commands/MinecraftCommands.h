@@ -47,12 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MinecraftCommands& operator=(MinecraftCommands const&);
-    MinecraftCommands(MinecraftCommands const&);
-    MinecraftCommands();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

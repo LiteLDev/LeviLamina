@@ -22,12 +22,6 @@ public:
     using SizeInfoList = ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo>;
 
 public:
-    // prevent constructor by default
-    ArmSize& operator=(ArmSize const&);
-    ArmSize(ArmSize const&);
-    ArmSize();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo> const& mInfoList();

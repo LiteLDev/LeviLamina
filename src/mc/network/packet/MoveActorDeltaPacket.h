@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MoveActorDeltaPacket& operator=(MoveActorDeltaPacket const&);
-    MoveActorDeltaPacket(MoveActorDeltaPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

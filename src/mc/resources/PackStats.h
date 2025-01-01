@@ -11,10 +11,4 @@ public:
     ::ll::TypedStorage<4, 4, uint> mCustomAnimationCount;
     ::ll::TypedStorage<4, 4, uint> mCustomEffectCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PackStats& operator=(PackStats const&);
-    PackStats(PackStats const&);
-    PackStats();
 };

@@ -27,11 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChangeMobPropertyPacket& operator=(ChangeMobPropertyPacket const&);
-    ChangeMobPropertyPacket(ChangeMobPropertyPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

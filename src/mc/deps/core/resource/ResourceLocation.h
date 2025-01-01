@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourceLocation& operator=(ResourceLocation const&);
-    ResourceLocation(ResourceLocation const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ResourceLocation();

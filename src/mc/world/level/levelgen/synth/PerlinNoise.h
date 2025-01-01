@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PerlinNoise& operator=(PerlinNoise const&);
-    PerlinNoise();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PerlinNoise(::PerlinNoise const&);

@@ -13,12 +13,6 @@ class Packet;
 
 class MinecraftPackets {
 public:
-    // prevent constructor by default
-    MinecraftPackets& operator=(MinecraftPackets const&);
-    MinecraftPackets(MinecraftPackets const&);
-    MinecraftPackets();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::Packet> createPacket(::MinecraftPacketIds id);

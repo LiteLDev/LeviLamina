@@ -42,12 +42,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ScatteredPositions& operator=(ScatteredPositions const&);
-        ScatteredPositions(ScatteredPositions const&);
-        ScatteredPositions();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool empty();
@@ -72,10 +66,6 @@ public:
         ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_10::RandomDistributionType> mDistribution;
         ::ll::TypedStorage<4, 12, ::std::optional<::IntRange>>                    mFastPathRange;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CoordinateRange& operator=(CoordinateRange const&);
 
     public:
         // member functions
@@ -118,12 +108,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ChanceInformation& operator=(ChanceInformation const&);
-        ChanceInformation(ChanceInformation const&);
-        ChanceInformation();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ChanceInformation();
@@ -144,12 +128,6 @@ public:
     ::ll::TypedStorage<8, 224, ::ScatterParams::ChanceInformation>               mScatterChance;
     ::ll::TypedStorage<8, 216, ::ExpressionNode>                                 mIterations;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScatterParams& operator=(ScatterParams const&);
-    ScatterParams(ScatterParams const&);
-    ScatterParams();
 
 public:
     // member functions

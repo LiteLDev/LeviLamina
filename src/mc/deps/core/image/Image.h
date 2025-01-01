@@ -30,12 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Image& operator=(Image const&);
-    Image(Image const&);
-    Image();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Image(uint w, uint h, ::mce::ImageFormat format, ::mce::ImageUsage usage);

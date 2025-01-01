@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackSetting& operator=(PackSetting const&);
-    PackSetting(PackSetting const&);
-    PackSetting();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~PackSetting();

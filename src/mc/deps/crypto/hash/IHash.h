@@ -6,12 +6,6 @@ namespace Crypto::Hash {
 
 class IHash {
 public:
-    // prevent constructor by default
-    IHash& operator=(IHash const&);
-    IHash(IHash const&);
-    IHash();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

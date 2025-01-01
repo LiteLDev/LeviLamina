@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptMessagePacket& operator=(ScriptMessagePacket const&);
-    ScriptMessagePacket(ScriptMessagePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

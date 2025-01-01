@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ResourcePackChunkDataPacket& operator=(ResourcePackChunkDataPacket const&);
-    ResourcePackChunkDataPacket(ResourcePackChunkDataPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

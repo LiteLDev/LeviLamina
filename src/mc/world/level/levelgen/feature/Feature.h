@@ -27,12 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Feature& operator=(Feature const&);
-    Feature(Feature const&);
-    Feature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -38,11 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackInstance(PackInstance const&);
-    PackInstance();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PackInstance(

@@ -23,12 +23,6 @@ namespace BlockSourceVisitor { struct CollisionShape; }
 
 class IConstBlockSource {
 public:
-    // prevent constructor by default
-    IConstBlockSource& operator=(IConstBlockSource const&);
-    IConstBlockSource(IConstBlockSource const&);
-    IConstBlockSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

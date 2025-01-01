@@ -33,11 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerListEntry& operator=(PlayerListEntry const&);
-    PlayerListEntry(PlayerListEntry const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI PlayerListEntry();

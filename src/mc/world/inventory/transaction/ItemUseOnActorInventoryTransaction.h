@@ -40,12 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemUseOnActorInventoryTransaction& operator=(ItemUseOnActorInventoryTransaction const&);
-    ItemUseOnActorInventoryTransaction(ItemUseOnActorInventoryTransaction const&);
-    ItemUseOnActorInventoryTransaction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

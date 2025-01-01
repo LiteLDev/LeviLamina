@@ -43,12 +43,6 @@ public:
         ::ll::TypedStorage<4, 4, uint> mDepth;
         ::ll::TypedStorage<4, 4, uint> mHeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockVolumeDimensions& operator=(BlockVolumeDimensions const&);
-        BlockVolumeDimensions(BlockVolumeDimensions const&);
-        BlockVolumeDimensions();
     };
 
 public:
@@ -60,12 +54,6 @@ public:
     ::ll::TypedStorage<4, 4, ::std::atomic<int>>                            mActiveStructureInstanceCreateCount;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>             mVisitedPositions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldGenerator& operator=(WorldGenerator const&);
-    WorldGenerator(WorldGenerator const&);
-    WorldGenerator();
 
 public:
     // virtual functions

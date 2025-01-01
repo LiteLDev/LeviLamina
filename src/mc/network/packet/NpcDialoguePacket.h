@@ -35,11 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NpcDialoguePacket& operator=(NpcDialoguePacket const&);
-    NpcDialoguePacket(NpcDialoguePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

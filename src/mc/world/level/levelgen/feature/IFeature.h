@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IFeature& operator=(IFeature const&);
-    IFeature(IFeature const&);
-    IFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

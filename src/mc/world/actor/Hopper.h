@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Hopper& operator=(Hopper const&);
-    Hopper(Hopper const&);
-    Hopper();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Hopper(int moveItemSpeed, bool isEntity);

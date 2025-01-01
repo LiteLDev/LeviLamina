@@ -11,12 +11,6 @@ namespace Json {
 
 class Writer {
 public:
-    // prevent constructor by default
-    Writer& operator=(Writer const&);
-    Writer(Writer const&);
-    Writer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

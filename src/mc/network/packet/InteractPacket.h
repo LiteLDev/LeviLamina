@@ -35,11 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InteractPacket& operator=(InteractPacket const&);
-    InteractPacket(InteractPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

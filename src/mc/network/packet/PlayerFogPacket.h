@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerFogPacket& operator=(PlayerFogPacket const&);
-    PlayerFogPacket(PlayerFogPacket const&);
-    PlayerFogPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

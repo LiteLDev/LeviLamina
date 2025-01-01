@@ -16,10 +16,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                   mActorStorageKey;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mActorTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorUnloadedChunkTransferEntry& operator=(ActorUnloadedChunkTransferEntry const&);
-    ActorUnloadedChunkTransferEntry(ActorUnloadedChunkTransferEntry const&);
-    ActorUnloadedChunkTransferEntry();
 };

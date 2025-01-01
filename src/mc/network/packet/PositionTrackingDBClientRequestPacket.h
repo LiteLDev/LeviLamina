@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PositionTrackingDBClientRequestPacket& operator=(PositionTrackingDBClientRequestPacket const&);
-    PositionTrackingDBClientRequestPacket(PositionTrackingDBClientRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

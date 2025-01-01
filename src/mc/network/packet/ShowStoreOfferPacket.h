@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShowStoreOfferPacket& operator=(ShowStoreOfferPacket const&);
-    ShowStoreOfferPacket(ShowStoreOfferPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

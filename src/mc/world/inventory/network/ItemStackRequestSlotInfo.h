@@ -14,14 +14,10 @@ struct ItemStackRequestSlotInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::FullContainerName>     mFullContainerName;
-    ::ll::TypedStorage<1, 1, uchar>                    mSlot;
-    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant> mNetIdVariant;
+    ::FullContainerName     mFullContainerName;
+    uchar                   mSlot;
+    ::ItemStackNetIdVariant mNetIdVariant;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestSlotInfo() = delete;
 
 public:
     // member functions

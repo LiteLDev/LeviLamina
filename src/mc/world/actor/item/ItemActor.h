@@ -42,11 +42,6 @@ protected:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemActor& operator=(ItemActor const&);
-    ItemActor(ItemActor const&);
-    ItemActor();
-
     LLNDAPI ItemStack&       item();
     LLNDAPI ItemStack const& item() const;
     LLNDAPI int&             age();

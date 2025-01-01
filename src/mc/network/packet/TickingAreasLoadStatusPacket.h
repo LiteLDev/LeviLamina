@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TickingAreasLoadStatusPacket& operator=(TickingAreasLoadStatusPacket const&);
-    TickingAreasLoadStatusPacket(TickingAreasLoadStatusPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

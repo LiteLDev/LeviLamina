@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OwnerStorageFeature& operator=(OwnerStorageFeature const&);
-    OwnerStorageFeature(OwnerStorageFeature const&);
-    OwnerStorageFeature();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~OwnerStorageFeature();

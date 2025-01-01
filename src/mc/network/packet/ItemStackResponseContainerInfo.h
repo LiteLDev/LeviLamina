@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackResponseContainerInfo& operator=(ItemStackResponseContainerInfo const&);
-    ItemStackResponseContainerInfo(ItemStackResponseContainerInfo const&);
-    ItemStackResponseContainerInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ItemStackResponseContainerInfo(::ItemStackResponseContainerInfo&&);

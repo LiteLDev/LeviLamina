@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AppPlatformListener& operator=(AppPlatformListener const&);
-    AppPlatformListener(AppPlatformListener const&);
-    AppPlatformListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

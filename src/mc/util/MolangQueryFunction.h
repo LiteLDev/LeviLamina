@@ -38,12 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangQueryFunction& operator=(MolangQueryFunction const&);
-    MolangQueryFunction(MolangQueryFunction const&);
-    MolangQueryFunction();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangQueryFunction(

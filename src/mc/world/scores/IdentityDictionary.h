@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    IdentityDictionary& operator=(IdentityDictionary const&);
-    IdentityDictionary(IdentityDictionary const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI IdentityDictionary();

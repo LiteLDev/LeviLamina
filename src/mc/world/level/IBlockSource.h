@@ -39,12 +39,6 @@ public:
     using ListenerVector = ::std::vector<::BlockSourceListener*>;
 
 public:
-    // prevent constructor by default
-    IBlockSource& operator=(IBlockSource const&);
-    IBlockSource(IBlockSource const&);
-    IBlockSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 23

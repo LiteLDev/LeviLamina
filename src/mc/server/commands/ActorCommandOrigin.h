@@ -28,12 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorCommandOrigin& operator=(ActorCommandOrigin const&);
-    ActorCommandOrigin(ActorCommandOrigin const&);
-    ActorCommandOrigin();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

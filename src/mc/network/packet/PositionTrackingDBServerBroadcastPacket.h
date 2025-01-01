@@ -33,11 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PositionTrackingDBServerBroadcastPacket& operator=(PositionTrackingDBServerBroadcastPacket const&);
-    PositionTrackingDBServerBroadcastPacket(PositionTrackingDBServerBroadcastPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -11,11 +11,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DirtyTicksCounter& operator=(DirtyTicksCounter const&);
-    DirtyTicksCounter(DirtyTicksCounter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI DirtyTicksCounter();

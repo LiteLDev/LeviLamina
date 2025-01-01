@@ -28,11 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelSoundEventPacket& operator=(LevelSoundEventPacket const&);
-    LevelSoundEventPacket(LevelSoundEventPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

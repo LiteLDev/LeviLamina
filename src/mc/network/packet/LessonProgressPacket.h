@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LessonProgressPacket& operator=(LessonProgressPacket const&);
-    LessonProgressPacket(LessonProgressPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

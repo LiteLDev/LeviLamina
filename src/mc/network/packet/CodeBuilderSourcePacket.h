@@ -26,11 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CodeBuilderSourcePacket& operator=(CodeBuilderSourcePacket const&);
-    CodeBuilderSourcePacket(CodeBuilderSourcePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

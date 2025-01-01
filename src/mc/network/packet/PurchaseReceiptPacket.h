@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PurchaseReceiptPacket& operator=(PurchaseReceiptPacket const&);
-    PurchaseReceiptPacket(PurchaseReceiptPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

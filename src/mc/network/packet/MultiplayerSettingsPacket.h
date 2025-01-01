@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MultiplayerSettingsPacket& operator=(MultiplayerSettingsPacket const&);
-    MultiplayerSettingsPacket(MultiplayerSettingsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

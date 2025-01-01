@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CameraPacket& operator=(CameraPacket const&);
-    CameraPacket(CameraPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

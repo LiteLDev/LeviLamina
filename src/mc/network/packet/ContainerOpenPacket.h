@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerOpenPacket& operator=(ContainerOpenPacket const&);
-    ContainerOpenPacket(ContainerOpenPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

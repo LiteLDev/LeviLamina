@@ -34,11 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InventoryTransactionPacket& operator=(InventoryTransactionPacket const&);
-    InventoryTransactionPacket(InventoryTransactionPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

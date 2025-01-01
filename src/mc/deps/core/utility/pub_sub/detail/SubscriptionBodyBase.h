@@ -47,12 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubscriptionBodyBase& operator=(SubscriptionBodyBase const&);
-    SubscriptionBodyBase(SubscriptionBodyBase const&);
-    SubscriptionBodyBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

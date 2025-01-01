@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    NetworkStackLatencyPacket& operator=(NetworkStackLatencyPacket const&);
-    NetworkStackLatencyPacket(NetworkStackLatencyPacket const&);
-    NetworkStackLatencyPacket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

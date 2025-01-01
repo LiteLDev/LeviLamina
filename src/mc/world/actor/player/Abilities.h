@@ -21,10 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Abilities();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Abilities(::Abilities const& rhs);

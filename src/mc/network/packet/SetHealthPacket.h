@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetHealthPacket& operator=(SetHealthPacket const&);
-    SetHealthPacket(SetHealthPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

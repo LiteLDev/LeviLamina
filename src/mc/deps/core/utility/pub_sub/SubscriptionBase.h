@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SubscriptionBase& operator=(SubscriptionBase const&);
-    SubscriptionBase(SubscriptionBase const&);
-    SubscriptionBase();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void disconnect();

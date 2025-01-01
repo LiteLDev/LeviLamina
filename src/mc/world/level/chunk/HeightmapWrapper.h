@@ -16,12 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    HeightmapWrapper& operator=(HeightmapWrapper const&);
-    HeightmapWrapper(HeightmapWrapper const&);
-    HeightmapWrapper();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool empty() const;

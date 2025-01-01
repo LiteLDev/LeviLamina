@@ -19,12 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RakDataInput& operator=(RakDataInput const&);
-    RakDataInput(RakDataInput const&);
-    RakDataInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

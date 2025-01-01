@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandRequestPacket& operator=(CommandRequestPacket const&);
-    CommandRequestPacket(CommandRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

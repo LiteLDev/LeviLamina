@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    FlowerFeature& operator=(FlowerFeature const&);
-    FlowerFeature(FlowerFeature const&);
-    FlowerFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -39,12 +39,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        BlockVolumeIter& operator=(BlockVolumeIter const&);
-        BlockVolumeIter(BlockVolumeIter const&);
-        BlockVolumeIter();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool operator!=(::BlockVolume::BlockVolumeIter const& c) const;
@@ -65,12 +59,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                mDimensionBottom;
     ::ll::TypedStorage<8, 8, ::Block const*>                     mInitBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockVolume& operator=(BlockVolume const&);
-    BlockVolume(BlockVolume const&);
-    BlockVolume();
 
 public:
     // member functions

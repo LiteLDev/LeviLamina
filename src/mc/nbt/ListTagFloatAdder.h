@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ListTagFloatAdder& operator=(ListTagFloatAdder const&);
-    ListTagFloatAdder(ListTagFloatAdder const&);
-    ListTagFloatAdder();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ListTagFloatAdder& operator()(float f);

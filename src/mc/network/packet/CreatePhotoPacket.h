@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CreatePhotoPacket& operator=(CreatePhotoPacket const&);
-    CreatePhotoPacket(CreatePhotoPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

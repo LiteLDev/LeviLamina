@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&);
-    ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

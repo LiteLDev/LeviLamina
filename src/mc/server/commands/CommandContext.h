@@ -17,12 +17,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandContext& operator=(CommandContext const&);
-    CommandContext(CommandContext const&);
-    CommandContext();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandContext(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);

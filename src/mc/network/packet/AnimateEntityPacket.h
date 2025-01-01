@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AnimateEntityPacket& operator=(AnimateEntityPacket const&);
-    AnimateEntityPacket(AnimateEntityPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

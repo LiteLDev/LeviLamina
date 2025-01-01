@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorDamageSource& operator=(ActorDamageSource const&);
-    ActorDamageSource(ActorDamageSource const&);
-    ActorDamageSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

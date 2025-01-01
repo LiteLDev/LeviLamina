@@ -53,12 +53,6 @@ public:
         ::ll::TypedStorage<4, 4, int>                        mICEState;
         ::ll::TypedStorage<1, 1, bool>                       mUsingRelays;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NetworkStatus& operator=(NetworkStatus const&);
-        NetworkStatus(NetworkStatus const&);
-        NetworkStatus();
     };
 
 public:
@@ -66,12 +60,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::NetworkPeer>> mPeer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkPeer& operator=(NetworkPeer const&);
-    NetworkPeer(NetworkPeer const&);
-    NetworkPeer();
 
 public:
     // virtual functions

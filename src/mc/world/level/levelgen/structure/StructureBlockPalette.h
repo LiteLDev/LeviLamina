@@ -46,12 +46,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        BlockPositionData& operator=(BlockPositionData const&);
-        BlockPositionData(BlockPositionData const&);
-        BlockPositionData();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~BlockPositionData();
@@ -71,12 +65,6 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::StructureBlockPalette::BlockPositionData>>
         mBlockPositionData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureBlockPalette& operator=(StructureBlockPalette const&);
-    StructureBlockPalette(StructureBlockPalette const&);
-    StructureBlockPalette();
 
 public:
     // member functions

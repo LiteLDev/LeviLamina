@@ -47,12 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    OverworldGenerator2d& operator=(OverworldGenerator2d const&);
-    OverworldGenerator2d(OverworldGenerator2d const&);
-    OverworldGenerator2d();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 41

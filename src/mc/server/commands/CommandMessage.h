@@ -29,12 +29,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        MessageComponent& operator=(MessageComponent const&);
-        MessageComponent(MessageComponent const&);
-        MessageComponent();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI MessageComponent(::CommandMessage::MessageComponent&& m);
@@ -60,11 +54,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::CommandMessage::MessageComponent>> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandMessage& operator=(CommandMessage const&);
-    CommandMessage(CommandMessage const&);
 
 public:
     // member functions

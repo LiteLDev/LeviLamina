@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerToggleCrafterSlotRequestPacket& operator=(PlayerToggleCrafterSlotRequestPacket const&);
-    PlayerToggleCrafterSlotRequestPacket(PlayerToggleCrafterSlotRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

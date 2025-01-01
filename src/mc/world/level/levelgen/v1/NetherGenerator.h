@@ -44,12 +44,6 @@ public:
         ::ll::TypedStorage<8, 2568, ::Random>                              random;
         ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ThreadData& operator=(ThreadData const&);
-        ThreadData(ThreadData const&);
-        ThreadData();
     };
 
 public:
@@ -71,12 +65,6 @@ public:
                                                                generatorHelpersPool;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource>> mBiomeSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetherGenerator& operator=(NetherGenerator const&);
-    NetherGenerator(NetherGenerator const&);
-    NetherGenerator();
 
 public:
     // virtual functions

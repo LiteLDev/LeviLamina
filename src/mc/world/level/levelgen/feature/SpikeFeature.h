@@ -35,12 +35,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        EndSpike& operator=(EndSpike const&);
-        EndSpike(EndSpike const&);
-        EndSpike();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI EndSpike(int centerX, int centerZ, int radius, int height, bool guarded);
@@ -70,12 +64,6 @@ public:
     ::ll::TypedStorage<4, 12, ::BlockPos>                     mCrystalBeamTarget;
     ::ll::TypedStorage<1, 1, bool>                            mCrystalInvulnerable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpikeFeature& operator=(SpikeFeature const&);
-    SpikeFeature(SpikeFeature const&);
-    SpikeFeature();
 
 public:
     // virtual functions

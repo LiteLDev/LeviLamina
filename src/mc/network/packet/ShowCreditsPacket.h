@@ -30,11 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShowCreditsPacket& operator=(ShowCreditsPacket const&);
-    ShowCreditsPacket(ShowCreditsPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

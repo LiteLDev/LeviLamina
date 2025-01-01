@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SystemInfo& operator=(SystemInfo const&);
-    SystemInfo(SystemInfo const&);
-    SystemInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~SystemInfo();

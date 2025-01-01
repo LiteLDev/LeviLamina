@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandAction& operator=(CommandAction const&);
-    CommandAction(CommandAction const&);
-    CommandAction();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator!=(::npc::CommandAction const& rhs) const;

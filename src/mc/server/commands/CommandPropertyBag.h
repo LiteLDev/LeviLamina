@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/json/Value.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/PropertyBag.h"
@@ -14,15 +13,6 @@ namespace Json { class Value; }
 // clang-format on
 
 class CommandPropertyBag : public ::PropertyBag {
-public:
-    Json::Value mJsonValue;
-    int         mChangeVersion;
-
-    // prevent constructor by default
-    CommandPropertyBag& operator=(CommandPropertyBag const&);
-    CommandPropertyBag(CommandPropertyBag const&);
-    CommandPropertyBag();
-
 public:
     // virtual functions
     // NOLINTBEGIN

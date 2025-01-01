@@ -36,12 +36,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        DataCallback& operator=(DataCallback const&);
-        DataCallback(DataCallback const&);
-        DataCallback();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI DataCallback(::BatchedNetworkPeer::DataCallback&&);
@@ -78,12 +72,6 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                                mSentPackets;
     ::ll::TypedStorage<1, 1, bool>                                                  mAsyncEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BatchedNetworkPeer& operator=(BatchedNetworkPeer const&);
-    BatchedNetworkPeer(BatchedNetworkPeer const&);
-    BatchedNetworkPeer();
 
 public:
     // virtual functions

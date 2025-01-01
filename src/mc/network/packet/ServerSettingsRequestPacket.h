@@ -15,11 +15,6 @@ class ReadOnlyBinaryStream;
 
 class ServerSettingsRequestPacket : public ::Packet {
 public:
-    // prevent constructor by default
-    ServerSettingsRequestPacket& operator=(ServerSettingsRequestPacket const&);
-    ServerSettingsRequestPacket(ServerSettingsRequestPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

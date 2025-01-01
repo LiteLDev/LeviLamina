@@ -7,12 +7,6 @@
 
 struct MolangMemberAccessor : public ::MolangHashStringVariable<::MolangMemberAccessor> {
 public:
-    // prevent constructor by default
-    MolangMemberAccessor& operator=(MolangMemberAccessor const&);
-    MolangMemberAccessor(MolangMemberAccessor const&);
-    MolangMemberAccessor();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~MolangMemberAccessor();

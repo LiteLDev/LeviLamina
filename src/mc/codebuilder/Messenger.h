@@ -32,12 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Messenger& operator=(Messenger const&);
-    Messenger(Messenger const&);
-    Messenger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

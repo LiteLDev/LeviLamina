@@ -24,11 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PlayerListPacket& operator=(PlayerListPacket const&);
-    PlayerListPacket(PlayerListPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

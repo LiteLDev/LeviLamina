@@ -20,12 +20,6 @@ struct TickingSystemId;
 
 struct IEntitySystemsCollection {
 public:
-    // prevent constructor by default
-    IEntitySystemsCollection& operator=(IEntitySystemsCollection const&);
-    IEntitySystemsCollection(IEntitySystemsCollection const&);
-    IEntitySystemsCollection();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -17,10 +17,4 @@ public:
     ::ll::TypedStorage<8, 160, ::NetworkIdentifier> id;
     ::ll::TypedStorage<1, 1, ::SubClientId>         subClientId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkIdentifierWithSubId& operator=(NetworkIdentifierWithSubId const&);
-    NetworkIdentifierWithSubId(NetworkIdentifierWithSubId const&);
-    NetworkIdentifierWithSubId();
 };

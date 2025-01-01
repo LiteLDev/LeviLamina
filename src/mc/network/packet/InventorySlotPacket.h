@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    InventorySlotPacket& operator=(InventorySlotPacket const&);
-    InventorySlotPacket(InventorySlotPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

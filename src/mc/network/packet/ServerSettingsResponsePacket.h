@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ServerSettingsResponsePacket& operator=(ServerSettingsResponsePacket const&);
-    ServerSettingsResponsePacket(ServerSettingsResponsePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

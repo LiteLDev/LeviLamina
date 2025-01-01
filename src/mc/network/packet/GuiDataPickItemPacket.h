@@ -23,11 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GuiDataPickItemPacket& operator=(GuiDataPickItemPacket const&);
-    GuiDataPickItemPacket(GuiDataPickItemPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

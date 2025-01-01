@@ -26,12 +26,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        StateListNode& operator=(StateListNode const&);
-        StateListNode(StateListNode const&);
-        StateListNode();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit StateListNode(::BlockState* state);
@@ -66,12 +60,6 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString const>        mName;
     ::ll::TypedStorage<8, 24, ::BlockState::StateListNode> mNode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockState& operator=(BlockState const&);
-    BlockState(BlockState const&);
-    BlockState();
 
 public:
     // virtual functions

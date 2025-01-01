@@ -51,11 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RedstoneTorchCapacitor& operator=(RedstoneTorchCapacitor const&);
-    RedstoneTorchCapacitor(RedstoneTorchCapacitor const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -47,11 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CreativeContentPacket& operator=(CreativeContentPacket const&);
-    CreativeContentPacket(CreativeContentPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

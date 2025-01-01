@@ -18,12 +18,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandSoftEnumRegistry& operator=(CommandSoftEnumRegistry const&);
-    CommandSoftEnumRegistry(CommandSoftEnumRegistry const&);
-    CommandSoftEnumRegistry();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CommandSoftEnumRegistry(::CommandRegistry* registry);

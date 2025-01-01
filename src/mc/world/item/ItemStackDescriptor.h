@@ -19,11 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackDescriptor& operator=(ItemStackDescriptor const&);
-    ItemStackDescriptor(ItemStackDescriptor const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

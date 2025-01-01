@@ -53,12 +53,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPastHashes;
         ::ll::TypedStorage<8, 136, ::PackIdVersion>             mIdentity;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        KnownPackInfo& operator=(KnownPackInfo const&);
-        KnownPackInfo(KnownPackInfo const&);
-        KnownPackInfo();
     };
 
     using EventingCallback = ::std::function<::IMinecraftEventing&()>;
@@ -103,11 +97,6 @@ public:
 
 public:
     LLAPI void addCustomResourcePackPath(std::filesystem::path const& path, PackType type);
-
-    // prevent constructor by default
-    ResourcePackRepository& operator=(ResourcePackRepository const&);
-    ResourcePackRepository(ResourcePackRepository const&);
-    ResourcePackRepository();
 
 public:
     // virtual functions

@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ContainerRegistryCleanupPacket& operator=(ContainerRegistryCleanupPacket const&);
-    ContainerRegistryCleanupPacket(ContainerRegistryCleanupPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

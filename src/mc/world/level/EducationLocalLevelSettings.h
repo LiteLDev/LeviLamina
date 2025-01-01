@@ -10,14 +10,6 @@ public:
     // NOLINTEND
 
 public:
-    std::string mCodeBuilderOverrideUri;
-    bool        mHasQuiz;
-
-    // prevent constructor by default
-    EducationLocalLevelSettings(EducationLocalLevelSettings const&);
-    EducationLocalLevelSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings const&);

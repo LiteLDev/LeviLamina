@@ -20,13 +20,7 @@ public:
         NoWildcards    = 1,
     };
 
-    struct any_version_constructor {
-    public:
-        // prevent constructor by default
-        any_version_constructor& operator=(any_version_constructor const&);
-        any_version_constructor(any_version_constructor const&);
-        any_version_constructor();
-    };
+    struct any_version_constructor {};
 
     enum class MatchType : int {
         Full    = 0,

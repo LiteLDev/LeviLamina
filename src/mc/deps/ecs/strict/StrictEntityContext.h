@@ -19,12 +19,6 @@ public:
     // StrictEntityContext inner types define
     struct Hash {
     public:
-        // prevent constructor by default
-        Hash& operator=(Hash const&);
-        Hash(Hash const&);
-        Hash();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI uint64 operator()(::StrictEntityContext const& entity) const;
@@ -37,11 +31,6 @@ public:
     ::ll::TypedStorage<4, 4, ::EntityId> mEntity;
     ::ll::TypedStorage<4, 4, uint>       mRegistryId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StrictEntityContext& operator=(StrictEntityContext const&);
-    StrictEntityContext(StrictEntityContext const&);
 
 public:
     // member functions

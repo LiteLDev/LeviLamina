@@ -28,12 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StructureAnimationAction& operator=(StructureAnimationAction const&);
-    StructureAnimationAction(StructureAnimationAction const&);
-    StructureAnimationAction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

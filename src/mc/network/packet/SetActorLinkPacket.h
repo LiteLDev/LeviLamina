@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetActorLinkPacket& operator=(SetActorLinkPacket const&);
-    SetActorLinkPacket(SetActorLinkPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

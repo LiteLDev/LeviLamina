@@ -39,12 +39,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ReplaceRulesAccelerator& operator=(ReplaceRulesAccelerator const&);
-        ReplaceRulesAccelerator(ReplaceRulesAccelerator const&);
-        ReplaceRulesAccelerator();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void setRules(::std::vector<::ReplaceRule> const& replaceRules);
@@ -99,11 +93,6 @@ public:
         ::Bedrock::Threading::InstancedThreadLocal<::OreFeature::Helper, ::std::allocator<::OreFeature::Helper>>>
         mHelper;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OreFeature& operator=(OreFeature const&);
-    OreFeature(OreFeature const&);
 
 public:
     // virtual functions

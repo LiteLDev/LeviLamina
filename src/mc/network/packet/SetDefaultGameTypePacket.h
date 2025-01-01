@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SetDefaultGameTypePacket& operator=(SetDefaultGameTypePacket const&);
-    SetDefaultGameTypePacket(SetDefaultGameTypePacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

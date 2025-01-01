@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    AutomationClientConnectPacket& operator=(AutomationClientConnectPacket const&);
-    AutomationClientConnectPacket(AutomationClientConnectPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

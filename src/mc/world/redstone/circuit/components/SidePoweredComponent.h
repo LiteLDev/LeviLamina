@@ -22,12 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SidePoweredComponent& operator=(SidePoweredComponent const&);
-    SidePoweredComponent(SidePoweredComponent const&);
-    SidePoweredComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

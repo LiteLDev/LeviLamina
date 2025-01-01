@@ -51,12 +51,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        FurnaceRecipeKey& operator=(FurnaceRecipeKey const&);
-        FurnaceRecipeKey(FurnaceRecipeKey const&);
-        FurnaceRecipeKey();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~FurnaceRecipeKey();
@@ -78,12 +72,6 @@ public:
         ::ll::TypedStorage<8, 24, ::RecipeIngredient> mIngredient;
         ::ll::TypedStorage<1, 1, char>                mC;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Type& operator=(Type const&);
-        Type(Type const&);
-        Type();
 
     public:
         // member functions
@@ -109,12 +97,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string> mNormalizedResult;
         ::ll::TypedStorage<8, 32, ::std::string> mWarning;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NormalizedRectangularRecipeResults& operator=(NormalizedRectangularRecipeResults const&);
-        NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&);
-        NormalizedRectangularRecipeResults();
 
     public:
         // member functions
@@ -153,12 +135,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::weak_ptr<bool>, ::std::function<void()>>>> mListeners;
     ::ll::TypedStorage<8, 8, ::Level*>                                                                    mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Recipes& operator=(Recipes const&);
-    Recipes(Recipes const&);
-    Recipes();
 
 public:
     // member functions

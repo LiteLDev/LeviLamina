@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelEventPacket& operator=(LevelEventPacket const&);
-    LevelEventPacket(LevelEventPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

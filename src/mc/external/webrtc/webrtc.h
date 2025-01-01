@@ -83,11 +83,7 @@ enum : int {
 };
 
 enum : int {
-    KRtpCsrcSize = 15,
-};
-
-enum : int {
-    KMaxSpatialLayers = 5,
+    KMaxPreferredPixelFormats = 5,
 };
 
 enum : int {
@@ -95,12 +91,16 @@ enum : int {
 };
 
 enum : int {
-    KMaxPreferredPixelFormats = 5,
+    // bitfield representation
+    KMaxEncoderBuffers = 1 << 3,
 };
 
 enum : int {
-    // bitfield representation
-    KMaxEncoderBuffers = 1 << 3,
+    KRtpCsrcSize = 15,
+};
+
+enum : int {
+    KMaxSpatialLayers = 5,
 };
 
 // functions

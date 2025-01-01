@@ -107,12 +107,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockSource& operator=(BlockSource const&);
-    BlockSource(BlockSource const&);
-    BlockSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

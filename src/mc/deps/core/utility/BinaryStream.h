@@ -32,16 +32,6 @@ public:
     };
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::std::string& mBuffer;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BinaryStream& operator=(BinaryStream const&);
-    BinaryStream(BinaryStream const&);
-
     template <typename T>
     inline void writeType(T const& x, char const* = nullptr, char const* = nullptr) {
         serialize<T>::write(x, *this);
@@ -51,6 +41,12 @@ public:
     MCTAPI void writeType(class MoveActorAbsoluteData const&, char const*, char const*);
     MCTAPI void writeType(class NetworkItemInstanceDescriptor const&, char const*, char const*);
     MCTAPI void writeType(struct PropertySyncData const&, char const*, char const*);
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::std::string& mBuffer;
+    // NOLINTEND
 
 public:
     // virtual functions

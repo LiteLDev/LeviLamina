@@ -31,12 +31,6 @@ namespace RakNet {
 
 class RakPeerInterface {
 public:
-    // prevent constructor by default
-    RakPeerInterface& operator=(RakPeerInterface const&);
-    RakPeerInterface(RakPeerInterface const&);
-    RakPeerInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

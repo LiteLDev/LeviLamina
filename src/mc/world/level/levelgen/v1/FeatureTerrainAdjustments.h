@@ -35,11 +35,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Descriptions& operator=(Descriptions const&);
-        Descriptions(Descriptions const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Descriptions();
@@ -69,12 +64,6 @@ public:
                                                   mDescriptionsToProcess;
     ::ll::TypedStorage<8, 8, ::std::shared_mutex> mMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FeatureTerrainAdjustments& operator=(FeatureTerrainAdjustments const&);
-    FeatureTerrainAdjustments(FeatureTerrainAdjustments const&);
-    FeatureTerrainAdjustments();
 
 public:
     // member functions

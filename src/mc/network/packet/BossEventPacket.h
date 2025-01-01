@@ -37,11 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BossEventPacket& operator=(BossEventPacket const&);
-    BossEventPacket(BossEventPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

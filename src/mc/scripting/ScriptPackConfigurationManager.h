@@ -21,11 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScriptPackConfigurationManager& operator=(ScriptPackConfigurationManager const&);
-    ScriptPackConfigurationManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

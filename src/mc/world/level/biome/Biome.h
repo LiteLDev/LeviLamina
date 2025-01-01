@@ -85,12 +85,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Biome& operator=(Biome const&);
-    Biome(Biome const&);
-    Biome();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

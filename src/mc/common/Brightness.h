@@ -7,9 +7,6 @@
 
 struct Brightness : public ::NewType<uchar> {
 public:
-    uchar value;
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Brightness(uchar const&);

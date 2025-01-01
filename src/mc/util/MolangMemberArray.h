@@ -34,10 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangMemberArray& operator=(MolangMemberArray const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MolangMemberArray();

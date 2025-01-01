@@ -44,12 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorFactory& operator=(ActorFactory const&);
-    ActorFactory(ActorFactory const&);
-    ActorFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

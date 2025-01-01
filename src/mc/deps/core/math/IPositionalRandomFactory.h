@@ -10,12 +10,6 @@ class IRandom;
 
 class IPositionalRandomFactory {
 public:
-    // prevent constructor by default
-    IPositionalRandomFactory& operator=(IPositionalRandomFactory const&);
-    IPositionalRandomFactory(IPositionalRandomFactory const&);
-    IPositionalRandomFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

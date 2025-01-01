@@ -29,11 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StyledWriter& operator=(StyledWriter const&);
-    StyledWriter(StyledWriter const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

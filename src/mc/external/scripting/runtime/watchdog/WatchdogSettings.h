@@ -17,12 +17,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                  mMemoryWarningMB;
     ::ll::TypedStorage<4, 4, int>                  mMemoryLimitMB;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WatchdogSettings& operator=(WatchdogSettings const&);
-    WatchdogSettings(WatchdogSettings const&);
-    WatchdogSettings();
 };
 
 } // namespace Scripting

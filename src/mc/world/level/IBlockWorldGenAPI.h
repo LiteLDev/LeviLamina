@@ -24,12 +24,6 @@ struct WorldGenContext;
 
 class IBlockWorldGenAPI {
 public:
-    // prevent constructor by default
-    IBlockWorldGenAPI& operator=(IBlockWorldGenAPI const&);
-    IBlockWorldGenAPI(IBlockWorldGenAPI const&);
-    IBlockWorldGenAPI();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

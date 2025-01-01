@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DeathInfoPacket& operator=(DeathInfoPacket const&);
-    DeathInfoPacket(DeathInfoPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

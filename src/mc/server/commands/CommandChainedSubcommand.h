@@ -15,12 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandChainedSubcommand& operator=(CommandChainedSubcommand const&);
-    CommandChainedSubcommand(CommandChainedSubcommand const&);
-    CommandChainedSubcommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

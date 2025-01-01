@@ -22,11 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BiomeDefinitionListPacket& operator=(BiomeDefinitionListPacket const&);
-    BiomeDefinitionListPacket(BiomeDefinitionListPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
