@@ -72,11 +72,6 @@ option("tests")
     set_showmenu(true)
     set_description("Enable tests")
 
-option("use_mimalloc")
-    set_default(false)
-    set_showmenu(true)
-    set_description("Enable mimalloc")
-
 option("target_type")
     set_default("server")
     set_showmenu(true)
@@ -283,10 +278,6 @@ target("LeviLamina")
                 io.writefile("src-test/client/include_all.cpp", "// auto gen when build test\n")
             end
         end)
-    end
-
-    if has_config("use_mimalloc") then
-        add_defines("LL_USE_MIMALLOC")
     end
 
     if is_mode("debug") then

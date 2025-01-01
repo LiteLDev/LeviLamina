@@ -28,9 +28,6 @@ jobs:
         mode:
           - debug
           - release
-        use_mimalloc:
-          - true
-          - false
         tests:
           - true
           - false
@@ -58,13 +55,13 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=${{ matrix.use_mimalloc }} --target_type=${{ matrix.target_type }} --tests=${{ matrix.tests }}
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --target_type=${{ matrix.target_type }} --tests=${{ matrix.tests }}
 
       - run: |
           xmake -v -w -y
 
       - uses: actions/upload-artifact@v4
         with:
-          name: levilamina-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.use_mimalloc == false && '-nonmimalloc' || '' }}${{ matrix.tests == true && '-tests' || '' }}-windows-x64-${{ github.sha }}
+          name: levilamina-${{ matrix.target_type }}-${{ matrix.mode }}${{ matrix.tests == true && '-tests' || '' }}-windows-x64-${{ github.sha }}
           path: |
             bin/

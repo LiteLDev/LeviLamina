@@ -35,7 +35,7 @@ jobs:
           xmake repo -u
 
       - run: |
-          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y --use_mimalloc=y
+          xmake f -a x64 -m ${{ matrix.mode }} -p windows -v -y
 
       - run: |
           xmake -v -w -y

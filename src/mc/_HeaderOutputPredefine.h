@@ -133,6 +133,7 @@ struct sockaddr_in;
 struct sockaddr_in6;
 
 #include "mc/deps/core/utility/optional_ref.h" // replace optional<reference_wrapper<>>
+#include "mc/platform/brstd/function_ref.h"    // function reference
 #include "mc/math/vector/Vecs.h"               // for vector types
 
 template <typename T0, typename T1>
@@ -220,11 +221,6 @@ class ThreadSafe {
 public:
     class View {};
 };
-}
-
-namespace brstd {
-template <typename T, typename U = T>
-class function_ref;
 }
 
 namespace rtc {

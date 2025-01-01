@@ -11,6 +11,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/memory/Signature.h"
 #include "ll/api/memory/Symbol.h"
+#include "mc/platform/brstd/function_ref.h"
 
 namespace Bedrock::Memory {
 class IMemoryAllocator;
@@ -61,21 +62,21 @@ inline void memcpy_t(void* dst, void const* src) {
  * @param len Length of the region
  * @param callback Callback
  */
-LLAPI void modify(void* ptr, size_t len, const std::function<void()>& callback);
+LLAPI void modify(void* ptr, size_t len, brstd::function_ref<void()> callback);
 
 template <class T>
-inline void modify(T& ref, std::function<void(std::remove_cv_t<T>&)> const& f) {
+inline void modify(T& ref, brstd::function_ref<void(std::remove_cv_t<T>&)> f) {
     modify((void*)std::addressof(ref), sizeof(T), [&] { f((std::remove_cv_t<T>&)(ref)); });
 }
 
-template <class RTN = void, class... Args>
-constexpr auto addressCall(void const* address, auto&&... args) -> RTN {
-    return ((RTN(*)(Args...))address)(std::forward<decltype((args))>(args)...);
+template <class R = void, class... Args>
+constexpr auto addressCall(void const* address, auto&&... args) -> R {
+    return ((R(*)(Args...))address)(std::forward<decltype((args))>(args)...);
 }
 
-template <class RTN = void, class... Args>
-constexpr auto virtualCall(void const* self, ptrdiff_t vIndex, auto&&... args) -> RTN {
-    return (*(RTN(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(
+template <class R = void, class... Args>
+constexpr auto virtualCall(void const* self, ptrdiff_t vIndex, auto&&... args) -> R {
+    return (*(R(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(
         self,
         std::forward<decltype((args))>(args)...
     );

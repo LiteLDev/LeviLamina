@@ -16,7 +16,7 @@
 
 namespace ll::memory {
 
-void modify(void* ptr, size_t len, std::function<void()> const& callback) {
+void modify(void* ptr, size_t len, brstd::function_ref<void()> callback) {
     std::optional<thread::GlobalThreadPauser> pauser;
     if (getGamingStatus() != GamingStatus::Default) {
         pauser.emplace();

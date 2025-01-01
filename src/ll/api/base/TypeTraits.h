@@ -56,7 +56,8 @@ struct function_traits : function_traits<decltype(&F::operator())> {};
 #define LL_BUILD_FUNCTION_SIGNATURE(CVREF, NOEXCEPT)                                                                   \
     template <class Ret, class... Args>                                                                                \
     struct function_traits<Ret(Args...) CVREF noexcept(NOEXCEPT)> {                                                    \
-        using function_type = Ret(Args...);                                                                            \
+        using function_type          = Ret(Args...);                                                                   \
+        using function_type_noexcept = Ret(Args...) noexcept(NOEXCEPT);                                                \
         template <class T>                                                                                             \
         using cvref                               = T       CVREF;                                                     \
         static constexpr bool is_noexcept         = NOEXCEPT;                                                          \

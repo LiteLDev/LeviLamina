@@ -16,17 +16,11 @@
 
 #include "Psapi.h"
 
-#ifdef LL_USE_MIMALLOC
-#define LL_DEFALUT_MEMORY_ALLOCATOR MimallocMemoryAllocator
-#else
-#define LL_DEFALUT_MEMORY_ALLOCATOR StdMemoryAllocator
-#endif
-
 // #define LL_MEMORY_DEBUG
 
 namespace ll::memory {
 
-static std::string memStr(size_t mem) {
+[[maybe_unused]] static std::string memStr(size_t mem) {
     double r  = (double)mem;
     r        /= 1024;
     if (r < 1024) {
@@ -71,72 +65,6 @@ public:
     virtual void logCurrentState() { mi_stats_print_out(miOutput, nullptr); }
 
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) { return mi_realloc(ptr, newSize); }
-};
-
-class StdMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
-public:
-    virtual void* allocate(uint64 size) { return malloc(size != 0 ? size : 1); }
-
-    virtual void release(void* ptr) { free(ptr); }
-
-    virtual void* alignedAllocate(uint64 size, uint64 alignment) {
-        return _aligned_malloc(size != 0 ? size : 1, alignment);
-    }
-
-    virtual void alignedRelease(void* ptr) { _aligned_free(ptr); }
-
-    virtual uint64 getUsableSize(void* ptr) { return ptr ? _msize(ptr) : 0ull; }
-
-    virtual void logCurrentState() {
-        HEAP_SUMMARY summary{.cb = sizeof(HEAP_SUMMARY)};
-        HeapSummary(GetProcessHeap(), 0, &summary);
-        PROCESS_MEMORY_COUNTERS_EX info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX)};
-        GetProcessMemoryInfo(GetCurrentProcess(), (PPROCESS_MEMORY_COUNTERS)&info, info.cb);
-        // clang-format off
-        auto& logger= getLogger();
-        logger.info("heap stats: {:>12} {:>12}", "peak", "current");
-        logger.info("  reserved: {:>12} {:>12}", memStr(summary.cbMaxReserve), memStr(summary.cbReserved));
-        logger.info(" committed: {:>12} {:>12}", "", memStr(summary.cbCommitted));
-        logger.info(" allocated: {:>12} {:>12}", "", memStr(summary.cbAllocated));
-        logger.info(" pagefault: {:>12} {:>8}", "", info.PageFaultCount);
-        logger.info("workingset: {:>12} {:>12}", memStr(info.PeakWorkingSetSize), memStr(info.WorkingSetSize));
-        logger.info(" pagedpool: {:>12} {:>12}", memStr(info.QuotaPeakPagedPoolUsage), memStr(info.QuotaPagedPoolUsage));
-        logger.info("  nonpaged: {:>12} {:>12}", memStr(info.QuotaPeakNonPagedPoolUsage), memStr(info.QuotaNonPagedPoolUsage));
-        logger.info("  pagefile: {:>12} {:>12}", memStr(info.PeakPagefileUsage), memStr(info.PagefileUsage));
-        logger.info("   private: {:>12} {:>12}", "", memStr(info.PrivateUsage));
-        // clang-format on
-    }
-
-    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) { return realloc(ptr, newSize); }
-};
-
-class MimallocMemoryAllocatorWithCheck : public MimallocMemoryAllocator {
-public:
-    virtual void release(void* ptr) {
-        if (mi_is_in_heap_region(ptr)) [[likely]] {
-            mi_free(ptr);
-        } else if (ptr) [[unlikely]] {
-            free(ptr);
-        }
-    }
-
-    virtual void alignedRelease(void* ptr) { release(ptr); }
-
-    virtual uint64 getUsableSize(void* ptr) {
-        if (mi_is_in_heap_region(ptr)) [[likely]] {
-            return mi_usable_size(ptr);
-        } else {
-            return ptr ? _msize(ptr) : 0ull;
-        }
-    }
-
-    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) {
-        if (mi_is_in_heap_region(ptr)) [[likely]] {
-            return mi_realloc(ptr, newSize);
-        } else {
-            return realloc(ptr, newSize);
-        }
-    }
 };
 
 #ifdef LL_MEMORY_DEBUG
@@ -229,9 +157,9 @@ public:
 
 ::Bedrock::Memory::IMemoryAllocator& getDefaultAllocator() {
 #ifdef LL_MEMORY_DEBUG
-    static DebugAllocator<LL_DEFALUT_MEMORY_ALLOCATOR> ins;
+    static DebugAllocator<MimallocMemoryAllocator> ins;
 #else
-    static LL_DEFALUT_MEMORY_ALLOCATOR ins;
+    static MimallocMemoryAllocator ins;
 #endif
     return ins;
 }
