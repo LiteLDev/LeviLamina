@@ -7,7 +7,7 @@
 #include <utility>
 #include <vector>
 
-#include "magic_enum_all.hpp" // IWYU pragma: keep
+#include "magic_enum/magic_enum_all.hpp" // IWYU pragma: keep
 
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"

@@ -1,7 +1,7 @@
 #include "ll/api/io/Logger.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/core/LeviLamina.h"
-#include "magic_enum.hpp"
+#include "magic_enum/magic_enum.hpp"
 #include "mc/util/Random.h"
 #include "mc/util/WorldChangeTransaction.h"
 #include "mc/world/level/BlockPos.h"

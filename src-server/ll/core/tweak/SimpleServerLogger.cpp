@@ -9,7 +9,7 @@
 
 #include "mc/server/commands/CommandOrigin.h"
 
-#include "magic_enum.hpp"
+#include "magic_enum/magic_enum.hpp"
 
 namespace ll {
 using namespace event;
