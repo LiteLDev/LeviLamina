@@ -25,14 +25,14 @@ class MovingBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb715ef;
-    ::ll::UntypedStorage<8, 8>  mUnk30f66c;
-    ::ll::UntypedStorage<8, 16> mUnkc0238e;
-    ::ll::UntypedStorage<4, 12> mUnkb6138e;
-    ::ll::UntypedStorage<1, 1>  mUnke5bfc7;
-    ::ll::UntypedStorage<4, 24> mUnk4f2b79;
-    ::ll::UntypedStorage<1, 1>  mUnke9379f;
-    ::ll::UntypedStorage<4, 4>  mUnk940a33;
+    ::ll::TypedStorage<8, 8, ::Block const*>                   mWrappedBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                   mWrappedExtraBlock;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockActor>> mWrappedBlockActor;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                      mPistonBlockPos;
+    ::ll::TypedStorage<1, 1, bool>                             mPistonBlockExpanding;
+    ::ll::TypedStorage<4, 24, ::AABB>                          mCollisionShape;
+    ::ll::TypedStorage<1, 1, bool>                             mPreserved;
+    ::ll::TypedStorage<4, 4, int>                              mPreservedLifespan;
     // NOLINTEND
 
 public:
