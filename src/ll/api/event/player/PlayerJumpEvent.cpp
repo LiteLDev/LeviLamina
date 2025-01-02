@@ -35,8 +35,7 @@ LL_TYPE_INSTANCE_HOOK(
         auto mode = settings->getPlayerMovementSettings().mUnk3c7e19.as<ServerAuthMovementMode>();
         if (mode == ServerAuthMovementMode::LegacyClientAuthoritativeV1) {
             if (packet.mAction == PlayerActionType::StartJump) {
-                auto handle = static_cast<decltype(this)>(reinterpret_cast<NetEventCallback*>(this));
-                if (auto player = handle->_getServerPlayer(source, packet.mClientSubId); player) {
+                if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(source, packet.mClientSubId); player) {
                     EventBus::getInstance().publish(PlayerJumpEvent(*player));
                 }
             }

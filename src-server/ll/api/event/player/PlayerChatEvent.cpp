@@ -30,8 +30,7 @@ LL_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const& identifier,
     TextPacket const&        packet
 ) {
-    auto handle = static_cast<decltype(this)>(reinterpret_cast<NetEventCallback*>(this));
-    if (auto player = handle->_getServerPlayer(identifier, packet.mClientSubId); player) {
+    if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mClientSubId); player) {
         auto event = PlayerChatEvent{*player, const_cast<TextPacket&>(packet).mMessage};
         EventBus::getInstance().publish(event);
         if (event.isCancelled()) {

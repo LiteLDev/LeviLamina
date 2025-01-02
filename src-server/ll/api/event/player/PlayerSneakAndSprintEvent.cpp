@@ -17,7 +17,7 @@ LL_TYPE_INSTANCE_HOOK(
     NetworkIdentifier const&  id,
     PlayerActionPacket const& packet
 ) {
-    auto handle = static_cast<decltype(this)>(reinterpret_cast<NetEventCallback*>(this));
+    auto handle = thisFor<NetEventCallback>();
     switch (packet.mAction) {
     case PlayerActionType::StartSprinting:
         if (auto player = handle->_getServerPlayer(id, packet.mClientSubId); player) {

@@ -160,7 +160,7 @@ struct LL_EBO Hook {};
         inline static _OriginFuncType _OriginalFunc{};                                                                 \
                                                                                                                        \
         template <class T>                                                                                             \
-        static consteval void detector() {                                                                             \
+        static consteval void _Detector() {                                                                            \
             if constexpr (requires { ::ll::memory::virtualDetector<T, IDENTIFIER>(); }) {                              \
                 if constexpr (::ll::memory::virtualDetector<T, IDENTIFIER>()) {                                        \
                     static_assert(                                                                                     \
@@ -172,6 +172,11 @@ struct LL_EBO Hook {};
         }                                                                                                              \
                                                                                                                        \
     public:                                                                                                            \
+        template <class T>                                                                                             \
+            requires(::std::is_polymorphic_v<TYPE> && ::std::is_base_of_v<T, TYPE>)                                    \
+        [[nodiscard]] TYPE* thisFor() {                                                                                \
+            return static_cast<decltype(this)>(reinterpret_cast<T*>(this));                                            \
+        }                                                                                                              \
         template <class... Args>                                                                                       \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \
             return CALL(std::forward<Args>(params)...);                                                                \
@@ -180,7 +185,7 @@ struct LL_EBO Hook {};
         STATIC RET_TYPE detour(__VA_ARGS__);                                                                           \
                                                                                                                        \
         static int hook(bool suspendThreads = true) {                                                                  \
-            detector<_OriginFuncType>();                                                                               \
+            _Detector<_OriginFuncType>();                                                                              \
             if (!_HookTarget) _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);              \
             return ::ll::memory::hook(                                                                                 \
                 _HookTarget,                                                                                           \
