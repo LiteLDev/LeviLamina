@@ -13,6 +13,9 @@ public:
     // NOLINTEND
 
 public:
+    RakNetGUID(uint64 g, ushort systemIndex) : g(g), systemIndex(systemIndex) {}
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool FromString(char const* source);

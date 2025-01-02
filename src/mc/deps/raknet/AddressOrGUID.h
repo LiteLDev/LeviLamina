@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,6 +19,11 @@ public:
     ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     rakNetGuid;
     ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
     // NOLINTEND
+
+public:
+    AddressOrGUID() = default;
+    AddressOrGUID(::RakNet::SystemAddress const& input) : rakNetGuid{-1, -1} { systemAddress = input; }
+    AddressOrGUID(::RakNet::RakNetGUID const& input) : rakNetGuid(input), systemAddress{} {}
 
 public:
     // member functions
