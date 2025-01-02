@@ -5,8 +5,5 @@
 template <typename T0>
 struct NewType {
 public:
-    // prevent constructor by default
-    NewType& operator=(NewType const&);
-    NewType(NewType const&);
-    NewType();
+    T0 mValue;
 };
