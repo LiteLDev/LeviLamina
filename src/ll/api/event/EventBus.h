@@ -10,6 +10,7 @@
 
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Macro.h"
+#include "ll/api/coro/Generator.h"
 #include "ll/api/event/Event.h"
 #include "ll/api/event/EventId.h"
 #include "ll/api/event/Listener.h"
@@ -60,6 +61,12 @@ public:
         static_assert(std::is_final_v<std::remove_cvref_t<T>>, "Only final classes can publish");
         publish(modName, event, getEventId<T>);
     }
+
+    LLNDAPI coro::Generator<EventIdView> events(std::string_view modName) const;
+
+    LLNDAPI coro::Generator<std::pair<std::string_view, EventIdView>> events() const;
+
+    LLNDAPI bool hasEvent(EventIdView const& eventId) const;
 
     LLNDAPI size_t getListenerCount(EventIdView const&);
 

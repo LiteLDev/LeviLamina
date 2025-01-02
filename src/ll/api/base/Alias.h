@@ -14,19 +14,35 @@ struct UntypedStorage {
 
     template <class T>
     [[nodiscard]] T& as() & {
-        return *reinterpret_cast<T*>(data);
+        if constexpr (std::is_reference_v<T>) {
+            return **reinterpret_cast<std::remove_reference_t<T>**>(data);
+        } else {
+            return *reinterpret_cast<T*>(data);
+        }
     }
     template <class T>
     [[nodiscard]] T const& as() const& {
-        return *reinterpret_cast<T const*>(data);
+        if constexpr (std::is_reference_v<T>) {
+            return **reinterpret_cast<std::remove_reference_t<T> const**>(data);
+        } else {
+            return *reinterpret_cast<T const*>(data);
+        }
     }
     template <class T>
     [[nodiscard]] T&& as() && {
-        return std::move(*reinterpret_cast<T*>(data));
+        if constexpr (std::is_reference_v<T>) {
+            return std::move(**reinterpret_cast<std::remove_reference_t<T>**>(data));
+        } else {
+            return std::move(*reinterpret_cast<T*>(data));
+        }
     }
     template <class T>
     [[nodiscard]] T const&& as() const&& {
-        return std::move(*reinterpret_cast<T const*>(data));
+        if constexpr (std::is_reference_v<T>) {
+            return std::move(**reinterpret_cast<std::remove_reference_t<T> const**>(data));
+        } else {
+            return std::move(*reinterpret_cast<T const*>(data));
+        }
     }
 };
 

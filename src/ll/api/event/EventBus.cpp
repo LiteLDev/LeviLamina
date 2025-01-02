@@ -182,6 +182,27 @@ void EventBus::publish(std::string_view modName, Event& event, EventIdView const
         stream->publish(modName, event);
     }
 }
+
+coro::Generator<EventIdView> EventBus::events(std::string_view modName) const {
+    std::lock_guard lock(impl->infoMutex);
+    if (auto it = impl->modInfos.find(modName); it != impl->modInfos.end()) {
+        for (auto& id : it->second.ownedEvents) {
+            co_yield id;
+        }
+    }
+}
+
+coro::Generator<std::pair<std::string_view, EventIdView>> EventBus::events() const {
+    std::lock_guard lock(impl->infoMutex);
+    for (auto& [name, info] : impl->modInfos) {
+        for (auto& id : info.ownedEvents) {
+            co_yield {name, id};
+        }
+    }
+}
+
+bool EventBus::hasEvent(EventIdView const& eventId) const { return impl->events.contains(eventId); }
+
 size_t EventBus::getListenerCount(EventIdView const& eventId) {
     if (eventId == EmptyEventId) {
         return impl->listenerInfos.size();
