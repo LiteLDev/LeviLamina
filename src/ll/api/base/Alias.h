@@ -39,6 +39,12 @@ struct TypedStorageImpl {
         std::construct_at(this->operator->(), std::forward<Args>(args)...);
     }
 
+    template <class U>
+    constexpr T& operator=(U&& u) {
+        get().operator=(std::forward<U>(u));
+        return get();
+    }
+
     constexpr ~TypedStorageImpl() { std::destroy_at(this->operator->()); }
 
     [[nodiscard]] T*        operator->() { return reinterpret_cast<T*>(data); }
