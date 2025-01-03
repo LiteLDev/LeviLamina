@@ -13,15 +13,14 @@ class CircuitTrackingInfo;
 
 class DirectionalProducerComponent : public ::ProducerComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3b898d;
-    // NOLINTEND
+    // DirectionalProducerComponent inner types define
+    using AllowedConnections = ::std::bitset<6>;
 
 public:
-    // prevent constructor by default
-    DirectionalProducerComponent& operator=(DirectionalProducerComponent const&);
-    DirectionalProducerComponent(DirectionalProducerComponent const&);
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::std::bitset<6>> mAllowedConnections;
+    // NOLINTEND
 
 public:
     // virtual functions

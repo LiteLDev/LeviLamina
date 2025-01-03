@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseCircuitComponent;
@@ -20,17 +23,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk106ebf;
-        ::ll::UntypedStorage<4, 12> mUnk79e265;
-        ::ll::UntypedStorage<1, 1>  mUnkd64ed2;
-        ::ll::UntypedStorage<8, 8>  mUnk8146c8;
+        ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*> mComponent;
+        ::ll::TypedStorage<4, 12, ::BlockPos>             mPos;
+        ::ll::TypedStorage<1, 1, uchar>                   mDirection;
+        ::ll::TypedStorage<8, 8, ::CircuitComponentType>  mTypeID;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Entry& operator=(Entry const&);
-        Entry(Entry const&);
-        Entry();
     };
 
 public:

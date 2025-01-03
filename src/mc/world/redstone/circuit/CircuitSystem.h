@@ -23,14 +23,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk167359;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mChunkPos;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LevelChunkTracking& operator=(LevelChunkTracking const&);
-        LevelChunkTracking(LevelChunkTracking const&);
-        LevelChunkTracking();
     };
 
 public:
