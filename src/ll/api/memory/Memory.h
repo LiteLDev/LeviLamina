@@ -76,10 +76,7 @@ constexpr auto addressCall(void const* address, auto&&... args) -> R {
 
 template <class R = void, class... Args>
 constexpr auto virtualCall(void const* self, ptrdiff_t vIndex, auto&&... args) -> R {
-    return (*(R(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(
-        self,
-        std::forward<decltype((args))>(args)...
-    );
+    return (*(R(**)(void const*, Args...))(*(uintptr_t**)self + vIndex))(self, std::forward<decltype((args))>(args)...);
 }
 
 template <class T>
