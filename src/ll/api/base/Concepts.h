@@ -22,9 +22,6 @@ template <class T, class... Ts>
 concept IsOneOf = traits::is_one_of_v<T, Ts...>;
 
 template <class T>
-concept IsNonCharIntegral = traits::is_non_char_integral_v<T>;
-
-template <class T>
 concept IsString = traits::is_string_v<T>;
 
 template <class T>

@@ -221,7 +221,7 @@ public:
         }
     }
 
-    [[nodiscard]] CompoundTagVariant& operator[](char const* index) {
+    [[nodiscard]] CompoundTagVariant& operator[](std::string_view index) {
         if (is_null()) {
             mTagStorage = CompoundTag{};
         }
@@ -231,28 +231,21 @@ public:
         return get<CompoundTag>()[index];
     }
 
-    [[nodiscard]] CompoundTagVariant const& operator[](char const* index) const {
+    [[nodiscard]] CompoundTagVariant const& operator[](std::string_view index) const {
         if (!hold(Tag::Compound)) {
             throw std::runtime_error("tag not hold an object");
         }
         return get<CompoundTag>()[index];
     }
 
-    [[nodiscard]] CompoundTagVariant& operator[](std::string const& index) {
-        if (is_null()) {
-            mTagStorage = CompoundTag{};
-        }
-        if (!hold(Tag::Compound)) {
-            throw std::runtime_error("tag not hold an object");
-        }
-        return get<CompoundTag>()[index];
+    template <size_t N>
+    [[nodiscard]] CompoundTagVariant& operator[](char const (&index)[N]) { // make EDG happy
+        return operator[](std::string_view{index});
     }
 
-    [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const {
-        if (!hold(Tag::Compound)) {
-            throw std::runtime_error("tag not hold an object");
-        }
-        return get<CompoundTag>()[index];
+    template <size_t N>
+    [[nodiscard]] CompoundTagVariant const& operator[](char const (&index)[N]) const { // make EDG happy
+        return operator[](std::string_view{index});
     }
 
     [[nodiscard]] UniqueTagPtr toUnique() const& {
@@ -288,7 +281,8 @@ public:
         get<ListTag>().add(std::move(val).toUnique());
     }
 
-    template <ll::concepts::IsNonCharIntegral T>
+    template <class T>
+        requires(std::is_arithmetic_v<T> && !ll::traits::is_char_v<T>)
     [[nodiscard]] constexpr operator T() const {
         if (is_number()) {
             return std::visit(
@@ -305,23 +299,6 @@ public:
             throw std::runtime_error("tag not hold an number");
         }
     }
-    template <std::floating_point T>
-    [[nodiscard]] constexpr operator T() const {
-        if (is_number()) {
-            return std::visit(
-                [](auto& val) -> T {
-                    if constexpr (std::is_convertible_v<std::decay_t<decltype(val)>, T>) {
-                        return (T)val;
-                    } else {
-                        return {};
-                    }
-                },
-                mTagStorage
-            );
-        } else {
-            throw std::runtime_error("tag not hold a number");
-        }
-    }
     [[nodiscard]] operator std::string const&() const { return get<StringTag>(); }
     [[nodiscard]] operator std::string&() { return get<StringTag>(); }
     [[nodiscard]] operator std::string&&() && { return std::move(get<StringTag>()); }
@@ -333,6 +310,19 @@ public:
         return CompoundTagVariant{std::in_place_type<ListTag>, init};
     }
 };
+
+[[nodiscard]] inline CompoundTagVariant& CompoundTag::operator[](std::string_view index) {
+    if (auto it = mTags.find(index); it != mTags.end()) {
+        return it->second;
+    }
+    return mTags[std::string{index}];
+}
+[[nodiscard]] inline CompoundTagVariant const& CompoundTag::operator[](std::string_view index) const {
+    if (auto it = mTags.find(index); it != mTags.end()) {
+        return it->second;
+    }
+    throw std::out_of_range("invalid nbt key");
+}
 
 [[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> tags) {
     if (tags.empty()) {
@@ -410,3 +400,49 @@ template <std::derived_from<Tag> T>
 [[nodiscard]] inline UniqueTagPtr::operator std::string&() & { return get<StringTag>(); }
 [[nodiscard]] inline UniqueTagPtr::operator std::string&&() && { return std::move(get<StringTag>()); }
 [[nodiscard]] inline UniqueTagPtr::operator std::string_view() const { return get<StringTag>(); }
+
+[[nodiscard]] inline UniqueTagPtr& UniqueTagPtr::operator[](size_t index) {
+    if (hold(Tag::List)) {
+        return get<ListTag>()[index];
+    } else {
+        throw std::runtime_error("tag not hold an array");
+    }
+}
+[[nodiscard]] inline UniqueTagPtr const& UniqueTagPtr::operator[](size_t index) const {
+    if (hold(Tag::List)) {
+        return get<ListTag>()[index];
+    } else {
+        throw std::runtime_error("tag not hold an array");
+    }
+}
+[[nodiscard]] inline CompoundTagVariant& UniqueTagPtr::operator[](std::string_view index) {
+    if (is_null()) {
+        emplace<CompoundTag>();
+    }
+    if (!hold(Tag::Compound)) {
+        throw std::runtime_error("tag not hold an object");
+    }
+    return get<CompoundTag>()[index];
+}
+[[nodiscard]] inline CompoundTagVariant const& UniqueTagPtr::operator[](std::string_view index) const {
+    if (!hold(Tag::Compound)) {
+        throw std::runtime_error("tag not hold an object");
+    }
+    return get<CompoundTag>()[index];
+}
+template <class T>
+    requires(std::is_arithmetic_v<T> && !ll::traits::is_char_v<T>)
+[[nodiscard]] inline UniqueTagPtr::operator T() const {
+    if (is_number()) {
+        return ll::meta::visitIndex<CompoundTagVariant::Types::size>((size_t)getId(), [&]<size_t I>() -> T {
+            auto& val = *static_cast<CompoundTagVariant::Types::get<I>*>(ptr);
+            if constexpr (std::is_convertible_v<std::decay_t<decltype(val)>, T>) {
+                return (T)val;
+            } else {
+                return {};
+            }
+        });
+    } else {
+        throw std::runtime_error("tag not hold an number");
+    }
+}

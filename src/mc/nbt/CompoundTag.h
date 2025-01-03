@@ -27,11 +27,11 @@ public:
     CompoundTag(CompoundTag&&)                 = default;
     CompoundTag& operator=(CompoundTag&&)      = default;
 
-    [[nodiscard]] CompoundTagVariant&       operator[](std::string const& index) { return mTags[index]; }
-    [[nodiscard]] CompoundTagVariant const& operator[](std::string const& index) const { return mTags.at(index); }
+    [[nodiscard]] CompoundTagVariant&       operator[](std::string_view index);
+    [[nodiscard]] CompoundTagVariant const& operator[](std::string_view index) const;
 
-    [[nodiscard]] CompoundTagVariant&       at(std::string const& index) { return mTags[index]; }
-    [[nodiscard]] CompoundTagVariant const& at(std::string const& index) const { return mTags.at(index); }
+    [[nodiscard]] CompoundTagVariant&       at(std::string_view index) { return operator[](index); }
+    [[nodiscard]] CompoundTagVariant const& at(std::string_view index) const { return operator[](index); }
 
     LLNDAPI static ll::Expected<CompoundTag>
     fromSnbt(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;

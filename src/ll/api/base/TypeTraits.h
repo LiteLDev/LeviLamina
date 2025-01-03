@@ -123,10 +123,7 @@ template <class T>
 constexpr bool is_string_v = std::is_constructible_v<std::string, T>;
 
 template <class T>
-constexpr bool is_char_v = is_one_of_v<T, char, wchar_t, char8_t, char16_t, char32_t>;
-
-template <class T>
-constexpr bool is_non_char_integral_v = std::is_integral_v<T> && !is_char_v<T>;
+constexpr bool is_char_v = is_one_of_v<std::remove_cv_t<T>, char, wchar_t, char8_t, char16_t, char32_t>;
 
 template <class T, template <class...> class Z>
 constexpr bool is_specialization_of_v = false;

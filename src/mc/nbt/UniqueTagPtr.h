@@ -88,6 +88,19 @@ public:
         delete old;
     }
 
+    [[nodiscard]] UniqueTagPtr&             operator[](size_t index);
+    [[nodiscard]] UniqueTagPtr const&       operator[](size_t index) const;
+    [[nodiscard]] CompoundTagVariant&       operator[](std::string_view index);
+    [[nodiscard]] CompoundTagVariant const& operator[](std::string_view index) const;
+    template <size_t N>
+    [[nodiscard]] CompoundTagVariant& operator[](char const (&index)[N]) { // make EDG happy
+        return operator[](std::string_view{index});
+    }
+    template <size_t N>
+    [[nodiscard]] CompoundTagVariant const& operator[](char const (&index)[N]) const { // make EDG happy
+        return operator[](std::string_view{index});
+    }
+
 public:
     [[nodiscard]] std::unique_ptr<Tag> copy() const { return ptr ? ptr->copy() : nullptr; }
 
@@ -143,4 +156,8 @@ public:
     [[nodiscard]] operator std::string&() &;
     [[nodiscard]] operator std::string&&() &&;
     [[nodiscard]] operator std::string_view() const;
+
+    template <class T>
+        requires(std::is_arithmetic_v<T> && !ll::traits::is_char_v<T>)
+    [[nodiscard]] operator T() const;
 };

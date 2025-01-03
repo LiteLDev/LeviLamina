@@ -189,4 +189,12 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     ll::getLogger().debug("signature {}", "48 8D 05 ? ? ? ? E8"_sig.toString(false, false));
     ll::getLogger().debug("resolve   {}", "48 8D 05 ? ? ? ? E8"_sig.resolve());
+
+    auto nbt11 = CompoundTag{
+        {"a", {{"b", {{"c", 12345}}}}}
+    };
+    auto nbt12 = ListTag{{ListTag{{ListTag{{54321}}}}}};
+
+    ll::getLogger().debug("nbt {}\n{}", nbt11.toSnbt(), nbt12.toSnbt());
+    ll::getLogger().debug("nbt {} {}", int{nbt11["a"]["b"]["c"]}, int{nbt12[0][0][0]});
 }
