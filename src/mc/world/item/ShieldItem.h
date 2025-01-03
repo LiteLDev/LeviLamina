@@ -30,12 +30,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class ShieldItem : public ::Item {
 public:
-    // prevent constructor by default
-    ShieldItem& operator=(ShieldItem const&);
-    ShieldItem(ShieldItem const&);
-    ShieldItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 92

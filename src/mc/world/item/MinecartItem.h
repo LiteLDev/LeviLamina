@@ -21,14 +21,8 @@ class MinecartItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka35380;
+    ::ll::TypedStorage<4, 4, ::MinecartType> mCartType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MinecartItem& operator=(MinecartItem const&);
-    MinecartItem(MinecartItem const&);
-    MinecartItem();
 
 public:
     // virtual functions

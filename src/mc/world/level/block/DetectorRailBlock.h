@@ -17,12 +17,6 @@ class Random;
 
 class DetectorRailBlock : public ::BaseRailBlock {
 public:
-    // prevent constructor by default
-    DetectorRailBlock& operator=(DetectorRailBlock const&);
-    DetectorRailBlock(DetectorRailBlock const&);
-    DetectorRailBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

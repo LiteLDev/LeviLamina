@@ -21,14 +21,8 @@ class ColoredTorchBlock : public ::TorchBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk44b2a8;
+    ::ll::TypedStorage<1, 1, ::ColoredTorchColor> mBaseColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ColoredTorchBlock& operator=(ColoredTorchBlock const&);
-    ColoredTorchBlock(ColoredTorchBlock const&);
-    ColoredTorchBlock();
 
 public:
     // virtual functions

@@ -16,19 +16,13 @@ class Material;
 class Vec3;
 // clang-format on
 
-class FaceDirectionalActorBlock : public ::ActorBlockBase<::BlockLegacy> {
+class FaceDirectionalActorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf147de;
-    ::ll::UntypedStorage<4, 4> mUnk6bc58a;
+    ::ll::TypedStorage<1, 1, bool>  mHorizontalOnly;
+    ::ll::TypedStorage<4, 4, float> mYRotOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FaceDirectionalActorBlock& operator=(FaceDirectionalActorBlock const&);
-    FaceDirectionalActorBlock(FaceDirectionalActorBlock const&);
-    FaceDirectionalActorBlock();
 
 public:
     // virtual functions

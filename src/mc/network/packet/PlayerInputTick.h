@@ -6,14 +6,8 @@ struct PlayerInputTick {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd82549;
+    ::ll::TypedStorage<8, 8, uint64> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInputTick& operator=(PlayerInputTick const&);
-    PlayerInputTick(PlayerInputTick const&);
-    PlayerInputTick();
 
 public:
     // member functions

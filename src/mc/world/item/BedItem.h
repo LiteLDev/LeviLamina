@@ -20,12 +20,6 @@ struct ResolvedItemIconInfo;
 
 class BedItem : public ::Item {
 public:
-    // prevent constructor by default
-    BedItem& operator=(BedItem const&);
-    BedItem(BedItem const&);
-    BedItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

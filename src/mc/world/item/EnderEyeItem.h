@@ -14,12 +14,6 @@ class Player;
 
 class EnderEyeItem : public ::Item {
 public:
-    // prevent constructor by default
-    EnderEyeItem& operator=(EnderEyeItem const&);
-    EnderEyeItem(EnderEyeItem const&);
-    EnderEyeItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

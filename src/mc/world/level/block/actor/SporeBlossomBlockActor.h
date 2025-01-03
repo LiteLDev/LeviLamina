@@ -13,12 +13,6 @@ class BlockSource;
 
 class SporeBlossomBlockActor : public ::BlockActor {
 public:
-    // prevent constructor by default
-    SporeBlossomBlockActor& operator=(SporeBlossomBlockActor const&);
-    SporeBlossomBlockActor(SporeBlossomBlockActor const&);
-    SporeBlossomBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

@@ -21,12 +21,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class TridentItem : public ::Item {
 public:
-    // prevent constructor by default
-    TridentItem& operator=(TridentItem const&);
-    TridentItem(TridentItem const&);
-    TridentItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 80

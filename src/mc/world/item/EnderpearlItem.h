@@ -14,12 +14,6 @@ class Player;
 
 class EnderpearlItem : public ::Item {
 public:
-    // prevent constructor by default
-    EnderpearlItem& operator=(EnderpearlItem const&);
-    EnderpearlItem(EnderpearlItem const&);
-    EnderpearlItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

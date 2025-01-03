@@ -25,12 +25,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class PortalBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    PortalBlock& operator=(PortalBlock const&);
-    PortalBlock(PortalBlock const&);
-    PortalBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 77

@@ -17,18 +17,12 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class NoteBlock : public ::ActorBlockBase<::BlockLegacy> {
+class NoteBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5c0ef6;
+    ::ll::TypedStorage<1, 1, bool> mSkullPlacementEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NoteBlock& operator=(NoteBlock const&);
-    NoteBlock(NoteBlock const&);
-    NoteBlock();
 
 public:
     // virtual functions

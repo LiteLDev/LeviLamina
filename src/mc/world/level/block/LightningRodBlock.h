@@ -24,12 +24,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class LightningRodBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    LightningRodBlock& operator=(LightningRodBlock const&);
-    LightningRodBlock(LightningRodBlock const&);
-    LightningRodBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 44

@@ -14,12 +14,6 @@ class Player;
 
 class BarrelBlockActor : public ::ChestBlockActor {
 public:
-    // prevent constructor by default
-    BarrelBlockActor& operator=(BarrelBlockActor const&);
-    BarrelBlockActor(BarrelBlockActor const&);
-    BarrelBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 26

@@ -9,12 +9,6 @@
 
 class PumpkinBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    PumpkinBlockItem& operator=(PumpkinBlockItem const&);
-    PumpkinBlockItem(PumpkinBlockItem const&);
-    PumpkinBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

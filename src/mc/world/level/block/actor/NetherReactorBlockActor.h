@@ -17,16 +17,10 @@ class NetherReactorBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5234bc;
-    ::ll::UntypedStorage<1, 1> mUnk1b4bc5;
-    ::ll::UntypedStorage<2, 2> mUnk26882d;
+    ::ll::TypedStorage<1, 1, bool>  mIsInitialized;
+    ::ll::TypedStorage<1, 1, bool>  mHasFinished;
+    ::ll::TypedStorage<2, 2, short> mProgress;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetherReactorBlockActor& operator=(NetherReactorBlockActor const&);
-    NetherReactorBlockActor(NetherReactorBlockActor const&);
-    NetherReactorBlockActor();
 
 public:
     // virtual functions

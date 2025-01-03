@@ -21,13 +21,7 @@ class ItemInstance;
 class Random;
 // clang-format on
 
-class EndGatewayBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    EndGatewayBlock& operator=(EndGatewayBlock const&);
-    EndGatewayBlock(EndGatewayBlock const&);
-    EndGatewayBlock();
-
+class EndGatewayBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -23,12 +23,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class TwistingVinesBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    TwistingVinesBlock& operator=(TwistingVinesBlock const&);
-    TwistingVinesBlock(TwistingVinesBlock const&);
-    TwistingVinesBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

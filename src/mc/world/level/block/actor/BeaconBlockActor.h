@@ -18,6 +18,7 @@ class DataLoadHelper;
 class ItemDescriptor;
 class ItemStack;
 class Level;
+class MobEffect;
 class Player;
 class SaveContext;
 struct BeaconBeamSection;
@@ -25,26 +26,24 @@ struct BeaconBeamSection;
 
 class BeaconBlockActor : public ::BlockActor, public ::Container {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf9577e;
-    ::ll::UntypedStorage<4, 4>  mUnk112af5;
-    ::ll::UntypedStorage<4, 4>  mUnke4252b;
-    ::ll::UntypedStorage<4, 4>  mUnk8c91ef;
-    ::ll::UntypedStorage<4, 4>  mUnk8c60cc;
-    ::ll::UntypedStorage<4, 4>  mUnk5442ef;
-    ::ll::UntypedStorage<4, 4>  mUnk479d98;
-    ::ll::UntypedStorage<4, 4>  mUnkdee6c7;
-    ::ll::UntypedStorage<4, 4>  mUnkb92cc9;
-    ::ll::UntypedStorage<8, 24> mUnk13066a;
-    ::ll::UntypedStorage<8, 24> mUnk58a14e;
-    // NOLINTEND
+    // BeaconBlockActor inner types define
+    using BeaconBeamSections = ::std::vector<::BeaconBeamSection>;
 
 public:
-    // prevent constructor by default
-    BeaconBlockActor& operator=(BeaconBlockActor const&);
-    BeaconBlockActor(BeaconBlockActor const&);
-    BeaconBlockActor();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::BeaconBeamSection>>         mBeamSections;
+    ::ll::TypedStorage<4, 4, float>                                       mBeamRot;
+    ::ll::TypedStorage<4, 4, int>                                         mNumLevels;
+    ::ll::TypedStorage<4, 4, int>                                         mNumLevelsSet;
+    ::ll::TypedStorage<4, 4, int>                                         mBlockRefreshCounter;
+    ::ll::TypedStorage<4, 4, int>                                         mPrimaryEffectId;
+    ::ll::TypedStorage<4, 4, int>                                         mSecondaryEffectId;
+    ::ll::TypedStorage<4, 4, int>                                         mPrimaryEffectTier;
+    ::ll::TypedStorage<4, 4, int>                                         mSecondaryEffectTier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffect*>>                mBeaconEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::MobEffect*>>> mTierEffects;
+    // NOLINTEND
 
 public:
     // virtual functions

@@ -18,12 +18,6 @@ class ItemInstance;
 
 class CarrotBlock : public ::CropBlock {
 public:
-    // prevent constructor by default
-    CarrotBlock& operator=(CarrotBlock const&);
-    CarrotBlock(CarrotBlock const&);
-    CarrotBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 153

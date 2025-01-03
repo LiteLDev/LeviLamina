@@ -20,12 +20,6 @@ class Player;
 
 class EndPortalFrameBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    EndPortalFrameBlock& operator=(EndPortalFrameBlock const&);
-    EndPortalFrameBlock(EndPortalFrameBlock const&);
-    EndPortalFrameBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

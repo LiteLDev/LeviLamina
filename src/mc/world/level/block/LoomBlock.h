@@ -13,12 +13,6 @@ class Player;
 
 class LoomBlock : public ::FaceDirectionalBlock {
 public:
-    // prevent constructor by default
-    LoomBlock& operator=(LoomBlock const&);
-    LoomBlock(LoomBlock const&);
-    LoomBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

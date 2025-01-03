@@ -17,12 +17,6 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class SlimeBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SlimeBlock& operator=(SlimeBlock const&);
-    SlimeBlock(SlimeBlock const&);
-    SlimeBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 131

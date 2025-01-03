@@ -23,12 +23,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class FireBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    FireBlock& operator=(FireBlock const&);
-    FireBlock(FireBlock const&);
-    FireBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

@@ -24,12 +24,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class PaleHangingMossBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    PaleHangingMossBlock& operator=(PaleHangingMossBlock const&);
-    PaleHangingMossBlock(PaleHangingMossBlock const&);
-    PaleHangingMossBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 92

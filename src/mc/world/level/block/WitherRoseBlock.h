@@ -17,12 +17,6 @@ class Random;
 
 class WitherRoseBlock : public ::FlowerBlock {
 public:
-    // prevent constructor by default
-    WitherRoseBlock& operator=(WitherRoseBlock const&);
-    WitherRoseBlock(WitherRoseBlock const&);
-    WitherRoseBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123

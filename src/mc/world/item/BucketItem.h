@@ -31,14 +31,8 @@ class BucketItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk6e435a;
+    ::ll::TypedStorage<2, 2, ::BucketFillType> mFillType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BucketItem& operator=(BucketItem const&);
-    BucketItem(BucketItem const&);
-    BucketItem();
 
 public:
     // virtual functions

@@ -14,12 +14,6 @@ class RenderParams;
 
 class PickaxeItem : public ::DiggerItem {
 public:
-    // prevent constructor by default
-    PickaxeItem& operator=(PickaxeItem const&);
-    PickaxeItem(PickaxeItem const&);
-    PickaxeItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

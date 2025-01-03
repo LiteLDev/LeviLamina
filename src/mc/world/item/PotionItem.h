@@ -30,15 +30,9 @@ class PotionItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1984> mUnk63a897;
-    ::ll::UntypedStorage<4, 124>  mUnk23be1e;
+    ::ll::TypedStorage<8, 1984, ::ResolvedItemIconInfo[31]> mPotionIcons;
+    ::ll::TypedStorage<4, 124, ::Potion::PotionVariant[31]> mPotionVariants;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PotionItem& operator=(PotionItem const&);
-    PotionItem(PotionItem const&);
-    PotionItem();
 
 public:
     // virtual functions

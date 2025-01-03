@@ -24,12 +24,6 @@ struct BlockGraphicsModeChangeContext;
 
 class SugarCaneBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SugarCaneBlock& operator=(SugarCaneBlock const&);
-    SugarCaneBlock(SugarCaneBlock const&);
-    SugarCaneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

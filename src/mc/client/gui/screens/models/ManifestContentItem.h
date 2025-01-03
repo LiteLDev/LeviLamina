@@ -4,22 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ContentItem.h"
+#include "mc/deps/core/file/PathBuffer.h"
+
+// auto generated forward declare list
+// clang-format off
+class PackManifest;
+// clang-format on
 
 struct ManifestContentItem : public ::ContentItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf0bc93;
-    ::ll::UntypedStorage<8, 32> mUnk4aded3;
-    ::ll::UntypedStorage<8, 32> mUnk6a2e02;
-    ::ll::UntypedStorage<8, 32> mUnkac926c;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackManifest const>> mManifest;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>      mIconPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>      mZipPath;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mFileSystem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ManifestContentItem& operator=(ManifestContentItem const&);
-    ManifestContentItem(ManifestContentItem const&);
-    ManifestContentItem();
 
 public:
     // virtual functions

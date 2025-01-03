@@ -14,6 +14,7 @@
 #include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/ItemAcquisitionMethod.h"
 #include "mc/world/item/ItemColor.h"
+#include "mc/world/item/ItemCommandVisibility.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/Rarity.h"
 #include "mc/world/level/block/BlockShape.h"
@@ -26,8 +27,10 @@ class Block;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class CameraItemComponentLegacy;
 class CompoundTag;
 class Container;
+class FoodItemComponentLegacy;
 class HashedString;
 class ICameraItemComponent;
 class IDataInput;
@@ -45,6 +48,7 @@ class Mob;
 class Player;
 class ReadOnlyBinaryStream;
 class RenderParams;
+class SeedItemComponentLegacy;
 class SemVersion;
 class Vec3;
 struct ActorDefinitionIdentifier;
@@ -110,56 +114,50 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkd8cf9b;
-    ::ll::UntypedStorage<4, 4>   mUnk310d0e;
-    ::ll::UntypedStorage<1, 1>   mUnk31d4ef;
-    ::ll::UntypedStorage<1, 1>   mUnkab28d5;
-    ::ll::UntypedStorage<1, 1>   mUnk264520;
-    ::ll::UntypedStorage<8, 32>  mUnk5808f4;
-    ::ll::UntypedStorage<4, 4>   mUnk2128a3;
-    ::ll::UntypedStorage<4, 4>   mUnk888808;
-    ::ll::UntypedStorage<4, 4>   mUnkb08bd1;
-    ::ll::UntypedStorage<8, 32>  mUnke05dca;
-    ::ll::UntypedStorage<8, 32>  mUnk197c4e;
-    ::ll::UntypedStorage<1, 1>   mUnk3c1a24;
-    ::ll::UntypedStorage<2, 2>   mUnk205d25;
-    ::ll::UntypedStorage<8, 32>  mUnk93c8f1;
-    ::ll::UntypedStorage<8, 48>  mUnkcfa169;
-    ::ll::UntypedStorage<8, 32>  mUnka72ecd;
-    ::ll::UntypedStorage<8, 48>  mUnka83f8d;
-    ::ll::UntypedStorage<2, 2>   mUnk9bf988;
-    bool                         mUnk7ccfc4 : 1;
-    bool                         mUnk38eab6 : 1;
-    bool                         mUnkc9909c : 1;
-    bool                         mUnk8b715d : 1;
-    bool                         mUnk9800f6 : 1;
-    bool                         mUnk3a2c8c : 1;
-    bool                         mUnkf462ad : 1;
-    bool                         mUnkf413b1 : 1;
-    bool                         mUnk384153 : 1;
-    ::ll::UntypedStorage<4, 4>   mUnk793f97;
-    ::ll::UntypedStorage<8, 120> mUnk3d2ae5;
-    ::ll::UntypedStorage<8, 8>   mUnkba2714;
-    ::ll::UntypedStorage<4, 4>   mUnk67f864;
-    ::ll::UntypedStorage<8, 8>   mUnk310f5d;
-    ::ll::UntypedStorage<8, 32>  mUnk82b59a;
-    ::ll::UntypedStorage<4, 4>   mUnk8f445c;
-    ::ll::UntypedStorage<4, 4>   mUnkcb8a6c;
-    ::ll::UntypedStorage<1, 1>   mUnk8fa9bc;
-    ::ll::UntypedStorage<4, 4>   mUnk2d9f85;
-    ::ll::UntypedStorage<4, 4>   mUnkc80f12;
-    ::ll::UntypedStorage<8, 8>   mUnk79876b;
-    ::ll::UntypedStorage<8, 8>   mUnk4afcc8;
-    ::ll::UntypedStorage<8, 8>   mUnkeaf0a6;
-    ::ll::UntypedStorage<8, 24>  mUnkc09b56;
-    ::ll::UntypedStorage<8, 24>  mUnk9542eb;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mTextureAtlasFile;
+    ::ll::TypedStorage<4, 4, int>                                             mFrameCount;
+    ::ll::TypedStorage<1, 1, bool>                                            mAnimatesInToolbar;
+    ::ll::TypedStorage<1, 1, bool>                                            mIsMirroredArt;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation>             mUseAnim;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mHoverTextColorFormat;
+    ::ll::TypedStorage<4, 4, int>                                             mIconFrame;
+    ::ll::TypedStorage<4, 4, int>                                             mAtlasFrame;
+    ::ll::TypedStorage<4, 4, int>                                             mAtlasTotalFrames;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mIconName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mAtlasName;
+    ::ll::TypedStorage<1, 1, uchar>                                           mMaxStackSize;
+    ::ll::TypedStorage<2, 2, short>                                           mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mDescriptionId;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                 mRawNameId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mNamespace;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                 mFullName;
+    ::ll::TypedStorage<2, 2, short>                                           mMaxDamage;
+    bool                                                                      mIsGlint              : 1;
+    bool                                                                      mHandEquipped         : 1;
+    bool                                                                      mIsStackedByData      : 1;
+    bool                                                                      mRequiresWorldBuilder : 1;
+    bool                                                                      mExplodable           : 1;
+    bool                                                                      mFireResistant        : 1;
+    bool                                                                      mShouldDespawn        : 1;
+    bool                                                                      mAllowOffhand         : 1;
+    bool                                                                      mIgnoresPermissions   : 1;
+    ::ll::TypedStorage<4, 4, int>                                             mMaxUseDuration;
+    ::ll::TypedStorage<8, 120, ::BaseGameVersion>                             mMinRequiredBaseGameVersion;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>>                  mLegacyBlock;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                          mCreativeCategory;
+    ::ll::TypedStorage<8, 8, ::Item*>                                         mCraftingRemainingItem;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mCreativeGroup;
+    ::ll::TypedStorage<4, 4, float>                                           mFurnaceBurnIntervalModifier;
+    ::ll::TypedStorage<4, 4, float>                                           mFurnaceXPmultiplier;
+    ::ll::TypedStorage<1, 1, ::ItemCommandVisibility>                         mIsHiddenInCommands;
+    ::ll::TypedStorage<4, 4, ::Rarity>                                        mBaseRarity;
+    ::ll::TypedStorage<4, 4, ::Interactions::Mining::MineBlockItemEffectType> mMineBlockType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FoodItemComponentLegacy>>    mFoodComponentLegacy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SeedItemComponentLegacy>>    mSeedComponent;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraItemComponentLegacy>>  mCameraComponentLegacy;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>         mOnResetBAIcallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemTag>>                       mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Item& operator=(Item const&);
-    Item(Item const&);
-    Item();
 
 public:
     // virtual functions

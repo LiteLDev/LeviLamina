@@ -16,12 +16,6 @@ class Vec3;
 
 class CompassItem : public ::AbstractCompassItem {
 public:
-    // prevent constructor by default
-    CompassItem& operator=(CompassItem const&);
-    CompassItem(CompassItem const&);
-    CompassItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

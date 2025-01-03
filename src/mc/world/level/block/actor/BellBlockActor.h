@@ -22,17 +22,11 @@ class BellBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd29ede;
-    ::ll::UntypedStorage<1, 1> mUnk35f763;
-    ::ll::UntypedStorage<1, 1> mUnk8403a4;
-    ::ll::UntypedStorage<4, 4> mUnk8a3257;
+    ::ll::TypedStorage<1, 1, bool>              mRinging;
+    ::ll::TypedStorage<1, 1, ::Direction::Type> mMovementDirection;
+    ::ll::TypedStorage<1, 1, bool>              mPowered;
+    ::ll::TypedStorage<4, 4, int>               mAlarmCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BellBlockActor& operator=(BellBlockActor const&);
-    BellBlockActor(BellBlockActor const&);
-    BellBlockActor();
 
 public:
     // virtual functions

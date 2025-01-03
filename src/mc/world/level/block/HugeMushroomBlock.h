@@ -12,12 +12,6 @@ class Material;
 
 class HugeMushroomBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    HugeMushroomBlock& operator=(HugeMushroomBlock const&);
-    HugeMushroomBlock(HugeMushroomBlock const&);
-    HugeMushroomBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 125

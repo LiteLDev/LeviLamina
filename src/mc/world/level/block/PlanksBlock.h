@@ -16,14 +16,8 @@ class PlanksBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk504336;
+    ::ll::TypedStorage<4, 4, ::WoodType> mWoodType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlanksBlock& operator=(PlanksBlock const&);
-    PlanksBlock(PlanksBlock const&);
-    PlanksBlock();
 
 public:
     // virtual functions

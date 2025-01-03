@@ -17,14 +17,8 @@ class DiodeBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbce537;
+    ::ll::TypedStorage<1, 1, bool> mOn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DiodeBlock& operator=(DiodeBlock const&);
-    DiodeBlock(DiodeBlock const&);
-    DiodeBlock();
 
 public:
     // virtual functions

@@ -17,12 +17,6 @@ class Vec3;
 
 class ShovelItem : public ::DiggerItem {
 public:
-    // prevent constructor by default
-    ShovelItem& operator=(ShovelItem const&);
-    ShovelItem(ShovelItem const&);
-    ShovelItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

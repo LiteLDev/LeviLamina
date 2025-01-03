@@ -16,12 +16,6 @@ class BlockSource;
 
 class TorchflowerBlock : public ::FlowerBlock {
 public:
-    // prevent constructor by default
-    TorchflowerBlock& operator=(TorchflowerBlock const&);
-    TorchflowerBlock(TorchflowerBlock const&);
-    TorchflowerBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 74

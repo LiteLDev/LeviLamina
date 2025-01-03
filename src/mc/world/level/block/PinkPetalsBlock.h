@@ -22,12 +22,6 @@ class Random;
 
 class PinkPetalsBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    PinkPetalsBlock& operator=(PinkPetalsBlock const&);
-    PinkPetalsBlock(PinkPetalsBlock const&);
-    PinkPetalsBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

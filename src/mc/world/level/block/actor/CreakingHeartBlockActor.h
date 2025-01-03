@@ -13,23 +13,18 @@ class CompoundTag;
 class DataLoadHelper;
 class Level;
 class SaveContext;
+struct ActorUniqueID;
 // clang-format on
 
 class CreakingHeartBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkeae38c;
-    ::ll::UntypedStorage<8, 8> mUnkf8b826;
-    ::ll::UntypedStorage<4, 4> mUnk6f5823;
-    ::ll::UntypedStorage<4, 4> mUnkdff627;
+    ::ll::TypedStorage<4, 4, uint>            mCooldown;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mSpawnedCreakingID;
+    ::ll::TypedStorage<4, 4, uint>            mTrailResidualDuration;
+    ::ll::TypedStorage<4, 4, uint>            mElapsedCooldownsWithBlockedPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CreakingHeartBlockActor& operator=(CreakingHeartBlockActor const&);
-    CreakingHeartBlockActor(CreakingHeartBlockActor const&);
-    CreakingHeartBlockActor();
 
 public:
     // virtual functions

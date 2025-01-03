@@ -20,15 +20,9 @@ class FlowerPotBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3e64b6;
-    ::ll::UntypedStorage<8, 8> mUnk9647e4;
+    ::ll::TypedStorage<8, 8, ::Block const*> mPlant;
+    ::ll::TypedStorage<8, 8, ::Block const*> mPreviousPlant;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlowerPotBlockActor& operator=(FlowerPotBlockActor const&);
-    FlowerPotBlockActor(FlowerPotBlockActor const&);
-    FlowerPotBlockActor();
 
 public:
     // virtual functions

@@ -23,12 +23,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class FireworksItem : public ::Item {
 public:
-    // prevent constructor by default
-    FireworksItem& operator=(FireworksItem const&);
-    FireworksItem(FireworksItem const&);
-    FireworksItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

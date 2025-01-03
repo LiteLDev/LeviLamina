@@ -17,14 +17,8 @@ class BoneMealItem : public ::FertilizerItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkff559c;
+    ::ll::TypedStorage<1, 1, bool const> mAllowLegacyUseAsDye;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoneMealItem& operator=(BoneMealItem const&);
-    BoneMealItem(BoneMealItem const&);
-    BoneMealItem();
 
 public:
     // virtual functions

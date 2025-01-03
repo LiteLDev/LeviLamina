@@ -13,12 +13,6 @@ class ItemDescriptor;
 
 class SaplingBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    SaplingBlockItem& operator=(SaplingBlockItem const&);
-    SaplingBlockItem(SaplingBlockItem const&);
-    SaplingBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

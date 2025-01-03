@@ -12,12 +12,6 @@ class ItemStackBase;
 
 class RapidFertilizerItem : public ::FertilizerItem {
 public:
-    // prevent constructor by default
-    RapidFertilizerItem& operator=(RapidFertilizerItem const&);
-    RapidFertilizerItem(RapidFertilizerItem const&);
-    RapidFertilizerItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 97

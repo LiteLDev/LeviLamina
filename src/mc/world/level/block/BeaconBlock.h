@@ -12,13 +12,7 @@ class BlockPos;
 class Player;
 // clang-format on
 
-class BeaconBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    BeaconBlock& operator=(BeaconBlock const&);
-    BeaconBlock(BeaconBlock const&);
-    BeaconBlock();
-
+class BeaconBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

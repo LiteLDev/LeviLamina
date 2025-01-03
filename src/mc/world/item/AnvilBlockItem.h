@@ -7,12 +7,6 @@
 
 class AnvilBlockItem : public ::AuxDataBlockItem {
 public:
-    // prevent constructor by default
-    AnvilBlockItem& operator=(AnvilBlockItem const&);
-    AnvilBlockItem(AnvilBlockItem const&);
-    AnvilBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 33

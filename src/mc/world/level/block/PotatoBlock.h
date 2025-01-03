@@ -18,12 +18,6 @@ class ItemInstance;
 
 class PotatoBlock : public ::CropBlock {
 public:
-    // prevent constructor by default
-    PotatoBlock& operator=(PotatoBlock const&);
-    PotatoBlock(PotatoBlock const&);
-    PotatoBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 153

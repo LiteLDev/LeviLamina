@@ -23,15 +23,9 @@ class PumpkinBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkceb273;
-    ::ll::UntypedStorage<1, 1> mUnk63601d;
+    ::ll::TypedStorage<1, 1, bool> mLit;
+    ::ll::TypedStorage<1, 1, bool> mCarved;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PumpkinBlock& operator=(PumpkinBlock const&);
-    PumpkinBlock(PumpkinBlock const&);
-    PumpkinBlock();
 
 public:
     // virtual functions

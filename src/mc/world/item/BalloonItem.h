@@ -22,12 +22,6 @@ namespace mce { class Color; }
 
 class BalloonItem : public ::ChemistryItem {
 public:
-    // prevent constructor by default
-    BalloonItem& operator=(BalloonItem const&);
-    BalloonItem(BalloonItem const&);
-    BalloonItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

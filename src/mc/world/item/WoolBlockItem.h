@@ -15,14 +15,8 @@ class WoolBlockItem : public ::BlockItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk317709;
+    ::ll::TypedStorage<1, 1, bool> mIsCarpet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WoolBlockItem& operator=(WoolBlockItem const&);
-    WoolBlockItem(WoolBlockItem const&);
-    WoolBlockItem();
 
 public:
     // virtual functions

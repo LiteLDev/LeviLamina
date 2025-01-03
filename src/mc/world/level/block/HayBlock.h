@@ -16,12 +16,6 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class HayBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    HayBlock& operator=(HayBlock const&);
-    HayBlock(HayBlock const&);
-    HayBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 131

@@ -16,12 +16,6 @@ class Vec3;
 
 class TopSnowBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    TopSnowBlockItem& operator=(TopSnowBlockItem const&);
-    TopSnowBlockItem(TopSnowBlockItem const&);
-    TopSnowBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 33

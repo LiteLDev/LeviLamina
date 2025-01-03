@@ -34,12 +34,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    SweetBerryBushBlock& operator=(SweetBerryBushBlock const&);
-    SweetBerryBushBlock(SweetBerryBushBlock const&);
-    SweetBerryBushBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79

@@ -16,12 +16,6 @@ class Player;
 
 class BlastFurnaceBlock : public ::FurnaceBlock {
 public:
-    // prevent constructor by default
-    BlastFurnaceBlock& operator=(BlastFurnaceBlock const&);
-    BlastFurnaceBlock(BlastFurnaceBlock const&);
-    BlastFurnaceBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

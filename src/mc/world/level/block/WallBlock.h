@@ -29,12 +29,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class WallBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    WallBlock& operator=(WallBlock const&);
-    WallBlock(WallBlock const&);
-    WallBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 92

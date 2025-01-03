@@ -16,12 +16,6 @@ class Vec3;
 
 class BambooItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    BambooItem& operator=(BambooItem const&);
-    BambooItem(BambooItem const&);
-    BambooItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 33

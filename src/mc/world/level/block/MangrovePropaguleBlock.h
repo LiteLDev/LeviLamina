@@ -21,12 +21,6 @@ class Vec3;
 
 class MangrovePropaguleBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    MangrovePropaguleBlock& operator=(MangrovePropaguleBlock const&);
-    MangrovePropaguleBlock(MangrovePropaguleBlock const&);
-    MangrovePropaguleBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 125

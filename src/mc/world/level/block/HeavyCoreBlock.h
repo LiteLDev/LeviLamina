@@ -14,12 +14,6 @@ class BlockPos;
 
 class HeavyCoreBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    HeavyCoreBlock& operator=(HeavyCoreBlock const&);
-    HeavyCoreBlock(HeavyCoreBlock const&);
-    HeavyCoreBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 23

@@ -8,12 +8,6 @@
 
 class HoeItem : public ::DiggerItem {
 public:
-    // prevent constructor by default
-    HoeItem& operator=(HoeItem const&);
-    HoeItem(HoeItem const&);
-    HoeItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

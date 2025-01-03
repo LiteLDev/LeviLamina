@@ -7,12 +7,6 @@
 
 class SnowBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SnowBlock& operator=(SnowBlock const&);
-    SnowBlock(SnowBlock const&);
-    SnowBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

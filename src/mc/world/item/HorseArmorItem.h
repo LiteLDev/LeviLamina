@@ -33,16 +33,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbc1e43;
-    ::ll::UntypedStorage<4, 4> mUnk58d2fe;
-    ::ll::UntypedStorage<4, 4> mUnk6e799e;
+    ::ll::TypedStorage<4, 4, int const>              mDefense;
+    ::ll::TypedStorage<4, 4, int const>              mModelIndex;
+    ::ll::TypedStorage<4, 4, ::HorseArmorItem::Tier> mTier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HorseArmorItem& operator=(HorseArmorItem const&);
-    HorseArmorItem(HorseArmorItem const&);
-    HorseArmorItem();
 
 public:
     // virtual functions

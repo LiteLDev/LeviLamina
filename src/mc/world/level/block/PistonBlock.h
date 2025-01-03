@@ -22,7 +22,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class PistonBlock : public ::ActorBlockBase<::BlockLegacy> {
+class PistonBlock : public ::ActorBlock {
 public:
     // PistonBlock inner types define
     enum class Type : int {
@@ -33,14 +33,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2efdc4;
+    ::ll::TypedStorage<4, 4, ::PistonBlock::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PistonBlock& operator=(PistonBlock const&);
-    PistonBlock(PistonBlock const&);
-    PistonBlock();
 
 public:
     // virtual functions

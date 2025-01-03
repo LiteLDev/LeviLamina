@@ -22,21 +22,15 @@ class EndGatewayBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk5aef24;
-    ::ll::UntypedStorage<4, 4>  mUnke30d8d;
-    ::ll::UntypedStorage<4, 12> mUnk17ded5;
-    ::ll::UntypedStorage<1, 1>  mUnk5168cb;
-    ::ll::UntypedStorage<1, 1>  mUnkc81ec4;
-    ::ll::UntypedStorage<1, 1>  mUnke4d718;
-    ::ll::UntypedStorage<1, 1>  mUnk2e2dbc;
-    ::ll::UntypedStorage<1, 1>  mUnka17c7d;
+    ::ll::TypedStorage<4, 4, int>         mAge;
+    ::ll::TypedStorage<4, 4, int>         mTeleportCooldown;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mExitPortal;
+    ::ll::TypedStorage<1, 1, bool>        mNeedsExitGeneration;
+    ::ll::TypedStorage<1, 1, bool>        mTeleportTriggered;
+    ::ll::TypedStorage<1, 1, bool>        mNeedsExitPositionVerification;
+    ::ll::TypedStorage<1, 1, bool>        mExitPositionVerified;
+    ::ll::TypedStorage<1, 1, bool>        mEndGatewayBadPosResetRequired;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EndGatewayBlockActor& operator=(EndGatewayBlockActor const&);
-    EndGatewayBlockActor(EndGatewayBlockActor const&);
-    EndGatewayBlockActor();
 
 public:
     // virtual functions

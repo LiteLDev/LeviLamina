@@ -16,12 +16,6 @@ struct ResourceDropsContext;
 
 class RotatedPillarInfestedBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    RotatedPillarInfestedBlock& operator=(RotatedPillarInfestedBlock const&);
-    RotatedPillarInfestedBlock(RotatedPillarInfestedBlock const&);
-    RotatedPillarInfestedBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 91

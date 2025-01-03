@@ -15,13 +15,7 @@ class Material;
 class Random;
 // clang-format on
 
-class SculkCatalystBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    SculkCatalystBlock& operator=(SculkCatalystBlock const&);
-    SculkCatalystBlock(SculkCatalystBlock const&);
-    SculkCatalystBlock();
-
+class SculkCatalystBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

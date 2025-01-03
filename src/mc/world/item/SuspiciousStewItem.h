@@ -35,11 +35,7 @@ public:
         Count            = 13,
     };
 
-public:
-    // prevent constructor by default
-    SuspiciousStewItem& operator=(SuspiciousStewItem const&);
-    SuspiciousStewItem(SuspiciousStewItem const&);
-    SuspiciousStewItem();
+    using StewEffects = ::std::array<::MobEffectInstance, 13>;
 
 public:
     // virtual functions

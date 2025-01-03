@@ -14,12 +14,6 @@ class Random;
 
 class EnderChestBlock : public ::ChestBlock {
 public:
-    // prevent constructor by default
-    EnderChestBlock& operator=(EnderChestBlock const&);
-    EnderChestBlock(EnderChestBlock const&);
-    EnderChestBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123

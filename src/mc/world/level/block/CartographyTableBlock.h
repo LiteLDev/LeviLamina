@@ -13,12 +13,6 @@ class Player;
 
 class CartographyTableBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CartographyTableBlock& operator=(CartographyTableBlock const&);
-    CartographyTableBlock(CartographyTableBlock const&);
-    CartographyTableBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

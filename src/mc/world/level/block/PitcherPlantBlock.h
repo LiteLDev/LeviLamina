@@ -16,12 +16,6 @@ class BlockSource;
 
 class PitcherPlantBlock : public ::DoublePlantBaseBlock {
 public:
-    // prevent constructor by default
-    PitcherPlantBlock& operator=(PitcherPlantBlock const&);
-    PitcherPlantBlock(PitcherPlantBlock const&);
-    PitcherPlantBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 74

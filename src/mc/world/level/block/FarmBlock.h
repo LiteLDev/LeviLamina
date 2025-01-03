@@ -21,12 +21,6 @@ class Random;
 
 class FarmBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    FarmBlock& operator=(FarmBlock const&);
-    FarmBlock(FarmBlock const&);
-    FarmBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

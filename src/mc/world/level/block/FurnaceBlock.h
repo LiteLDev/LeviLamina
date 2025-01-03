@@ -18,18 +18,12 @@ class Player;
 class Random;
 // clang-format on
 
-class FurnaceBlock : public ::ActorBlockBase<::BlockLegacy> {
+class FurnaceBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb923e6;
+    ::ll::TypedStorage<1, 1, bool const> mLit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FurnaceBlock& operator=(FurnaceBlock const&);
-    FurnaceBlock(FurnaceBlock const&);
-    FurnaceBlock();
 
 public:
     // virtual functions

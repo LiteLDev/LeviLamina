@@ -30,14 +30,8 @@ class PistonArmBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4f28c5;
+    ::ll::TypedStorage<4, 4, ::PistonBlock::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PistonArmBlock& operator=(PistonArmBlock const&);
-    PistonArmBlock(PistonArmBlock const&);
-    PistonArmBlock();
 
 public:
     // virtual functions

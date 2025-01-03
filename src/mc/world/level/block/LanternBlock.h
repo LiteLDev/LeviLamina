@@ -18,12 +18,6 @@ class Vec3;
 
 class LanternBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    LanternBlock& operator=(LanternBlock const&);
-    LanternBlock(LanternBlock const&);
-    LanternBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

@@ -22,15 +22,9 @@ class WeaponItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk136b3f;
-    ::ll::UntypedStorage<8, 8> mUnk215010;
+    ::ll::TypedStorage<4, 4, int>                 mDamage;
+    ::ll::TypedStorage<8, 8, ::Item::Tier const&> mTier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeaponItem& operator=(WeaponItem const&);
-    WeaponItem(WeaponItem const&);
-    WeaponItem();
 
 public:
     // virtual functions

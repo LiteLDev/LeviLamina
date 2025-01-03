@@ -13,12 +13,6 @@ class Material;
 
 class MangroveRootsBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    MangroveRootsBlock& operator=(MangroveRootsBlock const&);
-    MangroveRootsBlock(MangroveRootsBlock const&);
-    MangroveRootsBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 25

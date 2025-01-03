@@ -17,12 +17,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class ChemicalHeatBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    ChemicalHeatBlock& operator=(ChemicalHeatBlock const&);
-    ChemicalHeatBlock(ChemicalHeatBlock const&);
-    ChemicalHeatBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

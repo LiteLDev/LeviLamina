@@ -30,12 +30,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FireworkChargeItem& operator=(FireworkChargeItem const&);
-    FireworkChargeItem(FireworkChargeItem const&);
-    FireworkChargeItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 52

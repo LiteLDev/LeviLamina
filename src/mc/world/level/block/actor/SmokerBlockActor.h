@@ -12,12 +12,6 @@ class BlockPos;
 
 class SmokerBlockActor : public ::FurnaceBlockActor {
 public:
-    // prevent constructor by default
-    SmokerBlockActor& operator=(SmokerBlockActor const&);
-    SmokerBlockActor(SmokerBlockActor const&);
-    SmokerBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 26

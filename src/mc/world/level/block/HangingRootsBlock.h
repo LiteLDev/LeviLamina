@@ -20,12 +20,6 @@ class Vec3;
 
 class HangingRootsBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    HangingRootsBlock& operator=(HangingRootsBlock const&);
-    HangingRootsBlock(HangingRootsBlock const&);
-    HangingRootsBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 15

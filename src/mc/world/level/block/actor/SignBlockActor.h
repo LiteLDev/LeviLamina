@@ -19,6 +19,7 @@ class Level;
 class Player;
 class SaveContext;
 class TextObjectRoot;
+struct ActorUniqueID;
 namespace mce { class Color; }
 // clang-format on
 
@@ -166,19 +167,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk17e2a6;
-    ::ll::UntypedStorage<8, 8> mUnkf38200;
-    ::ll::UntypedStorage<1, 1> mUnkc6da31;
-    ::ll::UntypedStorage<8, 8> mUnkc7f7fd;
-    ::ll::UntypedStorage<1, 1> mUnk41879d;
-    ::ll::UntypedStorage<1, 1> mUnk27d1e9;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignBlockActor::Text>> mTextFront;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignBlockActor::Text>> mTextBack;
+    ::ll::TypedStorage<1, 1, bool>                                      mIsWaxed;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                           mLockedForEditingBy;
+    ::ll::TypedStorage<1, 1, bool>                                      mIsRemoteProfanityFilterEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                      mIsLocalProfanityFilterEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SignBlockActor& operator=(SignBlockActor const&);
-    SignBlockActor(SignBlockActor const&);
-    SignBlockActor();
 
 public:
     // virtual functions

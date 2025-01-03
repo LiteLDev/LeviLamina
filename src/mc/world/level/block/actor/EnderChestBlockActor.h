@@ -14,12 +14,6 @@ class Player;
 
 class EnderChestBlockActor : public ::ChestBlockActor {
 public:
-    // prevent constructor by default
-    EnderChestBlockActor& operator=(EnderChestBlockActor const&);
-    EnderChestBlockActor(EnderChestBlockActor const&);
-    EnderChestBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

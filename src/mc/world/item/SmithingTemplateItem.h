@@ -24,15 +24,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkbef1ed;
-    ::ll::UntypedStorage<8, 32> mUnkcdef5a;
+    ::ll::TypedStorage<8, 32, ::std::string const> mAppliesToText;
+    ::ll::TypedStorage<8, 32, ::std::string const> mIngredientsText;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SmithingTemplateItem& operator=(SmithingTemplateItem const&);
-    SmithingTemplateItem(SmithingTemplateItem const&);
-    SmithingTemplateItem();
 
 public:
     // virtual functions

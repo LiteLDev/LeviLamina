@@ -14,12 +14,6 @@ class Random;
 
 class BookshelfBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    BookshelfBlock& operator=(BookshelfBlock const&);
-    BookshelfBlock(BookshelfBlock const&);
-    BookshelfBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123

@@ -20,12 +20,6 @@ class Vec3;
 
 class FlintAndSteelItem : public ::Item {
 public:
-    // prevent constructor by default
-    FlintAndSteelItem& operator=(FlintAndSteelItem const&);
-    FlintAndSteelItem(FlintAndSteelItem const&);
-    FlintAndSteelItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 82

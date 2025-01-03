@@ -20,12 +20,6 @@ class Random;
 
 class MudBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    MudBlock& operator=(MudBlock const&);
-    MudBlock(MudBlock const&);
-    MudBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 84

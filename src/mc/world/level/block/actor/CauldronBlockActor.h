@@ -25,18 +25,12 @@ class CauldronBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>    mUnkad4761;
-    ::ll::UntypedStorage<4, 4>    mUnkcebd8c;
-    ::ll::UntypedStorage<1, 1>    mUnk967285;
-    ::ll::UntypedStorage<4, 4>    mUnkf06d67;
-    ::ll::UntypedStorage<8, 1520> mUnk26b5c2;
+    ::ll::TypedStorage<4, 4, int>                  mPotionId;
+    ::ll::TypedStorage<4, 4, ::Potion::PotionType> mPotionType;
+    ::ll::TypedStorage<1, 1, bool>                 mHasCustomColor;
+    ::ll::TypedStorage<4, 4, int>                  mCustomColor;
+    ::ll::TypedStorage<8, 1520, ::ItemStack[10]>   mItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CauldronBlockActor& operator=(CauldronBlockActor const&);
-    CauldronBlockActor(CauldronBlockActor const&);
-    CauldronBlockActor();
 
 public:
     // virtual functions

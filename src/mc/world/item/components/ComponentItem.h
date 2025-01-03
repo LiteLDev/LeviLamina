@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
+#include "mc/world/item/enchanting/Enchant.h"
 #include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
@@ -26,6 +28,7 @@ class Experiments;
 class HashedString;
 class IFoodItemComponent;
 class IPackLoadContext;
+class IconItemComponent;
 class InteractionResult;
 class ItemComponent;
 class ItemDescriptor;
@@ -52,28 +55,23 @@ class ComponentItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    bool                        mUnk55441f : 1;
-    bool                        mUnk7e3dbe : 1;
-    bool                        mUnkb3a6ad : 1;
-    bool                        mUnkce97f3 : 1;
-    ::ll::UntypedStorage<4, 4>  mUnk2dd707;
-    ::ll::UntypedStorage<4, 4>  mUnkf28a76;
-    ::ll::UntypedStorage<4, 4>  mUnkc3033f;
-    ::ll::UntypedStorage<4, 4>  mUnke1212d;
-    ::ll::UntypedStorage<8, 24> mUnkf4e129;
-    ::ll::UntypedStorage<1, 1>  mUnk857325;
-    ::ll::UntypedStorage<8, 16> mUnkd05691;
-    ::ll::UntypedStorage<8, 16> mUnk2e81b6;
-    ::ll::UntypedStorage<8, 8>  mUnkd3b0b9;
-    ::ll::UntypedStorage<8, 16> mUnkad6ce8;
-    ::ll::UntypedStorage<8, 24> mUnk2c44f0;
+    bool                                                    mExcludeUserDataDiffCheck : 1;
+    bool                                                    mCanDestroyInCreative     : 1;
+    bool                                                    mRequiresInteract         : 1;
+    bool                                                    mIsLiquidClipped          : 1;
+    ::ll::TypedStorage<4, 4, float>                         mSpeed;
+    ::ll::TypedStorage<4, 4, int>                           mDamage;
+    ::ll::TypedStorage<4, 4, ::Enchant::Slot>               mEnchantSlot;
+    ::ll::TypedStorage<4, 4, int>                           mEnchantValue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mAlias;
+    ::ll::TypedStorage<1, 1, bool>                          mIsAttachable;
+    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::shared_ptr<::ItemComponent>>> mItemComponents;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IconItemComponent>>                         mIcon;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>>                                  mLegacyBlockForRendering;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::ItemComponent>>>
+                                                                                            mRegisteredCerealComponents;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ComponentItem& operator=(ComponentItem const&);
-    ComponentItem(ComponentItem const&);
-    ComponentItem();
 
 public:
     // virtual functions

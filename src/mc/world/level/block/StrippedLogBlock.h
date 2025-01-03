@@ -18,14 +18,8 @@ class StrippedLogBlock : public ::RotatedPillarBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 36> mUnkb42501;
+    ::ll::TypedStorage<4, 36, ::std::optional<::LogBlockMapColors>> mMapColors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StrippedLogBlock& operator=(StrippedLogBlock const&);
-    StrippedLogBlock(StrippedLogBlock const&);
-    StrippedLogBlock();
 
 public:
     // virtual functions

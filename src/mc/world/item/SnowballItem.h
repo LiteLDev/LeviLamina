@@ -22,12 +22,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class SnowballItem : public ::ComponentItem {
 public:
-    // prevent constructor by default
-    SnowballItem& operator=(SnowballItem const&);
-    SnowballItem(SnowballItem const&);
-    SnowballItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107

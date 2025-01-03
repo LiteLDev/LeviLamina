@@ -17,12 +17,6 @@ class Vec3;
 
 class FrogSpawnBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    FrogSpawnBlockItem& operator=(FrogSpawnBlockItem const&);
-    FrogSpawnBlockItem(FrogSpawnBlockItem const&);
-    FrogSpawnBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

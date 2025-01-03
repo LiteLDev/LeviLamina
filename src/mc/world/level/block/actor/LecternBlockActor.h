@@ -23,16 +23,10 @@ class LecternBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkcae5f4;
-    ::ll::UntypedStorage<4, 4>   mUnk6d9039;
-    ::ll::UntypedStorage<8, 152> mUnk2fc28a;
+    ::ll::TypedStorage<4, 4, int>           mPage;
+    ::ll::TypedStorage<4, 4, int>           mTotalPages;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mBook;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LecternBlockActor& operator=(LecternBlockActor const&);
-    LecternBlockActor(LecternBlockActor const&);
-    LecternBlockActor();
 
 public:
     // virtual functions

@@ -18,14 +18,8 @@ class MossBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk88d5ea;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mOnFertilizeFeature;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MossBlock& operator=(MossBlock const&);
-    MossBlock(MossBlock const&);
-    MossBlock();
 
 public:
     // virtual functions

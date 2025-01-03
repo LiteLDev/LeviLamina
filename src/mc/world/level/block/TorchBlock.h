@@ -25,12 +25,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class TorchBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    TorchBlock& operator=(TorchBlock const&);
-    TorchBlock(TorchBlock const&);
-    TorchBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79

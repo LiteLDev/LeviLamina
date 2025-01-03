@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MovingBlockActor& operator=(MovingBlockActor const&);
-    MovingBlockActor(MovingBlockActor const&);
-    MovingBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

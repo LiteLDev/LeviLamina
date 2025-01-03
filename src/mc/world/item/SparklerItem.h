@@ -44,12 +44,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    SparklerItem& operator=(SparklerItem const&);
-    SparklerItem(SparklerItem const&);
-    SparklerItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

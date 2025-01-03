@@ -16,12 +16,6 @@ class Vec3;
 
 class PaleMossCarpetBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    PaleMossCarpetBlockItem& operator=(PaleMossCarpetBlockItem const&);
-    PaleMossCarpetBlockItem(PaleMossCarpetBlockItem const&);
-    PaleMossCarpetBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

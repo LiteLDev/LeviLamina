@@ -25,12 +25,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class RedStoneWireBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    RedStoneWireBlock& operator=(RedStoneWireBlock const&);
-    RedStoneWireBlock(RedStoneWireBlock const&);
-    RedStoneWireBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

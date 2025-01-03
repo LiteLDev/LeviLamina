@@ -14,12 +14,6 @@ class Player;
 
 class SmithingTableBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SmithingTableBlock& operator=(SmithingTableBlock const&);
-    SmithingTableBlock(SmithingTableBlock const&);
-    SmithingTableBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

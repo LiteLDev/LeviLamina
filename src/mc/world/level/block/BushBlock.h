@@ -22,12 +22,6 @@ class Vec3;
 
 class BushBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    BushBlock& operator=(BushBlock const&);
-    BushBlock(BushBlock const&);
-    BushBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

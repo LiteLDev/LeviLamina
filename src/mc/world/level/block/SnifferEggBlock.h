@@ -19,12 +19,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class SnifferEggBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SnifferEggBlock& operator=(SnifferEggBlock const&);
-    SnifferEggBlock(SnifferEggBlock const&);
-    SnifferEggBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79

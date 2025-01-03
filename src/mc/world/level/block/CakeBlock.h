@@ -20,12 +20,6 @@ class Random;
 
 class CakeBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CakeBlock& operator=(CakeBlock const&);
-    CakeBlock(CakeBlock const&);
-    CakeBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

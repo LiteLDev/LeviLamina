@@ -12,12 +12,6 @@ class Block;
 
 class DeepslateBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    DeepslateBlock& operator=(DeepslateBlock const&);
-    DeepslateBlock(DeepslateBlock const&);
-    DeepslateBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 46

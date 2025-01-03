@@ -61,18 +61,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnke1b07c;
-    ::ll::UntypedStorage<1, 1>  mUnk126773;
-    ::ll::UntypedStorage<8, 8>  mUnk9f9427;
-    ::ll::UntypedStorage<4, 12> mUnk455e63;
-    ::ll::UntypedStorage<1, 1>  mUnkc95ee1;
+    ::ll::TypedStorage<1, 1, bool>                                            mHasTransparentLeaves;
+    ::ll::TypedStorage<1, 1, bool>                                            mHasFastAlphaTest;
+    ::ll::TypedStorage<8, 8, ::HashedString const&>                           mSapling;
+    ::ll::TypedStorage<4, 12, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
+    ::ll::TypedStorage<1, 1, bool>                                            mUseSeasonsOpaqueLayerIfSnowingBiome;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LeavesBlock& operator=(LeavesBlock const&);
-    LeavesBlock(LeavesBlock const&);
-    LeavesBlock();
 
 public:
     // virtual functions

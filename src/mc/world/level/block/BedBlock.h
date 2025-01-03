@@ -25,12 +25,6 @@ namespace mce { class Color; }
 
 class BedBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    BedBlock& operator=(BedBlock const&);
-    BedBlock(BedBlock const&);
-    BedBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

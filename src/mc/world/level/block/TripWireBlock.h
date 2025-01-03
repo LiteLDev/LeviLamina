@@ -25,12 +25,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class TripWireBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    TripWireBlock& operator=(TripWireBlock const&);
-    TripWireBlock(TripWireBlock const&);
-    TripWireBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

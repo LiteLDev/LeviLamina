@@ -26,21 +26,15 @@ class CommandBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnk57c25b;
-    ::ll::UntypedStorage<1, 1>   mUnk74a0d9;
-    ::ll::UntypedStorage<1, 1>   mUnk510ca5;
-    ::ll::UntypedStorage<1, 1>   mUnk5ac9fb;
-    ::ll::UntypedStorage<1, 1>   mUnk124bbf;
-    ::ll::UntypedStorage<1, 1>   mUnk58feec;
-    ::ll::UntypedStorage<1, 1>   mUnk5c1201;
-    ::ll::UntypedStorage<2, 2>   mUnk398ecb;
+    ::ll::TypedStorage<8, 152, ::BaseCommandBlock> mBaseCB;
+    ::ll::TypedStorage<1, 1, bool>                 mPowered;
+    ::ll::TypedStorage<1, 1, bool>                 mConditionMet;
+    ::ll::TypedStorage<1, 1, bool>                 mRedstoneMode;
+    ::ll::TypedStorage<1, 1, bool>                 mLastPerformedConditionalMode;
+    ::ll::TypedStorage<1, 1, bool>                 mLastPerformedRedstoneMode;
+    ::ll::TypedStorage<1, 1, bool>                 mExecuteFirstTickOnPlace;
+    ::ll::TypedStorage<2, 2, ::CommandBlockMode>   mLastPerformedCBMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandBlockActor& operator=(CommandBlockActor const&);
-    CommandBlockActor(CommandBlockActor const&);
-    CommandBlockActor();
 
 public:
     // virtual functions

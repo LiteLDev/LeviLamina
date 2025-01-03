@@ -8,12 +8,6 @@
 
 class HatchetItem : public ::DiggerItem {
 public:
-    // prevent constructor by default
-    HatchetItem& operator=(HatchetItem const&);
-    HatchetItem(HatchetItem const&);
-    HatchetItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

@@ -19,12 +19,6 @@ class ItemInstance;
 
 class TorchflowerCropBlock : public ::CropBlock {
 public:
-    // prevent constructor by default
-    TorchflowerCropBlock& operator=(TorchflowerCropBlock const&);
-    TorchflowerCropBlock(TorchflowerCropBlock const&);
-    TorchflowerCropBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 153

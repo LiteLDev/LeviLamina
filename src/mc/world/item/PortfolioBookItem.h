@@ -13,12 +13,6 @@ class Player;
 
 class PortfolioBookItem : public ::Item {
 public:
-    // prevent constructor by default
-    PortfolioBookItem& operator=(PortfolioBookItem const&);
-    PortfolioBookItem(PortfolioBookItem const&);
-    PortfolioBookItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

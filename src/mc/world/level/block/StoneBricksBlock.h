@@ -18,14 +18,8 @@ class StoneBricksBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk68dcfb;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mInfestedBlockId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StoneBricksBlock& operator=(StoneBricksBlock const&);
-    StoneBricksBlock(StoneBricksBlock const&);
-    StoneBricksBlock();
 
 public:
     // virtual functions

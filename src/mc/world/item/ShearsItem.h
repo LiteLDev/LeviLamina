@@ -21,12 +21,6 @@ class Vec3;
 
 class ShearsItem : public ::Item {
 public:
-    // prevent constructor by default
-    ShearsItem& operator=(ShearsItem const&);
-    ShearsItem(ShearsItem const&);
-    ShearsItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 82

@@ -20,14 +20,8 @@ class IceBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk831797;
+    ::ll::TypedStorage<1, 1, bool> mPacked;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IceBlock& operator=(IceBlock const&);
-    IceBlock(IceBlock const&);
-    IceBlock();
 
 public:
     // virtual functions

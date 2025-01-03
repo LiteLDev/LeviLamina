@@ -16,12 +16,6 @@ class BlockSource;
 
 class MangroveLeavesBlock : public ::LeavesBlock {
 public:
-    // prevent constructor by default
-    MangroveLeavesBlock& operator=(MangroveLeavesBlock const&);
-    MangroveLeavesBlock(MangroveLeavesBlock const&);
-    MangroveLeavesBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

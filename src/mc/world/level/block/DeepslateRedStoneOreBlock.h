@@ -17,12 +17,6 @@ class Random;
 
 class DeepslateRedStoneOreBlock : public ::RedStoneOreBlock {
 public:
-    // prevent constructor by default
-    DeepslateRedStoneOreBlock& operator=(DeepslateRedStoneOreBlock const&);
-    DeepslateRedStoneOreBlock(DeepslateRedStoneOreBlock const&);
-    DeepslateRedStoneOreBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

@@ -19,14 +19,8 @@ class WeightedPressurePlateBlock : public ::BasePressurePlateBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka5d4c8;
+    ::ll::TypedStorage<4, 4, int const> mMaxWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeightedPressurePlateBlock& operator=(WeightedPressurePlateBlock const&);
-    WeightedPressurePlateBlock(WeightedPressurePlateBlock const&);
-    WeightedPressurePlateBlock();
 
 public:
     // virtual functions

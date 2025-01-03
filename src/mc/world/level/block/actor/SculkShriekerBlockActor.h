@@ -15,6 +15,7 @@ class DataLoadHelper;
 class Level;
 class Player;
 class SaveContext;
+class VibrationListener;
 // clang-format on
 
 class SculkShriekerBlockActor : public ::BlockActor {
@@ -42,16 +43,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnkfd4e51;
-    ::ll::UntypedStorage<8, 80>  mUnk8817e1;
-    ::ll::UntypedStorage<4, 8>   mUnk11bb13;
+    ::ll::TypedStorage<8, 200, ::VibrationListener>                                          mVibrationListener;
+    ::ll::TypedStorage<8, 80, ::std::optional<::gsl::final_action<::std::function<void()>>>> mListenerRegistration;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SculkShriekerBlockActor::QueuedResponse>>     mQueuedResponse;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SculkShriekerBlockActor& operator=(SculkShriekerBlockActor const&);
-    SculkShriekerBlockActor(SculkShriekerBlockActor const&);
-    SculkShriekerBlockActor();
 
 public:
     // virtual functions

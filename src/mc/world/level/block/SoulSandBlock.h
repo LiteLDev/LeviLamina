@@ -22,12 +22,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class SoulSandBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SoulSandBlock& operator=(SoulSandBlock const&);
-    SoulSandBlock(SoulSandBlock const&);
-    SoulSandBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

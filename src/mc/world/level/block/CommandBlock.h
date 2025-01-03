@@ -23,18 +23,12 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class CommandBlock : public ::ActorBlockBase<::BlockLegacy> {
+class CommandBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkf84701;
+    ::ll::TypedStorage<2, 2, ::CommandBlockMode> mCBMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandBlock& operator=(CommandBlock const&);
-    CommandBlock(CommandBlock const&);
-    CommandBlock();
 
 public:
     // virtual functions

@@ -14,14 +14,8 @@ class EnchantedBookItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd7bd5c;
+    ::ll::TypedStorage<1, 1, bool> mIsGlint;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantedBookItem& operator=(EnchantedBookItem const&);
-    EnchantedBookItem(EnchantedBookItem const&);
-    EnchantedBookItem();
 
 public:
     // virtual functions

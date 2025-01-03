@@ -7,12 +7,6 @@
 
 class CameraItem : public ::Item {
 public:
-    // prevent constructor by default
-    CameraItem& operator=(CameraItem const&);
-    CameraItem(CameraItem const&);
-    CameraItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

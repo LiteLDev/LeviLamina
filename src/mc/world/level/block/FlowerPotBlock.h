@@ -19,13 +19,7 @@ class Player;
 class Random;
 // clang-format on
 
-class FlowerPotBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    FlowerPotBlock& operator=(FlowerPotBlock const&);
-    FlowerPotBlock(FlowerPotBlock const&);
-    FlowerPotBlock();
-
+class FlowerPotBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

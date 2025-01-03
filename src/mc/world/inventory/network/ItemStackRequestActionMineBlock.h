@@ -10,6 +10,7 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+struct ItemStackNetIdVariant;
 struct ItemStackRequestSlotInfo;
 // clang-format on
 
@@ -24,17 +25,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf1714f;
-    ::ll::UntypedStorage<4, 4>  mUnk7fc14d;
-    ::ll::UntypedStorage<4, 24> mUnk5ee6ac;
-    ::ll::UntypedStorage<1, 1>  mUnk9bbb5c;
+    ::ll::TypedStorage<4, 4, int>                                                    mPredictedDurability;
+    ::ll::TypedStorage<4, 4, int>                                                    mSlot;
+    ::ll::TypedStorage<4, 24, ::ItemStackNetIdVariant>                               mNetIdVariant;
+    ::ll::TypedStorage<1, 1, ::ItemStackRequestActionMineBlock::PreValidationStatus> mPreValidationStatus;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestActionMineBlock& operator=(ItemStackRequestActionMineBlock const&);
-    ItemStackRequestActionMineBlock(ItemStackRequestActionMineBlock const&);
-    ItemStackRequestActionMineBlock();
 
 public:
     // virtual functions

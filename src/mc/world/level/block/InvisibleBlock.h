@@ -20,12 +20,6 @@ class Vec3;
 
 class InvisibleBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    InvisibleBlock& operator=(InvisibleBlock const&);
-    InvisibleBlock(InvisibleBlock const&);
-    InvisibleBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

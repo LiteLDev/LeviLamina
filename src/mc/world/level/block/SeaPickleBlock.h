@@ -25,12 +25,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class SeaPickleBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    SeaPickleBlock& operator=(SeaPickleBlock const&);
-    SeaPickleBlock(SeaPickleBlock const&);
-    SeaPickleBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

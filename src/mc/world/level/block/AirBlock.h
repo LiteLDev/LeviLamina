@@ -23,12 +23,6 @@ struct ActorBlockSyncMessage;
 
 class AirBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    AirBlock& operator=(AirBlock const&);
-    AirBlock(AirBlock const&);
-    AirBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

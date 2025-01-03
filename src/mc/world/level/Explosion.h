@@ -13,36 +13,31 @@ class BlockPos;
 class BlockSource;
 class ItemStack;
 class Vec3;
+struct ActorUniqueID;
 // clang-format on
 
 class Explosion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkcbb3c1;
-    ::ll::UntypedStorage<4, 4>  mUnk304b6b;
-    ::ll::UntypedStorage<8, 64> mUnke94031;
-    ::ll::UntypedStorage<1, 1>  mUnk501acf;
-    ::ll::UntypedStorage<1, 1>  mUnke8bdf7;
-    ::ll::UntypedStorage<1, 1>  mUnkd3b11b;
-    ::ll::UntypedStorage<1, 1>  mUnkf21933;
-    ::ll::UntypedStorage<4, 4>  mUnk733610;
-    ::ll::UntypedStorage<1, 1>  mUnk5d2a11;
-    ::ll::UntypedStorage<2, 2>  mUnk62b5bd;
-    ::ll::UntypedStorage<4, 4>  mUnk8e52e6;
-    ::ll::UntypedStorage<8, 8>  mUnka79c6e;
-    ::ll::UntypedStorage<8, 8>  mUnk2a21f8;
-    ::ll::UntypedStorage<4, 4>  mUnk62d2a5;
-    ::ll::UntypedStorage<1, 2>  mUnk9a0603;
-    ::ll::UntypedStorage<4, 8>  mUnk93a3ad;
-    ::ll::UntypedStorage<4, 4>  mUnk2b977a;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mPos;
+    ::ll::TypedStorage<4, 4, float>                                  mRadius;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockPos>>      mAffectedBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                   mFire;
+    ::ll::TypedStorage<1, 1, bool>                                   mBreaking;
+    ::ll::TypedStorage<1, 1, bool>                                   mAllowUnderwater;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanToggleBlocks;
+    ::ll::TypedStorage<4, 4, float>                                  mDamageScaling;
+    ::ll::TypedStorage<1, 1, bool>                                   mIgnoreBlockExplosionResistance;
+    ::ll::TypedStorage<2, 2, ::LevelEvent>                           mParticleType;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundExplosionType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mSourceID;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>                         mRegion;
+    ::ll::TypedStorage<4, 4, float>                                  mMaxResistance;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                  mInWaterOverride;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                   mTotalDamageOverride;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackScaling;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Explosion& operator=(Explosion const&);
-    Explosion(Explosion const&);
-    Explosion();
 
 public:
     // member functions

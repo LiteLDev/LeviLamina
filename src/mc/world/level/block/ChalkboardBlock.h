@@ -22,13 +22,7 @@ class ItemInstance;
 class Player;
 // clang-format on
 
-class ChalkboardBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    ChalkboardBlock& operator=(ChalkboardBlock const&);
-    ChalkboardBlock(ChalkboardBlock const&);
-    ChalkboardBlock();
-
+class ChalkboardBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

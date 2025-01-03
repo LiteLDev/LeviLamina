@@ -15,12 +15,6 @@ class BlockSource;
 
 class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
 public:
-    // prevent constructor by default
-    CalibratedSculkSensorBlock& operator=(CalibratedSculkSensorBlock const&);
-    CalibratedSculkSensorBlock(CalibratedSculkSensorBlock const&);
-    CalibratedSculkSensorBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 121

@@ -14,12 +14,6 @@ class Random;
 
 class CherryLeavesBlock : public ::SeasonsAgnosticLeavesBlock {
 public:
-    // prevent constructor by default
-    CherryLeavesBlock& operator=(CherryLeavesBlock const&);
-    CherryLeavesBlock(CherryLeavesBlock const&);
-    CherryLeavesBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 124

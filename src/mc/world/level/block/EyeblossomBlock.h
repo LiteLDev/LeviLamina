@@ -15,12 +15,6 @@ class Random;
 
 class EyeblossomBlock : public ::FlowerBlock {
 public:
-    // prevent constructor by default
-    EyeblossomBlock& operator=(EyeblossomBlock const&);
-    EyeblossomBlock(EyeblossomBlock const&);
-    EyeblossomBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

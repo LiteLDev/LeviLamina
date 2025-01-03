@@ -20,12 +20,6 @@ struct ResolvedItemIconInfo;
 
 class ChalkboardItem : public ::Item {
 public:
-    // prevent constructor by default
-    ChalkboardItem& operator=(ChalkboardItem const&);
-    ChalkboardItem(ChalkboardItem const&);
-    ChalkboardItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

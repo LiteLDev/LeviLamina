@@ -24,12 +24,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class BigDripleafBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    BigDripleafBlock& operator=(BigDripleafBlock const&);
-    BigDripleafBlock(BigDripleafBlock const&);
-    BigDripleafBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 125

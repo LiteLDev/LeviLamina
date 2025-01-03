@@ -15,12 +15,6 @@ class Player;
 
 class SpyglassItem : public ::Item {
 public:
-    // prevent constructor by default
-    SpyglassItem& operator=(SpyglassItem const&);
-    SpyglassItem(SpyglassItem const&);
-    SpyglassItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 80

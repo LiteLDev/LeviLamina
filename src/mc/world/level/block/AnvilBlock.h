@@ -24,12 +24,6 @@ namespace mce { class Color; }
 
 class AnvilBlock : public ::FallingBlock {
 public:
-    // prevent constructor by default
-    AnvilBlock& operator=(AnvilBlock const&);
-    AnvilBlock(AnvilBlock const&);
-    AnvilBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Item;
 class ItemStack;
 class LootItemCondition;
+class LootItemFunction;
 class LootTableContext;
 class Random;
 namespace Json { class Value; }
@@ -18,17 +20,11 @@ class LootItem : public ::LootPoolEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2dc136;
-    ::ll::UntypedStorage<4, 4>  mUnkd57594;
-    ::ll::UntypedStorage<8, 24> mUnkdeb840;
-    ::ll::UntypedStorage<8, 32> mUnkf149d1;
+    ::ll::TypedStorage<8, 8, ::Item const*>                                         mItem;
+    ::ll::TypedStorage<4, 4, int>                                                   mAuxValue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootItemFunction>>> mFunctions;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mOriginalItemName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootItem& operator=(LootItem const&);
-    LootItem(LootItem const&);
-    LootItem();
 
 public:
     // virtual functions

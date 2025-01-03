@@ -26,14 +26,8 @@ class BubbleColumnBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk359b8d;
+    ::ll::TypedStorage<1, 1, bool> mFancyBubbles;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BubbleColumnBlock& operator=(BubbleColumnBlock const&);
-    BubbleColumnBlock(BubbleColumnBlock const&);
-    BubbleColumnBlock();
 
 public:
     // virtual functions

@@ -19,14 +19,8 @@ class ComparatorBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk58399d;
+    ::ll::TypedStorage<4, 4, int> mOutput;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ComparatorBlockActor& operator=(ComparatorBlockActor const&);
-    ComparatorBlockActor(ComparatorBlockActor const&);
-    ComparatorBlockActor();
 
 public:
     // virtual functions

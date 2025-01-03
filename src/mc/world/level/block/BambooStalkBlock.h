@@ -26,12 +26,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class BambooStalkBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    BambooStalkBlock& operator=(BambooStalkBlock const&);
-    BambooStalkBlock(BambooStalkBlock const&);
-    BambooStalkBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 15

@@ -25,14 +25,8 @@ class BoatItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk46d642;
+    ::ll::TypedStorage<4, 4, int> mWoodType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoatItem& operator=(BoatItem const&);
-    BoatItem(BoatItem const&);
-    BoatItem();
 
 public:
     // virtual functions

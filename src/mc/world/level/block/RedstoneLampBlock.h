@@ -22,14 +22,8 @@ class RedstoneLampBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk11dbf7;
+    ::ll::TypedStorage<1, 1, bool const> mIsLit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RedstoneLampBlock& operator=(RedstoneLampBlock const&);
-    RedstoneLampBlock(RedstoneLampBlock const&);
-    RedstoneLampBlock();
 
 public:
     // virtual functions

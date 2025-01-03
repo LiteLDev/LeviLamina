@@ -21,15 +21,9 @@ class LogBlock : public ::RotatedPillarBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8ee320;
-    ::ll::UntypedStorage<4, 36> mUnkd30e0b;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>>        mStrippedBlockLegacy;
+    ::ll::TypedStorage<4, 36, ::std::optional<::LogBlockMapColors>> mMapColors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LogBlock& operator=(LogBlock const&);
-    LogBlock(LogBlock const&);
-    LogBlock();
 
 public:
     // virtual functions

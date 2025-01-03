@@ -18,12 +18,6 @@ class Vec3;
 
 class ExperiencePotionItem : public ::Item {
 public:
-    // prevent constructor by default
-    ExperiencePotionItem& operator=(ExperiencePotionItem const&);
-    ExperiencePotionItem(ExperiencePotionItem const&);
-    ExperiencePotionItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 39

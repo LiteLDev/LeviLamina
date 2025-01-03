@@ -22,12 +22,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class RepeaterBlock : public ::DiodeBlock {
 public:
-    // prevent constructor by default
-    RepeaterBlock& operator=(RepeaterBlock const&);
-    RepeaterBlock(RepeaterBlock const&);
-    RepeaterBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 67

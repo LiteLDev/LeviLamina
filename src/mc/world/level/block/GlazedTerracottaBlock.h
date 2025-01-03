@@ -15,12 +15,6 @@ class Vec3;
 
 class GlazedTerracottaBlock : public ::FaceDirectionalBlock {
 public:
-    // prevent constructor by default
-    GlazedTerracottaBlock& operator=(GlazedTerracottaBlock const&);
-    GlazedTerracottaBlock(GlazedTerracottaBlock const&);
-    GlazedTerracottaBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 92

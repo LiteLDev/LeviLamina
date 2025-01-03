@@ -16,12 +16,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class DiscFragmentItem : public ::Item {
 public:
-    // prevent constructor by default
-    DiscFragmentItem& operator=(DiscFragmentItem const&);
-    DiscFragmentItem(DiscFragmentItem const&);
-    DiscFragmentItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

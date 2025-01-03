@@ -27,7 +27,7 @@ class SignBlockActor;
 namespace mce { class Color; }
 // clang-format on
 
-class SignBlock : public ::ActorBlockBase<::BlockLegacy> {
+class SignBlock : public ::ActorBlock {
 public:
     // SignBlock inner types declare
     // clang-format off
@@ -79,15 +79,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7356bc;
-    ::ll::UntypedStorage<1, 1> mUnk7f42c3;
+    ::ll::TypedStorage<4, 4, ::SignBlock::SignType> mSignType;
+    ::ll::TypedStorage<1, 1, bool>                  mOnGround;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SignBlock& operator=(SignBlock const&);
-    SignBlock(SignBlock const&);
-    SignBlock();
 
 public:
     // virtual functions

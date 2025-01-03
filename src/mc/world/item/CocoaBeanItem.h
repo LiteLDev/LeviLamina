@@ -21,14 +21,8 @@ class CocoaBeanItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkcfb4c6;
+    ::ll::TypedStorage<1, 1, bool const> mAllowLegacyUseAsDye;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CocoaBeanItem& operator=(CocoaBeanItem const&);
-    CocoaBeanItem(CocoaBeanItem const&);
-    CocoaBeanItem();
 
 public:
     // virtual functions

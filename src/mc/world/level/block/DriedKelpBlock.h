@@ -12,12 +12,6 @@ class Material;
 
 class DriedKelpBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    DriedKelpBlock& operator=(DriedKelpBlock const&);
-    DriedKelpBlock(DriedKelpBlock const&);
-    DriedKelpBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -18,12 +18,6 @@ class Random;
 
 class MushroomBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    MushroomBlock& operator=(MushroomBlock const&);
-    MushroomBlock(MushroomBlock const&);
-    MushroomBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

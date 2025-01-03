@@ -21,17 +21,11 @@ class SkullBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkddf065;
-    ::ll::UntypedStorage<1, 1> mUnk87c936;
-    ::ll::UntypedStorage<4, 4> mUnk336dc4;
-    ::ll::UntypedStorage<4, 4> mUnkca3744;
+    ::ll::TypedStorage<4, 4, float>                   mRotation;
+    ::ll::TypedStorage<1, 1, bool>                    mIsDoingAnimation;
+    ::ll::TypedStorage<4, 4, int>                     mAnimationTickCount;
+    ::ll::TypedStorage<4, 4, ::SkullBlock::SkullType> mSkullType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkullBlockActor& operator=(SkullBlockActor const&);
-    SkullBlockActor(SkullBlockActor const&);
-    SkullBlockActor();
 
 public:
     // virtual functions

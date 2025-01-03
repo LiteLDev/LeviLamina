@@ -20,12 +20,6 @@ struct ResolvedItemIconInfo;
 
 class CompoundItem : public ::ChemistryItem {
 public:
-    // prevent constructor by default
-    CompoundItem& operator=(CompoundItem const&);
-    CompoundItem(CompoundItem const&);
-    CompoundItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 60

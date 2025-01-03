@@ -20,15 +20,9 @@ class NoteBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9a2dcc;
-    ::ll::UntypedStorage<1, 1> mUnk7fbb9b;
+    ::ll::TypedStorage<1, 1, uchar> mNote;
+    ::ll::TypedStorage<1, 1, bool>  mOn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NoteBlockActor& operator=(NoteBlockActor const&);
-    NoteBlockActor(NoteBlockActor const&);
-    NoteBlockActor();
 
 public:
     // virtual functions

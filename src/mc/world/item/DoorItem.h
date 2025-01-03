@@ -21,14 +21,8 @@ class DoorItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8e4ea9;
+    ::ll::TypedStorage<4, 4, ::DoorBlock::DoorType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DoorItem& operator=(DoorItem const&);
-    DoorItem(DoorItem const&);
-    DoorItem();
 
 public:
     // virtual functions

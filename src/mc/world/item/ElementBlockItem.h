@@ -12,12 +12,6 @@ class ItemStackBase;
 
 class ElementBlockItem : public ::ChemistryAuxDataBlockItem {
 public:
-    // prevent constructor by default
-    ElementBlockItem& operator=(ElementBlockItem const&);
-    ElementBlockItem(ElementBlockItem const&);
-    ElementBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 97

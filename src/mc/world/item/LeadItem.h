@@ -17,12 +17,6 @@ class Vec3;
 
 class LeadItem : public ::Item {
 public:
-    // prevent constructor by default
-    LeadItem& operator=(LeadItem const&);
-    LeadItem(LeadItem const&);
-    LeadItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

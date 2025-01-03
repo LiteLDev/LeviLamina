@@ -18,15 +18,9 @@ class StainedGlassBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkaca9a8;
-    ::ll::UntypedStorage<1, 1> mUnkb0d491;
+    ::ll::TypedStorage<1, 1, bool> mDoesDrops;
+    ::ll::TypedStorage<1, 1, bool> mDoesNotCollideWithCamera;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StainedGlassBlock& operator=(StainedGlassBlock const&);
-    StainedGlassBlock(StainedGlassBlock const&);
-    StainedGlassBlock();
 
 public:
     // virtual functions

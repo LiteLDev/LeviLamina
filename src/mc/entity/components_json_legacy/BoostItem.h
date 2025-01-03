@@ -11,16 +11,10 @@ struct BoostItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk2e488f;
-    ::ll::UntypedStorage<8, 16> mUnk9187b0;
-    ::ll::UntypedStorage<4, 4>  mUnkc812af;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor> mItemDescriptor;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor> mReplacementItemDescriptor;
+    ::ll::TypedStorage<4, 4, int>               mDamageAmount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoostItem& operator=(BoostItem const&);
-    BoostItem(BoostItem const&);
-    BoostItem();
 
 public:
     // member functions

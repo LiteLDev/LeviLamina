@@ -15,13 +15,7 @@ class BlockPos;
 class Player;
 // clang-format on
 
-class EnchantingTableBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    EnchantingTableBlock& operator=(EnchantingTableBlock const&);
-    EnchantingTableBlock(EnchantingTableBlock const&);
-    EnchantingTableBlock();
-
+class EnchantingTableBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

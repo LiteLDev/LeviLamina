@@ -17,12 +17,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class RedstoneBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    RedstoneBlock& operator=(RedstoneBlock const&);
-    RedstoneBlock(RedstoneBlock const&);
-    RedstoneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

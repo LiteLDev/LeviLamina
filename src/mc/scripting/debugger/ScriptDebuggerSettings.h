@@ -2,25 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/scripting/debugger/ScriptDebuggerAttachMode.h"
+
 struct ScriptDebuggerSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk55588d;
-    ::ll::UntypedStorage<1, 1>  mUnk335c55;
-    ::ll::UntypedStorage<4, 4>  mUnk55c4bb;
-    ::ll::UntypedStorage<4, 4>  mUnk1b1aa6;
-    ::ll::UntypedStorage<1, 1>  mUnk23f6f7;
-    ::ll::UntypedStorage<8, 40> mUnkef7e1e;
-    ::ll::UntypedStorage<4, 8>  mUnked17f1;
-    ::ll::UntypedStorage<8, 40> mUnk3fdb4c;
+    ::ll::TypedStorage<1, 1, bool>                            mAllowOutboundConnect;
+    ::ll::TypedStorage<1, 1, bool>                            mAllowInboundListen;
+    ::ll::TypedStorage<4, 4, ::ScriptDebuggerAttachMode>      mAutoAttach;
+    ::ll::TypedStorage<4, 4, uint>                            mAutoAttachTimeoutSec;
+    ::ll::TypedStorage<1, 1, bool>                            mForceInboundDebugPort;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mHost;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>>           mPort;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mPasscode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptDebuggerSettings& operator=(ScriptDebuggerSettings const&);
-    ScriptDebuggerSettings(ScriptDebuggerSettings const&);
-    ScriptDebuggerSettings();
 
 public:
     // member functions

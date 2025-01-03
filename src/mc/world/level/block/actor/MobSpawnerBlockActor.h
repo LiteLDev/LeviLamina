@@ -23,14 +23,8 @@ class MobSpawnerBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf69e22;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseMobSpawner>> mSpawner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobSpawnerBlockActor& operator=(MobSpawnerBlockActor const&);
-    MobSpawnerBlockActor(MobSpawnerBlockActor const&);
-    MobSpawnerBlockActor();
 
 public:
     // virtual functions

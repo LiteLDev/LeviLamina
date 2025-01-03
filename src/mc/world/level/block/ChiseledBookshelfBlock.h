@@ -26,12 +26,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ChiseledBookshelfBlock& operator=(ChiseledBookshelfBlock const&);
-    ChiseledBookshelfBlock(ChiseledBookshelfBlock const&);
-    ChiseledBookshelfBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 138

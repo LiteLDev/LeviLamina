@@ -22,12 +22,6 @@ class Vec3;
 
 class NetherSproutsBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    NetherSproutsBlock& operator=(NetherSproutsBlock const&);
-    NetherSproutsBlock(NetherSproutsBlock const&);
-    NetherSproutsBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 81

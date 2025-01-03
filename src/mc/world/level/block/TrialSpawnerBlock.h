@@ -17,13 +17,7 @@ class IConstBlockSource;
 struct Brightness;
 // clang-format on
 
-class TrialSpawnerBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    TrialSpawnerBlock& operator=(TrialSpawnerBlock const&);
-    TrialSpawnerBlock(TrialSpawnerBlock const&);
-    TrialSpawnerBlock();
-
+class TrialSpawnerBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

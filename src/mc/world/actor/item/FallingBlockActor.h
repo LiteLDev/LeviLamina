@@ -17,6 +17,7 @@ class EntityContext;
 class ITickDelegate;
 class Vec3;
 struct ActorDefinitionIdentifier;
+struct NewBlockID;
 struct VariantParameterList;
 // clang-format on
 
@@ -31,25 +32,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk68df43;
-    ::ll::UntypedStorage<4, 4>  mUnk5c4297;
-    ::ll::UntypedStorage<4, 4>  mUnk9bf1f1;
-    ::ll::UntypedStorage<4, 4>  mUnka3b5f7;
-    ::ll::UntypedStorage<1, 1>  mUnkccd8da;
-    ::ll::UntypedStorage<1, 1>  mUnkcac1aa;
-    ::ll::UntypedStorage<4, 4>  mUnk666645;
-    ::ll::UntypedStorage<4, 4>  mUnk6c40de;
-    ::ll::UntypedStorage<4, 12> mUnkef4e61;
-    ::ll::UntypedStorage<8, 8>  mUnk11d3ba;
-    ::ll::UntypedStorage<2, 2>  mUnke6a3c6;
-    ::ll::UntypedStorage<2, 2>  mUnk3cbcac;
+    ::ll::TypedStorage<1, 1, bool>                             mCreative;
+    ::ll::TypedStorage<4, 4, ::FallingBlockActor::State>       mState;
+    ::ll::TypedStorage<4, 4, int>                              mWaitTicks;
+    ::ll::TypedStorage<4, 4, int>                              mTime;
+    ::ll::TypedStorage<1, 1, bool>                             mCancelDrop;
+    ::ll::TypedStorage<1, 1, bool>                             mHurtEntities;
+    ::ll::TypedStorage<4, 4, int>                              mFallDamageMax;
+    ::ll::TypedStorage<4, 4, float>                            mFallDamageAmount;
+    ::ll::TypedStorage<4, 12, ::Vec3>                          mRenderOffset;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mFallingBlockSerId;
+    ::ll::TypedStorage<2, 2, ::NewBlockID>                     mFallingBlockId;
+    ::ll::TypedStorage<2, 2, ushort>                           mFallingBlockData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FallingBlockActor& operator=(FallingBlockActor const&);
-    FallingBlockActor(FallingBlockActor const&);
-    FallingBlockActor();
 
 public:
     // virtual functions

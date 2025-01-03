@@ -20,14 +20,8 @@ class SlabBlockItem : public ::BlockItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk68d536;
+    ::ll::TypedStorage<8, 48, ::HashedString> mDoubleSlabId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SlabBlockItem& operator=(SlabBlockItem const&);
-    SlabBlockItem(SlabBlockItem const&);
-    SlabBlockItem();
 
 public:
     // virtual functions

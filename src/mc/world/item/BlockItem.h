@@ -22,12 +22,6 @@ struct ResolvedItemIconInfo;
 
 class BlockItem : public ::Item {
 public:
-    // prevent constructor by default
-    BlockItem& operator=(BlockItem const&);
-    BlockItem(BlockItem const&);
-    BlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 108

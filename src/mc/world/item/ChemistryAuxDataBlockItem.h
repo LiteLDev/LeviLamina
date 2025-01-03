@@ -12,12 +12,6 @@ class ItemStackBase;
 
 class ChemistryAuxDataBlockItem : public ::AuxDataBlockItem {
 public:
-    // prevent constructor by default
-    ChemistryAuxDataBlockItem& operator=(ChemistryAuxDataBlockItem const&);
-    ChemistryAuxDataBlockItem(ChemistryAuxDataBlockItem const&);
-    ChemistryAuxDataBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 97

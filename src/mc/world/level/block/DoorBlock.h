@@ -56,14 +56,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb06763;
+    ::ll::TypedStorage<4, 4, ::DoorBlock::DoorType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DoorBlock& operator=(DoorBlock const&);
-    DoorBlock(DoorBlock const&);
-    DoorBlock();
 
 public:
     // virtual functions

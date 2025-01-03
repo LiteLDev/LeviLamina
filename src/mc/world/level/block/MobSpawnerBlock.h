@@ -16,13 +16,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 // clang-format on
 
-class MobSpawnerBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    MobSpawnerBlock& operator=(MobSpawnerBlock const&);
-    MobSpawnerBlock(MobSpawnerBlock const&);
-    MobSpawnerBlock();
-
+class MobSpawnerBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

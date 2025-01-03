@@ -15,12 +15,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class ShulkerBoxBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    ShulkerBoxBlockItem& operator=(ShulkerBoxBlockItem const&);
-    ShulkerBoxBlockItem(ShulkerBoxBlockItem const&);
-    ShulkerBoxBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 52

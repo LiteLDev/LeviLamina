@@ -12,12 +12,6 @@ class HashedString;
 
 class GlowItemFrameBlock : public ::ItemFrameBlock {
 public:
-    // prevent constructor by default
-    GlowItemFrameBlock& operator=(GlowItemFrameBlock const&);
-    GlowItemFrameBlock(GlowItemFrameBlock const&);
-    GlowItemFrameBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 151

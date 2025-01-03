@@ -28,14 +28,8 @@ class ButtonBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc270ff;
+    ::ll::TypedStorage<1, 1, bool const> mSensitive;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ButtonBlock& operator=(ButtonBlock const&);
-    ButtonBlock(ButtonBlock const&);
-    ButtonBlock();
 
 public:
     // virtual functions

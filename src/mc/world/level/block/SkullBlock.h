@@ -21,7 +21,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class SkullBlock : public ::ActorBlockBase<::BlockLegacy> {
+class SkullBlock : public ::ActorBlock {
 public:
     // SkullBlock inner types define
     enum class SkullType : int {
@@ -35,12 +35,6 @@ public:
         Piglin   = 6,
         Count    = 7,
     };
-
-public:
-    // prevent constructor by default
-    SkullBlock& operator=(SkullBlock const&);
-    SkullBlock(SkullBlock const&);
-    SkullBlock();
 
 public:
     // virtual functions

@@ -36,13 +36,7 @@ struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class CauldronBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    CauldronBlock& operator=(CauldronBlock const&);
-    CauldronBlock(CauldronBlock const&);
-    CauldronBlock();
-
+class CauldronBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

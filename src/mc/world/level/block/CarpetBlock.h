@@ -25,12 +25,6 @@ class Vec3;
 
 class CarpetBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CarpetBlock& operator=(CarpetBlock const&);
-    CarpetBlock(CarpetBlock const&);
-    CarpetBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

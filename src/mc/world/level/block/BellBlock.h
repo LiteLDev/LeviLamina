@@ -21,13 +21,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class BellBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    BellBlock& operator=(BellBlock const&);
-    BellBlock(BellBlock const&);
-    BellBlock();
-
+class BellBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

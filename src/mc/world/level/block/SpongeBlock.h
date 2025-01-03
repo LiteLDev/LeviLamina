@@ -17,12 +17,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class SpongeBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SpongeBlock& operator=(SpongeBlock const&);
-    SpongeBlock(SpongeBlock const&);
-    SpongeBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

@@ -14,13 +14,7 @@ class LodestoneBlockActor;
 class Material;
 // clang-format on
 
-class LodestoneBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    LodestoneBlock& operator=(LodestoneBlock const&);
-    LodestoneBlock(LodestoneBlock const&);
-    LodestoneBlock();
-
+class LodestoneBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

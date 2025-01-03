@@ -28,14 +28,8 @@ class MultifaceBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7bd178;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MultifaceSpreader const>> mSpreader;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MultifaceBlock& operator=(MultifaceBlock const&);
-    MultifaceBlock(MultifaceBlock const&);
-    MultifaceBlock();
 
 public:
     // virtual functions

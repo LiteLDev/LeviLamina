@@ -21,12 +21,6 @@ class Random;
 
 class AzaleaBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    AzaleaBlock& operator=(AzaleaBlock const&);
-    AzaleaBlock(AzaleaBlock const&);
-    AzaleaBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

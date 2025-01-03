@@ -25,12 +25,6 @@ struct ResolvedItemIconInfo;
 
 class SkullItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    SkullItem& operator=(SkullItem const&);
-    SkullItem(SkullItem const&);
-    SkullItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 108

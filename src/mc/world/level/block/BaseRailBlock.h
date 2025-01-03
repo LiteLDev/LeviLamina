@@ -82,14 +82,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke7ff3a;
+    ::ll::TypedStorage<1, 1, bool const> mUsesDataBit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseRailBlock& operator=(BaseRailBlock const&);
-    BaseRailBlock(BaseRailBlock const&);
-    BaseRailBlock();
 
 public:
     // virtual functions

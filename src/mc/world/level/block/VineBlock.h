@@ -22,12 +22,6 @@ namespace mce { class Color; }
 
 class VineBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    VineBlock& operator=(VineBlock const&);
-    VineBlock(VineBlock const&);
-    VineBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

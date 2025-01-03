@@ -13,12 +13,6 @@ class BlockSource;
 
 class DaylightDetectorBlockActor : public ::BlockActor {
 public:
-    // prevent constructor by default
-    DaylightDetectorBlockActor& operator=(DaylightDetectorBlockActor const&);
-    DaylightDetectorBlockActor(DaylightDetectorBlockActor const&);
-    DaylightDetectorBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

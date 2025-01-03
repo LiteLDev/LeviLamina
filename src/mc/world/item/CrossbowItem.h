@@ -23,18 +23,12 @@ class CrossbowItem : public ::RangedWeaponItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnk60f4fe;
-    ::ll::UntypedStorage<4, 4>   mUnk85febd;
-    ::ll::UntypedStorage<4, 4>   mUnk551fbd;
-    ::ll::UntypedStorage<4, 4>   mUnkc4d550;
-    ::ll::UntypedStorage<4, 4>   mUnk6a2f58;
+    ::ll::TypedStorage<8, 320, ::ResolvedItemIconInfo[5]> mFrame;
+    ::ll::TypedStorage<4, 4, int const>                   mMaxDurability;
+    ::ll::TypedStorage<4, 4, int const>                   mMaxMultiShots;
+    ::ll::TypedStorage<4, 4, float const>                 mMultishotAngleDelta;
+    ::ll::TypedStorage<4, 4, float const>                 mDefaultArrowPower;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CrossbowItem& operator=(CrossbowItem const&);
-    CrossbowItem(CrossbowItem const&);
-    CrossbowItem();
 
 public:
     // virtual functions

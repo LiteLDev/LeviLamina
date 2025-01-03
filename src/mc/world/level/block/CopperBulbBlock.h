@@ -25,15 +25,9 @@ class CopperBulbBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnka62165;
-    ::ll::UntypedStorage<1, 1>  mUnk64c13e;
+    ::ll::TypedStorage<8, 96, ::CopperBehavior> mCopperBehavior;
+    ::ll::TypedStorage<1, 1, ::Brightness>      mLitBrightness;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CopperBulbBlock& operator=(CopperBulbBlock const&);
-    CopperBulbBlock(CopperBulbBlock const&);
-    CopperBulbBlock();
 
 public:
     // virtual functions

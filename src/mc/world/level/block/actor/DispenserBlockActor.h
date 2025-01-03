@@ -25,14 +25,8 @@ class DispenserBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1368> mUnk4402cc;
+    ::ll::TypedStorage<8, 1368, ::ItemStack[9]> mItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DispenserBlockActor& operator=(DispenserBlockActor const&);
-    DispenserBlockActor(DispenserBlockActor const&);
-    DispenserBlockActor();
 
 public:
     // virtual functions

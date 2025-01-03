@@ -24,12 +24,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class FrogSpawnBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    FrogSpawnBlock& operator=(FrogSpawnBlock const&);
-    FrogSpawnBlock(FrogSpawnBlock const&);
-    FrogSpawnBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

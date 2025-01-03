@@ -19,12 +19,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class BorderBlock : public ::WallBlock {
 public:
-    // prevent constructor by default
-    BorderBlock& operator=(BorderBlock const&);
-    BorderBlock(BorderBlock const&);
-    BorderBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 112

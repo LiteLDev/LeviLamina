@@ -7,12 +7,6 @@
 
 class RecoveryCompassItem : public ::AbstractCompassItem {
 public:
-    // prevent constructor by default
-    RecoveryCompassItem& operator=(RecoveryCompassItem const&);
-    RecoveryCompassItem(RecoveryCompassItem const&);
-    RecoveryCompassItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

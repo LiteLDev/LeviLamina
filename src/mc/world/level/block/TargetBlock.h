@@ -19,12 +19,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class TargetBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    TargetBlock& operator=(TargetBlock const&);
-    TargetBlock(TargetBlock const&);
-    TargetBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 67

@@ -23,15 +23,9 @@ class ChiseledBookshelfBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1d5fc2;
-    ::ll::UntypedStorage<4, 4>  mUnke18587;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
+    ::ll::TypedStorage<4, 4, uint>                        mLastInteractedSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChiseledBookshelfBlockActor& operator=(ChiseledBookshelfBlockActor const&);
-    ChiseledBookshelfBlockActor(ChiseledBookshelfBlockActor const&);
-    ChiseledBookshelfBlockActor();
 
 public:
     // virtual functions

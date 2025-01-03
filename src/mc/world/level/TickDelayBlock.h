@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 struct TickDelayBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbbf85b;
-    ::ll::UntypedStorage<8, 8> mUnkd97ff8;
+    ::ll::TypedStorage<4, 4, int>            mTickDelay;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickDelayBlock& operator=(TickDelayBlock const&);
-    TickDelayBlock(TickDelayBlock const&);
-    TickDelayBlock();
 };

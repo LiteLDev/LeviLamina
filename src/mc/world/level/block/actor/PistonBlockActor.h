@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/PistonState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,26 +26,20 @@ class PistonBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnka92b84;
-    ::ll::UntypedStorage<4, 4>  mUnkef4ef0;
-    ::ll::UntypedStorage<4, 4>  mUnk562c32;
-    ::ll::UntypedStorage<1, 1>  mUnkb30be8;
-    ::ll::UntypedStorage<1, 1>  mUnk7b5117;
-    ::ll::UntypedStorage<1, 1>  mUnk978f28;
-    ::ll::UntypedStorage<1, 1>  mUnk441a8e;
-    ::ll::UntypedStorage<1, 1>  mUnk8d05a0;
-    ::ll::UntypedStorage<1, 1>  mUnkcb3a9b;
-    ::ll::UntypedStorage<1, 1>  mUnk914543;
-    ::ll::UntypedStorage<8, 24> mUnk3b7468;
-    ::ll::UntypedStorage<8, 32> mUnkcf15cd;
-    ::ll::UntypedStorage<8, 24> mUnkb4a2b9;
+    ::ll::TypedStorage<1, 1, bool>                                        mSticky;
+    ::ll::TypedStorage<4, 4, float>                                       mProgress;
+    ::ll::TypedStorage<4, 4, float>                                       mLastProgress;
+    ::ll::TypedStorage<1, 1, bool>                                        mWasPushedBackwardByANonStickyPiston;
+    ::ll::TypedStorage<1, 1, bool>                                        mWasPulledForwardByAStickyPiston;
+    ::ll::TypedStorage<1, 1, ::PistonState>                               mOldState;
+    ::ll::TypedStorage<1, 1, ::PistonState>                               mState;
+    ::ll::TypedStorage<1, 1, ::PistonState>                               mNewState;
+    ::ll::TypedStorage<1, 1, bool>                                        mVerifyArm;
+    ::ll::TypedStorage<1, 1, bool>                                        mShouldVerifyArmType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                  mAttachedBlocks;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::BlockPos>>> mFutureClientAttachedBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                  mBreakBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PistonBlockActor& operator=(PistonBlockActor const&);
-    PistonBlockActor(PistonBlockActor const&);
-    PistonBlockActor();
 
 public:
     // virtual functions

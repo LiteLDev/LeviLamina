@@ -17,12 +17,6 @@ class Random;
 
 class ChorusFlowerBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    ChorusFlowerBlock& operator=(ChorusFlowerBlock const&);
-    ChorusFlowerBlock(ChorusFlowerBlock const&);
-    ChorusFlowerBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

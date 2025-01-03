@@ -18,12 +18,6 @@ class ItemInstance;
 
 class BeetrootBlock : public ::CropBlock {
 public:
-    // prevent constructor by default
-    BeetrootBlock& operator=(BeetrootBlock const&);
-    BeetrootBlock(BeetrootBlock const&);
-    BeetrootBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 153

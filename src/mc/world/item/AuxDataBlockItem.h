@@ -16,14 +16,8 @@ class AuxDataBlockItem : public ::BlockItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8e24ed;
+    ::ll::TypedStorage<8, 8, ::Block const*> mParentBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AuxDataBlockItem& operator=(AuxDataBlockItem const&);
-    AuxDataBlockItem(AuxDataBlockItem const&);
-    AuxDataBlockItem();
 
 public:
     // virtual functions

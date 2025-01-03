@@ -32,14 +32,8 @@ class ActorPlacerItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnk535ff0;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorID;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorPlacerItem& operator=(ActorPlacerItem const&);
-    ActorPlacerItem(ActorPlacerItem const&);
-    ActorPlacerItem();
 
 public:
     // virtual functions

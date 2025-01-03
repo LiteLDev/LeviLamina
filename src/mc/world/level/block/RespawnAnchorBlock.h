@@ -22,12 +22,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class RespawnAnchorBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    RespawnAnchorBlock& operator=(RespawnAnchorBlock const&);
-    RespawnAnchorBlock(RespawnAnchorBlock const&);
-    RespawnAnchorBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

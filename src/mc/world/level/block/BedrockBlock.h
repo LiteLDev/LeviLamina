@@ -7,12 +7,6 @@
 
 class BedrockBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    BedrockBlock& operator=(BedrockBlock const&);
-    BedrockBlock(BedrockBlock const&);
-    BedrockBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 46

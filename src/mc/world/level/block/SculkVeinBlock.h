@@ -17,12 +17,6 @@ class Material;
 
 class SculkVeinBlock : public ::MultifaceBlock {
 public:
-    // prevent constructor by default
-    SculkVeinBlock& operator=(SculkVeinBlock const&);
-    SculkVeinBlock(SculkVeinBlock const&);
-    SculkVeinBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 90

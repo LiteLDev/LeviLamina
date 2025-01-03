@@ -23,7 +23,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class ChestBlock : public ::ActorBlockBase<::BlockLegacy> {
+class ChestBlock : public ::ActorBlock {
 public:
     // ChestBlock inner types define
     enum class ChestType : int {
@@ -35,14 +35,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk957478;
+    ::ll::TypedStorage<4, 4, ::ChestBlock::ChestType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChestBlock& operator=(ChestBlock const&);
-    ChestBlock(ChestBlock const&);
-    ChestBlock();
 
 public:
     // virtual functions

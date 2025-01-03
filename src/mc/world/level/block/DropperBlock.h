@@ -13,12 +13,6 @@ class BlockSource;
 
 class DropperBlock : public ::DispenserBlock {
 public:
-    // prevent constructor by default
-    DropperBlock& operator=(DropperBlock const&);
-    DropperBlock(DropperBlock const&);
-    DropperBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 152

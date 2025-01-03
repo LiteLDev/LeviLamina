@@ -27,15 +27,9 @@ class LingeringPotionItem : public ::PotionItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1344> mUnk293b80;
-    ::ll::UntypedStorage<4, 84>   mUnk49b312;
+    ::ll::TypedStorage<8, 1344, ::ResolvedItemIconInfo[21]> mLingeringIcons;
+    ::ll::TypedStorage<4, 84, ::Potion::PotionVariant[21]>  mLingeringPotionVariants;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LingeringPotionItem& operator=(LingeringPotionItem const&);
-    LingeringPotionItem(LingeringPotionItem const&);
-    LingeringPotionItem();
 
 public:
     // virtual functions

@@ -28,15 +28,9 @@ class ShulkerBoxBlockActor : public ::ChestBlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb764b6;
-    ::ll::UntypedStorage<1, 1> mUnk997f90;
+    ::ll::TypedStorage<1, 1, uchar> mFacing;
+    ::ll::TypedStorage<1, 1, bool>  mFacingChanged;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShulkerBoxBlockActor& operator=(ShulkerBoxBlockActor const&);
-    ShulkerBoxBlockActor(ShulkerBoxBlockActor const&);
-    ShulkerBoxBlockActor();
 
 public:
     // virtual functions

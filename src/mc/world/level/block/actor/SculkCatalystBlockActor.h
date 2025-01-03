@@ -26,16 +26,10 @@ class SculkCatalystBlockActor : public ::BlockActor, public ::GameEventListener 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnkb043fc;
-    ::ll::UntypedStorage<8, 24> mUnk9fc922;
-    ::ll::UntypedStorage<8, 64> mUnkd95293;
+    ::ll::TypedStorage<8, 80, ::std::optional<::gsl::final_action<::std::function<void()>>>> mListenerRegistration;
+    ::ll::TypedStorage<8, 24, ::GameEvents::PositionSource>                                  mPositionSource;
+    ::ll::TypedStorage<8, 64, ::SculkSpreader>                                               mSculkSpreader;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SculkCatalystBlockActor& operator=(SculkCatalystBlockActor const&);
-    SculkCatalystBlockActor(SculkCatalystBlockActor const&);
-    SculkCatalystBlockActor();
 
 public:
     // virtual functions

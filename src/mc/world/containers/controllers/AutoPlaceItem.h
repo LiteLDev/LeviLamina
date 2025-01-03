@@ -6,13 +6,7 @@ struct AutoPlaceItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk35725d;
-    ::ll::UntypedStorage<1, 1>  mUnkb67eff;
+    ::ll::TypedStorage<8, 32, ::std::string> collection;
+    ::ll::TypedStorage<1, 1, bool>           stopWhenPlaced;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AutoPlaceItem& operator=(AutoPlaceItem const&);
-    AutoPlaceItem(AutoPlaceItem const&);
-    AutoPlaceItem();
 };

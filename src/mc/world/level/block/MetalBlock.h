@@ -7,12 +7,6 @@
 
 class MetalBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    MetalBlock& operator=(MetalBlock const&);
-    MetalBlock(MetalBlock const&);
-    MetalBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

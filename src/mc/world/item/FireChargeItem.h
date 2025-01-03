@@ -19,12 +19,6 @@ class Vec3;
 
 class FireChargeItem : public ::Item {
 public:
-    // prevent constructor by default
-    FireChargeItem& operator=(FireChargeItem const&);
-    FireChargeItem(FireChargeItem const&);
-    FireChargeItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 77

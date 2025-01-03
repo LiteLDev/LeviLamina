@@ -25,12 +25,6 @@ namespace mce { class Color; }
 
 class TallGrassBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    TallGrassBlock& operator=(TallGrassBlock const&);
-    TallGrassBlock(TallGrassBlock const&);
-    TallGrassBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 148

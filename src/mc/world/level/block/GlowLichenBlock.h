@@ -18,12 +18,6 @@ class Material;
 
 class GlowLichenBlock : public ::MultifaceBlock {
 public:
-    // prevent constructor by default
-    GlowLichenBlock& operator=(GlowLichenBlock const&);
-    GlowLichenBlock(GlowLichenBlock const&);
-    GlowLichenBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 74

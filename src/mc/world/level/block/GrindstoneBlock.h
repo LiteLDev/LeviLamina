@@ -20,12 +20,6 @@ class Vec3;
 
 class GrindstoneBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    GrindstoneBlock& operator=(GrindstoneBlock const&);
-    GrindstoneBlock(GrindstoneBlock const&);
-    GrindstoneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

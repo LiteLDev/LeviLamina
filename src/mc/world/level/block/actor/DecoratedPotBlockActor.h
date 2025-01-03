@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/actor/DecoratedPotAnimation.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
 // auto generated forward declare list
@@ -22,6 +23,8 @@ class SaveContext;
 class DecoratedPotBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // DecoratedPotBlockActor inner types define
+    using SherdList = ::std::array<::std::string, 4>;
+
     enum class PotFace : uint64 {
         Back  = 0,
         Left  = 1,
@@ -32,17 +35,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk5384aa;
-    ::ll::UntypedStorage<8, 152> mUnk72db32;
-    ::ll::UntypedStorage<1, 1>   mUnk20c4cd;
-    ::ll::UntypedStorage<4, 4>   mUnke5c3bf;
+    ::ll::TypedStorage<8, 128, ::std::array<::std::string, 4>> mSherdItemNames;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                    mContainedItem;
+    ::ll::TypedStorage<1, 1, ::DecoratedPotAnimation>          mAnimation;
+    ::ll::TypedStorage<4, 4, int>                              mAnimationTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DecoratedPotBlockActor& operator=(DecoratedPotBlockActor const&);
-    DecoratedPotBlockActor(DecoratedPotBlockActor const&);
-    DecoratedPotBlockActor();
 
 public:
     // virtual functions

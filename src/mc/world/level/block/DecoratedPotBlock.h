@@ -22,12 +22,6 @@ class Player;
 
 class DecoratedPotBlock : public ::FaceDirectionalActorBlock {
 public:
-    // prevent constructor by default
-    DecoratedPotBlock& operator=(DecoratedPotBlock const&);
-    DecoratedPotBlock(DecoratedPotBlock const&);
-    DecoratedPotBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 90

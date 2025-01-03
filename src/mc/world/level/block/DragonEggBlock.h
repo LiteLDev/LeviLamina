@@ -18,12 +18,6 @@ namespace mce { class Color; }
 
 class DragonEggBlock : public ::FallingBlock {
 public:
-    // prevent constructor by default
-    DragonEggBlock& operator=(DragonEggBlock const&);
-    DragonEggBlock(DragonEggBlock const&);
-    DragonEggBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 151

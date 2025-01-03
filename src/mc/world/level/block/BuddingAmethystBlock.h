@@ -18,12 +18,6 @@ class Random;
 
 class BuddingAmethystBlock : public ::AmethystBlock {
 public:
-    // prevent constructor by default
-    BuddingAmethystBlock& operator=(BuddingAmethystBlock const&);
-    BuddingAmethystBlock(BuddingAmethystBlock const&);
-    BuddingAmethystBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

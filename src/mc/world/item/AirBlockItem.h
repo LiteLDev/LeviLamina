@@ -7,12 +7,6 @@
 
 class AirBlockItem : public ::Item {
 public:
-    // prevent constructor by default
-    AirBlockItem& operator=(AirBlockItem const&);
-    AirBlockItem(AirBlockItem const&);
-    AirBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

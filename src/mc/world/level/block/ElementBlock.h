@@ -23,14 +23,8 @@ class ElementBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8e0e3b;
+    ::ll::TypedStorage<1, 1, ::ElementType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ElementBlock& operator=(ElementBlock const&);
-    ElementBlock(ElementBlock const&);
-    ElementBlock();
 
 public:
     // virtual functions

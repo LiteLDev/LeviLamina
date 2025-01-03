@@ -27,12 +27,6 @@ class Vec3;
 
 class FenceBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    FenceBlock& operator=(FenceBlock const&);
-    FenceBlock(FenceBlock const&);
-    FenceBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 25

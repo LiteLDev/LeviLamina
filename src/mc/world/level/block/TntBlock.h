@@ -20,12 +20,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class TntBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    TntBlock& operator=(TntBlock const&);
-    TntBlock(TntBlock const&);
-    TntBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 133

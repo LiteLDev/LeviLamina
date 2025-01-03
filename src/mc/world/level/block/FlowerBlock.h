@@ -28,14 +28,8 @@ class FlowerBlock : public ::BushBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc854ae;
+    ::ll::TypedStorage<1, 1, bool> mIsNetherVegetation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlowerBlock& operator=(FlowerBlock const&);
-    FlowerBlock(FlowerBlock const&);
-    FlowerBlock();
 
 public:
     // virtual functions
