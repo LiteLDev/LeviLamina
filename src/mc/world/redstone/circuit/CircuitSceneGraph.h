@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
@@ -54,14 +55,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::unique_ptr<::BaseCircuitComponent>>>
-                                                                                             mAllComponents;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::ChunkCircuitComponentList>> mActiveComponentsPerChunk;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::CircuitComponentList>>      mPowerAssociationMap;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry>> mPendingAdds;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry>> mPendingUpdates;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::vector<::BlockPos>>> mComponentsToReEvaluate;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CircuitSceneGraph::PendingEntry>>            mPendingRemoves;
+    ComponentMap                                                        mAllComponents;
+    ComponentsPerChunkMap                                               mActiveComponentsPerChunk;
+    ComponentsPerPosMap                                                 mPowerAssociationMap;
+    ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry> mPendingAdds;
+    ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry> mPendingUpdates;
+    ::std::unordered_map<::BlockPos, ::std::vector<::BlockPos>>         mComponentsToReEvaluate;
+    ::std::vector<::CircuitSceneGraph::PendingEntry>                    mPendingRemoves;
     // NOLINTEND
 
 public:
