@@ -73,10 +73,8 @@ struct TypedStorageImpl {
     [[nodiscard]] T const&  operator*() const& { return get(); }
     [[nodiscard]] T&&       operator*() && { return std::move(get()); }
     [[nodiscard]] T const&& operator*() const&& { return std::move(get()); }
-    [[nodiscard]] operator T&() & { return get(); }
-    [[nodiscard]] operator T const&() const& { return get(); }
-    [[nodiscard]] operator T&&() && { return std::move(get()); }
-    [[nodiscard]] operator T const&&() const&& { return std::move(get()); }
+    [[nodiscard]] operator T&() { return get(); }
+    [[nodiscard]] operator T const&() const { return get(); }
 };
 
 template <size_t A, size_t S, class T>
