@@ -1,5 +1,6 @@
 #include "ll/api/event/world/SpawnMobEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/world/level/BedrockSpawner.h"
@@ -9,7 +10,7 @@
 namespace ll::event::inline world {
 void SpawnMobEvent::serialize(CompoundTag& nbt) const {
     WorldEvent::serialize(nbt);
-    nbt["identifier"] = (uintptr_t)&identifier();
+    nbt["identifier"] = serializeRefObj(identifier());
     if (spawner()) {
         nbt["spawner"] = (uintptr_t)(spawner().as_ptr());
     }

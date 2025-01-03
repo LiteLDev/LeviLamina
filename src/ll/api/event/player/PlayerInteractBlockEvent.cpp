@@ -1,5 +1,6 @@
 #include "ll/api/event/player/PlayerInteractBlockEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/world/gamemode/GameMode.h"
@@ -11,13 +12,11 @@ namespace ll::event::inline player {
 
 void PlayerInteractBlockEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["item"]     = (uintptr_t)&item();
+    nbt["item"]     = serializeRefObj(item());
     nbt["blockPos"] = ListTag{blockPos().x, blockPos().y, blockPos().z};
     nbt["face"]     = magic_enum::enum_name(face());
     nbt["clickPos"] = ListTag{clickPos().x, clickPos().y, clickPos().z};
-    if (block()) {
-        nbt["block"] = (uintptr_t)(block().as_ptr());
-    }
+    nbt["block"]    = serializePtrObj(block().as_ptr());
 }
 ItemStack&                PlayerInteractBlockEvent::item() const { return mItem; }
 BlockPos const&           PlayerInteractBlockEvent::blockPos() const { return mBlockPos; }

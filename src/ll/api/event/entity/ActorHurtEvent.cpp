@@ -1,5 +1,6 @@
 #include "ll/api/event/entity/ActorHurtEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -8,7 +9,7 @@ namespace ll::event::inline entity {
 
 void ActorHurtEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["source"] = (uintptr_t)&source();
+    nbt["source"] = serializeRefObj(source());
     nbt["damage"] = damage();
     nbt["knock"]  = knock();
     nbt["ignite"] = ignite();

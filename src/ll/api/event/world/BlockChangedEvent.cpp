@@ -1,5 +1,6 @@
 #include "ll/api/event/world/BlockChangedEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -10,8 +11,8 @@ namespace ll::event::inline world {
 void BlockChangedEvent::serialize(CompoundTag& nbt) const {
     WorldEvent::serialize(nbt);
     nbt["layer"]         = layer();
-    nbt["previousBlock"] = (uintptr_t)&previousBlock();
-    nbt["newBlock"]      = (uintptr_t)&newBlock();
+    nbt["previousBlock"] = serializeRefObj(previousBlock());
+    nbt["newBlock"]      = serializeRefObj(newBlock());
     nbt["pos"]           = ListTag{pos().x, pos().y, pos().z};
 }
 

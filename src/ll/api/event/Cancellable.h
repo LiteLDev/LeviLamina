@@ -22,8 +22,8 @@ public:
         Event::serializeWithCancel(nbt);
     }
     void deserialize(CompoundTag const& nbt) override {
-        T::deserialize(nbt);
         Event::deserializeWithCancel(nbt);
+        T::deserialize(nbt);
     }
 
     [[nodiscard]] constexpr bool isCancelled() { return Event::mCancelled; }

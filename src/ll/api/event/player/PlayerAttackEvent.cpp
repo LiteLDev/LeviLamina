@@ -1,5 +1,6 @@
 #include "ll/api/event/player/PlayerAttackEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -8,7 +9,7 @@ namespace ll::event::inline player {
 
 void PlayerAttackEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["target"] = (uintptr_t)&target();
+    nbt["target"] = serializeRefObj(target());
     nbt["cause"]  = magic_enum::enum_name(cause());
 }
 

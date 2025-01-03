@@ -1,5 +1,6 @@
 #include "ll/api/event/server/ServerStartedEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
@@ -10,7 +11,7 @@ namespace ll::event::inline server {
 
 void ServerStartedEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);
-    nbt["server"] = (uintptr_t)&server();
+    nbt["server"] = serializeRefObj(server());
 }
 
 ServerInstance& ServerStartedEvent::server() const { return mInstance; }

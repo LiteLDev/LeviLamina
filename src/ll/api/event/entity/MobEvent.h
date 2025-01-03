@@ -11,6 +11,8 @@ protected:
     constexpr explicit MobEvent(Mob& mob) : ActorEvent(mob) {}
 
 public:
+    LLAPI void serialize(CompoundTag&) const override;
+
     LLNDAPI Mob& self() const;
 };
 } // namespace ll::event::inline entity

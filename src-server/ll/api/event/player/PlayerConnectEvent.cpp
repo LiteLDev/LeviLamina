@@ -1,5 +1,6 @@
 #include "ll/api/event/player/PlayerConnectEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/network/ServerNetworkHandler.h"
@@ -10,8 +11,8 @@ namespace ll::event::inline player {
 
 void PlayerConnectEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["networkIdentifier"] = (uintptr_t)&networkIdentifier();
-    nbt["connectionRequest"] = (uintptr_t)&connectionRequest();
+    nbt["networkIdentifier"] = serializeRefObj(networkIdentifier());
+    nbt["connectionRequest"] = serializeRefObj(connectionRequest());
 }
 
 NetworkIdentifier const& PlayerConnectEvent::networkIdentifier() const { return mNetworkIdentifier; }

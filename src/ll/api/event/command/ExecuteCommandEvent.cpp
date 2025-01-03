@@ -1,5 +1,6 @@
 #include "ll/api/event/command/ExecuteCommandEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/common/Globals.h"
@@ -9,8 +10,8 @@ namespace ll::event::inline command {
 
 void ExecuteCommandEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);
-    nbt["minecraftCommands"] = (uintptr_t)&minecraftCommands();
-    nbt["commandContext"]    = (uintptr_t)&commandContext();
+    nbt["minecraftCommands"] = serializeRefObj(minecraftCommands());
+    nbt["commandContext"]    = serializeRefObj(commandContext());
     nbt["suppressOutput"]    = suppressOutput();
 }
 void ExecutingCommandEvent::deserialize(CompoundTag const& nbt) {
@@ -19,7 +20,10 @@ void ExecutingCommandEvent::deserialize(CompoundTag const& nbt) {
 }
 void ExecutedCommandEvent::serialize(CompoundTag& nbt) const {
     ExecuteCommandEvent::serialize(nbt);
-    nbt["result"] = (uintptr_t)&result();
+    nbt["result"] = CompoundTag{
+        {"success", result().mSuccess},
+        {   "code",    result().mCode},
+    };
 }
 
 MinecraftCommands&    ExecuteCommandEvent::minecraftCommands() const { return mMinecraftCommands; }

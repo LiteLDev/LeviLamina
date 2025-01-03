@@ -1,34 +1,19 @@
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/EventBus.h"
+#include "ll/api/io/PatternFormatter.h"
+#include "ll/api/io/Sink.h"
 #include "ll/api/memory/Hook.h"
+#include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/utils/ErrorUtils.h"
+#include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
+#include "mc/network/packet/TextPacket.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/DynamicListener.h"
 #include "ll/api/event/Emitter.h"
 #include "ll/api/event/MultiListener.h"
-#include "ll/api/event/command/ExecuteCommandEvent.h"
-#include "ll/api/event/entity/ActorHurtEvent.h"
-#include "ll/api/event/player/PlayerAddExperienceEvent.h"
-#include "ll/api/event/player/PlayerAttackEvent.h"
-#include "ll/api/event/player/PlayerConnectEvent.h"
-#include "ll/api/event/player/PlayerDestroyBlockEvent.h"
-#include "ll/api/event/player/PlayerDieEvent.h"
-#include "ll/api/event/player/PlayerDisconnectEvent.h"
-#include "ll/api/event/player/PlayerInteractBlockEvent.h"
-#include "ll/api/event/player/PlayerJoinEvent.h"
-#include "ll/api/event/player/PlayerJumpEvent.h"
-#include "ll/api/event/player/PlayerPickUpItemEvent.h"
-#include "ll/api/event/player/PlayerPlaceBlockEvent.h"
-#include "ll/api/event/player/PlayerRespawnEvent.h"
-#include "ll/api/event/player/PlayerSneakEvent.h"
-#include "ll/api/event/player/PlayerSprintEvent.h"
-#include "ll/api/event/player/PlayerSwingEvent.h"
-#include "ll/api/event/player/PlayerUseItemEvent.h"
-#include "ll/api/event/world/BlockChangedEvent.h"
-#include "ll/api/event/world/SpawnMobEvent.h"
 #include "ll/api/io/FileUtils.h"
 #include "mc/deps/core/utility/MCRESULT.h"
 #include "mc/nbt/CompoundTag.h"
@@ -132,88 +117,33 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     using namespace ll::event;
 
-    bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
-        ll::getLogger().debug("ExecutingCommandEvent: {}", ev.commandContext().mCommand);
-        ll::getLogger().debug("origin: {}", ev.commandContext().mOrigin->serialize().toSnbt());
-    });
-    bus.emplaceListener<ExecutedCommandEvent>([](ExecutedCommandEvent& ev) {
-        ll::getLogger().debug("ExecutedCommandEvent: {}", ev.commandContext().mCommand);
-        ll::getLogger().debug("result: {}", ev.result().getFullCode());
-    });
-    bus.emplaceListener<PlayerConnectEvent>([](PlayerConnectEvent& ev) {
-        ll::getLogger().debug("Player connect: {} {}", ev.self().getRealName(), ev.self().getIPAndPort());
-    });
-    bus.emplaceListener<PlayerJoinEvent>([](PlayerJoinEvent& ev) {
-        ll::getLogger().debug("Player join: {} {}", ev.self().getRealName(), ev.self().getLocaleCode());
-    });
-    bus.emplaceListener<PlayerDisconnectEvent>([](PlayerDisconnectEvent& ev) {
-        ll::getLogger().debug("Player leave: {}", ev.self().getRealName());
-    });
-    bus.emplaceListener<PlayerAttackEvent>([](PlayerAttackEvent& ev) {
-        ll::getLogger().debug(
-            "Player {} attack {} cause {}",
-            ev.self().getRealName(),
-            ev.target().getTypeName(),
-            magic_enum::enum_name(ev.cause())
-        );
-    });
-    bus.emplaceListener<PlayerDieEvent>([](PlayerDieEvent& ev) {
-        ll::getLogger()
-            .debug("Player {} died source {}", ev.self().getRealName(), magic_enum::enum_name(ev.source().getCause()));
-    });
-    bus.emplaceListener<PlayerRespawnEvent>([](PlayerRespawnEvent& ev) {
-        ll::getLogger().debug("Player {} respawned", ev.self().getRealName());
-    });
-    bus.emplaceListener<PlayerJumpEvent>([](PlayerJumpEvent& ev) {
-        ll::getLogger().debug("Player {} jumped", ev.self().getRealName());
-    });
-    bus.emplaceListener<PlayerAddExperienceEvent>([](PlayerAddExperienceEvent& ev) {
-        ll::getLogger().debug("Player {} add experience {}", ev.self().getRealName(), ev.experience());
-        if (ev.experience() == 114514) {
-            ev.cancel();
+    std::vector<std::pair<std::string, EventId>> ids;
+    for (auto [modName, id] : bus.events()) {
+        ids.emplace_back(std::string{modName}, id);
+    }
+    for (auto [modName, id] : ids) {
+        if (!id.name.ends_with("::LevelTickEvent"))
+            bus.addListener(
+                DynamicListener::create([modName](CompoundTag& nbt) {
+                    ll::getLogger().debug("event from {}, {}", modName, nbt.toSnbt(SnbtFormat::PrettyChatPrint));
+                }),
+                id
+            );
+    }
+
+    class BroadcastSink : public ll::io::Sink {
+    public:
+        BroadcastSink() : Sink(ll::makePolymorphic<ll::io::PatternFormatter>("<{tit}|{lvl}> [{tm:%T}] {msg}")) {}
+
+        void append(ll::io::LogMessageView const& view) override {
+            std::string buffer;
+            formatter->format(view, buffer);
+            ll::thread::ServerThreadExecutor::getDefault().execute(
+                [pkt = TextPacket::createRawMessage(ll::string_utils::replaceAnsiToMcCode(buffer))] {
+                    pkt.sendToClients();
+                }
+            );
         }
-    });
-    bus.emplaceListener<PlayerPickUpItemEvent>([](PlayerPickUpItemEvent& ev) {
-        ll::getLogger().debug("Player {} take {}", ev.self().getRealName(), ev.itemActor().item().getTypeName());
-    });
-    bus.emplaceListener<PlayerSwingEvent>([](PlayerSwingEvent& ev) {
-        ll::getLogger().debug("Player {} left click", ev.self().getRealName());
-    });
-    auto listenersp = Listener<PlayerSprintEvent>::create([](PlayerSprintEvent& ev) {
-        switch (ev.getId().hash) {
-        case ll::event::getEventId<PlayerSprintingEvent>.hash: {
-            ll::getLogger().debug("Player {} start sprint", ev.self().getRealName());
-        } break;
-        case ll::event::getEventId<PlayerSprintedEvent>.hash: {
-            ll::getLogger().debug("Player {} stop sprint", ev.self().getRealName());
-        } break;
-        default:
-            break;
-        }
-    });
-    bus.addListener<PlayerSprintingEvent>(listenersp);
-    bus.addListener<PlayerSprintedEvent>(listenersp);
-    auto mul = MultiListener<PlayerSneakingEvent, PlayerSneakedEvent>::create([](auto&& ev) {
-        ll::getLogger()
-            .debug("Player {} MultiListener of {}", ev.self().getRealName(), ll::reflection::type_raw_name_v<decltype(ev)>);
-    });
-    bus.addListener(mul);
-
-    auto dl = DynamicListener::create([](CompoundTag& nbt) {
-        // nbt["cancelled"] = true;
-        ll::getLogger().debug("{}", nbt.toSnbt(SnbtFormat::PrettyConsolePrint));
-    });
-
-
-    bus.addListener(dl, getEventId<PlayerUseItemEvent>);
-    bus.addListener(dl, getEventId<PlayerInteractBlockEvent>);
-    bus.addListener(dl, getEventId<ActorHurtEvent>);
-    bus.addListener(dl, getEventId<PlayerDestroyBlockEvent>);
-    bus.addListener(dl, getEventId<PlayerPlacingBlockEvent>);
-    bus.addListener(dl, getEventId<SpawnedMobEvent>);
-
-    bus.emplaceListener<BlockChangedEvent>([](BlockChangedEvent& ev) {
-        ll::getLogger()
-            .debug("Block Changed Pos: {} Dimension: {}", ev.pos().toString(), ev.blockSource().getDimensionId().id);
-    });
+    };
+    ll::getLogger().addSink(std::make_shared<BroadcastSink>());
 }

@@ -1,5 +1,6 @@
 #include "ll/api/event/player/PlayerPlaceBlockEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -18,7 +19,7 @@ void PlayerPlacingBlockEvent::serialize(CompoundTag& nbt) const {
 }
 void PlayerPlacedBlockEvent::serialize(CompoundTag& nbt) const {
     PlayerPlaceBlockEvent::serialize(nbt);
-    nbt["placedBlock"] = (uintptr_t)&placedBlock();
+    nbt["placedBlock"] = serializeRefObj(placedBlock());
 }
 
 BlockPos const& PlayerPlaceBlockEvent::pos() const { return mPos; }

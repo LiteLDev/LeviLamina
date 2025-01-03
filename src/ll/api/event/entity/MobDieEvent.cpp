@@ -1,5 +1,6 @@
 #include "ll/api/event/entity/MobDieEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -8,7 +9,7 @@ namespace ll::event::inline entity {
 
 void MobDieEvent::serialize(CompoundTag& nbt) const {
     MobEvent::serialize(nbt);
-    nbt["source"] = (uintptr_t)&source();
+    nbt["source"] = serializeRefObj(source());
 }
 
 ActorDamageSource const& MobDieEvent::source() const { return mSource; }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ll/api/reflection/Reflection.h"
+#include "ll/api/reflection/TypeName.h"
 #include "ll/api/utils/HashUtils.h"
 
 namespace ll::event {
@@ -34,7 +34,7 @@ constexpr EventIdView getEventId = []() -> EventIdView {
         return self::CustomEventId;
     } else {
         static_assert(std::is_final_v<self>, "Only final classes can use getEventId");
-        return EventIdView{ll::reflection::type_unprefix_name_v<self>};
+        return EventIdView{reflection::type_unprefix_name_v<self>};
     }
 }();
 } // namespace ll::event

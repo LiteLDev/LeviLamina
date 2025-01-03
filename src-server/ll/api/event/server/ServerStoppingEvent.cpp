@@ -1,5 +1,6 @@
 #include "ll/api/event/server/ServerStoppingEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -8,7 +9,7 @@ namespace ll::event::inline server {
 
 void ServerStoppingEvent::serialize(CompoundTag& nbt) const {
     Event::serialize(nbt);
-    nbt["server"] = (uintptr_t)&server();
+    nbt["server"] = serializeRefObj(server());
 }
 
 ServerInstance& ServerStoppingEvent::server() const { return mServer; }

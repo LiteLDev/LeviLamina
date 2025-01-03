@@ -1,5 +1,6 @@
 #include "ll/api/event/player/PlayerUseItemEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/world/gamemode/GameMode.h"
@@ -10,7 +11,7 @@ namespace ll::event::inline player {
 
 void PlayerUseItemEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["item"] = (uintptr_t)&item();
+    nbt["item"] =serializeRefObj(item());
 }
 
 ItemStack& PlayerUseItemEvent::item() const { return mItem; }

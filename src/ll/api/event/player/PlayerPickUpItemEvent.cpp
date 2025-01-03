@@ -1,5 +1,6 @@
 #include "ll/api/event/player/PlayerPickUpItemEvent.h"
 #include "ll/api/event/Emitter.h"
+#include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
 #include "mc/nbt/CompoundTag.h"
@@ -8,7 +9,7 @@ namespace ll::event::inline player {
 
 void PlayerPickUpItemEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["item"]        = (uintptr_t)&itemActor();
+    nbt["item"]        = serializeRefObj(itemActor());
     nbt["orgCount"]    = orgCount();
     nbt["favoredSlot"] = favoredSlot();
 }
