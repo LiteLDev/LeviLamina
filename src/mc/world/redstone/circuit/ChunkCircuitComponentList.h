@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/redstone/circuit/components/RedstoneLogicExecutionFlags.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseCircuitComponent;
+class BlockPos;
+// clang-format on
+
 struct ChunkCircuitComponentList {
 public:
     // ChunkCircuitComponentList inner types declare
@@ -14,30 +23,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk70d17e;
-        ::ll::UntypedStorage<4, 12> mUnkea06a3;
-        ::ll::UntypedStorage<1, 1>  mUnk549a24;
+        ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*>       mComponent;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                   mPos;
+        ::ll::TypedStorage<1, 1, ::RedstoneLogicExecutionFlags> cachedExecutionFlags;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Item& operator=(Item const&);
-        Item(Item const&);
-        Item();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkaf6a6f;
-    ::ll::UntypedStorage<8, 24> mUnk27b3c9;
+    ::ll::TypedStorage<1, 1, bool>                                              bShouldEvaluate;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkCircuitComponentList::Item>> mComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkCircuitComponentList& operator=(ChunkCircuitComponentList const&);
-    ChunkCircuitComponentList(ChunkCircuitComponentList const&);
-    ChunkCircuitComponentList();
 
 public:
     // member functions

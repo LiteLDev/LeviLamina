@@ -78,11 +78,7 @@ namespace webrtc { struct SsrcInfo; }
 namespace webrtc {
 // inner types
 enum : int {
-    KRtpCsrcSize = 15,
-};
-
-enum : int {
-    KMaxPreferredPixelFormats = 5,
+    KMaxSpatialLayers = 5,
 };
 
 enum : int {
@@ -90,7 +86,11 @@ enum : int {
 };
 
 enum : int {
-    KMaxSpatialLayers = 5,
+    KRtpCsrcSize = 15,
+};
+
+enum : int {
+    KMaxPreferredPixelFormats = 5,
 };
 
 enum : int {
