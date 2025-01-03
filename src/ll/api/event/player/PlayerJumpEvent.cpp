@@ -32,7 +32,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerActionPacket const& packet
 ) {
     if (auto settings = ll::service::getPropertiesSettings(); settings) {
-        auto mode = settings->getPlayerMovementSettings().mUnk3c7e19.as<ServerAuthMovementMode>();
+        auto& mode = settings->getPlayerMovementSettings().AuthorityMode;
         if (mode == ServerAuthMovementMode::LegacyClientAuthoritativeV1) {
             if (packet.mAction == PlayerActionType::StartJump) {
                 if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(source, packet.mClientSubId); player) {
