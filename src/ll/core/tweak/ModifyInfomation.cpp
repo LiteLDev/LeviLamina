@@ -113,8 +113,6 @@ try {
     } catch (...) {}
 }
 
-// Block from adding LOG metadata
-
 LL_TYPE_INSTANCE_HOOK(
     AppendLogEntryMetadataHook,
     HookPriority::Normal,
@@ -128,7 +126,9 @@ LL_TYPE_INSTANCE_HOOK(
     std::string,
     int,
     int
-) {}
+) {
+    // Block from adding LOG metadata
+}
 
 LL_TYPE_INSTANCE_HOOK(
     SetOfflinePingResponseHook,
@@ -136,20 +136,20 @@ LL_TYPE_INSTANCE_HOOK(
     RakNet::RakPeer,
     &RakNet::RakPeer::$SetOfflinePingResponse,
     void,
-    const char*  data,
-    unsigned int dataSize
+    const char* data,
+    uint        dataSize
 ) {
-    auto result = std::string(data, dataSize);
-    if (result.contains("MCPE;")) {
-        result = fmt::format("{}LeviLamina;{};", result, ll::getLoaderVersion().to_string());
+    std::string_view dataView{data, dataSize};
+    if (dataView.contains("MCPE;")) {
+        auto modified = fmt::format("{}LeviLamina;{};", dataView, getLoaderVersion().to_string());
+        return origin(modified.c_str(), (uint)modified.size());
     }
-    return origin(result.c_str(), result.size());
+    return origin(data, dataSize);
 }
 
 using HookReg = memory::
     HookRegistrar<DiagnosticsLogHook, BedrockLogOutHook, AppendLogEntryMetadataHook, SetOfflinePingResponseHook>;
 
 static HookReg hookRegister;
-
 
 } // namespace ll
