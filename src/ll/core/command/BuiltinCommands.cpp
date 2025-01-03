@@ -7,7 +7,7 @@
 
 namespace ll::command {
 LL_TYPE_INSTANCE_HOOK(
-    registerBuiltinCommands,
+    RegisterBuiltinCommands,
     ll::memory::HookPriority::Highest,
     ServerInstanceEventCoordinator,
     &ServerInstanceEventCoordinator::sendServerInitializeEnd,
@@ -15,20 +15,11 @@ LL_TYPE_INSTANCE_HOOK(
     ::ServerInstance& ins
 ) {
     origin(ins);
+    registerTpdimCommand();
     registerVersionCommand();
     registerMemstatsCommand();
     registerCrashCommand();
     registerModManageCommand();
 }
-LL_STATIC_HOOK(
-    registerTpdimCommands,
-    ll::memory::HookPriority::Normal,
-    &TeleportCommand::setup,
-    void,
-    CommandRegistry& registry
-) {
-    origin(registry);
-    registerTpdimCommand();
-}
-void registerCommands() { static memory::HookRegistrar<registerBuiltinCommands, registerTpdimCommands> hooks{}; }
+void registerCommands() { static memory::HookRegistrar<RegisterBuiltinCommands> hooks{}; }
 } // namespace ll::command

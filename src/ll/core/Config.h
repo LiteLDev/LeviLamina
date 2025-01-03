@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 30;
+    int version = 31;
 
     std::string language = "system";
     struct {
@@ -24,9 +24,7 @@ struct LeviConfig {
             CommandPermissionLevel permission = CommandPermissionLevel::GameDirectors;
         };
         struct {
-            struct {
-                bool enabled = true;
-            } tpdimOverload{};
+            CmdSetting tpdimCommand{};
             CmdSetting crashCommand{false};
             CmdSetting versionCommand{};
             CmdSetting memstatsCommand{true, CommandPermissionLevel::Host};

@@ -30,11 +30,13 @@ struct TpTarget {
 };
 
 void registerTpdimCommand() {
-    auto config = ll::getLeviConfig().modules.command.tpdimOverload;
+    auto config = ll::getLeviConfig().modules.command.tpdimCommand;
     if (!config.enabled) {
         return;
     }
-    auto& cmd = CommandRegistrar::getInstance().getOrCreateCommand("tp");
+    auto& cmd = CommandRegistrar::getInstance()
+                    .getOrCreateCommand("teleportdim", "commands.tp.description", config.permission)
+                    .alias("tpdim");
 
     cmd.overload<TpSelf>()
         .required("destination")
