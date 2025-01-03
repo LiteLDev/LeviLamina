@@ -1,18 +1,16 @@
 #include "ll/core/tweak/ModifyInfomation.h"
-#include "ll/api/base/Containers.h"
+#include "ll/api/Versions.h"
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/Config.h"
-#include "ll/core/LeviLamina.h"
-#include "ll/core/Version.h"
 
+#include "mc/common/Globals.h"
 #include "mc/deps/core/debug/bedrock_log/LogDetails.h"
+#include "mc/deps/raknet/RakPeer.h"
 #include "mc/diagnostics/Interface.h"
 #include "mc/world/level/storage/DBStorage.h"
-
-MCAPI void BedrockLogOut(uint priority, char const* pszFormat, ...);
 
 namespace ll {
 
@@ -132,8 +130,26 @@ LL_TYPE_INSTANCE_HOOK(
     int
 ) {}
 
-using HookReg = memory::HookRegistrar<DiagnosticsLogHook, BedrockLogOutHook, AppendLogEntryMetadataHook>;
+LL_TYPE_INSTANCE_HOOK(
+    SetOfflinePingResponseHook,
+    HookPriority::Normal,
+    RakNet::RakPeer,
+    &RakNet::RakPeer::$SetOfflinePingResponse,
+    void,
+    const char*  data,
+    unsigned int dataSize
+) {
+    auto result = std::string(data, dataSize);
+    if (result.contains("MCPE;")) {
+        result = fmt::format("{}LeviLamina;{};", result, ll::getLoaderVersion().to_string());
+    }
+    return origin(result.c_str(), result.size());
+}
+
+using HookReg = memory::
+    HookRegistrar<DiagnosticsLogHook, BedrockLogOutHook, AppendLogEntryMetadataHook, SetOfflinePingResponseHook>;
 
 static HookReg hookRegister;
+
 
 } // namespace ll
