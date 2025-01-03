@@ -14,30 +14,25 @@ class CompoundTag;
 class DataLoadHelper;
 class Level;
 class SaveContext;
+struct ActorUniqueID;
 // clang-format on
 
 class ConduitBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk962339;
-    ::ll::UntypedStorage<1, 1>  mUnk1b58f4;
-    ::ll::UntypedStorage<4, 4>  mUnkdb8f77;
-    ::ll::UntypedStorage<8, 8>  mUnka3d419;
-    ::ll::UntypedStorage<4, 4>  mUnkce0a24;
-    ::ll::UntypedStorage<4, 4>  mUnkf0ec93;
-    ::ll::UntypedStorage<4, 4>  mUnk1b69fa;
-    ::ll::UntypedStorage<4, 4>  mUnk850d9a;
-    ::ll::UntypedStorage<4, 4>  mUnk8a9f45;
-    ::ll::UntypedStorage<8, 8>  mUnk9151ef;
-    ::ll::UntypedStorage<8, 24> mUnk23c819;
+    ::ll::TypedStorage<1, 1, bool>                       mIsActive;
+    ::ll::TypedStorage<1, 1, bool>                       mIsHunting;
+    ::ll::TypedStorage<4, 4, int>                        mBlockRefreshCounter;
+    ::ll::TypedStorage<8, 8, uint64>                     mNextAmbientSound;
+    ::ll::TypedStorage<4, 4, float>                      mAnimationValue;
+    ::ll::TypedStorage<4, 4, float>                      mRotation;
+    ::ll::TypedStorage<4, 4, int>                        mRotationTickCount;
+    ::ll::TypedStorage<4, 4, int>                        mWindLevel;
+    ::ll::TypedStorage<4, 4, int>                        mEffectRange;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mTarget;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mBlockPositions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConduitBlockActor& operator=(ConduitBlockActor const&);
-    ConduitBlockActor(ConduitBlockActor const&);
-    ConduitBlockActor();
 
 public:
     // virtual functions

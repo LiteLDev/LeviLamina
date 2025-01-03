@@ -15,12 +15,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class DecoratedPotBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    DecoratedPotBlockItem& operator=(DecoratedPotBlockItem const&);
-    DecoratedPotBlockItem(DecoratedPotBlockItem const&);
-    DecoratedPotBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 52

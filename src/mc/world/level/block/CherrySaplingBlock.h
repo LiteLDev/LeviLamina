@@ -18,12 +18,6 @@ class Random;
 
 class CherrySaplingBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    CherrySaplingBlock& operator=(CherrySaplingBlock const&);
-    CherrySaplingBlock(CherrySaplingBlock const&);
-    CherrySaplingBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

@@ -24,12 +24,6 @@ class Vec3;
 
 class ShulkerBoxBlock : public ::ChestBlock {
 public:
-    // prevent constructor by default
-    ShulkerBoxBlock& operator=(ShulkerBoxBlock const&);
-    ShulkerBoxBlock(ShulkerBoxBlock const&);
-    ShulkerBoxBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 89

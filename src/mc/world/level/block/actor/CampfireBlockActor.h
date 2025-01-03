@@ -22,17 +22,11 @@ class CampfireBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 512> mUnk949ab4;
-    ::ll::UntypedStorage<4, 16>  mUnk82ac43;
-    ::ll::UntypedStorage<1, 1>   mUnkf5d0aa;
-    ::ll::UntypedStorage<4, 4>   mUnk85654f;
+    ::ll::TypedStorage<8, 512, ::ItemInstance[4]> mCookingItem;
+    ::ll::TypedStorage<4, 16, int[4]>             mCookingTime;
+    ::ll::TypedStorage<1, 1, bool>                mWasLit;
+    ::ll::TypedStorage<4, 4, int>                 mNextSmokeParticleTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CampfireBlockActor& operator=(CampfireBlockActor const&);
-    CampfireBlockActor(CampfireBlockActor const&);
-    CampfireBlockActor();
 
 public:
     // virtual functions

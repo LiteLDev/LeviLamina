@@ -13,12 +13,6 @@ class Material;
 
 class CobblestoneBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CobblestoneBlock& operator=(CobblestoneBlock const&);
-    CobblestoneBlock(CobblestoneBlock const&);
-    CobblestoneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 129

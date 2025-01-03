@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 class RenderParams;
 struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
@@ -18,14 +19,8 @@ class SetBlock : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 184> mUnkde7203;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetBlock& operator=(SetBlock const&);
-    SetBlock(SetBlock const&);
-    SetBlock();
 
 public:
     // virtual functions

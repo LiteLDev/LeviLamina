@@ -12,12 +12,6 @@ class Block;
 
 class MelonBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    MelonBlock& operator=(MelonBlock const&);
-    MelonBlock(MelonBlock const&);
-    MelonBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 25

@@ -15,6 +15,7 @@ class CompoundTag;
 class DataLoadHelper;
 class Level;
 class SaveContext;
+class TrialSpawner;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -22,14 +23,8 @@ class TrialSpawnerBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk298885;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TrialSpawner>> mSpawner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrialSpawnerBlockActor& operator=(TrialSpawnerBlockActor const&);
-    TrialSpawnerBlockActor(TrialSpawnerBlockActor const&);
-    TrialSpawnerBlockActor();
 
 public:
     // virtual functions

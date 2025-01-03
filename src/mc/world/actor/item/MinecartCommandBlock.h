@@ -21,12 +21,6 @@ struct VariantParameterList;
 
 class MinecartCommandBlock : public ::Minecart {
 public:
-    // prevent constructor by default
-    MinecartCommandBlock& operator=(MinecartCommandBlock const&);
-    MinecartCommandBlock(MinecartCommandBlock const&);
-    MinecartCommandBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 33

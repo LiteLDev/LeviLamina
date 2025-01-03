@@ -18,12 +18,6 @@ class Player;
 
 class RootedDirtBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    RootedDirtBlock& operator=(RootedDirtBlock const&);
-    RootedDirtBlock(RootedDirtBlock const&);
-    RootedDirtBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 74

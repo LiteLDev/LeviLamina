@@ -23,14 +23,8 @@ class StemBlock : public ::BushBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1b138d;
+    ::ll::TypedStorage<8, 8, ::BlockLegacy const&> mFruit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StemBlock& operator=(StemBlock const&);
-    StemBlock(StemBlock const&);
-    StemBlock();
 
 public:
     // virtual functions

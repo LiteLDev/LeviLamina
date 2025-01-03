@@ -14,12 +14,6 @@ class Player;
 
 class CraftingTableBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CraftingTableBlock& operator=(CraftingTableBlock const&);
-    CraftingTableBlock(CraftingTableBlock const&);
-    CraftingTableBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

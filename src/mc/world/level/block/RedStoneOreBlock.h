@@ -21,14 +21,8 @@ class RedStoneOreBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk17c8a1;
+    ::ll::TypedStorage<1, 1, bool> mLit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RedStoneOreBlock& operator=(RedStoneOreBlock const&);
-    RedStoneOreBlock(RedStoneOreBlock const&);
-    RedStoneOreBlock();
 
 public:
     // virtual functions

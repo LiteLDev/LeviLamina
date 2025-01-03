@@ -17,14 +17,8 @@ class BowItem : public ::RangedWeaponItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnkbbecb4;
+    ::ll::TypedStorage<8, 192, ::ResolvedItemIconInfo[3]> mFrame;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BowItem& operator=(BowItem const&);
-    BowItem(BowItem const&);
-    BowItem();
 
 public:
     // virtual functions

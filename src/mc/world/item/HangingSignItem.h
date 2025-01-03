@@ -16,12 +16,6 @@ class ItemStackBase;
 
 class HangingSignItem : public ::SignItem {
 public:
-    // prevent constructor by default
-    HangingSignItem& operator=(HangingSignItem const&);
-    HangingSignItem(HangingSignItem const&);
-    HangingSignItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 121

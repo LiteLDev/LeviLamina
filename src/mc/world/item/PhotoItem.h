@@ -7,12 +7,6 @@
 
 class PhotoItem : public ::Item {
 public:
-    // prevent constructor by default
-    PhotoItem& operator=(PhotoItem const&);
-    PhotoItem(PhotoItem const&);
-    PhotoItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

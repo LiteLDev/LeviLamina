@@ -6,6 +6,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Command;
 class CommandOrigin;
 class CompoundTag;
 class DataLoadHelper;
@@ -17,23 +18,18 @@ class BaseCommandBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4d31b8;
-    ::ll::UntypedStorage<8, 24> mUnk358e42;
-    ::ll::UntypedStorage<8, 32> mUnk760cd7;
-    ::ll::UntypedStorage<8, 32> mUnk9cfeef;
-    ::ll::UntypedStorage<8, 8>  mUnk73016a;
-    ::ll::UntypedStorage<8, 8>  mUnkfa0b49;
-    ::ll::UntypedStorage<4, 4>  mUnkfcac45;
-    ::ll::UntypedStorage<4, 4>  mUnkdcb279;
-    ::ll::UntypedStorage<4, 4>  mUnk3233c6;
-    ::ll::UntypedStorage<1, 1>  mUnk77ad41;
-    ::ll::UntypedStorage<1, 1>  mUnk361c50;
+    ::ll::TypedStorage<8, 32, ::std::string>                mLastOutputId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mLastOutputParams;
+    ::ll::TypedStorage<8, 32, ::std::string>                mCommand;
+    ::ll::TypedStorage<8, 32, ::std::string>                mName;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>>  mCompiledCommand;
+    ::ll::TypedStorage<8, 8, uint64>                        mLastExecution;
+    ::ll::TypedStorage<4, 4, int>                           mVersion;
+    ::ll::TypedStorage<4, 4, int>                           mSuccessCount;
+    ::ll::TypedStorage<4, 4, int>                           mTickDelay;
+    ::ll::TypedStorage<1, 1, bool>                          mExecuteOnFirstTick;
+    ::ll::TypedStorage<1, 1, bool>                          mTrackOutput;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseCommandBlock& operator=(BaseCommandBlock const&);
-    BaseCommandBlock(BaseCommandBlock const&);
 
 public:
     // member functions

@@ -15,12 +15,6 @@ class Vec3;
 
 class QuartzBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    QuartzBlock& operator=(QuartzBlock const&);
-    QuartzBlock(QuartzBlock const&);
-    QuartzBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

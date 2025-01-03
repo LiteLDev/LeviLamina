@@ -17,12 +17,6 @@ class Vec3;
 
 class RedStoneDustItem : public ::Item {
 public:
-    // prevent constructor by default
-    RedStoneDustItem& operator=(RedStoneDustItem const&);
-    RedStoneDustItem(RedStoneDustItem const&);
-    RedStoneDustItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

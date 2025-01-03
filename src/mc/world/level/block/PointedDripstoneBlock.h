@@ -28,12 +28,6 @@ namespace mce { class Color; }
 
 class PointedDripstoneBlock : public ::FallingBlock {
 public:
-    // prevent constructor by default
-    PointedDripstoneBlock& operator=(PointedDripstoneBlock const&);
-    PointedDripstoneBlock(PointedDripstoneBlock const&);
-    PointedDripstoneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 131

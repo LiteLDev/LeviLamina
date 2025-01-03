@@ -18,12 +18,6 @@ namespace mce { class Color; }
 
 class SeasonsAgnosticLeavesBlock : public ::LeavesBlock {
 public:
-    // prevent constructor by default
-    SeasonsAgnosticLeavesBlock& operator=(SeasonsAgnosticLeavesBlock const&);
-    SeasonsAgnosticLeavesBlock(SeasonsAgnosticLeavesBlock const&);
-    SeasonsAgnosticLeavesBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 148

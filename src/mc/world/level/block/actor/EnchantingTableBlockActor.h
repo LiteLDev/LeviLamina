@@ -20,24 +20,18 @@ class EnchantingTableBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk7755bc;
-    ::ll::UntypedStorage<4, 4>  mUnk272c5b;
-    ::ll::UntypedStorage<4, 4>  mUnkfe9441;
-    ::ll::UntypedStorage<4, 4>  mUnk14ff02;
-    ::ll::UntypedStorage<4, 4>  mUnk38bd62;
-    ::ll::UntypedStorage<4, 4>  mUnkb7fa40;
-    ::ll::UntypedStorage<4, 4>  mUnk274f2d;
-    ::ll::UntypedStorage<4, 4>  mUnk5449a9;
-    ::ll::UntypedStorage<4, 4>  mUnk701aef;
-    ::ll::UntypedStorage<4, 4>  mUnk16a3ac;
-    ::ll::UntypedStorage<8, 32> mUnk29e96d;
+    ::ll::TypedStorage<4, 4, float>          mOpen;
+    ::ll::TypedStorage<4, 4, float>          mOpenOld;
+    ::ll::TypedStorage<4, 4, float>          mRot;
+    ::ll::TypedStorage<4, 4, float>          mRotOld;
+    ::ll::TypedStorage<4, 4, float>          mRotT;
+    ::ll::TypedStorage<4, 4, float>          mFlip;
+    ::ll::TypedStorage<4, 4, float>          mFlipOld;
+    ::ll::TypedStorage<4, 4, float>          mFlipT;
+    ::ll::TypedStorage<4, 4, float>          mFlipA;
+    ::ll::TypedStorage<4, 4, int>            mTime;
+    ::ll::TypedStorage<8, 32, ::std::string> customName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantingTableBlockActor& operator=(EnchantingTableBlockActor const&);
-    EnchantingTableBlockActor(EnchantingTableBlockActor const&);
-    EnchantingTableBlockActor();
 
 public:
     // virtual functions

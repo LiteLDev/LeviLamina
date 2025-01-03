@@ -21,12 +21,6 @@ class Random;
 
 class NetherFungusBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    NetherFungusBlock& operator=(NetherFungusBlock const&);
-    NetherFungusBlock(NetherFungusBlock const&);
-    NetherFungusBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 80

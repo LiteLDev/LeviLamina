@@ -21,14 +21,8 @@ class LodestoneBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf27fdf;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId> mTrackingDBHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LodestoneBlockActor& operator=(LodestoneBlockActor const&);
-    LodestoneBlockActor(LodestoneBlockActor const&);
-    LodestoneBlockActor();
 
 public:
     // virtual functions

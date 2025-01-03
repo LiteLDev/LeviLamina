@@ -22,16 +22,14 @@ class Random;
 
 class SaplingBlock : public ::BushBlock {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9c4ce2;
-    // NOLINTEND
+    // SaplingBlock inner types define
+    using Type = ::SaplingType;
 
 public:
-    // prevent constructor by default
-    SaplingBlock& operator=(SaplingBlock const&);
-    SaplingBlock(SaplingBlock const&);
-    SaplingBlock();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SaplingType> mType;
+    // NOLINTEND
 
 public:
     // virtual functions

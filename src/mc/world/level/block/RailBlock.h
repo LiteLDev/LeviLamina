@@ -12,12 +12,6 @@ class Block;
 
 class RailBlock : public ::BaseRailBlock {
 public:
-    // prevent constructor by default
-    RailBlock& operator=(RailBlock const&);
-    RailBlock(RailBlock const&);
-    RailBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

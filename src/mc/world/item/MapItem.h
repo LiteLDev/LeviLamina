@@ -29,12 +29,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class MapItem : public ::ComplexItem {
 public:
-    // prevent constructor by default
-    MapItem& operator=(MapItem const&);
-    MapItem(MapItem const&);
-    MapItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 92

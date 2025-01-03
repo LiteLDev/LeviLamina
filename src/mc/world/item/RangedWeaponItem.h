@@ -15,12 +15,6 @@ class Player;
 
 class RangedWeaponItem : public ::Item {
 public:
-    // prevent constructor by default
-    RangedWeaponItem& operator=(RangedWeaponItem const&);
-    RangedWeaponItem(RangedWeaponItem const&);
-    RangedWeaponItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 80

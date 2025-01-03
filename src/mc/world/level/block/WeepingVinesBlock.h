@@ -23,12 +23,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class WeepingVinesBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    WeepingVinesBlock& operator=(WeepingVinesBlock const&);
-    WeepingVinesBlock(WeepingVinesBlock const&);
-    WeepingVinesBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

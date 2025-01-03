@@ -12,12 +12,6 @@ class BlockPos;
 
 class EndPortalBlockActor : public ::BlockActor {
 public:
-    // prevent constructor by default
-    EndPortalBlockActor& operator=(EndPortalBlockActor const&);
-    EndPortalBlockActor(EndPortalBlockActor const&);
-    EndPortalBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

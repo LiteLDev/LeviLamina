@@ -26,12 +26,6 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class PowderSnowBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    PowderSnowBlock& operator=(PowderSnowBlock const&);
-    PowderSnowBlock(PowderSnowBlock const&);
-    PowderSnowBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 131

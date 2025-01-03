@@ -26,14 +26,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3c371b;
+    ::ll::TypedStorage<4, 4, ::CoalItem::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CoalItem& operator=(CoalItem const&);
-    CoalItem(CoalItem const&);
-    CoalItem();
 
 public:
     // virtual functions

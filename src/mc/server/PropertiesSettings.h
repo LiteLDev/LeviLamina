@@ -16,6 +16,7 @@
 // clang-format off
 struct NetworkAddress;
 struct NetworkPermissions;
+struct NetworkSettingOptions;
 struct PlayerMovementSettings;
 struct ScriptSettings;
 // clang-format on
@@ -24,74 +25,68 @@ class PropertiesSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkf57a82;
-    ::ll::UntypedStorage<8, 32>  mUnkf23355;
-    ::ll::UntypedStorage<8, 32>  mUnk5c0ffb;
-    ::ll::UntypedStorage<8, 32>  mUnkc9b4a8;
-    ::ll::UntypedStorage<2, 2>   mUnk363af4;
-    ::ll::UntypedStorage<2, 2>   mUnk65a408;
-    ::ll::UntypedStorage<4, 4>   mUnkfc00ca;
-    ::ll::UntypedStorage<4, 4>   mUnkaab427;
-    ::ll::UntypedStorage<8, 32>  mUnk8355ba;
-    ::ll::UntypedStorage<8, 32>  mUnk2a06a4;
-    ::ll::UntypedStorage<8, 32>  mUnkdaae35;
-    ::ll::UntypedStorage<8, 32>  mUnk2f4d68;
-    ::ll::UntypedStorage<8, 32>  mUnk54cb52;
-    ::ll::UntypedStorage<4, 4>   mUnk44f733;
-    ::ll::UntypedStorage<4, 4>   mUnkc84f25;
-    ::ll::UntypedStorage<8, 24>  mUnk4dacc5;
-    ::ll::UntypedStorage<1, 1>   mUnkea480b;
-    ::ll::UntypedStorage<1, 1>   mUnkfab55f;
-    ::ll::UntypedStorage<1, 1>   mUnkdecf92;
-    ::ll::UntypedStorage<1, 1>   mUnk8dfc53;
-    ::ll::UntypedStorage<1, 1>   mUnkdd302e;
-    ::ll::UntypedStorage<1, 1>   mUnk7ed145;
-    ::ll::UntypedStorage<1, 1>   mUnk801871;
-    ::ll::UntypedStorage<1, 1>   mUnk7d9b17;
-    ::ll::UntypedStorage<1, 1>   mUnked0194;
-    ::ll::UntypedStorage<1, 1>   mUnka6705e;
-    ::ll::UntypedStorage<1, 1>   mUnke2df27;
-    ::ll::UntypedStorage<1, 1>   mUnkdc5a6b;
-    ::ll::UntypedStorage<1, 1>   mUnk425d49;
-    ::ll::UntypedStorage<1, 1>   mUnk5af680;
-    ::ll::UntypedStorage<4, 4>   mUnk544e4a;
-    ::ll::UntypedStorage<4, 4>   mUnk8d6a96;
-    ::ll::UntypedStorage<4, 4>   mUnkd6a0d0;
-    ::ll::UntypedStorage<4, 4>   mUnk1fbbd5;
-    ::ll::UntypedStorage<8, 40>  mUnkf790cb;
-    ::ll::UntypedStorage<8, 32>  mUnk11fba3;
-    ::ll::UntypedStorage<4, 4>   mUnk2ea9e3;
-    ::ll::UntypedStorage<1, 1>   mUnk4c65ed;
-    ::ll::UntypedStorage<4, 4>   mUnk1b8967;
-    ::ll::UntypedStorage<1, 1>   mUnk3428dc;
-    ::ll::UntypedStorage<1, 1>   mUnk1d2153;
-    ::ll::UntypedStorage<4, 4>   mUnk6c8157;
-    ::ll::UntypedStorage<1, 1>   mUnkc83925;
-    ::ll::UntypedStorage<4, 24>  mUnkde68e7;
-    ::ll::UntypedStorage<8, 64>  mUnkc6410a;
-    ::ll::UntypedStorage<8, 72>  mUnkfc8f44;
-    ::ll::UntypedStorage<8, 648> mUnkef1c68;
-    ::ll::UntypedStorage<1, 1>   mUnkec2b90;
-    ::ll::UntypedStorage<1, 1>   mUnk6048ee;
-    ::ll::UntypedStorage<1, 1>   mUnk8c8d67;
-    ::ll::UntypedStorage<1, 1>   mUnk14851b;
-    ::ll::UntypedStorage<1, 1>   mUnkaa9a1c;
-    ::ll::UntypedStorage<4, 8>   mUnkd48920;
-    ::ll::UntypedStorage<1, 1>   mUnkc866fa;
-    ::ll::UntypedStorage<1, 1>   mUnk337af3;
-    ::ll::UntypedStorage<1, 1>   mUnk5d025e;
-    ::ll::UntypedStorage<1, 1>   mUnk50eab8;
-    ::ll::UntypedStorage<1, 1>   mUnk980584;
-    ::ll::UntypedStorage<1, 1>   mUnk1e1dfd;
-    ::ll::UntypedStorage<8, 32>  mUnk742276;
-    ::ll::UntypedStorage<8, 32>  mUnka77853;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mLevelSeed;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mLevelName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mLevelType;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mServerName;
+    ::ll::TypedStorage<2, 2, ushort>                                              mServerPort;
+    ::ll::TypedStorage<2, 2, ushort>                                              mServerPortv6;
+    ::ll::TypedStorage<4, 4, int>                                                 mMaxPlayers;
+    ::ll::TypedStorage<4, 4, int>                                                 mOpPermissionLevel;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mDifficulty;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mServerType;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mGameMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mLanguage;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mServerId;
+    ::ll::TypedStorage<4, 4, uint>                                                mMaxThreads;
+    ::ll::TypedStorage<4, 4, int>                                                 mServerTickRange;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                       mExtraTrustedKeys;
+    ::ll::TypedStorage<1, 1, bool>                                                mUseAllowList;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsOnlineMode;
+    ::ll::TypedStorage<1, 1, bool>                                                mForceGameMode;
+    ::ll::TypedStorage<1, 1, bool>                                                mAllowCheats;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsHardcore;
+    ::ll::TypedStorage<1, 1, bool>                                                mAdventureModeOverridesEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mDisablePlayerInteractions;
+    ::ll::TypedStorage<1, 1, bool>                                                mTexturePackRequired;
+    ::ll::TypedStorage<1, 1, bool>                                                mUseMsaGamertagsOnly;
+    ::ll::TypedStorage<1, 1, bool>                                                mEnableItemStackNetManager;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsItemTransactionLoggingEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsPropertiesFileLoaded;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsServerVisibleToLanDiscovery;
+    ::ll::TypedStorage<1, 1, bool>                                                mEncryptionDisabled;
+    ::ll::TypedStorage<4, 4, int>                                                 mMaxViewDistanceChunks;
+    ::ll::TypedStorage<4, 4, ::std::chrono::minutes>                              mMaxIdleTime;
+    ::ll::TypedStorage<4, 4, int>                                                 mServerWakeupFrequency;
+    ::ll::TypedStorage<4, 4, ::TransportLayer>                                    mTransportLayerType;
+    ::ll::TypedStorage<8, 40, ::NetworkAddress>                                   mRemoteServerCommunicationEndpoint;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mDefaultPlayerPermissionLevel;
+    ::ll::TypedStorage<4, 4, ::std::bitset<3>>                                    mServerTextSettings;
+    ::ll::TypedStorage<1, 1, bool>                                                mEmitServerTelemetry;
+    ::ll::TypedStorage<4, 4, ::LogLevel>                                          mContentLogLevel;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsContentLogConsoleOutputEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsContentLogFileEnabled;
+    ::ll::TypedStorage<4, 4, float>                                               mWebsocketRetryTime;
+    ::ll::TypedStorage<1, 1, bool>                                                mUseWebsocketEncryption;
+    ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                            mNetworkSettings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
+    ::ll::TypedStorage<8, 72, ::PlayerMovementSettings>                           mPlayerMovementSettings;
+    ::ll::TypedStorage<8, 648, ::ScriptSettings>                                  mScriptSettings;
+    ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                              mChatRestrictionLevel;
+    ::ll::TypedStorage<1, 1, bool>                                                mPersonaDisabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mCustomSkinsDisabled;
+    ::ll::TypedStorage<1, 1, bool>                                                mEmoteChatMute;
+    ::ll::TypedStorage<1, 1, bool>                                                mClientSideGenerationEnabled;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                              mServerBuildRatioOverride;
+    ::ll::TypedStorage<1, 1, bool>                                                mUseHashesForBlockRuntimeIds;
+    ::ll::TypedStorage<1, 1, bool>                                                mBlockNetworkIdsAreHashes;
+    ::ll::TypedStorage<1, 1, bool>                                                mRakNetJoinFloodProtection;
+    ::ll::TypedStorage<1, 1, bool>                                                mAllowUnconnectedPings;
+    ::ll::TypedStorage<1, 1, bool>                                                mAllowSubClientLogin;
+    ::ll::TypedStorage<1, 1, ::NetworkPermissions>                                mNetworkPermissions;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mAppId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                      mAppTenantId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PropertiesSettings& operator=(PropertiesSettings const&);
-    PropertiesSettings(PropertiesSettings const&);
-    PropertiesSettings();
 
 public:
     // member functions

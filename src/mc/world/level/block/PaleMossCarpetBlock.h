@@ -24,12 +24,6 @@ class Random;
 
 class PaleMossCarpetBlock : public ::CarpetBlock {
 public:
-    // prevent constructor by default
-    PaleMossCarpetBlock& operator=(PaleMossCarpetBlock const&);
-    PaleMossCarpetBlock(PaleMossCarpetBlock const&);
-    PaleMossCarpetBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

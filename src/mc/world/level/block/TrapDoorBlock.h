@@ -35,12 +35,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    TrapDoorBlock& operator=(TrapDoorBlock const&);
-    TrapDoorBlock(TrapDoorBlock const&);
-    TrapDoorBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

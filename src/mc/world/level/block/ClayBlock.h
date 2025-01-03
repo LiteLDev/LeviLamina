@@ -16,12 +16,6 @@ class BlockSource;
 
 class ClayBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    ClayBlock& operator=(ClayBlock const&);
-    ClayBlock(ClayBlock const&);
-    ClayBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 74

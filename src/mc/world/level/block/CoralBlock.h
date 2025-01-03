@@ -19,14 +19,8 @@ class CoralBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk3d0793;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mDeadVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CoralBlock& operator=(CoralBlock const&);
-    CoralBlock(CoralBlock const&);
-    CoralBlock();
 
 public:
     // virtual functions

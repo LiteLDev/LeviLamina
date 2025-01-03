@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
@@ -21,17 +22,11 @@ class BedBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka5dd35;
-    ::ll::UntypedStorage<1, 1> mUnkfdf8e3;
-    ::ll::UntypedStorage<8, 8> mUnkbf5619;
-    ::ll::UntypedStorage<8, 8> mUnk257722;
+    ::ll::TypedStorage<4, 4, int>             mDyeColor;
+    ::ll::TypedStorage<1, 1, bool>            mDirty;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPetSleepingOnBed;
+    ::ll::TypedStorage<8, 8, ::Block const&>  mBedBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BedBlockActor& operator=(BedBlockActor const&);
-    BedBlockActor(BedBlockActor const&);
-    BedBlockActor();
 
 public:
     // virtual functions

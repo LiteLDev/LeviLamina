@@ -20,14 +20,8 @@ class CopperDoorBlock : public ::DoorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnkb59662;
+    ::ll::TypedStorage<8, 96, ::CopperBehavior> mCopperBehavior;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CopperDoorBlock& operator=(CopperDoorBlock const&);
-    CopperDoorBlock(CopperDoorBlock const&);
-    CopperDoorBlock();
 
 public:
     // virtual functions

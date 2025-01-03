@@ -12,11 +12,13 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class ExpiringTick;
 class HashedString;
 class ItemStack;
 class Level;
 class Player;
 class SaveContext;
+class WeakEntityRef;
 // clang-format on
 
 class BrushableBlockActor : public ::RandomizableBlockActorContainer {
@@ -40,21 +42,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkde09e2;
-    ::ll::UntypedStorage<8, 24> mUnk3261c5;
-    ::ll::UntypedStorage<8, 24> mUnk654472;
-    ::ll::UntypedStorage<8, 24> mUnk28ec02;
-    ::ll::UntypedStorage<8, 48> mUnk2a8a05;
-    ::ll::UntypedStorage<4, 4>  mUnkbc15b6;
-    ::ll::UntypedStorage<1, 1>  mUnkcfa867;
-    ::ll::UntypedStorage<1, 1>  mUnkdba7af;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mBrushReset;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mBrushCooldown;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                 mDisplayEntity;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>      mItems;
+    ::ll::TypedStorage<8, 48, ::HashedString>                  mBlockId;
+    ::ll::TypedStorage<4, 4, uint>                             mBrushCount;
+    ::ll::TypedStorage<1, 1, uchar>                            mBrushDirection;
+    ::ll::TypedStorage<1, 1, bool>                             mLootTableUnpacked;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BrushableBlockActor& operator=(BrushableBlockActor const&);
-    BrushableBlockActor(BrushableBlockActor const&);
-    BrushableBlockActor();
 
 public:
     // virtual functions

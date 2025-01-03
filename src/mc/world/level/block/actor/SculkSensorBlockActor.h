@@ -15,21 +15,16 @@ class DataLoadHelper;
 class Level;
 class SaveContext;
 class SculkSensorVibrationConfig;
+class VibrationListener;
 // clang-format on
 
 class SculkSensorBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 200> mUnke4e960;
-    ::ll::UntypedStorage<8, 80>  mUnk9420c4;
+    ::ll::TypedStorage<8, 200, ::VibrationListener>                                          mVibrationListener;
+    ::ll::TypedStorage<8, 80, ::std::optional<::gsl::final_action<::std::function<void()>>>> mListenerRegistration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SculkSensorBlockActor& operator=(SculkSensorBlockActor const&);
-    SculkSensorBlockActor(SculkSensorBlockActor const&);
-    SculkSensorBlockActor();
 
 public:
     // virtual functions

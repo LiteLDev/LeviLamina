@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/alchemy/Potion.h"
 #include "mc/world/item/components/ComponentItem.h"
 
 // auto generated forward declare list
@@ -30,15 +31,9 @@ class ArrowItem : public ::ComponentItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1344> mUnke74229;
-    ::ll::UntypedStorage<4, 84>   mUnkcfe8ee;
+    ::ll::TypedStorage<8, 1344, ::ResolvedItemIconInfo[21]> mArrowIcons;
+    ::ll::TypedStorage<4, 84, ::Potion::PotionVariant[21]>  mArrowVariants;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ArrowItem& operator=(ArrowItem const&);
-    ArrowItem(ArrowItem const&);
-    ArrowItem();
 
 public:
     // virtual functions

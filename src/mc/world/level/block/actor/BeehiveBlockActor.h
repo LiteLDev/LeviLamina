@@ -43,15 +43,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9c2f70;
-    ::ll::UntypedStorage<1, 1>  mUnkcf4990;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BeehiveBlockActor::Occupant>> mOccupants;
+    ::ll::TypedStorage<1, 1, bool>                                          mShouldSpawnBees;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BeehiveBlockActor& operator=(BeehiveBlockActor const&);
-    BeehiveBlockActor(BeehiveBlockActor const&);
-    BeehiveBlockActor();
 
 public:
     // virtual functions

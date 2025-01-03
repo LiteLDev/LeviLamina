@@ -24,18 +24,12 @@ class JukeboxBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnk41254e;
-    ::ll::UntypedStorage<4, 4>   mUnk473062;
-    ::ll::UntypedStorage<1, 1>   mUnk9f1fdc;
-    ::ll::UntypedStorage<4, 4>   mUnkdeb854;
-    ::ll::UntypedStorage<1, 1>   mUnk1269d5;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mRecord;
+    ::ll::TypedStorage<4, 4, int>           mCount;
+    ::ll::TypedStorage<1, 1, bool>          mRecordingFinished;
+    ::ll::TypedStorage<4, 4, int>           mTicksPlaying;
+    ::ll::TypedStorage<1, 1, bool>          mPostBlockChangeGameEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JukeboxBlockActor& operator=(JukeboxBlockActor const&);
-    JukeboxBlockActor(JukeboxBlockActor const&);
-    JukeboxBlockActor();
 
 public:
     // virtual functions

@@ -18,12 +18,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class RecordItem : public ::ComponentItem {
 public:
-    // prevent constructor by default
-    RecordItem& operator=(RecordItem const&);
-    RecordItem(RecordItem const&);
-    RecordItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

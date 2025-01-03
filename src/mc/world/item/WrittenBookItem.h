@@ -22,14 +22,8 @@ class WrittenBookItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8e98b8;
+    ::ll::TypedStorage<1, 1, bool> mShouldFilterText;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WrittenBookItem& operator=(WrittenBookItem const&);
-    WrittenBookItem(WrittenBookItem const&);
-    WrittenBookItem();
 
 public:
     // virtual functions

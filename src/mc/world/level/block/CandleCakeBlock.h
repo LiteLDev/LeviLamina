@@ -20,12 +20,6 @@ class Vec3;
 
 class CandleCakeBlock : public ::AbstractCandleBlock {
 public:
-    // prevent constructor by default
-    CandleCakeBlock& operator=(CandleCakeBlock const&);
-    CandleCakeBlock(CandleCakeBlock const&);
-    CandleCakeBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

@@ -12,12 +12,6 @@ class Block;
 
 class BarrierBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    BarrierBlock& operator=(BarrierBlock const&);
-    BarrierBlock(BarrierBlock const&);
-    BarrierBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

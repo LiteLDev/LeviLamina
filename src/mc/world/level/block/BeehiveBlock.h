@@ -19,12 +19,6 @@ class Random;
 
 class BeehiveBlock : public ::FaceDirectionalActorBlock {
 public:
-    // prevent constructor by default
-    BeehiveBlock& operator=(BeehiveBlock const&);
-    BeehiveBlock(BeehiveBlock const&);
-    BeehiveBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

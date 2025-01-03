@@ -22,12 +22,6 @@ namespace mce { class Color; }
 
 class DirtBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    DirtBlock& operator=(DirtBlock const&);
-    DirtBlock(DirtBlock const&);
-    DirtBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 90

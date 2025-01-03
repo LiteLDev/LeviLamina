@@ -20,6 +20,7 @@ class Level;
 class Player;
 class SaveContext;
 class TextObjectRoot;
+struct ActorUniqueID;
 // clang-format on
 
 class ChalkboardBlockActor : public ::BlockActor {
@@ -102,25 +103,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk31d74c;
-    ::ll::UntypedStorage<8, 32>  mUnkaf6925;
-    ::ll::UntypedStorage<8, 32>  mUnk6a82f3;
-    ::ll::UntypedStorage<8, 696> mUnk7eb2a8;
-    ::ll::UntypedStorage<8, 24>  mUnk64da1e;
-    ::ll::UntypedStorage<1, 1>   mUnk37a5b0;
-    ::ll::UntypedStorage<4, 12>  mUnk40843d;
-    ::ll::UntypedStorage<1, 1>   mUnk451091;
-    ::ll::UntypedStorage<1, 1>   mUnkf5293e;
-    ::ll::UntypedStorage<1, 1>   mUnkf1b010;
-    ::ll::UntypedStorage<1, 1>   mUnk971ee5;
-    ::ll::UntypedStorage<8, 8>   mUnk949f18;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mText;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mTextObjectString;
+    ::ll::TypedStorage<8, 32, ::TextObjectRoot>                           mTextObjectMessage;
+    ::ll::TypedStorage<8, 696, ::ChalkboardBlockActor::CachedMessageData> mCachedMessage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                  mSiblings;
+    ::ll::TypedStorage<1, 1, bool>                                        mShouldPersistFormatting;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                 mBasePos;
+    ::ll::TypedStorage<1, 1, ::ChalkboardSize>                            mSize;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsOnGround;
+    ::ll::TypedStorage<1, 1, bool>                                        mIsLocked;
+    ::ll::TypedStorage<1, 1, bool>                                        mInitialized;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChalkboardBlockActor& operator=(ChalkboardBlockActor const&);
-    ChalkboardBlockActor(ChalkboardBlockActor const&);
-    ChalkboardBlockActor();
 
 public:
     // virtual functions

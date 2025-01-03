@@ -16,12 +16,6 @@ class Vec3;
 
 class ScaffoldingBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    ScaffoldingBlockItem& operator=(ScaffoldingBlockItem const&);
-    ScaffoldingBlockItem(ScaffoldingBlockItem const&);
-    ScaffoldingBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

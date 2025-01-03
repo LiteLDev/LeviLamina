@@ -21,12 +21,6 @@ class Random;
 
 class NetherWartBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    NetherWartBlock& operator=(NetherWartBlock const&);
-    NetherWartBlock(NetherWartBlock const&);
-    NetherWartBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

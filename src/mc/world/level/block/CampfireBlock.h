@@ -22,19 +22,13 @@ struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class CampfireBlock : public ::ActorBlockBase<::BlockLegacy> {
+class CampfireBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk14b0a5;
-    ::ll::UntypedStorage<1, 1> mUnk52253b;
+    ::ll::TypedStorage<1, 1, bool> mSpawnRandomParticles;
+    ::ll::TypedStorage<1, 1, bool> mIsCampfireFireStarter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CampfireBlock& operator=(CampfireBlock const&);
-    CampfireBlock(CampfireBlock const&);
-    CampfireBlock();
 
 public:
     // virtual functions

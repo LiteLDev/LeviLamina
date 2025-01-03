@@ -14,6 +14,7 @@ class ItemDescriptor;
 class ItemStack;
 class ItemStackBase;
 class Level;
+class MobEffectInstance;
 class Player;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
@@ -23,15 +24,9 @@ class OminousBottleItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk309557;
-    ::ll::UntypedStorage<8, 136> mUnkdd77bf;
+    ::ll::TypedStorage<8, 64, ::ResolvedItemIconInfo> mIconInfo;
+    ::ll::TypedStorage<8, 136, ::MobEffectInstance>   mMobEffect;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OminousBottleItem& operator=(OminousBottleItem const&);
-    OminousBottleItem(OminousBottleItem const&);
-    OminousBottleItem();
 
 public:
     // virtual functions

@@ -21,12 +21,6 @@ namespace mce { class Color; }
 
 class EndRodBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    EndRodBlock& operator=(EndRodBlock const&);
-    EndRodBlock(EndRodBlock const&);
-    EndRodBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79

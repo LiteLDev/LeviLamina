@@ -21,18 +21,12 @@ class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class ComparatorBlock : public ::ActorBlockBase<::BlockLegacy> {
+class ComparatorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf1d07a;
+    ::ll::TypedStorage<1, 1, bool> mOn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ComparatorBlock& operator=(ComparatorBlock const&);
-    ComparatorBlock(ComparatorBlock const&);
-    ComparatorBlock();
 
 public:
     // virtual functions

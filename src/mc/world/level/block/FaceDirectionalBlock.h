@@ -19,15 +19,9 @@ class FaceDirectionalBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkdaeb57;
-    ::ll::UntypedStorage<4, 4> mUnka7c86e;
+    ::ll::TypedStorage<1, 1, bool>  mHorizontalOnly;
+    ::ll::TypedStorage<4, 4, float> mYRotOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FaceDirectionalBlock& operator=(FaceDirectionalBlock const&);
-    FaceDirectionalBlock(FaceDirectionalBlock const&);
-    FaceDirectionalBlock();
 
 public:
     // virtual functions

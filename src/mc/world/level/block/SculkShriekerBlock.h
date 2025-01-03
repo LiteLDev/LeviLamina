@@ -19,13 +19,7 @@ class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class SculkShriekerBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    SculkShriekerBlock& operator=(SculkShriekerBlock const&);
-    SculkShriekerBlock(SculkShriekerBlock const&);
-    SculkShriekerBlock();
-
+class SculkShriekerBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

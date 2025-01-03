@@ -57,16 +57,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkceb6fc;
-    ::ll::UntypedStorage<8, 48> mUnk1620d8;
-    ::ll::UntypedStorage<4, 4>  mUnk8f00da;
+    ::ll::TypedStorage<4, 4, ::std::bitset<9>>               mDisabledSlots;
+    ::ll::TypedStorage<8, 48, ::CrafterBlockActor::LruCache> mCraftedRecipesCache;
+    ::ll::TypedStorage<4, 4, int>                            mTicksLeftInCraftingState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CrafterBlockActor& operator=(CrafterBlockActor const&);
-    CrafterBlockActor(CrafterBlockActor const&);
-    CrafterBlockActor();
 
 public:
     // virtual functions

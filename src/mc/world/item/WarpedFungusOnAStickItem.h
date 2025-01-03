@@ -12,12 +12,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class WarpedFungusOnAStickItem : public ::ComponentItem {
 public:
-    // prevent constructor by default
-    WarpedFungusOnAStickItem& operator=(WarpedFungusOnAStickItem const&);
-    WarpedFungusOnAStickItem(WarpedFungusOnAStickItem const&);
-    WarpedFungusOnAStickItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 38

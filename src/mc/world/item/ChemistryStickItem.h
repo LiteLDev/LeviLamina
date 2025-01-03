@@ -23,14 +23,8 @@ class ChemistryStickItem : public ::ChemistryItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1ceb63;
+    ::ll::TypedStorage<4, 4, int> mMaxActiveTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChemistryStickItem& operator=(ChemistryStickItem const&);
-    ChemistryStickItem(ChemistryStickItem const&);
-    ChemistryStickItem();
 
 public:
     // virtual functions

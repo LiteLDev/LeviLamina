@@ -21,14 +21,8 @@ class CopperBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk485520;
+    ::ll::TypedStorage<8, 96, ::CopperBehavior> mCopperBehavior;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CopperBlock& operator=(CopperBlock const&);
-    CopperBlock(CopperBlock const&);
-    CopperBlock();
 
 public:
     // virtual functions

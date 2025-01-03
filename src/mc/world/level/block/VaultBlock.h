@@ -17,13 +17,7 @@ class Vec3;
 struct Brightness;
 // clang-format on
 
-class VaultBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    VaultBlock& operator=(VaultBlock const&);
-    VaultBlock(VaultBlock const&);
-    VaultBlock();
-
+class VaultBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

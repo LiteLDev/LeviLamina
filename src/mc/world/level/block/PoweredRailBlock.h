@@ -14,12 +14,6 @@ class BlockSource;
 
 class PoweredRailBlock : public ::BaseRailBlock {
 public:
-    // prevent constructor by default
-    PoweredRailBlock& operator=(PoweredRailBlock const&);
-    PoweredRailBlock(PoweredRailBlock const&);
-    PoweredRailBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

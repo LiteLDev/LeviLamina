@@ -17,12 +17,6 @@ class Vec3;
 
 class EggItem : public ::Item {
 public:
-    // prevent constructor by default
-    EggItem& operator=(EggItem const&);
-    EggItem(EggItem const&);
-    EggItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

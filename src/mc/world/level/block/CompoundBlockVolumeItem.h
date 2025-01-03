@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/CompoundBlockVolumeAction.h"
+#include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundBlockVolume;
@@ -13,16 +17,10 @@ class CompoundBlockVolumeItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4c09a8;
-    ::ll::UntypedStorage<4, 4>  mUnk538b87;
-    ::ll::UntypedStorage<4, 32> mUnke42c77;
+    ::ll::TypedStorage<4, 4, ::CompoundBlockVolumeAction>             mAction;
+    ::ll::TypedStorage<4, 4, ::CompoundBlockVolumePositionRelativity> mRelativity;
+    ::ll::TypedStorage<4, 32, ::SimpleBlockVolume>                    mVolume;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompoundBlockVolumeItem& operator=(CompoundBlockVolumeItem const&);
-    CompoundBlockVolumeItem(CompoundBlockVolumeItem const&);
-    CompoundBlockVolumeItem();
 
 public:
     // member functions

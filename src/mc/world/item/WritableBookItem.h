@@ -14,12 +14,6 @@ struct PageContent;
 
 class WritableBookItem : public ::Item {
 public:
-    // prevent constructor by default
-    WritableBookItem& operator=(WritableBookItem const&);
-    WritableBookItem(WritableBookItem const&);
-    WritableBookItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

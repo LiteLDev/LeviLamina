@@ -15,12 +15,6 @@ struct Brightness;
 
 class MyceliumBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    MyceliumBlock& operator=(MyceliumBlock const&);
-    MyceliumBlock(MyceliumBlock const&);
-    MyceliumBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

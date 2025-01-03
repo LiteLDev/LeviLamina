@@ -10,14 +10,8 @@ class LegacyDyeItem : public ::DyePowderItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk4123e4;
+    ::ll::TypedStorage<1, 1, bool const> mAllowLegacyUseAsDye;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyDyeItem& operator=(LegacyDyeItem const&);
-    LegacyDyeItem(LegacyDyeItem const&);
-    LegacyDyeItem();
 
 public:
     // virtual functions

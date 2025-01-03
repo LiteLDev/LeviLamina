@@ -23,14 +23,8 @@ class FertilizerItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk4bcde7;
+    ::ll::TypedStorage<1, 1, ::FertilizerType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FertilizerItem& operator=(FertilizerItem const&);
-    FertilizerItem(FertilizerItem const&);
-    FertilizerItem();
 
 public:
     // virtual functions

@@ -18,12 +18,6 @@ namespace mce { class Color; }
 
 class StoneBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    StoneBlock& operator=(StoneBlock const&);
-    StoneBlock(StoneBlock const&);
-    StoneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 131

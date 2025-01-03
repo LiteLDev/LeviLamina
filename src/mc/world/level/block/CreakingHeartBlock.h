@@ -19,12 +19,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class CreakingHeartBlock : public ::ActorBlockBase<::RotatedPillarBlock> {
 public:
-    // prevent constructor by default
-    CreakingHeartBlock& operator=(CreakingHeartBlock const&);
-    CreakingHeartBlock(CreakingHeartBlock const&);
-    CreakingHeartBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

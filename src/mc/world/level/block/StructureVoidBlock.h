@@ -20,12 +20,6 @@ class IConstBlockSource;
 
 class StructureVoidBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    StructureVoidBlock& operator=(StructureVoidBlock const&);
-    StructureVoidBlock(StructureVoidBlock const&);
-    StructureVoidBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 14

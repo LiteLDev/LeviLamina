@@ -28,13 +28,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class HopperBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    HopperBlock& operator=(HopperBlock const&);
-    HopperBlock(HopperBlock const&);
-    HopperBlock();
-
+class HopperBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

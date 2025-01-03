@@ -13,6 +13,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ItemStack;
+class PerlinSimplexNoise;
 class Player;
 class Random;
 class Randomize;
@@ -24,15 +25,9 @@ class GrassBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk31056d;
-    ::ll::UntypedStorage<8, 40> mUnk6ccea5;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::Color>> mSideColors;
+    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const>  mBiomeInfoNoise;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GrassBlock& operator=(GrassBlock const&);
-    GrassBlock(GrassBlock const&);
-    GrassBlock();
 
 public:
     // virtual functions

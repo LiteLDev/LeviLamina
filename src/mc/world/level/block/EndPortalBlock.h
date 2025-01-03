@@ -24,13 +24,7 @@ class Random;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
-class EndPortalBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    EndPortalBlock& operator=(EndPortalBlock const&);
-    EndPortalBlock(EndPortalBlock const&);
-    EndPortalBlock();
-
+class EndPortalBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

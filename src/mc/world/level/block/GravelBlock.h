@@ -17,12 +17,6 @@ namespace mce { class Color; }
 
 class GravelBlock : public ::FallingBlock {
 public:
-    // prevent constructor by default
-    GravelBlock& operator=(GravelBlock const&);
-    GravelBlock(GravelBlock const&);
-    GravelBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 151

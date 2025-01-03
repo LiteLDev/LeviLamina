@@ -22,12 +22,6 @@ namespace BlockEvents { class BlockEntityFallOnEvent; }
 
 class HoneyBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    HoneyBlock& operator=(HoneyBlock const&);
-    HoneyBlock(HoneyBlock const&);
-    HoneyBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 131

@@ -32,15 +32,9 @@ class TopSnowBlock : public ::FallingBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5e7032;
-    ::ll::UntypedStorage<1, 1> mUnkdb402e;
+    ::ll::TypedStorage<1, 1, bool> mUsePartialHeight;
+    ::ll::TypedStorage<1, 1, bool> mAllowFallOnPlace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TopSnowBlock& operator=(TopSnowBlock const&);
-    TopSnowBlock(TopSnowBlock const&);
-    TopSnowBlock();
 
 public:
     // virtual functions

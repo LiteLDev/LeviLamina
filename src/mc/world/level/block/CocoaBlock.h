@@ -23,12 +23,6 @@ class Vec3;
 
 class CocoaBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CocoaBlock& operator=(CocoaBlock const&);
-    CocoaBlock(CocoaBlock const&);
-    CocoaBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

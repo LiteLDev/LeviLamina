@@ -18,12 +18,6 @@ class Vec3;
 
 class BottleItem : public ::Item {
 public:
-    // prevent constructor by default
-    BottleItem& operator=(BottleItem const&);
-    BottleItem(BottleItem const&);
-    BottleItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 78

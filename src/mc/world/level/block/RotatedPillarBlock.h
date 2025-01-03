@@ -18,12 +18,6 @@ class Vec3;
 
 class RotatedPillarBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    RotatedPillarBlock& operator=(RotatedPillarBlock const&);
-    RotatedPillarBlock(RotatedPillarBlock const&);
-    RotatedPillarBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 121

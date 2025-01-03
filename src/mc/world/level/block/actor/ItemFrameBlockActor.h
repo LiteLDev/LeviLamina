@@ -13,36 +13,33 @@ class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
+class ClockSpriteCalculator;
+class CompassSpriteCalculator;
 class CompoundTag;
 class DataLoadHelper;
 class HashedString;
 class ItemInstance;
 class Level;
 class SaveContext;
+class WeakEntityRef;
 // clang-format on
 
 class ItemFrameBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnk7bfdd1;
-    ::ll::UntypedStorage<8, 32>  mUnk3a63ae;
-    ::ll::UntypedStorage<8, 32>  mUnkfc8efe;
-    ::ll::UntypedStorage<8, 128> mUnk97e0fc;
-    ::ll::UntypedStorage<4, 4>   mUnka12067;
-    ::ll::UntypedStorage<4, 4>   mUnk10930e;
-    ::ll::UntypedStorage<1, 1>   mUnke8a713;
-    ::ll::UntypedStorage<1, 1>   mUnkcb0b81;
-    ::ll::UntypedStorage<1, 1>   mUnk4e6f8c;
-    ::ll::UntypedStorage<8, 24>  mUnk1b0ba3;
-    ::ll::UntypedStorage<1, 1>   mUnk9cbc49;
+    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>   mClockSpriteCalc;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mCompassSpriteCalc;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mRecoveryCompassSpriteCalc;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>           mItem;
+    ::ll::TypedStorage<4, 4, float>                      mDropChance;
+    ::ll::TypedStorage<4, 4, float>                      mRotation;
+    ::ll::TypedStorage<1, 1, bool>                       mUpgradeMapBit;
+    ::ll::TypedStorage<1, 1, bool>                       mUpgradePhotoBit;
+    ::ll::TypedStorage<1, 1, bool>                       mRefreshMap;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>           mDisplayEntity;
+    ::ll::TypedStorage<1, 1, bool>                       mIgnoreLighting;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemFrameBlockActor& operator=(ItemFrameBlockActor const&);
-    ItemFrameBlockActor(ItemFrameBlockActor const&);
-    ItemFrameBlockActor();
 
 public:
     // virtual functions

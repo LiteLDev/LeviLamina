@@ -19,14 +19,8 @@ class HangingActorItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1ba0a9;
+    ::ll::TypedStorage<4, 4, ::ActorType> mEntityType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HangingActorItem& operator=(HangingActorItem const&);
-    HangingActorItem(HangingActorItem const&);
-    HangingActorItem();
 
 public:
     // virtual functions

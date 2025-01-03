@@ -17,12 +17,6 @@ class Vec3;
 
 class WaterLilyBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    WaterLilyBlockItem& operator=(WaterLilyBlockItem const&);
-    WaterLilyBlockItem(WaterLilyBlockItem const&);
-    WaterLilyBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

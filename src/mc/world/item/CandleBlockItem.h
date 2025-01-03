@@ -16,12 +16,6 @@ class Vec3;
 
 class CandleBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    CandleBlockItem& operator=(CandleBlockItem const&);
-    CandleBlockItem(CandleBlockItem const&);
-    CandleBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 33

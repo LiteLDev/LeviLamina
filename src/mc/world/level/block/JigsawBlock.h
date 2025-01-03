@@ -18,12 +18,6 @@ class Vec3;
 
 class JigsawBlock : public ::FaceDirectionalActorBlock {
 public:
-    // prevent constructor by default
-    JigsawBlock& operator=(JigsawBlock const&);
-    JigsawBlock(JigsawBlock const&);
-    JigsawBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 138

@@ -27,15 +27,9 @@ class SplashPotionItem : public ::PotionItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1920> mUnkab3635;
-    ::ll::UntypedStorage<4, 120>  mUnkae805f;
+    ::ll::TypedStorage<8, 1920, ::ResolvedItemIconInfo[30]> mSplashIcons;
+    ::ll::TypedStorage<4, 120, ::Potion::PotionVariant[30]> mSplashPotionVariants;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SplashPotionItem& operator=(SplashPotionItem const&);
-    SplashPotionItem(SplashPotionItem const&);
-    SplashPotionItem();
 
 public:
     // virtual functions

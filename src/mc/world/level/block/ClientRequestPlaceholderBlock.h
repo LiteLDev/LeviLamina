@@ -20,12 +20,6 @@ class Vec3;
 
 class ClientRequestPlaceholderBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    ClientRequestPlaceholderBlock& operator=(ClientRequestPlaceholderBlock const&);
-    ClientRequestPlaceholderBlock(ClientRequestPlaceholderBlock const&);
-    ClientRequestPlaceholderBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

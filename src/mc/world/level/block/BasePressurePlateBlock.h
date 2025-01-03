@@ -26,14 +26,8 @@ class BasePressurePlateBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkea3fac;
+    ::ll::TypedStorage<8, 32, ::std::string> texture;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BasePressurePlateBlock& operator=(BasePressurePlateBlock const&);
-    BasePressurePlateBlock(BasePressurePlateBlock const&);
-    BasePressurePlateBlock();
 
 public:
     // virtual functions

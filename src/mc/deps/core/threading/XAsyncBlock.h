@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct XTaskQueueObject;
+// clang-format on
+
 struct XAsyncBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke13cd3;
-    ::ll::UntypedStorage<8, 8>  mUnk46d6d8;
-    ::ll::UntypedStorage<8, 8>  mUnkc51bad;
-    ::ll::UntypedStorage<1, 32> mUnk269a2d;
+    ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>      queue;
+    ::ll::TypedStorage<8, 8, void*>                    context;
+    ::ll::TypedStorage<8, 8, void (*)(::XAsyncBlock*)> callback;
+    ::ll::TypedStorage<1, 32, uchar[32]>               internal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    XAsyncBlock& operator=(XAsyncBlock const&);
-    XAsyncBlock(XAsyncBlock const&);
-    XAsyncBlock();
 };

@@ -19,12 +19,6 @@ class Random;
 
 class SporeBlossomBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SporeBlossomBlock& operator=(SporeBlossomBlock const&);
-    SporeBlossomBlock(SporeBlossomBlock const&);
-    SporeBlossomBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

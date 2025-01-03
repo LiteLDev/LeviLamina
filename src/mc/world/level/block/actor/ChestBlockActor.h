@@ -22,40 +22,35 @@ class ItemStack;
 class Level;
 class Player;
 class SaveContext;
+struct ActorUniqueID;
 // clang-format on
 
 class ChestBlockActor : public ::RandomizableBlockActorFillingContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkdb9f02;
-    ::ll::UntypedStorage<1, 1>  mUnkc8bf6d;
-    ::ll::UntypedStorage<1, 1>  mUnkfda882;
-    ::ll::UntypedStorage<4, 4>  mUnk693265;
-    bool                        mUnk5a304c : 1;
-    ::ll::UntypedStorage<4, 4>  mUnka71691;
-    ::ll::UntypedStorage<4, 4>  mUnk602e56;
-    ::ll::UntypedStorage<1, 1>  mUnk216a5b;
-    ::ll::UntypedStorage<4, 4>  mUnkc7d985;
-    bool                        mUnkad13d7 : 1;
-    bool                        mUnk1b7d3b : 1;
-    bool                        mUnk5a1323 : 1;
-    bool                        mUnk2e85c7 : 1;
-    ::ll::UntypedStorage<4, 4>  mUnkf38351;
-    ::ll::UntypedStorage<4, 4>  mUnk693a89;
-    ::ll::UntypedStorage<8, 8>  mUnk479781;
-    ::ll::UntypedStorage<4, 12> mUnkb0bf94;
-    ::ll::UntypedStorage<1, 1>  mUnk2a1fb3;
-    ::ll::UntypedStorage<1, 1>  mUnk972134;
-    ::ll::UntypedStorage<8, 64> mUnk866a1d;
-    ::ll::UntypedStorage<4, 4>  mUnk808996;
+    ::ll::TypedStorage<4, 4, float>                                  mSpeed;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsGlobalChest;
+    ::ll::TypedStorage<1, 1, bool>                                   mUsesLegacyBlockDetection;
+    ::ll::TypedStorage<4, 4, float>                                  mObstructionHeight;
+    bool                                                             mPairLead : 1;
+    ::ll::TypedStorage<4, 4, float>                                  mOpenness;
+    ::ll::TypedStorage<4, 4, float>                                  mOldOpenness;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsOpen;
+    ::ll::TypedStorage<4, 4, int>                                    mTickInterval;
+    bool                                                             mPairingChanged   : 1;
+    bool                                                             mAlongX           : 1;
+    bool                                                             mDeferredPairLoad : 1;
+    bool                                                             mConverted        : 1;
+    ::ll::TypedStorage<4, 4, int>                                    mDeferredPairX;
+    ::ll::TypedStorage<4, 4, int>                                    mDeferredPairZ;
+    ::ll::TypedStorage<8, 8, ::ChestBlockActor*>                     mLargeChestPaired;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mLargeChestPairedPosition;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsTrappedChest;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsFindable;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mOpenedByIds;
+    ::ll::TypedStorage<4, 4, int>                                    mUpdateFlags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChestBlockActor& operator=(ChestBlockActor const&);
-    ChestBlockActor(ChestBlockActor const&);
-    ChestBlockActor();
 
 public:
     // virtual functions

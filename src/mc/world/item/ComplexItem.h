@@ -15,12 +15,6 @@ class Packet;
 
 class ComplexItem : public ::Item {
 public:
-    // prevent constructor by default
-    ComplexItem& operator=(ComplexItem const&);
-    ComplexItem(ComplexItem const&);
-    ComplexItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

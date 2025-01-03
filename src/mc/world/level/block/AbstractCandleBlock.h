@@ -19,12 +19,6 @@ struct Brightness;
 
 class AbstractCandleBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    AbstractCandleBlock& operator=(AbstractCandleBlock const&);
-    AbstractCandleBlock(AbstractCandleBlock const&);
-    AbstractCandleBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 20

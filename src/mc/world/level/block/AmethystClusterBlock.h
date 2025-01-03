@@ -21,15 +21,9 @@ class AmethystClusterBlock : public ::AmethystBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5b1170;
-    ::ll::UntypedStorage<4, 4> mUnkb29ec7;
+    ::ll::TypedStorage<4, 4, int> mHeight;
+    ::ll::TypedStorage<4, 4, int> mAabbOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AmethystClusterBlock& operator=(AmethystClusterBlock const&);
-    AmethystClusterBlock(AmethystClusterBlock const&);
-    AmethystClusterBlock();
 
 public:
     // virtual functions

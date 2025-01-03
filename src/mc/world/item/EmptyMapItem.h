@@ -16,12 +16,6 @@ class Player;
 
 class EmptyMapItem : public ::ComplexItem {
 public:
-    // prevent constructor by default
-    EmptyMapItem& operator=(EmptyMapItem const&);
-    EmptyMapItem(EmptyMapItem const&);
-    EmptyMapItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

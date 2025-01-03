@@ -22,18 +22,12 @@ struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class SculkSensorBlock : public ::ActorBlockBase<::BlockLegacy> {
+class SculkSensorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2a6123;
+    ::ll::TypedStorage<4, 4, int> mActiveTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SculkSensorBlock& operator=(SculkSensorBlock const&);
-    SculkSensorBlock(SculkSensorBlock const&);
-    SculkSensorBlock();
 
 public:
     // virtual functions

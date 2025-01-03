@@ -15,12 +15,6 @@ class Vec3;
 
 class GlowstoneBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    GlowstoneBlock& operator=(GlowstoneBlock const&);
-    GlowstoneBlock(GlowstoneBlock const&);
-    GlowstoneBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 59

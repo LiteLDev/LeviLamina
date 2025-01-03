@@ -12,12 +12,6 @@ class ItemStackBase;
 
 class ChemistryItem : public ::Item {
 public:
-    // prevent constructor by default
-    ChemistryItem& operator=(ChemistryItem const&);
-    ChemistryItem(ChemistryItem const&);
-    ChemistryItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 97

@@ -15,12 +15,6 @@ class Material;
 
 class AmethystBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    AmethystBlock& operator=(AmethystBlock const&);
-    AmethystBlock(AmethystBlock const&);
-    AmethystBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 17

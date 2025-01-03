@@ -12,12 +12,6 @@ class BlockPos;
 
 class GlowItemFrameBlockActor : public ::ItemFrameBlockActor {
 public:
-    // prevent constructor by default
-    GlowItemFrameBlockActor& operator=(GlowItemFrameBlockActor const&);
-    GlowItemFrameBlockActor(GlowItemFrameBlockActor const&);
-    GlowItemFrameBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

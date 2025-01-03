@@ -15,12 +15,6 @@ class Player;
 
 class StonecutterBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    StonecutterBlock& operator=(StonecutterBlock const&);
-    StonecutterBlock(StonecutterBlock const&);
-    StonecutterBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 125

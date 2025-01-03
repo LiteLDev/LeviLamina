@@ -14,12 +14,6 @@ class Random;
 
 class CryingObsidianBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CryingObsidianBlock& operator=(CryingObsidianBlock const&);
-    CryingObsidianBlock(CryingObsidianBlock const&);
-    CryingObsidianBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123

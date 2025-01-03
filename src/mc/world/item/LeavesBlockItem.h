@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class CompoundTag;
 class ItemDescriptor;
 class ItemStackBase;
@@ -17,14 +18,8 @@ class LeavesBlockItem : public ::BlockItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf9d62c;
+    ::ll::TypedStorage<8, 8, ::Block const*> m_parentBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LeavesBlockItem& operator=(LeavesBlockItem const&);
-    LeavesBlockItem(LeavesBlockItem const&);
-    LeavesBlockItem();
 
 public:
     // virtual functions

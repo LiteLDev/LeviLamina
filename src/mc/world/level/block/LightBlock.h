@@ -27,14 +27,8 @@ class LightBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkf43c78;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mNextLightLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LightBlock& operator=(LightBlock const&);
-    LightBlock(LightBlock const&);
-    LightBlock();
 
 public:
     // virtual functions

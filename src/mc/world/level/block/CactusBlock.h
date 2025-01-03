@@ -21,12 +21,6 @@ struct BlockGraphicsModeChangeContext;
 
 class CactusBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CactusBlock& operator=(CactusBlock const&);
-    CactusBlock(CactusBlock const&);
-    CactusBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

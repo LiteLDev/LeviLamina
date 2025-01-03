@@ -12,13 +12,7 @@ class BlockPos;
 class BlockSource;
 // clang-format on
 
-class ConduitBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    ConduitBlock& operator=(ConduitBlock const&);
-    ConduitBlock(ConduitBlock const&);
-    ConduitBlock();
-
+class ConduitBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

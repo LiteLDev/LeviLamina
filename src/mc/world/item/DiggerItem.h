@@ -20,16 +20,10 @@ class DiggerItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk449e41;
-    ::ll::UntypedStorage<8, 8> mUnk304e30;
-    ::ll::UntypedStorage<4, 4> mUnkfc3aed;
+    ::ll::TypedStorage<8, 8, ::Item::Tier const&>   mTier;
+    ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockDestructionTag;
+    ::ll::TypedStorage<4, 4, int>                   mAttackDamage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DiggerItem& operator=(DiggerItem const&);
-    DiggerItem(DiggerItem const&);
-    DiggerItem();
 
 public:
     // virtual functions

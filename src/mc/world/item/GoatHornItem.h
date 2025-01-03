@@ -18,12 +18,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class GoatHornItem : public ::Item {
 public:
-    // prevent constructor by default
-    GoatHornItem& operator=(GoatHornItem const&);
-    GoatHornItem(GoatHornItem const&);
-    GoatHornItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

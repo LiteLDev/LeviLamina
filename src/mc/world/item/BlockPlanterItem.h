@@ -18,12 +18,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class BlockPlanterItem : public ::ComponentItem {
 public:
-    // prevent constructor by default
-    BlockPlanterItem& operator=(BlockPlanterItem const&);
-    BlockPlanterItem(BlockPlanterItem const&);
-    BlockPlanterItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107

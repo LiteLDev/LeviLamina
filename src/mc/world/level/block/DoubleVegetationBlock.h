@@ -16,12 +16,6 @@ class BlockSource;
 
 class DoubleVegetationBlock : public ::DoublePlantBlock {
 public:
-    // prevent constructor by default
-    DoubleVegetationBlock& operator=(DoubleVegetationBlock const&);
-    DoubleVegetationBlock(DoubleVegetationBlock const&);
-    DoubleVegetationBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 74

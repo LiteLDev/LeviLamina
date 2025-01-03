@@ -16,12 +16,6 @@ class Vec3;
 
 class BellBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    BellBlockItem& operator=(BellBlockItem const&);
-    BellBlockItem(BellBlockItem const&);
-    BellBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

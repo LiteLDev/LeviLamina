@@ -23,14 +23,8 @@ class RedstoneTorchBlock : public ::TorchBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2f526f;
+    ::ll::TypedStorage<1, 1, bool> mOn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RedstoneTorchBlock& operator=(RedstoneTorchBlock const&);
-    RedstoneTorchBlock(RedstoneTorchBlock const&);
-    RedstoneTorchBlock();
 
 public:
     // virtual functions

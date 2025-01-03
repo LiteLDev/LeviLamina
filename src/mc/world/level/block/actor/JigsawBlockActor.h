@@ -12,6 +12,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class JigsawEditorData;
 class Level;
 class SaveContext;
 // clang-format on
@@ -20,14 +21,8 @@ class JigsawBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnkde85c8;
+    ::ll::TypedStorage<8, 144, ::JigsawEditorData> mCurrData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawBlockActor& operator=(JigsawBlockActor const&);
-    JigsawBlockActor(JigsawBlockActor const&);
-    JigsawBlockActor();
 
 public:
     // virtual functions

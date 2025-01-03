@@ -16,14 +16,8 @@ class ObsidianBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka1005a;
+    ::ll::TypedStorage<1, 1, bool> mIsGlowing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ObsidianBlock& operator=(ObsidianBlock const&);
-    ObsidianBlock(ObsidianBlock const&);
-    ObsidianBlock();
 
 public:
     // virtual functions

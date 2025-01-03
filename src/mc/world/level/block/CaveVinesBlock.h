@@ -29,14 +29,8 @@ class CaveVinesBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk528361;
+    ::ll::TypedStorage<1, 1, bool const> mHasBerries;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CaveVinesBlock& operator=(CaveVinesBlock const&);
-    CaveVinesBlock(CaveVinesBlock const&);
-    CaveVinesBlock();
 
 public:
     // virtual functions

@@ -16,18 +16,16 @@ struct ResolvedItemIconInfo;
 
 class AbstractCompassItem : public ::Item {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdf1719;
-    ::ll::UntypedStorage<4, 4> mUnka58e97;
-    ::ll::UntypedStorage<8, 8> mUnkc7d485;
-    // NOLINTEND
+    // AbstractCompassItem inner types define
+    using GetSpriteCalculatorFunction = ::CompassSpriteCalculator (*)(::Mob&);
 
 public:
-    // prevent constructor by default
-    AbstractCompassItem& operator=(AbstractCompassItem const&);
-    AbstractCompassItem(AbstractCompassItem const&);
-    AbstractCompassItem();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                                   mAtlasWidth;
+    ::ll::TypedStorage<4, 4, int>                                   mAtlasHeight;
+    ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator (*)(::Mob&)> mGetSpriteCalculator;
+    // NOLINTEND
 
 public:
     // virtual functions

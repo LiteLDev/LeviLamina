@@ -22,14 +22,8 @@ class TurtleEggBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdb5fd4;
+    ::ll::TypedStorage<4, 4, float> mShapeOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TurtleEggBlock& operator=(TurtleEggBlock const&);
-    TurtleEggBlock(TurtleEggBlock const&);
-    TurtleEggBlock();
 
 public:
     // virtual functions

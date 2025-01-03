@@ -13,12 +13,6 @@ class Material;
 
 class InfestedDeepslateBlock : public ::RotatedPillarInfestedBlock {
 public:
-    // prevent constructor by default
-    InfestedDeepslateBlock& operator=(InfestedDeepslateBlock const&);
-    InfestedDeepslateBlock(InfestedDeepslateBlock const&);
-    InfestedDeepslateBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 130

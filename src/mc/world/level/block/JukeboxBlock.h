@@ -17,13 +17,7 @@ class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class JukeboxBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    JukeboxBlock& operator=(JukeboxBlock const&);
-    JukeboxBlock(JukeboxBlock const&);
-    JukeboxBlock();
-
+class JukeboxBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

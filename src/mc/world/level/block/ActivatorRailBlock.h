@@ -14,12 +14,6 @@ class BlockSource;
 
 class ActivatorRailBlock : public ::BaseRailBlock {
 public:
-    // prevent constructor by default
-    ActivatorRailBlock& operator=(ActivatorRailBlock const&);
-    ActivatorRailBlock(ActivatorRailBlock const&);
-    ActivatorRailBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 118

@@ -41,12 +41,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ComposterBlock& operator=(ComposterBlock const&);
-    ComposterBlock(ComposterBlock const&);
-    ComposterBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

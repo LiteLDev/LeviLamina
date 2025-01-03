@@ -12,12 +12,6 @@ class BaseGameVersion;
 
 class CameraBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    CameraBlock& operator=(CameraBlock const&);
-    CameraBlock(CameraBlock const&);
-    CameraBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 56

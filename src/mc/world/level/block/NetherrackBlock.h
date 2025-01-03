@@ -16,12 +16,6 @@ class BlockSource;
 
 class NetherrackBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    NetherrackBlock& operator=(NetherrackBlock const&);
-    NetherrackBlock(NetherrackBlock const&);
-    NetherrackBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 74

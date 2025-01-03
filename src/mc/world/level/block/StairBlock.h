@@ -30,14 +30,8 @@ class StairBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7eb6c6;
+    ::ll::TypedStorage<8, 8, ::BlockLegacy const&> mBase;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StairBlock& operator=(StairBlock const&);
-    StairBlock(StairBlock const&);
-    StairBlock();
 
 public:
     // virtual functions

@@ -15,12 +15,6 @@ class Random;
 
 class UnderwaterTorchBlock : public ::TorchBlock {
 public:
-    // prevent constructor by default
-    UnderwaterTorchBlock& operator=(UnderwaterTorchBlock const&);
-    UnderwaterTorchBlock(UnderwaterTorchBlock const&);
-    UnderwaterTorchBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123

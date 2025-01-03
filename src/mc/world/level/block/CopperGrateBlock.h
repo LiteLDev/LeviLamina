@@ -18,12 +18,6 @@ class Material;
 
 class CopperGrateBlock : public ::CopperBlock {
 public:
-    // prevent constructor by default
-    CopperGrateBlock& operator=(CopperGrateBlock const&);
-    CopperGrateBlock(CopperGrateBlock const&);
-    CopperGrateBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

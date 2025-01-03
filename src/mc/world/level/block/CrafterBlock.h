@@ -20,13 +20,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class CrafterBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    CrafterBlock& operator=(CrafterBlock const&);
-    CrafterBlock(CrafterBlock const&);
-    CrafterBlock();
-
+class CrafterBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

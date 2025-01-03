@@ -17,12 +17,6 @@ class Vec3;
 
 class EndCrystalItem : public ::Item {
 public:
-    // prevent constructor by default
-    EndCrystalItem& operator=(EndCrystalItem const&);
-    EndCrystalItem(EndCrystalItem const&);
-    EndCrystalItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 39

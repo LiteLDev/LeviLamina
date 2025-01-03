@@ -23,14 +23,8 @@ class ThinFenceBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk53e190;
+    ::ll::TypedStorage<1, 1, bool const> mDoesNotCollideWithCamera;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ThinFenceBlock& operator=(ThinFenceBlock const&);
-    ThinFenceBlock(ThinFenceBlock const&);
-    ThinFenceBlock();
 
 public:
     // virtual functions

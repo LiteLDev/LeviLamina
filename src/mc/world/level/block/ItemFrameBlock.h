@@ -28,13 +28,7 @@ struct ResourceDropsContext;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class ItemFrameBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    ItemFrameBlock& operator=(ItemFrameBlock const&);
-    ItemFrameBlock(ItemFrameBlock const&);
-    ItemFrameBlock();
-
+class ItemFrameBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -13,12 +13,6 @@ class BlockSource;
 
 class DeadBushBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    DeadBushBlock& operator=(DeadBushBlock const&);
-    DeadBushBlock(DeadBushBlock const&);
-    DeadBushBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 81

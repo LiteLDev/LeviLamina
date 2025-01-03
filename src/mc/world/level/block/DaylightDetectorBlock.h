@@ -19,18 +19,12 @@ class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class DaylightDetectorBlock : public ::ActorBlockBase<::BlockLegacy> {
+class DaylightDetectorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbf044a;
+    ::ll::TypedStorage<1, 1, bool> mIsInverted;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DaylightDetectorBlock& operator=(DaylightDetectorBlock const&);
-    DaylightDetectorBlock(DaylightDetectorBlock const&);
-    DaylightDetectorBlock();
 
 public:
     // virtual functions

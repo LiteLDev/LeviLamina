@@ -25,12 +25,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class FenceGateBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    FenceGateBlock& operator=(FenceGateBlock const&);
-    FenceGateBlock(FenceGateBlock const&);
-    FenceGateBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 67

@@ -15,13 +15,7 @@ class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class StructureBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    StructureBlock& operator=(StructureBlock const&);
-    StructureBlock(StructureBlock const&);
-    StructureBlock();
-
+class StructureBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

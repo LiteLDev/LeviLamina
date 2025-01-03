@@ -23,12 +23,6 @@ namespace PositionTrackingDB { class TrackingRecord; }
 
 class LodestoneCompassItem : public ::AbstractCompassItem {
 public:
-    // prevent constructor by default
-    LodestoneCompassItem& operator=(LodestoneCompassItem const&);
-    LodestoneCompassItem(LodestoneCompassItem const&);
-    LodestoneCompassItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 110

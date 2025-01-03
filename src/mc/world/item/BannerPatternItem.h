@@ -25,14 +25,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1c4268;
+    ::ll::TypedStorage<4, 4, ::BannerPatternItem::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerPatternItem& operator=(BannerPatternItem const&);
-    BannerPatternItem(BannerPatternItem const&);
-    BannerPatternItem();
 
 public:
     // virtual functions

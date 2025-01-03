@@ -19,16 +19,10 @@ class GlassBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf5982b;
-    ::ll::UntypedStorage<1, 1> mUnkc2a990;
-    ::ll::UntypedStorage<1, 1> mUnke2edbf;
+    ::ll::TypedStorage<1, 1, bool> mDoesDrops;
+    ::ll::TypedStorage<1, 1, bool> mCanBeUsedInCommands;
+    ::ll::TypedStorage<1, 1, bool> mDoesNotCollideWithCamera;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlassBlock& operator=(GlassBlock const&);
-    GlassBlock(GlassBlock const&);
-    GlassBlock();
 
 public:
     // virtual functions

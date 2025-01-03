@@ -23,13 +23,7 @@ class Player;
 class Random;
 // clang-format on
 
-class BrewingStandBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    BrewingStandBlock& operator=(BrewingStandBlock const&);
-    BrewingStandBlock(BrewingStandBlock const&);
-    BrewingStandBlock();
-
+class BrewingStandBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

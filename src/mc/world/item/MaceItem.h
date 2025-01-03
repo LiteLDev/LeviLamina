@@ -18,12 +18,6 @@ class Mob;
 
 class MaceItem : public ::WeaponItem {
 public:
-    // prevent constructor by default
-    MaceItem& operator=(MaceItem const&);
-    MaceItem(MaceItem const&);
-    MaceItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

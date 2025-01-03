@@ -68,18 +68,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8936e6;
-    ::ll::UntypedStorage<4, 4> mUnk2b9417;
-    ::ll::UntypedStorage<4, 4> mUnk4d8307;
-    ::ll::UntypedStorage<8, 8> mUnk84796a;
-    ::ll::UntypedStorage<1, 1> mUnk354743;
+    ::ll::TypedStorage<4, 4, ::ArmorSlot const>                         mSlot;
+    ::ll::TypedStorage<4, 4, int const>                                 mDefense;
+    ::ll::TypedStorage<4, 4, int const>                                 mModelIndex;
+    ::ll::TypedStorage<8, 8, ::HumanoidArmorItem::ArmorMaterial const&> mArmorType;
+    ::ll::TypedStorage<1, 1, bool>                                      mCurrentVersionAllowsTrim;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HumanoidArmorItem& operator=(HumanoidArmorItem const&);
-    HumanoidArmorItem(HumanoidArmorItem const&);
-    HumanoidArmorItem();
 
 public:
     // virtual functions

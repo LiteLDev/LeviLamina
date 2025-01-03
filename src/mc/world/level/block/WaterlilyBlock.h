@@ -18,12 +18,6 @@ class IConstBlockSource;
 
 class WaterlilyBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    WaterlilyBlock& operator=(WaterlilyBlock const&);
-    WaterlilyBlock(WaterlilyBlock const&);
-    WaterlilyBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 81

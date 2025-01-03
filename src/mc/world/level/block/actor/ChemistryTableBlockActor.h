@@ -11,6 +11,7 @@
 class BlockPos;
 class BlockSource;
 class CompoundTag;
+class CraftableCompounds;
 class DataLoadHelper;
 class HashedString;
 class ItemStack;
@@ -20,26 +21,21 @@ class Level;
 class Player;
 class Random;
 class SaveContext;
+struct ActorUniqueID;
 // clang-format on
 
 class ChemistryTableBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk2e18b8;
-    ::ll::UntypedStorage<8, 8>    mUnkf3e8c0;
-    ::ll::UntypedStorage<8, 8>    mUnkc2f502;
-    ::ll::UntypedStorage<8, 1368> mUnk132ced;
-    ::ll::UntypedStorage<8, 152>  mUnke8961b;
-    ::ll::UntypedStorage<1, 1>    mUnk4c0c1d;
-    ::ll::UntypedStorage<8, 48>   mUnk1d03e1;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorUniqueID>>      mOpenedPlayer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LabTableReaction>>   mCurReaction;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftableCompounds>> mCraftableCompounds;
+    ::ll::TypedStorage<8, 1368, ::ItemStack[9]>                       mItems;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                           mPendingReactionOutput;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsTableTypeCached;
+    ::ll::TypedStorage<8, 48, ::HashedString>                         mCachedTableType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChemistryTableBlockActor& operator=(ChemistryTableBlockActor const&);
-    ChemistryTableBlockActor(ChemistryTableBlockActor const&);
-    ChemistryTableBlockActor();
 
 public:
     // virtual functions

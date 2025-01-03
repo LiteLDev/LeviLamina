@@ -284,17 +284,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 224> mUnka573c8;
-    ::ll::UntypedStorage<8, 32>  mUnk7fb401;
-    ::ll::UntypedStorage<8, 184> mUnkb445ab;
-    ::ll::UntypedStorage<8, 88>  mUnk40f37c;
+    ::ll::TypedStorage<8, 224, ::VaultBlockActor::VaultConfig>     mConfig;
+    ::ll::TypedStorage<8, 32, ::VaultBlockActor::VaultClientData>  mClientData;
+    ::ll::TypedStorage<8, 184, ::VaultBlockActor::VaultSharedData> mSharedData;
+    ::ll::TypedStorage<8, 88, ::VaultBlockActor::VaultServerData>  mServerData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VaultBlockActor& operator=(VaultBlockActor const&);
-    VaultBlockActor(VaultBlockActor const&);
-    VaultBlockActor();
 
 public:
     // virtual functions

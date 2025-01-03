@@ -17,12 +17,6 @@ class Player;
 
 class BarrelBlock : public ::FaceDirectionalBlock {
 public:
-    // prevent constructor by default
-    BarrelBlock& operator=(BarrelBlock const&);
-    BarrelBlock(BarrelBlock const&);
-    BarrelBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

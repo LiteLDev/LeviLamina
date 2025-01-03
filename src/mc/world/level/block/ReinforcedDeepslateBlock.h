@@ -7,12 +7,6 @@
 
 class ReinforcedDeepslateBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    ReinforcedDeepslateBlock& operator=(ReinforcedDeepslateBlock const&);
-    ReinforcedDeepslateBlock(ReinforcedDeepslateBlock const&);
-    ReinforcedDeepslateBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 46

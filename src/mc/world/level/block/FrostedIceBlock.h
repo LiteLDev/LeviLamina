@@ -21,12 +21,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class FrostedIceBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    FrostedIceBlock& operator=(FrostedIceBlock const&);
-    FrostedIceBlock(FrostedIceBlock const&);
-    FrostedIceBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 89

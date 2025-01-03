@@ -18,12 +18,6 @@ class Vec3;
 
 class LadderBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    LadderBlock& operator=(LadderBlock const&);
-    LadderBlock(LadderBlock const&);
-    LadderBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

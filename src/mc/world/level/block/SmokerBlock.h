@@ -16,12 +16,6 @@ class Player;
 
 class SmokerBlock : public ::FurnaceBlock {
 public:
-    // prevent constructor by default
-    SmokerBlock& operator=(SmokerBlock const&);
-    SmokerBlock(SmokerBlock const&);
-    SmokerBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

@@ -27,12 +27,6 @@ namespace mce { class Color; }
 
 class ScaffoldingBlock : public ::FallingBlock {
 public:
-    // prevent constructor by default
-    ScaffoldingBlock& operator=(ScaffoldingBlock const&);
-    ScaffoldingBlock(ScaffoldingBlock const&);
-    ScaffoldingBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

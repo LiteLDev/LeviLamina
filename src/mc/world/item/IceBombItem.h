@@ -18,12 +18,6 @@ class Vec3;
 
 class IceBombItem : public ::ChemistryItem {
 public:
-    // prevent constructor by default
-    IceBombItem& operator=(IceBombItem const&);
-    IceBombItem(IceBombItem const&);
-    IceBombItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76

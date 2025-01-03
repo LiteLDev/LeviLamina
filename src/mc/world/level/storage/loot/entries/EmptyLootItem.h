@@ -14,12 +14,6 @@ class Random;
 
 class EmptyLootItem : public ::LootPoolEntry {
 public:
-    // prevent constructor by default
-    EmptyLootItem& operator=(EmptyLootItem const&);
-    EmptyLootItem(EmptyLootItem const&);
-    EmptyLootItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

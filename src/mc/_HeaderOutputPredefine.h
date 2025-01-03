@@ -153,6 +153,11 @@ using ItemStackNetId           = TypedServerNetId<ItemStackNetIdTag, int>;
 using ItemStackRequestId       = TypedClientNetId<ItemStackRequestIdTag, int>;
 using ItemStackLegacyRequestId = TypedClientNetId<ItemStackLegacyRequestIdTag, int>;
 
+class BlockLegacy;
+template <typename T0>
+class ActorBlockBase;
+using ActorBlock = ActorBlockBase<BlockLegacy>;
+
 template<int>
 class ParityImprovedNoiseImpl;
 

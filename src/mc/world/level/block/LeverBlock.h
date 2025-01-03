@@ -26,12 +26,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class LeverBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    LeverBlock& operator=(LeverBlock const&);
-    LeverBlock(LeverBlock const&);
-    LeverBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

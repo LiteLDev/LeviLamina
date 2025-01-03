@@ -15,12 +15,6 @@ class Random;
 
 class SoulTorchBlock : public ::TorchBlock {
 public:
-    // prevent constructor by default
-    SoulTorchBlock& operator=(SoulTorchBlock const&);
-    SoulTorchBlock(SoulTorchBlock const&);
-    SoulTorchBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123

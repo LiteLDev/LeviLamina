@@ -21,12 +21,6 @@ class Vec3;
 
 class CandleBlock : public ::AbstractCandleBlock {
 public:
-    // prevent constructor by default
-    CandleBlock& operator=(CandleBlock const&);
-    CandleBlock(CandleBlock const&);
-    CandleBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

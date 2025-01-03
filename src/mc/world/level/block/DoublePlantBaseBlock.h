@@ -27,14 +27,8 @@ class DoublePlantBaseBlock : public ::BushBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk28dc18;
+    ::ll::TypedStorage<4, 24, ::AABB> mBottomVisualShape;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DoublePlantBaseBlock& operator=(DoublePlantBaseBlock const&);
-    DoublePlantBaseBlock(DoublePlantBaseBlock const&);
-    DoublePlantBaseBlock();
 
 public:
     // virtual functions

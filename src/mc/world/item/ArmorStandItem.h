@@ -17,12 +17,6 @@ class Vec3;
 
 class ArmorStandItem : public ::Item {
 public:
-    // prevent constructor by default
-    ArmorStandItem& operator=(ArmorStandItem const&);
-    ArmorStandItem(ArmorStandItem const&);
-    ArmorStandItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120

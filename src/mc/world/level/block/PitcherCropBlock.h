@@ -25,15 +25,9 @@ class PitcherCropBlock : public ::BushBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnkb7e0ba;
-    ::ll::UntypedStorage<4, 24> mUnkc457b7;
+    ::ll::TypedStorage<4, 24, ::AABB> mBottomCollisionShapeSmall;
+    ::ll::TypedStorage<4, 24, ::AABB> mBottomCollisionShape;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PitcherCropBlock& operator=(PitcherCropBlock const&);
-    PitcherCropBlock(PitcherCropBlock const&);
-    PitcherCropBlock();
 
 public:
     // virtual functions

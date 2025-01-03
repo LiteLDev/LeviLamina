@@ -18,14 +18,8 @@ class InfestedBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk9ee2c8;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mUninfestedBlockId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InfestedBlock& operator=(InfestedBlock const&);
-    InfestedBlock(InfestedBlock const&);
-    InfestedBlock();
 
 public:
     // virtual functions

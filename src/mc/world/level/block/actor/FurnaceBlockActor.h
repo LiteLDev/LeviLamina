@@ -19,6 +19,7 @@ class CompoundTag;
 class DataLoadHelper;
 class HashedString;
 class Item;
+class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
@@ -26,6 +27,7 @@ class LevelChunk;
 class Player;
 class Recipes;
 class SaveContext;
+struct ActorUniqueID;
 // clang-format on
 
 class FurnaceBlockActor : public ::BlockActor, public ::Container {
@@ -41,30 +43,24 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkadf70b;
-    ::ll::UntypedStorage<4, 4>   mUnka16909;
-    ::ll::UntypedStorage<4, 4>   mUnk52bdf8;
-    ::ll::UntypedStorage<4, 4>   mUnk94e26f;
-    ::ll::UntypedStorage<8, 456> mUnkc02a91;
-    ::ll::UntypedStorage<1, 3>   mUnk5e9dca;
-    ::ll::UntypedStorage<8, 64>  mUnkfb93d3;
-    ::ll::UntypedStorage<8, 48>  mUnkc2519b;
-    ::ll::UntypedStorage<4, 4>   mUnk89a71f;
-    ::ll::UntypedStorage<4, 4>   mUnk244bc0;
-    ::ll::UntypedStorage<4, 4>   mUnk505a19;
-    ::ll::UntypedStorage<4, 4>   mUnk7ba5bb;
-    ::ll::UntypedStorage<8, 8>   mUnk9dea1b;
-    ::ll::UntypedStorage<8, 8>   mUnk30531c;
-    ::ll::UntypedStorage<8, 128> mUnkce6f66;
-    ::ll::UntypedStorage<1, 1>   mUnke94b38;
-    ::ll::UntypedStorage<1, 1>   mUnk339135;
+    ::ll::TypedStorage<4, 4, int>                                    mLitTime;
+    ::ll::TypedStorage<4, 4, int>                                    mLitDuration;
+    ::ll::TypedStorage<4, 4, int>                                    mCookingProgress;
+    ::ll::TypedStorage<4, 4, uint>                                   mStoredXP;
+    ::ll::TypedStorage<8, 456, ::ItemStack[3]>                       mItems;
+    ::ll::TypedStorage<1, 3, bool[3]>                                mDirty;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mPlayers;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                  mRecipeTag;
+    ::ll::TypedStorage<4, 4, int const>                              mBurnInterval;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSmeltSoundEvent;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTick;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTickTarget;
+    ::ll::TypedStorage<8, 8, ::Block const&>                         mUnlitFurnace;
+    ::ll::TypedStorage<8, 8, ::Block const&>                         mLitFurnace;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                       mLastFuelItem;
+    ::ll::TypedStorage<1, 1, bool>                                   mNoDrop;
+    ::ll::TypedStorage<1, 1, bool>                                   mNeedsLitStateFixup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FurnaceBlockActor& operator=(FurnaceBlockActor const&);
-    FurnaceBlockActor(FurnaceBlockActor const&);
-    FurnaceBlockActor();
 
 public:
     // virtual functions

@@ -16,12 +16,6 @@ class Vec3;
 
 class CoralFanBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    CoralFanBlockItem& operator=(CoralFanBlockItem const&);
-    CoralFanBlockItem(CoralFanBlockItem const&);
-    CoralFanBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 60

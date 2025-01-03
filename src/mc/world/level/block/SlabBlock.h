@@ -26,15 +26,9 @@ class SlabBlock : public ::BlockLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk70fd63;
-    ::ll::UntypedStorage<8, 48> mUnk8d866f;
+    ::ll::TypedStorage<1, 1, bool>            mIsDouble;
+    ::ll::TypedStorage<8, 48, ::HashedString> mOtherSlab;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SlabBlock& operator=(SlabBlock const&);
-    SlabBlock(SlabBlock const&);
-    SlabBlock();
 
 public:
     // virtual functions

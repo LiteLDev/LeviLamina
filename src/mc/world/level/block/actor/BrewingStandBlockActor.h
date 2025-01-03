@@ -12,6 +12,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class Item;
 class ItemDescriptor;
 class ItemStack;
 class Level;
@@ -33,19 +34,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnka761b4;
-    ::ll::UntypedStorage<4, 4>   mUnk501923;
-    ::ll::UntypedStorage<4, 4>   mUnkbae2a0;
-    ::ll::UntypedStorage<8, 8>   mUnk491588;
-    ::ll::UntypedStorage<8, 760> mUnk995839;
-    ::ll::UntypedStorage<1, 1>   mUnk4fc833;
+    ::ll::TypedStorage<4, 4, int>              mBrewTime;
+    ::ll::TypedStorage<4, 4, int>              mFuelAmount;
+    ::ll::TypedStorage<4, 4, int>              mFuelTotal;
+    ::ll::TypedStorage<8, 8, ::Item const*>    mIngredient;
+    ::ll::TypedStorage<8, 760, ::ItemStack[5]> mItems;
+    ::ll::TypedStorage<1, 1, bool>             mNotifyPlayersOnChange;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BrewingStandBlockActor& operator=(BrewingStandBlockActor const&);
-    BrewingStandBlockActor(BrewingStandBlockActor const&);
-    BrewingStandBlockActor();
 
 public:
     // virtual functions

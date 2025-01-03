@@ -4,29 +4,32 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ManifestContentItem.h"
+#include "mc/client/gui/screens/models/PackListType.h"
+#include "mc/client/gui/screens/models/PackReportState.h"
+
+// auto generated forward declare list
+// clang-format off
+class PackReport;
+class PackSettings;
+class SubpackInfoCollection;
+// clang-format on
 
 struct PackContentItem : public ::ManifestContentItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkfcea85;
-    ::ll::UntypedStorage<8, 432> mUnk6b195b;
-    ::ll::UntypedStorage<8, 432> mUnkffd634;
-    ::ll::UntypedStorage<8, 32>  mUnkde3d59;
-    ::ll::UntypedStorage<8, 8>   mUnkb3c718;
-    ::ll::UntypedStorage<4, 4>   mUnk8cfd8c;
-    ::ll::UntypedStorage<1, 1>   mUnk87809b;
-    ::ll::UntypedStorage<8, 24>  mUnk1b0196;
-    ::ll::UntypedStorage<8, 8>   mUnkd2fcd5;
-    ::ll::UntypedStorage<8, 24>  mUnkaabf96;
-    ::ll::UntypedStorage<8, 24>  mUnk445d84;
+    ::ll::TypedStorage<4, 4, ::PackListType>                     mListType;
+    ::ll::TypedStorage<8, 432, ::PackReport>                     mPackReport;
+    ::ll::TypedStorage<8, 432, ::PackReport>                     mLoadingReport;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mDateAvailable;
+    ::ll::TypedStorage<8, 8, uint64>                             mPosition;
+    ::ll::TypedStorage<4, 4, int>                                mSubpackIndex;
+    ::ll::TypedStorage<1, 1, ::PackReportState>                  mReportState;
+    ::ll::TypedStorage<8, 24, ::SubpackInfoCollection>           mSubpackInfo;
+    ::ll::TypedStorage<8, 8, ::PackSettings*>                    mPackSettings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackContentItem*>> mDependencies;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackContentItem*>> mDependentContent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PackContentItem& operator=(PackContentItem const&);
-    PackContentItem(PackContentItem const&);
-    PackContentItem();
 
 public:
     // virtual functions

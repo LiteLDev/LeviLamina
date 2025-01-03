@@ -17,12 +17,6 @@ class Material;
 
 class ChainBlock : public ::RotatedPillarBlock {
 public:
-    // prevent constructor by default
-    ChainBlock& operator=(ChainBlock const&);
-    ChainBlock(ChainBlock const&);
-    ChainBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 25

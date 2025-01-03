@@ -18,13 +18,7 @@ class Player;
 class Vec3;
 // clang-format on
 
-class ChemistryTableBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    ChemistryTableBlock& operator=(ChemistryTableBlock const&);
-    ChemistryTableBlock(ChemistryTableBlock const&);
-    ChemistryTableBlock();
-
+class ChemistryTableBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

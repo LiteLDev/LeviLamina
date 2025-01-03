@@ -23,18 +23,12 @@ class BannerBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk525ff6;
-    ::ll::UntypedStorage<1, 1>  mUnk54a8b2;
-    ::ll::UntypedStorage<8, 24> mUnkdaebcc;
-    ::ll::UntypedStorage<8, 24> mUnke50015;
-    ::ll::UntypedStorage<4, 4>  mUnk832478;
+    ::ll::TypedStorage<1, 1, bool>                  mDirtyBounds;
+    ::ll::TypedStorage<1, 1, uchar>                 mBaseColor;
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mPatterns;
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mColors;
+    ::ll::TypedStorage<4, 4, ::BannerBlockType>     mBannerType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerBlockActor& operator=(BannerBlockActor const&);
-    BannerBlockActor(BannerBlockActor const&);
-    BannerBlockActor();
 
 public:
     // virtual functions

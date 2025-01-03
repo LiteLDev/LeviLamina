@@ -12,12 +12,6 @@ class BlockPos;
 
 class BlastFurnaceBlockActor : public ::FurnaceBlockActor {
 public:
-    // prevent constructor by default
-    BlastFurnaceBlockActor& operator=(BlastFurnaceBlockActor const&);
-    BlastFurnaceBlockActor(BlastFurnaceBlockActor const&);
-    BlastFurnaceBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 26

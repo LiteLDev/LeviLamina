@@ -19,12 +19,6 @@ class Vec3;
 
 class BrushItem : public ::Item {
 public:
-    // prevent constructor by default
-    BrushItem& operator=(BrushItem const&);
-    BrushItem(BrushItem const&);
-    BrushItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 54

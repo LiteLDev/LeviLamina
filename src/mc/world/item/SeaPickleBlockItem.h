@@ -16,12 +16,6 @@ class Vec3;
 
 class SeaPickleBlockItem : public ::BlockItem {
 public:
-    // prevent constructor by default
-    SeaPickleBlockItem& operator=(SeaPickleBlockItem const&);
-    SeaPickleBlockItem(SeaPickleBlockItem const&);
-    SeaPickleBlockItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 33

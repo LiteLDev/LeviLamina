@@ -12,12 +12,6 @@ class Material;
 
 class UnknownBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    UnknownBlock& operator=(UnknownBlock const&);
-    UnknownBlock(UnknownBlock const&);
-    UnknownBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

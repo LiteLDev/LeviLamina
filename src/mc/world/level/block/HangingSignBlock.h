@@ -21,12 +21,6 @@ class ItemInstance;
 
 class HangingSignBlock : public ::SignBlock {
 public:
-    // prevent constructor by default
-    HangingSignBlock& operator=(HangingSignBlock const&);
-    HangingSignBlock(HangingSignBlock const&);
-    HangingSignBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

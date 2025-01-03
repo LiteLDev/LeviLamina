@@ -6,14 +6,9 @@ struct NetworkAddress {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk58d039;
-    ::ll::UntypedStorage<2, 2>  mUnkd32ef9;
+    ::ll::TypedStorage<8, 32, ::std::string> host;
+    ::ll::TypedStorage<2, 2, ushort>         port;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkAddress(NetworkAddress const&);
-    NetworkAddress();
 
 public:
     // member functions

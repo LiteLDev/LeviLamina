@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemDescriptor;
+// clang-format on
+
 struct FeedItem {
 public:
     // FeedItem inner types declare
@@ -46,16 +51,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk9fe4ff;
-    ::ll::UntypedStorage<4, 4>  mUnk72f8ed;
-    ::ll::UntypedStorage<8, 24> mUnk32f85a;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>                  mItemDescriptor;
+    ::ll::TypedStorage<4, 4, int>                                mValue;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FeedItem::Effect>> mEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FeedItem& operator=(FeedItem const&);
-    FeedItem(FeedItem const&);
-    FeedItem();
 
 public:
     // member functions

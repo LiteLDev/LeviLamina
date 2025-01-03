@@ -23,12 +23,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class SeagrassBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    SeagrassBlock& operator=(SeagrassBlock const&);
-    SeagrassBlock(SeagrassBlock const&);
-    SeagrassBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79

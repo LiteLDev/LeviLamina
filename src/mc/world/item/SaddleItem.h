@@ -14,12 +14,6 @@ class Vec3;
 
 class SaddleItem : public ::Item {
 public:
-    // prevent constructor by default
-    SaddleItem& operator=(SaddleItem const&);
-    SaddleItem(SaddleItem const&);
-    SaddleItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 78

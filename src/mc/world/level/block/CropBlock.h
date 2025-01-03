@@ -23,12 +23,6 @@ class Random;
 
 class CropBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    CropBlock& operator=(CropBlock const&);
-    CropBlock(CropBlock const&);
-    CropBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 81

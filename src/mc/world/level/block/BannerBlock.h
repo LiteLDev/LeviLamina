@@ -24,18 +24,12 @@ class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class BannerBlock : public ::ActorBlockBase<::BlockLegacy> {
+class BannerBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8eea87;
+    ::ll::TypedStorage<1, 1, bool> mOnGround;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerBlock& operator=(BannerBlock const&);
-    BannerBlock(BannerBlock const&);
-    BannerBlock();
 
 public:
     // virtual functions

@@ -14,12 +14,6 @@ class Mob;
 
 class CarrotOnAStickItem : public ::Item {
 public:
-    // prevent constructor by default
-    CarrotOnAStickItem& operator=(CarrotOnAStickItem const&);
-    CarrotOnAStickItem(CarrotOnAStickItem const&);
-    CarrotOnAStickItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 38

@@ -14,12 +14,6 @@ class ItemDescriptor;
 
 class ChestBoatItem : public ::BoatItem {
 public:
-    // prevent constructor by default
-    ChestBoatItem& operator=(ChestBoatItem const&);
-    ChestBoatItem(ChestBoatItem const&);
-    ChestBoatItem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

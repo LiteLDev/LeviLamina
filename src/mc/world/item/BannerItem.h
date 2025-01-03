@@ -11,6 +11,7 @@
 // clang-format off
 class Actor;
 class BannerPattern;
+class Block;
 class BlockPos;
 class CompoundTag;
 class InteractionResult;
@@ -26,15 +27,9 @@ class BannerItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk11acdc;
-    ::ll::UntypedStorage<8, 8> mUnkb3ce3d;
+    ::ll::TypedStorage<8, 8, ::Block const&> mWallBanner;
+    ::ll::TypedStorage<8, 8, ::Block const&> mStandingBanner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerItem& operator=(BannerItem const&);
-    BannerItem(BannerItem const&);
-    BannerItem();
 
 public:
     // virtual functions

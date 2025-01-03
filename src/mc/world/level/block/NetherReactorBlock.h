@@ -11,13 +11,7 @@ class BlockLegacy;
 class Material;
 // clang-format on
 
-class NetherReactorBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    NetherReactorBlock& operator=(NetherReactorBlock const&);
-    NetherReactorBlock(NetherReactorBlock const&);
-    NetherReactorBlock();
-
+class NetherReactorBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

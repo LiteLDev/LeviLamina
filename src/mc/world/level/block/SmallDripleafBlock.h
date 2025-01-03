@@ -25,12 +25,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class SmallDripleafBlock : public ::BushBlock {
 public:
-    // prevent constructor by default
-    SmallDripleafBlock& operator=(SmallDripleafBlock const&);
-    SmallDripleafBlock(SmallDripleafBlock const&);
-    SmallDripleafBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 125

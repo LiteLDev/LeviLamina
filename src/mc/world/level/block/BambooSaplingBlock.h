@@ -20,12 +20,6 @@ class Vec3;
 
 class BambooSaplingBlock : public ::SaplingBlock {
 public:
-    // prevent constructor by default
-    BambooSaplingBlock& operator=(BambooSaplingBlock const&);
-    BambooSaplingBlock(BambooSaplingBlock const&);
-    BambooSaplingBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 137

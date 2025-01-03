@@ -17,15 +17,9 @@ class ClockItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk218368;
-    ::ll::UntypedStorage<4, 4> mUnk29f36f;
+    ::ll::TypedStorage<4, 4, int> mAtlasWidth;
+    ::ll::TypedStorage<4, 4, int> mAtlasHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClockItem& operator=(ClockItem const&);
-    ClockItem(ClockItem const&);
-    ClockItem();
 
 public:
     // virtual functions

@@ -23,12 +23,6 @@ class Random;
 
 class DirtPathBlock : public ::BlockLegacy {
 public:
-    // prevent constructor by default
-    DirtPathBlock& operator=(DirtPathBlock const&);
-    DirtPathBlock(DirtPathBlock const&);
-    DirtPathBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

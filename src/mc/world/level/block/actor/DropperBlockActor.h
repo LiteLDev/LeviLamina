@@ -17,12 +17,6 @@ class Vec3;
 
 class DropperBlockActor : public ::DispenserBlockActor {
 public:
-    // prevent constructor by default
-    DropperBlockActor& operator=(DropperBlockActor const&);
-    DropperBlockActor(DropperBlockActor const&);
-    DropperBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 26

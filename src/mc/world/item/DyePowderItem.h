@@ -16,14 +16,8 @@ class DyePowderItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkdcdde7;
+    ::ll::TypedStorage<1, 1, ::ItemColor> mColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DyePowderItem& operator=(DyePowderItem const&);
-    DyePowderItem(DyePowderItem const&);
-    DyePowderItem();
 
 public:
     // virtual functions

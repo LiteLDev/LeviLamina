@@ -16,6 +16,7 @@ class DataLoadHelper;
 class Level;
 class SaveContext;
 class StructureEditorData;
+class StructureTelemetryServerData;
 namespace mce { class Color; }
 // clang-format on
 
@@ -23,16 +24,10 @@ class StructureBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnkc982b7;
-    ::ll::UntypedStorage<4, 16>  mUnkcb4007;
-    ::ll::UntypedStorage<1, 1>   mUnk7792e2;
+    ::ll::TypedStorage<8, 176, ::StructureEditorData>         mStructureEditorData;
+    ::ll::TypedStorage<4, 16, ::StructureTelemetryServerData> mTelemetryServerData;
+    ::ll::TypedStorage<1, 1, bool>                            mIsPowered;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureBlockActor& operator=(StructureBlockActor const&);
-    StructureBlockActor(StructureBlockActor const&);
-    StructureBlockActor();
 
 public:
     // virtual functions

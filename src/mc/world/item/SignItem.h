@@ -21,15 +21,13 @@ class SignItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk93bee2;
-    ::ll::UntypedStorage<4, 4>  mUnkec44d4;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::map<::SignBlock::SignType, ::std::tuple<::Block const*, ::Block const*, ::Block const*>>>
+                                                    mConvertMap;
+    ::ll::TypedStorage<4, 4, ::SignBlock::SignType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SignItem& operator=(SignItem const&);
-    SignItem(SignItem const&);
-    SignItem();
 
 public:
     // virtual functions

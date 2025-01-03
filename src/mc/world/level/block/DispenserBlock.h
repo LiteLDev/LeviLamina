@@ -21,13 +21,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class DispenserBlock : public ::ActorBlockBase<::BlockLegacy> {
-public:
-    // prevent constructor by default
-    DispenserBlock& operator=(DispenserBlock const&);
-    DispenserBlock(DispenserBlock const&);
-    DispenserBlock();
-
+class DispenserBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
