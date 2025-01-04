@@ -32,7 +32,7 @@ nav:
       - developer_guides/how_to_guides/item_guide.md
       - developer_guides/how_to_guides/permission_guide.md
 
-    - API 🔗: https://levilamina.liteldev.com/api
+    - API 🔗: https://lamina.levimc.org/api
 
   - Maintainer Guides:
     - maintainer_guides/cpp_style_guide.md
