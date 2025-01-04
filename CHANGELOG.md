@@ -11,15 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Adapted to BDS version *1.21.5x*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent 
-- **Added support for *Windows* platform *clients*** @OEOTYAN @ddf8196 @Dofes
+- **Adapted to BDS version *1.21.50*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent 
 - Added the missing field to CommandRegistry::Overload @wu-vincent
-- Added last member variable of ChunkSource @xNotTozic
 - Added StdoutRedirector @OEOTYAN
 - Added imgui and some relate codes @ddf8196 @OEOTYAN
 - Added function definitions for ItemStackBase::getTypeName, ItemStackBase::getDescriptionName, ItemStackBase::getDamageValue to the source file @Dofes
 - Added some headers for ui @Dofes
-- Added compiler specific defines for clang @Redbeanw44602
 - Added clang/gcc virtualDetector @OEOTYAN
 - Added hints for double enable/disable @OEOTYAN
 - Added new signature resolver @OEOTYAN
@@ -40,14 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added TypedStorage @OEOTYAN
 - Added initializer_list for CompoundTagVariant @OEOTYAN
 - Adaptted to new preloader @OEOTYAN
-- Completes OreFeature, BlockDescriptor @Lovelylavender4
-- Completes the FertilizerType enum class @zimuya4153
-- Completes GameRulesIndex @KobeBryant114514
-- Completes BookEditAction and EmotePacket::Flags  @zimuya4153
-- Completes ItemReleaseInventoryTransaction and ItemUseInventoryTransaction and ItemUseOnActorInventoryTransaction member variables @xNotTozic
-- Completes DirtyTicksCounter and SubChunk and SubChunkStorage and Dimension and BuildInfo member variables @OEOTYAN
-- Completes InteractPacket::Action @xNotTozic
-- Completes ReplaceRule member variables @Lovelylavender4
+- Completes some class member @Lovelylavender4 @zimuya4153 @KobeBryant114514 @OEOTYAN
 - Moved concepts to internal @OEOTYAN
 - Filled sim::LookDuration @ShrBox
 - Resolved [#1519] @OEOTYAN
