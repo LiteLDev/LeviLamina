@@ -1,5 +1,7 @@
 # LeviLamina Usage Guidelines
 
+This document is intended only as a **translation** of the usage guidelines, the original text being the **Chinese version**. In other words, if there is a conflict between this document and the Chinese version, **the Chinese version shall prevail**. In addition, since this document is a translated version and may not be updated in a timely manner**, we recommend that you check the Chinese version to ensure that you are **aware** of updates.
+
 ## Purpose
 
 We really enjoy seeing our users and fans do cool things and share them with the community. Our goal is to create an environment where you can make great contributions to the *LeviLamina* community while ensuring others do not spoil the experience for everyone. We recognize that some of the content you create and share is for the community, while other content may be something you create and sell. Therefore, we have established these guidelines to explain how to use the *LeviLamina* name, brand, and assets in your creations.

@@ -18,14 +18,14 @@ LeviLamina是一个非官方的模组加载器，旨在为Minecraft Bedrock Edit
 
 开发者可以轻松地用C++，JavaScript，Lua，Python，C#等语言编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，促进了直观的学习体验和无与伦比的灵活性。
 
-有关更多信息，请参阅[文档](https://levilamina.liteldev.com/zh/).
+有关更多信息，请参阅[文档](https://lamina.levimc.org/quickstart/zh/).
 
 ## 安全
 
 > [!WARNING]
 > 在安装和使用LeviLamina前，请务必阅读并理解以下免责声明。
 
-LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发者”）开发和提供。本软件的设计目的是使用户能够通过加载模组来扩展Minecraft Bedrock Edition（以下简称“MCBE”）的功能。本软件与Mojang Studios（以下简称“Mojang”）或Microsoft Corporation（以下简称“Microsoft”）没有任何关联。开发者对本软件加载的任何模组的内容、质量、功能、安全性或合法性不承担任何责任。用户应自行判断并承担所有相关风险。
+LeviLamina（以下简称“本软件”）由Levimc（以下简称“开发者”）开发和提供。本软件的设计目的是使用户能够通过加载模组来扩展Minecraft Bedrock Edition（以下简称“MCBE”）的功能。本软件与Mojang Studios（以下简称“Mojang”）或Microsoft Corporation（以下简称“Microsoft”）没有任何关联。开发者对本软件加载的任何模组的内容、质量、功能、安全性或合法性不承担任何责任。用户应自行判断并承担所有相关风险。
 
 开发者不保证本软件的稳定性、可靠性、准确性或完整性。开发者不对本软件中可能存在的任何缺陷、错误、病毒或其他有害组件负责。开发者不对用户使用本软件造成的任何直接或间接损害（包括但不限于数据丢失、设备损坏、利润损失等）负责。
 
@@ -33,7 +33,7 @@ LeviLamina（以下简称“本软件”）由LiteLDev（以下简称“开发�
 
 ## 安装和使用
 
-请参考 [快速入门](https://levilamina.liteldev.com/zh/quickstart/)
+请参考 [快速入门](https://lamina.levimc.org/zh/quickstart/)
 
 ## 星标蹭蹭涨
 

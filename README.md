@@ -37,7 +37,7 @@ If you have any questions or comments about this disclaimer, please contact the 
 
 ## Install & Usage
 
-Please refer to [Quickstart](https://levilamina.liteldev.com/quickstart/)
+Please refer to [Quickstart](https://lamina.levimc.org/quickstart/)
 
 ## Star History
 

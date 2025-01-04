@@ -1,6 +1,6 @@
 add_rules("mode.release", "mode.debug")
 
-add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
+add_repositories("levimc-repo https://github.com/LiteLDev/xmake-repo.git")
 
 local is_windows  = is_plat("windows")
 local is_linux    = is_plat("linux")
@@ -33,7 +33,7 @@ add_requires("cpr 1.10.5", {configs = {ssl = true}})
 add_requires("parallel-hashmap v1.3.12")
 add_requires("concurrentqueue v1.0.4")
 
--- Dependencies from liteldev-repo.
+-- Dependencies from levimc-repo.
 add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
