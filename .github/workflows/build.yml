@@ -1,5 +1,5 @@
 on:
-  push:
+  pull_request:
     paths:
       - .github/workflows/build.yml
       - src/**
@@ -7,7 +7,7 @@ on:
       - src-client/**
       - src-test/**
       - xmake.lua
-  pull_request:
+  push:
     paths:
       - .github/workflows/build.yml
       - src/**
