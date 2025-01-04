@@ -7,6 +7,105 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-rc.1] - 2025-01-01
+
+### Added
+
+- **Adapted to BDS version *1.21.5x*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent 
+- **Added support for *Windows* platform *clients*** @OEOTYAN @ddf8196 @Dofes
+- Added the missing field to CommandRegistry::Overload @wu-vincent
+- Added last member variable of ChunkSource @xNotTozic
+- Added StdoutRedirector @OEOTYAN
+- Added imgui and some relate codes @ddf8196 @OEOTYAN
+- Added function definitions for ItemStackBase::getTypeName, ItemStackBase::getDescriptionName, ItemStackBase::getDamageValue to the source file @Dofes
+- Added some headers for ui @Dofes
+- Added compiler specific defines for clang @Redbeanw44602
+- Added clang/gcc virtualDetector @OEOTYAN
+- Added hints for double enable/disable @OEOTYAN
+- Added new signature resolver @OEOTYAN
+- Added ll::memory::IndirectValue @OEOTYAN
+- Added tight pair @OEOTYAN
+- Added pl config to formatter @OEOTYAN
+- Added default tick pool  @OEOTYAN
+- Added TypeTraits, AnyFunction @OEOTYAN
+- Added ConcurrentPriorityQueue and try_pop_if @OEOTYAN
+- Added addTaskAfter to Executer @OEOTYAN
+- Added coroutine support @OEOTYAN
+- Added keepThis keep lambda lifetime @OEOTYAN
+- Added getNonOwnerRef to EnableNonOwnerReferences @OEOTYAN
+- Added param traits to custom command param @OEOTYAN
+- Added thunk to all types @OEOTYAN
+- Added LoggerRegistry [#1582] @OEOTYAN
+- Added UntypedStorage @OEOTYAN
+- Added TypedStorage @OEOTYAN
+- Added initializer_list for CompoundTagVariant @OEOTYAN
+- Adaptted to new preloader @OEOTYAN
+- Completes OreFeature, BlockDescriptor @Lovelylavender4
+- Completes the FertilizerType enum class @zimuya4153
+- Completes GameRulesIndex @KobeBryant114514
+- Completes BookEditAction and EmotePacket::Flags  @zimuya4153
+- Completes ItemReleaseInventoryTransaction and ItemUseInventoryTransaction and ItemUseOnActorInventoryTransaction member variables @xNotTozic
+- Completes DirtyTicksCounter and SubChunk and SubChunkStorage and Dimension and BuildInfo member variables @OEOTYAN
+- Completes InteractPacket::Action @xNotTozic
+- Completes ReplaceRule member variables @Lovelylavender4
+- Moved concepts to internal @OEOTYAN
+- Filled sim::LookDuration @ShrBox
+- Resolved [#1519] @OEOTYAN
+- Initially drafted the EULA and user guidelines @Lovelylavender4
+
+### Changed
+
+- Refactorred splitByPattern @OEOTYAN
+- Refactorred mc header file format and location, etc @OEOTYAN
+- Refactorred Logger system @OEOTYAN
+- Refactorred stacktrace @OEOTYAN
+- Refactorred i18n @OEOTYAN
+- Refactorred StdoutRedirector @OEOTYAN
+- Refactorred filehandle/expected @OEOTYAN
+- Refactorred virtual memory alloc @OEOTYAN
+- Refactorred event system @OEOTYAN
+- Refactorred literals @OEOTYAN
+- Refactorred TaskPool @OEOTYAN
+- Refactorred Scheduler @OEOTYAN
+- Refactorred Closure @OEOTYAN
+- Removed some function deps @OEOTYAN
+- Removed useless convert @OEOTYAN
+- Removed Logger player output @OEOTYAN
+- Removed some internal deps @OEOTYAN
+- Removed function jump in queue @OEOTYAN
+- Removed crypto utils @OEOTYAN
+- Replaced some containers @OEOTYAN
+- Rewrited log info @OEOTYAN
+- Reseted enum parser to keep reload dll working @OEOTYAN
+- Changed some api file locations @OEOTYAN
+- Changed locale code name @OEOTYAN
+- Changed param to string_view @OEOTYAN
+- Updated quickstart.zh.md docs @ShrBox
+- Outputed demangle symbol @OEOTYAN
+- Made command param checker into compile time @OEOTYAN
+- Made param option and praser into traits @OEOTYAN
+- Finished [#1172] @OEOTYAN
+- Made mod manager auto release @OEOTYAN
+- Used dual mapping replace virtual protect @OEOTYAN
+- Relaxed virtual clone requires @OEOTYAN
+
+### Fixed
+
+- Fixed Dispatcher::operator= @OEOTYAN
+- Fixed FixedBiomeSource::getBiomeArea @OEOTYAN
+- Fixed quickstart docs @ShrBox
+- Fixed SubChunk define bugs @OEOTYAN
+- Fixed linux self maps reader @OEOTYAN
+- Fixed NativeModManager::load wrong error type @OEOTYAN
+- Fixed [#1574] @OEOTYAN
+- Fixed dll reload @OEOTYAN
+- Fixed libhat compile @OEOTYAN
+- Fixed custom form empty dropdown crash @Dofes
+- Fixed dataitem constexpr @OEOTYAN
+- Fixed AllExperiments enum missed @Dofes
+- Removed optional_ref wrong static cast @OEOTYAN
+- Replaced invoke tag with elide for latest msstl @OEOTYAN
+
 ## [0.13.5] - 2024-08-04
 
 ### Added
@@ -614,16 +713,21 @@ First preview release.
 
 For lip and tooth-hub test only.
 
+[#1172]: https://github.com/LiteLDev/LeviLamina/issues/1172
 [#1481]: https://github.com/LiteLDev/LeviLamina/issues/1481
 [#1483]: https://github.com/LiteLDev/LeviLamina/issues/1483
 [#1492]: https://github.com/LiteLDev/LeviLamina/issues/1492
 [#1499]: https://github.com/LiteLDev/LeviLamina/issues/1499
 [#1502]: https://github.com/LiteLDev/LeviLamina/issues/1502
+[#1519]: https://github.com/LiteLDev/LeviLamina/issues/1519
 [#1520]: https://github.com/LiteLDev/LeviLamina/issues/1520
 [#1552]: https://github.com/LiteLDev/LeviLamina/issues/1552
 [#1559]: https://github.com/LiteLDev/LeviLamina/issues/1559
+[#1574]: https://github.com/LiteLDev/LeviLamina/issues/1574
+[#1582]: https://github.com/LiteLDev/LeviLamina/issues/1582
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...HEAD
+[1.0.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...v1.0.0-rc.1
 [0.13.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...v0.13.5
 [0.13.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...v0.13.4
 [0.13.3]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.2...v0.13.3
