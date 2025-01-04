@@ -1,12 +1,12 @@
 on:
   pull_request:
     paths:
-      - .github/workflows/build_docs.yml
+      - .github/workflows/build-docs.yml
       - docs/**
       - src/**/*.h
   push:
     paths:
-      - .github/workflows/build_docs.yml
+      - .github/workflows/build-docs.yml
       - docs/**
       - src/**/*.h
   workflow_dispatch:
