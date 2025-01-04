@@ -18,14 +18,14 @@ LeviLamina is an unofficial mod loader designed to offer indispensable API suppo
 
 Developers can effortlessly author mods in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize Bedrock functionality, facilitating an intuitive learning experience and unparalleled flexibility.
 
-For more information, please refer to [the documentation](https://levilamina.liteldev.com).
+For more information, please refer to [the documentation](https://lamina.levimc.org).
 
 ## Security
 
 > [!WARNING]
 > Before installing and using LeviLamina, please be sure to read and understand the following disclaimer.
 
-LeviLamina (hereinafter referred to as "this software") is developed and provided by LiteLDev (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading mods. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any mods loaded by this software. Users should use this software at their own discretion and assume all related risks.
+LeviLamina (hereinafter referred to as "this software") is developed and provided by Levimc (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading mods. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any mods loaded by this software. Users should use this software at their own discretion and assume all related risks.
 
 The developer does not guarantee the stability, reliability, accuracy or completeness of this software. The developer is not liable for any defects, errors, viruses or other harmful components that may exist in this software. The developer is not liable for any direct or indirect damages (including but not limited to data loss, device damage, profit loss etc.) caused by the use of this software.
 
@@ -65,7 +65,7 @@ This project exists thanks to all the people who contribute.
 
 ## End(er)-User License Agreement (EULA)
 
-**As a developer, you should carefully read and adhere to our [EULA](EULA_draft.md) and [usage guidelines](docs/main/developer_guides/usage_guidelines_draft.md).**
+**As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/common_guides/usage_guidelines.en.md).**
 
 ## License
 

@@ -62,7 +62,7 @@ LeviLamina遵循[Code of Conduct](https://www.contributor-covenant.org/version/2
 
 ## 最终用户许可协议 (EULA)
 
-**作为一个开发者，你应该仔细阅读并遵守我们的[EULA](EULA_draft.md)与[使用准则](docs/main/developer_guides/usage_guidelines_draft.md)。**
+**作为一个开发者，你应该仔细阅读并遵守我们的[EULA](EULA.zh.md)与[使用准则](docs/main/common_guides/usage_guidelines.zh.md)。**
 
 ## 许可证
 
