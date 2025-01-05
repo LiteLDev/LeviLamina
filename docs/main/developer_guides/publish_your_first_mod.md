@@ -4,7 +4,7 @@ In the tutorial [Create Your First Mod](create_your_first_mod.md), we created a 
 
 ### Prerequisites
 
-First, make sure you have installed [lip](https://github.com/futrime/lip).
+First, make sure you have installed [lip](https://futrime.github.io/lip).
 
 You should also have followed the steps in [Create Your First Mod](create_your_first_mod.md) to create a mod, where the exported mod directory has a structure similar to the following:
 

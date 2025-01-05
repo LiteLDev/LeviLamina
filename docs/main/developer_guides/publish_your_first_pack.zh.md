@@ -1,6 +1,6 @@
 # 发布你的第一个整合包
 
-首先，你应当确保你安装了[lip](https://github.com/futrime/lip)。
+首先，你应当确保你安装了[lip](https://futrime.github.io/lip)。
 
 ## 创建一个仓库
 

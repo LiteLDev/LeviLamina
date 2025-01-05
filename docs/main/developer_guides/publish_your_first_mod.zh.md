@@ -4,7 +4,7 @@
 
 ### 前置条件
 
-首先，你应当确保你安装了[lip](https://github.com/futrime/lip)。
+首先，你应当确保你安装了[lip](https://futrime.github.io/lip)。
 
 你还应当按照[创建你的第一个模组](create_your_first_mod.md)中的步骤创建了一个模组，其中模组导出目录有类似如下的结构：
 
