@@ -22,7 +22,7 @@
 - 调用Minecraft函数
 
 !!! info
-    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://lip.futrime.com)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的模组。
+    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://futrime.github.io/lip)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的模组。
 
     ```shell
     lip install github.com/futrime/better-suicide

@@ -4,7 +4,7 @@
 
 ### 前置条件
 
-首先，你应当确保你安装了[lip](https://github.com/lippkg/lip)。
+首先，你应当确保你安装了[lip](https://github.com/futrime/lip)。
 
 你还应当按照[创建你的第一个模组](create_your_first_mod.md)中的步骤创建了一个模组，其中模组导出目录有类似如下的结构：
 
@@ -65,7 +65,7 @@
 !!! note
     `dependencies`在安装模组时，会自动安装依赖的模组，在卸载模组时，会自动卸载依赖的模组。但是`prerequisites`不会自动安装，而是在缺少依赖时报错。一般来说，`prerequisites`中的模组应当是一些基础性的、框架级别的包，例如`github.com/LiteLDev/LeviLamina`，以避免模组的卸载过程中误卸载了这些包。
 
-更多关于`tooth.json`的信息，请参考<https://lip.futrime.com/zh/reference/tooth_json_file_reference/>。
+更多关于`tooth.json`的信息，请参考<https://futrime.github.io/lip/zh/reference/tooth_json_file_reference/>。
 
 ### 尝试打包和安装模组
 

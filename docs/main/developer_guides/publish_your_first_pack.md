@@ -1,6 +1,6 @@
 # Publishing your first pack
 
-First, you should ensure that you have installed [lip](https://github.com/lippkg/lip).
+First, you should ensure that you have installed [lip](https://github.com/futrime/lip).
 
 ## Creating a Repository
 
@@ -36,7 +36,7 @@ Replace the value of the `tooth` field with the GitHub repository address, repla
 
 In the `dependencies` section, specify LeviLamina and any other packages to be integrated.
 
-For more information about `tooth.json`, please refer to <https://lip.futrime.com/reference/tooth_json_file_reference/>.
+For more information about `tooth.json`, please refer to <https://futrime.github.io/lip/reference/tooth_json_file_reference/>.
 
 ### Trying to Pack and Install the Pack
 

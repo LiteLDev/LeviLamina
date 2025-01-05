@@ -22,7 +22,7 @@ This tutorial covers the following topics:
 - Calling Minecraft functions
 
 !!! info
-    All the source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you look at the source code while reading the tutorial. If you have installed [lip](https://lip.futrime.com), you can also run the following code to install the mod implemented in this tutorial in the LeviLamina instance environment.
+    All the source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you look at the source code while reading the tutorial. If you have installed [lip](https://futrime.github.io/lip), you can also run the following code to install the mod implemented in this tutorial in the LeviLamina instance environment.
 
     ```shell
     lip install github.com/futrime/better-suicide
