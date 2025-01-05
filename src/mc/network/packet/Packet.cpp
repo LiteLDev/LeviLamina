@@ -4,11 +4,11 @@
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/server/ServerLevel.h"
-#include "mc/server/ServerPlayer.h"
 #include "mc/world/Minecraft.h"
+#include "mc/world/actor/player/Player.h"
 #include "mc/world/level/dimension/Dimension.h"
 
-void Packet::sendTo(ServerPlayer const& player) const {
+void Packet::sendTo(Player const& player) const {
     sendToClient(player.getNetworkIdentifier(), player.getClientSubId());
 }
 
