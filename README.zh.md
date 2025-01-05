@@ -23,13 +23,7 @@ LeviLamina是一个非官方的模组加载器，旨在为Minecraft Bedrock Edit
 ## 安全
 
 > [!WARNING]
-> 在安装和使用LeviLamina前，请务必阅读并理解以下免责声明。
-
-LeviLamina（以下简称“本软件”）由Levimc（以下简称“开发者”）开发和提供。本软件的设计目的是使用户能够通过加载模组来扩展Minecraft Bedrock Edition（以下简称“MCBE”）的功能。本软件与Mojang Studios（以下简称“Mojang”）或Microsoft Corporation（以下简称“Microsoft”）没有任何关联。开发者对本软件加载的任何模组的内容、质量、功能、安全性或合法性不承担任何责任。用户应自行判断并承担所有相关风险。
-
-开发者不保证本软件的稳定性、可靠性、准确性或完整性。开发者不对本软件中可能存在的任何缺陷、错误、病毒或其他有害组件负责。开发者不对用户使用本软件造成的任何直接或间接损害（包括但不限于数据丢失、设备损坏、利润损失等）负责。
-
-开发者保留随时修改、更新或终止本软件及其相关服务的权利，无需事先通知用户。用户应备份重要数据并定期检查本软件的更新。用户在使用本软件时应遵守相关法律法规，尊重他人的知识产权和隐私权，不得将本软件用于任何非法或侵权活动。如果用户违反上述规定，给任何第三方造成任何损害或被任何第三方索赔，开发者不承担任何责任。如果您对本免责声明有任何疑问或意见，请联系开发者。
+> **作为一个开发者，你应该仔细阅读并遵守我们的[EULA](EULA.zh.md)与[使用准则](docs/main/common_guides/usage_guidelines.zh.md)。**
 
 ## 安装和使用
 
@@ -59,10 +53,6 @@ LeviLamina遵循[Code of Conduct](https://www.contributor-covenant.org/version/2
 这个项目的存在要感谢所有的贡献者。
 
 ![贡献者](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
-## 最终用户许可协议 (EULA)
-
-**作为一个开发者，你应该仔细阅读并遵守我们的[EULA](EULA.zh.md)与[使用准则](docs/main/common_guides/usage_guidelines.zh.md)。**
 
 ## 许可证
 

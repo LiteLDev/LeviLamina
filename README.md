@@ -23,15 +23,7 @@ For more information, please refer to [the documentation](https://lamina.levimc.
 ## Security
 
 > [!WARNING]
-> Before installing and using LeviLamina, please be sure to read and understand the following disclaimer.
-
-LeviLamina (hereinafter referred to as "this software") is developed and provided by Levimc (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading mods. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any mods loaded by this software. Users should use this software at their own discretion and assume all related risks.
-
-The developer does not guarantee the stability, reliability, accuracy or completeness of this software. The developer is not liable for any defects, errors, viruses or other harmful components that may exist in this software. The developer is not liable for any direct or indirect damages (including but not limited to data loss, device damage, profit loss etc.) caused by the use of this software.
-
-The developer reserves the right to modify, update or terminate this software and its related services at any time without prior notice to users. Users should back up important data and check regularly for updates of this software.
-
-Users should comply with relevant laws and regulations when using this software, respect the intellectual property rights and privacy rights of others, and not use this software for any illegal or infringing activities. If users violate the above provisions and cause any damage to any third party or are claimed by any third party, the developer does not bear any responsibility.
+> **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/common_guides/usage_guidelines.en.md).**
 
 If you have any questions or comments about this disclaimer, please contact the developer.
 
@@ -62,10 +54,6 @@ LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.o
 This project exists thanks to all the people who contribute.
 
 ![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
-## End(er)-User License Agreement (EULA)
-
-**As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/common_guides/usage_guidelines.en.md).**
 
 ## License
 
