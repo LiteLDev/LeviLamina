@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/ActorUniqueID.h"
+#include "mc/util/MolangLoopBreak.h"
+#include "mc/util/MolangLoopContinue.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,6 +16,16 @@ struct MolangLoopContinue;
 union MolangScriptArgPOD {
 public:
     constexpr ~MolangScriptArgPOD() {}
+    constexpr MolangScriptArgPOD() : _mData(0) {};
+    constexpr MolangScriptArgPOD(float val) : mFloat(val) {};
+    constexpr MolangScriptArgPOD(uint64 val) : mHashType64(val) {};
+    constexpr MolangScriptArgPOD(MolangLoopBreak val) : mLoopBreak(val) {};
+    constexpr MolangScriptArgPOD(MolangLoopContinue val) : mLoopContinue(val) {};
+    constexpr MolangScriptArgPOD(Actor const* val) : mActorPtr(const_cast<Actor*>(val)) {};
+    constexpr MolangScriptArgPOD(ActorUniqueID val) : mActorId(val.rawID) {};
+    constexpr MolangScriptArgPOD(ItemStackBase const* val) : mItemStackBasePtr(const_cast<ItemStackBase*>(val)) {};
+    constexpr bool operator==(MolangScriptArgPOD const& rhs) const { return _mData == rhs._mData; }
+    void           clear() { _mData = 0; }
 
 public:
     // member variables
