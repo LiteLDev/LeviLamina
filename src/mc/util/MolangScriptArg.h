@@ -60,17 +60,17 @@ public:
     // NOLINTBEGIN
     MCAPI MolangScriptArg();
 
-    MCAPI explicit MolangScriptArg(::MolangMatrix const&);
+    MCAPI MolangScriptArg(::MolangMatrix const&);
 
     MCAPI MolangScriptArg(::MolangScriptArg&&);
 
     MCAPI MolangScriptArg(::MolangScriptArg const&);
 
-    MCAPI explicit MolangScriptArg(float value);
+    MCAPI MolangScriptArg(float value);
 
-    MCAPI explicit MolangScriptArg(::MolangActorIdArrayPtr const&);
+    MCAPI MolangScriptArg(::MolangActorIdArrayPtr const&);
 
-    MCAPI explicit MolangScriptArg(::MolangMemberArray const&);
+    MCAPI MolangScriptArg(::MolangMemberArray const&);
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
