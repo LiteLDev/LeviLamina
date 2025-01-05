@@ -24,6 +24,13 @@
 #include "windows.h"
 
 namespace ll {
+
+void setGamingStatus(GamingStatus);
+
+namespace i18n {
+std::string& defaultLocaleCode();
+}
+
 void leviLaminaMain() {
     error_utils::initExceptionTranslator();
 
