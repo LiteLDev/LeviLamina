@@ -21,7 +21,7 @@
 namespace ll::reflection {
 template <class T>
 constexpr bool is_reflectable_v =
-    std::is_aggregate_v<std::remove_cvref_t<T>> && !requires { typename std::remove_cvref_t<T>::size_type; };
+    std::is_aggregate_v<std::remove_cvref_t<T>> && !traits::is_std_array_v<std::remove_cvref_t<T>>;
 
 template <class T>
 concept Reflectable = is_reflectable_v<T>;
