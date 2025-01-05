@@ -91,6 +91,27 @@ public:
     // NOLINTEND
 
 public:
+    template <typename T>
+    T getState(uint64 id) const {
+        return mLegacyBlock->get()->getState<T>(id, mData);
+    }
+
+    template <typename T>
+    T getState(BlockState const& state) const {
+        return mLegacyBlock->get()->getState<T>(state, mData);
+    }
+
+    template <typename T>
+    optional_ref<Block const> setState(uint64 id, T value) const {
+        return mLegacyBlock->get()->trySetState(id, value, mData);
+    }
+
+    template <typename T>
+    optional_ref<Block const> setState(BlockState const& state, T value) const {
+        return mLegacyBlock->get()->trySetState(state, value, mData);
+    }
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
