@@ -6,16 +6,18 @@
 template <typename T0>
 class BlockStateVariant : public ::BlockState {
 public:
-    // prevent constructor by default
-    BlockStateVariant& operator=(BlockStateVariant const&);
-    BlockStateVariant(BlockStateVariant const&);
-    BlockStateVariant();
+    using Type = T0;
 
+public:
+    // virtual functions
     // NOLINTBEGIN
-    virtual ~BlockStateVariant();
+    // vIndex: 0
+    virtual ~BlockStateVariant() /*override*/ = default;
 
-    virtual void toNBT(class CompoundTag&, int) const;
+    // vIndex: 1
+    virtual void toNBT(::CompoundTag&, int) const /*override*/;
 
-    virtual bool fromNBT(class CompoundTag const&, int&) const;
+    // vIndex: 2
+    virtual bool fromNBT(::CompoundTag const&, int&) const /*override*/;
     // NOLINTEND
 };
