@@ -92,9 +92,7 @@ If you provide a suggestion for *LeviLamina*, it is offered freely, and we are *
 
 If you wish to notify us about intellectual property infringement in our services, please submit a notification here. We reserve the right to remove any content at our discretion.
 
-If you violate this E
-
-ULA, the consequences are **entirely your responsibility**, whether as an individual, organization, or company. Levimc **does not bear any legal responsibility** and **is not liable** for these consequences. Please read and follow this EULA carefully to avoid unnecessary issues.
+If you violate this EULA, the consequences are **entirely your responsibility**, whether as an individual, organization, or company. Levimc **does not bear any legal responsibility** and **is not liable** for these consequences. Please read and follow this EULA carefully to avoid unnecessary issues.
 
 ## Contact Information
 
