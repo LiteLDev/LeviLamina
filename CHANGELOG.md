@@ -7,11 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-rc.2] - 2025-01-06
+
+### Added
+
+- Add block state setter and getter @Dofes
+
+### Changed
+
+- Remove some internal functions from api header @OEOTYAN
+- Add member functions for some template @OEOTYAN
+- Change some weird concept @OEOTYAN
+- Remove some explicit @OEOTYAN
+
+### Fixed
+
+- Fix Player::sendMessage broadcast @OEOTYAN
+- Fix MolangScriptArg @OEOTYAN
+
 ## [1.0.0-rc.1] - 2025-01-04
 
 ### Added
 
-- **Adapted to BDS version *1.21.50*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent 
+- **Adapted to BDS version *1.21.50*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent
 - Added the missing field to CommandRegistry::Overload @wu-vincent
 - Added StdoutRedirector @OEOTYAN
 - Added imgui and some relate codes @ddf8196 @OEOTYAN
@@ -716,7 +734,8 @@ For lip and tooth-hub test only.
 [#1574]: https://github.com/LiteLDev/LeviLamina/issues/1574
 [#1582]: https://github.com/LiteLDev/LeviLamina/issues/1582
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.2...HEAD
+[1.0.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...v1.0.0-rc.2
 [1.0.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...v1.0.0-rc.1
 [0.13.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...v0.13.5
 [0.13.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...v0.13.4
