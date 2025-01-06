@@ -334,7 +334,7 @@ public:
     LLNDAPI static optional_ref<BlockLegacy const> tryGetFromRegistry(uint legacyBlockID);
 
     template <typename T>
-    T getState(uint64 id, ushort data) const {
+    std::optional<T> getState(uint64 id, ushort data) const {
         auto it = mStates->lower_bound(id);
 
         if (it == mStates->end() || it->first != id) {
@@ -342,7 +342,7 @@ public:
             if (result.has_value()) {
                 return static_cast<T>(result.value());
             } else {
-                return T{};
+                return std::nullopt;
             }
         }
 
@@ -350,12 +350,13 @@ public:
     }
 
     template <typename T>
-    T getState(BlockState const& stateType, ushort data) const {
+    std::optional<T> getState(BlockState const& stateType, ushort data) const {
         return getState<T>(stateType.mID, data);
     }
 
     template <typename T>
-    Block const* trySetState(uint64 id, T val, ushort data) {
+        requires(std::is_integral_v<T> || std::is_enum_v<T>)
+    optional_ref<Block const> trySetState(uint64 id, T val, ushort data) {
         auto it = mStates->lower_bound(id);
 
         if (it != mStates->end() && it->first == id) {
@@ -372,8 +373,7 @@ public:
             }
         }
 
-        Block const* alteredStateBlock = _trySetStateFromAlteredStateCollection(id, static_cast<int>(val), data);
-        if (alteredStateBlock) {
+        if (auto alteredStateBlock = _trySetStateFromAlteredStateCollection(id, static_cast<int>(val), data)) {
             return alteredStateBlock;
         }
 
@@ -385,7 +385,7 @@ public:
     }
 
     template <typename T>
-    Block const* trySetState(BlockState const& stateType, T val, ushort data) {
+    optional_ref<Block const> trySetState(BlockState const& stateType, T val, ushort data) {
         return trySetState(stateType.mID, val, data);
     }
 

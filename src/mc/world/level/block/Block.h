@@ -92,12 +92,12 @@ public:
 
 public:
     template <typename T>
-    T getState(uint64 id) const {
+    std::optional<T> getState(uint64 id) const {
         return mLegacyBlock->get()->getState<T>(id, mData);
     }
 
     template <typename T>
-    T getState(BlockState const& state) const {
+    std::optional<T> getState(BlockState const& state) const {
         return mLegacyBlock->get()->getState<T>(state, mData);
     }
 

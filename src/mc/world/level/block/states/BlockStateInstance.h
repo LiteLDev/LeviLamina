@@ -21,8 +21,8 @@ public:
 
 public:
     template <typename T>
+        requires(std::is_integral_v<T> || std::is_enum_v<T>)
     T get(ushort data) const {
-        if (sizeof(T) * 8 < mNumBits) return T{};
         return static_cast<T>((data >> (mEndBit - mNumBits + 1)) & ((1 << mNumBits) - 1));
     }
 
