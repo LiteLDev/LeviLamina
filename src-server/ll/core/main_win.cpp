@@ -153,6 +153,12 @@ void unixSignalHandler(int signum) {
     }
 }
 
+void setGamingStatus(GamingStatus);
+
+namespace i18n {
+std::string& defaultLocaleCode();
+}
+
 void leviLaminaMain() {
     error_utils::initExceptionTranslator();
 

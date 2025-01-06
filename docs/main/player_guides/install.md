@@ -27,11 +27,11 @@ You can install LeviLamina in different ways, depending on your needs:
 
 ### Install via LipUI
 
-Simply download and run [LipUI](https://github.com/lippkg/LipUI), and then install LeviLamina from the package index.
+Simply download and run [LipUI](https://github.com/futrime/lipui), and then install LeviLamina from the package index.
 
 ### Install via lip
 
-If you have not installed lip, you can install it following the instructions in [lip installation guide](https://lip.futrime.com/install/).
+If you have not installed lip, you can install it following the instructions in [lip installation guide](https://futrime.github.io/lip/install/).
 
 After installing lip, you can install LeviLamina by running the following command:
 

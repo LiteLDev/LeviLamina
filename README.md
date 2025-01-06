@@ -4,10 +4,10 @@
 
 [![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)](https://discord.gg/v5R5P4vRZk)
 [![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)](https://t.me/LiteLoader)
-[![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024)
-[![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109)
-[![850517473](https://img.shields.io/badge/850517473-red?style=for-the-badge&logo=tencent%20qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=3Fxt0gwMYkoLPani_vQ9tsNfYrnVy4hK&authKey=2A%2BNk3jmRaK%2FO1FBQSjTIbStAU1kbZWkjEkyh2RTVA015eTg6c4CvVhfByc1BtGZ&noverify=0&group_code=850517473)
-[![1evilamina](https://img.shields.io/badge/1evilamina-red?style=for-the-badge&logo=tencent%20qq)](https://pd.qq.com/s/a13gu04rv)  
+[![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024)
+[![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109)
+[![850517473](https://img.shields.io/badge/850517473-red?style=for-the-badge&logo=qq)](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=3Fxt0gwMYkoLPani_vQ9tsNfYrnVy4hK&authKey=2A%2BNk3jmRaK%2FO1FBQSjTIbStAU1kbZWkjEkyh2RTVA015eTg6c4CvVhfByc1BtGZ&noverify=0&group_code=850517473)
+[![1evilamina](https://img.shields.io/badge/1evilamina-red?style=for-the-badge&logo=qq)](https://pd.qq.com/s/a13gu04rv)  
 
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)
 [![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
@@ -23,15 +23,7 @@ For more information, please refer to [the documentation](https://lamina.levimc.
 ## Security
 
 > [!WARNING]
-> Before installing and using LeviLamina, please be sure to read and understand the following disclaimer.
-
-LeviLamina (hereinafter referred to as "this software") is developed and provided by Levimc (hereinafter referred to as "the developer"). This software is designed to enable users to extend the functionality of Minecraft Bedrock Edition (hereinafter referred to as "MCBE") by loading mods. This software is not affiliated with Mojang Studios (hereinafter referred to as "Mojang") or Microsoft Corporation (hereinafter referred to as "Microsoft"). The developer is not responsible for any content, quality, functionality, security or legality of any mods loaded by this software. Users should use this software at their own discretion and assume all related risks.
-
-The developer does not guarantee the stability, reliability, accuracy or completeness of this software. The developer is not liable for any defects, errors, viruses or other harmful components that may exist in this software. The developer is not liable for any direct or indirect damages (including but not limited to data loss, device damage, profit loss etc.) caused by the use of this software.
-
-The developer reserves the right to modify, update or terminate this software and its related services at any time without prior notice to users. Users should back up important data and check regularly for updates of this software.
-
-Users should comply with relevant laws and regulations when using this software, respect the intellectual property rights and privacy rights of others, and not use this software for any illegal or infringing activities. If users violate the above provisions and cause any damage to any third party or are claimed by any third party, the developer does not bear any responsibility.
+> **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/common_guides/usage_guidelines.en.md).**
 
 If you have any questions or comments about this disclaimer, please contact the developer.
 
@@ -62,10 +54,6 @@ LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.o
 This project exists thanks to all the people who contribute.
 
 ![Contributors](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
-
-## End(er)-User License Agreement (EULA)
-
-**As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/common_guides/usage_guidelines.en.md).**
 
 ## License
 

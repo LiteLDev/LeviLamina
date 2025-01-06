@@ -27,11 +27,11 @@
 
 ### 通过 lipUI 安装
 
-只需要下载并运行[LipUI](https://github.com/lippkg/LipUI)并在包市场中选择LeviLamina安装即可。
+只需要下载并运行[LipUI](https://github.com/futrime/lipui)并在包市场中选择LeviLamina安装即可。
 
 ### 通过 lip 安装
 
-如果你还没有安装 lip，你可以按照[lip 安装指南](https://lip.futrime.com/zh/install/)中的说明进行安装。
+如果你还没有安装 lip，你可以按照[lip 安装指南](https://futrime.github.io/lip/zh/install/)中的说明进行安装。
 
 安装 lip 后，你可以通过运行以下命令来安装 LeviLamina：
 

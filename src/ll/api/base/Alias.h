@@ -55,9 +55,23 @@ struct TypedStorageImpl {
         std::construct_at(this->operator->(), std::forward<Args>(args)...);
     }
 
+    TypedStorageImpl(TypedStorageImpl const& other) { std::construct_at(this->operator->(), other.get()); }
+
+    TypedStorageImpl(TypedStorageImpl&& other) { std::construct_at(this->operator->(), std::move(other.get())); }
+
     template <class U>
     constexpr T& operator=(U&& u) {
         get().operator=(std::forward<U>(u));
+        return get();
+    }
+
+    T& operator=(TypedStorageImpl const& u) {
+        get().operator=(u.get());
+        return get();
+    }
+
+    T& operator=(TypedStorageImpl&& u) {
+        get().operator=(std::move(u.get()));
         return get();
     }
 

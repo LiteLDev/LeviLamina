@@ -2,12 +2,12 @@
 
 ## Before You Begin
 
-We strongly recommend using [lip](https://lip.futrime.com/install/) for mod installation. If you have not installed it locally yet, please go ahead and check it out.
+We strongly recommend using [lip](https://futrime.github.io/lip/install/) for mod installation. If you have not installed it locally yet, please go ahead and check it out.
 
 The following content is for a quick start with using lip.
 
 !!! tip
-    Not accustomed to using command-line tools? You can use [LipUI](https://github.com/lippkg/LipUI).
+    Not accustomed to using command-line tools? You can use [LipUI](https://github.com/futrime/lipui).
 
 ## Installing LeviLamina
 

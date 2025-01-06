@@ -7,19 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-rc.2] - 2025-01-06
+
+### Added
+
+- Add block state setter and getter @Dofes
+
+### Changed
+
+- Remove some internal functions from api header @OEOTYAN
+- Add member functions for some template @OEOTYAN
+- Change some weird concept @OEOTYAN
+- Remove some explicit @OEOTYAN
+
+### Fixed
+
+- Fix Player::sendMessage broadcast @OEOTYAN
+- Fix MolangScriptArg @OEOTYAN
+
 ## [1.0.0-rc.1] - 2025-01-04
 
 ### Added
 
-- **Adapted to BDS version *1.21.5x*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent 
-- **Added support for *Windows* platform *clients*** @OEOTYAN @ddf8196 @Dofes
+- **Adapted to BDS version *1.21.50*** @OEOTYAN @ddf8196 @Dofes @dreamguxiang @futrime @KawaiiNahida @Lovelylavender4 @PA733 @Pd233 @RimuruChan @ShrBox @wu-vincent
 - Added the missing field to CommandRegistry::Overload @wu-vincent
-- Added last member variable of ChunkSource @xNotTozic
 - Added StdoutRedirector @OEOTYAN
 - Added imgui and some relate codes @ddf8196 @OEOTYAN
 - Added function definitions for ItemStackBase::getTypeName, ItemStackBase::getDescriptionName, ItemStackBase::getDamageValue to the source file @Dofes
 - Added some headers for ui @Dofes
-- Added compiler specific defines for clang @Redbeanw44602
 - Added clang/gcc virtualDetector @OEOTYAN
 - Added hints for double enable/disable @OEOTYAN
 - Added new signature resolver @OEOTYAN
@@ -40,14 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added TypedStorage @OEOTYAN
 - Added initializer_list for CompoundTagVariant @OEOTYAN
 - Adaptted to new preloader @OEOTYAN
-- Completes OreFeature, BlockDescriptor @Lovelylavender4
-- Completes the FertilizerType enum class @zimuya4153
-- Completes GameRulesIndex @KobeBryant114514
-- Completes BookEditAction and EmotePacket::Flags  @zimuya4153
-- Completes ItemReleaseInventoryTransaction and ItemUseInventoryTransaction and ItemUseOnActorInventoryTransaction member variables @xNotTozic
-- Completes DirtyTicksCounter and SubChunk and SubChunkStorage and Dimension and BuildInfo member variables @OEOTYAN
-- Completes InteractPacket::Action @xNotTozic
-- Completes ReplaceRule member variables @Lovelylavender4
+- Completes some class member @Lovelylavender4 @zimuya4153 @KobeBryant114514 @OEOTYAN
 - Moved concepts to internal @OEOTYAN
 - Filled sim::LookDuration @ShrBox
 - Resolved [#1519] @OEOTYAN
@@ -726,7 +734,8 @@ For lip and tooth-hub test only.
 [#1574]: https://github.com/LiteLDev/LeviLamina/issues/1574
 [#1582]: https://github.com/LiteLDev/LeviLamina/issues/1582
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.2...HEAD
+[1.0.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...v1.0.0-rc.2
 [1.0.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...v1.0.0-rc.1
 [0.13.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...v0.13.5
 [0.13.4]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.3...v0.13.4

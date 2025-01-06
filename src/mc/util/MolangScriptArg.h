@@ -1,6 +1,24 @@
 #pragma once
 
+#include "ll/api/base/Concepts.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/minecraft_renderer/renderer/MaterialVariants.h"
+#include "mc/util/MolangActorArrayPtr.h"
+#include "mc/util/MolangActorIdArrayPtr.h"
+#include "mc/util/MolangArrayVariable.h"
+#include "mc/util/MolangClientTextureSet.h"
+#include "mc/util/MolangContextVariable.h"
+#include "mc/util/MolangDataDrivenGeometry.h"
+#include "mc/util/MolangEntityVariable.h"
+#include "mc/util/MolangGeometryVariable.h"
+#include "mc/util/MolangMaterialVariable.h"
+#include "mc/util/MolangMatrix.h"
+#include "mc/util/MolangMemberAccessor.h"
+#include "mc/util/MolangMemberArray.h"
+#include "mc/util/MolangQueryFunctionPtr.h"
+#include "mc/util/MolangScriptArgPOD.h"
+#include "mc/util/MolangTempVariable.h"
+#include "mc/util/MolangTextureVariable.h"
 
 // auto generated inclusion list
 #include "mc/util/MolangScriptArgType.h"
@@ -28,31 +46,44 @@ union MolangScriptArgPOD;
 
 struct MolangScriptArg {
 public:
+    using MolangScriptArgData = std::variant<
+        ::MolangMatrix,
+        ::MaterialVariants,
+        ::MolangActorArrayPtr,
+        ::MolangActorIdArrayPtr,
+        ::MolangArrayVariable,
+        ::MolangClientTextureSet,
+        ::MolangContextVariable,
+        ::MolangDataDrivenGeometry,
+        ::MolangEntityVariable,
+        ::MolangGeometryVariable,
+        ::MolangMaterialVariable,
+        ::MolangMemberAccessor,
+        ::MolangMemberArray,
+        ::MolangQueryFunctionPtr,
+        ::MolangTempVariable,
+        ::MolangTextureVariable>;
+
+    MolangScriptArg(MolangLoopBreak loopBreak) : mType(MolangScriptArgType::MolangLoopBreak), mPOD(loopBreak) {}
+    MolangScriptArg(MolangLoopContinue loopContinue)
+    : mType(MolangScriptArgType::MolangLoopContinue),
+      mPOD(loopContinue) {}
+    MolangScriptArg(Actor const& actor) : mType(MolangScriptArgType::MolangActorPtr), mPOD(std::addressof(actor)) {}
+    MolangScriptArg(ActorUniqueID actorId) : mType(MolangScriptArgType::MolangActorIdPtr), mPOD(actorId) {}
+    MolangScriptArg(ItemStackBase const& item)
+    : mType(MolangScriptArgType::MolangItemStackBasePtr),
+      mPOD(std::addressof(item)) {}
+
+    template <ll::concepts::IsInTypes<MolangScriptArgData> T>
+    MolangScriptArg(T const& val) : mType(MolangScriptArgType::Variant),
+                                    mData(val) {}
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::MolangScriptArgType> mType;
-    ::ll::TypedStorage<8, 8, ::MolangScriptArgPOD>  mPOD;
-    ::ll::TypedStorage<
-        8,
-        72,
-        ::std::variant<
-            ::MolangMatrix,
-            ::MaterialVariants,
-            ::MolangActorArrayPtr,
-            ::MolangActorIdArrayPtr,
-            ::MolangArrayVariable,
-            ::MolangClientTextureSet,
-            ::MolangContextVariable,
-            ::MolangDataDrivenGeometry,
-            ::MolangEntityVariable,
-            ::MolangGeometryVariable,
-            ::MolangMaterialVariable,
-            ::MolangMemberAccessor,
-            ::MolangMemberArray,
-            ::MolangQueryFunctionPtr,
-            ::MolangTempVariable,
-            ::MolangTextureVariable>>
-        mData;
+    ::MolangScriptArgType mType;
+    ::MolangScriptArgPOD  mPOD;
+    MolangScriptArgData   mData;
     // NOLINTEND
 
 public:
@@ -60,25 +91,17 @@ public:
     // NOLINTBEGIN
     MCAPI MolangScriptArg();
 
-    MCAPI explicit MolangScriptArg(::MolangMatrix const&);
-
     MCAPI MolangScriptArg(::MolangScriptArg&&);
 
     MCAPI MolangScriptArg(::MolangScriptArg const&);
 
-    MCAPI explicit MolangScriptArg(float value);
-
-    MCAPI explicit MolangScriptArg(::MolangActorIdArrayPtr const&);
-
-    MCAPI explicit MolangScriptArg(::MolangMemberArray const&);
+    MCAPI MolangScriptArg(float value);
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
     MCAPI ::MolangScriptArgType getBaseType() const;
 
     MCAPI bool isEqual(::MolangScriptArg const& rhs) const;
-
-    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray const&);
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const&);
 

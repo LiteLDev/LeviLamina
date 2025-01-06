@@ -1,6 +1,6 @@
 # 发布你的第一个整合包
 
-首先，你应当确保你安装了[lip](https://github.com/lippkg/lip)。
+首先，你应当确保你安装了[lip](https://futrime.github.io/lip)。
 
 ## 创建一个仓库
 
@@ -35,7 +35,7 @@
 
 在`dependencies`中填写LeviLamina和要整合的一切包。
 
-更多关于`tooth.json`的信息，请参考<https://lip.futrime.com/zh/reference/tooth_json_file_reference/>。
+更多关于`tooth.json`的信息，请参考<https://futrime.github.io/lip/zh/reference/tooth_json_file_reference/>。
 
 ### 尝试打包和安装整合包
 
