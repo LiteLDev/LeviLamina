@@ -257,8 +257,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     command::CommandRegistrar::getInstance().clear();
 
-    mod::ModRegistrar::getInstance().releaseAllMods();
-
     origin();
 }
 

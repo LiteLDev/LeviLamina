@@ -38,6 +38,7 @@ namespace ll::mod {
 struct ModRegistrar::Impl {
     std::recursive_mutex               mutex;
     data::DependencyGraph<std::string> deps;
+    ModManagerRegistry&                registry = ModManagerRegistry::getInstance();
 };
 
 ModRegistrar::ModRegistrar() : impl(std::make_unique<Impl>()) {}
@@ -82,7 +83,7 @@ void ModRegistrar::loadAllMods() noexcept try {
 
     getLogger().info("Loading mods..."_tr());
 
-    auto& registry = ModManagerRegistry::getInstance();
+    auto& registry = impl->registry;
 
     if (!registry.addManager(std::make_shared<NativeModManager>())) {
         getLogger().error("Failed to create native mod manager"_tr());
@@ -269,7 +270,7 @@ void ModRegistrar::enableAllMods() noexcept try {
     auto   begin = std::chrono::steady_clock::now();
     size_t count{};
     for (auto& name : names) {
-        auto mod = ModManagerRegistry::getInstance().getMod(name);
+        auto mod = impl->registry.getMod(name);
         if (!mod || mod->isEnabled()) continue;
         getLogger().info("Enabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0})));
         if (auto res = enableMod(name); res) {
@@ -295,7 +296,7 @@ void ModRegistrar::disableAllMods() noexcept try {
     if (!names.empty()) {
         getLogger().info("Disabling mods..."_tr());
         for (auto& name : std::ranges::reverse_view(names)) {
-            auto mod = ModManagerRegistry::getInstance().getMod(name);
+            auto mod = impl->registry.getMod(name);
             if (!mod || mod->isDisabled()) continue;
             getLogger().info("Disabling {0} v{1}"_tr(name, mod->getManifest().version.value_or(data::Version{0, 0, 0}))
             );
@@ -304,17 +305,6 @@ void ModRegistrar::disableAllMods() noexcept try {
             }
         }
     }
-} catch (...) {
-    error_utils::printCurrentException(getLogger());
-}
-void ModRegistrar::releaseAllMods() noexcept try {
-    // TODO: check lifetime
-    // std::lock_guard lock(impl->mutex);
-    // if (auto res = ModManagerRegistry::getInstance().releaseManagers(); !res) {
-    //     res.error().log(getLogger(), io::LogLevel::Warn);
-    // }
-    // impl->deps.clear();
-    return;
 } catch (...) {
     error_utils::printCurrentException(getLogger());
 }
@@ -332,7 +322,7 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
         }
     }
     auto& manifest = *res;
-    auto& reg      = ModManagerRegistry::getInstance();
+    auto& reg      = impl->registry;
     if (manifest.dependencies) {
         for (auto& dependency : *manifest.dependencies) {
             if (!reg.hasMod(dependency.name) || !checkVersion(reg.getMod(dependency.name)->getManifest(), dependency)) {
@@ -364,13 +354,11 @@ Expected<> ModRegistrar::unloadMod(std::string_view name) noexcept {
     if (!dependents.empty()) {
         return makeStringError("{0} still depends on {1}"_tr(dependents, name));
     }
-    return ModManagerRegistry::getInstance().unloadMod(name).transform([&, this]() {
-        impl->deps.erase(std::string{name});
-    });
+    return impl->registry.unloadMod(name).transform([&, this]() { impl->deps.erase(std::string{name}); });
 }
 Expected<> ModRegistrar::enableMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
-    auto&           registry   = ModManagerRegistry::getInstance();
+    auto&           registry   = impl->registry;
     auto            dependents = impl->deps.dependentOn(std::string{name});
     erase_if(dependents, [&](auto& name) {
         if (auto ptr = registry.getMod(name); ptr) {
@@ -385,7 +373,7 @@ Expected<> ModRegistrar::enableMod(std::string_view name) noexcept {
 }
 Expected<> ModRegistrar::disableMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
-    auto&           registry   = ModManagerRegistry::getInstance();
+    auto&           registry   = impl->registry;
     auto            dependents = impl->deps.dependentBy(std::string{name});
     erase_if(dependents, [&](auto& name) {
         if (auto ptr = registry.getMod(name); ptr) {
