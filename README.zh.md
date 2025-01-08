@@ -12,11 +12,11 @@
 [![English](https://img.shields.io/badge/English-informational?style=for-the-badge)](README.md)
 ![中文](https://img.shields.io/badge/简体中文-inactive?style=for-the-badge)
 
-轻量级、模块化和多功能的Minecraft基岩版模组加载器，曾被称为LiteLoaderBDS
+轻量级、模块化和多功能的基岩版模组加载器，曾被称为LiteLoaderBDS
 
-LeviLamina是一个非官方的模组加载器，旨在为Minecraft Bedrock Edition提供必不可少的API支持。它拥有全面的API，一系列的实用接口，一个强大的事件系统，以及对基本接口的全面支持。LeviLamina提供了一个广泛的API，一个强大的事件系统，以及丰富的封装开发基础设施接口，为增强Bedrock Edition的附加游戏功能和功能提供了坚实的基础。通过利用模组，扩展游戏功能的过程变得轻而易举，具有用户友好的开发过程和灵活的方法。
+LeviLamina是一个非官方的模组加载器，旨在为基岩版提供必不可少的API支持。它拥有全面的API，一系列的实用接口，一个强大的事件系统，以及对基本接口的全面支持。它提供了一个广泛的API，一个强大的事件系统，以及丰富的封装开发基础设施接口，为增强基岩版的附加游戏特征和功能提供了坚实的基础。利用模组，扩展游戏功能的过程变得轻而易举，具有用户友好的开发过程和灵活的方法。
 
-开发者可以轻松地用C++，JavaScript，Lua，Python，C#等语言编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，促进了直观的学习体验和无与伦比的灵活性。
+开发者可以轻松地用C++、JavaScript、Lua，Python、C#等语言编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，促进了直观的学习体验和无与伦比的灵活性。
 
 有关更多信息，请参阅[文档](https://lamina.levimc.org/quickstart/zh/).
 
