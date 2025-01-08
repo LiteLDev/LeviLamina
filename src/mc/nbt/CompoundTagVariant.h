@@ -248,13 +248,12 @@ public:
         return operator[](std::string_view{index});
     }
 
-    [[nodiscard]] UniqueTagPtr toUnique() const& {
+    [[nodiscard]] UniqueTagPtr toUniqueCopy() const& {
         return std::visit(
             [](auto& val) -> std::unique_ptr<Tag> { return std::make_unique<std::decay_t<decltype(val)>>(val); },
             mTagStorage
         );
     }
-    [[nodiscard]] operator UniqueTagPtr() const { return toUnique(); }
 
     [[nodiscard]] UniqueTagPtr toUnique() && {
         return std::visit(
@@ -342,7 +341,7 @@ public:
         mType = tags.begin()->index();
         reserve(tags.size());
         for (auto& tag : tags) {
-            emplace_back(tag.toUnique());
+            emplace_back(tag.toUniqueCopy());
         }
     }
 }
@@ -351,6 +350,19 @@ public:
 }
 [[nodiscard]] inline bool operator==(CompoundTagVariant const& l, UniqueTagPtr const& r) {
     return r ? (l.get() == *r) : false;
+}
+
+[[nodiscard]] inline UniqueTagPtr::UniqueTagPtr(CompoundTagVariant&& r) : ptr(std::move(r).toUnique().release()) {}
+
+[[nodiscard]] inline UniqueTagPtr::UniqueTagPtr(CompoundTagVariant const& r) : ptr(r.toUniqueCopy().release()) {}
+
+inline UniqueTagPtr& UniqueTagPtr::operator=(CompoundTagVariant&& r) {
+    reset(std::move(r).toUnique().release());
+    return *this;
+}
+inline UniqueTagPtr& UniqueTagPtr::operator=(CompoundTagVariant const& r) {
+    reset(r.toUniqueCopy().release());
+    return *this;
 }
 
 template <std::derived_from<Tag> T>

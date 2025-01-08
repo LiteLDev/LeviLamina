@@ -17,6 +17,7 @@ class StringTag;
 class ListTag;
 class CompoundTag;
 class IntArrayTag;
+class CompoundTagVariant;
 
 class UniqueTagPtr {
     Tag* ptr{};
@@ -37,29 +38,38 @@ class UniqueTagPtr {
         IntArrayTag>;
 
 public:
-    LL_CONSTEXPR23 UniqueTagPtr() noexcept {}
+    [[nodiscard]] LL_CONSTEXPR23 UniqueTagPtr() noexcept {}
 
-    LL_CONSTEXPR23 UniqueTagPtr(nullptr_t) noexcept {}
+    [[nodiscard]] LL_CONSTEXPR23 UniqueTagPtr(nullptr_t) noexcept {}
+
+    [[nodiscard]] LL_CONSTEXPR23 explicit UniqueTagPtr(Tag* p) noexcept : ptr(p) {}
+
+    [[nodiscard]] LL_CONSTEXPR23 UniqueTagPtr(std::unique_ptr<Tag>&& ptr) noexcept : ptr(ptr.release()) {}
+
+    [[nodiscard]] LL_CONSTEXPR23 UniqueTagPtr(UniqueTagPtr&& r) noexcept : ptr(r.release()) {}
+
+    [[nodiscard]] LL_CONSTEXPR23 UniqueTagPtr(UniqueTagPtr const& r) : ptr(r ? (r->copy().release()) : nullptr) {}
+
+    [[nodiscard]] UniqueTagPtr(CompoundTagVariant&& r);
+    [[nodiscard]] UniqueTagPtr(CompoundTagVariant const& r);
+
+    UniqueTagPtr& operator=(CompoundTagVariant&& r);
+    UniqueTagPtr& operator=(CompoundTagVariant const& r);
 
     LL_CONSTEXPR23 UniqueTagPtr& operator=(nullptr_t) noexcept {
         reset();
         return *this;
     }
-    LL_CONSTEXPR23 explicit UniqueTagPtr(Tag* p) noexcept : ptr(p) {}
 
-    LL_CONSTEXPR23 UniqueTagPtr(UniqueTagPtr&& r) noexcept : ptr(r.release()) {}
-
-    LL_CONSTEXPR23 UniqueTagPtr(std::unique_ptr<Tag>&& ptr) noexcept : ptr(ptr.release()) {}
+    LL_CONSTEXPR23 UniqueTagPtr& operator=(std::unique_ptr<Tag>&& r) noexcept {
+        reset(r.release());
+        return *this;
+    }
 
     LL_CONSTEXPR23 UniqueTagPtr& operator=(UniqueTagPtr&& r) noexcept {
         reset(r.release());
         return *this;
     }
-    LL_CONSTEXPR23 UniqueTagPtr& operator=(std::unique_ptr<Tag>&& r) noexcept {
-        reset(r.release());
-        return *this;
-    }
-    LL_CONSTEXPR23 UniqueTagPtr(UniqueTagPtr const& r) : ptr(r ? (r->copy().release()) : nullptr) {}
 
     LL_CONSTEXPR23 UniqueTagPtr& operator=(UniqueTagPtr const& r) {
         if (r && &r != this) ptr = r->copy().release();

@@ -120,7 +120,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     nbt3["hello"]["world"] = ListTag{1.0, 2.0, 3.0};
 
-    nbt3["hello"]["world"][1] = 7.0_d;
+    nbt3["hello"]["world"][1] = 7.0;
 
     nbt3["hello"][", "] = "world";
 
