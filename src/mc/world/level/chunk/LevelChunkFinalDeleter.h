@@ -9,12 +9,6 @@ class LevelChunk;
 
 struct LevelChunkFinalDeleter {
 public:
-    // prevent constructor by default
-    LevelChunkFinalDeleter& operator=(LevelChunkFinalDeleter const&);
-    LevelChunkFinalDeleter(LevelChunkFinalDeleter const&);
-    LevelChunkFinalDeleter();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void operator()(::LevelChunk* lc);

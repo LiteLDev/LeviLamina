@@ -13,12 +13,6 @@ class LevelChunk;
 
 class LevelChunkEventManagerProxy : public ::ILevelChunkEventManagerProxy {
 public:
-    // prevent constructor by default
-    LevelChunkEventManagerProxy& operator=(LevelChunkEventManagerProxy const&);
-    LevelChunkEventManagerProxy(LevelChunkEventManagerProxy const&);
-    LevelChunkEventManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

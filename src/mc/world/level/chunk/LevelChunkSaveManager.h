@@ -3,16 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class ChunkPos;
 class ChunkSource;
+class Dimension;
 class DimensionManager;
 class GameplayUserManager;
 class ILevelChunkEventManagerConnector;
 class ILevelChunkSaveManagerProxy;
 class LevelChunk;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LevelChunkSaveManager {
@@ -28,42 +32,32 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk246613;
-        ::ll::UntypedStorage<8, 8> mUnkc50f27;
-        ::ll::UntypedStorage<4, 4> mUnk200da2;
+        ::ll::TypedStorage<4, 4, int>             mDist;
+        ::ll::TypedStorage<8, 8, ::ChunkPos>      mPosition;
+        ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LevelChunkQueuedSavingElement& operator=(LevelChunkQueuedSavingElement const&);
-        LevelChunkQueuedSavingElement(LevelChunkQueuedSavingElement const&);
-        LevelChunkQueuedSavingElement();
     };
 
-    class CompareLevelChunkQueuedSavingElement {
-    public:
-        // prevent constructor by default
-        CompareLevelChunkQueuedSavingElement& operator=(CompareLevelChunkQueuedSavingElement const&);
-        CompareLevelChunkQueuedSavingElement(CompareLevelChunkQueuedSavingElement const&);
-        CompareLevelChunkQueuedSavingElement();
-    };
+    class CompareLevelChunkQueuedSavingElement {};
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd57538;
-    ::ll::UntypedStorage<8, 32> mUnk950a43;
-    ::ll::UntypedStorage<1, 1>  mUnk11735a;
-    ::ll::UntypedStorage<8, 24> mUnk684d99;
-    ::ll::UntypedStorage<8, 24> mUnk7a90a3;
-    ::ll::UntypedStorage<8, 16> mUnkcb48d3;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelChunkSaveManagerProxy>> const>
+        mLevelChunkSaveManagerProxy;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::priority_queue<
+            ::LevelChunkSaveManager::LevelChunkQueuedSavingElement,
+            ::std::vector<::LevelChunkSaveManager::LevelChunkQueuedSavingElement>,
+            ::LevelChunkSaveManager::CompareLevelChunkQueuedSavingElement>>
+                                                                                          mLevelChunkSaveQueue;
+    ::ll::TypedStorage<1, 1, bool>                                                        mChunkSaveInProgress;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>    mDimensionManager;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mOnChunkLoadedSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkSaveManager& operator=(LevelChunkSaveManager const&);
-    LevelChunkSaveManager(LevelChunkSaveManager const&);
-    LevelChunkSaveManager();
 
 public:
     // member functions

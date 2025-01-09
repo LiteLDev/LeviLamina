@@ -2,6 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/chunk/ChunkState.h"
+#include "mc/world/level/chunk/LevelChunkGridAreaElement.h"
+
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+class LevelChunk;
+class SpinLockImpl;
+// clang-format on
+
 class LevelChunkBuilderData {
 public:
     // LevelChunkBuilderData inner types declare
@@ -14,35 +25,28 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk8e203f;
-        ::ll::UntypedStorage<4, 4>  mUnkc31546;
+        ::ll::TypedStorage<8, 16, ::std::pair<::ChunkPos, ::ChunkState>> mChunkPosAndExpectedState;
+        ::ll::TypedStorage<4, 4, int>                                    mPriority;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChunkReadyForProcessingElement& operator=(ChunkReadyForProcessingElement const&);
-        ChunkReadyForProcessingElement(ChunkReadyForProcessingElement const&);
-        ChunkReadyForProcessingElement();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk335e83;
-    ::ll::UntypedStorage<8, 64> mUnk9d1019;
-    ::ll::UntypedStorage<8, 32> mUnk46c2a0;
-    ::ll::UntypedStorage<8, 24> mUnkb5200d;
-    ::ll::UntypedStorage<8, 32> mUnkdfaac4;
-    ::ll::UntypedStorage<8, 64> mUnk18e213;
-    ::ll::UntypedStorage<8, 24> mUnk242213;
-    ::ll::UntypedStorage<4, 4>  mUnkf58007;
-    ::ll::UntypedStorage<8, 32> mUnkd4fa22;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl> mChunkGenerationGridMapSpinLock;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::ChunkPos, ::std::shared_ptr<::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>>>>
+                                                                                    mChunkGenerationGridMap;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                       mChunksToAddToProcessingSpinLock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ChunkPos, ::ChunkState>>> mChunksToAddToProcessing;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                       mChunksReadyForProcessingSpinLock;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::pair<::ChunkPos, ::ChunkState>>> mChunksReadyForProcessing;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LevelChunkBuilderData::ChunkReadyForProcessingElement>> mChunkSortVector;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mChunkGenerationTasksInFlight;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl>    mSpawnTasksLock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkBuilderData& operator=(LevelChunkBuilderData const&);
-    LevelChunkBuilderData(LevelChunkBuilderData const&);
 
 public:
     // member functions

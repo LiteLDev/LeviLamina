@@ -36,24 +36,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk958ddb;
-        ::ll::UntypedStorage<8, 40> mUnk723bc0;
+        ::ll::TypedStorage<1, 1, bool>                mIsRemoved;
+        ::ll::TypedStorage<8, 40, ::TickNextTickData> mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockTick& operator=(BlockTick const&);
-        BlockTick(BlockTick const&);
-        BlockTick();
     };
 
-    struct HashBlockTick {
-    public:
-        // prevent constructor by default
-        HashBlockTick& operator=(HashBlockTick const&);
-        HashBlockTick(HashBlockTick const&);
-        HashBlockTick();
-    };
+    struct HashBlockTick {};
 
     class TickDataSet
     : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {

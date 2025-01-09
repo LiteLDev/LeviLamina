@@ -4,11 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/level/chunk/ChunkState.h"
+#include "mc/world/level/chunk/SubChunk.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
 class SubChunkPos;
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 struct LevelChunkAndSubChunkLoggingData : public ::Bedrock::EnableNonOwnerReferences {
@@ -23,44 +26,34 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnke8ff39;
-        ::ll::UntypedStorage<8, 32> mUnk398c02;
-        ::ll::UntypedStorage<1, 1>  mUnk6c0f4b;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimePoint;
+        ::ll::TypedStorage<8, 32, ::std::string>                          mLogEntry;
+        ::ll::TypedStorage<1, 1, bool>                                    mIsClientSide;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LogEntry& operator=(LogEntry const&);
-        LogEntry(LogEntry const&);
-        LogEntry();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk825d58;
-    ::ll::UntypedStorage<4, 12> mUnkeac1da;
-    ::ll::UntypedStorage<1, 1>  mUnk6f8486;
-    ::ll::UntypedStorage<1, 1>  mUnkde6950;
-    ::ll::UntypedStorage<1, 1>  mUnk52206e;
-    ::ll::UntypedStorage<1, 1>  mUnk9f6042;
-    ::ll::UntypedStorage<1, 1>  mUnkcd7f6b;
-    ::ll::UntypedStorage<1, 1>  mUnk3a940e;
-    ::ll::UntypedStorage<4, 4>  mUnke24144;
-    ::ll::UntypedStorage<4, 4>  mUnkd187a7;
-    ::ll::UntypedStorage<4, 4>  mUnkd5517f;
-    ::ll::UntypedStorage<8, 8>  mUnk2330e3;
-    ::ll::UntypedStorage<8, 16> mUnkd1257b;
-    ::ll::UntypedStorage<8, 16> mUnk768d4c;
-    ::ll::UntypedStorage<8, 24> mUnk5de58f;
-    ::ll::UntypedStorage<8, 80> mUnk15c6dd;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos>                          mCurrentPlayerSubChunk;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos>                          mSubChunkToTrack;
+    ::ll::TypedStorage<1, 1, bool>                                    mCollectData;
+    ::ll::TypedStorage<1, 1, bool>                                    mLogAllData;
+    ::ll::TypedStorage<1, 1, bool>                                    mCollectSubChunkPosition;
+    ::ll::TypedStorage<1, 1, ::ChunkState>                            mTrackedLevelChunkStateServer;
+    ::ll::TypedStorage<1, 1, ::ChunkState>                            mTrackedLevelChunkStateClient;
+    ::ll::TypedStorage<1, 1, ::ChunkState>                            mTrackedLevelChunkStateClientServer;
+    ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState>               mTrackedSubChunkStateServer;
+    ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState>               mTrackedSubChunkStateClient;
+    ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState>               mTrackedSubChunkStateClientServer;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLogStartTime;
+    ::ll::TypedStorage<8, 16, ::std::map<::SubChunkPos, ::std::vector<::LevelChunkAndSubChunkLoggingData::LogEntry>>>
+        mSubChunkLog;
+    ::ll::TypedStorage<8, 16, ::std::map<::ChunkPos, ::std::vector<::LevelChunkAndSubChunkLoggingData::LogEntry>>>
+                                                                                           mLevelChunkLog;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LevelChunkAndSubChunkLoggingData::LogEntry>> mGeneralEventLog;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                 mMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkAndSubChunkLoggingData& operator=(LevelChunkAndSubChunkLoggingData const&);
-    LevelChunkAndSubChunkLoggingData(LevelChunkAndSubChunkLoggingData const&);
-    LevelChunkAndSubChunkLoggingData();
 
 public:
     // virtual functions

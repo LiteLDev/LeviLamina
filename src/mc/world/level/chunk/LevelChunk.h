@@ -135,17 +135,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk6421bd;
-        ::ll::UntypedStorage<1, 1> mUnk82d63c;
-        ::ll::UntypedStorage<1, 1> mUnk1cca4f;
-        ::ll::UntypedStorage<1, 1> mUnkd8dd50;
+        ::ll::TypedStorage<1, 1, bool> mWasStored;
+        ::ll::TypedStorage<1, 1, bool> mWasGenerated;
+        ::ll::TypedStorage<1, 1, bool> mWasRequestedInsideTickRange;
+        ::ll::TypedStorage<1, 1, bool> mWasLoadedInsideTickRange;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Telemetry& operator=(Telemetry const&);
-        Telemetry(Telemetry const&);
-        Telemetry();
     };
 
     using BlockList = ::std::vector<::BlockPos>;
@@ -158,15 +152,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 24> mUnkaa0f6a;
-        ::ll::UntypedStorage<1, 1>  mUnkcb47a3;
+        ::ll::TypedStorage<4, 24, ::BoundingBox>           aabb;
+        ::ll::TypedStorage<1, 1, ::HardcodedSpawnAreaType> type;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SpawningArea& operator=(SpawningArea const&);
-        SpawningArea(SpawningArea const&);
-        SpawningArea();
     };
 
     using BBorder = bool;

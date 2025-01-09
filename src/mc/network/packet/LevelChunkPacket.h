@@ -28,14 +28,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnke3cf9a;
+        ::ll::TypedStorage<8, 8, uint64> blobId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SubChunkMetadata& operator=(SubChunkMetadata const&);
-        SubChunkMetadata(SubChunkMetadata const&);
-        SubChunkMetadata();
     };
 
 public:
