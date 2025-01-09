@@ -51,21 +51,13 @@ Logger::Logger(PrivateTag, std::string_view title) : impl(std::make_unique<Impl>
     impl->sinks.push_back(std::make_shared<DefaultSink>());
 }
 
-std::string const& Logger::getTitle() { return impl->title; }
+std::string const& Logger::getTitle() const noexcept { return impl->title; }
 
-LogLevel Logger::getLevel() { return impl->level; }
+LogLevel Logger::getLevel() const noexcept { return impl->level; }
 
-void Logger::printView(LogLevel level, std::string_view msg) const noexcept {
-    if (level > impl->level) {
-        return;
-    }
-    printStr(level, std::string{msg});
-}
+bool Logger::shouldLog(LogLevel level) const noexcept { return level <= impl->level; }
 
 void Logger::printStr(LogLevel level, std::string&& msg) const noexcept try {
-    if (level > impl->level) {
-        return;
-    }
     impl->pool.execute([logger = shared_from_this(),
                         msg    = LogMessage{std::move(msg), impl->title, level, sys_utils::getLocalTime()}] {
         try {
