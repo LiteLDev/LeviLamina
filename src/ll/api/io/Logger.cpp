@@ -51,6 +51,10 @@ Logger::Logger(PrivateTag, std::string_view title) : impl(std::make_unique<Impl>
     impl->sinks.push_back(std::make_shared<DefaultSink>());
 }
 
+std::string const& Logger::getTitle() { return impl->title; }
+
+LogLevel Logger::getLevel() { return impl->level; }
+
 void Logger::printView(LogLevel level, std::string_view msg) const noexcept {
     if (level > impl->level) {
         return;

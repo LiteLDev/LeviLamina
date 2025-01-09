@@ -111,6 +111,10 @@ public:
 
     explicit Logger(PrivateTag, std::string_view);
 
+    LLNDAPI std::string const& getTitle();
+
+    LLNDAPI LogLevel getLevel();
+
     LLAPI void setLevel(LogLevel level);
 
     LLAPI void setFlushLevel(LogLevel level);
