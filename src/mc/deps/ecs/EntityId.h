@@ -6,7 +6,7 @@
 template <>
 class entt::entt_traits<EntityId> : public entt::basic_entt_traits<EntityIdTraits> {
 public:
-    static constexpr entity_type page_size = 2048;
+    static constexpr entity_type page_size = ENTT_SPARSE_PAGE;
 };
 
 class EntityId : public entt::entt_traits<EntityId> {
