@@ -19,12 +19,6 @@ struct TickingSystemWithInfo;
 
 class LevelChunkTickingSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    LevelChunkTickingSystem& operator=(LevelChunkTickingSystem const&);
-    LevelChunkTickingSystem(LevelChunkTickingSystem const&);
-    LevelChunkTickingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -9,9 +9,12 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class ChunkPos;
 class IDataInput;
 class IDataOutput;
+class StructureSpawnRegistry;
 class StructureStart;
+namespace br { class LevelChunkDataRegistry; }
 namespace br::worldgen { class StructureInstance; }
 namespace br::worldgen { struct SpawnerData; }
 // clang-format on
@@ -20,20 +23,15 @@ class LevelChunkVolumeData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk8f23ab;
-    ::ll::UntypedStorage<8, 24>  mUnk7498ed;
-    ::ll::UntypedStorage<8, 768> mUnk22597b;
-    ::ll::UntypedStorage<4, 12>  mUnk208a3f;
-    ::ll::UntypedStorage<4, 12>  mUnke69cd4;
-    ::ll::UntypedStorage<8, 8>   mUnk6d5f5c;
-    ::ll::UntypedStorage<8, 8>   mUnkf41575;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>> mStructures;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
+                                                              mStructureReferences;
+    ::ll::TypedStorage<8, 768, ::br::LevelChunkDataRegistry>  mDataRegistry;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                     mMin;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                     mMax;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                      mChunkPos;
+    ::ll::TypedStorage<8, 8, ::StructureSpawnRegistry const&> mStructureSpawnRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkVolumeData& operator=(LevelChunkVolumeData const&);
-    LevelChunkVolumeData(LevelChunkVolumeData const&);
-    LevelChunkVolumeData();
 
 public:
     // member functions

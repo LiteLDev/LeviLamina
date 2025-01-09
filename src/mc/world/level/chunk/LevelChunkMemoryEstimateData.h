@@ -6,22 +6,16 @@ struct LevelChunkMemoryEstimateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk98a1b9;
-    ::ll::UntypedStorage<8, 8> mUnkb05ccd;
-    ::ll::UntypedStorage<8, 8> mUnk9f07f0;
-    ::ll::UntypedStorage<8, 8> mUnk2d87f5;
-    ::ll::UntypedStorage<8, 8> mUnkf728a8;
-    ::ll::UntypedStorage<8, 8> mUnkd2c626;
-    ::ll::UntypedStorage<8, 8> mUnk70f95c;
-    ::ll::UntypedStorage<8, 8> mUnk1d8c34;
-    ::ll::UntypedStorage<8, 8> mUnk9ccd40;
-    ::ll::UntypedStorage<8, 8> mUnke3ebcf;
-    ::ll::UntypedStorage<8, 8> mUnkc07669;
+    ::ll::TypedStorage<8, 8, uint64> mTotalLevelChunkSize;
+    ::ll::TypedStorage<8, 8, uint64> mSubChunkLightDataSize;
+    ::ll::TypedStorage<8, 8, uint64> mSubChunkBlockDataSize;
+    ::ll::TypedStorage<8, 8, uint64> mBiomeData3DSize;
+    ::ll::TypedStorage<8, 8, uint64> mBlockTickingQueueSize;
+    ::ll::TypedStorage<8, 8, uint64> mMinSubChunkPaletteSize;
+    ::ll::TypedStorage<8, 8, double> mAverageSubChunkPaletteSize;
+    ::ll::TypedStorage<8, 8, uint64> mMaxSubChunkPaletteSize;
+    ::ll::TypedStorage<8, 8, uint64> mMinBiomePaletteSize;
+    ::ll::TypedStorage<8, 8, double> mAverageBiomePaletteSize;
+    ::ll::TypedStorage<8, 8, uint64> mMaxBiomePaletteSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkMemoryEstimateData& operator=(LevelChunkMemoryEstimateData const&);
-    LevelChunkMemoryEstimateData(LevelChunkMemoryEstimateData const&);
-    LevelChunkMemoryEstimateData();
 };

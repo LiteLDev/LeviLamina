@@ -11,19 +11,13 @@ class BlockStateInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkeee94f;
-    ::ll::UntypedStorage<4, 4> mUnk58db0e;
-    ::ll::UntypedStorage<4, 4> mUnk3e3d8a;
-    ::ll::UntypedStorage<4, 4> mUnk787411;
-    ::ll::UntypedStorage<1, 1> mUnk163307;
-    ::ll::UntypedStorage<8, 8> mUnkd127d6;
+    ::ll::TypedStorage<4, 4, uint>                mEndBit;
+    ::ll::TypedStorage<4, 4, uint>                mNumBits;
+    ::ll::TypedStorage<4, 4, uint>                mVariationCount;
+    ::ll::TypedStorage<4, 4, uint>                mMask;
+    ::ll::TypedStorage<1, 1, bool>                mInitialized;
+    ::ll::TypedStorage<8, 8, ::BlockState const*> mState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockStateInstance& operator=(BlockStateInstance const&);
-    BlockStateInstance(BlockStateInstance const&);
-    BlockStateInstance();
 
 public:
     // member functions

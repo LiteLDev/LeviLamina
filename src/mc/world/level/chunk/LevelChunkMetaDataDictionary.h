@@ -10,18 +10,16 @@ class LevelChunkMetaData;
 
 class LevelChunkMetaDataDictionary {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk56a38a;
-    ::ll::UntypedStorage<1, 1>  mUnk2dd3cb;
-    ::ll::UntypedStorage<8, 8>  mUnkfd998b;
-    // NOLINTEND
+    // LevelChunkMetaDataDictionary inner types define
+    using PostSerializeWriteCallback = ::std::function<void(::std::string const&)>;
 
 public:
-    // prevent constructor by default
-    LevelChunkMetaDataDictionary& operator=(LevelChunkMetaDataDictionary const&);
-    LevelChunkMetaDataDictionary(LevelChunkMetaDataDictionary const&);
-    LevelChunkMetaDataDictionary();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::std::shared_ptr<::LevelChunkMetaData>>> mDictionary;
+    ::ll::TypedStorage<1, 1, bool>                                                         mDictionaryDirty;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                          mSharedMutex;
+    // NOLINTEND
 
 public:
     // member functions

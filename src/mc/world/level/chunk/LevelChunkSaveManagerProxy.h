@@ -15,6 +15,7 @@ class DimensionManager;
 class LevelChunk;
 class Random;
 class Scheduler;
+class TaskGroup;
 class TaskResult;
 // clang-format on
 
@@ -22,15 +23,9 @@ class LevelChunkSaveManagerProxy : public ::ILevelChunkSaveManagerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk34e07c;
-    ::ll::UntypedStorage<8, 8> mUnkb39bf4;
+    ::ll::TypedStorage<8, 8, ::Random&>                                       mRandom;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::TaskGroup>>> mTaskGroup;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkSaveManagerProxy& operator=(LevelChunkSaveManagerProxy const&);
-    LevelChunkSaveManagerProxy(LevelChunkSaveManagerProxy const&);
-    LevelChunkSaveManagerProxy();
 
 public:
     // virtual functions
