@@ -103,7 +103,7 @@ struct PreRelease {
         auto        tokens = ll::string_utils::splitByPattern(s, ".");
         for (auto const& token : tokens) {
             std::uint16_t value;
-            if (detail::from_chars(token.data(), token.data() + token.length(), value); value) {
+            if (auto result = detail::from_chars(token.data(), token.data() + token.length(), value); result) {
                 values.emplace_back(value);
             } else {
                 values.emplace_back(std::string{token});
