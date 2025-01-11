@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/TickNextTickData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
@@ -34,10 +35,13 @@ public:
     // BlockTickingQueue inner types define
     class BlockTick {
     public:
+        [[nodiscard]] bool operator>(BlockTick const& other) const { return mData > other.mData; }
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                mIsRemoved;
-        ::ll::TypedStorage<8, 40, ::TickNextTickData> mData;
+        bool               mIsRemoved;
+        ::TickNextTickData mData;
         // NOLINTEND
     };
 
