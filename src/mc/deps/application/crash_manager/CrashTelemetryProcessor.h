@@ -12,12 +12,6 @@ namespace Bedrock {
 
 class CrashTelemetryProcessor {
 public:
-    // prevent constructor by default
-    CrashTelemetryProcessor& operator=(CrashTelemetryProcessor const&);
-    CrashTelemetryProcessor(CrashTelemetryProcessor const&);
-    CrashTelemetryProcessor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

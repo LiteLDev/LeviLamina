@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class StreamIDTag {
-public:
-    // prevent constructor by default
-    StreamIDTag& operator=(StreamIDTag const&);
-    StreamIDTag(StreamIDTag const&);
-    StreamIDTag();
-};
+class StreamIDTag {};
 
 } // namespace dcsctp

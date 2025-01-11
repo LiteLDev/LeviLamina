@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorInCaravanTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    ActorInCaravanTest& operator=(ActorInCaravanTest const&);
-    ActorInCaravanTest(ActorInCaravanTest const&);
-    ActorInCaravanTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

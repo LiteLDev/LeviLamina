@@ -12,12 +12,6 @@ class Actor;
 
 class BreachEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    BreachEnchant& operator=(BreachEnchant const&);
-    BreachEnchant(BreachEnchant const&);
-    BreachEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

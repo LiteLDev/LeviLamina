@@ -18,12 +18,6 @@ struct VehicleComponent;
 
 class VehicleServerMolangSeatPositionSystem {
 public:
-    // prevent constructor by default
-    VehicleServerMolangSeatPositionSystem& operator=(VehicleServerMolangSeatPositionSystem const&);
-    VehicleServerMolangSeatPositionSystem(VehicleServerMolangSeatPositionSystem const&);
-    VehicleServerMolangSeatPositionSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickActor(

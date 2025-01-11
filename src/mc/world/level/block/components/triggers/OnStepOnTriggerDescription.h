@@ -12,12 +12,6 @@ class OnStepOnTrigger;
 
 class OnStepOnTriggerDescription : public ::BlockTriggerDescription<::OnStepOnTrigger> {
 public:
-    // prevent constructor by default
-    OnStepOnTriggerDescription& operator=(OnStepOnTriggerDescription const&);
-    OnStepOnTriggerDescription(OnStepOnTriggerDescription const&);
-    OnStepOnTriggerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

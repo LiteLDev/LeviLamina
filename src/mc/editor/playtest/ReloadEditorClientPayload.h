@@ -15,12 +15,6 @@ namespace Editor::Network {
 class ReloadEditorClientPayload
 : public ::Editor::Network::NetworkPayload<::Editor::Network::ReloadEditorClientPayload> {
 public:
-    // prevent constructor by default
-    ReloadEditorClientPayload& operator=(ReloadEditorClientPayload const&);
-    ReloadEditorClientPayload(ReloadEditorClientPayload const&);
-    ReloadEditorClientPayload();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

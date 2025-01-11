@@ -23,12 +23,6 @@ struct VolumetricFogConfiguration;
 
 class OptionValueInterface {
 public:
-    // prevent constructor by default
-    OptionValueInterface& operator=(OptionValueInterface const&);
-    OptionValueInterface(OptionValueInterface const&);
-    OptionValueInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

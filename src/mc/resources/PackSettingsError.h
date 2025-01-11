@@ -7,12 +7,6 @@
 
 class PackSettingsError : public ::PackError {
 public:
-    // prevent constructor by default
-    PackSettingsError& operator=(PackSettingsError const&);
-    PackSettingsError(PackSettingsError const&);
-    PackSettingsError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -14,11 +14,6 @@ namespace Json { class Value; }
 
 class TeleportToSubcomponent : public ::OnHitSubcomponent {
 public:
-    // prevent constructor by default
-    TeleportToSubcomponent& operator=(TeleportToSubcomponent const&);
-    TeleportToSubcomponent(TeleportToSubcomponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

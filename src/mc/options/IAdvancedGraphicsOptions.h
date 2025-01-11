@@ -8,12 +8,6 @@
 
 class IAdvancedGraphicsOptions : public ::IAdvancedGraphicsHardwareOptions {
 public:
-    // prevent constructor by default
-    IAdvancedGraphicsOptions& operator=(IAdvancedGraphicsOptions const&);
-    IAdvancedGraphicsOptions(IAdvancedGraphicsOptions const&);
-    IAdvancedGraphicsOptions();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

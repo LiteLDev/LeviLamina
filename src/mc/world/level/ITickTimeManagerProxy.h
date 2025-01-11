@@ -9,12 +9,6 @@ struct Tick;
 
 class ITickTimeManagerProxy {
 public:
-    // prevent constructor by default
-    ITickTimeManagerProxy& operator=(ITickTimeManagerProxy const&);
-    ITickTimeManagerProxy(ITickTimeManagerProxy const&);
-    ITickTimeManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

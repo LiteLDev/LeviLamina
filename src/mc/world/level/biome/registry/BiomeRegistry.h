@@ -63,13 +63,7 @@ public:
 
     using BiomeNameLookupMap = ::std::unordered_map<uint64, ::std::unique_ptr<::Biome>>;
 
-    struct BiomeComparator {
-    public:
-        // prevent constructor by default
-        BiomeComparator& operator=(BiomeComparator const&);
-        BiomeComparator(BiomeComparator const&);
-        BiomeComparator();
-    };
+    struct BiomeComparator {};
 
 public:
     // member variables

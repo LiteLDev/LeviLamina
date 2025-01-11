@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class SchedulerSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    SchedulerSystem& operator=(SchedulerSystem const&);
-    SchedulerSystem(SchedulerSystem const&);
-    SchedulerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

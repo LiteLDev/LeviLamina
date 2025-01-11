@@ -15,12 +15,6 @@ class Player;
 
 class WardenSpawnTrackerSystem : public ::ITickingSystem, public ::LevelEventListener {
 public:
-    // prevent constructor by default
-    WardenSpawnTrackerSystem& operator=(WardenSpawnTrackerSystem const&);
-    WardenSpawnTrackerSystem(WardenSpawnTrackerSystem const&);
-    WardenSpawnTrackerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

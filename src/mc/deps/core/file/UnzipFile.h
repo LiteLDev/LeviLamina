@@ -17,12 +17,6 @@ namespace Core {
 
 class UnzipFile {
 public:
-    // prevent constructor by default
-    UnzipFile& operator=(UnzipFile const&);
-    UnzipFile(UnzipFile const&);
-    UnzipFile();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

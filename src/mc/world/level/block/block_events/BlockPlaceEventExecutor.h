@@ -14,12 +14,6 @@ namespace BlockEvents {
 
 class BlockPlaceEventExecutor : public ::BlockEvents::BlockEventExecutor {
 public:
-    // prevent constructor by default
-    BlockPlaceEventExecutor& operator=(BlockPlaceEventExecutor const&);
-    BlockPlaceEventExecutor(BlockPlaceEventExecutor const&);
-    BlockPlaceEventExecutor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

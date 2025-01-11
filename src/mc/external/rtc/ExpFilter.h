@@ -6,12 +6,6 @@ namespace rtc {
 
 struct ExpFilter {
 public:
-    // prevent constructor by default
-    ExpFilter& operator=(ExpFilter const&);
-    ExpFilter(ExpFilter const&);
-    ExpFilter();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI float Apply(float, float);

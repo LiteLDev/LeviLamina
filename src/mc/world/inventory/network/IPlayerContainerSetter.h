@@ -9,12 +9,6 @@ class ItemStack;
 
 class IPlayerContainerSetter {
 public:
-    // prevent constructor by default
-    IPlayerContainerSetter& operator=(IPlayerContainerSetter const&);
-    IPlayerContainerSetter(IPlayerContainerSetter const&);
-    IPlayerContainerSetter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

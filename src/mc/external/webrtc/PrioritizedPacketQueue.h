@@ -28,12 +28,6 @@ public:
     // PrioritizedPacketQueue inner types define
     class QueuedPacket {
     public:
-        // prevent constructor by default
-        QueuedPacket& operator=(QueuedPacket const&);
-        QueuedPacket(QueuedPacket const&);
-        QueuedPacket();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::webrtc::DataSize PacketSize() const;
@@ -49,12 +43,6 @@ public:
     };
 
     class StreamQueue {
-    public:
-        // prevent constructor by default
-        StreamQueue& operator=(StreamQueue const&);
-        StreamQueue(StreamQueue const&);
-        StreamQueue();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -81,12 +69,6 @@ public:
         MCAPI void* $ctor(::webrtc::Timestamp);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    PrioritizedPacketQueue& operator=(PrioritizedPacketQueue const&);
-    PrioritizedPacketQueue(PrioritizedPacketQueue const&);
-    PrioritizedPacketQueue();
 
 public:
     // member functions

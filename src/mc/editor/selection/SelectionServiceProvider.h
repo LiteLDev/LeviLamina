@@ -20,12 +20,6 @@ namespace Editor::Services {
 
 class SelectionServiceProvider {
 public:
-    // prevent constructor by default
-    SelectionServiceProvider& operator=(SelectionServiceProvider const&);
-    SelectionServiceProvider(SelectionServiceProvider const&);
-    SelectionServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

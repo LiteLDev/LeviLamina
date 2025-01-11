@@ -12,12 +12,6 @@ namespace webrtc {
 
 class DtlsTransportObserverInterface {
 public:
-    // prevent constructor by default
-    DtlsTransportObserverInterface& operator=(DtlsTransportObserverInterface const&);
-    DtlsTransportObserverInterface(DtlsTransportObserverInterface const&);
-    DtlsTransportObserverInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

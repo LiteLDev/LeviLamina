@@ -23,12 +23,6 @@ namespace Editor::Services {
 class BlockEventListenerService : public ::Editor::Services::IEditorService,
                                   public ::EventListenerDispatcher<::BlockEventListener> {
 public:
-    // prevent constructor by default
-    BlockEventListenerService& operator=(BlockEventListenerService const&);
-    BlockEventListenerService(BlockEventListenerService const&);
-    BlockEventListenerService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

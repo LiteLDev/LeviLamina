@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class BrewingStandInputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    BrewingStandInputContainerValidation& operator=(BrewingStandInputContainerValidation const&);
-    BrewingStandInputContainerValidation(BrewingStandInputContainerValidation const&);
-    BrewingStandInputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

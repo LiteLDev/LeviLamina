@@ -10,12 +10,6 @@ class GameplayUserManager;
 
 class GameplayUserManagerProxy {
 public:
-    // prevent constructor by default
-    GameplayUserManagerProxy& operator=(GameplayUserManagerProxy const&);
-    GameplayUserManagerProxy(GameplayUserManagerProxy const&);
-    GameplayUserManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

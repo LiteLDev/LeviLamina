@@ -11,12 +11,6 @@ namespace webrtc {
 
 class AudioSender {
 public:
-    // prevent constructor by default
-    AudioSender& operator=(AudioSender const&);
-    AudioSender(AudioSender const&);
-    AudioSender();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

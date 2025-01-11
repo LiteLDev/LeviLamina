@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class AgeableSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgeableSystem& operator=(AgeableSystem const&);
-    AgeableSystem(AgeableSystem const&);
-    AgeableSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

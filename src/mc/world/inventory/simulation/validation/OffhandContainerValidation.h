@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class OffhandContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    OffhandContainerValidation& operator=(OffhandContainerValidation const&);
-    OffhandContainerValidation(OffhandContainerValidation const&);
-    OffhandContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

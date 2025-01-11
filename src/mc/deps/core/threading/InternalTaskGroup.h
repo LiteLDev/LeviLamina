@@ -17,12 +17,6 @@ class TaskResult;
 
 class InternalTaskGroup : public ::IBackgroundTaskOwner {
 public:
-    // prevent constructor by default
-    InternalTaskGroup& operator=(InternalTaskGroup const&);
-    InternalTaskGroup(InternalTaskGroup const&);
-    InternalTaskGroup();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

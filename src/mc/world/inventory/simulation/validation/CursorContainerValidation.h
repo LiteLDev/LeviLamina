@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class CursorContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CursorContainerValidation& operator=(CursorContainerValidation const&);
-    CursorContainerValidation(CursorContainerValidation const&);
-    CursorContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

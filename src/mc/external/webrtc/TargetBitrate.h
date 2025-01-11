@@ -14,12 +14,6 @@ public:
     // TargetBitrate inner types define
     struct BitrateItem {
     public:
-        // prevent constructor by default
-        BitrateItem& operator=(BitrateItem const&);
-        BitrateItem(BitrateItem const&);
-        BitrateItem();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI BitrateItem(uchar, uchar, uint);

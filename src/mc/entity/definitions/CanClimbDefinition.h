@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct CanClimbDefinition {
 public:
-    // prevent constructor by default
-    CanClimbDefinition& operator=(CanClimbDefinition const&);
-    CanClimbDefinition(CanClimbDefinition const&);
-    CanClimbDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

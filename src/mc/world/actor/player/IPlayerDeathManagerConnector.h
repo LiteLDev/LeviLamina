@@ -12,12 +12,6 @@ class Player;
 
 class IPlayerDeathManagerConnector {
 public:
-    // prevent constructor by default
-    IPlayerDeathManagerConnector& operator=(IPlayerDeathManagerConnector const&);
-    IPlayerDeathManagerConnector(IPlayerDeathManagerConnector const&);
-    IPlayerDeathManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

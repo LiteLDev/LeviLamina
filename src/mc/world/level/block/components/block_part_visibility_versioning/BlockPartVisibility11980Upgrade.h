@@ -14,12 +14,6 @@ namespace BlockPartVisibilityVersioning {
 
 class BlockPartVisibility11980Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockPartVisibility11980Upgrade& operator=(BlockPartVisibility11980Upgrade const&);
-    BlockPartVisibility11980Upgrade(BlockPartVisibility11980Upgrade const&);
-    BlockPartVisibility11980Upgrade();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

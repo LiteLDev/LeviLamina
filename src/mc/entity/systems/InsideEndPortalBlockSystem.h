@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct InsideEndPortalBlockSystem {
 public:
-    // prevent constructor by default
-    InsideEndPortalBlockSystem& operator=(InsideEndPortalBlockSystem const&);
-    InsideEndPortalBlockSystem(InsideEndPortalBlockSystem const&);
-    InsideEndPortalBlockSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

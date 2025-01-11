@@ -13,11 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class MoveTowardsDwellingRestrictionDefinition : public ::MoveTowardsRestrictionDefinition {
 public:
-    // prevent constructor by default
-    MoveTowardsDwellingRestrictionDefinition& operator=(MoveTowardsDwellingRestrictionDefinition const&);
-    MoveTowardsDwellingRestrictionDefinition(MoveTowardsDwellingRestrictionDefinition const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

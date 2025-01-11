@@ -21,12 +21,6 @@ struct VillageManagerComponent;
 
 class LegacyRaidTriggerSystem {
 public:
-    // prevent constructor by default
-    LegacyRaidTriggerSystem& operator=(LegacyRaidTriggerSystem const&);
-    LegacyRaidTriggerSystem(LegacyRaidTriggerSystem const&);
-    LegacyRaidTriggerSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doRaidTriggerSystem(

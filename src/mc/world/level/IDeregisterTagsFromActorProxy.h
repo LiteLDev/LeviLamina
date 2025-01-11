@@ -9,12 +9,6 @@ class Actor;
 
 class IDeregisterTagsFromActorProxy {
 public:
-    // prevent constructor by default
-    IDeregisterTagsFromActorProxy& operator=(IDeregisterTagsFromActorProxy const&);
-    IDeregisterTagsFromActorProxy(IDeregisterTagsFromActorProxy const&);
-    IDeregisterTagsFromActorProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

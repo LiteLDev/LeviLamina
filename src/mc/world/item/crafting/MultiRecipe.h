@@ -12,12 +12,6 @@ class HashedString;
 
 class MultiRecipe : public ::Recipe {
 public:
-    // prevent constructor by default
-    MultiRecipe& operator=(MultiRecipe const&);
-    MultiRecipe(MultiRecipe const&);
-    MultiRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

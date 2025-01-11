@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class HangingActorMoveSystem {
 public:
-    // prevent constructor by default
-    HangingActorMoveSystem& operator=(HangingActorMoveSystem const&);
-    HangingActorMoveSystem(HangingActorMoveSystem const&);
-    HangingActorMoveSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::TickingSystemWithInfo> createSystems();

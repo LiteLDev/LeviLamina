@@ -12,12 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class BurnsInDaylightDefinition {
 public:
-    // prevent constructor by default
-    BurnsInDaylightDefinition& operator=(BurnsInDaylightDefinition const&);
-    BurnsInDaylightDefinition(BurnsInDaylightDefinition const&);
-    BurnsInDaylightDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

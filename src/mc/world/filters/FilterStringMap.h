@@ -9,12 +9,6 @@ struct FilterInputDefinition;
 
 struct FilterStringMap : public ::std::unordered_map<::std::string, ::FilterInputDefinition> {
 public:
-    // prevent constructor by default
-    FilterStringMap& operator=(FilterStringMap const&);
-    FilterStringMap(FilterStringMap const&);
-    FilterStringMap();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FilterStringMap(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l

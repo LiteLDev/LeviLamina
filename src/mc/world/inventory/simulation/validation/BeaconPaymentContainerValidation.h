@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class BeaconPaymentContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    BeaconPaymentContainerValidation& operator=(BeaconPaymentContainerValidation const&);
-    BeaconPaymentContainerValidation(BeaconPaymentContainerValidation const&);
-    BeaconPaymentContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

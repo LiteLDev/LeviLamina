@@ -4,12 +4,6 @@
 
 namespace MSGraph::Models {
 
-struct GraphError {
-public:
-    // prevent constructor by default
-    GraphError& operator=(GraphError const&);
-    GraphError(GraphError const&);
-    GraphError();
-};
+struct GraphError {};
 
 } // namespace MSGraph::Models

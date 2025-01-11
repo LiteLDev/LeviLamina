@@ -5,12 +5,6 @@
 namespace OperationNodeDetails {
 
 template <typename T0, int T1, int T2>
-struct NeighborhoodReader {
-public:
-    // prevent constructor by default
-    NeighborhoodReader& operator=(NeighborhoodReader const&);
-    NeighborhoodReader(NeighborhoodReader const&);
-    NeighborhoodReader();
-};
+struct NeighborhoodReader {};
 
 } // namespace OperationNodeDetails

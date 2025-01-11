@@ -22,12 +22,6 @@ namespace webrtc {
 
 class RtpTransport {
 public:
-    // prevent constructor by default
-    RtpTransport& operator=(RtpTransport const&);
-    RtpTransport(RtpTransport const&);
-    RtpTransport();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void DemuxPacket(::rtc::CopyOnWriteBuffer, ::webrtc::Timestamp, ::rtc::EcnMarking);

@@ -15,12 +15,6 @@ namespace SharedTypes::v1_20_50 {
 
 class EnchantSlotConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    EnchantSlotConstraint& operator=(EnchantSlotConstraint const&);
-    EnchantSlotConstraint(EnchantSlotConstraint const&);
-    EnchantSlotConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

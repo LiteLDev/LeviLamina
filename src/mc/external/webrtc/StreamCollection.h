@@ -14,12 +14,6 @@ namespace webrtc {
 
 class StreamCollection {
 public:
-    // prevent constructor by default
-    StreamCollection& operator=(StreamCollection const&);
-    StreamCollection(StreamCollection const&);
-    StreamCollection();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>);

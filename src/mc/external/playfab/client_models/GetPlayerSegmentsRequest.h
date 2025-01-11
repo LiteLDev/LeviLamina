@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct GetPlayerSegmentsRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    GetPlayerSegmentsRequest& operator=(GetPlayerSegmentsRequest const&);
-    GetPlayerSegmentsRequest(GetPlayerSegmentsRequest const&);
-    GetPlayerSegmentsRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

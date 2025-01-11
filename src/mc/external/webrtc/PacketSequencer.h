@@ -13,12 +13,6 @@ namespace webrtc {
 
 class PacketSequencer {
 public:
-    // prevent constructor by default
-    PacketSequencer& operator=(PacketSequencer const&);
-    PacketSequencer(PacketSequencer const&);
-    PacketSequencer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool CanSendPaddingOnMediaSsrc() const;

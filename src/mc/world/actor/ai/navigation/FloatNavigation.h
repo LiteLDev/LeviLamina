@@ -13,12 +13,6 @@ class NavigationComponent;
 
 class FloatNavigation : public ::PathNavigation {
 public:
-    // prevent constructor by default
-    FloatNavigation& operator=(FloatNavigation const&);
-    FloatNavigation(FloatNavigation const&);
-    FloatNavigation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

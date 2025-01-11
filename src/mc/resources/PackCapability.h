@@ -78,19 +78,7 @@ public:
             // NOLINTEND
         };
 
-        struct NotFound {
-        public:
-            // prevent constructor by default
-            NotFound& operator=(NotFound const&);
-            NotFound(NotFound const&);
-            NotFound();
-        };
-
-    public:
-        // prevent constructor by default
-        ValidationResult& operator=(ValidationResult const&);
-        ValidationResult(ValidationResult const&);
-        ValidationResult();
+        struct NotFound {};
     };
 
 public:

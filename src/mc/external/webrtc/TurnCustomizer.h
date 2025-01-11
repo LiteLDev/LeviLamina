@@ -12,12 +12,6 @@ namespace webrtc {
 
 class TurnCustomizer {
 public:
-    // prevent constructor by default
-    TurnCustomizer& operator=(TurnCustomizer const&);
-    TurnCustomizer(TurnCustomizer const&);
-    TurnCustomizer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

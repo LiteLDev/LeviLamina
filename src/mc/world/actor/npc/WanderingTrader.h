@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class WanderingTrader : public ::Mob {
 public:
-    // prevent constructor by default
-    WanderingTrader& operator=(WanderingTrader const&);
-    WanderingTrader(WanderingTrader const&);
-    WanderingTrader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

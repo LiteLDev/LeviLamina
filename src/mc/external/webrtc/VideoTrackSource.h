@@ -9,12 +9,6 @@ namespace webrtc {
 
 class VideoTrackSource {
 public:
-    // prevent constructor by default
-    VideoTrackSource& operator=(VideoTrackSource const&);
-    VideoTrackSource(VideoTrackSource const&);
-    VideoTrackSource();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void SetState(::webrtc::MediaSourceInterface::SourceState);

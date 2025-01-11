@@ -10,12 +10,6 @@ class Vec3;
 
 class ChunkBuildOrderPolicyBase {
 public:
-    // prevent constructor by default
-    ChunkBuildOrderPolicyBase& operator=(ChunkBuildOrderPolicyBase const&);
-    ChunkBuildOrderPolicyBase(ChunkBuildOrderPolicyBase const&);
-    ChunkBuildOrderPolicyBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

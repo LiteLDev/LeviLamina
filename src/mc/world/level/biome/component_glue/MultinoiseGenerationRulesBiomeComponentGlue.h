@@ -14,12 +14,6 @@ namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 
 struct MultinoiseGenerationRulesBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
-    // prevent constructor by default
-    MultinoiseGenerationRulesBiomeComponentGlue& operator=(MultinoiseGenerationRulesBiomeComponentGlue const&);
-    MultinoiseGenerationRulesBiomeComponentGlue(MultinoiseGenerationRulesBiomeComponentGlue const&);
-    MultinoiseGenerationRulesBiomeComponentGlue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

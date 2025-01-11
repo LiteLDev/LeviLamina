@@ -16,12 +16,6 @@ class StructurePiece;
 
 class SHPrisonHall : public ::StrongholdPiece {
 public:
-    // prevent constructor by default
-    SHPrisonHall& operator=(SHPrisonHall const&);
-    SHPrisonHall(SHPrisonHall const&);
-    SHPrisonHall();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

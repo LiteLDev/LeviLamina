@@ -7,12 +7,6 @@
 
 class FishingEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    FishingEnchant& operator=(FishingEnchant const&);
-    FishingEnchant(FishingEnchant const&);
-    FishingEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -21,12 +21,6 @@ class OnBeforeDurabilityDamage
   public ::Bedrock::PubSub::
       Publisher<void(int&, ::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
-    // prevent constructor by default
-    OnBeforeDurabilityDamage& operator=(OnBeforeDurabilityDamage const&);
-    OnBeforeDurabilityDamage(OnBeforeDurabilityDamage const&);
-    OnBeforeDurabilityDamage();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

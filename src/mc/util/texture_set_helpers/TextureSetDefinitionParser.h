@@ -4,12 +4,6 @@
 
 namespace TextureSetHelpers {
 
-class TextureSetDefinitionParser {
-public:
-    // prevent constructor by default
-    TextureSetDefinitionParser& operator=(TextureSetDefinitionParser const&);
-    TextureSetDefinitionParser(TextureSetDefinitionParser const&);
-    TextureSetDefinitionParser();
-};
+class TextureSetDefinitionParser {};
 
 } // namespace TextureSetHelpers

@@ -14,12 +14,6 @@ public:
         UnsignedShort = 5123,
         Float         = 5126,
     };
-
-public:
-    // prevent constructor by default
-    Primitive& operator=(Primitive const&);
-    Primitive(Primitive const&);
-    Primitive();
 };
 
 } // namespace glTF

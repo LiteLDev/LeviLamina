@@ -9,12 +9,6 @@ class ToastMessage;
 
 class IToastListener {
 public:
-    // prevent constructor by default
-    IToastListener& operator=(IToastListener const&);
-    IToastListener(IToastListener const&);
-    IToastListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

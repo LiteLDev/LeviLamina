@@ -4,12 +4,6 @@
 
 namespace webrtc::metrics {
 
-class Histogram {
-public:
-    // prevent constructor by default
-    Histogram& operator=(Histogram const&);
-    Histogram(Histogram const&);
-    Histogram();
-};
+class Histogram {};
 
 } // namespace webrtc::metrics

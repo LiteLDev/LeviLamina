@@ -10,12 +10,6 @@ class BlockSource;
 
 class SpawnFinder {
 public:
-    // prevent constructor by default
-    SpawnFinder& operator=(SpawnFinder const&);
-    SpawnFinder(SpawnFinder const&);
-    SpawnFinder();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::BlockPos>

@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct CanFlyDefinition {
 public:
-    // prevent constructor by default
-    CanFlyDefinition& operator=(CanFlyDefinition const&);
-    CanFlyDefinition(CanFlyDefinition const&);
-    CanFlyDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

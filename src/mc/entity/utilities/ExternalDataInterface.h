@@ -15,12 +15,6 @@ struct AdventureSettings;
 
 struct ExternalDataInterface {
 public:
-    // prevent constructor by default
-    ExternalDataInterface& operator=(ExternalDataInterface const&);
-    ExternalDataInterface(ExternalDataInterface const&);
-    ExternalDataInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

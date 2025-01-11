@@ -16,12 +16,6 @@ struct VariantParameterList;
 
 class ThrownEgg : public ::Throwable {
 public:
-    // prevent constructor by default
-    ThrownEgg& operator=(ThrownEgg const&);
-    ThrownEgg(ThrownEgg const&);
-    ThrownEgg();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

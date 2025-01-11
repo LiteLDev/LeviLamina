@@ -18,12 +18,6 @@ struct TickingSystemWithInfo;
 
 class IllagerBeastPostAIStepSystem {
 public:
-    // prevent constructor by default
-    IllagerBeastPostAIStepSystem& operator=(IllagerBeastPostAIStepSystem const&);
-    IllagerBeastPostAIStepSystem(IllagerBeastPostAIStepSystem const&);
-    IllagerBeastPostAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doIllagerBeastPostAIStepSystem(

@@ -12,12 +12,6 @@
 
 class LevelGameplayHandler : public ::GameplayHandler {
 public:
-    // prevent constructor by default
-    LevelGameplayHandler& operator=(LevelGameplayHandler const&);
-    LevelGameplayHandler(LevelGameplayHandler const&);
-    LevelGameplayHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -32,12 +32,6 @@ namespace ScriptModuleGameTest {
 
 class ScriptSimulatedPlayer : public ::ScriptModuleMinecraft::ScriptPlayer {
 public:
-    // prevent constructor by default
-    ScriptSimulatedPlayer& operator=(ScriptSimulatedPlayer const&);
-    ScriptSimulatedPlayer(ScriptSimulatedPlayer const&);
-    ScriptSimulatedPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

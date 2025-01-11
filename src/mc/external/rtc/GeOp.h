@@ -4,12 +4,6 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct GeOp {
-public:
-    // prevent constructor by default
-    GeOp& operator=(GeOp const&);
-    GeOp(GeOp const&);
-    GeOp();
-};
+struct GeOp {};
 
 } // namespace rtc::safe_cmp_impl

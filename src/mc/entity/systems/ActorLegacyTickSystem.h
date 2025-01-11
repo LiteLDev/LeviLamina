@@ -15,12 +15,6 @@ class EntityRegistry;
 
 class ActorLegacyTickSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ActorLegacyTickSystem& operator=(ActorLegacyTickSystem const&);
-    ActorLegacyTickSystem(ActorLegacyTickSystem const&);
-    ActorLegacyTickSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -21,12 +21,6 @@ namespace Editor::BlockUtils {
 class ServerBlockUtilityService : public ::Editor::BlockUtils::CommonBlockUtilityService,
                                   public ::Editor::BlockUtils::ServerBlockUtilityServiceProvider {
 public:
-    // prevent constructor by default
-    ServerBlockUtilityService& operator=(ServerBlockUtilityService const&);
-    ServerBlockUtilityService(ServerBlockUtilityService const&);
-    ServerBlockUtilityService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -14,12 +14,6 @@ namespace mce { class UUID; }
 
 class IVillageManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IVillageManager& operator=(IVillageManager const&);
-    IVillageManager(IVillageManager const&);
-    IVillageManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

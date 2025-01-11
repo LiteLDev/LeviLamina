@@ -10,11 +10,6 @@ namespace rtc {
 
 class ByteBufferWriter : public ::rtc::ByteBufferWriterT<::rtc::BufferT<uchar, 0>> {
 public:
-    // prevent constructor by default
-    ByteBufferWriter& operator=(ByteBufferWriter const&);
-    ByteBufferWriter(ByteBufferWriter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ByteBufferWriter();

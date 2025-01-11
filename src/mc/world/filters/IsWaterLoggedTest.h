@@ -12,12 +12,6 @@ struct FilterContext;
 
 class IsWaterLoggedTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    IsWaterLoggedTest& operator=(IsWaterLoggedTest const&);
-    IsWaterLoggedTest(IsWaterLoggedTest const&);
-    IsWaterLoggedTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

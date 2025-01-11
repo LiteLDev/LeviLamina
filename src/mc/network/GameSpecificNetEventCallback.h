@@ -10,12 +10,6 @@ class ResourcePackClientResponsePacket;
 
 class GameSpecificNetEventCallback {
 public:
-    // prevent constructor by default
-    GameSpecificNetEventCallback& operator=(GameSpecificNetEventCallback const&);
-    GameSpecificNetEventCallback(GameSpecificNetEventCallback const&);
-    GameSpecificNetEventCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

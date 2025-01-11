@@ -15,12 +15,6 @@ struct LevelNotificationEvent;
 
 class LevelEventListener {
 public:
-    // prevent constructor by default
-    LevelEventListener& operator=(LevelEventListener const&);
-    LevelEventListener(LevelEventListener const&);
-    LevelEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

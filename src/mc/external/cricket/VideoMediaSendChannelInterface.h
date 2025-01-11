@@ -20,12 +20,6 @@ namespace cricket {
 
 class VideoMediaSendChannelInterface : public ::cricket::MediaSendChannelInterface {
 public:
-    // prevent constructor by default
-    VideoMediaSendChannelInterface& operator=(VideoMediaSendChannelInterface const&);
-    VideoMediaSendChannelInterface(VideoMediaSendChannelInterface const&);
-    VideoMediaSendChannelInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 22

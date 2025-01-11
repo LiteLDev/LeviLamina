@@ -10,12 +10,6 @@ namespace RakNet { struct SystemAddress; }
 
 class TcpProxy {
 public:
-    // prevent constructor by default
-    TcpProxy& operator=(TcpProxy const&);
-    TcpProxy(TcpProxy const&);
-    TcpProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

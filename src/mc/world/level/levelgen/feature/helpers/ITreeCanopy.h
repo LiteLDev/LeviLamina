@@ -13,12 +13,6 @@ namespace TreeHelper { struct TreeParams; }
 
 class ITreeCanopy {
 public:
-    // prevent constructor by default
-    ITreeCanopy& operator=(ITreeCanopy const&);
-    ITreeCanopy(ITreeCanopy const&);
-    ITreeCanopy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

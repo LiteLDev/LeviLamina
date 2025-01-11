@@ -4,12 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-struct EmptyFilterData {
-public:
-    // prevent constructor by default
-    EmptyFilterData& operator=(EmptyFilterData const&);
-    EmptyFilterData(EmptyFilterData const&);
-    EmptyFilterData();
-};
+struct EmptyFilterData {};
 
 } // namespace ScriptModuleMinecraft

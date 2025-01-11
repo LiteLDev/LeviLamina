@@ -11,12 +11,6 @@ namespace webrtc {
 
 class VCMProtectionCallback {
 public:
-    // prevent constructor by default
-    VCMProtectionCallback& operator=(VCMProtectionCallback const&);
-    VCMProtectionCallback(VCMProtectionCallback const&);
-    VCMProtectionCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

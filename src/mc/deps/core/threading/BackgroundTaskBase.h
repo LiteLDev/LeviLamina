@@ -23,21 +23,9 @@ public:
     // clang-format on
 
     // BackgroundTaskBase inner types define
-    class PriorityComparer {
-    public:
-        // prevent constructor by default
-        PriorityComparer& operator=(PriorityComparer const&);
-        PriorityComparer(PriorityComparer const&);
-        PriorityComparer();
-    };
+    class PriorityComparer {};
 
     class PendingComparer {
-    public:
-        // prevent constructor by default
-        PendingComparer& operator=(PendingComparer const&);
-        PendingComparer(PendingComparer const&);
-        PendingComparer();
-
     public:
         // member functions
         // NOLINTBEGIN

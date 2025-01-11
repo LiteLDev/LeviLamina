@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptPaletteColor {
 public:
-    // prevent constructor by default
-    ScriptPaletteColor& operator=(ScriptPaletteColor const&);
-    ScriptPaletteColor(ScriptPaletteColor const&);
-    ScriptPaletteColor();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<::PaletteColor, ::PaletteColor> bind();

@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkSteamAccountRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    UnlinkSteamAccountRequest& operator=(UnlinkSteamAccountRequest const&);
-    UnlinkSteamAccountRequest(UnlinkSteamAccountRequest const&);
-    UnlinkSteamAccountRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

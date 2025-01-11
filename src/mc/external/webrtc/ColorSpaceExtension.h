@@ -16,12 +16,6 @@ namespace webrtc {
 
 class ColorSpaceExtension {
 public:
-    // prevent constructor by default
-    ColorSpaceExtension& operator=(ColorSpaceExtension const&);
-    ColorSpaceExtension(ColorSpaceExtension const&);
-    ColorSpaceExtension();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uchar CombineRangeAndChromaSiting(

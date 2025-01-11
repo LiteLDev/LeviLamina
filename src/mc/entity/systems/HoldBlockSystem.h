@@ -13,12 +13,6 @@ struct ActorDieEvent;
 
 class HoldBlockSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    HoldBlockSystem& operator=(HoldBlockSystem const&);
-    HoldBlockSystem(HoldBlockSystem const&);
-    HoldBlockSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

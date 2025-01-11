@@ -23,13 +23,7 @@ public:
     // clang-format on
 
     // PreloadCache inner types define
-    struct SharedOnlyConstructionTag {
-    public:
-        // prevent constructor by default
-        SharedOnlyConstructionTag& operator=(SharedOnlyConstructionTag const&);
-        SharedOnlyConstructionTag(SharedOnlyConstructionTag const&);
-        SharedOnlyConstructionTag();
-    };
+    struct SharedOnlyConstructionTag {};
 
     struct PreloadedContentMaps {
     public:

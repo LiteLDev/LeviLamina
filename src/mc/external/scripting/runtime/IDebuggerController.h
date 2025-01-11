@@ -6,12 +6,6 @@ namespace Scripting {
 
 class IDebuggerController {
 public:
-    // prevent constructor by default
-    IDebuggerController& operator=(IDebuggerController const&);
-    IDebuggerController(IDebuggerController const&);
-    IDebuggerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

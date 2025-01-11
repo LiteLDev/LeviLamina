@@ -6,11 +6,6 @@ namespace cricket {
 
 class DtlsTransportInternal {
 public:
-    // prevent constructor by default
-    DtlsTransportInternal& operator=(DtlsTransportInternal const&);
-    DtlsTransportInternal(DtlsTransportInternal const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI DtlsTransportInternal();

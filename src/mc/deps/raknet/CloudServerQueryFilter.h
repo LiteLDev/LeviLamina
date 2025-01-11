@@ -17,12 +17,6 @@ namespace RakNet {
 
 class CloudServerQueryFilter {
 public:
-    // prevent constructor by default
-    CloudServerQueryFilter& operator=(CloudServerQueryFilter const&);
-    CloudServerQueryFilter(CloudServerQueryFilter const&);
-    CloudServerQueryFilter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -200,12 +200,6 @@ namespace mce { class UUID; }
 
 class ILevel : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    ILevel& operator=(ILevel const&);
-    ILevel(ILevel const&);
-    ILevel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

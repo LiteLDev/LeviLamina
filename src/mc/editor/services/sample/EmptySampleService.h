@@ -17,12 +17,6 @@ namespace Editor::Services {
 class EmptySampleService : public ::Editor::Services::IEditorService,
                            public ::Editor::Services::EmptySampleServiceProvider {
 public:
-    // prevent constructor by default
-    EmptySampleService& operator=(EmptySampleService const&);
-    EmptySampleService(EmptySampleService const&);
-    EmptySampleService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

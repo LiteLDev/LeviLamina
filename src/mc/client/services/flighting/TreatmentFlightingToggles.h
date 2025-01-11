@@ -7,12 +7,6 @@
 
 class TreatmentFlightingToggles : public ::FlightingToggles {
 public:
-    // prevent constructor by default
-    TreatmentFlightingToggles& operator=(TreatmentFlightingToggles const&);
-    TreatmentFlightingToggles(TreatmentFlightingToggles const&);
-    TreatmentFlightingToggles();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

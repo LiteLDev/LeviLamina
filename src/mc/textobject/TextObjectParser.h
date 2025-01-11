@@ -83,12 +83,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    TextObjectParser& operator=(TextObjectParser const&);
-    TextObjectParser(TextObjectParser const&);
-    TextObjectParser();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _getObjectsFromTextObject(

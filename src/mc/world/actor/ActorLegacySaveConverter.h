@@ -10,12 +10,6 @@ class CompoundTag;
 
 class ActorLegacySaveConverter {
 public:
-    // prevent constructor by default
-    ActorLegacySaveConverter& operator=(ActorLegacySaveConverter const&);
-    ActorLegacySaveConverter(ActorLegacySaveConverter const&);
-    ActorLegacySaveConverter();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void convertBoat(::Actor& entity, ::CompoundTag const& tag);

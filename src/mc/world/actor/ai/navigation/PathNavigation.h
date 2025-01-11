@@ -21,12 +21,6 @@ struct NavigationDescription;
 
 class PathNavigation {
 public:
-    // prevent constructor by default
-    PathNavigation& operator=(PathNavigation const&);
-    PathNavigation(PathNavigation const&);
-    PathNavigation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

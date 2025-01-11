@@ -16,12 +16,6 @@ struct ActorUniqueID;
 
 class HopperContainerManagerModel : public ::LevelContainerManagerModel {
 public:
-    // prevent constructor by default
-    HopperContainerManagerModel& operator=(HopperContainerManagerModel const&);
-    HopperContainerManagerModel(HopperContainerManagerModel const&);
-    HopperContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

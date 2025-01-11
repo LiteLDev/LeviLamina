@@ -14,12 +14,6 @@ namespace webrtc {
 
 struct SctpSidAllocator {
 public:
-    // prevent constructor by default
-    SctpSidAllocator& operator=(SctpSidAllocator const&);
-    SctpSidAllocator(SctpSidAllocator const&);
-    SctpSidAllocator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::webrtc::StreamId> AllocateSid(::rtc::SSLRole);

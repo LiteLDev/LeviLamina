@@ -57,12 +57,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentCompleteUseEvent& operator=(ScriptItemCustomComponentCompleteUseEvent const&);
-    ScriptItemCustomComponentCompleteUseEvent(ScriptItemCustomComponentCompleteUseEvent const&);
-    ScriptItemCustomComponentCompleteUseEvent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

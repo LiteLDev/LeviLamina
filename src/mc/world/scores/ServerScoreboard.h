@@ -39,13 +39,7 @@ public:
     // clang-format on
 
     // ServerScoreboard inner types define
-    struct unit_test_ctor_t {
-    public:
-        // prevent constructor by default
-        unit_test_ctor_t& operator=(unit_test_ctor_t const&);
-        unit_test_ctor_t(unit_test_ctor_t const&);
-        unit_test_ctor_t();
-    };
+    struct unit_test_ctor_t {};
 
 public:
     // member variables

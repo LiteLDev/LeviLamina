@@ -31,12 +31,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    EchoDetector& operator=(EchoDetector const&);
-    EchoDetector(EchoDetector const&);
-    EchoDetector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

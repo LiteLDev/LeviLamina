@@ -12,12 +12,6 @@ namespace dcsctp {
 
 struct RetransmissionTimeout {
 public:
-    // prevent constructor by default
-    RetransmissionTimeout& operator=(RetransmissionTimeout const&);
-    RetransmissionTimeout(RetransmissionTimeout const&);
-    RetransmissionTimeout();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ObserveRTT(::webrtc::TimeDelta);

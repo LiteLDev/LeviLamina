@@ -13,12 +13,6 @@ struct MobDescriptor;
 
 class VexCopyOwnerTargetGoal : public ::TargetGoal {
 public:
-    // prevent constructor by default
-    VexCopyOwnerTargetGoal& operator=(VexCopyOwnerTargetGoal const&);
-    VexCopyOwnerTargetGoal(VexCopyOwnerTargetGoal const&);
-    VexCopyOwnerTargetGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

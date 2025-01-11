@@ -63,12 +63,6 @@ public:
     : public ::ScriptModuleMinecraft::IScriptScriptDeferredEventListener<
           ::ScriptModuleMinecraft::ScriptSystemAfterEvents> {
     public:
-        // prevent constructor by default
-        ScriptSystemAfterEventsDeferredEventListener& operator=(ScriptSystemAfterEventsDeferredEventListener const&);
-        ScriptSystemAfterEventsDeferredEventListener(ScriptSystemAfterEventsDeferredEventListener const&);
-        ScriptSystemAfterEventsDeferredEventListener();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 3

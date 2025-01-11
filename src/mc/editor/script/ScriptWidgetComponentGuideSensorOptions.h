@@ -10,11 +10,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentGuideSensorOptions : public ::Editor::ScriptModule::ScriptWidgetComponentBaseOptions {
 public:
-    // prevent constructor by default
-    ScriptWidgetComponentGuideSensorOptions& operator=(ScriptWidgetComponentGuideSensorOptions const&);
-    ScriptWidgetComponentGuideSensorOptions();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

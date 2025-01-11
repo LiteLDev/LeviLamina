@@ -12,12 +12,6 @@ namespace Core { class SingleThreadedLock; }
 
 class OptionsObserver : public ::Core::Observer<::OptionsObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    OptionsObserver& operator=(OptionsObserver const&);
-    OptionsObserver(OptionsObserver const&);
-    OptionsObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

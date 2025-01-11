@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsTamedDefinition {
 public:
-    // prevent constructor by default
-    IsTamedDefinition& operator=(IsTamedDefinition const&);
-    IsTamedDefinition(IsTamedDefinition const&);
-    IsTamedDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

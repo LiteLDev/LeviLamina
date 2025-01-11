@@ -6,12 +6,6 @@ namespace rtc {
 
 struct Base64 {
 public:
-    // prevent constructor by default
-    Base64& operator=(Base64 const&);
-    Base64(Base64 const&);
-    Base64();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void EncodeFromArray(void const*, uint64, ::std::string*);

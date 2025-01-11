@@ -4,12 +4,6 @@
 
 class IFileWriteAccess {
 public:
-    // prevent constructor by default
-    IFileWriteAccess& operator=(IFileWriteAccess const&);
-    IFileWriteAccess(IFileWriteAccess const&);
-    IFileWriteAccess();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

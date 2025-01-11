@@ -15,12 +15,6 @@ namespace SharedTypes::v1_21_30 {
 
 struct QuantityConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    QuantityConstraint& operator=(QuantityConstraint const&);
-    QuantityConstraint(QuantityConstraint const&);
-    QuantityConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

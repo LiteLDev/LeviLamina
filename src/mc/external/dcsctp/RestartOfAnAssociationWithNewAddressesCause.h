@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class RestartOfAnAssociationWithNewAddressesCause {
 public:
-    // prevent constructor by default
-    RestartOfAnAssociationWithNewAddressesCause& operator=(RestartOfAnAssociationWithNewAddressesCause const&);
-    RestartOfAnAssociationWithNewAddressesCause(RestartOfAnAssociationWithNewAddressesCause const&);
-    RestartOfAnAssociationWithNewAddressesCause();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::RestartOfAnAssociationWithNewAddressesCause>

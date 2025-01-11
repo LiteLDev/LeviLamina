@@ -17,12 +17,6 @@ struct RailMovementComponent;
 
 class GameEventMovementTrackingSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    GameEventMovementTrackingSystem& operator=(GameEventMovementTrackingSystem const&);
-    GameEventMovementTrackingSystem(GameEventMovementTrackingSystem const&);
-    GameEventMovementTrackingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

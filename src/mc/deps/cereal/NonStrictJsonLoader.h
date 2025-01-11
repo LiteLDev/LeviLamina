@@ -9,12 +9,6 @@ namespace cereal {
 
 class NonStrictJsonLoader : public ::cereal::BasicLoader {
 public:
-    // prevent constructor by default
-    NonStrictJsonLoader& operator=(NonStrictJsonLoader const&);
-    NonStrictJsonLoader(NonStrictJsonLoader const&);
-    NonStrictJsonLoader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

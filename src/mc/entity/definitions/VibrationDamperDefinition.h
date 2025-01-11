@@ -12,12 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct VibrationDamperDefinition {
 public:
-    // prevent constructor by default
-    VibrationDamperDefinition& operator=(VibrationDamperDefinition const&);
-    VibrationDamperDefinition(VibrationDamperDefinition const&);
-    VibrationDamperDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

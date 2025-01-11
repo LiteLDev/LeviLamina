@@ -15,12 +15,6 @@ class RecipeIngredient;
 
 class ShapelessRecipe : public ::Recipe {
 public:
-    // prevent constructor by default
-    ShapelessRecipe& operator=(ShapelessRecipe const&);
-    ShapelessRecipe(ShapelessRecipe const&);
-    ShapelessRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

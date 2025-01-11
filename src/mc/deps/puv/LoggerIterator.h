@@ -5,12 +5,6 @@
 namespace Puv {
 
 template <typename T0>
-class LoggerIterator {
-public:
-    // prevent constructor by default
-    LoggerIterator& operator=(LoggerIterator const&);
-    LoggerIterator(LoggerIterator const&);
-    LoggerIterator();
-};
+class LoggerIterator {};
 
 } // namespace Puv

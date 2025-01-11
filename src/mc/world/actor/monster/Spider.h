@@ -23,12 +23,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    Spider& operator=(Spider const&);
-    Spider(Spider const&);
-    Spider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107

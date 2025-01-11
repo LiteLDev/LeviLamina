@@ -24,12 +24,6 @@ namespace Editor::Services {
 
 class ServerBlockPaletteService : public ::Editor::Services::EditorBlockPaletteService {
 public:
-    // prevent constructor by default
-    ServerBlockPaletteService& operator=(ServerBlockPaletteService const&);
-    ServerBlockPaletteService(ServerBlockPaletteService const&);
-    ServerBlockPaletteService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

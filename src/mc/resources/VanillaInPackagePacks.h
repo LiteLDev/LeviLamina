@@ -8,12 +8,6 @@
 
 class VanillaInPackagePacks : public ::IInPackagePacks {
 public:
-    // prevent constructor by default
-    VanillaInPackagePacks& operator=(VanillaInPackagePacks const&);
-    VanillaInPackagePacks(VanillaInPackagePacks const&);
-    VanillaInPackagePacks();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

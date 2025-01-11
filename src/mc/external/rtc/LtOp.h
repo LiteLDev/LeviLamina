@@ -4,12 +4,6 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct LtOp {
-public:
-    // prevent constructor by default
-    LtOp& operator=(LtOp const&);
-    LtOp(LtOp const&);
-    LtOp();
-};
+struct LtOp {};
 
 } // namespace rtc::safe_cmp_impl

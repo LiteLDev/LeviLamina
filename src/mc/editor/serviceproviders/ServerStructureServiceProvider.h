@@ -11,12 +11,6 @@ namespace Editor::Services {
 
 class ServerStructureServiceProvider {
 public:
-    // prevent constructor by default
-    ServerStructureServiceProvider& operator=(ServerStructureServiceProvider const&);
-    ServerStructureServiceProvider(ServerStructureServiceProvider const&);
-    ServerStructureServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

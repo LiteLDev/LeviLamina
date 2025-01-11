@@ -4,12 +4,6 @@
 
 namespace sim {
 
-struct VoidBuildIntent {
-public:
-    // prevent constructor by default
-    VoidBuildIntent& operator=(VoidBuildIntent const&);
-    VoidBuildIntent(VoidBuildIntent const&);
-    VoidBuildIntent();
-};
+struct VoidBuildIntent {};
 
 } // namespace sim

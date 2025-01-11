@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorInContactWithWater : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    ActorInContactWithWater& operator=(ActorInContactWithWater const&);
-    ActorInContactWithWater(ActorInContactWithWater const&);
-    ActorInContactWithWater();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

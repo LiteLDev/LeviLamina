@@ -10,11 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentUnknownIdError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptItemEnchantmentUnknownIdError& operator=(ScriptItemEnchantmentUnknownIdError const&);
-    ScriptItemEnchantmentUnknownIdError(ScriptItemEnchantmentUnknownIdError const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemEnchantmentUnknownIdError();

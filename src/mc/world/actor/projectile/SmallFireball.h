@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class SmallFireball : public ::Fireball {
 public:
-    // prevent constructor by default
-    SmallFireball& operator=(SmallFireball const&);
-    SmallFireball(SmallFireball const&);
-    SmallFireball();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

@@ -12,11 +12,6 @@ class Mob;
 
 class AgentLookControl : public ::LookControl {
 public:
-    // prevent constructor by default
-    AgentLookControl& operator=(AgentLookControl const&);
-    AgentLookControl(AgentLookControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

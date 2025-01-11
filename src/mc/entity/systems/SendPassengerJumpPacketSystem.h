@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class SendPassengerJumpPacketSystem {
 public:
-    // prevent constructor by default
-    SendPassengerJumpPacketSystem& operator=(SendPassengerJumpPacketSystem const&);
-    SendPassengerJumpPacketSystem(SendPassengerJumpPacketSystem const&);
-    SendPassengerJumpPacketSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

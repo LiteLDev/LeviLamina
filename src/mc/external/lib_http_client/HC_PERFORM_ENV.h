@@ -22,12 +22,6 @@ struct XAsyncProviderData;
 
 struct HC_PERFORM_ENV {
 public:
-    // prevent constructor by default
-    HC_PERFORM_ENV& operator=(HC_PERFORM_ENV const&);
-    HC_PERFORM_ENV(HC_PERFORM_ENV const&);
-    HC_PERFORM_ENV();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI long HttpCallPerformAsyncShim(::HC_CALL*, ::XAsyncBlock*);

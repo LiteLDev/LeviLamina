@@ -16,12 +16,6 @@ struct SystemInfo;
 
 class IEntitySystems {
 public:
-    // prevent constructor by default
-    IEntitySystems& operator=(IEntitySystems const&);
-    IEntitySystems(IEntitySystems const&);
-    IEntitySystems();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class FurnaceFuelContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    FurnaceFuelContainerValidation& operator=(FurnaceFuelContainerValidation const&);
-    FurnaceFuelContainerValidation(FurnaceFuelContainerValidation const&);
-    FurnaceFuelContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

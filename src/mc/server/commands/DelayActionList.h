@@ -28,12 +28,6 @@ public:
     // DelayActionList inner types define
     class DelayRequestQueue : public ::MovePriorityQueue<::DelayRequest, ::std::greater<::DelayRequest>> {
     public:
-        // prevent constructor by default
-        DelayRequestQueue& operator=(DelayRequestQueue const&);
-        DelayRequestQueue(DelayRequestQueue const&);
-        DelayRequestQueue();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI int removeRequestWithAction(

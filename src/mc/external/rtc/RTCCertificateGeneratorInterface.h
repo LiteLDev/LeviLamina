@@ -16,12 +16,6 @@ namespace rtc {
 
 class RTCCertificateGeneratorInterface {
 public:
-    // prevent constructor by default
-    RTCCertificateGeneratorInterface& operator=(RTCCertificateGeneratorInterface const&);
-    RTCCertificateGeneratorInterface(RTCCertificateGeneratorInterface const&);
-    RTCCertificateGeneratorInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

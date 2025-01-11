@@ -17,12 +17,6 @@ class StructureStart;
 
 class MineshaftFeature : public ::StructureFeature {
 public:
-    // prevent constructor by default
-    MineshaftFeature& operator=(MineshaftFeature const&);
-    MineshaftFeature(MineshaftFeature const&);
-    MineshaftFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

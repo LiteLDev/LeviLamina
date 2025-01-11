@@ -14,11 +14,6 @@ namespace BlockFrictionVersioning {
 
 class BlockFriction11920Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockFriction11920Upgrade& operator=(BlockFriction11920Upgrade const&);
-    BlockFriction11920Upgrade(BlockFriction11920Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

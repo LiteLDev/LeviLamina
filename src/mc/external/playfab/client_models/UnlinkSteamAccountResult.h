@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkSteamAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    UnlinkSteamAccountResult& operator=(UnlinkSteamAccountResult const&);
-    UnlinkSteamAccountResult(UnlinkSteamAccountResult const&);
-    UnlinkSteamAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

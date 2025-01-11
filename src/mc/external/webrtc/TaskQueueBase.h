@@ -28,13 +28,7 @@ public:
         KHigh = 1,
     };
 
-    struct PostTaskTraits {
-    public:
-        // prevent constructor by default
-        PostTaskTraits& operator=(PostTaskTraits const&);
-        PostTaskTraits(PostTaskTraits const&);
-        PostTaskTraits();
-    };
+    struct PostTaskTraits {};
 
     struct PostDelayedTaskTraits {
     public:
@@ -83,12 +77,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    TaskQueueBase& operator=(TaskQueueBase const&);
-    TaskQueueBase(TaskQueueBase const&);
-    TaskQueueBase();
 
 public:
     // virtual functions

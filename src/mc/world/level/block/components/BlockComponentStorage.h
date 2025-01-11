@@ -15,12 +15,6 @@ public:
     // BlockComponentStorage inner types define
     struct ComponentBase {
     public:
-        // prevent constructor by default
-        ComponentBase& operator=(ComponentBase const&);
-        ComponentBase(ComponentBase const&);
-        ComponentBase();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

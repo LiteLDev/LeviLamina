@@ -4,11 +4,6 @@
 
 class ScopedAutoreleasePool {
 public:
-    // prevent constructor by default
-    ScopedAutoreleasePool& operator=(ScopedAutoreleasePool const&);
-    ScopedAutoreleasePool(ScopedAutoreleasePool const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScopedAutoreleasePool();

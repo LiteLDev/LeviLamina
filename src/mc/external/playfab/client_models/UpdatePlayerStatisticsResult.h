@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UpdatePlayerStatisticsResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    UpdatePlayerStatisticsResult& operator=(UpdatePlayerStatisticsResult const&);
-    UpdatePlayerStatisticsResult(UpdatePlayerStatisticsResult const&);
-    UpdatePlayerStatisticsResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class AttackCooldownSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AttackCooldownSystem& operator=(AttackCooldownSystem const&);
-    AttackCooldownSystem(AttackCooldownSystem const&);
-    AttackCooldownSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

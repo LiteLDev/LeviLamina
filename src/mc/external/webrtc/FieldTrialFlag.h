@@ -6,12 +6,6 @@ namespace webrtc {
 
 class FieldTrialFlag {
 public:
-    // prevent constructor by default
-    FieldTrialFlag& operator=(FieldTrialFlag const&);
-    FieldTrialFlag(FieldTrialFlag const&);
-    FieldTrialFlag();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FieldTrialFlag(::std::string_view);

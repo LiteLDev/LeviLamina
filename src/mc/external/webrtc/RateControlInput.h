@@ -14,12 +14,6 @@ namespace webrtc {
 
 struct RateControlInput {
 public:
-    // prevent constructor by default
-    RateControlInput& operator=(RateControlInput const&);
-    RateControlInput(RateControlInput const&);
-    RateControlInput();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RateControlInput(::webrtc::BandwidthUsage, ::std::optional<::webrtc::DataRate> const&);

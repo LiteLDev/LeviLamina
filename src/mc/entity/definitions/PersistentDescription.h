@@ -7,12 +7,6 @@
 
 struct PersistentDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    PersistentDescription& operator=(PersistentDescription const&);
-    PersistentDescription(PersistentDescription const&);
-    PersistentDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

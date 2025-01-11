@@ -40,12 +40,6 @@ public:
     // Village inner types define
     struct StandingModifiers {
     public:
-        // prevent constructor by default
-        StandingModifiers& operator=(StandingModifiers const&);
-        StandingModifiers(StandingModifiers const&);
-        StandingModifiers();
-
-    public:
         // static variables
         // NOLINTBEGIN
         MCAPI static int const& GOLEM_DEATH_PENALTY();

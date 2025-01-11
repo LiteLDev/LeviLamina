@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsIgnitedDefinition {
 public:
-    // prevent constructor by default
-    IsIgnitedDefinition& operator=(IsIgnitedDefinition const&);
-    IsIgnitedDefinition(IsIgnitedDefinition const&);
-    IsIgnitedDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

@@ -11,12 +11,6 @@ namespace webrtc {
 
 class PlayoutDelayLimits {
 public:
-    // prevent constructor by default
-    PlayoutDelayLimits& operator=(PlayoutDelayLimits const&);
-    PlayoutDelayLimits(PlayoutDelayLimits const&);
-    PlayoutDelayLimits();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoPlayoutDelay const&);

@@ -23,13 +23,7 @@ public:
     // clang-format on
 
     // ValidatorRegistry inner types define
-    struct ValidatorRegisterer {
-    public:
-        // prevent constructor by default
-        ValidatorRegisterer& operator=(ValidatorRegisterer const&);
-        ValidatorRegisterer(ValidatorRegisterer const&);
-        ValidatorRegisterer();
-    };
+    struct ValidatorRegisterer {};
 
     class ValidatorRegistryValidators {
     public:

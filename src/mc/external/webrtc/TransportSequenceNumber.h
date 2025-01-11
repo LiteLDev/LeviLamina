@@ -6,12 +6,6 @@ namespace webrtc {
 
 class TransportSequenceNumber {
 public:
-    // prevent constructor by default
-    TransportSequenceNumber& operator=(TransportSequenceNumber const&);
-    TransportSequenceNumber(TransportSequenceNumber const&);
-    TransportSequenceNumber();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool Parse(::rtc::ArrayView<uchar const>, ushort*);

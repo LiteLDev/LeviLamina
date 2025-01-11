@@ -12,12 +12,6 @@ class Actor;
 
 class WindBurstEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    WindBurstEnchant& operator=(WindBurstEnchant const&);
-    WindBurstEnchant(WindBurstEnchant const&);
-    WindBurstEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

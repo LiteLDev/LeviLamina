@@ -12,12 +12,6 @@ class Random;
 
 class ILegacyStructureTemplate {
 public:
-    // prevent constructor by default
-    ILegacyStructureTemplate& operator=(ILegacyStructureTemplate const&);
-    ILegacyStructureTemplate(ILegacyStructureTemplate const&);
-    ILegacyStructureTemplate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

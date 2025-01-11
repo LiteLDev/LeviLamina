@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class HotbarContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    HotbarContainerValidation& operator=(HotbarContainerValidation const&);
-    HotbarContainerValidation(HotbarContainerValidation const&);
-    HotbarContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

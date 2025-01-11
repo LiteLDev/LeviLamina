@@ -7,12 +7,6 @@
 
 class FrostWalkerEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    FrostWalkerEnchant& operator=(FrostWalkerEnchant const&);
-    FrostWalkerEnchant(FrostWalkerEnchant const&);
-    FrostWalkerEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

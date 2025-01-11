@@ -22,12 +22,6 @@ struct TickingSystemWithInfo;
 
 class RemovePassengersTooLargeForVehicleSystem {
 public:
-    // prevent constructor by default
-    RemovePassengersTooLargeForVehicleSystem& operator=(RemovePassengersTooLargeForVehicleSystem const&);
-    RemovePassengersTooLargeForVehicleSystem(RemovePassengersTooLargeForVehicleSystem const&);
-    RemovePassengersTooLargeForVehicleSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _removePassengersTooLargeForVehicle(

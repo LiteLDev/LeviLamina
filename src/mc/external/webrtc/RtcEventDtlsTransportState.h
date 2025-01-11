@@ -9,12 +9,6 @@ namespace webrtc {
 
 class RtcEventDtlsTransportState {
 public:
-    // prevent constructor by default
-    RtcEventDtlsTransportState& operator=(RtcEventDtlsTransportState const&);
-    RtcEventDtlsTransportState(RtcEventDtlsTransportState const&);
-    RtcEventDtlsTransportState();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RtcEventDtlsTransportState(::webrtc::DtlsTransportState);

@@ -14,12 +14,6 @@ namespace webrtc {
 
 class LocalAudioSource {
 public:
-    // prevent constructor by default
-    LocalAudioSource& operator=(LocalAudioSource const&);
-    LocalAudioSource(LocalAudioSource const&);
-    LocalAudioSource();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Initialize(::cricket::AudioOptions const*);

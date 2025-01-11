@@ -9,12 +9,6 @@ class EntityContext;
 
 struct IReplayableActorInput {
 public:
-    // prevent constructor by default
-    IReplayableActorInput& operator=(IReplayableActorInput const&);
-    IReplayableActorInput(IReplayableActorInput const&);
-    IReplayableActorInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

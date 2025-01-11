@@ -10,12 +10,6 @@ class Random;
 
 class BlockSelector {
 public:
-    // prevent constructor by default
-    BlockSelector& operator=(BlockSelector const&);
-    BlockSelector(BlockSelector const&);
-    BlockSelector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

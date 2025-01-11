@@ -14,12 +14,6 @@ class Random;
 
 class GlowStoneFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    GlowStoneFeature& operator=(GlowStoneFeature const&);
-    GlowStoneFeature(GlowStoneFeature const&);
-    GlowStoneFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

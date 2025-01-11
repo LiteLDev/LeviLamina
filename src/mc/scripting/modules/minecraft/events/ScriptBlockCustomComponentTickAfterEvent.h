@@ -19,12 +19,6 @@ namespace ScriptModuleMinecraft {
 struct ScriptBlockCustomComponentTickAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent,
                                                   public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentTickAfterEvent& operator=(ScriptBlockCustomComponentTickAfterEvent const&);
-    ScriptBlockCustomComponentTickAfterEvent(ScriptBlockCustomComponentTickAfterEvent const&);
-    ScriptBlockCustomComponentTickAfterEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockCustomComponentTickAfterEvent(

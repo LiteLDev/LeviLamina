@@ -7,12 +7,6 @@
 
 class AppPlatformNetworkSettings : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    AppPlatformNetworkSettings& operator=(AppPlatformNetworkSettings const&);
-    AppPlatformNetworkSettings(AppPlatformNetworkSettings const&);
-    AppPlatformNetworkSettings();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

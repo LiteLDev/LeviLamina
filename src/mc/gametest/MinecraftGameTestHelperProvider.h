@@ -13,12 +13,6 @@ namespace gametest { class BaseGameTestInstance; }
 
 class MinecraftGameTestHelperProvider : public ::gametest::IGameTestHelperProvider {
 public:
-    // prevent constructor by default
-    MinecraftGameTestHelperProvider& operator=(MinecraftGameTestHelperProvider const&);
-    MinecraftGameTestHelperProvider(MinecraftGameTestHelperProvider const&);
-    MinecraftGameTestHelperProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

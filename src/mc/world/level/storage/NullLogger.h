@@ -4,12 +4,6 @@
 
 class NullLogger : public ::leveldb::Logger {
 public:
-    // prevent constructor by default
-    NullLogger& operator=(NullLogger const&);
-    NullLogger(NullLogger const&);
-    NullLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

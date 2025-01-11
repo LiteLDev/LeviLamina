@@ -17,11 +17,6 @@ namespace webrtc {
 
 class PacketRouter {
 public:
-    // prevent constructor by default
-    PacketRouter& operator=(PacketRouter const&);
-    PacketRouter(PacketRouter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface*, bool);

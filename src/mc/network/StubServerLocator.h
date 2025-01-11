@@ -18,11 +18,6 @@ struct PortPair;
 
 class StubServerLocator : public ::ServerLocator {
 public:
-    // prevent constructor by default
-    StubServerLocator& operator=(StubServerLocator const&);
-    StubServerLocator(StubServerLocator const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -18,12 +18,6 @@ namespace cricket {
 
 class TCPConnection {
 public:
-    // prevent constructor by default
-    TCPConnection& operator=(TCPConnection const&);
-    TCPConnection(TCPConnection const&);
-    TCPConnection();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ConnectSocketSignals(::rtc::AsyncPacketSocket*);

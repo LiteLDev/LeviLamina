@@ -4,12 +4,6 @@
 
 class ScriptDeferredEventListener {
 public:
-    // prevent constructor by default
-    ScriptDeferredEventListener& operator=(ScriptDeferredEventListener const&);
-    ScriptDeferredEventListener(ScriptDeferredEventListener const&);
-    ScriptDeferredEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

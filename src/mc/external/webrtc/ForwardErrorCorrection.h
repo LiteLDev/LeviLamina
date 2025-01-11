@@ -25,11 +25,6 @@ public:
     // ForwardErrorCorrection inner types define
     class Packet {
     public:
-        // prevent constructor by default
-        Packet& operator=(Packet const&);
-        Packet(Packet const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Packet();
@@ -50,12 +45,6 @@ public:
 
     class ProtectedPacket {
     public:
-        // prevent constructor by default
-        ProtectedPacket& operator=(ProtectedPacket const&);
-        ProtectedPacket(ProtectedPacket const&);
-        ProtectedPacket();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ProtectedPacket();
@@ -70,12 +59,6 @@ public:
 
     class ReceivedFecPacket {
     public:
-        // prevent constructor by default
-        ReceivedFecPacket& operator=(ReceivedFecPacket const&);
-        ReceivedFecPacket(ReceivedFecPacket const&);
-        ReceivedFecPacket();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ReceivedFecPacket();
@@ -87,12 +70,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    ForwardErrorCorrection& operator=(ForwardErrorCorrection const&);
-    ForwardErrorCorrection(ForwardErrorCorrection const&);
-    ForwardErrorCorrection();
 
 public:
     // member functions

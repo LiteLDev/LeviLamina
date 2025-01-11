@@ -13,12 +13,6 @@ namespace br::spawn {
 
 class PlacementType {
 public:
-    // prevent constructor by default
-    PlacementType& operator=(PlacementType const&);
-    PlacementType(PlacementType const&);
-    PlacementType();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

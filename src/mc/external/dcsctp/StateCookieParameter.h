@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class StateCookieParameter {
 public:
-    // prevent constructor by default
-    StateCookieParameter& operator=(StateCookieParameter const&);
-    StateCookieParameter(StateCookieParameter const&);
-    StateCookieParameter();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::StateCookieParameter> Parse(::rtc::ArrayView<uchar const>);

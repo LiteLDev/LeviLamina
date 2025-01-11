@@ -14,12 +14,6 @@ class Random;
 
 class NetherFireFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    NetherFireFeature& operator=(NetherFireFeature const&);
-    NetherFireFeature(NetherFireFeature const&);
-    NetherFireFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

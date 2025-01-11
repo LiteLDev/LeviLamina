@@ -12,12 +12,6 @@ namespace webrtc {
 
 struct RobustThroughputEstimatorSettings {
 public:
-    // prevent constructor by default
-    RobustThroughputEstimatorSettings& operator=(RobustThroughputEstimatorSettings const&);
-    RobustThroughputEstimatorSettings(RobustThroughputEstimatorSettings const&);
-    RobustThroughputEstimatorSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();

@@ -81,12 +81,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FileListTransferCBInterface& operator=(FileListTransferCBInterface const&);
-    FileListTransferCBInterface(FileListTransferCBInterface const&);
-    FileListTransferCBInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

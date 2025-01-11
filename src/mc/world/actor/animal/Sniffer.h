@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class Sniffer : public ::Animal {
 public:
-    // prevent constructor by default
-    Sniffer& operator=(Sniffer const&);
-    Sniffer(Sniffer const&);
-    Sniffer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 65

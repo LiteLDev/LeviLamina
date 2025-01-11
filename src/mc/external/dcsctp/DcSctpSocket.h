@@ -36,12 +36,6 @@ public:
     enum class State : uint {};
 
 public:
-    // prevent constructor by default
-    DcSctpSocket& operator=(DcSctpSocket const&);
-    DcSctpSocket(DcSctpSocket const&);
-    DcSctpSocket();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void CloseConnectionBecauseOfTooManyTransmissionErrors();

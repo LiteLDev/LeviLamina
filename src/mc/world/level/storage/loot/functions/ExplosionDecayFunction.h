@@ -15,12 +15,6 @@ class Random;
 
 class ExplosionDecayFunction : public ::LootItemFunction {
 public:
-    // prevent constructor by default
-    ExplosionDecayFunction& operator=(ExplosionDecayFunction const&);
-    ExplosionDecayFunction(ExplosionDecayFunction const&);
-    ExplosionDecayFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,12 +13,6 @@ namespace webrtc {
 
 struct FrequencyTracker {
 public:
-    // prevent constructor by default
-    FrequencyTracker& operator=(FrequencyTracker const&);
-    FrequencyTracker(FrequencyTracker const&);
-    FrequencyTracker();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FrequencyTracker(::webrtc::TimeDelta);

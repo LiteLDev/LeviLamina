@@ -14,12 +14,6 @@ namespace VanillaSurfaceBuilders {
 
 class TheEndSurfaceBuilder : public ::ISurfaceBuilder {
 public:
-    // prevent constructor by default
-    TheEndSurfaceBuilder& operator=(TheEndSurfaceBuilder const&);
-    TheEndSurfaceBuilder(TheEndSurfaceBuilder const&);
-    TheEndSurfaceBuilder();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

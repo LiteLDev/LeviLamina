@@ -4,12 +4,6 @@
 
 class FileAccessTransforms {
 public:
-    // prevent constructor by default
-    FileAccessTransforms& operator=(FileAccessTransforms const&);
-    FileAccessTransforms(FileAccessTransforms const&);
-    FileAccessTransforms();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

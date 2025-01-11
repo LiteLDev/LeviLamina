@@ -18,12 +18,6 @@ class Vec3;
 
 class RandomizableBlockActorFillingContainer : public ::RandomizableBlockActorContainerBase, public ::FillingContainer {
 public:
-    // prevent constructor by default
-    RandomizableBlockActorFillingContainer& operator=(RandomizableBlockActorFillingContainer const&);
-    RandomizableBlockActorFillingContainer(RandomizableBlockActorFillingContainer const&);
-    RandomizableBlockActorFillingContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

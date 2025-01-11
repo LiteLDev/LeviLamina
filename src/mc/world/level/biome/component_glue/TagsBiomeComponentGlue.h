@@ -14,12 +14,6 @@ namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 
 struct TagsBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
-    // prevent constructor by default
-    TagsBiomeComponentGlue& operator=(TagsBiomeComponentGlue const&);
-    TagsBiomeComponentGlue(TagsBiomeComponentGlue const&);
-    TagsBiomeComponentGlue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

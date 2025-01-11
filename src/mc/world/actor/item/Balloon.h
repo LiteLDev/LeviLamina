@@ -17,12 +17,6 @@ struct VariantParameterList;
 
 class Balloon : public ::PredictableProjectile {
 public:
-    // prevent constructor by default
-    Balloon& operator=(Balloon const&);
-    Balloon(Balloon const&);
-    Balloon();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

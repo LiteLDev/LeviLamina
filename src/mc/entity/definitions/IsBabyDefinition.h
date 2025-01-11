@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsBabyDefinition {
 public:
-    // prevent constructor by default
-    IsBabyDefinition& operator=(IsBabyDefinition const&);
-    IsBabyDefinition(IsBabyDefinition const&);
-    IsBabyDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

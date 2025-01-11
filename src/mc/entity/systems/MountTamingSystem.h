@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class MountTamingSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    MountTamingSystem& operator=(MountTamingSystem const&);
-    MountTamingSystem(MountTamingSystem const&);
-    MountTamingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

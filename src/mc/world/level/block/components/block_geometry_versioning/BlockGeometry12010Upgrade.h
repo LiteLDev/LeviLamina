@@ -14,11 +14,6 @@ namespace BlockGeometryVersioning {
 
 class BlockGeometry12010Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockGeometry12010Upgrade& operator=(BlockGeometry12010Upgrade const&);
-    BlockGeometry12010Upgrade(BlockGeometry12010Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

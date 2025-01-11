@@ -11,12 +11,6 @@
 
 class ScriptingEventHandler : public ::GameplayHandler {
 public:
-    // prevent constructor by default
-    ScriptingEventHandler& operator=(ScriptingEventHandler const&);
-    ScriptingEventHandler(ScriptingEventHandler const&);
-    ScriptingEventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

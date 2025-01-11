@@ -77,12 +77,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FileSystem& operator=(FileSystem const&);
-    FileSystem(FileSystem const&);
-    FileSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorHasTargetTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    ActorHasTargetTest& operator=(ActorHasTargetTest const&);
-    ActorHasTargetTest(ActorHasTargetTest const&);
-    ActorHasTargetTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

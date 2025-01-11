@@ -10,11 +10,6 @@
 
 class ContentLogEndPoint : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::LogEndPoint {
 public:
-    // prevent constructor by default
-    ContentLogEndPoint& operator=(ContentLogEndPoint const&);
-    ContentLogEndPoint(ContentLogEndPoint const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

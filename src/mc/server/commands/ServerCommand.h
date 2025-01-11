@@ -20,12 +20,6 @@ class ServerNetworkHandler;
 
 class ServerCommand : public ::Command {
 public:
-    // prevent constructor by default
-    ServerCommand& operator=(ServerCommand const&);
-    ServerCommand(ServerCommand const&);
-    ServerCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

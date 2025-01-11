@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class CartographyAdditionalContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CartographyAdditionalContainerValidation& operator=(CartographyAdditionalContainerValidation const&);
-    CartographyAdditionalContainerValidation(CartographyAdditionalContainerValidation const&);
-    CartographyAdditionalContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptStrengthComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptStrengthComponent& operator=(ScriptStrengthComponent const&);
-    ScriptStrengthComponent(ScriptStrengthComponent const&);
-    ScriptStrengthComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

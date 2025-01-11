@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsIllagerCaptainDefinition {
 public:
-    // prevent constructor by default
-    IsIllagerCaptainDefinition& operator=(IsIllagerCaptainDefinition const&);
-    IsIllagerCaptainDefinition(IsIllagerCaptainDefinition const&);
-    IsIllagerCaptainDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

@@ -14,11 +14,6 @@ namespace BlockLightDampeningVersioning {
 
 class BlockLightDampening11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockLightDampening11910Upgrade& operator=(BlockLightDampening11910Upgrade const&);
-    BlockLightDampening11910Upgrade(BlockLightDampening11910Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -46,12 +46,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IVirtualAllocator& operator=(IVirtualAllocator const&);
-    IVirtualAllocator(IVirtualAllocator const&);
-    IVirtualAllocator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -23,12 +23,6 @@ namespace Editor::Selection {
 
 class ServerSelectionContainer : public ::Editor::Selection::SelectionContainer {
 public:
-    // prevent constructor by default
-    ServerSelectionContainer& operator=(ServerSelectionContainer const&);
-    ServerSelectionContainer(ServerSelectionContainer const&);
-    ServerSelectionContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

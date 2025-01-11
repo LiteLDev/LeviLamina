@@ -4,12 +4,6 @@
 
 namespace xbox::httpclient {
 
-struct XPlatSecurityInformation {
-public:
-    // prevent constructor by default
-    XPlatSecurityInformation& operator=(XPlatSecurityInformation const&);
-    XPlatSecurityInformation(XPlatSecurityInformation const&);
-    XPlatSecurityInformation();
-};
+struct XPlatSecurityInformation {};
 
 } // namespace xbox::httpclient

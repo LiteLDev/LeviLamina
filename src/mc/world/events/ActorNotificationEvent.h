@@ -59,12 +59,6 @@ struct ActorNotificationEvent : public ::EventVariantImpl<
                                     ::ActorDefinitionStartedEvent const,
                                     ::ActorAddEffectEvent const> {
 public:
-    // prevent constructor by default
-    ActorNotificationEvent& operator=(ActorNotificationEvent const&);
-    ActorNotificationEvent(ActorNotificationEvent const&);
-    ActorNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ActorNotificationEvent();

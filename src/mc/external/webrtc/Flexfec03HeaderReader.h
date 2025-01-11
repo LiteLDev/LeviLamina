@@ -6,11 +6,6 @@ namespace webrtc {
 
 class Flexfec03HeaderReader {
 public:
-    // prevent constructor by default
-    Flexfec03HeaderReader& operator=(Flexfec03HeaderReader const&);
-    Flexfec03HeaderReader(Flexfec03HeaderReader const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Flexfec03HeaderReader();

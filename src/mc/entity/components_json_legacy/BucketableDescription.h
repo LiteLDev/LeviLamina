@@ -7,12 +7,6 @@
 
 struct BucketableDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    BucketableDescription& operator=(BucketableDescription const&);
-    BucketableDescription(BucketableDescription const&);
-    BucketableDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

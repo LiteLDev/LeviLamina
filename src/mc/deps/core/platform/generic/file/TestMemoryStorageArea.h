@@ -16,12 +16,6 @@ namespace Bedrock {
 
 class TestMemoryStorageArea : public ::Core::MemoryFileStorageArea {
 public:
-    // prevent constructor by default
-    TestMemoryStorageArea& operator=(TestMemoryStorageArea const&);
-    TestMemoryStorageArea(TestMemoryStorageArea const&);
-    TestMemoryStorageArea();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

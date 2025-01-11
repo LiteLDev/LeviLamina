@@ -4,12 +4,6 @@
 
 namespace Bedrock::PubSub::DeferralPolicy {
 
-class ExecuteImmediatelyPolicy {
-public:
-    // prevent constructor by default
-    ExecuteImmediatelyPolicy& operator=(ExecuteImmediatelyPolicy const&);
-    ExecuteImmediatelyPolicy(ExecuteImmediatelyPolicy const&);
-    ExecuteImmediatelyPolicy();
-};
+class ExecuteImmediatelyPolicy {};
 
 } // namespace Bedrock::PubSub::DeferralPolicy

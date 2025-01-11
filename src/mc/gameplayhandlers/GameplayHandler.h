@@ -4,12 +4,6 @@
 
 class GameplayHandler {
 public:
-    // prevent constructor by default
-    GameplayHandler& operator=(GameplayHandler const&);
-    GameplayHandler(GameplayHandler const&);
-    GameplayHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -23,12 +23,6 @@ public:
     // CappedSurfaceBuilder inner types define
     class MaterialHelper {
     public:
-        // prevent constructor by default
-        MaterialHelper& operator=(MaterialHelper const&);
-        MaterialHelper(MaterialHelper const&);
-        MaterialHelper();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

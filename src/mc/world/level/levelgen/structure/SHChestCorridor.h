@@ -16,12 +16,6 @@ class StructurePiece;
 
 class SHChestCorridor : public ::StrongholdPiece {
 public:
-    // prevent constructor by default
-    SHChestCorridor& operator=(SHChestCorridor const&);
-    SHChestCorridor(SHChestCorridor const&);
-    SHChestCorridor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

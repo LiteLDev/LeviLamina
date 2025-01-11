@@ -15,12 +15,6 @@ namespace cricket {
 
 class BasicPortAllocator {
 public:
-    // prevent constructor by default
-    BasicPortAllocator& operator=(BasicPortAllocator const&);
-    BasicPortAllocator(BasicPortAllocator const&);
-    BasicPortAllocator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

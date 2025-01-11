@@ -4,12 +4,6 @@
 
 class MultiplayerLockState {
 public:
-    // prevent constructor by default
-    MultiplayerLockState& operator=(MultiplayerLockState const&);
-    MultiplayerLockState(MultiplayerLockState const&);
-    MultiplayerLockState();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -16,12 +16,6 @@ struct VariantParameterList;
 
 class ThrownIceBomb : public ::Throwable {
 public:
-    // prevent constructor by default
-    ThrownIceBomb& operator=(ThrownIceBomb const&);
-    ThrownIceBomb(ThrownIceBomb const&);
-    ThrownIceBomb();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

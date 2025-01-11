@@ -12,12 +12,6 @@ namespace Scripting { struct ContextId; }
 
 class ScriptPrintLogger : public ::Scripting::IPrinter {
 public:
-    // prevent constructor by default
-    ScriptPrintLogger& operator=(ScriptPrintLogger const&);
-    ScriptPrintLogger(ScriptPrintLogger const&);
-    ScriptPrintLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

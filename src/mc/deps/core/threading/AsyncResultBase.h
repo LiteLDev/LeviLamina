@@ -5,12 +5,6 @@
 namespace Bedrock::Threading {
 
 template <typename T0>
-class AsyncResultBase {
-public:
-    // prevent constructor by default
-    AsyncResultBase& operator=(AsyncResultBase const&);
-    AsyncResultBase(AsyncResultBase const&);
-    AsyncResultBase();
-};
+class AsyncResultBase {};
 
 } // namespace Bedrock::Threading

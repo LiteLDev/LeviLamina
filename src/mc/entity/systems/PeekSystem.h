@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class PeekSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    PeekSystem& operator=(PeekSystem const&);
-    PeekSystem(PeekSystem const&);
-    PeekSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

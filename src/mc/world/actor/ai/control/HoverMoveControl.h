@@ -13,11 +13,6 @@ class MoveControlComponent;
 
 class HoverMoveControl : public ::MoveControl {
 public:
-    // prevent constructor by default
-    HoverMoveControl& operator=(HoverMoveControl const&);
-    HoverMoveControl(HoverMoveControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

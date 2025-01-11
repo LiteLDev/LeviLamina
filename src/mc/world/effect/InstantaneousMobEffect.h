@@ -7,12 +7,6 @@
 
 class InstantaneousMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    InstantaneousMobEffect& operator=(InstantaneousMobEffect const&);
-    InstantaneousMobEffect(InstantaneousMobEffect const&);
-    InstantaneousMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

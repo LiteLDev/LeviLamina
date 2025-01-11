@@ -20,12 +20,6 @@ class RemoteConnector : public ::Connector,
                         public ::NetworkEnableDisableListener,
                         public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    RemoteConnector& operator=(RemoteConnector const&);
-    RemoteConnector(RemoteConnector const&);
-    RemoteConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

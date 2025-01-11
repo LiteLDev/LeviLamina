@@ -20,19 +20,7 @@ public:
     // clang-format on
 
     // SackChunk inner types define
-    struct GapAckBlock {
-    public:
-        // prevent constructor by default
-        GapAckBlock& operator=(GapAckBlock const&);
-        GapAckBlock(GapAckBlock const&);
-        GapAckBlock();
-    };
-
-public:
-    // prevent constructor by default
-    SackChunk& operator=(SackChunk const&);
-    SackChunk(SackChunk const&);
-    SackChunk();
+    struct GapAckBlock {};
 
 public:
     // member functions

@@ -16,12 +16,6 @@ class Vec3;
 
 class ParticleSystemInterface {
 public:
-    // prevent constructor by default
-    ParticleSystemInterface& operator=(ParticleSystemInterface const&);
-    ParticleSystemInterface(ParticleSystemInterface const&);
-    ParticleSystemInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

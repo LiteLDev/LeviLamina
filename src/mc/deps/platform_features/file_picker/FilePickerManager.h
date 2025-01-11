@@ -50,12 +50,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FilePickerManager& operator=(FilePickerManager const&);
-    FilePickerManager(FilePickerManager const&);
-    FilePickerManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

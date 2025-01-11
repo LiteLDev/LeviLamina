@@ -15,12 +15,6 @@ namespace MovementDataExtractionUtility { class SnapshotAccessor; }
 
 struct IMovementCorrection : public ::IReplayableActorInput {
 public:
-    // prevent constructor by default
-    IMovementCorrection& operator=(IMovementCorrection const&);
-    IMovementCorrection(IMovementCorrection const&);
-    IMovementCorrection();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

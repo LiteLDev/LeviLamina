@@ -23,12 +23,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    DeferredSubscriptionHub& operator=(DeferredSubscriptionHub const&);
-    DeferredSubscriptionHub(DeferredSubscriptionHub const&);
-    DeferredSubscriptionHub();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

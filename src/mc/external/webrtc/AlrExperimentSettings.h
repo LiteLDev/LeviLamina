@@ -11,12 +11,6 @@ namespace webrtc {
 
 struct AlrExperimentSettings {
 public:
-    // prevent constructor by default
-    AlrExperimentSettings& operator=(AlrExperimentSettings const&);
-    AlrExperimentSettings(AlrExperimentSettings const&);
-    AlrExperimentSettings();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::webrtc::AlrExperimentSettings>

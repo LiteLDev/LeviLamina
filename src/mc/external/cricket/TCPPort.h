@@ -26,12 +26,6 @@ public:
     // TCPPort inner types define
     struct Incoming {
     public:
-        // prevent constructor by default
-        Incoming& operator=(Incoming const&);
-        Incoming(Incoming const&);
-        Incoming();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Incoming();
@@ -43,12 +37,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    TCPPort& operator=(TCPPort const&);
-    TCPPort(TCPPort const&);
-    TCPPort();
 
 public:
     // member functions

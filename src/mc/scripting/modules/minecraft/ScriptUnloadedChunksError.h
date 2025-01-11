@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptUnloadedChunksError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptUnloadedChunksError& operator=(ScriptUnloadedChunksError const&);
-    ScriptUnloadedChunksError(ScriptUnloadedChunksError const&);
-    ScriptUnloadedChunksError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptUnloadedChunksError(uint64 unloadedChunks, uint64 totalChunks);

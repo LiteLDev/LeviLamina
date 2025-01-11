@@ -15,12 +15,6 @@ class Random;
 
 class DesertPyramidPiece : public ::ScatteredFeaturePiece {
 public:
-    // prevent constructor by default
-    DesertPyramidPiece& operator=(DesertPyramidPiece const&);
-    DesertPyramidPiece(DesertPyramidPiece const&);
-    DesertPyramidPiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

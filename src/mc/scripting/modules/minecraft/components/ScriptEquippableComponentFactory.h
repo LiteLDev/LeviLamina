@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptEquippableComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptEquippableComponentFactory& operator=(ScriptEquippableComponentFactory const&);
-    ScriptEquippableComponentFactory(ScriptEquippableComponentFactory const&);
-    ScriptEquippableComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

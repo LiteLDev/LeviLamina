@@ -14,12 +14,6 @@ namespace Core { class SingleThreadedLock; }
 
 class WebviewObserver : public ::Core::Observer<::WebviewObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    WebviewObserver& operator=(WebviewObserver const&);
-    WebviewObserver(WebviewObserver const&);
-    WebviewObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

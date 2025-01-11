@@ -18,12 +18,6 @@ struct RecipeNetIdTag;
 
 class StoneCutterContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    StoneCutterContainerScreenValidator& operator=(StoneCutterContainerScreenValidator const&);
-    StoneCutterContainerScreenValidator(StoneCutterContainerScreenValidator const&);
-    StoneCutterContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

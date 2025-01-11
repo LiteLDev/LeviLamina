@@ -55,12 +55,6 @@ public:
     // JsepTransportController inner types define
     struct Config {
     public:
-        // prevent constructor by default
-        Config& operator=(Config const&);
-        Config(Config const&);
-        Config();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Config();
@@ -72,12 +66,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    JsepTransportController& operator=(JsepTransportController const&);
-    JsepTransportController(JsepTransportController const&);
-    JsepTransportController();
 
 public:
     // member functions

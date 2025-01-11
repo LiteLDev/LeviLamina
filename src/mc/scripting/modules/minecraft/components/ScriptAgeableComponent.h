@@ -23,12 +23,6 @@ namespace ScriptModuleMinecraft {
 class ScriptAgeableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::AgeableComponent, ::AgeableDefinition> {
 public:
-    // prevent constructor by default
-    ScriptAgeableComponent& operator=(ScriptAgeableComponent const&);
-    ScriptAgeableComponent(ScriptAgeableComponent const&);
-    ScriptAgeableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

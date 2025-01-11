@@ -9,12 +9,6 @@ namespace xbox::httpclient {
 
 struct HeaderCompare {
 public:
-    // prevent constructor by default
-    HeaderCompare& operator=(HeaderCompare const&);
-    HeaderCompare(HeaderCompare const&);
-    HeaderCompare();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator()(::http_string const&, ::http_string const&) const;

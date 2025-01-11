@@ -18,12 +18,6 @@ class ScriptActorIterator : public ::ScriptModuleMinecraft::ScriptVectorIterator
                                 ::ScriptModuleMinecraft::ScriptActorIterator,
                                 ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> {
 public:
-    // prevent constructor by default
-    ScriptActorIterator& operator=(ScriptActorIterator const&);
-    ScriptActorIterator(ScriptActorIterator const&);
-    ScriptActorIterator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptActorIterator(

@@ -437,12 +437,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IMinecraftEventing& operator=(IMinecraftEventing const&);
-    IMinecraftEventing(IMinecraftEventing const&);
-    IMinecraftEventing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

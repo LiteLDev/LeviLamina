@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct UpdateServerPlayerInputSystem {
 public:
-    // prevent constructor by default
-    UpdateServerPlayerInputSystem& operator=(UpdateServerPlayerInputSystem const&);
-    UpdateServerPlayerInputSystem(UpdateServerPlayerInputSystem const&);
-    UpdateServerPlayerInputSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

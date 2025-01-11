@@ -14,12 +14,6 @@ class Player;
 
 class BlastFurnaceContainerManagerModel : public ::FurnaceContainerManagerModel {
 public:
-    // prevent constructor by default
-    BlastFurnaceContainerManagerModel& operator=(BlastFurnaceContainerManagerModel const&);
-    BlastFurnaceContainerManagerModel(BlastFurnaceContainerManagerModel const&);
-    BlastFurnaceContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

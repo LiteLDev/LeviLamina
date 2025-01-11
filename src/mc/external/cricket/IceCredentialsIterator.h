@@ -11,12 +11,6 @@ namespace cricket {
 
 class IceCredentialsIterator {
 public:
-    // prevent constructor by default
-    IceCredentialsIterator& operator=(IceCredentialsIterator const&);
-    IceCredentialsIterator(IceCredentialsIterator const&);
-    IceCredentialsIterator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::cricket::IceParameters GetIceCredentials();

@@ -4,12 +4,6 @@
 
 class IMovementStop {
 public:
-    // prevent constructor by default
-    IMovementStop& operator=(IMovementStop const&);
-    IMovementStop(IMovementStop const&);
-    IMovementStop();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

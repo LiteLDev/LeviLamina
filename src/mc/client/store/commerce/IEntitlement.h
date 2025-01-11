@@ -9,12 +9,6 @@ class ContentIdentity;
 
 class IEntitlement {
 public:
-    // prevent constructor by default
-    IEntitlement& operator=(IEntitlement const&);
-    IEntitlement(IEntitlement const&);
-    IEntitlement();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

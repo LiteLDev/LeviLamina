@@ -16,12 +16,6 @@ namespace Editor::Services {
 
 class EditorPlayerPlaytestServiceProvider {
 public:
-    // prevent constructor by default
-    EditorPlayerPlaytestServiceProvider& operator=(EditorPlayerPlaytestServiceProvider const&);
-    EditorPlayerPlaytestServiceProvider(EditorPlayerPlaytestServiceProvider const&);
-    EditorPlayerPlaytestServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -19,12 +19,6 @@ struct ScriptingNotificationEvent : public ::EventVariantImpl<
                                         ::ScriptModuleStartupEvent const,
                                         ::ScriptModuleShutdownEvent const> {
 public:
-    // prevent constructor by default
-    ScriptingNotificationEvent& operator=(ScriptingNotificationEvent const&);
-    ScriptingNotificationEvent(ScriptingNotificationEvent const&);
-    ScriptingNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptingNotificationEvent();

@@ -16,12 +16,6 @@ namespace mce { class UUID; }
 
 class IPackLoadContext {
 public:
-    // prevent constructor by default
-    IPackLoadContext& operator=(IPackLoadContext const&);
-    IPackLoadContext(IPackLoadContext const&);
-    IPackLoadContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

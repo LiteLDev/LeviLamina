@@ -9,12 +9,6 @@
 
 class IActiveDirectoryIdentityTelemetry {
 public:
-    // prevent constructor by default
-    IActiveDirectoryIdentityTelemetry& operator=(IActiveDirectoryIdentityTelemetry const&);
-    IActiveDirectoryIdentityTelemetry(IActiveDirectoryIdentityTelemetry const&);
-    IActiveDirectoryIdentityTelemetry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

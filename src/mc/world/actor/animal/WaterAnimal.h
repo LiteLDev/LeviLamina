@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class WaterAnimal : public ::Mob {
 public:
-    // prevent constructor by default
-    WaterAnimal& operator=(WaterAnimal const&);
-    WaterAnimal(WaterAnimal const&);
-    WaterAnimal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 152

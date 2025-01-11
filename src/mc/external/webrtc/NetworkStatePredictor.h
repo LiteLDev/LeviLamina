@@ -9,12 +9,6 @@ namespace webrtc {
 
 class NetworkStatePredictor {
 public:
-    // prevent constructor by default
-    NetworkStatePredictor& operator=(NetworkStatePredictor const&);
-    NetworkStatePredictor(NetworkStatePredictor const&);
-    NetworkStatePredictor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

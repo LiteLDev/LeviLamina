@@ -12,12 +12,6 @@ class Dimension;
 
 class IDimensionManagerConnector {
 public:
-    // prevent constructor by default
-    IDimensionManagerConnector& operator=(IDimensionManagerConnector const&);
-    IDimensionManagerConnector(IDimensionManagerConnector const&);
-    IDimensionManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ class IBlockSource;
 
 class ITickDelegate {
 public:
-    // prevent constructor by default
-    ITickDelegate& operator=(ITickDelegate const&);
-    ITickDelegate(ITickDelegate const&);
-    ITickDelegate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

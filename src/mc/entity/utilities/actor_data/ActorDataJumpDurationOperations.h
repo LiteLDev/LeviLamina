@@ -15,12 +15,6 @@ namespace ActorData {
 
 struct ActorDataJumpDurationOperations
 : public ::ActorData::
-      ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataJumpDurationComponent, schar> {
-public:
-    // prevent constructor by default
-    ActorDataJumpDurationOperations& operator=(ActorDataJumpDurationOperations const&);
-    ActorDataJumpDurationOperations(ActorDataJumpDurationOperations const&);
-    ActorDataJumpDurationOperations();
-};
+      ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataJumpDurationComponent, schar> {};
 
 } // namespace ActorData

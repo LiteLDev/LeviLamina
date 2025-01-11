@@ -12,12 +12,6 @@ class ToastMessage;
 
 class IToastManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IToastManager& operator=(IToastManager const&);
-    IToastManager(IToastManager const&);
-    IToastManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

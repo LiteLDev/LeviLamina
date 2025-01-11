@@ -17,12 +17,6 @@ namespace webrtc {
 
 class AudioTrackInterface : public ::webrtc::MediaStreamTrackInterface {
 public:
-    // prevent constructor by default
-    AudioTrackInterface& operator=(AudioTrackInterface const&);
-    AudioTrackInterface(AudioTrackInterface const&);
-    AudioTrackInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

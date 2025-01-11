@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class UpdateRenderPosSystem {
 public:
-    // prevent constructor by default
-    UpdateRenderPosSystem& operator=(UpdateRenderPosSystem const&);
-    UpdateRenderPosSystem(UpdateRenderPosSystem const&);
-    UpdateRenderPosSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doUpdateRenderPosSystem(

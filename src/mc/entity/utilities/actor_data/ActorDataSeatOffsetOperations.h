@@ -16,12 +16,6 @@ namespace ActorData {
 
 struct ActorDataSeatOffsetOperations
 : public ::ActorData::
-      ActorDataSimpleOperations<::ReplayStateValueDiff<::Vec3>, ::ActorDataSeatOffsetComponent, ::Vec3> {
-public:
-    // prevent constructor by default
-    ActorDataSeatOffsetOperations& operator=(ActorDataSeatOffsetOperations const&);
-    ActorDataSeatOffsetOperations(ActorDataSeatOffsetOperations const&);
-    ActorDataSeatOffsetOperations();
-};
+      ActorDataSimpleOperations<::ReplayStateValueDiff<::Vec3>, ::ActorDataSeatOffsetComponent, ::Vec3> {};
 
 } // namespace ActorData

@@ -17,12 +17,6 @@ class WidgetAddGuideSensorComponentPayload
 : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddGuideSensorComponentPayload>,
   public ::Editor::Network::WidgetComponentBasePayload {
 public:
-    // prevent constructor by default
-    WidgetAddGuideSensorComponentPayload& operator=(WidgetAddGuideSensorComponentPayload const&);
-    WidgetAddGuideSensorComponentPayload(WidgetAddGuideSensorComponentPayload const&);
-    WidgetAddGuideSensorComponentPayload();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

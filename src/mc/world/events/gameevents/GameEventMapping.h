@@ -11,12 +11,6 @@ struct GameEventPair;
 
 class GameEventMapping {
 public:
-    // prevent constructor by default
-    GameEventMapping& operator=(GameEventMapping const&);
-    GameEventMapping(GameEventMapping const&);
-    GameEventMapping();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::GameEvent const* creatorNameToEvent(::std::string const& name);

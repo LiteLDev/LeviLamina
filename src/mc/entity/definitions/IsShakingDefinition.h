@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsShakingDefinition {
 public:
-    // prevent constructor by default
-    IsShakingDefinition& operator=(IsShakingDefinition const&);
-    IsShakingDefinition(IsShakingDefinition const&);
-    IsShakingDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

@@ -16,12 +16,6 @@ namespace Social {
 class MultiplayerServiceObserver
 : public ::Core::Observer<::Social::MultiplayerServiceObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    MultiplayerServiceObserver& operator=(MultiplayerServiceObserver const&);
-    MultiplayerServiceObserver(MultiplayerServiceObserver const&);
-    MultiplayerServiceObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

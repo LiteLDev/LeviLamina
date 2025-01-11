@@ -11,12 +11,6 @@ namespace dcsctp {
 
 class ErrorChunk {
 public:
-    // prevent constructor by default
-    ErrorChunk& operator=(ErrorChunk const&);
-    ErrorChunk(ErrorChunk const&);
-    ErrorChunk();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ErrorChunk(::dcsctp::Parameters);

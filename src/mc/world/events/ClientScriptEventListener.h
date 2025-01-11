@@ -7,12 +7,6 @@
 
 class ClientScriptEventListener {
 public:
-    // prevent constructor by default
-    ClientScriptEventListener& operator=(ClientScriptEventListener const&);
-    ClientScriptEventListener(ClientScriptEventListener const&);
-    ClientScriptEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

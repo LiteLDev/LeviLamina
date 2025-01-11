@@ -7,12 +7,6 @@
 
 class IApp : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IApp& operator=(IApp const&);
-    IApp(IApp const&);
-    IApp();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

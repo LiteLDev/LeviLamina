@@ -25,12 +25,6 @@ class SurfaceBuilderRegistry;
 
 class IWorldRegistriesProvider {
 public:
-    // prevent constructor by default
-    IWorldRegistriesProvider& operator=(IWorldRegistriesProvider const&);
-    IWorldRegistriesProvider(IWorldRegistriesProvider const&);
-    IWorldRegistriesProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

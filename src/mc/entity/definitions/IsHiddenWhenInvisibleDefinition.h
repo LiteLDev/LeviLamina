@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsHiddenWhenInvisibleDefinition {
 public:
-    // prevent constructor by default
-    IsHiddenWhenInvisibleDefinition& operator=(IsHiddenWhenInvisibleDefinition const&);
-    IsHiddenWhenInvisibleDefinition(IsHiddenWhenInvisibleDefinition const&);
-    IsHiddenWhenInvisibleDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

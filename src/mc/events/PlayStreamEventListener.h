@@ -14,12 +14,6 @@ namespace Social::Events {
 
 class PlayStreamEventListener : public ::Social::Events::AggregationEventListener {
 public:
-    // prevent constructor by default
-    PlayStreamEventListener& operator=(PlayStreamEventListener const&);
-    PlayStreamEventListener(PlayStreamEventListener const&);
-    PlayStreamEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

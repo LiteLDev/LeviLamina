@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkCustomIDResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkCustomIDResult& operator=(LinkCustomIDResult const&);
-    LinkCustomIDResult(LinkCustomIDResult const&);
-    LinkCustomIDResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

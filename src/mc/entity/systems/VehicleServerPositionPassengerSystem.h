@@ -28,12 +28,6 @@ struct VehicleComponent;
 
 class VehicleServerPositionPassengerSystem {
 public:
-    // prevent constructor by default
-    VehicleServerPositionPassengerSystem& operator=(VehicleServerPositionPassengerSystem const&);
-    VehicleServerPositionPassengerSystem(VehicleServerPositionPassengerSystem const&);
-    VehicleServerPositionPassengerSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

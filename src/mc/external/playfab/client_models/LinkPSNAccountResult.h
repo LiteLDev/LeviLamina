@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkPSNAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkPSNAccountResult& operator=(LinkPSNAccountResult const&);
-    LinkPSNAccountResult(LinkPSNAccountResult const&);
-    LinkPSNAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

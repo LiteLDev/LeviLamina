@@ -16,12 +16,6 @@ struct ServerInstanceNotificationEvent;
 
 class ServerInstanceEventListener {
 public:
-    // prevent constructor by default
-    ServerInstanceEventListener& operator=(ServerInstanceEventListener const&);
-    ServerInstanceEventListener(ServerInstanceEventListener const&);
-    ServerInstanceEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

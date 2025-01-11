@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsPregnantDefinition {
 public:
-    // prevent constructor by default
-    IsPregnantDefinition& operator=(IsPregnantDefinition const&);
-    IsPregnantDefinition(IsPregnantDefinition const&);
-    IsPregnantDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

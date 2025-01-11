@@ -20,12 +20,6 @@ class Vec3;
 
 class PlayerDimensionTransferProxy : public ::IPlayerDimensionTransferProxy {
 public:
-    // prevent constructor by default
-    PlayerDimensionTransferProxy& operator=(PlayerDimensionTransferProxy const&);
-    PlayerDimensionTransferProxy(PlayerDimensionTransferProxy const&);
-    PlayerDimensionTransferProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

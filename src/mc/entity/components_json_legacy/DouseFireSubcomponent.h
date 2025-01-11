@@ -16,11 +16,6 @@ namespace Json { class Value; }
 
 class DouseFireSubcomponent : public ::OnHitSubcomponent {
 public:
-    // prevent constructor by default
-    DouseFireSubcomponent& operator=(DouseFireSubcomponent const&);
-    DouseFireSubcomponent(DouseFireSubcomponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

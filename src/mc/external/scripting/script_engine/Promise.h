@@ -5,12 +5,6 @@
 namespace Scripting {
 
 template <typename T0, typename T1, typename T2>
-class Promise {
-public:
-    // prevent constructor by default
-    Promise& operator=(Promise const&);
-    Promise(Promise const&);
-    Promise();
-};
+class Promise {};
 
 } // namespace Scripting

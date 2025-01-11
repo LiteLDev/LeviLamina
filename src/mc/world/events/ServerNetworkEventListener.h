@@ -14,12 +14,6 @@ struct ServerNetworkGameplayNotificationEvent;
 
 class ServerNetworkEventListener {
 public:
-    // prevent constructor by default
-    ServerNetworkEventListener& operator=(ServerNetworkEventListener const&);
-    ServerNetworkEventListener(ServerNetworkEventListener const&);
-    ServerNetworkEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -19,12 +19,6 @@ class Vec3;
 
 class IPlayerDimensionTransferProxy {
 public:
-    // prevent constructor by default
-    IPlayerDimensionTransferProxy& operator=(IPlayerDimensionTransferProxy const&);
-    IPlayerDimensionTransferProxy(IPlayerDimensionTransferProxy const&);
-    IPlayerDimensionTransferProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -32,12 +32,6 @@ namespace mce { class UUID; }
 
 class IResourcePackRepository : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IResourcePackRepository& operator=(IResourcePackRepository const&);
-    IResourcePackRepository(IResourcePackRepository const&);
-    IResourcePackRepository();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

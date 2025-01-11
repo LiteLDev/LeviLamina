@@ -13,12 +13,6 @@ namespace Core {
 
 class BufferedFileOperations {
 public:
-    // prevent constructor by default
-    BufferedFileOperations& operator=(BufferedFileOperations const&);
-    BufferedFileOperations(BufferedFileOperations const&);
-    BufferedFileOperations();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Core::Result copyDirectory(

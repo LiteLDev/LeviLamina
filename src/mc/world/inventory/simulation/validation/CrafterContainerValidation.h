@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class CrafterContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CrafterContainerValidation& operator=(CrafterContainerValidation const&);
-    CrafterContainerValidation(CrafterContainerValidation const&);
-    CrafterContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

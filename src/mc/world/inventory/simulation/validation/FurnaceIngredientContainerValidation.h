@@ -12,12 +12,6 @@ class ContainerScreenContext;
 
 class FurnaceIngredientContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    FurnaceIngredientContainerValidation& operator=(FurnaceIngredientContainerValidation const&);
-    FurnaceIngredientContainerValidation(FurnaceIngredientContainerValidation const&);
-    FurnaceIngredientContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

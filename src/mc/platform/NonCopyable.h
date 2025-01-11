@@ -4,12 +4,6 @@
 
 namespace Bedrock {
 
-class NonCopyable {
-public:
-    // prevent constructor by default
-    NonCopyable& operator=(NonCopyable const&);
-    NonCopyable(NonCopyable const&);
-    NonCopyable();
-};
+class NonCopyable {};
 
 } // namespace Bedrock

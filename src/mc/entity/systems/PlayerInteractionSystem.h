@@ -19,12 +19,6 @@ public:
     // PlayerInteractionSystem inner types define
     struct InteractionMappingBase {
     public:
-        // prevent constructor by default
-        InteractionMappingBase& operator=(InteractionMappingBase const&);
-        InteractionMappingBase(InteractionMappingBase const&);
-        InteractionMappingBase();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

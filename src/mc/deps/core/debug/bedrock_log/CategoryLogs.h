@@ -9,12 +9,6 @@ namespace BedrockLog { struct CategoryLogFile; }
 
 namespace BedrockLog {
 
-struct CategoryLogs : public ::std::array<::BedrockLog::CategoryLogFile, 7> {
-public:
-    // prevent constructor by default
-    CategoryLogs& operator=(CategoryLogs const&);
-    CategoryLogs(CategoryLogs const&);
-    CategoryLogs();
-};
+struct CategoryLogs : public ::std::array<::BedrockLog::CategoryLogFile, 7> {};
 
 } // namespace BedrockLog

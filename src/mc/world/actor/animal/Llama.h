@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Llama : public ::Animal {
 public:
-    // prevent constructor by default
-    Llama& operator=(Llama const&);
-    Llama(Llama const&);
-    Llama();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 59

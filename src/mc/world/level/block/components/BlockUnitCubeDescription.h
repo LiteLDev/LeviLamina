@@ -15,12 +15,6 @@ namespace cereal { struct ReflectionCtx; }
 
 struct BlockUnitCubeDescription : public ::BlockComponentDescription {
 public:
-    // prevent constructor by default
-    BlockUnitCubeDescription& operator=(BlockUnitCubeDescription const&);
-    BlockUnitCubeDescription(BlockUnitCubeDescription const&);
-    BlockUnitCubeDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

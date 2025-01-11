@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct EnderManPreAIStepSystem {
 public:
-    // prevent constructor by default
-    EnderManPreAIStepSystem& operator=(EnderManPreAIStepSystem const&);
-    EnderManPreAIStepSystem(EnderManPreAIStepSystem const&);
-    EnderManPreAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

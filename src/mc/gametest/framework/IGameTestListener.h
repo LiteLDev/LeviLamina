@@ -11,12 +11,6 @@ namespace gametest {
 
 class IGameTestListener {
 public:
-    // prevent constructor by default
-    IGameTestListener& operator=(IGameTestListener const&);
-    IGameTestListener(IGameTestListener const&);
-    IGameTestListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

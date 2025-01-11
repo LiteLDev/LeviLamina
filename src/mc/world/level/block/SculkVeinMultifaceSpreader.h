@@ -14,12 +14,6 @@ class IBlockWorldGenAPI;
 
 class SculkVeinMultifaceSpreader : public ::MultifaceSpreader {
 public:
-    // prevent constructor by default
-    SculkVeinMultifaceSpreader& operator=(SculkVeinMultifaceSpreader const&);
-    SculkVeinMultifaceSpreader(SculkVeinMultifaceSpreader const&);
-    SculkVeinMultifaceSpreader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

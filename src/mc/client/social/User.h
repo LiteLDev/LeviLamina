@@ -42,12 +42,6 @@ namespace Social {
 
 class User : public ::std::enable_shared_from_this<::Social::User> {
 public:
-    // prevent constructor by default
-    User& operator=(User const&);
-    User(User const&);
-    User();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

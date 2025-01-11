@@ -15,12 +15,6 @@ namespace WebServices {
 
 struct IEduWebService {
 public:
-    // prevent constructor by default
-    IEduWebService& operator=(IEduWebService const&);
-    IEduWebService(IEduWebService const&);
-    IEduWebService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

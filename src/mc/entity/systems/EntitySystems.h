@@ -35,48 +35,18 @@ public:
     // clang-format on
 
     // EntitySystems inner types define
-    struct UsedInServerPlayerMovement {
-    public:
-        // prevent constructor by default
-        UsedInServerPlayerMovement& operator=(UsedInServerPlayerMovement const&);
-        UsedInServerPlayerMovement(UsedInServerPlayerMovement const&);
-        UsedInServerPlayerMovement();
-    };
+    struct UsedInServerPlayerMovement {};
 
-    struct UsedInClientMovementCorrections {
-    public:
-        // prevent constructor by default
-        UsedInClientMovementCorrections& operator=(UsedInClientMovementCorrections const&);
-        UsedInClientMovementCorrections(UsedInClientMovementCorrections const&);
-        UsedInClientMovementCorrections();
-    };
+    struct UsedInClientMovementCorrections {};
 
     using MovementSystemCategory = ::entt::
         type_list<::EntitySystems::UsedInServerPlayerMovement, ::EntitySystems::UsedInClientMovementCorrections>;
 
-    struct GameSystemCategory {
-    public:
-        // prevent constructor by default
-        GameSystemCategory& operator=(GameSystemCategory const&);
-        GameSystemCategory(GameSystemCategory const&);
-        GameSystemCategory();
-    };
+    struct GameSystemCategory {};
 
-    struct EditorSystemCategory {
-    public:
-        // prevent constructor by default
-        EditorSystemCategory& operator=(EditorSystemCategory const&);
-        EditorSystemCategory(EditorSystemCategory const&);
-        EditorSystemCategory();
-    };
+    struct EditorSystemCategory {};
 
-    struct RuntimeInitialize {
-    public:
-        // prevent constructor by default
-        RuntimeInitialize& operator=(RuntimeInitialize const&);
-        RuntimeInitialize(RuntimeInitialize const&);
-        RuntimeInitialize();
-    };
+    struct RuntimeInitialize {};
 
 public:
     // member variables

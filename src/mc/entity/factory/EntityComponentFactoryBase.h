@@ -14,12 +14,6 @@ class EntityRegistry;
 
 class EntityComponentFactoryBase : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    EntityComponentFactoryBase& operator=(EntityComponentFactoryBase const&);
-    EntityComponentFactoryBase(EntityComponentFactoryBase const&);
-    EntityComponentFactoryBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

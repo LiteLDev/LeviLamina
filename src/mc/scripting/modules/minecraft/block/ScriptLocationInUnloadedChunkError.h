@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptLocationInUnloadedChunkError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptLocationInUnloadedChunkError& operator=(ScriptLocationInUnloadedChunkError const&);
-    ScriptLocationInUnloadedChunkError(ScriptLocationInUnloadedChunkError const&);
-    ScriptLocationInUnloadedChunkError();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError> bind();

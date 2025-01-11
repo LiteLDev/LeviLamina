@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class Pufferfish : public ::Fish {
 public:
-    // prevent constructor by default
-    Pufferfish& operator=(Pufferfish const&);
-    Pufferfish(Pufferfish const&);
-    Pufferfish();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 24

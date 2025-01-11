@@ -6,12 +6,6 @@ namespace webrtc::rtcp {
 
 class Rrtr {
 public:
-    // prevent constructor by default
-    Rrtr& operator=(Rrtr const&);
-    Rrtr(Rrtr const&);
-    Rrtr();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Create(uchar*) const;

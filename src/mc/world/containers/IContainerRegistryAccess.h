@@ -12,12 +12,6 @@ struct FullContainerName;
 
 class IContainerRegistryAccess {
 public:
-    // prevent constructor by default
-    IContainerRegistryAccess& operator=(IContainerRegistryAccess const&);
-    IContainerRegistryAccess(IContainerRegistryAccess const&);
-    IContainerRegistryAccess();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

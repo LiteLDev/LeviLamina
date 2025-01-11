@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class DamageOverTimeSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    DamageOverTimeSystem& operator=(DamageOverTimeSystem const&);
-    DamageOverTimeSystem(DamageOverTimeSystem const&);
-    DamageOverTimeSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

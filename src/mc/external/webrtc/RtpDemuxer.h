@@ -17,12 +17,6 @@ namespace webrtc {
 
 struct RtpDemuxer {
 public:
-    // prevent constructor by default
-    RtpDemuxer& operator=(RtpDemuxer const&);
-    RtpDemuxer(RtpDemuxer const&);
-    RtpDemuxer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool AddSink(::webrtc::RtpDemuxerCriteria const&, ::webrtc::RtpPacketSinkInterface*);

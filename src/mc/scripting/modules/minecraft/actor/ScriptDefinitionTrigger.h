@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptDefinitionTrigger {
 public:
-    // prevent constructor by default
-    ScriptDefinitionTrigger& operator=(ScriptDefinitionTrigger const&);
-    ScriptDefinitionTrigger(ScriptDefinitionTrigger const&);
-    ScriptDefinitionTrigger();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionTrigger> bind();

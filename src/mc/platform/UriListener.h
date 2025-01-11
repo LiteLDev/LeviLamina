@@ -9,12 +9,6 @@ class ActivationUri;
 
 class UriListener {
 public:
-    // prevent constructor by default
-    UriListener& operator=(UriListener const&);
-    UriListener(UriListener const&);
-    UriListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

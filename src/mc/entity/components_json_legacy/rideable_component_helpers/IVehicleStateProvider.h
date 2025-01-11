@@ -13,12 +13,6 @@ namespace RideableComponentHelpers {
 
 class IVehicleStateProvider {
 public:
-    // prevent constructor by default
-    IVehicleStateProvider& operator=(IVehicleStateProvider const&);
-    IVehicleStateProvider(IVehicleStateProvider const&);
-    IVehicleStateProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

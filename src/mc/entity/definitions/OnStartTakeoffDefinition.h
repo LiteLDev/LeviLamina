@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnStartTakeoffDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnStartTakeoffDefinition& operator=(OnStartTakeoffDefinition const&);
-    OnStartTakeoffDefinition(OnStartTakeoffDefinition const&);
-    OnStartTakeoffDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

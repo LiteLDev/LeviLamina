@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBCastleEntrance : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBCastleEntrance& operator=(NBCastleEntrance const&);
-    NBCastleEntrance(NBCastleEntrance const&);
-    NBCastleEntrance();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

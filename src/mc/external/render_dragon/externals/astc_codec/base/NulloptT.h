@@ -4,12 +4,6 @@
 
 namespace astc_codec::base {
 
-struct NulloptT {
-public:
-    // prevent constructor by default
-    NulloptT& operator=(NulloptT const&);
-    NulloptT(NulloptT const&);
-    NulloptT();
-};
+struct NulloptT {};
 
 } // namespace astc_codec::base

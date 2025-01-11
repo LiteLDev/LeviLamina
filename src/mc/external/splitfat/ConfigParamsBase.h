@@ -6,12 +6,6 @@ namespace SFAT {
 
 class ConfigParamsBase {
 public:
-    // prevent constructor by default
-    ConfigParamsBase& operator=(ConfigParamsBase const&);
-    ConfigParamsBase(ConfigParamsBase const&);
-    ConfigParamsBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

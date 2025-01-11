@@ -25,12 +25,6 @@ public:
     // FileSecureStorage inner types define
     class StorageSystem {
     public:
-        // prevent constructor by default
-        StorageSystem& operator=(StorageSystem const&);
-        StorageSystem(StorageSystem const&);
-        StorageSystem();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

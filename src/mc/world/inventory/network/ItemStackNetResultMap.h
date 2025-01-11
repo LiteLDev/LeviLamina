@@ -8,12 +8,6 @@
 
 class ItemStackNetResultMap {
 public:
-    // prevent constructor by default
-    ItemStackNetResultMap& operator=(ItemStackNetResultMap const&);
-    ItemStackNetResultMap(ItemStackNetResultMap const&);
-    ItemStackNetResultMap();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string const& getItemStackNetResultName(::ItemStackNetResult result);

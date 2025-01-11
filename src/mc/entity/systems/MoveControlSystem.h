@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class MoveControlSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    MoveControlSystem& operator=(MoveControlSystem const&);
-    MoveControlSystem(MoveControlSystem const&);
-    MoveControlSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -11,12 +11,6 @@ struct TickingSystemWithInfo;
 
 class FramewiseActionOrStopSystem {
 public:
-    // prevent constructor by default
-    FramewiseActionOrStopSystem& operator=(FramewiseActionOrStopSystem const&);
-    FramewiseActionOrStopSystem(FramewiseActionOrStopSystem const&);
-    FramewiseActionOrStopSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createFramewiseActionOrStopSystem();

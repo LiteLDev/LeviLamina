@@ -24,12 +24,6 @@ namespace ScriptModuleMinecraft {
 class ScriptTameableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::TameableComponent, ::TameableDefinition> {
 public:
-    // prevent constructor by default
-    ScriptTameableComponent& operator=(ScriptTameableComponent const&);
-    ScriptTameableComponent(ScriptTameableComponent const&);
-    ScriptTameableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBBridgeCrossing : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBBridgeCrossing& operator=(NBBridgeCrossing const&);
-    NBBridgeCrossing(NBBridgeCrossing const&);
-    NBBridgeCrossing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

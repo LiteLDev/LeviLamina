@@ -15,12 +15,6 @@ public:
     // RtpRtcpInterface inner types define
     struct Configuration {
     public:
-        // prevent constructor by default
-        Configuration& operator=(Configuration const&);
-        Configuration(Configuration const&);
-        Configuration();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Configuration();
@@ -33,19 +27,7 @@ public:
         // NOLINTEND
     };
 
-    struct SenderReportStats {
-    public:
-        // prevent constructor by default
-        SenderReportStats& operator=(SenderReportStats const&);
-        SenderReportStats(SenderReportStats const&);
-        SenderReportStats();
-    };
-
-public:
-    // prevent constructor by default
-    RtpRtcpInterface& operator=(RtpRtcpInterface const&);
-    RtpRtcpInterface(RtpRtcpInterface const&);
-    RtpRtcpInterface();
+    struct SenderReportStats {};
 };
 
 } // namespace webrtc

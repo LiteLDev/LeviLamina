@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class ChestBoat : public ::Boat {
 public:
-    // prevent constructor by default
-    ChestBoat& operator=(ChestBoat const&);
-    ChestBoat(ChestBoat const&);
-    ChestBoat();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 124

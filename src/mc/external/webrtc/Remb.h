@@ -11,11 +11,6 @@ namespace webrtc::rtcp {
 
 class Remb {
 public:
-    // prevent constructor by default
-    Remb& operator=(Remb const&);
-    Remb(Remb const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);

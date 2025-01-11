@@ -4,12 +4,6 @@
 
 namespace OS {
 
-struct ThreadPoolActionStatus {
-public:
-    // prevent constructor by default
-    ThreadPoolActionStatus& operator=(ThreadPoolActionStatus const&);
-    ThreadPoolActionStatus(ThreadPoolActionStatus const&);
-    ThreadPoolActionStatus();
-};
+struct ThreadPoolActionStatus {};
 
 } // namespace OS

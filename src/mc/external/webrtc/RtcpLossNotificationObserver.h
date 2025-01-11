@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcpLossNotificationObserver {
 public:
-    // prevent constructor by default
-    RtcpLossNotificationObserver& operator=(RtcpLossNotificationObserver const&);
-    RtcpLossNotificationObserver(RtcpLossNotificationObserver const&);
-    RtcpLossNotificationObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

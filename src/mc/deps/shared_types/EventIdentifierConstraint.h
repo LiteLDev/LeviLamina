@@ -15,12 +15,6 @@ namespace SharedTypes {
 
 class EventIdentifierConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    EventIdentifierConstraint& operator=(EventIdentifierConstraint const&);
-    EventIdentifierConstraint(EventIdentifierConstraint const&);
-    EventIdentifierConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -11,12 +11,6 @@ struct TickingSystemWithInfo;
 
 class ClientPlayerRewindSystem {
 public:
-    // prevent constructor by default
-    ClientPlayerRewindSystem& operator=(ClientPlayerRewindSystem const&);
-    ClientPlayerRewindSystem(ClientPlayerRewindSystem const&);
-    ClientPlayerRewindSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo accumulateHistoryChangesSystem();

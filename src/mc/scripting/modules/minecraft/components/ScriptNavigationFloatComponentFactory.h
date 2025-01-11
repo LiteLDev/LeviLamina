@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptNavigationFloatComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptNavigationFloatComponentFactory& operator=(ScriptNavigationFloatComponentFactory const&);
-    ScriptNavigationFloatComponentFactory(ScriptNavigationFloatComponentFactory const&);
-    ScriptNavigationFloatComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

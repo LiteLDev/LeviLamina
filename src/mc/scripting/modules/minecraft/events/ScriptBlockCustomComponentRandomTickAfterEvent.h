@@ -20,12 +20,6 @@ struct ScriptBlockCustomComponentRandomTickAfterEvent
 : public ::ScriptModuleMinecraft::ScriptBlockEvent,
   public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentRandomTickAfterEvent& operator=(ScriptBlockCustomComponentRandomTickAfterEvent const&);
-    ScriptBlockCustomComponentRandomTickAfterEvent(ScriptBlockCustomComponentRandomTickAfterEvent const&);
-    ScriptBlockCustomComponentRandomTickAfterEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockCustomComponentRandomTickAfterEvent(

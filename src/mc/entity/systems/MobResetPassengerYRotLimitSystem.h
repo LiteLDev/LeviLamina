@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct MobResetPassengerYRotLimitSystem {
 public:
-    // prevent constructor by default
-    MobResetPassengerYRotLimitSystem& operator=(MobResetPassengerYRotLimitSystem const&);
-    MobResetPassengerYRotLimitSystem(MobResetPassengerYRotLimitSystem const&);
-    MobResetPassengerYRotLimitSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

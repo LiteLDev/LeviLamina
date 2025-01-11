@@ -17,12 +17,6 @@ namespace Bedrock {
 class DeviceIdManager : public ::Bedrock::EnableNonOwnerReferences,
                         public ::Bedrock::ImplBase<::Bedrock::DeviceIdManager> {
 public:
-    // prevent constructor by default
-    DeviceIdManager& operator=(DeviceIdManager const&);
-    DeviceIdManager(DeviceIdManager const&);
-    DeviceIdManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestBrightness : public ::SimpleFloatFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestBrightness& operator=(FilterTestBrightness const&);
-    FilterTestBrightness(FilterTestBrightness const&);
-    FilterTestBrightness();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class InteractSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    InteractSystem& operator=(InteractSystem const&);
-    InteractSystem(InteractSystem const&);
-    InteractSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

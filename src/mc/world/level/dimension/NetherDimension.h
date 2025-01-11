@@ -23,12 +23,6 @@ namespace br::worldgen { class StructureSetRegistry; }
 
 class NetherDimension : public ::Dimension {
 public:
-    // prevent constructor by default
-    NetherDimension& operator=(NetherDimension const&);
-    NetherDimension(NetherDimension const&);
-    NetherDimension();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

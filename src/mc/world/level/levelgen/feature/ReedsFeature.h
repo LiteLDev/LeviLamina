@@ -14,12 +14,6 @@ class Random;
 
 class ReedsFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    ReedsFeature& operator=(ReedsFeature const&);
-    ReedsFeature(ReedsFeature const&);
-    ReedsFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

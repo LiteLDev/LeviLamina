@@ -6,12 +6,6 @@ namespace Interactions::Mining {
 
 class IMinecraftApiDependencies {
 public:
-    // prevent constructor by default
-    IMinecraftApiDependencies& operator=(IMinecraftApiDependencies const&);
-    IMinecraftApiDependencies(IMinecraftApiDependencies const&);
-    IMinecraftApiDependencies();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

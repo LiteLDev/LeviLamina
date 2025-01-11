@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcEventRtcpPacketOutgoing {
 public:
-    // prevent constructor by default
-    RtcEventRtcpPacketOutgoing& operator=(RtcEventRtcpPacketOutgoing const&);
-    RtcEventRtcpPacketOutgoing(RtcEventRtcpPacketOutgoing const&);
-    RtcEventRtcpPacketOutgoing();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RtcEventRtcpPacketOutgoing(::rtc::ArrayView<uchar const>);

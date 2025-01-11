@@ -5,12 +5,6 @@
 namespace DataStructures {
 
 template <typename T0>
-class LinkedList {
-public:
-    // prevent constructor by default
-    LinkedList& operator=(LinkedList const&);
-    LinkedList(LinkedList const&);
-    LinkedList();
-};
+class LinkedList {};
 
 } // namespace DataStructures

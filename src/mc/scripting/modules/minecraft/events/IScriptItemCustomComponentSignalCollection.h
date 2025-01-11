@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class IScriptItemCustomComponentSignalCollection : public ::ScriptDeferredEventListener {
 public:
-    // prevent constructor by default
-    IScriptItemCustomComponentSignalCollection& operator=(IScriptItemCustomComponentSignalCollection const&);
-    IScriptItemCustomComponentSignalCollection(IScriptItemCustomComponentSignalCollection const&);
-    IScriptItemCustomComponentSignalCollection();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

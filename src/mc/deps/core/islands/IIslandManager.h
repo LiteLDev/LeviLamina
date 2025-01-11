@@ -12,12 +12,6 @@ namespace Bedrock {
 
 class IIslandManager {
 public:
-    // prevent constructor by default
-    IIslandManager& operator=(IIslandManager const&);
-    IIslandManager(IIslandManager const&);
-    IIslandManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

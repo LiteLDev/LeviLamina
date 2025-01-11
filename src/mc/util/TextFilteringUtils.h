@@ -14,12 +14,6 @@ class PacketSender;
 
 class TextFilteringUtils {
 public:
-    // prevent constructor by default
-    TextFilteringUtils& operator=(TextFilteringUtils const&);
-    TextFilteringUtils(TextFilteringUtils const&);
-    TextFilteringUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool checkChatFilteringEventsAndSendChatIfTextProcessorOffline(

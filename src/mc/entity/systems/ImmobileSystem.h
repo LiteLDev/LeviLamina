@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class ImmobileSystem {
 public:
-    // prevent constructor by default
-    ImmobileSystem& operator=(ImmobileSystem const&);
-    ImmobileSystem(ImmobileSystem const&);
-    ImmobileSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

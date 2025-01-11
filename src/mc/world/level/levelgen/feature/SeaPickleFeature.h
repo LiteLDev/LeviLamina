@@ -14,12 +14,6 @@ class Random;
 
 class SeaPickleFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    SeaPickleFeature& operator=(SeaPickleFeature const&);
-    SeaPickleFeature(SeaPickleFeature const&);
-    SeaPickleFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

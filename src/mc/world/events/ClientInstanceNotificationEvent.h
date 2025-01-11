@@ -12,10 +12,4 @@ struct ScreenSizeChangedEvent;
 // clang-format on
 
 struct ClientInstanceNotificationEvent
-: public ::EventVariantImpl<::PlayerViewPerspectiveChangedEvent const, ::ScreenSizeChangedEvent const> {
-public:
-    // prevent constructor by default
-    ClientInstanceNotificationEvent& operator=(ClientInstanceNotificationEvent const&);
-    ClientInstanceNotificationEvent(ClientInstanceNotificationEvent const&);
-    ClientInstanceNotificationEvent();
-};
+: public ::EventVariantImpl<::PlayerViewPerspectiveChangedEvent const, ::ScreenSizeChangedEvent const> {};

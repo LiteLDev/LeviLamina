@@ -7,12 +7,6 @@
 
 namespace astc_codec {
 
-class IntegerSequenceDecoder : public ::astc_codec::IntegerSequenceCodec {
-public:
-    // prevent constructor by default
-    IntegerSequenceDecoder& operator=(IntegerSequenceDecoder const&);
-    IntegerSequenceDecoder(IntegerSequenceDecoder const&);
-    IntegerSequenceDecoder();
-};
+class IntegerSequenceDecoder : public ::astc_codec::IntegerSequenceCodec {};
 
 } // namespace astc_codec

@@ -12,12 +12,6 @@ struct ScoreboardId;
 
 class ScoreboardEventListener {
 public:
-    // prevent constructor by default
-    ScoreboardEventListener& operator=(ScoreboardEventListener const&);
-    ScoreboardEventListener(ScoreboardEventListener const&);
-    ScoreboardEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

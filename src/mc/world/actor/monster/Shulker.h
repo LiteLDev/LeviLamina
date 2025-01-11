@@ -26,12 +26,6 @@ namespace mce { class UUID; }
 
 class Shulker : public ::Mob {
 public:
-    // prevent constructor by default
-    Shulker& operator=(Shulker const&);
-    Shulker(Shulker const&);
-    Shulker();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

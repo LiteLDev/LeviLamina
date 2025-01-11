@@ -31,12 +31,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IItemComponentLegacyFactoryData& operator=(IItemComponentLegacyFactoryData const&);
-    IItemComponentLegacyFactoryData(IItemComponentLegacyFactoryData const&);
-    IItemComponentLegacyFactoryData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

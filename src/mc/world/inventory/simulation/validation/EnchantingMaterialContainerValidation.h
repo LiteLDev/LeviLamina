@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class EnchantingMaterialContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    EnchantingMaterialContainerValidation& operator=(EnchantingMaterialContainerValidation const&);
-    EnchantingMaterialContainerValidation(EnchantingMaterialContainerValidation const&);
-    EnchantingMaterialContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

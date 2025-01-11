@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestHasTradeSupply : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestHasTradeSupply& operator=(FilterTestHasTradeSupply const&);
-    FilterTestHasTradeSupply(FilterTestHasTradeSupply const&);
-    FilterTestHasTradeSupply();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

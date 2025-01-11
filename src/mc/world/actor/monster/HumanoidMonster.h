@@ -13,12 +13,6 @@ class DataLoadHelper;
 
 class HumanoidMonster : public ::Monster {
 public:
-    // prevent constructor by default
-    HumanoidMonster& operator=(HumanoidMonster const&);
-    HumanoidMonster(HumanoidMonster const&);
-    HumanoidMonster();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 154

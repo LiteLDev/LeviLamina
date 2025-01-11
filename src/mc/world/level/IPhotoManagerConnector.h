@@ -14,12 +14,6 @@ namespace cg { class ImageBuffer; }
 
 class IPhotoManagerConnector {
 public:
-    // prevent constructor by default
-    IPhotoManagerConnector& operator=(IPhotoManagerConnector const&);
-    IPhotoManagerConnector(IPhotoManagerConnector const&);
-    IPhotoManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

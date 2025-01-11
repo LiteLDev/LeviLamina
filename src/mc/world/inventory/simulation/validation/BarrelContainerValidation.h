@@ -13,12 +13,6 @@ class ContainerScreenContext;
 
 class BarrelContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    BarrelContainerValidation& operator=(BarrelContainerValidation const&);
-    BarrelContainerValidation(BarrelContainerValidation const&);
-    BarrelContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9

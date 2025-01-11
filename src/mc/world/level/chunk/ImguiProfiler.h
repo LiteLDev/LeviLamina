@@ -83,12 +83,6 @@ public:
 
     class ScopedTimer : public ::ImguiProfiler::Timer {
     public:
-        // prevent constructor by default
-        ScopedTimer& operator=(ScopedTimer const&);
-        ScopedTimer(ScopedTimer const&);
-        ScopedTimer();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

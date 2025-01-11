@@ -15,12 +15,6 @@ namespace cereal {
 
 class NullConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    NullConstraint& operator=(NullConstraint const&);
-    NullConstraint(NullConstraint const&);
-    NullConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -14,12 +14,6 @@ struct ActorEquippedArmorEvent;
 
 class NetheriteArmorEquippedListener : public ::EventListenerDispatcher<::ActorEventListener> {
 public:
-    // prevent constructor by default
-    NetheriteArmorEquippedListener& operator=(NetheriteArmorEquippedListener const&);
-    NetheriteArmorEquippedListener(NetheriteArmorEquippedListener const&);
-    NetheriteArmorEquippedListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

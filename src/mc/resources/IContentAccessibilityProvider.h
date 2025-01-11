@@ -12,12 +12,6 @@ class ContentIdentity;
 
 class IContentAccessibilityProvider : public ::IContentKeyProvider {
 public:
-    // prevent constructor by default
-    IContentAccessibilityProvider& operator=(IContentAccessibilityProvider const&);
-    IContentAccessibilityProvider(IContentAccessibilityProvider const&);
-    IContentAccessibilityProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

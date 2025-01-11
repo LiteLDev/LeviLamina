@@ -18,12 +18,6 @@ class LegacyStructureSettings;
 
 class EmptyPoolElement : public ::StructurePoolElement {
 public:
-    // prevent constructor by default
-    EmptyPoolElement& operator=(EmptyPoolElement const&);
-    EmptyPoolElement(EmptyPoolElement const&);
-    EmptyPoolElement();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

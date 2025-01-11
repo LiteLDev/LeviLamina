@@ -20,12 +20,6 @@ struct WasInWaterFlagComponent;
 
 class WaterSinkInputSystem {
 public:
-    // prevent constructor by default
-    WaterSinkInputSystem& operator=(WaterSinkInputSystem const&);
-    WaterSinkInputSystem(WaterSinkInputSystem const&);
-    WaterSinkInputSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createWaterSinkInputSystem();

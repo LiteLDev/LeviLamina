@@ -13,12 +13,6 @@ class ContainerScreenContext;
 
 class MaterialReducerOutputValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    MaterialReducerOutputValidation& operator=(MaterialReducerOutputValidation const&);
-    MaterialReducerOutputValidation(MaterialReducerOutputValidation const&);
-    MaterialReducerOutputValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

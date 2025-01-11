@@ -34,12 +34,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IConnectionEventing& operator=(IConnectionEventing const&);
-    IConnectionEventing(IConnectionEventing const&);
-    IConnectionEventing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

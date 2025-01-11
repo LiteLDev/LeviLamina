@@ -14,12 +14,6 @@ namespace Core {
 
 class InputFileStream : public ::Core::FileStream, public virtual ::std::ios {
 public:
-    // prevent constructor by default
-    InputFileStream& operator=(InputFileStream const&);
-    InputFileStream(InputFileStream const&);
-    InputFileStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

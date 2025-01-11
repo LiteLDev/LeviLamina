@@ -24,11 +24,6 @@ public:
     // TransportFeedback inner types define
     struct LastChunk {
     public:
-        // prevent constructor by default
-        LastChunk& operator=(LastChunk const&);
-        LastChunk(LastChunk const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void AppendTo(::std::vector<uchar>*) const;
@@ -62,11 +57,6 @@ public:
         MCAPI void* $ctor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    TransportFeedback& operator=(TransportFeedback const&);
-    TransportFeedback(TransportFeedback const&);
 
 public:
     // member functions

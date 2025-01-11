@@ -10,12 +10,6 @@ namespace br::worldgen { struct StructureTemplateBlockPalette; }
 
 class IStructureTemplate {
 public:
-    // prevent constructor by default
-    IStructureTemplate& operator=(IStructureTemplate const&);
-    IStructureTemplate(IStructureTemplate const&);
-    IStructureTemplate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -10,12 +10,6 @@ namespace Editor::Services {
 
 class ServerPlayerLogMessageHandlerService : public ::Editor::Services::IEditorService {
 public:
-    // prevent constructor by default
-    ServerPlayerLogMessageHandlerService& operator=(ServerPlayerLogMessageHandlerService const&);
-    ServerPlayerLogMessageHandlerService(ServerPlayerLogMessageHandlerService const&);
-    ServerPlayerLogMessageHandlerService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

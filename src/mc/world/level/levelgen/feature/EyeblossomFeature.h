@@ -14,12 +14,6 @@ class Random;
 
 class EyeblossomFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    EyeblossomFeature& operator=(EyeblossomFeature const&);
-    EyeblossomFeature(EyeblossomFeature const&);
-    EyeblossomFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -21,12 +21,6 @@ struct NewBlockID;
 
 class BlockEventListener {
 public:
-    // prevent constructor by default
-    BlockEventListener& operator=(BlockEventListener const&);
-    BlockEventListener(BlockEventListener const&);
-    BlockEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

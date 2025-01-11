@@ -185,12 +185,6 @@ public:
 
     class IWorldConverter {
     public:
-        // prevent constructor by default
-        IWorldConverter& operator=(IWorldConverter const&);
-        IWorldConverter(IWorldConverter const&);
-        IWorldConverter();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

@@ -9,12 +9,6 @@ class Config;
 
 class IConfigListener {
 public:
-    // prevent constructor by default
-    IConfigListener& operator=(IConfigListener const&);
-    IConfigListener(IConfigListener const&);
-    IConfigListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

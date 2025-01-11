@@ -14,12 +14,6 @@ namespace Bedrock {
 
 class WorkerPoolHandleInterface {
 public:
-    // prevent constructor by default
-    WorkerPoolHandleInterface& operator=(WorkerPoolHandleInterface const&);
-    WorkerPoolHandleInterface(WorkerPoolHandleInterface const&);
-    WorkerPoolHandleInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

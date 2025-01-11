@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct PendingRemovePassengersSystem {
 public:
-    // prevent constructor by default
-    PendingRemovePassengersSystem& operator=(PendingRemovePassengersSystem const&);
-    PendingRemovePassengersSystem(PendingRemovePassengersSystem const&);
-    PendingRemovePassengersSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

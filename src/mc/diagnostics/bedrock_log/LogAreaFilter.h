@@ -4,12 +4,6 @@
 
 namespace BedrockLog {
 
-class LogAreaFilter : public ::std::bitset<49> {
-public:
-    // prevent constructor by default
-    LogAreaFilter& operator=(LogAreaFilter const&);
-    LogAreaFilter(LogAreaFilter const&);
-    LogAreaFilter();
-};
+class LogAreaFilter : public ::std::bitset<49> {};
 
 } // namespace BedrockLog

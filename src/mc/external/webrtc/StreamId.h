@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class StreamId {
-public:
-    // prevent constructor by default
-    StreamId& operator=(StreamId const&);
-    StreamId(StreamId const&);
-    StreamId();
-};
+class StreamId {};
 
 } // namespace webrtc

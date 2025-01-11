@@ -11,12 +11,6 @@ namespace RideableComponentHelpers {
 
 class IPassengerActor {
 public:
-    // prevent constructor by default
-    IPassengerActor& operator=(IPassengerActor const&);
-    IPassengerActor(IPassengerActor const&);
-    IPassengerActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

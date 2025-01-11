@@ -14,12 +14,6 @@ namespace webrtc {
 
 class SetLocalDescriptionObserverInterface : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    SetLocalDescriptionObserverInterface& operator=(SetLocalDescriptionObserverInterface const&);
-    SetLocalDescriptionObserverInterface(SetLocalDescriptionObserverInterface const&);
-    SetLocalDescriptionObserverInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

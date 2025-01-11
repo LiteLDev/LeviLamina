@@ -39,11 +39,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IFileChunkUploader& operator=(IFileChunkUploader const&);
-    IFileChunkUploader(IFileChunkUploader const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

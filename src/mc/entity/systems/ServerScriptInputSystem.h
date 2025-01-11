@@ -11,12 +11,6 @@ struct TickingSystemWithInfo;
 
 struct ServerScriptInputSystem {
 public:
-    // prevent constructor by default
-    ServerScriptInputSystem& operator=(ServerScriptInputSystem const&);
-    ServerScriptInputSystem(ServerScriptInputSystem const&);
-    ServerScriptInputSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

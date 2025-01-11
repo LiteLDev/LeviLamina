@@ -23,12 +23,6 @@ namespace mce { class UUID; }
 
 class IPackSourceFactory {
 public:
-    // prevent constructor by default
-    IPackSourceFactory& operator=(IPackSourceFactory const&);
-    IPackSourceFactory(IPackSourceFactory const&);
-    IPackSourceFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

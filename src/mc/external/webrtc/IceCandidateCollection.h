@@ -11,12 +11,6 @@ namespace webrtc {
 
 class IceCandidateCollection {
 public:
-    // prevent constructor by default
-    IceCandidateCollection& operator=(IceCandidateCollection const&);
-    IceCandidateCollection(IceCandidateCollection const&);
-    IceCandidateCollection();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

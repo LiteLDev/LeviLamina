@@ -9,12 +9,6 @@ struct MolangEvalParams;
 
 class IMolangInstruction {
 public:
-    // prevent constructor by default
-    IMolangInstruction& operator=(IMolangInstruction const&);
-    IMolangInstruction(IMolangInstruction const&);
-    IMolangInstruction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -5,12 +5,6 @@
 namespace edu::auth {
 
 template <typename T0, typename T1>
-class CredentialReplaySubject {
-public:
-    // prevent constructor by default
-    CredentialReplaySubject& operator=(CredentialReplaySubject const&);
-    CredentialReplaySubject(CredentialReplaySubject const&);
-    CredentialReplaySubject();
-};
+class CredentialReplaySubject {};
 
 } // namespace edu::auth

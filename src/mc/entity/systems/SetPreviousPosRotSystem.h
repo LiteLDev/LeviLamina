@@ -15,12 +15,6 @@ struct StateVectorComponent;
 
 struct SetPreviousPosRotSystem {
 public:
-    // prevent constructor by default
-    SetPreviousPosRotSystem& operator=(SetPreviousPosRotSystem const&);
-    SetPreviousPosRotSystem(SetPreviousPosRotSystem const&);
-    SetPreviousPosRotSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setPreviousPosRot(

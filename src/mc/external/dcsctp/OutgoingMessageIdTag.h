@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class OutgoingMessageIdTag {
-public:
-    // prevent constructor by default
-    OutgoingMessageIdTag& operator=(OutgoingMessageIdTag const&);
-    OutgoingMessageIdTag(OutgoingMessageIdTag const&);
-    OutgoingMessageIdTag();
-};
+class OutgoingMessageIdTag {};
 
 } // namespace dcsctp

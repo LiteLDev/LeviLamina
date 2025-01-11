@@ -29,12 +29,6 @@ namespace EduCloud {
 
 struct IEduCloudSaveSystem : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IEduCloudSaveSystem& operator=(IEduCloudSaveSystem const&);
-    IEduCloudSaveSystem(IEduCloudSaveSystem const&);
-    IEduCloudSaveSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

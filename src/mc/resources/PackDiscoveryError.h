@@ -8,12 +8,6 @@
 
 class PackDiscoveryError : public ::PackError {
 public:
-    // prevent constructor by default
-    PackDiscoveryError& operator=(PackDiscoveryError const&);
-    PackDiscoveryError(PackDiscoveryError const&);
-    PackDiscoveryError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

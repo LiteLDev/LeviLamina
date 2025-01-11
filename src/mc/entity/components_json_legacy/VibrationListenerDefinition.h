@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class VibrationListenerDefinition {
 public:
-    // prevent constructor by default
-    VibrationListenerDefinition& operator=(VibrationListenerDefinition const&);
-    VibrationListenerDefinition(VibrationListenerDefinition const&);
-    VibrationListenerDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

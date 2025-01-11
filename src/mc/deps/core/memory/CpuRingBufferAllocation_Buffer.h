@@ -25,12 +25,6 @@ public:
         Buffer(Buffer const&);
         Buffer();
     };
-
-public:
-    // prevent constructor by default
-    CpuRingBufferAllocation_Buffer& operator=(CpuRingBufferAllocation_Buffer const&);
-    CpuRingBufferAllocation_Buffer(CpuRingBufferAllocation_Buffer const&);
-    CpuRingBufferAllocation_Buffer();
 };
 
 } // namespace Core

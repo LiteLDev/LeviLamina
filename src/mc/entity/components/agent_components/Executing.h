@@ -4,12 +4,6 @@
 
 namespace AgentComponents {
 
-struct Executing {
-public:
-    // prevent constructor by default
-    Executing& operator=(Executing const&);
-    Executing(Executing const&);
-    Executing();
-};
+struct Executing {};
 
 } // namespace AgentComponents

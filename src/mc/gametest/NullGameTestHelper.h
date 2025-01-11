@@ -28,12 +28,6 @@ namespace gametest { struct GameTestError; }
 
 class NullGameTestHelper : public ::gametest::BaseGameTestHelper {
 public:
-    // prevent constructor by default
-    NullGameTestHelper& operator=(NullGameTestHelper const&);
-    NullGameTestHelper(NullGameTestHelper const&);
-    NullGameTestHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

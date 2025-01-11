@@ -9,12 +9,6 @@ namespace webrtc {
 
 class PlanarYuv8Buffer : public ::webrtc::PlanarYuvBuffer {
 public:
-    // prevent constructor by default
-    PlanarYuv8Buffer& operator=(PlanarYuv8Buffer const&);
-    PlanarYuv8Buffer(PlanarYuv8Buffer const&);
-    PlanarYuv8Buffer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 15

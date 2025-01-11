@@ -4,12 +4,6 @@
 
 namespace br::worldgen::processors {
 
-struct AlwaysTrueType {
-public:
-    // prevent constructor by default
-    AlwaysTrueType& operator=(AlwaysTrueType const&);
-    AlwaysTrueType(AlwaysTrueType const&);
-    AlwaysTrueType();
-};
+struct AlwaysTrueType {};
 
 } // namespace br::worldgen::processors

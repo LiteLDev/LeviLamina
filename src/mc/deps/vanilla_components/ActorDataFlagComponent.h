@@ -8,12 +8,6 @@
 
 struct ActorDataFlagComponent : public ::ActorDataComponentBase<::std::bitset<119>> {
 public:
-    // prevent constructor by default
-    ActorDataFlagComponent& operator=(ActorDataFlagComponent const&);
-    ActorDataFlagComponent(ActorDataFlagComponent const&);
-    ActorDataFlagComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint64 getFlags(int id) const;

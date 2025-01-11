@@ -12,12 +12,6 @@ class EntityContext;
 
 class EntityStorageKeySystem : public ::ISystem {
 public:
-    // prevent constructor by default
-    EntityStorageKeySystem& operator=(EntityStorageKeySystem const&);
-    EntityStorageKeySystem(EntityStorageKeySystem const&);
-    EntityStorageKeySystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

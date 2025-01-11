@@ -15,12 +15,6 @@ class DedicatedServer;
 
 class ClearRealmEventsCommand : public ::ServerCommand {
 public:
-    // prevent constructor by default
-    ClearRealmEventsCommand& operator=(ClearRealmEventsCommand const&);
-    ClearRealmEventsCommand(ClearRealmEventsCommand const&);
-    ClearRealmEventsCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

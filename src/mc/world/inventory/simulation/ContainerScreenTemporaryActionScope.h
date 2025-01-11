@@ -7,12 +7,6 @@
 
 class ContainerScreenTemporaryActionScope : public ::ContainerScreenActionScope {
 public:
-    // prevent constructor by default
-    ContainerScreenTemporaryActionScope& operator=(ContainerScreenTemporaryActionScope const&);
-    ContainerScreenTemporaryActionScope(ContainerScreenTemporaryActionScope const&);
-    ContainerScreenTemporaryActionScope();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

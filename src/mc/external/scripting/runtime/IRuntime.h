@@ -35,12 +35,6 @@ namespace Scripting {
 
 class IRuntime {
 public:
-    // prevent constructor by default
-    IRuntime& operator=(IRuntime const&);
-    IRuntime(IRuntime const&);
-    IRuntime();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

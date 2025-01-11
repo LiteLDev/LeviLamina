@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class DataChunk {
 public:
-    // prevent constructor by default
-    DataChunk& operator=(DataChunk const&);
-    DataChunk(DataChunk const&);
-    DataChunk();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::DataChunk> Parse(::rtc::ArrayView<uchar const>);

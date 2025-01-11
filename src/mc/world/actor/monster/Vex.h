@@ -18,12 +18,6 @@ struct VariantParameterList;
 
 class Vex : public ::Monster {
 public:
-    // prevent constructor by default
-    Vex& operator=(Vex const&);
-    Vex(Vex const&);
-    Vex();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 31

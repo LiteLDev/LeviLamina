@@ -133,12 +133,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    AudioSendStream& operator=(AudioSendStream const&);
-    AudioSendStream(AudioSendStream const&);
-    AudioSendStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

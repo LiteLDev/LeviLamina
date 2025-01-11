@@ -6,12 +6,6 @@ namespace PlayFab {
 
 class IPlayFabEmitEventRequest {
 public:
-    // prevent constructor by default
-    IPlayFabEmitEventRequest& operator=(IPlayFabEmitEventRequest const&);
-    IPlayFabEmitEventRequest(IPlayFabEmitEventRequest const&);
-    IPlayFabEmitEventRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

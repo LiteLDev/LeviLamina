@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class CreatedOutputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CreatedOutputContainerValidation& operator=(CreatedOutputContainerValidation const&);
-    CreatedOutputContainerValidation(CreatedOutputContainerValidation const&);
-    CreatedOutputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

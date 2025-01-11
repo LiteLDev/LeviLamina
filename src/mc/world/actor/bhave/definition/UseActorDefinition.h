@@ -7,12 +7,6 @@
 
 class UseActorDefinition : public ::BehaviorDefinition {
 public:
-    // prevent constructor by default
-    UseActorDefinition& operator=(UseActorDefinition const&);
-    UseActorDefinition(UseActorDefinition const&);
-    UseActorDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

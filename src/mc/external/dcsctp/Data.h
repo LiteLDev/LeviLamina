@@ -21,12 +21,6 @@ namespace dcsctp {
 
 struct Data {
 public:
-    // prevent constructor by default
-    Data& operator=(Data const&);
-    Data(Data const&);
-    Data();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::dcsctp::Data Clone() const;

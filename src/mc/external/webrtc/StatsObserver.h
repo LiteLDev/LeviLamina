@@ -14,12 +14,6 @@ namespace webrtc {
 
 class StatsObserver : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    StatsObserver& operator=(StatsObserver const&);
-    StatsObserver(StatsObserver const&);
-    StatsObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

@@ -9,11 +9,6 @@ namespace cricket {
 
 struct RtcpMuxFilter {
 public:
-    // prevent constructor by default
-    RtcpMuxFilter& operator=(RtcpMuxFilter const&);
-    RtcpMuxFilter(RtcpMuxFilter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool ExpectAnswer(::cricket::ContentSource);

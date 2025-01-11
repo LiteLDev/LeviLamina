@@ -7,12 +7,6 @@
 
 class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
-    // prevent constructor by default
-    ClientLevelEventCoordinator& operator=(ClientLevelEventCoordinator const&);
-    ClientLevelEventCoordinator(ClientLevelEventCoordinator const&);
-    ClientLevelEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

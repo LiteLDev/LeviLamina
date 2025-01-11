@@ -17,12 +17,6 @@ namespace Util { class XXHash; }
 
 class IStructurePoolBlockPredicate {
 public:
-    // prevent constructor by default
-    IStructurePoolBlockPredicate& operator=(IStructurePoolBlockPredicate const&);
-    IStructurePoolBlockPredicate(IStructurePoolBlockPredicate const&);
-    IStructurePoolBlockPredicate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -15,12 +15,6 @@ namespace dcsctp {
 
 class PacketSender {
 public:
-    // prevent constructor by default
-    PacketSender& operator=(PacketSender const&);
-    PacketSender(PacketSender const&);
-    PacketSender();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

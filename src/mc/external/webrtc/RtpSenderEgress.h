@@ -35,12 +35,6 @@ public:
     // RtpSenderEgress inner types define
     class NonPacedPacketSender {
     public:
-        // prevent constructor by default
-        NonPacedPacketSender& operator=(NonPacedPacketSender const&);
-        NonPacedPacketSender(NonPacedPacketSender const&);
-        NonPacedPacketSender();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI NonPacedPacketSender(::webrtc::TaskQueueBase&, ::webrtc::RtpSenderEgress*, ::webrtc::PacketSequencer*);
@@ -63,12 +57,6 @@ public:
 
     struct Packet {
     public:
-        // prevent constructor by default
-        Packet& operator=(Packet const&);
-        Packet(Packet const&);
-        Packet();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Packet();
@@ -80,12 +68,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    RtpSenderEgress& operator=(RtpSenderEgress const&);
-    RtpSenderEgress(RtpSenderEgress const&);
-    RtpSenderEgress();
 
 public:
     // member functions

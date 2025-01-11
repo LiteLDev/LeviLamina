@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class CombinedHotbarAndInventoryContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CombinedHotbarAndInventoryContainerValidation& operator=(CombinedHotbarAndInventoryContainerValidation const&);
-    CombinedHotbarAndInventoryContainerValidation(CombinedHotbarAndInventoryContainerValidation const&);
-    CombinedHotbarAndInventoryContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

@@ -14,12 +14,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class OnInteractTriggerDescription : public ::BlockTriggerDescription<::OnInteractTrigger> {
 public:
-    // prevent constructor by default
-    OnInteractTriggerDescription& operator=(OnInteractTriggerDescription const&);
-    OnInteractTriggerDescription(OnInteractTriggerDescription const&);
-    OnInteractTriggerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

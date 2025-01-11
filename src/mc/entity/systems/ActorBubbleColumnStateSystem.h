@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class ActorBubbleColumnStateSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ActorBubbleColumnStateSystem& operator=(ActorBubbleColumnStateSystem const&);
-    ActorBubbleColumnStateSystem(ActorBubbleColumnStateSystem const&);
-    ActorBubbleColumnStateSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -14,11 +14,6 @@ namespace BlockQueuedTickingVersioning {
 
 class BlockQueuedTicking11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockQueuedTicking11910Upgrade& operator=(BlockQueuedTicking11910Upgrade const&);
-    BlockQueuedTicking11910Upgrade(BlockQueuedTicking11910Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

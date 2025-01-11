@@ -26,12 +26,6 @@ class VanillaServerGameplayEventListener : public ::EventListenerDispatcher<::Ac
                                            public ::EventListenerDispatcher<::PlayerEventListener>,
                                            public ::EventListenerDispatcher<::LevelEventListener> {
 public:
-    // prevent constructor by default
-    VanillaServerGameplayEventListener& operator=(VanillaServerGameplayEventListener const&);
-    VanillaServerGameplayEventListener(VanillaServerGameplayEventListener const&);
-    VanillaServerGameplayEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 32

@@ -16,12 +16,6 @@ namespace Editor {
 
 class PlayerHelpers {
 public:
-    // prevent constructor by default
-    PlayerHelpers& operator=(PlayerHelpers const&);
-    PlayerHelpers(PlayerHelpers const&);
-    PlayerHelpers();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Editor::Services::ModeServiceProvider const* _getModeServiceConst(::Player const& player);

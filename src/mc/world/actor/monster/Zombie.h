@@ -29,12 +29,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    Zombie& operator=(Zombie const&);
-    Zombie(Zombie const&);
-    Zombie();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 97

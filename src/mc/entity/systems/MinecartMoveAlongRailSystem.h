@@ -30,12 +30,6 @@ struct VehicleComponent;
 
 class MinecartMoveAlongRailSystem {
 public:
-    // prevent constructor by default
-    MinecartMoveAlongRailSystem& operator=(MinecartMoveAlongRailSystem const&);
-    MinecartMoveAlongRailSystem(MinecartMoveAlongRailSystem const&);
-    MinecartMoveAlongRailSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _calculateAllPassengersRailMovementInput(

@@ -11,12 +11,6 @@ struct FullContainerName;
 
 class IDynamicContainerSerialization {
 public:
-    // prevent constructor by default
-    IDynamicContainerSerialization& operator=(IDynamicContainerSerialization const&);
-    IDynamicContainerSerialization(IDynamicContainerSerialization const&);
-    IDynamicContainerSerialization();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

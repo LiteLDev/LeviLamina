@@ -16,12 +16,6 @@ namespace webrtc {
 
 class PeerConnectionMessageHandler {
 public:
-    // prevent constructor by default
-    PeerConnectionMessageHandler& operator=(PeerConnectionMessageHandler const&);
-    PeerConnectionMessageHandler(PeerConnectionMessageHandler const&);
-    PeerConnectionMessageHandler();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver*, ::webrtc::RTCError);

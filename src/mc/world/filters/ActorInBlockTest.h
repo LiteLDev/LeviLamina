@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorInBlockTest : public ::SimpleHashStringFilterTest {
 public:
-    // prevent constructor by default
-    ActorInBlockTest& operator=(ActorInBlockTest const&);
-    ActorInBlockTest(ActorInBlockTest const&);
-    ActorInBlockTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

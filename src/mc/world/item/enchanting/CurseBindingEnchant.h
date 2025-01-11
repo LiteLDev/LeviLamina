@@ -7,12 +7,6 @@
 
 class CurseBindingEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    CurseBindingEnchant& operator=(CurseBindingEnchant const&);
-    CurseBindingEnchant(CurseBindingEnchant const&);
-    CurseBindingEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

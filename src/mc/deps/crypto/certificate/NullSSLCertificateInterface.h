@@ -12,12 +12,6 @@ namespace Crypto::Certificate {
 
 class NullSSLCertificateInterface : public ::Crypto::Certificate::ISystemInterface {
 public:
-    // prevent constructor by default
-    NullSSLCertificateInterface& operator=(NullSSLCertificateInterface const&);
-    NullSSLCertificateInterface(NullSSLCertificateInterface const&);
-    NullSSLCertificateInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

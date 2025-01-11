@@ -18,12 +18,6 @@ struct VariantParameterList;
 
 class Ghast : public ::Monster {
 public:
-    // prevent constructor by default
-    Ghast& operator=(Ghast const&);
-    Ghast(Ghast const&);
-    Ghast();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 182

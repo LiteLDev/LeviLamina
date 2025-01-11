@@ -11,12 +11,6 @@ namespace persona {
 
 class PersonaColors {
 public:
-    // prevent constructor by default
-    PersonaColors& operator=(PersonaColors const&);
-    PersonaColors(PersonaColors const&);
-    PersonaColors();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mHairColors();

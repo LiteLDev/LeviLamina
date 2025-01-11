@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RtpPacketSinkInterface {
 public:
-    // prevent constructor by default
-    RtpPacketSinkInterface& operator=(RtpPacketSinkInterface const&);
-    RtpPacketSinkInterface(RtpPacketSinkInterface const&);
-    RtpPacketSinkInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

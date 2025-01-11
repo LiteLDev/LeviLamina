@@ -25,12 +25,6 @@ namespace webrtc {
 
 class DataChannelController {
 public:
-    // prevent constructor by default
-    DataChannelController& operator=(DataChannelController const&);
-    DataChannelController(DataChannelController const&);
-    DataChannelController();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AllocateSctpSids(::rtc::SSLRole);

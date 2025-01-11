@@ -11,12 +11,6 @@ namespace RakNet {
 
 class RakNetSocket2Allocator {
 public:
-    // prevent constructor by default
-    RakNetSocket2Allocator& operator=(RakNetSocket2Allocator const&);
-    RakNetSocket2Allocator(RakNetSocket2Allocator const&);
-    RakNetSocket2Allocator();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::RakNet::RakNetSocket2> CreateSharedRNS2();

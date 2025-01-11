@@ -4,12 +4,6 @@
 
 namespace Scripting {
 
-struct EqualPropertyBinding {
-public:
-    // prevent constructor by default
-    EqualPropertyBinding& operator=(EqualPropertyBinding const&);
-    EqualPropertyBinding(EqualPropertyBinding const&);
-    EqualPropertyBinding();
-};
+struct EqualPropertyBinding {};
 
 } // namespace Scripting

@@ -32,13 +32,7 @@ public:
     // clang-format on
 
     // RRSendQueue inner types define
-    struct MessageAttributes {
-    public:
-        // prevent constructor by default
-        MessageAttributes& operator=(MessageAttributes const&);
-        MessageAttributes(MessageAttributes const&);
-        MessageAttributes();
-    };
+    struct MessageAttributes {};
 
     class OutgoingStream {
     public:
@@ -49,12 +43,6 @@ public:
 
         // OutgoingStream inner types define
         struct Item {
-        public:
-            // prevent constructor by default
-            Item& operator=(Item const&);
-            Item(Item const&);
-            Item();
-
         public:
             // member functions
             // NOLINTBEGIN
@@ -75,12 +63,6 @@ public:
             );
             // NOLINTEND
         };
-
-    public:
-        // prevent constructor by default
-        OutgoingStream& operator=(OutgoingStream const&);
-        OutgoingStream(OutgoingStream const&);
-        OutgoingStream();
 
     public:
         // member functions
@@ -119,12 +101,6 @@ public:
 
     struct ThresholdWatcher {
     public:
-        // prevent constructor by default
-        ThresholdWatcher& operator=(ThresholdWatcher const&);
-        ThresholdWatcher(ThresholdWatcher const&);
-        ThresholdWatcher();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void Decrease(uint64);
@@ -148,12 +124,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    RRSendQueue& operator=(RRSendQueue const&);
-    RRSendQueue(RRSendQueue const&);
-    RRSendQueue();
 
 public:
     // member functions

@@ -11,11 +11,6 @@ namespace webrtc {
 
 class RTCOutboundRtpStreamStats {
 public:
-    // prevent constructor by default
-    RTCOutboundRtpStreamStats& operator=(RTCOutboundRtpStreamStats const&);
-    RTCOutboundRtpStreamStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCOutboundRtpStreamStats(::webrtc::RTCOutboundRtpStreamStats const&);

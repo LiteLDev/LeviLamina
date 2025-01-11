@@ -13,12 +13,6 @@ namespace br::worldgen {
 
 struct ChunkStructureAccess {
 public:
-    // prevent constructor by default
-    ChunkStructureAccess& operator=(ChunkStructureAccess const&);
-    ChunkStructureAccess(ChunkStructureAccess const&);
-    ChunkStructureAccess();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -7,12 +7,6 @@
 
 struct GenericMoveControlDescription : public ::MoveControlDescription {
 public:
-    // prevent constructor by default
-    GenericMoveControlDescription& operator=(GenericMoveControlDescription const&);
-    GenericMoveControlDescription(GenericMoveControlDescription const&);
-    GenericMoveControlDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

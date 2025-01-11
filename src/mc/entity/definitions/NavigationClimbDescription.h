@@ -7,12 +7,6 @@
 
 struct NavigationClimbDescription : public ::NavigationDescription {
 public:
-    // prevent constructor by default
-    NavigationClimbDescription& operator=(NavigationClimbDescription const&);
-    NavigationClimbDescription(NavigationClimbDescription const&);
-    NavigationClimbDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

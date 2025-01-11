@@ -255,13 +255,7 @@ public:
 
     struct SymbolHasher {};
 
-    struct SymbolPairHasher {
-    public:
-        // prevent constructor by default
-        SymbolPairHasher& operator=(SymbolPairHasher const&);
-        SymbolPairHasher(SymbolPairHasher const&);
-        SymbolPairHasher();
-    };
+    struct SymbolPairHasher {};
 
     using NonTerminal = ::CommandRegistry::Symbol;
 

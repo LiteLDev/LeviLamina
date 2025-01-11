@@ -59,12 +59,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    Call& operator=(Call const&);
-    Call(Call const&);
-    Call();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BlockBreakSensorSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BlockBreakSensorSystem& operator=(BlockBreakSensorSystem const&);
-    BlockBreakSensorSystem(BlockBreakSensorSystem const&);
-    BlockBreakSensorSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct SetFriendTagsResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    SetFriendTagsResult& operator=(SetFriendTagsResult const&);
-    SetFriendTagsResult(SetFriendTagsResult const&);
-    SetFriendTagsResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -6,12 +6,6 @@ namespace rtc {
 
 struct SSLCertificateStats {
 public:
-    // prevent constructor by default
-    SSLCertificateStats& operator=(SSLCertificateStats const&);
-    SSLCertificateStats(SSLCertificateStats const&);
-    SSLCertificateStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::rtc::SSLCertificateStats> Copy() const;

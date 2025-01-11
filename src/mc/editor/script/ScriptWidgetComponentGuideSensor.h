@@ -21,12 +21,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentGuideSensor : public ::Editor::ScriptModule::ScriptWidgetComponentBase {
 public:
-    // prevent constructor by default
-    ScriptWidgetComponentGuideSensor& operator=(ScriptWidgetComponentGuideSensor const&);
-    ScriptWidgetComponentGuideSensor(ScriptWidgetComponentGuideSensor const&);
-    ScriptWidgetComponentGuideSensor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

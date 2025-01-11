@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtpDemuxerCriteria {
 public:
-    // prevent constructor by default
-    RtpDemuxerCriteria& operator=(RtpDemuxerCriteria const&);
-    RtpDemuxerCriteria(RtpDemuxerCriteria const&);
-    RtpDemuxerCriteria();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RtpDemuxerCriteria(::std::string_view, ::std::string_view);

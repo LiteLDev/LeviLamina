@@ -18,12 +18,6 @@ struct TickingSystemWithInfo;
 
 class FallingBlockNormalTickSystem {
 public:
-    // prevent constructor by default
-    FallingBlockNormalTickSystem& operator=(FallingBlockNormalTickSystem const&);
-    FallingBlockNormalTickSystem(FallingBlockNormalTickSystem const&);
-    FallingBlockNormalTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doFallingBlockNormalTickSystem(

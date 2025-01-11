@@ -7,12 +7,6 @@
 
 class ServicesManagerServiceClient : public ::ServiceClient {
 public:
-    // prevent constructor by default
-    ServicesManagerServiceClient& operator=(ServicesManagerServiceClient const&);
-    ServicesManagerServiceClient(ServicesManagerServiceClient const&);
-    ServicesManagerServiceClient();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

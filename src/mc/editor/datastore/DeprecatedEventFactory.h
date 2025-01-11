@@ -58,12 +58,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    DeprecatedEventFactory& operator=(DeprecatedEventFactory const&);
-    DeprecatedEventFactory(DeprecatedEventFactory const&);
-    DeprecatedEventFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent

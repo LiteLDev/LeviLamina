@@ -10,12 +10,6 @@ namespace Editor::ScriptModule {
 
 class ScriptProjectExportType {
 public:
-    // prevent constructor by default
-    ScriptProjectExportType& operator=(ScriptProjectExportType const&);
-    ScriptProjectExportType(ScriptProjectExportType const&);
-    ScriptProjectExportType();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<::Editor::ProjectExportType, ::Editor::ProjectExportType>

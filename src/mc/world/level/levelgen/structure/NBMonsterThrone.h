@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBMonsterThrone : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBMonsterThrone& operator=(NBMonsterThrone const&);
-    NBMonsterThrone(NBMonsterThrone const&);
-    NBMonsterThrone();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

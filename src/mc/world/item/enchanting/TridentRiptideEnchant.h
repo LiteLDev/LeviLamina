@@ -7,12 +7,6 @@
 
 class TridentRiptideEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    TridentRiptideEnchant& operator=(TridentRiptideEnchant const&);
-    TridentRiptideEnchant(TridentRiptideEnchant const&);
-    TridentRiptideEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

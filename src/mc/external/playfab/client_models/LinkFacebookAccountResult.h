@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkFacebookAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkFacebookAccountResult& operator=(LinkFacebookAccountResult const&);
-    LinkFacebookAccountResult(LinkFacebookAccountResult const&);
-    LinkFacebookAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

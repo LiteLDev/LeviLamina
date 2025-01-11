@@ -42,12 +42,6 @@ public:
     // StructurePoolElement inner types define
     class ITemplate {
     public:
-        // prevent constructor by default
-        ITemplate& operator=(ITemplate const&);
-        ITemplate(ITemplate const&);
-        ITemplate();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

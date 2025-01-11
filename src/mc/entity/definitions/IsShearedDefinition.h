@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsShearedDefinition {
 public:
-    // prevent constructor by default
-    IsShearedDefinition& operator=(IsShearedDefinition const&);
-    IsShearedDefinition(IsShearedDefinition const&);
-    IsShearedDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

@@ -14,12 +14,6 @@ class Random;
 
 class KelpFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    KelpFeature& operator=(KelpFeature const&);
-    KelpFeature(KelpFeature const&);
-    KelpFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

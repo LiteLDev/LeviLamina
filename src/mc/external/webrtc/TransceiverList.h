@@ -17,12 +17,6 @@ namespace webrtc {
 
 class TransceiverList {
 public:
-    // prevent constructor by default
-    TransceiverList& operator=(TransceiverList const&);
-    TransceiverList(TransceiverList const&);
-    TransceiverList();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Add(::webrtc::scoped_refptr<::webrtc::RtpTransceiverProxyWithInternal<::webrtc::RtpTransceiver>>);

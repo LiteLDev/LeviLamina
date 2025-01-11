@@ -11,12 +11,6 @@ namespace RakNet {
 
 class RNS2EventHandler {
 public:
-    // prevent constructor by default
-    RNS2EventHandler& operator=(RNS2EventHandler const&);
-    RNS2EventHandler(RNS2EventHandler const&);
-    RNS2EventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

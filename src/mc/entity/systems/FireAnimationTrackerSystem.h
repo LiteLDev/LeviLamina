@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class FireAnimationTrackerSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    FireAnimationTrackerSystem& operator=(FireAnimationTrackerSystem const&);
-    FireAnimationTrackerSystem(FireAnimationTrackerSystem const&);
-    FireAnimationTrackerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

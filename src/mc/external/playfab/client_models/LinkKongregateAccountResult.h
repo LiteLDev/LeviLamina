@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkKongregateAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkKongregateAccountResult& operator=(LinkKongregateAccountResult const&);
-    LinkKongregateAccountResult(LinkKongregateAccountResult const&);
-    LinkKongregateAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

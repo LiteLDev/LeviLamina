@@ -12,12 +12,6 @@ class AABB;
 
 class GetCollisionShapeInterface {
 public:
-    // prevent constructor by default
-    GetCollisionShapeInterface& operator=(GetCollisionShapeInterface const&);
-    GetCollisionShapeInterface(GetCollisionShapeInterface const&);
-    GetCollisionShapeInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

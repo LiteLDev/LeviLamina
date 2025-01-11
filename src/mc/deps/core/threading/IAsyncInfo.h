@@ -9,12 +9,6 @@ namespace Bedrock::Threading {
 
 class IAsyncInfo {
 public:
-    // prevent constructor by default
-    IAsyncInfo& operator=(IAsyncInfo const&);
-    IAsyncInfo(IAsyncInfo const&);
-    IAsyncInfo();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

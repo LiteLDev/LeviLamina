@@ -7,12 +7,6 @@
 
 class LootEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    LootEnchant& operator=(LootEnchant const&);
-    LootEnchant(LootEnchant const&);
-    LootEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

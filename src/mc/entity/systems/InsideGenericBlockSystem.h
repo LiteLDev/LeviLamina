@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct InsideGenericBlockSystem {
 public:
-    // prevent constructor by default
-    InsideGenericBlockSystem& operator=(InsideGenericBlockSystem const&);
-    InsideGenericBlockSystem(InsideGenericBlockSystem const&);
-    InsideGenericBlockSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

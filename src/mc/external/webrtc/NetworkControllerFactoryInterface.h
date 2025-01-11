@@ -13,12 +13,6 @@ namespace webrtc {
 
 class NetworkControllerFactoryInterface {
 public:
-    // prevent constructor by default
-    NetworkControllerFactoryInterface& operator=(NetworkControllerFactoryInterface const&);
-    NetworkControllerFactoryInterface(NetworkControllerFactoryInterface const&);
-    NetworkControllerFactoryInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

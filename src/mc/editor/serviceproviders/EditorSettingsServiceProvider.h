@@ -22,12 +22,6 @@ namespace Editor::Services {
 
 class EditorSettingsServiceProvider {
 public:
-    // prevent constructor by default
-    EditorSettingsServiceProvider& operator=(EditorSettingsServiceProvider const&);
-    EditorSettingsServiceProvider(EditorSettingsServiceProvider const&);
-    EditorSettingsServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

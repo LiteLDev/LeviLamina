@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcEventBweUpdateLossBased {
 public:
-    // prevent constructor by default
-    RtcEventBweUpdateLossBased& operator=(RtcEventBweUpdateLossBased const&);
-    RtcEventBweUpdateLossBased(RtcEventBweUpdateLossBased const&);
-    RtcEventBweUpdateLossBased();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RtcEventBweUpdateLossBased(int, uchar, int);

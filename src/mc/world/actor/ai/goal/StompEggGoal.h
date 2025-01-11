@@ -15,12 +15,6 @@ class Mob;
 
 class StompEggGoal : public ::StompBlockGoal {
 public:
-    // prevent constructor by default
-    StompEggGoal& operator=(StompEggGoal const&);
-    StompEggGoal(StompEggGoal const&);
-    StompEggGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

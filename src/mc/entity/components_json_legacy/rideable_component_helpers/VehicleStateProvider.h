@@ -17,12 +17,6 @@ namespace RideableComponentHelpers {
 
 class VehicleStateProvider : public ::RideableComponentHelpers::IVehicleStateProvider {
 public:
-    // prevent constructor by default
-    VehicleStateProvider& operator=(VehicleStateProvider const&);
-    VehicleStateProvider(VehicleStateProvider const&);
-    VehicleStateProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

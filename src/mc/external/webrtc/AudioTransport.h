@@ -6,12 +6,6 @@ namespace webrtc {
 
 class AudioTransport {
 public:
-    // prevent constructor by default
-    AudioTransport& operator=(AudioTransport const&);
-    AudioTransport(AudioTransport const&);
-    AudioTransport();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -4,12 +4,6 @@
 
 namespace Realms {
 
-struct SubscriptionInfo {
-public:
-    // prevent constructor by default
-    SubscriptionInfo& operator=(SubscriptionInfo const&);
-    SubscriptionInfo(SubscriptionInfo const&);
-    SubscriptionInfo();
-};
+struct SubscriptionInfo {};
 
 } // namespace Realms

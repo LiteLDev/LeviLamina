@@ -52,12 +52,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    VideoDecoder& operator=(VideoDecoder const&);
-    VideoDecoder(VideoDecoder const&);
-    VideoDecoder();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -14,12 +14,6 @@ class ProjectileComponent;
 
 class ProjectileSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ProjectileSystem& operator=(ProjectileSystem const&);
-    ProjectileSystem(ProjectileSystem const&);
-    ProjectileSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

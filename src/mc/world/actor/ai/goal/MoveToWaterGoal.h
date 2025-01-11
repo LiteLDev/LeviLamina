@@ -7,12 +7,6 @@
 
 class MoveToWaterGoal : public ::MoveToLiquidGoal {
 public:
-    // prevent constructor by default
-    MoveToWaterGoal& operator=(MoveToWaterGoal const&);
-    MoveToWaterGoal(MoveToWaterGoal const&);
-    MoveToWaterGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

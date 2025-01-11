@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class IllagerBeast : public ::Monster {
 public:
-    // prevent constructor by default
-    IllagerBeast& operator=(IllagerBeast const&);
-    IllagerBeast(IllagerBeast const&);
-    IllagerBeast();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 19

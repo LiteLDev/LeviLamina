@@ -12,12 +12,6 @@ class ClientNetworkEventListener;
 
 class ClientNetworkEventCoordinator : public ::EventCoordinator<::ClientNetworkEventListener> {
 public:
-    // prevent constructor by default
-    ClientNetworkEventCoordinator& operator=(ClientNetworkEventCoordinator const&);
-    ClientNetworkEventCoordinator(ClientNetworkEventCoordinator const&);
-    ClientNetworkEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

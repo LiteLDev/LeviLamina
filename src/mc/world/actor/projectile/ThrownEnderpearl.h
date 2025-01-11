@@ -16,12 +16,6 @@ struct VariantParameterList;
 
 class ThrownEnderpearl : public ::Throwable {
 public:
-    // prevent constructor by default
-    ThrownEnderpearl& operator=(ThrownEnderpearl const&);
-    ThrownEnderpearl(ThrownEnderpearl const&);
-    ThrownEnderpearl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

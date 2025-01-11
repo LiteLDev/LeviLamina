@@ -19,12 +19,6 @@ struct VariantParameterList;
 
 class Axolotl : public ::Animal {
 public:
-    // prevent constructor by default
-    Axolotl& operator=(Axolotl const&);
-    Axolotl(Axolotl const&);
-    Axolotl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

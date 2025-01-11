@@ -15,12 +15,6 @@ struct OutgoingPacketEvent;
 struct ServerNetworkGameplayNotificationEvent
 : public ::EventVariantImpl<::ChatEvent const, ::IncomingPacketEvent const, ::OutgoingPacketEvent const> {
 public:
-    // prevent constructor by default
-    ServerNetworkGameplayNotificationEvent& operator=(ServerNetworkGameplayNotificationEvent const&);
-    ServerNetworkGameplayNotificationEvent(ServerNetworkGameplayNotificationEvent const&);
-    ServerNetworkGameplayNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ServerNetworkGameplayNotificationEvent();

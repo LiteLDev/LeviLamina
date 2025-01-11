@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptOnFireComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptOnFireComponent& operator=(ScriptOnFireComponent const&);
-    ScriptOnFireComponent(ScriptOnFireComponent const&);
-    ScriptOnFireComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

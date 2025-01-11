@@ -6,12 +6,6 @@ namespace xbox::httpclient {
 
 struct http_memory_buffer {
 public:
-    // prevent constructor by default
-    http_memory_buffer& operator=(http_memory_buffer const&);
-    http_memory_buffer(http_memory_buffer const&);
-    http_memory_buffer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~http_memory_buffer();

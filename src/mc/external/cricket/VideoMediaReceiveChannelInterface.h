@@ -22,12 +22,6 @@ namespace cricket {
 
 class VideoMediaReceiveChannelInterface : public ::cricket::MediaReceiveChannelInterface {
 public:
-    // prevent constructor by default
-    VideoMediaReceiveChannelInterface& operator=(VideoMediaReceiveChannelInterface const&);
-    VideoMediaReceiveChannelInterface(VideoMediaReceiveChannelInterface const&);
-    VideoMediaReceiveChannelInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 17

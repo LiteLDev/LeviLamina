@@ -12,12 +12,6 @@ struct ClientMessageEvent;
 
 class ClientNetworkEventListener {
 public:
-    // prevent constructor by default
-    ClientNetworkEventListener& operator=(ClientNetworkEventListener const&);
-    ClientNetworkEventListener(ClientNetworkEventListener const&);
-    ClientNetworkEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

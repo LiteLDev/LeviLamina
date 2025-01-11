@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcpRttStats {
 public:
-    // prevent constructor by default
-    RtcpRttStats& operator=(RtcpRttStats const&);
-    RtcpRttStats(RtcpRttStats const&);
-    RtcpRttStats();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

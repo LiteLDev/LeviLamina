@@ -10,12 +10,6 @@ struct PDFOptions;
 
 class PDFWriter : public ::std::enable_shared_from_this<::PDFWriter> {
 public:
-    // prevent constructor by default
-    PDFWriter& operator=(PDFWriter const&);
-    PDFWriter(PDFWriter const&);
-    PDFWriter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

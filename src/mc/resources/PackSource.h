@@ -17,12 +17,6 @@ class PackSourceReport;
 
 class PackSource {
 public:
-    // prevent constructor by default
-    PackSource& operator=(PackSource const&);
-    PackSource(PackSource const&);
-    PackSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

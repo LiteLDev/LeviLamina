@@ -4,12 +4,6 @@
 
 namespace Realms {
 
-struct Content {
-public:
-    // prevent constructor by default
-    Content& operator=(Content const&);
-    Content(Content const&);
-    Content();
-};
+struct Content {};
 
 } // namespace Realms

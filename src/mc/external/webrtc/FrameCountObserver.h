@@ -11,12 +11,6 @@ namespace webrtc {
 
 class FrameCountObserver {
 public:
-    // prevent constructor by default
-    FrameCountObserver& operator=(FrameCountObserver const&);
-    FrameCountObserver(FrameCountObserver const&);
-    FrameCountObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

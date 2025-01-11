@@ -17,12 +17,6 @@ struct WaterSplashEffectRequestComponent;
 
 struct LiquidSplashSystem {
 public:
-    // prevent constructor by default
-    LiquidSplashSystem& operator=(LiquidSplashSystem const&);
-    LiquidSplashSystem(LiquidSplashSystem const&);
-    LiquidSplashSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _singleTickLiquidSplash(

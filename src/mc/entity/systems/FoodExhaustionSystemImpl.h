@@ -80,12 +80,6 @@ struct FoodExhaustionSystemImpl : public ::IStrictTickingSystem<::StrictExecutio
                                       ::GlobalWrite<>,
                                       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    FoodExhaustionSystemImpl& operator=(FoodExhaustionSystemImpl const&);
-    FoodExhaustionSystemImpl(FoodExhaustionSystemImpl const&);
-    FoodExhaustionSystemImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

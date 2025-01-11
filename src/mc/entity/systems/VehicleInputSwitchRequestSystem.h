@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct VehicleInputSwitchRequestSystem {
 public:
-    // prevent constructor by default
-    VehicleInputSwitchRequestSystem& operator=(VehicleInputSwitchRequestSystem const&);
-    VehicleInputSwitchRequestSystem(VehicleInputSwitchRequestSystem const&);
-    VehicleInputSwitchRequestSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

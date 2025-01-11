@@ -11,12 +11,6 @@ namespace webrtc {
 
 class DataChannelObserver {
 public:
-    // prevent constructor by default
-    DataChannelObserver& operator=(DataChannelObserver const&);
-    DataChannelObserver(DataChannelObserver const&);
-    DataChannelObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

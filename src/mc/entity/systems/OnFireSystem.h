@@ -12,12 +12,6 @@ class Actor;
 
 class OnFireSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    OnFireSystem& operator=(OnFireSystem const&);
-    OnFireSystem(OnFireSystem const&);
-    OnFireSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

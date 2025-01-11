@@ -12,12 +12,6 @@ class ContainerScreenContext;
 
 class Trade2Ingredient2ContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    Trade2Ingredient2ContainerValidation& operator=(Trade2Ingredient2ContainerValidation const&);
-    Trade2Ingredient2ContainerValidation(Trade2Ingredient2ContainerValidation const&);
-    Trade2Ingredient2ContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

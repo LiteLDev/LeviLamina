@@ -19,12 +19,6 @@ struct ActorDefinitionIdentifier;
 
 class Parrot : public ::Animal {
 public:
-    // prevent constructor by default
-    Parrot& operator=(Parrot const&);
-    Parrot(Parrot const&);
-    Parrot();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 176

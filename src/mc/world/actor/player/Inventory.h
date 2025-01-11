@@ -13,12 +13,6 @@ class Player;
 
 class Inventory : public ::FillingContainer {
 public:
-    // prevent constructor by default
-    Inventory& operator=(Inventory const&);
-    Inventory(Inventory const&);
-    Inventory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

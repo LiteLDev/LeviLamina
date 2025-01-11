@@ -16,12 +16,6 @@ class Vec3;
 
 class VanillaDimensions {
 public:
-    // prevent constructor by default
-    VanillaDimensions& operator=(VanillaDimensions const&);
-    VanillaDimensions(VanillaDimensions const&);
-    VanillaDimensions();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool convertPointBetweenDimensions(

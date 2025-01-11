@@ -7,12 +7,6 @@
 
 struct ManagedWanderingTraderDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    ManagedWanderingTraderDescription& operator=(ManagedWanderingTraderDescription const&);
-    ManagedWanderingTraderDescription(ManagedWanderingTraderDescription const&);
-    ManagedWanderingTraderDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -7,12 +7,6 @@
 
 struct ItemCompleteUseEvent : public ::ItemChargeEvent {
 public:
-    // prevent constructor by default
-    ItemCompleteUseEvent& operator=(ItemCompleteUseEvent const&);
-    ItemCompleteUseEvent(ItemCompleteUseEvent const&);
-    ItemCompleteUseEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ItemCompleteUseEvent();

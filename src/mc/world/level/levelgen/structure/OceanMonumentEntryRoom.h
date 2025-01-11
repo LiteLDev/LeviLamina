@@ -15,12 +15,6 @@ class Random;
 
 class OceanMonumentEntryRoom : public ::OceanMonumentPiece {
 public:
-    // prevent constructor by default
-    OceanMonumentEntryRoom& operator=(OceanMonumentEntryRoom const&);
-    OceanMonumentEntryRoom(OceanMonumentEntryRoom const&);
-    OceanMonumentEntryRoom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

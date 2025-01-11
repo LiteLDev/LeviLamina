@@ -24,10 +24,6 @@ namespace webrtc {
 
 class TrackMediaInfoMap {
 public:
-    // prevent constructor by default
-    TrackMediaInfoMap& operator=(TrackMediaInfoMap const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<int> GetAttachmentIdByTrack(::webrtc::MediaStreamTrackInterface const*) const;

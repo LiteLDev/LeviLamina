@@ -65,12 +65,6 @@ class CameraAimAssistCachePositionDataSystem : public ::IStrictTickingSystem<::S
                                                    ::GlobalWrite<>,
                                                    ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    CameraAimAssistCachePositionDataSystem& operator=(CameraAimAssistCachePositionDataSystem const&);
-    CameraAimAssistCachePositionDataSystem(CameraAimAssistCachePositionDataSystem const&);
-    CameraAimAssistCachePositionDataSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

@@ -12,12 +12,6 @@ class OnStepOffTrigger;
 
 class OnStepOffTriggerDescription : public ::BlockTriggerDescription<::OnStepOffTrigger> {
 public:
-    // prevent constructor by default
-    OnStepOffTriggerDescription& operator=(OnStepOffTriggerDescription const&);
-    OnStepOffTriggerDescription(OnStepOffTriggerDescription const&);
-    OnStepOffTriggerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

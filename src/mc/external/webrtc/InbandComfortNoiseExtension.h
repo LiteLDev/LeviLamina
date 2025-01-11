@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class InbandComfortNoiseExtension {
-public:
-    // prevent constructor by default
-    InbandComfortNoiseExtension& operator=(InbandComfortNoiseExtension const&);
-    InbandComfortNoiseExtension(InbandComfortNoiseExtension const&);
-    InbandComfortNoiseExtension();
-};
+class InbandComfortNoiseExtension {};
 
 } // namespace webrtc

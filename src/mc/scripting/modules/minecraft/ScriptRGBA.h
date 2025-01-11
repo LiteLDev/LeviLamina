@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptRGBA : public ::ScriptModuleMinecraft::ScriptRGB {
 public:
-    // prevent constructor by default
-    ScriptRGBA& operator=(ScriptRGBA const&);
-    ScriptRGBA(ScriptRGBA const&);
-    ScriptRGBA();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

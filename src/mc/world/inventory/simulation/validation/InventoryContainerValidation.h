@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class InventoryContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    InventoryContainerValidation& operator=(InventoryContainerValidation const&);
-    InventoryContainerValidation(InventoryContainerValidation const&);
-    InventoryContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

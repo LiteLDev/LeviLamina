@@ -14,12 +14,6 @@ namespace ScriptModuleServerAdmin {
 
 class ScriptServerAdmin {
 public:
-    // prevent constructor by default
-    ScriptServerAdmin& operator=(ScriptServerAdmin const&);
-    ScriptServerAdmin(ScriptServerAdmin const&);
-    ScriptServerAdmin();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::Result<void>

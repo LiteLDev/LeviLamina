@@ -11,12 +11,6 @@ namespace Bedrock {
 
 class IIslandCore {
 public:
-    // prevent constructor by default
-    IIslandCore& operator=(IIslandCore const&);
-    IIslandCore(IIslandCore const&);
-    IIslandCore();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -7,12 +7,6 @@
 
 struct TripodCameraDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    TripodCameraDescription& operator=(TripodCameraDescription const&);
-    TripodCameraDescription(TripodCameraDescription const&);
-    TripodCameraDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

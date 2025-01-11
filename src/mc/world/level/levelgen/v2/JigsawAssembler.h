@@ -20,12 +20,6 @@ namespace br::worldgen {
 
 struct JigsawAssembler {
 public:
-    // prevent constructor by default
-    JigsawAssembler& operator=(JigsawAssembler const&);
-    JigsawAssembler(JigsawAssembler const&);
-    JigsawAssembler();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::br::worldgen::GenerationStub> construct(

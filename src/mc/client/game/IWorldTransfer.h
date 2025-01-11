@@ -14,12 +14,6 @@ struct LocalWorldTransferActionFunc;
 
 struct IWorldTransfer {
 public:
-    // prevent constructor by default
-    IWorldTransfer& operator=(IWorldTransfer const&);
-    IWorldTransfer(IWorldTransfer const&);
-    IWorldTransfer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

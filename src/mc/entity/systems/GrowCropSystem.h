@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class GrowCropSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    GrowCropSystem& operator=(GrowCropSystem const&);
-    GrowCropSystem(GrowCropSystem const&);
-    GrowCropSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

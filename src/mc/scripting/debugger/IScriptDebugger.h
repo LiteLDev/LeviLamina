@@ -11,12 +11,6 @@ namespace Core { class Path; }
 
 class IScriptDebugger {
 public:
-    // prevent constructor by default
-    IScriptDebugger& operator=(IScriptDebugger const&);
-    IScriptDebugger(IScriptDebugger const&);
-    IScriptDebugger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

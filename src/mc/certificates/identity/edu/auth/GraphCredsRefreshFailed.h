@@ -4,12 +4,6 @@
 
 namespace edu::auth {
 
-struct GraphCredsRefreshFailed {
-public:
-    // prevent constructor by default
-    GraphCredsRefreshFailed& operator=(GraphCredsRefreshFailed const&);
-    GraphCredsRefreshFailed(GraphCredsRefreshFailed const&);
-    GraphCredsRefreshFailed();
-};
+struct GraphCredsRefreshFailed {};
 
 } // namespace edu::auth

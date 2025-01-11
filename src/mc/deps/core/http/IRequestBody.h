@@ -28,12 +28,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IRequestBody& operator=(IRequestBody const&);
-    IRequestBody(IRequestBody const&);
-    IRequestBody();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

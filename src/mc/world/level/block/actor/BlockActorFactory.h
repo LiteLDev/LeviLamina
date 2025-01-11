@@ -14,12 +14,6 @@ class BlockPos;
 
 class BlockActorFactory {
 public:
-    // prevent constructor by default
-    BlockActorFactory& operator=(BlockActorFactory const&);
-    BlockActorFactory(BlockActorFactory const&);
-    BlockActorFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::BlockActor>

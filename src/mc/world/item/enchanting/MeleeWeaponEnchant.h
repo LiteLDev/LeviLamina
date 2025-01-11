@@ -12,12 +12,6 @@ class Actor;
 
 class MeleeWeaponEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    MeleeWeaponEnchant& operator=(MeleeWeaponEnchant const&);
-    MeleeWeaponEnchant(MeleeWeaponEnchant const&);
-    MeleeWeaponEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

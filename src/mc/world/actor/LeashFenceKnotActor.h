@@ -22,12 +22,6 @@ struct VariantParameterList;
 
 class LeashFenceKnotActor : public ::HangingActor {
 public:
-    // prevent constructor by default
-    LeashFenceKnotActor& operator=(LeashFenceKnotActor const&);
-    LeashFenceKnotActor(LeashFenceKnotActor const&);
-    LeashFenceKnotActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

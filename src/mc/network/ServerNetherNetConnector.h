@@ -13,12 +13,6 @@ namespace NetherNet { struct NetworkID; }
 
 struct ServerNetherNetConnector : public ::NetherNetConnector {
 public:
-    // prevent constructor by default
-    ServerNetherNetConnector& operator=(ServerNetherNetConnector const&);
-    ServerNetherNetConnector(ServerNetherNetConnector const&);
-    ServerNetherNetConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

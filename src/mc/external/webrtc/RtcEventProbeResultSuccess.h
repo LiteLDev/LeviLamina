@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcEventProbeResultSuccess {
 public:
-    // prevent constructor by default
-    RtcEventProbeResultSuccess& operator=(RtcEventProbeResultSuccess const&);
-    RtcEventProbeResultSuccess(RtcEventProbeResultSuccess const&);
-    RtcEventProbeResultSuccess();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RtcEventProbeResultSuccess(int, int);

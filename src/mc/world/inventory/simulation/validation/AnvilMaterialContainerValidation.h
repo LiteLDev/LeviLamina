@@ -12,12 +12,6 @@ class ContainerScreenContext;
 
 class AnvilMaterialContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    AnvilMaterialContainerValidation& operator=(AnvilMaterialContainerValidation const&);
-    AnvilMaterialContainerValidation(AnvilMaterialContainerValidation const&);
-    AnvilMaterialContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

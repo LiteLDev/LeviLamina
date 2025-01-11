@@ -13,12 +13,6 @@ namespace Json { class Value; }
 
 class RepeatUntilFailureDefinition : public ::DecoratorDefinition {
 public:
-    // prevent constructor by default
-    RepeatUntilFailureDefinition& operator=(RepeatUntilFailureDefinition const&);
-    RepeatUntilFailureDefinition(RepeatUntilFailureDefinition const&);
-    RepeatUntilFailureDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

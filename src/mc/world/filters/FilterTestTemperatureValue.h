@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestTemperatureValue : public ::SimpleFloatFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestTemperatureValue& operator=(FilterTestTemperatureValue const&);
-    FilterTestTemperatureValue(FilterTestTemperatureValue const&);
-    FilterTestTemperatureValue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

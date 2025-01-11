@@ -9,12 +9,6 @@ namespace Bedrock::Http {
 
 class StringRequestBody : public ::Bedrock::Http::BinaryRequestBody {
 public:
-    // prevent constructor by default
-    StringRequestBody& operator=(StringRequestBody const&);
-    StringRequestBody(StringRequestBody const&);
-    StringRequestBody();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

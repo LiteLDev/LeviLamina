@@ -9,12 +9,6 @@
 namespace OperationNodeFilters {
 
 struct RemoveTooMuchOcean
-: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::Terrain, ::OperationNodeValues::Terrain> {
-public:
-    // prevent constructor by default
-    RemoveTooMuchOcean& operator=(RemoveTooMuchOcean const&);
-    RemoveTooMuchOcean(RemoveTooMuchOcean const&);
-    RemoveTooMuchOcean();
-};
+: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::Terrain, ::OperationNodeValues::Terrain> {};
 
 } // namespace OperationNodeFilters

@@ -19,12 +19,6 @@ struct VillagerV2FlagComponent;
 
 struct VillagerV2PreTravelSystem {
 public:
-    // prevent constructor by default
-    VillagerV2PreTravelSystem& operator=(VillagerV2PreTravelSystem const&);
-    VillagerV2PreTravelSystem(VillagerV2PreTravelSystem const&);
-    VillagerV2PreTravelSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doVillagerV2PreTravel(

@@ -12,12 +12,6 @@ class Actor;
 
 class SwiftSneakEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    SwiftSneakEnchant& operator=(SwiftSneakEnchant const&);
-    SwiftSneakEnchant(SwiftSneakEnchant const&);
-    SwiftSneakEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

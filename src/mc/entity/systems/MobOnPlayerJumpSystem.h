@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct MobOnPlayerJumpSystem {
 public:
-    // prevent constructor by default
-    MobOnPlayerJumpSystem& operator=(MobOnPlayerJumpSystem const&);
-    MobOnPlayerJumpSystem(MobOnPlayerJumpSystem const&);
-    MobOnPlayerJumpSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);

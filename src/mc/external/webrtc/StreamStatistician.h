@@ -12,12 +12,6 @@ namespace webrtc {
 
 class StreamStatistician {
 public:
-    // prevent constructor by default
-    StreamStatistician& operator=(StreamStatistician const&);
-    StreamStatistician(StreamStatistician const&);
-    StreamStatistician();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

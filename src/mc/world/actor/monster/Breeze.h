@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class Breeze : public ::Monster {
 public:
-    // prevent constructor by default
-    Breeze& operator=(Breeze const&);
-    Breeze(Breeze const&);
-    Breeze();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 94

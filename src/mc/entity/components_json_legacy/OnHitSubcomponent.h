@@ -11,11 +11,6 @@ namespace Json { class Value; }
 
 class OnHitSubcomponent {
 public:
-    // prevent constructor by default
-    OnHitSubcomponent& operator=(OnHitSubcomponent const&);
-    OnHitSubcomponent(OnHitSubcomponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

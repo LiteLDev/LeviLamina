@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class ArmorContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    ArmorContainerValidation& operator=(ArmorContainerValidation const&);
-    ArmorContainerValidation(ArmorContainerValidation const&);
-    ArmorContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

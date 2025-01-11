@@ -29,12 +29,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IronGolem& operator=(IronGolem const&);
-    IronGolem(IronGolem const&);
-    IronGolem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 159

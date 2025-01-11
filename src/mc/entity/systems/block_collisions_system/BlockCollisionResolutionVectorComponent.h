@@ -7,12 +7,6 @@
 
 namespace BlockCollisionsSystem {
 
-struct BlockCollisionResolutionVectorComponent : public ::Vec3Component {
-public:
-    // prevent constructor by default
-    BlockCollisionResolutionVectorComponent& operator=(BlockCollisionResolutionVectorComponent const&);
-    BlockCollisionResolutionVectorComponent(BlockCollisionResolutionVectorComponent const&);
-    BlockCollisionResolutionVectorComponent();
-};
+struct BlockCollisionResolutionVectorComponent : public ::Vec3Component {};
 
 } // namespace BlockCollisionsSystem

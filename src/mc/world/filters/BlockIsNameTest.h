@@ -12,12 +12,6 @@ struct FilterContext;
 
 class BlockIsNameTest : public ::SimpleHashStringFilterTest {
 public:
-    // prevent constructor by default
-    BlockIsNameTest& operator=(BlockIsNameTest const&);
-    BlockIsNameTest(BlockIsNameTest const&);
-    BlockIsNameTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

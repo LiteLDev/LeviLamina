@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class MinecartRideable : public ::Minecart {
 public:
-    // prevent constructor by default
-    MinecartRideable& operator=(MinecartRideable const&);
-    MinecartRideable(MinecartRideable const&);
-    MinecartRideable();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 144

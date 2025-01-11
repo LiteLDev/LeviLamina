@@ -10,12 +10,6 @@ namespace Bedrock::Memory {
 
 class VirtualAllocator_windows : public ::Bedrock::Memory::IVirtualAllocator {
 public:
-    // prevent constructor by default
-    VirtualAllocator_windows& operator=(VirtualAllocator_windows const&);
-    VirtualAllocator_windows(VirtualAllocator_windows const&);
-    VirtualAllocator_windows();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

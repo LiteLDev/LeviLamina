@@ -28,12 +28,6 @@ public:
         WriteTimeEstimate(WriteTimeEstimate const&);
         WriteTimeEstimate();
     };
-
-public:
-    // prevent constructor by default
-    ThrottledFileWriteEstimator& operator=(ThrottledFileWriteEstimator const&);
-    ThrottledFileWriteEstimator(ThrottledFileWriteEstimator const&);
-    ThrottledFileWriteEstimator();
 };
 
 } // namespace Core::WriteThrottledOS

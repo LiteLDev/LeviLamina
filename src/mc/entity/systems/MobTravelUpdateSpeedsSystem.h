@@ -24,12 +24,6 @@ struct VehicleComponent;
 
 class MobTravelUpdateSpeedsSystem {
 public:
-    // prevent constructor by default
-    MobTravelUpdateSpeedsSystem& operator=(MobTravelUpdateSpeedsSystem const&);
-    MobTravelUpdateSpeedsSystem(MobTravelUpdateSpeedsSystem const&);
-    MobTravelUpdateSpeedsSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createMobTravelUpdateSpeedsSystem();

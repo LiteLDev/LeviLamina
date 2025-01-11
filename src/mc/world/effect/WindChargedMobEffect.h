@@ -12,12 +12,6 @@ class Actor;
 
 class WindChargedMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    WindChargedMobEffect& operator=(WindChargedMobEffect const&);
-    WindChargedMobEffect(WindChargedMobEffect const&);
-    WindChargedMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

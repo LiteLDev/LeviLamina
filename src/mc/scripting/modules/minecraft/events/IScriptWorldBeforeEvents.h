@@ -39,12 +39,6 @@ namespace ScriptModuleMinecraft {
 
 class IScriptWorldBeforeEvents {
 public:
-    // prevent constructor by default
-    IScriptWorldBeforeEvents& operator=(IScriptWorldBeforeEvents const&);
-    IScriptWorldBeforeEvents(IScriptWorldBeforeEvents const&);
-    IScriptWorldBeforeEvents();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

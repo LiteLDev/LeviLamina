@@ -7,12 +7,6 @@
 
 struct MemoryStream : public ::MemoryStreamBuffer, public ::std::istream, public virtual ::std::ios {
 public:
-    // prevent constructor by default
-    MemoryStream& operator=(MemoryStream const&);
-    MemoryStream(MemoryStream const&);
-    MemoryStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

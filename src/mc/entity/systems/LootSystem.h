@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class LootSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    LootSystem& operator=(LootSystem const&);
-    LootSystem(LootSystem const&);
-    LootSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

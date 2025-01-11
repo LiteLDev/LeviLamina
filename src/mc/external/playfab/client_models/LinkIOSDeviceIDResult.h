@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkIOSDeviceIDResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkIOSDeviceIDResult& operator=(LinkIOSDeviceIDResult const&);
-    LinkIOSDeviceIDResult(LinkIOSDeviceIDResult const&);
-    LinkIOSDeviceIDResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

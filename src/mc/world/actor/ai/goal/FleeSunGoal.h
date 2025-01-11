@@ -12,12 +12,6 @@ class Mob;
 
 class FleeSunGoal : public ::FindCoverGoal {
 public:
-    // prevent constructor by default
-    FleeSunGoal& operator=(FleeSunGoal const&);
-    FleeSunGoal(FleeSunGoal const&);
-    FleeSunGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

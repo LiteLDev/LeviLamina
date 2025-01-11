@@ -9,12 +9,6 @@ class Player;
 
 class ContainerCloseListener {
 public:
-    // prevent constructor by default
-    ContainerCloseListener& operator=(ContainerCloseListener const&);
-    ContainerCloseListener(ContainerCloseListener const&);
-    ContainerCloseListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

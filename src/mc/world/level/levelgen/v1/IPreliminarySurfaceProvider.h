@@ -7,12 +7,6 @@
 
 class IPreliminarySurfaceProvider {
 public:
-    // prevent constructor by default
-    IPreliminarySurfaceProvider& operator=(IPreliminarySurfaceProvider const&);
-    IPreliminarySurfaceProvider(IPreliminarySurfaceProvider const&);
-    IPreliminarySurfaceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -4,12 +4,6 @@
 
 struct IGameModeTimer {
 public:
-    // prevent constructor by default
-    IGameModeTimer& operator=(IGameModeTimer const&);
-    IGameModeTimer(IGameModeTimer const&);
-    IGameModeTimer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

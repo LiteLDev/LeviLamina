@@ -13,12 +13,6 @@ namespace Bedrock::Threading { class Mutex; }
 
 class I18nObserver : public ::Core::Observer<::I18nObserver, ::Bedrock::Threading::Mutex> {
 public:
-    // prevent constructor by default
-    I18nObserver& operator=(I18nObserver const&);
-    I18nObserver(I18nObserver const&);
-    I18nObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -20,19 +20,7 @@ public:
     // clang-format on
 
     // RtpPacketizer inner types define
-    struct PayloadSizeLimits {
-    public:
-        // prevent constructor by default
-        PayloadSizeLimits& operator=(PayloadSizeLimits const&);
-        PayloadSizeLimits(PayloadSizeLimits const&);
-        PayloadSizeLimits();
-    };
-
-public:
-    // prevent constructor by default
-    RtpPacketizer& operator=(RtpPacketizer const&);
-    RtpPacketizer(RtpPacketizer const&);
-    RtpPacketizer();
+    struct PayloadSizeLimits {};
 
 public:
     // static functions

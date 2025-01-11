@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class ActorUpdatePreviousPositionSystem {
 public:
-    // prevent constructor by default
-    ActorUpdatePreviousPositionSystem& operator=(ActorUpdatePreviousPositionSystem const&);
-    ActorUpdatePreviousPositionSystem(ActorUpdatePreviousPositionSystem const&);
-    ActorUpdatePreviousPositionSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();

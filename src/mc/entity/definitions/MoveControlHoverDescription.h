@@ -7,12 +7,6 @@
 
 struct MoveControlHoverDescription : public ::MoveControlDescription {
 public:
-    // prevent constructor by default
-    MoveControlHoverDescription& operator=(MoveControlHoverDescription const&);
-    MoveControlHoverDescription(MoveControlHoverDescription const&);
-    MoveControlHoverDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

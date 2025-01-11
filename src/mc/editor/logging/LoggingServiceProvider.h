@@ -18,12 +18,6 @@ namespace Editor::Services {
 
 class LoggingServiceProvider {
 public:
-    // prevent constructor by default
-    LoggingServiceProvider& operator=(LoggingServiceProvider const&);
-    LoggingServiceProvider(LoggingServiceProvider const&);
-    LoggingServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

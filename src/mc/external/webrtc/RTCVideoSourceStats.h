@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RTCVideoSourceStats {
 public:
-    // prevent constructor by default
-    RTCVideoSourceStats& operator=(RTCVideoSourceStats const&);
-    RTCVideoSourceStats(RTCVideoSourceStats const&);
-    RTCVideoSourceStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCVideoSourceStats(::std::string, ::webrtc::Timestamp);

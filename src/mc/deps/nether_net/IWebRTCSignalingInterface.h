@@ -41,12 +41,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IWebRTCSignalingInterface& operator=(IWebRTCSignalingInterface const&);
-    IWebRTCSignalingInterface(IWebRTCSignalingInterface const&);
-    IWebRTCSignalingInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

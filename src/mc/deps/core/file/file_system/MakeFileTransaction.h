@@ -4,12 +4,6 @@
 
 namespace Core {
 
-class MakeFileTransaction {
-public:
-    // prevent constructor by default
-    MakeFileTransaction& operator=(MakeFileTransaction const&);
-    MakeFileTransaction(MakeFileTransaction const&);
-    MakeFileTransaction();
-};
+class MakeFileTransaction {};
 
 } // namespace Core

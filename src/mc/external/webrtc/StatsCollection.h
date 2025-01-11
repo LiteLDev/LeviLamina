@@ -15,11 +15,6 @@ namespace webrtc {
 
 class StatsCollection {
 public:
-    // prevent constructor by default
-    StatsCollection& operator=(StatsCollection const&);
-    StatsCollection(StatsCollection const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::list<::webrtc::StatsReport*> DetachCollection();

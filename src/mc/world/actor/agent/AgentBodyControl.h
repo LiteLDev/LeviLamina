@@ -12,12 +12,6 @@ class Mob;
 
 class AgentBodyControl : public ::BodyControl {
 public:
-    // prevent constructor by default
-    AgentBodyControl& operator=(AgentBodyControl const&);
-    AgentBodyControl(AgentBodyControl const&);
-    AgentBodyControl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

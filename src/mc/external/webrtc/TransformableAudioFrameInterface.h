@@ -17,12 +17,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    TransformableAudioFrameInterface& operator=(TransformableAudioFrameInterface const&);
-    TransformableAudioFrameInterface(TransformableAudioFrameInterface const&);
-    TransformableAudioFrameInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

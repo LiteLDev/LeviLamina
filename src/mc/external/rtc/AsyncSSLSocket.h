@@ -11,12 +11,6 @@ namespace rtc {
 
 class AsyncSSLSocket {
 public:
-    // prevent constructor by default
-    AsyncSSLSocket& operator=(AsyncSSLSocket const&);
-    AsyncSSLSocket(AsyncSSLSocket const&);
-    AsyncSSLSocket();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AsyncSSLSocket(::rtc::Socket*);

@@ -16,12 +16,6 @@ class Vec3;
 
 class IActorDimensionTransferer {
 public:
-    // prevent constructor by default
-    IActorDimensionTransferer& operator=(IActorDimensionTransferer const&);
-    IActorDimensionTransferer(IActorDimensionTransferer const&);
-    IActorDimensionTransferer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -25,12 +25,6 @@ namespace cricket {
 
 class VoiceEngineInterface : public ::cricket::RtpHeaderExtensionQueryInterface {
 public:
-    // prevent constructor by default
-    VoiceEngineInterface& operator=(VoiceEngineInterface const&);
-    VoiceEngineInterface(VoiceEngineInterface const&);
-    VoiceEngineInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

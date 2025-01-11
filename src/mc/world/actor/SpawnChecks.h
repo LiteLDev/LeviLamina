@@ -12,12 +12,6 @@ class ServerLevel;
 
 class SpawnChecks {
 public:
-    // prevent constructor by default
-    SpawnChecks& operator=(SpawnChecks const&);
-    SpawnChecks(SpawnChecks const&);
-    SpawnChecks();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canHatchEgg(::ILevel const& level);

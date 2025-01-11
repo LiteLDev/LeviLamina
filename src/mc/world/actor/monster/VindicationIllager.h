@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class VindicationIllager : public ::HumanoidMonster {
 public:
-    // prevent constructor by default
-    VindicationIllager& operator=(VindicationIllager const&);
-    VindicationIllager(VindicationIllager const&);
-    VindicationIllager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 176

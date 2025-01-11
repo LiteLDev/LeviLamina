@@ -14,11 +14,6 @@ namespace Json { class Value; }
 
 class WindBurstOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
-    // prevent constructor by default
-    WindBurstOnHitSubcomponent& operator=(WindBurstOnHitSubcomponent const&);
-    WindBurstOnHitSubcomponent(WindBurstOnHitSubcomponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

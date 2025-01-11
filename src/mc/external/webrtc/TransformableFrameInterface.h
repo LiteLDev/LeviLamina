@@ -19,12 +19,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    TransformableFrameInterface& operator=(TransformableFrameInterface const&);
-    TransformableFrameInterface(TransformableFrameInterface const&);
-    TransformableFrameInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

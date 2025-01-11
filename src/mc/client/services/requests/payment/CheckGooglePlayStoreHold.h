@@ -12,12 +12,6 @@ namespace Json { class Value; }
 
 class CheckGooglePlayStoreHold : public ::CheckReceiptDetails {
 public:
-    // prevent constructor by default
-    CheckGooglePlayStoreHold& operator=(CheckGooglePlayStoreHold const&);
-    CheckGooglePlayStoreHold(CheckGooglePlayStoreHold const&);
-    CheckGooglePlayStoreHold();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -12,12 +12,6 @@ class Random;
 
 class DyeColorUtil {
 public:
-    // prevent constructor by default
-    DyeColorUtil& operator=(DyeColorUtil const&);
-    DyeColorUtil(DyeColorUtil const&);
-    DyeColorUtil();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getAuxValue(::ItemColor color);

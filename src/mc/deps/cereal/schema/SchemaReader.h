@@ -48,12 +48,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    SchemaReader& operator=(SchemaReader const&);
-    SchemaReader(SchemaReader const&);
-    SchemaReader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

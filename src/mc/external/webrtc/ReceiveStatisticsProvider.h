@@ -11,12 +11,6 @@ namespace webrtc {
 
 class ReceiveStatisticsProvider {
 public:
-    // prevent constructor by default
-    ReceiveStatisticsProvider& operator=(ReceiveStatisticsProvider const&);
-    ReceiveStatisticsProvider(ReceiveStatisticsProvider const&);
-    ReceiveStatisticsProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

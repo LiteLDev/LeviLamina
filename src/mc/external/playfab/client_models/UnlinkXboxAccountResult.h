@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkXboxAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    UnlinkXboxAccountResult& operator=(UnlinkXboxAccountResult const&);
-    UnlinkXboxAccountResult(UnlinkXboxAccountResult const&);
-    UnlinkXboxAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

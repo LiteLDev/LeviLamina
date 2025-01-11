@@ -13,12 +13,6 @@ class EntityRegistry;
 
 class GoalSelectorSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    GoalSelectorSystem& operator=(GoalSelectorSystem const&);
-    GoalSelectorSystem(GoalSelectorSystem const&);
-    GoalSelectorSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

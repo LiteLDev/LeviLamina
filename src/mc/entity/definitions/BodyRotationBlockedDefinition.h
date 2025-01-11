@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct BodyRotationBlockedDefinition {
 public:
-    // prevent constructor by default
-    BodyRotationBlockedDefinition& operator=(BodyRotationBlockedDefinition const&);
-    BodyRotationBlockedDefinition(BodyRotationBlockedDefinition const&);
-    BodyRotationBlockedDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

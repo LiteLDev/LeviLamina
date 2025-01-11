@@ -15,12 +15,6 @@ class CommandOrigin;
 
 class GameDirectorEntityServerCommandOrigin : public ::ActorServerCommandOrigin {
 public:
-    // prevent constructor by default
-    GameDirectorEntityServerCommandOrigin& operator=(GameDirectorEntityServerCommandOrigin const&);
-    GameDirectorEntityServerCommandOrigin(GameDirectorEntityServerCommandOrigin const&);
-    GameDirectorEntityServerCommandOrigin();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

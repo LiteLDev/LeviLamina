@@ -16,12 +16,6 @@ namespace Scripting {
 
 class CommonModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // prevent constructor by default
-    CommonModuleFactory& operator=(CommonModuleFactory const&);
-    CommonModuleFactory(CommonModuleFactory const&);
-    CommonModuleFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

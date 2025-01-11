@@ -10,12 +10,6 @@ class ItemStack;
 
 class ISparseContainerSetListener {
 public:
-    // prevent constructor by default
-    ISparseContainerSetListener& operator=(ISparseContainerSetListener const&);
-    ISparseContainerSetListener(ISparseContainerSetListener const&);
-    ISparseContainerSetListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

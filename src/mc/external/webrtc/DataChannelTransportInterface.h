@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class DataChannelTransportInterface {
-public:
-    // prevent constructor by default
-    DataChannelTransportInterface& operator=(DataChannelTransportInterface const&);
-    DataChannelTransportInterface(DataChannelTransportInterface const&);
-    DataChannelTransportInterface();
-};
+class DataChannelTransportInterface {};
 
 } // namespace webrtc

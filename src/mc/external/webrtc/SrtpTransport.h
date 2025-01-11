@@ -11,12 +11,6 @@ namespace webrtc {
 
 class SrtpTransport {
 public:
-    // prevent constructor by default
-    SrtpTransport& operator=(SrtpTransport const&);
-    SrtpTransport(SrtpTransport const&);
-    SrtpTransport();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void CreateSrtpSessions();

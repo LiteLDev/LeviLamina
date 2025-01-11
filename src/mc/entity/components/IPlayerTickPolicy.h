@@ -17,12 +17,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IPlayerTickPolicy& operator=(IPlayerTickPolicy const&);
-    IPlayerTickPolicy(IPlayerTickPolicy const&);
-    IPlayerTickPolicy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

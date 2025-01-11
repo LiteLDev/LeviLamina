@@ -15,12 +15,6 @@ class TemporalAttributeBuff;
 
 class SharedAttributes {
 public:
-    // prevent constructor by default
-    SharedAttributes& operator=(SharedAttributes const&);
-    SharedAttributes(SharedAttributes const&);
-    SharedAttributes();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::AttributeInstance*

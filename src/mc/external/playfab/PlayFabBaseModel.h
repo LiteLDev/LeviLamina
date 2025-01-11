@@ -11,12 +11,6 @@ namespace PlayFab {
 
 struct PlayFabBaseModel {
 public:
-    // prevent constructor by default
-    PlayFabBaseModel& operator=(PlayFabBaseModel const&);
-    PlayFabBaseModel(PlayFabBaseModel const&);
-    PlayFabBaseModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

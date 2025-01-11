@@ -18,12 +18,6 @@ namespace Editor::Services {
 
 class DataStoreServiceProvider {
 public:
-    // prevent constructor by default
-    DataStoreServiceProvider& operator=(DataStoreServiceProvider const&);
-    DataStoreServiceProvider(DataStoreServiceProvider const&);
-    DataStoreServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

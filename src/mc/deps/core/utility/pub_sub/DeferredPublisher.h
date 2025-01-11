@@ -5,12 +5,6 @@
 namespace Bedrock::PubSub {
 
 template <typename T0, int T1, typename T2, int T3, int T4>
-class DeferredPublisher {
-public:
-    // prevent constructor by default
-    DeferredPublisher& operator=(DeferredPublisher const&);
-    DeferredPublisher(DeferredPublisher const&);
-    DeferredPublisher();
-};
+class DeferredPublisher {};
 
 } // namespace Bedrock::PubSub

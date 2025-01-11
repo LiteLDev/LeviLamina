@@ -8,12 +8,6 @@
 
 class PackLoadError : public ::PackError {
 public:
-    // prevent constructor by default
-    PackLoadError& operator=(PackLoadError const&);
-    PackLoadError(PackLoadError const&);
-    PackLoadError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

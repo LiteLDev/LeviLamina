@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsStackableDefinition {
 public:
-    // prevent constructor by default
-    IsStackableDefinition& operator=(IsStackableDefinition const&);
-    IsStackableDefinition(IsStackableDefinition const&);
-    IsStackableDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

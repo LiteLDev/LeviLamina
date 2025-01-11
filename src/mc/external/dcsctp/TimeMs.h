@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class TimeMs {
-public:
-    // prevent constructor by default
-    TimeMs& operator=(TimeMs const&);
-    TimeMs(TimeMs const&);
-    TimeMs();
-};
+class TimeMs {};
 
 } // namespace dcsctp

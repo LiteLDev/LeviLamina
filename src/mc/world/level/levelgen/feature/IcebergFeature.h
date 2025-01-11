@@ -15,12 +15,6 @@ class Random;
 
 class IcebergFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    IcebergFeature& operator=(IcebergFeature const&);
-    IcebergFeature(IcebergFeature const&);
-    IcebergFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

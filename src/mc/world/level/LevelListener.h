@@ -26,12 +26,6 @@ namespace cg { class ImageBuffer; }
 
 class LevelListener : public ::BlockSourceListener {
 public:
-    // prevent constructor by default
-    LevelListener& operator=(LevelListener const&);
-    LevelListener(LevelListener const&);
-    LevelListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

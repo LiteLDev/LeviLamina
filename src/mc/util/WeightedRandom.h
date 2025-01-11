@@ -23,10 +23,4 @@ public:
         WeighedRandomItem(WeighedRandomItem const&);
         WeighedRandomItem();
     };
-
-public:
-    // prevent constructor by default
-    WeightedRandom& operator=(WeightedRandom const&);
-    WeightedRandom(WeightedRandom const&);
-    WeightedRandom();
 };

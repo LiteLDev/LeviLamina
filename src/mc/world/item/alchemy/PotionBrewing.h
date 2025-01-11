@@ -50,19 +50,7 @@ public:
     };
 
     template <typename T0>
-    class Mix {
-    public:
-        // prevent constructor by default
-        Mix& operator=(Mix const&);
-        Mix(Mix const&);
-        Mix();
-    };
-
-public:
-    // prevent constructor by default
-    PotionBrewing& operator=(PotionBrewing const&);
-    PotionBrewing(PotionBrewing const&);
-    PotionBrewing();
+    class Mix {};
 
 public:
     // static functions

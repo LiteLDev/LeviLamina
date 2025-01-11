@@ -7,12 +7,6 @@
 
 struct DefaultScreenCapabilities : public ::TypedScreenCapabilities<::DefaultScreenCapabilities> {
 public:
-    // prevent constructor by default
-    DefaultScreenCapabilities& operator=(DefaultScreenCapabilities const&);
-    DefaultScreenCapabilities(DefaultScreenCapabilities const&);
-    DefaultScreenCapabilities();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

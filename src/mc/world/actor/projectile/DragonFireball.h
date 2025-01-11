@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class DragonFireball : public ::Fireball {
 public:
-    // prevent constructor by default
-    DragonFireball& operator=(DragonFireball const&);
-    DragonFireball(DragonFireball const&);
-    DragonFireball();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 144

@@ -7,12 +7,6 @@
 
 struct MoveControlDolphinDescription : public ::MoveControlDescription {
 public:
-    // prevent constructor by default
-    MoveControlDolphinDescription& operator=(MoveControlDolphinDescription const&);
-    MoveControlDolphinDescription(MoveControlDolphinDescription const&);
-    MoveControlDolphinDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

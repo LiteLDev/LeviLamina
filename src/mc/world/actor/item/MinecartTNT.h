@@ -19,12 +19,6 @@ struct ActorDefinitionIdentifier;
 
 class MinecartTNT : public ::Minecart {
 public:
-    // prevent constructor by default
-    MinecartTNT& operator=(MinecartTNT const&);
-    MinecartTNT(MinecartTNT const&);
-    MinecartTNT();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 24

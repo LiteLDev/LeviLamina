@@ -15,12 +15,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class ActorEventResponse {
 public:
-    // prevent constructor by default
-    ActorEventResponse& operator=(ActorEventResponse const&);
-    ActorEventResponse(ActorEventResponse const&);
-    ActorEventResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

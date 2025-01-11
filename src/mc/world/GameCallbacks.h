@@ -4,12 +4,6 @@
 
 class GameCallbacks {
 public:
-    // prevent constructor by default
-    GameCallbacks& operator=(GameCallbacks const&);
-    GameCallbacks(GameCallbacks const&);
-    GameCallbacks();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

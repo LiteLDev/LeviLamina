@@ -10,12 +10,6 @@ class SemVersion;
 
 class ActorAnimationMinEngineVersionUtils {
 public:
-    // prevent constructor by default
-    ActorAnimationMinEngineVersionUtils& operator=(ActorAnimationMinEngineVersionUtils const&);
-    ActorAnimationMinEngineVersionUtils(ActorAnimationMinEngineVersionUtils const&);
-    ActorAnimationMinEngineVersionUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::MinEngineVersion useFormatVersionOrMinEngineVersionBackCompat(

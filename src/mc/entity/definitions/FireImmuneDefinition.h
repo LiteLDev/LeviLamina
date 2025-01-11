@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct FireImmuneDefinition {
 public:
-    // prevent constructor by default
-    FireImmuneDefinition& operator=(FireImmuneDefinition const&);
-    FireImmuneDefinition(FireImmuneDefinition const&);
-    FireImmuneDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

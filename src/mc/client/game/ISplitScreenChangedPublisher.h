@@ -9,12 +9,6 @@ namespace Bedrock::PubSub { class Subscription; }
 
 class ISplitScreenChangedPublisher {
 public:
-    // prevent constructor by default
-    ISplitScreenChangedPublisher& operator=(ISplitScreenChangedPublisher const&);
-    ISplitScreenChangedPublisher(ISplitScreenChangedPublisher const&);
-    ISplitScreenChangedPublisher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

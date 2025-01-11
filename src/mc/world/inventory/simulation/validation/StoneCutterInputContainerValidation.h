@@ -12,12 +12,6 @@ class ContainerScreenContext;
 
 class StoneCutterInputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    StoneCutterInputContainerValidation& operator=(StoneCutterInputContainerValidation const&);
-    StoneCutterInputContainerValidation(StoneCutterInputContainerValidation const&);
-    StoneCutterInputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

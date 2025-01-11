@@ -27,12 +27,6 @@ namespace dcsctp {
 
 class TransmissionControlBlock {
 public:
-    // prevent constructor by default
-    TransmissionControlBlock& operator=(TransmissionControlBlock const&);
-    TransmissionControlBlock(TransmissionControlBlock const&);
-    TransmissionControlBlock();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);

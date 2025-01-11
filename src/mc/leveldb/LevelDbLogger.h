@@ -4,12 +4,6 @@
 
 class LevelDbLogger : public ::leveldb::Logger {
 public:
-    // prevent constructor by default
-    LevelDbLogger& operator=(LevelDbLogger const&);
-    LevelDbLogger(LevelDbLogger const&);
-    LevelDbLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

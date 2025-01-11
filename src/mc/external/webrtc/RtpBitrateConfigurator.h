@@ -13,12 +13,6 @@ namespace webrtc {
 
 struct RtpBitrateConfigurator {
 public:
-    // prevent constructor by default
-    RtpBitrateConfigurator& operator=(RtpBitrateConfigurator const&);
-    RtpBitrateConfigurator(RtpBitrateConfigurator const&);
-    RtpBitrateConfigurator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::BitrateConstraints GetConfig() const;

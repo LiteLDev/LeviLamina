@@ -14,12 +14,6 @@ namespace webrtc {
 
 class DtmfSenderInterface : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    DtmfSenderInterface& operator=(DtmfSenderInterface const&);
-    DtmfSenderInterface(DtmfSenderInterface const&);
-    DtmfSenderInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

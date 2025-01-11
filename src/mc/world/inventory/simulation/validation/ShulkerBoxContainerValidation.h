@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class ShulkerBoxContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    ShulkerBoxContainerValidation& operator=(ShulkerBoxContainerValidation const&);
-    ShulkerBoxContainerValidation(ShulkerBoxContainerValidation const&);
-    ShulkerBoxContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

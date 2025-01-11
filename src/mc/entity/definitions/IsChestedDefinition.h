@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsChestedDefinition {
 public:
-    // prevent constructor by default
-    IsChestedDefinition& operator=(IsChestedDefinition const&);
-    IsChestedDefinition(IsChestedDefinition const&);
-    IsChestedDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

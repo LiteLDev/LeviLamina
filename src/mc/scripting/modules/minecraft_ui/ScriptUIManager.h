@@ -15,11 +15,6 @@ namespace ScriptModuleMinecraftServerUI {
 
 class ScriptUIManager {
 public:
-    // prevent constructor by default
-    ScriptUIManager& operator=(ScriptUIManager const&);
-    ScriptUIManager(ScriptUIManager const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptUIManager();

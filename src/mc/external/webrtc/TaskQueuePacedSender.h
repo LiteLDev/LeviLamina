@@ -23,19 +23,7 @@ public:
     // clang-format on
 
     // TaskQueuePacedSender inner types define
-    struct Stats {
-    public:
-        // prevent constructor by default
-        Stats& operator=(Stats const&);
-        Stats(Stats const&);
-        Stats();
-    };
-
-public:
-    // prevent constructor by default
-    TaskQueuePacedSender& operator=(TaskQueuePacedSender const&);
-    TaskQueuePacedSender(TaskQueuePacedSender const&);
-    TaskQueuePacedSender();
+    struct Stats {};
 
 public:
     // member functions

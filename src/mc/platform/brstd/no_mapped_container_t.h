@@ -17,19 +17,7 @@ public:
     // clang-format on
 
     // no_mapped_container_t inner types define
-    struct iterator {
-    public:
-        // prevent constructor by default
-        iterator& operator=(iterator const&);
-        iterator(iterator const&);
-        iterator();
-    };
-
-public:
-    // prevent constructor by default
-    no_mapped_container_t& operator=(no_mapped_container_t const&);
-    no_mapped_container_t(no_mapped_container_t const&);
-    no_mapped_container_t();
+    struct iterator {};
 };
 
 } // namespace brstd

@@ -12,12 +12,6 @@ class Actor;
 
 class DensityEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    DensityEnchant& operator=(DensityEnchant const&);
-    DensityEnchant(DensityEnchant const&);
-    DensityEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

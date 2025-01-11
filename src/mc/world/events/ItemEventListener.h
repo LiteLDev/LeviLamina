@@ -16,12 +16,6 @@ struct ItemNotificationEvent;
 
 class ItemEventListener {
 public:
-    // prevent constructor by default
-    ItemEventListener& operator=(ItemEventListener const&);
-    ItemEventListener(ItemEventListener const&);
-    ItemEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

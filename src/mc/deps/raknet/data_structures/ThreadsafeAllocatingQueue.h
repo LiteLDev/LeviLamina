@@ -5,12 +5,6 @@
 namespace DataStructures {
 
 template <typename T0>
-class ThreadsafeAllocatingQueue {
-public:
-    // prevent constructor by default
-    ThreadsafeAllocatingQueue& operator=(ThreadsafeAllocatingQueue const&);
-    ThreadsafeAllocatingQueue(ThreadsafeAllocatingQueue const&);
-    ThreadsafeAllocatingQueue();
-};
+class ThreadsafeAllocatingQueue {};
 
 } // namespace DataStructures

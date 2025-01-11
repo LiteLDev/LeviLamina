@@ -7,12 +7,6 @@
 
 class CurseVanishingEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    CurseVanishingEnchant& operator=(CurseVanishingEnchant const&);
-    CurseVanishingEnchant(CurseVanishingEnchant const&);
-    CurseVanishingEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

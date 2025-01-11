@@ -75,12 +75,6 @@ public:
 
     class Viewer {
     public:
-        // prevent constructor by default
-        Viewer& operator=(Viewer const&);
-        Viewer(Viewer const&);
-        Viewer();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -116,12 +110,6 @@ public:
     };
 
     class Editor : public ::Bedrock::DataStore::Viewer {
-    public:
-        // prevent constructor by default
-        Editor& operator=(Editor const&);
-        Editor(Editor const&);
-        Editor();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -188,13 +176,7 @@ public:
     };
 
     template <typename T0, typename T1>
-    class AccessHandle {
-    public:
-        // prevent constructor by default
-        AccessHandle& operator=(AccessHandle const&);
-        AccessHandle(AccessHandle const&);
-        AccessHandle();
-    };
+    class AccessHandle {};
 
 public:
     // member variables

@@ -16,12 +16,6 @@ struct VariantParameterList;
 
 class Tadpole : public ::WaterAnimal {
 public:
-    // prevent constructor by default
-    Tadpole& operator=(Tadpole const&);
-    Tadpole(Tadpole const&);
-    Tadpole();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

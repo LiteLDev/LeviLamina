@@ -12,12 +12,6 @@ namespace cricket {
 
 class StunDictionaryWriter {
 public:
-    // prevent constructor by default
-    StunDictionaryWriter& operator=(StunDictionaryWriter const&);
-    StunDictionaryWriter(StunDictionaryWriter const&);
-    StunDictionaryWriter();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ApplyDeltaAck(::cricket::StunUInt64Attribute const&);

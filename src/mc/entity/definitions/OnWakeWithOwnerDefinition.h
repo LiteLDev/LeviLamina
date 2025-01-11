@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnWakeWithOwnerDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnWakeWithOwnerDefinition& operator=(OnWakeWithOwnerDefinition const&);
-    OnWakeWithOwnerDefinition(OnWakeWithOwnerDefinition const&);
-    OnWakeWithOwnerDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

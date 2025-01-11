@@ -10,11 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptInvalidIteratorError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptInvalidIteratorError& operator=(ScriptInvalidIteratorError const&);
-    ScriptInvalidIteratorError(ScriptInvalidIteratorError const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptInvalidIteratorError();

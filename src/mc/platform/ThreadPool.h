@@ -11,11 +11,6 @@ namespace OS {
 
 struct ThreadPool {
 public:
-    // prevent constructor by default
-    ThreadPool& operator=(ThreadPool const&);
-    ThreadPool(ThreadPool const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI long Initialize(void*, void (*)(void*, ::OS::ThreadPoolActionStatus&));

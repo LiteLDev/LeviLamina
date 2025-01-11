@@ -12,12 +12,6 @@ class ContentIdentity;
 
 class IContentKeyProvider : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IContentKeyProvider& operator=(IContentKeyProvider const&);
-    IContentKeyProvider(IContentKeyProvider const&);
-    IContentKeyProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

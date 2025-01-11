@@ -36,11 +36,6 @@ public:
     // LegacyStatsCollector inner types define
     struct SessionStats {
     public:
-        // prevent constructor by default
-        SessionStats& operator=(SessionStats const&);
-        SessionStats(SessionStats const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI SessionStats();
@@ -63,12 +58,6 @@ public:
 
     struct TransportStats {
     public:
-        // prevent constructor by default
-        TransportStats& operator=(TransportStats const&);
-        TransportStats(TransportStats const&);
-        TransportStats();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI TransportStats(::std::string, ::cricket::TransportStats);
@@ -80,12 +69,6 @@ public:
         MCAPI void* $ctor(::std::string, ::cricket::TransportStats);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    LegacyStatsCollector& operator=(LegacyStatsCollector const&);
-    LegacyStatsCollector(LegacyStatsCollector const&);
-    LegacyStatsCollector();
 
 public:
     // member functions

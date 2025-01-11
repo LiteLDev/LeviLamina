@@ -12,12 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct TransientDefinition {
 public:
-    // prevent constructor by default
-    TransientDefinition& operator=(TransientDefinition const&);
-    TransientDefinition(TransientDefinition const&);
-    TransientDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

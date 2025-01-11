@@ -27,12 +27,6 @@ struct LevelNotificationEvent : public ::EventVariantImpl<
                                     ::ScriptingWorldInitializeEvent const,
                                     ::LevelWeatherChangedEvent const> {
 public:
-    // prevent constructor by default
-    LevelNotificationEvent& operator=(LevelNotificationEvent const&);
-    LevelNotificationEvent(LevelNotificationEvent const&);
-    LevelNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~LevelNotificationEvent();

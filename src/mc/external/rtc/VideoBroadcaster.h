@@ -14,11 +14,6 @@ namespace rtc {
 
 class VideoBroadcaster {
 public:
-    // prevent constructor by default
-    VideoBroadcaster& operator=(VideoBroadcaster const&);
-    VideoBroadcaster(VideoBroadcaster const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> const& GetBlackFrameBuffer(int, int);

@@ -10,12 +10,6 @@ namespace Json { class Value; }
 
 class ItemStackBaseComponentsHelper {
 public:
-    // prevent constructor by default
-    ItemStackBaseComponentsHelper& operator=(ItemStackBaseComponentsHelper const&);
-    ItemStackBaseComponentsHelper(ItemStackBaseComponentsHelper const&);
-    ItemStackBaseComponentsHelper();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool isValidComponent(::std::string const& name);

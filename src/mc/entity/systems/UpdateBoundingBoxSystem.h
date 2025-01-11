@@ -11,12 +11,6 @@ struct TickingSystemWithInfo;
 
 class UpdateBoundingBoxSystem {
 public:
-    // prevent constructor by default
-    UpdateBoundingBoxSystem& operator=(UpdateBoundingBoxSystem const&);
-    UpdateBoundingBoxSystem(UpdateBoundingBoxSystem const&);
-    UpdateBoundingBoxSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClientSide);

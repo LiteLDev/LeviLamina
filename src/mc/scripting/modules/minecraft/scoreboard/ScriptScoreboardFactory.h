@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardFactory {
 public:
-    // prevent constructor by default
-    ScriptScoreboardFactory& operator=(ScriptScoreboardFactory const&);
-    ScriptScoreboardFactory(ScriptScoreboardFactory const&);
-    ScriptScoreboardFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard>

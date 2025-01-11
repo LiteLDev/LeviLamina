@@ -7,12 +7,6 @@
 
 struct OceanFrozenSurfaceFlag : public ::BiomeComponentBase {
 public:
-    // prevent constructor by default
-    OceanFrozenSurfaceFlag& operator=(OceanFrozenSurfaceFlag const&);
-    OceanFrozenSurfaceFlag(OceanFrozenSurfaceFlag const&);
-    OceanFrozenSurfaceFlag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -18,12 +18,6 @@ namespace BlockEvents { class BlockPlaceEvent; }
 
 class LiquidBlockDynamic : public ::LiquidBlock {
 public:
-    // prevent constructor by default
-    LiquidBlockDynamic& operator=(LiquidBlockDynamic const&);
-    LiquidBlockDynamic(LiquidBlockDynamic const&);
-    LiquidBlockDynamic();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 136

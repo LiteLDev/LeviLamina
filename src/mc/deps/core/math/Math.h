@@ -19,27 +19,9 @@ public:
     // clang-format on
 
     // Math inner types define
-    struct PairHash {
-    public:
-        // prevent constructor by default
-        PairHash& operator=(PairHash const&);
-        PairHash(PairHash const&);
-        PairHash();
-    };
+    struct PairHash {};
 
-    struct TupleHash {
-    public:
-        // prevent constructor by default
-        TupleHash& operator=(TupleHash const&);
-        TupleHash(TupleHash const&);
-        TupleHash();
-    };
-
-public:
-    // prevent constructor by default
-    Math& operator=(Math const&);
-    Math(Math const&);
-    Math();
+    struct TupleHash {};
 
 public:
     // static functions

@@ -27,13 +27,7 @@ public:
         SequenceId();
     };
 
-    class LockAlgorithm {
-    public:
-        // prevent constructor by default
-        LockAlgorithm& operator=(LockAlgorithm const&);
-        LockAlgorithm(LockAlgorithm const&);
-        LockAlgorithm();
-    };
+    class LockAlgorithm {};
 
 public:
     // member variables

@@ -6,12 +6,6 @@ namespace webrtc {
 
 class FieldTrialsView {
 public:
-    // prevent constructor by default
-    FieldTrialsView& operator=(FieldTrialsView const&);
-    FieldTrialsView(FieldTrialsView const&);
-    FieldTrialsView();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

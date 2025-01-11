@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class WaterMoveSystem {
 public:
-    // prevent constructor by default
-    WaterMoveSystem& operator=(WaterMoveSystem const&);
-    WaterMoveSystem(WaterMoveSystem const&);
-    WaterMoveSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createWaterMoveSystem();

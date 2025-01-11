@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct WASDControlledDefinition {
 public:
-    // prevent constructor by default
-    WASDControlledDefinition& operator=(WASDControlledDefinition const&);
-    WASDControlledDefinition(WASDControlledDefinition const&);
-    WASDControlledDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

@@ -16,12 +16,6 @@ namespace Editor::Network {
 class WidgetDeleteGroupPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetDeleteGroupPayload>,
                                  public ::Editor::Network::WidgetCommonBasePayload {
 public:
-    // prevent constructor by default
-    WidgetDeleteGroupPayload& operator=(WidgetDeleteGroupPayload const&);
-    WidgetDeleteGroupPayload(WidgetDeleteGroupPayload const&);
-    WidgetDeleteGroupPayload();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

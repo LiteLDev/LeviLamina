@@ -4,12 +4,6 @@
 
 namespace cereal::util::internal {
 
-struct StringViewHash : public ::std::hash<::std::string_view> {
-public:
-    // prevent constructor by default
-    StringViewHash& operator=(StringViewHash const&);
-    StringViewHash(StringViewHash const&);
-    StringViewHash();
-};
+struct StringViewHash : public ::std::hash<::std::string_view> {};
 
 } // namespace cereal::util::internal

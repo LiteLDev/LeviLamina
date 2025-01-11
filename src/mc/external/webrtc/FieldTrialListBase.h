@@ -6,12 +6,6 @@ namespace webrtc {
 
 class FieldTrialListBase {
 public:
-    // prevent constructor by default
-    FieldTrialListBase& operator=(FieldTrialListBase const&);
-    FieldTrialListBase(FieldTrialListBase const&);
-    FieldTrialListBase();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FieldTrialListBase(::std::string_view);

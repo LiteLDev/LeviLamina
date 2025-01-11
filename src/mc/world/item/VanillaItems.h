@@ -16,12 +16,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class VanillaItems {
 public:
-    // prevent constructor by default
-    VanillaItems& operator=(VanillaItems const&);
-    VanillaItems(VanillaItems const&);
-    VanillaItems();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

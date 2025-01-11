@@ -14,12 +14,6 @@ class Player;
 
 class SmokerContainerManagerModel : public ::FurnaceContainerManagerModel {
 public:
-    // prevent constructor by default
-    SmokerContainerManagerModel& operator=(SmokerContainerManagerModel const&);
-    SmokerContainerManagerModel(SmokerContainerManagerModel const&);
-    SmokerContainerManagerModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

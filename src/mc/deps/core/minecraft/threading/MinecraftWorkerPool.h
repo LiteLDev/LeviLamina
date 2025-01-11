@@ -19,12 +19,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    MinecraftWorkerPool& operator=(MinecraftWorkerPool const&);
-    MinecraftWorkerPool(MinecraftWorkerPool const&);
-    MinecraftWorkerPool();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void configureMainThread();

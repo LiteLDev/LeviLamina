@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class DcSctpSocketFactory {
-public:
-    // prevent constructor by default
-    DcSctpSocketFactory& operator=(DcSctpSocketFactory const&);
-    DcSctpSocketFactory(DcSctpSocketFactory const&);
-    DcSctpSocketFactory();
-};
+class DcSctpSocketFactory {};
 
 } // namespace dcsctp

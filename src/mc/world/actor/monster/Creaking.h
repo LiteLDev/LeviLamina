@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class Creaking : public ::Monster {
 public:
-    // prevent constructor by default
-    Creaking& operator=(Creaking const&);
-    Creaking(Creaking const&);
-    Creaking();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 36

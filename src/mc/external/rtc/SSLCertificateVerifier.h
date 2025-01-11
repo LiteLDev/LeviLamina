@@ -11,12 +11,6 @@ namespace rtc {
 
 class SSLCertificateVerifier {
 public:
-    // prevent constructor by default
-    SSLCertificateVerifier& operator=(SSLCertificateVerifier const&);
-    SSLCertificateVerifier(SSLCertificateVerifier const&);
-    SSLCertificateVerifier();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

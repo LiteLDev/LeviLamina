@@ -12,12 +12,6 @@ namespace mce { class Color; }
 
 class Palette {
 public:
-    // prevent constructor by default
-    Palette& operator=(Palette const&);
-    Palette(Palette const&);
-    Palette();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::PaletteColor fromByte(uchar id);

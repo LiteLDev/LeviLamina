@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class ShutdownCompleteChunk {
 public:
-    // prevent constructor by default
-    ShutdownCompleteChunk& operator=(ShutdownCompleteChunk const&);
-    ShutdownCompleteChunk(ShutdownCompleteChunk const&);
-    ShutdownCompleteChunk();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::ShutdownCompleteChunk> Parse(::rtc::ArrayView<uchar const>);

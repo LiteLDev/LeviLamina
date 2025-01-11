@@ -5,12 +5,6 @@
 namespace FeatureLoading {
 
 template <typename T0>
-struct ConcreteFeatureHolder {
-public:
-    // prevent constructor by default
-    ConcreteFeatureHolder& operator=(ConcreteFeatureHolder const&);
-    ConcreteFeatureHolder(ConcreteFeatureHolder const&);
-    ConcreteFeatureHolder();
-};
+struct ConcreteFeatureHolder {};
 
 } // namespace FeatureLoading

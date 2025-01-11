@@ -7,12 +7,6 @@
 
 namespace webrtc {
 
-class DataRate : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataRate> {
-public:
-    // prevent constructor by default
-    DataRate& operator=(DataRate const&);
-    DataRate(DataRate const&);
-    DataRate();
-};
+class DataRate : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataRate> {};
 
 } // namespace webrtc

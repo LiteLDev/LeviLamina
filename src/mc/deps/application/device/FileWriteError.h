@@ -4,12 +4,6 @@
 
 namespace Bedrock::DeviceIdErrorType {
 
-struct FileWriteError {
-public:
-    // prevent constructor by default
-    FileWriteError& operator=(FileWriteError const&);
-    FileWriteError(FileWriteError const&);
-    FileWriteError();
-};
+struct FileWriteError {};
 
 } // namespace Bedrock::DeviceIdErrorType

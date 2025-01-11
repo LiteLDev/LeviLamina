@@ -14,12 +14,6 @@ struct BiomeTagSetIDType;
 
 struct BiomeTagComponent : public ::BiomeComponentBase, public ::TagsComponent<::IDType<::BiomeTagSetIDType>> {
 public:
-    // prevent constructor by default
-    BiomeTagComponent& operator=(BiomeTagComponent const&);
-    BiomeTagComponent(BiomeTagComponent const&);
-    BiomeTagComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

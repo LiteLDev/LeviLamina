@@ -4,12 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptCustomComponentAfterEvent {
-public:
-    // prevent constructor by default
-    ScriptCustomComponentAfterEvent& operator=(ScriptCustomComponentAfterEvent const&);
-    ScriptCustomComponentAfterEvent(ScriptCustomComponentAfterEvent const&);
-    ScriptCustomComponentAfterEvent();
-};
+class ScriptCustomComponentAfterEvent {};
 
 } // namespace ScriptModuleMinecraft

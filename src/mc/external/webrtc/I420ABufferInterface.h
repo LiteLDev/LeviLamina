@@ -10,12 +10,6 @@ namespace webrtc {
 
 class I420ABufferInterface : public ::webrtc::I420BufferInterface {
 public:
-    // prevent constructor by default
-    I420ABufferInterface& operator=(I420ABufferInterface const&);
-    I420ABufferInterface(I420ABufferInterface const&);
-    I420ABufferInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

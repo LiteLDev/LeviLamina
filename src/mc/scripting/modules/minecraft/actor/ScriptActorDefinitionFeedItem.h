@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorDefinitionFeedItem {
 public:
-    // prevent constructor by default
-    ScriptActorDefinitionFeedItem& operator=(ScriptActorDefinitionFeedItem const&);
-    ScriptActorDefinitionFeedItem(ScriptActorDefinitionFeedItem const&);
-    ScriptActorDefinitionFeedItem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ActorDefinitionFeedItem> bind();

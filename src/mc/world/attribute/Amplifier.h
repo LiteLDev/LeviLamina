@@ -4,12 +4,6 @@
 
 class Amplifier {
 public:
-    // prevent constructor by default
-    Amplifier& operator=(Amplifier const&);
-    Amplifier(Amplifier const&);
-    Amplifier();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

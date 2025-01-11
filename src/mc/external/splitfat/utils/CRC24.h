@@ -6,12 +6,6 @@ namespace SFAT {
 
 class CRC24 {
 public:
-    // prevent constructor by default
-    CRC24& operator=(CRC24 const&);
-    CRC24(CRC24 const&);
-    CRC24();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<uint const[]> table();

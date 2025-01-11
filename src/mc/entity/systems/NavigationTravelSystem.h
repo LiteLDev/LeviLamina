@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class NavigationTravelSystem {
 public:
-    // prevent constructor by default
-    NavigationTravelSystem& operator=(NavigationTravelSystem const&);
-    NavigationTravelSystem(NavigationTravelSystem const&);
-    NavigationTravelSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createNavigationTravelSystem();

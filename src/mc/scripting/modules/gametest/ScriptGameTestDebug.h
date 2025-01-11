@@ -9,12 +9,6 @@ namespace ScriptModuleGameTest {
 
 class ScriptGameTestDebug {
 public:
-    // prevent constructor by default
-    ScriptGameTestDebug& operator=(ScriptGameTestDebug const&);
-    ScriptGameTestDebug(ScriptGameTestDebug const&);
-    ScriptGameTestDebug();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptGameTestDebug> bind();

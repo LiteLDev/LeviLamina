@@ -7,12 +7,6 @@
 
 class IdleState : public ::PetSleepWithOwnerState {
 public:
-    // prevent constructor by default
-    IdleState& operator=(IdleState const&);
-    IdleState(IdleState const&);
-    IdleState();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

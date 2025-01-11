@@ -19,12 +19,6 @@ namespace br::worldgen::processors {
 
 class JigsawReplacement : public ::br::worldgen::StructureProcessor {
 public:
-    // prevent constructor by default
-    JigsawReplacement& operator=(JigsawReplacement const&);
-    JigsawReplacement(JigsawReplacement const&);
-    JigsawReplacement();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

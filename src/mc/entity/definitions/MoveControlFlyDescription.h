@@ -7,12 +7,6 @@
 
 struct MoveControlFlyDescription : public ::MoveControlDescription {
 public:
-    // prevent constructor by default
-    MoveControlFlyDescription& operator=(MoveControlFlyDescription const&);
-    MoveControlFlyDescription(MoveControlFlyDescription const&);
-    MoveControlFlyDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

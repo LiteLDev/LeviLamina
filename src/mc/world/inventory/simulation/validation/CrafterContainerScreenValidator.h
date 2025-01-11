@@ -7,12 +7,6 @@
 
 class CrafterContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    CrafterContainerScreenValidator& operator=(CrafterContainerScreenValidator const&);
-    CrafterContainerScreenValidator(CrafterContainerScreenValidator const&);
-    CrafterContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

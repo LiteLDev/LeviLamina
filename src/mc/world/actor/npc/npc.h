@@ -19,12 +19,6 @@ namespace mce { class Color; }
 
 class Npc : public ::Mob {
 public:
-    // prevent constructor by default
-    Npc& operator=(Npc const&);
-    Npc(Npc const&);
-    Npc();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

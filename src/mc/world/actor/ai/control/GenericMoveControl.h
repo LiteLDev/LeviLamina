@@ -14,11 +14,6 @@ struct MoveControlDescription;
 
 class GenericMoveControl : public ::MoveControl {
 public:
-    // prevent constructor by default
-    GenericMoveControl& operator=(GenericMoveControl const&);
-    GenericMoveControl(GenericMoveControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

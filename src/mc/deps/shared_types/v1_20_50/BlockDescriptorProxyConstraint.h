@@ -16,12 +16,6 @@ namespace SharedTypes::v1_20_50::BlockDescriptorSerializer {
 
 class BlockDescriptorProxyConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    BlockDescriptorProxyConstraint& operator=(BlockDescriptorProxyConstraint const&);
-    BlockDescriptorProxyConstraint(BlockDescriptorProxyConstraint const&);
-    BlockDescriptorProxyConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,11 +13,6 @@ namespace Core { class Path; }
 
 class SystemFilePicker : public ::IFilePicker, public ::std::enable_shared_from_this<::SystemFilePicker> {
 public:
-    // prevent constructor by default
-    SystemFilePicker& operator=(SystemFilePicker const&);
-    SystemFilePicker(SystemFilePicker const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

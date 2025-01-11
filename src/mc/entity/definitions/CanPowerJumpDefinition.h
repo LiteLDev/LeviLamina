@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct CanPowerJumpDefinition {
 public:
-    // prevent constructor by default
-    CanPowerJumpDefinition& operator=(CanPowerJumpDefinition const&);
-    CanPowerJumpDefinition(CanPowerJumpDefinition const&);
-    CanPowerJumpDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

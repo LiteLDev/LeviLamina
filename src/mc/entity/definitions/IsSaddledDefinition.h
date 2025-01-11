@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsSaddledDefinition {
 public:
-    // prevent constructor by default
-    IsSaddledDefinition& operator=(IsSaddledDefinition const&);
-    IsSaddledDefinition(IsSaddledDefinition const&);
-    IsSaddledDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;

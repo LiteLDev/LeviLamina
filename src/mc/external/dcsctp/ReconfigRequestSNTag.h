@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class ReconfigRequestSNTag {
-public:
-    // prevent constructor by default
-    ReconfigRequestSNTag& operator=(ReconfigRequestSNTag const&);
-    ReconfigRequestSNTag(ReconfigRequestSNTag const&);
-    ReconfigRequestSNTag();
-};
+class ReconfigRequestSNTag {};
 
 } // namespace dcsctp

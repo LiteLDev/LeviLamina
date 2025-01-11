@@ -14,12 +14,6 @@ class StrictEntityContext;
 
 class ITickingSystem : public ::ISystem {
 public:
-    // prevent constructor by default
-    ITickingSystem& operator=(ITickingSystem const&);
-    ITickingSystem(ITickingSystem const&);
-    ITickingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -14,12 +14,6 @@ class Random;
 
 class MelonFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    MelonFeature& operator=(MelonFeature const&);
-    MelonFeature(MelonFeature const&);
-    MelonFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

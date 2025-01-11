@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct ValidateGooglePlayPurchaseResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    ValidateGooglePlayPurchaseResult& operator=(ValidateGooglePlayPurchaseResult const&);
-    ValidateGooglePlayPurchaseResult(ValidateGooglePlayPurchaseResult const&);
-    ValidateGooglePlayPurchaseResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

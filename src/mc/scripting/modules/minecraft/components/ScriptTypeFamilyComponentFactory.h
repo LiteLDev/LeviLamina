@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptTypeFamilyComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptTypeFamilyComponentFactory& operator=(ScriptTypeFamilyComponentFactory const&);
-    ScriptTypeFamilyComponentFactory(ScriptTypeFamilyComponentFactory const&);
-    ScriptTypeFamilyComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

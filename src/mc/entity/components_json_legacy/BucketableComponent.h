@@ -12,11 +12,6 @@ class Player;
 
 class BucketableComponent {
 public:
-    // prevent constructor by default
-    BucketableComponent& operator=(BucketableComponent const&);
-    BucketableComponent(BucketableComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BucketableComponent();

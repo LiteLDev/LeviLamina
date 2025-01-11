@@ -6,11 +6,6 @@ namespace Social::Events {
 
 class OneDSEventHelper {
 public:
-    // prevent constructor by default
-    OneDSEventHelper& operator=(OneDSEventHelper const&);
-    OneDSEventHelper(OneDSEventHelper const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI OneDSEventHelper();

@@ -27,11 +27,6 @@ public:
     // DelayBasedBwe inner types define
     struct Result {
     public:
-        // prevent constructor by default
-        Result& operator=(Result const&);
-        Result(Result const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Result();
@@ -43,12 +38,6 @@ public:
         MCAPI void* $ctor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    DelayBasedBwe& operator=(DelayBasedBwe const&);
-    DelayBasedBwe(DelayBasedBwe const&);
-    DelayBasedBwe();
 
 public:
     // member functions

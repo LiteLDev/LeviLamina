@@ -23,13 +23,7 @@ public:
     // clang-format on
 
     // Path inner types define
-    struct path_less {
-    public:
-        // prevent constructor by default
-        path_less& operator=(path_less const&);
-        path_less(path_less const&);
-        path_less();
-    };
+    struct path_less {};
 
 public:
     // member variables

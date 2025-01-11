@@ -10,12 +10,6 @@ namespace webrtc {
 
 class I210BufferInterface : public ::webrtc::PlanarYuv16BBuffer {
 public:
-    // prevent constructor by default
-    I210BufferInterface& operator=(I210BufferInterface const&);
-    I210BufferInterface(I210BufferInterface const&);
-    I210BufferInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

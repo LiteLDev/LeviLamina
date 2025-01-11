@@ -8,11 +8,6 @@
 
 class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
 public:
-    // prevent constructor by default
-    FakeBatteryMonitorInterface& operator=(FakeBatteryMonitorInterface const&);
-    FakeBatteryMonitorInterface(FakeBatteryMonitorInterface const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

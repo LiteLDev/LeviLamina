@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class PassengerFreezeMovementSystem {
 public:
-    // prevent constructor by default
-    PassengerFreezeMovementSystem& operator=(PassengerFreezeMovementSystem const&);
-    PassengerFreezeMovementSystem(PassengerFreezeMovementSystem const&);
-    PassengerFreezeMovementSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

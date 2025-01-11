@@ -14,11 +14,6 @@ namespace Json { class Value; }
 
 class RemoveOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
-    // prevent constructor by default
-    RemoveOnHitSubcomponent& operator=(RemoveOnHitSubcomponent const&);
-    RemoveOnHitSubcomponent(RemoveOnHitSubcomponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

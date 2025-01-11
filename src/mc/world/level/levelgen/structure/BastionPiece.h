@@ -22,12 +22,6 @@ class StructurePiece;
 
 class BastionPiece : public ::PoolElementStructurePiece {
 public:
-    // prevent constructor by default
-    BastionPiece& operator=(BastionPiece const&);
-    BastionPiece(BastionPiece const&);
-    BastionPiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13

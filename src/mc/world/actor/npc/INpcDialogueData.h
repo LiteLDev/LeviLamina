@@ -11,12 +11,6 @@ namespace npc { struct ActionContainer; }
 
 struct INpcDialogueData {
 public:
-    // prevent constructor by default
-    INpcDialogueData& operator=(INpcDialogueData const&);
-    INpcDialogueData(INpcDialogueData const&);
-    INpcDialogueData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

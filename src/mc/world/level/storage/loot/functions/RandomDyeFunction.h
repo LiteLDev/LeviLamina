@@ -17,12 +17,6 @@ namespace mce { class Color; }
 
 class RandomDyeFunction : public ::LootItemFunction {
 public:
-    // prevent constructor by default
-    RandomDyeFunction& operator=(RandomDyeFunction const&);
-    RandomDyeFunction(RandomDyeFunction const&);
-    RandomDyeFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

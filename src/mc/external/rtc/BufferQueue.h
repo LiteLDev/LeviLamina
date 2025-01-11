@@ -6,12 +6,6 @@ namespace rtc {
 
 struct BufferQueue {
 public:
-    // prevent constructor by default
-    BufferQueue& operator=(BufferQueue const&);
-    BufferQueue(BufferQueue const&);
-    BufferQueue();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI BufferQueue(uint64, uint64);

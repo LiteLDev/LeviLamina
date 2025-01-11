@@ -12,12 +12,6 @@ namespace cereal {
 
 class Constraint {
 public:
-    // prevent constructor by default
-    Constraint& operator=(Constraint const&);
-    Constraint(Constraint const&);
-    Constraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

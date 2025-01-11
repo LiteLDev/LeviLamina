@@ -9,12 +9,6 @@ class Actor;
 
 class IAddDisplayActorEntityProxy {
 public:
-    // prevent constructor by default
-    IAddDisplayActorEntityProxy& operator=(IAddDisplayActorEntityProxy const&);
-    IAddDisplayActorEntityProxy(IAddDisplayActorEntityProxy const&);
-    IAddDisplayActorEntityProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

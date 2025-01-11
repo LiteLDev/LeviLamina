@@ -12,12 +12,6 @@ class Dimension;
 
 class IDimensionFactory {
 public:
-    // prevent constructor by default
-    IDimensionFactory& operator=(IDimensionFactory const&);
-    IDimensionFactory(IDimensionFactory const&);
-    IDimensionFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

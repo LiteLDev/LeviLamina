@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkGoogleAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkGoogleAccountResult& operator=(LinkGoogleAccountResult const&);
-    LinkGoogleAccountResult(LinkGoogleAccountResult const&);
-    LinkGoogleAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

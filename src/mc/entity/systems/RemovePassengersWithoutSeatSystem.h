@@ -19,12 +19,6 @@ struct VehicleComponent;
 
 class RemovePassengersWithoutSeatSystem {
 public:
-    // prevent constructor by default
-    RemovePassengersWithoutSeatSystem& operator=(RemovePassengersWithoutSeatSystem const&);
-    RemovePassengersWithoutSeatSystem(RemovePassengersWithoutSeatSystem const&);
-    RemovePassengersWithoutSeatSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickRemovePassengersWithoutSeat(

@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptSignTextSide {
 public:
-    // prevent constructor by default
-    ScriptSignTextSide& operator=(ScriptSignTextSide const&);
-    ScriptSignTextSide(ScriptSignTextSide const&);
-    ScriptSignTextSide();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SignTextSide> bind();

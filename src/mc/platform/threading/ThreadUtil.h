@@ -11,12 +11,6 @@ namespace Bedrock::Threading {
 
 class ThreadUtil {
 public:
-    // prevent constructor by default
-    ThreadUtil& operator=(ThreadUtil const&);
-    ThreadUtil(ThreadUtil const&);
-    ThreadUtil();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setCoreAffinity(void* const& nativeHandle, int idealCore, uint64 desiredCoreMask);

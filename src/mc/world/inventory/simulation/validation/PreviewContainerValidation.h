@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class PreviewContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    PreviewContainerValidation& operator=(PreviewContainerValidation const&);
-    PreviewContainerValidation(PreviewContainerValidation const&);
-    PreviewContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

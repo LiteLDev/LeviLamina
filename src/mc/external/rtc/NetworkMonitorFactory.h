@@ -12,12 +12,6 @@ namespace rtc {
 
 class NetworkMonitorFactory {
 public:
-    // prevent constructor by default
-    NetworkMonitorFactory& operator=(NetworkMonitorFactory const&);
-    NetworkMonitorFactory(NetworkMonitorFactory const&);
-    NetworkMonitorFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

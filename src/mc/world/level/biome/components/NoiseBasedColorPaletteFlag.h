@@ -7,12 +7,6 @@
 
 struct NoiseBasedColorPaletteFlag : public ::BiomeComponentBase {
 public:
-    // prevent constructor by default
-    NoiseBasedColorPaletteFlag& operator=(NoiseBasedColorPaletteFlag const&);
-    NoiseBasedColorPaletteFlag(NoiseBasedColorPaletteFlag const&);
-    NoiseBasedColorPaletteFlag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

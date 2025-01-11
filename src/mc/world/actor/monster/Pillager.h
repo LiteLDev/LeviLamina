@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Pillager : public ::HumanoidMonster {
 public:
-    // prevent constructor by default
-    Pillager& operator=(Pillager const&);
-    Pillager(Pillager const&);
-    Pillager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 182

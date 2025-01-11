@@ -33,21 +33,9 @@ public:
     // clang-format on
 
     // RTCPReceiver inner types define
-    class NonSenderRttStats {
-    public:
-        // prevent constructor by default
-        NonSenderRttStats& operator=(NonSenderRttStats const&);
-        NonSenderRttStats(NonSenderRttStats const&);
-        NonSenderRttStats();
-    };
+    class NonSenderRttStats {};
 
     struct PacketInformation {
-    public:
-        // prevent constructor by default
-        PacketInformation& operator=(PacketInformation const&);
-        PacketInformation(PacketInformation const&);
-        PacketInformation();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -62,12 +50,6 @@ public:
     };
 
     struct RegisteredSsrcs {
-    public:
-        // prevent constructor by default
-        RegisteredSsrcs& operator=(RegisteredSsrcs const&);
-        RegisteredSsrcs(RegisteredSsrcs const&);
-        RegisteredSsrcs();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -97,12 +79,6 @@ public:
 
     class RttStats {
     public:
-        // prevent constructor by default
-        RttStats& operator=(RttStats const&);
-        RttStats(RttStats const&);
-        RttStats();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void AddRtt(::webrtc::TimeDelta);
@@ -110,12 +86,6 @@ public:
     };
 
     struct TmmbrInformation {
-    public:
-        // prevent constructor by default
-        TmmbrInformation& operator=(TmmbrInformation const&);
-        TmmbrInformation(TmmbrInformation const&);
-        TmmbrInformation();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -136,12 +106,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    RTCPReceiver& operator=(RTCPReceiver const&);
-    RTCPReceiver(RTCPReceiver const&);
-    RTCPReceiver();
 
 public:
     // member functions

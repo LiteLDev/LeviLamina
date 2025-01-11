@@ -14,12 +14,6 @@ class Random;
 
 class BlueIceFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    BlueIceFeature& operator=(BlueIceFeature const&);
-    BlueIceFeature(BlueIceFeature const&);
-    BlueIceFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

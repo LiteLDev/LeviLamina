@@ -13,10 +13,4 @@ public:
         Width  = 1,
         Height = 2,
     };
-
-public:
-    // prevent constructor by default
-    ActorDataBoundingBoxComponent& operator=(ActorDataBoundingBoxComponent const&);
-    ActorDataBoundingBoxComponent(ActorDataBoundingBoxComponent const&);
-    ActorDataBoundingBoxComponent();
 };

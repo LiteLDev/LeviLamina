@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkTwitchAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkTwitchAccountResult& operator=(LinkTwitchAccountResult const&);
-    LinkTwitchAccountResult(LinkTwitchAccountResult const&);
-    LinkTwitchAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

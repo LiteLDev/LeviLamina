@@ -9,12 +9,6 @@ namespace Bedrock::Threading { class Mutex; }
 
 class MessPublicKeyManager {
 public:
-    // prevent constructor by default
-    MessPublicKeyManager& operator=(MessPublicKeyManager const&);
-    MessPublicKeyManager(MessPublicKeyManager const&);
-    MessPublicKeyManager();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::string> getPublicKeys();

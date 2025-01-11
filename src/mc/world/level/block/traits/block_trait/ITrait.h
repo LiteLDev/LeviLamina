@@ -12,12 +12,6 @@ namespace BlockTrait {
 
 class ITrait {
 public:
-    // prevent constructor by default
-    ITrait& operator=(ITrait const&);
-    ITrait(ITrait const&);
-    ITrait();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

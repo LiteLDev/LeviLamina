@@ -34,12 +34,6 @@ namespace Social {
 
 class IUserManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IUserManager& operator=(IUserManager const&);
-    IUserManager(IUserManager const&);
-    IUserManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

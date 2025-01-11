@@ -23,13 +23,7 @@ public:
     // clang-format on
 
     // ProfileGroupManager inner types define
-    class Factory {
-    public:
-        // prevent constructor by default
-        Factory& operator=(Factory const&);
-        Factory(Factory const&);
-        Factory();
-    };
+    class Factory {};
 
     class Impl {
     public:
@@ -39,13 +33,7 @@ public:
         // clang-format on
 
         // Impl inner types define
-        struct StringCompare {
-        public:
-            // prevent constructor by default
-            StringCompare& operator=(StringCompare const&);
-            StringCompare(StringCompare const&);
-            StringCompare();
-        };
+        struct StringCompare {};
 
     public:
         // member variables

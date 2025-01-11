@@ -14,12 +14,6 @@ namespace Scripting {
 
 struct RuntimeConditionError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    RuntimeConditionError& operator=(RuntimeConditionError const&);
-    RuntimeConditionError(RuntimeConditionError const&);
-    RuntimeConditionError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

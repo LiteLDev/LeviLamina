@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class UnrecognizedParametersCause {
 public:
-    // prevent constructor by default
-    UnrecognizedParametersCause& operator=(UnrecognizedParametersCause const&);
-    UnrecognizedParametersCause(UnrecognizedParametersCause const&);
-    UnrecognizedParametersCause();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::UnrecognizedParametersCause> Parse(::rtc::ArrayView<uchar const>);

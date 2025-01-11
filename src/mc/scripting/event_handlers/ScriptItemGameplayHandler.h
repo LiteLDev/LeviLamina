@@ -21,12 +21,6 @@ namespace Scripting { class WeakLifetimeScope; }
 class ScriptItemGameplayHandler : public ::EventHandlerDispatcher<::ItemGameplayHandler>,
                                   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
-    // prevent constructor by default
-    ScriptItemGameplayHandler& operator=(ScriptItemGameplayHandler const&);
-    ScriptItemGameplayHandler(ScriptItemGameplayHandler const&);
-    ScriptItemGameplayHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

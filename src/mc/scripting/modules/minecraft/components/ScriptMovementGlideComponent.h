@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptMovementGlideComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptMovementGlideComponent& operator=(ScriptMovementGlideComponent const&);
-    ScriptMovementGlideComponent(ScriptMovementGlideComponent const&);
-    ScriptMovementGlideComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

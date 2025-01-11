@@ -14,11 +14,6 @@ namespace BlockCollisionVersioning {
 
 class BlockCollision118Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockCollision118Upgrade& operator=(BlockCollision118Upgrade const&);
-    BlockCollision118Upgrade(BlockCollision118Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

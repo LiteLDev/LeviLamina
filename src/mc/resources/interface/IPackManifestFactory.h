@@ -13,12 +13,6 @@ class SubpackInfoCollection;
 
 class IPackManifestFactory {
 public:
-    // prevent constructor by default
-    IPackManifestFactory& operator=(IPackManifestFactory const&);
-    IPackManifestFactory(IPackManifestFactory const&);
-    IPackManifestFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

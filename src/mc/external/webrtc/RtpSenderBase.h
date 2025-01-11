@@ -19,19 +19,7 @@ public:
     // clang-format on
 
     // RtpSenderBase inner types define
-    class SetStreamsObserver {
-    public:
-        // prevent constructor by default
-        SetStreamsObserver& operator=(SetStreamsObserver const&);
-        SetStreamsObserver(SetStreamsObserver const&);
-        SetStreamsObserver();
-    };
-
-public:
-    // prevent constructor by default
-    RtpSenderBase& operator=(RtpSenderBase const&);
-    RtpSenderBase(RtpSenderBase const&);
-    RtpSenderBase();
+    class SetStreamsObserver {};
 
 public:
     // member functions

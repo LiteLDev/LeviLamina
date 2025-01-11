@@ -21,12 +21,6 @@ namespace NetherNet { struct SessionState; }
 
 struct NetherNetTransportStub : public ::NetherNet::INetherNetTransportInterface {
 public:
-    // prevent constructor by default
-    NetherNetTransportStub& operator=(NetherNetTransportStub const&);
-    NetherNetTransportStub(NetherNetTransportStub const&);
-    NetherNetTransportStub();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

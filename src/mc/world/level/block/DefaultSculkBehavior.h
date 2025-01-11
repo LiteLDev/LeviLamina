@@ -17,12 +17,6 @@ class SculkSpreader;
 
 class DefaultSculkBehavior : public ::SculkBehavior {
 public:
-    // prevent constructor by default
-    DefaultSculkBehavior& operator=(DefaultSculkBehavior const&);
-    DefaultSculkBehavior(DefaultSculkBehavior const&);
-    DefaultSculkBehavior();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

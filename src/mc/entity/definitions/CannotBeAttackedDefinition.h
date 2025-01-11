@@ -12,12 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct CannotBeAttackedDefinition {
 public:
-    // prevent constructor by default
-    CannotBeAttackedDefinition& operator=(CannotBeAttackedDefinition const&);
-    CannotBeAttackedDefinition(CannotBeAttackedDefinition const&);
-    CannotBeAttackedDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

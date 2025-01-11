@@ -18,12 +18,6 @@ struct WorldGenContext;
 
 class UnderwaterCanyonFeature : public ::CanyonFeature {
 public:
-    // prevent constructor by default
-    UnderwaterCanyonFeature& operator=(UnderwaterCanyonFeature const&);
-    UnderwaterCanyonFeature(UnderwaterCanyonFeature const&);
-    UnderwaterCanyonFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

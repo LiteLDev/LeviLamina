@@ -20,12 +20,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemPotionComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
-    // prevent constructor by default
-    ScriptItemPotionComponent& operator=(ScriptItemPotionComponent const&);
-    ScriptItemPotionComponent(ScriptItemPotionComponent const&);
-    ScriptItemPotionComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

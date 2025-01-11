@@ -158,12 +158,6 @@ public:
 
     class Server {
     public:
-        // prevent constructor by default
-        Server& operator=(Server const&);
-        Server(Server const&);
-        Server();
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void cycleDisplayItemFromLootTable(
@@ -256,12 +250,6 @@ public:
     };
 
     class Client {
-    public:
-        // prevent constructor by default
-        Client& operator=(Client const&);
-        Client(Client const&);
-        Client();
-
     public:
         // static functions
         // NOLINTBEGIN

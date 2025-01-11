@@ -21,12 +21,6 @@ namespace br::worldgen {
 
 struct StructureProcessor {
 public:
-    // prevent constructor by default
-    StructureProcessor& operator=(StructureProcessor const&);
-    StructureProcessor(StructureProcessor const&);
-    StructureProcessor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

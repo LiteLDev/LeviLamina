@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class ImitateMobSoundsSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ImitateMobSoundsSystem& operator=(ImitateMobSoundsSystem const&);
-    ImitateMobSoundsSystem(ImitateMobSoundsSystem const&);
-    ImitateMobSoundsSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

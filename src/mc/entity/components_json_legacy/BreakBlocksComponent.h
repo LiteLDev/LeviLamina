@@ -11,12 +11,6 @@ struct BreakBlocksDescription;
 
 class BreakBlocksComponent {
 public:
-    // prevent constructor by default
-    BreakBlocksComponent& operator=(BreakBlocksComponent const&);
-    BreakBlocksComponent(BreakBlocksComponent const&);
-    BreakBlocksComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void breakNearbyBlocks(::Actor& actor);

@@ -17,12 +17,6 @@ namespace Social {
 
 class IScreenshotGalleryHttpCall {
 public:
-    // prevent constructor by default
-    IScreenshotGalleryHttpCall& operator=(IScreenshotGalleryHttpCall const&);
-    IScreenshotGalleryHttpCall(IScreenshotGalleryHttpCall const&);
-    IScreenshotGalleryHttpCall();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

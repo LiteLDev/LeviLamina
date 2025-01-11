@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraftServerUI {
 
 class IControl {
 public:
-    // prevent constructor by default
-    IControl& operator=(IControl const&);
-    IControl(IControl const&);
-    IControl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -41,12 +41,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FlexfecReceiveStream& operator=(FlexfecReceiveStream const&);
-    FlexfecReceiveStream(FlexfecReceiveStream const&);
-    FlexfecReceiveStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

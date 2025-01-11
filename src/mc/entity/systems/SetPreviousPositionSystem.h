@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class SetPreviousPositionSystem {
 public:
-    // prevent constructor by default
-    SetPreviousPositionSystem& operator=(SetPreviousPositionSystem const&);
-    SetPreviousPositionSystem(SetPreviousPositionSystem const&);
-    SetPreviousPositionSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

@@ -24,12 +24,6 @@ public:
     // DespawnComponent inner types define
     class IWorldAccessor {
     public:
-        // prevent constructor by default
-        IWorldAccessor& operator=(IWorldAccessor const&);
-        IWorldAccessor(IWorldAccessor const&);
-        IWorldAccessor();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -148,12 +142,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    DespawnComponent& operator=(DespawnComponent const&);
-    DespawnComponent(DespawnComponent const&);
-    DespawnComponent();
 
 public:
     // member functions

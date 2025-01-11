@@ -23,12 +23,6 @@ namespace CodeBuilder {
 
 class IMessenger : public ::Bedrock::EnableNonOwnerReferences, public ::CodeBuilder::CommandOutputObserver {
 public:
-    // prevent constructor by default
-    IMessenger& operator=(IMessenger const&);
-    IMessenger(IMessenger const&);
-    IMessenger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

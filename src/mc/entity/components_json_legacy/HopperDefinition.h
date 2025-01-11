@@ -12,12 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct HopperDefinition {
 public:
-    // prevent constructor by default
-    HopperDefinition& operator=(HopperDefinition const&);
-    HopperDefinition(HopperDefinition const&);
-    HopperDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

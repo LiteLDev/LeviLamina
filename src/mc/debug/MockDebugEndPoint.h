@@ -9,12 +9,6 @@
 
 class MockDebugEndPoint : public ::DebugEndPoint {
 public:
-    // prevent constructor by default
-    MockDebugEndPoint& operator=(MockDebugEndPoint const&);
-    MockDebugEndPoint(MockDebugEndPoint const&);
-    MockDebugEndPoint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

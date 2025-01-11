@@ -51,12 +51,6 @@ public:
     // P2PTransportChannel inner types define
     struct CandidateAndResolver {
     public:
-        // prevent constructor by default
-        CandidateAndResolver& operator=(CandidateAndResolver const&);
-        CandidateAndResolver(CandidateAndResolver const&);
-        CandidateAndResolver();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI
@@ -77,12 +71,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    P2PTransportChannel& operator=(P2PTransportChannel const&);
-    P2PTransportChannel(P2PTransportChannel const&);
-    P2PTransportChannel();
 
 public:
     // member functions

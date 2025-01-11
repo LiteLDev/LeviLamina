@@ -14,12 +14,6 @@ namespace webrtc {
 
 class UsagePattern {
 public:
-    // prevent constructor by default
-    UsagePattern& operator=(UsagePattern const&);
-    UsagePattern(UsagePattern const&);
-    UsagePattern();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void NoteUsageEvent(::webrtc::UsageEvent);

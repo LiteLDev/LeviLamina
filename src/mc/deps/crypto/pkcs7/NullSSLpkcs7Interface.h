@@ -9,12 +9,6 @@ namespace Crypto::Pkcs7 {
 
 class NullSSLpkcs7Interface : public ::Crypto::Pkcs7::ISystemInterface {
 public:
-    // prevent constructor by default
-    NullSSLpkcs7Interface& operator=(NullSSLpkcs7Interface const&);
-    NullSSLpkcs7Interface(NullSSLpkcs7Interface const&);
-    NullSSLpkcs7Interface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

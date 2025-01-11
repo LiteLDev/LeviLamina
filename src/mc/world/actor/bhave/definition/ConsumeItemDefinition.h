@@ -7,12 +7,6 @@
 
 class ConsumeItemDefinition : public ::BehaviorDefinition {
 public:
-    // prevent constructor by default
-    ConsumeItemDefinition& operator=(ConsumeItemDefinition const&);
-    ConsumeItemDefinition(ConsumeItemDefinition const&);
-    ConsumeItemDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

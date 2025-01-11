@@ -7,12 +7,6 @@
 
 namespace Invites {
 
-struct InviteId : public ::NewType<::std::string> {
-public:
-    // prevent constructor by default
-    InviteId& operator=(InviteId const&);
-    InviteId(InviteId const&);
-    InviteId();
-};
+struct InviteId : public ::NewType<::std::string> {};
 
 } // namespace Invites

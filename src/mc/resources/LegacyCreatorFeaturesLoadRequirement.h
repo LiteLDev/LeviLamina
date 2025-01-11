@@ -12,12 +12,6 @@ class IPackLoadContext;
 
 class LegacyCreatorFeaturesLoadRequirement {
 public:
-    // prevent constructor by default
-    LegacyCreatorFeaturesLoadRequirement& operator=(LegacyCreatorFeaturesLoadRequirement const&);
-    LegacyCreatorFeaturesLoadRequirement(LegacyCreatorFeaturesLoadRequirement const&);
-    LegacyCreatorFeaturesLoadRequirement();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);

@@ -15,12 +15,6 @@ struct ContainerValidationCraftResult;
 
 class AnvilContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    AnvilContainerScreenValidator& operator=(AnvilContainerScreenValidator const&);
-    AnvilContainerScreenValidator(AnvilContainerScreenValidator const&);
-    AnvilContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

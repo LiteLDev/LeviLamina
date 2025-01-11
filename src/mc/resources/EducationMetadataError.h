@@ -7,12 +7,6 @@
 
 class EducationMetadataError : public ::PackError {
 public:
-    // prevent constructor by default
-    EducationMetadataError& operator=(EducationMetadataError const&);
-    EducationMetadataError(EducationMetadataError const&);
-    EducationMetadataError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

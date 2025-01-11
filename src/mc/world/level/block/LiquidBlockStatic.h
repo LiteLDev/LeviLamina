@@ -16,12 +16,6 @@ class Random;
 
 class LiquidBlockStatic : public ::LiquidBlock {
 public:
-    // prevent constructor by default
-    LiquidBlockStatic& operator=(LiquidBlockStatic const&);
-    LiquidBlockStatic(LiquidBlockStatic const&);
-    LiquidBlockStatic();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87

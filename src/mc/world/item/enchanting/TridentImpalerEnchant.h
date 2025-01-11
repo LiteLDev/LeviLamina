@@ -12,12 +12,6 @@ class Actor;
 
 class TridentImpalerEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    TridentImpalerEnchant& operator=(TridentImpalerEnchant const&);
-    TridentImpalerEnchant(TridentImpalerEnchant const&);
-    TridentImpalerEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

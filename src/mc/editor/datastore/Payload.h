@@ -11,12 +11,6 @@ namespace Editor::DataStore {
 
 class Payload {
 public:
-    // prevent constructor by default
-    Payload& operator=(Payload const&);
-    Payload(Payload const&);
-    Payload();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Json::Value deserialize(::std::string const& payloadStr);

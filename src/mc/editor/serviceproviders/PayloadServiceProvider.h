@@ -17,12 +17,6 @@ namespace Editor::Network {
 
 class PayloadServiceProvider {
 public:
-    // prevent constructor by default
-    PayloadServiceProvider& operator=(PayloadServiceProvider const&);
-    PayloadServiceProvider(PayloadServiceProvider const&);
-    PayloadServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

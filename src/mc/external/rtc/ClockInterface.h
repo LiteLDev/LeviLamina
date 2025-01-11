@@ -6,12 +6,6 @@ namespace rtc {
 
 class ClockInterface {
 public:
-    // prevent constructor by default
-    ClockInterface& operator=(ClockInterface const&);
-    ClockInterface(ClockInterface const&);
-    ClockInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

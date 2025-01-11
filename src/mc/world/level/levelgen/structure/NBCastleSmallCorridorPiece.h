@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBCastleSmallCorridorPiece : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBCastleSmallCorridorPiece& operator=(NBCastleSmallCorridorPiece const&);
-    NBCastleSmallCorridorPiece(NBCastleSmallCorridorPiece const&);
-    NBCastleSmallCorridorPiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

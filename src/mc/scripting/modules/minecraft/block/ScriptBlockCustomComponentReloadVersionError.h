@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptBlockCustomComponentReloadVersionError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentReloadVersionError& operator=(ScriptBlockCustomComponentReloadVersionError const&);
-    ScriptBlockCustomComponentReloadVersionError(ScriptBlockCustomComponentReloadVersionError const&);
-    ScriptBlockCustomComponentReloadVersionError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptBlockCustomComponentReloadVersionError();

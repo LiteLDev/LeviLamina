@@ -7,12 +7,6 @@
 
 class NullSecureStorage : public ::SecureStorage {
 public:
-    // prevent constructor by default
-    NullSecureStorage& operator=(NullSecureStorage const&);
-    NullSecureStorage(NullSecureStorage const&);
-    NullSecureStorage();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

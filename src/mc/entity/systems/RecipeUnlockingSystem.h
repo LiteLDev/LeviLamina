@@ -43,12 +43,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    RecipeUnlockingSystem& operator=(RecipeUnlockingSystem const&);
-    RecipeUnlockingSystem(RecipeUnlockingSystem const&);
-    RecipeUnlockingSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

@@ -11,12 +11,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptInputPermissionCategory {
 public:
-    // prevent constructor by default
-    ScriptInputPermissionCategory& operator=(ScriptInputPermissionCategory const&);
-    ScriptInputPermissionCategory(ScriptInputPermissionCategory const&);
-    ScriptInputPermissionCategory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBinding bind();

@@ -16,12 +16,6 @@ class StructurePiece;
 
 class SHStraightStairsDown : public ::StrongholdPiece {
 public:
-    // prevent constructor by default
-    SHStraightStairsDown& operator=(SHStraightStairsDown const&);
-    SHStraightStairsDown(SHStraightStairsDown const&);
-    SHStraightStairsDown();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

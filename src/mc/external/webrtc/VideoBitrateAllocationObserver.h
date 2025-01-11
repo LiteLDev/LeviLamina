@@ -11,12 +11,6 @@ namespace webrtc {
 
 class VideoBitrateAllocationObserver {
 public:
-    // prevent constructor by default
-    VideoBitrateAllocationObserver& operator=(VideoBitrateAllocationObserver const&);
-    VideoBitrateAllocationObserver(VideoBitrateAllocationObserver const&);
-    VideoBitrateAllocationObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

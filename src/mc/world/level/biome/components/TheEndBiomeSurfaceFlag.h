@@ -7,12 +7,6 @@
 
 struct TheEndBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
-    // prevent constructor by default
-    TheEndBiomeSurfaceFlag& operator=(TheEndBiomeSurfaceFlag const&);
-    TheEndBiomeSurfaceFlag(TheEndBiomeSurfaceFlag const&);
-    TheEndBiomeSurfaceFlag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

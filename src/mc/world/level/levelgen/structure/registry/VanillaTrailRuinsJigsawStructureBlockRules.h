@@ -9,12 +9,6 @@ class JigsawStructureRegistry;
 
 class VanillaTrailRuinsJigsawStructureBlockRules {
 public:
-    // prevent constructor by default
-    VanillaTrailRuinsJigsawStructureBlockRules& operator=(VanillaTrailRuinsJigsawStructureBlockRules const&);
-    VanillaTrailRuinsJigsawStructureBlockRules(VanillaTrailRuinsJigsawStructureBlockRules const&);
-    VanillaTrailRuinsJigsawStructureBlockRules();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);

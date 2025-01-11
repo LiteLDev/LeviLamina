@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Pig : public ::Animal {
 public:
-    // prevent constructor by default
-    Pig& operator=(Pig const&);
-    Pig(Pig const&);
-    Pig();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139

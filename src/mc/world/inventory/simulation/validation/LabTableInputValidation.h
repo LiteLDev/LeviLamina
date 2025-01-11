@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class LabTableInputValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    LabTableInputValidation& operator=(LabTableInputValidation const&);
-    LabTableInputValidation(LabTableInputValidation const&);
-    LabTableInputValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

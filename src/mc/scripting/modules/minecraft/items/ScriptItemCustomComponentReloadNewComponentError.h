@@ -14,13 +14,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemCustomComponentReloadNewComponentError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentReloadNewComponentError&
-    operator=(ScriptItemCustomComponentReloadNewComponentError const&);
-    ScriptItemCustomComponentReloadNewComponentError(ScriptItemCustomComponentReloadNewComponentError const&);
-    ScriptItemCustomComponentReloadNewComponentError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptItemCustomComponentReloadNewComponentError();

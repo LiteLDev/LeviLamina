@@ -12,11 +12,6 @@ namespace webrtc {
 
 class TransportFeedbackDemuxer {
 public:
-    // prevent constructor by default
-    TransportFeedbackDemuxer& operator=(TransportFeedbackDemuxer const&);
-    TransportFeedbackDemuxer(TransportFeedbackDemuxer const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddPacket(::webrtc::RtpPacketSendInfo const&);

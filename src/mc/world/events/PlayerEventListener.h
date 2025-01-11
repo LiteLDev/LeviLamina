@@ -28,12 +28,6 @@ struct PlayerNotificationEvent;
 
 class PlayerEventListener {
 public:
-    // prevent constructor by default
-    PlayerEventListener& operator=(PlayerEventListener const&);
-    PlayerEventListener(PlayerEventListener const&);
-    PlayerEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class TradeableSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    TradeableSystem& operator=(TradeableSystem const&);
-    TradeableSystem(TradeableSystem const&);
-    TradeableSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

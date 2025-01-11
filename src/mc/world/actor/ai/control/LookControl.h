@@ -12,11 +12,6 @@ class Mob;
 
 class LookControl : public ::Control {
 public:
-    // prevent constructor by default
-    LookControl& operator=(LookControl const&);
-    LookControl(LookControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -16,12 +16,6 @@ struct Degree : public ::type_safe::strong_typedef<::mce::Degree, float>,
                 public ::type_safe::strong_typedef_op::input_operator<::mce::Degree>,
                 public ::type_safe::strong_typedef_op::output_operator<::mce::Degree> {
 public:
-    // prevent constructor by default
-    Degree& operator=(Degree const&);
-    Degree(Degree const&);
-    Degree();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Degree(::mce::Radian rad);

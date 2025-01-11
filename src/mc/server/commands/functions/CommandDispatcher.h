@@ -13,12 +13,6 @@ class CommandOrigin;
 
 class CommandDispatcher : public ::ICommandDispatcher {
 public:
-    // prevent constructor by default
-    CommandDispatcher& operator=(CommandDispatcher const&);
-    CommandDispatcher(CommandDispatcher const&);
-    CommandDispatcher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

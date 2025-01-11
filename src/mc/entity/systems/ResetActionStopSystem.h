@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class ResetActionStopSystem {
 public:
-    // prevent constructor by default
-    ResetActionStopSystem& operator=(ResetActionStopSystem const&);
-    ResetActionStopSystem(ResetActionStopSystem const&);
-    ResetActionStopSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createResetActionStopSystem();

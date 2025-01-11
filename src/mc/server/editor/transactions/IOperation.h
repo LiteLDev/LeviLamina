@@ -14,12 +14,6 @@ namespace Editor::Transactions {
 
 class IOperation {
 public:
-    // prevent constructor by default
-    IOperation& operator=(IOperation const&);
-    IOperation(IOperation const&);
-    IOperation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

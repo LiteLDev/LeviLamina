@@ -16,12 +16,6 @@ namespace br::worldgen::processors::PosRules {
 
 struct AlwaysTrue : public ::br::worldgen::processors::PosRules::TestType {
 public:
-    // prevent constructor by default
-    AlwaysTrue& operator=(AlwaysTrue const&);
-    AlwaysTrue(AlwaysTrue const&);
-    AlwaysTrue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

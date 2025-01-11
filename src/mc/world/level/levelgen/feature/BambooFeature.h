@@ -14,12 +14,6 @@ class Random;
 
 class BambooFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    BambooFeature& operator=(BambooFeature const&);
-    BambooFeature(BambooFeature const&);
-    BambooFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

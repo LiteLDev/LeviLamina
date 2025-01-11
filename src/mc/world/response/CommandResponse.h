@@ -17,12 +17,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class CommandResponse : public ::CommandResponseBase, public ::EventResponse {
 public:
-    // prevent constructor by default
-    CommandResponse& operator=(CommandResponse const&);
-    CommandResponse(CommandResponse const&);
-    CommandResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

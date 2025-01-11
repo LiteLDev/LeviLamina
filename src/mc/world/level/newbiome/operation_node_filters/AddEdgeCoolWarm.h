@@ -16,12 +16,6 @@ namespace OperationNodeFilters {
 struct AddEdgeCoolWarm
 : public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {
 public:
-    // prevent constructor by default
-    AddEdgeCoolWarm& operator=(AddEdgeCoolWarm const&);
-    AddEdgeCoolWarm(AddEdgeCoolWarm const&);
-    AddEdgeCoolWarm();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::OperationNodeValues::PreBiome

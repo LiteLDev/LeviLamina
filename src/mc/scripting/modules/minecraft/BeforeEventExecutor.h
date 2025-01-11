@@ -4,12 +4,6 @@
 
 namespace ScriptModuleMinecraft::Detail {
 
-struct BeforeEventExecutor {
-public:
-    // prevent constructor by default
-    BeforeEventExecutor& operator=(BeforeEventExecutor const&);
-    BeforeEventExecutor(BeforeEventExecutor const&);
-    BeforeEventExecutor();
-};
+struct BeforeEventExecutor {};
 
 } // namespace ScriptModuleMinecraft::Detail

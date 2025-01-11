@@ -17,12 +17,6 @@ struct VariantParameterList;
 
 class Fish : public ::WaterAnimal {
 public:
-    // prevent constructor by default
-    Fish& operator=(Fish const&);
-    Fish(Fish const&);
-    Fish();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 27

@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class ActorMoveSystem {
 public:
-    // prevent constructor by default
-    ActorMoveSystem& operator=(ActorMoveSystem const&);
-    ActorMoveSystem(ActorMoveSystem const&);
-    ActorMoveSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createActorMoveSystem();

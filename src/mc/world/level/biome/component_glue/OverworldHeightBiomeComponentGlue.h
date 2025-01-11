@@ -14,12 +14,6 @@ namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 
 struct OverworldHeightBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
-    // prevent constructor by default
-    OverworldHeightBiomeComponentGlue& operator=(OverworldHeightBiomeComponentGlue const&);
-    OverworldHeightBiomeComponentGlue(OverworldHeightBiomeComponentGlue const&);
-    OverworldHeightBiomeComponentGlue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

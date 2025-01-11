@@ -21,12 +21,6 @@ class Vec3;
 
 class PrecompiledCommandOrigin : public ::CommandOrigin {
 public:
-    // prevent constructor by default
-    PrecompiledCommandOrigin& operator=(PrecompiledCommandOrigin const&);
-    PrecompiledCommandOrigin(PrecompiledCommandOrigin const&);
-    PrecompiledCommandOrigin();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

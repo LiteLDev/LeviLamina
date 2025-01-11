@@ -15,12 +15,6 @@ namespace Editor::Services {
 
 class EditorPlayerExportProjectServiceProvider {
 public:
-    // prevent constructor by default
-    EditorPlayerExportProjectServiceProvider& operator=(EditorPlayerExportProjectServiceProvider const&);
-    EditorPlayerExportProjectServiceProvider(EditorPlayerExportProjectServiceProvider const&);
-    EditorPlayerExportProjectServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

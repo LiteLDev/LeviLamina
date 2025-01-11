@@ -13,12 +13,6 @@ namespace webrtc::webrtc_internal_rtp_video_sender {
 
 struct RtpStreamSender {
 public:
-    // prevent constructor by default
-    RtpStreamSender& operator=(RtpStreamSender const&);
-    RtpStreamSender(RtpStreamSender const&);
-    RtpStreamSender();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

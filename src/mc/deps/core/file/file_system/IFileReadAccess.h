@@ -4,12 +4,6 @@
 
 class IFileReadAccess {
 public:
-    // prevent constructor by default
-    IFileReadAccess& operator=(IFileReadAccess const&);
-    IFileReadAccess(IFileReadAccess const&);
-    IFileReadAccess();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

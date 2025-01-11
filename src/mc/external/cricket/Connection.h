@@ -81,12 +81,6 @@ public:
 
     class ConnectionRequest {
     public:
-        // prevent constructor by default
-        ConnectionRequest& operator=(ConnectionRequest const&);
-        ConnectionRequest(ConnectionRequest const&);
-        ConnectionRequest();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI

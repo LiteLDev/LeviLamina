@@ -27,12 +27,6 @@ public:
     // MemoryMappedFileAccess inner types define
     class MemoryMappedFileReadAccess : public ::IFileReadAccess {
     public:
-        // prevent constructor by default
-        MemoryMappedFileReadAccess& operator=(MemoryMappedFileReadAccess const&);
-        MemoryMappedFileReadAccess(MemoryMappedFileReadAccess const&);
-        MemoryMappedFileReadAccess();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
@@ -62,12 +56,6 @@ public:
     };
 
     class MemoryMappedFileWriteAccess : public ::IFileWriteAccess {
-    public:
-        // prevent constructor by default
-        MemoryMappedFileWriteAccess& operator=(MemoryMappedFileWriteAccess const&);
-        MemoryMappedFileWriteAccess(MemoryMappedFileWriteAccess const&);
-        MemoryMappedFileWriteAccess();
-
     public:
         // virtual functions
         // NOLINTBEGIN

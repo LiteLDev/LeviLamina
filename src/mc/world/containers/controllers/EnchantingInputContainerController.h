@@ -13,12 +13,6 @@ class Recipes;
 
 class EnchantingInputContainerController : public ::ContainerController {
 public:
-    // prevent constructor by default
-    EnchantingInputContainerController& operator=(EnchantingInputContainerController const&);
-    EnchantingInputContainerController(EnchantingInputContainerController const&);
-    EnchantingInputContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

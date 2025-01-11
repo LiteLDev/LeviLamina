@@ -12,12 +12,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct DimensionBoundDefinition {
 public:
-    // prevent constructor by default
-    DimensionBoundDefinition& operator=(DimensionBoundDefinition const&);
-    DimensionBoundDefinition(DimensionBoundDefinition const&);
-    DimensionBoundDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

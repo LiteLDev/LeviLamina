@@ -15,12 +15,6 @@ class Block;
 
 class VanillaBlockStateTransformUtils {
 public:
-    // prevent constructor by default
-    VanillaBlockStateTransformUtils& operator=(VanillaBlockStateTransformUtils const&);
-    VanillaBlockStateTransformUtils(VanillaBlockStateTransformUtils const&);
-    VanillaBlockStateTransformUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::CommonDirection _mirror(::CommonDirection direction, ::Mirror mirror);

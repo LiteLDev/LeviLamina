@@ -9,12 +9,6 @@ class Block;
 
 class BlockComponentStorageFinalizer {
 public:
-    // prevent constructor by default
-    BlockComponentStorageFinalizer& operator=(BlockComponentStorageFinalizer const&);
-    BlockComponentStorageFinalizer(BlockComponentStorageFinalizer const&);
-    BlockComponentStorageFinalizer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _checkForMissingGeometryComponent(::Block& block);

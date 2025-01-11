@@ -14,11 +14,6 @@ namespace BlockTranformationVersioning {
 
 class BlockTranformationVersioning11980Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockTranformationVersioning11980Upgrade& operator=(BlockTranformationVersioning11980Upgrade const&);
-    BlockTranformationVersioning11980Upgrade(BlockTranformationVersioning11980Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

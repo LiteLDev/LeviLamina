@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnIgniteDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnIgniteDefinition& operator=(OnIgniteDefinition const&);
-    OnIgniteDefinition(OnIgniteDefinition const&);
-    OnIgniteDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

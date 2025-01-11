@@ -10,12 +10,6 @@ class LabTableReaction;
 
 class LabTableReactionComponent {
 public:
-    // prevent constructor by default
-    LabTableReactionComponent& operator=(LabTableReactionComponent const&);
-    LabTableReactionComponent(LabTableReactionComponent const&);
-    LabTableReactionComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

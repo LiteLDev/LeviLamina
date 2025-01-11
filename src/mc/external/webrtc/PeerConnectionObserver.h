@@ -21,12 +21,6 @@ namespace webrtc {
 
 class PeerConnectionObserver {
 public:
-    // prevent constructor by default
-    PeerConnectionObserver& operator=(PeerConnectionObserver const&);
-    PeerConnectionObserver(PeerConnectionObserver const&);
-    PeerConnectionObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

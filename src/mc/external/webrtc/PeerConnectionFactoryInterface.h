@@ -66,12 +66,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    PeerConnectionFactoryInterface& operator=(PeerConnectionFactoryInterface const&);
-    PeerConnectionFactoryInterface(PeerConnectionFactoryInterface const&);
-    PeerConnectionFactoryInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

@@ -16,12 +16,6 @@ struct VariantParameterList;
 
 class Snowball : public ::Throwable {
 public:
-    // prevent constructor by default
-    Snowball& operator=(Snowball const&);
-    Snowball(Snowball const&);
-    Snowball();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

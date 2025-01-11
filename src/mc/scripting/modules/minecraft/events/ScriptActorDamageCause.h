@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorDamageCause {
 public:
-    // prevent constructor by default
-    ScriptActorDamageCause& operator=(ScriptActorDamageCause const&);
-    ScriptActorDamageCause(ScriptActorDamageCause const&);
-    ScriptActorDamageCause();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::std::string> bindV010();

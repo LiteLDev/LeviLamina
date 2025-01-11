@@ -19,12 +19,6 @@ struct ActorNotificationEvent;
 
 class ActorEventListener {
 public:
-    // prevent constructor by default
-    ActorEventListener& operator=(ActorEventListener const&);
-    ActorEventListener(ActorEventListener const&);
-    ActorEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

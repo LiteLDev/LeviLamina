@@ -49,13 +49,7 @@ public:
         InitBgfx();
     };
 
-    struct InitBegin : public ::dragon::tasks::GraphicsTasks::InitBgfx {
-    public:
-        // prevent constructor by default
-        InitBegin& operator=(InitBegin const&);
-        InitBegin(InitBegin const&);
-        InitBegin();
-    };
+    struct InitBegin : public ::dragon::tasks::GraphicsTasks::InitBgfx {};
 
     struct InitPending : public ::dragon::tasks::GraphicsTasks::InitBgfx {
     public:
@@ -72,13 +66,7 @@ public:
         InitPending();
     };
 
-    struct InitFinalize {
-    public:
-        // prevent constructor by default
-        InitFinalize& operator=(InitFinalize const&);
-        InitFinalize(InitFinalize const&);
-        InitFinalize();
-    };
+    struct InitFinalize {};
 
     struct InitEnd {
     public:
@@ -99,13 +87,7 @@ public:
                                      ::dragon::tasks::GraphicsTasks::InitBegin,
                                      ::dragon::tasks::GraphicsTasks::InitPending,
                                      ::dragon::tasks::GraphicsTasks::InitFinalize,
-                                     ::dragon::tasks::GraphicsTasks::InitEnd> {
-    public:
-        // prevent constructor by default
-        InitializationState& operator=(InitializationState const&);
-        InitializationState(InitializationState const&);
-        InitializationState();
-    };
+                                     ::dragon::tasks::GraphicsTasks::InitEnd> {};
 
 public:
     // member variables

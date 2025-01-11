@@ -3,10 +3,4 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 template <typename T0>
-class CommandSelectorResults {
-public:
-    // prevent constructor by default
-    CommandSelectorResults& operator=(CommandSelectorResults const&);
-    CommandSelectorResults(CommandSelectorResults const&);
-    CommandSelectorResults();
-};
+class CommandSelectorResults {};

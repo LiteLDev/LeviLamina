@@ -15,12 +15,6 @@ namespace Bedrock::PubSub { class Subscription; }
 
 class IContainerManager {
 public:
-    // prevent constructor by default
-    IContainerManager& operator=(IContainerManager const&);
-    IContainerManager(IContainerManager const&);
-    IContainerManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

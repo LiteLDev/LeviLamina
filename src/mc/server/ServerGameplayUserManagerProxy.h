@@ -12,12 +12,6 @@ class GameplayUserManager;
 
 class ServerGameplayUserManagerProxy : public ::GameplayUserManagerProxy {
 public:
-    // prevent constructor by default
-    ServerGameplayUserManagerProxy& operator=(ServerGameplayUserManagerProxy const&);
-    ServerGameplayUserManagerProxy(ServerGameplayUserManagerProxy const&);
-    ServerGameplayUserManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

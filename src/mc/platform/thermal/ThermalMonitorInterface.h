@@ -7,12 +7,6 @@
 
 class ThermalMonitorInterface {
 public:
-    // prevent constructor by default
-    ThermalMonitorInterface& operator=(ThermalMonitorInterface const&);
-    ThermalMonitorInterface(ThermalMonitorInterface const&);
-    ThermalMonitorInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

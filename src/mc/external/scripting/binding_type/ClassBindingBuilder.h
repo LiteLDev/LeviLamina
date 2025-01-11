@@ -5,12 +5,6 @@
 namespace Scripting {
 
 template <typename T0>
-class ClassBindingBuilder {
-public:
-    // prevent constructor by default
-    ClassBindingBuilder& operator=(ClassBindingBuilder const&);
-    ClassBindingBuilder(ClassBindingBuilder const&);
-    ClassBindingBuilder();
-};
+class ClassBindingBuilder {};
 
 } // namespace Scripting

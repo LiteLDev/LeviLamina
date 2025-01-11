@@ -13,12 +13,6 @@ namespace Bedrock::Threading { class Mutex; }
 
 class CrashDumpLog {
 public:
-    // prevent constructor by default
-    CrashDumpLog& operator=(CrashDumpLog const&);
-    CrashDumpLog(CrashDumpLog const&);
-    CrashDumpLog();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void crashDumpLogThreadRoutine();

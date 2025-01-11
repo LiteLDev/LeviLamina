@@ -27,13 +27,7 @@ public:
     // clang-format on
 
     // BlockGraphics inner types define
-    struct ConstructorToken {
-    public:
-        // prevent constructor by default
-        ConstructorToken& operator=(ConstructorToken const&);
-        ConstructorToken(ConstructorToken const&);
-        ConstructorToken();
-    };
+    struct ConstructorToken {};
 
     struct ModelItem {
     public:

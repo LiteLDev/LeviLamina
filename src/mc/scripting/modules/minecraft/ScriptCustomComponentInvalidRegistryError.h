@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCustomComponentInvalidRegistryError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptCustomComponentInvalidRegistryError& operator=(ScriptCustomComponentInvalidRegistryError const&);
-    ScriptCustomComponentInvalidRegistryError(ScriptCustomComponentInvalidRegistryError const&);
-    ScriptCustomComponentInvalidRegistryError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptCustomComponentInvalidRegistryError();

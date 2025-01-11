@@ -78,12 +78,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    PlatformBootstrap& operator=(PlatformBootstrap const&);
-    PlatformBootstrap(PlatformBootstrap const&);
-    PlatformBootstrap();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -4,12 +4,6 @@
 
 namespace astc_codec::base {
 
-struct InplaceT {
-public:
-    // prevent constructor by default
-    InplaceT& operator=(InplaceT const&);
-    InplaceT(InplaceT const&);
-    InplaceT();
-};
+struct InplaceT {};
 
 } // namespace astc_codec::base

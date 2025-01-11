@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class ExplodeSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ExplodeSystem& operator=(ExplodeSystem const&);
-    ExplodeSystem(ExplodeSystem const&);
-    ExplodeSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -17,12 +17,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class ActorCommandResponse : public ::CommandResponseBase, public ::ActorEventResponse {
 public:
-    // prevent constructor by default
-    ActorCommandResponse& operator=(ActorCommandResponse const&);
-    ActorCommandResponse(ActorCommandResponse const&);
-    ActorCommandResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

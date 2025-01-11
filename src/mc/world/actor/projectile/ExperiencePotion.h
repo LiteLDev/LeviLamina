@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class ExperiencePotion : public ::Throwable {
 public:
-    // prevent constructor by default
-    ExperiencePotion& operator=(ExperiencePotion const&);
-    ExperiencePotion(ExperiencePotion const&);
-    ExperiencePotion();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 145

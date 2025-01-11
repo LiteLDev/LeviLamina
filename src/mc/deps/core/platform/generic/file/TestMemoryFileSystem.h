@@ -16,12 +16,6 @@ namespace Bedrock {
 
 class TestMemoryFileSystem : public ::Core::MemoryFileSystem {
 public:
-    // prevent constructor by default
-    TestMemoryFileSystem& operator=(TestMemoryFileSystem const&);
-    TestMemoryFileSystem(TestMemoryFileSystem const&);
-    TestMemoryFileSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 49

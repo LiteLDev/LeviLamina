@@ -12,12 +12,6 @@ class Actor;
 
 class OozingMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    OozingMobEffect& operator=(OozingMobEffect const&);
-    OozingMobEffect(OozingMobEffect const&);
-    OozingMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

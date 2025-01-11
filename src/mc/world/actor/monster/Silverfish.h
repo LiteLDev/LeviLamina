@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Silverfish : public ::Monster {
 public:
-    // prevent constructor by default
-    Silverfish& operator=(Silverfish const&);
-    Silverfish(Silverfish const&);
-    Silverfish();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 71

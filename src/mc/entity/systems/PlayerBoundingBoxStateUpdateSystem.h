@@ -81,12 +81,6 @@ class PlayerBoundingBoxStateUpdateSystem
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    PlayerBoundingBoxStateUpdateSystem& operator=(PlayerBoundingBoxStateUpdateSystem const&);
-    PlayerBoundingBoxStateUpdateSystem(PlayerBoundingBoxStateUpdateSystem const&);
-    PlayerBoundingBoxStateUpdateSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

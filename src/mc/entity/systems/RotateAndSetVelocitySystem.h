@@ -13,12 +13,6 @@ struct VRMoveAdjustAngleComponent;
 
 struct RotateAndSetVelocitySystem {
 public:
-    // prevent constructor by default
-    RotateAndSetVelocitySystem& operator=(RotateAndSetVelocitySystem const&);
-    RotateAndSetVelocitySystem(RotateAndSetVelocitySystem const&);
-    RotateAndSetVelocitySystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

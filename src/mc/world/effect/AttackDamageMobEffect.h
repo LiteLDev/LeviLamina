@@ -12,12 +12,6 @@ class AttributeModifier;
 
 class AttackDamageMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    AttackDamageMobEffect& operator=(AttackDamageMobEffect const&);
-    AttackDamageMobEffect(AttackDamageMobEffect const&);
-    AttackDamageMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

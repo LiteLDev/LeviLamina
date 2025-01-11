@@ -10,12 +10,6 @@ namespace MSGraph::Models {
 
 struct GraphUploadBody : public ::Bedrock::Http::FileRequestBody {
 public:
-    // prevent constructor by default
-    GraphUploadBody& operator=(GraphUploadBody const&);
-    GraphUploadBody(GraphUploadBody const&);
-    GraphUploadBody();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

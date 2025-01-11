@@ -14,12 +14,6 @@ struct FeedItem;
 
 class HealableComponent {
 public:
-    // prevent constructor by default
-    HealableComponent& operator=(HealableComponent const&);
-    HealableComponent(HealableComponent const&);
-    HealableComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _useFeedItem(::Actor& owner, ::Player& player, ::FeedItem const& feedItem);

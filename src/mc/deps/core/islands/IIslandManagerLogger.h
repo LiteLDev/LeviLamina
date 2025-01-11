@@ -9,12 +9,6 @@ namespace Bedrock {
 
 class IIslandManagerLogger {
 public:
-    // prevent constructor by default
-    IIslandManagerLogger& operator=(IIslandManagerLogger const&);
-    IIslandManagerLogger(IIslandManagerLogger const&);
-    IIslandManagerLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

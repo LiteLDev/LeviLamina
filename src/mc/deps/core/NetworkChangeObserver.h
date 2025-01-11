@@ -12,12 +12,6 @@ namespace Bedrock::Threading { class Mutex; }
 
 class NetworkChangeObserver : public ::Core::Observer<::NetworkChangeObserver, ::Bedrock::Threading::Mutex> {
 public:
-    // prevent constructor by default
-    NetworkChangeObserver& operator=(NetworkChangeObserver const&);
-    NetworkChangeObserver(NetworkChangeObserver const&);
-    NetworkChangeObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ namespace webrtc {
 
 class Clock {
 public:
-    // prevent constructor by default
-    Clock& operator=(Clock const&);
-    Clock(Clock const&);
-    Clock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

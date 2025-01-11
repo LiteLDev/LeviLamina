@@ -14,12 +14,6 @@ class Random;
 
 class AzaleaTreeAndRootsFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    AzaleaTreeAndRootsFeature& operator=(AzaleaTreeAndRootsFeature const&);
-    AzaleaTreeAndRootsFeature(AzaleaTreeAndRootsFeature const&);
-    AzaleaTreeAndRootsFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

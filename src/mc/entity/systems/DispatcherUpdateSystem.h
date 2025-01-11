@@ -12,12 +12,6 @@ class EntityRegistry;
 
 struct DispatcherUpdateSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    DispatcherUpdateSystem& operator=(DispatcherUpdateSystem const&);
-    DispatcherUpdateSystem(DispatcherUpdateSystem const&);
-    DispatcherUpdateSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

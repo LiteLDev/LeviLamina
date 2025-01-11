@@ -20,12 +20,6 @@ struct ActorBlockSyncMessage;
 
 class ClassroomModeListener : public ::LevelListener {
 public:
-    // prevent constructor by default
-    ClassroomModeListener& operator=(ClassroomModeListener const&);
-    ClassroomModeListener(ClassroomModeListener const&);
-    ClassroomModeListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 17

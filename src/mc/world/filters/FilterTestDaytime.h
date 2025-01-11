@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestDaytime : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestDaytime& operator=(FilterTestDaytime const&);
-    FilterTestDaytime(FilterTestDaytime const&);
-    FilterTestDaytime();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

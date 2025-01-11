@@ -12,12 +12,6 @@ namespace webrtc {
 
 class VideoBitrateAllocator {
 public:
-    // prevent constructor by default
-    VideoBitrateAllocator& operator=(VideoBitrateAllocator const&);
-    VideoBitrateAllocator(VideoBitrateAllocator const&);
-    VideoBitrateAllocator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

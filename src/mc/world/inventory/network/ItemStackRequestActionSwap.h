@@ -7,12 +7,6 @@
 
 class ItemStackRequestActionSwap : public ::ItemStackRequestActionTransferBase {
 public:
-    // prevent constructor by default
-    ItemStackRequestActionSwap& operator=(ItemStackRequestActionSwap const&);
-    ItemStackRequestActionSwap(ItemStackRequestActionSwap const&);
-    ItemStackRequestActionSwap();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

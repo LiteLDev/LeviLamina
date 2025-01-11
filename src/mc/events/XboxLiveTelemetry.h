@@ -14,12 +14,6 @@ namespace Social::Events {
 
 class XboxLiveTelemetry : public ::Social::Events::AggregationEventListener {
 public:
-    // prevent constructor by default
-    XboxLiveTelemetry& operator=(XboxLiveTelemetry const&);
-    XboxLiveTelemetry(XboxLiveTelemetry const&);
-    XboxLiveTelemetry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -6,12 +6,6 @@ namespace mce {
 
 class IDeferredDebugUpdate {
 public:
-    // prevent constructor by default
-    IDeferredDebugUpdate& operator=(IDeferredDebugUpdate const&);
-    IDeferredDebugUpdate(IDeferredDebugUpdate const&);
-    IDeferredDebugUpdate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -141,12 +141,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    System& operator=(System const&);
-    System(System const&);
-    System();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

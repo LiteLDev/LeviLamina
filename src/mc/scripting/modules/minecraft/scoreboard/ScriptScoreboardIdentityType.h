@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptScoreboardIdentityType {
 public:
-    // prevent constructor by default
-    ScriptScoreboardIdentityType& operator=(ScriptScoreboardIdentityType const&);
-    ScriptScoreboardIdentityType(ScriptScoreboardIdentityType const&);
-    ScriptScoreboardIdentityType();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<

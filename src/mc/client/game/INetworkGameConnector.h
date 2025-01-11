@@ -14,12 +14,6 @@ namespace Social { class GameConnectionInfo; }
 
 class INetworkGameConnector {
 public:
-    // prevent constructor by default
-    INetworkGameConnector& operator=(INetworkGameConnector const&);
-    INetworkGameConnector(INetworkGameConnector const&);
-    INetworkGameConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -11,12 +11,6 @@ class ItemStackBase;
 
 class ContainerValidationBase {
 public:
-    // prevent constructor by default
-    ContainerValidationBase& operator=(ContainerValidationBase const&);
-    ContainerValidationBase(ContainerValidationBase const&);
-    ContainerValidationBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

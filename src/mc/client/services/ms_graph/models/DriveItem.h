@@ -4,12 +4,6 @@
 
 namespace MSGraph::Models {
 
-struct DriveItem {
-public:
-    // prevent constructor by default
-    DriveItem& operator=(DriveItem const&);
-    DriveItem(DriveItem const&);
-    DriveItem();
-};
+struct DriveItem {};
 
 } // namespace MSGraph::Models

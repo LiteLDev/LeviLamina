@@ -24,12 +24,6 @@ public:
     // FileSystemFileAccess inner types define
     class FileSystemFileReadAccess : public ::IFileReadAccess {
     public:
-        // prevent constructor by default
-        FileSystemFileReadAccess& operator=(FileSystemFileReadAccess const&);
-        FileSystemFileReadAccess(FileSystemFileReadAccess const&);
-        FileSystemFileReadAccess();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
@@ -59,12 +53,6 @@ public:
     };
 
     class FileSystemFileWriteAccess : public ::IFileWriteAccess {
-    public:
-        // prevent constructor by default
-        FileSystemFileWriteAccess& operator=(FileSystemFileWriteAccess const&);
-        FileSystemFileWriteAccess(FileSystemFileWriteAccess const&);
-        FileSystemFileWriteAccess();
-
     public:
         // virtual functions
         // NOLINTBEGIN

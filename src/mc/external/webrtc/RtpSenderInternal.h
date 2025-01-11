@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class RtpSenderInternal {
-public:
-    // prevent constructor by default
-    RtpSenderInternal& operator=(RtpSenderInternal const&);
-    RtpSenderInternal(RtpSenderInternal const&);
-    RtpSenderInternal();
-};
+class RtpSenderInternal {};
 
 } // namespace webrtc

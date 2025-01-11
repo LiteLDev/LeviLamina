@@ -5,12 +5,6 @@
 namespace Bedrock {
 
 template <typename T0>
-class UniqueOwnerPointer {
-public:
-    // prevent constructor by default
-    UniqueOwnerPointer& operator=(UniqueOwnerPointer const&);
-    UniqueOwnerPointer(UniqueOwnerPointer const&);
-    UniqueOwnerPointer();
-};
+class UniqueOwnerPointer {};
 
 } // namespace Bedrock

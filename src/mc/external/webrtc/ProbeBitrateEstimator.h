@@ -14,12 +14,6 @@ namespace webrtc {
 
 class ProbeBitrateEstimator {
 public:
-    // prevent constructor by default
-    ProbeBitrateEstimator& operator=(ProbeBitrateEstimator const&);
-    ProbeBitrateEstimator(ProbeBitrateEstimator const&);
-    ProbeBitrateEstimator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void EraseOldClusters(::webrtc::Timestamp);

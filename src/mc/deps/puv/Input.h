@@ -51,12 +51,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    Input& operator=(Input const&);
-    Input(Input const&);
-    Input();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

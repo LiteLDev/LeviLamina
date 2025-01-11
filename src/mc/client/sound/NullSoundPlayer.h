@@ -19,12 +19,6 @@ namespace Core { class Path; }
 
 class NullSoundPlayer : public ::SoundPlayerInterface {
 public:
-    // prevent constructor by default
-    NullSoundPlayer& operator=(NullSoundPlayer const&);
-    NullSoundPlayer(NullSoundPlayer const&);
-    NullSoundPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

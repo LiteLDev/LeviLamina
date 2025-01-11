@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class Chunk {
-public:
-    // prevent constructor by default
-    Chunk& operator=(Chunk const&);
-    Chunk(Chunk const&);
-    Chunk();
-};
+class Chunk {};
 
 } // namespace dcsctp

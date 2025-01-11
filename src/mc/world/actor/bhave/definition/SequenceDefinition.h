@@ -13,12 +13,6 @@ namespace Json { class Value; }
 
 class SequenceDefinition : public ::CompositeDefinition {
 public:
-    // prevent constructor by default
-    SequenceDefinition& operator=(SequenceDefinition const&);
-    SequenceDefinition(SequenceDefinition const&);
-    SequenceDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

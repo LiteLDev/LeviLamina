@@ -9,12 +9,6 @@ namespace webrtc {
 
 class VideoOrientation {
 public:
-    // prevent constructor by default
-    VideoOrientation& operator=(VideoOrientation const&);
-    VideoOrientation(VideoOrientation const&);
-    VideoOrientation();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoRotation);

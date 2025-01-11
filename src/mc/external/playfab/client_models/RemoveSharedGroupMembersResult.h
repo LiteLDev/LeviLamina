@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct RemoveSharedGroupMembersResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    RemoveSharedGroupMembersResult& operator=(RemoveSharedGroupMembersResult const&);
-    RemoveSharedGroupMembersResult(RemoveSharedGroupMembersResult const&);
-    RemoveSharedGroupMembersResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -17,12 +17,6 @@ class SculkSpreader;
 
 class SculkBlockBehavior : public ::SculkBehavior {
 public:
-    // prevent constructor by default
-    SculkBlockBehavior& operator=(SculkBlockBehavior const&);
-    SculkBlockBehavior(SculkBlockBehavior const&);
-    SculkBlockBehavior();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,12 +13,6 @@ namespace mce { class UUID; }
 
 class SoulSpeedEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    SoulSpeedEnchant& operator=(SoulSpeedEnchant const&);
-    SoulSpeedEnchant(SoulSpeedEnchant const&);
-    SoulSpeedEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -12,19 +12,7 @@ public:
     // clang-format on
 
     // RtpSequenceNumberMap inner types define
-    struct Info {
-    public:
-        // prevent constructor by default
-        Info& operator=(Info const&);
-        Info(Info const&);
-        Info();
-    };
-
-public:
-    // prevent constructor by default
-    RtpSequenceNumberMap& operator=(RtpSequenceNumberMap const&);
-    RtpSequenceNumberMap(RtpSequenceNumberMap const&);
-    RtpSequenceNumberMap();
+    struct Info {};
 
 public:
     // member functions

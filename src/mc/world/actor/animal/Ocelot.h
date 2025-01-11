@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class Ocelot : public ::Animal {
 public:
-    // prevent constructor by default
-    Ocelot& operator=(Ocelot const&);
-    Ocelot(Ocelot const&);
-    Ocelot();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

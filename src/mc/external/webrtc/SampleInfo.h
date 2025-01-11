@@ -6,12 +6,6 @@ namespace webrtc::metrics {
 
 struct SampleInfo {
 public:
-    // prevent constructor by default
-    SampleInfo& operator=(SampleInfo const&);
-    SampleInfo(SampleInfo const&);
-    SampleInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI SampleInfo(::std::string_view, int, int, uint64);

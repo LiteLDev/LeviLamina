@@ -14,12 +14,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class OnPlayerPlacingTriggerDescription : public ::BlockTriggerDescription<::OnPlayerPlacingTrigger> {
 public:
-    // prevent constructor by default
-    OnPlayerPlacingTriggerDescription& operator=(OnPlayerPlacingTriggerDescription const&);
-    OnPlayerPlacingTriggerDescription(OnPlayerPlacingTriggerDescription const&);
-    OnPlayerPlacingTriggerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

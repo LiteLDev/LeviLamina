@@ -9,12 +9,6 @@ namespace cricket {
 
 struct AudioReceiverParameters : public ::cricket::MediaChannelParameters {
 public:
-    // prevent constructor by default
-    AudioReceiverParameters& operator=(AudioReceiverParameters const&);
-    AudioReceiverParameters(AudioReceiverParameters const&);
-    AudioReceiverParameters();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

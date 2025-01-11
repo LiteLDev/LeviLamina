@@ -48,12 +48,6 @@ public:
         };
 
     public:
-        // prevent constructor by default
-        CrashHandler& operator=(CrashHandler const&);
-        CrashHandler(CrashHandler const&);
-        CrashHandler();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -86,12 +80,6 @@ public:
         Synchronous  = 0,
         Asynchronous = 1,
     };
-
-public:
-    // prevent constructor by default
-    CrashFileProcessor& operator=(CrashFileProcessor const&);
-    CrashFileProcessor(CrashFileProcessor const&);
-    CrashFileProcessor();
 
 public:
     // virtual functions

@@ -50,12 +50,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    PoolAliasBinding& operator=(PoolAliasBinding const&);
-    PoolAliasBinding(PoolAliasBinding const&);
-    PoolAliasBinding();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

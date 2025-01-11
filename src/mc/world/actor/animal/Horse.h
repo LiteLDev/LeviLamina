@@ -29,12 +29,6 @@ struct VariantParameterList;
 
 class Horse : public ::Animal {
 public:
-    // prevent constructor by default
-    Horse& operator=(Horse const&);
-    Horse(Horse const&);
-    Horse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

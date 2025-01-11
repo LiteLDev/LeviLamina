@@ -15,12 +15,6 @@ namespace Realms {
 
 class ISubscriptionApi {
 public:
-    // prevent constructor by default
-    ISubscriptionApi& operator=(ISubscriptionApi const&);
-    ISubscriptionApi(ISubscriptionApi const&);
-    ISubscriptionApi();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

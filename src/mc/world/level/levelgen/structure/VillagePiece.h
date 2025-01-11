@@ -22,12 +22,6 @@ class StructurePiece;
 
 class VillagePiece : public ::PoolElementStructurePiece {
 public:
-    // prevent constructor by default
-    VillagePiece& operator=(VillagePiece const&);
-    VillagePiece(VillagePiece const&);
-    VillagePiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13

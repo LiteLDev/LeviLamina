@@ -17,12 +17,6 @@ namespace NetherNet {
 
 struct ISignalingEventHandler {
 public:
-    // prevent constructor by default
-    ISignalingEventHandler& operator=(ISignalingEventHandler const&);
-    ISignalingEventHandler(ISignalingEventHandler const&);
-    ISignalingEventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -458,12 +458,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    AudioProcessing& operator=(AudioProcessing const&);
-    AudioProcessing(AudioProcessing const&);
-    AudioProcessing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

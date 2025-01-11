@@ -235,12 +235,6 @@ struct NetworkIdentifierWithSubId;
 
 class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    NetEventCallback& operator=(NetEventCallback const&);
-    NetEventCallback(NetEventCallback const&);
-    NetEventCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

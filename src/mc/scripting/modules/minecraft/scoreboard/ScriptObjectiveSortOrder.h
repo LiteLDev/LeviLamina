@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptObjectiveSortOrder {
 public:
-    // prevent constructor by default
-    ScriptObjectiveSortOrder& operator=(ScriptObjectiveSortOrder const&);
-    ScriptObjectiveSortOrder(ScriptObjectiveSortOrder const&);
-    ScriptObjectiveSortOrder();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<

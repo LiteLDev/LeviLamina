@@ -18,12 +18,6 @@ struct PortPair;
 
 class ServerLocator : public ::NetworkEnableDisableListener {
 public:
-    // prevent constructor by default
-    ServerLocator& operator=(ServerLocator const&);
-    ServerLocator(ServerLocator const&);
-    ServerLocator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

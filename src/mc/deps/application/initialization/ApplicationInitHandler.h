@@ -27,12 +27,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ApplicationInitHandler& operator=(ApplicationInitHandler const&);
-    ApplicationInitHandler(ApplicationInitHandler const&);
-    ApplicationInitHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

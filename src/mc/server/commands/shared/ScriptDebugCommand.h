@@ -37,11 +37,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ScriptDebugCommand& operator=(ScriptDebugCommand const&);
-    ScriptDebugCommand(ScriptDebugCommand const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

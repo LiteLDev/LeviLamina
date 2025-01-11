@@ -7,12 +7,6 @@
 
 class ServerPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
-    // prevent constructor by default
-    ServerPlayerEventCoordinator& operator=(ServerPlayerEventCoordinator const&);
-    ServerPlayerEventCoordinator(ServerPlayerEventCoordinator const&);
-    ServerPlayerEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

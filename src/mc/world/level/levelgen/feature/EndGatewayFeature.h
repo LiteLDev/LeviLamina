@@ -14,12 +14,6 @@ class Random;
 
 class EndGatewayFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    EndGatewayFeature& operator=(EndGatewayFeature const&);
-    EndGatewayFeature(EndGatewayFeature const&);
-    EndGatewayFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

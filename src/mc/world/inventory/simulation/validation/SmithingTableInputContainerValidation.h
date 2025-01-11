@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class SmithingTableInputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    SmithingTableInputContainerValidation& operator=(SmithingTableInputContainerValidation const&);
-    SmithingTableInputContainerValidation(SmithingTableInputContainerValidation const&);
-    SmithingTableInputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

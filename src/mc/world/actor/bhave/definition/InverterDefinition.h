@@ -13,12 +13,6 @@ namespace Json { class Value; }
 
 class InverterDefinition : public ::DecoratorDefinition {
 public:
-    // prevent constructor by default
-    InverterDefinition& operator=(InverterDefinition const&);
-    InverterDefinition(InverterDefinition const&);
-    InverterDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

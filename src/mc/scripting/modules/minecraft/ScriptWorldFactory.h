@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptWorldFactory {
 public:
-    // prevent constructor by default
-    ScriptWorldFactory& operator=(ScriptWorldFactory const&);
-    ScriptWorldFactory(ScriptWorldFactory const&);
-    ScriptWorldFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld>

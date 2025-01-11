@@ -16,11 +16,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class ArmorItemComponent : public ::NetworkedItemComponent<::ArmorItemComponent> {
 public:
-    // prevent constructor by default
-    ArmorItemComponent& operator=(ArmorItemComponent const&);
-    ArmorItemComponent(ArmorItemComponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -32,12 +32,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    WorldConverter& operator=(WorldConverter const&);
-    WorldConverter(WorldConverter const&);
-    WorldConverter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

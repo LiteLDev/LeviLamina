@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class CombatRegenerationSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    CombatRegenerationSystem& operator=(CombatRegenerationSystem const&);
-    CombatRegenerationSystem(CombatRegenerationSystem const&);
-    CombatRegenerationSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

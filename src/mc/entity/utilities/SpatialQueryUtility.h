@@ -23,12 +23,6 @@ struct FallingBlockFlagComponent;
 
 struct SpatialQueryUtility {
 public:
-    // prevent constructor by default
-    SpatialQueryUtility& operator=(SpatialQueryUtility const&);
-    SpatialQueryUtility(SpatialQueryUtility const&);
-    SpatialQueryUtility();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool forEachBlockInAABB(

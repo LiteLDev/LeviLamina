@@ -7,12 +7,6 @@
 
 namespace Social {
 
-struct EmailAddress : public ::NewType<::std::string> {
-public:
-    // prevent constructor by default
-    EmailAddress& operator=(EmailAddress const&);
-    EmailAddress(EmailAddress const&);
-    EmailAddress();
-};
+struct EmailAddress : public ::NewType<::std::string> {};
 
 } // namespace Social

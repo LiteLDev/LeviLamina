@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestMoonIntensity : public ::SimpleFloatFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestMoonIntensity& operator=(FilterTestMoonIntensity const&);
-    FilterTestMoonIntensity(FilterTestMoonIntensity const&);
-    FilterTestMoonIntensity();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -14,12 +14,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class OutOfControlDefinition {
 public:
-    // prevent constructor by default
-    OutOfControlDefinition& operator=(OutOfControlDefinition const&);
-    OutOfControlDefinition(OutOfControlDefinition const&);
-    OutOfControlDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity, ::OutOfControlComponent&) const;

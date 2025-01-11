@@ -8,11 +8,6 @@
 
 class FakeThermalMonitorInterface : public ::ThermalMonitorInterface {
 public:
-    // prevent constructor by default
-    FakeThermalMonitorInterface& operator=(FakeThermalMonitorInterface const&);
-    FakeThermalMonitorInterface(FakeThermalMonitorInterface const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

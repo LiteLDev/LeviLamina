@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class CheckFallDamageSystem {
 public:
-    // prevent constructor by default
-    CheckFallDamageSystem& operator=(CheckFallDamageSystem const&);
-    CheckFallDamageSystem(CheckFallDamageSystem const&);
-    CheckFallDamageSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

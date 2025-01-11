@@ -6,12 +6,6 @@ namespace cricket {
 
 class RemoteCandidate {
 public:
-    // prevent constructor by default
-    RemoteCandidate& operator=(RemoteCandidate const&);
-    RemoteCandidate(RemoteCandidate const&);
-    RemoteCandidate();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~RemoteCandidate();

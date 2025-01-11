@@ -16,12 +16,6 @@ namespace webrtc {
 
 class I444BufferInterface : public ::webrtc::PlanarYuv8Buffer {
 public:
-    // prevent constructor by default
-    I444BufferInterface& operator=(I444BufferInterface const&);
-    I444BufferInterface(I444BufferInterface const&);
-    I444BufferInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

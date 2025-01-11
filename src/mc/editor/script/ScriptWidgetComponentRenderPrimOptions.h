@@ -10,11 +10,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentRenderPrimOptions : public ::Editor::ScriptModule::ScriptWidgetComponentBaseOptions {
 public:
-    // prevent constructor by default
-    ScriptWidgetComponentRenderPrimOptions& operator=(ScriptWidgetComponentRenderPrimOptions const&);
-    ScriptWidgetComponentRenderPrimOptions();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptWidgetComponentRenderPrimOptions(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions const&);

@@ -6,12 +6,6 @@ namespace webrtc::rtcp {
 
 class Rtpfb {
 public:
-    // prevent constructor by default
-    Rtpfb& operator=(Rtpfb const&);
-    Rtpfb(Rtpfb const&);
-    Rtpfb();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void CreateCommonFeedback(uchar*) const;

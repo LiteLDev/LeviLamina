@@ -21,12 +21,6 @@ namespace cricket {
 
 class VideoEngineInterface : public ::cricket::RtpHeaderExtensionQueryInterface {
 public:
-    // prevent constructor by default
-    VideoEngineInterface& operator=(VideoEngineInterface const&);
-    VideoEngineInterface(VideoEngineInterface const&);
-    VideoEngineInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

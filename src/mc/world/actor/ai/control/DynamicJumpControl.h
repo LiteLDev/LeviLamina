@@ -15,11 +15,6 @@ struct JumpControlDescription;
 
 class DynamicJumpControl : public ::JumpControl {
 public:
-    // prevent constructor by default
-    DynamicJumpControl& operator=(DynamicJumpControl const&);
-    DynamicJumpControl(DynamicJumpControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

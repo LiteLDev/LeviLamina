@@ -24,12 +24,6 @@ struct WasOnGroundFlagComponent;
 
 class PostAIUpdateSystem {
 public:
-    // prevent constructor by default
-    PostAIUpdateSystem& operator=(PostAIUpdateSystem const&);
-    PostAIUpdateSystem(PostAIUpdateSystem const&);
-    PostAIUpdateSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

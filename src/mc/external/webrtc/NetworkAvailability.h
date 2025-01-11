@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-struct NetworkAvailability {
-public:
-    // prevent constructor by default
-    NetworkAvailability& operator=(NetworkAvailability const&);
-    NetworkAvailability(NetworkAvailability const&);
-    NetworkAvailability();
-};
+struct NetworkAvailability {};
 
 } // namespace webrtc

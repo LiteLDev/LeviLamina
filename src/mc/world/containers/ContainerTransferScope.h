@@ -10,12 +10,6 @@ class SimpleSparseContainer;
 
 struct ContainerTransferScope {
 public:
-    // prevent constructor by default
-    ContainerTransferScope& operator=(ContainerTransferScope const&);
-    ContainerTransferScope(ContainerTransferScope const&);
-    ContainerTransferScope();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

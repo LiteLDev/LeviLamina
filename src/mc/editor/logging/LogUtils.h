@@ -16,12 +16,6 @@ namespace Editor {
 
 class LogUtils {
 public:
-    // prevent constructor by default
-    LogUtils& operator=(LogUtils const&);
-    LogUtils(LogUtils const&);
-    LogUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _log(

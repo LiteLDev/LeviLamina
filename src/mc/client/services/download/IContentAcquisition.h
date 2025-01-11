@@ -20,12 +20,6 @@ struct PackImportStateObject;
 
 class IContentAcquisition {
 public:
-    // prevent constructor by default
-    IContentAcquisition& operator=(IContentAcquisition const&);
-    IContentAcquisition(IContentAcquisition const&);
-    IContentAcquisition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

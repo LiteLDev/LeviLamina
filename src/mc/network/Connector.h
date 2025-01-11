@@ -24,12 +24,6 @@ public:
     // Connector inner types define
     struct ConnectionCallbacks {
     public:
-        // prevent constructor by default
-        ConnectionCallbacks& operator=(ConnectionCallbacks const&);
-        ConnectionCallbacks(ConnectionCallbacks const&);
-        ConnectionCallbacks();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

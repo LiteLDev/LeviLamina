@@ -21,12 +21,6 @@ struct VariantParameterList;
 
 class Goat : public ::Animal {
 public:
-    // prevent constructor by default
-    Goat& operator=(Goat const&);
-    Goat(Goat const&);
-    Goat();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 140

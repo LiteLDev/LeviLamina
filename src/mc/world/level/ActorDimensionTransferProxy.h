@@ -15,11 +15,6 @@ class Vec3;
 
 class ActorDimensionTransferProxy : public ::IActorDimensionTransferProxy {
 public:
-    // prevent constructor by default
-    ActorDimensionTransferProxy& operator=(ActorDimensionTransferProxy const&);
-    ActorDimensionTransferProxy(ActorDimensionTransferProxy const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

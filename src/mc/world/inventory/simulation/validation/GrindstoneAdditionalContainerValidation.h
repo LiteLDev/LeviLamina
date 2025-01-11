@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class GrindstoneAdditionalContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    GrindstoneAdditionalContainerValidation& operator=(GrindstoneAdditionalContainerValidation const&);
-    GrindstoneAdditionalContainerValidation(GrindstoneAdditionalContainerValidation const&);
-    GrindstoneAdditionalContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

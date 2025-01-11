@@ -17,12 +17,6 @@ namespace webrtc {
 
 class MediaReceiveStreamInterface : public ::webrtc::ReceiveStreamInterface {
 public:
-    // prevent constructor by default
-    MediaReceiveStreamInterface& operator=(MediaReceiveStreamInterface const&);
-    MediaReceiveStreamInterface(MediaReceiveStreamInterface const&);
-    MediaReceiveStreamInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

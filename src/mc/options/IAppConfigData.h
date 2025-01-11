@@ -7,12 +7,6 @@
 
 class IAppConfigData {
 public:
-    // prevent constructor by default
-    IAppConfigData& operator=(IAppConfigData const&);
-    IAppConfigData(IAppConfigData const&);
-    IAppConfigData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

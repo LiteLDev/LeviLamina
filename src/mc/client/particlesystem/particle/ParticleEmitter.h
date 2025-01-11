@@ -22,12 +22,6 @@ namespace ParticleSystem {
 
 class ParticleEmitter {
 public:
-    // prevent constructor by default
-    ParticleEmitter& operator=(ParticleEmitter const&);
-    ParticleEmitter(ParticleEmitter const&);
-    ParticleEmitter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

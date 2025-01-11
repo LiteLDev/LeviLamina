@@ -15,12 +15,6 @@ namespace cricket {
 
 class StunPort {
 public:
-    // prevent constructor by default
-    StunPort& operator=(StunPort const&);
-    StunPort(StunPort const&);
-    StunPort();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

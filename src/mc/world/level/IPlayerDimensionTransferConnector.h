@@ -13,12 +13,6 @@ class Dimension;
 
 class IPlayerDimensionTransferConnector {
 public:
-    // prevent constructor by default
-    IPlayerDimensionTransferConnector& operator=(IPlayerDimensionTransferConnector const&);
-    IPlayerDimensionTransferConnector(IPlayerDimensionTransferConnector const&);
-    IPlayerDimensionTransferConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

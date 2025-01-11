@@ -48,12 +48,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ScriptDeferredEventCoordinator& operator=(ScriptDeferredEventCoordinator const&);
-    ScriptDeferredEventCoordinator(ScriptDeferredEventCoordinator const&);
-    ScriptDeferredEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

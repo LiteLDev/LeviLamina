@@ -14,12 +14,6 @@ namespace NetherNet {
 
 struct DiscoveryRequestPacket : public ::NetherNet::DiscoveryPacket {
 public:
-    // prevent constructor by default
-    DiscoveryRequestPacket& operator=(DiscoveryRequestPacket const&);
-    DiscoveryRequestPacket(DiscoveryRequestPacket const&);
-    DiscoveryRequestPacket();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DiscoveryRequestPacket(::NetherNet::NetworkID senderId);

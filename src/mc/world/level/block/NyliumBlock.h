@@ -27,21 +27,9 @@ public:
     // NyliumBlock inner types define
     using RandomPlantProvider = ::std::function<::Block const&(::Randomize const&)>;
 
-    struct WarpedNyliumBlockVegetationProbabilities {
-    public:
-        // prevent constructor by default
-        WarpedNyliumBlockVegetationProbabilities& operator=(WarpedNyliumBlockVegetationProbabilities const&);
-        WarpedNyliumBlockVegetationProbabilities(WarpedNyliumBlockVegetationProbabilities const&);
-        WarpedNyliumBlockVegetationProbabilities();
-    };
+    struct WarpedNyliumBlockVegetationProbabilities {};
 
-    struct CrimsonNyliumBlockVegetationProbabilities {
-    public:
-        // prevent constructor by default
-        CrimsonNyliumBlockVegetationProbabilities& operator=(CrimsonNyliumBlockVegetationProbabilities const&);
-        CrimsonNyliumBlockVegetationProbabilities(CrimsonNyliumBlockVegetationProbabilities const&);
-        CrimsonNyliumBlockVegetationProbabilities();
-    };
+    struct CrimsonNyliumBlockVegetationProbabilities {};
 
 public:
     // virtual functions

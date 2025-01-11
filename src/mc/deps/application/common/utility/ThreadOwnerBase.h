@@ -4,12 +4,6 @@
 
 namespace Bedrock::Application {
 
-class ThreadOwnerBase {
-public:
-    // prevent constructor by default
-    ThreadOwnerBase& operator=(ThreadOwnerBase const&);
-    ThreadOwnerBase(ThreadOwnerBase const&);
-    ThreadOwnerBase();
-};
+class ThreadOwnerBase {};
 
 } // namespace Bedrock::Application

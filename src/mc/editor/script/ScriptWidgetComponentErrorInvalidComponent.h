@@ -10,11 +10,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentErrorInvalidComponent : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptWidgetComponentErrorInvalidComponent& operator=(ScriptWidgetComponentErrorInvalidComponent const&);
-    ScriptWidgetComponentErrorInvalidComponent(ScriptWidgetComponentErrorInvalidComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptWidgetComponentErrorInvalidComponent();

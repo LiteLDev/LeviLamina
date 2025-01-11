@@ -13,12 +13,6 @@ struct ScreenEvent;
 
 class IScreenController {
 public:
-    // prevent constructor by default
-    IScreenController& operator=(IScreenController const&);
-    IScreenController(IScreenController const&);
-    IScreenController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

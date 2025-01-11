@@ -7,12 +7,6 @@
 
 class SwimEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    SwimEnchant& operator=(SwimEnchant const&);
-    SwimEnchant(SwimEnchant const&);
-    SwimEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class AnimationEventSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AnimationEventSystem& operator=(AnimationEventSystem const&);
-    AnimationEventSystem(AnimationEventSystem const&);
-    AnimationEventSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

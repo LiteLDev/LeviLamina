@@ -13,12 +13,6 @@ namespace br::worldgen::processors::BlockEntity {
 
 struct ModifierType {
 public:
-    // prevent constructor by default
-    ModifierType& operator=(ModifierType const&);
-    ModifierType(ModifierType const&);
-    ModifierType();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -38,13 +38,7 @@ public:
         Key();
     };
 
-    struct Comparator {
-    public:
-        // prevent constructor by default
-        Comparator& operator=(Comparator const&);
-        Comparator(Comparator const&);
-        Comparator();
-    };
+    struct Comparator {};
 
 public:
     // member variables

@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorIsSkinIDTest : public ::SimpleIntFilterTest {
 public:
-    // prevent constructor by default
-    ActorIsSkinIDTest& operator=(ActorIsSkinIDTest const&);
-    ActorIsSkinIDTest(ActorIsSkinIDTest const&);
-    ActorIsSkinIDTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

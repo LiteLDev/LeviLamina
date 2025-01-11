@@ -14,12 +14,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class SuspectTrackingDefinition {
 public:
-    // prevent constructor by default
-    SuspectTrackingDefinition& operator=(SuspectTrackingDefinition const&);
-    SuspectTrackingDefinition(SuspectTrackingDefinition const&);
-    SuspectTrackingDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext&, ::SuspectTrackingComponent&) const;

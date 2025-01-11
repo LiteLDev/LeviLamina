@@ -14,12 +14,6 @@ struct ServerInstanceRequestResourceReload;
 struct ServerInstanceNotificationEvent
 : public ::EventVariantImpl<::ServerInstanceLeaveGameDoneEvent const, ::ServerInstanceRequestResourceReload const> {
 public:
-    // prevent constructor by default
-    ServerInstanceNotificationEvent& operator=(ServerInstanceNotificationEvent const&);
-    ServerInstanceNotificationEvent(ServerInstanceNotificationEvent const&);
-    ServerInstanceNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ServerInstanceNotificationEvent();

@@ -51,12 +51,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    RailMovementUtility& operator=(RailMovementUtility const&);
-    RailMovementUtility(RailMovementUtility const&);
-    RailMovementUtility();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 calculateGoldenRailSpeedIncrease(

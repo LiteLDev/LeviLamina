@@ -12,12 +12,6 @@ class AttributeInstance;
 
 class ExhaustionAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
-    // prevent constructor by default
-    ExhaustionAttributeDelegate& operator=(ExhaustionAttributeDelegate const&);
-    ExhaustionAttributeDelegate(ExhaustionAttributeDelegate const&);
-    ExhaustionAttributeDelegate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

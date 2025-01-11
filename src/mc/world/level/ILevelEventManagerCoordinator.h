@@ -14,12 +14,6 @@ class Vec3;
 
 class ILevelEventManagerCoordinator {
 public:
-    // prevent constructor by default
-    ILevelEventManagerCoordinator& operator=(ILevelEventManagerCoordinator const&);
-    ILevelEventManagerCoordinator(ILevelEventManagerCoordinator const&);
-    ILevelEventManagerCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

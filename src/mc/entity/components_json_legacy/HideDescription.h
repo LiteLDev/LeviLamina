@@ -7,12 +7,6 @@
 
 struct HideDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    HideDescription& operator=(HideDescription const&);
-    HideDescription(HideDescription const&);
-    HideDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ class ClientScriptEventListener;
 
 class ClientScriptEventCoordinator : public ::EventCoordinator<::ClientScriptEventListener> {
 public:
-    // prevent constructor by default
-    ClientScriptEventCoordinator& operator=(ClientScriptEventCoordinator const&);
-    ClientScriptEventCoordinator(ClientScriptEventCoordinator const&);
-    ClientScriptEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

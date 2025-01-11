@@ -16,12 +16,6 @@ class RenderParams;
 
 class DefaultEmptyActorAnimationPlayer : public ::ActorAnimationPlayer {
 public:
-    // prevent constructor by default
-    DefaultEmptyActorAnimationPlayer& operator=(DefaultEmptyActorAnimationPlayer const&);
-    DefaultEmptyActorAnimationPlayer(DefaultEmptyActorAnimationPlayer const&);
-    DefaultEmptyActorAnimationPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

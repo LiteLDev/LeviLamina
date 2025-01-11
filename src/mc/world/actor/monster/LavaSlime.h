@@ -18,12 +18,6 @@ struct VariantParameterList;
 
 class LavaSlime : public ::Slime {
 public:
-    // prevent constructor by default
-    LavaSlime& operator=(LavaSlime const&);
-    LavaSlime(LavaSlime const&);
-    LavaSlime();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

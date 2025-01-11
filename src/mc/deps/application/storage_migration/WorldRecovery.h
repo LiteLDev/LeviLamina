@@ -60,12 +60,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    WorldRecovery& operator=(WorldRecovery const&);
-    WorldRecovery(WorldRecovery const&);
-    WorldRecovery();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

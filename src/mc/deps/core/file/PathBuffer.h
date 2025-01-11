@@ -5,12 +5,6 @@
 namespace Core {
 
 template <typename T0>
-class PathBuffer {
-public:
-    // prevent constructor by default
-    PathBuffer& operator=(PathBuffer const&);
-    PathBuffer(PathBuffer const&);
-    PathBuffer();
-};
+class PathBuffer {};
 
 } // namespace Core

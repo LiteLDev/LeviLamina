@@ -16,12 +16,6 @@ class StructurePiece;
 
 class SHPortalRoom : public ::StrongholdPiece {
 public:
-    // prevent constructor by default
-    SHPortalRoom& operator=(SHPortalRoom const&);
-    SHPortalRoom(SHPortalRoom const&);
-    SHPortalRoom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

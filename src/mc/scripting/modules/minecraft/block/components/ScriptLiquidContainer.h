@@ -9,12 +9,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptLiquidContainer {
 public:
-    // prevent constructor by default
-    ScriptLiquidContainer& operator=(ScriptLiquidContainer const&);
-    ScriptLiquidContainer(ScriptLiquidContainer const&);
-    ScriptLiquidContainer();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptLiquidContainer> bind();

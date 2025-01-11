@@ -12,12 +12,6 @@ class ClientHitDetectListener;
 
 class ClientHitDetectCoordinator : public ::EventCoordinator<::ClientHitDetectListener> {
 public:
-    // prevent constructor by default
-    ClientHitDetectCoordinator& operator=(ClientHitDetectCoordinator const&);
-    ClientHitDetectCoordinator(ClientHitDetectCoordinator const&);
-    ClientHitDetectCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

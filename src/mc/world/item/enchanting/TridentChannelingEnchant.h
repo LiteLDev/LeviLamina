@@ -7,12 +7,6 @@
 
 class TridentChannelingEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    TridentChannelingEnchant& operator=(TridentChannelingEnchant const&);
-    TridentChannelingEnchant(TridentChannelingEnchant const&);
-    TridentChannelingEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

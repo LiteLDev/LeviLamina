@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class DtmfProviderInterface {
-public:
-    // prevent constructor by default
-    DtmfProviderInterface& operator=(DtmfProviderInterface const&);
-    DtmfProviderInterface(DtmfProviderInterface const&);
-    DtmfProviderInterface();
-};
+class DtmfProviderInterface {};
 
 } // namespace webrtc

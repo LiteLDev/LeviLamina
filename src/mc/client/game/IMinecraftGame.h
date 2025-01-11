@@ -164,12 +164,6 @@ class IMinecraftGame : public ::Bedrock::EnableNonOwnerReferences,
                        public ::IWorldTransfer,
                        public ::ISplitScreenChangedPublisher {
 public:
-    // prevent constructor by default
-    IMinecraftGame& operator=(IMinecraftGame const&);
-    IMinecraftGame(IMinecraftGame const&);
-    IMinecraftGame();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

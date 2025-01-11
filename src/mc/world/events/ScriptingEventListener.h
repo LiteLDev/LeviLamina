@@ -12,12 +12,6 @@ struct ScriptingNotificationEvent;
 
 class ScriptingEventListener {
 public:
-    // prevent constructor by default
-    ScriptingEventListener& operator=(ScriptingEventListener const&);
-    ScriptingEventListener(ScriptingEventListener const&);
-    ScriptingEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

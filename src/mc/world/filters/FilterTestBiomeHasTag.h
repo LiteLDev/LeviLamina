@@ -13,12 +13,6 @@ struct FilterContext;
 
 class FilterTestBiomeHasTag : public ::SimpleTagIDFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestBiomeHasTag& operator=(FilterTestBiomeHasTag const&);
-    FilterTestBiomeHasTag(FilterTestBiomeHasTag const&);
-    FilterTestBiomeHasTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

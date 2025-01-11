@@ -4,12 +4,6 @@
 
 struct ISystem {
 public:
-    // prevent constructor by default
-    ISystem& operator=(ISystem const&);
-    ISystem(ISystem const&);
-    ISystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

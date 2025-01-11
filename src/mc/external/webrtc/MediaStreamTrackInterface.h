@@ -17,12 +17,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    MediaStreamTrackInterface& operator=(MediaStreamTrackInterface const&);
-    MediaStreamTrackInterface(MediaStreamTrackInterface const&);
-    MediaStreamTrackInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
