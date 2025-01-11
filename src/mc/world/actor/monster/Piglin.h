@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
     // NOLINTEND
 
 public:

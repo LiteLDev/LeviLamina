@@ -36,7 +36,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> createTag(::Actor& owner) const;
 
-    MCAPI int getSlotCount() const;
+    MCFOLD int getSlotCount() const;
 
     MCAPI bool hasSlotAllowedItems(int slotNumber) const;
 
@@ -52,7 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EquippableComponent&& other);
+    MCFOLD void* $ctor(::EquippableComponent&& other);
     // NOLINTEND
 
 public:

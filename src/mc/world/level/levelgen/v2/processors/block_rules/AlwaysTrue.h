@@ -37,9 +37,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const&, ::IRandom&) const;
+    MCFOLD bool $test(::Block const&, ::IRandom&) const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

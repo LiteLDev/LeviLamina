@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Speed(::std::function<void(::Editor::Settings::SpeedProps const&)> callback);
 
-    MCAPI float getFlySpeedMultiplier() const;
+    MCFOLD float getFlySpeedMultiplier() const;
 
     MCAPI void setFlySpeedMultiplier(float newSpeed);
 
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

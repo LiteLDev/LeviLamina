@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::InsideBlockEventMap> const& getBlockList() const;
+    MCFOLD ::std::vector<::InsideBlockEventMap> const& getBlockList() const;
 
     MCAPI bool isTrackedBlock(::Block const& block) const;
 

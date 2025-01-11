@@ -113,7 +113,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -123,21 +123,21 @@ public:
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
     MCAPI ::Item& $setMaxDamage(int maxDamage);
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI bool $isValidRepairItem(
+    MCFOLD bool $isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCAPI bool $showsDurabilityInCreative() const;
+    MCFOLD bool $showsDurabilityInCreative() const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
     // NOLINTEND

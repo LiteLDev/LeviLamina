@@ -61,7 +61,7 @@ public:
 
     MCAPI void enqueueInputSimulation(::std::unique_ptr<::IReplayableActorInput> input);
 
-    MCAPI uint64 getCurrentTick() const;
+    MCFOLD uint64 getCurrentTick() const;
 
     MCAPI void notifyOfExternalCorrection() const;
 

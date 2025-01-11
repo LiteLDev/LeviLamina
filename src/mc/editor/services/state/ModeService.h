@@ -91,11 +91,11 @@ public:
 
     MCAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::Editor::Mode $getMode() const;
+    MCFOLD ::Editor::Mode $getMode() const;
 
     MCAPI ::Scripting::Result<void> $trySetMode(::Editor::Mode newMode);
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCFOLD ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)> func);
     // NOLINTEND
 

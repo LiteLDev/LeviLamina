@@ -58,9 +58,9 @@ public:
     // NOLINTBEGIN
     MCAPI int $sample(::IRandom& random) const;
 
-    MCAPI int $maxValue() const;
+    MCFOLD int $maxValue() const;
 
-    MCAPI int $minValue() const;
+    MCFOLD int $minValue() const;
     // NOLINTEND
 
 public:

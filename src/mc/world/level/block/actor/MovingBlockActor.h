@@ -81,7 +81,7 @@ public:
 
     MCAPI ::Vec3 getDrawPos(::IConstBlockSource const& region, float a) const;
 
-    MCAPI ::Block const& getWrappedBlock() const;
+    MCFOLD ::Block const& getWrappedBlock() const;
 
     MCAPI void moveCollidedEntities(::PistonBlockActor& pistonBlock, ::BlockSource& region);
     // NOLINTEND
@@ -107,9 +107,9 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI ::PistonBlockActor* $getOwningPiston(::BlockSource& region);
+    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource& region);
 
-    MCAPI ::PistonBlockActor const* $getOwningPiston(::BlockSource& region) const;
+    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource& region) const;
 
     MCAPI ::AABB $getCollisionShape(::IConstBlockSource const& region) const;
 
@@ -117,9 +117,9 @@ public:
 
     MCAPI bool $shouldPreserve(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

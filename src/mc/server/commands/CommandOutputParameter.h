@@ -61,7 +61,7 @@ public:
 
     MCAPI explicit CommandOutputParameter(::std::vector<::std::string> const& strings);
 
-    MCAPI ::CommandOutputParameter& operator=(::CommandOutputParameter&& rhs);
+    MCFOLD ::CommandOutputParameter& operator=(::CommandOutputParameter&& rhs);
 
     MCAPI ~CommandOutputParameter();
     // NOLINTEND
@@ -69,15 +69,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::Player const*> const& players);
+    MCFOLD void* $ctor(::std::vector<::Player const*> const& players);
 
     MCAPI void* $ctor(::CommandOutputParameter const& rhs);
 
     MCAPI void* $ctor(::std::vector<::Actor const*> const&);
 
-    MCAPI void* $ctor(::CommandOutputParameter::NoCountType);
+    MCFOLD void* $ctor(::CommandOutputParameter::NoCountType);
 
-    MCAPI void* $ctor(::CommandSelectorResults<::Player> const& players);
+    MCFOLD void* $ctor(::CommandSelectorResults<::Player> const& players);
 
     MCAPI void* $ctor(::std::string const& text);
 
@@ -85,9 +85,9 @@ public:
 
     MCAPI void* $ctor(::CommandSelectorResults<::Actor> const&);
 
-    MCAPI void* $ctor(::Actor const* entity);
+    MCFOLD void* $ctor(::Actor const* entity);
 
-    MCAPI void* $ctor(::CommandOutputParameter&& rhs);
+    MCFOLD void* $ctor(::CommandOutputParameter&& rhs);
 
     MCAPI void* $ctor(char const* text);
 
@@ -105,6 +105,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

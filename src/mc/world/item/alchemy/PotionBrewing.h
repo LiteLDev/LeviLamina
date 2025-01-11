@@ -22,24 +22,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnka70936;
-        ::ll::UntypedStorage<4, 4> mUnk808e4c;
+        ::ll::TypedStorage<4, 4, int> mItemId;
+        ::ll::TypedStorage<4, 4, int> mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Ingredient& operator=(Ingredient const&);
-        Ingredient(Ingredient const&);
-        Ingredient();
 
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit Ingredient(::ItemInstance const& item);
 
-        MCAPI int getData() const;
+        MCFOLD int getData() const;
 
-        MCAPI int getItemId() const;
+        MCFOLD int getItemId() const;
         // NOLINTEND
 
     public:

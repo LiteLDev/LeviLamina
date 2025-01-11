@@ -104,11 +104,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::PathBuffer<::std::string> $_getPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> $_getPath() const;
 
     MCAPI uint64 $_getBlockSize() const;
 
-    MCAPI bool $_isOpen();
+    MCFOLD bool $_isOpen();
 
     MCAPI ::Core::Result $_close();
 

@@ -144,7 +144,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isAsync() const;
+    MCFOLD bool $isAsync() const;
 
     MCAPI bool $canTaskRunAgain() const;
     // NOLINTEND

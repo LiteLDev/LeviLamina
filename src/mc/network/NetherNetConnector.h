@@ -57,7 +57,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -220,27 +220,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $host(::ConnectionDefinition const& definition);
+    MCFOLD bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI bool $connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&);
+    MCFOLD bool $connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&);
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
     MCAPI void $runEvents();
 
     MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCAPI void $closeNetworkConnection(::NetworkIdentifier const&);
+    MCFOLD void $closeNetworkConnection(::NetworkIdentifier const&);
 
-    MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
+    MCFOLD bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
 
-    MCAPI ::TransportLayer $getNetworkType() const;
+    MCFOLD ::TransportLayer $getNetworkType() const;
 
-    MCAPI void $_onDisable();
+    MCFOLD void $_onDisable();
 
-    MCAPI void $_onEnable();
+    MCFOLD void $_onEnable();
 
-    MCAPI void $OnSpopViolation();
+    MCFOLD void $OnSpopViolation();
 
     MCAPI void
     $OnSessionClose(::NetherNet::NetworkID networkID, uint64 sessionId, ::NetherNet::ESessionError sessionError);

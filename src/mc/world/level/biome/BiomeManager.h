@@ -50,7 +50,7 @@ public:
 
     MCAPI ::BiomeComponentFactory& getBiomeComponentFactory();
 
-    MCAPI ::BiomeRegistry& getBiomeRegistry();
+    MCFOLD ::BiomeRegistry& getBiomeRegistry();
 
     MCAPI ::SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
 

@@ -85,15 +85,15 @@ public:
 
     MCAPI void $containerContentChanged(int slot);
 
-    MCAPI bool $isValid();
+    MCFOLD bool $isValid();
 
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCFOLD ::ContainerWeakRef $getContainerWeakRef() const;
 
     MCAPI int $_getContainerOffset() const;
 
     MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI ::Container* $_getContainer() const;
+    MCFOLD ::Container* $_getContainer() const;
     // NOLINTEND
 
 public:

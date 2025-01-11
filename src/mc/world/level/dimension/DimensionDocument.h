@@ -39,10 +39,11 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ::DimensionDocument::Dimension::Description&
+            MCFOLD ::DimensionDocument::Dimension::Description&
             operator=(::DimensionDocument::Dimension::Description const&);
 
-            MCAPI ::DimensionDocument::Dimension::Description& operator=(::DimensionDocument::Dimension::Description&&);
+            MCFOLD ::DimensionDocument::Dimension::Description&
+            operator=(::DimensionDocument::Dimension::Description&&);
 
             MCAPI ~Description();
             // NOLINTEND
@@ -56,7 +57,7 @@ public:
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -105,10 +106,10 @@ public:
             public:
                 // member functions
                 // NOLINTBEGIN
-                MCAPI ::DimensionDocument::Dimension::Components::Generation&
+                MCFOLD ::DimensionDocument::Dimension::Components::Generation&
                 operator=(::DimensionDocument::Dimension::Components::Generation const&);
 
-                MCAPI ::DimensionDocument::Dimension::Components::Generation&
+                MCFOLD ::DimensionDocument::Dimension::Components::Generation&
                 operator=(::DimensionDocument::Dimension::Components::Generation&&);
                 // NOLINTEND
 
@@ -178,7 +179,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -210,6 +211,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

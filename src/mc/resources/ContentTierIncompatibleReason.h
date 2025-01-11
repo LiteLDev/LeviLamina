@@ -40,6 +40,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint errorValue);
+    MCFOLD void* $ctor(uint errorValue);
     // NOLINTEND
 };

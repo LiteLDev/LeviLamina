@@ -185,11 +185,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::UUID const& $getId() const;
+    MCFOLD ::mce::UUID const& $getId() const;
 
-    MCAPI ::std::string const& $getName() const;
+    MCFOLD ::std::string const& $getName() const;
 
-    MCAPI ::ActorUniqueID const& $getEntityId() const;
+    MCFOLD ::ActorUniqueID const& $getEntityId() const;
 
     MCAPI ::Bounds const& $getBounds() const;
 
@@ -197,15 +197,15 @@ public:
 
     MCAPI bool $isAlwaysActive() const;
 
-    MCAPI float $getMaxDistToPlayers() const;
+    MCFOLD float $getMaxDistToPlayers() const;
 
-    MCAPI ::ITickingAreaView const& $getView() const;
+    MCFOLD ::ITickingAreaView const& $getView() const;
 
-    MCAPI ::ITickingAreaView& $getView();
+    MCFOLD ::ITickingAreaView& $getView();
 
-    MCAPI ::WeakRef<::BlockSource> const $getBlockSource() const;
+    MCFOLD ::WeakRef<::BlockSource> const $getBlockSource() const;
 
-    MCAPI ::WeakRef<::BlockSource> $getBlockSource();
+    MCFOLD ::WeakRef<::BlockSource> $getBlockSource();
 
     MCAPI ::TickingAreaDescription $getDescription() const;
 

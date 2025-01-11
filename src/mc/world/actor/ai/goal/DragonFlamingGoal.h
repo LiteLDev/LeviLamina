@@ -7,30 +7,27 @@
 
 // auto generated forward declare list
 // clang-format off
+class EnderDragon;
 class Mob;
+struct EffectDuration;
+namespace mce { class Color; }
 // clang-format on
 
 class DragonFlamingGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk56d4a3;
-    ::ll::UntypedStorage<4, 4>  mUnkb35df2;
-    ::ll::UntypedStorage<4, 4>  mUnkb86092;
-    ::ll::UntypedStorage<4, 4>  mUnk71996e;
-    ::ll::UntypedStorage<4, 4>  mUnkc536ef;
-    ::ll::UntypedStorage<4, 4>  mUnk54770c;
-    ::ll::UntypedStorage<4, 4>  mUnk38bd92;
-    ::ll::UntypedStorage<4, 4>  mUnk30f99a;
-    ::ll::UntypedStorage<4, 4>  mUnk6d2d38;
-    ::ll::UntypedStorage<4, 16> mUnk813ff1;
+    ::ll::TypedStorage<8, 8, ::EnderDragon&>   mDragon;
+    ::ll::TypedStorage<4, 4, int>              mGroundFlameAttackCount;
+    ::ll::TypedStorage<4, 4, int>              mCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>              mFlameTicks;
+    ::ll::TypedStorage<4, 4, int>              mFlameDurationTicks;
+    ::ll::TypedStorage<4, 4, int>              mRoarTicks;
+    ::ll::TypedStorage<4, 4, int>              mRoarDurationTicks;
+    ::ll::TypedStorage<4, 4, ::EffectDuration> mSmokeDurationTicks;
+    ::ll::TypedStorage<4, 4, float>            mSmokeRadius;
+    ::ll::TypedStorage<4, 16, ::mce::Color>    mSmokeColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonFlamingGoal& operator=(DragonFlamingGoal const&);
-    DragonFlamingGoal(DragonFlamingGoal const&);
-    DragonFlamingGoal();
 
 public:
     // virtual functions

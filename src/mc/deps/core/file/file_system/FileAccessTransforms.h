@@ -25,9 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $readTransform(::std::vector<uchar>& stream) const;
+    MCFOLD bool $readTransform(::std::vector<uchar>& stream) const;
 
-    MCAPI bool $writeTransform(::std::vector<uchar>& stream) const;
+    MCFOLD bool $writeTransform(::std::vector<uchar>& stream) const;
     // NOLINTEND
 
 public:

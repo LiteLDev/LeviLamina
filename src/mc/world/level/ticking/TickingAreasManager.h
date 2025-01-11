@@ -148,7 +148,7 @@ public:
     MCAPI ::std::vector<::TickingAreaDescription>
     getPendingStandaloneAreaDescriptionsByPosition(::DimensionType dimensionId, ::BlockPos const& position) const;
 
-    MCAPI bool isPreloadDone() const;
+    MCFOLD bool isPreloadDone() const;
 
     MCAPI void loadArea(::std::string const& key, ::CompoundTag const* tag);
 

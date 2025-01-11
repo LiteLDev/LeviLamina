@@ -109,7 +109,7 @@ public:
 
     MCAPI bool forceGamemode() const;
 
-    MCAPI bool getAllowSubclientLogin() const;
+    MCFOLD bool getAllowSubclientLogin() const;
 
     MCAPI bool getAllowUnconnectedPings() const;
 
@@ -119,17 +119,17 @@ public:
 
     MCAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues() const;
 
-    MCAPI ::ChatRestrictionLevel getChatRestrictionLevel() const;
+    MCFOLD ::ChatRestrictionLevel getChatRestrictionLevel() const;
 
     MCAPI float getClientThrottleScalar() const;
 
-    MCAPI int getClientThrottleThreshold() const;
+    MCFOLD int getClientThrottleThreshold() const;
 
     MCAPI ::PacketCompressionAlgorithm getCompressionAlgorithm() const;
 
     MCAPI ushort getCompressionThresholdBytesize() const;
 
-    MCAPI ::LogLevel getContentLogLevel() const;
+    MCFOLD ::LogLevel getContentLogLevel() const;
 
     MCAPI ::std::string const& getCustomProperty(::std::string const& propertyName) const;
 
@@ -137,51 +137,51 @@ public:
 
     MCAPI ::Difficulty getDifficulty() const;
 
-    MCAPI ::std::vector<::std::string> const& getExtraTrustedKeys() const;
+    MCFOLD ::std::vector<::std::string> const& getExtraTrustedKeys() const;
 
     MCAPI ::GameType getGameMode() const;
 
-    MCAPI ::std::string const& getLanguage() const;
+    MCFOLD ::std::string const& getLanguage() const;
 
-    MCAPI ::std::string const& getLevelName() const;
+    MCFOLD ::std::string const& getLevelName() const;
 
-    MCAPI ::std::string const& getLevelSeed() const;
+    MCFOLD ::std::string const& getLevelSeed() const;
 
-    MCAPI ::std::string const& getLevelType() const;
+    MCFOLD ::std::string const& getLevelType() const;
 
     MCAPI ::std::chrono::minutes getMaxPlayerIdleTime() const;
 
-    MCAPI int getMaxPlayers() const;
+    MCFOLD int getMaxPlayers() const;
 
     MCAPI uint getMaxThreads() const;
 
     MCAPI int getMaxViewDistanceChunks() const;
 
-    MCAPI ::std::string const& getMotd() const;
+    MCFOLD ::std::string const& getMotd() const;
 
     MCAPI ::NetworkPermissions const& getNetworkPermissions() const;
 
     MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
 
-    MCAPI ::PlayerMovementSettings const& getPlayerMovementSettings() const;
+    MCFOLD ::PlayerMovementSettings const& getPlayerMovementSettings() const;
 
     MCAPI ::NetworkAddress getRemoteServerCommunicationEndpoint() const;
 
-    MCAPI ::ScriptSettings const& getScriptSettings() const;
+    MCFOLD ::ScriptSettings const& getScriptSettings() const;
 
     MCAPI ::std::optional<float> getServerBuildRatioOverride() const;
 
-    MCAPI ::std::string const& getServerId() const;
+    MCFOLD ::std::string const& getServerId() const;
 
     MCAPI ushort getServerPort() const;
 
     MCAPI ushort getServerPortv6() const;
 
-    MCAPI ::std::bitset<3> const& getServerTextSettings() const;
+    MCFOLD ::std::bitset<3> const& getServerTextSettings() const;
 
     MCAPI int getServerTickRange() const;
 
-    MCAPI ::std::string const& getServerType() const;
+    MCFOLD ::std::string const& getServerType() const;
 
     MCAPI int getServerWakeupFrequency() const;
 
@@ -191,7 +191,7 @@ public:
 
     MCAPI bool isContentLogConsoleOutputEnabled() const;
 
-    MCAPI bool isContentLogFileEnabled() const;
+    MCFOLD bool isContentLogFileEnabled() const;
 
     MCAPI bool isEmoteChatMuted() const;
 
@@ -205,13 +205,13 @@ public:
 
     MCAPI bool isRakNetJoinFloodProtectionEnabled() const;
 
-    MCAPI bool isServerVisibleToLanDiscovery() const;
+    MCFOLD bool isServerVisibleToLanDiscovery() const;
 
     MCAPI bool texturePackRequired() const;
 
     MCAPI bool useAllowList() const;
 
-    MCAPI bool useMsaGamertagsOnly() const;
+    MCFOLD bool useMsaGamertagsOnly() const;
 
     MCAPI bool useOnlineAuthentication() const;
 

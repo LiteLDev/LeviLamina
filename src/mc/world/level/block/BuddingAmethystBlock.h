@@ -64,7 +64,7 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $isSilentWhenJumpingOff() const;
+    MCFOLD bool $isSilentWhenJumpingOff() const;
     // NOLINTEND
 
 public:

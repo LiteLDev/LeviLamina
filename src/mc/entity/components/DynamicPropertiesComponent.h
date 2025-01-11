@@ -29,7 +29,7 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::ILevel& level) const;
 
-    MCAPI ::DynamicProperties& getProperties();
+    MCFOLD ::DynamicProperties& getProperties();
     // NOLINTEND
 
 public:

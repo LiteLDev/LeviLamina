@@ -87,7 +87,7 @@ public:
 
     MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
 
-    MCAPI uint64 getSize() const;
+    MCFOLD uint64 getSize() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 

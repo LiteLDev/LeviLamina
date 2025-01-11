@@ -12,6 +12,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getText() const;
+    MCFOLD ::std::string const& getText() const;
     // NOLINTEND
 };

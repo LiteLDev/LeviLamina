@@ -34,7 +34,7 @@ public:
 
     MCAPI uint64 getHash() const;
 
-    MCAPI bool operator==(::AnimationComponentID const& rhs) const;
+    MCFOLD bool operator==(::AnimationComponentID const& rhs) const;
     // NOLINTEND
 
 public:

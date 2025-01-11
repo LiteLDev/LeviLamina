@@ -86,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCFOLD ::std::string $getName() const;
 
     MCAPI void $write(::BinaryStream& bitStream) const;
 

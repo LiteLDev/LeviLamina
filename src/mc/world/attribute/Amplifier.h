@@ -28,11 +28,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getAmount(int amplification, float scale) const;
+    MCFOLD float $getAmount(int amplification, float scale) const;
 
-    MCAPI bool $shouldBuff(int remainingDuration, int amplification) const;
+    MCFOLD bool $shouldBuff(int remainingDuration, int amplification) const;
 
-    MCAPI int $getTickInterval(int amplification) const;
+    MCFOLD int $getTickInterval(int amplification) const;
     // NOLINTEND
 
 public:

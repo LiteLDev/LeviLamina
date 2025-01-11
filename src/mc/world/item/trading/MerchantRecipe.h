@@ -60,21 +60,21 @@ public:
 
     MCAPI int getBaseCountB() const;
 
-    MCAPI ::ItemInstance const& getBuyAItem() const;
+    MCFOLD ::ItemInstance const& getBuyAItem() const;
 
-    MCAPI ::ItemInstance const& getBuyBItem() const;
+    MCFOLD ::ItemInstance const& getBuyBItem() const;
 
     MCAPI int getDemand() const;
 
     MCAPI int getMaxUses() const;
 
-    MCAPI ::ItemInstance const& getSellItem() const;
+    MCFOLD ::ItemInstance const& getSellItem() const;
 
-    MCAPI int getTier() const;
+    MCFOLD int getTier() const;
 
-    MCAPI uint getTraderExp() const;
+    MCFOLD uint getTraderExp() const;
 
-    MCAPI int getUses() const;
+    MCFOLD int getUses() const;
 
     MCAPI bool hasSecondaryBuyItem() const;
 
@@ -108,9 +108,9 @@ public:
 
     MCAPI void setTraderExp(uint traderExp);
 
-    MCAPI void setUses(int uses);
+    MCFOLD void setUses(int uses);
 
-    MCAPI bool shouldRewardExp() const;
+    MCFOLD bool shouldRewardExp() const;
 
     MCAPI ~MerchantRecipe();
     // NOLINTEND

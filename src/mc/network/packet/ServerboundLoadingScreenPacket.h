@@ -49,7 +49,7 @@ public:
 
     MCAPI ::NewType<::std::optional<uint>> getLoadingScreenId() const;
 
-    MCAPI ::ServerboundLoadingScreenPacketType getServerboundLoadingScreenPacketType() const;
+    MCFOLD ::ServerboundLoadingScreenPacketType getServerboundLoadingScreenPacketType() const;
     // NOLINTEND
 
 public:

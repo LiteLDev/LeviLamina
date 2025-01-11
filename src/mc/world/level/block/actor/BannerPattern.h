@@ -49,11 +49,11 @@ public:
 
     MCAPI ::ItemStack getIngredientItem() const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI ::std::string const& getNameID() const;
+    MCFOLD ::std::string const& getNameID() const;
 
-    MCAPI ::std::vector<::std::string> const& getPattern() const;
+    MCFOLD ::std::vector<::std::string> const& getPattern() const;
 
     MCAPI bool hasPattern() const;
 

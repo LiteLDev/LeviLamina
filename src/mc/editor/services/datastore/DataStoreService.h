@@ -92,7 +92,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
 
-    MCAPI ::Editor::DataStore::PayloadEventDispatcher& _getDispatcher();
+    MCFOLD ::Editor::DataStore::PayloadEventDispatcher& _getDispatcher();
 
     MCAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
 
@@ -138,7 +138,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::Scripting::Result<void> $dispatchEvent(
         ::HashedString const&                          dataTag,
@@ -150,7 +150,7 @@ public:
     MCAPI ::Json::Value
     $getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCAPI ::Bedrock::PubSub::Subscription $listenForEvent(
+    MCFOLD ::Bedrock::PubSub::Subscription $listenForEvent(
         ::std::function<
             void(::HashedString const&, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&)>
             callback

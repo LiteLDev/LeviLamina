@@ -46,15 +46,15 @@ public:
     MCAPI void
     appendFormattedHovertext(::ItemStackBase const& item, ::Bedrock::Safety::RedactableString& hovertext, bool) const;
 
-    MCAPI void clearColor(::ItemStackBase& instance) const;
+    MCFOLD void clearColor(::ItemStackBase& instance) const;
 
     MCAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCAPI ::mce::Color const& getDefaultColor() const;
+    MCFOLD ::mce::Color const& getDefaultColor() const;
 
     MCAPI bool hasCustomColor(::ItemStackBase const& instance) const;
 
-    MCAPI void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    MCFOLD void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
     // NOLINTEND
 
 public:

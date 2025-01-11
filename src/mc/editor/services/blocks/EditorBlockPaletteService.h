@@ -178,17 +178,17 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::std::vector<::std::shared_ptr<::Editor::EditorBlockPalette>> const& $getPaletteList() const;
+    MCFOLD ::std::vector<::std::shared_ptr<::Editor::EditorBlockPalette>> const& $getPaletteList() const;
 
     MCAPI ::Editor::EditorBlockPalette const& $getActivePalette() const;
 
     MCAPI void $forEachBlockType(::std::function<void(::BlockLegacy const&, bool)> callback) const;
 
-    MCAPI int $getSelectedPaletteItemIndex() const;
+    MCFOLD int $getSelectedPaletteItemIndex() const;
 
     MCAPI ::Scripting::Result_deprecated<::BlockLegacy const*> $getSelectedBlockType() const;
 

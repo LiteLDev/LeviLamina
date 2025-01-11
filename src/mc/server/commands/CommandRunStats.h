@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     MCAPI void clearRunCounts();
 
-    MCAPI ::std::unordered_map<::CommandOriginType, uint64> const& getRunCountMap() const;
+    MCFOLD ::std::unordered_map<::CommandOriginType, uint64> const& getRunCountMap() const;
 
     MCAPI void incrementRunCount(::CommandOriginType originType);
     // NOLINTEND

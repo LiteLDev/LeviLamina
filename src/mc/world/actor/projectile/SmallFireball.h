@@ -53,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
     // NOLINTEND
 
 public:

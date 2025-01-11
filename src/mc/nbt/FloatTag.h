@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -76,7 +76,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI ::Tag::Type $getId() const;
+    MCFOLD ::Tag::Type $getId() const;
 
     MCAPI ::std::string $toString() const;
 

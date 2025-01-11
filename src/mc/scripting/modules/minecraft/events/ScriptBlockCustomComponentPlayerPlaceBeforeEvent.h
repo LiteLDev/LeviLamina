@@ -87,7 +87,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const;
 
-    MCAPI bool $shouldCancel() const;
+    MCFOLD bool $shouldCancel() const;
     // NOLINTEND
 
 public:

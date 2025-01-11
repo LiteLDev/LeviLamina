@@ -73,11 +73,11 @@ public:
         ::std::optional<::Block const*> const                                        optBlock
     );
 
-    MCAPI ::Scripting::Result<void> $_implInit();
+    MCFOLD ::Scripting::Result<void> $_implInit();
 
-    MCAPI ::Scripting::Result<void> $_implReady();
+    MCFOLD ::Scripting::Result<void> $_implReady();
 
-    MCAPI ::Scripting::Result<void> $_implQuit();
+    MCFOLD ::Scripting::Result<void> $_implQuit();
     // NOLINTEND
 
 public:

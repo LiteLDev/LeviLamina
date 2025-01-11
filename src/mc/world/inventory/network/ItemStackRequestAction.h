@@ -49,7 +49,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType actionType);
 
-    MCAPI ::ItemStackRequestActionType getActionType() const;
+    MCFOLD ::ItemStackRequestActionType getActionType() const;
     // NOLINTEND
 
 public:
@@ -79,11 +79,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
+    MCFOLD ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
 
-    MCAPI int $getFilteredStringIndex() const;
+    MCFOLD int $getFilteredStringIndex() const;
 
-    MCAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+    MCFOLD void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
     // NOLINTEND
 
 public:

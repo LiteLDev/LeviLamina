@@ -31,19 +31,19 @@ public:
     // NOLINTBEGIN
     MCAPI bool _canUseItem(::Actor const& actor, ::ItemStack const& item);
 
-    MCAPI int getBoostTime() const;
+    MCFOLD int getBoostTime() const;
 
-    MCAPI int getBoostTimeTotal() const;
+    MCFOLD int getBoostTimeTotal() const;
 
-    MCAPI bool getIsBoosting() const;
+    MCFOLD bool getIsBoosting() const;
 
     MCAPI bool itemUseText(::Actor const& actor, ::ItemStack const& item, ::std::string& text);
 
     MCAPI bool onItemInteract(::Actor& actor, ::ItemStack& item, ::Player& player);
 
-    MCAPI void setBoostTime(int boostTime);
+    MCFOLD void setBoostTime(int boostTime);
 
-    MCAPI void setIsBoosting(bool isBoosting);
+    MCFOLD void setIsBoosting(bool isBoosting);
     // NOLINTEND
 
 public:

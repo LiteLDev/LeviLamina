@@ -45,7 +45,7 @@ public:
 
     MCAPI ::EntityId _getEntityId() const;
 
-    MCAPI uint _getRegistryId() const;
+    MCFOLD uint _getRegistryId() const;
 
     MCAPI bool isNull() const;
 

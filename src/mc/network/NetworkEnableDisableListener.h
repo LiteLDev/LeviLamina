@@ -52,9 +52,9 @@ public:
 
     MCAPI void disable();
 
-    MCAPI bool isDisabled() const;
+    MCFOLD bool isDisabled() const;
 
-    MCAPI bool isEnabled() const;
+    MCFOLD bool isEnabled() const;
 
     MCAPI void tryEnable();
     // NOLINTEND
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

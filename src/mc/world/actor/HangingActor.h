@@ -121,7 +121,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -131,11 +131,11 @@ public:
 
     MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCAPI bool $placeHangingEntity(::BlockSource& region, int direction);
+    MCFOLD bool $placeHangingEntity(::BlockSource& region, int direction);
 
     MCAPI bool $wouldSurvive(::BlockSource& region);
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

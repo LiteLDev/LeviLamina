@@ -34,7 +34,7 @@ public:
         ::Projection targetProjection
     );
 
-    MCAPI int getDeltaTargetY() const;
+    MCFOLD int getDeltaTargetY() const;
     // NOLINTEND
 
 public:

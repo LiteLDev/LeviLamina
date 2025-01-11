@@ -46,13 +46,13 @@ public:
 
     MCAPI uint64 getHash() const;
 
-    MCAPI ::RakNet::RakNetGUID const& getRakNetGUID() const;
+    MCFOLD ::RakNet::RakNetGUID const& getRakNetGUID() const;
 
-    MCAPI ::sockaddr_in const& getSocketAddress() const;
+    MCFOLD ::sockaddr_in const& getSocketAddress() const;
 
-    MCAPI ::sockaddr_in6 const& getSocketAddress6() const;
+    MCFOLD ::sockaddr_in6 const& getSocketAddress6() const;
 
-    MCAPI ::NetworkIdentifier::Type getType() const;
+    MCFOLD ::NetworkIdentifier::Type getType() const;
 
     MCAPI bool isUnassigned() const;
 

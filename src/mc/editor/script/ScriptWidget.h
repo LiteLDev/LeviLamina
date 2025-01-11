@@ -337,7 +337,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $_performDeleteWidget(bool suppressClientMessage);
 
-    MCAPI void $_setValid(bool valid);
+    MCFOLD void $_setValid(bool valid);
 
     MCAPI void $_handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
 
@@ -348,7 +348,7 @@ public:
 
     MCAPI void $_setSelectedNoBroadcast(bool selected);
 
-    MCAPI ::Scripting::WeakLifetimeScope& $_getScope();
+    MCFOLD ::Scripting::WeakLifetimeScope& $_getScope();
 
     MCAPI void $_deleteComponent(::mce::UUID const& componentId);
     // NOLINTEND

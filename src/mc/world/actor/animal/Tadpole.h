@@ -65,7 +65,7 @@ public:
 
     MCAPI float $getFlopVerticalVelocityFactor() const;
 
-    MCAPI float $getFlopHorizontalVelocityFactor() const;
+    MCFOLD float $getFlopHorizontalVelocityFactor() const;
     // NOLINTEND
 
 public:

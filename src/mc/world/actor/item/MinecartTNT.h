@@ -87,7 +87,7 @@ public:
 
     MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
-    MCAPI ::MinecartType $getType();
+    MCFOLD ::MinecartType $getType();
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
 

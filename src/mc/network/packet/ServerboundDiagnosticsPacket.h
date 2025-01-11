@@ -43,13 +43,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ProfilerLiteTelemetry const& getTelemetry() const;
+    MCFOLD ::ProfilerLiteTelemetry const& getTelemetry() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

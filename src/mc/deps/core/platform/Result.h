@@ -23,25 +23,25 @@ public:
 
     MCAPI explicit Result(bool success);
 
-    MCAPI void architecturalProblem() const;
+    MCFOLD void architecturalProblem() const;
 
-    MCAPI bool catastrophic() const;
+    MCFOLD bool catastrophic() const;
 
-    MCAPI bool failed() const;
+    MCFOLD bool failed() const;
 
     MCAPI ::std::string message() const;
 
-    MCAPI explicit operator bool() const;
+    MCFOLD explicit operator bool() const;
 
     MCAPI ::Core::Result& operator=(::Core::Result&&);
 
-    MCAPI bool peekFailed() const;
+    MCFOLD bool peekFailed() const;
 
-    MCAPI bool peekSucceeded() const;
+    MCFOLD bool peekSucceeded() const;
 
-    MCAPI bool succeeded() const;
+    MCFOLD bool succeeded() const;
 
-    MCAPI bool throwFailed() const;
+    MCFOLD bool throwFailed() const;
 
     MCAPI ~Result();
     // NOLINTEND
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

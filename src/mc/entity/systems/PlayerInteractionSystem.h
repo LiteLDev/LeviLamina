@@ -37,7 +37,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+        MCFOLD bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
         // NOLINTEND
 
     public:

@@ -69,7 +69,7 @@ public:
 
     MCAPI float getAnimationFrames(::persona::AnimatedTextureType animationType) const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
     MCAPI bool isTrustedSkin() const;
 

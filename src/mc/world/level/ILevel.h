@@ -1410,11 +1410,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::TradeTables* $getTradeTables();
+    MCFOLD ::TradeTables* $getTradeTables();
 
-    MCAPI ::Level* $asLevel();
+    MCFOLD ::Level* $asLevel();
 
-    MCAPI ::MultiPlayerLevel* $asMultiPlayerLevel();
+    MCFOLD ::MultiPlayerLevel* $asMultiPlayerLevel();
     // NOLINTEND
 
 public:

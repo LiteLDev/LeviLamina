@@ -102,15 +102,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnAddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
+    MCFOLD void $OnAddStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
 
-    MCAPI void $OnRemoveStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
+    MCFOLD void $OnRemoveStream(::webrtc::scoped_refptr<::webrtc::MediaStreamInterface> stream);
 
-    MCAPI void $OnNegotiationNeededEvent(uint event_id);
+    MCFOLD void $OnNegotiationNeededEvent(uint event_id);
 
-    MCAPI void $OnStandardizedIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
+    MCFOLD void $OnStandardizedIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
 
-    MCAPI void $OnIceCandidateError(
+    MCFOLD void $OnIceCandidateError(
         ::std::string const& address,
         int                  port,
         ::std::string const& url,
@@ -118,18 +118,18 @@ public:
         ::std::string const& error_text
     );
 
-    MCAPI void $OnIceSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const& event);
+    MCFOLD void $OnIceSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const& event);
 
-    MCAPI void $OnAddTrack(
+    MCFOLD void $OnAddTrack(
         ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>                       receiver,
         ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const& streams
     );
 
-    MCAPI void $OnTrack(::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface> transceiver);
+    MCFOLD void $OnTrack(::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface> transceiver);
 
-    MCAPI void $OnRemoveTrack(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> receiver);
+    MCFOLD void $OnRemoveTrack(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface> receiver);
 
-    MCAPI void $OnInterestingUsage(int usage_pattern);
+    MCFOLD void $OnInterestingUsage(int usage_pattern);
     // NOLINTEND
 };
 

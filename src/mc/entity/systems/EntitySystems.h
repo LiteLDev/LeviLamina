@@ -96,7 +96,7 @@ public:
         ::EntityRegistry&                     registry
     );
 
-    MCAPI ::PlayerInteractionSystem& getPlayerInteractionSystem();
+    MCFOLD ::PlayerInteractionSystem& getPlayerInteractionSystem();
 
     MCAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
     getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;

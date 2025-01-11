@@ -396,7 +396,7 @@ public:
     MCAPI void
     addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
 
-    MCAPI void ate();
+    MCFOLD void ate();
 
     MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
@@ -574,7 +574,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static char const* _getDescriptionJsonName(::Description const* description);
+    MCFOLD static char const* _getDescriptionJsonName(::Description const* description);
 
     MCAPI static ::Mob* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
@@ -655,7 +655,7 @@ public:
 
     MCAPI bool $shouldDropDeathLoot() const;
 
-    MCAPI void $spawnAnim();
+    MCFOLD void $spawnAnim();
 
     MCAPI bool $isAlive() const;
 
@@ -667,7 +667,7 @@ public:
 
     MCAPI void $setSprinting(bool shouldSprint);
 
-    MCAPI bool $canBePulledIntoVehicle() const;
+    MCFOLD bool $canBePulledIntoVehicle() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getDeathSound();
 
@@ -699,11 +699,11 @@ public:
 
     MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
-    MCAPI int $getItemUseDuration() const;
+    MCFOLD int $getItemUseDuration() const;
 
-    MCAPI float $getItemUseStartupProgress() const;
+    MCFOLD float $getItemUseStartupProgress() const;
 
-    MCAPI float $getItemUseIntervalProgress() const;
+    MCFOLD float $getItemUseIntervalProgress() const;
 
     MCAPI void $swing();
 
@@ -717,7 +717,7 @@ public:
 
     MCAPI bool $attack(::Actor& target, ::ActorDamageCause const& cause);
 
-    MCAPI bool $isAlliedTo(::Mob*);
+    MCFOLD bool $isAlliedTo(::Mob*);
 
     MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
 
@@ -731,7 +731,7 @@ public:
 
     MCAPI void $setDamagedArmor(::ArmorSlot slot, ::ItemStack const& item);
 
-    MCAPI void $sendArmorDamage(::std::bitset<5> const);
+    MCFOLD void $sendArmorDamage(::std::bitset<5> const);
 
     MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
 
@@ -769,7 +769,7 @@ public:
 
     MCAPI bool $createAIGoals();
 
-    MCAPI void $onBorn(::Actor&, ::Actor&);
+    MCFOLD void $onBorn(::Actor&, ::Actor&);
 
     MCAPI bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
@@ -782,7 +782,7 @@ public:
     MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const&);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const&);
 
     MCAPI bool $canExistWhenDisallowMob() const;
 
@@ -790,7 +790,7 @@ public:
 
     MCAPI void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
-    MCAPI void $renderDebugServerState(::Options const& options);
+    MCFOLD void $renderDebugServerState(::Options const& options);
 
     MCAPI bool $canFreeze() const;
 

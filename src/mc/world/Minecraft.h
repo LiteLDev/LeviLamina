@@ -153,13 +153,13 @@ public:
 
     MCAPI ::ClientNetworkSystem& getClientNetworkSystem();
 
-    MCAPI ::MinecraftCommands& getCommands();
+    MCFOLD ::MinecraftCommands& getCommands();
 
-    MCAPI ::IMinecraftEventing& getEventing() const;
+    MCFOLD ::IMinecraftEventing& getEventing() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const;
 
-    MCAPI ::GameModuleServer& getGameModuleServer();
+    MCFOLD ::GameModuleServer& getGameModuleServer();
 
     MCAPI ::optional_ref<::MinecraftGameTest> getGameTest();
 
@@ -167,7 +167,7 @@ public:
 
     MCAPI ::Level* getLevel() const;
 
-    MCAPI ::ResourcePackManager& getResourceLoader();
+    MCFOLD ::ResourcePackManager& getResourceLoader();
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
@@ -192,9 +192,9 @@ public:
         ::NetworkServerConfig const&                                         packetHandlerConfig
     );
 
-    MCAPI void init();
+    MCFOLD void init();
 
-    MCAPI void initAsDedicatedServer();
+    MCFOLD void initAsDedicatedServer();
 
     MCAPI bool isDedicatedServer() const;
 
@@ -253,9 +253,9 @@ public:
 
     MCAPI bool $isOnlineClient() const;
 
-    MCAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
+    MCFOLD ::StackRefResult<::EntityRegistry> $getEntityRegistry();
 
-    MCAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
+    MCFOLD ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
     // NOLINTEND
 
 public:

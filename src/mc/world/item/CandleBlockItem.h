@@ -54,12 +54,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getLevelDataForAuxValue(int auxValue) const;
+    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool $isCandle() const;
+    MCFOLD bool $isCandle() const;
     // NOLINTEND
 
 public:

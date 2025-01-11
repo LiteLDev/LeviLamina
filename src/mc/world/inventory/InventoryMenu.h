@@ -94,7 +94,7 @@ public:
 
     MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI ::Container* $_getContainer() const;
+    MCFOLD ::Container* $_getContainer() const;
     // NOLINTEND
 
 public:

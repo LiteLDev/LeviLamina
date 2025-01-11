@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI int getAge() const;
+    MCFOLD int getAge() const;
 
     MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
 

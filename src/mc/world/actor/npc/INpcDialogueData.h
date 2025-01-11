@@ -59,8 +59,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getRawDialogueText() const;
+    MCFOLD ::std::string const& $getRawDialogueText() const;
 
-    MCAPI bool $isRemoteFire();
+    MCFOLD bool $isRemoteFire();
     // NOLINTEND
 };

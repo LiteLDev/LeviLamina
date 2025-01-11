@@ -30,19 +30,19 @@ public:
 
     MCAPI WeakObjectHandle(::Scripting::WeakLifetimeScope scope, ::Scripting::ObjectHandle objHandle);
 
-    MCAPI ::Scripting::ObjectHandle getHandle() const;
+    MCFOLD ::Scripting::ObjectHandle getHandle() const;
 
-    MCAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCFOLD ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCAPI ::Scripting::WeakLifetimeScope getScope() const;
+    MCFOLD ::Scripting::WeakLifetimeScope getScope() const;
 
-    MCAPI ::Scripting::WeakObjectHandle& operator=(::Scripting::WeakObjectHandle const&);
+    MCFOLD ::Scripting::WeakObjectHandle& operator=(::Scripting::WeakObjectHandle const&);
 
     MCAPI ::Scripting::WeakObjectHandle& operator=(::Scripting::WeakObjectHandle&& rhs);
 
     MCAPI bool operator==(::Scripting::WeakObjectHandle const& rhs) const;
 
-    MCAPI bool valid() const;
+    MCFOLD bool valid() const;
 
     MCAPI ~WeakObjectHandle();
     // NOLINTEND
@@ -50,11 +50,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::Scripting::WeakObjectHandle const&);
+    MCFOLD void* $ctor(::Scripting::WeakObjectHandle const&);
 
-    MCAPI void* $ctor(::Scripting::WeakObjectHandle&& rhs);
+    MCFOLD void* $ctor(::Scripting::WeakObjectHandle&& rhs);
 
     MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Scripting::ObjectHandle objHandle);
     // NOLINTEND
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

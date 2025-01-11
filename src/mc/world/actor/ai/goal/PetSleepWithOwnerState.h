@@ -40,7 +40,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCFOLD void $start();
 
     MCAPI void $stop();
     // NOLINTEND

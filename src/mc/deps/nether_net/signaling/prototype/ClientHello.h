@@ -27,13 +27,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ClientHello(::NetherNet::NetworkID localId);
 
-    MCAPI ::NetherNet::NetworkID GetId() const;
+    MCFOLD ::NetherNet::NetworkID GetId() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetherNet::NetworkID localId);
+    MCFOLD void* $ctor(::NetherNet::NetworkID localId);
     // NOLINTEND
 };
 

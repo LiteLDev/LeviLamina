@@ -57,7 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
+    MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
 
     MCAPI void $removeActorFromLevelChunk(::Actor& actor) const;
 

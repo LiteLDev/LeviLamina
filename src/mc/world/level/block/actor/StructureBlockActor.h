@@ -60,7 +60,7 @@ public:
 
     MCAPI bool _saveStructure(::BlockSource& region, ::BlockPos const& position, bool redstoneTriggered);
 
-    MCAPI ::StructureEditorData const& getStructureData() const;
+    MCFOLD ::StructureEditorData const& getStructureData() const;
 
     MCAPI void setIsWaterlogged(bool waterlogged);
 
@@ -102,9 +102,9 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

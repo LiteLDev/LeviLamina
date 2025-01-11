@@ -10,7 +10,7 @@ class LevelData;
 namespace ExternalFileLevelStorageMetadata {
 // functions
 // NOLINTBEGIN
-MCAPI void saveLevelMetadata(::std::string const& levelId, ::LevelData const& levelData);
+MCFOLD void saveLevelMetadata(::std::string const& levelId, ::LevelData const& levelData);
 // NOLINTEND
 
 } // namespace ExternalFileLevelStorageMetadata

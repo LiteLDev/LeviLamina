@@ -71,9 +71,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
     MCAPI ::Block const& $getRenderBlock() const;
 

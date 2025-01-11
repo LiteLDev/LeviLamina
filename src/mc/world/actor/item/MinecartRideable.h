@@ -53,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecartType $getType();
+    MCFOLD ::MinecartType $getType();
     // NOLINTEND
 
 public:

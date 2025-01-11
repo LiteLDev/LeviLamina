@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class CreativeGroupInfo;
+class CreativeItemRegistry;
 class HashedString;
 class ItemInstance;
 // clang-format on
@@ -17,18 +18,12 @@ class CreativeItemGroupCategory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkde0cd1;
-    ::ll::UntypedStorage<4, 4>  mUnkb1fac7;
-    ::ll::UntypedStorage<8, 8>  mUnk90b560;
-    ::ll::UntypedStorage<8, 64> mUnk249d7d;
-    ::ll::UntypedStorage<8, 24> mUnk1e1068;
+    ::ll::TypedStorage<8, 32, ::std::string>                              mName;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                      mCategory;
+    ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*>                     mRegistry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, uint>> mNamedGroupIndex;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                        mGroupIndexes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CreativeItemGroupCategory& operator=(CreativeItemGroupCategory const&);
-    CreativeItemGroupCategory(CreativeItemGroupCategory const&);
-    CreativeItemGroupCategory();
 
 public:
     // virtual functions
@@ -46,7 +41,7 @@ public:
 
     MCAPI ::CreativeGroupInfo* getChildGroup(::HashedString const& name);
 
-    MCAPI ::CreativeItemCategory getCreativeCategory();
+    MCFOLD ::CreativeItemCategory getCreativeCategory();
 
     MCAPI ::CreativeGroupInfo* getOrAddTailAnonymousGroup();
     // NOLINTEND

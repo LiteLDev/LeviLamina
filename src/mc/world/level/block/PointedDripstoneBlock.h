@@ -155,7 +155,7 @@ public:
 
     MCAPI static uchar _getDripstoneDirection(::Block const& block);
 
-    MCAPI static uchar _getTipDirection(::Block const& pointedDripstoneBlock);
+    MCFOLD static uchar _getTipDirection(::Block const& pointedDripstoneBlock);
 
     MCAPI static void _grow(::BlockSource& region, ::BlockPos const& growFromPos, uchar growToDirection);
 
@@ -228,13 +228,13 @@ public:
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
-    MCAPI bool $falling() const;
+    MCFOLD bool $falling() const;
 
     MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::mce::Color $getDustColor(::Block const&) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCFOLD ::std::string $getDustParticleName(::Block const&) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 

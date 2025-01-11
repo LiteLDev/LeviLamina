@@ -76,7 +76,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI ::Tag::Type $getId() const;
+    MCFOLD ::Tag::Type $getId() const;
 
     MCAPI ::std::string $toString() const;
 
@@ -84,7 +84,7 @@ public:
 
     MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCAPI uint64 $hash() const;
+    MCFOLD uint64 $hash() const;
     // NOLINTEND
 
 public:

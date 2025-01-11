@@ -78,49 +78,49 @@ public:
 
     MCAPI void addSwapAuxValue(int oldvariation, int variation);
 
-    MCAPI ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* getBlockRules() const;
+    MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* getBlockRules() const;
 
     MCAPI ::BoundingBox const& getBoundingBox();
 
-    MCAPI ::Block const* getIgnoreBlock() const;
+    MCFOLD ::Block const* getIgnoreBlock() const;
 
     MCAPI ::Mirror const& getMirror() const;
 
-    MCAPI ::BlockPos const& getRefPos() const;
+    MCFOLD ::BlockPos const& getRefPos() const;
 
     MCAPI ::Rotation const& getRotation() const;
 
     MCAPI ::Block const& getSwappedBlock(::BlockPalette const& palette, ::Block const& oldBlock) const;
 
-    MCAPI bool isIgnoreJigsawBlocks() const;
+    MCFOLD bool isIgnoreJigsawBlocks() const;
 
-    MCAPI bool isIgnoreStructureBlocks() const;
+    MCFOLD bool isIgnoreStructureBlocks() const;
 
-    MCAPI bool isPlacingWaterBelowSeaLevel() const;
+    MCFOLD bool isPlacingWaterBelowSeaLevel() const;
 
     MCAPI ::LegacyStructureSettings& operator=(::LegacyStructureSettings const&);
 
-    MCAPI void placeWaterBelowSeaLevel(bool water);
+    MCFOLD void placeWaterBelowSeaLevel(bool water);
 
-    MCAPI void setBlockRules(::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* blockRules);
+    MCFOLD void setBlockRules(::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* blockRules);
 
     MCAPI void setBlockTagRules(::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules);
 
     MCAPI void setBoundingBox(::BoundingBox const& boundingBox);
 
-    MCAPI void setIgnoreBlock(::Block const* ignoreBlock);
+    MCFOLD void setIgnoreBlock(::Block const* ignoreBlock);
 
     MCAPI void setIntegrity(float integrity);
 
-    MCAPI void setMirror(::Mirror mirror);
+    MCFOLD void setMirror(::Mirror mirror);
 
-    MCAPI void setProjection(::Projection projection);
+    MCFOLD void setProjection(::Projection projection);
 
     MCAPI void setRefPos(::BlockPos const& refPos);
 
     MCAPI void setRotation(::Rotation rotation);
 
-    MCAPI void setSeed(uint seed);
+    MCFOLD void setSeed(uint seed);
 
     MCAPI void updateBoundingBoxFromChunkPos();
 

@@ -28,7 +28,7 @@ public:
 
     MCAPI void captureDeltaTime();
 
-    MCAPI double getTickDeltaTime() const;
+    MCFOLD double getTickDeltaTime() const;
 
     MCAPI ~TickDeltaTimeManager();
     // NOLINTEND
@@ -42,6 +42,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

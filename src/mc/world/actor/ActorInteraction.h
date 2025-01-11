@@ -22,13 +22,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorInteraction(bool noCapture);
 
-    MCAPI void capture(::std::function<void()> interactFunc);
+    MCFOLD void capture(::std::function<void()> interactFunc);
 
-    MCAPI ::std::string const& getInteractText() const;
+    MCFOLD ::std::string const& getInteractText() const;
 
     MCAPI void interact();
 
-    MCAPI void setInteractText(::std::string const& text);
+    MCFOLD void setInteractText(::std::string const& text);
 
     MCAPI bool shouldCapture() const;
 
@@ -44,6 +44,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

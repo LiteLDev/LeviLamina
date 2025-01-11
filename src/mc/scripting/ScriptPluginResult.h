@@ -41,7 +41,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -67,7 +67,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -93,7 +93,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -119,7 +119,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -149,13 +149,13 @@ public:
 
     MCAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
-    MCAPI ::std::vector<::ScriptPluginResult::Error> const& getErrors() const;
+    MCFOLD ::std::vector<::ScriptPluginResult::Error> const& getErrors() const;
 
-    MCAPI ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+    MCFOLD ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
 
     MCAPI ::std::chrono::microseconds getRunDuration() const;
 
-    MCAPI ::std::vector<::ScriptPluginResult::Warning> const& getWarnings() const;
+    MCFOLD ::std::vector<::ScriptPluginResult::Warning> const& getWarnings() const;
 
     MCAPI void logError(::std::string const& error);
 

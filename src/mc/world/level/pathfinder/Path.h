@@ -53,11 +53,11 @@ public:
 
     MCAPI bool endsInXZ(::Vec3 const& pos);
 
-    MCAPI ::PathCompletionType getCompletionType() const;
+    MCFOLD ::PathCompletionType getCompletionType() const;
 
     MCAPI ::Vec3 getEndPos() const;
 
-    MCAPI uint64 getIndex() const;
+    MCFOLD uint64 getIndex() const;
 
     MCAPI ::BlockPos const& getLastPos() const;
 
@@ -67,7 +67,7 @@ public:
 
     MCAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
 
-    MCAPI uint64 getSize() const;
+    MCFOLD uint64 getSize() const;
 
     MCAPI bool isDone() const;
 
@@ -79,7 +79,7 @@ public:
 
     MCAPI bool sameAs(::Path* path) const;
 
-    MCAPI void setIndex(uint64 index);
+    MCFOLD void setIndex(uint64 index);
 
     MCAPI void setSize(uint64 length);
 
@@ -95,6 +95,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

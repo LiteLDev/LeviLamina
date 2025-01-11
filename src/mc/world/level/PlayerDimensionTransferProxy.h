@@ -133,7 +133,7 @@ public:
     MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
     $hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension);
+    MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension);
     // NOLINTEND
 
 public:

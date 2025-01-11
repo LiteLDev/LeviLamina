@@ -27,7 +27,7 @@ public:
 
     MCAPI bool addCommand(::std::unique_ptr<::AgentCommands::Command> commandObj);
 
-    MCAPI ::std::unique_ptr<::AgentCommands::Command> const& getCurrentCommand() const;
+    MCFOLD ::std::unique_ptr<::AgentCommands::Command> const& getCurrentCommand() const;
 
     MCAPI void initFromDefinition(::Actor& owner);
 
@@ -37,6 +37,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

@@ -63,21 +63,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $nextInt();
+    MCFOLD int $nextInt();
 
-    MCAPI int $nextInt(int const bound);
+    MCFOLD int $nextInt(int const bound);
 
-    MCAPI int64 $nextLong();
+    MCFOLD int64 $nextLong();
 
-    MCAPI bool $nextBoolean();
+    MCFOLD bool $nextBoolean();
 
-    MCAPI double $nextDouble();
+    MCFOLD double $nextDouble();
 
     MCAPI double $nextGaussianDouble();
 
-    MCAPI void $consumeCount(uint count);
+    MCFOLD void $consumeCount(uint count);
 
-    MCAPI ::std::unique_ptr<::IRandom> $fork();
+    MCFOLD ::std::unique_ptr<::IRandom> $fork();
     // NOLINTEND
 };
 

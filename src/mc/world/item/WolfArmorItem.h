@@ -103,9 +103,9 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCAPI int $getArmorValue() const;
+    MCFOLD int $getArmorValue() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
     // NOLINTEND
 
 public:

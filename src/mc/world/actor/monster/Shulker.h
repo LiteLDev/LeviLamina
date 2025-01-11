@@ -149,15 +149,15 @@ public:
 
     MCAPI int $getArmorValue() const;
 
-    MCAPI bool $shouldRender() const;
+    MCFOLD bool $shouldRender() const;
 
-    MCAPI void $_doInitialMove();
+    MCFOLD void $_doInitialMove();
 
-    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
+    MCFOLD ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCAPI float $getMaxHeadXRot();
+    MCFOLD float $getMaxHeadXRot();
 
     MCAPI bool $isInWall() const;
 

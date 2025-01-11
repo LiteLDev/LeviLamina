@@ -77,7 +77,7 @@ public:
     // NOLINTBEGIN
     MCAPI ActiveTransfersManager();
 
-    MCAPI void collectTrackingData() const;
+    MCFOLD void collectTrackingData() const;
 
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
 

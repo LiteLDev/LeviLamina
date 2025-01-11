@@ -46,9 +46,9 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI void $write(::BinaryStream&) const;
+    MCFOLD void $write(::BinaryStream&) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
+    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
     // NOLINTEND
 
 public:

@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos getPosition(ushort id) const;
+    MCFOLD ::BlockPos getPosition(ushort id) const;
 
     MCAPI bool getStatusFlag(::ActorFlags flag) const;
     // NOLINTEND

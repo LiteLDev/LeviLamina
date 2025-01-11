@@ -54,17 +54,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getAllowNestedStorageItem() const;
+    MCFOLD bool getAllowNestedStorageItem() const;
 
-    MCAPI ::std::vector<::ItemDescriptor> const& getAllowedItems() const;
+    MCFOLD ::std::vector<::ItemDescriptor> const& getAllowedItems() const;
 
-    MCAPI ::std::vector<::ItemDescriptor> const& getBannedItems() const;
+    MCFOLD ::std::vector<::ItemDescriptor> const& getBannedItems() const;
 
-    MCAPI int getNumSlot() const;
+    MCFOLD int getNumSlot() const;
 
-    MCAPI int getWeightInStorageItem() const;
+    MCFOLD int getWeightInStorageItem() const;
 
-    MCAPI int getWeightLimit() const;
+    MCFOLD int getWeightLimit() const;
 
     MCAPI ::std::unique_ptr<::ListTag>
     serializeStorageItem(::FullContainerName const& name, ::SaveContext const& saveContext) const;

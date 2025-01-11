@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
     MCAPI int $getMaxLevel() const;
 

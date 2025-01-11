@@ -89,7 +89,7 @@ public:
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $pushActors();
+    MCFOLD void $pushActors();
     // NOLINTEND
 
 public:

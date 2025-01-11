@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LevelComponent(::std::unique_ptr<::ILevel> level);
 
-    MCAPI ::ILevel& getLevel();
+    MCFOLD ::ILevel& getLevel();
 
     MCAPI ~LevelComponent();
     // NOLINTEND
@@ -33,12 +33,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ILevel> level);
+    MCFOLD void* $ctor(::std::unique_ptr<::ILevel> level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

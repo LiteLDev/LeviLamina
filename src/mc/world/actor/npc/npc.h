@@ -101,29 +101,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $newServerAiStep();
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCFOLD void $die(::ActorDamageSource const& source);
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCFOLD bool $canBeAffected(uint id) const;
 
     MCAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCAPI bool $canShowNameTag() const;
+    MCFOLD bool $canShowNameTag() const;
 
-    MCAPI bool $isTargetable() const;
+    MCFOLD bool $isTargetable() const;
 
     MCAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCAPI void $knockback(::Actor*, int, float, float, float, float, float);
+    MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
 
-    MCAPI bool $canBePulledIntoVehicle() const;
+    MCFOLD bool $canBePulledIntoVehicle() const;
 
-    MCAPI bool $canExistWhenDisallowMob() const;
+    MCFOLD bool $canExistWhenDisallowMob() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
     // NOLINTEND

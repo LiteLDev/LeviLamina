@@ -68,7 +68,7 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
-    MCAPI ::Json::Value $_serializeValue() const;
+    MCFOLD ::Json::Value $_serializeValue() const;
     // NOLINTEND
 
 public:

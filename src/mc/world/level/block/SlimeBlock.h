@@ -44,7 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI SlimeBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -64,13 +64,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
     MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCAPI bool $isBounceBlock() const;
+    MCFOLD bool $isBounceBlock() const;
 
-    MCAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
     // NOLINTEND
 
 public:

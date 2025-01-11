@@ -64,6 +64,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
+    MCFOLD void* $ctor(::Level& level);
     // NOLINTEND
 };

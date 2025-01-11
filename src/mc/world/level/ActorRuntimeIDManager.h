@@ -48,7 +48,7 @@ public:
 
     MCAPI void _removeEntity(::EntityContext const& entity);
 
-    MCAPI ::ActorRuntimeID getNextRuntimeID();
+    MCFOLD ::ActorRuntimeID getNextRuntimeID();
 
     MCAPI ::Actor* getRuntimeActorEntity(::ActorRuntimeID actorId, bool getRemoved) const;
 

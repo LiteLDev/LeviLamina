@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void validate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    MCFOLD void validate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:

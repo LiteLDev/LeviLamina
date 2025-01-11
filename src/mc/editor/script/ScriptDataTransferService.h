@@ -70,7 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Editor::Services::ServerDataTransferServiceProvider* transferService,
         ::Scripting::WeakLifetimeScope const&                  scope
     );

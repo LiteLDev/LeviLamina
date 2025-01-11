@@ -80,13 +80,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI ::AABB const&
     $getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB)
         const;
 
-    MCAPI bool $pushesUpFallingBlocks() const;
+    MCFOLD bool $pushesUpFallingBlocks() const;
 
     MCAPI ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
@@ -94,7 +94,7 @@ public:
 
     MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCAPI bool $isMovingBlock() const;
+    MCFOLD bool $isMovingBlock() const;
     // NOLINTEND
 
 public:

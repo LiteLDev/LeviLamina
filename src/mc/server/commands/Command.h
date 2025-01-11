@@ -46,7 +46,7 @@ public:
 
     MCAPI ::std::string getCommandName() const;
 
-    MCAPI ::CommandRegistry const& getRegistry() const;
+    MCFOLD ::CommandRegistry const& getRegistry() const;
 
     MCAPI bool hasFlag(::CommandFlag flag) const;
 
@@ -96,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $collectOptionalArguments();
+    MCFOLD bool $collectOptionalArguments();
     // NOLINTEND
 
 public:

@@ -91,23 +91,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::string> $getLocalIps() const;
+    MCFOLD ::std::vector<::std::string> $getLocalIps() const;
 
-    MCAPI ::std::string $getLocalIp();
+    MCFOLD ::std::string $getLocalIp();
 
-    MCAPI ushort $getPort() const;
+    MCFOLD ushort $getPort() const;
 
-    MCAPI ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
+    MCFOLD ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
 
-    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCAPI bool $isIPv4Supported() const;
+    MCFOLD bool $isIPv4Supported() const;
 
-    MCAPI bool $isIPv6Supported() const;
+    MCFOLD bool $isIPv6Supported() const;
 
-    MCAPI ushort $getIPv4Port() const;
+    MCFOLD ushort $getIPv4Port() const;
 
-    MCAPI ushort $getIPv6Port() const;
+    MCFOLD ushort $getIPv6Port() const;
     // NOLINTEND
 
 public:

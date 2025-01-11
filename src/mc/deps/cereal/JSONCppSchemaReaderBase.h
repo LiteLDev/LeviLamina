@@ -46,7 +46,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -181,7 +181,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -217,9 +217,9 @@ public:
 
     MCAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
 
-    MCAPI uint64 $members();
+    MCFOLD uint64 $members();
 
-    MCAPI uint64 $length();
+    MCFOLD uint64 $length();
 
     MCAPI bool $pushMember(::std::string_view const name, ::cereal::PropertyReader const&);
 

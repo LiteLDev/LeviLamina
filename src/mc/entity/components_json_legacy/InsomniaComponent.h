@@ -29,14 +29,14 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI int getInsomniaTimerTicks() const;
+    MCFOLD int getInsomniaTimerTicks() const;
 
-    MCAPI int getTicksUntilInsomnia() const;
+    MCFOLD int getTicksUntilInsomnia() const;
 
     MCAPI int incrementTimeSinceRest();
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void restartTimer();
+    MCFOLD void restartTimer();
     // NOLINTEND
 };

@@ -71,13 +71,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $log(::LogArea const, ::LogLevel const logLevel, char const* message);
 
-    MCAPI bool $logOnlyOnce() const;
+    MCFOLD bool $logOnlyOnce() const;
 
-    MCAPI void $flush();
+    MCFOLD void $flush();
 
-    MCAPI void $setEnabled(bool enabled);
+    MCFOLD void $setEnabled(bool enabled);
 
-    MCAPI bool $isEnabled() const;
+    MCFOLD bool $isEnabled() const;
     // NOLINTEND
 
 public:

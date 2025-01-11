@@ -59,17 +59,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reset();
+    MCFOLD void $reset();
 
     MCAPI void $update(void const* data, uint size);
 
-    MCAPI void $final(uchar* result);
+    MCFOLD void $final(uchar* result);
 
     MCAPI uint64 $resultSize() const;
     // NOLINTEND

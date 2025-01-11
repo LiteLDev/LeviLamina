@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BoundingBox const* operator->() const;
+    MCFOLD ::BoundingBox const* operator->() const;
     // NOLINTEND
 };
 

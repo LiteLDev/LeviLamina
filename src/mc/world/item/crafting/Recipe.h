@@ -169,17 +169,17 @@ public:
 
     MCAPI ::Recipe::ConstructionContext getConstructionContext() const;
 
-    MCAPI int getHeight() const;
+    MCFOLD int getHeight() const;
 
     MCAPI ::RecipeNetId const& getNetId() const;
 
-    MCAPI ::std::string const& getRecipeId() const;
+    MCFOLD ::std::string const& getRecipeId() const;
 
-    MCAPI ::HashedString const& getTag() const;
+    MCFOLD ::HashedString const& getTag() const;
 
-    MCAPI ::RecipeUnlockingRequirement const& getUnlockingRequirement() const;
+    MCFOLD ::RecipeUnlockingRequirement const& getUnlockingRequirement() const;
 
-    MCAPI int getWidth() const;
+    MCFOLD int getWidth() const;
 
     MCAPI void setNetId(::RecipeNetId const& recipeNetId);
     // NOLINTEND
@@ -205,13 +205,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::UUID const& $getId() const;
+    MCFOLD ::mce::UUID const& $getId() const;
 
-    MCAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCAPI bool $isMultiRecipe() const;
+    MCFOLD bool $isMultiRecipe() const;
 
-    MCAPI bool $hasDataDrivenResult() const;
+    MCFOLD bool $hasDataDrivenResult() const;
 
     MCAPI bool $itemValidForRecipe(::ItemDescriptor const& recipeItem, ::ItemStack const& item) const;
 

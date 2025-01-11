@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerValidationResult $tryActivate();
+    MCFOLD ::ContainerValidationResult $tryActivate();
     // NOLINTEND
 
 public:

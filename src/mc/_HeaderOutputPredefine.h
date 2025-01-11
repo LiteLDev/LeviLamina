@@ -7,6 +7,7 @@
 
 #define MCAPI  __declspec(dllimport)
 #define MCTAPI template<> MCAPI
+#define MCFOLD MCAPI /*Identical COMDAT Folding*/
 
 #include <algorithm>     // STL general algorithms
 #include <array>         // STL array container

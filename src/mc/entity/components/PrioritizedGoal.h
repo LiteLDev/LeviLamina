@@ -21,15 +21,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getPriority() const;
+    MCFOLD int getPriority() const;
 
-    MCAPI bool getToStart() const;
+    MCFOLD bool getToStart() const;
 
-    MCAPI bool getUsed() const;
+    MCFOLD bool getUsed() const;
 
-    MCAPI void setToStart(bool start);
+    MCFOLD void setToStart(bool start);
 
-    MCAPI void setUsed(bool used);
+    MCFOLD void setUsed(bool used);
 
     MCAPI ~PrioritizedGoal();
     // NOLINTEND
@@ -37,6 +37,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

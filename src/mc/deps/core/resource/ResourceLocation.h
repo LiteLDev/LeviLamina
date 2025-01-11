@@ -33,7 +33,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const& getRelativePath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& getRelativePath() const;
 
     MCAPI void serialize(::Json::Value& out) const;
 
@@ -61,6 +61,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

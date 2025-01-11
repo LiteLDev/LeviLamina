@@ -64,7 +64,7 @@ public:
 
     MCAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCAPI bool $isMeleeDamageEnchant() const;
+    MCFOLD bool $isMeleeDamageEnchant() const;
 
     MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND

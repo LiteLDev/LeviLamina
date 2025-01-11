@@ -52,9 +52,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
 
-    MCAPI ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent&&);
+    MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent&&);
 
-    MCAPI ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent const&);
+    MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent const&);
     // NOLINTEND
 
 public:
@@ -84,7 +84,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 

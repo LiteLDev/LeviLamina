@@ -56,9 +56,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInWater() const;
+    MCFOLD bool $isInWater() const;
 
-    MCAPI bool $isInLava() const;
+    MCFOLD bool $isInLava() const;
 
     MCAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
 

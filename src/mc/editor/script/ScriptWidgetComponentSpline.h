@@ -128,7 +128,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:

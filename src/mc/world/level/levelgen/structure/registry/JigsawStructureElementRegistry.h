@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::StructurePoolElement const* lookupByName(::std::string name) const;
+    MCFOLD ::StructurePoolElement const* lookupByName(::std::string name) const;
 
     MCAPI ::StructurePoolElement const&
     registerStructureElement(::std::string name, ::std::unique_ptr<::StructurePoolElement>&& element);

@@ -60,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(
+    MCFOLD void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random

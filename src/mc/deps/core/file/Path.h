@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Core { class PathPart; }
@@ -36,10 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI Path();
 
-    MCAPI explicit Path(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
-
-    MCAPI explicit Path(::Core::PathBuffer<::std::string> const&);
-
     MCAPI ~Path();
     // NOLINTEND
 
@@ -58,17 +50,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
-
-    MCAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -53,13 +53,13 @@ public:
 
     MCAPI void configureRenderParamsForTrigger(::RenderParams& params) const;
 
-    MCAPI ::Actor const& getActor() const;
+    MCFOLD ::Actor const& getActor() const;
 
-    MCAPI float getFallDistance() const;
+    MCFOLD float getFallDistance() const;
 
     MCAPI void handleActorFallDamage(float distance, float multiplier, ::ActorDamageSource source);
 
-    MCAPI bool isClientSide() const;
+    MCFOLD bool isClientSide() const;
 
     MCAPI void postFallOnGameEvent();
 
@@ -79,13 +79,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

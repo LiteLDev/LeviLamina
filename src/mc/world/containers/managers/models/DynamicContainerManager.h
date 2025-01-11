@@ -45,13 +45,13 @@ public:
 
     MCAPI void broadcastChanges(::PlayerContainerRefresher const& refresher);
 
-    MCAPI ::ContainerID getContainerId() const;
+    MCFOLD ::ContainerID getContainerId() const;
 
-    MCAPI ::FullContainerName getDynamicContainerId() const;
+    MCFOLD ::FullContainerName getDynamicContainerId() const;
 
     MCAPI ::std::vector<::ItemStack> const& getItems() const;
 
-    MCAPI ::ItemStack const& getStorageItemForNetworkPacket() const;
+    MCFOLD ::ItemStack const& getStorageItemForNetworkPacket() const;
 
     MCAPI void shareContainer(::ContainerOwner& containerOwner);
 

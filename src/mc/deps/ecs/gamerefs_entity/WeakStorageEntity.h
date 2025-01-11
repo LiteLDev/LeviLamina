@@ -47,7 +47,7 @@ public:
 
     MCAPI void* $ctor(::EntityContext const& stackRef);
 
-    MCAPI void* $ctor(::OwnerStorageEntity const& stackResultStorage);
+    MCFOLD void* $ctor(::OwnerStorageEntity const& stackResultStorage);
 
     MCAPI void* $ctor(::StackResultStorageEntity const&);
     // NOLINTEND

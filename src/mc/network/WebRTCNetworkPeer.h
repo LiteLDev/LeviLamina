@@ -61,9 +61,9 @@ public:
 
     MCAPI void _updateConnectionStatus();
 
-    MCAPI uint64 getPeerId() const;
+    MCFOLD uint64 getPeerId() const;
 
-    MCAPI uint64 getSessionId() const;
+    MCFOLD uint64 getSessionId() const;
     // NOLINTEND
 
 public:
@@ -92,9 +92,9 @@ public:
 
     MCAPI void $update();
 
-    MCAPI bool $isLocal() const;
+    MCFOLD bool $isLocal() const;
 
-    MCAPI bool $isEncrypted() const;
+    MCFOLD bool $isEncrypted() const;
     // NOLINTEND
 
 public:

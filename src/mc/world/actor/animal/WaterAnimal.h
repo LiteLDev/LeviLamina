@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $checkSpawnRules(bool);
 
-    MCAPI float $getFlopVerticalVelocityFactor() const;
+    MCFOLD float $getFlopVerticalVelocityFactor() const;
 
     MCAPI float $getFlopHorizontalVelocityFactor() const;
     // NOLINTEND

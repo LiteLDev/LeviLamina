@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScriptRGB(::mce::Color const& color);
 
-    MCAPI ::mce::Color const& getColor() const;
+    MCFOLD ::mce::Color const& getColor() const;
     // NOLINTEND
 
 public:

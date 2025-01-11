@@ -62,7 +62,7 @@ public:
 
     MCAPI ContainerComponent(::ContainerComponent&& other);
 
-    MCAPI ::FillingContainer* _getRawContainerPtr();
+    MCFOLD ::FillingContainer* _getRawContainerPtr();
 
     MCAPI bool _tryMoveInItem(::ItemStack& item, int slot, int face, int itemCount);
 

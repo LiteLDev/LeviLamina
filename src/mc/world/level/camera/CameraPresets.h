@@ -41,7 +41,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -77,9 +77,9 @@ public:
 
     MCAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
 
-    MCAPI ::std::vector<::CameraPreset> const& getPresets() const;
+    MCFOLD ::std::vector<::CameraPreset> const& getPresets() const;
 
-    MCAPI bool isEmpty() const;
+    MCFOLD bool isEmpty() const;
 
     MCAPI void loadPresets(::ResourcePackManager& resourcePackManager, ::Experiments const&);
 

@@ -117,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -139,7 +139,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
     // NOLINTEND
 
 public:

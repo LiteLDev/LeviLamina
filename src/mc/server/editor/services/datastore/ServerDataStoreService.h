@@ -77,7 +77,7 @@ public:
         bool
     );
 
-    MCAPI ::Json::Value
+    MCFOLD ::Json::Value
     $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
     // NOLINTEND
 

@@ -35,21 +35,21 @@ public:
 
     MCAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>> getAllTestFunctions();
 
-    MCAPI ::std::vector<::std::string> const& getAllTestTags() const;
+    MCFOLD ::std::vector<::std::string> const& getAllTestTags() const;
 
     MCAPI ::std::shared_ptr<::gametest::BaseGameTestFunction> getTestFunction(::std::string const& testName);
 
     MCAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>>
     getTestFunctionsWithTag(::std::string const& tag);
 
-    MCAPI bool isReady() const;
+    MCFOLD bool isReady() const;
 
     MCAPI bool isTestTag(::std::string const& tag) const;
 
     MCAPI bool
     registerTestMethod(::std::string const& className, ::std::shared_ptr<::gametest::BaseGameTestFunction> fn);
 
-    MCAPI void setReady();
+    MCFOLD void setReady();
     // NOLINTEND
 };
 

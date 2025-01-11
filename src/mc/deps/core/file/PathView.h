@@ -29,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::PathView const&);
+    MCFOLD void* $ctor(::Core::PathView const&);
 
     MCAPI void* $ctor(::Core::PathView&&);
     // NOLINTEND
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

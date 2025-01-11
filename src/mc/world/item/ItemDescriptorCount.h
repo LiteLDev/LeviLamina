@@ -53,7 +53,7 @@ public:
 
     MCAPI short getStackSize() const;
 
-    MCAPI void setStackSize(short size);
+    MCFOLD void setStackSize(short size);
     // NOLINTEND
 
 public:
@@ -79,7 +79,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

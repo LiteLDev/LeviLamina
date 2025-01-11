@@ -36,9 +36,9 @@ public:
 
     MCAPI float getAdjustedDamage(::Actor& owner, ::ActorDamageSource const& source, float amount) const;
 
-    MCAPI ::ActorDamageCause getCause() const;
+    MCFOLD ::ActorDamageCause getCause() const;
 
-    MCAPI bool isFatal() const;
+    MCFOLD bool isFatal() const;
 
     MCAPI ::DamageSensorComponent& operator=(::DamageSensorComponent&&);
 

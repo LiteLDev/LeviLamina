@@ -56,7 +56,7 @@ public:
 
     MCAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
 
-    MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> const& getAreas() const;
+    MCFOLD ::std::vector<::std::shared_ptr<::ITickingArea>> const& getAreas() const;
 
     MCAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
 

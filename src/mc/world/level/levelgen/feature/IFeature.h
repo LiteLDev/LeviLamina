@@ -43,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool isAllowedToPlaceFeature(::IFeature const& feature) const;
 
-    MCAPI bool isInternal() const;
+    MCFOLD bool isInternal() const;
 
     MCAPI bool operator==(::IFeature const& other) const;
 
@@ -52,9 +52,9 @@ public:
 
     MCAPI bool setBlockSafeSimple(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void setCanUseInternalFeature(bool canUseInternalFeature);
+    MCFOLD void setCanUseInternalFeature(bool canUseInternalFeature);
 
-    MCAPI void setIsInternal(bool isInternal);
+    MCFOLD void setIsInternal(bool isInternal);
     // NOLINTEND
 
 public:
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isValidPlacement(::std::string const& pass);
 
-    MCAPI void $upgradeFormat(::SemVersion const&);
+    MCFOLD void $upgradeFormat(::SemVersion const&);
     // NOLINTEND
 
 public:

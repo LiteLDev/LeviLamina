@@ -91,7 +91,7 @@ public:
 
     MCAPI bool $isValid(float pickRange);
 
-    MCAPI void $broadcastChanges();
+    MCFOLD void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND

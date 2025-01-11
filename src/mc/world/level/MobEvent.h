@@ -24,11 +24,11 @@ public:
 
     MCAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
 
-    MCAPI ::std::string const& getLocalizableName() const;
+    MCFOLD ::std::string const& getLocalizableName() const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI bool isEnabled() const;
+    MCFOLD bool isEnabled() const;
 
     MCAPI ~MobEvent();
     // NOLINTEND
@@ -44,6 +44,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

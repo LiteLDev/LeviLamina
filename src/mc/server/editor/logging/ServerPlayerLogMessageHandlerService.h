@@ -39,11 +39,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
     MCAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
     // NOLINTEND
 
 public:

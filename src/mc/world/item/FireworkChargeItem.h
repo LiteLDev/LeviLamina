@@ -83,7 +83,7 @@ public:
         ::std::string const&                 indent
     );
 
-    MCAPI static ::ItemInstance const& initFireworkChargeItem(
+    MCFOLD static ::ItemInstance const& initFireworkChargeItem(
         ::ItemInstance&             item,
         ::FireworkChargeItem::Shape shape,
         ::std::vector<uchar>        colors,
@@ -144,11 +144,11 @@ public:
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
-    MCAPI bool $isDyeable() const;
+    MCFOLD bool $isDyeable() const;
 
     MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
 
 public:

@@ -58,15 +58,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<::std::string> $readStringResult();
+    MCFOLD ::Bedrock::Result<::std::string> $readStringResult();
 
-    MCAPI ::Bedrock::Result<::std::string> $readLongStringResult();
+    MCFOLD ::Bedrock::Result<::std::string> $readLongStringResult();
 
     MCAPI ::Bedrock::Result<float> $readFloatResult();
 
@@ -80,7 +80,7 @@ public:
 
     MCAPI ::Bedrock::Result<int64> $readLongLongResult();
 
-    MCAPI ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
+    MCFOLD ::Bedrock::Result<void> $readBytesResult(void* data, uint64 bytes);
 
     MCAPI uint64 $numBytesLeft() const;
     // NOLINTEND

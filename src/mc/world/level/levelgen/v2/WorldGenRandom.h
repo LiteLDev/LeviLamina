@@ -130,7 +130,7 @@ public:
 
     MCAPI ::std::unique_ptr<::IRandom> $fork();
 
-    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
 
     MCAPI void $setSeed(int64 seed);
 

@@ -26,13 +26,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const getBelowNameStringForId(::ScoreboardId const& scoreboardId) const;
 
-    MCAPI ::Objective const& getObjective() const;
+    MCFOLD ::Objective const& getObjective() const;
 
-    MCAPI ::ObjectiveSortOrder getSortOrder() const;
+    MCFOLD ::ObjectiveSortOrder getSortOrder() const;
 
     MCAPI bool isDisplaying(::Objective const& targetObjective) const;
 
-    MCAPI bool isValid() const;
+    MCFOLD bool isValid() const;
     // NOLINTEND
 
 public:

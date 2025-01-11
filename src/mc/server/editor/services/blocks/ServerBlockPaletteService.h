@@ -125,13 +125,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::Scripting::Result<void> $ready();
 
     MCAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $setSelectedPaletteItemIndex(int index);
+    MCFOLD ::Scripting::Result<void> $setSelectedPaletteItemIndex(int index);
 
     MCAPI ::Scripting::Result<void> $setPaletteItem(
         ::HashedString const&                                                                          paletteId,
@@ -139,7 +139,7 @@ public:
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
 
-    MCAPI ::Scripting::Result<void> $pickBlock(::Block const&);
+    MCFOLD ::Scripting::Result<void> $pickBlock(::Block const&);
 
     MCAPI void $addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 

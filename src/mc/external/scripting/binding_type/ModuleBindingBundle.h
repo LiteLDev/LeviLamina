@@ -29,7 +29,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::ModuleBindingBundle&&);
+    MCFOLD void* $ctor(::Scripting::ModuleBindingBundle&&);
     // NOLINTEND
 
 public:

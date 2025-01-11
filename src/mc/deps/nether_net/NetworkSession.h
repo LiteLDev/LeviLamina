@@ -192,11 +192,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState);
+    MCFOLD void $OnSignalingChange(::webrtc::PeerConnectionInterface::SignalingState);
 
     MCAPI void $OnDataChannel(::webrtc::scoped_refptr<::webrtc::DataChannelInterface> pDataChannel);
 
-    MCAPI void $OnRenegotiationNeeded();
+    MCFOLD void $OnRenegotiationNeeded();
 
     MCAPI void $OnIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState new_state);
 
@@ -206,9 +206,9 @@ public:
 
     MCAPI void $OnIceCandidate(::webrtc::IceCandidateInterface const* candidate);
 
-    MCAPI void $OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
+    MCFOLD void $OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
 
-    MCAPI void $OnIceConnectionReceivingChange(bool);
+    MCFOLD void $OnIceConnectionReceivingChange(bool);
     // NOLINTEND
 
 public:

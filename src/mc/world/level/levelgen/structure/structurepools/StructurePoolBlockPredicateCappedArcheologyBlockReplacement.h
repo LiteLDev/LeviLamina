@@ -84,7 +84,7 @@ public:
 
     MCAPI ::std::string $validate() const;
 
-    MCAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
     // NOLINTEND
 
 public:

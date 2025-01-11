@@ -94,7 +94,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI bool
     $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& lc, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&);

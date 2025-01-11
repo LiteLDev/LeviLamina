@@ -178,7 +178,7 @@ public:
 
     MCAPI ::Scripting::Result<void> $_checkVolumeIsValid(::SimpleBlockVolume const& volume) const;
 
-    MCAPI bool $_isClientSide() const;
+    MCFOLD bool $_isClientSide() const;
     // NOLINTEND
 
 public:

@@ -101,11 +101,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $_initializeComponent();
 
-    MCAPI int $getNutrition() const;
+    MCFOLD int $getNutrition() const;
 
-    MCAPI float $getSaturationModifier() const;
+    MCFOLD float $getSaturationModifier() const;
 
-    MCAPI bool $canAlwaysEat() const;
+    MCFOLD bool $canAlwaysEat() const;
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 

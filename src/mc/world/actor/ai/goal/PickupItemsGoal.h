@@ -3,14 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ItemActor;
 class ItemDescriptor;
 class ItemStack;
 class Mob;
+class Path;
+class Vec3;
 class WeakEntityRef;
 struct DistanceSortedActor;
 struct Shareable;
@@ -20,31 +24,25 @@ class PickupItemsGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkc13171;
-    ::ll::UntypedStorage<4, 12> mUnkdf0376;
-    ::ll::UntypedStorage<8, 8>  mUnk964019;
-    ::ll::UntypedStorage<4, 4>  mUnk856f2f;
-    ::ll::UntypedStorage<4, 4>  mUnkdfe959;
-    ::ll::UntypedStorage<4, 4>  mUnk60523b;
-    ::ll::UntypedStorage<1, 1>  mUnkcce7ee;
-    ::ll::UntypedStorage<8, 8>  mUnk38d569;
-    ::ll::UntypedStorage<4, 4>  mUnk21c42a;
-    ::ll::UntypedStorage<4, 4>  mUnke45fd0;
-    ::ll::UntypedStorage<4, 4>  mUnk8f5ecd;
-    ::ll::UntypedStorage<1, 1>  mUnk405a73;
-    ::ll::UntypedStorage<1, 1>  mUnk103933;
-    ::ll::UntypedStorage<4, 4>  mUnkc5272c;
-    ::ll::UntypedStorage<1, 1>  mUnka95469;
-    ::ll::UntypedStorage<1, 1>  mUnk6031c2;
-    ::ll::UntypedStorage<8, 24> mUnkdaddd5;
-    ::ll::UntypedStorage<8, 24> mUnkabc376;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>                   mTarget;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mTargetPos;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, int>                                    mSearchRange;
+    ::ll::TypedStorage<4, 4, int>                                    mSearchHeight;
+    ::ll::TypedStorage<4, 4, float>                                  mSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool>                                   mTrackTarget;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>              mPath;
+    ::ll::TypedStorage<4, 4, int>                                    mRandomStopInterval;
+    ::ll::TypedStorage<4, 4, float>                                  mGoalRadiusSq;
+    ::ll::TypedStorage<4, 4, int>                                    mTimeToRecalcPath;
+    ::ll::TypedStorage<1, 1, bool>                                   mPickupBasedOnChance;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanPickupAnyItem;
+    ::ll::TypedStorage<4, 4, int>                                    mTimeoutAfterBeingAttacked;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanPickupToHandOrEquipment;
+    ::ll::TypedStorage<1, 1, bool>                                   mPickupSameItemsAsInHand;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor> const> mExcludedItemsList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>        mFilteredPickupTargets;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PickupItemsGoal& operator=(PickupItemsGoal const&);
-    PickupItemsGoal(PickupItemsGoal const&);
-    PickupItemsGoal();
 
 public:
     // virtual functions

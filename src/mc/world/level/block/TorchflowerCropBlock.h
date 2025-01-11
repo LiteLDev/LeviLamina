@@ -71,7 +71,7 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
         const;
 

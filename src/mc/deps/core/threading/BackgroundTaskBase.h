@@ -120,19 +120,19 @@ public:
 
     MCAPI bool canBeRunBy(::std::thread::id workerId) const;
 
-    MCAPI ::IBackgroundTaskOwner* getGroup();
+    MCFOLD ::IBackgroundTaskOwner* getGroup();
 
-    MCAPI ::TaskGroupState getGroupState() const;
+    MCFOLD ::TaskGroupState getGroupState() const;
 
     MCAPI ::std::shared_ptr<::BackgroundTaskBase> getNext();
 
-    MCAPI ::BackgroundTaskBase* getPrev();
+    MCFOLD ::BackgroundTaskBase* getPrev();
 
-    MCAPI ::std::chrono::steady_clock::time_point getStartAfterTime() const;
+    MCFOLD ::std::chrono::steady_clock::time_point getStartAfterTime() const;
 
     MCAPI bool hasAffinity() const;
 
-    MCAPI bool isAsync() const;
+    MCFOLD bool isAsync() const;
 
     MCAPI bool isOrphaned() const;
 
@@ -140,9 +140,9 @@ public:
 
     MCAPI void setNext(::std::shared_ptr<::BackgroundTaskBase> next);
 
-    MCAPI void setPrev(::BackgroundTaskBase* prev);
+    MCFOLD void setPrev(::BackgroundTaskBase* prev);
 
-    MCAPI void setStartAfterTime(::std::chrono::steady_clock::time_point t);
+    MCFOLD void setStartAfterTime(::std::chrono::steady_clock::time_point t);
 
     MCAPI void setSyncPriority();
 

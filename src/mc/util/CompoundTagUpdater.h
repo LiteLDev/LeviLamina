@@ -61,6 +61,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag) const;
 
-    MCAPI uint getVersion() const;
+    MCFOLD uint getVersion() const;
     // NOLINTEND
 };

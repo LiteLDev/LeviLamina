@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:

@@ -35,21 +35,21 @@ public:
 
     MCAPI bool isTimeForStorageCheck(::std::chrono::steady_clock::time_point currentTime) const;
 
-    MCAPI void onAppSuspend();
+    MCFOLD void onAppSuspend();
 
-    MCAPI void onStartLeaveGame();
+    MCFOLD void onStartLeaveGame();
 
     MCAPI void onUpdateAfterStorageDeferred(::std::chrono::steady_clock::time_point currentTime);
 
     MCAPI ::std::shared_ptr<void*> requestTimedStorageDeferment();
 
-    MCAPI void setNextGameDataSaveTime(::std::chrono::steady_clock::time_point nextGameDataSaveTime);
+    MCFOLD void setNextGameDataSaveTime(::std::chrono::steady_clock::time_point nextGameDataSaveTime);
 
-    MCAPI void setNextStorageCheckTime(::std::chrono::steady_clock::time_point nextStorageCheckTime);
+    MCFOLD void setNextStorageCheckTime(::std::chrono::steady_clock::time_point nextStorageCheckTime);
 
     MCAPI void setWasStorageSavePreviouslyDeferred(bool wasStorageSavePreviouslyDeferred);
 
-    MCAPI bool wasStorageSavePreviouslyDeferred() const;
+    MCFOLD bool wasStorageSavePreviouslyDeferred() const;
 
     MCAPI ~GameDataSaveTimer();
     // NOLINTEND

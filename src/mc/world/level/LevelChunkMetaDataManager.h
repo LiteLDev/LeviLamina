@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _onNewDimensionCreated(::Dimension& dimension);
 
-    MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
+    MCFOLD ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 

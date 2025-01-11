@@ -80,9 +80,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
     // NOLINTEND
 
 public:

@@ -41,9 +41,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BatteryStatus $getBatteryStatus() const;
+    MCFOLD ::BatteryStatus $getBatteryStatus() const;
 
-    MCAPI float $getBatteryLevel() const;
+    MCFOLD float $getBatteryLevel() const;
     // NOLINTEND
 
 public:

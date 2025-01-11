@@ -39,7 +39,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isDataEqual(::DataItem const& rhs) const;
+    MCFOLD bool $isDataEqual(::DataItem const& rhs) const;
     // NOLINTEND
 
 public:

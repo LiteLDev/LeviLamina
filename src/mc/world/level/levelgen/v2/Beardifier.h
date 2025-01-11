@@ -31,7 +31,7 @@ public:
 
     MCAPI double compute(::BlockPos pos) const;
 
-    MCAPI bool empty() const;
+    MCFOLD bool empty() const;
 
     MCAPI ::br::worldgen::Beardifier& operator=(::br::worldgen::Beardifier&&);
 
@@ -48,7 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

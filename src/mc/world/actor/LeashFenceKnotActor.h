@@ -103,17 +103,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCAPI int $getWidth() const;
+    MCFOLD int $getWidth() const;
 
-    MCAPI int $getHeight() const;
+    MCFOLD int $getHeight() const;
 
-    MCAPI void $dropItem();
+    MCFOLD void $dropItem();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $wouldSurvive(::BlockSource& region);
 

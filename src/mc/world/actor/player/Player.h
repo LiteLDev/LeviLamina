@@ -579,7 +579,7 @@ public:
     virtual bool isSilentObserver() const /*override*/;
 
     // vIndex: 114
-    virtual void useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
+    virtual void useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem) /*override*/;
 
     // vIndex: 215
     virtual bool isLoading() const;
@@ -918,7 +918,7 @@ public:
 
     MCAPI ::LayeredAbilities const& getAbilities() const;
 
-    MCAPI ::LayeredAbilities& getAbilities();
+    MCFOLD ::LayeredAbilities& getAbilities();
 
     MCAPI ::Agent* getAgent() const;
 
@@ -926,7 +926,7 @@ public:
 
     MCAPI ::Agent* getAgentIfAllowed(bool callerCanAccessOtherAgents, ::ActorUniqueID callerAgentID) const;
 
-    MCAPI ::BlockPos const& getBedPosition() const;
+    MCFOLD ::BlockPos const& getBedPosition() const;
 
     MCAPI int64 getBlockedUsingDamagedShieldTimeStamp() const;
 
@@ -958,7 +958,7 @@ public:
 
     MCAPI ::BlockPos const& getExpectedSpawnPosition() const;
 
-    MCAPI ::GameMode& getGameMode() const;
+    MCFOLD ::GameMode& getGameMode() const;
 
     MCAPI ::std::string getInteractText() const;
 
@@ -974,7 +974,7 @@ public:
 
     MCAPI ::ItemStackNetManagerBase const* getItemStackNetManager() const;
 
-    MCAPI ::ItemStackNetManagerBase* getItemStackNetManager();
+    MCFOLD ::ItemStackNetManagerBase* getItemStackNetManager();
 
     MCAPI float getLuck();
 
@@ -1002,17 +1002,17 @@ public:
 
     MCAPI ::ItemStack const& getPlayerUIItem(::PlayerUISlot slot);
 
-    MCAPI ::BlockPos const& getRespawnAnchorPosition() const;
+    MCFOLD ::BlockPos const& getRespawnAnchorPosition() const;
 
-    MCAPI ::ItemStack const& getSelectedItem() const;
+    MCFOLD ::ItemStack const& getSelectedItem() const;
 
     MCAPI int getSelectedItemSlot() const;
 
-    MCAPI ::std::string const& getServerId() const;
+    MCFOLD ::std::string const& getServerId() const;
 
     MCAPI ::SerializedSkin const& getSkin() const;
 
-    MCAPI ::SerializedSkin& getSkin();
+    MCFOLD ::SerializedSkin& getSkin();
 
     MCAPI float getSleepRotation() const;
 
@@ -1022,7 +1022,7 @@ public:
 
     MCAPI ::PlayerInventory const& getSupplies() const;
 
-    MCAPI ::PlayerInventory& getSupplies();
+    MCFOLD ::PlayerInventory& getSupplies();
 
     MCAPI ::std::vector<::ActorUniqueID> const& getTrackedBosses();
 
@@ -1046,7 +1046,7 @@ public:
 
     MCAPI bool hasRespawnAnchorPosition() const;
 
-    MCAPI bool hasRespawnPosition() const;
+    MCFOLD bool hasRespawnPosition() const;
 
     MCAPI bool interact(::Actor& actor, ::Vec3 const& location);
 
@@ -1086,7 +1086,7 @@ public:
 
     MCAPI bool isUsingItem() const;
 
-    MCAPI bool isValidSpawn() const;
+    MCFOLD bool isValidSpawn() const;
 
     MCAPI void passengerCheckMovementStats();
 
@@ -1259,7 +1259,7 @@ public:
 
     MCAPI static ::Player const* tryGetFromComponent(::PlayerComponent const&, ::ActorOwnerComponent const&, bool);
 
-    MCAPI static ::Player*
+    MCFOLD static ::Player*
     tryGetFromComponent(::PlayerComponent const&, ::ActorOwnerComponent& actor, bool includeRemoved);
 
     MCAPI static ::Player* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
@@ -1361,7 +1361,7 @@ public:
 
     MCAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCAPI void $changeDimensionWithCredits(::DimensionType);
+    MCFOLD void $changeDimensionWithCredits(::DimensionType);
 
     MCAPI void $tickWorld(::Tick const&);
 
@@ -1373,17 +1373,17 @@ public:
 
     MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCFOLD void $onSynchedDataUpdate(int dataId);
 
     MCAPI void $aiStep();
 
     MCAPI bool $isFireImmune() const;
 
-    MCAPI void $checkMovementStats(::Vec3 const&);
+    MCFOLD void $checkMovementStats(::Vec3 const&);
 
-    MCAPI ::HashedString $getCurrentStructureFeature() const;
+    MCFOLD ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI bool $isAutoJumpEnabled() const;
+    MCFOLD bool $isAutoJumpEnabled() const;
 
     MCAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
 
@@ -1401,15 +1401,15 @@ public:
 
     MCAPI void $dropEquipmentOnDeath();
 
-    MCAPI void $clearVanishEnchantedItemsOnDeath();
+    MCFOLD void $clearVanishEnchantedItemsOnDeath();
 
     MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
-    MCAPI void $resetRot();
+    MCFOLD void $resetRot();
 
     MCAPI void $resetUserPos(bool clearMore);
 
-    MCAPI bool $isInTrialMode();
+    MCFOLD bool $isInTrialMode();
 
     MCAPI void $setSpeed(float speed);
 
@@ -1433,23 +1433,23 @@ public:
 
     MCAPI bool $attack(::Actor& actor, ::ActorDamageCause const& cause);
 
-    MCAPI ::ItemStack const& $getCarriedItem() const;
+    MCFOLD ::ItemStack const& $getCarriedItem() const;
 
     MCAPI void $setCarriedItem(::ItemStack const& item);
 
-    MCAPI void $openPortfolio();
+    MCFOLD void $openPortfolio();
 
-    MCAPI void $openBook(int, bool, int, ::BlockActor*);
+    MCFOLD void $openBook(int, bool, int, ::BlockActor*);
 
-    MCAPI void $openTrading(::ActorUniqueID const&, bool);
+    MCFOLD void $openTrading(::ActorUniqueID const&, bool);
 
-    MCAPI void $openChalkboard(::ChalkboardBlockActor&, bool);
+    MCFOLD void $openChalkboard(::ChalkboardBlockActor&, bool);
 
-    MCAPI void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
 
-    MCAPI void $openInventory();
+    MCFOLD void $openInventory();
 
-    MCAPI void $displayChatMessage(
+    MCFOLD void $displayChatMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
         ::std::optional<::std::string> const filteredMessage
@@ -1458,25 +1458,25 @@ public:
     MCAPI void
     $displayClientMessage(::std::string const& message, ::std::optional<::std::string> const filteredMessage);
 
-    MCAPI void $displayTextObjectMessage(
+    MCFOLD void $displayTextObjectMessage(
         ::TextObjectRoot const& textObject,
         ::std::string const&    fromXuid,
         ::std::string const&    fromPlatformId
     );
 
-    MCAPI void $displayTextObjectWhisperMessage(
+    MCFOLD void $displayTextObjectWhisperMessage(
         ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
 
-    MCAPI void $displayTextObjectWhisperMessage(
+    MCFOLD void $displayTextObjectWhisperMessage(
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     );
 
-    MCAPI void $displayWhisperMessage(
+    MCFOLD void $displayWhisperMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
         ::std::optional<::std::string> const filteredMessage,
@@ -1496,21 +1496,21 @@ public:
 
     MCAPI bool $canStartSleepInBed();
 
-    MCAPI void $sendInventory(bool);
+    MCFOLD void $sendInventory(bool);
 
-    MCAPI void $openSign(::BlockPos const&, bool);
+    MCFOLD void $openSign(::BlockPos const&, bool);
 
-    MCAPI void $playEmote(::std::string const&, bool const);
+    MCFOLD void $playEmote(::std::string const&, bool const);
 
     MCAPI bool $isSilentObserver() const;
 
-    MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
-    MCAPI bool $isLoading() const;
+    MCFOLD bool $isLoading() const;
 
-    MCAPI bool $isPlayerInitialized() const;
+    MCFOLD bool $isPlayerInitialized() const;
 
-    MCAPI void $stopLoading();
+    MCFOLD void $stopLoading();
 
     MCAPI float $getSpeed() const;
 
@@ -1522,11 +1522,11 @@ public:
 
     MCAPI bool $isImmobile() const;
 
-    MCAPI void $sendMotionPacketIfNeeded(::PlayerMovementSettings const& playerMovementSettings);
+    MCFOLD void $sendMotionPacketIfNeeded(::PlayerMovementSettings const& playerMovementSettings);
 
     MCAPI ::IMinecraftEventing* $getEventing() const;
 
-    MCAPI uint $getUserId() const;
+    MCFOLD uint $getUserId() const;
 
     MCAPI void $addExperience(int xp);
 
@@ -1546,7 +1546,7 @@ public:
 
     MCAPI bool $consumeTotem();
 
-    MCAPI bool $isActorRelevant(::Actor const&);
+    MCFOLD bool $isActorRelevant(::Actor const&);
 
     MCAPI float $getMapDecorationRotation() const;
 
@@ -1559,23 +1559,23 @@ public:
 
     MCAPI void $stopSwimming();
 
-    MCAPI void $onSuspension();
+    MCFOLD void $onSuspension();
 
-    MCAPI void $onLinkedSlotsChanged();
+    MCFOLD void $onLinkedSlotsChanged();
 
-    MCAPI bool $canBePulledIntoVehicle() const;
+    MCFOLD bool $canBePulledIntoVehicle() const;
 
     MCAPI void $feed(int itemId);
 
-    MCAPI void $sendNetworkPacket(::Packet& packet) const;
+    MCFOLD void $sendNetworkPacket(::Packet& packet) const;
 
-    MCAPI bool $canExistWhenDisallowMob() const;
+    MCFOLD bool $canExistWhenDisallowMob() const;
 
     MCAPI ::mce::Color $getNameTagTextColor() const;
 
     MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
-    MCAPI bool $isSimulated() const;
+    MCFOLD bool $isSimulated() const;
 
     MCAPI ::std::string $getXuid() const;
 
@@ -1597,7 +1597,7 @@ public:
 
     MCAPI void $doExitWaterSplashEffect();
 
-    MCAPI void $requestMissingSubChunk(::SubChunkPos const&);
+    MCFOLD void $requestMissingSubChunk(::SubChunkPos const&);
 
     MCAPI uchar $getMaxChunkBuildRadius() const;
 
@@ -1623,7 +1623,7 @@ public:
 
     MCAPI ::HashedString const& $getActorRendererId() const;
 
-    MCAPI void $_serverInitItemStackIds();
+    MCFOLD void $_serverInitItemStackIds();
 
     MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
     // NOLINTEND

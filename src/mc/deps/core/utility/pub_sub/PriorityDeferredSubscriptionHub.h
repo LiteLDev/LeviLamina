@@ -42,7 +42,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -70,7 +70,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -135,7 +135,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $flushPendingEvents();
 
-    MCAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
+    MCFOLD ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
 
     MCAPI bool $_runOneEvent();
 

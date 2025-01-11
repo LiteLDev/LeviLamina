@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Radian(::mce::Degree deg);
 
-    MCAPI float const& asFloat() const;
+    MCFOLD float const& asFloat() const;
     // NOLINTEND
 
 public:

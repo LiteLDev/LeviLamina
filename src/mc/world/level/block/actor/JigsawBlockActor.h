@@ -77,15 +77,15 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
+    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
 
-    MCAPI void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    MCFOLD void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

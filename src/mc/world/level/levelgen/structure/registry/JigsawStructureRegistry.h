@@ -44,13 +44,13 @@ public:
 
     MCAPI ::JigsawStructureActorRulesRegistry& getJigsawStructureActorRulesRegistry();
 
-    MCAPI ::JigsawStructureBlockRulesRegistry& getJigsawStructureBlockRulesRegistry();
+    MCFOLD ::JigsawStructureBlockRulesRegistry& getJigsawStructureBlockRulesRegistry();
 
-    MCAPI ::JigsawStructureBlockTagRulesRegistry& getJigsawStructureBlockTagRulesRegistry();
+    MCFOLD ::JigsawStructureBlockTagRulesRegistry& getJigsawStructureBlockTagRulesRegistry();
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureData const* getJigsawStructureData() const;
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureData const* getJigsawStructureData() const;
 
-    MCAPI ::JigsawStructureElementRegistry& getJigsawStructureElementRegistry();
+    MCFOLD ::JigsawStructureElementRegistry& getJigsawStructureElementRegistry();
 
     MCAPI void initialize(
         ::StructureSpawnRegistry&   structureSpawnRegistry,
@@ -68,9 +68,9 @@ public:
 
     MCAPI ::br::worldgen::StructureRegistry const& structureRegistry() const;
 
-    MCAPI ::br::worldgen::StructureRegistry& structureRegistry();
+    MCFOLD ::br::worldgen::StructureRegistry& structureRegistry();
 
-    MCAPI ::br::worldgen::StructureSetRegistry& structureSetRegistry();
+    MCFOLD ::br::worldgen::StructureSetRegistry& structureSetRegistry();
 
     MCAPI ~JigsawStructureRegistry();
     // NOLINTEND

@@ -48,7 +48,7 @@ public:
         // NOLINTBEGIN
         MCAPI bool $getData(::std::string& output, ::Core::Path path);
 
-        MCAPI void $setData(::std::string const& data, ::Core::Path path);
+        MCFOLD void $setData(::std::string const& data, ::Core::Path path);
         // NOLINTEND
 
     public:

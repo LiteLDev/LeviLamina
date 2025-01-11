@@ -92,13 +92,13 @@ public:
 
     MCAPI void $cleanupOrphanedTemporaryPlaytestWorlds(::ILevelListCache& levelListCache) const;
 
-    MCAPI ::Scripting::Result<void> $scriptingTeardown();
+    MCFOLD ::Scripting::Result<void> $scriptingTeardown();
 
-    MCAPI ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
+    MCFOLD ::Scripting::Result<void> $scriptingRebuild(::Scripting::ContextId contextId, bool finalEvent);
 
-    MCAPI void $tryClearPlaytestRoundtripInfo();
+    MCFOLD void $tryClearPlaytestRoundtripInfo();
 
-    MCAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
+    MCFOLD ::Editor::ServiceProviderCollection& $getServiceProviders();
     // NOLINTEND
 
 public:

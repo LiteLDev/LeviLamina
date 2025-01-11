@@ -41,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
+    MCFOLD void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
     // NOLINTEND
 };
 

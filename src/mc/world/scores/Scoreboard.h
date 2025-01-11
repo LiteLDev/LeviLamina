@@ -111,9 +111,9 @@ public:
 
     MCAPI void _addLoadedObjective(::std::unique_ptr<::Objective> newObjective);
 
-    MCAPI ::std::unordered_map<::std::string, ::std::unique_ptr<::ObjectiveCriteria>> const& _getCriteriaMap() const;
+    MCFOLD ::std::unordered_map<::std::string, ::std::unique_ptr<::ObjectiveCriteria>> const& _getCriteriaMap() const;
 
-    MCAPI ::std::unordered_map<::std::string, ::std::unique_ptr<::Objective>> const& _getObjectiveMap() const;
+    MCFOLD ::std::unordered_map<::std::string, ::std::unique_ptr<::Objective>> const& _getObjectiveMap() const;
 
     MCAPI void _init();
 
@@ -156,7 +156,7 @@ public:
 
     MCAPI ::std::vector<::Objective const*> getObjectives() const;
 
-    MCAPI ::ScoreboardEventCoordinator& getScoreboardEventCoordinator();
+    MCFOLD ::ScoreboardEventCoordinator& getScoreboardEventCoordinator();
 
     MCAPI ::ScoreboardId const& getScoreboardId(::Actor const& entity) const;
 
@@ -263,11 +263,11 @@ public:
 
     MCAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
 
-    MCAPI ::ScoreboardId const& $createScoreboardId(::Player const& player);
+    MCFOLD ::ScoreboardId const& $createScoreboardId(::Player const& player);
 
-    MCAPI ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
+    MCFOLD ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
 
-    MCAPI ::ScoreboardId const& $createScoreboardId(::std::string const& fakePlayer);
+    MCFOLD ::ScoreboardId const& $createScoreboardId(::std::string const& fakePlayer);
 
     MCAPI void $onObjectiveAdded(::Objective const& objective);
 
@@ -275,19 +275,19 @@ public:
 
     MCAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
 
-    MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
+    MCFOLD void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 
-    MCAPI void $onPlayerJoined(::Player const& player);
+    MCFOLD void $onPlayerJoined(::Player const& player);
 
-    MCAPI void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
+    MCFOLD void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
-    MCAPI void $setPacketSender(::PacketSender* sender);
+    MCFOLD void $setPacketSender(::PacketSender* sender);
 
-    MCAPI void $writeToLevelStorage();
+    MCFOLD void $writeToLevelStorage();
 
-    MCAPI bool $isClientSide() const;
+    MCFOLD bool $isClientSide() const;
     // NOLINTEND
 
 public:

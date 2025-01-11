@@ -18,8 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getNetherScale() const;
+    MCFOLD int getNetherScale() const;
 
-    MCAPI ::Vec3 const& getOverworldSpawnPoint() const;
+    MCFOLD ::Vec3 const& getOverworldSpawnPoint() const;
     // NOLINTEND
 };

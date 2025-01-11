@@ -88,9 +88,9 @@ public:
 
     MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCFOLD void $onRemoved(::BlockSource& region);
     // NOLINTEND
 
 public:

@@ -43,7 +43,7 @@ public:
 
     MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
     MCAPI float $getDamageBonus(int level, ::Actor const&, ::Actor const& attacker) const;
     // NOLINTEND

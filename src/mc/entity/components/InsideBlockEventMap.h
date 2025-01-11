@@ -43,19 +43,19 @@ public:
 
     MCAPI ::gsl::not_null<::Block const*> getBlock() const;
 
-    MCAPI ::ActorDefinitionTrigger const& getEnteredEvent() const;
+    MCFOLD ::ActorDefinitionTrigger const& getEnteredEvent() const;
 
-    MCAPI ::ActorDefinitionTrigger const& getExitedEvent() const;
+    MCFOLD ::ActorDefinitionTrigger const& getExitedEvent() const;
 
     MCAPI bool isActorCurrentlyInside() const;
 
-    MCAPI bool isIgnoringStates() const;
+    MCFOLD bool isIgnoringStates() const;
 
-    MCAPI bool isWatchingIfActorEnters() const;
+    MCFOLD bool isWatchingIfActorEnters() const;
 
     MCAPI bool isWatchingIfActorExits() const;
 
-    MCAPI void setCurrentlyInside(bool isInside);
+    MCFOLD void setCurrentlyInside(bool isInside);
 
     MCAPI void setWasInside(bool wasInside);
 

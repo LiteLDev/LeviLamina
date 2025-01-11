@@ -51,7 +51,7 @@ public:
 
     MCAPI ::Scripting::Result<void> _undo(::Editor::ServiceProviderCollection& serviceProviders) const;
 
-    MCAPI void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
+    MCFOLD void addOperation(::std::unique_ptr<::Editor::Transactions::IOperation> operation);
 
     MCAPI void addPendingOperation(::std::unique_ptr<::Editor::Transactions::IPendingOperation> operation);
 

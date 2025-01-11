@@ -51,13 +51,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isHandEquipped() const;
+    MCFOLD bool $isHandEquipped() const;
 
-    MCAPI bool $requiresInteract() const;
+    MCFOLD bool $requiresInteract() const;
 
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCFOLD int $getEnchantValue() const;
     // NOLINTEND
 
 public:

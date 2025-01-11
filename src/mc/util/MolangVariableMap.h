@@ -44,7 +44,7 @@ public:
 
     MCAPI ::MolangScriptArg const& getMolangVariable(uint64 const& variableNameHash, bool& doesVariableExist) const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::MolangVariable>> const& getVariables() const;
+    MCFOLD ::std::vector<::std::unique_ptr<::MolangVariable>> const& getVariables() const;
 
     MCAPI ::MolangVariableMap& operator=(::MolangVariableMap&& rhs);
 

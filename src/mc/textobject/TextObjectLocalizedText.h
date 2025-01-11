@@ -65,7 +65,7 @@ public:
 
     MCAPI ::Json::Value $asJsonValue() const;
 
-    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    MCFOLD ::Json::Value $resolve(::ResolveData const& resolveData) const;
     // NOLINTEND
 
 public:

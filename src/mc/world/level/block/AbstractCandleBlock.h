@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI AbstractCandleBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
     _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
@@ -94,19 +94,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $hasVariableLighting() const;
+    MCFOLD bool $hasVariableLighting() const;
 
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI bool $isLavaBlocking() const;
+    MCFOLD bool $isLavaBlocking() const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
@@ -118,12 +118,12 @@ public:
 
     MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
 
-    MCAPI int $_getNumCandles(::Block const&) const;
+    MCFOLD int $_getNumCandles(::Block const&) const;
 
-    MCAPI void
+    MCFOLD void
     $_iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)> callback) const;
 
-    MCAPI void $_tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
+    MCFOLD void $_tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
     // NOLINTEND
 
 public:

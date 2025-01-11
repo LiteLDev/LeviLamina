@@ -31,7 +31,7 @@ public:
 
     MCAPI bool isComplete() const;
 
-    MCAPI explicit operator ::TaskStatus::Value() const;
+    MCFOLD explicit operator ::TaskStatus::Value() const;
 
     MCAPI ::Bedrock::Threading::AsyncStatus toAsyncStatus() const;
 

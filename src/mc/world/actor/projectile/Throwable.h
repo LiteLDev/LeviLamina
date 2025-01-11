@@ -102,7 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -120,7 +120,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI float $getThrowUpAngleOffset();
+    MCFOLD float $getThrowUpAngleOffset();
 
     MCAPI float $getGravity();
     // NOLINTEND

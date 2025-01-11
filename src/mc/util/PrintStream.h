@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $print(::std::string const& s);
+    MCFOLD void $print(::std::string const& s);
     // NOLINTEND
 
 public:

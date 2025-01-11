@@ -38,9 +38,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnBufferedAmountChange(uint64 sent_data_size);
+    MCFOLD void $OnBufferedAmountChange(uint64 sent_data_size);
 
-    MCAPI bool $IsOkToCallOnTheNetworkThread();
+    MCFOLD bool $IsOkToCallOnTheNetworkThread();
     // NOLINTEND
 };
 

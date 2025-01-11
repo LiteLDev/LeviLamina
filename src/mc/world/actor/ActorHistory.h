@@ -81,7 +81,7 @@ public:
 
     MCAPI ::ActorHistory::Snapshot const* getFrame(uint64 frame) const;
 
-    MCAPI uint64 getOldestFrame() const;
+    MCFOLD uint64 getOldestFrame() const;
 
     MCAPI void queueCorrection(::std::shared_ptr<::IMovementCorrection> correction);
 

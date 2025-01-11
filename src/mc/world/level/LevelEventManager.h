@@ -86,9 +86,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelEvent, ::Vec3 const&, int)>& $getLevelEventDataConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelEvent, ::Vec3 const&, int)>& $getLevelEventDataConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelEvent, ::CompoundTag const&)>& $getLevelEventCompoundTagConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelEvent, ::CompoundTag const&)>& $getLevelEventCompoundTagConnector();
     // NOLINTEND
 
 public:

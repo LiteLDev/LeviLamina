@@ -55,9 +55,9 @@ public:
 
     MCAPI void allowTryGetComponentBeforeFinalization();
 
-    MCAPI void finalizeComponents();
+    MCFOLD void finalizeComponents();
 
-    MCAPI bool modificationIsAllowed() const;
+    MCFOLD bool modificationIsAllowed() const;
 
     MCAPI ~BlockComponentStorage();
     // NOLINTEND
@@ -65,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -83,15 +83,15 @@ public:
     MCAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCFOLD bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool $canConsumerPower() const;
+    MCFOLD bool $canConsumerPower() const;
 
-    MCAPI bool $hasChildrenSource() const;
+    MCFOLD bool $hasChildrenSource() const;
 
     MCAPI int $getStrength() const;
 
-    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:

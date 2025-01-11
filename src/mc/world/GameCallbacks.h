@@ -49,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onBeforeSimTick();
+    MCFOLD void $onBeforeSimTick();
     // NOLINTEND
 
 public:

@@ -201,7 +201,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
 
-    MCAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
+    MCFOLD ::Scripting::Result<void> $clearVelocity(::Actor& self);
 
     MCAPI ::Scripting::Result<void> $remove(::Actor& self);
 

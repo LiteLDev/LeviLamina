@@ -32,13 +32,13 @@ public:
 
     MCAPI void clear();
 
-    MCAPI bool empty() const;
+    MCFOLD bool empty() const;
 
-    MCAPI uint64 getHash() const;
+    MCFOLD uint64 getHash() const;
 
-    MCAPI ::std::string const& getString() const;
+    MCFOLD ::std::string const& getString() const;
 
-    MCAPI bool isEmpty() const;
+    MCFOLD bool isEmpty() const;
 
     MCAPI explicit operator ::std::string_view() const;
 
@@ -86,6 +86,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

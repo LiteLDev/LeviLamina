@@ -86,15 +86,15 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const;
 
-    MCAPI int $getCraftingSize() const;
+    MCFOLD int $getCraftingSize() const;
 
-    MCAPI ::RecipeIngredient const& $getIngredient(int, int) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int, int) const;
 
-    MCAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
 
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
-    MCAPI int $size() const;
+    MCFOLD int $size() const;
     // NOLINTEND
 
 public:

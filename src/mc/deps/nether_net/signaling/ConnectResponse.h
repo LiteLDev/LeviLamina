@@ -36,7 +36,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NetherNet::ConnectResponse Create(uint64 sessionId, ::std::string sdp);
+    MCFOLD static ::NetherNet::ConnectResponse Create(uint64 sessionId, ::std::string sdp);
 
     MCAPI static ::std::optional<::NetherNet::ConnectResponse>
     TryParse(::std::array<::std::string_view, 3> const& tokens);
@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

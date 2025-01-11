@@ -207,19 +207,19 @@ public:
     // NOLINTBEGIN
     MCAPI BlockActor(::BlockActorType type, ::BlockPos const& pos, ::std::string const&);
 
-    MCAPI ::AABB const& getAABB() const;
+    MCFOLD ::AABB const& getAABB() const;
 
-    MCAPI ::Block const* getBlock() const;
+    MCFOLD ::Block const* getBlock() const;
 
-    MCAPI ::BlockPos const& getPosition() const;
+    MCFOLD ::BlockPos const& getPosition() const;
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> getServerUpdatePacket(::BlockSource& region);
 
-    MCAPI ::BlockActorType const& getType() const;
+    MCFOLD ::BlockActorType const& getType() const;
 
-    MCAPI bool isChanged() const;
+    MCFOLD bool isChanged() const;
 
-    MCAPI bool isType(::BlockActorType type) const;
+    MCFOLD bool isType(::BlockActorType type) const;
 
     MCAPI void moveTo(::BlockPos const& newPos);
 
@@ -227,9 +227,9 @@ public:
 
     MCAPI void setChanged();
 
-    MCAPI void setCustomNameSaved(bool saveCustomName);
+    MCFOLD void setCustomNameSaved(bool saveCustomName);
 
-    MCAPI void setMovable(bool canMove);
+    MCFOLD void setMovable(bool canMove);
     // NOLINTEND
 
 public:
@@ -237,7 +237,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::map<::std::string, ::BlockActorType> _createIdClassMap();
 
-    MCAPI static bool isType(::BlockActor& te, ::BlockActorType type);
+    MCFOLD static bool isType(::BlockActor& te, ::BlockActorType type);
 
     MCAPI static ::std::shared_ptr<::BlockActor>
     loadStatic(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
@@ -272,90 +272,90 @@ public:
 
     MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $saveBlockData(::CompoundTag&, ::BlockSource&) const;
+    MCFOLD void $saveBlockData(::CompoundTag&, ::BlockSource&) const;
 
-    MCAPI void $loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
+    MCFOLD void $loadBlockData(::CompoundTag const&, ::BlockSource&, ::DataLoadHelper&);
 
-    MCAPI void $onCustomTagLoadDone(::BlockSource&);
+    MCFOLD void $onCustomTagLoadDone(::BlockSource&);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
-    MCAPI void $onChanged(::BlockSource&);
+    MCFOLD void $onChanged(::BlockSource&);
 
-    MCAPI bool $isMovable(::BlockSource&);
+    MCFOLD bool $isMovable(::BlockSource&);
 
     MCAPI bool $isCustomNameSaved();
 
-    MCAPI void $onPlace(::BlockSource&);
+    MCFOLD void $onPlace(::BlockSource&);
 
-    MCAPI void $onMove();
+    MCFOLD void $onMove();
 
-    MCAPI void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource&);
 
-    MCAPI bool $isPreserved(::BlockSource&) const;
+    MCFOLD bool $isPreserved(::BlockSource&) const;
 
-    MCAPI bool $shouldPreserve(::BlockSource&);
+    MCFOLD bool $shouldPreserve(::BlockSource&);
 
-    MCAPI void $triggerEvent(int, int);
+    MCFOLD void $triggerEvent(int, int);
 
-    MCAPI void $clearCache();
+    MCFOLD void $clearCache();
 
-    MCAPI void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
+    MCFOLD void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
-    MCAPI float $getShadowRadius(::BlockSource&) const;
+    MCFOLD float $getShadowRadius(::BlockSource&) const;
 
-    MCAPI bool $hasAlphaLayer() const;
+    MCFOLD bool $hasAlphaLayer() const;
 
-    MCAPI ::BlockActor* $getCrackEntity(::BlockSource&, ::BlockPos const&);
+    MCFOLD ::BlockActor* $getCrackEntity(::BlockSource&, ::BlockPos const&);
 
     MCAPI ::AABB $getCollisionShape(::IConstBlockSource const&) const;
 
     MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos);
 
-    MCAPI ::std::string const& $getCustomName() const;
+    MCFOLD ::std::string const& $getCustomName() const;
 
     MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context
     );
 
-    MCAPI ::std::string $getName() const;
+    MCFOLD ::std::string $getName() const;
 
     MCAPI void $setCustomName(::std::string const& name);
 
-    MCAPI ::std::string $getImmersiveReaderText(::BlockSource&);
+    MCFOLD ::std::string $getImmersiveReaderText(::BlockSource&);
 
-    MCAPI int $getRepairCost() const;
+    MCFOLD int $getRepairCost() const;
 
-    MCAPI ::PistonBlockActor* $getOwningPiston(::BlockSource&);
+    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource&);
 
-    MCAPI ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
+    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
 
-    MCAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $eraseLootTable();
+    MCFOLD void $eraseLootTable();
 
-    MCAPI void $onChunkLoaded(::LevelChunk&);
+    MCFOLD void $onChunkLoaded(::LevelChunk&);
 
-    MCAPI void $onChunkUnloaded(::LevelChunk&);
+    MCFOLD void $onChunkUnloaded(::LevelChunk&);
 
-    MCAPI void $onSubChunkLoaded(::LevelChunk&, short, bool);
+    MCFOLD void $onSubChunkLoaded(::LevelChunk&, short, bool);
 
-    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
+    MCFOLD ::std::vector<::std::string> $getUgcStrings(::CompoundTag const&) const;
 
-    MCAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const&) const;
+    MCFOLD ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const&) const;
 
-    MCAPI void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    MCFOLD void $setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    MCAPI void $setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
+    MCFOLD void $setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    MCAPI void $fixupOnLoad(::LevelChunk&);
+    MCFOLD void $fixupOnLoad(::LevelChunk&);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const&, ::BlockSource&);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const&, ::BlockSource&);
 
-    MCAPI bool $_playerCanUpdate(::Player const&) const;
+    MCFOLD bool $_playerCanUpdate(::Player const&) const;
     // NOLINTEND
 
 public:

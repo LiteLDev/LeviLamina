@@ -52,7 +52,7 @@ public:
 
     MCAPI ::EntityContext& getEntity();
 
-    MCAPI ::PositionTrackingId const& getId() const;
+    MCFOLD ::PositionTrackingId const& getId() const;
 
     MCAPI ::PositionTrackingDB::TrackingRecord::RecordStatus const getStatus() const;
 

@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&
+    MCFOLD ::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&&);
     // NOLINTEND
 

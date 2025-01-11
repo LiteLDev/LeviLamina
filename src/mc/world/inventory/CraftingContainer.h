@@ -81,17 +81,17 @@ public:
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
-    MCAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
-    MCAPI void $serverInitItemStackIds(
+    MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged

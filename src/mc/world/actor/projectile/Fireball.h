@@ -88,7 +88,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -96,9 +96,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
@@ -106,9 +106,9 @@ public:
 
     MCAPI float $getInertia();
 
-    MCAPI ::ParticleType $getTrailParticle();
+    MCFOLD ::ParticleType $getTrailParticle();
 
-    MCAPI bool $shouldBurn();
+    MCFOLD bool $shouldBurn();
     // NOLINTEND
 
 public:

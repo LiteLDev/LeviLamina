@@ -28,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
     // NOLINTEND
 
 public:

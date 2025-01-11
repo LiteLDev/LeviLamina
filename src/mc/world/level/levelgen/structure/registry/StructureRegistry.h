@@ -25,11 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
+    MCFOLD ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
         ::entt::internal::dense_map_node<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>>>>
     begin() const;
 
-    MCAPI ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
+    MCFOLD ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
         ::entt::internal::dense_map_node<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>>>>
     end() const;
 

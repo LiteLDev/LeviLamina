@@ -30,7 +30,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockComponentGroupDescription::Components&
+        MCFOLD ::BlockComponentGroupDescription::Components&
         operator=(::BlockComponentGroupDescription::Components const&);
 
         MCAPI ~Components();
@@ -39,7 +39,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

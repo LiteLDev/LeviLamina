@@ -54,7 +54,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::ParticleType particleType, int oneOutOfChance);
+        MCFOLD void* $ctor(::ParticleType particleType, int oneOutOfChance);
         // NOLINTEND
     };
 
@@ -170,7 +170,7 @@ public:
 
     MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
@@ -178,9 +178,9 @@ public:
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
+    MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
     // NOLINTEND
 
 public:

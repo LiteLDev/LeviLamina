@@ -27,7 +27,7 @@ public:
     // NOLINTBEGIN
     MCAPI TransformationComponent();
 
-    MCAPI int getDelayTicks() const;
+    MCFOLD int getDelayTicks() const;
 
     MCAPI void initFromDefinition(::Actor& actor);
 
@@ -41,7 +41,7 @@ public:
 
     MCAPI void reloadComponent(::Actor& actor);
 
-    MCAPI void setDelayTicks(int delayTicks);
+    MCFOLD void setDelayTicks(int delayTicks);
 
     MCAPI void transformIfAble(::Actor& actor, bool shouldRemove);
     // NOLINTEND
@@ -49,6 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

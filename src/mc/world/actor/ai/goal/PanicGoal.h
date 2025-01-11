@@ -113,7 +113,7 @@ public:
 
     MCAPI void $stop();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
     MCAPI void $tick();
 

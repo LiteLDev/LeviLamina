@@ -25,9 +25,9 @@ public:
 
     MCAPI explicit StackResultStorageEntity(::WeakStorageEntity const& weakStorage);
 
-    MCAPI ::EntityContext& _getStackRef() const;
+    MCFOLD ::EntityContext& _getStackRef() const;
 
-    MCAPI bool _hasValue() const;
+    MCFOLD bool _hasValue() const;
     // NOLINTEND
 
 public:

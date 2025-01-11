@@ -14,12 +14,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayerInputTick(uint64 value);
 
-    MCAPI explicit operator uint64() const;
+    MCFOLD explicit operator uint64() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 value);
+    MCFOLD void* $ctor(uint64 value);
     // NOLINTEND
 };

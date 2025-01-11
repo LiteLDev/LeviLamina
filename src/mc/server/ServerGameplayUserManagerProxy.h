@@ -38,7 +38,7 @@ public:
     MCAPI ::std::optional<::std::string>
     $validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
 
-    MCAPI bool $shouldGeneratePlayerIndex() const;
+    MCFOLD bool $shouldGeneratePlayerIndex() const;
     // NOLINTEND
 
 public:

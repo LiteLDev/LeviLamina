@@ -14,7 +14,7 @@ struct CannotBeAttackedDefinition {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CannotBeAttackedDefinition>>& root
     );
     // NOLINTEND

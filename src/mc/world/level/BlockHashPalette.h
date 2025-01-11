@@ -64,7 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPalette::PaletteType $getPaletteType();
+    MCFOLD ::BlockPalette::PaletteType $getPaletteType();
 
     MCAPI void $appendBlock(::Block const& blockState);
 

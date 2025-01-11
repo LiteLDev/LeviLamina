@@ -32,9 +32,9 @@ public:
 
     MCAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
 
-    MCAPI ::HashedString const& getMaterialId() const;
+    MCFOLD ::HashedString const& getMaterialId() const;
 
-    MCAPI ::HashedString const& getPatternId() const;
+    MCFOLD ::HashedString const& getPatternId() const;
 
     MCAPI ~ArmorTrim();
     // NOLINTEND
@@ -80,6 +80,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

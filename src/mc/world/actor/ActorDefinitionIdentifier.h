@@ -44,17 +44,17 @@ public:
 
     MCAPI void clear();
 
-    MCAPI ::HashedString const& getCanonicalHash() const;
+    MCFOLD ::HashedString const& getCanonicalHash() const;
 
-    MCAPI ::std::string const& getCanonicalName() const;
+    MCFOLD ::std::string const& getCanonicalName() const;
 
-    MCAPI ::std::string const& getFullName() const;
+    MCFOLD ::std::string const& getFullName() const;
 
-    MCAPI ::std::string const& getIdentifier() const;
+    MCFOLD ::std::string const& getIdentifier() const;
 
-    MCAPI ::std::string const& getInitEvent() const;
+    MCFOLD ::std::string const& getInitEvent() const;
 
-    MCAPI ::std::string const& getNamespace() const;
+    MCFOLD ::std::string const& getNamespace() const;
 
     MCAPI void initialize(::std::string const& fullName);
 
@@ -103,6 +103,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

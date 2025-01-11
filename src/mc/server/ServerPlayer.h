@@ -407,7 +407,7 @@ public:
 
     MCAPI ::std::array<::HudVisibility, 13> const& getHudVisibilityState() const;
 
-    MCAPI ::ItemStackNetManagerServer& getItemStackNetManagerServer();
+    MCFOLD ::ItemStackNetManagerServer& getItemStackNetManagerServer();
 
     MCAPI int getMaxClientViewDistance() const;
 
@@ -529,7 +529,7 @@ public:
 
     MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
 
-    MCAPI void $frameUpdate(::FrameUpdateContextBase&);
+    MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
     MCAPI bool $isValidTarget(::Actor* attacker) const;
 
@@ -577,9 +577,9 @@ public:
 
     MCAPI void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
 
-    MCAPI void $openPortfolio();
+    MCFOLD void $openPortfolio();
 
-    MCAPI void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
+    MCFOLD void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
 
     MCAPI void $openInventory();
 

@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::MobEffect const& getEffect() const;
+    MCFOLD ::MobEffect const& getEffect() const;
 
     MCAPI ::std::string getName() const;
     // NOLINTEND

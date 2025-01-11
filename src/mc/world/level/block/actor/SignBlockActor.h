@@ -59,15 +59,15 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCFOLD void* $ctor();
 
-        MCAPI void* $ctor(::SignBlockActor::CachedLineData&&);
+        MCFOLD void* $ctor(::SignBlockActor::CachedLineData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -232,7 +232,7 @@ public:
 
     MCAPI bool getIsLockedForEditing(::ILevel& level);
 
-    MCAPI bool getIsWaxed() const;
+    MCFOLD bool getIsWaxed() const;
 
     MCAPI ::std::string const& getMessage(::SignTextSide side) const;
 
@@ -280,7 +280,7 @@ public:
 
     MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
     MCAPI float $getShadowRadius(::BlockSource& region) const;
 

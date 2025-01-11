@@ -57,9 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PackOrigin $getPackOrigin() const;
+    MCFOLD ::PackOrigin $getPackOrigin() const;
 
-    MCAPI ::PackType $getPackType() const;
+    MCFOLD ::PackType $getPackType() const;
     // NOLINTEND
 
 public:

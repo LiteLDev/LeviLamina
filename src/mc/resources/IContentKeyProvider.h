@@ -42,8 +42,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
+    MCFOLD ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
 
-    MCAPI bool $requireEncryptedReads() const;
+    MCFOLD bool $requireEncryptedReads() const;
     // NOLINTEND
 };

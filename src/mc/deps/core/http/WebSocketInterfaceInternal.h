@@ -51,16 +51,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI HRESULT
+    MCFOLD HRESULT
     $connect(char const*, char const*, ::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::not_null<::XAsyncBlock*>, ::HC_PERFORM_ENV*);
 
-    MCAPI HRESULT
+    MCFOLD HRESULT
         $sendMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::std::string_view, ::gsl::not_null<::XAsyncBlock*>);
 
-    MCAPI HRESULT
+    MCFOLD HRESULT
         $sendBinaryMessage(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*>, ::gsl::span<uchar const>, ::gsl::not_null<::XAsyncBlock*>);
 
-    MCAPI HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
+    MCFOLD HRESULT $disconnect(::gsl::not_null<::HC_WEBSOCKET_OBSERVER*> websocket, ::HCWebSocketCloseStatus status);
     // NOLINTEND
 
 public:

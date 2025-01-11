@@ -110,7 +110,7 @@ MCAPI void* DefaultMemAllocFunction(uint64, uint);
 
 MCAPI void DefaultMemFreeFunction(void*, uint);
 
-MCAPI void DefaultOutOfMemoryHandler(char const* file, long line);
+MCFOLD void DefaultOutOfMemoryHandler(char const* file, long line);
 
 MCAPI bool DoesMockCallMatch(::HC_CALL const*, ::HC_CALL const*);
 
@@ -145,7 +145,7 @@ MCAPI uint64 Internal_ThisThreadId();
 
 MCAPI ::std::optional<::LogLevel> LogLevelFromString(::std::string const& str);
 
-MCAPI bool MOCK_ASSERT_HANDLER(::AssertHandlerContext const& context);
+MCFOLD bool MOCK_ASSERT_HANDLER(::AssertHandlerContext const& context);
 
 MCAPI bool MOCK_ASSERT_HANDLER_NO_THROW(::AssertHandlerContext const& context);
 
@@ -218,7 +218,7 @@ _parseLayersV6(::Json::Value const& root, ::LevelData const& levelData, ::WorldV
 MCAPI void
 _tickBribeableComponent(::ActorOwnerComponent& actorOwnerComponent, ::BribeableComponent& bribeableComponent);
 
-MCAPI ::std::vector<::std::string> _versionSplit(::std::string const& str, char delim);
+MCFOLD ::std::vector<::std::string> _versionSplit(::std::string const& str, char delim);
 
 MCAPI char const* blockSlotToString(::BlockSlot slot);
 
@@ -289,9 +289,9 @@ MCAPI ::std::string getJsonTypeString(::Json::ValueType const& type);
 
 MCAPI ::std::bitset<119> const& getMovementActorFlagsBitset();
 
-MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeEventMapAccess();
+MCFOLD ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeEventMapAccess();
 
-MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeLOCMapAccess();
+MCFOLD ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeLOCMapAccess();
 
 MCAPI ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::Legacy::LevelSoundEvent> initializeLevelSoundEventMap();
 

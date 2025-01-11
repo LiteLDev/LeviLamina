@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Container* $_tryGetContainer() const;
 
-    MCAPI ::ItemContext $_getItemContext(int slot) const;
+    MCFOLD ::ItemContext $_getItemContext(int slot) const;
     // NOLINTEND
 
 public:

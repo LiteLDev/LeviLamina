@@ -34,9 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::string> $validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
+    MCFOLD ::std::optional<::std::string> $validatePlayerName(::std::string const&, ::GameplayUserManager const&) const;
 
-    MCAPI bool $shouldGeneratePlayerIndex() const;
+    MCFOLD bool $shouldGeneratePlayerIndex() const;
 
     MCAPI void $reloadActor(::Actor& actor) const;
     // NOLINTEND

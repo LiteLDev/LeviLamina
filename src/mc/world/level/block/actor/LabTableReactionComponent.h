@@ -34,11 +34,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onStart(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onStart(::LabTableReaction& owner, ::BlockSource& region);
 
-    MCAPI void $_onTick(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onTick(::LabTableReaction& owner, ::BlockSource& region);
 
-    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+    MCFOLD void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
     // NOLINTEND
 
 public:

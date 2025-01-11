@@ -648,7 +648,7 @@ public:
         ::Player*                         player
     );
 
-    MCAPI void activateAllowList();
+    MCFOLD void activateAllowList();
 
     MCAPI void addToDenyList(::mce::UUID const& uuid, ::std::string const& xuid);
 
@@ -775,7 +775,7 @@ public:
 
     MCAPI void $onXboxUserUnblocked(::std::string const& xuid);
 
-    MCAPI void $onPlayerReady(::Player& player);
+    MCFOLD void $onPlayerReady(::Player& player);
 
     MCAPI void $sendServerLegacyParticle(::ParticleType name, ::Vec3 const& pos, ::Vec3 const&, int data);
 
@@ -816,13 +816,13 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CompletedUsingItemPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::DebugInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::CreatePhotoPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::CreatePhotoPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::DisconnectPacket const& packet);
 
@@ -838,11 +838,11 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacketV1 const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacketV2 const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacketV2 const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::LoginPacket const& packet);
 
@@ -862,7 +862,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::NpcRequestPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PhotoTransferPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PhotoTransferPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerActionPacket const& packet);
 
@@ -878,7 +878,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBClientRequestPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const& source, ::PurchaseReceiptPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::RequestChunkRadiusPacket const& packet);
 
@@ -924,7 +924,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::CodeBuilderSourcePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ChangeMobPropertyPacket const& packet);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ChangeMobPropertyPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::RequestAbilityPacket const& packet);
 

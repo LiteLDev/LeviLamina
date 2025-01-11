@@ -33,21 +33,21 @@ public:
     // NOLINTBEGIN
     MCAPI TeleportComponent();
 
-    MCAPI float getDarkTeleportChance();
+    MCFOLD float getDarkTeleportChance();
 
-    MCAPI float getLightTeleportChance();
+    MCFOLD float getLightTeleportChance();
 
-    MCAPI int getMaxTeleportTime();
+    MCFOLD int getMaxTeleportTime();
 
-    MCAPI int getMinTeleportTime();
+    MCFOLD int getMinTeleportTime();
 
-    MCAPI bool getRandomTeleports();
+    MCFOLD bool getRandomTeleports();
 
-    MCAPI float getTargetDistance();
+    MCFOLD float getTargetDistance();
 
-    MCAPI float getTargetTeleportChance();
+    MCFOLD float getTargetTeleportChance();
 
-    MCAPI int getTeleportTime();
+    MCFOLD int getTeleportTime();
 
     MCAPI void initFromDefinition(::Actor& actor);
 

@@ -99,7 +99,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -107,9 +107,9 @@ public:
     // NOLINTBEGIN
     MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCAPI void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
+    MCFOLD void $finalizeParsedValue(::IWorldRegistriesProvider& registries);
 
-    MCAPI ::Json::Value $_serializeDomain() const;
+    MCFOLD ::Json::Value $_serializeDomain() const;
     // NOLINTEND
 
 public:

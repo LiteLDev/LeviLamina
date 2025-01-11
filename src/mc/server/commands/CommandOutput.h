@@ -48,13 +48,13 @@ public:
 
     MCAPI void forceOutput(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI ::CommandPropertyBag const& getData() const;
+    MCFOLD ::CommandPropertyBag const& getData() const;
 
-    MCAPI ::std::vector<::CommandOutputMessage> const& getMessages() const;
+    MCFOLD ::std::vector<::CommandOutputMessage> const& getMessages() const;
 
-    MCAPI int getSuccessCount() const;
+    MCFOLD int getSuccessCount() const;
 
-    MCAPI ::CommandOutputType getType() const;
+    MCFOLD ::CommandOutputType getType() const;
 
     MCAPI bool hasErrorMessage() const;
 
@@ -65,13 +65,13 @@ public:
         ::std::unique_ptr<::CommandPropertyBag>&& data
     );
 
-    MCAPI void setHasPlayerText();
+    MCFOLD void setHasPlayerText();
 
     MCAPI void success();
 
     MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
-    MCAPI bool wantsData() const;
+    MCFOLD bool wantsData() const;
 
     MCAPI ~CommandOutput();
     // NOLINTEND

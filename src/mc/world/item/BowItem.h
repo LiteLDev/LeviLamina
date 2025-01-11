@@ -63,10 +63,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI ::ResolvedItemIconInfo
+    MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
     MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
     // NOLINTEND

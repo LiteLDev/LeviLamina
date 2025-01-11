@@ -44,9 +44,9 @@ public:
 
     MCAPI float getJumpPower() const;
 
-    MCAPI bool getJumping() const;
+    MCFOLD bool getJumping() const;
 
-    MCAPI bool getSwimming() const;
+    MCFOLD bool getSwimming() const;
 
     MCAPI void initMultiTypeJumpComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
@@ -60,9 +60,9 @@ public:
 
     MCAPI void setJumpType(::JumpType type);
 
-    MCAPI void setJumping(bool jumping);
+    MCFOLD void setJumping(bool jumping);
 
-    MCAPI void setSwimming(bool swimming);
+    MCFOLD void setSwimming(bool swimming);
 
     MCAPI void update(::Mob& owner);
 

@@ -47,13 +47,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
+    MCFOLD ::ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
 
-    MCAPI int getPredictedDurability() const;
+    MCFOLD int getPredictedDurability() const;
 
     MCAPI ::ItemStackRequestSlotInfo getSrc() const;
 
-    MCAPI void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus status) const;
+    MCFOLD void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus status) const;
     // NOLINTEND
 
 public:

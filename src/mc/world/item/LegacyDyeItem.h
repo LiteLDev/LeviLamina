@@ -44,7 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isDye() const;
+    MCFOLD bool $isDye() const;
     // NOLINTEND
 
 public:

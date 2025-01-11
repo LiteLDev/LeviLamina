@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
+class BlockPos;
 class EntityContext;
 class HitResult;
 struct ActorDefinitionIdentifier;
@@ -21,26 +22,20 @@ class FishingHook : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkcf4e6f;
-    ::ll::UntypedStorage<4, 4>  mUnk76505b;
-    ::ll::UntypedStorage<4, 4>  mUnk7c8b78;
-    ::ll::UntypedStorage<4, 12> mUnk924a7e;
-    ::ll::UntypedStorage<4, 4>  mUnk492d84;
-    ::ll::UntypedStorage<4, 4>  mUnk2f83bf;
-    ::ll::UntypedStorage<4, 4>  mUnkecddce;
-    ::ll::UntypedStorage<4, 4>  mUnke90b0a;
-    ::ll::UntypedStorage<4, 4>  mUnk860015;
-    ::ll::UntypedStorage<4, 4>  mUnk5d4d06;
-    ::ll::UntypedStorage<4, 4>  mUnk345281;
-    ::ll::UntypedStorage<4, 4>  mUnkdbb449;
-    ::ll::UntypedStorage<1, 1>  mUnkc2f77f;
+    ::ll::TypedStorage<4, 4, float const> SHOOT_SPEED;
+    ::ll::TypedStorage<4, 4, float const> SHOOT_POWER;
+    ::ll::TypedStorage<4, 4, int const>   NUM_PERCENTAGE_STEPS;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
+    ::ll::TypedStorage<4, 4, float>       mBobTimer;
+    ::ll::TypedStorage<4, 4, float>       mFishAngle;
+    ::ll::TypedStorage<4, 4, int>         mLife;
+    ::ll::TypedStorage<4, 4, int>         mFlightTime;
+    ::ll::TypedStorage<4, 4, int>         mTimeUntilHooked;
+    ::ll::TypedStorage<4, 4, int>         mTimeUntilLured;
+    ::ll::TypedStorage<4, 4, int>         mTimeUntilNibble;
+    ::ll::TypedStorage<4, 4, int>         mFishingSpeed;
+    ::ll::TypedStorage<1, 1, bool>        mInGround;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FishingHook& operator=(FishingHook const&);
-    FishingHook(FishingHook const&);
-    FishingHook();
 
 public:
     // virtual functions
@@ -130,11 +125,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $remove();
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCAPI bool $shouldDropDeathLoot() const;
+    MCFOLD bool $shouldDropDeathLoot() const;
     // NOLINTEND
 
 public:

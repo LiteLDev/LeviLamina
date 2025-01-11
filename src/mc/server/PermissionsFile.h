@@ -40,7 +40,7 @@ public:
         ::CommandPermissionLevel               opCommandPermissionLevel
     );
 
-    MCAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& getPermissions() const;
+    MCFOLD ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& getPermissions() const;
 
     MCAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
 

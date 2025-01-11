@@ -63,7 +63,7 @@ public:
 
     MCAPI ::std::string getId() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockType& operator=(::ScriptModuleMinecraft::ScriptBlockType&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptBlockType& operator=(::ScriptModuleMinecraft::ScriptBlockType&&);
 
     MCAPI ~ScriptBlockType();
     // NOLINTEND
@@ -83,13 +83,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockType const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockType const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

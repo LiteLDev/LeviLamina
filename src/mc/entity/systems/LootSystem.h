@@ -33,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCFOLD void $tick(::EntityRegistry& registry);
 
     MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND

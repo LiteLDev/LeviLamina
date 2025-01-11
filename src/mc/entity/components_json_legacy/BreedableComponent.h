@@ -91,17 +91,17 @@ public:
 
     MCAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
 
-    MCAPI void decrementBreedCooldown();
+    MCFOLD void decrementBreedCooldown();
 
     MCAPI void decrementLoveTimer();
 
-    MCAPI int getBreedCooldown() const;
+    MCFOLD int getBreedCooldown() const;
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI ::Player* getLoveCause(::Actor const& owner) const;
 
-    MCAPI int getLoveTimer() const;
+    MCFOLD int getLoveTimer() const;
 
     MCAPI ::BreedableComponent::MatingResult mate(::Actor& owner, ::Actor& partner);
 
@@ -111,7 +111,7 @@ public:
 
     MCAPI void resetLove(::Actor& owner);
 
-    MCAPI void setLoveTimer(int loveTimer);
+    MCFOLD void setLoveTimer(int loveTimer);
     // NOLINTEND
 
 public:

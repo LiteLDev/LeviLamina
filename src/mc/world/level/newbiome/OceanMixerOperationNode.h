@@ -95,7 +95,7 @@ public:
         ::OperationGraphResult<::BiomeTemperatureCategory>                   oceanData
     ) const;
 
-    MCAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
+    MCFOLD ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
     // NOLINTEND
 
 public:

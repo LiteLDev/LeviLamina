@@ -63,7 +63,7 @@ public:
         ::Dimension const&                   dimension
     );
 
-    MCAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&                         generator,

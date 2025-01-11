@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ScriptingNotificationEvent const&);
     // NOLINTEND
 
 public:

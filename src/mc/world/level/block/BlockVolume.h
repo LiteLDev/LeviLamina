@@ -87,15 +87,15 @@ public:
 
     MCAPI uint getIndexBounds() const;
 
-    MCAPI uint index(::BlockPos const& pos) const;
+    MCFOLD uint index(::BlockPos const& pos) const;
 
     MCAPI uint index(::Pos const&) const;
 
-    MCAPI uint indexNoBoundsCheck(::Pos const& pos) const;
+    MCFOLD uint indexNoBoundsCheck(::Pos const& pos) const;
 
     MCAPI uint indexNoBoundsCheck(::BlockPos const&) const;
 
-    MCAPI bool isInBounds(::BlockPos const& pos) const;
+    MCFOLD bool isInBounds(::BlockPos const& pos) const;
 
     MCAPI bool isInBounds(::Pos const&) const;
     // NOLINTEND

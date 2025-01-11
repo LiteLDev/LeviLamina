@@ -29,7 +29,7 @@ public:
 
     MCAPI void decreaseFreezingEffect();
 
-    MCAPI float getFreezingEffectStrength() const;
+    MCFOLD float getFreezingEffectStrength() const;
 
     MCAPI void increaseFreezingEffect();
 
@@ -39,6 +39,6 @@ public:
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void resetFreezingEffect();
+    MCFOLD void resetFreezingEffect();
     // NOLINTEND
 };

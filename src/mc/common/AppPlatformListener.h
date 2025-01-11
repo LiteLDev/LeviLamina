@@ -106,43 +106,43 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLowMemory();
+    MCFOLD void $onLowMemory();
 
-    MCAPI void $onAppPaused();
+    MCFOLD void $onAppPaused();
 
-    MCAPI void $onAppUnpaused();
+    MCFOLD void $onAppUnpaused();
 
-    MCAPI void $onAppPreSuspended();
+    MCFOLD void $onAppPreSuspended();
 
-    MCAPI void $onAppSuspended();
+    MCFOLD void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCFOLD void $onAppResumed();
 
-    MCAPI void $onAppFocusLost();
+    MCFOLD void $onAppFocusLost();
 
-    MCAPI void $onAppFocusGained();
+    MCFOLD void $onAppFocusGained();
 
-    MCAPI void $onAppTerminated();
+    MCFOLD void $onAppTerminated();
 
-    MCAPI void $onOperationModeChanged(::OperationMode const operationMode);
+    MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
 
-    MCAPI void $onPerformanceModeChanged(bool const boost);
+    MCFOLD void $onPerformanceModeChanged(bool const boost);
 
-    MCAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
+    MCFOLD void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCAPI void $onResizeBegin();
+    MCFOLD void $onResizeBegin();
 
-    MCAPI void $onResizeEnd();
+    MCFOLD void $onResizeEnd();
 
-    MCAPI void $onDeviceLost();
+    MCFOLD void $onDeviceLost();
 
-    MCAPI void $onAppSurfaceCreated();
+    MCFOLD void $onAppSurfaceCreated();
 
-    MCAPI void $onAppSurfaceDestroyed();
+    MCFOLD void $onAppSurfaceDestroyed();
 
-    MCAPI void $onClipboardCopy(::std::string const&);
+    MCFOLD void $onClipboardCopy(::std::string const&);
 
-    MCAPI void $onClipboardPaste(::std::string const&);
+    MCFOLD void $onClipboardPaste(::std::string const&);
     // NOLINTEND
 
 public:

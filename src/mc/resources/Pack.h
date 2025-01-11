@@ -56,15 +56,15 @@ public:
 
     MCAPI ::PackAccessStrategy const* getAccessStrategy() const;
 
-    MCAPI ::PackAccessStrategy* getAccessStrategy();
+    MCFOLD ::PackAccessStrategy* getAccessStrategy();
 
     MCAPI ::PackManifest const& getManifest() const;
 
-    MCAPI ::PackManifest& getManifest();
+    MCFOLD ::PackManifest& getManifest();
 
     MCAPI ::Bedrock::NonOwnerPointer<::PackManifest> getManifestPtr();
 
-    MCAPI ::SubpackInfoCollection* getSubpackInfoStack();
+    MCFOLD ::SubpackInfoCollection* getSubpackInfoStack();
 
     MCAPI void move(::Pack&& pack);
 

@@ -61,11 +61,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
     // NOLINTEND
 
 public:

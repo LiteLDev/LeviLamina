@@ -22,7 +22,7 @@ public:
 
     MCAPI BehaviorTreeDefinitionPtr(::BehaviorTreeDefinitionPtr&& moved);
 
-    MCAPI ::BehaviorTreeDefinitionPtr& operator=(::BehaviorTreeDefinitionPtr&& moved);
+    MCFOLD ::BehaviorTreeDefinitionPtr& operator=(::BehaviorTreeDefinitionPtr&& moved);
 
     MCAPI ~BehaviorTreeDefinitionPtr();
     // NOLINTEND
@@ -36,9 +36,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::BehaviorTreeDefinitionPtr&& moved);
+    MCFOLD void* $ctor(::BehaviorTreeDefinitionPtr&& moved);
     // NOLINTEND
 
 public:

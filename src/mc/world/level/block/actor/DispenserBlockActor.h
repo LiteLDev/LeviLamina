@@ -111,29 +111,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
     MCAPI ::std::string $getName() const;
 
     MCAPI void $startOpen(::Player& player);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
     MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $onMove();
+    MCFOLD void $onMove();
 
     MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
@@ -141,9 +141,9 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

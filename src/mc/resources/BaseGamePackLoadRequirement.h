@@ -14,6 +14,6 @@ class BaseGamePackLoadRequirement {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
+    MCFOLD static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
     // NOLINTEND
 };

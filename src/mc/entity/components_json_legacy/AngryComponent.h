@@ -43,19 +43,19 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent const getAngrySound(::Mob const& mob) const;
 
-    MCAPI bool getBroadcastAnger() const;
+    MCFOLD bool getBroadcastAnger() const;
 
-    MCAPI bool getBroadcastAngerOnAttack() const;
+    MCFOLD bool getBroadcastAngerOnAttack() const;
 
-    MCAPI bool getBroadcastAngerOnBeingAttacked() const;
+    MCFOLD bool getBroadcastAngerOnBeingAttacked() const;
 
-    MCAPI bool getBroadcastAngerWhenDying() const;
+    MCFOLD bool getBroadcastAngerWhenDying() const;
 
-    MCAPI ::ActorFilterGroup const& getBroadcastFilter() const;
+    MCFOLD ::ActorFilterGroup const& getBroadcastFilter() const;
 
-    MCAPI int getBroadcastRange() const;
+    MCFOLD int getBroadcastRange() const;
 
-    MCAPI bool getHasTicked() const;
+    MCFOLD bool getHasTicked() const;
 
     MCAPI ::Tick const getNextSoundEventTick() const;
 
@@ -65,7 +65,7 @@ public:
 
     MCAPI void setAngry(::Mob& owner, bool value);
 
-    MCAPI void setHasTicked(bool hasTicked);
+    MCFOLD void setHasTicked(bool hasTicked);
 
     MCAPI void setNextSoundEventTick(::Mob const& mob);
 

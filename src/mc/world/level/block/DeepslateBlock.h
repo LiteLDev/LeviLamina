@@ -45,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface() const;
 
     MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
     // NOLINTEND

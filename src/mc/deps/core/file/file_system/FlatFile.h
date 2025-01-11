@@ -117,7 +117,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Core::PathBuffer<::std::string> $_getPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> $_getPath() const;
 
     MCAPI uint64 $_getBlockSize() const;
 
@@ -137,9 +137,9 @@ public:
 
     MCAPI ::Core::Result $_setPosition(uint64 position);
 
-    MCAPI ::Core::Result $_write(void const*, uint64);
+    MCFOLD ::Core::Result $_write(void const*, uint64);
 
-    MCAPI ::Core::Result $_flush();
+    MCFOLD ::Core::Result $_flush();
 
     MCAPI ::Core::Result $_getSize(uint64* pSize);
 

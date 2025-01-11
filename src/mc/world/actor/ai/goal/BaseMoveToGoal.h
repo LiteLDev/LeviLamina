@@ -117,7 +117,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -133,7 +133,7 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI bool $hasReachedTarget() const;
+    MCFOLD bool $hasReachedTarget() const;
 
     MCAPI int $_nextStartTick();
 
@@ -141,7 +141,7 @@ public:
 
     MCAPI ::Vec3 $_getTargetPosition() const;
 
-    MCAPI uint64 $_getRepathTime() const;
+    MCFOLD uint64 $_getRepathTime() const;
     // NOLINTEND
 
 public:

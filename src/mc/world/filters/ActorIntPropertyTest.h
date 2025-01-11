@@ -51,7 +51,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -63,9 +63,9 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
-    MCAPI ::Json::Value $_serializeValue() const;
+    MCFOLD ::Json::Value $_serializeValue() const;
 
-    MCAPI ::Json::Value $_serializeDomain() const;
+    MCFOLD ::Json::Value $_serializeDomain() const;
     // NOLINTEND
 
 public:

@@ -46,11 +46,11 @@ public:
         ::mce::Color const&                       color
     );
 
-    MCAPI ::mce::Color const& getColor() const;
+    MCFOLD ::mce::Color const& getColor() const;
 
-    MCAPI ::Editor::Settings::ThemeSettingsColorKey getColorKey() const;
+    MCFOLD ::Editor::Settings::ThemeSettingsColorKey getColorKey() const;
 
-    MCAPI ::std::string const& getThemeId() const;
+    MCFOLD ::std::string const& getThemeId() const;
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

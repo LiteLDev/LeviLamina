@@ -104,7 +104,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCFOLD void $init();
 
     MCAPI ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface> $createWorkerPool(
         ::std::string                                 name,

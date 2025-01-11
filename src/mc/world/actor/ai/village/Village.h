@@ -206,7 +206,7 @@ public:
 
     MCAPI uint64 getBedPOICount() const;
 
-    MCAPI ::AABB const& getBounds() const;
+    MCFOLD ::AABB const& getBounds() const;
 
     MCAPI ::Vec3 getCenter() const;
 
@@ -216,13 +216,13 @@ public:
 
     MCAPI ::std::weak_ptr<::POIInstance> getClosestPOI(::POIType type, ::BlockPos const& position);
 
-    MCAPI ::Raid const* getRaid() const;
+    MCFOLD ::Raid const* getRaid() const;
 
-    MCAPI ::AABB const& getRaidBounds() const;
+    MCFOLD ::AABB const& getRaidBounds() const;
 
-    MCAPI ::Raid* getRaidMutable();
+    MCFOLD ::Raid* getRaidMutable();
 
-    MCAPI ::mce::UUID getUniqueID() const;
+    MCFOLD ::mce::UUID getUniqueID() const;
 
     MCAPI bool hasInvalidRole(::ActorUniqueID const& actorId, ::DwellerRole const& role);
 

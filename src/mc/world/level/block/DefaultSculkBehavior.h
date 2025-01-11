@@ -55,9 +55,9 @@ public:
     // NOLINTBEGIN
     MCAPI int $updateDecayDelay(int const currentValue) const;
 
-    MCAPI int $updateFacingData(int const currentValue, ::Block const&) const;
+    MCFOLD int $updateFacingData(int const currentValue, ::Block const&) const;
 
-    MCAPI bool $canChangeBlockOnSpread() const;
+    MCFOLD bool $canChangeBlockOnSpread() const;
 
     MCAPI bool
     $attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int facingData, ::SculkSpreader&)
@@ -75,7 +75,7 @@ public:
         bool const
     ) const;
 
-    MCAPI void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
+    MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
     // NOLINTEND
 
 public:

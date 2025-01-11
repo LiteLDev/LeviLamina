@@ -79,7 +79,7 @@ public:
     virtual ~TheEndGenerator() /*override*/ = default;
 
     // vIndex: 11
-    virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
+    virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     // vIndex: 9
     virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
@@ -170,7 +170,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
 
@@ -192,11 +192,11 @@ public:
 
     MCAPI ::BiomeSource const& $getBiomeSource() const;
 
-    MCAPI ::BlockPos $findSpawnPosition() const;
+    MCFOLD ::BlockPos $findSpawnPosition() const;
 
-    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+    MCFOLD ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCAPI void $decorateWorldGenLoadChunk(
+    MCFOLD void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -204,7 +204,7 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCAPI void
+    MCFOLD void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
     // NOLINTEND
 

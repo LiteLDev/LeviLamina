@@ -28,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
 
     MCAPI bool $isDurationEffectTick(int remainingDuration, int) const;
     // NOLINTEND

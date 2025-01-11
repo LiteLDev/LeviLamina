@@ -36,7 +36,7 @@ public:
         float rotA
     );
 
-    MCAPI int getFrame() const;
+    MCFOLD int getFrame() const;
 
     MCAPI int update(::Actor& actor, bool instant);
 

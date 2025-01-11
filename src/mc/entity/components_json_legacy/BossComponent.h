@@ -47,23 +47,23 @@ public:
 
     MCAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
 
-    MCAPI ::BossBarColor getColor() const;
+    MCFOLD ::BossBarColor getColor() const;
 
-    MCAPI bool getCreateWorldFog() const;
+    MCFOLD bool getCreateWorldFog() const;
 
-    MCAPI float getHealthPercent() const;
+    MCFOLD float getHealthPercent() const;
 
-    MCAPI int getLastHealth() const;
+    MCFOLD int getLastHealth() const;
 
-    MCAPI ::std::chrono::steady_clock::time_point getLastPlayerUpdate() const;
+    MCFOLD ::std::chrono::steady_clock::time_point getLastPlayerUpdate() const;
 
-    MCAPI ::std::string getName() const;
+    MCFOLD ::std::string getName() const;
 
-    MCAPI ::BossBarOverlay getOverlay() const;
+    MCFOLD ::BossBarOverlay getOverlay() const;
 
-    MCAPI ::std::unordered_map<::mce::UUID, int> const& getPlayerParty() const;
+    MCFOLD ::std::unordered_map<::mce::UUID, int> const& getPlayerParty() const;
 
-    MCAPI bool getShouldDarkenSky() const;
+    MCFOLD bool getShouldDarkenSky() const;
 
     MCAPI void handleRegisterPlayers(::Actor& owner);
 
@@ -85,7 +85,7 @@ public:
 
     MCAPI void setLastHealth(int lastHealth);
 
-    MCAPI void setLastPlayerUpdate(::std::chrono::steady_clock::time_point lastUpdate);
+    MCFOLD void setLastPlayerUpdate(::std::chrono::steady_clock::time_point lastUpdate);
 
     MCAPI void setName(::Actor& owner, ::std::string const& name);
 

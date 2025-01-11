@@ -49,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $directoryPickingEnabledForPlatform() const;
+    MCFOLD bool $directoryPickingEnabledForPlatform() const;
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::FilePickerManager::DirectoryPickerResult>>
     $pickDirectory(::Bedrock::DirectoryPickerConfig const&);

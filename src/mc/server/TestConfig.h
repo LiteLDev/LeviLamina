@@ -38,15 +38,15 @@ public:
 
     MCAPI ::std::string _readFile(::std::string const& fileName) const;
 
-    MCAPI ::cereal::ReflectionCtx const& context() const;
+    MCFOLD ::cereal::ReflectionCtx const& context() const;
 
-    MCAPI bool isLoaded() const;
+    MCFOLD bool isLoaded() const;
 
     MCAPI ::TestConfig& operator=(::TestConfig const&);
 
     MCAPI ::TestConfig& operator=(::TestConfig&&);
 
-    MCAPI void setLoaded();
+    MCFOLD void setLoaded();
 
     MCAPI ~TestConfig();
     // NOLINTEND

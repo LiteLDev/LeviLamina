@@ -92,7 +92,7 @@ public:
 
     MCAPI ::SimpleBlockVolumeIterator begin() const;
 
-    MCAPI bool contains(::BlockPos const& pos) const;
+    MCFOLD bool contains(::BlockPos const& pos) const;
 
     MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
@@ -126,11 +126,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SimpleBlockVolume&& volume);
+    MCFOLD void* $ctor(::SimpleBlockVolume&& volume);
 
     MCAPI void* $ctor(::SimpleBlockVolume const&);
 
-    MCAPI void* $ctor(::BlockPos&& from, ::BlockPos&& to);
+    MCFOLD void* $ctor(::BlockPos&& from, ::BlockPos&& to);
 
     MCAPI void* $ctor(::BlockPos const&, ::BlockPos const&);
     // NOLINTEND
@@ -154,7 +154,7 @@ public:
 
     MCAPI int $getCapacity() const;
 
-    MCAPI bool $isInside(::BlockPos const& pos) const;
+    MCFOLD bool $isInside(::BlockPos const& pos) const;
 
     MCAPI void $translate(::BlockPos const& delta);
 

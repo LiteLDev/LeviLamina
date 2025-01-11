@@ -296,7 +296,7 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getId_010(::Actor const& self) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorLifetimeState getLifetimeState() const;
+    MCFOLD ::ScriptModuleMinecraft::ScriptActorLifetimeState getLifetimeState() const;
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getLocation(::Actor const& self) const;
 
@@ -519,7 +519,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $setUnloaded(::Actor& actor);
 
-    MCAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
+    MCFOLD ::Scripting::Result<void> $clearVelocity(::Actor& self);
 
     MCAPI ::Scripting::Result<void> $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 

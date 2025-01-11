@@ -48,7 +48,7 @@ public:
 
     MCAPI void increment();
 
-    MCAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
+    MCFOLD bool isEqual(::Json::ValueIteratorBase const& other) const;
 
     MCAPI char const* memberName() const;
 
@@ -60,13 +60,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::ValueIteratorBase const& other);
+    MCFOLD void* $ctor(::Json::ValueIteratorBase const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

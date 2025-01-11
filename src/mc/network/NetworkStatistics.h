@@ -126,7 +126,7 @@ public:
 
     MCAPI ::std::unordered_map<int, ::PacketObserver::PacketStats> getAndResetDebuggerStats();
 
-    MCAPI ::std::array<::std::string, 321> const& getPacketNames() const;
+    MCFOLD ::std::array<::std::string, 321> const& getPacketNames() const;
 
     MCAPI ::std::string getVerboseInfo() const;
 

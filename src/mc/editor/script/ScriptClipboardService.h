@@ -57,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCFOLD void*
     $ctor(::Editor::Services::ClipboardServiceProvider& provider, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

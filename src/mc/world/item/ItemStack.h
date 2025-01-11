@@ -89,7 +89,7 @@ public:
 
     MCAPI float getDestroySpeed(::Block const& block) const;
 
-    MCAPI ::ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
+    MCFOLD ::ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
 
     MCAPI int getMaxUseDuration() const;
 
@@ -172,7 +172,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

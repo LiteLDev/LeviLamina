@@ -22,9 +22,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScriptCommand(::std::string const& commandString);
 
-    MCAPI ::std::string getMessages() const;
+    MCFOLD ::std::string getMessages() const;
 
-    MCAPI int getSuccessCount() const;
+    MCFOLD int getSuccessCount() const;
 
     MCAPI void setOutput(int successCount, ::std::string&& messages);
     // NOLINTEND

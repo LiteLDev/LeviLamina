@@ -141,7 +141,7 @@ public:
 
     MCAPI int $_getContainerOffset() const;
 
-    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI ::Container* $_getContainer() const;
     // NOLINTEND

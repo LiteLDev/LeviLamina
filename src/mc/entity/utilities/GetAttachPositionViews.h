@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GetAttachPositionViews&&);
+    MCFOLD void* $ctor(::GetAttachPositionViews&&);
 
     MCAPI void* $ctor(::GetAttachPositionViews const&);
     // NOLINTEND

@@ -112,7 +112,7 @@ public:
 
     MCAPI bool $use(::Player& player, ::BlockPos const& anchorBlockPos, uchar) const;
 
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
@@ -120,7 +120,7 @@ public:
 
     MCAPI void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 

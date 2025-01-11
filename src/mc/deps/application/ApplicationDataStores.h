@@ -73,10 +73,10 @@ public:
     // NOLINTBEGIN
     MCAPI void $init();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
+    MCFOLD ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
     $getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
+    MCFOLD ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
     $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
     // NOLINTEND
 

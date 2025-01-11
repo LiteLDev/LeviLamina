@@ -32,7 +32,7 @@ public:
 
     MCAPI ::HashedString _getBlock() const;
 
-    MCAPI int getWeight() const;
+    MCFOLD int getWeight() const;
     // NOLINTEND
 
 public:
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const* block, int weight);
+    MCFOLD void* $ctor(::Block const* block, int weight);
     // NOLINTEND
 };
 

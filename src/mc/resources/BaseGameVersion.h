@@ -49,7 +49,7 @@ public:
 
     MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI bool isNeverCompatible() const;
+    MCFOLD bool isNeverCompatible() const;
 
     MCAPI bool isValid() const;
 
@@ -101,6 +101,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     MCAPI void addRule(::GameRule const& rule);
 
-    MCAPI ::std::vector<::GameRule> const& getRules() const;
+    MCFOLD ::std::vector<::GameRule> const& getRules() const;
 
     MCAPI void setRules(::std::vector<::GameRule> rules);
 
@@ -29,6 +29,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

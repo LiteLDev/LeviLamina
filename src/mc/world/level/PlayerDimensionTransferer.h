@@ -198,7 +198,7 @@ public:
         ::Dimension const&              toDimension
     );
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::DimensionType)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionType)>&
     $getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();

@@ -57,25 +57,25 @@ public:
     // NOLINTBEGIN
     MCAPI void _finalizeInit(::Block const& block);
 
-    MCAPI bool _useNewTessellationInternal() const;
+    MCFOLD bool _useNewTessellationInternal() const;
 
-    MCAPI ::BlockCollisionBoxComponent const* blockCollisionBoxComponent() const;
+    MCFOLD ::BlockCollisionBoxComponent const* blockCollisionBoxComponent() const;
 
-    MCAPI ::BlockSelectionBoxComponent const* blockSelectionBoxComponent() const;
+    MCFOLD ::BlockSelectionBoxComponent const* blockSelectionBoxComponent() const;
 
-    MCAPI ::BlockDestructibleByMiningComponent const* destructibleByMiningComponent() const;
+    MCFOLD ::BlockDestructibleByMiningComponent const* destructibleByMiningComponent() const;
 
     MCAPI void finalize(::Block const& block, ::BlockComponentDirectData::LayerBitMask layersToFinalize);
 
-    MCAPI int getBurnOdds() const;
+    MCFOLD int getBurnOdds() const;
 
     MCAPI float getDestroySpeed() const;
 
-    MCAPI float getExplosionResistance() const;
+    MCFOLD float getExplosionResistance() const;
 
-    MCAPI int getFlameOdds() const;
+    MCFOLD int getFlameOdds() const;
 
-    MCAPI float getFriction() const;
+    MCFOLD float getFriction() const;
 
     MCAPI ::Brightness light() const;
 

@@ -262,24 +262,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Core::FileSystemImpl>
+    MCFOLD ::std::unique_ptr<::Core::FileSystemImpl>
     $createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
-    MCAPI void $setUsedSizeOverride(uint64);
+    MCFOLD void $setUsedSizeOverride(uint64);
 
-    MCAPI void $clearUsedSizeOverride();
+    MCFOLD void $clearUsedSizeOverride();
 
     MCAPI void $notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
 
-    MCAPI bool $handlesPendingWrites() const;
+    MCFOLD bool $handlesPendingWrites() const;
 
-    MCAPI void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
+    MCFOLD void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
 
-    MCAPI void $informStorageAreaCopy(uint64 storageAreaSize);
+    MCFOLD void $informStorageAreaCopy(uint64 storageAreaSize);
 
-    MCAPI bool $supportsExtendSize() const;
+    MCFOLD bool $supportsExtendSize() const;
 
-    MCAPI bool $canExtendSize() const;
+    MCFOLD bool $canExtendSize() const;
 
     MCAPI void $resetCanAttemptExtendSize();
 
@@ -297,19 +297,19 @@ public:
 
     MCAPI void $unloadFlatFileManifests(bool shouldClearManifests);
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
-    MCAPI void $flushImmediately();
+    MCFOLD void $flushImmediately();
 
-    MCAPI void $enableFlushToDisk(bool);
+    MCFOLD void $enableFlushToDisk(bool);
 
-    MCAPI bool $checkCorrupt(bool handleCorruption);
+    MCFOLD bool $checkCorrupt(bool handleCorruption);
 
-    MCAPI ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
+    MCFOLD ::Core::FileStorageArea::FlushableLevelDbEnvType $getFlushableLevelDbEnvType() const;
 
-    MCAPI uint64 $getTransactionWriteSizeLimit() const;
+    MCFOLD uint64 $getTransactionWriteSizeLimit() const;
 
-    MCAPI ::Core::Result $setSaveDataIcon(::Core::Path const& iconPath);
+    MCFOLD ::Core::Result $setSaveDataIcon(::Core::Path const& iconPath);
 
     MCAPI bool $shouldAllowCommit() const;
 
@@ -319,11 +319,11 @@ public:
 
     MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
-    MCAPI ::Core::Result $_commit();
+    MCFOLD ::Core::Result $_commit();
 
-    MCAPI ::Core::Result $_onTransactionsEmpty(bool fromChild);
+    MCFOLD ::Core::Result $_onTransactionsEmpty(bool fromChild);
 
-    MCAPI void $_onTeardown();
+    MCFOLD void $_onTeardown();
     // NOLINTEND
 
 public:

@@ -110,7 +110,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $sendEvent(::Social::Events::Event const& event);
 
-    MCAPI int $getEventTagsFilter() const;
+    MCFOLD int $getEventTagsFilter() const;
 
     MCAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 

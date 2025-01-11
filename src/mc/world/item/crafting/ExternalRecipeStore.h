@@ -26,6 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI void registerBlockReduction(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
 
-    MCAPI void setBlockReducer(::BlockReducer* reducer);
+    MCFOLD void setBlockReducer(::BlockReducer* reducer);
     // NOLINTEND
 };

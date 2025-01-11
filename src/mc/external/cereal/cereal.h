@@ -50,9 +50,9 @@ MCAPI ::Json::Value toJsonValue(::cereal::DynamicValue const& value);
 
 MCAPI ::entt::meta_any tryFillVariant(::entt::meta_any& var, ::entt::meta_any value);
 
-MCAPI ::entt::meta_any tryGetOptionalValue(::entt::meta_handle opt);
+MCFOLD ::entt::meta_any tryGetOptionalValue(::entt::meta_handle opt);
 
-MCAPI ::entt::meta_any tryGetVariantValue(::entt::meta_handle var);
+MCFOLD ::entt::meta_any tryGetVariantValue(::entt::meta_handle var);
 
 MCAPI ::entt::meta_func typeLevelGetter(::entt::meta_type const& type);
 

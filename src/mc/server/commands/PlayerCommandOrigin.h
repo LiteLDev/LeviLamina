@@ -107,7 +107,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getRequestId() const;
+    MCFOLD ::std::string const& $getRequestId() const;
 
     MCAPI ::std::string $getName() const;
 
@@ -117,7 +117,7 @@ public:
 
     MCAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI ::Level* $getLevel() const;
+    MCFOLD ::Level* $getLevel() const;
 
     MCAPI ::Dimension* $getDimension() const;
 
@@ -133,7 +133,7 @@ public:
 
     MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 
-    MCAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
 
     MCAPI ::NetworkIdentifier const& $getSourceId() const;
 
@@ -141,11 +141,11 @@ public:
 
     MCAPI ::CommandOriginIdentity $getIdentity() const;
 
-    MCAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
     MCAPI ::CompoundTag $serialize() const;
 
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
     // NOLINTEND
 
 public:

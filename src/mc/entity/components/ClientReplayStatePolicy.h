@@ -75,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isReplayNeeded(::AdvanceFrameResult result) const;
+    MCFOLD bool $isReplayNeeded(::AdvanceFrameResult result) const;
 
     MCAPI bool $canRewindToFrame(::EntityContext const& entity, uint64 rewindFrame);
 
@@ -85,7 +85,7 @@ public:
 
     MCAPI void $storeCurrentFrameSupported(uint64 currentFrame, ::EntityContext& entity);
 
-    MCAPI void $notifyOfExternalCorrection(uint64);
+    MCFOLD void $notifyOfExternalCorrection(uint64);
     // NOLINTEND
 
 public:

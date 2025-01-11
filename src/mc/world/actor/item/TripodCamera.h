@@ -95,11 +95,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCAPI bool $isTargetable() const;
+    MCFOLD bool $isTargetable() const;
 
-    MCAPI bool $canExistWhenDisallowMob() const;
+    MCFOLD bool $canExistWhenDisallowMob() const;
 
     MCAPI void $remove();
 

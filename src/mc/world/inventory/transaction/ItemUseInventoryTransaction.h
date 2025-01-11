@@ -131,7 +131,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
     MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 

@@ -37,7 +37,7 @@ public:
 
     MCAPI bool canIncreaseThreatLevel() const;
 
-    MCAPI void copyDataFrom(::WardenSpawnTrackerComponent const& copyFrom);
+    MCFOLD void copyDataFrom(::WardenSpawnTrackerComponent const& copyFrom);
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
@@ -63,6 +63,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

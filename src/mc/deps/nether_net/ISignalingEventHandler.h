@@ -53,19 +53,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageSent const&);
+    MCFOLD void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageSent const&);
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const&);
+    MCFOLD void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const&);
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::PingSent const&);
+    MCFOLD void $OnSignalingEvent(::NetherNet::SignalingEvents::PingSent const&);
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageAccepted const&);
+    MCFOLD void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageAccepted const&);
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageDelivered const&);
+    MCFOLD void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageDelivered const&);
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::TurnAuthReceived const&);
+    MCFOLD void $OnSignalingEvent(::NetherNet::SignalingEvents::TurnAuthReceived const&);
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::ErrorReceived const&);
+    MCFOLD void $OnSignalingEvent(::NetherNet::SignalingEvents::ErrorReceived const&);
     // NOLINTEND
 };
 

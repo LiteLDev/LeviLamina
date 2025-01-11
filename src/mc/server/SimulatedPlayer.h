@@ -270,7 +270,7 @@ public:
 
     MCAPI void $aiStep();
 
-    MCAPI bool $isSimulated() const;
+    MCFOLD bool $isSimulated() const;
 
     MCAPI ::std::string $getXuid() const;
 
@@ -279,11 +279,11 @@ public:
     MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCAPI int $_getSpawnChunkLimit() const;
+    MCFOLD int $_getSpawnChunkLimit() const;
 
     MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 
-    MCAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
+    MCFOLD void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
     // NOLINTEND
 
 public:

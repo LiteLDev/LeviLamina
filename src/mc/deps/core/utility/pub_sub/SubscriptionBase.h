@@ -23,7 +23,7 @@ public:
 
     MCAPI void disconnect_async();
 
-    MCAPI bool operator==(::Bedrock::PubSub::SubscriptionBase const& other) const;
+    MCFOLD bool operator==(::Bedrock::PubSub::SubscriptionBase const& other) const;
     // NOLINTEND
 };
 

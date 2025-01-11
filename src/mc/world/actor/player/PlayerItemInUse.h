@@ -33,7 +33,7 @@ public:
 
     MCAPI void clearItemInUse(::EntityContext& owner);
 
-    MCAPI ::ItemStack const& getItemInUse() const;
+    MCFOLD ::ItemStack const& getItemInUse() const;
 
     MCAPI int getMoveToMouthDuration() const;
 
@@ -52,6 +52,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

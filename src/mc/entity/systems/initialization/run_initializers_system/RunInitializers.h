@@ -54,9 +54,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::EntityRegistry& registry);
 
-    MCAPI void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
+    MCFOLD void $singleTick(::EntityRegistry& registry, ::EntityContext& entity);
 
-    MCAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
+    MCFOLD void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
     // NOLINTEND
 
 public:

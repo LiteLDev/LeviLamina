@@ -23,9 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape&&);
+    MCFOLD ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape const&);
+    MCFOLD ::Editor::ScriptModule::ScriptBrushShape& operator=(::Editor::ScriptModule::ScriptBrushShape const&);
 
     MCAPI ~ScriptBrushShape();
     // NOLINTEND
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

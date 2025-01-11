@@ -49,7 +49,7 @@ public:
     virtual ::std::string toString() const /*override*/;
 
     // vIndex: 7
-    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
 
     // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
@@ -70,7 +70,7 @@ public:
 
     MCAPI void append(::CompoundTag const& tag);
 
-    MCAPI ::std::_Tree_const_iterator<
+    MCFOLD ::std::_Tree_const_iterator<
         ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::CompoundTagVariant>>>>
     begin() const;
 
@@ -84,7 +84,7 @@ public:
 
     MCAPI void deepCopy(::CompoundTag const& other);
 
-    MCAPI ::std::_Tree_const_iterator<
+    MCFOLD ::std::_Tree_const_iterator<
         ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::CompoundTagVariant>>>>
     end() const;
 
@@ -100,7 +100,7 @@ public:
 
     MCAPI ::CompoundTag const* getCompound(::std::string_view) const;
 
-    MCAPI ::CompoundTag* getCompound(::std::string_view name);
+    MCFOLD ::CompoundTag* getCompound(::std::string_view name);
 
     MCAPI float getFloat(::std::string_view name) const;
 
@@ -110,13 +110,13 @@ public:
 
     MCAPI ::Int64Tag const* getInt64Tag(::std::string_view) const;
 
-    MCAPI ::Int64Tag* getInt64Tag(::std::string_view name);
+    MCFOLD ::Int64Tag* getInt64Tag(::std::string_view name);
 
     MCAPI ::IntTag const* getIntTag(::std::string_view name) const;
 
     MCAPI ::ListTag const* getList(::std::string_view) const;
 
-    MCAPI ::ListTag* getList(::std::string_view name);
+    MCFOLD ::ListTag* getList(::std::string_view name);
 
     MCAPI short getShort(::std::string_view name) const;
 
@@ -126,7 +126,7 @@ public:
 
     MCAPI ::StringTag const* getStringTag(::std::string_view name) const;
 
-    MCAPI bool isEmpty() const;
+    MCFOLD bool isEmpty() const;
 
     MCAPI ::CompoundTag& operator=(::CompoundTag&& rhs);
 
@@ -154,13 +154,13 @@ public:
 
     MCAPI ::std::string& putString(::std::string name, ::std::string value);
 
-    MCAPI ::std::map<::std::string, ::CompoundTagVariant, ::std::less<void>> const& rawView() const;
+    MCFOLD ::std::map<::std::string, ::CompoundTagVariant, ::std::less<void>> const& rawView() const;
 
     MCAPI bool remove(::std::string_view name);
 
     MCAPI void rename(::std::string_view name, ::std::string newName);
 
-    MCAPI uint64 size() const;
+    MCFOLD uint64 size() const;
     // NOLINTEND
 
 public:
@@ -188,7 +188,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 

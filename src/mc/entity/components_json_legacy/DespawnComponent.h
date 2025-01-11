@@ -54,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -129,7 +129,7 @@ public:
 
         MCAPI bool $hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
-        MCAPI ::Randomize& $getChanceRandomize();
+        MCFOLD ::Randomize& $getChanceRandomize();
 
         MCAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
 

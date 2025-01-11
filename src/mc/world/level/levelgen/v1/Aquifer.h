@@ -94,13 +94,13 @@ public:
 
     MCAPI void computeAt(::BlockPos const& worldPos);
 
-    MCAPI float getLastBarrier() const;
+    MCFOLD float getLastBarrier() const;
 
     MCAPI ::Block const* getLastFluidBlockType(bool canTickUpdate) const;
 
-    MCAPI int getLastFluidLevel() const;
+    MCFOLD int getLastFluidLevel() const;
 
-    MCAPI bool shouldScheduleFluidUpdate() const;
+    MCFOLD bool shouldScheduleFluidUpdate() const;
     // NOLINTEND
 
 public:

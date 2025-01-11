@@ -29,7 +29,7 @@ public:
 
     MCAPI ::std::unique_ptr<::Tag> getTag() const;
 
-    MCAPI ::PositionTrackingId& operator=(::PositionTrackingId const&);
+    MCFOLD ::PositionTrackingId& operator=(::PositionTrackingId const&);
 
     MCAPI ::PositionTrackingId& operator=(::PositionTrackingId&&);
 
@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PositionTrackingId const&);
+    MCFOLD void* $ctor(::PositionTrackingId const&);
 
     MCAPI void* $ctor(::PositionTrackingId&&);
     // NOLINTEND

@@ -25,7 +25,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::IItemComponentLegacyFactoryData::Components&
+        MCFOLD ::IItemComponentLegacyFactoryData::Components&
         operator=(::IItemComponentLegacyFactoryData::Components const&);
         // NOLINTEND
     };

@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ServerTextSettings(::std::bitset<3> const& settings);
 
-    MCAPI ::std::bitset<3> const& getEnabledServerTextEvents() const;
+    MCFOLD ::std::bitset<3> const& getEnabledServerTextEvents() const;
     // NOLINTEND
 
 public:

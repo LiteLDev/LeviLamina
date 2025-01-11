@@ -24,9 +24,9 @@ public:
 
     MCAPI explicit OwnerStorageEntity(::EntityRegistry& registry);
 
-    MCAPI ::EntityContext& _getStackRef() const;
+    MCFOLD ::EntityContext& _getStackRef() const;
 
-    MCAPI bool _hasValue() const;
+    MCFOLD bool _hasValue() const;
 
     MCAPI void _reset();
 

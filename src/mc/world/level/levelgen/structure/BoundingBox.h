@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
     // NOLINTEND

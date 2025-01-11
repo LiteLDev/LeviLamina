@@ -111,7 +111,7 @@ public:
     virtual void kill() /*override*/;
 
     // vIndex: 56
-    virtual void setOwner(::ActorUniqueID const id) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     // vIndex: 139
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
@@ -142,7 +142,7 @@ public:
 
     MCAPI ::AgentRenderData& getRenderData();
 
-    MCAPI int getSelectedSlot() const;
+    MCFOLD int getSelectedSlot() const;
 
     MCAPI int getSwingAnimationDuration() const;
 
@@ -204,13 +204,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCAPI bool $canShowNameTag() const;
+    MCFOLD bool $canShowNameTag() const;
 
-    MCAPI bool $canBePulledIntoVehicle() const;
+    MCFOLD bool $canBePulledIntoVehicle() const;
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCFOLD bool $canBeAffected(uint id) const;
 
-    MCAPI void $knockback(::Actor*, int, float, float, float, float, float);
+    MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
@@ -224,15 +224,15 @@ public:
 
     MCAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity);
 
-    MCAPI bool $canExistWhenDisallowMob() const;
+    MCFOLD bool $canExistWhenDisallowMob() const;
 
-    MCAPI bool $isTargetable() const;
+    MCFOLD bool $isTargetable() const;
 
     MCAPI bool $isInvisible() const;
 
     MCAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const id);
+    MCAPI void $setOwner(::ActorUniqueID const ownerId);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

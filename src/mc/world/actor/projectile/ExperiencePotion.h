@@ -58,9 +58,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getGravity();
+    MCFOLD float $getGravity();
 
-    MCAPI float $getThrowPower();
+    MCFOLD float $getThrowPower();
 
     MCAPI float $getThrowUpAngleOffset();
     // NOLINTEND

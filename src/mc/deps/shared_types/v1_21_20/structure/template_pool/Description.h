@@ -19,10 +19,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description const&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Description&&);
 
     MCAPI ~Description();
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

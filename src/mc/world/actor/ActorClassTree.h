@@ -15,7 +15,7 @@ class ActorClassTree {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ActorType getEntityTypeIdLegacy(::ActorType entityId);
+    MCFOLD static ::ActorType getEntityTypeIdLegacy(::ActorType entityId);
 
     MCAPI static bool hasCategory(::ActorCategory const& category, ::ActorCategory testFor);
 

@@ -42,7 +42,7 @@ public:
     MCAPI ::BlockPatternBuilder&
     define(char pattern, ::std::function<bool(::BlockSource&, ::BlockPos const&, ::Block const&)> tester);
 
-    MCAPI bool isReadyForMatch();
+    MCFOLD bool isReadyForMatch();
 
     MCAPI ::BuildMatch match(::BlockPos const& pos);
 

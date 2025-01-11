@@ -82,7 +82,7 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
     MCAPI void $start();
 

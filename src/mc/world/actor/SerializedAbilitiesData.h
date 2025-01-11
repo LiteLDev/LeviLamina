@@ -59,7 +59,7 @@ public:
 
     MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
 
-    MCAPI ::ActorUniqueID getTargetPlayer() const;
+    MCFOLD ::ActorUniqueID getTargetPlayer() const;
 
     MCAPI ~SerializedAbilitiesData();
     // NOLINTEND

@@ -71,7 +71,7 @@ public:
 
     MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI uint64 getCollectionCount() const;
+    MCFOLD uint64 getCollectionCount() const;
 
     MCAPI ::std::variant<double, float, bool, ::std::string, ::Vec3> const*
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;

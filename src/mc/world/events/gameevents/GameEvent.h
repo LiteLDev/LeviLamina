@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameEventConfig::GameEventType const getType() const;
+    MCFOLD ::GameEventConfig::GameEventType const getType() const;
     // NOLINTEND
 };

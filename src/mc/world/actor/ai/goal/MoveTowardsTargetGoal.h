@@ -74,7 +74,7 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCAPI void $start();
 

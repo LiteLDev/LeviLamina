@@ -42,9 +42,9 @@ public:
 
     MCAPI ::IntRange getDamageChanceRange() const;
 
-    MCAPI int getMaxDamage() const;
+    MCFOLD int getMaxDamage() const;
 
-    MCAPI void setMaxDamage(int maxDamage);
+    MCFOLD void setMaxDamage(int maxDamage);
     // NOLINTEND
 
 public:

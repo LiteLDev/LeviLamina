@@ -75,13 +75,13 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canBeAffected(uint id) const;
 
-    MCAPI float $getModelScale() const;
+    MCFOLD float $getModelScale() const;
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCAPI bool $shouldRender() const;
+    MCFOLD bool $shouldRender() const;
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

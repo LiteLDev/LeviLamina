@@ -17,7 +17,7 @@ namespace br::worldgen::processors::PosRules { struct Test; }
 namespace br::worldgen::processors {
 // functions
 // NOLINTBEGIN
-MCAPI ::br::worldgen::processors::AlwaysTrueType AlwaysTrue();
+MCFOLD ::br::worldgen::processors::AlwaysTrueType AlwaysTrue();
 
 MCAPI ::br::worldgen::processors::BlockEntity::Modifier AppendLoot(::std::string_view lootTable);
 

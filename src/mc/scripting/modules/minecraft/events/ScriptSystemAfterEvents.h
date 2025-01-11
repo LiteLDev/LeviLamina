@@ -55,7 +55,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -120,9 +120,9 @@ public:
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
+    MCFOLD ::ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
 
-    MCAPI ::ScriptModuleMinecraft::ScriptAsyncEventList const& getSignalList() const;
+    MCFOLD ::ScriptModuleMinecraft::ScriptAsyncEventList const& getSignalList() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
     operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);

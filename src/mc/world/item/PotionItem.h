@@ -119,7 +119,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::Potion::PotionType $getPotionType() const;
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
@@ -134,7 +134,7 @@ public:
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 

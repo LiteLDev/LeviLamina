@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint $registerForUpdates();
+    MCFOLD uint $registerForUpdates();
     // NOLINTEND
 
 public:

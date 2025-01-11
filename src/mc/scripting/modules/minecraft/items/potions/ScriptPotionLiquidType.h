@@ -27,7 +27,8 @@ public:
 
     MCAPI ::std::string getPotionLiquidTypeId() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPotionLiquidType& operator=(::ScriptModuleMinecraft::ScriptPotionLiquidType&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptPotionLiquidType&
+    operator=(::ScriptModuleMinecraft::ScriptPotionLiquidType&&);
 
     MCAPI ~ScriptPotionLiquidType();
     // NOLINTEND
@@ -41,13 +42,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotionLiquidType&&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPotionLiquidType&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

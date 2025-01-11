@@ -263,141 +263,141 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCFOLD void
     $onGameRuleChange(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onWeatherChanged(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onPlayerJoin(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onPlayerLeave(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onActorAddEffect(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData>&);
 
-    MCAPI void $onChat(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendAfterEvent>&);
+    MCFOLD void $onChat(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendAfterEvent>&);
 
-    MCAPI void $onActorLoad(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorLoadAfterEvent>&);
+    MCFOLD void $onActorLoad(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorLoadAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onActorSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorSpawnAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onActorRemoved(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onActorHitEntity(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onActorHitBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onServerMessage(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>&);
 
-    MCAPI void $onDataDrivenActorEventSend(::Scripting::StrongTypedObjectHandle<
-                                           ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&);
+    MCFOLD void $onDataDrivenActorEventSend(::Scripting::StrongTypedObjectHandle<
+                                            ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&);
 
-    MCAPI void $onActorHurt(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
+    MCFOLD void $onActorHurt(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
 
-    MCAPI void $onActorHealthChanged(::Scripting::StrongTypedObjectHandle<
-                                     ::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&);
+    MCFOLD void $onActorHealthChanged(::Scripting::StrongTypedObjectHandle<
+                                      ::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&);
 
-    MCAPI void $onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>&);
+    MCFOLD void $onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onPlayerSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);
 
-    MCAPI void $onPlayerDimensionChange(::Scripting::StrongTypedObjectHandle<
-                                        ::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&);
+    MCFOLD void $onPlayerDimensionChange(::Scripting::StrongTypedObjectHandle<
+                                         ::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&);
 
-    MCAPI void $onPlayerInputModeChange(::Scripting::StrongTypedObjectHandle<
-                                        ::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>&);
+    MCFOLD void $onPlayerInputModeChange(::Scripting::StrongTypedObjectHandle<
+                                         ::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>&);
 
-    MCAPI void $onPlayerInputPermissionCategoryChange(::Scripting::StrongTypedObjectHandle<
-                                                      ::ScriptModuleMinecraft::
-                                                          ScriptPlayerInputPermissionCategoryChangeAfterEvent>&);
+    MCFOLD void $onPlayerInputPermissionCategoryChange(::Scripting::StrongTypedObjectHandle<
+                                                       ::ScriptModuleMinecraft::
+                                                           ScriptPlayerInputPermissionCategoryChangeAfterEvent>&);
 
-    MCAPI void $onPlayerInteractWithEntity(::Scripting::StrongTypedObjectHandle<
-                                           ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&);
+    MCFOLD void $onPlayerInteractWithEntity(::Scripting::StrongTypedObjectHandle<
+                                            ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&);
 
-    MCAPI void $onPlayerInteractWithBlock(::Scripting::StrongTypedObjectHandle<
-                                          ::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&);
+    MCFOLD void $onPlayerInteractWithBlock(::Scripting::StrongTypedObjectHandle<
+                                           ::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&);
 
-    MCAPI void $onPlayerGameModeChange(::Scripting::StrongTypedObjectHandle<
-                                       ::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>&);
+    MCFOLD void $onPlayerGameModeChange(::Scripting::StrongTypedObjectHandle<
+                                        ::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onPlayerEmote(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent>&);
 
-    MCAPI void $onPlayerButtonInput(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>&);
+    MCFOLD void $onPlayerButtonInput(::Scripting::StrongTypedObjectHandle<
+                                     ::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onActivatePiston(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onActivateLever(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onPushButton(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptButtonPushAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onExplosion(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onExplodeBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>&);
 
-    MCAPI void $onPlayerPlaceBlock(::Scripting::StrongTypedObjectHandle<
-                                   ::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&);
+    MCFOLD void $onPlayerPlaceBlock(::Scripting::StrongTypedObjectHandle<
+                                    ::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&);
 
-    MCAPI void $onPlayerBreakBlock(::Scripting::StrongTypedObjectHandle<
-                                   ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&);
+    MCFOLD void $onPlayerBreakBlock(::Scripting::StrongTypedObjectHandle<
+                                    ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&);
 
-    MCAPI void $onPushPressurePlate(::Scripting::StrongTypedObjectHandle<
-                                    ::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&);
+    MCFOLD void $onPushPressurePlate(::Scripting::StrongTypedObjectHandle<
+                                     ::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&);
 
-    MCAPI void $onPopPressurePlate(::Scripting::StrongTypedObjectHandle<
-                                   ::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&);
+    MCFOLD void $onPopPressurePlate(::Scripting::StrongTypedObjectHandle<
+                                    ::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onHitTargetBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onTripTripWire(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>&);
 
-    MCAPI void $onItemUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseAfterEvent>&);
+    MCFOLD void $onItemUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseAfterEvent>&);
 
-    MCAPI void $onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>&);
+    MCFOLD void $onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onItemStartUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onItemStopUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onItemStartUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onItemCompleteUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onItemReleaseUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>&);
 
-    MCAPI void
+    MCFOLD void
     $onItemStopUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>&);
 
-    MCAPI void $onProjectileHitEntity(::Scripting::StrongTypedObjectHandle<
-                                      ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&);
+    MCFOLD void $onProjectileHitEntity(::Scripting::StrongTypedObjectHandle<
+                                       ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&);
 
-    MCAPI void $onProjectileHitBlock(::Scripting::StrongTypedObjectHandle<
-                                     ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
+    MCFOLD void $onProjectileHitBlock(::Scripting::StrongTypedObjectHandle<
+                                      ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
     // NOLINTEND
 
 public:

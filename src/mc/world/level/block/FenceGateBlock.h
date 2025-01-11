@@ -147,16 +147,16 @@ public:
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
 
     MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI bool
+    MCFOLD bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCAPI bool $isFenceGateBlock() const;
+    MCFOLD bool $isFenceGateBlock() const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 

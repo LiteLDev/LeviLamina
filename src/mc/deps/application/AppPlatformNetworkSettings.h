@@ -25,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $requiresNetworkOutageMessaging() const;
+    MCFOLD bool $requiresNetworkOutageMessaging() const;
     // NOLINTEND
 
 public:

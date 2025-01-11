@@ -143,7 +143,7 @@ public:
     MCAPI ::BlockPos
     _getPos(uint stepIndex, ::BlockPos const& origin, ::Random& random, ::RenderParams& molangParams) const;
 
-    MCAPI void _parseExpressionNodeFloat(
+    MCFOLD void _parseExpressionNodeFloat(
         ::CompoundTag const& tag,
         ::std::string const& tagName,
         ::std::string const& tagNameType,

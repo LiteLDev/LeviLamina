@@ -36,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptValue();
 
-    MCAPI ::Scripting::ContextId getContextId() const;
+    MCFOLD ::Scripting::ContextId getContextId() const;
 
     MCAPI ::Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
     // NOLINTEND
@@ -50,7 +50,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI int $getArmorValue() const;
+    MCFOLD int $getArmorValue() const;
     // NOLINTEND
 
 public:

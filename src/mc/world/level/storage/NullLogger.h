@@ -28,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Logv(char const* format, char* ap);
+    MCFOLD void $Logv(char const* format, char* ap);
     // NOLINTEND
 
 public:

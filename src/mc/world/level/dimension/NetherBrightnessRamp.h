@@ -25,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getBaseAmbientValue() const;
+    MCFOLD float $getBaseAmbientValue() const;
     // NOLINTEND
 
 public:

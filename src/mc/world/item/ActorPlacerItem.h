@@ -150,21 +150,21 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCAPI bool $isLiquidClipItem() const;
+    MCFOLD bool $isLiquidClipItem() const;
 
     MCAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI bool $isMultiColorTinted(::ItemStack const&) const;
+    MCFOLD bool $isMultiColorTinted(::ItemStack const&) const;
 
-    MCAPI ::mce::Color $getBaseColor(::ItemStack const&) const;
+    MCFOLD ::mce::Color $getBaseColor(::ItemStack const&) const;
 
-    MCAPI ::mce::Color $getSecondaryColor(::ItemStack const&) const;
+    MCFOLD ::mce::Color $getSecondaryColor(::ItemStack const&) const;
 
-    MCAPI bool $isActorPlacerItem() const;
+    MCFOLD bool $isActorPlacerItem() const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;

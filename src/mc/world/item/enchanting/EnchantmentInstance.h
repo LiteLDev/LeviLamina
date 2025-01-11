@@ -9,14 +9,9 @@ class EnchantmentInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk6af375;
-    ::ll::UntypedStorage<4, 4> mUnk254140;
+    ::ll::TypedStorage<1, 1, ::Enchant::Type> mEnchantType;
+    ::ll::TypedStorage<4, 4, int>             mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnchantmentInstance& operator=(EnchantmentInstance const&);
-    EnchantmentInstance(EnchantmentInstance const&);
 
 public:
     // member functions
@@ -25,13 +20,13 @@ public:
 
     MCAPI EnchantmentInstance(::Enchant::Type enchantType, int level);
 
-    MCAPI int getEnchantLevel() const;
+    MCFOLD int getEnchantLevel() const;
 
-    MCAPI ::Enchant::Type getEnchantType() const;
+    MCFOLD ::Enchant::Type getEnchantType() const;
 
-    MCAPI void setEnchantLevel(int level);
+    MCFOLD void setEnchantLevel(int level);
 
-    MCAPI void setEnchantType(::Enchant::Type enchantType);
+    MCFOLD void setEnchantType(::Enchant::Type enchantType);
     // NOLINTEND
 
 public:

@@ -42,19 +42,19 @@ public:
 
     MCAPI void compile(::CommandOrigin const& origin, ::Level& level);
 
-    MCAPI ::std::string const& getCommand() const;
+    MCFOLD ::std::string const& getCommand() const;
 
     MCAPI ::std::string getLastOutput() const;
 
     MCAPI ::std::string const& getName() const;
 
-    MCAPI ::std::string const& getRawName() const;
+    MCFOLD ::std::string const& getRawName() const;
 
-    MCAPI int getSuccessCount() const;
+    MCFOLD int getSuccessCount() const;
 
-    MCAPI int getTickDelay() const;
+    MCFOLD int getTickDelay() const;
 
-    MCAPI bool getTrackOutput() const;
+    MCFOLD bool getTrackOutput() const;
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -76,13 +76,13 @@ public:
 
     MCAPI void setShouldExecuteOnFirstTick(bool shouldExecute);
 
-    MCAPI void setSuccessCount(int successCount);
+    MCFOLD void setSuccessCount(int successCount);
 
-    MCAPI void setTickDelay(int tickDelay);
+    MCFOLD void setTickDelay(int tickDelay);
 
     MCAPI void setTrackOutput(bool trackOutput);
 
-    MCAPI bool shouldExecuteOnFirstTick() const;
+    MCFOLD bool shouldExecuteOnFirstTick() const;
 
     MCAPI ~BaseCommandBlock();
     // NOLINTEND

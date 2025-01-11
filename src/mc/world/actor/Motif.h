@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const getName() const;
+    MCFOLD ::std::string const getName() const;
     // NOLINTEND
 
 public:

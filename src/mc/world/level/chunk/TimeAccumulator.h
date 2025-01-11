@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 getCount() const;
+    MCFOLD uint64 getCount() const;
 
     MCAPI float getTimeSumAverageMS() const;
 

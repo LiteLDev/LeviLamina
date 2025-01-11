@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit operator bool() const;
+    MCFOLD explicit operator bool() const;
 
     MCAPI ~ItemStackRequestHandlerSlotInfo();
     // NOLINTEND

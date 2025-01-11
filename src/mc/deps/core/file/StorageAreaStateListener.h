@@ -75,11 +75,11 @@ public:
         ::std::function<void()>                   onHandledEventCallback
     );
 
-    MCAPI void $onLowDiskSpace(bool const bSet);
+    MCFOLD void $onLowDiskSpace(bool const bSet);
 
-    MCAPI void $onOutOfDiskSpace(bool const bSet);
+    MCFOLD void $onOutOfDiskSpace(bool const bSet);
 
-    MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    MCFOLD void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
     // NOLINTEND
 
 public:

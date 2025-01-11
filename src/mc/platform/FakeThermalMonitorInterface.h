@@ -44,11 +44,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ThermalState $getThermalState() const;
+    MCFOLD ::ThermalState $getThermalState() const;
 
-    MCAPI float $getThermalValueCelsius() const;
+    MCFOLD float $getThermalValueCelsius() const;
 
-    MCAPI bool $isLowBatteryModeEnabled() const;
+    MCFOLD bool $isLowBatteryModeEnabled() const;
     // NOLINTEND
 
 public:

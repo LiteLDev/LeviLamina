@@ -53,9 +53,9 @@ public:
         bool
     ) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
+    MCFOLD bool $canDestroy(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

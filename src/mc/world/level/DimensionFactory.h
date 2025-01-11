@@ -48,7 +48,7 @@ public:
         ::br::worldgen::StructureSetRegistry const& structureSetRegistry
     );
 
-    MCAPI ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& getDimensionOwnerPtrFactory();
+    MCFOLD ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& getDimensionOwnerPtrFactory();
     // NOLINTEND
 
 public:

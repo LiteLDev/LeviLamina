@@ -36,9 +36,9 @@ public:
 
     MCAPI void initFromDefinition(::Actor&, ::PushableDescription const& desc);
 
-    MCAPI bool isPushable() const;
+    MCFOLD bool isPushable() const;
 
-    MCAPI bool isPushableByPiston() const;
+    MCFOLD bool isPushableByPiston() const;
 
     MCAPI void push(::Actor& owner, ::Vec3 const& vec);
 

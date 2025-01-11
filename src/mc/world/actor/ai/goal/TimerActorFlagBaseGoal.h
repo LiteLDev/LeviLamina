@@ -82,7 +82,7 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
     MCAPI void $stop();
 

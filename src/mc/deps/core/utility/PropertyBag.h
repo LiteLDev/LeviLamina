@@ -22,7 +22,7 @@ public:
 
     MCAPI explicit PropertyBag(::Json::Value const& jsonValue);
 
-    MCAPI ::Json::Value const& toJsonValue() const;
+    MCFOLD ::Json::Value const& toJsonValue() const;
 
     MCAPI ::std::string toString() const;
     // NOLINTEND

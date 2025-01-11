@@ -95,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
 

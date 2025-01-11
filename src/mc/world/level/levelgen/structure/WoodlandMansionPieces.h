@@ -179,7 +179,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -421,7 +421,7 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::string $get1x1(::Random& random);
 
-        MCAPI ::std::string $get1x1Secret(::Random& random);
+        MCFOLD ::std::string $get1x1Secret(::Random& random);
 
         MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
 
@@ -431,7 +431,7 @@ public:
 
         MCAPI ::std::string $get2x2(::Random& random);
 
-        MCAPI ::std::string $get2x2Secret(::Random& random);
+        MCFOLD ::std::string $get2x2Secret(::Random& random);
         // NOLINTEND
 
     public:
@@ -481,7 +481,7 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::string $get1x1(::Random& random);
 
-        MCAPI ::std::string $get1x1Secret(::Random& random);
+        MCFOLD ::std::string $get1x1Secret(::Random& random);
 
         MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
 
@@ -491,7 +491,7 @@ public:
 
         MCAPI ::std::string $get2x2(::Random& random);
 
-        MCAPI ::std::string $get2x2Secret(::Random& random);
+        MCFOLD ::std::string $get2x2Secret(::Random& random);
         // NOLINTEND
 
     public:

@@ -75,13 +75,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
 
     MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI void $broadcastChanges();
 

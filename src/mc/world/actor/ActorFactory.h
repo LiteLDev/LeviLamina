@@ -118,7 +118,7 @@ public:
     MCAPI ::OwnerPtr<::EntityContext>
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
 
-    MCAPI ::ActorGoalFactory& getGoalFactory();
+    MCFOLD ::ActorGoalFactory& getGoalFactory();
 
     MCAPI void init(::Experiments const& experiments);
 
@@ -138,7 +138,7 @@ public:
 
     MCAPI void setDefinitionGroup(::ActorDefinitionGroup* group);
 
-    MCAPI void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
+    MCFOLD void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
     // NOLINTEND
 
 public:

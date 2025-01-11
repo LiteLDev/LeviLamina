@@ -115,21 +115,21 @@ public:
         // NOLINTBEGIN
         MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-        MCAPI ::std::string const& $getFullName() const;
+        MCFOLD ::std::string const& $getFullName() const;
 
         MCAPI ::std::string $toString() const;
 
-        MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
+        MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
 
         MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
         MCAPI void $serialize(::Json::Value& val) const;
 
-        MCAPI bool $isValid() const;
+        MCFOLD bool $isValid() const;
 
-        MCAPI bool $shouldResolve() const;
+        MCFOLD bool $shouldResolve() const;
 
-        MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
+        MCFOLD ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
         // NOLINTEND
 
     public:
@@ -265,7 +265,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

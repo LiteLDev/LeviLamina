@@ -31,11 +31,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent const getCelebrateSound(::Mob const& mob) const;
 
-    MCAPI ::Tick const getCelebrateUntil() const;
+    MCFOLD ::Tick const getCelebrateUntil() const;
 
-    MCAPI ::Tick const getNextSoundEventTick() const;
+    MCFOLD ::Tick const getNextSoundEventTick() const;
 
-    MCAPI bool isCelebrating() const;
+    MCFOLD bool isCelebrating() const;
 
     MCAPI void setNextSoundEventTick(::Mob const& mob);
 

@@ -16,9 +16,9 @@ namespace ScriptCommandUtils {
 // NOLINTBEGIN
 MCAPI bool CommandResultShouldThrow(::MCRESULT commandResult);
 
-MCAPI ::CurrentCmdVersion ContextConfigToCommandVersion(::Scripting::ContextConfig const& contextConfig);
+MCFOLD ::CurrentCmdVersion ContextConfigToCommandVersion(::Scripting::ContextConfig const& contextConfig);
 
-MCAPI int ContextConfigToCommandVersionValue(::Scripting::ContextConfig const& contextConfig);
+MCFOLD int ContextConfigToCommandVersionValue(::Scripting::ContextConfig const& contextConfig);
 // NOLINTEND
 
 } // namespace ScriptCommandUtils

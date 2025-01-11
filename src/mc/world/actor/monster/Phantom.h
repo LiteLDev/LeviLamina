@@ -62,7 +62,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool $shouldRender() const;
+    MCFOLD bool $shouldRender() const;
     // NOLINTEND
 
 public:

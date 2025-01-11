@@ -228,7 +228,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isHumanoidArmor() const;
+    MCFOLD bool $isHumanoidArmor() const;
 
     MCAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,
@@ -250,9 +250,9 @@ public:
 
     MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCAPI void $clearColor(::ItemStackBase& instance) const;
+    MCFOLD void $clearColor(::ItemStackBase& instance) const;
 
-    MCAPI void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
+    MCFOLD void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
 
     MCAPI bool $isDyeable() const;
 
@@ -273,7 +273,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;

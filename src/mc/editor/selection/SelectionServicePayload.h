@@ -53,13 +53,13 @@ public:
         bool                                               requiresReplication
     );
 
-    MCAPI ::Editor::Network::SelectionServicePayload::Action getAction() const;
+    MCFOLD ::Editor::Network::SelectionServicePayload::Action getAction() const;
 
-    MCAPI ::mce::UUID const& getId() const;
+    MCFOLD ::mce::UUID const& getId() const;
 
-    MCAPI bool isPrimary() const;
+    MCFOLD bool isPrimary() const;
 
-    MCAPI bool requiresReplication() const;
+    MCFOLD bool requiresReplication() const;
     // NOLINTEND
 
 public:

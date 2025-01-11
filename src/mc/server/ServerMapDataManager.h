@@ -69,11 +69,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::MapItemSavedData&)>& $getOnCreateMapSavedDataConnector();
 
     MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 
-    MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
+    MCFOLD void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
     MCAPI void $_copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
     // NOLINTEND

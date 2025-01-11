@@ -71,7 +71,7 @@ public:
 
     MCAPI ::gsl::span<uchar const> $getLoggableData() const;
 
-    MCAPI ::Bedrock::Http::ResponseBodyType $getType() const;
+    MCFOLD ::Bedrock::Http::ResponseBodyType $getType() const;
     // NOLINTEND
 };
 

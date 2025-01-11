@@ -53,7 +53,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isDiggable(::Block const& block);
+    MCFOLD static bool isDiggable(::Block const& block);
     // NOLINTEND
 
 public:

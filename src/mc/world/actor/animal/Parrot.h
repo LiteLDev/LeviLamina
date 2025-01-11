@@ -99,7 +99,7 @@ public:
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

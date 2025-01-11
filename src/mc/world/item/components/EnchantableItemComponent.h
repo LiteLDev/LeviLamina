@@ -42,9 +42,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EnchantableItemComponent(::SharedTypes::v1_20_50::EnchantableItemComponent component);
 
-    MCAPI ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
+    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
 
-    MCAPI ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
+    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
     // NOLINTEND
 
 public:

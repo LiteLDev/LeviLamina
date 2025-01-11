@@ -16,13 +16,13 @@ class SuspectTrackingDefinition {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::SuspectTrackingComponent&) const;
+    MCFOLD void initialize(::EntityContext&, ::SuspectTrackingComponent&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SuspectTrackingDefinition>>& root
     );
     // NOLINTEND

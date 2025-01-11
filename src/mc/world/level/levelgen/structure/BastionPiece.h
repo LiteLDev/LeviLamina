@@ -75,12 +75,12 @@ public:
         ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>& chunkHeightCache
     ) const;
 
-    MCAPI ::Block const*
+    MCFOLD ::Block const*
     $getSupportBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
-    MCAPI ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
+    MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
     // NOLINTEND
 
 public:

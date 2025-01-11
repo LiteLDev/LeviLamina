@@ -60,7 +60,7 @@ public:
 
         MCAPI CZString(char* cstr, bool duplicate);
 
-        MCAPI char const* c_str() const;
+        MCFOLD char const* c_str() const;
 
         MCAPI ~CZString();
         // NOLINTEND
@@ -68,7 +68,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCFOLD void* $ctor();
 
         MCAPI void* $ctor(char const* cstr);
 
@@ -152,7 +152,7 @@ public:
 
     MCAPI bool asBool(bool defaultValue) const;
 
-    MCAPI char const* asCString() const;
+    MCFOLD char const* asCString() const;
 
     MCAPI double asDouble(double defaultValue) const;
 
@@ -172,7 +172,7 @@ public:
 
     MCAPI uint64 asUInt64(uint64 defaultValue) const;
 
-    MCAPI ::Json::ValueConstIterator begin() const;
+    MCFOLD ::Json::ValueConstIterator begin() const;
 
     MCAPI ::Json::ValueIterator begin();
 
@@ -184,7 +184,7 @@ public:
 
     MCAPI ::Json::ValueConstIterator end() const;
 
-    MCAPI ::Json::ValueIterator end();
+    MCFOLD ::Json::ValueIterator end();
 
     MCAPI ::Json::Value get(::std::string const& key, ::Json::Value const& defaultValue) const;
 
@@ -208,7 +208,7 @@ public:
 
     MCAPI bool isMember(::std::string const& key) const;
 
-    MCAPI bool isNull() const;
+    MCFOLD bool isNull() const;
 
     MCAPI bool isNumeric() const;
 
@@ -238,7 +238,7 @@ public:
 
     MCAPI ::Json::Value const& operator[](::std::string const& key) const;
 
-    MCAPI ::Json::Value& operator[](int index);
+    MCFOLD ::Json::Value& operator[](int index);
 
     MCAPI ::Json::Value& operator[](char const* key);
 
@@ -256,7 +256,7 @@ public:
 
     MCAPI ::std::string toStyledString() const;
 
-    MCAPI ::Json::ValueType type() const;
+    MCFOLD ::Json::ValueType type() const;
 
     MCAPI ~Value();
     // NOLINTEND

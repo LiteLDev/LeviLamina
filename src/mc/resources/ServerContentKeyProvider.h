@@ -41,11 +41,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $getContentKey(::ContentIdentity const& contentIdentity) const;
 
-    MCAPI bool $canAccess(::ContentIdentity const& contentIdentity) const;
+    MCFOLD bool $canAccess(::ContentIdentity const& contentIdentity) const;
 
-    MCAPI void $setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&);
+    MCFOLD void $setTempContentKeys(::std::unordered_map<::ContentIdentity, ::std::string> const&);
 
-    MCAPI void $clearTempContentKeys();
+    MCFOLD void $clearTempContentKeys();
     // NOLINTEND
 
 public:

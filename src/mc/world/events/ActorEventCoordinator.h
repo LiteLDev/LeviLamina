@@ -50,9 +50,9 @@ public:
 
     MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
-    MCAPI ::ActorGameplayHandler& getActorGameplayHandler();
+    MCFOLD ::ActorGameplayHandler& getActorGameplayHandler();
 
-    MCAPI void registerActorGameplayHandler(::std::unique_ptr<::ActorGameplayHandler>&& handler);
+    MCFOLD void registerActorGameplayHandler(::std::unique_ptr<::ActorGameplayHandler>&& handler);
 
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
 

@@ -56,7 +56,7 @@ public:
 
     MCAPI bool get(::std::string const& id, ::std::string& out, ::std::vector<::std::string> const& params) const;
 
-    MCAPI ::std::string getFullLanguageCode() const;
+    MCFOLD ::std::string getFullLanguageCode() const;
 
     MCAPI void loadFromPack(
         ::std::string const&                keyPrefix,

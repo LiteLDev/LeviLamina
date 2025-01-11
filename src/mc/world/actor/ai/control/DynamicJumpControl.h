@@ -66,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
+    MCFOLD void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
 
     MCAPI ::std::unique_ptr<::JumpControl> $clone() const;
 

@@ -40,7 +40,7 @@ public:
 
     MCAPI ::Scripting::Result<void> _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerInputPermissions&
+    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerInputPermissions&
     operator=(::ScriptModuleMinecraft::ScriptPlayerInputPermissions&&);
     // NOLINTEND
 

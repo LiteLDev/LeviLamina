@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
     // NOLINTEND
 

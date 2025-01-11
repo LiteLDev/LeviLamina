@@ -148,13 +148,13 @@ public:
 
     MCAPI ::Scripting::ScriptEngine& getScriptEngine();
 
-    MCAPI ::ScriptSettings& getScriptSettings();
+    MCFOLD ::ScriptSettings& getScriptSettings();
 
     MCAPI void onMainThreadStartLeaveGame();
 
-    MCAPI void setBlockCustomComponentCerealContext(::cereal::ReflectionCtx& ctx, ::Experiments const& experiments);
+    MCFOLD void setBlockCustomComponentCerealContext(::cereal::ReflectionCtx& ctx, ::Experiments const& experiments);
 
-    MCAPI void setItemCustomComponentCerealContext(::cereal::ReflectionCtx& ctx, ::Experiments const& experiments);
+    MCFOLD void setItemCustomComponentCerealContext(::cereal::ReflectionCtx& ctx, ::Experiments const& experiments);
     // NOLINTEND
 
 public:

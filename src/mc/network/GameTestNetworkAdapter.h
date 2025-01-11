@@ -97,6 +97,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftGameTest& gameTest);
+    MCFOLD void* $ctor(::MinecraftGameTest& gameTest);
     // NOLINTEND
 };

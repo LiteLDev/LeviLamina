@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> clearRecord();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isPlaying();
+    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
 
     MCAPI ::Scripting::Result<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
     // NOLINTEND

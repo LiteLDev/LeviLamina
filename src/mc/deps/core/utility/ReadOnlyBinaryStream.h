@@ -72,7 +72,7 @@ public:
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
 
-    MCAPI bool hasOverflowed() const;
+    MCFOLD bool hasOverflowed() const;
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

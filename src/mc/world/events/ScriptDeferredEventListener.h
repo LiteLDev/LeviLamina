@@ -52,26 +52,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $onRunSystemTick();
+    MCFOLD bool $onRunSystemTick();
 
-    MCAPI bool $onFlushWorldAfterEvents();
+    MCFOLD bool $onFlushWorldAfterEvents();
 
-    MCAPI bool $onFlushSystemAfterEvents();
+    MCFOLD bool $onFlushSystemAfterEvents();
 
-    MCAPI bool $onFlushEditorExtensionContextAfterEvents();
+    MCFOLD bool $onFlushEditorExtensionContextAfterEvents();
 
-    MCAPI bool $onFlushBlockCustomComponentAfterEvents();
+    MCFOLD bool $onFlushBlockCustomComponentAfterEvents();
 
-    MCAPI bool $onFlushEditorDataStoreAfterEvents();
+    MCFOLD bool $onFlushEditorDataStoreAfterEvents();
 
-    MCAPI bool $onFlushItemCustomComponentAfterEvents();
+    MCFOLD bool $onFlushItemCustomComponentAfterEvents();
 
-    MCAPI void $onPreFlushAfterEvents();
+    MCFOLD void $onPreFlushAfterEvents();
 
-    MCAPI void $onPostFlushAfterEvents();
+    MCFOLD void $onPostFlushAfterEvents();
 
-    MCAPI void $onScriptTickStart();
+    MCFOLD void $onScriptTickStart();
 
-    MCAPI void $onScriptTickEnd();
+    MCFOLD void $onScriptTickEnd();
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::CameraPresets const& presets);
     // NOLINTEND

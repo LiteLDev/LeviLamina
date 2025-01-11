@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI float $getShadeBrightness(::Block const& block) const;
+    MCFOLD float $getShadeBrightness(::Block const& block) const;
     // NOLINTEND
 
 public:

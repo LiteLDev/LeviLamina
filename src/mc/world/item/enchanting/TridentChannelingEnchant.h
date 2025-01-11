@@ -34,11 +34,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCFOLD int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
     MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
     // NOLINTEND

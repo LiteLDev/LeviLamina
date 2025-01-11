@@ -60,21 +60,21 @@ public:
 
     MCAPI void _parseVersionToString();
 
-    MCAPI ::std::string const& asString() const;
+    MCFOLD ::std::string const& asString() const;
 
-    MCAPI ::std::string const& getBuildMeta() const;
+    MCFOLD ::std::string const& getBuildMeta() const;
 
-    MCAPI ushort getMajor() const;
+    MCFOLD ushort getMajor() const;
 
-    MCAPI ushort getMinor() const;
+    MCFOLD ushort getMinor() const;
 
-    MCAPI ushort getPatch() const;
+    MCFOLD ushort getPatch() const;
 
-    MCAPI ::std::string const& getPreRelease() const;
+    MCFOLD ::std::string const& getPreRelease() const;
 
     MCAPI bool isAnyVersion() const;
 
-    MCAPI bool isValid() const;
+    MCFOLD bool isValid() const;
 
     MCAPI bool operator!=(::SemVersion const& rhs) const;
 
@@ -129,6 +129,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

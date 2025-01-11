@@ -175,7 +175,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCFOLD ::Scripting::Result<void> $ready();
 
     MCAPI ::Scripting::Result<void> $quit();
 

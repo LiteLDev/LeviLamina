@@ -135,7 +135,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSequenceReader() const;
+    MCFOLD bool $isSequenceReader() const;
     // NOLINTEND
 };
 

@@ -50,9 +50,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
 
-    MCAPI bool $isSerializable() const;
+    MCFOLD bool $isSerializable() const;
     // NOLINTEND
 
 public:

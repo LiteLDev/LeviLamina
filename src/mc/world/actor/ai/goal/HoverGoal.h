@@ -57,7 +57,7 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND

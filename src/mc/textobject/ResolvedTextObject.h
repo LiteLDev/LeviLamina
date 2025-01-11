@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string getAsJsonString() const;
 
-    MCAPI ::Json::Value const& getJson() const;
+    MCFOLD ::Json::Value const& getJson() const;
 
     MCAPI ~ResolvedTextObject();
     // NOLINTEND
@@ -33,6 +33,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

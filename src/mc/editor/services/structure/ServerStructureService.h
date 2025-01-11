@@ -86,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::std::string_view $getServiceName() const;
 

@@ -153,11 +153,11 @@ public:
 
     MCAPI int64 $ftell(void* file);
 
-    MCAPI ::IFileReadAccess const* $getReadInterface() const;
+    MCFOLD ::IFileReadAccess const* $getReadInterface() const;
 
     MCAPI ::IFileWriteAccess* $getWriteInterface();
 
-    MCAPI void $unload();
+    MCFOLD void $unload();
     // NOLINTEND
 
 public:

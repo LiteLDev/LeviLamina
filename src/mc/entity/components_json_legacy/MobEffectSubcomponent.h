@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class MobEffectInstance;
 class ProjectileComponent;
 namespace Json { class Value; }
 // clang-format on
@@ -16,13 +17,8 @@ class MobEffectSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb05777;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectSubcomponent& operator=(MobEffectSubcomponent const&);
-    MobEffectSubcomponent(MobEffectSubcomponent const&);
 
 public:
     // virtual functions

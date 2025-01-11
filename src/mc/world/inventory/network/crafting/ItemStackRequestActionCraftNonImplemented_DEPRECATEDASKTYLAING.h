@@ -47,9 +47,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_write(::BinaryStream& stream) const;
+    MCFOLD void $_write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
+    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
     // NOLINTEND
 
 public:

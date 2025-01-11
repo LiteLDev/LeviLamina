@@ -76,7 +76,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ScriptModuleMinecraft::ScriptContainer> scriptContainer);
+    MCFOLD void* $ctor(::std::unique_ptr<::ScriptModuleMinecraft::ScriptContainer> scriptContainer);
     // NOLINTEND
 };
 

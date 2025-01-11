@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool getBool(::MovementAbilities ability) const;
 
-    MCAPI float getFlySpeed() const;
+    MCFOLD float getFlySpeed() const;
 
     MCAPI void setBool(::MovementAbilities ability, bool value);
 

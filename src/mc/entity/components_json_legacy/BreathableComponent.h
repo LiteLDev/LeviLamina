@@ -53,19 +53,19 @@ public:
 
     MCAPI bool canBreathe(::Actor const& owner) const;
 
-    MCAPI bool generatesBubbles() const;
+    MCFOLD bool generatesBubbles() const;
 
-    MCAPI int getAirRegenPerTick() const;
+    MCFOLD int getAirRegenPerTick() const;
 
     MCAPI short getAirSupply() const;
 
-    MCAPI ::BreathableComponent::BreathableState& getBreathableState();
+    MCFOLD ::BreathableComponent::BreathableState& getBreathableState();
 
-    MCAPI float getInhaleTime() const;
+    MCFOLD float getInhaleTime() const;
 
     MCAPI short getMaxAirSupply() const;
 
-    MCAPI int getSuffocateTime() const;
+    MCFOLD int getSuffocateTime() const;
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
@@ -85,6 +85,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

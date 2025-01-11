@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit GraphicsSettingsChangedPayload(::Editor::Settings::GraphicsProps const& props);
 
-    MCAPI ::Editor::Settings::GraphicsProps const& getGraphicsSettingsProps() const;
+    MCFOLD ::Editor::Settings::GraphicsProps const& getGraphicsSettingsProps() const;
     // NOLINTEND
 
 public:

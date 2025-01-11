@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptTransferServiceDataResponse&
+    MCFOLD ::Editor::ScriptModule::ScriptTransferServiceDataResponse&
     operator=(::Editor::ScriptModule::ScriptTransferServiceDataResponse&&);
 
     MCAPI ~ScriptTransferServiceDataResponse();
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

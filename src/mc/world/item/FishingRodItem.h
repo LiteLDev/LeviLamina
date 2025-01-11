@@ -91,25 +91,25 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $isHandEquipped() const;
+    MCFOLD bool $isHandEquipped() const;
 
-    MCAPI bool $requiresInteract() const;
+    MCFOLD bool $requiresInteract() const;
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
 
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCFOLD int $getEnchantValue() const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI bool $shouldSendInteractionGameEvents() const;
+    MCFOLD bool $shouldSendInteractionGameEvents() const;
 
-    MCAPI bool $shouldUseJsonForRenderMatrix() const;
+    MCFOLD bool $shouldUseJsonForRenderMatrix() const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
     // NOLINTEND

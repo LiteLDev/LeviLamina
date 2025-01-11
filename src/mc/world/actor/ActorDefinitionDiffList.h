@@ -49,17 +49,17 @@ public:
 
     MCAPI ::std::string definitionListToString(::std::string const& delimiter) const;
 
-    MCAPI ::DefinitionInstanceGroup const& getAddedDefinitionGroup() const;
+    MCFOLD ::DefinitionInstanceGroup const& getAddedDefinitionGroup() const;
 
-    MCAPI ::ActorDefinitionDescriptor& getChangedDescription();
+    MCFOLD ::ActorDefinitionDescriptor& getChangedDescription();
 
-    MCAPI ::std::vector<::DiffListPair> const& getDefinitionStack() const;
+    MCFOLD ::std::vector<::DiffListPair> const& getDefinitionStack() const;
 
     MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
 
-    MCAPI ::DefinitionInstanceGroup const& getRemovedDefinitionGroup() const;
+    MCFOLD ::DefinitionInstanceGroup const& getRemovedDefinitionGroup() const;
 
-    MCAPI bool hasChanged() const;
+    MCFOLD bool hasChanged() const;
 
     MCAPI bool hasDefinition(::std::string const& def) const;
 

@@ -34,11 +34,9 @@ public:
 
     MCAPI DynamicValue(::cereal::DynamicValue&&);
 
-    MCAPI explicit DynamicValue(char const*&& arg);
-
     MCAPI ::std::vector<::cereal::DynamicValue> const& asArray() const;
 
-    MCAPI ::std::vector<::cereal::DynamicValue>& asArray();
+    MCFOLD ::std::vector<::cereal::DynamicValue>& asArray();
 
     MCAPI bool const& asBool() const;
 
@@ -48,7 +46,7 @@ public:
 
     MCAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue> const& asObject() const;
 
-    MCAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue>& asObject();
+    MCFOLD ::std::unordered_map<::std::string, ::cereal::DynamicValue>& asObject();
 
     MCAPI ::std::string const& asString() const;
 
@@ -65,14 +63,12 @@ public:
     MCAPI void* $ctor(::cereal::DynamicValue const&);
 
     MCAPI void* $ctor(::cereal::DynamicValue&&);
-
-    MCAPI void* $ctor(char const*&& arg);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

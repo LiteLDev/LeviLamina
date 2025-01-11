@@ -110,7 +110,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& scriptingInitializedEvent);
 
-    MCAPI bool $isClientSide() const;
+    MCFOLD bool $isClientSide() const;
 
     MCAPI ::std::unique_ptr<::Editor::IEditorPlayer> $createPlayer(::Player& player);
 

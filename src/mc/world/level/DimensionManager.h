@@ -53,7 +53,7 @@ public:
         ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
     );
 
-    MCAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
+    MCFOLD void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
     MCAPI void forEachDimension(::std::function<bool(::Dimension const&)>) const;
 
@@ -62,13 +62,13 @@ public:
     MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
     getDimensionDefinition(::std::string const& dimensionName) const;
 
-    MCAPI ::std::optional<::DimensionDefinitionGroup> const& getDimensionDefinitionGroup() const;
+    MCFOLD ::std::optional<::DimensionDefinitionGroup> const& getDimensionDefinitionGroup() const;
 
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
 
     MCAPI ::WeakRef<::Dimension> getRandomDimension(::Random& random);
 
-    MCAPI bool hasDimensions() const;
+    MCFOLD bool hasDimensions() const;
 
     MCAPI void setDimensionDefinitionGroup(::std::optional<::DimensionDefinitionGroup> dimensionDefinitions);
 
@@ -93,7 +93,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
     // NOLINTEND
 
 public:

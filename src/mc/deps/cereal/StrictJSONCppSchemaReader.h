@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -92,9 +92,9 @@ public:
 
     MCAPI bool $_allowAsUInt64();
 
-    MCAPI bool $_allowAsFloat();
+    MCFOLD bool $_allowAsFloat();
 
-    MCAPI bool $_allowAsDouble();
+    MCFOLD bool $_allowAsDouble();
     // NOLINTEND
 
 public:

@@ -38,11 +38,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
 
-    MCAPI ::EventResult $onMessage(::MessageEvent const&);
+    MCFOLD ::EventResult $onMessage(::MessageEvent const&);
 
-    MCAPI ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
+    MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
     // NOLINTEND
 
 public:

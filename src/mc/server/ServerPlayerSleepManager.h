@@ -69,7 +69,7 @@ public:
 
     MCAPI void _broadcastSleepingPlayerList(::PlayerSleepStatus const& playerSleepStatus);
 
-    MCAPI void _onPlayerDeath();
+    MCFOLD void _onPlayerDeath();
 
     MCAPI bool enoughPlayersDeepSleeping() const;
 
@@ -100,9 +100,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $updateSleepingPlayerList();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
     // NOLINTEND
 
 public:

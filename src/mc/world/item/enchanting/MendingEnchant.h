@@ -38,9 +38,9 @@ public:
 
     MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCAPI bool $isTreasureOnly() const;
+    MCFOLD bool $isTreasureOnly() const;
     // NOLINTEND
 
 public:

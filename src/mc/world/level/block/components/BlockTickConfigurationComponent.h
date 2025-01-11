@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getRandomTickDelay(::Random& random) const;
+    MCFOLD int getRandomTickDelay(::Random& random) const;
     // NOLINTEND
 };

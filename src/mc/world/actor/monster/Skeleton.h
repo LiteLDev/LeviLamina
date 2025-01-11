@@ -110,7 +110,7 @@ public:
 
     MCAPI bool $canBeAffected(uint id) const;
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* entity);
 
     MCAPI void $normalTick();
 

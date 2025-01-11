@@ -48,7 +48,7 @@ public:
 
     MCAPI bool isOnThread() const;
 
-    MCAPI bool operator==(::std::thread::id const& id) const;
+    MCFOLD bool operator==(::std::thread::id const& id) const;
     // NOLINTEND
 };
 

@@ -54,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
     // NOLINTEND
 
 public:

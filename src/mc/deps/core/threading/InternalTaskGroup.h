@@ -60,24 +60,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $queue(
+    MCFOLD ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $queue(
         ::TaskStartInfoEx<void> const&                startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
         ::std::function<void()>&&                     callback
     );
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    MCFOLD ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
     $queueSync(::TaskStartInfoEx<void> const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
 
-    MCAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase>);
+    MCFOLD void $taskRegister(::std::shared_ptr<::BackgroundTaskBase>);
 
-    MCAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool);
+    MCFOLD void $requeueTask(::std::shared_ptr<::BackgroundTaskBase>, bool);
 
-    MCAPI ::TaskGroupState $getState() const;
+    MCFOLD ::TaskGroupState $getState() const;
 
-    MCAPI void $processCoroutines();
+    MCFOLD void $processCoroutines();
 
-    MCAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
+    MCFOLD void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
     // NOLINTEND
 
 public:

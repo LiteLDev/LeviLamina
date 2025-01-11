@@ -48,7 +48,7 @@ MCAPI void insertStructure(
     ::br::worldgen::StructureInstance const& instance
 );
 
-MCAPI bool serialize(::IDataOutput& stream, ::br::StructureKey const& val);
+MCFOLD bool serialize(::IDataOutput& stream, ::br::StructureKey const& val);
 
 MCAPI bool serialize(::IDataOutput& stream, ::br::StructureType const& val);
 

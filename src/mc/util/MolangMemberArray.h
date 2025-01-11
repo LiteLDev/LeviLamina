@@ -73,7 +73,7 @@ public:
 
     MCAPI ::MolangScriptArg const* get(::HashedString const& name) const;
 
-    MCAPI ::std::vector<::MolangMemberVariable> const& getMembers() const;
+    MCFOLD ::std::vector<::MolangMemberVariable> const& getMembers() const;
 
     MCAPI ::MolangScriptArg& getOrAdd(::HashedString const& name);
 
@@ -91,7 +91,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::MolangMemberArray const&);
 

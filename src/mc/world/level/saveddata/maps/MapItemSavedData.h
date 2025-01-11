@@ -181,7 +181,7 @@ public:
     MCAPI ::std::shared_ptr<::MapItemTrackedActor>
     addTrackedMapEntity(::BlockPos const& position, ::BlockSource& region, ::MapDecoration::Type decorationType);
 
-    MCAPI bool areClientPixelsDirty() const;
+    MCFOLD bool areClientPixelsDirty() const;
 
     MCAPI void checkNeedsResampling();
 
@@ -191,15 +191,15 @@ public:
 
     MCAPI void enableUnlimitedTracking();
 
-    MCAPI ::std::vector<::ClientTerrainPixel>& getClientPixels();
+    MCFOLD ::std::vector<::ClientTerrainPixel>& getClientPixels();
 
-    MCAPI ::SpinLockImpl* getClientSamplingLock();
+    MCFOLD ::SpinLockImpl* getClientSamplingLock();
 
     MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
 
-    MCAPI ::ActorUniqueID getMapId() const;
+    MCFOLD ::ActorUniqueID getMapId() const;
 
-    MCAPI ::ActorUniqueID getParentMapId() const;
+    MCFOLD ::ActorUniqueID getParentMapId() const;
 
     MCAPI ::buffer_span<uint> getPixels() const;
 

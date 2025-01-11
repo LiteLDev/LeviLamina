@@ -57,9 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $readfromJSON(::Json::Value&);
+    MCFOLD void $readfromJSON(::Json::Value&);
 
-    MCAPI void $writetoJSON(::Json::Value&) const;
+    MCFOLD void $writetoJSON(::Json::Value&) const;
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 

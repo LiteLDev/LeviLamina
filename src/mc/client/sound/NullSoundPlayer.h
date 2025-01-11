@@ -107,53 +107,53 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $play(::std::string const&, ::Vec3 const&, float, float);
+    MCFOLD uint64 $play(::std::string const&, ::Vec3 const&, float, float);
 
-    MCAPI uint64 $playUI(::std::string const&, float, float);
+    MCFOLD uint64 $playUI(::std::string const&, float, float);
 
-    MCAPI void $playMusic(::std::string const&, float, uint&);
+    MCFOLD void $playMusic(::std::string const&, float, uint&);
 
-    MCAPI void $playMusic(::std::string const&, float);
+    MCFOLD void $playMusic(::std::string const&, float);
 
-    MCAPI bool $isLoadingMusic() const;
+    MCFOLD bool $isLoadingMusic() const;
 
-    MCAPI bool $isPlayingMusicEvent(::std::string const&) const;
+    MCFOLD bool $isPlayingMusicEvent(::std::string const&) const;
 
-    MCAPI bool $isPlayingMusic(::Core::Path const&) const;
+    MCFOLD bool $isPlayingMusic(::Core::Path const&) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getCurrentlyPlayingMusicName();
+    MCFOLD ::Core::PathBuffer<::std::string> const $getCurrentlyPlayingMusicName();
 
-    MCAPI bool $getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const;
+    MCFOLD bool $getItem(::std::string const&, ::Core::Path const&, ::SoundItem&) const;
 
-    MCAPI void $fadeToStopMusic(float);
+    MCFOLD void $fadeToStopMusic(float);
 
-    MCAPI void $setMusicCommandVolumeMultiplier(float);
+    MCFOLD void $setMusicCommandVolumeMultiplier(float);
 
-    MCAPI void $stopMusic();
+    MCFOLD void $stopMusic();
 
     MCAPI uint64 $registerLoop(::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float);
 
-    MCAPI void $unregisterLoop(uint64, bool);
+    MCFOLD void $unregisterLoop(uint64, bool);
 
-    MCAPI void $stop(::std::string const&);
+    MCFOLD void $stop(::std::string const&);
 
-    MCAPI void $stop(uint64);
+    MCFOLD void $stop(uint64);
 
-    MCAPI void $fadeOut(uint64, float);
+    MCFOLD void $fadeOut(uint64, float);
 
-    MCAPI void $stopAllSounds();
+    MCFOLD void $stopAllSounds();
 
-    MCAPI bool $isPlayingSound(uint64) const;
+    MCFOLD bool $isPlayingSound(uint64) const;
 
-    MCAPI bool $isPlayingSound(::Core::Path const&) const;
+    MCFOLD bool $isPlayingSound(::Core::Path const&) const;
 
-    MCAPI uint64 $playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
+    MCFOLD uint64 $playAttached(::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
 
-    MCAPI void $stopAllDelayedSoundActions();
+    MCFOLD void $stopAllDelayedSoundActions();
 
     MCAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64) const;
 
-    MCAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64) const;
+    MCFOLD ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64) const;
     // NOLINTEND
 
 public:

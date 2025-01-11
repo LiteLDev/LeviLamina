@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI static bool canBeDestroyedByLiquidSpread(::Block const& block);
 
-    MCAPI static bool canContainLiquid(::Block const& block);
+    MCFOLD static bool canContainLiquid(::Block const& block);
 
     MCAPI static bool isLiquidBlocking(::Block const& block);
 

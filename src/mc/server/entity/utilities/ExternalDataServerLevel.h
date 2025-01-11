@@ -78,19 +78,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
+    MCFOLD bool $isInWorldAndNotShowingAnyMenuScreens() const;
 
     MCAPI ::AdventureSettings const& $getAdventureSettings() const;
 
-    MCAPI ::ClientPlayMode $getPlayMode() const;
+    MCFOLD ::ClientPlayMode $getPlayMode() const;
 
-    MCAPI float $getSmoothRotationSpeed() const;
+    MCFOLD float $getSmoothRotationSpeed() const;
 
-    MCAPI ::InputMode $getInputMode() const;
+    MCFOLD ::InputMode $getInputMode() const;
 
     MCAPI ::GameType $getDefaultGameType() const;
 
-    MCAPI ::Vec3 $getWorldSpaceVRRealityGazeDir() const;
+    MCFOLD ::Vec3 $getWorldSpaceVRRealityGazeDir() const;
     // NOLINTEND
 
 public:

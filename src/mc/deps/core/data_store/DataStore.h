@@ -157,7 +157,7 @@ public:
         // NOLINTBEGIN
         MCAPI CustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers&&);
 
-        MCAPI ::Bedrock::DataStore::CustomFileHandlers& operator=(::Bedrock::DataStore::CustomFileHandlers&&);
+        MCFOLD ::Bedrock::DataStore::CustomFileHandlers& operator=(::Bedrock::DataStore::CustomFileHandlers&&);
 
         MCAPI ~CustomFileHandlers();
         // NOLINTEND
@@ -171,7 +171,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

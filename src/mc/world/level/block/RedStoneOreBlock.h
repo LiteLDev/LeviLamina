@@ -91,7 +91,7 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface() const;
 
     MCAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND

@@ -253,7 +253,7 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCAPI bool $canLaunchUri(::std::string const& uri);
+    MCFOLD bool $canLaunchUri(::std::string const& uri);
 
     MCAPI void $launchUri(::std::string const& uri);
 
@@ -265,11 +265,11 @@ public:
 
     MCAPI ::OsVersion $getOSVersion() const;
 
-    MCAPI bool $hasFastAlphaTest() const;
+    MCFOLD bool $hasFastAlphaTest() const;
 
-    MCAPI bool $supportsVibration() const;
+    MCFOLD bool $supportsVibration() const;
 
-    MCAPI bool $supportsFliteTTS() const;
+    MCFOLD bool $supportsFliteTTS() const;
 
     MCAPI int $getScreenWidth() const;
 
@@ -279,21 +279,21 @@ public:
 
     MCAPI int $getDisplayHeight();
 
-    MCAPI void $setScreenSize(int width, int height);
+    MCFOLD void $setScreenSize(int width, int height);
 
     MCAPI void $setWindowSize(int width, int height);
 
     MCAPI void $setWindowText(::std::string const& title);
 
-    MCAPI ::std::string $getTextBoxBackend() const;
+    MCFOLD ::std::string $getTextBoxBackend() const;
 
-    MCAPI void $setTextBoxBackend(::std::string const& newText);
+    MCFOLD void $setTextBoxBackend(::std::string const& newText);
 
-    MCAPI int $getCaretPosition() const;
+    MCFOLD int $getCaretPosition() const;
 
-    MCAPI void $setCaretPosition(int position);
+    MCFOLD void $setCaretPosition(int position);
 
-    MCAPI bool $hasBuyButtonWhenInvalidLicense();
+    MCFOLD bool $hasBuyButtonWhenInvalidLicense();
 
     MCAPI ::std::string $getApplicationId() const;
 
@@ -301,15 +301,15 @@ public:
 
     MCAPI ::std::string $getPackageFamilyName() const;
 
-    MCAPI ::PlatformType $getPlatformType() const;
+    MCFOLD ::PlatformType $getPlatformType() const;
 
-    MCAPI ::BuildPlatform $getBuildPlatform() const;
+    MCFOLD ::BuildPlatform $getBuildPlatform() const;
 
     MCAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
     MCAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
 
-    MCAPI void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
+    MCFOLD void $setSecureStorageKey(::std::string const&, ::SecureStorageKey const&);
 
     MCAPI ::std::string $getPlatformString() const;
 
@@ -339,9 +339,9 @@ public:
 
     MCAPI void $hideSplashScreen();
 
-    MCAPI int $getPlatformDpi() const;
+    MCFOLD int $getPlatformDpi() const;
 
-    MCAPI ::UIScalingRules $getPlatformUIScalingRules() const;
+    MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
     // NOLINTEND
 
 public:

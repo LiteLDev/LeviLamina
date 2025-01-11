@@ -175,15 +175,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $loadedSuccessfully() const;
+    MCFOLD bool $loadedSuccessfully() const;
 
     MCAPI bool $clonePlayerData(::std::string_view fromKey, ::std::string_view toKey);
 
-    MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
+    MCFOLD bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
 
-    MCAPI void $freeCaches();
+    MCFOLD void $freeCaches();
 
-    MCAPI void $corruptLevel();
+    MCFOLD void $corruptLevel();
     // NOLINTEND
 
 public:

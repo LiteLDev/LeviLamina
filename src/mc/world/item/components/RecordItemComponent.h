@@ -45,13 +45,13 @@ public:
 
     MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
-    MCAPI int getComparatorSignal() const;
+    MCFOLD int getComparatorSignal() const;
 
-    MCAPI float getDuration() const;
+    MCFOLD float getDuration() const;
 
     MCAPI ::std::string getRecordDescription() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getSound() const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent getSound() const;
     // NOLINTEND
 
 public:

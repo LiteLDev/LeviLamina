@@ -24,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::VolumeDefinition const* tryGetVolumeDefinition(::std::string const& identifier) const;
+    MCFOLD ::VolumeDefinition const* tryGetVolumeDefinition(::std::string const& identifier) const;
     // NOLINTEND
 };

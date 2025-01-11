@@ -339,7 +339,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Level& $getLevel() const;
+    MCFOLD ::Level& $getLevel() const;
 
     MCAPI void
     $onWeatherChanged(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&

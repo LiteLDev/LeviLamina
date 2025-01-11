@@ -56,7 +56,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -125,7 +125,7 @@ public:
 
     MCAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void setOwningChunk(::LevelChunk* owningChunk);
+    MCFOLD void setOwningChunk(::LevelChunk* owningChunk);
 
     MCAPI void tickAllPendingTicks(::BlockSource& region, uint64 maximumTicksAllowed);
 

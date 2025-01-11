@@ -41,9 +41,9 @@ public:
 
     MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> getContainerRegistryAccess() const;
 
-    MCAPI ::Player& getPlayer() const;
+    MCFOLD ::Player& getPlayer() const;
 
-    MCAPI ::ContainerType getScreenContainerType() const;
+    MCFOLD ::ContainerType getScreenContainerType() const;
 
     MCAPI ::Actor* tryGetActor() const;
 

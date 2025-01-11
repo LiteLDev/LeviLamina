@@ -21,11 +21,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptDebuggerMessages::NotificationEvent& operator=(::ScriptDebuggerMessages::NotificationEvent const&);
+    MCFOLD ::ScriptDebuggerMessages::NotificationEvent& operator=(::ScriptDebuggerMessages::NotificationEvent const&);
 
-    MCAPI ::ScriptDebuggerMessages::NotificationEvent& operator=(::ScriptDebuggerMessages::NotificationEvent&&);
+    MCFOLD ::ScriptDebuggerMessages::NotificationEvent& operator=(::ScriptDebuggerMessages::NotificationEvent&&);
 
-    MCAPI bool operator==(::ScriptDebuggerMessages::NotificationEvent const&) const;
+    MCFOLD bool operator==(::ScriptDebuggerMessages::NotificationEvent const&) const;
 
     MCAPI ~NotificationEvent();
     // NOLINTEND
@@ -33,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

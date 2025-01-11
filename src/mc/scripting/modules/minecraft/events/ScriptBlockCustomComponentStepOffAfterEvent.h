@@ -38,7 +38,7 @@ public:
         ::Scripting::WeakLifetimeScope const&                                                          scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOffAfterEvent&
+    MCFOLD ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOffAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOffAfterEvent&&);
     // NOLINTEND
 
@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
+    MCFOLD static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
     tryGetComponentsToExecute(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage const& eventData
     );
@@ -56,7 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOffAfterEventIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                          scope
     );

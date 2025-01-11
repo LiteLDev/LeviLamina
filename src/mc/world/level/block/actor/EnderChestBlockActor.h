@@ -57,9 +57,9 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
     MCAPI void $playOpenSound(::BlockSource& region);
 

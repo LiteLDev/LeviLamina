@@ -16,14 +16,8 @@ class EndermanTakeBlockGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2848f9;
+    ::ll::TypedStorage<8, 8, ::EnderMan&> mEnderman;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EndermanTakeBlockGoal& operator=(EndermanTakeBlockGoal const&);
-    EndermanTakeBlockGoal(EndermanTakeBlockGoal const&);
-    EndermanTakeBlockGoal();
 
 public:
     // virtual functions

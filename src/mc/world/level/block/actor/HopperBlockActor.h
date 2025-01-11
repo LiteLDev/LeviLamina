@@ -148,25 +148,25 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
-    MCAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
-    MCAPI void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource&);
 
     MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const&);
 
-    MCAPI void $onMove();
+    MCFOLD void $onMove();
 
     MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
@@ -174,9 +174,9 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
     // NOLINTEND
 
 public:

@@ -81,7 +81,7 @@ public:
 
     MCAPI void $newServerAiStep();
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCFOLD void $die(::ActorDamageSource const& source);
 
     MCAPI void $remove();
 

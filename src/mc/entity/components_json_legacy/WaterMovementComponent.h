@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     MCAPI WaterMovementComponent();
 
-    MCAPI float getDragFactor() const;
+    MCFOLD float getDragFactor() const;
 
     MCAPI void initFromDefinition(::Actor& owner);
     // NOLINTEND

@@ -34,11 +34,11 @@ public:
     MCAPI ::std::optional<::ItemInstance>
     createInstance(int count, int aux, ::CommandOutput& output, bool requireExactAux) const;
 
-    MCAPI int getId() const;
+    MCFOLD int getId() const;
 
     MCAPI explicit operator bool() const;
 
-    MCAPI explicit operator uint64() const;
+    MCFOLD explicit operator uint64() const;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(uint64 versionId);
+    MCFOLD void* $ctor(uint64 versionId);
 
     MCAPI void* $ctor(int id, short version, bool overrideAux);
     // NOLINTEND

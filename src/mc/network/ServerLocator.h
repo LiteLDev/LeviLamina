@@ -77,15 +77,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onDisable();
+    MCFOLD void $_onDisable();
 
-    MCAPI void $_onEnable();
+    MCFOLD void $_onEnable();
     // NOLINTEND
 
 public:

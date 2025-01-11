@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -50,7 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
-    MCAPI bool $isSilentWhenJumpingOff() const;
+    MCFOLD bool $isSilentWhenJumpingOff() const;
     // NOLINTEND
 
 public:

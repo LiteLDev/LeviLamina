@@ -135,13 +135,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
     MCAPI ::cereal::SchemaReaderState $isObject() const;
 
@@ -181,7 +181,7 @@ public:
 
     MCAPI void $pushElement(uint64 index, ::cereal::PropertyReader const&);
 
-    MCAPI void $pop();
+    MCFOLD void $pop();
     // NOLINTEND
 
 public:

@@ -26,8 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::gsl::not_null<::SynchedActorData*> _get();
+    MCFOLD ::gsl::not_null<::SynchedActorData*> _get();
 
-    MCAPI ::SynchedActorDataReader reader() const;
+    MCFOLD ::SynchedActorDataReader reader() const;
     // NOLINTEND
 };

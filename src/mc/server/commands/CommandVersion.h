@@ -41,6 +41,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int from, int to);
+    MCFOLD void* $ctor(int from, int to);
     // NOLINTEND
 };

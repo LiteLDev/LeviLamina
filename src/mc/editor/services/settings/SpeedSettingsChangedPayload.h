@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SpeedSettingsChangedPayload(::Editor::Settings::SpeedProps const& props);
 
-    MCAPI ::Editor::Settings::SpeedProps const& getSpeedSettingsProps() const;
+    MCFOLD ::Editor::Settings::SpeedProps const& getSpeedSettingsProps() const;
     // NOLINTEND
 
 public:

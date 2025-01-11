@@ -44,13 +44,13 @@ public:
         ::GatheringServerInfo const& gatheringServerInfo
     );
 
-    MCAPI ::std::string const& getHostIpAddress() const;
+    MCFOLD ::std::string const& getHostIpAddress() const;
 
-    MCAPI int getPort() const;
+    MCFOLD int getPort() const;
 
-    MCAPI ::ThirdPartyInfo const& getThirdPartyServerInfo() const;
+    MCFOLD ::ThirdPartyInfo const& getThirdPartyServerInfo() const;
 
-    MCAPI ::Social::ConnectionType getType() const;
+    MCFOLD ::Social::ConnectionType getType() const;
 
     MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
 

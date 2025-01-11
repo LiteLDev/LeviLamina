@@ -19,13 +19,13 @@ public:
 
     MCAPI float getValue(float base) const;
 
-    MCAPI bool isRelative() const;
+    MCFOLD bool isRelative() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(float offset, bool relative);
     // NOLINTEND

@@ -45,19 +45,19 @@ public:
         int                            selection
     );
 
-    MCAPI ::std::string const& getFinalBlock() const;
+    MCFOLD ::std::string const& getFinalBlock() const;
 
-    MCAPI ::SharedTypes::JigsawJointType const& getJointType() const;
+    MCFOLD ::SharedTypes::JigsawJointType const& getJointType() const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI int getPlacementPriority() const;
+    MCFOLD int getPlacementPriority() const;
 
-    MCAPI int getSelectionPriority() const;
+    MCFOLD int getSelectionPriority() const;
 
-    MCAPI ::std::string const& getTarget() const;
+    MCFOLD ::std::string const& getTarget() const;
 
-    MCAPI ::std::string const& getTargetPool() const;
+    MCFOLD ::std::string const& getTargetPool() const;
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -71,9 +71,9 @@ public:
 
     MCAPI void setJointTypeVisible(bool visible);
 
-    MCAPI void setName(::std::string const& name);
+    MCFOLD void setName(::std::string const& name);
 
-    MCAPI void setTarget(::std::string const& target);
+    MCFOLD void setTarget(::std::string const& target);
 
     MCAPI void setTargetPool(::std::string const& targetPool);
 
@@ -105,6 +105,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

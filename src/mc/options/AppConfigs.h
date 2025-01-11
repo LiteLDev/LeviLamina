@@ -183,67 +183,67 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadFromData(::IAppConfigData const&);
+    MCFOLD void $loadFromData(::IAppConfigData const&);
 
-    MCAPI bool $arePremiumSkinPacksAllowed() const;
+    MCFOLD bool $arePremiumSkinPacksAllowed() const;
 
-    MCAPI bool $areResourcePacksAllowed() const;
+    MCFOLD bool $areResourcePacksAllowed() const;
 
-    MCAPI bool $isPlayScreenAllowed() const;
+    MCFOLD bool $isPlayScreenAllowed() const;
 
-    MCAPI bool $isChatScreenAllowed() const;
+    MCFOLD bool $isChatScreenAllowed() const;
 
-    MCAPI bool $isGameTabShownInSettings() const;
+    MCFOLD bool $isGameTabShownInSettings() const;
 
-    MCAPI bool $areEmotesSupported() const;
+    MCFOLD bool $areEmotesSupported() const;
 
-    MCAPI bool $useNormalizedFontSize() const;
+    MCFOLD bool $useNormalizedFontSize() const;
 
-    MCAPI bool $useFullScreenByDefault() const;
+    MCFOLD bool $useFullScreenByDefault() const;
 
-    MCAPI bool $muteByDefault() const;
+    MCFOLD bool $muteByDefault() const;
 
-    MCAPI bool $isCoursesCacheEnabled() const;
+    MCFOLD bool $isCoursesCacheEnabled() const;
 
-    MCAPI bool $shouldPromptBeforeExit() const;
+    MCFOLD bool $shouldPromptBeforeExit() const;
 
-    MCAPI bool $gameArgumentsNeedAuthentication() const;
+    MCFOLD bool $gameArgumentsNeedAuthentication() const;
 
-    MCAPI bool $worldBuilderDisabled() const;
+    MCFOLD bool $worldBuilderDisabled() const;
 
-    MCAPI bool $worldsAreSingleUse() const;
+    MCFOLD bool $worldsAreSingleUse() const;
 
-    MCAPI ::EducationEditionOffer $getEducationEditionOffering() const;
+    MCFOLD ::EducationEditionOffer $getEducationEditionOffering() const;
 
-    MCAPI bool $requireTrustedContent() const;
+    MCFOLD bool $requireTrustedContent() const;
 
-    MCAPI bool $isExternalPlayerCommunicationAllowed() const;
+    MCFOLD bool $isExternalPlayerCommunicationAllowed() const;
 
     MCAPI bool $supports3DExport() const;
 
-    MCAPI bool $requireEduLevelSettings() const;
+    MCFOLD bool $requireEduLevelSettings() const;
 
     MCAPI ::ConnectionDefinition $getConnectionDefinition() const;
 
-    MCAPI bool $supportsChangingMultiplayerDuringPlay() const;
+    MCFOLD bool $supportsChangingMultiplayerDuringPlay() const;
 
-    MCAPI bool $webSocketsDisabled() const;
+    MCFOLD bool $webSocketsDisabled() const;
 
-    MCAPI bool $sendPermissionsTelemetry() const;
+    MCFOLD bool $sendPermissionsTelemetry() const;
 
-    MCAPI bool $useEduDemoUpsellDialog() const;
+    MCFOLD bool $useEduDemoUpsellDialog() const;
 
-    MCAPI bool $allowGameArguments() const;
+    MCFOLD bool $allowGameArguments() const;
 
-    MCAPI bool $canUseAzureNotebooks() const;
+    MCFOLD bool $canUseAzureNotebooks() const;
 
-    MCAPI ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
+    MCFOLD ::AppConfigs::MaelstromEduUsabilityStatus $canUseMaelstrom() const;
 
-    MCAPI bool $isSaveToCloudOn() const;
+    MCFOLD bool $isSaveToCloudOn() const;
 
-    MCAPI bool $isEduAIOn() const;
+    MCFOLD bool $isEduAIOn() const;
 
-    MCAPI void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
+    MCFOLD void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
 
     MCAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
 
@@ -256,7 +256,7 @@ public:
 
     MCAPI ::std::string $getHelpCenterURL() const;
 
-    MCAPI void $applyLevelDataOverride(::LevelData&) const;
+    MCFOLD void $applyLevelDataOverride(::LevelData&) const;
     // NOLINTEND
 
 public:

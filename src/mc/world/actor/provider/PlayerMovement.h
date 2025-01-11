@@ -49,7 +49,7 @@ MCAPI ::PlayerPositionModeComponent::PositionMode getPositionMode(::EntityContex
 
 MCAPI void initializePlayer(::EntityContext& provider);
 
-MCAPI bool isGamepadOrMotionController(::PlayerInputModeComponent const& playerInputModeComponent);
+MCFOLD bool isGamepadOrMotionController(::PlayerInputModeComponent const& playerInputModeComponent);
 
 MCAPI bool isHoloRealityMode(::PlayerInputModeComponent const& playerInputModeComponent);
 

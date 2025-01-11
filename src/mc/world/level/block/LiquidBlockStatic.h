@@ -59,7 +59,7 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
+    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
     // NOLINTEND
 
 public:

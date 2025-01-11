@@ -48,11 +48,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isMultiRecipe() const;
+    MCFOLD bool $isMultiRecipe() const;
 
-    MCAPI bool $isShapeless() const;
+    MCFOLD bool $isShapeless() const;
 
-    MCAPI bool $hasDataDrivenResult() const;
+    MCFOLD bool $hasDataDrivenResult() const;
     // NOLINTEND
 
 public:

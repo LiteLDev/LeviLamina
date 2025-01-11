@@ -128,7 +128,7 @@ public:
         bool ignoreJigsawBlocks
     ) const;
 
-    MCAPI ::IStructureTemplate const& asStructureTemplate() const;
+    MCFOLD ::IStructureTemplate const& asStructureTemplate() const;
 
     MCAPI void fillEmpty(::BlockPos const& size);
 
@@ -142,11 +142,11 @@ public:
 
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI bool getRemovable() const;
+    MCFOLD bool getRemovable() const;
 
-    MCAPI ::BlockPos const& getSize() const;
+    MCFOLD ::BlockPos const& getSize() const;
 
     MCAPI bool isLoaded() const;
 

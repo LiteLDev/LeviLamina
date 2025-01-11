@@ -1738,7 +1738,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updatePlayerUndergroundStatus(::Player* player, bool isUnderground);
+    MCFOLD void $updatePlayerUndergroundStatus(::Player* player, bool isUnderground);
     // NOLINTEND
 
 public:

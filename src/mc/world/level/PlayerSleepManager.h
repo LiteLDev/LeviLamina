@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI PlayerSleepManager();
 
-    MCAPI ::PlayerSleepStatus const& getPlayerSleepStatus() const;
+    MCFOLD ::PlayerSleepStatus const& getPlayerSleepStatus() const;
 
     MCAPI void setSleepStatus(::PlayerSleepStatus const& sleepStatus);
     // NOLINTEND
@@ -55,7 +55,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateSleepingPlayerList();
+    MCFOLD void $updateSleepingPlayerList();
     // NOLINTEND
 
 public:

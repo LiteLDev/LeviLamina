@@ -33,7 +33,7 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 $threadId();
 
-    MCAPI void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
+    MCFOLD void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
     // NOLINTEND
 
 public:

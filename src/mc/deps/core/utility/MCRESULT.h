@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     MCAPI int getFullCode() const;
 
-    MCAPI bool isSuccess() const;
+    MCFOLD bool isSuccess() const;
 
     MCAPI bool operator==(::MCRESULT const& other) const;
     // NOLINTEND

@@ -186,45 +186,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $getCursorHitBlockPos() const;
+    MCFOLD ::std::optional<::BlockPos> $getCursorHitBlockPos() const;
 
-    MCAPI ::std::optional<::Vec3> $getCursorHitPos() const;
+    MCFOLD ::std::optional<::Vec3> $getCursorHitPos() const;
 
     MCAPI bool $hasChatPerms() const;
 
     MCAPI bool $hasTellPerms() const;
 
-    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
+    MCFOLD bool $canUseAbility(::AbilitiesIndex ability) const;
 
     MCAPI bool $isWorldBuilder() const;
 
-    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
     MCAPI bool $isSelectorExpansionAllowed() const;
 
     MCAPI ::NetworkIdentifier const& $getSourceId() const;
 
-    MCAPI ::SubClientId $getSourceSubId() const;
+    MCFOLD ::SubClientId $getSourceSubId() const;
 
-    MCAPI ::CommandOrigin const& $getOutputReceiver() const;
+    MCFOLD ::CommandOrigin const& $getOutputReceiver() const;
 
     MCAPI ::CommandOriginIdentity $getIdentity() const;
 
     MCAPI ::CommandOriginData $toCommandOriginData() const;
 
-    MCAPI ::mce::UUID const& $getUUID() const;
+    MCFOLD ::mce::UUID const& $getUUID() const;
 
-    MCAPI void $handleCommandOutputCallback(int, ::std::string&&) const;
+    MCFOLD void $handleCommandOutputCallback(int, ::std::string&&) const;
 
-    MCAPI void $updateValues();
+    MCFOLD void $updateValues();
 
     MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
 
     MCAPI ::CompoundTag $serialize() const;
 
-    MCAPI bool $requiresValidLevel() const;
+    MCFOLD bool $requiresValidLevel() const;
 
-    MCAPI void $_setUUID(::mce::UUID const& uuid);
+    MCFOLD void $_setUUID(::mce::UUID const& uuid);
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ public:
 
     MCAPI void addMapping(int id, ::Block const& block);
 
-    MCAPI void clearMap();
+    MCFOLD void clearMap();
 
     MCAPI ::Block const& getBlock(int id);
 
@@ -42,6 +42,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

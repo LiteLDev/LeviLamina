@@ -58,7 +58,7 @@ public:
     MCAPI ::std::unique_ptr<::CommandContext>
     createCommandContext(::NetworkIdentifier const& source, ::Bedrock::NonOwnerPointer<::ILevel> const& level) const;
 
-    MCAPI bool getInternalSource() const;
+    MCFOLD bool getInternalSource() const;
     // NOLINTEND
 
 public:

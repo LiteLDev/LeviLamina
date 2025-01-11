@@ -73,9 +73,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
-    MCAPI void $applyNaturalSlowdown(::BlockSource& region);
+    MCFOLD void $applyNaturalSlowdown(::BlockSource& region);
 
-    MCAPI ::MinecartType $getType();
+    MCFOLD ::MinecartType $getType();
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
     // NOLINTEND

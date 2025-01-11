@@ -122,17 +122,17 @@ public:
     // NOLINTBEGIN
     MCAPI ::PackAccessAssetGenerationResult $generateAssetSet();
 
-    MCAPI bool $isTrusted() const;
+    MCFOLD bool $isTrusted() const;
 
-    MCAPI bool $isWritable() const;
+    MCFOLD bool $isWritable() const;
 
     MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
     MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCAPI bool $deleteAsset(::Core::Path const& packRelativePath);
+    MCFOLD bool $deleteAsset(::Core::Path const& packRelativePath);
 
-    MCAPI bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
+    MCFOLD bool $writeAsset(::Core::Path const& packRelativePath, ::std::string const& fileContent);
 
     MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 

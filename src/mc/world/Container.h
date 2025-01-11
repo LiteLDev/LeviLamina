@@ -54,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -233,15 +233,15 @@ public:
 
     MCAPI void addCloseListener(::ContainerCloseListener* listener);
 
-    MCAPI ::ContainerType getContainerType() const;
+    MCFOLD ::ContainerType getContainerType() const;
 
-    MCAPI ::ContainerType getGameplayContainerType() const;
+    MCFOLD ::ContainerType getGameplayContainerType() const;
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
     MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 
-    MCAPI ::ContainerRuntimeId const& getRuntimeId() const;
+    MCFOLD ::ContainerRuntimeId const& getRuntimeId() const;
 
     MCAPI void initRuntimeId();
 
@@ -253,7 +253,7 @@ public:
 
     MCAPI void serverInitItemStackIdsAll(::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCAPI void setGameplayContainerType(::ContainerType type);
+    MCFOLD void setGameplayContainerType(::ContainerType type);
 
     MCAPI void triggerTransactionChange(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
@@ -291,13 +291,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCFOLD void $init();
 
     MCAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
 
     MCAPI void $removeContentChangeListener(::ContainerContentChangeListener* listener);
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
 
     MCAPI bool $hasRemovedSubscribers() const;
 
@@ -309,7 +309,7 @@ public:
 
     MCAPI bool $addItemToFirstEmptySlot(::ItemStack const& item);
 
-    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
     MCAPI void $removeItem(int slot, int count);
 
@@ -335,9 +335,9 @@ public:
 
     MCAPI int $findFirstSlotForItem(::ItemStack const& item) const;
 
-    MCAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
     MCAPI void $setContainerChanged(int slot);
 
@@ -356,11 +356,11 @@ public:
         ::std::function<void()>                                                          execute
     );
 
-    MCAPI void $initializeContainerContents(::BlockSource& region);
+    MCFOLD void $initializeContainerContents(::BlockSource& region);
 
     MCAPI bool $isEmpty() const;
 
-    MCAPI bool $isSlotDisabled(int) const;
+    MCFOLD bool $isSlotDisabled(int) const;
     // NOLINTEND
 
 public:

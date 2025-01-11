@@ -57,11 +57,11 @@ public:
         ::HashedString const&     tag
     );
 
-    MCAPI ::RecipeIngredient const& getAdditionIngredient() const;
+    MCFOLD ::RecipeIngredient const& getAdditionIngredient() const;
 
-    MCAPI ::RecipeIngredient const& getBaseIngredient() const;
+    MCFOLD ::RecipeIngredient const& getBaseIngredient() const;
 
-    MCAPI ::RecipeIngredient const& getTemplateIngredient() const;
+    MCFOLD ::RecipeIngredient const& getTemplateIngredient() const;
     // NOLINTEND
 
 public:
@@ -96,7 +96,7 @@ public:
     MCAPI ::std::vector<::ItemInstance> const&
     $assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const;
 
-    MCAPI bool $hasDataDrivenResult() const;
+    MCFOLD bool $hasDataDrivenResult() const;
     // NOLINTEND
 
 public:

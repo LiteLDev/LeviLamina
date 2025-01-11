@@ -68,7 +68,7 @@ public:
 
     MCAPI ::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>> getAllStates() const;
 
-    MCAPI ::Block const& getBlock() const;
+    MCFOLD ::Block const& getBlock() const;
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     getItemStack(int amount) const;
@@ -88,7 +88,8 @@ public:
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
     ) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockPermutation& operator=(::ScriptModuleMinecraft::ScriptBlockPermutation&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptBlockPermutation&
+    operator=(::ScriptModuleMinecraft::ScriptBlockPermutation&&);
 
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
@@ -124,7 +125,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

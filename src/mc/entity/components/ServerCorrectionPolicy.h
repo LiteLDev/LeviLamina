@@ -66,13 +66,13 @@ public:
     MCAPI ::MovementCorrection
     $shouldCorrectMovement(::EntityContext& entity, ::PlayerAuthInputPacket const& packet, uint64 frame);
 
-    MCAPI bool $canRewindToFrame(::EntityContext const&, uint64);
+    MCFOLD bool $canRewindToFrame(::EntityContext const&, uint64);
 
-    MCAPI bool $isReplayNeeded(::AdvanceFrameResult) const;
+    MCFOLD bool $isReplayNeeded(::AdvanceFrameResult) const;
 
-    MCAPI void $flagUnsupportedMovement(uint64);
+    MCFOLD void $flagUnsupportedMovement(uint64);
 
-    MCAPI void $storeCurrentFrameSupported(uint64, ::EntityContext&);
+    MCFOLD void $storeCurrentFrameSupported(uint64, ::EntityContext&);
 
     MCAPI void $notifyOfExternalCorrection(uint64 frame);
     // NOLINTEND

@@ -69,7 +69,7 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
     // NOLINTEND
 
 public:

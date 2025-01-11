@@ -134,7 +134,7 @@ public:
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );
 
-    MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
     MCAPI void $update();
     // NOLINTEND

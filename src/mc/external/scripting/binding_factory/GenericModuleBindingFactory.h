@@ -168,9 +168,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCFOLD ::std::string $getName() const;
 
-    MCAPI ::Scripting::UUID $getUUID() const;
+    MCFOLD ::Scripting::UUID $getUUID() const;
 
     MCAPI bool $hasAlias(::std::string const& alias) const;
 

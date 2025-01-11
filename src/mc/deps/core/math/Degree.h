@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Degree(::mce::Radian rad);
 
-    MCAPI float const& asFloat() const;
+    MCFOLD float const& asFloat() const;
     // NOLINTEND
 
 public:

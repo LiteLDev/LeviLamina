@@ -82,7 +82,7 @@ public:
 
     MCAPI void $setContainerSize(int size);
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
     // NOLINTEND

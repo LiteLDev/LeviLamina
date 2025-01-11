@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorUniqueID getNewUniqueID();
+    MCFOLD ::ActorUniqueID getNewUniqueID();
     // NOLINTEND
 
 public:

@@ -83,7 +83,7 @@ public:
 
     MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
-    MCAPI ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
+    MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
 
     MCAPI bool $_needsPostProcessing(::BlockSource& region);
     // NOLINTEND

@@ -46,7 +46,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $log(char const* message);
+    MCFOLD void $log(char const* message);
     // NOLINTEND
 
 public:

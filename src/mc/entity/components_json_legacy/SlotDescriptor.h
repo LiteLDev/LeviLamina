@@ -30,7 +30,7 @@ public:
 
     MCAPI SlotDescriptor(::SlotDescriptor const&);
 
-    MCAPI void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
+    MCFOLD void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
 
     MCAPI ::SlotDescriptor& operator=(::SlotDescriptor const&);
 

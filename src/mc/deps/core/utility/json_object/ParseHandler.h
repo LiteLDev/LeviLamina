@@ -56,9 +56,9 @@ public:
 
     MCAPI bool Int(int i);
 
-    MCAPI bool Int64(int64 i);
+    MCFOLD bool Int64(int64 i);
 
-    MCAPI bool Key(char const* str, uint length, bool copy);
+    MCFOLD bool Key(char const* str, uint length, bool copy);
 
     MCAPI bool Null();
 
@@ -66,11 +66,11 @@ public:
 
     MCAPI bool StartObject();
 
-    MCAPI bool String(char const* str, uint length, bool copy);
+    MCFOLD bool String(char const* str, uint length, bool copy);
 
     MCAPI bool Uint(uint u);
 
-    MCAPI bool Uint64(uint64 u);
+    MCFOLD bool Uint64(uint64 u);
 
     MCAPI bool _addObjectOrArray(::Bedrock::JSONObject::ValueWrapper const& value);
     // NOLINTEND

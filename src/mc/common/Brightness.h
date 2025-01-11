@@ -13,7 +13,7 @@ public:
 
     MCAPI Brightness(::Brightness const&);
 
-    MCAPI ::Brightness& operator=(::Brightness&&);
+    MCFOLD ::Brightness& operator=(::Brightness&&);
 
     MCAPI ::Brightness& operator=(::Brightness const&);
     // NOLINTEND
@@ -31,7 +31,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uchar const&);
+    MCFOLD void* $ctor(uchar const&);
 
     MCAPI void* $ctor(::Brightness const&);
     // NOLINTEND

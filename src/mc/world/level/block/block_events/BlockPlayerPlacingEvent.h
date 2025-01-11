@@ -58,13 +58,13 @@ public:
 
     MCAPI void configureRenderParamsForTrigger(::RenderParams& params);
 
-    MCAPI ::Actor const& getActor() const;
+    MCFOLD ::Actor const& getActor() const;
 
     MCAPI ::Block const& getPermutationToPlace() const;
 
-    MCAPI bool isCancelled() const;
+    MCFOLD bool isCancelled() const;
 
-    MCAPI bool isClientSide() const;
+    MCFOLD bool isClientSide() const;
 
     MCAPI void setPermutationToPlace(::Block const& perm);
     // NOLINTEND
@@ -84,13 +84,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

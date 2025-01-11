@@ -52,7 +52,7 @@ public:
 
     MCAPI void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
 
-    MCAPI ::gsl::not_null<::Block const*> _setCoralHangData(int face, int color, int type) const;
+    MCFOLD ::gsl::not_null<::Block const*> _setCoralHangData(int face, int color, int type) const;
     // NOLINTEND
 
 public:

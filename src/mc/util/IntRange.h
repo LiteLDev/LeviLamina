@@ -30,9 +30,9 @@ public:
 
     MCAPI IntRange(int min, int max);
 
-    MCAPI int getValue(::Random& random) const;
+    MCFOLD int getValue(::Random& random) const;
 
-    MCAPI int getValueInclusive(::Random& random) const;
+    MCFOLD int getValueInclusive(::Random& random) const;
 
     MCAPI int getValueInclusive(::Randomize& randomize) const;
 
@@ -50,8 +50,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int value);
+    MCFOLD void* $ctor(int value);
 
-    MCAPI void* $ctor(int min, int max);
+    MCFOLD void* $ctor(int min, int max);
     // NOLINTEND
 };

@@ -86,9 +86,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool $shouldBurn();
+    MCFOLD bool $shouldBurn();
 
-    MCAPI bool $isOnFire() const;
+    MCFOLD bool $isOnFire() const;
 
     MCAPI bool $canDestroyBlock(::Block const& block) const;
 

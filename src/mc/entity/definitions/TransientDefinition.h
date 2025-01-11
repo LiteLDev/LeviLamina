@@ -14,7 +14,7 @@ struct TransientDefinition {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCFOLD static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TransientDefinition>>& root
     );
     // NOLINTEND

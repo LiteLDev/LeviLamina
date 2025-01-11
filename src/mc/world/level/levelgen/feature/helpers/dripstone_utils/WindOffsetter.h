@@ -37,7 +37,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(int originY, ::Random& random, ::ValueProviders::UniformFloat const& windSpeedRange);
     // NOLINTEND

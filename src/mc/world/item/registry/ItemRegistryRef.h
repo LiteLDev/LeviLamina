@@ -39,6 +39,9 @@ public:
     // clang-format on
 
     // ItemRegistryRef inner types define
+    using CreativeItemsServerInitCallbackSignature =
+        void(::ItemRegistryRef, ::ActorInfoRegistry*, ::BlockDefinitionGroup*, ::CreativeItemRegistry*, bool, ::BaseGameVersion const&, ::Experiments const&);
+
     class LockGuard {
     public:
         // member variables
@@ -76,12 +79,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk9bd30e;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ItemRegistry>> mWeakRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemRegistryRef& operator=(ItemRegistryRef const&);
 
 public:
     // member functions
@@ -212,16 +211,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::ItemRegistryRef const&);
+    MCFOLD void* $ctor(::ItemRegistryRef const&);
 
-    MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
+    MCFOLD void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

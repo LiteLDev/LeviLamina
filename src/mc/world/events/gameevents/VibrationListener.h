@@ -13,7 +13,9 @@ class CompoundTag;
 class DataLoadHelper;
 class GameEvent;
 class Vec3;
+class VibrationInfo;
 class VibrationListenerConfig;
+class VibrationSelector;
 struct GameEventContext;
 namespace GameEvents { class PositionSource; }
 // clang-format on
@@ -31,21 +33,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk9fe2da;
-    ::ll::UntypedStorage<8, 8>  mUnkc1ec6a;
-    ::ll::UntypedStorage<8, 24> mUnke9d03d;
-    ::ll::UntypedStorage<4, 4>  mUnk26b475;
-    ::ll::UntypedStorage<4, 4>  mUnk9c2a5f;
-    ::ll::UntypedStorage<8, 64> mUnk7a6332;
-    ::ll::UntypedStorage<4, 4>  mUnkf5cdb0;
-    ::ll::UntypedStorage<8, 8>  mUnk2d3f25;
+    ::ll::TypedStorage<8, 72, ::VibrationSelector>                         mVibrationSelector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VibrationListenerConfig>> mConfig;
+    ::ll::TypedStorage<8, 24, ::GameEvents::PositionSource>                mPositionSource;
+    ::ll::TypedStorage<4, 4, ::VibrationListener::OwnerType>               mOwnerType;
+    ::ll::TypedStorage<4, 4, uint>                                         mRange;
+    ::ll::TypedStorage<8, 64, ::std::optional<::VibrationInfo>>            mInFlightVibrationInfo;
+    ::ll::TypedStorage<4, 4, int>                                          mInFlightVibrationTicks;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::GameEvent const>>  mLatestReceivedVibration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VibrationListener& operator=(VibrationListener const&);
-    VibrationListener(VibrationListener const&);
-    VibrationListener();
 
 public:
     // virtual functions
@@ -88,7 +84,7 @@ public:
         ::Vec3 const&             sensorPos
     );
 
-    MCAPI ::GameEvent const& getLatestReceivedVibration() const;
+    MCFOLD ::GameEvent const& getLatestReceivedVibration() const;
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -132,9 +128,9 @@ public:
     MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCAPI uint $getRange() const;
+    MCFOLD uint $getRange() const;
 
-    MCAPI ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
     // NOLINTEND
 
 public:

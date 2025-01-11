@@ -52,7 +52,7 @@ public:
 
     MCAPI void _setSwellDir(int dir);
 
-    MCAPI int getSwellDir();
+    MCFOLD int getSwellDir();
 
     MCAPI float getSwelling(float a) const;
     // NOLINTEND

@@ -64,9 +64,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
+    MCFOLD ::EventResult $onEvent(::ActorHurtEvent const& actorHurtEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
+    MCFOLD ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
 
     MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
 

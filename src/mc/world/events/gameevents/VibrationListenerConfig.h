@@ -46,8 +46,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCAPI void $onSerializableDataChanged(::BlockSource&);
+    MCFOLD void $onSerializableDataChanged(::BlockSource&);
 
-    MCAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
 };

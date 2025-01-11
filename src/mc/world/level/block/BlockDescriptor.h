@@ -62,7 +62,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -140,7 +140,7 @@ public:
 
     MCAPI ::std::string const& getFullName() const;
 
-    MCAPI ::std::vector<::BlockDescriptor::State> const& getStates() const;
+    MCFOLD ::std::vector<::BlockDescriptor::State> const& getStates() const;
 
     MCAPI ::std::string const& getTagExpression() const;
 

@@ -77,11 +77,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $buildBoneToPartMapping(::AnimationComponent&);
+    MCFOLD void $buildBoneToPartMapping(::AnimationComponent&);
 
-    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
 
-    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
     // NOLINTEND
 
 public:

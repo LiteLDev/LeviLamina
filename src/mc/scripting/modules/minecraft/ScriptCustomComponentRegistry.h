@@ -54,7 +54,7 @@ public:
 
     MCAPI void onScriptModuleStartupComplete();
 
-    MCAPI ::ScriptModuleMinecraft::ScriptCustomComponentRegistry::State const& state() const;
+    MCFOLD ::ScriptModuleMinecraft::ScriptCustomComponentRegistry::State const& state() const;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onScriptModuleStartupComplete();
+    MCFOLD void $_onScriptModuleStartupComplete();
     // NOLINTEND
 };
 

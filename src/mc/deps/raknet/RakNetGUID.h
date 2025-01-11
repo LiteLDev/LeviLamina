@@ -23,7 +23,7 @@ public:
 
     MCAPI bool operator!=(::RakNet::RakNetGUID const& right) const;
 
-    MCAPI bool operator==(::RakNet::RakNetGUID const& right) const;
+    MCFOLD bool operator==(::RakNet::RakNetGUID const& right) const;
     // NOLINTEND
 
 public:

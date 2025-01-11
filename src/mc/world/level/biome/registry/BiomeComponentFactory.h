@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BiomeJsonDocumentGlue& getBiomeJsonDocumentGlue();
+    MCFOLD ::BiomeJsonDocumentGlue& getBiomeJsonDocumentGlue();
 
     MCAPI void registrationFinished();
 

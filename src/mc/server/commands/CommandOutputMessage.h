@@ -27,11 +27,11 @@ public:
         ::std::vector<::std::string>&& params
     );
 
-    MCAPI ::std::string const& getMessageId() const;
+    MCFOLD ::std::string const& getMessageId() const;
 
-    MCAPI ::std::vector<::std::string> const& getParams() const;
+    MCFOLD ::std::vector<::std::string> const& getParams() const;
 
-    MCAPI ::CommandOutputMessageType getType() const;
+    MCFOLD ::CommandOutputMessageType getType() const;
 
     MCAPI ~CommandOutputMessage();
     // NOLINTEND
@@ -50,6 +50,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

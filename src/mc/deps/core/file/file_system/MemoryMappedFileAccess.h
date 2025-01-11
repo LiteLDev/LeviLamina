@@ -39,7 +39,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -69,7 +69,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -111,7 +111,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -218,7 +218,7 @@ public:
 
     MCAPI int64 $ftell(void* file);
 
-    MCAPI ::IFileReadAccess const* $getReadInterface() const;
+    MCFOLD ::IFileReadAccess const* $getReadInterface() const;
 
     MCAPI ::IFileWriteAccess* $getWriteInterface();
 

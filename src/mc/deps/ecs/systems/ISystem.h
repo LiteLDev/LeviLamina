@@ -22,6 +22,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    MCFOLD void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
 };

@@ -40,9 +40,9 @@ public:
 
     MCAPI bool clientBribeCheck(::Actor& owner);
 
-    MCAPI int& getBribeCooldown();
+    MCFOLD int& getBribeCooldown();
 
-    MCAPI int& getBribeTimer();
+    MCFOLD int& getBribeTimer();
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 

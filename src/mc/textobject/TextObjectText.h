@@ -67,11 +67,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $asString() const;
+    MCFOLD ::std::string $asString() const;
 
     MCAPI ::Json::Value $asJsonValue() const;
 
-    MCAPI ::Json::Value $resolve(::ResolveData const& resolveData) const;
+    MCFOLD ::Json::Value $resolve(::ResolveData const& resolveData) const;
     // NOLINTEND
 
 public:

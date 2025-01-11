@@ -59,7 +59,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -107,7 +107,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -317,7 +317,7 @@ public:
 
     MCAPI ::Recipe* getRecipeFor(::ItemInstance const& result, ::HashedString const& tag) const;
 
-    MCAPI ::std::map<::HashedString, ::std::map<::std::string, ::std::shared_ptr<::Recipe>>> const&
+    MCFOLD ::std::map<::HashedString, ::std::map<::std::string, ::std::shared_ptr<::Recipe>>> const&
     getRecipesAllTags() const;
 
     MCAPI void init(

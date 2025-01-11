@@ -39,13 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onObjectiveAdded(::std::string const&);
+    MCFOLD ::EventResult $onObjectiveAdded(::std::string const&);
 
-    MCAPI ::EventResult $onObjectiveRemoved(::std::string const&);
+    MCFOLD ::EventResult $onObjectiveRemoved(::std::string const&);
 
-    MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
+    MCFOLD ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const&);
 
-    MCAPI ::EventResult $onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
+    MCFOLD ::EventResult $onScoreChanged(::ScoreboardId const&, ::std::string const&, int);
     // NOLINTEND
 
 public:

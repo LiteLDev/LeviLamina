@@ -28,7 +28,7 @@ public:
 
     MCAPI ::std::string getIdentityPublicKey() const;
 
-    MCAPI ::std::string toString() const;
+    MCFOLD ::std::string toString() const;
 
     MCAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
 

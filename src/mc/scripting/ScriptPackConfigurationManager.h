@@ -36,7 +36,7 @@ public:
 
     MCAPI explicit ScriptPackConfigurationManager(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
 
-    MCAPI ::std::optional<::Core::PathBuffer<::std::string>> const& getConfigPath() const;
+    MCFOLD ::std::optional<::Core::PathBuffer<::std::string>> const& getConfigPath() const;
 
     MCAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 

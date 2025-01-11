@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/editor/WorldType.h"
 #include "mc/config/ChatRestrictionLevel.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EducationEditionOffer.h"
 #include "mc/world/Difficulty.h"
@@ -23,20 +24,26 @@ class BlockPos;
 class CloudSaveLevelInfo;
 class CompoundTag;
 class ContentIdentity;
+class EducationEditionOfferValue;
+class ExperimentStorage;
 class Experiments;
 class GameRules;
+class GameVersion;
 class HashedString;
 class ILevelStorageManagerConnector;
 class LevelSeed64;
 class LevelSettings;
 class PermissionsHandler;
 class SemVersion;
+class WorldTemplateLevelData;
 struct AdventureSettings;
 struct EduSharedUriResource;
 struct LevelDataValue;
 struct PackIdVersion;
 struct SpawnSettings;
 struct Tick;
+namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Json { class Value; }
 namespace RakNet { class BitStream; }
 // clang-format on
@@ -45,89 +52,87 @@ class LevelData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 5>   mUnk3869a7;
-    ::ll::UntypedStorage<8, 408> mUnk8932cd;
-    ::ll::UntypedStorage<8, 192> mUnke17dd2;
-    ::ll::UntypedStorage<8, 72>  mUnkef417a;
-    ::ll::UntypedStorage<4, 228> mUnk501975;
-    ::ll::UntypedStorage<1, 2>   mUnkeb9a04;
-    ::ll::UntypedStorage<8, 32>  mUnk522209;
-    ::ll::UntypedStorage<4, 4>   mUnkc388c0;
-    ::ll::UntypedStorage<8, 56>  mUnk130ded;
-    ::ll::UntypedStorage<4, 4>   mUnkcf7b76;
-    ::ll::UntypedStorage<8, 112> mUnk9463e1;
-    ::ll::UntypedStorage<8, 8>   mUnkc3e8ef;
-    ::ll::UntypedStorage<1, 1>   mUnkcde2e5;
-    ::ll::UntypedStorage<4, 12>  mUnk8055f2;
-    ::ll::UntypedStorage<4, 4>   mUnke171f7;
-    ::ll::UntypedStorage<8, 8>   mUnk2ca67d;
-    ::ll::UntypedStorage<4, 4>   mUnkbb5b63;
-    ::ll::UntypedStorage<4, 4>   mUnkdfb31f;
-    ::ll::UntypedStorage<4, 4>   mUnk71d22e;
-    ::ll::UntypedStorage<4, 4>   mUnkfe3e1d;
-    ::ll::UntypedStorage<4, 4>   mUnkcee1a2;
-    ::ll::UntypedStorage<4, 4>   mUnkabc0e0;
-    ::ll::UntypedStorage<8, 56>  mUnk606fd9;
-    ::ll::UntypedStorage<4, 4>   mUnk571ae5;
-    ::ll::UntypedStorage<1, 1>   mUnk384a39;
-    ::ll::UntypedStorage<1, 1>   mUnk4f1d12;
-    ::ll::UntypedStorage<1, 1>   mUnk99e5ec;
-    ::ll::UntypedStorage<1, 1>   mUnkfe4902;
-    ::ll::UntypedStorage<1, 1>   mUnkec87c9;
-    ::ll::UntypedStorage<8, 16>  mUnk62bd85;
-    ::ll::UntypedStorage<4, 4>   mUnkd400d4;
-    ::ll::UntypedStorage<1, 1>   mUnk97cb66;
-    ::ll::UntypedStorage<4, 4>   mUnk75b3ad;
-    ::ll::UntypedStorage<1, 1>   mUnkaa4f80;
-    ::ll::UntypedStorage<1, 1>   mUnk4a5e75;
-    ::ll::UntypedStorage<4, 4>   mUnkd0854f;
-    ::ll::UntypedStorage<8, 176> mUnk7e3e6f;
-    ::ll::UntypedStorage<1, 1>   mUnka79eb7;
-    ::ll::UntypedStorage<1, 1>   mUnk49d6d3;
-    ::ll::UntypedStorage<1, 1>   mUnk3edace;
-    ::ll::UntypedStorage<1, 1>   mUnk951220;
-    ::ll::UntypedStorage<1, 1>   mUnka5b54c;
-    ::ll::UntypedStorage<1, 1>   mUnk95ba70;
-    ::ll::UntypedStorage<1, 1>   mUnk6a378a;
-    ::ll::UntypedStorage<4, 4>   mUnk6f9d7d;
-    ::ll::UntypedStorage<4, 4>   mUnkaf2740;
-    ::ll::UntypedStorage<4, 4>   mUnk1ae6b3;
-    ::ll::UntypedStorage<4, 4>   mUnkc425f1;
-    ::ll::UntypedStorage<1, 1>   mUnk62f005;
-    ::ll::UntypedStorage<1, 1>   mUnk4e5f4e;
-    ::ll::UntypedStorage<1, 1>   mUnkbcd71c;
-    ::ll::UntypedStorage<1, 1>   mUnk42cc17;
-    ::ll::UntypedStorage<1, 1>   mUnk142780;
-    ::ll::UntypedStorage<1, 1>   mUnk32b4c4;
-    ::ll::UntypedStorage<1, 1>   mUnk652297;
-    ::ll::UntypedStorage<8, 32>  mUnkc13207;
-    ::ll::UntypedStorage<1, 1>   mUnkfa06de;
-    ::ll::UntypedStorage<1, 1>   mUnke79e01;
-    ::ll::UntypedStorage<1, 1>   mUnk1db81c;
-    ::ll::UntypedStorage<1, 1>   mUnk8b5ba8;
-    ::ll::UntypedStorage<1, 1>   mUnk9452cb;
-    ::ll::UntypedStorage<1, 1>   mUnkb1d0ee;
-    ::ll::UntypedStorage<1, 1>   mUnk2c59c0;
-    ::ll::UntypedStorage<1, 1>   mUnkc1f652;
-    ::ll::UntypedStorage<1, 1>   mUnk9adf2f;
-    ::ll::UntypedStorage<1, 1>   mUnk770d22;
-    ::ll::UntypedStorage<1, 1>   mUnka7a691;
-    ::ll::UntypedStorage<1, 1>   mUnkb2b714;
-    ::ll::UntypedStorage<8, 48>  mUnk425bba;
-    ::ll::UntypedStorage<8, 64>  mUnk6a5aee;
-    ::ll::UntypedStorage<8, 64>  mUnkf37e74;
-    ::ll::UntypedStorage<8, 32>  mUnk730497;
-    ::ll::UntypedStorage<4, 8>   mUnk386804;
-    ::ll::UntypedStorage<1, 1>   mUnka7d96a;
-    ::ll::UntypedStorage<8, 8>   mUnk5f51f6;
-    ::ll::UntypedStorage<8, 16>  mUnk184ea7;
+    ::ll::TypedStorage<1, 5, ::AdventureSettings>                                     mAdventureSettings;
+    ::ll::TypedStorage<8, 408, ::WorldTemplateLevelData>                              mWorldTemplateLevelData;
+    ::ll::TypedStorage<8, 192, ::GameRules>                                           mGameRules;
+    ::ll::TypedStorage<8, 72, ::ExperimentStorage>                                    mExperiments;
+    ::ll::TypedStorage<4, 228, ::Abilities>                                           mDefaultAbilities;
+    ::ll::TypedStorage<1, 2, ::PermissionsHandler>                                    mDefaultPermissions;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mLevelName;
+    ::ll::TypedStorage<4, 4, ::StorageVersion>                                        mStorageVersion;
+    ::ll::TypedStorage<8, 56, ::GameVersion>                                          mMinCompatibleClientVersion;
+    ::ll::TypedStorage<4, 4, int>                                                     mNetworkVersion;
+    ::ll::TypedStorage<8, 112, ::SemVersion>                                          mInventoryVersion;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                  mCurrentTick;
+    ::ll::TypedStorage<1, 1, bool>                                                    mHasSpawnPos;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                             mLimitedWorldOrigin;
+    ::ll::TypedStorage<4, 4, int>                                                     mTime;
+    ::ll::TypedStorage<8, 8, int64>                                                   mLastSaved;
+    ::ll::TypedStorage<4, 4, uint>                                                    mServerTickRange;
+    ::ll::TypedStorage<4, 4, float>                                                   mRainLevel;
+    ::ll::TypedStorage<4, 4, int>                                                     mRainTime;
+    ::ll::TypedStorage<4, 4, float>                                                   mLightningLevel;
+    ::ll::TypedStorage<4, 4, int>                                                     mLightningTime;
+    ::ll::TypedStorage<4, 4, int>                                                     mNetherScale;
+    ::ll::TypedStorage<8, 56, ::GameVersion>                                          mLastOpenedWithVersion;
+    ::ll::TypedStorage<4, 4, ::Difficulty>                                            mGameDifficulty;
+    ::ll::TypedStorage<1, 1, bool>                                                    mForceGameType;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsHardcore;
+    ::ll::TypedStorage<1, 1, bool>                                                    mPlayerHasDied;
+    ::ll::TypedStorage<1, 1, bool>                                                    mSpawnMobs;
+    ::ll::TypedStorage<1, 1, bool>                                                    mAdventureModeOverridesEnabled;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                          mFlatworldGeneratorOptions;
+    ::ll::TypedStorage<4, 4, uint>                                                    mWorldStartCount;
+    ::ll::TypedStorage<1, 1, bool>                                                    mAchievementsDisabled;
+    ::ll::TypedStorage<4, 4, ::Editor::WorldType>                                     mEditorWorldType;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsCreatedInEditor;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsExportedFromEditor;
+    ::ll::TypedStorage<4, 4, ::EducationEditionOfferValue>                            mEducationEditionOffer;
+    ::ll::TypedStorage<8, 176, ::std::optional<::CloudSaveLevelInfo>>                 mCloudSaveInfo;
+    ::ll::TypedStorage<1, 1, bool>                                                    mEducationFeaturesEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsSingleUseWorld;
+    ::ll::TypedStorage<1, 1, bool>                                                    mConfirmedPlatformLockedContent;
+    ::ll::TypedStorage<1, 1, bool>                                                    mMultiplayerGameIntent;
+    ::ll::TypedStorage<1, 1, bool>                                                    mMultiplayerGame;
+    ::ll::TypedStorage<1, 1, bool>                                                    mLANBroadcastIntent;
+    ::ll::TypedStorage<1, 1, bool>                                                    mLANBroadcast;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>                            mXBLBroadcastIntent;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>                            mXBLBroadcastMode;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>                            mPlatformBroadcastIntent;
+    ::ll::TypedStorage<4, 4, ::Social::GamePublishSetting>                            mPlatformBroadcastMode;
+    ::ll::TypedStorage<1, 1, bool>                                                    mCheatsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mCommandsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mTexturePacksRequired;
+    ::ll::TypedStorage<1, 1, bool>                                                    mHasLockedBehaviorPack;
+    ::ll::TypedStorage<1, 1, bool>                                                    mHasLockedResourcePack;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsFromLockedTemplate;
+    ::ll::TypedStorage<1, 1, bool>                                                    mIsRandomSeedAllowed;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationProductId;
+    ::ll::TypedStorage<1, 1, bool>                                                    mUseMsaGamertagsOnly;
+    ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestSpawned;
+    ::ll::TypedStorage<1, 1, bool>                                                    mStartWithMapEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mMapsCenteredToOrigin;
+    ::ll::TypedStorage<1, 1, bool>                                                    mRequiresCopiedPackRemovalCheck;
+    ::ll::TypedStorage<1, 1, bool>                                                    mSpawnV1Villagers;
+    ::ll::TypedStorage<1, 1, bool>                                                    mPersonaDisabled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mCustomSkinsDisabled;
+    ::ll::TypedStorage<1, 1, bool>                                                    mEmoteChatMuted;
+    ::ll::TypedStorage<1, 1, bool>                                                    mHasUncompleteWorldFileOnDisk;
+    ::ll::TypedStorage<1, 1, ::NetherWorldType>                                       mNetherType;
+    ::ll::TypedStorage<8, 48, ::SpawnSettings>                                        mSpawnSettings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::LevelDataValue>> mValues;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::LevelDataValue>> mOverrides;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mBiomeOverride;
+    ::ll::TypedStorage<4, 8, ::std::optional<::GeneratorType>>                        mDataDrivenGeneratorType;
+    ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                                  mChatRestrictionLevel;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded>>>
+                                                               mIsHardcoreSubscribers;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveLevelData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelData& operator=(LevelData const&);
-    LevelData(LevelData const&);
-    LevelData();
 
 public:
     // member functions
@@ -175,7 +180,7 @@ public:
 
     MCAPI ::AdventureSettings const& getAdventureSettings() const;
 
-    MCAPI ::AdventureSettings& getAdventureSettings();
+    MCFOLD ::AdventureSettings& getAdventureSettings();
 
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
@@ -187,17 +192,17 @@ public:
 
     MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
 
-    MCAPI ::Tick const& getCurrentTick() const;
+    MCFOLD ::Tick const& getCurrentTick() const;
 
     MCAPI bool getCustomSkinsDisabled() const;
 
     MCAPI ::DaylightCycle getDaylightCycle() const;
 
-    MCAPI ::Abilities& getDefaultAbilities();
+    MCFOLD ::Abilities& getDefaultAbilities();
 
     MCAPI ::PermissionsHandler const& getDefaultPermissions() const;
 
-    MCAPI ::PermissionsHandler& getDefaultPermissions();
+    MCFOLD ::PermissionsHandler& getDefaultPermissions();
 
     MCAPI ::Editor::WorldType getEditorWorldType() const;
 
@@ -211,7 +216,7 @@ public:
 
     MCAPI ::Experiments const& getExperiments() const;
 
-    MCAPI ::Experiments& getExperiments();
+    MCFOLD ::Experiments& getExperiments();
 
     MCAPI ::Json::Value const& getFlatWorldGeneratorOptions() const;
 
@@ -221,7 +226,7 @@ public:
 
     MCAPI ::GameRules const& getGameRules() const;
 
-    MCAPI ::GameRules& getGameRules();
+    MCFOLD ::GameRules& getGameRules();
 
     MCAPI ::GameType getGameType() const;
 
@@ -269,9 +274,9 @@ public:
 
     MCAPI ::BlockPos const& getSpawnPos() const;
 
-    MCAPI ::SpawnSettings const& getSpawnSettings() const;
+    MCFOLD ::SpawnSettings const& getSpawnSettings() const;
 
-    MCAPI ::StorageVersion getStorageVersion() const;
+    MCFOLD ::StorageVersion getStorageVersion() const;
 
     MCAPI void getTagData(::CompoundTag const& tag);
 
@@ -283,7 +288,7 @@ public:
 
     MCAPI uint getWorldStartCount() const;
 
-    MCAPI ::PackIdVersion const& getWorldTemplateIdentity() const;
+    MCFOLD ::PackIdVersion const& getWorldTemplateIdentity() const;
 
     MCAPI ::WorldVersion getWorldVersion() const;
 
@@ -313,7 +318,7 @@ public:
 
     MCAPI bool isAlwaysDay() const;
 
-    MCAPI bool isCreatedInEditor() const;
+    MCFOLD bool isCreatedInEditor() const;
 
     MCAPI bool isEditorWorld() const;
 
@@ -341,7 +346,7 @@ public:
 
     MCAPI bool isWorldTemplateOptionLocked() const;
 
-    MCAPI void recordStartUp();
+    MCFOLD void recordStartUp();
 
     MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
@@ -405,7 +410,7 @@ public:
 
     MCAPI void setLightningLevel(float level);
 
-    MCAPI void setLightningTime(int lightningTime);
+    MCFOLD void setLightningTime(int lightningTime);
 
     MCAPI void setMultiplayerGame(bool multiplayer);
 

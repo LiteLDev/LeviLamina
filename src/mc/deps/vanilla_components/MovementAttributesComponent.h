@@ -33,6 +33,6 @@ public:
 
     MCAPI float getMovementSpeed() const;
 
-    MCAPI float getUnderwaterMovementSpeed() const;
+    MCFOLD float getUnderwaterMovementSpeed() const;
     // NOLINTEND
 };

@@ -57,7 +57,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -107,15 +107,15 @@ public:
 
     MCAPI void _save(::LevelStorage& levelStorage) const;
 
-    MCAPI void forEachBiome(::std::function<void(::Biome const&)> callback) const;
+    MCFOLD void forEachBiome(::std::function<void(::Biome const&)> callback) const;
 
-    MCAPI void forEachNonConstBiome(::std::function<void(::Biome&)> callback);
+    MCFOLD void forEachNonConstBiome(::std::function<void(::Biome&)> callback);
 
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
 
     MCAPI ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& getTagRegistry() const;
 
-    MCAPI ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& getTagRegistry();
+    MCFOLD ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& getTagRegistry();
 
     MCAPI void initServerFromPacks(::ResourcePackManager& loader, ::IWorldRegistriesProvider& worldRegistries);
 

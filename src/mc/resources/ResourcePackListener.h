@@ -39,13 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $onFullPackStackInvalid();
+    MCFOLD bool $onFullPackStackInvalid();
 
-    MCAPI void $onBaseGamePackDownloadComplete();
+    MCFOLD void $onBaseGamePackDownloadComplete();
 
-    MCAPI void $onLanguageSubpacksChanged();
+    MCFOLD void $onLanguageSubpacksChanged();
 
-    MCAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
+    MCFOLD void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
     // NOLINTEND
 
 public:

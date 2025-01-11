@@ -39,9 +39,9 @@ public:
     // NOLINTBEGIN
     MCAPI Upgrader(::SemVersion const& from, ::SemVersion const& to);
 
-    MCAPI ::SemVersion const& sourceVersion() const;
+    MCFOLD ::SemVersion const& sourceVersion() const;
 
-    MCAPI ::SemVersion const& targetVersion() const;
+    MCFOLD ::SemVersion const& targetVersion() const;
 
     MCAPI ::Puv::LoadResultAny upgrade(::Puv::LoadResultAny source) const;
     // NOLINTEND
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

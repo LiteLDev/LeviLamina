@@ -96,7 +96,7 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
     // NOLINTEND

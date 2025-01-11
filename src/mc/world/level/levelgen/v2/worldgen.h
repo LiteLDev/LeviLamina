@@ -43,10 +43,10 @@ MCAPI void expansionHackEval(int expandTo, ::BoundingBox& box);
 MCAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const&
 getProjectionProcessors(::Projection projection);
 
-MCAPI int
+MCFOLD int
 noopCalc(::JigsawStructureUtils::MetadataCache&, ::BlockPos const&, ::Rotation, ::BoundingBox const&, ::std::vector<::std::pair<uint64, ::SharedTypes::v1_21_50::JigsawBlockMetadata>> const&, ::JigsawStructureRegistry const&);
 
-MCAPI void noopEval(int, ::BoundingBox&);
+MCFOLD void noopEval(int, ::BoundingBox&);
 
 MCAPI bool placeInWorld(
     ::IStructureTemplate const&                   tmpl,

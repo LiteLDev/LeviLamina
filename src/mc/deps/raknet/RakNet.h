@@ -17,9 +17,9 @@ namespace RakNet {
 // NOLINTBEGIN
 MCAPI uint ConnectionAttemptLoop(void* arguments);
 
-MCAPI uint64 GetTime();
+MCFOLD uint64 GetTime();
 
-MCAPI uint GetTimeMS();
+MCFOLD uint GetTimeMS();
 
 MCAPI uint64 GetTimeUS();
 
@@ -51,23 +51,23 @@ MCAPI uint UpdateNetworkLoop(void* arguments);
 
 MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
 
-MCAPI void* _DLMallocDirectMMap(uint64 size);
+MCFOLD void* _DLMallocDirectMMap(uint64 size);
 
-MCAPI void* _DLMallocMMap(uint64 size);
+MCFOLD void* _DLMallocMMap(uint64 size);
 
-MCAPI int _DLMallocMUnmap(void* p, uint64 size);
+MCFOLD int _DLMallocMUnmap(void* p, uint64 size);
 
-MCAPI void _RakFree(void* p);
+MCFOLD void _RakFree(void* p);
 
-MCAPI void _RakFree_Ex(void* p, char const* file, uint line);
+MCFOLD void _RakFree_Ex(void* p, char const* file, uint line);
 
-MCAPI void* _RakMalloc(uint64 size);
+MCFOLD void* _RakMalloc(uint64 size);
 
-MCAPI void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
+MCFOLD void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
 
-MCAPI void* _RakRealloc(void* p, uint64 size);
+MCFOLD void* _RakRealloc(void* p, uint64 size);
 
-MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
+MCFOLD void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
 // NOLINTEND
 
 // static variables

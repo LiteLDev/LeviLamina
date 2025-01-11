@@ -91,7 +91,7 @@ public:
 
     MCAPI void _setAutomatic(::BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
 
-    MCAPI ::BaseCommandBlock& getBaseCommandBlock();
+    MCFOLD ::BaseCommandBlock& getBaseCommandBlock();
 
     MCAPI ::std::string const& getCommand() const;
 
@@ -163,7 +163,7 @@ public:
 
     MCAPI void $onCustomTagLoadDone(::BlockSource& region);
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
     MCAPI void $onPlace(::BlockSource& region);
 

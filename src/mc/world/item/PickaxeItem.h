@@ -49,7 +49,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI void $executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const;
+    MCFOLD void $executeEvent(::ItemStackBase&, ::std::string const&, ::RenderParams&) const;
     // NOLINTEND
 
 public:

@@ -111,7 +111,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo>> const& $getLocalTemplates() const;
+    MCFOLD ::std::vector<::std::unique_ptr<::WorldTemplateInfo>> const& $getLocalTemplates() const;
 
     MCAPI ::WorldTemplateInfo const* $findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs
     ) const;

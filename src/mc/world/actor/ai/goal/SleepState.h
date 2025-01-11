@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $stop();
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
     // NOLINTEND
 
 public:

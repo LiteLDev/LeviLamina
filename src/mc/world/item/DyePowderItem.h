@@ -63,15 +63,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
-    MCAPI bool $isDye() const;
+    MCFOLD bool $isDye() const;
 
-    MCAPI ::ItemColor $getItemColor() const;
+    MCFOLD ::ItemColor $getItemColor() const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
 
 public:

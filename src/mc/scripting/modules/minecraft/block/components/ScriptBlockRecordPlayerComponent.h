@@ -38,7 +38,7 @@ public:
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     getRecord();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isPlaying();
+    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
 
     MCAPI ::Scripting::Result<void> pauseRecord();
 

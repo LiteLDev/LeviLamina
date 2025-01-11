@@ -58,7 +58,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isAlliedTo(::Mob* other);
 
-    MCAPI int $getArmorValue() const;
+    MCFOLD int $getArmorValue() const;
     // NOLINTEND
 
 public:

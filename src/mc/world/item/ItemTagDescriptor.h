@@ -96,7 +96,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
+    MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
 
     MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
@@ -106,7 +106,7 @@ public:
 
     MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCAPI ::ItemDescriptor::InternalType $getType() const;
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
     MCAPI uint64 $getHash() const;
     // NOLINTEND

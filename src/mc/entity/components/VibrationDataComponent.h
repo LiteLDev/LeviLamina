@@ -26,9 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearLastVibrationPos();
+    MCFOLD void clearLastVibrationPos();
 
-    MCAPI ::std::optional<::BlockPos> const& getLastVibrationPos() const;
+    MCFOLD ::std::optional<::BlockPos> const& getLastVibrationPos() const;
 
     MCAPI ::std::optional<uint64> getTicksSinceLastVibration(::ILevel const& level) const;
 

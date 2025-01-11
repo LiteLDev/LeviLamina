@@ -78,21 +78,21 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& $getDialogueText() const;
 
-    MCAPI ::std::string const& $getSceneName() const;
+    MCFOLD ::std::string const& $getSceneName() const;
 
     MCAPI ::std::string const& $getNameText() const;
 
     MCAPI ::std::string const& $getNameRawText() const;
 
-    MCAPI ::npc::ActionContainer* $getActionsContainer();
+    MCFOLD ::npc::ActionContainer* $getActionsContainer();
 
-    MCAPI ::npc::ActionContainer const* $getActionsContainer() const;
+    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
 
     MCAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCAPI ::Actor* $getActor();
+    MCFOLD ::Actor* $getActor();
 
-    MCAPI ::Actor const* $getActor() const;
+    MCFOLD ::Actor const* $getActor() const;
     // NOLINTEND
 
 public:

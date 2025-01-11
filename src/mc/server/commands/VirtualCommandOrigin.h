@@ -141,7 +141,7 @@ public:
         int                           version
     );
 
-    MCAPI ::CommandOrigin* getOrigin() const;
+    MCFOLD ::CommandOrigin* getOrigin() const;
     // NOLINTEND
 
 public:
@@ -204,7 +204,7 @@ public:
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI ::CommandOrigin const& $getOutputReceiver() const;
+    MCFOLD ::CommandOrigin const& $getOutputReceiver() const;
 
     MCAPI bool $hasChatPerms() const;
 
@@ -216,7 +216,7 @@ public:
 
     MCAPI bool $isSelectorExpansionAllowed() const;
 
-    MCAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
     MCAPI ::NetworkIdentifier const& $getSourceId() const;
 

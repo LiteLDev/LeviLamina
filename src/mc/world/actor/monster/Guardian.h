@@ -98,7 +98,7 @@ public:
 
     MCAPI void registerLoopingSounds();
 
-    MCAPI void setAttackTime(int time);
+    MCFOLD void setAttackTime(int time);
 
     MCAPI void setElder(bool value);
     // NOLINTEND
@@ -136,15 +136,15 @@ public:
 
     MCAPI bool $checkSpawnRules(bool);
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* entity);
 
-    MCAPI float $getMaxHeadXRot();
+    MCFOLD float $getMaxHeadXRot();
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND

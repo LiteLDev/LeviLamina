@@ -242,13 +242,13 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
 
-    MCAPI int getChunkSide() const;
+    MCFOLD int getChunkSide() const;
 
-    MCAPI ::Dimension& getDimension() const;
+    MCFOLD ::Dimension& getDimension() const;
 
     MCAPI ::std::shared_ptr<::LevelChunk> getGeneratedChunk(::ChunkPos const& cp);
 
-    MCAPI ::Level& getLevel() const;
+    MCFOLD ::Level& getLevel() const;
 
     MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     );
@@ -285,9 +285,9 @@ public:
 
     MCAPI bool $isShutdownDone();
 
-    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const&);
+    MCFOLD ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const&);
 
-    MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
+    MCFOLD ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
     MCAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
 
@@ -299,9 +299,9 @@ public:
     MCAPI ::std::shared_ptr<::LevelChunk>
     $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
+    MCFOLD bool $postProcess(::ChunkViewSource& neighborhood);
 
-    MCAPI void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
+    MCFOLD void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
 
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
@@ -332,21 +332,21 @@ public:
 
     MCAPI void $flushThreadBatch();
 
-    MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
+    MCFOLD bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
-    MCAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap();
+    MCFOLD ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap();
 
     MCAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& $getStorage() const;
 
-    MCAPI void $clearDeletedEntities();
+    MCFOLD void $clearDeletedEntities();
 
-    MCAPI bool $canCreateViews() const;
+    MCFOLD bool $canCreateViews() const;
 
     MCAPI ::std::unique_ptr<::BlendingDataProvider> $tryGetBlendingDataProvider();
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
-    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk>);
+    MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk>);
 
     MCAPI bool $canLaunchTasks() const;
 

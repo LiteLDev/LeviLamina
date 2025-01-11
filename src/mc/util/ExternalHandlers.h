@@ -28,7 +28,7 @@ MCAPI void executeBlockEvent(::Block const* block, ::std::string const& name, ::
 
 MCAPI void executeBlockTrigger(::Block const& block, ::DefinitionTrigger const& trigger, ::RenderParams& params);
 
-MCAPI void executeEventResponse(::EventResponse const& response, ::RenderParams& params);
+MCFOLD void executeEventResponse(::EventResponse const& response, ::RenderParams& params);
 
 MCAPI bool executeItemStackEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params);
 // NOLINTEND

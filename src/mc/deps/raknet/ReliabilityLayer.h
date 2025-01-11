@@ -255,7 +255,7 @@ public:
         uint64                   currentTime
     );
 
-    MCAPI void SetSplitMessageProgressInterval(int interval);
+    MCFOLD void SetSplitMessageProgressInterval(int interval);
 
     MCAPI void SetTimeoutTime(uint time);
 

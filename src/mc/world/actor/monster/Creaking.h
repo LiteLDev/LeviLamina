@@ -57,7 +57,7 @@ public:
     // NOLINTBEGIN
     MCAPI float $getShadowRadius() const;
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCFOLD bool $checkSpawnRules(bool);
     // NOLINTEND
 
 public:
