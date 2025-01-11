@@ -39,13 +39,14 @@ public:
 
     MCAPI ItemInstance(::ItemInstance const& rhs);
 
-    MCAPI ItemInstance(::BlockLegacy const& block, int count);
+    MCAPI ItemInstance(::BlockLegacy const& block, int count = 1);
 
-    MCAPI ItemInstance(::Block const& block, int count, ::CompoundTag const* _userData);
+    MCAPI ItemInstance(::Block const& block, int count = 1, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemInstance(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI ItemInstance(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemInstance(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI
+    ItemInstance(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
     MCAPI ::ItemInstance clone() const;
 

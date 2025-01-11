@@ -73,13 +73,13 @@ public:
 
     MCAPI explicit ItemStack(::ItemInstance const& rhs);
 
-    MCAPI ItemStack(::BlockLegacy const& block, int count);
+    MCAPI ItemStack(::BlockLegacy const& block, int count = 1);
 
-    MCAPI ItemStack(::Block const& block, int count, ::CompoundTag const* _userData);
+    MCAPI ItemStack(::Block const& block, int count = 1, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStack(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI ItemStack(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStack(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI ItemStack(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
     MCAPI void _assignNetIdVariant(::ItemStack const& fromItem) const;
 

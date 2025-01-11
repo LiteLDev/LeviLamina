@@ -119,11 +119,12 @@ public:
 
     MCAPI ItemStackBase(::BlockLegacy const& block, int count);
 
-    MCAPI ItemStackBase(::Block const& block, int count, ::CompoundTag const* _userData);
+    MCAPI ItemStackBase(::Block const& block, int count = 1, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStackBase(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI ItemStackBase(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStackBase(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI
+    ItemStackBase(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
     MCAPI void _addCustomUserDataCommon(::std::unique_ptr<::CompoundTag>&& tag);
 
