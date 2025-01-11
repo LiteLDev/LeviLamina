@@ -1,0 +1,23 @@
+name: MC class member request
+description: Requests for completion of certain minecraft class member variables
+title: "[Request]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    attributes:
+      label: Please list all requested class names.
+      description: Names of all requested classes.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Do you have a good reason for us to complement these member variables of these mc class? Please write it out.
+      description: Sufficient reason to convince us to complement the member variables of these mc classes.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Add any other context or screenshots about the mc class member request here.
