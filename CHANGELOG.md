@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-rc.3] - 2025-01-11
+
+### Added
+
+- Added more nbt operator @OEOTYAN
+- Added some api to logger @OEOTYAN
+- Added itemstack ctor default param @Dofes
+- Added some mc class members [#1611]
+- Added an issue template for requesting complementary mc class member variables @Lovelylavender4
+
+### Fixed
+
+- Fixed [#1610] @Dofes
+- Fixed command @OEOTYAN
+- Fixed version prelease parse @OEOTYAN
+
 ## [1.0.0-rc.2] - 2025-01-06
 
 ### Added
@@ -733,8 +749,11 @@ For lip and tooth-hub test only.
 [#1559]: https://github.com/LiteLDev/LeviLamina/issues/1559
 [#1574]: https://github.com/LiteLDev/LeviLamina/issues/1574
 [#1582]: https://github.com/LiteLDev/LeviLamina/issues/1582
+[#1610]: https://github.com/LiteLDev/LeviLamina/issues/1610
+[#1611]: https://github.com/LiteLDev/LeviLamina/issues/1611
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.3...HEAD
+[1.0.0-rc.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.2...v1.0.0-rc.3
 [1.0.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...v1.0.0-rc.2
 [1.0.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...v1.0.0-rc.1
 [0.13.5]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.4...v0.13.5
