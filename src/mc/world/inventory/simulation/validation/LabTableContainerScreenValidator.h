@@ -7,12 +7,6 @@
 
 class LabTableContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    LabTableContainerScreenValidator& operator=(LabTableContainerScreenValidator const&);
-    LabTableContainerScreenValidator(LabTableContainerScreenValidator const&);
-    LabTableContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -36,7 +36,7 @@ public:
 
     MCAPI ::Actor* getAttachedActor(::Actor& owner);
 
-    MCAPI float getMaxHeight() const;
+    MCFOLD float getMaxHeight() const;
 
     MCAPI void integrate(::Actor& owner);
 

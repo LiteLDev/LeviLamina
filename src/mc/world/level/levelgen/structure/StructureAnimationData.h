@@ -53,27 +53,27 @@ public:
 
     MCAPI uint getBlocksExpectedToPlace(uint64 currentTick) const;
 
-    MCAPI uint getBlocksPlaced() const;
+    MCFOLD uint getBlocksPlaced() const;
 
     MCAPI ::BlockSource& getDimensionBlockSource() const;
 
-    MCAPI ::BlockPos const& getPosition() const;
+    MCFOLD ::BlockPos const& getPosition() const;
 
     MCAPI uint getQueueID() const;
 
-    MCAPI ::std::string const& getStructureName() const;
+    MCFOLD ::std::string const& getStructureName() const;
 
-    MCAPI ::StructureSettings const& getStructureSettings() const;
+    MCFOLD ::StructureSettings const& getStructureSettings() const;
 
-    MCAPI uchar getStructureVersion() const;
+    MCFOLD uchar getStructureVersion() const;
 
-    MCAPI ::DimensionType const& getTargetDimension() const;
+    MCFOLD ::DimensionType const& getTargetDimension() const;
 
     MCAPI uint getTotalBlocks() const;
 
     MCAPI ::CompoundTag& serialize(::CompoundTag& tag);
 
-    MCAPI void setBlocksPlaced(uint blocksPlaced);
+    MCFOLD void setBlocksPlaced(uint blocksPlaced);
 
     MCAPI void setCmdArea(::std::unique_ptr<::CommandArea> cmdArea);
 

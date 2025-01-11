@@ -12,11 +12,6 @@ class Mob;
 
 class LegacyBodyControl : public ::BodyControl {
 public:
-    // prevent constructor by default
-    LegacyBodyControl& operator=(LegacyBodyControl const&);
-    LegacyBodyControl(LegacyBodyControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

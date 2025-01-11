@@ -104,7 +104,7 @@ public:
 
     MCAPI void ejectRecord(::BlockSource& region);
 
-    MCAPI ::ItemStack const& getRecord() const;
+    MCFOLD ::ItemStack const& getRecord() const;
 
     MCAPI bool isRecordPlaying() const;
 
@@ -136,9 +136,9 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
     MCAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
 
@@ -148,13 +148,13 @@ public:
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
-    MCAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
     MCAPI void $onChanged(::BlockSource& region);
 

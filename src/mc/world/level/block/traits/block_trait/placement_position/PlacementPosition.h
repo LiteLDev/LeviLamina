@@ -31,12 +31,6 @@ public:
     // PlacementPosition inner types define
     class UpdateBlockFaceGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
     public:
-        // prevent constructor by default
-        UpdateBlockFaceGetPlacementBlockCallback& operator=(UpdateBlockFaceGetPlacementBlockCallback const&);
-        UpdateBlockFaceGetPlacementBlockCallback(UpdateBlockFaceGetPlacementBlockCallback const&);
-        UpdateBlockFaceGetPlacementBlockCallback();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
@@ -80,12 +74,6 @@ public:
     };
 
     class UpdateVerticalHalfGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
-    public:
-        // prevent constructor by default
-        UpdateVerticalHalfGetPlacementBlockCallback& operator=(UpdateVerticalHalfGetPlacementBlockCallback const&);
-        UpdateVerticalHalfGetPlacementBlockCallback(UpdateVerticalHalfGetPlacementBlockCallback const&);
-        UpdateVerticalHalfGetPlacementBlockCallback();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -208,7 +196,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

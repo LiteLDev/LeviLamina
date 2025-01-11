@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class EvocationIllager : public ::HumanoidMonster {
 public:
-    // prevent constructor by default
-    EvocationIllager& operator=(EvocationIllager const&);
-    EvocationIllager(EvocationIllager const&);
-    EvocationIllager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 158
@@ -64,7 +58,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isAlliedTo(::Mob* other);
 
-    MCAPI int $getArmorValue() const;
+    MCFOLD int $getArmorValue() const;
     // NOLINTEND
 
 public:

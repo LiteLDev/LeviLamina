@@ -13,12 +13,6 @@ struct PDFOptions;
 
 class PDFWriterWindows : public ::PDFWriter {
 public:
-    // prevent constructor by default
-    PDFWriterWindows& operator=(PDFWriterWindows const&);
-    PDFWriterWindows(PDFWriterWindows const&);
-    PDFWriterWindows();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

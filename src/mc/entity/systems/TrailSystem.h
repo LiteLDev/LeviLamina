@@ -35,12 +35,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    TrailSystem& operator=(TrailSystem const&);
-    TrailSystem(TrailSystem const&);
-    TrailSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

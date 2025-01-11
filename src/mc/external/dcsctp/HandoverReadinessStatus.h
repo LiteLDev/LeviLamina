@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class HandoverReadinessStatus {
-public:
-    // prevent constructor by default
-    HandoverReadinessStatus& operator=(HandoverReadinessStatus const&);
-    HandoverReadinessStatus(HandoverReadinessStatus const&);
-    HandoverReadinessStatus();
-};
+class HandoverReadinessStatus {};
 
 } // namespace dcsctp

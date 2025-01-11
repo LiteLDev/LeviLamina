@@ -14,12 +14,6 @@ class Pos2d;
 
 class IslandOperationNode : public ::RootOperationNode<::OperationNodeValues::Terrain, ::Pos2d> {
 public:
-    // prevent constructor by default
-    IslandOperationNode& operator=(IslandOperationNode const&);
-    IslandOperationNode(IslandOperationNode const&);
-    IslandOperationNode();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

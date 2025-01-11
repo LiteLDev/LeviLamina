@@ -12,19 +12,7 @@ public:
     // clang-format on
 
     // SingleThreaded inner types define
-    class NullMutex {
-    public:
-        // prevent constructor by default
-        NullMutex& operator=(NullMutex const&);
-        NullMutex(NullMutex const&);
-        NullMutex();
-    };
-
-public:
-    // prevent constructor by default
-    SingleThreaded& operator=(SingleThreaded const&);
-    SingleThreaded(SingleThreaded const&);
-    SingleThreaded();
+    class NullMutex {};
 };
 
 } // namespace Bedrock::PubSub::ThreadModel

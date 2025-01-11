@@ -7,12 +7,6 @@
 
 class ProgressionFlightingToggles : public ::FlightingToggles {
 public:
-    // prevent constructor by default
-    ProgressionFlightingToggles& operator=(ProgressionFlightingToggles const&);
-    ProgressionFlightingToggles(ProgressionFlightingToggles const&);
-    ProgressionFlightingToggles();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ namespace mce { class Color; }
 
 class BlockTintResolver {
 public:
-    // prevent constructor by default
-    BlockTintResolver& operator=(BlockTintResolver const&);
-    BlockTintResolver(BlockTintResolver const&);
-    BlockTintResolver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

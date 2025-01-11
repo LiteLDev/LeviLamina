@@ -15,12 +15,6 @@ namespace Scripting {
 
 class IModuleBindingFactory {
 public:
-    // prevent constructor by default
-    IModuleBindingFactory& operator=(IModuleBindingFactory const&);
-    IModuleBindingFactory(IModuleBindingFactory const&);
-    IModuleBindingFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

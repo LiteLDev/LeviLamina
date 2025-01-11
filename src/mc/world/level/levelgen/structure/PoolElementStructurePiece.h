@@ -120,7 +120,7 @@ public:
 
     MCAPI void $moveBoundingBox(int dx, int dy, int dz);
 
-    MCAPI bool $_needsPostProcessing(::BlockSource& region);
+    MCFOLD bool $_needsPostProcessing(::BlockSource& region);
     // NOLINTEND
 
 public:

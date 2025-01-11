@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct GetUserInventoryRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    GetUserInventoryRequest& operator=(GetUserInventoryRequest const&);
-    GetUserInventoryRequest(GetUserInventoryRequest const&);
-    GetUserInventoryRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

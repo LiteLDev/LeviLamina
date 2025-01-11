@@ -4,12 +4,6 @@
 
 class IScreenChangedEventing {
 public:
-    // prevent constructor by default
-    IScreenChangedEventing& operator=(IScreenChangedEventing const&);
-    IScreenChangedEventing(IScreenChangedEventing const&);
-    IScreenChangedEventing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -27,7 +21,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

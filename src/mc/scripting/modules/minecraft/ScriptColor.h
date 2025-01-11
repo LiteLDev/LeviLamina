@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::mce::Color const& getColor() const;
+    MCFOLD ::mce::Color const& getColor() const;
     // NOLINTEND
 
 public:

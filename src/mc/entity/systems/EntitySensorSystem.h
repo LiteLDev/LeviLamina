@@ -19,12 +19,6 @@ struct TickingSystemWithInfo;
 
 class EntitySensorSystem {
 public:
-    // prevent constructor by default
-    EntitySensorSystem& operator=(EntitySensorSystem const&);
-    EntitySensorSystem(EntitySensorSystem const&);
-    EntitySensorSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tick(

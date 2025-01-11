@@ -15,12 +15,6 @@ class Random;
 
 class SmeltItemFunction : public ::LootItemFunction {
 public:
-    // prevent constructor by default
-    SmeltItemFunction& operator=(SmeltItemFunction const&);
-    SmeltItemFunction(SmeltItemFunction const&);
-    SmeltItemFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

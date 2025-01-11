@@ -12,12 +12,6 @@ struct ContainerValidationResult;
 
 class ContainerScreenValidationActivate : public ::ContainerScreenValidation {
 public:
-    // prevent constructor by default
-    ContainerScreenValidationActivate& operator=(ContainerScreenValidationActivate const&);
-    ContainerScreenValidationActivate(ContainerScreenValidationActivate const&);
-    ContainerScreenValidationActivate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerValidationResult $tryActivate();
+    MCFOLD ::ContainerValidationResult $tryActivate();
     // NOLINTEND
 
 public:

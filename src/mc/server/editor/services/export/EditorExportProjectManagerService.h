@@ -65,9 +65,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::std::string_view $getServiceName() const;
 
@@ -77,7 +77,7 @@ public:
         ::std::function<void(::Editor::ExportResult const&)> callback
     );
 
-    MCAPI bool $canExportProject();
+    MCFOLD bool $canExportProject();
     // NOLINTEND
 
 public:

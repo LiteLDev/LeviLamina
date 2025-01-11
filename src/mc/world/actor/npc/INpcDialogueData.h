@@ -11,12 +11,6 @@ namespace npc { struct ActionContainer; }
 
 struct INpcDialogueData {
 public:
-    // prevent constructor by default
-    INpcDialogueData& operator=(INpcDialogueData const&);
-    INpcDialogueData(INpcDialogueData const&);
-    INpcDialogueData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -65,8 +59,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getRawDialogueText() const;
+    MCFOLD ::std::string const& $getRawDialogueText() const;
 
-    MCAPI bool $isRemoteFire();
+    MCFOLD bool $isRemoteFire();
     // NOLINTEND
 };

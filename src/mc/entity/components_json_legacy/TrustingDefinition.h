@@ -33,7 +33,7 @@ public:
 
     MCAPI void addTrustItemByName(::std::string const& name);
 
-    MCAPI void initialize(::EntityContext&, ::TrustingComponent& component) const;
+    MCFOLD void initialize(::EntityContext&, ::TrustingComponent& component) const;
     // NOLINTEND
 
 public:
@@ -47,6 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

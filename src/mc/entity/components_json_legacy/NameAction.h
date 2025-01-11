@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     MCAPI NameAction(::NameAction const&);
 
-    MCAPI void addNameFilterByName(::std::string const& name);
+    MCFOLD void addNameFilterByName(::std::string const& name);
 
     MCAPI ~NameAction();
     // NOLINTEND

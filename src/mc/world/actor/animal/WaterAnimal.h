@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class WaterAnimal : public ::Mob {
 public:
-    // prevent constructor by default
-    WaterAnimal& operator=(WaterAnimal const&);
-    WaterAnimal(WaterAnimal const&);
-    WaterAnimal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 152
@@ -60,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -68,7 +62,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $checkSpawnRules(bool);
 
-    MCAPI float $getFlopVerticalVelocityFactor() const;
+    MCFOLD float $getFlopVerticalVelocityFactor() const;
 
     MCAPI float $getFlopHorizontalVelocityFactor() const;
     // NOLINTEND

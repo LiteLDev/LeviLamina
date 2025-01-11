@@ -48,7 +48,7 @@ public:
 
     MCAPI float getFloat() const;
 
-    MCAPI ::Ability::Type getType() const;
+    MCFOLD ::Ability::Type getType() const;
 
     MCAPI bool hasOption(::Ability::Options op) const;
 
@@ -60,7 +60,7 @@ public:
 
     MCAPI void setFloat(float val);
 
-    MCAPI void unSet();
+    MCFOLD void unSet();
     // NOLINTEND
 
 public:

@@ -14,12 +14,6 @@ namespace webrtc {
 
 class FlexfecSender {
 public:
-    // prevent constructor by default
-    FlexfecSender& operator=(FlexfecSender const&);
-    FlexfecSender(FlexfecSender const&);
-    FlexfecSender();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

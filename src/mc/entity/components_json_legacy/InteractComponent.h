@@ -31,7 +31,7 @@ public:
     MCAPI bool
     _runInteraction(::Actor& owner, ::Interaction const& desc, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI short getCooldownCounter() const;
+    MCFOLD short getCooldownCounter() const;
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 

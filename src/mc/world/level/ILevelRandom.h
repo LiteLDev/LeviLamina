@@ -10,12 +10,6 @@ class Random;
 
 class ILevelRandom {
 public:
-    // prevent constructor by default
-    ILevelRandom& operator=(ILevelRandom const&);
-    ILevelRandom(ILevelRandom const&);
-    ILevelRandom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

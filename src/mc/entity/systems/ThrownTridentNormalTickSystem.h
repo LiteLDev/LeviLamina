@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct ThrownTridentNormalTickSystem {
 public:
-    // prevent constructor by default
-    ThrownTridentNormalTickSystem& operator=(ThrownTridentNormalTickSystem const&);
-    ThrownTridentNormalTickSystem(ThrownTridentNormalTickSystem const&);
-    ThrownTridentNormalTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

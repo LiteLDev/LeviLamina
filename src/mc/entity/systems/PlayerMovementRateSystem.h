@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class PlayerMovementRateSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    PlayerMovementRateSystem& operator=(PlayerMovementRateSystem const&);
-    PlayerMovementRateSystem(PlayerMovementRateSystem const&);
-    PlayerMovementRateSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

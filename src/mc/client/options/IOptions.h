@@ -48,12 +48,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IOptions& operator=(IOptions const&);
-    IOptions(IOptions const&);
-    IOptions();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

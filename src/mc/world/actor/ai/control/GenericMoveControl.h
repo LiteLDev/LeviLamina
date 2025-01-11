@@ -14,11 +14,6 @@ struct MoveControlDescription;
 
 class GenericMoveControl : public ::MoveControl {
 public:
-    // prevent constructor by default
-    GenericMoveControl& operator=(GenericMoveControl const&);
-    GenericMoveControl(GenericMoveControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -52,7 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
+    MCFOLD void $initializeInternal(::Mob& mob, ::MoveControlDescription* description);
 
     MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
     // NOLINTEND

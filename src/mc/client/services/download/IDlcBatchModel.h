@@ -14,12 +14,6 @@ class IStoreCatalogRepository;
 
 class IDlcBatchModel {
 public:
-    // prevent constructor by default
-    IDlcBatchModel& operator=(IDlcBatchModel const&);
-    IDlcBatchModel(IDlcBatchModel const&);
-    IDlcBatchModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

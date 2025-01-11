@@ -14,12 +14,6 @@ class Pos2d;
 
 class AddOceanTemperatureOperationNode : public ::RootOperationNode<::BiomeTemperatureCategory, ::Pos2d> {
 public:
-    // prevent constructor by default
-    AddOceanTemperatureOperationNode& operator=(AddOceanTemperatureOperationNode const&);
-    AddOceanTemperatureOperationNode(AddOceanTemperatureOperationNode const&);
-    AddOceanTemperatureOperationNode();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

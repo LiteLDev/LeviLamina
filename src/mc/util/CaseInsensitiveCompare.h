@@ -4,12 +4,6 @@
 
 namespace Util {
 
-struct CaseInsensitiveCompare {
-public:
-    // prevent constructor by default
-    CaseInsensitiveCompare& operator=(CaseInsensitiveCompare const&);
-    CaseInsensitiveCompare(CaseInsensitiveCompare const&);
-    CaseInsensitiveCompare();
-};
+struct CaseInsensitiveCompare {};
 
 } // namespace Util

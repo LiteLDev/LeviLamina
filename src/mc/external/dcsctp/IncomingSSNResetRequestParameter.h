@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class IncomingSSNResetRequestParameter {
 public:
-    // prevent constructor by default
-    IncomingSSNResetRequestParameter& operator=(IncomingSSNResetRequestParameter const&);
-    IncomingSSNResetRequestParameter(IncomingSSNResetRequestParameter const&);
-    IncomingSSNResetRequestParameter();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::IncomingSSNResetRequestParameter> Parse(::rtc::ArrayView<uchar const>);

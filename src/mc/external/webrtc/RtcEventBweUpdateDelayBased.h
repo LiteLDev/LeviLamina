@@ -9,12 +9,6 @@ namespace webrtc {
 
 class RtcEventBweUpdateDelayBased {
 public:
-    // prevent constructor by default
-    RtcEventBweUpdateDelayBased& operator=(RtcEventBweUpdateDelayBased const&);
-    RtcEventBweUpdateDelayBased(RtcEventBweUpdateDelayBased const&);
-    RtcEventBweUpdateDelayBased();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RtcEventBweUpdateDelayBased(int, ::webrtc::BandwidthUsage);

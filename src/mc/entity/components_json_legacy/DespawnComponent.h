@@ -24,12 +24,6 @@ public:
     // DespawnComponent inner types define
     class IWorldAccessor {
     public:
-        // prevent constructor by default
-        IWorldAccessor& operator=(IWorldAccessor const&);
-        IWorldAccessor(IWorldAccessor const&);
-        IWorldAccessor();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -60,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -135,7 +129,7 @@ public:
 
         MCAPI bool $hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
-        MCAPI ::Randomize& $getChanceRandomize();
+        MCFOLD ::Randomize& $getChanceRandomize();
 
         MCAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
 
@@ -148,12 +142,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    DespawnComponent& operator=(DespawnComponent const&);
-    DespawnComponent(DespawnComponent const&);
-    DespawnComponent();
 
 public:
     // member functions

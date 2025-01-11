@@ -13,12 +13,6 @@ struct INpcDialogueData;
 
 class NpcEventListener {
 public:
-    // prevent constructor by default
-    NpcEventListener& operator=(NpcEventListener const&);
-    NpcEventListener(NpcEventListener const&);
-    NpcEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

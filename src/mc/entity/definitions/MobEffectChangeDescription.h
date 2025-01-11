@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class MobEffectInstance;
 struct DeserializeDataParams;
 // clang-format on
 
@@ -14,15 +15,9 @@ struct MobEffectChangeDescription : public ::AttributeDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka9c939;
-    ::ll::UntypedStorage<8, 24> mUnk5e4af7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mAddEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>       mRemoveEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectChangeDescription& operator=(MobEffectChangeDescription const&);
-    MobEffectChangeDescription(MobEffectChangeDescription const&);
-    MobEffectChangeDescription();
 
 public:
     // virtual functions

@@ -5,12 +5,6 @@
 namespace Bedrock::Threading {
 
 template <typename T0>
-class UniqueLock {
-public:
-    // prevent constructor by default
-    UniqueLock& operator=(UniqueLock const&);
-    UniqueLock(UniqueLock const&);
-    UniqueLock();
-};
+class UniqueLock {};
 
 } // namespace Bedrock::Threading

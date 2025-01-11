@@ -64,7 +64,7 @@ public:
     virtual ::std::string toString() const /*override*/;
 
     // vIndex: 7
-    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
 
     // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
@@ -82,7 +82,7 @@ public:
 
     MCAPI void append(::CompoundTag const& tag);
 
-    MCAPI TagMap::const_iterator begin() const;
+    MCFOLD TagMap::const_iterator begin() const;
 
     MCAPI void clear();
 
@@ -92,11 +92,11 @@ public:
 
     MCAPI bool contains(::std::string_view name, ::Tag::Type type) const;
 
-    MCAPI TagMap::const_iterator end() const;
+    MCFOLD TagMap::const_iterator end() const;
 
-    MCAPI bool isEmpty() const;
+    MCFOLD bool isEmpty() const;
 
-    MCAPI TagMap const& rawView() const;
+    MCFOLD TagMap const& rawView() const;
 
     MCAPI bool remove(::std::string_view name);
 
@@ -128,7 +128,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 

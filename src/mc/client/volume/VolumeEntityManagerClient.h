@@ -7,12 +7,6 @@
 
 class VolumeEntityManagerClient : public ::VolumeEntityManager {
 public:
-    // prevent constructor by default
-    VolumeEntityManagerClient& operator=(VolumeEntityManagerClient const&);
-    VolumeEntityManagerClient(VolumeEntityManagerClient const&);
-    VolumeEntityManagerClient();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

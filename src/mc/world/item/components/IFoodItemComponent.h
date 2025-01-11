@@ -16,12 +16,6 @@ class Player;
 
 class IFoodItemComponent {
 public:
-    // prevent constructor by default
-    IFoodItemComponent& operator=(IFoodItemComponent const&);
-    IFoodItemComponent(IFoodItemComponent const&);
-    IFoodItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

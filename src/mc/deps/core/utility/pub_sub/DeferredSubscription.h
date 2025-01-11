@@ -7,12 +7,6 @@
 
 namespace Bedrock::PubSub {
 
-class DeferredSubscription : public ::Bedrock::PubSub::SubscriptionBase {
-public:
-    // prevent constructor by default
-    DeferredSubscription& operator=(DeferredSubscription const&);
-    DeferredSubscription(DeferredSubscription const&);
-    DeferredSubscription();
-};
+class DeferredSubscription : public ::Bedrock::PubSub::SubscriptionBase {};
 
 } // namespace Bedrock::PubSub

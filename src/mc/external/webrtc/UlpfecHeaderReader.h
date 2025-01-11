@@ -6,11 +6,6 @@ namespace webrtc {
 
 class UlpfecHeaderReader {
 public:
-    // prevent constructor by default
-    UlpfecHeaderReader& operator=(UlpfecHeaderReader const&);
-    UlpfecHeaderReader(UlpfecHeaderReader const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI UlpfecHeaderReader();

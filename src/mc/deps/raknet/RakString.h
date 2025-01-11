@@ -70,7 +70,7 @@ public:
 
     MCAPI RakString(char const*, ...);
 
-    MCAPI ::RakNet::RakString& operator=(char* str);
+    MCFOLD ::RakNet::RakString& operator=(char* str);
 
     MCAPI ::RakNet::RakString& operator=(char const*);
 

@@ -12,12 +12,6 @@
 
 class ItemGameplayHandler : public ::GameplayHandler {
 public:
-    // prevent constructor by default
-    ItemGameplayHandler& operator=(ItemGameplayHandler const&);
-    ItemGameplayHandler(ItemGameplayHandler const&);
-    ItemGameplayHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

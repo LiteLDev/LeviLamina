@@ -16,12 +16,6 @@ namespace Bedrock::Http {
 
 class HttpInterfaceInternal : public ::Bedrock::Http::HttpInterface {
 public:
-    // prevent constructor by default
-    HttpInterfaceInternal& operator=(HttpInterfaceInternal const&);
-    HttpInterfaceInternal(HttpInterfaceInternal const&);
-    HttpInterfaceInternal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -44,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCFOLD void
     $send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env);
     // NOLINTEND
 

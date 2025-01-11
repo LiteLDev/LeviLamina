@@ -5,12 +5,6 @@
 namespace JsonUtil {
 
 template <typename T0, typename T1>
-class JsonSchemaObjectNode {
-public:
-    // prevent constructor by default
-    JsonSchemaObjectNode& operator=(JsonSchemaObjectNode const&);
-    JsonSchemaObjectNode(JsonSchemaObjectNode const&);
-    JsonSchemaObjectNode();
-};
+class JsonSchemaObjectNode {};
 
 } // namespace JsonUtil

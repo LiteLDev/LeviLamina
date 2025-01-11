@@ -15,12 +15,6 @@ namespace webrtc {
 
 class RTCStatsCollectorCallback : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    RTCStatsCollectorCallback& operator=(RTCStatsCollectorCallback const&);
-    RTCStatsCollectorCallback(RTCStatsCollectorCallback const&);
-    RTCStatsCollectorCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

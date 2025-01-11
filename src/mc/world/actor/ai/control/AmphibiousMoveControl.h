@@ -13,11 +13,6 @@ class MoveControlComponent;
 
 class AmphibiousMoveControl : public ::GenericMoveControl {
 public:
-    // prevent constructor by default
-    AmphibiousMoveControl& operator=(AmphibiousMoveControl const&);
-    AmphibiousMoveControl(AmphibiousMoveControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

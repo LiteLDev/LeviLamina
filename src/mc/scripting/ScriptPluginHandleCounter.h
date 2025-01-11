@@ -52,7 +52,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -131,7 +131,7 @@ public:
 
     MCAPI ::std::string getName() const;
 
-    MCAPI ::ScriptPlugin& getScriptPlugin();
+    MCFOLD ::ScriptPlugin& getScriptPlugin();
 
     MCAPI ::ScriptPluginHandleCounter::TypeStats const* getStatsById(uint id) const;
     // NOLINTEND
@@ -171,13 +171,13 @@ public:
         uint                     size
     );
 
-    MCAPI void $onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
+    MCFOLD void $onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
 
-    MCAPI void $onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
+    MCFOLD void $onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
 
-    MCAPI void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
+    MCFOLD void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
 
-    MCAPI void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
+    MCFOLD void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
     // NOLINTEND
 
 public:

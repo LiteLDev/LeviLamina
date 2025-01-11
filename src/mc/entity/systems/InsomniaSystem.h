@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class InsomniaSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    InsomniaSystem& operator=(InsomniaSystem const&);
-    InsomniaSystem(InsomniaSystem const&);
-    InsomniaSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

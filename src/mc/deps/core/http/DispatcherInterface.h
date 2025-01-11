@@ -16,12 +16,6 @@ namespace Bedrock::Http {
 
 class DispatcherInterface : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    DispatcherInterface& operator=(DispatcherInterface const&);
-    DispatcherInterface(DispatcherInterface const&);
-    DispatcherInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

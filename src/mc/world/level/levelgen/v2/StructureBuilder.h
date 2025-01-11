@@ -5,12 +5,6 @@
 namespace br::worldgen {
 
 template <typename T0>
-class StructureBuilder {
-public:
-    // prevent constructor by default
-    StructureBuilder& operator=(StructureBuilder const&);
-    StructureBuilder(StructureBuilder const&);
-    StructureBuilder();
-};
+class StructureBuilder {};
 
 } // namespace br::worldgen

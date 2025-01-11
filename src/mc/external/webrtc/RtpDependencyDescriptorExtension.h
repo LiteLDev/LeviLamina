@@ -12,12 +12,6 @@ namespace webrtc {
 
 class RtpDependencyDescriptorExtension {
 public:
-    // prevent constructor by default
-    RtpDependencyDescriptorExtension& operator=(RtpDependencyDescriptorExtension const&);
-    RtpDependencyDescriptorExtension(RtpDependencyDescriptorExtension const&);
-    RtpDependencyDescriptorExtension();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uint64

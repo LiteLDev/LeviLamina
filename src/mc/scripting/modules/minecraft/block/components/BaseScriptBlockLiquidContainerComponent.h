@@ -61,7 +61,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $setFillLevel(int level);
 
-    MCAPI bool $_isValid() const;
+    MCFOLD bool $_isValid() const;
     // NOLINTEND
 
 public:

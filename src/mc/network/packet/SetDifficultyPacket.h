@@ -47,7 +47,7 @@ public:
 
     MCAPI explicit SetDifficultyPacket(::Difficulty difficulty);
 
-    MCAPI ::Difficulty getDifficulty() const;
+    MCFOLD ::Difficulty getDifficulty() const;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

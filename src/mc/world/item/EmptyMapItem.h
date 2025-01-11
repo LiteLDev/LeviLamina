@@ -66,7 +66,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $requiresInteract() const;
+    MCFOLD bool $requiresInteract() const;
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
 

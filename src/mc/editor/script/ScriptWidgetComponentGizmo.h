@@ -65,7 +65,7 @@ public:
         ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions> options
     );
 
-    MCAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    MCFOLD ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _isActivated() const;
 
     MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
@@ -100,7 +100,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
 
     MCAPI void $_handleWidgetComponentStateChange(::Editor::Network::WidgetComponentStateChangePayload const& payload);
     // NOLINTEND

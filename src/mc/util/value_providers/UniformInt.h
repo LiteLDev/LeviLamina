@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int generateNext(::Random& random) const;
+    MCFOLD int generateNext(::Random& random) const;
     // NOLINTEND
 };
 

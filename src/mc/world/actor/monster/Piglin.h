@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Piglin : public ::HumanoidMonster {
 public:
-    // prevent constructor by default
-    Piglin& operator=(Piglin const&);
-    Piglin(Piglin const&);
-    Piglin();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 120
@@ -66,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
     // NOLINTEND
 
 public:

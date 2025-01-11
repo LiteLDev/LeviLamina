@@ -4,12 +4,6 @@
 
 namespace mce {
 
-class RenderGraph {
-public:
-    // prevent constructor by default
-    RenderGraph& operator=(RenderGraph const&);
-    RenderGraph(RenderGraph const&);
-    RenderGraph();
-};
+class RenderGraph {};
 
 } // namespace mce

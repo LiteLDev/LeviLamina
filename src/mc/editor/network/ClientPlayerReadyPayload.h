@@ -14,11 +14,6 @@ namespace Editor::Network {
 
 class ClientPlayerReadyPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ClientPlayerReadyPayload> {
 public:
-    // prevent constructor by default
-    ClientPlayerReadyPayload& operator=(ClientPlayerReadyPayload const&);
-    ClientPlayerReadyPayload(ClientPlayerReadyPayload const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

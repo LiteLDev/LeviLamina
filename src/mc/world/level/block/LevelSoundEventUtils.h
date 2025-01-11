@@ -4,12 +4,6 @@
 
 class LevelSoundEventUtils {
 public:
-    // prevent constructor by default
-    LevelSoundEventUtils& operator=(LevelSoundEventUtils const&);
-    LevelSoundEventUtils(LevelSoundEventUtils const&);
-    LevelSoundEventUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int serializePercentageToData(float valueToSerialize);

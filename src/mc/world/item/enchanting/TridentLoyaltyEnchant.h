@@ -7,12 +7,6 @@
 
 class TridentLoyaltyEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    TridentLoyaltyEnchant& operator=(TridentLoyaltyEnchant const&);
-    TridentLoyaltyEnchant(TridentLoyaltyEnchant const&);
-    TridentLoyaltyEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -39,9 +33,9 @@ public:
     // NOLINTBEGIN
     MCAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
     // NOLINTEND
 
 public:

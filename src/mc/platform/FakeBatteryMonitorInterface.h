@@ -8,11 +8,6 @@
 
 class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
 public:
-    // prevent constructor by default
-    FakeBatteryMonitorInterface& operator=(FakeBatteryMonitorInterface const&);
-    FakeBatteryMonitorInterface(FakeBatteryMonitorInterface const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -46,9 +41,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BatteryStatus $getBatteryStatus() const;
+    MCFOLD ::BatteryStatus $getBatteryStatus() const;
 
-    MCAPI float $getBatteryLevel() const;
+    MCFOLD float $getBatteryLevel() const;
     // NOLINTEND
 
 public:

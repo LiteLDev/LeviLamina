@@ -12,12 +12,6 @@ class Experiments;
 
 class ActorComponentFactory : public ::EntityComponentFactoryJson {
 public:
-    // prevent constructor by default
-    ActorComponentFactory& operator=(ActorComponentFactory const&);
-    ActorComponentFactory(ActorComponentFactory const&);
-    ActorComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

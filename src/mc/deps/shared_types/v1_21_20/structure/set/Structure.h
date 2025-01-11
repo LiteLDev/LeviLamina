@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
     operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Structure&&);
 
     MCAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&

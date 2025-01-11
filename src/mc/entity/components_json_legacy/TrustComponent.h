@@ -33,9 +33,9 @@ public:
 
     MCAPI void assignTrustedPlayer(::ActorUniqueID playerID);
 
-    MCAPI ::std::unordered_set<::ActorUniqueID> const& getTrustedPlayerIDs() const;
+    MCFOLD ::std::unordered_set<::ActorUniqueID> const& getTrustedPlayerIDs() const;
 
-    MCAPI ::TrustComponent& operator=(::TrustComponent&&);
+    MCFOLD ::TrustComponent& operator=(::TrustComponent&&);
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::TrustComponent&&);
     // NOLINTEND

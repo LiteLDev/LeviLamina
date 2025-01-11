@@ -27,12 +27,6 @@ struct WasInWaterFlagComponent;
 
 struct TriggerJumpSystem {
 public:
-    // prevent constructor by default
-    TriggerJumpSystem& operator=(TriggerJumpSystem const&);
-    TriggerJumpSystem(TriggerJumpSystem const&);
-    TriggerJumpSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createCleanupSystem();

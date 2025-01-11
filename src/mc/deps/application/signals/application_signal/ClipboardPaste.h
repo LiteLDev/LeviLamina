@@ -13,12 +13,6 @@ namespace ApplicationSignal { struct ClipboardData; }
 namespace ApplicationSignal {
 
 class ClipboardPaste
-: public ::Bedrock::Signal<::ApplicationSignal::ClipboardPaste, ::ApplicationSignal::ClipboardData> {
-public:
-    // prevent constructor by default
-    ClipboardPaste& operator=(ClipboardPaste const&);
-    ClipboardPaste(ClipboardPaste const&);
-    ClipboardPaste();
-};
+: public ::Bedrock::Signal<::ApplicationSignal::ClipboardPaste, ::ApplicationSignal::ClipboardData> {};
 
 } // namespace ApplicationSignal

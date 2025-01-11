@@ -14,12 +14,6 @@ struct LocalWorldInfo;
 
 class IWorldsProvider {
 public:
-    // prevent constructor by default
-    IWorldsProvider& operator=(IWorldsProvider const&);
-    IWorldsProvider(IWorldsProvider const&);
-    IWorldsProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

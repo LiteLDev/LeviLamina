@@ -7,12 +7,6 @@
 
 class ItemStackRequestActionPlace : public ::ItemStackRequestActionTransferBase {
 public:
-    // prevent constructor by default
-    ItemStackRequestActionPlace& operator=(ItemStackRequestActionPlace const&);
-    ItemStackRequestActionPlace(ItemStackRequestActionPlace const&);
-    ItemStackRequestActionPlace();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

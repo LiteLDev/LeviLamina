@@ -9,12 +9,6 @@ namespace ClientBlockPipeline { struct BlockSchematic; }
 
 struct BlockUnitCubeComponent {
 public:
-    // prevent constructor by default
-    BlockUnitCubeComponent& operator=(BlockUnitCubeComponent const&);
-    BlockUnitCubeComponent(BlockUnitCubeComponent const&);
-    BlockUnitCubeComponent();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>& mBlockSchematic();

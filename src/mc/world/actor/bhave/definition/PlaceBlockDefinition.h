@@ -7,12 +7,6 @@
 
 class PlaceBlockDefinition : public ::BehaviorDefinition {
 public:
-    // prevent constructor by default
-    PlaceBlockDefinition& operator=(PlaceBlockDefinition const&);
-    PlaceBlockDefinition(PlaceBlockDefinition const&);
-    PlaceBlockDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

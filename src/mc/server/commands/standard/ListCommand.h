@@ -14,12 +14,6 @@ class CommandRegistry;
 
 class ListCommand : public ::ServerCommand {
 public:
-    // prevent constructor by default
-    ListCommand& operator=(ListCommand const&);
-    ListCommand(ListCommand const&);
-    ListCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

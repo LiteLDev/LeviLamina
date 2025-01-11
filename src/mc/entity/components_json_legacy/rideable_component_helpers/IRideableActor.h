@@ -13,12 +13,6 @@ namespace RideableComponentHelpers {
 
 class IRideableActor {
 public:
-    // prevent constructor by default
-    IRideableActor& operator=(IRideableActor const&);
-    IRideableActor(IRideableActor const&);
-    IRideableActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

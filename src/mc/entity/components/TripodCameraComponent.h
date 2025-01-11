@@ -11,12 +11,6 @@ class Player;
 
 class TripodCameraComponent {
 public:
-    // prevent constructor by default
-    TripodCameraComponent& operator=(TripodCameraComponent const&);
-    TripodCameraComponent(TripodCameraComponent const&);
-    TripodCameraComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);

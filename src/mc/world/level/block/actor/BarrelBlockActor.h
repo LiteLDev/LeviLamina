@@ -61,7 +61,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $getName() const;
 
-    MCAPI void $onPlace(::BlockSource& region);
+    MCFOLD void $onPlace(::BlockSource& region);
 
     MCAPI void $startOpen(::Player& player);
 

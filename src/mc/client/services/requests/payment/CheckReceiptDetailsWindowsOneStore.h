@@ -12,12 +12,6 @@ namespace Json { class Value; }
 
 class CheckReceiptDetailsWindowsOneStore : public ::CheckReceiptDetails {
 public:
-    // prevent constructor by default
-    CheckReceiptDetailsWindowsOneStore& operator=(CheckReceiptDetailsWindowsOneStore const&);
-    CheckReceiptDetailsWindowsOneStore(CheckReceiptDetailsWindowsOneStore const&);
-    CheckReceiptDetailsWindowsOneStore();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class LabTableInputValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    LabTableInputValidation& operator=(LabTableInputValidation const&);
-    LabTableInputValidation(LabTableInputValidation const&);
-    LabTableInputValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -59,9 +53,9 @@ public:
         bool
     ) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
+    MCFOLD bool $canDestroy(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

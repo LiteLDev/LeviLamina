@@ -78,15 +78,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    TextObjectParser& operator=(TextObjectParser const&);
-    TextObjectParser(TextObjectParser const&);
-    TextObjectParser();
 
 public:
     // static functions

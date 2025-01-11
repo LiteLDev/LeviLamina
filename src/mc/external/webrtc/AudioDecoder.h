@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class AudioDecoder {
-public:
-    // prevent constructor by default
-    AudioDecoder& operator=(AudioDecoder const&);
-    AudioDecoder(AudioDecoder const&);
-    AudioDecoder();
-};
+class AudioDecoder {};
 
 } // namespace webrtc

@@ -18,12 +18,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    Direction& operator=(Direction const&);
-    Direction(Direction const&);
-    Direction();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Direction::Type convertFacingDirectionToDirection(uchar facingDirection);

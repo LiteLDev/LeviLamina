@@ -4,12 +4,6 @@
 
 namespace Social {
 
-struct RawShowcasedScreenshot {
-public:
-    // prevent constructor by default
-    RawShowcasedScreenshot& operator=(RawShowcasedScreenshot const&);
-    RawShowcasedScreenshot(RawShowcasedScreenshot const&);
-    RawShowcasedScreenshot();
-};
+struct RawShowcasedScreenshot {};
 
 } // namespace Social

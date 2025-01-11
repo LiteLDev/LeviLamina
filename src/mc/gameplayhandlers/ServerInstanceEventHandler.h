@@ -9,12 +9,6 @@
 
 class ServerInstanceEventHandler : public ::GameplayHandler {
 public:
-    // prevent constructor by default
-    ServerInstanceEventHandler& operator=(ServerInstanceEventHandler const&);
-    ServerInstanceEventHandler(ServerInstanceEventHandler const&);
-    ServerInstanceEventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

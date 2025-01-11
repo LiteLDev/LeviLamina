@@ -14,12 +14,6 @@ class Random;
 
 class VinesFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    VinesFeature& operator=(VinesFeature const&);
-    VinesFeature(VinesFeature const&);
-    VinesFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

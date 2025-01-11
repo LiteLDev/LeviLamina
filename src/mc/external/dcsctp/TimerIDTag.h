@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class TimerIDTag {
-public:
-    // prevent constructor by default
-    TimerIDTag& operator=(TimerIDTag const&);
-    TimerIDTag(TimerIDTag const&);
-    TimerIDTag();
-};
+class TimerIDTag {};
 
 } // namespace dcsctp

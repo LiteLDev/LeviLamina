@@ -98,21 +98,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinEngineVersion const& $getMinEngineVersion() const;
+    MCFOLD ::MinEngineVersion const& $getMinEngineVersion() const;
 
     MCAPI ::MolangVersion $getMolangVersion() const;
 
-    MCAPI bool $isBaseGamePack() const;
+    MCFOLD bool $isBaseGamePack() const;
 
-    MCAPI bool $isTrustedPack() const;
+    MCFOLD bool $isTrustedPack() const;
 
-    MCAPI ::mce::UUID const& $getPackUUID() const;
+    MCFOLD ::mce::UUID const& $getPackUUID() const;
 
-    MCAPI ::Experiments const& $getExperiments() const;
+    MCFOLD ::Experiments const& $getExperiments() const;
 
-    MCAPI ::PackType $getPackType() const;
+    MCFOLD ::PackType $getPackType() const;
 
-    MCAPI ::PackLoadStorage& $getStorage();
+    MCFOLD ::PackLoadStorage& $getStorage();
 
     MCAPI void $setMinEngineVersion(::MinEngineVersion const& minEngineVersion);
     // NOLINTEND

@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AllowList& getAllowList() const;
+    MCFOLD ::AllowList& getAllowList() const;
 
     MCAPI ::FileReadResult reload();
 
@@ -45,6 +45,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

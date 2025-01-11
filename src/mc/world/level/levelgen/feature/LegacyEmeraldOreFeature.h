@@ -14,12 +14,6 @@ class Random;
 
 class LegacyEmeraldOreFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    LegacyEmeraldOreFeature& operator=(LegacyEmeraldOreFeature const&);
-    LegacyEmeraldOreFeature(LegacyEmeraldOreFeature const&);
-    LegacyEmeraldOreFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

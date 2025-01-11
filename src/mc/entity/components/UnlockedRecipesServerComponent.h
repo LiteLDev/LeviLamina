@@ -52,7 +52,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -92,19 +92,20 @@ public:
 
     MCAPI void clearUnlockingInstructions();
 
-    MCAPI ::std::unordered_set<int> const& getChangedInventorySlots() const;
+    MCFOLD ::std::unordered_set<int> const& getChangedInventorySlots() const;
 
-    MCAPI ::std::unordered_set<::std::string> const& getUnlockedRecipes() const;
+    MCFOLD ::std::unordered_set<::std::string> const& getUnlockedRecipes() const;
 
-    MCAPI ::std::vector<::UnlockedRecipesServerComponent::UnlockingInstruction> const& getUnlockingInstructions() const;
+    MCFOLD ::std::vector<::UnlockedRecipesServerComponent::UnlockingInstruction> const&
+    getUnlockingInstructions() const;
 
     MCAPI bool hasContextBeenUsed(::RecipeUnlockingRequirement::UnlockingContext context) const;
 
-    MCAPI bool hasInitialDataBeenSent() const;
+    MCFOLD bool hasInitialDataBeenSent() const;
 
     MCAPI bool hasInventoryChanged() const;
 
-    MCAPI bool hasUnlockedRecipes() const;
+    MCFOLD bool hasUnlockedRecipes() const;
 
     MCAPI bool hasUnlockingInstructions() const;
 
@@ -112,7 +113,7 @@ public:
 
     MCAPI void markContextAsUsed(::RecipeUnlockingRequirement::UnlockingContext context);
 
-    MCAPI void markInitialDataAsSent();
+    MCFOLD void markInitialDataAsSent();
 
     MCAPI ::UnlockedRecipesServerComponent& operator=(::UnlockedRecipesServerComponent&&);
 

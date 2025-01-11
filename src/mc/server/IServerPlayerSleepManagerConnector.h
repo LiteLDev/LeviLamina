@@ -12,12 +12,6 @@ class Player;
 
 class IServerPlayerSleepManagerConnector {
 public:
-    // prevent constructor by default
-    IServerPlayerSleepManagerConnector& operator=(IServerPlayerSleepManagerConnector const&);
-    IServerPlayerSleepManagerConnector(IServerPlayerSleepManagerConnector const&);
-    IServerPlayerSleepManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -81,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -93,9 +93,9 @@ public:
 
     MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool $falling() const;
+    MCFOLD bool $falling() const;
 
-    MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 

@@ -50,7 +50,7 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 80
-    virtual void releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const /*override*/;
+    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
     // vIndex: 79
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
@@ -158,11 +158,11 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
-    MCAPI bool $isBucket() const;
+    MCFOLD bool $isBucket() const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
@@ -174,7 +174,7 @@ public:
 
     MCAPI ::Brightness $getLightEmission(int) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCAPI bool $isDestructive(int auxValue) const;
 

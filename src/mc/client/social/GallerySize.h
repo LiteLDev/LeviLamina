@@ -4,12 +4,6 @@
 
 namespace Social {
 
-struct GallerySize {
-public:
-    // prevent constructor by default
-    GallerySize& operator=(GallerySize const&);
-    GallerySize(GallerySize const&);
-    GallerySize();
-};
+struct GallerySize {};
 
 } // namespace Social

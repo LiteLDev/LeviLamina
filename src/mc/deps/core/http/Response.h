@@ -37,7 +37,7 @@ public:
 
     MCAPI ::std::string getBodyAsUtf8String() const;
 
-    MCAPI ::Bedrock::Http::HeaderCollection const& getHeaders() const;
+    MCFOLD ::Bedrock::Http::HeaderCollection const& getHeaders() const;
 
     MCAPI ::Bedrock::Http::Status getStatus() const;
 

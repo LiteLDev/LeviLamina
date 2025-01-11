@@ -14,12 +14,6 @@ namespace webrtc {
 
 class RtpReceiverInternal {
 public:
-    // prevent constructor by default
-    RtpReceiverInternal& operator=(RtpReceiverInternal const&);
-    RtpReceiverInternal(RtpReceiverInternal const&);
-    RtpReceiverInternal();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>

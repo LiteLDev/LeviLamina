@@ -14,11 +14,6 @@ namespace webrtc::rtcp {
 
 class ExtendedReports {
 public:
-    // prevent constructor by default
-    ExtendedReports& operator=(ExtendedReports const&);
-    ExtendedReports(ExtendedReports const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool AddDlrrItem(::webrtc::rtcp::ReceiveTimeInfo const&);

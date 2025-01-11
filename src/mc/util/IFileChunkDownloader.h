@@ -13,12 +13,6 @@ struct FileInfo;
 
 class IFileChunkDownloader {
 public:
-    // prevent constructor by default
-    IFileChunkDownloader& operator=(IFileChunkDownloader const&);
-    IFileChunkDownloader(IFileChunkDownloader const&);
-    IFileChunkDownloader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

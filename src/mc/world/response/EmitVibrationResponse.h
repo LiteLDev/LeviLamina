@@ -39,7 +39,7 @@ public:
     // vIndex: 3
     virtual void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               root,
+                                               schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const /*override*/;
 
@@ -68,7 +68,7 @@ public:
 
     MCAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               root,
+                                               schema,
         ::Factory<::ActorEventResponse> const& factory
     ) const;
     // NOLINTEND

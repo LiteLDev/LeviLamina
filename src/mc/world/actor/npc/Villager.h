@@ -16,12 +16,6 @@ struct VariantParameterList;
 
 class Villager : public ::VillagerBase {
 public:
-    // prevent constructor by default
-    Villager& operator=(Villager const&);
-    Villager(Villager const&);
-    Villager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

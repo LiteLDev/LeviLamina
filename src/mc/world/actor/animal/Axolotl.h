@@ -19,12 +19,6 @@ struct VariantParameterList;
 
 class Axolotl : public ::Animal {
 public:
-    // prevent constructor by default
-    Axolotl& operator=(Axolotl const&);
-    Axolotl(Axolotl const&);
-    Axolotl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -72,7 +66,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI ::AABB $_getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const;
     // NOLINTEND

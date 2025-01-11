@@ -4,12 +4,6 @@
 
 namespace edu::auth {
 
-struct SignInCredsRefreshFailed {
-public:
-    // prevent constructor by default
-    SignInCredsRefreshFailed& operator=(SignInCredsRefreshFailed const&);
-    SignInCredsRefreshFailed(SignInCredsRefreshFailed const&);
-    SignInCredsRefreshFailed();
-};
+struct SignInCredsRefreshFailed {};
 
 } // namespace edu::auth

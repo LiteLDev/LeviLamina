@@ -242,9 +242,9 @@ public:
         ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
     );
 
-    MCAPI uchar getDestroyBlockFace() const;
+    MCFOLD uchar getDestroyBlockFace() const;
 
-    MCAPI ::BlockPos const& getDestroyBlockPos() const;
+    MCFOLD ::BlockPos const& getDestroyBlockPos() const;
 
     MCAPI float getDestroyRate(::Block const& block);
 
@@ -252,7 +252,7 @@ public:
 
     MCAPI float getMaxPickRangeSqr();
 
-    MCAPI bool isLastBuildBlockInteractive() const;
+    MCFOLD bool isLastBuildBlockInteractive() const;
     // NOLINTEND
 
 public:
@@ -338,11 +338,11 @@ public:
 
     MCAPI void $releaseUsingItem();
 
-    MCAPI void $setTrialMode(bool isEnabled);
+    MCFOLD void $setTrialMode(bool isEnabled);
 
-    MCAPI bool $isInTrialMode();
+    MCFOLD bool $isInTrialMode();
 
-    MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
     // NOLINTEND
 
 public:

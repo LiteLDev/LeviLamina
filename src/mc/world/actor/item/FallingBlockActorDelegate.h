@@ -15,12 +15,6 @@ class IBlockSource;
 
 class FallingBlockActorDelegate : public ::ITickDelegate {
 public:
-    // prevent constructor by default
-    FallingBlockActorDelegate& operator=(FallingBlockActorDelegate const&);
-    FallingBlockActorDelegate(FallingBlockActorDelegate const&);
-    FallingBlockActorDelegate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

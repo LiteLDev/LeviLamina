@@ -53,9 +53,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $addValue(::CompoundTag const& tag);
 
-    MCAPI void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
+    MCFOLD void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
 
-    MCAPI uint64 $valueCount() const;
+    MCFOLD uint64 $valueCount() const;
     // NOLINTEND
 
 public:

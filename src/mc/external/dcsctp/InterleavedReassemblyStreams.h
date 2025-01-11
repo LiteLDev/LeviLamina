@@ -27,21 +27,9 @@ public:
     // clang-format on
 
     // InterleavedReassemblyStreams inner types define
-    struct FullStreamId {
-    public:
-        // prevent constructor by default
-        FullStreamId& operator=(FullStreamId const&);
-        FullStreamId(FullStreamId const&);
-        FullStreamId();
-    };
+    struct FullStreamId {};
 
     class Stream {
-    public:
-        // prevent constructor by default
-        Stream& operator=(Stream const&);
-        Stream(Stream const&);
-        Stream();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -74,12 +62,6 @@ public:
         $ctor(::dcsctp::InterleavedReassemblyStreams::FullStreamId, ::dcsctp::InterleavedReassemblyStreams*, ::webrtc::StrongAlias<::dcsctp::MIDTag, uint>);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    InterleavedReassemblyStreams& operator=(InterleavedReassemblyStreams const&);
-    InterleavedReassemblyStreams(InterleavedReassemblyStreams const&);
-    InterleavedReassemblyStreams();
 
 public:
     // member functions

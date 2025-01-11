@@ -17,12 +17,6 @@ namespace webrtc {
 
 class AudioDecoderFactory : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    AudioDecoderFactory& operator=(AudioDecoderFactory const&);
-    AudioDecoderFactory(AudioDecoderFactory const&);
-    AudioDecoderFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

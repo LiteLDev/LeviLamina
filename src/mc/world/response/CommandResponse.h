@@ -17,12 +17,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class CommandResponse : public ::CommandResponseBase, public ::EventResponse {
 public:
-    // prevent constructor by default
-    CommandResponse& operator=(CommandResponse const&);
-    CommandResponse(CommandResponse const&);
-    CommandResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -50,9 +44,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCFOLD ::std::string const& $getName() const;
 
-    MCAPI void $executeAction(::RenderParams& params) const;
+    MCFOLD void $executeAction(::RenderParams& params) const;
 
     MCAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,

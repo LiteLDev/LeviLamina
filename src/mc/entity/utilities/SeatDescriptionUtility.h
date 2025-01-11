@@ -15,12 +15,6 @@ struct VehicleComponent;
 
 struct SeatDescriptionUtility {
 public:
-    // prevent constructor by default
-    SeatDescriptionUtility& operator=(SeatDescriptionUtility const&);
-    SeatDescriptionUtility(SeatDescriptionUtility const&);
-    SeatDescriptionUtility();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::SeatDescription const& getSeatDescriptionOfPassenger(

@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BlockSourceComponent(::WeakRef<::BlockSource> weakBlockSource);
 
-    MCAPI ::StackRefResult<::BlockSource> tryGetBlockSource() const;
+    MCFOLD ::StackRefResult<::BlockSource> tryGetBlockSource() const;
     // NOLINTEND
 
 public:

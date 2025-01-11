@@ -36,13 +36,13 @@ public:
 
     MCAPI int const getInt(int index) const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI ::BlockState const& getState() const;
+    MCFOLD ::BlockState const& getState() const;
 
     MCAPI ::std::string const& getString(int index) const;
 
-    MCAPI ::Tag::Type const getType() const;
+    MCFOLD ::Tag::Type const getType() const;
 
     MCAPI int indexOf(uint64 const& h) const;
     // NOLINTEND

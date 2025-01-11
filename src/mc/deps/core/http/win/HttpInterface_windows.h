@@ -9,12 +9,6 @@ namespace Bedrock::Http {
 
 class HttpInterface_windows : public ::Bedrock::Http::HttpInterfaceInternal {
 public:
-    // prevent constructor by default
-    HttpInterface_windows& operator=(HttpInterface_windows const&);
-    HttpInterface_windows(HttpInterface_windows const&);
-    HttpInterface_windows();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

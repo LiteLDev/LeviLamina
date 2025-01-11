@@ -70,7 +70,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::ItemStackBase const& rhs);
+    MCFOLD void* $ctor(::ItemStackBase const& rhs);
 
     MCAPI void* $ctor(::ItemInstance const& rhs);
 
@@ -86,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

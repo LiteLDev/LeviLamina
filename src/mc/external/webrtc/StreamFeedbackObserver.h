@@ -30,12 +30,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    StreamFeedbackObserver& operator=(StreamFeedbackObserver const&);
-    StreamFeedbackObserver(StreamFeedbackObserver const&);
-    StreamFeedbackObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

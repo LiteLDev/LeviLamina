@@ -16,12 +16,6 @@ class Reader
 : public ::Bedrock::
       ImplBase<::Bedrock::Resources::Archive::Reader, ::Bedrock::ImplCtor(::std::unique_ptr<uchar[0]>, uint64 const&)> {
 public:
-    // prevent constructor by default
-    Reader& operator=(Reader const&);
-    Reader(Reader const&);
-    Reader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

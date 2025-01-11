@@ -23,12 +23,6 @@ namespace webrtc {
 
 class RTPSenderVideoFrameTransformerDelegate {
 public:
-    // prevent constructor by default
-    RTPSenderVideoFrameTransformerDelegate& operator=(RTPSenderVideoFrameTransformerDelegate const&);
-    RTPSenderVideoFrameTransformerDelegate(RTPSenderVideoFrameTransformerDelegate const&);
-    RTPSenderVideoFrameTransformerDelegate();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Init();

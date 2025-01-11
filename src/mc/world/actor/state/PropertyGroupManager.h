@@ -29,7 +29,7 @@ public:
 
     MCAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
 
-    MCAPI ::std::unordered_map<::HashedString, ::std::shared_ptr<::PropertyGroup const>> const&
+    MCFOLD ::std::unordered_map<::HashedString, ::std::shared_ptr<::PropertyGroup const>> const&
     getAllPropertyGroups() const;
 
     MCAPI void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);

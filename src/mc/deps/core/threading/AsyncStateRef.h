@@ -4,12 +4,6 @@
 
 struct AsyncStateRef {
 public:
-    // prevent constructor by default
-    AsyncStateRef& operator=(AsyncStateRef const&);
-    AsyncStateRef(AsyncStateRef const&);
-    AsyncStateRef();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~AsyncStateRef();

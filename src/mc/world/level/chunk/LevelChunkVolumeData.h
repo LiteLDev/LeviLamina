@@ -38,11 +38,11 @@ public:
     // NOLINTBEGIN
     MCAPI void addStructure(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
-    MCAPI void addStructure(::StructureStart const& start);
+    MCFOLD void addStructure(::StructureStart const& start);
 
     MCAPI void addStructureReference(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
-    MCAPI void addStructureReference(::StructureStart const& start);
+    MCFOLD void addStructureReference(::StructureStart const& start);
 
     MCAPI void deserializeAabbVolumes(::IDataInput& stream);
 

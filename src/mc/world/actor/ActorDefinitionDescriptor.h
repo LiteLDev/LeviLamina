@@ -19,13 +19,7 @@ public:
     // clang-format on
 
     // ActorDefinitionDescriptor inner types define
-    struct IsHiddenWhenInvisibleDescription {
-    public:
-        // prevent constructor by default
-        IsHiddenWhenInvisibleDescription& operator=(IsHiddenWhenInvisibleDescription const&);
-        IsHiddenWhenInvisibleDescription(IsHiddenWhenInvisibleDescription const&);
-        IsHiddenWhenInvisibleDescription();
-    };
+    struct IsHiddenWhenInvisibleDescription {};
 
 public:
     // member variables

@@ -14,11 +14,6 @@ namespace BlockFlammableVersioning {
 
 class BlockFlammable11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockFlammable11910Upgrade& operator=(BlockFlammable11910Upgrade const&);
-    BlockFlammable11910Upgrade(BlockFlammable11910Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

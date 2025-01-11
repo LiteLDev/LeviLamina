@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestDistanceToNearestPlayer : public ::SimpleFloatFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestDistanceToNearestPlayer& operator=(FilterTestDistanceToNearestPlayer const&);
-    FilterTestDistanceToNearestPlayer(FilterTestDistanceToNearestPlayer const&);
-    FilterTestDistanceToNearestPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

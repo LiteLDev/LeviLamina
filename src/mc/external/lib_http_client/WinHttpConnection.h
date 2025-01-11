@@ -28,19 +28,7 @@ public:
     // clang-format on
 
     // WinHttpConnection inner types define
-    struct WebSocketSendContext {
-    public:
-        // prevent constructor by default
-        WebSocketSendContext& operator=(WebSocketSendContext const&);
-        WebSocketSendContext(WebSocketSendContext const&);
-        WebSocketSendContext();
-    };
-
-public:
-    // prevent constructor by default
-    WinHttpConnection& operator=(WinHttpConnection const&);
-    WinHttpConnection(WinHttpConnection const&);
-    WinHttpConnection();
+    struct WebSocketSendContext {};
 
 public:
     // member functions

@@ -16,12 +16,6 @@ public:
     // TimerActorFlag3Goal inner types define
     class Definition : public ::TimerActorFlagBaseDefinition {
     public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -40,12 +34,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    TimerActorFlag3Goal& operator=(TimerActorFlag3Goal const&);
-    TimerActorFlag3Goal(TimerActorFlag3Goal const&);
-    TimerActorFlag3Goal();
 
 public:
     // virtual functions

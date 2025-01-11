@@ -12,12 +12,6 @@ class RenderParams;
 
 class ILegacyItemTriggerHandler {
 public:
-    // prevent constructor by default
-    ILegacyItemTriggerHandler& operator=(ILegacyItemTriggerHandler const&);
-    ILegacyItemTriggerHandler(ILegacyItemTriggerHandler const&);
-    ILegacyItemTriggerHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

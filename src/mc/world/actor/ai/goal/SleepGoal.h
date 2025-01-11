@@ -120,7 +120,7 @@ public:
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI uint64 $_getRepathTime() const;
+    MCFOLD uint64 $_getRepathTime() const;
     // NOLINTEND
 
 public:

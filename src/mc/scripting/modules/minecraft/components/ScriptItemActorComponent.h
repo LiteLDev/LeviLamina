@@ -18,12 +18,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemActorComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptItemActorComponent& operator=(ScriptItemActorComponent const&);
-    ScriptItemActorComponent(ScriptItemActorComponent const&);
-    ScriptItemActorComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

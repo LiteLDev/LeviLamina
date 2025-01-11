@@ -13,12 +13,6 @@ class ItemRegistryRef;
 
 class BedrockItems {
 public:
-    // prevent constructor by default
-    BedrockItems& operator=(BedrockItems const&);
-    BedrockItems(BedrockItems const&);
-    BedrockItems();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void registerItems(::ItemRegistryRef itemRegistry);

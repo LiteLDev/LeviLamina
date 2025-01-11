@@ -21,12 +21,6 @@ struct TickingSystemWithInfo;
 
 class SlimePreNormalTickSystem {
 public:
-    // prevent constructor by default
-    SlimePreNormalTickSystem& operator=(SlimePreNormalTickSystem const&);
-    SlimePreNormalTickSystem(SlimePreNormalTickSystem const&);
-    SlimePreNormalTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doSlimePreNormalTickSystem(

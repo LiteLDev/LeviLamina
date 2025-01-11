@@ -12,12 +12,6 @@ class Mob;
 
 class MoveToLavaGoal : public ::MoveToLiquidGoal {
 public:
-    // prevent constructor by default
-    MoveToLavaGoal& operator=(MoveToLavaGoal const&);
-    MoveToLavaGoal(MoveToLavaGoal const&);
-    MoveToLavaGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

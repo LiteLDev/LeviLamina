@@ -17,12 +17,6 @@ namespace webrtc {
 
 class NetEqFactory {
 public:
-    // prevent constructor by default
-    NetEqFactory& operator=(NetEqFactory const&);
-    NetEqFactory(NetEqFactory const&);
-    NetEqFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

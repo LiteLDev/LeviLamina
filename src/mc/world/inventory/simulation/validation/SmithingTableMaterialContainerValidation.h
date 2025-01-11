@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class SmithingTableMaterialContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    SmithingTableMaterialContainerValidation& operator=(SmithingTableMaterialContainerValidation const&);
-    SmithingTableMaterialContainerValidation(SmithingTableMaterialContainerValidation const&);
-    SmithingTableMaterialContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -54,7 +48,7 @@ public:
         bool
     ) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

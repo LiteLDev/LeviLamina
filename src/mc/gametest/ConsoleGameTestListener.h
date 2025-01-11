@@ -12,12 +12,6 @@ namespace gametest { class BaseGameTestInstance; }
 
 class ConsoleGameTestListener : public ::gametest::IGameTestListener {
 public:
-    // prevent constructor by default
-    ConsoleGameTestListener& operator=(ConsoleGameTestListener const&);
-    ConsoleGameTestListener(ConsoleGameTestListener const&);
-    ConsoleGameTestListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

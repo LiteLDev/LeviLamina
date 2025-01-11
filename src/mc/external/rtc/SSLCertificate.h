@@ -14,12 +14,6 @@ namespace rtc {
 
 class SSLCertificate {
 public:
-    // prevent constructor by default
-    SSLCertificate& operator=(SSLCertificate const&);
-    SSLCertificate(SSLCertificate const&);
-    SSLCertificate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

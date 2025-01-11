@@ -222,7 +222,7 @@ public:
 
     MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
 
-    MCAPI int $getLevelGenHeight() const;
+    MCFOLD int $getLevelGenHeight() const;
 
     MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> $generateDensityCellsForChunk(::ChunkPos const& chunkPos
     ) const;

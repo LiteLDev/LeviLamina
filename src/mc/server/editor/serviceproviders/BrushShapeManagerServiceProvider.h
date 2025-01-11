@@ -24,12 +24,6 @@ namespace Editor::Services {
 
 class BrushShapeManagerServiceProvider {
 public:
-    // prevent constructor by default
-    BrushShapeManagerServiceProvider& operator=(BrushShapeManagerServiceProvider const&);
-    BrushShapeManagerServiceProvider(BrushShapeManagerServiceProvider const&);
-    BrushShapeManagerServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

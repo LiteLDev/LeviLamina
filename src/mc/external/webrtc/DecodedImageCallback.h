@@ -11,12 +11,6 @@ namespace webrtc {
 
 class DecodedImageCallback {
 public:
-    // prevent constructor by default
-    DecodedImageCallback& operator=(DecodedImageCallback const&);
-    DecodedImageCallback(DecodedImageCallback const&);
-    DecodedImageCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

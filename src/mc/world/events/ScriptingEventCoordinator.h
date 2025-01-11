@@ -38,9 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptingEventHandler& getScriptingEventHandler();
+    MCFOLD ::ScriptingEventHandler& getScriptingEventHandler();
 
-    MCAPI void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
+    MCFOLD void registerScriptingEventHandler(::std::unique_ptr<::ScriptingEventHandler>&& handler);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableScriptingGameplayEvent<::CoordinatorResult>> event);
 

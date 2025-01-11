@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class Rabbit : public ::Animal {
 public:
-    // prevent constructor by default
-    Rabbit& operator=(Rabbit const&);
-    Rabbit(Rabbit const&);
-    Rabbit();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 95

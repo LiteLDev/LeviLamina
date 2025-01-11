@@ -10,12 +10,6 @@ class Random;
 
 class BlockSelector {
 public:
-    // prevent constructor by default
-    BlockSelector& operator=(BlockSelector const&);
-    BlockSelector(BlockSelector const&);
-    BlockSelector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -28,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

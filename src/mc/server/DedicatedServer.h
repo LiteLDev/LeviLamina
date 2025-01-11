@@ -153,11 +153,11 @@ public:
 
     MCAPI bool $isEduMode() const;
 
-    MCAPI bool $isDedicatedServer() const;
+    MCFOLD bool $isDedicatedServer() const;
 
-    MCAPI void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
+    MCFOLD void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
 
-    MCAPI ::IGameModuleShared& $getGameModuleShared();
+    MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
     MCAPI void $requestServerShutdown(::std::string const& message);
     // NOLINTEND

@@ -11,12 +11,6 @@ namespace webrtc {
 
 class SendPacketObserver {
 public:
-    // prevent constructor by default
-    SendPacketObserver& operator=(SendPacketObserver const&);
-    SendPacketObserver(SendPacketObserver const&);
-    SendPacketObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

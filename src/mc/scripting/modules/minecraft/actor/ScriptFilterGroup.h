@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptFilterGroup {
 public:
-    // prevent constructor by default
-    ScriptFilterGroup& operator=(ScriptFilterGroup const&);
-    ScriptFilterGroup(ScriptFilterGroup const&);
-    ScriptFilterGroup();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ActorFilterGroup> bind();

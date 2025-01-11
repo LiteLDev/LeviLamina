@@ -20,12 +20,6 @@ struct TickingSystemWithInfo;
 
 class MarkEquippableMobForUpgradeToBodySlotSystem {
 public:
-    // prevent constructor by default
-    MarkEquippableMobForUpgradeToBodySlotSystem& operator=(MarkEquippableMobForUpgradeToBodySlotSystem const&);
-    MarkEquippableMobForUpgradeToBodySlotSystem(MarkEquippableMobForUpgradeToBodySlotSystem const&);
-    MarkEquippableMobForUpgradeToBodySlotSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _markForUpgradeIfNeeded(

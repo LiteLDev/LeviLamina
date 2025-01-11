@@ -9,12 +9,6 @@ namespace RakNet {
 
 class PacketOutputWindowLogger : public ::RakNet::PacketLogger {
 public:
-    // prevent constructor by default
-    PacketOutputWindowLogger& operator=(PacketOutputWindowLogger const&);
-    PacketOutputWindowLogger(PacketOutputWindowLogger const&);
-    PacketOutputWindowLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

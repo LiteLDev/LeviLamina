@@ -14,12 +14,6 @@ class Pos2d;
 
 class NetherOperationNode : public ::RootOperationNode<::OperationNodeValues::Terrain, ::Pos2d> {
 public:
-    // prevent constructor by default
-    NetherOperationNode& operator=(NetherOperationNode const&);
-    NetherOperationNode(NetherOperationNode const&);
-    NetherOperationNode();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

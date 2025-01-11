@@ -64,7 +64,7 @@ public:
     // NOLINTBEGIN
     MCAPI EnchantingContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI ::std::vector<::ItemEnchantOption> const& getEnchantOptions() const;
+    MCFOLD ::std::vector<::ItemEnchantOption> const& getEnchantOptions() const;
 
     MCAPI void recalculateOptions();
     // NOLINTEND
@@ -96,11 +96,11 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI bool $isValid(float pickRange);
 
-    MCAPI void $broadcastChanges();
+    MCFOLD void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND

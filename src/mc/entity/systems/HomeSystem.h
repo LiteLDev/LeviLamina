@@ -14,12 +14,6 @@ class HomeComponent;
 
 class HomeSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    HomeSystem& operator=(HomeSystem const&);
-    HomeSystem(HomeSystem const&);
-    HomeSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

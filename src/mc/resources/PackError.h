@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI PackError(::PackErrorType packErrorType, ::std::vector<::std::string> const& errorParam);
 
-    MCAPI ::std::vector<::std::string> const& getErrorParameters() const;
+    MCFOLD ::std::vector<::std::string> const& getErrorParameters() const;
     // NOLINTEND
 
 public:

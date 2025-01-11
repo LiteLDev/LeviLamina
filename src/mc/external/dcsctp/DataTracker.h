@@ -30,12 +30,6 @@ public:
 
     struct AdditionalTsnBlocks {
     public:
-        // prevent constructor by default
-        AdditionalTsnBlocks& operator=(AdditionalTsnBlocks const&);
-        AdditionalTsnBlocks(AdditionalTsnBlocks const&);
-        AdditionalTsnBlocks();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>);
@@ -53,12 +47,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    DataTracker& operator=(DataTracker const&);
-    DataTracker(DataTracker const&);
-    DataTracker();
 
 public:
     // member functions

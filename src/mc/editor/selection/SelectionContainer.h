@@ -154,27 +154,27 @@ public:
         bool                                       requiresReplication
     );
 
-    MCAPI bool _isPendingDestroy() const;
+    MCFOLD bool _isPendingDestroy() const;
 
-    MCAPI void _logMessage(::std::string const& msg);
+    MCFOLD void _logMessage(::std::string const& msg);
 
-    MCAPI void _setPendingDestroy(bool destroy);
+    MCFOLD void _setPendingDestroy(bool destroy);
 
-    MCAPI void _setScriptRefCount(uint value);
+    MCFOLD void _setScriptRefCount(uint value);
 
-    MCAPI ::CompoundBlockVolume const& getCompoundVolume() const;
+    MCFOLD ::CompoundBlockVolume const& getCompoundVolume() const;
 
     MCAPI ::mce::Color const& getFillColor() const;
 
-    MCAPI ::mce::UUID const& getId();
+    MCFOLD ::mce::UUID const& getId();
 
     MCAPI ::mce::Color const& getOutlineColor() const;
 
-    MCAPI uint getScriptRefCount() const;
+    MCFOLD uint getScriptRefCount() const;
 
-    MCAPI bool isVisible() const;
+    MCFOLD bool isVisible() const;
 
-    MCAPI bool requiresReplication() const;
+    MCFOLD bool requiresReplication() const;
     // NOLINTEND
 
 public:

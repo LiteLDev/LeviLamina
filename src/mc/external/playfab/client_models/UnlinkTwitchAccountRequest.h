@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkTwitchAccountRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    UnlinkTwitchAccountRequest& operator=(UnlinkTwitchAccountRequest const&);
-    UnlinkTwitchAccountRequest(UnlinkTwitchAccountRequest const&);
-    UnlinkTwitchAccountRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

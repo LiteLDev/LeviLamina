@@ -71,7 +71,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $updateEngineEvent(int& durabilityDamage, ::ItemStack& item, ::Actor&, ::Mob&) const;
 
-    MCAPI bool $shouldCancel() const;
+    MCFOLD bool $shouldCancel() const;
     // NOLINTEND
 
 public:

@@ -50,11 +50,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ActorFilterGroup(ActorFilterGroup const&);
-    ActorFilterGroup();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -99,7 +94,7 @@ public:
 
     MCAPI bool evaluateActor(::Actor const& e, ::VariantParameterListConst const& params) const;
 
-    MCAPI ::ActorFilterGroup& operator=(::ActorFilterGroup const&);
+    MCFOLD ::ActorFilterGroup& operator=(::ActorFilterGroup const&);
 
     MCAPI ::ActorFilterGroup& operator=(::ActorFilterGroup&&);
     // NOLINTEND
@@ -113,7 +108,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

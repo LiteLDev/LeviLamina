@@ -14,12 +14,6 @@ namespace webrtc {
 
 class Metronome {
 public:
-    // prevent constructor by default
-    Metronome& operator=(Metronome const&);
-    Metronome(Metronome const&);
-    Metronome();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

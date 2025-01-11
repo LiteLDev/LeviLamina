@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Pig : public ::Animal {
 public:
-    // prevent constructor by default
-    Pig& operator=(Pig const&);
-    Pig(Pig const&);
-    Pig();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139
@@ -65,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

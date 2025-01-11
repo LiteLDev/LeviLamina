@@ -140,11 +140,11 @@ public:
 
     MCAPI ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
 
-    MCAPI float $loadRotationDegreesX(float x);
+    MCFOLD float $loadRotationDegreesX(float x);
 
     MCAPI float $loadRotationDegreesY(float y);
 
-    MCAPI float $loadRotationRadiansX(float x);
+    MCFOLD float $loadRotationRadiansX(float x);
 
     MCAPI float $loadRotationRadiansY(float y);
 
@@ -162,14 +162,14 @@ public:
 
     MCAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
 
-    MCAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
+    MCFOLD ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
         ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
         ::std::string const&                                                                    componentName
     );
 
-    MCAPI bool $shouldResetTime();
+    MCFOLD bool $shouldResetTime();
 
-    MCAPI ::DataLoadHelperType $getType() const;
+    MCFOLD ::DataLoadHelperType $getType() const;
 
     MCAPI ::ActorUniqueID $_generateNewID();
     // NOLINTEND

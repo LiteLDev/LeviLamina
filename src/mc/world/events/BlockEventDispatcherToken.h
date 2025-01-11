@@ -26,9 +26,9 @@ public:
 
     MCAPI BlockEventDispatcherToken(::BlockEventDispatcherToken&& rhs);
 
-    MCAPI ::BlockEventDispatcher* getDispatcher() const;
+    MCFOLD ::BlockEventDispatcher* getDispatcher() const;
 
-    MCAPI int getHandle() const;
+    MCFOLD int getHandle() const;
 
     MCAPI bool isValid() const;
 

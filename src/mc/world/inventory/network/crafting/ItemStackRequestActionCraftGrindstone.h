@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStackRequestActionCraftGrindstone();
 
-    MCAPI int getRepairCost() const;
+    MCFOLD int getRepairCost() const;
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::ItemStackNetIdVariant const& $getRecipeNetId() const;
+    MCFOLD ::ItemStackNetIdVariant const& $getRecipeNetId() const;
     // NOLINTEND
 
 public:

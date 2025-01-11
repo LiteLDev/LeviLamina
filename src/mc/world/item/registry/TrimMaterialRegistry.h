@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::TrimMaterial> const& getAllEntries() const;
+    MCFOLD ::std::vector<::TrimMaterial> const& getAllEntries() const;
 
     MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByItemName(::HashedString const& itemName) const;
 

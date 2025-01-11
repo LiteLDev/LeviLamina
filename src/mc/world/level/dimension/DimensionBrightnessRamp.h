@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $buildBrightnessRamp();
 
-    MCAPI float $getBaseAmbientValue() const;
+    MCFOLD float $getBaseAmbientValue() const;
     // NOLINTEND
 
 public:

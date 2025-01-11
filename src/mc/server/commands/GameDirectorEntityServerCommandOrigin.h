@@ -15,12 +15,6 @@ class CommandOrigin;
 
 class GameDirectorEntityServerCommandOrigin : public ::ActorServerCommandOrigin {
 public:
-    // prevent constructor by default
-    GameDirectorEntityServerCommandOrigin& operator=(GameDirectorEntityServerCommandOrigin const&);
-    GameDirectorEntityServerCommandOrigin(GameDirectorEntityServerCommandOrigin const&);
-    GameDirectorEntityServerCommandOrigin();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -63,15 +57,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
     MCAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
     // NOLINTEND
 
 public:

@@ -14,12 +14,6 @@ namespace TreeHelper { struct TreeParams; }
 
 class ITreeTrunk {
 public:
-    // prevent constructor by default
-    ITreeTrunk& operator=(ITreeTrunk const&);
-    ITreeTrunk(ITreeTrunk const&);
-    ITreeTrunk();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

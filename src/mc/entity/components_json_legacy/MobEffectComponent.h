@@ -5,26 +5,24 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorFilterGroup;
 class CompoundTag;
 class DataLoadHelper;
+class ExpiringTick;
+struct EffectDuration;
 // clang-format on
 
 class MobEffectComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkef7cd9;
-    ::ll::UntypedStorage<4, 4>  mUnk3b0d7c;
-    ::ll::UntypedStorage<4, 4>  mUnk670b85;
-    ::ll::UntypedStorage<2, 2>  mUnk1fae66;
-    ::ll::UntypedStorage<8, 64> mUnkef55a5;
-    ::ll::UntypedStorage<8, 24> mUnkb77a3e;
+    ::ll::TypedStorage<4, 4, float>                            mEffectRange;
+    ::ll::TypedStorage<4, 4, int>                              mEffectId;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>                 mEffectTime;
+    ::ll::TypedStorage<2, 2, ushort>                           mCooldownTicks;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>              mEntityFilter;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectComponent& operator=(MobEffectComponent const&);
-    MobEffectComponent(MobEffectComponent const&);
 
 public:
     // member functions

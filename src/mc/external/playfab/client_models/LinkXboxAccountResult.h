@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkXboxAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkXboxAccountResult& operator=(LinkXboxAccountResult const&);
-    LinkXboxAccountResult(LinkXboxAccountResult const&);
-    LinkXboxAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

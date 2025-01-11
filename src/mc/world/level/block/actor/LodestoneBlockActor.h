@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LodestoneBlockActor(::BlockPos const& pos);
 
-    MCAPI ::PositionTrackingId const& getTrackingHandle() const;
+    MCFOLD ::PositionTrackingId const& getTrackingHandle() const;
 
     MCAPI bool hasTrackingHandle() const;
 
@@ -90,9 +90,9 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

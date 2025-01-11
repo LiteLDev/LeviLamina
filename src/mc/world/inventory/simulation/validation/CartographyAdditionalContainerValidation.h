@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class CartographyAdditionalContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CartographyAdditionalContainerValidation& operator=(CartographyAdditionalContainerValidation const&);
-    CartographyAdditionalContainerValidation(CartographyAdditionalContainerValidation const&);
-    CartographyAdditionalContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -46,7 +40,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isItemAllowedInSlot(
+    MCFOLD bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
         ::ItemStackBase const&          item,
@@ -54,7 +48,7 @@ public:
         bool
     ) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

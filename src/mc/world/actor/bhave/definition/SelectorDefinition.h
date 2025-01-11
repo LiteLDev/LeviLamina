@@ -13,12 +13,6 @@ namespace Json { class Value; }
 
 class SelectorDefinition : public ::CompositeDefinition {
 public:
-    // prevent constructor by default
-    SelectorDefinition& operator=(SelectorDefinition const&);
-    SelectorDefinition(SelectorDefinition const&);
-    SelectorDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -37,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

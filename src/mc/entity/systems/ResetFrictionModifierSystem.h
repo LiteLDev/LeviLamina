@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class ResetFrictionModifierSystem {
 public:
-    // prevent constructor by default
-    ResetFrictionModifierSystem& operator=(ResetFrictionModifierSystem const&);
-    ResetFrictionModifierSystem(ResetFrictionModifierSystem const&);
-    ResetFrictionModifierSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

@@ -70,7 +70,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $send(::CommandOrigin const& origin, ::CommandOutput const& output);
 
-    MCAPI void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
+    MCFOLD void $registerOutputCallback(::std::function<void(::AutomationCmdOutput&)> const& callback);
     // NOLINTEND
 
 public:

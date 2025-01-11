@@ -15,12 +15,6 @@ namespace rtc {
 
 class AsyncTCPSocket : public ::rtc::AsyncTCPSocketBase {
 public:
-    // prevent constructor by default
-    AsyncTCPSocket& operator=(AsyncTCPSocket const&);
-    AsyncTCPSocket(AsyncTCPSocket const&);
-    AsyncTCPSocket();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

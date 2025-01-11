@@ -38,7 +38,7 @@ public:
 
     MCAPI ::PlayerScoreboardId const& getPlayerId() const;
 
-    MCAPI ::ScoreboardId const& getScoreboardId() const;
+    MCFOLD ::ScoreboardId const& getScoreboardId() const;
 
     MCAPI bool modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 

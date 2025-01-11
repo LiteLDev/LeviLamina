@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&
+    MCFOLD ::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&
     operator=(::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&&);
 
     MCAPI ~ScriptCurrentThemeChangeAfterEvent();
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

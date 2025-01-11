@@ -23,12 +23,6 @@ struct WasInWaterFlagComponent;
 
 struct VRBobControlSystem {
 public:
-    // prevent constructor by default
-    VRBobControlSystem& operator=(VRBobControlSystem const&);
-    VRBobControlSystem(VRBobControlSystem const&);
-    VRBobControlSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();

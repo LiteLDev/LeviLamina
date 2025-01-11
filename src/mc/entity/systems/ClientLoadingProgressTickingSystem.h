@@ -13,12 +13,6 @@ class EntityRegistry;
 
 class ClientLoadingProgressTickingSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ClientLoadingProgressTickingSystem& operator=(ClientLoadingProgressTickingSystem const&);
-    ClientLoadingProgressTickingSystem(ClientLoadingProgressTickingSystem const&);
-    ClientLoadingProgressTickingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -73,7 +73,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI ::Tag::Type $getId() const;
+    MCFOLD ::Tag::Type $getId() const;
 
     MCAPI ::std::string $toString() const;
 

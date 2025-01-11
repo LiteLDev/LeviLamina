@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class Pufferfish : public ::Fish {
 public:
-    // prevent constructor by default
-    Pufferfish& operator=(Pufferfish const&);
-    Pufferfish(Pufferfish const&);
-    Pufferfish();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 24
@@ -68,7 +62,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND

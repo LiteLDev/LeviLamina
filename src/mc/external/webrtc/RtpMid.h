@@ -7,12 +7,6 @@
 
 namespace webrtc {
 
-class RtpMid : public ::webrtc::BaseRtpStringExtension {
-public:
-    // prevent constructor by default
-    RtpMid& operator=(RtpMid const&);
-    RtpMid(RtpMid const&);
-    RtpMid();
-};
+class RtpMid : public ::webrtc::BaseRtpStringExtension {};
 
 } // namespace webrtc

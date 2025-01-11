@@ -15,12 +15,6 @@ namespace webrtc {
 
 class VideoRtpSender {
 public:
-    // prevent constructor by default
-    VideoRtpSender& operator=(VideoRtpSender const&);
-    VideoRtpSender(VideoRtpSender const&);
-    VideoRtpSender();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI VideoRtpSender(::rtc::Thread*, ::std::string const&, ::webrtc::RtpSenderBase::SetStreamsObserver*);

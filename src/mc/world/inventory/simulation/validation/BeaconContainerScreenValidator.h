@@ -7,12 +7,6 @@
 
 class BeaconContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    BeaconContainerScreenValidator& operator=(BeaconContainerScreenValidator const&);
-    BeaconContainerScreenValidator(BeaconContainerScreenValidator const&);
-    BeaconContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

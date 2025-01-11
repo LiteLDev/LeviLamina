@@ -14,12 +14,6 @@ namespace Editor::Widgets {
 
 class SplineHelperHermite : public ::Editor::Widgets::SplineHelperBase {
 public:
-    // prevent constructor by default
-    SplineHelperHermite& operator=(SplineHelperHermite const&);
-    SplineHelperHermite(SplineHelperHermite const&);
-    SplineHelperHermite();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

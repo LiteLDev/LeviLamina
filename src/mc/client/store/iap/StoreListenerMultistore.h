@@ -12,12 +12,6 @@ struct PurchaseInfo;
 
 class StoreListenerMultistore : public ::StoreListener {
 public:
-    // prevent constructor by default
-    StoreListenerMultistore& operator=(StoreListenerMultistore const&);
-    StoreListenerMultistore(StoreListenerMultistore const&);
-    StoreListenerMultistore();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

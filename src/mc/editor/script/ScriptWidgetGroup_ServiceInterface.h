@@ -12,12 +12,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetGroup_ServiceInterface {
 public:
-    // prevent constructor by default
-    ScriptWidgetGroup_ServiceInterface& operator=(ScriptWidgetGroup_ServiceInterface const&);
-    ScriptWidgetGroup_ServiceInterface(ScriptWidgetGroup_ServiceInterface const&);
-    ScriptWidgetGroup_ServiceInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

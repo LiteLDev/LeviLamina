@@ -17,12 +17,6 @@ namespace Scripting {
 
 class IPayload {
 public:
-    // prevent constructor by default
-    IPayload& operator=(IPayload const&);
-    IPayload(IPayload const&);
-    IPayload();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

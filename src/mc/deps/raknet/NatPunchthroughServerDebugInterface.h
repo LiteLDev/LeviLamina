@@ -6,12 +6,6 @@ namespace RakNet {
 
 struct NatPunchthroughServerDebugInterface {
 public:
-    // prevent constructor by default
-    NatPunchthroughServerDebugInterface& operator=(NatPunchthroughServerDebugInterface const&);
-    NatPunchthroughServerDebugInterface(NatPunchthroughServerDebugInterface const&);
-    NatPunchthroughServerDebugInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

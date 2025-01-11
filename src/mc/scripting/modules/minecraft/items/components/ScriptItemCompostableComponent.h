@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemCompostableComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
-    // prevent constructor by default
-    ScriptItemCompostableComponent& operator=(ScriptItemCompostableComponent const&);
-    ScriptItemCompostableComponent(ScriptItemCompostableComponent const&);
-    ScriptItemCompostableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

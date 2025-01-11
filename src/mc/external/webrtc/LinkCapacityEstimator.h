@@ -11,11 +11,6 @@ namespace webrtc {
 
 struct LinkCapacityEstimator {
 public:
-    // prevent constructor by default
-    LinkCapacityEstimator& operator=(LinkCapacityEstimator const&);
-    LinkCapacityEstimator(LinkCapacityEstimator const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LinkCapacityEstimator();

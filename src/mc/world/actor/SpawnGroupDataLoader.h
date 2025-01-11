@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI SpawnGroupDataLoader();
 
-    MCAPI ::SemVersion const& firstCerealSlice() const;
+    MCFOLD ::SemVersion const& firstCerealSlice() const;
 
     MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 

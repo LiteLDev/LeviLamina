@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::cereal::internal::ReflectionContext const& from(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static ::cereal::internal::ReflectionContext& from(::cereal::ReflectionCtx& ctx);
+    MCFOLD static ::cereal::internal::ReflectionContext& from(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

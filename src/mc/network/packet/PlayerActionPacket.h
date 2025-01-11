@@ -69,9 +69,9 @@ public:
         ::ActorRuntimeID   runtimeId
     );
 
-    MCAPI bool getIsFromServerPlayerMovementSystem() const;
+    MCFOLD bool getIsFromServerPlayerMovementSystem() const;
 
-    MCAPI void setFromServerPlayerMovementSystem(bool value);
+    MCFOLD void setFromServerPlayerMovementSystem(bool value);
     // NOLINTEND
 
 public:
@@ -99,7 +99,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

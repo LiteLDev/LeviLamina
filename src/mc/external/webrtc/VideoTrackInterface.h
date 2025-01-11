@@ -28,12 +28,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    VideoTrackInterface& operator=(VideoTrackInterface const&);
-    VideoTrackInterface(VideoTrackInterface const&);
-    VideoTrackInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

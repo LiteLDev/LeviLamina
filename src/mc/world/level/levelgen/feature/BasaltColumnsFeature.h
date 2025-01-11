@@ -14,12 +14,6 @@ class Random;
 
 class BasaltColumnsFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    BasaltColumnsFeature& operator=(BasaltColumnsFeature const&);
-    BasaltColumnsFeature(BasaltColumnsFeature const&);
-    BasaltColumnsFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

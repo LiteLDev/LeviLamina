@@ -27,21 +27,9 @@ public:
     // NyliumBlock inner types define
     using RandomPlantProvider = ::std::function<::Block const&(::Randomize const&)>;
 
-    struct WarpedNyliumBlockVegetationProbabilities {
-    public:
-        // prevent constructor by default
-        WarpedNyliumBlockVegetationProbabilities& operator=(WarpedNyliumBlockVegetationProbabilities const&);
-        WarpedNyliumBlockVegetationProbabilities(WarpedNyliumBlockVegetationProbabilities const&);
-        WarpedNyliumBlockVegetationProbabilities();
-    };
+    struct WarpedNyliumBlockVegetationProbabilities {};
 
-    struct CrimsonNyliumBlockVegetationProbabilities {
-    public:
-        // prevent constructor by default
-        CrimsonNyliumBlockVegetationProbabilities& operator=(CrimsonNyliumBlockVegetationProbabilities const&);
-        CrimsonNyliumBlockVegetationProbabilities(CrimsonNyliumBlockVegetationProbabilities const&);
-        CrimsonNyliumBlockVegetationProbabilities();
-    };
+    struct CrimsonNyliumBlockVegetationProbabilities {};
 
 public:
     // virtual functions
@@ -55,7 +43,7 @@ public:
 
     // vIndex: 74
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
         /*override*/;
 
     // vIndex: 0
@@ -104,10 +92,10 @@ public:
     // NOLINTBEGIN
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
     // NOLINTEND
 
 public:

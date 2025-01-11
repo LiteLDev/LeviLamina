@@ -13,12 +13,6 @@ namespace br::worldgen::processors::BlockRules {
 
 struct TestType {
 public:
-    // prevent constructor by default
-    TestType& operator=(TestType const&);
-    TestType(TestType const&);
-    TestType();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

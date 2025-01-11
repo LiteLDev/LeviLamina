@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RtpVideoLayersAllocationExtension {
 public:
-    // prevent constructor by default
-    RtpVideoLayersAllocationExtension& operator=(RtpVideoLayersAllocationExtension const&);
-    RtpVideoLayersAllocationExtension(RtpVideoLayersAllocationExtension const&);
-    RtpVideoLayersAllocationExtension();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uint64 ValueSize(::webrtc::VideoLayersAllocation const&);

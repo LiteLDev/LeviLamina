@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class CompoundCreatorInputValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CompoundCreatorInputValidation& operator=(CompoundCreatorInputValidation const&);
-    CompoundCreatorInputValidation(CompoundCreatorInputValidation const&);
-    CompoundCreatorInputValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -59,9 +53,9 @@ public:
         bool
     ) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
     // NOLINTEND
 
 public:

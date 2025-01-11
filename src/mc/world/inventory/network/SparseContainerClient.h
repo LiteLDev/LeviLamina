@@ -21,12 +21,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    SparseContainerClient& operator=(SparseContainerClient const&);
-    SparseContainerClient(SparseContainerClient const&);
-    SparseContainerClient();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

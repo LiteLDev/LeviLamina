@@ -23,13 +23,13 @@ public:
     // NOLINTBEGIN
     MCAPI JumpInfo(float distanceScale, float height, int jumpDelay, int animDuration);
 
-    MCAPI int getAnimDuration() const;
+    MCFOLD int getAnimDuration() const;
 
-    MCAPI float getDistanceScale() const;
+    MCFOLD float getDistanceScale() const;
 
-    MCAPI float getHeight() const;
+    MCFOLD float getHeight() const;
 
-    MCAPI int getJumpDelay() const;
+    MCFOLD int getJumpDelay() const;
     // NOLINTEND
 
 public:

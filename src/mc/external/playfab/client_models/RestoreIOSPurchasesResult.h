@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct RestoreIOSPurchasesResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    RestoreIOSPurchasesResult& operator=(RestoreIOSPurchasesResult const&);
-    RestoreIOSPurchasesResult(RestoreIOSPurchasesResult const&);
-    RestoreIOSPurchasesResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

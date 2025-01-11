@@ -16,12 +16,6 @@ struct TickingSystemWithInfo;
 
 class PlayerMovementStatsEventSystem {
 public:
-    // prevent constructor by default
-    PlayerMovementStatsEventSystem& operator=(PlayerMovementStatsEventSystem const&);
-    PlayerMovementStatsEventSystem(PlayerMovementStatsEventSystem const&);
-    PlayerMovementStatsEventSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

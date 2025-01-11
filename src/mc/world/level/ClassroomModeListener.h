@@ -20,12 +20,6 @@ struct ActorBlockSyncMessage;
 
 class ClassroomModeListener : public ::LevelListener {
 public:
-    // prevent constructor by default
-    ClassroomModeListener& operator=(ClassroomModeListener const&);
-    ClassroomModeListener(ClassroomModeListener const&);
-    ClassroomModeListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 17
@@ -81,11 +75,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onEntityAdded(::Actor& entity);
+    MCFOLD void $onEntityAdded(::Actor& entity);
 
-    MCAPI void $onEntityRemoved(::Actor& entity);
+    MCFOLD void $onEntityRemoved(::Actor& entity);
 
-    MCAPI void $onBlockChanged(
+    MCFOLD void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
         uint                           layer,
@@ -97,11 +91,11 @@ public:
         ::Actor*                       blockChangeSource
     );
 
-    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
+    MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCFOLD void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void $onChunkUnloaded(::LevelChunk& lc);
+    MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
     // NOLINTEND
 
 public:

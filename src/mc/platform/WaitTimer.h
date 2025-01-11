@@ -6,11 +6,6 @@ namespace OS {
 
 struct WaitTimer {
 public:
-    // prevent constructor by default
-    WaitTimer& operator=(WaitTimer const&);
-    WaitTimer(WaitTimer const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Cancel();

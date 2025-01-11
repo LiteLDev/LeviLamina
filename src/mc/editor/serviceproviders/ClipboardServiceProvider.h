@@ -23,12 +23,6 @@ namespace Editor::Services {
 
 class ClipboardServiceProvider {
 public:
-    // prevent constructor by default
-    ClipboardServiceProvider& operator=(ClipboardServiceProvider const&);
-    ClipboardServiceProvider(ClipboardServiceProvider const&);
-    ClipboardServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

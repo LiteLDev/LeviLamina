@@ -9,12 +9,6 @@ class Scheduler;
 
 class MinecraftScheduler {
 public:
-    // prevent constructor by default
-    MinecraftScheduler& operator=(MinecraftScheduler const&);
-    MinecraftScheduler(MinecraftScheduler const&);
-    MinecraftScheduler();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scheduler& client();

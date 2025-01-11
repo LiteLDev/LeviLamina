@@ -9,12 +9,6 @@ namespace Bedrock::Http {
 
 class LoggingInterface : public ::Bedrock::ImplBase<::Bedrock::Http::LoggingInterface> {
 public:
-    // prevent constructor by default
-    LoggingInterface& operator=(LoggingInterface const&);
-    LoggingInterface(LoggingInterface const&);
-    LoggingInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -17,12 +17,6 @@ namespace webrtc {
 
 class GoogCcNetworkController {
 public:
-    // prevent constructor by default
-    GoogCcNetworkController& operator=(GoogCcNetworkController const&);
-    GoogCcNetworkController(GoogCcNetworkController const&);
-    GoogCcNetworkController();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ClampConstraints();

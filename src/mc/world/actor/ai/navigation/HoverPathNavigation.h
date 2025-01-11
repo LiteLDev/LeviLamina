@@ -78,9 +78,9 @@ public:
 
     MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
-    MCAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
+    MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
+    MCFOLD void $stop(::NavigationComponent& parent, ::Mob& mob);
 
     MCAPI bool $canUpdatePath(::Mob const& mob) const;
 

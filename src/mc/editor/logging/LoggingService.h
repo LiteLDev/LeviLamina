@@ -70,11 +70,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCFOLD ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func);
     // NOLINTEND
 

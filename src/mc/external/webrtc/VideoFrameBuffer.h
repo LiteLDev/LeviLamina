@@ -29,12 +29,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    VideoFrameBuffer& operator=(VideoFrameBuffer const&);
-    VideoFrameBuffer(VideoFrameBuffer const&);
-    VideoFrameBuffer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

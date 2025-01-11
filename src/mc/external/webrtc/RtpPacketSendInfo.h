@@ -12,12 +12,6 @@ namespace webrtc {
 
 struct RtpPacketSendInfo {
 public:
-    // prevent constructor by default
-    RtpPacketSendInfo& operator=(RtpPacketSendInfo const&);
-    RtpPacketSendInfo(RtpPacketSendInfo const&);
-    RtpPacketSendInfo();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::webrtc::RtpPacketSendInfo From(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&);

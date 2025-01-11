@@ -7,12 +7,6 @@
 
 class RakWebSocketClient : public ::RakWebSocket {
 public:
-    // prevent constructor by default
-    RakWebSocketClient& operator=(RakWebSocketClient const&);
-    RakWebSocketClient(RakWebSocketClient const&);
-    RakWebSocketClient();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

@@ -4,12 +4,6 @@
 
 namespace br::spawn {
 
-struct NullToken {
-public:
-    // prevent constructor by default
-    NullToken& operator=(NullToken const&);
-    NullToken(NullToken const&);
-    NullToken();
-};
+struct NullToken {};
 
 } // namespace br::spawn

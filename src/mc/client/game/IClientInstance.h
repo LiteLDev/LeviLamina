@@ -179,12 +179,6 @@ namespace ui { class ScreenTechStackSelector; }
 
 class IClientInstance : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IClientInstance& operator=(IClientInstance const&);
-    IClientInstance(IClientInstance const&);
-    IClientInstance();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

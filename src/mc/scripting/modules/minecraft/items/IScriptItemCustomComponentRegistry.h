@@ -22,12 +22,6 @@ namespace ScriptModuleMinecraft {
 
 class IScriptItemCustomComponentRegistry {
 public:
-    // prevent constructor by default
-    IScriptItemCustomComponentRegistry& operator=(IScriptItemCustomComponentRegistry const&);
-    IScriptItemCustomComponentRegistry(IScriptItemCustomComponentRegistry const&);
-    IScriptItemCustomComponentRegistry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

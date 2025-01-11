@@ -13,12 +13,6 @@ class FunctionManager;
 
 class IFunctionEntry {
 public:
-    // prevent constructor by default
-    IFunctionEntry& operator=(IFunctionEntry const&);
-    IFunctionEntry(IFunctionEntry const&);
-    IFunctionEntry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

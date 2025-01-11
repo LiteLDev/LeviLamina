@@ -22,12 +22,6 @@ struct VehicleComponent;
 
 struct StandingVehiclePostPositionPassengerSystem {
 public:
-    // prevent constructor by default
-    StandingVehiclePostPositionPassengerSystem& operator=(StandingVehiclePostPositionPassengerSystem const&);
-    StandingVehiclePostPositionPassengerSystem(StandingVehiclePostPositionPassengerSystem const&);
-    StandingVehiclePostPositionPassengerSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _impl(

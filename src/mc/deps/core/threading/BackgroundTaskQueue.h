@@ -39,7 +39,7 @@ public:
 
     MCAPI void flush();
 
-    MCAPI uint64 getApproximateTaskCount() const;
+    MCFOLD uint64 getApproximateTaskCount() const;
 
     MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 

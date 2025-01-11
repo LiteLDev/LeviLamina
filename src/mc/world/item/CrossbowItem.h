@@ -108,7 +108,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI ::ResolvedItemIconInfo
+    MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI int
@@ -124,7 +124,7 @@ public:
 
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI bool $canBeCharged() const;
+    MCFOLD bool $canBeCharged() const;
 
     MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 

@@ -140,7 +140,7 @@ public:
 
     MCAPI void $setTrialMode(bool isEnabled);
 
-    MCAPI bool $isInTrialMode();
+    MCFOLD bool $isInTrialMode();
 
     MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
     // NOLINTEND

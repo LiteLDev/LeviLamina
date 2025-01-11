@@ -94,7 +94,7 @@ public:
 
     MCAPI bool $finalize(::BlockSource& region, ::IRandom& random);
 
-    MCAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND

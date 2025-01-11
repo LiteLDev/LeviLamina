@@ -13,12 +13,6 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 class VolumeTriggerConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    VolumeTriggerConstraint& operator=(VolumeTriggerConstraint const&);
-    VolumeTriggerConstraint(VolumeTriggerConstraint const&);
-    VolumeTriggerConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

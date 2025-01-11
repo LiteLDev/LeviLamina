@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockStates {
 public:
-    // prevent constructor by default
-    ScriptBlockStates& operator=(ScriptBlockStates const&);
-    ScriptBlockStates(ScriptBlockStates const&);
-    ScriptBlockStates();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockStates> bind();

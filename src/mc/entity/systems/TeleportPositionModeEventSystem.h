@@ -18,12 +18,6 @@ struct TickingSystemWithInfo;
 
 class TeleportPositionModeEventSystem {
 public:
-    // prevent constructor by default
-    TeleportPositionModeEventSystem& operator=(TeleportPositionModeEventSystem const&);
-    TeleportPositionModeEventSystem(TeleportPositionModeEventSystem const&);
-    TeleportPositionModeEventSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createTeleportPositionModeEventSystem();

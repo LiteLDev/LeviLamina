@@ -54,19 +54,19 @@ public:
 
     MCAPI bool isRejected() const;
 
-    MCAPI ::Scripting::FutureAny& operator=(::Scripting::FutureAny const& rhs);
+    MCFOLD ::Scripting::FutureAny& operator=(::Scripting::FutureAny const& rhs);
 
-    MCAPI ::Scripting::FutureAny& operator=(::Scripting::FutureAny&& rhs);
+    MCFOLD ::Scripting::FutureAny& operator=(::Scripting::FutureAny&& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::Scripting::FutureAny const& rhs);
+    MCFOLD void* $ctor(::Scripting::FutureAny const& rhs);
 
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Scripting::IRuntime*                                        runtime,
         ::Scripting::ContextId                                        contextId,
         ::Scripting::WeakLifetimeScope                                scope,
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -46,17 +46,17 @@ public:
 
     MCAPI void _sendBossEvent(::BossEventUpdateType type, ::Player& player);
 
-    MCAPI ::BossBarColor getColor();
+    MCFOLD ::BossBarColor getColor();
 
-    MCAPI float getHealthPercent();
+    MCFOLD float getHealthPercent();
 
     MCAPI ::std::string getName();
 
-    MCAPI ::ActorUniqueID getOwnerUniqueID();
+    MCFOLD ::ActorUniqueID getOwnerUniqueID();
 
     MCAPI bool getRaidInProgress();
 
-    MCAPI ::std::shared_ptr<::Village> getVillage();
+    MCFOLD ::std::shared_ptr<::Village> getVillage();
 
     MCAPI bool getWaveStarted();
 

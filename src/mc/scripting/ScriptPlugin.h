@@ -79,27 +79,27 @@ public:
 
     MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
 
-    MCAPI ::Scripting::Capabilities const& getCapabilities() const;
+    MCFOLD ::Scripting::Capabilities const& getCapabilities() const;
 
-    MCAPI ::PluginExecutionGroup getExecutionGroup() const;
+    MCFOLD ::PluginExecutionGroup getExecutionGroup() const;
 
-    MCAPI ::std::string const& getMainScriptFilePath() const;
+    MCFOLD ::std::string const& getMainScriptFilePath() const;
 
-    MCAPI ::MinEngineVersion const& getMinEngineVersion() const;
+    MCFOLD ::MinEngineVersion const& getMinEngineVersion() const;
 
-    MCAPI ::std::vector<::Scripting::ModuleDescriptor> const& getModuleDependencies() const;
+    MCFOLD ::std::vector<::Scripting::ModuleDescriptor> const& getModuleDependencies() const;
 
-    MCAPI ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+    MCFOLD ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
 
     MCAPI ::mce::UUID getModuleUUID() const;
 
-    MCAPI ::PackIdVersion const& getPackId() const;
+    MCFOLD ::PackIdVersion const& getPackId() const;
 
     MCAPI ::std::string const& getRuntimeName() const;
 
     MCAPI ::Scripting::ScriptContext& getScriptContext();
 
-    MCAPI ::std::vector<::std::string> const& getScriptFilePaths() const;
+    MCFOLD ::std::vector<::std::string> const& getScriptFilePaths() const;
 
     MCAPI bool hasValidScriptContext() const;
 

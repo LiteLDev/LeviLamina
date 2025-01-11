@@ -11,12 +11,6 @@ class RoomDefinition;
 
 class MonumentRoomFitter {
 public:
-    // prevent constructor by default
-    MonumentRoomFitter& operator=(MonumentRoomFitter const&);
-    MonumentRoomFitter(MonumentRoomFitter const&);
-    MonumentRoomFitter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

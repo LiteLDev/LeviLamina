@@ -4,12 +4,6 @@
 
 namespace DebugInfoUtility {
 
-class DebugBlockUtility {
-public:
-    // prevent constructor by default
-    DebugBlockUtility& operator=(DebugBlockUtility const&);
-    DebugBlockUtility(DebugBlockUtility const&);
-    DebugBlockUtility();
-};
+class DebugBlockUtility {};
 
 } // namespace DebugInfoUtility

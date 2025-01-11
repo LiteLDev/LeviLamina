@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RtpGenericFrameDescriptorExtension00 {
 public:
-    // prevent constructor by default
-    RtpGenericFrameDescriptorExtension00& operator=(RtpGenericFrameDescriptorExtension00 const&);
-    RtpGenericFrameDescriptorExtension00(RtpGenericFrameDescriptorExtension00 const&);
-    RtpGenericFrameDescriptorExtension00();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uint64 ValueSize(::webrtc::RtpGenericFrameDescriptor const&);

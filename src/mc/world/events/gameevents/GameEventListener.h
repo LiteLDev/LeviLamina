@@ -19,12 +19,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    GameEventListener& operator=(GameEventListener const&);
-    GameEventListener(GameEventListener const&);
-    GameEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -52,6 +46,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
+    MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
 };

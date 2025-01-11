@@ -4,12 +4,6 @@
 
 namespace edu::auth {
 
-struct CredsExpired {
-public:
-    // prevent constructor by default
-    CredsExpired& operator=(CredsExpired const&);
-    CredsExpired(CredsExpired const&);
-    CredsExpired();
-};
+struct CredsExpired {};
 
 } // namespace edu::auth

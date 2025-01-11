@@ -12,12 +12,6 @@ class Player;
 
 class BalloonableComponent {
 public:
-    // prevent constructor by default
-    BalloonableComponent& operator=(BalloonableComponent const&);
-    BalloonableComponent(BalloonableComponent const&);
-    BalloonableComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool attach(::Actor& owner, ::Actor& attacher, ::ItemStack& item);

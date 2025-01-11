@@ -18,12 +18,6 @@ namespace cricket {
 
 class WrappingActiveIceController {
 public:
-    // prevent constructor by default
-    WrappingActiveIceController& operator=(WrappingActiveIceController const&);
-    WrappingActiveIceController(WrappingActiveIceController const&);
-    WrappingActiveIceController();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void HandlePingResult(::cricket::IceControllerInterface::PingResult);

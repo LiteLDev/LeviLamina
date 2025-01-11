@@ -10,12 +10,6 @@ namespace Editor::ScriptModule {
 
 class ScriptProjectExportOptions : public ::Editor::ProjectExportOptions {
 public:
-    // prevent constructor by default
-    ScriptProjectExportOptions& operator=(ScriptProjectExportOptions const&);
-    ScriptProjectExportOptions(ScriptProjectExportOptions const&);
-    ScriptProjectExportOptions();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptProjectExportOptions>

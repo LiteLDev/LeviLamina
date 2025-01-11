@@ -15,12 +15,6 @@ struct ScriptSettings;
 
 class ReloadConfigCommand : public ::Command {
 public:
-    // prevent constructor by default
-    ReloadConfigCommand& operator=(ReloadConfigCommand const&);
-    ReloadConfigCommand(ReloadConfigCommand const&);
-    ReloadConfigCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

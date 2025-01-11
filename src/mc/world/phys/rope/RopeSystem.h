@@ -4,43 +4,45 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class BlockSource;
 class Vec3;
 struct AABBBucket;
+struct AABBPred;
+struct ActorUniqueID;
+struct RopeNode;
 struct RopeParams;
+struct RopePoints;
+struct RopeWave;
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class RopeSystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkce34a3;
-    ::ll::UntypedStorage<8, 32> mUnk280dd2;
-    ::ll::UntypedStorage<8, 32> mUnk3d6d35;
-    ::ll::UntypedStorage<8, 24> mUnkfb98c7;
-    ::ll::UntypedStorage<8, 24> mUnk4457bf;
-    ::ll::UntypedStorage<8, 24> mUnkd205d8;
-    ::ll::UntypedStorage<8, 88> mUnkfae5e8;
-    ::ll::UntypedStorage<8, 16> mUnk5c68a3;
-    ::ll::UntypedStorage<4, 12> mUnkd3c819;
-    ::ll::UntypedStorage<4, 12> mUnk97573a;
-    ::ll::UntypedStorage<8, 8>  mUnkb42b2c;
-    ::ll::UntypedStorage<8, 8>  mUnk739c92;
-    ::ll::UntypedStorage<8, 8>  mUnk83f922;
-    ::ll::UntypedStorage<8, 8>  mUnke365be;
-    ::ll::UntypedStorage<8, 8>  mUnkc1e0e1;
-    ::ll::UntypedStorage<4, 4>  mUnk5d427a;
-    ::ll::UntypedStorage<8, 80> mUnk8b840e;
-    ::ll::UntypedStorage<1, 1>  mUnk2068ee;
-    ::ll::UntypedStorage<4, 12> mUnkedf1b8;
-    ::ll::UntypedStorage<4, 12> mUnkb4da06;
-    ::ll::UntypedStorage<8, 8>  mUnk8463ca;
+    ::ll::TypedStorage<1, 1, bool>                            mWaveApplied;
+    ::ll::TypedStorage<8, 32, ::RopePoints>                   mQueuedRenderPoints;
+    ::ll::TypedStorage<8, 32, ::RopePoints>                   mRenderPoints;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RopeNode>>      mNodes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABBBucket>>    mColliderBuckets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RopeWave>>      mWaves;
+    ::ll::TypedStorage<8, 88, ::RopeParams>                   mParams;
+    ::ll::TypedStorage<8, 16, ::std::set<::AABB, ::AABBPred>> mDenyListedColliders;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mPrevStartPin;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mPrevEndPin;
+    ::ll::TypedStorage<8, 8, uint64>                          mCutNode;
+    ::ll::TypedStorage<8, 8, uint64>                          mCutRenderNode;
+    ::ll::TypedStorage<8, 8, uint64>                          mMinNodes;
+    ::ll::TypedStorage<8, 8, uint64>                          mCutTicks;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                 mEndPinEntity;
+    ::ll::TypedStorage<4, 4, ::std::atomic_flag>              mTicking;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>    mRenderMutex;
+    ::ll::TypedStorage<1, 1, bool>                            mAbandonCollision;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mStartPin;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mEndPin;
+    ::ll::TypedStorage<8, 8, uint64>                          mToCutNode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RopeSystem& operator=(RopeSystem const&);
-    RopeSystem(RopeSystem const&);
 
 public:
     // member functions

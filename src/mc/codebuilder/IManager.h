@@ -16,12 +16,6 @@ namespace CodeBuilder {
 
 class IManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IManager& operator=(IManager const&);
-    IManager(IManager const&);
-    IManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -37,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

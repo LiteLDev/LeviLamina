@@ -11,12 +11,6 @@ namespace rtc::internal {
 
 struct RaceCheckerScope {
 public:
-    // prevent constructor by default
-    RaceCheckerScope& operator=(RaceCheckerScope const&);
-    RaceCheckerScope(RaceCheckerScope const&);
-    RaceCheckerScope();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RaceCheckerScope(::rtc::RaceChecker const*);

@@ -11,12 +11,6 @@ class Player;
 
 class LeashableComponent {
 public:
-    // prevent constructor by default
-    LeashableComponent& operator=(LeashableComponent const&);
-    LeashableComponent(LeashableComponent const&);
-    LeashableComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);

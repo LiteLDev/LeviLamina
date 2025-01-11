@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class DcSctpSocketCallbacks {
-public:
-    // prevent constructor by default
-    DcSctpSocketCallbacks& operator=(DcSctpSocketCallbacks const&);
-    DcSctpSocketCallbacks(DcSctpSocketCallbacks const&);
-    DcSctpSocketCallbacks();
-};
+class DcSctpSocketCallbacks {};
 
 } // namespace dcsctp

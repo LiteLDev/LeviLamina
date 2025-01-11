@@ -12,12 +12,6 @@ namespace RakNet {
 
 class FileListProgress {
 public:
-    // prevent constructor by default
-    FileListProgress& operator=(FileListProgress const&);
-    FileListProgress(FileListProgress const&);
-    FileListProgress();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

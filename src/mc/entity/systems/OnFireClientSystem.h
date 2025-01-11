@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class OnFireClientSystem : public ::OnFireSystem {
 public:
-    // prevent constructor by default
-    OnFireClientSystem& operator=(OnFireClientSystem const&);
-    OnFireClientSystem(OnFireClientSystem const&);
-    OnFireClientSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

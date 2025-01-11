@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
+
 struct FullContainerName {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk6b9174;
-    ::ll::UntypedStorage<4, 8> mUnk5245b5;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName>   mName;
+    ::ll::TypedStorage<4, 8, ::std::optional<uint>> mDynamicId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FullContainerName& operator=(FullContainerName const&);
-    FullContainerName(FullContainerName const&);
-    FullContainerName();
 
 public:
     // member functions

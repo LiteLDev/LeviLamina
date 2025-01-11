@@ -14,11 +14,6 @@ namespace FoodItemVersioning {
 
 class FoodItem118Upgrade : public ::ItemCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    FoodItem118Upgrade& operator=(FoodItem118Upgrade const&);
-    FoodItem118Upgrade(FoodItem118Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,6 +24,9 @@ class ItemRegistryRef;
 class ResourcePackManager;
 struct ItemParseContext;
 struct ItemRegistryComplexAlias;
+struct ItemTag;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
+namespace Bedrock::Threading { class Mutex; }
 namespace Core { class Path; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -38,6 +42,8 @@ public:
     // clang-format on
 
     // ItemRegistry inner types define
+    using ItemRegistryMap = ::std::vector<::SharedPtr<::Item>>;
+
     struct LoadedItemAsset {
     public:
         // member variables
@@ -65,6 +71,9 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
+
+    using CreativeItemsServerInitCallbackSignature =
+        void(::ItemRegistryRef, ::ActorInfoRegistry*, ::BlockDefinitionGroup*, ::CreativeItemRegistry*, bool, ::BaseGameVersion const&, ::Experiments const&);
 
     struct ItemAlias {
     public:
@@ -116,7 +125,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -150,37 +159,37 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk5b7196;
-    ::ll::UntypedStorage<8, 24>  mUnk12efcf;
-    ::ll::UntypedStorage<8, 64>  mUnk8c8c84;
-    ::ll::UntypedStorage<8, 64>  mUnkdcbe8c;
-    ::ll::UntypedStorage<8, 64>  mUnk2d62da;
-    ::ll::UntypedStorage<8, 64>  mUnkf8b308;
-    ::ll::UntypedStorage<8, 64>  mUnkc47a3b;
-    ::ll::UntypedStorage<8, 64>  mUnk40fcc7;
-    ::ll::UntypedStorage<8, 64>  mUnkbbed37;
-    ::ll::UntypedStorage<8, 64>  mUnkdcc53e;
-    ::ll::UntypedStorage<8, 64>  mUnk267d32;
-    ::ll::UntypedStorage<2, 2>   mUnk55b84d;
-    ::ll::UntypedStorage<8, 24>  mUnk18da5d;
-    ::ll::UntypedStorage<8, 64>  mUnk2474ae;
-    ::ll::UntypedStorage<8, 64>  mUnk658173;
-    ::ll::UntypedStorage<1, 1>   mUnkfead93;
-    ::ll::UntypedStorage<1, 1>   mUnkf3fce1;
-    ::ll::UntypedStorage<8, 64>  mUnkb9764d;
-    ::ll::UntypedStorage<8, 8>   mUnk672d95;
-    ::ll::UntypedStorage<8, 16>  mUnke1379d;
-    ::ll::UntypedStorage<8, 24>  mUnk1383da;
-    ::ll::UntypedStorage<8, 120> mUnke36140;
-    ::ll::UntypedStorage<1, 1>   mUnke4ff6a;
-    ::ll::UntypedStorage<8, 16>  mUnkbd3231;
-    ::ll::UntypedStorage<8, 8>   mUnk677d0c;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>>                       mCerealContext;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedPtr<::Item>>>                              mItemRegistry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::WeakPtr<::Item>>>                    mIdToItemMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::WeakPtr<::Item>>>         mNameToItemMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::WeakPtr<::Item>>>         mTileNamespaceToItemMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::WeakPtr<::Item>>>         mTileItemNameToItemMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ItemRegistry::ItemAlias>> mItemAliasLookupMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::ItemRegistry::ItemHashAlias>>     mReverseAliasLookupMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::ItemRegistry::ItemHashAlias>>
+        mReverseFullNameAliasLookupMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ItemRegistryComplexAlias>> mComplexAliasLookupMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<short, ::HashedString>>                      mLegacyIDToNameMap;
+    ::ll::TypedStorage<2, 2, short>                                                             mMaxItemID;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>                                    mAttachableDefinitions;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ItemTag, ::std::unordered_set<::Item const*>>> mTagToItemsMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::Item const*> const>                            mEmptyItemSet;
+    ::ll::TypedStorage<1, 1, bool>                                      mServerInitializingCreativeItems;
+    ::ll::TypedStorage<1, 1, bool>                                      mIsInitialized;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::ItemRegistryRef)>> mExtraItemInitCallback;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>>
+                                                                              mFinishedInitPublisher;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::atomic<int>>>          mCanUpdateTags;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedPtr<::Item>>>             mDeadItemRegistry;
+    ::ll::TypedStorage<8, 120, ::BaseGameVersion>                             mWorldBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>                                            mCheckForItemWorldCompatibility;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::Mutex>> mCompatibilityCheckMutex;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CreativeItemRegistry>>       mCreativeItemRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemRegistry& operator=(ItemRegistry const&);
-    ItemRegistry(ItemRegistry const&);
 
 public:
     // member functions

@@ -142,13 +142,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isTargetGoal() const;
+    MCFOLD bool $isTargetGoal() const;
 
     MCAPI bool $canContinueToUse();
 
     MCAPI void $start();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCAPI void $tick();
 

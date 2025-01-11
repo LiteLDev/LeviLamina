@@ -15,11 +15,6 @@ struct JumpControlDescription;
 
 class DynamicJumpControl : public ::JumpControl {
 public:
-    // prevent constructor by default
-    DynamicJumpControl& operator=(DynamicJumpControl const&);
-    DynamicJumpControl(DynamicJumpControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -71,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
+    MCFOLD void $initializeInternal(::Mob& mob, ::JumpControlDescription* description);
 
     MCAPI ::std::unique_ptr<::JumpControl> $clone() const;
 

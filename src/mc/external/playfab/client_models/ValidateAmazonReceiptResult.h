@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct ValidateAmazonReceiptResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    ValidateAmazonReceiptResult& operator=(ValidateAmazonReceiptResult const&);
-    ValidateAmazonReceiptResult(ValidateAmazonReceiptResult const&);
-    ValidateAmazonReceiptResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

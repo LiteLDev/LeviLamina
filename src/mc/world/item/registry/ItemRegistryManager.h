@@ -61,12 +61,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ItemRegistryManager& operator=(ItemRegistryManager const&);
-    ItemRegistryManager(ItemRegistryManager const&);
-    ItemRegistryManager();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ItemRegistryRef getItemRegistry();

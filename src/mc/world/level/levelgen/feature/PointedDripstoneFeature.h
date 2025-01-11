@@ -15,12 +15,6 @@ class RenderParams;
 
 class PointedDripstoneFeature : public ::IFeature {
 public:
-    // prevent constructor by default
-    PointedDripstoneFeature& operator=(PointedDripstoneFeature const&);
-    PointedDripstoneFeature(PointedDripstoneFeature const&);
-    PointedDripstoneFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -98,13 +98,13 @@ public:
     // NOLINTBEGIN
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI int $getAttackDamage() const;
+    MCFOLD int $getAttackDamage() const;
 
-    MCAPI bool $isHandEquipped() const;
+    MCFOLD bool $isHandEquipped() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 
@@ -114,7 +114,7 @@ public:
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
     MCAPI int $getEnchantValue() const;
 
@@ -125,7 +125,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI bool $canDestroyInCreative() const;
+    MCFOLD bool $canDestroyInCreative() const;
     // NOLINTEND
 
 public:

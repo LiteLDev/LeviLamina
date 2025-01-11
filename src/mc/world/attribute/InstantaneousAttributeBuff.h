@@ -13,12 +13,6 @@ class ActorDamageSource;
 
 class InstantaneousAttributeBuff : public ::AttributeBuff {
 public:
-    // prevent constructor by default
-    InstantaneousAttributeBuff& operator=(InstantaneousAttributeBuff const&);
-    InstantaneousAttributeBuff(InstantaneousAttributeBuff const&);
-    InstantaneousAttributeBuff();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -56,9 +50,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
 
-    MCAPI bool $isSerializable() const;
+    MCFOLD bool $isSerializable() const;
     // NOLINTEND
 
 public:

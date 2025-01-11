@@ -8,12 +8,6 @@
 
 class IDynamicPackagePacks : public ::IInPackagePacks {
 public:
-    // prevent constructor by default
-    IDynamicPackagePacks& operator=(IDynamicPackagePacks const&);
-    IDynamicPackagePacks(IDynamicPackagePacks const&);
-    IDynamicPackagePacks();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

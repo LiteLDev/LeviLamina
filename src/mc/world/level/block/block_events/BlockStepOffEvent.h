@@ -40,23 +40,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void configureRenderParamsForTrigger(::RenderParams& params) const;
+    MCFOLD void configureRenderParamsForTrigger(::RenderParams& params) const;
 
-    MCAPI ::Actor const& getEntity() const;
+    MCFOLD ::Actor const& getEntity() const;
 
-    MCAPI bool isClientSide() const;
+    MCFOLD bool isClientSide() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

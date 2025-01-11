@@ -14,12 +14,6 @@ namespace CodeBuilder {
 
 class IRequestHandler {
 public:
-    // prevent constructor by default
-    IRequestHandler& operator=(IRequestHandler const&);
-    IRequestHandler(IRequestHandler const&);
-    IRequestHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -303,12 +303,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    PeerConnectionInterface& operator=(PeerConnectionInterface const&);
-    PeerConnectionInterface(PeerConnectionInterface const&);
-    PeerConnectionInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

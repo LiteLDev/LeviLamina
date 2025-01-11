@@ -15,12 +15,6 @@ class LevelEventManager;
 
 class LevelBlockDestroyerProxy : public ::ILevelBlockDestroyerProxy {
 public:
-    // prevent constructor by default
-    LevelBlockDestroyerProxy& operator=(LevelBlockDestroyerProxy const&);
-    LevelBlockDestroyerProxy(LevelBlockDestroyerProxy const&);
-    LevelBlockDestroyerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

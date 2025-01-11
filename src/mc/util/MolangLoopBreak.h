@@ -2,6 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct MolangLoopBreak {
-public:
-};
+struct MolangLoopBreak {};

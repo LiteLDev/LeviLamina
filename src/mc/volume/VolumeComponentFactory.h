@@ -7,12 +7,6 @@
 
 class VolumeComponentFactory : public ::EntityComponentFactoryCereal<::VolumeComponentFactory> {
 public:
-    // prevent constructor by default
-    VolumeComponentFactory& operator=(VolumeComponentFactory const&);
-    VolumeComponentFactory(VolumeComponentFactory const&);
-    VolumeComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

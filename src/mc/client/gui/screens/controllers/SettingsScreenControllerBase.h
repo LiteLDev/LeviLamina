@@ -12,12 +12,6 @@ namespace Json { class Value; }
 
 class SettingsScreenControllerBase : public ::MainMenuScreenController {
 public:
-    // prevent constructor by default
-    SettingsScreenControllerBase& operator=(SettingsScreenControllerBase const&);
-    SettingsScreenControllerBase(SettingsScreenControllerBase const&);
-    SettingsScreenControllerBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

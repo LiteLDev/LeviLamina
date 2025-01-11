@@ -16,7 +16,7 @@ struct SweetBerryBushBlockFlag;
 namespace InsideBlockComponentUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void entityInsideLegacyRedirect(
+MCFOLD void entityInsideLegacyRedirect(
     ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag> const& insideBlockComponent,
     ::ActorOwnerComponent&                                                  actorOwnerComponent
 );

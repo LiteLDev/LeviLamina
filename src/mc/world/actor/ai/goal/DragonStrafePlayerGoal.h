@@ -9,29 +9,25 @@
 // clang-format off
 class Actor;
 class Mob;
+class Path;
+class WeakEntityRef;
 // clang-format on
 
 class DragonStrafePlayerGoal : public ::DragonBaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd50c8e;
-    ::ll::UntypedStorage<8, 8>  mUnkc70361;
-    ::ll::UntypedStorage<1, 1>  mUnkb07a61;
-    ::ll::UntypedStorage<1, 1>  mUnk52836d;
-    ::ll::UntypedStorage<4, 4>  mUnk119092;
-    ::ll::UntypedStorage<4, 4>  mUnk4fc9e2;
-    ::ll::UntypedStorage<4, 4>  mUnka7714b;
-    ::ll::UntypedStorage<4, 4>  mUnk926532;
-    ::ll::UntypedStorage<4, 4>  mUnk139a05;
-    ::ll::UntypedStorage<4, 4>  mUnk7910ab;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>          mAttackTarget;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mCurrentPath;
+    ::ll::TypedStorage<1, 1, bool>                      mClockwise;
+    ::ll::TypedStorage<1, 1, bool>                      mDone;
+    ::ll::TypedStorage<4, 4, int>                       mHasTargetTicks;
+    ::ll::TypedStorage<4, 4, int>                       mRangeAndViewTicks;
+    ::ll::TypedStorage<4, 4, float>                     mFireballPower;
+    ::ll::TypedStorage<4, 4, float>                     mFireballRange;
+    ::ll::TypedStorage<4, 4, float>                     mSwitchDirectionProbability;
+    ::ll::TypedStorage<4, 4, float>                     mViewAngle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonStrafePlayerGoal& operator=(DragonStrafePlayerGoal const&);
-    DragonStrafePlayerGoal(DragonStrafePlayerGoal const&);
-    DragonStrafePlayerGoal();
 
 public:
     // virtual functions

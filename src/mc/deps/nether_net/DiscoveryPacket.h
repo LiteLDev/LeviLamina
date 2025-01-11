@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NetherNet::NetworkID SenderId() const;
+    MCFOLD ::NetherNet::NetworkID SenderId() const;
     // NOLINTEND
 };
 

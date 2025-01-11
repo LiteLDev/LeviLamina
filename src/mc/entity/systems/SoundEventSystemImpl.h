@@ -60,12 +60,6 @@ struct SoundEventSystemImpl : public ::IStrictTickingSystem<::StrictExecutionCon
                                   ::GlobalWrite<>,
                                   ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    SoundEventSystemImpl& operator=(SoundEventSystemImpl const&);
-    SoundEventSystemImpl(SoundEventSystemImpl const&);
-    SoundEventSystemImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

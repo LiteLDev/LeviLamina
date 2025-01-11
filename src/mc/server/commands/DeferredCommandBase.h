@@ -9,12 +9,6 @@ class MinecraftCommands;
 
 class DeferredCommandBase {
 public:
-    // prevent constructor by default
-    DeferredCommandBase& operator=(DeferredCommandBase const&);
-    DeferredCommandBase(DeferredCommandBase const&);
-    DeferredCommandBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -27,7 +21,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

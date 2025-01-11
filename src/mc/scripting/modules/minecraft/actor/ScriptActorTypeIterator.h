@@ -21,12 +21,6 @@ class ScriptActorTypeIterator
           ::std::string,
           ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>> {
 public:
-    // prevent constructor by default
-    ScriptActorTypeIterator& operator=(ScriptActorTypeIterator const&);
-    ScriptActorTypeIterator(ScriptActorTypeIterator const&);
-    ScriptActorTypeIterator();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorTypeIterator> bind();

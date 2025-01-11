@@ -150,7 +150,7 @@ public:
 
     MCAPI ::Block const& getBlock(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCAPI ::Direction::Type getOrientation() const;
+    MCFOLD ::Direction::Type getOrientation() const;
 
     MCAPI ushort getOrientationData(::Block const* block, ushort data);
 
@@ -197,7 +197,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -205,15 +205,15 @@ public:
     // NOLINTBEGIN
     MCAPI void $moveBoundingBox(int dx, int dy, int dz);
 
-    MCAPI ::StructurePieceType $getType() const;
+    MCFOLD ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(
+    MCFOLD void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
     MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
 
@@ -224,7 +224,7 @@ public:
     MCAPI void
     $placeBlock(::BlockSource& region, ::Block const& block, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCAPI bool $canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&);
+    MCFOLD bool $canBeReplaced(::BlockSource&, int const, int const, int const, ::BoundingBox const&);
 
     MCAPI void $generateBox(
         ::BlockSource&       region,
@@ -240,7 +240,7 @@ public:
         bool                 skipAir
     );
 
-    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCFOLD void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
     // NOLINTEND
 
 public:

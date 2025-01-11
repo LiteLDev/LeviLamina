@@ -10,12 +10,6 @@ namespace Bedrock::Http {
 
 class IgnoredResponseBody : public ::Bedrock::Http::Internal::IResponseBody {
 public:
-    // prevent constructor by default
-    IgnoredResponseBody& operator=(IgnoredResponseBody const&);
-    IgnoredResponseBody(IgnoredResponseBody const&);
-    IgnoredResponseBody();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

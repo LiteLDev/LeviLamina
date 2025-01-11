@@ -6,12 +6,6 @@ namespace webrtc {
 
 struct EventTracer {
 public:
-    // prevent constructor by default
-    EventTracer& operator=(EventTracer const&);
-    EventTracer(EventTracer const&);
-    EventTracer();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

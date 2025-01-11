@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
+    MCFOLD ::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent&&);
 
     MCAPI ~ScriptActorRemoveAfterEvent();
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

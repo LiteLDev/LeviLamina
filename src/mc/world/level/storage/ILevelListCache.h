@@ -26,12 +26,6 @@ namespace Core { class Path; }
 
 class ILevelListCache : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    ILevelListCache& operator=(ILevelListCache const&);
-    ILevelListCache(ILevelListCache const&);
-    ILevelListCache();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -127,7 +121,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

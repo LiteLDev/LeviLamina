@@ -13,12 +13,6 @@ class ContainerScreenContext;
 
 class MaterialReducerOutputValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    MaterialReducerOutputValidation& operator=(MaterialReducerOutputValidation const&);
-    MaterialReducerOutputValidation(MaterialReducerOutputValidation const&);
-    MaterialReducerOutputValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
@@ -44,11 +38,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
+    MCFOLD bool $canDestroy(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

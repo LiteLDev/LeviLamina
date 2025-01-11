@@ -85,7 +85,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

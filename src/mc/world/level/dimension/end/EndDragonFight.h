@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/dimension/end/EndDragonFightVersion.h"
 #include "mc/world/level/dimension/end/RespawnAnimation.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
+class BlockPatternBuilder;
 class BlockPos;
 class BlockSource;
 class ChunkViewSource;
@@ -64,34 +66,35 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk3074b4;
-    ::ll::UntypedStorage<8, 24> mUnkd2cb31;
-    ::ll::UntypedStorage<8, 8>  mUnkfe37e5;
-    ::ll::UntypedStorage<4, 4>  mUnk9d1c98;
-    ::ll::UntypedStorage<4, 4>  mUnk57dcd9;
-    ::ll::UntypedStorage<4, 4>  mUnk699483;
-    ::ll::UntypedStorage<4, 4>  mUnkb67f6c;
-    ::ll::UntypedStorage<1, 1>  mUnkde9c45;
-    ::ll::UntypedStorage<1, 1>  mUnk47c04d;
-    ::ll::UntypedStorage<1, 1>  mUnkf7c308;
-    ::ll::UntypedStorage<8, 8>  mUnk63c6c7;
-    ::ll::UntypedStorage<4, 12> mUnk31f1af;
-    ::ll::UntypedStorage<4, 12> mUnk93b99b;
-    ::ll::UntypedStorage<4, 4>  mUnk33e167;
-    ::ll::UntypedStorage<4, 4>  mUnka333be;
-    ::ll::UntypedStorage<8, 24> mUnk26e1c5;
-    ::ll::UntypedStorage<1, 1>  mUnk487fc6;
-    ::ll::UntypedStorage<8, 32> mUnk8a98cb;
-    ::ll::UntypedStorage<8, 32> mUnk3022b3;
-    ::ll::UntypedStorage<1, 1>  mUnk507824;
-    ::ll::UntypedStorage<8, 40> mUnk985b0f;
+    ::ll::TypedStorage<8, 8, ::BlockSource*>                           mRegion;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                      mGateways;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockPatternBuilder>> mExitPortalPattern;
+    ::ll::TypedStorage<4, 4, int>                                      mNumCrystalsAlive;
+    ::ll::TypedStorage<4, 4, int>                                      mTicksSinceCrystalsScanned;
+    ::ll::TypedStorage<4, 4, int>                                      mTicksSincePortalScanned;
+    ::ll::TypedStorage<4, 4, int>                                      mTicksSinceLastPlayerScan;
+    ::ll::TypedStorage<1, 1, bool>                                     mDragonKilled;
+    ::ll::TypedStorage<1, 1, bool>                                     mPreviouslyKilled;
+    ::ll::TypedStorage<1, 1, bool>                                     mDragonSpawned;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                          mDragonUUID;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                              mPortalLocation;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                        mDragonSpawnPos;
+    ::ll::TypedStorage<4, 4, ::RespawnAnimation>                       mRespawnStage;
+    ::ll::TypedStorage<4, 4, int>                                      mRespawnTime;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>>          mRespawnCrystals;
+    ::ll::TypedStorage<1, 1, ::EndDragonFightVersion>                  mFightVersion;
+    ::ll::TypedStorage<8, 32, ::EndDragonFight::GateWayGenerator>      mEntryGenerator;
+    ::ll::TypedStorage<8, 32, ::EndDragonFight::GateWayGenerator>      mExitGenerator;
+    ::ll::TypedStorage<1, 1, ::EndDragonFight::GatewayTask>            mBuildingOrVerifyingEndGatewayPair;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::deque<::std::tuple<
+            ::EndDragonFight::GatewayTask,
+            ::EndDragonFight::GateWayGenerator,
+            ::EndDragonFight::GateWayGenerator>>>
+        mGatewayTasks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EndDragonFight& operator=(EndDragonFight const&);
-    EndDragonFight(EndDragonFight const&);
-    EndDragonFight();
 
 public:
     // member functions

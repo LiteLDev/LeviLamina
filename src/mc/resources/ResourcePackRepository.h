@@ -351,17 +351,17 @@ public:
 
     MCAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
 
-    MCAPI ::PackSourceReport const* $getPackLoadingReport() const;
+    MCFOLD ::PackSourceReport const* $getPackLoadingReport() const;
 
-    MCAPI ::ResourcePack* $getEditorPack() const;
+    MCFOLD ::ResourcePack* $getEditorPack() const;
 
-    MCAPI ::ResourcePack* $getVanillaPack() const;
+    MCFOLD ::ResourcePack* $getVanillaPack() const;
 
     MCAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
 
     MCAPI bool $hasServicePacks(::std::vector<::PackIdVersion> const& servicePacksIds) const;
 
-    MCAPI ::std::vector<::PackIdVersion> const& $getServicePacks() const;
+    MCFOLD ::std::vector<::PackIdVersion> const& $getServicePacks() const;
 
     MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 
@@ -404,11 +404,11 @@ public:
 
     MCAPI ::PackManifestFactory& $getPackManifestFactory();
 
-    MCAPI ::PackSettingsFactory& $getPackSettingsFactory() const;
+    MCFOLD ::PackSettingsFactory& $getPackSettingsFactory() const;
 
-    MCAPI ::PackSourceFactory& $getPackSourceFactory();
+    MCFOLD ::PackSourceFactory& $getPackSourceFactory();
 
-    MCAPI ::CompositePackSource const* $getWorldPackSource() const;
+    MCFOLD ::CompositePackSource const* $getWorldPackSource() const;
 
     MCAPI ::std::vector<::ResourcePack*> $getPacksByResourceLocation(::PackOrigin type) const;
 

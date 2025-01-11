@@ -21,11 +21,6 @@ public:
     // UlpfecGenerator inner types define
     struct Params {
     public:
-        // prevent constructor by default
-        Params& operator=(Params const&);
-        Params(Params const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Params();
@@ -41,12 +36,6 @@ public:
         MCAPI void* $ctor(::webrtc::FecProtectionParams, ::webrtc::FecProtectionParams);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    UlpfecGenerator& operator=(UlpfecGenerator const&);
-    UlpfecGenerator(UlpfecGenerator const&);
-    UlpfecGenerator();
 
 public:
     // member functions

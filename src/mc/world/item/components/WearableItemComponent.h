@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI WearableItemComponent(::SharedTypes::Legacy::EquipmentSlot slot, int protection);
 
-    MCAPI ::SharedTypes::Legacy::EquipmentSlot getSlot() const;
+    MCFOLD ::SharedTypes::Legacy::EquipmentSlot getSlot() const;
 
     MCAPI bool shouldForceAllowOffHand() const;
 

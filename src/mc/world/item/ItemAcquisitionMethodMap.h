@@ -8,12 +8,6 @@
 
 class ItemAcquisitionMethodMap {
 public:
-    // prevent constructor by default
-    ItemAcquisitionMethodMap& operator=(ItemAcquisitionMethodMap const&);
-    ItemAcquisitionMethodMap(ItemAcquisitionMethodMap const&);
-    ItemAcquisitionMethodMap();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::ItemAcquisitionMethod, ::std::string> const& mMap();

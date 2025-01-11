@@ -7,12 +7,6 @@
 
 class LootEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    LootEnchant& operator=(LootEnchant const&);
-    LootEnchant(LootEnchant const&);
-    LootEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -37,11 +31,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCFOLD int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
     // NOLINTEND
 
 public:

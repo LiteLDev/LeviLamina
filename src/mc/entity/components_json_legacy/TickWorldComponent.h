@@ -31,9 +31,9 @@ public:
 
     MCAPI TickWorldComponent(::TickWorldComponent&& other);
 
-    MCAPI uint getChunkRadius() const;
+    MCFOLD uint getChunkRadius() const;
 
-    MCAPI float getMaxDistToPlayers() const;
+    MCFOLD float getMaxDistToPlayers() const;
 
     MCAPI ::std::shared_ptr<::ITickingArea> getTickingArea();
 
@@ -41,7 +41,7 @@ public:
 
     MCAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI bool isAlwaysActive() const;
+    MCFOLD bool isAlwaysActive() const;
 
     MCAPI ::TickWorldComponent& operator=(::TickWorldComponent&& other);
 

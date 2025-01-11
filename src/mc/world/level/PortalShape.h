@@ -50,7 +50,7 @@ public:
 
     MCAPI void evaluate(::BlockPos const& originalPosition, ::BlockSource const& source);
 
-    MCAPI int getNumberOfPortalBlocks() const;
+    MCFOLD int getNumberOfPortalBlocks() const;
 
     MCAPI bool isFilled() const;
 
@@ -58,7 +58,7 @@ public:
 
     MCAPI void removePortalBlocks(::WorldChangeTransaction& transaction, ::BlockPos const& firstPortalPosition) const;
 
-    MCAPI void setAxis(::PortalAxis axis);
+    MCFOLD void setAxis(::PortalAxis axis);
 
     MCAPI void updateNeighboringBlocks(::BlockSource& source, ::Vec3 const& perpendicularAxis) const;
     // NOLINTEND

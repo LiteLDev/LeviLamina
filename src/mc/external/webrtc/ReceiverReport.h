@@ -12,11 +12,6 @@ namespace webrtc::rtcp {
 
 class ReceiverReport {
 public:
-    // prevent constructor by default
-    ReceiverReport& operator=(ReceiverReport const&);
-    ReceiverReport(ReceiverReport const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);

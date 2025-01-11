@@ -55,11 +55,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
+    MCFOLD void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
 
-    MCAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
+    MCFOLD void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
 
-    MCAPI void $onLanguagesLoaded();
+    MCFOLD void $onLanguagesLoaded();
     // NOLINTEND
 
 public:

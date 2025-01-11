@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI RailMovementDefinition();
 
-    MCAPI void initialize(::EntityContext&, ::RailMovementComponent& component) const;
+    MCFOLD void initialize(::EntityContext&, ::RailMovementComponent& component) const;
     // NOLINTEND
 
 public:

@@ -89,15 +89,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
+    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream&);
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCFOLD void $write(::BinaryStream& stream) const;
 
-    MCAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
     MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
-    MCAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
     // NOLINTEND
 
 public:

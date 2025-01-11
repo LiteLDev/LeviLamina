@@ -27,12 +27,6 @@ namespace dcsctp {
 
 class StreamResetHandler {
 public:
-    // prevent constructor by default
-    StreamResetHandler& operator=(StreamResetHandler const&);
-    StreamResetHandler(StreamResetHandler const&);
-    StreamResetHandler();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);

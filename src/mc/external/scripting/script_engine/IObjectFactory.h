@@ -15,12 +15,6 @@ namespace Scripting {
 
 class IObjectFactory {
 public:
-    // prevent constructor by default
-    IObjectFactory& operator=(IObjectFactory const&);
-    IObjectFactory(IObjectFactory const&);
-    IObjectFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

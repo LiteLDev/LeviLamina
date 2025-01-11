@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isNull() const;
+    MCFOLD bool isNull() const;
 
     MCAPI ~ActorAnimationControllerPtr();
     // NOLINTEND
@@ -32,6 +32,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

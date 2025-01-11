@@ -36,9 +36,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ClipboardItem(::mce::UUID id);
 
-    MCAPI void clear();
+    MCFOLD void clear();
 
-    MCAPI ::mce::UUID const& getId() const;
+    MCFOLD ::mce::UUID const& getId() const;
 
     MCAPI ::CompoundBlockVolume getPredictedWriteAsVolume(
         ::BlockPos const&                                position,
@@ -47,7 +47,7 @@ public:
 
     MCAPI ::BlockPos getSize() const;
 
-    MCAPI ::Editor::EditorStructureTemplate* getStructureData() const;
+    MCFOLD ::Editor::EditorStructureTemplate* getStructureData() const;
 
     MCAPI ::StructureSettings getStructureSettingsFromOptions(
         ::BlockPos const&                                size,

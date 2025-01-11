@@ -9,12 +9,6 @@ class IPositionalRandomFactory;
 
 class IRandom {
 public:
-    // prevent constructor by default
-    IRandom& operator=(IRandom const&);
-    IRandom(IRandom const&);
-    IRandom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -60,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
+    MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
     // NOLINTEND
 
 public:

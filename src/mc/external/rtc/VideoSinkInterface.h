@@ -5,12 +5,6 @@
 namespace rtc {
 
 template <typename T0>
-class VideoSinkInterface {
-public:
-    // prevent constructor by default
-    VideoSinkInterface& operator=(VideoSinkInterface const&);
-    VideoSinkInterface(VideoSinkInterface const&);
-    VideoSinkInterface();
-};
+class VideoSinkInterface {};
 
 } // namespace rtc

@@ -7,12 +7,6 @@
 
 class FormJsonValidator {
 public:
-    // prevent constructor by default
-    FormJsonValidator& operator=(FormJsonValidator const&);
-    FormJsonValidator(FormJsonValidator const&);
-    FormJsonValidator();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::JsonValidator::Property getContentItemProperty(

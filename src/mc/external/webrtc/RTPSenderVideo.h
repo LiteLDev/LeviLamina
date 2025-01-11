@@ -28,12 +28,6 @@ public:
     // RTPSenderVideo inner types define
     struct Config {
     public:
-        // prevent constructor by default
-        Config& operator=(Config const&);
-        Config(Config const&);
-        Config();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Config();
@@ -45,12 +39,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    RTPSenderVideo& operator=(RTPSenderVideo const&);
-    RTPSenderVideo(RTPSenderVideo const&);
-    RTPSenderVideo();
 
 public:
     // member functions

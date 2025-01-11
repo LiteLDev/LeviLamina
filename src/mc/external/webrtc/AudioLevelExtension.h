@@ -9,12 +9,6 @@ namespace webrtc { class AudioLevel; }
 
 namespace webrtc {
 
-class AudioLevelExtension {
-public:
-    // prevent constructor by default
-    AudioLevelExtension& operator=(AudioLevelExtension const&);
-    AudioLevelExtension(AudioLevelExtension const&);
-    AudioLevelExtension();
-};
+class AudioLevelExtension {};
 
 } // namespace webrtc

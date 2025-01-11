@@ -69,11 +69,11 @@ public:
 
     MCAPI void executeOpeningCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
-    MCAPI ::npc::ActionContainer& getActionsContainer();
+    MCFOLD ::npc::ActionContainer& getActionsContainer();
 
     MCAPI ::std::vector<int> getCommandCounts() const;
 
-    MCAPI ::std::string const& getDefaultSceneId() const;
+    MCFOLD ::std::string const& getDefaultSceneId() const;
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 

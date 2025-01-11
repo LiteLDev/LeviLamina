@@ -4,12 +4,6 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct EqOp {
-public:
-    // prevent constructor by default
-    EqOp& operator=(EqOp const&);
-    EqOp(EqOp const&);
-    EqOp();
-};
+struct EqOp {};
 
 } // namespace rtc::safe_cmp_impl

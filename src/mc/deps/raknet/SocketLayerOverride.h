@@ -11,12 +11,6 @@ namespace RakNet {
 
 class SocketLayerOverride {
 public:
-    // prevent constructor by default
-    SocketLayerOverride& operator=(SocketLayerOverride const&);
-    SocketLayerOverride(SocketLayerOverride const&);
-    SocketLayerOverride();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

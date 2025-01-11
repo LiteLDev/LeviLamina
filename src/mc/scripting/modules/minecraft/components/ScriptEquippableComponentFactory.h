@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptEquippableComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptEquippableComponentFactory& operator=(ScriptEquippableComponentFactory const&);
-    ScriptEquippableComponentFactory(ScriptEquippableComponentFactory const&);
-    ScriptEquippableComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -51,7 +45,7 @@ public:
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
     $createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
 
-    MCAPI bool $hasComponent(::WeakEntityRef entity) const;
+    MCFOLD bool $hasComponent(::WeakEntityRef entity) const;
     // NOLINTEND
 
 public:

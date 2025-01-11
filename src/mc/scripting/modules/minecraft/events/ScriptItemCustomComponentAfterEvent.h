@@ -16,12 +16,6 @@ struct ScriptItemCustomComponentAfterEvent
 : public ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapterAfterEvent<
       ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentAfterEvent& operator=(ScriptItemCustomComponentAfterEvent const&);
-    ScriptItemCustomComponentAfterEvent(ScriptItemCustomComponentAfterEvent const&);
-    ScriptItemCustomComponentAfterEvent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

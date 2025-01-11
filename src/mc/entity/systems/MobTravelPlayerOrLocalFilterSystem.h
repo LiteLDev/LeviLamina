@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct MobTravelPlayerOrLocalFilterSystem {
 public:
-    // prevent constructor by default
-    MobTravelPlayerOrLocalFilterSystem& operator=(MobTravelPlayerOrLocalFilterSystem const&);
-    MobTravelPlayerOrLocalFilterSystem(MobTravelPlayerOrLocalFilterSystem const&);
-    MobTravelPlayerOrLocalFilterSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();

@@ -366,37 +366,37 @@ public:
 
     MCAPI void flushRunTimeLighting();
 
-    MCAPI ::BlockEventDispatcher& getBlockEventDispatcher();
+    MCFOLD ::BlockEventDispatcher& getBlockEventDispatcher();
 
-    MCAPI ::BlockSource& getBlockSourceFromMainChunkSource() const;
+    MCFOLD ::BlockSource& getBlockSourceFromMainChunkSource() const;
 
     MCAPI ::ChunkBuildOrderPolicyBase& getChunkBuildOrderPolicy();
 
     MCAPI ::gsl::not_null<::ChunkLoadActionList*> getChunkLoadActionList();
 
-    MCAPI ::ChunkSource& getChunkSource() const;
+    MCFOLD ::ChunkSource& getChunkSource() const;
 
-    MCAPI ::CircuitSystem& getCircuitSystem();
+    MCFOLD ::CircuitSystem& getCircuitSystem();
 
     MCAPI ::gsl::not_null<::DelayActionList*> getDelayActionList();
 
     MCAPI ::std::vector<::WeakEntityRef>& getDisplayEntities();
 
-    MCAPI ::std::unordered_map<::ActorUniqueID, ::WeakEntityRef>& getEntityIdMap();
+    MCFOLD ::std::unordered_map<::ActorUniqueID, ::WeakEntityRef>& getEntityIdMap();
 
-    MCAPI ::FeatureTerrainAdjustments& getFeatureTerrainAdjustments();
+    MCFOLD ::FeatureTerrainAdjustments& getFeatureTerrainAdjustments();
 
-    MCAPI ::GameEventDispatcher* getGameEventDispatcher() const;
+    MCFOLD ::GameEventDispatcher* getGameEventDispatcher() const;
 
     MCAPI short getHeight() const;
 
     MCAPI ushort getHeightInSubchunks() const;
 
-    MCAPI ::DimensionHeightRange const& getHeightRange() const;
+    MCFOLD ::DimensionHeightRange const& getHeightRange() const;
 
-    MCAPI ::Level& getLevel() const;
+    MCFOLD ::Level& getLevel() const;
 
-    MCAPI ::Level const& getLevelConst() const;
+    MCFOLD ::Level const& getLevelConst() const;
 
     MCAPI short getMinHeight() const;
 
@@ -406,7 +406,7 @@ public:
 
     MCAPI float getPopCap(int catID, bool surface) const;
 
-    MCAPI ::Seasons& getSeasons();
+    MCFOLD ::Seasons& getSeasons();
 
     MCAPI ::Brightness getSkyDarken() const;
 
@@ -414,9 +414,9 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaData const> getTargetMetaData();
 
-    MCAPI ::TickingAreaList& getTickingAreas();
+    MCFOLD ::TickingAreaList& getTickingAreas();
 
-    MCAPI ::TickingAreaList const& getTickingAreasConst() const;
+    MCFOLD ::TickingAreaList const& getTickingAreasConst() const;
 
     MCAPI float getTimeOfDay(float a) const;
 
@@ -424,9 +424,9 @@ public:
 
     MCAPI ::WeakRef<::Dimension> getWeakRef();
 
-    MCAPI ::Weather& getWeather() const;
+    MCFOLD ::Weather& getWeather() const;
 
-    MCAPI ::WorldGenerator* getWorldGenerator() const;
+    MCFOLD ::WorldGenerator* getWorldGenerator() const;
 
     MCAPI bool hasCeiling() const;
 
@@ -545,27 +545,27 @@ public:
     MCAPI void $initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     );
 
-    MCAPI bool $isNaturalDimension() const;
+    MCFOLD bool $isNaturalDimension() const;
 
-    MCAPI bool $isValidSpawn(int x, int z) const;
+    MCFOLD bool $isValidSpawn(int x, int z) const;
 
     MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
-    MCAPI bool $hasPrecipitationFog() const;
+    MCFOLD bool $hasPrecipitationFog() const;
 
-    MCAPI short $getCloudHeight() const;
+    MCFOLD short $getCloudHeight() const;
 
     MCAPI ::HashedString $getDefaultBiome() const;
 
-    MCAPI bool $mayRespawnViaBed() const;
+    MCFOLD bool $mayRespawnViaBed() const;
 
-    MCAPI bool $hasGround() const;
+    MCFOLD bool $hasGround() const;
 
-    MCAPI ::BlockPos $getSpawnPos() const;
+    MCFOLD ::BlockPos $getSpawnPos() const;
 
-    MCAPI int $getSpawnYPosition() const;
+    MCFOLD int $getSpawnYPosition() const;
 
-    MCAPI bool $showSky() const;
+    MCFOLD bool $showSky() const;
 
     MCAPI bool $isDay() const;
 
@@ -575,11 +575,11 @@ public:
 
     MCAPI void $forEachPlayer(::brstd::function_ref<bool(::Player&)> callback) const;
 
-    MCAPI ::BiomeRegistry& $getBiomeRegistry();
+    MCFOLD ::BiomeRegistry& $getBiomeRegistry();
 
-    MCAPI ::BiomeRegistry const& $getBiomeRegistry() const;
+    MCFOLD ::BiomeRegistry const& $getBiomeRegistry() const;
 
-    MCAPI bool $forceCheckAllNeighChunkSavedStat() const;
+    MCFOLD bool $forceCheckAllNeighChunkSavedStat() const;
 
     MCAPI ::Actor* $fetchEntity(::ActorUniqueID actorID, bool getRemoved) const;
 
@@ -617,7 +617,7 @@ public:
 
     MCAPI ::BaseLightTextureImageBuilder* $getLightTextureImageBuilder() const;
 
-    MCAPI ::DimensionBrightnessRamp const& $getBrightnessRamp() const;
+    MCFOLD ::DimensionBrightnessRamp const& $getBrightnessRamp() const;
 
     MCAPI void $startLeaveGame();
 

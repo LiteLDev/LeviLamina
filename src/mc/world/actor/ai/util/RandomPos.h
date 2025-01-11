@@ -18,12 +18,6 @@ struct IntRange;
 
 class RandomPos {
 public:
-    // prevent constructor by default
-    RandomPos& operator=(RandomPos const&);
-    RandomPos(RandomPos const&);
-    RandomPos();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::Vec3> generateRandomPos(

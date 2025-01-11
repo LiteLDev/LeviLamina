@@ -9,12 +9,6 @@ namespace Bedrock::Resources::Archive {
 
 class Builder : public ::Bedrock::ImplBase<::Bedrock::Resources::Archive::Builder> {
 public:
-    // prevent constructor by default
-    Builder& operator=(Builder const&);
-    Builder(Builder const&);
-    Builder();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

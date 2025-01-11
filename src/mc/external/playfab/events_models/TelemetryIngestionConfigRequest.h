@@ -14,12 +14,6 @@ namespace PlayFab::EventsModels {
 
 struct TelemetryIngestionConfigRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    TelemetryIngestionConfigRequest& operator=(TelemetryIngestionConfigRequest const&);
-    TelemetryIngestionConfigRequest(TelemetryIngestionConfigRequest const&);
-    TelemetryIngestionConfigRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

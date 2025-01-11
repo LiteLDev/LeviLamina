@@ -18,8 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getCurrentEventIndex() const;
+    MCFOLD int getCurrentEventIndex() const;
 
-    MCAPI void setCurrentEventIndex(int index);
+    MCFOLD void setCurrentEventIndex(int index);
     // NOLINTEND
 };

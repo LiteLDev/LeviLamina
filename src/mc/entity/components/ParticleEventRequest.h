@@ -68,13 +68,7 @@ public:
         TerrainData();
     };
 
-    struct TerrainSlideData : public ::ParticleEventRequest::TerrainData {
-    public:
-        // prevent constructor by default
-        TerrainSlideData& operator=(TerrainSlideData const&);
-        TerrainSlideData(TerrainSlideData const&);
-        TerrainSlideData();
-    };
+    struct TerrainSlideData : public ::ParticleEventRequest::TerrainData {};
 
     struct BreakingItemData {
     public:

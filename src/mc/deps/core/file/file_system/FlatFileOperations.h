@@ -19,12 +19,6 @@ namespace Core {
 
 class FlatFileOperations {
 public:
-    // prevent constructor by default
-    FlatFileOperations& operator=(FlatFileOperations const&);
-    FlatFileOperations(FlatFileOperations const&);
-    FlatFileOperations();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Core::Result copyFlatFile(

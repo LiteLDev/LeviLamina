@@ -40,7 +40,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -56,12 +56,6 @@ public:
         BindActionToControl            = 11,
         RemoveActionBindingFromControl = 12,
     };
-
-public:
-    // prevent constructor by default
-    DeprecatedEventFactory& operator=(DeprecatedEventFactory const&);
-    DeprecatedEventFactory(DeprecatedEventFactory const&);
-    DeprecatedEventFactory();
 
 public:
     // static functions

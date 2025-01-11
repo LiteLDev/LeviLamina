@@ -19,12 +19,6 @@ struct TickingSystemWithInfo;
 
 class PersonaEmoteInputSystem {
 public:
-    // prevent constructor by default
-    PersonaEmoteInputSystem& operator=(PersonaEmoteInputSystem const&);
-    PersonaEmoteInputSystem(PersonaEmoteInputSystem const&);
-    PersonaEmoteInputSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _personaEmoteInputSystem(

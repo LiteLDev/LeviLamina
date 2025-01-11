@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsHiddenWhenInvisibleDefinition {
 public:
-    // prevent constructor by default
-    IsHiddenWhenInvisibleDefinition& operator=(IsHiddenWhenInvisibleDefinition const&);
-    IsHiddenWhenInvisibleDefinition(IsHiddenWhenInvisibleDefinition const&);
-    IsHiddenWhenInvisibleDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;
@@ -29,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::IsHiddenWhenInvisibleDefinition>>&
             root
     );

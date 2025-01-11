@@ -23,12 +23,6 @@ public:
     // AudioSourceInterface inner types define
     class AudioObserver {
     public:
-        // prevent constructor by default
-        AudioObserver& operator=(AudioObserver const&);
-        AudioObserver(AudioObserver const&);
-        AudioObserver();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -56,12 +50,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    AudioSourceInterface& operator=(AudioSourceInterface const&);
-    AudioSourceInterface(AudioSourceInterface const&);
-    AudioSourceInterface();
 
 public:
     // virtual functions

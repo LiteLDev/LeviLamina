@@ -14,12 +14,6 @@ namespace webrtc {
 
 struct FrameDependenciesCalculator {
 public:
-    // prevent constructor by default
-    FrameDependenciesCalculator& operator=(FrameDependenciesCalculator const&);
-    FrameDependenciesCalculator(FrameDependenciesCalculator const&);
-    FrameDependenciesCalculator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::absl::InlinedVector<int64, 5, ::std::allocator<int64>>

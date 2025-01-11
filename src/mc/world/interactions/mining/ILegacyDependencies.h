@@ -6,12 +6,6 @@ namespace Interactions::Mining {
 
 class ILegacyDependencies {
 public:
-    // prevent constructor by default
-    ILegacyDependencies& operator=(ILegacyDependencies const&);
-    ILegacyDependencies(ILegacyDependencies const&);
-    ILegacyDependencies();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

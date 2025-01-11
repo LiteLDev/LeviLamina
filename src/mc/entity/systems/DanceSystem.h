@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class DanceSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    DanceSystem& operator=(DanceSystem const&);
-    DanceSystem(DanceSystem const&);
-    DanceSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

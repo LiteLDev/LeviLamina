@@ -12,12 +12,6 @@ class ContentIdentity;
 
 class IContentKeyProvider : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IContentKeyProvider& operator=(IContentKeyProvider const&);
-    IContentKeyProvider(IContentKeyProvider const&);
-    IContentKeyProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -48,8 +42,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
+    MCFOLD ::std::string $getAlternateContentKey(::ContentIdentity const&) const;
 
-    MCAPI bool $requireEncryptedReads() const;
+    MCFOLD bool $requireEncryptedReads() const;
     // NOLINTEND
 };

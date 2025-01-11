@@ -70,7 +70,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI bool $disallowBatching() const;
+    MCFOLD bool $disallowBatching() const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

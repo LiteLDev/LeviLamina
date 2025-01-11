@@ -67,7 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCFOLD void*
     $ctor(::Editor::Services::DataStoreServiceProvider& dataStoreService, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

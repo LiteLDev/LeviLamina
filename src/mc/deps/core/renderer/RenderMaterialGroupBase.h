@@ -12,12 +12,6 @@ namespace mce {
 
 class RenderMaterialGroupBase {
 public:
-    // prevent constructor by default
-    RenderMaterialGroupBase& operator=(RenderMaterialGroupBase const&);
-    RenderMaterialGroupBase(RenderMaterialGroupBase const&);
-    RenderMaterialGroupBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

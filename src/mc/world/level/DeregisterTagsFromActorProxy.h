@@ -12,12 +12,6 @@ class Actor;
 
 class DeregisterTagsFromActorProxy : public ::IDeregisterTagsFromActorProxy {
 public:
-    // prevent constructor by default
-    DeregisterTagsFromActorProxy& operator=(DeregisterTagsFromActorProxy const&);
-    DeregisterTagsFromActorProxy(DeregisterTagsFromActorProxy const&);
-    DeregisterTagsFromActorProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

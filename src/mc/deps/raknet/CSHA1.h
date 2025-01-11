@@ -36,9 +36,9 @@ public:
 
     MCAPI void Final();
 
-    MCAPI uchar* GetHash() const;
+    MCFOLD uchar* GetHash() const;
 
-    MCAPI void Reset();
+    MCFOLD void Reset();
 
     MCAPI void Transform(uint* pState, uchar const* pBuffer);
 
@@ -56,6 +56,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

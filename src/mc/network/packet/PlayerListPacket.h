@@ -74,7 +74,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

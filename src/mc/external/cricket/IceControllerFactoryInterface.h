@@ -4,12 +4,6 @@
 
 namespace cricket {
 
-class IceControllerFactoryInterface {
-public:
-    // prevent constructor by default
-    IceControllerFactoryInterface& operator=(IceControllerFactoryInterface const&);
-    IceControllerFactoryInterface(IceControllerFactoryInterface const&);
-    IceControllerFactoryInterface();
-};
+class IceControllerFactoryInterface {};
 
 } // namespace cricket

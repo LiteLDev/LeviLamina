@@ -66,13 +66,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
+    MCFOLD void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
 
-    MCAPI void $forEachPack(::std::function<void(::Pack&)> callback);
+    MCFOLD void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCAPI ::PackOrigin $getPackOrigin() const;
+    MCFOLD ::PackOrigin $getPackOrigin() const;
 
-    MCAPI ::PackType $getPackType() const;
+    MCFOLD ::PackType $getPackType() const;
 
     MCAPI ::PackSourceReport $load(
         ::IPackManifestFactory&                                           manifestFactory,

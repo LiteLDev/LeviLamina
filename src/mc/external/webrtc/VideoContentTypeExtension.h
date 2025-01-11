@@ -9,12 +9,6 @@ namespace webrtc {
 
 class VideoContentTypeExtension {
 public:
-    // prevent constructor by default
-    VideoContentTypeExtension& operator=(VideoContentTypeExtension const&);
-    VideoContentTypeExtension(VideoContentTypeExtension const&);
-    VideoContentTypeExtension();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoContentType);

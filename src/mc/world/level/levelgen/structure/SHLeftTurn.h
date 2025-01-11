@@ -16,12 +16,6 @@ class StructurePiece;
 
 class SHLeftTurn : public ::StrongholdPiece {
 public:
-    // prevent constructor by default
-    SHLeftTurn& operator=(SHLeftTurn const&);
-    SHLeftTurn(SHLeftTurn const&);
-    SHLeftTurn();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

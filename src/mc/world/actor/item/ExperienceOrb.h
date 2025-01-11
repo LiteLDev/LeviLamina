@@ -153,15 +153,15 @@ public:
 
     MCAPI void $playerTouch(::Player& player);
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);
 
-    MCAPI void $doWaterSplashEffect();
+    MCFOLD void $doWaterSplashEffect();
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

@@ -113,19 +113,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSlotDirty(int slot);
+    MCFOLD bool $isSlotDirty(int slot);
 
-    MCAPI bool $isResultSlot(int slot);
+    MCFOLD bool $isResultSlot(int slot);
 
-    MCAPI void $containerContentChanged(int slot);
+    MCFOLD void $containerContentChanged(int slot);
 
-    MCAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
-    MCAPI ::ContainerID $getContainerId() const;
+    MCFOLD ::ContainerID $getContainerId() const;
 
-    MCAPI void $setContainerId(::ContainerID id);
+    MCFOLD void $setContainerId(::ContainerID id);
 
-    MCAPI ::ContainerType $getContainerType() const;
+    MCFOLD ::ContainerType $getContainerType() const;
 
     MCAPI void $setContainerType(::ContainerType type);
 

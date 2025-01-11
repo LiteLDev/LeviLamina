@@ -15,12 +15,6 @@ namespace Core {
 
 class FileStorageAreaObserver : public ::Core::Observer<::Core::FileStorageAreaObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    FileStorageAreaObserver& operator=(FileStorageAreaObserver const&);
-    FileStorageAreaObserver(FileStorageAreaObserver const&);
-    FileStorageAreaObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

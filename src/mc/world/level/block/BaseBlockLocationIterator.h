@@ -47,15 +47,15 @@ public:
 
     MCAPI BaseBlockLocationIterator(::BlockPos const& min, ::BlockPos const& max, bool begin);
 
-    MCAPI bool done() const;
+    MCFOLD bool done() const;
 
     MCAPI bool operator!=(::BaseBlockLocationIterator const& rhs);
 
-    MCAPI ::BlockPos operator*() const;
+    MCFOLD ::BlockPos operator*() const;
 
     MCAPI ::BaseBlockLocationIterator& operator=(::BaseBlockLocationIterator const& other);
 
-    MCAPI void reset();
+    MCFOLD void reset();
     // NOLINTEND
 
 public:

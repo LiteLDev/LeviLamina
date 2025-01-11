@@ -251,7 +251,7 @@ public:
 
     MCAPI static bool goalExists(::std::string const& name);
 
-    MCAPI static void init();
+    MCFOLD static void init();
 
     MCAPI static void shutdown();
     // NOLINTEND

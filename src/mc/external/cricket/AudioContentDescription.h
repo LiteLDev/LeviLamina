@@ -10,12 +10,6 @@ namespace cricket {
 
 class AudioContentDescription : public ::cricket::RtpMediaContentDescription {
 public:
-    // prevent constructor by default
-    AudioContentDescription& operator=(AudioContentDescription const&);
-    AudioContentDescription(AudioContentDescription const&);
-    AudioContentDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

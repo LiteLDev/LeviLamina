@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name);
+    MCFOLD ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name);
 
     MCAPI ~EntityGoalFactory();
     // NOLINTEND
@@ -44,6 +44,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

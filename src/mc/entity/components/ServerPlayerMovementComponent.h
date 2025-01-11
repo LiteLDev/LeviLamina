@@ -36,7 +36,7 @@ public:
 
     MCAPI bool doesServerHaveMovementAuthority() const;
 
-    MCAPI bool empty() const;
+    MCFOLD bool empty() const;
 
     MCAPI void erase(
         ::std::_Deque_const_iterator<::std::_Deque_val<::std::_Deque_simple_types<::MovementPackets>>> first,
@@ -47,12 +47,12 @@ public:
 
     MCAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
 
-    MCAPI ::std::deque<::MovementPackets> const& getQueue() const;
+    MCFOLD ::std::deque<::MovementPackets> const& getQueue() const;
 
     MCAPI bool isFull() const;
 
     MCAPI void popFront();
 
-    MCAPI uint64 size() const;
+    MCFOLD uint64 size() const;
     // NOLINTEND
 };

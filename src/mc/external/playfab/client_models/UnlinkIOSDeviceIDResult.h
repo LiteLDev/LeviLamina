@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkIOSDeviceIDResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    UnlinkIOSDeviceIDResult& operator=(UnlinkIOSDeviceIDResult const&);
-    UnlinkIOSDeviceIDResult(UnlinkIOSDeviceIDResult const&);
-    UnlinkIOSDeviceIDResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

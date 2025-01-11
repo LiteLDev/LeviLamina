@@ -25,12 +25,6 @@ public:
     // FileSecureStorage inner types define
     class StorageSystem {
     public:
-        // prevent constructor by default
-        StorageSystem& operator=(StorageSystem const&);
-        StorageSystem(StorageSystem const&);
-        StorageSystem();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -54,7 +48,7 @@ public:
         // NOLINTBEGIN
         MCAPI bool $getData(::std::string& output, ::Core::Path path);
 
-        MCAPI void $setData(::std::string const& data, ::Core::Path path);
+        MCFOLD void $setData(::std::string const& data, ::Core::Path path);
         // NOLINTEND
 
     public:

@@ -11,11 +11,6 @@ namespace webrtc::rtcp {
 
 class Fir {
 public:
-    // prevent constructor by default
-    Fir& operator=(Fir const&);
-    Fir(Fir const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Fir();

@@ -9,12 +9,6 @@ namespace Bedrock::Http {
 
 class WebSocketInterface_windows : public ::Bedrock::Http::WebSocketInterfaceInternal {
 public:
-    // prevent constructor by default
-    WebSocketInterface_windows& operator=(WebSocketInterface_windows const&);
-    WebSocketInterface_windows(WebSocketInterface_windows const&);
-    WebSocketInterface_windows();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

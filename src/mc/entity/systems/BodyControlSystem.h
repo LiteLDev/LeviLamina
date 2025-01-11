@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BodyControlSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BodyControlSystem& operator=(BodyControlSystem const&);
-    BodyControlSystem(BodyControlSystem const&);
-    BodyControlSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

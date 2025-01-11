@@ -31,12 +31,6 @@ namespace cricket {
 
 class JsepTransport {
 public:
-    // prevent constructor by default
-    JsepTransport& operator=(JsepTransport const&);
-    JsepTransport(JsepTransport const&);
-    JsepTransport();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ActivateRtcpMux();

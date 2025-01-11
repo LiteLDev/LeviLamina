@@ -4,12 +4,6 @@
 
 namespace cg {
 
-struct TextureSetLayerTypeHash {
-public:
-    // prevent constructor by default
-    TextureSetLayerTypeHash& operator=(TextureSetLayerTypeHash const&);
-    TextureSetLayerTypeHash(TextureSetLayerTypeHash const&);
-    TextureSetLayerTypeHash();
-};
+struct TextureSetLayerTypeHash {};
 
 } // namespace cg

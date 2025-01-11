@@ -6,11 +6,6 @@ namespace cricket {
 
 class IceTransportInternal {
 public:
-    // prevent constructor by default
-    IceTransportInternal& operator=(IceTransportInternal const&);
-    IceTransportInternal(IceTransportInternal const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI IceTransportInternal();

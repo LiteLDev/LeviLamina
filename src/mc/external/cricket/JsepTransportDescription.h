@@ -11,11 +11,6 @@ namespace cricket {
 
 struct JsepTransportDescription {
 public:
-    // prevent constructor by default
-    JsepTransportDescription& operator=(JsepTransportDescription const&);
-    JsepTransportDescription();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI JsepTransportDescription(::cricket::JsepTransportDescription const&);

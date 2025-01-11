@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class UserInitiatedAbortCause {
 public:
-    // prevent constructor by default
-    UserInitiatedAbortCause& operator=(UserInitiatedAbortCause const&);
-    UserInitiatedAbortCause(UserInitiatedAbortCause const&);
-    UserInitiatedAbortCause();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::UserInitiatedAbortCause> Parse(::rtc::ArrayView<uchar const>);

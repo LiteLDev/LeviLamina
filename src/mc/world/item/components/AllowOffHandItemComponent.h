@@ -42,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit AllowOffHandItemComponent(::SharedTypes::v1_20_50::AllowOffHandItemComponent component);
 
-    MCAPI bool getAllowOffHand() const;
+    MCFOLD bool getAllowOffHand() const;
     // NOLINTEND
 
 public:

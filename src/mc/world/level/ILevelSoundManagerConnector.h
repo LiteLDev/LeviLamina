@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class ILevelSoundManagerConnector : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    ILevelSoundManagerConnector& operator=(ILevelSoundManagerConnector const&);
-    ILevelSoundManagerConnector(ILevelSoundManagerConnector const&);
-    ILevelSoundManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -54,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

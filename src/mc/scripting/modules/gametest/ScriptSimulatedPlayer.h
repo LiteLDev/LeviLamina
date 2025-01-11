@@ -32,12 +32,6 @@ namespace ScriptModuleGameTest {
 
 class ScriptSimulatedPlayer : public ::ScriptModuleMinecraft::ScriptPlayer {
 public:
-    // prevent constructor by default
-    ScriptSimulatedPlayer& operator=(ScriptSimulatedPlayer const&);
-    ScriptSimulatedPlayer(ScriptSimulatedPlayer const&);
-    ScriptSimulatedPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
@@ -207,7 +201,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $applyImpulse(::Actor& self, ::Vec3 const& vector);
 
-    MCAPI ::Scripting::Result<void> $clearVelocity(::Actor& self);
+    MCFOLD ::Scripting::Result<void> $clearVelocity(::Actor& self);
 
     MCAPI ::Scripting::Result<void> $remove(::Actor& self);
 

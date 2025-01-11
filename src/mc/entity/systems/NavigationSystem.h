@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class NavigationSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    NavigationSystem& operator=(NavigationSystem const&);
-    NavigationSystem(NavigationSystem const&);
-    NavigationSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

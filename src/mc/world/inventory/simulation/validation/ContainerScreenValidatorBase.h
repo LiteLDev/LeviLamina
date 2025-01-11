@@ -70,10 +70,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ContainerValidationCommitObject>
+    MCFOLD ::std::shared_ptr<::ContainerValidationCommitObject>
     $postCommitItemRemoved(::ContainerEnumName const, int const, ::ItemStack const&);
 
-    MCAPI bool $isCraftingImplemented();
+    MCFOLD bool $isCraftingImplemented();
 
     MCAPI ::ContainerValidationCraftResult $getCraftResult(
         ::ContainerScreenContext const&,

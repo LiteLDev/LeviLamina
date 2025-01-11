@@ -112,15 +112,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
@@ -130,15 +130,15 @@ public:
 
     MCAPI int $getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCAPI bool $isSignalSource() const;
+    MCFOLD bool $isSignalSource() const;
 
-    MCAPI bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $isSameDiode(::Block const& block) const;
 
     MCAPI bool $shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canSpawnOn(::Actor*) const;
+    MCFOLD bool $canSpawnOn(::Actor*) const;
 
     MCAPI bool $isOn() const;
 
@@ -150,7 +150,7 @@ public:
 
     MCAPI int $getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int $getOutputSignal(::Block const& block) const;
+    MCFOLD int $getOutputSignal(::Block const& block) const;
 
     MCAPI int $getTurnOffDelay(::Block const& block) const;
     // NOLINTEND

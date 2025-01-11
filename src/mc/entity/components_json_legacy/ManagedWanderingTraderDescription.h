@@ -7,12 +7,6 @@
 
 struct ManagedWanderingTraderDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    ManagedWanderingTraderDescription& operator=(ManagedWanderingTraderDescription const&);
-    ManagedWanderingTraderDescription(ManagedWanderingTraderDescription const&);
-    ManagedWanderingTraderDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

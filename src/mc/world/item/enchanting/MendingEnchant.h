@@ -7,12 +7,6 @@
 
 class MendingEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    MendingEnchant& operator=(MendingEnchant const&);
-    MendingEnchant(MendingEnchant const&);
-    MendingEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -44,9 +38,9 @@ public:
 
     MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCAPI bool $isTreasureOnly() const;
+    MCFOLD bool $isTreasureOnly() const;
     // NOLINTEND
 
 public:

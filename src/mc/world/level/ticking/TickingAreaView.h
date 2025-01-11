@@ -105,7 +105,7 @@ public:
 
     MCAPI bool $isCircle() const;
 
-    MCAPI bool $isDoneLoading() const;
+    MCFOLD bool $isDoneLoading() const;
 
     MCAPI bool $checkInitialLoadDone(::Tick currentLevelTick);
 

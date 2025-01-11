@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct Color2Definition : public ::ColorDefinition {
 public:
-    // prevent constructor by default
-    Color2Definition& operator=(Color2Definition const&);
-    Color2Definition(Color2Definition const&);
-    Color2Definition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

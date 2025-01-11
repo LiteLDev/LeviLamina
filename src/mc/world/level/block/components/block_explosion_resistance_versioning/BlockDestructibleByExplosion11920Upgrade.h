@@ -14,11 +14,6 @@ namespace BlockExplosionResistanceVersioning {
 
 class BlockDestructibleByExplosion11920Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockDestructibleByExplosion11920Upgrade& operator=(BlockDestructibleByExplosion11920Upgrade const&);
-    BlockDestructibleByExplosion11920Upgrade(BlockDestructibleByExplosion11920Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

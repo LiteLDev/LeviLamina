@@ -7,12 +7,6 @@
 
 namespace Bedrock::JSONObject {
 
-class BooleanNode : public ::Bedrock::JSONObject::Node {
-public:
-    // prevent constructor by default
-    BooleanNode& operator=(BooleanNode const&);
-    BooleanNode(BooleanNode const&);
-    BooleanNode();
-};
+class BooleanNode : public ::Bedrock::JSONObject::Node {};
 
 } // namespace Bedrock::JSONObject

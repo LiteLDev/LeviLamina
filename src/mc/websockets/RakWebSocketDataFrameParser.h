@@ -37,7 +37,7 @@ public:
 
     MCAPI ::std::shared_ptr<::RakWebSocketDataFrame> readFrame(::RakNet::BitStream& data);
 
-    MCAPI void setOnFailHandler(::std::function<void(::std::string const&, ::CloseStatusCode)> handler);
+    MCFOLD void setOnFailHandler(::std::function<void(::std::string const&, ::CloseStatusCode)> handler);
 
     MCAPI ~RakWebSocketDataFrameParser();
     // NOLINTEND

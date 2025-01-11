@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBStairsRoom : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBStairsRoom& operator=(NBStairsRoom const&);
-    NBStairsRoom(NBStairsRoom const&);
-    NBStairsRoom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

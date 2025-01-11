@@ -20,10 +20,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_50::InteractButtonItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::InteractButtonItemComponent&
     operator=(::SharedTypes::v1_20_50::InteractButtonItemComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_50::InteractButtonItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::InteractButtonItemComponent&
     operator=(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
     // NOLINTEND
 };

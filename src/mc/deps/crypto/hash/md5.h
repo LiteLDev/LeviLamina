@@ -74,7 +74,7 @@ public:
 
     MCAPI void $final(uchar* result);
 
-    MCAPI uint64 $resultSize() const;
+    MCFOLD uint64 $resultSize() const;
     // NOLINTEND
 
 public:

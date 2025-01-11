@@ -132,7 +132,7 @@ public:
 
     MCAPI ::std::vector<short> computeChunkHeightMap(::ChunkPos const& pos);
 
-    MCAPI ::StructureFeatureRegistry& getStructureFeatureRegistry() const;
+    MCFOLD ::StructureFeatureRegistry& getStructureFeatureRegistry() const;
 
     MCAPI void postProcessStructureFeatures(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 

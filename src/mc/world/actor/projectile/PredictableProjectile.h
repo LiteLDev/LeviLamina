@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class PredictableProjectile : public ::Actor {
 public:
-    // prevent constructor by default
-    PredictableProjectile& operator=(PredictableProjectile const&);
-    PredictableProjectile(PredictableProjectile const&);
-    PredictableProjectile();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
@@ -52,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

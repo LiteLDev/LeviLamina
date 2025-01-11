@@ -123,9 +123,9 @@ public:
 
     MCAPI void finish(bool canRetry);
 
-    MCAPI ::std::optional<::gametest::GameTestError> const& getError() const;
+    MCFOLD ::std::optional<::gametest::GameTestError> const& getError() const;
 
-    MCAPI ::Rotation getRotation() const;
+    MCFOLD ::Rotation getRotation() const;
 
     MCAPI ::std::string const& getTestName() const;
 
@@ -158,7 +158,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
+    MCFOLD void $initialize();
 
     MCAPI void $spawnStructure();
 

@@ -54,7 +54,7 @@ public:
 
     MCAPI void $start();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND

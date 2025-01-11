@@ -3,10 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/file/PathPart.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Core { class PathPart; }
@@ -24,13 +20,7 @@ public:
     // clang-format on
 
     // Path inner types define
-    struct path_less {
-    public:
-        // prevent constructor by default
-        path_less& operator=(path_less const&);
-        path_less(path_less const&);
-        path_less();
-    };
+    struct path_less {};
 
 public:
     Path(std::filesystem::path const& path) : Path(path.u8string()) {}
@@ -43,14 +33,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::Core::PathPart mPathPart;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Path(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
-
-    MCAPI explicit Path(::Core::PathBuffer<::std::string> const&);
     // NOLINTEND
 
 public:
@@ -68,17 +50,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
-
-    MCAPI void* $ctor(::Core::PathBuffer<::std::string> const&);
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

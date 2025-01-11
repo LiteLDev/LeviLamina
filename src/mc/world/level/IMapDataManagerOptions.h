@@ -9,12 +9,6 @@ class BlockPos;
 
 class IMapDataManagerOptions {
 public:
-    // prevent constructor by default
-    IMapDataManagerOptions& operator=(IMapDataManagerOptions const&);
-    IMapDataManagerOptions(IMapDataManagerOptions const&);
-    IMapDataManagerOptions();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -62,9 +62,9 @@ public:
 
     MCAPI void setExplosionSound(::SharedTypes::Legacy::LevelSoundEvent soundExplosionType);
 
-    MCAPI void setFire(bool val);
+    MCFOLD void setFire(bool val);
 
-    MCAPI void setIgnoreBlockResistance(bool shouldIgnore);
+    MCFOLD void setIgnoreBlockResistance(bool shouldIgnore);
 
     MCAPI void setKnockbackScaling(float scaling);
 
@@ -92,6 +92,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

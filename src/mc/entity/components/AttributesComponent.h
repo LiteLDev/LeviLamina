@@ -30,9 +30,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::AttributesComponent const& other);
+    MCFOLD void* $ctor(::AttributesComponent const& other);
 
     MCAPI void* $ctor(::AttributesComponent&&);
     // NOLINTEND

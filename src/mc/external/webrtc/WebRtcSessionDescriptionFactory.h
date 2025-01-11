@@ -32,12 +32,6 @@ public:
     // WebRtcSessionDescriptionFactory inner types define
     struct CreateSessionDescriptionRequest {
     public:
-        // prevent constructor by default
-        CreateSessionDescriptionRequest& operator=(CreateSessionDescriptionRequest const&);
-        CreateSessionDescriptionRequest(CreateSessionDescriptionRequest const&);
-        CreateSessionDescriptionRequest();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~CreateSessionDescriptionRequest();
@@ -49,12 +43,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    WebRtcSessionDescriptionFactory& operator=(WebRtcSessionDescriptionFactory const&);
-    WebRtcSessionDescriptionFactory(WebRtcSessionDescriptionFactory const&);
-    WebRtcSessionDescriptionFactory();
 
 public:
     // member functions

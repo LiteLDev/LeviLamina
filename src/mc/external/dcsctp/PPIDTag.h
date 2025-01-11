@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class PPIDTag {
-public:
-    // prevent constructor by default
-    PPIDTag& operator=(PPIDTag const&);
-    PPIDTag(PPIDTag const&);
-    PPIDTag();
-};
+class PPIDTag {};
 
 } // namespace dcsctp

@@ -38,14 +38,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::std::weak_ptr<::CallbackTokenCancelState> cancelState);
+    MCFOLD void* $ctor(::std::weak_ptr<::CallbackTokenCancelState> cancelState);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

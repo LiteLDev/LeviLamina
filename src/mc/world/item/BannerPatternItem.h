@@ -62,9 +62,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isPattern() const;
+    MCFOLD bool $isPattern() const;
 
-    MCAPI int $getPatternIndex() const;
+    MCFOLD int $getPatternIndex() const;
     // NOLINTEND
 
 public:

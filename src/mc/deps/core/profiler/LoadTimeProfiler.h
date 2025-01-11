@@ -36,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI LoadTimeProfiler();
 
-    MCAPI void setEnabled(bool enabled);
+    MCFOLD void setEnabled(bool enabled);
     // NOLINTEND
 
 public:

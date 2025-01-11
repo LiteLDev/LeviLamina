@@ -34,10 +34,4 @@ public:
         HorizontalDiagonalEnd   = 10,
         FacingEnd               = 6,
     };
-
-public:
-    // prevent constructor by default
-    PotentialPositionIndex& operator=(PotentialPositionIndex const&);
-    PotentialPositionIndex(PotentialPositionIndex const&);
-    PotentialPositionIndex();
 };

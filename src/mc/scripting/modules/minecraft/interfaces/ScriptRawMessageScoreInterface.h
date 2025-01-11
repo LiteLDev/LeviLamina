@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    MCFOLD ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
 
     MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct MaxAutoStepComponent : public ::FloatComponent {
-public:
-    // prevent constructor by default
-    MaxAutoStepComponent& operator=(MaxAutoStepComponent const&);
-    MaxAutoStepComponent(MaxAutoStepComponent const&);
-    MaxAutoStepComponent();
-};
+struct MaxAutoStepComponent : public ::FloatComponent {};

@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class RtcpFeedbackSenderInterface {
-public:
-    // prevent constructor by default
-    RtcpFeedbackSenderInterface& operator=(RtcpFeedbackSenderInterface const&);
-    RtcpFeedbackSenderInterface(RtcpFeedbackSenderInterface const&);
-    RtcpFeedbackSenderInterface();
-};
+class RtcpFeedbackSenderInterface {};
 
 } // namespace webrtc

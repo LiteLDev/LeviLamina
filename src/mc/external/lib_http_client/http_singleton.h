@@ -22,12 +22,6 @@ public:
     enum class singleton_access_mode : uint {};
 
 public:
-    // prevent constructor by default
-    http_singleton& operator=(http_singleton const&);
-    http_singleton(http_singleton const&);
-    http_singleton();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void clear_retry_state(uint);

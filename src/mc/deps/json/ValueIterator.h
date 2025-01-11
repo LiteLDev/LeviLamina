@@ -41,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::ValueIterator const& other);
+    MCFOLD void* $ctor(::Json::ValueIterator const& other);
 
     MCAPI void* $ctor(::Json::ValueConstIterator const&);
     // NOLINTEND
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

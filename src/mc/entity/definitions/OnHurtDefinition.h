@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnHurtDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnHurtDefinition& operator=(OnHurtDefinition const&);
-    OnHurtDefinition(OnHurtDefinition const&);
-    OnHurtDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

@@ -91,7 +91,7 @@ public:
     // NOLINTBEGIN
     MCAPI RepeaterBlock(::std::string const& nameId, int id, bool on);
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void updateDelay(::BlockSource& region, ::BlockPos const& pos, bool doIncrement) const;
     // NOLINTEND
@@ -127,24 +127,24 @@ public:
 
     MCAPI bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
+    MCFOLD bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
 
     MCAPI int $getTurnOnDelay(::Block const& block) const;
 

@@ -9,12 +9,6 @@ class ActivationUri;
 
 class UriListener {
 public:
-    // prevent constructor by default
-    UriListener& operator=(UriListener const&);
-    UriListener(UriListener const&);
-    UriListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -30,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

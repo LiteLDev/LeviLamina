@@ -6,12 +6,6 @@ namespace webrtc {
 
 class FieldTrialParameterInterface {
 public:
-    // prevent constructor by default
-    FieldTrialParameterInterface& operator=(FieldTrialParameterInterface const&);
-    FieldTrialParameterInterface(FieldTrialParameterInterface const&);
-    FieldTrialParameterInterface();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FieldTrialParameterInterface(::std::string_view);

@@ -20,12 +20,6 @@ struct TickingSystemWithInfo;
 
 struct NoClipOrNoBlockMoveFilterSystem {
 public:
-    // prevent constructor by default
-    NoClipOrNoBlockMoveFilterSystem& operator=(NoClipOrNoBlockMoveFilterSystem const&);
-    NoClipOrNoBlockMoveFilterSystem(NoClipOrNoBlockMoveFilterSystem const&);
-    NoClipOrNoBlockMoveFilterSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();

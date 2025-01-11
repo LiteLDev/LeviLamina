@@ -118,7 +118,7 @@ public:
 
     MCAPI void $containerContentChanged(int slot);
 
-    MCAPI void $serverInitItemStackIds(
+    MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged

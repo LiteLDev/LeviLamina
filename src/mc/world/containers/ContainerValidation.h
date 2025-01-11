@@ -7,10 +7,4 @@
 class ItemStackBase;
 // clang-format on
 
-struct ContainerValidation {
-public:
-    // prevent constructor by default
-    ContainerValidation& operator=(ContainerValidation const&);
-    ContainerValidation(ContainerValidation const&);
-    ContainerValidation();
-};
+struct ContainerValidation {};

@@ -23,10 +23,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
+    MCFOLD ::Editor::ScriptModule::ScriptTransferCollectionNameData&
     operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData&&);
 
-    MCAPI ::Editor::ScriptModule::ScriptTransferCollectionNameData&
+    MCFOLD ::Editor::ScriptModule::ScriptTransferCollectionNameData&
     operator=(::Editor::ScriptModule::ScriptTransferCollectionNameData const&);
 
     MCAPI ~ScriptTransferCollectionNameData();
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

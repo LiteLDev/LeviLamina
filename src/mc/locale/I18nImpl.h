@@ -286,7 +286,7 @@ public:
 
     MCAPI bool $hasPackKeyEntry(::PackManifest const& manifest, ::std::string const& key);
 
-    MCAPI ::std::vector<::std::string> const& $getSupportedLanguageCodes();
+    MCFOLD ::std::vector<::std::string> const& $getSupportedLanguageCodes();
 
     MCAPI ::std::string const& $getLanguageName(::std::string const& code);
 

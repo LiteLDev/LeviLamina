@@ -15,12 +15,6 @@ namespace SharedTypes::v1_21_30 {
 
 struct QuantityConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    QuantityConstraint& operator=(QuantityConstraint const&);
-    QuantityConstraint(QuantityConstraint const&);
-    QuantityConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -44,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:

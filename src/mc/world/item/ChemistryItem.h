@@ -30,13 +30,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $fixupCommon(::ItemStackBase& stack) const;
+    MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
     // NOLINTEND
 
 public:

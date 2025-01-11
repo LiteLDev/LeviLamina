@@ -14,12 +14,6 @@ struct EffectDuration;
 
 class AbsorptionMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    AbsorptionMobEffect& operator=(AbsorptionMobEffect const&);
-    AbsorptionMobEffect(AbsorptionMobEffect const&);
-    AbsorptionMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

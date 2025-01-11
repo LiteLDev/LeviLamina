@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class DragonFireball : public ::Fireball {
 public:
-    // prevent constructor by default
-    DragonFireball& operator=(DragonFireball const&);
-    DragonFireball(DragonFireball const&);
-    DragonFireball();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 144
@@ -74,9 +68,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::ParticleType $getTrailParticle();
 
-    MCAPI bool $shouldBurn();
+    MCFOLD bool $shouldBurn();
 
-    MCAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
     // NOLINTEND
 
 public:

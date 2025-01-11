@@ -12,12 +12,6 @@ namespace webrtc {
 
 struct TrendlineEstimatorSettings {
 public:
-    // prevent constructor by default
-    TrendlineEstimatorSettings& operator=(TrendlineEstimatorSettings const&);
-    TrendlineEstimatorSettings(TrendlineEstimatorSettings const&);
-    TrendlineEstimatorSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();

@@ -30,12 +30,6 @@ public:
         };
 
     public:
-        // prevent constructor by default
-        Source& operator=(Source const&);
-        Source(Source const&);
-        Source();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -63,12 +57,6 @@ public:
 
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    AudioMixer& operator=(AudioMixer const&);
-    AudioMixer(AudioMixer const&);
-    AudioMixer();
 
 public:
     // virtual functions

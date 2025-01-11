@@ -26,12 +26,6 @@ namespace mce { class UUID; }
 
 class Shulker : public ::Mob {
 public:
-    // prevent constructor by default
-    Shulker& operator=(Shulker const&);
-    Shulker(Shulker const&);
-    Shulker();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -155,15 +149,15 @@ public:
 
     MCAPI int $getArmorValue() const;
 
-    MCAPI bool $shouldRender() const;
+    MCFOLD bool $shouldRender() const;
 
-    MCAPI void $_doInitialMove();
+    MCFOLD void $_doInitialMove();
 
-    MCAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
+    MCFOLD ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCAPI float $getMaxHeadXRot();
+    MCFOLD float $getMaxHeadXRot();
 
     MCAPI bool $isInWall() const;
 

@@ -79,23 +79,23 @@ public:
 
     MCAPI ::std::pair<int, int> const getDelayRange() const;
 
-    MCAPI int getDelaySpawnChance() const;
+    MCFOLD int getDelaySpawnChance() const;
 
-    MCAPI ::std::vector<::MobSpawnerPermutation> const& getGuaranteedPermutations() const;
+    MCFOLD ::std::vector<::MobSpawnerPermutation> const& getGuaranteedPermutations() const;
 
-    MCAPI ::std::vector<::MobSpawnHerdInfo>& getHerdListMutable();
+    MCFOLD ::std::vector<::MobSpawnHerdInfo>& getHerdListMutable();
 
     MCAPI ::std::string const getMobToDelayId() const;
 
-    MCAPI ::std::vector<::MobSpawnerPermutation> const& getPermutations() const;
+    MCFOLD ::std::vector<::MobSpawnerPermutation> const& getPermutations() const;
 
     MCAPI bool getPersistence() const;
 
     MCAPI int getPopulationCap(::SpawnConditions const& conditions) const;
 
-    MCAPI ::std::vector<::BlockDescriptor> const& getSpawnAboveBlockList() const;
+    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnAboveBlockList() const;
 
-    MCAPI ::std::vector<::BlockDescriptor>& getSpawnAboveBlockListMutable();
+    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnAboveBlockListMutable();
 
     MCAPI int getSpawnCount(
         ::SpawnConditions const&  conditions,
@@ -104,17 +104,17 @@ public:
         ::MobSpawnHerdInfo const& herdInfo
     ) const;
 
-    MCAPI ::std::vector<::BlockDescriptor> const& getSpawnOnBlockList() const;
+    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnOnBlockList() const;
 
-    MCAPI ::std::vector<::BlockDescriptor>& getSpawnOnBlockListMutable();
+    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnOnBlockListMutable();
 
-    MCAPI ::std::vector<::BlockDescriptor> const& getSpawnOnBlockPreventedList() const;
+    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnOnBlockPreventedList() const;
 
-    MCAPI ::std::vector<::BlockDescriptor>& getSpawnOnBlockPreventedListMutable();
+    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnOnBlockPreventedListMutable();
 
-    MCAPI bool isLavaSpawner() const;
+    MCFOLD bool isLavaSpawner() const;
 
-    MCAPI bool isUnderwaterSpawner() const;
+    MCFOLD bool isUnderwaterSpawner() const;
 
     MCAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
 
@@ -126,7 +126,7 @@ public:
 
     MCAPI ::MobSpawnRules& setBrightnessRange(int minBrightness, int maxBrightness, bool adjustForWeather);
 
-    MCAPI ::MobSpawnRules& setBubbleSpawner(bool isBubbleSpawner);
+    MCFOLD ::MobSpawnRules& setBubbleSpawner(bool isBubbleSpawner);
 
     MCAPI ::MobSpawnRules& setDelayRange(int min, int max, ::std::string const& id);
 
@@ -155,7 +155,7 @@ public:
 
     MCAPI ::MobSpawnRules& setRarity(int rarity);
 
-    MCAPI ::MobSpawnRules& setSpawnDistanceCap(int max);
+    MCFOLD ::MobSpawnRules& setSpawnDistanceCap(int max);
 
     MCAPI ::MobSpawnRules& setSpawnDistances(int min, int max);
 

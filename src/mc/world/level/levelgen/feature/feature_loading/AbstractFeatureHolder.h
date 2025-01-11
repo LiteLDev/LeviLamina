@@ -6,12 +6,6 @@ namespace FeatureLoading {
 
 struct AbstractFeatureHolder {
 public:
-    // prevent constructor by default
-    AbstractFeatureHolder& operator=(AbstractFeatureHolder const&);
-    AbstractFeatureHolder(AbstractFeatureHolder const&);
-    AbstractFeatureHolder();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

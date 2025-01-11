@@ -82,7 +82,7 @@ public:
         ::Vec3 const&      clickPos
     );
 
-    MCAPI bool isReplacingBlockItem() const;
+    MCFOLD bool isReplacingBlockItem() const;
     // NOLINTEND
 
 public:

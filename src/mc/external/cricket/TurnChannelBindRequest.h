@@ -13,12 +13,6 @@ namespace cricket {
 
 class TurnChannelBindRequest {
 public:
-    // prevent constructor by default
-    TurnChannelBindRequest& operator=(TurnChannelBindRequest const&);
-    TurnChannelBindRequest(TurnChannelBindRequest const&);
-    TurnChannelBindRequest();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TurnChannelBindRequest(::cricket::TurnPort*, ::cricket::TurnEntry*, int, ::rtc::SocketAddress const&);

@@ -53,13 +53,7 @@ public:
         // clang-format on
 
         // ScalingSettings inner types define
-        struct KOff {
-        public:
-            // prevent constructor by default
-            KOff& operator=(KOff const&);
-            KOff(KOff const&);
-            KOff();
-        };
+        struct KOff {};
 
     public:
         // member variables
@@ -194,12 +188,6 @@ public:
         Settings(Settings const&);
         Settings();
     };
-
-public:
-    // prevent constructor by default
-    VideoEncoder& operator=(VideoEncoder const&);
-    VideoEncoder(VideoEncoder const&);
-    VideoEncoder();
 
 public:
     // virtual functions

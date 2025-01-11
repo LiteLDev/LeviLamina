@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::FunctionState getErrorState() const;
+    MCFOLD ::FunctionState getErrorState() const;
     // NOLINTEND
 
 public:

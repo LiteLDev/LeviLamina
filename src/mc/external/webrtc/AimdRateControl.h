@@ -16,12 +16,6 @@ namespace webrtc {
 
 struct AimdRateControl {
 public:
-    // prevent constructor by default
-    AimdRateControl& operator=(AimdRateControl const&);
-    AimdRateControl(AimdRateControl const&);
-    AimdRateControl();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::DataRate AdditiveRateIncrease(::webrtc::Timestamp, ::webrtc::Timestamp) const;

@@ -25,7 +25,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits const&);
+        MCFOLD ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits const&);
         // NOLINTEND
     };
 

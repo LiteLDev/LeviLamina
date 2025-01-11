@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkFacebookInstantGamesIdResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkFacebookInstantGamesIdResult& operator=(LinkFacebookInstantGamesIdResult const&);
-    LinkFacebookInstantGamesIdResult(LinkFacebookInstantGamesIdResult const&);
-    LinkFacebookInstantGamesIdResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

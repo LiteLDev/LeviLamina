@@ -147,15 +147,15 @@ public:
 
     MCAPI void $destroy(::ActorDamageSource const&, bool dropMinecartComponents);
 
-    MCAPI ::Block const* $getDefaultDisplayBlock() const;
+    MCFOLD ::Block const* $getDefaultDisplayBlock() const;
 
-    MCAPI int $getDefaultDisplayOffset() const;
+    MCFOLD int $getDefaultDisplayOffset() const;
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
-    MCAPI ::ActorUniqueID $getControllingPlayer() const;
+    MCFOLD ::ActorUniqueID $getControllingPlayer() const;
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI float $getInterpolatedBodyYaw(float) const;
 

@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct SendPacketsSystem {
 public:
-    // prevent constructor by default
-    SendPacketsSystem& operator=(SendPacketsSystem const&);
-    SendPacketsSystem(SendPacketsSystem const&);
-    SendPacketsSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSendPacketsSystem();

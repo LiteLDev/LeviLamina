@@ -226,17 +226,17 @@ public:
 
     MCAPI ::std::weak_ptr<::CompressedNetworkPeer> getCompressedPeerForUser(::NetworkIdentifier const& id);
 
-    MCAPI ::std::vector<::std::unique_ptr<::NetworkConnection>> const& getConnections() const;
+    MCFOLD ::std::vector<::std::unique_ptr<::NetworkConnection>> const& getConnections() const;
 
     MCAPI ::std::weak_ptr<::EncryptedNetworkPeer> getEncryptedPeerForUser(::NetworkIdentifier const& id);
 
-    MCAPI ::NetworkStatistics const* getNetworkStatistics() const;
+    MCFOLD ::NetworkStatistics const* getNetworkStatistics() const;
 
     MCAPI ::NetworkPeer* getPeerForUser(::NetworkIdentifier const& id);
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector const> getRemoteConnector() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getRemoteConnector();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getRemoteConnector();
 
     MCAPI ::ResourcePackFileUploadManager& getResourcePackUploadManager(
         ::PacketSender&            packetSender,
@@ -244,7 +244,7 @@ public:
         ::std::string const&       resourceName
     );
 
-    MCAPI ::ServerLocator& getServerLocator();
+    MCFOLD ::ServerLocator& getServerLocator();
 
     MCAPI bool isServer() const;
 
@@ -278,9 +278,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $useIPv4Only() const;
+    MCFOLD bool $useIPv4Only() const;
 
-    MCAPI bool $useIPv6Only() const;
+    MCFOLD bool $useIPv6Only() const;
 
     MCAPI ushort $getDefaultGamePort() const;
 

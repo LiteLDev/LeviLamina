@@ -15,12 +15,6 @@ class Random;
 
 class DoublePlantFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    DoublePlantFeature& operator=(DoublePlantFeature const&);
-    DoublePlantFeature(DoublePlantFeature const&);
-    DoublePlantFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -130,17 +130,17 @@ public:
 
     MCAPI bool $canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const;
 
-    MCAPI float $blackBarsDuration() const;
+    MCFOLD float $blackBarsDuration() const;
 
-    MCAPI float $blackBarsScreenRatio() const;
+    MCFOLD float $blackBarsScreenRatio() const;
 
     MCAPI float $shutterScreenRatio() const;
 
-    MCAPI float $shutterDuration() const;
+    MCFOLD float $shutterDuration() const;
 
-    MCAPI float $pictureDuration() const;
+    MCFOLD float $pictureDuration() const;
 
-    MCAPI float $slideAwayDuration() const;
+    MCFOLD float $slideAwayDuration() const;
 
     MCAPI void $registerCallbacks(::CameraCallbacks* callbacks);
     // NOLINTEND

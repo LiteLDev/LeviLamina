@@ -9,12 +9,6 @@ namespace webrtc {
 
 class RefCountInterface {
 public:
-    // prevent constructor by default
-    RefCountInterface& operator=(RefCountInterface const&);
-    RefCountInterface(RefCountInterface const&);
-    RefCountInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -30,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

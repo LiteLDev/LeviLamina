@@ -16,12 +16,6 @@ namespace webrtc {
 
 class FrameTransformerInterface : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    FrameTransformerInterface& operator=(FrameTransformerInterface const&);
-    FrameTransformerInterface(FrameTransformerInterface const&);
-    FrameTransformerInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

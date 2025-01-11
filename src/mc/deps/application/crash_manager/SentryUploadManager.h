@@ -21,12 +21,6 @@ namespace Bedrock {
 class SentryUploadManager : public ::Bedrock::EnableNonOwnerReferences,
                             public ::Bedrock::ImplBase<::Bedrock::SentryUploadManager> {
 public:
-    // prevent constructor by default
-    SentryUploadManager& operator=(SentryUploadManager const&);
-    SentryUploadManager(SentryUploadManager const&);
-    SentryUploadManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

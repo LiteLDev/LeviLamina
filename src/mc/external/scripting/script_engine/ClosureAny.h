@@ -61,25 +61,25 @@ public:
 
     MCAPI bool compareTo(::Scripting::ClosureAny const& rhs) const;
 
-    MCAPI ::std::optional<::Scripting::TypedObjectHandle<::Scripting::ClosureType>> getClosureHandle() const;
+    MCFOLD ::std::optional<::Scripting::TypedObjectHandle<::Scripting::ClosureType>> getClosureHandle() const;
 
-    MCAPI ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny const& rhs);
+    MCFOLD ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny const& rhs);
 
-    MCAPI ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny&& rhs);
+    MCFOLD ::Scripting::ClosureAny& operator=(::Scripting::ClosureAny&& rhs);
 
-    MCAPI bool valid() const;
+    MCFOLD bool valid() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::Scripting::ClosureAny const& rhs);
+    MCFOLD void* $ctor(::Scripting::ClosureAny const& rhs);
 
     MCAPI void* $ctor(::Scripting::ClosureAny&& rhs);
 
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Scripting::IRuntime*                                         runtime,
         ::Scripting::ContextId                                         contextId,
         ::Scripting::WeakLifetimeScope                                 scope,
@@ -91,7 +91,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

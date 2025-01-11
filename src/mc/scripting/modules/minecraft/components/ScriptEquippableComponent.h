@@ -20,12 +20,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptEquippableComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptEquippableComponent& operator=(ScriptEquippableComponent const&);
-    ScriptEquippableComponent(ScriptEquippableComponent const&);
-    ScriptEquippableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

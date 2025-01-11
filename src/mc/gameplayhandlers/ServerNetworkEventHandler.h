@@ -10,12 +10,6 @@
 
 class ServerNetworkEventHandler : public ::GameplayHandler {
 public:
-    // prevent constructor by default
-    ServerNetworkEventHandler& operator=(ServerNetworkEventHandler const&);
-    ServerNetworkEventHandler(ServerNetworkEventHandler const&);
-    ServerNetworkEventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

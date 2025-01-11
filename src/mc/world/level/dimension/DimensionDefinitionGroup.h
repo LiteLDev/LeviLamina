@@ -53,7 +53,7 @@ public:
     MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
     getDimensionDefinition(::std::string const& dimensionName) const;
 
-    MCAPI bool isEmpty() const;
+    MCFOLD bool isEmpty() const;
 
     MCAPI bool
     tryAddDimensionDefinitionByString(::cereal::ReflectionCtx& ctx, ::std::string const& dimensionDefinitionJSON);
@@ -73,6 +73,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

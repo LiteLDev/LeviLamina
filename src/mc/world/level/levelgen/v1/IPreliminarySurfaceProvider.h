@@ -7,12 +7,6 @@
 
 class IPreliminarySurfaceProvider {
 public:
-    // prevent constructor by default
-    IPreliminarySurfaceProvider& operator=(IPreliminarySurfaceProvider const&);
-    IPreliminarySurfaceProvider(IPreliminarySurfaceProvider const&);
-    IPreliminarySurfaceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

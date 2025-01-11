@@ -14,12 +14,6 @@ public:
     // RateStatistics inner types define
     struct Bucket {
     public:
-        // prevent constructor by default
-        Bucket& operator=(Bucket const&);
-        Bucket(Bucket const&);
-        Bucket();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit Bucket(int64);
@@ -31,11 +25,6 @@ public:
         MCAPI void* $ctor(int64);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    RateStatistics& operator=(RateStatistics const&);
-    RateStatistics();
 
 public:
     // member functions

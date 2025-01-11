@@ -15,12 +15,6 @@ namespace webrtc {
 
 class RtcEventLogNull : public ::webrtc::RtcEventLog {
 public:
-    // prevent constructor by default
-    RtcEventLogNull& operator=(RtcEventLogNull const&);
-    RtcEventLogNull(RtcEventLogNull const&);
-    RtcEventLogNull();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

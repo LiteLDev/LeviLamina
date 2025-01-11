@@ -4,12 +4,6 @@
 
 namespace Core::Profile {
 
-class CounterTokenMarker {
-public:
-    // prevent constructor by default
-    CounterTokenMarker& operator=(CounterTokenMarker const&);
-    CounterTokenMarker(CounterTokenMarker const&);
-    CounterTokenMarker();
-};
+class CounterTokenMarker {};
 
 } // namespace Core::Profile

@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkKongregateAccountRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    UnlinkKongregateAccountRequest& operator=(UnlinkKongregateAccountRequest const&);
-    UnlinkKongregateAccountRequest(UnlinkKongregateAccountRequest const&);
-    UnlinkKongregateAccountRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

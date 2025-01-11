@@ -91,9 +91,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player);
+    MCFOLD void* $ctor(::Player const& player);
 
-    MCAPI void* $ctor(::WeakEntityRef const& playerRef);
+    MCFOLD void* $ctor(::WeakEntityRef const& playerRef);
     // NOLINTEND
 };
 

@@ -4,12 +4,6 @@
 
 namespace Bedrock::PubSub::ThreadModel {
 
-struct MultiThreaded {
-public:
-    // prevent constructor by default
-    MultiThreaded& operator=(MultiThreaded const&);
-    MultiThreaded(MultiThreaded const&);
-    MultiThreaded();
-};
+struct MultiThreaded {};
 
 } // namespace Bedrock::PubSub::ThreadModel

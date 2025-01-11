@@ -13,12 +13,6 @@ class Packet;
 
 class IPacketObserver : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IPacketObserver& operator=(IPacketObserver const&);
-    IPacketObserver(IPacketObserver const&);
-    IPacketObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -40,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

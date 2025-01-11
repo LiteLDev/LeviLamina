@@ -21,12 +21,6 @@ class MiningBlock : public ::ItemComponent,
                         void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&),
                         ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
-    // prevent constructor by default
-    MiningBlock& operator=(MiningBlock const&);
-    MiningBlock(MiningBlock const&);
-    MiningBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

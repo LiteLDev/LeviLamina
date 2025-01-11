@@ -11,12 +11,6 @@ namespace webrtc {
 
 class MdnsResponderInterface {
 public:
-    // prevent constructor by default
-    MdnsResponderInterface& operator=(MdnsResponderInterface const&);
-    MdnsResponderInterface(MdnsResponderInterface const&);
-    MdnsResponderInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

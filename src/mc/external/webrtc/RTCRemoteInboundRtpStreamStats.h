@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RTCRemoteInboundRtpStreamStats {
 public:
-    // prevent constructor by default
-    RTCRemoteInboundRtpStreamStats& operator=(RTCRemoteInboundRtpStreamStats const&);
-    RTCRemoteInboundRtpStreamStats(RTCRemoteInboundRtpStreamStats const&);
-    RTCRemoteInboundRtpStreamStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCRemoteInboundRtpStreamStats(::std::string, ::webrtc::Timestamp);

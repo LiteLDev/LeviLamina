@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct SendAccountRecoveryEmailResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    SendAccountRecoveryEmailResult& operator=(SendAccountRecoveryEmailResult const&);
-    SendAccountRecoveryEmailResult(SendAccountRecoveryEmailResult const&);
-    SendAccountRecoveryEmailResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

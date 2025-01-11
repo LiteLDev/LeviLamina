@@ -15,12 +15,6 @@ class Random;
 
 class CoralFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    CoralFeature& operator=(CoralFeature const&);
-    CoralFeature(CoralFeature const&);
-    CoralFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -91,7 +85,7 @@ public:
     _setBlockOnSolid(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color)
         const;
 
-    MCAPI ::gsl::not_null<::Block const*> _setCoralHangData(int face, int color, int type) const;
+    MCFOLD ::gsl::not_null<::Block const*> _setCoralHangData(int face, int color, int type) const;
     // NOLINTEND
 
 public:

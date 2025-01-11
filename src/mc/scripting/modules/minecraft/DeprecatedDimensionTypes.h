@@ -4,12 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-struct DeprecatedDimensionTypes {
-public:
-    // prevent constructor by default
-    DeprecatedDimensionTypes& operator=(DeprecatedDimensionTypes const&);
-    DeprecatedDimensionTypes(DeprecatedDimensionTypes const&);
-    DeprecatedDimensionTypes();
-};
+struct DeprecatedDimensionTypes {};
 
 } // namespace ScriptModuleMinecraft

@@ -14,12 +14,6 @@ namespace Bedrock {
 
 class WorldRecoveryTelemetryHandler : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    WorldRecoveryTelemetryHandler& operator=(WorldRecoveryTelemetryHandler const&);
-    WorldRecoveryTelemetryHandler(WorldRecoveryTelemetryHandler const&);
-    WorldRecoveryTelemetryHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -32,7 +26,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

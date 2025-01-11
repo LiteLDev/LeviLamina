@@ -18,12 +18,6 @@ struct VariantParameterList;
 
 class Animal : public ::Mob {
 public:
-    // prevent constructor by default
-    Animal& operator=(Animal const&);
-    Animal(Animal const&);
-    Animal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 66
@@ -62,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -13,12 +13,6 @@ namespace xbox::httpclient { class WebSocket; }
 
 struct HC_WEBSOCKET_OBSERVER {
 public:
-    // prevent constructor by default
-    HC_WEBSOCKET_OBSERVER& operator=(HC_WEBSOCKET_OBSERVER const&);
-    HC_WEBSOCKET_OBSERVER(HC_WEBSOCKET_OBSERVER const&);
-    HC_WEBSOCKET_OBSERVER();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void BinaryMessageFragmentFunc(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*);

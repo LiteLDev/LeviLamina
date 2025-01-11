@@ -12,12 +12,6 @@ namespace webrtc {
 
 class InterArrivalDelta {
 public:
-    // prevent constructor by default
-    InterArrivalDelta& operator=(InterArrivalDelta const&);
-    InterArrivalDelta(InterArrivalDelta const&);
-    InterArrivalDelta();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool BelongsToBurst(::webrtc::Timestamp, ::webrtc::Timestamp) const;

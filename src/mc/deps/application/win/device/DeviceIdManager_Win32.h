@@ -9,12 +9,6 @@ namespace Bedrock {
 
 class DeviceIdManager_Win32 : public ::Bedrock::DeviceIdManager_Common {
 public:
-    // prevent constructor by default
-    DeviceIdManager_Win32& operator=(DeviceIdManager_Win32 const&);
-    DeviceIdManager_Win32(DeviceIdManager_Win32 const&);
-    DeviceIdManager_Win32();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

@@ -14,12 +14,6 @@ namespace webrtc {
 
 struct AbsoluteCaptureTimeSender {
 public:
-    // prevent constructor by default
-    AbsoluteCaptureTimeSender& operator=(AbsoluteCaptureTimeSender const&);
-    AbsoluteCaptureTimeSender(AbsoluteCaptureTimeSender const&);
-    AbsoluteCaptureTimeSender();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AbsoluteCaptureTimeSender(::webrtc::Clock*);

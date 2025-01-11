@@ -32,13 +32,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::cereal::internal::SchemaDescriptor&&);
+    MCFOLD void* $ctor(::cereal::internal::SchemaDescriptor&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

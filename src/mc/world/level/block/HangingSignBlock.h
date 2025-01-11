@@ -67,7 +67,7 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _isHangingSign(::Block const& block);
 
-    MCAPI static bool _isSideAttached(::Block const& block);
+    MCFOLD static bool _isSideAttached(::Block const& block);
 
     MCAPI static bool isDoubleChainHangingSign(::Block const& block);
 

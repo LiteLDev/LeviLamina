@@ -30,12 +30,6 @@ namespace Json { class Value; }
 
 class Parser {
 public:
-    // prevent constructor by default
-    Parser& operator=(Parser const&);
-    Parser(Parser const&);
-    Parser();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool parse(::Json::Value const& val, ::std::vector<::ActorDefinitionTrigger>& triggers);

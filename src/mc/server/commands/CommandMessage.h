@@ -41,7 +41,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::CommandMessage::MessageComponent&& m);
+        MCFOLD void* $ctor(::CommandMessage::MessageComponent&& m);
 
         MCAPI void* $ctor(::std::string&& s);
 
@@ -68,7 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

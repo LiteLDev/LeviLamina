@@ -79,7 +79,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldAddHardcodedSpawnAreas() const;
+    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
     MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,

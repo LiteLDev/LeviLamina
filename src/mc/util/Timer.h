@@ -30,7 +30,7 @@ public:
 
     MCAPI uint64 getTicks() const;
 
-    MCAPI float getTimeScale() const;
+    MCFOLD float getTimeScale() const;
 
     MCAPI void resetTimePassed();
 

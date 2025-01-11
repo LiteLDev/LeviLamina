@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct ActorUpdateRidingIDSystem {
 public:
-    // prevent constructor by default
-    ActorUpdateRidingIDSystem& operator=(ActorUpdateRidingIDSystem const&);
-    ActorUpdateRidingIDSystem(ActorUpdateRidingIDSystem const&);
-    ActorUpdateRidingIDSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createClearPrevRidingIDSystem();

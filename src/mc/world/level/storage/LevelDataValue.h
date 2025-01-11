@@ -36,7 +36,7 @@ public:
 
         MCAPI explicit Tag(::CompoundTag&& tag);
 
-        MCAPI ::LevelDataValue::Tag& operator=(::LevelDataValue::Tag&& tag);
+        MCFOLD ::LevelDataValue::Tag& operator=(::LevelDataValue::Tag&& tag);
 
         MCAPI ~Tag();
         // NOLINTEND
@@ -46,7 +46,7 @@ public:
         // NOLINTBEGIN
         MCAPI void* $ctor();
 
-        MCAPI void* $ctor(::LevelDataValue::Tag&& tag);
+        MCFOLD void* $ctor(::LevelDataValue::Tag&& tag);
 
         MCAPI void* $ctor(::CompoundTag&& tag);
         // NOLINTEND
@@ -54,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

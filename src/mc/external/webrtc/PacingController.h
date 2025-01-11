@@ -29,27 +29,9 @@ public:
     // clang-format on
 
     // PacingController inner types define
-    struct Configuration {
-    public:
-        // prevent constructor by default
-        Configuration& operator=(Configuration const&);
-        Configuration(Configuration const&);
-        Configuration();
-    };
+    struct Configuration {};
 
-    class PacketSender {
-    public:
-        // prevent constructor by default
-        PacketSender& operator=(PacketSender const&);
-        PacketSender(PacketSender const&);
-        PacketSender();
-    };
-
-public:
-    // prevent constructor by default
-    PacingController& operator=(PacingController const&);
-    PacingController(PacingController const&);
-    PacingController();
+    class PacketSender {};
 
 public:
     // member functions

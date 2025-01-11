@@ -53,13 +53,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestPassed(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestFailed(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
     // NOLINTEND
 
 public:

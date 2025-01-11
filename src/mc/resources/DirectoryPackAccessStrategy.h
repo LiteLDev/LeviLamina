@@ -132,19 +132,19 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 $getPackSize() const;
 
-    MCAPI ::ResourceLocation const& $getPackLocation() const;
+    MCFOLD ::ResourceLocation const& $getPackLocation() const;
 
-    MCAPI ::std::string const& $getPackName() const;
+    MCFOLD ::std::string const& $getPackName() const;
 
-    MCAPI bool $isWritable() const;
+    MCFOLD bool $isWritable() const;
 
     MCAPI bool $isTrusted() const;
 
-    MCAPI void $setIsTrusted(bool);
+    MCFOLD void $setIsTrusted(bool);
 
     MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
-    MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+    MCFOLD bool $hasFolder(::Core::Path const& packRelativePath) const;
 
     MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
@@ -161,13 +161,13 @@ public:
     MCAPI void
     $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
-    MCAPI ::PackAccessStrategyType $getStrategyType() const;
+    MCFOLD ::PackAccessStrategyType $getStrategyType() const;
 
     MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
-    MCAPI bool $canRecurse() const;
+    MCFOLD bool $canRecurse() const;
 
-    MCAPI void $unload();
+    MCFOLD void $unload();
 
     MCAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const& packRelativePath
     ) const;

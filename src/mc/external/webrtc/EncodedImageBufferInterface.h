@@ -9,12 +9,6 @@ namespace webrtc {
 
 class EncodedImageBufferInterface : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    EncodedImageBufferInterface& operator=(EncodedImageBufferInterface const&);
-    EncodedImageBufferInterface(EncodedImageBufferInterface const&);
-    EncodedImageBufferInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -47,19 +47,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    MCFOLD bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
     MCAPI bool $evaluate(::FilterContext const& context) const;
 
     MCAPI ::std::string_view $getName() const;
 
-    MCAPI ::Json::Value $_serializeValue() const;
+    MCFOLD ::Json::Value $_serializeValue() const;
     // NOLINTEND
 
 public:

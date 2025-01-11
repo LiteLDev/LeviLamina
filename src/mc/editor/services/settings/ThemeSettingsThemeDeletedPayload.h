@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ThemeSettingsThemeDeletedPayload(::std::string const& themeId);
 
-    MCAPI ::std::string const& getThemeId() const;
+    MCFOLD ::std::string const& getThemeId() const;
     // NOLINTEND
 
 public:
@@ -56,7 +56,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

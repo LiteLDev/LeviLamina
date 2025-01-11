@@ -23,12 +23,6 @@ namespace webrtc {
 
 class RtpReceiverInterface : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    RtpReceiverInterface& operator=(RtpReceiverInterface const&);
-    RtpReceiverInterface(RtpReceiverInterface const&);
-    RtpReceiverInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

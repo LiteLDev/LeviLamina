@@ -49,7 +49,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -85,25 +85,25 @@ public:
 
     MCAPI ::GameRule& _setDefaultValue(int i);
 
-    MCAPI bool allowUseInCommand() const;
+    MCFOLD bool allowUseInCommand() const;
 
-    MCAPI bool allowUseInScripting() const;
+    MCFOLD bool allowUseInScripting() const;
 
-    MCAPI bool canBeModifiedByPlayer() const;
+    MCFOLD bool canBeModifiedByPlayer() const;
 
-    MCAPI bool getBool() const;
+    MCFOLD bool getBool() const;
 
-    MCAPI float getFloat() const;
+    MCFOLD float getFloat() const;
 
-    MCAPI int getInt() const;
+    MCFOLD int getInt() const;
 
     MCAPI ::std::string getLowercaseName() const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI ::GameRule::Type getType() const;
+    MCFOLD ::GameRule::Type getType() const;
 
-    MCAPI ::GameRule::Value const& getValue() const;
+    MCFOLD ::GameRule::Value const& getValue() const;
 
     MCAPI ::GameRule& operator=(::GameRule&&);
 

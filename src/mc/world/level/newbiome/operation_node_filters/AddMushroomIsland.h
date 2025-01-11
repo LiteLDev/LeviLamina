@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Biome const& mushroomBiome, ::BiomeRegistry const& biomeRegistry);
+    MCFOLD void* $ctor(::Biome const& mushroomBiome, ::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 };
 

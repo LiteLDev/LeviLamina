@@ -11,12 +11,6 @@ class Vec2;
 
 class ICameraClientInstance {
 public:
-    // prevent constructor by default
-    ICameraClientInstance& operator=(ICameraClientInstance const&);
-    ICameraClientInstance(ICameraClientInstance const&);
-    ICameraClientInstance();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

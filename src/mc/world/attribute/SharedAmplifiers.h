@@ -9,12 +9,6 @@ class Amplifier;
 
 class SharedAmplifiers {
 public:
-    // prevent constructor by default
-    SharedAmplifiers& operator=(SharedAmplifiers const&);
-    SharedAmplifiers(SharedAmplifiers const&);
-    SharedAmplifiers();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::Amplifier>& ABSORPTION();

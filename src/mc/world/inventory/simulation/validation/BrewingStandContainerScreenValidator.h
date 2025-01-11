@@ -7,12 +7,6 @@
 
 class BrewingStandContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    BrewingStandContainerScreenValidator& operator=(BrewingStandContainerScreenValidator const&);
-    BrewingStandContainerScreenValidator(BrewingStandContainerScreenValidator const&);
-    BrewingStandContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -109,7 +109,7 @@ public:
 
     MCAPI float getBossBarFilledFraction() const;
 
-    MCAPI uint64 getRemainingRaiders() const;
+    MCFOLD uint64 getRemainingRaiders() const;
 
     MCAPI bool isRaider(::ActorUniqueID actor) const;
 

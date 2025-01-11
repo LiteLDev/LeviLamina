@@ -11,12 +11,6 @@ namespace RakNet {
 
 class RackspaceEventCallback_Default : public ::RakNet::Rackspace2EventCallback {
 public:
-    // prevent constructor by default
-    RackspaceEventCallback_Default& operator=(RackspaceEventCallback_Default const&);
-    RackspaceEventCallback_Default(RackspaceEventCallback_Default const&);
-    RackspaceEventCallback_Default();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 28

@@ -5,12 +5,6 @@
 namespace absl {
 
 template <typename T0>
-class AnyInvocable {
-public:
-    // prevent constructor by default
-    AnyInvocable& operator=(AnyInvocable const&);
-    AnyInvocable(AnyInvocable const&);
-    AnyInvocable();
-};
+class AnyInvocable {};
 
 } // namespace absl

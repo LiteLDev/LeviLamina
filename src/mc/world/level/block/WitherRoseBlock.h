@@ -76,14 +76,14 @@ public:
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
 
-    MCAPI bool
+    MCFOLD bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCAPI bool $isAuxValueRelevantForPicking() const;
+    MCFOLD bool $isAuxValueRelevantForPicking() const;
 
     MCAPI bool $canSpawnOn(::Actor* actor) const;
 

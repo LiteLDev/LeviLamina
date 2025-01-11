@@ -77,7 +77,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -132,7 +132,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -358,9 +358,9 @@ public:
 
     MCAPI bool $loadedSuccessfully() const;
 
-    MCAPI ::Core::LevelStorageResult $getState() const;
+    MCFOLD ::Core::LevelStorageResult $getState() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 
@@ -386,7 +386,7 @@ public:
         ::std::function<void(::std::string_view, ::std::string_view)> const& callback
     ) const;
 
-    MCAPI ::Core::LevelStorageResult $getLevelStorageState() const;
+    MCFOLD ::Core::LevelStorageResult $getLevelStorageState() const;
 
     MCAPI void $startShutdown();
 

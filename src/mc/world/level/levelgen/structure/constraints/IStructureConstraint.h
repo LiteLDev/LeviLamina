@@ -13,12 +13,6 @@ class IBlockWorldGenAPI;
 
 class IStructureConstraint {
 public:
-    // prevent constructor by default
-    IStructureConstraint& operator=(IStructureConstraint const&);
-    IStructureConstraint(IStructureConstraint const&);
-    IStructureConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

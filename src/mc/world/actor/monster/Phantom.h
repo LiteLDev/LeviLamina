@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class Phantom : public ::Monster {
 public:
-    // prevent constructor by default
-    Phantom& operator=(Phantom const&);
-    Phantom(Phantom const&);
-    Phantom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 24
@@ -68,7 +62,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool $shouldRender() const;
+    MCFOLD bool $shouldRender() const;
     // NOLINTEND
 
 public:

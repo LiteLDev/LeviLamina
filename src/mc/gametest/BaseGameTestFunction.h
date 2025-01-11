@@ -71,7 +71,7 @@ public:
 
     MCAPI bool getRotate() const;
 
-    MCAPI ::std::string const& getTestName() const;
+    MCFOLD ::std::string const& getTestName() const;
 
     MCAPI bool hasTag(::std::string const& tag) const;
     // NOLINTEND

@@ -4,12 +4,6 @@
 
 namespace ui {
 
-class ScreenTechStackSelector {
-public:
-    // prevent constructor by default
-    ScreenTechStackSelector& operator=(ScreenTechStackSelector const&);
-    ScreenTechStackSelector(ScreenTechStackSelector const&);
-    ScreenTechStackSelector();
-};
+class ScreenTechStackSelector {};
 
 } // namespace ui

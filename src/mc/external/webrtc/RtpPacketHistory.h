@@ -30,12 +30,6 @@ public:
 
     struct MoreUseful {
     public:
-        // prevent constructor by default
-        MoreUseful& operator=(MoreUseful const&);
-        MoreUseful(MoreUseful const&);
-        MoreUseful();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool
@@ -44,12 +38,6 @@ public:
     };
 
     class StoredPacket {
-    public:
-        // prevent constructor by default
-        StoredPacket& operator=(StoredPacket const&);
-        StoredPacket(StoredPacket const&);
-        StoredPacket();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -76,12 +64,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    RtpPacketHistory& operator=(RtpPacketHistory const&);
-    RtpPacketHistory(RtpPacketHistory const&);
-    RtpPacketHistory();
 
 public:
     // member functions

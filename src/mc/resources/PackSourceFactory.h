@@ -50,13 +50,7 @@ public:
     };
 
     template <typename T0>
-    struct SourcesList {
-    public:
-        // prevent constructor by default
-        SourcesList& operator=(SourcesList const&);
-        SourcesList(SourcesList const&);
-        SourcesList();
-    };
+    struct SourcesList {};
 
 public:
     // member variables

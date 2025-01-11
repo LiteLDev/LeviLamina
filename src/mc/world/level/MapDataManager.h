@@ -116,7 +116,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
+    MCFOLD void $registerOnGameplayUserAddedSubscription(::IGameplayUserManagerConnector&);
 
     MCAPI ::MapItemSavedData& $createMapSavedData(::ActorUniqueID const& uuid);
 

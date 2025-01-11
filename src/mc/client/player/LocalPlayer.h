@@ -63,12 +63,6 @@ public:
     // LocalPlayer inner types define
     class RegionListener {
     public:
-        // prevent constructor by default
-        RegionListener& operator=(RegionListener const&);
-        RegionListener(RegionListener const&);
-        RegionListener();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

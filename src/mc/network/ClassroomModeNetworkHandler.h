@@ -84,10 +84,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::IncomingPacketFilterResult
+    MCFOLD ::IncomingPacketFilterResult
     $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);
 
-    MCAPI ::OutgoingPacketFilterResult
+    MCFOLD ::OutgoingPacketFilterResult
     $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
     MCAPI void $onWebsocketRequest(

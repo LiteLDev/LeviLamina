@@ -14,12 +14,6 @@ class Random;
 
 class SeagrassFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    SeagrassFeature& operator=(SeagrassFeature const&);
-    SeagrassFeature(SeagrassFeature const&);
-    SeagrassFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

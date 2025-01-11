@@ -35,11 +35,11 @@ public:
 
     MCAPI ::entt::meta_any asAny();
 
-    MCAPI ::Scripting::ObjectHandle getHandle() const;
+    MCFOLD ::Scripting::ObjectHandle getHandle() const;
 
-    MCAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCFOLD ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCAPI ::Scripting::WeakLifetimeScope getScope() const;
+    MCFOLD ::Scripting::WeakLifetimeScope getScope() const;
 
     MCAPI ::Scripting::StrongObjectHandle& operator=(::Scripting::StrongObjectHandle const& rhs);
 
@@ -47,7 +47,7 @@ public:
 
     MCAPI bool operator==(::Scripting::StrongObjectHandle const& rhs) const;
 
-    MCAPI bool valid() const;
+    MCFOLD bool valid() const;
 
     MCAPI ~StrongObjectHandle();
     // NOLINTEND
@@ -67,11 +67,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::Scripting::StrongObjectHandle const& rhs);
 
-    MCAPI void* $ctor(::Scripting::StrongObjectHandle&& rhs);
+    MCFOLD void* $ctor(::Scripting::StrongObjectHandle&& rhs);
 
     MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Scripting::ObjectHandle objHandle, bool addReference);
     // NOLINTEND

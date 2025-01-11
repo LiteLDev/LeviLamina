@@ -12,12 +12,6 @@ namespace Puv { class LoadResultAny; }
 
 class ComponentItemUpgraderToStrict : public ::Puv::Upgrader {
 public:
-    // prevent constructor by default
-    ComponentItemUpgraderToStrict& operator=(ComponentItemUpgraderToStrict const&);
-    ComponentItemUpgraderToStrict(ComponentItemUpgraderToStrict const&);
-    ComponentItemUpgraderToStrict();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

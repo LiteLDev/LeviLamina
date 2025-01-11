@@ -66,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const* $tryGetUninfested(::Block const& block) const;
+    MCFOLD ::Block const* $tryGetUninfested(::Block const& block) const;
 
     MCAPI void $spawnAfterBreak(
         ::BlockSource& region,

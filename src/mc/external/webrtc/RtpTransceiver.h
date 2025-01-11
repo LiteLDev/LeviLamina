@@ -34,12 +34,6 @@ namespace webrtc {
 
 class RtpTransceiver {
 public:
-    // prevent constructor by default
-    RtpTransceiver& operator=(RtpTransceiver const&);
-    RtpTransceiver(RtpTransceiver const&);
-    RtpTransceiver();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void

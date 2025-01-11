@@ -127,9 +127,9 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isValid() const;
 
-    MCAPI ::cereal::SchemaReaderState $isObject() const;
+    MCFOLD ::cereal::SchemaReaderState $isObject() const;
 
-    MCAPI ::cereal::SchemaReaderState $isArray() const;
+    MCFOLD ::cereal::SchemaReaderState $isArray() const;
 
     MCAPI ::Bedrock::Result<bool> $asBool(::cereal::PropertyReader const&);
 
@@ -155,7 +155,7 @@ public:
 
     MCAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
 
-    MCAPI uint64 $members();
+    MCFOLD uint64 $members();
 
     MCAPI uint64 $length();
 
@@ -167,7 +167,7 @@ public:
 
     MCAPI void $pop();
 
-    MCAPI bool $isSequenceReader() const;
+    MCFOLD bool $isSequenceReader() const;
     // NOLINTEND
 
 public:

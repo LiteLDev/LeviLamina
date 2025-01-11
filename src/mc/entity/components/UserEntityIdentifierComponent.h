@@ -39,7 +39,7 @@ public:
         ::std::unique_ptr<::Certificate> certificate
     );
 
-    MCAPI bool isPrimaryClient() const;
+    MCFOLD bool isPrimaryClient() const;
 
     MCAPI ::UserEntityIdentifierComponent& operator=(::UserEntityIdentifierComponent&&);
     // NOLINTEND

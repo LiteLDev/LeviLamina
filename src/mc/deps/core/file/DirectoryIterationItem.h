@@ -39,17 +39,17 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DirectoryIterationItem(::Core::DirectoryIterationFlags flags);
 
-    MCAPI uint64 getFileSize() const;
+    MCFOLD uint64 getFileSize() const;
 
-    MCAPI uint64 getFileSizeAllocationOnDisk() const;
+    MCFOLD uint64 getFileSizeAllocationOnDisk() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const& getFullPathName() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& getFullPathName() const;
 
-    MCAPI int64 getModifyTime() const;
+    MCFOLD int64 getModifyTime() const;
 
-    MCAPI ::Core::PathPart const& getName() const;
+    MCFOLD ::Core::PathPart const& getName() const;
 
-    MCAPI ::Core::FileType getType() const;
+    MCFOLD ::Core::FileType getType() const;
 
     MCAPI bool isDirectory() const;
 
@@ -57,15 +57,15 @@ public:
 
     MCAPI void setCreateTime(int64 time);
 
-    MCAPI void setFileSize(uint64 size);
+    MCFOLD void setFileSize(uint64 size);
 
     MCAPI void setFullPathName(::Core::Path const& fullPathName);
 
-    MCAPI void setModifyTime(int64 modifyTime);
+    MCFOLD void setModifyTime(int64 modifyTime);
 
-    MCAPI void setName(::Core::PathPart const& name);
+    MCFOLD void setName(::Core::PathPart const& name);
 
-    MCAPI void setType(::Core::FileType type);
+    MCFOLD void setType(::Core::FileType type);
 
     MCAPI ~DirectoryIterationItem();
     // NOLINTEND

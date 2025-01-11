@@ -10,12 +10,6 @@ struct TickingSystemWithInfo;
 
 struct PlayerTickSystem {
 public:
-    // prevent constructor by default
-    PlayerTickSystem& operator=(PlayerTickSystem const&);
-    PlayerTickSystem(PlayerTickSystem const&);
-    PlayerTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create(bool isCatchup);

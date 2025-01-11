@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI WorldPacksHistoryFile();
 
-    MCAPI ::std::vector<::WorldPackHistory> const& getPacks() const;
+    MCFOLD ::std::vector<::WorldPackHistory> const& getPacks() const;
 
     MCAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
 
@@ -48,7 +48,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

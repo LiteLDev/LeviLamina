@@ -12,12 +12,6 @@ class NpcEventListener;
 
 class NpcEventCoordinator : public ::EventCoordinator<::NpcEventListener> {
 public:
-    // prevent constructor by default
-    NpcEventCoordinator& operator=(NpcEventCoordinator const&);
-    NpcEventCoordinator(NpcEventCoordinator const&);
-    NpcEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

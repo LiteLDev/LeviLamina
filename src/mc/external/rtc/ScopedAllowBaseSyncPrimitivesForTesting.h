@@ -4,12 +4,6 @@
 
 namespace rtc {
 
-class ScopedAllowBaseSyncPrimitivesForTesting {
-public:
-    // prevent constructor by default
-    ScopedAllowBaseSyncPrimitivesForTesting& operator=(ScopedAllowBaseSyncPrimitivesForTesting const&);
-    ScopedAllowBaseSyncPrimitivesForTesting(ScopedAllowBaseSyncPrimitivesForTesting const&);
-    ScopedAllowBaseSyncPrimitivesForTesting();
-};
+class ScopedAllowBaseSyncPrimitivesForTesting {};
 
 } // namespace rtc

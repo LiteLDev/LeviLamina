@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct FlagAllPassengersForPositioningSystem {
 public:
-    // prevent constructor by default
-    FlagAllPassengersForPositioningSystem& operator=(FlagAllPassengersForPositioningSystem const&);
-    FlagAllPassengersForPositioningSystem(FlagAllPassengersForPositioningSystem const&);
-    FlagAllPassengersForPositioningSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

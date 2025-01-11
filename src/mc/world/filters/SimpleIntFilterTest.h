@@ -46,8 +46,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
+    MCFOLD bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
-    MCAPI ::Json::Value $_serializeValue() const;
+    MCFOLD ::Json::Value $_serializeValue() const;
     // NOLINTEND
 };

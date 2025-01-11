@@ -70,12 +70,6 @@ public:
 
     class LocalIceCredentialsToReplace {
     public:
-        // prevent constructor by default
-        LocalIceCredentialsToReplace& operator=(LocalIceCredentialsToReplace const&);
-        LocalIceCredentialsToReplace(LocalIceCredentialsToReplace const&);
-        LocalIceCredentialsToReplace();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void AppendIceCredentialsFromSessionDescription(::webrtc::SessionDescriptionInterface const&);
@@ -87,12 +81,6 @@ public:
     };
 
     class RemoteDescriptionOperation {
-    public:
-        // prevent constructor by default
-        RemoteDescriptionOperation& operator=(RemoteDescriptionOperation const&);
-        RemoteDescriptionOperation(RemoteDescriptionOperation const&);
-        RemoteDescriptionOperation();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -124,12 +112,6 @@ public:
 
     class SetSessionDescriptionObserverAdapter {
     public:
-        // prevent constructor by default
-        SetSessionDescriptionObserverAdapter& operator=(SetSessionDescriptionObserverAdapter const&);
-        SetSessionDescriptionObserverAdapter(SetSessionDescriptionObserverAdapter const&);
-        SetSessionDescriptionObserverAdapter();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void OnSetDescriptionComplete(::webrtc::RTCError);
@@ -143,12 +125,6 @@ public:
         MCAPI static void** $vftableForSetRemoteDescriptionObserverInterface();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    SdpOfferAnswerHandler& operator=(SdpOfferAnswerHandler const&);
-    SdpOfferAnswerHandler(SdpOfferAnswerHandler const&);
-    SdpOfferAnswerHandler();
 
 public:
     // member functions

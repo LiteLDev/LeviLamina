@@ -17,7 +17,7 @@ public:
 
     MCAPI int getTicksSinceLastChange() const;
 
-    MCAPI int getTotalDirtyTicks() const;
+    MCFOLD int getTotalDirtyTicks() const;
 
     MCAPI ::DirtyTicksCounter& operator++();
 

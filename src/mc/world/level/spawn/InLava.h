@@ -16,12 +16,6 @@ namespace br::spawn {
 
 class InLava : public ::br::spawn::PlacementType {
 public:
-    // prevent constructor by default
-    InLava& operator=(InLava const&);
-    InLava(InLava const&);
-    InLava();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

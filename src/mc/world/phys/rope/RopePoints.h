@@ -5,26 +5,21 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+struct RopePoint;
 // clang-format on
 
 struct RopePoints {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc96835;
-    ::ll::UntypedStorage<8, 24> mUnk3ebf87;
+    ::ll::TypedStorage<8, 8, uint64>                      mSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RopePoint>> mPoints;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RopePoints& operator=(RopePoints const&);
-    RopePoints(RopePoints const&);
-    RopePoints();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void beginRope();
+    MCFOLD void beginRope();
 
     MCAPI void endRope();
 
@@ -34,7 +29,7 @@ public:
 
     MCAPI void reserve(uint64 size);
 
-    MCAPI uint64 size() const;
+    MCFOLD uint64 size() const;
 
     MCAPI ~RopePoints();
     // NOLINTEND
@@ -42,6 +37,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsShakingDefinition {
 public:
-    // prevent constructor by default
-    IsShakingDefinition& operator=(IsShakingDefinition const&);
-    IsShakingDefinition(IsShakingDefinition const&);
-    IsShakingDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;
@@ -29,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCFOLD static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::IsShakingDefinition>>& root
     );
     // NOLINTEND

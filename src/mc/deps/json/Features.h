@@ -15,7 +15,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Features strictMode();
+    MCFOLD static ::Json::Features strictMode();
     // NOLINTEND
 };
 

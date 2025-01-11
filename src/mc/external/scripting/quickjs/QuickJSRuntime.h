@@ -220,7 +220,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::IRuntimeMetadata* $getMetadata() const;
+    MCFOLD ::Scripting::IRuntimeMetadata* $getMetadata() const;
 
     MCAPI void $moveToThread();
 
@@ -292,7 +292,7 @@ public:
 
     MCAPI void $disableWatchdog();
 
-    MCAPI ::Scripting::IWatchdog* $getWatchdog() const;
+    MCFOLD ::Scripting::IWatchdog* $getWatchdog() const;
     // NOLINTEND
 
 public:

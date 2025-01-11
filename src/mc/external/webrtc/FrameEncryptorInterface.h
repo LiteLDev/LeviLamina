@@ -10,12 +10,6 @@ namespace webrtc {
 
 class FrameEncryptorInterface : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    FrameEncryptorInterface& operator=(FrameEncryptorInterface const&);
-    FrameEncryptorInterface(FrameEncryptorInterface const&);
-    FrameEncryptorInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

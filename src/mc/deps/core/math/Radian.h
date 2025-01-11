@@ -16,17 +16,11 @@ struct Radian : public ::type_safe::strong_typedef<::mce::Radian, float>,
                 public ::type_safe::strong_typedef_op::input_operator<::mce::Radian>,
                 public ::type_safe::strong_typedef_op::output_operator<::mce::Radian> {
 public:
-    // prevent constructor by default
-    Radian& operator=(Radian const&);
-    Radian(Radian const&);
-    Radian();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Radian(::mce::Degree deg);
 
-    MCAPI float const& asFloat() const;
+    MCFOLD float const& asFloat() const;
     // NOLINTEND
 
 public:

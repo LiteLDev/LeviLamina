@@ -40,13 +40,13 @@ public:
 
     MCAPI PackReport(::PackReport&&);
 
-    MCAPI ::std::vector<::std::shared_ptr<::PackError>> const& getErrors() const;
+    MCFOLD ::std::vector<::std::shared_ptr<::PackError>> const& getErrors() const;
 
-    MCAPI ::ResourceLocation const& getLocation() const;
+    MCFOLD ::ResourceLocation const& getLocation() const;
 
-    MCAPI ::std::string const& getOriginalName() const;
+    MCFOLD ::std::string const& getOriginalName() const;
 
-    MCAPI ::std::string const& getOriginalVersion() const;
+    MCFOLD ::std::string const& getOriginalVersion() const;
 
     MCAPI ::PackType getPackType() const;
 
@@ -70,9 +70,9 @@ public:
 
     MCAPI void setPackType(::PackType packType);
 
-    MCAPI void setUpgradeSuccess();
+    MCFOLD void setUpgradeSuccess();
 
-    MCAPI bool wasUpgraded() const;
+    MCFOLD bool wasUpgraded() const;
 
     MCAPI ~PackReport();
     // NOLINTEND

@@ -14,12 +14,6 @@ class Random;
 
 class DeadBushFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    DeadBushFeature& operator=(DeadBushFeature const&);
-    DeadBushFeature(DeadBushFeature const&);
-    DeadBushFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

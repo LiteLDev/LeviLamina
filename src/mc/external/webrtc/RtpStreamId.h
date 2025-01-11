@@ -7,12 +7,6 @@
 
 namespace webrtc {
 
-class RtpStreamId : public ::webrtc::BaseRtpStringExtension {
-public:
-    // prevent constructor by default
-    RtpStreamId& operator=(RtpStreamId const&);
-    RtpStreamId(RtpStreamId const&);
-    RtpStreamId();
-};
+class RtpStreamId : public ::webrtc::BaseRtpStringExtension {};
 
 } // namespace webrtc

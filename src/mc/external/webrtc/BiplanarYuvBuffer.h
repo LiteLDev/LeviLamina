@@ -9,12 +9,6 @@ namespace webrtc {
 
 class BiplanarYuvBuffer : public ::webrtc::VideoFrameBuffer {
 public:
-    // prevent constructor by default
-    BiplanarYuvBuffer& operator=(BiplanarYuvBuffer const&);
-    BiplanarYuvBuffer(BiplanarYuvBuffer const&);
-    BiplanarYuvBuffer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

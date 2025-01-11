@@ -11,12 +11,6 @@ namespace rtc {
 
 class PlatformThread {
 public:
-    // prevent constructor by default
-    PlatformThread& operator=(PlatformThread const&);
-    PlatformThread(PlatformThread const&);
-    PlatformThread();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Finalize();

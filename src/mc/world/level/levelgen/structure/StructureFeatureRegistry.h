@@ -49,7 +49,7 @@ public:
 
     MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
-    MCAPI ::br::worldgen::StructureCache& structureCache();
+    MCFOLD ::br::worldgen::StructureCache& structureCache();
 
     MCAPI void tick();
 

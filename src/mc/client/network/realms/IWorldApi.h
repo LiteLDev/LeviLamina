@@ -15,12 +15,6 @@ namespace Realms {
 
 class IWorldApi {
 public:
-    // prevent constructor by default
-    IWorldApi& operator=(IWorldApi const&);
-    IWorldApi(IWorldApi const&);
-    IWorldApi();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

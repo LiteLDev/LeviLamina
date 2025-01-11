@@ -163,25 +163,25 @@ public:
 
     MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
 
-    MCAPI int getLitDuration() const;
+    MCFOLD int getLitDuration() const;
 
-    MCAPI int getLitTime() const;
+    MCFOLD int getLitTime() const;
 
     MCAPI int getStoredXP() const;
 
-    MCAPI int getTickCount() const;
+    MCFOLD int getTickCount() const;
 
     MCAPI bool isEmptiedByHopper(::BlockSource& region);
 
     MCAPI void onFurnaceBlockRemoved(::BlockSource& region);
 
-    MCAPI void setLitDuration(int value);
+    MCFOLD void setLitDuration(int value);
 
-    MCAPI void setLitTime(int value);
+    MCFOLD void setLitTime(int value);
 
     MCAPI void setStoredXP(int value);
 
-    MCAPI void setTickCount(int value);
+    MCFOLD void setTickCount(int value);
 
     MCAPI void storeXPRewardForRemovingWithHopper(::ItemStackBase const& item, int numItemsSmelted);
 
@@ -258,17 +258,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCFOLD ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource&);
 
     MCAPI void $startOpen(::Player& player);
 
@@ -278,9 +278,9 @@ public:
 
     MCAPI bool $canPullOutItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
     MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
@@ -292,7 +292,7 @@ public:
 
     MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
-    MCAPI void $onMove();
+    MCFOLD void $onMove();
 
     MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,

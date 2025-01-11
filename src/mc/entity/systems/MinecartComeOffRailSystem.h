@@ -23,12 +23,6 @@ struct TickingSystemWithInfo;
 
 class MinecartComeOffRailSystem {
 public:
-    // prevent constructor by default
-    MinecartComeOffRailSystem& operator=(MinecartComeOffRailSystem const&);
-    MinecartComeOffRailSystem(MinecartComeOffRailSystem const&);
-    MinecartComeOffRailSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _minecartComeOffRailSystem(

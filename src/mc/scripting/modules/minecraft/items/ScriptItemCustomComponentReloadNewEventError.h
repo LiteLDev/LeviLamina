@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemCustomComponentReloadNewEventError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentReloadNewEventError& operator=(ScriptItemCustomComponentReloadNewEventError const&);
-    ScriptItemCustomComponentReloadNewEventError(ScriptItemCustomComponentReloadNewEventError const&);
-    ScriptItemCustomComponentReloadNewEventError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptItemCustomComponentReloadNewEventError();
@@ -34,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

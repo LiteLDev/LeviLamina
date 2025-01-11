@@ -33,11 +33,11 @@ public:
 
     MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
-    MCAPI ::std::unordered_map<::HashedString, ::ActorAnimationControllerPtr> const& getAnimationControllers() const;
+    MCFOLD ::std::unordered_map<::HashedString, ::ActorAnimationControllerPtr> const& getAnimationControllers() const;
 
-    MCAPI ::std::unordered_map<::HashedString, ::ActorSkeletalAnimationPtr> const& getAnimations() const;
+    MCFOLD ::std::unordered_map<::HashedString, ::ActorSkeletalAnimationPtr> const& getAnimations() const;
 
-    MCAPI ::std::vector<::MolangVariableSettings> const& getVariableSettings() const;
+    MCFOLD ::std::vector<::MolangVariableSettings> const& getVariableSettings() const;
 
     MCAPI bool isCommonResourceDefinitionMapEmpty() const;
 

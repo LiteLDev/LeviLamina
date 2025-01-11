@@ -45,7 +45,7 @@ public:
 
     MCAPI bool equals(::PathfinderNode* o);
 
-    MCAPI ::NodeType getType() const;
+    MCFOLD ::NodeType getType() const;
 
     MCAPI bool inOpenSet();
     // NOLINTEND

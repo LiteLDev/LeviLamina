@@ -24,12 +24,6 @@ namespace Core { class Result; }
 
 class LevelStorageSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    LevelStorageSource& operator=(LevelStorageSource const&);
-    LevelStorageSource(LevelStorageSource const&);
-    LevelStorageSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

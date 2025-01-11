@@ -11,12 +11,6 @@ namespace webrtc {
 
 class NetworkStateEstimateObserver {
 public:
-    // prevent constructor by default
-    NetworkStateEstimateObserver& operator=(NetworkStateEstimateObserver const&);
-    NetworkStateEstimateObserver(NetworkStateEstimateObserver const&);
-    NetworkStateEstimateObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ namespace br::worldgen {
 
 struct HeightProvider {
 public:
-    // prevent constructor by default
-    HeightProvider& operator=(HeightProvider const&);
-    HeightProvider(HeightProvider const&);
-    HeightProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

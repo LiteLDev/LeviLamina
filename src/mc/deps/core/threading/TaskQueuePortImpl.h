@@ -22,34 +22,11 @@ public:
     // clang-format on
 
     // TaskQueuePortImpl inner types define
-    struct QueueEntry {
-    public:
-        // prevent constructor by default
-        QueueEntry& operator=(QueueEntry const&);
-        QueueEntry(QueueEntry const&);
-        QueueEntry();
-    };
+    struct QueueEntry {};
 
-    struct TerminationEntry {
-    public:
-        // prevent constructor by default
-        TerminationEntry& operator=(TerminationEntry const&);
-        TerminationEntry(TerminationEntry const&);
-        TerminationEntry();
-    };
+    struct TerminationEntry {};
 
-    struct WaitRegistration {
-    public:
-        // prevent constructor by default
-        WaitRegistration& operator=(WaitRegistration const&);
-        WaitRegistration(WaitRegistration const&);
-        WaitRegistration();
-    };
-
-public:
-    // prevent constructor by default
-    TaskQueuePortImpl& operator=(TaskQueuePortImpl const&);
-    TaskQueuePortImpl(TaskQueuePortImpl const&);
+    struct WaitRegistration {};
 
 public:
     // member functions

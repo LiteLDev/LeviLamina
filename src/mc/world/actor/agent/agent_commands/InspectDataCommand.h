@@ -46,9 +46,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute();
+    MCFOLD void $execute();
 
-    MCAPI bool $isDone();
+    MCFOLD bool $isDone();
 
     MCAPI void $fireCommandDoneEvent();
     // NOLINTEND

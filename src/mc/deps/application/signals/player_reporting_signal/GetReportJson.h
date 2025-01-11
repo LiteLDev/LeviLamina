@@ -14,11 +14,6 @@ namespace PlayerReportingSignal {
 
 class GetReportJson
 : public ::Bedrock::Signal<::PlayerReportingSignal::GetReportJson, ::PlayerReportingSignal::GetReportJsonFunctionData> {
-public:
-    // prevent constructor by default
-    GetReportJson& operator=(GetReportJson const&);
-    GetReportJson(GetReportJson const&);
-    GetReportJson();
 };
 
 } // namespace PlayerReportingSignal

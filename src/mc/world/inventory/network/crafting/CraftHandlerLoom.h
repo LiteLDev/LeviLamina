@@ -13,12 +13,6 @@ class ItemStackRequestActionCraftBase;
 
 class CraftHandlerLoom : public ::CraftHandlerBase {
 public:
-    // prevent constructor by default
-    CraftHandlerLoom& operator=(CraftHandlerLoom const&);
-    CraftHandlerLoom(CraftHandlerLoom const&);
-    CraftHandlerLoom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

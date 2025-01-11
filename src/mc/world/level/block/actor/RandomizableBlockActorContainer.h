@@ -18,12 +18,6 @@ class Vec3;
 
 class RandomizableBlockActorContainer : public ::RandomizableBlockActorContainerBase, public ::Container {
 public:
-    // prevent constructor by default
-    RandomizableBlockActorContainer& operator=(RandomizableBlockActorContainer const&);
-    RandomizableBlockActorContainer(RandomizableBlockActorContainer const&);
-    RandomizableBlockActorContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -75,17 +69,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
     MCAPI void $startOpen(::Player& player);
 
-    MCAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCFOLD void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCAPI void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource&);
 
-    MCAPI void $initializeContainerContents(::BlockSource& region);
+    MCFOLD void $initializeContainerContents(::BlockSource& region);
     // NOLINTEND
 
 public:

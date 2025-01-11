@@ -4,12 +4,6 @@
 
 namespace Bedrock::PubSub::DeferralPolicy {
 
-class HubPolicy {
-public:
-    // prevent constructor by default
-    HubPolicy& operator=(HubPolicy const&);
-    HubPolicy(HubPolicy const&);
-    HubPolicy();
-};
+class HubPolicy {};
 
 } // namespace Bedrock::PubSub::DeferralPolicy

@@ -11,12 +11,6 @@ class ItemStackBase;
 
 class ContainerValidationBase {
 public:
-    // prevent constructor by default
-    ContainerValidationBase& operator=(ContainerValidationBase const&);
-    ContainerValidationBase(ContainerValidationBase const&);
-    ContainerValidationBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -74,7 +68,7 @@ public:
         int const                       slot
     ) const;
 
-    MCAPI bool $isItemAllowedInSlot(
+    MCFOLD bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const                       slot,
         ::ItemStackBase const&          item,
@@ -86,14 +80,15 @@ public:
 
     MCAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const& item) const;
 
-    MCAPI bool $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
+    MCFOLD bool
+    $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
     MCAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
     MCAPI bool $canDestroy(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
     // NOLINTEND
 };

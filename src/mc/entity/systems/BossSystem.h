@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BossSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BossSystem& operator=(BossSystem const&);
-    BossSystem(BossSystem const&);
-    BossSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -52,7 +52,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void setIncludeNetIds(bool includeNetIds) const;
+    MCFOLD void setIncludeNetIds(bool includeNetIds) const;
 
     MCAPI ::ItemStackNetId const* tryGetServerNetId() const;
 

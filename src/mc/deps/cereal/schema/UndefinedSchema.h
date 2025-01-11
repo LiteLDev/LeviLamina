@@ -16,12 +16,6 @@ namespace cereal::internal {
 
 class UndefinedSchema : public ::cereal::internal::BasicSchema {
 public:
-    // prevent constructor by default
-    UndefinedSchema& operator=(UndefinedSchema const&);
-    UndefinedSchema(UndefinedSchema const&);
-    UndefinedSchema();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

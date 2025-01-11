@@ -53,15 +53,15 @@ public:
 
     MCAPI void _saveStructureTag(::CompoundTag& tag) const;
 
-    MCAPI ::std::unordered_map<::std::string, ::StructureBlockPalette> const& getAllPalettes() const;
+    MCFOLD ::std::unordered_map<::std::string, ::StructureBlockPalette> const& getAllPalettes() const;
 
-    MCAPI ::std::vector<int> const& getBlockIndices() const;
+    MCFOLD ::std::vector<int> const& getBlockIndices() const;
 
-    MCAPI ::std::vector<int> const& getExtraBlockIndices() const;
+    MCFOLD ::std::vector<int> const& getExtraBlockIndices() const;
 
     MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
 
-    MCAPI ::BlockPos const& getSize() const;
+    MCFOLD ::BlockPos const& getSize() const;
 
     MCAPI bool load(::CompoundTag const& tag);
 

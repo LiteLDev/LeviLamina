@@ -49,9 +49,9 @@ public:
         ::Scripting::IObjectInspector*                                                  inspector
     );
 
-    MCAPI ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny const& rhs);
+    MCFOLD ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny const& rhs);
 
-    MCAPI ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny&& rhs);
+    MCFOLD ::Scripting::GeneratorIteratorAny& operator=(::Scripting::GeneratorIteratorAny&& rhs);
     // NOLINTEND
 
 public:
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

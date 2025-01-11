@@ -10,12 +10,6 @@ class PackReport;
 
 class IPackTelemetry {
 public:
-    // prevent constructor by default
-    IPackTelemetry& operator=(IPackTelemetry const&);
-    IPackTelemetry(IPackTelemetry const&);
-    IPackTelemetry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -28,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

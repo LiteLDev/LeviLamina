@@ -12,12 +12,6 @@ struct ResourceDropsContext;
 
 class IResourceDropsStrategy {
 public:
-    // prevent constructor by default
-    IResourceDropsStrategy& operator=(IResourceDropsStrategy const&);
-    IResourceDropsStrategy(IResourceDropsStrategy const&);
-    IResourceDropsStrategy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -6,12 +6,6 @@ namespace webrtc {
 
 class BitrateStatisticsObserver {
 public:
-    // prevent constructor by default
-    BitrateStatisticsObserver& operator=(BitrateStatisticsObserver const&);
-    BitrateStatisticsObserver(BitrateStatisticsObserver const&);
-    BitrateStatisticsObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

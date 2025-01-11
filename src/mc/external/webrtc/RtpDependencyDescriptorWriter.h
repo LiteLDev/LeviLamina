@@ -19,19 +19,7 @@ public:
     // clang-format on
 
     // RtpDependencyDescriptorWriter inner types define
-    struct TemplateMatch {
-    public:
-        // prevent constructor by default
-        TemplateMatch& operator=(TemplateMatch const&);
-        TemplateMatch(TemplateMatch const&);
-        TemplateMatch();
-    };
-
-public:
-    // prevent constructor by default
-    RtpDependencyDescriptorWriter& operator=(RtpDependencyDescriptorWriter const&);
-    RtpDependencyDescriptorWriter(RtpDependencyDescriptorWriter const&);
-    RtpDependencyDescriptorWriter();
+    struct TemplateMatch {};
 
 public:
     // member functions

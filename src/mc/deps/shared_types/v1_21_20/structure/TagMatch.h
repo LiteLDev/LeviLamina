@@ -20,10 +20,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch const&);
 
     MCAPI ~TagMatch();
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

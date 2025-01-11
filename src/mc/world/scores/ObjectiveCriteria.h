@@ -22,9 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI bool isReadOnly() const;
+    MCFOLD bool isReadOnly() const;
     // NOLINTEND
 
 public:

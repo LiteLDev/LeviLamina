@@ -7,12 +7,6 @@
 
 class LookAtTargetGoal : public ::LookAtActorGoal {
 public:
-    // prevent constructor by default
-    LookAtTargetGoal& operator=(LookAtTargetGoal const&);
-    LookAtTargetGoal(LookAtTargetGoal const&);
-    LookAtTargetGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

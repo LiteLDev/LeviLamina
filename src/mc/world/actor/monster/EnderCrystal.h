@@ -63,7 +63,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void setBeamTarget(::BlockPos const& target);
+    MCFOLD void setBeamTarget(::BlockPos const& target);
 
     MCAPI void setCrystalDamagedCallback(::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)> onDamaged);
     // NOLINTEND
@@ -97,7 +97,7 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

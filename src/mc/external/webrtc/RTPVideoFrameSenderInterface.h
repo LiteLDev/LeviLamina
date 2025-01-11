@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class RTPVideoFrameSenderInterface {
-public:
-    // prevent constructor by default
-    RTPVideoFrameSenderInterface& operator=(RTPVideoFrameSenderInterface const&);
-    RTPVideoFrameSenderInterface(RTPVideoFrameSenderInterface const&);
-    RTPVideoFrameSenderInterface();
-};
+class RTPVideoFrameSenderInterface {};
 
 } // namespace webrtc

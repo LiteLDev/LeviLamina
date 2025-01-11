@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestLightLevel : public ::SimpleIntFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestLightLevel& operator=(FilterTestLightLevel const&);
-    FilterTestLightLevel(FilterTestLightLevel const&);
-    FilterTestLightLevel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

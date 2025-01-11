@@ -16,12 +16,6 @@ struct FullContainerName;
 
 class ContainerValidatorFactory {
 public:
-    // prevent constructor by default
-    ContainerValidatorFactory& operator=(ContainerValidatorFactory const&);
-    ContainerValidatorFactory(ContainerValidatorFactory const&);
-    ContainerValidatorFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ContainerScreenValidatorBase>

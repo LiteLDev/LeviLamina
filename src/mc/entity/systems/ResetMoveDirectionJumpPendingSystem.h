@@ -22,12 +22,6 @@ struct VehicleComponent;
 
 class ResetMoveDirectionJumpPendingSystem {
 public:
-    // prevent constructor by default
-    ResetMoveDirectionJumpPendingSystem& operator=(ResetMoveDirectionJumpPendingSystem const&);
-    ResetMoveDirectionJumpPendingSystem(ResetMoveDirectionJumpPendingSystem const&);
-    ResetMoveDirectionJumpPendingSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem();

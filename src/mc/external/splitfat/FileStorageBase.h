@@ -15,12 +15,6 @@ namespace SFAT {
 
 class FileStorageBase {
 public:
-    // prevent constructor by default
-    FileStorageBase& operator=(FileStorageBase const&);
-    FileStorageBase(FileStorageBase const&);
-    FileStorageBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

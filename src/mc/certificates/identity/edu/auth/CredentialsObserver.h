@@ -24,12 +24,6 @@ namespace edu::auth {
 
 struct CredentialsObserver : public ::Core::Observer<::edu::auth::CredentialsObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    CredentialsObserver& operator=(CredentialsObserver const&);
-    CredentialsObserver(CredentialsObserver const&);
-    CredentialsObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

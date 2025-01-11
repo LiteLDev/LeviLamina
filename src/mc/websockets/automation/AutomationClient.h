@@ -99,11 +99,11 @@ public:
 
     MCAPI ::std::shared_ptr<::Automation::AutomationSession> getSessionForCommand(::CommandOrigin const& origin);
 
-    MCAPI bool isReadyForInGameCommands();
+    MCFOLD bool isReadyForInGameCommands();
 
     MCAPI void setRequireEncryption(bool isEncryptionRequired);
 
-    MCAPI void setServerRetryTime(float retryTime);
+    MCFOLD void setServerRetryTime(float retryTime);
     // NOLINTEND
 
 public:

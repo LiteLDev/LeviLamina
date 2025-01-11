@@ -16,11 +16,6 @@ namespace Util { class XXHash; }
 
 class StructurePoolBlockPredicateAlwaysTrue : public ::IStructurePoolBlockPredicate {
 public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateAlwaysTrue& operator=(StructurePoolBlockPredicateAlwaysTrue const&);
-    StructurePoolBlockPredicateAlwaysTrue(StructurePoolBlockPredicateAlwaysTrue const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -60,13 +55,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::Randomize& randomize) const;
+    MCFOLD bool $test(::Block const& block, ::Randomize& randomize) const;
 
-    MCAPI bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
+    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
 
-    MCAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

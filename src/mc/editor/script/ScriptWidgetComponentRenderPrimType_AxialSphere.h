@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
+    MCFOLD ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
     operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere const&);
 
     MCAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

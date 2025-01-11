@@ -202,17 +202,17 @@ public:
     // NOLINTBEGIN
     MCAPI void $initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries);
 
-    MCAPI ::SpawnSettings const& $getSpawnSettings() const;
+    MCFOLD ::SpawnSettings const& $getSpawnSettings() const;
 
     MCAPI void $setSpawnSettings(::SpawnSettings const& spawnSettings);
 
-    MCAPI ::ActorSpawnRuleGroup const* $getSpawnRules() const;
+    MCFOLD ::ActorSpawnRuleGroup const* $getSpawnRules() const;
 
-    MCAPI ::ActorSpawnRuleGroup* $getSpawnRulesMutable() const;
+    MCFOLD ::ActorSpawnRuleGroup* $getSpawnRulesMutable() const;
 
-    MCAPI ::SpawnGroupRegistry const* $getSpawnGroupRegistry() const;
+    MCFOLD ::SpawnGroupRegistry const* $getSpawnGroupRegistry() const;
 
-    MCAPI ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
+    MCFOLD ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
 
     MCAPI ::Mob* $spawnMob(
         ::BlockSource&                     region,

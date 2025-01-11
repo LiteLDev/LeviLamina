@@ -74,9 +74,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
     // NOLINTEND
 
 public:

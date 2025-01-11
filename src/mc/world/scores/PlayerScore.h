@@ -24,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScoreboardId const& getId() const;
+    MCFOLD ::ScoreboardId const& getId() const;
     // NOLINTEND
 };

@@ -4,12 +4,6 @@
 
 class LevelDbFileLock : public ::leveldb::FileLock {
 public:
-    // prevent constructor by default
-    LevelDbFileLock& operator=(LevelDbFileLock const&);
-    LevelDbFileLock(LevelDbFileLock const&);
-    LevelDbFileLock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

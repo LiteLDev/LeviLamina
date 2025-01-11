@@ -72,7 +72,7 @@ public:
 
     MCAPI ::CompoundTag const* getCompound(uint64) const;
 
-    MCAPI ::CompoundTag* getCompound(uint64 index);
+    MCFOLD ::CompoundTag* getCompound(uint64 index);
 
     MCAPI double getDouble(int index) const;
 
@@ -84,7 +84,7 @@ public:
 
     MCAPI ::std::string const& getString(int index) const;
 
-    MCAPI int size() const;
+    MCFOLD int size() const;
     // NOLINTEND
 
 public:
@@ -106,7 +106,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI ::Tag::Type $getId() const;
+    MCFOLD ::Tag::Type $getId() const;
 
     MCAPI ::std::string $toString() const;
 
@@ -118,7 +118,7 @@ public:
 
     MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCAPI void $deleteChildren();
+    MCFOLD void $deleteChildren();
     // NOLINTEND
 
 public:

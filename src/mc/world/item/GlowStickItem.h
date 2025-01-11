@@ -60,7 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Brightness $getLightEmission(int auxValue) const;
+    MCFOLD ::Brightness $getLightEmission(int auxValue) const;
 
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;

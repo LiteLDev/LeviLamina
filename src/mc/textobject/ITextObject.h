@@ -10,12 +10,6 @@ namespace Json { class Value; }
 
 class ITextObject {
 public:
-    // prevent constructor by default
-    ITextObject& operator=(ITextObject const&);
-    ITextObject(ITextObject const&);
-    ITextObject();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

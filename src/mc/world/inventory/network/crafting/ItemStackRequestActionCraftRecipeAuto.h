@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStackRequestActionCraftRecipeAuto();
 
-    MCAPI ::std::vector<::RecipeIngredient> const* getIngredients() const;
+    MCFOLD ::std::vector<::RecipeIngredient> const* getIngredients() const;
     // NOLINTEND
 
 public:

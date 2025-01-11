@@ -13,12 +13,6 @@ class DataLoadHelper;
 
 class HumanoidMonster : public ::Monster {
 public:
-    // prevent constructor by default
-    HumanoidMonster& operator=(HumanoidMonster const&);
-    HumanoidMonster(HumanoidMonster const&);
-    HumanoidMonster();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 154
@@ -49,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -57,9 +51,9 @@ public:
     // NOLINTBEGIN
     MCAPI int $getItemUseDuration() const;
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:

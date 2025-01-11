@@ -18,12 +18,6 @@ namespace webrtc {
 
 class SctpTransport {
 public:
-    // prevent constructor by default
-    SctpTransport& operator=(SctpTransport const&);
-    SctpTransport(SctpTransport const&);
-    SctpTransport();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Clear();

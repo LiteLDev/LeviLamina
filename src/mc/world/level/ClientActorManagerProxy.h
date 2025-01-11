@@ -73,9 +73,9 @@ public:
 
     MCAPI void $addActor(::Actor& actor);
 
-    MCAPI void $removeActorInLevelChunk(::Actor const&);
+    MCFOLD void $removeActorInLevelChunk(::Actor const&);
 
-    MCAPI void $deleteActorFromWorldInLevelChunk(::Actor const&);
+    MCFOLD void $deleteActorFromWorldInLevelChunk(::Actor const&);
     // NOLINTEND
 
 public:

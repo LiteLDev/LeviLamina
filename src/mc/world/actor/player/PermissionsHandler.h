@@ -28,15 +28,15 @@ public:
 
     MCAPI void addSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::CommandPermissionLevel getCommandPermissions() const;
+    MCFOLD ::CommandPermissionLevel getCommandPermissions() const;
 
-    MCAPI ::PlayerPermissionLevel getPlayerPermissions() const;
+    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
 
     MCAPI bool loadSaveData(::CompoundTag const& tag);
 
-    MCAPI void setCommandPermissions(::CommandPermissionLevel permissions);
+    MCFOLD void setCommandPermissions(::CommandPermissionLevel permissions);
 
-    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
+    MCFOLD void setPlayerPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::PermissionsHandler const& rhs);
     // NOLINTEND

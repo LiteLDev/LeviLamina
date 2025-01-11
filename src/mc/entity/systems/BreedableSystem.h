@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BreedableSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BreedableSystem& operator=(BreedableSystem const&);
-    BreedableSystem(BreedableSystem const&);
-    BreedableSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

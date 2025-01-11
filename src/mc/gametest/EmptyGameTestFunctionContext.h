@@ -7,12 +7,6 @@
 
 class EmptyGameTestFunctionContext : public ::gametest::IGameTestFunctionContext {
 public:
-    // prevent constructor by default
-    EmptyGameTestFunctionContext& operator=(EmptyGameTestFunctionContext const&);
-    EmptyGameTestFunctionContext(EmptyGameTestFunctionContext const&);
-    EmptyGameTestFunctionContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

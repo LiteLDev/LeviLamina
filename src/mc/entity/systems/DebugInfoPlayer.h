@@ -7,12 +7,6 @@
 
 class DebugInfoPlayer : public ::Player {
 public:
-    // prevent constructor by default
-    DebugInfoPlayer& operator=(DebugInfoPlayer const&);
-    DebugInfoPlayer(DebugInfoPlayer const&);
-    DebugInfoPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

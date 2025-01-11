@@ -14,11 +14,6 @@ namespace Editor::Network {
 
 class UndoOperationPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::UndoOperationPayload> {
 public:
-    // prevent constructor by default
-    UndoOperationPayload& operator=(UndoOperationPayload const&);
-    UndoOperationPayload(UndoOperationPayload const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -15,12 +15,6 @@ namespace webrtc {
 
 struct SimulcastSdpSerializer {
 public:
-    // prevent constructor by default
-    SimulcastSdpSerializer& operator=(SimulcastSdpSerializer const&);
-    SimulcastSdpSerializer(SimulcastSdpSerializer const&);
-    SimulcastSdpSerializer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::RTCErrorOr<::cricket::RidDescription> DeserializeRidDescription(::std::string_view) const;

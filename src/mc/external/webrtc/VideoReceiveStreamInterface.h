@@ -193,12 +193,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    VideoReceiveStreamInterface& operator=(VideoReceiveStreamInterface const&);
-    VideoReceiveStreamInterface(VideoReceiveStreamInterface const&);
-    VideoReceiveStreamInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

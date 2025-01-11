@@ -14,12 +14,6 @@ class Random;
 
 class BonusChestFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    BonusChestFeature& operator=(BonusChestFeature const&);
-    BonusChestFeature(BonusChestFeature const&);
-    BonusChestFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -38,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

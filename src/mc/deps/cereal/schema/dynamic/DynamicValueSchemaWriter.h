@@ -89,7 +89,7 @@ public:
     // NOLINTBEGIN
     MCAPI DynamicValueSchemaWriter();
 
-    MCAPI ::cereal::DynamicValue& value();
+    MCFOLD ::cereal::DynamicValue& value();
     // NOLINTEND
 
 public:
@@ -121,9 +121,9 @@ public:
 
     MCAPI bool $write(uint value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(int64 value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(int64 value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(uint64 value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(uint64 value, ::cereal::PropertyReader const&);
 
     MCAPI bool $write(float value, ::cereal::PropertyReader const&);
 

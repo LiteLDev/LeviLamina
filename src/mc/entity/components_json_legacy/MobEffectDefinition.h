@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorFilterGroup;
 class EntityContext;
 class MobEffectComponent;
 namespace JsonUtil { class EmptyClass; }
@@ -16,17 +17,12 @@ class MobEffectDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk99c8d4;
-    ::ll::UntypedStorage<4, 4>  mUnk7d267f;
-    ::ll::UntypedStorage<4, 4>  mUnk322ee8;
-    ::ll::UntypedStorage<4, 4>  mUnkc12640;
-    ::ll::UntypedStorage<8, 64> mUnk5dd13a;
+    ::ll::TypedStorage<4, 4, float>               mEffectRange;
+    ::ll::TypedStorage<4, 4, int>                 mEffectId;
+    ::ll::TypedStorage<4, 4, int>                 mEffectTime;
+    ::ll::TypedStorage<4, 4, int>                 mCooldownTicks;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mEntityFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectDefinition& operator=(MobEffectDefinition const&);
-    MobEffectDefinition(MobEffectDefinition const&);
 
 public:
     // member functions

@@ -44,11 +44,11 @@ public:
         ::std::optional<::std::string> const& sourceId
     );
 
-    MCAPI ::std::optional<::std::string> const& getSourceId() const;
+    MCFOLD ::std::optional<::std::string> const& getSourceId() const;
 
-    MCAPI ::std::string const& getThemeId() const;
+    MCFOLD ::std::string const& getThemeId() const;
 
-    MCAPI ::std::optional<::std::string> const& getThemeName() const;
+    MCFOLD ::std::optional<::std::string> const& getThemeName() const;
 
     MCAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
     operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload&&);

@@ -24,12 +24,6 @@ namespace ScriptModuleMinecraft {
 class ScriptMountTamingComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::MountTamingComponent, ::MountTameableDefinition> {
 public:
-    // prevent constructor by default
-    ScriptMountTamingComponent& operator=(ScriptMountTamingComponent const&);
-    ScriptMountTamingComponent(ScriptMountTamingComponent const&);
-    ScriptMountTamingComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

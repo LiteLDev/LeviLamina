@@ -14,12 +14,6 @@ namespace VanillaSurfaceBuilders {
 
 class TheEndSurfaceBuilder : public ::ISurfaceBuilder {
 public:
-    // prevent constructor by default
-    TheEndSurfaceBuilder& operator=(TheEndSurfaceBuilder const&);
-    TheEndSurfaceBuilder(TheEndSurfaceBuilder const&);
-    TheEndSurfaceBuilder();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -41,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::Biome&, uint);
+    MCFOLD void $init(::Biome&, uint);
 
     MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND

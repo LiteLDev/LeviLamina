@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct AndroidDevicePushNotificationRegistrationResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    AndroidDevicePushNotificationRegistrationResult& operator=(AndroidDevicePushNotificationRegistrationResult const&);
-    AndroidDevicePushNotificationRegistrationResult(AndroidDevicePushNotificationRegistrationResult const&);
-    AndroidDevicePushNotificationRegistrationResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

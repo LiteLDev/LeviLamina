@@ -14,12 +14,6 @@ struct GameEventContext;
 
 class CalibratedSculkSensorVibrationConfig : public ::SculkSensorVibrationConfig {
 public:
-    // prevent constructor by default
-    CalibratedSculkSensorVibrationConfig& operator=(CalibratedSculkSensorVibrationConfig const&);
-    CalibratedSculkSensorVibrationConfig(CalibratedSculkSensorVibrationConfig const&);
-    CalibratedSculkSensorVibrationConfig();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

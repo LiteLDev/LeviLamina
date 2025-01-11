@@ -18,11 +18,6 @@ namespace cereal::ext::internal {
 
 struct JSONSchemaDef : public ::cereal::ext::internal::JSONSchemaInfo, public ::cereal::ext::internal::JSONSchemaBody {
 public:
-    // prevent constructor by default
-    JSONSchemaDef& operator=(JSONSchemaDef const&);
-    JSONSchemaDef();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI JSONSchemaDef(::cereal::ext::internal::JSONSchemaDef const&);

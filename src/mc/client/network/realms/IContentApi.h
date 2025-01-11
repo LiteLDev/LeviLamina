@@ -15,12 +15,6 @@ namespace Realms {
 
 class IContentApi {
 public:
-    // prevent constructor by default
-    IContentApi& operator=(IContentApi const&);
-    IContentApi(IContentApi const&);
-    IContentApi();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

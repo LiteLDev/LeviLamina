@@ -66,23 +66,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::std::string const& key, ::std::string const& IV);
+    MCFOLD void $init(::std::string const& key, ::std::string const& IV);
 
-    MCAPI void $encrypt(::std::string const& plaintext, ::std::string& output);
+    MCFOLD void $encrypt(::std::string const& plaintext, ::std::string& output);
 
-    MCAPI void $decrypt(::std::string const& ciphertext, ::std::string& output);
+    MCFOLD void $decrypt(::std::string const& ciphertext, ::std::string& output);
 
-    MCAPI uint64 $getKeySize() const;
+    MCFOLD uint64 $getKeySize() const;
 
-    MCAPI uint64 $getBlockSize() const;
+    MCFOLD uint64 $getBlockSize() const;
 
-    MCAPI uint64 $getEncryptionBufferSize(uint64 inputSize) const;
+    MCFOLD uint64 $getEncryptionBufferSize(uint64 inputSize) const;
 
     MCAPI bool $encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten);
     // NOLINTEND

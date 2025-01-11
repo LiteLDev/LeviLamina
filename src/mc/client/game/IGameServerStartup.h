@@ -15,12 +15,6 @@ struct LevelSummary;
 
 class IGameServerStartup {
 public:
-    // prevent constructor by default
-    IGameServerStartup& operator=(IGameServerStartup const&);
-    IGameServerStartup(IGameServerStartup const&);
-    IGameServerStartup();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

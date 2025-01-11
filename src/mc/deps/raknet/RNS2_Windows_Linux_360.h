@@ -11,12 +11,6 @@ namespace RakNet {
 
 class RNS2_Windows_Linux_360 {
 public:
-    // prevent constructor by default
-    RNS2_Windows_Linux_360& operator=(RNS2_Windows_Linux_360 const&);
-    RNS2_Windows_Linux_360(RNS2_Windows_Linux_360 const&);
-    RNS2_Windows_Linux_360();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int Send_Windows_Linux_360NoVDP(

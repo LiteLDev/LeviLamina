@@ -17,12 +17,6 @@ namespace dcsctp {
 
 class TimerManager {
 public:
-    // prevent constructor by default
-    TimerManager& operator=(TimerManager const&);
-    TimerManager(TimerManager const&);
-    TimerManager();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::dcsctp::Timer>

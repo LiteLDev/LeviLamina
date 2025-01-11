@@ -52,15 +52,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    ScriptItemCustomComponentCompleteUseEvent& operator=(ScriptItemCustomComponentCompleteUseEvent const&);
-    ScriptItemCustomComponentCompleteUseEvent(ScriptItemCustomComponentCompleteUseEvent const&);
-    ScriptItemCustomComponentCompleteUseEvent();
 
 public:
     // virtual functions

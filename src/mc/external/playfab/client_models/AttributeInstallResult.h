@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct AttributeInstallResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    AttributeInstallResult& operator=(AttributeInstallResult const&);
-    AttributeInstallResult(AttributeInstallResult const&);
-    AttributeInstallResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool getFaceTarget() const;
 
-    MCAPI float getSpeed() const;
+    MCFOLD float getSpeed() const;
 
     MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND

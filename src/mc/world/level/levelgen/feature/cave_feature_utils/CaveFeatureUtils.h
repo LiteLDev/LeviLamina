@@ -15,7 +15,7 @@ namespace CaveFeatureUtils {
 // NOLINTBEGIN
 MCAPI ::CaveFeatureUtils::CarverConfiguration const& getCurrentConfiguration(bool is_1_18_WorldGeneration);
 
-MCAPI int getDistance_1_16(::Random& random);
+MCFOLD int getDistance_1_16(::Random& random);
 
 MCAPI int getDistance_1_18(::Random& random);
 

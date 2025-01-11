@@ -15,12 +15,6 @@ struct ContainerValidationCraftResult;
 
 class AnvilContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    AnvilContainerScreenValidator& operator=(AnvilContainerScreenValidator const&);
-    AnvilContainerScreenValidator(AnvilContainerScreenValidator const&);
-    AnvilContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -47,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isCraftingImplemented();
+    MCFOLD bool $isCraftingImplemented();
 
     MCAPI ::ContainerValidationCraftResult $getCraftResult(
         ::ContainerScreenContext const&                     screenContext,

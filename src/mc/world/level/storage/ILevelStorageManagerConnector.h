@@ -12,12 +12,6 @@ class LevelStorage;
 
 class ILevelStorageManagerConnector {
 public:
-    // prevent constructor by default
-    ILevelStorageManagerConnector& operator=(ILevelStorageManagerConnector const&);
-    ILevelStorageManagerConnector(ILevelStorageManagerConnector const&);
-    ILevelStorageManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

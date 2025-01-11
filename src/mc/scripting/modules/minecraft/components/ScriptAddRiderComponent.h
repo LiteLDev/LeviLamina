@@ -21,12 +21,6 @@ namespace ScriptModuleMinecraft {
 class ScriptAddRiderComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::AddRiderComponent, ::AddRiderDefinition> {
 public:
-    // prevent constructor by default
-    ScriptAddRiderComponent& operator=(ScriptAddRiderComponent const&);
-    ScriptAddRiderComponent(ScriptAddRiderComponent const&);
-    ScriptAddRiderComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

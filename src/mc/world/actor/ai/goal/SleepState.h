@@ -7,12 +7,6 @@
 
 class SleepState : public ::PetSleepWithOwnerState {
 public:
-    // prevent constructor by default
-    SleepState& operator=(SleepState const&);
-    SleepState(SleepState const&);
-    SleepState();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
@@ -36,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $stop();
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
     // NOLINTEND
 
 public:

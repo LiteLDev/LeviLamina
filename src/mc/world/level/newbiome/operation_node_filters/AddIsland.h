@@ -9,12 +9,6 @@
 namespace OperationNodeFilters {
 
 struct AddIsland
-: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::Terrain, ::OperationNodeValues::Terrain> {
-public:
-    // prevent constructor by default
-    AddIsland& operator=(AddIsland const&);
-    AddIsland(AddIsland const&);
-    AddIsland();
-};
+: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::Terrain, ::OperationNodeValues::Terrain> {};
 
 } // namespace OperationNodeFilters

@@ -6,12 +6,6 @@ namespace Core {
 
 class FileSizePresetToken {
 public:
-    // prevent constructor by default
-    FileSizePresetToken& operator=(FileSizePresetToken const&);
-    FileSizePresetToken(FileSizePresetToken const&);
-    FileSizePresetToken();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

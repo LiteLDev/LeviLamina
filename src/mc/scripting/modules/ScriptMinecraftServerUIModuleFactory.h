@@ -14,12 +14,6 @@ namespace mce { class UUID; }
 
 class ScriptMinecraftServerUIModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // prevent constructor by default
-    ScriptMinecraftServerUIModuleFactory& operator=(ScriptMinecraftServerUIModuleFactory const&);
-    ScriptMinecraftServerUIModuleFactory(ScriptMinecraftServerUIModuleFactory const&);
-    ScriptMinecraftServerUIModuleFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

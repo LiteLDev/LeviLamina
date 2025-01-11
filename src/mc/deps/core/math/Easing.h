@@ -7,12 +7,6 @@
 
 class Easing {
 public:
-    // prevent constructor by default
-    Easing& operator=(Easing const&);
-    Easing(Easing const&);
-    Easing();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::function<float(float, float, float)> getEasingFunc(::EasingType easingType);

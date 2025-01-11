@@ -13,12 +13,6 @@ namespace cereal { struct ReflectionCtx; }
 
 struct BlockCreativeGroupDescription : public ::BlockComponentDescription {
 public:
-    // prevent constructor by default
-    BlockCreativeGroupDescription& operator=(BlockCreativeGroupDescription const&);
-    BlockCreativeGroupDescription(BlockCreativeGroupDescription const&);
-    BlockCreativeGroupDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

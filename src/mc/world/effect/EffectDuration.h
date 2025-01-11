@@ -14,9 +14,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<int> getValue() const;
 
-    MCAPI int getValueForSerialization() const;
+    MCFOLD int getValueForSerialization() const;
 
-    MCAPI bool isInfinite() const;
+    MCFOLD bool isInfinite() const;
 
     MCAPI bool operator!=(int rhs) const;
 

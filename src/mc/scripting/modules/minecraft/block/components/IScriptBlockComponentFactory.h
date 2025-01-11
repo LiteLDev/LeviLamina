@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class IScriptBlockComponentFactory {
 public:
-    // prevent constructor by default
-    IScriptBlockComponentFactory& operator=(IScriptBlockComponentFactory const&);
-    IScriptBlockComponentFactory(IScriptBlockComponentFactory const&);
-    IScriptBlockComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

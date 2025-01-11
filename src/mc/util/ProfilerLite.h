@@ -2,6 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
+
+// auto generated forward declare list
+// clang-format off
+class _ProfilerLiteTimer;
+struct ProfilerLiteTelemetry;
+namespace Core { class OutputFileStream; }
+// clang-format on
+
 class ProfilerLite {
 public:
     // ProfilerLite inner types declare
@@ -69,7 +79,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -96,50 +106,45 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnkdc322a;
-    ::ll::UntypedStorage<8, 96>  mUnke02755;
-    ::ll::UntypedStorage<8, 32>  mUnke8d928;
-    ::ll::UntypedStorage<8, 296> mUnkb301d1;
-    ::ll::UntypedStorage<8, 32>  mUnk73f06f;
-    ::ll::UntypedStorage<8, 296> mUnk9779b9;
-    ::ll::UntypedStorage<8, 32>  mUnk45e7e5;
-    ::ll::UntypedStorage<8, 296> mUnk4e6fae;
-    ::ll::UntypedStorage<8, 32>  mUnk91563b;
-    ::ll::UntypedStorage<8, 296> mUnk7b9cc6;
-    ::ll::UntypedStorage<8, 32>  mUnk7a9c00;
-    ::ll::UntypedStorage<8, 296> mUnk73e205;
-    ::ll::UntypedStorage<8, 32>  mUnk948d84;
-    ::ll::UntypedStorage<8, 296> mUnkeb990e;
-    ::ll::UntypedStorage<4, 4>   mUnk679280;
-    ::ll::UntypedStorage<8, 8>   mUnkf7c578;
-    ::ll::UntypedStorage<8, 8>   mUnka1ba5d;
-    ::ll::UntypedStorage<8, 8>   mUnk410714;
-    ::ll::UntypedStorage<8, 8>   mUnk94b9e5;
-    ::ll::UntypedStorage<8, 8>   mUnk8d502c;
-    ::ll::UntypedStorage<1, 1>   mUnk52676e;
-    ::ll::UntypedStorage<1, 1>   mUnk1751f9;
-    ::ll::UntypedStorage<1, 1>   mUnk4d26c4;
-    ::ll::UntypedStorage<1, 1>   mUnka296e3;
-    ::ll::UntypedStorage<1, 1>   mUnka27805;
-    ::ll::UntypedStorage<1, 1>   mUnkbe1dc2;
-    ::ll::UntypedStorage<8, 8>   mUnk9e2e66;
-    ::ll::UntypedStorage<8, 16>  mUnk5b98bf;
-    ::ll::UntypedStorage<8, 32>  mUnk6251e2;
-    ::ll::UntypedStorage<8, 8>   mUnkfa2d7b;
-    ::ll::UntypedStorage<8, 8>   mUnkd9eb8e;
-    ::ll::UntypedStorage<4, 4>   mUnkec0797;
-    ::ll::UntypedStorage<4, 44>  mUnkcdff15;
-    ::ll::UntypedStorage<8, 32>  mUnk3acfcb;
-    ::ll::UntypedStorage<4, 16>  mUnkbee98d;
-    ::ll::UntypedStorage<8, 8>   mUnk2a36d3;
-    ::ll::UntypedStorage<8, 8>   mUnk576846;
-    ::ll::UntypedStorage<8, 40>  mUnk46b161;
+    ::ll::TypedStorage<8, 144, ::std::array<::ProfilerLite::ScopedData*, 18>>       mCustomScopeDatas;
+    ::ll::TypedStorage<8, 96, ::ProfilerLite::ScopedData>                           mUninitializedScopedData;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mLogFileName;
+    ::ll::TypedStorage<8, 296, ::Core::OutputFileStream>                            mLogFile;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mScreenLoadLogFileName;
+    ::ll::TypedStorage<8, 296, ::Core::OutputFileStream>                            mScreenLoadLogFile;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mEventLogFileName;
+    ::ll::TypedStorage<8, 296, ::Core::OutputFileStream>                            mEventLogFile;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mSecondaryLogFileName;
+    ::ll::TypedStorage<8, 296, ::Core::OutputFileStream>                            mSecondaryLogFile;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mSecondaryScreenLoadLogFileName;
+    ::ll::TypedStorage<8, 296, ::Core::OutputFileStream>                            mSecondaryScreenLoadLogFile;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mSecondaryEventLogFileName;
+    ::ll::TypedStorage<8, 296, ::Core::OutputFileStream>                            mSecondaryEventLogFile;
+    ::ll::TypedStorage<4, 4, float>                                                 mSecondsPerUpdate;
+    ::ll::TypedStorage<8, 8, double>                                                mTime;
+    ::ll::TypedStorage<8, 8, double>                                                mStartTime;
+    ::ll::TypedStorage<8, 8, double>                                                mNextUpdateTime;
+    ::ll::TypedStorage<8, 8, double>                                                mLastUpdateTime;
+    ::ll::TypedStorage<8, 8, double>                                                mBenchmarkModeTime;
+    ::ll::TypedStorage<1, 1, bool>                                                  mBenchmarkModeDone;
+    ::ll::TypedStorage<1, 1, bool>                                                  mBenchmarkModeIsSetup;
+    ::ll::TypedStorage<1, 1, bool>                                                  mDefaultEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                  mForceEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                                  mShouldCheckTreatments;
+    ::ll::TypedStorage<1, 1, bool>                                                  mCanLogToSecondaryFile;
+    ::ll::TypedStorage<8, 8, ::_ProfilerLiteTimer*>                                 mActiveScope;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::thread::id, ::_ProfilerLiteTimer*>> mThreadedActiveScopes;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mCurrentGamestate;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mDebugServerTickTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mDebugServerNetworkTime;
+    ::ll::TypedStorage<4, 4, float>                                                 mDebugRemoteServerTickTime;
+    ::ll::TypedStorage<4, 44, ::ProfilerLiteTelemetry>                              mTelemetry;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mCachedProfileString;
+    ::ll::TypedStorage<4, 16, ::std::array<uint, 4>>                                mLastNetworkStatSampleNum;
+    ::ll::TypedStorage<8, 8, uint64>                                                mPrevTotalBytesWritten;
+    ::ll::TypedStorage<8, 8, uint64>                                                mPrevTotalBytesRead;
+    ::ll::TypedStorage<8, 40, ::ProfilerLite::RealtimeFrameData>                    mFrameData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProfilerLite& operator=(ProfilerLite const&);
-    ProfilerLite(ProfilerLite const&);
 
 public:
     // member functions

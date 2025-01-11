@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -120,7 +120,7 @@ public:
 
     MCAPI void $setSeed(::Seed128Bit seed);
 
-    MCAPI int64 $seed64() const;
+    MCFOLD int64 $seed64() const;
 
     MCAPI ::Seed128Bit $seed128() const;
     // NOLINTEND

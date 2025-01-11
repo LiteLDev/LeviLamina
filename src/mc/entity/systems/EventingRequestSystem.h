@@ -15,12 +15,6 @@ struct TickingSystemWithInfo;
 
 class EventingRequestSystem {
 public:
-    // prevent constructor by default
-    EventingRequestSystem& operator=(EventingRequestSystem const&);
-    EventingRequestSystem(EventingRequestSystem const&);
-    EventingRequestSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _eventingRequestSystem(

@@ -11,12 +11,6 @@ namespace cricket {
 
 class AsyncStunTCPSocket {
 public:
-    // prevent constructor by default
-    AsyncStunTCPSocket& operator=(AsyncStunTCPSocket const&);
-    AsyncStunTCPSocket(AsyncStunTCPSocket const&);
-    AsyncStunTCPSocket();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit AsyncStunTCPSocket(::rtc::Socket*);

@@ -55,11 +55,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom&) const;
+    MCFOLD int $sample(::IRandom&) const;
 
-    MCAPI int $maxValue() const;
+    MCFOLD int $maxValue() const;
 
-    MCAPI int $minValue() const;
+    MCFOLD int $minValue() const;
     // NOLINTEND
 
 public:

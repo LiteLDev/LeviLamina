@@ -15,12 +15,6 @@ namespace webrtc {
 
 struct BundleManager {
 public:
-    // prevent constructor by default
-    BundleManager& operator=(BundleManager const&);
-    BundleManager(BundleManager const&);
-    BundleManager();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Commit();

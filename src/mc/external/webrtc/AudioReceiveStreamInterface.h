@@ -142,12 +142,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    AudioReceiveStreamInterface& operator=(AudioReceiveStreamInterface const&);
-    AudioReceiveStreamInterface(AudioReceiveStreamInterface const&);
-    AudioReceiveStreamInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

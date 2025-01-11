@@ -16,14 +16,8 @@ class MobEffectImmunityDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8bf693;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>> mMobEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectImmunityDefinition& operator=(MobEffectImmunityDefinition const&);
-    MobEffectImmunityDefinition(MobEffectImmunityDefinition const&);
-    MobEffectImmunityDefinition();
 
 public:
     // member functions

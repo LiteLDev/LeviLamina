@@ -11,12 +11,6 @@ namespace Bedrock::Http {
 
 class Factory {
 public:
-    // prevent constructor by default
-    Factory& operator=(Factory const&);
-    Factory(Factory const&);
-    Factory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::Bedrock::Http::DispatcherProcess> createDispatcher();

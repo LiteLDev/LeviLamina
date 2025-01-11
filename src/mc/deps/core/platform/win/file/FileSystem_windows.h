@@ -25,12 +25,6 @@ namespace Core {
 
 class FileSystem_windows : public ::Core::FileSystemImpl {
 public:
-    // prevent constructor by default
-    FileSystem_windows& operator=(FileSystem_windows const&);
-    FileSystem_windows(FileSystem_windows const&);
-    FileSystem_windows();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

@@ -79,12 +79,6 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerInteractWithBlockBeforeEvent const,
                                      ::PlayerGameModeChangeEvent const> {
 public:
-    // prevent constructor by default
-    PlayerNotificationEvent& operator=(PlayerNotificationEvent const&);
-    PlayerNotificationEvent(PlayerNotificationEvent const&);
-    PlayerNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~PlayerNotificationEvent();

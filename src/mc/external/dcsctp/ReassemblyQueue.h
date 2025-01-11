@@ -21,12 +21,6 @@ namespace dcsctp {
 
 class ReassemblyQueue {
 public:
-    // prevent constructor by default
-    ReassemblyQueue& operator=(ReassemblyQueue const&);
-    ReassemblyQueue(ReassemblyQueue const&);
-    ReassemblyQueue();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Add(::webrtc::StrongAlias<::dcsctp::TSNTag, uint>, ::dcsctp::Data);

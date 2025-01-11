@@ -119,11 +119,11 @@ public:
 
     MCAPI void $stopDebugEventLogging();
 
-    MCAPI void $_flushEventQueue();
+    MCFOLD void $_flushEventQueue();
 
-    MCAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
+    MCFOLD bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
 
-    MCAPI bool $_isListenerReadyForEvents() const;
+    MCFOLD bool $_isListenerReadyForEvents() const;
     // NOLINTEND
 
 public:

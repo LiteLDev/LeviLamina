@@ -75,12 +75,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    AudioEncoder& operator=(AudioEncoder const&);
-    AudioEncoder(AudioEncoder const&);
-    AudioEncoder();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

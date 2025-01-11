@@ -15,12 +15,6 @@ namespace ActorData {
 
 struct ActorDataControllingSeatIndexOperations
 : public ::ActorData::
-      ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataControllingSeatIndexComponent, schar> {
-public:
-    // prevent constructor by default
-    ActorDataControllingSeatIndexOperations& operator=(ActorDataControllingSeatIndexOperations const&);
-    ActorDataControllingSeatIndexOperations(ActorDataControllingSeatIndexOperations const&);
-    ActorDataControllingSeatIndexOperations();
-};
+      ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataControllingSeatIndexComponent, schar> {};
 
 } // namespace ActorData

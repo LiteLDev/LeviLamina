@@ -12,12 +12,6 @@ namespace Bedrock::JSONObject { class Node; }
 
 namespace Bedrock::JSONObject {
 
-class ObjectHelper : public ::Bedrock::JSONObject::ObjectHelperBase<1> {
-public:
-    // prevent constructor by default
-    ObjectHelper& operator=(ObjectHelper const&);
-    ObjectHelper(ObjectHelper const&);
-    ObjectHelper();
-};
+class ObjectHelper : public ::Bedrock::JSONObject::ObjectHelperBase<1> {};
 
 } // namespace Bedrock::JSONObject

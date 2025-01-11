@@ -17,12 +17,6 @@ namespace webrtc {
 
 class MediaStreamInterface : public ::webrtc::RefCountInterface, public ::webrtc::NotifierInterface {
 public:
-    // prevent constructor by default
-    MediaStreamInterface& operator=(MediaStreamInterface const&);
-    MediaStreamInterface(MediaStreamInterface const&);
-    MediaStreamInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

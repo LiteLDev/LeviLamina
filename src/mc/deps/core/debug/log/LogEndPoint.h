@@ -6,12 +6,6 @@ namespace Bedrock {
 
 class LogEndPoint {
 public:
-    // prevent constructor by default
-    LogEndPoint& operator=(LogEndPoint const&);
-    LogEndPoint(LogEndPoint const&);
-    LogEndPoint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -15,12 +15,6 @@ class RecipeIngredient;
 
 class ShapelessRecipe : public ::Recipe {
 public:
-    // prevent constructor by default
-    ShapelessRecipe& operator=(ShapelessRecipe const&);
-    ShapelessRecipe(ShapelessRecipe const&);
-    ShapelessRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -66,13 +60,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
+    MCFOLD ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
 
     MCAPI int $getCraftingSize() const;
 
-    MCAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCAPI bool $isShapeless() const;
+    MCFOLD bool $isShapeless() const;
 
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 

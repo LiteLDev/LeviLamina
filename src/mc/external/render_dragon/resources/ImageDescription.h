@@ -7,12 +7,6 @@
 
 namespace dragon {
 
-struct ImageDescription : public ::cg::ImageDescription {
-public:
-    // prevent constructor by default
-    ImageDescription& operator=(ImageDescription const&);
-    ImageDescription(ImageDescription const&);
-    ImageDescription();
-};
+struct ImageDescription : public ::cg::ImageDescription {};
 
 } // namespace dragon

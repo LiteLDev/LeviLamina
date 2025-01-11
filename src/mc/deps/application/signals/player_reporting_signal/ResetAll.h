@@ -7,12 +7,6 @@
 
 namespace PlayerReportingSignal {
 
-class ResetAll : public ::Bedrock::Signal<::PlayerReportingSignal::ResetAll, void> {
-public:
-    // prevent constructor by default
-    ResetAll& operator=(ResetAll const&);
-    ResetAll(ResetAll const&);
-    ResetAll();
-};
+class ResetAll : public ::Bedrock::Signal<::PlayerReportingSignal::ResetAll, void> {};
 
 } // namespace PlayerReportingSignal

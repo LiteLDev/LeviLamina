@@ -4,12 +4,6 @@
 
 namespace ClientBlobCache {
 
-class Cache {
-public:
-    // prevent constructor by default
-    Cache& operator=(Cache const&);
-    Cache(Cache const&);
-    Cache();
-};
+class Cache {};
 
 } // namespace ClientBlobCache

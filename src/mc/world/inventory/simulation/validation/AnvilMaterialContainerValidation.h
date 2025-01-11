@@ -12,12 +12,6 @@ class ContainerScreenContext;
 
 class AnvilMaterialContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    AnvilMaterialContainerValidation& operator=(AnvilMaterialContainerValidation const&);
-    AnvilMaterialContainerValidation(AnvilMaterialContainerValidation const&);
-    AnvilMaterialContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

@@ -9,10 +9,6 @@ namespace xbox::httpclient {
 
 class Uri {
 public:
-    // prevent constructor by default
-    Uri& operator=(Uri const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::http_string const& FullPath() const;

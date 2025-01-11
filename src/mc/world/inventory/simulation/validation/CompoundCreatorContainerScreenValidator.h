@@ -7,12 +7,6 @@
 
 class CompoundCreatorContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    CompoundCreatorContainerScreenValidator& operator=(CompoundCreatorContainerScreenValidator const&);
-    CompoundCreatorContainerScreenValidator(CompoundCreatorContainerScreenValidator const&);
-    CompoundCreatorContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

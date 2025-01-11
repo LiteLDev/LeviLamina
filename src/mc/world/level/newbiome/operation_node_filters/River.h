@@ -10,12 +10,6 @@ namespace OperationNodeFilters {
 
 struct River : public ::OperationNodeFilters::FilterBase<3, 3, bool, int> {
 public:
-    // prevent constructor by default
-    River& operator=(River const&);
-    River(River const&);
-    River();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator()(::OperationNodeDetails::NeighborhoodReader<int, 1, 1>& reader) const;

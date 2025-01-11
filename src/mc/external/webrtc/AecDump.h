@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class AecDump {
-public:
-    // prevent constructor by default
-    AecDump& operator=(AecDump const&);
-    AecDump(AecDump const&);
-    AecDump();
-};
+class AecDump {};
 
 } // namespace webrtc

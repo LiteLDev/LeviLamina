@@ -14,11 +14,6 @@ namespace rtc {
 
 class PacketTransportInternal {
 public:
-    // prevent constructor by default
-    PacketTransportInternal& operator=(PacketTransportInternal const&);
-    PacketTransportInternal(PacketTransportInternal const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void DeregisterReceivedPacketCallback(void*);

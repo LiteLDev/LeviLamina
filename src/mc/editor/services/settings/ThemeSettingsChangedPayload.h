@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ThemeSettingsChangedPayload(::Editor::Settings::ThemeProps const& props);
 
-    MCAPI ::Editor::Settings::ThemeProps const& getThemeSettingsProps() const;
+    MCFOLD ::Editor::Settings::ThemeProps const& getThemeSettingsProps() const;
     // NOLINTEND
 
 public:

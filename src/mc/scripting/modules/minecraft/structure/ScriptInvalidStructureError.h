@@ -10,11 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptInvalidStructureError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptInvalidStructureError& operator=(ScriptInvalidStructureError const&);
-    ScriptInvalidStructureError(ScriptInvalidStructureError const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptInvalidStructureError();
@@ -37,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

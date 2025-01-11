@@ -12,12 +12,6 @@ namespace PlayerReportingSignal { struct StringData; }
 
 namespace PlayerReportingSignal {
 
-class SetData : public ::Bedrock::Signal<::PlayerReportingSignal::SetData, ::PlayerReportingSignal::StringData> {
-public:
-    // prevent constructor by default
-    SetData& operator=(SetData const&);
-    SetData(SetData const&);
-    SetData();
-};
+class SetData : public ::Bedrock::Signal<::PlayerReportingSignal::SetData, ::PlayerReportingSignal::StringData> {};
 
 } // namespace PlayerReportingSignal

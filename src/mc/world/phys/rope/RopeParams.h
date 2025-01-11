@@ -21,27 +21,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf4a723;
-    ::ll::UntypedStorage<4, 4>  mUnkc7baa0;
-    ::ll::UntypedStorage<4, 4>  mUnk78d532;
-    ::ll::UntypedStorage<4, 4>  mUnk860abb;
-    ::ll::UntypedStorage<4, 4>  mUnkefe7eb;
-    ::ll::UntypedStorage<4, 4>  mUnkb82663;
-    ::ll::UntypedStorage<4, 4>  mUnk946de8;
-    ::ll::UntypedStorage<4, 4>  mUnkb4d863;
-    ::ll::UntypedStorage<4, 12> mUnk357fdc;
-    ::ll::UntypedStorage<4, 12> mUnk1a6433;
-    ::ll::UntypedStorage<8, 8>  mUnkb608e1;
-    ::ll::UntypedStorage<8, 8>  mUnk6faeff;
-    ::ll::UntypedStorage<4, 4>  mUnk41af79;
-    ::ll::UntypedStorage<4, 4>  mUnk88464a;
-    ::ll::UntypedStorage<4, 4>  mUnkedc8bd;
+    ::ll::TypedStorage<4, 4, float>   mNodeDist;
+    ::ll::TypedStorage<4, 4, float>   mNodeSize;
+    ::ll::TypedStorage<4, 4, float>   mGravity;
+    ::ll::TypedStorage<4, 4, float>   mSlack;
+    ::ll::TypedStorage<4, 4, float>   mMaxTension;
+    ::ll::TypedStorage<4, 4, float>   mVelDamping;
+    ::ll::TypedStorage<4, 4, float>   mRelaxation;
+    ::ll::TypedStorage<4, 4, float>   mFriction;
+    ::ll::TypedStorage<4, 12, ::Vec3> mStartPin;
+    ::ll::TypedStorage<4, 12, ::Vec3> mEndPin;
+    ::ll::TypedStorage<8, 8, uint64>  mIterations;
+    ::ll::TypedStorage<8, 8, uint64>  mDestroyDelay;
+    ::ll::TypedStorage<4, 4, int>     mFlags;
+    ::ll::TypedStorage<4, 4, float>   mLength;
+    ::ll::TypedStorage<4, 4, float>   mOriginalNodeDist;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RopeParams& operator=(RopeParams const&);
-    RopeParams(RopeParams const&);
 
 public:
     // member functions

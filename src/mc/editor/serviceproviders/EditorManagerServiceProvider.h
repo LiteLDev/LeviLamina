@@ -11,12 +11,6 @@ namespace Editor {
 
 class EditorManagerServiceProvider {
 public:
-    // prevent constructor by default
-    EditorManagerServiceProvider& operator=(EditorManagerServiceProvider const&);
-    EditorManagerServiceProvider(EditorManagerServiceProvider const&);
-    EditorManagerServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

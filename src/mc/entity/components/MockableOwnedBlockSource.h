@@ -26,6 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::IBlockSource const& get() const;
 
-    MCAPI ::IBlockSource& get();
+    MCFOLD ::IBlockSource& get();
     // NOLINTEND
 };

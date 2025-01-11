@@ -27,7 +27,7 @@ public:
 
     MCAPI explicit ActorOwnerComponent(::std::unique_ptr<::Actor> uniqueActor);
 
-    MCAPI ::Actor& getActor() const;
+    MCFOLD ::Actor& getActor() const;
 
     MCAPI ::Actor& getActor();
 
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorOwnerComponent&& other);
+    MCFOLD void* $ctor(::ActorOwnerComponent&& other);
 
     MCAPI void* $ctor(::std::unique_ptr<::Actor> uniqueActor);
     // NOLINTEND
@@ -47,6 +47,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

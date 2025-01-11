@@ -14,12 +14,6 @@ class IRequestAction;
 
 class RequestActionLoader {
 public:
-    // prevent constructor by default
-    RequestActionLoader& operator=(RequestActionLoader const&);
-    RequestActionLoader(RequestActionLoader const&);
-    RequestActionLoader();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool isValidTag(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag);

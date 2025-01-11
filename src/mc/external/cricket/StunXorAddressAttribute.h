@@ -13,12 +13,6 @@ namespace cricket {
 
 class StunXorAddressAttribute {
 public:
-    // prevent constructor by default
-    StunXorAddressAttribute& operator=(StunXorAddressAttribute const&);
-    StunXorAddressAttribute(StunXorAddressAttribute const&);
-    StunXorAddressAttribute();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::rtc::IPAddress GetXoredIP() const;

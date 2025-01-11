@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Pillager : public ::HumanoidMonster {
 public:
-    // prevent constructor by default
-    Pillager& operator=(Pillager const&);
-    Pillager(Pillager const&);
-    Pillager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 182
@@ -67,11 +61,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
     // NOLINTEND
 
 public:

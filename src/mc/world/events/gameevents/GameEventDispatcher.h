@@ -14,12 +14,6 @@ class Vec3;
 
 class GameEventDispatcher {
 public:
-    // prevent constructor by default
-    GameEventDispatcher& operator=(GameEventDispatcher const&);
-    GameEventDispatcher(GameEventDispatcher const&);
-    GameEventDispatcher();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void post(

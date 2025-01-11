@@ -9,12 +9,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockLavaContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent {
 public:
-    // prevent constructor by default
-    ScriptBlockLavaContainerComponent& operator=(ScriptBlockLavaContainerComponent const&);
-    ScriptBlockLavaContainerComponent(ScriptBlockLavaContainerComponent const&);
-    ScriptBlockLavaContainerComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -6,12 +6,6 @@ namespace RakNet {
 
 struct Router2DebugInterface {
 public:
-    // prevent constructor by default
-    Router2DebugInterface& operator=(Router2DebugInterface const&);
-    Router2DebugInterface(Router2DebugInterface const&);
-    Router2DebugInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

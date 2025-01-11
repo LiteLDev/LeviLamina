@@ -15,12 +15,6 @@ namespace Social::Events {
 
 class IEventListener {
 public:
-    // prevent constructor by default
-    IEventListener& operator=(IEventListener const&);
-    IEventListener(IEventListener const&);
-    IEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -42,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

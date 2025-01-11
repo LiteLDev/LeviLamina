@@ -37,7 +37,7 @@ public:
 
     MCAPI ::gsl::not_null<::SynchedActorData const*> _get() const;
 
-    MCAPI ::gsl::not_null<::SynchedActorData*> _get();
+    MCFOLD ::gsl::not_null<::SynchedActorData*> _get();
 
     MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
 
@@ -49,7 +49,7 @@ public:
 
     MCAPI schar getInt8(ushort id) const;
 
-    MCAPI ::BlockPos getPosition(ushort id) const;
+    MCFOLD ::BlockPos getPosition(ushort id) const;
 
     MCAPI short getShort(ushort id) const;
 
@@ -67,7 +67,7 @@ public:
 
     MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty();
 
-    MCAPI ::SynchedActorDataReader reader() const;
+    MCFOLD ::SynchedActorDataReader reader() const;
 
     MCAPI ::SynchedActorDataWriter writer();
 
@@ -83,6 +83,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

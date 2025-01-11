@@ -13,12 +13,6 @@ namespace webrtc {
 
 class MediaStreamObserver {
 public:
-    // prevent constructor by default
-    MediaStreamObserver& operator=(MediaStreamObserver const&);
-    MediaStreamObserver(MediaStreamObserver const&);
-    MediaStreamObserver();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MediaStreamObserver(::webrtc::MediaStreamInterface*, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>);

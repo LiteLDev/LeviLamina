@@ -91,7 +91,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
+    MCFOLD void $update();
 
     MCAPI void $initFileUploader(
         ::std::string const&        uploadId,
@@ -106,7 +106,7 @@ public:
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-    MCAPI void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+    MCFOLD void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
 
     MCAPI void $uploadChunk(
         ::FileInfo const&           file,
@@ -115,13 +115,13 @@ public:
         ::std::function<void(bool)> onCompleteCallback
     );
 
-    MCAPI bool $canCancelUpload(::FileInfo const& file) const;
+    MCFOLD bool $canCancelUpload(::FileInfo const& file) const;
 
-    MCAPI void $cancelUpload(::FileInfo const& file);
+    MCFOLD void $cancelUpload(::FileInfo const& file);
 
-    MCAPI ::UploadError $getInitErrorCode() const;
+    MCFOLD ::UploadError $getInitErrorCode() const;
 
-    MCAPI float $getUploadProgress(::FileInfo const& file) const;
+    MCFOLD float $getUploadProgress(::FileInfo const& file) const;
 
     MCAPI ::FileChunkInfo $getChunkInfo(::FileInfo const& file, int chunkID) const;
     // NOLINTEND

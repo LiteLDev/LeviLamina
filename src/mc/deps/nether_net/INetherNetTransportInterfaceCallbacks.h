@@ -14,12 +14,6 @@ namespace NetherNet {
 
 class INetherNetTransportInterfaceCallbacks {
 public:
-    // prevent constructor by default
-    INetherNetTransportInterfaceCallbacks& operator=(INetherNetTransportInterfaceCallbacks const&);
-    INetherNetTransportInterfaceCallbacks(INetherNetTransportInterfaceCallbacks const&);
-    INetherNetTransportInterfaceCallbacks();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

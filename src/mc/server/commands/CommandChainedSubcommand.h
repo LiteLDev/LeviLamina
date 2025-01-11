@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Command const* getCommand() const;
+    MCFOLD ::Command const* getCommand() const;
 
-    MCAPI void setCommand(::std::unique_ptr<::Command> command);
+    MCFOLD void setCommand(::std::unique_ptr<::Command> command);
     // NOLINTEND
 
 public:

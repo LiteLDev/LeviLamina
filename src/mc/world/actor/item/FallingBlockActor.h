@@ -134,18 +134,18 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
-    MCAPI void
+    MCFOLD void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCAPI bool $canChangeDimensionsUsingPortal() const;
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

@@ -4,12 +4,6 @@
 
 namespace ScriptModuleMinecraft::CustomComponentEventHelpers {
 
-class IScriptCustomComponentScriptEventClosure {
-public:
-    // prevent constructor by default
-    IScriptCustomComponentScriptEventClosure& operator=(IScriptCustomComponentScriptEventClosure const&);
-    IScriptCustomComponentScriptEventClosure(IScriptCustomComponentScriptEventClosure const&);
-    IScriptCustomComponentScriptEventClosure();
-};
+class IScriptCustomComponentScriptEventClosure {};
 
 } // namespace ScriptModuleMinecraft::CustomComponentEventHelpers

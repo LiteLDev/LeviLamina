@@ -78,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI bool $canFreeze() const;
+    MCFOLD bool $canFreeze() const;
     // NOLINTEND
 
 public:

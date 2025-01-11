@@ -14,12 +14,6 @@ namespace webrtc {
 
 class AudioTrack {
 public:
-    // prevent constructor by default
-    AudioTrack& operator=(AudioTrack const&);
-    AudioTrack(AudioTrack const&);
-    AudioTrack();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AudioTrack(::std::string_view, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const&);

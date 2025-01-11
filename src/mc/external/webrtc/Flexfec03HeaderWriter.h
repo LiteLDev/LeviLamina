@@ -6,11 +6,6 @@ namespace webrtc {
 
 class Flexfec03HeaderWriter {
 public:
-    // prevent constructor by default
-    Flexfec03HeaderWriter& operator=(Flexfec03HeaderWriter const&);
-    Flexfec03HeaderWriter(Flexfec03HeaderWriter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Flexfec03HeaderWriter();

@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SendPacketsComponent& operator=(::SendPacketsComponent&&);
+    MCFOLD ::SendPacketsComponent& operator=(::SendPacketsComponent&&);
     // NOLINTEND
 };

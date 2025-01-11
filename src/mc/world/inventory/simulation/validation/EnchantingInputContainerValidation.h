@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class EnchantingInputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    EnchantingInputContainerValidation& operator=(EnchantingInputContainerValidation const&);
-    EnchantingInputContainerValidation(EnchantingInputContainerValidation const&);
-    EnchantingInputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -60,11 +54,11 @@ public:
         bool
     ) const;
 
-    MCAPI int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
+    MCFOLD int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
 
-    MCAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
+    MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

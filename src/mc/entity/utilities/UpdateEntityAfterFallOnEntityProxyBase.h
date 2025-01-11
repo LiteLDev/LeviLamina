@@ -9,12 +9,6 @@ class Vec3;
 
 struct UpdateEntityAfterFallOnEntityProxyBase {
 public:
-    // prevent constructor by default
-    UpdateEntityAfterFallOnEntityProxyBase& operator=(UpdateEntityAfterFallOnEntityProxyBase const&);
-    UpdateEntityAfterFallOnEntityProxyBase(UpdateEntityAfterFallOnEntityProxyBase const&);
-    UpdateEntityAfterFallOnEntityProxyBase();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Vec3& mDummy();

@@ -37,7 +37,7 @@ public:
 
     MCAPI ::Json::Value createJsonValue() const;
 
-    MCAPI ::CurrentCmdVersion getCommandVersion() const;
+    MCFOLD ::CurrentCmdVersion getCommandVersion() const;
 
     MCAPI ::MolangVersion getMolangVersion() const;
 
@@ -65,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

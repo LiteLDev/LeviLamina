@@ -7,12 +7,6 @@
 
 class BlastFurnaceContainerScreenValidator : public ::FurnaceContainerScreenValidator {
 public:
-    // prevent constructor by default
-    BlastFurnaceContainerScreenValidator& operator=(BlastFurnaceContainerScreenValidator const&);
-    BlastFurnaceContainerScreenValidator(BlastFurnaceContainerScreenValidator const&);
-    BlastFurnaceContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentTypeNotCompatibleError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptItemEnchantmentTypeNotCompatibleError& operator=(ScriptItemEnchantmentTypeNotCompatibleError const&);
-    ScriptItemEnchantmentTypeNotCompatibleError(ScriptItemEnchantmentTypeNotCompatibleError const&);
-    ScriptItemEnchantmentTypeNotCompatibleError();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ErrorBindingBuilder<::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>

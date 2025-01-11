@@ -11,7 +11,7 @@ namespace BlockColorUtil {
 // NOLINTBEGIN
 MCAPI ::BlockColor fromInt(int auxValue);
 
-MCAPI ::BlockColor fromItemColor(::ItemColor color);
+MCFOLD ::BlockColor fromItemColor(::ItemColor color);
 
 MCAPI ::std::string const& getName(::BlockColor color);
 

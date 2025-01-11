@@ -4,12 +4,6 @@
 
 namespace Bedrock::DeviceIdErrorType {
 
-struct CacheOpenFailed {
-public:
-    // prevent constructor by default
-    CacheOpenFailed& operator=(CacheOpenFailed const&);
-    CacheOpenFailed(CacheOpenFailed const&);
-    CacheOpenFailed();
-};
+struct CacheOpenFailed {};
 
 } // namespace Bedrock::DeviceIdErrorType

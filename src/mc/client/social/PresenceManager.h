@@ -4,12 +4,6 @@
 
 namespace Social {
 
-class PresenceManager {
-public:
-    // prevent constructor by default
-    PresenceManager& operator=(PresenceManager const&);
-    PresenceManager(PresenceManager const&);
-    PresenceManager();
-};
+class PresenceManager {};
 
 } // namespace Social

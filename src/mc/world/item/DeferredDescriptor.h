@@ -93,9 +93,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const&, bool) const;
+    MCFOLD bool $sameItem(::ItemDescriptor::ItemEntry const&, bool) const;
 
-    MCAPI ::std::string const& $getFullName() const;
+    MCFOLD ::std::string const& $getFullName() const;
 
     MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
@@ -103,11 +103,11 @@ public:
 
     MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCAPI ::ItemDescriptor::InternalType $getType() const;
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
-    MCAPI uint64 $getHash() const;
+    MCFOLD uint64 $getHash() const;
 
-    MCAPI bool $shouldResolve() const;
+    MCFOLD bool $shouldResolve() const;
 
     MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $resolve() const;
     // NOLINTEND

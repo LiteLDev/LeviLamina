@@ -14,7 +14,7 @@ MCAPI bool getHeadInWater(::EntityContext const& provider);
 
 MCAPI bool getIsInLava(::EntityContext const& provider);
 
-MCAPI bool getIsInWater(::EntityContext const& provider);
+MCFOLD bool getIsInWater(::EntityContext const& provider);
 
 MCAPI void setHeadInWater(::EntityContext& provider, bool value);
 

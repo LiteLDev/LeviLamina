@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     MCAPI CommandContext(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);
 
-    MCAPI ::CommandOrigin const& getCommandOrigin() const;
+    MCFOLD ::CommandOrigin const& getCommandOrigin() const;
 
     MCAPI ~CommandContext();
     // NOLINTEND
@@ -35,6 +35,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

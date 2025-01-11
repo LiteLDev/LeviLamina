@@ -16,12 +16,6 @@ namespace Editor::Services {
 
 class ServerModeService : public ::Editor::Services::ModeService {
 public:
-    // prevent constructor by default
-    ServerModeService& operator=(ServerModeService const&);
-    ServerModeService(ServerModeService const&);
-    ServerModeService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -22,9 +22,9 @@ public:
 
     MCAPI void addSpawnRules(::MobSpawnRules& spawnRules);
 
-    MCAPI ::std::string const& getIdentifier() const;
+    MCFOLD ::std::string const& getIdentifier() const;
 
-    MCAPI ::std::vector<::MobSpawnRules> const& getSpawnRules() const;
+    MCFOLD ::std::vector<::MobSpawnRules> const& getSpawnRules() const;
     // NOLINTEND
 
 public:

@@ -11,11 +11,6 @@ namespace webrtc::rtcp {
 
 class Pli {
 public:
-    // prevent constructor by default
-    Pli& operator=(Pli const&);
-    Pli(Pli const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);

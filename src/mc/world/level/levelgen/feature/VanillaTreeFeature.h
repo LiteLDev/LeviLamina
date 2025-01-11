@@ -23,12 +23,6 @@ namespace JsonUtil { class EmptyClass; }
 class VanillaTreeFeature : public ::ITreeFeature {
     // size:ok
 public:
-    // prevent constructor by default
-    VanillaTreeFeature& operator=(VanillaTreeFeature const&);
-    VanillaTreeFeature(VanillaTreeFeature const&);
-    VanillaTreeFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

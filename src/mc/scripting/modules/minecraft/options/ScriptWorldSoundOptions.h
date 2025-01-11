@@ -34,7 +34,7 @@ public:
 
     MCAPI float getPitch() const;
 
-    MCAPI float getVolume() const;
+    MCFOLD float getVolume() const;
 
     MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND

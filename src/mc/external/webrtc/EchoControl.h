@@ -34,12 +34,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    EchoControl& operator=(EchoControl const&);
-    EchoControl(EchoControl const&);
-    EchoControl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

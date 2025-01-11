@@ -33,12 +33,6 @@ public:
     // RTCStatsCollector inner types define
     struct CertificateStatsPair {
     public:
-        // prevent constructor by default
-        CertificateStatsPair& operator=(CertificateStatsPair const&);
-        CertificateStatsPair(CertificateStatsPair const&);
-        CertificateStatsPair();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::webrtc::RTCStatsCollector::CertificateStatsPair Copy() const;
@@ -54,12 +48,6 @@ public:
     };
 
     struct InternalRecord {
-    public:
-        // prevent constructor by default
-        InternalRecord& operator=(InternalRecord const&);
-        InternalRecord(InternalRecord const&);
-        InternalRecord();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -77,12 +65,6 @@ public:
     public:
         // RequestInfo inner types define
         enum class FilterMode : uint {};
-
-    public:
-        // prevent constructor by default
-        RequestInfo& operator=(RequestInfo const&);
-        RequestInfo(RequestInfo const&);
-        RequestInfo();
 
     public:
         // member functions
@@ -125,11 +107,6 @@ public:
 
     struct RtpTransceiverStatsInfo {
     public:
-        // prevent constructor by default
-        RtpTransceiverStatsInfo& operator=(RtpTransceiverStatsInfo const&);
-        RtpTransceiverStatsInfo();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI RtpTransceiverStatsInfo(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
@@ -145,12 +122,6 @@ public:
         MCAPI void* $ctor(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo&&);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    RTCStatsCollector& operator=(RTCStatsCollector const&);
-    RTCStatsCollector(RTCStatsCollector const&);
-    RTCStatsCollector();
 
 public:
     // member functions

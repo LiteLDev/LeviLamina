@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-struct Capabilities {
-public:
-    // prevent constructor by default
-    Capabilities& operator=(Capabilities const&);
-    Capabilities(Capabilities const&);
-    Capabilities();
-};
+struct Capabilities {};
 
 } // namespace dcsctp

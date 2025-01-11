@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptNavigationHoverComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptNavigationHoverComponentFactory& operator=(ScriptNavigationHoverComponentFactory const&);
-    ScriptNavigationHoverComponentFactory(ScriptNavigationHoverComponentFactory const&);
-    ScriptNavigationHoverComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

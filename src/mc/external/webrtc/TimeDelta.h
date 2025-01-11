@@ -7,12 +7,6 @@
 
 namespace webrtc {
 
-class TimeDelta : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::TimeDelta> {
-public:
-    // prevent constructor by default
-    TimeDelta& operator=(TimeDelta const&);
-    TimeDelta(TimeDelta const&);
-    TimeDelta();
-};
+class TimeDelta : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::TimeDelta> {};
 
 } // namespace webrtc

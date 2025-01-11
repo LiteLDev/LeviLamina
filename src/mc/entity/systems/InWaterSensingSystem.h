@@ -24,12 +24,6 @@ struct WaterSplashEffectRequestComponent;
 
 struct InWaterSensingSystem {
 public:
-    // prevent constructor by default
-    InWaterSensingSystem& operator=(InWaterSensingSystem const&);
-    InWaterSensingSystem(InWaterSensingSystem const&);
-    InWaterSensingSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

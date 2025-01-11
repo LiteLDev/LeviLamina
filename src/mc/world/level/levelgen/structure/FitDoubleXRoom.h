@@ -14,12 +14,6 @@ class RoomDefinition;
 
 class FitDoubleXRoom : public ::MonumentRoomFitter {
 public:
-    // prevent constructor by default
-    FitDoubleXRoom& operator=(FitDoubleXRoom const&);
-    FitDoubleXRoom(FitDoubleXRoom const&);
-    FitDoubleXRoom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

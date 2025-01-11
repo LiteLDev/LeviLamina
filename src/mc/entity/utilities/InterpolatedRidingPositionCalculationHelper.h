@@ -21,12 +21,6 @@ struct StateVectorComponent;
 
 struct InterpolatedRidingPositionCalculationHelper {
 public:
-    // prevent constructor by default
-    InterpolatedRidingPositionCalculationHelper& operator=(InterpolatedRidingPositionCalculationHelper const&);
-    InterpolatedRidingPositionCalculationHelper(InterpolatedRidingPositionCalculationHelper const&);
-    InterpolatedRidingPositionCalculationHelper();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 getCamelInterpolatedRidingOffset(bool isSitting);

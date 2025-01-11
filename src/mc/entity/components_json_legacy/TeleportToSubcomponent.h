@@ -14,11 +14,6 @@ namespace Json { class Value; }
 
 class TeleportToSubcomponent : public ::OnHitSubcomponent {
 public:
-    // prevent constructor by default
-    TeleportToSubcomponent& operator=(TeleportToSubcomponent const&);
-    TeleportToSubcomponent(TeleportToSubcomponent const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -58,9 +53,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $readfromJSON(::Json::Value&);
+    MCFOLD void $readfromJSON(::Json::Value&);
 
-    MCAPI void $writetoJSON(::Json::Value&) const;
+    MCFOLD void $writetoJSON(::Json::Value&) const;
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 

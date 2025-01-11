@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class SctpTransportInterface {
-public:
-    // prevent constructor by default
-    SctpTransportInterface& operator=(SctpTransportInterface const&);
-    SctpTransportInterface(SctpTransportInterface const&);
-    SctpTransportInterface();
-};
+class SctpTransportInterface {};
 
 } // namespace webrtc

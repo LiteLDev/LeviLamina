@@ -16,12 +16,6 @@ namespace Social {
 class MultiplayerServiceObserver
 : public ::Core::Observer<::Social::MultiplayerServiceObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    MultiplayerServiceObserver& operator=(MultiplayerServiceObserver const&);
-    MultiplayerServiceObserver(MultiplayerServiceObserver const&);
-    MultiplayerServiceObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -37,13 +31,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
+    MCFOLD void $onUserDisconnectedBecauseConcurrentLogin(::std::string const& id);
     // NOLINTEND
 };
 

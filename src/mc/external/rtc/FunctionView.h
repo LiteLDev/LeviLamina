@@ -5,12 +5,6 @@
 namespace rtc {
 
 template <typename T0>
-class FunctionView {
-public:
-    // prevent constructor by default
-    FunctionView& operator=(FunctionView const&);
-    FunctionView(FunctionView const&);
-    FunctionView();
-};
+class FunctionView {};
 
 } // namespace rtc

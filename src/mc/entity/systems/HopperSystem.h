@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class HopperSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    HopperSystem& operator=(HopperSystem const&);
-    HopperSystem(HopperSystem const&);
-    HopperSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

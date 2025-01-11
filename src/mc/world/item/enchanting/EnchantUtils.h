@@ -28,12 +28,6 @@ namespace Bedrock::Safety { class RedactableString; }
 
 class EnchantUtils {
 public:
-    // prevent constructor by default
-    EnchantUtils& operator=(EnchantUtils const&);
-    EnchantUtils(EnchantUtils const&);
-    EnchantUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void appendEnchantToFormattedText(
@@ -111,7 +105,7 @@ public:
 
     MCAPI static bool isCurse(::Enchant::Type enchantType);
 
-    MCAPI static void randomlyEnchant(::ItemStack& out, int cost, int valueBuff, bool treasure);
+    MCFOLD static void randomlyEnchant(::ItemStack& out, int cost, int valueBuff, bool treasure);
 
     MCAPI static void randomlyEnchant(::ItemInstance&, int, int, bool);
 

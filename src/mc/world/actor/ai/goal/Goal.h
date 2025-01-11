@@ -64,11 +64,11 @@ public:
     // NOLINTBEGIN
     MCAPI Goal();
 
-    MCAPI int getRequiredControlFlags() const;
+    MCFOLD int getRequiredControlFlags() const;
 
-    MCAPI ushort getTypeId() const;
+    MCFOLD ushort getTypeId() const;
 
-    MCAPI void setRequiredControlFlags(int requiredControlFlags);
+    MCFOLD void setRequiredControlFlags(int requiredControlFlags);
 
     MCAPI void setTypeId(ushort typeId);
     // NOLINTEND
@@ -88,19 +88,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
-    MCAPI void $start();
+    MCFOLD void $start();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
-    MCAPI bool $isTargetGoal() const;
+    MCFOLD bool $isTargetGoal() const;
 
-    MCAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCFOLD void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
     // NOLINTEND
 
 public:

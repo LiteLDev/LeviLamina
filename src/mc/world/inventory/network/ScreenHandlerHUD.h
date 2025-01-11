@@ -13,12 +13,6 @@ class ItemStackRequestAction;
 
 class ScreenHandlerHUD : public ::ScreenHandlerBase {
 public:
-    // prevent constructor by default
-    ScreenHandlerHUD& operator=(ScreenHandlerHUD const&);
-    ScreenHandlerHUD(ScreenHandlerHUD const&);
-    ScreenHandlerHUD();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

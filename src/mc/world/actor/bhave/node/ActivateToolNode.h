@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::BehaviorStatus $tick(::Actor& owner);
 
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCFOLD void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
 public:

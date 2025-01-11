@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct MoveSpeedCapSystem {
 public:
-    // prevent constructor by default
-    MoveSpeedCapSystem& operator=(MoveSpeedCapSystem const&);
-    MoveSpeedCapSystem(MoveSpeedCapSystem const&);
-    MoveSpeedCapSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();

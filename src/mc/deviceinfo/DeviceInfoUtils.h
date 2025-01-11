@@ -12,12 +12,6 @@ class BaseGameVersion;
 
 class DeviceInfoUtils {
 public:
-    // prevent constructor by default
-    DeviceInfoUtils& operator=(DeviceInfoUtils const&);
-    DeviceInfoUtils(DeviceInfoUtils const&);
-    DeviceInfoUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::DeviceMemoryTier determineMemoryTier(::BaseGameVersion version);

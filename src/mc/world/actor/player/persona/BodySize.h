@@ -22,12 +22,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    BodySize& operator=(BodySize const&);
-    BodySize(BodySize const&);
-    BodySize();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::persona::BodySize::Type, ::persona::SizeInfo> const& mInfoList();

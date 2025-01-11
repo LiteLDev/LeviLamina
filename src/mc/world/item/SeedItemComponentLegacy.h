@@ -40,7 +40,7 @@ public:
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
 
-    MCAPI bool isPlanting() const;
+    MCFOLD bool isPlanting() const;
 
     MCAPI void setPlanting(bool planting);
 

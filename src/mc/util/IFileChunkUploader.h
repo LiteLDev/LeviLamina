@@ -39,11 +39,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IFileChunkUploader& operator=(IFileChunkUploader const&);
-    IFileChunkUploader(IFileChunkUploader const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -118,14 +113,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
+    MCFOLD void $update();
 
     MCAPI void $getServerMissingChunks(
         ::FileInfo const&                                     file,
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-    MCAPI void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
+    MCFOLD void $confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
 
     MCAPI void $uploadChunk(
         ::FileInfo const&           file,

@@ -28,12 +28,6 @@ struct VehicleComponent;
 
 struct JumpEndSystem {
 public:
-    // prevent constructor by default
-    JumpEndSystem& operator=(JumpEndSystem const&);
-    JumpEndSystem(JumpEndSystem const&);
-    JumpEndSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();

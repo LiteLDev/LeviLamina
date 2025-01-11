@@ -47,23 +47,23 @@ public:
 
     MCAPI void explode(::Actor& actor, ::Vec3 const& explosionPosition);
 
-    MCAPI int getFuseLength() const;
+    MCFOLD int getFuseLength() const;
 
-    MCAPI int getInitialFuseLength() const;
+    MCFOLD int getInitialFuseLength() const;
 
-    MCAPI bool getIsFuseLit() const;
+    MCFOLD bool getIsFuseLit() const;
 
-    MCAPI bool getNegatesFallDamage() const;
+    MCFOLD bool getNegatesFallDamage() const;
 
-    MCAPI bool isFuseLit() const;
+    MCFOLD bool isFuseLit() const;
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool requiresTntExplodeGameRuleEnabled() const;
+    MCFOLD bool requiresTntExplodeGameRuleEnabled() const;
 
-    MCAPI void setAllowUnderwater(bool allow);
+    MCFOLD void setAllowUnderwater(bool allow);
 
-    MCAPI void setFuseLength(int fuseLength);
+    MCFOLD void setFuseLength(int fuseLength);
 
     MCAPI void setTntExpodeGameRuleRequired();
     // NOLINTEND

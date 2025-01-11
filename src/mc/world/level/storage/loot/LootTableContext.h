@@ -67,7 +67,7 @@ public:
 
         MCAPI ::LootTableContext::Builder& withThisEntity(::Actor* actor);
 
-        MCAPI ::LootTableContext::Builder& withTool(::ItemStack const* tool);
+        MCFOLD ::LootTableContext::Builder& withTool(::ItemStack const* tool);
 
         MCAPI ~Builder();
         // NOLINTEND
@@ -122,7 +122,7 @@ public:
         ::ItemStack const*         tool
     );
 
-    MCAPI ::Level* getLevel() const;
+    MCFOLD ::Level* getLevel() const;
 
     MCAPI void removeVisitedTable(::LootTable const* table);
 

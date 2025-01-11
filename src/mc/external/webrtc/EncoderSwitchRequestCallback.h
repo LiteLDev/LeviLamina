@@ -11,12 +11,6 @@ namespace webrtc {
 
 class EncoderSwitchRequestCallback {
 public:
-    // prevent constructor by default
-    EncoderSwitchRequestCallback& operator=(EncoderSwitchRequestCallback const&);
-    EncoderSwitchRequestCallback(EncoderSwitchRequestCallback const&);
-    EncoderSwitchRequestCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI ExpiringTick(::Tick currentTick, ushort ticksUntilExpire);
 
-    MCAPI ::Tick getExpireAtTick() const;
+    MCFOLD ::Tick getExpireAtTick() const;
 
     MCAPI float getNormalizedElapsedTime(::Tick const& currentTick) const;
 

@@ -12,12 +12,6 @@ namespace Scripting {
 
 class ILifetimeScopeListener {
 public:
-    // prevent constructor by default
-    ILifetimeScopeListener& operator=(ILifetimeScopeListener const&);
-    ILifetimeScopeListener(ILifetimeScopeListener const&);
-    ILifetimeScopeListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -55,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

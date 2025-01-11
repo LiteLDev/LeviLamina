@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Item const& getItem() const;
+    MCFOLD ::Item const& getItem() const;
 
     MCAPI ::std::string getName() const;
 

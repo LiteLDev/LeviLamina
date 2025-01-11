@@ -9,12 +9,6 @@
 
 class ClientInstanceEventHandler : public ::GameplayHandler {
 public:
-    // prevent constructor by default
-    ClientInstanceEventHandler& operator=(ClientInstanceEventHandler const&);
-    ClientInstanceEventHandler(ClientInstanceEventHandler const&);
-    ClientInstanceEventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

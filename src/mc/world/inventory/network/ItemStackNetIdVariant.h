@@ -39,7 +39,7 @@ public:
 
     MCAPI bool isValid() const;
 
-    MCAPI ::ItemStackNetIdVariant& operator=(::ItemStackNetIdVariant const&);
+    MCFOLD ::ItemStackNetIdVariant& operator=(::ItemStackNetIdVariant const&);
 
     MCAPI ::ItemStackNetIdVariant& operator=(::ItemStackNetId const& serverNetId);
 
@@ -61,9 +61,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::ItemStackNetIdVariant const&);
+    MCFOLD void* $ctor(::ItemStackNetIdVariant const&);
 
     MCAPI void* $ctor(::ItemStackNetIdVariant&&);
     // NOLINTEND

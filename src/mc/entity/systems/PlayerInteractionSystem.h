@@ -19,12 +19,6 @@ public:
     // PlayerInteractionSystem inner types define
     struct InteractionMappingBase {
     public:
-        // prevent constructor by default
-        InteractionMappingBase& operator=(InteractionMappingBase const&);
-        InteractionMappingBase(InteractionMappingBase const&);
-        InteractionMappingBase();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -43,7 +37,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
+        MCFOLD bool $getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
         // NOLINTEND
 
     public:

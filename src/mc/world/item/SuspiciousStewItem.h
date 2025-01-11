@@ -82,7 +82,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
     // NOLINTEND
 
 public:

@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class InvalidMandatoryParameterCause {
 public:
-    // prevent constructor by default
-    InvalidMandatoryParameterCause& operator=(InvalidMandatoryParameterCause const&);
-    InvalidMandatoryParameterCause(InvalidMandatoryParameterCause const&);
-    InvalidMandatoryParameterCause();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::InvalidMandatoryParameterCause> Parse(::rtc::ArrayView<uchar const>);

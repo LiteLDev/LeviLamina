@@ -7,12 +7,6 @@
 
 class GrindstoneContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    GrindstoneContainerScreenValidator& operator=(GrindstoneContainerScreenValidator const&);
-    GrindstoneContainerScreenValidator(GrindstoneContainerScreenValidator const&);
-    GrindstoneContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

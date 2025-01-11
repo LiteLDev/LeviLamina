@@ -9,12 +9,6 @@ class ScriptPluginManagerResult;
 
 class IScriptTelemetryLogger {
 public:
-    // prevent constructor by default
-    IScriptTelemetryLogger& operator=(IScriptTelemetryLogger const&);
-    IScriptTelemetryLogger(IScriptTelemetryLogger const&);
-    IScriptTelemetryLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

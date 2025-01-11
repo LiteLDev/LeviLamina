@@ -28,12 +28,6 @@ struct VehicleComponent;
 
 class DimensionTransitionSystem {
 public:
-    // prevent constructor by default
-    DimensionTransitionSystem& operator=(DimensionTransitionSystem const&);
-    DimensionTransitionSystem(DimensionTransitionSystem const&);
-    DimensionTransitionSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickPortalTransition(

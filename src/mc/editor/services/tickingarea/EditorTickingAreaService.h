@@ -19,12 +19,6 @@ namespace Editor::Services {
 class EditorTickingAreaService : public ::Editor::Services::IEditorService,
                                  public ::Editor::Services::EditorTickingAreaServiceProvider {
 public:
-    // prevent constructor by default
-    EditorTickingAreaService& operator=(EditorTickingAreaService const&);
-    EditorTickingAreaService(EditorTickingAreaService const&);
-    EditorTickingAreaService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -82,7 +76,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $ready();
+    MCFOLD ::Scripting::Result<void> $ready();
 
     MCAPI ::Scripting::Result<void> $quit();
 

@@ -46,9 +46,9 @@ public:
 
     MCAPI void _destroy();
 
-    MCAPI ::Scripting::ContextId getContextId() const;
+    MCFOLD ::Scripting::ContextId getContextId() const;
 
-    MCAPI ::Scripting::IRuntime* getRuntime();
+    MCFOLD ::Scripting::IRuntime* getRuntime();
 
     MCAPI ::Scripting::WeakLifetimeScope getWeakLifetimeScope() const;
 

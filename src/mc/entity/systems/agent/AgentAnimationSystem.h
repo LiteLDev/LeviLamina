@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class AgentAnimationSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgentAnimationSystem& operator=(AgentAnimationSystem const&);
-    AgentAnimationSystem(AgentAnimationSystem const&);
-    AgentAnimationSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

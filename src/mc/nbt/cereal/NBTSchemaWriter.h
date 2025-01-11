@@ -42,7 +42,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -138,23 +138,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $write(bool value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(bool value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(char value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(char value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(uchar value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(uchar value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(short value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(short value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(ushort value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(ushort value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(int value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(int value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(uint value, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(uint value, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(int64, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(int64, ::cereal::PropertyReader const&);
 
-    MCAPI bool $write(uint64, ::cereal::PropertyReader const&);
+    MCFOLD bool $write(uint64, ::cereal::PropertyReader const&);
 
     MCAPI bool $write(float value, ::cereal::PropertyReader const&);
 

@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     MCAPI ItemEventCoordinator();
 
-    MCAPI ::ItemGameplayHandler& getItemGameplayHandler();
+    MCFOLD ::ItemGameplayHandler& getItemGameplayHandler();
 
     MCAPI void onItemModifiedActor(::ItemStackBase const& item, ::Actor const& modifiedActor);
 

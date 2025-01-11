@@ -19,12 +19,6 @@ public:
     // FlushingIOController inner types define
     class Flusher {
     public:
-        // prevent constructor by default
-        Flusher& operator=(Flusher const&);
-        Flusher(Flusher const&);
-        Flusher();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

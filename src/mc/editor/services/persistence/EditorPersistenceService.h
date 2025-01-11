@@ -135,7 +135,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
     MCAPI ::Scripting::Result<void> $quit();
 
@@ -143,7 +143,7 @@ public:
 
     MCAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    MCFOLD ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func);
 
     MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForPersistDataRemoved(
@@ -168,11 +168,11 @@ public:
     MCAPI ::Scripting::Result<::std::vector<::HashedString>, ::Scripting::Error>
     $getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCAPI void $_removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
+    MCFOLD void $_removePersistData(::HashedString const&, ::Editor::Services::PersistentDataType const);
 
-    MCAPI void $_tick(::Editor::ServiceProviderCollection&);
+    MCFOLD void $_tick(::Editor::ServiceProviderCollection&);
 
-    MCAPI ::std::unique_ptr<::cereal::ReflectionCtx>& $getCerealContext();
+    MCFOLD ::std::unique_ptr<::cereal::ReflectionCtx>& $getCerealContext();
     // NOLINTEND
 
 public:

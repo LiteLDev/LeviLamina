@@ -4,12 +4,6 @@
 
 namespace OreUI {
 
-class IResourceAllowList {
-public:
-    // prevent constructor by default
-    IResourceAllowList& operator=(IResourceAllowList const&);
-    IResourceAllowList(IResourceAllowList const&);
-    IResourceAllowList();
-};
+class IResourceAllowList {};
 
 } // namespace OreUI

@@ -437,12 +437,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IMinecraftEventing& operator=(IMinecraftEventing const&);
-    IMinecraftEventing(IMinecraftEventing const&);
-    IMinecraftEventing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -1744,7 +1738,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updatePlayerUndergroundStatus(::Player* player, bool isUnderground);
+    MCFOLD void $updatePlayerUndergroundStatus(::Player* player, bool isUnderground);
     // NOLINTEND
 
 public:

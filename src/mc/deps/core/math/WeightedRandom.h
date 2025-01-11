@@ -4,12 +4,6 @@
 
 namespace Core {
 
-class WeightedRandom {
-public:
-    // prevent constructor by default
-    WeightedRandom& operator=(WeightedRandom const&);
-    WeightedRandom(WeightedRandom const&);
-    WeightedRandom();
-};
+class WeightedRandom {};
 
 } // namespace Core

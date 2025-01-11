@@ -35,12 +35,6 @@ namespace Scripting {
 
 class IRuntime {
 public:
-    // prevent constructor by default
-    IRuntime& operator=(IRuntime const&);
-    IRuntime(IRuntime const&);
-    IRuntime();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -130,9 +124,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::IRuntimeMetadata* $getMetadata() const;
+    MCFOLD ::Scripting::IRuntimeMetadata* $getMetadata() const;
 
-    MCAPI void $moveToThread();
+    MCFOLD void $moveToThread();
     // NOLINTEND
 };
 

@@ -47,7 +47,7 @@ public:
 
     MCAPI explicit ItemStackResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
 
-    MCAPI ::std::vector<::ItemStackResponseInfo> const& getResponses() const;
+    MCFOLD ::std::vector<::ItemStackResponseInfo> const& getResponses() const;
     // NOLINTEND
 
 public:

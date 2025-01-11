@@ -18,12 +18,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemCooldownComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
-    // prevent constructor by default
-    ScriptItemCooldownComponent& operator=(ScriptItemCooldownComponent const&);
-    ScriptItemCooldownComponent(ScriptItemCooldownComponent const&);
-    ScriptItemCooldownComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

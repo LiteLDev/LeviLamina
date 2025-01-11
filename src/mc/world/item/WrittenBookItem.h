@@ -120,7 +120,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
-    MCAPI bool $requiresInteract() const;
+    MCFOLD bool $requiresInteract() const;
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
 
@@ -135,7 +135,7 @@ public:
 
     MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
 
-    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
     // NOLINTEND
 
 public:

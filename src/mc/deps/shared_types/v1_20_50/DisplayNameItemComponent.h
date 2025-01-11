@@ -24,10 +24,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::DisplayNameItemComponent&
     operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::DisplayNameItemComponent&
     operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent const&);
     // NOLINTEND
 

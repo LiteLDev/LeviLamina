@@ -16,12 +16,6 @@ class Random;
 
 class LiquidBlockStatic : public ::LiquidBlock {
 public:
-    // prevent constructor by default
-    LiquidBlockStatic& operator=(LiquidBlockStatic const&);
-    LiquidBlockStatic(LiquidBlockStatic const&);
-    LiquidBlockStatic();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87
@@ -65,7 +59,7 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
+    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
     // NOLINTEND
 
 public:

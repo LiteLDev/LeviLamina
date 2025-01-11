@@ -28,17 +28,17 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool isInRaid();
+    MCFOLD bool isInRaid();
 
-    MCAPI bool isReactingToBell();
+    MCFOLD bool isReactingToBell();
 
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setInRaid();
+    MCFOLD void setInRaid();
 
     MCAPI void setNotHiding();
 
-    MCAPI void setReactingToBell();
+    MCFOLD void setReactingToBell();
     // NOLINTEND
 
 public:

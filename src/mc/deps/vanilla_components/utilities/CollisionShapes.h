@@ -60,7 +60,7 @@ public:
 
     MCAPI void reserve(uint64 size);
 
-    MCAPI uint64 size() const;
+    MCFOLD uint64 size() const;
 
     MCAPI ~CollisionShapes();
     // NOLINTEND
@@ -74,6 +74,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockWaterContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent {
 public:
-    // prevent constructor by default
-    ScriptBlockWaterContainerComponent& operator=(ScriptBlockWaterContainerComponent const&);
-    ScriptBlockWaterContainerComponent(ScriptBlockWaterContainerComponent const&);
-    ScriptBlockWaterContainerComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

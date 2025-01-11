@@ -16,12 +16,6 @@ namespace br::spawn {
 
 class NoRestrictions : public ::br::spawn::PlacementType {
 public:
-    // prevent constructor by default
-    NoRestrictions& operator=(NoRestrictions const&);
-    NoRestrictions(NoRestrictions const&);
-    NoRestrictions();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

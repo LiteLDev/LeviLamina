@@ -17,12 +17,6 @@ struct VariantParameterList;
 
 class Balloon : public ::PredictableProjectile {
 public:
-    // prevent constructor by default
-    Balloon& operator=(Balloon const&);
-    Balloon(Balloon const&);
-    Balloon();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -69,7 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

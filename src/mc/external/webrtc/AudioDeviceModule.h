@@ -58,12 +58,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    AudioDeviceModule& operator=(AudioDeviceModule const&);
-    AudioDeviceModule(AudioDeviceModule const&);
-    AudioDeviceModule();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BurnsInDaylightSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BurnsInDaylightSystem& operator=(BurnsInDaylightSystem const&);
-    BurnsInDaylightSystem(BurnsInDaylightSystem const&);
-    BurnsInDaylightSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

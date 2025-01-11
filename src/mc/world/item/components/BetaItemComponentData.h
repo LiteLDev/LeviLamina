@@ -9,12 +9,6 @@ namespace Puv { class VersionRange; }
 
 struct BetaItemComponentData {
 public:
-    // prevent constructor by default
-    BetaItemComponentData& operator=(BetaItemComponentData const&);
-    BetaItemComponentData(BetaItemComponentData const&);
-    BetaItemComponentData();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();

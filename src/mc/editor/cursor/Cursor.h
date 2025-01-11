@@ -58,7 +58,7 @@ public:
     // NOLINTBEGIN
     MCAPI Cursor();
 
-    MCAPI ::std::optional<::Editor::Cursor::Position>& _getBlockPosition();
+    MCFOLD ::std::optional<::Editor::Cursor::Position>& _getBlockPosition();
 
     MCAPI ::Editor::Cursor::AttachmentProperties getAttachmentProperties() const;
 

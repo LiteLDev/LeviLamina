@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI ResourcePackClientResponsePacket();
 
-    MCAPI ::std::set<::std::string> const& getDownloadingPacks() const;
+    MCFOLD ::std::set<::std::string> const& getDownloadingPacks() const;
 
     MCAPI bool isResponse(::ResourcePackResponse haveThis) const;
     // NOLINTEND
@@ -66,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCFOLD ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string $getName() const;
 

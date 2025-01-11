@@ -23,13 +23,7 @@ public:
     // clang-format on
 
     // ResourceLoadManager inner types define
-    struct LoadOrder {
-    public:
-        // prevent constructor by default
-        LoadOrder& operator=(LoadOrder const&);
-        LoadOrder(LoadOrder const&);
-        LoadOrder();
-    };
+    struct LoadOrder {};
 
     class TaskGroupState {
     public:

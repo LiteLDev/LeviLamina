@@ -14,11 +14,6 @@ namespace Editor::ScriptModule {
 
 class ScriptGameOptions : public ::Editor::GameOptions {
 public:
-    // prevent constructor by default
-    ScriptGameOptions& operator=(ScriptGameOptions const&);
-    ScriptGameOptions();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptGameOptions(::Editor::ScriptModule::ScriptGameOptions&&);
@@ -47,13 +42,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptGameOptions&&);
 
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptGameOptions const&);
+    MCFOLD void* $ctor(::Editor::ScriptModule::ScriptGameOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

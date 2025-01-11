@@ -6,12 +6,6 @@ namespace webrtc {
 
 class FecControllerOverride {
 public:
-    // prevent constructor by default
-    FecControllerOverride& operator=(FecControllerOverride const&);
-    FecControllerOverride(FecControllerOverride const&);
-    FecControllerOverride();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

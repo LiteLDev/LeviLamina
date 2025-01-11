@@ -14,12 +14,6 @@ namespace Json { class Value; }
 
 class ThrownPotionEffectSubcomponent : public ::SplashPotionEffectSubcomponent {
 public:
-    // prevent constructor by default
-    ThrownPotionEffectSubcomponent& operator=(ThrownPotionEffectSubcomponent const&);
-    ThrownPotionEffectSubcomponent(ThrownPotionEffectSubcomponent const&);
-    ThrownPotionEffectSubcomponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -44,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $writetoJSON(::Json::Value&) const;
+    MCFOLD void $writetoJSON(::Json::Value&) const;
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 

@@ -9,12 +9,6 @@ namespace NoiseUtils {
 
 class DoublesForFloatsRandom : public ::NoiseUtils::DelegatingRandom {
 public:
-    // prevent constructor by default
-    DoublesForFloatsRandom& operator=(DoublesForFloatsRandom const&);
-    DoublesForFloatsRandom(DoublesForFloatsRandom const&);
-    DoublesForFloatsRandom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
@@ -27,7 +21,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

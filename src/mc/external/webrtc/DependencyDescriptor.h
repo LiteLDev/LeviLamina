@@ -6,12 +6,6 @@ namespace webrtc {
 
 struct DependencyDescriptor {
 public:
-    // prevent constructor by default
-    DependencyDescriptor& operator=(DependencyDescriptor const&);
-    DependencyDescriptor(DependencyDescriptor const&);
-    DependencyDescriptor();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~DependencyDescriptor();

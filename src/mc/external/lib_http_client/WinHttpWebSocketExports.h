@@ -4,12 +4,6 @@
 
 namespace xbox::httpclient {
 
-struct WinHttpWebSocketExports {
-public:
-    // prevent constructor by default
-    WinHttpWebSocketExports& operator=(WinHttpWebSocketExports const&);
-    WinHttpWebSocketExports(WinHttpWebSocketExports const&);
-    WinHttpWebSocketExports();
-};
+struct WinHttpWebSocketExports {};
 
 } // namespace xbox::httpclient

@@ -18,12 +18,6 @@ namespace CodeBuilder {
 
 class IClient : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IClient& operator=(IClient const&);
-    IClient(IClient const&);
-    IClient();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -48,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

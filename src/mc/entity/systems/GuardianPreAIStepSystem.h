@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class GuardianPreAIStepSystem {
 public:
-    // prevent constructor by default
-    GuardianPreAIStepSystem& operator=(GuardianPreAIStepSystem const&);
-    GuardianPreAIStepSystem(GuardianPreAIStepSystem const&);
-    GuardianPreAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

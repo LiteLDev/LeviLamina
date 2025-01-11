@@ -41,11 +41,11 @@ public:
 
     MCAPI void addWorldTemplatePackSource(::WorldTemplatePackSource& source);
 
-    MCAPI ::WorldTemplatePackManifest const& getPackManifest() const;
+    MCFOLD ::WorldTemplatePackManifest const& getPackManifest() const;
 
-    MCAPI ::std::string const& getWorldName() const;
+    MCFOLD ::std::string const& getWorldName() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const& getWorldPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& getWorldPath() const;
 
     MCAPI bool isVirtualCatalogItem() const;
 

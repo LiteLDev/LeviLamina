@@ -24,10 +24,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
     operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
     operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent const&);
 
     MCAPI ~HoverTextColorItemComponent();
@@ -42,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

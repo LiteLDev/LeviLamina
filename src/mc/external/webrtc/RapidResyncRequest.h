@@ -11,12 +11,6 @@ namespace webrtc::rtcp {
 
 class RapidResyncRequest {
 public:
-    // prevent constructor by default
-    RapidResyncRequest& operator=(RapidResyncRequest const&);
-    RapidResyncRequest(RapidResyncRequest const&);
-    RapidResyncRequest();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Parse(::webrtc::rtcp::CommonHeader const&);

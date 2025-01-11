@@ -118,35 +118,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getRequestId() const;
+    MCFOLD ::std::string const& $getRequestId() const;
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::BlockPos $getBlockPosition() const;
+    MCFOLD ::BlockPos $getBlockPosition() const;
 
-    MCAPI ::Vec3 $getWorldPosition() const;
+    MCFOLD ::Vec3 $getWorldPosition() const;
 
-    MCAPI ::std::optional<::Vec2> $getRotation() const;
+    MCFOLD ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI ::Level* $getLevel() const;
+    MCFOLD ::Level* $getLevel() const;
 
     MCAPI ::Dimension* $getDimension() const;
 
-    MCAPI ::Actor* $getEntity() const;
+    MCFOLD ::Actor* $getEntity() const;
 
-    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
 
-    MCAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
     MCAPI void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
 
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
     // NOLINTEND
 
 public:

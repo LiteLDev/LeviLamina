@@ -147,12 +147,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    PillagerOutpostPieces& operator=(PillagerOutpostPieces const&);
-    PillagerOutpostPieces(PillagerOutpostPieces const&);
-    PillagerOutpostPieces();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _addPiece(

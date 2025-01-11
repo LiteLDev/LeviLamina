@@ -10,12 +10,6 @@ class CompoundTag;
 
 class ICommandOriginLoader {
 public:
-    // prevent constructor by default
-    ICommandOriginLoader& operator=(ICommandOriginLoader const&);
-    ICommandOriginLoader(ICommandOriginLoader const&);
-    ICommandOriginLoader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,12 +13,6 @@ class LevelChunk;
 
 class EmptyChunkSource : public ::ChunkSource {
 public:
-    // prevent constructor by default
-    EmptyChunkSource& operator=(EmptyChunkSource const&);
-    EmptyChunkSource(EmptyChunkSource const&);
-    EmptyChunkSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11

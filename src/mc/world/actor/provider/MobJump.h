@@ -20,7 +20,7 @@ MCAPI void setJumpPendingScale(::EntityContext& provider, float jumpPendingScale
 
 MCAPI void setJumpVelRedux(::EntityContext& provider, bool jumpStartVelRedux);
 
-MCAPI void setJumping(::EntityContext& provider, bool jumping);
+MCFOLD void setJumping(::EntityContext& provider, bool jumping);
 
 MCAPI void setNoJumpDelay(::EntityContext& provider, int noJumpDelay);
 // NOLINTEND

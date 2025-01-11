@@ -84,34 +84,34 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $load(
+    MCFOLD bool $load(
         ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensions
     ) const;
 
-    MCAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
+    MCFOLD bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
-    MCAPI bool $isInStreamableLocation(
+    MCFOLD bool $isInStreamableLocation(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
-    MCAPI ::Core::PathBuffer<::std::string>
+    MCFOLD ::Core::PathBuffer<::std::string>
     $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation
+    MCFOLD ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation
     ) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
+    MCFOLD ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensions
     ) const;

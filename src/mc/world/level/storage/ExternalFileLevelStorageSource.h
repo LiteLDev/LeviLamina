@@ -190,7 +190,7 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> const
     $getPathToLevelInfo(::std::string const& levelId, bool forceInfo) const;
 
-    MCAPI bool $isBetaRetailLevel(::std::string const& levelId) const;
+    MCFOLD bool $isBetaRetailLevel(::std::string const& levelId) const;
     // NOLINTEND
 
 public:

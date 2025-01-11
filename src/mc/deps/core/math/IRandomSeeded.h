@@ -9,12 +9,6 @@ struct Seed128Bit;
 
 class IRandomSeeded {
 public:
-    // prevent constructor by default
-    IRandomSeeded& operator=(IRandomSeeded const&);
-    IRandomSeeded(IRandomSeeded const&);
-    IRandomSeeded();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

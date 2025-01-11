@@ -52,7 +52,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -71,7 +71,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BaseGameVersion const& getRequiredBaseGameVersion() const;
+        MCFOLD ::BaseGameVersion const& getRequiredBaseGameVersion() const;
 
         MCAPI ::Block const* operator()(int data) const;
 

@@ -4,12 +4,6 @@
 
 namespace OreUI {
 
-class SceneProvider {
-public:
-    // prevent constructor by default
-    SceneProvider& operator=(SceneProvider const&);
-    SceneProvider(SceneProvider const&);
-    SceneProvider();
-};
+class SceneProvider {};
 
 } // namespace OreUI

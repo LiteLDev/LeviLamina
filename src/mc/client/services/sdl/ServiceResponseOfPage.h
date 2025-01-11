@@ -4,12 +4,6 @@
 
 namespace SDL {
 
-struct ServiceResponseOfPage {
-public:
-    // prevent constructor by default
-    ServiceResponseOfPage& operator=(ServiceResponseOfPage const&);
-    ServiceResponseOfPage(ServiceResponseOfPage const&);
-    ServiceResponseOfPage();
-};
+struct ServiceResponseOfPage {};
 
 } // namespace SDL

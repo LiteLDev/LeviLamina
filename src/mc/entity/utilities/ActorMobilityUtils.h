@@ -103,7 +103,7 @@ MCAPI float getBrightness(
     ::ViewT<::StrictEntityContext, ::Include<::LavaSlimeFlagComponent>> lavaSlimeView
 );
 
-MCAPI float getJumpEffectAmplifierValue(::std::vector<::MobEffectInstance> const& mobEffects);
+MCFOLD float getJumpEffectAmplifierValue(::std::vector<::MobEffectInstance> const& mobEffects);
 
 MCAPI float getJumpEffectAmplifierValue(::MobEffectsComponent const&);
 

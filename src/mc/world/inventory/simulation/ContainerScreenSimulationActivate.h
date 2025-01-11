@@ -12,12 +12,6 @@ struct ContainerScreenActionResult;
 
 class ContainerScreenSimulationActivate : public ::ContainerScreenSimulation {
 public:
-    // prevent constructor by default
-    ContainerScreenSimulationActivate& operator=(ContainerScreenSimulationActivate const&);
-    ContainerScreenSimulationActivate(ContainerScreenSimulationActivate const&);
-    ContainerScreenSimulationActivate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 19

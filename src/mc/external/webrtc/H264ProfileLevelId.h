@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-struct H264ProfileLevelId {
-public:
-    // prevent constructor by default
-    H264ProfileLevelId& operator=(H264ProfileLevelId const&);
-    H264ProfileLevelId(H264ProfileLevelId const&);
-    H264ProfileLevelId();
-};
+struct H264ProfileLevelId {};
 
 } // namespace webrtc

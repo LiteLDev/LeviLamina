@@ -7,12 +7,6 @@
 
 namespace OperationNodeZooms {
 
-class Zoom2xFuzzy : public ::OperationNodeZooms::ZoomBase<1, 0> {
-public:
-    // prevent constructor by default
-    Zoom2xFuzzy& operator=(Zoom2xFuzzy const&);
-    Zoom2xFuzzy(Zoom2xFuzzy const&);
-    Zoom2xFuzzy();
-};
+class Zoom2xFuzzy : public ::OperationNodeZooms::ZoomBase<1, 0> {};
 
 } // namespace OperationNodeZooms

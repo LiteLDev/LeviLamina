@@ -17,27 +17,9 @@ public:
     // clang-format on
 
     // RtpPacketizerAv1 inner types define
-    struct Obu {
-    public:
-        // prevent constructor by default
-        Obu& operator=(Obu const&);
-        Obu(Obu const&);
-        Obu();
-    };
+    struct Obu {};
 
-    struct Packet {
-    public:
-        // prevent constructor by default
-        Packet& operator=(Packet const&);
-        Packet(Packet const&);
-        Packet();
-    };
-
-public:
-    // prevent constructor by default
-    RtpPacketizerAv1& operator=(RtpPacketizerAv1 const&);
-    RtpPacketizerAv1(RtpPacketizerAv1 const&);
-    RtpPacketizerAv1();
+    struct Packet {};
 
 public:
     // member functions

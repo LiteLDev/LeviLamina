@@ -14,12 +14,6 @@ struct GroupSizeComponent;
 
 class GroupSizeSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    GroupSizeSystem& operator=(GroupSizeSystem const&);
-    GroupSizeSystem(GroupSizeSystem const&);
-    GroupSizeSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

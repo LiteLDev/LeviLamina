@@ -14,12 +14,6 @@ namespace Editor::Widgets {
 
 class SplineHelperLine : public ::Editor::Widgets::SplineHelperBase {
 public:
-    // prevent constructor by default
-    SplineHelperLine& operator=(SplineHelperLine const&);
-    SplineHelperLine(SplineHelperLine const&);
-    SplineHelperLine();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

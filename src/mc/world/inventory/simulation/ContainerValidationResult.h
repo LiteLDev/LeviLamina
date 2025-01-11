@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ContainerValidationResult(::ContainerValidationOutcome outcome);
 
-    MCAPI bool isSuccess() const;
+    MCFOLD bool isSuccess() const;
 
     MCAPI ::ContainerValidationOperation const* tryGetOperation(::ContainerValidationOperationType type) const;
 
@@ -47,6 +47,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

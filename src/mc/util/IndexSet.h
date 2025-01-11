@@ -25,7 +25,7 @@ public:
 
     MCAPI bool contains(uint64 index) const;
 
-    MCAPI ::std::vector<uint64> const& getPacked() const;
+    MCFOLD ::std::vector<uint64> const& getPacked() const;
 
     MCAPI void insert(uint64 index);
 
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::IndexSet const& other);
 
@@ -49,6 +49,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

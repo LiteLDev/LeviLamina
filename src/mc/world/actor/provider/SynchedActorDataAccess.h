@@ -85,13 +85,13 @@ MCAPI void setHorseType(::EntityContext& entity, int type);
 
 MCAPI void setJumpDuration(::EntityContext& entity, schar jumpDuration);
 
-MCAPI void setJumpDuration(
+MCFOLD void setJumpDuration(
     ::ActorDataJumpDurationComponent& jumpDurationComponent,
     ::ActorDataDirtyFlagsComponent&   dirtyFlagsComponent,
     schar                             jumpDuration
 );
 
-MCAPI void setSeatOffset(
+MCFOLD void setSeatOffset(
     ::ActorDataSeatOffsetComponent& seatOffsetComponent,
     ::ActorDataDirtyFlagsComponent& dirtyFlagsComponent,
     ::Vec3 const&                   seatOffset
@@ -103,13 +103,13 @@ MCAPI void setValue(
     ::std::array<float, 3> const&    values
 );
 
-MCAPI void setValue(
+MCFOLD void setValue(
     ::ActorDataJumpDurationComponent& jumpDurationComponent,
     ::ActorDataDirtyFlagsComponent&   dirtyFlagsComponent,
     schar                             jumpDuration
 );
 
-MCAPI void setValue(
+MCFOLD void setValue(
     ::ActorDataSeatOffsetComponent& seatOffsetComponent,
     ::ActorDataDirtyFlagsComponent& dirtyFlagsComponent,
     ::Vec3 const&                   seatOffset

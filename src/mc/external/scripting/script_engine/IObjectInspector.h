@@ -12,12 +12,6 @@ namespace Scripting {
 
 class IObjectInspector {
 public:
-    // prevent constructor by default
-    IObjectInspector& operator=(IObjectInspector const&);
-    IObjectInspector(IObjectInspector const&);
-    IObjectInspector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

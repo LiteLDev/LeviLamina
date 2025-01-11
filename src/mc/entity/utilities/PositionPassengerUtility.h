@@ -11,12 +11,6 @@ struct ActorDataSeatOffsetComponent;
 
 struct PositionPassengerUtility {
 public:
-    // prevent constructor by default
-    PositionPassengerUtility& operator=(PositionPassengerUtility const&);
-    PositionPassengerUtility(PositionPassengerUtility const&);
-    PositionPassengerUtility();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 getNewPassengerPosition(

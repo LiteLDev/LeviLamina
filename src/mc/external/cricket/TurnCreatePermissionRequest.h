@@ -13,12 +13,6 @@ namespace cricket {
 
 class TurnCreatePermissionRequest {
 public:
-    // prevent constructor by default
-    TurnCreatePermissionRequest& operator=(TurnCreatePermissionRequest const&);
-    TurnCreatePermissionRequest(TurnCreatePermissionRequest const&);
-    TurnCreatePermissionRequest();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI TurnCreatePermissionRequest(::cricket::TurnPort*, ::cricket::TurnEntry*, ::rtc::SocketAddress const&);

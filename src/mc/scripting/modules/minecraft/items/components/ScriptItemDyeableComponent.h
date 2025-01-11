@@ -19,12 +19,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemDyeableComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
-    // prevent constructor by default
-    ScriptItemDyeableComponent& operator=(ScriptItemDyeableComponent const&);
-    ScriptItemDyeableComponent(ScriptItemDyeableComponent const&);
-    ScriptItemDyeableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

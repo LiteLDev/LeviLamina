@@ -86,13 +86,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
     MCAPI void $aiStep();
 
     MCAPI bool $isOnFire() const;
 
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI void $normalTick();
     // NOLINTEND

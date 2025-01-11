@@ -14,12 +14,6 @@ class Random;
 
 class WaterlilyFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    WaterlilyFeature& operator=(WaterlilyFeature const&);
-    WaterlilyFeature(WaterlilyFeature const&);
-    WaterlilyFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

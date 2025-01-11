@@ -28,12 +28,6 @@ struct TickingSystemWithInfo;
 
 struct CollidableMobNotifierSystem {
 public:
-    // prevent constructor by default
-    CollidableMobNotifierSystem& operator=(CollidableMobNotifierSystem const&);
-    CollidableMobNotifierSystem(CollidableMobNotifierSystem const&);
-    CollidableMobNotifierSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

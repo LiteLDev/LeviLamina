@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class BlazePreTravelSystem {
 public:
-    // prevent constructor by default
-    BlazePreTravelSystem& operator=(BlazePreTravelSystem const&);
-    BlazePreTravelSystem(BlazePreTravelSystem const&);
-    BlazePreTravelSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doBlazePreTravelSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);

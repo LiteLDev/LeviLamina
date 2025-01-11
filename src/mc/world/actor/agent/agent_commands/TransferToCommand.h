@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $execute();
 
-    MCAPI bool $isDone();
+    MCFOLD bool $isDone();
     // NOLINTEND
 
 public:

@@ -4,12 +4,6 @@
 
 namespace webrtc::H264 {
 
-struct NaluIndex {
-public:
-    // prevent constructor by default
-    NaluIndex& operator=(NaluIndex const&);
-    NaluIndex(NaluIndex const&);
-    NaluIndex();
-};
+struct NaluIndex {};
 
 } // namespace webrtc::H264

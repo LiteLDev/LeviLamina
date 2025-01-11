@@ -16,12 +16,6 @@ struct Tick;
 
 class PlayerTickProxy : public ::IPlayerTickProxy {
 public:
-    // prevent constructor by default
-    PlayerTickProxy& operator=(PlayerTickProxy const&);
-    PlayerTickProxy(PlayerTickProxy const&);
-    PlayerTickProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

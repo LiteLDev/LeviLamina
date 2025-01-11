@@ -14,12 +14,6 @@ class Recipes;
 
 class CreativeContainerController : public ::CraftingContainerController {
 public:
-    // prevent constructor by default
-    CreativeContainerController& operator=(CreativeContainerController const&);
-    CreativeContainerController(CreativeContainerController const&);
-    CreativeContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

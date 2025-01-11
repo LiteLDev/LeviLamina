@@ -13,11 +13,6 @@ class CompoundTag;
 
 class Experiments : public ::ExperimentStorage {
 public:
-    // prevent constructor by default
-    Experiments& operator=(Experiments const&);
-    Experiments(Experiments const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool BetaApis() const;
@@ -70,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

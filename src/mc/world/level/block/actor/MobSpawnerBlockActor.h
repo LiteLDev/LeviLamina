@@ -56,7 +56,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit MobSpawnerBlockActor(::BlockPos const& pos);
 
-    MCAPI ::BaseMobSpawner& getSpawner();
+    MCFOLD ::BaseMobSpawner& getSpawner();
 
     MCAPI void setMob(::BlockSource& region, ::ActorDefinitionIdentifier const& identifier, ::Actor* usingActor);
     // NOLINTEND
@@ -84,9 +84,9 @@ public:
 
     MCAPI void $onRemoved(::BlockSource&);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

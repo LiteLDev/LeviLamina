@@ -24,7 +24,7 @@ public:
 
     MCAPI ScoreboardId(::ScoreboardId const& scoreboardId);
 
-    MCAPI uint64 getHash() const;
+    MCFOLD uint64 getHash() const;
 
     MCAPI ::IdentityDefinition const& getIdentityDef() const;
 
@@ -50,8 +50,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(int64 bytes);
+    MCFOLD void* $ctor(int64 bytes);
 
-    MCAPI void* $ctor(::ScoreboardId const& scoreboardId);
+    MCFOLD void* $ctor(::ScoreboardId const& scoreboardId);
     // NOLINTEND
 };

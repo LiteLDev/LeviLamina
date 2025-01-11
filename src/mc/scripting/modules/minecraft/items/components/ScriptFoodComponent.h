@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptFoodComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
-    // prevent constructor by default
-    ScriptFoodComponent& operator=(ScriptFoodComponent const&);
-    ScriptFoodComponent(ScriptFoodComponent const&);
-    ScriptFoodComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

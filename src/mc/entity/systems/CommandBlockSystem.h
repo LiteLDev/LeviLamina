@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class CommandBlockSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    CommandBlockSystem& operator=(CommandBlockSystem const&);
-    CommandBlockSystem(CommandBlockSystem const&);
-    CommandBlockSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

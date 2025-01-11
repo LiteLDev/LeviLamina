@@ -7,12 +7,6 @@
 
 struct TrustDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    TrustDescription& operator=(TrustDescription const&);
-    TrustDescription(TrustDescription const&);
-    TrustDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

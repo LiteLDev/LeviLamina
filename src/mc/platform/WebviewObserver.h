@@ -14,12 +14,6 @@ namespace Core { class SingleThreadedLock; }
 
 class WebviewObserver : public ::Core::Observer<::WebviewObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    WebviewObserver& operator=(WebviewObserver const&);
-    WebviewObserver(WebviewObserver const&);
-    WebviewObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -56,28 +50,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLoadingBegin();
+    MCFOLD void $onLoadingBegin();
 
-    MCAPI void $onLoadingEnd();
+    MCFOLD void $onLoadingEnd();
 
-    MCAPI void $onError(::WebviewError const&);
+    MCFOLD void $onError(::WebviewError const&);
 
-    MCAPI void $onWebviewChanged();
+    MCFOLD void $onWebviewChanged();
 
-    MCAPI void $onDownloadBegin(::WebviewDownloadInfo const&);
+    MCFOLD void $onDownloadBegin(::WebviewDownloadInfo const&);
 
-    MCAPI void $onDownloadUpdate(::WebviewDownloadInfo const&);
+    MCFOLD void $onDownloadUpdate(::WebviewDownloadInfo const&);
 
-    MCAPI void $onDownloadComplete(::WebviewDownloadInfo const&);
+    MCFOLD void $onDownloadComplete(::WebviewDownloadInfo const&);
 
-    MCAPI void $onDownloadCanceled(::WebviewDownloadInfo const&);
+    MCFOLD void $onDownloadCanceled(::WebviewDownloadInfo const&);
 
-    MCAPI void $onMessageRecieved(::std::string const&);
+    MCFOLD void $onMessageRecieved(::std::string const&);
     // NOLINTEND
 };

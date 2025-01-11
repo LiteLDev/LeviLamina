@@ -12,15 +12,9 @@ namespace JsonUtil { class EmptyClass; }
 
 class BlockClimberDefinition {
 public:
-    // prevent constructor by default
-    BlockClimberDefinition& operator=(BlockClimberDefinition const&);
-    BlockClimberDefinition(BlockClimberDefinition const&);
-    BlockClimberDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockClimberDefinition>>& root
     );
     // NOLINTEND

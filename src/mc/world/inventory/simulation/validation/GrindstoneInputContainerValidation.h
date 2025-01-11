@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class GrindstoneInputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    GrindstoneInputContainerValidation& operator=(GrindstoneInputContainerValidation const&);
-    GrindstoneInputContainerValidation(GrindstoneInputContainerValidation const&);
-    GrindstoneInputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -42,11 +36,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
+    MCFOLD bool
     $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool)
         const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

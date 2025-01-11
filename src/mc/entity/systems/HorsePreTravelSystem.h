@@ -24,12 +24,6 @@ struct VehicleComponent;
 
 class HorsePreTravelSystem {
 public:
-    // prevent constructor by default
-    HorsePreTravelSystem& operator=(HorsePreTravelSystem const&);
-    HorsePreTravelSystem(HorsePreTravelSystem const&);
-    HorsePreTravelSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createHorsePreTravelSystem();

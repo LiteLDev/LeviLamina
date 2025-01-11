@@ -11,12 +11,6 @@ namespace webrtc {
 
 class AbsoluteCaptureTimeExtension {
 public:
-    // prevent constructor by default
-    AbsoluteCaptureTimeExtension& operator=(AbsoluteCaptureTimeExtension const&);
-    AbsoluteCaptureTimeExtension(AbsoluteCaptureTimeExtension const&);
-    AbsoluteCaptureTimeExtension();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uint64 ValueSize(::webrtc::AbsoluteCaptureTime const&);

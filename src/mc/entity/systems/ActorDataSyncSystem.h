@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class ActorDataSyncSystem {
 public:
-    // prevent constructor by default
-    ActorDataSyncSystem& operator=(ActorDataSyncSystem const&);
-    ActorDataSyncSystem(ActorDataSyncSystem const&);
-    ActorDataSyncSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createActorDataSyncSystem();

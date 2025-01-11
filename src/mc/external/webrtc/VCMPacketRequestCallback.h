@@ -6,12 +6,6 @@ namespace webrtc {
 
 class VCMPacketRequestCallback {
 public:
-    // prevent constructor by default
-    VCMPacketRequestCallback& operator=(VCMPacketRequestCallback const&);
-    VCMPacketRequestCallback(VCMPacketRequestCallback const&);
-    VCMPacketRequestCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

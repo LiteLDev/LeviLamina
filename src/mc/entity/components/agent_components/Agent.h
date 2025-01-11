@@ -12,19 +12,7 @@ public:
     // clang-format on
 
     // Agent inner types define
-    class Definition {
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
-    };
-
-public:
-    // prevent constructor by default
-    Agent& operator=(Agent const&);
-    Agent(Agent const&);
-    Agent();
+    class Definition {};
 };
 
 } // namespace AgentComponents

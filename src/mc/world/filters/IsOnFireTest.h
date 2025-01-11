@@ -12,12 +12,6 @@ struct FilterContext;
 
 class IsOnFireTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    IsOnFireTest& operator=(IsOnFireTest const&);
-    IsOnFireTest(IsOnFireTest const&);
-    IsOnFireTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

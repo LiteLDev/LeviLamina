@@ -53,9 +53,9 @@ public:
 
     MCAPI void $alignedRelease(void* ptr);
 
-    MCAPI uint64 $getUsableSize(void* ptr);
+    MCFOLD uint64 $getUsableSize(void* ptr);
 
-    MCAPI void $logCurrentState();
+    MCFOLD void $logCurrentState();
 
     MCAPI void* $_realloc(::gsl::not_null<void*> p, uint64 newSize);
     // NOLINTEND

@@ -14,12 +14,6 @@ class Random;
 
 class PodzolAreaFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    PodzolAreaFeature& operator=(PodzolAreaFeature const&);
-    PodzolAreaFeature(PodzolAreaFeature const&);
-    PodzolAreaFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

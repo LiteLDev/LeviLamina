@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void registerServerInstanceEventHandler(::std::unique_ptr<::ServerInstanceEventHandler>&& handler);
+    MCFOLD void registerServerInstanceEventHandler(::std::unique_ptr<::ServerInstanceEventHandler>&& handler);
 
     MCAPI void sendEvent(::EventRef<::ServerInstanceGameplayEvent<void>> const& event);
 

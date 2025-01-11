@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct PostEntityDismountGameEventSystem {
 public:
-    // prevent constructor by default
-    PostEntityDismountGameEventSystem& operator=(PostEntityDismountGameEventSystem const&);
-    PostEntityDismountGameEventSystem(PostEntityDismountGameEventSystem const&);
-    PostEntityDismountGameEventSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

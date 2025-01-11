@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class DayCycleEventSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    DayCycleEventSystem& operator=(DayCycleEventSystem const&);
-    DayCycleEventSystem(DayCycleEventSystem const&);
-    DayCycleEventSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

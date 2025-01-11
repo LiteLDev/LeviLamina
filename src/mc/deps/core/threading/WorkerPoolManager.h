@@ -16,12 +16,6 @@ namespace Bedrock {
 class WorkerPoolManager : public ::Bedrock::EnableNonOwnerReferences,
                           public ::Bedrock::ImplBase<::Bedrock::WorkerPoolManager> {
 public:
-    // prevent constructor by default
-    WorkerPoolManager& operator=(WorkerPoolManager const&);
-    WorkerPoolManager(WorkerPoolManager const&);
-    WorkerPoolManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -47,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

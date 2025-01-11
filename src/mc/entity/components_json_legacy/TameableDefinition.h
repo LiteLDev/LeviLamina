@@ -33,7 +33,7 @@ public:
 
     MCAPI void addTamingItemByName(::std::string const& name);
 
-    MCAPI void initialize(::EntityContext&, ::TameableComponent& component) const;
+    MCFOLD void initialize(::EntityContext&, ::TameableComponent& component) const;
     // NOLINTEND
 
 public:
@@ -47,6 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

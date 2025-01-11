@@ -14,11 +14,6 @@ namespace BlockDisplayNameVersioning {
 
 class BlockDisplayName11930Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockDisplayName11930Upgrade& operator=(BlockDisplayName11930Upgrade const&);
-    BlockDisplayName11930Upgrade(BlockDisplayName11930Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

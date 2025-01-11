@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class JumpControlSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    JumpControlSystem& operator=(JumpControlSystem const&);
-    JumpControlSystem(JumpControlSystem const&);
-    JumpControlSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

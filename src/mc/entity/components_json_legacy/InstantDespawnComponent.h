@@ -9,12 +9,6 @@ class Actor;
 
 class InstantDespawnComponent {
 public:
-    // prevent constructor by default
-    InstantDespawnComponent& operator=(InstantDespawnComponent const&);
-    InstantDespawnComponent(InstantDespawnComponent const&);
-    InstantDespawnComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onDespawn(::Actor& actor);

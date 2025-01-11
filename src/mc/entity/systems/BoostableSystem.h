@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BoostableSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BoostableSystem& operator=(BoostableSystem const&);
-    BoostableSystem(BoostableSystem const&);
-    BoostableSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -23,12 +23,6 @@ namespace Core::SFAT {
 
 class SfatFileSystemImpl : public ::Core::FileSystemImpl {
 public:
-    // prevent constructor by default
-    SfatFileSystemImpl& operator=(SfatFileSystemImpl const&);
-    SfatFileSystemImpl(SfatFileSystemImpl const&);
-    SfatFileSystemImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class DwellerSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    DwellerSystem& operator=(DwellerSystem const&);
-    DwellerSystem(DwellerSystem const&);
-    DwellerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
     MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND

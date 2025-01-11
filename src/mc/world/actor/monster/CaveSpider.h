@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class CaveSpider : public ::Spider {
 public:
-    // prevent constructor by default
-    CaveSpider& operator=(CaveSpider const&);
-    CaveSpider(CaveSpider const&);
-    CaveSpider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 183

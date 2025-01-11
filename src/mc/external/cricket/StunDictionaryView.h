@@ -17,11 +17,6 @@ namespace cricket {
 
 class StunDictionaryView {
 public:
-    // prevent constructor by default
-    StunDictionaryView& operator=(StunDictionaryView const&);
-    StunDictionaryView(StunDictionaryView const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::RTCErrorOr<::std::pair<::std::unique_ptr<::cricket::StunUInt64Attribute>, ::std::vector<ushort>>>

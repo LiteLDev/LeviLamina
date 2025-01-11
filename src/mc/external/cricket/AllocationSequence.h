@@ -17,12 +17,6 @@ namespace cricket {
 
 class AllocationSequence {
 public:
-    // prevent constructor by default
-    AllocationSequence& operator=(AllocationSequence const&);
-    AllocationSequence(AllocationSequence const&);
-    AllocationSequence();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class TieTagTag {
-public:
-    // prevent constructor by default
-    TieTagTag& operator=(TieTagTag const&);
-    TieTagTag(TieTagTag const&);
-    TieTagTag();
-};
+class TieTagTag {};
 
 } // namespace dcsctp

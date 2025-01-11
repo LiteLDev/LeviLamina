@@ -6,12 +6,6 @@ namespace Bedrock::Http::MethodType {
 
 struct POST {
 public:
-    // prevent constructor by default
-    POST& operator=(POST const&);
-    POST(POST const&);
-    POST();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& name();

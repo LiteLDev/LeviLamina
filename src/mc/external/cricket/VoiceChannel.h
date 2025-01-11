@@ -16,12 +16,6 @@ namespace cricket {
 
 class VoiceChannel {
 public:
-    // prevent constructor by default
-    VoiceChannel& operator=(VoiceChannel const&);
-    VoiceChannel(VoiceChannel const&);
-    VoiceChannel();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

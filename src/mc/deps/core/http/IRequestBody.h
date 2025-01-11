@@ -28,12 +28,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IRequestBody& operator=(IRequestBody const&);
-    IRequestBody(IRequestBody const&);
-    IRequestBody();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -58,7 +52,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -14,12 +14,6 @@ namespace Social {
 
 class XboxLiveUserObserver : public ::Core::Observer<::Social::XboxLiveUserObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    XboxLiveUserObserver& operator=(XboxLiveUserObserver const&);
-    XboxLiveUserObserver(XboxLiveUserObserver const&);
-    XboxLiveUserObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -35,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

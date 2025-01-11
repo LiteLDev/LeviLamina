@@ -14,12 +14,6 @@ class Random;
 
 class IceSpikeFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    IceSpikeFeature& operator=(IceSpikeFeature const&);
-    IceSpikeFeature(IceSpikeFeature const&);
-    IceSpikeFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

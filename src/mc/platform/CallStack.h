@@ -63,7 +63,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -119,7 +119,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&& frame);
 
-    MCAPI void* $ctor(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
+    MCFOLD void* $ctor(::std::vector<::Bedrock::CallStack::FrameWithContext>&& frames);
     // NOLINTEND
 
 public:

@@ -12,11 +12,6 @@ class Random;
 
 class ServerLevelRandom : public ::LevelRandom {
 public:
-    // prevent constructor by default
-    ServerLevelRandom& operator=(ServerLevelRandom const&);
-    ServerLevelRandom(ServerLevelRandom const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

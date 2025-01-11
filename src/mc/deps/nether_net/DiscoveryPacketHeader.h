@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ushort PacketLength() const;
+    MCFOLD ushort PacketLength() const;
 
-    MCAPI ::NetherNet::DiscoveryPacketType PacketType() const;
+    MCFOLD ::NetherNet::DiscoveryPacketType PacketType() const;
     // NOLINTEND
 };
 

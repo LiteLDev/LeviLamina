@@ -4,12 +4,6 @@
 
 namespace OreUI {
 
-class Router {
-public:
-    // prevent constructor by default
-    Router& operator=(Router const&);
-    Router(Router const&);
-    Router();
-};
+class Router {};
 
 } // namespace OreUI

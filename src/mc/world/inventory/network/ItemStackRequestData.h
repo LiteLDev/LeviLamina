@@ -3,31 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/ItemStackRequestActionType.h"
+#include "mc/world/inventory/network/TypedClientNetId.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ItemStackRequestAction;
 class ReadOnlyBinaryStream;
+struct ItemStackRequestIdTag;
 // clang-format on
 
 class ItemStackRequestData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk7b7070;
-    ::ll::UntypedStorage<8, 24> mUnk55835a;
-    ::ll::UntypedStorage<4, 4>  mUnkac5613;
-    ::ll::UntypedStorage<8, 24> mUnk586044;
+    ::ll::TypedStorage<4, 16, ::ItemStackRequestId>                                       mClientRequestId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                               mStringsToFilter;
+    ::ll::TypedStorage<4, 4, ::TextProcessingEventOrigin>                                 mStringsToFilterOrigin;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ItemStackRequestAction>>> mActions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackRequestData& operator=(ItemStackRequestData const&);
-    ItemStackRequestData(ItemStackRequestData const&);
-    ItemStackRequestData();
 
 public:
     // member functions

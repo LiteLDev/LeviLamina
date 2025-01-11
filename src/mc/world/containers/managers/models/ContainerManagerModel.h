@@ -120,7 +120,7 @@ public:
 
     MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
 
-    MCAPI ::Player& getPlayer() const;
+    MCFOLD ::Player& getPlayer() const;
 
     MCAPI void postInit();
     // NOLINTEND
@@ -146,13 +146,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $tick();
+    MCFOLD bool $tick();
 
-    MCAPI ::ContainerID $getContainerId() const;
+    MCFOLD ::ContainerID $getContainerId() const;
 
-    MCAPI void $setContainerId(::ContainerID id);
+    MCFOLD void $setContainerId(::ContainerID id);
 
-    MCAPI ::ContainerType $getContainerType() const;
+    MCFOLD ::ContainerType $getContainerType() const;
 
     MCAPI void $setContainerType(::ContainerType type);
 

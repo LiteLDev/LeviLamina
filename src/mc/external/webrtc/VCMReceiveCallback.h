@@ -17,12 +17,6 @@ namespace webrtc {
 
 class VCMReceiveCallback {
 public:
-    // prevent constructor by default
-    VCMReceiveCallback& operator=(VCMReceiveCallback const&);
-    VCMReceiveCallback(VCMReceiveCallback const&);
-    VCMReceiveCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

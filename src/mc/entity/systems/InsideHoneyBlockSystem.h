@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct InsideHoneyBlockSystem {
 public:
-    // prevent constructor by default
-    InsideHoneyBlockSystem& operator=(InsideHoneyBlockSystem const&);
-    InsideHoneyBlockSystem(InsideHoneyBlockSystem const&);
-    InsideHoneyBlockSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createEventsSystem();

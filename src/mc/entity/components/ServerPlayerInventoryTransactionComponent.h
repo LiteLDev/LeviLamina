@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ServerPlayerInventoryTransactionComponent& operator=(::ServerPlayerInventoryTransactionComponent&&);
+    MCFOLD ::ServerPlayerInventoryTransactionComponent& operator=(::ServerPlayerInventoryTransactionComponent&&);
     // NOLINTEND
 };

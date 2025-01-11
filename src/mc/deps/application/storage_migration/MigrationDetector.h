@@ -13,12 +13,6 @@ namespace Bedrock::StorageMigration {
 
 class MigrationDetector : public ::std::enable_shared_from_this<::Bedrock::StorageMigration::MigrationDetector> {
 public:
-    // prevent constructor by default
-    MigrationDetector& operator=(MigrationDetector const&);
-    MigrationDetector(MigrationDetector const&);
-    MigrationDetector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

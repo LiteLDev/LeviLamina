@@ -51,25 +51,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onSourceCreated(::BlockSource& source);
+    MCFOLD void $onSourceCreated(::BlockSource& source);
 
-    MCAPI void $onSourceDestroyed(::BlockSource& source);
+    MCFOLD void $onSourceDestroyed(::BlockSource& source);
 
-    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
+    MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
     MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
-    MCAPI void $onBlockEntityChanged(::BlockSource& source, ::BlockActor& te);
+    MCFOLD void $onBlockEntityChanged(::BlockSource& source, ::BlockActor& te);
 
-    MCAPI void $onEntityChanged(::BlockSource& source, ::Actor& entity);
+    MCFOLD void $onEntityChanged(::BlockSource& source, ::Actor& entity);
 
-    MCAPI void $onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
+    MCFOLD void $onBlockEvent(::BlockSource& source, int x, int y, int z, int b0, int b1);
     // NOLINTEND
 
 public:

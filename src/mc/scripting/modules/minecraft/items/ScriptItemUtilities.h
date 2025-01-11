@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemUtilities {
 public:
-    // prevent constructor by default
-    ScriptItemUtilities& operator=(ScriptItemUtilities const&);
-    ScriptItemUtilities(ScriptItemUtilities const&);
-    ScriptItemUtilities();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::Result<schar, ::Scripting::Error> getCompostingChanceOrError(::ItemStackBase const& item);

@@ -15,12 +15,6 @@ class Random;
 
 class PillagerOutpostStart : public ::StructureStart {
 public:
-    // prevent constructor by default
-    PillagerOutpostStart& operator=(PillagerOutpostStart const&);
-    PillagerOutpostStart(PillagerOutpostStart const&);
-    PillagerOutpostStart();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

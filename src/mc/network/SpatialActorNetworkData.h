@@ -109,11 +109,11 @@ public:
 
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
 
-    MCAPI void enableAutoSend(bool enable);
+    MCFOLD void enableAutoSend(bool enable);
 
     MCAPI void handleClientData(::MoveActorAbsoluteData const& moveData);
 
-    MCAPI bool isAutoSendEnabled() const;
+    MCFOLD bool isAutoSendEnabled() const;
 
     MCAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
 

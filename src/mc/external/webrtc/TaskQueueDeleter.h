@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-struct TaskQueueDeleter {
-public:
-    // prevent constructor by default
-    TaskQueueDeleter& operator=(TaskQueueDeleter const&);
-    TaskQueueDeleter(TaskQueueDeleter const&);
-    TaskQueueDeleter();
-};
+struct TaskQueueDeleter {};
 
 } // namespace webrtc

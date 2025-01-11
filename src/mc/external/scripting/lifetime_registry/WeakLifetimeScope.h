@@ -35,9 +35,9 @@ public:
 
     MCAPI ::Scripting::ContextId getContextId() const;
 
-    MCAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
+    MCFOLD ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
 
-    MCAPI ::Scripting::WeakLifetimeScope& operator=(::Scripting::WeakLifetimeScope const& rhs);
+    MCFOLD ::Scripting::WeakLifetimeScope& operator=(::Scripting::WeakLifetimeScope const& rhs);
 
     MCAPI ::Scripting::WeakLifetimeScope& operator=(::Scripting::WeakLifetimeScope&& rhs);
 
@@ -53,19 +53,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::Scripting::LifetimeRegistryReference* registryRef);
 
     MCAPI void* $ctor(::Scripting::WeakLifetimeScope&& rhs);
 
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& rhs);
+    MCFOLD void* $ctor(::Scripting::WeakLifetimeScope const& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -10,12 +10,6 @@ namespace cricket {
 
 class VideoContentDescription : public ::cricket::RtpMediaContentDescription {
 public:
-    // prevent constructor by default
-    VideoContentDescription& operator=(VideoContentDescription const&);
-    VideoContentDescription(VideoContentDescription const&);
-    VideoContentDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10

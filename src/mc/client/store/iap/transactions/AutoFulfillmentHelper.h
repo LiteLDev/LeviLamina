@@ -7,12 +7,6 @@
 
 class AutoFulfillmentHelper {
 public:
-    // prevent constructor by default
-    AutoFulfillmentHelper& operator=(AutoFulfillmentHelper const&);
-    AutoFulfillmentHelper(AutoFulfillmentHelper const&);
-    AutoFulfillmentHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

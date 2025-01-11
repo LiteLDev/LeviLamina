@@ -11,12 +11,6 @@ class ItemStack;
 
 struct IGameModeMessenger {
 public:
-    // prevent constructor by default
-    IGameModeMessenger& operator=(IGameModeMessenger const&);
-    IGameModeMessenger(IGameModeMessenger const&);
-    IGameModeMessenger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

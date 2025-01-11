@@ -17,12 +17,6 @@ class PackSourceReport;
 
 class PackSource {
 public:
-    // prevent constructor by default
-    PackSource& operator=(PackSource const&);
-    PackSource(PackSource const&);
-    PackSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -63,9 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::PackOrigin $getPackOrigin() const;
+    MCFOLD ::PackOrigin $getPackOrigin() const;
 
-    MCAPI ::PackType $getPackType() const;
+    MCFOLD ::PackType $getPackType() const;
     // NOLINTEND
 
 public:

@@ -107,12 +107,6 @@ struct ClientInputUpdateSystemInternal
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    ClientInputUpdateSystemInternal& operator=(ClientInputUpdateSystemInternal const&);
-    ClientInputUpdateSystemInternal(ClientInputUpdateSystemInternal const&);
-    ClientInputUpdateSystemInternal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
@@ -178,54 +172,54 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::StrictExecutionContext<
-                     ::Filter<
-                         ::CanStandOnSnowFlagComponent,
-                         ::HasLightweightFamilyFlagComponent,
-                         ::HorseFlagComponent,
-                         ::MobFlagComponent,
-                         ::ParrotFlagComponent,
-                         ::VehicleComponent,
-                         ::CamelFlagComponent,
-                         ::PlayerComponent,
-                         ::LocalPlayerComponent,
-                         ::PlayerInputRequestComponent>,
-                     ::Read<
-                         ::AABBShapeComponent,
-                         ::MovementAbilitiesComponent,
-                         ::ActorTypeComponent,
-                         ::FallDistanceComponent,
-                         ::PassengerComponent,
-                         ::ActorGameTypeComponent,
-                         ::ActorDataFlagComponent,
-                         ::VehicleComponent,
-                         ::ActorRotationComponent,
-                         ::MobBodyRotationComponent,
-                         ::RenderRotationComponent,
-                         ::StandAnimationComponent,
-                         ::OffsetsComponent,
-                         ::VanillaOffsetComponent,
-                         ::PassengerRenderingRidingOffsetComponent,
-                         ::MovementAttributesComponent,
-                         ::DimensionTypeComponent,
-                         ::ImmuneToLavaDragComponent,
-                         ::MobEffectsComponent,
-                         ::SneakingComponent,
-                         ::StateVectorComponent,
-                         ::SubBBsComponent,
-                         ::WasInWaterFlagComponent>,
-                     ::Write<
-                         ::ActorOwnerComponent,
-                         ::ClientInputLockComponent,
-                         ::MoveInputComponent,
-                         ::RawMoveInputComponent,
-                         ::ActorDataFlagComponent,
-                         ::ActorDataDirtyFlagsComponent,
-                         ::VanillaClientGameplayComponent>,
-                     ::AddRemove<>,
-                     ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
-                     ::GlobalWrite<>,
-                     ::EntityFactoryT<>>& context);
+    MCFOLD void $tick(::StrictExecutionContext<
+                      ::Filter<
+                          ::CanStandOnSnowFlagComponent,
+                          ::HasLightweightFamilyFlagComponent,
+                          ::HorseFlagComponent,
+                          ::MobFlagComponent,
+                          ::ParrotFlagComponent,
+                          ::VehicleComponent,
+                          ::CamelFlagComponent,
+                          ::PlayerComponent,
+                          ::LocalPlayerComponent,
+                          ::PlayerInputRequestComponent>,
+                      ::Read<
+                          ::AABBShapeComponent,
+                          ::MovementAbilitiesComponent,
+                          ::ActorTypeComponent,
+                          ::FallDistanceComponent,
+                          ::PassengerComponent,
+                          ::ActorGameTypeComponent,
+                          ::ActorDataFlagComponent,
+                          ::VehicleComponent,
+                          ::ActorRotationComponent,
+                          ::MobBodyRotationComponent,
+                          ::RenderRotationComponent,
+                          ::StandAnimationComponent,
+                          ::OffsetsComponent,
+                          ::VanillaOffsetComponent,
+                          ::PassengerRenderingRidingOffsetComponent,
+                          ::MovementAttributesComponent,
+                          ::DimensionTypeComponent,
+                          ::ImmuneToLavaDragComponent,
+                          ::MobEffectsComponent,
+                          ::SneakingComponent,
+                          ::StateVectorComponent,
+                          ::SubBBsComponent,
+                          ::WasInWaterFlagComponent>,
+                      ::Write<
+                          ::ActorOwnerComponent,
+                          ::ClientInputLockComponent,
+                          ::MoveInputComponent,
+                          ::RawMoveInputComponent,
+                          ::ActorDataFlagComponent,
+                          ::ActorDataDirtyFlagsComponent,
+                          ::VanillaClientGameplayComponent>,
+                      ::AddRemove<>,
+                      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
+                      ::GlobalWrite<>,
+                      ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:

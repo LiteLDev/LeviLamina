@@ -4,12 +4,6 @@
 
 namespace ActorData {
 
-struct ComponentOperationsCommon {
-public:
-    // prevent constructor by default
-    ComponentOperationsCommon& operator=(ComponentOperationsCommon const&);
-    ComponentOperationsCommon(ComponentOperationsCommon const&);
-    ComponentOperationsCommon();
-};
+struct ComponentOperationsCommon {};
 
 } // namespace ActorData

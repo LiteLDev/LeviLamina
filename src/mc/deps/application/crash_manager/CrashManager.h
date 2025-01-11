@@ -17,12 +17,6 @@ namespace Bedrock {
 
 class CrashManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::ImplBase<::Bedrock::CrashManager> {
 public:
-    // prevent constructor by default
-    CrashManager& operator=(CrashManager const&);
-    CrashManager(CrashManager const&);
-    CrashManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

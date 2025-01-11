@@ -94,7 +94,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
+    MCFOLD bool $generateKeyPair(::std::string& privateKey, ::std::string& publicKey);
 
     MCAPI ::std::string $encryptData(
         ::std::string const&               publicKey,

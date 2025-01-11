@@ -21,12 +21,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetComponentGuideSensor : public ::Editor::ScriptModule::ScriptWidgetComponentBase {
 public:
-    // prevent constructor by default
-    ScriptWidgetComponentGuideSensor& operator=(ScriptWidgetComponentGuideSensor const&);
-    ScriptWidgetComponentGuideSensor(ScriptWidgetComponentGuideSensor const&);
-    ScriptWidgetComponentGuideSensor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -78,7 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
+    MCFOLD ::Editor::Widgets::WidgetComponentType const $getComponentType() const;
     // NOLINTEND
 
 public:

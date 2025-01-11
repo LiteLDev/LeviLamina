@@ -46,9 +46,9 @@ public:
     // NOLINTBEGIN
     MCAPI GameTestRequestPacket();
 
-    MCAPI ::gametest::TestParameters const& getParams() const;
+    MCFOLD ::gametest::TestParameters const& getParams() const;
 
-    MCAPI ::std::string getTestName() const;
+    MCFOLD ::std::string getTestName() const;
     // NOLINTEND
 
 public:

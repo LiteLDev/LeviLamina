@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class PeerConnectionSdpMethods {
-public:
-    // prevent constructor by default
-    PeerConnectionSdpMethods& operator=(PeerConnectionSdpMethods const&);
-    PeerConnectionSdpMethods(PeerConnectionSdpMethods const&);
-    PeerConnectionSdpMethods();
-};
+class PeerConnectionSdpMethods {};
 
 } // namespace webrtc

@@ -18,12 +18,6 @@ struct TickingSystemWithInfo;
 
 class UpgradeToBodySlotSystem {
 public:
-    // prevent constructor by default
-    UpgradeToBodySlotSystem& operator=(UpgradeToBodySlotSystem const&);
-    UpgradeToBodySlotSystem(UpgradeToBodySlotSystem const&);
-    UpgradeToBodySlotSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tick(

@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnTargetAcquiredDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnTargetAcquiredDefinition& operator=(OnTargetAcquiredDefinition const&);
-    OnTargetAcquiredDefinition(OnTargetAcquiredDefinition const&);
-    OnTargetAcquiredDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

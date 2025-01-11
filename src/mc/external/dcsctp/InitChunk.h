@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class InitChunk {
 public:
-    // prevent constructor by default
-    InitChunk& operator=(InitChunk const&);
-    InitChunk(InitChunk const&);
-    InitChunk();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::InitChunk> Parse(::rtc::ArrayView<uchar const>);

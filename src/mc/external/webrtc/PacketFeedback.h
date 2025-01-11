@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-struct PacketFeedback {
-public:
-    // prevent constructor by default
-    PacketFeedback& operator=(PacketFeedback const&);
-    PacketFeedback(PacketFeedback const&);
-    PacketFeedback();
-};
+struct PacketFeedback {};
 
 } // namespace webrtc

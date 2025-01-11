@@ -22,12 +22,6 @@ namespace xbox::httpclient {
 
 class WinHttpProvider {
 public:
-    // prevent constructor by default
-    WinHttpProvider& operator=(WinHttpProvider const&);
-    WinHttpProvider(WinHttpProvider const&);
-    WinHttpProvider();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI long CloseAllConnections();

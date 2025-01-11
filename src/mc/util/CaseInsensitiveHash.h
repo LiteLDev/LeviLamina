@@ -4,12 +4,6 @@
 
 namespace Util {
 
-struct CaseInsensitiveHash {
-public:
-    // prevent constructor by default
-    CaseInsensitiveHash& operator=(CaseInsensitiveHash const&);
-    CaseInsensitiveHash(CaseInsensitiveHash const&);
-    CaseInsensitiveHash();
-};
+struct CaseInsensitiveHash {};
 
 } // namespace Util

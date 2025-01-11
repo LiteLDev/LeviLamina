@@ -13,11 +13,6 @@ class MoveControlComponent;
 
 class FlyMoveControl : public ::MoveControl {
 public:
-    // prevent constructor by default
-    FlyMoveControl& operator=(FlyMoveControl const&);
-    FlyMoveControl(FlyMoveControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

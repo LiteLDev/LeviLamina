@@ -10,12 +10,6 @@ namespace mce { class UUID; }
 
 class ExtendedCertificate {
 public:
-    // prevent constructor by default
-    ExtendedCertificate& operator=(ExtendedCertificate const&);
-    ExtendedCertificate(ExtendedCertificate const&);
-    ExtendedCertificate();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::mce::UUID getIdentity(::Certificate const& cert);

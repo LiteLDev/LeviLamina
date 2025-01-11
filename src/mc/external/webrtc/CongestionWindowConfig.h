@@ -11,12 +11,6 @@ namespace webrtc {
 
 struct CongestionWindowConfig {
 public:
-    // prevent constructor by default
-    CongestionWindowConfig& operator=(CongestionWindowConfig const&);
-    CongestionWindowConfig(CongestionWindowConfig const&);
-    CongestionWindowConfig();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BreakDoorAnnotationSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BreakDoorAnnotationSystem& operator=(BreakDoorAnnotationSystem const&);
-    BreakDoorAnnotationSystem(BreakDoorAnnotationSystem const&);
-    BreakDoorAnnotationSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

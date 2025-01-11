@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class NetworkControllerInterface {
-public:
-    // prevent constructor by default
-    NetworkControllerInterface& operator=(NetworkControllerInterface const&);
-    NetworkControllerInterface(NetworkControllerInterface const&);
-    NetworkControllerInterface();
-};
+class NetworkControllerInterface {};
 
 } // namespace webrtc

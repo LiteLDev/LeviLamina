@@ -14,12 +14,6 @@ namespace Json { class Value; }
 
 class ItemLockHelper {
 public:
-    // prevent constructor by default
-    ItemLockHelper& operator=(ItemLockHelper const&);
-    ItemLockHelper(ItemLockHelper const&);
-    ItemLockHelper();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);

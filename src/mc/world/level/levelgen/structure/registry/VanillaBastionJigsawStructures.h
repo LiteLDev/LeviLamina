@@ -14,12 +14,6 @@ class StructureManager;
 
 class VanillaBastionJigsawStructures {
 public:
-    // prevent constructor by default
-    VanillaBastionJigsawStructures& operator=(VanillaBastionJigsawStructures const&);
-    VanillaBastionJigsawStructures(VanillaBastionJigsawStructures const&);
-    VanillaBastionJigsawStructures();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initialize(

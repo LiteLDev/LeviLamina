@@ -42,7 +42,7 @@ public:
 
     MCAPI FrozenOceanSurfaceBiomeJsonComponent(::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent&
+    MCFOLD ::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent&&);
     // NOLINTEND
 
@@ -63,9 +63,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent const&);
+    MCFOLD void* $ctor(::SharedTypes::v1_20_60::FrozenOceanSurfaceBiomeJsonComponent const&);
     // NOLINTEND
 
 public:

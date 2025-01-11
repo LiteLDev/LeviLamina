@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestBiomeHumid : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestBiomeHumid& operator=(FilterTestBiomeHumid const&);
-    FilterTestBiomeHumid(FilterTestBiomeHumid const&);
-    FilterTestBiomeHumid();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

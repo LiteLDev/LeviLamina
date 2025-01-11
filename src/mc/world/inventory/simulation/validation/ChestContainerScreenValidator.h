@@ -7,12 +7,6 @@
 
 class ChestContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    ChestContainerScreenValidator& operator=(ChestContainerScreenValidator const&);
-    ChestContainerScreenValidator(ChestContainerScreenValidator const&);
-    ChestContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

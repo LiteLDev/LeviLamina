@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UpdateSharedGroupDataResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    UpdateSharedGroupDataResult& operator=(UpdateSharedGroupDataResult const&);
-    UpdateSharedGroupDataResult(UpdateSharedGroupDataResult const&);
-    UpdateSharedGroupDataResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

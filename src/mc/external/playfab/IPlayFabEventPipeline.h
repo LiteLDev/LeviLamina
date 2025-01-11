@@ -11,12 +11,6 @@ namespace PlayFab {
 
 class IPlayFabEventPipeline {
 public:
-    // prevent constructor by default
-    IPlayFabEventPipeline& operator=(IPlayFabEventPipeline const&);
-    IPlayFabEventPipeline(IPlayFabEventPipeline const&);
-    IPlayFabEventPipeline();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

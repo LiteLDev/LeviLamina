@@ -7,12 +7,6 @@
 
 class RealmEventServerLogger : public ::IRealmEventLogger {
 public:
-    // prevent constructor by default
-    RealmEventServerLogger& operator=(RealmEventServerLogger const&);
-    RealmEventServerLogger(RealmEventServerLogger const&);
-    RealmEventServerLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

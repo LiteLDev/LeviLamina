@@ -89,7 +89,7 @@ public:
 
     MCAPI void notifyPickup();
 
-    MCAPI void setAffectOwner(bool shouldAffect);
+    MCFOLD void setAffectOwner(bool shouldAffect);
 
     MCAPI void setDuration(::EffectDuration duration);
 
@@ -131,7 +131,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

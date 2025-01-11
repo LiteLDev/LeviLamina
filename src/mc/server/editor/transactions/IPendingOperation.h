@@ -15,12 +15,6 @@ namespace Editor::Transactions {
 
 class IPendingOperation {
 public:
-    // prevent constructor by default
-    IPendingOperation& operator=(IPendingOperation const&);
-    IPendingOperation(IPendingOperation const&);
-    IPendingOperation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

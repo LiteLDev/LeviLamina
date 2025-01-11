@@ -11,12 +11,6 @@ namespace webrtc {
 
 class StructParametersParser {
 public:
-    // prevent constructor by default
-    StructParametersParser& operator=(StructParametersParser const&);
-    StructParametersParser(StructParametersParser const&);
-    StructParametersParser();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string Encode() const;

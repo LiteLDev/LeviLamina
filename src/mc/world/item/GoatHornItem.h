@@ -73,11 +73,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $canBeCharged() const;
+    MCFOLD bool $canBeCharged() const;
 
     MCAPI ::HashedString const& $getCooldownType() const;
 
-    MCAPI int $getCooldownTime() const;
+    MCFOLD int $getCooldownTime() const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

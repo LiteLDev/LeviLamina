@@ -11,21 +11,9 @@ public:
     // clang-format on
 
     // FranchiseSignalServiceConfig inner types define
-    struct Url : public ::std::string {
-    public:
-        // prevent constructor by default
-        Url& operator=(Url const&);
-        Url(Url const&);
-        Url();
-    };
+    struct Url : public ::std::string {};
 
-    struct Token : public ::std::string {
-    public:
-        // prevent constructor by default
-        Token& operator=(Token const&);
-        Token(Token const&);
-        Token();
-    };
+    struct Token : public ::std::string {};
 
 public:
     // member variables

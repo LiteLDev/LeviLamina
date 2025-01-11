@@ -12,12 +12,6 @@ class OnPlacedTrigger;
 
 class OnPlacedTriggerDescription : public ::BlockTriggerDescription<::OnPlacedTrigger> {
 public:
-    // prevent constructor by default
-    OnPlacedTriggerDescription& operator=(OnPlacedTriggerDescription const&);
-    OnPlacedTriggerDescription(OnPlacedTriggerDescription const&);
-    OnPlacedTriggerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

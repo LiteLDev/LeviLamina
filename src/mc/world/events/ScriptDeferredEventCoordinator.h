@@ -43,15 +43,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    ScriptDeferredEventCoordinator& operator=(ScriptDeferredEventCoordinator const&);
-    ScriptDeferredEventCoordinator(ScriptDeferredEventCoordinator const&);
-    ScriptDeferredEventCoordinator();
 
 public:
     // virtual functions

@@ -10,12 +10,6 @@ class ActorDamageSource;
 
 class IllagerBeastBlockedComponent {
 public:
-    // prevent constructor by default
-    IllagerBeastBlockedComponent& operator=(IllagerBeastBlockedComponent const&);
-    IllagerBeastBlockedComponent(IllagerBeastBlockedComponent const&);
-    IllagerBeastBlockedComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void onBlocked(::Actor& owner, ::ActorDamageSource const& source, ::Actor& blocker);

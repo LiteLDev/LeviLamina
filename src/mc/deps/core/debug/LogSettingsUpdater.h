@@ -9,12 +9,6 @@ namespace Bedrock::PubSub { class Subscription; }
 
 class LogSettingsUpdater {
 public:
-    // prevent constructor by default
-    LogSettingsUpdater& operator=(LogSettingsUpdater const&);
-    LogSettingsUpdater(LogSettingsUpdater const&);
-    LogSettingsUpdater();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

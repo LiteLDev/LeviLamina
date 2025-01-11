@@ -80,7 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canBePulledIntoVehicle() const;
+    MCFOLD bool $canBePulledIntoVehicle() const;
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 

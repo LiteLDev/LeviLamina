@@ -87,9 +87,9 @@ public:
 
     MCAPI void _savePlayer(::Player& player);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> getLevelStorage();
+    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> getLevelStorage();
 
-    MCAPI ::SavedDataStorage& getSavedDataStorage();
+    MCFOLD ::SavedDataStorage& getSavedDataStorage();
 
     MCAPI void initializeWithDimensionManager(::IDimensionManagerConnector& dimensionManagerConnector);
 
@@ -134,17 +134,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveLevelDataConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveLevelDataConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&)>& $getOnCanStartGameSaveTimerCheckConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(bool&)>& $getOnCanStartGameSaveTimerCheckConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnStartLeaveGameConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAppSuspendConnector();
     // NOLINTEND
 
 public:

@@ -4,12 +4,6 @@
 
 namespace webrtc::struct_parser_impl {
 
-struct MemberParameter {
-public:
-    // prevent constructor by default
-    MemberParameter& operator=(MemberParameter const&);
-    MemberParameter(MemberParameter const&);
-    MemberParameter();
-};
+struct MemberParameter {};
 
 } // namespace webrtc::struct_parser_impl

@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct AddOrUpdateContactEmailResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    AddOrUpdateContactEmailResult& operator=(AddOrUpdateContactEmailResult const&);
-    AddOrUpdateContactEmailResult(AddOrUpdateContactEmailResult const&);
-    AddOrUpdateContactEmailResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

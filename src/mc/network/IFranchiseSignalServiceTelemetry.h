@@ -12,12 +12,6 @@ namespace NetherNet { struct NetworkID; }
 
 class IFranchiseSignalServiceTelemetry {
 public:
-    // prevent constructor by default
-    IFranchiseSignalServiceTelemetry& operator=(IFranchiseSignalServiceTelemetry const&);
-    IFranchiseSignalServiceTelemetry(IFranchiseSignalServiceTelemetry const&);
-    IFranchiseSignalServiceTelemetry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

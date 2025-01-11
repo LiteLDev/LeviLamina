@@ -48,7 +48,7 @@ public:
 
     MCAPI ::BlockPos getCursorPosition(int index) const;
 
-    MCAPI int getMaxCharge() const;
+    MCFOLD int getMaxCharge() const;
 
     MCAPI int getNumberOfCursors() const;
 

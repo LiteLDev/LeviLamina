@@ -117,7 +117,7 @@ public:
 
     MCAPI void _tryFixupStickyPistonArm(::BlockSource& region);
 
-    MCAPI ::std::vector<::BlockPos> const& getAttachedBlocks() const;
+    MCFOLD ::std::vector<::BlockPos> const& getAttachedBlocks() const;
 
     MCAPI ::Block const* getCorrectArmBlock() const;
 
@@ -137,7 +137,7 @@ public:
 
     MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
 
-    MCAPI void setShouldVerifyArmType(bool shouldVerify);
+    MCFOLD void setShouldVerifyArmType(bool shouldVerify);
     // NOLINTEND
 
 public:
@@ -169,11 +169,11 @@ public:
 
     MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI ::PistonBlockActor* $getOwningPiston(::BlockSource&);
+    MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource&);
 
-    MCAPI ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
+    MCFOLD ::PistonBlockActor const* $getOwningPiston(::BlockSource&) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND

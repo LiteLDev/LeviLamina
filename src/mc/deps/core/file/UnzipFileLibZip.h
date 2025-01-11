@@ -94,7 +94,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isGood() const;
+    MCFOLD bool $isGood() const;
 
     MCAPI ::Core::ZipUtils::UnzipResult $locateFile(char const* fileName, int caseSensitivity);
 

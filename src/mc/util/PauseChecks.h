@@ -10,17 +10,11 @@ class ILevel;
 
 struct PauseChecks {
 public:
-    // prevent constructor by default
-    PauseChecks& operator=(PauseChecks const&);
-    PauseChecks(PauseChecks const&);
-    PauseChecks();
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isActorTickPaused(::Actor const& actor);
+    MCFOLD static bool isActorTickPaused(::Actor const& actor);
 
-    MCAPI static bool isAnimationPaused(::Actor const& actor);
+    MCFOLD static bool isAnimationPaused(::Actor const& actor);
 
     MCAPI static bool isMobSpawningPaused(::ILevel const& level);
     // NOLINTEND

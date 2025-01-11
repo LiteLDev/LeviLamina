@@ -26,12 +26,6 @@ namespace ScriptModuleMinecraft {
 class ScriptBreathableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::BreathableComponent, ::BreathableDefinition> {
 public:
-    // prevent constructor by default
-    ScriptBreathableComponent& operator=(ScriptBreathableComponent const&);
-    ScriptBreathableComponent(ScriptBreathableComponent const&);
-    ScriptBreathableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

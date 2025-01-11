@@ -5,12 +5,6 @@
 namespace Core {
 
 template <typename T0>
-class BasicDirectoryStorageArea {
-public:
-    // prevent constructor by default
-    BasicDirectoryStorageArea& operator=(BasicDirectoryStorageArea const&);
-    BasicDirectoryStorageArea(BasicDirectoryStorageArea const&);
-    BasicDirectoryStorageArea();
-};
+class BasicDirectoryStorageArea {};
 
 } // namespace Core

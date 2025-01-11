@@ -7,12 +7,6 @@
 
 namespace Realms {
 
-struct RealmId : public ::NewType<int64> {
-public:
-    // prevent constructor by default
-    RealmId& operator=(RealmId const&);
-    RealmId(RealmId const&);
-    RealmId();
-};
+struct RealmId : public ::NewType<int64> {};
 
 } // namespace Realms

@@ -4,12 +4,6 @@
 
 namespace MSGraph::Models {
 
-struct UploadSession {
-public:
-    // prevent constructor by default
-    UploadSession& operator=(UploadSession const&);
-    UploadSession(UploadSession const&);
-    UploadSession();
-};
+struct UploadSession {};
 
 } // namespace MSGraph::Models

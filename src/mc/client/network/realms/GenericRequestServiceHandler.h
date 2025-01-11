@@ -4,12 +4,6 @@
 
 namespace Realms {
 
-class GenericRequestServiceHandler {
-public:
-    // prevent constructor by default
-    GenericRequestServiceHandler& operator=(GenericRequestServiceHandler const&);
-    GenericRequestServiceHandler(GenericRequestServiceHandler const&);
-    GenericRequestServiceHandler();
-};
+class GenericRequestServiceHandler {};
 
 } // namespace Realms

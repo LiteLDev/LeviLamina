@@ -6,12 +6,6 @@ namespace webrtc {
 
 struct TimingFrameInfo {
 public:
-    // prevent constructor by default
-    TimingFrameInfo& operator=(TimingFrameInfo const&);
-    TimingFrameInfo(TimingFrameInfo const&);
-    TimingFrameInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool IsInvalid() const;

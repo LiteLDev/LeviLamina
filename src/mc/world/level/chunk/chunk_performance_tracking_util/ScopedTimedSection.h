@@ -4,12 +4,6 @@
 
 namespace ChunkPerformanceTrackingUtil {
 
-struct ScopedTimedSection {
-public:
-    // prevent constructor by default
-    ScopedTimedSection& operator=(ScopedTimedSection const&);
-    ScopedTimedSection(ScopedTimedSection const&);
-    ScopedTimedSection();
-};
+struct ScopedTimedSection {};
 
 } // namespace ChunkPerformanceTrackingUtil

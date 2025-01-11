@@ -45,11 +45,11 @@ public:
         float
     );
 
-    MCAPI ::HashedString const& getName() const;
+    MCFOLD ::HashedString const& getName() const;
 
     MCAPI ::Vec3 const& getPivot() const;
 
-    MCAPI ::Vec3& getPivot();
+    MCFOLD ::Vec3& getPivot();
 
     MCAPI void setDefaultPose();
     // NOLINTEND

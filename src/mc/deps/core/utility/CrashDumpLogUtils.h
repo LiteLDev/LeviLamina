@@ -7,12 +7,6 @@
 
 struct CrashDumpLogUtils {
 public:
-    // prevent constructor by default
-    CrashDumpLogUtils& operator=(CrashDumpLogUtils const&);
-    CrashDumpLogUtils(CrashDumpLogUtils const&);
-    CrashDumpLogUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::CrashDumpLogStringID

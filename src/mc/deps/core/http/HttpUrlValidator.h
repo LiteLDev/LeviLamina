@@ -16,12 +16,6 @@ namespace Bedrock::Http {
 
 class HttpUrlValidator : public ::Bedrock::Http::DispatcherProcess {
 public:
-    // prevent constructor by default
-    HttpUrlValidator& operator=(HttpUrlValidator const&);
-    HttpUrlValidator(HttpUrlValidator const&);
-    HttpUrlValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

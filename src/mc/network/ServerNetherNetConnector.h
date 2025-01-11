@@ -13,12 +13,6 @@ namespace NetherNet { struct NetworkID; }
 
 struct ServerNetherNetConnector : public ::NetherNetConnector {
 public:
-    // prevent constructor by default
-    ServerNetherNetConnector& operator=(ServerNetherNetConnector const&);
-    ServerNetherNetConnector(ServerNetherNetConnector const&);
-    ServerNetherNetConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11
@@ -51,11 +45,11 @@ public:
     // NOLINTBEGIN
     MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI void $disconnect();
+    MCFOLD void $disconnect();
 
-    MCAPI bool $isServer() const;
+    MCFOLD bool $isServer() const;
 
-    MCAPI bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
+    MCFOLD bool $OnSessionRequested(::NetherNet::NetworkID, uint64);
 
     MCAPI void $OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId);
     // NOLINTEND

@@ -138,20 +138,20 @@ public:
     // NOLINTBEGIN
     MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
-    MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
     MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
-    MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
+    MCFOLD bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
     MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
-    MCAPI bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
+    MCFOLD bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
     MCAPI bool $apply() const;
 
@@ -159,17 +159,17 @@ public:
 
     MCAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI short $getMaxHeight() const;
 
     MCAPI short $getMinHeight() const;
 
-    MCAPI bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
+    MCFOLD bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 
-    MCAPI short $getHeightmap(int x, int z);
+    MCFOLD short $getHeightmap(int x, int z);
 
     MCAPI bool $isLegacyLevel();
 
@@ -181,9 +181,9 @@ public:
 
     MCAPI ::LevelData const& $getLevelData() const;
 
-    MCAPI ::WorldGenContext const& $getContext();
+    MCFOLD ::WorldGenContext const& $getContext();
 
-    MCAPI void $disableBlockSimple();
+    MCFOLD void $disableBlockSimple();
     // NOLINTEND
 
 public:

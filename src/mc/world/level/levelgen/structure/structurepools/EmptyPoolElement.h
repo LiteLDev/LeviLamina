@@ -18,12 +18,6 @@ class LegacyStructureSettings;
 
 class EmptyPoolElement : public ::StructurePoolElement {
 public:
-    // prevent constructor by default
-    EmptyPoolElement& operator=(EmptyPoolElement const&);
-    EmptyPoolElement(EmptyPoolElement const&);
-    EmptyPoolElement();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -60,18 +54,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $getSize(::Rotation) const;
+    MCFOLD ::BlockPos $getSize(::Rotation) const;
 
-    MCAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
+    MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
-    MCAPI ::std::vector<::JigsawBlockInfo>
+    MCFOLD ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
     MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCAPI ::StructurePoolElementType $type() const;
+    MCFOLD ::StructurePoolElementType $type() const;
     // NOLINTEND
 
 public:

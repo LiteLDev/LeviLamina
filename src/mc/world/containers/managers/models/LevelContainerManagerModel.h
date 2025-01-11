@@ -77,7 +77,7 @@ public:
 
     MCAPI ::Container* _getRawContainer();
 
-    MCAPI ::BlockPos const& getBlockPos() const;
+    MCFOLD ::BlockPos const& getBlockPos() const;
 
     MCAPI ::ActorUniqueID getEntityUniqueID() const;
     // NOLINTEND
@@ -106,7 +106,7 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI void $broadcastChanges();
 

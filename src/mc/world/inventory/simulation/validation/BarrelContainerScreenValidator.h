@@ -7,12 +7,6 @@
 
 class BarrelContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    BarrelContainerScreenValidator& operator=(BarrelContainerScreenValidator const&);
-    BarrelContainerScreenValidator(BarrelContainerScreenValidator const&);
-    BarrelContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

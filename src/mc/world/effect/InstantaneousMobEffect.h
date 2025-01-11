@@ -7,12 +7,6 @@
 
 class InstantaneousMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    InstantaneousMobEffect& operator=(InstantaneousMobEffect const&);
-    InstantaneousMobEffect(InstantaneousMobEffect const&);
-    InstantaneousMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -34,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
 
     MCAPI bool $isDurationEffectTick(int remainingDuration, int) const;
     // NOLINTEND

@@ -29,14 +29,14 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI int getDamageTime() const;
+    MCFOLD int getDamageTime() const;
 
-    MCAPI int getDamageTimeInterval() const;
+    MCFOLD int getDamageTimeInterval() const;
 
-    MCAPI int getHurtValue() const;
+    MCFOLD int getHurtValue() const;
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setDamageTime(int damageTime);
+    MCFOLD void setDamageTime(int damageTime);
     // NOLINTEND
 };

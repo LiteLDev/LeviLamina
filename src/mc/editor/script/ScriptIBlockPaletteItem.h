@@ -64,7 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptBlockPaletteItemType getType() const;
+    MCFOLD ::Editor::ScriptModule::ScriptBlockPaletteItemType getType() const;
     // NOLINTEND
 
 public:

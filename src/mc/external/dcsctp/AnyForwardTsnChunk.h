@@ -20,19 +20,7 @@ public:
     // clang-format on
 
     // AnyForwardTsnChunk inner types define
-    struct SkippedStream {
-    public:
-        // prevent constructor by default
-        SkippedStream& operator=(SkippedStream const&);
-        SkippedStream(SkippedStream const&);
-        SkippedStream();
-    };
-
-public:
-    // prevent constructor by default
-    AnyForwardTsnChunk& operator=(AnyForwardTsnChunk const&);
-    AnyForwardTsnChunk(AnyForwardTsnChunk const&);
-    AnyForwardTsnChunk();
+    struct SkippedStream {};
 
 public:
     // member functions

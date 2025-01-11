@@ -9,12 +9,6 @@ class StopwatchHandler;
 
 class Performance {
 public:
-    // prevent constructor by default
-    Performance& operator=(Performance const&);
-    Performance(Performance const&);
-    Performance();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::StopwatchHandler& watches();

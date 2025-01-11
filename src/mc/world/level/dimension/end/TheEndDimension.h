@@ -147,17 +147,17 @@ public:
 
     MCAPI ::HashedString $getDefaultBiome() const;
 
-    MCAPI bool $isNaturalDimension() const;
+    MCFOLD bool $isNaturalDimension() const;
 
-    MCAPI bool $isValidSpawn(int x, int z) const;
+    MCFOLD bool $isValidSpawn(int x, int z) const;
 
-    MCAPI short $getCloudHeight() const;
+    MCFOLD short $getCloudHeight() const;
 
-    MCAPI bool $isDay() const;
+    MCFOLD bool $isDay() const;
 
-    MCAPI bool $mayRespawnViaBed() const;
+    MCFOLD bool $mayRespawnViaBed() const;
 
-    MCAPI bool $hasGround() const;
+    MCFOLD bool $hasGround() const;
 
     MCAPI ::BlockPos $getSpawnPos() const;
 
@@ -169,20 +169,20 @@ public:
 
     MCAPI void $serialize(::CompoundTag& tag) const;
 
-    MCAPI float $getTimeOfDay(int time, float a) const;
+    MCFOLD float $getTimeOfDay(int time, float a) const;
 
     MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
     MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCAPI ::std::unique_ptr<::ChunkSource>
+    MCFOLD ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
     // NOLINTEND
 

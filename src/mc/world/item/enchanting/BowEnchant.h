@@ -7,12 +7,6 @@
 
 class BowEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    BowEnchant& operator=(BowEnchant const&);
-    BowEnchant(BowEnchant const&);
-    BowEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

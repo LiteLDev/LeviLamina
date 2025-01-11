@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class HeartbeatAckChunk {
 public:
-    // prevent constructor by default
-    HeartbeatAckChunk& operator=(HeartbeatAckChunk const&);
-    HeartbeatAckChunk(HeartbeatAckChunk const&);
-    HeartbeatAckChunk();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::HeartbeatAckChunk> Parse(::rtc::ArrayView<uchar const>);

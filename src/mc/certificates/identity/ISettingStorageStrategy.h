@@ -11,12 +11,6 @@ namespace Identity {
 
 struct ISettingStorageStrategy {
 public:
-    // prevent constructor by default
-    ISettingStorageStrategy& operator=(ISettingStorageStrategy const&);
-    ISettingStorageStrategy(ISettingStorageStrategy const&);
-    ISettingStorageStrategy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

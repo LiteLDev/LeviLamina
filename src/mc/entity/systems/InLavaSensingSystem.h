@@ -16,12 +16,6 @@ struct WasInLavaFlagComponent;
 
 struct InLavaSensingSystem {
 public:
-    // prevent constructor by default
-    InLavaSensingSystem& operator=(InLavaSensingSystem const&);
-    InLavaSensingSystem(InLavaSensingSystem const&);
-    InLavaSensingSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

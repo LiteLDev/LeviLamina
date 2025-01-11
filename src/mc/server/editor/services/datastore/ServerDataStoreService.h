@@ -19,12 +19,6 @@ namespace Editor::Services {
 
 class ServerDataStoreService : public ::Editor::Services::DataStoreService {
 public:
-    // prevent constructor by default
-    ServerDataStoreService& operator=(ServerDataStoreService const&);
-    ServerDataStoreService(ServerDataStoreService const&);
-    ServerDataStoreService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -83,7 +77,7 @@ public:
         bool
     );
 
-    MCAPI ::Json::Value
+    MCFOLD ::Json::Value
     $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
     // NOLINTEND
 

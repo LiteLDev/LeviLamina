@@ -7,12 +7,6 @@
 
 namespace SharedTypes {
 
-struct Color255RGBA : public ::Detail::ColorBase {
-public:
-    // prevent constructor by default
-    Color255RGBA& operator=(Color255RGBA const&);
-    Color255RGBA(Color255RGBA const&);
-    Color255RGBA();
-};
+struct Color255RGBA : public ::Detail::ColorBase {};
 
 } // namespace SharedTypes

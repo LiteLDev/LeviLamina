@@ -18,12 +18,6 @@ namespace rtc {
 
 class SSLAdapterFactory {
 public:
-    // prevent constructor by default
-    SSLAdapterFactory& operator=(SSLAdapterFactory const&);
-    SSLAdapterFactory(SSLAdapterFactory const&);
-    SSLAdapterFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

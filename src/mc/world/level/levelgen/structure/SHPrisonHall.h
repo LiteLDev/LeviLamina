@@ -16,12 +16,6 @@ class StructurePiece;
 
 class SHPrisonHall : public ::StrongholdPiece {
 public:
-    // prevent constructor by default
-    SHPrisonHall& operator=(SHPrisonHall const&);
-    SHPrisonHall(SHPrisonHall const&);
-    SHPrisonHall();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -68,7 +62,7 @@ public:
 
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $addChildren(
+    MCFOLD void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random

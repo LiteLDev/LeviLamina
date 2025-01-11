@@ -16,12 +16,6 @@ struct ServerInstanceNotificationEvent;
 
 class ServerInstanceEventListener {
 public:
-    // prevent constructor by default
-    ServerInstanceEventListener& operator=(ServerInstanceEventListener const&);
-    ServerInstanceEventListener(ServerInstanceEventListener const&);
-    ServerInstanceEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -76,31 +70,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onServerInitializeStart(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerInitializeStart(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerInitializeEnd(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerInitializeEnd(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerMinecraftInitialized(
+    MCFOLD ::EventResult $onServerMinecraftInitialized(
         ::ServerInstance&                                 instance,
         ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft
     );
 
-    MCAPI ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
+    MCFOLD ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
 
-    MCAPI ::EventResult $onServerUpdateStart(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerUpdateStart(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerSuspend(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerSuspend(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerResume(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerResume(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerThreadStarted(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onServerThreadStopped(::ServerInstance& instance);
+    MCFOLD ::EventResult $onServerThreadStopped(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onStartLeaveGame(::ServerInstance& instance);
+    MCFOLD ::EventResult $onStartLeaveGame(::ServerInstance& instance);
 
-    MCAPI ::EventResult $onEvent(::ServerInstanceNotificationEvent const& event);
+    MCFOLD ::EventResult $onEvent(::ServerInstanceNotificationEvent const& event);
     // NOLINTEND
 };

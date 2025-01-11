@@ -12,12 +12,6 @@ class GameplayUserManager;
 
 class ServerGameplayUserManagerProxy : public ::GameplayUserManagerProxy {
 public:
-    // prevent constructor by default
-    ServerGameplayUserManagerProxy& operator=(ServerGameplayUserManagerProxy const&);
-    ServerGameplayUserManagerProxy(ServerGameplayUserManagerProxy const&);
-    ServerGameplayUserManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -44,7 +38,7 @@ public:
     MCAPI ::std::optional<::std::string>
     $validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
 
-    MCAPI bool $shouldGeneratePlayerIndex() const;
+    MCFOLD bool $shouldGeneratePlayerIndex() const;
     // NOLINTEND
 
 public:

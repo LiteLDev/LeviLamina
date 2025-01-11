@@ -45,7 +45,7 @@ public:
         ::std::initializer_list<::WeightedStructureTemplateRegistration> pieces
     );
 
-    MCAPI ::std::string const& getFallback() const;
+    MCFOLD ::std::string const& getFallback() const;
 
     MCAPI ::StructurePoolElement const* getRandomTemplate(::Random& random) const;
 

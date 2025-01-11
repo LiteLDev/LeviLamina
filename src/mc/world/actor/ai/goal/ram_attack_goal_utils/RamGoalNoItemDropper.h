@@ -14,12 +14,6 @@ namespace RamAttackGoalUtils {
 
 class RamGoalNoItemDropper : public ::RamAttackGoalUtils::RamGoalItemDropperInterface {
 public:
-    // prevent constructor by default
-    RamGoalNoItemDropper& operator=(RamGoalNoItemDropper const&);
-    RamGoalNoItemDropper(RamGoalNoItemDropper const&);
-    RamGoalNoItemDropper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -44,11 +38,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tryDropHorn(::Vec3 dropPos) const;
+    MCFOLD void $tryDropHorn(::Vec3 dropPos) const;
 
-    MCAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
+    MCFOLD void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
-    MCAPI void $dontDropHorn();
+    MCFOLD void $dontDropHorn();
     // NOLINTEND
 
 public:

@@ -138,7 +138,7 @@ public:
 
     MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
 
-    MCAPI ::ActorAnimationType $getAnimationType() const;
+    MCFOLD ::ActorAnimationType $getAnimationType() const;
 
     MCAPI ::HashedString const& $getRawName() const;
     // NOLINTEND

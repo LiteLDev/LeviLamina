@@ -74,7 +74,7 @@ public:
 
     MCAPI ::std::vector<::LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
 
-    MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>>& getArea();
+    MCFOLD ::GridArea<::std::shared_ptr<::LevelChunk>>& getArea();
 
     MCAPI void move(
         ::Bounds const&               bounds,
@@ -144,7 +144,7 @@ public:
 
     MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCAPI ::std::shared_ptr<::LevelChunk>
+    MCFOLD ::std::shared_ptr<::LevelChunk>
     $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;

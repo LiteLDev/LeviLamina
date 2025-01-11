@@ -9,12 +9,6 @@ class BlockLegacy;
 
 class BlockLegacyComponentStorageFinalizer {
 public:
-    // prevent constructor by default
-    BlockLegacyComponentStorageFinalizer& operator=(BlockLegacyComponentStorageFinalizer const&);
-    BlockLegacyComponentStorageFinalizer(BlockLegacyComponentStorageFinalizer const&);
-    BlockLegacyComponentStorageFinalizer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _finalizeBlockTriggerComponents(::BlockLegacy& blockLegacy);

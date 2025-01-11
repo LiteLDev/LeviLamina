@@ -14,12 +14,6 @@ struct ActorEquippedArmorEvent;
 
 class KnockbackArmorUpdater : public ::EventListenerDispatcher<::ActorEventListener> {
 public:
-    // prevent constructor by default
-    KnockbackArmorUpdater& operator=(KnockbackArmorUpdater const&);
-    KnockbackArmorUpdater(KnockbackArmorUpdater const&);
-    KnockbackArmorUpdater();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 33

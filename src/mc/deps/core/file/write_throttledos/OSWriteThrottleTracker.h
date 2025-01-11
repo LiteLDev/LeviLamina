@@ -47,12 +47,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    OSWriteThrottleTracker& operator=(OSWriteThrottleTracker const&);
-    OSWriteThrottleTracker(OSWriteThrottleTracker const&);
-    OSWriteThrottleTracker();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

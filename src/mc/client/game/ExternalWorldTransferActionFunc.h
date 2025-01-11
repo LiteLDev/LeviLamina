@@ -12,10 +12,4 @@ struct ExternalWorldTransferActionFunc
 : public ::type_safe::strong_typedef<
       ::ExternalWorldTransferActionFunc,
       ::std::function<void(::IWorldTransferHandler const&, ::WorldTransferActionContext const&)>>,
-  public ::type_safe::strong_typedef_op::equality_comparison<::ExternalWorldTransferActionFunc> {
-public:
-    // prevent constructor by default
-    ExternalWorldTransferActionFunc& operator=(ExternalWorldTransferActionFunc const&);
-    ExternalWorldTransferActionFunc(ExternalWorldTransferActionFunc const&);
-    ExternalWorldTransferActionFunc();
-};
+  public ::type_safe::strong_typedef_op::equality_comparison<::ExternalWorldTransferActionFunc> {};

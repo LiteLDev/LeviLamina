@@ -4,12 +4,6 @@
 
 namespace dragon {
 
-class TextureUsage : public ::std::bitset<4> {
-public:
-    // prevent constructor by default
-    TextureUsage& operator=(TextureUsage const&);
-    TextureUsage(TextureUsage const&);
-    TextureUsage();
-};
+class TextureUsage : public ::std::bitset<4> {};
 
 } // namespace dragon

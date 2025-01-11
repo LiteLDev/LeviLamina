@@ -4,12 +4,6 @@
 
 struct ISystem {
 public:
-    // prevent constructor by default
-    ISystem& operator=(ISystem const&);
-    ISystem(ISystem const&);
-    ISystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -28,6 +22,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
+    MCFOLD void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
 };

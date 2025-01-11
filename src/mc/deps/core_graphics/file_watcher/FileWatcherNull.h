@@ -9,12 +9,6 @@ namespace mce {
 
 class FileWatcherNull : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    FileWatcherNull& operator=(FileWatcherNull const&);
-    FileWatcherNull(FileWatcherNull const&);
-    FileWatcherNull();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -10,11 +10,6 @@ namespace cereal {
 
 struct ReflectionCtx : public ::cereal::internal::ReflectionContext, public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    ReflectionCtx& operator=(ReflectionCtx const&);
-    ReflectionCtx(ReflectionCtx const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -31,12 +31,6 @@ struct WaterTravelFlagComponent;
 
 struct TravelTypeSensingSystem {
 public:
-    // prevent constructor by default
-    TravelTypeSensingSystem& operator=(TravelTypeSensingSystem const&);
-    TravelTypeSensingSystem(TravelTypeSensingSystem const&);
-    TravelTypeSensingSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createTravelTypeSensingSystem();

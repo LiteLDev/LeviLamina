@@ -4,12 +4,6 @@
 
 class ITickDeltaTimeManagerProxy {
 public:
-    // prevent constructor by default
-    ITickDeltaTimeManagerProxy& operator=(ITickDeltaTimeManagerProxy const&);
-    ITickDeltaTimeManagerProxy(ITickDeltaTimeManagerProxy const&);
-    ITickDeltaTimeManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

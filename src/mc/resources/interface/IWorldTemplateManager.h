@@ -14,12 +14,6 @@ namespace mce { class UUID; }
 
 class IWorldTemplateManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IWorldTemplateManager& operator=(IWorldTemplateManager const&);
-    IWorldTemplateManager(IWorldTemplateManager const&);
-    IWorldTemplateManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,12 +13,6 @@ struct ActorDieEvent;
 
 class HoldBlockSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    HoldBlockSystem& operator=(HoldBlockSystem const&);
-    HoldBlockSystem(HoldBlockSystem const&);
-    HoldBlockSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -46,7 +40,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCFOLD void $tick(::EntityRegistry& registry);
 
     MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND

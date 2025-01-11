@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ServerNetworkEventHandler& getServerNetworkEventHandler();
+    MCFOLD ::ServerNetworkEventHandler& getServerNetworkEventHandler();
 
-    MCAPI void registerServerNetworkEventHandler(::std::unique_ptr<::ServerNetworkEventHandler>&& handler);
+    MCFOLD void registerServerNetworkEventHandler(::std::unique_ptr<::ServerNetworkEventHandler>&& handler);
 
     MCAPI void sendDiagnostics(::DiagnosticsEvent& diagnosticsEvent);
 

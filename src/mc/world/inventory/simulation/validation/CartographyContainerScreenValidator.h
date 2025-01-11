@@ -15,12 +15,6 @@ struct ContainerValidationCraftResult;
 
 class CartographyContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    CartographyContainerScreenValidator& operator=(CartographyContainerScreenValidator const&);
-    CartographyContainerScreenValidator(CartographyContainerScreenValidator const&);
-    CartographyContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -47,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isCraftingImplemented();
+    MCFOLD bool $isCraftingImplemented();
 
     MCAPI ::ContainerValidationCraftResult $getCraftResult(
         ::ContainerScreenContext const&                     screenContext,

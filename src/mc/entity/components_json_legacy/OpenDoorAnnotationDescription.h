@@ -7,12 +7,6 @@
 
 struct OpenDoorAnnotationDescription : public ::ActorComponentDescription {
 public:
-    // prevent constructor by default
-    OpenDoorAnnotationDescription& operator=(OpenDoorAnnotationDescription const&);
-    OpenDoorAnnotationDescription(OpenDoorAnnotationDescription const&);
-    OpenDoorAnnotationDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

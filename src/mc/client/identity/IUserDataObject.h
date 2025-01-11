@@ -11,12 +11,6 @@ namespace Social {
 
 class IUserDataObject {
 public:
-    // prevent constructor by default
-    IUserDataObject& operator=(IUserDataObject const&);
-    IUserDataObject(IUserDataObject const&);
-    IUserDataObject();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

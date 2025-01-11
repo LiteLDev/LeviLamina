@@ -17,12 +17,6 @@ namespace webrtc {
 
 class SessionDescriptionInterface {
 public:
-    // prevent constructor by default
-    SessionDescriptionInterface& operator=(SessionDescriptionInterface const&);
-    SessionDescriptionInterface(SessionDescriptionInterface const&);
-    SessionDescriptionInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

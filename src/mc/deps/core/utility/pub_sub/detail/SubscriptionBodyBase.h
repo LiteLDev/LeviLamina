@@ -29,13 +29,7 @@ public:
 
     using SubscriptionType = ::Bedrock::PubSub::Subscription;
 
-    struct CompareEntries {
-    public:
-        // prevent constructor by default
-        CompareEntries& operator=(CompareEntries const&);
-        CompareEntries(CompareEntries const&);
-        CompareEntries();
-    };
+    struct CompareEntries {};
 
 public:
     // member variables

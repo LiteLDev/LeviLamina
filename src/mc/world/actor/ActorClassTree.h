@@ -13,15 +13,9 @@ class Actor;
 
 class ActorClassTree {
 public:
-    // prevent constructor by default
-    ActorClassTree& operator=(ActorClassTree const&);
-    ActorClassTree(ActorClassTree const&);
-    ActorClassTree();
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ActorType getEntityTypeIdLegacy(::ActorType entityId);
+    MCFOLD static ::ActorType getEntityTypeIdLegacy(::ActorType entityId);
 
     MCAPI static bool hasCategory(::ActorCategory const& category, ::ActorCategory testFor);
 

@@ -14,12 +14,6 @@ public:
         KDetached = 0,
         KAttached = 1,
     };
-
-public:
-    // prevent constructor by default
-    SequenceChecker& operator=(SequenceChecker const&);
-    SequenceChecker(SequenceChecker const&);
-    SequenceChecker();
 };
 
 } // namespace webrtc

@@ -7,12 +7,6 @@
 
 class ItemStackRequestActionConsume : public ::ItemStackRequestActionTransferBase {
 public:
-    // prevent constructor by default
-    ItemStackRequestActionConsume& operator=(ItemStackRequestActionConsume const&);
-    ItemStackRequestActionConsume(ItemStackRequestActionConsume const&);
-    ItemStackRequestActionConsume();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

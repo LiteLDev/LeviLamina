@@ -13,12 +13,6 @@ class LevelChunk;
 
 class ILevelChunkEventManagerConnector {
 public:
-    // prevent constructor by default
-    ILevelChunkEventManagerConnector& operator=(ILevelChunkEventManagerConnector const&);
-    ILevelChunkEventManagerConnector(ILevelChunkEventManagerConnector const&);
-    ILevelChunkEventManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -11,11 +11,6 @@ namespace webrtc::rtcp {
 
 class LossNotification {
 public:
-    // prevent constructor by default
-    LossNotification& operator=(LossNotification const&);
-    LossNotification(LossNotification const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LossNotification();

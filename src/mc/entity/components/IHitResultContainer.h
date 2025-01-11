@@ -9,12 +9,6 @@ class HitResult;
 
 struct IHitResultContainer {
 public:
-    // prevent constructor by default
-    IHitResultContainer& operator=(IHitResultContainer const&);
-    IHitResultContainer(IHitResultContainer const&);
-    IHitResultContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

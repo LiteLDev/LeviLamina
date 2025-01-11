@@ -99,9 +99,9 @@ public:
 
     MCAPI ::std::vector<::std::string> getErrors() const;
 
-    MCAPI ::std::vector<::cereal::SerializerContext::LogEntry> const& getLog() const;
+    MCFOLD ::std::vector<::cereal::SerializerContext::LogEntry> const& getLog() const;
 
-    MCAPI ::cereal::ResultCode getStatus() const;
+    MCFOLD ::cereal::ResultCode getStatus() const;
 
     MCAPI bool isValid() const;
 
@@ -126,7 +126,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

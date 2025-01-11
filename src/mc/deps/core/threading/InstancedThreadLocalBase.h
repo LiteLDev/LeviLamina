@@ -4,12 +4,6 @@
 
 namespace Bedrock::Threading {
 
-class InstancedThreadLocalBase {
-public:
-    // prevent constructor by default
-    InstancedThreadLocalBase& operator=(InstancedThreadLocalBase const&);
-    InstancedThreadLocalBase(InstancedThreadLocalBase const&);
-    InstancedThreadLocalBase();
-};
+class InstancedThreadLocalBase {};
 
 } // namespace Bedrock::Threading

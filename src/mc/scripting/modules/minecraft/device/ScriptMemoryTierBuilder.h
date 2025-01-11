@@ -11,12 +11,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptMemoryTierBuilder {
 public:
-    // prevent constructor by default
-    ScriptMemoryTierBuilder& operator=(ScriptMemoryTierBuilder const&);
-    ScriptMemoryTierBuilder(ScriptMemoryTierBuilder const&);
-    ScriptMemoryTierBuilder();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBinding bind();

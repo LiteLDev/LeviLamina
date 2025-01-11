@@ -22,12 +22,6 @@ namespace Core {
 
 class FileSystem_generic : public ::Core::FileSystemImpl {
 public:
-    // prevent constructor by default
-    FileSystem_generic& operator=(FileSystem_generic const&);
-    FileSystem_generic(FileSystem_generic const&);
-    FileSystem_generic();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

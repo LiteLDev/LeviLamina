@@ -18,12 +18,6 @@ struct ActorDefinitionIdentifier;
 
 class MinecartChest : public ::Minecart {
 public:
-    // prevent constructor by default
-    MinecartChest& operator=(MinecartChest const&);
-    MinecartChest(MinecartChest const&);
-    MinecartChest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 143
@@ -79,9 +73,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
-    MCAPI void $applyNaturalSlowdown(::BlockSource& region);
+    MCFOLD void $applyNaturalSlowdown(::BlockSource& region);
 
-    MCAPI ::MinecartType $getType();
+    MCFOLD ::MinecartType $getType();
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
     // NOLINTEND

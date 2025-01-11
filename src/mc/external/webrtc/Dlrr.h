@@ -6,11 +6,6 @@ namespace webrtc::rtcp {
 
 struct Dlrr {
 public:
-    // prevent constructor by default
-    Dlrr& operator=(Dlrr const&);
-    Dlrr(Dlrr const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI uint64 BlockLength() const;

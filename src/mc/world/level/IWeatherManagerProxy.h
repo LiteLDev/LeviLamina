@@ -4,12 +4,6 @@
 
 class IWeatherManagerProxy {
 public:
-    // prevent constructor by default
-    IWeatherManagerProxy& operator=(IWeatherManagerProxy const&);
-    IWeatherManagerProxy(IWeatherManagerProxy const&);
-    IWeatherManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -16,12 +16,6 @@ namespace cricket {
 
 class VideoChannel {
 public:
-    // prevent constructor by default
-    VideoChannel& operator=(VideoChannel const&);
-    VideoChannel(VideoChannel const&);
-    VideoChannel();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

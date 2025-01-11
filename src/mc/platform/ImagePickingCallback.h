@@ -4,12 +4,6 @@
 
 class ImagePickingCallback {
 public:
-    // prevent constructor by default
-    ImagePickingCallback& operator=(ImagePickingCallback const&);
-    ImagePickingCallback(ImagePickingCallback const&);
-    ImagePickingCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

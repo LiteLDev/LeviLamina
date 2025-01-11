@@ -128,7 +128,7 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::ProjectileAnchor getAnchor();
+    MCFOLD ::ProjectileAnchor getAnchor();
 
     MCAPI ::HitResult getCachedHitResult() const;
 
@@ -140,23 +140,23 @@ public:
 
     MCAPI ::HitResult getHitResult() const;
 
-    MCAPI bool getIsDangerous();
+    MCFOLD bool getIsDangerous();
 
-    MCAPI float getKnockbackForce() const;
+    MCFOLD float getKnockbackForce() const;
 
-    MCAPI bool getNoPhysics() const;
+    MCFOLD bool getNoPhysics() const;
 
     MCAPI ::Vec3 getOffset();
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getShootSound();
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent getShootSound();
 
     MCAPI bool getShootTarget();
 
     MCAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
 
-    MCAPI bool getShouldBounce() const;
+    MCFOLD bool getShouldBounce() const;
 
-    MCAPI bool getStopOnHurt() const;
+    MCFOLD bool getStopOnHurt() const;
 
     MCAPI float getThrowPower() const;
 
@@ -202,9 +202,9 @@ public:
 
     MCAPI void setKnockbackForce(float force);
 
-    MCAPI void setNoPhysics(bool value);
+    MCFOLD void setNoPhysics(bool value);
 
-    MCAPI void setOwnerId(::ActorUniqueID id);
+    MCFOLD void setOwnerId(::ActorUniqueID id);
 
     MCAPI void setPotionEffect(int potionEffect);
 

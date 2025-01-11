@@ -11,11 +11,6 @@ namespace webrtc::rtcp {
 
 class Nack {
 public:
-    // prevent constructor by default
-    Nack& operator=(Nack const&);
-    Nack(Nack const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Nack();

@@ -11,12 +11,6 @@ namespace rtc {
 
 class MdnsResponderProvider {
 public:
-    // prevent constructor by default
-    MdnsResponderProvider& operator=(MdnsResponderProvider const&);
-    MdnsResponderProvider(MdnsResponderProvider const&);
-    MdnsResponderProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

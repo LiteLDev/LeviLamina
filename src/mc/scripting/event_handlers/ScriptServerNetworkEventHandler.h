@@ -25,12 +25,6 @@ class ScriptServerNetworkEventHandler
   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents>,
   public ::ScriptEventHandler<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> {
 public:
-    // prevent constructor by default
-    ScriptServerNetworkEventHandler& operator=(ScriptServerNetworkEventHandler const&);
-    ScriptServerNetworkEventHandler(ScriptServerNetworkEventHandler const&);
-    ScriptServerNetworkEventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

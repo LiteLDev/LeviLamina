@@ -94,19 +94,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint);
+    MCFOLD void
+    $onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint);
 
-    MCAPI void $onDestroyObject(
+    MCFOLD void $onDestroyObject(
         ::Scripting::LifetimeRegistry& registry,
         ::Scripting::ObjectHandle      handle,
         ::entt::meta_type const&       type,
         uint
     );
 
-    MCAPI void
+    MCFOLD void
     $onTrackObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint);
 
-    MCAPI void $onUntrackObject(
+    MCFOLD void $onUntrackObject(
         ::Scripting::LifetimeRegistry& registry,
         ::Scripting::ObjectHandle      handle,
         ::entt::meta_type const&       type,

@@ -11,11 +11,6 @@ namespace webrtc::rtcp {
 
 class Bye {
 public:
-    // prevent constructor by default
-    Bye& operator=(Bye const&);
-    Bye(Bye const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI Bye();

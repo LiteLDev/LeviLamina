@@ -129,7 +129,7 @@ public:
 
     MCAPI ::GameRule const* getRule(::GameRuleId rule) const;
 
-    MCAPI ::std::vector<::GameRule> const& getRules() const;
+    MCFOLD ::std::vector<::GameRule> const& getRules() const;
 
     MCAPI void getTagData(::CompoundTag const& tag, ::BaseGameVersion const& version);
 

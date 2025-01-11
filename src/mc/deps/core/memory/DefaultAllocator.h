@@ -9,12 +9,6 @@ namespace Bedrock::Memory {
 
 class DefaultAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    // prevent constructor by default
-    DefaultAllocator& operator=(DefaultAllocator const&);
-    DefaultAllocator(DefaultAllocator const&);
-    DefaultAllocator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

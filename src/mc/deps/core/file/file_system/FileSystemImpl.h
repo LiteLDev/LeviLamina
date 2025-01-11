@@ -331,7 +331,7 @@ public:
 
     MCAPI bool fileOrDirectoryExists(::Core::Path const& entryPath);
 
-    MCAPI ::Core::FileAccessType getAccessType() const;
+    MCFOLD ::Core::FileAccessType getAccessType() const;
 
     MCAPI ::Core::Result
     getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>& files, ::Core::Path const& directoryPath);
@@ -417,13 +417,13 @@ public:
     MCAPI ::Core::Result
     $copyTimeAndAccessRights(::Core::Path const& sourceFilePath, ::Core::Path const& targetFilePath);
 
-    MCAPI void $requestFlush(::std::vector<::Core::PendingWrite> const& writeRequests);
+    MCFOLD void $requestFlush(::std::vector<::Core::PendingWrite> const& writeRequests);
 
-    MCAPI bool $shouldCommit();
+    MCFOLD bool $shouldCommit();
 
-    MCAPI ::Core::CrossStorageCopyMode $getCrossStorageCopyMode();
+    MCFOLD ::Core::CrossStorageCopyMode $getCrossStorageCopyMode();
 
-    MCAPI uint64 $getTransactionWriteSizeLimit() const;
+    MCFOLD uint64 $getTransactionWriteSizeLimit() const;
 
     MCAPI ::Core::Result $_createEmptyFile(::Core::Path const& fileName);
 
@@ -472,9 +472,9 @@ public:
 
     MCAPI ::Core::Result $_getFileOrDirectorySize(::Core::Path const& entryName, uint64* pFileSizeOut);
 
-    MCAPI ::Core::Result $_addIgnoredThrottlePath(::Core::Path const&);
+    MCFOLD ::Core::Result $_addIgnoredThrottlePath(::Core::Path const&);
 
-    MCAPI ::Core::Result $_removeIgnoredThrottlePath(::Core::Path const&);
+    MCFOLD ::Core::Result $_removeIgnoredThrottlePath(::Core::Path const&);
 
     MCAPI ::Core::Result
     $_createFlatFile(::Core::Path const& sourceDirectoryPath, ::Core::Path const& targetDirectoryPath);
@@ -518,7 +518,7 @@ public:
         uint64                                          numBytesWritten
     );
 
-    MCAPI void $_initializeInternal();
+    MCFOLD void $_initializeInternal();
     // NOLINTEND
 
 public:

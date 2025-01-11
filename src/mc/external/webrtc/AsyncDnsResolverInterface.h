@@ -15,12 +15,6 @@ namespace webrtc {
 
 class AsyncDnsResolverInterface {
 public:
-    // prevent constructor by default
-    AsyncDnsResolverInterface& operator=(AsyncDnsResolverInterface const&);
-    AsyncDnsResolverInterface(AsyncDnsResolverInterface const&);
-    AsyncDnsResolverInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

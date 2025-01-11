@@ -45,12 +45,6 @@ struct ApplySystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                          ::GlobalWrite<>,
                          ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    ApplySystem& operator=(ApplySystem const&);
-    ApplySystem(ApplySystem const&);
-    ApplySystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

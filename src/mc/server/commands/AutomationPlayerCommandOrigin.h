@@ -97,19 +97,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCFOLD ::std::string $getName() const;
 
-    MCAPI ::std::string const& $getRequestId() const;
+    MCFOLD ::std::string const& $getRequestId() const;
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
     MCAPI ::CommandOriginData $toCommandOriginData() const;
 
-    MCAPI ::NetworkIdentifier const& $getSourceId() const;
+    MCFOLD ::NetworkIdentifier const& $getSourceId() const;
 
-    MCAPI ::CompoundTag $serialize() const;
+    MCFOLD ::CompoundTag $serialize() const;
 
     MCAPI bool $isValid() const;
     // NOLINTEND

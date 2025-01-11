@@ -7,12 +7,6 @@
 
 struct NavigationFlyDescription : public ::NavigationDescription {
 public:
-    // prevent constructor by default
-    NavigationFlyDescription& operator=(NavigationFlyDescription const&);
-    NavigationFlyDescription(NavigationFlyDescription const&);
-    NavigationFlyDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

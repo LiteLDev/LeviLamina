@@ -30,11 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const* getBlock() const;
+    MCFOLD ::Block const* getBlock() const;
 
-    MCAPI ::CommandBlockNameResult::Result getResult() const;
+    MCFOLD ::CommandBlockNameResult::Result getResult() const;
 
-    MCAPI bool isComplexAlias() const;
+    MCFOLD bool isComplexAlias() const;
 
     MCAPI bool isSameBlock(::Block const& rhs, bool onlyCompareBlockLegacy) const;
 
@@ -44,6 +44,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

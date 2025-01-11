@@ -5,12 +5,6 @@
 namespace Bedrock::Detail {
 
 template <typename T0>
-struct ErrorInfoBuilder {
-public:
-    // prevent constructor by default
-    ErrorInfoBuilder& operator=(ErrorInfoBuilder const&);
-    ErrorInfoBuilder(ErrorInfoBuilder const&);
-    ErrorInfoBuilder();
-};
+struct ErrorInfoBuilder {};
 
 } // namespace Bedrock::Detail

@@ -28,12 +28,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ReceiveStreamInterface& operator=(ReceiveStreamInterface const&);
-    ReceiveStreamInterface(ReceiveStreamInterface const&);
-    ReceiveStreamInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

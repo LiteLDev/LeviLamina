@@ -59,7 +59,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -101,7 +101,7 @@ public:
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
     // vIndex: 5
-    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
     // vIndex: 6
     virtual ::Item const* useTimeDepleted(
@@ -145,15 +145,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getNutrition() const;
+    MCFOLD int $getNutrition() const;
 
-    MCAPI float $getSaturationModifier() const;
+    MCFOLD float $getSaturationModifier() const;
 
-    MCAPI bool $canAlwaysEat() const;
+    MCFOLD bool $canAlwaysEat() const;
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
+    MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
 
     MCAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,

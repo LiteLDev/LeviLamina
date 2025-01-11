@@ -7,12 +7,6 @@
 
 struct AmphibiousMoveControlDescription : public ::MoveControlDescription {
 public:
-    // prevent constructor by default
-    AmphibiousMoveControlDescription& operator=(AmphibiousMoveControlDescription const&);
-    AmphibiousMoveControlDescription(AmphibiousMoveControlDescription const&);
-    AmphibiousMoveControlDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

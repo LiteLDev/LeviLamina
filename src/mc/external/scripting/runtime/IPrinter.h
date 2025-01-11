@@ -11,12 +11,6 @@ namespace Scripting {
 
 class IPrinter {
 public:
-    // prevent constructor by default
-    IPrinter& operator=(IPrinter const&);
-    IPrinter(IPrinter const&);
-    IPrinter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

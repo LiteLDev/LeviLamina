@@ -38,12 +38,12 @@ public:
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&                                      random,
-        ::ChunkPos const&                              pos,
+        ::ChunkPos const&                              chunkPos,
         ::Vec3 const&                                  startPos,
         ::BoundingBox const&                           volume,
         float                                          rad,
         float                                          yRad,
-        ::CaveFeatureUtils::CarvingParameters const&   carveValues
+        ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
     ) const /*override*/;
 
     // vIndex: 0
@@ -53,7 +53,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isDiggable(::Block const& block);
+    MCFOLD static bool isDiggable(::Block const& block);
     // NOLINTEND
 
 public:
@@ -69,12 +69,12 @@ public:
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&                                      random,
-        ::ChunkPos const&                              pos,
+        ::ChunkPos const&                              chunkPos,
         ::Vec3 const&                                  startPos,
         ::BoundingBox const&                           volume,
         float                                          rad,
         float                                          yRad,
-        ::CaveFeatureUtils::CarvingParameters const&   carveValues
+        ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
     ) const;
     // NOLINTEND
 

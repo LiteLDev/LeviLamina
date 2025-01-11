@@ -162,7 +162,7 @@ public:
 
     MCAPI ::std::unique_ptr<::AddActorBasePacket> $tryCreateAddActorPacket();
 
-    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 

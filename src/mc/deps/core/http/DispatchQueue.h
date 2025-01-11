@@ -78,13 +78,7 @@ public:
         // NOLINTEND
     };
 
-    struct Compare {
-    public:
-        // prevent constructor by default
-        Compare& operator=(Compare const&);
-        Compare(Compare const&);
-        Compare();
-    };
+    struct Compare {};
 
 public:
     // member variables

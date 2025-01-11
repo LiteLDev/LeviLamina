@@ -61,7 +61,7 @@ public:
     $process(::IBlockSource& region, ::BlockPos, ::BlockPos structurePos, ::br::worldgen::StructureBlockInfo const& originalBlockInfo, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&)
         const;
 
-    MCAPI ::br::worldgen::StructureProcessorType $type() const;
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND

@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class UnresolvableAddressCause {
 public:
-    // prevent constructor by default
-    UnresolvableAddressCause& operator=(UnresolvableAddressCause const&);
-    UnresolvableAddressCause(UnresolvableAddressCause const&);
-    UnresolvableAddressCause();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::UnresolvableAddressCause> Parse(::rtc::ArrayView<uchar const>);

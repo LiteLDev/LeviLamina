@@ -45,7 +45,7 @@ public:
 
     MCAPI StringConstraint(::cereal::StringConstraint&&);
 
-    MCAPI ::cereal::StringConstraint& maxSize(uint64 size);
+    MCFOLD ::cereal::StringConstraint& maxSize(uint64 size);
 
     MCAPI ::cereal::StringConstraint& regex(::std::string str);
 

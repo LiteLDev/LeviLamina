@@ -7,12 +7,6 @@
 
 struct FrozenNoiseBasedTemperatureFlag : public ::BiomeComponentBase {
 public:
-    // prevent constructor by default
-    FrozenNoiseBasedTemperatureFlag& operator=(FrozenNoiseBasedTemperatureFlag const&);
-    FrozenNoiseBasedTemperatureFlag(FrozenNoiseBasedTemperatureFlag const&);
-    FrozenNoiseBasedTemperatureFlag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

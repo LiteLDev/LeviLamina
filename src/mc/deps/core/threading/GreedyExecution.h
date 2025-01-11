@@ -4,12 +4,6 @@
 
 namespace Bedrock::Threading::Burst::Strategy::Execution {
 
-class GreedyExecution {
-public:
-    // prevent constructor by default
-    GreedyExecution& operator=(GreedyExecution const&);
-    GreedyExecution(GreedyExecution const&);
-    GreedyExecution();
-};
+class GreedyExecution {};
 
 } // namespace Bedrock::Threading::Burst::Strategy::Execution

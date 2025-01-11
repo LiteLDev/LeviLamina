@@ -47,9 +47,9 @@ public:
 
     MCAPI ::leveldb::Status $Close();
 
-    MCAPI ::leveldb::Status $Flush();
+    MCFOLD ::leveldb::Status $Flush();
 
-    MCAPI ::leveldb::Status $Sync();
+    MCFOLD ::leveldb::Status $Sync();
     // NOLINTEND
 
 public:

@@ -7,12 +7,6 @@
 
 class MobSpawnInfo {
 public:
-    // prevent constructor by default
-    MobSpawnInfo& operator=(MobSpawnInfo const&);
-    MobSpawnInfo(MobSpawnInfo const&);
-    MobSpawnInfo();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int categoryID(::ActorType category);

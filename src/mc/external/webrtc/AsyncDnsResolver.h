@@ -6,11 +6,6 @@ namespace webrtc {
 
 class AsyncDnsResolver {
 public:
-    // prevent constructor by default
-    AsyncDnsResolver& operator=(AsyncDnsResolver const&);
-    AsyncDnsResolver(AsyncDnsResolver const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AsyncDnsResolver();

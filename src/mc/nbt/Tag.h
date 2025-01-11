@@ -133,15 +133,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $deleteChildren();
+    MCFOLD void $deleteChildren();
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCFOLD bool $equals(::Tag const& rhs) const;
 
     MCAPI void $print(::PrintStream& out) const;
 

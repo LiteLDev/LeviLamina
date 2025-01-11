@@ -14,12 +14,6 @@ namespace Bedrock::PubSub { class Subscription; }
 
 class IFlightingToggles {
 public:
-    // prevent constructor by default
-    IFlightingToggles& operator=(IFlightingToggles const&);
-    IFlightingToggles(IFlightingToggles const&);
-    IFlightingToggles();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

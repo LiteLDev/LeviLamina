@@ -135,31 +135,31 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+    MCFOLD ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
     MCAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
 
-    MCAPI bool $allowContentLogWriteToDisk();
+    MCFOLD bool $allowContentLogWriteToDisk();
 
-    MCAPI bool $devHotReloadRenderResources() const;
+    MCFOLD bool $devHotReloadRenderResources() const;
 
     MCAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
 
     MCAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
-    MCAPI bool $canAppSelfTerminate() const;
+    MCFOLD bool $canAppSelfTerminate() const;
 
-    MCAPI bool $getPlatformTTSExists() const;
+    MCFOLD bool $getPlatformTTSExists() const;
 
     MCAPI bool $getPlatformTTSEnabled() const;
 
     MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
-    MCAPI bool $allowsExternalCommandExecution() const;
+    MCFOLD bool $allowsExternalCommandExecution() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
 

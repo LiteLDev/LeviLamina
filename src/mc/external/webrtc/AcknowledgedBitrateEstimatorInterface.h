@@ -11,12 +11,6 @@ namespace webrtc {
 
 class AcknowledgedBitrateEstimatorInterface {
 public:
-    // prevent constructor by default
-    AcknowledgedBitrateEstimatorInterface& operator=(AcknowledgedBitrateEstimatorInterface const&);
-    AcknowledgedBitrateEstimatorInterface(AcknowledgedBitrateEstimatorInterface const&);
-    AcknowledgedBitrateEstimatorInterface();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::webrtc::AcknowledgedBitrateEstimatorInterface>

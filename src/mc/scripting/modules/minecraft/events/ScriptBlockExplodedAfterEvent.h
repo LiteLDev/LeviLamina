@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&
+    MCFOLD ::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
     // NOLINTEND
 

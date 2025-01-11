@@ -13,12 +13,6 @@ namespace Bedrock::Http {
 
 class HttpInterface : public ::Bedrock::ImplBase<::Bedrock::Http::HttpInterface> {
 public:
-    // prevent constructor by default
-    HttpInterface& operator=(HttpInterface const&);
-    HttpInterface(HttpInterface const&);
-    HttpInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -6,11 +6,6 @@ namespace Bedrock::Threading {
 
 class MainProcScope {
 public:
-    // prevent constructor by default
-    MainProcScope& operator=(MainProcScope const&);
-    MainProcScope(MainProcScope const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MainProcScope();

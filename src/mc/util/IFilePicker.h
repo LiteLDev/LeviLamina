@@ -10,12 +10,6 @@ namespace Core { class Path; }
 
 class IFilePicker {
 public:
-    // prevent constructor by default
-    IFilePicker& operator=(IFilePicker const&);
-    IFilePicker(IFilePicker const&);
-    IFilePicker();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -9,12 +9,6 @@ namespace SFAT {
 
 class ConfigurationParameters : public ::SFAT::ConfigParamsBase {
 public:
-    // prevent constructor by default
-    ConfigurationParameters& operator=(ConfigurationParameters const&);
-    ConfigurationParameters(ConfigurationParameters const&);
-    ConfigurationParameters();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

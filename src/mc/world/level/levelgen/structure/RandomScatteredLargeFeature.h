@@ -106,9 +106,9 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI bool $shouldAddHardcodedSpawnAreas() const;
+    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,

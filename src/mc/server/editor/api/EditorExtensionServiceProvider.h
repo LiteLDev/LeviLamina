@@ -24,12 +24,6 @@ namespace Editor::API {
 
 class EditorExtensionServiceProvider {
 public:
-    // prevent constructor by default
-    EditorExtensionServiceProvider& operator=(EditorExtensionServiceProvider const&);
-    EditorExtensionServiceProvider(EditorExtensionServiceProvider const&);
-    EditorExtensionServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

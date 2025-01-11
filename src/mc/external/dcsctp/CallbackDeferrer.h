@@ -16,12 +16,6 @@ public:
     // CallbackDeferrer inner types define
     struct Error {
     public:
-        // prevent constructor by default
-        Error& operator=(Error const&);
-        Error(Error const&);
-        Error();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Error();
@@ -35,12 +29,6 @@ public:
     };
 
     struct ScopedDeferrer {
-    public:
-        // prevent constructor by default
-        ScopedDeferrer& operator=(ScopedDeferrer const&);
-        ScopedDeferrer(ScopedDeferrer const&);
-        ScopedDeferrer();
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -56,12 +44,6 @@ public:
 
     struct StreamReset {
     public:
-        // prevent constructor by default
-        StreamReset& operator=(StreamReset const&);
-        StreamReset(StreamReset const&);
-        StreamReset();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~StreamReset();
@@ -73,12 +55,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    CallbackDeferrer& operator=(CallbackDeferrer const&);
-    CallbackDeferrer(CallbackDeferrer const&);
-    CallbackDeferrer();
 
 public:
     // member functions

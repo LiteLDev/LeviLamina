@@ -16,12 +16,6 @@ namespace dcsctp {
 
 class HeartbeatHandler {
 public:
-    // prevent constructor by default
-    HeartbeatHandler& operator=(HeartbeatHandler const&);
-    HeartbeatHandler(HeartbeatHandler const&);
-    HeartbeatHandler();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void HandleHeartbeatAck(::dcsctp::HeartbeatAckChunk);

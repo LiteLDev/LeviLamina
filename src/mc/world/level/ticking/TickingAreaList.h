@@ -14,11 +14,6 @@ class Vec3;
 
 class TickingAreaList : public ::TickingAreaListBase {
 public:
-    // prevent constructor by default
-    TickingAreaList& operator=(TickingAreaList const&);
-    TickingAreaList();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

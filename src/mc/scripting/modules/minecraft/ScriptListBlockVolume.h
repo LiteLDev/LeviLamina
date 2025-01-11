@@ -59,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume&& rhs);
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptListBlockVolume const&);
     // NOLINTEND

@@ -61,7 +61,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
+    MCFOLD void $initialize();
 
     MCAPI void $shutdown();
 

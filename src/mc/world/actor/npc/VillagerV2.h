@@ -21,12 +21,6 @@ struct VariantParameterList;
 
 class VillagerV2 : public ::VillagerBase {
 public:
-    // prevent constructor by default
-    VillagerV2& operator=(VillagerV2 const&);
-    VillagerV2(VillagerV2 const&);
-    VillagerV2();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -87,7 +81,7 @@ public:
 
     MCAPI void $newServerAiStep();
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCFOLD void $die(::ActorDamageSource const& source);
 
     MCAPI void $remove();
 

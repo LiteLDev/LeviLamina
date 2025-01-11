@@ -35,11 +35,11 @@ public:
 
     MCAPI int decrementTickCount();
 
-    MCAPI ::BaseCommandBlock& getBaseCommandBlock();
+    MCFOLD ::BaseCommandBlock& getBaseCommandBlock();
 
-    MCAPI int getCurrentTickCount() const;
+    MCFOLD int getCurrentTickCount() const;
 
-    MCAPI bool getTicking() const;
+    MCFOLD bool getTicking() const;
 
     MCAPI void initFromDefinition(::Actor& owner);
 

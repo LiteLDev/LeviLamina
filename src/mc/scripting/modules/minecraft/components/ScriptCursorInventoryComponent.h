@@ -19,12 +19,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptCursorInventoryComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptCursorInventoryComponent& operator=(ScriptCursorInventoryComponent const&);
-    ScriptCursorInventoryComponent(ScriptCursorInventoryComponent const&);
-    ScriptCursorInventoryComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -11,12 +11,6 @@ namespace cricket {
 
 class CandidatePairInterface {
 public:
-    // prevent constructor by default
-    CandidatePairInterface& operator=(CandidatePairInterface const&);
-    CandidatePairInterface(CandidatePairInterface const&);
-    CandidatePairInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

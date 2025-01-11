@@ -21,12 +21,6 @@ namespace Editor::Cursor {
 
 class ServerCursorServiceProvider {
 public:
-    // prevent constructor by default
-    ServerCursorServiceProvider& operator=(ServerCursorServiceProvider const&);
-    ServerCursorServiceProvider(ServerCursorServiceProvider const&);
-    ServerCursorServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

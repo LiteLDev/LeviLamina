@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct TravelMoveRequestSystem {
 public:
-    // prevent constructor by default
-    TravelMoveRequestSystem& operator=(TravelMoveRequestSystem const&);
-    TravelMoveRequestSystem(TravelMoveRequestSystem const&);
-    TravelMoveRequestSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

@@ -66,7 +66,7 @@ public:
 
     MCAPI void changeThread(::std::thread::id newOwner);
 
-    MCAPI ::WorkerPool& getCoroutinePool();
+    MCFOLD ::WorkerPool& getCoroutinePool();
 
     MCAPI void processCoroutines(::std::chrono::nanoseconds timeSinceSwap, ::std::chrono::nanoseconds minTimeCap);
 

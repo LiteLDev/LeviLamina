@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class StreamCollectionInterface {
-public:
-    // prevent constructor by default
-    StreamCollectionInterface& operator=(StreamCollectionInterface const&);
-    StreamCollectionInterface(StreamCollectionInterface const&);
-    StreamCollectionInterface();
-};
+class StreamCollectionInterface {};
 
 } // namespace webrtc

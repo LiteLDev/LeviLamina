@@ -12,12 +12,6 @@ namespace webrtc {
 
 class BitrateEstimator {
 public:
-    // prevent constructor by default
-    BitrateEstimator& operator=(BitrateEstimator const&);
-    BitrateEstimator(BitrateEstimator const&);
-    BitrateEstimator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BitrateEstimator(::webrtc::FieldTrialsView const*);

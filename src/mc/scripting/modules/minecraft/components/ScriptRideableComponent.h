@@ -25,12 +25,6 @@ namespace ScriptModuleMinecraft {
 class ScriptRideableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::RideableComponent, ::RideableDefinition> {
 public:
-    // prevent constructor by default
-    ScriptRideableComponent& operator=(ScriptRideableComponent const&);
-    ScriptRideableComponent(ScriptRideableComponent const&);
-    ScriptRideableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

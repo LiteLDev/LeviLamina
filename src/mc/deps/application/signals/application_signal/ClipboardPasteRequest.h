@@ -7,12 +7,6 @@
 
 namespace ApplicationSignal {
 
-class ClipboardPasteRequest : public ::Bedrock::Signal<::ApplicationSignal::ClipboardPasteRequest, void> {
-public:
-    // prevent constructor by default
-    ClipboardPasteRequest& operator=(ClipboardPasteRequest const&);
-    ClipboardPasteRequest(ClipboardPasteRequest const&);
-    ClipboardPasteRequest();
-};
+class ClipboardPasteRequest : public ::Bedrock::Signal<::ApplicationSignal::ClipboardPasteRequest, void> {};
 
 } // namespace ApplicationSignal

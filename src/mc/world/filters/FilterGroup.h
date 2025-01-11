@@ -97,9 +97,9 @@ public:
 
     MCAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
-    MCAPI ::std::vector<::std::shared_ptr<::FilterGroup>> const& getChildren() const;
+    MCFOLD ::std::vector<::std::shared_ptr<::FilterGroup>> const& getChildren() const;
 
-    MCAPI ::std::vector<::std::shared_ptr<::FilterTest>> const& getMembers() const;
+    MCFOLD ::std::vector<::std::shared_ptr<::FilterTest>> const& getMembers() const;
 
     MCAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND

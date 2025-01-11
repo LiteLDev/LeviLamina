@@ -4,12 +4,6 @@
 
 namespace mce {
 
-class MaterialPtr {
-public:
-    // prevent constructor by default
-    MaterialPtr& operator=(MaterialPtr const&);
-    MaterialPtr(MaterialPtr const&);
-    MaterialPtr();
-};
+class MaterialPtr {};
 
 } // namespace mce

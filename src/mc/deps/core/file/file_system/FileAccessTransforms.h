@@ -4,12 +4,6 @@
 
 class FileAccessTransforms {
 public:
-    // prevent constructor by default
-    FileAccessTransforms& operator=(FileAccessTransforms const&);
-    FileAccessTransforms(FileAccessTransforms const&);
-    FileAccessTransforms();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -31,9 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $readTransform(::std::vector<uchar>& stream) const;
+    MCFOLD bool $readTransform(::std::vector<uchar>& stream) const;
 
-    MCAPI bool $writeTransform(::std::vector<uchar>& stream) const;
+    MCFOLD bool $writeTransform(::std::vector<uchar>& stream) const;
     // NOLINTEND
 
 public:

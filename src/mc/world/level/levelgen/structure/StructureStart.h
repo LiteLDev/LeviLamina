@@ -63,9 +63,9 @@ public:
     // NOLINTBEGIN
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCAPI int $getMaxYSpawnOffset() const;
+    MCFOLD int $getMaxYSpawnOffset() const;
     // NOLINTEND
 
 public:

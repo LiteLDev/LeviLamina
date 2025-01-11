@@ -42,7 +42,7 @@ public:
 
     MCAPI SwampSurfaceBiomeJsonComponent(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
+    MCFOLD ::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent&&);
     // NOLINTEND
 
@@ -63,9 +63,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
+    MCFOLD void* $ctor(::SharedTypes::v1_20_60::SwampSurfaceBiomeJsonComponent const&);
     // NOLINTEND
 
 public:

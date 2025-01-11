@@ -18,28 +18,43 @@
 #include "ll/api/base/Concepts.h"
 #include "ll/api/base/Meta.h"
 
+// auto generated forward declare list
+// clang-format off
+class ByteArrayTag;
+class ByteTag;
 class CompoundTag;
+class DoubleTag;
+class EndTag;
+class FloatTag;
+class Int64Tag;
+class IntArrayTag;
+class IntTag;
+class ListTag;
+class ShortTag;
+class StringTag;
+class Tag;
+// clang-format on
 
 class CompoundTagVariant {
 public:
+    // CompoundTagVariant inner types define
     using Types = ::ll::meta::TypeList<
-        EndTag,
-        ByteTag,
-        ShortTag,
-        IntTag,
-        Int64Tag,
-        FloatTag,
-        DoubleTag,
-        ByteArrayTag,
-        StringTag,
-        ListTag,
-        CompoundTag,
-        IntArrayTag>;
+        ::EndTag,
+        ::ByteTag,
+        ::ShortTag,
+        ::IntTag,
+        ::Int64Tag,
+        ::FloatTag,
+        ::DoubleTag,
+        ::ByteArrayTag,
+        ::StringTag,
+        ::ListTag,
+        ::CompoundTag,
+        ::IntArrayTag>;
 
-    using Variant = Types::to<std::variant>;
+    using Variant = Types::to<::std::variant>;
 
-    Variant mTagStorage;
-
+public:
     LLNDAPI static ll::Expected<CompoundTagVariant>
     parse(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;
 
@@ -308,6 +323,16 @@ public:
     static CompoundTagVariant array(std::initializer_list<CompoundTagVariant> init = {}) {
         return CompoundTagVariant{std::in_place_type<ListTag>, init};
     }
+
+public:
+    // member variables
+    Variant mTagStorage;
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };
 
 [[nodiscard]] inline CompoundTagVariant& CompoundTag::operator[](std::string_view index) {

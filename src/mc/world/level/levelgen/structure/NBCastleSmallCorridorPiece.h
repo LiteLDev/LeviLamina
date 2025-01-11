@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBCastleSmallCorridorPiece : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBCastleSmallCorridorPiece& operator=(NBCastleSmallCorridorPiece const&);
-    NBCastleSmallCorridorPiece(NBCastleSmallCorridorPiece const&);
-    NBCastleSmallCorridorPiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -66,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructurePieceType $getType() const;
 
-    MCAPI void $addChildren(
+    MCFOLD void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random

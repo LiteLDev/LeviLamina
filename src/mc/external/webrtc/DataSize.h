@@ -7,12 +7,6 @@
 
 namespace webrtc {
 
-class DataSize : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataSize> {
-public:
-    // prevent constructor by default
-    DataSize& operator=(DataSize const&);
-    DataSize(DataSize const&);
-    DataSize();
-};
+class DataSize : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataSize> {};
 
 } // namespace webrtc

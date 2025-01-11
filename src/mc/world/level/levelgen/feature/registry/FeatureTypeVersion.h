@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
 
-    MCAPI ::SemVersion const& getFormatVersion() const;
+    MCFOLD ::SemVersion const& getFormatVersion() const;
 
     MCAPI ~FeatureTypeVersion();
     // NOLINTEND
@@ -43,6 +43,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

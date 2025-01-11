@@ -33,12 +33,6 @@ struct CurrentlyStandingOnBlockSystemImpl
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    CurrentlyStandingOnBlockSystemImpl& operator=(CurrentlyStandingOnBlockSystemImpl const&);
-    CurrentlyStandingOnBlockSystemImpl(CurrentlyStandingOnBlockSystemImpl const&);
-    CurrentlyStandingOnBlockSystemImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

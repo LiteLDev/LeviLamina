@@ -29,11 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorDamageCause getCause() const;
+    MCFOLD ::ActorDamageCause getCause() const;
 
     MCAPI ::std::optional<uchar> getDeprecatedMajorVersion() const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
     MCAPI ::Scripting::Version getVersion() const;
 
@@ -43,6 +43,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

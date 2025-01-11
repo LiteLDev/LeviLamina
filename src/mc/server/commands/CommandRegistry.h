@@ -98,7 +98,7 @@ public:
         MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
         createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
 
-        MCAPI ::std::string const& getErrorMessage() const;
+        MCFOLD ::std::string const& getErrorMessage() const;
 
         MCAPI ::std::vector<::std::string> getErrorParams() const;
 
@@ -275,13 +275,13 @@ public:
 
         MCAPI uint64 toIndex() const;
 
-        MCAPI int value() const;
+        MCFOLD int value() const;
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(uint64 value);
+        MCFOLD void* $ctor(uint64 value);
         // NOLINTEND
     };
 
@@ -509,7 +509,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -534,7 +534,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -934,7 +934,7 @@ public:
     MCAPI ::CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;
 
-    MCAPI ::CommandRunStats& getCommandRunStats() const;
+    MCFOLD ::CommandRunStats& getCommandRunStats() const;
 
     MCAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
 
@@ -1001,9 +1001,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
 
-    MCAPI static void buildOverload(::CommandRegistry::Overload& overload);
+    MCFOLD static void buildOverload(::CommandRegistry::Overload& overload);
 
-    MCAPI static ::CommandRegistry::ParseToken*
+    MCFOLD static ::CommandRegistry::ParseToken*
     collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
     MCAPI static ::CommandRegistry::ParseToken* collapseOn(

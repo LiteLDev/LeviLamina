@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onSourceDestroyed(::BlockSource& source);
+    MCFOLD void $onSourceDestroyed(::BlockSource& source);
     // NOLINTEND
 
 public:

@@ -18,12 +18,6 @@ namespace cricket {
 
 class TurnEntry {
 public:
-    // prevent constructor by default
-    TurnEntry& operator=(TurnEntry const&);
-    TurnEntry(TurnEntry const&);
-    TurnEntry();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void OnChannelBindError(::cricket::StunMessage*, int);

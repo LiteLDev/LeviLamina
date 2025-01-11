@@ -13,12 +13,6 @@ namespace Json { class Value; }
 
 class BlockListSerializer {
 public:
-    // prevent constructor by default
-    BlockListSerializer& operator=(BlockListSerializer const&);
-    BlockListSerializer(BlockListSerializer const&);
-    BlockListSerializer();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void loadJSON(::Json::Value value, ::MolangVersion molangVersion, ::BlockDescriptor& blockDescriptor);

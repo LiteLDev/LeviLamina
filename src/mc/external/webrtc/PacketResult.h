@@ -14,12 +14,6 @@ public:
     // PacketResult inner types define
     class ReceiveTimeOrder {
     public:
-        // prevent constructor by default
-        ReceiveTimeOrder& operator=(ReceiveTimeOrder const&);
-        ReceiveTimeOrder(ReceiveTimeOrder const&);
-        ReceiveTimeOrder();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool operator()(::webrtc::PacketResult const&, ::webrtc::PacketResult const&);

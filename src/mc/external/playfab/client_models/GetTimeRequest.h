@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct GetTimeRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    GetTimeRequest& operator=(GetTimeRequest const&);
-    GetTimeRequest(GetTimeRequest const&);
-    GetTimeRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

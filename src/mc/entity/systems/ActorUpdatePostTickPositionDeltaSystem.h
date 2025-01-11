@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class ActorUpdatePostTickPositionDeltaSystem {
 public:
-    // prevent constructor by default
-    ActorUpdatePostTickPositionDeltaSystem& operator=(ActorUpdatePostTickPositionDeltaSystem const&);
-    ActorUpdatePostTickPositionDeltaSystem(ActorUpdatePostTickPositionDeltaSystem const&);
-    ActorUpdatePostTickPositionDeltaSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickActorUpdatePostTickPositionDeltaSystem(::ViewT<

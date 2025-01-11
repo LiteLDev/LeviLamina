@@ -120,7 +120,7 @@ public:
 
     MCAPI ::Scripting::Result<void> $quit();
 
-    MCAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
+    MCFOLD ::Editor::ServiceProviderCollection& $getServiceProviders();
 
     MCAPI ::Scripting::Result<::Bedrock::PubSub::Subscription, ::Scripting::Error>
     $registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick);

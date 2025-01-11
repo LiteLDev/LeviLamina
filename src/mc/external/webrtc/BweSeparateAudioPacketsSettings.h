@@ -12,12 +12,6 @@ namespace webrtc {
 
 struct BweSeparateAudioPacketsSettings {
 public:
-    // prevent constructor by default
-    BweSeparateAudioPacketsSettings& operator=(BweSeparateAudioPacketsSettings const&);
-    BweSeparateAudioPacketsSettings(BweSeparateAudioPacketsSettings const&);
-    BweSeparateAudioPacketsSettings();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BweSeparateAudioPacketsSettings(::webrtc::FieldTrialsView const*);

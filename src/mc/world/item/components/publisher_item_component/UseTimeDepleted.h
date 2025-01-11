@@ -22,12 +22,6 @@ class UseTimeDepleted : public ::ItemComponent,
                             void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&),
                             ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
-    // prevent constructor by default
-    UseTimeDepleted& operator=(UseTimeDepleted const&);
-    UseTimeDepleted(UseTimeDepleted const&);
-    UseTimeDepleted();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

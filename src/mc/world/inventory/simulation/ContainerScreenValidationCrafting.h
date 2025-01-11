@@ -14,12 +14,6 @@ struct ContainerValidationResult;
 
 class ContainerScreenValidationCrafting : public ::ContainerScreenValidation {
 public:
-    // prevent constructor by default
-    ContainerScreenValidationCrafting& operator=(ContainerScreenValidationCrafting const&);
-    ContainerScreenValidationCrafting(ContainerScreenValidationCrafting const&);
-    ContainerScreenValidationCrafting();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

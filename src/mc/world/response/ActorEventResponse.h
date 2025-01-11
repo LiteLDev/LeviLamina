@@ -15,12 +15,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class ActorEventResponse {
 public:
-    // prevent constructor by default
-    ActorEventResponse& operator=(ActorEventResponse const&);
-    ActorEventResponse(ActorEventResponse const&);
-    ActorEventResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -49,9 +43,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCFOLD ::std::string const& $getName() const;
 
-    MCAPI void $buildSchema(
+    MCFOLD void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
                                                schema,
         ::Factory<::ActorEventResponse> const& factory

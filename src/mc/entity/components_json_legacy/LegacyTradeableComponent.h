@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void DecrementMerchantTimer();
+    MCFOLD void DecrementMerchantTimer();
 
     MCAPI void IncrementTradeTier();
 
@@ -61,23 +61,23 @@ public:
 
     MCAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
 
-    MCAPI bool getAddRecipeOnUpdate() const;
+    MCFOLD bool getAddRecipeOnUpdate() const;
 
-    MCAPI ::std::string const& getDisplayName() const;
+    MCFOLD ::std::string const& getDisplayName() const;
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI ::ActorUniqueID const getLastPlayerTradeID() const;
+    MCFOLD ::ActorUniqueID const getLastPlayerTradeID() const;
 
     MCAPI ::MerchantRecipeList* getOffers(::Actor& owner);
 
-    MCAPI bool getResetLockedOnFirstTrade() const;
+    MCFOLD bool getResetLockedOnFirstTrade() const;
 
-    MCAPI int getRiches() const;
+    MCFOLD int getRiches() const;
 
-    MCAPI int getTradeTier() const;
+    MCFOLD int getTradeTier() const;
 
-    MCAPI int getUpdateMerchantTimer() const;
+    MCFOLD int getUpdateMerchantTimer() const;
 
     MCAPI ::std::string const& loadDisplayName(::Actor& owner);
 
@@ -93,15 +93,15 @@ public:
 
     MCAPI void restockAllRecipes(::Actor& owner);
 
-    MCAPI void setAddRecipeOnUpdate(bool addRecipeOnUpdate);
+    MCFOLD void setAddRecipeOnUpdate(bool addRecipeOnUpdate);
 
     MCAPI void setOffers(::MerchantRecipeList& offers);
 
-    MCAPI void setResetLockedOnFirstTrade(bool resetLockedOnFirstTrade);
+    MCFOLD void setResetLockedOnFirstTrade(bool resetLockedOnFirstTrade);
 
-    MCAPI void setRiches(int riches);
+    MCFOLD void setRiches(int riches);
 
-    MCAPI void setTradeTier(int tier);
+    MCFOLD void setTradeTier(int tier);
 
     MCAPI bool shouldConvertTrades(::Actor& owner) const;
 

@@ -13,12 +13,6 @@ namespace mce { class UUID; }
 
 class SoulSpeedEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    SoulSpeedEnchant& operator=(SoulSpeedEnchant const&);
-    SoulSpeedEnchant(SoulSpeedEnchant const&);
-    SoulSpeedEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -65,15 +59,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCFOLD int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCAPI bool $isTreasureOnly() const;
+    MCFOLD bool $isTreasureOnly() const;
 
-    MCAPI bool $isDiscoverable() const;
+    MCFOLD bool $isDiscoverable() const;
     // NOLINTEND
 
 public:

@@ -10,7 +10,7 @@ class Experiments;
 namespace DataDrivenVanillaBlocksAndItemsUtil {
 // functions
 // NOLINTBEGIN
-MCAPI bool isEnabled(::Experiments const& experiments);
+MCFOLD bool isEnabled(::Experiments const& experiments);
 // NOLINTEND
 
 } // namespace DataDrivenVanillaBlocksAndItemsUtil

@@ -84,7 +84,7 @@ public:
         int                                    heightMax
     ) const;
 
-    MCAPI void parseExpressionNodeFloat(
+    MCFOLD void parseExpressionNodeFloat(
         ::CompoundTag const& tag,
         ::std::string const& tagName,
         ::std::string const& tagNameType,

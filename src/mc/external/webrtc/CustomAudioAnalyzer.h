@@ -11,12 +11,6 @@ namespace webrtc {
 
 class CustomAudioAnalyzer {
 public:
-    // prevent constructor by default
-    CustomAudioAnalyzer& operator=(CustomAudioAnalyzer const&);
-    CustomAudioAnalyzer(CustomAudioAnalyzer const&);
-    CustomAudioAnalyzer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

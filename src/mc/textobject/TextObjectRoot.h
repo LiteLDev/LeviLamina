@@ -50,9 +50,9 @@ public:
 
     MCAPI ::std::vector<::std::string> asStringVector() const;
 
-    MCAPI void clear();
+    MCFOLD void clear();
 
-    MCAPI bool isEmpty() const;
+    MCFOLD bool isEmpty() const;
 
     MCAPI ::ResolvedTextObject resolveRoot(::Actor const& actor, ::Scoreboard const& scoreboard) const;
     // NOLINTEND
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

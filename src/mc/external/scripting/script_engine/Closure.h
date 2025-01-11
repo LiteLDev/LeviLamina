@@ -5,12 +5,6 @@
 namespace Scripting {
 
 template <typename T0>
-class Closure {
-public:
-    // prevent constructor by default
-    Closure& operator=(Closure const&);
-    Closure(Closure const&);
-    Closure();
-};
+class Closure {};
 
 } // namespace Scripting

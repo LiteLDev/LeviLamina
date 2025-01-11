@@ -66,7 +66,7 @@ public:
         ::Scripting::InvalidArgumentError>
     getBlockPermutation(::Vec3 const& location) const;
 
-    MCAPI ::std::string const& getId() const;
+    MCFOLD ::std::string const& getId() const;
 
     MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 

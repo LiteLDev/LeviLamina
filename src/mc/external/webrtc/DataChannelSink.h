@@ -15,12 +15,6 @@ namespace webrtc {
 
 class DataChannelSink {
 public:
-    // prevent constructor by default
-    DataChannelSink& operator=(DataChannelSink const&);
-    DataChannelSink(DataChannelSink const&);
-    DataChannelSink();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

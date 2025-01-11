@@ -147,15 +147,15 @@ public:
     // NOLINTBEGIN
     MCAPI void $log(::LogArea const area, ::LogLevel const level, char const* message);
 
-    MCAPI void $flush();
+    MCFOLD void $flush();
 
     MCAPI void $setEnabled(bool newState);
 
-    MCAPI bool $isEnabled() const;
+    MCFOLD bool $isEnabled() const;
 
-    MCAPI bool $logOnlyOnce() const;
+    MCFOLD bool $logOnlyOnce() const;
 
-    MCAPI void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
+    MCFOLD void $contentAssert(::LogArea const area, ::LogLevel const level, char const* message);
     // NOLINTEND
 
 public:

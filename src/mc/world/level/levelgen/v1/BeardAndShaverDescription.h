@@ -37,7 +37,7 @@ public:
 
     MCAPI float calculateContribution(::BlockPos const& pos) const;
 
-    MCAPI ::BeardingDescriptionCache const& getCache() const;
+    MCFOLD ::BeardingDescriptionCache const& getCache() const;
     // NOLINTEND
 
 public:

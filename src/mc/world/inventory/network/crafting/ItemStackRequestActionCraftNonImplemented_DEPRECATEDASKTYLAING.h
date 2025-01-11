@@ -14,12 +14,6 @@ class ReadOnlyBinaryStream;
 
 class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING : public ::ItemStackRequestActionCraftBase {
 public:
-    // prevent constructor by default
-    ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING&
-    operator=(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&);
-    ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -53,9 +47,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_write(::BinaryStream& stream) const;
+    MCFOLD void $_write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
+    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
     // NOLINTEND
 
 public:

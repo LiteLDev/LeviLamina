@@ -22,7 +22,7 @@ MCAPI void setHasTeleported(::EntityContext& entity, bool newValue);
 
 MCAPI void setIsImmobile(::EntityContext& entity, bool newValue);
 
-MCAPI void setIsJumping(::EntityContext& entity, bool newValue);
+MCFOLD void setIsJumping(::EntityContext& entity, bool newValue);
 // NOLINTEND
 
 } // namespace ActorMovement

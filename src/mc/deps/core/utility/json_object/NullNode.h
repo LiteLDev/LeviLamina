@@ -7,12 +7,6 @@
 
 namespace Bedrock::JSONObject {
 
-class NullNode : public ::Bedrock::JSONObject::Node {
-public:
-    // prevent constructor by default
-    NullNode& operator=(NullNode const&);
-    NullNode(NullNode const&);
-    NullNode();
-};
+class NullNode : public ::Bedrock::JSONObject::Node {};
 
 } // namespace Bedrock::JSONObject

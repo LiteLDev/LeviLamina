@@ -102,7 +102,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $sendEvent(::Social::Events::Event const& event);
 
-    MCAPI int $getEventTagsFilter() const;
+    MCFOLD int $getEventTagsFilter() const;
 
     MCAPI void $_flushEventQueue();
     // NOLINTEND

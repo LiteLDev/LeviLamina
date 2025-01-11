@@ -13,12 +13,6 @@ class ItemStack;
 
 class VanillaItemTiers {
 public:
-    // prevent constructor by default
-    VanillaItemTiers& operator=(VanillaItemTiers const&);
-    VanillaItemTiers(VanillaItemTiers const&);
-    VanillaItemTiers();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::ItemStack> const

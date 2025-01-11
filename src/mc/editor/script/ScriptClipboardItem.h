@@ -44,7 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> clear();
 
-    MCAPI ::mce::UUID const& getId() const;
+    MCFOLD ::mce::UUID const& getId() const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>>

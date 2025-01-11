@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct SetPlayerSecretResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    SetPlayerSecretResult& operator=(SetPlayerSecretResult const&);
-    SetPlayerSecretResult(SetPlayerSecretResult const&);
-    SetPlayerSecretResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

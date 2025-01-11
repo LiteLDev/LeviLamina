@@ -81,9 +81,9 @@ public:
 
     MCAPI bool $canStopPower() const;
 
-    MCAPI void $setStopPower(bool bPower);
+    MCFOLD void $setStopPower(bool bPower);
 
-    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:

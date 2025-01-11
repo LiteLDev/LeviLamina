@@ -6,12 +6,6 @@ namespace cricket {
 
 struct ActiveIceControllerFactoryArgs {
 public:
-    // prevent constructor by default
-    ActiveIceControllerFactoryArgs& operator=(ActiveIceControllerFactoryArgs const&);
-    ActiveIceControllerFactoryArgs(ActiveIceControllerFactoryArgs const&);
-    ActiveIceControllerFactoryArgs();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ActiveIceControllerFactoryArgs();

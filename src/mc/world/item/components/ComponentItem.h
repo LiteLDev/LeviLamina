@@ -286,7 +286,7 @@ public:
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     // vIndex: 123
     virtual bool shouldUseJsonForRenderMatrix() const;
@@ -421,9 +421,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tearDown();
+    MCFOLD void $tearDown();
 
-    MCAPI bool $isComponentBased() const;
+    MCFOLD bool $isComponentBased() const;
 
     MCAPI bool $isHumanoidArmor() const;
 
@@ -433,7 +433,7 @@ public:
 
     MCAPI bool $isDyeable() const;
 
-    MCAPI bool $isFood() const;
+    MCFOLD bool $isFood() const;
 
     MCAPI bool $isThrowable() const;
 
@@ -453,23 +453,23 @@ public:
 
     MCAPI ::std::string const& $getDescriptionId() const;
 
-    MCAPI ::BlockShape $getBlockShape() const;
+    MCFOLD ::BlockShape $getBlockShape() const;
 
     MCAPI bool $canBeDepleted() const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCAPI int $getLevelDataForAuxValue(int) const;
+    MCFOLD int $getLevelDataForAuxValue(int) const;
 
     MCAPI short $getMaxDamage() const;
 
-    MCAPI int $getAttackDamage() const;
+    MCFOLD int $getAttackDamage() const;
 
-    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
     MCAPI bool $canDestroyInCreative() const;
 
-    MCAPI bool $isDestructive(int) const;
+    MCFOLD bool $isDestructive(int) const;
 
     MCAPI bool $isLiquidClipItem() const;
 
@@ -490,7 +490,7 @@ public:
 
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCFOLD int $getEnchantValue() const;
 
     MCAPI int $getArmorValue() const;
 
@@ -528,7 +528,7 @@ public:
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
+    MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
     MCAPI ::HashedString const& $getCooldownType() const;
 
@@ -536,15 +536,15 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCAPI bool $useVariant(int, int, bool) const;
+    MCFOLD bool $useVariant(int, int, bool) const;
 
-    MCAPI int $getVariant(int, int, bool) const;
+    MCFOLD int $getVariant(int, int, bool) const;
 
     MCAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
+    MCFOLD int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
 
-    MCAPI bool $isEmissive(int auxValue) const;
+    MCFOLD bool $isEmissive(int auxValue) const;
 
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
@@ -553,7 +553,7 @@ public:
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
+    MCFOLD ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 

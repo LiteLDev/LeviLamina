@@ -156,11 +156,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const&) const;
+    MCFOLD ::Block const& $getExtraBlock(::BlockPos const&) const;
 
     MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
@@ -171,23 +171,23 @@ public:
 
     MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int);
 
-    MCAPI bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
+    MCFOLD bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI bool $apply() const;
+    MCFOLD bool $apply() const;
 
-    MCAPI bool $placeStructure(::BlockPos const&, ::StructureTemplate&, ::StructureSettings&);
+    MCFOLD bool $placeStructure(::BlockPos const&, ::StructureTemplate&, ::StructureSettings&);
 
-    MCAPI bool $mayPlace(::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $mayPlace(::BlockPos const&, ::Block const&) const;
 
-    MCAPI bool $canSurvive(::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $canSurvive(::BlockPos const&, ::Block const&) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockPos const&, ::Block const&) const;
+    MCFOLD bool $canBeBuiltOver(::BlockPos const&, ::Block const&) const;
 
     MCAPI short $getMaxHeight() const;
 
-    MCAPI short $getMinHeight() const;
+    MCFOLD short $getMinHeight() const;
 
-    MCAPI bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
+    MCFOLD bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 
     MCAPI short $getHeightmap(int x, int z);
 
@@ -201,9 +201,9 @@ public:
 
     MCAPI ::LevelData const& $getLevelData() const;
 
-    MCAPI ::WorldGenContext const& $getContext();
+    MCFOLD ::WorldGenContext const& $getContext();
 
-    MCAPI void $disableBlockSimple();
+    MCFOLD void $disableBlockSimple();
     // NOLINTEND
 
 public:

@@ -19,13 +19,7 @@ public:
     // clang-format on
 
     // BaseGameVersion inner types define
-    struct any_version_constructor {
-    public:
-        // prevent constructor by default
-        any_version_constructor& operator=(any_version_constructor const&);
-        any_version_constructor(any_version_constructor const&);
-        any_version_constructor();
-    };
+    struct any_version_constructor {};
 
 public:
     // member variables
@@ -55,7 +49,7 @@ public:
 
     MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI bool isNeverCompatible() const;
+    MCFOLD bool isNeverCompatible() const;
 
     MCAPI bool isValid() const;
 
@@ -107,6 +101,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

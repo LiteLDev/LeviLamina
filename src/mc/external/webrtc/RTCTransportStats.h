@@ -11,11 +11,6 @@ namespace webrtc {
 
 class RTCTransportStats {
 public:
-    // prevent constructor by default
-    RTCTransportStats& operator=(RTCTransportStats const&);
-    RTCTransportStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCTransportStats(::webrtc::RTCTransportStats const&);

@@ -40,7 +40,7 @@ public:
         ::gsl::not_null<::StackRefResult<::PauseManager>> const&   pauseManager
     );
 
-    MCAPI ::EntitySystems& getEntitySystems();
+    MCFOLD ::EntitySystems& getEntitySystems();
 
     MCAPI void tickEntitySystems();
     // NOLINTEND

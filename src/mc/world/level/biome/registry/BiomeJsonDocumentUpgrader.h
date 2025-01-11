@@ -10,12 +10,6 @@ namespace cereal { struct ReflectionCtx; }
 
 struct BiomeJsonDocumentUpgrader {
 public:
-    // prevent constructor by default
-    BiomeJsonDocumentUpgrader& operator=(BiomeJsonDocumentUpgrader const&);
-    BiomeJsonDocumentUpgrader(BiomeJsonDocumentUpgrader const&);
-    BiomeJsonDocumentUpgrader();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void doUpgradeFrom_v1_12_To_v1_13(::rapidjson::GenericDocument<

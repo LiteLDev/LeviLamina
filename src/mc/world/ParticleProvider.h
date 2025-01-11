@@ -83,13 +83,13 @@ public:
         void(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&)>&
     getAddBreakingItemParticleEffectConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float)>&
     getAddTerrainParticleEffectConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float)>&
     getAddTerrainSlideEffectConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ParticleType, ::Vec3 const&, ::Vec3 const&, int)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::ParticleType, ::Vec3 const&, ::Vec3 const&, int)>&
     getSendServerLegacyParticleConnector();
 
     MCAPI void sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);

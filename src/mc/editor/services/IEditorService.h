@@ -58,13 +58,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $ready();
+    MCFOLD ::Scripting::Result<void> $ready();
 
     MCAPI bool $isServiceInitialized() const;
 

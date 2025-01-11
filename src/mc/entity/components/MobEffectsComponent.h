@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MobEffectInstance;
+// clang-format on
+
 struct MobEffectsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb62bb4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectsComponent& operator=(MobEffectsComponent const&);
-    MobEffectsComponent(MobEffectsComponent const&);
-    MobEffectsComponent();
 
 public:
     // member functions

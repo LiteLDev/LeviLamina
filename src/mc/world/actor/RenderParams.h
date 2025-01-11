@@ -116,7 +116,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::RenderParams& getRenderParams(::Actor& actor);
+    MCFOLD static ::RenderParams& getRenderParams(::Actor& actor);
     // NOLINTEND
 
 public:

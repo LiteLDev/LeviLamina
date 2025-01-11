@@ -108,7 +108,7 @@ public:
 
     MCAPI void _release(int slot);
 
-    MCAPI int getHotbarSize() const;
+    MCFOLD int getHotbarSize() const;
 
     MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
 
@@ -152,19 +152,19 @@ public:
 
     MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCAPI void $serverInitItemStackIds(
+    MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged

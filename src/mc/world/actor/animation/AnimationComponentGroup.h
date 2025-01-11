@@ -13,12 +13,6 @@ class AnimationComponentID;
 
 class AnimationComponentGroup {
 public:
-    // prevent constructor by default
-    AnimationComponentGroup& operator=(AnimationComponentGroup const&);
-    AnimationComponentGroup(AnimationComponentGroup const&);
-    AnimationComponentGroup();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::AnimationComponentID, ::std::weak_ptr<::AnimationComponent>>&

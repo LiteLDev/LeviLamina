@@ -12,11 +12,6 @@ namespace webrtc {
 
 struct LinkCapacityTracker {
 public:
-    // prevent constructor by default
-    LinkCapacityTracker& operator=(LinkCapacityTracker const&);
-    LinkCapacityTracker(LinkCapacityTracker const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LinkCapacityTracker();

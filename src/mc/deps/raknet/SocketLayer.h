@@ -12,12 +12,6 @@ namespace RakNet {
 
 class SocketLayer {
 public:
-    // prevent constructor by default
-    SocketLayer& operator=(SocketLayer const&);
-    SocketLayer(SocketLayer const&);
-    SocketLayer();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);

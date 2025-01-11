@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class CurrentSwimAmountSystem {
 public:
-    // prevent constructor by default
-    CurrentSwimAmountSystem& operator=(CurrentSwimAmountSystem const&);
-    CurrentSwimAmountSystem(CurrentSwimAmountSystem const&);
-    CurrentSwimAmountSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doCurrentSwimAmountSystem(

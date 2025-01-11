@@ -18,12 +18,6 @@ namespace br::worldgen {
 
 struct StructurePools {
 public:
-    // prevent constructor by default
-    StructurePools& operator=(StructurePools const&);
-    StructurePools(StructurePools const&);
-    StructurePools();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bootstrap(

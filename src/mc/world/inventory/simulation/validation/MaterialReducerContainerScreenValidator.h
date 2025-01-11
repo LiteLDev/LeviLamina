@@ -7,12 +7,6 @@
 
 class MaterialReducerContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    MaterialReducerContainerScreenValidator& operator=(MaterialReducerContainerScreenValidator const&);
-    MaterialReducerContainerScreenValidator(MaterialReducerContainerScreenValidator const&);
-    MaterialReducerContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

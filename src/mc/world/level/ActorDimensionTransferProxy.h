@@ -15,11 +15,6 @@ class Vec3;
 
 class ActorDimensionTransferProxy : public ::IActorDimensionTransferProxy {
 public:
-    // prevent constructor by default
-    ActorDimensionTransferProxy& operator=(ActorDimensionTransferProxy const&);
-    ActorDimensionTransferProxy(ActorDimensionTransferProxy const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -62,7 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
+    MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension) const;
 
     MCAPI void $removeActorFromLevelChunk(::Actor& actor) const;
 

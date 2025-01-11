@@ -543,7 +543,7 @@ public:
 
     MCAPI void fireEntityChanged(::Actor& entity);
 
-    MCAPI ::std::vector<::AABB>& getAABBFetchResultCache();
+    MCFOLD ::std::vector<::AABB>& getAABBFetchResultCache();
 
     MCAPI short
     getAboveTopSolidBlock(::BlockPos const& pos, bool includeWater, bool includeLeaves, bool iteratePastInitialBlocking)
@@ -567,13 +567,13 @@ public:
 
     MCAPI ::BlockPos getHeightmapPos(::BlockPos const& xzPos) const;
 
-    MCAPI ::Level& getLevel() const;
+    MCFOLD ::Level& getLevel() const;
 
-    MCAPI ::Level const& getLevelConst() const;
+    MCFOLD ::Level const& getLevelConst() const;
 
     MCAPI bool getNextTickUpdateForPos(::BlockPos const& pos, ::TickingQueueType queueType, ::Tick& tick) const;
 
-    MCAPI bool getPublicSource() const;
+    MCFOLD bool getPublicSource() const;
 
     MCAPI ::Brightness getRawBrightness(::BlockPos const& pos, bool propagate, bool accountForNight) const;
 
@@ -678,7 +678,7 @@ public:
 
     MCAPI bool setExtraBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI void setIsPersistentBlockSource();
+    MCFOLD void setIsPersistentBlockSource();
 
     MCAPI bool setLiquidBlock(::BlockPos const& pos, ::Block const& block, bool useExtraData, int updateFlags);
 
@@ -708,9 +708,9 @@ public:
         bool                                withUnloadedChunks
     );
 
-    MCAPI static ::Block const& getEmptyBlock();
+    MCFOLD static ::Block const& getEmptyBlock();
 
-    MCAPI static bool isEmptyBlock(::Block const& block);
+    MCFOLD static bool isEmptyBlock(::Block const& block);
 
     MCAPI static bool isEmptyWaterBlock(::Block const& block);
     // NOLINTEND
@@ -741,13 +741,13 @@ public:
     // NOLINTBEGIN
     MCAPI ::WeakRef<::BlockSource> $getWeakRef();
 
-    MCAPI ::Level& $getLevel();
+    MCFOLD ::Level& $getLevel();
 
-    MCAPI ::Dimension& $getDimension() const;
+    MCFOLD ::Dimension& $getDimension() const;
 
-    MCAPI ::Dimension& $getDimension();
+    MCFOLD ::Dimension& $getDimension();
 
-    MCAPI ::Dimension const& $getDimensionConst() const;
+    MCFOLD ::Dimension const& $getDimensionConst() const;
 
     MCAPI ::DimensionType $getDimensionId() const;
 
@@ -812,7 +812,7 @@ public:
 
     MCAPI bool $containsMaterial(::AABB const& box, ::MaterialType material) const;
 
-    MCAPI ::BlockActor const* $getBlockEntity(::BlockPos const& pos) const;
+    MCFOLD ::BlockActor const* $getBlockEntity(::BlockPos const& pos) const;
 
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
@@ -893,11 +893,11 @@ public:
 
     MCAPI bool $removeBlock(::BlockPos const& pos);
 
-    MCAPI ::ILevel& $getILevel() const;
+    MCFOLD ::ILevel& $getILevel() const;
 
     MCAPI ::LevelSeed64 $getLevelSeed64() const;
 
-    MCAPI ::ChunkSource& $getChunkSource();
+    MCFOLD ::ChunkSource& $getChunkSource();
 
     MCAPI bool $checkBlockPermissions(
         ::Actor&               entity,

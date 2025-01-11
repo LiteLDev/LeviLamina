@@ -15,12 +15,6 @@ struct TickingSystemWithInfo;
 
 class InstantDespawnSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    InstantDespawnSystem& operator=(InstantDespawnSystem const&);
-    InstantDespawnSystem(InstantDespawnSystem const&);
-    InstantDespawnSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -79,7 +79,7 @@ public:
 
     MCAPI ::ItemInstance const& getItemInstance() const;
 
-    MCAPI ::ItemInstance& getItemInstance();
+    MCFOLD ::ItemInstance& getItemInstance();
 
     MCAPI ::std::vector<::std::string> getLore() const;
 

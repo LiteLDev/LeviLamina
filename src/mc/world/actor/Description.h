@@ -9,12 +9,6 @@ struct DeserializeDataParams;
 
 struct Description {
 public:
-    // prevent constructor by default
-    Description& operator=(Description const&);
-    Description(Description const&);
-    Description();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

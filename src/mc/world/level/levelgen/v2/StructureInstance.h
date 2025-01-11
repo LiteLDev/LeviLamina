@@ -48,15 +48,15 @@ public:
         ::std::vector<::std::unique_ptr<::br::worldgen::StructureSection>>&& sections
     );
 
-    MCAPI ::std::_Vector_const_iterator<
+    MCFOLD ::std::_Vector_const_iterator<
         ::std::_Vector_val<::std::_Simple_types<::std::unique_ptr<::br::worldgen::StructureSection>>>>
     begin() const;
 
-    MCAPI ::BoundingBox const& boundingBox() const;
+    MCFOLD ::BoundingBox const& boundingBox() const;
 
     MCAPI bool contains(::BlockPos pos) const;
 
-    MCAPI ::std::_Vector_const_iterator<
+    MCFOLD ::std::_Vector_const_iterator<
         ::std::_Vector_val<::std::_Simple_types<::std::unique_ptr<::br::worldgen::StructureSection>>>>
     end() const;
 
@@ -72,7 +72,7 @@ public:
 
     MCAPI bool postProcess(::BlockSource& region, ::IRandom& random, ::BoundingBox const& chunkBB) const;
 
-    MCAPI ::br::worldgen::Structure const& structure() const;
+    MCFOLD ::br::worldgen::Structure const& structure() const;
 
     MCAPI ::br::worldgen::TerrainAdjustment::Type terrainAdaptation() const;
 

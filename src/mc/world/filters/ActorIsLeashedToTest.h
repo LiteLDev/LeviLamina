@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorIsLeashedToTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    ActorIsLeashedToTest& operator=(ActorIsLeashedToTest const&);
-    ActorIsLeashedToTest(ActorIsLeashedToTest const&);
-    ActorIsLeashedToTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

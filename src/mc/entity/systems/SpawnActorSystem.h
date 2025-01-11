@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class SpawnActorSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    SpawnActorSystem& operator=(SpawnActorSystem const&);
-    SpawnActorSystem(SpawnActorSystem const&);
-    SpawnActorSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

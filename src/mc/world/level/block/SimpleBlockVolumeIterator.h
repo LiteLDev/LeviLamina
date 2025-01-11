@@ -12,12 +12,6 @@ class SimpleBlockVolume;
 
 class SimpleBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
-    // prevent constructor by default
-    SimpleBlockVolumeIterator& operator=(SimpleBlockVolumeIterator const&);
-    SimpleBlockVolumeIterator(SimpleBlockVolumeIterator const&);
-    SimpleBlockVolumeIterator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -48,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
     // NOLINTEND
 
 public:

@@ -25,7 +25,7 @@ MCAPI ::Json::Value createMobObject(int mobType, int variant, uchar color);
 
 MCAPI ::Json::Value createMobObjectWithId(int id, int mobType, int variant);
 
-MCAPI ::Json::Value createObject(::ItemStack const& item);
+MCFOLD ::Json::Value createObject(::ItemStack const& item);
 
 MCAPI ::Json::Value createObject(::ItemDescriptor const& item);
 

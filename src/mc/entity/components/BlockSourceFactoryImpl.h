@@ -36,6 +36,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::ILevel*> level);
+    MCFOLD void* $ctor(::gsl::not_null<::ILevel*> level);
     // NOLINTEND
 };

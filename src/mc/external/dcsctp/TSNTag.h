@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class TSNTag {
-public:
-    // prevent constructor by default
-    TSNTag& operator=(TSNTag const&);
-    TSNTag(TSNTag const&);
-    TSNTag();
-};
+class TSNTag {};
 
 } // namespace dcsctp

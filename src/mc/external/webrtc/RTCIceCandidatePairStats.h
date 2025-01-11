@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RTCIceCandidatePairStats {
 public:
-    // prevent constructor by default
-    RTCIceCandidatePairStats& operator=(RTCIceCandidatePairStats const&);
-    RTCIceCandidatePairStats(RTCIceCandidatePairStats const&);
-    RTCIceCandidatePairStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCIceCandidatePairStats(::std::string, ::webrtc::Timestamp);

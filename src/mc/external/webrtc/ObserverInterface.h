@@ -6,12 +6,6 @@ namespace webrtc {
 
 class ObserverInterface {
 public:
-    // prevent constructor by default
-    ObserverInterface& operator=(ObserverInterface const&);
-    ObserverInterface(ObserverInterface const&);
-    ObserverInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

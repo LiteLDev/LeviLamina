@@ -13,12 +13,6 @@ struct XTaskQueueRegistrationToken;
 
 struct SubmitCallback {
 public:
-    // prevent constructor by default
-    SubmitCallback& operator=(SubmitCallback const&);
-    SubmitCallback(SubmitCallback const&);
-    SubmitCallback();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI long Register(void*, void (*)(void*, ::XTaskQueueObject*, ::XTaskQueuePort), ::XTaskQueueRegistrationToken*);

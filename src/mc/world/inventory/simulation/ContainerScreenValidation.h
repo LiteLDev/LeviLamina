@@ -104,7 +104,7 @@ public:
     MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
 
-    MCAPI bool isCraftingImplemented();
+    MCFOLD bool isCraftingImplemented();
 
     MCAPI bool tryCommitActionResults();
 
@@ -161,7 +161,7 @@ public:
     MCAPI ::ContainerValidationCraftResult
     $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const);
 
-    MCAPI ::ContainerValidationResult $tryActivate();
+    MCFOLD ::ContainerValidationResult $tryActivate();
     // NOLINTEND
 
 public:

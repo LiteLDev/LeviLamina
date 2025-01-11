@@ -10,11 +10,6 @@ class CompoundTag;
 
 class ActorLimitedLifetimeComponent {
 public:
-    // prevent constructor by default
-    ActorLimitedLifetimeComponent& operator=(ActorLimitedLifetimeComponent const&);
-    ActorLimitedLifetimeComponent(ActorLimitedLifetimeComponent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorLimitedLifetimeComponent();
@@ -35,6 +30,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

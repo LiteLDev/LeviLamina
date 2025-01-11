@@ -81,7 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canShowNameTag() const;
+    MCFOLD bool $canShowNameTag() const;
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
@@ -89,7 +89,7 @@ public:
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI ::MinecartType $getType();
+    MCFOLD ::MinecartType $getType();
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
 

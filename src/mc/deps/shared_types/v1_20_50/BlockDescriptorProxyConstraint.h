@@ -16,12 +16,6 @@ namespace SharedTypes::v1_20_50::BlockDescriptorSerializer {
 
 class BlockDescriptorProxyConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    BlockDescriptorProxyConstraint& operator=(BlockDescriptorProxyConstraint const&);
-    BlockDescriptorProxyConstraint(BlockDescriptorProxyConstraint const&);
-    BlockDescriptorProxyConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -45,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:

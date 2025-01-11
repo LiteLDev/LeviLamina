@@ -47,7 +47,7 @@ public:
         ::std::optional<int>                                                      group
     );
 
-    MCAPI bool empty() const;
+    MCFOLD bool empty() const;
     // NOLINTEND
 
 public:

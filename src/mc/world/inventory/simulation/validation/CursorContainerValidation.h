@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class CursorContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CursorContainerValidation& operator=(CursorContainerValidation const&);
-    CursorContainerValidation(CursorContainerValidation const&);
-    CursorContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
@@ -40,9 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

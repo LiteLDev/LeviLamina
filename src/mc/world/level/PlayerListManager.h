@@ -39,7 +39,7 @@ public:
 
     MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const;
+    MCFOLD ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const;
 
     MCAPI ::std::string const& getPlayerPlatformOnlineId(::mce::UUID const& uuid) const;
 

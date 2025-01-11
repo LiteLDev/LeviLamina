@@ -143,7 +143,7 @@ public:
 
     MCAPI void $setExpired(::std::vector<::FullContainerName> const& removedContainers);
 
-    MCAPI uint64 $getSize();
+    MCFOLD uint64 $getSize();
     // NOLINTEND
 
 public:

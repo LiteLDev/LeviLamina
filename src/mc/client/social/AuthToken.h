@@ -7,12 +7,6 @@
 
 namespace Social {
 
-struct AuthToken : public ::NewType<::std::string> {
-public:
-    // prevent constructor by default
-    AuthToken& operator=(AuthToken const&);
-    AuthToken(AuthToken const&);
-    AuthToken();
-};
+struct AuthToken : public ::NewType<::std::string> {};
 
 } // namespace Social

@@ -9,12 +9,6 @@ class IRandom;
 
 struct IntProviderType {
 public:
-    // prevent constructor by default
-    IntProviderType& operator=(IntProviderType const&);
-    IntProviderType(IntProviderType const&);
-    IntProviderType();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

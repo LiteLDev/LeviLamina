@@ -4,12 +4,6 @@
 
 namespace CameraAimAssistSystemUtil {
 
-struct BlockHitDetectResultEqual {
-public:
-    // prevent constructor by default
-    BlockHitDetectResultEqual& operator=(BlockHitDetectResultEqual const&);
-    BlockHitDetectResultEqual(BlockHitDetectResultEqual const&);
-    BlockHitDetectResultEqual();
-};
+struct BlockHitDetectResultEqual {};
 
 } // namespace CameraAimAssistSystemUtil

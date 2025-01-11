@@ -4,12 +4,6 @@
 
 namespace webrtc::rtcp {
 
-struct ReceiveTimeInfo {
-public:
-    // prevent constructor by default
-    ReceiveTimeInfo& operator=(ReceiveTimeInfo const&);
-    ReceiveTimeInfo(ReceiveTimeInfo const&);
-    ReceiveTimeInfo();
-};
+struct ReceiveTimeInfo {};
 
 } // namespace webrtc::rtcp

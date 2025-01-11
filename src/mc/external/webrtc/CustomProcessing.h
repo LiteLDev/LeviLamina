@@ -14,12 +14,6 @@ namespace webrtc {
 
 class CustomProcessing {
 public:
-    // prevent constructor by default
-    CustomProcessing& operator=(CustomProcessing const&);
-    CustomProcessing(CustomProcessing const&);
-    CustomProcessing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

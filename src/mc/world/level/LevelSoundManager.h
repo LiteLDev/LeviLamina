@@ -144,7 +144,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(
+    MCFOLD ::Bedrock::PubSub::Connector<void(
         ::SharedTypes::Legacy::LevelSoundEvent,
         ::Vec3 const&,
         int,
@@ -154,14 +154,14 @@ public:
     )>&
     $getOnLevelSoundEventConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
     $getOnLevelSoundEventWithVolumeAndPitchConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
     // NOLINTEND
 
 public:

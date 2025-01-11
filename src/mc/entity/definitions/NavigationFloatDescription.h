@@ -7,12 +7,6 @@
 
 struct NavigationFloatDescription : public ::NavigationDescription {
 public:
-    // prevent constructor by default
-    NavigationFloatDescription& operator=(NavigationFloatDescription const&);
-    NavigationFloatDescription(NavigationFloatDescription const&);
-    NavigationFloatDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

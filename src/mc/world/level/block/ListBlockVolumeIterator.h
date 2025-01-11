@@ -53,7 +53,7 @@ public:
 
     MCAPI void $_begin();
 
-    MCAPI void $_end();
+    MCFOLD void $_end();
     // NOLINTEND
 
 public:

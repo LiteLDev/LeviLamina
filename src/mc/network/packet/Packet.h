@@ -132,7 +132,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -142,9 +142,9 @@ public:
 
     MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
-    MCAPI bool $disallowBatching() const;
+    MCFOLD bool $disallowBatching() const;
 
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
     // NOLINTEND
 
 public:

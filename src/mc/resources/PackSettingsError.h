@@ -7,12 +7,6 @@
 
 class PackSettingsError : public ::PackError {
 public:
-    // prevent constructor by default
-    PackSettingsError& operator=(PackSettingsError const&);
-    PackSettingsError(PackSettingsError const&);
-    PackSettingsError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -43,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

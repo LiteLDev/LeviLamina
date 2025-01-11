@@ -19,12 +19,6 @@ namespace Core { class Path; }
 
 class SoundPlayerInterface : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    SoundPlayerInterface& operator=(SoundPlayerInterface const&);
-    SoundPlayerInterface(SoundPlayerInterface const&);
-    SoundPlayerInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

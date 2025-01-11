@@ -18,11 +18,6 @@ struct PortPair;
 
 class StubServerLocator : public ::ServerLocator {
 public:
-    // prevent constructor by default
-    StubServerLocator& operator=(StubServerLocator const&);
-    StubServerLocator(StubServerLocator const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -91,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -111,21 +106,21 @@ public:
 
     MCAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
-    MCAPI void $startServerDiscovery(::PortPair ports);
+    MCFOLD void $startServerDiscovery(::PortPair ports);
 
-    MCAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
+    MCFOLD void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCAPI void $addCustomServer(::std::string const& address, int port);
+    MCFOLD void $addCustomServer(::std::string const& address, int port);
 
-    MCAPI void $stopServerDiscovery();
+    MCFOLD void $stopServerDiscovery();
 
-    MCAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
+    MCFOLD ::std::vector<::PingedCompatibleServer> $getServerList() const;
 
-    MCAPI void $clearServerList();
+    MCFOLD void $clearServerList();
 
-    MCAPI void $update();
+    MCFOLD void $update();
 
-    MCAPI float $getPingTimeForGUID(::std::string const& guid);
+    MCFOLD float $getPingTimeForGUID(::std::string const& guid);
 
     MCAPI void $checkCanConnectToCustomServerAsync(
         ::std::string                                         hostIpAddress,

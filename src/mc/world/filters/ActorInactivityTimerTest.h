@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorInactivityTimerTest : public ::SimpleIntFilterTest {
 public:
-    // prevent constructor by default
-    ActorInactivityTimerTest& operator=(ActorInactivityTimerTest const&);
-    ActorInactivityTimerTest(ActorInactivityTimerTest const&);
-    ActorInactivityTimerTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

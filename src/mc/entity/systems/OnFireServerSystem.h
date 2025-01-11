@@ -19,12 +19,6 @@ struct OnFireComponent;
 
 class OnFireServerSystem : public ::OnFireSystem {
 public:
-    // prevent constructor by default
-    OnFireServerSystem& operator=(OnFireServerSystem const&);
-    OnFireServerSystem(OnFireServerSystem const&);
-    OnFireServerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

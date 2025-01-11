@@ -7,12 +7,6 @@
 
 struct ItemReleaseUseEvent : public ::ItemChargeEvent {
 public:
-    // prevent constructor by default
-    ItemReleaseUseEvent& operator=(ItemReleaseUseEvent const&);
-    ItemReleaseUseEvent(ItemReleaseUseEvent const&);
-    ItemReleaseUseEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ItemReleaseUseEvent();
@@ -21,6 +15,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -16,12 +16,6 @@ namespace mce { class Color; }
 
 class VanillaBiomes {
 public:
-    // prevent constructor by default
-    VanillaBiomes& operator=(VanillaBiomes const&);
-    VanillaBiomes(VanillaBiomes const&);
-    VanillaBiomes();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initAdditionalCommonComponents(::BiomeRegistry& registry);

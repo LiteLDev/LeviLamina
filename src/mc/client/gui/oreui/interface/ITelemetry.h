@@ -13,12 +13,6 @@ namespace OreUI {
 
 class ITelemetry {
 public:
-    // prevent constructor by default
-    ITelemetry& operator=(ITelemetry const&);
-    ITelemetry(ITelemetry const&);
-    ITelemetry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

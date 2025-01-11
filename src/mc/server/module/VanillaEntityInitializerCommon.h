@@ -13,12 +13,6 @@ class EntityContext;
 
 struct VanillaEntityInitializerCommon {
 public:
-    // prevent constructor by default
-    VanillaEntityInitializerCommon& operator=(VanillaEntityInitializerCommon const&);
-    VanillaEntityInitializerCommon(VanillaEntityInitializerCommon const&);
-    VanillaEntityInitializerCommon();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

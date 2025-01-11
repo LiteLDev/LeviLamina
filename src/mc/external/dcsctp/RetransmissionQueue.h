@@ -26,12 +26,6 @@ namespace dcsctp {
 
 class RetransmissionQueue {
 public:
-    // prevent constructor by default
-    RetransmissionQueue& operator=(RetransmissionQueue const&);
-    RetransmissionQueue(RetransmissionQueue const&);
-    RetransmissionQueue();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddHandoverState(::dcsctp::DcSctpSocketHandoverState&);

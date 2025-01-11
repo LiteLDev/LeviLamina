@@ -54,9 +54,9 @@ public:
 
     MCAPI void ResetReadPointer();
 
-    MCAPI void ResetWritePointer();
+    MCFOLD void ResetWritePointer();
 
-    MCAPI void SetWriteOffset(uint offset);
+    MCFOLD void SetWriteOffset(uint offset);
 
     MCAPI void Write(::RakNet::BitStream* bitStream, uint numberOfBits);
 

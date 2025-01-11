@@ -37,15 +37,15 @@ public:
 
     MCAPI void becomeTame(::Actor& owner, bool tamingParticles);
 
-    MCAPI int& getCounter();
+    MCFOLD int& getCounter();
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI int& getTemper();
+    MCFOLD int& getTemper();
 
-    MCAPI int getTemperMod() const;
+    MCFOLD int getTemperMod() const;
 
-    MCAPI int getWaitCount() const;
+    MCFOLD int getWaitCount() const;
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

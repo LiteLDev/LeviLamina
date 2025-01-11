@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint getMirrorEditCount() const;
+    MCFOLD uint getMirrorEditCount() const;
 
-    MCAPI uint getOffsetEditCount() const;
+    MCFOLD uint getOffsetEditCount() const;
 
-    MCAPI uint getRotationEditCount() const;
+    MCFOLD uint getRotationEditCount() const;
 
-    MCAPI uint getSizeEditCount() const;
+    MCFOLD uint getSizeEditCount() const;
     // NOLINTEND
 };

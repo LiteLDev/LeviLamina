@@ -9,12 +9,6 @@ namespace Scripting { struct ContextId; }
 
 class IScriptGeneratorStats {
 public:
-    // prevent constructor by default
-    IScriptGeneratorStats& operator=(IScriptGeneratorStats const&);
-    IScriptGeneratorStats(IScriptGeneratorStats const&);
-    IScriptGeneratorStats();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -12,11 +12,6 @@ namespace webrtc::rtcp {
 
 class Tmmbn {
 public:
-    // prevent constructor by default
-    Tmmbn& operator=(Tmmbn const&);
-    Tmmbn(Tmmbn const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddTmmbr(::webrtc::rtcp::TmmbItem const&);

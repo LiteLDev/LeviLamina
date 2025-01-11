@@ -11,12 +11,6 @@ namespace mce { class Color; }
 
 class FoliageColor {
 public:
-    // prevent constructor by default
-    FoliageColor& operator=(FoliageColor const&);
-    FoliageColor(FoliageColor const&);
-    FoliageColor();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int getMapBirchColor();

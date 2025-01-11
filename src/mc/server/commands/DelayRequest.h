@@ -35,9 +35,9 @@ public:
 
     MCAPI ::gsl::not_null<::IRequestAction*> getAction() const;
 
-    MCAPI ::std::string const& getSerializationId() const;
+    MCFOLD ::std::string const& getSerializationId() const;
 
-    MCAPI uint64 getTickToExecuteOn() const;
+    MCFOLD uint64 getTickToExecuteOn() const;
 
     MCAPI ::DelayRequest& operator=(::DelayRequest&&);
 

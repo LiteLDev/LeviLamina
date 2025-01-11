@@ -45,13 +45,13 @@ public:
 
     MCAPI void* $ctor(::Scripting::RuntimeConditions&& rhs);
 
-    MCAPI void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
+    MCFOLD void* $ctor(::std::vector<::Scripting::RuntimeCondition> const& runtimeConditions);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -14,12 +14,6 @@ namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 
 struct ClimateBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
-    // prevent constructor by default
-    ClimateBiomeComponentGlue& operator=(ClimateBiomeComponentGlue const&);
-    ClimateBiomeComponentGlue(ClimateBiomeComponentGlue const&);
-    ClimateBiomeComponentGlue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

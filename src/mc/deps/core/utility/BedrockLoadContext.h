@@ -23,12 +23,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BedrockLoadContext(::MolangVersion molangVersion);
 
-    MCAPI ::MolangVersion getMolangVersion() const;
+    MCFOLD ::MolangVersion getMolangVersion() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangVersion molangVersion);
+    MCFOLD void* $ctor(::MolangVersion molangVersion);
     // NOLINTEND
 };

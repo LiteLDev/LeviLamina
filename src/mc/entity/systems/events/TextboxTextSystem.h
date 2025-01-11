@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class TextboxTextSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    TextboxTextSystem& operator=(TextboxTextSystem const&);
-    TextboxTextSystem(TextboxTextSystem const&);
-    TextboxTextSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -9,12 +9,6 @@ class JigsawStructureRegistry;
 
 class VanillaVillageJigsawStructureActorRules {
 public:
-    // prevent constructor by default
-    VanillaVillageJigsawStructureActorRules& operator=(VanillaVillageJigsawStructureActorRules const&);
-    VanillaVillageJigsawStructureActorRules(VanillaVillageJigsawStructureActorRules const&);
-    VanillaVillageJigsawStructureActorRules();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);

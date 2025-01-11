@@ -15,12 +15,6 @@ namespace webrtc {
 
 class NetworkLinkRtcpObserver {
 public:
-    // prevent constructor by default
-    NetworkLinkRtcpObserver& operator=(NetworkLinkRtcpObserver const&);
-    NetworkLinkRtcpObserver(NetworkLinkRtcpObserver const&);
-    NetworkLinkRtcpObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

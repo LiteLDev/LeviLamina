@@ -17,7 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 getHash() const;
+    MCFOLD uint64 getHash() const;
     // NOLINTEND
 
 public:

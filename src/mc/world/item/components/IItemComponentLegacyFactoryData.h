@@ -25,16 +25,10 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::IItemComponentLegacyFactoryData::Components&
+        MCFOLD ::IItemComponentLegacyFactoryData::Components&
         operator=(::IItemComponentLegacyFactoryData::Components const&);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    IItemComponentLegacyFactoryData& operator=(IItemComponentLegacyFactoryData const&);
-    IItemComponentLegacyFactoryData(IItemComponentLegacyFactoryData const&);
-    IItemComponentLegacyFactoryData();
 
 public:
     // virtual functions

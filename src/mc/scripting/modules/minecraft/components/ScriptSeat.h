@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptSeat {
 public:
-    // prevent constructor by default
-    ScriptSeat& operator=(ScriptSeat const&);
-    ScriptSeat(ScriptSeat const&);
-    ScriptSeat();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::SeatDescription> bind();

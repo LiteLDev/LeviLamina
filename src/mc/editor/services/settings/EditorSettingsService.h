@@ -171,19 +171,19 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
-    MCAPI ::Editor::Settings::Graphics& $getGraphicsSettings();
+    MCFOLD ::Editor::Settings::Graphics& $getGraphicsSettings();
 
-    MCAPI ::Editor::Settings::Graphics const& $getGraphicsSettings() const;
+    MCFOLD ::Editor::Settings::Graphics const& $getGraphicsSettings() const;
 
-    MCAPI ::Editor::Settings::Speed& $getSpeedSettings();
+    MCFOLD ::Editor::Settings::Speed& $getSpeedSettings();
 
-    MCAPI ::Editor::Settings::Speed const& $getSpeedSettings() const;
+    MCFOLD ::Editor::Settings::Speed const& $getSpeedSettings() const;
 
-    MCAPI ::Editor::Settings::Theme& $getThemeSettings();
+    MCFOLD ::Editor::Settings::Theme& $getThemeSettings();
 
-    MCAPI ::Editor::Settings::Theme const& $getThemeSettings() const;
+    MCFOLD ::Editor::Settings::Theme const& $getThemeSettings() const;
 
     MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $listenForGraphicsSettingsChanged(::std::function<void(::Editor::Settings::GraphicsProps const&)> func);
@@ -191,7 +191,7 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription
     $listenForSpeedSettingsChanged(::std::function<void(::Editor::Settings::SpeedProps const&)> func);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCFOLD ::Bedrock::PubSub::Subscription
     $listenForThemeSettingsChanged(::std::function<void(::Editor::Settings::ThemeProps const&)> func);
 
     MCAPI ::Bedrock::PubSub::Subscription $listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func
@@ -209,22 +209,22 @@ public:
 
     MCAPI ::Bedrock::PubSub::Subscription $listenForThemeDeleted(::std::function<void(::std::string const&)> func);
 
-    MCAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
+    MCFOLD void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const&);
 
-    MCAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
+    MCFOLD void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const&);
 
-    MCAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
+    MCFOLD void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
 
-    MCAPI void
+    MCFOLD void
     $_handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
 
-    MCAPI void
+    MCFOLD void
     $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
 
-    MCAPI void
+    MCFOLD void
     $_handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
 
-    MCAPI void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
+    MCFOLD void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
     // NOLINTEND
 
 public:

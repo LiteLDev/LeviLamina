@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class OffhandContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    OffhandContainerValidation& operator=(OffhandContainerValidation const&);
-    OffhandContainerValidation(OffhandContainerValidation const&);
-    OffhandContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -61,11 +55,12 @@ public:
         bool
     ) const;
 
-    MCAPI bool $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
+    MCFOLD bool
+    $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
-    MCAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

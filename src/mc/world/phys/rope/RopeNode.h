@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct RopeNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk16d274;
-    ::ll::UntypedStorage<4, 12> mUnkf7d6f6;
-    ::ll::UntypedStorage<1, 1>  mUnk5dc17b;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPrevPos;
+    ::ll::TypedStorage<1, 1, char>    mFrictionAxis;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RopeNode& operator=(RopeNode const&);
-    RopeNode(RopeNode const&);
-    RopeNode();
 };

@@ -17,12 +17,6 @@ namespace Core { class Path; }
 
 class PackAccessStrategyFactory {
 public:
-    // prevent constructor by default
-    PackAccessStrategyFactory& operator=(PackAccessStrategyFactory const&);
-    PackAccessStrategyFactory(PackAccessStrategyFactory const&);
-    PackAccessStrategyFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Core::Path _reconcileZipSubdir(::ResourceLocation const& location, ::Core::Path const& zipSubDir);

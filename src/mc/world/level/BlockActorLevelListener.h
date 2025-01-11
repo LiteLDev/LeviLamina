@@ -13,11 +13,6 @@ class LevelChunk;
 
 class BlockActorLevelListener : public ::LevelListener {
 public:
-    // prevent constructor by default
-    BlockActorLevelListener& operator=(BlockActorLevelListener const&);
-    BlockActorLevelListener(BlockActorLevelListener const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -53,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -17,12 +17,6 @@ namespace webrtc {
 
 class DtlsTransportInterface : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    DtlsTransportInterface& operator=(DtlsTransportInterface const&);
-    DtlsTransportInterface(DtlsTransportInterface const&);
-    DtlsTransportInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

@@ -37,7 +37,7 @@ public:
 
     MCAPI ::Editor::BlockMask::BlockMaskList& operator=(::Editor::BlockMask::BlockMaskList&&);
 
-    MCAPI void setOperationType(::Editor::BlockMask::OperationType operationType);
+    MCFOLD void setOperationType(::Editor::BlockMask::OperationType operationType);
 
     MCAPI ::std::vector<::std::string> toStringList() const;
 
@@ -59,7 +59,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 
