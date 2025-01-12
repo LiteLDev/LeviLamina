@@ -14,12 +14,6 @@ namespace Editor::Transactions {
 
 class IOperation {
 public:
-    // prevent constructor by default
-    IOperation& operator=(IOperation const&);
-    IOperation(IOperation const&);
-    IOperation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -38,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

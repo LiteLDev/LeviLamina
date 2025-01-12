@@ -41,10 +41,10 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
+            MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Description&&);
 
-            MCAPI ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
+            MCFOLD ::SharedTypes::v1_20_60::BlockCulling::Contents::Description&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Contents::Description const&);
 
             MCAPI ~Description();
@@ -53,7 +53,7 @@ public:
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 

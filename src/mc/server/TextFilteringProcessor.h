@@ -17,12 +17,6 @@ class Player;
 
 class TextFilteringProcessor : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    TextFilteringProcessor& operator=(TextFilteringProcessor const&);
-    TextFilteringProcessor(TextFilteringProcessor const&);
-    TextFilteringProcessor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

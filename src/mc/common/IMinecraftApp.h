@@ -15,12 +15,6 @@ namespace Automation { class AutomationClient; }
 
 class IMinecraftApp {
 public:
-    // prevent constructor by default
-    IMinecraftApp& operator=(IMinecraftApp const&);
-    IMinecraftApp(IMinecraftApp const&);
-    IMinecraftApp();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -54,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

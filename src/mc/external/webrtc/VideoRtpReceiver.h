@@ -19,12 +19,6 @@ namespace webrtc {
 
 class VideoRtpReceiver {
 public:
-    // prevent constructor by default
-    VideoRtpReceiver& operator=(VideoRtpReceiver const&);
-    VideoRtpReceiver(VideoRtpReceiver const&);
-    VideoRtpReceiver();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void OnEncodedSinkEnabled(bool);

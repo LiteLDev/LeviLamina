@@ -56,15 +56,15 @@ public:
         bool                         serializable
     );
 
-    MCAPI float getAmount() const;
+    MCFOLD float getAmount() const;
 
-    MCAPI ::mce::UUID const& getId() const;
+    MCFOLD ::mce::UUID const& getId() const;
 
-    MCAPI ::std::string const& getName() const;
+    MCFOLD ::std::string const& getName() const;
 
-    MCAPI int getOperand() const;
+    MCFOLD int getOperand() const;
 
-    MCAPI int getOperation() const;
+    MCFOLD int getOperation() const;
 
     MCAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
     // NOLINTEND
@@ -102,7 +102,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
     // NOLINTEND
 
 public:

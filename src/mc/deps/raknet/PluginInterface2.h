@@ -91,7 +91,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void SetRakPeerInterface(::RakNet::RakPeerInterface* ptr);
+    MCFOLD void SetRakPeerInterface(::RakNet::RakPeerInterface* ptr);
     // NOLINTEND
 
 public:

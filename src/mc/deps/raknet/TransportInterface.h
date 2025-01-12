@@ -13,12 +13,6 @@ namespace RakNet {
 
 class TransportInterface {
 public:
-    // prevent constructor by default
-    TransportInterface& operator=(TransportInterface const&);
-    TransportInterface(TransportInterface const&);
-    TransportInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

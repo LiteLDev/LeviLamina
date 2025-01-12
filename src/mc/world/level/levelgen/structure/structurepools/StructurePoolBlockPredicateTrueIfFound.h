@@ -70,9 +70,9 @@ public:
     // NOLINTBEGIN
     MCAPI bool $test(::Block const& block, ::Randomize& randomize) const;
 
-    MCAPI bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
+    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
 
-    MCAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND

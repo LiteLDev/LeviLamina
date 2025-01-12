@@ -54,11 +54,11 @@ public:
 
     MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
-    MCAPI ::LevelGameplayHandler& getLevelGameplayHandler();
+    MCFOLD ::LevelGameplayHandler& getLevelGameplayHandler();
 
     MCAPI void registerGameRules(::GameRules& gameRules);
 
-    MCAPI void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
+    MCFOLD void registerLevelGameplayHandler(::std::unique_ptr<::LevelGameplayHandler>&& handler);
 
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
 

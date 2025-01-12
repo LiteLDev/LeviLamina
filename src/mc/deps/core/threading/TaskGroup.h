@@ -96,7 +96,7 @@ public:
 
     MCAPI ::std::string_view getName() const;
 
-    MCAPI ::Scheduler& getScheduler();
+    MCFOLD ::Scheduler& getScheduler();
 
     MCAPI bool isEmpty() const;
 
@@ -159,7 +159,7 @@ public:
 
     MCAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 
-    MCAPI ::TaskGroupState $getState() const;
+    MCFOLD ::TaskGroupState $getState() const;
 
     MCAPI void $processCoroutines();
 

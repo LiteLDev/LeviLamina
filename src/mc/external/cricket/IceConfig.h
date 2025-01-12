@@ -9,11 +9,6 @@ namespace cricket {
 
 struct IceConfig {
 public:
-    // prevent constructor by default
-    IceConfig& operator=(IceConfig const&);
-    IceConfig(IceConfig const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI IceConfig();

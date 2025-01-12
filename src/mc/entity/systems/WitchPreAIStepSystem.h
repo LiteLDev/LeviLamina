@@ -17,12 +17,6 @@ struct WitchFlagComponent;
 
 class WitchPreAIStepSystem {
 public:
-    // prevent constructor by default
-    WitchPreAIStepSystem& operator=(WitchPreAIStepSystem const&);
-    WitchPreAIStepSystem(WitchPreAIStepSystem const&);
-    WitchPreAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);

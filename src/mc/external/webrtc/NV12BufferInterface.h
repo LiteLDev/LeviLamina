@@ -16,12 +16,6 @@ namespace webrtc {
 
 class NV12BufferInterface : public ::webrtc::BiplanarYuv8Buffer {
 public:
-    // prevent constructor by default
-    NV12BufferInterface& operator=(NV12BufferInterface const&);
-    NV12BufferInterface(NV12BufferInterface const&);
-    NV12BufferInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

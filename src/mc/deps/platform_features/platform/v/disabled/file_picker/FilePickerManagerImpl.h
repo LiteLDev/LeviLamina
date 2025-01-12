@@ -15,11 +15,6 @@ namespace Bedrock {
 
 class FilePickerManagerImpl : public ::Bedrock::FilePickerManager {
 public:
-    // prevent constructor by default
-    FilePickerManagerImpl& operator=(FilePickerManagerImpl const&);
-    FilePickerManagerImpl(FilePickerManagerImpl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -54,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $directoryPickingEnabledForPlatform() const;
+    MCFOLD bool $directoryPickingEnabledForPlatform() const;
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::FilePickerManager::DirectoryPickerResult>>
     $pickDirectory(::Bedrock::DirectoryPickerConfig const&);

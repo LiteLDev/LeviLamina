@@ -26,11 +26,11 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkTickOffsetManager();
 
-    MCAPI ::std::vector<::ChunkPos> const& getClientTickingOffsets() const;
+    MCFOLD ::std::vector<::ChunkPos> const& getClientTickingOffsets() const;
 
     MCAPI ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers) const;
 
-    MCAPI ::std::vector<::ChunkPos> const& getTickingOffsets() const;
+    MCFOLD ::std::vector<::ChunkPos> const& getTickingOffsets() const;
 
     MCAPI void initialize(uint serverTickRange);
 
@@ -49,6 +49,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

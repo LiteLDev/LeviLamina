@@ -13,12 +13,6 @@ class HashedString;
 
 class ParticleTypeMap {
 public:
-    // prevent constructor by default
-    ParticleTypeMap& operator=(ParticleTypeMap const&);
-    ParticleTypeMap(ParticleTypeMap const&);
-    ParticleTypeMap();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::HashedString const& getParticleName(::ParticleType type);

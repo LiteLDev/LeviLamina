@@ -4,12 +4,6 @@
 
 class ITaskExecutionContext {
 public:
-    // prevent constructor by default
-    ITaskExecutionContext& operator=(ITaskExecutionContext const&);
-    ITaskExecutionContext(ITaskExecutionContext const&);
-    ITaskExecutionContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

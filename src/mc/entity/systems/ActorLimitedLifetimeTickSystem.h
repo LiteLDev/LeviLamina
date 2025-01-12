@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class ActorLimitedLifetimeTickSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ActorLimitedLifetimeTickSystem& operator=(ActorLimitedLifetimeTickSystem const&);
-    ActorLimitedLifetimeTickSystem(ActorLimitedLifetimeTickSystem const&);
-    ActorLimitedLifetimeTickSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

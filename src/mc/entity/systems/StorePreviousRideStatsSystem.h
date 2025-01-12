@@ -19,12 +19,6 @@ struct VanillaClientGameplayComponent;
 
 class StorePreviousRideStatsSystem {
 public:
-    // prevent constructor by default
-    StorePreviousRideStatsSystem& operator=(StorePreviousRideStatsSystem const&);
-    StorePreviousRideStatsSystem(StorePreviousRideStatsSystem const&);
-    StorePreviousRideStatsSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _storePreviousRideStats(

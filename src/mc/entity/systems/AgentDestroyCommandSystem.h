@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class AgentDestroyCommandSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgentDestroyCommandSystem& operator=(AgentDestroyCommandSystem const&);
-    AgentDestroyCommandSystem(AgentDestroyCommandSystem const&);
-    AgentDestroyCommandSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

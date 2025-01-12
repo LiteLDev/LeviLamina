@@ -14,11 +14,6 @@ namespace BlockSelectionBoxVersioning {
 
 class BlockAimCollision11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockAimCollision11910Upgrade& operator=(BlockAimCollision11910Upgrade const&);
-    BlockAimCollision11910Upgrade(BlockAimCollision11910Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -57,9 +52,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(::rapidjson::GenericValue<
-                               ::rapidjson::UTF8<char>,
-                               ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
+    MCFOLD bool $previousSchema(::rapidjson::GenericValue<
+                                ::rapidjson::UTF8<char>,
+                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
 
     MCAPI void
     $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const&)

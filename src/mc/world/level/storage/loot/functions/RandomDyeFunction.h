@@ -17,12 +17,6 @@ namespace mce { class Color; }
 
 class RandomDyeFunction : public ::LootItemFunction {
 public:
-    // prevent constructor by default
-    RandomDyeFunction& operator=(RandomDyeFunction const&);
-    RandomDyeFunction(RandomDyeFunction const&);
-    RandomDyeFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -52,9 +46,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
     // NOLINTEND
 
 public:

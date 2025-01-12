@@ -30,7 +30,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NetherNet::ConnectError Create(uint64 sessionId, ::NetherNet::ESessionError sessionError);
+    MCFOLD static ::NetherNet::ConnectError Create(uint64 sessionId, ::NetherNet::ESessionError sessionError);
 
     MCAPI static ::std::optional<::NetherNet::ConnectError> TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND

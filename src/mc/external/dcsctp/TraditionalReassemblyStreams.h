@@ -28,12 +28,6 @@ public:
     // TraditionalReassemblyStreams inner types define
     class OrderedStream {
     public:
-        // prevent constructor by default
-        OrderedStream& operator=(OrderedStream const&);
-        OrderedStream(OrderedStream const&);
-        OrderedStream();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI int Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data);
@@ -62,12 +56,6 @@ public:
 
     struct StreamBase {
     public:
-        // prevent constructor by default
-        StreamBase& operator=(StreamBase const&);
-        StreamBase(StreamBase const&);
-        StreamBase();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI uint64 AssembleMessage(
@@ -82,12 +70,6 @@ public:
 
     class UnorderedStream {
     public:
-        // prevent constructor by default
-        UnorderedStream& operator=(UnorderedStream const&);
-        UnorderedStream(UnorderedStream const&);
-        UnorderedStream();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI int Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data);
@@ -100,12 +82,6 @@ public:
                                               ::dcsctp::Data>>>>);
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    TraditionalReassemblyStreams& operator=(TraditionalReassemblyStreams const&);
-    TraditionalReassemblyStreams(TraditionalReassemblyStreams const&);
-    TraditionalReassemblyStreams();
 
 public:
     // member functions

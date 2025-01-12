@@ -10,12 +10,6 @@ public:
     enum class Result : uint {};
 
 public:
-    // prevent constructor by default
-    ReconfigurationResponseParameter& operator=(ReconfigurationResponseParameter const&);
-    ReconfigurationResponseParameter(ReconfigurationResponseParameter const&);
-    ReconfigurationResponseParameter();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::ReconfigurationResponseParameter> Parse(::rtc::ArrayView<uchar const>);

@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnHurtByPlayerDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnHurtByPlayerDefinition& operator=(OnHurtByPlayerDefinition const&);
-    OnHurtByPlayerDefinition(OnHurtByPlayerDefinition const&);
-    OnHurtByPlayerDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

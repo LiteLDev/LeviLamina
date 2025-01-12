@@ -27,7 +27,8 @@ public:
 
     MCAPI ::std::string getPotionEffectTypeId() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPotionEffectType& operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptPotionEffectType&
+    operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
 
     MCAPI ~ScriptPotionEffectType();
     // NOLINTEND
@@ -41,13 +42,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

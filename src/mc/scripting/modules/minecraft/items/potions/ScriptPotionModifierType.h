@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPotionModifierType&
+    MCFOLD ::ScriptModuleMinecraft::ScriptPotionModifierType&
     operator=(::ScriptModuleMinecraft::ScriptPotionModifierType&&);
 
     MCAPI ~ScriptPotionModifierType();
@@ -38,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

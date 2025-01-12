@@ -18,12 +18,6 @@ struct PortPair;
 
 class ServerLocator : public ::NetworkEnableDisableListener {
 public:
-    // prevent constructor by default
-    ServerLocator& operator=(ServerLocator const&);
-    ServerLocator(ServerLocator const&);
-    ServerLocator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -83,15 +77,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onDisable();
+    MCFOLD void $_onDisable();
 
-    MCAPI void $_onEnable();
+    MCFOLD void $_onEnable();
     // NOLINTEND
 
 public:

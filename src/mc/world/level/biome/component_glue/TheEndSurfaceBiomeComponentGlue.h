@@ -14,12 +14,6 @@ namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 
 struct TheEndSurfaceBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
-    // prevent constructor by default
-    TheEndSurfaceBiomeComponentGlue& operator=(TheEndSurfaceBiomeComponentGlue const&);
-    TheEndSurfaceBiomeComponentGlue(TheEndSurfaceBiomeComponentGlue const&);
-    TheEndSurfaceBiomeComponentGlue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -42,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&);
+    MCFOLD bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&);
 
     MCAPI void $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const&) const;
     // NOLINTEND

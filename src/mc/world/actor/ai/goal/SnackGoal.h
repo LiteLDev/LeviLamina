@@ -117,7 +117,7 @@ public:
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI int $getRandomEatingEnd() const;
+    MCFOLD int $getRandomEatingEnd() const;
     // NOLINTEND
 
 public:

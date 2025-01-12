@@ -14,11 +14,6 @@ namespace BlockBreathabilityVersioning {
 
 class BlockBreathability11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockBreathability11910Upgrade& operator=(BlockBreathability11910Upgrade const&);
-    BlockBreathability11910Upgrade(BlockBreathability11910Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

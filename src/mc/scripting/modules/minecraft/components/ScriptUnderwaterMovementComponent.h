@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptUnderwaterMovementComponent : public ::ScriptModuleMinecraft::AttributeScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptUnderwaterMovementComponent& operator=(ScriptUnderwaterMovementComponent const&);
-    ScriptUnderwaterMovementComponent(ScriptUnderwaterMovementComponent const&);
-    ScriptUnderwaterMovementComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

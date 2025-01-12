@@ -114,7 +114,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ResourceLocation const& $getPackLocation() const;
+    MCFOLD ::ResourceLocation const& $getPackLocation() const;
 
     MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
@@ -124,11 +124,11 @@ public:
         bool                                       recurseAnyways
     ) const;
 
-    MCAPI ::PackAccessStrategyType $getStrategyType() const;
+    MCFOLD ::PackAccessStrategyType $getStrategyType() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& $getSubPath() const;
 
-    MCAPI bool $supportsSignatureVerification() const;
+    MCFOLD bool $supportsSignatureVerification() const;
 
     MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 

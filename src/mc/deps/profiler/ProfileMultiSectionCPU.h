@@ -12,19 +12,7 @@ public:
     // clang-format on
 
     // ProfileMultiSectionCPU inner types define
-    class ProfileSectionSuspend {
-    public:
-        // prevent constructor by default
-        ProfileSectionSuspend& operator=(ProfileSectionSuspend const&);
-        ProfileSectionSuspend(ProfileSectionSuspend const&);
-        ProfileSectionSuspend();
-    };
-
-public:
-    // prevent constructor by default
-    ProfileMultiSectionCPU& operator=(ProfileMultiSectionCPU const&);
-    ProfileMultiSectionCPU(ProfileMultiSectionCPU const&);
-    ProfileMultiSectionCPU();
+    class ProfileSectionSuspend {};
 };
 
 } // namespace Core::Profile

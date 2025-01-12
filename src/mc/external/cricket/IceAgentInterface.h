@@ -4,12 +4,6 @@
 
 namespace cricket {
 
-class IceAgentInterface {
-public:
-    // prevent constructor by default
-    IceAgentInterface& operator=(IceAgentInterface const&);
-    IceAgentInterface(IceAgentInterface const&);
-    IceAgentInterface();
-};
+class IceAgentInterface {};
 
 } // namespace cricket

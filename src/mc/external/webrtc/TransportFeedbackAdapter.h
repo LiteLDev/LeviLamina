@@ -19,11 +19,6 @@ namespace webrtc {
 
 struct TransportFeedbackAdapter {
 public:
-    // prevent constructor by default
-    TransportFeedbackAdapter& operator=(TransportFeedbackAdapter const&);
-    TransportFeedbackAdapter(TransportFeedbackAdapter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddPacket(::webrtc::RtpPacketSendInfo const&, uint64, ::webrtc::Timestamp);

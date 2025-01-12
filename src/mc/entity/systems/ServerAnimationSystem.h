@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class ServerAnimationSystem {
 public:
-    // prevent constructor by default
-    ServerAnimationSystem& operator=(ServerAnimationSystem const&);
-    ServerAnimationSystem(ServerAnimationSystem const&);
-    ServerAnimationSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createInputDependentActorServerAnimationSystem();

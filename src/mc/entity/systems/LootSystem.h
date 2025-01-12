@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class LootSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    LootSystem& operator=(LootSystem const&);
-    LootSystem(LootSystem const&);
-    LootSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -39,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCFOLD void $tick(::EntityRegistry& registry);
 
     MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND

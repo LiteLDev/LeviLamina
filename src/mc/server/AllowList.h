@@ -80,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool addEntry(::AllowListEntry const& entry);
 
-    MCAPI ::std::vector<::AllowListEntry> const& getEntries() const;
+    MCFOLD ::std::vector<::AllowListEntry> const& getEntries() const;
 
     MCAPI bool isAllowed(::mce::UUID const& uuid, ::std::string const& xuid) const;
 

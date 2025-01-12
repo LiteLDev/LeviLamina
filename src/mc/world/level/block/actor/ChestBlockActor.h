@@ -217,19 +217,19 @@ public:
 
     MCAPI float getOpenness() const;
 
-    MCAPI ::BlockPos const& getPairedChestPosition();
+    MCFOLD ::BlockPos const& getPairedChestPosition();
 
     MCAPI bool isFindable() const;
 
     MCAPI bool isLargeChest() const;
 
-    MCAPI void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
+    MCFOLD void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
 
     MCAPI void pairWith(::ChestBlockActor* chest, bool lead);
 
     MCAPI void setFindable(bool isFindable);
 
-    MCAPI void unpair(::BlockSource& region);
+    MCFOLD void unpair(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -255,7 +255,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getContainerSize() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
     MCAPI ::std::string $getName() const;
 
@@ -263,7 +263,7 @@ public:
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
     MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
@@ -281,7 +281,7 @@ public:
 
     MCAPI bool $saveItemInstanceData(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $clearCache();
+    MCFOLD void $clearCache();
 
     MCAPI void $tick(::BlockSource& region);
 
@@ -295,17 +295,17 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+    MCFOLD void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
     MCAPI ::BlockActor* $getCrackEntity(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI int $clearInventory(int resizeTo);
 
-    MCAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $onMove();
+    MCFOLD void $onMove();
 
     MCAPI void $onPlace(::BlockSource& region);
 
@@ -313,9 +313,9 @@ public:
 
     MCAPI void $setContainerChanged(int slot);
 
-    MCAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
     MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos);
 
@@ -327,7 +327,7 @@ public:
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
     MCAPI void $playOpenSound(::BlockSource& region);
 

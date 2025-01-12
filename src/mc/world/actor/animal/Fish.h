@@ -17,12 +17,6 @@ struct VariantParameterList;
 
 class Fish : public ::WaterAnimal {
 public:
-    // prevent constructor by default
-    Fish& operator=(Fish const&);
-    Fish(Fish const&);
-    Fish();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 27
@@ -62,13 +56,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCAPI bool $createAIGoals();
 

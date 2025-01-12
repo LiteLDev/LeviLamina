@@ -4,12 +4,6 @@
 
 namespace MSGraph::Models {
 
-struct DownloadUrlInfo {
-public:
-    // prevent constructor by default
-    DownloadUrlInfo& operator=(DownloadUrlInfo const&);
-    DownloadUrlInfo(DownloadUrlInfo const&);
-    DownloadUrlInfo();
-};
+struct DownloadUrlInfo {};
 
 } // namespace MSGraph::Models

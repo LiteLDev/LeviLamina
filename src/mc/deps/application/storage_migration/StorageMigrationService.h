@@ -20,12 +20,6 @@ namespace Bedrock::StorageMigration {
 class StorageMigrationService : public ::Bedrock::EnableNonOwnerReferences,
                                 public ::Bedrock::ImplBase<::Bedrock::StorageMigration::StorageMigrationService> {
 public:
-    // prevent constructor by default
-    StorageMigrationService& operator=(StorageMigrationService const&);
-    StorageMigrationService(StorageMigrationService const&);
-    StorageMigrationService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

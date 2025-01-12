@@ -13,12 +13,6 @@ class ContainerScreenContext;
 
 class BarrelContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    BarrelContainerValidation& operator=(BarrelContainerValidation const&);
-    BarrelContainerValidation(BarrelContainerValidation const&);
-    BarrelContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9
@@ -38,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
     // NOLINTEND
 
 public:

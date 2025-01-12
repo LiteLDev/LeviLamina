@@ -33,12 +33,6 @@ public:
 
     class ResourceHelper {
     public:
-        // prevent constructor by default
-        ResourceHelper& operator=(ResourceHelper const&);
-        ResourceHelper(ResourceHelper const&);
-        ResourceHelper();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -86,12 +80,6 @@ public:
         NoLayer      = 2,
         ErrorLoading = 3,
     };
-
-public:
-    // prevent constructor by default
-    TextureSetDefinitionLoader& operator=(TextureSetDefinitionLoader const&);
-    TextureSetDefinitionLoader(TextureSetDefinitionLoader const&);
-    TextureSetDefinitionLoader();
 };
 
 } // namespace TextureSetHelpers

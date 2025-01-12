@@ -31,7 +31,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
+        MCFOLD ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
 
         MCAPI ~ComponentInfo();
         // NOLINTEND
@@ -39,7 +39,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

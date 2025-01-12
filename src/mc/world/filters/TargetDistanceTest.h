@@ -12,12 +12,6 @@ struct FilterContext;
 
 class TargetDistanceTest : public ::SimpleFloatFilterTest {
 public:
-    // prevent constructor by default
-    TargetDistanceTest& operator=(TargetDistanceTest const&);
-    TargetDistanceTest(TargetDistanceTest const&);
-    TargetDistanceTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

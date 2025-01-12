@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RtcpPacketTypeCounterObserver {
 public:
-    // prevent constructor by default
-    RtcpPacketTypeCounterObserver& operator=(RtcpPacketTypeCounterObserver const&);
-    RtcpPacketTypeCounterObserver(RtcpPacketTypeCounterObserver const&);
-    RtcpPacketTypeCounterObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

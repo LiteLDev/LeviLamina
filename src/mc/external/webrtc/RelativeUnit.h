@@ -5,12 +5,6 @@
 namespace webrtc::rtc_units_impl {
 
 template <typename T0>
-class RelativeUnit {
-public:
-    // prevent constructor by default
-    RelativeUnit& operator=(RelativeUnit const&);
-    RelativeUnit(RelativeUnit const&);
-    RelativeUnit();
-};
+class RelativeUnit {};
 
 } // namespace webrtc::rtc_units_impl

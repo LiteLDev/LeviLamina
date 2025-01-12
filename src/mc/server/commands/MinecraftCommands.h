@@ -79,7 +79,7 @@ public:
 
     MCAPI ::MCRESULT executeCommand(::CommandContext& context, bool suppressOutput) const;
 
-    MCAPI ::CommandRegistry& getRegistry();
+    MCFOLD ::CommandRegistry& getRegistry();
 
     MCAPI void handleOutput(::CommandOrigin const& origin, ::CommandOutput const& output) const;
 

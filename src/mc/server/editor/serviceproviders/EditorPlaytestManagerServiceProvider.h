@@ -6,12 +6,6 @@ namespace Editor::Services {
 
 class EditorPlaytestManagerServiceProvider {
 public:
-    // prevent constructor by default
-    EditorPlaytestManagerServiceProvider& operator=(EditorPlaytestManagerServiceProvider const&);
-    EditorPlaytestManagerServiceProvider(EditorPlaytestManagerServiceProvider const&);
-    EditorPlaytestManagerServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

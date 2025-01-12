@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $isThrowable() const;
+    MCFOLD bool $isThrowable() const;
     // NOLINTEND
 
 public:

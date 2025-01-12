@@ -25,12 +25,6 @@ public:
     // StreamScheduler inner types define
     class Stream {
     public:
-        // prevent constructor by default
-        Stream& operator=(Stream const&);
-        Stream(Stream const&);
-        Stream();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::dcsctp::StreamScheduler::VirtualTime CalculateFinishTime(uint64) const;
@@ -49,19 +43,7 @@ public:
         // NOLINTEND
     };
 
-    class VirtualTime {
-    public:
-        // prevent constructor by default
-        VirtualTime& operator=(VirtualTime const&);
-        VirtualTime(VirtualTime const&);
-        VirtualTime();
-    };
-
-public:
-    // prevent constructor by default
-    StreamScheduler& operator=(StreamScheduler const&);
-    StreamScheduler(StreamScheduler const&);
-    StreamScheduler();
+    class VirtualTime {};
 
 public:
     // member functions

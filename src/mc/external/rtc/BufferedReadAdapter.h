@@ -11,12 +11,6 @@ namespace rtc {
 
 class BufferedReadAdapter {
 public:
-    // prevent constructor by default
-    BufferedReadAdapter& operator=(BufferedReadAdapter const&);
-    BufferedReadAdapter(BufferedReadAdapter const&);
-    BufferedReadAdapter();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void BufferInput(bool);

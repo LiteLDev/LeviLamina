@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class DebugInfoSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    DebugInfoSystem& operator=(DebugInfoSystem const&);
-    DebugInfoSystem(DebugInfoSystem const&);
-    DebugInfoSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

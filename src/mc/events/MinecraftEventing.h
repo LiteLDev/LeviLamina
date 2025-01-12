@@ -2374,7 +2374,7 @@ public:
 
     MCAPI void $updateIsLegacyPlayer(bool isLegacyPlayer);
 
-    MCAPI void $updateIsTrial(bool isTrial) const;
+    MCFOLD void $updateIsTrial(bool isTrial) const;
 
     MCAPI void $updateEditionType();
 
@@ -2400,13 +2400,13 @@ public:
 
     MCAPI ::std::string $getSessionId();
 
-    MCAPI ::std::string const& $getPlayerSessionId();
+    MCFOLD ::std::string const& $getPlayerSessionId();
 
     MCAPI ::std::chrono::steady_clock::time_point $getWorldSessionIdGenerationTimestamp() const;
 
     MCAPI void $fireEventDefaultGameTypeChanged(::GameType oldGameType, ::GameType newGameType);
 
-    MCAPI void $fireEventWorldLoaded(
+    MCFOLD void $fireEventWorldLoaded(
         ::Player*            player,
         ::std::string const& personaSlot,
         ::std::string const& classicSkinId,
@@ -2426,7 +2426,7 @@ public:
 
     MCAPI void $fireEventEntitySpawned(::Player* player, int mobType, uint spawnMethod);
 
-    MCAPI void $fireEventDevSlashCommandExecuted(::std::string const& commandName, ::std::string const& command);
+    MCFOLD void $fireEventDevSlashCommandExecuted(::std::string const& commandName, ::std::string const& command);
 
     MCAPI void $fireCommandParseTableTelemetry(
         bool const                                                         isServer,
@@ -2478,7 +2478,7 @@ public:
         ::std::string const& serverVersion
     );
 
-    MCAPI void $fireEventOnSuccessfulClientLogin(::MultiPlayerLevel const* level);
+    MCFOLD void $fireEventOnSuccessfulClientLogin(::MultiPlayerLevel const* level);
 
     MCAPI void $fireEventStartWorld(
         ::IMinecraftEventing::NetworkType            networkType,
@@ -2486,7 +2486,7 @@ public:
         ::Social::MultiplayerServiceIdentifier const friendWorldType
     );
 
-    MCAPI void $fireEventSignalServiceConnect(
+    MCFOLD void $fireEventSignalServiceConnect(
         ::SignalServiceConnectStage stage,
         bool                        bIsSigningInAsHost,
         ::std::string const&        stageProperties,
@@ -2602,11 +2602,11 @@ public:
         ::std::string const& actionMetadata
     );
 
-    MCAPI void $fireEventStartClient(::std::string const& ipAddress);
+    MCFOLD void $fireEventStartClient(::std::string const& ipAddress);
 
-    MCAPI void $fireEventHardwareInfo();
+    MCFOLD void $fireEventHardwareInfo();
 
-    MCAPI void $fireEventDeviceLost();
+    MCFOLD void $fireEventDeviceLost();
 
     MCAPI void $fireEventRenderingSizeChanged();
 
@@ -2656,7 +2656,7 @@ public:
 
     MCAPI void $fireEventPushNotificationOpened(::std::string const& threadId, ::std::string const& deepLink);
 
-    MCAPI void $firePerfTestEvent(
+    MCFOLD void $firePerfTestEvent(
         ::std::string const&                                    testArtifact,
         ::std::string const&                                    modelName,
         ::std::string const&                                    renderSize,
@@ -2672,14 +2672,14 @@ public:
 
     MCAPI void $fireEventQueryPurchasesResult(::std::string const& storeID, int NumberOfPurchases, bool QuerySucceeded);
 
-    MCAPI void $fireEventIAPPurchaseAttempt(
+    MCFOLD void $fireEventIAPPurchaseAttempt(
         ::std::string const& correlationId,
         ::std::string const& storeId,
         ::Offer&             offer,
         ::PurchasePath       path
     );
 
-    MCAPI void $fireEventIAPPurchaseResolved(
+    MCFOLD void $fireEventIAPPurchaseResolved(
         ::std::string const&                 correlationId,
         ::std::string const&                 storeId,
         ::Offer&                             offer,
@@ -2687,14 +2687,14 @@ public:
         ::PurchasePath                       path
     );
 
-    MCAPI void $fireEventIAPRedeemAttempt(
+    MCFOLD void $fireEventIAPRedeemAttempt(
         ::std::string const& correlationId,
         ::std::string const& storeId,
         ::std::string const& productId,
         ::PurchasePath       path
     );
 
-    MCAPI void $fireEventIAPRedeemResolved(
+    MCFOLD void $fireEventIAPRedeemResolved(
         ::std::string const&                 correlationId,
         ::std::string const&                 storeId,
         ::std::string const&                 productId,
@@ -2702,7 +2702,7 @@ public:
         ::PurchasePath                       path
     );
 
-    MCAPI void $fireEventPurchaseAttempt(
+    MCFOLD void $fireEventPurchaseAttempt(
         ::std::string const&            correlationId,
         ::std::string const&            productId,
         ::std::string const&            price,
@@ -2710,7 +2710,7 @@ public:
         ::PurchasePath                  path
     );
 
-    MCAPI void $fireEventPurchaseResolved(
+    MCFOLD void $fireEventPurchaseResolved(
         ::std::string const&                 correlationId,
         ::std::string const&                 productId,
         ::std::string const&                 price,
@@ -2721,28 +2721,28 @@ public:
 
     MCAPI void $fireEventUnfulfilledPurchaseFound(::PlatformOfferPurchaseDetails& unfulfilledPurchase);
 
-    MCAPI void $fireEventPurchaseFailureDetails(
+    MCFOLD void $fireEventPurchaseFailureDetails(
         int                  httpCode,
         ::std::string const& errorMessage,
         ::std::string const& productId,
         ::std::string const& transactionId
     );
 
-    MCAPI void $fireEventDeviceAccountFailure(
+    MCFOLD void $fireEventDeviceAccountFailure(
         ::IMinecraftEventing::SignInStage               stage,
         ::IMinecraftEventing::DeviceAccountFailurePhase phase,
         uint                                            resultStatus,
         ::std::string const&                            accountID
     );
 
-    MCAPI void $fireEventDeviceAccountSuccess(bool isNewAccount, ::std::string const& accountID);
+    MCFOLD void $fireEventDeviceAccountSuccess(bool isNewAccount, ::std::string const& accountID);
 
     MCAPI void
     $fireEventEntitlementListInfo(::std::vector<::ContentIdentity>& entitlementContentIds, bool isLegacyList);
 
     MCAPI void $fireEventVideoPlayed(::std::string const& productId, ::std::string const& videoUrl);
 
-    MCAPI void $fireEventBundleSubOfferClicked(
+    MCFOLD void $fireEventBundleSubOfferClicked(
         int                  offerIndex,
         int                  bundleSubOfferCount,
         ::std::string const& telemetryId,
@@ -2751,15 +2751,15 @@ public:
         ::std::string const& timeRemainingOnSale
     );
 
-    MCAPI void $fireEventStoreOfferClicked(::Social::eventData::StoreOfferClickedData const& eventData);
+    MCFOLD void $fireEventStoreOfferClicked(::Social::eventData::StoreOfferClickedData const& eventData);
 
     MCAPI void $fireEventStoreOfferClicked(::std::string const telemetryId, ::std::string const& productId);
 
-    MCAPI void $fireEventPersonaOfferClicked(::Social::eventData::PersonaOfferClickedData const& eventData);
+    MCFOLD void $fireEventPersonaOfferClicked(::Social::eventData::PersonaOfferClickedData const& eventData);
 
-    MCAPI void $fireEventStoreSearch(::storeSearch::TelemetryData const& telemetryData);
+    MCFOLD void $fireEventStoreSearch(::storeSearch::TelemetryData const& telemetryData);
 
-    MCAPI void $fireEventSearchItemSelected(
+    MCFOLD void $fireEventSearchItemSelected(
         int const            correlationId,
         int const            sessionId,
         ::std::string const& productId,
@@ -2811,20 +2811,20 @@ public:
         int                  errorCode
     );
 
-    MCAPI void $prepEventSearchCatalogRequest(::SearchRequestTelemetry const& telem);
+    MCFOLD void $prepEventSearchCatalogRequest(::SearchRequestTelemetry const& telem);
 
-    MCAPI void $fireEventSearchCatalogRequest(::SearchRequestTelemetry const& telem);
+    MCFOLD void $fireEventSearchCatalogRequest(::SearchRequestTelemetry const& telem);
 
-    MCAPI void $fireEventStoreLocalizationBinaryFetchResponse(int const status, uint const currentFetchAttempt);
+    MCFOLD void $fireEventStoreLocalizationBinaryFetchResponse(int const status, uint const currentFetchAttempt);
 
-    MCAPI void
+    MCFOLD void
     $fireEventStoreSessionResponse(::std::string const& responseType, int const status, int const retryCount);
 
-    MCAPI void $fireEventStoreDiscoveryRequestResponse(int const status, int const retryAttempt);
+    MCFOLD void $fireEventStoreDiscoveryRequestResponse(int const status, int const retryAttempt);
 
-    MCAPI void $fireEventStorePlayFabRequestResponse(ushort const status);
+    MCFOLD void $fireEventStorePlayFabRequestResponse(ushort const status);
 
-    MCAPI void $fireEventServerDrivenLayoutPageLoaded(
+    MCFOLD void $fireEventServerDrivenLayoutPageLoaded(
         ::RequestTelemetry& telem,
         ::std::string       pageID,
         int                 requestSize,
@@ -2834,7 +2834,7 @@ public:
         int                 imageCount
     );
 
-    MCAPI void $fireEventServerDrivenLayoutImagesLoaded(
+    MCFOLD void $fireEventServerDrivenLayoutImagesLoaded(
         ::RequestTelemetry&    telem,
         ::std::string          pageID,
         int                    imageCount,
@@ -2864,7 +2864,7 @@ public:
         ::std::string const  scenarioId
     );
 
-    MCAPI void $fireEventOptionsUpdated(::Options& options, ::InputMode inputMode, bool onStartup);
+    MCFOLD void $fireEventOptionsUpdated(::Options& options, ::InputMode inputMode, bool onStartup);
 
     MCAPI void $fireEventChatSettingsUpdated(
         ::Player const*                                  player,
@@ -2874,21 +2874,21 @@ public:
     MCAPI void
     $fireEventControlRemappedByPlayer(::std::string const& actionName, ::RawInputType inputType, int keyCode) const;
 
-    MCAPI void $fireEventDifficultySet(::Difficulty oldDifficulty, ::Difficulty newDifficulty);
+    MCFOLD void $fireEventDifficultySet(::Difficulty oldDifficulty, ::Difficulty newDifficulty);
 
-    MCAPI void $fireEventGameRulesUpdated(bool oldValue, bool newValue, ::std::string const& gameRuleName);
+    MCFOLD void $fireEventGameRulesUpdated(bool oldValue, bool newValue, ::std::string const& gameRuleName);
 
-    MCAPI void $fireEventGameRulesUpdated(int oldValue, int newValue, ::std::string const& gameRuleName);
+    MCFOLD void $fireEventGameRulesUpdated(int oldValue, int newValue, ::std::string const& gameRuleName);
 
-    MCAPI void $fireEventGameRulesUpdated(float oldValue, float newValue, ::std::string const& gameRuleName);
+    MCFOLD void $fireEventGameRulesUpdated(float oldValue, float newValue, ::std::string const& gameRuleName);
 
-    MCAPI void $fireCurrentInputUpdated(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCFOLD void $fireCurrentInputUpdated(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI void $fireEventSplitScreenUpdated(::IClientInstance const& client);
+    MCFOLD void $fireEventSplitScreenUpdated(::IClientInstance const& client);
 
-    MCAPI void $fireEventPerformanceMetrics(::ProfilerLiteTelemetry const& profileTelemetry, bool rayTracingEnabled);
+    MCFOLD void $fireEventPerformanceMetrics(::ProfilerLiteTelemetry const& profileTelemetry, bool rayTracingEnabled);
 
-    MCAPI void $fireEventPerformanceContext(::PerfContextTrackerReport const& perfContextReport);
+    MCFOLD void $fireEventPerformanceContext(::PerfContextTrackerReport const& perfContextReport);
 
     MCAPI void $fireEventScreenChanged(
         uint const&                                               userId,
@@ -2896,7 +2896,7 @@ public:
         ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
     );
 
-    MCAPI void $fireEventImGuiScreenChanged(
+    MCFOLD void $fireEventImGuiScreenChanged(
         ::std::string const&                                      screenName,
         ::std::unordered_map<::std::string, ::std::string> const& additionalProperties
     );
@@ -2919,12 +2919,12 @@ public:
 
     MCAPI void $fireEventAndroidHelpRequest();
 
-    MCAPI void
+    MCFOLD void
     $fireEventWorldFilesListed(uint64 numLevels, uint64 totalSizeMB, uint64 largestLevelMB, uint64 smallestLevelMB);
 
-    MCAPI void $fireEventStorage(int state, ::std::string const& extra);
+    MCFOLD void $fireEventStorage(int state, ::std::string const& extra);
 
-    MCAPI void $fireEventStorageReport(::std::string const& report);
+    MCFOLD void $fireEventStorageReport(::std::string const& report);
 
     MCAPI void $fireEventPlayerMessageSay(::std::string const& fromName, ::std::string const& message);
 
@@ -3131,9 +3131,9 @@ public:
 
     MCAPI void $fireEventEduContentVerificationFailed() const;
 
-    MCAPI void $fireEventLibrarySearch(::librarySearch::TelemetryData const& telemetryData) const;
+    MCFOLD void $fireEventLibrarySearch(::librarySearch::TelemetryData const& telemetryData) const;
 
-    MCAPI void $fireEventLibrarySearchItemSelected(
+    MCFOLD void $fireEventLibrarySearchItemSelected(
         int const            sessionId,
         int const            correlationId,
         ::std::string const& productId,
@@ -3187,9 +3187,9 @@ public:
         ::std::optional<uint64>                     importedWorldTimestamp
     );
 
-    MCAPI void $fireWorldConversionAttemptEvent(::Legacy::WorldConversionReport const& report);
+    MCFOLD void $fireWorldConversionAttemptEvent(::Legacy::WorldConversionReport const& report);
 
-    MCAPI void $fireWorldConversionInitiatedEvent(::std::string const& converterVersion);
+    MCFOLD void $fireWorldConversionInitiatedEvent(::std::string const& converterVersion);
 
     MCAPI void $fireWorldUpgradedToCnCPart2(
         bool                 willUpgrade,
@@ -3309,7 +3309,7 @@ public:
 
     MCAPI void $flagEventDeepLink();
 
-    MCAPI void $flagEventPlayerGameTypeDefault(bool isDefault);
+    MCFOLD void $flagEventPlayerGameTypeDefault(bool isDefault);
 
     MCAPI void
     $fileEventCloudWorldPullFailed(::std::string const& reason, ::std::string const& worldID, bool localLevelDatUsed);
@@ -3326,13 +3326,13 @@ public:
 
     MCAPI void $fireEventServerShutdownDueToError(::std::string const& reason);
 
-    MCAPI void $fireEventDBStorageSizeSnapshot(
+    MCFOLD void $fireEventDBStorageSizeSnapshot(
         ::LevelStorageEventingContext const& context,
         ::DBStorageFolderWatcher const&      folderWatcher,
         ::DBStorageFolderWatcherSnapshotKind kind
     );
 
-    MCAPI void $fireEventWorldHistoryPackSourceMissingDuringUpgrade(
+    MCFOLD void $fireEventWorldHistoryPackSourceMissingDuringUpgrade(
         ::std::string const& worldPath,
         ::std::string const& levelId,
         ::std::string const& deletionCandidate
@@ -3692,9 +3692,9 @@ public:
 
     MCAPI void $fireEventLowMemoryDetected(::LowMemoryReport const& report);
 
-    MCAPI ::Social::Events::EventManager& $getEventManager() const;
+    MCFOLD ::Social::Events::EventManager& $getEventManager() const;
 
-    MCAPI uint $getPrimaryLocalUserId() const;
+    MCFOLD uint $getPrimaryLocalUserId() const;
 
     MCAPI bool $getShouldHaveAchievementsEnabled();
 

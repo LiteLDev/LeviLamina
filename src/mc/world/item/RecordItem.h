@@ -72,12 +72,12 @@ public:
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI ::ResolvedItemIconInfo
+    MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::RecordItem& $setDescriptionId(::std::string const& description);
+    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& description);
     // NOLINTEND
 
 public:

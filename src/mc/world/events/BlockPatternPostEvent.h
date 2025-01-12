@@ -7,12 +7,6 @@
 
 struct BlockPatternPostEvent : public ::BlockPatternEvent {
 public:
-    // prevent constructor by default
-    BlockPatternPostEvent& operator=(BlockPatternPostEvent const&);
-    BlockPatternPostEvent(BlockPatternPostEvent const&);
-    BlockPatternPostEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~BlockPatternPostEvent();
@@ -21,6 +15,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

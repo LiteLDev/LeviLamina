@@ -12,12 +12,6 @@ class AbstractScene;
 
 class UIEventListener {
 public:
-    // prevent constructor by default
-    UIEventListener& operator=(UIEventListener const&);
-    UIEventListener(UIEventListener const&);
-    UIEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

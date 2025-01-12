@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct RemoveGenericIDResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    RemoveGenericIDResult& operator=(RemoveGenericIDResult const&);
-    RemoveGenericIDResult(RemoveGenericIDResult const&);
-    RemoveGenericIDResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

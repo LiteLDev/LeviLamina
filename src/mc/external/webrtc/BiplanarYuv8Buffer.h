@@ -9,12 +9,6 @@ namespace webrtc {
 
 class BiplanarYuv8Buffer : public ::webrtc::BiplanarYuvBuffer {
 public:
-    // prevent constructor by default
-    BiplanarYuv8Buffer& operator=(BiplanarYuv8Buffer const&);
-    BiplanarYuv8Buffer(BiplanarYuv8Buffer const&);
-    BiplanarYuv8Buffer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 14

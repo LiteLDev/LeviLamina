@@ -17,12 +17,6 @@ class Random;
 
 class SetDataFromColorIndexFunction : public ::LootItemFunction {
 public:
-    // prevent constructor by default
-    SetDataFromColorIndexFunction& operator=(SetDataFromColorIndexFunction const&);
-    SetDataFromColorIndexFunction(SetDataFromColorIndexFunction const&);
-    SetDataFromColorIndexFunction();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -11,12 +11,6 @@ namespace Json { class Value; }
 
 class LootItemCondition {
 public:
-    // prevent constructor by default
-    LootItemCondition& operator=(LootItemCondition const&);
-    LootItemCondition(LootItemCondition const&);
-    LootItemCondition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -35,7 +29,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

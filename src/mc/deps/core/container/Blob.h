@@ -64,11 +64,11 @@ public:
 
     MCAPI explicit Blob(uint64 size);
 
-    MCAPI uchar const* cbegin() const;
+    MCFOLD uchar const* cbegin() const;
 
     MCAPI uchar const* cend() const;
 
-    MCAPI bool empty() const;
+    MCFOLD bool empty() const;
 
     MCAPI ::mce::Blob& operator=(::mce::Blob&& rhs);
 

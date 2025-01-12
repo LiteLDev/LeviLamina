@@ -90,7 +90,7 @@ public:
 
     MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCAPI ::ItemDescriptor::InternalType $getType() const;
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
     MCAPI uint64 $getHash() const;
     // NOLINTEND

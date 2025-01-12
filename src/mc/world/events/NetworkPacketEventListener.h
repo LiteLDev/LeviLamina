@@ -13,12 +13,6 @@ class PacketHeader;
 
 class NetworkPacketEventListener {
 public:
-    // prevent constructor by default
-    NetworkPacketEventListener& operator=(NetworkPacketEventListener const&);
-    NetworkPacketEventListener(NetworkPacketEventListener const&);
-    NetworkPacketEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

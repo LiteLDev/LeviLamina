@@ -15,12 +15,6 @@ namespace webrtc {
 
 class ReceiveStatistics : public ::webrtc::ReceiveStatisticsProvider, public ::webrtc::RtpPacketSinkInterface {
 public:
-    // prevent constructor by default
-    ReceiveStatistics& operator=(ReceiveStatistics const&);
-    ReceiveStatistics(ReceiveStatistics const&);
-    ReceiveStatistics();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

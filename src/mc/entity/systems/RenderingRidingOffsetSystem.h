@@ -10,12 +10,6 @@ struct PassengerRenderingRidingOffsetComponent;
 
 class RenderingRidingOffsetSystem {
 public:
-    // prevent constructor by default
-    RenderingRidingOffsetSystem& operator=(RenderingRidingOffsetSystem const&);
-    RenderingRidingOffsetSystem(RenderingRidingOffsetSystem const&);
-    RenderingRidingOffsetSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 getInterpolatedRenderingRidingOffset(

@@ -7,12 +7,6 @@
 
 namespace OperationNodeZooms {
 
-class Zoom4xVoronoi : public ::OperationNodeZooms::ZoomBase<2, 1> {
-public:
-    // prevent constructor by default
-    Zoom4xVoronoi& operator=(Zoom4xVoronoi const&);
-    Zoom4xVoronoi(Zoom4xVoronoi const&);
-    Zoom4xVoronoi();
-};
+class Zoom4xVoronoi : public ::OperationNodeZooms::ZoomBase<2, 1> {};
 
 } // namespace OperationNodeZooms

@@ -4,12 +4,6 @@
 
 namespace sim {
 
-struct VoidMoveIntent {
-public:
-    // prevent constructor by default
-    VoidMoveIntent& operator=(VoidMoveIntent const&);
-    VoidMoveIntent(VoidMoveIntent const&);
-    VoidMoveIntent();
-};
+struct VoidMoveIntent {};
 
 } // namespace sim

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class TransformationSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    TransformationSystem& operator=(TransformationSystem const&);
-    TransformationSystem(TransformationSystem const&);
-    TransformationSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

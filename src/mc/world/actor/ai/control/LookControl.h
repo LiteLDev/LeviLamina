@@ -12,11 +12,6 @@ class Mob;
 
 class LookControl : public ::Control {
 public:
-    // prevent constructor by default
-    LookControl& operator=(LookControl const&);
-    LookControl(LookControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -50,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob);
+    MCFOLD void $initializeInternal(::Mob& mob);
 
     MCAPI void $tick(::Mob& mob);
     // NOLINTEND

@@ -53,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
         ::Scripting::ContextConfig const&                            contextConfig
     );
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

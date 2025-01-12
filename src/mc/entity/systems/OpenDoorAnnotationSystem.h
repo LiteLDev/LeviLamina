@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class OpenDoorAnnotationSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    OpenDoorAnnotationSystem& operator=(OpenDoorAnnotationSystem const&);
-    OpenDoorAnnotationSystem(OpenDoorAnnotationSystem const&);
-    OpenDoorAnnotationSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

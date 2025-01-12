@@ -16,12 +16,6 @@ namespace br::spawn {
 
 class OnGround : public ::br::spawn::PlacementType {
 public:
-    // prevent constructor by default
-    OnGround& operator=(OnGround const&);
-    OnGround(OnGround const&);
-    OnGround();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

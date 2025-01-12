@@ -7,12 +7,6 @@
 
 struct ItemStartUseEvent : public ::ItemChargeEvent {
 public:
-    // prevent constructor by default
-    ItemStartUseEvent& operator=(ItemStartUseEvent const&);
-    ItemStartUseEvent(ItemStartUseEvent const&);
-    ItemStartUseEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ItemStartUseEvent();
@@ -21,6 +15,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

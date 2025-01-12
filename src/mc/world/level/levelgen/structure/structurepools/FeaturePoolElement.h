@@ -102,7 +102,7 @@ public:
         ::BlockPos                                                                      refPos
     ) const;
 
-    MCAPI ::StructurePoolElementType $type() const;
+    MCFOLD ::StructurePoolElementType $type() const;
     // NOLINTEND
 
 public:

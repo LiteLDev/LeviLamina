@@ -13,12 +13,6 @@ class CompoundTag;
 
 class ClientUnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 public:
-    // prevent constructor by default
-    ClientUnknownBlockTypeRegistry& operator=(ClientUnknownBlockTypeRegistry const&);
-    ClientUnknownBlockTypeRegistry(ClientUnknownBlockTypeRegistry const&);
-    ClientUnknownBlockTypeRegistry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

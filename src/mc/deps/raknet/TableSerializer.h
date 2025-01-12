@@ -4,12 +4,6 @@
 
 namespace RakNet {
 
-class TableSerializer {
-public:
-    // prevent constructor by default
-    TableSerializer& operator=(TableSerializer const&);
-    TableSerializer(TableSerializer const&);
-    TableSerializer();
-};
+class TableSerializer {};
 
 } // namespace RakNet

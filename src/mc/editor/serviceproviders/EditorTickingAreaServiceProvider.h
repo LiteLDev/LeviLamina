@@ -15,12 +15,6 @@ namespace Editor::Services {
 
 class EditorTickingAreaServiceProvider {
 public:
-    // prevent constructor by default
-    EditorTickingAreaServiceProvider& operator=(EditorTickingAreaServiceProvider const&);
-    EditorTickingAreaServiceProvider(EditorTickingAreaServiceProvider const&);
-    EditorTickingAreaServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

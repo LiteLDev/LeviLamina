@@ -49,7 +49,7 @@ public:
 
     MCAPI void setSoundDefinitionByName(::std::string const& name);
 
-    MCAPI void uninitialize(::EntityContext& entity) const;
+    MCFOLD void uninitialize(::EntityContext& entity) const;
     // NOLINTEND
 
 public:

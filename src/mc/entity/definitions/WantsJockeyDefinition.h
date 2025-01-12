@@ -12,15 +12,9 @@ namespace JsonUtil { class EmptyClass; }
 
 struct WantsJockeyDefinition {
 public:
-    // prevent constructor by default
-    WantsJockeyDefinition& operator=(WantsJockeyDefinition const&);
-    WantsJockeyDefinition(WantsJockeyDefinition const&);
-    WantsJockeyDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::WantsJockeyDefinition>>& root
     );
     // NOLINTEND

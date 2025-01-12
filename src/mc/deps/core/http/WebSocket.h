@@ -81,11 +81,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onMessage(::std::string_view);
+    MCFOLD void $onMessage(::std::string_view);
 
-    MCAPI void $onBinaryMessage(::gsl::span<uchar const>);
+    MCFOLD void $onBinaryMessage(::gsl::span<uchar const>);
 
-    MCAPI void $onClose(uint);
+    MCFOLD void $onClose(uint);
     // NOLINTEND
 
 public:

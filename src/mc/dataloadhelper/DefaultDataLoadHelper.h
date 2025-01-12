@@ -89,38 +89,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Vec3 $loadPosition(::Vec3 const& position);
+    MCFOLD ::Vec3 $loadPosition(::Vec3 const& position);
 
-    MCAPI ::BlockPos $loadBlockPosition(::BlockPos const& blockPos);
+    MCFOLD ::BlockPos $loadBlockPosition(::BlockPos const& blockPos);
 
-    MCAPI ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
+    MCFOLD ::BlockPos $loadBlockPositionOffset(::BlockPos const& blockPosOffset);
 
-    MCAPI float $loadRotationDegreesX(float x);
+    MCFOLD float $loadRotationDegreesX(float x);
 
-    MCAPI float $loadRotationDegreesY(float y);
+    MCFOLD float $loadRotationDegreesY(float y);
 
-    MCAPI float $loadRotationRadiansX(float x);
+    MCFOLD float $loadRotationRadiansX(float x);
 
-    MCAPI float $loadRotationRadiansY(float y);
+    MCFOLD float $loadRotationRadiansY(float y);
 
-    MCAPI uchar $loadFacingID(uchar facing);
+    MCFOLD uchar $loadFacingID(uchar facing);
 
-    MCAPI ::Vec3 $loadDirection(::Vec3 const& direction);
+    MCFOLD ::Vec3 $loadDirection(::Vec3 const& direction);
 
-    MCAPI ::Direction::Type $loadDirection(::Direction::Type direction);
+    MCFOLD ::Direction::Type $loadDirection(::Direction::Type direction);
 
-    MCAPI ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
+    MCFOLD ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 
-    MCAPI ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
+    MCFOLD ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
 
     MCAPI ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
         ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
         ::std::string const&                                                                    componentName
     );
 
-    MCAPI bool $shouldResetTime();
+    MCFOLD bool $shouldResetTime();
 
-    MCAPI ::DataLoadHelperType $getType() const;
+    MCFOLD ::DataLoadHelperType $getType() const;
     // NOLINTEND
 
 public:

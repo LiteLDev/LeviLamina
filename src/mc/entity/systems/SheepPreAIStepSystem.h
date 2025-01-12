@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class SheepPreAIStepSystem {
 public:
-    // prevent constructor by default
-    SheepPreAIStepSystem& operator=(SheepPreAIStepSystem const&);
-    SheepPreAIStepSystem(SheepPreAIStepSystem const&);
-    SheepPreAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doSheepPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);

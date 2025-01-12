@@ -42,12 +42,6 @@ struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                            ::GlobalWrite<>,
                            ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    PublishSystem& operator=(PublishSystem const&);
-    PublishSystem(PublishSystem const&);
-    PublishSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

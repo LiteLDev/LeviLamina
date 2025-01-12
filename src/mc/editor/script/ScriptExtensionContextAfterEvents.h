@@ -39,13 +39,6 @@ public:
     : public ::ScriptModuleMinecraft::IScriptScriptDeferredEventListener<
           ::Editor::ScriptModule::ScriptExtensionContextAfterEvents> {
     public:
-        // prevent constructor by default
-        ScriptExtensionContextAfterEventsDeferredEventListener&
-        operator=(ScriptExtensionContextAfterEventsDeferredEventListener const&);
-        ScriptExtensionContextAfterEventsDeferredEventListener(ScriptExtensionContextAfterEventsDeferredEventListener const&);
-        ScriptExtensionContextAfterEventsDeferredEventListener();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 4

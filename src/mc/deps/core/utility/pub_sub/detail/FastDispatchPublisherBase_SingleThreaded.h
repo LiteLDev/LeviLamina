@@ -17,12 +17,6 @@ namespace Bedrock::PubSub::Detail {
 class FastDispatchPublisherBase_SingleThreaded : public ::Bedrock::PubSub::Detail::PublisherBase,
                                                  public ::Bedrock::PubSub::ThreadModel::SingleThreaded::NullMutex {
 public:
-    // prevent constructor by default
-    FastDispatchPublisherBase_SingleThreaded& operator=(FastDispatchPublisherBase_SingleThreaded const&);
-    FastDispatchPublisherBase_SingleThreaded(FastDispatchPublisherBase_SingleThreaded const&);
-    FastDispatchPublisherBase_SingleThreaded();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

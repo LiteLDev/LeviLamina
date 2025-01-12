@@ -49,7 +49,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -115,13 +115,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
-    MCAPI int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCFOLD int $apply(::ItemStack& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
 
-    MCAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
 
-    MCAPI int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
+    MCFOLD int $apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context);
     // NOLINTEND
 
 public:

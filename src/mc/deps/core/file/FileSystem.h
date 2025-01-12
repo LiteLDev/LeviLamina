@@ -56,7 +56,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -75,12 +75,6 @@ public:
         FileTransferProgress(FileTransferProgress const&);
         FileTransferProgress();
     };
-
-public:
-    // prevent constructor by default
-    FileSystem& operator=(FileSystem const&);
-    FileSystem(FileSystem const&);
-    FileSystem();
 
 public:
     // virtual functions
@@ -265,7 +259,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

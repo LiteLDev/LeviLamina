@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcEventDtlsWritableState {
 public:
-    // prevent constructor by default
-    RtcEventDtlsWritableState& operator=(RtcEventDtlsWritableState const&);
-    RtcEventDtlsWritableState(RtcEventDtlsWritableState const&);
-    RtcEventDtlsWritableState();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit RtcEventDtlsWritableState(bool);

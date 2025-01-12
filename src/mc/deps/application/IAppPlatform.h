@@ -11,12 +11,6 @@
 
 class IAppPlatform : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IAppPlatform& operator=(IAppPlatform const&);
-    IAppPlatform(IAppPlatform const&);
-    IAppPlatform();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -87,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -14,11 +14,6 @@ class Random;
 
 class MonsterRoomFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    MonsterRoomFeature& operator=(MonsterRoomFeature const&);
-    MonsterRoomFeature(MonsterRoomFeature const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

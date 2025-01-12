@@ -24,11 +24,6 @@ class ServerScriptManager;
 
 class GameModuleServer {
 public:
-    // prevent constructor by default
-    GameModuleServer& operator=(GameModuleServer const&);
-    GameModuleServer(GameModuleServer const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -82,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

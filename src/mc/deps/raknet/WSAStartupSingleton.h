@@ -4,12 +4,6 @@
 
 class WSAStartupSingleton {
 public:
-    // prevent constructor by default
-    WSAStartupSingleton& operator=(WSAStartupSingleton const&);
-    WSAStartupSingleton(WSAStartupSingleton const&);
-    WSAStartupSingleton();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void AddRef();

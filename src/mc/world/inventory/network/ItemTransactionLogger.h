@@ -15,7 +15,7 @@ namespace ItemTransactionLogger {
 // NOLINTBEGIN
 MCAPI void initializeLogger(bool enable);
 
-MCAPI void log(::std::string const& message);
+MCFOLD void log(::std::string const& message);
 
 MCAPI void log(::InventoryAction const& action, ::std::string const& message);
 

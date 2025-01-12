@@ -116,9 +116,9 @@ public:
 
     MCAPI ::Core::Result flush();
 
-    MCAPI uint64 getBlockSize() const;
+    MCFOLD uint64 getBlockSize() const;
 
-    MCAPI ::Core::FileOpenMode const& getOpenMode() const;
+    MCFOLD ::Core::FileOpenMode const& getOpenMode() const;
 
     MCAPI ::Core::PathBuffer<::std::string> getPath() const;
 
@@ -128,9 +128,9 @@ public:
 
     MCAPI ::Core::Result getSize(uint64* pSize);
 
-    MCAPI ::Core::FileSystemImpl* getTransaction();
+    MCFOLD ::Core::FileSystemImpl* getTransaction();
 
-    MCAPI bool isOpen();
+    MCFOLD bool isOpen();
 
     MCAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
@@ -138,7 +138,7 @@ public:
 
     MCAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
 
-    MCAPI void setLoggingEnabled(bool loggingEnabled);
+    MCFOLD void setLoggingEnabled(bool loggingEnabled);
 
     MCAPI ::Core::Result setPosition(uint64 position);
 

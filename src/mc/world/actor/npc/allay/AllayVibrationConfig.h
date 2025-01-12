@@ -71,7 +71,7 @@ public:
 
     MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCAPI bool $shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&);
+    MCFOLD bool $shouldListen(::BlockSource&, ::GameEvent const&, ::GameEventContext const&);
     // NOLINTEND
 
 public:

@@ -65,7 +65,7 @@ public:
 
     MCAPI ::BlockPos getMin() const;
 
-    MCAPI ::BlockPos const& getOrigin() const;
+    MCFOLD ::BlockPos const& getOrigin() const;
 
     MCAPI ::std::vector<::CompoundBlockVolumeItem> getVolumeList() const;
 
@@ -82,7 +82,7 @@ public:
 
     MCAPI bool popVolume();
 
-    MCAPI void pushVolume(::CompoundBlockVolumeItem&& item);
+    MCFOLD void pushVolume(::CompoundBlockVolumeItem&& item);
 
     MCAPI void pushVolume(::CompoundBlockVolumeItem const&);
 

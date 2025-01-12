@@ -11,12 +11,6 @@ namespace persona::color {
 
 struct DefinedSwatchLists {
 public:
-    // prevent constructor by default
-    DefinedSwatchLists& operator=(DefinedSwatchLists const&);
-    DefinedSwatchLists(DefinedSwatchLists const&);
-    DefinedSwatchLists();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::persona::color::SwatchList> const& mHairColors();

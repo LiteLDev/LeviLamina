@@ -14,12 +14,6 @@ namespace NetherNet {
 
 struct ILanEventHandler {
 public:
-    // prevent constructor by default
-    ILanEventHandler& operator=(ILanEventHandler const&);
-    ILanEventHandler(ILanEventHandler const&);
-    ILanEventHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -47,7 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
+    MCFOLD void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
     // NOLINTEND
 };
 

@@ -24,7 +24,7 @@ public:
 
     MCAPI ::IFeature& _getStackRef() const;
 
-    MCAPI bool _hasValue() const;
+    MCFOLD bool _hasValue() const;
     // NOLINTEND
 
 public:

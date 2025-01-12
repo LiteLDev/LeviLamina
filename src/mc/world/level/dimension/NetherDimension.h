@@ -23,12 +23,6 @@ namespace br::worldgen { class StructureSetRegistry; }
 
 class NetherDimension : public ::Dimension {
 public:
-    // prevent constructor by default
-    NetherDimension& operator=(NetherDimension const&);
-    NetherDimension(NetherDimension const&);
-    NetherDimension();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -109,32 +103,32 @@ public:
 
     MCAPI ::HashedString $getDefaultBiome() const;
 
-    MCAPI bool $isNaturalDimension() const;
+    MCFOLD bool $isNaturalDimension() const;
 
-    MCAPI bool $isValidSpawn(int x, int z) const;
+    MCFOLD bool $isValidSpawn(int x, int z) const;
 
-    MCAPI bool $showSky() const;
+    MCFOLD bool $showSky() const;
 
-    MCAPI float $getTimeOfDay(int time, float a) const;
+    MCFOLD float $getTimeOfDay(int time, float a) const;
 
-    MCAPI bool $mayRespawnViaBed() const;
+    MCFOLD bool $mayRespawnViaBed() const;
 
-    MCAPI bool $forceCheckAllNeighChunkSavedStat() const;
+    MCFOLD bool $forceCheckAllNeighChunkSavedStat() const;
 
     MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
     MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
+    MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
     MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
-    MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
+    MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
+    MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCAPI ::std::unique_ptr<::ChunkSource>
+    MCFOLD ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
     // NOLINTEND
 

@@ -210,10 +210,10 @@ public:
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI ::std::unique_ptr<::Aquifer>
+    MCFOLD ::std::unique_ptr<::Aquifer>
     $tryMakeAquifer(::ChunkPos const&, ::SurfaceLevelCache const&, short, short, short) const;
 
-    MCAPI void $decorateWorldGenLoadChunk(
+    MCFOLD void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -221,7 +221,7 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
+    MCFOLD ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
 
     MCAPI ::WorldGenCache $createWorldGenCache(::ChunkPos chunkPos) const;
     // NOLINTEND

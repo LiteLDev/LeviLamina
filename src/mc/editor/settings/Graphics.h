@@ -29,11 +29,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
 
-    MCAPI bool getShowChunkBoundaries() const;
+    MCFOLD bool getShowChunkBoundaries() const;
 
-    MCAPI bool getShowCompass() const;
+    MCFOLD bool getShowCompass() const;
 
-    MCAPI bool getShowInvisibleBlocks() const;
+    MCFOLD bool getShowInvisibleBlocks() const;
 
     MCAPI void setShowChunkBoundaries(bool shouldShow);
 
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -9,12 +9,6 @@ namespace webrtc {
 
 class PlanarYuv16BBuffer : public ::webrtc::PlanarYuvBuffer {
 public:
-    // prevent constructor by default
-    PlanarYuv16BBuffer& operator=(PlanarYuv16BBuffer const&);
-    PlanarYuv16BBuffer(PlanarYuv16BBuffer const&);
-    PlanarYuv16BBuffer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 15

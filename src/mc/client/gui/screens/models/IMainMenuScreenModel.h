@@ -14,12 +14,6 @@ namespace mce { class UUID; }
 
 class IMainMenuScreenModel {
 public:
-    // prevent constructor by default
-    IMainMenuScreenModel& operator=(IMainMenuScreenModel const&);
-    IMainMenuScreenModel(IMainMenuScreenModel const&);
-    IMainMenuScreenModel();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

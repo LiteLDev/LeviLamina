@@ -15,12 +15,6 @@ namespace webrtc {
 
 class DcSctpTransport {
 public:
-    // prevent constructor by default
-    DcSctpTransport& operator=(DcSctpTransport const&);
-    DcSctpTransport(DcSctpTransport const&);
-    DcSctpTransport();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ConnectTransportSignals();

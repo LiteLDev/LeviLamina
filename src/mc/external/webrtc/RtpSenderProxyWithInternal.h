@@ -5,12 +5,6 @@
 namespace webrtc {
 
 template <typename T0>
-class RtpSenderProxyWithInternal {
-public:
-    // prevent constructor by default
-    RtpSenderProxyWithInternal& operator=(RtpSenderProxyWithInternal const&);
-    RtpSenderProxyWithInternal(RtpSenderProxyWithInternal const&);
-    RtpSenderProxyWithInternal();
-};
+class RtpSenderProxyWithInternal {};
 
 } // namespace webrtc

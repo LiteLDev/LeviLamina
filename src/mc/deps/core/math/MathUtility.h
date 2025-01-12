@@ -6,12 +6,6 @@ namespace mce {
 
 class MathUtility {
 public:
-    // prevent constructor by default
-    MathUtility& operator=(MathUtility const&);
-    MathUtility(MathUtility const&);
-    MathUtility();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool floatEqualsEpsilon(float a, float b, float epsilon);

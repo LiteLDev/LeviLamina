@@ -60,7 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 

@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorIsFamilyTest : public ::SimpleHashStringFilterTest {
 public:
-    // prevent constructor by default
-    ActorIsFamilyTest& operator=(ActorIsFamilyTest const&);
-    ActorIsFamilyTest(ActorIsFamilyTest const&);
-    ActorIsFamilyTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

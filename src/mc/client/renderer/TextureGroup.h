@@ -4,12 +4,6 @@
 
 namespace mce {
 
-class TextureGroup {
-public:
-    // prevent constructor by default
-    TextureGroup& operator=(TextureGroup const&);
-    TextureGroup(TextureGroup const&);
-    TextureGroup();
-};
+class TextureGroup {};
 
 } // namespace mce

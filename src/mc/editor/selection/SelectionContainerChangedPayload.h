@@ -18,12 +18,6 @@ class SelectionContainerChangedPayload
 : public ::Editor::Network::NetworkPayload<::Editor::Network::SelectionContainerChangedPayload>,
   public ::Editor::Network::SelectionContainerCommon {
 public:
-    // prevent constructor by default
-    SelectionContainerChangedPayload& operator=(SelectionContainerChangedPayload const&);
-    SelectionContainerChangedPayload(SelectionContainerChangedPayload const&);
-    SelectionContainerChangedPayload();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

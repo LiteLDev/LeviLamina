@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -85,7 +85,7 @@ public:
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCAPI char const* $getName();
+    MCFOLD char const* $getName();
     // NOLINTEND
 
 public:

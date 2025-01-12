@@ -4,12 +4,6 @@
 
 namespace cricket {
 
-class SctpTransportInternal {
-public:
-    // prevent constructor by default
-    SctpTransportInternal& operator=(SctpTransportInternal const&);
-    SctpTransportInternal(SctpTransportInternal const&);
-    SctpTransportInternal();
-};
+class SctpTransportInternal {};
 
 } // namespace cricket

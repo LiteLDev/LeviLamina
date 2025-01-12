@@ -16,12 +16,6 @@ namespace webrtc {
 
 class PacketReceiver {
 public:
-    // prevent constructor by default
-    PacketReceiver& operator=(PacketReceiver const&);
-    PacketReceiver(PacketReceiver const&);
-    PacketReceiver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

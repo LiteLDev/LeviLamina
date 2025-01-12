@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class TimerSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    TimerSystem& operator=(TimerSystem const&);
-    TimerSystem(TimerSystem const&);
-    TimerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

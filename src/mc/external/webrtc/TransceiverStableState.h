@@ -11,12 +11,6 @@ namespace webrtc {
 
 class TransceiverStableState {
 public:
-    // prevent constructor by default
-    TransceiverStableState& operator=(TransceiverStableState const&);
-    TransceiverStableState(TransceiverStableState const&);
-    TransceiverStableState();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void SetInitSendEncodings(::std::vector<::webrtc::RtpEncodingParameters> const&);

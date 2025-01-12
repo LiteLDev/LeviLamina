@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcEventLogOutput {
 public:
-    // prevent constructor by default
-    RtcEventLogOutput& operator=(RtcEventLogOutput const&);
-    RtcEventLogOutput(RtcEventLogOutput const&);
-    RtcEventLogOutput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

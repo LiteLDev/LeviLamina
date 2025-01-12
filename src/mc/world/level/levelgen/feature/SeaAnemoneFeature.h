@@ -14,12 +14,6 @@ class Random;
 
 class SeaAnemoneFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    SeaAnemoneFeature& operator=(SeaAnemoneFeature const&);
-    SeaAnemoneFeature(SeaAnemoneFeature const&);
-    SeaAnemoneFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -20,12 +20,6 @@ struct TickingSystemWithInfo;
 
 struct MinecartCanSnapOnRailSystem {
 public:
-    // prevent constructor by default
-    MinecartCanSnapOnRailSystem& operator=(MinecartCanSnapOnRailSystem const&);
-    MinecartCanSnapOnRailSystem(MinecartCanSnapOnRailSystem const&);
-    MinecartCanSnapOnRailSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _checkCanSnapOnRail(

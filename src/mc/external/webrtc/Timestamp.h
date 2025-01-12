@@ -7,12 +7,6 @@
 
 namespace webrtc {
 
-class Timestamp : public ::webrtc::rtc_units_impl::UnitBase<::webrtc::Timestamp> {
-public:
-    // prevent constructor by default
-    Timestamp& operator=(Timestamp const&);
-    Timestamp(Timestamp const&);
-    Timestamp();
-};
+class Timestamp : public ::webrtc::rtc_units_impl::UnitBase<::webrtc::Timestamp> {};
 
 } // namespace webrtc

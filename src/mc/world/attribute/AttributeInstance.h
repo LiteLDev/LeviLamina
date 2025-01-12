@@ -71,7 +71,7 @@ public:
 
     MCAPI void addModifier(::AttributeModifier const& modifier);
 
-    MCAPI ::Attribute const* getAttribute() const;
+    MCFOLD ::Attribute const* getAttribute() const;
 
     MCAPI float getCurrentValue() const;
 
@@ -99,7 +99,7 @@ public:
 
     MCAPI void inheritFrom(::AttributeInstance const& other, ::BaseAttributeMap* attributeMap);
 
-    MCAPI bool isValid() const;
+    MCFOLD bool isValid() const;
 
     MCAPI void recalculateModifiers();
 

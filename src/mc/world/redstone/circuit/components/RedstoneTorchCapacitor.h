@@ -123,7 +123,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uchar $getPoweroutDirection() const;
+    MCFOLD uchar $getPoweroutDirection() const;
 
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
@@ -140,9 +140,9 @@ public:
 
     MCAPI bool $isHalfPulse() const;
 
-    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
 
-    MCAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
+    MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
     MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
     // NOLINTEND

@@ -12,12 +12,6 @@ namespace OperationNodeFilters {
 struct AddOceanEdge
 : public ::OperationNodeFilters::FilterBase<3, 3, ::BiomeTemperatureCategory, ::BiomeTemperatureCategory> {
 public:
-    // prevent constructor by default
-    AddOceanEdge& operator=(AddOceanEdge const&);
-    AddOceanEdge(AddOceanEdge const&);
-    AddOceanEdge();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::BiomeTemperatureCategory

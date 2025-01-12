@@ -18,12 +18,6 @@ struct VariantParameterList;
 
 class LavaSlime : public ::Slime {
 public:
-    // prevent constructor by default
-    LavaSlime& operator=(LavaSlime const&);
-    LavaSlime(LavaSlime const&);
-    LavaSlime();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -88,21 +82,21 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI int $getArmorValue() const;
 
-    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
     MCAPI ::OwnerPtr<::EntityContext> $createChild(int i);
 
-    MCAPI bool $isOnFire() const;
+    MCFOLD bool $isOnFire() const;
 
     MCAPI void $decreaseSquish();
 
-    MCAPI bool $doPlayLandSound();
+    MCFOLD bool $doPlayLandSound();
     // NOLINTEND
 
 public:

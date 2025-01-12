@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-struct VideoStream {
-public:
-    // prevent constructor by default
-    VideoStream& operator=(VideoStream const&);
-    VideoStream(VideoStream const&);
-    VideoStream();
-};
+struct VideoStream {};
 
 } // namespace webrtc

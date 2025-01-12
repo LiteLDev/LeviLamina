@@ -225,7 +225,7 @@ public:
 
     MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
 
-    MCAPI ::ItemStackRequestId const& getRequestId() const;
+    MCFOLD ::ItemStackRequestId const& getRequestId() const;
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
 

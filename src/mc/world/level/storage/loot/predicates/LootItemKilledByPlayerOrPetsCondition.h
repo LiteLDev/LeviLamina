@@ -13,12 +13,6 @@ class Random;
 
 class LootItemKilledByPlayerOrPetsCondition : public ::LootItemCondition {
 public:
-    // prevent constructor by default
-    LootItemKilledByPlayerOrPetsCondition& operator=(LootItemKilledByPlayerOrPetsCondition const&);
-    LootItemKilledByPlayerOrPetsCondition(LootItemKilledByPlayerOrPetsCondition const&);
-    LootItemKilledByPlayerOrPetsCondition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

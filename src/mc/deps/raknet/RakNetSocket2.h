@@ -49,9 +49,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::RakNet::SystemAddress GetBoundAddress() const;
 
-    MCAPI ::RakNet::RNS2Type GetSocketType() const;
+    MCFOLD ::RakNet::RNS2Type GetSocketType() const;
 
-    MCAPI uint GetUserConnectionSocketIndex() const;
+    MCFOLD uint GetUserConnectionSocketIndex() const;
 
     MCAPI bool IsBerkleySocket() const;
 
@@ -75,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetMulticastInterface(int interfaceIndex);
+    MCFOLD void $SetMulticastInterface(int interfaceIndex);
     // NOLINTEND
 
 public:

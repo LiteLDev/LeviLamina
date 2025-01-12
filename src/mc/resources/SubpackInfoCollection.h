@@ -30,7 +30,7 @@ public:
 
     MCAPI ::std::string const& getSubpackFolderName(int index) const;
 
-    MCAPI ::std::vector<::SubpackInfo> const& getSubpackInfo() const;
+    MCFOLD ::std::vector<::SubpackInfo> const& getSubpackInfo() const;
 
     MCAPI bool hasSubpacks() const;
     // NOLINTEND

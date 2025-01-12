@@ -109,7 +109,7 @@ public:
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 107
-    virtual bool canBeAffected(uint id) const /*override*/;
+    virtual bool canBeAffected(uint effectId) const /*override*/;
 
     // vIndex: 108
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
@@ -195,7 +195,7 @@ public:
 
     MCAPI ::WitherBossPreAIStepResult preAiStep();
 
-    MCAPI void removeSkeleton();
+    MCFOLD void removeSkeleton();
 
     MCAPI void setAerialAttack(bool aerialAttack);
 
@@ -209,7 +209,7 @@ public:
 
     MCAPI void setWantsToMove(bool shouldMove);
 
-    MCAPI bool wantsToMove();
+    MCFOLD bool wantsToMove();
     // NOLINTEND
 
 public:
@@ -251,9 +251,9 @@ public:
 
     MCAPI void $newServerAiStep();
 
-    MCAPI bool $canFreeze() const;
+    MCFOLD bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCAPI bool $canBeAffected(uint effectId) const;
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -263,7 +263,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI float $causeFallDamageToActor(float, float, ::ActorDamageSource);
+    MCFOLD float $causeFallDamageToActor(float, float, ::ActorDamageSource);
 
     MCAPI int $getArmorValue() const;
 
@@ -271,7 +271,7 @@ public:
 
     MCAPI void $remove();
 
-    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 

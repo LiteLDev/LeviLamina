@@ -7,12 +7,6 @@
 
 class SmokerContainerManagerController : public ::FurnaceContainerManagerController {
 public:
-    // prevent constructor by default
-    SmokerContainerManagerController& operator=(SmokerContainerManagerController const&);
-    SmokerContainerManagerController(SmokerContainerManagerController const&);
-    SmokerContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

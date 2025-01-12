@@ -11,12 +11,6 @@ class Player;
 
 class SitComponent {
 public:
-    // prevent constructor by default
-    SitComponent& operator=(SitComponent const&);
-    SitComponent(SitComponent const&);
-    SitComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _sitEvent(::Actor& actor, bool sit);

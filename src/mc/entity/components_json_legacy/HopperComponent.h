@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     MCAPI HopperComponent();
 
-    MCAPI ::BlockPos getLastPosition() const;
+    MCFOLD ::BlockPos getLastPosition() const;
 
     MCAPI bool pullInItems(::Actor& owner);
     // NOLINTEND

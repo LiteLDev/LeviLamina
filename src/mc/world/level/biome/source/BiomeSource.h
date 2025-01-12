@@ -16,12 +16,6 @@ struct GetBiomeOptions;
 
 class BiomeSource {
 public:
-    // prevent constructor by default
-    BiomeSource& operator=(BiomeSource const&);
-    BiomeSource(BiomeSource const&);
-    BiomeSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

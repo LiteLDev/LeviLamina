@@ -14,12 +14,6 @@ namespace CodeBuilder {
 
 class RequestInterpreter {
 public:
-    // prevent constructor by default
-    RequestInterpreter& operator=(RequestInterpreter const&);
-    RequestInterpreter(RequestInterpreter const&);
-    RequestInterpreter();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void process(

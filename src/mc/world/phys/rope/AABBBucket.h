@@ -2,21 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+struct RopeAABB;
+// clang-format on
+
 struct AABBBucket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk230b65;
-    ::ll::UntypedStorage<4, 4>  mUnk221fb2;
-    ::ll::UntypedStorage<8, 24> mUnk830088;
-    ::ll::UntypedStorage<1, 1>  mUnk4d486b;
-    ::ll::UntypedStorage<1, 1>  mUnkef625e;
+    ::ll::TypedStorage<4, 24, ::AABB>                    mBucketBounds;
+    ::ll::TypedStorage<4, 4, int>                        mCachedTicks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RopeAABB>> mBBs;
+    ::ll::TypedStorage<1, 1, bool>                       mDirty;
+    ::ll::TypedStorage<1, 1, bool>                       mNeedsFinalize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AABBBucket& operator=(AABBBucket const&);
-    AABBBucket(AABBBucket const&);
 
 public:
     // member functions
@@ -29,11 +30,11 @@ public:
 
     MCAPI bool isDirty();
 
-    MCAPI void markDirty();
+    MCFOLD void markDirty();
 
     MCAPI void mergeAABBs();
 
-    MCAPI bool needsFinalize() const;
+    MCFOLD bool needsFinalize() const;
     // NOLINTEND
 
 public:

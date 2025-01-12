@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class RaidBossSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    RaidBossSystem& operator=(RaidBossSystem const&);
-    RaidBossSystem(RaidBossSystem const&);
-    RaidBossSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -91,7 +91,7 @@ public:
 
     MCAPI void _setContainedItem(::ItemStack const& item);
 
-    MCAPI ::std::array<::std::string, 4> const& getSherdNames() const;
+    MCFOLD ::std::array<::std::string, 4> const& getSherdNames() const;
 
     MCAPI void tryAddItem(::Player& player);
     // NOLINTEND
@@ -144,17 +144,17 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

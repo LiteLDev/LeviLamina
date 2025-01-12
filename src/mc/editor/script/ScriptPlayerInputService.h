@@ -63,7 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Editor::Services::ServerPlayerInputServiceProvider* playerInputService,
         ::Scripting::WeakLifetimeScope const&                 scope
     );

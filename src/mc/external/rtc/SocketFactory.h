@@ -11,12 +11,6 @@ namespace rtc {
 
 class SocketFactory {
 public:
-    // prevent constructor by default
-    SocketFactory& operator=(SocketFactory const&);
-    SocketFactory(SocketFactory const&);
-    SocketFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

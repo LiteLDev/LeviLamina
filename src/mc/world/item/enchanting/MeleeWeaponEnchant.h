@@ -12,12 +12,6 @@ class Actor;
 
 class MeleeWeaponEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    MeleeWeaponEnchant& operator=(MeleeWeaponEnchant const&);
-    MeleeWeaponEnchant(MeleeWeaponEnchant const&);
-    MeleeWeaponEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -70,7 +64,7 @@ public:
 
     MCAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCAPI bool $isMeleeDamageEnchant() const;
+    MCFOLD bool $isMeleeDamageEnchant() const;
 
     MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class OutOfWorldSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    OutOfWorldSystem& operator=(OutOfWorldSystem const&);
-    OutOfWorldSystem(OutOfWorldSystem const&);
-    OutOfWorldSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

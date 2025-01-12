@@ -12,14 +12,8 @@ class IPackLoadContext;
 
 class BaseGamePackLoadRequirement {
 public:
-    // prevent constructor by default
-    BaseGamePackLoadRequirement& operator=(BaseGamePackLoadRequirement const&);
-    BaseGamePackLoadRequirement(BaseGamePackLoadRequirement const&);
-    BaseGamePackLoadRequirement();
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
+    MCFOLD static bool satisfied(::IPackLoadContext const& context, ::JsonBetaState);
     // NOLINTEND
 };

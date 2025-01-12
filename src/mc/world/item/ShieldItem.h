@@ -147,11 +147,11 @@ public:
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCAPI bool $isHandEquipped() const;
+    MCFOLD bool $isHandEquipped() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
     MCAPI ::InHandUpdateType $getInHandUpdateType(
         ::Player const&    player,
@@ -161,7 +161,7 @@ public:
         bool const         slotChanged
     ) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
@@ -172,7 +172,7 @@ public:
 
     MCAPI ::HashedString const& $getCooldownType() const;
 
-    MCAPI int $getCooldownTime() const;
+    MCFOLD int $getCooldownTime() const;
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 

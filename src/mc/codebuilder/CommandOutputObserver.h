@@ -17,12 +17,6 @@ namespace CodeBuilder {
 class CommandOutputObserver
 : public ::Core::Observer<::CodeBuilder::CommandOutputObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    CommandOutputObserver& operator=(CommandOutputObserver const&);
-    CommandOutputObserver(CommandOutputObserver const&);
-    CommandOutputObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

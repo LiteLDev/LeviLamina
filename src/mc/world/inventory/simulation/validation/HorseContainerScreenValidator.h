@@ -7,12 +7,6 @@
 
 class HorseContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    HorseContainerScreenValidator& operator=(HorseContainerScreenValidator const&);
-    HorseContainerScreenValidator(HorseContainerScreenValidator const&);
-    HorseContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

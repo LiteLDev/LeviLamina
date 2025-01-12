@@ -6,11 +6,6 @@ namespace rtc {
 
 class RaceChecker {
 public:
-    // prevent constructor by default
-    RaceChecker& operator=(RaceChecker const&);
-    RaceChecker(RaceChecker const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Acquire() const;

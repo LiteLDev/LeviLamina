@@ -40,9 +40,9 @@ public:
 
     MCAPI ::RakNet::uint24_t GetAndIncrementNextDatagramSequenceNumber();
 
-    MCAPI uint64 GetBytesPerSecondLimitByCongestionControl() const;
+    MCFOLD uint64 GetBytesPerSecondLimitByCongestionControl() const;
 
-    MCAPI uint GetMTU() const;
+    MCFOLD uint GetMTU() const;
 
     MCAPI ::RakNet::uint24_t GetNextDatagramSequenceNumber();
 
@@ -81,7 +81,7 @@ public:
         uint*              skippedMessageCount
     );
 
-    MCAPI void OnGotPacketPair(::RakNet::uint24_t datagramSequenceNumber, uint sizeInBytes, uint64 curTime);
+    MCFOLD void OnGotPacketPair(::RakNet::uint24_t datagramSequenceNumber, uint sizeInBytes, uint64 curTime);
 
     MCAPI void OnNAK(uint64 curTime, ::RakNet::uint24_t nakSequenceNumber);
 
@@ -91,11 +91,11 @@ public:
 
     MCAPI void OnSendAckGetBAndAS(uint64 curTime, bool* hasBAndAS, double* _B, double* _AS);
 
-    MCAPI void OnSendBytes(uint64 curTime, uint numBytes);
+    MCFOLD void OnSendBytes(uint64 curTime, uint numBytes);
 
     MCAPI bool ShouldSendACKs(uint64 curTime, uint64 estimatedTimeToNextTick);
 
-    MCAPI void Update(uint64 curTime, bool hasDataToSendOrResend);
+    MCFOLD void Update(uint64 curTime, bool hasDataToSendOrResend);
 
     MCAPI ~CCRakNetSlidingWindow();
     // NOLINTEND
@@ -115,7 +115,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

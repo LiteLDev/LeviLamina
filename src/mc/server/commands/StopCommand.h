@@ -15,12 +15,6 @@ class DedicatedServer;
 
 class StopCommand : public ::Command {
 public:
-    // prevent constructor by default
-    StopCommand& operator=(StopCommand const&);
-    StopCommand(StopCommand const&);
-    StopCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

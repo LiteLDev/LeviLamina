@@ -4,12 +4,6 @@
 
 namespace glTF {
 
-struct Animation {
-public:
-    // prevent constructor by default
-    Animation& operator=(Animation const&);
-    Animation(Animation const&);
-    Animation();
-};
+struct Animation {};
 
 } // namespace glTF

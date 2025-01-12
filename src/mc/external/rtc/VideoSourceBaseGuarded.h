@@ -22,12 +22,6 @@ public:
     // VideoSourceBaseGuarded inner types define
     struct SinkPair {
     public:
-        // prevent constructor by default
-        SinkPair& operator=(SinkPair const&);
-        SinkPair(SinkPair const&);
-        SinkPair();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~SinkPair();
@@ -39,11 +33,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    VideoSourceBaseGuarded& operator=(VideoSourceBaseGuarded const&);
-    VideoSourceBaseGuarded(VideoSourceBaseGuarded const&);
 
 public:
     // member functions

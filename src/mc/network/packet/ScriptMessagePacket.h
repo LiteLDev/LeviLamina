@@ -47,9 +47,9 @@ public:
 
     MCAPI ScriptMessagePacket(::std::string const& messageId, ::std::string const& messageValue);
 
-    MCAPI ::std::string const& getMessageId() const;
+    MCFOLD ::std::string const& getMessageId() const;
 
-    MCAPI ::std::string const& getMessageValue() const;
+    MCFOLD ::std::string const& getMessageValue() const;
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -81,12 +81,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    JsonValidator& operator=(JsonValidator const&);
-    JsonValidator(JsonValidator const&);
-    JsonValidator();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool validate(

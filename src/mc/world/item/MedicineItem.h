@@ -76,9 +76,9 @@ public:
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
     // NOLINTEND
 
 public:

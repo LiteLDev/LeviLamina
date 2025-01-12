@@ -15,12 +15,6 @@ class RenderParams;
 
 class DripstoneClusterFeature : public ::IFeature {
 public:
-    // prevent constructor by default
-    DripstoneClusterFeature& operator=(DripstoneClusterFeature const&);
-    DripstoneClusterFeature(DripstoneClusterFeature const&);
-    DripstoneClusterFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

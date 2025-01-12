@@ -13,12 +13,6 @@ namespace OperationNodeValues { struct PreBiome; }
 namespace OperationNodeFilters {
 
 struct AddEdgeSpecial
-: public ::OperationNodeFilters::FilterBase<1, 1, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {
-public:
-    // prevent constructor by default
-    AddEdgeSpecial& operator=(AddEdgeSpecial const&);
-    AddEdgeSpecial(AddEdgeSpecial const&);
-    AddEdgeSpecial();
-};
+: public ::OperationNodeFilters::FilterBase<1, 1, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {};
 
 } // namespace OperationNodeFilters

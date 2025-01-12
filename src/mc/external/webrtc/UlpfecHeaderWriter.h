@@ -6,11 +6,6 @@ namespace webrtc {
 
 class UlpfecHeaderWriter {
 public:
-    // prevent constructor by default
-    UlpfecHeaderWriter& operator=(UlpfecHeaderWriter const&);
-    UlpfecHeaderWriter(UlpfecHeaderWriter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI UlpfecHeaderWriter();

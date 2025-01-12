@@ -47,9 +47,9 @@ public:
     // NOLINTBEGIN
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI ::ActorLocation $getEquipLocation() const;
+    MCFOLD ::ActorLocation $getEquipLocation() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
     // NOLINTEND
 
 public:

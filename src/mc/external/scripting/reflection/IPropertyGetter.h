@@ -9,12 +9,6 @@ namespace Scripting::Reflection {
 
 class IPropertyGetter {
 public:
-    // prevent constructor by default
-    IPropertyGetter& operator=(IPropertyGetter const&);
-    IPropertyGetter(IPropertyGetter const&);
-    IPropertyGetter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

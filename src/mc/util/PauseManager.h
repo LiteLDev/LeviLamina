@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SimulationType getSimulationType() const;
+    MCFOLD ::SimulationType getSimulationType() const;
 
     MCAPI void setSimulationType(::SimulationType simulationType);
     // NOLINTEND

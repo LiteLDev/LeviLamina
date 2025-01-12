@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class Salmon : public ::Fish {
 public:
-    // prevent constructor by default
-    Salmon& operator=(Salmon const&);
-    Salmon(Salmon const&);
-    Salmon();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 172

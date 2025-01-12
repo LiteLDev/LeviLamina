@@ -12,15 +12,9 @@ namespace JsonUtil { class EmptyClass; }
 
 struct CanJoinRaidDefinition {
 public:
-    // prevent constructor by default
-    CanJoinRaidDefinition& operator=(CanJoinRaidDefinition const&);
-    CanJoinRaidDefinition(CanJoinRaidDefinition const&);
-    CanJoinRaidDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CanJoinRaidDefinition>>& root
     );
     // NOLINTEND

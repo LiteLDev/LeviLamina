@@ -7,12 +7,6 @@
 
 class IdleState : public ::PetSleepWithOwnerState {
 public:
-    // prevent constructor by default
-    IdleState& operator=(IdleState const&);
-    IdleState(IdleState const&);
-    IdleState();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -36,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $start();
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
     // NOLINTEND
 
 public:

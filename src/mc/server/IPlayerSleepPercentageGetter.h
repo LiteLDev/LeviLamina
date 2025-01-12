@@ -4,12 +4,6 @@
 
 class IPlayerSleepPercentageGetter {
 public:
-    // prevent constructor by default
-    IPlayerSleepPercentageGetter& operator=(IPlayerSleepPercentageGetter const&);
-    IPlayerSleepPercentageGetter(IPlayerSleepPercentageGetter const&);
-    IPlayerSleepPercentageGetter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

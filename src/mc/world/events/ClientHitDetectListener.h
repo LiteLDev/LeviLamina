@@ -12,12 +12,6 @@ class HitResult;
 
 class ClientHitDetectListener {
 public:
-    // prevent constructor by default
-    ClientHitDetectListener& operator=(ClientHitDetectListener const&);
-    ClientHitDetectListener(ClientHitDetectListener const&);
-    ClientHitDetectListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

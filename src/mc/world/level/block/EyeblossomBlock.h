@@ -62,9 +62,9 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
     // NOLINTEND

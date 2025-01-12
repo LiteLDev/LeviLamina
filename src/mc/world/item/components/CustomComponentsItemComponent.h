@@ -36,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CustomComponentsItemComponent(::SharedTypes::v1_20_80::CustomComponentsItemComponent component);
 
-    MCAPI ::std::vector<::std::string> const& getComponentNames() const;
+    MCFOLD ::std::vector<::std::string> const& getComponentNames() const;
     // NOLINTEND
 
 public:

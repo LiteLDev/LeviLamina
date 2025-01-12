@@ -66,7 +66,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI int $getFilteredStringIndex() const;
+    MCFOLD int $getFilteredStringIndex() const;
     // NOLINTEND
 
 public:

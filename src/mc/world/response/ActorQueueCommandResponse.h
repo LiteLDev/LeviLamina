@@ -18,12 +18,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class ActorQueueCommandResponse : public ::CommandResponseBase, public ::ActorEventResponse {
 public:
-    // prevent constructor by default
-    ActorQueueCommandResponse& operator=(ActorQueueCommandResponse const&);
-    ActorQueueCommandResponse(ActorQueueCommandResponse const&);
-    ActorQueueCommandResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -63,7 +57,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
 
-    MCAPI void $executeAction(::RenderParams& params) const;
+    MCFOLD void $executeAction(::RenderParams& params) const;
 
     MCAPI void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
@@ -71,7 +65,7 @@ public:
         ::Factory<::ActorEventResponse> const& factory
     ) const;
 
-    MCAPI ::CommandOriginSystem $_getCommandOriginSystem() const;
+    MCFOLD ::CommandOriginSystem $_getCommandOriginSystem() const;
     // NOLINTEND
 
 public:

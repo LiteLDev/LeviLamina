@@ -210,17 +210,17 @@ public:
 
     MCAPI ::std::string getDescriptionId() const;
 
-    MCAPI ::Enchant::Type getEnchantType() const;
+    MCFOLD ::Enchant::Type getEnchantType() const;
 
-    MCAPI ::Enchant::Frequency getFrequency() const;
+    MCFOLD ::Enchant::Frequency getFrequency() const;
 
-    MCAPI ::HashedString const& getScriptStringId() const;
+    MCFOLD ::HashedString const& getScriptStringId() const;
 
-    MCAPI ::HashedString const& getStringId() const;
+    MCFOLD ::HashedString const& getStringId() const;
 
-    MCAPI bool isAvailable() const;
+    MCFOLD bool isAvailable() const;
 
-    MCAPI bool isDisabled() const;
+    MCFOLD bool isDisabled() const;
     // NOLINTEND
 
 public:
@@ -285,31 +285,31 @@ public:
 
     MCAPI int $getMaxCost(int level) const;
 
-    MCAPI int $getMinLevel() const;
+    MCFOLD int $getMinLevel() const;
 
-    MCAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
-    MCAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
+    MCFOLD int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 
-    MCAPI float $getAfterBreachArmorFraction(int, float) const;
+    MCFOLD float $getAfterBreachArmorFraction(int, float) const;
 
-    MCAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
+    MCFOLD void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
-    MCAPI void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
+    MCFOLD void $doPostItemHurtActor(::Actor&, ::Actor&, int) const;
 
-    MCAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
+    MCFOLD void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
-    MCAPI bool $isMeleeDamageEnchant() const;
+    MCFOLD bool $isMeleeDamageEnchant() const;
 
-    MCAPI bool $isProtectionEnchant() const;
+    MCFOLD bool $isProtectionEnchant() const;
 
-    MCAPI bool $isTreasureOnly() const;
+    MCFOLD bool $isTreasureOnly() const;
 
-    MCAPI bool $isDiscoverable() const;
+    MCFOLD bool $isDiscoverable() const;
 
-    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCFOLD bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND
 
 public:

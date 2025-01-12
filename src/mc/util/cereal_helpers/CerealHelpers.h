@@ -28,7 +28,7 @@ MCAPI void bindRotationAndMirror(::cereal::ReflectionCtx& ctx);
 
 MCAPI ::std::array<int, 3> blockPosAsArray(::BlockPos const& instance);
 
-MCAPI void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);
+MCFOLD void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);
 
 MCAPI bool checkBoolSchema(::rapidjson::GenericValue<
                            ::rapidjson::UTF8<char>,

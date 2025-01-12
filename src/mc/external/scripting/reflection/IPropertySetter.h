@@ -51,7 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isMemberFunction() const;
+    MCFOLD bool $isMemberFunction() const;
     // NOLINTEND
 
 public:

@@ -12,12 +12,6 @@ class OnPlayerDestroyedTrigger;
 
 class OnPlayerDestroyedTriggerDescription : public ::BlockTriggerDescription<::OnPlayerDestroyedTrigger> {
 public:
-    // prevent constructor by default
-    OnPlayerDestroyedTriggerDescription& operator=(OnPlayerDestroyedTriggerDescription const&);
-    OnPlayerDestroyedTriggerDescription(OnPlayerDestroyedTriggerDescription const&);
-    OnPlayerDestroyedTriggerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

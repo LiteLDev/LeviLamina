@@ -15,12 +15,6 @@ namespace Bedrock {
 
 class ResultLogger {
 public:
-    // prevent constructor by default
-    ResultLogger& operator=(ResultLogger const&);
-    ResultLogger(ResultLogger const&);
-    ResultLogger();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

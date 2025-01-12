@@ -12,12 +12,6 @@ namespace Puv { class LoadResultAny; }
 
 class FeatureUpgrader : public ::Puv::Upgrader {
 public:
-    // prevent constructor by default
-    FeatureUpgrader& operator=(FeatureUpgrader const&);
-    FeatureUpgrader(FeatureUpgrader const&);
-    FeatureUpgrader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

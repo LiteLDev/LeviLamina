@@ -17,12 +17,6 @@ namespace Bedrock {
 
 class WorldRecovery_Unimplemented : public ::Bedrock::WorldRecovery {
 public:
-    // prevent constructor by default
-    WorldRecovery_Unimplemented& operator=(WorldRecovery_Unimplemented const&);
-    WorldRecovery_Unimplemented(WorldRecovery_Unimplemented const&);
-    WorldRecovery_Unimplemented();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

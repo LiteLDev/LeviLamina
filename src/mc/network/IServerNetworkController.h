@@ -10,12 +10,6 @@ namespace mce { class UUID; }
 
 struct IServerNetworkController {
 public:
-    // prevent constructor by default
-    IServerNetworkController& operator=(IServerNetworkController const&);
-    IServerNetworkController(IServerNetworkController const&);
-    IServerNetworkController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

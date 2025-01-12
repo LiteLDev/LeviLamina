@@ -9,12 +9,6 @@ namespace Json { class Value; }
 
 class ResponseVerifier {
 public:
-    // prevent constructor by default
-    ResponseVerifier& operator=(ResponseVerifier const&);
-    ResponseVerifier(ResponseVerifier const&);
-    ResponseVerifier();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

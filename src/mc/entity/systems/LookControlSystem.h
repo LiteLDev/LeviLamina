@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class LookControlSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    LookControlSystem& operator=(LookControlSystem const&);
-    LookControlSystem(LookControlSystem const&);
-    LookControlSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

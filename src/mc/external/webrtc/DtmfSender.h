@@ -15,12 +15,6 @@ namespace webrtc {
 
 class DtmfSender {
 public:
-    // prevent constructor by default
-    DtmfSender& operator=(DtmfSender const&);
-    DtmfSender(DtmfSender const&);
-    DtmfSender();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void DoInsertDtmf();

@@ -11,7 +11,7 @@ namespace CameraPresetsInternals {
 MCAPI void
 _doContentError(::std::string const& message, ::std::string_view filename, ::std::vector<::std::string> const& errors);
 
-MCAPI ::std::string _getUnrecognizedFieldText(::std::vector<::cereal::SerializerContext::LogEntry> const& schemaLog);
+MCFOLD ::std::string _getUnrecognizedFieldText(::std::vector<::cereal::SerializerContext::LogEntry> const& schemaLog);
 // NOLINTEND
 
 // static variables

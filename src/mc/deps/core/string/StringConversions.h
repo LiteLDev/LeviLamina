@@ -6,12 +6,6 @@ namespace Core {
 
 class StringConversions {
 public:
-    // prevent constructor by default
-    StringConversions& operator=(StringConversions const&);
-    StringConversions(StringConversions const&);
-    StringConversions();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string toUtf8(::std::basic_string_view<wchar_t, ::std::char_traits<wchar_t>> src);

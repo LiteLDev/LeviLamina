@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct ValidateWindowsReceiptResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    ValidateWindowsReceiptResult& operator=(ValidateWindowsReceiptResult const&);
-    ValidateWindowsReceiptResult(ValidateWindowsReceiptResult const&);
-    ValidateWindowsReceiptResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

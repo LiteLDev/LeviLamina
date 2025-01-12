@@ -59,7 +59,7 @@ public:
         /*override*/;
 
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
@@ -108,11 +108,11 @@ public:
 
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI bool $isHandEquipped() const;
+    MCFOLD bool $isHandEquipped() const;
 
-    MCAPI ::Brightness $getLightEmission(int auxValue) const;
+    MCFOLD ::Brightness $getLightEmission(int auxValue) const;
     // NOLINTEND
 
 public:

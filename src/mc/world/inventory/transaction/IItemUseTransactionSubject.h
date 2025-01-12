@@ -21,12 +21,6 @@ struct PlayerInventorySlotData;
 
 class IItemUseTransactionSubject {
 public:
-    // prevent constructor by default
-    IItemUseTransactionSubject& operator=(IItemUseTransactionSubject const&);
-    IItemUseTransactionSubject(IItemUseTransactionSubject const&);
-    IItemUseTransactionSubject();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

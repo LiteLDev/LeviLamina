@@ -12,12 +12,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class UseAnimationUtils {
 public:
-    // prevent constructor by default
-    UseAnimationUtils& operator=(UseAnimationUtils const&);
-    UseAnimationUtils(UseAnimationUtils const&);
-    UseAnimationUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);

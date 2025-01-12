@@ -37,12 +37,6 @@ namespace webrtc {
 
 class RtpTransportControllerSendInterface {
 public:
-    // prevent constructor by default
-    RtpTransportControllerSendInterface& operator=(RtpTransportControllerSendInterface const&);
-    RtpTransportControllerSendInterface(RtpTransportControllerSendInterface const&);
-    RtpTransportControllerSendInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class BrewingStandInputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    BrewingStandInputContainerValidation& operator=(BrewingStandInputContainerValidation const&);
-    BrewingStandInputContainerValidation(BrewingStandInputContainerValidation const&);
-    BrewingStandInputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -46,7 +40,7 @@ public:
     $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool)
         const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

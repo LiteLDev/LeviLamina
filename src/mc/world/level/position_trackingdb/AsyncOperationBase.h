@@ -81,7 +81,7 @@ public:
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCAPI bool $isAsync() const;
+    MCFOLD bool $isAsync() const;
 
     MCAPI bool $isComplete() const;
 

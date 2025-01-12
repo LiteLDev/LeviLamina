@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class Turtle : public ::Animal {
 public:
-    // prevent constructor by default
-    Turtle& operator=(Turtle const&);
-    Turtle(Turtle const&);
-    Turtle();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 36

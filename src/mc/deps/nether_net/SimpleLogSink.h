@@ -9,12 +9,6 @@ namespace NetherNet {
 
 class SimpleLogSink : public ::rtc::LogSink {
 public:
-    // prevent constructor by default
-    SimpleLogSink& operator=(SimpleLogSink const&);
-    SimpleLogSink(SimpleLogSink const&);
-    SimpleLogSink();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

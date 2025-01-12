@@ -31,7 +31,7 @@ public:
 
     MCAPI ::PathfinderNode* insert(::PathfinderNode* node);
 
-    MCAPI bool isEmpty();
+    MCFOLD bool isEmpty();
 
     MCAPI ::PathfinderNode* pop();
 
@@ -47,6 +47,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -12,12 +12,6 @@ class IWorldRegistriesProvider;
 
 class BiomeFilterGroup : public ::FilterGroup {
 public:
-    // prevent constructor by default
-    BiomeFilterGroup& operator=(BiomeFilterGroup const&);
-    BiomeFilterGroup(BiomeFilterGroup const&);
-    BiomeFilterGroup();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -36,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

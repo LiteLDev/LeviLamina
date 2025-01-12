@@ -24,7 +24,7 @@ public:
 
     MCAPI void addSample(::std::chrono::nanoseconds dt);
 
-    MCAPI ::std::chrono::nanoseconds getAverage() const;
+    MCFOLD ::std::chrono::nanoseconds getAverage() const;
 
     MCAPI ::std::chrono::nanoseconds getLastSample() const;
 

@@ -13,10 +13,4 @@ class ChunkPos;
 class Dimension;
 // clang-format on
 
-class DebugRenderer {
-public:
-    // prevent constructor by default
-    DebugRenderer& operator=(DebugRenderer const&);
-    DebugRenderer(DebugRenderer const&);
-    DebugRenderer();
-};
+class DebugRenderer {};

@@ -63,11 +63,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCAPI bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface() const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
     // NOLINTEND

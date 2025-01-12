@@ -52,7 +52,7 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
     defineVector3(::std::string const& identifier, ::std::optional<::Vec3> defaultValue);
 
-    MCAPI ::DynamicPropertiesDefinition const& getDefinition() const;
+    MCFOLD ::DynamicPropertiesDefinition const& getDefinition() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
     operator=(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);

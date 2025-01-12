@@ -42,9 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getPrimaryEffectId() const;
+    MCFOLD int getPrimaryEffectId() const;
 
-    MCAPI int getSecondaryEffectId() const;
+    MCFOLD int getSecondaryEffectId() const;
     // NOLINTEND
 
 public:

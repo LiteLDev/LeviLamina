@@ -9,12 +9,6 @@ class EntitySystems;
 
 struct ValidateClientPlayerActionSystem {
 public:
-    // prevent constructor by default
-    ValidateClientPlayerActionSystem& operator=(ValidateClientPlayerActionSystem const&);
-    ValidateClientPlayerActionSystem(ValidateClientPlayerActionSystem const&);
-    ValidateClientPlayerActionSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void registerServerAntiCheatSystems(::EntitySystems& systemRegistry);

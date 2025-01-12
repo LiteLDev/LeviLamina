@@ -15,12 +15,6 @@ namespace webrtc {
 
 class CreateSessionDescriptionObserver : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    CreateSessionDescriptionObserver& operator=(CreateSessionDescriptionObserver const&);
-    CreateSessionDescriptionObserver(CreateSessionDescriptionObserver const&);
-    CreateSessionDescriptionObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
@@ -36,7 +30,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

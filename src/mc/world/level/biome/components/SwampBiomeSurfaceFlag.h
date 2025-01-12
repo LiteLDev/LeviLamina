@@ -7,12 +7,6 @@
 
 struct SwampBiomeSurfaceFlag : public ::BiomeComponentBase {
 public:
-    // prevent constructor by default
-    SwampBiomeSurfaceFlag& operator=(SwampBiomeSurfaceFlag const&);
-    SwampBiomeSurfaceFlag(SwampBiomeSurfaceFlag const&);
-    SwampBiomeSurfaceFlag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

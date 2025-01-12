@@ -9,12 +9,6 @@ class BlockPos;
 
 class ISharedSpawnGetter {
 public:
-    // prevent constructor by default
-    ISharedSpawnGetter& operator=(ISharedSpawnGetter const&);
-    ISharedSpawnGetter(ISharedSpawnGetter const&);
-    ISharedSpawnGetter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -14,11 +14,6 @@ namespace DurabilityItemComponentVersioning {
 
 class UpgradeTo118 : public ::ItemCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    UpgradeTo118& operator=(UpgradeTo118 const&);
-    UpgradeTo118(UpgradeTo118 const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

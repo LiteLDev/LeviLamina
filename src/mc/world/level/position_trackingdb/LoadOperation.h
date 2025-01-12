@@ -63,7 +63,7 @@ public:
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCAPI bool
+    MCFOLD bool
     $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
     // NOLINTEND
 

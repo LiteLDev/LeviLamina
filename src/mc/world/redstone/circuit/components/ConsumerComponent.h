@@ -85,11 +85,11 @@ public:
     MCAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCAPI bool $canConsumerPower() const;
+    MCFOLD bool $canConsumerPower() const;
 
-    MCAPI bool $isSecondaryPowered() const;
+    MCFOLD bool $isSecondaryPowered() const;
 
-    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:

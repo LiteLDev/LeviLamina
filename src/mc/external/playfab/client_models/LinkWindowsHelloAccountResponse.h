@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkWindowsHelloAccountResponse : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkWindowsHelloAccountResponse& operator=(LinkWindowsHelloAccountResponse const&);
-    LinkWindowsHelloAccountResponse(LinkWindowsHelloAccountResponse const&);
-    LinkWindowsHelloAccountResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

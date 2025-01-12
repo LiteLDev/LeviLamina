@@ -6,12 +6,6 @@ namespace Editor::Services {
 
 class TelemetryServiceProvider {
 public:
-    // prevent constructor by default
-    TelemetryServiceProvider& operator=(TelemetryServiceProvider const&);
-    TelemetryServiceProvider(TelemetryServiceProvider const&);
-    TelemetryServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

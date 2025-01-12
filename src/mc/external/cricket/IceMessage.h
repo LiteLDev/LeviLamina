@@ -10,12 +10,6 @@ namespace cricket {
 
 class IceMessage : public ::cricket::StunMessage {
 public:
-    // prevent constructor by default
-    IceMessage& operator=(IceMessage const&);
-    IceMessage(IceMessage const&);
-    IceMessage();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -62,7 +62,7 @@ public:
         ::std::string const& name
     );
 
-    MCAPI float getBaseAmount() const;
+    MCFOLD float getBaseAmount() const;
     // NOLINTEND
 
 public:
@@ -87,9 +87,9 @@ public:
 
     MCAPI bool $isComplete() const;
 
-    MCAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
 
-    MCAPI bool $isSerializable() const;
+    MCFOLD bool $isSerializable() const;
 
     MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND

@@ -17,12 +17,6 @@ namespace Util { class XXHash; }
 
 class IStructurePoolBlockPredicate {
 public:
-    // prevent constructor by default
-    IStructurePoolBlockPredicate& operator=(IStructurePoolBlockPredicate const&);
-    IStructurePoolBlockPredicate(IStructurePoolBlockPredicate const&);
-    IStructurePoolBlockPredicate();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -56,8 +50,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $finalize(::BlockSource&, ::IRandom&);
+    MCFOLD bool $finalize(::BlockSource&, ::IRandom&);
 
-    MCAPI ::std::string $validate() const;
+    MCFOLD ::std::string $validate() const;
     // NOLINTEND
 };

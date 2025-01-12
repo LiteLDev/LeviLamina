@@ -26,12 +26,6 @@ public:
     // EquipItemGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -126,7 +120,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
     MCAPI void $tick();
 

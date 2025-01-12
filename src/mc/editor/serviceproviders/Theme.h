@@ -64,7 +64,7 @@ public:
 
     MCAPI ::Scripting::Result<void, ::Scripting::Error> deleteTheme(::std::string const& id, bool notifyUpdate);
 
-    MCAPI ::std::string const& getCurrentTheme() const;
+    MCFOLD ::std::string const& getCurrentTheme() const;
 
     MCAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
 

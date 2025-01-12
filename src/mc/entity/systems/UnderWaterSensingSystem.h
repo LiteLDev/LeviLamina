@@ -73,12 +73,6 @@ struct UnderWaterSensingSystem : public ::IStrictTickingSystem<::StrictExecution
                                      ::GlobalWrite<>,
                                      ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    UnderWaterSensingSystem& operator=(UnderWaterSensingSystem const&);
-    UnderWaterSensingSystem(UnderWaterSensingSystem const&);
-    UnderWaterSensingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

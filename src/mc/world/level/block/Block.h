@@ -290,7 +290,7 @@ public:
 
     MCAPI ::BlockEvents::BlockEventManager const& getEventManager() const;
 
-    MCAPI ::BlockEvents::BlockEventManager& getEventManager();
+    MCFOLD ::BlockEvents::BlockEventManager& getEventManager();
 
     MCAPI int getExperienceDrop(::Random& random) const;
 
@@ -324,7 +324,7 @@ public:
 
     MCAPI bool getSecondPart(::BlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    MCAPI ::CompoundTag const& getSerializationId() const;
+    MCFOLD ::CompoundTag const& getSerializationId() const;
 
     MCAPI float getThickness() const;
 
@@ -351,7 +351,7 @@ public:
 
     MCAPI bool ignoreEntitiesOnPistonMove() const;
 
-    MCAPI bool isAir() const;
+    MCFOLD bool isAir() const;
 
     MCAPI bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
@@ -399,7 +399,7 @@ public:
 
     MCAPI bool isSlabBlock() const;
 
-    MCAPI bool isSolid() const;
+    MCFOLD bool isSolid() const;
 
     MCAPI bool isSolidBlockingBlock() const;
 

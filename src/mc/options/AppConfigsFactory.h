@@ -9,12 +9,6 @@ class AppConfigs;
 
 class AppConfigsFactory {
 public:
-    // prevent constructor by default
-    AppConfigsFactory& operator=(AppConfigsFactory const&);
-    AppConfigsFactory(AppConfigsFactory const&);
-    AppConfigsFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::AppConfigs> createAppConfigs();

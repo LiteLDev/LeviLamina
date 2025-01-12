@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptDyeColor {
 public:
-    // prevent constructor by default
-    ScriptDyeColor& operator=(ScriptDyeColor const&);
-    ScriptDyeColor(ScriptDyeColor const&);
-    ScriptDyeColor();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ItemColor> bind();

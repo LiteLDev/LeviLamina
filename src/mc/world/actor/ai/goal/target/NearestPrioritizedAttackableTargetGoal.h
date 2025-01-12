@@ -14,12 +14,6 @@ struct MobDescriptor;
 
 class NearestPrioritizedAttackableTargetGoal : public ::NearestAttackableTargetGoal {
 public:
-    // prevent constructor by default
-    NearestPrioritizedAttackableTargetGoal& operator=(NearestPrioritizedAttackableTargetGoal const&);
-    NearestPrioritizedAttackableTargetGoal(NearestPrioritizedAttackableTargetGoal const&);
-    NearestPrioritizedAttackableTargetGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7

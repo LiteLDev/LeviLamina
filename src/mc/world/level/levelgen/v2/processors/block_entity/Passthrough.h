@@ -16,12 +16,6 @@ namespace br::worldgen::processors::BlockEntity {
 
 struct Passthrough : public ::br::worldgen::processors::BlockEntity::ModifierType {
 public:
-    // prevent constructor by default
-    Passthrough& operator=(Passthrough const&);
-    Passthrough(Passthrough const&);
-    Passthrough();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

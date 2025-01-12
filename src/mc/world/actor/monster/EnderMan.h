@@ -127,11 +127,11 @@ public:
 
     MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
+    MCFOLD bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCAPI bool $shouldRender() const;
+    MCFOLD bool $shouldRender() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

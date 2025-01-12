@@ -16,7 +16,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint to32BitRandomSeed() const;
+    MCFOLD uint to32BitRandomSeed() const;
     // NOLINTEND
 
 public:

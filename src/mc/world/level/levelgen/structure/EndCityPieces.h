@@ -128,12 +128,6 @@ public:
 
     class SectionGenerator {
     public:
-        // prevent constructor by default
-        SectionGenerator& operator=(SectionGenerator const&);
-        SectionGenerator(SectionGenerator const&);
-        SectionGenerator();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -171,12 +165,6 @@ public:
     };
 
     class TowerGenerator : public ::EndCityPieces::SectionGenerator {
-    public:
-        // prevent constructor by default
-        TowerGenerator& operator=(TowerGenerator const&);
-        TowerGenerator(TowerGenerator const&);
-        TowerGenerator();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -223,12 +211,6 @@ public:
     };
 
     class FatTowerGenerator : public ::EndCityPieces::SectionGenerator {
-    public:
-        // prevent constructor by default
-        FatTowerGenerator& operator=(FatTowerGenerator const&);
-        FatTowerGenerator(FatTowerGenerator const&);
-        FatTowerGenerator();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -334,12 +316,6 @@ public:
 
     class HouseTowerGenerator : public ::EndCityPieces::SectionGenerator {
     public:
-        // prevent constructor by default
-        HouseTowerGenerator& operator=(HouseTowerGenerator const&);
-        HouseTowerGenerator(HouseTowerGenerator const&);
-        HouseTowerGenerator();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -383,12 +359,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    EndCityPieces& operator=(EndCityPieces const&);
-    EndCityPieces(EndCityPieces const&);
-    EndCityPieces();
 
 public:
     // static functions

@@ -50,7 +50,7 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptSelectionContainer>>
     getPrimaryContainer();
 
-    MCAPI ::Editor::ScriptModule::ScriptSelectionService& operator=(::Editor::ScriptModule::ScriptSelectionService&&);
+    MCFOLD ::Editor::ScriptModule::ScriptSelectionService& operator=(::Editor::ScriptModule::ScriptSelectionService&&);
 
     MCAPI ~ScriptSelectionService();
     // NOLINTEND
@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptSelectionService&&);
 
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Editor::Services::SelectionServiceProvider* selectionServiceProvider,
         ::Scripting::WeakLifetimeScope const&         scope
     );
@@ -78,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

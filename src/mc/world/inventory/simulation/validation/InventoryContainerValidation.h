@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class InventoryContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    InventoryContainerValidation& operator=(InventoryContainerValidation const&);
-    InventoryContainerValidation(InventoryContainerValidation const&);
-    InventoryContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
@@ -49,13 +43,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
+    MCFOLD bool
+    $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
     MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
     // NOLINTEND
 
 public:

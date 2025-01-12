@@ -14,12 +14,6 @@ class Player;
 
 class ClientPlayerEventCoordinator : public ::PlayerEventCoordinator {
 public:
-    // prevent constructor by default
-    ClientPlayerEventCoordinator& operator=(ClientPlayerEventCoordinator const&);
-    ClientPlayerEventCoordinator(ClientPlayerEventCoordinator const&);
-    ClientPlayerEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -13,12 +13,6 @@ namespace rtc {
 
 class SSLIdentity {
 public:
-    // prevent constructor by default
-    SSLIdentity& operator=(SSLIdentity const&);
-    SSLIdentity(SSLIdentity const&);
-    SSLIdentity();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

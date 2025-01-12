@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct EmptyResponse : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    EmptyResponse& operator=(EmptyResponse const&);
-    EmptyResponse(EmptyResponse const&);
-    EmptyResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

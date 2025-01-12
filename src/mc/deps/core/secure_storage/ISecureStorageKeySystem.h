@@ -9,12 +9,6 @@ class SecureStorageKey;
 
 class ISecureStorageKeySystem {
 public:
-    // prevent constructor by default
-    ISecureStorageKeySystem& operator=(ISecureStorageKeySystem const&);
-    ISecureStorageKeySystem(ISecureStorageKeySystem const&);
-    ISecureStorageKeySystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -30,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

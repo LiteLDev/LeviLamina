@@ -44,7 +44,7 @@ public:
         ::Block const*                                      resultBlock
     );
 
-    MCAPI bool finalizeRule(::BlockSource& region, ::IRandom& random);
+    MCFOLD bool finalizeRule(::BlockSource& region, ::IRandom& random);
 
     MCAPI bool processRule(
         ::Block const&    sourceBlock,

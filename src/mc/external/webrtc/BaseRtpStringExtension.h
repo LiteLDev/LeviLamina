@@ -6,12 +6,6 @@ namespace webrtc {
 
 class BaseRtpStringExtension {
 public:
-    // prevent constructor by default
-    BaseRtpStringExtension& operator=(BaseRtpStringExtension const&);
-    BaseRtpStringExtension(BaseRtpStringExtension const&);
-    BaseRtpStringExtension();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool Parse(::rtc::ArrayView<uchar const>, ::std::string*);

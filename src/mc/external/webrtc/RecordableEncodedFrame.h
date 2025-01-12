@@ -39,12 +39,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    RecordableEncodedFrame& operator=(RecordableEncodedFrame const&);
-    RecordableEncodedFrame(RecordableEncodedFrame const&);
-    RecordableEncodedFrame();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

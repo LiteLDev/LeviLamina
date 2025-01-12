@@ -146,7 +146,7 @@ public:
 
     MCAPI bool $allowInventoryTransactionManager() const;
 
-    MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCFOLD void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
     // NOLINTEND

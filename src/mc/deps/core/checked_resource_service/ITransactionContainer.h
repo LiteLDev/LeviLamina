@@ -11,12 +11,6 @@ namespace mce {
 
 struct ITransactionContainer {
 public:
-    // prevent constructor by default
-    ITransactionContainer& operator=(ITransactionContainer const&);
-    ITransactionContainer(ITransactionContainer const&);
-    ITransactionContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

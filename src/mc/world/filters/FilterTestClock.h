@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestClock : public ::SimpleFloatFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestClock& operator=(FilterTestClock const&);
-    FilterTestClock(FilterTestClock const&);
-    FilterTestClock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -57,9 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemStack& item, ::Random&, ::LootTableContext&);
 
-    MCAPI void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
+    MCFOLD void $apply(::ItemInstance& itemInstance, ::Random&, ::LootTableContext&);
     // NOLINTEND
 
 public:

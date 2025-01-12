@@ -15,11 +15,6 @@ namespace Bedrock::JSONObject {
 
 class MutableObjectHelper : public ::Bedrock::JSONObject::ObjectHelperBase<0> {
 public:
-    // prevent constructor by default
-    MutableObjectHelper& operator=(MutableObjectHelper const&);
-    MutableObjectHelper(MutableObjectHelper const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MutableObjectHelper();

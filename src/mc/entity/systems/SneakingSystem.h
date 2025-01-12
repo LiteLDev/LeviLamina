@@ -32,12 +32,6 @@ class SneakingSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                            ::GlobalWrite<>,
                            ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    SneakingSystem& operator=(SneakingSystem const&);
-    SneakingSystem(SneakingSystem const&);
-    SneakingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

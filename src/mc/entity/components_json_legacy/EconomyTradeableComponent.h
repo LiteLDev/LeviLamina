@@ -65,19 +65,19 @@ public:
 
     MCAPI ::IntRange getCurrentCuredDiscount() const;
 
-    MCAPI ::std::string const& getDisplayName() const;
+    MCFOLD ::std::string const& getDisplayName() const;
 
     MCAPI bool getInteraction(::Player& player, ::ActorInteraction& interaction);
 
     MCAPI ::MerchantRecipeList* getOffers();
 
-    MCAPI int getRiches() const;
+    MCFOLD int getRiches() const;
 
     MCAPI uint getTradeTier() const;
 
     MCAPI bool hasSupplyRemaining() const;
 
-    MCAPI void initFromDefinition();
+    MCFOLD void initFromDefinition();
 
     MCAPI ::std::string const& loadDisplayName();
 
@@ -99,7 +99,7 @@ public:
 
     MCAPI void setOffers(::MerchantRecipeList& offers);
 
-    MCAPI void setRiches(int riches);
+    MCFOLD void setRiches(int riches);
 
     MCAPI bool shouldConvertTrades() const;
 

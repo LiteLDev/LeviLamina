@@ -12,12 +12,6 @@ namespace cricket {
 
 class MediaEngineInterface {
 public:
-    // prevent constructor by default
-    MediaEngineInterface& operator=(MediaEngineInterface const&);
-    MediaEngineInterface(MediaEngineInterface const&);
-    MediaEngineInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

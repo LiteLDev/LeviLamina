@@ -13,12 +13,6 @@ class StructurePiece;
 
 class StructureHelpers {
 public:
-    // prevent constructor by default
-    StructureHelpers& operator=(StructureHelpers const&);
-    StructureHelpers(StructureHelpers const&);
-    StructureHelpers();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool createChest(

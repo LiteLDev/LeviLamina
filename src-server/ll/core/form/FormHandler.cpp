@@ -140,8 +140,9 @@ bool handleFormPacket(
     if (it == formHandlers.end()) {
         return false;
     }
-    it->second->handle(player, std::move(data), cancelReason);
+    auto handler = std::move(it->second);
     formHandlers.erase(it);
+    handler->handle(player, std::move(data), cancelReason);
     return true;
 }
 

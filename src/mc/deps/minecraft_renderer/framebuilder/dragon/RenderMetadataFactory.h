@@ -4,12 +4,6 @@
 
 namespace dragon {
 
-class RenderMetadataFactory {
-public:
-    // prevent constructor by default
-    RenderMetadataFactory& operator=(RenderMetadataFactory const&);
-    RenderMetadataFactory(RenderMetadataFactory const&);
-    RenderMetadataFactory();
-};
+class RenderMetadataFactory {};
 
 } // namespace dragon

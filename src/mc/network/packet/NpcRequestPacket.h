@@ -68,13 +68,13 @@ public:
         uchar                           actionIndex
     );
 
-    MCAPI ::std::string const& getInteractText() const;
+    MCFOLD ::std::string const& getInteractText() const;
 
-    MCAPI ::std::string const& getNpcName() const;
+    MCFOLD ::std::string const& getNpcName() const;
 
-    MCAPI ::std::string const& getSceneName() const;
+    MCFOLD ::std::string const& getSceneName() const;
 
-    MCAPI int getSkin() const;
+    MCFOLD int getSkin() const;
     // NOLINTEND
 
 public:

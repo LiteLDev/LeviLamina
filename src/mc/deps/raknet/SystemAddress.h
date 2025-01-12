@@ -38,7 +38,7 @@ public:
 
     MCAPI ushort GetPort() const;
 
-    MCAPI ushort GetPortNetworkOrder() const;
+    MCFOLD ushort GetPortNetworkOrder() const;
 
     MCAPI bool IsLinkLocalAddress() const;
 

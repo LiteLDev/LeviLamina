@@ -9,12 +9,6 @@ struct ItemTag;
 
 class VanillaItemTags {
 public:
-    // prevent constructor by default
-    VanillaItemTags& operator=(VanillaItemTags const&);
-    VanillaItemTags(VanillaItemTags const&);
-    VanillaItemTags();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::ItemTag const& Armor();

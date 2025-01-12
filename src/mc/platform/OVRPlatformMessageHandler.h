@@ -9,12 +9,6 @@ struct ovrMessage;
 
 class OVRPlatformMessageHandler {
 public:
-    // prevent constructor by default
-    OVRPlatformMessageHandler& operator=(OVRPlatformMessageHandler const&);
-    OVRPlatformMessageHandler(OVRPlatformMessageHandler const&);
-    OVRPlatformMessageHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

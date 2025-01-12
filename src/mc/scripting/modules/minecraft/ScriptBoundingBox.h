@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBoundingBox {
 public:
-    // prevent constructor by default
-    ScriptBoundingBox& operator=(ScriptBoundingBox const&);
-    ScriptBoundingBox(ScriptBoundingBox const&);
-    ScriptBoundingBox();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::BoundingBox> bind();

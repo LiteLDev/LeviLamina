@@ -6,17 +6,11 @@ struct PotionMixDataEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk40300c;
-    ::ll::UntypedStorage<4, 4> mUnk45882e;
-    ::ll::UntypedStorage<4, 4> mUnkc1ee8b;
-    ::ll::UntypedStorage<4, 4> mUnk2c936a;
-    ::ll::UntypedStorage<4, 4> mUnke3fc55;
-    ::ll::UntypedStorage<4, 4> mUnk7a3e78;
+    ::ll::TypedStorage<4, 4, int> fromItemId;
+    ::ll::TypedStorage<4, 4, int> fromItemAux;
+    ::ll::TypedStorage<4, 4, int> reagentItemId;
+    ::ll::TypedStorage<4, 4, int> reagentItemAux;
+    ::ll::TypedStorage<4, 4, int> toItemId;
+    ::ll::TypedStorage<4, 4, int> toItemAux;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PotionMixDataEntry& operator=(PotionMixDataEntry const&);
-    PotionMixDataEntry(PotionMixDataEntry const&);
-    PotionMixDataEntry();
 };

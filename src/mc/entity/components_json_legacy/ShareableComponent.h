@@ -12,12 +12,6 @@ class ShareableDefinition;
 
 class ShareableComponent {
 public:
-    // prevent constructor by default
-    ShareableComponent& operator=(ShareableComponent const&);
-    ShareableComponent(ShareableComponent const&);
-    ShareableComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _shouldReplaceItem(

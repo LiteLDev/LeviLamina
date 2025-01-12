@@ -17,12 +17,6 @@ class StructureStart;
 
 class MineshaftFeature : public ::StructureFeature {
 public:
-    // prevent constructor by default
-    MineshaftFeature& operator=(MineshaftFeature const&);
-    MineshaftFeature(MineshaftFeature const&);
-    MineshaftFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -69,7 +63,7 @@ public:
         ::Dimension const&                   dimension
     );
 
-    MCAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&                         generator,

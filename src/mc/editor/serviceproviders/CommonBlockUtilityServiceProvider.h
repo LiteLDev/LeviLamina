@@ -12,12 +12,6 @@ namespace Editor::BlockUtils {
 
 class CommonBlockUtilityServiceProvider {
 public:
-    // prevent constructor by default
-    CommonBlockUtilityServiceProvider& operator=(CommonBlockUtilityServiceProvider const&);
-    CommonBlockUtilityServiceProvider(CommonBlockUtilityServiceProvider const&);
-    CommonBlockUtilityServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

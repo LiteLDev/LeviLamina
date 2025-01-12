@@ -9,12 +9,6 @@ namespace NoiseUtils {
 
 class FloatsForDoublesRandom : public ::NoiseUtils::DelegatingRandom {
 public:
-    // prevent constructor by default
-    FloatsForDoublesRandom& operator=(FloatsForDoublesRandom const&);
-    FloatsForDoublesRandom(FloatsForDoublesRandom const&);
-    FloatsForDoublesRandom();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6

@@ -14,12 +14,6 @@ struct MovementCorrection;
 
 struct IReplayStatePolicy {
 public:
-    // prevent constructor by default
-    IReplayStatePolicy& operator=(IReplayStatePolicy const&);
-    IReplayStatePolicy(IReplayStatePolicy const&);
-    IReplayStatePolicy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

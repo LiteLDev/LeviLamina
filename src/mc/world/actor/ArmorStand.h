@@ -178,7 +178,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
@@ -196,7 +196,7 @@ public:
 
     MCAPI void $pushActors();
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
     // NOLINTEND
 
 public:

@@ -18,12 +18,6 @@ struct ScriptSettings;
 
 class DedicatedServerCommands {
 public:
-    // prevent constructor by default
-    DedicatedServerCommands& operator=(DedicatedServerCommands const&);
-    DedicatedServerCommands(DedicatedServerCommands const&);
-    DedicatedServerCommands();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setupStandaloneServer(

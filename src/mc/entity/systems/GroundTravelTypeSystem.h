@@ -13,12 +13,6 @@ struct TickingSystemWithInfo;
 
 struct GroundTravelTypeSystem {
 public:
-    // prevent constructor by default
-    GroundTravelTypeSystem& operator=(GroundTravelTypeSystem const&);
-    GroundTravelTypeSystem(GroundTravelTypeSystem const&);
-    GroundTravelTypeSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static float calcMoveRelativeSpeed(

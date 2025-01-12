@@ -13,12 +13,6 @@ namespace OperationNodeValues { struct PreBiome; }
 namespace OperationNodeFilters {
 
 struct AddIslandWithTemperature
-: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {
-public:
-    // prevent constructor by default
-    AddIslandWithTemperature& operator=(AddIslandWithTemperature const&);
-    AddIslandWithTemperature(AddIslandWithTemperature const&);
-    AddIslandWithTemperature();
-};
+: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {};
 
 } // namespace OperationNodeFilters

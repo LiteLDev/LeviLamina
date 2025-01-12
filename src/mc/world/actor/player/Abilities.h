@@ -29,7 +29,7 @@ public:
 
     MCAPI void addSaveData(::CompoundTag& parentTag) const;
 
-    MCAPI void forEachAbility(
+    MCFOLD void forEachAbility(
         ::std::function<void(::Ability&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                         requiredOptions
     );

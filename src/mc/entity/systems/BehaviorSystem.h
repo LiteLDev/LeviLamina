@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BehaviorSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BehaviorSystem& operator=(BehaviorSystem const&);
-    BehaviorSystem(BehaviorSystem const&);
-    BehaviorSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

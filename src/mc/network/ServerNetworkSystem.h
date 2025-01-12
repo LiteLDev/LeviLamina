@@ -24,12 +24,6 @@ struct NetworkSystemToggles;
 
 class ServerNetworkSystem : public ::Bedrock::EnableNonOwnerReferences, public ::NetworkSystem {
 public:
-    // prevent constructor by default
-    ServerNetworkSystem& operator=(ServerNetworkSystem const&);
-    ServerNetworkSystem(ServerNetworkSystem const&);
-    ServerNetworkSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

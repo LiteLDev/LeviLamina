@@ -85,12 +85,6 @@ struct MoveTowardsClosestSpaceSystemImpl
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    MoveTowardsClosestSpaceSystemImpl& operator=(MoveTowardsClosestSpaceSystemImpl const&);
-    MoveTowardsClosestSpaceSystemImpl(MoveTowardsClosestSpaceSystemImpl const&);
-    MoveTowardsClosestSpaceSystemImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

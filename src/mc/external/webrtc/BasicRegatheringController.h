@@ -20,19 +20,7 @@ public:
     // clang-format on
 
     // BasicRegatheringController inner types define
-    struct Config {
-    public:
-        // prevent constructor by default
-        Config& operator=(Config const&);
-        Config(Config const&);
-        Config();
-    };
-
-public:
-    // prevent constructor by default
-    BasicRegatheringController& operator=(BasicRegatheringController const&);
-    BasicRegatheringController(BasicRegatheringController const&);
-    BasicRegatheringController();
+    struct Config {};
 
 public:
     // member functions

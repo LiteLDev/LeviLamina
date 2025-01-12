@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit operator int() const;
+    MCFOLD explicit operator int() const;
     // NOLINTEND
 
 public:

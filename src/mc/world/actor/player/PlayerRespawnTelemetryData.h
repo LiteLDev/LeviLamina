@@ -31,17 +31,17 @@ public:
 
     MCAPI void WriteEventData(::Social::Events::Event& event) const;
 
-    MCAPI void setChangedDimension(bool changed);
+    MCFOLD void setChangedDimension(bool changed);
 
     MCAPI void setJumpDistance(double blockDistance);
 
-    MCAPI void setLongJumpCount(uint jumps);
+    MCFOLD void setLongJumpCount(uint jumps);
 
-    MCAPI void setPositionSourceType(uint spawnPositionSource);
+    MCFOLD void setPositionSourceType(uint spawnPositionSource);
 
     MCAPI void setSearchTime(double seconds);
 
-    MCAPI void setShortJumpCount(uint jumps);
+    MCFOLD void setShortJumpCount(uint jumps);
     // NOLINTEND
 
 public:

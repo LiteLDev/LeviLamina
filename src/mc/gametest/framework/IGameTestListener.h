@@ -11,12 +11,6 @@ namespace gametest {
 
 class IGameTestListener {
 public:
-    // prevent constructor by default
-    IGameTestListener& operator=(IGameTestListener const&);
-    IGameTestListener(IGameTestListener const&);
-    IGameTestListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -50,17 +44,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestStructureLoaded(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestPassed(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestPassed(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestFailed(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestFailed(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestStarted(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestStarted(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestRetryStarted(::gametest::BaseGameTestInstance&);
 
-    MCAPI void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
+    MCFOLD void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
     // NOLINTEND
 };
 

@@ -12,12 +12,6 @@ namespace webrtc {
 
 class FecControllerFactoryInterface {
 public:
-    // prevent constructor by default
-    FecControllerFactoryInterface& operator=(FecControllerFactoryInterface const&);
-    FecControllerFactoryInterface(FecControllerFactoryInterface const&);
-    FecControllerFactoryInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

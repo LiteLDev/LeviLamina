@@ -19,7 +19,7 @@ public:
 
     MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
 
-    MCAPI ::std::string_view rawValue() const;
+    MCFOLD ::std::string_view rawValue() const;
 
     MCAPI ~ActionValue();
     // NOLINTEND
@@ -27,13 +27,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

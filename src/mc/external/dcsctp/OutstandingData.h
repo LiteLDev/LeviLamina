@@ -34,12 +34,6 @@ public:
     // OutstandingData inner types define
     struct AckInfo {
     public:
-        // prevent constructor by default
-        AckInfo& operator=(AckInfo const&);
-        AckInfo(AckInfo const&);
-        AckInfo();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~AckInfo();
@@ -56,12 +50,6 @@ public:
     public:
         // Item inner types define
         enum class NackAction : uint {};
-
-    public:
-        // prevent constructor by default
-        Item& operator=(Item const&);
-        Item(Item const&);
-        Item();
 
     public:
         // member functions
@@ -99,12 +87,6 @@ public:
         );
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    OutstandingData& operator=(OutstandingData const&);
-    OutstandingData(OutstandingData const&);
-    OutstandingData();
 
 public:
     // member functions

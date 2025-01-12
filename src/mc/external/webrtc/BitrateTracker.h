@@ -13,12 +13,6 @@ namespace webrtc {
 
 class BitrateTracker {
 public:
-    // prevent constructor by default
-    BitrateTracker& operator=(BitrateTracker const&);
-    BitrateTracker(BitrateTracker const&);
-    BitrateTracker();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit BitrateTracker(::webrtc::TimeDelta);

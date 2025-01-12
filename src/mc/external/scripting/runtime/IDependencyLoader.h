@@ -12,12 +12,6 @@ namespace Scripting {
 
 class IDependencyLoader {
 public:
-    // prevent constructor by default
-    IDependencyLoader& operator=(IDependencyLoader const&);
-    IDependencyLoader(IDependencyLoader const&);
-    IDependencyLoader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

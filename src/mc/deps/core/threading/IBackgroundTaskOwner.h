@@ -16,12 +16,6 @@ class TaskResult;
 
 class IBackgroundTaskOwner {
 public:
-    // prevent constructor by default
-    IBackgroundTaskOwner& operator=(IBackgroundTaskOwner const&);
-    IBackgroundTaskOwner(IBackgroundTaskOwner const&);
-    IBackgroundTaskOwner();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

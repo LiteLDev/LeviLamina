@@ -27,12 +27,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    DataChannelInterface& operator=(DataChannelInterface const&);
-    DataChannelInterface(DataChannelInterface const&);
-    DataChannelInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

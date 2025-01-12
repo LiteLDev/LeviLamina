@@ -15,12 +15,6 @@ namespace webrtc {
 
 class DtlsTransport {
 public:
-    // prevent constructor by default
-    DtlsTransport& operator=(DtlsTransport const&);
-    DtlsTransport(DtlsTransport const&);
-    DtlsTransport();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Clear();

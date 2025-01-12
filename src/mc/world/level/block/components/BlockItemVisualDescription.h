@@ -74,11 +74,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 

@@ -8,12 +8,6 @@
 
 class LevelSoundEventMap {
 public:
-    // prevent constructor by default
-    LevelSoundEventMap& operator=(LevelSoundEventMap const&);
-    LevelSoundEventMap(LevelSoundEventMap const&);
-    LevelSoundEventMap();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getId(::std::string const& type);

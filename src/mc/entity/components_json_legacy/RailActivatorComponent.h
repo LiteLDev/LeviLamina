@@ -9,12 +9,6 @@ class Actor;
 
 class RailActivatorComponent {
 public:
-    // prevent constructor by default
-    RailActivatorComponent& operator=(RailActivatorComponent const&);
-    RailActivatorComponent(RailActivatorComponent const&);
-    RailActivatorComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ejectAllPassengers(::Actor& owner);

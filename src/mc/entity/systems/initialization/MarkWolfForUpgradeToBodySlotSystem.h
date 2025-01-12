@@ -20,12 +20,6 @@ struct WolfFlagComponent;
 
 class MarkWolfForUpgradeToBodySlotSystem {
 public:
-    // prevent constructor by default
-    MarkWolfForUpgradeToBodySlotSystem& operator=(MarkWolfForUpgradeToBodySlotSystem const&);
-    MarkWolfForUpgradeToBodySlotSystem(MarkWolfForUpgradeToBodySlotSystem const&);
-    MarkWolfForUpgradeToBodySlotSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _markForUpgrade(

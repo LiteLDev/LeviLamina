@@ -96,12 +96,6 @@ struct JumpFromGroundSystem : public ::IStrictTickingSystem<::StrictExecutionCon
                                   ::GlobalWrite<>,
                                   ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    JumpFromGroundSystem& operator=(JumpFromGroundSystem const&);
-    JumpFromGroundSystem(JumpFromGroundSystem const&);
-    JumpFromGroundSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

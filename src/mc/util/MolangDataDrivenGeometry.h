@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::MolangDataDrivenGeometry const& rhs) const;
+    MCFOLD bool operator==(::MolangDataDrivenGeometry const& rhs) const;
 
     MCAPI ~MolangDataDrivenGeometry();
     // NOLINTEND
@@ -27,6 +27,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

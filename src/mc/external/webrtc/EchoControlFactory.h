@@ -11,12 +11,6 @@ namespace webrtc {
 
 class EchoControlFactory {
 public:
-    // prevent constructor by default
-    EchoControlFactory& operator=(EchoControlFactory const&);
-    EchoControlFactory(EchoControlFactory const&);
-    EchoControlFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

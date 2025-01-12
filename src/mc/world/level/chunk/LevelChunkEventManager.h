@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/level/chunk/ILevelChunkEventManagerConnector.h"
 
 // auto generated forward declare list
@@ -11,23 +12,33 @@
 class ChunkSource;
 class ILevelChunkEventManagerProxy;
 class LevelChunk;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class LevelChunkEventManager : public ::ILevelChunkEventManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk5fa7b8;
-    ::ll::UntypedStorage<8, 128> mUnkb42b90;
-    ::ll::UntypedStorage<8, 128> mUnk7144be;
-    ::ll::UntypedStorage<8, 8>   mUnka9f96b;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::ChunkSource&, ::LevelChunk&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnChunkLoadedPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::ChunkSource&, ::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnChunkReloadedPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::LevelChunk&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnChunkDiscardedPublisher;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelChunkEventManagerProxy>> const>
+        mLevelChunkEventManagerProxy;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkEventManager& operator=(LevelChunkEventManager const&);
-    LevelChunkEventManager(LevelChunkEventManager const&);
-    LevelChunkEventManager();
 
 public:
     // virtual functions
@@ -75,11 +86,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>& $getOnChunkLoadedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&, int)>& $getOnChunkLoadedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& $getOnChunkReloadedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& $getOnChunkReloadedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
     // NOLINTEND
 
 public:

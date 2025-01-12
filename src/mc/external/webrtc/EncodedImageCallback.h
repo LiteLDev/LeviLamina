@@ -47,12 +47,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    EncodedImageCallback& operator=(EncodedImageCallback const&);
-    EncodedImageCallback(EncodedImageCallback const&);
-    EncodedImageCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

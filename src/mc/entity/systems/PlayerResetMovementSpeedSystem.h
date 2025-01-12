@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct PlayerResetMovementSpeedSystem {
 public:
-    // prevent constructor by default
-    PlayerResetMovementSpeedSystem& operator=(PlayerResetMovementSpeedSystem const&);
-    PlayerResetMovementSpeedSystem(PlayerResetMovementSpeedSystem const&);
-    PlayerResetMovementSpeedSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

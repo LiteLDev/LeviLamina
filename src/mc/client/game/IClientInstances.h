@@ -13,12 +13,6 @@ class ItemRegistryRef;
 
 class IClientInstances {
 public:
-    // prevent constructor by default
-    IClientInstances& operator=(IClientInstances const&);
-    IClientInstances(IClientInstances const&);
-    IClientInstances();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

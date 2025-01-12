@@ -15,12 +15,6 @@ namespace AgentComponents { class CommandCooldown; }
 
 class AgentCommandSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgentCommandSystem& operator=(AgentCommandSystem const&);
-    AgentCommandSystem(AgentCommandSystem const&);
-    AgentCommandSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

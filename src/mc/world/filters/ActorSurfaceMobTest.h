@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorSurfaceMobTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    ActorSurfaceMobTest& operator=(ActorSurfaceMobTest const&);
-    ActorSurfaceMobTest(ActorSurfaceMobTest const&);
-    ActorSurfaceMobTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

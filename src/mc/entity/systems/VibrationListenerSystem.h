@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class VibrationListenerSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    VibrationListenerSystem& operator=(VibrationListenerSystem const&);
-    VibrationListenerSystem(VibrationListenerSystem const&);
-    VibrationListenerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

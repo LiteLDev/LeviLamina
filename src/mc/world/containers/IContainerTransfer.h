@@ -10,12 +10,6 @@ struct ContainerTransferScope;
 
 class IContainerTransfer {
 public:
-    // prevent constructor by default
-    IContainerTransfer& operator=(IContainerTransfer const&);
-    IContainerTransfer(IContainerTransfer const&);
-    IContainerTransfer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

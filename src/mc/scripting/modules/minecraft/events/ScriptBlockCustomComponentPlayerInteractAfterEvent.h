@@ -51,7 +51,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
+    MCFOLD static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
     tryGetComponentsToExecute(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage const& eventData
     );

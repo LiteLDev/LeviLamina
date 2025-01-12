@@ -9,12 +9,6 @@ class MinEngineVersion;
 
 class KnockbackRoarGoalMinEngineVersionUtils {
 public:
-    // prevent constructor by default
-    KnockbackRoarGoalMinEngineVersionUtils& operator=(KnockbackRoarGoalMinEngineVersionUtils const&);
-    KnockbackRoarGoalMinEngineVersionUtils(KnockbackRoarGoalMinEngineVersionUtils const&);
-    KnockbackRoarGoalMinEngineVersionUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool shouldDoFilterEvaluateFix(::MinEngineVersion const& minEngineVersion);

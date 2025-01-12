@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraftNet {
 
 struct ScriptNetRequestMethod {
 public:
-    // prevent constructor by default
-    ScriptNetRequestMethod& operator=(ScriptNetRequestMethod const&);
-    ScriptNetRequestMethod(ScriptNetRequestMethod const&);
-    ScriptNetRequestMethod();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Bedrock::Http::Method> bind();

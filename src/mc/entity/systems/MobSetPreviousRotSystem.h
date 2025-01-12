@@ -13,12 +13,6 @@ struct TickingSystemWithInfo;
 
 class MobSetPreviousRotSystem {
 public:
-    // prevent constructor by default
-    MobSetPreviousRotSystem& operator=(MobSetPreviousRotSystem const&);
-    MobSetPreviousRotSystem(MobSetPreviousRotSystem const&);
-    MobSetPreviousRotSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _setPreviousRotation(

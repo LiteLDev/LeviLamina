@@ -6,12 +6,6 @@ namespace rtc {
 
 class Dispatcher {
 public:
-    // prevent constructor by default
-    Dispatcher& operator=(Dispatcher const&);
-    Dispatcher(Dispatcher const&);
-    Dispatcher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -7,12 +7,6 @@
 
 class LoomContainerScreenValidator : public ::ContainerScreenValidatorBase {
 public:
-    // prevent constructor by default
-    LoomContainerScreenValidator& operator=(LoomContainerScreenValidator const&);
-    LoomContainerScreenValidator(LoomContainerScreenValidator const&);
-    LoomContainerScreenValidator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -26,12 +26,6 @@ struct TriggerJumpRequestComponent;
 
 struct ApplyDashSystem {
 public:
-    // prevent constructor by default
-    ApplyDashSystem& operator=(ApplyDashSystem const&);
-    ApplyDashSystem(ApplyDashSystem const&);
-    ApplyDashSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();

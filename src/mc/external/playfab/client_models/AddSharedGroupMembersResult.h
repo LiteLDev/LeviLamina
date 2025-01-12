@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct AddSharedGroupMembersResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    AddSharedGroupMembersResult& operator=(AddSharedGroupMembersResult const&);
-    AddSharedGroupMembersResult(AddSharedGroupMembersResult const&);
-    AddSharedGroupMembersResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

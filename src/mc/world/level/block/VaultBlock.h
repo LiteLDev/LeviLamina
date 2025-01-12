@@ -76,7 +76,7 @@ public:
 
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)

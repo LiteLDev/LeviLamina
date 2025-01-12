@@ -12,10 +12,4 @@ struct LocalWorldTransferActionFunc
 : public ::type_safe::strong_typedef<
       ::LocalWorldTransferActionFunc,
       ::std::function<void(::IWorldTransferHandler const&, ::WorldTransferActionContext const&)>>,
-  public ::type_safe::strong_typedef_op::equality_comparison<::LocalWorldTransferActionFunc> {
-public:
-    // prevent constructor by default
-    LocalWorldTransferActionFunc& operator=(LocalWorldTransferActionFunc const&);
-    LocalWorldTransferActionFunc(LocalWorldTransferActionFunc const&);
-    LocalWorldTransferActionFunc();
-};
+  public ::type_safe::strong_typedef_op::equality_comparison<::LocalWorldTransferActionFunc> {};

@@ -44,7 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptBrushShapeManagerService(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
 
-    MCAPI void activateBrushTool();
+    MCFOLD void activateBrushTool();
 
     MCAPI ::Scripting::Result<void, ::Scripting::Error>
     beginPainting(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);

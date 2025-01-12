@@ -91,9 +91,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $clearInventory(int resizeTo);
+    MCFOLD int $clearInventory(int resizeTo);
 
-    MCAPI void $swapSlots(int from, int to);
+    MCFOLD void $swapSlots(int from, int to);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 

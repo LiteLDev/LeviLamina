@@ -130,7 +130,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit OfferFlowerGoal(::Mob& mob);
 
-    MCAPI int getMaxOfferFlowerDurationTicks() const;
+    MCFOLD int getMaxOfferFlowerDurationTicks() const;
     // NOLINTEND
 
 public:

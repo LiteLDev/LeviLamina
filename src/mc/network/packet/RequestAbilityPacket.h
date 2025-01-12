@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     MCAPI RequestAbilityPacket();
 
-    MCAPI ::AbilitiesIndex getAbility() const;
+    MCFOLD ::AbilitiesIndex getAbility() const;
 
     MCAPI bool tryGetBool(bool& outValue) const;
     // NOLINTEND

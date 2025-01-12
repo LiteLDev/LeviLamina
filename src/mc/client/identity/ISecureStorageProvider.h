@@ -11,12 +11,6 @@ namespace Social {
 
 class ISecureStorageProvider {
 public:
-    // prevent constructor by default
-    ISecureStorageProvider& operator=(ISecureStorageProvider const&);
-    ISecureStorageProvider(ISecureStorageProvider const&);
-    ISecureStorageProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -7,12 +7,6 @@
 
 struct AttributeDescription : public ::Description {
 public:
-    // prevent constructor by default
-    AttributeDescription& operator=(AttributeDescription const&);
-    AttributeDescription(AttributeDescription const&);
-    AttributeDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -14,12 +14,6 @@ class Random;
 
 class DesertWellFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    DesertWellFeature& operator=(DesertWellFeature const&);
-    DesertWellFeature(DesertWellFeature const&);
-    DesertWellFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

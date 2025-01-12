@@ -45,9 +45,9 @@ public:
     // NOLINTBEGIN
     MCAPI SettingsCommandPacket();
 
-    MCAPI ::std::string const& getCommandString() const;
+    MCFOLD ::std::string const& getCommandString() const;
 
-    MCAPI bool getSupressOutput() const;
+    MCFOLD bool getSupressOutput() const;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCFOLD ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string $getName() const;
 

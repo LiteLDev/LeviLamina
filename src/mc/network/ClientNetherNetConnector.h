@@ -13,12 +13,6 @@ namespace Social { class GameConnectionInfo; }
 
 struct ClientNetherNetConnector : public ::NetherNetConnector {
 public:
-    // prevent constructor by default
-    ClientNetherNetConnector& operator=(ClientNetherNetConnector const&);
-    ClientNetherNetConnector(ClientNetherNetConnector const&);
-    ClientNetherNetConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 12

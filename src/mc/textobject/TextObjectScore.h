@@ -62,7 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $asString() const;
+    MCFOLD ::std::string $asString() const;
 
     MCAPI ::Json::Value $asJsonValue() const;
 

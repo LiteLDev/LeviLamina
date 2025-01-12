@@ -99,12 +99,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    NetEq& operator=(NetEq const&);
-    NetEq(NetEq const&);
-    NetEq();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

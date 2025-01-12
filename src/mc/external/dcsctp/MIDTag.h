@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class MIDTag {
-public:
-    // prevent constructor by default
-    MIDTag& operator=(MIDTag const&);
-    MIDTag(MIDTag const&);
-    MIDTag();
-};
+class MIDTag {};
 
 } // namespace dcsctp

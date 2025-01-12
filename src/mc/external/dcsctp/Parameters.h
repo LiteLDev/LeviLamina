@@ -20,12 +20,6 @@ public:
     // Parameters inner types define
     class Builder {
     public:
-        // prevent constructor by default
-        Builder& operator=(Builder const&);
-        Builder(Builder const&);
-        Builder();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::dcsctp::Parameters::Builder& Add(::dcsctp::Parameter const&);
@@ -39,12 +33,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    Parameters& operator=(Parameters const&);
-    Parameters(Parameters const&);
-    Parameters();
 
 public:
     // member functions

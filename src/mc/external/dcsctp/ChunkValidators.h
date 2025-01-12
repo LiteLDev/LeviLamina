@@ -11,12 +11,6 @@ namespace dcsctp {
 
 struct ChunkValidators {
 public:
-    // prevent constructor by default
-    ChunkValidators& operator=(ChunkValidators const&);
-    ChunkValidators(ChunkValidators const&);
-    ChunkValidators();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::dcsctp::SackChunk Clean(::dcsctp::SackChunk&&);

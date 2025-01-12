@@ -14,12 +14,6 @@ namespace rtc {
 
 class NetworkBinderInterface {
 public:
-    // prevent constructor by default
-    NetworkBinderInterface& operator=(NetworkBinderInterface const&);
-    NetworkBinderInterface(NetworkBinderInterface const&);
-    NetworkBinderInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

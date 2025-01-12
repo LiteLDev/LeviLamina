@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class BrewingStandFuelContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    BrewingStandFuelContainerValidation& operator=(BrewingStandFuelContainerValidation const&);
-    BrewingStandFuelContainerValidation(BrewingStandFuelContainerValidation const&);
-    BrewingStandFuelContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -46,7 +40,7 @@ public:
     $isItemAllowedInSlot(::ContainerScreenContext const&, int const, ::ItemStackBase const& item, int const, bool)
         const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class Creaking : public ::Monster {
 public:
-    // prevent constructor by default
-    Creaking& operator=(Creaking const&);
-    Creaking(Creaking const&);
-    Creaking();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 36
@@ -63,7 +57,7 @@ public:
     // NOLINTBEGIN
     MCAPI float $getShadowRadius() const;
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCFOLD bool $checkSpawnRules(bool);
     // NOLINTEND
 
 public:

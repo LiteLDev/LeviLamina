@@ -110,7 +110,7 @@ public:
 
     MCAPI ::std::string getName() const;
 
-    MCAPI ::CommandSelectionOrder getOrder() const;
+    MCFOLD ::CommandSelectionOrder getOrder() const;
 
     MCAPI uint64 getResultCount() const;
 
@@ -118,7 +118,7 @@ public:
 
     MCAPI bool isExpansionAllowed(::CommandOrigin const& origin) const;
 
-    MCAPI bool isExplicitIdSelector() const;
+    MCFOLD bool isExplicitIdSelector() const;
 
     MCAPI bool matchFamily(::Actor const& entity) const;
 
@@ -152,7 +152,7 @@ public:
 
     MCAPI void setType(::CommandSelectionType type);
 
-    MCAPI void setVersion(int version);
+    MCFOLD void setVersion(int version);
 
     MCAPI ~CommandSelectorBase();
     // NOLINTEND

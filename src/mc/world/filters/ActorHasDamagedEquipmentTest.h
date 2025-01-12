@@ -12,12 +12,6 @@ class ItemStack;
 
 class ActorHasDamagedEquipmentTest : public ::ActorHasEquipmentTest {
 public:
-    // prevent constructor by default
-    ActorHasDamagedEquipmentTest& operator=(ActorHasDamagedEquipmentTest const&);
-    ActorHasDamagedEquipmentTest(ActorHasDamagedEquipmentTest const&);
-    ActorHasDamagedEquipmentTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

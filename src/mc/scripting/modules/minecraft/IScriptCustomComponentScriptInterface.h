@@ -4,12 +4,6 @@
 
 namespace ScriptModuleMinecraft::CustomComponentEventHelpers {
 
-class IScriptCustomComponentScriptInterface {
-public:
-    // prevent constructor by default
-    IScriptCustomComponentScriptInterface& operator=(IScriptCustomComponentScriptInterface const&);
-    IScriptCustomComponentScriptInterface(IScriptCustomComponentScriptInterface const&);
-    IScriptCustomComponentScriptInterface();
-};
+class IScriptCustomComponentScriptInterface {};
 
 } // namespace ScriptModuleMinecraft::CustomComponentEventHelpers

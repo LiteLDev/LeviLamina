@@ -12,12 +12,6 @@ class UIEventListener;
 
 class UIEventCoordinator : public ::EventCoordinator<::UIEventListener> {
 public:
-    // prevent constructor by default
-    UIEventCoordinator& operator=(UIEventCoordinator const&);
-    UIEventCoordinator(UIEventCoordinator const&);
-    UIEventCoordinator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

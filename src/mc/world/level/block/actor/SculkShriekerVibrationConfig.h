@@ -79,9 +79,9 @@ public:
         ::Actor* projectileOwner
     );
 
-    MCAPI void $onSerializableDataChanged(::BlockSource& region);
+    MCFOLD void $onSerializableDataChanged(::BlockSource& region);
 
-    MCAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
     MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
     // NOLINTEND

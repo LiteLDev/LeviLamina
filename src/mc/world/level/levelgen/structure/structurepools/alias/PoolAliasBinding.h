@@ -45,15 +45,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    PoolAliasBinding& operator=(PoolAliasBinding const&);
-    PoolAliasBinding(PoolAliasBinding const&);
-    PoolAliasBinding();
 
 public:
     // virtual functions

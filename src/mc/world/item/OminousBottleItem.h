@@ -58,7 +58,8 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 79
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
 
     // vIndex: 60
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
@@ -97,7 +98,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::Potion::PotionType $getPotionType() const;
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
@@ -110,17 +111,17 @@ public:
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
 
-    MCAPI bool $uniqueAuxValues() const;
+    MCFOLD bool $uniqueAuxValues() const;
 
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& item, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI bool $isDestructive(int) const;
+    MCFOLD bool $isDestructive(int) const;
     // NOLINTEND
 
 public:

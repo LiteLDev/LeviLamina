@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnDeathDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnDeathDefinition& operator=(OnDeathDefinition const&);
-    OnDeathDefinition(OnDeathDefinition const&);
-    OnDeathDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

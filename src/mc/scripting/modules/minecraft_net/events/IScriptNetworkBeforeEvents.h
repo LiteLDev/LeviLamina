@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraftNet {
 
 class IScriptNetworkBeforeEvents {
 public:
-    // prevent constructor by default
-    IScriptNetworkBeforeEvents& operator=(IScriptNetworkBeforeEvents const&);
-    IScriptNetworkBeforeEvents(IScriptNetworkBeforeEvents const&);
-    IScriptNetworkBeforeEvents();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

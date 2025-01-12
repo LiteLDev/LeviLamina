@@ -10,12 +10,6 @@ namespace dragon::framerenderer { class CommandContext; }
 
 namespace dragon::framerenderer {
 
-class RenderContext {
-public:
-    // prevent constructor by default
-    RenderContext& operator=(RenderContext const&);
-    RenderContext(RenderContext const&);
-    RenderContext();
-};
+class RenderContext {};
 
 } // namespace dragon::framerenderer

@@ -44,19 +44,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> $load(::IDataInput& dis);
+    MCFOLD ::Bedrock::Result<void> $load(::IDataInput& dis);
 
-    MCAPI void $write(::IDataOutput& dos) const;
+    MCFOLD void $write(::IDataOutput& dos) const;
 
-    MCAPI ::Tag::Type $getId() const;
+    MCFOLD ::Tag::Type $getId() const;
 
     MCAPI ::std::string $toString() const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCFOLD bool $equals(::Tag const& rhs) const;
 
-    MCAPI uint64 $hash() const;
+    MCFOLD uint64 $hash() const;
     // NOLINTEND
 
 public:

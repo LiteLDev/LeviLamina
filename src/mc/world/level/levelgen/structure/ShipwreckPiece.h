@@ -17,12 +17,6 @@ class Random;
 
 class ShipwreckPiece : public ::StructurePiece {
 public:
-    // prevent constructor by default
-    ShipwreckPiece& operator=(ShipwreckPiece const&);
-    ShipwreckPiece(ShipwreckPiece const&);
-    ShipwreckPiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

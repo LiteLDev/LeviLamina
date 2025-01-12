@@ -9,12 +9,6 @@ class ScriptStat;
 
 class IScriptStatPublisher {
 public:
-    // prevent constructor by default
-    IScriptStatPublisher& operator=(IScriptStatPublisher const&);
-    IScriptStatPublisher(IScriptStatPublisher const&);
-    IScriptStatPublisher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -54,7 +54,7 @@ public:
 
     MCAPI bool isWaxable() const;
 
-    MCAPI bool isWaxed() const;
+    MCFOLD bool isWaxed() const;
 
     MCAPI bool tryDecrementAge(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -91,6 +91,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

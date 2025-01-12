@@ -32,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI InventoryTransaction(::InventoryTransaction const&);
 
-    MCAPI void _logTransaction(bool isClientSide) const;
+    MCFOLD void _logTransaction(bool isClientSide) const;
 
     MCAPI void addAction(::InventoryAction const& action);
 

@@ -10,11 +10,6 @@ namespace Editor::ScriptModule {
 
 class ScriptWidgetGroupErrorInvalidObject : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptWidgetGroupErrorInvalidObject& operator=(ScriptWidgetGroupErrorInvalidObject const&);
-    ScriptWidgetGroupErrorInvalidObject(ScriptWidgetGroupErrorInvalidObject const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptWidgetGroupErrorInvalidObject();
@@ -38,7 +33,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

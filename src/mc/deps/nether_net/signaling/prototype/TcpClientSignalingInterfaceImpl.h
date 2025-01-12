@@ -54,7 +54,7 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::error_code Connect(::std::unique_ptr<::rtc::Socket> socket, ::rtc::SocketAddress const&);
 
-        MCAPI void OnClose(::rtc::AsyncPacketSocket*, int status);
+        MCFOLD void OnClose(::rtc::AsyncPacketSocket*, int status);
 
         MCAPI void OnConnect(::rtc::AsyncPacketSocket*);
         // NOLINTEND
@@ -62,7 +62,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

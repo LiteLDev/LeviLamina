@@ -13,12 +13,6 @@ namespace Core {
 
 class IFileStorageAreaFetcher {
 public:
-    // prevent constructor by default
-    IFileStorageAreaFetcher& operator=(IFileStorageAreaFetcher const&);
-    IFileStorageAreaFetcher(IFileStorageAreaFetcher const&);
-    IFileStorageAreaFetcher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

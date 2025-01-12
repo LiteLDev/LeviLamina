@@ -37,7 +37,7 @@ public:
 
     MCAPI ::Block const& getBlock(::BlockPos const& position);
 
-    MCAPI ::BlockSource& getBlockSource();
+    MCFOLD ::BlockSource& getBlockSource();
 
     MCAPI ::Block const& getLiquidBlock(::BlockPos const& position);
 

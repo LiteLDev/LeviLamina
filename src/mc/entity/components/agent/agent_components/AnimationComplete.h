@@ -4,12 +4,6 @@
 
 namespace AgentComponents {
 
-struct AnimationComplete {
-public:
-    // prevent constructor by default
-    AnimationComplete& operator=(AnimationComplete const&);
-    AnimationComplete(AnimationComplete const&);
-    AnimationComplete();
-};
+struct AnimationComplete {};
 
 } // namespace AgentComponents

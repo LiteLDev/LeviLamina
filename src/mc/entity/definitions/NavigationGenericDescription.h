@@ -7,12 +7,6 @@
 
 struct NavigationGenericDescription : public ::NavigationDescription {
 public:
-    // prevent constructor by default
-    NavigationGenericDescription& operator=(NavigationGenericDescription const&);
-    NavigationGenericDescription(NavigationGenericDescription const&);
-    NavigationGenericDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -30,21 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getBranchId() const;
+    MCFOLD ::std::string const& getBranchId() const;
 
-    MCAPI ::std::string const& getBuildId() const;
+    MCFOLD ::std::string const& getBuildId() const;
 
-    MCAPI ::std::string const& getCommitId() const;
+    MCFOLD ::std::string const& getCommitId() const;
 
-    MCAPI int64 getCrashTimestamp() const;
+    MCFOLD int64 getCrashTimestamp() const;
 
-    MCAPI ::std::optional<uint> const& getErrorCode() const;
+    MCFOLD ::std::optional<uint> const& getErrorCode() const;
 
-    MCAPI ::std::string const& getErrorMessage() const;
+    MCFOLD ::std::string const& getErrorMessage() const;
 
-    MCAPI ::std::string const& getSessionId() const;
+    MCFOLD ::std::string const& getSessionId() const;
 
-    MCAPI ::std::map<::std::string, ::std::string>& getTags();
+    MCFOLD ::std::map<::std::string, ::std::string>& getTags();
     // NOLINTEND
 };
 

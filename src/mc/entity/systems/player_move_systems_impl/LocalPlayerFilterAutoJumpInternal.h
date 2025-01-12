@@ -93,12 +93,6 @@ struct LocalPlayerFilterAutoJumpInternal
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    LocalPlayerFilterAutoJumpInternal& operator=(LocalPlayerFilterAutoJumpInternal const&);
-    LocalPlayerFilterAutoJumpInternal(LocalPlayerFilterAutoJumpInternal const&);
-    LocalPlayerFilterAutoJumpInternal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

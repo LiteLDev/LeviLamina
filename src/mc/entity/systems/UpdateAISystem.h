@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class UpdateAISystem {
 public:
-    // prevent constructor by default
-    UpdateAISystem& operator=(UpdateAISystem const&);
-    UpdateAISystem(UpdateAISystem const&);
-    UpdateAISystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

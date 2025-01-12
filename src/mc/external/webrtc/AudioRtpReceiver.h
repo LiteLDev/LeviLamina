@@ -17,12 +17,6 @@ namespace webrtc {
 
 class AudioRtpReceiver {
 public:
-    // prevent constructor by default
-    AudioRtpReceiver& operator=(AudioRtpReceiver const&);
-    AudioRtpReceiver(AudioRtpReceiver const&);
-    AudioRtpReceiver();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

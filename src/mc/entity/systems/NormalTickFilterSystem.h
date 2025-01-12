@@ -22,12 +22,6 @@ struct TickingSystemWithInfo;
 
 struct NormalTickFilterSystem {
 public:
-    // prevent constructor by default
-    NormalTickFilterSystem& operator=(NormalTickFilterSystem const&);
-    NormalTickFilterSystem(NormalTickFilterSystem const&);
-    NormalTickFilterSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createGenericSystem();

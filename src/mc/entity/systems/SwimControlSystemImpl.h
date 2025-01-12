@@ -43,12 +43,6 @@ struct SwimControlSystemImpl
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    SwimControlSystemImpl& operator=(SwimControlSystemImpl const&);
-    SwimControlSystemImpl(SwimControlSystemImpl const&);
-    SwimControlSystemImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

@@ -4,12 +4,6 @@
 
 namespace Scripting::internal {
 
-struct ObjectRegistryUtilities {
-public:
-    // prevent constructor by default
-    ObjectRegistryUtilities& operator=(ObjectRegistryUtilities const&);
-    ObjectRegistryUtilities(ObjectRegistryUtilities const&);
-    ObjectRegistryUtilities();
-};
+struct ObjectRegistryUtilities {};
 
 } // namespace Scripting::internal

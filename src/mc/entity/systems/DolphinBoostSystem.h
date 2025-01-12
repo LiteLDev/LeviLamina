@@ -19,12 +19,6 @@ struct TickingSystemWithInfo;
 
 struct DolphinBoostSystem {
 public:
-    // prevent constructor by default
-    DolphinBoostSystem& operator=(DolphinBoostSystem const&);
-    DolphinBoostSystem(DolphinBoostSystem const&);
-    DolphinBoostSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickScan(

@@ -11,12 +11,6 @@ namespace rtc {
 
 class DefaultLocalAddressProvider {
 public:
-    // prevent constructor by default
-    DefaultLocalAddressProvider& operator=(DefaultLocalAddressProvider const&);
-    DefaultLocalAddressProvider(DefaultLocalAddressProvider const&);
-    DefaultLocalAddressProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

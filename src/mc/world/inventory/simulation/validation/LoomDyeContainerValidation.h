@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class LoomDyeContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    LoomDyeContainerValidation& operator=(LoomDyeContainerValidation const&);
-    LoomDyeContainerValidation(LoomDyeContainerValidation const&);
-    LoomDyeContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -54,7 +48,7 @@ public:
         bool
     ) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

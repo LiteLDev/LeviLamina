@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isEditorModeEnabled() const;
+    MCFOLD bool isEditorModeEnabled() const;
 
     MCAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
 

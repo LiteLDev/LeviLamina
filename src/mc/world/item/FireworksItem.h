@@ -110,7 +110,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI bool $isDestructive(int) const;
+    MCFOLD bool $isDestructive(int) const;
     // NOLINTEND
 
 public:

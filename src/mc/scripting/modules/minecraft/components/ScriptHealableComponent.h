@@ -23,12 +23,6 @@ namespace ScriptModuleMinecraft {
 class ScriptHealableComponent
 : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::HealableComponent, ::HealableDefinition> {
 public:
-    // prevent constructor by default
-    ScriptHealableComponent& operator=(ScriptHealableComponent const&);
-    ScriptHealableComponent(ScriptHealableComponent const&);
-    ScriptHealableComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

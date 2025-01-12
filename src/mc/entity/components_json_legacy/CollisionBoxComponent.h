@@ -26,6 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI void fromVec3(::Vec3 const& vec);
 
-    MCAPI ::Vec2 const& getDefaultBB() const;
+    MCFOLD ::Vec2 const& getDefaultBB() const;
     // NOLINTEND
 };

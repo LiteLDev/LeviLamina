@@ -12,12 +12,6 @@ struct TickingSystemWithInfo;
 
 class SendPlayerAuthInputReceivedEventSystem {
 public:
-    // prevent constructor by default
-    SendPlayerAuthInputReceivedEventSystem& operator=(SendPlayerAuthInputReceivedEventSystem const&);
-    SendPlayerAuthInputReceivedEventSystem(SendPlayerAuthInputReceivedEventSystem const&);
-    SendPlayerAuthInputReceivedEventSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doSendPlayerAuthInputReceivedEvent(

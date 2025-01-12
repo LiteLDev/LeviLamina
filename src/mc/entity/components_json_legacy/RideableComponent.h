@@ -43,9 +43,9 @@ public:
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction) const;
 
-    MCAPI int getSeatCount() const;
+    MCFOLD int getSeatCount() const;
 
-    MCAPI ::std::vector<::SeatDescription> const& getSeats() const;
+    MCFOLD ::std::vector<::SeatDescription> const& getSeats() const;
 
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
     // NOLINTEND

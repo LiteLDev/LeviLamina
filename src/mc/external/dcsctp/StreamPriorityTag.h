@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class StreamPriorityTag {
-public:
-    // prevent constructor by default
-    StreamPriorityTag& operator=(StreamPriorityTag const&);
-    StreamPriorityTag(StreamPriorityTag const&);
-    StreamPriorityTag();
-};
+class StreamPriorityTag {};
 
 } // namespace dcsctp

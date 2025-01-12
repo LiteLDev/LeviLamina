@@ -16,12 +16,6 @@ namespace Editor::Services {
 
 class ServerPlayerInputServiceProvider {
 public:
-    // prevent constructor by default
-    ServerPlayerInputServiceProvider& operator=(ServerPlayerInputServiceProvider const&);
-    ServerPlayerInputServiceProvider(ServerPlayerInputServiceProvider const&);
-    ServerPlayerInputServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

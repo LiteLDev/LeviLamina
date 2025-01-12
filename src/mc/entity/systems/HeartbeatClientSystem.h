@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class HeartbeatClientSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    HeartbeatClientSystem& operator=(HeartbeatClientSystem const&);
-    HeartbeatClientSystem(HeartbeatClientSystem const&);
-    HeartbeatClientSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

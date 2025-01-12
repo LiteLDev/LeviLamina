@@ -21,12 +21,6 @@ struct TickingSystemWithInfo;
 
 class GlideInputSystem {
 public:
-    // prevent constructor by default
-    GlideInputSystem& operator=(GlideInputSystem const&);
-    GlideInputSystem(GlideInputSystem const&);
-    GlideInputSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createGlideInputSystem();

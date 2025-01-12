@@ -19,16 +19,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkca58db;
-        ::ll::UntypedStorage<8, 16> mUnkce0069;
-        ::ll::UntypedStorage<8, 8>  mUnk6d13ee;
+        ::ll::TypedStorage<1, 1, bool>                                          controlValue;
+        ::ll::TypedStorage<8, 16, ::brstd::function_ref<void(::BinaryStream&)>> writeCondition;
+        ::ll::TypedStorage<8, 8, char const*>                                   docFieldName;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConditionBlock& operator=(ConditionBlock const&);
-        ConditionBlock(ConditionBlock const&);
-        ConditionBlock();
     };
 
 public:
@@ -84,13 +78,13 @@ public:
         char const*                              docFieldNotes
     );
 
-    MCAPI void _writeInteger(short value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void _writeInteger(short value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
     MCAPI void _writeInteger(ushort, char const*, char const*);
 
-    MCAPI void _writeInteger(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void _writeInteger(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void _writeInteger(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void _writeInteger(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
     MCAPI void _writeInteger(uint, char const*, char const*);
 
@@ -100,9 +94,9 @@ public:
 
     MCAPI void write(void const* origin, uint64 num);
 
-    MCAPI void writeBool(bool value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void writeBool(bool value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeByte(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void writeByte(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
     MCAPI void writeDouble(double value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
@@ -111,23 +105,23 @@ public:
     MCAPI void
     writeSignedBigEndianInt(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeSignedInt(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void writeSignedInt(int value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeSignedInt64(int64 value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void writeSignedInt64(int64 value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeSignedShort(short value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void writeSignedShort(short value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
     MCAPI void
     writeString(::std::string_view value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedChar(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void writeUnsignedChar(uchar value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void writeUnsignedInt(uint value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
+    MCFOLD void writeUnsignedInt(uint value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void
+    MCFOLD void
     writeUnsignedInt64(uint64 value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
-    MCAPI void
+    MCFOLD void
     writeUnsignedShort(ushort value, char const* docFieldName = nullptr, char const* docFieldNotes = nullptr);
 
     MCAPI void
@@ -152,7 +146,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

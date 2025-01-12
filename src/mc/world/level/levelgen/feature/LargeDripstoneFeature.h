@@ -53,12 +53,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    LargeDripstoneFeature& operator=(LargeDripstoneFeature const&);
-    LargeDripstoneFeature(LargeDripstoneFeature const&);
-    LargeDripstoneFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

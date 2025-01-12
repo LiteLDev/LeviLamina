@@ -130,12 +130,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    OceanRuinPieces& operator=(OceanRuinPieces const&);
-    OceanRuinPieces(OceanRuinPieces const&);
-    OceanRuinPieces();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _addClusterRuins(

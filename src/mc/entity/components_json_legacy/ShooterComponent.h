@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
 
-    MCAPI bool hasMagicAttacks() const;
+    MCFOLD bool hasMagicAttacks() const;
 
     MCAPI void onShoot(::Actor& owner);
 

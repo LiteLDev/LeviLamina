@@ -14,7 +14,7 @@ namespace mce { class Color; }
 namespace ItemColorUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::ItemColor fromBlockColor(::BlockColor color);
+MCFOLD ::ItemColor fromBlockColor(::BlockColor color);
 
 MCAPI ::ItemColor fromColor(::mce::Color const& color);
 

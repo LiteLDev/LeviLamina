@@ -10,12 +10,6 @@ struct ActorUniqueID;
 
 class IPlayerDeathManagerProxy {
 public:
-    // prevent constructor by default
-    IPlayerDeathManagerProxy& operator=(IPlayerDeathManagerProxy const&);
-    IPlayerDeathManagerProxy(IPlayerDeathManagerProxy const&);
-    IPlayerDeathManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

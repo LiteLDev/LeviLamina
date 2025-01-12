@@ -6,12 +6,6 @@ namespace Core::Profile {
 
 class ProfileThread {
 public:
-    // prevent constructor by default
-    ProfileThread& operator=(ProfileThread const&);
-    ProfileThread(ProfileThread const&);
-    ProfileThread();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ProfileThread(char const*);
@@ -22,13 +16,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(char const*);
+    MCFOLD void* $ctor(char const*);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

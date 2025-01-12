@@ -4,12 +4,6 @@
 
 namespace cricket::IceControllerInterface {
 
-struct PingResult {
-public:
-    // prevent constructor by default
-    PingResult& operator=(PingResult const&);
-    PingResult(PingResult const&);
-    PingResult();
-};
+struct PingResult {};
 
 } // namespace cricket::IceControllerInterface

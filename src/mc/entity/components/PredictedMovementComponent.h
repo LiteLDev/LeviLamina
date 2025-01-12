@@ -155,19 +155,19 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $isValidStartItem() const;
+        MCFOLD bool $isValidStartItem() const;
 
-        MCAPI bool $isAddedActorItem() const;
+        MCFOLD bool $isAddedActorItem() const;
 
-        MCAPI bool $isMotionHintItem() const;
+        MCFOLD bool $isMotionHintItem() const;
 
-        MCAPI ::Vec3 const& $getPos() const;
+        MCFOLD ::Vec3 const& $getPos() const;
 
-        MCAPI ::Vec2 const& $getRot() const;
+        MCFOLD ::Vec2 const& $getRot() const;
 
-        MCAPI float $getYHeadRot() const;
+        MCFOLD float $getYHeadRot() const;
 
-        MCAPI bool $isOnGround() const;
+        MCFOLD bool $isOnGround() const;
         // NOLINTEND
 
     public:
@@ -433,7 +433,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

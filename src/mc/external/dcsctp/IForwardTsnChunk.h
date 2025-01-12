@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class IForwardTsnChunk {
 public:
-    // prevent constructor by default
-    IForwardTsnChunk& operator=(IForwardTsnChunk const&);
-    IForwardTsnChunk(IForwardTsnChunk const&);
-    IForwardTsnChunk();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::IForwardTsnChunk> Parse(::rtc::ArrayView<uchar const>);

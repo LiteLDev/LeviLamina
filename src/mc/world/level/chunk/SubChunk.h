@@ -107,7 +107,7 @@ public:
         ::std::vector<::BlockDataFetchResult<::Block>>& output
     ) const;
 
-    MCAPI schar getAbsoluteIndex() const;
+    MCFOLD schar getAbsoluteIndex() const;
 
     MCAPI ::Block const& getBlock(ushort index) const;
 
@@ -115,7 +115,7 @@ public:
 
     MCAPI ::SubChunkBrightnessStorage::LightPair getLight(ushort idx) const;
 
-    MCAPI ::SubChunk::SubChunkState getSubChunkState() const;
+    MCFOLD ::SubChunk::SubChunkState getSubChunkState() const;
 
     MCAPI bool isEmpty() const;
 

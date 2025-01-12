@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorHasDamageTest : public ::SimpleIntFilterTest {
 public:
-    // prevent constructor by default
-    ActorHasDamageTest& operator=(ActorHasDamageTest const&);
-    ActorHasDamageTest(ActorHasDamageTest const&);
-    ActorHasDamageTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

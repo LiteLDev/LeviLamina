@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class IsEndTag {
-public:
-    // prevent constructor by default
-    IsEndTag& operator=(IsEndTag const&);
-    IsEndTag(IsEndTag const&);
-    IsEndTag();
-};
+class IsEndTag {};
 
 } // namespace dcsctp

@@ -230,7 +230,7 @@ public:
 
     MCAPI ::MobEvents const& getMobEvents() const;
 
-    MCAPI ::MobEvents& getMobEvents();
+    MCFOLD ::MobEvents& getMobEvents();
 
     MCAPI ::DynamicProperties& getOrAddDynamicProperties();
 
@@ -282,13 +282,13 @@ public:
         ::std::string const*   levelId
     );
 
-    MCAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
+    MCFOLD ::PlayerSleepManager const& $getPlayerSleepManager() const;
 
-    MCAPI ::PlayerSleepManager& $getPlayerSleepManager();
+    MCFOLD ::PlayerSleepManager& $getPlayerSleepManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
+    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
+    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
 
     MCAPI void $setCommandsEnabled(bool commandsEnabled);
 
@@ -312,13 +312,13 @@ public:
 
     MCAPI void $loadFunctionManager();
 
-    MCAPI ::Random& $getThreadRandom() const;
+    MCFOLD ::Random& $getThreadRandom() const;
 
     MCAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
+    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
+    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
 

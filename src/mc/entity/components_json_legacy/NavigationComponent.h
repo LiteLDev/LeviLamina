@@ -68,41 +68,41 @@ public:
 
     MCAPI ::std::unique_ptr<::Path> createPath(::Mob& owner, ::Actor const& target);
 
-    MCAPI bool getAvoidDamageBlocks() const;
+    MCFOLD bool getAvoidDamageBlocks() const;
 
-    MCAPI bool getAvoidPortals() const;
+    MCFOLD bool getAvoidPortals() const;
 
-    MCAPI bool getAvoidSun() const;
+    MCFOLD bool getAvoidSun() const;
 
-    MCAPI bool getAvoidWater() const;
+    MCFOLD bool getAvoidWater() const;
 
-    MCAPI ::std::vector<::BlockDescriptor> const& getBlocksToAvoid() const;
+    MCFOLD ::std::vector<::BlockDescriptor> const& getBlocksToAvoid() const;
 
-    MCAPI bool getCanBreach() const;
+    MCFOLD bool getCanBreach() const;
 
-    MCAPI bool getCanFloat() const;
+    MCFOLD bool getCanFloat() const;
 
-    MCAPI bool getCanJump() const;
+    MCFOLD bool getCanJump() const;
 
-    MCAPI bool getCanOpenDoors() const;
+    MCFOLD bool getCanOpenDoors() const;
 
     MCAPI bool getCanOpenIronDoors() const;
 
-    MCAPI bool getCanPassDoors() const;
+    MCFOLD bool getCanPassDoors() const;
 
-    MCAPI bool getCanPathOverLava() const;
+    MCFOLD bool getCanPathOverLava() const;
 
-    MCAPI bool getCanSink() const;
+    MCFOLD bool getCanSink() const;
 
-    MCAPI bool getCanWalkInLava() const;
+    MCFOLD bool getCanWalkInLava() const;
 
-    MCAPI float getEndPathRadiusSqr() const;
+    MCFOLD float getEndPathRadiusSqr() const;
 
-    MCAPI bool getHasDestination() const;
+    MCFOLD bool getHasDestination() const;
 
     MCAPI bool getHasEndPathRadius() const;
 
-    MCAPI bool getIsAmphibious() const;
+    MCFOLD bool getIsAmphibious() const;
 
     MCAPI bool getIsFollowingRivers() const;
 
@@ -110,15 +110,15 @@ public:
 
     MCAPI float getMaxDistance(::Actor const& owner) const;
 
-    MCAPI ::Path* getPath() const;
+    MCFOLD ::Path* getPath() const;
 
-    MCAPI float getSpeed() const;
+    MCFOLD float getSpeed() const;
 
-    MCAPI ::Vec3 const& getTargetOffset() const;
+    MCFOLD ::Vec3 const& getTargetOffset() const;
 
-    MCAPI float getTerminationThreshold() const;
+    MCFOLD float getTerminationThreshold() const;
 
-    MCAPI int getTickTimeout() const;
+    MCFOLD int getTickTimeout() const;
 
     MCAPI void incrementTick();
 
@@ -150,27 +150,27 @@ public:
 
     MCAPI void resetPath();
 
-    MCAPI void setAvoidDamageBlocks(bool avoidDamageBlocks);
+    MCFOLD void setAvoidDamageBlocks(bool avoidDamageBlocks);
 
-    MCAPI void setAvoidPortals(bool avoidPortals);
+    MCFOLD void setAvoidPortals(bool avoidPortals);
 
     MCAPI void setAvoidSun(bool avoidSun);
 
-    MCAPI void setAvoidWater(bool avoidWater);
+    MCFOLD void setAvoidWater(bool avoidWater);
 
-    MCAPI void setCanFloat(bool canFloat);
+    MCFOLD void setCanFloat(bool canFloat);
 
-    MCAPI void setCanJump(bool canJump);
+    MCFOLD void setCanJump(bool canJump);
 
-    MCAPI void setCanOpenDoors(bool canOpenDoors);
+    MCFOLD void setCanOpenDoors(bool canOpenDoors);
 
     MCAPI void setCanPassDoors(bool canPass);
 
-    MCAPI void setCanSink(bool canSink);
+    MCFOLD void setCanSink(bool canSink);
 
     MCAPI void setEndPathRadius(float radius);
 
-    MCAPI void setHasDestination(bool hasDestination);
+    MCFOLD void setHasDestination(bool hasDestination);
 
     MCAPI void setHasEndPathRadius(bool hasEndPathRadius);
 
@@ -186,7 +186,7 @@ public:
 
     MCAPI void setTerminationThreshold(float threshold);
 
-    MCAPI void setTickTimeout(int timeout);
+    MCFOLD void setTickTimeout(int timeout);
 
     MCAPI void stop(::Mob& owner);
 

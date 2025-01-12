@@ -13,12 +13,6 @@ class ActorDamageSource;
 
 class InfestedMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    InfestedMobEffect& operator=(InfestedMobEffect const&);
-    InfestedMobEffect(InfestedMobEffect const&);
-    InfestedMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

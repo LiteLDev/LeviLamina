@@ -31,12 +31,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    AudioSinkInterface& operator=(AudioSinkInterface const&);
-    AudioSinkInterface(AudioSinkInterface const&);
-    AudioSinkInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Silverfish : public ::Monster {
 public:
-    // prevent constructor by default
-    Silverfish& operator=(Silverfish const&);
-    Silverfish(Silverfish const&);
-    Silverfish();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 71
@@ -76,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
     MCAPI void $spawnAnim();
 
@@ -84,7 +78,7 @@ public:
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

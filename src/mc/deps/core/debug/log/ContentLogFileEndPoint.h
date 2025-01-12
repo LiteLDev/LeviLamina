@@ -89,9 +89,9 @@ public:
 
     MCAPI void $setEnabled(bool enabled);
 
-    MCAPI bool $isEnabled() const;
+    MCFOLD bool $isEnabled() const;
 
-    MCAPI bool $logOnlyOnce() const;
+    MCFOLD bool $logOnlyOnce() const;
     // NOLINTEND
 
 public:

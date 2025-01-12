@@ -77,7 +77,7 @@ public:
 
     MCAPI bool $selectClient(::std::string& outClient);
 
-    MCAPI bool $started() const;
+    MCFOLD bool $started() const;
 
     MCAPI bool $connected() const;
 

@@ -14,12 +14,6 @@ namespace webrtc {
 
 class EnvironmentFactory {
 public:
-    // prevent constructor by default
-    EnvironmentFactory& operator=(EnvironmentFactory const&);
-    EnvironmentFactory(EnvironmentFactory const&);
-    EnvironmentFactory();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::Environment Create() const;

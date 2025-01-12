@@ -28,12 +28,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    RtcEventLog& operator=(RtcEventLog const&);
-    RtcEventLog(RtcEventLog const&);
-    RtcEventLog();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

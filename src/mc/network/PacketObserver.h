@@ -87,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -97,9 +97,9 @@ public:
 
     MCAPI void $packetReceivedFrom(::NetworkIdentifier const&, ::Packet const&, uint size);
 
-    MCAPI void $dataSentTo(::NetworkIdentifier const&, ::std::string_view);
+    MCFOLD void $dataSentTo(::NetworkIdentifier const&, ::std::string_view);
 
-    MCAPI void $dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&);
+    MCFOLD void $dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&);
 
     MCAPI void $reset();
     // NOLINTEND

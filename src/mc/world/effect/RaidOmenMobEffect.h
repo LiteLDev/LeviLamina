@@ -13,12 +13,6 @@ struct EffectDuration;
 
 class RaidOmenMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    RaidOmenMobEffect& operator=(RaidOmenMobEffect const&);
-    RaidOmenMobEffect(RaidOmenMobEffect const&);
-    RaidOmenMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

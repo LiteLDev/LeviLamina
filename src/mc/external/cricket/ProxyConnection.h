@@ -15,12 +15,6 @@ namespace cricket {
 
 class ProxyConnection {
 public:
-    // prevent constructor by default
-    ProxyConnection& operator=(ProxyConnection const&);
-    ProxyConnection(ProxyConnection const&);
-    ProxyConnection();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ProxyConnection(::rtc::WeakPtr<::cricket::PortInterface>, uint64, ::cricket::Candidate const&);

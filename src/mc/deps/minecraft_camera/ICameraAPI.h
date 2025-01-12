@@ -57,12 +57,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    ICameraAPI& operator=(ICameraAPI const&);
-    ICameraAPI(ICameraAPI const&);
-    ICameraAPI();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

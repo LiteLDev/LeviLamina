@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCFOLD ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string $getName() const;
 
@@ -60,7 +60,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

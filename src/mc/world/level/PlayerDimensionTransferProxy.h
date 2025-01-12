@@ -20,12 +20,6 @@ class Vec3;
 
 class PlayerDimensionTransferProxy : public ::IPlayerDimensionTransferProxy {
 public:
-    // prevent constructor by default
-    PlayerDimensionTransferProxy& operator=(PlayerDimensionTransferProxy const&);
-    PlayerDimensionTransferProxy(PlayerDimensionTransferProxy const&);
-    PlayerDimensionTransferProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -139,7 +133,7 @@ public:
     MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
     $hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCAPI void $transferTickingArea(::Actor& actor, ::Dimension& dimension);
+    MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension);
     // NOLINTEND
 
 public:

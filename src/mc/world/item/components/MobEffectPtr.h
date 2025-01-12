@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MobEffect;
+// clang-format on
+
 class MobEffectPtr {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka5eec1;
+    ::ll::TypedStorage<8, 8, ::MobEffect const*> mMobEffect;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectPtr& operator=(MobEffectPtr const&);
-    MobEffectPtr(MobEffectPtr const&);
-    MobEffectPtr();
 };

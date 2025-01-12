@@ -15,12 +15,6 @@ namespace NetherNet {
 
 class AesAdapter : public ::rtc::AsyncSocketAdapter {
 public:
-    // prevent constructor by default
-    AesAdapter& operator=(AesAdapter const&);
-    AesAdapter(AesAdapter const&);
-    AesAdapter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

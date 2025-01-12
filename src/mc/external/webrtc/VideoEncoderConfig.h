@@ -29,12 +29,6 @@ public:
     // VideoEncoderConfig inner types define
     class EncoderSpecificSettings : public ::webrtc::RefCountInterface {
     public:
-        // prevent constructor by default
-        EncoderSpecificSettings& operator=(EncoderSpecificSettings const&);
-        EncoderSpecificSettings(EncoderSpecificSettings const&);
-        EncoderSpecificSettings();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 3
@@ -177,12 +171,6 @@ public:
     };
 
     class VideoStreamFactoryInterface : public ::webrtc::RefCountInterface {
-    public:
-        // prevent constructor by default
-        VideoStreamFactoryInterface& operator=(VideoStreamFactoryInterface const&);
-        VideoStreamFactoryInterface(VideoStreamFactoryInterface const&);
-        VideoStreamFactoryInterface();
-
     public:
         // virtual functions
         // NOLINTBEGIN

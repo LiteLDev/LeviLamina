@@ -12,12 +12,6 @@ struct FilterContext;
 
 class IsHoldingSilkTouchTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    IsHoldingSilkTouchTest& operator=(IsHoldingSilkTouchTest const&);
-    IsHoldingSilkTouchTest(IsHoldingSilkTouchTest const&);
-    IsHoldingSilkTouchTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

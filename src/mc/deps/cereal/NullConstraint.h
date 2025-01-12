@@ -15,12 +15,6 @@ namespace cereal {
 
 class NullConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    NullConstraint& operator=(NullConstraint const&);
-    NullConstraint(NullConstraint const&);
-    NullConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -36,15 +30,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const;
+    MCFOLD void $doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:

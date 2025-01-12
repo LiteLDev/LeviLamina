@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class Chicken : public ::Animal {
 public:
-    // prevent constructor by default
-    Chicken& operator=(Chicken const&);
-    Chicken(Chicken const&);
-    Chicken();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 142
@@ -60,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

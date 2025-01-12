@@ -6,12 +6,6 @@ namespace dcsctp {
 
 struct RetransmissionErrorCounter {
 public:
-    // prevent constructor by default
-    RetransmissionErrorCounter& operator=(RetransmissionErrorCounter const&);
-    RetransmissionErrorCounter(RetransmissionErrorCounter const&);
-    RetransmissionErrorCounter();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Clear();

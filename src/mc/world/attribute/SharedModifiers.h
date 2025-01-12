@@ -9,12 +9,6 @@ class AttributeModifier;
 
 class SharedModifiers {
 public:
-    // prevent constructor by default
-    SharedModifiers& operator=(SharedModifiers const&);
-    SharedModifiers(SharedModifiers const&);
-    SharedModifiers();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::AttributeModifier>& DAMAGE_BOOST();

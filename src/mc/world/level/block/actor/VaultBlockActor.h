@@ -120,7 +120,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -157,12 +157,6 @@ public:
     };
 
     class Server {
-    public:
-        // prevent constructor by default
-        Server& operator=(Server const&);
-        Server(Server const&);
-        Server();
-
     public:
         // static functions
         // NOLINTBEGIN
@@ -256,12 +250,6 @@ public:
     };
 
     class Client {
-    public:
-        // prevent constructor by default
-        Client& operator=(Client const&);
-        Client(Client const&);
-        Client();
-
     public:
         // static functions
         // NOLINTBEGIN

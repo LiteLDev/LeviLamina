@@ -14,12 +14,6 @@ namespace OperationNodeValues { struct PreBiome; }
 namespace OperationNodeFilters {
 
 struct AddSnow
-: public ::OperationNodeFilters::FilterBase<1, 1, ::OperationNodeValues::PreBiome, ::OperationNodeValues::Terrain> {
-public:
-    // prevent constructor by default
-    AddSnow& operator=(AddSnow const&);
-    AddSnow(AddSnow const&);
-    AddSnow();
-};
+: public ::OperationNodeFilters::FilterBase<1, 1, ::OperationNodeValues::PreBiome, ::OperationNodeValues::Terrain> {};
 
 } // namespace OperationNodeFilters

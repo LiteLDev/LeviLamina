@@ -128,7 +128,7 @@ struct LL_EBO Hook {};
 
 #define LL_HOOK_IMPL(REGISTER, FUNC_PTR, STATIC, CALL, DEF_TYPE, TYPE, PRIORITY, IDENTIFIER, RET_TYPE, ...)            \
     struct DEF_TYPE : public TYPE {                                                                                    \
-        inline static std::atomic_uint _AutoHookCount{};                                                               \
+        inline static ::std::atomic_uint _AutoHookCount{};                                                             \
                                                                                                                        \
     private:                                                                                                           \
         using _FuncPtr          = ::ll::memory::FuncPtr;                                                               \
@@ -154,7 +154,7 @@ struct LL_EBO Hook {};
                                                                                                                        \
         static constexpr bool _IsConstMemberFunction = decltype(_ConstDetector{IDENTIFIER})::value;                    \
                                                                                                                        \
-        using _OriginFuncType = std::conditional_t<_IsConstMemberFunction, _RawConstFuncType, _RawFuncType>;           \
+        using _OriginFuncType = ::std::conditional_t<_IsConstMemberFunction, _RawConstFuncType, _RawFuncType>;         \
                                                                                                                        \
         inline static _FuncPtr        _HookTarget{};                                                                   \
         inline static _OriginFuncType _OriginalFunc{};                                                                 \
@@ -179,7 +179,7 @@ struct LL_EBO Hook {};
         }                                                                                                              \
         template <class... Args>                                                                                       \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \
-            return CALL(std::forward<Args>(params)...);                                                                \
+            return CALL(::std::forward<Args>(params)...);                                                              \
         }                                                                                                              \
                                                                                                                        \
         STATIC RET_TYPE detour(__VA_ARGS__);                                                                           \

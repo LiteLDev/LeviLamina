@@ -19,12 +19,6 @@ struct TickingSystemWithInfo;
 
 class JumpInputSystem {
 public:
-    // prevent constructor by default
-    JumpInputSystem& operator=(JumpInputSystem const&);
-    JumpInputSystem(JumpInputSystem const&);
-    JumpInputSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createJumpInputSystem();

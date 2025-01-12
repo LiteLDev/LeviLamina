@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestSlotInfo const& getSrc() const;
+    MCFOLD ::ItemStackRequestSlotInfo const& getSrc() const;
     // NOLINTEND
 
 public:

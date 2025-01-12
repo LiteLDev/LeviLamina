@@ -89,17 +89,17 @@ public:
 
     MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
-    MCAPI int $getLevelDataForAuxValue(int auxValue) const;
+    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::BlockShape $getBlockShape() const;
+    MCFOLD ::BlockShape $getBlockShape() const;
 
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI ::ActorLocation $getEquipLocation() const;
+    MCFOLD ::ActorLocation $getEquipLocation() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCAPI ::InteractionResult
     $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;

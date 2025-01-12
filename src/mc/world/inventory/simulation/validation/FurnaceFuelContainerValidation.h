@@ -13,12 +13,6 @@ class ItemStackBase;
 
 class FurnaceFuelContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    FurnaceFuelContainerValidation& operator=(FurnaceFuelContainerValidation const&);
-    FurnaceFuelContainerValidation(FurnaceFuelContainerValidation const&);
-    FurnaceFuelContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -65,7 +59,7 @@ public:
 
     MCAPI int $getAvailableSetCount(int slot, ::ItemStackBase const& item) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

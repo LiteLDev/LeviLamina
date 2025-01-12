@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class EnvironmentSensorSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    EnvironmentSensorSystem& operator=(EnvironmentSensorSystem const&);
-    EnvironmentSensorSystem(EnvironmentSensorSystem const&);
-    EnvironmentSensorSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -19,12 +19,6 @@ struct Tick;
 
 class ITickingAreaView {
 public:
-    // prevent constructor by default
-    ITickingAreaView& operator=(ITickingAreaView const&);
-    ITickingAreaView(ITickingAreaView const&);
-    ITickingAreaView();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -70,7 +64,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

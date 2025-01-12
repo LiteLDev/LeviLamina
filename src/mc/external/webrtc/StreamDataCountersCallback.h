@@ -11,12 +11,6 @@ namespace webrtc {
 
 class StreamDataCountersCallback {
 public:
-    // prevent constructor by default
-    StreamDataCountersCallback& operator=(StreamDataCountersCallback const&);
-    StreamDataCountersCallback(StreamDataCountersCallback const&);
-    StreamDataCountersCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

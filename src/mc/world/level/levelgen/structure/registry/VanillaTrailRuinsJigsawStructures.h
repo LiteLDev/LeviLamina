@@ -10,12 +10,6 @@ struct StructureTemplateRegistrationContext;
 
 class VanillaTrailRuinsJigsawStructures {
 public:
-    // prevent constructor by default
-    VanillaTrailRuinsJigsawStructures& operator=(VanillaTrailRuinsJigsawStructures const&);
-    VanillaTrailRuinsJigsawStructures(VanillaTrailRuinsJigsawStructures const&);
-    VanillaTrailRuinsJigsawStructures();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initialize(::StructureTemplateRegistrationContext& context, ::JigsawStructureRegistry& registry);

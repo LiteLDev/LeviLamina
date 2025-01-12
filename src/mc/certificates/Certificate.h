@@ -39,11 +39,11 @@ public:
 
     MCAPI int64 getNotBeforeDate() const;
 
-    MCAPI bool isSelfSigned() const;
+    MCFOLD bool isSelfSigned() const;
 
-    MCAPI bool isValid() const;
+    MCFOLD bool isValid() const;
 
-    MCAPI ::std::string toString() const;
+    MCFOLD ::std::string toString() const;
 
     MCAPI bool validate(int64 currentTime, bool isSelfSigned, bool checkExpired);
 

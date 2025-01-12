@@ -128,7 +128,7 @@ public:
 
     MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
 
-    MCAPI ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
+    MCFOLD ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
 
     MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
@@ -140,24 +140,24 @@ public:
         ::std::optional<::HashedString> biomeTag
     );
 
-    MCAPI void $prepareHeights(::BlockVolume&, ::ChunkPos const&, bool);
+    MCFOLD void $prepareHeights(::BlockVolume&, ::ChunkPos const&, bool);
 
-    MCAPI void $prepareAndComputeHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>&, bool, int);
+    MCFOLD void $prepareAndComputeHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>&, bool, int);
 
-    MCAPI void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
+    MCFOLD void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
     MCAPI ::BlockPos $findSpawnPosition() const;
 
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCFOLD ::BiomeSource const& $getBiomeSource() const;
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCAPI void
+    MCFOLD void
     $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
 
-    MCAPI void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
+    MCFOLD void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
     // NOLINTEND
 
 public:

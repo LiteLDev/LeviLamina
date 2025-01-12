@@ -4,12 +4,6 @@
 
 namespace Bedrock::PubSub::DeferralPolicy {
 
-class KeepAllPolicy {
-public:
-    // prevent constructor by default
-    KeepAllPolicy& operator=(KeepAllPolicy const&);
-    KeepAllPolicy(KeepAllPolicy const&);
-    KeepAllPolicy();
-};
+class KeepAllPolicy {};
 
 } // namespace Bedrock::PubSub::DeferralPolicy

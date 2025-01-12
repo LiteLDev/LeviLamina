@@ -6,12 +6,6 @@ namespace webrtc {
 
 class AudioTrackSinkInterface {
 public:
-    // prevent constructor by default
-    AudioTrackSinkInterface& operator=(AudioTrackSinkInterface const&);
-    AudioTrackSinkInterface(AudioTrackSinkInterface const&);
-    AudioTrackSinkInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

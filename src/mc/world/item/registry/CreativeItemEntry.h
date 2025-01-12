@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class CreativeGroupInfo;
+class CreativeItemRegistry;
 class ItemInstance;
 struct CreativeItemNetIdTag;
 // clang-format on
@@ -17,18 +18,12 @@ class CreativeItemEntry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnka74dfe;
-    ::ll::UntypedStorage<4, 4>   mUnkb16da3;
-    ::ll::UntypedStorage<4, 4>   mUnk812d45;
-    ::ll::UntypedStorage<8, 128> mUnka8ccac;
-    ::ll::UntypedStorage<4, 4>   mUnkde9665;
+    ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*> mRegistry;
+    ::ll::TypedStorage<4, 4, uint>                    mGroupIndex;
+    ::ll::TypedStorage<4, 4, ::CreativeItemNetId>     mCreativeNetId;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>        mItemInstance;
+    ::ll::TypedStorage<4, 4, uint>                    mIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CreativeItemEntry& operator=(CreativeItemEntry const&);
-    CreativeItemEntry(CreativeItemEntry const&);
-    CreativeItemEntry();
 
 public:
     // virtual functions
@@ -40,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CreativeItemNetId const& getCreativeNetId() const;
+    MCFOLD ::CreativeItemNetId const& getCreativeNetId() const;
 
     MCAPI ::CreativeGroupInfo* getGroup() const;
 
-    MCAPI uint getIndex() const;
+    MCFOLD uint getIndex() const;
 
-    MCAPI ::ItemInstance const& getItemInstance() const;
+    MCFOLD ::ItemInstance const& getItemInstance() const;
     // NOLINTEND
 
 public:

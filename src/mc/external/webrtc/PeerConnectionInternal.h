@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class PeerConnectionInternal {
-public:
-    // prevent constructor by default
-    PeerConnectionInternal& operator=(PeerConnectionInternal const&);
-    PeerConnectionInternal(PeerConnectionInternal const&);
-    PeerConnectionInternal();
-};
+class PeerConnectionInternal {};
 
 } // namespace webrtc

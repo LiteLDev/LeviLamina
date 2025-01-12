@@ -106,7 +106,7 @@ public:
 
     MCAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<uint64 const> allowed) const;
 
-    MCAPI ::Biome const* $getBiome(::BlockPos const& blockPos) const;
+    MCFOLD ::Biome const* $getBiome(::BlockPos const& blockPos) const;
 
     MCAPI ::Biome const* $getBiome(::GetBiomeOptions const& getBiomeOptions) const;
 

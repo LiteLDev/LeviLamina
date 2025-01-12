@@ -55,7 +55,7 @@ public:
 
     MCAPI ::std::string getId() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBiomeType& operator=(::ScriptModuleMinecraft::ScriptBiomeType&&);
+    MCFOLD ::ScriptModuleMinecraft::ScriptBiomeType& operator=(::ScriptModuleMinecraft::ScriptBiomeType&&);
 
     MCAPI ~ScriptBiomeType();
     // NOLINTEND
@@ -72,13 +72,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBiomeType const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBiomeType const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

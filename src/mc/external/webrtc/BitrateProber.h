@@ -21,19 +21,7 @@ public:
     // clang-format on
 
     // BitrateProber inner types define
-    struct ProbeCluster {
-    public:
-        // prevent constructor by default
-        ProbeCluster& operator=(ProbeCluster const&);
-        ProbeCluster(ProbeCluster const&);
-        ProbeCluster();
-    };
-
-public:
-    // prevent constructor by default
-    BitrateProber& operator=(BitrateProber const&);
-    BitrateProber(BitrateProber const&);
-    BitrateProber();
+    struct ProbeCluster {};
 
 public:
     // member functions

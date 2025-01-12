@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI GrowsCropDefinition();
 
-    MCAPI void initialize(::EntityContext&, ::GrowsCropComponent& component) const;
+    MCFOLD void initialize(::EntityContext&, ::GrowsCropComponent& component) const;
     // NOLINTEND
 
 public:

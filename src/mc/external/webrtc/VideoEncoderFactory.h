@@ -39,12 +39,6 @@ public:
 
     class EncoderSelectorInterface {
     public:
-        // prevent constructor by default
-        EncoderSelectorInterface& operator=(EncoderSelectorInterface const&);
-        EncoderSelectorInterface(EncoderSelectorInterface const&);
-        EncoderSelectorInterface();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -75,12 +69,6 @@ public:
 
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    VideoEncoderFactory& operator=(VideoEncoderFactory const&);
-    VideoEncoderFactory(VideoEncoderFactory const&);
-    VideoEncoderFactory();
 
 public:
     // virtual functions

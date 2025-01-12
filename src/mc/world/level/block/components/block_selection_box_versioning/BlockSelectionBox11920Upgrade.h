@@ -14,11 +14,6 @@ namespace BlockSelectionBoxVersioning {
 
 class BlockSelectionBox11920Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockSelectionBox11920Upgrade& operator=(BlockSelectionBox11920Upgrade const&);
-    BlockSelectionBox11920Upgrade(BlockSelectionBox11920Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

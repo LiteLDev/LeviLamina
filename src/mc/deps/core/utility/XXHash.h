@@ -26,13 +26,13 @@ public:
 
     MCAPI uint64 digest();
 
-    MCAPI void update(bool data);
+    MCFOLD void update(bool data);
 
     MCAPI void update(uchar);
 
     MCAPI void update(float data);
 
-    MCAPI void update(int data);
+    MCFOLD void update(int data);
 
     MCAPI void update(uint);
 

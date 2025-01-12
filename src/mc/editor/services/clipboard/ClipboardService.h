@@ -150,21 +150,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
     MCAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::mce::UUID const& $getPrimaryItemId();
+    MCFOLD ::mce::UUID const& $getPrimaryItemId();
 
     MCAPI ::mce::UUID const& $create();
 
     MCAPI bool $destroy(::mce::UUID const& id);
 
-    MCAPI void $setPrimaryItem(::mce::UUID const& id);
+    MCFOLD void $setPrimaryItem(::mce::UUID const& id);
 
     MCAPI ::Editor::Services::ClipboardItem* $getPrimaryItem();
 

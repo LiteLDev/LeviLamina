@@ -54,11 +54,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getEnchantSlot() const;
+    MCFOLD int $getEnchantSlot() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCFOLD int $getEnchantValue() const;
 
-    MCAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
     // NOLINTEND
 
 public:

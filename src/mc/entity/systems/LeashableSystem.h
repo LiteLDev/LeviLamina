@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class LeashableSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    LeashableSystem& operator=(LeashableSystem const&);
-    LeashableSystem(LeashableSystem const&);
-    LeashableSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

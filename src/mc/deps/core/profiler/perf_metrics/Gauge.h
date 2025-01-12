@@ -7,12 +7,6 @@
 
 namespace PerfMetrics {
 
-class Gauge : public ::PerfMetrics::Counter {
-public:
-    // prevent constructor by default
-    Gauge& operator=(Gauge const&);
-    Gauge(Gauge const&);
-    Gauge();
-};
+class Gauge : public ::PerfMetrics::Counter {};
 
 } // namespace PerfMetrics

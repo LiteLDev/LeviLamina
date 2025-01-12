@@ -45,7 +45,7 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
@@ -110,19 +110,19 @@ public:
 
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI int $getEnchantValue() const;
+    MCFOLD int $getEnchantValue() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $isThrowable() const;
+    MCFOLD bool $isThrowable() const;
 
-    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI short $getMaxDamage() const;
+    MCFOLD short $getMaxDamage() const;
 
-    MCAPI int $getAttackDamage() const;
+    MCFOLD int $getAttackDamage() const;
 
-    MCAPI bool $canDestroyInCreative() const;
+    MCFOLD bool $canDestroyInCreative() const;
     // NOLINTEND
 
 public:

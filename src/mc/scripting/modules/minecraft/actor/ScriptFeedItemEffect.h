@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptFeedItemEffect {
 public:
-    // prevent constructor by default
-    ScriptFeedItemEffect& operator=(ScriptFeedItemEffect const&);
-    ScriptFeedItemEffect(ScriptFeedItemEffect const&);
-    ScriptFeedItemEffect();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::FeedItem::Effect> bind();

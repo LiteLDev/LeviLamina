@@ -7,12 +7,6 @@
 
 struct BlockPartVisibilityDescription : public ::BlockComponentDescription {
 public:
-    // prevent constructor by default
-    BlockPartVisibilityDescription& operator=(BlockPartVisibilityDescription const&);
-    BlockPartVisibilityDescription(BlockPartVisibilityDescription const&);
-    BlockPartVisibilityDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

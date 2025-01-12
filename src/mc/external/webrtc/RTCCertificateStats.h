@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RTCCertificateStats {
 public:
-    // prevent constructor by default
-    RTCCertificateStats& operator=(RTCCertificateStats const&);
-    RTCCertificateStats(RTCCertificateStats const&);
-    RTCCertificateStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCCertificateStats(::std::string, ::webrtc::Timestamp);

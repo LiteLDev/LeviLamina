@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class MushroomCow : public ::Animal {
 public:
-    // prevent constructor by default
-    MushroomCow& operator=(MushroomCow const&);
-    MushroomCow(MushroomCow const&);
-    MushroomCow();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 152

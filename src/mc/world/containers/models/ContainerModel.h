@@ -166,7 +166,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postInit();
+    MCFOLD void $postInit();
 
     MCAPI void $releaseResources();
 
@@ -174,41 +174,41 @@ public:
 
     MCAPI int $getContainerSize() const;
 
-    MCAPI int $getFilteredContainerSize() const;
+    MCFOLD int $getFilteredContainerSize() const;
 
-    MCAPI void $tick(int selectedSlot);
+    MCFOLD void $tick(int selectedSlot);
 
     MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
     MCAPI ::ItemStack const& $getItemStack(int modelSlot) const;
 
-    MCAPI ::std::vector<::ItemStack> const& $getItems() const;
+    MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
 
     MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
     MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
-    MCAPI bool $isItemInstanceBased() const;
+    MCFOLD bool $isItemInstanceBased() const;
 
     MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCAPI bool $isValid();
+    MCFOLD bool $isValid();
 
-    MCAPI bool $isItemFiltered(::ItemStackBase const& item) const;
+    MCFOLD bool $isItemFiltered(::ItemStackBase const& item) const;
 
-    MCAPI bool $isExpanableItemFiltered(int index) const;
+    MCFOLD bool $isExpanableItemFiltered(int index) const;
 
-    MCAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
+    MCFOLD ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
 
-    MCAPI ::std::string const& $getItemGroupName(int itemId) const;
+    MCFOLD ::std::string const& $getItemGroupName(int itemId) const;
 
-    MCAPI void $switchItemExpando(int itemId);
+    MCFOLD void $switchItemExpando(int itemId);
 
-    MCAPI bool $isSlotDisabled(int) const;
+    MCFOLD bool $isSlotDisabled(int) const;
 
-    MCAPI ::Container* $_getContainer() const;
+    MCFOLD ::Container* $_getContainer() const;
 
-    MCAPI int $_getContainerOffset() const;
+    MCFOLD int $_getContainerOffset() const;
 
     MCAPI void $_init();
 

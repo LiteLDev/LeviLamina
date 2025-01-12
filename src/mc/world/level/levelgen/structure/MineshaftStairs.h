@@ -16,12 +16,6 @@ class StructurePiece;
 
 class MineshaftStairs : public ::MineshaftPiece {
 public:
-    // prevent constructor by default
-    MineshaftStairs& operator=(MineshaftStairs const&);
-    MineshaftStairs(MineshaftStairs const&);
-    MineshaftStairs();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

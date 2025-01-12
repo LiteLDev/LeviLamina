@@ -13,12 +13,6 @@ class EntityContext;
 
 class DimensionStateSystem : public ::ISystem {
 public:
-    // prevent constructor by default
-    DimensionStateSystem& operator=(DimensionStateSystem const&);
-    DimensionStateSystem(DimensionStateSystem const&);
-    DimensionStateSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

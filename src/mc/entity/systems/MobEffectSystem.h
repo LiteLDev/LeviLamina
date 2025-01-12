@@ -14,12 +14,6 @@ class MobEffectComponent;
 
 class MobEffectSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    MobEffectSystem& operator=(MobEffectSystem const&);
-    MobEffectSystem(MobEffectSystem const&);
-    MobEffectSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

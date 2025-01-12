@@ -20,12 +20,6 @@ namespace Editor::Services {
 
 class EditorPersistenceServiceProvider {
 public:
-    // prevent constructor by default
-    EditorPersistenceServiceProvider& operator=(EditorPersistenceServiceProvider const&);
-    EditorPersistenceServiceProvider(EditorPersistenceServiceProvider const&);
-    EditorPersistenceServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

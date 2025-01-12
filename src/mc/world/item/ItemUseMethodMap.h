@@ -8,12 +8,6 @@
 
 class ItemUseMethodMap {
 public:
-    // prevent constructor by default
-    ItemUseMethodMap& operator=(ItemUseMethodMap const&);
-    ItemUseMethodMap(ItemUseMethodMap const&);
-    ItemUseMethodMap();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string const& getItemUseMethodName(::ItemUseMethod useMethod);

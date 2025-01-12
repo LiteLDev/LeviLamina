@@ -9,12 +9,6 @@ class IScriptPluginSource;
 
 class IScriptPluginSourceEnumerator {
 public:
-    // prevent constructor by default
-    IScriptPluginSourceEnumerator& operator=(IScriptPluginSourceEnumerator const&);
-    IScriptPluginSourceEnumerator(IScriptPluginSourceEnumerator const&);
-    IScriptPluginSourceEnumerator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkGoogleAccountRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    UnlinkGoogleAccountRequest& operator=(UnlinkGoogleAccountRequest const&);
-    UnlinkGoogleAccountRequest(UnlinkGoogleAccountRequest const&);
-    UnlinkGoogleAccountRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

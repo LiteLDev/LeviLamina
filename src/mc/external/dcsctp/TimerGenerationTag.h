@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class TimerGenerationTag {
-public:
-    // prevent constructor by default
-    TimerGenerationTag& operator=(TimerGenerationTag const&);
-    TimerGenerationTag(TimerGenerationTag const&);
-    TimerGenerationTag();
-};
+class TimerGenerationTag {};
 
 } // namespace dcsctp

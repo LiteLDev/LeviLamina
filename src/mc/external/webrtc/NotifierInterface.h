@@ -11,12 +11,6 @@ namespace webrtc {
 
 class NotifierInterface {
 public:
-    // prevent constructor by default
-    NotifierInterface& operator=(NotifierInterface const&);
-    NotifierInterface(NotifierInterface const&);
-    NotifierInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

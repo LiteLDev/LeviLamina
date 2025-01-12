@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class CookieAckChunk {
 public:
-    // prevent constructor by default
-    CookieAckChunk& operator=(CookieAckChunk const&);
-    CookieAckChunk(CookieAckChunk const&);
-    CookieAckChunk();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::dcsctp::CookieAckChunk> Parse(::rtc::ArrayView<uchar const>);

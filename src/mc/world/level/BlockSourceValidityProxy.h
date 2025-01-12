@@ -13,12 +13,6 @@ class Player;
 
 class BlockSourceValidityProxy : public ::IBlockSourceValidityProxy {
 public:
-    // prevent constructor by default
-    BlockSourceValidityProxy& operator=(BlockSourceValidityProxy const&);
-    BlockSourceValidityProxy(BlockSourceValidityProxy const&);
-    BlockSourceValidityProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

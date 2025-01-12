@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RTCRemoteIceCandidateStats {
 public:
-    // prevent constructor by default
-    RTCRemoteIceCandidateStats& operator=(RTCRemoteIceCandidateStats const&);
-    RTCRemoteIceCandidateStats(RTCRemoteIceCandidateStats const&);
-    RTCRemoteIceCandidateStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCRemoteIceCandidateStats(::std::string, ::webrtc::Timestamp);

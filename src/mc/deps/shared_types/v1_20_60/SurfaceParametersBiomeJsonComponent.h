@@ -42,7 +42,7 @@ public:
 
     MCAPI SurfaceParametersBiomeJsonComponent(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent&
+    MCFOLD ::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent&&);
     // NOLINTEND
 
@@ -63,9 +63,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent const&);
+    MCFOLD void* $ctor(::SharedTypes::v1_20_60::SurfaceParametersBiomeJsonComponent const&);
     // NOLINTEND
 
 public:

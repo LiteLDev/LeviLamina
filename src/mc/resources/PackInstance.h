@@ -75,7 +75,7 @@ public:
 
     MCAPI ::PackStats const& getPackStats() const;
 
-    MCAPI ::PackStats& getPackStats();
+    MCFOLD ::PackStats& getPackStats();
 
     MCAPI ::Core::PathBuffer<::std::string> const& getRelativePathWithinZip() const;
 

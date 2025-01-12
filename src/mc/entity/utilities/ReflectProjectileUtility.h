@@ -15,11 +15,11 @@ class RenderParams;
 namespace ReflectProjectileUtility {
 // functions
 // NOLINTBEGIN
-MCAPI float evalAzimuthReflectionAngle(::RenderParams& renderParams, ::ExpressionNode const& azimuthAngle);
+MCFOLD float evalAzimuthReflectionAngle(::RenderParams& renderParams, ::ExpressionNode const& azimuthAngle);
 
-MCAPI float evalElevationReflectionAngle(::RenderParams& renderParams, ::ExpressionNode const& elevationAngle);
+MCFOLD float evalElevationReflectionAngle(::RenderParams& renderParams, ::ExpressionNode const& elevationAngle);
 
-MCAPI float evalReflectionScale(::RenderParams& renderParams, ::ExpressionNode const& reflectionScale);
+MCFOLD float evalReflectionScale(::RenderParams& renderParams, ::ExpressionNode const& reflectionScale);
 
 MCAPI ::SharedTypes::Legacy::LevelSoundEvent getReflectionSoundEvent(::std::string const& soundName);
 

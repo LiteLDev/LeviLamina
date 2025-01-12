@@ -8,12 +8,6 @@
 
 class NullPreliminarySurfaceProvider : public ::IPreliminarySurfaceProvider {
 public:
-    // prevent constructor by default
-    NullPreliminarySurfaceProvider& operator=(NullPreliminarySurfaceProvider const&);
-    NullPreliminarySurfaceProvider(NullPreliminarySurfaceProvider const&);
-    NullPreliminarySurfaceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -11,11 +11,6 @@ namespace webrtc {
 
 class JsepCandidateCollection {
 public:
-    // prevent constructor by default
-    JsepCandidateCollection& operator=(JsepCandidateCollection const&);
-    JsepCandidateCollection(JsepCandidateCollection const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::JsepCandidateCollection Clone() const;

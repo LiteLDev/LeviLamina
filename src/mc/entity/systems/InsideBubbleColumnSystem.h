@@ -15,19 +15,7 @@ public:
     // clang-format on
 
     // InsideBubbleColumnSystem inner types define
-    struct SpawnBubblesVisitor {
-    public:
-        // prevent constructor by default
-        SpawnBubblesVisitor& operator=(SpawnBubblesVisitor const&);
-        SpawnBubblesVisitor(SpawnBubblesVisitor const&);
-        SpawnBubblesVisitor();
-    };
-
-public:
-    // prevent constructor by default
-    InsideBubbleColumnSystem& operator=(InsideBubbleColumnSystem const&);
-    InsideBubbleColumnSystem(InsideBubbleColumnSystem const&);
-    InsideBubbleColumnSystem();
+    struct SpawnBubblesVisitor {};
 
 public:
     // static functions

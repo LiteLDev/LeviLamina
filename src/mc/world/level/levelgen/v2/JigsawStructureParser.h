@@ -23,12 +23,6 @@ namespace br::worldgen { struct StructureSet; }
 
 struct JigsawStructureParser {
 public:
-    // prevent constructor by default
-    JigsawStructureParser& operator=(JigsawStructureParser const&);
-    JigsawStructureParser(JigsawStructureParser const&);
-    JigsawStructureParser();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::br::worldgen::JigsawStructure> prepareJigsawDefinitionData(

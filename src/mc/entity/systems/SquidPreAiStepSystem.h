@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class SquidPreAiStepSystem {
 public:
-    // prevent constructor by default
-    SquidPreAiStepSystem& operator=(SquidPreAiStepSystem const&);
-    SquidPreAiStepSystem(SquidPreAiStepSystem const&);
-    SquidPreAiStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

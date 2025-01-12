@@ -20,10 +20,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
+    MCFOLD ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot const&);
 
     MCAPI ~AppendLoot();
@@ -32,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

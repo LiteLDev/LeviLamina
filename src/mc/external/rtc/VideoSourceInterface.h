@@ -5,12 +5,6 @@
 namespace rtc {
 
 template <typename T0>
-class VideoSourceInterface {
-public:
-    // prevent constructor by default
-    VideoSourceInterface& operator=(VideoSourceInterface const&);
-    VideoSourceInterface(VideoSourceInterface const&);
-    VideoSourceInterface();
-};
+class VideoSourceInterface {};
 
 } // namespace rtc

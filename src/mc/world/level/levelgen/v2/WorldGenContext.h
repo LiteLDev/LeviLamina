@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int maxHeight() const;
+    MCFOLD int maxHeight() const;
 
-    MCAPI int minHeight() const;
+    MCFOLD int minHeight() const;
     // NOLINTEND
 
 public:

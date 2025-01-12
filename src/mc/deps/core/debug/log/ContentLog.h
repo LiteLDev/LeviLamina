@@ -88,7 +88,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::gsl::not_null<::ContentLogEndPoint*> contentLogEndPoint);
+        MCFOLD void* $ctor(::gsl::not_null<::ContentLogEndPoint*> contentLogEndPoint);
         // NOLINTEND
     };
 
@@ -154,7 +154,7 @@ public:
 
     MCAPI ::std::string getScope();
 
-    MCAPI bool isEnabled() const;
+    MCFOLD bool isEnabled() const;
 
     MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
 

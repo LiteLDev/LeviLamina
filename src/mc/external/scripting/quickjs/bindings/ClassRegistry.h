@@ -30,13 +30,7 @@ public:
     // clang-format on
 
     // ClassRegistry inner types define
-    struct TypeHash {
-    public:
-        // prevent constructor by default
-        TypeHash& operator=(TypeHash const&);
-        TypeHash(TypeHash const&);
-        TypeHash();
-    };
+    struct TypeHash {};
 
 public:
     // member variables

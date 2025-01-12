@@ -29,13 +29,13 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool getIsExperienceDropEnabled() const;
+    MCFOLD bool getIsExperienceDropEnabled() const;
 
     MCAPI int getOnDeathExperience(::Actor& owner) const;
 
     MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void setIsExperienceDropEnabled(bool isExperienceDropEnabled);
+    MCFOLD void setIsExperienceDropEnabled(bool isExperienceDropEnabled);
 
     MCAPI ~ExperienceRewardComponent();
     // NOLINTEND

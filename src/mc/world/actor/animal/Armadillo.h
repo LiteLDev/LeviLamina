@@ -16,12 +16,6 @@ struct ActorDefinitionIdentifier;
 
 class Armadillo : public ::Animal {
 public:
-    // prevent constructor by default
-    Armadillo& operator=(Armadillo const&);
-    Armadillo(Armadillo const&);
-    Armadillo();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 36

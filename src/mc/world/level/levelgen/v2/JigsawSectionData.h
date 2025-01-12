@@ -47,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::JigsawSectionData&&);
+    MCFOLD void* $ctor(::br::worldgen::JigsawSectionData&&);
 
     MCAPI void* $ctor(::br::worldgen::JigsawSectionData const&);
     // NOLINTEND

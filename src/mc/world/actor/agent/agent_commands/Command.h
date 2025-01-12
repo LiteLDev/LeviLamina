@@ -51,7 +51,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $execute();
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
     MCAPI void $fireCommandDoneEvent();
     // NOLINTEND

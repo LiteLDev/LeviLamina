@@ -45,7 +45,7 @@ public:
 
     MCAPI void clearTargetGoals();
 
-    MCAPI ::std::vector<::std::pair<ushort, ::PrioritizedGoal>>& getGoalMap();
+    MCFOLD ::std::vector<::std::pair<ushort, ::PrioritizedGoal>>& getGoalMap();
 
     MCAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 

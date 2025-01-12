@@ -65,7 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCFOLD ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string $getName() const;
 

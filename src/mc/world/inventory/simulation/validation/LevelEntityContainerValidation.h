@@ -13,12 +13,6 @@ class ContainerScreenContext;
 
 class LevelEntityContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    LevelEntityContainerValidation& operator=(LevelEntityContainerValidation const&);
-    LevelEntityContainerValidation(LevelEntityContainerValidation const&);
-    LevelEntityContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

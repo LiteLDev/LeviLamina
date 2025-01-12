@@ -11,12 +11,6 @@ namespace ScriptModuleMinecraft {
 
 class IScriptEventSignalAsync {
 public:
-    // prevent constructor by default
-    IScriptEventSignalAsync& operator=(IScriptEventSignalAsync const&);
-    IScriptEventSignalAsync(IScriptEventSignalAsync const&);
-    IScriptEventSignalAsync();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -50,11 +44,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getSubscriberCount() const;
+    MCFOLD uint64 $getSubscriberCount() const;
 
-    MCAPI void $enqueueClosureRemovalForActor(::ActorUniqueID const&);
+    MCFOLD void $enqueueClosureRemovalForActor(::ActorUniqueID const&);
 
-    MCAPI bool $isActorSignal() const;
+    MCFOLD bool $isActorSignal() const;
     // NOLINTEND
 };
 

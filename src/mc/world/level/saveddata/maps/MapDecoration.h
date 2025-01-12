@@ -67,17 +67,17 @@ public:
         ::mce::Color const&   color
     );
 
-    MCAPI ::mce::Color const& getColor() const;
+    MCFOLD ::mce::Color const& getColor() const;
 
-    MCAPI ::MapDecoration::Type getImg() const;
+    MCFOLD ::MapDecoration::Type getImg() const;
 
-    MCAPI ::std::string const& getLabel() const;
+    MCFOLD ::std::string const& getLabel() const;
 
-    MCAPI schar getRot() const;
+    MCFOLD schar getRot() const;
 
-    MCAPI schar getX() const;
+    MCFOLD schar getX() const;
 
-    MCAPI schar getY() const;
+    MCFOLD schar getY() const;
 
     MCAPI ~MapDecoration();
     // NOLINTEND
@@ -98,6 +98,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

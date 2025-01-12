@@ -35,12 +35,6 @@ struct ItemNotificationEvent : public ::EventVariantImpl<
                                    ::ItemReleaseUseEvent const,
                                    ::ItemStopUseEvent const> {
 public:
-    // prevent constructor by default
-    ItemNotificationEvent& operator=(ItemNotificationEvent const&);
-    ItemNotificationEvent(ItemNotificationEvent const&);
-    ItemNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ItemNotificationEvent();

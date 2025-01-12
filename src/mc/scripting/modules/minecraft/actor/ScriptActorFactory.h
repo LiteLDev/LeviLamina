@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorFactory {
 public:
-    // prevent constructor by default
-    ScriptActorFactory& operator=(ScriptActorFactory const&);
-    ScriptActorFactory(ScriptActorFactory const&);
-    ScriptActorFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _processCreatedHandle(

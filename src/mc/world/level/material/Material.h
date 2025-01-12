@@ -35,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getBlocksMotion() const;
+    MCFOLD bool getBlocksMotion() const;
 
-    MCAPI bool getBlocksPrecipitation() const;
+    MCFOLD bool getBlocksPrecipitation() const;
 
-    MCAPI bool isLiquid() const;
+    MCFOLD bool isLiquid() const;
 
-    MCAPI bool isSolid() const;
+    MCFOLD bool isSolid() const;
 
     MCAPI bool isSolidBlocking() const;
 
-    MCAPI bool isSuperHot() const;
+    MCFOLD bool isSuperHot() const;
 
     MCAPI bool isTopSolid(bool includeWater, bool includeLeaves) const;
 

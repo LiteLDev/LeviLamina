@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class LegacyStatsCollectorInterface {
-public:
-    // prevent constructor by default
-    LegacyStatsCollectorInterface& operator=(LegacyStatsCollectorInterface const&);
-    LegacyStatsCollectorInterface(LegacyStatsCollectorInterface const&);
-    LegacyStatsCollectorInterface();
-};
+class LegacyStatsCollectorInterface {};
 
 } // namespace webrtc

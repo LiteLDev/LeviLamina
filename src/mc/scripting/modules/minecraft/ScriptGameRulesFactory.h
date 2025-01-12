@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptGameRulesFactory {
 public:
-    // prevent constructor by default
-    ScriptGameRulesFactory& operator=(ScriptGameRulesFactory const&);
-    ScriptGameRulesFactory(ScriptGameRulesFactory const&);
-    ScriptGameRulesFactory();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRules>

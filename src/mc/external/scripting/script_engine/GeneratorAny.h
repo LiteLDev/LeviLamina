@@ -51,21 +51,21 @@ public:
 
     MCAPI ::Scripting::ResultAny nextGeneric(::entt::meta_any& argAny, ::entt::meta_type expectedReturnType) const;
 
-    MCAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny const& rhs);
+    MCFOLD ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny const& rhs);
 
-    MCAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny&& rhs);
+    MCFOLD ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny&& rhs);
 
-    MCAPI bool valid() const;
+    MCFOLD bool valid() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::GeneratorAny const& rhs);
+    MCFOLD void* $ctor(::Scripting::GeneratorAny const& rhs);
 
-    MCAPI void* $ctor(::Scripting::GeneratorAny&& rhs);
+    MCFOLD void* $ctor(::Scripting::GeneratorAny&& rhs);
 
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Scripting::IRuntime*                                                  runtime,
         ::Scripting::ContextId                                                  contextId,
         ::Scripting::WeakLifetimeScope                                          scope,

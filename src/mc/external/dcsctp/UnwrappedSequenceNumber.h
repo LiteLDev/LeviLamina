@@ -5,12 +5,6 @@
 namespace dcsctp {
 
 template <typename T0>
-class UnwrappedSequenceNumber {
-public:
-    // prevent constructor by default
-    UnwrappedSequenceNumber& operator=(UnwrappedSequenceNumber const&);
-    UnwrappedSequenceNumber(UnwrappedSequenceNumber const&);
-    UnwrappedSequenceNumber();
-};
+class UnwrappedSequenceNumber {};
 
 } // namespace dcsctp

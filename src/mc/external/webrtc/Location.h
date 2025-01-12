@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class Location {
-public:
-    // prevent constructor by default
-    Location& operator=(Location const&);
-    Location(Location const&);
-    Location();
-};
+class Location {};
 
 } // namespace webrtc

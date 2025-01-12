@@ -141,7 +141,7 @@ LL_TYPE_INSTANCE_HOOK(
 ) {
     std::string_view dataView{data, dataSize};
     if (dataView.contains("MCPE;")) {
-        auto modified = fmt::format("{}LeviLamina;{};", dataView, getLoaderVersion().to_string());
+        auto modified = fmt::format("{}LeviLamina;", dataView);
         return origin(modified.c_str(), (uint)modified.size());
     }
     return origin(data, dataSize);

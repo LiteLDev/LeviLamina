@@ -123,7 +123,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCFOLD bool $canUse();
 
     MCAPI bool $canContinueToUse();
 

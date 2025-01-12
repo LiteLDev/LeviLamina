@@ -11,12 +11,6 @@ namespace RakNet {
 
 class IncrementalReadInterface {
 public:
-    // prevent constructor by default
-    IncrementalReadInterface& operator=(IncrementalReadInterface const&);
-    IncrementalReadInterface(IncrementalReadInterface const&);
-    IncrementalReadInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

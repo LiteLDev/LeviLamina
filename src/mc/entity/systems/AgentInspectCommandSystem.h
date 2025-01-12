@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class AgentInspectCommandSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgentInspectCommandSystem& operator=(AgentInspectCommandSystem const&);
-    AgentInspectCommandSystem(AgentInspectCommandSystem const&);
-    AgentInspectCommandSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

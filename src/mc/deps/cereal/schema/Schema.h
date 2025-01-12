@@ -39,9 +39,9 @@ public:
 
     MCAPI ::std::vector<::std::string> getErrors() const;
 
-    MCAPI ::std::vector<::cereal::SerializerContext::LogEntry> const& getLog() const;
+    MCFOLD ::std::vector<::cereal::SerializerContext::LogEntry> const& getLog() const;
 
-    MCAPI bool isDefined() const;
+    MCFOLD bool isDefined() const;
 
     MCAPI bool load(::cereal::SchemaReader& reader, ::entt::meta_handle data, ::entt::meta_any const& loadContext);
 

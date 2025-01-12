@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     MCAPI StructureTelemetryServerData();
 
-    MCAPI bool hasBeenActivatedByRedstone();
+    MCFOLD bool hasBeenActivatedByRedstone();
 
-    MCAPI void setHasBeenActivedByRedstone();
+    MCFOLD void setHasBeenActivedByRedstone();
     // NOLINTEND
 
 public:

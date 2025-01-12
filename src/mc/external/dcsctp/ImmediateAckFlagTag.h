@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class ImmediateAckFlagTag {
-public:
-    // prevent constructor by default
-    ImmediateAckFlagTag& operator=(ImmediateAckFlagTag const&);
-    ImmediateAckFlagTag(ImmediateAckFlagTag const&);
-    ImmediateAckFlagTag();
-};
+class ImmediateAckFlagTag {};
 
 } // namespace dcsctp

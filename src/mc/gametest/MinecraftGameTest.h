@@ -55,15 +55,15 @@ public:
 
     MCAPI void clearAllTests(::BlockSource& region);
 
-    MCAPI ::gametest::GameTestRegistry& getRegistry();
+    MCFOLD ::gametest::GameTestRegistry& getRegistry();
 
-    MCAPI ::gametest::GameTestTicker& getTicker();
+    MCFOLD ::gametest::GameTestTicker& getTicker();
 
     MCAPI void loadExistingTests(::Level& level);
 
     MCAPI void registerDefaultGameBatches(::Level& level);
 
-    MCAPI void registerNativeGameTests();
+    MCFOLD void registerNativeGameTests();
 
     MCAPI ::std::string
     runTest(::std::string const& testName, ::Dimension& dimension, ::gametest::TestParameters const& params);

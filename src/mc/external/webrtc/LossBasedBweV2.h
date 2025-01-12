@@ -22,20 +22,9 @@ public:
     // clang-format on
 
     // LossBasedBweV2 inner types define
-    struct ChannelParameters {
-    public:
-        // prevent constructor by default
-        ChannelParameters& operator=(ChannelParameters const&);
-        ChannelParameters(ChannelParameters const&);
-        ChannelParameters();
-    };
+    struct ChannelParameters {};
 
     struct Config {
-    public:
-        // prevent constructor by default
-        Config& operator=(Config const&);
-        Config(Config const&);
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -53,27 +42,9 @@ public:
         // NOLINTEND
     };
 
-    struct Derivatives {
-    public:
-        // prevent constructor by default
-        Derivatives& operator=(Derivatives const&);
-        Derivatives(Derivatives const&);
-        Derivatives();
-    };
+    struct Derivatives {};
 
-    struct Result {
-    public:
-        // prevent constructor by default
-        Result& operator=(Result const&);
-        Result(Result const&);
-        Result();
-    };
-
-public:
-    // prevent constructor by default
-    LossBasedBweV2& operator=(LossBasedBweV2 const&);
-    LossBasedBweV2(LossBasedBweV2 const&);
-    LossBasedBweV2();
+    struct Result {};
 
 public:
     // member functions

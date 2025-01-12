@@ -94,11 +94,11 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int, int);
+    MCFOLD void $setData(int, int);
 
     MCAPI bool $isValid(float pickRange);
 
-    MCAPI void $broadcastChanges();
+    MCFOLD void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND

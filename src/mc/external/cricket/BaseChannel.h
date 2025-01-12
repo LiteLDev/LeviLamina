@@ -26,12 +26,6 @@ namespace cricket {
 
 class BaseChannel {
 public:
-    // prevent constructor by default
-    BaseChannel& operator=(BaseChannel const&);
-    BaseChannel(BaseChannel const&);
-    BaseChannel();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

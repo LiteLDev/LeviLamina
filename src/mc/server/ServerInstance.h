@@ -306,15 +306,15 @@ public:
 
     MCAPI void $onCriticalScriptError(char const* clientDisconnectMessage, char const* logMessage);
 
-    MCAPI void $onGameModeChanged();
+    MCFOLD void $onGameModeChanged();
 
-    MCAPI void $onTick(int nTick, int maxTick);
+    MCFOLD void $onTick(int nTick, int maxTick);
 
-    MCAPI void $onInternetUpdate();
+    MCFOLD void $onInternetUpdate();
 
-    MCAPI void $onGameSessionReset();
+    MCFOLD void $onGameSessionReset();
 
-    MCAPI void $onLevelExit();
+    MCFOLD void $onLevelExit();
 
     MCAPI void $onRequestResourceReload();
 
@@ -328,7 +328,7 @@ public:
 
     MCAPI void $onAppResumed();
 
-    MCAPI void $updateScreens();
+    MCFOLD void $updateScreens();
     // NOLINTEND
 
 public:

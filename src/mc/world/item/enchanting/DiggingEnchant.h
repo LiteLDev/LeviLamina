@@ -7,12 +7,6 @@
 
 class DiggingEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    DiggingEnchant& operator=(DiggingEnchant const&);
-    DiggingEnchant(DiggingEnchant const&);
-    DiggingEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -48,7 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCFOLD int $getMaxCost(int level) const;
 
     MCAPI int $getMaxLevel() const;
 

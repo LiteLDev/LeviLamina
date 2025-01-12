@@ -73,7 +73,7 @@ public:
 
     MCAPI void _tryConsumeOnDeathExperience(::Level& level, ::Actor& actor);
 
-    MCAPI ::SculkSpreader& getSculkSpreader();
+    MCFOLD ::SculkSpreader& getSculkSpreader();
     // NOLINTEND
 
 public:
@@ -110,11 +110,11 @@ public:
     MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
-    MCAPI ::GameEvents::PositionSource const& $getPositionSource() const;
+    MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
 
-    MCAPI uint $getRange() const;
+    MCFOLD uint $getRange() const;
 
-    MCAPI ::GameEventListener::DeliveryMode $getDeliveryMode() const;
+    MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
 
 public:

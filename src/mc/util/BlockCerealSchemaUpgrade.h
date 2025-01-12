@@ -12,12 +12,6 @@ class SemVersion;
 
 class BlockCerealSchemaUpgrade : public ::CerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockCerealSchemaUpgrade& operator=(BlockCerealSchemaUpgrade const&);
-    BlockCerealSchemaUpgrade(BlockCerealSchemaUpgrade const&);
-    BlockCerealSchemaUpgrade();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -44,7 +38,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

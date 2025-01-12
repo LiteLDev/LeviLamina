@@ -118,7 +118,7 @@ public:
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCAPI ::cereal::ReflectionCtx const& ctx() const;
+    MCFOLD ::cereal::ReflectionCtx const& ctx() const;
 
     MCAPI void ignore(::std::vector<::std::string> source);
 

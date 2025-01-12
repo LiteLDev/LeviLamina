@@ -50,11 +50,11 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> const& promiseHandle
     );
 
-    MCAPI ::std::optional<::Scripting::TypedObjectHandle<::Scripting::PromiseType>> getPromiseHandle() const;
+    MCFOLD ::std::optional<::Scripting::TypedObjectHandle<::Scripting::PromiseType>> getPromiseHandle() const;
 
-    MCAPI ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny&& rhs);
+    MCFOLD ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny&& rhs);
 
-    MCAPI ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny const& rhs);
+    MCFOLD ::Scripting::PromiseAny& operator=(::Scripting::PromiseAny const& rhs);
 
     MCAPI ::Scripting::ResultAny rejectGeneric(::entt::meta_any& any) const;
 
@@ -64,11 +64,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::PromiseAny&& rhs);
+    MCFOLD void* $ctor(::Scripting::PromiseAny&& rhs);
 
-    MCAPI void* $ctor(::Scripting::PromiseAny const& rhs);
+    MCFOLD void* $ctor(::Scripting::PromiseAny const& rhs);
 
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::Scripting::IRuntime*                                                runtime,
         ::Scripting::ContextId                                                contextId,
         ::Scripting::WeakLifetimeScope                                        scope,

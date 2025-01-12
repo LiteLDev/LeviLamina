@@ -26,12 +26,6 @@ struct WasOnGroundFlagComponent;
 
 class ServerPlayerFallDamageSystem {
 public:
-    // prevent constructor by default
-    ServerPlayerFallDamageSystem& operator=(ServerPlayerFallDamageSystem const&);
-    ServerPlayerFallDamageSystem(ServerPlayerFallDamageSystem const&);
-    ServerPlayerFallDamageSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doServerPlayerFallDamageSystem(

@@ -13,12 +13,6 @@ namespace webrtc {
 
 class AlrDetector {
 public:
-    // prevent constructor by default
-    AlrDetector& operator=(AlrDetector const&);
-    AlrDetector(AlrDetector const&);
-    AlrDetector();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI AlrDetector(::webrtc::FieldTrialsView const*, ::webrtc::RtcEventLog*);

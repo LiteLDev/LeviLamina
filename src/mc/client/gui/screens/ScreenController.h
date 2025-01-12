@@ -45,13 +45,7 @@ public:
         NotUp   = 4,
     };
 
-    struct ButtonEventCallbackKeyHasher {
-    public:
-        // prevent constructor by default
-        ButtonEventCallbackKeyHasher& operator=(ButtonEventCallbackKeyHasher const&);
-        ButtonEventCallbackKeyHasher(ButtonEventCallbackKeyHasher const&);
-        ButtonEventCallbackKeyHasher();
-    };
+    struct ButtonEventCallbackKeyHasher {};
 
 public:
     // member variables

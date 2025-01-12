@@ -14,12 +14,6 @@ class ResourceLocationPair;
 
 class AppResourceLoader : public ::ResourceLoader {
 public:
-    // prevent constructor by default
-    AppResourceLoader& operator=(AppResourceLoader const&);
-    AppResourceLoader(AppResourceLoader const&);
-    AppResourceLoader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

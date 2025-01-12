@@ -13,12 +13,6 @@ class Player;
 
 class Inventory : public ::FillingContainer {
 public:
-    // prevent constructor by default
-    Inventory& operator=(Inventory const&);
-    Inventory(Inventory const&);
-    Inventory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -88,7 +82,7 @@ public:
 
     MCAPI void $setContainerSize(int size);
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
     // NOLINTEND

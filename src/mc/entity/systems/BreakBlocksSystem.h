@@ -14,12 +14,6 @@ class EntityRegistry;
 
 class BreakBlocksSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BreakBlocksSystem& operator=(BreakBlocksSystem const&);
-    BreakBlocksSystem(BreakBlocksSystem const&);
-    BreakBlocksSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

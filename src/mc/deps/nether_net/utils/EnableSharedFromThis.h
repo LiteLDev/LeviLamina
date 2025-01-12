@@ -5,12 +5,6 @@
 namespace NetherNet {
 
 template <typename T0>
-class EnableSharedFromThis {
-public:
-    // prevent constructor by default
-    EnableSharedFromThis& operator=(EnableSharedFromThis const&);
-    EnableSharedFromThis(EnableSharedFromThis const&);
-    EnableSharedFromThis();
-};
+class EnableSharedFromThis {};
 
 } // namespace NetherNet

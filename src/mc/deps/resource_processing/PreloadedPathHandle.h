@@ -32,7 +32,7 @@ public:
 
     MCAPI void forEach(::brstd::function_ref<void(::Core::Path const&)> callback) const;
 
-    MCAPI explicit operator bool() const;
+    MCFOLD explicit operator bool() const;
 
     MCAPI ~PreloadedPathHandle();
     // NOLINTEND
@@ -46,7 +46,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

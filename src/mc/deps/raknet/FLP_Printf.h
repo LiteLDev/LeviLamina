@@ -15,12 +15,6 @@ namespace RakNet {
 
 class FLP_Printf : public ::RakNet::FileListProgress {
 public:
-    // prevent constructor by default
-    FLP_Printf& operator=(FLP_Printf const&);
-    FLP_Printf(FLP_Printf const&);
-    FLP_Printf();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

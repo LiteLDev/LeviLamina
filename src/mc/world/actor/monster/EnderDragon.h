@@ -209,13 +209,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $remove();
 
     MCAPI void $setSitting(bool value);
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCFOLD bool $canBeAffected(uint id) const;
 
     MCAPI bool $isImmobile() const;
 
@@ -229,7 +229,7 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool $canBePulledIntoVehicle() const;
+    MCFOLD bool $canBePulledIntoVehicle() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

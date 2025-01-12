@@ -1,20 +1,26 @@
 #include "ll/core/command/BuiltinCommands.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/server/commands/ServerCommands.h"
-#include "mc/server/commands/standard/TeleportCommand.h"
+#include "mc/server/DedicatedServerCommands.h"
 #include "mc/world/events/ServerInstanceEventCoordinator.h"
 
+
 namespace ll::command {
-LL_TYPE_INSTANCE_HOOK(
+LL_TYPE_STATIC_HOOK(
     RegisterBuiltinCommands,
     ll::memory::HookPriority::Highest,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
+    DedicatedServerCommands,
+    &DedicatedServerCommands::setupStandaloneServer,
     void,
-    ::ServerInstance& ins
+    ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft,
+    ::IMinecraftApp&                                  app,
+    ::Level&                                          level,
+    ::LevelStorage&                                   levelStorage,
+    ::DedicatedServer&                                dedicatedServer,
+    ::AllowListFile&                                  allowListFile,
+    ::ScriptSettings*                                 scriptSettings
 ) {
-    origin(ins);
+    origin(minecraft, app, level, levelStorage, dedicatedServer, allowListFile, scriptSettings);
     registerTpdimCommand();
     registerVersionCommand();
     registerMemstatsCommand();

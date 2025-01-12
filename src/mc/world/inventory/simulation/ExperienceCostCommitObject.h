@@ -48,7 +48,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $append(::ContainerValidationCommitObject* other);
+    MCFOLD bool $append(::ContainerValidationCommitObject* other);
 
     MCAPI bool $canCommit(::ContainerScreenContext const& screenContext) const;
 

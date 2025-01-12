@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI GiveableTrigger(::GiveableTrigger const&);
 
-    MCAPI void addItem(::ItemDescriptor const& itemDescriptor);
+    MCFOLD void addItem(::ItemDescriptor const& itemDescriptor);
 
     MCAPI ~GiveableTrigger();
     // NOLINTEND

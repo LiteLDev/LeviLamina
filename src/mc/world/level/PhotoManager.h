@@ -57,7 +57,7 @@ public:
 
     MCAPI ::PhotoStorage& getPhotoStorage();
 
-    MCAPI ::Core::PathBuffer<::std::string> const& getScreenshotsFolder() const;
+    MCFOLD ::Core::PathBuffer<::std::string> const& getScreenshotsFolder() const;
 
     MCAPI void
     takePicture(::cg::ImageBuffer& outImage, ::Actor* camera, ::Actor* target, ::ScreenshotOptions& screenshotOptions);
@@ -78,7 +78,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&)>&
     $getPictureTakenConnector();
     // NOLINTEND
 

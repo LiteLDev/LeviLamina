@@ -4,12 +4,6 @@
 
 namespace Social {
 
-struct PlatformUserProfileData {
-public:
-    // prevent constructor by default
-    PlatformUserProfileData& operator=(PlatformUserProfileData const&);
-    PlatformUserProfileData(PlatformUserProfileData const&);
-    PlatformUserProfileData();
-};
+struct PlatformUserProfileData {};
 
 } // namespace Social

@@ -22,9 +22,9 @@ public:
 
     MCAPI bool hasDelay() const;
 
-    MCAPI bool isDone() const;
+    MCFOLD bool isDone() const;
 
-    MCAPI bool isWaiting() const;
+    MCFOLD bool isWaiting() const;
 
     MCAPI ~TaskResult();
     // NOLINTEND
@@ -52,6 +52,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

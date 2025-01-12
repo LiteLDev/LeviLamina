@@ -14,11 +14,6 @@ namespace Editor::Network {
 
 class RedoOperationPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::RedoOperationPayload> {
 public:
-    // prevent constructor by default
-    RedoOperationPayload& operator=(RedoOperationPayload const&);
-    RedoOperationPayload(RedoOperationPayload const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

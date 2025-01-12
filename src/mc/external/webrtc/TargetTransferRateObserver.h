@@ -12,12 +12,6 @@ namespace webrtc {
 
 class TargetTransferRateObserver {
 public:
-    // prevent constructor by default
-    TargetTransferRateObserver& operator=(TargetTransferRateObserver const&);
-    TargetTransferRateObserver(TargetTransferRateObserver const&);
-    TargetTransferRateObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

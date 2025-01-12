@@ -14,12 +14,6 @@ class Random;
 
 class DripleafFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    DripleafFeature& operator=(DripleafFeature const&);
-    DripleafFeature(DripleafFeature const&);
-    DripleafFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

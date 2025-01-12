@@ -45,35 +45,35 @@ public:
 
     MCAPI bool getIgnoreBlocks() const;
 
-    MCAPI bool getIgnoreEntities() const;
+    MCFOLD bool getIgnoreEntities() const;
 
-    MCAPI bool getIncludePlayers() const;
+    MCFOLD bool getIncludePlayers() const;
 
-    MCAPI uint getIntegritySeed() const;
+    MCFOLD uint getIntegritySeed() const;
 
-    MCAPI float getIntegrityValue() const;
+    MCFOLD float getIntegrityValue() const;
 
     MCAPI bool getIsWaterLogged() const;
 
-    MCAPI ::Mirror getMirror() const;
+    MCFOLD ::Mirror getMirror() const;
 
-    MCAPI ::Vec3 const& getPivot() const;
+    MCFOLD ::Vec3 const& getPivot() const;
 
-    MCAPI ::StructureRedstoneSaveMode getRedstoneSaveMode() const;
+    MCFOLD ::StructureRedstoneSaveMode getRedstoneSaveMode() const;
 
-    MCAPI ::Rotation getRotation() const;
+    MCFOLD ::Rotation getRotation() const;
 
     MCAPI bool getShowBoundingBox() const;
 
-    MCAPI ::StructureBlockType getStructureBlockType() const;
+    MCFOLD ::StructureBlockType getStructureBlockType() const;
 
-    MCAPI ::std::string const& getStructureName() const;
+    MCFOLD ::std::string const& getStructureName() const;
 
     MCAPI ::BlockPos const& getStructureOffset() const;
 
-    MCAPI ::StructureSettings const& getStructureSettings() const;
+    MCFOLD ::StructureSettings const& getStructureSettings() const;
 
-    MCAPI ::BlockPos const& getStructureSize() const;
+    MCFOLD ::BlockPos const& getStructureSize() const;
 
     MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
@@ -81,9 +81,9 @@ public:
 
     MCAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonTickingPlayerAndTickingAreaChunks);
+    MCFOLD void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonTickingPlayerAndTickingAreaChunks);
 
-    MCAPI void setAnimationMode(::AnimationMode animationMode);
+    MCFOLD void setAnimationMode(::AnimationMode animationMode);
 
     MCAPI void setAnimationSeconds(float animationSeconds);
 
@@ -93,7 +93,7 @@ public:
 
     MCAPI void setIgnoreEntities(bool ignoreEntities);
 
-    MCAPI void setIntegritySeed(uint integritySeed);
+    MCFOLD void setIntegritySeed(uint integritySeed);
 
     MCAPI void setIntegrityValue(float integrityValue);
 
@@ -103,7 +103,7 @@ public:
 
     MCAPI void setMirror(::Mirror mirror);
 
-    MCAPI void setRotation(::Rotation rotation);
+    MCFOLD void setRotation(::Rotation rotation);
 
     MCAPI void setShowBoundingBox(bool showBoundingBox);
 
@@ -153,6 +153,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

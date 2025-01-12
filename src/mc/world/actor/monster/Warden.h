@@ -95,11 +95,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canDisableShield();
+    MCFOLD bool $canDisableShield();
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCFOLD void $onSynchedDataUpdate(int dataId);
 
     MCAPI void $onPush(::Actor& source);
 
@@ -107,7 +107,7 @@ public:
 
     MCAPI void $setTarget(::Actor* entity);
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCFOLD bool $checkSpawnRules(bool);
 
     MCAPI bool $checkSpawnObstruction() const;
 

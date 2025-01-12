@@ -7,12 +7,6 @@
 
 struct NavigationHoverDescription : public ::NavigationDescription {
 public:
-    // prevent constructor by default
-    NavigationHoverDescription& operator=(NavigationHoverDescription const&);
-    NavigationHoverDescription(NavigationHoverDescription const&);
-    NavigationHoverDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -46,9 +46,9 @@ public:
 
         MCAPI ::BlockPosIterator::FromCenter end() const;
 
-        MCAPI bool operator!=(::BlockPosIterator::FromCenter const& other) const;
+        MCFOLD bool operator!=(::BlockPosIterator::FromCenter const& other) const;
 
-        MCAPI ::BlockPos const& operator*();
+        MCFOLD ::BlockPos const& operator*();
 
         MCAPI ::BlockPosIterator::FromCenter& operator++();
         // NOLINTEND
@@ -82,9 +82,9 @@ public:
 
         MCAPI ::BlockPosIterator::ManhattanDistance end() const;
 
-        MCAPI bool operator!=(::BlockPosIterator::ManhattanDistance const& other) const;
+        MCFOLD bool operator!=(::BlockPosIterator::ManhattanDistance const& other) const;
 
-        MCAPI ::BlockPos const& operator*();
+        MCFOLD ::BlockPos const& operator*();
 
         MCAPI ::BlockPosIterator::ManhattanDistance& operator++();
         // NOLINTEND
@@ -122,7 +122,7 @@ public:
 
     MCAPI bool operator!=(::BlockPosIterator const& other) const;
 
-    MCAPI ::BlockPos const& operator*();
+    MCFOLD ::BlockPos const& operator*();
 
     MCAPI ::BlockPosIterator& operator++();
     // NOLINTEND

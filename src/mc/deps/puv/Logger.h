@@ -88,7 +88,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -135,7 +135,7 @@ public:
             ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>>
     getValidationLog(::Puv::Logger::ValidationResultCode mask) const;
 
-    MCAPI bool hasErrors() const;
+    MCFOLD bool hasErrors() const;
 
     MCAPI ::Puv::Logger& log(::Puv::Logger::ValidationResultCode res, ::std::string msg);
 

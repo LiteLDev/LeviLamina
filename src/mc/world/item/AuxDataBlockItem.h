@@ -54,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getLevelDataForAuxValue(int auxValue) const;
+    MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;

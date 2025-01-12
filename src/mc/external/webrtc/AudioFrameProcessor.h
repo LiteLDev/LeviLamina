@@ -11,12 +11,6 @@ namespace webrtc {
 
 class AudioFrameProcessor {
 public:
-    // prevent constructor by default
-    AudioFrameProcessor& operator=(AudioFrameProcessor const&);
-    AudioFrameProcessor(AudioFrameProcessor const&);
-    AudioFrameProcessor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

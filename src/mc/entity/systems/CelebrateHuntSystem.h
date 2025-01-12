@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class CelebrateHuntSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    CelebrateHuntSystem& operator=(CelebrateHuntSystem const&);
-    CelebrateHuntSystem(CelebrateHuntSystem const&);
-    CelebrateHuntSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

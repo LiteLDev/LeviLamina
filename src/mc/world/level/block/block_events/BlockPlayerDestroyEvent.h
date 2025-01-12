@@ -47,9 +47,9 @@ public:
 
     MCAPI void configureRenderParamsForTrigger(::RenderParams& params) const;
 
-    MCAPI ::Player const& getPlayer() const;
+    MCFOLD ::Player const& getPlayer() const;
 
-    MCAPI bool isClientSide() const;
+    MCFOLD bool isClientSide() const;
     // NOLINTEND
 
 public:
@@ -61,13 +61,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockSource const& $getBlockSource() const;
+    MCFOLD ::BlockSource const& $getBlockSource() const;
     // NOLINTEND
 
 public:

@@ -31,9 +31,9 @@ public:
     // NOLINTBEGIN
     MCAPI Attribute(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
 
-    MCAPI ::HashedString const& getName() const;
+    MCFOLD ::HashedString const& getName() const;
 
-    MCAPI ::RedefinitionMode getRedefinitionMode() const;
+    MCFOLD ::RedefinitionMode getRedefinitionMode() const;
     // NOLINTEND
 
 public:

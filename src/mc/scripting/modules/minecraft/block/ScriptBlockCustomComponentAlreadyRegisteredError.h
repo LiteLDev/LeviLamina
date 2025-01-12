@@ -14,13 +14,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptBlockCustomComponentAlreadyRegisteredError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentAlreadyRegisteredError&
-    operator=(ScriptBlockCustomComponentAlreadyRegisteredError const&);
-    ScriptBlockCustomComponentAlreadyRegisteredError(ScriptBlockCustomComponentAlreadyRegisteredError const&);
-    ScriptBlockCustomComponentAlreadyRegisteredError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptBlockCustomComponentAlreadyRegisteredError();
@@ -35,7 +28,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

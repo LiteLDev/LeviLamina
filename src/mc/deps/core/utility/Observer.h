@@ -5,12 +5,6 @@
 namespace Core {
 
 template <typename T0, typename T1>
-class Observer {
-public:
-    // prevent constructor by default
-    Observer& operator=(Observer const&);
-    Observer(Observer const&);
-    Observer();
-};
+class Observer {};
 
 } // namespace Core

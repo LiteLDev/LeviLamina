@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/TickNextTickData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
@@ -34,26 +35,17 @@ public:
     // BlockTickingQueue inner types define
     class BlockTick {
     public:
+        [[nodiscard]] bool operator>(BlockTick const& other) const { return mData > other.mData; }
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk958ddb;
-        ::ll::UntypedStorage<8, 40> mUnk723bc0;
+        bool               mIsRemoved;
+        ::TickNextTickData mData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockTick& operator=(BlockTick const&);
-        BlockTick(BlockTick const&);
-        BlockTick();
     };
 
-    struct HashBlockTick {
-    public:
-        // prevent constructor by default
-        HashBlockTick& operator=(HashBlockTick const&);
-        HashBlockTick(HashBlockTick const&);
-        HashBlockTick();
-    };
+    struct HashBlockTick {};
 
     class TickDataSet
     : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {
@@ -68,7 +60,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -137,7 +129,7 @@ public:
 
     MCAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void setOwningChunk(::LevelChunk* owningChunk);
+    MCFOLD void setOwningChunk(::LevelChunk* owningChunk);
 
     MCAPI void tickAllPendingTicks(::BlockSource& region, uint64 maximumTicksAllowed);
 

@@ -23,12 +23,6 @@ struct TickingSystemWithInfo;
 
 class LadderResetFallDamageSystem {
 public:
-    // prevent constructor by default
-    LadderResetFallDamageSystem& operator=(LadderResetFallDamageSystem const&);
-    LadderResetFallDamageSystem(LadderResetFallDamageSystem const&);
-    LadderResetFallDamageSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createLadderResetFallDamageSystem();

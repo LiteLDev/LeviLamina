@@ -13,12 +13,6 @@ struct ExplorationMapData;
 
 class ExplorationMapRegistry {
 public:
-    // prevent constructor by default
-    ExplorationMapRegistry& operator=(ExplorationMapRegistry const&);
-    ExplorationMapRegistry(ExplorationMapRegistry const&);
-    ExplorationMapRegistry();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::array<::ExplorationMapData, 11> const& _getRegistry();

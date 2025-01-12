@@ -13,12 +13,6 @@ class Player;
 
 class IGameplayUserManagerConnector {
 public:
-    // prevent constructor by default
-    IGameplayUserManagerConnector& operator=(IGameplayUserManagerConnector const&);
-    IGameplayUserManagerConnector(IGameplayUserManagerConnector const&);
-    IGameplayUserManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

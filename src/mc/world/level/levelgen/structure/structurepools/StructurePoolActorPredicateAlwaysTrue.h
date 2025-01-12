@@ -12,12 +12,6 @@ namespace Util { class XXHash; }
 
 class StructurePoolActorPredicateAlwaysTrue : public ::IStructurePoolActorPredicate {
 public:
-    // prevent constructor by default
-    StructurePoolActorPredicateAlwaysTrue& operator=(StructurePoolActorPredicateAlwaysTrue const&);
-    StructurePoolActorPredicateAlwaysTrue(StructurePoolActorPredicateAlwaysTrue const&);
-    StructurePoolActorPredicateAlwaysTrue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

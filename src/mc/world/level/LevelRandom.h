@@ -60,11 +60,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::IRandom& $getIRandom();
+    MCFOLD ::IRandom& $getIRandom();
 
-    MCAPI ::Random& $getRandom();
+    MCFOLD ::Random& $getRandom();
 
-    MCAPI ::Random& $getThreadRandom();
+    MCFOLD ::Random& $getThreadRandom();
     // NOLINTEND
 
 public:

@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addExcludeItemByName(::ItemDescriptor const& itemDescriptor);
+    MCFOLD void addExcludeItemByName(::ItemDescriptor const& itemDescriptor);
     // NOLINTEND
 
 public:

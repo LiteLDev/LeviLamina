@@ -14,12 +14,6 @@ struct ActorDefinitionIdentifier;
 
 class ExperiencePotion : public ::Throwable {
 public:
-    // prevent constructor by default
-    ExperiencePotion& operator=(ExperiencePotion const&);
-    ExperiencePotion(ExperiencePotion const&);
-    ExperiencePotion();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 145
@@ -64,9 +58,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getGravity();
+    MCFOLD float $getGravity();
 
-    MCAPI float $getThrowPower();
+    MCFOLD float $getThrowPower();
 
     MCAPI float $getThrowUpAngleOffset();
     // NOLINTEND

@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/FilterSubject.h"
 #include "mc/util/Factory.h"
 #include "mc/world/response/EventResponse.h"
 
 // auto generated forward declare list
 // clang-format off
 class RenderParams;
+struct EffectDuration;
 struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -18,17 +20,11 @@ class MobEffectResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk414b8b;
-    ::ll::UntypedStorage<4, 4>  mUnk96fe55;
-    ::ll::UntypedStorage<4, 4>  mUnk15c4b0;
-    ::ll::UntypedStorage<2, 2>  mUnkd4032f;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mEffect;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>                     mDuration;
+    ::ll::TypedStorage<4, 4, int>                                  mAmplifier;
+    ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectResponse& operator=(MobEffectResponse const&);
-    MobEffectResponse(MobEffectResponse const&);
-    MobEffectResponse();
 
 public:
     // virtual functions

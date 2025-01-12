@@ -101,7 +101,7 @@ public:
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -180,9 +180,9 @@ public:
 
         MCAPI void $update();
 
-        MCAPI bool $isLocal() const;
+        MCFOLD bool $isLocal() const;
 
-        MCAPI bool $isEncrypted() const;
+        MCFOLD bool $isEncrypted() const;
         // NOLINTEND
 
     public:
@@ -370,7 +370,7 @@ public:
 
     MCAPI ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
 
-    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
     MCAPI bool $isIPv4Supported() const;
 
@@ -382,11 +382,11 @@ public:
 
     MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCAPI ::RakNet::RakPeerInterface* $getPeer();
+    MCFOLD ::RakNet::RakPeerInterface* $getPeer();
 
-    MCAPI ::RakNet::RakPeerInterface const* $getPeer() const;
+    MCFOLD ::RakNet::RakPeerInterface const* $getPeer() const;
 
-    MCAPI ::TransportLayer $getNetworkType() const;
+    MCFOLD ::TransportLayer $getNetworkType() const;
 
     MCAPI void $_onDisable();
 

@@ -34,7 +34,7 @@ public:
 
     MCAPI void destroyNetworkSession();
 
-    MCAPI bool hasNetworkSession() const;
+    MCFOLD bool hasNetworkSession() const;
     // NOLINTEND
 
 public:

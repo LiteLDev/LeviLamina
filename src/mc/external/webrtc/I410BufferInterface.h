@@ -10,12 +10,6 @@ namespace webrtc {
 
 class I410BufferInterface : public ::webrtc::PlanarYuv16BBuffer {
 public:
-    // prevent constructor by default
-    I410BufferInterface& operator=(I410BufferInterface const&);
-    I410BufferInterface(I410BufferInterface const&);
-    I410BufferInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

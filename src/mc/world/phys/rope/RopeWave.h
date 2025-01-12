@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct RopeWave {
 public:
     // RopeWave inner types define
@@ -13,17 +18,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk9e6388;
-    ::ll::UntypedStorage<4, 4>  mUnk4b458c;
-    ::ll::UntypedStorage<4, 4>  mUnkf82952;
-    ::ll::UntypedStorage<8, 8>  mUnk7bd9c0;
-    ::ll::UntypedStorage<4, 4>  mUnk7f88f8;
-    ::ll::UntypedStorage<4, 4>  mUnk358ce3;
+    ::ll::TypedStorage<4, 12, ::Vec3>               mForce;
+    ::ll::TypedStorage<4, 4, float>                 mSpeed;
+    ::ll::TypedStorage<4, 4, float>                 mDamping;
+    ::ll::TypedStorage<8, 8, uint64>                mCurNode;
+    ::ll::TypedStorage<4, 4, float>                 mDistAlongNode;
+    ::ll::TypedStorage<4, 4, ::RopeWave::Direction> mDir;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RopeWave& operator=(RopeWave const&);
-    RopeWave(RopeWave const&);
-    RopeWave();
 };

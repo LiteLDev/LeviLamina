@@ -11,12 +11,6 @@ class ChunkPos;
 
 class BlockVolumeBase {
 public:
-    // prevent constructor by default
-    BlockVolumeBase& operator=(BlockVolumeBase const&);
-    BlockVolumeBase(BlockVolumeBase const&);
-    BlockVolumeBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

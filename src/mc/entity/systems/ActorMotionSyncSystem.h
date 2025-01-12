@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class ActorMotionSyncSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ActorMotionSyncSystem& operator=(ActorMotionSyncSystem const&);
-    ActorMotionSyncSystem(ActorMotionSyncSystem const&);
-    ActorMotionSyncSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

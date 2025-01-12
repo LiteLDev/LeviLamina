@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct ActorPostNormalTickSystem {
 public:
-    // prevent constructor by default
-    ActorPostNormalTickSystem& operator=(ActorPostNormalTickSystem const&);
-    ActorPostNormalTickSystem(ActorPostNormalTickSystem const&);
-    ActorPostNormalTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystemClient();

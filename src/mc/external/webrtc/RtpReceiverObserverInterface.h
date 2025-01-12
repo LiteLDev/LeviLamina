@@ -9,12 +9,6 @@ namespace webrtc {
 
 class RtpReceiverObserverInterface {
 public:
-    // prevent constructor by default
-    RtpReceiverObserverInterface& operator=(RtpReceiverObserverInterface const&);
-    RtpReceiverObserverInterface(RtpReceiverObserverInterface const&);
-    RtpReceiverObserverInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

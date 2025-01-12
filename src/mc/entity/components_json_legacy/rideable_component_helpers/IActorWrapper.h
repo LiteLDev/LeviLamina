@@ -11,12 +11,6 @@ namespace RideableComponentHelpers {
 
 class IActorWrapper {
 public:
-    // prevent constructor by default
-    IActorWrapper& operator=(IActorWrapper const&);
-    IActorWrapper(IActorWrapper const&);
-    IActorWrapper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

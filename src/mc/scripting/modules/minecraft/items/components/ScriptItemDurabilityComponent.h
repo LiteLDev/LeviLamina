@@ -19,12 +19,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemDurabilityComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 public:
-    // prevent constructor by default
-    ScriptItemDurabilityComponent& operator=(ScriptItemDurabilityComponent const&);
-    ScriptItemDurabilityComponent(ScriptItemDurabilityComponent const&);
-    ScriptItemDurabilityComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

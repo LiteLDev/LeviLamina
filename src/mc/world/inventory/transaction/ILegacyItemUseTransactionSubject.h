@@ -9,12 +9,6 @@ class BlockPos;
 
 class ILegacyItemUseTransactionSubject {
 public:
-    // prevent constructor by default
-    ILegacyItemUseTransactionSubject& operator=(ILegacyItemUseTransactionSubject const&);
-    ILegacyItemUseTransactionSubject(ILegacyItemUseTransactionSubject const&);
-    ILegacyItemUseTransactionSubject();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -30,7 +30,7 @@ public:
 
     MCAPI void addReport(::PackIdVersion const& packId, ::PackReport&& report);
 
-    MCAPI ::std::unordered_map<::PackIdVersion, ::PackReport> const& getReports() const;
+    MCFOLD ::std::unordered_map<::PackIdVersion, ::PackReport> const& getReports() const;
 
     MCAPI bool hasErrors() const;
 

@@ -7,12 +7,6 @@
 
 class GlobalTextureGroupStateSystem : public ::ISystem {
 public:
-    // prevent constructor by default
-    GlobalTextureGroupStateSystem& operator=(GlobalTextureGroupStateSystem const&);
-    GlobalTextureGroupStateSystem(GlobalTextureGroupStateSystem const&);
-    GlobalTextureGroupStateSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

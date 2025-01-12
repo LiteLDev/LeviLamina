@@ -13,7 +13,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NetworkAddress& operator=(::NetworkAddress const&);
+    MCFOLD ::NetworkAddress& operator=(::NetworkAddress const&);
 
     MCAPI ~NetworkAddress();
     // NOLINTEND
@@ -21,6 +21,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

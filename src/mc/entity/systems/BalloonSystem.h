@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BalloonSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BalloonSystem& operator=(BalloonSystem const&);
-    BalloonSystem(BalloonSystem const&);
-    BalloonSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

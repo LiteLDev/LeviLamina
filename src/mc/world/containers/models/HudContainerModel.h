@@ -71,11 +71,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $containerContentChanged(int slot);
 
-    MCAPI bool $isValid();
+    MCFOLD bool $isValid();
 
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCFOLD ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCAPI ::Container* $_getContainer() const;
+    MCFOLD ::Container* $_getContainer() const;
 
     MCAPI void $_init();
     // NOLINTEND

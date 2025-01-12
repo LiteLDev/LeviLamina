@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::std::vector<::SpawnActorEntry>& getSpawnEntries();
+    MCFOLD ::std::vector<::SpawnActorEntry>& getSpawnEntries();
 
     MCAPI ::SpawnActorComponent& operator=(::SpawnActorComponent&&);
 

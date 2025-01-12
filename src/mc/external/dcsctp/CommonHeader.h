@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-struct CommonHeader {
-public:
-    // prevent constructor by default
-    CommonHeader& operator=(CommonHeader const&);
-    CommonHeader(CommonHeader const&);
-    CommonHeader();
-};
+struct CommonHeader {};
 
 } // namespace dcsctp

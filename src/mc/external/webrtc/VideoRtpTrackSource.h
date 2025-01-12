@@ -21,19 +21,7 @@ public:
     // clang-format on
 
     // VideoRtpTrackSource inner types define
-    class Callback {
-    public:
-        // prevent constructor by default
-        Callback& operator=(Callback const&);
-        Callback(Callback const&);
-        Callback();
-    };
-
-public:
-    // prevent constructor by default
-    VideoRtpTrackSource& operator=(VideoRtpTrackSource const&);
-    VideoRtpTrackSource(VideoRtpTrackSource const&);
-    VideoRtpTrackSource();
+    class Callback {};
 
 public:
     // member functions

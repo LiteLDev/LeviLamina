@@ -12,12 +12,6 @@ namespace Core {
 
 class FileSizePresetManager {
 public:
-    // prevent constructor by default
-    FileSizePresetManager& operator=(FileSizePresetManager const&);
-    FileSizePresetManager(FileSizePresetManager const&);
-    FileSizePresetManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

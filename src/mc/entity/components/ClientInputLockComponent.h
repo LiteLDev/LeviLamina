@@ -44,7 +44,7 @@ public:
     MCAPI ::Bedrock::PubSub::Subscription
     registerLockCategoryChangeCallback(::std::function<void(::ClientInputLockCategory, bool)> callback);
 
-    MCAPI uint serialize() const;
+    MCFOLD uint serialize() const;
 
     MCAPI void setLockCategory(::ClientInputLockCategory category, bool state);
 

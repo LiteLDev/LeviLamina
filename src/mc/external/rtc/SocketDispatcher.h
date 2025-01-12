@@ -11,12 +11,6 @@ namespace rtc {
 
 class SocketDispatcher {
 public:
-    // prevent constructor by default
-    SocketDispatcher& operator=(SocketDispatcher const&);
-    SocketDispatcher(SocketDispatcher const&);
-    SocketDispatcher();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Initialize();

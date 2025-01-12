@@ -126,7 +126,7 @@ public:
 
     MCAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
-    MCAPI bool $_allowReadActor(::Actor const& actor) const;
+    MCFOLD bool $_allowReadActor(::Actor const& actor) const;
     // NOLINTEND
 
 public:

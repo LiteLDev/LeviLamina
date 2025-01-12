@@ -12,12 +12,6 @@ class Mob;
 
 class MoveTowardsDwellingRestrictionGoal : public ::MoveTowardsRestrictionGoal {
 public:
-    // prevent constructor by default
-    MoveTowardsDwellingRestrictionGoal& operator=(MoveTowardsDwellingRestrictionGoal const&);
-    MoveTowardsDwellingRestrictionGoal(MoveTowardsDwellingRestrictionGoal const&);
-    MoveTowardsDwellingRestrictionGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -53,7 +53,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void OnClose(::rtc::AsyncPacketSocket*, int status);
+        MCFOLD void OnClose(::rtc::AsyncPacketSocket*, int status);
 
         MCAPI void OnPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const& packet);
 
@@ -69,7 +69,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:

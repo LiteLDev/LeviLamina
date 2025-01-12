@@ -75,41 +75,41 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
+    MCFOLD static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCFOLD ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::EntityContext& entity) const;
+    MCFOLD void $initializeComponent(::EntityContext& entity) const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $initializeComponentFromCode(::EntityContext& entity) const;
+    MCFOLD void $initializeComponentFromCode(::EntityContext& entity) const;
 
-    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $buildSchema(
+    MCFOLD void $buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>&
                                        componentSchema,
         ::BlockComponentFactory const& factory
     ) const;
 
-    MCAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCFOLD void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
     // NOLINTEND
 
 public:

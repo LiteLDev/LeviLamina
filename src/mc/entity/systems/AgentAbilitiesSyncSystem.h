@@ -21,12 +21,6 @@ struct TickingSystemWithInfo;
 
 class AgentAbilitiesSyncSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgentAbilitiesSyncSystem& operator=(AgentAbilitiesSyncSystem const&);
-    AgentAbilitiesSyncSystem(AgentAbilitiesSyncSystem const&);
-    AgentAbilitiesSyncSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

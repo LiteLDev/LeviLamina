@@ -14,12 +14,6 @@ namespace BlockTrait {
 
 class IGetPlacementBlockCallback {
 public:
-    // prevent constructor by default
-    IGetPlacementBlockCallback& operator=(IGetPlacementBlockCallback const&);
-    IGetPlacementBlockCallback(IGetPlacementBlockCallback const&);
-    IGetPlacementBlockCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

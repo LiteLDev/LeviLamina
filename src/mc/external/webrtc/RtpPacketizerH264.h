@@ -15,12 +15,6 @@ namespace webrtc {
 
 class RtpPacketizerH264 {
 public:
-    // prevent constructor by default
-    RtpPacketizerH264& operator=(RtpPacketizerH264 const&);
-    RtpPacketizerH264(RtpPacketizerH264 const&);
-    RtpPacketizerH264();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool GeneratePackets(::webrtc::H264PacketizationMode);

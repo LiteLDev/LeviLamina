@@ -65,9 +65,9 @@ public:
 
     MCAPI bool getCustomAbilityValue(::AbilitiesIndex ability) const;
 
-    MCAPI ::PlayerPermissionLevel getPlayerPermissions() const;
+    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
 
-    MCAPI ::ActorUniqueID getTargetPlayerId() const;
+    MCFOLD ::ActorUniqueID getTargetPlayerId() const;
     // NOLINTEND
 
 public:

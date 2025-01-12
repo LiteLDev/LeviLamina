@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class InsideBlockNotifierSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    InsideBlockNotifierSystem& operator=(InsideBlockNotifierSystem const&);
-    InsideBlockNotifierSystem(InsideBlockNotifierSystem const&);
-    InsideBlockNotifierSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BreathableSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BreathableSystem& operator=(BreathableSystem const&);
-    BreathableSystem(BreathableSystem const&);
-    BreathableSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

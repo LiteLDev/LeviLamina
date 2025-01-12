@@ -15,12 +15,6 @@ namespace AgentComponents { struct ActionDetails; }
 
 class AgentMoveCommandSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgentMoveCommandSystem& operator=(AgentMoveCommandSystem const&);
-    AgentMoveCommandSystem(AgentMoveCommandSystem const&);
-    AgentMoveCommandSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

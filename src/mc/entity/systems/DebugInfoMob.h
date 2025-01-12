@@ -7,12 +7,6 @@
 
 class DebugInfoMob : public ::Mob {
 public:
-    // prevent constructor by default
-    DebugInfoMob& operator=(DebugInfoMob const&);
-    DebugInfoMob(DebugInfoMob const&);
-    DebugInfoMob();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

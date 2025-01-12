@@ -105,7 +105,7 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
+    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

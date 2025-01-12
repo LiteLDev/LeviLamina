@@ -35,12 +35,6 @@ public:
     // SctpDataChannel inner types define
     class ObserverAdapter {
     public:
-        // prevent constructor by default
-        ObserverAdapter& operator=(ObserverAdapter const&);
-        ObserverAdapter(ObserverAdapter const&);
-        ObserverAdapter();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void SetDelegate(::webrtc::DataChannelObserver*);
@@ -52,12 +46,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    SctpDataChannel& operator=(SctpDataChannel const&);
-    SctpDataChannel(SctpDataChannel const&);
-    SctpDataChannel();
 
 public:
     // member functions

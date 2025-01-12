@@ -14,12 +14,6 @@ namespace cereal { struct ReflectionCtx; }
 
 class OnInteractTriggerDescription : public ::BlockTriggerDescription<::OnInteractTrigger> {
 public:
-    // prevent constructor by default
-    OnInteractTriggerDescription& operator=(OnInteractTriggerDescription const&);
-    OnInteractTriggerDescription(OnInteractTriggerDescription const&);
-    OnInteractTriggerDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -55,11 +49,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string const& $getName() const;
 
-    MCAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

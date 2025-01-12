@@ -111,7 +111,7 @@ public:
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
     // vIndex: 15
-    virtual void writeEntityChunkTransfer(::LevelChunk& lc) /*override*/;
+    virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk) /*override*/;
 
     // vIndex: 16
     virtual void writeEntityChunkTransfersToUnloadedChunk(
@@ -258,9 +258,9 @@ public:
 
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
+    MCFOLD bool $isChunkKnown(::ChunkPos const& chunkPos);
 
-    MCAPI bool $isChunkSaved(::ChunkPos const& chunkPos);
+    MCFOLD bool $isChunkSaved(::ChunkPos const& chunkPos);
 
     MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
 
@@ -268,7 +268,7 @@ public:
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
+    MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
 
     MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,
@@ -277,7 +277,7 @@ public:
 
     MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCAPI void $hintDiscardBatchBegin();
+    MCFOLD void $hintDiscardBatchBegin();
 
     MCAPI void $hintDiscardBatchEnd();
 

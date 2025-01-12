@@ -141,12 +141,12 @@ public:
         ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
     );
 
-    MCAPI void $configureNewPlayer(::Player& player);
+    MCFOLD void $configureNewPlayer(::Player& player);
 
     MCAPI void
     $configureDocumentation(::IGameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);
 
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
     MCAPI void $setupCommands(::CommandRegistry& commandRegistry);
 

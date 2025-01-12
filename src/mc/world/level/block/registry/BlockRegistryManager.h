@@ -13,12 +13,6 @@ class BlockTypeRegistry;
 
 class BlockRegistryManager {
 public:
-    // prevent constructor by default
-    BlockRegistryManager& operator=(BlockRegistryManager const&);
-    BlockRegistryManager(BlockRegistryManager const&);
-    BlockRegistryManager();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::SubClientId, ::std::weak_ptr<::BlockTypeRegistry>>& mClientIdRegistryMap();

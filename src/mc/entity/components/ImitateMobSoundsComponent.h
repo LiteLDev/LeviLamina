@@ -14,12 +14,6 @@ class Randomize;
 
 class ImitateMobSoundsComponent {
 public:
-    // prevent constructor by default
-    ImitateMobSoundsComponent& operator=(ImitateMobSoundsComponent const&);
-    ImitateMobSoundsComponent(ImitateMobSoundsComponent const&);
-    ImitateMobSoundsComponent();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getRandomImitatedSound(::Randomize const& randomize);

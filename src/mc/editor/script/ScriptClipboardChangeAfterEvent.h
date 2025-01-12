@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&
+    MCFOLD ::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&
     operator=(::Editor::ScriptModule::ScriptClipboardChangeAfterEvent&&);
 
     MCAPI ~ScriptClipboardChangeAfterEvent();
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftEventing;
 struct ChunkPerformanceData;
 // clang-format on
 
@@ -14,20 +15,14 @@ class LevelChunkPerformanceTelemetry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf6c20b;
-    ::ll::UntypedStorage<4, 4>  mUnk48c0ae;
-    ::ll::UntypedStorage<1, 1>  mUnk8b573f;
-    ::ll::UntypedStorage<8, 8>  mUnkd52427;
-    ::ll::UntypedStorage<8, 64> mUnk13e530;
-    ::ll::UntypedStorage<1, 1>  mUnkf39a71;
-    ::ll::UntypedStorage<1, 1>  mUnk63c6e8;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>    mEventing;
+    ::ll::TypedStorage<4, 4, uint const>               mServerTickRange;
+    ::ll::TypedStorage<1, 1, bool const>               mIsClientSide;
+    ::ll::TypedStorage<8, 8, uint64>                   mPerformanceTelemetryTimer;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>> mTelemetryPeriodicCallback;
+    ::ll::TypedStorage<1, 1, bool>                     mPerformanceTelemetryFired;
+    ::ll::TypedStorage<1, 1, bool>                     mShouldTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkPerformanceTelemetry& operator=(LevelChunkPerformanceTelemetry const&);
-    LevelChunkPerformanceTelemetry(LevelChunkPerformanceTelemetry const&);
-    LevelChunkPerformanceTelemetry();
 
 public:
     // member functions

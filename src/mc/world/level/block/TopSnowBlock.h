@@ -241,7 +241,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::mce::Color $getDustColor(::Block const&) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
     MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
@@ -251,9 +251,9 @@ public:
 
     MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canHaveExtraData() const;
+    MCFOLD bool $canHaveExtraData() const;
 
-    MCAPI bool $isLavaBlocking() const;
+    MCFOLD bool $isLavaBlocking() const;
 
     MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 

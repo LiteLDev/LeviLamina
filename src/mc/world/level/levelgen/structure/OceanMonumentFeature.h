@@ -101,9 +101,9 @@ public:
     MCAPI bool
     $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const&);
 
-    MCAPI bool $shouldAddHardcodedSpawnAreas() const;
+    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI ::std::unique_ptr<::StructureStart>
     $createStructureStart(::Dimension& generator, ::BiomeSource const&, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&);

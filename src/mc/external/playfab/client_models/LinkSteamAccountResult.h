@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkSteamAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkSteamAccountResult& operator=(LinkSteamAccountResult const&);
-    LinkSteamAccountResult(LinkSteamAccountResult const&);
-    LinkSteamAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -11,7 +11,7 @@ class EntityContext;
 namespace ActorOwnerUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::ActorOwnerComponent const* constActorOwnerComponentOrAssert(::EntityContext const& entity);
+MCFOLD ::ActorOwnerComponent const* constActorOwnerComponentOrAssert(::EntityContext const& entity);
 // NOLINTEND
 
 } // namespace ActorOwnerUtils

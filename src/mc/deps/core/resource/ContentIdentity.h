@@ -28,13 +28,13 @@ public:
 
     MCAPI ::std::string asString() const;
 
-    MCAPI ::mce::UUID const& getAsUUID() const;
+    MCFOLD ::mce::UUID const& getAsUUID() const;
 
-    MCAPI bool isValid() const;
+    MCFOLD bool isValid() const;
 
     MCAPI bool operator!=(::ContentIdentity const& rhs) const;
 
-    MCAPI ::ContentIdentity& operator=(::ContentIdentity&&);
+    MCFOLD ::ContentIdentity& operator=(::ContentIdentity&&);
 
     MCAPI ::ContentIdentity& operator=(::ContentIdentity const&);
 
@@ -56,9 +56,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::ContentIdentity const&);
+    MCFOLD void* $ctor(::ContentIdentity const&);
 
     MCAPI void* $ctor(::ContentIdentity&&);
 

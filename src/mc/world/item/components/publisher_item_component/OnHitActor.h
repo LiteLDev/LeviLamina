@@ -20,12 +20,6 @@ class OnHitActor : public ::ItemComponent,
                    public ::Bedrock::PubSub::
                        Publisher<void(::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
-    // prevent constructor by default
-    OnHitActor& operator=(OnHitActor const&);
-    OnHitActor(OnHitActor const&);
-    OnHitActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

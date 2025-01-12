@@ -46,12 +46,6 @@ class VerticalCollisionSystem
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    VerticalCollisionSystem& operator=(VerticalCollisionSystem const&);
-    VerticalCollisionSystem(VerticalCollisionSystem const&);
-    VerticalCollisionSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

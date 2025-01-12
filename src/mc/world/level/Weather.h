@@ -64,7 +64,7 @@ public:
         int*              newHeightAfterPlacement
     ) const;
 
-    MCAPI float getFogLevel() const;
+    MCFOLD float getFogLevel() const;
 
     MCAPI float getLightningLevel(float a) const;
 
@@ -82,9 +82,9 @@ public:
 
     MCAPI void serverTick();
 
-    MCAPI void setSkyFlashTime(int flash);
+    MCFOLD void setSkyFlashTime(int flash);
 
-    MCAPI void setTargetLightningLevel(float lightningLevel);
+    MCFOLD void setTargetLightningLevel(float lightningLevel);
 
     MCAPI void setTargetRainLevel(float rainLevel);
 
@@ -99,9 +99,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int calcLightningCycleTime(::IRandom& random);
+    MCFOLD static int calcLightningCycleTime(::IRandom& random);
 
-    MCAPI static int calcRainCycleTime(::IRandom& random);
+    MCFOLD static int calcRainCycleTime(::IRandom& random);
 
     MCAPI static int calcRainDuration(::IRandom& random);
 

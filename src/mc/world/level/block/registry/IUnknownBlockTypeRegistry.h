@@ -13,12 +13,6 @@ class CompoundTag;
 
 class IUnknownBlockTypeRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IUnknownBlockTypeRegistry& operator=(IUnknownBlockTypeRegistry const&);
-    IUnknownBlockTypeRegistry(IUnknownBlockTypeRegistry const&);
-    IUnknownBlockTypeRegistry();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

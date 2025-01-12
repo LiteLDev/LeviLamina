@@ -9,12 +9,6 @@ class Actor;
 
 class IActorManagerProxy {
 public:
-    // prevent constructor by default
-    IActorManagerProxy& operator=(IActorManagerProxy const&);
-    IActorManagerProxy(IActorManagerProxy const&);
-    IActorManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

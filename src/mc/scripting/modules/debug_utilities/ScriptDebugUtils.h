@@ -16,12 +16,6 @@ namespace ScriptModuleDebugUtilities {
 
 class ScriptDebugUtils {
 public:
-    // prevent constructor by default
-    ScriptDebugUtils& operator=(ScriptDebugUtils const&);
-    ScriptDebugUtils(ScriptDebugUtils const&);
-    ScriptDebugUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ScriptModuleDebugUtilities::ScriptRuntimeStats

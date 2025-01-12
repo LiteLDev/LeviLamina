@@ -67,21 +67,21 @@ public:
 
     MCAPI void fixupProfession(::Actor const& owner, ::Village* village);
 
-    MCAPI bool getCanFindPOI() const;
+    MCFOLD bool getCanFindPOI() const;
 
-    MCAPI ::DwellerRole getDwellerRole() const;
+    MCFOLD ::DwellerRole getDwellerRole() const;
 
     MCAPI ::mce::UUID getDwellingUniqueID() const;
 
-    MCAPI uint64 getDwellingUpdateInterval() const;
+    MCFOLD uint64 getDwellingUpdateInterval() const;
 
-    MCAPI bool getFixUpRole() const;
+    MCFOLD bool getFixUpRole() const;
 
-    MCAPI ::HashedString const& getPreferredProfession() const;
+    MCFOLD ::HashedString const& getPreferredProfession() const;
 
-    MCAPI uint64 getUpdateIntervalBase() const;
+    MCFOLD uint64 getUpdateIntervalBase() const;
 
-    MCAPI int getUpdateIntervalVariant() const;
+    MCFOLD int getUpdateIntervalVariant() const;
 
     MCAPI ::std::weak_ptr<::Village> const getVillage(::Actor const& owner) const;
 
@@ -103,17 +103,17 @@ public:
 
     MCAPI void onDeath(::Actor& owner, ::ActorDamageSource const& source);
 
-    MCAPI void onDimensionChange(::Actor& owner);
+    MCFOLD void onDimensionChange(::Actor& owner);
 
-    MCAPI void onRemove(::Actor& owner);
+    MCFOLD void onRemove(::Actor& owner);
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void setDwellingUniqueID(::Actor& owner, ::mce::UUID id);
 
-    MCAPI void setDwellingUpdateInterval(uint64 updateInterval);
+    MCFOLD void setDwellingUpdateInterval(uint64 updateInterval);
 
-    MCAPI void setFixUpRole(bool fixUpRole);
+    MCFOLD void setFixUpRole(bool fixUpRole);
 
     MCAPI void setLastHurtByMob(::Actor& owner, ::Mob* mob);
 
@@ -145,6 +145,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

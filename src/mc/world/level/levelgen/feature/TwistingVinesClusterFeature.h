@@ -14,12 +14,6 @@ class Random;
 
 class TwistingVinesClusterFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    TwistingVinesClusterFeature& operator=(TwistingVinesClusterFeature const&);
-    TwistingVinesClusterFeature(TwistingVinesClusterFeature const&);
-    TwistingVinesClusterFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

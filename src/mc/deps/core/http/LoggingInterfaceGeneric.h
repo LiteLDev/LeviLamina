@@ -10,12 +10,6 @@ namespace Bedrock::Http {
 
 class LoggingInterfaceGeneric : public ::Bedrock::Http::LoggingInterface {
 public:
-    // prevent constructor by default
-    LoggingInterfaceGeneric& operator=(LoggingInterfaceGeneric const&);
-    LoggingInterfaceGeneric(LoggingInterfaceGeneric const&);
-    LoggingInterfaceGeneric();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -39,7 +33,7 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 $threadId();
 
-    MCAPI void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
+    MCFOLD void $writeToDebugger(char const* area, ::HCTraceLevel level, char const* message);
     // NOLINTEND
 
 public:

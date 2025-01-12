@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkFacebookAccountRequest : public ::PlayFab::PlayFabRequestCommon {
 public:
-    // prevent constructor by default
-    UnlinkFacebookAccountRequest& operator=(UnlinkFacebookAccountRequest const&);
-    UnlinkFacebookAccountRequest(UnlinkFacebookAccountRequest const&);
-    UnlinkFacebookAccountRequest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

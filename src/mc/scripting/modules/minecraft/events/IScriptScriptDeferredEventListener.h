@@ -5,12 +5,6 @@
 namespace ScriptModuleMinecraft {
 
 template <typename T0>
-class IScriptScriptDeferredEventListener {
-public:
-    // prevent constructor by default
-    IScriptScriptDeferredEventListener& operator=(IScriptScriptDeferredEventListener const&);
-    IScriptScriptDeferredEventListener(IScriptScriptDeferredEventListener const&);
-    IScriptScriptDeferredEventListener();
-};
+class IScriptScriptDeferredEventListener {};
 
 } // namespace ScriptModuleMinecraft

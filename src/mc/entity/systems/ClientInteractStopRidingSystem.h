@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct ClientInteractStopRidingSystem {
 public:
-    // prevent constructor by default
-    ClientInteractStopRidingSystem& operator=(ClientInteractStopRidingSystem const&);
-    ClientInteractStopRidingSystem(ClientInteractStopRidingSystem const&);
-    ClientInteractStopRidingSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

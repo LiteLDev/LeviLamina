@@ -24,12 +24,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IApplicationDataStores& operator=(IApplicationDataStores const&);
-    IApplicationDataStores(IApplicationDataStores const&);
-    IApplicationDataStores();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -50,7 +44,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

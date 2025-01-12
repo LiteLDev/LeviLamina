@@ -23,12 +23,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockFluidContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
-    // prevent constructor by default
-    ScriptBlockFluidContainerComponent& operator=(ScriptBlockFluidContainerComponent const&);
-    ScriptBlockFluidContainerComponent(ScriptBlockFluidContainerComponent const&);
-    ScriptBlockFluidContainerComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -88,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCFOLD bool $_isValid() const;
     // NOLINTEND
 
 public:

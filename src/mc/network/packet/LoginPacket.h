@@ -70,11 +70,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCFOLD ::MinecraftPacketIds $getId() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI bool $disallowBatching() const;
+    MCFOLD bool $disallowBatching() const;
 
     MCAPI bool $isValid() const;
 

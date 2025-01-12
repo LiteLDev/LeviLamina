@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class TargetNearbySystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    TargetNearbySystem& operator=(TargetNearbySystem const&);
-    TargetNearbySystem(TargetNearbySystem const&);
-    TargetNearbySystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

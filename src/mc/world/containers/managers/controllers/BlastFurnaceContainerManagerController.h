@@ -7,12 +7,6 @@
 
 class BlastFurnaceContainerManagerController : public ::FurnaceContainerManagerController {
 public:
-    // prevent constructor by default
-    BlastFurnaceContainerManagerController& operator=(BlastFurnaceContainerManagerController const&);
-    BlastFurnaceContainerManagerController(BlastFurnaceContainerManagerController const&);
-    BlastFurnaceContainerManagerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

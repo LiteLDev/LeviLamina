@@ -14,12 +14,6 @@ namespace webrtc {
 
 class TransformedFrameCallback : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    TransformedFrameCallback& operator=(TransformedFrameCallback const&);
-    TransformedFrameCallback(TransformedFrameCallback const&);
-    TransformedFrameCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

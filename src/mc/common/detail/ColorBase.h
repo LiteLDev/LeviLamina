@@ -7,12 +7,6 @@
 
 namespace Detail {
 
-struct ColorBase : public ::mce::Color {
-public:
-    // prevent constructor by default
-    ColorBase& operator=(ColorBase const&);
-    ColorBase(ColorBase const&);
-    ColorBase();
-};
+struct ColorBase : public ::mce::Color {};
 
 } // namespace Detail

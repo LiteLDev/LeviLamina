@@ -27,12 +27,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    PacketSocketFactory& operator=(PacketSocketFactory const&);
-    PacketSocketFactory(PacketSocketFactory const&);
-    PacketSocketFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

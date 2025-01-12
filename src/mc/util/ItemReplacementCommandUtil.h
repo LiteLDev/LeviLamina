@@ -18,12 +18,6 @@ namespace Util {
 
 class ItemReplacementCommandUtil {
 public:
-    // prevent constructor by default
-    ItemReplacementCommandUtil& operator=(ItemReplacementCommandUtil const&);
-    ItemReplacementCommandUtil(ItemReplacementCommandUtil const&);
-    ItemReplacementCommandUtil();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _replaceArmorSlots(

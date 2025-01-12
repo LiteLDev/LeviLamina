@@ -85,11 +85,11 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
     MCAPI void $start();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCAPI void $tick();
 

@@ -119,17 +119,17 @@ public:
 
     MCAPI bool canBrew();
 
-    MCAPI int getBrewTime() const;
+    MCFOLD int getBrewTime() const;
 
-    MCAPI int getFuelAmount() const;
+    MCFOLD int getFuelAmount() const;
 
-    MCAPI int getFuelTotal() const;
+    MCFOLD int getFuelTotal() const;
 
-    MCAPI void setBrewTime(int value);
+    MCFOLD void setBrewTime(int value);
 
-    MCAPI void setFuelAmount(int value);
+    MCFOLD void setFuelAmount(int value);
 
-    MCAPI void setFuelTotal(int value);
+    MCFOLD void setFuelTotal(int value);
     // NOLINTEND
 
 public:
@@ -157,27 +157,27 @@ public:
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI ::std::string $getName() const;
+    MCFOLD ::std::string $getName() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCAPI void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Player&);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Player& player);
 
-    MCAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
-    MCAPI void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource&);
 
     MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
     MCAPI bool $canPullOutItem(int slot, int face, ::ItemStack const&) const;
 
-    MCAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
     MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
@@ -187,7 +187,7 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $onMove();
+    MCFOLD void $onMove();
 
     MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,

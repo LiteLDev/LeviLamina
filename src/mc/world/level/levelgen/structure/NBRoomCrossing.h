@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBRoomCrossing : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBRoomCrossing& operator=(NBRoomCrossing const&);
-    NBRoomCrossing(NBRoomCrossing const&);
-    NBRoomCrossing();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

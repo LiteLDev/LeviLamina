@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockRecordPlayerComponentV010 : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 public:
-    // prevent constructor by default
-    ScriptBlockRecordPlayerComponentV010& operator=(ScriptBlockRecordPlayerComponentV010 const&);
-    ScriptBlockRecordPlayerComponentV010(ScriptBlockRecordPlayerComponentV010 const&);
-    ScriptBlockRecordPlayerComponentV010();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -34,7 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> clearRecord();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isPlaying();
+    MCFOLD ::Scripting::Result_deprecated<bool> isPlaying();
 
     MCAPI ::Scripting::Result<void> setRecord(::ScriptModuleMinecraft::ScriptItemType const& itemType);
     // NOLINTEND

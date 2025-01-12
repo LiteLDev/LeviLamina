@@ -209,7 +209,7 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND

@@ -14,12 +14,6 @@ public:
     // LFBufferCache inner types define
     class BufferAllocator {
     public:
-        // prevent constructor by default
-        BufferAllocator& operator=(BufferAllocator const&);
-        BufferAllocator(BufferAllocator const&);
-        BufferAllocator();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0

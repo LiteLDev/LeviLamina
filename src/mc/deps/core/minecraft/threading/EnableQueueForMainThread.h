@@ -10,12 +10,6 @@ namespace Bedrock::Threading {
 
 class EnableQueueForMainThread : public ::Bedrock::Threading::EnableQueueForThread {
 public:
-    // prevent constructor by default
-    EnableQueueForMainThread& operator=(EnableQueueForMainThread const&);
-    EnableQueueForMainThread(EnableQueueForMainThread const&);
-    EnableQueueForMainThread();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

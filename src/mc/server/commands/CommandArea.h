@@ -34,12 +34,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ChunkViewSource> commandSource);
+    MCFOLD void* $ctor(::std::unique_ptr<::ChunkViewSource> commandSource);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

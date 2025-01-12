@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcEventRouteChange {
 public:
-    // prevent constructor by default
-    RtcEventRouteChange& operator=(RtcEventRouteChange const&);
-    RtcEventRouteChange(RtcEventRouteChange const&);
-    RtcEventRouteChange();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RtcEventRouteChange(bool, uint);

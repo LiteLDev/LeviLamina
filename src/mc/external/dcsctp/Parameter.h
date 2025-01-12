@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class Parameter {
-public:
-    // prevent constructor by default
-    Parameter& operator=(Parameter const&);
-    Parameter(Parameter const&);
-    Parameter();
-};
+class Parameter {};
 
 } // namespace dcsctp

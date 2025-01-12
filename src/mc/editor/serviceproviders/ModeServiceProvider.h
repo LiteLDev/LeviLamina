@@ -16,12 +16,6 @@ namespace Editor::Services {
 
 class ModeServiceProvider {
 public:
-    // prevent constructor by default
-    ModeServiceProvider& operator=(ModeServiceProvider const&);
-    ModeServiceProvider(ModeServiceProvider const&);
-    ModeServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

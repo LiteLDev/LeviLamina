@@ -72,7 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isDedicatedServer() const;
+    MCFOLD bool $isDedicatedServer() const;
 
     MCAPI bool $isHost(::mce::UUID const& playerID) const;
 

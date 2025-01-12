@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ContainerScreenContext;
 class ItemStack;
 class ItemStackBase;
 class ItemStackRequestActionCraftBase;
@@ -21,17 +22,11 @@ class CraftHandlerTrade : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9f8568;
-    ::ll::UntypedStorage<1, 1>  mUnkc029ec;
-    ::ll::UntypedStorage<8, 16> mUnk17eb85;
-    ::ll::UntypedStorage<4, 4>  mUnk903205;
+    ::ll::TypedStorage<8, 8, ::ContainerScreenContext const&> mScreenContext;
+    ::ll::TypedStorage<1, 1, bool>                            mIsTrade2;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mTradeIndex;
+    ::ll::TypedStorage<4, 4, int>                             mNumCrafts;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftHandlerTrade& operator=(CraftHandlerTrade const&);
-    CraftHandlerTrade(CraftHandlerTrade const&);
-    CraftHandlerTrade();
 
 public:
     // virtual functions

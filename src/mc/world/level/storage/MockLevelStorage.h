@@ -23,12 +23,6 @@ namespace Core { struct LevelStorageResult; }
 
 class MockLevelStorage : public ::LevelStorage {
 public:
-    // prevent constructor by default
-    MockLevelStorage& operator=(MockLevelStorage const&);
-    MockLevelStorage(MockLevelStorage const&);
-    MockLevelStorage();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

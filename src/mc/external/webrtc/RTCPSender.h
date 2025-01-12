@@ -34,12 +34,6 @@ public:
     // RTCPSender inner types define
     struct Configuration {
     public:
-        // prevent constructor by default
-        Configuration& operator=(Configuration const&);
-        Configuration(Configuration const&);
-        Configuration();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Configuration();
@@ -60,11 +54,6 @@ public:
     };
 
     struct FeedbackState {
-    public:
-        // prevent constructor by default
-        FeedbackState& operator=(FeedbackState const&);
-        FeedbackState(FeedbackState const&);
-
     public:
         // member functions
         // NOLINTBEGIN
@@ -88,12 +77,6 @@ public:
 
     class PacketSender {
     public:
-        // prevent constructor by default
-        PacketSender& operator=(PacketSender const&);
-        PacketSender(PacketSender const&);
-        PacketSender();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI PacketSender(::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)>, uint64);
@@ -114,19 +97,7 @@ public:
         // NOLINTEND
     };
 
-    class RtcpContext {
-    public:
-        // prevent constructor by default
-        RtcpContext& operator=(RtcpContext const&);
-        RtcpContext(RtcpContext const&);
-        RtcpContext();
-    };
-
-public:
-    // prevent constructor by default
-    RTCPSender& operator=(RTCPSender const&);
-    RTCPSender(RTCPSender const&);
-    RTCPSender();
+    class RtcpContext {};
 
 public:
     // member functions

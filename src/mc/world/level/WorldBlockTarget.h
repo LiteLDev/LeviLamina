@@ -136,21 +136,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canGetChunk() const;
+    MCFOLD bool $canGetChunk() const;
 
     MCAPI ::LevelChunk* $getChunk(::ChunkPos const& pos);
 
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+    MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
     MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
@@ -163,7 +163,7 @@ public:
 
     MCAPI bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI bool $apply() const;
+    MCFOLD bool $apply() const;
 
     MCAPI bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
 
@@ -191,9 +191,9 @@ public:
 
     MCAPI ::LevelData const& $getLevelData() const;
 
-    MCAPI ::WorldGenContext const& $getContext();
+    MCFOLD ::WorldGenContext const& $getContext();
 
-    MCAPI void $disableBlockSimple();
+    MCFOLD void $disableBlockSimple();
     // NOLINTEND
 
 public:

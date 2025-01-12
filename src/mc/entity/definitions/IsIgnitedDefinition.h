@@ -13,23 +13,17 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsIgnitedDefinition {
 public:
-    // prevent constructor by default
-    IsIgnitedDefinition& operator=(IsIgnitedDefinition const&);
-    IsIgnitedDefinition(IsIgnitedDefinition const&);
-    IsIgnitedDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;
 
-    MCAPI void uninitialize(::EntityContext& entity) const;
+    MCFOLD void uninitialize(::EntityContext& entity) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCFOLD static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::IsIgnitedDefinition>>& root
     );
     // NOLINTEND

@@ -12,12 +12,6 @@ struct DeserializeDataParams;
 
 struct DynamicJumpControlDescription : public ::JumpControlDescription {
 public:
-    // prevent constructor by default
-    DynamicJumpControlDescription& operator=(DynamicJumpControlDescription const&);
-    DynamicJumpControlDescription(DynamicJumpControlDescription const&);
-    DynamicJumpControlDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

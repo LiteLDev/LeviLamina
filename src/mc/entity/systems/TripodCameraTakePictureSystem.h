@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class TripodCameraTakePictureSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    TripodCameraTakePictureSystem& operator=(TripodCameraTakePictureSystem const&);
-    TripodCameraTakePictureSystem(TripodCameraTakePictureSystem const&);
-    TripodCameraTakePictureSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

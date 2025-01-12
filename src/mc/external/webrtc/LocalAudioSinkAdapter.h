@@ -6,11 +6,6 @@ namespace webrtc {
 
 class LocalAudioSinkAdapter {
 public:
-    // prevent constructor by default
-    LocalAudioSinkAdapter& operator=(LocalAudioSinkAdapter const&);
-    LocalAudioSinkAdapter(LocalAudioSinkAdapter const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI LocalAudioSinkAdapter();

@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getShadowRadius(::BlockSource&) const;
+    MCFOLD float $getShadowRadius(::BlockSource&) const;
     // NOLINTEND
 
 public:

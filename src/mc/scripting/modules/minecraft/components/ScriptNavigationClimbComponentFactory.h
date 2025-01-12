@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptNavigationClimbComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptNavigationClimbComponentFactory& operator=(ScriptNavigationClimbComponentFactory const&);
-    ScriptNavigationClimbComponentFactory(ScriptNavigationClimbComponentFactory const&);
-    ScriptNavigationClimbComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

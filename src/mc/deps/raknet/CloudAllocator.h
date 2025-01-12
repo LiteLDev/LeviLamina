@@ -11,12 +11,6 @@ namespace RakNet {
 
 class CloudAllocator {
 public:
-    // prevent constructor by default
-    CloudAllocator& operator=(CloudAllocator const&);
-    CloudAllocator(CloudAllocator const&);
-    CloudAllocator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

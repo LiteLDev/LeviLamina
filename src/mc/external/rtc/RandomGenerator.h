@@ -6,12 +6,6 @@ namespace rtc {
 
 class RandomGenerator {
 public:
-    // prevent constructor by default
-    RandomGenerator& operator=(RandomGenerator const&);
-    RandomGenerator(RandomGenerator const&);
-    RandomGenerator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

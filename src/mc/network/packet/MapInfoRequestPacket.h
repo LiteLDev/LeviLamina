@@ -51,7 +51,7 @@ public:
 
     MCAPI MapInfoRequestPacket(::ActorUniqueID mapId, ::MapItemSavedData& map);
 
-    MCAPI ::ActorUniqueID getMapId() const;
+    MCFOLD ::ActorUniqueID getMapId() const;
 
     MCAPI bool replaceServerPixels(::MapItemSavedData& map) const;
     // NOLINTEND

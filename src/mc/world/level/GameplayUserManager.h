@@ -103,11 +103,11 @@ public:
 
     MCAPI uint64 getActiveGameplayUserCount() const;
 
-    MCAPI ::std::vector<::WeakEntityRef> const& getActiveGameplayUsers() const;
+    MCFOLD ::std::vector<::WeakEntityRef> const& getActiveGameplayUsers() const;
 
     MCAPI uint64 getActivePlayerCount() const;
 
-    MCAPI ::std::vector<::OwnerPtr<::EntityContext>> const& getGameplayUserEntities() const;
+    MCFOLD ::std::vector<::OwnerPtr<::EntityContext>> const& getGameplayUserEntities() const;
 
     MCAPI uint64 getGameplayUserEntityCount() const;
 
@@ -143,13 +143,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserAddedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserAddedConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserResumedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserSuspendedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserSuspendedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::Player const&)>& $getPlayerRenamedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Player const&)>& $getPlayerRenamedConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserRemovedConnector();
 

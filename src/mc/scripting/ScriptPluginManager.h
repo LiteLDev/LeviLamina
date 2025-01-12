@@ -121,7 +121,7 @@ public:
 
     MCAPI ::std::vector<::ScriptPluginStats> getPluginStatsByIdType(uint id) const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::ScriptPlugin>>& getPlugins();
+    MCFOLD ::std::vector<::std::unique_ptr<::ScriptPlugin>>& getPlugins();
 
     MCAPI void releaseAll();
 

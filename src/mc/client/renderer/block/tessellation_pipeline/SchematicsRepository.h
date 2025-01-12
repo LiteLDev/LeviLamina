@@ -4,12 +4,6 @@
 
 namespace ClientBlockPipeline {
 
-class SchematicsRepository {
-public:
-    // prevent constructor by default
-    SchematicsRepository& operator=(SchematicsRepository const&);
-    SchematicsRepository(SchematicsRepository const&);
-    SchematicsRepository();
-};
+class SchematicsRepository {};
 
 } // namespace ClientBlockPipeline

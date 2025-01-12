@@ -35,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::OnUseItemComponent& operator=(::OnUseItemComponent&&);
+    MCFOLD ::OnUseItemComponent& operator=(::OnUseItemComponent&&);
 
-    MCAPI ::OnUseItemComponent& operator=(::OnUseItemComponent const&);
+    MCFOLD ::OnUseItemComponent& operator=(::OnUseItemComponent const&);
     // NOLINTEND
 
 public:
@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

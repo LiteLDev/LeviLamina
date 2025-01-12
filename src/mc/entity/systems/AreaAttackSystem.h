@@ -14,12 +14,6 @@ class EntityRegistry;
 
 class AreaAttackSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AreaAttackSystem& operator=(AreaAttackSystem const&);
-    AreaAttackSystem(AreaAttackSystem const&);
-    AreaAttackSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

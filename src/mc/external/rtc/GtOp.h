@@ -4,12 +4,6 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct GtOp {
-public:
-    // prevent constructor by default
-    GtOp& operator=(GtOp const&);
-    GtOp(GtOp const&);
-    GtOp();
-};
+struct GtOp {};
 
 } // namespace rtc::safe_cmp_impl

@@ -4,12 +4,6 @@
 
 class Control {
 public:
-    // prevent constructor by default
-    Control& operator=(Control const&);
-    Control(Control const&);
-    Control();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

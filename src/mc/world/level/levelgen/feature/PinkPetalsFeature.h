@@ -14,12 +14,6 @@ class Random;
 
 class PinkPetalsFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    PinkPetalsFeature& operator=(PinkPetalsFeature const&);
-    PinkPetalsFeature(PinkPetalsFeature const&);
-    PinkPetalsFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

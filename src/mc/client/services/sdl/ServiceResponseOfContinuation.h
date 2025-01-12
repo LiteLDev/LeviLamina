@@ -4,12 +4,6 @@
 
 namespace SDL {
 
-struct ServiceResponseOfContinuation {
-public:
-    // prevent constructor by default
-    ServiceResponseOfContinuation& operator=(ServiceResponseOfContinuation const&);
-    ServiceResponseOfContinuation(ServiceResponseOfContinuation const&);
-    ServiceResponseOfContinuation();
-};
+struct ServiceResponseOfContinuation {};
 
 } // namespace SDL

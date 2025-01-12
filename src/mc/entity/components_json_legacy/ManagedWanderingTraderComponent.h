@@ -9,12 +9,6 @@ class Actor;
 
 class ManagedWanderingTraderComponent {
 public:
-    // prevent constructor by default
-    ManagedWanderingTraderComponent& operator=(ManagedWanderingTraderComponent const&);
-    ManagedWanderingTraderComponent(ManagedWanderingTraderComponent const&);
-    ManagedWanderingTraderComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void reloadComponent(::Actor& actor);

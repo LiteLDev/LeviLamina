@@ -14,12 +14,6 @@ class Random;
 
 class EndIslandFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    EndIslandFeature& operator=(EndIslandFeature const&);
-    EndIslandFeature(EndIslandFeature const&);
-    EndIslandFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -32,7 +26,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

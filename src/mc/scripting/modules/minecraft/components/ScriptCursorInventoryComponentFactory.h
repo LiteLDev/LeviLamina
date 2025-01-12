@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptCursorInventoryComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptCursorInventoryComponentFactory& operator=(ScriptCursorInventoryComponentFactory const&);
-    ScriptCursorInventoryComponentFactory(ScriptCursorInventoryComponentFactory const&);
-    ScriptCursorInventoryComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -51,7 +45,7 @@ public:
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>
     $createComponent(::WeakEntityRef entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
 
-    MCAPI bool $hasComponent(::WeakEntityRef entity) const;
+    MCFOLD bool $hasComponent(::WeakEntityRef entity) const;
     // NOLINTEND
 
 public:

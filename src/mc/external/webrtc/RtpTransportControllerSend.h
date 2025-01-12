@@ -18,12 +18,6 @@ namespace webrtc {
 
 class RtpTransportControllerSend {
 public:
-    // prevent constructor by default
-    RtpTransportControllerSend& operator=(RtpTransportControllerSend const&);
-    RtpTransportControllerSend(RtpTransportControllerSend const&);
-    RtpTransportControllerSend();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::webrtc::BitrateConstraints> ApplyOrLiftRelayCap(bool);

@@ -11,12 +11,6 @@ namespace webrtc {
 
 class VideoTimingExtension {
 public:
-    // prevent constructor by default
-    VideoTimingExtension& operator=(VideoTimingExtension const&);
-    VideoTimingExtension(VideoTimingExtension const&);
-    VideoTimingExtension();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool Write(::rtc::ArrayView<uchar>, ::webrtc::VideoSendTiming const&);

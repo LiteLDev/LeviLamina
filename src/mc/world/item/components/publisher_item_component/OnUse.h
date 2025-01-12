@@ -19,12 +19,6 @@ class OnUse : public ::ItemComponent,
               public ::Bedrock::PubSub::
                   Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
-    // prevent constructor by default
-    OnUse& operator=(OnUse const&);
-    OnUse(OnUse const&);
-    OnUse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

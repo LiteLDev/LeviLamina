@@ -991,7 +991,7 @@ public:
         ::RenderParams&                                                       params
     ) const;
 
-    MCAPI ::BlockShape _getBlockShape() const;
+    MCFOLD ::BlockShape _getBlockShape() const;
 
     MCAPI ::std::optional<int> _tryLookupAlteredStateCollection(uint64 stateId, ushort blockData) const;
 
@@ -1035,7 +1035,7 @@ public:
 
     MCAPI void forEachBlockStateInstance(::std::function<bool(::BlockStateInstance const&)> callback) const;
 
-    MCAPI ::BlockActorType getBlockEntityType() const;
+    MCFOLD ::BlockActorType getBlockEntityType() const;
 
     MCAPI short getBlockItemId() const;
 
@@ -1043,7 +1043,7 @@ public:
 
     MCAPI ::BlockStateGroup* getBlockStateGroup();
 
-    MCAPI int getBurnOdds() const;
+    MCFOLD int getBurnOdds() const;
 
     MCAPI ::std::vector<::CommandName> getCommandNames() const;
 
@@ -1051,31 +1051,31 @@ public:
 
     MCAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
-    MCAPI ::Block const& getDefaultState() const;
+    MCFOLD ::Block const& getDefaultState() const;
 
-    MCAPI ::std::string const& getDescriptionId() const;
+    MCFOLD ::std::string const& getDescriptionId() const;
 
     MCAPI float getDestroySpeed() const;
 
-    MCAPI ::BlockEvents::BlockEventManager& getEventManager();
+    MCFOLD ::BlockEvents::BlockEventManager& getEventManager();
 
     MCAPI float getExplosionResistance() const;
 
-    MCAPI int getFlameOdds() const;
+    MCFOLD int getFlameOdds() const;
 
     MCAPI float getFriction() const;
 
     MCAPI ::NoteBlockInstrument getInstrument() const;
 
-    MCAPI ::Material const& getMaterial() const;
+    MCFOLD ::Material const& getMaterial() const;
 
-    MCAPI ::std::string const& getNamespace() const;
+    MCFOLD ::std::string const& getNamespace() const;
 
-    MCAPI ::HashedString const& getRawNameHash() const;
+    MCFOLD ::HashedString const& getRawNameHash() const;
 
     MCAPI ::std::string const& getRawNameId() const;
 
-    MCAPI ::BaseGameVersion const& getRequiredBaseGameVersion() const;
+    MCFOLD ::BaseGameVersion const& getRequiredBaseGameVersion() const;
 
     MCAPI ::ResourceDrops
     getResourceDrops(::Block const& block, ::Randomize& randomize, ::ResourceDropsContext const& resourceDropsContext)
@@ -1103,13 +1103,13 @@ public:
 
     MCAPI bool isDataDrivingVanillaBlocksAndItems() const;
 
-    MCAPI bool isFullAndOpaque() const;
+    MCFOLD bool isFullAndOpaque() const;
 
     MCAPI bool isOpaqueFullBlock() const;
 
     MCAPI bool isSolid() const;
 
-    MCAPI bool isVanilla() const;
+    MCFOLD bool isVanilla() const;
 
     MCAPI bool matchesStates(::BlockLegacy const& blockType) const;
 
@@ -1135,7 +1135,7 @@ public:
 
     MCAPI ::BlockLegacy& setCreativeGroup(::std::string const& value);
 
-    MCAPI void setDefaultState(::Block const& block);
+    MCFOLD void setDefaultState(::Block const& block);
 
     MCAPI void setEnableDataDrivenVanillaBlocksAndItems(bool enabled);
 
@@ -1165,7 +1165,7 @@ public:
 
     MCAPI ::BlockLegacy& setMapColor(::mce::Color const& color);
 
-    MCAPI ::BlockLegacy& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+    MCFOLD ::BlockLegacy& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
     MCAPI ::BlockLegacy& setNameId(::std::string const& id);
 
@@ -1265,7 +1265,7 @@ public:
 
     MCAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCAPI bool
+    MCFOLD bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
     MCAPI ::AABB
@@ -1299,7 +1299,7 @@ public:
     MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
         const;
 
@@ -1314,143 +1314,143 @@ public:
 
     MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos, int& seed) const;
 
-    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
+    MCFOLD ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
-    MCAPI void $onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
+    MCFOLD void $onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
 
-    MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $liquidCanFlowIntoFromDirection(
+    MCFOLD bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
 
-    MCAPI bool $hasVariableLighting() const;
+    MCFOLD bool $hasVariableLighting() const;
 
-    MCAPI bool $isStrippable(::Block const& srcBlock) const;
+    MCFOLD bool $isStrippable(::Block const& srcBlock) const;
 
-    MCAPI ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
+    MCFOLD ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
 
     MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
     MCAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI bool $isMovingBlock() const;
+    MCFOLD bool $isMovingBlock() const;
 
-    MCAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
+    MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCAPI bool $isStemBlock() const;
+    MCFOLD bool $isStemBlock() const;
 
-    MCAPI bool $isContainerBlock() const;
+    MCFOLD bool $isContainerBlock() const;
 
-    MCAPI bool $isCraftingBlock() const;
+    MCFOLD bool $isCraftingBlock() const;
 
     MCAPI bool $isLavaBlocking() const;
 
-    MCAPI bool $isFenceBlock() const;
+    MCFOLD bool $isFenceBlock() const;
 
-    MCAPI bool $isFenceGateBlock() const;
+    MCFOLD bool $isFenceGateBlock() const;
 
-    MCAPI bool $isThinFenceBlock() const;
+    MCFOLD bool $isThinFenceBlock() const;
 
-    MCAPI bool $isWallBlock() const;
+    MCFOLD bool $isWallBlock() const;
 
-    MCAPI bool $isStairBlock() const;
+    MCFOLD bool $isStairBlock() const;
 
-    MCAPI bool $isSlabBlock() const;
+    MCFOLD bool $isSlabBlock() const;
 
-    MCAPI bool $isDoorBlock() const;
+    MCFOLD bool $isDoorBlock() const;
 
-    MCAPI bool $isRailBlock() const;
+    MCFOLD bool $isRailBlock() const;
 
-    MCAPI bool $isButtonBlock() const;
+    MCFOLD bool $isButtonBlock() const;
 
-    MCAPI bool $isLeverBlock() const;
+    MCFOLD bool $isLeverBlock() const;
 
-    MCAPI bool $isCandleCakeBlock() const;
+    MCFOLD bool $isCandleCakeBlock() const;
 
-    MCAPI bool $isMultifaceBlock() const;
+    MCFOLD bool $isMultifaceBlock() const;
 
-    MCAPI bool $isSignalSource() const;
+    MCFOLD bool $isSignalSource() const;
 
-    MCAPI bool $isConsumerComponent() const;
+    MCFOLD bool $isConsumerComponent() const;
 
-    MCAPI bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface() const;
 
-    MCAPI bool $isSilentWhenJumpingOff() const;
+    MCFOLD bool $isSilentWhenJumpingOff() const;
 
-    MCAPI bool $isValidAuxValue(int value) const;
+    MCFOLD bool $isValidAuxValue(int value) const;
 
-    MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCFOLD ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
-    MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
+    MCFOLD int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     MCAPI ::std::optional<::HashedString> $getRequiredMedium() const;
 
-    MCAPI bool
+    MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI void
+    MCFOLD void
     $handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
 
     MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI bool $shouldDispense(::BlockSource& region, ::Container& container) const;
+    MCFOLD bool $shouldDispense(::BlockSource& region, ::Container& container) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI void
+    MCFOLD void
     $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
+    MCFOLD void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
-    MCAPI bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCAPI bool $isBounceBlock() const;
+    MCFOLD bool $isBounceBlock() const;
 
-    MCAPI bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
+    MCFOLD bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
 
-    MCAPI bool $isFilteredOut(::BlockRenderLayer) const;
+    MCFOLD bool $isFilteredOut(::BlockRenderLayer) const;
 
-    MCAPI bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
+    MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    MCAPI bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
+    MCFOLD bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
 
-    MCAPI bool
+    MCFOLD bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $mayPick() const;
+    MCFOLD bool $mayPick() const;
 
     MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $tryToPlace(
         ::BlockSource&                 region,
@@ -1459,24 +1459,25 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void
+    MCFOLD void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    MCAPI bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
+    MCFOLD bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+    MCFOLD bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI void $spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
+    MCFOLD void
+    $spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
 
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
@@ -1484,17 +1485,17 @@ public:
 
     MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
-    MCAPI bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
+    MCFOLD bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
-    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCFOLD bool $attack(::Player* player, ::BlockPos const& pos) const;
 
     MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+    MCFOLD bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
 
     MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
+    MCFOLD void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
     MCAPI void $executeEvent(
         ::BlockSource&       region,
@@ -1508,29 +1509,30 @@ public:
 
     MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCAPI bool $pushesUpFallingBlocks() const;
+    MCFOLD bool $pushesUpFallingBlocks() const;
 
-    MCAPI bool $canHaveExtraData() const;
+    MCFOLD bool $canHaveExtraData() const;
 
-    MCAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCFOLD int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI bool $canSlide(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canInstatick() const;
+    MCFOLD bool $canInstatick() const;
 
-    MCAPI bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $causesFreezeEffect() const;
+    MCFOLD bool $causesFreezeEffect() const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const&) const;
+    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCAPI bool $isAuxValueRelevantForPicking() const;
+    MCFOLD bool $isAuxValueRelevantForPicking() const;
 
-    MCAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
+    MCFOLD bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
@@ -1540,69 +1542,69 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool $canSpawnOn(::Actor*) const;
+    MCFOLD bool $canSpawnOn(::Actor*) const;
 
-    MCAPI ::Block const& $getRenderBlock() const;
+    MCFOLD ::Block const& $getRenderBlock() const;
 
-    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCFOLD ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::BlockLegacy& $init();
+    MCFOLD ::BlockLegacy& $init();
 
     MCAPI ::Brightness $getLightEmission(::Block const&) const;
 
-    MCAPI ::Block const* $tryLegacyUpgrade(ushort) const;
+    MCFOLD ::Block const* $tryLegacyUpgrade(ushort) const;
 
-    MCAPI bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
+    MCFOLD bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
-    MCAPI ::Block const* $tryGetInfested(::Block const&) const;
+    MCFOLD ::Block const* $tryGetInfested(::Block const&) const;
 
-    MCAPI ::Block const* $tryGetUninfested(::Block const&) const;
+    MCFOLD ::Block const* $tryGetUninfested(::Block const&) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCFOLD void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCAPI bool $shouldTickOnSetBlock() const;
+    MCFOLD bool $shouldTickOnSetBlock() const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face, ::std::optional<::Vec3>) const;
 
-    MCAPI bool $use(::Player&, ::BlockPos const&, uchar) const;
+    MCFOLD bool $use(::Player&, ::BlockPos const&, uchar) const;
 
-    MCAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer() const;
+    MCFOLD ::BlockRenderLayer $getRenderLayer() const;
 
     MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    MCAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
 
     MCAPI ::Brightness $getLight(::Block const&) const;
 
-    MCAPI ::Brightness $getEmissiveBrightness(::Block const&) const;
+    MCFOLD ::Brightness $getEmissiveBrightness(::Block const&) const;
 
     MCAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
-    MCAPI void $_onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
+    MCFOLD void $_onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
+    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
     // NOLINTEND
 
 public:

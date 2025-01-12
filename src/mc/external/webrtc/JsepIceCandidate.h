@@ -12,12 +12,6 @@ namespace webrtc {
 
 class JsepIceCandidate {
 public:
-    // prevent constructor by default
-    JsepIceCandidate& operator=(JsepIceCandidate const&);
-    JsepIceCandidate(JsepIceCandidate const&);
-    JsepIceCandidate();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Initialize(::std::string const&, ::webrtc::SdpParseError*);

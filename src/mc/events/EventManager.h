@@ -66,7 +66,7 @@ public:
         ::std::vector<::std::string> const&                              exclude
     ) const;
 
-    MCAPI void clearListeners();
+    MCFOLD void clearListeners();
 
     MCAPI void disableEventRecording();
 
@@ -104,7 +104,7 @@ public:
 
     MCAPI void setupCommonProperties();
 
-    MCAPI void shutdown();
+    MCFOLD void shutdown();
 
     MCAPI void stopDebugEventLoggingForAllListeners();
 

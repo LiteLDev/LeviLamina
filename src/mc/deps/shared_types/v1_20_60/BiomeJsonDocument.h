@@ -41,10 +41,10 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
+            MCFOLD ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
             operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription const&);
 
-            MCAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
+            MCFOLD ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&
             operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::BiomeDescription&&);
 
             MCAPI ~BiomeDescription();
@@ -59,7 +59,7 @@ public:
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -79,7 +79,7 @@ public:
             // NOLINTBEGIN
             MCAPI ComponentMap(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
 
-            MCAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap&
+            MCFOLD ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap&
             operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
 
             MCAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap&

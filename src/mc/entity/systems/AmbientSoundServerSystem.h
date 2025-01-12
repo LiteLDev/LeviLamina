@@ -14,12 +14,6 @@ class EntityRegistry;
 
 class AmbientSoundServerSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AmbientSoundServerSystem& operator=(AmbientSoundServerSystem const&);
-    AmbientSoundServerSystem(AmbientSoundServerSystem const&);
-    AmbientSoundServerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

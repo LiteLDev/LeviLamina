@@ -61,7 +61,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI float $getViewDamping() const;
+    MCFOLD float $getViewDamping() const;
     // NOLINTEND
 
 public:

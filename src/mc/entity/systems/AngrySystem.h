@@ -14,12 +14,6 @@ class EntityRegistry;
 
 class AngrySystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AngrySystem& operator=(AngrySystem const&);
-    AngrySystem(AngrySystem const&);
-    AngrySystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

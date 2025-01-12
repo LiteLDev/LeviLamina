@@ -5,12 +5,6 @@
 namespace Bedrock::Threading {
 
 template <typename T0>
-class SharedLock {
-public:
-    // prevent constructor by default
-    SharedLock& operator=(SharedLock const&);
-    SharedLock(SharedLock const&);
-    SharedLock();
-};
+class SharedLock {};
 
 } // namespace Bedrock::Threading

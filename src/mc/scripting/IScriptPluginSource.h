@@ -9,12 +9,6 @@ class PackManifest;
 
 class IScriptPluginSource {
 public:
-    // prevent constructor by default
-    IScriptPluginSource& operator=(IScriptPluginSource const&);
-    IScriptPluginSource(IScriptPluginSource const&);
-    IScriptPluginSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

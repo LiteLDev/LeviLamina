@@ -14,12 +14,6 @@ class Random;
 
 class CoralHangFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    CoralHangFeature& operator=(CoralHangFeature const&);
-    CoralHangFeature(CoralHangFeature const&);
-    CoralHangFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

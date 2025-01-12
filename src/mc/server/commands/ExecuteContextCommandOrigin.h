@@ -160,11 +160,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getRequestId() const;
+    MCFOLD ::std::string const& $getRequestId() const;
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI ::BlockPos $getBlockPosition() const;
+    MCFOLD ::BlockPos $getBlockPosition() const;
 
     MCAPI ::Vec3 $getWorldPosition() const;
 
@@ -172,9 +172,9 @@ public:
 
     MCAPI ::Actor* $getEntity() const;
 
-    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
+    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
     MCAPI bool $isValid() const;
 
@@ -186,7 +186,7 @@ public:
 
     MCAPI ::Vec3 const $getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const;
 
-    MCAPI ::Level* $getLevel() const;
+    MCFOLD ::Level* $getLevel() const;
 
     MCAPI ::Dimension* $getDimension() const;
     // NOLINTEND

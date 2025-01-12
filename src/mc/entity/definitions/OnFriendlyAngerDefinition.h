@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnFriendlyAngerDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnFriendlyAngerDefinition& operator=(OnFriendlyAngerDefinition const&);
-    OnFriendlyAngerDefinition(OnFriendlyAngerDefinition const&);
-    OnFriendlyAngerDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

@@ -21,12 +21,6 @@ namespace br::worldgen {
 
 struct StructureProcessor {
 public:
-    // prevent constructor by default
-    StructureProcessor& operator=(StructureProcessor const&);
-    StructureProcessor(StructureProcessor const&);
-    StructureProcessor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -87,7 +81,7 @@ public:
     $finalize(::IBlockSource&, ::BlockPos, ::BlockPos, ::std::vector<::br::worldgen::StructureBlockInfo> const&, ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks, ::br::worldgen::StructurePlaceSettings const&)
         const;
 
-    MCAPI ::br::worldgen::StructureProcessorType $type() const;
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash&) const;
     // NOLINTEND

@@ -4,12 +4,6 @@
 
 class LowMemoryWatcher {
 public:
-    // prevent constructor by default
-    LowMemoryWatcher& operator=(LowMemoryWatcher const&);
-    LowMemoryWatcher(LowMemoryWatcher const&);
-    LowMemoryWatcher();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static bool& mPlatformToldUsLowMemory();

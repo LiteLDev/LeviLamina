@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-struct SendOptions {
-public:
-    // prevent constructor by default
-    SendOptions& operator=(SendOptions const&);
-    SendOptions(SendOptions const&);
-    SendOptions();
-};
+struct SendOptions {};
 
 } // namespace dcsctp

@@ -4,12 +4,6 @@
 
 struct IGameServerShutdown {
 public:
-    // prevent constructor by default
-    IGameServerShutdown& operator=(IGameServerShutdown const&);
-    IGameServerShutdown(IGameServerShutdown const&);
-    IGameServerShutdown();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

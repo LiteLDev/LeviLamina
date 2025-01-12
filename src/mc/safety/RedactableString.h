@@ -34,13 +34,13 @@ public:
 
     MCAPI ::Bedrock::Result<void> erase(uint64 offset, uint64 count);
 
-    MCAPI ::std::optional<::std::string> const& getRedacted() const;
+    MCFOLD ::std::optional<::std::string> const& getRedacted() const;
 
     MCAPI ::std::optional<::std::string>&& getRedacted();
 
-    MCAPI ::std::string const& getUnredacted() const;
+    MCFOLD ::std::string const& getUnredacted() const;
 
-    MCAPI bool const hasRedacted() const;
+    MCFOLD bool const hasRedacted() const;
 
     MCAPI ::Bedrock::Safety::RedactableString& operator+=(::std::string unredactedSuffix);
 

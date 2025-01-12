@@ -14,12 +14,6 @@ namespace webrtc {
 
 class RtpPacketizerGeneric {
 public:
-    // prevent constructor by default
-    RtpPacketizerGeneric& operator=(RtpPacketizerGeneric const&);
-    RtpPacketizerGeneric(RtpPacketizerGeneric const&);
-    RtpPacketizerGeneric();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void BuildHeader(::webrtc::RTPVideoHeader const&);

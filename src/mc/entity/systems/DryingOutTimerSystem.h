@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class DryingOutTimerSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    DryingOutTimerSystem& operator=(DryingOutTimerSystem const&);
-    DryingOutTimerSystem(DryingOutTimerSystem const&);
-    DryingOutTimerSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -12,12 +12,6 @@ namespace webrtc {
 
 class CongestionControlHandler {
 public:
-    // prevent constructor by default
-    CongestionControlHandler& operator=(CongestionControlHandler const&);
-    CongestionControlHandler(CongestionControlHandler const&);
-    CongestionControlHandler();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::webrtc::TargetTransferRate> GetUpdate();

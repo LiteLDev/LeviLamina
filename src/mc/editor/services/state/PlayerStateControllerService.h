@@ -97,7 +97,7 @@ public:
 
     MCAPI void $_onEnterToolMode();
 
-    MCAPI void $_onExitToolMode();
+    MCFOLD void $_onExitToolMode();
 
     MCAPI void $_onEnterCrosshairMode();
 

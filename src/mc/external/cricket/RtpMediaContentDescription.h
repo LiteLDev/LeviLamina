@@ -9,12 +9,6 @@ namespace cricket {
 
 class RtpMediaContentDescription : public ::cricket::MediaContentDescription {
 public:
-    // prevent constructor by default
-    RtpMediaContentDescription& operator=(RtpMediaContentDescription const&);
-    RtpMediaContentDescription(RtpMediaContentDescription const&);
-    RtpMediaContentDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

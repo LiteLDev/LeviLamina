@@ -39,91 +39,91 @@ public:
 
     MCAPI ConnectionRequest(::std::unique_ptr<::WebToken> rawToken, ::std::string const& certificateString);
 
-    MCAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
+    MCFOLD ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
-    MCAPI ::std::string getArmSize() const;
+    MCFOLD ::std::string getArmSize() const;
 
-    MCAPI ::std::vector<uchar> getCapeData() const;
+    MCFOLD ::std::vector<uchar> getCapeData() const;
 
-    MCAPI ::std::string getCapeId() const;
+    MCFOLD ::std::string getCapeId() const;
 
-    MCAPI ushort getCapeImageHeight() const;
+    MCFOLD ushort getCapeImageHeight() const;
 
-    MCAPI ushort getCapeImageWidth() const;
+    MCFOLD ushort getCapeImageWidth() const;
 
-    MCAPI ::Certificate const* getCertificate() const;
+    MCFOLD ::Certificate const* getCertificate() const;
 
-    MCAPI ::std::string getClientPlatformId() const;
+    MCFOLD ::std::string getClientPlatformId() const;
 
-    MCAPI ::std::string getClientPlatformOfflineId() const;
+    MCFOLD ::std::string getClientPlatformOfflineId() const;
 
-    MCAPI ::std::string getClientPlatformOnlineId() const;
+    MCFOLD ::std::string getClientPlatformOnlineId() const;
 
-    MCAPI uint64 getClientRandomId() const;
+    MCFOLD uint64 getClientRandomId() const;
 
-    MCAPI ::SubClientId getClientSubId() const;
+    MCFOLD ::SubClientId getClientSubId() const;
 
-    MCAPI ::std::string getClientThirdPartyName() const;
+    MCFOLD ::std::string getClientThirdPartyName() const;
 
-    MCAPI ::InputMode getCurrentInputMode() const;
+    MCFOLD ::InputMode getCurrentInputMode() const;
 
-    MCAPI ::std::string getDeviceId() const;
+    MCFOLD ::std::string getDeviceId() const;
 
-    MCAPI ::BuildPlatform getDeviceOS() const;
+    MCFOLD ::BuildPlatform getDeviceOS() const;
 
     MCAPI ::std::string getEduTokenChain() const;
 
-    MCAPI int getMaxViewDistance() const;
+    MCFOLD int getMaxViewDistance() const;
 
-    MCAPI ::DeviceMemoryTier getMemoryTier() const;
+    MCFOLD ::DeviceMemoryTier getMemoryTier() const;
 
-    MCAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCFOLD ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
-    MCAPI ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
+    MCFOLD ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
 
-    MCAPI ::PlatformType getPlatformType() const;
+    MCFOLD ::PlatformType getPlatformType() const;
 
-    MCAPI ::std::string getPlayFabIdUnverified() const;
+    MCFOLD ::std::string getPlayFabIdUnverified() const;
 
-    MCAPI ::std::string getSelfSignedId() const;
+    MCFOLD ::std::string getSelfSignedId() const;
 
-    MCAPI ::std::string getSkinAnimationData() const;
+    MCFOLD ::std::string getSkinAnimationData() const;
 
-    MCAPI ::mce::Color getSkinColor() const;
+    MCFOLD ::mce::Color getSkinColor() const;
 
-    MCAPI ::std::vector<uchar> getSkinData() const;
+    MCFOLD ::std::vector<uchar> getSkinData() const;
 
     MCAPI ::std::string getSkinGeometry() const;
 
-    MCAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
+    MCFOLD ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
 
-    MCAPI ::std::string getSkinId() const;
+    MCFOLD ::std::string getSkinId() const;
 
-    MCAPI ushort getSkinImageHeight() const;
+    MCFOLD ushort getSkinImageHeight() const;
 
-    MCAPI ushort getSkinImageWidth() const;
+    MCFOLD ushort getSkinImageWidth() const;
 
     MCAPI ::std::string getSkinResourcePatch() const;
 
-    MCAPI bool isCapeOnClassicSkin() const;
+    MCFOLD bool isCapeOnClassicSkin() const;
 
-    MCAPI bool isClientThirdPartyNameOnly() const;
+    MCFOLD bool isClientThirdPartyNameOnly() const;
 
-    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+    MCFOLD bool isCompatibleWithClientSideChunkGen() const;
 
     MCAPI bool isEduMode() const;
 
-    MCAPI bool isOverrideSkin() const;
+    MCFOLD bool isOverrideSkin() const;
 
-    MCAPI bool isPersonaSkin() const;
+    MCFOLD bool isPersonaSkin() const;
 
-    MCAPI bool isPremiumSkin() const;
+    MCFOLD bool isPremiumSkin() const;
 
-    MCAPI bool isTrustedSkin() const;
+    MCFOLD bool isTrustedSkin() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI ::std::string toString();
+    MCFOLD ::std::string toString();
 
     MCAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime, bool checkExpired);
 
@@ -149,6 +149,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

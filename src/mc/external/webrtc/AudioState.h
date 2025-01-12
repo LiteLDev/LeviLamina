@@ -39,12 +39,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    AudioState& operator=(AudioState const&);
-    AudioState(AudioState const&);
-    AudioState();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

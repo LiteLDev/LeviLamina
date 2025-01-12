@@ -15,12 +15,6 @@ namespace AgentComponents { class DetectRedstone; }
 
 class AgentDetectCommandSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AgentDetectCommandSystem& operator=(AgentDetectCommandSystem const&);
-    AgentDetectCommandSystem(AgentDetectCommandSystem const&);
-    AgentDetectCommandSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

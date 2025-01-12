@@ -12,12 +12,6 @@ namespace SynchedActorDataSerializer { struct DeserializeResult; }
 
 struct ISynchedActorDataAdapter {
 public:
-    // prevent constructor by default
-    ISynchedActorDataAdapter& operator=(ISynchedActorDataAdapter const&);
-    ISynchedActorDataAdapter(ISynchedActorDataAdapter const&);
-    ISynchedActorDataAdapter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

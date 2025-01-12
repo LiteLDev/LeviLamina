@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct UnlinkKongregateAccountResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    UnlinkKongregateAccountResult& operator=(UnlinkKongregateAccountResult const&);
-    UnlinkKongregateAccountResult(UnlinkKongregateAccountResult const&);
-    UnlinkKongregateAccountResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

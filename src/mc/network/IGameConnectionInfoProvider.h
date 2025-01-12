@@ -11,12 +11,6 @@ namespace Social {
 
 class IGameConnectionInfoProvider {
 public:
-    // prevent constructor by default
-    IGameConnectionInfoProvider& operator=(IGameConnectionInfoProvider const&);
-    IGameConnectionInfoProvider(IGameConnectionInfoProvider const&);
-    IGameConnectionInfoProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

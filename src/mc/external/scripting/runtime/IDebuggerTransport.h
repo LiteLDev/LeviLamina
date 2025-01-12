@@ -6,12 +6,6 @@ namespace Scripting {
 
 class IDebuggerTransport {
 public:
-    // prevent constructor by default
-    IDebuggerTransport& operator=(IDebuggerTransport const&);
-    IDebuggerTransport(IDebuggerTransport const&);
-    IDebuggerTransport();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

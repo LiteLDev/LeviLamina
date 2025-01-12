@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptInputMode {
 public:
-    // prevent constructor by default
-    ScriptInputMode& operator=(ScriptInputMode const&);
-    ScriptInputMode(ScriptInputMode const&);
-    ScriptInputMode();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBinding bind();

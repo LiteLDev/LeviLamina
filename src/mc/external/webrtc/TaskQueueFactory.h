@@ -20,12 +20,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    TaskQueueFactory& operator=(TaskQueueFactory const&);
-    TaskQueueFactory(TaskQueueFactory const&);
-    TaskQueueFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

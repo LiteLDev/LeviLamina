@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct RegisterForIOSPushNotificationResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    RegisterForIOSPushNotificationResult& operator=(RegisterForIOSPushNotificationResult const&);
-    RegisterForIOSPushNotificationResult(RegisterForIOSPushNotificationResult const&);
-    RegisterForIOSPushNotificationResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

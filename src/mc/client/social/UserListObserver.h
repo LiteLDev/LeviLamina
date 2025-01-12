@@ -16,12 +16,6 @@ namespace Social {
 
 class UserListObserver : public ::Core::Observer<::Social::UserListObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    UserListObserver& operator=(UserListObserver const&);
-    UserListObserver(UserListObserver const&);
-    UserListObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

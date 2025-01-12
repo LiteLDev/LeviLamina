@@ -61,11 +61,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $isThrowable() const;
+    MCFOLD bool $isThrowable() const;
 
     MCAPI ::HashedString const& $getCooldownType() const;
 
-    MCAPI int $getCooldownTime() const;
+    MCFOLD int $getCooldownTime() const;
     // NOLINTEND
 
 public:

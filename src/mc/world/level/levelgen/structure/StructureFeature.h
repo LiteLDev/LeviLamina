@@ -171,9 +171,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldAddHardcodedSpawnAreas() const;
+    MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCAPI bool $shouldPostProcessMobs() const;
+    MCFOLD bool $shouldPostProcessMobs() const;
 
     MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,

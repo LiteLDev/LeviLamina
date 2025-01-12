@@ -7,12 +7,6 @@
 
 struct MoveControlSkipDescription : public ::MoveControlDescription {
 public:
-    // prevent constructor by default
-    MoveControlSkipDescription& operator=(MoveControlSkipDescription const&);
-    MoveControlSkipDescription(MoveControlSkipDescription const&);
-    MoveControlSkipDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,7 +19,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

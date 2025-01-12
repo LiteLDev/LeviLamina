@@ -77,9 +77,9 @@ public:
     MCAPI void
     $log(::std::string&& msg, ::Player* player, ::Editor::LogLevel level, ::std::vector<::HashedString>&& areaTags);
 
-    MCAPI void $flush();
+    MCFOLD void $flush();
 
-    MCAPI ::std::vector<::Editor::LogMessage> const& $getMessages() const;
+    MCFOLD ::std::vector<::Editor::LogMessage> const& $getMessages() const;
     // NOLINTEND
 
 public:

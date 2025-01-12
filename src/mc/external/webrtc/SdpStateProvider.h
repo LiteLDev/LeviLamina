@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class SdpStateProvider {
-public:
-    // prevent constructor by default
-    SdpStateProvider& operator=(SdpStateProvider const&);
-    SdpStateProvider(SdpStateProvider const&);
-    SdpStateProvider();
-};
+class SdpStateProvider {};
 
 } // namespace webrtc

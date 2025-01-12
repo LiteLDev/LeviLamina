@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct SetActorLinkPacketSystem {
 public:
-    // prevent constructor by default
-    SetActorLinkPacketSystem& operator=(SetActorLinkPacketSystem const&);
-    SetActorLinkPacketSystem(SetActorLinkPacketSystem const&);
-    SetActorLinkPacketSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createPassengerSystem();

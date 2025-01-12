@@ -14,12 +14,6 @@ class ItemStackBase;
 
 class BrewingStandResultContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    BrewingStandResultContainerValidation& operator=(BrewingStandResultContainerValidation const&);
-    BrewingStandResultContainerValidation(BrewingStandResultContainerValidation const&);
-    BrewingStandResultContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -59,11 +53,11 @@ public:
 
     MCAPI int $getAvailableSetCount(int const slot, ::ItemStackBase const& item) const;
 
-    MCAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
+    MCFOLD int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
     // NOLINTEND
 
 public:

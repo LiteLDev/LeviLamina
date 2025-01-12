@@ -15,13 +15,13 @@ namespace ActorEquipment {
 // NOLINTBEGIN
 MCAPI ::std::vector<::ItemStack const*> getAllArmor(::EntityContext const& provider);
 
-MCAPI ::SimpleContainer const& getArmorContainer(::EntityContext const& provider);
+MCFOLD ::SimpleContainer const& getArmorContainer(::EntityContext const& provider);
 
 MCAPI ::SimpleContainer& getArmorContainer(::EntityContext&);
 
 MCAPI ::SimpleContainer const& getHandContainer(::EntityContext const&);
 
-MCAPI ::SimpleContainer& getHandContainer(::EntityContext& provider);
+MCFOLD ::SimpleContainer& getHandContainer(::EntityContext& provider);
 
 MCAPI void initializeActor(::EntityContext& provider);
 

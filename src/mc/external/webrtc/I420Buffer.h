@@ -14,12 +14,6 @@ namespace webrtc {
 
 class I420Buffer {
 public:
-    // prevent constructor by default
-    I420Buffer& operator=(I420Buffer const&);
-    I420Buffer(I420Buffer const&);
-    I420Buffer();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void CropAndScaleFrom(::webrtc::I420BufferInterface const&, int, int, int, int);

@@ -6,12 +6,6 @@ namespace Interactions {
 
 class ILegacyActorDependencies {
 public:
-    // prevent constructor by default
-    ILegacyActorDependencies& operator=(ILegacyActorDependencies const&);
-    ILegacyActorDependencies(ILegacyActorDependencies const&);
-    ILegacyActorDependencies();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

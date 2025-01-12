@@ -39,11 +39,11 @@ public:
         // NOLINTBEGIN
         MCAPI EndSpike(int centerX, int centerZ, int radius, int height, bool guarded);
 
-        MCAPI int getCenterX() const;
+        MCFOLD int getCenterX() const;
 
-        MCAPI int getCenterZ() const;
+        MCFOLD int getCenterZ() const;
 
-        MCAPI int getHeight() const;
+        MCFOLD int getHeight() const;
 
         MCAPI ::AABB getTopBoundingBox() const;
 
@@ -98,7 +98,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

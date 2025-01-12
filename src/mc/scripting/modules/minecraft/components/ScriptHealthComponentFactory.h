@@ -17,12 +17,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptHealthComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 public:
-    // prevent constructor by default
-    ScriptHealthComponentFactory& operator=(ScriptHealthComponentFactory const&);
-    ScriptHealthComponentFactory(ScriptHealthComponentFactory const&);
-    ScriptHealthComponentFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

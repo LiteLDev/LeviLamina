@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class FlockingSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    FlockingSystem& operator=(FlockingSystem const&);
-    FlockingSystem(FlockingSystem const&);
-    FlockingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

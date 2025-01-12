@@ -10,12 +10,6 @@ namespace Editor::Services {
 
 class ServerPlayerLogMessageHandlerService : public ::Editor::Services::IEditorService {
 public:
-    // prevent constructor by default
-    ServerPlayerLogMessageHandlerService& operator=(ServerPlayerLogMessageHandlerService const&);
-    ServerPlayerLogMessageHandlerService(ServerPlayerLogMessageHandlerService const&);
-    ServerPlayerLogMessageHandlerService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -45,11 +39,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string_view $getServiceName() const;
 
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
     MCAPI ::Scripting::Result<void> $ready();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
     // NOLINTEND
 
 public:

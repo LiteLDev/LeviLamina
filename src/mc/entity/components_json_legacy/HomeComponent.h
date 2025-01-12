@@ -44,9 +44,9 @@ public:
 
     MCAPI ::BlockPos getHomePos() const;
 
-    MCAPI int getRestrictionRadius() const;
+    MCFOLD int getRestrictionRadius() const;
 
-    MCAPI bool hasAnyRestriction() const;
+    MCFOLD bool hasAnyRestriction() const;
 
     MCAPI bool hasSpecificRestriction(::RestrictionType restrictionType) const;
 

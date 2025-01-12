@@ -18,12 +18,6 @@ namespace webrtc {
 
 class RTPSender {
 public:
-    // prevent constructor by default
-    RTPSender& operator=(RTPSender const&);
-    RTPSender(RTPSender const&);
-    RTPSender();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> AllocatePacket(::rtc::ArrayView<uint const>);

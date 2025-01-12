@@ -16,12 +16,6 @@ class StructurePiece;
 
 class NBBridgeStraight : public ::NetherFortressPiece {
 public:
-    // prevent constructor by default
-    NBBridgeStraight& operator=(NBBridgeStraight const&);
-    NBBridgeStraight(NBBridgeStraight const&);
-    NBBridgeStraight();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

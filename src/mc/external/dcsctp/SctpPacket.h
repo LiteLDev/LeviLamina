@@ -25,12 +25,6 @@ public:
     // SctpPacket inner types define
     class Builder {
     public:
-        // prevent constructor by default
-        Builder& operator=(Builder const&);
-        Builder(Builder const&);
-        Builder();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::dcsctp::SctpPacket::Builder& Add(::dcsctp::Chunk const&);
@@ -57,19 +51,7 @@ public:
         // NOLINTEND
     };
 
-    struct ChunkDescriptor {
-    public:
-        // prevent constructor by default
-        ChunkDescriptor& operator=(ChunkDescriptor const&);
-        ChunkDescriptor(ChunkDescriptor const&);
-        ChunkDescriptor();
-    };
-
-public:
-    // prevent constructor by default
-    SctpPacket& operator=(SctpPacket const&);
-    SctpPacket(SctpPacket const&);
-    SctpPacket();
+    struct ChunkDescriptor {};
 
 public:
     // member functions

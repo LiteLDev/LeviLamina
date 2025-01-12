@@ -47,7 +47,7 @@ public:
 
     MCAPI ::std::string getIp() const;
 
-    MCAPI ::std::string const& getOriginalUrl() const;
+    MCFOLD ::std::string const& getOriginalUrl() const;
 
     MCAPI bool isDone() const;
     // NOLINTEND

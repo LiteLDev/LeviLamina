@@ -76,17 +76,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCFOLD void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCFOLD ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
     MCAPI bool $isValid(float pickRange);
 
-    MCAPI void $broadcastChanges();
+    MCFOLD void $broadcastChanges();
 
     MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND

@@ -19,11 +19,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fromString(::std::string const& expression);
+    MCFOLD void fromString(::std::string const& expression);
 
-    MCAPI ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy const&);
+    MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy const&);
 
-    MCAPI ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
+    MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
 
     MCAPI ~TagsProxy();
     // NOLINTEND
@@ -31,7 +31,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

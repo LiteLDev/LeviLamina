@@ -14,12 +14,6 @@ namespace Automation {
 
 class AutomationObserver : public ::Core::Observer<::Automation::AutomationObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    AutomationObserver& operator=(AutomationObserver const&);
-    AutomationObserver(AutomationObserver const&);
-    AutomationObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

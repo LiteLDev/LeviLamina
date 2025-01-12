@@ -7,12 +7,6 @@
 
 class WalkState : public ::PetSleepWithOwnerState {
 public:
-    // prevent constructor by default
-    WalkState& operator=(WalkState const&);
-    WalkState(WalkState const&);
-    WalkState();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct AddGenericIDResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    AddGenericIDResult& operator=(AddGenericIDResult const&);
-    AddGenericIDResult(AddGenericIDResult const&);
-    AddGenericIDResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

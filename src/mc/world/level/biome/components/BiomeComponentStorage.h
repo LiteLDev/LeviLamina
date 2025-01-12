@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _addingComponentsIsAllowed() const;
+    MCFOLD bool _addingComponentsIsAllowed() const;
 
     MCAPI bool _hasComponent(::Bedrock::typeid_t<void> typeId) const;
 
@@ -36,6 +36,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -55,19 +55,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
     class ScriptSystemAfterEventsDeferredEventListener
     : public ::ScriptModuleMinecraft::IScriptScriptDeferredEventListener<
           ::ScriptModuleMinecraft::ScriptSystemAfterEvents> {
-    public:
-        // prevent constructor by default
-        ScriptSystemAfterEventsDeferredEventListener& operator=(ScriptSystemAfterEventsDeferredEventListener const&);
-        ScriptSystemAfterEventsDeferredEventListener(ScriptSystemAfterEventsDeferredEventListener const&);
-        ScriptSystemAfterEventsDeferredEventListener();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -126,9 +120,9 @@ public:
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
+    MCFOLD ::ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
 
-    MCAPI ::ScriptModuleMinecraft::ScriptAsyncEventList const& getSignalList() const;
+    MCFOLD ::ScriptModuleMinecraft::ScriptAsyncEventList const& getSignalList() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
     operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);

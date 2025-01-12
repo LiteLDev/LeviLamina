@@ -4,12 +4,6 @@
 
 class ThreadDataInterface {
 public:
-    // prevent constructor by default
-    ThreadDataInterface& operator=(ThreadDataInterface const&);
-    ThreadDataInterface(ThreadDataInterface const&);
-    ThreadDataInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

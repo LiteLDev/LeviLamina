@@ -22,23 +22,6 @@ public:
             const;
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::Bedrock::typeid_t<::CommandRegistry> mTypeIndex;
-    ParseFunction                          mParse;
-    ::std::string                          mName;
-    char const*                            mEnumNameOrPostfix;
-    CommandRegistry::Symbol                mEnumOrPostfixSymbol;
-    char const*                            mChainedSubcommand;
-    CommandRegistry::Symbol                mChainedSubcommandSymbol;
-    ::CommandParameterDataType             mParamType;
-    int                                    mOffset;
-    int                                    mSetOffset;
-    bool                                   mIsOptional;
-    ::CommandParameterOption               mOptions;
-    // NOLINTEND
-
-public:
     CommandParameterData() = default;
 
     LLNDAPI CommandParameterData(
@@ -58,6 +41,23 @@ public:
 
     CommandParameterData(CommandParameterData const&)            = default;
     CommandParameterData& operator=(CommandParameterData const&) = default;
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::Bedrock::typeid_t<::CommandRegistry> mTypeIndex;
+    ParseFunction                          mParse;
+    ::std::string                          mName;
+    char const*                            mEnumNameOrPostfix;
+    CommandRegistry::Symbol                mEnumOrPostfixSymbol;
+    char const*                            mChainedSubcommand;
+    CommandRegistry::Symbol                mChainedSubcommandSymbol;
+    ::CommandParameterDataType             mParamType;
+    int                                    mOffset;
+    int                                    mSetOffset;
+    bool                                   mIsOptional;
+    ::CommandParameterOption               mOptions;
+    // NOLINTEND
 
 public:
     // member functions
@@ -104,6 +104,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

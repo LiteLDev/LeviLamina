@@ -13,12 +13,6 @@ struct FullContainerName;
 
 class IContainerRegistryTracker {
 public:
-    // prevent constructor by default
-    IContainerRegistryTracker& operator=(IContainerRegistryTracker const&);
-    IContainerRegistryTracker(IContainerRegistryTracker const&);
-    IContainerRegistryTracker();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

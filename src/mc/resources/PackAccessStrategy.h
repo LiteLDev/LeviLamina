@@ -157,25 +157,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
+    MCFOLD void $forEachInAssetSet(::Core::Path const&, ::std::function<void(::Core::Path const&)>) const;
 
     MCAPI ::Core::PathBuffer<::std::string> const& $getSubPath() const;
 
-    MCAPI bool $supportsSignatureVerification() const;
+    MCFOLD bool $supportsSignatureVerification() const;
 
     MCAPI ::PackAccessAssetGenerationResult $generateAssetSet();
 
     MCAPI ::PackAccessAssetGenerationResult $regenerateAssetSet();
 
-    MCAPI bool $canRecurse() const;
+    MCFOLD bool $canRecurse() const;
 
     MCAPI bool $hasUpgradeFiles() const;
 
     MCAPI ::ContentIdentity $readContentIdentity() const;
 
-    MCAPI bool $isAssetExtractionViable() const;
+    MCFOLD bool $isAssetExtractionViable() const;
 
-    MCAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const&) const;
+    MCFOLD ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const&) const;
     // NOLINTEND
 
 public:

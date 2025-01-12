@@ -5,12 +5,6 @@
 namespace edu::auth {
 
 template <typename T0>
-struct GenericCredentialsEvent {
-public:
-    // prevent constructor by default
-    GenericCredentialsEvent& operator=(GenericCredentialsEvent const&);
-    GenericCredentialsEvent(GenericCredentialsEvent const&);
-    GenericCredentialsEvent();
-};
+struct GenericCredentialsEvent {};
 
 } // namespace edu::auth

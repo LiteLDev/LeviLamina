@@ -4,12 +4,6 @@
 
 namespace Scripting {
 
-struct FutureType {
-public:
-    // prevent constructor by default
-    FutureType& operator=(FutureType const&);
-    FutureType(FutureType const&);
-    FutureType();
-};
+struct FutureType {};
 
 } // namespace Scripting

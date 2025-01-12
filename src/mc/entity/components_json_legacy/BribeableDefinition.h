@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBribeItem(::ItemDescriptor const& itemDescriptor);
+    MCFOLD void addBribeItem(::ItemDescriptor const& itemDescriptor);
 
     MCAPI void initialize(::EntityContext&, ::BribeableComponent& component) const;
     // NOLINTEND

@@ -69,9 +69,9 @@ public:
     MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer() const;
+    MCFOLD ::BlockRenderLayer $getRenderLayer() const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const;
+    MCFOLD ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const;
     // NOLINTEND
 
 public:

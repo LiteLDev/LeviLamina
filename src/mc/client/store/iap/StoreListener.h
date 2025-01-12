@@ -11,12 +11,6 @@ struct PurchaseInfo;
 
 class StoreListener {
 public:
-    // prevent constructor by default
-    StoreListener& operator=(StoreListener const&);
-    StoreListener(StoreListener const&);
-    StoreListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

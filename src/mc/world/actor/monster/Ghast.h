@@ -18,12 +18,6 @@ struct VariantParameterList;
 
 class Ghast : public ::Monster {
 public:
-    // prevent constructor by default
-    Ghast& operator=(Ghast const&);
-    Ghast(Ghast const&);
-    Ghast();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 182
@@ -71,9 +65,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isDarkEnoughToSpawn() const;
+    MCFOLD bool $isDarkEnoughToSpawn() const;
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

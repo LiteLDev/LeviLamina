@@ -11,12 +11,6 @@ namespace webrtc {
 
 class Transport {
 public:
-    // prevent constructor by default
-    Transport& operator=(Transport const&);
-    Transport(Transport const&);
-    Transport();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

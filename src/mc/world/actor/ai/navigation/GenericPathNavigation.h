@@ -15,12 +15,6 @@ struct NavigationDescription;
 
 class GenericPathNavigation : public ::PathNavigation {
 public:
-    // prevent constructor by default
-    GenericPathNavigation& operator=(GenericPathNavigation const&);
-    GenericPathNavigation(GenericPathNavigation const&);
-    GenericPathNavigation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

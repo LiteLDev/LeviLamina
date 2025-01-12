@@ -38,7 +38,7 @@ public:
 
     MCAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
 
-    MCAPI ::std::string const& asString() const;
+    MCFOLD ::std::string const& asString() const;
 
     MCAPI bool operator<(::GameVersion const& other) const;
 
@@ -74,6 +74,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

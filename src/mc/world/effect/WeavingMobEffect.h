@@ -13,12 +13,6 @@ class Vec3;
 
 class WeavingMobEffect : public ::MobEffect {
 public:
-    // prevent constructor by default
-    WeavingMobEffect& operator=(WeavingMobEffect const&);
-    WeavingMobEffect(WeavingMobEffect const&);
-    WeavingMobEffect();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

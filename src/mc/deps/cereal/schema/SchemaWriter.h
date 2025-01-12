@@ -11,12 +11,6 @@ namespace cereal {
 
 struct SchemaWriter {
 public:
-    // prevent constructor by default
-    SchemaWriter& operator=(SchemaWriter const&);
-    SchemaWriter(SchemaWriter const&);
-    SchemaWriter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -86,7 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSequenceWriter() const;
+    MCFOLD bool $isSequenceWriter() const;
     // NOLINTEND
 };
 

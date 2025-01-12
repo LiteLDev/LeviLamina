@@ -14,12 +14,6 @@ namespace NpcComponents { struct LeaveMenuCountdown; }
 
 class NpcSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    NpcSystem& operator=(NpcSystem const&);
-    NpcSystem(NpcSystem const&);
-    NpcSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

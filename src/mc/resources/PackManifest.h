@@ -114,7 +114,7 @@ public:
 
     MCAPI void addPackDependency(::PackIdVersion const& packId);
 
-    MCAPI ::ContentIdentity const& getContentIdentity() const;
+    MCFOLD ::ContentIdentity const& getContentIdentity() const;
 
     MCAPI ::std::vector<::PackIdVersion> const& getDependentPackIdentities() const;
 
@@ -122,21 +122,21 @@ public:
 
     MCAPI ::PackManifestFormat getFormatVersion() const;
 
-    MCAPI ::PackIdVersion const& getIdentity() const;
+    MCFOLD ::PackIdVersion const& getIdentity() const;
 
     MCAPI ::std::vector<::std::string> const& getLanguageCodesForPackKeywords() const;
 
-    MCAPI ::ResourceLocation const& getLocation() const;
+    MCFOLD ::ResourceLocation const& getLocation() const;
 
     MCAPI ::ManifestOrigin getManifestOrigin() const;
 
     MCAPI ::ResourceMetadata const& getMetaData() const;
 
-    MCAPI ::MinEngineVersion const& getMinEngineVersion() const;
+    MCFOLD ::MinEngineVersion const& getMinEngineVersion() const;
 
-    MCAPI ::std::vector<::ModuleIdentifier> const& getModuleDependencies() const;
+    MCFOLD ::std::vector<::ModuleIdentifier> const& getModuleDependencies() const;
 
-    MCAPI ::std::vector<::ResourceInformation> const& getModules() const;
+    MCFOLD ::std::vector<::ResourceInformation> const& getModules() const;
 
     MCAPI ::std::string getName() const;
 

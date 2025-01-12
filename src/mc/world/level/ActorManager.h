@@ -86,7 +86,7 @@ public:
 
     MCAPI void forceRemoveActorFromWorld(::Actor& actor);
 
-    MCAPI ::std::vector<::OwnerPtr<::EntityContext>> const& getEntities() const;
+    MCFOLD ::std::vector<::OwnerPtr<::EntityContext>> const& getEntities() const;
 
     MCAPI void onChunkDiscarded(::WeakEntityRef entityRef);
 
@@ -96,7 +96,7 @@ public:
 
     MCAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
 
-    MCAPI void setLevelIsTearingDown();
+    MCFOLD void setLevelIsTearingDown();
 
     MCAPI ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& levelChunk);
     // NOLINTEND
@@ -119,12 +119,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
     $getRegisterPostReloadActorConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
     // NOLINTEND
 
 public:

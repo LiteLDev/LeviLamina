@@ -6,11 +6,6 @@ namespace webrtc {
 
 struct RtcpNackStats {
 public:
-    // prevent constructor by default
-    RtcpNackStats& operator=(RtcpNackStats const&);
-    RtcpNackStats(RtcpNackStats const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void ReportRequest(ushort);

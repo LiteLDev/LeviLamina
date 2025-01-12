@@ -13,12 +13,6 @@ namespace Json { class Value; }
 
 class RepeatUntilFailureDefinition : public ::DecoratorDefinition {
 public:
-    // prevent constructor by default
-    RepeatUntilFailureDefinition& operator=(RepeatUntilFailureDefinition const&);
-    RepeatUntilFailureDefinition(RepeatUntilFailureDefinition const&);
-    RepeatUntilFailureDefinition();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -37,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCFOLD void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

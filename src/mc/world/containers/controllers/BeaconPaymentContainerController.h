@@ -13,12 +13,6 @@ class Recipes;
 
 class BeaconPaymentContainerController : public ::ContainerController {
 public:
-    // prevent constructor by default
-    BeaconPaymentContainerController& operator=(BeaconPaymentContainerController const&);
-    BeaconPaymentContainerController(BeaconPaymentContainerController const&);
-    BeaconPaymentContainerController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

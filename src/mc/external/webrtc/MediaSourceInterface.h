@@ -19,12 +19,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    MediaSourceInterface& operator=(MediaSourceInterface const&);
-    MediaSourceInterface(MediaSourceInterface const&);
-    MediaSourceInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

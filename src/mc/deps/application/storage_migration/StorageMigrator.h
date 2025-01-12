@@ -41,12 +41,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    StorageMigrator& operator=(StorageMigrator const&);
-    StorageMigrator(StorageMigrator const&);
-    StorageMigrator();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

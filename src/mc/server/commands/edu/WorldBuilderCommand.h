@@ -15,12 +15,6 @@ class LayeredAbilities;
 
 class WorldBuilderCommand : public ::Command {
 public:
-    // prevent constructor by default
-    WorldBuilderCommand& operator=(WorldBuilderCommand const&);
-    WorldBuilderCommand(WorldBuilderCommand const&);
-    WorldBuilderCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

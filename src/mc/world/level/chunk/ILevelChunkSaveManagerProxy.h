@@ -17,12 +17,6 @@ class TaskResult;
 
 class ILevelChunkSaveManagerProxy {
 public:
-    // prevent constructor by default
-    ILevelChunkSaveManagerProxy& operator=(ILevelChunkSaveManagerProxy const&);
-    ILevelChunkSaveManagerProxy(ILevelChunkSaveManagerProxy const&);
-    ILevelChunkSaveManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

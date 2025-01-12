@@ -12,12 +12,6 @@ class ContainerScreenContext;
 
 class Trade2Ingredient1ContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    Trade2Ingredient1ContainerValidation& operator=(Trade2Ingredient1ContainerValidation const&);
-    Trade2Ingredient1ContainerValidation(Trade2Ingredient1ContainerValidation const&);
-    Trade2Ingredient1ContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

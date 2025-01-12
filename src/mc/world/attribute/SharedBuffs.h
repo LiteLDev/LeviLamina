@@ -9,12 +9,6 @@ class AttributeBuff;
 
 class SharedBuffs {
 public:
-    // prevent constructor by default
-    SharedBuffs& operator=(SharedBuffs const&);
-    SharedBuffs(SharedBuffs const&);
-    SharedBuffs();
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::AttributeBuff>& ABSORPTION();

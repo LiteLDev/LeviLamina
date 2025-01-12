@@ -4,12 +4,6 @@
 
 namespace cricket {
 
-class UsedPayloadTypes {
-public:
-    // prevent constructor by default
-    UsedPayloadTypes& operator=(UsedPayloadTypes const&);
-    UsedPayloadTypes(UsedPayloadTypes const&);
-    UsedPayloadTypes();
-};
+class UsedPayloadTypes {};
 
 } // namespace cricket

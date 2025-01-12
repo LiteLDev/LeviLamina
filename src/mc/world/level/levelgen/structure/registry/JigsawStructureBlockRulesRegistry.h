@@ -30,7 +30,7 @@ public:
         ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const>>>
     get(::std::string_view key) const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* lookupByName(::std::string name) const;
+    MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* lookupByName(::std::string name) const;
 
     MCAPI void record(
         ::std::string_view                                                                          key,

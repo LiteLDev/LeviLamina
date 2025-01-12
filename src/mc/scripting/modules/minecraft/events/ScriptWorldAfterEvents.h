@@ -103,19 +103,13 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
     class ScriptWorldAfterEventsDeferredEventListener
     : public ::ScriptModuleMinecraft::IScriptScriptDeferredEventListener<
           ::ScriptModuleMinecraft::ScriptWorldAfterEvents> {
-    public:
-        // prevent constructor by default
-        ScriptWorldAfterEventsDeferredEventListener& operator=(ScriptWorldAfterEventsDeferredEventListener const&);
-        ScriptWorldAfterEventsDeferredEventListener(ScriptWorldAfterEventsDeferredEventListener const&);
-        ScriptWorldAfterEventsDeferredEventListener();
-
     public:
         // virtual functions
         // NOLINTBEGIN

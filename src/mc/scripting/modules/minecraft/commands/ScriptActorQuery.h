@@ -26,12 +26,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorQuery {
 public:
-    // prevent constructor by default
-    ScriptActorQuery& operator=(ScriptActorQuery const&);
-    ScriptActorQuery(ScriptActorQuery const&);
-    ScriptActorQuery();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::Error _incompatableWorldQueryOptionError(::std::string const& propertyName);

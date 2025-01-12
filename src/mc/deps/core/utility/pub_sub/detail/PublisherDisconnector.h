@@ -11,12 +11,6 @@ namespace Bedrock::PubSub::Detail {
 
 class PublisherDisconnector {
 public:
-    // prevent constructor by default
-    PublisherDisconnector& operator=(PublisherDisconnector const&);
-    PublisherDisconnector(PublisherDisconnector const&);
-    PublisherDisconnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

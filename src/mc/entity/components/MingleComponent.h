@@ -43,7 +43,7 @@ public:
 
     MCAPI void resetState();
 
-    MCAPI ::MingleComponent& setMingleState(::MingleComponent::MingleState val);
+    MCFOLD ::MingleComponent& setMingleState(::MingleComponent::MingleState val);
 
     MCAPI ::MingleComponent& setPartnerId(::ActorUniqueID val);
     // NOLINTEND

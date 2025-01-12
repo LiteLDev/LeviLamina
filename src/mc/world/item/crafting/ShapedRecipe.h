@@ -56,7 +56,7 @@ public:
     // NOLINTBEGIN
     MCAPI ShapedRecipe(::Recipe::ConstructionContext&& context, int width, int height, bool assumeSymmetry);
 
-    MCAPI bool assumeSymmetry() const;
+    MCFOLD bool assumeSymmetry() const;
 
     MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
 
@@ -78,13 +78,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
+    MCFOLD ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
 
     MCAPI int $getCraftingSize() const;
 
-    MCAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCAPI bool $isShapeless() const;
+    MCFOLD bool $isShapeless() const;
 
     MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 

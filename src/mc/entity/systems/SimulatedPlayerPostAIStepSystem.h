@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class SimulatedPlayerPostAIStepSystem {
 public:
-    // prevent constructor by default
-    SimulatedPlayerPostAIStepSystem& operator=(SimulatedPlayerPostAIStepSystem const&);
-    SimulatedPlayerPostAIStepSystem(SimulatedPlayerPostAIStepSystem const&);
-    SimulatedPlayerPostAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

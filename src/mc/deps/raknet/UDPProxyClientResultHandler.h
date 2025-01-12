@@ -13,12 +13,6 @@ namespace RakNet {
 
 struct UDPProxyClientResultHandler {
 public:
-    // prevent constructor by default
-    UDPProxyClientResultHandler& operator=(UDPProxyClientResultHandler const&);
-    UDPProxyClientResultHandler(UDPProxyClientResultHandler const&);
-    UDPProxyClientResultHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

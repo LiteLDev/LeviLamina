@@ -12,6 +12,7 @@
 
 #define MCAPI  LL_SHARED_IMPORT
 #define MCTAPI template<> MCAPI
+#define MCFOLD MCAPI /*Identical COMDAT Folding*/
 
 #include <algorithm>          // STL general algorithms
 #include <array>              // STL array container

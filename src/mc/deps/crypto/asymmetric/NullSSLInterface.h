@@ -13,12 +13,6 @@ namespace Crypto::Asymmetric {
 
 class NullSSLInterface : public ::Crypto::Asymmetric::ISystemInterface {
 public:
-    // prevent constructor by default
-    NullSSLInterface& operator=(NullSSLInterface const&);
-    NullSSLInterface(NullSSLInterface const&);
-    NullSSLInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

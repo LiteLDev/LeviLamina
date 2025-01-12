@@ -51,27 +51,27 @@ public:
 
     MCAPI uint getAnimationTicks() const;
 
-    MCAPI bool getIgnoreBlocks() const;
+    MCFOLD bool getIgnoreBlocks() const;
 
-    MCAPI bool getIgnoreEntities() const;
+    MCFOLD bool getIgnoreEntities() const;
 
-    MCAPI bool getIgnoreJigsawBlocks() const;
+    MCFOLD bool getIgnoreJigsawBlocks() const;
 
-    MCAPI uint getIntegritySeed() const;
+    MCFOLD uint getIntegritySeed() const;
 
     MCAPI float getIntegrityValue() const;
 
-    MCAPI bool getIsWaterLogged() const;
+    MCFOLD bool getIsWaterLogged() const;
 
-    MCAPI ::Mirror getMirror() const;
+    MCFOLD ::Mirror getMirror() const;
 
-    MCAPI ::std::string const& getPaletteName() const;
+    MCFOLD ::std::string const& getPaletteName() const;
 
     MCAPI ::Rotation getRotation() const;
 
     MCAPI ::BlockPos const& getStructureOffset() const;
 
-    MCAPI ::BlockPos const& getStructureSize() const;
+    MCFOLD ::BlockPos const& getStructureSize() const;
 
     MCAPI ::BoundingBox getTransformedBoundBox() const;
 
@@ -81,7 +81,7 @@ public:
 
     MCAPI ::StructureSettings& operator=(::StructureSettings const&);
 
-    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonTickingPlayerAndTickingAreaChunks);
+    MCFOLD void setAllowNonTickingPlayerAndTickingAreaChunks(bool allowNonTickingPlayerAndTickingAreaChunks);
 
     MCAPI void setAnimationMode(::AnimationMode animationMode);
 
@@ -89,9 +89,9 @@ public:
 
     MCAPI void setIgnoreBlocks(bool ignoreBlocks);
 
-    MCAPI void setIgnoreEntities(bool ignoreEntities);
+    MCFOLD void setIgnoreEntities(bool ignoreEntities);
 
-    MCAPI void setIgnoreJigsawBlocks(bool ignoreJigsawBlocks);
+    MCFOLD void setIgnoreJigsawBlocks(bool ignoreJigsawBlocks);
 
     MCAPI void setIntegritySeed(uint integritySeed);
 
@@ -99,7 +99,7 @@ public:
 
     MCAPI void setIsWaterLogged(bool waterLogged);
 
-    MCAPI void setMirror(::Mirror mirror);
+    MCFOLD void setMirror(::Mirror mirror);
 
     MCAPI void setPivot(::Vec3 const& pivot);
 
@@ -115,7 +115,7 @@ public:
 
     MCAPI void setStructureSize(::BlockPos const& size);
 
-    MCAPI bool shouldAllowNonTickingPlayerAndTickingAreaChunks() const;
+    MCFOLD bool shouldAllowNonTickingPlayerAndTickingAreaChunks() const;
 
     MCAPI ~StructureSettings();
     // NOLINTEND
@@ -139,6 +139,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

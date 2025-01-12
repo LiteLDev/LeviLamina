@@ -4,12 +4,6 @@
 
 namespace Core::Profile {
 
-struct GPUProfileTokenMarker {
-public:
-    // prevent constructor by default
-    GPUProfileTokenMarker& operator=(GPUProfileTokenMarker const&);
-    GPUProfileTokenMarker(GPUProfileTokenMarker const&);
-    GPUProfileTokenMarker();
-};
+struct GPUProfileTokenMarker {};
 
 } // namespace Core::Profile

@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ModeChangedPayload(::Editor::Mode newMode);
 
-    MCAPI ::Editor::Mode getNewMode() const;
+    MCFOLD ::Editor::Mode getNewMode() const;
     // NOLINTEND
 
 public:

@@ -37,9 +37,9 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool getHasExecuted() const;
+    MCFOLD bool getHasExecuted() const;
 
-    MCAPI bool getLooping() const;
+    MCFOLD bool getLooping() const;
 
     MCAPI int getRandomTime(::Actor& actor);
 
@@ -49,7 +49,7 @@ public:
 
     MCAPI void restartTimer(::Actor& actor);
 
-    MCAPI void setHasExecuted(bool hasExecuted);
+    MCFOLD void setHasExecuted(bool hasExecuted);
     // NOLINTEND
 
 public:

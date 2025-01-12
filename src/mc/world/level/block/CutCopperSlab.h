@@ -105,7 +105,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
+    MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 

@@ -125,7 +125,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCFOLD void* $ctor();
 
         MCAPI void* $ctor(::StringByteInput& stream);
         // NOLINTEND
@@ -135,17 +135,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk6421bd;
-        ::ll::UntypedStorage<1, 1> mUnk82d63c;
-        ::ll::UntypedStorage<1, 1> mUnk1cca4f;
-        ::ll::UntypedStorage<1, 1> mUnkd8dd50;
+        ::ll::TypedStorage<1, 1, bool> mWasStored;
+        ::ll::TypedStorage<1, 1, bool> mWasGenerated;
+        ::ll::TypedStorage<1, 1, bool> mWasRequestedInsideTickRange;
+        ::ll::TypedStorage<1, 1, bool> mWasLoadedInsideTickRange;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Telemetry& operator=(Telemetry const&);
-        Telemetry(Telemetry const&);
-        Telemetry();
     };
 
     using BlockList = ::std::vector<::BlockPos>;
@@ -158,15 +152,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 24> mUnkaa0f6a;
-        ::ll::UntypedStorage<1, 1>  mUnkcb47a3;
+        ::ll::TypedStorage<4, 24, ::BoundingBox>           aabb;
+        ::ll::TypedStorage<1, 1, ::HardcodedSpawnAreaType> type;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SpawningArea& operator=(SpawningArea const&);
-        SpawningArea(SpawningArea const&);
-        SpawningArea();
     };
 
     using BBorder = bool;
@@ -301,9 +289,9 @@ public:
 
     MCAPI bool _deserializeSubChunk(short index, ::StringByteInput& stream);
 
-    MCAPI void _disableBlockEntityAccessForThisThread() const;
+    MCFOLD void _disableBlockEntityAccessForThisThread() const;
 
-    MCAPI void _enableBlockEntityAccessForThisThread() const;
+    MCFOLD void _enableBlockEntityAccessForThisThread() const;
 
     MCAPI void _fixupCommandBlocksOnTickingQueue(::BlockSource& tickRegion);
 
@@ -316,7 +304,7 @@ public:
 
     MCAPI void _generateOriginalLightingSubChunk(::BlockSource& source, uint64 subchunkIdx, bool);
 
-    MCAPI ::ChunkTerrainDataState _getTerrainDataState() const;
+    MCFOLD ::ChunkTerrainDataState _getTerrainDataState() const;
 
     MCAPI void _lightingCallbacks(
         ::ChunkBlockPos const& pos,
@@ -359,7 +347,7 @@ public:
         ::Bedrock::Threading::UniqueLock<::std::shared_mutex> const& writeLock
     );
 
-    MCAPI void _setGenerator(::ChunkSource* generator);
+    MCFOLD void _setGenerator(::ChunkSource* generator);
 
     MCAPI bool _setOnChunkLoadedCalled();
 
@@ -413,7 +401,7 @@ public:
         ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>& blockEntityMap
     );
 
-    MCAPI ::LevelChunkBlockActorAccessToken enableBlockEntityAccessForThisThread() const;
+    MCFOLD ::LevelChunkBlockActorAccessToken enableBlockEntityAccessForThisThread() const;
 
     MCAPI void fetchBiomes(::std::vector<::Biome const*>& biomes) const;
 
@@ -465,7 +453,7 @@ public:
 
     MCAPI ::std::vector<::WeakEntityRef>& getChunkEntities();
 
-    MCAPI ::Dimension& getDimension() const;
+    MCFOLD ::Dimension& getDimension() const;
 
     MCAPI void getEntities(
         ::gsl::span<::gsl::not_null<::Actor const*>> ignoredEntities,
@@ -485,7 +473,7 @@ public:
 
     MCAPI ::GameEventListenerRegistry& getGameEventListenerRegistry() const;
 
-    MCAPI ::ChunkSource* getGenerator() const;
+    MCFOLD ::ChunkSource* getGenerator() const;
 
     MCAPI ::DimensionHeightRange const& getHeightRange() const;
 
@@ -495,9 +483,9 @@ public:
 
     MCAPI float getInterpolant(uint64 x, uint64 y) const;
 
-    MCAPI ::Tick const& getLastTick() const;
+    MCFOLD ::Tick const& getLastTick() const;
 
-    MCAPI ::Level& getLevel() const;
+    MCFOLD ::Level& getLevel() const;
 
     MCAPI ::LevelChunkVolumeData& getLevelChunkVolumeData();
 
@@ -515,13 +503,13 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaData> getMetaDataCopy() const;
 
-    MCAPI ::BlockPos const& getMin() const;
+    MCFOLD ::BlockPos const& getMin() const;
 
     MCAPI short getMinY() const;
 
     MCAPI short getNonAirMaxHeight() const;
 
-    MCAPI ::ChunkPos const& getPosition() const;
+    MCFOLD ::ChunkPos const& getPosition() const;
 
     MCAPI ::ChunkLocalHeight getPreWorldGenHeightmap(::ChunkBlockPos const& pos) const;
 
@@ -533,7 +521,7 @@ public:
 
     MCAPI ::Brightness getRawBrightness(::ChunkBlockPos const& pos, ::Brightness skyDampen) const;
 
-    MCAPI ::std::atomic<::ChunkState> const& getState() const;
+    MCFOLD ::std::atomic<::ChunkState> const& getState() const;
 
     MCAPI ::SubChunk const* getSubChunk(short absoluteIndex) const;
 
@@ -545,7 +533,7 @@ public:
 
     MCAPI ::BlockTickingQueue const& getTickQueue() const;
 
-    MCAPI ::BlockTickingQueue& getTickQueue();
+    MCFOLD ::BlockTickingQueue& getTickQueue();
 
     MCAPI ::BlockPos const getTopRainBlockPos(::ChunkBlockPos const& pos);
 
@@ -573,7 +561,7 @@ public:
 
     MCAPI bool isNonActorDataDirty() const;
 
-    MCAPI bool isReadOnly() const;
+    MCFOLD bool isReadOnly() const;
 
     MCAPI bool isSkyLit(::ChunkBlockPos const& pos) const;
 
@@ -628,9 +616,9 @@ public:
 
     MCAPI void removeHardcodedSpawningArea(::HardcodedSpawnAreaType type);
 
-    MCAPI void serialize2DMaps(::IDataOutput& stream) const;
+    MCFOLD void serialize2DMaps(::IDataOutput& stream) const;
 
-    MCAPI void serialize3DMaps(::IDataOutput& stream) const;
+    MCFOLD void serialize3DMaps(::IDataOutput& stream) const;
 
     MCAPI void serializeBiomeStates(::IDataOutput& stream) const;
 
@@ -740,7 +728,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool borderBlocksAreEnabled();
+    MCFOLD static bool borderBlocksAreEnabled();
 
     MCAPI static ::std::unique_ptr<::LevelChunk, ::LevelChunkPhase1Deleter>
     createNew(::Dimension& dimension, ::ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);

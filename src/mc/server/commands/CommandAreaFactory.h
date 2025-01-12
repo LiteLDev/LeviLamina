@@ -61,6 +61,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
+    MCFOLD void* $ctor(::Dimension& dimension);
     // NOLINTEND
 };

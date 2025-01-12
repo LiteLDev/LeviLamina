@@ -6,11 +6,6 @@ namespace webrtc {
 
 class RtpGenericFrameDescriptor {
 public:
-    // prevent constructor by default
-    RtpGenericFrameDescriptor& operator=(RtpGenericFrameDescriptor const&);
-    RtpGenericFrameDescriptor(RtpGenericFrameDescriptor const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool AddFrameDependencyDiff(ushort);

@@ -60,11 +60,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCFOLD void $tick();
 
-    MCAPI void $notify(int64);
+    MCFOLD void $notify(int64);
 
-    MCAPI bool $willChange(float, float, ::AttributeBuff const&);
+    MCFOLD bool $willChange(float, float, ::AttributeBuff const&);
 
     MCAPI float $change(float, float newValue, ::AttributeBuff const&);
 

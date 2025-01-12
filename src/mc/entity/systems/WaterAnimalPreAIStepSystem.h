@@ -17,12 +17,6 @@ struct WaterAnimalFlagComponent;
 
 class WaterAnimalPreAIStepSystem {
 public:
-    // prevent constructor by default
-    WaterAnimalPreAIStepSystem& operator=(WaterAnimalPreAIStepSystem const&);
-    WaterAnimalPreAIStepSystem(WaterAnimalPreAIStepSystem const&);
-    WaterAnimalPreAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

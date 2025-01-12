@@ -4,12 +4,6 @@
 
 class NullLogger : public ::leveldb::Logger {
 public:
-    // prevent constructor by default
-    NullLogger& operator=(NullLogger const&);
-    NullLogger(NullLogger const&);
-    NullLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -34,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Logv(char const* format, char* ap);
+    MCFOLD void $Logv(char const* format, char* ap);
     // NOLINTEND
 
 public:

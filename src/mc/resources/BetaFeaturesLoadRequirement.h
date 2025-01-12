@@ -12,12 +12,6 @@ class IPackLoadContext;
 
 class BetaFeaturesLoadRequirement {
 public:
-    // prevent constructor by default
-    BetaFeaturesLoadRequirement& operator=(BetaFeaturesLoadRequirement const&);
-    BetaFeaturesLoadRequirement(BetaFeaturesLoadRequirement const&);
-    BetaFeaturesLoadRequirement();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool satisfied(::IPackLoadContext const&, ::JsonBetaState canUseBeta);

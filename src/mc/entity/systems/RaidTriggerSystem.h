@@ -21,12 +21,6 @@ struct VillageManagerComponent;
 
 class RaidTriggerSystem {
 public:
-    // prevent constructor by default
-    RaidTriggerSystem& operator=(RaidTriggerSystem const&);
-    RaidTriggerSystem(RaidTriggerSystem const&);
-    RaidTriggerSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doRaidTriggerSystem(

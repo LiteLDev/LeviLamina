@@ -21,12 +21,6 @@ struct VehicleComponent;
 
 struct PopulateGlobalPassengersToPositionListSystem {
 public:
-    // prevent constructor by default
-    PopulateGlobalPassengersToPositionListSystem& operator=(PopulateGlobalPassengersToPositionListSystem const&);
-    PopulateGlobalPassengersToPositionListSystem(PopulateGlobalPassengersToPositionListSystem const&);
-    PopulateGlobalPassengersToPositionListSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _populateList(

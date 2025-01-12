@@ -14,11 +14,6 @@ struct MoveControlDescription;
 
 class SwimMoveControl : public ::MoveControl {
 public:
-    // prevent constructor by default
-    SwimMoveControl& operator=(SwimMoveControl const&);
-    SwimMoveControl(SwimMoveControl const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

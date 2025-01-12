@@ -90,17 +90,17 @@ public:
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
 
-    MCAPI ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& getAllBoneOrientations();
+    MCFOLD ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& getAllBoneOrientations();
 
     MCAPI ::std::vector<::BoneOrientation>*
     getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
 
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> const
+    MCFOLD ::std::shared_ptr<::ActorAnimationControllerStatePlayer> const
     getCurrentAnimationControllerStatePlayer() const;
 
     MCAPI ::ModelPartLocator* getLocator(uint64 const& locatorNameHash);
 
-    MCAPI ::RenderParams& getRenderParams();
+    MCFOLD ::RenderParams& getRenderParams();
 
     MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
 

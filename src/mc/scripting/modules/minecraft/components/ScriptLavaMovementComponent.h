@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptLavaMovementComponent : public ::ScriptModuleMinecraft::AttributeScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptLavaMovementComponent& operator=(ScriptLavaMovementComponent const&);
-    ScriptLavaMovementComponent(ScriptLavaMovementComponent const&);
-    ScriptLavaMovementComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

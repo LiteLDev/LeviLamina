@@ -57,11 +57,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $isLavaBlocking() const;
+    MCFOLD bool $isLavaBlocking() const;
     // NOLINTEND
 
 public:

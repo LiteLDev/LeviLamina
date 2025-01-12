@@ -13,12 +13,6 @@ class EntityRegistry;
 
 class SaveSurroundingChunksSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    SaveSurroundingChunksSystem& operator=(SaveSurroundingChunksSystem const&);
-    SaveSurroundingChunksSystem(SaveSurroundingChunksSystem const&);
-    SaveSurroundingChunksSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

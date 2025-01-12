@@ -47,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI StructureBlock(::std::string const& nameId, int id);
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -65,11 +65,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI bool $isConsumerComponent() const;
+    MCFOLD bool $isConsumerComponent() const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 

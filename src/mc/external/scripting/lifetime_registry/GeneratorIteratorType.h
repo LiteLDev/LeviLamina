@@ -4,12 +4,6 @@
 
 namespace Scripting {
 
-struct GeneratorIteratorType {
-public:
-    // prevent constructor by default
-    GeneratorIteratorType& operator=(GeneratorIteratorType const&);
-    GeneratorIteratorType(GeneratorIteratorType const&);
-    GeneratorIteratorType();
-};
+struct GeneratorIteratorType {};
 
 } // namespace Scripting

@@ -56,13 +56,7 @@ public:
         LoadingContentData();
     };
 
-    struct LoadingContentDataHasher {
-    public:
-        // prevent constructor by default
-        LoadingContentDataHasher& operator=(LoadingContentDataHasher const&);
-        LoadingContentDataHasher(LoadingContentDataHasher const&);
-        LoadingContentDataHasher();
-    };
+    struct LoadingContentDataHasher {};
 
 public:
     // member variables

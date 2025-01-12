@@ -16,12 +16,6 @@ struct TickingSystemWithInfo;
 
 class OfferFlowerTickSystem {
 public:
-    // prevent constructor by default
-    OfferFlowerTickSystem& operator=(OfferFlowerTickSystem const&);
-    OfferFlowerTickSystem(OfferFlowerTickSystem const&);
-    OfferFlowerTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

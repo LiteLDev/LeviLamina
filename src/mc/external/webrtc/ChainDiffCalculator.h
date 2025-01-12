@@ -9,12 +9,6 @@ namespace webrtc {
 
 struct ChainDiffCalculator {
 public:
-    // prevent constructor by default
-    ChainDiffCalculator& operator=(ChainDiffCalculator const&);
-    ChainDiffCalculator(ChainDiffCalculator const&);
-    ChainDiffCalculator();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::absl::InlinedVector<int, 4, ::std::allocator<int>> ChainDiffs(int64) const;

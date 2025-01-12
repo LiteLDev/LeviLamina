@@ -41,7 +41,7 @@ public:
 
     MCAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
 
-    MCAPI void clearRuntimeFactory();
+    MCFOLD void clearRuntimeFactory();
 
     MCAPI ::Scripting::ScriptContextResult createScriptingContext(
         ::Scripting::ContextConfig const&                   config,
@@ -53,7 +53,7 @@ public:
 
     MCAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
 
-    MCAPI ::Scripting::RegistryManager& getRegistryManager();
+    MCFOLD ::Scripting::RegistryManager& getRegistryManager();
 
     MCAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
 

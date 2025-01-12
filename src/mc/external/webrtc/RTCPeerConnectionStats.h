@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RTCPeerConnectionStats {
 public:
-    // prevent constructor by default
-    RTCPeerConnectionStats& operator=(RTCPeerConnectionStats const&);
-    RTCPeerConnectionStats(RTCPeerConnectionStats const&);
-    RTCPeerConnectionStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCPeerConnectionStats(::std::string, ::webrtc::Timestamp);

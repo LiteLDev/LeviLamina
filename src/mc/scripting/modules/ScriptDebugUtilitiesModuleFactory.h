@@ -14,11 +14,6 @@ namespace mce { class UUID; }
 
 class ScriptDebugUtilitiesModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // prevent constructor by default
-    ScriptDebugUtilitiesModuleFactory& operator=(ScriptDebugUtilitiesModuleFactory const&);
-    ScriptDebugUtilitiesModuleFactory(ScriptDebugUtilitiesModuleFactory const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

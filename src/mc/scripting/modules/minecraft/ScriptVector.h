@@ -11,12 +11,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptVector : public ::Vec3 {
 public:
-    // prevent constructor by default
-    ScriptVector& operator=(ScriptVector const&);
-    ScriptVector(ScriptVector const&);
-    ScriptVector();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool operator==(::ScriptModuleMinecraft::ScriptVector const& rhs) const;

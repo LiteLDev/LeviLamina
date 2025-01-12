@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class HurtOnConditionSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    HurtOnConditionSystem& operator=(HurtOnConditionSystem const&);
-    HurtOnConditionSystem(HurtOnConditionSystem const&);
-    HurtOnConditionSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

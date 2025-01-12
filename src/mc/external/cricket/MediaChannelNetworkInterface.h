@@ -22,12 +22,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    MediaChannelNetworkInterface& operator=(MediaChannelNetworkInterface const&);
-    MediaChannelNetworkInterface(MediaChannelNetworkInterface const&);
-    MediaChannelNetworkInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -69,7 +69,7 @@ template <
     class Key,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<Key>,
+    class Alloc = ::std::allocator<Key>,
     size_t N    = 4,
     class Mutex = std::shared_mutex>
 using ConcurrentDenseSet = ::phmap::parallel_flat_hash_set<Key, Hash, Eq, Alloc, N, Mutex>;
@@ -78,7 +78,7 @@ template <
     class Value,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>,
+    class Alloc = ::std::allocator<::std::pair<Key const, Value>>,
     size_t N    = 4,
     class Mutex = std::shared_mutex>
 using ConcurrentDenseMap = ::phmap::parallel_flat_hash_map<Key, Value, Hash, Eq, Alloc, N, Mutex>;
@@ -87,7 +87,7 @@ template <
     class Key,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<Key>,
+    class Alloc = ::std::allocator<Key>,
     size_t N    = 4,
     class Mutex = std::shared_mutex>
 using ConcurrentDenseNodeSet = ::phmap::parallel_node_hash_set<Key, Hash, Eq, Alloc, N, Mutex>;
@@ -96,7 +96,7 @@ template <
     class Value,
     class Hash  = ::phmap::priv::hash_default_hash<Key>,
     class Eq    = ::phmap::priv::hash_default_eq<Key>,
-    class Alloc = ::phmap::priv::Allocator<::phmap::priv::Pair<Key const, Value>>,
+    class Alloc = ::std::allocator<::std::pair<Key const, Value>>,
     size_t N    = 4,
     class Mutex = std::shared_mutex>
 using ConcurrentDenseNodeMap = ::phmap::parallel_node_hash_map<Key, Value, Hash, Eq, Alloc, N, Mutex>;

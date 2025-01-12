@@ -53,7 +53,7 @@ public:
 
     MCAPI void _printOutput(::ServerLevel& level, int successCount);
 
-    MCAPI ::std::string const& getFilePath() const;
+    MCFOLD ::std::string const& getFilePath() const;
     // NOLINTEND
 
 public:

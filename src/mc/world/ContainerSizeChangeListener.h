@@ -4,12 +4,6 @@
 
 class ContainerSizeChangeListener {
 public:
-    // prevent constructor by default
-    ContainerSizeChangeListener& operator=(ContainerSizeChangeListener const&);
-    ContainerSizeChangeListener(ContainerSizeChangeListener const&);
-    ContainerSizeChangeListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -22,7 +16,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

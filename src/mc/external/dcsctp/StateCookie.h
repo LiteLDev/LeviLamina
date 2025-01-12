@@ -6,12 +6,6 @@ namespace dcsctp {
 
 class StateCookie {
 public:
-    // prevent constructor by default
-    StateCookie& operator=(StateCookie const&);
-    StateCookie(StateCookie const&);
-    StateCookie();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::vector<uchar> Serialize();

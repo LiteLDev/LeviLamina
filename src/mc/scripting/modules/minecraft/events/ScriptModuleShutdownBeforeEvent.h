@@ -9,12 +9,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptModuleShutdownBeforeEvent {
 public:
-    // prevent constructor by default
-    ScriptModuleShutdownBeforeEvent& operator=(ScriptModuleShutdownBeforeEvent const&);
-    ScriptModuleShutdownBeforeEvent(ScriptModuleShutdownBeforeEvent const&);
-    ScriptModuleShutdownBeforeEvent();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptModuleShutdownBeforeEvent>

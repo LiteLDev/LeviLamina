@@ -9,11 +9,6 @@ namespace WearableItemComponentVersioning {
 
 class UpgradeTo12020 : public ::ItemCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    UpgradeTo12020& operator=(UpgradeTo12020 const&);
-    UpgradeTo12020(UpgradeTo12020 const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

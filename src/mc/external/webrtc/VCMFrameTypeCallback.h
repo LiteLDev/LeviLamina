@@ -6,12 +6,6 @@ namespace webrtc {
 
 class VCMFrameTypeCallback {
 public:
-    // prevent constructor by default
-    VCMFrameTypeCallback& operator=(VCMFrameTypeCallback const&);
-    VCMFrameTypeCallback(VCMFrameTypeCallback const&);
-    VCMFrameTypeCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

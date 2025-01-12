@@ -26,9 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearSuspiciousPos();
+    MCFOLD void clearSuspiciousPos();
 
-    MCAPI ::std::optional<::BlockPos> getSuspiciousPos() const;
+    MCFOLD ::std::optional<::BlockPos> getSuspiciousPos() const;
 
     MCAPI ::std::optional<uint64> getTicksSinceLastSuspect(::ILevel const& level) const;
 

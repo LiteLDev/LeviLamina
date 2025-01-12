@@ -7,12 +7,6 @@
 
 struct NetherSurfaceFlag : public ::BiomeComponentBase {
 public:
-    // prevent constructor by default
-    NetherSurfaceFlag& operator=(NetherSurfaceFlag const&);
-    NetherSurfaceFlag(NetherSurfaceFlag const&);
-    NetherSurfaceFlag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

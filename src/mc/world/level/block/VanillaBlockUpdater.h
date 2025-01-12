@@ -9,12 +9,6 @@ class CompoundTagUpdaterContext;
 
 class VanillaBlockUpdater {
 public:
-    // prevent constructor by default
-    VanillaBlockUpdater& operator=(VanillaBlockUpdater const&);
-    VanillaBlockUpdater(VanillaBlockUpdater const&);
-    VanillaBlockUpdater();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void addBaseUpdater(::CompoundTagUpdaterContext& context);

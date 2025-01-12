@@ -4,12 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptActorTypesRegistry {
-public:
-    // prevent constructor by default
-    ScriptActorTypesRegistry& operator=(ScriptActorTypesRegistry const&);
-    ScriptActorTypesRegistry(ScriptActorTypesRegistry const&);
-    ScriptActorTypesRegistry();
-};
+struct ScriptActorTypesRegistry {};
 
 } // namespace ScriptModuleMinecraft

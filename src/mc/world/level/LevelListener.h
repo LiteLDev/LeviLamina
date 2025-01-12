@@ -26,12 +26,6 @@ namespace cg { class ImageBuffer; }
 
 class LevelListener : public ::BlockSourceListener {
 public:
-    // prevent constructor by default
-    LevelListener& operator=(LevelListener const&);
-    LevelListener(LevelListener const&);
-    LevelListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -100,45 +94,45 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $allChanged();
+    MCFOLD void $allChanged();
 
-    MCAPI void
+    MCFOLD void
     $addParticleEffect(::HashedString const&, ::Actor const&, ::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&);
 
-    MCAPI void $addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+    MCFOLD void $addTerrainParticleEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
-    MCAPI void $addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
+    MCFOLD void $addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float);
 
-    MCAPI void
+    MCFOLD void
     $addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&);
 
-    MCAPI void $playMusic(::std::string const&, ::Vec3 const&, float, float);
+    MCFOLD void $playMusic(::std::string const&, ::Vec3 const&, float, float);
 
-    MCAPI void $playStreamingMusic(::std::string const&, int, int, int);
+    MCFOLD void $playStreamingMusic(::std::string const&, int, int, int);
 
-    MCAPI void $onEntityAdded(::Actor&);
+    MCFOLD void $onEntityAdded(::Actor&);
 
-    MCAPI void $onEntityRemoved(::Actor&);
+    MCFOLD void $onEntityRemoved(::Actor&);
 
-    MCAPI void $onChunkLoaded(::ChunkSource&, ::LevelChunk&);
+    MCFOLD void $onChunkLoaded(::ChunkSource&, ::LevelChunk&);
 
-    MCAPI void $onChunkReloaded(::ChunkSource&, ::LevelChunk&);
+    MCFOLD void $onChunkReloaded(::ChunkSource&, ::LevelChunk&);
 
-    MCAPI void $onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
+    MCFOLD void $onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool);
 
-    MCAPI void $onChunkUnloaded(::LevelChunk&);
+    MCFOLD void $onChunkUnloaded(::LevelChunk&);
 
-    MCAPI void $onLevelDestruction(::std::string const&);
+    MCFOLD void $onLevelDestruction(::std::string const&);
 
-    MCAPI void $takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&);
+    MCFOLD void $takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&);
 
-    MCAPI void $playerListChanged();
+    MCFOLD void $playerListChanged();
     // NOLINTEND
 
 public:

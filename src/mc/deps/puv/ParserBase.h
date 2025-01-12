@@ -41,9 +41,9 @@ public:
     // NOLINTBEGIN
     MCAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
 
-    MCAPI ::SemVersion const& parserVersion() const;
+    MCFOLD ::SemVersion const& parserVersion() const;
 
-    MCAPI ::Puv::VersionRange const& supportedVersions() const;
+    MCFOLD ::Puv::VersionRange const& supportedVersions() const;
     // NOLINTEND
 
 public:

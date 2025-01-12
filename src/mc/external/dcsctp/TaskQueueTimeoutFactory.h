@@ -17,12 +17,6 @@ public:
     // TaskQueueTimeoutFactory inner types define
     class TaskQueueTimeout {
     public:
-        // prevent constructor by default
-        TaskQueueTimeout& operator=(TaskQueueTimeout const&);
-        TaskQueueTimeout(TaskQueueTimeout const&);
-        TaskQueueTimeout();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI TaskQueueTimeout(::dcsctp::TaskQueueTimeoutFactory&, ::webrtc::TaskQueueBase::DelayPrecision);
@@ -40,12 +34,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    TaskQueueTimeoutFactory& operator=(TaskQueueTimeoutFactory const&);
-    TaskQueueTimeoutFactory(TaskQueueTimeoutFactory const&);
-    TaskQueueTimeoutFactory();
 
 public:
     // member functions

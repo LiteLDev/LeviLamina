@@ -80,7 +80,7 @@ public:
 
     MCAPI void setAnalogStrength(int strength, uchar dir);
 
-    MCAPI void setMode(::ComparatorCapacitor::Mode mode);
+    MCFOLD void setMode(::ComparatorCapacitor::Mode mode);
     // NOLINTEND
 
 public:
@@ -107,9 +107,9 @@ public:
 
     MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
 
-    MCAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
+    MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:

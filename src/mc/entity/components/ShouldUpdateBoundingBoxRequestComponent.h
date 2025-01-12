@@ -11,13 +11,7 @@ public:
     // clang-format on
 
     // ShouldUpdateBoundingBoxRequestComponent inner types define
-    struct UpdateFromDefinition {
-    public:
-        // prevent constructor by default
-        UpdateFromDefinition& operator=(UpdateFromDefinition const&);
-        UpdateFromDefinition(UpdateFromDefinition const&);
-        UpdateFromDefinition();
-    };
+    struct UpdateFromDefinition {};
 
     struct UpdateFromValue {
     public:

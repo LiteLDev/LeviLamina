@@ -4,12 +4,6 @@
 
 namespace mce {
 
-struct AssertResourceServiceErrorHandler {
-public:
-    // prevent constructor by default
-    AssertResourceServiceErrorHandler& operator=(AssertResourceServiceErrorHandler const&);
-    AssertResourceServiceErrorHandler(AssertResourceServiceErrorHandler const&);
-    AssertResourceServiceErrorHandler();
-};
+struct AssertResourceServiceErrorHandler {};
 
 } // namespace mce

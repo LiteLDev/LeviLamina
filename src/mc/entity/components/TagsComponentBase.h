@@ -11,12 +11,6 @@ class DataLoadHelper;
 
 class TagsComponentBase {
 public:
-    // prevent constructor by default
-    TagsComponentBase& operator=(TagsComponentBase const&);
-    TagsComponentBase(TagsComponentBase const&);
-    TagsComponentBase();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadhelper);

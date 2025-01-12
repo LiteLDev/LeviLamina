@@ -19,11 +19,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Lock();
+    MCFOLD void Lock();
 
     MCAPI SimpleMutex();
 
-    MCAPI void Unlock();
+    MCFOLD void Unlock();
 
     MCAPI ~SimpleMutex();
     // NOLINTEND
@@ -31,13 +31,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

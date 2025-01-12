@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorUniqueID getTargetOther() const;
+    MCFOLD ::ActorUniqueID getTargetOther() const;
 
     MCAPI void setTargetOther(::ActorUniqueID targetOther);
     // NOLINTEND
@@ -66,13 +66,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSelectorExpansionAllowed() const;
+    MCFOLD bool $isSelectorExpansionAllowed() const;
 
     MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
     MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCAPI ::CommandOriginType $getOriginType() const;
+    MCFOLD ::CommandOriginType $getOriginType() const;
 
     MCAPI ::CompoundTag $serialize() const;
     // NOLINTEND

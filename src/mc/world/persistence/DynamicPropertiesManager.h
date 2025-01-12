@@ -36,7 +36,7 @@ public:
 
     MCAPI ::DynamicProperties& getOrAddLevelDynamicProperties();
 
-    MCAPI uint64 getTotalBytesSaved() const;
+    MCFOLD uint64 getTotalBytesSaved() const;
 
     MCAPI void readFromLevelStorage(::LevelStorage& levelStorage);
 

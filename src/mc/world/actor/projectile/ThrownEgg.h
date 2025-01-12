@@ -16,12 +16,6 @@ struct VariantParameterList;
 
 class ThrownEgg : public ::Throwable {
 public:
-    // prevent constructor by default
-    ThrownEgg& operator=(ThrownEgg const&);
-    ThrownEgg(ThrownEgg const&);
-    ThrownEgg();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -44,7 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -60,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:

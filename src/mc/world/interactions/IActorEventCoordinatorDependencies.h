@@ -15,12 +15,6 @@ namespace Interactions {
 
 class IActorEventCoordinatorDependencies {
 public:
-    // prevent constructor by default
-    IActorEventCoordinatorDependencies& operator=(IActorEventCoordinatorDependencies const&);
-    IActorEventCoordinatorDependencies(IActorEventCoordinatorDependencies const&);
-    IActorEventCoordinatorDependencies();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

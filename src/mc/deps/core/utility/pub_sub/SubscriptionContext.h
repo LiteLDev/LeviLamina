@@ -6,12 +6,6 @@ namespace Bedrock::PubSub {
 
 class SubscriptionContext {
 public:
-    // prevent constructor by default
-    SubscriptionContext& operator=(SubscriptionContext const&);
-    SubscriptionContext(SubscriptionContext const&);
-    SubscriptionContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

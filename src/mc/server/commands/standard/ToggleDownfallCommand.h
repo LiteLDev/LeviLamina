@@ -14,12 +14,6 @@ class CommandRegistry;
 
 class ToggleDownfallCommand : public ::Command {
 public:
-    // prevent constructor by default
-    ToggleDownfallCommand& operator=(ToggleDownfallCommand const&);
-    ToggleDownfallCommand(ToggleDownfallCommand const&);
-    ToggleDownfallCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

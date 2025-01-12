@@ -58,18 +58,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4d6fcb;
-    ::ll::UntypedStorage<8, 32> mUnkc5c2aa;
-    ::ll::UntypedStorage<8, 32> mUnk9c617a;
-    ::ll::UntypedStorage<8, 24> mUnk132265;
-    ::ll::UntypedStorage<8, 24> mUnkc08526;
-    ::ll::UntypedStorage<4, 4>  mUnka14b8d;
+    ::ll::TypedStorage<4, 4, int>                                 mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mNameId;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mPrefix;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>       mDescriptionIds;
+    ::ll::TypedStorage<4, 4, ::Potion::PotionVariant>             mVar;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Potion& operator=(Potion const&);
-    Potion();
 
 public:
     // member functions
@@ -106,19 +101,19 @@ public:
 
     MCAPI ::std::string getDescriptionId(::Potion::PotionType potionType) const;
 
-    MCAPI ::MobEffectInstance const& getMobEffect() const;
+    MCFOLD ::MobEffectInstance const& getMobEffect() const;
 
     MCAPI int getMobEffectId() const;
 
-    MCAPI ::std::vector<::MobEffectInstance> const& getMobEffects() const;
+    MCFOLD ::std::vector<::MobEffectInstance> const& getMobEffects() const;
 
     MCAPI ::std::string getPotencyDescription(::Potion::PotionType potionType, float timeMod) const;
 
-    MCAPI int getPotionId() const;
+    MCFOLD int getPotionId() const;
 
-    MCAPI ::Potion::PotionVariant getPotionVariant() const;
+    MCFOLD ::Potion::PotionVariant getPotionVariant() const;
 
-    MCAPI ::std::string getPrefix() const;
+    MCFOLD ::std::string getPrefix() const;
 
     MCAPI ~Potion();
     // NOLINTEND

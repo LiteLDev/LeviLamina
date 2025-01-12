@@ -23,11 +23,6 @@ namespace webrtc {
 
 class RtpPayloadParams {
 public:
-    // prevent constructor by default
-    RtpPayloadParams& operator=(RtpPayloadParams const&);
-    RtpPayloadParams();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::webrtc::RTPVideoHeader::GenericDescriptorInfo

@@ -17,12 +17,6 @@ class SculkSpreader;
 
 class SculkVeinBlockBehavior : public ::SculkBehavior {
 public:
-    // prevent constructor by default
-    SculkVeinBlockBehavior& operator=(SculkVeinBlockBehavior const&);
-    SculkVeinBlockBehavior(SculkVeinBlockBehavior const&);
-    SculkVeinBlockBehavior();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -75,13 +69,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $updateDecayDelay(int const) const;
+    MCFOLD int $updateDecayDelay(int const) const;
 
     MCAPI int $updateFacingData(int const, ::Block const& block) const;
 
-    MCAPI bool $canChangeBlockOnSpread() const;
+    MCFOLD bool $canChangeBlockOnSpread() const;
 
-    MCAPI bool
+    MCFOLD bool
     $attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int, ::SculkSpreader&)
         const;
 

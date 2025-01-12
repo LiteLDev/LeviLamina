@@ -15,12 +15,6 @@ namespace SharedTypes::v1_20_50 {
 
 class EnchantSlotConstraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    EnchantSlotConstraint& operator=(EnchantSlotConstraint const&);
-    EnchantSlotConstraint(EnchantSlotConstraint const&);
-    EnchantSlotConstraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -44,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:

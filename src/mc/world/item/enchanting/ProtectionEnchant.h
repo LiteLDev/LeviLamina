@@ -14,12 +14,6 @@ class ItemInstance;
 
 class ProtectionEnchant : public ::Enchant {
 public:
-    // prevent constructor by default
-    ProtectionEnchant& operator=(ProtectionEnchant const&);
-    ProtectionEnchant(ProtectionEnchant const&);
-    ProtectionEnchant();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -74,7 +68,7 @@ public:
 
     MCAPI void $doPostHurt(::ItemInstance& item, ::Actor& victim, ::Actor& attacker, int level) const;
 
-    MCAPI bool $isProtectionEnchant() const;
+    MCFOLD bool $isProtectionEnchant() const;
 
     MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
     // NOLINTEND

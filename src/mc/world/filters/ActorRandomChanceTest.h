@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorRandomChanceTest : public ::SimpleIntFilterTest {
 public:
-    // prevent constructor by default
-    ActorRandomChanceTest& operator=(ActorRandomChanceTest const&);
-    ActorRandomChanceTest(ActorRandomChanceTest const&);
-    ActorRandomChanceTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

@@ -9,12 +9,6 @@ namespace Util { struct FormattedString; }
 
 namespace Util::Detail {
 
-class UniquePtrStorageTraits {
-public:
-    // prevent constructor by default
-    UniquePtrStorageTraits& operator=(UniquePtrStorageTraits const&);
-    UniquePtrStorageTraits(UniquePtrStorageTraits const&);
-    UniquePtrStorageTraits();
-};
+class UniquePtrStorageTraits {};
 
 } // namespace Util::Detail

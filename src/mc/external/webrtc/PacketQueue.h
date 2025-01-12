@@ -11,12 +11,6 @@ namespace webrtc {
 
 struct PacketQueue {
 public:
-    // prevent constructor by default
-    PacketQueue& operator=(PacketQueue const&);
-    PacketQueue(PacketQueue const&);
-    PacketQueue();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Clear();

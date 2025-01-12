@@ -10,12 +10,6 @@ class ResourcePackClientResponsePacket;
 
 class GameSpecificNetEventCallback {
 public:
-    // prevent constructor by default
-    GameSpecificNetEventCallback& operator=(GameSpecificNetEventCallback const&);
-    GameSpecificNetEventCallback(GameSpecificNetEventCallback const&);
-    GameSpecificNetEventCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -34,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
     // NOLINTEND
 
 public:

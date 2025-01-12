@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::Network::StructureCopyToClipboardPayload&
+    MCFOLD ::Editor::Network::StructureCopyToClipboardPayload&
     operator=(::Editor::Network::StructureCopyToClipboardPayload const&);
     // NOLINTEND
 

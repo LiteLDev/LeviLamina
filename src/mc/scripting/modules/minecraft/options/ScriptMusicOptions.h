@@ -31,11 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float getFade() const;
+    MCFOLD float getFade() const;
 
     MCAPI bool getLoop() const;
 
-    MCAPI float getVolume() const;
+    MCFOLD float getVolume() const;
 
     MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND

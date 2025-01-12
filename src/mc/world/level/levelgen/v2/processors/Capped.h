@@ -80,7 +80,7 @@ public:
         ::br::worldgen::StructurePlaceSettings const&            settings
     ) const;
 
-    MCAPI ::br::worldgen::StructureProcessorType $type() const;
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND

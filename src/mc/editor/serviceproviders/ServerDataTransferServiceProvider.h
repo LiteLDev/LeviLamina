@@ -15,12 +15,6 @@ namespace Editor::Services {
 
 class ServerDataTransferServiceProvider {
 public:
-    // prevent constructor by default
-    ServerDataTransferServiceProvider& operator=(ServerDataTransferServiceProvider const&);
-    ServerDataTransferServiceProvider(ServerDataTransferServiceProvider const&);
-    ServerDataTransferServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

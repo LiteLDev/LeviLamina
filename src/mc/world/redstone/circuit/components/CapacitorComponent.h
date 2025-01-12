@@ -47,9 +47,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uchar $getPoweroutDirection() const;
+    MCFOLD uchar $getPoweroutDirection() const;
 
-    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
+    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:

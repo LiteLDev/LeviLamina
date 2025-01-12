@@ -36,9 +36,9 @@ public:
 
     MCAPI bool operator!=(::WeakEntityRef entityRef) const;
 
-    MCAPI ::WeakEntityRef& operator=(::WeakEntityRef&&);
+    MCFOLD ::WeakEntityRef& operator=(::WeakEntityRef&&);
 
-    MCAPI bool operator==(::WeakEntityRef entityRef) const;
+    MCFOLD bool operator==(::WeakEntityRef entityRef) const;
 
     MCAPI bool operator==(::WeakRef<::EntityContext>) const;
 
@@ -54,6 +54,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

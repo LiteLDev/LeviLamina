@@ -12,12 +12,6 @@ struct ScriptingNotificationEvent;
 
 class ScriptingEventListener {
 public:
-    // prevent constructor by default
-    ScriptingEventListener& operator=(ScriptingEventListener const&);
-    ScriptingEventListener(ScriptingEventListener const&);
-    ScriptingEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ScriptingNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ScriptingNotificationEvent const&);
     // NOLINTEND
 
 public:

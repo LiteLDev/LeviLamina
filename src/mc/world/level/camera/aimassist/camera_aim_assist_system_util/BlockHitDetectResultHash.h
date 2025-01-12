@@ -4,12 +4,6 @@
 
 namespace CameraAimAssistSystemUtil {
 
-struct BlockHitDetectResultHash {
-public:
-    // prevent constructor by default
-    BlockHitDetectResultHash& operator=(BlockHitDetectResultHash const&);
-    BlockHitDetectResultHash(BlockHitDetectResultHash const&);
-    BlockHitDetectResultHash();
-};
+struct BlockHitDetectResultHash {};
 
 } // namespace CameraAimAssistSystemUtil

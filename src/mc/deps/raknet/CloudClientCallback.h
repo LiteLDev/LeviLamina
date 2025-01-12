@@ -12,12 +12,6 @@ namespace RakNet {
 
 class CloudClientCallback {
 public:
-    // prevent constructor by default
-    CloudClientCallback& operator=(CloudClientCallback const&);
-    CloudClientCallback(CloudClientCallback const&);
-    CloudClientCallback();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

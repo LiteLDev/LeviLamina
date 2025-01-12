@@ -13,12 +13,6 @@ struct TickingSystemWithInfo;
 
 class ShulkerPostAiStepSystem {
 public:
-    // prevent constructor by default
-    ShulkerPostAiStepSystem& operator=(ShulkerPostAiStepSystem const&);
-    ShulkerPostAiStepSystem(ShulkerPostAiStepSystem const&);
-    ShulkerPostAiStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doShulkerPostAiStepSystem(

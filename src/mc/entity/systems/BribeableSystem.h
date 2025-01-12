@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class BribeableSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    BribeableSystem& operator=(BribeableSystem const&);
-    BribeableSystem(BribeableSystem const&);
-    BribeableSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

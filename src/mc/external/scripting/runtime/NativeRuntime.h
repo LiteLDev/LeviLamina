@@ -175,40 +175,40 @@ public:
     MCAPI ::Scripting::ResultAny
     $call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>);
 
-    MCAPI ::Scripting::ResultAny
+    MCFOLD ::Scripting::ResultAny
     $resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
 
-    MCAPI ::Scripting::ResultAny
+    MCFOLD ::Scripting::ResultAny
     $reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&);
 
-    MCAPI ::Scripting::FutureStatus
+    MCFOLD ::Scripting::FutureStatus
         $getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const;
 
-    MCAPI ::Scripting::ResultAny
+    MCFOLD ::Scripting::ResultAny
     $getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&)
         const;
 
     MCAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
         $executeCoroutines(::std::optional<::std::chrono::microseconds>);
 
-    MCAPI bool $hasPendingJobs();
+    MCFOLD bool $hasPendingJobs();
 
-    MCAPI ::Scripting::IDebuggerController* $enableDebugger(::Scripting::IDebuggerTransport&);
+    MCFOLD ::Scripting::IDebuggerController* $enableDebugger(::Scripting::IDebuggerTransport&);
 
-    MCAPI void $disableDebugger();
+    MCFOLD void $disableDebugger();
 
-    MCAPI void $startProfiler();
+    MCFOLD void $startProfiler();
 
-    MCAPI void
+    MCFOLD void
         $stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>);
 
     MCAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
 
-    MCAPI ::Scripting::IWatchdog* $enableWatchdog(::Scripting::WatchdogSettings);
+    MCFOLD ::Scripting::IWatchdog* $enableWatchdog(::Scripting::WatchdogSettings);
 
-    MCAPI void $disableWatchdog();
+    MCFOLD void $disableWatchdog();
 
-    MCAPI ::Scripting::IWatchdog* $getWatchdog() const;
+    MCFOLD ::Scripting::IWatchdog* $getWatchdog() const;
 
     MCAPI ::std::optional<::Scripting::TypeNameInfo>
     $getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const;

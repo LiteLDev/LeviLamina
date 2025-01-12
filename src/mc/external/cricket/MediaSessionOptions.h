@@ -6,10 +6,6 @@ namespace cricket {
 
 struct MediaSessionOptions {
 public:
-    // prevent constructor by default
-    MediaSessionOptions& operator=(MediaSessionOptions const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI MediaSessionOptions();

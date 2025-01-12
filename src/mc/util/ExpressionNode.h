@@ -86,7 +86,7 @@ public:
 
     MCAPI bool _buildTree(::ExpressionOpBitField const& usedTokenFlags, ::MolangVersion molangVersion);
 
-    MCAPI bool _checkAllOperationsAreValid() const;
+    MCFOLD bool _checkAllOperationsAreValid() const;
 
     MCAPI bool _hasDisallowedQueryPtrs(
         ::std::vector<::std::function<
@@ -133,7 +133,7 @@ public:
 
     MCAPI ::std::string const& getExpressionString();
 
-    MCAPI ::MolangVersion const getMolangVersion() const;
+    MCFOLD ::MolangVersion const getMolangVersion() const;
 
     MCAPI uint64 getTreeHash(bool sideEffectsReturnZero) const;
 
@@ -147,7 +147,7 @@ public:
 
     MCAPI bool isInitialized() const;
 
-    MCAPI bool isValid() const;
+    MCFOLD bool isValid() const;
 
     MCAPI ::MolangCompileResult link() const;
 

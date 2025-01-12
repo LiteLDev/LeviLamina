@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class SmallFireball : public ::Fireball {
 public:
-    // prevent constructor by default
-    SmallFireball& operator=(SmallFireball const&);
-    SmallFireball(SmallFireball const&);
-    SmallFireball();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 139
@@ -59,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_hurt(::ActorDamageSource const&, float, bool, bool);
+    MCFOLD bool $_hurt(::ActorDamageSource const&, float, bool, bool);
     // NOLINTEND
 
 public:

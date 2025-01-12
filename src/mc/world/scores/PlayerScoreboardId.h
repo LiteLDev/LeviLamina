@@ -28,6 +28,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(int64 actorUniqueId);
+    MCFOLD void* $ctor(int64 actorUniqueId);
     // NOLINTEND
 };

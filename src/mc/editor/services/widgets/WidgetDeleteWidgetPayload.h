@@ -17,12 +17,6 @@ class WidgetDeleteWidgetPayload
 : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetDeleteWidgetPayload>,
   public ::Editor::Network::WidgetCommonBasePayload {
 public:
-    // prevent constructor by default
-    WidgetDeleteWidgetPayload& operator=(WidgetDeleteWidgetPayload const&);
-    WidgetDeleteWidgetPayload(WidgetDeleteWidgetPayload const&);
-    WidgetDeleteWidgetPayload();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

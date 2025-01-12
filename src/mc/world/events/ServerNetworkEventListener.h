@@ -14,12 +14,6 @@ struct ServerNetworkGameplayNotificationEvent;
 
 class ServerNetworkEventListener {
 public:
-    // prevent constructor by default
-    ServerNetworkEventListener& operator=(ServerNetworkEventListener const&);
-    ServerNetworkEventListener(ServerNetworkEventListener const&);
-    ServerNetworkEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -44,11 +38,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
+    MCFOLD ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const&);
 
-    MCAPI ::EventResult $onMessage(::MessageEvent const&);
+    MCFOLD ::EventResult $onMessage(::MessageEvent const&);
 
-    MCAPI ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
+    MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const&);
     // NOLINTEND
 
 public:

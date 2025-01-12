@@ -11,12 +11,6 @@ namespace gametest {
 
 class IGameTestFunctionRunResult {
 public:
-    // prevent constructor by default
-    IGameTestFunctionRunResult& operator=(IGameTestFunctionRunResult const&);
-    IGameTestFunctionRunResult(IGameTestFunctionRunResult const&);
-    IGameTestFunctionRunResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

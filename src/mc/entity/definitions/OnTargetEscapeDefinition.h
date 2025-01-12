@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnTargetEscapeDefinition : public ::ActorDefinitionTrigger {
 public:
-    // prevent constructor by default
-    OnTargetEscapeDefinition& operator=(OnTargetEscapeDefinition const&);
-    OnTargetEscapeDefinition(OnTargetEscapeDefinition const&);
-    OnTargetEscapeDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(

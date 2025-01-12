@@ -10,12 +10,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlaceJigsawError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptPlaceJigsawError& operator=(ScriptPlaceJigsawError const&);
-    ScriptPlaceJigsawError(ScriptPlaceJigsawError const&);
-    ScriptPlaceJigsawError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptPlaceJigsawError(::std::string message);
@@ -38,7 +32,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

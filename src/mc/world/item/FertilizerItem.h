@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI FertilizerItem(::std::string const& name, int id, ::FertilizerType type);
 
-    MCAPI ::FertilizerType getFertilizerType() const;
+    MCFOLD ::FertilizerType getFertilizerType() const;
     // NOLINTEND
 
 public:
@@ -66,7 +66,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI bool $isFertilizer() const;
+    MCFOLD bool $isFertilizer() const;
 
     MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
 

@@ -20,12 +20,6 @@ struct TickingSystemWithInfo;
 
 class PreventMobEjectionFromLegacyVehicleSystem {
 public:
-    // prevent constructor by default
-    PreventMobEjectionFromLegacyVehicleSystem& operator=(PreventMobEjectionFromLegacyVehicleSystem const&);
-    PreventMobEjectionFromLegacyVehicleSystem(PreventMobEjectionFromLegacyVehicleSystem const&);
-    PreventMobEjectionFromLegacyVehicleSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _preventEjectionIfNeeded(

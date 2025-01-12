@@ -50,9 +50,9 @@ public:
 
     MCAPI void _onItemUpdated(::std::string const& id, ::std::string const& propName);
 
-    MCAPI bool _removeItem(::std::string const& id);
+    MCFOLD bool _removeItem(::std::string const& id);
 
-    MCAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
+    MCFOLD ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCAPI ::Scripting::Result<void> handleDataEvent(
         ::Editor::DataStore::EventType                 eventType,
@@ -78,7 +78,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
+    MCFOLD void* $ctor(::Editor::DataStore::PayloadEventDispatcher& dispatcher, bool isServer);
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear();
+    MCFOLD void $clear();
     // NOLINTEND
 
 public:

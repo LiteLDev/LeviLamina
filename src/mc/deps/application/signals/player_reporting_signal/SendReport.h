@@ -13,12 +13,6 @@ namespace PlayerReportingSignal { struct ReportFunctionData; }
 namespace PlayerReportingSignal {
 
 class SendReport
-: public ::Bedrock::Signal<::PlayerReportingSignal::SendReport, ::PlayerReportingSignal::ReportFunctionData> {
-public:
-    // prevent constructor by default
-    SendReport& operator=(SendReport const&);
-    SendReport(SendReport const&);
-    SendReport();
-};
+: public ::Bedrock::Signal<::PlayerReportingSignal::SendReport, ::PlayerReportingSignal::ReportFunctionData> {};
 
 } // namespace PlayerReportingSignal

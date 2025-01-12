@@ -20,12 +20,6 @@ namespace Editor::API {
 
 class EditorPlayerExtensionServiceProvider {
 public:
-    // prevent constructor by default
-    EditorPlayerExtensionServiceProvider& operator=(EditorPlayerExtensionServiceProvider const&);
-    EditorPlayerExtensionServiceProvider(EditorPlayerExtensionServiceProvider const&);
-    EditorPlayerExtensionServiceProvider();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

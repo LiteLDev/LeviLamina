@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCommandError : public ::Scripting::Error {
 public:
-    // prevent constructor by default
-    ScriptCommandError& operator=(ScriptCommandError const&);
-    ScriptCommandError(ScriptCommandError const&);
-    ScriptCommandError();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
@@ -43,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

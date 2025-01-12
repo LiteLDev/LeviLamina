@@ -45,12 +45,6 @@ struct MovementSoundRequestSystemImpl : public ::IStrictTickingSystem<::StrictEx
                                             ::GlobalWrite<>,
                                             ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    MovementSoundRequestSystemImpl& operator=(MovementSoundRequestSystemImpl const&);
-    MovementSoundRequestSystemImpl(MovementSoundRequestSystemImpl const&);
-    MovementSoundRequestSystemImpl();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

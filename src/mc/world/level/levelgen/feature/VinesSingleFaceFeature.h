@@ -15,12 +15,6 @@ class RenderParams;
 
 class VinesSingleFaceFeature : public ::IFeature {
 public:
-    // prevent constructor by default
-    VinesSingleFaceFeature& operator=(VinesSingleFaceFeature const&);
-    VinesSingleFaceFeature(VinesSingleFaceFeature const&);
-    VinesSingleFaceFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

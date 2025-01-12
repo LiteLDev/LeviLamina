@@ -5,12 +5,6 @@
 namespace cereal {
 
 template <typename T0>
-class BasicNumericConstraint {
-public:
-    // prevent constructor by default
-    BasicNumericConstraint& operator=(BasicNumericConstraint const&);
-    BasicNumericConstraint(BasicNumericConstraint const&);
-    BasicNumericConstraint();
-};
+class BasicNumericConstraint {};
 
 } // namespace cereal

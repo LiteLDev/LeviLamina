@@ -13,12 +13,6 @@ class IPackLoadContext;
 
 class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
 public:
-    // prevent constructor by default
-    ItemEventResponseFactory& operator=(ItemEventResponseFactory const&);
-    ItemEventResponseFactory(ItemEventResponseFactory const&);
-    ItemEventResponseFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

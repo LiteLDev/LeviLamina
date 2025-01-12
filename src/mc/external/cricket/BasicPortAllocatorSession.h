@@ -27,19 +27,7 @@ public:
     // clang-format on
 
     // BasicPortAllocatorSession inner types define
-    class PortData {
-    public:
-        // prevent constructor by default
-        PortData& operator=(PortData const&);
-        PortData(PortData const&);
-        PortData();
-    };
-
-public:
-    // prevent constructor by default
-    BasicPortAllocatorSession& operator=(BasicPortAllocatorSession const&);
-    BasicPortAllocatorSession(BasicPortAllocatorSession const&);
-    BasicPortAllocatorSession();
+    class PortData {};
 
 public:
     // member functions

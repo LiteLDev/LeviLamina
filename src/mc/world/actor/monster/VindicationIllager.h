@@ -15,12 +15,6 @@ struct ActorDefinitionIdentifier;
 
 class VindicationIllager : public ::HumanoidMonster {
 public:
-    // prevent constructor by default
-    VindicationIllager& operator=(VindicationIllager const&);
-    VindicationIllager(VindicationIllager const&);
-    VindicationIllager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 176
@@ -59,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
     // NOLINTEND
 
 public:

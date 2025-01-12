@@ -98,9 +98,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorDamageSource(::ActorDamageCause cause);
 
-    MCAPI ::ActorDamageCause getCause() const;
+    MCFOLD ::ActorDamageCause getCause() const;
 
-    MCAPI void setCause(::ActorDamageCause cause);
+    MCFOLD void setCause(::ActorDamageCause cause);
     // NOLINTEND
 
 public:
@@ -132,17 +132,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isEntitySource() const;
+    MCFOLD bool $isEntitySource() const;
 
-    MCAPI bool $isChildEntitySource() const;
+    MCFOLD bool $isChildEntitySource() const;
 
-    MCAPI bool $isBlockSource() const;
+    MCFOLD bool $isBlockSource() const;
 
     MCAPI bool $isFire() const;
 
@@ -159,25 +159,25 @@ public:
     MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCAPI bool $getIsCreative() const;
+    MCFOLD bool $getIsCreative() const;
 
-    MCAPI bool $getIsWorldBuilder() const;
+    MCFOLD bool $getIsWorldBuilder() const;
 
-    MCAPI ::ActorUniqueID $getEntityUniqueID() const;
+    MCFOLD ::ActorUniqueID $getEntityUniqueID() const;
 
-    MCAPI ::ActorType $getEntityType() const;
+    MCFOLD ::ActorType $getEntityType() const;
 
-    MCAPI ::ActorCategory $getEntityCategories() const;
+    MCFOLD ::ActorCategory $getEntityCategories() const;
 
-    MCAPI bool $getDamagingEntityIsCreative() const;
+    MCFOLD bool $getDamagingEntityIsCreative() const;
 
-    MCAPI bool $getDamagingEntityIsWorldBuilder() const;
+    MCFOLD bool $getDamagingEntityIsWorldBuilder() const;
 
-    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
+    MCFOLD ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
-    MCAPI ::ActorType $getDamagingEntityType() const;
+    MCFOLD ::ActorType $getDamagingEntityType() const;
 
-    MCAPI ::ActorCategory $getDamagingEntityCategories() const;
+    MCFOLD ::ActorCategory $getDamagingEntityCategories() const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
     // NOLINTEND

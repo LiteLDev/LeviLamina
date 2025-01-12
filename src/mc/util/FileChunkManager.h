@@ -35,9 +35,9 @@ public:
 
     MCAPI ::FileChunkInfo getChunkInfo(int chunkID) const;
 
-    MCAPI ::std::vector<::FileChunkInfo> const& getChunks() const;
+    MCFOLD ::std::vector<::FileChunkInfo> const& getChunks() const;
 
-    MCAPI int getTotalNumberOfChunks();
+    MCFOLD int getTotalNumberOfChunks();
 
     MCAPI void reset();
 

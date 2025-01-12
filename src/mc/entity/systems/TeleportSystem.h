@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class TeleportSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    TeleportSystem& operator=(TeleportSystem const&);
-    TeleportSystem(TeleportSystem const&);
-    TeleportSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

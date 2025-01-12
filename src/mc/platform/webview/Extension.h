@@ -11,12 +11,6 @@ namespace Webview {
 
 struct Extension {
 public:
-    // prevent constructor by default
-    Extension& operator=(Extension const&);
-    Extension(Extension const&);
-    Extension();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

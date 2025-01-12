@@ -75,7 +75,7 @@ public:
 
     MCAPI void removeLoopbackCallback(::NetEventCallback& callback);
 
-    MCAPI void setUserList(::std::vector<::OwnerPtr<::EntityContext>> const* userList);
+    MCFOLD void setUserList(::std::vector<::OwnerPtr<::EntityContext>> const* userList);
     // NOLINTEND
 
 public:

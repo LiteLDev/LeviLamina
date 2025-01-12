@@ -21,16 +21,12 @@ class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8a11ed;
-    ::ll::UntypedStorage<8, 24> mUnk8f46aa;
-    ::ll::UntypedStorage<8, 64> mUnk675840;
-    ::ll::UntypedStorage<8, 64> mUnk465b32;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeItemEntry>> mCreativeItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CreativeGroupInfo>> mCreativeGroups;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::CreativeItemCategory, ::CreativeItemGroupCategory>>
+                                                                                 mCreativeGroupCategories;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::CreativeItemNetId, uint64>> mCreativeNetIdIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CreativeItemRegistry& operator=(CreativeItemRegistry const&);
-    CreativeItemRegistry(CreativeItemRegistry const&);
 
 public:
     // virtual functions
@@ -52,7 +48,7 @@ public:
 
     MCAPI ::CreativeItemGroupCategory* getCreativeCategory(::CreativeItemCategory category);
 
-    MCAPI ::std::vector<::CreativeItemEntry> const& getCreativeItemEntries();
+    MCFOLD ::std::vector<::CreativeItemEntry> const& getCreativeItemEntries();
 
     MCAPI ::CreativeItemEntry* getItemEntry(uint index);
 

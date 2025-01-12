@@ -47,9 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockGameplayHandler& getBlockGameplayHandler();
+    MCFOLD ::BlockGameplayHandler& getBlockGameplayHandler();
 
-    MCAPI void registerBlockGameplayHandler(::std::unique_ptr<::BlockGameplayHandler>&& handler);
+    MCFOLD void registerBlockGameplayHandler(::std::unique_ptr<::BlockGameplayHandler>&& handler);
 
     MCAPI void sendBlockDestroyedByPlayer(
         ::Player&              player,

@@ -12,12 +12,6 @@ namespace Bedrock::Detail {
 
 class SignalPublisher {
 public:
-    // prevent constructor by default
-    SignalPublisher& operator=(SignalPublisher const&);
-    SignalPublisher(SignalPublisher const&);
-    SignalPublisher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

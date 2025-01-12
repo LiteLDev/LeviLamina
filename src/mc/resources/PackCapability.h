@@ -48,7 +48,7 @@ public:
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -74,23 +74,11 @@ public:
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
-        struct NotFound {
-        public:
-            // prevent constructor by default
-            NotFound& operator=(NotFound const&);
-            NotFound(NotFound const&);
-            NotFound();
-        };
-
-    public:
-        // prevent constructor by default
-        ValidationResult& operator=(ValidationResult const&);
-        ValidationResult(ValidationResult const&);
-        ValidationResult();
+        struct NotFound {};
     };
 
 public:
@@ -115,6 +103,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

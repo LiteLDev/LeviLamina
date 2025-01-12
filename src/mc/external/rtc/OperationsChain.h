@@ -17,12 +17,6 @@ public:
     // OperationsChain inner types define
     class CallbackHandle {
     public:
-        // prevent constructor by default
-        CallbackHandle& operator=(CallbackHandle const&);
-        CallbackHandle(CallbackHandle const&);
-        CallbackHandle();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI explicit CallbackHandle(::webrtc::scoped_refptr<::rtc::OperationsChain>);
@@ -44,11 +38,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    OperationsChain& operator=(OperationsChain const&);
-    OperationsChain(OperationsChain const&);
 
 public:
     // member functions

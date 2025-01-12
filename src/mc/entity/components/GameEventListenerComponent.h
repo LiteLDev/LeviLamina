@@ -30,7 +30,7 @@ public:
 
     MCAPI ::GameEventListenerComponent& operator=(::GameEventListenerComponent&&);
 
-    MCAPI ::GameEventDynamicRegistration* tryGetListenerRegistration() const;
+    MCFOLD ::GameEventDynamicRegistration* tryGetListenerRegistration() const;
 
     MCAPI ~GameEventListenerComponent();
     // NOLINTEND
@@ -38,9 +38,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::GameEventListenerComponent&&);
+    MCFOLD void* $ctor(::GameEventListenerComponent&&);
     // NOLINTEND
 
 public:

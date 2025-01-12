@@ -14,12 +14,6 @@ namespace Bedrock {
 
 class CrashSessionFile {
 public:
-    // prevent constructor by default
-    CrashSessionFile& operator=(CrashSessionFile const&);
-    CrashSessionFile(CrashSessionFile const&);
-    CrashSessionFile();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

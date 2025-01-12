@@ -31,7 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int getAttachedFace(int facing);
+    MCFOLD static int getAttachedFace(int facing);
     // NOLINTEND
 
 public:

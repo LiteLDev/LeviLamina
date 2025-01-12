@@ -14,11 +14,6 @@ namespace BiomeJsonDocumentUpgraders {
 
 class UpgraderFrom_v1_13_To_v1_20_60 : public ::CerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    UpgraderFrom_v1_13_To_v1_20_60& operator=(UpgraderFrom_v1_13_To_v1_20_60 const&);
-    UpgraderFrom_v1_13_To_v1_20_60(UpgraderFrom_v1_13_To_v1_20_60 const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -61,9 +56,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(::rapidjson::GenericValue<
-                               ::rapidjson::UTF8<char>,
-                               ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document) const;
+    MCFOLD bool $previousSchema(::rapidjson::GenericValue<
+                                ::rapidjson::UTF8<char>,
+                                ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& document) const;
 
     MCAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<

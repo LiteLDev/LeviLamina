@@ -11,12 +11,6 @@ namespace webrtc {
 
 class ReportBlockDataObserver {
 public:
-    // prevent constructor by default
-    ReportBlockDataObserver& operator=(ReportBlockDataObserver const&);
-    ReportBlockDataObserver(ReportBlockDataObserver const&);
-    ReportBlockDataObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

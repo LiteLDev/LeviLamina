@@ -44,7 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $requireClose() const;
+    MCFOLD bool $requireClose() const;
 
     MCAPI void $startListenTimeout(::std::chrono::seconds duration);
 

@@ -29,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& getAdmireItem() const;
+    MCFOLD ::ItemStack const& getAdmireItem() const;
 
-    MCAPI ::Tick const& getAdmireUntil() const;
+    MCFOLD ::Tick const& getAdmireUntil() const;
 
     MCAPI ::WeakEntityRef getItemOwnerRef() const;
 
-    MCAPI bool isAdmiring() const;
+    MCFOLD bool isAdmiring() const;
 
     MCAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
 

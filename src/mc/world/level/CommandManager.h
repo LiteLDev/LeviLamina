@@ -35,11 +35,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CommandManager(::MinecraftCommands& commands);
 
-    MCAPI ::MinecraftCommands& getCommands();
+    MCFOLD ::MinecraftCommands& getCommands();
 
-    MCAPI ::FunctionManager& getFunctionManager();
+    MCFOLD ::FunctionManager& getFunctionManager();
 
-    MCAPI void initialize(::std::unique_ptr<::FunctionManager> functionManager);
+    MCFOLD void initialize(::std::unique_ptr<::FunctionManager> functionManager);
 
     MCAPI void loadFunctionManager(::ResourcePackManager& resourcePackManager);
 
@@ -60,12 +60,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftCommands& commands);
+    MCFOLD void* $ctor(::MinecraftCommands& commands);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

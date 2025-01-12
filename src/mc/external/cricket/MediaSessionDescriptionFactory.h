@@ -37,12 +37,6 @@ public:
     // MediaSessionDescriptionFactory inner types define
     struct AudioVideoRtpHeaderExtensions {
     public:
-        // prevent constructor by default
-        AudioVideoRtpHeaderExtensions& operator=(AudioVideoRtpHeaderExtensions const&);
-        AudioVideoRtpHeaderExtensions(AudioVideoRtpHeaderExtensions const&);
-        AudioVideoRtpHeaderExtensions();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~AudioVideoRtpHeaderExtensions();
@@ -54,12 +48,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    MediaSessionDescriptionFactory& operator=(MediaSessionDescriptionFactory const&);
-    MediaSessionDescriptionFactory(MediaSessionDescriptionFactory const&);
-    MediaSessionDescriptionFactory();
 
 public:
     // member functions

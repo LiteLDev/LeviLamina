@@ -45,12 +45,6 @@ struct BlockNotificationEvent : public ::EventVariantImpl<
                                     ::ExplosionStartedEvent const,
                                     ::BlockTryDestroyByPlayerEvent const> {
 public:
-    // prevent constructor by default
-    BlockNotificationEvent& operator=(BlockNotificationEvent const&);
-    BlockNotificationEvent(BlockNotificationEvent const&);
-    BlockNotificationEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~BlockNotificationEvent();

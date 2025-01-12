@@ -4,12 +4,6 @@
 
 class FlushableEnv : public ::leveldb::EnvWrapper {
 public:
-    // prevent constructor by default
-    FlushableEnv& operator=(FlushableEnv const&);
-    FlushableEnv(FlushableEnv const&);
-    FlushableEnv();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

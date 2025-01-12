@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getLootTable() const;
+    MCFOLD ::std::string const& getLootTable() const;
     // NOLINTEND
 };

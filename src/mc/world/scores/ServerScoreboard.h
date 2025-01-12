@@ -39,13 +39,7 @@ public:
     // clang-format on
 
     // ServerScoreboard inner types define
-    struct unit_test_ctor_t {
-    public:
-        // prevent constructor by default
-        unit_test_ctor_t& operator=(unit_test_ctor_t const&);
-        unit_test_ctor_t(unit_test_ctor_t const&);
-        unit_test_ctor_t();
-    };
+    struct unit_test_ctor_t {};
 
 public:
     // member variables
@@ -152,7 +146,7 @@ public:
 
     MCAPI void deserialize(::std::unique_ptr<::CompoundTag> root);
 
-    MCAPI void initializeImGui(::Level& level);
+    MCFOLD void initializeImGui(::Level& level);
 
     MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     );
@@ -189,7 +183,7 @@ public:
 
     MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 
-    MCAPI void $setPacketSender(::PacketSender* sender);
+    MCFOLD void $setPacketSender(::PacketSender* sender);
 
     MCAPI ::DisplayObjective const* $setDisplayObjective(
         ::std::string const&       displaySlotName,
@@ -213,7 +207,7 @@ public:
 
     MCAPI void $writeToLevelStorage();
 
-    MCAPI bool $isClientSide() const;
+    MCFOLD bool $isClientSide() const;
     // NOLINTEND
 
 public:

@@ -17,12 +17,6 @@ struct TickingSystemWithInfo;
 
 class EyeOfEnderPreNormalTickSystem {
 public:
-    // prevent constructor by default
-    EyeOfEnderPreNormalTickSystem& operator=(EyeOfEnderPreNormalTickSystem const&);
-    EyeOfEnderPreNormalTickSystem(EyeOfEnderPreNormalTickSystem const&);
-    EyeOfEnderPreNormalTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void

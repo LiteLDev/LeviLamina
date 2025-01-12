@@ -43,12 +43,6 @@ struct DiscardSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
                            ::GlobalWrite<>,
                            ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    DiscardSystem& operator=(DiscardSystem const&);
-    DiscardSystem(DiscardSystem const&);
-    DiscardSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

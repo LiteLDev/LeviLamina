@@ -15,12 +15,6 @@ namespace cereal { struct ReflectionCtx; }
 
 struct BlockUnitCubeDescription : public ::BlockComponentDescription {
 public:
-    // prevent constructor by default
-    BlockUnitCubeDescription& operator=(BlockUnitCubeDescription const&);
-    BlockUnitCubeDescription(BlockUnitCubeDescription const&);
-    BlockUnitCubeDescription();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -67,11 +61,11 @@ public:
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

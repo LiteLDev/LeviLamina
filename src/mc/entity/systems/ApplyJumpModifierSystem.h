@@ -25,12 +25,6 @@ struct TriggerJumpRequestComponent;
 
 struct ApplyJumpModifierSystem {
 public:
-    // prevent constructor by default
-    ApplyJumpModifierSystem& operator=(ApplyJumpModifierSystem const&);
-    ApplyJumpModifierSystem(ApplyJumpModifierSystem const&);
-    ApplyJumpModifierSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createApplyJumpModifierSystem();

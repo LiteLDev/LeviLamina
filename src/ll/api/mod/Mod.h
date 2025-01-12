@@ -11,7 +11,7 @@
 
 namespace ll::mod {
 
-LLAPI std::filesystem::path const& getModsRoot();
+LLNDAPI std::filesystem::path const& getModsRoot();
 
 class ModManager;
 class Mod {

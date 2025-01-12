@@ -36,25 +36,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::string const& toBinary() const;
+        MCFOLD ::std::string const& toBinary() const;
 
-        MCAPI ::cereal::DynamicValue const& toDynamicValue() const;
+        MCFOLD ::cereal::DynamicValue const& toDynamicValue() const;
 
-        MCAPI ::Json::Value const& toJsonCpp() const;
+        MCFOLD ::Json::Value const& toJsonCpp() const;
 
-        MCAPI ::std::string const& toJsonString() const;
+        MCFOLD ::std::string const& toJsonString() const;
 
-        MCAPI ::rapidjson::
+        MCFOLD ::rapidjson::
             GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
             toRapidjson() const;
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    Input& operator=(Input const&);
-    Input(Input const&);
-    Input();
 
 public:
     // virtual functions

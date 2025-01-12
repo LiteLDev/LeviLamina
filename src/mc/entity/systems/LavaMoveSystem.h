@@ -25,12 +25,6 @@ struct TickingSystemWithInfo;
 
 class LavaMoveSystem {
 public:
-    // prevent constructor by default
-    LavaMoveSystem& operator=(LavaMoveSystem const&);
-    LavaMoveSystem(LavaMoveSystem const&);
-    LavaMoveSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createLavaMoveSystem();

@@ -12,12 +12,6 @@ struct TickingSystemWithInfo;
 
 class BlockClimberSystem {
 public:
-    // prevent constructor by default
-    BlockClimberSystem& operator=(BlockClimberSystem const&);
-    BlockClimberSystem(BlockClimberSystem const&);
-    BlockClimberSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canBlockBeAscendedByJumping(

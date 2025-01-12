@@ -115,7 +115,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
@@ -125,7 +125,7 @@ public:
 
     MCAPI float $getPassengerYRotation(::Actor const& passenger) const;
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND

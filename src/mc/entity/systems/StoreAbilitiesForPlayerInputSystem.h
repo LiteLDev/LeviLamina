@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct StoreAbilitiesForPlayerInputSystem {
 public:
-    // prevent constructor by default
-    StoreAbilitiesForPlayerInputSystem& operator=(StoreAbilitiesForPlayerInputSystem const&);
-    StoreAbilitiesForPlayerInputSystem(StoreAbilitiesForPlayerInputSystem const&);
-    StoreAbilitiesForPlayerInputSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

@@ -15,12 +15,6 @@ class RailActivatorComponent;
 
 class RailActivatorSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    RailActivatorSystem& operator=(RailActivatorSystem const&);
-    RailActivatorSystem(RailActivatorSystem const&);
-    RailActivatorSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

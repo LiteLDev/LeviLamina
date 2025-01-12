@@ -142,13 +142,13 @@ public:
     // NOLINTBEGIN
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
+    MCFOLD ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -160,7 +160,7 @@ public:
 
     MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCAPI bool $isBounceBlock() const;
+    MCFOLD bool $isBounceBlock() const;
 
     MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -172,7 +172,7 @@ public:
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
 

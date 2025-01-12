@@ -7,12 +7,6 @@
 
 class UIPackError : public ::PackError {
 public:
-    // prevent constructor by default
-    UIPackError& operator=(UIPackError const&);
-    UIPackError(UIPackError const&);
-    UIPackError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

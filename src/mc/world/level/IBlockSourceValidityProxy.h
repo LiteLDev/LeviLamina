@@ -10,12 +10,6 @@ class Player;
 
 class IBlockSourceValidityProxy {
 public:
-    // prevent constructor by default
-    IBlockSourceValidityProxy& operator=(IBlockSourceValidityProxy const&);
-    IBlockSourceValidityProxy(IBlockSourceValidityProxy const&);
-    IBlockSourceValidityProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

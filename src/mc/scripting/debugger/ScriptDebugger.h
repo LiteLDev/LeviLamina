@@ -172,7 +172,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ScriptDebuggerSettings const& $getSettings() const;
+    MCFOLD ::ScriptDebuggerSettings const& $getSettings() const;
 
     MCAPI bool $connect(::std::string const& host, ushort port);
 

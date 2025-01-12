@@ -73,7 +73,7 @@ public:
 
     MCAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
 
-    MCAPI uint64 $_getRepathTime() const;
+    MCFOLD uint64 $_getRepathTime() const;
     // NOLINTEND
 
 public:

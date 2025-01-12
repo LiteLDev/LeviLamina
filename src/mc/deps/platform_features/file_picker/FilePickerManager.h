@@ -45,15 +45,9 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    FilePickerManager& operator=(FilePickerManager const&);
-    FilePickerManager(FilePickerManager const&);
-    FilePickerManager();
 
 public:
     // virtual functions

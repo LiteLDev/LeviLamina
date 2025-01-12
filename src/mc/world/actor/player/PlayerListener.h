@@ -9,12 +9,6 @@ class Player;
 
 class PlayerListener {
 public:
-    // prevent constructor by default
-    PlayerListener& operator=(PlayerListener const&);
-    PlayerListener(PlayerListener const&);
-    PlayerListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

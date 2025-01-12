@@ -4,12 +4,6 @@
 
 namespace Bedrock::Http {
 
-struct Method {
-public:
-    // prevent constructor by default
-    Method& operator=(Method const&);
-    Method(Method const&);
-    Method();
-};
+struct Method {};
 
 } // namespace Bedrock::Http

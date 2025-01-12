@@ -16,12 +16,6 @@ namespace br::spawn {
 
 class InWater : public ::br::spawn::PlacementType {
 public:
-    // prevent constructor by default
-    InWater& operator=(InWater const&);
-    InWater(InWater const&);
-    InWater();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

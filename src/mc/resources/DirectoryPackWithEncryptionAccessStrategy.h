@@ -137,19 +137,19 @@ public:
     // NOLINTBEGIN
     MCAPI uint64 $getPackSize() const;
 
-    MCAPI ::ResourceLocation const& $getPackLocation() const;
+    MCFOLD ::ResourceLocation const& $getPackLocation() const;
 
-    MCAPI ::std::string const& $getPackName() const;
+    MCFOLD ::std::string const& $getPackName() const;
 
-    MCAPI bool $isWritable() const;
+    MCFOLD bool $isWritable() const;
 
-    MCAPI bool $isTrusted() const;
+    MCFOLD bool $isTrusted() const;
 
-    MCAPI void $setIsTrusted(bool);
+    MCFOLD void $setIsTrusted(bool);
 
     MCAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
-    MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
+    MCFOLD bool $hasFolder(::Core::Path const& packRelativePath) const;
 
     MCAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
@@ -163,7 +163,7 @@ public:
         bool                                       recurseAnyways
     ) const;
 
-    MCAPI ::PackAccessStrategyType $getStrategyType() const;
+    MCFOLD ::PackAccessStrategyType $getStrategyType() const;
 
     MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 

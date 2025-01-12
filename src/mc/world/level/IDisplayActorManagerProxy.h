@@ -9,12 +9,6 @@ class Actor;
 
 class IDisplayActorManagerProxy {
 public:
-    // prevent constructor by default
-    IDisplayActorManagerProxy& operator=(IDisplayActorManagerProxy const&);
-    IDisplayActorManagerProxy(IDisplayActorManagerProxy const&);
-    IDisplayActorManagerProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

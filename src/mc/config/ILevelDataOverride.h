@@ -9,12 +9,6 @@ class LevelData;
 
 class ILevelDataOverride {
 public:
-    // prevent constructor by default
-    ILevelDataOverride& operator=(ILevelDataOverride const&);
-    ILevelDataOverride(ILevelDataOverride const&);
-    ILevelDataOverride();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -23,12 +23,6 @@ public:
     // SendQueue inner types define
     struct DataToSend {
     public:
-        // prevent constructor by default
-        DataToSend& operator=(DataToSend const&);
-        DataToSend(DataToSend const&);
-        DataToSend();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI DataToSend(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>, ::dcsctp::Data);
@@ -48,12 +42,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    SendQueue& operator=(SendQueue const&);
-    SendQueue(SendQueue const&);
-    SendQueue();
 };
 
 } // namespace dcsctp

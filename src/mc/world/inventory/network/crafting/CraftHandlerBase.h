@@ -70,7 +70,7 @@ public:
 
     MCAPI ::std::tuple<::ItemStackNetResult, ::Recipe const*> _getRecipeFromNetId(::RecipeNetId const& recipeNetId);
 
-    MCAPI bool _isNonImplementedTrustClientResults() const;
+    MCFOLD bool _isNonImplementedTrustClientResults() const;
 
     MCAPI ::std::shared_ptr<::SimpleSparseContainer> _tryGetSparseContainer(::FullContainerName const& openContainerId);
 
@@ -79,7 +79,7 @@ public:
     MCAPI ::ItemStackNetResult
     handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
 
-    MCAPI bool isCraftRequest();
+    MCFOLD bool isCraftRequest();
 
     MCAPI void postRequest(bool wasSuccess);
     // NOLINTEND
@@ -99,11 +99,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $endRequestBatch();
+    MCFOLD void $endRequestBatch();
 
-    MCAPI void $_postCraftRequest(bool const wasSuccess);
+    MCFOLD void $_postCraftRequest(bool const wasSuccess);
 
-    MCAPI ::Recipes const* $_getLevelRecipes() const;
+    MCFOLD ::Recipes const* $_getLevelRecipes() const;
     // NOLINTEND
 
 public:

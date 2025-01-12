@@ -17,7 +17,7 @@ namespace Bedrock::Detail {
 // NOLINTBEGIN
 MCAPI ::Bedrock::CallStack::Context createContext(::std::string value);
 
-MCAPI ::std::nullopt_t createContext();
+MCFOLD ::std::nullopt_t createContext();
 
 MCAPI ::Bedrock::Detail::ErrorInfoBuilder<::std::error_code> createError(::std::errc errc);
 

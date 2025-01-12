@@ -13,12 +13,6 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsPregnantDefinition {
 public:
-    // prevent constructor by default
-    IsPregnantDefinition& operator=(IsPregnantDefinition const&);
-    IsPregnantDefinition(IsPregnantDefinition const&);
-    IsPregnantDefinition();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initialize(::EntityContext& entity) const;
@@ -29,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::IsPregnantDefinition>>& root
     );
     // NOLINTEND

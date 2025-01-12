@@ -33,7 +33,7 @@ public:
 
     MCAPI void _createServerSideAction(::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI void _logExpectedActions() const;
+    MCFOLD void _logExpectedActions() const;
 
     MCAPI void addAction(::InventoryAction const& action, bool forceBalanced);
 
@@ -41,7 +41,7 @@ public:
 
     MCAPI void forceBalanceTransaction();
 
-    MCAPI ::std::unique_ptr<::InventoryTransaction> const& getCurrentTransaction() const;
+    MCFOLD ::std::unique_ptr<::InventoryTransaction> const& getCurrentTransaction() const;
 
     MCAPI void reset();
 

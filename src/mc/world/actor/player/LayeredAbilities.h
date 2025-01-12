@@ -44,7 +44,7 @@ public:
         ::Ability::Options                                          requiredOptions
     ) const;
 
-    MCAPI void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities&)> const& callback);
+    MCFOLD void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities&)> const& callback);
 
     MCAPI void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities const&)> const&) const;
 
@@ -56,15 +56,15 @@ public:
 
     MCAPI ::std::pair<bool, ::AbilitiesLayer> getBoolWithLayer(::AbilitiesIndex val) const;
 
-    MCAPI ::CommandPermissionLevel getCommandPermissions() const;
+    MCFOLD ::CommandPermissionLevel getCommandPermissions() const;
 
     MCAPI ::std::pair<float, ::AbilitiesLayer> getFloatWithLayer(::AbilitiesIndex val) const;
 
     MCAPI ::Abilities& getLayer(::AbilitiesLayer layer);
 
-    MCAPI ::PermissionsHandler& getPermissionsHandler();
+    MCFOLD ::PermissionsHandler& getPermissionsHandler();
 
-    MCAPI ::PlayerPermissionLevel getPlayerPermissions() const;
+    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
 
     MCAPI bool loadSaveData(::CompoundTag const& parentTag);
 
@@ -74,7 +74,7 @@ public:
 
     MCAPI void setAbility(::AbilitiesIndex val, bool value);
 
-    MCAPI void setCommandPermissions(::CommandPermissionLevel permissions);
+    MCFOLD void setCommandPermissions(::CommandPermissionLevel permissions);
 
     MCAPI void setPermissions(::PermissionsHandler const& permissions);
 

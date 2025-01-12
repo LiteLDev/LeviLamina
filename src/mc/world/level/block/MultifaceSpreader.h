@@ -130,7 +130,7 @@ public:
         uchar const          placementDirection
     ) const;
 
-    MCAPI bool $_isOtherBlockValidAsSource(::Block const&) const;
+    MCFOLD bool $_isOtherBlockValidAsSource(::Block const&) const;
     // NOLINTEND
 
 public:

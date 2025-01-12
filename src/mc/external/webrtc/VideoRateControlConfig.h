@@ -11,12 +11,6 @@ namespace webrtc {
 
 struct VideoRateControlConfig {
 public:
-    // prevent constructor by default
-    VideoRateControlConfig& operator=(VideoRateControlConfig const&);
-    VideoRateControlConfig(VideoRateControlConfig const&);
-    VideoRateControlConfig();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::webrtc::StructParametersParser> Parser();

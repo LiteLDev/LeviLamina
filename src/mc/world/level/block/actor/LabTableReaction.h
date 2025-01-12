@@ -44,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
+    MCFOLD void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
 
     MCAPI void addResultItem(::ItemStack const& resultItem);
 
-    MCAPI int getReactionId();
+    MCFOLD int getReactionId();
 
-    MCAPI ::LabTableReactionType getType();
+    MCFOLD ::LabTableReactionType getType();
 
     MCAPI bool tick(::BlockSource& region);
     // NOLINTEND

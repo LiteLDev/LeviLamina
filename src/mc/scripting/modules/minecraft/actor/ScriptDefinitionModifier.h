@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptDefinitionModifier {
 public:
-    // prevent constructor by default
-    ScriptDefinitionModifier& operator=(ScriptDefinitionModifier const&);
-    ScriptDefinitionModifier(ScriptDefinitionModifier const&);
-    ScriptDefinitionModifier();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::ActorDefinitionModifier> bind();

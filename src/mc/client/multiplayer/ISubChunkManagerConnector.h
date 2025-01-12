@@ -13,12 +13,6 @@ class LevelChunk;
 
 class ISubChunkManagerConnector {
 public:
-    // prevent constructor by default
-    ISubChunkManagerConnector& operator=(ISubChunkManagerConnector const&);
-    ISubChunkManagerConnector(ISubChunkManagerConnector const&);
-    ISubChunkManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

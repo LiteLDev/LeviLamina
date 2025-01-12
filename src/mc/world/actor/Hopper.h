@@ -66,11 +66,11 @@ public:
         int            face
     );
 
-    MCAPI int getCooldownTime() const;
+    MCFOLD int getCooldownTime() const;
 
-    MCAPI bool isOnCooldown() const;
+    MCFOLD bool isOnCooldown() const;
 
-    MCAPI void setCooldownTime(int time);
+    MCFOLD void setCooldownTime(int time);
     // NOLINTEND
 
 public:

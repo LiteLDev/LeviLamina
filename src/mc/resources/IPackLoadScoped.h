@@ -4,12 +4,6 @@
 
 struct IPackLoadScoped {
 public:
-    // prevent constructor by default
-    IPackLoadScoped& operator=(IPackLoadScoped const&);
-    IPackLoadScoped(IPackLoadScoped const&);
-    IPackLoadScoped();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

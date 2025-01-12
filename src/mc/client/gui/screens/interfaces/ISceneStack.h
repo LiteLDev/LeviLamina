@@ -13,12 +13,6 @@ namespace OreUI { struct RouteAction; }
 
 class ISceneStack : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    ISceneStack& operator=(ISceneStack const&);
-    ISceneStack(ISceneStack const&);
-    ISceneStack();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

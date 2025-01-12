@@ -23,19 +23,7 @@ public:
 
     // ObjectNode inner types define
     template <int T0>
-    class iterator_base {
-    public:
-        // prevent constructor by default
-        iterator_base& operator=(iterator_base const&);
-        iterator_base(iterator_base const&);
-        iterator_base();
-    };
-
-public:
-    // prevent constructor by default
-    ObjectNode& operator=(ObjectNode const&);
-    ObjectNode(ObjectNode const&);
-    ObjectNode();
+    class iterator_base {};
 
 public:
     // member functions

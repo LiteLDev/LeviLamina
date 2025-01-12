@@ -117,7 +117,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI bool $hasVariableLighting() const;
+    MCFOLD bool $hasVariableLighting() const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
@@ -131,9 +131,9 @@ public:
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canSpawnOn(::Actor*) const;
+    MCFOLD bool $canSpawnOn(::Actor*) const;
 
-    MCAPI bool $isLavaBlocking() const;
+    MCFOLD bool $isLavaBlocking() const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

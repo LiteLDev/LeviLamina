@@ -9,12 +9,6 @@ class ServerInstance;
 
 class ServerMetrics {
 public:
-    // prevent constructor by default
-    ServerMetrics& operator=(ServerMetrics const&);
-    ServerMetrics(ServerMetrics const&);
-    ServerMetrics();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

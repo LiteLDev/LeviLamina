@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct ValidateIOSReceiptResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    ValidateIOSReceiptResult& operator=(ValidateIOSReceiptResult const&);
-    ValidateIOSReceiptResult(ValidateIOSReceiptResult const&);
-    ValidateIOSReceiptResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

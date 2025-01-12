@@ -7,12 +7,6 @@
 
 class EducationMetadataError : public ::PackError {
 public:
-    // prevent constructor by default
-    EducationMetadataError& operator=(EducationMetadataError const&);
-    EducationMetadataError(EducationMetadataError const&);
-    EducationMetadataError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -28,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

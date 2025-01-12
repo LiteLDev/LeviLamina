@@ -13,12 +13,6 @@ class ContainerScreenContext;
 
 class CraftingInputContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    CraftingInputContainerValidation& operator=(CraftingInputContainerValidation const&);
-    CraftingInputContainerValidation(CraftingInputContainerValidation const&);
-    CraftingInputContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8

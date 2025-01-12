@@ -9,12 +9,6 @@ namespace cereal {
 
 class StrictJsonLoader : public ::cereal::BasicLoader {
 public:
-    // prevent constructor by default
-    StrictJsonLoader& operator=(StrictJsonLoader const&);
-    StrictJsonLoader(StrictJsonLoader const&);
-    StrictJsonLoader();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -24,7 +18,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -11,12 +11,6 @@ namespace cricket {
 
 class RtpHeaderExtensionQueryInterface {
 public:
-    // prevent constructor by default
-    RtpHeaderExtensionQueryInterface& operator=(RtpHeaderExtensionQueryInterface const&);
-    RtpHeaderExtensionQueryInterface(RtpHeaderExtensionQueryInterface const&);
-    RtpHeaderExtensionQueryInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

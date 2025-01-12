@@ -22,12 +22,6 @@ class OnHitBlock : public ::ItemComponent,
                        void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&),
                        ::Bedrock::PubSub::ThreadModel::MultiThreaded> {
 public:
-    // prevent constructor by default
-    OnHitBlock& operator=(OnHitBlock const&);
-    OnHitBlock(OnHitBlock const&);
-    OnHitBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

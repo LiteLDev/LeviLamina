@@ -13,12 +13,6 @@ namespace webrtc {
 
 class SctpTransportFactoryInterface {
 public:
-    // prevent constructor by default
-    SctpTransportFactoryInterface& operator=(SctpTransportFactoryInterface const&);
-    SctpTransportFactoryInterface(SctpTransportFactoryInterface const&);
-    SctpTransportFactoryInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

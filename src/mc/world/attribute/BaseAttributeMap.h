@@ -28,17 +28,17 @@ public:
     // NOLINTBEGIN
     MCAPI BaseAttributeMap();
 
-    MCAPI ::std::_List_iterator<
+    MCFOLD ::std::_List_iterator<
         ::std::_List_val<::std::_List_simple_types<::std::pair<uint const, ::AttributeInstance>>>>
     begin();
 
     MCAPI void clearDirtyAttributes();
 
-    MCAPI ::std::_List_iterator<
+    MCFOLD ::std::_List_iterator<
         ::std::_List_val<::std::_List_simple_types<::std::pair<uint const, ::AttributeInstance>>>>
     end();
 
-    MCAPI ::std::vector<::AttributeInstanceHandle> const& getDirtyAttributes() const;
+    MCFOLD ::std::vector<::AttributeInstanceHandle> const& getDirtyAttributes() const;
 
     MCAPI ::AttributeInstance const& getInstance(::Attribute const& attribute) const;
 
@@ -80,7 +80,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

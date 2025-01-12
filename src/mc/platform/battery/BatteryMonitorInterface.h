@@ -7,12 +7,6 @@
 
 class BatteryMonitorInterface {
 public:
-    // prevent constructor by default
-    BatteryMonitorInterface& operator=(BatteryMonitorInterface const&);
-    BatteryMonitorInterface(BatteryMonitorInterface const&);
-    BatteryMonitorInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

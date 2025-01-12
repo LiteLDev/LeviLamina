@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct InsideWaterlilyBlockSystem {
 public:
-    // prevent constructor by default
-    InsideWaterlilyBlockSystem& operator=(InsideWaterlilyBlockSystem const&);
-    InsideWaterlilyBlockSystem(InsideWaterlilyBlockSystem const&);
-    InsideWaterlilyBlockSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createDestroyWaterlilySystem();

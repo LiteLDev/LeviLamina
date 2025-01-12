@@ -80,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI HorseArmorItem(::std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
 
-    MCAPI ::HorseArmorItem::Tier getTier() const;
+    MCFOLD ::HorseArmorItem::Tier getTier() const;
     // NOLINTEND
 
 public:
@@ -118,9 +118,9 @@ public:
 
     MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCAPI void $clearColor(::ItemStackBase& item) const;
+    MCFOLD void $clearColor(::ItemStackBase& item) const;
 
-    MCAPI void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
+    MCFOLD void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
 
     MCAPI bool $isDyeable() const;
 

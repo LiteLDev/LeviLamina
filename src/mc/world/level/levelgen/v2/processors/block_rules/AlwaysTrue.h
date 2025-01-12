@@ -16,12 +16,6 @@ namespace br::worldgen::processors::BlockRules {
 
 struct AlwaysTrue : public ::br::worldgen::processors::BlockRules::TestType {
 public:
-    // prevent constructor by default
-    AlwaysTrue& operator=(AlwaysTrue const&);
-    AlwaysTrue(AlwaysTrue const&);
-    AlwaysTrue();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -43,9 +37,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const&, ::IRandom&) const;
+    MCFOLD bool $test(::Block const&, ::IRandom&) const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

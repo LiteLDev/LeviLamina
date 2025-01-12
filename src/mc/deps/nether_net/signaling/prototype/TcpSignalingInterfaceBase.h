@@ -55,7 +55,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void OnClose(::rtc::AsyncPacketSocket*, int status);
+        MCFOLD void OnClose(::rtc::AsyncPacketSocket*, int status);
 
         MCAPI Peer(::NetherNet::NetworkID id, ::std::unique_ptr<::rtc::AsyncPacketSocket> socket);
         // NOLINTEND
@@ -143,11 +143,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SignOut();
+    MCFOLD void $SignOut();
 
-    MCAPI bool $IsSignedIn() const;
+    MCFOLD bool $IsSignedIn() const;
 
-    MCAPI void $Update();
+    MCFOLD void $Update();
 
     MCAPI void
     $SendSignal(::NetherNet::NetworkID to, char const* signal, uint size, ::std::function<void(::NetherNet::ESessionError)>&&);

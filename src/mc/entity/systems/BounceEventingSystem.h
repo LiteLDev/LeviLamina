@@ -21,12 +21,6 @@ struct TickingSystemWithInfo;
 
 class BounceEventingSystem {
 public:
-    // prevent constructor by default
-    BounceEventingSystem& operator=(BounceEventingSystem const&);
-    BounceEventingSystem(BounceEventingSystem const&);
-    BounceEventingSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doBounceEventingSystem(

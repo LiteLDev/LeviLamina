@@ -17,12 +17,6 @@ namespace Editor::Services {
 class EmptySampleService : public ::Editor::Services::IEditorService,
                            public ::Editor::Services::EmptySampleServiceProvider {
 public:
-    // prevent constructor by default
-    EmptySampleService& operator=(EmptySampleService const&);
-    EmptySampleService(EmptySampleService const&);
-    EmptySampleService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -62,13 +56,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::std::string_view $getServiceName() const;
 
-    MCAPI void $SampleMethod() const;
+    MCFOLD void $SampleMethod() const;
     // NOLINTEND
 
 public:

@@ -30,12 +30,6 @@ namespace cricket {
 
 class TurnPort {
 public:
-    // prevent constructor by default
-    TurnPort& operator=(TurnPort const&);
-    TurnPort(TurnPort const&);
-    TurnPort();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddRequestAuthInfo(::cricket::StunMessage*);

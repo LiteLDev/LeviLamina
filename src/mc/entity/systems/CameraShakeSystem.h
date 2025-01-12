@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class CameraShakeSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    CameraShakeSystem& operator=(CameraShakeSystem const&);
-    CameraShakeSystem(CameraShakeSystem const&);
-    CameraShakeSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

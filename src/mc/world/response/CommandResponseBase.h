@@ -64,6 +64,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::CommandOriginSystem $_getCommandOriginSystem() const;
+    MCFOLD ::CommandOriginSystem $_getCommandOriginSystem() const;
     // NOLINTEND
 };

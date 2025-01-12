@@ -13,11 +13,11 @@ namespace br::spawn { struct EntityType; }
 namespace IsValidSpawn {
 // functions
 // NOLINTBEGIN
-MCAPI bool always(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
+MCFOLD bool always(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
 
 MCAPI bool fireImmune(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
 
-MCAPI bool never(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
+MCFOLD bool never(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&);
 
 MCAPI bool ocelotOrParrot(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
 

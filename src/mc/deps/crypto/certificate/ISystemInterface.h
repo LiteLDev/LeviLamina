@@ -11,12 +11,6 @@ namespace Crypto::Certificate {
 
 class ISystemInterface {
 public:
-    // prevent constructor by default
-    ISystemInterface& operator=(ISystemInterface const&);
-    ISystemInterface(ISystemInterface const&);
-    ISystemInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

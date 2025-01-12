@@ -11,12 +11,6 @@ namespace webrtc {
 
 struct TMMBRHelp {
 public:
-    // prevent constructor by default
-    TMMBRHelp& operator=(TMMBRHelp const&);
-    TMMBRHelp(TMMBRHelp const&);
-    TMMBRHelp();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uint64 CalcMinBitrateBps(::std::vector<::webrtc::rtcp::TmmbItem> const&);

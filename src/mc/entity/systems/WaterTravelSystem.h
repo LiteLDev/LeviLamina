@@ -25,12 +25,6 @@ struct WaterWalkSpeedEnchantComponent;
 
 class WaterTravelSystem {
 public:
-    // prevent constructor by default
-    WaterTravelSystem& operator=(WaterTravelSystem const&);
-    WaterTravelSystem(WaterTravelSystem const&);
-    WaterTravelSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createWaterTravelSystem();

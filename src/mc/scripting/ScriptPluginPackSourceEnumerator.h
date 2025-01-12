@@ -56,7 +56,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& $getPluginSources() const;
+    MCFOLD ::std::vector<::std::shared_ptr<::IScriptPluginSource>> const& $getPluginSources() const;
     // NOLINTEND
 
 public:

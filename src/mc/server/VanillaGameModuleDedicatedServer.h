@@ -14,12 +14,6 @@ class ServerInstanceEventCoordinator;
 
 class VanillaGameModuleDedicatedServer : public ::IGameModuleShared {
 public:
-    // prevent constructor by default
-    VanillaGameModuleDedicatedServer& operator=(VanillaGameModuleDedicatedServer const&);
-    VanillaGameModuleDedicatedServer(VanillaGameModuleDedicatedServer const&);
-    VanillaGameModuleDedicatedServer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

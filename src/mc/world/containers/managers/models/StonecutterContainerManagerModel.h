@@ -82,9 +82,9 @@ public:
 
     MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int, int);
+    MCFOLD void $setData(int, int);
 
-    MCAPI void $broadcastChanges();
+    MCFOLD void $broadcastChanges();
 
     MCAPI bool $isValid(float pickRange);
 

@@ -4,12 +4,6 @@
 
 namespace BlockTessellationFallbackUtils {
 
-struct TessellationConfigInfo {
-public:
-    // prevent constructor by default
-    TessellationConfigInfo& operator=(TessellationConfigInfo const&);
-    TessellationConfigInfo(TessellationConfigInfo const&);
-    TessellationConfigInfo();
-};
+struct TessellationConfigInfo {};
 
 } // namespace BlockTessellationFallbackUtils

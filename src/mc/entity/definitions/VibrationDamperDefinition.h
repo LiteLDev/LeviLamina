@@ -12,15 +12,9 @@ namespace JsonUtil { class EmptyClass; }
 
 struct VibrationDamperDefinition {
 public:
-    // prevent constructor by default
-    VibrationDamperDefinition& operator=(VibrationDamperDefinition const&);
-    VibrationDamperDefinition(VibrationDamperDefinition const&);
-    VibrationDamperDefinition();
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCFOLD static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::VibrationDamperDefinition>>& root
     );
     // NOLINTEND

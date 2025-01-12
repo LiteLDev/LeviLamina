@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 class IDataInput;
 class IDataOutput;
 // clang-format on
@@ -12,15 +13,10 @@ class LevelChunkMetaData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1e26b3;
-    ::ll::UntypedStorage<8, 8>  mUnk79104c;
-    ::ll::UntypedStorage<1, 1>  mUnk5525bc;
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mMetaData;
+    ::ll::TypedStorage<8, 8, uint64>         mCurrentHash;
+    ::ll::TypedStorage<1, 1, bool>           mHashNeedsRecomputing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkMetaData& operator=(LevelChunkMetaData const&);
-    LevelChunkMetaData();
 
 public:
     // member functions

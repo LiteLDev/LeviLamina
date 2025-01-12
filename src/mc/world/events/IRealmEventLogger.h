@@ -4,12 +4,6 @@
 
 class IRealmEventLogger {
 public:
-    // prevent constructor by default
-    IRealmEventLogger& operator=(IRealmEventLogger const&);
-    IRealmEventLogger(IRealmEventLogger const&);
-    IRealmEventLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

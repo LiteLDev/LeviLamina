@@ -58,9 +58,9 @@ public:
 
     MCAPI void applyEffects(::Actor& mob) const;
 
-    MCAPI bool displaysOnScreenTextureAnimation() const;
+    MCFOLD bool displaysOnScreenTextureAnimation() const;
 
-    MCAPI int getAmplifier() const;
+    MCFOLD int getAmplifier() const;
 
     MCAPI ::HashedString const& getComponentName() const;
 
@@ -72,7 +72,7 @@ public:
 
     MCAPI ::EffectDuration getDuration() const;
 
-    MCAPI uint getId() const;
+    MCFOLD uint getId() const;
 
     MCAPI ::EffectDuration getLingerDuration() const;
 
@@ -96,7 +96,7 @@ public:
 
     MCAPI ::MobEffectInstance& operator=(::MobEffectInstance const&);
 
-    MCAPI void pauseCounterThisTick();
+    MCFOLD void pauseCounterThisTick();
 
     MCAPI void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) const;
 
@@ -104,7 +104,7 @@ public:
 
     MCAPI void setDifficultyDuration(::Difficulty difficulty, ::EffectDuration duration);
 
-    MCAPI void setDuration(::EffectDuration dur);
+    MCFOLD void setDuration(::EffectDuration dur);
 
     MCAPI void splitDurations(int splitValue);
 

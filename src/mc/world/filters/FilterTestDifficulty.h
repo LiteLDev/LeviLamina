@@ -12,12 +12,6 @@ struct FilterContext;
 
 class FilterTestDifficulty : public ::SimpleIntFilterTest {
 public:
-    // prevent constructor by default
-    FilterTestDifficulty& operator=(FilterTestDifficulty const&);
-    FilterTestDifficulty(FilterTestDifficulty const&);
-    FilterTestDifficulty();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

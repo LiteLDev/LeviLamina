@@ -9,12 +9,6 @@ class BlockPos;
 
 class IPathBlockSource {
 public:
-    // prevent constructor by default
-    IPathBlockSource& operator=(IPathBlockSource const&);
-    IPathBlockSource(IPathBlockSource const&);
-    IPathBlockSource();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -71,7 +71,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $getDustColor(::Block const& block) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const& block) const;
 
     MCAPI ::std::string $getDustParticleName(::Block const& block) const;
 
@@ -79,7 +79,7 @@ public:
 
     MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

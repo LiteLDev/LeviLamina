@@ -17,7 +17,7 @@ namespace SharedTypes::Legacy {
 MCAPI ::std::initializer_list<::std::pair<::std::string const, ::SharedTypes::Legacy::LevelSoundEvent>> const&
 getLevelSoundEventInitializer();
 
-MCAPI bool
+MCFOLD bool
 operator==(::SharedTypes::Legacy::ExpressionNode const& lhs, ::SharedTypes::Legacy::ExpressionNode const& rhs);
 
 MCAPI bool operator==(

@@ -74,15 +74,15 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCAPI bool $canBeInterrupted();
+    MCFOLD bool $canBeInterrupted();
 
     MCAPI void $start();
 
     MCAPI void $stop();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCFOLD void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

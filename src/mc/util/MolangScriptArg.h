@@ -99,7 +99,7 @@ public:
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
-    MCAPI ::MolangScriptArgType getBaseType() const;
+    MCFOLD ::MolangScriptArgType getBaseType() const;
 
     MCAPI bool isEqual(::MolangScriptArg const& rhs) const;
 
@@ -109,7 +109,7 @@ public:
 
     MCAPI void reportGetFailure() const;
 
-    MCAPI void setType(::MolangScriptArgType type);
+    MCFOLD void setType(::MolangScriptArgType type);
 
     MCAPI ~MolangScriptArg();
     // NOLINTEND
@@ -137,17 +137,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::MolangMatrix const&);
-
     MCAPI void* $ctor(::MolangScriptArg&&);
 
     MCAPI void* $ctor(::MolangScriptArg const&);
 
     MCAPI void* $ctor(float value);
-
-    MCAPI void* $ctor(::MolangActorIdArrayPtr const&);
-
-    MCAPI void* $ctor(::MolangMemberArray const&);
     // NOLINTEND
 
 public:

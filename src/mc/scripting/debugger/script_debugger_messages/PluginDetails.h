@@ -20,9 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails&&);
+    MCFOLD ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails&&);
 
-    MCAPI ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails const&);
+    MCFOLD ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails const&);
 
     MCAPI bool operator==(::ScriptDebuggerMessages::PluginDetails const&) const;
     // NOLINTEND

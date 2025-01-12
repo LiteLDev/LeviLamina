@@ -107,7 +107,7 @@ public:
 
     MCAPI ::glm::ivec3 $getSpan() const;
 
-    MCAPI int $getCapacity() const;
+    MCFOLD int $getCapacity() const;
 
     MCAPI bool $isInside(::BlockPos const& pos) const;
 

@@ -10,12 +10,6 @@ class Player;
 
 class CameraCallbacks {
 public:
-    // prevent constructor by default
-    CameraCallbacks& operator=(CameraCallbacks const&);
-    CameraCallbacks(CameraCallbacks const&);
-    CameraCallbacks();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

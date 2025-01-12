@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class AngerLevelSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    AngerLevelSystem& operator=(AngerLevelSystem const&);
-    AngerLevelSystem(AngerLevelSystem const&);
-    AngerLevelSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

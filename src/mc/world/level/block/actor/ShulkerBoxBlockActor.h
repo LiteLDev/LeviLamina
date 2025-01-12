@@ -102,7 +102,7 @@ public:
 
     MCAPI void setFacingDir(uchar facing);
 
-    MCAPI void setupRedstoneComponent(::BlockSource& region) const;
+    MCFOLD void setupRedstoneComponent(::BlockSource& region) const;
     // NOLINTEND
 
 public:
@@ -135,9 +135,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $getName() const;
 
-    MCAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCAPI void $onPlace(::BlockSource& region);
+    MCFOLD void $onPlace(::BlockSource& region);
 
     MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
@@ -151,9 +151,9 @@ public:
 
     MCAPI void $stopOpen(::Player& player);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
     MCAPI void $playOpenSound(::BlockSource& region);
 
@@ -161,7 +161,7 @@ public:
 
     MCAPI ::AABB $getObstructionAABB() const;
 
-    MCAPI bool $_detectEntityObstruction(::BlockSource& region) const;
+    MCFOLD bool $_detectEntityObstruction(::BlockSource& region) const;
     // NOLINTEND
 
 public:

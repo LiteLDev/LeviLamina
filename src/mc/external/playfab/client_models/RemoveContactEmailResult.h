@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct RemoveContactEmailResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    RemoveContactEmailResult& operator=(RemoveContactEmailResult const&);
-    RemoveContactEmailResult(RemoveContactEmailResult const&);
-    RemoveContactEmailResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

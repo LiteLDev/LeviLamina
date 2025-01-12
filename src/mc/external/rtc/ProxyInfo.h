@@ -4,12 +4,6 @@
 
 namespace rtc {
 
-struct ProxyInfo {
-public:
-    // prevent constructor by default
-    ProxyInfo& operator=(ProxyInfo const&);
-    ProxyInfo(ProxyInfo const&);
-    ProxyInfo();
-};
+struct ProxyInfo {};
 
 } // namespace rtc

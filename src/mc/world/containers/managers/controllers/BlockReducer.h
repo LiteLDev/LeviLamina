@@ -60,7 +60,7 @@ public:
 
     MCAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
 
-    MCAPI ::std::unordered_map<int, ::std::vector<::ItemStack>> const& getReductionMap() const;
+    MCFOLD ::std::unordered_map<int, ::std::vector<::ItemStack>> const& getReductionMap() const;
 
     MCAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
     // NOLINTEND

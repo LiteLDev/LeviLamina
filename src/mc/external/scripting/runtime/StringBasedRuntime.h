@@ -17,12 +17,6 @@ namespace Scripting {
 
 class StringBasedRuntime : public ::Scripting::IRuntime {
 public:
-    // prevent constructor by default
-    StringBasedRuntime& operator=(StringBasedRuntime const&);
-    StringBasedRuntime(StringBasedRuntime const&);
-    StringBasedRuntime();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

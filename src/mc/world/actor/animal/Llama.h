@@ -17,12 +17,6 @@ struct ActorDefinitionIdentifier;
 
 class Llama : public ::Animal {
 public:
-    // prevent constructor by default
-    Llama& operator=(Llama const&);
-    Llama(Llama const&);
-    Llama();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 59
@@ -71,7 +65,7 @@ public:
 
     MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

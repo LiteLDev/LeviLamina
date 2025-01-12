@@ -7,12 +7,6 @@
 
 class VanillaAppConfigs : public ::AppConfigs {
 public:
-    // prevent constructor by default
-    VanillaAppConfigs& operator=(VanillaAppConfigs const&);
-    VanillaAppConfigs(VanillaAppConfigs const&);
-    VanillaAppConfigs();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -17,29 +17,24 @@ class LevelChunk;
 class LevelChunkMetaData;
 class LevelChunkMetaDataDictionary;
 class LevelSeed64;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LevelChunkMetaDataManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka0bf51;
-    ::ll::UntypedStorage<8, 16> mUnkab425c;
-    ::ll::UntypedStorage<8, 16> mUnk206103;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunkMetaDataDictionary>> mLevelChunkMetaDataDictionary;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mOnNewDimensionCreatedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mOnChunkLoadedSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelChunkMetaDataManager& operator=(LevelChunkMetaDataManager const&);
-    LevelChunkMetaDataManager(LevelChunkMetaDataManager const&);
-    LevelChunkMetaDataManager();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _onNewDimensionCreated(::Dimension& dimension);
 
-    MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
+    MCFOLD ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 

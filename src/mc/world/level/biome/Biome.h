@@ -107,7 +107,7 @@ public:
 
     MCAPI float getDefaultBiomeTemperature() const;
 
-    MCAPI float getDownfall() const;
+    MCFOLD float getDownfall() const;
 
     MCAPI int getMapBirchFoliageColor() const;
 
@@ -117,11 +117,11 @@ public:
 
     MCAPI int getMapGrassColor(::BlockPos const& pos) const;
 
-    MCAPI ::std::array<::std::vector<::std::shared_ptr<::MobSpawnerData>>, 8>& getMobMapMutable();
+    MCFOLD ::std::array<::std::vector<::std::shared_ptr<::MobSpawnerData>>, 8>& getMobMapMutable();
 
-    MCAPI ::std::vector<::std::shared_ptr<::MobSpawnerData>> const& getMobs() const;
+    MCFOLD ::std::vector<::std::shared_ptr<::MobSpawnerData>> const& getMobs() const;
 
-    MCAPI ::std::vector<::std::shared_ptr<::MobSpawnerData>>& getMobsMutable();
+    MCFOLD ::std::vector<::std::shared_ptr<::MobSpawnerData>>& getMobsMutable();
 
     MCAPI int getSnowAccumulationLayers() const;
 

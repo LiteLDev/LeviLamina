@@ -11,12 +11,6 @@ namespace cricket {
 
 class StreamInterfaceChannel {
 public:
-    // prevent constructor by default
-    StreamInterfaceChannel& operator=(StreamInterfaceChannel const&);
-    StreamInterfaceChannel(StreamInterfaceChannel const&);
-    StreamInterfaceChannel();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool OnPacketReceived(char const*, uint64);

@@ -11,12 +11,6 @@ namespace SharedTypes::v1_21 {
 
 struct ParticleEffectComponent {
 public:
-    // prevent constructor by default
-    ParticleEffectComponent& operator=(ParticleEffectComponent const&);
-    ParticleEffectComponent(ParticleEffectComponent const&);
-    ParticleEffectComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

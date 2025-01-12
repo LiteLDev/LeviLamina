@@ -18,12 +18,6 @@ namespace Editor::API {
 
 class EditorServerBindingsModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
-    // prevent constructor by default
-    EditorServerBindingsModuleFactory& operator=(EditorServerBindingsModuleFactory const&);
-    EditorServerBindingsModuleFactory(EditorServerBindingsModuleFactory const&);
-    EditorServerBindingsModuleFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

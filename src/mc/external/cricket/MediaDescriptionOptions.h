@@ -12,11 +12,6 @@ namespace cricket {
 
 struct MediaDescriptionOptions {
 public:
-    // prevent constructor by default
-    MediaDescriptionOptions& operator=(MediaDescriptionOptions const&);
-    MediaDescriptionOptions();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddAudioSender(::std::string const&, ::std::vector<::std::string> const&);

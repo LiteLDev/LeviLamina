@@ -23,7 +23,7 @@ public:
 
     MCAPI ::std::string getDescriptionId() const;
 
-    MCAPI explicit operator uint64() const;
+    MCFOLD explicit operator uint64() const;
 
     MCAPI ::CommandBlockNameResult resolveBlock(int data) const;
 
@@ -37,6 +37,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 blockNameHash);
+    MCFOLD void* $ctor(uint64 blockNameHash);
     // NOLINTEND
 };

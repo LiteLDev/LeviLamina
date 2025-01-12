@@ -22,12 +22,6 @@ class StructurePiece;
 
 class VillagePiece : public ::PoolElementStructurePiece {
 public:
-    // prevent constructor by default
-    VillagePiece& operator=(VillagePiece const&);
-    VillagePiece(VillagePiece const&);
-    VillagePiece();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13
@@ -89,7 +83,7 @@ public:
 
     MCAPI ::Block const& $getBeardStabilizeBlock(::Block const& foundationBlock) const;
 
-    MCAPI ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
+    MCFOLD ::AdjustmentEffect $getTerrainAdjustmentEffect() const;
 
     MCAPI bool $_needsPostProcessing(::BlockSource& region);
     // NOLINTEND

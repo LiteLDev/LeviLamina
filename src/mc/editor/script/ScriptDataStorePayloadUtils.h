@@ -11,12 +11,6 @@ namespace Editor::ScriptModule {
 
 struct ScriptDataStorePayloadUtils {
 public:
-    // prevent constructor by default
-    ScriptDataStorePayloadUtils& operator=(ScriptDataStorePayloadUtils const&);
-    ScriptDataStorePayloadUtils(ScriptDataStorePayloadUtils const&);
-    ScriptDataStorePayloadUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::std::variant<float, bool, ::std::string>>

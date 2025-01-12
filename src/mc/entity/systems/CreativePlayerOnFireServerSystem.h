@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class CreativePlayerOnFireServerSystem {
 public:
-    // prevent constructor by default
-    CreativePlayerOnFireServerSystem& operator=(CreativePlayerOnFireServerSystem const&);
-    CreativePlayerOnFireServerSystem(CreativePlayerOnFireServerSystem const&);
-    CreativePlayerOnFireServerSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

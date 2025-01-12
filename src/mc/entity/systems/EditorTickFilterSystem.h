@@ -18,12 +18,6 @@ struct TickingSystemWithInfo;
 
 struct EditorTickFilterSystem {
 public:
-    // prevent constructor by default
-    EditorTickFilterSystem& operator=(EditorTickFilterSystem const&);
-    EditorTickFilterSystem(EditorTickFilterSystem const&);
-    EditorTickFilterSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _addPauseTickNeeded(

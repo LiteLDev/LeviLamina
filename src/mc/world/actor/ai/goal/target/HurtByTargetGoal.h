@@ -13,12 +13,6 @@ struct MobDescriptor;
 
 class HurtByTargetGoal : public ::TargetGoal {
 public:
-    // prevent constructor by default
-    HurtByTargetGoal& operator=(HurtByTargetGoal const&);
-    HurtByTargetGoal(HurtByTargetGoal const&);
-    HurtByTargetGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -124,9 +124,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
 BOOL APIENTRY DllMain(HMODULE /*hModule*/, DWORD ulReasonForCall, LPVOID /*lpReserved*/) {
     using namespace ll;
-    if (ulReasonForCall == DLL_PROCESS_DETACH) {
-        mod::ModRegistrar::getInstance().releaseAllMods();
-    }
     if (ulReasonForCall != DLL_PROCESS_ATTACH) return TRUE;
 
     setGamingStatus(GamingStatus::Default);

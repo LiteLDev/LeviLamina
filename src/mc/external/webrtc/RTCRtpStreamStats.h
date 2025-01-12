@@ -11,11 +11,6 @@ namespace webrtc {
 
 class RTCRtpStreamStats {
 public:
-    // prevent constructor by default
-    RTCRtpStreamStats& operator=(RTCRtpStreamStats const&);
-    RTCRtpStreamStats();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCRtpStreamStats(::webrtc::RTCRtpStreamStats const&);

@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Puv::VersionRange&&);
+    MCFOLD void* $ctor(::Puv::VersionRange&&);
 
     MCAPI void* $ctor(::Puv::VersionRange const&);
 
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

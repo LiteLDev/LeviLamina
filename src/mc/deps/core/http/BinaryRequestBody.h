@@ -66,7 +66,7 @@ public:
 
     MCAPI ::std::string const& $getLoggableSource() const;
 
-    MCAPI ::gsl::span<uchar const> $getLoggableData() const;
+    MCFOLD ::gsl::span<uchar const> $getLoggableData() const;
     // NOLINTEND
 
 public:

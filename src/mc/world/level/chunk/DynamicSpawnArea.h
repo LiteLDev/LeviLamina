@@ -4,12 +4,6 @@
 
 namespace br {
 
-struct DynamicSpawnArea {
-public:
-    // prevent constructor by default
-    DynamicSpawnArea& operator=(DynamicSpawnArea const&);
-    DynamicSpawnArea(DynamicSpawnArea const&);
-    DynamicSpawnArea();
-};
+struct DynamicSpawnArea {};
 
 } // namespace br

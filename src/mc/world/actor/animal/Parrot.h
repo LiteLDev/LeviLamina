@@ -19,12 +19,6 @@ struct ActorDefinitionIdentifier;
 
 class Parrot : public ::Animal {
 public:
-    // prevent constructor by default
-    Parrot& operator=(Parrot const&);
-    Parrot(Parrot const&);
-    Parrot();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 176
@@ -105,7 +99,7 @@ public:
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

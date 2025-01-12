@@ -4,12 +4,6 @@
 
 namespace Scripting {
 
-struct PromiseType {
-public:
-    // prevent constructor by default
-    PromiseType& operator=(PromiseType const&);
-    PromiseType(PromiseType const&);
-    PromiseType();
-};
+struct PromiseType {};
 
 } // namespace Scripting

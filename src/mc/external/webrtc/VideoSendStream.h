@@ -140,12 +140,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    VideoSendStream& operator=(VideoSendStream const&);
-    VideoSendStream(VideoSendStream const&);
-    VideoSendStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

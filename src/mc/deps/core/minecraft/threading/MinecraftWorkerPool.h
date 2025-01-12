@@ -19,12 +19,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    MinecraftWorkerPool& operator=(MinecraftWorkerPool const&);
-    MinecraftWorkerPool(MinecraftWorkerPool const&);
-    MinecraftWorkerPool();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void configureMainThread();
@@ -35,7 +29,7 @@ public:
 
     MCAPI static void destroySingletons();
 
-    MCAPI static void initializeDefaults(::MinecraftWorkerPool::CoreConfigFlavor nxCoreConfigFlavor);
+    MCFOLD static void initializeDefaults(::MinecraftWorkerPool::CoreConfigFlavor nxCoreConfigFlavor);
 
     MCAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND

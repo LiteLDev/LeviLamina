@@ -4,12 +4,6 @@
 
 class LevelDbLogger : public ::leveldb::Logger {
 public:
-    // prevent constructor by default
-    LevelDbLogger& operator=(LevelDbLogger const&);
-    LevelDbLogger(LevelDbLogger const&);
-    LevelDbLogger();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -28,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $Logv(char const* format, char* ap);
+    MCFOLD void $Logv(char const* format, char* ap);
     // NOLINTEND
 
 public:

@@ -21,12 +21,6 @@ namespace Identity {
 
 class IEduSsoStrategy {
 public:
-    // prevent constructor by default
-    IEduSsoStrategy& operator=(IEduSsoStrategy const&);
-    IEduSsoStrategy(IEduSsoStrategy const&);
-    IEduSsoStrategy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

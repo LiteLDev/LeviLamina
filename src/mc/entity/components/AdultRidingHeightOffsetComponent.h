@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct AdultRidingHeightOffsetComponent : public ::FloatComponent {
-public:
-    // prevent constructor by default
-    AdultRidingHeightOffsetComponent& operator=(AdultRidingHeightOffsetComponent const&);
-    AdultRidingHeightOffsetComponent(AdultRidingHeightOffsetComponent const&);
-    AdultRidingHeightOffsetComponent();
-};
+struct AdultRidingHeightOffsetComponent : public ::FloatComponent {};

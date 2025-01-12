@@ -73,19 +73,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ushort $getId();
+    MCFOLD ushort $getId();
 
-    MCAPI bool $start();
+    MCFOLD bool $start();
 
-    MCAPI bool $suspend();
+    MCFOLD bool $suspend();
 
-    MCAPI bool $resume();
+    MCFOLD bool $resume();
 
-    MCAPI bool $stop();
+    MCFOLD bool $stop();
 
-    MCAPI void $mainUpdate();
+    MCFOLD void $mainUpdate();
 
-    MCAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
+    MCFOLD void $processActivationArguments(::Bedrock::ActivationArguments const& args);
     // NOLINTEND
 
 public:

@@ -27,12 +27,6 @@ struct VehicleComponent;
 
 class TryExitVehicleSystem {
 public:
-    // prevent constructor by default
-    TryExitVehicleSystem& operator=(TryExitVehicleSystem const&);
-    TryExitVehicleSystem(TryExitVehicleSystem const&);
-    TryExitVehicleSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickTryExitVehicle(

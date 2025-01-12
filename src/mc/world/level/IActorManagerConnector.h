@@ -13,12 +13,6 @@ class Actor;
 
 class IActorManagerConnector {
 public:
-    // prevent constructor by default
-    IActorManagerConnector& operator=(IActorManagerConnector const&);
-    IActorManagerConnector(IActorManagerConnector const&);
-    IActorManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

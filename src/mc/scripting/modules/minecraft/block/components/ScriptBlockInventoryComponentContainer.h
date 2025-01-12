@@ -62,7 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCFOLD ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
     MCAPI ::Container* $_tryGetContainer() const;
 

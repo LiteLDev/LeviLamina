@@ -15,9 +15,9 @@ public:
     // NOLINTBEGIN
     MCAPI CommandWildcardInt();
 
-    MCAPI int getValue() const;
+    MCFOLD int getValue() const;
 
-    MCAPI bool isWildcard() const;
+    MCFOLD bool isWildcard() const;
     // NOLINTEND
 
 public:

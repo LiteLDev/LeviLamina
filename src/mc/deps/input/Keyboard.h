@@ -108,10 +108,4 @@ public:
         AndroidMenu = 255,
         Count       = 256,
     };
-
-public:
-    // prevent constructor by default
-    Keyboard& operator=(Keyboard const&);
-    Keyboard(Keyboard const&);
-    Keyboard();
 };

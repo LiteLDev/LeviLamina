@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class LifecycleId {
-public:
-    // prevent constructor by default
-    LifecycleId& operator=(LifecycleId const&);
-    LifecycleId(LifecycleId const&);
-    LifecycleId();
-};
+class LifecycleId {};
 
 } // namespace dcsctp

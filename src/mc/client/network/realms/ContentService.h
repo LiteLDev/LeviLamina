@@ -4,12 +4,6 @@
 
 namespace Realms {
 
-class ContentService {
-public:
-    // prevent constructor by default
-    ContentService& operator=(ContentService const&);
-    ContentService(ContentService const&);
-    ContentService();
-};
+class ContentService {};
 
 } // namespace Realms

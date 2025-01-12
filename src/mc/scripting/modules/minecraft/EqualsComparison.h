@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::EqualsComparison const& other) const;
+    MCFOLD bool operator==(::ScriptModuleMinecraft::EqualsComparison const& other) const;
 
     MCAPI ~EqualsComparison();
     // NOLINTEND
@@ -37,7 +37,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

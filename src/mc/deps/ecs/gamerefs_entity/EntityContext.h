@@ -76,7 +76,7 @@ public:
 
     MCAPI uint _getRegistryId() const;
 
-    MCAPI ::EntityRegistry& _registry() const;
+    MCFOLD ::EntityRegistry& _registry() const;
 
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
 

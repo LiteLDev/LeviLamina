@@ -5,12 +5,6 @@
 namespace DataStructures {
 
 template <typename T0>
-class MemoryPool {
-public:
-    // prevent constructor by default
-    MemoryPool& operator=(MemoryPool const&);
-    MemoryPool(MemoryPool const&);
-    MemoryPool();
-};
+class MemoryPool {};
 
 } // namespace DataStructures

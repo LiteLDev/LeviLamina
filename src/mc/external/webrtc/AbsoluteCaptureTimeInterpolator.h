@@ -6,12 +6,6 @@ namespace webrtc {
 
 struct AbsoluteCaptureTimeInterpolator {
 public:
-    // prevent constructor by default
-    AbsoluteCaptureTimeInterpolator& operator=(AbsoluteCaptureTimeInterpolator const&);
-    AbsoluteCaptureTimeInterpolator(AbsoluteCaptureTimeInterpolator const&);
-    AbsoluteCaptureTimeInterpolator();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static uint GetSource(uint, ::rtc::ArrayView<uint const>);

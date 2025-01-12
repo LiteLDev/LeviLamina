@@ -113,7 +113,7 @@ public:
 
     MCAPI ::std::string const& GetServerId() const;
 
-    MCAPI ::std::string const& GetWorldId() const;
+    MCFOLD ::std::string const& GetWorldId() const;
 
     MCAPI LevelSettings();
 
@@ -129,15 +129,15 @@ public:
 
     MCAPI bool cloudSaveForWorldIsEnabled() const;
 
-    MCAPI bool educationFeaturesEnabled() const;
+    MCFOLD bool educationFeaturesEnabled() const;
 
-    MCAPI ::std::string const& educationProductID() const;
+    MCFOLD ::std::string const& educationProductID() const;
 
-    MCAPI bool forceGameType() const;
+    MCFOLD bool forceGameType() const;
 
     MCAPI bool getAdventureModeOverridesEnabled() const;
 
-    MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
+    MCFOLD ::BaseGameVersion const& getBaseGameVersion() const;
 
     MCAPI ::std::string const& getBiomeOverride() const;
 
@@ -145,11 +145,11 @@ public:
 
     MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
 
-    MCAPI bool getCustomSkinsDisabled() const;
+    MCFOLD bool getCustomSkinsDisabled() const;
 
-    MCAPI ::DaylightCycle getDaylightCycle() const;
+    MCFOLD ::DaylightCycle getDaylightCycle() const;
 
-    MCAPI ::PermissionsHandler const& getDefaultPermissions() const;
+    MCFOLD ::PermissionsHandler const& getDefaultPermissions() const;
 
     MCAPI ::BlockPos const& getDefaultSpawn() const;
 
@@ -157,25 +157,25 @@ public:
 
     MCAPI ::Editor::WorldType getEditorWorldType() const;
 
-    MCAPI ::EduSharedUriResource const& getEduSharedUriResource() const;
+    MCFOLD ::EduSharedUriResource const& getEduSharedUriResource() const;
 
-    MCAPI ::EducationEditionOffer getEducationEditionOffer() const;
+    MCFOLD ::EducationEditionOffer getEducationEditionOffer() const;
 
     MCAPI ::std::optional<::EducationLevelSettings> const& getEducationLevelSettings() const;
 
-    MCAPI bool getEmoteChatMuted() const;
+    MCFOLD bool getEmoteChatMuted() const;
 
     MCAPI ::std::vector<::std::string> const& getExcludedScriptModules() const;
 
-    MCAPI ::Experiments const& getExperiments() const;
+    MCFOLD ::Experiments const& getExperiments() const;
 
-    MCAPI ::Difficulty getGameDifficulty() const;
+    MCFOLD ::Difficulty getGameDifficulty() const;
 
-    MCAPI ::GameRules const& getGameRules() const;
+    MCFOLD ::GameRules const& getGameRules() const;
 
-    MCAPI ::GameType getGameType() const;
+    MCFOLD ::GameType getGameType() const;
 
-    MCAPI ::GeneratorType getGenerator() const;
+    MCFOLD ::GeneratorType getGenerator() const;
 
     MCAPI bool getImmutableWorld() const;
 
@@ -185,71 +185,71 @@ public:
 
     MCAPI int getLimitedWorldDepth() const;
 
-    MCAPI int getLimitedWorldWidth() const;
+    MCFOLD int getLimitedWorldWidth() const;
 
     MCAPI bool getMultiplayerGameIntent() const;
 
-    MCAPI ::NetherWorldType getNetherType() const;
+    MCFOLD ::NetherWorldType getNetherType() const;
 
     MCAPI bool getOnlySpawnV1Villagers() const;
 
     MCAPI bool getPersonaDisabled() const;
 
-    MCAPI ::Social::GamePublishSetting getPlatformBroadcastIntent() const;
+    MCFOLD ::Social::GamePublishSetting getPlatformBroadcastIntent() const;
 
     MCAPI float getRainLevel() const;
 
-    MCAPI ::LevelSeed64 getSeed() const;
+    MCFOLD ::LevelSeed64 getSeed() const;
 
-    MCAPI uint getServerChunkTickRange() const;
+    MCFOLD uint getServerChunkTickRange() const;
 
     MCAPI ::SpawnSettings getSpawnSettings() const;
 
     MCAPI int getTime() const;
 
-    MCAPI ::WorldVersion getWorldVersion() const;
+    MCFOLD ::WorldVersion getWorldVersion() const;
 
-    MCAPI ::Social::GamePublishSetting getXBLBroadcastIntent() const;
+    MCFOLD ::Social::GamePublishSetting getXBLBroadcastIntent() const;
 
-    MCAPI bool hasAchievementsDisabled() const;
+    MCFOLD bool hasAchievementsDisabled() const;
 
-    MCAPI bool hasBonusChestEnabled() const;
+    MCFOLD bool hasBonusChestEnabled() const;
 
-    MCAPI bool hasCheatsEnabled() const;
+    MCFOLD bool hasCheatsEnabled() const;
 
-    MCAPI bool hasCommandsEnabled() const;
+    MCFOLD bool hasCommandsEnabled() const;
 
-    MCAPI bool hasConfirmedPlatformLockedContent() const;
+    MCFOLD bool hasConfirmedPlatformLockedContent() const;
 
-    MCAPI bool hasLockedBehaviorPack() const;
+    MCFOLD bool hasLockedBehaviorPack() const;
 
     MCAPI bool hasLockedResourcePack() const;
 
-    MCAPI bool hasStartWithMapEnabled() const;
+    MCFOLD bool hasStartWithMapEnabled() const;
 
-    MCAPI bool isCreatedInEditor() const;
+    MCFOLD bool isCreatedInEditor() const;
 
     MCAPI bool isEditorWorld() const;
 
-    MCAPI bool isExportedFromEditor() const;
+    MCFOLD bool isExportedFromEditor() const;
 
     MCAPI bool isFromLockedTemplate() const;
 
-    MCAPI bool isFromWorldTemplate() const;
+    MCFOLD bool isFromWorldTemplate() const;
 
-    MCAPI bool isHardcore() const;
+    MCFOLD bool isHardcore() const;
 
     MCAPI bool isRandomSeedAllowed() const;
 
-    MCAPI bool isTexturepacksRequired() const;
+    MCFOLD bool isTexturepacksRequired() const;
 
-    MCAPI bool isWorldTemplateOptionLocked() const;
+    MCFOLD bool isWorldTemplateOptionLocked() const;
 
     MCAPI ::LevelSettings& operator=(::LevelSettings&&);
 
-    MCAPI ::LevelSettings& setAdventureModeOverridesEnabled(bool adventureModeOverridesEnabled);
+    MCFOLD ::LevelSettings& setAdventureModeOverridesEnabled(bool adventureModeOverridesEnabled);
 
-    MCAPI ::LevelSettings& setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+    MCFOLD ::LevelSettings& setBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
     MCAPI ::LevelSettings& setChatRestrictionLevel(::ChatRestrictionLevel chatRestrictionLevel);
 
@@ -291,9 +291,9 @@ public:
 
     MCAPI ::LevelSettings& setOverrideSavedSettings(bool overrideSaved);
 
-    MCAPI ::LevelSettings& setPlatformBroadcastIntent(::Social::GamePublishSetting platformBroadcastIntent);
+    MCFOLD ::LevelSettings& setPlatformBroadcastIntent(::Social::GamePublishSetting platformBroadcastIntent);
 
-    MCAPI ::LevelSettings& setRandomSeed(::LevelSeed64 seed);
+    MCFOLD ::LevelSettings& setRandomSeed(::LevelSeed64 seed);
 
     MCAPI ::LevelSettings& setScenarioId(::std::string scenarioId);
 

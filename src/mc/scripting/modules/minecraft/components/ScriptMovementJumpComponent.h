@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptMovementJumpComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptMovementJumpComponent& operator=(ScriptMovementJumpComponent const&);
-    ScriptMovementJumpComponent(ScriptMovementJumpComponent const&);
-    ScriptMovementJumpComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

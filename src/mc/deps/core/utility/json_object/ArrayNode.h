@@ -22,19 +22,7 @@ public:
 
     // ArrayNode inner types define
     template <int T0>
-    class iterator_base {
-    public:
-        // prevent constructor by default
-        iterator_base& operator=(iterator_base const&);
-        iterator_base(iterator_base const&);
-        iterator_base();
-    };
-
-public:
-    // prevent constructor by default
-    ArrayNode& operator=(ArrayNode const&);
-    ArrayNode(ArrayNode const&);
-    ArrayNode();
+    class iterator_base {};
 
 public:
     // member functions

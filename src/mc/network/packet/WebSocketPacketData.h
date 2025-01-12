@@ -28,6 +28,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& ip);
+    MCFOLD void* $ctor(::std::string const& ip);
     // NOLINTEND
 };

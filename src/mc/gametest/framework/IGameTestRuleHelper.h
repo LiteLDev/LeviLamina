@@ -6,12 +6,6 @@ namespace gametest {
 
 class IGameTestRuleHelper {
 public:
-    // prevent constructor by default
-    IGameTestRuleHelper& operator=(IGameTestRuleHelper const&);
-    IGameTestRuleHelper(IGameTestRuleHelper const&);
-    IGameTestRuleHelper();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

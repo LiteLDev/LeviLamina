@@ -4,12 +4,6 @@
 
 namespace rtc {
 
-class MessageDigest {
-public:
-    // prevent constructor by default
-    MessageDigest& operator=(MessageDigest const&);
-    MessageDigest(MessageDigest const&);
-    MessageDigest();
-};
+class MessageDigest {};
 
 } // namespace rtc

@@ -12,12 +12,6 @@ namespace PositionTrackingDB {
 
 class OperationBase {
 public:
-    // prevent constructor by default
-    OperationBase& operator=(OperationBase const&);
-    OperationBase(OperationBase const&);
-    OperationBase();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

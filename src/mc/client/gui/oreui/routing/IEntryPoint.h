@@ -16,12 +16,6 @@ namespace OreUI {
 
 class IEntryPoint {
 public:
-    // prevent constructor by default
-    IEntryPoint& operator=(IEntryPoint const&);
-    IEntryPoint(IEntryPoint const&);
-    IEntryPoint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

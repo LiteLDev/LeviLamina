@@ -6,12 +6,6 @@ namespace webrtc {
 
 class RtcpIntraFrameObserver {
 public:
-    // prevent constructor by default
-    RtcpIntraFrameObserver& operator=(RtcpIntraFrameObserver const&);
-    RtcpIntraFrameObserver(RtcpIntraFrameObserver const&);
-    RtcpIntraFrameObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

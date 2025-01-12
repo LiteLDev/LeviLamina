@@ -14,12 +14,6 @@ namespace webrtc {
 
 class SetSessionDescriptionObserver : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    SetSessionDescriptionObserver& operator=(SetSessionDescriptionObserver const&);
-    SetSessionDescriptionObserver(SetSessionDescriptionObserver const&);
-    SetSessionDescriptionObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

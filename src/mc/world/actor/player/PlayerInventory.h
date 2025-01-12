@@ -80,7 +80,7 @@ public:
 
     MCAPI ::std::vector<::ItemStack> const& getComplexItems(::ContainerID containerId) const;
 
-    MCAPI ::Container& getContainer();
+    MCFOLD ::Container& getContainer();
 
     MCAPI int getContainerSize(::ContainerID containerId) const;
 
@@ -147,7 +147,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerSizeChanged(int size);
+    MCFOLD void $containerSizeChanged(int size);
 
     MCAPI void $containerContentChanged(int slot);
 

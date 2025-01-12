@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 class VariableMaxAutoStepSystem {
 public:
-    // prevent constructor by default
-    VariableMaxAutoStepSystem& operator=(VariableMaxAutoStepSystem const&);
-    VariableMaxAutoStepSystem(VariableMaxAutoStepSystem const&);
-    VariableMaxAutoStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);

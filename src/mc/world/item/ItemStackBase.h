@@ -119,11 +119,12 @@ public:
 
     MCAPI ItemStackBase(::BlockLegacy const& block, int count);
 
-    MCAPI ItemStackBase(::Block const& block, int count, ::CompoundTag const* _userData);
+    MCAPI ItemStackBase(::Block const& block, int count = 1, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStackBase(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI ItemStackBase(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
-    MCAPI ItemStackBase(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI
+    ItemStackBase(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
     MCAPI void _addCustomUserDataCommon(::std::unique_ptr<::CompoundTag>&& tag);
 
@@ -177,13 +178,13 @@ public:
 
     MCAPI int getBaseRepairCost() const;
 
-    MCAPI ::Block const* getBlock() const;
+    MCFOLD ::Block const* getBlock() const;
 
-    MCAPI ::Tick const& getBlockingTick() const;
+    MCFOLD ::Tick const& getBlockingTick() const;
 
-    MCAPI ::std::vector<::BlockLegacy const*> const& getCanDestroy() const;
+    MCFOLD ::std::vector<::BlockLegacy const*> const& getCanDestroy() const;
 
-    MCAPI ::std::vector<::BlockLegacy const*> const& getCanPlaceOn() const;
+    MCFOLD ::std::vector<::BlockLegacy const*> const& getCanPlaceOn() const;
 
     MCAPI ::std::string getCategoryName() const;
 
@@ -252,9 +253,9 @@ public:
 
     MCAPI ::CompoundTag const* getUserData() const;
 
-    MCAPI ::CompoundTag* getUserData();
+    MCFOLD ::CompoundTag* getUserData();
 
-    MCAPI bool getWasPickedUp() const;
+    MCFOLD bool getWasPickedUp() const;
 
     MCAPI bool hasChargedItem() const;
 
@@ -272,7 +273,7 @@ public:
 
     MCAPI bool hasTag(::ItemTag const& string) const;
 
-    MCAPI bool hasUserData() const;
+    MCFOLD bool hasUserData() const;
 
     MCAPI bool hurtAndBreak(int deltaDamage, ::Actor* owner);
 
@@ -395,7 +396,7 @@ public:
 
     MCAPI void setAuxValue(short value);
 
-    MCAPI void setBlock(::Block const* block);
+    MCFOLD void setBlock(::Block const* block);
 
     MCAPI bool setCanDestroy(::std::vector<::std::string> const& blockIds);
 
@@ -421,11 +422,11 @@ public:
 
     MCAPI void setRepairCost(int cost);
 
-    MCAPI void setShowPickUp(bool show);
+    MCFOLD void setShowPickUp(bool show);
 
     MCAPI void setUserData(::std::unique_ptr<::CompoundTag> tag);
 
-    MCAPI void setWasPickedUp(bool wasPickedUp);
+    MCFOLD void setWasPickedUp(bool wasPickedUp);
 
     MCAPI bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
 
@@ -500,11 +501,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reinit(::Item const& item, int count, int auxValue);
+    MCFOLD void $reinit(::Item const& item, int count, int auxValue);
 
-    MCAPI void $reinit(::BlockLegacy const& block, int count);
+    MCFOLD void $reinit(::BlockLegacy const& block, int count);
 
-    MCAPI void $reinit(::std::string_view const name, int count, int auxValue);
+    MCFOLD void $reinit(::std::string_view const name, int count, int auxValue);
 
     MCAPI void $setNull(::std::optional<::std::string> reason);
 

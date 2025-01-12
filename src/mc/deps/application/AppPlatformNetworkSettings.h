@@ -7,12 +7,6 @@
 
 class AppPlatformNetworkSettings : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    AppPlatformNetworkSettings& operator=(AppPlatformNetworkSettings const&);
-    AppPlatformNetworkSettings(AppPlatformNetworkSettings const&);
-    AppPlatformNetworkSettings();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -31,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $requiresNetworkOutageMessaging() const;
+    MCFOLD bool $requiresNetworkOutageMessaging() const;
     // NOLINTEND
 
 public:

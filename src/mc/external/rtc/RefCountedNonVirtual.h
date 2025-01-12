@@ -5,12 +5,6 @@
 namespace rtc {
 
 template <typename T0>
-class RefCountedNonVirtual {
-public:
-    // prevent constructor by default
-    RefCountedNonVirtual& operator=(RefCountedNonVirtual const&);
-    RefCountedNonVirtual(RefCountedNonVirtual const&);
-    RefCountedNonVirtual();
-};
+class RefCountedNonVirtual {};
 
 } // namespace rtc

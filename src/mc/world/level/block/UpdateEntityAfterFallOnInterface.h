@@ -12,12 +12,6 @@ class Vec3;
 
 struct UpdateEntityAfterFallOnInterface {
 public:
-    // prevent constructor by default
-    UpdateEntityAfterFallOnInterface& operator=(UpdateEntityAfterFallOnInterface const&);
-    UpdateEntityAfterFallOnInterface(UpdateEntityAfterFallOnInterface const&);
-    UpdateEntityAfterFallOnInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

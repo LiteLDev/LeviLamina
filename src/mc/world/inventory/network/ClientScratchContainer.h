@@ -12,12 +12,6 @@ class ItemStack;
 
 class ClientScratchContainer : public ::SimpleContainer {
 public:
-    // prevent constructor by default
-    ClientScratchContainer& operator=(ClientScratchContainer const&);
-    ClientScratchContainer(ClientScratchContainer const&);
-    ClientScratchContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 12

@@ -29,19 +29,13 @@ struct VariantParameterList;
 
 class Horse : public ::Animal {
 public:
-    // prevent constructor by default
-    Horse& operator=(Horse const&);
-    Horse(Horse const&);
-    Horse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
     virtual ~Horse() /*override*/ = default;
 
     // vIndex: 125
-    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
+    virtual void die(::ActorDamageSource const& source) /*override*/;
 
     // vIndex: 182
     virtual void setHorseEating(bool state);
@@ -98,7 +92,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
 
     // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
+    virtual void _playStepSound(::BlockPos const& pos, ::Block const& _onBlock) /*override*/;
 
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -169,7 +163,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& damagesource);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCAPI void $setHorseEating(bool state);
 
@@ -189,7 +183,7 @@ public:
 
     MCAPI bool $tameToPlayer(::Player& player, bool tamingParticles);
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCFOLD void $onSynchedDataUpdate(int dataId);
 
     MCAPI void $openContainerComponent(::Player& player);
 
@@ -207,7 +201,7 @@ public:
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& _onBlock);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND

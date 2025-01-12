@@ -14,12 +14,6 @@ class Mob;
 
 class MoveToLandGoal : public ::BaseMoveToBlockGoal {
 public:
-    // prevent constructor by default
-    MoveToLandGoal& operator=(MoveToLandGoal const&);
-    MoveToLandGoal(MoveToLandGoal const&);
-    MoveToLandGoal();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

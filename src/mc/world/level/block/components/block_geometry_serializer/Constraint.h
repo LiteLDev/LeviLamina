@@ -16,12 +16,6 @@ namespace BlockGeometrySerializer {
 
 struct Constraint : public ::cereal::Constraint {
 public:
-    // prevent constructor by default
-    Constraint& operator=(Constraint const&);
-    Constraint(Constraint const&);
-    Constraint();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -45,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:

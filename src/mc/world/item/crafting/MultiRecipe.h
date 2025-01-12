@@ -12,12 +12,6 @@ class HashedString;
 
 class MultiRecipe : public ::Recipe {
 public:
-    // prevent constructor by default
-    MultiRecipe& operator=(MultiRecipe const&);
-    MultiRecipe(MultiRecipe const&);
-    MultiRecipe();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9
@@ -54,11 +48,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isMultiRecipe() const;
+    MCFOLD bool $isMultiRecipe() const;
 
-    MCAPI bool $isShapeless() const;
+    MCFOLD bool $isShapeless() const;
 
-    MCAPI bool $hasDataDrivenResult() const;
+    MCFOLD bool $hasDataDrivenResult() const;
     // NOLINTEND
 
 public:

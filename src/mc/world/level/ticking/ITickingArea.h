@@ -24,12 +24,6 @@ namespace mce { class UUID; }
 
 class ITickingArea {
 public:
-    // prevent constructor by default
-    ITickingArea& operator=(ITickingArea const&);
-    ITickingArea(ITickingArea const&);
-    ITickingArea();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

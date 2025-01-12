@@ -4,12 +4,6 @@
 
 class MarketplaceSkinValidator {
 public:
-    // prevent constructor by default
-    MarketplaceSkinValidator& operator=(MarketplaceSkinValidator const&);
-    MarketplaceSkinValidator(MarketplaceSkinValidator const&);
-    MarketplaceSkinValidator();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool checkIfValid(::std::string const& geometry);

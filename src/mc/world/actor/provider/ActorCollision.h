@@ -30,11 +30,11 @@ MCAPI ::ActorUniqueID getPushedByID(::EntityContext const& provider);
 
 MCAPI ::std::vector<::AABB>& getSubAABBs(::EntityContext& provider);
 
-MCAPI bool hasCollision(::EntityContext const& provider);
+MCFOLD bool hasCollision(::EntityContext const& provider);
 
-MCAPI bool hasHorizontalCollision(::EntityContext const& provider);
+MCFOLD bool hasHorizontalCollision(::EntityContext const& provider);
 
-MCAPI bool hasVerticalCollision(::EntityContext const& provider);
+MCFOLD bool hasVerticalCollision(::EntityContext const& provider);
 
 MCAPI void initializeActor(::EntityContext& provider);
 
@@ -44,7 +44,7 @@ MCAPI void initializePlayer(::EntityContext& provider);
 
 MCAPI bool isKnockedBackOnDeath(::EntityContext const& provider);
 
-MCAPI bool isOnGround(::EntityContext const& provider);
+MCFOLD bool isOnGround(::EntityContext const& provider);
 
 MCAPI bool isPickable(::EntityContext const& provider);
 
@@ -84,7 +84,7 @@ MCAPI void setWasOnGround(::EntityContext& provider, bool value);
 
 MCAPI bool usesOneWayCollision(::EntityContext const& provider);
 
-MCAPI bool wasOnGround(::EntityContext const& provider);
+MCFOLD bool wasOnGround(::EntityContext const& provider);
 
 MCAPI bool wasPenetratingLastFrame(::EntityContext const& provider);
 // NOLINTEND

@@ -56,15 +56,15 @@ public:
         ::std::string     endEvent
     );
 
-    MCAPI ::HashedString const& getName() const;
+    MCFOLD ::HashedString const& getName() const;
 
-    MCAPI ::BlockPos const& getPosition() const;
+    MCFOLD ::BlockPos const& getPosition() const;
 
     MCAPI float getRadius() const;
 
     MCAPI ::AABB getSecondBlockFullAABB(::BlockSource& region);
 
-    MCAPI ::HashedString const& getSoundEvent() const;
+    MCFOLD ::HashedString const& getSoundEvent() const;
 
     MCAPI void incrementArrivalFailureCount();
 
@@ -74,7 +74,7 @@ public:
 
     MCAPI void trySpawnParticles(::BlockSource& region, ::Random& random, int particleType) const;
 
-    MCAPI bool useBoundingBox() const;
+    MCFOLD bool useBoundingBox() const;
 
     MCAPI ~POIInstance();
     // NOLINTEND

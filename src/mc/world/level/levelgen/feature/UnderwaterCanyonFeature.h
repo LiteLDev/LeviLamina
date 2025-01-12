@@ -18,12 +18,6 @@ struct WorldGenContext;
 
 class UnderwaterCanyonFeature : public ::CanyonFeature {
 public:
-    // prevent constructor by default
-    UnderwaterCanyonFeature& operator=(UnderwaterCanyonFeature const&);
-    UnderwaterCanyonFeature(UnderwaterCanyonFeature const&);
-    UnderwaterCanyonFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -59,7 +53,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isDiggable(::Block const& block);
+    MCFOLD static bool isDiggable(::Block const& block);
     // NOLINTEND
 
 public:

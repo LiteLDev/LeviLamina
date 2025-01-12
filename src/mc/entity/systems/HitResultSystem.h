@@ -12,12 +12,6 @@ class EntityRegistry;
 
 struct HitResultSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    HitResultSystem& operator=(HitResultSystem const&);
-    HitResultSystem(HitResultSystem const&);
-    HitResultSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

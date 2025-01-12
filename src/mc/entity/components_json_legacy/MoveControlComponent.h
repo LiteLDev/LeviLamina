@@ -35,27 +35,27 @@ public:
 
     MCAPI void _setWantedPosition(::Vec3 const& position);
 
-    MCAPI bool getHasWantedPosition() const;
+    MCFOLD bool getHasWantedPosition() const;
 
-    MCAPI float getMaxTurn() const;
+    MCFOLD float getMaxTurn() const;
 
-    MCAPI bool getShouldBreach() const;
+    MCFOLD bool getShouldBreach() const;
 
-    MCAPI float getSpeedModifier() const;
+    MCFOLD float getSpeedModifier() const;
 
-    MCAPI ::Vec3 const& getWantedPosition() const;
+    MCFOLD ::Vec3 const& getWantedPosition() const;
 
     MCAPI void initMultiTypeMovementComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
     MCAPI void initializeFromDefinition(::Mob& owner, ::MoveControlDescription* description);
 
-    MCAPI void setHasWantedPosition(bool value);
+    MCFOLD void setHasWantedPosition(bool value);
 
     MCAPI void setInternalType(::std::unique_ptr<::MoveControl> type);
 
     MCAPI void setMaxTurn(float angle);
 
-    MCAPI void setShouldBreach(bool breach);
+    MCFOLD void setShouldBreach(bool breach);
 
     MCAPI void setSpeedModifier(float speedModifier);
 

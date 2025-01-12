@@ -119,17 +119,17 @@ public:
 
     MCAPI void $resetAnimation();
 
-    MCAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
+    MCFOLD void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
 
-    MCAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
-    MCAPI bool $hasAnimationFinished() const;
+    MCFOLD bool $hasAnimationFinished() const;
 
     MCAPI ::std::shared_ptr<::ActorAnimationPlayer> $findAnimation(::HashedString const& friendlyName);
 
-    MCAPI ::ActorAnimationType $getAnimationType() const;
+    MCFOLD ::ActorAnimationType $getAnimationType() const;
 
-    MCAPI ::HashedString const& $getRawName() const;
+    MCFOLD ::HashedString const& $getRawName() const;
     // NOLINTEND
 
 public:

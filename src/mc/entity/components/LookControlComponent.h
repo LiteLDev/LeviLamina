@@ -33,23 +33,23 @@ public:
     // NOLINTBEGIN
     MCAPI LookControlComponent();
 
-    MCAPI bool getHasWantedPosition() const;
+    MCFOLD bool getHasWantedPosition() const;
 
-    MCAPI bool getHasWantedRotation() const;
+    MCFOLD bool getHasWantedRotation() const;
 
-    MCAPI ::Vec3 getWantedPosition() const;
+    MCFOLD ::Vec3 getWantedPosition() const;
 
     MCAPI ::Vec3 getWantedRotation() const;
 
-    MCAPI float getXMax() const;
+    MCFOLD float getXMax() const;
 
-    MCAPI float getYMax() const;
+    MCFOLD float getYMax() const;
 
     MCAPI void initialize(::Mob& owner);
 
-    MCAPI void setHasWantedPosition(bool hasWantedPosition);
+    MCFOLD void setHasWantedPosition(bool hasWantedPosition);
 
-    MCAPI void setHasWantedRotation(bool hasWantedRotation);
+    MCFOLD void setHasWantedRotation(bool hasWantedRotation);
 
     MCAPI void setInternalType(::std::unique_ptr<::LookControl> type);
 
@@ -61,7 +61,7 @@ public:
 
     MCAPI void setYMax(float yMax);
 
-    MCAPI void update(::Mob& owner);
+    MCFOLD void update(::Mob& owner);
     // NOLINTEND
 
 public:

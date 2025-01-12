@@ -49,19 +49,7 @@ public:
     // clang-format on
 
     // PeerConnection inner types define
-    struct InitializePortAllocatorResult {
-    public:
-        // prevent constructor by default
-        InitializePortAllocatorResult& operator=(InitializePortAllocatorResult const&);
-        InitializePortAllocatorResult(InitializePortAllocatorResult const&);
-        InitializePortAllocatorResult();
-    };
-
-public:
-    // prevent constructor by default
-    PeerConnection& operator=(PeerConnection const&);
-    PeerConnection(PeerConnection const&);
-    PeerConnection();
+    struct InitializePortAllocatorResult {};
 
 public:
     // member functions

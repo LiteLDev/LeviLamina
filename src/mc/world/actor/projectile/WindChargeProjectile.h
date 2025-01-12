@@ -19,12 +19,6 @@ struct VariantParameterList;
 
 class WindChargeProjectile : public ::PredictableProjectile {
 public:
-    // prevent constructor by default
-    WindChargeProjectile& operator=(WindChargeProjectile const&);
-    WindChargeProjectile(WindChargeProjectile const&);
-    WindChargeProjectile();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

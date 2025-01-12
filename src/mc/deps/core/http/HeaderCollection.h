@@ -23,17 +23,17 @@ public:
 
     MCAPI void add(::std::string const& headerName, ::std::string const& headerValue);
 
-    MCAPI ::std::_List_const_iterator<
+    MCFOLD ::std::_List_const_iterator<
         ::std::_List_val<::std::_List_simple_types<::std::pair<::std::string const, ::std::string>>>>
     begin() const;
 
-    MCAPI ::std::_List_const_iterator<
+    MCFOLD ::std::_List_const_iterator<
         ::std::_List_val<::std::_List_simple_types<::std::pair<::std::string const, ::std::string>>>>
     end() const;
 
     MCAPI ::std::string const& get(::std::string const& headerName) const;
 
-    MCAPI ::Bedrock::Http::HeaderCollection& operator=(::Bedrock::Http::HeaderCollection const&);
+    MCFOLD ::Bedrock::Http::HeaderCollection& operator=(::Bedrock::Http::HeaderCollection const&);
 
     MCAPI void set(::std::string const& headerName, ::std::string const& headerValue);
 
@@ -45,7 +45,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

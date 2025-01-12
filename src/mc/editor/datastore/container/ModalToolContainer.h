@@ -53,9 +53,9 @@ public:
 
     MCAPI void _onToolUpdated(::std::string const& id, ::std::string const& propName);
 
-    MCAPI bool _removeTool(::std::string const& id);
+    MCFOLD bool _removeTool(::std::string const& id);
 
-    MCAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
+    MCFOLD ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
     MCAPI ::Json::Value getSelectedToolPayload(::Editor::DataStore::PayloadDescription const&) const;
 

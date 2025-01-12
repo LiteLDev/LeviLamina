@@ -4,12 +4,6 @@
 
 namespace RideableComponentHelpers {
 
-class RideableSystem {
-public:
-    // prevent constructor by default
-    RideableSystem& operator=(RideableSystem const&);
-    RideableSystem(RideableSystem const&);
-    RideableSystem();
-};
+class RideableSystem {};
 
 } // namespace RideableComponentHelpers

@@ -10,12 +10,6 @@ struct TickingSystemWithInfo;
 
 struct PushActorsSystem {
 public:
-    // prevent constructor by default
-    PushActorsSystem& operator=(PushActorsSystem const&);
-    PushActorsSystem(PushActorsSystem const&);
-    PushActorsSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

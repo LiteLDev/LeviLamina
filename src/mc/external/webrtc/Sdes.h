@@ -19,12 +19,6 @@ public:
     // Sdes inner types define
     struct Chunk {
     public:
-        // prevent constructor by default
-        Chunk& operator=(Chunk const&);
-        Chunk(Chunk const&);
-        Chunk();
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Chunk();
@@ -36,11 +30,6 @@ public:
         MCAPI void $dtor();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    Sdes& operator=(Sdes const&);
-    Sdes(Sdes const&);
 
 public:
     // member functions

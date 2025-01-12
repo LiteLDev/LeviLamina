@@ -128,7 +128,7 @@ public:
 
     MCAPI ::AABB& set(::AABB const& b);
 
-    MCAPI ::AABB& set(::Vec3 const& min, ::Vec3 const& max);
+    MCFOLD ::AABB& set(::Vec3 const& min, ::Vec3 const& max);
 
     MCAPI ::AABB& set(float minX, float minY, float minZ, float maxX, float maxY, float maxZ);
 
@@ -155,7 +155,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& min, ::Vec3 const& max);
+    MCFOLD void* $ctor(::Vec3 const& min, ::Vec3 const& max);
 
     MCAPI void* $ctor(::Vec3 const& min, float side);
 

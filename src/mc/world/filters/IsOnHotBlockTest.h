@@ -12,12 +12,6 @@ struct FilterContext;
 
 class IsOnHotBlockTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    IsOnHotBlockTest& operator=(IsOnHotBlockTest const&);
-    IsOnHotBlockTest(IsOnHotBlockTest const&);
-    IsOnHotBlockTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

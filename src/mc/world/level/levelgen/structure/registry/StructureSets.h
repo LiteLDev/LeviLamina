@@ -15,12 +15,6 @@ namespace br::worldgen {
 
 struct StructureSets {
 public:
-    // prevent constructor by default
-    StructureSets& operator=(StructureSets const&);
-    StructureSets(StructureSets const&);
-    StructureSets();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bootstrap(

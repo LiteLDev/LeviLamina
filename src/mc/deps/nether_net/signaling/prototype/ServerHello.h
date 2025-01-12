@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NetherNet::NetworkID GetId() const;
+    MCFOLD ::NetherNet::NetworkID GetId() const;
 
     MCAPI explicit ServerHello(::NetherNet::NetworkID localId);
     // NOLINTEND
@@ -33,7 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetherNet::NetworkID localId);
+    MCFOLD void* $ctor(::NetherNet::NetworkID localId);
     // NOLINTEND
 };
 

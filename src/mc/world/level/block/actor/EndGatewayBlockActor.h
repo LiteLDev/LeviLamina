@@ -115,13 +115,13 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
-    MCAPI bool $hasAlphaLayer() const;
+    MCFOLD bool $hasAlphaLayer() const;
 
     MCAPI void $triggerEvent(int b0, int b1);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
     // NOLINTEND
 
 public:

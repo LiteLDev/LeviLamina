@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemComponents {
 public:
-    // prevent constructor by default
-    ScriptItemComponents& operator=(ScriptItemComponents const&);
-    ScriptItemComponents(ScriptItemComponents const&);
-    ScriptItemComponents();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<

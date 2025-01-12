@@ -14,11 +14,6 @@ namespace BlockLootVersioning {
 
 class BlockLoot11910Upgrade : public ::BlockCerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    BlockLoot11910Upgrade& operator=(BlockLoot11910Upgrade const&);
-    BlockLoot11910Upgrade(BlockLoot11910Upgrade const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

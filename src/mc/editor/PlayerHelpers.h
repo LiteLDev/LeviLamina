@@ -16,19 +16,13 @@ namespace Editor {
 
 class PlayerHelpers {
 public:
-    // prevent constructor by default
-    PlayerHelpers& operator=(PlayerHelpers const&);
-    PlayerHelpers(PlayerHelpers const&);
-    PlayerHelpers();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Editor::Services::ModeServiceProvider const* _getModeServiceConst(::Player const& player);
 
     MCAPI static bool canChangeGameType(::Player const& player, ::GameType newGameType);
 
-    MCAPI static bool canInteractWithOtherEntitiesInGame(::Player const& player);
+    MCFOLD static bool canInteractWithOtherEntitiesInGame(::Player const& player);
 
     MCAPI static bool canSleep(::Player const& player);
 
@@ -36,7 +30,7 @@ public:
 
     MCAPI static bool isFireImmune(::Player const& player);
 
-    MCAPI static bool isPlayerAudible(::Player const& player);
+    MCFOLD static bool isPlayerAudible(::Player const& player);
     // NOLINTEND
 };
 

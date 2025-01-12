@@ -14,12 +14,6 @@ class Player;
 
 class ServerWorldDebugRenderProxy : public ::IServerWorldDebugRenderProxy {
 public:
-    // prevent constructor by default
-    ServerWorldDebugRenderProxy& operator=(ServerWorldDebugRenderProxy const&);
-    ServerWorldDebugRenderProxy(ServerWorldDebugRenderProxy const&);
-    ServerWorldDebugRenderProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -14,12 +14,6 @@ namespace SharedTypes::v1_20_60 {
 
 struct TheEndSurfaceBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonComponent {
 public:
-    // prevent constructor by default
-    TheEndSurfaceBiomeJsonComponent& operator=(TheEndSurfaceBiomeJsonComponent const&);
-    TheEndSurfaceBiomeJsonComponent(TheEndSurfaceBiomeJsonComponent const&);
-    TheEndSurfaceBiomeJsonComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ExperimentLoadRequirement(::AllExperiments experiment);
 
-    MCAPI ::AllExperiments const& getExperiment() const;
+    MCFOLD ::AllExperiments const& getExperiment() const;
 
     MCAPI bool satisfied(::IPackLoadContext const& context, ::JsonBetaState) const;
     // NOLINTEND
@@ -45,6 +45,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AllExperiments experiment);
+    MCFOLD void* $ctor(::AllExperiments experiment);
     // NOLINTEND
 };

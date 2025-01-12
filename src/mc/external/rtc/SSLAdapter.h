@@ -19,12 +19,6 @@ namespace rtc {
 
 class SSLAdapter : public ::rtc::AsyncSocketAdapter {
 public:
-    // prevent constructor by default
-    SSLAdapter& operator=(SSLAdapter const&);
-    SSLAdapter(SSLAdapter const&);
-    SSLAdapter();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 22

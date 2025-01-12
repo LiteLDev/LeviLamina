@@ -14,11 +14,6 @@ namespace BiomeJsonDocumentUpgraders {
 
 class UpgraderFrom_v1_12_To_v1_13 : public ::CerealSchemaUpgrade {
 public:
-    // prevent constructor by default
-    UpgraderFrom_v1_12_To_v1_13& operator=(UpgraderFrom_v1_12_To_v1_13 const&);
-    UpgraderFrom_v1_12_To_v1_13(UpgraderFrom_v1_12_To_v1_13 const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

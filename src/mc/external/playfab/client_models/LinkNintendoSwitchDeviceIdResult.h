@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct LinkNintendoSwitchDeviceIdResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    LinkNintendoSwitchDeviceIdResult& operator=(LinkNintendoSwitchDeviceIdResult const&);
-    LinkNintendoSwitchDeviceIdResult(LinkNintendoSwitchDeviceIdResult const&);
-    LinkNintendoSwitchDeviceIdResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

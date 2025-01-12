@@ -14,12 +14,6 @@ class CommandRegistry;
 
 class GetEduServerInfoCommand : public ::Command {
 public:
-    // prevent constructor by default
-    GetEduServerInfoCommand& operator=(GetEduServerInfoCommand const&);
-    GetEduServerInfoCommand(GetEduServerInfoCommand const&);
-    GetEduServerInfoCommand();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

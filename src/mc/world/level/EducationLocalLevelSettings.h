@@ -12,7 +12,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings const&);
+    MCFOLD ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings const&);
 
     MCAPI ~EducationLocalLevelSettings();
     // NOLINTEND
@@ -20,6 +20,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

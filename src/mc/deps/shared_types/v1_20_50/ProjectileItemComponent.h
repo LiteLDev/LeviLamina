@@ -25,10 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_50::ProjectileItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::ProjectileItemComponent&
     operator=(::SharedTypes::v1_20_50::ProjectileItemComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_50::ProjectileItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::ProjectileItemComponent&
     operator=(::SharedTypes::v1_20_50::ProjectileItemComponent const&);
 
     MCAPI ~ProjectileItemComponent();
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

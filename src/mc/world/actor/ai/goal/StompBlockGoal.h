@@ -92,7 +92,7 @@ public:
 
     MCAPI void $start();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCAPI void $tick();
 
@@ -104,13 +104,13 @@ public:
 
     MCAPI bool $_canReach(::BlockPos const& pos);
 
-    MCAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCFOLD void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCFOLD void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCFOLD void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCFOLD void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
 public:

@@ -11,12 +11,6 @@ namespace webrtc {
 
 class IceCandidateInterface {
 public:
-    // prevent constructor by default
-    IceCandidateInterface& operator=(IceCandidateInterface const&);
-    IceCandidateInterface(IceCandidateInterface const&);
-    IceCandidateInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

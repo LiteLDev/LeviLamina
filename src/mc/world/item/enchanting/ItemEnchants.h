@@ -18,15 +18,9 @@ class ItemEnchants {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnka53d8f;
-    ::ll::UntypedStorage<8, 72> mUnk5ecf08;
+    ::ll::TypedStorage<4, 4, int>                                      mSlot;
+    ::ll::TypedStorage<8, 72, ::std::vector<::EnchantmentInstance>[3]> mItemEnchants;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemEnchants& operator=(ItemEnchants const&);
-    ItemEnchants(ItemEnchants const&);
-    ItemEnchants();
 
 public:
     // member functions
@@ -53,7 +47,7 @@ public:
 
     MCAPI ::std::vector<::EnchantmentInstance> const& getEnchants(int activationType) const;
 
-    MCAPI int getSlot() const;
+    MCFOLD int getSlot() const;
 
     MCAPI int getTotalValue(bool bookModifier) const;
 

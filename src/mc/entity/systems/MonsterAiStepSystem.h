@@ -46,12 +46,6 @@ struct MonsterAiStepSystem
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    MonsterAiStepSystem& operator=(MonsterAiStepSystem const&);
-    MonsterAiStepSystem(MonsterAiStepSystem const&);
-    MonsterAiStepSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

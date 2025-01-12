@@ -19,12 +19,6 @@ namespace Bedrock {
 class SessionInfoManager : public ::Bedrock::EnableNonOwnerReferences,
                            public ::Bedrock::ImplBase<::Bedrock::SessionInfoManager> {
 public:
-    // prevent constructor by default
-    SessionInfoManager& operator=(SessionInfoManager const&);
-    SessionInfoManager(SessionInfoManager const&);
-    SessionInfoManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

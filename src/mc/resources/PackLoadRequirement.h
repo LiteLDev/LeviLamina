@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/storage/AllExperiments.h"
-
 // auto generated forward declare list
 // clang-format off
 class BaseGamePackLoadRequirement;
@@ -25,16 +22,4 @@ public:
     PackLoadRequirement& operator=(PackLoadRequirement const&);
     PackLoadRequirement(PackLoadRequirement const&);
     PackLoadRequirement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PackLoadRequirement(::AllExperiments requirement);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AllExperiments requirement);
-    // NOLINTEND
 };

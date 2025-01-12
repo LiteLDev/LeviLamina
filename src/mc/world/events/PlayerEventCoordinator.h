@@ -47,9 +47,9 @@ public:
     // NOLINTBEGIN
     MCAPI PlayerEventCoordinator();
 
-    MCAPI ::PlayerGameplayHandler& getPlayerGameplayHandler();
+    MCFOLD ::PlayerGameplayHandler& getPlayerGameplayHandler();
 
-    MCAPI void registerPlayerGameplayHandler(::std::unique_ptr<::PlayerGameplayHandler>&& handler);
+    MCFOLD void registerPlayerGameplayHandler(::std::unique_ptr<::PlayerGameplayHandler>&& handler);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutablePlayerGameplayEvent<::CoordinatorResult>> event);
 

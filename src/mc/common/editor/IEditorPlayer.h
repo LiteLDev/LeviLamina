@@ -15,12 +15,6 @@ namespace Editor {
 
 class IEditorPlayer : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IEditorPlayer& operator=(IEditorPlayer const&);
-    IEditorPlayer(IEditorPlayer const&);
-    IEditorPlayer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -45,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

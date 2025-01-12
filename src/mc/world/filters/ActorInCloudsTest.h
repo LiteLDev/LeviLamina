@@ -12,12 +12,6 @@ struct FilterContext;
 
 class ActorInCloudsTest : public ::SimpleBoolFilterTest {
 public:
-    // prevent constructor by default
-    ActorInCloudsTest& operator=(ActorInCloudsTest const&);
-    ActorInCloudsTest(ActorInCloudsTest const&);
-    ActorInCloudsTest();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -33,7 +27,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

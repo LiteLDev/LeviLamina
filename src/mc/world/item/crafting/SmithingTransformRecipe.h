@@ -55,13 +55,13 @@ public:
         ::HashedString const&     tag
     );
 
-    MCAPI ::RecipeIngredient const& getAdditionIngredient() const;
+    MCFOLD ::RecipeIngredient const& getAdditionIngredient() const;
 
-    MCAPI ::RecipeIngredient const& getBaseIngredient() const;
+    MCFOLD ::RecipeIngredient const& getBaseIngredient() const;
 
     MCAPI ::ItemInstance const& getResult() const;
 
-    MCAPI ::RecipeIngredient const& getTemplateIngredient() const;
+    MCFOLD ::RecipeIngredient const& getTemplateIngredient() const;
     // NOLINTEND
 
 public:

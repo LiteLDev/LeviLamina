@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void resetCodeStatus();
+    MCFOLD void resetCodeStatus();
     // NOLINTEND
 };

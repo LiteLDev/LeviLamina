@@ -4,12 +4,6 @@
 
 class _TickPtr {
 public:
-    // prevent constructor by default
-    _TickPtr& operator=(_TickPtr const&);
-    _TickPtr(_TickPtr const&);
-    _TickPtr();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -22,7 +16,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

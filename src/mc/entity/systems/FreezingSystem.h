@@ -13,12 +13,6 @@ namespace mce { class UUID; }
 
 class FreezingSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    FreezingSystem& operator=(FreezingSystem const&);
-    FreezingSystem(FreezingSystem const&);
-    FreezingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

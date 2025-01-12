@@ -9,12 +9,6 @@ namespace Bedrock::Http::Internal {
 
 class IResponseBody {
 public:
-    // prevent constructor by default
-    IResponseBody& operator=(IResponseBody const&);
-    IResponseBody(IResponseBody const&);
-    IResponseBody();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

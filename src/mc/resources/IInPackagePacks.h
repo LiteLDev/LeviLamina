@@ -48,12 +48,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IInPackagePacks& operator=(IInPackagePacks const&);
-    IInPackagePacks(IInPackagePacks const&);
-    IInPackagePacks();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

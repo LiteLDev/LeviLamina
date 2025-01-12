@@ -4,12 +4,6 @@
 
 namespace Core {
 
-class SingleThreadedLock {
-public:
-    // prevent constructor by default
-    SingleThreadedLock& operator=(SingleThreadedLock const&);
-    SingleThreadedLock(SingleThreadedLock const&);
-    SingleThreadedLock();
-};
+class SingleThreadedLock {};
 
 } // namespace Core

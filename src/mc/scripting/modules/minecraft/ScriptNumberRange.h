@@ -14,12 +14,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptNumberRange {
 public:
-    // prevent constructor by default
-    ScriptNumberRange& operator=(ScriptNumberRange const&);
-    ScriptNumberRange(ScriptNumberRange const&);
-    ScriptNumberRange();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::FloatRange> bindV010();

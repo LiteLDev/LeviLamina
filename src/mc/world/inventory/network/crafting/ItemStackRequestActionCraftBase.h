@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uchar getNumCrafts() const;
+    MCFOLD uchar getNumCrafts() const;
     // NOLINTEND
 
 public:
@@ -60,8 +60,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
+    MCFOLD ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
 
-    MCAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+    MCFOLD void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
     // NOLINTEND
 };

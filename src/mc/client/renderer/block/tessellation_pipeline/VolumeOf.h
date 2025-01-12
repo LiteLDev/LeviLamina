@@ -5,12 +5,6 @@
 namespace ClientBlockPipeline {
 
 template <typename T0>
-class VolumeOf {
-public:
-    // prevent constructor by default
-    VolumeOf& operator=(VolumeOf const&);
-    VolumeOf(VolumeOf const&);
-    VolumeOf();
-};
+class VolumeOf {};
 
 } // namespace ClientBlockPipeline

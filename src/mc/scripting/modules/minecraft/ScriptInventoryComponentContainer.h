@@ -69,17 +69,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCFOLD ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
     MCAPI ::Container* $_tryGetContainer() const;
 
-    MCAPI ::ItemContext $_getItemContext(int slot) const;
+    MCFOLD ::ItemContext $_getItemContext(int slot) const;
     // NOLINTEND
 
 public:

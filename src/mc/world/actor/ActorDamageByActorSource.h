@@ -81,30 +81,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isEntitySource() const;
+    MCFOLD bool $isEntitySource() const;
 
     MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
-    MCAPI bool $getIsCreative() const;
+    MCFOLD bool $getIsCreative() const;
 
-    MCAPI bool $getIsWorldBuilder() const;
+    MCFOLD bool $getIsWorldBuilder() const;
 
-    MCAPI ::ActorUniqueID $getEntityUniqueID() const;
+    MCFOLD ::ActorUniqueID $getEntityUniqueID() const;
 
-    MCAPI ::ActorType $getEntityType() const;
+    MCFOLD ::ActorType $getEntityType() const;
 
-    MCAPI ::ActorCategory $getEntityCategories() const;
+    MCFOLD ::ActorCategory $getEntityCategories() const;
 
-    MCAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
+    MCFOLD ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
-    MCAPI ::ActorType $getDamagingEntityType() const;
+    MCFOLD ::ActorType $getDamagingEntityType() const;
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
     // NOLINTEND

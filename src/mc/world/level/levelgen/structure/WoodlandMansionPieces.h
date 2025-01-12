@@ -179,7 +179,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -248,12 +248,6 @@ public:
     };
 
     class FloorRoomCollection {
-    public:
-        // prevent constructor by default
-        FloorRoomCollection& operator=(FloorRoomCollection const&);
-        FloorRoomCollection(FloorRoomCollection const&);
-        FloorRoomCollection();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -389,12 +383,6 @@ public:
 
     class FirstFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
     public:
-        // prevent constructor by default
-        FirstFloorRoomCollection& operator=(FirstFloorRoomCollection const&);
-        FirstFloorRoomCollection(FirstFloorRoomCollection const&);
-        FirstFloorRoomCollection();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -433,7 +421,7 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::string $get1x1(::Random& random);
 
-        MCAPI ::std::string $get1x1Secret(::Random& random);
+        MCFOLD ::std::string $get1x1Secret(::Random& random);
 
         MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
 
@@ -443,7 +431,7 @@ public:
 
         MCAPI ::std::string $get2x2(::Random& random);
 
-        MCAPI ::std::string $get2x2Secret(::Random& random);
+        MCFOLD ::std::string $get2x2Secret(::Random& random);
         // NOLINTEND
 
     public:
@@ -454,12 +442,6 @@ public:
     };
 
     class SecondFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
-    public:
-        // prevent constructor by default
-        SecondFloorRoomCollection& operator=(SecondFloorRoomCollection const&);
-        SecondFloorRoomCollection(SecondFloorRoomCollection const&);
-        SecondFloorRoomCollection();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -499,7 +481,7 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::string $get1x1(::Random& random);
 
-        MCAPI ::std::string $get1x1Secret(::Random& random);
+        MCFOLD ::std::string $get1x1Secret(::Random& random);
 
         MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
 
@@ -509,7 +491,7 @@ public:
 
         MCAPI ::std::string $get2x2(::Random& random);
 
-        MCAPI ::std::string $get2x2Secret(::Random& random);
+        MCFOLD ::std::string $get2x2Secret(::Random& random);
         // NOLINTEND
 
     public:
@@ -520,12 +502,6 @@ public:
     };
 
     class ThirdFloorRoomCollection : public ::WoodlandMansionPieces::SecondFloorRoomCollection {
-    public:
-        // prevent constructor by default
-        ThirdFloorRoomCollection& operator=(ThirdFloorRoomCollection const&);
-        ThirdFloorRoomCollection(ThirdFloorRoomCollection const&);
-        ThirdFloorRoomCollection();
-
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -545,12 +521,6 @@ public:
         MCAPI static void** $vftable();
         // NOLINTEND
     };
-
-public:
-    // prevent constructor by default
-    WoodlandMansionPieces& operator=(WoodlandMansionPieces const&);
-    WoodlandMansionPieces(WoodlandMansionPieces const&);
-    WoodlandMansionPieces();
 
 public:
     // static functions

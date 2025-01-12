@@ -15,11 +15,11 @@ MCAPI bool allowStandSliding(::EntityContext const& provider);
 
 MCAPI void initializeHorse(::EntityContext& provider);
 
-MCAPI void resetStandCounter(::HorseStandCounterComponent& horseStandCounter);
+MCFOLD void resetStandCounter(::HorseStandCounterComponent& horseStandCounter);
 
 MCAPI void setAllowStandSliding(::EntityContext& provider, bool value);
 
-MCAPI void startStandCounter(::HorseStandCounterComponent& horseStandCounter);
+MCFOLD void startStandCounter(::HorseStandCounterComponent& horseStandCounter);
 
 MCAPI bool tickStandCounter(::HorseStandCounterComponent& horseStandCounter, int maxValue);
 // NOLINTEND

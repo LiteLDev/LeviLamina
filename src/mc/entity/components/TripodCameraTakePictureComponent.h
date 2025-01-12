@@ -10,13 +10,7 @@ public:
     // clang-format on
 
     // TripodCameraTakePictureComponent inner types define
-    class Definition {
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
-    };
+    class Definition {};
 
 public:
     // member variables

@@ -44,7 +44,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -100,11 +100,11 @@ public:
 
     MCAPI ushort getIPv4BoundPort() const;
 
-    MCAPI int getIPv4ConnectionIndex() const;
+    MCFOLD int getIPv4ConnectionIndex() const;
 
     MCAPI ushort getIPv6BoundPort() const;
 
-    MCAPI int getIPv6ConnectionIndex() const;
+    MCFOLD int getIPv6ConnectionIndex() const;
 
     MCAPI bool isIPv4Supported() const;
 

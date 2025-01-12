@@ -143,7 +143,7 @@ public:
 
     MCAPI void $Schedule(void (*function)(void*), void* arg);
 
-    MCAPI void $StartThread(void (*function)(void*), void* arg);
+    MCFOLD void $StartThread(void (*function)(void*), void* arg);
 
     MCAPI ::leveldb::Status $GetTestDirectory(::std::string* result);
 

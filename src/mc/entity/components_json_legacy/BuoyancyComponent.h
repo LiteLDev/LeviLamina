@@ -35,11 +35,11 @@ public:
 
     MCAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCAPI float getBaseBuoyancy() const;
+    MCFOLD float getBaseBuoyancy() const;
 
-    MCAPI float getBigWaveProbability() const;
+    MCFOLD float getBigWaveProbability() const;
 
-    MCAPI float getBigWaveSpeedMultiplier() const;
+    MCFOLD float getBigWaveSpeedMultiplier() const;
 
     MCAPI double getTimer() const;
 
@@ -50,9 +50,9 @@ public:
     MCAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCAPI bool shouldApplyGravity() const;
+    MCFOLD bool shouldApplyGravity() const;
 
-    MCAPI bool shouldSimulateWaves() const;
+    MCFOLD bool shouldSimulateWaves() const;
 
     MCAPI ~BuoyancyComponent();
     // NOLINTEND

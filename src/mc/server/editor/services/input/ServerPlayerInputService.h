@@ -19,12 +19,6 @@ namespace Editor::Services {
 class ServerPlayerInputService : public ::Editor::Services::IEditorService,
                                  public ::Editor::Services::ServerPlayerInputServiceProvider {
 public:
-    // prevent constructor by default
-    ServerPlayerInputService& operator=(ServerPlayerInputService const&);
-    ServerPlayerInputService(ServerPlayerInputService const&);
-    ServerPlayerInputService();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -64,9 +58,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<void> $init();
+    MCFOLD ::Scripting::Result<void> $init();
 
-    MCAPI ::Scripting::Result<void> $quit();
+    MCFOLD ::Scripting::Result<void> $quit();
 
     MCAPI ::std::string_view $getServiceName() const;
 

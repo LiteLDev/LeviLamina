@@ -4,12 +4,6 @@
 
 namespace webrtc {
 
-class VideoFecGenerator {
-public:
-    // prevent constructor by default
-    VideoFecGenerator& operator=(VideoFecGenerator const&);
-    VideoFecGenerator(VideoFecGenerator const&);
-    VideoFecGenerator();
-};
+class VideoFecGenerator {};
 
 } // namespace webrtc

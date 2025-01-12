@@ -847,9 +847,9 @@ public:
         int                         threadPriority
     );
 
-    MCAPI bool $InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
+    MCFOLD bool $InitializeSecurity(char const* public_key, char const* private_key, bool bRequireClientKey);
 
-    MCAPI void $DisableSecurity();
+    MCFOLD void $DisableSecurity();
 
     MCAPI void $AddToSecurityExceptionList(char const* ip);
 
@@ -859,7 +859,7 @@ public:
 
     MCAPI void $SetMaximumIncomingConnections(ushort numberAllowed);
 
-    MCAPI uint $GetMaximumIncomingConnections() const;
+    MCFOLD uint $GetMaximumIncomingConnections() const;
 
     MCAPI ushort $NumberOfConnections() const;
 
@@ -942,7 +942,7 @@ public:
 
     MCAPI void $DeallocatePacket(::RakNet::Packet* packet);
 
-    MCAPI uint $GetMaximumNumberOfPeers() const;
+    MCFOLD uint $GetMaximumNumberOfPeers() const;
 
     MCAPI void $CloseConnection(
         ::RakNet::AddressOrGUID const target,
@@ -1017,7 +1017,8 @@ public:
 
     MCAPI ::RakNet::SystemAddress $GetSystemAddressFromGuid(::RakNet::RakNetGUID const input) const;
 
-    MCAPI bool $GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const input, char* client_public_key) const;
+    MCFOLD bool
+    $GetClientPublicKeyFromSystemAddress(::RakNet::SystemAddress const input, char* client_public_key) const;
 
     MCAPI void $SetTimeoutTime(uint timeMS, ::RakNet::SystemAddress const target);
 
@@ -1071,11 +1072,11 @@ public:
 
     MCAPI void $SetIncomingDatagramEventHandler(bool (*_incomingDatagramEventHandler)(::RakNet::RNS2RecvStruct*));
 
-    MCAPI void $ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance);
+    MCFOLD void $ApplyNetworkSimulator(float packetloss, ushort minExtraPing, ushort extraPingVariance);
 
     MCAPI void $SetPerConnectionOutgoingBandwidthLimit(uint maxBitsPerSecond);
 
-    MCAPI bool $IsNetworkSimulatorActive();
+    MCFOLD bool $IsNetworkSimulatorActive();
 
     MCAPI ::RakNet::RakNetStatistics*
     $GetStatistics(::RakNet::SystemAddress const systemAddress, ::RakNet::RakNetStatistics* rns);

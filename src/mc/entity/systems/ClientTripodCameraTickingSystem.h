@@ -12,12 +12,6 @@ class EntityRegistry;
 
 class ClientTripodCameraTickingSystem : public ::ITickingSystem {
 public:
-    // prevent constructor by default
-    ClientTripodCameraTickingSystem& operator=(ClientTripodCameraTickingSystem const&);
-    ClientTripodCameraTickingSystem(ClientTripodCameraTickingSystem const&);
-    ClientTripodCameraTickingSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

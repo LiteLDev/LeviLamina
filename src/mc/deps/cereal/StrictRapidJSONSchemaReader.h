@@ -144,17 +144,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCAPI ::cereal::SchemaReaderState $isObject() const;
+    MCFOLD ::cereal::SchemaReaderState $isObject() const;
 
-    MCAPI ::cereal::SchemaReaderState $isArray() const;
+    MCFOLD ::cereal::SchemaReaderState $isArray() const;
 
     MCAPI ::Bedrock::Result<bool> $asBool(::cereal::PropertyReader const&);
 
@@ -180,17 +180,17 @@ public:
 
     MCAPI ::Bedrock::Result<::std::string> $asString(::cereal::PropertyReader const&);
 
-    MCAPI uint64 $members();
+    MCFOLD uint64 $members();
 
-    MCAPI uint64 $length();
+    MCFOLD uint64 $length();
 
-    MCAPI bool $pushMember(::std::string_view const name, ::cereal::PropertyReader const&);
+    MCFOLD bool $pushMember(::std::string_view const name, ::cereal::PropertyReader const&);
 
-    MCAPI ::std::string_view $pushNextMember(::cereal::PropertyReader const&);
+    MCFOLD ::std::string_view $pushNextMember(::cereal::PropertyReader const&);
 
-    MCAPI void $pushElement(uint64 index, ::cereal::PropertyReader const&);
+    MCFOLD void $pushElement(uint64 index, ::cereal::PropertyReader const&);
 
-    MCAPI void $pop();
+    MCFOLD void $pop();
     // NOLINTEND
 
 public:

@@ -14,12 +14,6 @@ namespace PlayFab::ClientModels {
 
 struct RemoveFriendResult : public ::PlayFab::PlayFabResultCommon {
 public:
-    // prevent constructor by default
-    RemoveFriendResult& operator=(RemoveFriendResult const&);
-    RemoveFriendResult(RemoveFriendResult const&);
-    RemoveFriendResult();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

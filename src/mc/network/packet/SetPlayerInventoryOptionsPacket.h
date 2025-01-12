@@ -47,7 +47,7 @@ public:
 
     MCAPI explicit SetPlayerInventoryOptionsPacket(::InventoryOptions const& inventoryOptions);
 
-    MCAPI ::InventoryOptions const& getInventoryOptions() const;
+    MCFOLD ::InventoryOptions const& getInventoryOptions() const;
     // NOLINTEND
 
 public:
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

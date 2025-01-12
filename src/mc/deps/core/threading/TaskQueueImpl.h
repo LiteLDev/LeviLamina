@@ -12,11 +12,6 @@ struct XTaskQueuePortObject;
 
 class TaskQueueImpl {
 public:
-    // prevent constructor by default
-    TaskQueueImpl& operator=(TaskQueueImpl const&);
-    TaskQueueImpl(TaskQueueImpl const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI long Initialize(::XTaskQueuePortObject*, ::XTaskQueuePortObject*);

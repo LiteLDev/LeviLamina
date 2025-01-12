@@ -20,12 +20,6 @@ struct AddLimboActorHelper;
 
 class IPlayerDimensionTransferer : public ::IPlayerDimensionTransferConnector {
 public:
-    // prevent constructor by default
-    IPlayerDimensionTransferer& operator=(IPlayerDimensionTransferer const&);
-    IPlayerDimensionTransferer(IPlayerDimensionTransferer const&);
-    IPlayerDimensionTransferer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

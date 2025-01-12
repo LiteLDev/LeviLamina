@@ -80,7 +80,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
 
     MCAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCFOLD bool $checkSpawnRules(bool fromSpawner);
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 

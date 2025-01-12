@@ -96,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Potion::PotionType $getPotionType() const;
+    MCFOLD ::Potion::PotionType $getPotionType() const;
 
     MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
@@ -115,7 +115,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI bool $isThrowable() const;
+    MCFOLD bool $isThrowable() const;
 
     MCAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction)

@@ -19,12 +19,6 @@ namespace br::worldgen::processors {
 
 class JigsawReplacement : public ::br::worldgen::StructureProcessor {
 public:
-    // prevent constructor by default
-    JigsawReplacement& operator=(JigsawReplacement const&);
-    JigsawReplacement(JigsawReplacement const&);
-    JigsawReplacement();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -61,7 +55,7 @@ public:
     $process(::IBlockSource&, ::BlockPos targetPosition, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&)
         const;
 
-    MCAPI ::br::worldgen::StructureProcessorType $type() const;
+    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
     MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND

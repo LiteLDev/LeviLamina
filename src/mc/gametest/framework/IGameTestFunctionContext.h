@@ -6,12 +6,6 @@ namespace gametest {
 
 class IGameTestFunctionContext {
 public:
-    // prevent constructor by default
-    IGameTestFunctionContext& operator=(IGameTestFunctionContext const&);
-    IGameTestFunctionContext(IGameTestFunctionContext const&);
-    IGameTestFunctionContext();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

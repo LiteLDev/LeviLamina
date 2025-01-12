@@ -12,12 +12,6 @@ namespace Core { class SingleThreadedLock; }
 
 class LevelListCacheObserver : public ::Core::Observer<::LevelListCacheObserver, ::Core::SingleThreadedLock> {
 public:
-    // prevent constructor by default
-    LevelListCacheObserver& operator=(LevelListCacheObserver const&);
-    LevelListCacheObserver(LevelListCacheObserver const&);
-    LevelListCacheObserver();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

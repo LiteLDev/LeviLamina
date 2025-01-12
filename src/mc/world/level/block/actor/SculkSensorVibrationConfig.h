@@ -79,9 +79,9 @@ public:
     MCAPI bool
     $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
 
-    MCAPI void $onSerializableDataChanged(::BlockSource& region);
+    MCFOLD void $onSerializableDataChanged(::BlockSource& region);
 
-    MCAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
 
 public:

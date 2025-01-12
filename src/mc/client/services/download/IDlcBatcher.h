@@ -11,12 +11,6 @@ struct PackIdVersion;
 
 class IDlcBatcher {
 public:
-    // prevent constructor by default
-    IDlcBatcher& operator=(IDlcBatcher const&);
-    IDlcBatcher(IDlcBatcher const&);
-    IDlcBatcher();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

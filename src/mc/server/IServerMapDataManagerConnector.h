@@ -12,12 +12,6 @@ class MapItemSavedData;
 
 class IServerMapDataManagerConnector {
 public:
-    // prevent constructor by default
-    IServerMapDataManagerConnector& operator=(IServerMapDataManagerConnector const&);
-    IServerMapDataManagerConnector(IServerMapDataManagerConnector const&);
-    IServerMapDataManagerConnector();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -14,12 +14,6 @@ namespace webrtc {
 
 class RtpPacketizerVp9 {
 public:
-    // prevent constructor by default
-    RtpPacketizerVp9& operator=(RtpPacketizerVp9 const&);
-    RtpPacketizerVp9(RtpPacketizerVp9 const&);
-    RtpPacketizerVp9();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI

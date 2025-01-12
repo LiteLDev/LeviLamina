@@ -16,12 +16,6 @@ struct ScriptItemCustomComponentIntermediateStorage
 : public ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapterStorage<
       ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {
 public:
-    // prevent constructor by default
-    ScriptItemCustomComponentIntermediateStorage& operator=(ScriptItemCustomComponentIntermediateStorage const&);
-    ScriptItemCustomComponentIntermediateStorage(ScriptItemCustomComponentIntermediateStorage const&);
-    ScriptItemCustomComponentIntermediateStorage();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptItemCustomComponentIntermediateStorage();
@@ -30,7 +24,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -83,7 +83,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent);
+    MCFOLD ::EventResult $onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent);
 
     MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefintionEvent);
 

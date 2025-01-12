@@ -106,13 +106,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $checkSpawnObstruction() const;
+    MCFOLD bool $checkSpawnObstruction() const;
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
 

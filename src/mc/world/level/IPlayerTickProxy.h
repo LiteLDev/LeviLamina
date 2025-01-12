@@ -13,12 +13,6 @@ struct Tick;
 
 class IPlayerTickProxy {
 public:
-    // prevent constructor by default
-    IPlayerTickProxy& operator=(IPlayerTickProxy const&);
-    IPlayerTickProxy(IPlayerTickProxy const&);
-    IPlayerTickProxy();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

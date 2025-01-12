@@ -84,11 +84,11 @@ public:
 
     MCAPI bool $containsOnly(int, int, int, int, ::gsl::span<uint64 const> allowed) const;
 
-    MCAPI ::Biome const* $getBiome(::BlockPos const& blockPos) const;
+    MCFOLD ::Biome const* $getBiome(::BlockPos const& blockPos) const;
 
-    MCAPI ::Biome const* $getBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    MCFOLD ::Biome const* $getBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
+    MCFOLD ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 

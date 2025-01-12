@@ -14,12 +14,6 @@ namespace PlayerCapabilities {
 
 struct ISharedData {
 public:
-    // prevent constructor by default
-    ISharedData& operator=(ISharedData const&);
-    ISharedData(ISharedData const&);
-    ISharedData();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     MCAPI CountTracker();
 
-    MCAPI ::std::shared_ptr<void*> acquire();
+    MCFOLD ::std::shared_ptr<void*> acquire();
 
     MCAPI void clear();
 
@@ -39,7 +39,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

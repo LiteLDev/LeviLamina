@@ -18,12 +18,6 @@ namespace webrtc {
 
 class AudioEncoderFactory : public ::webrtc::RefCountInterface {
 public:
-    // prevent constructor by default
-    AudioEncoderFactory& operator=(AudioEncoderFactory const&);
-    AudioEncoderFactory(AudioEncoderFactory const&);
-    AudioEncoderFactory();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

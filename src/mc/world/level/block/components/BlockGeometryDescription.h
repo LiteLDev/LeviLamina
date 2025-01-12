@@ -116,7 +116,7 @@ public:
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
     // NOLINTEND

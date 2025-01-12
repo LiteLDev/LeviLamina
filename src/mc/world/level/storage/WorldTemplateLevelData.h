@@ -45,13 +45,13 @@ public:
 
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
-    MCAPI ::ContentIdentity const& getContentIdentity() const;
+    MCFOLD ::ContentIdentity const& getContentIdentity() const;
 
     MCAPI void getTagData(::CompoundTag const& tag);
 
-    MCAPI ::PackIdVersion const& getWorldTemplateIdentity() const;
+    MCFOLD ::PackIdVersion const& getWorldTemplateIdentity() const;
 
-    MCAPI bool isFromWorldTemplate() const;
+    MCFOLD bool isFromWorldTemplate() const;
 
     MCAPI bool isWorldTemplateOptionLocked() const;
 

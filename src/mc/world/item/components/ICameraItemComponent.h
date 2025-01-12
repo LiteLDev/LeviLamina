@@ -14,12 +14,6 @@ class Vec3;
 
 class ICameraItemComponent {
 public:
-    // prevent constructor by default
-    ICameraItemComponent& operator=(ICameraItemComponent const&);
-    ICameraItemComponent(ICameraItemComponent const&);
-    ICameraItemComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

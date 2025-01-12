@@ -11,12 +11,6 @@ struct TickingSystemWithInfo;
 
 struct SoulSpeedAttributeSystem {
 public:
-    // prevent constructor by default
-    SoulSpeedAttributeSystem& operator=(SoulSpeedAttributeSystem const&);
-    SoulSpeedAttributeSystem(SoulSpeedAttributeSystem const&);
-    SoulSpeedAttributeSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tryProcessSoulSpeed(::StrictEntityContext&, ::ActorOwnerComponent& actorOwnerComponent);

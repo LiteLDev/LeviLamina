@@ -15,12 +15,6 @@ namespace Json { class Value; }
 
 class DefinitionEventLoader {
 public:
-    // prevent constructor by default
-    DefinitionEventLoader& operator=(DefinitionEventLoader const&);
-    DefinitionEventLoader(DefinitionEventLoader const&);
-    DefinitionEventLoader();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _loadCollection(

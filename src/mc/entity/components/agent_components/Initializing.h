@@ -4,12 +4,6 @@
 
 namespace AgentComponents {
 
-struct Initializing {
-public:
-    // prevent constructor by default
-    Initializing& operator=(Initializing const&);
-    Initializing(Initializing const&);
-    Initializing();
-};
+struct Initializing {};
 
 } // namespace AgentComponents

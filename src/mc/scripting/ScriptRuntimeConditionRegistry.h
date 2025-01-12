@@ -10,12 +10,6 @@ namespace Scripting { class RuntimeConditions; }
 
 class ScriptRuntimeConditionRegistry {
 public:
-    // prevent constructor by default
-    ScriptRuntimeConditionRegistry& operator=(ScriptRuntimeConditionRegistry const&);
-    ScriptRuntimeConditionRegistry(ScriptRuntimeConditionRegistry const&);
-    ScriptRuntimeConditionRegistry();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::RuntimeConditions getCurrentRuntimeConditions(::ServerLevel const& serverLevel);

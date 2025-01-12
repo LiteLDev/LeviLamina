@@ -11,12 +11,6 @@ namespace Editor::Network {
 
 class INetworkPayload {
 public:
-    // prevent constructor by default
-    INetworkPayload& operator=(INetworkPayload const&);
-    INetworkPayload(INetworkPayload const&);
-    INetworkPayload();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -24,12 +24,6 @@ namespace mce { class UUID; }
 
 class IEntitlementManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IEntitlementManager& operator=(IEntitlementManager const&);
-    IEntitlementManager(IEntitlementManager const&);
-    IEntitlementManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

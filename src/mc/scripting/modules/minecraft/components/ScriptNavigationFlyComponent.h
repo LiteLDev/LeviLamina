@@ -15,12 +15,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptNavigationFlyComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {
 public:
-    // prevent constructor by default
-    ScriptNavigationFlyComponent& operator=(ScriptNavigationFlyComponent const&);
-    ScriptNavigationFlyComponent(ScriptNavigationFlyComponent const&);
-    ScriptNavigationFlyComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -4,12 +4,6 @@
 
 namespace mce::framebuilder {
 
-struct LivingRoomDescription {
-public:
-    // prevent constructor by default
-    LivingRoomDescription& operator=(LivingRoomDescription const&);
-    LivingRoomDescription(LivingRoomDescription const&);
-    LivingRoomDescription();
-};
+struct LivingRoomDescription {};
 
 } // namespace mce::framebuilder

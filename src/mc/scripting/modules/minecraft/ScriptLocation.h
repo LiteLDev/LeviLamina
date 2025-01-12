@@ -16,12 +16,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptLocation {
 public:
-    // prevent constructor by default
-    ScriptLocation& operator=(ScriptLocation const&);
-    ScriptLocation(ScriptLocation const&);
-    ScriptLocation();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::Vec3> bindVec3();

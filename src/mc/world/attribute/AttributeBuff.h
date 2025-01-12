@@ -57,23 +57,23 @@ public:
 
     MCAPI float getAmount() const;
 
-    MCAPI uint64 getId() const;
+    MCFOLD uint64 getId() const;
 
-    MCAPI int getOperand() const;
+    MCFOLD int getOperand() const;
 
-    MCAPI ::AttributeBuffType getType() const;
+    MCFOLD ::AttributeBuffType getType() const;
 
     MCAPI ::AttributeBuff& operator=(::AttributeBuff const&);
 
     MCAPI void setAmplificationAmount(int amplification, float scale);
 
-    MCAPI void setId(uint64 val);
+    MCFOLD void setId(uint64 val);
 
-    MCAPI void setOperand(int val);
+    MCFOLD void setOperand(int val);
 
     MCAPI void setSource(::Actor* source);
 
-    MCAPI void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCFOLD void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND
 
 public:

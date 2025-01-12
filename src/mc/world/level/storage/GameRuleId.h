@@ -15,6 +15,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int value);
+    MCFOLD void* $ctor(int value);
     // NOLINTEND
 };

@@ -12,12 +12,6 @@ class ContainerScreenContext;
 
 class FurnaceIngredientContainerValidation : public ::ContainerValidationBase {
 public:
-    // prevent constructor by default
-    FurnaceIngredientContainerValidation& operator=(FurnaceIngredientContainerValidation const&);
-    FurnaceIngredientContainerValidation(FurnaceIngredientContainerValidation const&);
-    FurnaceIngredientContainerValidation();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
@@ -36,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
 
 public:

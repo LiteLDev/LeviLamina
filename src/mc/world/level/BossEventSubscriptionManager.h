@@ -16,12 +16,6 @@ namespace Bedrock::PubSub { class Subscription; }
 class BossEventSubscriptionManager : public ::Bedrock::EnableNonOwnerReferences,
                                      public ::Bedrock::ImplBase<::BossEventSubscriptionManager> {
 public:
-    // prevent constructor by default
-    BossEventSubscriptionManager& operator=(BossEventSubscriptionManager const&);
-    BossEventSubscriptionManager(BossEventSubscriptionManager const&);
-    BossEventSubscriptionManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -48,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

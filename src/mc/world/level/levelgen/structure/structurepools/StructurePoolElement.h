@@ -42,12 +42,6 @@ public:
     // StructurePoolElement inner types define
     class ITemplate {
     public:
-        // prevent constructor by default
-        ITemplate& operator=(ITemplate const&);
-        ITemplate(ITemplate const&);
-        ITemplate();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -66,7 +60,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -150,7 +144,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
+        MCFOLD ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
 
         MCAPI bool $isLegacyStructure() const;
         // NOLINTEND
@@ -384,11 +378,11 @@ public:
 
     MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCAPI void $setProjection(::Projection projection);
+    MCFOLD void $setProjection(::Projection projection);
 
-    MCAPI ::Projection $getProjection() const;
+    MCFOLD ::Projection $getProjection() const;
 
-    MCAPI ::PostProcessSettings $getPostProcessSettings() const;
+    MCFOLD ::PostProcessSettings $getPostProcessSettings() const;
 
     MCAPI bool $place(
         ::BlockSource&                                                                  region,
@@ -428,7 +422,7 @@ public:
 
     MCAPI bool $isValid() const;
 
-    MCAPI ::StructurePoolElementType $type() const;
+    MCFOLD ::StructurePoolElementType $type() const;
     // NOLINTEND
 
 public:

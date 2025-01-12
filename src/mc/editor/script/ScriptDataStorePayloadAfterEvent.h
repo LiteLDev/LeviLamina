@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&
+    MCFOLD ::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&
     operator=(::Editor::ScriptModule::ScriptDataStorePayloadAfterEvent&&);
     // NOLINTEND
 

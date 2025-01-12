@@ -29,12 +29,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    IronGolem& operator=(IronGolem const&);
-    IronGolem(IronGolem const&);
-    IronGolem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 159
@@ -90,13 +84,13 @@ public:
     // NOLINTBEGIN
     MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
 
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCFOLD void $die(::ActorDamageSource const& source);
 
-    MCAPI float $getShadowRadius() const;
+    MCFOLD float $getShadowRadius() const;
 
     MCAPI void $hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
+    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

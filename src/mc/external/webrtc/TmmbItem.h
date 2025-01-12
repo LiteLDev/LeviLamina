@@ -6,12 +6,6 @@ namespace webrtc::rtcp {
 
 class TmmbItem {
 public:
-    // prevent constructor by default
-    TmmbItem& operator=(TmmbItem const&);
-    TmmbItem(TmmbItem const&);
-    TmmbItem();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Create(uchar*) const;

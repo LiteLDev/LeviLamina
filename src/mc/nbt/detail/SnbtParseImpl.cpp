@@ -526,7 +526,7 @@ Expected<CompoundTagVariant> parseList(std::string_view& s) {
         if (!value) {
             return forwardError(value.error());
         }
-        res.emplace_back(value->toUnique());
+        res.emplace_back(std::move(*value).toUnique());
 
         if (auto skipped = skipWhitespace(s); !skipped) {
             return forwardError(skipped.error());

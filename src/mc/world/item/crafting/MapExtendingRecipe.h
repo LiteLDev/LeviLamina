@@ -88,13 +88,13 @@ public:
     MCAPI ::std::vector<::ItemInstance> const&
     $assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const;
 
-    MCAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCAPI int $getCraftingSize() const;
+    MCFOLD int $getCraftingSize() const;
 
-    MCAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
+    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCAPI int $size() const;
+    MCFOLD int $size() const;
     // NOLINTEND
 
 public:

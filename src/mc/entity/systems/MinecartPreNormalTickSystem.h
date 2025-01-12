@@ -19,12 +19,6 @@ struct TickingSystemWithInfo;
 
 class MinecartPreNormalTickSystem {
 public:
-    // prevent constructor by default
-    MinecartPreNormalTickSystem& operator=(MinecartPreNormalTickSystem const&);
-    MinecartPreNormalTickSystem(MinecartPreNormalTickSystem const&);
-    MinecartPreNormalTickSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doMinecartPreNormalTickSystem(

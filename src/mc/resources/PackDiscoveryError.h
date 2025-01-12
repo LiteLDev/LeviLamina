@@ -8,12 +8,6 @@
 
 class PackDiscoveryError : public ::PackError {
 public:
-    // prevent constructor by default
-    PackDiscoveryError& operator=(PackDiscoveryError const&);
-    PackDiscoveryError(PackDiscoveryError const&);
-    PackDiscoveryError();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -41,15 +35,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
+    MCFOLD ::std::unordered_map<int, ::std::string> const& $getLocErrorMessageMap() const;
 
-    MCAPI ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
+    MCFOLD ::std::unordered_map<int, ::std::string> const& $getEventErrorMessageMap() const;
     // NOLINTEND
 
 public:

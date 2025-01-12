@@ -27,12 +27,6 @@ public:
     // MemoryMappedFileAccess inner types define
     class MemoryMappedFileReadAccess : public ::IFileReadAccess {
     public:
-        // prevent constructor by default
-        MemoryMappedFileReadAccess& operator=(MemoryMappedFileReadAccess const&);
-        MemoryMappedFileReadAccess(MemoryMappedFileReadAccess const&);
-        MemoryMappedFileReadAccess();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
@@ -45,7 +39,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -63,12 +57,6 @@ public:
 
     class MemoryMappedFileWriteAccess : public ::IFileWriteAccess {
     public:
-        // prevent constructor by default
-        MemoryMappedFileWriteAccess& operator=(MemoryMappedFileWriteAccess const&);
-        MemoryMappedFileWriteAccess(MemoryMappedFileWriteAccess const&);
-        MemoryMappedFileWriteAccess();
-
-    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
@@ -81,7 +69,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -123,7 +111,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -230,7 +218,7 @@ public:
 
     MCAPI int64 $ftell(void* file);
 
-    MCAPI ::IFileReadAccess const* $getReadInterface() const;
+    MCFOLD ::IFileReadAccess const* $getReadInterface() const;
 
     MCAPI ::IFileWriteAccess* $getWriteInterface();
 

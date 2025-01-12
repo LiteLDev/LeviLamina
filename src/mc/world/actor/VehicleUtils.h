@@ -35,12 +35,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    VehicleUtils& operator=(VehicleUtils const&);
-    VehicleUtils(VehicleUtils const&);
-    VehicleUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<float>

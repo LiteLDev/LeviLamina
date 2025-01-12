@@ -16,12 +16,6 @@ namespace JsonUtil { class EmptyClass; }
 
 class ResetTargetResponse : public ::ActorEventResponse {
 public:
-    // prevent constructor by default
-    ResetTargetResponse& operator=(ResetTargetResponse const&);
-    ResetTargetResponse(ResetTargetResponse const&);
-    ResetTargetResponse();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

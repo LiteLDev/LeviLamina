@@ -27,12 +27,6 @@ namespace cricket {
 
 class MediaSendChannelInterface {
 public:
-    // prevent constructor by default
-    MediaSendChannelInterface& operator=(MediaSendChannelInterface const&);
-    MediaSendChannelInterface(MediaSendChannelInterface const&);
-    MediaSendChannelInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

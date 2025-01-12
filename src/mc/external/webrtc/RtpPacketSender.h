@@ -11,12 +11,6 @@ namespace webrtc {
 
 class RtpPacketSender {
 public:
-    // prevent constructor by default
-    RtpPacketSender& operator=(RtpPacketSender const&);
-    RtpPacketSender(RtpPacketSender const&);
-    RtpPacketSender();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

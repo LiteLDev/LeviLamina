@@ -70,7 +70,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -159,21 +159,21 @@ public:
     applyModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification)
         const;
 
-    MCAPI ::mce::Color const& getColor() const;
+    MCFOLD ::mce::Color const& getColor() const;
 
-    MCAPI ::std::string const& getDescriptionId() const;
+    MCFOLD ::std::string const& getDescriptionId() const;
 
-    MCAPI float getDurationModifier() const;
+    MCFOLD float getDurationModifier() const;
 
-    MCAPI uint getId() const;
+    MCFOLD uint getId() const;
 
     MCAPI ::HashedString const& getParticleEffect(bool isAmbient) const;
 
-    MCAPI ::std::string const& getResourceName() const;
+    MCFOLD ::std::string const& getResourceName() const;
 
-    MCAPI bool isHarmful() const;
+    MCFOLD bool isHarmful() const;
 
-    MCAPI bool isVisible() const;
+    MCFOLD bool isVisible() const;
 
     MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
@@ -318,16 +318,16 @@ public:
 
     MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
-    MCAPI void $onEffectExpired(::Actor&) const;
+    MCFOLD void $onEffectExpired(::Actor&) const;
 
-    MCAPI void $onActorDied(::Actor&, int) const;
+    MCFOLD void $onActorDied(::Actor&, int) const;
 
-    MCAPI void $onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
+    MCFOLD void $onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
     MCAPI void
     $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
-    MCAPI bool $isInstantaneous() const;
+    MCFOLD bool $isInstantaneous() const;
 
     MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
     // NOLINTEND

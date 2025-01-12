@@ -27,12 +27,6 @@ namespace Util {
 
 class LootTableUtils {
 public:
-    // prevent constructor by default
-    LootTableUtils& operator=(LootTableUtils const&);
-    LootTableUtils(LootTableUtils const&);
-    LootTableUtils();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string convertFromJavaLootTableName(::std::string const& lootTableName);

@@ -39,18 +39,18 @@ public:
 
     MCAPI IdentityDefinition(::IdentityDefinition const& o);
 
-    MCAPI ::ActorUniqueID const& getEntityId() const;
+    MCFOLD ::ActorUniqueID const& getEntityId() const;
 
-    MCAPI ::std::string const& getFakePlayerName() const;
+    MCFOLD ::std::string const& getFakePlayerName() const;
 
-    MCAPI ::IdentityDefinition::Type getIdentityType() const;
+    MCFOLD ::IdentityDefinition::Type getIdentityType() const;
 
     MCAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     ) const;
 
-    MCAPI ::PlayerScoreboardId const& getPlayerId() const;
+    MCFOLD ::PlayerScoreboardId const& getPlayerId() const;
 
-    MCAPI ::ScoreboardId const& getScoreboardId() const;
+    MCFOLD ::ScoreboardId const& getScoreboardId() const;
 
     MCAPI bool isEntityType() const;
 
@@ -82,6 +82,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

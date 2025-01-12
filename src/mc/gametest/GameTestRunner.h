@@ -20,12 +20,6 @@ namespace gametest { struct TestParameters; }
 
 class GameTestRunner {
 public:
-    // prevent constructor by default
-    GameTestRunner& operator=(GameTestRunner const&);
-    GameTestRunner(GameTestRunner const&);
-    GameTestRunner();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void clearAllTests(

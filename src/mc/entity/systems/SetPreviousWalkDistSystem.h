@@ -16,12 +16,6 @@ struct WalkDistComponent;
 
 class SetPreviousWalkDistSystem {
 public:
-    // prevent constructor by default
-    SetPreviousWalkDistSystem& operator=(SetPreviousWalkDistSystem const&);
-    SetPreviousWalkDistSystem(SetPreviousWalkDistSystem const&);
-    SetPreviousWalkDistSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickWalkDistPrevSystem(

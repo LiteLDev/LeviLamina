@@ -47,7 +47,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -85,7 +85,7 @@ public:
 
     MCAPI void addListener(::HashedString const& messageType, ::NetworkIdentifier source, ::SubClientId subClientId);
 
-    MCAPI bool listenersEmpty() const;
+    MCFOLD bool listenersEmpty() const;
 
     MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
 

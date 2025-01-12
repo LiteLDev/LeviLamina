@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct ActorStopRidingEventSystem {
 public:
-    // prevent constructor by default
-    ActorStopRidingEventSystem& operator=(ActorStopRidingEventSystem const&);
-    ActorStopRidingEventSystem(ActorStopRidingEventSystem const&);
-    ActorStopRidingEventSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createCancelableEventSystem();

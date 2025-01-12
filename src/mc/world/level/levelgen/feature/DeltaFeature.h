@@ -14,12 +14,6 @@ class Random;
 
 class DeltaFeature : public ::Feature {
 public:
-    // prevent constructor by default
-    DeltaFeature& operator=(DeltaFeature const&);
-    DeltaFeature(DeltaFeature const&);
-    DeltaFeature();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

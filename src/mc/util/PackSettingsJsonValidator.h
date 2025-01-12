@@ -7,12 +7,6 @@
 
 class PackSettingsJsonValidator {
 public:
-    // prevent constructor by default
-    PackSettingsJsonValidator& operator=(PackSettingsJsonValidator const&);
-    PackSettingsJsonValidator(PackSettingsJsonValidator const&);
-    PackSettingsJsonValidator();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::JsonValidator::Property getValidator();

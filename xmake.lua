@@ -128,10 +128,12 @@ target("LeviLamina")
         "concurrentqueue",
         {public = true}
     )
+    add_defines("LL_EXPORT")
     add_defines(
         "FMT_USE_FULL_CACHE_DRAGONBOX=1",
-        "ENTT_PACKED_PAGE=128", -- public = true
-        "LL_EXPORT"
+        "ENTT_PACKED_PAGE=128",
+        "ENTT_SPARSE_PAGE=2048",
+        {public = true}
     )
 
     if not is_windows then

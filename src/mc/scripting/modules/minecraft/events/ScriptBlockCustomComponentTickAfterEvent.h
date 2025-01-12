@@ -19,12 +19,6 @@ namespace ScriptModuleMinecraft {
 struct ScriptBlockCustomComponentTickAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent,
                                                   public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentTickAfterEvent& operator=(ScriptBlockCustomComponentTickAfterEvent const&);
-    ScriptBlockCustomComponentTickAfterEvent(ScriptBlockCustomComponentTickAfterEvent const&);
-    ScriptBlockCustomComponentTickAfterEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockCustomComponentTickAfterEvent(
@@ -38,7 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
+    MCFOLD static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
     tryGetComponentsToExecute(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage const& eventData
     );
@@ -47,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                   scope
     );

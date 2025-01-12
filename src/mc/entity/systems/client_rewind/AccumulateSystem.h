@@ -43,12 +43,6 @@ struct AccumulateSystem : public ::IStrictTickingSystem<::StrictExecutionContext
                               ::GlobalWrite<>,
                               ::EntityFactoryT<>>> {
 public:
-    // prevent constructor by default
-    AccumulateSystem& operator=(AccumulateSystem const&);
-    AccumulateSystem(AccumulateSystem const&);
-    AccumulateSystem();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5

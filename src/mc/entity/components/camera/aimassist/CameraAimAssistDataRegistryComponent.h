@@ -50,10 +50,10 @@ public:
     MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoriesDefinition const* _tryGetCategories(::HashedString const& id
     ) const;
 
-    MCAPI ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistCategoriesDefinition> const&
+    MCFOLD ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistCategoriesDefinition> const&
     getCategories() const;
 
-    MCAPI ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition> const&
+    MCFOLD ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition> const&
     getPresets() const;
 
     MCAPI void loadJsonFilesForServer(::ResourcePackManager& resourcePackManager);

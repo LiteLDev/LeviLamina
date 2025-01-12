@@ -4,12 +4,6 @@
 
 namespace Util::Detail {
 
-class StringStorageTraits {
-public:
-    // prevent constructor by default
-    StringStorageTraits& operator=(StringStorageTraits const&);
-    StringStorageTraits(StringStorageTraits const&);
-    StringStorageTraits();
-};
+class StringStorageTraits {};
 
 } // namespace Util::Detail

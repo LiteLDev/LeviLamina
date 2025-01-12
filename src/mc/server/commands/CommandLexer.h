@@ -69,7 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CommandLexer(::std::string const& commandInput);
 
-    MCAPI ::CommandLexer::Token const& next() const;
+    MCFOLD ::CommandLexer::Token const& next() const;
 
     MCAPI void step();
     // NOLINTEND

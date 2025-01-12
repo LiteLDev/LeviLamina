@@ -19,12 +19,6 @@ struct WitherBossPreAIStepResultComponent;
 
 class WitherBossPreAIStepSystem {
 public:
-    // prevent constructor by default
-    WitherBossPreAIStepSystem& operator=(WitherBossPreAIStepSystem const&);
-    WitherBossPreAIStepSystem(WitherBossPreAIStepSystem const&);
-    WitherBossPreAIStepSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _doWitherBossPreAIStepSystem(

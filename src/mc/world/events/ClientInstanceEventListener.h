@@ -15,12 +15,6 @@ struct ClientInstanceNotificationEvent;
 
 class ClientInstanceEventListener {
 public:
-    // prevent constructor by default
-    ClientInstanceEventListener& operator=(ClientInstanceEventListener const&);
-    ClientInstanceEventListener(ClientInstanceEventListener const&);
-    ClientInstanceEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

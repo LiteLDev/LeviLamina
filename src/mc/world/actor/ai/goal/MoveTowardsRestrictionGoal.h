@@ -53,7 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
     MCAPI void $start();
     // NOLINTEND

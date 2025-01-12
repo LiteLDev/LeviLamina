@@ -16,12 +16,6 @@ struct PlayerDamageEvent;
 class VanillaNetworkEventListener : public ::EventListenerDispatcher<::ActorEventListener>,
                                     public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
-    // prevent constructor by default
-    VanillaNetworkEventListener& operator=(VanillaNetworkEventListener const&);
-    VanillaNetworkEventListener(VanillaNetworkEventListener const&);
-    VanillaNetworkEventListener();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 63

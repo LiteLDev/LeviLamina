@@ -64,7 +64,7 @@ public:
     // NOLINTBEGIN
     MCAPI LegacyStructureTemplate();
 
-    MCAPI ::IStructureTemplate const& asStructureTemplate() const;
+    MCFOLD ::IStructureTemplate const& asStructureTemplate() const;
 
     MCAPI ::BlockPos calculateConnectedPosition(
         ::LegacyStructureSettings const& settings1,

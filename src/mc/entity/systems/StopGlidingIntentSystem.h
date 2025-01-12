@@ -9,12 +9,6 @@ struct TickingSystemWithInfo;
 
 struct StopGlidingIntentSystem {
 public:
-    // prevent constructor by default
-    StopGlidingIntentSystem& operator=(StopGlidingIntentSystem const&);
-    StopGlidingIntentSystem(StopGlidingIntentSystem const&);
-    StopGlidingIntentSystem();
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createSystem();

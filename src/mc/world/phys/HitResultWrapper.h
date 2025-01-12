@@ -34,9 +34,9 @@ public:
 
     MCAPI void _onGameplayUserRemoved(::EntityContext const& entity);
 
-    MCAPI ::HitResult& getHitResult();
+    MCFOLD ::HitResult& getHitResult();
 
-    MCAPI ::HitResult& getLiquidHitResult();
+    MCFOLD ::HitResult& getLiquidHitResult();
 
     MCAPI void initialize(
         ::IActorManagerConnector&        actorManagerConnector,

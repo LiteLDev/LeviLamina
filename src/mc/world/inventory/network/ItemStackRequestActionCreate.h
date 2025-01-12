@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uchar getResultsIndex() const;
+    MCFOLD uchar getResultsIndex() const;
     // NOLINTEND
 
 public:

@@ -45,7 +45,7 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStackRequestPacket();
 
-    MCAPI ::ItemStackRequestBatch const& getRequestBatch() const;
+    MCFOLD ::ItemStackRequestBatch const& getRequestBatch() const;
     // NOLINTEND
 
 public:

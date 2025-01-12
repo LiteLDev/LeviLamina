@@ -7,12 +7,6 @@
 
 class IAdvancedGraphicsHardwareOptions : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // prevent constructor by default
-    IAdvancedGraphicsHardwareOptions& operator=(IAdvancedGraphicsHardwareOptions const&);
-    IAdvancedGraphicsHardwareOptions(IAdvancedGraphicsHardwareOptions const&);
-    IAdvancedGraphicsHardwareOptions();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

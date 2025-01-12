@@ -4,12 +4,6 @@
 
 namespace Bedrock::Threading {
 
-struct ZeroInit {
-public:
-    // prevent constructor by default
-    ZeroInit& operator=(ZeroInit const&);
-    ZeroInit(ZeroInit const&);
-    ZeroInit();
-};
+struct ZeroInit {};
 
 } // namespace Bedrock::Threading

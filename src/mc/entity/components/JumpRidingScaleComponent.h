@@ -5,10 +5,4 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct JumpRidingScaleComponent : public ::FloatComponent {
-public:
-    // prevent constructor by default
-    JumpRidingScaleComponent& operator=(JumpRidingScaleComponent const&);
-    JumpRidingScaleComponent(JumpRidingScaleComponent const&);
-    JumpRidingScaleComponent();
-};
+struct JumpRidingScaleComponent : public ::FloatComponent {};

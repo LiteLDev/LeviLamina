@@ -9,11 +9,6 @@ namespace Core {
 
 class OutputFileStream : public ::Core::FileStream, public virtual ::std::ios {
 public:
-    // prevent constructor by default
-    OutputFileStream& operator=(OutputFileStream const&);
-    OutputFileStream(OutputFileStream const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

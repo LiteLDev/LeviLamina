@@ -4,12 +4,6 @@
 
 namespace dcsctp {
 
-class TimeoutTag {
-public:
-    // prevent constructor by default
-    TimeoutTag& operator=(TimeoutTag const&);
-    TimeoutTag(TimeoutTag const&);
-    TimeoutTag();
-};
+class TimeoutTag {};
 
 } // namespace dcsctp

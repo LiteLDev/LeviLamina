@@ -15,12 +15,6 @@ namespace Bedrock::JSONObject {
 
 class Node : public ::Bedrock::JSONObject::NodeBase {
 public:
-    // prevent constructor by default
-    Node& operator=(Node const&);
-    Node(Node const&);
-    Node();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Bedrock::JSONObject::ObjectNode* asObject();

@@ -12,12 +12,6 @@
 
 class PlayerGameplayHandler : public ::GameplayHandler {
 public:
-    // prevent constructor by default
-    PlayerGameplayHandler& operator=(PlayerGameplayHandler const&);
-    PlayerGameplayHandler(PlayerGameplayHandler const&);
-    PlayerGameplayHandler();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3

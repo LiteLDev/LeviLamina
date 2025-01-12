@@ -12,12 +12,6 @@ namespace cricket {
 
 class TurnAllocateRequest {
 public:
-    // prevent constructor by default
-    TurnAllocateRequest& operator=(TurnAllocateRequest const&);
-    TurnAllocateRequest(TurnAllocateRequest const&);
-    TurnAllocateRequest();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI void OnAuthChallenge(::cricket::StunMessage*, int);

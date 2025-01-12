@@ -62,7 +62,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit StructureSection(::BoundingBox bb);
 
-    MCAPI ::BoundingBox const& boundingBox() const;
+    MCFOLD ::BoundingBox const& boundingBox() const;
 
     MCAPI bool isNearChunk(::ChunkPos pos, int distance) const;
     // NOLINTEND

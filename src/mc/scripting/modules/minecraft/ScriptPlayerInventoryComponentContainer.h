@@ -18,12 +18,6 @@ namespace ScriptModuleMinecraft {
 
 class ScriptPlayerInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptInventoryComponentContainer {
 public:
-    // prevent constructor by default
-    ScriptPlayerInventoryComponentContainer& operator=(ScriptPlayerInventoryComponentContainer const&);
-    ScriptPlayerInventoryComponentContainer(ScriptPlayerInventoryComponentContainer const&);
-    ScriptPlayerInventoryComponentContainer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -61,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -69,7 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Container* $_tryGetContainer() const;
 
-    MCAPI ::ItemContext $_getItemContext(int slot) const;
+    MCFOLD ::ItemContext $_getItemContext(int slot) const;
     // NOLINTEND
 
 public:

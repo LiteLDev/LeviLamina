@@ -4,12 +4,6 @@
 
 namespace Social {
 
-class MultiplayerService {
-public:
-    // prevent constructor by default
-    MultiplayerService& operator=(MultiplayerService const&);
-    MultiplayerService(MultiplayerService const&);
-    MultiplayerService();
-};
+class MultiplayerService {};
 
 } // namespace Social

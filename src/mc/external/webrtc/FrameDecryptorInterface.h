@@ -39,12 +39,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    FrameDecryptorInterface& operator=(FrameDecryptorInterface const&);
-    FrameDecryptorInterface(FrameDecryptorInterface const&);
-    FrameDecryptorInterface();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
