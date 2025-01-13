@@ -58,8 +58,8 @@ LL_STATIC_HOOK(
     ActorDataFlagComponent&                                  actorDataFlag,
     ActorDataDirtyFlagsComponent&                            actorDataDirtyFlags,
     VanillaClientGameplayComponent&                          vanillaClientGameplayComponent,
-    void*                                                    sneakingComponent,
-    void*                                                    isInWater,
+    ::Optional<const ::SneakingComponent>                    sneakingComponent,
+    ::Optional<const ::WasInWaterFlagComponent>              isInWater,
     OptionalGlobal<::PlayerMovementSettingsComponent const>& playerMovementSettingsComponent
 ) {
     origin(

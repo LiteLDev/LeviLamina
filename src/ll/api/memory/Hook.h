@@ -1,6 +1,6 @@
 #pragma once
 
-#include <atomic>
+#include <atomic> // IWYU pragma: keep
 #include <cstdint>
 #include <memory>
 #include <string>
@@ -80,11 +80,6 @@ constexpr FuncPtr resolveIdentifier(uintptr_t address) {
     return toFuncPtr(address);
 }
 
-template <class T>
-constexpr FuncPtr resolveIdentifier(void* address) {
-    return address;
-}
-
 template <class T, auto>
     requires(!std::is_member_function_pointer_v<T>)
 consteval bool virtualDetector() noexcept {
@@ -122,7 +117,7 @@ public:
     HookRegistrar& operator=(HookRegistrar&&) noexcept = default;
 };
 
-struct LL_EBO Hook {};
+struct LL_EBO Hook{};
 
 } // namespace ll::memory
 
