@@ -80,6 +80,11 @@ constexpr FuncPtr resolveIdentifier(uintptr_t address) {
     return toFuncPtr(address);
 }
 
+template <class T>
+constexpr uintptr_t unchecked(T identifier) {
+    return reinterpret_cast<uintptr_t>(toFuncPtr(identifier));
+}
+
 template <class T, auto>
     requires(!std::is_member_function_pointer_v<T>)
 consteval bool virtualDetector() noexcept {

@@ -29,12 +29,12 @@ public:
     int test(int a, int b) { return a + b; }
 };
 
-// they will choose non-const version if possible
+// test unchecked function pointer
 LL_TYPE_INSTANCE_HOOK(
     TestPtrHook,
     HookPriority::Normal,
     TestPtrClass,
-    ll::memory::toFuncPtr(&TestPtrClass::test),
+    ll::memory::unchecked(&TestPtrClass::test),
     int,
     __int64 a,
     __int64 b
