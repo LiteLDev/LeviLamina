@@ -55,6 +55,16 @@ public:
     using Variant = Types::to<::std::variant>;
 
 public:
+    // member variables
+    Variant mTagStorage;
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     LLNDAPI static ll::Expected<CompoundTagVariant>
     parse(std::string_view snbt, optional_ref<size_t> parsedLength = std::nullopt) noexcept;
 
@@ -79,7 +89,7 @@ public:
 
     [[nodiscard]] bool operator==(CompoundTagVariant const& other) const { return get() == other.get(); }
 
-    [[nodiscard]] constexpr CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
+    [[nodiscard]] CompoundTagVariant(Variant tag) : mTagStorage(std::move(tag)) {}
 
     template <class T, class... Args>
     [[nodiscard]] constexpr CompoundTagVariant(std::in_place_type_t<T>, Args&&... args)
@@ -323,16 +333,6 @@ public:
     static CompoundTagVariant array(std::initializer_list<CompoundTagVariant> init = {}) {
         return CompoundTagVariant{std::in_place_type<ListTag>, init};
     }
-
-public:
-    // member variables
-    Variant mTagStorage;
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 [[nodiscard]] inline CompoundTagVariant& CompoundTag::operator[](std::string_view index) {
