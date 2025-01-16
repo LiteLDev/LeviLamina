@@ -268,28 +268,9 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
     return true;
 }
 static void dumpEventId(const sentry_value_t event) {
-#define B(X) (unsigned char)eventId.bytes[X]
-    sentry_uuid_t eventId = sentry_capture_event(event);
-    crashInfo.logger.info(
-        "Event Id: {:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}",
-        B(0),
-        B(1),
-        B(2),
-        B(3),
-        B(4),
-        B(5),
-        B(6),
-        B(7),
-        B(8),
-        B(9),
-        B(10),
-        B(11),
-        B(12),
-        B(13),
-        B(14),
-        B(15)
-    );
-#undef B
+    sentry_value_t event_id = sentry_value_get_by_key(event, "event_id");
+    const char*    val      = sentry_value_as_string(event_id);
+    crashInfo.logger.info("Event Id: {}", val);
 }
 
 static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t event, void* /*closure*/) {
