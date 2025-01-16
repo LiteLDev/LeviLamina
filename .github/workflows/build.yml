@@ -41,6 +41,12 @@ jobs:
         # with:
         #   xmake-version: branch@master
 
+      - uses: matbour/setup-sentry-cli@v1
+        with:
+          token: ${{ SECRETS.SENTRY_TOKEN }}
+          organization: ${{ SECRETS.SENTRY_ORG }}
+          project: ${{ SECRETS.SENTRY_PROJECT }}
+
       - uses: actions/cache@v4
         with:
           path: |
@@ -59,6 +65,9 @@ jobs:
 
       - run: |
           xmake -v -w -y
+
+      - run: |
+          sentry-cli debug-files upload --include-sources /bin/LeviLamina/LeviLamina.dll /bin/LeviLamina/LeviLamina.pdb
 
       - uses: actions/upload-artifact@v4
         with:
