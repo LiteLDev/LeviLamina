@@ -41,6 +41,7 @@ add_requires("levibuildscript 0.2.0")
 add_requires("preloader v1.12.0")
 add_requires("symbolprovider v1.2.0")
 add_requires("trampoline 2024.11.7")
+add_requires("sentry-native 0.7.17")
 
 if is_windows then
 add_requires("libhat 2024.9.22")
@@ -126,6 +127,7 @@ target("LeviLamina")
         "bedrockdata",
         "parallel-hashmap",
         "concurrentqueue",
+        "sentry-native",
         {public = true}
     )
     add_defines("LL_EXPORT")
