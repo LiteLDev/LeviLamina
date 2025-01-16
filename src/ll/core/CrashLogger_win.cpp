@@ -267,9 +267,32 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
     crashInfo.logger.info("MiniDump generated at {}", u8str2str(dumpFilePath.u8string()));
     return true;
 }
+static void dumpEventId(const sentry_value_t event) {
+#define B(X) (unsigned char)eventId.bytes[X]
+    sentry_uuid_t eventId = sentry_capture_event(event);
+    crashInfo.logger.info(
+        "Event Id: {:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}{:02x}",
+        B(0),
+        B(1),
+        B(2),
+        B(3),
+        B(4),
+        B(5),
+        B(6),
+        B(7),
+        B(8),
+        B(9),
+        B(10),
+        B(11),
+        B(12),
+        B(13),
+        B(14),
+        B(15)
+    );
+#undef B
+}
 
-sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t event, void* /*closure*/) {
-
+static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t event, void* /*closure*/) {
     try {
         crashInfo.date     = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.settings = ll::getLeviConfig().modules.crashLogger;
@@ -311,6 +334,7 @@ sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t event,
         io::defaultOutput("\n");
 
         crashInfo.logger.info("Process Crashed! Generating Stacktrace and MiniDump...");
+        dumpEventId(event);
         try {
             EXCEPTION_POINTERS exceptionPointers = ctx->exception_ptrs;
             genMiniDumpFile(&exceptionPointers);
