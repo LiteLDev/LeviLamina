@@ -91,15 +91,14 @@ void CrashLogger::init() {
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
-        R"({} -p {} -b "{}" --lv "{}" --isdev {} --username "{}" --moddir "{}" --enablesentry true --foreuploadmods "{}")",
+        R"({} -p {} -b "{}" --lv "{}" --isdev {} --username "{}" --moddir "{}" --enablesentry true)",
         getSelfModIns()->getModDir() / sv2u8sv(config.modules.crashLogger.externalpath.value_or("CrashLogger.exe")),
         GetCurrentProcessId(),
         ll::getGameVersion().to_string(),
         ll::getLoaderVersion().to_string(),
         ll::getLoaderVersion().to_string().find('+') != std::string::npos,
         getServiceUuid(),
-        mod::getModsRoot(),
-        "LeviLamina.dll"
+        mod::getModsRoot()
     ));
 
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {

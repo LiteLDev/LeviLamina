@@ -24,7 +24,7 @@ FacingID const&           PlayerInteractBlockEvent::face() const { return mFace;
 Vec3 const&               PlayerInteractBlockEvent::clickPos() const { return mClickPos; }
 optional_ref<Block const> PlayerInteractBlockEvent::block() const { return mBlock; }
 
-LL_TYPE_INSTANCE_HOOK(
+LL_AUTO_TYPE_INSTANCE_HOOK(
     PlayerInteractBlockEventHook,
     HookPriority::Normal,
     GameMode,
@@ -43,6 +43,7 @@ LL_TYPE_INSTANCE_HOOK(
     if (ev.isCancelled()) {
         return {InteractionResult::Result::Fail};
     }
+    throw std::runtime_error("Not implemented");
     return origin(item, blockPos, face, clickPos, block, isFirstEvent);
 }
 
