@@ -375,10 +375,6 @@ static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t
 
 
 CrashLoggerNew::CrashLoggerNew() {
-    auto& config = ll::getLeviConfig();
-    auto  path   = ll::getSelfModIns()->getModDir()
-              / ll::string_utils::sv2u8sv(config.modules.crashLogger.externalpath.value_or("crashpad_handler.exe"));
-
     constexpr auto dsn =
         "https://43a888504c33385bfd2e570c9ac939aa@o4508652421906432.ingest.us.sentry.io/4508652563398656";
     auto release = ll::getLoaderVersion().to_string();
@@ -387,7 +383,6 @@ CrashLoggerNew::CrashLoggerNew() {
     sentry_options_t* options = sentry_options_new();
     sentry_options_set_dsn(options, dsn);
     sentry_options_set_database_path(options, ".sentry-native");
-    sentry_options_set_handler_path(options, path.string().c_str());
     sentry_options_set_on_crash(options, onCrash, nullptr);
     sentry_options_set_release(options, release.c_str());
     sentry_options_set_environment(options, isDev ? "development" : "production");
