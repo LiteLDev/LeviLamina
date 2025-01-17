@@ -1,7 +1,11 @@
 #include "ll/core/LeviLamina.h"
 #include "ll/api/Versions.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/FileUtils.h"
 #include "ll/core/Version.h"
+
+
+#include "mc/platform/UUID.h"
 
 namespace ll {
 std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
@@ -18,6 +22,34 @@ std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
     return llSelf;
 }
 io::Logger& getLogger() { return getSelfModIns()->getLogger(); }
+
+std::string_view getServiceUuid() {
+    namespace fs = std::filesystem;
+
+    static bool        inited = false;
+    static std::string serverUuid;
+
+    if (!inited) {
+        auto& dataDir  = getSelfModIns()->getDataDir();
+        auto  uuidPath = dataDir / u8"statisticsUuid";
+        if (!fs::exists(uuidPath)) {
+            std::string uuid = mce::UUID::random().asString();
+            file_utils::writeFile(uuidPath, uuid);
+            serverUuid = std::move(uuid);
+        } else {
+            auto uuidFile = file_utils::readFile(uuidPath);
+            if (uuidFile.has_value()) {
+                serverUuid = uuidFile.value();
+            } else {
+                std::string uuid = mce::UUID::random().asString();
+                file_utils::writeFile(uuidPath, uuid);
+                serverUuid = std::move(uuid);
+            }
+        }
+        inited = true;
+    }
+    return serverUuid;
+}
 
 data::Version getLoaderVersion() {
     static auto ver = [] {

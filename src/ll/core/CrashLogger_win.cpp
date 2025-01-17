@@ -10,6 +10,7 @@
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
 #include "ll/api/io/PatternFormatter.h"
+#include "ll/api/mod/Mod.h"
 #include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/StacktraceUtils.h"
 #include "ll/api/utils/StringUtils.h"
@@ -90,11 +91,16 @@ void CrashLogger::init() {
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
-        "{} {} \"{}\"",
+        R"({} -p {} -b "{}" --lv "{}" --isdev {} --username "{}" --moddir "{}" --enablesentry true)",
         getSelfModIns()->getModDir() / sv2u8sv(config.modules.crashLogger.externalpath.value_or("CrashLogger.exe")),
         GetCurrentProcessId(),
-        ll::getGameVersion().to_string()
+        ll::getGameVersion().to_string(),
+        ll::getLoaderVersion().to_string(),
+        ll::getLoaderVersion().to_string().find('+') != std::string::npos,
+        getServiceUuid(),
+        mod::getModsRoot()
     ));
+
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLoggerPtr->error("Couldn't Create CrashLogger Daemon Process"_tr());
         error_utils::printException(error_utils::getLastSystemError(), *crashLoggerPtr);
