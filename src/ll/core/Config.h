@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 31;
+    int version = 32;
 
     std::string language = "system";
     struct {
@@ -31,8 +31,9 @@ struct LeviConfig {
             CmdSetting modManageCommand{true, CommandPermissionLevel::Admin};
         } command{};
         struct {
-            bool                       enabled    = true;
-            bool                       useBuiltin = true;
+            bool                       enabled        = true;
+            bool                       useBuiltin     = true;
+            bool                       uploadToSentry = true;
             std::optional<std::string> externalpath;
         } crashLogger{};
 
