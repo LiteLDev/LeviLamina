@@ -25,8 +25,6 @@
 
 #include "DbgHelp.h"
 
-#include "sentry.h"
-
 namespace ll::inline utils::error_utils {
 Stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ull);
 }
@@ -37,6 +35,8 @@ using namespace string_utils;
 auto crashLoggerPtr = io::LoggerRegistry::getInstance().getOrCreate("CrashLogger");
 
 class CrashLoggerNew {
+    void* previous{};
+
 public:
     CrashLoggerNew();
     ~CrashLoggerNew();
@@ -274,13 +274,8 @@ static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
     crashInfo.logger.info("MiniDump generated at {}", u8str2str(dumpFilePath.u8string()));
     return true;
 }
-static void dumpEventId(const sentry_value_t event) {
-    sentry_value_t event_id = sentry_value_get_by_key(event, "event_id");
-    const char*    val      = sentry_value_as_string(event_id);
-    crashInfo.logger.info("Event Id: {}", val);
-}
 
-static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t event, void* /*closure*/) {
+static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
     try {
         crashInfo.date     = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.settings = ll::getLeviConfig().modules.crashLogger;
@@ -322,10 +317,8 @@ static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t
         io::defaultOutput("\n");
 
         crashInfo.logger.info("Process Crashed! Generating Stacktrace and MiniDump...");
-        dumpEventId(event);
         try {
-            EXCEPTION_POINTERS exceptionPointers = ctx->exception_ptrs;
-            genMiniDumpFile(&exceptionPointers);
+            genMiniDumpFile(e);
         } catch (...) {
             crashInfo.logger.error("!!! Error In GenMiniDumpFile !!!");
             ll::error_utils::printCurrentException(crashInfo.logger);
@@ -338,8 +331,7 @@ static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t
 
         crashInfo.logger.info("Exception:");
         try {
-            auto str =
-                error_utils::makeExceptionString(error_utils::createExceptionPtr(ctx->exception_ptrs.ExceptionRecord));
+            auto str = error_utils::makeExceptionString(error_utils::createExceptionPtr(e->ExceptionRecord));
             for (auto& sv : string_utils::splitByPattern(str, "\n")) {
                 crashInfo.logger.info("  |{}", sv);
             }
@@ -349,8 +341,7 @@ static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t
         crashInfo.logger.info("");
         crashInfo.logger.info("Registers:");
         try {
-
-            auto str = toString(*ctx->exception_ptrs.ContextRecord);
+            auto str = toString(*e->ContextRecord);
             for (auto& sv : splitByPattern(str, "\n")) {
                 crashInfo.logger.info("  |{}", sv);
             }
@@ -358,7 +349,7 @@ static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t
             crashInfo.logger.info("unknown error");
         }
         crashInfo.logger.info("");
-        dumpStacktrace(*ctx->exception_ptrs.ContextRecord);
+        dumpStacktrace(*e->ContextRecord);
         crashInfo.logger.info("");
         crashInfo.logger.info("Modules:");
         if (!EnumerateLoadedModulesW64(crashInfo.process, dumpModules, nullptr)) {
@@ -370,27 +361,29 @@ static sentry_value_t onCrash(const sentry_ucontext_t* ctx, const sentry_value_t
         crashInfo.logger.error("");
         crashInfo.logger.error("\n{}", ll::stacktrace_utils::toString(Stacktrace::current()));
     }
-    return event;
+    std::exit((int)e->ExceptionRecord->ExceptionCode);
 }
 
+static LONG uncatchableExceptionHandler(_In_ struct _EXCEPTION_POINTERS* e) {
+    static std::atomic_bool onceFlag{false};
+    auto const&             code = e->ExceptionRecord->ExceptionCode;
+    if (code == STATUS_HEAP_CORRUPTION || code == STATUS_STACK_BUFFER_OVERRUN
+        // need to add all can't catch status code
+    ) {
+        if (!onceFlag) {
+            onceFlag = true;
+            unhandledExceptionFilter(e);
+        }
+    }
+    return EXCEPTION_CONTINUE_SEARCH;
+}
 
 CrashLoggerNew::CrashLoggerNew() {
-    constexpr auto dsn =
-        "https://43a888504c33385bfd2e570c9ac939aa@o4508652421906432.ingest.us.sentry.io/4508652563398656";
-    auto release = ll::getLoaderVersion().to_string();
-    auto isDev   = release.find('+') != std::string::npos;
+    AddVectoredExceptionHandler(0, uncatchableExceptionHandler);
 
-    sentry_options_t* options = sentry_options_new();
-    sentry_options_set_dsn(options, dsn);
-    sentry_options_set_database_path(options, ".sentry-native");
-    sentry_options_set_on_crash(options, onCrash, nullptr);
-    sentry_options_set_release(options, release.c_str());
-    sentry_options_set_environment(options, isDev ? "development" : "production");
-
-    sentry_init(options);
-
+    previous = SetUnhandledExceptionFilter(unhandledExceptionFilter);
     crashLoggerPtr->info("CrashLogger enabled successfully"_tr());
 }
 
-CrashLoggerNew::~CrashLoggerNew() { sentry_close(); }
+CrashLoggerNew::~CrashLoggerNew() { SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)previous); }
 } // namespace ll
