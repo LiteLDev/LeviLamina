@@ -1,14 +1,13 @@
 #include <cpr/cpr.h>
 #include <fstream>
-#include <random>
 #include <sstream>
 
 #include <zlib.h>
 
-#include "ll/api/utils/SystemUtils.h"
-#include "ll/core/SentryUploader.h"
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
+#include "ll/api/utils/SystemUtils.h"
+#include "ll/core/SentryUploader.h"
 #include "mc/platform/UUID.h"
 
 using json = nlohmann::json;
@@ -17,21 +16,28 @@ namespace ll {
 auto sentryLogger = io::LoggerRegistry::getInstance().getOrCreate("SentryUploader");
 
 std::string compressDataGzip(const std::string& data) {
-    std::ostringstream compressedStream;
-    gzFile             gzFile = gzopen("temp.gz", "wb");
-    if (!gzFile) {
-        throw std::runtime_error("Failed to open gzip stream");
+    std::vector<char> compressedBuffer;
+    z_stream          deflateStream{};
+    if (deflateInit2(&deflateStream, Z_BEST_COMPRESSION, Z_DEFLATED, 15 + 16, 8, Z_DEFAULT_STRATEGY) != Z_OK) {
+        throw std::runtime_error("Failed to initialize compression stream");
     }
-    int result = gzwrite(gzFile, data.data(), data.size());
-    if (result == 0) {
-        gzclose(gzFile);
+    if (data.size() > std::numeric_limits<uint>::max()) {
+        deflateEnd(&deflateStream);
+        throw std::runtime_error("Data too large for compression");
+    }
+    deflateStream.avail_in = static_cast<uint>(data.size());
+    deflateStream.next_in  = (byte*)data.data();
+    size_t bufferSize      = data.size();
+    compressedBuffer.resize(bufferSize);
+    deflateStream.avail_out = static_cast<uint>(bufferSize);
+    deflateStream.next_out  = (byte*)compressedBuffer.data();
+    if (deflate(&deflateStream, Z_FINISH) != Z_STREAM_END) {
+        deflateEnd(&deflateStream);
         throw std::runtime_error("Gzip compression failed");
     }
-    gzclose(gzFile);
-    std::ifstream      inFile("temp.gz", std::ios::binary);
-    std::ostringstream resultStream;
-    resultStream << inFile.rdbuf();
-    return resultStream.str();
+    compressedBuffer.resize(deflateStream.total_out);
+    deflateEnd(&deflateStream);
+    return {compressedBuffer.begin(), compressedBuffer.end()};
 }
 
 SentryUploader::SentryUploader(
@@ -43,13 +49,13 @@ SentryUploader::SentryUploader(
     bool               isDev,
     const std::string& leviLaminaVersion
 )
-: mUser(user),
+: mIsDev(isDev),
+  mLeviLaminaVersion(leviLaminaVersion),
+  mUser(user),
   mMiniDumpName(minidmpName),
   mMinidumpPath(minidumpPath),
   mTraceName(traceName),
-  mTracePath(tracePath),
-  mIsDev(isDev),
-  mLeviLaminaVersion(leviLaminaVersion) {
+  mTracePath(tracePath) {
     mMinidumpContent       = readFile(minidumpPath);
     mAdditionalFileContent = readFile(tracePath);
     mOSInfo.name           = sys_utils::isWine() ? "Linux(Wine)" : "Windows";
@@ -105,7 +111,7 @@ void SentryUploader::uploadAll() {
                     {   "event_id",                                     eventId                                   },
                     {      "level",                                                                        "fatal"},
                     {   "platform",                                                                       "native"},
-                    {        "sdk",                    {{"name", "crashLogger"}, {"version", "built-in"}}},
+                    {        "sdk",                             {{"name", "crashLogger"}, {"version", "built-in"}}},
                     {    "release",                                                    sentryConfig.releaseVersion},
                     {"environment",                                          mIsDev ? "development" : "production"},
                     {       "user",                                                                {{"id", mUser}}},
