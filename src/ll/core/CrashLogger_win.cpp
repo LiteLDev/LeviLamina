@@ -17,6 +17,7 @@
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
+#include "ll/core/SentryUploader.h"
 #include "ll/core/io/Output.h"
 
 #include "pl/Config.h"
@@ -129,35 +130,11 @@ static struct CrashInfo {
 
 static void dumpSystemInfo() {
     crashInfo.logger.info("System Info:");
-    crashInfo.logger.info("  |OS Version: {} {}", sys_utils::getSystemName(), []() -> std::string {
-        RTL_OSVERSIONINFOW osVersionInfoW = [] {
-            RTL_OSVERSIONINFOW osVersionInfoW{};
-            HMODULE            hMod = ::GetModuleHandleW(L"ntdll.dll");
-            if (hMod) {
-                using RtlGetVersionPtr = uint(WINAPI*)(PRTL_OSVERSIONINFOW);
-                auto fxPtr             = (RtlGetVersionPtr)::GetProcAddress(hMod, "RtlGetVersion");
-                if (fxPtr != nullptr) {
-                    osVersionInfoW.dwOSVersionInfoSize = sizeof(osVersionInfoW);
-                    if (0 == fxPtr(&osVersionInfoW)) {
-                        return osVersionInfoW;
-                    }
-                }
-            }
-            return osVersionInfoW;
-        }();
-        if (osVersionInfoW.dwMajorVersion == 0) {
-            return "Unknown";
-        }
-        std::string osVersion =
-            std::to_string(osVersionInfoW.dwMajorVersion) + '.' + std::to_string(osVersionInfoW.dwMinorVersion);
-        if (osVersionInfoW.dwBuildNumber != 0) {
-            osVersion += '.' + std::to_string(osVersionInfoW.dwBuildNumber);
-        }
-        if (osVersionInfoW.szCSDVersion[0] != 0) {
-            osVersion += ' ' + wstr2str(osVersionInfoW.szCSDVersion);
-        }
-        return osVersion;
-    }() + (sys_utils::isWine() ? " (wine)" : ""));
+    crashInfo.logger.info(
+        "  |OS Version: {} {}",
+        sys_utils::getSystemName(),
+        sys_utils::getSystemVersion() + (sys_utils::isWine() ? " (wine)" : "")
+    );
     crashInfo.logger.info("  |CPU: {}", []() -> std::string {
         int cpuInfo[4] = {-1};
         __cpuid(cpuInfo, (int)0x80000000);
@@ -234,10 +211,7 @@ static BOOL CALLBACK dumpModules(
     return TRUE;
 }
 
-static bool genMiniDumpFile(PEXCEPTION_POINTERS e) {
-
-    auto dumpFilePath = crashInfo.path / string_utils::str2u8str("minidump_" + crashInfo.date + ".dmp");
-
+static bool genMiniDumpFile(PEXCEPTION_POINTERS e, std::filesystem::path& dumpFilePath) {
     std::error_code ec;
     if (auto c = std::filesystem::canonical(dumpFilePath, ec); ec.value() == 0) {
         dumpFilePath = c;
@@ -280,6 +254,8 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.date     = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.settings = ll::getLeviConfig().modules.crashLogger;
         crashInfo.path     = file_utils::u8path(pl::pl_log_path) / u8"crash";
+        auto logFilePath = crashInfo.path / ("trace_" + crashInfo.date + ".log");
+        auto dumpFilePath = crashInfo.path / string_utils::str2u8str("minidump_" + crashInfo.date + ".dmp");
         if (!std::filesystem::is_directory(crashInfo.path)) {
             std::filesystem::create_directory(crashInfo.path);
         }
@@ -303,7 +279,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         };
         crashInfo.logger.getSink(0)->setFormatter(std::move(formatter));
         crashInfo.logger.addSink(std::make_shared<io::FileSink>(
-            crashInfo.path / ("trace_" + crashInfo.date + ".log"),
+            logFilePath,
             makePolymorphic<io::PatternFormatter>("{tm:.3%F %T.} [{lvl}] {msg}", false)
         ));
         crashInfo.logger.setLevel(io::LogLevel::Trace);
@@ -318,7 +294,7 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
 
         crashInfo.logger.info("Process Crashed! Generating Stacktrace and MiniDump...");
         try {
-            genMiniDumpFile(e);
+            genMiniDumpFile(e, dumpFilePath);
         } catch (...) {
             crashInfo.logger.error("!!! Error In GenMiniDumpFile !!!");
             ll::error_utils::printCurrentException(crashInfo.logger);
@@ -354,6 +330,19 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.info("Modules:");
         if (!EnumerateLoadedModulesW64(crashInfo.process, dumpModules, nullptr)) {
             throw error_utils::getLastSystemError();
+        }
+        if (getLeviConfig().modules.crashLogger.uploadToSentry) {
+            SentryUploader sentryUploader{
+                std::string(getServiceUuid()),
+                dumpFilePath.filename().string(),
+                u8str2str(dumpFilePath.u8string()),
+                logFilePath.filename().string(),
+                u8str2str(logFilePath.u8string()),
+                ll::getLoaderVersion().to_string().find('+') != std::string::npos,
+                ll::getLoaderVersion().to_string()
+            };
+            sentryUploader.addModSentryInfo(ll::getSelfModIns()->getName(), "https://43a888504c33385bfd2e570c9ac939aa@o4508652421906432.ingest.us.sentry.io/4508652563398656", ll::getLoaderVersion().to_string());
+            sentryUploader.uploadAll();
         }
     } catch (...) {
         crashInfo.logger.error("!!! Error in CrashLogger !!!");

@@ -45,6 +45,8 @@ LLNDAPI bool isStdoutSupportAnsi();
 
 LLNDAPI bool isWine();
 
+LLNDAPI std::string getSystemVersion();
+
 class DynamicLibrary {
     HandleT lib = nullptr;
 
