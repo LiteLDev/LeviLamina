@@ -45,7 +45,6 @@ public:
 
 static std::unique_ptr<CrashLoggerNew> cln;
 
-
 std::string toString(_CONTEXT const& c) {
     return fmt::format("RAX: 0x{:016X}  RBX: 0x{:016X}  RCX: 0x{:016X}\n", c.Rax, c.Rbx, c.Rcx)
          + fmt::format("RDX: 0x{:016X}  RSI: 0x{:016X}  RDI: 0x{:016X}\n", c.Rdx, c.Rsi, c.Rdi)
@@ -66,6 +65,50 @@ std::string toString(_CONTEXT const& c) {
          );
 }
 
+bool saveCrashInfo(
+    const std::filesystem::path& logPath,
+    const std::string&           minidumpName,
+    const std::string&           traceName
+) {
+    auto path = logPath / fmt::format("sentry_{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
+    return file_utils::writeFile(path, fmt::format("{}\n{}", minidumpName, traceName));
+}
+
+// Read log and dump file path from logs/crash/sentry_xxx, then submit them to sentry
+void submitCrashInfo() {
+    auto path = file_utils::u8path(pl::pl_log_path) / u8"crash";
+    for (auto& entry : std::filesystem::directory_iterator(path)) {
+        if (entry.path().filename().string().starts_with("sentry_")) {
+            auto content = file_utils::readFile(entry.path());
+            if (!content) {
+                continue;
+            }
+            auto paths = string_utils::splitByPattern(*content, "\n");
+            if (paths.size() != 2) {
+                continue;
+            }
+            auto           dmpFilePath = file_utils::u8path(pl::pl_log_path) / u8"crash" / paths[0];
+            auto           logFilePath = file_utils::u8path(pl::pl_log_path) / u8"crash" / paths[1];
+            SentryUploader sentryUploader{
+                std::string(getServiceUuid()),
+                dmpFilePath.filename().string(),
+                u8str2str(dmpFilePath.u8string()),
+                logFilePath.filename().string(),
+                u8str2str(logFilePath.u8string()),
+                ll::getLoaderVersion().to_string().find('+') != std::string::npos,
+                ll::getLoaderVersion().to_string()
+            };
+            sentryUploader.addModSentryInfo(
+                ll::getSelfModIns()->getName(),
+                "https://43a888504c33385bfd2e570c9ac939aa@o4508652421906432.ingest.us.sentry.io/4508652563398656",
+                ll::getLoaderVersion().to_string()
+            );
+            sentryUploader.uploadAll();
+            std::filesystem::remove(entry.path());
+        }
+    }
+}
+
 void CrashLogger::init() {
     auto& config = getLeviConfig();
 
@@ -78,6 +121,9 @@ void CrashLogger::init() {
     }
     if (config.modules.crashLogger.useBuiltin) {
         cln = std::make_unique<CrashLoggerNew>();
+        if (config.modules.crashLogger.uploadToSentry) {
+            submitCrashInfo();
+        }
         return;
     }
 
@@ -106,6 +152,11 @@ void CrashLogger::init() {
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
         crashLoggerPtr->error("Couldn't Create CrashLogger Daemon Process"_tr());
         error_utils::printException(error_utils::getLastSystemError(), *crashLoggerPtr);
+        // If failed to create CrashLogger Daemon Process, use built-in CrashLogger
+        cln = std::make_unique<CrashLoggerNew>();
+        if (config.modules.crashLogger.uploadToSentry) {
+            submitCrashInfo();
+        }
         return;
     }
 
@@ -254,8 +305,13 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.date     = fmt::format("{:%Y-%m-%d_%H-%M-%S}", fmt::localtime(_time64(nullptr)));
         crashInfo.settings = ll::getLeviConfig().modules.crashLogger;
         crashInfo.path     = file_utils::u8path(pl::pl_log_path) / u8"crash";
-        auto logFilePath = crashInfo.path / ("trace_" + crashInfo.date + ".log");
-        auto dumpFilePath = crashInfo.path / string_utils::str2u8str("minidump_" + crashInfo.date + ".dmp");
+        auto logFilePath   = crashInfo.path / ("trace_" + crashInfo.date + ".log");
+        auto dumpFilePath  = crashInfo.path / string_utils::str2u8str("minidump_" + crashInfo.date + ".dmp");
+        // Save log and dump file path to logs/crash/sentry_xxx for later use
+        if (getLeviConfig().modules.crashLogger.uploadToSentry) {
+            saveCrashInfo(crashInfo.path, dumpFilePath.filename().string(), logFilePath.filename().string());
+        }
+
         if (!std::filesystem::is_directory(crashInfo.path)) {
             std::filesystem::create_directory(crashInfo.path);
         }
@@ -330,19 +386,6 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.info("Modules:");
         if (!EnumerateLoadedModulesW64(crashInfo.process, dumpModules, nullptr)) {
             throw error_utils::getLastSystemError();
-        }
-        if (getLeviConfig().modules.crashLogger.uploadToSentry) {
-            SentryUploader sentryUploader{
-                std::string(getServiceUuid()),
-                dumpFilePath.filename().string(),
-                u8str2str(dumpFilePath.u8string()),
-                logFilePath.filename().string(),
-                u8str2str(logFilePath.u8string()),
-                ll::getLoaderVersion().to_string().find('+') != std::string::npos,
-                ll::getLoaderVersion().to_string()
-            };
-            sentryUploader.addModSentryInfo(ll::getSelfModIns()->getName(), "https://43a888504c33385bfd2e570c9ac939aa@o4508652421906432.ingest.us.sentry.io/4508652563398656", ll::getLoaderVersion().to_string());
-            sentryUploader.uploadAll();
         }
     } catch (...) {
         crashInfo.logger.error("!!! Error in CrashLogger !!!");

@@ -32,7 +32,7 @@ struct LeviConfig {
         } command{};
         struct {
             bool                       enabled        = true;
-            bool                       useBuiltin     = true;
+            bool                       useBuiltin     = false;
             bool                       uploadToSentry = true;
             std::optional<std::string> externalpath;
         } crashLogger{};

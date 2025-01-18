@@ -9,11 +9,12 @@
 #include "ll/core/SentryUploader.h"
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
+#include "mc/platform/UUID.h"
 
 using json = nlohmann::json;
 
 namespace ll {
-auto sentryLogger = io::LoggerRegistry::getInstance().getOrCreate("CrashLogger");
+auto sentryLogger = io::LoggerRegistry::getInstance().getOrCreate("SentryUploader");
 
 std::string compressDataGzip(const std::string& data) {
     std::ostringstream compressedStream;
@@ -31,31 +32,6 @@ std::string compressDataGzip(const std::string& data) {
     std::ostringstream resultStream;
     resultStream << inFile.rdbuf();
     return resultStream.str();
-}
-
-std::string generateUUID() {
-    thread_local static std::mt19937_64 rng(std::random_device{}());
-    std::array<unsigned char, 16>       bytes{};
-    uint64_t                            random_part1 = rng();
-    uint64_t                            random_part2 = rng();
-
-    static_assert(sizeof(uint64_t) == 8, "Unexpected size");
-    std::memcpy(bytes.data(), &random_part1, 8);
-    std::memcpy(bytes.data() + 8, &random_part2, 8);
-    bytes[6]               = (unsigned char)((bytes[6] & 0x0F) | 0x40);
-    bytes[8]               = (unsigned char)((bytes[8] & 0x3F) | 0x80);
-    static const char* hex = "0123456789abcdef";
-    std::string        uuid;
-    uuid.reserve(36);
-
-    for (size_t i = 0; i < 16; ++i) {
-        uuid.push_back(hex[(bytes[i] >> 4) & 0x0F]);
-        uuid.push_back(hex[bytes[i] & 0x0F]);
-        if (i == 3 || i == 5 || i == 7 || i == 9) {
-            uuid.push_back('-');
-        }
-    }
-    return uuid;
 }
 
 SentryUploader::SentryUploader(
@@ -112,14 +88,13 @@ void SentryUploader::uploadAll() {
     std::vector<std::thread> threads;
 
     threads.reserve(mModsSentryConfig.size());
-    sentryLogger->info("");
     sentryLogger->info("Uploading crash report to Sentry...");
     for (const auto& sentryConfig : mModsSentryConfig) {
         threads.emplace_back([=, this]() {
             try {
                 std::string url = sentryConfig.dsnInfo.protocol + "://" + sentryConfig.dsnInfo.host + "/api/"
                                 + sentryConfig.dsnInfo.projectId + "/envelope/";
-                std::string eventId = generateUUID();
+                std::string eventId = mce::UUID::random().asString();
 
                 json envelopeHeader = {
                     {"event_id",          eventId},
