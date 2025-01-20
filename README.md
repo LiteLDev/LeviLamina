@@ -25,8 +25,6 @@ For more information, please refer to [the documentation](https://lamina.levimc.
 > [!WARNING]
 > **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/common_guides/usage_guidelines.en.md).**
 
-If you have any questions or comments about this disclaimer, please contact the developer.
-
 ## Install & Usage
 
 Please refer to [Quickstart](https://lamina.levimc.org/quickstart/)
