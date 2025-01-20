@@ -14,7 +14,7 @@ Or, if you want to use a Windows container, run the following command:
 docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
 ```
 
-We also provide Docker Compose files for both Linux and Windows containers at [wine/compose.yaml](wine/compose.yaml) and [windows/compose.yaml](windows/compose.yaml) respectively. To use them, download the file to an empty directory and run `docker compose up -d`.
+We also provide Docker Compose files for both Linux and Windows containers at [wine/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/wine/compose.yaml) and [windows/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/windows/compose.yaml) respectively. To use them, download the file to an empty directory and run `docker compose up -d`.
 
 ### Environment variables
 

@@ -20,7 +20,7 @@ docker run -d -it -e EULA=TRUE -p 19132:19132/udp -v levilamina-server-data:C:\d
 docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://github.bibk.top -e GO_MODULE_PROXY_URL=https://goproxy.cn -p 19132:19132/udp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
 ```
 
-我们还提供了适用于 Linux 和 Windows 容器的 Docker Compose 文件，分别位于 [wine/compose.yaml](wine/compose.yaml) 和 [windows/compose.yaml](windows/compose.yaml)。
+我们还提供了适用于 Linux 和 Windows 容器的 Docker Compose 文件，分别位于 [wine/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/wine/compose.yaml) 和 [windows/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/windows/compose.yaml)。
 要使用它们，请将文件下载到一个空目录并运行 `docker compose up -d`。
 
 ### 环境变量
