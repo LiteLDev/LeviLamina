@@ -5,21 +5,41 @@
 
 namespace ll::data {
 class CancellableCallback {
-    std::function<void()> callback;
-    std::atomic_bool      available{true};
+    union F {
+        std::function<void()> storage;
+        ~F() {}
+    } callback;
+    struct Dtor {
+        F& f;
+        ~Dtor() { f.storage.~function(); }
+    };
+    std::atomic_bool available;
 
 public:
-    CancellableCallback(std::function<void()>&& callback) : callback(std::move(callback)) {}
+    CancellableCallback(std::function<void()>&& callback) : callback{std::move(callback)}, available{true} {}
 
-    bool cancel() { return available.exchange(false); }
+    bool cancel() {
+        if (available.exchange(false)) {
+            Dtor d{callback};
+            return true;
+        }
+        return false;
+    }
+
+    ~CancellableCallback() { cancel(); }
 
     void call() {
-        if (available.exchange(false)) callback();
+        if (available.exchange(false)) {
+            Dtor d{callback};
+            callback.storage();
+        }
     }
+
     template <class F>
     bool moveTo(F&& f) {
         if (available.exchange(false)) {
-            return f(std::move(callback));
+            Dtor d{callback};
+            return f(std::move(callback.storage));
         }
         return false;
     }
