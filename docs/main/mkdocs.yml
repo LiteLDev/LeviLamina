@@ -14,7 +14,7 @@ nav:
   - Player Guides:
     - Install:
       - player_guides/install.md
-      - Install on Docker: https://github.com/LiteLDev/levilamina-docker-server
+      - player_guides/install_on_docker.md
     - player_guides/troubleshooting.md
 
   - Developer Guides:

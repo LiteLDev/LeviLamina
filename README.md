@@ -12,20 +12,18 @@
 ![English](https://img.shields.io/badge/English-inactive?style=for-the-badge)
 [![中文](https://img.shields.io/badge/简体中文-informational?style=for-the-badge)](README.zh.md)
 
-A lightweight, modular and versatile mod loader for Minecraft Bedrock Edition, formerly known as LiteLoaderBDS
+A lightweight, modular, and versatile mod loader for Minecraft Bedrock Edition, formerly known as LiteLoaderBDS
 
-LeviLamina is an unofficial mod loader designed to offer indispensable API support for Minecraft Bedrock Edition. It boasts a comprehensive API, an array of utility interfaces, a robust event system, and comprehensive support for basic interfaces. LeviLamina provides an expansive API, a powerful event system, and a wealth of encapsulated development infrastructure interfaces, forming a solid foundation for augmenting the Minecraft Bedrock Edition with additional gameplay features and functionalities. By leveraging mods, the process of extending Bedrock functionality becomes effortless, with a user-friendly development process and an adaptable approach.
+LeviLamina is an unofficial mod loader designed to provide essential API support for Minecraft Bedrock Edition. It features a comprehensive API, a range of utility interfaces, a powerful event system, and extensive support for basic interfaces. LeviLamina offers a solid foundation for augmenting Minecraft with additional gameplay features and functionalities, making the modding process effortless through its user-friendly development environment and flexible approach.
 
-Developers can effortlessly author mods in languages such as C++, JavaScript, Lua, Python, C#, and others. This seamless integration empowers them to effortlessly expand and personalize Bedrock functionality, facilitating an intuitive learning experience and unparalleled flexibility.
+Developers can easily write mods in languages such as C++, JavaScript, Lua, Python, C#, and more. This seamless integration allows developers to expand and personalize the game’s functionality effortlessly, providing an intuitive and highly flexible development experience.
 
 For more information, please refer to [the documentation](https://lamina.levimc.org).
 
-## Security
+## EULA & Usage Guidelines
 
 > [!WARNING]
 > **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/common_guides/usage_guidelines.en.md).**
-
-If you have any questions or comments about this disclaimer, please contact the developer.
 
 ## Install & Usage
 
@@ -37,15 +35,11 @@ Please refer to [Quickstart](https://lamina.levimc.org/quickstart/)
 
 ## Acknowledgements
 
-We extend sincere thanks to [all donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ) and all the developers who have contributed to this project.
-
-**Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
-as [CLion](https://www.jetbrains.com/clion/)**.  
-[<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
+We sincerely thank [all donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx2ndbuC-9Bj5SR-FlJ-HUBZWy0wODjQCDb8OkzuKTFJg?e=QBF6nQ) and all the developers who have contributed to this project.
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit pull requests (PRs).
 
 LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
 
@@ -59,4 +53,4 @@ This project exists thanks to all the people who contribute.
 
 Copyright © 2024 LeviMC, All rights reserved.
 
-This project is licensed under the LGPL-3.0 License - see the [COPYING](COPYING) and [COPYING.LESSER](COPYING.LESSER) files for details.
+This project is licensed under the LGPL-3.0 License for its non-closed source parts - see the [COPYING](COPYING) and [COPYING.LESSER](COPYING.LESSER) files for details.

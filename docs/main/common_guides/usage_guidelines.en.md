@@ -10,7 +10,7 @@ In short, we hope these guidelines help you understand what you can and cannot d
 
 ### Important Legal Agreements
 
-[The LeviLamina End User License Agreement](../../../EULA.en.md) (EULA) is a legal agreement between you and us ([*Levimc*](https://github.com/Levimc)). The EULA covers your use of *LeviLamina* products and governs your use of our website and how we resolve disputes. It is your responsibility to understand and comply with the EULA.
+[The LeviLamina End User License Agreement](../../../EULA.en.md) (EULA) is a legal agreement between you and us ([*LeviMC*](https://github.com/LeviMC)). The EULA covers your use of *LeviLamina* products and governs your use of our website and how we resolve disputes. It is your responsibility to understand and comply with the EULA.
 
 These guidelines should be followed alongside the EULA but do not form part of the EULA. They exist because we currently believe that allowing some flexibility in the use of *LeviLamina* is a good idea.
 
@@ -18,7 +18,7 @@ These guidelines should be followed alongside the EULA but do not form part of t
 
 For all uses (whether permitted or not):
 
-- All rights (including copyright, trademark rights, and related rights) in the name, brand, assets, and any derivatives remain owned by *Levimc* and will always be retained.
+- All rights (including copyright, trademark rights, and related rights) in the name, brand, assets, and any derivatives remain owned by *LeviMC* and will always be retained.
 - All permissions and consents are granted at our discretion and may be revoked at any time if we deem it appropriate or if we do not like what you are doing.
 - All rights are expressly reserved.
 
@@ -38,7 +38,7 @@ If you use any part of any name, brand, or asset, then:
 - **Do not** engage in any activities that could damage or undermine our name, brand, or assets (for example: gambling, pornography, violence, terrorism, or other unsafe/adult content).
 - **Do not** redistribute our products or any modifications of our products or product documentation.
 - **Do not** allow unfair or unreasonable access to any content created by us.
-- **Do not** impersonate *Levimc* or appear to be associated with or supported by *Levimc*, and explicitly state:
+- **Do not** impersonate *LeviMC* or appear to be associated with or supported by *LeviMC*, and explicitly state:
   - You (rather than us) are responsible for the products or services (including events, servers, books, and handmade items).
   - Who the publisher, manufacturer, seller, organizer, and/or owner is.
   - The contact and contact information for products, services, or any related purchases (chat and forum links are not acceptable).
@@ -46,7 +46,7 @@ If you use any part of any name, brand, or asset, then:
 - **Do not** attempt to reverse *LeviLamina* for malicious purposes!
 - We do **not** want you to use *LeviLamina* to develop any programs that could compromise Minecraft's security, or any other products that we consider to be a threat to Minecraft's security.
 
-Include a disclaimer in a prominent position on your products, listings, descriptions, websites/pages, and all other related materials stating: "Not an official *Levimc* product [product/service/event/etc.]. Not approved by *Levimc* and not associated with *Levimc*."
+Include a disclaimer in a prominent position on your products, listings, descriptions, websites/pages, and all other related materials stating: "Not an official *LeviMC* product [product/service/event/etc.]. Not approved by *LeviMC* and not associated with *LeviMC*."
 
 These guidelines are designed to help you understand what we do and do not want to happen when you use our name, brand, and assets. We aim to be as open, honest, and, most importantly, trustworthy as possible. We hope you will treat us the same way.
 
