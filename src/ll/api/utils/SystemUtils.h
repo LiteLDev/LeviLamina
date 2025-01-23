@@ -11,6 +11,7 @@
 #include "ll/api/base/Macro.h"
 #include "ll/api/base/StdInt.h"
 #include "ll/api/data/TmWithMs.h"
+#include "ll/api/data/Version.h"
 
 namespace ll::inline utils::sys_utils {
 
@@ -45,7 +46,7 @@ LLNDAPI bool isStdoutSupportAnsi();
 
 LLNDAPI bool isWine();
 
-LLNDAPI std::string getSystemVersion();
+LLNDAPI data::Version getSystemVersion();
 
 class DynamicLibrary {
     HandleT lib = nullptr;

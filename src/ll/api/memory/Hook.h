@@ -122,7 +122,7 @@ public:
     HookRegistrar& operator=(HookRegistrar&&) noexcept = default;
 };
 
-struct LL_EBO Hook{};
+struct LL_EBO Hook {};
 
 } // namespace ll::memory
 

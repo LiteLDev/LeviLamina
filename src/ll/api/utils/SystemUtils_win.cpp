@@ -54,12 +54,12 @@ bool isWine() {
     return result;
 }
 
-std::string getSystemVersion() {
-    RTL_OSVERSIONINFOW osVersionInfoW = [] {
-        RTL_OSVERSIONINFOW osVersionInfoW{};
-        HMODULE            hMod = ::GetModuleHandleW(L"ntdll.dll");
+data::Version getSystemVersion() {
+    OSVERSIONINFOW osVersionInfoW = [] {
+        OSVERSIONINFOW osVersionInfoW{};
+        HMODULE        hMod = GetModuleHandle(L"ntdll.dll");
         if (hMod) {
-            using RtlGetVersionPtr = uint(WINAPI*)(PRTL_OSVERSIONINFOW);
+            using RtlGetVersionPtr = uint(WINAPI*)(POSVERSIONINFOW);
             auto fxPtr             = (RtlGetVersionPtr)::GetProcAddress(hMod, "RtlGetVersion");
             if (fxPtr != nullptr) {
                 osVersionInfoW.dwOSVersionInfoSize = sizeof(osVersionInfoW);
@@ -70,18 +70,15 @@ std::string getSystemVersion() {
         }
         return osVersionInfoW;
     }();
-    if (osVersionInfoW.dwMajorVersion == 0) {
-        return "Unknown";
-    }
-    std::string osVersion =
-        std::to_string(osVersionInfoW.dwMajorVersion) + '.' + std::to_string(osVersionInfoW.dwMinorVersion);
-    if (osVersionInfoW.dwBuildNumber != 0) {
-        osVersion += '.' + std::to_string(osVersionInfoW.dwBuildNumber);
-    }
+    data::Version version{
+        (uint16_t)osVersionInfoW.dwMajorVersion,
+        (uint16_t)osVersionInfoW.dwMinorVersion,
+        (uint16_t)osVersionInfoW.dwBuildNumber
+    };
     if (osVersionInfoW.szCSDVersion[0] != 0) {
-        osVersion += ' ' + wstr2str(osVersionInfoW.szCSDVersion);
+        version.preRelease.emplace(wstr2str(osVersionInfoW.szCSDVersion));
     }
-    return osVersion;
+    return version;
 }
 
 std::span<std::byte> getImageRange(std::string_view name) {

@@ -82,7 +82,7 @@ Expected<> I18n::load(std::filesystem::path const& path) noexcept try {
             if (!f.is_regular_file() || f.path().extension() != u8".json") {
                 continue;
             }
-            auto           localeCode = f.path().stem().string();
+            auto           localeCode = string_utils::u8str2str(f.path().stem().u8string());
             nlohmann::json j;
             std::ifstream(f.path()) >> j;
             addNestedData(*this, localeCode, j);

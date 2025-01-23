@@ -191,11 +191,11 @@ LLNDAPI std::string
 }
 
 [[nodiscard]] inline std::string const& u8str2strConst(std::u8string const& str) {
-    return *reinterpret_cast<const std::string*>(&str);
+    return *reinterpret_cast<std::string const*>(&str);
 }
 
 [[nodiscard]] inline std::u8string const& str2u8strConst(std::string const& str) {
-    return *reinterpret_cast<const std::u8string*>(&str);
+    return *reinterpret_cast<std::u8string const*>(&str);
 }
 
 [[nodiscard]] inline std::string_view u8sv2sv(std::u8string_view str) {
@@ -203,7 +203,7 @@ LLNDAPI std::string
 }
 
 [[nodiscard]] inline std::u8string_view sv2u8sv(std::string_view str) {
-    return {reinterpret_cast<const char8_t*>(str.data()), str.size()};
+    return {reinterpret_cast<char8_t const*>(str.data()), str.size()};
 }
 
 LLNDAPI Expected<bool> svtobool(std::string_view);

@@ -48,8 +48,8 @@ public:
     atomic_backoff(bool) : count(1) { pause(); }
 
     //! No Copy
-    atomic_backoff(const atomic_backoff&)            = delete;
-    atomic_backoff& operator=(const atomic_backoff&) = delete;
+    atomic_backoff(atomic_backoff const&)            = delete;
+    atomic_backoff& operator=(atomic_backoff const&) = delete;
 
     //! Pause for a while.
     void pause() {
@@ -67,7 +67,7 @@ public:
 //! Spin WHILE the condition is true.
 /** T and U should be comparable types. */
 template <typename T, typename C>
-T spin_wait_while(const std::atomic<T>& location, C comp, std::memory_order order) {
+T spin_wait_while(std::atomic<T> const& location, C comp, std::memory_order order) {
     atomic_backoff backoff;
     T              snapshot = location.load(order);
     while (comp(snapshot)) {
@@ -81,7 +81,7 @@ T spin_wait_while(const std::atomic<T>& location, C comp, std::memory_order orde
 /** T and U should be comparable types. */
 template <typename T, typename U>
 T spin_wait_while_eq(
-    const std::atomic<T>& location,
+    std::atomic<T> const& location,
     const U               value,
     std::memory_order     order = std::memory_order_acquire
 ) {
@@ -92,7 +92,7 @@ T spin_wait_while_eq(
 /** T and U should be comparable types. */
 template <typename T, typename U>
 T spin_wait_until_eq(
-    const std::atomic<T>& location,
+    std::atomic<T> const& location,
     const U               value,
     std::memory_order     order = std::memory_order_acquire
 ) {
@@ -215,7 +215,7 @@ class concurrent_priority_queue {
 public:
     using value_type      = T;
     using reference       = T&;
-    using const_reference = const T&;
+    using const_reference = T const&;
 
     using size_type       = std::size_t;
     using difference_type = std::ptrdiff_t;
@@ -228,11 +228,11 @@ protected:
 public:
     concurrent_priority_queue() : concurrent_priority_queue(allocator_type{}) {}
 
-    explicit concurrent_priority_queue(const allocator_type& alloc) : mark(0), my_size(0), my_compare(), c(alloc) {
+    explicit concurrent_priority_queue(allocator_type const& alloc) : mark(0), my_size(0), my_compare(), c(alloc) {
         my_aggregator.initialize_handler(functor{this});
     }
 
-    explicit concurrent_priority_queue(const Compare& compare, const allocator_type& alloc = allocator_type())
+    explicit concurrent_priority_queue(Compare const& compare, allocator_type const& alloc = allocator_type())
     : mark(0),
       my_size(0),
       my_compare(compare),
@@ -240,7 +240,7 @@ public:
         my_aggregator.initialize_handler(functor{this});
     }
 
-    explicit concurrent_priority_queue(size_type init_capacity, const allocator_type& alloc = allocator_type())
+    explicit concurrent_priority_queue(size_type init_capacity, allocator_type const& alloc = allocator_type())
     : mark(0),
       my_size(0),
       my_compare(),
@@ -251,8 +251,8 @@ public:
 
     explicit concurrent_priority_queue(
         size_type             init_capacity,
-        const Compare&        compare,
-        const allocator_type& alloc = allocator_type()
+        Compare const&        compare,
+        allocator_type const& alloc = allocator_type()
     )
     : mark(0),
       my_size(0),
@@ -266,8 +266,8 @@ public:
     concurrent_priority_queue(
         InputIterator         begin,
         InputIterator         end,
-        const Compare&        compare,
-        const allocator_type& alloc = allocator_type()
+        Compare const&        compare,
+        allocator_type const& alloc = allocator_type()
     )
     : mark(0),
       my_compare(compare),
@@ -278,20 +278,20 @@ public:
     }
 
     template <typename InputIterator>
-    concurrent_priority_queue(InputIterator begin, InputIterator end, const allocator_type& alloc = allocator_type())
+    concurrent_priority_queue(InputIterator begin, InputIterator end, allocator_type const& alloc = allocator_type())
     : concurrent_priority_queue(begin, end, Compare(), alloc) {}
 
     concurrent_priority_queue(
         std::initializer_list<value_type> init,
-        const Compare&                    compare,
-        const allocator_type&             alloc = allocator_type()
+        Compare const&                    compare,
+        allocator_type const&             alloc = allocator_type()
     )
     : concurrent_priority_queue(init.begin(), init.end(), compare, alloc) {}
 
-    concurrent_priority_queue(std::initializer_list<value_type> init, const allocator_type& alloc = allocator_type())
+    concurrent_priority_queue(std::initializer_list<value_type> init, allocator_type const& alloc = allocator_type())
     : concurrent_priority_queue(init, Compare(), alloc) {}
 
-    concurrent_priority_queue(const concurrent_priority_queue& other)
+    concurrent_priority_queue(concurrent_priority_queue const& other)
     : mark(other.mark),
       my_size(other.my_size.load(std::memory_order_relaxed)),
       my_compare(other.my_compare),
@@ -299,7 +299,7 @@ public:
         my_aggregator.initialize_handler(functor{this});
     }
 
-    concurrent_priority_queue(const concurrent_priority_queue& other, const allocator_type& alloc)
+    concurrent_priority_queue(concurrent_priority_queue const& other, allocator_type const& alloc)
     : mark(other.mark),
       my_size(other.my_size.load(std::memory_order_relaxed)),
       my_compare(other.my_compare),
@@ -315,7 +315,7 @@ public:
         my_aggregator.initialize_handler(functor{this});
     }
 
-    concurrent_priority_queue(concurrent_priority_queue&& other, const allocator_type& alloc)
+    concurrent_priority_queue(concurrent_priority_queue&& other, allocator_type const& alloc)
     : mark(other.mark),
       my_size(other.my_size.load(std::memory_order_relaxed)),
       my_compare(other.my_compare),
@@ -323,7 +323,7 @@ public:
         my_aggregator.initialize_handler(functor{this});
     }
 
-    concurrent_priority_queue& operator=(const concurrent_priority_queue& other) {
+    concurrent_priority_queue& operator=(concurrent_priority_queue const& other) {
         if (this != &other) {
             c    = other.c;
             mark = other.mark;
@@ -374,7 +374,7 @@ public:
     size_type size() const { return my_size.load(std::memory_order_relaxed); }
 
     /* This operation can be safely used concurrently with other push, try_pop or emplace operations. */
-    void push(const value_type& value)
+    void push(value_type const& value)
         requires(std::is_copy_constructible_v<value_type>)
     {
         cpq_operation op_data(value, PUSH_OP);
@@ -456,7 +456,7 @@ private:
             function_data const* fn;
             value_type*          elem;
         };
-        cpq_operation(const value_type& value, operation_type t) : type(t), elem(const_cast<value_type*>(&value)) {}
+        cpq_operation(value_type const& value, operation_type t) : type(t), elem(const_cast<value_type*>(&value)) {}
 
         cpq_operation(function_data const& f, operation_type t) : type(t), fn(&f) {}
     };
@@ -644,7 +644,7 @@ private:
 protected:
     vector_type c;
 
-    friend bool operator==(const concurrent_priority_queue& lhs, const concurrent_priority_queue& rhs) {
+    friend bool operator==(concurrent_priority_queue const& lhs, concurrent_priority_queue const& rhs) {
         return lhs.c == rhs.c;
     }
 };

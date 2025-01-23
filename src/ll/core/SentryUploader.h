@@ -12,16 +12,16 @@ namespace ll {
 class SentryUploader {
 public:
     SentryUploader(
-        const std::string& user,
-        const std::string& minidmpName,
-        const std::string& minidumpPath,
-        const std::string& traceName,
-        const std::string& tracePath,
-        bool               isDev,
-        const std::string& leviLaminaVersion
+        std::string user,
+        std::string minidmpName,
+        std::string minidumpPath,
+        std::string traceName,
+        std::string tracePath,
+        bool        isDev,
+        std::string leviLaminaVersion
     );
 
-    void addModSentryInfo(const std::string& modName, const std::string& dsn, const std::string& releaseVersion);
+    void addModSentryInfo(std::string const& modName, std::string const& dsn, std::string const& releaseVersion);
     void uploadAll();
 
 private:
@@ -37,13 +37,14 @@ private:
         std::string releaseVersion;
     };
 
-    std::string readFile(const std::string& filePath);
-    void        sendToSentry(
-               const SentryInfo&     sentryInfo,
-               const std::string&    url,
-               const nlohmann::json& envelopeHeader,
-               const nlohmann::json& eventPayload
-           );
+    std::string readFile(std::string const& filePath);
+
+    void sendToSentry(
+        SentryInfo const&     sentryInfo,
+        std::string const&    url,
+        nlohmann::json const& envelopeHeader,
+        nlohmann::json const& eventPayload
+    );
 
     struct {
         std::string name;

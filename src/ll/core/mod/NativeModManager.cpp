@@ -48,15 +48,15 @@ formatDependencyError(pl::dependency_walker::DependencyIssueItem const& item, st
         stream << indent << "module: "_tr() << string_utils::u8str2str(item.mPath.filename().u8string()) << '\n';
         if (!item.mMissingModule.empty()) {
             stream << indent << "missing module:"_tr() << '\n';
-            for (const auto& missingModule : item.mMissingModule) {
+            for (auto const& missingModule : item.mMissingModule) {
                 stream << indent << "|- " << missingModule << '\n';
             }
         }
         if (!item.mMissingProcedure.empty()) {
             stream << indent << "missing content:"_tr() << '\n';
-            for (const auto& [module, missingProcedure] : item.mMissingProcedure) {
+            for (auto const& [module, missingProcedure] : item.mMissingProcedure) {
                 stream << indent << "|- " << module << '\n';
-                for (const auto& procedure : missingProcedure) {
+                for (auto const& procedure : missingProcedure) {
                     stream << indent << "|---- " << memory::SymbolView(procedure).toString() << '\n';
                 }
             }

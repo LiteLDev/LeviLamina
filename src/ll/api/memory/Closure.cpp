@@ -10,7 +10,7 @@
 
 namespace ll::memory {
 extern "C" { // from trampoline
-std::size_t generate_trampoline(void* jit_code_address, const void* call_target, int = 0);
+std::size_t generate_trampoline(void* jit_code_address, void const* call_target, int = 0);
 void*       _asm_get_this_pointer();
 }
 void* ClosureBase::getClosureData() { return _asm_get_this_pointer(); }

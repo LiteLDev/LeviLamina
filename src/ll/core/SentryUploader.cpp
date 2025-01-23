@@ -4,8 +4,10 @@
 
 #include <zlib.h>
 
+#include "ll/api/i18n/I18n.h"
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
+#include "ll/api/utils/ErrorUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 #include "ll/core/SentryUploader.h"
 #include "mc/platform/UUID.h"
@@ -15,9 +17,9 @@ using json = nlohmann::json;
 namespace ll {
 auto sentryLogger = io::LoggerRegistry::getInstance().getOrCreate("SentryUploader");
 
-std::string compressDataGzip(const std::string& data) {
-    std::vector<char> compressedBuffer;
-    z_stream          deflateStream{};
+std::string compressDataGzip(std::string const& data) {
+    std::string compressedBuffer;
+    z_stream    deflateStream{};
     if (deflateInit2(&deflateStream, Z_BEST_COMPRESSION, Z_DEFLATED, 15 + 16, 8, Z_DEFAULT_STRATEGY) != Z_OK) {
         throw std::runtime_error("Failed to initialize compression stream");
     }
@@ -25,77 +27,76 @@ std::string compressDataGzip(const std::string& data) {
         deflateEnd(&deflateStream);
         throw std::runtime_error("Data too large for compression");
     }
-    deflateStream.avail_in = static_cast<uint>(data.size());
-    deflateStream.next_in  = (byte*)data.data();
+    deflateStream.avail_in = static_cast<uInt>(data.size());
+    deflateStream.next_in  = (Bytef*)data.data();
     size_t bufferSize      = data.size();
     compressedBuffer.resize(bufferSize);
-    deflateStream.avail_out = static_cast<uint>(bufferSize);
-    deflateStream.next_out  = (byte*)compressedBuffer.data();
+    deflateStream.avail_out = static_cast<uInt>(bufferSize);
+    deflateStream.next_out  = (Bytef*)compressedBuffer.data();
     if (deflate(&deflateStream, Z_FINISH) != Z_STREAM_END) {
         deflateEnd(&deflateStream);
         throw std::runtime_error("Gzip compression failed");
     }
     compressedBuffer.resize(deflateStream.total_out);
     deflateEnd(&deflateStream);
-    return {compressedBuffer.begin(), compressedBuffer.end()};
+    return compressedBuffer;
 }
 
 SentryUploader::SentryUploader(
-    const std::string& user,
-    const std::string& minidmpName,
-    const std::string& minidumpPath,
-    const std::string& traceName,
-    const std::string& tracePath,
-    bool               isDev,
-    const std::string& leviLaminaVersion
+    std::string user,
+    std::string minidmpName,
+    std::string minidumpPath,
+    std::string traceName,
+    std::string tracePath,
+    bool        isDev,
+    std::string leviLaminaVersion
 )
 : mIsDev(isDev),
-  mLeviLaminaVersion(leviLaminaVersion),
-  mUser(user),
-  mMiniDumpName(minidmpName),
-  mMinidumpPath(minidumpPath),
-  mTraceName(traceName),
-  mTracePath(tracePath) {
-    mMinidumpContent       = readFile(minidumpPath);
-    mAdditionalFileContent = readFile(tracePath);
+  mLeviLaminaVersion(std::move(leviLaminaVersion)),
+  mUser(std::move(user)),
+  mMiniDumpName(std::move(minidmpName)),
+  mMinidumpPath(std::move(minidumpPath)),
+  mTraceName(std::move(traceName)),
+  mTracePath(std::move(tracePath)) {
+    mMinidumpContent       = readFile(mMinidumpPath);
+    mAdditionalFileContent = readFile(mTracePath);
     mOSInfo.name           = sys_utils::isWine() ? "Linux(Wine)" : "Windows";
-    mOSInfo.version        = sys_utils::getSystemVersion();
+    mOSInfo.version        = sys_utils::getSystemVersion().to_string();
 }
 
 void SentryUploader::addModSentryInfo(
-    const std::string& modName,
-    const std::string& dsn,
-    const std::string& releaseVersion
-) {
-    try {
-        auto protocolEnd = dsn.find("://");
-        auto authEnd     = dsn.find('@', protocolEnd + 3);
-        auto lastSlash   = dsn.rfind('/');
+    std::string const& modName,
+    std::string const& dsn,
+    std::string const& releaseVersion
+) try {
+    auto protocolEnd = dsn.find("://");
+    auto authEnd     = dsn.find('@', protocolEnd + 3);
+    auto lastSlash   = dsn.rfind('/');
 
-        if (protocolEnd == std::string::npos || authEnd == std::string::npos || lastSlash == std::string::npos) {
-            throw std::invalid_argument("Invalid DSN format");
-        }
-
-        SentryInfo::DSNInfo info;
-        info.protocol  = dsn.substr(0, protocolEnd);
-        auto auth      = dsn.substr(protocolEnd + 3, authEnd - protocolEnd - 3);
-        info.publicKey = auth.substr(0, auth.find(':'));
-        info.host      = dsn.substr(authEnd + 1, lastSlash - authEnd - 1);
-        info.projectId = dsn.substr(lastSlash + 1);
-
-        mModsSentryConfig.push_back({info, dsn, modName, releaseVersion});
-    } catch (const std::exception& e) {
-        sentryLogger->error("Error adding mod sentry info: {}", e.what());
-        return;
+    if (protocolEnd == std::string::npos || authEnd == std::string::npos || lastSlash == std::string::npos) {
+        throw std::invalid_argument("Invalid DSN format");
     }
+
+    SentryInfo::DSNInfo info;
+    info.protocol  = dsn.substr(0, protocolEnd);
+    auto auth      = dsn.substr(protocolEnd + 3, authEnd - protocolEnd - 3);
+    info.publicKey = auth.substr(0, auth.find(':'));
+    info.host      = dsn.substr(authEnd + 1, lastSlash - authEnd - 1);
+    info.projectId = dsn.substr(lastSlash + 1);
+
+    mModsSentryConfig.push_back({info, dsn, modName, releaseVersion});
+} catch (...) {
+    sentryLogger->error("Error adding mod sentry info:");
+    error_utils::printCurrentException(*sentryLogger);
+    return;
 }
 
 void SentryUploader::uploadAll() {
     std::vector<std::thread> threads;
 
     threads.reserve(mModsSentryConfig.size());
-    sentryLogger->info("Uploading crash report to Sentry...");
-    for (const auto& sentryConfig : mModsSentryConfig) {
+    sentryLogger->info("Uploading crash report to Sentry..."_tr());
+    for (auto const& sentryConfig : mModsSentryConfig) {
         threads.emplace_back([=, this]() {
             try {
                 std::string url = sentryConfig.dsnInfo.protocol + "://" + sentryConfig.dsnInfo.host + "/api/"
@@ -121,8 +122,9 @@ void SentryUploader::uploadAll() {
                 };
 
                 sendToSentry(sentryConfig, url, envelopeHeader, eventPayload);
-            } catch (const std::exception& e) {
-                sentryLogger->error("Error uploading to DSN: {}, Error: {}", sentryConfig.dsn, e.what());
+            } catch (...) {
+                sentryLogger->error("Error uploading to DSN: {}", sentryConfig.dsn);
+                error_utils::printCurrentException(*sentryLogger);
             }
         });
     }
@@ -132,7 +134,7 @@ void SentryUploader::uploadAll() {
     }
 }
 
-std::string SentryUploader::readFile(const std::string& filePath) {
+std::string SentryUploader::readFile(std::string const& filePath) {
     std::ifstream file(filePath, std::ios::binary);
     if (!file.is_open()) {
         throw std::runtime_error("Failed to open file: " + filePath);
@@ -141,10 +143,10 @@ std::string SentryUploader::readFile(const std::string& filePath) {
 }
 
 void SentryUploader::sendToSentry(
-    const SentryInfo&     sentryInfo,
-    const std::string&    url,
-    const nlohmann::json& envelopeHeader,
-    const nlohmann::json& eventPayload
+    SentryInfo const&     sentryInfo,
+    std::string const&    url,
+    nlohmann::json const& envelopeHeader,
+    nlohmann::json const& eventPayload
 ) {
     json eventHeader = {
         {  "type",                                      "event"},
@@ -191,12 +193,12 @@ void SentryUploader::sendToSentry(
     );
 
     if (response.status_code == 200) {
-        sentryLogger->info("Mod: {} uploaded successfully to Sentry", sentryInfo.modName);
-        sentryLogger->info("Event ID: {}", to_string(json::parse(response.text)["id"]));
+        sentryLogger->info("Mod: {} uploaded successfully to Sentry"_tr(sentryInfo.modName));
+        sentryLogger->info("Event ID: {}"_tr(to_string(json::parse(response.text)["id"])));
     } else {
-        sentryLogger->error("Mod: {} Failed to upload to Sentry", sentryInfo.modName);
-        sentryLogger->error("Status Code: {}", response.status_code);
-        sentryLogger->error("Response: {}", response.text);
+        sentryLogger->error("Mod: {} Failed to upload to Sentry"_tr(sentryInfo.modName));
+        sentryLogger->error("Status Code: {}"_tr(response.status_code));
+        sentryLogger->error("Response: {}"_tr(response.text));
     }
 }
 } // namespace ll

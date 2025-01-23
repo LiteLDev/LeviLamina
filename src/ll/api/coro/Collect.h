@@ -21,8 +21,8 @@ private:
     std::atomic_size_t                          counter;
 
 public:
-    CollectAllAwaiter(const CollectAllAwaiter&)            = delete;
-    CollectAllAwaiter& operator=(const CollectAllAwaiter&) = delete;
+    CollectAllAwaiter(CollectAllAwaiter const&)            = delete;
+    CollectAllAwaiter& operator=(CollectAllAwaiter const&) = delete;
 
     constexpr CollectAllAwaiter(Container&& input)
     : tasks(std::move(input)),
@@ -65,8 +65,8 @@ private:
     Result                  results;
 
 public:
-    CollectAllTupleAwaiter(const CollectAllTupleAwaiter&)            = delete;
-    CollectAllTupleAwaiter& operator=(const CollectAllTupleAwaiter&) = delete;
+    CollectAllTupleAwaiter(CollectAllTupleAwaiter const&)            = delete;
+    CollectAllTupleAwaiter& operator=(CollectAllTupleAwaiter const&) = delete;
 
     constexpr CollectAllTupleAwaiter(T<Ts>&&... in) : tasks(std::move(in)...) {}
     constexpr CollectAllTupleAwaiter(Input&& in) : tasks(std::move(in)) {}

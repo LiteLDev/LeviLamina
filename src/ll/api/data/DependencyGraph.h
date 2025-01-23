@@ -107,7 +107,7 @@ public:
             }
         }
         for (size_t i = 0; i < sorted.size(); i++) {
-            for (const auto& node : data.at(sorted[i]).dependBy) {
+            for (auto const& node : data.at(sorted[i]).dependBy) {
                 if (--csize[node] == 0) {
                     sorted.push_back(node);
                 }

@@ -281,7 +281,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
             std::exception_ptr yeptr;
             std::swap(ePtr, yeptr);
             std::rethrow_exception(yeptr);
-        } catch (const seh_exception& e) {
+        } catch (seh_exception const& e) {
             res += fmt::format(
                 "[0x{:0>8X}:{}] {}",
                 (uint)e.code().value(),
@@ -293,7 +293,7 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
             for (size_t i = 0; i < unkExc.NumberParameters; i++) {
                 res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
             }
-        } catch (const std::system_error& e) {
+        } catch (std::system_error const& e) {
             res += fmt::format(
                 "[0x{:0>8X}:{}] {}",
                 (uint)e.code().value(),
@@ -301,10 +301,10 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
                 string_utils::tou8str(e.what())
             );
             ePtr = getNested(e);
-        } catch (const std::exception& e) {
+        } catch (std::exception const& e) {
             res  += string_utils::tou8str(e.what());
             ePtr  = getNested(e);
-        } catch (const std::string& e) {
+        } catch (std::string const& e) {
             res += string_utils::tou8str(e);
         } catch (char const* e) {
             res += string_utils::tou8str(e);

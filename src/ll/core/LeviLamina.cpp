@@ -23,30 +23,14 @@ std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
 io::Logger& getLogger() { return getSelfModIns()->getLogger(); }
 
 std::string_view getServiceUuid() {
-    namespace fs = std::filesystem;
-
-    static bool        inited = false;
-    static std::string serverUuid;
-
-    if (!inited) {
-        auto& dataDir  = getSelfModIns()->getDataDir();
-        auto  uuidPath = dataDir / u8"statisticsUuid";
-        if (!fs::exists(uuidPath)) {
+    static std::string serverUuid = [] {
+        auto uuidPath = getSelfModIns()->getDataDir() / u8"statisticsUuid";
+        return *file_utils::readFile(uuidPath).or_else([&] {
             std::string uuid = mce::UUID::random().asString();
             file_utils::writeFile(uuidPath, uuid);
-            serverUuid = std::move(uuid);
-        } else {
-            auto uuidFile = file_utils::readFile(uuidPath);
-            if (uuidFile.has_value()) {
-                serverUuid = uuidFile.value();
-            } else {
-                std::string uuid = mce::UUID::random().asString();
-                file_utils::writeFile(uuidPath, uuid);
-                serverUuid = std::move(uuid);
-            }
-        }
-        inited = true;
-    }
+            return std::optional{std::move(uuid)};
+        });
+    }();
     return serverUuid;
 }
 
@@ -57,10 +41,14 @@ data::Version getLoaderVersion() {
             LL_VERSION_MINOR,
             LL_VERSION_PATCH,
         };
-        v.build = LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA);
 #ifdef LL_VERSION_PRERELEASE
         v.preRelease = ll::data::PreRelease{LL_VERSION_PRERELEASE};
 #endif
+
+#ifndef LL_VERSION_PUBLISH
+        v.build = LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA);
+#endif
+
         return v;
     }();
     return ver;

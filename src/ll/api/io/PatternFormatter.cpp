@@ -10,7 +10,7 @@ template <class T, class Char>
 struct fmt::formatter<BracketedArg<T>, Char> : formatter<T, Char> {
     template <class FormatContext>
     auto format(BracketedArg<T> const& arg, FormatContext& ctx) const -> decltype(ctx.out()) {
-        const auto& value = arg.value;
+        auto const& value = arg.value;
         auto        out   = ctx.out();
         if (arg.bracketed) {
             *out++ = static_cast<Char>('[');

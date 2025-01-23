@@ -42,8 +42,8 @@ public:
 
     ~DbgEngData() { ReleaseSRWLockExclusive(&srw); }
 
-    DbgEngData(const DbgEngData&)            = delete;
-    DbgEngData& operator=(const DbgEngData&) = delete;
+    DbgEngData(DbgEngData const&)            = delete;
+    DbgEngData& operator=(DbgEngData const&) = delete;
 
     void release() noexcept {
         // "Phoenix singleton" - destroy and set to null, so that it can be initialized later again
@@ -125,7 +125,7 @@ public:
         return attached;
     }
 
-    StackTraceEntryInfo getInfo(const void* const address) {
+    StackTraceEntryInfo getInfo(void const* const address) {
         std::optional<size_t> displacement = 0;
         std::string           name;
         std::optional<ulong>  line = 0;

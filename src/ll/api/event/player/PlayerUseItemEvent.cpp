@@ -11,7 +11,7 @@ namespace ll::event::inline player {
 
 void PlayerUseItemEvent::serialize(CompoundTag& nbt) const {
     Cancellable::serialize(nbt);
-    nbt["item"] =serializeRefObj(item());
+    nbt["item"] = serializeRefObj(item());
 }
 
 ItemStack& PlayerUseItemEvent::item() const { return mItem; }
