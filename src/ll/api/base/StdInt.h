@@ -10,7 +10,6 @@ using ullong = unsigned long long;
 
 using uchar = unsigned char;
 using schar = signed char;
-using byte  = uchar;
 
 using ldouble = long double;
 

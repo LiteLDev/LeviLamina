@@ -23,10 +23,10 @@ public:
         BlockPos max, y, g, t, z, b, p;
     };
 
-    [[nodiscard]] constexpr BoundingBox() noexcept : min(0), max(0) {};
+    [[nodiscard]] constexpr BoundingBox() noexcept : min(0), max(0) {}
     [[nodiscard]] constexpr BoundingBox(class BoundingBox const& k) noexcept = default;
     constexpr BoundingBox& operator=(class BoundingBox const& k) noexcept    = default;
-    [[nodiscard]] constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max) {};
+    [[nodiscard]] constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max) {}
 
     template <class F>
     constexpr bool forEachPos(F&& todo) const {

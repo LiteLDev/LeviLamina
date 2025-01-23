@@ -28,7 +28,7 @@ void StructureTemplate::placeInWorld(
 }
 
 
-std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& name, CompoundTag const& tag) {
+std::unique_ptr<StructureTemplate> StructureTemplate::create(std::string_view name, CompoundTag const& tag) {
     return ll::service::getLevel()
         .transform([&](auto& level) {
             auto res = std::make_unique<StructureTemplate>(name, level.getUnknownBlockTypeRegistry());
@@ -42,7 +42,7 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(const std::string& 
 }
 
 std::unique_ptr<StructureTemplate> StructureTemplate::create(
-    const std::string& name,
+    std::string_view   name,
     BlockSource&       blockSource,
     BoundingBox const& boundingBox,
     bool               ignoreBlocks,

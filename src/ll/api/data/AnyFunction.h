@@ -78,7 +78,7 @@ class AnyFunction {
         char             soo[AnyFunctionObjBase::smallObjSize];
     };
 
-    constexpr bool isLarge() const noexcept { return dataPtr != static_cast<const void*>(&soo); }
+    constexpr bool isLarge() const noexcept { return dataPtr != static_cast<void const*>(&soo); }
 
     constexpr bool hasValue() const noexcept { return dataPtr; }
 

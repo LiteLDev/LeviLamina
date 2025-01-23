@@ -40,10 +40,10 @@ public:
         bool            ignoreEntities = false
     ) const;
 
-    LLNDAPI static std::unique_ptr<StructureTemplate> create(const std::string& name, CompoundTag const& tag);
+    LLNDAPI static std::unique_ptr<StructureTemplate> create(std::string_view name, CompoundTag const& tag);
 
     LLNDAPI static std::unique_ptr<StructureTemplate> create(
-        const std::string& name,
+        std::string_view   name,
         BlockSource&       blockSource,
         BoundingBox const& boundingBox,
         bool               ignoreBlocks   = false,

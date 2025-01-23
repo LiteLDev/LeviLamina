@@ -39,7 +39,7 @@ typedef HRESULT(STDMETHODCALLTYPE* PFN_IDXGIFactory2_CreateSwapChainForCoreWindo
     /* [annotation][in] */
     _In_ IUnknown* pWindow,
     /* [annotation][in] */
-    _In_ const DXGI_SWAP_CHAIN_DESC1* pDesc,
+    _In_ DXGI_SWAP_CHAIN_DESC1 const* pDesc,
     /* [annotation][in] */
     _In_opt_ IDXGIOutput* pRestrictToOutput,
     /* [annotation][out] */
@@ -70,9 +70,9 @@ static uint64_t       gpuVideoMemory;
 static uint32_t       gpuVendorID;
 static uint32_t       gpuDeviceID;
 
-const std::string& getGPUName() { return gpuName; }
+std::string const& getGPUName() { return gpuName; }
 
-const std::string& getRendererType() { return rendererType; }
+std::string const& getRendererType() { return rendererType; }
 
 static void replaceVtable(void* vptr, size_t index, void** outOldFunc, void* newFunc) {
     void** ptr     = (void**)vptr;
@@ -394,7 +394,7 @@ HRESULT STDMETHODCALLTYPE                      IDXGIFactory2_CreateSwapChainForC
                          IDXGIFactory2*               This,
                          IUnknown*                    pDevice,
                          IUnknown*                    pWindow,
-                         const DXGI_SWAP_CHAIN_DESC1* pDesc,
+                         DXGI_SWAP_CHAIN_DESC1 const* pDesc,
                          IDXGIOutput*                 pRestrictToOutput,
                          IDXGISwapChain1**            ppSwapChain
                      ) {

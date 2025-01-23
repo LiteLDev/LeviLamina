@@ -189,7 +189,7 @@ typedef const struct _s__RTTICompleteObjectLocator {
     __RTTIClassHierarchyDescriptor* pClassDescriptor; // describes inheritance hierarchy
 } __RTTICompleteObjectLocator;
 
-typedef const class type_info& __RTtypeidReturnType;
+typedef class type_info const& __RTtypeidReturnType;
 
 extern "C" void* __cdecl __RTDynamicCast(
     void const*            ptr,

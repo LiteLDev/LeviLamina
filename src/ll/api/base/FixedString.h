@@ -25,7 +25,7 @@ struct FixedString {
     [[nodiscard]] constexpr char&       operator[](size_t idx) noexcept { return buf[idx]; }
 
     template <size_t Ny>
-    consteval auto operator+(const FixedString<Ny>& other) noexcept {
+    consteval auto operator+(FixedString<Ny> const& other) noexcept {
         FixedString<N + Ny> res{};
         std::copy_n(buf, N, res.buf);
         std::copy_n(other.buf, Ny, N + res.buf);

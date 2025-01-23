@@ -67,10 +67,16 @@ else
     end
 end
 
+option("publish")
+    set_default(false)
+    set_showmenu(true)
+option_end()
+
 option("tests")
     set_default(false)
     set_showmenu(true)
     set_description("Enable tests")
+option_end()
 
 option("target_type")
     set_default("server")
@@ -280,6 +286,10 @@ target("LeviLamina")
                 io.writefile("src-test/client/include_all.cpp", "// auto gen when build test\n")
             end
         end)
+    end
+
+    if has_config("publish") then
+        add_defines("LL_VERSION_PUBLISH")
     end
 
     if is_mode("debug") then

@@ -29,7 +29,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 
     ExpressionNode::registerQueryFunction(
         "query.is_levilamina",
-        [&](RenderParams&, const std::vector<ExpressionNode>&) -> MolangScriptArg const& {
+        [&](RenderParams&, std::vector<ExpressionNode> const&) -> MolangScriptArg const& {
             static auto v = MolangScriptArg(true);
             return v;
         },
@@ -42,7 +42,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     );
     ExpressionNode::registerQueryFunction(
         "query.homo_number",
-        [&](RenderParams&, const std::vector<ExpressionNode>&) -> MolangScriptArg const& {
+        [&](RenderParams&, std::vector<ExpressionNode> const&) -> MolangScriptArg const& {
             static auto v = MolangScriptArg(114514);
             return v;
         },

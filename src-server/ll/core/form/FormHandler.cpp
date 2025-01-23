@@ -22,16 +22,16 @@
 namespace ll::form::handler {
 
 
-nlohmann::ordered_json jsonCppValueToNlohmannOrderedJson(const Json::Value& value) {
+nlohmann::ordered_json jsonCppValueToNlohmannOrderedJson(Json::Value const& value) {
     if (value.isObject()) {
         nlohmann::ordered_json result = nlohmann::ordered_json::object();
-        for (const auto& key : value.getMemberNames()) {
+        for (auto const& key : value.getMemberNames()) {
             result[key] = jsonCppValueToNlohmannOrderedJson(value[key]);
         }
         return result;
     } else if (value.isArray()) {
         nlohmann::ordered_json result = nlohmann::ordered_json::array();
-        for (const auto& item : value) {
+        for (auto const& item : value) {
             result.push_back(jsonCppValueToNlohmannOrderedJson(item));
         }
         return result;

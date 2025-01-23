@@ -43,7 +43,7 @@ static constexpr uint colors256[] = {
     0xffd0d0d0, 0xffdadada, 0xffe4e4e4, 0xffeeeeee
 };
 
-bool parseColor(const char* s, ImU32* col, int* skipChars) {
+bool parseColor(char const* s, ImU32* col, int* skipChars) {
     if (s[0] != '\033' || s[1] != '[') {
         return false;
     }
@@ -60,7 +60,7 @@ bool parseColor(const char* s, ImU32* col, int* skipChars) {
         return true;
     }
 
-    const char* seqEnd = &s[2];
+    char const* seqEnd = &s[2];
     while (*seqEnd != 'm') {
         seqEnd++;
     }
@@ -69,7 +69,7 @@ bool parseColor(const char* s, ImU32* col, int* skipChars) {
     std::string                   colorStr;
     char                          colorArgsType = 0;
     std::vector<std::string_view> colorArgs;
-    for (const auto& el : string_utils::splitByPattern(seq, ";")) {
+    for (auto const& el : string_utils::splitByPattern(seq, ";")) {
         if (colorStr.empty()) {
             if (el.size() == 2 && el[0] == '3') { // 30-39
                 colorStr = el;
@@ -133,14 +133,14 @@ bool parseColor(const char* s, ImU32* col, int* skipChars) {
 }
 
 void ImFont_RenderAnsiText(
-    const ImFont* font,
+    ImFont const* font,
     ImDrawList*   draw_list,
     float         size,
     ImVec2        pos,
     ImU32         col,
-    const ImVec4& clip_rect,
-    const char*   text_begin,
-    const char*   text_end,
+    ImVec4 const& clip_rect,
+    char const*   text_begin,
+    char const*   text_end,
     float         wrap_width    = 0.0f,
     bool          cpu_fine_clip = false
 ) {
@@ -159,13 +159,13 @@ void ImFont_RenderAnsiText(
     const float scale             = size / font->FontSize;
     const float line_height       = font->FontSize * scale;
     const bool  word_wrap_enabled = (wrap_width > 0.0f);
-    const char* word_wrap_eol     = nullptr;
+    char const* word_wrap_eol     = nullptr;
 
     // Fast-forward to first visible line
-    const char* s = text_begin;
+    char const* s = text_begin;
     if (y + line_height < clip_rect.y && !word_wrap_enabled)
         while (y + line_height < clip_rect.y && s < text_end) {
-            s  = (const char*)memchr(s, '\n', text_end - s);
+            s  = (char const*)memchr(s, '\n', text_end - s);
             s  = s ? s + 1 : text_end;
             y += line_height;
         }
@@ -174,10 +174,10 @@ void ImFont_RenderAnsiText(
     // Note that very large horizontal line will still be affected by the issue (e.g. a one megabyte string buffer
     // without a newline will likely crash atm)
     if (text_end - s > 10000 && !word_wrap_enabled) {
-        const char* s_end = s;
+        char const* s_end = s;
         float       y_end = y;
         while (y_end < clip_rect.w && s_end < text_end) {
-            s_end  = (const char*)memchr(s_end, '\n', text_end - s_end);
+            s_end  = (char const*)memchr(s_end, '\n', text_end - s_end);
             s      = s ? s + 1 : text_end;
             y_end += line_height;
         }
@@ -200,7 +200,7 @@ void ImFont_RenderAnsiText(
     {
         int         index     = 0;
         int         skipChars = 0;
-        const char* sLocal    = s;
+        char const* sLocal    = s;
         ImU32       temp_col  = col;
         while (sLocal < text_end) {
             if (sLocal <= text_end - 4 && parseColor(sLocal, &temp_col, &skipChars)) {
@@ -219,7 +219,7 @@ void ImFont_RenderAnsiText(
     }
 
 
-    const char* s1 = s;
+    char const* s1 = s;
     while (s < text_end) {
         if (char_skip[s - s1]) {
             s++;
@@ -278,7 +278,7 @@ void ImFont_RenderAnsiText(
         }
 
         float char_width = 0.0f;
-        if (const ImFontGlyph* glyph = font->FindGlyph((ImWchar)c)) {
+        if (ImFontGlyph const* glyph = font->FindGlyph((ImWchar)c)) {
             char_width = glyph->AdvanceX * scale;
 
             // Arbitrarily assume that both space and tabs are empty glyphs as an optimization
@@ -373,14 +373,14 @@ void ImFont_RenderAnsiText(
 
 void ImDrawList_AddAnsiText(
     ImDrawList*   drawList,
-    const ImFont* font,
+    ImFont const* font,
     float         font_size,
-    const ImVec2& pos,
+    ImVec2 const& pos,
     ImU32         col,
-    const char*   text_begin,
-    const char*   text_end           = nullptr,
+    char const*   text_begin,
+    char const*   text_end           = nullptr,
     float         wrap_width         = 0.0f,
-    const ImVec4* cpu_fine_clip_rect = nullptr
+    ImVec4 const* cpu_fine_clip_rect = nullptr
 ) {
     if ((col & IM_COL32_A_MASK) == 0) return;
 
@@ -417,12 +417,12 @@ void ImDrawList_AddAnsiText(
     );
 }
 
-void RenderAnsiText(ImVec2 pos, const char* text, const char* text_end, bool hide_text_after_hash) {
+void RenderAnsiText(ImVec2 pos, char const* text, char const* text_end, bool hide_text_after_hash) {
     ImGuiContext& g      = *GImGui;
     ImGuiWindow*  window = g.CurrentWindow;
 
     // Hide anything after a '##' string
-    const char* text_display_end;
+    char const* text_display_end;
     if (hide_text_after_hash) {
         text_display_end = FindRenderedTextEnd(text, text_end);
     } else {
@@ -443,7 +443,7 @@ void RenderAnsiText(ImVec2 pos, const char* text, const char* text_end, bool hid
     }
 }
 
-void RenderAnsiTextWrapped(ImVec2 pos, const char* text, const char* text_end, float wrap_width) {
+void RenderAnsiTextWrapped(ImVec2 pos, char const* text, char const* text_end, float wrap_width) {
     ImGuiContext& g      = *GImGui;
     ImGuiWindow*  window = g.CurrentWindow;
 
@@ -470,7 +470,7 @@ void textAnsiUnformatted(std::string_view view) {
 
     ImGuiContext& g = *GImGui;
     IM_ASSERT(text != nullptr);
-    const char* text_begin = text;
+    char const* text_begin = text;
 
     const ImVec2 text_pos(window->DC.CursorPos.x, window->DC.CursorPos.y + window->DC.CurrLineTextBaseOffset);
     const float  wrap_pos_x   = window->DC.TextWrapPos;
@@ -484,7 +484,7 @@ void textAnsiUnformatted(std::string_view view) {
         // because we are likely the biggest and only item on the line.
         // - We use memchr(), pay attention that well optimized versions of those str/mem functions are much faster
         // than a casually written loop.
-        const char*  line        = text;
+        char const*  line        = text;
         const float  line_height = GetTextLineHeight();
         const ImRect clip_rect   = window->ClipRect;
         ImVec2       text_size(0, 0);
@@ -498,7 +498,7 @@ void textAnsiUnformatted(std::string_view view) {
                 if (lines_skippable > 0) {
                     int lines_skipped = 0;
                     while (line < text_end && lines_skipped < lines_skippable) {
-                        const char* line_end = (const char*)memchr(line, '\n', text_end - line);
+                        char const* line_end = (char const*)memchr(line, '\n', text_end - line);
                         if (!line_end) line_end = text_end;
                         line = line_end + 1;
                         lines_skipped++;
@@ -513,7 +513,7 @@ void textAnsiUnformatted(std::string_view view) {
                 while (line < text_end) {
                     if (IsClippedEx(line_rect, 0)) break;
 
-                    const char* line_end = (const char*)memchr(line, '\n', text_end - line);
+                    char const* line_end = (char const*)memchr(line, '\n', text_end - line);
                     if (!line_end) line_end = text_end;
                     const ImVec2 line_size = CalcTextSize(line, line_end, false);
                     text_size.x            = ImMax(text_size.x, line_size.x);
@@ -527,7 +527,7 @@ void textAnsiUnformatted(std::string_view view) {
                 // Count remaining lines
                 int lines_skipped = 0;
                 while (line < text_end) {
-                    const char* line_end = (const char*)memchr(line, '\n', text_end - line);
+                    char const* line_end = (char const*)memchr(line, '\n', text_end - line);
                     if (!line_end) line_end = text_end;
                     line = line_end + 1;
                     lines_skipped++;

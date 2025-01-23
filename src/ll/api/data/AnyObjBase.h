@@ -30,8 +30,8 @@ protected:
 
 public:
     AnyObjBase()                             = default;
-    AnyObjBase(const AnyObjBase&)            = delete;
-    AnyObjBase& operator=(const AnyObjBase&) = delete;
+    AnyObjBase(AnyObjBase const&)            = delete;
+    AnyObjBase& operator=(AnyObjBase const&) = delete;
 
     virtual ~AnyObjBase() = default;
 

@@ -35,7 +35,7 @@ static std::vector<std::filesystem::path> getFilePathFromIDWriteFontFace(IDWrite
         void*  refKey{};
         UINT32 refKeySize = 0;
         if (SUCCEEDED(hr)) {
-            hr = fontFile->GetReferenceKey((const void**)&refKey, &refKeySize);
+            hr = fontFile->GetReferenceKey((void const**)&refKey, &refKeySize);
         }
         CComPtr<IDWriteFontFileLoader> loader;
         if (SUCCEEDED(hr)) {

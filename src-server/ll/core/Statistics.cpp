@@ -129,31 +129,11 @@ struct Statistics::Impl {
     }
 
     Impl() {
-        namespace fs = std::filesystem;
-
-        auto& dataDir = getSelfModIns()->getDataDir();
-
-        if (!fs::exists(dataDir)) {
-            fs::create_directory(dataDir);
-        }
-        auto uuidPath = dataDir / u8"statisticsUuid";
-        if (!fs::exists(uuidPath)) {
-            std::string uuid   = mce::UUID::random().asString();
-            json["serverUUID"] = uuid;
-            file_utils::writeFile(uuidPath, uuid);
-        } else {
-            auto uuidFile = file_utils::readFile(uuidPath);
-            if (uuidFile.has_value()) {
-                json["serverUUID"] = uuidFile.value();
-            } else {
-                std::string uuid = mce::UUID::random().asString();
-                file_utils::writeFile(uuidPath, uuid);
-            }
-        }
-        json["osName"]    = sys_utils::isWine() ? "Linux(wine)" : "Windows";
-        json["osArch"]    = "amd64";
-        json["osVersion"] = "";
-        json["coreCount"] = std::thread::hardware_concurrency();
+        json["serverUUID"] = getServiceUuid();
+        json["osName"]     = sys_utils::isWine() ? "Linux(wine)" : "Windows";
+        json["osArch"]     = "amd64";
+        json["osVersion"]  = "";
+        json["coreCount"]  = std::thread::hardware_concurrency();
 
         coro::keepThis([&]() -> coro::CoroTask<> {
             co_await (1.0min * random_utils::rand(3.0, 6.0));

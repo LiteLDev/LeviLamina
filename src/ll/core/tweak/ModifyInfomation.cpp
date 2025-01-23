@@ -40,7 +40,7 @@ LL_STATIC_HOOK(
 
 auto serverLogger = io::LoggerRegistry::getInstance().getOrCreate("Server");
 
-int printfbufc(const char* format, va_list const& pargs) {
+int printfbufc(char const* format, va_list const& pargs) {
     int     retval;
     va_list argcopy;
     va_copy(argcopy, pargs);
@@ -136,7 +136,7 @@ LL_TYPE_INSTANCE_HOOK(
     RakNet::RakPeer,
     &RakNet::RakPeer::$SetOfflinePingResponse,
     void,
-    const char* data,
+    char const* data,
     uint        dataSize
 ) {
     std::string_view dataView{data, dataSize};

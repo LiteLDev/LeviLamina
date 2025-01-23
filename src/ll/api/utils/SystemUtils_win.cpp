@@ -54,6 +54,33 @@ bool isWine() {
     return result;
 }
 
+data::Version getSystemVersion() {
+    OSVERSIONINFOW osVersionInfoW = [] {
+        OSVERSIONINFOW osVersionInfoW{};
+        HMODULE        hMod = GetModuleHandle(L"ntdll.dll");
+        if (hMod) {
+            using RtlGetVersionPtr = uint(WINAPI*)(POSVERSIONINFOW);
+            auto fxPtr             = (RtlGetVersionPtr)::GetProcAddress(hMod, "RtlGetVersion");
+            if (fxPtr != nullptr) {
+                osVersionInfoW.dwOSVersionInfoSize = sizeof(osVersionInfoW);
+                if (0 == fxPtr(&osVersionInfoW)) {
+                    return osVersionInfoW;
+                }
+            }
+        }
+        return osVersionInfoW;
+    }();
+    data::Version version{
+        (uint16_t)osVersionInfoW.dwMajorVersion,
+        (uint16_t)osVersionInfoW.dwMinorVersion,
+        (uint16_t)osVersionInfoW.dwBuildNumber
+    };
+    if (osVersionInfoW.szCSDVersion[0] != 0) {
+        version.preRelease.emplace(wstr2str(osVersionInfoW.szCSDVersion));
+    }
+    return version;
+}
+
 std::span<std::byte> getImageRange(std::string_view name) {
     static auto process = GetCurrentProcess();
     HMODULE     rangeStart;

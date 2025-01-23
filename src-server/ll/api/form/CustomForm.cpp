@@ -252,7 +252,7 @@ public:
 
     void setTitle(std::string const& title) { mTitle = title; }
 
-    void append(const std::shared_ptr<CustomFormElement>& element) { mElements.push_back(element); }
+    void append(std::shared_ptr<CustomFormElement> const& element) { mElements.push_back(element); }
 
     void sendTo(Player& player, Callback callback) {
         uint id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));

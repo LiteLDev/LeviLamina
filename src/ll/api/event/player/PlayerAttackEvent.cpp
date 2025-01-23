@@ -25,7 +25,7 @@ LL_TYPE_INSTANCE_HOOK(
     bool,
     Actor&                  ac,
     ActorDamageCause const& cause,
-    bool doPredictiveSound
+    bool                    doPredictiveSound
 ) {
     auto ev = PlayerAttackEvent(*this, ac, cause);
     EventBus::getInstance().publish(ev);

@@ -31,7 +31,7 @@ class LogWindow {
     bool             autoScroll = true;
 
 public:
-    LogWindow(const std::string& title) : title(title) { clear(); }
+    LogWindow(std::string const& title) : title(title) { clear(); }
 
     void clear() {
         buf.clear();
@@ -39,7 +39,7 @@ public:
         lineOffsets.push_back(0);
     }
 
-    void addLog(const std::string& log) {
+    void addLog(std::string const& log) {
         if (log.empty()) {
             return;
         }
@@ -80,14 +80,14 @@ public:
                 ImGui::LogToClipboard();
             }
             ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, 0));
-            const char* bufBegin = this->buf.begin();
-            const char* bufEnd   = this->buf.end();
+            char const* bufBegin = this->buf.begin();
+            char const* bufEnd   = this->buf.end();
             if (filter.IsActive()) {
                 // Don't use the clipper when Filter is enabled because we don't have random access
                 // to the result of the filter
                 for (int lineNum = 0; lineNum < lineOffsets.size(); lineNum++) {
-                    const char* lineStart = bufBegin + lineOffsets[lineNum];
-                    const char* lineEnd =
+                    char const* lineStart = bufBegin + lineOffsets[lineNum];
+                    char const* lineEnd =
                         (lineNum + 1 < lineOffsets.size()) ? (bufBegin + lineOffsets[lineNum + 1] - 1) : bufEnd;
                     if (filter.PassFilter(lineStart, lineEnd)) {
                         textAnsiUnformatted({lineStart, lineEnd});
@@ -99,8 +99,8 @@ public:
                 clipper.Begin((int)lineOffsets.size());
                 while (clipper.Step()) {
                     for (int lineNum = clipper.DisplayStart; lineNum < clipper.DisplayEnd; lineNum++) {
-                        const char* lineStart = bufBegin + lineOffsets[lineNum];
-                        const char* lineEnd =
+                        char const* lineStart = bufBegin + lineOffsets[lineNum];
+                        char const* lineEnd =
                             (lineNum + 1 < lineOffsets.size()) ? (bufBegin + lineOffsets[lineNum + 1] - 1) : bufEnd;
                         textAnsiUnformatted({lineStart, lineEnd});
                     }
