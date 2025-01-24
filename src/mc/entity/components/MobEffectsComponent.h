@@ -15,6 +15,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MobEffectsComponent& operator=(MobEffectsComponent const&);
+    MobEffectsComponent(MobEffectsComponent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::MobEffectsComponent& operator=(::MobEffectsComponent&&);

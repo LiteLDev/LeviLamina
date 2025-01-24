@@ -17,6 +17,10 @@ struct ItemTag;
 
 class RecipeIngredient : public ::ItemDescriptorCount {
 public:
+    // prevent constructor by default
+    RecipeIngredient& operator=(RecipeIngredient const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

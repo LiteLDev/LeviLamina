@@ -6,6 +6,10 @@ namespace cricket {
 
 struct SenderOptions {
 public:
+    // prevent constructor by default
+    SenderOptions& operator=(SenderOptions const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI SenderOptions(::cricket::SenderOptions const&);

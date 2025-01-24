@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BiomeDecorationFeature& operator=(BiomeDecorationFeature const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI BiomeDecorationFeature(::BiomeDecorationFeature&&);

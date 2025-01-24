@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CreativeGroupInfo& operator=(CreativeGroupInfo const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

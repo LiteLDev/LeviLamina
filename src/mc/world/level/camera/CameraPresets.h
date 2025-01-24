@@ -53,6 +53,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CameraPresets(CameraPresets const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _discardInvalidPresets();

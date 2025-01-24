@@ -33,6 +33,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StrictEntityContext& operator=(StrictEntityContext const&);
+    StrictEntityContext(StrictEntityContext const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI StrictEntityContext();

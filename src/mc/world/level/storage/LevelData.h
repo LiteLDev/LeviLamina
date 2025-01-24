@@ -135,6 +135,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelData& operator=(LevelData const&);
+    LevelData(LevelData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI LevelData(::LevelData&&);

@@ -11,6 +11,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkAddress(NetworkAddress const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::NetworkAddress& operator=(::NetworkAddress const&);

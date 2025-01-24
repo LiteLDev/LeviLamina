@@ -16,6 +16,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RedactableString& operator=(RedactableString const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI RedactableString();

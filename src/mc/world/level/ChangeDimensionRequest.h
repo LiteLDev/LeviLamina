@@ -35,6 +35,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChangeDimensionRequest& operator=(ChangeDimensionRequest const&);
+    ChangeDimensionRequest(ChangeDimensionRequest const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ChangeDimensionRequest();

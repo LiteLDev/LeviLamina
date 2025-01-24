@@ -19,6 +19,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UnverifiedCertificate& operator=(UnverifiedCertificate const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI UnverifiedCertificate(::UnverifiedCertificate&& other);

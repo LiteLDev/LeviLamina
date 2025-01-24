@@ -128,6 +128,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ScreenData& operator=(ScreenData const&);
+        ScreenData(ScreenData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ScreenData(::ItemStackRequestActionHandler::ScreenData&&);

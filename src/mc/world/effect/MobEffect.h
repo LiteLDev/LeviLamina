@@ -52,6 +52,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        FactorCalculationData(FactorCalculationData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);

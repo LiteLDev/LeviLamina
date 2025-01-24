@@ -76,6 +76,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelStorageWriteBatch& operator=(LevelStorageWriteBatch const&);
+    LevelStorageWriteBatch(LevelStorageWriteBatch const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

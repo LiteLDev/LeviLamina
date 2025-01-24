@@ -29,6 +29,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        MessageComponent& operator=(MessageComponent const&);
+        MessageComponent(MessageComponent const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI MessageComponent(::CommandMessage::MessageComponent&& m);

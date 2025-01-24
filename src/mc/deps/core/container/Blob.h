@@ -56,6 +56,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Blob& operator=(Blob const&);
+    Blob(Blob const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI Blob();

@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    InventoryTransactionItemGroup(InventoryTransactionItemGroup const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::ItemStack getItemInstance() const;

@@ -27,6 +27,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    RateStatistics& operator=(RateStatistics const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI void EraseOld(int64);

@@ -33,6 +33,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkLoadedRequest& operator=(ChunkLoadedRequest const&);
+    ChunkLoadedRequest(ChunkLoadedRequest const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ChunkLoadedRequest(::ChunkLoadedRequest&&);

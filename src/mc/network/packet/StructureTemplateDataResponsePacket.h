@@ -25,6 +25,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&);
+    StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

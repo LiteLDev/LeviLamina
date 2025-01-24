@@ -24,6 +24,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptSettings& operator=(ScriptSettings const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptSettings();

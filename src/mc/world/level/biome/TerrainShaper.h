@@ -59,6 +59,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TerrainShaper& operator=(TerrainShaper const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI TerrainShaper(::TerrainShaper const&);

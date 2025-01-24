@@ -6,6 +6,10 @@ namespace cricket {
 
 struct IceTransportStats {
 public:
+    // prevent constructor by default
+    IceTransportStats& operator=(IceTransportStats const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI IceTransportStats(::cricket::IceTransportStats const&);

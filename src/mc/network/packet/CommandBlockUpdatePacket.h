@@ -35,6 +35,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

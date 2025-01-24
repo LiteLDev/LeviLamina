@@ -39,6 +39,11 @@ public:
 
     class StoredPacket {
     public:
+        // prevent constructor by default
+        StoredPacket& operator=(StoredPacket const&);
+        StoredPacket(StoredPacket const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI void IncrementTimesRetransmitted(::std::set<

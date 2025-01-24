@@ -38,6 +38,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Context& operator=(Context const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Context(::Bedrock::CallStack::Context const&);

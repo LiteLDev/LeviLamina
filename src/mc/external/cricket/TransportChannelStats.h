@@ -6,6 +6,10 @@ namespace cricket {
 
 struct TransportChannelStats {
 public:
+    // prevent constructor by default
+    TransportChannelStats& operator=(TransportChannelStats const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI TransportChannelStats();

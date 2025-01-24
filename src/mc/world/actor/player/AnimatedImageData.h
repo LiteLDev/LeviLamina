@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    AnimatedImageData& operator=(AnimatedImageData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI AnimatedImageData(::AnimatedImageData const& rhs);

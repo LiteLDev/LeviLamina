@@ -19,6 +19,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunkMetaData& operator=(LevelChunkMetaData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI LevelChunkMetaData(::LevelChunkMetaData const& otherMetaData);

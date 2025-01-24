@@ -26,6 +26,11 @@ public:
 
     struct Config {
     public:
+        // prevent constructor by default
+        Config& operator=(Config const&);
+        Config(Config const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Config();

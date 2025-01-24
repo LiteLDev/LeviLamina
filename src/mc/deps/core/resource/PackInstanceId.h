@@ -16,6 +16,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackInstanceId& operator=(PackInstanceId const&);
+    PackInstanceId(PackInstanceId const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI PackInstanceId(::PackInstanceId&&);

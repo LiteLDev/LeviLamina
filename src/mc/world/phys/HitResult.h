@@ -44,6 +44,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    HitResult(HitResult const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI HitResult();
