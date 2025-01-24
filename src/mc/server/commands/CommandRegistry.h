@@ -327,11 +327,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        Overload& operator=(Overload const&);
-        Overload(Overload const&);
-
-    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Overload(::CommandRegistry::Overload&&);

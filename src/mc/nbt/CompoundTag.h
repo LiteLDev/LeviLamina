@@ -46,11 +46,6 @@ public:
     size_t size() const noexcept { return mTags.size(); }
 
 public:
-    // prevent constructor by default
-    CompoundTag& operator=(CompoundTag const&);
-    CompoundTag(CompoundTag const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

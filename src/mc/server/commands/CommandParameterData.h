@@ -60,10 +60,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    CommandParameterData& operator=(CommandParameterData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandParameterData(

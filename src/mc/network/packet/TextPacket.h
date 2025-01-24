@@ -40,10 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TextPacket(TextPacket const&);
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -77,8 +73,6 @@ public:
         ::std::string const&                xuid,
         ::std::string const&                platformId
     );
-
-    MCAPI ::TextPacket& operator=(::TextPacket const&);
     // NOLINTEND
 
 public:
