@@ -87,6 +87,11 @@ public:
 
     struct TmmbrInformation {
     public:
+        // prevent constructor by default
+        TmmbrInformation& operator=(TmmbrInformation const&);
+        TmmbrInformation(TmmbrInformation const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI TmmbrInformation(::webrtc::RTCPReceiver::TmmbrInformation&&);

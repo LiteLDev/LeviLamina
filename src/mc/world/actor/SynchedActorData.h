@@ -39,6 +39,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SynchedActorData& operator=(SynchedActorData const&);
+    SynchedActorData(SynchedActorData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI SynchedActorData();

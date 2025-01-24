@@ -68,6 +68,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        CoordinateRange& operator=(CoordinateRange const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI CoordinateRange();

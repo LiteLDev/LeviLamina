@@ -29,6 +29,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ComponentInfo& operator=(ComponentInfo const&);
+        ComponentInfo(ComponentInfo const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCFOLD ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);

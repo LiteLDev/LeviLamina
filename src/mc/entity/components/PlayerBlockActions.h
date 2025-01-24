@@ -21,6 +21,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerBlockActions& operator=(PlayerBlockActions const&);
+    PlayerBlockActions(PlayerBlockActions const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::PlayerBlockActionData const* findFirstOfType(::PlayerActionType type) const;

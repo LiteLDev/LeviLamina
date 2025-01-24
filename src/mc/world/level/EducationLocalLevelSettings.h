@@ -10,6 +10,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EducationLocalLevelSettings(EducationLocalLevelSettings const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::EducationLocalLevelSettings& operator=(::EducationLocalLevelSettings const&);

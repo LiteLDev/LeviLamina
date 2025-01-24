@@ -107,6 +107,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelSettings& operator=(LevelSettings const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string const& GetScenarioId() const;

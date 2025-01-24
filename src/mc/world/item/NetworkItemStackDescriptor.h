@@ -29,6 +29,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    NetworkItemStackDescriptor& operator=(NetworkItemStackDescriptor const&);
+    NetworkItemStackDescriptor(NetworkItemStackDescriptor const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

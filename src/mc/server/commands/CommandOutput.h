@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandOutput& operator=(CommandOutput const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI CommandOutput(::CommandOutput const& rhs);

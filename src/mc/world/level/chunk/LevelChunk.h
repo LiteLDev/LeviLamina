@@ -252,6 +252,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    LevelChunk& operator=(LevelChunk const&);
+    LevelChunk(LevelChunk const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI LevelChunk(

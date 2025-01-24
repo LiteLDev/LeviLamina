@@ -67,6 +67,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureBlockPalette& operator=(StructureBlockPalette const&);
+    StructureBlockPalette(StructureBlockPalette const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI StructureBlockPalette(::StructureBlockPalette&&);

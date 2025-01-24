@@ -16,6 +16,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WeakStorageFeature& operator=(WeakStorageFeature const&);
+    WeakStorageFeature(WeakStorageFeature const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI WeakStorageFeature();

@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PerlinSimplexNoise& operator=(PerlinSimplexNoise const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI PerlinSimplexNoise(::PerlinSimplexNoise const&);

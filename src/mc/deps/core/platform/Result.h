@@ -15,6 +15,11 @@ namespace Core {
 
 class Result : public ::Bedrock::Result<void, ::Bedrock::OSError> {
 public:
+    // prevent constructor by default
+    Result& operator=(Result const&);
+    Result(Result const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI Result(::Core::Result&&);

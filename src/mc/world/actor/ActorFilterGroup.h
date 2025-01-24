@@ -50,6 +50,10 @@ public:
     };
 
 public:
+    // prevent constructor by default
+    ActorFilterGroup(ActorFilterGroup const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

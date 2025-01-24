@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RTCMediaSourceStats {
 public:
+    // prevent constructor by default
+    RTCMediaSourceStats& operator=(RTCMediaSourceStats const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCMediaSourceStats(::webrtc::RTCMediaSourceStats const&);

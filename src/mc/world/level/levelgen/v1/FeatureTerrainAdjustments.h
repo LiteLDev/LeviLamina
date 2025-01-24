@@ -34,6 +34,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Descriptions& operator=(Descriptions const&);
+        Descriptions(Descriptions const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Descriptions();

@@ -20,6 +20,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PermissionsHandler& operator=(PermissionsHandler const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI PermissionsHandler();

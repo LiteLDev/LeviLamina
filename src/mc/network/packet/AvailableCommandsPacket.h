@@ -159,6 +159,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        CommandData& operator=(CommandData const&);
+        CommandData(CommandData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI CommandData(::AvailableCommandsPacket::CommandData&&);

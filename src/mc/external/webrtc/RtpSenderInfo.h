@@ -6,6 +6,11 @@ namespace webrtc {
 
 struct RtpSenderInfo {
 public:
+    // prevent constructor by default
+    RtpSenderInfo& operator=(RtpSenderInfo const&);
+    RtpSenderInfo(RtpSenderInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI RtpSenderInfo(::webrtc::RtpSenderInfo&&);

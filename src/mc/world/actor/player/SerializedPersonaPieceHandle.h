@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI SerializedPersonaPieceHandle(

@@ -11,6 +11,10 @@ namespace webrtc {
 
 class RTCIceCandidateStats {
 public:
+    // prevent constructor by default
+    RTCIceCandidateStats& operator=(RTCIceCandidateStats const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI RTCIceCandidateStats(::webrtc::RTCIceCandidateStats const&);

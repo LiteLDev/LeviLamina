@@ -32,6 +32,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseCommandBlock& operator=(BaseCommandBlock const&);
+    BaseCommandBlock(BaseCommandBlock const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI BaseCommandBlock();

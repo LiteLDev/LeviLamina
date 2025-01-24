@@ -18,6 +18,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WeakEntityRef& operator=(WeakEntityRef const&);
+    WeakEntityRef(WeakEntityRef const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);

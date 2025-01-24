@@ -27,6 +27,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PackInfoData& operator=(PackInfoData const&);
+    PackInfoData(PackInfoData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI PackInfoData(::PackInfoData&&);

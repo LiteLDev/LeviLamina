@@ -25,6 +25,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ChunkGeneratorStructureState& operator=(ChunkGeneratorStructureState const&);
+    ChunkGeneratorStructureState(ChunkGeneratorStructureState const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> findNearestStructureFeature(

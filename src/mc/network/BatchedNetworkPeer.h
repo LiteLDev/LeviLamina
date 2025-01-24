@@ -33,6 +33,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        DataCallback& operator=(DataCallback const&);
+        DataCallback(DataCallback const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI DataCallback(::BatchedNetworkPeer::DataCallback&&);

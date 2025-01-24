@@ -75,6 +75,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameRule(GameRule const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameRule(::GameRule&&);

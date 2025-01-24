@@ -76,6 +76,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Noises& operator=(Noises const&);
+        Noises(Noises const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Noises(::OverworldGeneratorMultinoise::Noises&&);

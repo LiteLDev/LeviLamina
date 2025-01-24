@@ -27,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CommandOutputParameter& operator=(CommandOutputParameter const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit CommandOutputParameter(::std::vector<::Player const*> const& players);

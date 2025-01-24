@@ -83,6 +83,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemRegistryRef& operator=(ItemRegistryRef const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ItemRegistryRef();

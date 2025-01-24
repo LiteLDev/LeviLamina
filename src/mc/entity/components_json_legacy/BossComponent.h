@@ -35,6 +35,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BossComponent& operator=(BossComponent const&);
+    BossComponent(BossComponent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI BossComponent();

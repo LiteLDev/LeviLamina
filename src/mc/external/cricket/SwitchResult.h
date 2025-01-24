@@ -6,6 +6,10 @@ namespace cricket::IceControllerInterface {
 
 struct SwitchResult {
 public:
+    // prevent constructor by default
+    SwitchResult& operator=(SwitchResult const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI SwitchResult(::cricket::IceControllerInterface::SwitchResult const&);

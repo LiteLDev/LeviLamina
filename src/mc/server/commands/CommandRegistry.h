@@ -287,6 +287,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Overload& operator=(Overload const&);
+        Overload(Overload const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI Overload(::CommandRegistry::Overload&&);
@@ -329,6 +334,11 @@ public:
         ::ll::TypedStorage<1, 1, bool>                                        runnable;
         ::ll::TypedStorage<8, 8, uint64>                                      ruleCounter;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Signature& operator=(Signature const&);
+        Signature(Signature const&);
 
     public:
         // member functions
@@ -404,6 +414,11 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> derivation;
         ::ll::TypedStorage<4, 8, ::CommandVersion>                          versions;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ParseRule& operator=(ParseRule const&);
+        ParseRule(ParseRule const&);
 
     public:
         // member functions

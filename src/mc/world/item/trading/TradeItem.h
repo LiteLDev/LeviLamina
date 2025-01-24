@@ -23,6 +23,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TradeItem& operator=(TradeItem const&);
+    TradeItem(TradeItem const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI TradeItem(::TradeItem&&);

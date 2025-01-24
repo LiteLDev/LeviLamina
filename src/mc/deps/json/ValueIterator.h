@@ -29,6 +29,10 @@ public:
     using value_type = ::Json::Value;
 
 public:
+    // prevent constructor by default
+    ValueIterator& operator=(ValueIterator const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ValueIterator(::Json::ValueIterator const& other);

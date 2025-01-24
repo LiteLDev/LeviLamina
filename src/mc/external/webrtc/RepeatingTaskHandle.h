@@ -18,6 +18,11 @@ namespace webrtc {
 
 class RepeatingTaskHandle {
 public:
+    // prevent constructor by default
+    RepeatingTaskHandle& operator=(RepeatingTaskHandle const&);
+    RepeatingTaskHandle(RepeatingTaskHandle const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool Running() const;

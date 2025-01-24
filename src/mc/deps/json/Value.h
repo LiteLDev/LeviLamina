@@ -50,6 +50,11 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        CZString& operator=(CZString const&);
+        CZString(CZString const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI CZString();

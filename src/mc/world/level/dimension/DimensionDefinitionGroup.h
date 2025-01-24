@@ -38,6 +38,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);

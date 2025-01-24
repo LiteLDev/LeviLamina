@@ -16,6 +16,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    OwnerStorageEntity& operator=(OwnerStorageEntity const&);
+    OwnerStorageEntity(OwnerStorageEntity const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI OwnerStorageEntity();

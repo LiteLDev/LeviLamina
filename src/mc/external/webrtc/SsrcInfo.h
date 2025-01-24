@@ -6,6 +6,10 @@ namespace webrtc {
 
 struct SsrcInfo {
 public:
+    // prevent constructor by default
+    SsrcInfo& operator=(SsrcInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI SsrcInfo(::webrtc::SsrcInfo const&);

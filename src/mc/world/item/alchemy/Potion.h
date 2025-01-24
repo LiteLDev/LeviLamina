@@ -67,6 +67,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Potion& operator=(Potion const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI Potion(::Potion const&);

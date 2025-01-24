@@ -68,6 +68,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SubChunk& operator=(SubChunk const&);
+    SubChunk(SubChunk const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI

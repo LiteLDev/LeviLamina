@@ -14,6 +14,10 @@ public:
     // VideoLayersAllocation inner types define
     struct SpatialLayer {
     public:
+        // prevent constructor by default
+        SpatialLayer& operator=(SpatialLayer const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI SpatialLayer(::webrtc::VideoLayersAllocation::SpatialLayer const&);
@@ -25,6 +29,10 @@ public:
         MCAPI void* $ctor(::webrtc::VideoLayersAllocation::SpatialLayer const&);
         // NOLINTEND
     };
+
+public:
+    // prevent constructor by default
+    VideoLayersAllocation& operator=(VideoLayersAllocation const&);
 
 public:
     // member functions

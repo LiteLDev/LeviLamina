@@ -107,6 +107,10 @@ public:
 
     struct RtpTransceiverStatsInfo {
     public:
+        // prevent constructor by default
+        RtpTransceiverStatsInfo& operator=(RtpTransceiverStatsInfo const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI RtpTransceiverStatsInfo(::webrtc::RTCStatsCollector::RtpTransceiverStatsInfo const&);
