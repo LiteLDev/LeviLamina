@@ -77,6 +77,9 @@ bool saveCrashInfo(
 // Read log and dump file path from logs/crash/sentry_xxx, then submit them to sentry
 void submitCrashInfo() {
     auto path = file_utils::u8path(pl::pl_log_path) / u8"crash";
+    if (!std::filesystem::exists(path)) {
+        return;
+    }
     for (auto& entry : std::filesystem::directory_iterator(path)) {
         if (entry.path().filename().native().starts_with(L"sentry_")) {
             try {
