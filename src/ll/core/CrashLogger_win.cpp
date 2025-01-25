@@ -146,15 +146,15 @@ void CrashLogger::init() {
     sa.nLength              = sizeof(SECURITY_ATTRIBUTES);
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
-        R"({} -p {} -b "{}" --lv "{}" --isdev {} --username "{}" --moddir "{}" --enablesentry {})",
+        R"({} -p {} -b "{}" --lv "{}" {} --username "{}" --moddir "{}" {})",
         getSelfModIns()->getModDir() / sv2u8sv(config.modules.crashLogger.externalpath.value_or("CrashLogger.exe")),
         GetCurrentProcessId(),
         getGameVersion().to_string(),
         getLoaderVersion().to_string(),
-        getLoaderVersion().to_string().find('+') != std::string::npos,
+        getLoaderVersion().to_string().find('+') != std::string::npos ? "--isdev" : "",
         getServiceUuid(),
         mod::getModsRoot(),
-        config.modules.crashLogger.uploadToSentry
+        config.modules.crashLogger.uploadToSentry ? "--enablesentry" : ""
     ));
 
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
