@@ -5,4 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 
-class NetworkBlockPosition : public ::BlockPos {};
+class NetworkBlockPosition : public ::BlockPos {
+public:
+    using BlockPos::BlockPos;
+};
