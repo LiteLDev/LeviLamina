@@ -5,14 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Released]
 
 ## [1.0.0] - 2025-01-25
 
 ### Added
 
-- Add uncheck hook option and fix test @RimuruChan
-- Add Sentry support @dreamguxiang @Dofes @OEOTYAN @ShrBox
+- Added uncheck hook option and fix test @RimuruChan
+- Added Sentry support @dreamguxiang @Dofes @OEOTYAN @ShrBox
 
 ### Changed
 
@@ -20,9 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix hook origin type check @RimuruChan
-- Reorganize CompoundTagVariant member layout @Dofes
-- Fix default copyers generator @OEOTYAN @RimuruChan
+- Fixed hook origin type check @RimuruChan
+- Reorganized CompoundTagVariant member layout @Dofes
+- Fixed default copyers generator @OEOTYAN @RimuruChan
+
+## [Unreleased]
 
 ## [1.0.0-rc.3] - 2025-01-11
 
@@ -769,8 +771,11 @@ For lip and tooth-hub test only.
 [#1610]: https://github.com/LiteLDev/LeviLamina/issues/1610
 [#1611]: https://github.com/LiteLDev/LeviLamina/issues/1611
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0...HEAD
+[Released]:
+https://github.com/LiteLDev/LeviLamina/compare/v1.0.0...HEAD
 [1.0.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.3...v1.0.0
+
+[Unreleased]:
 [1.0.0-rc.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.2...v1.0.0-rc.3
 [1.0.0-rc.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.1...v1.0.0-rc.2
 [1.0.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v0.13.5...v1.0.0-rc.1
