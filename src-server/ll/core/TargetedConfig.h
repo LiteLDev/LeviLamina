@@ -10,7 +10,7 @@
 
 namespace ll {
 struct TargetedConfig {
-    ll::reflection::Dispatcher<bool, Statistics>                         enableStatitics = true;
+    ll::reflection::Dispatcher<bool, Statistics>                         enableStatistics = true;
     reflection::Dispatcher<SimpleServerLoggerConfig, SimpleServerLogger> simpleServerLogger{};
     ll::reflection::Dispatcher<bool, ForceEnableCheatCommands>           forceEnableCheatCommands = true;
     bool                                                                 checkRunningBDS          = true;
