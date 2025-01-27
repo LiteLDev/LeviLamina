@@ -86,13 +86,13 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides relevant inform
         "description": "Allow players to suicide in Minecraft.",
         "author": "futrime",
         "tags": [
-            "levilamina",
-            "mod"
+            "platform:levilamina",
+            "type:mod"
         ]
     },
     "asset_url": "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip",
     "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "0.9.x"
+        "github.com/LiteLDev/LeviLamina": "1.0.x"
     },
     "files": {
         "place": [
@@ -175,13 +175,12 @@ Add `#include` in `MyMod.cpp`, the final effect looks like this:
 #include <ll/api/mod/NativeMod.h>
 #include <ll/api/mod/ModManagerRegistry.h>
 #include <ll/api/service/Bedrock.h>
-#include <mc/entity/utilities/ActorType.h>
+#include <mc/world/actor/ActorType.h>
 #include <mc/server/commands/CommandOrigin.h>
 #include <mc/server/commands/CommandOutput.h>
 #include <mc/server/commands/CommandPermissionLevel.h>
 #include <mc/world/actor/player/Player.h>
-#include <mc/world/item/registry/ItemStack.h>
-#include <memory>
+#include <mc/world/item/ItemStack.h>
 #include <stdexcept>
 ```
 
@@ -313,7 +312,7 @@ After we confirm that the source of execution is the player, we can convert the 
 auto* player = static_cast<Player*>(entity);
 player->kill();
 
-getInstance().getLogger().info("{} killed themselves", player->getRealName());
+getInstance().getSelf().getLogger().info("{} killed themselves", player->getRealName());
 ```
 
 !!! warning

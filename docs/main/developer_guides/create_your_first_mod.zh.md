@@ -86,13 +86,13 @@ target("better-suicide") -- Change this to your mod name.
         "description": "Allow players to suicide in Minecraft.",
         "author": "futrime",
         "tags": [
-            "levilamina",
-            "mod"
+            "platform:levilamina",
+            "type:mod"
         ]
     },
     "asset_url": "https://github.com/futrime/better-suicide/releases/download/v0.6.0/better-suicide-windows-x64.zip",
     "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "0.9.x"
+        "github.com/LiteLDev/LeviLamina": "1.0.x"
     },
     "files": {
         "place": [
@@ -175,7 +175,7 @@ xmake
 #include <ll/api/mod/NativeMod.h>
 #include <ll/api/mod/ModManagerRegistry.h>
 #include <ll/api/service/Bedrock.h>
-#include <mc/entity/utilities/ActorType.h>
+#include <mc/world/actor/ActorType.h>
 #include <mc/server/commands/CommandOrigin.h>
 #include <mc/server/commands/CommandOutput.h>
 #include <mc/server/commands/CommandPermissionLevel.h>
@@ -313,7 +313,7 @@ if (entity == nullptr || !entity->isType(ActorType::Player)) {
 auto* player = static_cast<Player*>(entity);
 player->kill();
 
-getInstance().getLogger().info("{} killed themselves", player->getRealName());
+getInstance().getSelf().getLogger().info("{} killed themselves", player->getRealName());
 ```
 
 !!! warning
