@@ -422,8 +422,6 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
         crashInfo.logger.info("");
         dumpSystemInfo();
         crashInfo.logger.info("");
-
-        crashInfo.logger.info("");
         dumpMemoryInfo();
         crashInfo.logger.info("");
 
