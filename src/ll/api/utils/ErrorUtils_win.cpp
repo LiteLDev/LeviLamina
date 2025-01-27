@@ -18,19 +18,6 @@
 
 namespace ll::inline utils::error_utils {
 
-class seh_exception : public std::system_error {
-private:
-    _EXCEPTION_POINTERS* expPtr;
-
-public:
-    seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr);
-
-    _EXCEPTION_POINTERS* getExceptionPointer() const noexcept { return expPtr; }
-};
-[[noreturn]] inline void translateSEHtoCE(uint ntStatus, struct _EXCEPTION_POINTERS* expPtr) {
-    throw seh_exception(ntStatus, expPtr);
-}
-
 struct MsvcExceptionRef {
     static constexpr uint msc                = 0x6D7363; // 'msc'
     static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
@@ -154,11 +141,7 @@ inline std::error_category const& ntstatus_category() noexcept {
     return std::_Immortalize_memcpy_image<struct ntstatus_category>();
 }
 
-seh_exception::seh_exception(uint ntStatus, _EXCEPTION_POINTERS* expPtr)
-: std::system_error(std::error_code{(int)ntStatus, ntstatus_category()}),
-  expPtr(expPtr) {}
-
-void initExceptionTranslator() { _set_se_translator(error_utils::translateSEHtoCE); }
+void initExceptionTranslator() {}
 
 std::system_error getLastSystemError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
@@ -260,16 +243,12 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
                         .transform([](auto&& path) { return string_utils::u8str2str(path.stem().u8string()); })
                         .value_or("unknown module");
                 if (exc.getNumCatchableTypes() > 0) {
-                    auto& type = *exc.getTypeInfo(0);
-                    if (type == typeid(seh_exception)) {
-                        res += fmt::format("Seh Exception, from <{}>:\n", handleName);
-                    } else {
-                        res += fmt::format(
-                            "C++ Exception: {}, from <{}>:\n",
-                            reflection::removeTypePrefix(type.name()),
-                            handleName
-                        );
-                    }
+                    auto& type  = *exc.getTypeInfo(0);
+                    res        += fmt::format(
+                        "C++ Exception: {}, from <{}>:\n",
+                        reflection::removeTypePrefix(type.name()),
+                        handleName
+                    );
                 } else {
                     res += fmt::format("C++ Exception: unknown type, from <{}>:\n", handleName);
                 }
@@ -281,18 +260,6 @@ std::string makeExceptionString(std::exception_ptr ePtr) noexcept {
             std::exception_ptr yeptr;
             std::swap(ePtr, yeptr);
             std::rethrow_exception(yeptr);
-        } catch (seh_exception const& e) {
-            res += fmt::format(
-                "[0x{:0>8X}:{}] {}",
-                (uint)e.code().value(),
-                e.code().category().name(),
-                string_utils::tou8str(e.what())
-            );
-            ePtr         = getNested(e);
-            auto& unkExc = *(e.getExceptionPointer()->ExceptionRecord);
-            for (size_t i = 0; i < unkExc.NumberParameters; i++) {
-                res += fmt::format("\nParameter {}: {}", i, (void*)unkExc.ExceptionInformation[i]);
-            }
         } catch (std::system_error const& e) {
             res += fmt::format(
                 "[0x{:0>8X}:{}] {}",
