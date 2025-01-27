@@ -2,20 +2,25 @@
 #include "ll/api/Versions.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/io/FileUtils.h"
+#include "ll/api/reflection/Deserialization.h"
 #include "ll/core/Version.h"
 
 #include "mc/platform/UUID.h"
 
+#include "nlohmann/json.hpp"
+
 namespace ll {
 std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
     static auto llSelf = std::make_shared<mod::NativeMod>(
-        mod::Manifest{
-            "LeviLamina.dll",
-            std::string{selfModName},
-            std::string{mod::NativeModManagerName},
-            {},
-            getLoaderVersion()
-        },
+        ::ll::reflection::deserialize_to<mod::Manifest>(
+            nlohmann::json::parse(
+                file_utils::readFile(mod::getModsRoot() / selfModName / u8"manifest.json").value(),
+                nullptr,
+                true,
+                true
+            )
+        )
+            .value(),
         sys_utils::getCurrentModuleHandle()
     );
     return llSelf;
@@ -34,25 +39,7 @@ std::string_view getServiceUuid() {
     return serverUuid;
 }
 
-data::Version getLoaderVersion() {
-    static auto ver = [] {
-        auto v = data::Version{
-            LL_VERSION_MAJOR,
-            LL_VERSION_MINOR,
-            LL_VERSION_PATCH,
-        };
-#ifdef LL_VERSION_PRERELEASE
-        v.preRelease = ll::data::PreRelease{LL_VERSION_PRERELEASE};
-#endif
-
-#ifndef LL_VERSION_PUBLISH
-        v.build = LL_VERSION_TO_STRING(LL_VERSION_COMMIT_SHA);
-#endif
-
-        return v;
-    }();
-    return ver;
-}
+data::Version getLoaderVersion() { return getSelfModIns()->getManifest().version.value(); }
 
 
 void printWelcomeMsg() {

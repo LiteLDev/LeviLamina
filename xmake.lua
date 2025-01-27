@@ -37,7 +37,7 @@ add_requires("concurrentqueue v1.0.4")
 add_requires("pcg_cpp v1.0.0")
 add_requires("pfr 2.1.1")
 add_requires("demangler v17.0.7")
-add_requires("levibuildscript 0.2.0")
+add_requires("levibuildscript 0.3.0")
 add_requires("preloader v1.12.0")
 add_requires("symbolprovider v1.2.0")
 add_requires("trampoline 2024.11.7")
@@ -102,7 +102,6 @@ end
 
 target("LeviLamina")
     add_rules("@levibuildscript/linkrule")
-    add_rules("@levibuildscript/modpacker")
     set_languages("c++20")
     set_kind("shared")
     set_symbols("debug")
@@ -342,6 +341,7 @@ target("LeviLamina")
             print("Failed to parse version tag, using 0.0.0")
             major, minor, patch = 0, 0, 0
         end
+        local versionStr =  major.."."..minor.."."..minor
         if suffix then
             prerelease = suffix:match("-(.*)")
             if prerelease then
@@ -349,9 +349,19 @@ target("LeviLamina")
             end
             if prerelease then
                 target:set("configvar", "LL_VERSION_PRERELEASE", prerelease)
+                versionStr = versionStr.."-"..prerelease
             end
         end
         target:set("configvar", "LL_VERSION_MAJOR", major)
         target:set("configvar", "LL_VERSION_MINOR", minor)
         target:set("configvar", "LL_VERSION_PATCH", patch)
+
+        if not has_config("publish") then
+            local hash = os.iorun("git rev-parse --short HEAD")
+            versionStr = versionStr.."+"..hash:gsub("\n", "")
+        end
+
+        target:add("rules", "@levibuildscript/modpacker",{
+               modVersion = versionStr
+           })
     end)

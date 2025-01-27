@@ -30,7 +30,6 @@
 #include "ll/core/mod/NativeModManager.h"
 
 #include "nlohmann/json.hpp"
-#include "nlohmann/json_fwd.hpp"
 
 #include "pl/Config.h"
 

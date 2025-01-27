@@ -68,7 +68,7 @@ void SentryUploader::addModSentryInfo(
     std::string const& modName,
     std::string const& dsn,
     std::string const& releaseVersion,
-    bool isInSuspectedModules
+    bool               isInSuspectedModules
 ) try {
     auto protocolEnd = dsn.find("://");
     auto authEnd     = dsn.find('@', protocolEnd + 3);
@@ -93,8 +93,7 @@ void SentryUploader::addModSentryInfo(
 }
 
 void SentryUploader::uploadAll() {
-    std::vector<std::thread> threads;
-
+    std::vector<std::jthread> threads;
     threads.reserve(mModsSentryConfig.size());
     sentryLogger->info("Uploading crash report to Sentry..."_tr());
     for (auto const& sentryConfig : mModsSentryConfig) {
@@ -128,10 +127,6 @@ void SentryUploader::uploadAll() {
                 error_utils::printCurrentException(*sentryLogger);
             }
         });
-    }
-
-    for (auto& thread : threads) {
-        thread.join();
     }
 }
 

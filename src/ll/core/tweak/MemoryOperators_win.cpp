@@ -39,7 +39,7 @@ namespace ll::memory {
 }
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    virtual void* allocate(uint64 size) try { return mi_malloc(size != 0 ? size : 1); } catch (...) {
+    virtual void* allocate(uint64 size) try { return mi_malloc(size != 0ull ? size : 1ull); } catch (...) {
         return nullptr;
     }
 
@@ -47,7 +47,7 @@ public:
     }
 
     virtual void* alignedAllocate(uint64 size, uint64 alignment) try {
-        return mi_malloc_aligned(size != 0 ? size : 1, alignment);
+        return mi_malloc_aligned(size != 0ull ? size : 1ull, alignment);
     } catch (...) {
         return nullptr;
     }
@@ -56,7 +56,7 @@ public:
     }
 
     virtual uint64 getUsableSize(void* ptr) try { return mi_usable_size(ptr); } catch (...) {
-        return 0;
+        return 0ull;
     }
 
     static void miOutput(char const* msg, void* /*arg*/) {
@@ -76,6 +76,53 @@ public:
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) try {
         return mi_realloc(ptr, newSize);
     } catch (...) {
+        return nullptr;
+    }
+};
+
+class StdMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
+public:
+    virtual void* allocate(uint64 size) try { return malloc(size != 0ull ? size : 1ull); } catch (...) {
+        return nullptr;
+    }
+
+    virtual void release(void* ptr) try { free(ptr); } catch (...) {
+    }
+
+    virtual void* alignedAllocate(uint64 size, uint64 alignment) try {
+        return _aligned_malloc(size != 0ull ? size : 1ull, alignment);
+    } catch (...) {
+        return nullptr;
+    }
+
+    virtual void alignedRelease(void* ptr) try { _aligned_free(ptr); } catch (...) {
+    }
+
+    virtual uint64 getUsableSize(void* ptr) try { return ptr ? _msize(ptr) : 0ull; } catch (...) {
+        return 0ull;
+    }
+
+    virtual void logCurrentState() try {
+        HEAP_SUMMARY summary{.cb = sizeof(HEAP_SUMMARY)};
+        HeapSummary(GetProcessHeap(), 0, &summary);
+        PROCESS_MEMORY_COUNTERS_EX info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX)};
+        GetProcessMemoryInfo(GetCurrentProcess(), (PPROCESS_MEMORY_COUNTERS)&info, info.cb);
+        // clang-format off
+        auto& logger= getLogger();
+        logger.info("heap stats: {:>12} {:>12}", "peak", "current");
+        logger.info("  reserved: {:>12} {:>12}", memStr(summary.cbMaxReserve), memStr(summary.cbReserved));
+        logger.info(" committed: {:>12} {:>12}", "", memStr(summary.cbCommitted));
+        logger.info(" allocated: {:>12} {:>12}", "", memStr(summary.cbAllocated));
+        logger.info(" pagefault: {:>12} {:>8}", "", info.PageFaultCount);
+        logger.info("workingset: {:>12} {:>12}", memStr(info.PeakWorkingSetSize), memStr(info.WorkingSetSize));
+        logger.info(" pagedpool: {:>12} {:>12}", memStr(info.QuotaPeakPagedPoolUsage), memStr(info.QuotaPagedPoolUsage));
+        logger.info("  nonpaged: {:>12} {:>12}", memStr(info.QuotaPeakNonPagedPoolUsage), memStr(info.QuotaNonPagedPoolUsage));
+        logger.info("  pagefile: {:>12} {:>12}", memStr(info.PeakPagefileUsage), memStr(info.PagefileUsage));
+        logger.info("   private: {:>12} {:>12}", "", memStr(info.PrivateUsage));
+        // clang-format on
+    } catch (...) {}
+
+    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) try { return realloc(ptr, newSize); } catch (...) {
         return nullptr;
     }
 };

@@ -27,6 +27,8 @@
 
 #include "DbgHelp.h"
 
+#include "Psapi.h"
+
 namespace ll::inline utils::error_utils {
 Stacktrace stacktraceFromContext(optional_ref<_CONTEXT const> context, size_t skip = 0, size_t maxDepth = ~0ull);
 }
@@ -109,16 +111,7 @@ void CrashLogger::submitCrashInfo() {
                     getLoaderVersion().to_string().find('+') != std::string::npos,
                     getLoaderVersion().to_string()
                 };
-                bool isLLSus = std::find(susModules.begin(), susModules.end(), getSelfModIns()->getManifest().entry)
-                            != susModules.end();
-                // Adding LeviLamina's sentry info
-                sentryUploader.addModSentryInfo(
-                    getSelfModIns()->getName(),
-                    "https://43a888504c33385bfd2e570c9ac939aa@o4508652421906432.ingest.us.sentry.io/4508652563398656",
-                    getLoaderVersion().to_string(),
-                    isLLSus
-                );
-                for (auto& mod : ll::mod::ModManagerRegistry::getInstance().mods()) { // Adding mods' sentry info
+                auto infoAdder = [&](mod::Mod& mod) {
                     bool isModSus =
                         std::find(susModules.begin(), susModules.end(), mod.getManifest().entry) != susModules.end();
                     if (mod.getManifest().sentry_dsn
@@ -130,6 +123,10 @@ void CrashLogger::submitCrashInfo() {
                             isModSus
                         );
                     }
+                };
+                infoAdder(*getSelfModIns());
+                for (auto& mod : mod::ModManagerRegistry::getInstance().mods()) { // Adding mods' sentry info
+                    infoAdder(mod);
                 }
                 sentryUploader.uploadAll();
                 std::filesystem::remove(entry.path());
@@ -206,6 +203,24 @@ static struct CrashInfo {
     CrashInfo() : loggerPtr(io::LoggerRegistry::getInstance().getOrCreate("CrashLogger")), logger(*loggerPtr) {}
 } crashInfo;
 
+[[maybe_unused]] static std::string memStr(size_t mem) {
+    double r  = (double)mem;
+    r        /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} KiB", r);
+    }
+    r /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} MiB", r);
+    }
+    r /= 1024;
+    if (r < 1024) {
+        return ::fmt::format("{:>8.1f} GiB", r);
+    }
+    r /= 1024;
+    return ::fmt::format("{:>8.1f} TiB", r);
+}
+
 static void dumpSystemInfo() {
     crashInfo.logger.info("System Info:");
     crashInfo.logger.info(
@@ -266,6 +281,25 @@ static void dumpSystemInfo() {
                           }()));
     crashInfo.logger.info("  |LocalTime: {}", fmt::format("{0:%F %T} (UTC{0:%z})", fmt::localtime(_time64(nullptr))));
 }
+
+static void dumpMemoryInfo() {
+    crashInfo.logger.info("Memory Info:");
+    PROCESS_MEMORY_COUNTERS_EX info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX)};
+    GetProcessMemoryInfo(GetCurrentProcess(), (PPROCESS_MEMORY_COUNTERS)&info, info.cb);
+    crashInfo.logger.info("  |heap stats: {:>12} {:>12}", "peak", "current");
+    crashInfo.logger.info("  |workingset: {:>12} {:>12}", memStr(info.PeakWorkingSetSize), memStr(info.WorkingSetSize));
+    crashInfo.logger
+        .info("  | pagedpool: {:>12} {:>12}", memStr(info.QuotaPeakPagedPoolUsage), memStr(info.QuotaPagedPoolUsage));
+    crashInfo.logger.info(
+        "  |  nonpaged: {:>12} {:>12}",
+        memStr(info.QuotaPeakNonPagedPoolUsage),
+        memStr(info.QuotaNonPagedPoolUsage)
+    );
+    crashInfo.logger.info("  |  pagefile: {:>12} {:>12}", memStr(info.PeakPagefileUsage), memStr(info.PagefileUsage));
+    crashInfo.logger.info("  |   private: {:>12} {:>12}", "", memStr(info.PrivateUsage));
+    crashInfo.logger.info("  | pagefault: {:>12} {:>8}", "", info.PageFaultCount);
+}
+
 static void dumpStacktrace(_CONTEXT const& c) {
     try {
         crashInfo.logger.info("Stacktrace:");
@@ -387,6 +421,10 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
 
         crashInfo.logger.info("");
         dumpSystemInfo();
+        crashInfo.logger.info("");
+
+        crashInfo.logger.info("");
+        dumpMemoryInfo();
         crashInfo.logger.info("");
 
         crashInfo.logger.info("Exception:");
