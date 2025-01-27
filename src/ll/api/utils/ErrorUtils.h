@@ -34,9 +34,6 @@ public:
     }
 };
 
-// only set for the current thread
-LLAPI void initExceptionTranslator();
-
 LLNDAPI std::system_error getLastSystemError() noexcept;
 
 LLNDAPI std::exception_ptr createExceptionPtr(void*) noexcept;

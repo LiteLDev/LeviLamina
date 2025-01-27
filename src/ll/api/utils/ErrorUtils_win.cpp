@@ -141,8 +141,6 @@ inline std::error_category const& ntstatus_category() noexcept {
     return std::_Immortalize_memcpy_image<struct ntstatus_category>();
 }
 
-void initExceptionTranslator() {}
-
 std::system_error getLastSystemError() noexcept { return std::error_code{(int)GetLastError(), u8system_category()}; }
 
 extern "C" PEXCEPTION_RECORD* __current_exception();

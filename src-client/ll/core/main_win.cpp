@@ -32,8 +32,6 @@ std::string& defaultLocaleCode();
 }
 
 void leviLaminaMain() {
-    error_utils::initExceptionTranslator();
-
     gui::init();
 
     if (auto res = i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {

@@ -30,7 +30,6 @@ struct ThreadPoolExecutor::Impl {
         std::atomic_bool                              working{true};
         ScheduledWorker(Executor const& e) {
             schtrd = std::thread{[this, &e]() {
-                ll::error_utils::initExceptionTranslator();
                 setThreadName(fmt::format("{}[sch]", e.getName()));
                 while (working) {
                     std::optional<Clock::duration> frontTime{};
@@ -79,7 +78,6 @@ struct ThreadPoolExecutor::Impl {
     Impl(Executor& self, size_t nThreads) {
         for (size_t i = 0; i < nThreads; ++i) {
             workers.emplace_back([this, &self, i] {
-                ll::error_utils::initExceptionTranslator();
                 setThreadName(fmt::format("{}[{}]", self.getName(), i));
                 decltype(tasks)::consumer_token_t token{tasks};
                 for (;;) {

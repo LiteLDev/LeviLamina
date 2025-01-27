@@ -160,8 +160,6 @@ std::string& defaultLocaleCode();
 }
 
 void leviLaminaMain() {
-    error_utils::initExceptionTranslator();
-
     if (auto res = i18n::getInstance().load(getSelfModIns()->getLangDir()); !res) {
         getLogger().error("i18n load failed");
         res.error().log(getLogger());
