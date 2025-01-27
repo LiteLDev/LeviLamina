@@ -14,7 +14,8 @@ std::shared_ptr<mod::NativeMod> const& getSelfModIns() {
     static auto llSelf = std::make_shared<mod::NativeMod>(
         ::ll::reflection::deserialize_to<mod::Manifest>(
             nlohmann::json::parse(
-                file_utils::readFile(mod::getModsRoot() / selfModName / u8"manifest.json").value(),
+                file_utils::readFile(mod::getModsRoot() / string_utils::sv2u8sv(selfModName) / u8"manifest.json")
+                    .value(),
                 nullptr,
                 true,
                 true
