@@ -39,17 +39,25 @@ namespace ll::memory {
 }
 class MimallocMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 public:
-    virtual void* allocate(uint64 size) { return mi_malloc(size != 0 ? size : 1); }
-
-    virtual void release(void* ptr) { mi_free(ptr); }
-
-    virtual void* alignedAllocate(uint64 size, uint64 alignment) {
-        return mi_malloc_aligned(size != 0 ? size : 1, alignment);
+    virtual void* allocate(uint64 size) try { return mi_malloc(size != 0 ? size : 1); } catch (...) {
+        return nullptr;
     }
 
-    virtual void alignedRelease(void* ptr) { mi_free(ptr); }
+    virtual void release(void* ptr) try { mi_free(ptr); } catch (...) {
+    }
 
-    virtual uint64 getUsableSize(void* ptr) { return mi_usable_size(ptr); }
+    virtual void* alignedAllocate(uint64 size, uint64 alignment) try {
+        return mi_malloc_aligned(size != 0 ? size : 1, alignment);
+    } catch (...) {
+        return nullptr;
+    }
+
+    virtual void alignedRelease(void* ptr) try { mi_free(ptr); } catch (...) {
+    }
+
+    virtual uint64 getUsableSize(void* ptr) try { return mi_usable_size(ptr); } catch (...) {
+        return 0;
+    }
 
     static void miOutput(char const* msg, void* /*arg*/) {
         std::string str{msg};
@@ -62,9 +70,14 @@ public:
         getLogger().info(str);
     }
 
-    virtual void logCurrentState() { mi_stats_print_out(miOutput, nullptr); }
+    virtual void logCurrentState() try { mi_stats_print_out(miOutput, nullptr); } catch (...) {
+    }
 
-    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) { return mi_realloc(ptr, newSize); }
+    virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) try {
+        return mi_realloc(ptr, newSize);
+    } catch (...) {
+        return nullptr;
+    }
 };
 
 #ifdef LL_MEMORY_DEBUG

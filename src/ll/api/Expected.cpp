@@ -15,7 +15,7 @@ struct ErrorInfoBase::Impl {
     Stacktrace stacktrace;
 };
 ErrorInfoBase::ErrorInfoBase() noexcept : impl(std::make_unique<Impl>(Stacktrace::current(1))) {}
-std::string Error::message() const noexcept {
+std::string Error::message() const noexcept try {
     if (!mInfo) {
         return "success";
     }
@@ -23,6 +23,8 @@ std::string Error::message() const noexcept {
     res      += "\nexpected stacktrace:\n";
     res      += stacktrace_utils::toString(mInfo->impl->stacktrace);
     return res;
+} catch (...) {
+    return "unknown";
 }
 
 struct ExceptionError : ErrorInfoBase {
@@ -43,7 +45,9 @@ struct ExceptionError : ErrorInfoBase {
 #else
 struct ErrorInfoBase::Impl {};
 ErrorInfoBase::ErrorInfoBase() noexcept {}
-std::string Error::message() const noexcept { return mInfo ? mInfo->message() : "success"; }
+std::string Error::message() const noexcept try { return mInfo ? mInfo->message() : "success"; } catch (...) {
+    return "unknown";
+}
 
 struct ExceptionError : ErrorInfoBase {
     std::exception_ptr exc;
