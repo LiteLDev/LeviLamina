@@ -29,19 +29,19 @@ struct hash<ll::mod::Dependency> {
 } // namespace std
 namespace ll::mod {
 struct Manifest {
-    std::string                                            entry;
-    std::string                                            name;
-    std::string                                            type;
-    std::optional<bool>                                    passive{};
-    std::optional<data::Version>                           version{};
-    std::optional<std::string>                             author{};
-    std::optional<std::string>                             description{};
-    std::optional<SmallDenseMap<std::string, std::string>> extraInfo{};
-    std::optional<SmallDenseSet<Dependency>>               dependencies{};
-    std::optional<SmallDenseSet<Dependency>>               optionalDependencies{};
-    std::optional<SmallDenseSet<Dependency>>               conflicts{};
-    std::optional<SmallDenseSet<Dependency>>               loadBefore{};
-    std::optional<std::string>                             sentry_dsn{};
-    std::optional<bool>                                    sentry_force_upload{};
+    std::string                                entry;
+    std::string                                name;
+    std::string                                type;
+    std::optional<bool>                        passive{};
+    std::optional<data::Version>               version{};
+    std::optional<std::string>                 author{};
+    std::optional<std::string>                 description{};
+    std::optional<SmallStringMap<std::string>> extraInfo{};
+    std::optional<SmallDenseSet<Dependency>>   dependencies{};
+    std::optional<SmallDenseSet<Dependency>>   optionalDependencies{};
+    std::optional<SmallDenseSet<Dependency>>   conflicts{};
+    std::optional<SmallDenseSet<Dependency>>   loadBefore{};
+    std::optional<std::string>                 sentryDsn{};
+    std::optional<bool>                        sentryForceUpload{};
 };
 } // namespace ll::mod

@@ -114,11 +114,11 @@ void CrashLogger::submitCrashInfo() {
                 auto infoAdder = [&](mod::Mod& mod) {
                     bool isModSus =
                         std::find(susModules.begin(), susModules.end(), mod.getManifest().entry) != susModules.end();
-                    if (mod.getManifest().sentry_dsn
-                        && (isModSus || mod.getManifest().sentry_force_upload.value_or(false))) {
+                    if (mod.getManifest().sentryDsn
+                        && (isModSus || mod.getManifest().sentryForceUpload.value_or(false))) {
                         sentryUploader.addModSentryInfo(
                             mod.getName(),
-                            mod.getManifest().sentry_dsn.value(),
+                            *mod.getManifest().sentryDsn,
                             mod.getManifest().version.value_or(data::Version{0, 0, 0}).to_string(),
                             isModSus
                         );
