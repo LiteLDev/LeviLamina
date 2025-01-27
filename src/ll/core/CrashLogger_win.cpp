@@ -251,16 +251,19 @@ static void dumpSystemInfo() {
             return "Unknown";
         }
     }());
-    crashInfo.logger.info(
-        "  |RAM: {:.2f} GB",
-        (double)([] {
-            MEMORYSTATUSEX memoryStatus;
-            memoryStatus.dwLength = sizeof(memoryStatus);
-            GlobalMemoryStatusEx(&memoryStatus);
-            return memoryStatus.ullTotalPhys;
-        }()) / 1024
-            / 1024 / 1024
-    );
+    crashInfo.logger.info("  |RAM: {}", (std::string)([] {
+                              MEMORYSTATUSEX memoryStatus;
+                              memoryStatus.dwLength = sizeof(memoryStatus);
+                              GlobalMemoryStatusEx(&memoryStatus);
+                              auto totalPhyMem = (double)memoryStatus.ullTotalPhys;
+                              auto availPhyMem = (double)memoryStatus.ullAvailPhys;
+                              return fmt::format(
+                                  "{:.2f}/{:.2f} GB ({:.2f}%)",
+                                  (totalPhyMem - availPhyMem) / 1024 / 1024 / 1024,
+                                  totalPhyMem / 1024 / 1024 / 1024,
+                                  (totalPhyMem - availPhyMem) / totalPhyMem * 100
+                              );
+                          }()));
     crashInfo.logger.info("  |LocalTime: {}", fmt::format("{0:%F %T} (UTC{0:%z})", fmt::localtime(_time64(nullptr))));
 }
 static void dumpStacktrace(_CONTEXT const& c) {
