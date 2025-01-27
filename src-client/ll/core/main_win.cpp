@@ -72,6 +72,11 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     origin(ins);
     service::bedrock::serverInstance = std::addressof(ins);
 
+    auto &config = getLeviConfig();
+    if (config.modules.crashLogger.enabled && config.modules.crashLogger.uploadToSentry) {
+        CrashLogger::submitCrashInfo();
+    }
+
     mod::ModRegistrar::getInstance().enableAllMods();
 
     setGamingStatus(GamingStatus::Running);

@@ -67,7 +67,8 @@ SentryUploader::SentryUploader(
 void SentryUploader::addModSentryInfo(
     std::string const& modName,
     std::string const& dsn,
-    std::string const& releaseVersion
+    std::string const& releaseVersion,
+    bool isInSuspectedModules
 ) try {
     auto protocolEnd = dsn.find("://");
     auto authEnd     = dsn.find('@', protocolEnd + 3);
@@ -84,7 +85,7 @@ void SentryUploader::addModSentryInfo(
     info.host      = dsn.substr(authEnd + 1, lastSlash - authEnd - 1);
     info.projectId = dsn.substr(lastSlash + 1);
 
-    mModsSentryConfig.push_back({info, dsn, modName, releaseVersion});
+    mModsSentryConfig.push_back({info, dsn, modName, releaseVersion, isInSuspectedModules});
 } catch (...) {
     sentryLogger->error("Error adding mod sentry info:");
     error_utils::printCurrentException(*sentryLogger);
@@ -110,7 +111,7 @@ void SentryUploader::uploadAll() {
 
                 json eventPayload = {
                     {   "event_id",                                     eventId                                   },
-                    {      "level",                                                                        "fatal"},
+                    {      "level",                                     sentryConfig.isFatal ? "fatal" : "warning"},
                     {   "platform",                                                                       "native"},
                     {        "sdk",                             {{"name", "crashLogger"}, {"version", "built-in"}}},
                     {    "release",                                                    sentryConfig.releaseVersion},

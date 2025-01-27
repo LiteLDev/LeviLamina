@@ -41,5 +41,7 @@ struct Manifest {
     std::optional<SmallDenseSet<Dependency>>               optionalDependencies{};
     std::optional<SmallDenseSet<Dependency>>               conflicts{};
     std::optional<SmallDenseSet<Dependency>>               loadBefore{};
+    std::optional<std::string>                             sentry_dsn{};
+    std::optional<bool>                                    sentry_force_upload{};
 };
 } // namespace ll::mod

@@ -21,7 +21,7 @@ public:
         std::string leviLaminaVersion
     );
 
-    void addModSentryInfo(std::string const& modName, std::string const& dsn, std::string const& releaseVersion);
+    void addModSentryInfo(std::string const& modName, std::string const& dsn, std::string const& releaseVersion, bool isInSuspectedModules);
     void uploadAll();
 
 private:
@@ -35,6 +35,7 @@ private:
         std::string dsn;
         std::string modName;
         std::string releaseVersion;
+        bool isFatal = false;
     };
 
     std::string readFile(std::string const& filePath);
