@@ -123,15 +123,9 @@ public:
 
     // Execute an operation
     /* Places an operation into the waitlist (pending_operations), and either handles the list,
-       or waits for the operation to complete, or returns.
-       The long_life_time parameter specifies the life time of the given operation object.
-       Operations with long_life_time == true may be accessed after execution.
-       A "short" life time operation (long_life_time == false) can be destroyed
-       during execution, and so any access to it after it was put into the waitlist,
-       including status check, is invalid. As a consequence, waiting for completion
-       of such operation causes undefined behavior. */
+       or waits for the operation to complete, or returns. */
     template <typename HandlerType>
-    void execute(OperationType* op, HandlerType& handle_operations, bool long_life_time = true) {
+    void execute(OperationType* op, HandlerType& handle_operations) {
         // op->status should be read before inserting the operation into the
         // aggregator waitlist since it can become invalid after executing a
         // handler (if the operation has 'short' life time.)
