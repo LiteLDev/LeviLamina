@@ -48,4 +48,4 @@ Commit the changes to the GitHub repository, then click on `Releases` in the rep
 
 Afterwards, you can install your pack using `lip install github.com/my-github-username/pack-name`. Due to synchronization delays in the version listing, this command may throw an error in the initial period after the release. In such cases, you can specify the version number to install the pack, for example, `lip install github.com/my-github-username/pack-name@0.1.0`.
 
-After some time, you will be able to see your pack in LipUI and on <bedrinth.com>.
+After some time, you will be able to see your pack in <bedrinth.com>.

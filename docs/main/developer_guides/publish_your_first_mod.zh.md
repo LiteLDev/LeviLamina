@@ -77,4 +77,4 @@
 
 然后你就可以通过`lip install github.com/my-github-username/mod-name`来安装你的模组了。由于版本列表同步延迟，这个命令可能会在刚发布的一段时间内报错，你可以指定版本号来安装模组，例如`lip install github.com/my-github-username/mod-name@0.1.0`。
 
-在一段时间后，你也可以在LipUI和<bedrinth.com>查看到你的模组了。
+在一段时间后，你也可以在<bedrinth.com>查看到你的模组了。

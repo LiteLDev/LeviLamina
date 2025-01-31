@@ -6,9 +6,6 @@ We strongly recommend using [lip](https://futrime.github.io/lip/install/) for mo
 
 The following content is for a quick start with using lip.
 
-!!! tip
-    Not accustomed to using command-line tools? You can use [LipUI](https://github.com/futrime/lipui).
-
 ## Installing LeviLamina
 
 First, create a new directory for your Minecraft server and enter it:

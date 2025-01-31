@@ -77,4 +77,4 @@ Commit your changes to the GitHub repository, then click on "Releases" in the re
 
 You can then install your mod using `lip install github.com/my-github-username/mod-name`. Due to synchronization delays in the version listing, this command may throw an error in the initial period after the release. In such cases, you can specify the version number to install the mod, for example, `lip install github.com/my-github-username/mod-name@0.1.0`.
 
-After some time, you will also be able to see your mod in LipUI and <bedrinth.com>.
+After some time, you will also be able to see your mod in <bedrinth.com>.

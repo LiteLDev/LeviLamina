@@ -6,9 +6,6 @@
 
 以下内容针对使用 lip 的情况下进行快速入门。
 
-!!! tip
-    不习惯使用命令行工具？你可以使用[LipUI](https://github.com/futrime/lipui)。
-
 ## 配置代理或镜像
 
 如果你有**代理服务器**可用，使用以下命令配置代理（支持socks5，http，https）：

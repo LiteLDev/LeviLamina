@@ -19,15 +19,9 @@ Since LeviLamina is not compatible with the previous LiteLoaderBDS 2, you need t
 
 You can install LeviLamina in different ways, depending on your needs:
 
-- You can [install via LipUI](#install-via-lipui), which is a graphical user interface for lip. This is useful if you are not familiar with the command line.
-
 - You can [install via lip](#install-via-lip), for ease of installation and upgrade tasks. This is the recommended approach.
 
-- You can download the modules and [install them manually](#install-manually) and manage upgrades completely manually. This is useful in situations such as installing LeviLamina on air-gapped systems with no access to the internet.
-
-### Install via LipUI
-
-Simply download and run [LipUI](https://github.com/futrime/lipui), and then install LeviLamina from the package index.
+- You can download the modules and install them manually and manage upgrades completely manually. This is useful in situations such as installing LeviLamina on air-gapped systems with no access to the internet.
 
 ### Install via lip
 
