@@ -255,6 +255,7 @@ public:
 
         Symbol() = default;
 
+        // not trivially copyable
         Symbol(Symbol const& other) : mValue(other.mValue) {}
 
         Symbol(HardNonTerminal data) : mValue(static_cast<int>(data)) {}
