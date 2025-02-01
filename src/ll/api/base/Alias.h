@@ -112,6 +112,10 @@ template <size_t A, size_t S, class T>
 struct TypedStorageType<A, S, std::weak_ptr<T>> {
     using Type = std::weak_ptr<T>;
 };
+template <size_t A, size_t S, class T, size_t N>
+struct TypedStorageType<A, S, T[N]> {
+    using Type = TypedStorageType<A, S / N, T>::Type[N];
+};
 
 template <size_t A, size_t S, class T>
 using TypedStorage = TypedStorageType<A, S, T>::Type;

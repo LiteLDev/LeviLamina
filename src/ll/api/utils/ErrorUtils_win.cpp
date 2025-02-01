@@ -18,6 +18,8 @@
 
 namespace ll::inline utils::error_utils {
 
+LLAPI void initExceptionTranslator() {} // TODO: remove in next version
+
 struct MsvcExceptionRef {
     static constexpr uint msc                = 0x6D7363; // 'msc'
     static constexpr uint exceptionCodeOfCpp = (msc | 0xE0000000);
