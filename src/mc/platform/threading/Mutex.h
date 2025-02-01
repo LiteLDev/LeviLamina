@@ -9,12 +9,6 @@ namespace Bedrock::Threading {
 
 class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~Mutex();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

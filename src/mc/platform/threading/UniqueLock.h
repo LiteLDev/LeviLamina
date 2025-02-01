@@ -5,6 +5,6 @@
 namespace Bedrock::Threading {
 
 template <typename T0>
-class UniqueLock {};
+class UniqueLock : std::unique_lock<T0> {};
 
 } // namespace Bedrock::Threading
