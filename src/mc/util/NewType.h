@@ -19,6 +19,11 @@ public:
     {
         return mValue == other.mValue;
     }
+    [[nodiscard]] inline bool operator==(T0 const& other) const
+        requires(requires { mValue == other; })
+    {
+        return mValue == other;
+    }
 };
 
 namespace std {

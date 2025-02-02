@@ -20,6 +20,12 @@ public:
     {
         return id == other.id;
     }
+
+    [[nodiscard]] inline bool operator==(T const& other) const
+        requires(requires { id == other; })
+    {
+        return id == other;
+    }
 };
 
 namespace std {
