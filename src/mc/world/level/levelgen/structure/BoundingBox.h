@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ll/api/coro/Generator.h"
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/BlockPos.h"
 
@@ -28,16 +29,12 @@ public:
     constexpr BoundingBox& operator=(class BoundingBox const& k) noexcept    = default;
     [[nodiscard]] constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max) {}
 
-    template <class F>
-    constexpr bool forEachPos(F&& todo) const {
+    ll::coro::Generator<BlockPos> forEachPos() const {
         for (int dy = min.y; dy <= max.y; ++dy)
             for (int dx = min.x; dx <= max.x; ++dx)
                 for (int dz = min.z; dz <= max.z; ++dz) {
-                    if (!std::invoke(std::forward<F>(todo), BlockPos{dx, dy, dz})) {
-                        return false;
-                    }
+                    co_yield BlockPos{dx, dy, dz};
                 }
-        return true;
     }
 
     constexpr BoundingBox& merge(BoundingBox const& a) noexcept {
