@@ -24,6 +24,4 @@ public:
     std::vector<TickingSystemsInCategory> mTickingSystemCategories; // this+0x38
     entt::dense_map<uint, ComponentInfo>  mAllComponentsInfo;       // this+0x50
     std::mutex                            mTimingMutex;             // this+0x98
-
-    // need vftable
 };
