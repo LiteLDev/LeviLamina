@@ -18,7 +18,7 @@ local is_client = false
 
 -- Dependencies from xmake-repo.
 add_requires("ctre 3.8.1")
-add_requires("entt v3.14.0") -- master
+add_requires("entt v3.14.0")
 add_requires("expected-lite v0.8.0")
 add_requires("fmt 10.2.1")
 add_requires("gsl v4.0.0")
@@ -29,7 +29,7 @@ add_requires("nlohmann_json v3.11.3")
 add_requires("rapidjson v1.1.0")
 add_requires("type_safe v0.2.4")
 add_requires("mimalloc v2.1.7")
-add_requires("cpr 1.10.5", {configs = {ssl = true}})
+add_requires("cpr 1.11.1", {configs = {ssl = true}})
 add_requires("parallel-hashmap v1.3.12")
 add_requires("concurrentqueue v1.0.4")
 
