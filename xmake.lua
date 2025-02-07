@@ -341,7 +341,7 @@ target("LeviLamina")
             print("Failed to parse version tag, using 0.0.0")
             major, minor, patch = 0, 0, 0
         end
-        local versionStr =  major.."."..minor.."."..minor
+        local versionStr =  major.."."..minor.."."..patch
         if suffix then
             prerelease = suffix:match("-(.*)")
             if prerelease then
