@@ -2,19 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class HitResult;
+// clang-format on
+
 struct ProjectileHitEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk541f32;
-    ::ll::UntypedStorage<8, 112> mUnka6c28a;
+    ::ll::TypedStorage<8, 8, ::Actor&>            mProjectile;
+    ::ll::TypedStorage<8, 112, ::HitResult const> mHitResult;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProjectileHitEvent& operator=(ProjectileHitEvent const&);
-    ProjectileHitEvent(ProjectileHitEvent const&);
-    ProjectileHitEvent();
 
 public:
     // member functions

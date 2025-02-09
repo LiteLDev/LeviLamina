@@ -39,16 +39,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk8f06db;
-    ::ll::UntypedStorage<8, 80> mUnk5249aa;
-    ::ll::UntypedStorage<8, 24> mUnk126351;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameEventListener>>                        mListener;
+    ::ll::TypedStorage<8, 80, ::std::optional<::gsl::final_action<::std::function<void()>>>> mRegistration;
+    ::ll::TypedStorage<8, 24, ::std::optional<::GameEventDynamicRegistration::RegistrationLocation>>
+        mRegistrationLocation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameEventDynamicRegistration& operator=(GameEventDynamicRegistration const&);
-    GameEventDynamicRegistration(GameEventDynamicRegistration const&);
-    GameEventDynamicRegistration();
 
 public:
     // member functions

@@ -6,13 +6,7 @@ struct TextCharEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 5> mUnk907f17;
-    ::ll::UntypedStorage<1, 1> mUnk147398;
+    ::ll::TypedStorage<1, 5, ::std::array<char, 5>> utf8text;
+    ::ll::TypedStorage<1, 1, bool>                  keepImePosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TextCharEventData& operator=(TextCharEventData const&);
-    TextCharEventData(TextCharEventData const&);
-    TextCharEventData();
 };

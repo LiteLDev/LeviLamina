@@ -117,14 +117,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnka6f2b8;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<
+            ::EventingRequest::PersonaEmoteData,
+            ::EventingRequest::PlayerBounceData,
+            ::EventingRequest::PlayerActionComparisonErrorData,
+            ::EventingRequest::VehiclePositionComparisonErrorData,
+            ::EventingRequest::PlayerUnexpectedFallDamageData,
+            ::EventingRequest::ActorMovementCorrectionData>>
+        mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EventingRequest& operator=(EventingRequest const&);
-    EventingRequest(EventingRequest const&);
-    EventingRequest();
 
 public:
     // member functions

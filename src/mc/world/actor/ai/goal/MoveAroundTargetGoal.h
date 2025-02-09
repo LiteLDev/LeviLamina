@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorFilterGroup;
 class EntityContext;
 class Mob;
+struct FloatRange;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -80,22 +82,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk4e2ebe;
-    ::ll::UntypedStorage<1, 1>  mUnkda95a6;
-    ::ll::UntypedStorage<8, 64> mUnk22600f;
-    ::ll::UntypedStorage<4, 4>  mUnkfacebc;
-    ::ll::UntypedStorage<4, 4>  mUnk1b3675;
-    ::ll::UntypedStorage<4, 8>  mUnk1db01a;
-    ::ll::UntypedStorage<4, 4>  mUnk3fbac4;
-    ::ll::UntypedStorage<4, 4>  mUnkc99876;
-    ::ll::UntypedStorage<4, 4>  mUnk6d2b98;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<1, 1, bool>                mReachedTarget;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+    ::ll::TypedStorage<4, 4, float>               mSpeed;
+    ::ll::TypedStorage<4, 4, float>               mSpreadDegrees;
+    ::ll::TypedStorage<4, 8, ::FloatRange>        mDestinationRange;
+    ::ll::TypedStorage<4, 4, float>               mHeightDifferenceLimit;
+    ::ll::TypedStorage<4, 4, int>                 mHorizontalSearchDistance;
+    ::ll::TypedStorage<4, 4, int>                 mVerticalSearchDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveAroundTargetGoal& operator=(MoveAroundTargetGoal const&);
-    MoveAroundTargetGoal(MoveAroundTargetGoal const&);
-    MoveAroundTargetGoal();
 
 public:
     // virtual functions

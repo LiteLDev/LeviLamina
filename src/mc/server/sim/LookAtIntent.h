@@ -21,13 +21,17 @@ struct LookAtIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk7a4d1a;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::variant<
+            ::sim::VoidLookAtIntent,
+            ::sim::LookAtPositionIntent,
+            ::sim::ContinuousLookAtPositionIntent,
+            ::sim::LookAtEntityIntent,
+            ::sim::ContinuousLookAtEntityIntent>>
+        mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookAtIntent& operator=(LookAtIntent const&);
-    LookAtIntent(LookAtIntent const&);
 
 public:
     // member functions

@@ -9,6 +9,7 @@
 // clang-format off
 class AABB;
 class Actor;
+class BlockPos;
 class BlockSource;
 class Mob;
 class NavigationComponent;
@@ -20,14 +21,8 @@ class WallClimberPathNavigation : public ::PathNavigation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkc0c821;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPathToPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WallClimberPathNavigation& operator=(WallClimberPathNavigation const&);
-    WallClimberPathNavigation(WallClimberPathNavigation const&);
-    WallClimberPathNavigation();
 
 public:
     // virtual functions

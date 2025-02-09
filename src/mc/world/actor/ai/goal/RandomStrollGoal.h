@@ -7,28 +7,24 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Mob;
+class Vec3;
 // clang-format on
 
 class RandomStrollGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk14f86b;
-    ::ll::UntypedStorage<4, 4>  mUnk2e9433;
-    ::ll::UntypedStorage<4, 4>  mUnkd131de;
-    ::ll::UntypedStorage<4, 4>  mUnk7024c3;
-    ::ll::UntypedStorage<4, 4>  mUnkce4de8;
-    ::ll::UntypedStorage<4, 12> mUnk8eee30;
-    ::ll::UntypedStorage<4, 12> mUnkbdf65e;
-    ::ll::UntypedStorage<1, 1>  mUnkd091ef;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<4, 4, float>       mSpeed;
+    ::ll::TypedStorage<4, 4, int>         mXZDist;
+    ::ll::TypedStorage<4, 4, int>         mYDist;
+    ::ll::TypedStorage<4, 4, int>         mInterval;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mWantedPosition;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mChosenEndPos;
+    ::ll::TypedStorage<1, 1, bool>        mReachedTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomStrollGoal& operator=(RandomStrollGoal const&);
-    RandomStrollGoal(RandomStrollGoal const&);
-    RandomStrollGoal();
 
 public:
     // virtual functions

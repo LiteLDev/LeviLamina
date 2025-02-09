@@ -17,14 +17,8 @@ struct ActorEventResponseCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf13946;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ActorEventResponse>>> mResponses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorEventResponseCollection& operator=(ActorEventResponseCollection const&);
-    ActorEventResponseCollection(ActorEventResponseCollection const&);
-    ActorEventResponseCollection();
 
 public:
     // static functions

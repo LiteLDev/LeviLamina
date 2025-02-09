@@ -6,13 +6,7 @@ struct EntitySystemTickingMode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3125bb;
-    ::ll::UntypedStorage<1, 1> mUnkaf470e;
+    ::ll::TypedStorage<1, 1, bool> mNormalTick;
+    ::ll::TypedStorage<1, 1, bool> mSingleTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntitySystemTickingMode& operator=(EntitySystemTickingMode const&);
-    EntitySystemTickingMode(EntitySystemTickingMode const&);
-    EntitySystemTickingMode();
 };

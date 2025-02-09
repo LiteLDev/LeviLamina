@@ -3,35 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
+#include "mc/world/actor/ai/village/POIType.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
 class Mob;
+class WorkDefinition;
 // clang-format on
 
 class WorkGoal : public ::MoveToPOIGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk1c844c;
-    ::ll::UntypedStorage<8, 184> mUnkd525e0;
-    ::ll::UntypedStorage<4, 4>   mUnk90fd15;
-    ::ll::UntypedStorage<4, 4>   mUnkd820c4;
-    ::ll::UntypedStorage<4, 4>   mUnk216e37;
-    ::ll::UntypedStorage<4, 4>   mUnk64c332;
-    ::ll::UntypedStorage<1, 1>   mUnk5f6614;
-    ::ll::UntypedStorage<4, 4>   mUnk57c6cd;
-    ::ll::UntypedStorage<8, 104> mUnke5cf53;
-    ::ll::UntypedStorage<1, 1>   mUnk6c9449;
-    ::ll::UntypedStorage<4, 4>   mUnk18f6ad;
+    ::ll::TypedStorage<4, 4, ::POIType>                              mPOIType;
+    ::ll::TypedStorage<8, 184, ::WorkDefinition>                     mDefinition;
+    ::ll::TypedStorage<4, 4, int>                                    mCooldownTick;
+    ::ll::TypedStorage<4, 4, int>                                    mActiveTick;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTick;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTickMax;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanRainAtLocation;
+    ::ll::TypedStorage<4, 4, int>                                    mRainCheckCooldownTick;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnArrival;
+    ::ll::TypedStorage<1, 1, bool>                                   mHasEverReachedJobsite;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorkGoal& operator=(WorkGoal const&);
-    WorkGoal(WorkGoal const&);
-    WorkGoal();
 
 public:
     // virtual functions

@@ -9,16 +9,16 @@ class GameEventListener;
 
 class GameEventListenerRegistry : public ::std::enable_shared_from_this<::GameEventListenerRegistry> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1e439b;
-    // NOLINTEND
+    // GameEventListenerRegistry inner types define
+    using RegistrationToken = ::gsl::final_action<::std::function<void()>>;
+
+    using ListenerVector = ::std::vector<::std::reference_wrapper<::GameEventListener>>;
 
 public:
-    // prevent constructor by default
-    GameEventListenerRegistry& operator=(GameEventListenerRegistry const&);
-    GameEventListenerRegistry(GameEventListenerRegistry const&);
-    GameEventListenerRegistry();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::GameEventListener>>> mListeners;
+    // NOLINTEND
 
 public:
     // member functions

@@ -11,6 +11,12 @@
 
 class ScriptingEventHandler : public ::GameplayHandler {
 public:
+    // ScriptingEventHandler inner types define
+    using EventTypes = ::entt::type_list<
+        ::MutableScriptingGameplayEvent<::CoordinatorResult>,
+        ::ScriptingGameplayEvent<::CoordinatorResult> const>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

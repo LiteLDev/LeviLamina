@@ -11,6 +11,8 @@
 // clang-format off
 class EntityContext;
 class Mob;
+class WeakEntityRef;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -80,17 +82,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbbc115;
-    ::ll::UntypedStorage<8, 24> mUnk7e887d;
-    ::ll::UntypedStorage<2, 2>  mUnkc092c1;
-    ::ll::UntypedStorage<8, 8>  mUnk629ade;
+    ::ll::TypedStorage<8, 8, ::Mob&>           mMob;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mRoarTarget;
+    ::ll::TypedStorage<2, 2, ushort>           mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>           mEndTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RoarGoal& operator=(RoarGoal const&);
-    RoarGoal(RoarGoal const&);
-    RoarGoal();
 
 public:
     // virtual functions

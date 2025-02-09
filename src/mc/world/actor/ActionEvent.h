@@ -68,17 +68,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5680bf;
-    ::ll::UntypedStorage<4, 4> mUnk60f895;
-    ::ll::UntypedStorage<1, 1> mUnkb0b873;
-    ::ll::UntypedStorage<1, 1> mUnk56e20f;
+    ::ll::TypedStorage<4, 4, int>                        mActionId;
+    ::ll::TypedStorage<4, 4, ::ActionEvent::ActionState> mActionState;
+    ::ll::TypedStorage<1, 1, bool>                       mIsExclusive;
+    ::ll::TypedStorage<1, 1, ::FocusImpact>              mFocusImpact;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActionEvent& operator=(ActionEvent const&);
-    ActionEvent(ActionEvent const&);
-    ActionEvent();
 
 public:
     // member functions

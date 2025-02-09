@@ -14,14 +14,8 @@ class NetEventCallbackComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka6e055;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::NetEventCallback>> mCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetEventCallbackComponent& operator=(NetEventCallbackComponent const&);
-    NetEventCallbackComponent(NetEventCallbackComponent const&);
-    NetEventCallbackComponent();
 
 public:
     // member functions

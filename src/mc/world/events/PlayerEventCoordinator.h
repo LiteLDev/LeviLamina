@@ -27,13 +27,8 @@ class PlayerEventCoordinator : public ::EventCoordinator<::PlayerEventListener> 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf9418c;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerGameplayHandler>> mPlayerGameplayHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerEventCoordinator& operator=(PlayerEventCoordinator const&);
-    PlayerEventCoordinator(PlayerEventCoordinator const&);
 
 public:
     // virtual functions

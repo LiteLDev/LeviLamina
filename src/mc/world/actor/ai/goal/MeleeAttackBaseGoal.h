@@ -3,53 +3,52 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/ActorCategory.h"
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDefinitionTrigger;
 class Mob;
+class Path;
+class Vec3;
 // clang-format on
 
 class MeleeAttackBaseGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk59f8cc;
-    ::ll::UntypedStorage<8, 40>  mUnkf2f7cd;
-    ::ll::UntypedStorage<1, 1>   mUnk5c333a;
-    ::ll::UntypedStorage<1, 1>   mUnk69d52c;
-    ::ll::UntypedStorage<1, 1>   mUnk266b38;
-    ::ll::UntypedStorage<1, 1>   mUnkb14d3e;
-    ::ll::UntypedStorage<4, 4>   mUnkcc644d;
-    ::ll::UntypedStorage<4, 4>   mUnk4cdcd2;
-    ::ll::UntypedStorage<4, 4>   mUnkd0ec55;
-    ::ll::UntypedStorage<4, 4>   mUnkb76b19;
-    ::ll::UntypedStorage<4, 4>   mUnkcb73c3;
-    ::ll::UntypedStorage<4, 4>   mUnk374000;
-    ::ll::UntypedStorage<4, 4>   mUnk1b596c;
-    ::ll::UntypedStorage<4, 4>   mUnk667b04;
-    ::ll::UntypedStorage<4, 4>   mUnk818707;
-    ::ll::UntypedStorage<4, 4>   mUnke18385;
-    ::ll::UntypedStorage<4, 4>   mUnkd2de46;
-    ::ll::UntypedStorage<4, 4>   mUnk759163;
-    ::ll::UntypedStorage<4, 4>   mUnk1811ad;
-    ::ll::UntypedStorage<4, 4>   mUnk2b5c6e;
-    ::ll::UntypedStorage<4, 4>   mUnk2faf76;
-    ::ll::UntypedStorage<8, 8>   mUnk6cc37f;
-    ::ll::UntypedStorage<4, 12>  mUnkaec9e6;
-    ::ll::UntypedStorage<4, 4>   mUnk6e7da4;
-    ::ll::UntypedStorage<8, 104> mUnkd0d210;
-    ::ll::UntypedStorage<8, 104> mUnk3cc41b;
-    ::ll::UntypedStorage<1, 1>   mUnk44ccf2;
-    ::ll::UntypedStorage<1, 1>   mUnka20ec9;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>       mTarget;
+    ::ll::TypedStorage<1, 1, bool>                       mAttackOnce;
+    ::ll::TypedStorage<1, 1, bool>                       mHasAttacked;
+    ::ll::TypedStorage<1, 1, bool>                       mRequireCompletePath;
+    ::ll::TypedStorage<1, 1, bool>                       mTrackTarget;
+    ::ll::TypedStorage<4, 4, int>                        mRandomStopInterval;
+    ::ll::TypedStorage<4, 4, int>                        mAttackTicks;
+    ::ll::TypedStorage<4, 4, int>                        mCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                        mMinPathTicks;
+    ::ll::TypedStorage<4, 4, int>                        mMaxPathTicks;
+    ::ll::TypedStorage<4, 4, int>                        mTicksToRecalculatePath;
+    ::ll::TypedStorage<4, 4, int>                        mPathFailTickIncrease;
+    ::ll::TypedStorage<4, 4, int>                        mInnerBoundaryTickIncrease;
+    ::ll::TypedStorage<4, 4, int>                        mOuterBoundaryTickIncrease;
+    ::ll::TypedStorage<4, 4, float>                      mPathInnerBoundarySq;
+    ::ll::TypedStorage<4, 4, float>                      mPathOuterBoundarySq;
+    ::ll::TypedStorage<4, 4, float>                      mMeleeFov;
+    ::ll::TypedStorage<4, 4, float>                      mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>                      mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>                      mSpeedMultiplier;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>  mPath;
+    ::ll::TypedStorage<4, 12, ::Vec3>                    mPathTarget;
+    ::ll::TypedStorage<4, 4, ::ActorCategory>            mAttackTypes;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnAttack;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnKill;
+    ::ll::TypedStorage<1, 1, bool>                       mSetPersistent;
+    ::ll::TypedStorage<1, 1, bool>                       mCanSpreadOnFire;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MeleeAttackBaseGoal& operator=(MeleeAttackBaseGoal const&);
-    MeleeAttackBaseGoal(MeleeAttackBaseGoal const&);
-    MeleeAttackBaseGoal();
 
 public:
     // virtual functions

@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct ActorHealthChangedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk13991e;
-    ::ll::UntypedStorage<4, 4>  mUnk9b5fb3;
-    ::ll::UntypedStorage<4, 4>  mUnka2729e;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<4, 4, float>            mOldValue;
+    ::ll::TypedStorage<4, 4, float>            mNewValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorHealthChangedEvent& operator=(ActorHealthChangedEvent const&);
-    ActorHealthChangedEvent(ActorHealthChangedEvent const&);
-    ActorHealthChangedEvent();
 
 public:
     // member functions

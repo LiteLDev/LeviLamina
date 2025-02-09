@@ -157,6 +157,10 @@ public:
         CommandParseTableEntry();
     };
 
+    using CommandParseTableDetails = ::std::vector<::IMinecraftEventing::CommandParseTableEntry>;
+
+    using SignInErrorDetails = ::std::vector<::std::pair<::std::string, ::std::string>>;
+
     enum class SignInAccountType : int {
         Unknown         = 0,
         PlayFabDevice   = 1,
@@ -383,6 +387,8 @@ public:
         EduPauseMenu  = 0,
         LessonCommand = 1,
     };
+
+    using TestBuildIdType = char const*;
 
     enum class WorldClassroomCustomization : int {
         ResourceUri = 0,

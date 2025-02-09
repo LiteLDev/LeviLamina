@@ -5,24 +5,24 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+class Vec3;
+// clang-format on
+
 class SwimWanderGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk709707;
-    ::ll::UntypedStorage<4, 4>  mUnkebc34f;
-    ::ll::UntypedStorage<4, 4>  mUnkf82fb1;
-    ::ll::UntypedStorage<4, 4>  mUnk56010e;
-    ::ll::UntypedStorage<4, 4>  mUnkf1db39;
-    ::ll::UntypedStorage<4, 4>  mUnk99bd25;
-    ::ll::UntypedStorage<4, 12> mUnkb4b85d;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, int>     mTicks;
+    ::ll::TypedStorage<4, 4, int>     mWanderTicks;
+    ::ll::TypedStorage<4, 4, float>   mInterval;
+    ::ll::TypedStorage<4, 4, float>   mLookAheadDistance;
+    ::ll::TypedStorage<4, 4, float>   mSpeedMultiplier;
+    ::ll::TypedStorage<4, 12, ::Vec3> mWanted;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwimWanderGoal& operator=(SwimWanderGoal const&);
-    SwimWanderGoal(SwimWanderGoal const&);
-    SwimWanderGoal();
 
 public:
     // virtual functions

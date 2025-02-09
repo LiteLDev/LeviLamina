@@ -64,15 +64,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk452e23;
-    ::ll::UntypedStorage<8, 48> mUnkeca1b7;
+    ::ll::TypedStorage<8, 8, ::Mob&>                       mMob;
+    ::ll::TypedStorage<8, 48, ::EquipItemGoal::Definition> mDefinition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EquipItemGoal& operator=(EquipItemGoal const&);
-    EquipItemGoal(EquipItemGoal const&);
-    EquipItemGoal();
 
 public:
     // virtual functions

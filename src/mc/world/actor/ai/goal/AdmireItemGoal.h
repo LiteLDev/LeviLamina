@@ -9,29 +9,26 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
+class ItemStack;
 class Mob;
+class WeakEntityRef;
 struct FloatRange;
+struct Tick;
 // clang-format on
 
 class AdmireItemGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk97d613;
-    ::ll::UntypedStorage<4, 4>   mUnkb01f35;
-    ::ll::UntypedStorage<4, 8>   mUnk3020dc;
-    ::ll::UntypedStorage<8, 8>   mUnka737e0;
-    ::ll::UntypedStorage<8, 104> mUnkd35f53;
-    ::ll::UntypedStorage<8, 104> mUnk4be622;
-    ::ll::UntypedStorage<8, 152> mUnkdbeb66;
-    ::ll::UntypedStorage<8, 24>  mUnkf3d774;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mNextSoundEventTick;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStopEvent;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                          mItemStackPicked;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                       mItemOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AdmireItemGoal& operator=(AdmireItemGoal const&);
-    AdmireItemGoal(AdmireItemGoal const&);
-    AdmireItemGoal();
 
 public:
     // virtual functions

@@ -17,15 +17,9 @@ class MoveToVillageGoal : public ::BaseMoveToGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkaf3684;
-    ::ll::UntypedStorage<1, 1> mUnkf8c676;
+    ::ll::TypedStorage<4, 4, int>  mVillageSearchRangeBlocks;
+    ::ll::TypedStorage<1, 1, bool> mReachedVillage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveToVillageGoal& operator=(MoveToVillageGoal const&);
-    MoveToVillageGoal(MoveToVillageGoal const&);
-    MoveToVillageGoal();
 
 public:
     // virtual functions

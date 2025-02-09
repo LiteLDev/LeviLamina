@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class ExpiringTick;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -85,30 +87,24 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk434c31;
-    ::ll::UntypedStorage<4, 4>  mUnk3bd807;
-    ::ll::UntypedStorage<4, 4>  mUnkcff4a4;
-    ::ll::UntypedStorage<4, 4>  mUnk40a8ba;
-    ::ll::UntypedStorage<4, 4>  mUnk6911f5;
-    ::ll::UntypedStorage<4, 4>  mUnk13e5ba;
-    ::ll::UntypedStorage<4, 4>  mUnk7367a4;
-    ::ll::UntypedStorage<4, 4>  mUnk8ad6be;
-    ::ll::UntypedStorage<2, 2>  mUnk760007;
-    ::ll::UntypedStorage<2, 2>  mUnkfd66bd;
-    ::ll::UntypedStorage<2, 2>  mUnk2f7fe4;
-    ::ll::UntypedStorage<4, 4>  mUnkfcefd7;
-    ::ll::UntypedStorage<4, 4>  mUnk236ba1;
-    ::ll::UntypedStorage<8, 24> mUnk147938;
-    ::ll::UntypedStorage<8, 24> mUnk5ea725;
-    ::ll::UntypedStorage<8, 24> mUnk7b2f1f;
-    ::ll::UntypedStorage<8, 24> mUnk1b3e9b;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, float>                                  mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackDamage;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackRangeHorizontal;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackRangeVertical;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackHorizontalStrength;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackVerticalStrength;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackHeightCap;
+    ::ll::TypedStorage<2, 2, ushort>                                 mAttackCooldownTicks;
+    ::ll::TypedStorage<2, 2, ushort>                                 mDurationTicks;
+    ::ll::TypedStorage<2, 2, ushort>                                 mDurationTicksUntilAttackSound;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mAttackSound;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mChargeSound;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mAnimationLength;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mSoundCooldown;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mSoundDelay;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mSonicBoomCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SonicBoomGoal& operator=(SonicBoomGoal const&);
-    SonicBoomGoal(SonicBoomGoal const&);
-    SonicBoomGoal();
 
 public:
     // virtual functions

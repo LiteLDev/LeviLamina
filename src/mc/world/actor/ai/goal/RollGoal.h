@@ -15,17 +15,11 @@ class RollGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb6af51;
-    ::ll::UntypedStorage<4, 4> mUnk314716;
-    ::ll::UntypedStorage<4, 4> mUnk626d49;
-    ::ll::UntypedStorage<4, 4> mUnkcc2be0;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float>  mRollXd;
+    ::ll::TypedStorage<4, 4, float>  mRollZd;
+    ::ll::TypedStorage<4, 4, float>  mProbability;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RollGoal& operator=(RollGoal const&);
-    RollGoal(RollGoal const&);
-    RollGoal();
 
 public:
     // virtual functions

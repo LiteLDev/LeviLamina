@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -70,16 +71,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnka87f52;
-    ::ll::UntypedStorage<8, 64> mUnkdcf47e;
-    ::ll::UntypedStorage<4, 4>  mUnk37c62d;
+    ::ll::TypedStorage<8, 8, ::Mob&>                               mMob;
+    ::ll::TypedStorage<8, 64, ::StayNearNoteblockGoal::Definition> mDefinition;
+    ::ll::TypedStorage<4, 4, int>                                  mTimeToRecalcPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StayNearNoteblockGoal& operator=(StayNearNoteblockGoal const&);
-    StayNearNoteblockGoal(StayNearNoteblockGoal const&);
-    StayNearNoteblockGoal();
 
 public:
     // virtual functions

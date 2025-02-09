@@ -2,20 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/GameType.h"
+
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct PlayerGameModeChangeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdebe41;
-    ::ll::UntypedStorage<4, 4>  mUnkd0fc28;
-    ::ll::UntypedStorage<4, 4>  mUnk24a0c6;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
+    ::ll::TypedStorage<4, 4, ::GameType>       mFromGameMode;
+    ::ll::TypedStorage<4, 4, ::GameType>       mToGameMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerGameModeChangeEvent& operator=(PlayerGameModeChangeEvent const&);
-    PlayerGameModeChangeEvent(PlayerGameModeChangeEvent const&);
-    PlayerGameModeChangeEvent();
 
 public:
     // member functions

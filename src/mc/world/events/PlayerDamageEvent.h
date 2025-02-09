@@ -2,19 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorDamageSource;
+class EntityContext;
+// clang-format on
+
 struct PlayerDamageEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf93c60;
-    ::ll::UntypedStorage<8, 8>  mUnk22f1ba;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>            mPlayer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDamageSource>> mDamageSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDamageEvent& operator=(PlayerDamageEvent const&);
-    PlayerDamageEvent(PlayerDamageEvent const&);
-    PlayerDamageEvent();
 
 public:
     // member functions

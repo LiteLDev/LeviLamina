@@ -8,24 +8,20 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec3;
+struct Tick;
 // clang-format on
 
 class FindCoverGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk717580;
-    ::ll::UntypedStorage<4, 4>  mUnk3af051;
-    ::ll::UntypedStorage<4, 4>  mUnk730be2;
-    ::ll::UntypedStorage<8, 8>  mUnk9615e2;
-    ::ll::UntypedStorage<4, 12> mUnk2dbd36;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, float>   mSpeed;
+    ::ll::TypedStorage<4, 4, int>     mCooldownTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>  mCooldownTimer;
+    ::ll::TypedStorage<4, 12, ::Vec3> mWantedPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FindCoverGoal& operator=(FindCoverGoal const&);
-    FindCoverGoal(FindCoverGoal const&);
-    FindCoverGoal();
 
 public:
     // virtual functions

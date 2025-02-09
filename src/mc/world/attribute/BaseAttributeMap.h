@@ -14,14 +14,9 @@ class BaseAttributeMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk97db9e;
-    ::ll::UntypedStorage<8, 24> mUnke9dcd1;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::AttributeInstance>> mInstanceMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>        mDirtyAttributes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseAttributeMap& operator=(BaseAttributeMap const&);
-    BaseAttributeMap(BaseAttributeMap const&);
 
 public:
     // member functions

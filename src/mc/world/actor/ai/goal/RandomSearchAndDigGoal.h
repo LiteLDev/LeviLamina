@@ -13,7 +13,10 @@ class BlockDescriptor;
 class BlockPos;
 class BlockSource;
 class EntityContext;
+class ExpiringTick;
 class Mob;
+class Path;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -120,27 +123,21 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 776> mUnkee7a0f;
-    ::ll::UntypedStorage<8, 8>   mUnk9915e2;
-    ::ll::UntypedStorage<4, 4>   mUnke35286;
-    ::ll::UntypedStorage<4, 4>   mUnk6d33c6;
-    ::ll::UntypedStorage<1, 1>   mUnkde9f1e;
-    ::ll::UntypedStorage<4, 12>  mUnk6623f8;
-    ::ll::UntypedStorage<8, 8>   mUnkcd922d;
-    ::ll::UntypedStorage<2, 2>   mUnkbbc129;
-    ::ll::UntypedStorage<2, 2>   mUnk1b245e;
-    ::ll::UntypedStorage<2, 2>   mUnk7ecc77;
-    ::ll::UntypedStorage<8, 8>   mUnk5840de;
-    ::ll::UntypedStorage<8, 8>   mUnk3fef11;
-    ::ll::UntypedStorage<8, 8>   mUnk4745a0;
-    ::ll::UntypedStorage<8, 24>  mUnk30f981;
+    ::ll::TypedStorage<8, 776, ::RandomSearchAndDigGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, ::RandomSearchAndDigGoal::State>        mState;
+    ::ll::TypedStorage<4, 4, float>                                  mGoalRadiusSqr;
+    ::ll::TypedStorage<1, 1, bool>                                   mItemFound;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mTargetPos;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>              mPath;
+    ::ll::TypedStorage<2, 2, ushort>                                 mCooldownDurationTicks;
+    ::ll::TypedStorage<2, 2, ushort>                                 mDiggingDurationTicks;
+    ::ll::TypedStorage<2, 2, ushort>                                 mSpawnItemAfterTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mCooldownEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mItemFoundEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mDiggingEndTick;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mDiggingParticleCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomSearchAndDigGoal& operator=(RandomSearchAndDigGoal const&);
-    RandomSearchAndDigGoal(RandomSearchAndDigGoal const&);
-    RandomSearchAndDigGoal();
 
 public:
     // virtual functions

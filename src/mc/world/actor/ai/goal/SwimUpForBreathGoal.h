@@ -4,31 +4,27 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec3;
 // clang-format on
 
 class SwimUpForBreathGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk19cc93;
-    ::ll::UntypedStorage<4, 4>  mUnkc6ee4f;
-    ::ll::UntypedStorage<4, 4>  mUnk7b7ff5;
-    ::ll::UntypedStorage<4, 4>  mUnkabff2a;
-    ::ll::UntypedStorage<8, 8>  mUnk537fa6;
-    ::ll::UntypedStorage<4, 12> mUnk57bea3;
-    ::ll::UntypedStorage<4, 4>  mUnk2ae720;
-    ::ll::UntypedStorage<1, 1>  mUnkc641f3;
+    ::ll::TypedStorage<4, 4, float>          mSpeedMod;
+    ::ll::TypedStorage<4, 4, int>            mSearchRadius;
+    ::ll::TypedStorage<4, 4, int>            mSearchHeight;
+    ::ll::TypedStorage<4, 4, ::MaterialType> mMaterialType;
+    ::ll::TypedStorage<8, 8, ::Mob&>         mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>        mWanted;
+    ::ll::TypedStorage<4, 4, int>            mStartBreath;
+    ::ll::TypedStorage<1, 1, bool>           mEndsInAir;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwimUpForBreathGoal& operator=(SwimUpForBreathGoal const&);
-    SwimUpForBreathGoal(SwimUpForBreathGoal const&);
-    SwimUpForBreathGoal();
 
 public:
     // virtual functions

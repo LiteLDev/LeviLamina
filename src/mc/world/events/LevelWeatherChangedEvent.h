@@ -6,17 +6,11 @@ struct LevelWeatherChangedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk29a55e;
-    ::ll::UntypedStorage<1, 1> mUnkd0e4fe;
-    ::ll::UntypedStorage<1, 1> mUnk6699fb;
-    ::ll::UntypedStorage<1, 1> mUnkde9606;
-    ::ll::UntypedStorage<4, 4> mUnk5b2b35;
-    ::ll::UntypedStorage<4, 4> mUnkc9bdde;
+    ::ll::TypedStorage<1, 1, bool const> mIsRaining;
+    ::ll::TypedStorage<1, 1, bool const> mIsLightning;
+    ::ll::TypedStorage<1, 1, bool>       mWillBeRaining;
+    ::ll::TypedStorage<1, 1, bool>       mWillBeLightning;
+    ::ll::TypedStorage<4, 4, int>        mRainTime;
+    ::ll::TypedStorage<4, 4, int>        mLightningTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelWeatherChangedEvent& operator=(LevelWeatherChangedEvent const&);
-    LevelWeatherChangedEvent(LevelWeatherChangedEvent const&);
-    LevelWeatherChangedEvent();
 };

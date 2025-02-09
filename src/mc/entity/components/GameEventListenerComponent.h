@@ -11,7 +11,7 @@ class GameEventListenerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkde87f1;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::GameEventDynamicRegistration>> mListenerRegistration;
     // NOLINTEND
 
 public:

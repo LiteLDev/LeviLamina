@@ -16,6 +16,10 @@ struct ServerInstanceNotificationEvent;
 
 class ServerInstanceEventListener {
 public:
+    // ServerInstanceEventListener inner types define
+    using EventType = ::ServerInstanceNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

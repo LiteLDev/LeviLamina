@@ -8,26 +8,21 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+struct Tick;
 // clang-format on
 
 class RandomLookAroundAndSitGoal : public ::RandomLookAroundGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5efd10;
-    ::ll::UntypedStorage<1, 1> mUnkaea323;
-    ::ll::UntypedStorage<4, 4> mUnka4f73a;
-    ::ll::UntypedStorage<4, 4> mUnk6bf9b1;
-    ::ll::UntypedStorage<4, 4> mUnk87f81d;
-    ::ll::UntypedStorage<4, 4> mUnka8beb9;
-    ::ll::UntypedStorage<8, 8> mUnke1a79e;
+    ::ll::TypedStorage<1, 1, bool>   mContinueSittingOnReload;
+    ::ll::TypedStorage<1, 1, bool>   mContinueIfLeashed;
+    ::ll::TypedStorage<4, 4, int>    mMinLookCount;
+    ::ll::TypedStorage<4, 4, int>    mMaxLookCount;
+    ::ll::TypedStorage<4, 4, int>    mRemainingLookCount;
+    ::ll::TypedStorage<4, 4, int>    mRandomLookAroundCooldown;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextAvailableSitTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomLookAroundAndSitGoal& operator=(RandomLookAroundAndSitGoal const&);
-    RandomLookAroundAndSitGoal(RandomLookAroundAndSitGoal const&);
-    RandomLookAroundAndSitGoal();
 
 public:
     // virtual functions

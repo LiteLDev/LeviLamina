@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct PlayerEmoteEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfaf5d6;
-    ::ll::UntypedStorage<8, 32> mUnk8a66be;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
+    ::ll::TypedStorage<8, 32, ::std::string>   mEmotePieceId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerEmoteEvent& operator=(PlayerEmoteEvent const&);
-    PlayerEmoteEvent(PlayerEmoteEvent const&);
-    PlayerEmoteEvent();
 
 public:
     // member functions

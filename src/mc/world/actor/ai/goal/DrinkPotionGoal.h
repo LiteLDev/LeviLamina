@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class AttributeModifier;
 class Mob;
 struct DrinkPotionData;
+struct Tick;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -16,19 +18,13 @@ class DrinkPotionGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk5618a9;
-    ::ll::UntypedStorage<4, 4>  mUnk56471b;
-    ::ll::UntypedStorage<8, 24> mUnk329990;
-    ::ll::UntypedStorage<4, 4>  mUnkf8766b;
-    ::ll::UntypedStorage<8, 8>  mUnka8d295;
-    ::ll::UntypedStorage<8, 80> mUnk8cd484;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                  mMob;
+    ::ll::TypedStorage<4, 4, float const>                             mWalkSpeedModifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DrinkPotionData> const> mDrinkPotionData;
+    ::ll::TypedStorage<4, 4, int>                                     mThrottleCooldown;
+    ::ll::TypedStorage<8, 8, ::Tick>                                  mFinishUsingItemTick;
+    ::ll::TypedStorage<8, 80, ::AttributeModifier>                    mSpeedAttributeModifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DrinkPotionGoal& operator=(DrinkPotionGoal const&);
-    DrinkPotionGoal(DrinkPotionGoal const&);
-    DrinkPotionGoal();
 
 public:
     // virtual functions

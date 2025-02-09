@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/input/InputMode.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct PlayerInputModeChangeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9e0012;
-    ::ll::UntypedStorage<4, 4>  mUnkea1b08;
-    ::ll::UntypedStorage<4, 4>  mUnk19ed93;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<4, 4, ::InputMode>                 mNewInputModeUsed;
+    ::ll::TypedStorage<4, 4, ::InputMode>                 mPreviousInputModeUsed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInputModeChangeEvent& operator=(PlayerInputModeChangeEvent const&);
-    PlayerInputModeChangeEvent(PlayerInputModeChangeEvent const&);
-    PlayerInputModeChangeEvent();
 
 public:
     // member functions

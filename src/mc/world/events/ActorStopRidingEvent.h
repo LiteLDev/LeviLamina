@@ -2,22 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct ActorStopRidingEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke7209e;
-    ::ll::UntypedStorage<8, 24> mUnkfef8d2;
-    ::ll::UntypedStorage<1, 1>  mUnk4c85b7;
-    ::ll::UntypedStorage<1, 1>  mUnk80586e;
-    ::ll::UntypedStorage<1, 1>  mUnk9dffe9;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPassenger;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mVehicle;
+    ::ll::TypedStorage<1, 1, bool>             exitFromPassenger;
+    ::ll::TypedStorage<1, 1, bool>             actorIsBeingDestroyed;
+    ::ll::TypedStorage<1, 1, bool>             switchingVehicles;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorStopRidingEvent& operator=(ActorStopRidingEvent const&);
-    ActorStopRidingEvent(ActorStopRidingEvent const&);
-    ActorStopRidingEvent();
 
 public:
     // member functions

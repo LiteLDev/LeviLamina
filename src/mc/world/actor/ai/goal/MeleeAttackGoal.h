@@ -15,18 +15,23 @@ class Vec3;
 
 class MeleeAttackGoal : public ::MeleeAttackBaseGoal {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf598ab;
-    ::ll::UntypedStorage<8, 8> mUnk10ac0c;
-    ::ll::UntypedStorage<4, 4> mUnk8a4661;
-    // NOLINTEND
+    // MeleeAttackGoal inner types define
+    using LineOfSightEvaluator = bool (*)(::Mob const&, ::Actor const&);
+
+    using AttackReachEvaluator =
+        bool (*)(::Mob const&, ::Vec3 const&, float const, float const, float const, float const, int const);
 
 public:
-    // prevent constructor by default
-    MeleeAttackGoal& operator=(MeleeAttackGoal const&);
-    MeleeAttackGoal(MeleeAttackGoal const&);
-    MeleeAttackGoal();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        8,
+        bool (*)(::Mob const&, ::Vec3 const&, float const, float const, float const, float const, int const)>
+                                                                     mReachEvaluator;
+    ::ll::TypedStorage<8, 8, bool (*)(::Mob const&, ::Actor const&)> mLineOfSightEvaluator;
+    ::ll::TypedStorage<4, 4, float>                                  mReachMultiplier;
+    // NOLINTEND
 
 public:
     // virtual functions

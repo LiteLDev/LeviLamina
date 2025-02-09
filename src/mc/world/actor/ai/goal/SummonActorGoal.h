@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class Mob;
+class Vec3;
 struct ActorDefinitionIdentifier;
 struct SummonSpellData;
 // clang-format on
@@ -17,23 +18,17 @@ class SummonActorGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb28d85;
-    ::ll::UntypedStorage<8, 24> mUnkd143ea;
-    ::ll::UntypedStorage<4, 4>  mUnk8f7480;
-    ::ll::UntypedStorage<4, 4>  mUnk805e10;
-    ::ll::UntypedStorage<4, 4>  mUnkf29a82;
-    ::ll::UntypedStorage<4, 4>  mUnke3bf05;
-    ::ll::UntypedStorage<4, 4>  mUnk26f7b2;
-    ::ll::UntypedStorage<8, 8>  mUnk915b14;
-    ::ll::UntypedStorage<4, 12> mUnk22a024;
-    ::ll::UntypedStorage<4, 12> mUnkc66e0d;
+    ::ll::TypedStorage<8, 8, ::Mob&>                            mCaster;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SummonSpellData>> mSpells;
+    ::ll::TypedStorage<4, 4, int>                               mCurrentTick;
+    ::ll::TypedStorage<4, 4, int>                               mCastTicksRemaining;
+    ::ll::TypedStorage<4, 4, int>                               mCurrentSpellIndex;
+    ::ll::TypedStorage<4, 4, int>                               mCurrentSpellStage;
+    ::ll::TypedStorage<4, 4, int>                               mCurrentSummonCount;
+    ::ll::TypedStorage<8, 8, uint64>                            mCooldownStopTick;
+    ::ll::TypedStorage<4, 12, ::Vec3>                           mTargetPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                           mCasterPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SummonActorGoal& operator=(SummonActorGoal const&);
-    SummonActorGoal(SummonActorGoal const&);
-    SummonActorGoal();
 
 public:
     // virtual functions

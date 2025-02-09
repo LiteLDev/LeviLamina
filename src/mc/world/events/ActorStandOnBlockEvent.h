@@ -2,20 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockLegacy;
+class BlockPos;
+class EntityContext;
+// clang-format on
+
 struct ActorStandOnBlockEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbc03fb;
-    ::ll::UntypedStorage<8, 8>  mUnk5c9b02;
-    ::ll::UntypedStorage<4, 12> mUnk16bf74;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext> const>    mActor;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const> const> mBlock;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                    mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorStandOnBlockEvent& operator=(ActorStandOnBlockEvent const&);
-    ActorStandOnBlockEvent(ActorStandOnBlockEvent const&);
-    ActorStandOnBlockEvent();
 
 public:
     // member functions

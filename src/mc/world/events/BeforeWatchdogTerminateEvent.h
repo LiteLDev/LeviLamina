@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/events/WatchdogTerminateReason.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
+
 struct BeforeWatchdogTerminateEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk8b3de9;
-    ::ll::UntypedStorage<4, 4>  mUnk549ddf;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<4, 4, ::WatchdogTerminateReason>       mWatchdogTerminateReason;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BeforeWatchdogTerminateEvent& operator=(BeforeWatchdogTerminateEvent const&);
-    BeforeWatchdogTerminateEvent(BeforeWatchdogTerminateEvent const&);
-    BeforeWatchdogTerminateEvent();
 
 public:
     // member functions

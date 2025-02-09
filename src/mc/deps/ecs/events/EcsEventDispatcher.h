@@ -8,16 +8,18 @@
 class EcsEventDispatcher : public ::std::enable_shared_from_this<::EcsEventDispatcher>,
                            public ::EnableGetWeakRef<::EcsEventDispatcher> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnkf6de78;
-    // NOLINTEND
+    // EcsEventDispatcher inner types define
+    using BaseWeak = ::EnableGetWeakRef<::EcsEventDispatcher>;
+
+    using BaseShared = ::std::enable_shared_from_this<::EcsEventDispatcher>;
+
+    using Token = ::gsl::final_action<::std::function<void()>>;
 
 public:
-    // prevent constructor by default
-    EcsEventDispatcher& operator=(EcsEventDispatcher const&);
-    EcsEventDispatcher(EcsEventDispatcher const&);
-    EcsEventDispatcher();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 80, ::entt::dispatcher> mDispatcher;
+    // NOLINTEND
 
 public:
     // member functions

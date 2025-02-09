@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct PlayerDisconnectEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk51e674;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDisconnectEvent& operator=(PlayerDisconnectEvent const&);
-    PlayerDisconnectEvent(PlayerDisconnectEvent const&);
-    PlayerDisconnectEvent();
 
 public:
     // member functions

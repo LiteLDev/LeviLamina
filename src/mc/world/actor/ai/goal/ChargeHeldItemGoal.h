@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemDescriptor;
 class Mob;
 // clang-format on
 
@@ -14,16 +15,10 @@ class ChargeHeldItemGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf1e9df;
-    ::ll::UntypedStorage<4, 4>  mUnk58530f;
-    ::ll::UntypedStorage<8, 24> mUnk8c4323;
+    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
+    ::ll::TypedStorage<4, 4, int>                              mUsingTime;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mChargeItemList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChargeHeldItemGoal& operator=(ChargeHeldItemGoal const&);
-    ChargeHeldItemGoal(ChargeHeldItemGoal const&);
-    ChargeHeldItemGoal();
 
 public:
     // virtual functions

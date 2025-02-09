@@ -5,23 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+// clang-format on
+
 struct SurfaceMaterialAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 184> mUnkebf05b;
-    ::ll::UntypedStorage<8, 184> mUnk510ed8;
-    ::ll::UntypedStorage<8, 184> mUnk728a5e;
-    ::ll::UntypedStorage<8, 184> mUnkfd46e3;
-    ::ll::UntypedStorage<8, 184> mUnk4b6011;
-    ::ll::UntypedStorage<4, 4>   mUnkcae3c9;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mTop;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mMid;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mSeaFloor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mFoundation;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mSea;
+    ::ll::TypedStorage<4, 4, int>                 mSeaFloorDepth;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SurfaceMaterialAttributes& operator=(SurfaceMaterialAttributes const&);
-    SurfaceMaterialAttributes(SurfaceMaterialAttributes const&);
-    SurfaceMaterialAttributes();
 
 public:
     // virtual functions

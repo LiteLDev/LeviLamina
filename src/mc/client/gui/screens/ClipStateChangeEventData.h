@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class UIPropertyBag;
+// clang-format on
+
 struct ClipStateChangeEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk75b1ac;
-    ::ll::UntypedStorage<8, 8> mUnkd8e854;
-    ::ll::UntypedStorage<1, 1> mUnk7ca3c6;
+    ::ll::TypedStorage<4, 4, uint>             id;
+    ::ll::TypedStorage<8, 8, ::UIPropertyBag*> propertyBag;
+    ::ll::TypedStorage<1, 1, bool>             isClipped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClipStateChangeEventData& operator=(ClipStateChangeEventData const&);
-    ClipStateChangeEventData(ClipStateChangeEventData const&);
-    ClipStateChangeEventData();
 };

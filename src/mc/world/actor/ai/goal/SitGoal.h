@@ -14,14 +14,8 @@ class SitGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb4fc1c;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SitGoal& operator=(SitGoal const&);
-    SitGoal(SitGoal const&);
-    SitGoal();
 
 public:
     // virtual functions

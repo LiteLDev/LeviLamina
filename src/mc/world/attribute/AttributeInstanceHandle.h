@@ -5,21 +5,16 @@
 // auto generated forward declare list
 // clang-format off
 class AttributeInstance;
+class BaseAttributeMap;
 // clang-format on
 
 class AttributeInstanceHandle {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke44131;
-    ::ll::UntypedStorage<4, 4> mUnk3c982f;
+    ::ll::TypedStorage<8, 8, ::BaseAttributeMap*> mAttributeMap;
+    ::ll::TypedStorage<4, 4, uint>                mAttributeID;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttributeInstanceHandle& operator=(AttributeInstanceHandle const&);
-    AttributeInstanceHandle(AttributeInstanceHandle const&);
-    AttributeInstanceHandle();
 
 public:
     // member functions

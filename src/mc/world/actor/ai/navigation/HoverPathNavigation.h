@@ -19,14 +19,8 @@ class HoverPathNavigation : public ::PathNavigation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbb21d2;
+    ::ll::TypedStorage<1, 1, bool> mCanPathFromAir;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HoverPathNavigation& operator=(HoverPathNavigation const&);
-    HoverPathNavigation(HoverPathNavigation const&);
-    HoverPathNavigation();
 
 public:
     // virtual functions

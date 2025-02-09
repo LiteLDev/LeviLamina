@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/world/level/EventCoordinatorManager.h"
 
 // auto generated forward declare list
 // clang-format off
+class ClientLevelEventCoordinator;
 class ClientPlayerEventCoordinator;
 class LevelEventCoordinator;
 class PlayerEventCoordinator;
@@ -17,15 +19,13 @@ class ClientEventCoordinatorManager : public ::EventCoordinatorManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkdbb610;
-    ::ll::UntypedStorage<8, 16> mUnk7a962b;
-    ::ll::UntypedStorage<8, 16> mUnkdeb488;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ClientLevelEventCoordinator>>>
+        mClientLevelEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerEventCoordinator>>>
+        mRemotePlayerEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ClientPlayerEventCoordinator>>>
+        mClientPlayerEventCoordinator;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientEventCoordinatorManager& operator=(ClientEventCoordinatorManager const&);
-    ClientEventCoordinatorManager(ClientEventCoordinatorManager const&);
 
 public:
     // virtual functions

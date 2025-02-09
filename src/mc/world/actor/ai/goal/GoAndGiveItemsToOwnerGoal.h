@@ -11,6 +11,8 @@
 // clang-format off
 class EntityContext;
 class Mob;
+class Path;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -91,18 +93,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9b7487;
-    ::ll::UntypedStorage<8, 96> mUnkfeee1e;
-    ::ll::UntypedStorage<4, 4>  mUnkf7a0e3;
-    ::ll::UntypedStorage<8, 8>  mUnk1e96ce;
-    ::ll::UntypedStorage<8, 8>  mUnk9b89f2;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                   mMob;
+    ::ll::TypedStorage<8, 96, ::GoAndGiveItemsToOwnerGoal::Definition> mDefinition;
+    ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToOwnerGoal::State>       mState;
+    ::ll::TypedStorage<8, 8, ::Tick>                                   mLastPathCalculationTick;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                mPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GoAndGiveItemsToOwnerGoal& operator=(GoAndGiveItemsToOwnerGoal const&);
-    GoAndGiveItemsToOwnerGoal(GoAndGiveItemsToOwnerGoal const&);
-    GoAndGiveItemsToOwnerGoal();
 
 public:
     // virtual functions

@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 struct CappedSurfaceAttributes : public ::BiomeComponentBase {
 public:
     // CappedSurfaceAttributes inner types declare
@@ -31,18 +36,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkabee9f;
-    ::ll::UntypedStorage<8, 24> mUnke0fd64;
-    ::ll::UntypedStorage<8, 8>  mUnka6b4c2;
-    ::ll::UntypedStorage<8, 8>  mUnk7ba17c;
-    ::ll::UntypedStorage<8, 8>  mUnkaa31c7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CappedSurfaceAttributes::MaterialLayer>> mFloorMaterials;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CappedSurfaceAttributes::MaterialLayer>> mCeilingMaterials;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                           mSeaMaterial;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                           mFoundationMaterial;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                           mBeachMaterial;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CappedSurfaceAttributes& operator=(CappedSurfaceAttributes const&);
-    CappedSurfaceAttributes(CappedSurfaceAttributes const&);
-    CappedSurfaceAttributes();
 
 public:
     // virtual functions

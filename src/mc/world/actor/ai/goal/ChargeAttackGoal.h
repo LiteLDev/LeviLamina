@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -14,19 +15,13 @@ class ChargeAttackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk774cda;
-    ::ll::UntypedStorage<4, 4> mUnkb5a5b5;
-    ::ll::UntypedStorage<4, 4> mUnkffc30c;
-    ::ll::UntypedStorage<4, 4> mUnke5e007;
-    ::ll::UntypedStorage<4, 4> mUnk712f21;
-    ::ll::UntypedStorage<4, 4> mUnka1871d;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, float>                                  mMinDistance;
+    ::ll::TypedStorage<4, 4, float>                                  mMaxDistance;
+    ::ll::TypedStorage<4, 4, float>                                  mSuccessRate;
+    ::ll::TypedStorage<4, 4, float>                                  mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSound;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChargeAttackGoal& operator=(ChargeAttackGoal const&);
-    ChargeAttackGoal(ChargeAttackGoal const&);
-    ChargeAttackGoal();
 
 public:
     // virtual functions

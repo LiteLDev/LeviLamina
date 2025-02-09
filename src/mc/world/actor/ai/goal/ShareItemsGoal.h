@@ -9,6 +9,7 @@
 // clang-format off
 class ItemStack;
 class Mob;
+class Path;
 struct MobDescriptor;
 // clang-format on
 
@@ -16,22 +17,16 @@ class ShareItemsGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkf433fb;
-    ::ll::UntypedStorage<4, 4>   mUnk79c3a4;
-    ::ll::UntypedStorage<4, 4>   mUnk89faf6;
-    ::ll::UntypedStorage<4, 4>   mUnke13b85;
-    ::ll::UntypedStorage<4, 4>   mUnk4b79a6;
-    ::ll::UntypedStorage<4, 4>   mUnke393c6;
-    ::ll::UntypedStorage<8, 24>  mUnkb199d6;
-    ::ll::UntypedStorage<8, 152> mUnk39e6dd;
-    ::ll::UntypedStorage<8, 8>   mUnkc57055;
+    ::ll::TypedStorage<8, 8, ::Mob&>                          mMob;
+    ::ll::TypedStorage<4, 4, int>                             mThrowCountdown;
+    ::ll::TypedStorage<4, 4, int>                             mSearchRange;
+    ::ll::TypedStorage<4, 4, float>                           mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                           mGoalRadiusSq;
+    ::ll::TypedStorage<4, 4, int>                             mTimeToRecalcPath;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mMobFilters;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                   mItemToShare;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>       mPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShareItemsGoal& operator=(ShareItemsGoal const&);
-    ShareItemsGoal(ShareItemsGoal const&);
-    ShareItemsGoal();
 
 public:
     // virtual functions

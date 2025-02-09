@@ -15,13 +15,8 @@ class DolphinMoveControl : public ::MoveControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3cb88d;
+    ::ll::TypedStorage<1, 1, bool> mBreaching;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DolphinMoveControl& operator=(DolphinMoveControl const&);
-    DolphinMoveControl(DolphinMoveControl const&);
 
 public:
     // virtual functions

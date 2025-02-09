@@ -5,18 +5,17 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Squid;
+// clang-format on
+
 class SquidMoveAwayFromGroundGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka55a0b;
+    ::ll::TypedStorage<8, 8, ::Squid&> mSquid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SquidMoveAwayFromGroundGoal& operator=(SquidMoveAwayFromGroundGoal const&);
-    SquidMoveAwayFromGroundGoal(SquidMoveAwayFromGroundGoal const&);
-    SquidMoveAwayFromGroundGoal();
 
 public:
     // virtual functions

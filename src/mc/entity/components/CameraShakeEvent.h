@@ -6,13 +6,7 @@ struct CameraShakeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk51526c;
-    ::ll::UntypedStorage<4, 4> mUnk6e3f40;
+    ::ll::TypedStorage<4, 4, float> mIntensity;
+    ::ll::TypedStorage<4, 4, float> mDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraShakeEvent& operator=(CameraShakeEvent const&);
-    CameraShakeEvent(CameraShakeEvent const&);
-    CameraShakeEvent();
 };

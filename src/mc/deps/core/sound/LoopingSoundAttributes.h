@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sound/LoopLifecycle.h"
+
 struct LoopingSoundAttributes {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3f9e22;
-    ::ll::UntypedStorage<4, 4> mUnkf87cd2;
-    ::ll::UntypedStorage<4, 4> mUnk877e0c;
+    ::ll::TypedStorage<4, 4, float>           fadeInDuration;
+    ::ll::TypedStorage<4, 4, float>           fadeOutDuration;
+    ::ll::TypedStorage<4, 4, ::LoopLifecycle> stage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoopingSoundAttributes& operator=(LoopingSoundAttributes const&);
-    LoopingSoundAttributes(LoopingSoundAttributes const&);
-    LoopingSoundAttributes();
 };

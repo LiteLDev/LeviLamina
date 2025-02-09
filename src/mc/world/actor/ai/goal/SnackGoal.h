@@ -3,34 +3,31 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ItemDescriptor;
 class ItemStack;
 class Mob;
+class Path;
 // clang-format on
 
 class SnackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2c5e87;
-    ::ll::UntypedStorage<8, 24> mUnke35d76;
-    ::ll::UntypedStorage<8, 8>  mUnkb7787d;
-    ::ll::UntypedStorage<4, 4>  mUnk8ea1a9;
-    ::ll::UntypedStorage<4, 4>  mUnkcb1e56;
-    ::ll::UntypedStorage<4, 4>  mUnk5af591;
-    ::ll::UntypedStorage<8, 40> mUnk2ff079;
-    ::ll::UntypedStorage<8, 8>  mUnkf96a22;
+    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mItems;
+    ::ll::TypedStorage<8, 8, uint64>                           mCooldown;
+    ::ll::TypedStorage<4, 4, int const>                        mSnackCooldownTotal;
+    ::ll::TypedStorage<4, 4, int const>                        mCooldownMin;
+    ::ll::TypedStorage<4, 4, int const>                        mStopChance;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>             mTarget;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>        mPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SnackGoal& operator=(SnackGoal const&);
-    SnackGoal(SnackGoal const&);
-    SnackGoal();
 
 public:
     // virtual functions

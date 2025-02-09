@@ -4,43 +4,42 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class ItemDescriptor;
 class Mob;
+class Player;
+class Vec2;
+class Vec3;
 struct FloatRange;
+struct Tick;
 // clang-format on
 
 class TemptGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc6f6e5;
-    ::ll::UntypedStorage<4, 4>  mUnkf90f7d;
-    ::ll::UntypedStorage<8, 40> mUnkce837c;
-    ::ll::UntypedStorage<4, 12> mUnke41f50;
-    ::ll::UntypedStorage<4, 8>  mUnkc9fefe;
-    ::ll::UntypedStorage<1, 1>  mUnk7661c9;
-    ::ll::UntypedStorage<4, 4>  mUnk698d48;
-    ::ll::UntypedStorage<1, 1>  mUnk63c6cc;
-    ::ll::UntypedStorage<1, 1>  mUnkfe85e3;
-    ::ll::UntypedStorage<1, 1>  mUnk6f7e63;
-    ::ll::UntypedStorage<4, 4>  mUnk5d83c0;
-    ::ll::UntypedStorage<4, 4>  mUnk4d53a3;
-    ::ll::UntypedStorage<8, 24> mUnk363779;
-    ::ll::UntypedStorage<1, 1>  mUnk37205c;
-    ::ll::UntypedStorage<4, 4>  mUnka2813f;
-    ::ll::UntypedStorage<4, 8>  mUnkf75246;
-    ::ll::UntypedStorage<8, 8>  mUnke7a03e;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, float>                                  mSpeed;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Player>>                  mPlayer;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mOldPlayerPosition;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                 mOldPlayerRotation;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanGetScared;
+    ::ll::TypedStorage<4, 4, int>                                    mCalmDown;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsRunning;
+    ::ll::TypedStorage<1, 1, bool>                                   mOldAvoidWater;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanTemptWhileRidden;
+    ::ll::TypedStorage<4, 4, int>                                    mPathfinderWaitTicks;
+    ::ll::TypedStorage<4, 4, float>                                  mTemptDistance;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>       mItems;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanTemptVertically;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mNextSoundEventTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TemptGoal& operator=(TemptGoal const&);
-    TemptGoal(TemptGoal const&);
-    TemptGoal();
 
 public:
     // virtual functions

@@ -14,14 +14,8 @@ class RestrictSunGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd6a484;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RestrictSunGoal& operator=(RestrictSunGoal const&);
-    RestrictSunGoal(RestrictSunGoal const&);
-    RestrictSunGoal();
 
 public:
     // virtual functions

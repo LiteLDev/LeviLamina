@@ -9,14 +9,8 @@ struct BiomeTagAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk594bcd;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeTagAttributes& operator=(BiomeTagAttributes const&);
-    BiomeTagAttributes(BiomeTagAttributes const&);
-    BiomeTagAttributes();
 
 public:
     // virtual functions

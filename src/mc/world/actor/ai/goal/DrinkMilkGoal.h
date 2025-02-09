@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorFilterGroup;
 class EntityContext;
 class Mob;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -75,18 +77,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf8b01d;
-    ::ll::UntypedStorage<8, 64> mUnk30a583;
-    ::ll::UntypedStorage<8, 8>  mUnk5c1ed8;
-    ::ll::UntypedStorage<8, 8>  mUnk1817c1;
-    ::ll::UntypedStorage<8, 8>  mUnkde894d;
+    ::ll::TypedStorage<4, 4, int>                 mMaxCooldownTicks;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>              mNextStartTick;
+    ::ll::TypedStorage<8, 8, ::Tick>              mFinishUsingItemTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DrinkMilkGoal& operator=(DrinkMilkGoal const&);
-    DrinkMilkGoal(DrinkMilkGoal const&);
-    DrinkMilkGoal();
 
 public:
     // virtual functions

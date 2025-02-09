@@ -14,14 +14,9 @@ class BodyControl : public ::Control {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk407b79;
-    ::ll::UntypedStorage<4, 4> mUnk5fd536;
+    ::ll::TypedStorage<4, 4, int>   mTimeStill;
+    ::ll::TypedStorage<4, 4, float> mLastHeadY;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BodyControl& operator=(BodyControl const&);
-    BodyControl(BodyControl const&);
 
 public:
     // virtual functions

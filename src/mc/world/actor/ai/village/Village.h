@@ -15,6 +15,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Dimension;
+class HashedString;
 class Level;
 class LevelStorage;
 class Mob;
@@ -66,52 +67,50 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkc83d40;
-        ::ll::UntypedStorage<4, 12> mUnk1dc9bb;
+        ::ll::TypedStorage<8, 8, ::Tick>      mLastTicked;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mLastSavedPosition;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DwellerData& operator=(DwellerData const&);
-        DwellerData(DwellerData const&);
-        DwellerData();
     };
+
+    using UnclaimedPOIList = ::std::array<::std::vector<::std::weak_ptr<::POIInstance>>, 3>;
+
+    using DwellerMap = ::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>;
+
+    using ClaimedPOIList = ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>;
+
+    using DwellerTimestamp = ::std::pair<::ActorUniqueID, ::Tick>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkdb91f2;
-    ::ll::UntypedStorage<8, 8>   mUnkbe29e3;
-    ::ll::UntypedStorage<8, 72>  mUnk6e0eaa;
-    ::ll::UntypedStorage<8, 64>  mUnkff4f3d;
-    ::ll::UntypedStorage<8, 256> mUnk4fd8d7;
-    ::ll::UntypedStorage<4, 24>  mUnkc69480;
-    ::ll::UntypedStorage<4, 24>  mUnkb24871;
-    ::ll::UntypedStorage<1, 1>   mUnkff0127;
-    ::ll::UntypedStorage<8, 8>   mUnke08ea4;
-    ::ll::UntypedStorage<8, 8>   mUnk8a6ed6;
-    ::ll::UntypedStorage<8, 8>   mUnkb71983;
-    ::ll::UntypedStorage<8, 8>   mUnkc0a611;
-    ::ll::UntypedStorage<8, 8>   mUnk4ba5f8;
-    ::ll::UntypedStorage<8, 8>   mUnkf61631;
-    ::ll::UntypedStorage<8, 8>   mUnk8a62c9;
-    ::ll::UntypedStorage<4, 4>   mUnkbc5c53;
-    ::ll::UntypedStorage<8, 64>  mUnk4ec3b5;
-    ::ll::UntypedStorage<8, 64>  mUnk545584;
-    ::ll::UntypedStorage<8, 24>  mUnk51df52;
-    ::ll::UntypedStorage<1, 1>   mUnk6e6598;
-    ::ll::UntypedStorage<8, 48>  mUnk54e088;
-    ::ll::UntypedStorage<8, 48>  mUnk8ea9f2;
-    ::ll::UntypedStorage<8, 48>  mUnk1baa4c;
-    ::ll::UntypedStorage<8, 8>   mUnkfb7705;
-    ::ll::UntypedStorage<8, 64>  mUnk18b263;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                                                    mUniqueID;
+    ::ll::TypedStorage<8, 8, ::Dimension&>                                                    mDimension;
+    ::ll::TypedStorage<8, 72, ::std::array<::std::vector<::std::weak_ptr<::POIInstance>>, 3>> mUnclaimedPOIStacks;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>>
+        mClaimedPOIs;
+    ::ll::TypedStorage<8, 256, ::std::array<::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>, 4>>
+                                                                                             mDwellers;
+    ::ll::TypedStorage<4, 24, ::AABB>                                                        mBounds;
+    ::ll::TypedStorage<4, 24, ::AABB>                                                        mStaticRaidBounds;
+    ::ll::TypedStorage<1, 1, uchar>                                                          mVillageVersion;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                         mGameTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                         mSaveTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                         mRingTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                         mNoBreedTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                         mBadStandingDecayTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                         mGoodStandingDecayTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                         mPassiveDwellerSpawnTimer;
+    ::ll::TypedStorage<4, 4, int>                                                            mInitializationTimer;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, int>>                    mPlayerStanding;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>> mAggressors;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ActorUniqueID, ::Tick>>>           mVillagerWorkTimestamps;
+    ::ll::TypedStorage<1, 1, bool>                                                           mVillageInitialized;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                                          mNitwitFamily;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                                          mVillagePrefix;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                                          mVillagePrefixOld;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Raid>>                                      mRaid;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>>                         mSoundTheAlarmPlayerList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Village& operator=(Village const&);
-    Village(Village const&);
-    Village();
 
 public:
     // member functions

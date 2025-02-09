@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class ItemStack;
+// clang-format on
+
 struct PlayerInteractEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk432ae9;
-    ::ll::UntypedStorage<8, 24>  mUnkfa4327;
-    ::ll::UntypedStorage<8, 152> mUnkc6abd9;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mTargetEntity;
+    ::ll::TypedStorage<8, 152, ::ItemStack>               mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInteractEvent& operator=(PlayerInteractEvent const&);
-    PlayerInteractEvent(PlayerInteractEvent const&);
-    PlayerInteractEvent();
 
 public:
     // member functions

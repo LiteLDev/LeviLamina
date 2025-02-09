@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class GameEvent;
+// clang-format on
+
 struct PostGameEventRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk31705d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::GameEvent const>>> mGameEvents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PostGameEventRequestComponent& operator=(PostGameEventRequestComponent const&);
-    PostGameEventRequestComponent(PostGameEventRequestComponent const&);
-    PostGameEventRequestComponent();
 };

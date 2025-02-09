@@ -9,9 +9,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorFilterGroup;
 class EntityContext;
 class Mob;
 class SemVersion;
+class Vec3;
+class WeakEntityRef;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -83,22 +87,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk580477;
-    ::ll::UntypedStorage<4, 4>  mUnkb4c69a;
-    ::ll::UntypedStorage<8, 64> mUnk160818;
-    ::ll::UntypedStorage<4, 12> mUnk3261a2;
-    ::ll::UntypedStorage<4, 4>  mUnk63c4de;
-    ::ll::UntypedStorage<4, 4>  mUnk7041d2;
-    ::ll::UntypedStorage<8, 24> mUnkcfa445;
-    ::ll::UntypedStorage<8, 8>  mUnka98584;
-    ::ll::UntypedStorage<8, 8>  mUnkb6eaba;
+    ::ll::TypedStorage<4, 4, int>                 mMaxOfferFlowerDurationTicks;
+    ::ll::TypedStorage<4, 4, float>               mChanceToStart;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
+    ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>    mTakeFlowerMob;
+    ::ll::TypedStorage<8, 8, ::Tick>              mTimeoutTick;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OfferFlowerGoal& operator=(OfferFlowerGoal const&);
-    OfferFlowerGoal(OfferFlowerGoal const&);
-    OfferFlowerGoal();
 
 public:
     // virtual functions

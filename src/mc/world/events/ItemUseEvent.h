@@ -2,19 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+class WeakEntityRef;
+// clang-format on
+
 struct ItemUseEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnkf71053;
-    ::ll::UntypedStorage<8, 24>  mUnk2d3062;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mItemInstance;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemUseEvent& operator=(ItemUseEvent const&);
-    ItemUseEvent(ItemUseEvent const&);
-    ItemUseEvent();
 
 public:
     // member functions

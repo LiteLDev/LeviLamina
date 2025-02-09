@@ -9,6 +9,7 @@
 // clang-format off
 class Mob;
 class MoveControlComponent;
+class Vec3;
 struct MoveControlDescription;
 // clang-format on
 
@@ -16,17 +17,12 @@ class GlideMoveControl : public ::MoveControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk8ee5a8;
-    ::ll::UntypedStorage<4, 4>  mUnka765fe;
-    ::ll::UntypedStorage<4, 4>  mUnke81773;
-    ::ll::UntypedStorage<4, 12> mUnk13902f;
-    ::ll::UntypedStorage<4, 4>  mUnk4ebd83;
+    ::ll::TypedStorage<4, 4, float>   mSpeed;
+    ::ll::TypedStorage<4, 4, float>   mStartSpeed;
+    ::ll::TypedStorage<4, 4, float>   mSpeedWhenTurning;
+    ::ll::TypedStorage<4, 12, ::Vec3> mCurrentWantedPos;
+    ::ll::TypedStorage<4, 4, int>     mNumberOfFrontalCollisions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlideMoveControl& operator=(GlideMoveControl const&);
-    GlideMoveControl(GlideMoveControl const&);
 
 public:
     // virtual functions

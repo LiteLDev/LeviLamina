@@ -2,19 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/gui/screens/ScreenEventScope.h"
+#include "mc/client/gui/screens/ScreenEventType.h"
+
+// auto generated forward declare list
+// clang-format off
+union ScreenEventData;
+// clang-format on
+
 struct ScreenEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf66a61;
-    ::ll::UntypedStorage<8, 40> mUnk963480;
-    ::ll::UntypedStorage<1, 1>  mUnk2dea60;
-    ::ll::UntypedStorage<1, 1>  mUnkca975f;
+    ::ll::TypedStorage<4, 4, ::ScreenEventType>  type;
+    ::ll::TypedStorage<8, 40, ::ScreenEventData> data;
+    ::ll::TypedStorage<1, 1, ::ScreenEventScope> scope;
+    ::ll::TypedStorage<1, 1, bool>               localEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScreenEvent& operator=(ScreenEvent const&);
-    ScreenEvent(ScreenEvent const&);
-    ScreenEvent();
 };

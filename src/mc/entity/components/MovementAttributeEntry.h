@@ -2,17 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Attribute;
+struct MovementAttributesComponent;
+// clang-format on
+
 struct MovementAttributeEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk29f869;
-    ::ll::UntypedStorage<8, 8> mUnk598b90;
+    ::ll::TypedStorage<8, 8, ::std::optional<float> MovementAttributesComponent::*> mMovementAttribute;
+    ::ll::TypedStorage<8, 8, ::Attribute const&>                                    mAttribute;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementAttributeEntry& operator=(MovementAttributeEntry const&);
-    MovementAttributeEntry(MovementAttributeEntry const&);
-    MovementAttributeEntry();
 };

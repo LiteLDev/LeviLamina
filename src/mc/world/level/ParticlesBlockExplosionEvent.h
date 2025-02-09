@@ -12,16 +12,10 @@ class ParticlesBlockExplosionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk69bee3;
-    ::ll::UntypedStorage<4, 12> mUnkc784c8;
-    ::ll::UntypedStorage<8, 24> mUnke1a739;
+    ::ll::TypedStorage<4, 4, float>                  mRadius;
+    ::ll::TypedStorage<4, 12, ::Vec3>                mOrigin;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>> mPositions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticlesBlockExplosionEvent& operator=(ParticlesBlockExplosionEvent const&);
-    ParticlesBlockExplosionEvent(ParticlesBlockExplosionEvent const&);
-    ParticlesBlockExplosionEvent();
 
 public:
     // member functions

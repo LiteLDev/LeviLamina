@@ -3,28 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Creeper;
+class WeakEntityRef;
 // clang-format on
 
 class SwellGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9f586c;
-    ::ll::UntypedStorage<4, 4>  mUnk5ad00c;
-    ::ll::UntypedStorage<4, 4>  mUnka255ac;
-    ::ll::UntypedStorage<8, 40> mUnka1001a;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>     mCreeperRef;
+    ::ll::TypedStorage<4, 4, float>                mStartSwellDist;
+    ::ll::TypedStorage<4, 4, float>                mStopSwellDist;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwellGoal& operator=(SwellGoal const&);
-    SwellGoal(SwellGoal const&);
-    SwellGoal();
 
 public:
     // virtual functions

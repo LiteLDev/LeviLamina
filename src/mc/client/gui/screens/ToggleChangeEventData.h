@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class UIPropertyBag;
+// clang-format on
+
 struct ToggleChangeEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk83083d;
-    ::ll::UntypedStorage<4, 4> mUnkdf650f;
-    ::ll::UntypedStorage<1, 1> mUnka091e8;
-    ::ll::UntypedStorage<1, 1> mUnk5b4c16;
-    ::ll::UntypedStorage<8, 8> mUnka67c79;
-    ::ll::UntypedStorage<8, 8> mUnk258909;
+    ::ll::TypedStorage<4, 4, uint>             id;
+    ::ll::TypedStorage<4, 4, int>              index;
+    ::ll::TypedStorage<1, 1, bool>             state;
+    ::ll::TypedStorage<1, 1, bool>             toggledByButtonClick;
+    ::ll::TypedStorage<8, 8, ::UIPropertyBag*> properties;
+    ::ll::TypedStorage<8, 8, uint64>           itemStringHash;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ToggleChangeEventData& operator=(ToggleChangeEventData const&);
-    ToggleChangeEventData(ToggleChangeEventData const&);
-    ToggleChangeEventData();
 };

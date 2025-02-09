@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ItemUseMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class ItemInstance;
+// clang-format on
+
 struct ActorUseItemEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkb8feb5;
-    ::ll::UntypedStorage<8, 128> mUnkb912db;
-    ::ll::UntypedStorage<4, 4>   mUnk67087b;
+    ::ll::TypedStorage<8, 8, ::Actor&>               mActor;
+    ::ll::TypedStorage<8, 128, ::ItemInstance const> mItemUsed;
+    ::ll::TypedStorage<4, 4, ::ItemUseMethod>        mItemUseMethod;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorUseItemEvent& operator=(ActorUseItemEvent const&);
-    ActorUseItemEvent(ActorUseItemEvent const&);
-    ActorUseItemEvent();
 
 public:
     // member functions

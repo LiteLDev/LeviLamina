@@ -9,15 +9,9 @@ class GameEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd2e33a;
-    ::ll::UntypedStorage<1, 1> mUnk4ced8f;
+    ::ll::TypedStorage<4, 4, ::GameEventConfig::GameEventType const> mType;
+    ::ll::TypedStorage<1, 1, uchar const>                            mCategories;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameEvent& operator=(GameEvent const&);
-    GameEvent(GameEvent const&);
-    GameEvent();
 
 public:
     // member functions

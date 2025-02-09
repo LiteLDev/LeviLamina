@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ITickingSystem;
+// clang-format on
+
 struct TickingSystemRegistrationToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka0ba56;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ITickingSystem>> mToken;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickingSystemRegistrationToken& operator=(TickingSystemRegistrationToken const&);
-    TickingSystemRegistrationToken(TickingSystemRegistrationToken const&);
-    TickingSystemRegistrationToken();
 };

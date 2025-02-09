@@ -11,7 +11,13 @@
 // clang-format off
 class EntityContext;
 class Mob;
+class Path;
+class Vec2;
+class Vec3;
+struct ActorUniqueID;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
+namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
 
 class RamAttackGoal : public ::Goal {
@@ -131,29 +137,23 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk6cae03;
-    ::ll::UntypedStorage<8, 8>   mUnkf13bae;
-    ::ll::UntypedStorage<4, 12>  mUnkb64083;
-    ::ll::UntypedStorage<4, 12>  mUnk9161f5;
-    ::ll::UntypedStorage<4, 8>   mUnk556299;
-    ::ll::UntypedStorage<8, 8>   mUnk1e3201;
-    ::ll::UntypedStorage<8, 8>   mUnk6197f0;
-    ::ll::UntypedStorage<8, 8>   mUnkb3d18e;
-    ::ll::UntypedStorage<8, 8>   mUnke834e2;
-    ::ll::UntypedStorage<4, 4>   mUnk24b47b;
-    ::ll::UntypedStorage<8, 24>  mUnkf64e07;
-    ::ll::UntypedStorage<8, 160> mUnka700d9;
-    ::ll::UntypedStorage<8, 8>   mUnka68982;
-    ::ll::UntypedStorage<1, 1>   mUnkbf1c17;
-    ::ll::UntypedStorage<8, 8>   mUnk55eef3;
-    ::ll::UntypedStorage<8, 8>   mUnk587686;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                     mMob;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                  mPath;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                    mPrepareChargePos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                    mTargetPos;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                     mRamDirection;
+    ::ll::TypedStorage<8, 8, ::Tick>                                     mWaitBeforeChargeTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                                     mChargeTimeoutTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                                     mKnockAfterChargeTimeoutTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                                     mRamRetryTimeout;
+    ::ll::TypedStorage<4, 4, ::RamAttackGoal::State>                     mState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RamAttackGoal::AttackPos>> mAttackPosVector;
+    ::ll::TypedStorage<8, 160, ::RamAttackGoal::Definition>              mDefinition;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                            mTargetId;
+    ::ll::TypedStorage<1, 1, bool>                                       mHasKnockbacked;
+    ::ll::TypedStorage<8, 8, ::Tick>                                     mCooldownTimeout;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RamAttackGoalUtils::RamGoalItemDropperInterface>> mRamGoalItemDropper;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RamAttackGoal& operator=(RamAttackGoal const&);
-    RamAttackGoal(RamAttackGoal const&);
-    RamAttackGoal();
 
 public:
     // virtual functions

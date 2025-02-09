@@ -14,16 +14,10 @@ class EatCarriedItemGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfc6e9a;
-    ::ll::UntypedStorage<8, 8> mUnkd542b8;
-    ::ll::UntypedStorage<8, 8> mUnk48dc69;
+    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
+    ::ll::TypedStorage<8, 8, uint64 const> mStartDelay;
+    ::ll::TypedStorage<8, 8, uint64>       mStartDelayCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EatCarriedItemGoal& operator=(EatCarriedItemGoal const&);
-    EatCarriedItemGoal(EatCarriedItemGoal const&);
-    EatCarriedItemGoal();
 
 public:
     // virtual functions

@@ -14,16 +14,10 @@ class BaseMoveToBlockGoal : public ::BaseMoveToGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkaac6c1;
-    ::ll::UntypedStorage<4, 4> mUnkfd386c;
-    ::ll::UntypedStorage<4, 4> mUnk582ca0;
+    ::ll::TypedStorage<4, 4, int> mSearchRange;
+    ::ll::TypedStorage<4, 4, int> mSearchHeight;
+    ::ll::TypedStorage<4, 4, int> mSearchCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseMoveToBlockGoal& operator=(BaseMoveToBlockGoal const&);
-    BaseMoveToBlockGoal(BaseMoveToBlockGoal const&);
-    BaseMoveToBlockGoal();
 
 public:
     // virtual functions

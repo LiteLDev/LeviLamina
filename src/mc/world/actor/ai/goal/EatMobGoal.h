@@ -11,6 +11,10 @@
 // clang-format off
 class EntityContext;
 class Mob;
+class Path;
+class Vec3;
+struct ActorUniqueID;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -92,22 +96,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk840722;
-    ::ll::UntypedStorage<8, 8>   mUnk53e611;
-    ::ll::UntypedStorage<8, 128> mUnk40c6f4;
-    ::ll::UntypedStorage<8, 8>   mUnk4943be;
-    ::ll::UntypedStorage<4, 4>   mUnk4f2f03;
-    ::ll::UntypedStorage<8, 8>   mUnkad005c;
-    ::ll::UntypedStorage<8, 8>   mUnkdc7a08;
-    ::ll::UntypedStorage<1, 1>   mUnkf4c202;
-    ::ll::UntypedStorage<4, 12>  mUnk7a1eec;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mTargetId;
+    ::ll::TypedStorage<8, 128, ::EatMobGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>  mPath;
+    ::ll::TypedStorage<4, 4, ::EatMobGoal::State>        mState;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mEatAnimationTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mLastPathCalculationTick;
+    ::ll::TypedStorage<1, 1, bool>                       mShouldKillTarget;
+    ::ll::TypedStorage<4, 12, ::Vec3>                    mDropPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EatMobGoal& operator=(EatMobGoal const&);
-    EatMobGoal(EatMobGoal const&);
-    EatMobGoal();
 
 public:
     // virtual functions

@@ -2,18 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct EventingRequest;
+// clang-format on
+
 struct EventingRequestQueueComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkedf894;
+    ::ll::TypedStorage<8, 40, ::std::queue<::EventingRequest, ::std::deque<::EventingRequest>>> mRequests;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     EventingRequestQueueComponent& operator=(EventingRequestQueueComponent const&);
     EventingRequestQueueComponent(EventingRequestQueueComponent const&);
-    EventingRequestQueueComponent();
 
 public:
     // member functions

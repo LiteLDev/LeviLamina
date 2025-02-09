@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct PlayerSkinLoadedClientEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk93c55e;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerSkinLoadedClientEvent& operator=(PlayerSkinLoadedClientEvent const&);
-    PlayerSkinLoadedClientEvent(PlayerSkinLoadedClientEvent const&);
-    PlayerSkinLoadedClientEvent();
 };

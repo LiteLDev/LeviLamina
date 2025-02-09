@@ -16,16 +16,10 @@ struct MoveToPositionIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk77b486;
-    ::ll::UntypedStorage<1, 1>  mUnk6c38c9;
-    ::ll::UntypedStorage<4, 4>  mUnk19474d;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mTarget;
+    ::ll::TypedStorage<1, 1, bool>         mLookAtTarget;
+    ::ll::TypedStorage<4, 4, float>        mSpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveToPositionIntent& operator=(MoveToPositionIntent const&);
-    MoveToPositionIntent(MoveToPositionIntent const&);
-    MoveToPositionIntent();
 
 public:
     // member functions

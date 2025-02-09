@@ -15,6 +15,10 @@ struct TickingSystemWithInfo;
 
 class EventingRequestSystem {
 public:
+    // EventingRequestSystem inner types define
+    using SystemView = ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent, ::LevelComponent>;
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _eventingRequestSystem(

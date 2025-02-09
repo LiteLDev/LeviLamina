@@ -5,23 +5,23 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+struct FloatRange;
+// clang-format on
+
 class SwoopAttackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk24e2ca;
-    ::ll::UntypedStorage<1, 1> mUnk529446;
-    ::ll::UntypedStorage<4, 4> mUnke01680;
-    ::ll::UntypedStorage<4, 4> mUnk99dafa;
-    ::ll::UntypedStorage<4, 4> mUnke568a0;
-    ::ll::UntypedStorage<4, 8> mUnkee7b7f;
+    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
+    ::ll::TypedStorage<1, 1, bool>         mHurtTarget;
+    ::ll::TypedStorage<4, 4, int>          mAttackTicks;
+    ::ll::TypedStorage<4, 4, float>        mDamageReach;
+    ::ll::TypedStorage<4, 4, float>        mSpeedMultiplier;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mCooldownTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwoopAttackGoal& operator=(SwoopAttackGoal const&);
-    SwoopAttackGoal(SwoopAttackGoal const&);
-    SwoopAttackGoal();
 
 public:
     // virtual functions

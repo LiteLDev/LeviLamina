@@ -17,14 +17,8 @@ class MoveToLiquidGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbf5c17;
+    ::ll::TypedStorage<4, 4, ::MaterialType> mMaterialType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveToLiquidGoal& operator=(MoveToLiquidGoal const&);
-    MoveToLiquidGoal(MoveToLiquidGoal const&);
-    MoveToLiquidGoal();
 
 public:
     // virtual functions

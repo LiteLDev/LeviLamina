@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class Level;
+// clang-format on
+
 struct LevelStartLeaveGameEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkaed8af;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Level>> mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelStartLeaveGameEvent& operator=(LevelStartLeaveGameEvent const&);
-    LevelStartLeaveGameEvent(LevelStartLeaveGameEvent const&);
-    LevelStartLeaveGameEvent();
 
 public:
     // member functions

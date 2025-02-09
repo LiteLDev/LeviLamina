@@ -3,25 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
 
 class FollowMobGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk42470e;
-    ::ll::UntypedStorage<8, 40> mUnk10428b;
-    ::ll::UntypedStorage<4, 4>  mUnk33feae;
-    ::ll::UntypedStorage<4, 4>  mUnk485ed0;
-    ::ll::UntypedStorage<4, 4>  mUnk7ae2bb;
-    ::ll::UntypedStorage<4, 4>  mUnkd26f19;
+    ::ll::TypedStorage<8, 8, ::Mob&>             mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mFollowingMob;
+    ::ll::TypedStorage<4, 4, float>              mSpeed;
+    ::ll::TypedStorage<4, 4, int>                mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, float>              mStopDistance;
+    ::ll::TypedStorage<4, 4, int>                mSearchArea;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FollowMobGoal& operator=(FollowMobGoal const&);
-    FollowMobGoal(FollowMobGoal const&);
-    FollowMobGoal();
 
 public:
     // virtual functions

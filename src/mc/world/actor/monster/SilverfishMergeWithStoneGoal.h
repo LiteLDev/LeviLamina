@@ -14,16 +14,10 @@ class SilverfishMergeWithStoneGoal : public ::RandomStrollGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkaa844e;
-    ::ll::UntypedStorage<4, 4> mUnk5a24be;
-    ::ll::UntypedStorage<1, 1> mUnkd85e88;
+    ::ll::TypedStorage<8, 8, ::Silverfish&> mSilverfish;
+    ::ll::TypedStorage<4, 4, int>           mSelectedFace;
+    ::ll::TypedStorage<1, 1, bool>          mDoMerge;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SilverfishMergeWithStoneGoal& operator=(SilverfishMergeWithStoneGoal const&);
-    SilverfishMergeWithStoneGoal(SilverfishMergeWithStoneGoal const&);
-    SilverfishMergeWithStoneGoal();
 
 public:
     // virtual functions

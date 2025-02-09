@@ -2,18 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/storage/GameRule.h"
+#include "mc/world/level/storage/GameRules.h"
+
 struct LevelGameRuleChangeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6d0504;
-    ::ll::UntypedStorage<1, 1> mUnk7257a9;
-    ::ll::UntypedStorage<4, 4> mUnkb06cbe;
+    ::ll::TypedStorage<4, 4, ::GameRules::GameRulesIndex> mRule;
+    ::ll::TypedStorage<1, 1, ::GameRule::Type>            mType;
+    ::ll::TypedStorage<4, 4, ::GameRule::Value>           mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelGameRuleChangeEvent& operator=(LevelGameRuleChangeEvent const&);
-    LevelGameRuleChangeEvent(LevelGameRuleChangeEvent const&);
-    LevelGameRuleChangeEvent();
 };

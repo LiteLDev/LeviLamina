@@ -7,37 +7,35 @@
 
 // auto generated forward declare list
 // clang-format off
+class BedHelper;
+class BlockPos;
 class Mob;
+class Vec3;
+struct Tick;
 // clang-format on
 
 class SleepGoal : public ::MoveToPOIGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf6df97;
-    ::ll::UntypedStorage<4, 40> mUnk29e565;
-    ::ll::UntypedStorage<4, 12> mUnkf54053;
-    ::ll::UntypedStorage<4, 12> mUnkbc004b;
-    ::ll::UntypedStorage<4, 12> mUnkdbcb99;
-    ::ll::UntypedStorage<4, 12> mUnkc1740b;
-    ::ll::UntypedStorage<4, 12> mUnkbf7052;
-    ::ll::UntypedStorage<4, 4>  mUnk559658;
-    ::ll::UntypedStorage<4, 4>  mUnk9cc626;
-    ::ll::UntypedStorage<4, 4>  mUnka993fb;
-    ::ll::UntypedStorage<4, 4>  mUnk4b60d8;
-    ::ll::UntypedStorage<4, 4>  mUnk7f22a4;
-    ::ll::UntypedStorage<1, 1>  mUnkd6a436;
-    ::ll::UntypedStorage<8, 8>  mUnkfad98f;
-    ::ll::UntypedStorage<8, 8>  mUnk73dba8;
-    ::ll::UntypedStorage<1, 1>  mUnk6e59b5;
-    ::ll::UntypedStorage<1, 1>  mUnkab98bf;
+    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
+    ::ll::TypedStorage<4, 40, ::BedHelper> mBedHelper;
+    ::ll::TypedStorage<4, 12, ::BlockPos>  mBedPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>      mSleepPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>      mBedOffset;
+    ::ll::TypedStorage<4, 12, ::Vec3>      mEnterPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>      mExitPos;
+    ::ll::TypedStorage<4, 4, int>          mBedDir;
+    ::ll::TypedStorage<4, 4, float>        mBodyRot;
+    ::ll::TypedStorage<4, 4, float const>  mSleepYOffset;
+    ::ll::TypedStorage<4, 4, float const>  mSleepColliderHeight;
+    ::ll::TypedStorage<4, 4, float const>  mSleepColliderWidth;
+    ::ll::TypedStorage<1, 1, bool const>   mCanSleepWhileRiding;
+    ::ll::TypedStorage<8, 8, ::Tick const> mGoalCooldownMax;
+    ::ll::TypedStorage<8, 8, ::Tick>       mCooldownTick;
+    ::ll::TypedStorage<1, 1, bool>         mWoken;
+    ::ll::TypedStorage<1, 1, bool>         mGoalEndedEarly;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SleepGoal& operator=(SleepGoal const&);
-    SleepGoal(SleepGoal const&);
-    SleepGoal();
 
 public:
     // virtual functions

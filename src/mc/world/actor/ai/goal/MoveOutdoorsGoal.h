@@ -13,6 +13,7 @@ class BlockPos;
 class BlockSource;
 class EntityContext;
 class Mob;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -89,15 +90,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnkb7d9d4;
-    ::ll::UntypedStorage<8, 8>  mUnk8c2ac0;
+    ::ll::TypedStorage<8, 72, ::MoveOutdoorsGoal::MoveOutdoorsDefinition> mDefinition;
+    ::ll::TypedStorage<8, 8, ::Tick>                                      mNextTargetTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveOutdoorsGoal& operator=(MoveOutdoorsGoal const&);
-    MoveOutdoorsGoal(MoveOutdoorsGoal const&);
-    MoveOutdoorsGoal();
 
 public:
     // virtual functions

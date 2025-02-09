@@ -3,46 +3,48 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDefinitionTrigger;
 class Mob;
+class Path;
+class Vec3;
+class WeakEntityRef;
+struct FloatRange;
+struct MobDescriptor;
+struct Tick;
 // clang-format on
 
 class AvoidMobTypeGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk3fbb16;
-    ::ll::UntypedStorage<1, 1>   mUnkb1841c;
-    ::ll::UntypedStorage<8, 32>  mUnk124442;
-    ::ll::UntypedStorage<4, 4>   mUnkb51116;
-    ::ll::UntypedStorage<4, 4>   mUnk45d7e0;
-    ::ll::UntypedStorage<4, 4>   mUnkd0c5c2;
-    ::ll::UntypedStorage<4, 4>   mUnka98c32;
-    ::ll::UntypedStorage<4, 4>   mUnk1940eb;
-    ::ll::UntypedStorage<4, 4>   mUnk784834;
-    ::ll::UntypedStorage<4, 4>   mUnk15e998;
-    ::ll::UntypedStorage<4, 4>   mUnk9fd0d9;
-    ::ll::UntypedStorage<4, 4>   mUnk9063cd;
-    ::ll::UntypedStorage<1, 1>   mUnk322f7e;
-    ::ll::UntypedStorage<8, 104> mUnke29929;
-    ::ll::UntypedStorage<4, 4>   mUnkcbeadd;
-    ::ll::UntypedStorage<4, 8>   mUnk8f26ad;
-    ::ll::UntypedStorage<8, 24>  mUnkc1d58f;
-    ::ll::UntypedStorage<4, 12>  mUnke33326;
-    ::ll::UntypedStorage<8, 8>   mUnk52e7f6;
-    ::ll::UntypedStorage<8, 8>   mUnkaa5034;
-    ::ll::UntypedStorage<8, 24>  mUnk304b37;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<1, 1, bool>                                   mIgnoreVisibility;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mAvoidIdentifier;
+    ::ll::TypedStorage<4, 4, int>                                    mAvoidTargetPositionXZDistance;
+    ::ll::TypedStorage<4, 4, int>                                    mAvoidTargetPositionYDistance;
+    ::ll::TypedStorage<4, 4, float>                                  mMaximumDistance;
+    ::ll::TypedStorage<4, 4, float>                                  mMaximumFlee;
+    ::ll::TypedStorage<4, 4, float>                                  mProbabilityPerStrength;
+    ::ll::TypedStorage<4, 4, float>                                  mRiverSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                  mSprintDistanceSquared;
+    ::ll::TypedStorage<4, 4, float>                                  mSprintSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                  mWalkSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool>                                   mRemoveTarget;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnEscapeTrigger;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                       mToAvoid;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mPosition;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>              mPath;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mNextSoundEventTick;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>>        mAvoidMobs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AvoidMobTypeGoal& operator=(AvoidMobTypeGoal const&);
-    AvoidMobTypeGoal(AvoidMobTypeGoal const&);
-    AvoidMobTypeGoal();
 
 public:
     // virtual functions

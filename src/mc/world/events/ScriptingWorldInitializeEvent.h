@@ -2,22 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptBlockComponentRegistry; }
+namespace ScriptModuleMinecraft { class ScriptItemComponentRegistry; }
+namespace ScriptModuleMinecraft { class ScriptPropertyRegistry; }
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
+
 struct ScriptingWorldInitializeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc226b1;
-    ::ll::UntypedStorage<8, 32> mUnk2034cd;
-    ::ll::UntypedStorage<8, 32> mUnk2d8d3b;
-    ::ll::UntypedStorage<8, 16> mUnkbf2dd8;
-    ::ll::UntypedStorage<1, 1>  mUnk5c16da;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPropertyRegistry>>
+        mRegistry;
+    ::ll::
+        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry>>
+            mBlockComponentRegistry;
+    ::ll::
+        TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry>>
+                                                              mItemComponentRegistry;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<1, 1, bool>                            mFinalEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptingWorldInitializeEvent& operator=(ScriptingWorldInitializeEvent const&);
-    ScriptingWorldInitializeEvent(ScriptingWorldInitializeEvent const&);
-    ScriptingWorldInitializeEvent();
 
 public:
     // member functions

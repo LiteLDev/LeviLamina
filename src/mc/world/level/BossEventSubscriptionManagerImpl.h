@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/actor/ai/util/BossEventUpdateType.h"
 #include "mc/world/level/BossEventSubscriptionManager.h"
 
@@ -11,20 +12,26 @@
 class BossEventPacket;
 struct ActorUniqueID;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class BossEventSubscriptionManagerImpl : public ::BossEventSubscriptionManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk18be39;
-    ::ll::UntypedStorage<8, 128> mUnk99a634;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::BossEventUpdateType), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnBossEvent;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnBossEventWithPacket;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BossEventSubscriptionManagerImpl& operator=(BossEventSubscriptionManagerImpl const&);
-    BossEventSubscriptionManagerImpl(BossEventSubscriptionManagerImpl const&);
 
 public:
     // virtual functions

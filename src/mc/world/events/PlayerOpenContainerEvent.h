@@ -2,21 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/ContainerType.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class WeakEntityRef;
+struct ActorUniqueID;
+// clang-format on
+
 struct PlayerOpenContainerEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbd4424;
-    ::ll::UntypedStorage<1, 1>  mUnkb5a2c4;
-    ::ll::UntypedStorage<4, 12> mUnkb08e33;
-    ::ll::UntypedStorage<8, 8>  mUnk5fc307;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>  mPlayer;
+    ::ll::TypedStorage<1, 1, ::ContainerType>   mContainerType;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mBlockPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>   mEntityUniqueId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerOpenContainerEvent& operator=(PlayerOpenContainerEvent const&);
-    PlayerOpenContainerEvent(PlayerOpenContainerEvent const&);
-    PlayerOpenContainerEvent();
 
 public:
     // member functions

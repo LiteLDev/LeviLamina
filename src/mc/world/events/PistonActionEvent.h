@@ -2,21 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/actor/PistonState.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSourceHandle;
+// clang-format on
+
 struct PistonActionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk4318e0;
-    ::ll::UntypedStorage<4, 12> mUnk2503d7;
-    ::ll::UntypedStorage<1, 1>  mUnk6eba93;
-    ::ll::UntypedStorage<1, 1>  mUnkbc5c00;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle>> mBlockSourceHandle;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                       mPistonBlockPos;
+    ::ll::TypedStorage<1, 1, ::PistonState>                           mActionType;
+    ::ll::TypedStorage<1, 1, bool>                                    mShouldCheckAttachedBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PistonActionEvent& operator=(PistonActionEvent const&);
-    PistonActionEvent(PistonActionEvent const&);
-    PistonActionEvent();
 
 public:
     // member functions

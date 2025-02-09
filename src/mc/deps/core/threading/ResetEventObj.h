@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 class ResetEventObj {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk5f2ad5;
-    ::ll::UntypedStorage<8, 80> mUnk8cb1b5;
-    ::ll::UntypedStorage<1, 1>  mUnk89ea7c;
-    ::ll::UntypedStorage<1, 1>  mUnk6702f7;
+    ::ll::TypedStorage<8, 72, ::std::condition_variable>   mCondition;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>          mSet;
+    ::ll::TypedStorage<1, 1, bool>                         mAutoReset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ResetEventObj& operator=(ResetEventObj const&);
-    ResetEventObj(ResetEventObj const&);
-    ResetEventObj();
 
 public:
     // member functions

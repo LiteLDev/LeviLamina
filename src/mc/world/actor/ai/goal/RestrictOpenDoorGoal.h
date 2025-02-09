@@ -14,14 +14,8 @@ class RestrictOpenDoorGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk98f63b;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RestrictOpenDoorGoal& operator=(RestrictOpenDoorGoal const&);
-    RestrictOpenDoorGoal(RestrictOpenDoorGoal const&);
-    RestrictOpenDoorGoal();
 
 public:
     // virtual functions

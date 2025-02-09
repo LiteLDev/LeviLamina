@@ -13,6 +13,7 @@ class BlockEventCoordinator;
 class ClientPlayerEventCoordinator;
 class ItemEventCoordinator;
 class LevelEventCoordinator;
+class NpcEventCoordinator;
 class PlayerEventCoordinator;
 class ScriptDeferredEventCoordinator;
 class ScriptingEventCoordinator;
@@ -25,18 +26,19 @@ class EventCoordinatorManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf9e1db;
-    ::ll::UntypedStorage<8, 16> mUnk425f9d;
-    ::ll::UntypedStorage<8, 16> mUnka34e42;
-    ::ll::UntypedStorage<8, 16> mUnk284a74;
-    ::ll::UntypedStorage<8, 16> mUnkb27f6d;
-    ::ll::UntypedStorage<8, 16> mUnkab1af4;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ActorEventCoordinator>>>
+        mActorEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::BlockEventCoordinator>>>
+        mBlockEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ItemEventCoordinator>>>
+        mItemEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::NpcEventCoordinator>>>
+        mNpcEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ScriptingEventCoordinator>>>
+        mScriptingEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ScriptDeferredEventCoordinator>>>
+        mScriptDeferredEventCoordinator;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EventCoordinatorManager& operator=(EventCoordinatorManager const&);
-    EventCoordinatorManager(EventCoordinatorManager const&);
 
 public:
     // virtual functions

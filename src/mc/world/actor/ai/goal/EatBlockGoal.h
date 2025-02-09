@@ -8,6 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDefinitionTrigger;
+class BlockLegacy;
+class ExpressionNode;
 class Mob;
 // clang-format on
 
@@ -15,19 +18,14 @@ class EatBlockGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk8f04a8;
-    ::ll::UntypedStorage<4, 4>   mUnkecb0cc;
-    ::ll::UntypedStorage<4, 4>   mUnk3d2f57;
-    ::ll::UntypedStorage<8, 104> mUnk3ca996;
-    ::ll::UntypedStorage<8, 24>  mUnk46e63d;
-    ::ll::UntypedStorage<8, 64>  mUnkaba928;
+    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
+    ::ll::TypedStorage<4, 4, int>                              mTicksUntilEat;
+    ::ll::TypedStorage<4, 4, int>                              mTotalTicksUntilEat;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnEat;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mSuccessChance;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockLegacy const*, ::BlockLegacy const*>>
+        mEatAndReplaceBlockPairs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EatBlockGoal& operator=(EatBlockGoal const&);
-    EatBlockGoal(EatBlockGoal const&);
-    EatBlockGoal();
 
 public:
     // virtual functions

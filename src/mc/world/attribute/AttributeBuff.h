@@ -16,21 +16,20 @@ class AttributeBuff {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk709486;
-    ::ll::UntypedStorage<4, 4>  mUnka53453;
-    ::ll::UntypedStorage<8, 16> mUnkcb97c5;
-    ::ll::UntypedStorage<8, 16> mUnk6e424f;
-    ::ll::UntypedStorage<8, 16> mUnkbd76f4;
-    ::ll::UntypedStorage<4, 4>  mUnkdeb322;
-    ::ll::UntypedStorage<4, 4>  mUnk45a68a;
-    ::ll::UntypedStorage<8, 8>  mUnk2c3d01;
-    ::ll::UntypedStorage<4, 4>  mUnkcfe284;
+    ::ll::TypedStorage<4, 4, float>                                   mAmount;
+    ::ll::TypedStorage<4, 4, ::AttributeBuffType>                     mType;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>         mValueAmplifier;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>         mDurationAmplifier;
+    ::ll::TypedStorage<4, 4, float>                                   mScale;
+    ::ll::TypedStorage<4, 4, int>                                     mAmplification;
+    ::ll::TypedStorage<8, 8, uint64>                                  mId;
+    ::ll::TypedStorage<4, 4, int>                                     mOperand;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AttributeBuff(AttributeBuff const&);
-    AttributeBuff();
 
 public:
     // virtual functions

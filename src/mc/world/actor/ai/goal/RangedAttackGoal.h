@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Mob;
 class Vec3;
 // clang-format on
 
@@ -15,38 +17,32 @@ class RangedAttackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk720b98;
-    ::ll::UntypedStorage<8, 40> mUnkcdef5d;
-    ::ll::UntypedStorage<1, 1>  mUnk50dcd7;
-    ::ll::UntypedStorage<1, 1>  mUnk420462;
-    ::ll::UntypedStorage<1, 1>  mUnk6a2d5e;
-    ::ll::UntypedStorage<1, 1>  mUnk35e1b3;
-    ::ll::UntypedStorage<4, 4>  mUnk7084c9;
-    ::ll::UntypedStorage<4, 4>  mUnk360d8c;
-    ::ll::UntypedStorage<4, 4>  mUnked2c84;
-    ::ll::UntypedStorage<4, 4>  mUnk2aa8ba;
-    ::ll::UntypedStorage<4, 4>  mUnkf9c8ee;
-    ::ll::UntypedStorage<4, 4>  mUnk5a5b51;
-    ::ll::UntypedStorage<4, 4>  mUnk104bfa;
-    ::ll::UntypedStorage<4, 4>  mUnk83516f;
-    ::ll::UntypedStorage<4, 4>  mUnk93b981;
-    ::ll::UntypedStorage<4, 4>  mUnke4b49b;
-    ::ll::UntypedStorage<4, 4>  mUnk6f2827;
-    ::ll::UntypedStorage<4, 4>  mUnk21af5d;
-    ::ll::UntypedStorage<4, 4>  mUnk662d3e;
-    ::ll::UntypedStorage<4, 4>  mUnk3facd5;
-    ::ll::UntypedStorage<4, 4>  mUnkd2c270;
-    ::ll::UntypedStorage<4, 4>  mUnka2860a;
-    ::ll::UntypedStorage<4, 4>  mUnk856bf2;
-    ::ll::UntypedStorage<4, 4>  mUnkf0ea33;
-    ::ll::UntypedStorage<4, 4>  mUnkf79d45;
+    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
+    ::ll::TypedStorage<1, 1, bool>                 mIsChargedAttack;
+    ::ll::TypedStorage<1, 1, bool>                 mUsingChargedItem;
+    ::ll::TypedStorage<1, 1, bool>                 mSetPersistent;
+    ::ll::TypedStorage<1, 1, bool>                 mSwing;
+    ::ll::TypedStorage<4, 4, int>                  mReloadBurstTicks;
+    ::ll::TypedStorage<4, 4, int>                  mCanSeeTargetTicks;
+    ::ll::TypedStorage<4, 4, int>                  mBurstShotsLeft;
+    ::ll::TypedStorage<4, 4, int>                  mBurstTicks;
+    ::ll::TypedStorage<4, 4, int>                  mBurstCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                  mChargeTicks;
+    ::ll::TypedStorage<4, 4, int>                  mReloadTicksMin;
+    ::ll::TypedStorage<4, 4, int>                  mReloadTicksMax;
+    ::ll::TypedStorage<4, 4, int>                  mChargeReadyTicks;
+    ::ll::TypedStorage<4, 4, int>                  mChargeReloadTicks;
+    ::ll::TypedStorage<4, 4, int>                  mBurstShots;
+    ::ll::TypedStorage<4, 4, int>                  mTargetInSightTicks;
+    ::ll::TypedStorage<4, 4, float>                mAttackRadius;
+    ::ll::TypedStorage<4, 4, float>                mAttackRadiusMin;
+    ::ll::TypedStorage<4, 4, float>                mAttackRadiusMinSq;
+    ::ll::TypedStorage<4, 4, float>                mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>                mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>                mRangedFov;
+    ::ll::TypedStorage<4, 4, float>                mSpeedMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RangedAttackGoal& operator=(RangedAttackGoal const&);
-    RangedAttackGoal(RangedAttackGoal const&);
-    RangedAttackGoal();
 
 public:
     // virtual functions

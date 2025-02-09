@@ -2,19 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MobEffectInstance;
+class WeakEntityRef;
+// clang-format on
+
 struct ActorAddEffectEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk8298a6;
-    ::ll::UntypedStorage<8, 136> mUnkf4ca67;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>      mEntity;
+    ::ll::TypedStorage<8, 136, ::MobEffectInstance> mMobEffect;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ActorAddEffectEvent& operator=(ActorAddEffectEvent const&);
     ActorAddEffectEvent(ActorAddEffectEvent const&);
-    ActorAddEffectEvent();
 
 public:
     // member functions

@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 struct ExecuteEventOnBlockRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk8ba227;
-    ::ll::UntypedStorage<8, 32> mUnk4541de;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mPos;
+    ::ll::TypedStorage<8, 32, ::std::string> mEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExecuteEventOnBlockRequest& operator=(ExecuteEventOnBlockRequest const&);
-    ExecuteEventOnBlockRequest(ExecuteEventOnBlockRequest const&);
-    ExecuteEventOnBlockRequest();
 
 public:
     // member functions

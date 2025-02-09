@@ -7,30 +7,26 @@
 
 // auto generated forward declare list
 // clang-format off
+class BasicTimer;
 class CompoundTag;
 class ILevelStorageManagerConnector;
 class LevelStorage;
 class MobEvent;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class MobEvents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk4ea3e2;
-    ::ll::UntypedStorage<8, 80>  mUnkb79ef3;
-    ::ll::UntypedStorage<8, 8>   mUnkcf3ab4;
-    ::ll::UntypedStorage<1, 1>   mUnk32b026;
-    ::ll::UntypedStorage<1, 1>   mUnkdcecef;
-    ::ll::UntypedStorage<8, 16>  mUnk5f9890;
-    ::ll::UntypedStorage<8, 16>  mUnk9f9165;
+    ::ll::TypedStorage<8, 216, ::std::array<::MobEvent, 3>>    mMobEvents;
+    ::ll::TypedStorage<8, 80, ::BasicTimer>                    mSaveTimer;
+    ::ll::TypedStorage<8, 8, ::LevelStorage&>                  mLevelStorage;
+    ::ll::TypedStorage<1, 1, bool>                             mEventsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                             mNeedsToSave;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEvents& operator=(MobEvents const&);
-    MobEvents(MobEvents const&);
-    MobEvents();
 
 public:
     // virtual functions

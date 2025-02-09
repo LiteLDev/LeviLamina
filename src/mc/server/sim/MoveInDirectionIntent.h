@@ -8,15 +8,9 @@ struct MoveInDirectionIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk6c055c;
-    ::ll::UntypedStorage<1, 1>  mUnkb9ac2b;
+    ::ll::TypedStorage<4, 12, ::glm::vec3> mTarget;
+    ::ll::TypedStorage<1, 1, bool>         mAbsoluteSpace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveInDirectionIntent& operator=(MoveInDirectionIntent const&);
-    MoveInDirectionIntent(MoveInDirectionIntent const&);
-    MoveInDirectionIntent();
 };
 
 } // namespace sim

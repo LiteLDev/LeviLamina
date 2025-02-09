@@ -6,19 +6,13 @@ struct LevelStorageEventingContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk753756;
-    ::ll::UntypedStorage<8, 32> mUnkeaa2d0;
-    ::ll::UntypedStorage<1, 1>  mUnkf2a611;
-    ::ll::UntypedStorage<4, 4>  mUnkd469e4;
-    ::ll::UntypedStorage<8, 32> mUnk344418;
-    ::ll::UntypedStorage<8, 8>  mUnkfcd47e;
+    ::ll::TypedStorage<8, 32, ::std::string> mCreationReason;
+    ::ll::TypedStorage<8, 32, ::std::string> mLevelId;
+    ::ll::TypedStorage<1, 1, bool>           mIsFromWorldTemplate;
+    ::ll::TypedStorage<4, 4, uint>           mWorldStartCount;
+    ::ll::TypedStorage<8, 32, ::std::string> mLastOpenedWithVersion;
+    ::ll::TypedStorage<8, 8, int64>          mLastSavedTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelStorageEventingContext& operator=(LevelStorageEventingContext const&);
-    LevelStorageEventingContext(LevelStorageEventingContext const&);
-    LevelStorageEventingContext();
 
 public:
     // member functions

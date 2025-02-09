@@ -12,32 +12,27 @@
 class Mob;
 class Vec3;
 struct FloatRange;
+struct Tick;
 // clang-format on
 
 class PanicGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7e66ed;
-    ::ll::UntypedStorage<8, 8>  mUnk352ac3;
-    ::ll::UntypedStorage<8, 24> mUnkefa8a5;
-    ::ll::UntypedStorage<1, 1>  mUnk74a040;
-    ::ll::UntypedStorage<1, 1>  mUnkff71e3;
-    ::ll::UntypedStorage<1, 1>  mUnk3e819c;
-    ::ll::UntypedStorage<1, 1>  mUnkfbd188;
-    ::ll::UntypedStorage<1, 1>  mUnk280509;
-    ::ll::UntypedStorage<4, 4>  mUnk38f933;
-    ::ll::UntypedStorage<4, 12> mUnkac8e5a;
-    ::ll::UntypedStorage<4, 4>  mUnkf98514;
-    ::ll::UntypedStorage<4, 8>  mUnk7bc3f7;
-    ::ll::UntypedStorage<8, 8>  mUnk148c24;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<8, 8, ::Mob*>                                 mHurtByMob;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDamageCause>>     mDamageCauses;
+    ::ll::TypedStorage<1, 1, bool>                                   mIgnoreMobDamage;
+    ::ll::TypedStorage<1, 1, bool>                                   mPanicOnAllCauses;
+    ::ll::TypedStorage<1, 1, bool>                                   mForceUse;
+    ::ll::TypedStorage<1, 1, bool>                                   mPreferWater;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanTeleportToOwner;
+    ::ll::TypedStorage<4, 4, float>                                  mSpeedMultipler;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mTargetPosition;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mNextSoundEventTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PanicGoal& operator=(PanicGoal const&);
-    PanicGoal(PanicGoal const&);
-    PanicGoal();
 
 public:
     // virtual functions

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct ActorAttackEvent {
 public:
     // ActorAttackEvent inner types define
@@ -13,17 +18,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk171dc0;
-    ::ll::UntypedStorage<8, 24> mUnk53d0c3;
-    ::ll::UntypedStorage<4, 4>  mUnkf545fd;
-    ::ll::UntypedStorage<4, 4>  mUnk10914e;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>               mEntity;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>               mTarget;
+    ::ll::TypedStorage<4, 4, int>                            mDamage;
+    ::ll::TypedStorage<4, 4, ::ActorAttackEvent::AttackType> mAttackType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorAttackEvent& operator=(ActorAttackEvent const&);
-    ActorAttackEvent(ActorAttackEvent const&);
-    ActorAttackEvent();
 
 public:
     // member functions

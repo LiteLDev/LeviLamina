@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Goal;
+// clang-format on
+
 class PrioritizedGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk385708;
-    ::ll::UntypedStorage<4, 4> mUnkcc3033;
-    ::ll::UntypedStorage<1, 1> mUnk77d703;
-    ::ll::UntypedStorage<1, 1> mUnkdc298f;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Goal>> mGoal;
+    ::ll::TypedStorage<4, 4, int>                       mPriority;
+    ::ll::TypedStorage<1, 1, bool>                      mUsed;
+    ::ll::TypedStorage<1, 1, bool>                      mToStart;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PrioritizedGoal& operator=(PrioritizedGoal const&);
-    PrioritizedGoal(PrioritizedGoal const&);
-    PrioritizedGoal();
 
 public:
     // member functions

@@ -9,28 +9,24 @@
 // clang-format off
 class ActorFilterGroup;
 class Mob;
+class Vec3;
+struct Tick;
 // clang-format on
 
 class NapGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb23e58;
-    ::ll::UntypedStorage<8, 8>  mUnk25817f;
-    ::ll::UntypedStorage<8, 8>  mUnk9139a1;
-    ::ll::UntypedStorage<1, 1>  mUnk1b9754;
-    ::ll::UntypedStorage<4, 4>  mUnk3f6f7b;
-    ::ll::UntypedStorage<4, 4>  mUnkaf9fae;
-    ::ll::UntypedStorage<4, 12> mUnk3a2039;
-    ::ll::UntypedStorage<8, 64> mUnk695ccc;
-    ::ll::UntypedStorage<8, 64> mUnka070a1;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>              mCooldown;
+    ::ll::TypedStorage<8, 8, ::Tick>              mDetectMobsTimer;
+    ::ll::TypedStorage<1, 1, bool>                mInvalidCooldown;
+    ::ll::TypedStorage<4, 4, int const>           mNapCooldownMin;
+    ::ll::TypedStorage<4, 4, int const>           mNapCooldownMax;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>       mDetectRange;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mCanNapFilters;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mWakeMobExceptions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NapGoal& operator=(NapGoal const&);
-    NapGoal(NapGoal const&);
-    NapGoal();
 
 public:
     // virtual functions

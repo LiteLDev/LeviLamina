@@ -18,14 +18,8 @@ class SpawnLootEventResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk81ae8a;
+    ::ll::TypedStorage<8, 32, ::std::string> lootTablePath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnLootEventResponse& operator=(SpawnLootEventResponse const&);
-    SpawnLootEventResponse(SpawnLootEventResponse const&);
-    SpawnLootEventResponse();
 
 public:
     // virtual functions

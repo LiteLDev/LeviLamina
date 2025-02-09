@@ -4,21 +4,19 @@
 
 struct MovementAttributesComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk38babc;
-    ::ll::UntypedStorage<4, 8> mUnkd36d3b;
-    ::ll::UntypedStorage<4, 8> mUnk5b4b73;
-    ::ll::UntypedStorage<4, 8> mUnkdc1796;
-    ::ll::UntypedStorage<4, 8> mUnkbebd32;
-    ::ll::UntypedStorage<4, 8> mUnkfa5e5d;
-    // NOLINTEND
+    // MovementAttributesComponent inner types define
+    using MemberPtr = ::std::optional<float> MovementAttributesComponent::*;
 
 public:
-    // prevent constructor by default
-    MovementAttributesComponent& operator=(MovementAttributesComponent const&);
-    MovementAttributesComponent(MovementAttributesComponent const&);
-    MovementAttributesComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mMovementSpeed;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mUnderwaterMovementSpeed;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mLavaMovementSpeed;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mJumpStrength;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mHealth;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mHunger;
+    // NOLINTEND
 
 public:
     // member functions

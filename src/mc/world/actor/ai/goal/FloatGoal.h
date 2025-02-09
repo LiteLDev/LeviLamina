@@ -14,15 +14,9 @@ class FloatGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk828e6e;
-    ::ll::UntypedStorage<1, 1> mUnk618778;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<1, 1, bool>   mSinkWithPassengers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FloatGoal& operator=(FloatGoal const&);
-    FloatGoal(FloatGoal const&);
-    FloatGoal();
 
 public:
     // virtual functions

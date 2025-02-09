@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/HoloUIInputMode.h"
+
 struct HoloInputModeChangeScreenEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk630019;
+    ::ll::TypedStorage<4, 4, ::HoloUIInputMode> mode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HoloInputModeChangeScreenEventData& operator=(HoloInputModeChangeScreenEventData const&);
-    HoloInputModeChangeScreenEventData(HoloInputModeChangeScreenEventData const&);
-    HoloInputModeChangeScreenEventData();
 };

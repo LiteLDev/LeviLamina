@@ -19,16 +19,10 @@ class FlyingPathNavigation : public ::PathNavigation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkfbcedf;
-    ::ll::UntypedStorage<1, 1> mUnk600814;
-    ::ll::UntypedStorage<4, 4> mUnkf3aba3;
+    ::ll::TypedStorage<1, 1, bool>        mHadGravity;
+    ::ll::TypedStorage<1, 1, bool>        mCanPathFromAir;
+    ::ll::TypedStorage<4, 4, float const> mMinWaypointRadius;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FlyingPathNavigation& operator=(FlyingPathNavigation const&);
-    FlyingPathNavigation(FlyingPathNavigation const&);
-    FlyingPathNavigation();
 
 public:
     // virtual functions

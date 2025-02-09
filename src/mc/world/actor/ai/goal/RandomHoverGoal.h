@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Path;
 struct IntRange;
 // clang-format on
 
@@ -15,21 +16,15 @@ class RandomHoverGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc22331;
-    ::ll::UntypedStorage<4, 4> mUnke9896a;
-    ::ll::UntypedStorage<4, 4> mUnkf95a95;
-    ::ll::UntypedStorage<4, 4> mUnkfb84e8;
-    ::ll::UntypedStorage<4, 4> mUnk66a436;
-    ::ll::UntypedStorage<4, 4> mUnk64f233;
-    ::ll::UntypedStorage<4, 8> mUnk670192;
-    ::ll::UntypedStorage<8, 8> mUnkb4f45e;
+    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
+    ::ll::TypedStorage<4, 4, float const>               mSpeedModifier;
+    ::ll::TypedStorage<4, 4, int const>                 mInterval;
+    ::ll::TypedStorage<4, 4, float const>               mXZDist;
+    ::ll::TypedStorage<4, 4, float const>               mYDist;
+    ::ll::TypedStorage<4, 4, float>                     mYOffset;
+    ::ll::TypedStorage<4, 8, ::IntRange>                mHoverHeight;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomHoverGoal& operator=(RandomHoverGoal const&);
-    RandomHoverGoal(RandomHoverGoal const&);
-    RandomHoverGoal();
 
 public:
     // virtual functions

@@ -2,16 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct PlayerStopLoadingEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3fe518;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerStopLoadingEvent& operator=(PlayerStopLoadingEvent const&);
-    PlayerStopLoadingEvent(PlayerStopLoadingEvent const&);
-    PlayerStopLoadingEvent();
 };

@@ -16,13 +16,8 @@ class HopMoveControl : public ::MoveControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3fc944;
+    ::ll::TypedStorage<4, 4, int> mJumpDelayTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HopMoveControl& operator=(HopMoveControl const&);
-    HopMoveControl(HopMoveControl const&);
 
 public:
     // virtual functions

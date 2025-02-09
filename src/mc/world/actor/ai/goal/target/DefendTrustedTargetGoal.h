@@ -19,15 +19,9 @@ class DefendTrustedTargetGoal : public ::NearestAttackableTargetGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkead60c;
-    ::ll::UntypedStorage<8, 104> mUnkf1fa10;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mAggroSound;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStartEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DefendTrustedTargetGoal& operator=(DefendTrustedTargetGoal const&);
-    DefendTrustedTargetGoal(DefendTrustedTargetGoal const&);
-    DefendTrustedTargetGoal();
 
 public:
     // virtual functions

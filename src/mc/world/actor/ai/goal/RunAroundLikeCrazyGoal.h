@@ -8,22 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec3;
 // clang-format on
 
 class RunAroundLikeCrazyGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk328185;
-    ::ll::UntypedStorage<4, 4>  mUnk6e6c9b;
-    ::ll::UntypedStorage<4, 12> mUnk9ab483;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, float>   mSpeedModifier;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RunAroundLikeCrazyGoal& operator=(RunAroundLikeCrazyGoal const&);
-    RunAroundLikeCrazyGoal(RunAroundLikeCrazyGoal const&);
-    RunAroundLikeCrazyGoal();
 
 public:
     // virtual functions

@@ -17,14 +17,8 @@ struct EventResponseCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk836c2d;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::EventResponse>>> mResponses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EventResponseCollection& operator=(EventResponseCollection const&);
-    EventResponseCollection(EventResponseCollection const&);
-    EventResponseCollection();
 
 public:
     // static functions

@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct KnockBackEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke11679;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    KnockBackEvent& operator=(KnockBackEvent const&);
-    KnockBackEvent(KnockBackEvent const&);
-    KnockBackEvent();
 
 public:
     // member functions

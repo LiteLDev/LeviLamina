@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ai/goal/MeleeAttackGoal.h"
 
 // auto generated forward declare list
@@ -16,18 +18,12 @@ class DelayedAttackGoal : public ::MeleeAttackGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd1bfcf;
-    ::ll::UntypedStorage<4, 4> mUnk411d70;
-    ::ll::UntypedStorage<4, 4> mUnkf4e0a0;
-    ::ll::UntypedStorage<4, 4> mUnk2ad552;
-    ::ll::UntypedStorage<4, 4> mUnk10be41;
+    ::ll::TypedStorage<4, 4, int>                                    mAttackDurationTicks;
+    ::ll::TypedStorage<4, 4, int>                                    mPostPathingTicks;
+    ::ll::TypedStorage<4, 4, int>                                    mHitDelayTicks;
+    ::ll::TypedStorage<4, 4, ::ActorFlags>                           mAttackFlag;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSound;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DelayedAttackGoal& operator=(DelayedAttackGoal const&);
-    DelayedAttackGoal(DelayedAttackGoal const&);
-    DelayedAttackGoal();
 
 public:
     // virtual functions

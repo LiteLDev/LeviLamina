@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 // auto generated forward declare list
@@ -15,15 +16,9 @@ class OwnerHurtByTargetGoal : public ::TargetGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkf0279f;
-    ::ll::UntypedStorage<8, 8>  mUnk8d81e0;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mOwnerHurtBy;
+    ::ll::TypedStorage<8, 8, ::Mob&>             mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OwnerHurtByTargetGoal& operator=(OwnerHurtByTargetGoal const&);
-    OwnerHurtByTargetGoal(OwnerHurtByTargetGoal const&);
-    OwnerHurtByTargetGoal();
 
 public:
     // virtual functions

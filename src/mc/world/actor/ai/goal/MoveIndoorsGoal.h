@@ -9,8 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class BlockPos;
 class EntityContext;
 class Mob;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -85,22 +88,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkbf7c55;
-    ::ll::UntypedStorage<1, 1>  mUnka96b33;
-    ::ll::UntypedStorage<4, 12> mUnk1f16fe;
-    ::ll::UntypedStorage<4, 12> mUnkb277df;
-    ::ll::UntypedStorage<4, 24> mUnkb1956b;
-    ::ll::UntypedStorage<8, 8>  mUnkbd45c9;
-    ::ll::UntypedStorage<8, 8>  mUnk4118c6;
-    ::ll::UntypedStorage<8, 8>  mUnkeab5b4;
-    ::ll::UntypedStorage<4, 4>  mUnkffed9d;
+    ::ll::TypedStorage<1, 1, bool>        mUsingPOI;
+    ::ll::TypedStorage<1, 1, bool>        mPathingInvalid;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mInsidePos;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mStartPos;
+    ::ll::TypedStorage<4, 24, ::AABB>     mPOIBoundingBox;
+    ::ll::TypedStorage<8, 8, ::Tick>      mCooldownTimer;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>      mTimeoutCooldown;
+    ::ll::TypedStorage<4, 4, float>       mSpeedModifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveIndoorsGoal& operator=(MoveIndoorsGoal const&);
-    MoveIndoorsGoal(MoveIndoorsGoal const&);
-    MoveIndoorsGoal();
 
 public:
     // virtual functions

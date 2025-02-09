@@ -8,22 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class EnderDragon;
+class Path;
 // clang-format on
 
 class DragonTakeoffGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf064bb;
-    ::ll::UntypedStorage<8, 8> mUnk7321d7;
-    ::ll::UntypedStorage<8, 8> mUnkebdde2;
+    ::ll::TypedStorage<1, 1, bool>                      mFirstTick;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mCurrentPath;
+    ::ll::TypedStorage<8, 8, ::EnderDragon&>            mDragon;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonTakeoffGoal& operator=(DragonTakeoffGoal const&);
-    DragonTakeoffGoal(DragonTakeoffGoal const&);
-    DragonTakeoffGoal();
 
 public:
     // virtual functions

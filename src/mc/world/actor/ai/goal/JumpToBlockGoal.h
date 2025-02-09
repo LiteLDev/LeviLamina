@@ -9,9 +9,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class BlockPos;
 class EntityContext;
 class Mob;
 class NavigationComponent;
+class Vec3;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -116,28 +120,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkc1a99e;
-    ::ll::UntypedStorage<1, 1>   mUnk64ec2f;
-    ::ll::UntypedStorage<8, 8>   mUnkd58433;
-    ::ll::UntypedStorage<8, 8>   mUnk5a894a;
-    ::ll::UntypedStorage<4, 4>   mUnk92ff91;
-    ::ll::UntypedStorage<1, 1>   mUnk539581;
-    ::ll::UntypedStorage<8, 24>  mUnk323303;
-    ::ll::UntypedStorage<4, 12>  mUnk9a0987;
-    ::ll::UntypedStorage<8, 24>  mUnk9c9a5a;
-    ::ll::UntypedStorage<4, 12>  mUnk9ba9b0;
-    ::ll::UntypedStorage<8, 24>  mUnkca9cbd;
-    ::ll::UntypedStorage<4, 12>  mUnkb5a404;
-    ::ll::UntypedStorage<8, 8>   mUnk915a0c;
-    ::ll::UntypedStorage<8, 136> mUnk47d5e1;
-    ::ll::UntypedStorage<4, 24>  mUnk784b3a;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                                    mMob;
+    ::ll::TypedStorage<1, 1, bool>                                                      mDiscardFrictionDefault;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                    mCooldownTimeout;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                    mNextCandidateCheck;
+    ::ll::TypedStorage<4, 4, int>                                                       mCandidateAttemptCounter;
+    ::ll::TypedStorage<1, 1, ::JumpToBlockGoal::JumpState>                              mState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>>                                    mJumpCurve;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                               mTargetBlockPos;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                                mCandidateBlocksPositions;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                               mStartingPos;
+    ::ll::TypedStorage<8, 24, ::std::vector<::JumpToBlockGoal::WeightedJumpToBlockPos>> mJumpableBlocksPositions;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                   mVelocityVector;
+    ::ll::TypedStorage<8, 8, ::Tick>                                                    mFaceJumpTimer;
+    ::ll::TypedStorage<8, 136, ::JumpToBlockGoal::Definition>                           mDefinition;
+    ::ll::TypedStorage<4, 24, ::AABB const>                                             mOriginalAabb;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JumpToBlockGoal& operator=(JumpToBlockGoal const&);
-    JumpToBlockGoal(JumpToBlockGoal const&);
-    JumpToBlockGoal();
 
 public:
     // virtual functions

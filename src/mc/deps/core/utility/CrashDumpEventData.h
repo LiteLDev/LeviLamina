@@ -14,16 +14,10 @@ struct CrashDumpEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkc803f7;
-    ::ll::UntypedStorage<2, 2> mUnk5ca1e7;
-    ::ll::UntypedStorage<4, 4> mUnk3d283d;
+    ::ll::TypedStorage<2, 2, ::CrashDumpLogStringID> mTag0;
+    ::ll::TypedStorage<2, 2, ::CrashDumpLogStringID> mTag1;
+    ::ll::TypedStorage<4, 4, int>                    mEventThreadId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CrashDumpEventData& operator=(CrashDumpEventData const&);
-    CrashDumpEventData(CrashDumpEventData const&);
-    CrashDumpEventData();
 
 public:
     // member functions

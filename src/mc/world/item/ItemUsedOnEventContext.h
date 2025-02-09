@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/NotifyItemUsedOnEvent.h"
+
 struct ItemUsedOnEventContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc16235;
-    ::ll::UntypedStorage<1, 1> mUnkecc727;
+    ::ll::TypedStorage<4, 4, ::NotifyItemUsedOnEvent> mNotify;
+    ::ll::TypedStorage<1, 1, bool>                    mIsFirstEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemUsedOnEventContext& operator=(ItemUsedOnEventContext const&);
-    ItemUsedOnEventContext(ItemUsedOnEventContext const&);
-    ItemUsedOnEventContext();
 };

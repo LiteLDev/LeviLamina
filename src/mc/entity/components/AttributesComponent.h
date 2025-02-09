@@ -2,11 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseAttributeMap;
+// clang-format on
+
 struct AttributesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnk299f74;
+    ::ll::TypedStorage<8, 88, ::BaseAttributeMap> mAttributes;
     // NOLINTEND
 
 public:

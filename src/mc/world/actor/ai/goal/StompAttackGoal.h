@@ -9,15 +9,9 @@ class StompAttackGoal : public ::MeleeAttackGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd3cf50;
-    ::ll::UntypedStorage<4, 4> mUnk5bad8a;
+    ::ll::TypedStorage<4, 4, float> mStompRangeMultiplier;
+    ::ll::TypedStorage<4, 4, float> mNoDamageRangeMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StompAttackGoal& operator=(StompAttackGoal const&);
-    StompAttackGoal(StompAttackGoal const&);
-    StompAttackGoal();
 
 public:
     // virtual functions

@@ -16,16 +16,10 @@ class GameEventMovementTrackingDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk27c313;
-    ::ll::UntypedStorage<1, 1> mUnkd64ec5;
-    ::ll::UntypedStorage<1, 1> mUnk1628a0;
+    ::ll::TypedStorage<1, 1, bool> mEmitMove;
+    ::ll::TypedStorage<1, 1, bool> mEmitSwim;
+    ::ll::TypedStorage<1, 1, bool> mEmitFlap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameEventMovementTrackingDefinition& operator=(GameEventMovementTrackingDefinition const&);
-    GameEventMovementTrackingDefinition(GameEventMovementTrackingDefinition const&);
-    GameEventMovementTrackingDefinition();
 
 public:
     // member functions

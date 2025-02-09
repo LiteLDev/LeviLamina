@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_camera/CameraInstruction.h"
+
 struct CameraTargetInstructionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk374452;
+    ::ll::TypedStorage<8, 24, ::CameraInstruction::TargetInstruction> mCameraTargetInstruction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraTargetInstructionEvent& operator=(CameraTargetInstructionEvent const&);
-    CameraTargetInstructionEvent(CameraTargetInstructionEvent const&);
-    CameraTargetInstructionEvent();
 };

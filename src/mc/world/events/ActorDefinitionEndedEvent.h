@@ -2,20 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+struct ActorDefinitionModifier;
+// clang-format on
+
 struct ActorDefinitionEndedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk17fb1f;
-    ::ll::UntypedStorage<8, 32> mUnka88937;
-    ::ll::UntypedStorage<8, 24> mUnk2555df;
+    ::ll::TypedStorage<8, 8, ::Actor&>                                        mActor;
+    ::ll::TypedStorage<8, 32, ::std::string const>                            mEvent;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionModifier> const> mDefinitionModifiers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorDefinitionEndedEvent& operator=(ActorDefinitionEndedEvent const&);
-    ActorDefinitionEndedEvent(ActorDefinitionEndedEvent const&);
-    ActorDefinitionEndedEvent();
 
 public:
     // member functions

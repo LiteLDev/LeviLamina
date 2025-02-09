@@ -2,21 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockSourceHandle;
+class EntityContext;
+class Vec3;
+// clang-format on
+
 struct ActorGriefingBlockEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk22e528;
-    ::ll::UntypedStorage<8, 8>  mUnkff253e;
-    ::ll::UntypedStorage<4, 12> mUnk949a50;
-    ::ll::UntypedStorage<8, 16> mUnkfa0dfe;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>             mActorContext;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>>         mBlock;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                 mPos;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle>> mBlockSourceHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorGriefingBlockEvent& operator=(ActorGriefingBlockEvent const&);
-    ActorGriefingBlockEvent(ActorGriefingBlockEvent const&);
-    ActorGriefingBlockEvent();
 
 public:
     // member functions

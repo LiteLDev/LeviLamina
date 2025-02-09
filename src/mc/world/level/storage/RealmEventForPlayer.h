@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/storage/RealmEventId.h"
+
 struct RealmEventForPlayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnka96748;
-    ::ll::UntypedStorage<8, 32> mUnka99384;
+    ::ll::TypedStorage<4, 4, ::RealmEventId>       mRealmEventId;
+    ::ll::TypedStorage<8, 32, ::std::string const> mPlayerXuid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RealmEventForPlayer& operator=(RealmEventForPlayer const&);
-    RealmEventForPlayer(RealmEventForPlayer const&);
-    RealmEventForPlayer();
 
 public:
     // member functions

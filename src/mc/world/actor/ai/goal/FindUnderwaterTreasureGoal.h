@@ -5,27 +5,28 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Mob;
+class Vec3;
+// clang-format on
+
 class FindUnderwaterTreasureGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7ef50e;
-    ::ll::UntypedStorage<4, 12> mUnk174d65;
-    ::ll::UntypedStorage<4, 12> mUnkad7044;
-    ::ll::UntypedStorage<4, 4>  mUnk859e17;
-    ::ll::UntypedStorage<4, 4>  mUnk54cf83;
-    ::ll::UntypedStorage<4, 4>  mUnkd55f80;
-    ::ll::UntypedStorage<4, 4>  mUnk22cdd1;
-    ::ll::UntypedStorage<4, 4>  mUnk3e9dad;
-    ::ll::UntypedStorage<4, 4>  mUnk10335f;
-    ::ll::UntypedStorage<4, 4>  mUnkbd7f3e;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mDestination;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mLastPos;
+    ::ll::TypedStorage<4, 4, int>         mBlocksCounter;
+    ::ll::TypedStorage<4, 4, int>         mBlocksToTravel;
+    ::ll::TypedStorage<4, 4, int>         mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, int>         mFailedPathing;
+    ::ll::TypedStorage<4, 4, int>         mTotalFailedPathing;
+    ::ll::TypedStorage<4, 4, float>       mSpeed;
+    ::ll::TypedStorage<4, 4, int>         mSearchArea;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FindUnderwaterTreasureGoal& operator=(FindUnderwaterTreasureGoal const&);
-    FindUnderwaterTreasureGoal(FindUnderwaterTreasureGoal const&);
-    FindUnderwaterTreasureGoal();
 
 public:
     // virtual functions

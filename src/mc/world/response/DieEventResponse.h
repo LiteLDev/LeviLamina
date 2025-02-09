@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/FilterSubject.h"
 #include "mc/util/Factory.h"
 #include "mc/world/response/EventResponse.h"
 
@@ -18,14 +19,8 @@ class DieEventResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk71bc29;
+    ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DieEventResponse& operator=(DieEventResponse const&);
-    DieEventResponse(DieEventResponse const&);
-    DieEventResponse();
 
 public:
     // virtual functions

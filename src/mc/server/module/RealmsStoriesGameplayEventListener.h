@@ -20,6 +20,8 @@ class ItemStack;
 class LevelStorage;
 class Player;
 class PlayerEventListener;
+class RealmsStoriesData;
+class Vec3;
 struct ActorAcquiredItemEvent;
 struct ActorKilledEvent;
 struct PlayerUseNameTagEvent;
@@ -31,16 +33,10 @@ class RealmsStoriesGameplayEventListener : public ::EventListenerDispatcher<::Ac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8ca991;
-    ::ll::UntypedStorage<8, 8>  mUnkc3ec80;
-    ::ll::UntypedStorage<8, 8>  mUnk5b2408;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::Vec3>>  mLastPosChecked;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RealmsStoriesData>> mRealmsStoriesData;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IRealmEventLogger>> mRealmEventLogger;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RealmsStoriesGameplayEventListener& operator=(RealmsStoriesGameplayEventListener const&);
-    RealmsStoriesGameplayEventListener(RealmsStoriesGameplayEventListener const&);
-    RealmsStoriesGameplayEventListener();
 
 public:
     // virtual functions

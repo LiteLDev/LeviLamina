@@ -14,15 +14,9 @@ class DragonScanningGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk141a24;
-    ::ll::UntypedStorage<4, 4> mUnkb89d17;
+    ::ll::TypedStorage<8, 8, ::EnderDragon&> mDragon;
+    ::ll::TypedStorage<4, 4, float>          mScanTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonScanningGoal& operator=(DragonScanningGoal const&);
-    DragonScanningGoal(DragonScanningGoal const&);
-    DragonScanningGoal();
 
 public:
     // virtual functions

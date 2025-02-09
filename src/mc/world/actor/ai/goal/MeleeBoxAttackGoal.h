@@ -16,14 +16,8 @@ class MeleeBoxAttackGoal : public ::MeleeAttackBaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7f036f;
+    ::ll::TypedStorage<4, 4, float> mHorizontalReach;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MeleeBoxAttackGoal& operator=(MeleeBoxAttackGoal const&);
-    MeleeBoxAttackGoal(MeleeBoxAttackGoal const&);
-    MeleeBoxAttackGoal();
 
 public:
     // virtual functions

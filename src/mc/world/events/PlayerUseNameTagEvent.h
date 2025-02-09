@@ -2,19 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class ItemStack;
+// clang-format on
+
 struct PlayerUseNameTagEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk21cc41;
-    ::ll::UntypedStorage<8, 152> mUnk97b7ce;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<8, 152, ::ItemStack>               mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerUseNameTagEvent& operator=(PlayerUseNameTagEvent const&);
-    PlayerUseNameTagEvent(PlayerUseNameTagEvent const&);
-    PlayerUseNameTagEvent();
 
 public:
     // member functions

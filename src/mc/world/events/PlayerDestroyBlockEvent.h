@@ -2,21 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class EntityContext;
+// clang-format on
+
 struct PlayerDestroyBlockEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk48fa14;
-    ::ll::UntypedStorage<4, 12> mUnkd7b1f7;
-    ::ll::UntypedStorage<1, 1>  mUnk15f1f7;
-    ::ll::UntypedStorage<8, 8>  mUnk97f33e;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>     mPlayer;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                     mBlockPos;
+    ::ll::TypedStorage<1, 1, uchar>                           mFace;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDestroyBlockEvent& operator=(PlayerDestroyBlockEvent const&);
-    PlayerDestroyBlockEvent(PlayerDestroyBlockEvent const&);
-    PlayerDestroyBlockEvent();
 
 public:
     // member functions

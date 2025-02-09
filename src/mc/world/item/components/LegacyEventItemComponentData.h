@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DefinitionEvent;
+// clang-format on
+
 struct LegacyEventItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7c8cfb;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::DefinitionEvent>>> mEventHandlers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyEventItemComponentData& operator=(LegacyEventItemComponentData const&);
-    LegacyEventItemComponentData(LegacyEventItemComponentData const&);
-    LegacyEventItemComponentData();
 
 public:
     // member functions

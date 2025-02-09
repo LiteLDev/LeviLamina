@@ -16,16 +16,10 @@ class SkeletonHorseTrapGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk789df2;
-    ::ll::UntypedStorage<4, 4> mUnk36b10a;
-    ::ll::UntypedStorage<4, 4> mUnk629f69;
+    ::ll::TypedStorage<8, 8, ::Horse&> mHorse;
+    ::ll::TypedStorage<4, 4, int>      mTrapLifeTicks;
+    ::ll::TypedStorage<4, 4, float>    mTriggerDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkeletonHorseTrapGoal& operator=(SkeletonHorseTrapGoal const&);
-    SkeletonHorseTrapGoal(SkeletonHorseTrapGoal const&);
-    SkeletonHorseTrapGoal();
 
 public:
     // virtual functions

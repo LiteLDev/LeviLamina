@@ -13,22 +13,17 @@ class Block;
 class BlockPos;
 class BlockSource;
 struct ActorBlockSyncMessage;
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class BlockEventTracker : public ::BlockSourceListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk559854;
-    ::ll::UntypedStorage<8, 64> mUnkafe26c;
-    ::ll::UntypedStorage<8, 80> mUnk196eef;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::Block const&>> mBlockChangesMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::Block const&>> mExtraBlockChangesMap;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mMapMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEventTracker& operator=(BlockEventTracker const&);
-    BlockEventTracker(BlockEventTracker const&);
-    BlockEventTracker();
 
 public:
     // virtual functions

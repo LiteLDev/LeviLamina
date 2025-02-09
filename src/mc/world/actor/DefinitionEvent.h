@@ -2,27 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefinitionEventType.h"
+
 // auto generated forward declare list
 // clang-format off
+class DefinitionTrigger;
+class ExpressionNode;
 class RenderParams;
 struct DefinitionModifier;
+struct EventResponseCollection;
 // clang-format on
 
 class DefinitionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkef59f1;
-    ::ll::UntypedStorage<8, 216> mUnk69c7fe;
-    ::ll::UntypedStorage<4, 4>   mUnk72aeee;
-    ::ll::UntypedStorage<8, 256> mUnk729dbe;
-    ::ll::UntypedStorage<8, 24>  mUnkcd2d6c;
-    ::ll::UntypedStorage<8, 24>  mUnk4968e0;
+    ::ll::TypedStorage<4, 4, float>                             mProbability;
+    ::ll::TypedStorage<8, 216, ::ExpressionNode>                mCondition;
+    ::ll::TypedStorage<4, 4, ::DefinitionEventType>             mType;
+    ::ll::TypedStorage<8, 256, ::DefinitionTrigger>             mTrigger;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DefinitionEvent>> mChildren;
+    ::ll::TypedStorage<8, 24, ::EventResponseCollection>        mResponses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DefinitionEvent();
 
 public:
     // member functions

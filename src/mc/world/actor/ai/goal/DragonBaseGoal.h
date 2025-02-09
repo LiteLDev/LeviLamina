@@ -5,22 +5,22 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class EnderDragon;
+struct FloatRange;
+// clang-format on
+
 class DragonBaseGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5480ed;
-    ::ll::UntypedStorage<4, 4> mUnkb034aa;
-    ::ll::UntypedStorage<4, 4> mUnk652307;
-    ::ll::UntypedStorage<4, 4> mUnkd4a64d;
-    ::ll::UntypedStorage<4, 8> mUnkd47736;
+    ::ll::TypedStorage<8, 8, ::EnderDragon&> mDragon;
+    ::ll::TypedStorage<4, 4, float>          mActiveSpeed;
+    ::ll::TypedStorage<4, 4, float>          mFlightSpeed;
+    ::ll::TypedStorage<4, 4, float>          mTurnSpeed;
+    ::ll::TypedStorage<4, 8, ::FloatRange>   mTargetZone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonBaseGoal& operator=(DragonBaseGoal const&);
-    DragonBaseGoal(DragonBaseGoal const&);
-    DragonBaseGoal();
 
 public:
     // virtual functions

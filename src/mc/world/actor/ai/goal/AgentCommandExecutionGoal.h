@@ -14,14 +14,8 @@ class AgentCommandExecutionGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5bfbcb;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AgentCommandExecutionGoal& operator=(AgentCommandExecutionGoal const&);
-    AgentCommandExecutionGoal(AgentCommandExecutionGoal const&);
-    AgentCommandExecutionGoal();
 
 public:
     // virtual functions

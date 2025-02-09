@@ -9,7 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorFilterGroup;
 class Mob;
+class Vec3;
+class WeakEntityRef;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -74,25 +77,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkdee96f;
-    ::ll::UntypedStorage<8, 64> mUnk731ba9;
-    ::ll::UntypedStorage<4, 4>  mUnk13f189;
-    ::ll::UntypedStorage<4, 4>  mUnk69f3f1;
-    ::ll::UntypedStorage<4, 12> mUnkd1ef9c;
-    ::ll::UntypedStorage<4, 4>  mUnk791d9c;
-    ::ll::UntypedStorage<4, 4>  mUnkdc7eda;
-    ::ll::UntypedStorage<4, 4>  mUnk1dca67;
-    ::ll::UntypedStorage<4, 4>  mUnkac3195;
-    ::ll::UntypedStorage<1, 1>  mUnkfaf091;
-    ::ll::UntypedStorage<8, 8>  mUnk858ea4;
-    ::ll::UntypedStorage<8, 24> mUnkf01ae0;
+    ::ll::TypedStorage<4, 4, float>               mSpeedModifier;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+    ::ll::TypedStorage<4, 4, float>               mMinPickupFlowerWaitTicks;
+    ::ll::TypedStorage<4, 4, float>               mMaxPickupFlowerWaitTicks;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
+    ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>               mMinDistanceToTargetSquared;
+    ::ll::TypedStorage<4, 4, int>                 mPickupFlowerTick;
+    ::ll::TypedStorage<1, 1, bool>                mTakeFlower;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>    mOfferFlowerMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TakeFlowerGoal& operator=(TakeFlowerGoal const&);
-    TakeFlowerGoal(TakeFlowerGoal const&);
-    TakeFlowerGoal();
 
 public:
     // virtual functions

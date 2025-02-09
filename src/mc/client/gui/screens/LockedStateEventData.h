@@ -6,12 +6,6 @@ struct LockedStateEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkce9a1c;
+    ::ll::TypedStorage<1, 1, bool> locked;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LockedStateEventData& operator=(LockedStateEventData const&);
-    LockedStateEventData(LockedStateEventData const&);
-    LockedStateEventData();
 };

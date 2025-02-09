@@ -20,10 +20,12 @@ class LevelStorage;
 class POIInstance;
 class Vec3;
 class Village;
+class WanderingTraderScheduler;
 struct ActorUniqueID;
 struct EffectDuration;
 struct POIBlueprint;
 struct Tick;
+namespace Bedrock::PubSub { class Subscription; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -36,6 +38,12 @@ public:
     // clang-format on
 
     // VillageManager inner types define
+    using POIBlueprintMap = ::std::unordered_map<::BlockLegacy const*, ::std::unique_ptr<::POIBlueprint>>;
+
+    using VillageMap = ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>;
+
+    using POIMap = ::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>;
+
     enum class BedAvailabilityState : int {
         Unknown       = 0,
         SomeAvailable = 1,
@@ -46,16 +54,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkeeec1f;
-        ::ll::UntypedStorage<1, 1>  mUnk18446c;
-        ::ll::UntypedStorage<4, 4>  mUnk5d4766;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Village>> village;
+        ::ll::TypedStorage<1, 1, bool>                          positionIsWithinVillageBounds;
+        ::ll::TypedStorage<4, 4, float>                         distanceToClosestEdgeOfVillage;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        VillageInfo& operator=(VillageInfo const&);
-        VillageInfo(VillageInfo const&);
-        VillageInfo();
 
     public:
         // member functions
@@ -74,14 +76,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk5a19b3;
+        ::ll::TypedStorage<4, 4, ::VillageManager::BedAvailabilityState> bedAvailability;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DwellerTestVillageInfo& operator=(DwellerTestVillageInfo const&);
-        DwellerTestVillageInfo(DwellerTestVillageInfo const&);
-        DwellerTestVillageInfo();
 
     public:
         // member functions
@@ -99,27 +95,23 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk23988e;
-    ::ll::UntypedStorage<8, 40>  mUnk4d124c;
-    ::ll::UntypedStorage<8, 24>  mUnka6dddb;
-    ::ll::UntypedStorage<8, 64>  mUnk623631;
-    ::ll::UntypedStorage<8, 192> mUnkf40d9a;
-    ::ll::UntypedStorage<8, 64>  mUnka32962;
-    ::ll::UntypedStorage<8, 8>   mUnk38de48;
-    ::ll::UntypedStorage<8, 32>  mUnk9e27c3;
-    ::ll::UntypedStorage<1, 1>   mUnkcf8c6e;
-    ::ll::UntypedStorage<4, 4>   mUnk642676;
-    ::ll::UntypedStorage<4, 4>   mUnk783cf8;
-    ::ll::UntypedStorage<4, 4>   mUnk5c81c1;
-    ::ll::UntypedStorage<8, 16>  mUnkca6d86;
-    ::ll::UntypedStorage<8, 16>  mUnk760df9;
+    ::ll::TypedStorage<8, 8, ::Dimension&>                                                     mDimension;
+    ::ll::TypedStorage<8, 40, ::std::deque<::ActorUniqueID>>                                   mFindPOIQueries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::POIInstance>>>                 mUnclusteredPOIs;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>> mVillages;
+    ::ll::TypedStorage<8, 192, ::std::array<::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>, 3>>
+        mClusteredPOIs;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockLegacy const*, ::std::unique_ptr<::POIBlueprint>>>
+                                                               mPOIBlueprints;
+    ::ll::TypedStorage<8, 8, ::Tick>                           mTickCount;
+    ::ll::TypedStorage<8, 32, ::WanderingTraderScheduler>      mWanderingTraderScheduler;
+    ::ll::TypedStorage<1, 1, bool>                             mFinishedQueryScan;
+    ::ll::TypedStorage<4, 4, int>                              mCurrentXScan;
+    ::ll::TypedStorage<4, 4, int>                              mCurrentYScan;
+    ::ll::TypedStorage<4, 4, int>                              mCurrentZScan;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VillageManager& operator=(VillageManager const&);
-    VillageManager(VillageManager const&);
-    VillageManager();
 
 public:
     // virtual functions

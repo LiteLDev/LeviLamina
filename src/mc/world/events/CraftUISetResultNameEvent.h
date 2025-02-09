@@ -12,13 +12,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk50abf5;
-    ::ll::UntypedStorage<8, 32> mUnk6efa06;
+    ::ll::TypedStorage<4, 4, ::CraftUISetResultNameEvent::BlockType const> mType;
+    ::ll::TypedStorage<8, 32, ::std::string const>                         mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftUISetResultNameEvent& operator=(CraftUISetResultNameEvent const&);
-    CraftUISetResultNameEvent(CraftUISetResultNameEvent const&);
-    CraftUISetResultNameEvent();
 };

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandMessage;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -16,15 +17,9 @@ class ScriptEventCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5a8c8a;
-    ::ll::UntypedStorage<8, 24> mUnk8eeb1d;
+    ::ll::TypedStorage<8, 32, ::std::string>    mMessageId;
+    ::ll::TypedStorage<8, 24, ::CommandMessage> mMessage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptEventCommand& operator=(ScriptEventCommand const&);
-    ScriptEventCommand(ScriptEventCommand const&);
-    ScriptEventCommand();
 
 public:
     // virtual functions

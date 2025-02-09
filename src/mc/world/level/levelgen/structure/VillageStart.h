@@ -9,14 +9,8 @@ class VillageStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb3a0e0;
+    ::ll::TypedStorage<1, 1, bool> mValid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VillageStart& operator=(VillageStart const&);
-    VillageStart(VillageStart const&);
-    VillageStart();
 
 public:
     // virtual functions

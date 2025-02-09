@@ -6,20 +6,15 @@
 // clang-format off
 class AttributeBuff;
 class AttributeInstance;
+class AttributeInstanceHandle;
 // clang-format on
 
 class AttributeInstanceDelegate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkcc716d;
+    ::ll::TypedStorage<8, 16, ::AttributeInstanceHandle> mAttributeHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttributeInstanceDelegate& operator=(AttributeInstanceDelegate const&);
-    AttributeInstanceDelegate(AttributeInstanceDelegate const&);
-    AttributeInstanceDelegate();
 
 public:
     // virtual functions

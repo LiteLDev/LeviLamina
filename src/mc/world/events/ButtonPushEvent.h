@@ -2,20 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSourceHandle;
+class WeakEntityRef;
+// clang-format on
+
 struct ButtonPushEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnke5d69a;
-    ::ll::UntypedStorage<4, 12> mUnk44faed;
-    ::ll::UntypedStorage<8, 24> mUnkd7614c;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle>> mBlockSourceHandle;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                       mButtonBlockPos;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                        mSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ButtonPushEvent& operator=(ButtonPushEvent const&);
-    ButtonPushEvent(ButtonPushEvent const&);
-    ButtonPushEvent();
 
 public:
     // member functions

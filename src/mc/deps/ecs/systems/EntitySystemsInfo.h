@@ -2,18 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ComponentInfo;
+struct SystemInfo;
+// clang-format on
+
 struct EntitySystemsInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcfab69;
-    ::ll::UntypedStorage<8, 24> mUnka86afd;
-    ::ll::UntypedStorage<8, 24> mUnk11fb92;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SystemInfo>>    mGameSystems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ComponentInfo>> mAllKnownComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntitySystemsInfo& operator=(EntitySystemsInfo const&);
-    EntitySystemsInfo(EntitySystemsInfo const&);
-    EntitySystemsInfo();
 };

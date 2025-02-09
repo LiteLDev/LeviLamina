@@ -16,14 +16,8 @@ struct NavigateToEntityIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf79d15;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NavigateToEntityIntent& operator=(NavigateToEntityIntent const&);
-    NavigateToEntityIntent(NavigateToEntityIntent const&);
-    NavigateToEntityIntent();
 
 public:
     // member functions

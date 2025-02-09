@@ -8,37 +8,33 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec3;
+struct Tick;
 // clang-format on
 
 class ExploreOutskirtsGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk4c67b5;
-    ::ll::UntypedStorage<4, 4>  mUnk6890e8;
-    ::ll::UntypedStorage<4, 4>  mUnkab643a;
-    ::ll::UntypedStorage<4, 4>  mUnk983ace;
-    ::ll::UntypedStorage<8, 8>  mUnkb02494;
-    ::ll::UntypedStorage<8, 8>  mUnk97c3ea;
-    ::ll::UntypedStorage<4, 4>  mUnk298c34;
-    ::ll::UntypedStorage<4, 4>  mUnk594c91;
-    ::ll::UntypedStorage<4, 4>  mUnk3e14e1;
-    ::ll::UntypedStorage<4, 4>  mUnk6b1727;
-    ::ll::UntypedStorage<4, 4>  mUnk7d4882;
-    ::ll::UntypedStorage<4, 12> mUnkabe86d;
-    ::ll::UntypedStorage<1, 1>  mUnkf4b42f;
-    ::ll::UntypedStorage<1, 1>  mUnk4954ba;
-    ::ll::UntypedStorage<8, 8>  mUnk8576dc;
-    ::ll::UntypedStorage<8, 8>  mUnk53b906;
-    ::ll::UntypedStorage<8, 8>  mUnkc4f08e;
-    ::ll::UntypedStorage<4, 12> mUnkdaa89d;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, int>     mMinimumWaitTimeTicks;
+    ::ll::TypedStorage<4, 4, int>     mNextXZDistance;
+    ::ll::TypedStorage<4, 4, int>     mNextYDistance;
+    ::ll::TypedStorage<8, 8, ::Tick>  mMaximumWaitTimeTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>  mTravelTimeout;
+    ::ll::TypedStorage<4, 4, float>   mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>   mExploreDistance;
+    ::ll::TypedStorage<4, 4, float>   mMinimumPerimeter;
+    ::ll::TypedStorage<4, 4, float>   mMinimumDistanceFromTarget;
+    ::ll::TypedStorage<4, 4, float>   mWaitTimerRatio;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDistanceFromBoundary;
+    ::ll::TypedStorage<1, 1, bool>    mFailedToPath;
+    ::ll::TypedStorage<1, 1, bool>    mTraveling;
+    ::ll::TypedStorage<8, 8, ::Tick>  mShiftLocationTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>  mWaitTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>  mTravelTimer;
+    ::ll::TypedStorage<4, 12, ::Vec3> mWantedPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExploreOutskirtsGoal& operator=(ExploreOutskirtsGoal const&);
-    ExploreOutskirtsGoal(ExploreOutskirtsGoal const&);
-    ExploreOutskirtsGoal();
 
 public:
     // virtual functions

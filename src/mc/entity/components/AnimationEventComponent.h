@@ -29,12 +29,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk41e453;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AnimationEventComponent::AnimationStateData>> mObservedAnimationStates;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnimationEventComponent& operator=(AnimationEventComponent const&);
-    AnimationEventComponent(AnimationEventComponent const&);
-    AnimationEventComponent();
 };

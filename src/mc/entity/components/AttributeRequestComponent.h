@@ -81,15 +81,21 @@ public:
         AddBuffModifier();
     };
 
+    using Variant = ::std::variant<
+        ::AttributeRequestComponent::AddModifier,
+        ::AttributeRequestComponent::RemoveModifier,
+        ::AttributeRequestComponent::AddBuffModifier>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk14b449;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::variant<
+            ::AttributeRequestComponent::AddModifier,
+            ::AttributeRequestComponent::RemoveModifier,
+            ::AttributeRequestComponent::AddBuffModifier>>>
+        mRequests;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttributeRequestComponent& operator=(AttributeRequestComponent const&);
-    AttributeRequestComponent(AttributeRequestComponent const&);
-    AttributeRequestComponent();
 };

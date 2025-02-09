@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class EntityContext;
 class Mob;
+class Path;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -93,18 +95,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk656e86;
-    ::ll::UntypedStorage<8, 96> mUnk23e7d0;
-    ::ll::UntypedStorage<4, 4>  mUnkda4d61;
-    ::ll::UntypedStorage<8, 8>  mUnk95b135;
-    ::ll::UntypedStorage<4, 12> mUnkcb0bf0;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                       mMob;
+    ::ll::TypedStorage<8, 96, ::GoAndGiveItemsToNoteblockGoal::Definition> mDefinition;
+    ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToNoteblockGoal::State>       mState;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                    mPath;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                  mTargetBlockPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GoAndGiveItemsToNoteblockGoal& operator=(GoAndGiveItemsToNoteblockGoal const&);
-    GoAndGiveItemsToNoteblockGoal(GoAndGiveItemsToNoteblockGoal const&);
-    GoAndGiveItemsToNoteblockGoal();
 
 public:
     // virtual functions

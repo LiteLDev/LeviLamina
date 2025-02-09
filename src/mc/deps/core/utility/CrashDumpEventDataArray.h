@@ -5,16 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/CrashDumpLogBlobHeader.h"
 
+// auto generated forward declare list
+// clang-format off
+struct CrashDumpEventData;
+// clang-format on
+
 struct CrashDumpEventDataArray : public ::CrashDumpLogBlobHeader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32768> mUnk2cf47a;
+    ::ll::TypedStorage<4, 32768, ::CrashDumpEventData[4096]> mEventData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CrashDumpEventDataArray& operator=(CrashDumpEventDataArray const&);
-    CrashDumpEventDataArray(CrashDumpEventDataArray const&);
-    CrashDumpEventDataArray();
 };

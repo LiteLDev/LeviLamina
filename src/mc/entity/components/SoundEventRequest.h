@@ -105,19 +105,32 @@ public:
         ActorLocationData();
     };
 
+    using SoundDataVariant = ::std::variant<
+        ::SoundEventRequest::PlainData,
+        ::SoundEventRequest::SoundData,
+        ::SoundEventRequest::SynchronizedPlainData>;
+
+    using PositionVariant = ::std::variant<::Vec3, ::SoundEventRequest::ActorLocationData>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkd425f1;
-    ::ll::UntypedStorage<8, 200> mUnka153ce;
-    ::ll::UntypedStorage<4, 16>  mUnk866f2e;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mEvent;
+    ::ll::TypedStorage<
+        8,
+        200,
+        ::std::variant<
+            ::SoundEventRequest::PlainData,
+            ::SoundEventRequest::SoundData,
+            ::SoundEventRequest::SynchronizedPlainData>>
+                                                                                              mData;
+    ::ll::TypedStorage<4, 16, ::std::variant<::Vec3, ::SoundEventRequest::ActorLocationData>> mPosition;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     SoundEventRequest& operator=(SoundEventRequest const&);
     SoundEventRequest(SoundEventRequest const&);
-    SoundEventRequest();
 
 public:
     // member functions

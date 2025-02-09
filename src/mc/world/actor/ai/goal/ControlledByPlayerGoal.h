@@ -14,17 +14,11 @@ class ControlledByPlayerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2faddd;
-    ::ll::UntypedStorage<4, 4> mUnk927c96;
-    ::ll::UntypedStorage<4, 4> mUnk29c794;
-    ::ll::UntypedStorage<4, 4> mUnka78353;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float>  mFractionalRotation;
+    ::ll::TypedStorage<4, 4, float>  mFractionalRotationLimit;
+    ::ll::TypedStorage<4, 4, float>  mSpeedMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ControlledByPlayerGoal& operator=(ControlledByPlayerGoal const&);
-    ControlledByPlayerGoal(ControlledByPlayerGoal const&);
-    ControlledByPlayerGoal();
 
 public:
     // virtual functions

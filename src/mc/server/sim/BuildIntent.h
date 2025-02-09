@@ -9,6 +9,8 @@
 // clang-format off
 class BlockSource;
 class SimulatedPlayer;
+namespace sim { struct ContinuousBuildIntent; }
+namespace sim { struct VoidBuildIntent; }
 // clang-format on
 
 namespace sim {
@@ -17,13 +19,8 @@ struct BuildIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk702cc9;
+    ::ll::TypedStorage<1, 2, ::std::variant<::sim::VoidBuildIntent, ::sim::ContinuousBuildIntent>> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BuildIntent& operator=(BuildIntent const&);
-    BuildIntent(BuildIntent const&);
 
 public:
     // member functions
