@@ -21,7 +21,7 @@ public:
     // NOLINTEND
 
 public:
-    AddressOrGUID() = default;
+    AddressOrGUID()                                = default;
     AddressOrGUID& operator=(AddressOrGUID const&) = default;
     AddressOrGUID(::RakNet::SystemAddress const& input) : rakNetGuid{-1, -1} { systemAddress = input; }
     AddressOrGUID(::RakNet::RakNetGUID const& input) : rakNetGuid(input), systemAddress{} {}

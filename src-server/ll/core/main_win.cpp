@@ -239,7 +239,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     origin(ins);
 
-    auto &config = getLeviConfig();
+    auto& config = getLeviConfig();
     if (config.modules.crashLogger.enabled && config.modules.crashLogger.uploadToSentry) {
         CrashLogger::submitCrashInfo();
     }
