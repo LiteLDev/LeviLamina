@@ -33,8 +33,8 @@ struct CoroPromiseBase {
 
     template <concepts::Awaitable T>
     constexpr decltype(auto) await_transform(T&& awaitable) {
-        if constexpr (requires { awaitable.setExecutor(exec); }) {
-            awaitable.setExecutor(exec);
+        if constexpr (requires(T a, ExecutorRef e) { a.setExecutor(e); }) {
+            std::forward<T>(awaitable).setExecutor(exec);
         }
         return std::forward<T>(awaitable);
     }

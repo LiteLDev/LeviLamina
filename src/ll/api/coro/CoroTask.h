@@ -29,6 +29,7 @@ private:
 
 public:
     struct ExpectedAwaiter : public WaiterBase {
+        constexpr void setExecutor(ExecutorRef ex) { WaiterBase::handle.promise().exec = ex; }
         constexpr ExpectedAwaiter(Handle h) : WaiterBase(h) {}
         constexpr ExpectedResult await_resume() noexcept { return WaiterBase::getResult(); }
     };
@@ -44,6 +45,19 @@ public:
         }
     };
 
+private:
+    struct Launcher {
+        struct promise_type : public CoroPromiseBase {
+            constexpr ExpectedAwaiter&&  await_transform(ExpectedAwaiter&& a) { return std::move(a); }
+            constexpr std::suspend_never initial_suspend() noexcept { return {}; }
+            constexpr std::suspend_never final_suspend() noexcept { return {}; }
+            constexpr void               return_void() noexcept {}
+            constexpr void               unhandled_exception() { std::rethrow_exception(std::current_exception()); }
+            constexpr Launcher           get_return_object() noexcept { return {}; }
+        };
+    };
+
+public:
     CoroTask(CoroTask const&)            = delete;
     CoroTask& operator=(CoroTask const&) = delete;
 
@@ -68,15 +82,6 @@ public:
     template <std::invocable<ExpectedResult> F>
     void launch(NonNullExecutorRef executor, F&& callback) noexcept try {
         setExecutor(executor);
-        struct Launcher {
-            struct promise_type : public CoroPromiseBase {
-                constexpr std::suspend_never initial_suspend() noexcept { return {}; }
-                constexpr std::suspend_never final_suspend() noexcept { return {}; }
-                constexpr void               return_void() noexcept {}
-                constexpr void               unhandled_exception() { std::rethrow_exception(std::current_exception()); }
-                constexpr Launcher           get_return_object() noexcept { return {}; }
-            };
-        };
         [](CoroTask lazy, std::decay_t<F> cb) -> Launcher {
             std::invoke(cb, co_await lazy.tryGet());
         }(std::move(*this), std::forward<F>(callback));
