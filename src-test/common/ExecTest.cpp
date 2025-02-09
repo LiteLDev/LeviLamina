@@ -3,6 +3,7 @@
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/coro/CoroTask.h"
 #include "ll/api/coro/Generator.h"
+#include "ll/api/coro/InterruptableSleep.h"
 #include "ll/api/thread/InplaceExecutor.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/thread/ThreadPoolExecutor.h"
@@ -27,10 +28,20 @@ Generator<size_t> generator(size_t n) {
     }
 }
 
+InterruptableSleep sleeper;
+
 CoroTask<Expected<int>> coroutine() {
+    std::thread{[] {
+        std::this_thread::sleep_for(1s);
+        sleeper.interrupt(true);
+        getLogger().info("thread: {}", std::this_thread::get_id());
+    }}.detach();
+    getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), std::this_thread::get_id());
+    co_await sleeper.sleep();
+    getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), std::this_thread::get_id());
     for (size_t i = 0;; i++) {
-        getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), std::this_thread::get_id());
         co_await 2_tick;
+        getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), std::this_thread::get_id());
         if (i > 10) {
             break;
         }

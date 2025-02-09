@@ -28,11 +28,13 @@ public:
 
     ~CancellableCallback() { cancel(); }
 
-    void call() {
+    bool call() {
         if (available.exchange(false)) {
             Dtor d{callback};
             callback.storage();
+            return true;
         }
+        return false;
     }
 
     template <class F>

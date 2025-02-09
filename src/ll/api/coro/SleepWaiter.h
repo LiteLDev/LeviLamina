@@ -22,7 +22,7 @@ public:
 
     constexpr void setExecutor(ExecutorRef ex) { exec = ex; }
 
-    constexpr bool await_ready() const noexcept { return false; }
+    constexpr bool await_ready() const noexcept { return dur <= Duration{0}; }
     void           await_suspend(std::coroutine_handle<> handle) { exec->executeAfter(handle, dur); }
     constexpr void await_resume() const noexcept {}
 };
