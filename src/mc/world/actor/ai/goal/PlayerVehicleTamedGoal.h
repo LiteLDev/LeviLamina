@@ -14,14 +14,8 @@ class PlayerVehicleTamedGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkdc60f2;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerVehicleTamedGoal& operator=(PlayerVehicleTamedGoal const&);
-    PlayerVehicleTamedGoal(PlayerVehicleTamedGoal const&);
-    PlayerVehicleTamedGoal();
 
 public:
     // virtual functions

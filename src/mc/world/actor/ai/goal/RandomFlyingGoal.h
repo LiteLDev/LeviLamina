@@ -15,14 +15,8 @@ class RandomFlyingGoal : public ::RandomStrollGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc16f34;
+    ::ll::TypedStorage<1, 1, bool> mCanLandOnTrees;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomFlyingGoal& operator=(RandomFlyingGoal const&);
-    RandomFlyingGoal(RandomFlyingGoal const&);
-    RandomFlyingGoal();
 
 public:
     // virtual functions

@@ -16,6 +16,10 @@ struct ItemNotificationEvent;
 
 class ItemEventListener {
 public:
+    // ItemEventListener inner types define
+    using EventType = ::ItemNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -9,20 +9,15 @@
 // clang-format off
 class DBStorageFolderWatcher;
 class LevelData;
+struct LevelStorageEventingContext;
 // clang-format on
 
 class LevelStorageEventing {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkc6379b;
+    ::ll::TypedStorage<8, 112, ::LevelStorageEventingContext> mContext;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelStorageEventing& operator=(LevelStorageEventing const&);
-    LevelStorageEventing(LevelStorageEventing const&);
-    LevelStorageEventing();
 
 public:
     // member functions

@@ -2,21 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockLegacy;
+class BlockPos;
+class BlockSourceHandle;
+class EntityContext;
+// clang-format on
+
 struct ActorInsideBlockEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfbd055;
-    ::ll::UntypedStorage<8, 8>  mUnk8a8b53;
-    ::ll::UntypedStorage<4, 12> mUnk5e4484;
-    ::ll::UntypedStorage<8, 16> mUnk971f3c;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext> const>             mActor;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const> const>          mBlock;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                             mPos;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorInsideBlockEvent& operator=(ActorInsideBlockEvent const&);
-    ActorInsideBlockEvent(ActorInsideBlockEvent const&);
-    ActorInsideBlockEvent();
 
 public:
     // member functions

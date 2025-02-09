@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Level;
@@ -16,15 +17,9 @@ class StompBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk159c8f;
-    ::ll::UntypedStorage<4, 4> mUnkb9d2d7;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlockToRemove;
+    ::ll::TypedStorage<4, 4, int>            mTicksSinceReachedGoal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StompBlockGoal& operator=(StompBlockGoal const&);
-    StompBlockGoal(StompBlockGoal const&);
-    StompBlockGoal();
 
 public:
     // virtual functions

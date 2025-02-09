@@ -14,14 +14,8 @@ class RandomSwimmingGoal : public ::RandomStrollGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke9487b;
+    ::ll::TypedStorage<1, 1, bool> mAvoidSurface;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomSwimmingGoal& operator=(RandomSwimmingGoal const&);
-    RandomSwimmingGoal(RandomSwimmingGoal const&);
-    RandomSwimmingGoal();
 
 public:
     // virtual functions

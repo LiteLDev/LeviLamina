@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AttributeModifier;
 class ItemInstance;
 class ItemStack;
 class LootTableContext;
@@ -17,14 +18,8 @@ class SetAttributesFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk49ad9e;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>> mModifiers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetAttributesFunction& operator=(SetAttributesFunction const&);
-    SetAttributesFunction(SetAttributesFunction const&);
-    SetAttributesFunction();
 
 public:
     // virtual functions

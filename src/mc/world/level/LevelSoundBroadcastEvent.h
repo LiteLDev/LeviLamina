@@ -2,18 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct LevelSoundBroadcastEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk79bcb1;
-    ::ll::UntypedStorage<4, 12> mUnk60632c;
-    ::ll::UntypedStorage<4, 4>  mUnk4f63c8;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent const> mType;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>                                mPos;
+    ::ll::TypedStorage<4, 4, int const>                                    mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelSoundBroadcastEvent& operator=(LevelSoundBroadcastEvent const&);
-    LevelSoundBroadcastEvent(LevelSoundBroadcastEvent const&);
-    LevelSoundBroadcastEvent();
 };

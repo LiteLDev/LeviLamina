@@ -16,14 +16,8 @@ class BarterGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb318cc;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BarterGoal& operator=(BarterGoal const&);
-    BarterGoal(BarterGoal const&);
-    BarterGoal();
 
 public:
     // virtual functions

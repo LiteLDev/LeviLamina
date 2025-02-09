@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct SoundEventRequest;
+// clang-format on
+
 struct SoundEventRequestQueueComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk372e9b;
+    ::ll::TypedStorage<8, 40, ::std::queue<::SoundEventRequest, ::std::deque<::SoundEventRequest>>> mRequests;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SoundEventRequestQueueComponent& operator=(SoundEventRequestQueueComponent const&);
-    SoundEventRequestQueueComponent(SoundEventRequestQueueComponent const&);
-    SoundEventRequestQueueComponent();
 };

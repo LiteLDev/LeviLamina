@@ -2,22 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/events/PlayerArmorExchangeEventTriggeredLocation.h"
+#include "mc/world/item/ArmorSlot.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class ItemStack;
+// clang-format on
+
 struct PlayerArmorExchangeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk3120b4;
-    ::ll::UntypedStorage<4, 4>   mUnk3121f8;
-    ::ll::UntypedStorage<8, 152> mUnkd3390a;
-    ::ll::UntypedStorage<8, 152> mUnkc98ff5;
-    ::ll::UntypedStorage<4, 4>   mUnkb22b98;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                 mPlayer;
+    ::ll::TypedStorage<4, 4, ::ArmorSlot>                                 mArmorSlot;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                               mOldItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                               mItem;
+    ::ll::TypedStorage<4, 4, ::PlayerArmorExchangeEventTriggeredLocation> mTriggeredLocation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerArmorExchangeEvent& operator=(PlayerArmorExchangeEvent const&);
-    PlayerArmorExchangeEvent(PlayerArmorExchangeEvent const&);
-    PlayerArmorExchangeEvent();
 
 public:
     // member functions

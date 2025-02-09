@@ -2,24 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class ItemStack;
+class Vec3;
+// clang-format on
+
 struct PlayerInteractWithBlockAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk8e0509;
-    ::ll::UntypedStorage<4, 12>  mUnk7666cf;
-    ::ll::UntypedStorage<1, 1>   mUnke90097;
-    ::ll::UntypedStorage<4, 12>  mUnk3e0408;
-    ::ll::UntypedStorage<8, 152> mUnk2bcbe3;
-    ::ll::UntypedStorage<8, 152> mUnkafb46a;
-    ::ll::UntypedStorage<1, 1>   mUnk3c4e63;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<4, 12, ::Vec3>                     mBlockLocation;
+    ::ll::TypedStorage<1, 1, uchar>                       mBlockFace;
+    ::ll::TypedStorage<4, 12, ::Vec3>                     mFaceLocation;
+    ::ll::TypedStorage<8, 152, ::ItemStack>               mBeforeItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>               mAfterItem;
+    ::ll::TypedStorage<1, 1, bool>                        mIsFirstEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInteractWithBlockAfterEvent& operator=(PlayerInteractWithBlockAfterEvent const&);
-    PlayerInteractWithBlockAfterEvent(PlayerInteractWithBlockAfterEvent const&);
-    PlayerInteractWithBlockAfterEvent();
 
 public:
     // member functions

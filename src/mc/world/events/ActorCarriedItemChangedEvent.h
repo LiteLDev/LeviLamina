@@ -2,21 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+class WeakEntityRef;
+// clang-format on
+
 struct ActorCarriedItemChangedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk76ac39;
-    ::ll::UntypedStorage<8, 128> mUnkf73fc4;
-    ::ll::UntypedStorage<8, 128> mUnkc73ab0;
-    ::ll::UntypedStorage<4, 4>   mUnkb53b90;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>       mEntity;
+    ::ll::TypedStorage<8, 128, ::ItemInstance const> mPreviouslyCarriedItem;
+    ::ll::TypedStorage<8, 128, ::ItemInstance const> mCarriedItem;
+    ::ll::TypedStorage<4, 4, ::HandSlot>             mHandSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorCarriedItemChangedEvent& operator=(ActorCarriedItemChangedEvent const&);
-    ActorCarriedItemChangedEvent(ActorCarriedItemChangedEvent const&);
-    ActorCarriedItemChangedEvent();
 
 public:
     // member functions

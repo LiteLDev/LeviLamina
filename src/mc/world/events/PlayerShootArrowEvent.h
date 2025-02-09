@@ -2,21 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class ItemStack;
+// clang-format on
+
 struct PlayerShootArrowEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk9afbaf;
-    ::ll::UntypedStorage<8, 24>  mUnk2180cb;
-    ::ll::UntypedStorage<8, 152> mUnk36d8f2;
-    ::ll::UntypedStorage<8, 152> mUnk793b06;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mArrow;
+    ::ll::TypedStorage<8, 152, ::ItemStack>               mWeaponItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>               mArrowItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&);
-    PlayerShootArrowEvent(PlayerShootArrowEvent const&);
-    PlayerShootArrowEvent();
 
 public:
     // member functions

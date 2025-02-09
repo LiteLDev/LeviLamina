@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -22,16 +24,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk453b09;
-    ::ll::UntypedStorage<8, 200> mUnkb91344;
-    ::ll::UntypedStorage<8, 32>  mUnk9628b0;
+    ::ll::TypedStorage<1, 1, ::EventCommand::EventAction>  mAction;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
+    ::ll::TypedStorage<8, 32, ::std::string>               mEventName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EventCommand& operator=(EventCommand const&);
-    EventCommand(EventCommand const&);
-    EventCommand();
 
 public:
     // virtual functions

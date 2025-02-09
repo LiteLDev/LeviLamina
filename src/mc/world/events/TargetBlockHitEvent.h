@@ -2,23 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSourceHandle;
+class Vec3;
+class WeakEntityRef;
+// clang-format on
+
 struct TargetBlockHitEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk42e16a;
-    ::ll::UntypedStorage<4, 12> mUnk1dd2d9;
-    ::ll::UntypedStorage<4, 12> mUnk11a7ad;
-    ::ll::UntypedStorage<8, 24> mUnk922249;
-    ::ll::UntypedStorage<4, 4>  mUnk695d83;
-    ::ll::UntypedStorage<4, 4>  mUnk6fdf63;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                             mTargetBlockPos;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>                                 mHitVector;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef const>                        mSource;
+    ::ll::TypedStorage<4, 4, int const>                                     mPreviousRedstonePower;
+    ::ll::TypedStorage<4, 4, int const>                                     mRedstonePower;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TargetBlockHitEvent& operator=(TargetBlockHitEvent const&);
-    TargetBlockHitEvent(TargetBlockHitEvent const&);
-    TargetBlockHitEvent();
 
 public:
     // member functions

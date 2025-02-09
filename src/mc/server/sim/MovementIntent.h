@@ -17,14 +17,17 @@ struct MovementIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkd2e2e6;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<
+            ::sim::VoidMoveIntent,
+            ::sim::MoveInDirectionIntent,
+            ::sim::MoveToPositionIntent,
+            ::sim::NavigateToPositionsIntent,
+            ::sim::NavigateToEntityIntent>>
+        mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementIntent& operator=(MovementIntent const&);
-    MovementIntent(MovementIntent const&);
-    MovementIntent();
 
 public:
     // member functions

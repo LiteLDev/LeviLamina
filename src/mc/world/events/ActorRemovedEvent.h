@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct ActorRemovedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdea3aa;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorRemovedEvent& operator=(ActorRemovedEvent const&);
-    ActorRemovedEvent(ActorRemovedEvent const&);
-    ActorRemovedEvent();
 
 public:
     // member functions

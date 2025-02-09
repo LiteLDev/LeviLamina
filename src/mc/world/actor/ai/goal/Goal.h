@@ -15,15 +15,10 @@ class Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk89f0ee;
-    ::ll::UntypedStorage<8, 32> mUnk15ba10;
-    ::ll::UntypedStorage<2, 2>  mUnkab6857;
+    ::ll::TypedStorage<4, 4, int>            mRequiredControlFlags;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<2, 2, ushort>         mTypeId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Goal& operator=(Goal const&);
-    Goal(Goal const&);
 
 public:
     // virtual functions

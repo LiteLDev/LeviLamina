@@ -2,20 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct PlayerAddLevelEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc23191;
-    ::ll::UntypedStorage<4, 4>  mUnk35133c;
-    ::ll::UntypedStorage<4, 4>  mUnkefda39;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<4, 4, int>                         mAddLevel;
+    ::ll::TypedStorage<4, 4, int>                         mNewLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerAddLevelEvent& operator=(PlayerAddLevelEvent const&);
-    PlayerAddLevelEvent(PlayerAddLevelEvent const&);
-    PlayerAddLevelEvent();
 
 public:
     // member functions

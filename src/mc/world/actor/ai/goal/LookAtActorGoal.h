@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorFilterGroup;
 class Mob;
 // clang-format on
 
@@ -15,23 +17,17 @@ class LookAtActorGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk559830;
-    ::ll::UntypedStorage<4, 4>  mUnk8aab81;
-    ::ll::UntypedStorage<4, 4>  mUnk452de3;
-    ::ll::UntypedStorage<4, 4>  mUnk744271;
-    ::ll::UntypedStorage<4, 4>  mUnkcb7126;
-    ::ll::UntypedStorage<4, 4>  mUnk387567;
-    ::ll::UntypedStorage<4, 4>  mUnk16f478;
-    ::ll::UntypedStorage<4, 4>  mUnk59dbb2;
-    ::ll::UntypedStorage<8, 64> mUnkc5b823;
-    ::ll::UntypedStorage<8, 8>  mUnk1982b6;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mLookAt;
+    ::ll::TypedStorage<4, 4, float>                mLookDistance;
+    ::ll::TypedStorage<4, 4, int>                  mAngleOfViewX;
+    ::ll::TypedStorage<4, 4, int>                  mAngleOfViewY;
+    ::ll::TypedStorage<4, 4, int>                  mLookTime;
+    ::ll::TypedStorage<4, 4, int>                  mMinLookTime;
+    ::ll::TypedStorage<4, 4, int>                  mMaxLookTime;
+    ::ll::TypedStorage<4, 4, float>                mProbability;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>  mTargetFilter;
+    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookAtActorGoal& operator=(LookAtActorGoal const&);
-    LookAtActorGoal(LookAtActorGoal const&);
-    LookAtActorGoal();
 
 public:
     // virtual functions

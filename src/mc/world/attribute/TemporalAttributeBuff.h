@@ -16,16 +16,15 @@ class TemporalAttributeBuff : public ::AttributeBuff {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk726ec5;
-    ::ll::UntypedStorage<4, 4> mUnk2255be;
-    ::ll::UntypedStorage<4, 4> mUnk176795;
-    ::ll::UntypedStorage<1, 1> mUnk8e64c0;
+    ::ll::TypedStorage<4, 4, ::EffectDuration> mDuration;
+    ::ll::TypedStorage<4, 4, int>              mLifeTimer;
+    ::ll::TypedStorage<4, 4, float>            mBaseAmount;
+    ::ll::TypedStorage<1, 1, bool>             mIsSerializable;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     TemporalAttributeBuff& operator=(TemporalAttributeBuff const&);
-    TemporalAttributeBuff();
 
 public:
     // virtual functions

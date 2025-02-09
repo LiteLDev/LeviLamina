@@ -19,14 +19,8 @@ class ScriptingEventCoordinator : public ::EventCoordinator<::ScriptingEventList
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk92354c;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptingEventHandler>> mScriptingEventHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptingEventCoordinator& operator=(ScriptingEventCoordinator const&);
-    ScriptingEventCoordinator(ScriptingEventCoordinator const&);
-    ScriptingEventCoordinator();
 
 public:
     // virtual functions

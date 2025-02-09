@@ -15,17 +15,11 @@ class HungerAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2f4b05;
-    ::ll::UntypedStorage<4, 4> mUnk87d639;
-    ::ll::UntypedStorage<4, 4> mUnk625bd8;
-    ::ll::UntypedStorage<8, 8> mUnk3f5d70;
+    ::ll::TypedStorage<4, 4, int>       mActionTickTimer;
+    ::ll::TypedStorage<4, 4, int>       mTickCounter;
+    ::ll::TypedStorage<4, 4, float>     mLastFoodLevel;
+    ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HungerAttributeDelegate& operator=(HungerAttributeDelegate const&);
-    HungerAttributeDelegate(HungerAttributeDelegate const&);
-    HungerAttributeDelegate();
 
 public:
     // virtual functions

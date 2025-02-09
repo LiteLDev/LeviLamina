@@ -2,22 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class EntityContext;
+class Vec3;
+// clang-format on
+
 struct PlayerDimensionChangeBeforeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkaa75cf;
-    ::ll::UntypedStorage<4, 4>  mUnk832c50;
-    ::ll::UntypedStorage<4, 12> mUnkbf8058;
-    ::ll::UntypedStorage<4, 4>  mUnk75bd36;
-    ::ll::UntypedStorage<4, 12> mUnkd72501;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<4, 4, ::DimensionType>             mFromDimension;
+    ::ll::TypedStorage<4, 12, ::Vec3>                     mFromLocation;
+    ::ll::TypedStorage<4, 4, ::DimensionType>             mToDimension;
+    ::ll::TypedStorage<4, 12, ::Vec3>                     mToLocation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDimensionChangeBeforeEvent& operator=(PlayerDimensionChangeBeforeEvent const&);
-    PlayerDimensionChangeBeforeEvent(PlayerDimensionChangeBeforeEvent const&);
-    PlayerDimensionChangeBeforeEvent();
 
 public:
     // member functions

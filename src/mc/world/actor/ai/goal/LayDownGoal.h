@@ -5,20 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class LayDownGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkad3535;
-    ::ll::UntypedStorage<4, 4> mUnkf0c71a;
-    ::ll::UntypedStorage<4, 4> mUnk6bfdbe;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int>    mLayDownStartChance;
+    ::ll::TypedStorage<4, 4, int>    mLayDownStopChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LayDownGoal& operator=(LayDownGoal const&);
-    LayDownGoal(LayDownGoal const&);
-    LayDownGoal();
 
 public:
     // virtual functions

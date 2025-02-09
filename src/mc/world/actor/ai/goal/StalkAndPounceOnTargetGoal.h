@@ -10,6 +10,7 @@
 class ActorFilterGroup;
 class Mob;
 class Vec3;
+struct Tick;
 // clang-format on
 
 class StalkAndPounceOnTargetGoal : public ::Goal {
@@ -26,26 +27,20 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk86ffeb;
-    ::ll::UntypedStorage<4, 4>  mUnk3cafff;
-    ::ll::UntypedStorage<4, 4>  mUnkfaf93b;
-    ::ll::UntypedStorage<4, 4>  mUnkc3ce4d;
-    ::ll::UntypedStorage<4, 4>  mUnke6e24c;
-    ::ll::UntypedStorage<4, 4>  mUnk78098c;
-    ::ll::UntypedStorage<4, 4>  mUnk358953;
-    ::ll::UntypedStorage<4, 4>  mUnk7d81ee;
-    ::ll::UntypedStorage<8, 8>  mUnkf64601;
-    ::ll::UntypedStorage<8, 64> mUnk5e3ec9;
-    ::ll::UntypedStorage<1, 1>  mUnkc7ec2b;
-    ::ll::UntypedStorage<8, 8>  mUnk63e016;
-    ::ll::UntypedStorage<1, 1>  mUnk816196;
+    ::ll::TypedStorage<4, 4, float>                                             mStalkSpeed;
+    ::ll::TypedStorage<4, 4, float>                                             mStalkingMaxDistanceSqr;
+    ::ll::TypedStorage<4, 4, float>                                             mLeapHeight;
+    ::ll::TypedStorage<4, 4, float>                                             mLeapDistance;
+    ::ll::TypedStorage<4, 4, float>                                             mMaxPounceDistanceSqr;
+    ::ll::TypedStorage<4, 4, float>                                             mStrikeDistanceSqr;
+    ::ll::TypedStorage<4, 4, int>                                               mInterestedTicks;
+    ::ll::TypedStorage<4, 4, int>                                               mStuckTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                                            mEndTimestamp;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                               mStuckBlockList;
+    ::ll::TypedStorage<1, 1, ::StalkAndPounceOnTargetGoal::StalkAndPounceState> mState;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                            mMob;
+    ::ll::TypedStorage<1, 1, bool>                                              mSetPersistent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StalkAndPounceOnTargetGoal& operator=(StalkAndPounceOnTargetGoal const&);
-    StalkAndPounceOnTargetGoal(StalkAndPounceOnTargetGoal const&);
-    StalkAndPounceOnTargetGoal();
 
 public:
     // virtual functions

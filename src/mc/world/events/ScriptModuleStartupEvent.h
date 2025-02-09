@@ -2,20 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class IScriptItemCustomComponentRegistry; }
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
+
 struct ScriptModuleStartupEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk82839c;
-    ::ll::UntypedStorage<8, 8>  mUnk37aca8;
-    ::ll::UntypedStorage<8, 24> mUnkd54ccd;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::IScriptItemCustomComponentRegistry&>  mItemComponentRegistry;
+    ::ll::TypedStorage<8, 8, ::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry&> mBlockComponentRegistry;
+    ::ll::TypedStorage<8, 24, ::std::optional<::Scripting::WeakLifetimeScope>>              mSpecificScopeForEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptModuleStartupEvent& operator=(ScriptModuleStartupEvent const&);
-    ScriptModuleStartupEvent(ScriptModuleStartupEvent const&);
-    ScriptModuleStartupEvent();
 
 public:
     // member functions

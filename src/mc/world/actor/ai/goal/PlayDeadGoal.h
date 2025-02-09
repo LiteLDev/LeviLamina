@@ -89,19 +89,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 160> mUnk6411ef;
-    ::ll::UntypedStorage<8, 8>   mUnkc05656;
-    ::ll::UntypedStorage<8, 8>   mUnkff7a1b;
-    ::ll::UntypedStorage<8, 8>   mUnkedef65;
-    ::ll::UntypedStorage<8, 8>   mUnk38cbed;
-    ::ll::UntypedStorage<1, 1>   mUnk8bd0aa;
+    ::ll::TypedStorage<8, 160, ::PlayDeadGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 8, ::Mob&>                       mMob;
+    ::ll::TypedStorage<8, 8, uint64>                       mPlayDeadDuration;
+    ::ll::TypedStorage<8, 8, uint64>                       mStopPlayingDeadTime;
+    ::ll::TypedStorage<8, 8, uint64>                       mLastDamagedTimestamp;
+    ::ll::TypedStorage<1, 1, bool>                         mPlayDeadOnAllCauses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayDeadGoal& operator=(PlayDeadGoal const&);
-    PlayDeadGoal(PlayDeadGoal const&);
-    PlayDeadGoal();
 
 public:
     // virtual functions

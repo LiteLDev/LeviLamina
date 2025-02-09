@@ -8,7 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class AttributeInstance;
+class AttributeModifier;
 class BinaryStream;
+class HashedString;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -16,20 +18,15 @@ struct AttributeData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1d1f71;
-    ::ll::UntypedStorage<4, 4>  mUnkd4d247;
-    ::ll::UntypedStorage<4, 4>  mUnk599d34;
-    ::ll::UntypedStorage<4, 4>  mUnk2cae1c;
-    ::ll::UntypedStorage<4, 4>  mUnk4078f4;
-    ::ll::UntypedStorage<4, 4>  mUnk334d35;
-    ::ll::UntypedStorage<8, 48> mUnk9a4d64;
-    ::ll::UntypedStorage<8, 24> mUnkc79e18;
+    ::ll::TypedStorage<4, 4, float>                               mCurrentValue;
+    ::ll::TypedStorage<4, 4, float>                               mMinValue;
+    ::ll::TypedStorage<4, 4, float>                               mMaxValue;
+    ::ll::TypedStorage<4, 4, float>                               mDefaultValue;
+    ::ll::TypedStorage<4, 4, float>                               mDefaultMinValue;
+    ::ll::TypedStorage<4, 4, float>                               mDefaultMaxValue;
+    ::ll::TypedStorage<8, 48, ::HashedString>                     mName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>> mModifiers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttributeData& operator=(AttributeData const&);
-    AttributeData(AttributeData const&);
 
 public:
     // member functions

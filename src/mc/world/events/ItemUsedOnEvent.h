@@ -5,17 +5,21 @@
 // auto generated inclusion list
 #include "mc/world/events/ItemUseOnEvent.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+// clang-format on
+
 struct ItemUsedOnEvent : public ::ItemUseOnEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnkb13683;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mItemAfterUse;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ItemUsedOnEvent& operator=(ItemUsedOnEvent const&);
-    ItemUsedOnEvent();
 
 public:
     // member functions

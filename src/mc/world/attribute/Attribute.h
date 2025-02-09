@@ -14,17 +14,11 @@ class Attribute {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3e2e5a;
-    ::ll::UntypedStorage<1, 1>  mUnk2c9c31;
-    ::ll::UntypedStorage<4, 4>  mUnkdfeb76;
-    ::ll::UntypedStorage<8, 48> mUnke51287;
+    ::ll::TypedStorage<1, 1, ::RedefinitionMode> mRedefinitionMode;
+    ::ll::TypedStorage<1, 1, bool>               mSyncable;
+    ::ll::TypedStorage<4, 4, uint>               mIDValue;
+    ::ll::TypedStorage<8, 48, ::HashedString>    mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Attribute& operator=(Attribute const&);
-    Attribute(Attribute const&);
-    Attribute();
 
 public:
     // member functions

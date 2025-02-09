@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -18,27 +19,21 @@ class FollowOwnerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk74efe6;
-    ::ll::UntypedStorage<8, 40> mUnk864621;
-    ::ll::UntypedStorage<4, 4>  mUnk6a9953;
-    ::ll::UntypedStorage<4, 4>  mUnk4e73d3;
-    ::ll::UntypedStorage<4, 4>  mUnke166c4;
-    ::ll::UntypedStorage<4, 4>  mUnk4d82e8;
-    ::ll::UntypedStorage<4, 4>  mUnkcaf3c7;
-    ::ll::UntypedStorage<1, 1>  mUnk3a442c;
-    ::ll::UntypedStorage<1, 1>  mUnke91834;
-    ::ll::UntypedStorage<1, 1>  mUnk3c25f4;
-    ::ll::UntypedStorage<1, 1>  mUnk8cf048;
-    ::ll::UntypedStorage<4, 4>  mUnk849675;
-    ::ll::UntypedStorage<1, 1>  mUnke625ce;
-    ::ll::UntypedStorage<1, 1>  mUnk951725;
+    ::ll::TypedStorage<8, 8, ::Mob&>             mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mOwner;
+    ::ll::TypedStorage<4, 4, int>                mTimeToRecalculatePath;
+    ::ll::TypedStorage<4, 4, float>              mSpeed;
+    ::ll::TypedStorage<4, 4, float>              mStartDistance;
+    ::ll::TypedStorage<4, 4, float>              mStopDistance;
+    ::ll::TypedStorage<4, 4, float>              mMaxDistance;
+    ::ll::TypedStorage<1, 1, bool>               mOldAvoidWater;
+    ::ll::TypedStorage<1, 1, bool>               mOldAvoidPortals;
+    ::ll::TypedStorage<1, 1, bool>               mCanTeleport;
+    ::ll::TypedStorage<1, 1, bool>               mIgnoreVibrations;
+    ::ll::TypedStorage<4, 4, int>                mPostTeleportDistance;
+    ::ll::TypedStorage<1, 1, bool>               mRandomizeAndCheckForClearanceWhenTeleporting;
+    ::ll::TypedStorage<1, 1, bool>               mKeepFollowingAfterTeleporting;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FollowOwnerGoal& operator=(FollowOwnerGoal const&);
-    FollowOwnerGoal(FollowOwnerGoal const&);
-    FollowOwnerGoal();
 
 public:
     // virtual functions

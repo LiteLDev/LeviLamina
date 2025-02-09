@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
+class BlockPos;
 class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
@@ -79,22 +81,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf5fd4b;
-    ::ll::UntypedStorage<4, 4>  mUnkc19c5f;
-    ::ll::UntypedStorage<4, 4>  mUnk341309;
-    ::ll::UntypedStorage<4, 4>  mUnkcf4a90;
-    ::ll::UntypedStorage<4, 4>  mUnkb66ecf;
-    ::ll::UntypedStorage<8, 24> mUnkb30d33;
-    ::ll::UntypedStorage<8, 24> mUnk5d214f;
-    ::ll::UntypedStorage<4, 12> mUnk44dffb;
-    ::ll::UntypedStorage<4, 4>  mUnkf73769;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                   mMob;
+    ::ll::TypedStorage<4, 4, float>                                    mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, int>                                      mInterval;
+    ::ll::TypedStorage<4, 4, float>                                    mGoalRadius;
+    ::ll::TypedStorage<4, 4, float>                                    mCalculateNewPathRadius;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnHomeTriggers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnFailedTriggers;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                              mLastEndPos;
+    ::ll::TypedStorage<4, 4, float>                                    mGoalRadiusSqr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GoHomeGoal& operator=(GoHomeGoal const&);
-    GoHomeGoal(GoHomeGoal const&);
-    GoHomeGoal();
 
 public:
     // virtual functions

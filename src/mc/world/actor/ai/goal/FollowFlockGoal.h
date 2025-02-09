@@ -14,17 +14,11 @@ class FollowFlockGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk23935e;
-    ::ll::UntypedStorage<4, 4> mUnk60b51d;
-    ::ll::UntypedStorage<4, 4> mUnkf8bc90;
-    ::ll::UntypedStorage<4, 4> mUnka3e956;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int>    mCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>    mNotInFlockTicks;
+    ::ll::TypedStorage<4, 4, float>  mSpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FollowFlockGoal& operator=(FollowFlockGoal const&);
-    FollowFlockGoal(FollowFlockGoal const&);
-    FollowFlockGoal();
 
 public:
     // virtual functions

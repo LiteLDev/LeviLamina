@@ -10,24 +10,19 @@
 class Mob;
 class Vec2;
 class Vec3;
+class WeakEntityRef;
 // clang-format on
 
 class BreedGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk76ece7;
-    ::ll::UntypedStorage<8, 24> mUnk828cc9;
-    ::ll::UntypedStorage<4, 4>  mUnk30a083;
-    ::ll::UntypedStorage<4, 4>  mUnkb8aaa4;
-    ::ll::UntypedStorage<1, 1>  mUnke9bbec;
+    ::ll::TypedStorage<8, 8, ::Mob&>           mOwner;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPartner;
+    ::ll::TypedStorage<4, 4, int>              mLoveTime;
+    ::ll::TypedStorage<4, 4, float const>      mSpeed;
+    ::ll::TypedStorage<1, 1, bool const>       mStopNavigationOnStop;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreedGoal& operator=(BreedGoal const&);
-    BreedGoal(BreedGoal const&);
-    BreedGoal();
 
 public:
     // virtual functions

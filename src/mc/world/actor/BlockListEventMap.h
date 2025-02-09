@@ -2,18 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+// clang-format on
+
 class BlockListEventMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk425646;
-    ::ll::UntypedStorage<8, 32> mUnk1bf140;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBlockDescriptors;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mEventName;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     BlockListEventMap& operator=(BlockListEventMap const&);
-    BlockListEventMap();
 
 public:
     // member functions

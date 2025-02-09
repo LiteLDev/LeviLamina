@@ -17,21 +17,15 @@ class RaidGardenGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk671e39;
-    ::ll::UntypedStorage<4, 4>  mUnk3ca3f4;
-    ::ll::UntypedStorage<4, 4>  mUnkaddda6;
-    ::ll::UntypedStorage<4, 4>  mUnk5cebe8;
-    ::ll::UntypedStorage<4, 4>  mUnk87ca8d;
-    ::ll::UntypedStorage<4, 4>  mUnk69a726;
-    ::ll::UntypedStorage<4, 4>  mUnk80a9db;
-    ::ll::UntypedStorage<8, 24> mUnk60300c;
+    ::ll::TypedStorage<4, 4, int>                               mMaxToEat;
+    ::ll::TypedStorage<4, 4, int>                               mEaten;
+    ::ll::TypedStorage<4, 4, int>                               mEatDelay;
+    ::ll::TypedStorage<4, 4, int>                               mHasEatenFillDelay;
+    ::ll::TypedStorage<4, 4, int>                               mInitialEatDelay;
+    ::ll::TypedStorage<4, 4, int>                               mEatTimer;
+    ::ll::TypedStorage<4, 4, int>                               mHasEatenFillTimer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mEatBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RaidGardenGoal& operator=(RaidGardenGoal const&);
-    RaidGardenGoal(RaidGardenGoal const&);
-    RaidGardenGoal();
 
 public:
     // virtual functions

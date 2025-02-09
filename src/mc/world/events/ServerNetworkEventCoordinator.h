@@ -20,14 +20,8 @@ class ServerNetworkEventCoordinator : public ::EventCoordinator<::ServerNetworkE
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk95fe88;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerNetworkEventHandler>> mServerNetworkEventHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerNetworkEventCoordinator& operator=(ServerNetworkEventCoordinator const&);
-    ServerNetworkEventCoordinator(ServerNetworkEventCoordinator const&);
-    ServerNetworkEventCoordinator();
 
 public:
     // virtual functions

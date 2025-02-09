@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Mob;
 class Vec3;
 // clang-format on
 
@@ -14,16 +15,10 @@ class MoveTowardsRestrictionGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9c918c;
-    ::ll::UntypedStorage<4, 4>  mUnk4a0d42;
-    ::ll::UntypedStorage<4, 12> mUnkde2dba;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, float>   mSpeedMultiplier;
+    ::ll::TypedStorage<4, 12, ::Vec3> mWantedPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveTowardsRestrictionGoal& operator=(MoveTowardsRestrictionGoal const&);
-    MoveTowardsRestrictionGoal(MoveTowardsRestrictionGoal const&);
-    MoveTowardsRestrictionGoal();
 
 public:
     // virtual functions

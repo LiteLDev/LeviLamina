@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -16,20 +17,14 @@ class BegGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk55ef32;
-    ::ll::UntypedStorage<4, 4>  mUnkcbd50d;
-    ::ll::UntypedStorage<4, 4>  mUnkf62eda;
-    ::ll::UntypedStorage<4, 4>  mUnk2158a8;
-    ::ll::UntypedStorage<4, 4>  mUnka69381;
-    ::ll::UntypedStorage<8, 40> mUnk6ccd4e;
-    ::ll::UntypedStorage<8, 24> mUnk5fe9e3;
+    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
+    ::ll::TypedStorage<4, 4, float>                            mLookDistance;
+    ::ll::TypedStorage<4, 4, int>                              mLookTime;
+    ::ll::TypedStorage<4, 4, int>                              mMinLookTime;
+    ::ll::TypedStorage<4, 4, int>                              mMaxLookTime;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Player>>            mPlayer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BegGoal& operator=(BegGoal const&);
-    BegGoal(BegGoal const&);
-    BegGoal();
 
 public:
     // virtual functions

@@ -14,16 +14,10 @@ class OpenDoorGoal : public ::DoorInteractGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8c952c;
-    ::ll::UntypedStorage<4, 4> mUnk4fe617;
-    ::ll::UntypedStorage<8, 8> mUnke159fa;
+    ::ll::TypedStorage<1, 1, bool>   mCloseDoor;
+    ::ll::TypedStorage<4, 4, int>    mForgetTime;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OpenDoorGoal& operator=(OpenDoorGoal const&);
-    OpenDoorGoal(OpenDoorGoal const&);
-    OpenDoorGoal();
 
 public:
     // virtual functions

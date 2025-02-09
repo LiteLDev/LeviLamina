@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Mob;
 // clang-format on
 
@@ -14,19 +16,13 @@ class MountPathingGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk2e21c7;
-    ::ll::UntypedStorage<4, 4>  mUnk74a3f2;
-    ::ll::UntypedStorage<4, 4>  mUnk67c4b1;
-    ::ll::UntypedStorage<1, 1>  mUnk25ebfe;
-    ::ll::UntypedStorage<4, 4>  mUnkf48e44;
-    ::ll::UntypedStorage<8, 8>  mUnk3d27e9;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
+    ::ll::TypedStorage<4, 4, float>                mSpeed;
+    ::ll::TypedStorage<4, 4, float>                mTargetDistSqr;
+    ::ll::TypedStorage<1, 1, bool>                 mTrackTarget;
+    ::ll::TypedStorage<4, 4, int>                  mTimeToRecalcPath;
+    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MountPathingGoal& operator=(MountPathingGoal const&);
-    MountPathingGoal(MountPathingGoal const&);
-    MountPathingGoal();
 
 public:
     // virtual functions

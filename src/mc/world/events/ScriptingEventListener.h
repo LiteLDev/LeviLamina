@@ -12,6 +12,10 @@ struct ScriptingNotificationEvent;
 
 class ScriptingEventListener {
 public:
+    // ScriptingEventListener inner types define
+    using EventType = ::ScriptingNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/util/Factory.h"
 
 // auto generated forward declare list
@@ -10,20 +11,20 @@
 class EventResponse;
 class IPackLoadContext;
 class SemVersion;
+struct EventResponseCollection;
+namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class EventResponseFactory : public ::Factory<::EventResponse> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk687030;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>>
+        mSchema;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EventResponseFactory& operator=(EventResponseFactory const&);
-    EventResponseFactory(EventResponseFactory const&);
-    EventResponseFactory();
 
 public:
     // virtual functions

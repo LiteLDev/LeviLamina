@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+// clang-format on
+
 struct SoundEventPlayerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkbfe20e;
+    ::ll::TypedStorage<4, 8, ::StrictEntityContext> mSoundPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SoundEventPlayerComponent& operator=(SoundEventPlayerComponent const&);
-    SoundEventPlayerComponent(SoundEventPlayerComponent const&);
-    SoundEventPlayerComponent();
 };

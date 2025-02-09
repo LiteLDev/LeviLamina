@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct FloatRange;
+// clang-format on
+
 struct ActorDefinitionAttribute {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6cd3f4;
-    ::ll::UntypedStorage<4, 4>  mUnka5d839;
-    ::ll::UntypedStorage<4, 4>  mUnk56a66d;
-    ::ll::UntypedStorage<4, 8>  mUnk5de2be;
+    ::ll::TypedStorage<8, 32, ::std::string> name;
+    ::ll::TypedStorage<4, 4, float>          min;
+    ::ll::TypedStorage<4, 4, float>          max;
+    ::ll::TypedStorage<4, 8, ::FloatRange>   value;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorDefinitionAttribute& operator=(ActorDefinitionAttribute const&);
-    ActorDefinitionAttribute(ActorDefinitionAttribute const&);
-    ActorDefinitionAttribute();
 
 public:
     // member functions

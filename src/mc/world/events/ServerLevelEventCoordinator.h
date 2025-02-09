@@ -9,21 +9,16 @@
 // clang-format off
 class EntityContext;
 class IGameplayUserManagerConnector;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class ServerLevelEventCoordinator : public ::LevelEventCoordinator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk90a037;
-    ::ll::UntypedStorage<8, 16> mUnkebd79b;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAddedSubscriptionServer;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemovedSubscriptionServer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerLevelEventCoordinator& operator=(ServerLevelEventCoordinator const&);
-    ServerLevelEventCoordinator(ServerLevelEventCoordinator const&);
-    ServerLevelEventCoordinator();
 
 public:
     // virtual functions

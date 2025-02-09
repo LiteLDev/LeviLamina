@@ -6,12 +6,6 @@ struct AnimationEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb989e3;
+    ::ll::TypedStorage<4, 4, uint> id;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnimationEventData& operator=(AnimationEventData const&);
-    AnimationEventData(AnimationEventData const&);
-    AnimationEventData();
 };

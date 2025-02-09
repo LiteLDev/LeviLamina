@@ -2,18 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ContainerValidationSlotData;
+struct SlotData;
+// clang-format on
+
 struct ContainerSplitControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnka2d322;
-    ::ll::UntypedStorage<8, 40> mUnk98ee72;
-    ::ll::UntypedStorage<4, 4>  mUnk9e1c80;
+    ::ll::TypedStorage<4, 16, ::ContainerValidationSlotData> containerSlot;
+    ::ll::TypedStorage<8, 40, ::SlotData>                    slot;
+    ::ll::TypedStorage<4, 4, int>                            addedCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerSplitControl& operator=(ContainerSplitControl const&);
-    ContainerSplitControl(ContainerSplitControl const&);
-    ContainerSplitControl();
 };

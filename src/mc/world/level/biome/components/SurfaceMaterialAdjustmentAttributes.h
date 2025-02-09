@@ -57,14 +57,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk20b16c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SurfaceMaterialAdjustmentAttributes::Element>> mAdjustments;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SurfaceMaterialAdjustmentAttributes& operator=(SurfaceMaterialAdjustmentAttributes const&);
-    SurfaceMaterialAdjustmentAttributes(SurfaceMaterialAdjustmentAttributes const&);
-    SurfaceMaterialAdjustmentAttributes();
 
 public:
     // virtual functions

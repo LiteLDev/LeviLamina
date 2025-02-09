@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
+class ActorFilterGroup;
 class EntityContext;
 class Mob;
 class SemVersion;
@@ -89,28 +91,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk41123d;
-    ::ll::UntypedStorage<4, 4>   mUnk8f441d;
-    ::ll::UntypedStorage<4, 4>   mUnkfd4153;
-    ::ll::UntypedStorage<4, 4>   mUnk101aad;
-    ::ll::UntypedStorage<4, 4>   mUnkf63903;
-    ::ll::UntypedStorage<4, 4>   mUnk99a8bf;
-    ::ll::UntypedStorage<4, 4>   mUnkc3bb33;
-    ::ll::UntypedStorage<4, 4>   mUnk589f84;
-    ::ll::UntypedStorage<4, 4>   mUnkc0ac85;
-    ::ll::UntypedStorage<8, 64>  mUnkd4eb85;
-    ::ll::UntypedStorage<8, 64>  mUnk34e419;
-    ::ll::UntypedStorage<8, 104> mUnk4ad607;
-    ::ll::UntypedStorage<1, 1>   mUnk9085ec;
-    ::ll::UntypedStorage<4, 4>   mUnkccc044;
-    ::ll::UntypedStorage<4, 4>   mUnkb1fd21;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<4, 4, int>                        mMaxRoarDurationTicks;
+    ::ll::TypedStorage<4, 4, int>                        mMaxTicksUntilAttack;
+    ::ll::TypedStorage<4, 4, int>                        mKnockbackDamage;
+    ::ll::TypedStorage<4, 4, int>                        mKnockbackHorizontalStrength;
+    ::ll::TypedStorage<4, 4, int>                        mKnockbackVerticalStrength;
+    ::ll::TypedStorage<4, 4, float>                      mHeightCap;
+    ::ll::TypedStorage<4, 4, int>                        mKnockbackEffectRange;
+    ::ll::TypedStorage<4, 4, int>                        mMaxCooldownTicks;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mKnockbackFilterGroup;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mDamageFilterGroup;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnRoarEnd;
+    ::ll::TypedStorage<1, 1, bool>                       mFilterEvaluateFix;
+    ::ll::TypedStorage<4, 4, int>                        mCurrentCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                        mCurrentRoarTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    KnockbackRoarGoal& operator=(KnockbackRoarGoal const&);
-    KnockbackRoarGoal(KnockbackRoarGoal const&);
-    KnockbackRoarGoal();
 
 public:
     // virtual functions

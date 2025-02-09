@@ -2,19 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class Level;
+// clang-format on
+
 struct LevelAddedActorEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf04e72;
-    ::ll::UntypedStorage<8, 24> mUnk97811f;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Level>> mLevel;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>             mActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelAddedActorEvent& operator=(LevelAddedActorEvent const&);
-    LevelAddedActorEvent(LevelAddedActorEvent const&);
-    LevelAddedActorEvent();
 
 public:
     // member functions

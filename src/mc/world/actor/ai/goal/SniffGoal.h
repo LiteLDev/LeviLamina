@@ -12,7 +12,10 @@
 // clang-format off
 class EntityContext;
 class Mob;
+class Vec3;
 struct DistanceSortedActor;
+struct FloatRange;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -86,21 +89,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk127f63;
-    ::ll::UntypedStorage<4, 12> mUnk38a0a0;
-    ::ll::UntypedStorage<4, 8>  mUnk71a353;
-    ::ll::UntypedStorage<2, 2>  mUnk664b71;
-    ::ll::UntypedStorage<8, 8>  mUnk8cb558;
-    ::ll::UntypedStorage<8, 8>  mUnkd4f69b;
-    ::ll::UntypedStorage<4, 4>  mUnka684b6;
-    ::ll::UntypedStorage<4, 4>  mUnk8ee75a;
+    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>      mSniffingRadius;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mCooldownRangeSeconds;
+    ::ll::TypedStorage<2, 2, ushort>       mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>       mEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>       mCooldownExpiryTick;
+    ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusHorizontal;
+    ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusVertical;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SniffGoal& operator=(SniffGoal const&);
-    SniffGoal(SniffGoal const&);
-    SniffGoal();
 
 public:
     // virtual functions

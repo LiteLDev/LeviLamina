@@ -15,15 +15,9 @@ class InspectBookshelfGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk31e1aa;
-    ::ll::UntypedStorage<1, 1>  mUnk4292be;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mBookshelfPos;
+    ::ll::TypedStorage<1, 1, bool>        mRequireSameY;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InspectBookshelfGoal& operator=(InspectBookshelfGoal const&);
-    InspectBookshelfGoal(InspectBookshelfGoal const&);
-    InspectBookshelfGoal();
 
 public:
     // virtual functions

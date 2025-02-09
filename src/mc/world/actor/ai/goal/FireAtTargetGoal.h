@@ -11,9 +11,12 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorFilterGroup;
 class EntityContext;
 class Mob;
 class Vec3;
+struct ActorDefinitionIdentifier;
+struct FloatRange;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -95,31 +98,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk595fe9;
-    ::ll::UntypedStorage<8, 64>  mUnk170a0b;
-    ::ll::UntypedStorage<4, 8>   mUnk5c4ddc;
-    ::ll::UntypedStorage<4, 4>   mUnkca3387;
-    ::ll::UntypedStorage<4, 4>   mUnk29c6d7;
-    ::ll::UntypedStorage<8, 8>   mUnk6f769c;
-    ::ll::UntypedStorage<4, 4>   mUnk1a76b7;
-    ::ll::UntypedStorage<4, 4>   mUnk2a6097;
-    ::ll::UntypedStorage<4, 4>   mUnk94b8c0;
-    ::ll::UntypedStorage<1, 1>   mUnk38958d;
-    ::ll::UntypedStorage<8, 8>   mUnk92ee45;
-    ::ll::UntypedStorage<8, 8>   mUnke41e63;
-    ::ll::UntypedStorage<8, 8>   mUnk780062;
-    ::ll::UntypedStorage<8, 176> mUnkee007e;
-    ::ll::UntypedStorage<4, 4>   mUnka666b6;
-    ::ll::UntypedStorage<4, 12>  mUnk9cc981;
-    ::ll::UntypedStorage<4, 4>   mUnk97701c;
-    ::ll::UntypedStorage<4, 12>  mUnk282e96;
+    ::ll::TypedStorage<8, 8, ::Mob&>                        mMob;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>           mFilters;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                  mAttackRangeSquared;
+    ::ll::TypedStorage<4, 4, uint>                          mAttackCooldownTicks;
+    ::ll::TypedStorage<4, 4, uint>                          mPreShootDelayTicks;
+    ::ll::TypedStorage<8, 8, uint64>                        mDurationTicks;
+    ::ll::TypedStorage<4, 4, float>                         mMaxHeadRotationX;
+    ::ll::TypedStorage<4, 4, float>                         mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>                         mRangedFOV;
+    ::ll::TypedStorage<1, 1, bool>                          mTriedToShoot;
+    ::ll::TypedStorage<8, 8, uint64>                        mAttackCooldownTimeStamp;
+    ::ll::TypedStorage<8, 8, uint64>                        mPreShootDelayTimeStamp;
+    ::ll::TypedStorage<8, 8, uint64>                        mEndTimeStamp;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mProjectileDefinition;
+    ::ll::TypedStorage<4, 4, ::ProjectileAnchor>            mOwnerAnchor;
+    ::ll::TypedStorage<4, 12, ::Vec3>                       mOwnerOffset;
+    ::ll::TypedStorage<4, 4, ::ProjectileAnchor>            mTargetAnchor;
+    ::ll::TypedStorage<4, 12, ::Vec3>                       mTargetOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FireAtTargetGoal& operator=(FireAtTargetGoal const&);
-    FireAtTargetGoal(FireAtTargetGoal const&);
-    FireAtTargetGoal();
 
 public:
     // virtual functions

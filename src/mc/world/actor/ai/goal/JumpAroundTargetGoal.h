@@ -9,10 +9,14 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class ActorFilterGroup;
 class BlockPos;
 class EntityContext;
 class Mob;
 class Vec3;
+struct FloatRange;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -113,38 +117,32 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk6de47b;
-    ::ll::UntypedStorage<4, 4>  mUnk4a8455;
-    ::ll::UntypedStorage<4, 4>  mUnk3d2e60;
-    ::ll::UntypedStorage<4, 4>  mUnk94cba2;
-    ::ll::UntypedStorage<4, 4>  mUnkd07fab;
-    ::ll::UntypedStorage<1, 1>  mUnk546dca;
-    ::ll::UntypedStorage<4, 4>  mUnk54e8d4;
-    ::ll::UntypedStorage<4, 4>  mUnk1f0a08;
-    ::ll::UntypedStorage<4, 8>  mUnk567255;
-    ::ll::UntypedStorage<4, 4>  mUnk935772;
-    ::ll::UntypedStorage<4, 8>  mUnk8695db;
-    ::ll::UntypedStorage<4, 4>  mUnk3921d0;
-    ::ll::UntypedStorage<4, 4>  mUnk414bb9;
-    ::ll::UntypedStorage<8, 24> mUnk537687;
-    ::ll::UntypedStorage<4, 4>  mUnk568d85;
-    ::ll::UntypedStorage<8, 8>  mUnk4dbb9f;
-    ::ll::UntypedStorage<1, 1>  mUnk96be03;
-    ::ll::UntypedStorage<8, 8>  mUnk4bd0ad;
-    ::ll::UntypedStorage<4, 24> mUnk375b65;
-    ::ll::UntypedStorage<4, 4>  mUnk17e6df;
-    ::ll::UntypedStorage<4, 12> mUnkfdda0d;
-    ::ll::UntypedStorage<8, 8>  mUnk746815;
-    ::ll::UntypedStorage<8, 8>  mUnka9674f;
-    ::ll::UntypedStorage<4, 28> mUnk832c20;
-    ::ll::UntypedStorage<8, 8>  mUnka97799;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                            mFilters;
+    ::ll::TypedStorage<4, 4, int>                                            mCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                                            mCooldownWhenHurtTicks;
+    ::ll::TypedStorage<4, 4, int>                                            mLastHurtDurationTicks;
+    ::ll::TypedStorage<4, 4, float>                                          mMaxJumpVelocity;
+    ::ll::TypedStorage<1, 1, bool>                                           mCheckCollision;
+    ::ll::TypedStorage<4, 4, float>                                          mBoundingBoxScaleFactor;
+    ::ll::TypedStorage<4, 4, int>                                            mLineOfSightCheckHeight;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                                   mDistanceToTargetSqrRange;
+    ::ll::TypedStorage<4, 4, int>                                            mLandingPositionSpreadDegrees;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                                   mDistanceFromTargetLandingPosition;
+    ::ll::TypedStorage<4, 4, int>                                            mRequiredAirBlocksAbove;
+    ::ll::TypedStorage<4, 4, int>                                            mSnapToSurfaceBlockRange;
+    ::ll::TypedStorage<8, 24, ::std::vector<float>>                          mAllowedJumpAngles;
+    ::ll::TypedStorage<4, 4, int>                                            mJumpFromWaterTimeoutTicks;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                         mMob;
+    ::ll::TypedStorage<1, 1, bool>                                           mDiscardFrictionDefault;
+    ::ll::TypedStorage<8, 8, ::Tick>                                         mJumpedFromWaterEndTick;
+    ::ll::TypedStorage<4, 24, ::AABB const>                                  mOriginalAabb;
+    ::ll::TypedStorage<4, 4, ::JumpAroundTargetGoal::State>                  mState;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                    mStartingPos;
+    ::ll::TypedStorage<8, 8, ::Tick>                                         mGoalStartTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                                         mCooldownEndTick;
+    ::ll::TypedStorage<4, 28, ::std::optional<::JumpAroundTargetGoal::Jump>> mJumpData;
+    ::ll::TypedStorage<8, 8, uint64>                                         mPrepareJumpDurationTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JumpAroundTargetGoal& operator=(JumpAroundTargetGoal const&);
-    JumpAroundTargetGoal(JumpAroundTargetGoal const&);
-    JumpAroundTargetGoal();
 
 public:
     // virtual functions

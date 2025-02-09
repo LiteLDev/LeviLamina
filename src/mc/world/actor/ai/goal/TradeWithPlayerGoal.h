@@ -5,20 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorFilterGroup;
+class Mob;
+// clang-format on
+
 class TradeWithPlayerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk469576;
-    ::ll::UntypedStorage<4, 4>  mUnkf9afc3;
-    ::ll::UntypedStorage<8, 8>  mUnk39c790;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+    ::ll::TypedStorage<4, 4, float>               mMaxDistanceFromPlayerSquared;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeWithPlayerGoal& operator=(TradeWithPlayerGoal const&);
-    TradeWithPlayerGoal(TradeWithPlayerGoal const&);
-    TradeWithPlayerGoal();
 
 public:
     // virtual functions

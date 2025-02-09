@@ -2,16 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/typeid_t.h"
+
+// auto generated forward declare list
+// clang-format off
+struct SystemCategory;
+// clang-format on
+
 struct EntitySystemsFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk8efa22;
+    ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::SystemCategory>> mIncludeType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntitySystemsFilter& operator=(EntitySystemsFilter const&);
-    EntitySystemsFilter(EntitySystemsFilter const&);
-    EntitySystemsFilter();
 };

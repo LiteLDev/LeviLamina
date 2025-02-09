@@ -9,14 +9,8 @@ struct CustomHumidityAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk20ef45;
+    ::ll::TypedStorage<1, 1, bool> mIsHumid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CustomHumidityAttributes& operator=(CustomHumidityAttributes const&);
-    CustomHumidityAttributes(CustomHumidityAttributes const&);
-    CustomHumidityAttributes();
 
 public:
     // virtual functions

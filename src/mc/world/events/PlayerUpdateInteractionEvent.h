@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct PlayerUpdateInteractionEvent {
 public:
     // PlayerUpdateInteractionEvent inner types define
@@ -13,16 +21,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf7efd0;
-    ::ll::UntypedStorage<8, 24> mUnkd39568;
-    ::ll::UntypedStorage<4, 4>  mUnk566196;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                mEntity;
+    ::ll::TypedStorage<4, 4, ::PlayerUpdateInteractionEvent::ActionType> mAction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerUpdateInteractionEvent& operator=(PlayerUpdateInteractionEvent const&);
-    PlayerUpdateInteractionEvent(PlayerUpdateInteractionEvent const&);
-    PlayerUpdateInteractionEvent();
 
 public:
     // member functions

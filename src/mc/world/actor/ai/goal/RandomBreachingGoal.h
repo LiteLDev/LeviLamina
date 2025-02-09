@@ -14,16 +14,10 @@ class RandomBreachingGoal : public ::RandomStrollGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb38fb2;
-    ::ll::UntypedStorage<4, 4> mUnk1a915b;
-    ::ll::UntypedStorage<4, 4> mUnka7e8ea;
+    ::ll::TypedStorage<4, 4, int> mCooldown;
+    ::ll::TypedStorage<4, 4, int> mTimer;
+    ::ll::TypedStorage<4, 4, int> mAttempts;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomBreachingGoal& operator=(RandomBreachingGoal const&);
-    RandomBreachingGoal(RandomBreachingGoal const&);
-    RandomBreachingGoal();
 
 public:
     // virtual functions

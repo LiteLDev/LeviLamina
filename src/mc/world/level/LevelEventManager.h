@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/level/ILevelEventManagerCoordinator.h"
 #include "mc/world/level/block/LevelEvent.h"
 
@@ -13,26 +14,32 @@
 class CompoundTag;
 class IDimension;
 class LevelEventCoordinator;
+class PacketSender;
 class UserEntityIdentifierComponent;
 class Vec3;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class LevelEventManager : public ::ILevelEventManagerCoordinator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk421ab9;
-    ::ll::UntypedStorage<8, 24>  mUnk9a39fb;
-    ::ll::UntypedStorage<8, 24>  mUnk2ce8a3;
-    ::ll::UntypedStorage<8, 128> mUnk9a2537;
-    ::ll::UntypedStorage<8, 128> mUnk50442b;
+    ::ll::TypedStorage<1, 1, bool const>                                                    mIsClientSide;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const> mLevelEventCoordinator;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                   mPacketSender;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::LevelEvent, ::Vec3 const&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mLevelEventDataPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::LevelEvent, ::CompoundTag const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mLevelEventCompoundTagPublisher;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelEventManager& operator=(LevelEventManager const&);
-    LevelEventManager(LevelEventManager const&);
-    LevelEventManager();
 
 public:
     // virtual functions

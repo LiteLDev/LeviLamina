@@ -33,15 +33,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk371408;
-    ::ll::UntypedStorage<1, 1> mUnk4976ea;
+    ::ll::TypedStorage<1, 1, bool> mChasing;
+    ::ll::TypedStorage<1, 1, bool> mWillingToBreed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VillagerBase& operator=(VillagerBase const&);
-    VillagerBase(VillagerBase const&);
-    VillagerBase();
 
 public:
     // virtual functions

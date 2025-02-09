@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/MobEventsIndex.h"
+
 struct MobEventSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkdc8cb7;
-    ::ll::UntypedStorage<1, 1> mUnke329ea;
+    ::ll::TypedStorage<2, 2, ::MobEventsIndex> mIndex;
+    ::ll::TypedStorage<1, 1, bool>             mEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEventSetting& operator=(MobEventSetting const&);
-    MobEventSetting(MobEventSetting const&);
-    MobEventSetting();
 };

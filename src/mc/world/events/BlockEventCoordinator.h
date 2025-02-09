@@ -28,14 +28,8 @@ class BlockEventCoordinator : public ::EventCoordinator<::BlockEventListener> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf525d0;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockGameplayHandler>> mBlockGameplayHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEventCoordinator& operator=(BlockEventCoordinator const&);
-    BlockEventCoordinator(BlockEventCoordinator const&);
-    BlockEventCoordinator();
 
 public:
     // virtual functions

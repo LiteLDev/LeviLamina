@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class UIPropertyBag;
+// clang-format on
+
 struct HoverScreenEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk65f75c;
-    ::ll::UntypedStorage<1, 1> mUnk4200ac;
+    ::ll::TypedStorage<8, 8, ::UIPropertyBag*> properties;
+    ::ll::TypedStorage<1, 1, bool>             hover;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HoverScreenEventData& operator=(HoverScreenEventData const&);
-    HoverScreenEventData(HoverScreenEventData const&);
-    HoverScreenEventData();
 };

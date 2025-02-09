@@ -20,23 +20,19 @@ class IGameplayUserManagerConnector;
 class Level;
 class LevelEventListener;
 class LevelGameplayHandler;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LevelEventCoordinator : public ::EventCoordinator<::LevelEventListener> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkfb6bd8;
-    ::ll::UntypedStorage<8, 16> mUnk9c803b;
-    ::ll::UntypedStorage<8, 16> mUnkbe2819;
-    ::ll::UntypedStorage<8, 16> mUnk810d34;
-    ::ll::UntypedStorage<8, 16> mUnk717304;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelGameplayHandler>> mLevelGameplayHandler;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mGameRuleChangeSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mOnRemoveActorEntityReferencesSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mPostReloadActorAddedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mOnGameplayUserAddedSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelEventCoordinator& operator=(LevelEventCoordinator const&);
-    LevelEventCoordinator(LevelEventCoordinator const&);
 
 public:
     // virtual functions

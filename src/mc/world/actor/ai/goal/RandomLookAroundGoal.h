@@ -14,22 +14,16 @@ class RandomLookAroundGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb16298;
-    ::ll::UntypedStorage<4, 4> mUnk3eac08;
-    ::ll::UntypedStorage<4, 4> mUnk134092;
-    ::ll::UntypedStorage<4, 4> mUnkc1fd3e;
-    ::ll::UntypedStorage<4, 4> mUnk7b1e45;
-    ::ll::UntypedStorage<8, 8> mUnkccc90e;
-    ::ll::UntypedStorage<4, 4> mUnkaab356;
-    ::ll::UntypedStorage<4, 4> mUnk5ebce6;
-    ::ll::UntypedStorage<4, 4> mUnk78ac64;
+    ::ll::TypedStorage<4, 4, float>  mMinAngleOfView;
+    ::ll::TypedStorage<4, 4, float>  mMaxAngleOfView;
+    ::ll::TypedStorage<4, 4, int>    mMinLookTime;
+    ::ll::TypedStorage<4, 4, int>    mMaxLookTime;
+    ::ll::TypedStorage<4, 4, float>  mProbability;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int>    mTotalLookTime;
+    ::ll::TypedStorage<4, 4, float>  mInitialRotation;
+    ::ll::TypedStorage<4, 4, float>  mTargetRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomLookAroundGoal& operator=(RandomLookAroundGoal const&);
-    RandomLookAroundGoal(RandomLookAroundGoal const&);
-    RandomLookAroundGoal();
 
 public:
     // virtual functions

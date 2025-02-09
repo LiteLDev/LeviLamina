@@ -8,28 +8,23 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec3;
 // clang-format on
 
 class MoveToRandomBlockGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk933e6c;
-    ::ll::UntypedStorage<4, 12> mUnk9407c8;
-    ::ll::UntypedStorage<4, 12> mUnkcdfc04;
-    ::ll::UntypedStorage<4, 4>  mUnk642871;
-    ::ll::UntypedStorage<4, 4>  mUnk3f5b5f;
-    ::ll::UntypedStorage<4, 4>  mUnk136c6e;
-    ::ll::UntypedStorage<4, 4>  mUnkb92283;
-    ::ll::UntypedStorage<4, 4>  mUnk292bc3;
-    ::ll::UntypedStorage<4, 4>  mUnk3939b6;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDestination;
+    ::ll::TypedStorage<4, 12, ::Vec3> mLastPos;
+    ::ll::TypedStorage<4, 4, int>     mFailedPathing;
+    ::ll::TypedStorage<4, 4, int>     mTotalFailedPathing;
+    ::ll::TypedStorage<4, 4, float>   mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>   mRadiusSq;
+    ::ll::TypedStorage<4, 4, float>   mBlockDistance;
+    ::ll::TypedStorage<4, 4, int>     mCooldownTimer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveToRandomBlockGoal& operator=(MoveToRandomBlockGoal const&);
-    MoveToRandomBlockGoal(MoveToRandomBlockGoal const&);
-    MoveToRandomBlockGoal();
 
 public:
     // virtual functions

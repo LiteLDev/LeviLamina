@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/network/MinecraftPacketIds.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct IncomingPacketEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk64e26d;
-    ::ll::UntypedStorage<4, 4>  mUnk9833b3;
-    ::ll::UntypedStorage<8, 8>  mUnk4b88af;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSender;
+    ::ll::TypedStorage<4, 4, ::MinecraftPacketIds>        mPacketId;
+    ::ll::TypedStorage<8, 8, uint64>                      mPacketSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IncomingPacketEvent& operator=(IncomingPacketEvent const&);
-    IncomingPacketEvent(IncomingPacketEvent const&);
-    IncomingPacketEvent();
 
 public:
     // member functions

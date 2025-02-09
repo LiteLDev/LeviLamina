@@ -8,23 +8,18 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec3;
 // clang-format on
 
 class RiverFollowingGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk767578;
-    ::ll::UntypedStorage<4, 12> mUnk1f49be;
-    ::ll::UntypedStorage<4, 4>  mUnk45b138;
-    ::ll::UntypedStorage<4, 4>  mUnk59e0f7;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3> mHeading;
+    ::ll::TypedStorage<4, 4, float>   mLookAhead;
+    ::ll::TypedStorage<4, 4, float>   mSpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RiverFollowingGoal& operator=(RiverFollowingGoal const&);
-    RiverFollowingGoal(RiverFollowingGoal const&);
-    RiverFollowingGoal();
 
 public:
     // virtual functions

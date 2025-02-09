@@ -2,19 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Dimension;
+class EntityContext;
+// clang-format on
+
 struct ExplosionStartedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk5aecb2;
-    ::ll::UntypedStorage<8, 8>  mUnk84e34b;
-    ::ll::UntypedStorage<8, 24> mUnk136141;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockPos>> mBlocks;
+    ::ll::TypedStorage<8, 8, ::Dimension&>                      mDimension;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>       mSource;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ExplosionStartedEvent& operator=(ExplosionStartedEvent const&);
-    ExplosionStartedEvent();
 
 public:
     // member functions

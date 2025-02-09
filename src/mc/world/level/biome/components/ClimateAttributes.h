@@ -9,21 +9,15 @@ class ClimateAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkcedd3c;
-    ::ll::UntypedStorage<4, 4> mUnk3d569a;
-    ::ll::UntypedStorage<4, 4> mUnk7a257a;
-    ::ll::UntypedStorage<4, 4> mUnk64d052;
-    ::ll::UntypedStorage<4, 4> mUnkddb4ef;
-    ::ll::UntypedStorage<4, 4> mUnk9564ff;
-    ::ll::UntypedStorage<4, 4> mUnk6466c1;
-    ::ll::UntypedStorage<4, 4> mUnkde9401;
+    ::ll::TypedStorage<4, 4, float> mTemperature;
+    ::ll::TypedStorage<4, 4, float> mDownfall;
+    ::ll::TypedStorage<4, 4, float> mRedSporeDensity;
+    ::ll::TypedStorage<4, 4, float> mBlueSporeDensity;
+    ::ll::TypedStorage<4, 4, float> mAshDensity;
+    ::ll::TypedStorage<4, 4, float> mWhiteAshDensity;
+    ::ll::TypedStorage<4, 4, float> mSnowAccumulationMin;
+    ::ll::TypedStorage<4, 4, float> mSnowAccumulationMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClimateAttributes& operator=(ClimateAttributes const&);
-    ClimateAttributes(ClimateAttributes const&);
-    ClimateAttributes();
 
 public:
     // virtual functions

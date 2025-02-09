@@ -9,15 +9,9 @@ struct CDScopedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk8d1227;
-    ::ll::UntypedStorage<2, 2> mUnk74c789;
+    ::ll::TypedStorage<2, 2, ::CrashDumpLogStringID> mTag;
+    ::ll::TypedStorage<2, 2, ::CrashDumpLogStringID> mTagEnd;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CDScopedEvent& operator=(CDScopedEvent const&);
-    CDScopedEvent(CDScopedEvent const&);
-    CDScopedEvent();
 
 public:
     // member functions

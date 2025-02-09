@@ -14,15 +14,9 @@ class SilverfishWakeUpFriendsGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd385e1;
-    ::ll::UntypedStorage<4, 4> mUnk576fd4;
+    ::ll::TypedStorage<8, 8, ::Silverfish&> mSilverfish;
+    ::ll::TypedStorage<4, 4, int>           mLookForFriends;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SilverfishWakeUpFriendsGoal& operator=(SilverfishWakeUpFriendsGoal const&);
-    SilverfishWakeUpFriendsGoal(SilverfishWakeUpFriendsGoal const&);
-    SilverfishWakeUpFriendsGoal();
 
 public:
     // virtual functions

@@ -16,29 +16,23 @@ class TargetGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk1c87dc;
-    ::ll::UntypedStorage<1, 1>  mUnkc197c8;
-    ::ll::UntypedStorage<1, 1>  mUnke0bc19;
-    ::ll::UntypedStorage<1, 1>  mUnk4d81ce;
-    ::ll::UntypedStorage<1, 1>  mUnkaaaf17;
-    ::ll::UntypedStorage<4, 4>  mUnk2efdbb;
-    ::ll::UntypedStorage<1, 1>  mUnkdb1e16;
-    ::ll::UntypedStorage<4, 4>  mUnk6d49d5;
-    ::ll::UntypedStorage<4, 4>  mUnk7dad33;
-    ::ll::UntypedStorage<4, 4>  mUnka56130;
-    ::ll::UntypedStorage<4, 4>  mUnke1b536;
-    ::ll::UntypedStorage<4, 4>  mUnkfcb949;
-    ::ll::UntypedStorage<4, 4>  mUnk81004c;
-    ::ll::UntypedStorage<4, 4>  mUnk630026;
-    ::ll::UntypedStorage<1, 1>  mUnka77c5c;
-    ::ll::UntypedStorage<8, 24> mUnkd38c77;
+    ::ll::TypedStorage<8, 8, ::Mob&>                          mMob;
+    ::ll::TypedStorage<1, 1, bool>                            mAttackOwner;
+    ::ll::TypedStorage<1, 1, bool>                            mMustReach;
+    ::ll::TypedStorage<1, 1, bool>                            mGlobalMustSee;
+    ::ll::TypedStorage<1, 1, bool>                            mTargetMustSee;
+    ::ll::TypedStorage<4, 4, int>                             mTargetMustSeeForgetTicks;
+    ::ll::TypedStorage<1, 1, bool>                            mFilterFailure;
+    ::ll::TypedStorage<4, 4, int>                             mFilterFailureTicks;
+    ::ll::TypedStorage<4, 4, int>                             mGlobalMustSeeForgetTicks;
+    ::ll::TypedStorage<4, 4, int>                             mPersistTargetTicks;
+    ::ll::TypedStorage<4, 4, int>                             mReachCache;
+    ::ll::TypedStorage<4, 4, int>                             mReachCacheTime;
+    ::ll::TypedStorage<4, 4, int>                             mUnseenTicks;
+    ::ll::TypedStorage<4, 4, float>                           mWithinDefault;
+    ::ll::TypedStorage<1, 1, bool>                            mReevaluateTarget;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TargetGoal& operator=(TargetGoal const&);
-    TargetGoal(TargetGoal const&);
-    TargetGoal();
 
 public:
     // virtual functions

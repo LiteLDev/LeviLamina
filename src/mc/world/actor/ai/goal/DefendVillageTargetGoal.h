@@ -8,21 +8,16 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class WeakEntityRef;
 // clang-format on
 
 class DefendVillageTargetGoal : public ::TargetGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk95e922;
-    ::ll::UntypedStorage<4, 4>  mUnk508fa4;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPotentialTarget;
+    ::ll::TypedStorage<4, 4, float>            mAttackChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DefendVillageTargetGoal& operator=(DefendVillageTargetGoal const&);
-    DefendVillageTargetGoal(DefendVillageTargetGoal const&);
-    DefendVillageTargetGoal();
 
 public:
     // virtual functions

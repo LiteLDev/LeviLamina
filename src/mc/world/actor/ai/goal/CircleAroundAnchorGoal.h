@@ -8,34 +8,30 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Vec3;
+struct FloatRange;
 // clang-format on
 
 class CircleAroundAnchorGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc373af;
-    ::ll::UntypedStorage<4, 4>  mUnk7cdbed;
-    ::ll::UntypedStorage<4, 4>  mUnk6918c5;
-    ::ll::UntypedStorage<4, 4>  mUnk17c812;
-    ::ll::UntypedStorage<4, 4>  mUnk58f32f;
-    ::ll::UntypedStorage<4, 4>  mUnkaf0bf9;
-    ::ll::UntypedStorage<4, 4>  mUnk9cdfb5;
-    ::ll::UntypedStorage<4, 8>  mUnkc4dbb9;
-    ::ll::UntypedStorage<4, 8>  mUnk212eb8;
-    ::ll::UntypedStorage<4, 8>  mUnk3eeba3;
-    ::ll::UntypedStorage<4, 4>  mUnk8b5ecb;
-    ::ll::UntypedStorage<4, 4>  mUnk8e4674;
-    ::ll::UntypedStorage<4, 4>  mUnkd3ae4d;
-    ::ll::UntypedStorage<4, 4>  mUnk42fc81;
-    ::ll::UntypedStorage<4, 12> mUnk9c21e6;
+    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
+    ::ll::TypedStorage<4, 4, float>        mRadiusModifier;
+    ::ll::TypedStorage<4, 4, float>        mRadiusChangeChance;
+    ::ll::TypedStorage<4, 4, float>        mHeightChangeChance;
+    ::ll::TypedStorage<4, 4, float>        mGoalRadiusSquared;
+    ::ll::TypedStorage<4, 4, float>        mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>        mAngleModifier;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mRadiusRange;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mHeightOffsetRange;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mAboveTargetRange;
+    ::ll::TypedStorage<4, 4, float>        mClockwise;
+    ::ll::TypedStorage<4, 4, float>        mCurrentAngle;
+    ::ll::TypedStorage<4, 4, float>        mCurrentHeight;
+    ::ll::TypedStorage<4, 4, float>        mCurrentRadius;
+    ::ll::TypedStorage<4, 12, ::Vec3>      mAnchorPoint;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CircleAroundAnchorGoal& operator=(CircleAroundAnchorGoal const&);
-    CircleAroundAnchorGoal(CircleAroundAnchorGoal const&);
-    CircleAroundAnchorGoal();
 
 public:
     // virtual functions

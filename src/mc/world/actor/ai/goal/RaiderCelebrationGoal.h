@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
 class EntityContext;
 class Mob;
+struct FloatRange;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -88,22 +91,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkeaad0b;
-    ::ll::UntypedStorage<4, 4>   mUnk2798b0;
-    ::ll::UntypedStorage<4, 4>   mUnkf5f496;
-    ::ll::UntypedStorage<4, 4>   mUnk9ee5ee;
-    ::ll::UntypedStorage<4, 4>   mUnk45a684;
-    ::ll::UntypedStorage<4, 8>   mUnkb62bf9;
-    ::ll::UntypedStorage<4, 8>   mUnk25ec29;
-    ::ll::UntypedStorage<4, 4>   mUnk21c02b;
-    ::ll::UntypedStorage<8, 104> mUnk3b28e8;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, int>                                    mNextJumpTickTimer;
+    ::ll::TypedStorage<4, 4, int>                                    mNextSoundTickTimer;
+    ::ll::TypedStorage<4, 4, int>                                    mRuntimeTicks;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                           mJumpIntervalRange;
+    ::ll::TypedStorage<4, 4, float>                                  mDuration;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mCelebrationEndEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RaiderCelebrationGoal& operator=(RaiderCelebrationGoal const&);
-    RaiderCelebrationGoal(RaiderCelebrationGoal const&);
-    RaiderCelebrationGoal();
 
 public:
     // virtual functions

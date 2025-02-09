@@ -7,29 +7,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class Mob;
 class Vec3;
+struct FloatRange;
 // clang-format on
 
 class FloatWanderGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd0df39;
-    ::ll::UntypedStorage<4, 12> mUnkdb2384;
-    ::ll::UntypedStorage<4, 4>  mUnk928e58;
-    ::ll::UntypedStorage<4, 4>  mUnkf72b2f;
-    ::ll::UntypedStorage<4, 4>  mUnk32c4ee;
-    ::ll::UntypedStorage<4, 4>  mUnk5a4da4;
-    ::ll::UntypedStorage<1, 1>  mUnk50f53a;
-    ::ll::UntypedStorage<1, 1>  mUnkee4c35;
-    ::ll::UntypedStorage<4, 8>  mUnk67ce2e;
+    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>      mTargetPos;
+    ::ll::TypedStorage<4, 4, int>          mFloatDuration;
+    ::ll::TypedStorage<4, 4, float>        mFloatXZDist;
+    ::ll::TypedStorage<4, 4, float>        mFloatYDist;
+    ::ll::TypedStorage<4, 4, float>        mYOffset;
+    ::ll::TypedStorage<1, 1, bool>         mMustReach;
+    ::ll::TypedStorage<1, 1, bool>         mRandomReselect;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mFloatDurationRange;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FloatWanderGoal& operator=(FloatWanderGoal const&);
-    FloatWanderGoal(FloatWanderGoal const&);
-    FloatWanderGoal();
 
 public:
     // virtual functions

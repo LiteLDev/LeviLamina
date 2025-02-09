@@ -16,14 +16,8 @@ class OcelotSitOnBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4b5e32;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OcelotSitOnBlockGoal& operator=(OcelotSitOnBlockGoal const&);
-    OcelotSitOnBlockGoal(OcelotSitOnBlockGoal const&);
-    OcelotSitOnBlockGoal();
 
 public:
     // virtual functions

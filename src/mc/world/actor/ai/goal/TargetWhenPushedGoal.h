@@ -15,16 +15,10 @@ class TargetWhenPushedGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk56e93e;
-    ::ll::UntypedStorage<4, 4>  mUnk9d07cb;
-    ::ll::UntypedStorage<8, 24> mUnkb3d444;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                mSelf;
+    ::ll::TypedStorage<4, 4, float>                                 mPercentChance;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const> mTargetTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TargetWhenPushedGoal& operator=(TargetWhenPushedGoal const&);
-    TargetWhenPushedGoal(TargetWhenPushedGoal const&);
-    TargetWhenPushedGoal();
 
 public:
     // virtual functions

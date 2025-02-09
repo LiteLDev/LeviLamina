@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+// clang-format on
+
 struct EventingDispatcherComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkae0bf1;
+    ::ll::TypedStorage<4, 8, ::StrictEntityContext> mEventingSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EventingDispatcherComponent& operator=(EventingDispatcherComponent const&);
-    EventingDispatcherComponent(EventingDispatcherComponent const&);
-    EventingDispatcherComponent();
 };

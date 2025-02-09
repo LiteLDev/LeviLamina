@@ -14,20 +14,14 @@ class RandomSitGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc63c45;
-    ::ll::UntypedStorage<4, 4> mUnk8e5989;
-    ::ll::UntypedStorage<4, 4> mUnkb6bcb4;
-    ::ll::UntypedStorage<8, 8> mUnk6cc867;
-    ::ll::UntypedStorage<4, 4> mUnkaaa4f0;
-    ::ll::UntypedStorage<4, 4> mUnk7e8c1d;
-    ::ll::UntypedStorage<4, 4> mUnkbe88c5;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<4, 4, float const> mStartChance;
+    ::ll::TypedStorage<4, 4, float const> mStopChance;
+    ::ll::TypedStorage<8, 8, uint64>      mCooldown;
+    ::ll::TypedStorage<4, 4, int const>   mSitCooldownTotal;
+    ::ll::TypedStorage<4, 4, int const>   mMinSitTick;
+    ::ll::TypedStorage<4, 4, int>         mCurrentSitTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomSitGoal& operator=(RandomSitGoal const&);
-    RandomSitGoal(RandomSitGoal const&);
-    RandomSitGoal();
 
 public:
     // virtual functions

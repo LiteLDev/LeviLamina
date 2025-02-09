@@ -19,6 +19,10 @@ struct ActorNotificationEvent;
 
 class ActorEventListener {
 public:
+    // ActorEventListener inner types define
+    using EventType = ::ActorNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

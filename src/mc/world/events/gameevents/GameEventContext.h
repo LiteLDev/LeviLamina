@@ -2,18 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Block;
+class Vec3;
+// clang-format on
+
 struct GameEventContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkb33891;
-    ::ll::UntypedStorage<8, 8>  mUnkc3a76c;
-    ::ll::UntypedStorage<8, 8>  mUnkd1291f;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>        mOriginPos;
+    ::ll::TypedStorage<8, 8, ::Actor* const>       mSource;
+    ::ll::TypedStorage<8, 8, ::Block const* const> mAffectedBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameEventContext& operator=(GameEventContext const&);
-    GameEventContext(GameEventContext const&);
-    GameEventContext();
 };

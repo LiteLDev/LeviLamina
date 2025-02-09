@@ -17,29 +17,23 @@ class BaseMoveToGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk22aab0;
-    ::ll::UntypedStorage<4, 4>  mUnk3f610f;
-    ::ll::UntypedStorage<4, 4>  mUnked6cc2;
-    ::ll::UntypedStorage<4, 4>  mUnk809df1;
-    ::ll::UntypedStorage<4, 4>  mUnk385056;
-    ::ll::UntypedStorage<1, 1>  mUnk7cfcba;
-    ::ll::UntypedStorage<4, 4>  mUnk54abaa;
-    ::ll::UntypedStorage<4, 4>  mUnk2c80b9;
-    ::ll::UntypedStorage<8, 8>  mUnkc9bdba;
-    ::ll::UntypedStorage<8, 8>  mUnk752a86;
-    ::ll::UntypedStorage<4, 12> mUnkc0a59d;
-    ::ll::UntypedStorage<4, 12> mUnk7c9c12;
-    ::ll::UntypedStorage<4, 12> mUnkae3413;
-    ::ll::UntypedStorage<4, 4>  mUnk9f7b23;
-    ::ll::UntypedStorage<8, 8>  mUnk35c636;
-    ::ll::UntypedStorage<4, 4>  mUnka006c6;
+    ::ll::TypedStorage<4, 4, int>         mTravelTicks;
+    ::ll::TypedStorage<4, 4, int>         mNextStartTick;
+    ::ll::TypedStorage<4, 4, int>         mGiveUpTicks;
+    ::ll::TypedStorage<4, 4, int>         mStayTicks;
+    ::ll::TypedStorage<4, 4, int>         mMaxStayTicks;
+    ::ll::TypedStorage<1, 1, bool>        mReachedTarget;
+    ::ll::TypedStorage<4, 4, float>       mSpeedMod;
+    ::ll::TypedStorage<4, 4, float>       mGoalRadiusSq;
+    ::ll::TypedStorage<8, 8, uint64>      mCooldownCounter;
+    ::ll::TypedStorage<8, 8, uint64>      mCooldownTimeoutTime;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mStartPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mBlockPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mTargetPositionOffset;
+    ::ll::TypedStorage<4, 4, float>       mChanceToStart;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<4, 4, int>         mInterval;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseMoveToGoal& operator=(BaseMoveToGoal const&);
-    BaseMoveToGoal(BaseMoveToGoal const&);
-    BaseMoveToGoal();
 
 public:
     // virtual functions

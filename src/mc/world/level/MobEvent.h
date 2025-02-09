@@ -6,16 +6,15 @@ class MobEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk11f31b;
-    ::ll::UntypedStorage<8, 32> mUnk4fc43c;
-    ::ll::UntypedStorage<1, 1>  mUnk1ede9c;
-    ::ll::UntypedStorage<1, 1>  mUnka7e4ec;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mLocalizableName;
+    ::ll::TypedStorage<1, 1, bool>           mEnabled;
+    ::ll::TypedStorage<1, 1, bool>           mIsDefaultSet;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     MobEvent& operator=(MobEvent const&);
-    MobEvent();
 
 public:
     // member functions

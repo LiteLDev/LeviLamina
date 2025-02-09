@@ -19,22 +19,17 @@ class EntityContext;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
 class Player;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class ActorEventCoordinator : public ::EventCoordinator<::ActorEventListener> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk9c4a71;
-    ::ll::UntypedStorage<8, 16> mUnk18d230;
-    ::ll::UntypedStorage<8, 16> mUnk22f5f2;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorGameplayHandler>> mActorGameplayHandler;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mOnGameplayUserAddedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mPostReloadActorAddedSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorEventCoordinator& operator=(ActorEventCoordinator const&);
-    ActorEventCoordinator(ActorEventCoordinator const&);
-    ActorEventCoordinator();
 
 public:
     // virtual functions

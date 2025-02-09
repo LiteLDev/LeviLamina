@@ -16,18 +16,12 @@ class FertilizeFarmBlockGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk309a4f;
-    ::ll::UntypedStorage<4, 4> mUnkf26770;
-    ::ll::UntypedStorage<4, 4> mUnk8579a2;
-    ::ll::UntypedStorage<4, 4> mUnkcdfb33;
-    ::ll::UntypedStorage<4, 4> mUnk354634;
+    ::ll::TypedStorage<8, 8, uint64> mNextFertilizeStartTick;
+    ::ll::TypedStorage<4, 4, int>    mMaxFertilizerUsage;
+    ::ll::TypedStorage<4, 4, int>    mSearchCooldownMaximumTicks;
+    ::ll::TypedStorage<4, 4, int>    mInventoryFertilizerIndex;
+    ::ll::TypedStorage<4, 4, int>    mTimesFertilized;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FertilizeFarmBlockGoal& operator=(FertilizeFarmBlockGoal const&);
-    FertilizeFarmBlockGoal(FertilizeFarmBlockGoal const&);
-    FertilizeFarmBlockGoal();
 
 public:
     // virtual functions

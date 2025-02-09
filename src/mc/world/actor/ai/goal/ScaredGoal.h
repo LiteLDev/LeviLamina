@@ -14,15 +14,9 @@ class ScaredGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk13d22e;
-    ::ll::UntypedStorage<4, 4> mUnkfcb00b;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int>    mInterval;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScaredGoal& operator=(ScaredGoal const&);
-    ScaredGoal(ScaredGoal const&);
-    ScaredGoal();
 
 public:
     // virtual functions

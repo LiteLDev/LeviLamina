@@ -5,22 +5,24 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorFilterGroup;
+class Mob;
+class Vec3;
+struct Tick;
+// clang-format on
+
 class TeleportToOwnerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke42775;
-    ::ll::UntypedStorage<8, 64> mUnka279e6;
-    ::ll::UntypedStorage<4, 4>  mUnk96888f;
-    ::ll::UntypedStorage<8, 8>  mUnka3bb80;
-    ::ll::UntypedStorage<4, 12> mUnkcb8539;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
+    ::ll::TypedStorage<4, 4, int>                 mCooldownInTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>              mCooldownEndTick;
+    ::ll::TypedStorage<4, 12, ::Vec3>             mTargetPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TeleportToOwnerGoal& operator=(TeleportToOwnerGoal const&);
-    TeleportToOwnerGoal(TeleportToOwnerGoal const&);
-    TeleportToOwnerGoal();
 
 public:
     // virtual functions

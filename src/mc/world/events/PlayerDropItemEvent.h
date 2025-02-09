@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 struct PlayerDropItemEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1ef927;
-    ::ll::UntypedStorage<8, 24> mUnk972fa8;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSpawnedItemActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDropItemEvent& operator=(PlayerDropItemEvent const&);
-    PlayerDropItemEvent(PlayerDropItemEvent const&);
-    PlayerDropItemEvent();
 
 public:
     // member functions

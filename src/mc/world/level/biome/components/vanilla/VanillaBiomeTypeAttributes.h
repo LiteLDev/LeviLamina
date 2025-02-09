@@ -4,19 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
+#include "mc/world/level/biome/components/vanilla/VanillaBiomeTypes.h"
 
 struct VanillaBiomeTypeAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7328e0;
+    ::ll::TypedStorage<4, 4, ::VanillaBiomeTypes> mBiomeType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VanillaBiomeTypeAttributes& operator=(VanillaBiomeTypeAttributes const&);
-    VanillaBiomeTypeAttributes(VanillaBiomeTypeAttributes const&);
-    VanillaBiomeTypeAttributes();
 
 public:
     // virtual functions

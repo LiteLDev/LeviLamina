@@ -2,21 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSourceHandle;
+// clang-format on
+
 struct PressurePlatePopEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf0ce7c;
-    ::ll::UntypedStorage<4, 12> mUnk4bd96c;
-    ::ll::UntypedStorage<4, 4>  mUnk38a7a7;
-    ::ll::UntypedStorage<4, 4>  mUnk73834c;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                             mPressurePlateBlockPos;
+    ::ll::TypedStorage<4, 4, int const>                                     mPreviousRedstonePower;
+    ::ll::TypedStorage<4, 4, int const>                                     mRedstonePower;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PressurePlatePopEvent& operator=(PressurePlatePopEvent const&);
-    PressurePlatePopEvent(PressurePlatePopEvent const&);
-    PressurePlatePopEvent();
 
 public:
     // member functions

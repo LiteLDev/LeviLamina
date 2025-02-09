@@ -9,14 +9,8 @@ struct CustomMapGrassColorAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2926d6;
+    ::ll::TypedStorage<4, 4, int> mMapGrassColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CustomMapGrassColorAttributes& operator=(CustomMapGrassColorAttributes const&);
-    CustomMapGrassColorAttributes(CustomMapGrassColorAttributes const&);
-    CustomMapGrassColorAttributes();
 
 public:
     // virtual functions

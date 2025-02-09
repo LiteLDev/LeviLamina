@@ -18,14 +18,8 @@ class ExecuteEventOnHomeBlockResponse : public ::ActorEventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk587cea;
+    ::ll::TypedStorage<8, 32, ::std::string> mEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExecuteEventOnHomeBlockResponse& operator=(ExecuteEventOnHomeBlockResponse const&);
-    ExecuteEventOnHomeBlockResponse(ExecuteEventOnHomeBlockResponse const&);
-    ExecuteEventOnHomeBlockResponse();
 
 public:
     // virtual functions

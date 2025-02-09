@@ -2,20 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/enums/ClientInputLockCategory.h"
+
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct PlayerInputPermissionCategoryChangeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk136a65;
-    ::ll::UntypedStorage<1, 1>  mUnk440216;
-    ::ll::UntypedStorage<1, 1>  mUnkda0503;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>          mPlayer;
+    ::ll::TypedStorage<1, 1, ::ClientInputLockCategory> mCategory;
+    ::ll::TypedStorage<1, 1, bool>                      mState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInputPermissionCategoryChangeEvent& operator=(PlayerInputPermissionCategoryChangeEvent const&);
-    PlayerInputPermissionCategoryChangeEvent(PlayerInputPermissionCategoryChangeEvent const&);
-    PlayerInputPermissionCategoryChangeEvent();
 
 public:
     // member functions

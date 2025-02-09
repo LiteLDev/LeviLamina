@@ -5,20 +5,18 @@
 // auto generated forward declare list
 // clang-format off
 class ActorEventCoordinator;
+class KnockbackArmorUpdater;
+class NetheriteArmorEquippedListener;
 // clang-format on
 
 class VanillaActorEventListenerManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8753be;
-    ::ll::UntypedStorage<8, 8> mUnkaa8696;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::KnockbackArmorUpdater>>> mKnockbackArmorUpdater;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::NetheriteArmorEquippedListener>>>
+        mNetheriteArmorEquippedListener;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VanillaActorEventListenerManager& operator=(VanillaActorEventListenerManager const&);
-    VanillaActorEventListenerManager(VanillaActorEventListenerManager const&);
 
 public:
     // member functions

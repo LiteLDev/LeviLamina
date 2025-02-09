@@ -14,15 +14,9 @@ class DragonDeathGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb01d5a;
-    ::ll::UntypedStorage<4, 4> mUnke4bee9;
+    ::ll::TypedStorage<8, 8, ::EnderDragon&> mDragon;
+    ::ll::TypedStorage<4, 4, int>            mTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonDeathGoal& operator=(DragonDeathGoal const&);
-    DragonDeathGoal(DragonDeathGoal const&);
-    DragonDeathGoal();
 
 public:
     // virtual functions

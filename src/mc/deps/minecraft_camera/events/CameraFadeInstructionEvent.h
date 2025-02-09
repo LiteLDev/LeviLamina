@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_camera/CameraInstruction.h"
+
 struct CameraFadeInstructionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnkb64405;
+    ::ll::TypedStorage<4, 32, ::CameraInstruction::FadeInstruction> mCameraFadeInstruction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraFadeInstructionEvent& operator=(CameraFadeInstructionEvent const&);
-    CameraFadeInstructionEvent(CameraFadeInstructionEvent const&);
-    CameraFadeInstructionEvent();
 };

@@ -24,18 +24,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk962876;
-    ::ll::UntypedStorage<4, 4> mUnk5fc437;
-    ::ll::UntypedStorage<4, 4> mUnk36bc3c;
-    ::ll::UntypedStorage<4, 4> mUnk6f9c36;
-    ::ll::UntypedStorage<4, 4> mUnkf9f958;
+    ::ll::TypedStorage<4, 4, int>                          mMaximumTicksUntilSearch;
+    ::ll::TypedStorage<4, 4, int>                          mSearchCooldownMaximumTicks;
+    ::ll::TypedStorage<4, 4, int>                          mTaskCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                          mInventorySeedsIndex;
+    ::ll::TypedStorage<4, 4, ::HarvestFarmBlockGoal::Task> mCurrentTask;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HarvestFarmBlockGoal& operator=(HarvestFarmBlockGoal const&);
-    HarvestFarmBlockGoal(HarvestFarmBlockGoal const&);
-    HarvestFarmBlockGoal();
 
 public:
     // virtual functions

@@ -31,14 +31,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbd41d6;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WorldGenClimateMappingAttributes::WeightedTemperatureCategory>>
+        mClimateMappings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldGenClimateMappingAttributes& operator=(WorldGenClimateMappingAttributes const&);
-    WorldGenClimateMappingAttributes(WorldGenClimateMappingAttributes const&);
-    WorldGenClimateMappingAttributes();
 
 public:
     // virtual functions

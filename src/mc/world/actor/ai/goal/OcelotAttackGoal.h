@@ -14,25 +14,19 @@ class OcelotAttackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk650508;
-    ::ll::UntypedStorage<4, 4> mUnka99c90;
-    ::ll::UntypedStorage<4, 4> mUnk500ba0;
-    ::ll::UntypedStorage<4, 4> mUnk908c2c;
-    ::ll::UntypedStorage<4, 4> mUnk93d2e5;
-    ::ll::UntypedStorage<4, 4> mUnk950de3;
-    ::ll::UntypedStorage<4, 4> mUnk5e97f7;
-    ::ll::UntypedStorage<4, 4> mUnk192d6f;
-    ::ll::UntypedStorage<4, 4> mUnk8d67a7;
-    ::ll::UntypedStorage<4, 4> mUnk519fe3;
-    ::ll::UntypedStorage<4, 4> mUnk7fa0d3;
-    ::ll::UntypedStorage<4, 4> mUnkcefd78;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int>    mAttackTicks;
+    ::ll::TypedStorage<4, 4, int>    mCooldownTicks;
+    ::ll::TypedStorage<4, 4, float>  mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>  mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>  mMaxDistance;
+    ::ll::TypedStorage<4, 4, float>  mMaxSneakRange;
+    ::ll::TypedStorage<4, 4, float>  mMaxSprintRange;
+    ::ll::TypedStorage<4, 4, float>  mReachMultiplier;
+    ::ll::TypedStorage<4, 4, float>  mSneakSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>  mSprintSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>  mWalkSpeedModifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OcelotAttackGoal& operator=(OcelotAttackGoal const&);
-    OcelotAttackGoal(OcelotAttackGoal const&);
-    OcelotAttackGoal();
 
 public:
     // virtual functions

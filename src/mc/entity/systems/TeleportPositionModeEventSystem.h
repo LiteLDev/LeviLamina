@@ -18,6 +18,14 @@ struct TickingSystemWithInfo;
 
 class TeleportPositionModeEventSystem {
 public:
+    // TeleportPositionModeEventSystem inner types define
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+        ::ActorOwnerComponent,
+        ::PlayerPositionModeComponent const>;
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createTeleportPositionModeEventSystem();

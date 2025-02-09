@@ -15,14 +15,8 @@ class HitDetectEventListener : public ::ClientHitDetectListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkcf1f4c;
+    ::ll::TypedStorage<8, 112, ::HitResult> mHitResult;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HitDetectEventListener& operator=(HitDetectEventListener const&);
-    HitDetectEventListener(HitDetectEventListener const&);
-    HitDetectEventListener();
 
 public:
     // virtual functions

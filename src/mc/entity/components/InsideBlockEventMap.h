@@ -12,20 +12,19 @@ class InsideBlockEventMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnkbf08b6;
-    ::ll::UntypedStorage<8, 104> mUnke62994;
-    ::ll::UntypedStorage<8, 8>   mUnk394bad;
-    ::ll::UntypedStorage<1, 1>   mUnk994dee;
-    ::ll::UntypedStorage<1, 1>   mUnk3a3526;
-    ::ll::UntypedStorage<1, 1>   mUnk3e56c6;
-    ::ll::UntypedStorage<1, 1>   mUnk527ce9;
-    ::ll::UntypedStorage<1, 1>   mUnkaeffb6;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnEnteredBlock;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnExitedBlock;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
+    ::ll::TypedStorage<1, 1, bool>                            mWatchEnter;
+    ::ll::TypedStorage<1, 1, bool>                            mWatchExit;
+    ::ll::TypedStorage<1, 1, bool>                            mCurrentlyInside;
+    ::ll::TypedStorage<1, 1, bool>                            mWasInside;
+    ::ll::TypedStorage<1, 1, bool>                            mIgnoreStates;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     InsideBlockEventMap& operator=(InsideBlockEventMap const&);
-    InsideBlockEventMap();
 
 public:
     // member functions

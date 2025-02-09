@@ -9,8 +9,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class EntityContext;
 class Mob;
+class Path;
+class Vec3;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -94,20 +98,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnk14503e;
-    ::ll::UntypedStorage<8, 8>   mUnk67ac68;
-    ::ll::UntypedStorage<8, 8>   mUnk88110c;
-    ::ll::UntypedStorage<8, 8>   mUnkc95256;
-    ::ll::UntypedStorage<4, 12>  mUnk83a529;
-    ::ll::UntypedStorage<8, 136> mUnkd45ce2;
-    ::ll::UntypedStorage<8, 8>   mUnk2f7040;
+    ::ll::TypedStorage<4, 12, ::Vec3>                        mTargetPos;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>      mPath;
+    ::ll::TypedStorage<8, 8, ::Mob&>                         mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>                         mNextStartTick;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                    mTargetBlockToAvoidPos;
+    ::ll::TypedStorage<8, 136, ::AvoidBlockGoal::Definition> mDefinition;
+    ::ll::TypedStorage<8, 8, ::Tick>                         mNextSoundEventTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AvoidBlockGoal& operator=(AvoidBlockGoal const&);
-    AvoidBlockGoal(AvoidBlockGoal const&);
-    AvoidBlockGoal();
 
 public:
     // virtual functions

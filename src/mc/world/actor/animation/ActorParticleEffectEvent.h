@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorParticleEffect;
+// clang-format on
+
 class ActorParticleEffectEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnk82bf58;
-    ::ll::UntypedStorage<4, 4>   mUnk16e07b;
+    ::ll::TypedStorage<8, 320, ::ActorParticleEffect> mParticleEffect;
+    ::ll::TypedStorage<4, 4, float>                   mTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorParticleEffectEvent& operator=(ActorParticleEffectEvent const&);
-    ActorParticleEffectEvent(ActorParticleEffectEvent const&);
-    ActorParticleEffectEvent();
 
 public:
     // member functions

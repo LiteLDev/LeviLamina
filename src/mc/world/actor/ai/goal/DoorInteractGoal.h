@@ -18,23 +18,17 @@ class DoorInteractGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkb3350a;
-    ::ll::UntypedStorage<8, 8>  mUnkd97404;
-    ::ll::UntypedStorage<1, 1>  mUnk1c4b6d;
-    ::ll::UntypedStorage<1, 1>  mUnk4177ac;
-    ::ll::UntypedStorage<1, 1>  mUnkc896cc;
-    ::ll::UntypedStorage<4, 4>  mUnkc19747;
-    ::ll::UntypedStorage<4, 4>  mUnkdb238d;
-    ::ll::UntypedStorage<1, 1>  mUnk153ece;
-    ::ll::UntypedStorage<1, 1>  mUnk611ba8;
-    ::ll::UntypedStorage<8, 8>  mUnkd69cdf;
+    ::ll::TypedStorage<4, 12, ::BlockPos>        mDoorPos;
+    ::ll::TypedStorage<8, 8, ::DoorBlock const*> mDoorBlock;
+    ::ll::TypedStorage<1, 1, bool>               mInitialToggledState;
+    ::ll::TypedStorage<1, 1, bool>               mMobOversized;
+    ::ll::TypedStorage<1, 1, bool>               mExited;
+    ::ll::TypedStorage<4, 4, float>              mDoorOpenDirX;
+    ::ll::TypedStorage<4, 4, float>              mDoorOpenDirZ;
+    ::ll::TypedStorage<1, 1, ::Direction::Type>  mEnterDirection;
+    ::ll::TypedStorage<1, 1, ::Direction::Type>  mExitDirection;
+    ::ll::TypedStorage<8, 8, ::Mob&>             mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DoorInteractGoal& operator=(DoorInteractGoal const&);
-    DoorInteractGoal(DoorInteractGoal const&);
-    DoorInteractGoal();
 
 public:
     // virtual functions

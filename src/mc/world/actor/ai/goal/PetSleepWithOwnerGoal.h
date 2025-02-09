@@ -3,29 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class PetSleepWithOwnerState;
+class Vec3;
+struct PetSleepWithOwnerGoalData;
 // clang-format on
 
 class PetSleepWithOwnerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk5a046e;
-    ::ll::UntypedStorage<8, 8>  mUnkd10d69;
-    ::ll::UntypedStorage<8, 8>  mUnkd82956;
-    ::ll::UntypedStorage<4, 12> mUnk2699f3;
-    ::ll::UntypedStorage<8, 40> mUnk420ac2;
+    ::ll::TypedStorage<4, 16, ::PetSleepWithOwnerGoalData>                mData;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                      mMob;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PetSleepWithOwnerState>> mState;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                     mBedTargetPos;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>                          mOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PetSleepWithOwnerGoal& operator=(PetSleepWithOwnerGoal const&);
-    PetSleepWithOwnerGoal(PetSleepWithOwnerGoal const&);
-    PetSleepWithOwnerGoal();
 
 public:
     // virtual functions

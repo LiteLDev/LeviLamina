@@ -2,19 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScriptStat;
+// clang-format on
+
 struct ScriptDebuggerEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd362b7;
-    ::ll::UntypedStorage<8, 32> mUnkbf220a;
-    ::ll::UntypedStorage<8, 24> mUnk6b7901;
+    ::ll::TypedStorage<8, 8, uint64>                       mTick;
+    ::ll::TypedStorage<8, 32, ::std::string>               mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptStat>> mStats;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptDebuggerEvent(ScriptDebuggerEvent const&);
-    ScriptDebuggerEvent();
 
 public:
     // member functions

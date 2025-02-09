@@ -6,12 +6,6 @@ struct FocusMoveScreenEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk88ae84;
+    ::ll::TypedStorage<4, 8, float[2]> position;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FocusMoveScreenEventData& operator=(FocusMoveScreenEventData const&);
-    FocusMoveScreenEventData(FocusMoveScreenEventData const&);
-    FocusMoveScreenEventData();
 };

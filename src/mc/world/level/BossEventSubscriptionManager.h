@@ -16,6 +16,13 @@ namespace Bedrock::PubSub { class Subscription; }
 class BossEventSubscriptionManager : public ::Bedrock::EnableNonOwnerReferences,
                                      public ::Bedrock::ImplBase<::BossEventSubscriptionManager> {
 public:
+    // BossEventSubscriptionManager inner types define
+    using onBossEventSignature = void(::BossEventUpdateType);
+
+    using onBossEventWithPacketSignature =
+        void(::BossEventUpdateType, ::ActorUniqueID const&, ::BossEventPacket const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2

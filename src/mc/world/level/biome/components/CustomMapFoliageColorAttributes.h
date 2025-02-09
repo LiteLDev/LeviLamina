@@ -9,14 +9,8 @@ struct CustomMapFoliageColorAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd1743e;
+    ::ll::TypedStorage<4, 4, int> mMapFoliageColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CustomMapFoliageColorAttributes& operator=(CustomMapFoliageColorAttributes const&);
-    CustomMapFoliageColorAttributes(CustomMapFoliageColorAttributes const&);
-    CustomMapFoliageColorAttributes();
 
 public:
     // virtual functions

@@ -5,20 +5,20 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+class Vec3;
+// clang-format on
+
 class HoverGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk54f013;
-    ::ll::UntypedStorage<4, 4>  mUnke9f402;
-    ::ll::UntypedStorage<4, 12> mUnk1dcc9f;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<4, 4, float>   mSpeedMultiplier;
+    ::ll::TypedStorage<4, 12, ::Vec3> mStartPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HoverGoal& operator=(HoverGoal const&);
-    HoverGoal(HoverGoal const&);
-    HoverGoal();
 
 public:
     // virtual functions

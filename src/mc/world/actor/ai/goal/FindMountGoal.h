@@ -3,31 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Mob;
+class Path;
+// clang-format on
 
 class FindMountGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk2740b2;
-    ::ll::UntypedStorage<4, 4>  mUnkd9553d;
-    ::ll::UntypedStorage<4, 4>  mUnk7b23f4;
-    ::ll::UntypedStorage<4, 4>  mUnkfc44f4;
-    ::ll::UntypedStorage<4, 4>  mUnk9cfa6b;
-    ::ll::UntypedStorage<1, 1>  mUnke99754;
-    ::ll::UntypedStorage<1, 1>  mUnkee769b;
-    ::ll::UntypedStorage<4, 4>  mUnka22d13;
-    ::ll::UntypedStorage<4, 4>  mUnk555735;
-    ::ll::UntypedStorage<4, 4>  mUnk5b1b97;
-    ::ll::UntypedStorage<8, 8>  mUnk88b6e6;
-    ::ll::UntypedStorage<8, 8>  mUnk1d312a;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>      mTarget;
+    ::ll::TypedStorage<4, 4, float>                     mTargetDist;
+    ::ll::TypedStorage<4, 4, int>                       mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, int>                       mStartCounter;
+    ::ll::TypedStorage<4, 4, int>                       mStartDelay;
+    ::ll::TypedStorage<1, 1, bool>                      mAvoidWater;
+    ::ll::TypedStorage<1, 1, bool>                      mTargetNeeded;
+    ::ll::TypedStorage<4, 4, float>                     mMountDistance;
+    ::ll::TypedStorage<4, 4, int>                       mFailedAttemptsCounter;
+    ::ll::TypedStorage<4, 4, int>                       mMaxFailedAttempts;
+    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FindMountGoal& operator=(FindMountGoal const&);
-    FindMountGoal(FindMountGoal const&);
-    FindMountGoal();
 
 public:
     // virtual functions

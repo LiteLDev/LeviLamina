@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 namespace sim {
 
 struct LookAtEntityIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk98e7e8;
-    ::ll::UntypedStorage<4, 4>  mUnkbf14b0;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<4, 4, int>              mCountdown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookAtEntityIntent& operator=(LookAtEntityIntent const&);
-    LookAtEntityIntent(LookAtEntityIntent const&);
-    LookAtEntityIntent();
 };
 
 } // namespace sim

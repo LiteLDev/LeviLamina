@@ -9,15 +9,9 @@ class FollowTargetCaptainGoal : public ::MoveTowardsTargetGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk64467f;
-    ::ll::UntypedStorage<4, 4> mUnkac0d06;
+    ::ll::TypedStorage<2, 2, short> mLocateAttempts;
+    ::ll::TypedStorage<4, 4, float> mFollowDistSq;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FollowTargetCaptainGoal& operator=(FollowTargetCaptainGoal const&);
-    FollowTargetCaptainGoal(FollowTargetCaptainGoal const&);
-    FollowTargetCaptainGoal();
 
 public:
     // virtual functions

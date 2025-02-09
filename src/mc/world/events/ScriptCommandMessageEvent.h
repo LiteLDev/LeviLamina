@@ -2,23 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Level;
+struct ActorUniqueID;
+struct BlockObject;
+// clang-format on
+
 struct ScriptCommandMessageEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkad76e4;
-    ::ll::UntypedStorage<8, 32> mUnke38858;
-    ::ll::UntypedStorage<8, 8>  mUnk2ede56;
-    ::ll::UntypedStorage<8, 16> mUnk149d07;
-    ::ll::UntypedStorage<8, 32> mUnk73e67c;
-    ::ll::UntypedStorage<8, 16> mUnk2e7d95;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mMessageId;
+    ::ll::TypedStorage<8, 32, ::std::string>                    mMessageValue;
+    ::ll::TypedStorage<8, 8, ::Level const&>                    mLevel;
+    ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>> mSourceActor;
+    ::ll::TypedStorage<8, 32, ::std::optional<::BlockObject>>   mBlockObject;
+    ::ll::TypedStorage<8, 16, ::std::optional<::ActorUniqueID>> mInitiator;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptCommandMessageEvent& operator=(ScriptCommandMessageEvent const&);
-    ScriptCommandMessageEvent(ScriptCommandMessageEvent const&);
-    ScriptCommandMessageEvent();
 
 public:
     // member functions

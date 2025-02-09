@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ArmorSlot.h"
+
+// auto generated forward declare list
+// clang-format off
+class ItemInstance;
+class WeakEntityRef;
+// clang-format on
+
 struct ActorEquippedArmorEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk71c8cb;
-    ::ll::UntypedStorage<8, 128> mUnk5d925b;
-    ::ll::UntypedStorage<4, 4>   mUnkc5b841;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>       mEntity;
+    ::ll::TypedStorage<8, 128, ::ItemInstance const> mArmor;
+    ::ll::TypedStorage<4, 4, ::ArmorSlot>            mSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorEquippedArmorEvent& operator=(ActorEquippedArmorEvent const&);
-    ActorEquippedArmorEvent(ActorEquippedArmorEvent const&);
-    ActorEquippedArmorEvent();
 
 public:
     // member functions

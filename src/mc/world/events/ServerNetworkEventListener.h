@@ -14,6 +14,10 @@ struct ServerNetworkGameplayNotificationEvent;
 
 class ServerNetworkEventListener {
 public:
+    // ServerNetworkEventListener inner types define
+    using EventType = ::ServerNetworkGameplayNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

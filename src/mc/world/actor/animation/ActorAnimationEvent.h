@@ -9,6 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ExpressionNode;
+class HashedString;
 class RenderParams;
 // clang-format on
 
@@ -16,18 +18,12 @@ class ActorAnimationEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnke1d457;
-    ::ll::UntypedStorage<8, 48>  mUnk676bab;
-    ::ll::UntypedStorage<4, 4>   mUnkb80a15;
-    ::ll::UntypedStorage<8, 32>  mUnkde4216;
-    ::ll::UntypedStorage<4, 4>   mUnkf0fcd7;
+    ::ll::TypedStorage<8, 216, ::ExpressionNode>  mExpression;
+    ::ll::TypedStorage<8, 48, ::HashedString>     mCommand;
+    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion> mCommandVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>      mEvent;
+    ::ll::TypedStorage<4, 4, float>               mTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorAnimationEvent& operator=(ActorAnimationEvent const&);
-    ActorAnimationEvent(ActorAnimationEvent const&);
-    ActorAnimationEvent();
 
 public:
     // member functions

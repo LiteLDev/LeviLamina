@@ -5,18 +5,17 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/LookAtActorGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class LookAtTradingPlayerGoal : public ::LookAtActorGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk568d47;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookAtTradingPlayerGoal& operator=(LookAtTradingPlayerGoal const&);
-    LookAtTradingPlayerGoal(LookAtTradingPlayerGoal const&);
-    LookAtTradingPlayerGoal();
 
 public:
     // virtual functions

@@ -8,10 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class BlockPos;
 class BlockSource;
 class Mob;
 class POIInstance;
+class Path;
 class Vec3;
 // clang-format on
 
@@ -19,18 +21,12 @@ class MoveToPOIGoal : public ::BaseMoveToGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkc426aa;
-    ::ll::UntypedStorage<4, 24> mUnk49f40a;
-    ::ll::UntypedStorage<1, 1>  mUnk926af8;
-    ::ll::UntypedStorage<1, 1>  mUnk943b49;
-    ::ll::UntypedStorage<8, 8>  mUnk45e98b;
+    ::ll::TypedStorage<4, 4, ::POIType>                 mPOIType;
+    ::ll::TypedStorage<4, 24, ::AABB>                   mPOIBoundingBox;
+    ::ll::TypedStorage<1, 1, bool>                      mUsingBoundingBox;
+    ::ll::TypedStorage<1, 1, bool>                      mRequireSameY;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveToPOIGoal& operator=(MoveToPOIGoal const&);
-    MoveToPOIGoal(MoveToPOIGoal const&);
-    MoveToPOIGoal();
 
 public:
     // virtual functions

@@ -6,14 +6,8 @@ struct PointerHeldScreenEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk677aa4;
-    ::ll::UntypedStorage<4, 8> mUnkc5cc6b;
-    ::ll::UntypedStorage<1, 1> mUnk759fe8;
+    ::ll::TypedStorage<4, 8, float[2]> position;
+    ::ll::TypedStorage<4, 8, float[2]> relativePosition;
+    ::ll::TypedStorage<1, 1, bool>     moved;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PointerHeldScreenEventData& operator=(PointerHeldScreenEventData const&);
-    PointerHeldScreenEventData(PointerHeldScreenEventData const&);
-    PointerHeldScreenEventData();
 };

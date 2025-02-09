@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ClientInstanceEventHandler;
 class ClientInstanceEventListener;
 // clang-format on
 
@@ -14,14 +15,8 @@ class ClientInstanceEventCoordinator : public ::EventCoordinator<::ClientInstanc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk46ffef;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ClientInstanceEventHandler>> mClientInstanceGameplayHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientInstanceEventCoordinator& operator=(ClientInstanceEventCoordinator const&);
-    ClientInstanceEventCoordinator(ClientInstanceEventCoordinator const&);
-    ClientInstanceEventCoordinator();
 
 public:
     // virtual functions

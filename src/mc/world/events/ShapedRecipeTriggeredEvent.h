@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Recipe;
+// clang-format on
+
 struct ShapedRecipeTriggeredEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9ce591;
-    ::ll::UntypedStorage<1, 1> mUnkfbad3d;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Recipe const*>> mCraftingRecipe;
+    ::ll::TypedStorage<1, 1, bool>                             mIsAutoCraft;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShapedRecipeTriggeredEvent& operator=(ShapedRecipeTriggeredEvent const&);
-    ShapedRecipeTriggeredEvent(ShapedRecipeTriggeredEvent const&);
-    ShapedRecipeTriggeredEvent();
 };

@@ -5,24 +5,20 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class Vec2;
+class Vec3;
 // clang-format on
 
 class ParticlesTeleportTrailEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk98eb22;
-    ::ll::UntypedStorage<4, 12> mUnkf368b2;
-    ::ll::UntypedStorage<4, 8>  mUnkce5ffe;
-    ::ll::UntypedStorage<4, 4>  mUnk6b7152;
-    ::ll::UntypedStorage<4, 4>  mUnk2dc625;
+    ::ll::TypedStorage<4, 12, ::Vec3> mStart;
+    ::ll::TypedStorage<4, 12, ::Vec3> mEnd;
+    ::ll::TypedStorage<4, 8, ::Vec2>  mVariation;
+    ::ll::TypedStorage<4, 4, float>   mDirScale;
+    ::ll::TypedStorage<4, 4, int>     mCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticlesTeleportTrailEvent& operator=(ParticlesTeleportTrailEvent const&);
-    ParticlesTeleportTrailEvent(ParticlesTeleportTrailEvent const&);
-    ParticlesTeleportTrailEvent();
 
 public:
     // member functions

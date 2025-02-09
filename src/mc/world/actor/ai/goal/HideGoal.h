@@ -15,14 +15,8 @@ class HideGoal : public ::MoveToPOIGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkb37a58;
+    ::ll::TypedStorage<2, 2, short> mHideAttempts;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HideGoal& operator=(HideGoal const&);
-    HideGoal(HideGoal const&);
-    HideGoal();
 
 public:
     // virtual functions

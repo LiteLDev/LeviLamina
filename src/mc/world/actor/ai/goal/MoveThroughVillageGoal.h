@@ -8,22 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
+class Path;
 // clang-format on
 
 class MoveThroughVillageGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd082fc;
-    ::ll::UntypedStorage<8, 8> mUnk2ff469;
-    ::ll::UntypedStorage<8, 8> mUnk9f6a77;
+    ::ll::TypedStorage<4, 4, float>                     mSpeedModifier;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
+    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveThroughVillageGoal& operator=(MoveThroughVillageGoal const&);
-    MoveThroughVillageGoal(MoveThroughVillageGoal const&);
-    MoveThroughVillageGoal();
 
 public:
     // virtual functions

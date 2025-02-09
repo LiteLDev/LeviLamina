@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class EntityContext;
 class Mob;
+class Vec3;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -83,20 +85,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk542e4c;
-    ::ll::UntypedStorage<4, 12> mUnkbbfb10;
-    ::ll::UntypedStorage<4, 12> mUnk111cd0;
-    ::ll::UntypedStorage<4, 4>  mUnkb6a5f4;
-    ::ll::UntypedStorage<4, 4>  mUnk1f56fe;
-    ::ll::UntypedStorage<1, 1>  mUnk271529;
-    ::ll::UntypedStorage<1, 1>  mUnk2a07d3;
+    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mWantedPosition;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mChosenEndPos;
+    ::ll::TypedStorage<4, 4, float>       mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float>       mGoalRadiusSq;
+    ::ll::TypedStorage<1, 1, bool>        mPathingInvalid;
+    ::ll::TypedStorage<1, 1, bool>        mReachedTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InvestigateSuspiciousLocationGoal& operator=(InvestigateSuspiciousLocationGoal const&);
-    InvestigateSuspiciousLocationGoal(InvestigateSuspiciousLocationGoal const&);
-    InvestigateSuspiciousLocationGoal();
 
 public:
     // virtual functions

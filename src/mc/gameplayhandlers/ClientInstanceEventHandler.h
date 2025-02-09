@@ -9,6 +9,10 @@
 
 class ClientInstanceEventHandler : public ::GameplayHandler {
 public:
+    // ClientInstanceEventHandler inner types define
+    using EventTypes = ::entt::type_list<::ClientInstanceGameplayEvent<void> const>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

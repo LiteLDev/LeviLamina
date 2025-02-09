@@ -21,6 +21,10 @@ struct NewBlockID;
 
 class BlockEventListener {
 public:
+    // BlockEventListener inner types define
+    using EventType = ::BlockNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

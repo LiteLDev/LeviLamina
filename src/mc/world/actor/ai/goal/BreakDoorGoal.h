@@ -14,17 +14,11 @@ class BreakDoorGoal : public ::DoorInteractGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8d4a46;
-    ::ll::UntypedStorage<4, 4> mUnk291268;
-    ::ll::UntypedStorage<4, 4> mUnkbc2e9b;
-    ::ll::UntypedStorage<8, 8> mUnkb082cf;
+    ::ll::TypedStorage<4, 4, int>       mBreakTime;
+    ::ll::TypedStorage<4, 4, int const> mBreakDoorTime;
+    ::ll::TypedStorage<4, 4, int>       mLastBreakProgress;
+    ::ll::TypedStorage<8, 8, ::Mob&>    mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreakDoorGoal& operator=(BreakDoorGoal const&);
-    BreakDoorGoal(BreakDoorGoal const&);
-    BreakDoorGoal();
 
 public:
     // virtual functions

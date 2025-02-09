@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 #include "mc/world/level/material/MaterialType.h"
 
@@ -20,22 +21,16 @@ class LayEggGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnka30e8b;
-    ::ll::UntypedStorage<8, 24>  mUnk307053;
-    ::ll::UntypedStorage<1, 1>   mUnkc1bf78;
-    ::ll::UntypedStorage<1, 1>   mUnk92b228;
-    ::ll::UntypedStorage<4, 4>   mUnk361df5;
-    ::ll::UntypedStorage<8, 16>  mUnka29b3d;
-    ::ll::UntypedStorage<8, 104> mUnk7af222;
-    ::ll::UntypedStorage<4, 4>   mUnk803e4a;
-    ::ll::UntypedStorage<4, 4>   mUnk4682c4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor> const>       mTargetBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MaterialType> const>         mTargetMaterialsAboveBlock;
+    ::ll::TypedStorage<1, 1, bool const>                                   mAllowLayingFromBelow;
+    ::ll::TypedStorage<1, 1, bool const>                                   mUseDefaultAnimation;
+    ::ll::TypedStorage<4, 4, float const>                                  mLaySeconds;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor const>                      mEggType;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>             mOnLay;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent const> mLayEggSound;
+    ::ll::TypedStorage<4, 4, int>                                          mLayEggCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LayEggGoal& operator=(LayEggGoal const&);
-    LayEggGoal(LayEggGoal const&);
-    LayEggGoal();
 
 public:
     // virtual functions

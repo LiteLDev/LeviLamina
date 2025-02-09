@@ -7,23 +7,20 @@
 
 // auto generated forward declare list
 // clang-format off
+class DefinitionEvent;
+class ILegacyItemTriggerHandler;
 struct LegacyEventItemComponentData;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyEventItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk72f467;
-    ::ll::UntypedStorage<8, 64> mUnkfdd33d;
-    ::ll::UntypedStorage<8, 8>  mUnk98ee52;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>         mTriggerSubscriptions;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
+    ::ll::TypedStorage<8, 8, ::ILegacyItemTriggerHandler*>                            mTriggerHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyEventItemComponent& operator=(LegacyEventItemComponent const&);
-    LegacyEventItemComponent(LegacyEventItemComponent const&);
-    LegacyEventItemComponent();
 
 public:
     // virtual functions

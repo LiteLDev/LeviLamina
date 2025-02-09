@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+// clang-format on
+
 struct PlayerSelectedItemChangedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnk858bdf;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerSelectedItemChangedEvent& operator=(PlayerSelectedItemChangedEvent const&);
-    PlayerSelectedItemChangedEvent(PlayerSelectedItemChangedEvent const&);
-    PlayerSelectedItemChangedEvent();
 };

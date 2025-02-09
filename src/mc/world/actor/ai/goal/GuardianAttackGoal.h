@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Guardian;
 class Mob;
 // clang-format on
 
@@ -14,23 +15,17 @@ class GuardianAttackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke84967;
-    ::ll::UntypedStorage<4, 4> mUnkfba32c;
-    ::ll::UntypedStorage<4, 4> mUnk537304;
-    ::ll::UntypedStorage<4, 4> mUnk6eaa96;
-    ::ll::UntypedStorage<4, 4> mUnkafeca2;
-    ::ll::UntypedStorage<4, 4> mUnk8ecbce;
-    ::ll::UntypedStorage<4, 4> mUnk68a445;
-    ::ll::UntypedStorage<4, 4> mUnkcbc051;
-    ::ll::UntypedStorage<4, 4> mUnkd6ec0f;
-    ::ll::UntypedStorage<1, 1> mUnk8baa5f;
+    ::ll::TypedStorage<8, 8, ::Guardian&> mGuardian;
+    ::ll::TypedStorage<4, 4, int>         mAttackTicks;
+    ::ll::TypedStorage<4, 4, int>         mSoundDelayTicks;
+    ::ll::TypedStorage<4, 4, int>         mMagicDamage;
+    ::ll::TypedStorage<4, 4, int>         mHardModeExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, int>         mElderExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, float>       mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>       mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>       mMinDistance;
+    ::ll::TypedStorage<1, 1, bool>        mLastCanSinkState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GuardianAttackGoal& operator=(GuardianAttackGoal const&);
-    GuardianAttackGoal(GuardianAttackGoal const&);
-    GuardianAttackGoal();
 
 public:
     // virtual functions

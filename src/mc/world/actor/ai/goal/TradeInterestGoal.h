@@ -3,41 +3,39 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
 class Mob;
+class Player;
+struct Tick;
 // clang-format on
 
 class TradeInterestGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk5c9761;
-    ::ll::UntypedStorage<8, 40>  mUnk9ef310;
-    ::ll::UntypedStorage<1, 1>   mUnkf10327;
-    ::ll::UntypedStorage<1, 1>   mUnk843606;
-    ::ll::UntypedStorage<4, 4>   mUnk450712;
-    ::ll::UntypedStorage<8, 8>   mUnkcc3cd6;
-    ::ll::UntypedStorage<8, 152> mUnk75a44a;
-    ::ll::UntypedStorage<8, 152> mUnkc8856a;
-    ::ll::UntypedStorage<8, 8>   mUnkd823ff;
-    ::ll::UntypedStorage<8, 8>   mUnk64ded3;
-    ::ll::UntypedStorage<8, 8>   mUnkfb68e2;
-    ::ll::UntypedStorage<8, 8>   mUnke61bcc;
-    ::ll::UntypedStorage<8, 8>   mUnk2c6711;
-    ::ll::UntypedStorage<8, 8>   mUnk5e281b;
-    ::ll::UntypedStorage<8, 8>   mUnk4c8a83;
-    ::ll::UntypedStorage<8, 8>   mUnk1763bb;
-    ::ll::UntypedStorage<8, 8>   mUnk566530;
+    ::ll::TypedStorage<8, 8, ::Mob&>                mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Player>> mPlayer;
+    ::ll::TypedStorage<1, 1, bool>                  mIsRunning;
+    ::ll::TypedStorage<1, 1, bool>                  mIsOnlyTargetItemFound;
+    ::ll::TypedStorage<4, 4, float>                 mInterestDistance;
+    ::ll::TypedStorage<8, 8, uint64>                mCurrentIndex;
+    ::ll::TypedStorage<8, 152, ::ItemStack>         mCarriedItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>         mPlayerItem;
+    ::ll::TypedStorage<8, 8, ::Tick>                mCarriedItemSwitchTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                mRemoveItemTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                mInterestTimer;
+    ::ll::TypedStorage<8, 8, ::Tick>                mInterestCooldown;
+    ::ll::TypedStorage<8, 8, ::Tick const>          mInterestTimeMax;
+    ::ll::TypedStorage<8, 8, ::Tick const>          mInterestTimeMaxHalf;
+    ::ll::TypedStorage<8, 8, ::Tick const>          mRemoveTimeMax;
+    ::ll::TypedStorage<8, 8, ::Tick const>          mCarriedSwitchMax;
+    ::ll::TypedStorage<8, 8, ::Tick const>          mInterestCooldownMax;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeInterestGoal& operator=(TradeInterestGoal const&);
-    TradeInterestGoal(TradeInterestGoal const&);
-    TradeInterestGoal();
 
 public:
     // virtual functions

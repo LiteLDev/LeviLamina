@@ -10,29 +10,24 @@
 class Mob;
 struct ActorUniqueID;
 struct MobDescriptor;
+struct Tick;
 // clang-format on
 
 class NearestAttackableTargetGoal : public ::TargetGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk5c5325;
-    ::ll::UntypedStorage<8, 8>  mUnkca975d;
-    ::ll::UntypedStorage<1, 1>  mUnkeaf412;
-    ::ll::UntypedStorage<8, 64> mUnk19ab4e;
-    ::ll::UntypedStorage<4, 4>  mUnkf98960;
-    ::ll::UntypedStorage<4, 4>  mUnk54025b;
-    ::ll::UntypedStorage<1, 1>  mUnk5e8198;
-    ::ll::UntypedStorage<4, 4>  mUnk5db5ca;
-    ::ll::UntypedStorage<4, 4>  mUnkf72696;
-    ::ll::UntypedStorage<4, 4>  mUnkb153ae;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mTargetID;
+    ::ll::TypedStorage<8, 8, ::MobDescriptor const*>                                mTargetDescriptor;
+    ::ll::TypedStorage<1, 1, bool>                                                  mReselectTargets;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::MobDescriptor const*, ::Tick>> mTargetCooldowns;
+    ::ll::TypedStorage<4, 4, int>                                                   mAttackInterval;
+    ::ll::TypedStorage<4, 4, int>                                                   mScanInterval;
+    ::ll::TypedStorage<1, 1, bool>                                                  mSetPersistent;
+    ::ll::TypedStorage<4, 4, float>                                                 mTargetSearchHeight;
+    ::ll::TypedStorage<4, 4, float>                                                 mTargetInvisibleMultiplier;
+    ::ll::TypedStorage<4, 4, float>                                                 mTargetSneakVisibilityMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NearestAttackableTargetGoal& operator=(NearestAttackableTargetGoal const&);
-    NearestAttackableTargetGoal(NearestAttackableTargetGoal const&);
-    NearestAttackableTargetGoal();
 
 public:
     // virtual functions

@@ -9,6 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
+class Mob;
+struct FloatRange;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,16 +28,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnk7ad600;
-        ::ll::UntypedStorage<4, 8>   mUnke82e38;
-        ::ll::UntypedStorage<8, 104> mUnk4d0de4;
+        ::ll::TypedStorage<4, 4, float>                      mDuration;
+        ::ll::TypedStorage<4, 8, ::FloatRange>               mFireworksInterval;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mCelebrationEndEvent;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        VillagerCelebrationDefinition& operator=(VillagerCelebrationDefinition const&);
-        VillagerCelebrationDefinition(VillagerCelebrationDefinition const&);
-        VillagerCelebrationDefinition();
 
     public:
         // virtual functions
@@ -69,19 +67,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkfd5a01;
-    ::ll::UntypedStorage<8, 8>   mUnk6ea749;
-    ::ll::UntypedStorage<8, 8>   mUnkf44a31;
-    ::ll::UntypedStorage<4, 4>   mUnk7fb0bf;
-    ::ll::UntypedStorage<4, 8>   mUnk292343;
-    ::ll::UntypedStorage<8, 104> mUnk6d7cd6;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mNextFireworkTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mEndTick;
+    ::ll::TypedStorage<4, 4, float>                      mDuration;
+    ::ll::TypedStorage<4, 8, ::FloatRange>               mFireworksInterval;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mCelebrationEndEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VillagerCelebrationGoal& operator=(VillagerCelebrationGoal const&);
-    VillagerCelebrationGoal(VillagerCelebrationGoal const&);
-    VillagerCelebrationGoal();
 
 public:
     // virtual functions

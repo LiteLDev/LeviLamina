@@ -5,26 +5,25 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/village/POIType.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 struct POIBlueprint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk28a6f3;
-    ::ll::UntypedStorage<8, 48> mUnk503ba6;
-    ::ll::UntypedStorage<8, 48> mUnk9503a3;
-    ::ll::UntypedStorage<4, 4>  mUnk124330;
-    ::ll::UntypedStorage<4, 4>  mUnk960d54;
-    ::ll::UntypedStorage<8, 8>  mUnk566a03;
-    ::ll::UntypedStorage<8, 8>  mUnkd4d2cb;
-    ::ll::UntypedStorage<8, 48> mUnk4a072d;
-    ::ll::UntypedStorage<1, 1>  mUnk2385c1;
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mInitEvent;
+    ::ll::TypedStorage<8, 48, ::HashedString> mEndEvent;
+    ::ll::TypedStorage<4, 4, ::POIType>       mType;
+    ::ll::TypedStorage<4, 4, float>           mRadius;
+    ::ll::TypedStorage<8, 8, uint64>          mCapacity;
+    ::ll::TypedStorage<8, 8, uint64>          mWeight;
+    ::ll::TypedStorage<8, 48, ::HashedString> mSoundEvent;
+    ::ll::TypedStorage<1, 1, bool>            mUseBoundingBox;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    POIBlueprint& operator=(POIBlueprint const&);
-    POIBlueprint(POIBlueprint const&);
-    POIBlueprint();
 
 public:
     // member functions

@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/FilterSubject.h"
 #include "mc/util/Factory.h"
 #include "mc/world/response/EventResponse.h"
 
 // auto generated forward declare list
 // clang-format off
+class ExpressionNode;
 class RenderParams;
+struct ActorDefinitionIdentifier;
 struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -18,17 +21,11 @@ class ShootEventResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnk796e72;
-    ::ll::UntypedStorage<2, 2>   mUnk22ab6d;
-    ::ll::UntypedStorage<8, 216> mUnk4a797f;
-    ::ll::UntypedStorage<8, 216> mUnk807312;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>        mProjectile;
+    ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mTarget;
+    ::ll::TypedStorage<8, 216, ::ExpressionNode>                   mLaunchPower;
+    ::ll::TypedStorage<8, 216, ::ExpressionNode>                   mAngleOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShootEventResponse& operator=(ShootEventResponse const&);
-    ShootEventResponse(ShootEventResponse const&);
-    ShootEventResponse();
 
 public:
     // virtual functions

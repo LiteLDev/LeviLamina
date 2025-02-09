@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/enums/DirectionId.h"
+
 struct ControllerDirectionEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 4> mUnk8c5a5d;
-    ::ll::UntypedStorage<4, 8> mUnkd8f34a;
+    ::ll::TypedStorage<1, 4, ::DirectionId> directionId;
+    ::ll::TypedStorage<4, 8, float[2]>      deltaPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ControllerDirectionEventData& operator=(ControllerDirectionEventData const&);
-    ControllerDirectionEventData(ControllerDirectionEventData const&);
-    ControllerDirectionEventData();
 };

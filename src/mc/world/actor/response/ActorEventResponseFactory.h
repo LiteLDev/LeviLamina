@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/resources/IPackLoadScoped.h"
 #include "mc/util/Factory.h"
 
@@ -10,20 +11,20 @@
 // clang-format off
 class ActorEventResponse;
 class IPackLoadContext;
+struct ActorEventResponseCollection;
+namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ActorEventResponseFactory : public ::Factory<::ActorEventResponse>, public ::IPackLoadScoped {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkbc0631;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>>
+        mSchema;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorEventResponseFactory& operator=(ActorEventResponseFactory const&);
-    ActorEventResponseFactory(ActorEventResponseFactory const&);
-    ActorEventResponseFactory();
 
 public:
     // virtual functions

@@ -6,12 +6,6 @@ class ADPopupTelemetryEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkab198e;
+    ::ll::TypedStorage<8, 32, ::std::string> mStage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ADPopupTelemetryEvent& operator=(ADPopupTelemetryEvent const&);
-    ADPopupTelemetryEvent(ADPopupTelemetryEvent const&);
-    ADPopupTelemetryEvent();
 };

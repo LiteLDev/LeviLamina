@@ -12,15 +12,9 @@ class AttributeCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk75a432;
-    ::ll::UntypedStorage<4, 4>  mUnkc2b9c0;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::Attribute*>> mAttributesMap;
+    ::ll::TypedStorage<4, 4, uint>                                                mIDValueIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttributeCollection& operator=(AttributeCollection const&);
-    AttributeCollection(AttributeCollection const&);
-    AttributeCollection();
 
 public:
     // member functions

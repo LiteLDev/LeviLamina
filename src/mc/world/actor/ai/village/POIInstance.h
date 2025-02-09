@@ -13,32 +13,27 @@ class BlockSource;
 class CompoundTag;
 class HashedString;
 class Random;
+class Village;
 // clang-format on
 
 class POIInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk82eab5;
-    ::ll::UntypedStorage<8, 48> mUnk6130ba;
-    ::ll::UntypedStorage<8, 48> mUnkf46f85;
-    ::ll::UntypedStorage<8, 8>  mUnk3a5ecf;
-    ::ll::UntypedStorage<4, 12> mUnked9252;
-    ::ll::UntypedStorage<8, 8>  mUnk8753c7;
-    ::ll::UntypedStorage<8, 8>  mUnke8a65c;
-    ::ll::UntypedStorage<8, 8>  mUnke1c3c1;
-    ::ll::UntypedStorage<4, 4>  mUnk6bac51;
-    ::ll::UntypedStorage<4, 4>  mUnk5d6ad8;
-    ::ll::UntypedStorage<8, 48> mUnkb52c59;
-    ::ll::UntypedStorage<2, 2>  mUnk51db84;
-    ::ll::UntypedStorage<1, 1>  mUnk16dd7d;
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mInitEvent;
+    ::ll::TypedStorage<8, 48, ::HashedString> mEndEvent;
+    ::ll::TypedStorage<8, 8, ::Village*>      mVillage;
+    ::ll::TypedStorage<4, 12, ::BlockPos>     mPosition;
+    ::ll::TypedStorage<8, 8, uint64>          mOwnerCount;
+    ::ll::TypedStorage<8, 8, uint64>          mOwnerCapacity;
+    ::ll::TypedStorage<8, 8, uint64>          mWeight;
+    ::ll::TypedStorage<4, 4, float>           mRadius;
+    ::ll::TypedStorage<4, 4, ::POIType>       mType;
+    ::ll::TypedStorage<8, 48, ::HashedString> mSoundEvent;
+    ::ll::TypedStorage<2, 2, short>           mArrivalFailuresCount;
+    ::ll::TypedStorage<1, 1, bool>            mUseBoundingBox;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    POIInstance& operator=(POIInstance const&);
-    POIInstance(POIInstance const&);
-    POIInstance();
 
 public:
     // member functions

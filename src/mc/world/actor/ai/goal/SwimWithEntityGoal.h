@@ -3,7 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class Mob;
+struct MobDescriptor;
+// clang-format on
 
 class SwimWithEntityGoal : public ::Goal {
 public:
@@ -16,27 +24,21 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkfaf6ac;
-    ::ll::UntypedStorage<8, 40> mUnk99826f;
-    ::ll::UntypedStorage<4, 4>  mUnkf35080;
-    ::ll::UntypedStorage<4, 4>  mUnkcbc0bb;
-    ::ll::UntypedStorage<4, 4>  mUnk83f234;
-    ::ll::UntypedStorage<4, 4>  mUnk6b640e;
-    ::ll::UntypedStorage<4, 4>  mUnk398e94;
-    ::ll::UntypedStorage<4, 4>  mUnkc472f8;
-    ::ll::UntypedStorage<4, 4>  mUnk408b11;
-    ::ll::UntypedStorage<4, 4>  mUnk6c2ded;
-    ::ll::UntypedStorage<4, 4>  mUnk19c50e;
-    ::ll::UntypedStorage<4, 4>  mUnk9087dd;
-    ::ll::UntypedStorage<4, 4>  mUnk16a27c;
-    ::ll::UntypedStorage<8, 24> mUnk9df051;
+    ::ll::TypedStorage<8, 8, ::Mob&>                            mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>              mFollowing;
+    ::ll::TypedStorage<4, 4, int>                               mIntervalRefreshTicks;
+    ::ll::TypedStorage<4, 4, int>                               mIntervalTicks;
+    ::ll::TypedStorage<4, 4, float>                             mChanceToStop;
+    ::ll::TypedStorage<4, 4, float>                             mSuccessRate;
+    ::ll::TypedStorage<4, 4, float>                             mCatchUpThreshold;
+    ::ll::TypedStorage<4, 4, float>                             mMatchDirectionThreshold;
+    ::ll::TypedStorage<4, 4, float>                             mCatchUpMultiplier;
+    ::ll::TypedStorage<4, 4, float>                             mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float>                             mSearchRange;
+    ::ll::TypedStorage<4, 4, float>                             mStopDistance;
+    ::ll::TypedStorage<4, 4, ::SwimWithEntityGoal::EntityGoals> mCurrentGoal;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>>   mTargetTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwimWithEntityGoal& operator=(SwimWithEntityGoal const&);
-    SwimWithEntityGoal(SwimWithEntityGoal const&);
-    SwimWithEntityGoal();
 
 public:
     // virtual functions

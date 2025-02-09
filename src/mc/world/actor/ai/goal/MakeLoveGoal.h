@@ -14,15 +14,9 @@ class MakeLoveGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd700a2;
-    ::ll::UntypedStorage<4, 4> mUnk6e263e;
+    ::ll::TypedStorage<8, 8, ::VillagerBase&> mVillager;
+    ::ll::TypedStorage<4, 4, int>             mLoveMakingTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MakeLoveGoal& operator=(MakeLoveGoal const&);
-    MakeLoveGoal(MakeLoveGoal const&);
-    MakeLoveGoal();
 
 public:
     // virtual functions

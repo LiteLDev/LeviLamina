@@ -2,10 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionEventType.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorDefinitionTrigger;
+class ActorFilterGroup;
 struct ActorDefinitionModifier;
+struct ActorEventResponseCollection;
 struct VariantParameterListConst;
 // clang-format on
 
@@ -13,20 +19,16 @@ class ActorDefinitionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkee8172;
-    ::ll::UntypedStorage<8, 64>  mUnk814d59;
-    ::ll::UntypedStorage<8, 32>  mUnk6f8f5b;
-    ::ll::UntypedStorage<4, 4>   mUnka0a5b3;
-    ::ll::UntypedStorage<8, 24>  mUnk79a6b0;
-    ::ll::UntypedStorage<8, 24>  mUnke1d144;
-    ::ll::UntypedStorage<8, 104> mUnkcaf7b5;
-    ::ll::UntypedStorage<8, 24>  mUnk144c88;
-    ::ll::UntypedStorage<8, 24>  mUnk987f0a;
+    ::ll::TypedStorage<4, 4, float>                                  mProbability;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                    mFilter;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mName;
+    ::ll::TypedStorage<4, 4, ::ActorDefinitionEventType>             mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>          mGroups;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>          mRemoveGroups;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mTrigger;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionEvent>> mChildren;
+    ::ll::TypedStorage<8, 24, ::ActorEventResponseCollection>        mResponses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorDefinitionEvent();
 
 public:
     // member functions

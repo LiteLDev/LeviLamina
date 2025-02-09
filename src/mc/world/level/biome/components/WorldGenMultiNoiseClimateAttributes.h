@@ -9,18 +9,12 @@ class WorldGenMultiNoiseClimateAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk150470;
-    ::ll::UntypedStorage<4, 4> mUnk31b00e;
-    ::ll::UntypedStorage<4, 4> mUnk61ec4b;
-    ::ll::UntypedStorage<4, 4> mUnkbe0ade;
-    ::ll::UntypedStorage<4, 4> mUnk76c988;
+    ::ll::TypedStorage<4, 4, float> mTemperature;
+    ::ll::TypedStorage<4, 4, float> mHumidity;
+    ::ll::TypedStorage<4, 4, float> mAltitude;
+    ::ll::TypedStorage<4, 4, float> mWeirdness;
+    ::ll::TypedStorage<4, 4, float> mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldGenMultiNoiseClimateAttributes& operator=(WorldGenMultiNoiseClimateAttributes const&);
-    WorldGenMultiNoiseClimateAttributes(WorldGenMultiNoiseClimateAttributes const&);
-    WorldGenMultiNoiseClimateAttributes();
 
 public:
     // virtual functions

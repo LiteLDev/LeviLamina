@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -15,25 +16,19 @@ class SneezeGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk46da1a;
-    ::ll::UntypedStorage<4, 4>  mUnk17a0ae;
-    ::ll::UntypedStorage<4, 4>  mUnk82cb5a;
-    ::ll::UntypedStorage<4, 4>  mUnkb3cee6;
-    ::ll::UntypedStorage<4, 4>  mUnkae4bec;
-    ::ll::UntypedStorage<8, 32> mUnkbf8fec;
-    ::ll::UntypedStorage<4, 4>  mUnk74a5f7;
-    ::ll::UntypedStorage<4, 4>  mUnk9cd78e;
-    ::ll::UntypedStorage<4, 4>  mUnkb54f93;
-    ::ll::UntypedStorage<8, 24> mUnkdfcc8f;
-    ::ll::UntypedStorage<4, 4>  mUnk8d5cc7;
-    ::ll::UntypedStorage<8, 8>  mUnk38aebf;
+    ::ll::TypedStorage<4, 4, int>                                    mCooldown;
+    ::ll::TypedStorage<4, 4, int>                                    mCooldownTimer;
+    ::ll::TypedStorage<4, 4, float>                                  mProbability;
+    ::ll::TypedStorage<4, 4, int>                                    mPreSneezeTimer;
+    ::ll::TypedStorage<4, 4, float>                                  mDropItemChance;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mLootTable;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSneezeSound;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mPreSneezeSound;
+    ::ll::TypedStorage<4, 4, float>                                  mPrepareTime;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const>  mReactMobFilters;
+    ::ll::TypedStorage<4, 4, float>                                  mReactWithin;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SneezeGoal& operator=(SneezeGoal const&);
-    SneezeGoal(SneezeGoal const&);
-    SneezeGoal();
 
 public:
     // virtual functions

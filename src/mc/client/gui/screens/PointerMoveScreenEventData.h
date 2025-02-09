@@ -6,13 +6,7 @@ struct PointerMoveScreenEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk8f8e11;
-    ::ll::UntypedStorage<4, 8> mUnkbe0d29;
+    ::ll::TypedStorage<4, 8, float[2]> cursorPosition;
+    ::ll::TypedStorage<4, 8, float[2]> deltaPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PointerMoveScreenEventData& operator=(PointerMoveScreenEventData const&);
-    PointerMoveScreenEventData(PointerMoveScreenEventData const&);
-    PointerMoveScreenEventData();
 };

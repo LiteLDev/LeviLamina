@@ -18,14 +18,8 @@ class DecrementStackEventResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf109c1;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreGameMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DecrementStackEventResponse& operator=(DecrementStackEventResponse const&);
-    DecrementStackEventResponse(DecrementStackEventResponse const&);
-    DecrementStackEventResponse();
 
 public:
     // virtual functions

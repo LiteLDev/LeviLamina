@@ -16,15 +16,9 @@ class HealthAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf99f9d;
-    ::ll::UntypedStorage<8, 8> mUnk812c64;
+    ::ll::TypedStorage<4, 4, int>    mTickCounter;
+    ::ll::TypedStorage<8, 8, ::Mob*> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HealthAttributeDelegate& operator=(HealthAttributeDelegate const&);
-    HealthAttributeDelegate(HealthAttributeDelegate const&);
-    HealthAttributeDelegate();
 
 public:
     // virtual functions

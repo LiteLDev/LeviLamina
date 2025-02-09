@@ -15,6 +15,10 @@ struct ClientInstanceNotificationEvent;
 
 class ClientInstanceEventListener {
 public:
+    // ClientInstanceEventListener inner types define
+    using EventType = ::ClientInstanceNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

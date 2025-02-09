@@ -2,21 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSourceHandle;
+class WeakEntityRef;
+// clang-format on
+
 struct LeverActionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf6f9ea;
-    ::ll::UntypedStorage<4, 12> mUnk2c8012;
-    ::ll::UntypedStorage<1, 1>  mUnkf31a54;
-    ::ll::UntypedStorage<8, 24> mUnk811304;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle>> mBlockSourceHandle;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                       mLeverBlockPos;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsPowered;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                        mPlayerRef;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LeverActionEvent& operator=(LeverActionEvent const&);
-    LeverActionEvent(LeverActionEvent const&);
-    LeverActionEvent();
 
 public:
     // member functions

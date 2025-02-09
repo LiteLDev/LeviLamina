@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorType.h"
+
+// auto generated forward declare list
+// clang-format off
+class ActorDamageSource;
+class WeakEntityRef;
+// clang-format on
+
 struct ActorDiedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk73a5af;
-    ::ll::UntypedStorage<8, 16> mUnk4a74ce;
-    ::ll::UntypedStorage<4, 4>  mUnkf9453a;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                        mEntity;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
+    ::ll::TypedStorage<4, 4, ::ActorType>                             mDamageChildType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorDiedEvent& operator=(ActorDiedEvent const&);
-    ActorDiedEvent(ActorDiedEvent const&);
-    ActorDiedEvent();
 
 public:
     // member functions

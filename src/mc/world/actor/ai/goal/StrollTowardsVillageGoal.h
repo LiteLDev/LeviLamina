@@ -15,14 +15,8 @@ class StrollTowardsVillageGoal : public ::MoveToVillageGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk187816;
+    ::ll::TypedStorage<4, 4, float> mStartChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StrollTowardsVillageGoal& operator=(StrollTowardsVillageGoal const&);
-    StrollTowardsVillageGoal(StrollTowardsVillageGoal const&);
-    StrollTowardsVillageGoal();
 
 public:
     // virtual functions

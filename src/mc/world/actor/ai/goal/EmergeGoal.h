@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
 class EntityContext;
 class Mob;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -82,19 +84,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk9ce176;
-    ::ll::UntypedStorage<2, 2>   mUnk8fb073;
-    ::ll::UntypedStorage<8, 104> mUnk5ad96b;
-    ::ll::UntypedStorage<8, 8>   mUnkc0702c;
-    ::ll::UntypedStorage<8, 8>   mUnk881228;
-    ::ll::UntypedStorage<2, 2>   mUnk443e4c;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<2, 2, ushort>                     mDurationTicks;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnDoneEvent;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mCooldownExpiryTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mEndTick;
+    ::ll::TypedStorage<2, 2, ushort>                     mCooldownTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EmergeGoal& operator=(EmergeGoal const&);
-    EmergeGoal(EmergeGoal const&);
-    EmergeGoal();
 
 public:
     // virtual functions

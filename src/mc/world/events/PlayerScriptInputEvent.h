@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/input/ScriptingInputButton.h"
+#include "mc/input/ScriptingInputButtonState.h"
+
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 struct PlayerScriptInputEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb96020;
-    ::ll::UntypedStorage<4, 4>  mUnk49ba48;
-    ::ll::UntypedStorage<4, 4>  mUnk3dfb37;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>            mPlayer;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButton>      mButton;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mNewState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerScriptInputEvent& operator=(PlayerScriptInputEvent const&);
-    PlayerScriptInputEvent(PlayerScriptInputEvent const&);
-    PlayerScriptInputEvent();
 
 public:
     // member functions

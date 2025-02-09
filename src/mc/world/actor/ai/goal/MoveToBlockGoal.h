@@ -11,6 +11,7 @@
 class ActorDefinitionTrigger;
 class ActorFilterGroup;
 class Block;
+class BlockPos;
 class ItemDescriptor;
 class Mob;
 class Vec3;
@@ -20,37 +21,31 @@ class MoveToBlockGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke438bf;
-    ::ll::UntypedStorage<4, 4>  mUnk321b17;
-    ::ll::UntypedStorage<4, 4>  mUnke9edfa;
-    ::ll::UntypedStorage<4, 4>  mUnk9a98a2;
-    ::ll::UntypedStorage<4, 12> mUnka3af3a;
-    ::ll::UntypedStorage<4, 12> mUnk93353a;
-    ::ll::UntypedStorage<4, 4>  mUnk7dbbaa;
-    ::ll::UntypedStorage<4, 4>  mUnkc793c2;
-    ::ll::UntypedStorage<4, 4>  mUnk815dd7;
-    ::ll::UntypedStorage<4, 4>  mUnk4069b0;
-    ::ll::UntypedStorage<1, 1>  mUnk202b57;
-    ::ll::UntypedStorage<8, 24> mUnk71c509;
-    ::ll::UntypedStorage<8, 24> mUnk6b8dc6;
-    ::ll::UntypedStorage<8, 24> mUnk6beba1;
-    ::ll::UntypedStorage<8, 8>  mUnkce0572;
-    ::ll::UntypedStorage<8, 8>  mUnk316a2f;
-    ::ll::UntypedStorage<1, 1>  mUnk7f6d7c;
-    ::ll::UntypedStorage<4, 4>  mUnk1a003d;
-    ::ll::UntypedStorage<4, 4>  mUnk892acc;
-    ::ll::UntypedStorage<4, 4>  mUnkda7723;
-    ::ll::UntypedStorage<4, 12> mUnke49ae5;
-    ::ll::UntypedStorage<8, 8>  mUnkc01e2b;
-    ::ll::UntypedStorage<1, 1>  mUnkf64d10;
-    ::ll::UntypedStorage<8, 64> mUnk5fe9d6;
+    ::ll::TypedStorage<4, 4, int>                                            mGiveUpTicks;
+    ::ll::TypedStorage<4, 4, int>                                            mStayDurationTicks;
+    ::ll::TypedStorage<4, 4, float>                                          mSpeedMod;
+    ::ll::TypedStorage<4, 4, float>                                          mGoalRadiusSq;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                    mTargetBlockPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mTargetPositionOffset;
+    ::ll::TypedStorage<4, 4, float>                                          mChanceToStart;
+    ::ll::TypedStorage<4, 4, int>                                            mInterval;
+    ::ll::TypedStorage<4, 4, int>                                            mSearchRange;
+    ::ll::TypedStorage<4, 4, int>                                            mSearchHeight;
+    ::ll::TypedStorage<1, 1, ::TargetSelectionMethod const>                  mMethod;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger> const> mOnReachTriggers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger> const> mOnStayCompletedTriggers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor> const>         mTargetBlockDescriptors;
+    ::ll::TypedStorage<8, 8, uint64>                                         mCooldownCounter;
+    ::ll::TypedStorage<8, 8, uint64 const>                                   mCooldownTimeoutTime;
+    ::ll::TypedStorage<1, 1, bool>                                           mReachedTarget;
+    ::ll::TypedStorage<4, 4, int>                                            mNextStartTick;
+    ::ll::TypedStorage<4, 4, int>                                            mStayTicks;
+    ::ll::TypedStorage<4, 4, int>                                            mTravelTicks;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                    mStartPos;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                         mMob;
+    ::ll::TypedStorage<1, 1, bool>                                           mHasSentOnReachEvent;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                            mTargetBlockFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveToBlockGoal& operator=(MoveToBlockGoal const&);
-    MoveToBlockGoal(MoveToBlockGoal const&);
-    MoveToBlockGoal();
 
 public:
     // virtual functions

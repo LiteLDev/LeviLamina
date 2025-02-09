@@ -50,16 +50,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4148c7;
-    ::ll::UntypedStorage<1, 1>  mUnkdf3e53;
-    ::ll::UntypedStorage<1, 1>  mUnkdf864c;
+    ::ll::TypedStorage<8, 32, ::std::string> mMobEventName;
+    ::ll::TypedStorage<1, 1, bool>           mValue;
+    ::ll::TypedStorage<1, 1, bool>           mValueWasSet;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEventCommand& operator=(MobEventCommand const&);
-    MobEventCommand(MobEventCommand const&);
-    MobEventCommand();
 
 public:
     // virtual functions

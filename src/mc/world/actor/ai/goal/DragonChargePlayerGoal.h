@@ -14,15 +14,9 @@ class DragonChargePlayerGoal : public ::DragonBaseGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk44978b;
-    ::ll::UntypedStorage<4, 4> mUnk7d861a;
+    ::ll::TypedStorage<4, 4, int> mOutsideChargeZoneTicks;
+    ::ll::TypedStorage<4, 4, int> mContinueChargeThresholdTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DragonChargePlayerGoal& operator=(DragonChargePlayerGoal const&);
-    DragonChargePlayerGoal(DragonChargePlayerGoal const&);
-    DragonChargePlayerGoal();
 
 public:
     // virtual functions

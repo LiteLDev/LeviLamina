@@ -5,18 +5,17 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BiomeHeight;
+// clang-format on
+
 class OverworldHeightAttributes : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk498230;
+    ::ll::TypedStorage<4, 8, ::BiomeHeight> mHeightParams;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OverworldHeightAttributes& operator=(OverworldHeightAttributes const&);
-    OverworldHeightAttributes(OverworldHeightAttributes const&);
-    OverworldHeightAttributes();
 
 public:
     // virtual functions

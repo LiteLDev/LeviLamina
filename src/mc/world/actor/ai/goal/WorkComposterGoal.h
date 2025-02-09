@@ -5,20 +5,19 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/WorkGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class WorkComposterDefinition;
+// clang-format on
+
 class WorkComposterGoal : public ::WorkGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 208> mUnk7bdd4b;
-    ::ll::UntypedStorage<4, 4>   mUnk461d40;
-    ::ll::UntypedStorage<8, 8>   mUnk625da6;
+    ::ll::TypedStorage<8, 208, ::WorkComposterDefinition> mDefinition;
+    ::ll::TypedStorage<4, 4, int>                         mTimesComposted;
+    ::ll::TypedStorage<8, 8, uint64>                      mNextUseTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorkComposterGoal& operator=(WorkComposterGoal const&);
-    WorkComposterGoal(WorkComposterGoal const&);
-    WorkComposterGoal();
 
 public:
     // virtual functions

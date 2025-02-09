@@ -14,14 +14,8 @@ class VexRandomMoveGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7cc752;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VexRandomMoveGoal& operator=(VexRandomMoveGoal const&);
-    VexRandomMoveGoal(VexRandomMoveGoal const&);
-    VexRandomMoveGoal();
 
 public:
     // virtual functions

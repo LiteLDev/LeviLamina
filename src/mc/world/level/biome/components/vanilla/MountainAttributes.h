@@ -49,16 +49,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk1e2148;
-    ::ll::UntypedStorage<1, 1>   mUnk7ebd12;
-    ::ll::UntypedStorage<4, 4>   mUnke10816;
+    ::ll::TypedStorage<8, 192, ::MountainAttributes::SteepMaterial>  mSteepMaterial;
+    ::ll::TypedStorage<1, 1, ::MountainAttributes::TopSlideSettings> mTopSlideSettings;
+    ::ll::TypedStorage<4, 4, float>                                  mPeaksFactor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MountainAttributes& operator=(MountainAttributes const&);
-    MountainAttributes(MountainAttributes const&);
-    MountainAttributes();
 
 public:
     // virtual functions

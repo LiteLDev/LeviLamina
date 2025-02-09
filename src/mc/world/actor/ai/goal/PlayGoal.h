@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -12,6 +13,8 @@
 class EntityContext;
 class Mob;
 class SemVersion;
+class Vec3;
+struct MobDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -84,24 +87,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk959bc8;
-    ::ll::UntypedStorage<4, 4>  mUnk455562;
-    ::ll::UntypedStorage<4, 4>  mUnkeb7537;
-    ::ll::UntypedStorage<8, 24> mUnk28e02e;
-    ::ll::UntypedStorage<4, 12> mUnkc299b3;
-    ::ll::UntypedStorage<4, 4>  mUnk56da34;
-    ::ll::UntypedStorage<4, 4>  mUnk3b46db;
-    ::ll::UntypedStorage<4, 4>  mUnkbbf2a3;
-    ::ll::UntypedStorage<4, 4>  mUnkab238f;
-    ::ll::UntypedStorage<8, 8>  mUnk976192;
-    ::ll::UntypedStorage<8, 40> mUnk83e94c;
+    ::ll::TypedStorage<4, 4, float>                           mSpeedModifier;
+    ::ll::TypedStorage<4, 4, int>                             mMaxPlayDurationTicks;
+    ::ll::TypedStorage<4, 4, float>                           mChanceToStart;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mFriendTypes;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mFriendSearchArea;
+    ::ll::TypedStorage<4, 4, int>                             mRandomPosSearchRange;
+    ::ll::TypedStorage<4, 4, int>                             mRandomPosSearchHeight;
+    ::ll::TypedStorage<4, 4, int>                             mFollowDistanceInBlocksSquared;
+    ::ll::TypedStorage<4, 4, int>                             mCurrentPlayDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Mob&>                          mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>              mFollowFriend;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayGoal& operator=(PlayGoal const&);
-    PlayGoal(PlayGoal const&);
-    PlayGoal();
 
 public:
     // virtual functions

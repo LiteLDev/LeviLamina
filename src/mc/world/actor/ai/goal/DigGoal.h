@@ -9,8 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
 class EntityContext;
 class Mob;
+struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -97,23 +99,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk706803;
-    ::ll::UntypedStorage<8, 8>   mUnk95557b;
-    ::ll::UntypedStorage<4, 4>   mUnk3d7408;
-    ::ll::UntypedStorage<2, 2>   mUnka9e796;
-    ::ll::UntypedStorage<8, 8>   mUnk6bd360;
-    ::ll::UntypedStorage<1, 1>   mUnk400bd5;
-    ::ll::UntypedStorage<1, 1>   mUnkca682b;
-    ::ll::UntypedStorage<1, 1>   mUnk960919;
-    ::ll::UntypedStorage<1, 1>   mUnkd93253;
-    ::ll::UntypedStorage<8, 104> mUnkcfaf42;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mGoalInitializationTick;
+    ::ll::TypedStorage<4, 4, uint>                       mIdleTimeTicks;
+    ::ll::TypedStorage<2, 2, ushort>                     mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mEndTick;
+    ::ll::TypedStorage<1, 1, bool>                       mAllowDigWhenNamed;
+    ::ll::TypedStorage<1, 1, bool>                       mVibrationIsDisturbance;
+    ::ll::TypedStorage<1, 1, bool>                       mSuspicionIsDisturbance;
+    ::ll::TypedStorage<1, 1, bool>                       mDigsInDaylight;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnStartEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DigGoal& operator=(DigGoal const&);
-    DigGoal(DigGoal const&);
-    DigGoal();
 
 public:
     // virtual functions

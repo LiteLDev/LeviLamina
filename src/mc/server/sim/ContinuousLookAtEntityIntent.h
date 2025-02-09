@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class WeakEntityRef;
+// clang-format on
+
 namespace sim {
 
 struct ContinuousLookAtEntityIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk87320c;
-    ::ll::UntypedStorage<1, 1>  mUnk3d4c93;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<1, 1, bool>             mStopOnMove;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContinuousLookAtEntityIntent& operator=(ContinuousLookAtEntityIntent const&);
-    ContinuousLookAtEntityIntent(ContinuousLookAtEntityIntent const&);
-    ContinuousLookAtEntityIntent();
 };
 
 } // namespace sim

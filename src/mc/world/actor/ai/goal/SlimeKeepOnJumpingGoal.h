@@ -5,19 +5,18 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/Goal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Mob;
+// clang-format on
+
 class SlimeKeepOnJumpingGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3efd18;
-    ::ll::UntypedStorage<4, 4> mUnk266cc2;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float>  mSpeedMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SlimeKeepOnJumpingGoal& operator=(SlimeKeepOnJumpingGoal const&);
-    SlimeKeepOnJumpingGoal(SlimeKeepOnJumpingGoal const&);
-    SlimeKeepOnJumpingGoal();
 
 public:
     // virtual functions

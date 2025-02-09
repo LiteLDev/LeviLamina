@@ -20,13 +20,8 @@ class ItemEventCoordinator : public ::EventCoordinator<::ItemEventListener> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk680110;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemGameplayHandler>> mItemGameplayHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemEventCoordinator& operator=(ItemEventCoordinator const&);
-    ItemEventCoordinator(ItemEventCoordinator const&);
 
 public:
     // virtual functions

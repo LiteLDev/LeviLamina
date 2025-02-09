@@ -18,22 +18,16 @@ class MingleGoal : public ::MoveToPOIGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk62cb1f;
-    ::ll::UntypedStorage<4, 4>   mUnk947b34;
-    ::ll::UntypedStorage<4, 4>   mUnkf06177;
-    ::ll::UntypedStorage<4, 4>   mUnkc79cdd;
-    ::ll::UntypedStorage<4, 4>   mUnk679cd1;
-    ::ll::UntypedStorage<4, 4>   mUnkf33af9;
-    ::ll::UntypedStorage<4, 4>   mUnkf11392;
-    ::ll::UntypedStorage<8, 176> mUnkac777a;
-    ::ll::UntypedStorage<4, 4>   mUnk50a0e7;
+    ::ll::TypedStorage<4, 4, int>                           mCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                           mCooldownTicksMax;
+    ::ll::TypedStorage<4, 4, int>                           mMingleTicks;
+    ::ll::TypedStorage<4, 4, int>                           mMingleTicksMax;
+    ::ll::TypedStorage<4, 4, int>                           mAvailableTicks;
+    ::ll::TypedStorage<4, 4, int>                           mAvailableTicksMax;
+    ::ll::TypedStorage<4, 4, int>                           mSpeakInterval;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mDesiredPartnerType;
+    ::ll::TypedStorage<4, 4, float>                         mMingleDistanceSquared;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MingleGoal& operator=(MingleGoal const&);
-    MingleGoal(MingleGoal const&);
-    MingleGoal();
 
 public:
     // virtual functions

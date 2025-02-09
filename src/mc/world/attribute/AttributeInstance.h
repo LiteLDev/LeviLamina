@@ -10,33 +10,38 @@ class AttributeInstanceDelegate;
 class AttributeInstanceHandle;
 class AttributeModifier;
 class BaseAttributeMap;
+class TemporalAttributeBuff;
 namespace mce { class UUID; }
 // clang-format on
 
 class AttributeInstance {
 public:
+    // AttributeInstance inner types define
+    using ModifierVector = ::std::vector<::AttributeModifier>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk183bf8;
-    ::ll::UntypedStorage<8, 8>  mUnk1ca1d4;
-    ::ll::UntypedStorage<8, 24> mUnk7319d3;
-    ::ll::UntypedStorage<8, 24> mUnkbf5019;
-    ::ll::UntypedStorage<8, 24> mUnk56d777;
-    ::ll::UntypedStorage<8, 16> mUnk82a33a;
+    ::ll::TypedStorage<8, 8, ::BaseAttributeMap*>                             mAttributeMap;
+    ::ll::TypedStorage<8, 8, ::Attribute const*>                              mAttribute;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>>             mModifierList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TemporalAttributeBuff>>         mTemporalBuffs;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>       mListeners;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AttributeInstanceDelegate>> mDelegate;
     union {
-        ::ll::UntypedStorage<4, 12> mUnka87383;
+        ::ll::TypedStorage<4, 12, float[3]> mDefaultValues;
         struct {
-            ::ll::UntypedStorage<4, 4> mUnkd9d901;
-            ::ll::UntypedStorage<4, 4> mUnk48fff1;
-            ::ll::UntypedStorage<4, 4> mUnk1ff616;
+            ::ll::TypedStorage<4, 4, float> mDefaultMinValue;
+            ::ll::TypedStorage<4, 4, float> mDefaultMaxValue;
+            ::ll::TypedStorage<4, 4, float> mDefaultValue;
         };
     };
     union {
-        ::ll::UntypedStorage<4, 12> mUnka0d1e6;
+        ::ll::TypedStorage<4, 12, float[3]> mCurrentValues;
         struct {
-            ::ll::UntypedStorage<4, 4> mUnk72add9;
-            ::ll::UntypedStorage<4, 4> mUnk88baeb;
-            ::ll::UntypedStorage<4, 4> mUnk525b7f;
+            ::ll::TypedStorage<4, 4, float> mCurrentMinValue;
+            ::ll::TypedStorage<4, 4, float> mCurrentMaxValue;
+            ::ll::TypedStorage<4, 4, float> mCurrentValue;
         };
     };
     // NOLINTEND
@@ -44,7 +49,6 @@ public:
 public:
     // prevent constructor by default
     AttributeInstance& operator=(AttributeInstance const&);
-    AttributeInstance();
 
 public:
     // virtual functions

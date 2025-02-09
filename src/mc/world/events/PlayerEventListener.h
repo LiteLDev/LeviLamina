@@ -28,6 +28,10 @@ struct PlayerNotificationEvent;
 
 class PlayerEventListener {
 public:
+    // PlayerEventListener inner types define
+    using EventType = ::PlayerNotificationEvent;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

@@ -16,16 +16,10 @@ struct NavigateToPositionsIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk8e255c;
-    ::ll::UntypedStorage<8, 24> mUnk79ae8c;
-    ::ll::UntypedStorage<8, 8>  mUnk70f1c2;
+    ::ll::TypedStorage<4, 4, float>                       mSpeed;
+    ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>> mTargets;
+    ::ll::TypedStorage<8, 8, uint64>                      mNextTarget;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NavigateToPositionsIntent& operator=(NavigateToPositionsIntent const&);
-    NavigateToPositionsIntent(NavigateToPositionsIntent const&);
-    NavigateToPositionsIntent();
 
 public:
     // member functions

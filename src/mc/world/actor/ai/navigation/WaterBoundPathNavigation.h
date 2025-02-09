@@ -17,25 +17,19 @@ class WaterBoundPathNavigation : public ::PathNavigation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk547318;
-    ::ll::UntypedStorage<1, 1> mUnk598e6c;
-    ::ll::UntypedStorage<4, 4> mUnk6af2a7;
-    ::ll::UntypedStorage<4, 4> mUnkf8a3ad;
-    ::ll::UntypedStorage<4, 4> mUnk495db7;
-    ::ll::UntypedStorage<4, 4> mUnk518298;
-    ::ll::UntypedStorage<4, 4> mUnk434fd2;
-    ::ll::UntypedStorage<4, 4> mUnkb145ae;
-    ::ll::UntypedStorage<4, 4> mUnk82ab9f;
-    ::ll::UntypedStorage<4, 4> mUnkc911ec;
-    ::ll::UntypedStorage<4, 4> mUnke4028d;
-    ::ll::UntypedStorage<4, 4> mUnk82861a;
+    ::ll::TypedStorage<1, 1, bool>  mAllowRiverFollow;
+    ::ll::TypedStorage<1, 1, bool>  mFollowingRiver;
+    ::ll::TypedStorage<4, 4, int>   mHeadingTicks;
+    ::ll::TypedStorage<4, 4, float> mCenteredThreshold;
+    ::ll::TypedStorage<4, 4, float> mLookAheadDistance;
+    ::ll::TypedStorage<4, 4, float> mMinDepth;
+    ::ll::TypedStorage<4, 4, float> mMaxDepth;
+    ::ll::TypedStorage<4, 4, float> mSteerDampening;
+    ::ll::TypedStorage<4, 4, float> mTerrainAvoidDistance;
+    ::ll::TypedStorage<4, 4, float> mXBodyRotation;
+    ::ll::TypedStorage<4, 4, float> mYBodyRotation;
+    ::ll::TypedStorage<4, 4, float> mZBodyRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WaterBoundPathNavigation& operator=(WaterBoundPathNavigation const&);
-    WaterBoundPathNavigation(WaterBoundPathNavigation const&);
-    WaterBoundPathNavigation();
 
 public:
     // virtual functions

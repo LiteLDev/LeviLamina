@@ -14,17 +14,11 @@ class RiseToLiquidLevelGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1f785d;
-    ::ll::UntypedStorage<4, 4> mUnk7f996e;
-    ::ll::UntypedStorage<4, 4> mUnkef95c2;
-    ::ll::UntypedStorage<4, 4> mUnk796a5b;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float>  mLiquidYOffset;
+    ::ll::TypedStorage<4, 4, float>  mRiseDelta;
+    ::ll::TypedStorage<4, 4, float>  mSinkDelta;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RiseToLiquidLevelGoal& operator=(RiseToLiquidLevelGoal const&);
-    RiseToLiquidLevelGoal(RiseToLiquidLevelGoal const&);
-    RiseToLiquidLevelGoal();
 
 public:
     // virtual functions

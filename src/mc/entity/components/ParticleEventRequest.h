@@ -89,12 +89,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnk849d31;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::std::variant<
+            ::ParticleEventRequest::BasicData,
+            ::ParticleEventRequest::MolangData,
+            ::ParticleEventRequest::TerrainData,
+            ::ParticleEventRequest::TerrainSlideData,
+            ::ParticleEventRequest::BreakingItemData>>
+        mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleEventRequest& operator=(ParticleEventRequest const&);
-    ParticleEventRequest(ParticleEventRequest const&);
-    ParticleEventRequest();
 };

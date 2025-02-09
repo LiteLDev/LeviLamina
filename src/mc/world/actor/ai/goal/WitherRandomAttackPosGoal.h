@@ -14,14 +14,8 @@ class WitherRandomAttackPosGoal : public ::RandomStrollGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7c6ae6;
+    ::ll::TypedStorage<1, 1, bool> mIsPathing;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WitherRandomAttackPosGoal& operator=(WitherRandomAttackPosGoal const&);
-    WitherRandomAttackPosGoal(WitherRandomAttackPosGoal const&);
-    WitherRandomAttackPosGoal();
 
 public:
     // virtual functions

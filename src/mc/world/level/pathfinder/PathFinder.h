@@ -14,10 +14,12 @@
 // clang-format off
 class AABB;
 class Actor;
+class BinaryHeap;
 class Block;
 class BlockPos;
 class BlockSource;
 class BreakBlocksComponent;
+class CachedChunkBlockSource;
 class IPathBlockSource;
 class NavigationComponent;
 class Path;
@@ -44,28 +46,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk1b481f;
-    ::ll::UntypedStorage<8, 32>  mUnk1a9e34;
-    ::ll::UntypedStorage<8, 64>  mUnk863704;
-    ::ll::UntypedStorage<8, 256> mUnkb761b0;
-    ::ll::UntypedStorage<1, 1>   mUnkd69a6c;
-    ::ll::UntypedStorage<1, 1>   mUnkce9cdc;
-    ::ll::UntypedStorage<1, 1>   mUnk89a671;
-    ::ll::UntypedStorage<1, 1>   mUnke6666a;
-    ::ll::UntypedStorage<1, 1>   mUnka84388;
-    ::ll::UntypedStorage<1, 1>   mUnk945f15;
-    ::ll::UntypedStorage<1, 1>   mUnkcf66c9;
-    ::ll::UntypedStorage<1, 1>   mUnk4842e4;
-    ::ll::UntypedStorage<1, 1>   mUnk682bf3;
-    ::ll::UntypedStorage<1, 1>   mUnk149e4d;
-    ::ll::UntypedStorage<1, 1>   mUnk90bdf5;
+    ::ll::TypedStorage<8, 48, ::CachedChunkBlockSource>                           mRegion;
+    ::ll::TypedStorage<8, 32, ::BinaryHeap>                                       mOpenSet;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::PathfinderNode>> mNodes;
+    ::ll::TypedStorage<8, 256, ::std::array<::PathfinderNode*, 32>>               mNeighbors;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanPassDoors;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanOpenDoors;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanOpenIronDoors;
+    ::ll::TypedStorage<1, 1, bool>                                                mAvoidWater;
+    ::ll::TypedStorage<1, 1, bool>                                                mAvoidDamageBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanFloat;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanPathOverLava;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsAmphibious;
+    ::ll::TypedStorage<1, 1, bool>                                                mAvoidPortals;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanBreach;
+    ::ll::TypedStorage<1, 1, bool>                                                mCanJump;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PathFinder& operator=(PathFinder const&);
-    PathFinder(PathFinder const&);
-    PathFinder();
 
 public:
     // member functions
