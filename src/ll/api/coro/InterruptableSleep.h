@@ -6,33 +6,32 @@
 
 namespace ll::coro {
 class InterruptableSleep {
-private:
     std::shared_ptr<data::CancellableCallback> sleeped;
     ExecutorRef                                exec;
 
-    class DurWaiter {
+    class DurAwaiter {
         InterruptableSleep& self;
         Duration            dur;
 
     public:
         template <class R, class P>
-        constexpr DurWaiter(std::chrono::duration<R, P> dur, InterruptableSleep& s)
+        constexpr DurAwaiter(std::chrono::duration<R, P> dur, InterruptableSleep& s)
         : self(s),
           dur(std::chrono::duration_cast<Duration>(dur)) {}
         template <class C, class D>
-        constexpr DurWaiter(std::chrono::time_point<C, D> time, InterruptableSleep& s)
-        : SleepWaiter(time - C::now(), s) {}
+        constexpr DurAwaiter(std::chrono::time_point<C, D> time, InterruptableSleep& s)
+        : SleepAwaiter(time - C::now(), s) {}
         constexpr void setExecutor(ExecutorRef ex) { self.exec = ex; }
         constexpr bool await_ready() const noexcept { return dur <= Duration{0}; }
         void await_suspend(std::coroutine_handle<> handle) { self.sleeped = self.exec->executeAfter(handle, dur); }
         constexpr void await_resume() const noexcept {}
     };
 
-    class EtnWaiter {
+    class EtnAwaiter {
         InterruptableSleep& self;
 
     public:
-        constexpr EtnWaiter(InterruptableSleep& s) : self(s) {}
+        constexpr EtnAwaiter(InterruptableSleep& s) : self(s) {}
         constexpr void setExecutor(ExecutorRef ex) { self.exec = ex; }
         constexpr bool await_ready() const noexcept { return false; }
         void           await_suspend(std::coroutine_handle<> handle) {
@@ -49,16 +48,16 @@ public:
     ~InterruptableSleep() = default;
 
     template <class R, class P>
-    DurWaiter sleepFor(std::chrono::duration<R, P> duration) {
+    DurAwaiter sleepFor(std::chrono::duration<R, P> duration) {
         return {duration, *this};
     }
 
     template <class C, class D>
-    DurWaiter sleepUntil(std::chrono::time_point<C, D> time) {
+    DurAwaiter sleepUntil(std::chrono::time_point<C, D> time) {
         return {time, *this};
     }
 
-    EtnWaiter sleep() { return {*this}; }
+    EtnAwaiter sleep() { return {*this}; }
 
     bool interrupt(bool inplace = false) {
         if (auto ptr = std::move(sleeped)) {

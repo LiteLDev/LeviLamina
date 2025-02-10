@@ -4,26 +4,26 @@
 
 namespace ll::coro {
 template <typename T>
-struct CoroTaskWaiter {
+struct CoroTaskAwaiter {
     using Handle = std::coroutine_handle<CoroPromise<T>>;
 
     using ExpectedResult = typename CoroPromise<T>::ExpectedResult;
 
     Handle handle;
 
-    CoroTaskWaiter(CoroTaskWaiter const& other)            = delete;
-    CoroTaskWaiter& operator=(CoroTaskWaiter const& other) = delete;
+    CoroTaskAwaiter(CoroTaskAwaiter const& other)            = delete;
+    CoroTaskAwaiter& operator=(CoroTaskAwaiter const& other) = delete;
 
-    constexpr CoroTaskWaiter(CoroTaskWaiter&& other) noexcept : handle(std::exchange(other.handle, nullptr)) {}
+    constexpr CoroTaskAwaiter(CoroTaskAwaiter&& other) noexcept : handle(std::exchange(other.handle, nullptr)) {}
 
-    constexpr CoroTaskWaiter& operator=(CoroTaskWaiter&& other) noexcept {
+    constexpr CoroTaskAwaiter& operator=(CoroTaskAwaiter&& other) noexcept {
         std::swap(handle, other.handle);
         return *this;
     }
 
-    constexpr CoroTaskWaiter(Handle h) noexcept : handle(h) {}
+    constexpr CoroTaskAwaiter(Handle h) noexcept : handle(h) {}
 
-    constexpr ~CoroTaskWaiter() {
+    constexpr ~CoroTaskAwaiter() {
         if (handle) {
             std::exchange(handle, nullptr).destroy();
         }

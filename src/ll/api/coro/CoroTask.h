@@ -4,7 +4,7 @@
 
 #include "ll/api/coro/Collect.h"
 #include "ll/api/coro/CoroPromise.h"
-#include "ll/api/coro/CoroTaskWaiter.h"
+#include "ll/api/coro/CoroTaskAwaiter.h"
 
 namespace ll::coro {
 
@@ -25,22 +25,22 @@ private:
 
     constexpr explicit CoroTask(Handle h) noexcept : handle(h) {}
 
-    using WaiterBase = CoroTaskWaiter<T>;
+    using AwaiterBase = CoroTaskAwaiter<T>;
 
 public:
-    struct ExpectedAwaiter : public WaiterBase {
-        constexpr void setExecutor(ExecutorRef ex) { WaiterBase::handle.promise().exec = ex; }
-        constexpr ExpectedAwaiter(Handle h) : WaiterBase(h) {}
-        constexpr ExpectedResult await_resume() noexcept { return WaiterBase::getResult(); }
+    struct ExpectedAwaiter : public AwaiterBase {
+        constexpr void setExecutor(ExecutorRef ex) { AwaiterBase::handle.promise().exec = ex; }
+        constexpr ExpectedAwaiter(Handle h) : AwaiterBase(h) {}
+        constexpr ExpectedResult await_resume() noexcept { return AwaiterBase::getResult(); }
     };
 
-    struct ValueAwaiter : public WaiterBase {
-        constexpr ValueAwaiter(Handle h) : WaiterBase(h) {}
+    struct ValueAwaiter : public AwaiterBase {
+        constexpr ValueAwaiter(Handle h) : AwaiterBase(h) {}
         constexpr T await_resume() {
             if constexpr (std::is_same_v<T, ExpectedResult>) {
-                return WaiterBase::getResult();
+                return AwaiterBase::getResult();
             } else {
-                return WaiterBase::getResult().value();
+                return AwaiterBase::getResult().value();
             }
         }
     };

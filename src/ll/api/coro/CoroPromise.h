@@ -5,7 +5,7 @@
 #include "ll/api/Expected.h"
 #include "ll/api/base/Concepts.h"
 #include "ll/api/coro/ForwardAwaiter.h"
-#include "ll/api/coro/SleepWaiter.h"
+#include "ll/api/coro/SleepAwaiter.h"
 #include "ll/api/coro/YieldAwaiter.h"
 
 namespace ll::coro {
@@ -44,11 +44,11 @@ struct CoroPromiseBase {
     constexpr YieldAwaiter await_transform(Yield const&) { return {exec}; }
 
     template <class R, class P>
-    constexpr SleepWaiter await_transform(std::chrono::duration<R, P> const& dur) {
+    constexpr SleepAwaiter await_transform(std::chrono::duration<R, P> const& dur) {
         return {dur, exec};
     }
     template <class C, class D>
-    constexpr SleepWaiter await_transform(std::chrono::time_point<C, D> const& time) {
+    constexpr SleepAwaiter await_transform(std::chrono::time_point<C, D> const& time) {
         return {time, exec};
     }
 };
