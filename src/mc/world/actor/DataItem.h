@@ -48,13 +48,13 @@ public:
     }
 
 protected:
-    constexpr DataItem(::DataItemType type, ::ActorDataIDs id) : mType(type), mId(id) {}
+    constexpr DataItem(::DataItemType type, ID id) : mType(type), mId(id) {}
 
 public:
     // member variables
     // NOLINTBEGIN
     ::DataItemType mType;
-    ::ActorDataIDs mId;
+    ID             mId;
     // NOLINTEND
 
 public:
@@ -95,6 +95,8 @@ class DataItem2 : public DataItem {
 public:
     T mValue;
 
+    [[nodiscard]] bool isDataEqual(::DataItem const& r) const override;
+
     [[nodiscard]] std::unique_ptr<DataItem> clone() const override;
 
     [[nodiscard]] constexpr T const& value() const { return mValue; }
@@ -116,7 +118,7 @@ public:
     }
     template <class... Args>
     constexpr explicit DataItem2(ushort key, Args&&... args)
-    : DataItem((::DataItemType)DataItem::TypeList::index<T>, (::ActorDataIDs)key),
+    : DataItem((::DataItemType)DataItem::TypeList::index<T>, key),
       mValue(std::forward<Args>(args)...) {}
 };
 
