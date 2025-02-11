@@ -23,12 +23,12 @@ public:
         requires(FloatN::size() == 3)
     {
         return {
-            static_cast<T const*>(this)->template get<first_type>(1) * b.template get<first_type>(2)
-                - static_cast<T const*>(this)->template get<first_type>(2) * b.template get<first_type>(1),
-            static_cast<T const*>(this)->template get<first_type>(2) * b.template get<first_type>(0)
-                - static_cast<T const*>(this)->template get<first_type>(0) * b.template get<first_type>(2),
-            static_cast<T const*>(this)->template get<first_type>(0) * b.template get<first_type>(1)
-                - static_cast<T const*>(this)->template get<first_type>(1) * b.template get<first_type>(0)
+            static_cast<T const*>(this)->template get<first_type, 1>() * b.template get<first_type, 2>()
+                - static_cast<T const*>(this)->template get<first_type, 2>() * b.template get<first_type, 1>(),
+            static_cast<T const*>(this)->template get<first_type, 2>() * b.template get<first_type, 0>()
+                - static_cast<T const*>(this)->template get<first_type, 0>() * b.template get<first_type, 2>(),
+            static_cast<T const*>(this)->template get<first_type, 0>() * b.template get<first_type, 1>()
+                - static_cast<T const*>(this)->template get<first_type, 1>() * b.template get<first_type, 0>()
         };
     }
 };
