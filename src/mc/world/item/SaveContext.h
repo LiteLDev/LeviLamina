@@ -19,8 +19,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::SaveContext::SaveUseCase> mSaveUseCase;
+    ::SaveContext::SaveUseCase mSaveUseCase{SaveUseCase::Clone};
     // NOLINTEND
+
+    constexpr SaveContext(SaveUseCase saveUseCase = SaveUseCase::Clone) : mSaveUseCase{saveUseCase} {}
 
 public:
     // member functions
