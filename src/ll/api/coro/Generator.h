@@ -82,8 +82,6 @@ struct Generator {
 
         [[nodiscard]] bool operator==(iterator const& other) const noexcept { return handle == other.handle; }
 
-        [[nodiscard]] bool operator!=(iterator const& other) const noexcept { return !(*this == other); }
-
         [[nodiscard]] reference operator*() const noexcept { return static_cast<reference>(*handle.promise().ptr); }
 
         [[nodiscard]] pointer operator->() const noexcept { return handle.promise().ptr; }
