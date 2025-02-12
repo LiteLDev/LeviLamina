@@ -11,14 +11,9 @@
 class IFeature;
 
 template <>
-class OwnerPtr<IFeature> : public OwnerStorageFeature {
-    using OwnerStorageFeature::OwnerStorageFeature;
-};
-template <>
-class StackRefResult<IFeature> : public StackResultStorageFeature {
-    using StackResultStorageFeature::StackResultStorageFeature;
-};
-template <>
-class WeakRef<IFeature> : public WeakStorageFeature {
-    using WeakStorageFeature::WeakStorageFeature;
+struct GameRefs<IFeature> {
+    using OwnerStorage       = OwnerStorageFeature;
+    using StackResultStorage = StackResultStorageFeature;
+    using WeakStorage        = WeakStorageFeature;
+    using StackRef           = IFeature;
 };

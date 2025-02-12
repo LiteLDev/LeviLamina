@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/ecs/gamerefs_entity/EntityRefTraits.h"
+#include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
@@ -11,21 +11,10 @@
 class EntityContext;
 // clang-format on
 
-class WeakEntityRef {
+class WeakEntityRef : public ::WeakRef<::EntityContext> {
 public:
-    template <class Entity = Actor, bool IncludeRemoved = false>
-    [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
-        return mWeakEntity.tryUnwrap<Entity, IncludeRemoved>();
-    }
-
     WeakEntityRef(::WeakEntityRef&&)      = default;
     WeakEntityRef(::WeakEntityRef const&) = default;
-
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::WeakRef<::EntityContext> mWeakEntity;
-    // NOLINTEND
 
 public:
     // member functions

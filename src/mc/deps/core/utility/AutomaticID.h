@@ -15,17 +15,13 @@ public:
 
     [[nodiscard]] constexpr operator T() const { return id; }
 
-    [[nodiscard]] inline bool operator==(AutomaticID const& other) const
-        requires(requires { id == other.id; })
-    {
-        return id == other.id;
-    }
+    [[nodiscard]] inline bool operator==(AutomaticID const& other) const { return id == other.id; }
 
-    [[nodiscard]] inline bool operator==(T const& other) const
-        requires(requires { id == other; })
-    {
-        return id == other;
-    }
+    [[nodiscard]] inline bool operator==(T const& other) const { return id == other; }
+
+    [[nodiscard]] inline std::strong_ordering operator<=>(AutomaticID const& other) const { return id <=> other.id; }
+
+    [[nodiscard]] inline std::strong_ordering operator<=>(T const& other) const { return id <=> other; }
 };
 
 namespace std {

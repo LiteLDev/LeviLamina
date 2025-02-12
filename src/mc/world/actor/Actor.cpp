@@ -37,11 +37,11 @@ class EntityContext const& Actor::getEntityContext() const { return *mEntityCont
 void                       Actor::refresh() { _sendDirtyActorData(); }
 
 optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> dimId) const {
-    WeakRef<Dimension> dim{};
+    StackRefResult<Dimension> dim{};
     if (dimId) {
-        dim = const_cast<Actor*>(this)->getLevel().getOrCreateDimension(*dimId);
+        dim = const_cast<Actor*>(this)->getLevel().getOrCreateDimension(*dimId).lock();
     } else {
-        dim = getDimension().getWeakRef();
+        dim = getDimension().getWeakRef().lock();
     }
     if (!dim) {
         return nullptr;

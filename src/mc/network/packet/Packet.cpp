@@ -14,7 +14,7 @@ void Packet::sendTo(Player const& player) const {
 
 void Packet::sendTo(BlockPos const& pos, DimensionType type, optional_ref<Player const> except) const {
     ll::service::getLevel().transform([&](auto& level) {
-        if (auto ptr = level.getDimension(type); ptr) {
+        if (auto ptr = level.getDimension(type).lock(); ptr) {
             ptr->sendPacketForPosition(pos, *this, except.as_ptr());
         }
         return true;

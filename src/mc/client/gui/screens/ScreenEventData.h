@@ -28,6 +28,9 @@ struct ToggleChangeEventData;
 
 union ScreenEventData {
 public:
+    ~ScreenEventData() {}
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::ButtonScreenEventData>                button;

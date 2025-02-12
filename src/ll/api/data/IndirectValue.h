@@ -175,10 +175,6 @@ template <class T, class C, class D>
 [[nodiscard]] constexpr bool operator==(IndirectValue<T, C, D> const& lhs, std::nullptr_t) {
     return lhs.get() == nullptr;
 }
-template <class T, class C, class D>
-[[nodiscard]] constexpr auto operator<=>(IndirectValue<T, C, D> const& lhs, std::nullptr_t) {
-    return lhs.get() <=> nullptr;
-}
 } // namespace ll::data
 
 namespace std {

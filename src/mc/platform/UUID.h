@@ -26,6 +26,13 @@ public:
 
     [[nodiscard]] constexpr bool operator==(UUID const& other) const { return (a == other.a) && (b == other.b); }
 
+    [[nodiscard]] constexpr std::strong_ordering operator<=>(UUID const& other) const {
+        if (a != other.a) {
+            return a <=> other.a;
+        }
+        return b <=> other.b;
+    }
+
 public:
     // member functions
     // NOLINTBEGIN

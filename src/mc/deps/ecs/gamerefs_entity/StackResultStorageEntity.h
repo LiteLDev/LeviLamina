@@ -12,28 +12,15 @@ class WeakStorageEntity;
 
 class Actor;
 
-class StackResultStorageEntity {
+class StackResultStorageEntity : public ::std::optional<::EntityContext> {
 public:
     template <class Entity = Actor, bool IncludeRemoved = false>
     [[nodiscard]] optional_ref<Entity> tryUnwrap() const {
         if (*this) {
-            return Entity::tryGetFromEntity(const_cast<EntityContext&>(*mContext), IncludeRemoved);
+            return Entity::tryGetFromEntity(const_cast<EntityContext&>(**this), IncludeRemoved);
         }
         return nullptr;
     }
-
-    [[nodiscard]] inline operator bool() const noexcept { return mContext.has_value(); }
-
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::std::optional<::EntityContext> mContext;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StackResultStorageEntity& operator=(StackResultStorageEntity const&);
-    StackResultStorageEntity(StackResultStorageEntity const&);
 
 public:
     // member functions
