@@ -30,7 +30,7 @@ add_requires("rapidjson v1.1.0")
 add_requires("type_safe v0.2.4")
 add_requires("mimalloc v2.1.7")
 add_requires("cpr 1.11.1", {configs = {ssl = true}})
-add_requires("parallel-hashmap v1.3.12")
+add_requires("parallel-hashmap v2.0.0")
 add_requires("concurrentqueue v1.0.4")
 
 -- Dependencies from levimc-repo.
