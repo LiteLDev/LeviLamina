@@ -49,7 +49,7 @@ struct function_ref_base {
     };
 
     template <class T>
-    constexpr static auto get(storage obj) {
+    static constexpr auto get(storage obj) {
         if constexpr (std::is_const_v<T>) return static_cast<T*>(obj.cp_);
         else if constexpr (std::is_object_v<T>) return static_cast<T*>(obj.p_);
         else return reinterpret_cast<T*>(obj.fp_);
