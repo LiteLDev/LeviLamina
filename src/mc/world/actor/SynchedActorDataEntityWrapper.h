@@ -30,6 +30,11 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                      mEntityContext;
     // NOLINTEND
 
+    template <typename T>
+    MCAPI void define(ushort, T const&);
+    template <typename T>
+    MCAPI void set(ushort, T const&);
+
 public:
     // member functions
     // NOLINTBEGIN
