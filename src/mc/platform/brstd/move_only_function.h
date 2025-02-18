@@ -22,5 +22,6 @@ public:
         *this = move_only_function{std::forward<F>(f)};
         return *this;
     }
+    friend void swap(move_only_function& f1, move_only_function& f2) noexcept { f1.swap(f2); }
 };
 } // namespace brstd

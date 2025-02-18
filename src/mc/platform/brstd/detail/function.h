@@ -7,7 +7,7 @@
 
 namespace brstd::detail::function {
 
-constexpr size_t embedded_target_size  = sizeof(void*) * 8 - sizeof(void*);
+constexpr size_t embedded_target_size = sizeof(void*) * 8 - sizeof(void*);
 
 template <DerivedType Type, class Return, bool Noexcept, class... Xs>
 class function_base_impl {
@@ -200,6 +200,7 @@ public:
             this->get_vtable().destroy(this->mStorage);
             this->mStorage.vfptr = nullptr;
         }
+        return *this;
     }
 
     [[nodiscard]] friend bool operator==(function_base const& self, nullptr_t) noexcept {
@@ -234,6 +235,7 @@ protected:
                 this->construct_empty();
             }
         }
+        return *this;
     }
 };
 

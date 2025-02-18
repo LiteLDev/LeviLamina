@@ -21,5 +21,6 @@ public:
         *this = copyable_function{std::forward<F>(f)};
         return *this;
     }
+    friend void swap(copyable_function& f1, copyable_function& f2) noexcept { f1.swap(f2); }
 };
 } // namespace brstd
