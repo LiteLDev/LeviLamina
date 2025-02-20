@@ -17,6 +17,8 @@ public:
     ::ll::TypedStorage<2, 2, ushort> systemIndex;
     // NOLINTEND
 
+    LLNDAPI bool operator==(SystemAddress const& other) const;
+
 public:
     // member functions
     // NOLINTBEGIN

@@ -70,9 +70,6 @@ public:
         getLogger().info(str);
     }
 
-    virtual void logCurrentState() try { mi_stats_print_out(miOutput, nullptr); } catch (...) {
-    }
-
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) try {
         return mi_realloc(ptr, newSize);
     } catch (...) {
@@ -101,26 +98,6 @@ public:
     virtual uint64 getUsableSize(void* ptr) try { return ptr ? _msize(ptr) : 0ull; } catch (...) {
         return 0ull;
     }
-
-    virtual void logCurrentState() try {
-        HEAP_SUMMARY summary{.cb = sizeof(HEAP_SUMMARY)};
-        HeapSummary(GetProcessHeap(), 0, &summary);
-        PROCESS_MEMORY_COUNTERS_EX info{.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX)};
-        GetProcessMemoryInfo(GetCurrentProcess(), (PPROCESS_MEMORY_COUNTERS)&info, info.cb);
-        // clang-format off
-        auto& logger= getLogger();
-        logger.info("heap stats: {:>12} {:>12}", "peak", "current");
-        logger.info("  reserved: {:>12} {:>12}", memStr(summary.cbMaxReserve), memStr(summary.cbReserved));
-        logger.info(" committed: {:>12} {:>12}", "", memStr(summary.cbCommitted));
-        logger.info(" allocated: {:>12} {:>12}", "", memStr(summary.cbAllocated));
-        logger.info(" pagefault: {:>12} {:>8}", "", info.PageFaultCount);
-        logger.info("workingset: {:>12} {:>12}", memStr(info.PeakWorkingSetSize), memStr(info.WorkingSetSize));
-        logger.info(" pagedpool: {:>12} {:>12}", memStr(info.QuotaPeakPagedPoolUsage), memStr(info.QuotaPagedPoolUsage));
-        logger.info("  nonpaged: {:>12} {:>12}", memStr(info.QuotaPeakNonPagedPoolUsage), memStr(info.QuotaNonPagedPoolUsage));
-        logger.info("  pagefile: {:>12} {:>12}", memStr(info.PeakPagefileUsage), memStr(info.PagefileUsage));
-        logger.info("   private: {:>12} {:>12}", "", memStr(info.PrivateUsage));
-        // clang-format on
-    } catch (...) {}
 
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) try { return realloc(ptr, newSize); } catch (...) {
         return nullptr;
@@ -181,29 +158,6 @@ public:
     virtual void alignedRelease(void* ptr) {
         getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         T::alignedRelease(ptr);
-    }
-
-    virtual void logCurrentState() {
-        T::logCurrentState();
-
-        DenseMap<std::string, MemSize> res;
-
-        for (auto& [fn, mem] : getDebugMap()) {
-            auto name = sys_utils::getModuleFileName(sys_utils::getModuleHandle(fn));
-
-            res[name].a += mem.a;
-            res[name].f += mem.f;
-        }
-
-        for (auto& [module, mem] : res) {
-            getLogger().info(
-                " {:<32} alloc: {:>12}, free: {:>12}, curr: {:>12}",
-                module,
-                memStr(mem.a),
-                memStr(mem.f),
-                memStr(abs((int64)mem.f - (int64)mem.a))
-            );
-        }
     }
 
     virtual void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) {

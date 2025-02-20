@@ -251,6 +251,8 @@ public:
 
         Symbol() = default;
 
+        Symbol(int val) : mValue(val) {}
+
         // not trivially copyable
         Symbol(Symbol const& other) : mValue(other.mValue) {}
 
@@ -660,39 +662,38 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<void(::Packet const&)>>                            mNetworkUpdateCallback;
-    ::ll::TypedStorage<8, 64, ::std::function<int(bool&, ::std::string const&, ::Actor const&)>> mGetScoreForObjective;
-    ::ll::TypedStorage<1, 1, bool>                                                               mIsEduMode;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::ParseRule>>                       mRules;
-    ::ll::TypedStorage<8, 16, ::std::map<uint, ::CommandRegistry::ParseTable>>                   mParseTables;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::OptionalParameterChain>>          mOptionals;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                      mEnumValues;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Enum>>                            mEnums;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                            mChainedSubcommandValues;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::ChainedSubcommand>>     mChainedSubcommands;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Factorization>>         mFactorizations;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                            mPostfixes;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint>>                         mEnumLookup;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint64>>                       mEnumValueLookup;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint>>                         mChainedSubcommandLookup;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint64>>                       mChainedSubcommandValueLookup;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>>                mCommandSymbols;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::CommandRegistry::Signature>> mSignatures;
-    ::ll::TypedStorage<8, 16, ::std::map<::Bedrock::typeid_t<::CommandRegistry>, int>> mTypeLookup;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>>                mAliases;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SemanticConstraint>>                     mSemanticConstraints;
-    ::ll::TypedStorage<8, 16, ::std::map<::SemanticConstraint, uchar>>                 mSemanticConstraintLookup;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::ConstrainedValue>>      mConstrainedValues;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::pair<uint64, uint>, uint>>             mConstrainedValueLookup;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::SoftEnum>>              mSoftEnums;
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, uint>>                         mSoftEnumLookup;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::RegistryState>>         mStateStack;
-    ::ll::TypedStorage<4, 100, ::CommandRegistry::ParamSymbols>                        mArgs;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>                               mSkipOnEpsAutocompleteSymbols;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>                               mAllowEmptySymbols;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>>
-                                                                   mCommandOverrideFunctor;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRunStats>> mCommandRunStats;
+    ::std::function<void(::Packet const&)>                            mNetworkUpdateCallback;
+    ScoreboardScoreAccessor                                           mGetScoreForObjective;
+    bool  mIsEduMode;
+    ::std::vector<::CommandRegistry::ParseRule>              mRules;
+    ::std::map<uint, ::CommandRegistry::ParseTable>          mParseTables;
+    ::std::vector<::CommandRegistry::OptionalParameterChain> mOptionals;
+    ::std::vector<::std::string>                             mEnumValues;
+    ::std::vector<::CommandRegistry::Enum>                   mEnums;
+    ::std::vector<::std::string>                             mChainedSubcommandValues;
+    ::std::vector<::CommandRegistry::ChainedSubcommand>      mChainedSubcommands;
+    ::std::vector<::CommandRegistry::Factorization>          mFactorizations;
+    ::std::vector<::std::string>                             mPostfixes;
+    ::std::map<::std::string, uint>                          mEnumLookup;
+    ::std::map<::std::string, uint64>                        mEnumValueLookup;
+    ::std::map<::std::string, uint>                          mChainedSubcommandLookup;
+    ::std::map<::std::string, uint64>                        mChainedSubcommandValueLookup;
+    ::std::vector<::CommandRegistry::Symbol>                 mCommandSymbols;
+    ::std::map<::std::string, ::CommandRegistry::Signature>  mSignatures;
+    ::std::map<::Bedrock::typeid_t<::CommandRegistry>, int>  mTypeLookup;
+    ::std::map<::std::string, ::std::string>                 mAliases;
+    ::std::vector<::SemanticConstraint>                      mSemanticConstraints;
+    ::std::map<::SemanticConstraint, uchar>                  mSemanticConstraintLookup;
+    ::std::vector<::CommandRegistry::ConstrainedValue>       mConstrainedValues;
+    ::std::map<::std::pair<uint64, uint>, uint>              mConstrainedValueLookup;
+    ::std::vector<::CommandRegistry::SoftEnum>               mSoftEnums;
+    ::std::map<::std::string, uint>                          mSoftEnumLookup;
+    ::std::vector<::CommandRegistry::RegistryState>          mStateStack;
+    ::CommandRegistry::ParamSymbols                          mArgs;
+    ::std::unordered_set<int>                                mSkipOnEpsAutocompleteSymbols;
+    ::std::unordered_set<int>                                mAllowEmptySymbols;
+    CommandOverrideFunctor                                   mCommandOverrideFunctor;
+    ::std::unique_ptr<::CommandRunStats>                     mCommandRunStats;
     // NOLINTEND
 
     template <class T>
@@ -916,9 +917,7 @@ public:
 
     MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
 
-    MCAPI void setCommandRegistrationOverride(
-        ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)> functor
-    );
+    MCAPI void setCommandRegistrationOverride(CommandOverrideFunctor functor);
 
     MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 

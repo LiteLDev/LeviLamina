@@ -9,7 +9,7 @@ void ResourcePackRepository::addCustomResourcePackPath(std::filesystem::path con
 
     auto& DirectoryPackSource = getPackSourceFactory().createDirectoryPackSource(path, type, PackOrigin::Dev, false);
 
-    mPackSource.get()->addPackSource(&DirectoryPackSource);
+    mPackSource.get()->mPackSources->push_back(&DirectoryPackSource);
 
     refreshPacks();
 }

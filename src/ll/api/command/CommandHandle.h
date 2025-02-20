@@ -40,7 +40,5 @@ public:
     LLNDAPI std::vector<std::string> alias() const;
 
     LLAPI CommandHandle& alias(std::string_view alias);
-
-    LLAPI CommandHandle& finalizeChainedSubcommandOverloadRules();
 };
 } // namespace ll::command

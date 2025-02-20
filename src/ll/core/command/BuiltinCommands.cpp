@@ -23,7 +23,6 @@ LL_TYPE_STATIC_HOOK(
     origin(minecraft, app, level, levelStorage, dedicatedServer, allowListFile, scriptSettings);
     registerTpdimCommand();
     registerVersionCommand();
-    registerMemstatsCommand();
     registerCrashCommand();
     registerModManageCommand();
 }

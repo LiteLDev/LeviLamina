@@ -36,6 +36,9 @@ public:
     MCTAPI void writeType(class NetworkItemInstanceDescriptor const&, char const*, char const*);
     MCTAPI void writeType(struct PropertySyncData const&, char const*, char const*);
 
+    BinaryStream() : ReadOnlyBinaryStream({}, true), mBuffer(mOwnedBuffer) {}
+    BinaryStream(std::string& buffer) : ReadOnlyBinaryStream(buffer, false), mBuffer(buffer) {}
+
 public:
     // member variables
     // NOLINTBEGIN

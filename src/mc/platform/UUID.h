@@ -20,7 +20,7 @@ public:
         return {ll::hash_utils::doHash(sv), ll::hash_utils::doHash2(sv)};
     }
 
-    [[nodiscard]] inline explicit operator bool() const { return !isEmpty(); }
+    [[nodiscard]] inline explicit operator bool() const { return a != 0 && b != 0; }
 
     [[nodiscard]] inline explicit operator std::string() const { return asString(); }
 
@@ -37,10 +37,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string asString() const;
-
-    MCAPI bool operator!=(::mce::UUID const& rhs) const;
-
-    MCFOLD bool operator==(::mce::UUID const& rhs) const;
     // NOLINTEND
 
 public:

@@ -131,9 +131,9 @@ public:
     LLNDAPI float getPosDeltaPerSecLength() const;
 
     LLAPI bool hurtByCause(
-        float               damage,
-        ActorDamageCause    cause    = ActorDamageCause::Override,
-        optional_ref<Actor> attacker = std::nullopt
+        float                                   damage,
+        ::SharedTypes::Legacy::ActorDamageCause cause    = ::SharedTypes::Legacy::ActorDamageCause::Override,
+        optional_ref<Actor>                     attacker = std::nullopt
     );
 
     LLNDAPI class HitResult traceRay(

@@ -1,6 +1,7 @@
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/network/LoopbackPacketSender.h"
+#include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/server/ServerLevel.h"
@@ -33,7 +34,7 @@ void Packet::sendToClient(NetworkIdentifier const& id, SubClientId clientId) con
 }
 
 void Packet::sendToClient(NetworkIdentifierWithSubId const& identifierWithSubId) const {
-    sendToClient(*identifierWithSubId.id, identifierWithSubId.subClientId);
+    sendToClient(identifierWithSubId.id, identifierWithSubId.subClientId);
 }
 
 void Packet::sendToClients() const {

@@ -93,8 +93,4 @@ std::vector<std::string> CommandHandle::alias() const {
     std::lock_guard lock{impl->mutex};
     return impl->registrar.getRegistry().getAliases(impl->signature.name);
 }
-CommandHandle& CommandHandle::finalizeChainedSubcommandOverloadRules() {
-    impl->registrar.getRegistry().finalizeChainedSubcommandOverloadRules(impl->signature.name.c_str());
-    return *this;
-}
 } // namespace ll::command

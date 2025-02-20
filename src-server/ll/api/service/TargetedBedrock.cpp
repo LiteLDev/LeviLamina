@@ -3,7 +3,6 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/common/IMinecraftApp.h"
-#include "mc/deps/ecs/systems/EntitySystemsCollection.h"
 #include "mc/deps/raknet/RakPeer.h"
 #include "mc/deps/raknet/RakPeerInterface.h"
 #include "mc/network/NetworkSystem.h"

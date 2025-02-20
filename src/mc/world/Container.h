@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/safety/RedactableString.h"
 #include "mc/world/ContainerIterator.h"
 #include "mc/world/ContainerOwner.h"
 
@@ -63,7 +64,7 @@ public:
     using ItemStackNetIdChangedCallback = ::std::function<void(int, ::ItemStack const&)>;
 
 public:
-    [[nodiscard]] std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
+    [[nodiscard]] std::string const& getTypeName() const { return containerTypeMap().at(mContainerType); }
 
     LLNDAPI optional_ref<ItemStack> getItemNonConst(int index);
 

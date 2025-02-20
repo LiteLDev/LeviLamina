@@ -27,7 +27,7 @@ class OverloadData {
     std::unique_ptr<Impl> impl;
 
 protected:
-    LLNDAPI CommandRegistry::Overload::AllocFunction getFactory();
+    LLNDAPI CommandRegistry::Overload::AllocFunction const& getFactory();
     LLNDAPI std::vector<CommandParameterData>& getParams();
     LLNDAPI CommandHandle&                     getHandle();
     LLNDAPI std::weak_ptr<mod::Mod>& getMod();
@@ -54,7 +54,7 @@ protected:
 
     LLAPI CommandParameterData& addTextImpl(std::string_view text, int offset);
 
-    LLAPI void setFactory(std::function<std::unique_ptr<::Command>()>&& fn);
+    LLAPI void setFactory(CommandRegistry::Overload::AllocFunction&& fn);
 
 public:
     LLAPI ~OverloadData();

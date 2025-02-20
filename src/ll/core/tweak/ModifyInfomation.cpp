@@ -7,9 +7,9 @@
 #include "ll/core/Config.h"
 
 #include "mc/common/Globals.h"
+#include "mc/deps/core/debug/BedrockLog.h"
 #include "mc/deps/core/debug/bedrock_log/LogDetails.h"
 #include "mc/deps/raknet/RakPeer.h"
-#include "mc/diagnostics/Interface.h"
 #include "mc/world/level/storage/DBStorage.h"
 
 namespace ll {
@@ -18,7 +18,7 @@ namespace ll {
 LL_STATIC_HOOK(
     DiagnosticsLogHook,
     HookPriority::Normal,
-    Bedrock::Diagnostics::Interface::log,
+    BedrockLog::log_va,
     void,
     ::BedrockLog::LogCategory category,
     std::bitset<3>            channelMask,

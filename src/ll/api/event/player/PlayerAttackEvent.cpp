@@ -13,8 +13,8 @@ void PlayerAttackEvent::serialize(CompoundTag& nbt) const {
     nbt["cause"]  = magic_enum::enum_name(cause());
 }
 
-Actor&                  PlayerAttackEvent::target() const { return mTarget; }
-ActorDamageCause const& PlayerAttackEvent::cause() const { return mCause; }
+Actor&                                         PlayerAttackEvent::target() const { return mTarget; }
+::SharedTypes::Legacy::ActorDamageCause const& PlayerAttackEvent::cause() const { return mCause; }
 
 
 LL_TYPE_INSTANCE_HOOK(
@@ -23,9 +23,9 @@ LL_TYPE_INSTANCE_HOOK(
     Player,
     &Player::_attack,
     bool,
-    Actor&                  ac,
-    ActorDamageCause const& cause,
-    bool                    doPredictiveSound
+    Actor&                                         ac,
+    ::SharedTypes::Legacy::ActorDamageCause const& cause,
+    bool                                           doPredictiveSound
 ) {
     auto ev = PlayerAttackEvent(*this, ac, cause);
     EventBus::getInstance().publish(ev);

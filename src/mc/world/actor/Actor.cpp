@@ -79,7 +79,7 @@ void Actor::stopFire() { OnFireSystem::stopFire(*this); }
 
 float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getPosDelta().length() * 20.0); }
 
-bool Actor::hurtByCause(float damage, ActorDamageCause cause, optional_ref<Actor> attacker) {
+bool Actor::hurtByCause(float damage, ::SharedTypes::Legacy::ActorDamageCause cause, optional_ref<Actor> attacker) {
     if (attacker) {
         return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, true, false);
     }

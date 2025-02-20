@@ -32,7 +32,7 @@ LL_TYPE_INSTANCE_HOOK(
     PlayerActionPacket const& packet
 ) {
     if (auto settings = ll::service::getPropertiesSettings(); settings) {
-        auto& mode = settings->getPlayerMovementSettings().AuthorityMode;
+        auto& mode = settings->mPlayerMovementSettings->AuthorityMode;
         if (mode == ServerAuthMovementMode::LegacyClientAuthoritativeV1) {
             if (packet.mAction == PlayerActionType::StartJump) {
                 if (auto player = thisFor<NetEventCallback>()->_getServerPlayer(source, packet.mClientSubId); player) {
@@ -75,14 +75,14 @@ LL_STATIC_HOOK(
         isInWater,
         playerMovementSettingsComponent
     );
-    if (strictEntityContext.isNull()) return;
+    if (strictEntityContext.mEntity->isNull()) return;
     if (auto level = ll::service::getLevel(); level) {
         if (Actor* actor = Actor::tryGetFromEntity(strictEntityContext, *level->getEntityRegistry(), false); actor) {
             if (actor->isPlayer()) {
                 auto& inputstate = input.mUnk705c07.as<MoveInputState>();
                 auto& pkt        = serverPlayerCurrentMovementComponent.mUnkc49fdc.as<PlayerAuthInputPacket>();
-                if (pkt.getInput(::PlayerAuthInputPacket::InputData::StartJumping) && inputstate.mUnk4c2da7.as<bool>()
-                    && input.mUnkdc47ce.as<bool>()) {
+                if (pkt.mInputData.get()[(size_t)::PlayerAuthInputPacket::InputData::StartJumping]
+                    && inputstate.mUnk4c2da7.as<bool>() && input.mUnkdc47ce.as<bool>()) {
                     EventBus::getInstance().publish(PlayerJumpEvent(static_cast<ServerPlayer&>(*actor)));
                 }
             }

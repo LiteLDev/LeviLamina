@@ -62,11 +62,14 @@ void registerTpdimCommand() {
                 return;
             }
             self->teleport(pos, param.dimension);
-            output.success("Teleported {0} to {1} {2}"_tr(
-                origin.getName(),
-                VanillaDimensions::toString(param.dimension),
-                pos.toString()
-            ));
+            auto&       dimNameMap = VanillaDimensions::DimensionMap();
+            std::string dimName;
+            if (dimNameMap.contains(param.dimension)) {
+                dimName = dimNameMap.at(param.dimension);
+            } else {
+                dimName = fmt::format("dimension.dimensionName{}", param.dimension.id);
+            }
+            output.success("Teleported {0} to {1} {2}"_tr(origin.getName(), dimName, pos.toString()));
         });
     cmd.overload<TpTarget>()
         .required("victim")

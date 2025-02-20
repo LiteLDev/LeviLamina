@@ -11,14 +11,14 @@ class RedactableString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                  mUnredactedString;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mRedactedString;
+    ::std::string                  mUnredactedString;
+    ::std::optional<::std::string> mRedactedString;
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    RedactableString& operator=(RedactableString const&);
-    RedactableString(RedactableString const&);
+    RedactableString()                                   = default;
+    RedactableString& operator=(RedactableString const&) = default;
+    RedactableString(RedactableString const&)            = default;
 
 public:
     // member functions
@@ -42,8 +42,6 @@ public:
     MCAPI void set(::std::string&& unredactedString);
 
     MCAPI void setRedacted(::std::optional<::std::string>&& redactedString);
-
-    MCAPI ~RedactableString();
     // NOLINTEND
 
 public:

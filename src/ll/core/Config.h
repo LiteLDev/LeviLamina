@@ -15,7 +15,7 @@ namespace ll {
 
 struct LeviConfig {
 
-    int version = 33;
+    int version = 34;
 
     std::string language = "system";
     struct {
@@ -27,7 +27,6 @@ struct LeviConfig {
             CmdSetting tpdimCommand{};
             CmdSetting crashCommand{false};
             CmdSetting versionCommand{};
-            CmdSetting memstatsCommand{true, CommandPermissionLevel::Host};
             CmdSetting modManageCommand{true, CommandPermissionLevel::Admin};
         } command{};
         struct {

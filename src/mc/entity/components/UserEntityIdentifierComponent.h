@@ -2,9 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/certificates/Certificate.h"
+#include "mc/certificates/identity/GameServerToken.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/platform/UUID.h"
-
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"

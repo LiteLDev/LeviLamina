@@ -82,9 +82,10 @@ public:
 };
 
 std::string CompoundTag::toNetworkNbt() const {
-    BinaryStream stream;
+    std::string  result;
+    BinaryStream stream{result};
     serialize<CompoundTag>::write(*this, stream);
-    return stream.getAndReleaseData();
+    return result;
 }
 ll::Expected<CompoundTag> CompoundTag::fromNetworkNbt(std::string const& data) noexcept try {
     auto                      stream = ReadOnlyBinaryStream{data, false};

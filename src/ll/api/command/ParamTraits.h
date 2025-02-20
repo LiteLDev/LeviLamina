@@ -36,7 +36,11 @@ struct EnumParser {
     bool
     operator()(CommandRegistry const& registry, void* storage, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
         const {
-        *(T*)storage = (T)registry.getEnumData(token);
+        auto iter = registry.mEnumValueLookup.find(token.toString());
+        if (iter == registry.mEnumValueLookup.end()) {
+            return false;
+        }
+        *(T*)storage = (T)iter->second;
         return true;
     }
 };

@@ -2,11 +2,10 @@
 
 #include "ll/api/service/Bedrock.h"
 
-#include "mc/certificates/ExtendedCertificate.h"
 #include "mc/certificates/WebToken.h"
-#include "mc/common/ActorUniqueID.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/json/Value.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/ConnectionRequest.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkPeer.h"
@@ -61,9 +60,9 @@ std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
 std::string Player::getRealName() const {
     return getEntityContext()
         .tryGetComponent<UserEntityIdentifierComponent>()
-        .and_then([&](auto& identifier) { return optional_ref{identifier.mCertificate.get()}; })
-        .transform([](auto& certificate) { return ExtendedCertificate::getIdentityName(certificate); })
-        .value_or(getName());
+        .and_then([&](auto& identifier) { return optional_ref{identifier.mGameServerToken}; })
+        .transform([](auto& token) { return token.getIdentityName(); })
+        .value_or(*mName);
 }
 
 void Player::disconnect(std::string_view reason) const {

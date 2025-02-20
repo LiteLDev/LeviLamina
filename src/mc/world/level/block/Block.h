@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/BlockLegacy.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
@@ -65,27 +66,6 @@ public:
     ::ll::TypedStorage<4, 4, uint>                            mNetworkId;
     ::ll::TypedStorage<1, 1, bool>                            mHasRuntimeId;
     // NOLINTEND
-
-public:
-    template <typename T>
-    std::optional<T> getState(uint64 id) const {
-        return mLegacyBlock->get()->getState<T>(id, mData);
-    }
-
-    template <typename T>
-    std::optional<T> getState(BlockState const& state) const {
-        return mLegacyBlock->get()->getState<T>(state, mData);
-    }
-
-    template <typename T>
-    optional_ref<Block const> setState(uint64 id, T value) const {
-        return mLegacyBlock->get()->trySetState(id, value, mData);
-    }
-
-    template <typename T>
-    optional_ref<Block const> setState(BlockState const& state, T value) const {
-        return mLegacyBlock->get()->trySetState(state, value, mData);
-    }
 
 public:
     // virtual functions

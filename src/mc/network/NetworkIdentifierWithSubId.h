@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -14,7 +15,7 @@ struct NetworkIdentifierWithSubId {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 160, ::NetworkIdentifier> id;
-    ::ll::TypedStorage<1, 1, ::SubClientId>         subClientId;
+    ::NetworkIdentifier id;
+    ::SubClientId       subClientId;
     // NOLINTEND
 };

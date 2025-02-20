@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/ActorRuntimeID.h"
+#include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/packet/PlayerInputTick.h"
 #include "mc/world/actor/DataItem.h"
 #include "mc/world/actor/state/PropertySyncData.h"

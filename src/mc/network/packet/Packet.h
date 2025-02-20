@@ -20,6 +20,7 @@ class ReadOnlyBinaryStream;
 class Player;
 class Actor;
 class BlockPos;
+class NetworkIdentifier;
 struct NetworkIdentifierWithSubId;
 
 class Packet {
