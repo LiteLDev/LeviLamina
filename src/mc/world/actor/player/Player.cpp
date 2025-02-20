@@ -36,7 +36,9 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
 
 NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
-optional_ref<Certificate const> Player::getCertificate() const { return getUserEntityIdentifier().mCertificate.get(); }
+optional_ref<Certificate const> Player::getCertificate() const {
+    return getUserEntityIdentifier().mGameServerToken.mUnkffc19b.as<std::unique_ptr<Certificate>>().get();
+}
 
 SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
 

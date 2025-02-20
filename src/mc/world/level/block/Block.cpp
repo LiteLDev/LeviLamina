@@ -18,7 +18,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name) {
     return BlockLegacy::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
-        return block.getDefaultState();
+        return block.mDefaultState;
     });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, ushort legacyData) {
@@ -38,7 +38,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block
     }
     HashedString nameHash{name};
     if (!BlockTypeRegistry::isComplexAliasBlock(nameHash)) {
-        return blockLegacyPtr->getDefaultState();
+        return blockLegacyPtr->mDefaultState;
     }
     std::vector<BlockTypeRegistry::BlockComplexAliasBlockState> stateList;
     for (auto& [k, v] : states) {
