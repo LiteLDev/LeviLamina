@@ -41,22 +41,22 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
 }
 
 bool SimulatedPlayer::simulateDestroyBlock(const BlockPos& pos, ScriptModuleMinecraft::ScriptFacing face) {
-    if (this->isAlive()) {
-        if (this->mDestroyingBlockPos->has_value() && this->mDestroyingBlockFace->has_value()) {
-            if (pos.x == this->mDestroyingBlockPos->value_or(BlockPos::ZERO()).x
-                && pos.y == this->mDestroyingBlockPos->value_or(BlockPos::ZERO()).y
-                && pos.z == this->mDestroyingBlockPos->value_or(BlockPos::ZERO()).z
-                && (uchar)face == this->mDestroyingBlockFace->value()) {
+    if (isAlive()) {
+        if (mDestroyingBlockPos->has_value() && mDestroyingBlockFace->has_value()) {
+            if (pos.x == mDestroyingBlockPos->value_or(BlockPos::ZERO()).x
+                && pos.y == mDestroyingBlockPos->value_or(BlockPos::ZERO()).y
+                && pos.z == mDestroyingBlockPos->value_or(BlockPos::ZERO()).z
+                && (uchar)face == mDestroyingBlockFace->value()) {
                 return true;
             }
-            this->simulateStopDestroyingBlock();
+            simulateStopDestroyingBlock();
         }
 
-        BlockLegacy const& block = this->getDimensionBlockSource().getBlock(pos).getLegacyBlock();
+        BlockLegacy const& block = getDimensionBlockSource().getBlock(pos).getLegacyBlock();
 
-        if (block.mayPick() && !this->mItemInUse->mUnkf0096a.as<ItemStack>().isNull()) {
-            this->mDestroyingBlockPos  = pos;
-            this->mDestroyingBlockFace = (uchar)face;
+        if (block.mayPick() && !mItemInUse->mUnkf0096a.as<ItemStack>().isNull()) {
+            mDestroyingBlockPos  = pos;
+            mDestroyingBlockFace = (uchar)face;
             return true;
         }
     }
