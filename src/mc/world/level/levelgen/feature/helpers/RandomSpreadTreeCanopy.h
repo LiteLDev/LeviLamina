@@ -62,6 +62,7 @@ public:
     // prevent constructor by default
     RandomSpreadTreeCanopy& operator=(RandomSpreadTreeCanopy const&);
     RandomSpreadTreeCanopy(RandomSpreadTreeCanopy const&);
+    RandomSpreadTreeCanopy();
 
 public:
     // virtual functions
@@ -78,18 +79,6 @@ public:
         ::TreeHelper::TreeParams const&  treeParams,
         ::std::vector<::BlockPos> const& attachmentPositions
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RandomSpreadTreeCanopy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

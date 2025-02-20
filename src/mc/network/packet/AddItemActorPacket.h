@@ -12,7 +12,6 @@
 class ActorRuntimeID;
 class BinaryStream;
 class DataItem;
-class ItemActor;
 class NetworkItemStackDescriptor;
 class ReadOnlyBinaryStream;
 class SynchedActorDataEntityWrapper;
@@ -51,22 +50,6 @@ public:
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AddItemActorPacket();
-
-    MCAPI explicit AddItemActorPacket(::ItemActor& itemEntity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ItemActor& itemEntity);
     // NOLINTEND
 
 public:

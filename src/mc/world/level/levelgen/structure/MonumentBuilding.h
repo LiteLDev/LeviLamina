@@ -51,22 +51,22 @@ public:
     // NOLINTBEGIN
     MCAPI MonumentBuilding(::Random& random, short seaLevel, int west, int north, int& orientation);
 
-    MCAPI void generateEntranceArchs(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateEntranceArchs(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const& random);
 
-    MCAPI void generateEntranceWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateEntranceWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const& random);
 
-    MCAPI void generateLowerWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateLowerWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const& random);
 
-    MCAPI void generateMiddleWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateMiddleWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const& random);
 
-    MCAPI void generateRoofPiece(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateRoofPiece(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const& random);
 
     MCAPI ::std::vector<::std::shared_ptr<::RoomDefinition>> generateRoomGraph(::Random& random);
 
-    MCAPI void generateUpperWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateUpperWall(::BlockSource& region, ::Random& chunkBB, ::BoundingBox const& random);
 
     MCAPI void
-    generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& chunkBB, ::BoundingBox const& random);
     // NOLINTEND
 
 public:

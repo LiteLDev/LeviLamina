@@ -30,8 +30,6 @@ public:
     // NOLINTBEGIN
     MCAPI ExplosionStartedEvent(::ExplosionStartedEvent const&);
 
-    MCAPI ExplosionStartedEvent(::ExplosionStartedEvent&&);
-
     MCAPI ~ExplosionStartedEvent();
     // NOLINTEND
 
@@ -39,8 +37,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ExplosionStartedEvent const&);
-
-    MCAPI void* $ctor(::ExplosionStartedEvent&&);
     // NOLINTEND
 
 public:

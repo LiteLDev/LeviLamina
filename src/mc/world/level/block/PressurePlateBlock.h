@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Material;
 // clang-format on
 
 class PressurePlateBlock : public ::BasePressurePlateBlock {
@@ -30,39 +29,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 152
+    // vIndex: 151
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual int getSignalForData(int data) const /*override*/;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
     // vIndex: 0
     virtual ~PressurePlateBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PressurePlateBlock(
-        ::std::string const&              nameId,
-        int                               id,
-        ::Material const&                 material,
-        ::PressurePlateBlock::Sensitivity sensitivity
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&              nameId,
-        int                               id,
-        ::Material const&                 material,
-        ::PressurePlateBlock::Sensitivity sensitivity
-    );
     // NOLINTEND
 
 public:

@@ -23,12 +23,14 @@ public:
 public:
     // prevent constructor by default
     SeatDescription& operator=(SeatDescription const&);
-    SeatDescription(SeatDescription const&);
-    SeatDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SeatDescription();
+
+    MCAPI SeatDescription(::SeatDescription const&);
+
     MCAPI void addRotationExpressionNode(::ExpressionNode const& node);
 
     MCAPI bool operator==(::SeatDescription const& seat) const;
@@ -40,6 +42,14 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SeatDescription const& EMPTY();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::SeatDescription const&);
     // NOLINTEND
 
 public:

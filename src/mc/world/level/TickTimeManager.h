@@ -6,8 +6,6 @@
 // clang-format off
 class IGameplayUserManagerConnector;
 class IServerPlayerSleepManagerConnector;
-class ITickTimeManagerProxy;
-class PacketSender;
 // clang-format on
 
 class TickTimeManager {
@@ -31,28 +29,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TickTimeManager(bool isClientSide, ::std::unique_ptr<::ITickTimeManagerProxy> tickTimeManagerProxy);
-
     MCAPI void _onWakeUpAllPlayers();
-
-    MCAPI void incrementCurrentTick();
 
     MCAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
     MCAPI void
     registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-
     MCAPI void update();
 
     MCAPI ~TickTimeManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool isClientSide, ::std::unique_ptr<::ITickTimeManagerProxy> tickTimeManagerProxy);
     // NOLINTEND
 
 public:

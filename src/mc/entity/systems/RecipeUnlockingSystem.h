@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class Level;
 class Recipes;
 class ServerPlayer;
 class StrictEntityContext;
@@ -75,7 +74,5 @@ public:
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();
-
-    MCAPI static bool isEnabled(::Level const& level);
     // NOLINTEND
 };

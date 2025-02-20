@@ -43,10 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);
 
-    MCAPI bool apply() const;
-
-    MCAPI ::Block const& getBlock(::BlockPos const& pos) const;
-
     MCAPI void setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
     MCAPI ~WorldChangeTransaction();

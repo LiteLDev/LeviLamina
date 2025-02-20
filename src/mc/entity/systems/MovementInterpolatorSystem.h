@@ -7,12 +7,14 @@
 struct TickingSystemWithInfo;
 // clang-format on
 
-struct MovementInterpolatorSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createOnGroundPostTickSystem();
+namespace MovementInterpolatorSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createCopyInterpolatorComponentSystem();
 
-    MCAPI static ::TickingSystemWithInfo createTickSystem(bool isClientSide);
-    // NOLINTEND
-};
+MCAPI ::TickingSystemWithInfo createOnGroundPostTickSystem();
+
+MCAPI ::TickingSystemWithInfo createTickSystem(bool isClientSide);
+// NOLINTEND
+
+} // namespace MovementInterpolatorSystem

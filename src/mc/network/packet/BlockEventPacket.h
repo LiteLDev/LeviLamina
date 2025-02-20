@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPos;
 class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -41,22 +40,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockEventPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockEventPacket();
-
-    MCAPI BlockEventPacket(::BlockPos pos, int b0, int b1);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockPos pos, int b0, int b1);
     // NOLINTEND
 
 public:

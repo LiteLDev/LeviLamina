@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-class IUnknownBlockTypeRegistry;
-class StructureTemplateData;
-// clang-format on
-
 namespace br::worldgen {
 
 struct StructureTemplateBlockPalette {
@@ -34,16 +25,6 @@ public:
     StructureTemplateBlockPalette& operator=(StructureTemplateBlockPalette const&);
     StructureTemplateBlockPalette(StructureTemplateBlockPalette const&);
     StructureTemplateBlockPalette();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::StructureTemplateBlockPalette mcstructure(
-        ::StructureTemplateData const&                                 data,
-        uint64                                                         paletteIndex,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const& unknownBlockregistry
-    );
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

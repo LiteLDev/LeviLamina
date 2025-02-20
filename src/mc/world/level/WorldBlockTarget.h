@@ -122,21 +122,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WorldBlockTarget(::BlockSource& region, ::WorldGenContext const& context);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::WorldGenContext const& context);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -193,7 +181,7 @@ public:
 
     MCFOLD ::WorldGenContext const& $getContext();
 
-    MCFOLD void $disableBlockSimple();
+    MCAPI void $disableBlockSimple();
     // NOLINTEND
 
 public:

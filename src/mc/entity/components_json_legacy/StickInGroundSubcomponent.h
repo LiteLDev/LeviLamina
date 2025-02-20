@@ -23,6 +23,7 @@ public:
     // prevent constructor by default
     StickInGroundSubcomponent& operator=(StickInGroundSubcomponent const&);
     StickInGroundSubcomponent(StickInGroundSubcomponent const&);
+    StickInGroundSubcomponent();
 
 public:
     // virtual functions
@@ -41,18 +42,6 @@ public:
 
     // vIndex: 4
     virtual char const* getName() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StickInGroundSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

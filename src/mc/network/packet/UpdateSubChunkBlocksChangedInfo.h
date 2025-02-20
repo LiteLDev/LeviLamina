@@ -4,9 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
-class BlockPos;
-struct ActorBlockSyncMessage;
 struct UpdateSubChunkNetworkBlockInfo;
 // clang-format on
 
@@ -21,19 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateSubChunkBlocksChangedInfo();
-
-    MCAPI void
-    add(::BlockPos const& pos, uint layer, ::Block const& block, int updateFlags, ::ActorBlockSyncMessage const* syncMsg
-    );
-
     MCAPI ~UpdateSubChunkBlocksChangedInfo();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

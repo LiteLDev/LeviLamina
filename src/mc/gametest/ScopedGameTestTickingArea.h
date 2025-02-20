@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ITickingArea;
+// clang-format on
+
 class ScopedGameTestTickingArea {
 public:
     // member variables
@@ -26,6 +31,8 @@ public:
     MCAPI void _removeTickingArea();
 
     MCAPI bool areChunksLoaded();
+
+    MCAPI ::std::shared_ptr<::ITickingArea> getTickingArea() const;
     // NOLINTEND
 
 public:

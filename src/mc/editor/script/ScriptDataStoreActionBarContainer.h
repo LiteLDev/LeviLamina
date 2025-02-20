@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor::Services { class DataStoreServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
 // clang-format on
 
@@ -32,11 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataStoreActionBarContainer(
-        ::Editor::Services::DataStoreServiceProvider& dataStoreService,
-        ::Scripting::WeakLifetimeScope const&         scope
-    );
-
     MCAPI ::std::string getItemPayload(::std::string id) const;
 
     MCAPI ::std::optional<::std::variant<float, bool, ::std::string>>
@@ -62,13 +55,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataStoreActionBarContainer>
     bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void*
-    $ctor(::Editor::Services::DataStoreServiceProvider& dataStoreService, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

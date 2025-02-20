@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/CropBlock.h"
 
 // auto generated forward declare list
@@ -11,7 +10,6 @@
 class AABB;
 class Block;
 class BlockPos;
-class BlockSource;
 class IConstBlockSource;
 class ItemInstance;
 // clang-format on
@@ -31,26 +29,8 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 144
-    virtual ::BlockRenderLayer getRenderLayer() const /*override*/;
-
-    // vIndex: 143
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const /*override*/;
-
     // vIndex: 0
     virtual ~CarrotBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CarrotBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -64,14 +44,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemInstance const $getBaseSeed() const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCFOLD int $getVariant(::Block const& block) const;
 
     MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer() const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const;
     // NOLINTEND
 
 public:

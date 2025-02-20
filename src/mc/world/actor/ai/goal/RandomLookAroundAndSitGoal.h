@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Mob;
 struct Tick;
 // clang-format on
 
@@ -47,42 +46,6 @@ public:
 
     // vIndex: 0
     virtual ~RandomLookAroundAndSitGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RandomLookAroundAndSitGoal(
-        ::Mob& mob,
-        bool   continueSittingOnReload,
-        bool   continueIfLeashed,
-        int    minLookCount,
-        int    maxLookCount,
-        float  minAngleOfView,
-        float  maxAngleOfView,
-        int    minLookTime,
-        int    maxLookTime,
-        float  probability,
-        int    randomLookAroundCooldown
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob& mob,
-        bool   continueSittingOnReload,
-        bool   continueIfLeashed,
-        int    minLookCount,
-        int    maxLookCount,
-        float  minAngleOfView,
-        float  maxAngleOfView,
-        int    minLookTime,
-        int    maxLookTime,
-        float  probability,
-        int    randomLookAroundCooldown
-    );
     // NOLINTEND
 
 public:

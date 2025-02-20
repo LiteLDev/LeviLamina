@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Random;
-class Randomize;
 namespace Json { class Value; }
 // clang-format on
 
@@ -30,13 +29,9 @@ public:
 
     MCAPI IntRange(int min, int max);
 
-    MCFOLD int getValue(::Random& random) const;
+    MCAPI int getValue(::Random& random) const;
 
-    MCFOLD int getValueInclusive(::Random& random) const;
-
-    MCAPI int getValueInclusive(::Randomize& randomize) const;
-
-    MCAPI bool isInRangeInclusive(int value) const;
+    MCAPI int getValueInclusive(::Random& random) const;
 
     MCAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
     // NOLINTEND
@@ -50,8 +45,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(int value);
+    MCAPI void* $ctor(int value);
 
-    MCFOLD void* $ctor(int min, int max);
+    MCAPI void* $ctor(int min, int max);
     // NOLINTEND
 };

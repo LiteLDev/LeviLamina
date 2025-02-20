@@ -24,7 +24,6 @@ public:
     // prevent constructor by default
     KillCommand& operator=(KillCommand const&);
     KillCommand(KillCommand const&);
-    KillCommand();
 
 public:
     // virtual functions
@@ -37,9 +36,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI KillCommand();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

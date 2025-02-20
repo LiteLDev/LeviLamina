@@ -3,10 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleDebugUtilities { struct ScriptPluginStats; }
 namespace ScriptModuleDebugUtilities { struct ScriptRuntimeStats; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -18,6 +19,9 @@ class ScriptDebugUtils {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::ScriptModuleDebugUtilities::ScriptPluginStats
+    collectPluginStats(::Scripting::DependencyLocator& locator);
+
     MCAPI static ::ScriptModuleDebugUtilities::ScriptRuntimeStats
     collectRuntimeStats(::Scripting::DependencyLocator& locator);
 

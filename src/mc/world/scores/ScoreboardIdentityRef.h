@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/scores/IdentityDefinition.h"
 #include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
@@ -12,7 +11,6 @@ class CompoundTag;
 class Objective;
 class Scoreboard;
 struct ActorUniqueID;
-struct PlayerScoreboardId;
 struct ScoreboardId;
 // clang-format on
 
@@ -27,18 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorUniqueID const& getEntityId() const;
-
-    MCAPI ::std::string const& getFakePlayerName() const;
-
-    MCAPI ::IdentityDefinition::Type getIdentityType() const;
-
     MCAPI ::std::string const& getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     ) const;
-
-    MCAPI ::PlayerScoreboardId const& getPlayerId() const;
-
-    MCFOLD ::ScoreboardId const& getScoreboardId() const;
 
     MCAPI bool modifyScoreInObjective(int& result, ::Objective& objective, int score, ::PlayerScoreSetFunction fn);
 

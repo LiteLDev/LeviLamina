@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LibHttpClientImpl() /*override*/;
+    virtual ~LibHttpClientImpl() /*override*/ = default;
 
     // vIndex: 2
     virtual void initialize() /*override*/;
@@ -115,7 +115,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

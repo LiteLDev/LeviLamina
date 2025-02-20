@@ -18,37 +18,12 @@ public:
     // prevent constructor by default
     ByteQueue& operator=(ByteQueue const&);
     ByteQueue(ByteQueue const&);
+    ByteQueue();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ByteQueue();
-
-    MCAPI void Clear(char const* file, uint line);
-
-    MCAPI uint GetBytesWritten() const;
-
-    MCAPI void IncrementReadOffset(uint length);
-
-    MCAPI char* PeekContiguousBytes(uint* outLength) const;
-
-    MCAPI bool ReadBytes(char* out, uint maxLengthToRead, bool peek);
-
     MCAPI void WriteBytes(char const* in, uint length, char const* file, uint line);
-
-    MCAPI ~ByteQueue();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

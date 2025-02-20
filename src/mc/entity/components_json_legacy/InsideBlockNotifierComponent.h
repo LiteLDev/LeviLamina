@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-class InsideBlockEventMap;
-// clang-format on
-
 class InsideBlockNotifierComponent {
 public:
     // member variables
@@ -24,12 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::InsideBlockEventMap> const& getBlockList() const;
-
-    MCAPI bool isTrackedBlock(::Block const& block) const;
-
-    MCAPI void resetBlocksInsideState();
-
-    MCAPI void setInsideBlock(::Block const& block, bool isInside);
+    MCAPI ::InsideBlockNotifierComponent& operator=(::InsideBlockNotifierComponent&&);
     // NOLINTEND
 };

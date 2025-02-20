@@ -99,7 +99,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void PostDelayedTask(::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::Location const&);
+    MCAPI void PostDelayedTask(
+        ::absl::AnyInvocable<void() &&> task,
+        ::webrtc::TimeDelta             delay,
+        ::webrtc::Location const&       location
+    );
 
     MCAPI void
     PostDelayedTaskWithPrecision(::webrtc::TaskQueueBase::DelayPrecision, ::absl::AnyInvocable<void() &&>, ::webrtc::TimeDelta, ::webrtc::Location const&);

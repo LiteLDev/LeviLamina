@@ -6,7 +6,7 @@ struct PlayerLoadingScreenComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk57e130;
+    ::ll::UntypedStorage<4, 8> mUnkd68149;
     // NOLINTEND
 
 public:

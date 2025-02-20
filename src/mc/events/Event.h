@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-namespace Json { class Value; }
 namespace Social::Events { class Measurement; }
 namespace Social::Events { class Property; }
 // clang-format on
@@ -60,14 +59,6 @@ public:
     MCAPI void addMeasurement(::Social::Events::Measurement const& measurement);
 
     MCAPI void addProperty(::Social::Events::Property const& property);
-
-    MCAPI bool hasEventTags(int tags) const;
-
-    MCAPI bool hasMeasurements() const;
-
-    MCAPI bool passesFilter(int tagsToExclude) const;
-
-    MCAPI ::Json::Value propertiesAsJsonValue() const;
 
     MCAPI void updateMeasurements(::Social::Events::Event const& event);
 

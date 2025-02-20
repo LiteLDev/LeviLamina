@@ -119,7 +119,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
+    MCAPI void _applyEatEffects(::ItemStack const& actor, ::Actor& level, ::Level&);
 
     MCAPI void _loadEffects(::Json::Value const& effectsData);
 
@@ -149,7 +149,7 @@ public:
 
     MCFOLD float $getSaturationModifier() const;
 
-    MCFOLD bool $canAlwaysEat() const;
+    MCAPI bool $canAlwaysEat() const;
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 

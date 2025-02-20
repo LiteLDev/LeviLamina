@@ -53,8 +53,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NyliumBlock(::std::string const& nameId, int id);
-
     MCAPI bool _scatterVegetation(
         ::BlockSource&                                      region,
         ::BlockPos const&                                   pos,
@@ -73,12 +71,6 @@ public:
     MCAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
 
     MCAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

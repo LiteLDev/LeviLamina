@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPalette;
 class InventorySource;
 class ItemStack;
 class NetworkItemStackDescriptor;
@@ -26,7 +27,18 @@ public:
     // NOLINTBEGIN
     MCAPI InventoryAction(::InventoryAction const&);
 
+    MCAPI InventoryAction(
+        ::InventorySource                   source,
+        uint                                slot,
+        ::NetworkItemStackDescriptor const& fromItem,
+        ::NetworkItemStackDescriptor const& toItem
+    );
+
+    MCAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
+
     MCAPI ::InventoryAction& operator=(::InventoryAction const&);
+
+    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
     MCAPI ~InventoryAction();
     // NOLINTEND
@@ -35,6 +47,15 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::InventoryAction const&);
+
+    MCAPI void* $ctor(
+        ::InventorySource                   source,
+        uint                                slot,
+        ::NetworkItemStackDescriptor const& fromItem,
+        ::NetworkItemStackDescriptor const& toItem
+    );
+
+    MCAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
     // NOLINTEND
 
 public:

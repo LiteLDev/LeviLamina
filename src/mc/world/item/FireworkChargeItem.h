@@ -37,7 +37,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const /*override*/;
 
     // vIndex: 105
@@ -54,12 +54,6 @@ public:
 
     // vIndex: 0
     virtual ~FireworkChargeItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FireworkChargeItem(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -83,8 +77,8 @@ public:
         ::std::string const&                 indent
     );
 
-    MCFOLD static ::ItemInstance const& initFireworkChargeItem(
-        ::ItemInstance&             item,
+    MCAPI static ::ItemInstance const& initFireworkChargeItem(
+        ::ItemInstance&             itemInstance,
         ::FireworkChargeItem::Shape shape,
         ::std::vector<uchar>        colors,
         ::std::vector<uchar>        fadeColors,
@@ -93,12 +87,12 @@ public:
     );
 
     MCAPI static ::ItemStack const& initFireworkChargeItem(
-        ::ItemStack&,
-        ::FireworkChargeItem::Shape,
-        ::std::vector<uchar>,
-        ::std::vector<uchar>,
-        bool,
-        bool
+        ::ItemStack&                item,
+        ::FireworkChargeItem::Shape colors,
+        ::std::vector<uchar>        fadeColors,
+        ::std::vector<uchar>        shape,
+        bool                        hasTrail,
+        bool                        hasFlicker
     );
 
     MCAPI static void setColor(::ItemStackBase& instance);
@@ -121,12 +115,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -139,7 +127,7 @@ public:
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
+        bool const                           showCategory
     ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;

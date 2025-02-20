@@ -8,11 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -33,13 +30,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep() /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     // vIndex: 2
@@ -52,25 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Allay(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityId
-    );
-
     MCAPI bool hasDuplicationCooldown();
 
     MCAPI void setNewDuplicationCooldown();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityId
-    );
     // NOLINTEND
 
 public:

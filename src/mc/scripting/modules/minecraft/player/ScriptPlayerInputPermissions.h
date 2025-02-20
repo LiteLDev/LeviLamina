@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/entity/enums/ClientInputLockCategory.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,9 +39,6 @@ public:
     MCAPI ::Scripting::Result<void> _setPermissionCategoryV1(::ClientInputLockCategory category, bool isEnabled);
 
     MCAPI ::Scripting::Result<void> _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerInputPermissions&
-    operator=(::ScriptModuleMinecraft::ScriptPlayerInputPermissions&&);
     // NOLINTEND
 
 public:

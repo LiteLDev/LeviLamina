@@ -10,7 +10,6 @@
 // clang-format off
 namespace rtc { class SocketAddress; }
 namespace webrtc { class AsyncDnsResolverInterface; }
-namespace webrtc { class TaskQueueBase; }
 // clang-format on
 
 namespace NetherNet {
@@ -45,18 +44,6 @@ public:
     // vIndex: 1
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
     CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit AsyncDnsResolverFactory(::webrtc::TaskQueueBase* workerThread);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::TaskQueueBase* workerThread);
     // NOLINTEND
 
 public:

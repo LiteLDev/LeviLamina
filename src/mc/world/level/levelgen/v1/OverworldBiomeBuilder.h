@@ -22,16 +22,18 @@ public:
     ::ll::UntypedStorage<8, 1200> mUnk2df82e;
     ::ll::UntypedStorage<8, 1200> mUnk6a5bb6;
     ::ll::UntypedStorage<8, 1200> mUnk1d88fa;
+    ::ll::UntypedStorage<8, 1200> mUnk1c3ae4;
     ::ll::UntypedStorage<8, 1200> mUnk492617;
+    ::ll::UntypedStorage<8, 1200> mUnkfae5df;
     ::ll::UntypedStorage<8, 1200> mUnk968c77;
     ::ll::UntypedStorage<8, 8>    mUnk4829fa;
     ::ll::UntypedStorage<8, 8>    mUnkf351ee;
-    ::ll::UntypedStorage<8, 80>   mUnkc78866;
-    ::ll::UntypedStorage<8, 200>  mUnk8822e5;
-    ::ll::UntypedStorage<8, 200>  mUnkbdff81;
-    ::ll::UntypedStorage<8, 200>  mUnka6b64d;
-    ::ll::UntypedStorage<8, 200>  mUnkdb8923;
-    ::ll::UntypedStorage<8, 200>  mUnk408818;
+    ::ll::UntypedStorage<8, 80>   mUnkdeb30a;
+    ::ll::UntypedStorage<8, 200>  mUnk61c267;
+    ::ll::UntypedStorage<8, 200>  mUnkf28518;
+    ::ll::UntypedStorage<8, 200>  mUnk479b27;
+    ::ll::UntypedStorage<8, 200>  mUnk86c069;
+    ::ll::UntypedStorage<8, 200>  mUnkf0c738;
     // NOLINTEND
 
 public:
@@ -78,19 +80,19 @@ public:
         ::ClimateUtils::Parameter const&   continentalness,
         ::ClimateUtils::Parameter const&   erosion,
         ::ClimateUtils::Parameter const&   weirdness,
-        float                              offset,
-        ::Biome*                           second
+        float                              second,
+        ::Biome const*                     offset
     ) const;
 
     MCAPI void _addUndergroundBiome(
         ::std::vector<::BiomeNoiseTarget>& biomes,
-        ::ClimateUtils::Parameter const&   temperature,
         ::ClimateUtils::Parameter const&   humidity,
         ::ClimateUtils::Parameter const&   continentalness,
+        ::ClimateUtils::Parameter const&   second,
+        ::ClimateUtils::Parameter const&   temperature,
         ::ClimateUtils::Parameter const&   erosion,
-        ::ClimateUtils::Parameter const&   weirdness,
-        float                              offset,
-        ::Biome*                           second
+        float                              weirdness,
+        ::Biome const*                     offset
     ) const;
 
     MCAPI void _addValleys(
@@ -99,18 +101,13 @@ public:
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI ::Biome* _pickBadlandsBiome(
+    MCAPI ::Biome const* _pickBadlandsBiome(
         int                              humidityIndex,
         ::ClimateUtils::Parameter const& weirdness,
         ::BiomeRegistry const&           biomeRegistry
     ) const;
 
-    MCAPI ::Biome* _pickMiddleBiomeOrBadlandsIfHot(
-        int                              temperatureIndex,
-        int                              humidityIndex,
-        ::ClimateUtils::Parameter const& weirdness,
-        ::BiomeRegistry const&           biomeRegistry
-    ) const;
+    MCAPI ::Biome const* _pickBeachBiome(int temperatureIndex, ::BiomeRegistry const& biomeRegistry) const;
 
     MCAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
 

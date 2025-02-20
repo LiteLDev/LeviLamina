@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ItemStack;
 class Level;
 class MobEffectInstance;
@@ -52,23 +51,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SuspiciousStewItem(::std::string const& name, short id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::array<::MobEffectInstance, 13> const& _getStewEffects();
-
-    MCAPI static void applyStewEffect(::ItemStack const& inOutInstance, ::Actor& actor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, short id);
     // NOLINTEND
 
 public:

@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
-class WeakEntityRef;
 namespace ScriptModuleMinecraft { struct ScriptCameraDefaultOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFadeOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFixedBoomOptions; }
@@ -40,12 +39,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScriptCamera(::Player const& player);
 
-    MCAPI explicit ScriptCamera(::WeakEntityRef const& playerRef);
-
     MCAPI ::Scripting::Result<void>
     cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
     MCAPI ::Scripting::Result<void> clearCamera() const;
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
 
     MCAPI ::Scripting::Result<void> setCamera(
         ::std::string const&                                        cameraPreset,
@@ -78,6 +77,7 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
             ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
             ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
             ::ScriptModuleMinecraft::ScriptCameraDefaultOptions>> options
     ) const;
     // NOLINTEND
@@ -92,8 +92,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::Player const& player);
-
-    MCFOLD void* $ctor(::WeakEntityRef const& playerRef);
     // NOLINTEND
 };
 

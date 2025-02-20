@@ -34,34 +34,12 @@ public:
     // vIndex: 139
     virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
     // vIndex: 0
     virtual ~LogBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LogBlock(
-        ::std::string const&                 nameId,
-        int                                  id,
-        ::WeakPtr<::BlockLegacy const>       strippedBlockLegacy,
-        ::std::optional<::LogBlockMapColors> mapColors
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                 nameId,
-        int                                  id,
-        ::WeakPtr<::BlockLegacy const>       strippedBlockLegacy,
-        ::std::optional<::LogBlockMapColors> mapColors
-    );
     // NOLINTEND
 
 public:

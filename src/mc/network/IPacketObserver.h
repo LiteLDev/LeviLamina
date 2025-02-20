@@ -28,13 +28,13 @@ public:
     virtual void dataReceivedFrom(::NetworkIdentifier const&, ::std::string const&) = 0;
 
     // vIndex: 0
-    virtual ~IPacketObserver() /*override*/;
+    virtual ~IPacketObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

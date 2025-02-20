@@ -13,14 +13,4 @@ public:
     ::ll::TypedStorage<1, 1, ::MCCATEGORY> mCategory;
     ::ll::TypedStorage<2, 2, ushort>       mCode;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI int getFullCode() const;
-
-    MCFOLD bool isSuccess() const;
-
-    MCAPI bool operator==(::MCRESULT const& other) const;
-    // NOLINTEND
 };

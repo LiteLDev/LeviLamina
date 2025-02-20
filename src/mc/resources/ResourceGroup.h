@@ -17,19 +17,12 @@ public:
     // prevent constructor by default
     ResourceGroup& operator=(ResourceGroup const&);
     ResourceGroup(ResourceGroup const&);
+    ResourceGroup();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceGroup();
-
     MCAPI ~ResourceGroup();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

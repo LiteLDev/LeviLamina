@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/world/level/storage/DBStorageFolderWatcherSnapshotKind.h"
 
 // auto generated forward declare list
 // clang-format off
 class DBStorageFolderWatcher;
-class LevelData;
 struct LevelStorageEventingContext;
 // clang-format on
 
-class LevelStorageEventing {
+class LevelStorageEventing : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
@@ -20,28 +20,37 @@ public:
     // NOLINTEND
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~LevelStorageEventing() /*override*/ = default;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelStorageEventing(
-        ::std::string const& creationReason,
-        ::LevelData const&   levelData,
-        ::std::string const& levelId
-    );
-
-    MCAPI void fireDBStorageError(char const* errorType);
+    MCAPI void fireDBStorageError(char const* errorType) const;
 
     MCAPI void fireEventDBStorageSizeSnapshot(
         ::DBStorageFolderWatcher const&      folderWatcher,
         ::DBStorageFolderWatcherSnapshotKind kind
-    );
+    ) const;
 
-    MCAPI void
-    fireEventWorldCorruptionCausedWorldShutdown(::std::string const& reason, ::std::optional<bool> isOutOfDiskSpace);
+    MCAPI void fireEventWorldCorruptionCausedWorldShutdown(
+        ::std::string const&  reason,
+        ::std::optional<bool> isOutOfDiskSpace
+    ) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& creationReason, ::LevelData const& levelData, ::std::string const& levelId);
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -9,11 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class Block;
 class BlockSource;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class MinecartHopper : public ::Minecart {
@@ -32,43 +29,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 143
+    // vIndex: 138
     virtual void destroy(::ActorDamageSource const& source, bool dropMinecartComponents) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 142
     virtual void applyNaturalSlowdown(::BlockSource& region) /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::MinecartType getType() /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 141
     virtual int getDefaultDisplayOffset() const /*override*/;
 
     // vIndex: 8
     virtual ~MinecartHopper() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MinecartHopper(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

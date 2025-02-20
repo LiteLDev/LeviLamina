@@ -34,7 +34,7 @@ public:
 
     MCAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void deserialize(::Json::Value const& pool);
+    MCAPI void deserialize(::Json::Value const& pool, bool usingUpcomingCreatorFeaturesExperiment);
 
     MCAPI ~LootPool();
     // NOLINTEND

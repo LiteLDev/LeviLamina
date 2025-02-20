@@ -13,7 +13,7 @@
 // auto generated forward declare list
 // clang-format off
 class GameVersion;
-class SemVersion;
+class SemVersionConstant;
 // clang-format on
 
 namespace SharedConstants {
@@ -25,7 +25,7 @@ MCAPI ::ActorDigestFormat const& CurrentActorDigestFormat();
 
 MCAPI ::BlendVersion const& CurrentBlendVersion();
 
-MCAPI ::SemVersion const& CurrentGameSemVersion();
+MCAPI ::SemVersionConstant const& CurrentGameSemVersion();
 
 MCAPI ::LevelChunkFormat const& CurrentLevelChunkFormat();
 
@@ -33,43 +33,13 @@ MCAPI ::StorageVersion const& CurrentStorageVersion();
 
 MCAPI ::SubChunkFormat const& CurrentSubChunkFormat();
 
-MCAPI bool const& DevInitiallyMuteMusic();
-
 MCAPI uint64 const& DeviceIdMaxLength();
 
-MCAPI int const& EduDiscoveryProtocolVersion();
-
 MCAPI bool const& IsAnyBeta();
-
-MCAPI bool const& IsBeta();
-
-MCAPI bool const& IsCreatorEditorBuild();
-
-MCAPI bool const& IsDevBuild();
-
-MCAPI bool const& IsNxPlatform();
-
-MCAPI bool const& IsPS4Platform();
-
-MCAPI bool const& IsPS5Platform();
-
-MCAPI bool const& IsPlaytest();
-
-MCAPI bool const& IsPreviewApp();
-
-MCAPI bool const& IsSonyPlatform();
-
-MCAPI bool const& IsWin32Platform();
-
-MCAPI bool const& IsXboxPlatform();
-
-MCAPI int const& LevelDBCompressorID();
 
 MCAPI int const& MajorVersion();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> MajorVersionStringFormated();
-
-MCAPI int const& MaxChatLength();
 
 MCAPI uint const& MinTickingChunksRadius();
 
@@ -98,10 +68,6 @@ MCAPI ::std::add_lvalue_reference_t<char const[]> PatchVersionStringFormated();
 MCAPI int const& RevisionVersion();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> RevisionVersionStringFormated();
-
-MCAPI int const& StoreVersion();
-
-MCAPI int const& TicksPerSecond();
 // NOLINTEND
 
 } // namespace SharedConstants

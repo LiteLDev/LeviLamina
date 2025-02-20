@@ -14,12 +14,11 @@ public:
     // prevent constructor by default
     SlotData& operator=(SlotData const&);
     SlotData(SlotData const&);
+    SlotData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SlotData();
-
     MCAPI ~SlotData();
     // NOLINTEND
 
@@ -27,12 +26,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SlotData& UNKNOWN_LOCATION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

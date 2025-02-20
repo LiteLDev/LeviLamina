@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CerealDocumentUpgrader;
+class Experiments;
 class IPackLoadContext;
 class ItemComponent;
 class SemVersion;
@@ -27,15 +28,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnkb980e4;
-        ::ll::UntypedStorage<8, 24>  mUnkab866b;
-        ::ll::UntypedStorage<8, 120> mUnk144f3a;
-        ::ll::UntypedStorage<8, 120> mUnkd0f997;
-        ::ll::UntypedStorage<8, 24>  mUnk236f7f;
+        ::ll::UntypedStorage<8, 8>  mUnkb980e4;
+        ::ll::UntypedStorage<8, 24> mUnkab866b;
+        ::ll::UntypedStorage<8, 32> mUnk144f3a;
+        ::ll::UntypedStorage<8, 32> mUnkd0f997;
+        ::ll::UntypedStorage<8, 24> mUnk236f7f;
+        ::ll::UntypedStorage<8, 64> mUnk25c34a;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        ComponentMetadata& operator=(ComponentMetadata const&);
         ComponentMetadata();
 
     public:
@@ -45,9 +48,6 @@ public:
 
         MCAPI ::CerealItemComponentFactory::ComponentMetadata&
         operator=(::CerealItemComponentFactory::ComponentMetadata&&);
-
-        MCAPI ::CerealItemComponentFactory::ComponentMetadata&
-        operator=(::CerealItemComponentFactory::ComponentMetadata const&);
 
         MCAPI ~ComponentMetadata();
         // NOLINTEND
@@ -68,8 +68,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk37c69b;
-    ::ll::UntypedStorage<8, 112> mUnk533ef0;
+    ::ll::UntypedStorage<8, 64> mUnk37c69b;
+    ::ll::UntypedStorage<8, 24> mUnk533ef0;
     // NOLINTEND
 
 public:
@@ -84,6 +84,13 @@ public:
     MCAPI static void
     addAllComponentUpgrades(::CerealDocumentUpgrader& documentUpgrader, ::cereal::ReflectionCtx const& ctx);
 
+    MCAPI static void addComponentMetadata(
+        ::cereal::ReflectionCtx&                          ctx,
+        ::std::string const&                              componentName,
+        ::CerealItemComponentFactory::ComponentMetadata&& metadata,
+        ::std::optional<::SemVersion>                     releasedMinFormatVersion
+    );
+
     MCAPI static ::std::shared_ptr<::ItemComponent>
     constructItemComponent(::std::string const& name, ::cereal::ReflectionCtx const& ctx);
 
@@ -95,19 +102,11 @@ public:
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI static ::std::optional<::SemVersion>
-    getReleasedMinFormatVersionForAnyComponent(::cereal::ReflectionCtx const& ctx);
-
     MCAPI static bool isComponentBasedItemSchema(
         ::SemVersion const&            formatVersion,
         ::Json::Value const&           itemData,
         ::cereal::ReflectionCtx const& ctx
     );
-
-    MCAPI static ::CerealItemComponentFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void
-    updateReleasedMinFormatVersionForAnyComponentIfLower(::CerealItemComponentFactory& instance, ::SemVersion version);
 
     MCAPI static bool validateCerealComponent(
         ::std::string                  componentName,

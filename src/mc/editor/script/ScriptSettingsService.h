@@ -3,14 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Editor::Services { class EditorSettingsServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 
 namespace Editor::ScriptModule {
 
@@ -36,11 +30,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptSettingsService(::Editor::ScriptModule::ScriptSettingsService&&);
 
-    MCAPI ScriptSettingsService(
-        ::Editor::Services::EditorSettingsServiceProvider* serviceProvider,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
-
     MCAPI ::Editor::ScriptModule::ScriptSettingsService& operator=(::Editor::ScriptModule::ScriptSettingsService&&);
 
     MCAPI ~ScriptSettingsService();
@@ -56,11 +45,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptSettingsService&&);
-
-    MCAPI void* $ctor(
-        ::Editor::Services::EditorSettingsServiceProvider* serviceProvider,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
     // NOLINTEND
 
 public:

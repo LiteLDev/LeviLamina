@@ -21,12 +21,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Impl(
-        ::Bedrock::NonOwnerPointer<::Level> const&                     level,
-        ::Experiments const&                                           experiments,
-        ::BaseGameVersion const&                                       baseGameVersion,
-        ::ItemRegistryRef                                              itemRegistry,
-        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
+        ::Bedrock::NonOwnerPointer<::Level> const& level,
+        ::Experiments const&                       experiments,
+        ::BaseGameVersion const&                   baseGameVersion,
+        ::ItemRegistryRef                          itemRegistry,
+        ::ServerScriptManager const*               scriptManager
     );
+
+    MCAPI ~Impl();
     // NOLINTEND
 
 public:
@@ -39,12 +41,18 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Bedrock::NonOwnerPointer<::Level> const&                     level,
-        ::Experiments const&                                           experiments,
-        ::BaseGameVersion const&                                       baseGameVersion,
-        ::ItemRegistryRef                                              itemRegistry,
-        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
+        ::Bedrock::NonOwnerPointer<::Level> const& level,
+        ::Experiments const&                       experiments,
+        ::BaseGameVersion const&                   baseGameVersion,
+        ::ItemRegistryRef                          itemRegistry,
+        ::ServerScriptManager const*               scriptManager
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -19,9 +19,8 @@ enum class JoinGameStatus : int {
     HostLeft                              = 11,
     NetherNetSignallingServiceSigninError = 12,
     OutdatedServer                        = 13,
-    SucceededGathering                    = 14,
-    OutdatedClient                        = 15,
-    ClientCancelled                       = 16,
+    OutdatedClient                        = 14,
+    ClientCancelled                       = 15,
 };
 
 }

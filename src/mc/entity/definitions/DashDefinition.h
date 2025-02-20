@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-struct DashComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -26,14 +24,6 @@ public:
     DashDefinition& operator=(DashDefinition const&);
     DashDefinition(DashDefinition const&);
     DashDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::DashComponent& component) const;
-
-    MCAPI void uninitialize(::EntityContext& entity, ::DashComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

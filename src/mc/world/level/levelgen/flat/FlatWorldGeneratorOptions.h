@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlatWorldGeneratorOptions(::Json::Value const& root, ::LevelData const& levelData);
-
     MCAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
 
     MCAPI ~FlatWorldGeneratorOptions();
@@ -36,13 +34,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value getLayers(::LevelData const& levelData);
-    // NOLINTEND
+    MCAPI static ::Json::Value _parseFlatWorldJson(::std::string_view json);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::Value const& root, ::LevelData const& levelData);
+    MCAPI static ::Json::Value getLayers(::LevelData const& levelData);
     // NOLINTEND
 
 public:

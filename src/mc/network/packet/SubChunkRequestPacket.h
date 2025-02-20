@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SubChunkRequestPacket() /*override*/ = default;
+    virtual ~SubChunkRequestPacket() /*override*/;
 
     // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -49,21 +49,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SubChunkRequestPacket();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

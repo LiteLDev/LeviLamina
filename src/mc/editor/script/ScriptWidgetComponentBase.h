@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/script/ScriptWidgetComponent_WidgetInterface.h"
-#include "mc/editor/services/widgets/WidgetComponentType.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -80,6 +80,8 @@ public:
 
     MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _deleteComponent();
+
+    MCAPI ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> _getWidget() const;
 
     MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
     _setChangeEventClosure(

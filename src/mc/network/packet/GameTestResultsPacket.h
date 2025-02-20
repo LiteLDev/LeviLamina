@@ -42,22 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameTestResultsPacket();
-
-    MCAPI GameTestResultsPacket(::std::string const& testName, ::std::string const& error, bool succeeded);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::string const& testName, ::std::string const& error, bool succeeded);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

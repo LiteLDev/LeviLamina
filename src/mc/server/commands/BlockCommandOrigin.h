@@ -98,15 +98,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockCommandOrigin(::BlockSource& region, ::BlockPos const& pos);
-
     MCAPI ::std::string _getName(::BlockSource& region) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static ::std::unique_ptr<::BlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
     // NOLINTEND
 
 public:
@@ -122,7 +120,7 @@ public:
 
     MCFOLD ::std::string $getName() const;
 
-    MCFOLD ::BlockPos $getBlockPosition() const;
+    MCAPI ::BlockPos $getBlockPosition() const;
 
     MCAPI ::Vec3 $getWorldPosition() const;
 

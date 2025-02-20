@@ -58,10 +58,4 @@ public:
     PlayerInteractionSystem& operator=(PlayerInteractionSystem const&);
     PlayerInteractionSystem(PlayerInteractionSystem const&);
     PlayerInteractionSystem();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
-    // NOLINTEND
 };

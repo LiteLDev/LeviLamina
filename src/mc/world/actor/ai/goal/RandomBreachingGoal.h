@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/RandomStrollGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class RandomBreachingGoal : public ::RandomStrollGoal {
 public:
     // member variables
@@ -45,18 +40,6 @@ public:
 
     // vIndex: 0
     virtual ~RandomBreachingGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RandomBreachingGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval, float cooldown);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval, float cooldown);
     // NOLINTEND
 
 public:

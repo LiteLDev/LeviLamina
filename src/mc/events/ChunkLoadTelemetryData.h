@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class LevelChunk;
 namespace Json { class Value; }
 // clang-format on
 
@@ -31,6 +30,12 @@ public:
         ServerChunkLoading& operator=(ServerChunkLoading const&);
         ServerChunkLoading(ServerChunkLoading const&);
         ServerChunkLoading();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::Json::Value toJson() const;
+        // NOLINTEND
     };
 
     struct ClientSubChunkCache {
@@ -47,6 +52,12 @@ public:
         ClientSubChunkCache& operator=(ClientSubChunkCache const&);
         ClientSubChunkCache(ClientSubChunkCache const&);
         ClientSubChunkCache();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::Json::Value toJson() const;
+        // NOLINTEND
     };
 
 public:
@@ -70,8 +81,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void recordLoadedChunk(::LevelChunk const& chunk);
-
     MCAPI ::Json::Value toJson() const;
     // NOLINTEND
 };

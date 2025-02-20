@@ -11,7 +11,6 @@ class BlockPos;
 class CompassSpriteCalculator;
 class Dimension;
 class LodestoneCompassComponentCalculator;
-class PositionTrackingId;
 struct ActorUniqueID;
 // clang-format on
 
@@ -38,30 +37,6 @@ public:
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
         bool                                                                             createIfNotFound
     );
-
-    MCAPI int getAnimationFrame(
-        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
-        ::BlockPos const&                                                                lookFromPosition,
-        ::DimensionType const&                                                           lookFromDimension
-    );
-
-    MCAPI void initialize(::PositionTrackingId const& trackingHandle);
-
-    MCAPI void setTrackOnlyInSameDimension(
-        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
-        bool                                                                             trackOnlyInSameDimension
-    );
-
-    MCAPI ~LodestoneCompassComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static int getSpinningAnimationFrame();
-
-    MCAPI static ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>
-    makeCalculatorId(::ActorUniqueID const& id);
     // NOLINTEND
 
 public:
@@ -74,11 +49,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::LodestoneCompassComponent&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

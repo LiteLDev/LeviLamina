@@ -4,13 +4,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorInfoRegistry;
 class BaseGameVersion;
 class BlockDefinitionGroup;
 class CreativeItemRegistry;
 class Experiments;
-class HardcodedCreativeItemsHelper;
 class ItemRegistryRef;
+class ResourcePackManager;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -18,21 +17,6 @@ class VanillaItems {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    _addCommandOnlyCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const&, ::Experiments const&);
-
-    MCAPI static void
-    _addConstructionCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const&, ::Experiments const&);
-
-    MCAPI static void
-    _addEquipmentCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const&, ::Experiments const&);
-
-    MCAPI static void
-    _addItemsCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const& worldVersion, ::Experiments const&);
-
-    MCAPI static void
-    _addNatureCategory(::HardcodedCreativeItemsHelper& hardcodedCreativeItemsHelper, ::CreativeItemRegistry* creativeItemRegistry, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const& worldVersion, ::Experiments const&);
-
     MCAPI static void registerHardCodedItemTags(::ItemRegistryRef itemRegistry);
 
     MCAPI static void registerItems(
@@ -43,13 +27,13 @@ public:
     );
 
     MCAPI static void serverInitCreativeItemsCallback(
-        ::ItemRegistryRef itemRegistry,
-        ::ActorInfoRegistry*,
-        ::BlockDefinitionGroup*  blockDefinitionGroup,
-        ::CreativeItemRegistry*  creativeItemRegistry,
-        bool                     isClient,
-        ::BaseGameVersion const& worldVersion,
-        ::Experiments const&     experiments
+        ::ItemRegistryRef              itemRegistry,
+        ::BlockDefinitionGroup const&  blockDefinitionGroup,
+        ::CreativeItemRegistry*        creativeItemRegistry,
+        ::BaseGameVersion const&       worldVersion,
+        ::Experiments const&           experiments,
+        ::ResourcePackManager const&   resourcePackManager,
+        ::cereal::ReflectionCtx const& ctx
     );
     // NOLINTEND
 };

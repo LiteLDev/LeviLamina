@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
@@ -73,15 +73,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
     MCAPI FurnaceContainerManagerModel(
-        ::HashedString const& recipeTag,
-        ::ContainerType       containerType,
-        ::BlockActorType      blockActorType,
-        ::ContainerID         containerId,
-        ::Player&             player,
-        ::BlockPos const&     blockPos
+        ::HashedString const&                recipeTag,
+        ::SharedTypes::Legacy::ContainerType containerType,
+        ::BlockActorType                     blockActorType,
+        ::ContainerID                        containerId,
+        ::Player&                            player,
+        ::BlockPos const&                    blockPos
     );
 
     MCAPI ::FurnaceBlockActor* _getFurnaceEntity();
@@ -92,15 +90,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
     MCAPI void* $ctor(
-        ::HashedString const& recipeTag,
-        ::ContainerType       containerType,
-        ::BlockActorType      blockActorType,
-        ::ContainerID         containerId,
-        ::Player&             player,
-        ::BlockPos const&     blockPos
+        ::HashedString const&                recipeTag,
+        ::SharedTypes::Legacy::ContainerType containerType,
+        ::BlockActorType                     blockActorType,
+        ::ContainerID                        containerId,
+        ::Player&                            player,
+        ::BlockPos const&                    blockPos
     );
     // NOLINTEND
 

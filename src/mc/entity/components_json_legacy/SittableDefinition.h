@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class SitComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -25,12 +23,6 @@ public:
     SittableDefinition& operator=(SittableDefinition const&);
     SittableDefinition(SittableDefinition const&);
     SittableDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void uninitialize(::EntityContext& entity, ::SitComponent&) const;
-    // NOLINTEND
 
 public:
     // static functions

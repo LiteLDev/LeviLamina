@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/item/Minecart.h"
 #include "mc/world/actor/item/MinecartType.h"
@@ -11,10 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class Block;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class MinecartTNT : public ::Minecart {
@@ -24,22 +21,22 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void destroy(::ActorDamageSource const& source, bool dropMinecartComponents) /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::MinecartType getType() /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 94
+    // vIndex: 92
     virtual float causeFallDamageToActor(float distance, float, ::ActorDamageSource) /*override*/;
 
     // vIndex: 8
@@ -49,29 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecartTNT(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
-    MCAPI void primeFuse(::ActorDamageCause cause);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_FUSE_LENGTH();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void primeFuse(::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:

@@ -17,7 +17,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetheriteArmorEquippedListener() /*override*/;
+    virtual ~NetheriteArmorEquippedListener() /*override*/ = default;
 
     // vIndex: 33
     virtual ::EventResult onEvent(::ActorEquippedArmorEvent const& actorEquippedArmorEvent) /*override*/;
@@ -26,7 +26,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

@@ -39,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BottleItem(::std::string const& name, int id);
-
     MCAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view itemToCreate) const;
 
     MCAPI void _fillBottleViaDispenser(
@@ -51,12 +49,6 @@ public:
         ::Vec3 const&      pos,
         uchar              face
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

@@ -37,6 +37,7 @@ public:
         ::ll::TypedStorage<4, 4, uint>                                                mAbilitiesSet;
         ::ll::TypedStorage<4, 4, uint>                                                mAbilityValues;
         ::ll::TypedStorage<4, 4, float>                                               mFlySpeed;
+        ::ll::TypedStorage<4, 4, float>                                               mVerticalFlySpeed;
         ::ll::TypedStorage<4, 4, float>                                               mWalkSpeed;
         // NOLINTEND
     };
@@ -51,15 +52,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    SerializedAbilitiesData& operator=(SerializedAbilitiesData const&);
+    SerializedAbilitiesData(SerializedAbilitiesData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SerializedAbilitiesData();
+    MCAPI SerializedAbilitiesData(::SerializedAbilitiesData&&);
 
     MCAPI SerializedAbilitiesData(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
 
     MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
 
-    MCFOLD ::ActorUniqueID getTargetPlayer() const;
+    MCAPI ::SerializedAbilitiesData& operator=(::SerializedAbilitiesData&&);
 
     MCAPI ~SerializedAbilitiesData();
     // NOLINTEND
@@ -73,7 +79,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::SerializedAbilitiesData&&);
 
     MCAPI void* $ctor(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
     // NOLINTEND

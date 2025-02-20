@@ -10,8 +10,6 @@
 class BlockPos;
 class BlockSource;
 class BoundingBox;
-class LegacyStructureSettings;
-class LegacyStructureTemplate;
 class Random;
 // clang-format on
 
@@ -54,12 +52,6 @@ public:
     MCAPI explicit TemplateStructurePiece(int depth);
 
     MCAPI void _setBoundingBoxFromTemplate();
-
-    MCAPI void _setup(
-        ::LegacyStructureTemplate&       structTemplate,
-        ::LegacyStructureSettings const& settings,
-        ::BlockPos const&                templatePosition
-    );
     // NOLINTEND
 
 public:

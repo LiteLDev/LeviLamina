@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 namespace FlatteningUtils { struct Instance; }
 // clang-format on
 
@@ -15,6 +16,8 @@ namespace FlatteningUtils::Wood {
 // functions
 // NOLINTBEGIN
 MCAPI ::FlatteningUtils::Instance get();
+
+MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 
 MCAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getStrippedSplitStates(::WoodType type);
 

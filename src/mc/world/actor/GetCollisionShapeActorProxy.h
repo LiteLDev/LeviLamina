@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class Actor;
 // clang-format on
 
 class GetCollisionShapeActorProxy : public ::GetCollisionShapeInterface {
@@ -60,18 +59,6 @@ public:
 
     // vIndex: 0
     virtual ~GetCollisionShapeActorProxy() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GetCollisionShapeActorProxy(::Actor const& actor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& actor);
     // NOLINTEND
 
 public:

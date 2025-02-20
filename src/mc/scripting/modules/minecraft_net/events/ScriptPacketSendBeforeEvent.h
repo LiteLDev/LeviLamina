@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,6 +29,13 @@ public:
     ScriptPacketSendBeforeEvent& operator=(ScriptPacketSendBeforeEvent const&);
     ScriptPacketSendBeforeEvent(ScriptPacketSendBeforeEvent const&);
     ScriptPacketSendBeforeEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent&
+    operator=(::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent&&);
+    // NOLINTEND
 
 public:
     // static functions

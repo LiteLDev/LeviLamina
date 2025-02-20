@@ -44,7 +44,8 @@ public:
         ::Json::Value const&                                   entry,
         int                                                    weight,
         int                                                    quality,
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions
+        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions,
+        bool                                                   usingUpcomingCreatorFeaturesExperiment
     );
     // NOLINTEND
 

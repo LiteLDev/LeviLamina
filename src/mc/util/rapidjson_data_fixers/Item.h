@@ -15,14 +15,6 @@ MCAPI bool applyLambdaToComponentObject(
                          ::rapidjson::UTF8<char>,
                          ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>>&)> const& callback
 );
-
-MCAPI void removeComponent(
-    ::rapidjson::GenericDocument<
-        ::rapidjson::UTF8<char>,
-        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-        ::rapidjson::CrtAllocator>& document,
-    ::std::string const&            componentName
-);
 // NOLINTEND
 
 } // namespace RapidJsonDataFixers::Item

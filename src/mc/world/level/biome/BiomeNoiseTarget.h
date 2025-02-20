@@ -6,7 +6,7 @@ struct BiomeNoiseTarget {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk679108;
+    ::ll::UntypedStorage<8, 8>   mUnkc6497b;
     ::ll::UntypedStorage<8, 216> mUnk6fce12;
     // NOLINTEND
 

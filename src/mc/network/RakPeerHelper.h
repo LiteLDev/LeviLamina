@@ -10,7 +10,6 @@
 struct ConnectionDefinition;
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct SocketDescriptor; }
-namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 class RakPeerHelper {
@@ -86,8 +85,6 @@ public:
     // NOLINTBEGIN
     MCAPI void LogIPSupport(::RakPeerHelper::PeerPurpose purpose);
 
-    MCAPI explicit RakPeerHelper(::RakPeerHelper::IPSupportInterface& ipInterface);
-
     MCAPI ::RakNet::StartupResult _startupInternal(
         ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
         ::ConnectionDefinition const&                definition,
@@ -96,32 +93,10 @@ public:
         int                                          ipv6Index
     );
 
-    MCAPI int getConnectionIndex(::Social::GameConnectionInfo const& connectionInfo) const;
-
-    MCAPI ushort getIPv4BoundPort() const;
-
-    MCFOLD int getIPv4ConnectionIndex() const;
-
-    MCAPI ushort getIPv6BoundPort() const;
-
-    MCFOLD int getIPv6ConnectionIndex() const;
-
-    MCAPI bool isIPv4Supported() const;
-
-    MCAPI bool isIPv6Supported() const;
-
     MCAPI ::RakNet::StartupResult peerStartup(
         ::RakNet::RakPeerInterface*   peerIn,
         ::ConnectionDefinition const& definition,
         ::RakPeerHelper::PeerPurpose  purpose
     );
-
-    MCAPI void reset();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::RakPeerHelper::IPSupportInterface& ipInterface);
     // NOLINTEND
 };

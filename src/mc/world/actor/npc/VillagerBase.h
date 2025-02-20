@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/Mob.h"
-#include "mc/world/actor/ParticleType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,16 +40,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 69
+    // vIndex: 67
     virtual void onLightningHit() /*override*/;
 
     // vIndex: 8
@@ -70,16 +70,6 @@ public:
     MCAPI void consumeLoveFood();
 
     MCAPI int getBreedingStackIndex() const;
-
-    MCAPI bool isChasing() const;
-
-    MCAPI bool isWillingToBreed(bool consumeFoodIfNecessary);
-
-    MCAPI void setChasing(bool chasing);
-
-    MCAPI void setWillingToBreed(bool willingToBreed);
-
-    MCAPI void stopGoals();
     // NOLINTEND
 
 public:
@@ -104,8 +94,6 @@ public:
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $onLightningHit();
     // NOLINTEND

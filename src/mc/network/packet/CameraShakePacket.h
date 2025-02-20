@@ -45,26 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CameraShakePacket();
-
-    MCAPI explicit CameraShakePacket(::CameraShakeAction shakeAction);
-
-    MCAPI CameraShakePacket(float intensity, float seconds, ::CameraShakeType shakeType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CameraShakeAction shakeAction);
-
-    MCAPI void* $ctor(float intensity, float seconds, ::CameraShakeType shakeType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

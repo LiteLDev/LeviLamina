@@ -11,6 +11,7 @@
 #include "mc/world/level/block/ChemistryTableType.h"
 #include "mc/world/level/block/ChiselType.h"
 #include "mc/world/level/block/CoralColor.h"
+#include "mc/world/level/block/CreakingHeartState.h"
 #include "mc/world/level/block/DirtType.h"
 #include "mc/world/level/block/DoublePlantType.h"
 #include "mc/world/level/block/DripstoneThickness.h"
@@ -31,7 +32,7 @@
 #include "mc/world/level/block/PrismarineBlockType.h"
 #include "mc/world/level/block/SandType.h"
 #include "mc/world/level/block/SandstoneType.h"
-#include "mc/world/level/block/SaplingType.h"
+#include "mc/world/level/block/SaplingType_DEPRECATED.h"
 #include "mc/world/level/block/SeagrassType.h"
 #include "mc/world/level/block/SpongeType.h"
 #include "mc/world/level/block/StalkThickness.h"
@@ -61,10 +62,6 @@ namespace VanillaStates {
 // functions
 // NOLINTBEGIN
 MCAPI ::BlockState const* getState(::HashedString const& name);
-
-MCAPI void registerStates();
-
-MCAPI void unregisterStates();
 // NOLINTEND
 
 // static variables
@@ -127,6 +124,8 @@ MCAPI ::BlockStateVariant<::HatchLevel> const& CrackedState();
 
 MCAPI ::BlockStateVariant<bool> const& Crafting();
 
+MCAPI ::BlockStateVariant<::CreakingHeartState> const& CreakingHeartState();
+
 MCAPI ::BlockStateVariant<int> const& DEPRECATED();
 
 MCAPI ::BlockStateVariant<bool> const& DEPRECATED_AllowUnderwaterBit();
@@ -171,7 +170,7 @@ MCAPI ::BlockStateVariant<::SandType> const& DEPRECATED_SandType();
 
 MCAPI ::BlockStateVariant<::SandstoneType> const& DEPRECATED_SandstoneType();
 
-MCAPI ::BlockStateVariant<::SaplingType> const& DEPRECATED_SaplingType();
+MCAPI ::BlockStateVariant<::SaplingType_DEPRECATED> const& DEPRECATED_SaplingType();
 
 MCAPI ::BlockStateVariant<::SpongeType> const& DEPRECATED_SpongeType();
 

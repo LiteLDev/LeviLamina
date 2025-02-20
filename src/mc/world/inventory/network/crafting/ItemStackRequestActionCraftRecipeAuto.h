@@ -11,7 +11,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class RecipeIngredient;
 struct RecipeNetIdTag;
 // clang-format on
 
@@ -27,6 +26,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftRecipeAuto& operator=(ItemStackRequestActionCraftRecipeAuto const&);
     ItemStackRequestActionCraftRecipeAuto(ItemStackRequestActionCraftRecipeAuto const&);
+    ItemStackRequestActionCraftRecipeAuto();
 
 public:
     // virtual functions
@@ -39,20 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~ItemStackRequestActionCraftRecipeAuto() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackRequestActionCraftRecipeAuto();
-
-    MCFOLD ::std::vector<::RecipeIngredient> const* getIngredients() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

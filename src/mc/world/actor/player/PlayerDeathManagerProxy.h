@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ServerLevel;
 struct ActorUniqueID;
 // clang-format on
 
@@ -39,18 +38,6 @@ public:
 
     // vIndex: 3
     virtual void onWorldOwnerHasDied() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayerDeathManagerProxy(::ServerLevel& serverLevel);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerLevel& serverLevel);
     // NOLINTEND
 
 public:

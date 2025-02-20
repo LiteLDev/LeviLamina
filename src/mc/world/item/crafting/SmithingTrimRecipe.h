@@ -56,12 +56,6 @@ public:
         ::RecipeIngredient const& additionIngredient,
         ::HashedString const&     tag
     );
-
-    MCFOLD ::RecipeIngredient const& getAdditionIngredient() const;
-
-    MCFOLD ::RecipeIngredient const& getBaseIngredient() const;
-
-    MCFOLD ::RecipeIngredient const& getTemplateIngredient() const;
     // NOLINTEND
 
 public:

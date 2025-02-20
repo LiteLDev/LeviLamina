@@ -44,25 +44,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DeathInfoPacket();
-
-    MCAPI explicit DeathInfoPacket(::std::pair<::std::string, ::std::vector<::std::string>> const& deathCauseMessage);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::pair<::std::string, ::std::vector<::std::string>> const& deathCauseMessage);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

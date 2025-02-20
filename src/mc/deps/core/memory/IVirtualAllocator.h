@@ -21,6 +21,8 @@ public:
         // member variables
         // NOLINTBEGIN
         uint mUnkb8649a : 1;
+        uint mUnk8510aa : 1;
+        uint mUnkd8880b : 1;
         // NOLINTEND
 
     public:
@@ -50,10 +52,10 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ::Bedrock::Result<::Bedrock::Memory::IVirtualAllocator::ReservationInfo>
-    reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) = 0;
+    reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64) = 0;
 
     // vIndex: 1
-    virtual ::Bedrock::Result<void> commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) = 0;
+    virtual ::Bedrock::Result<void> commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64, int) = 0;
 
     // vIndex: 2
     virtual ::Bedrock::Result<void> decommit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) = 0;

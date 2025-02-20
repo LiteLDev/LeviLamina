@@ -62,21 +62,9 @@ public:
     // NOLINTBEGIN
     MCAPI Scheduler(::std::string name, uint FPS);
 
-    MCAPI bool _runCoroutines(double timeCap);
-
-    MCAPI void changeThread(::std::thread::id newOwner);
-
-    MCFOLD ::WorkerPool& getCoroutinePool();
-
     MCAPI void processCoroutines(::std::chrono::nanoseconds timeSinceSwap, ::std::chrono::nanoseconds minTimeCap);
 
     MCAPI void setTargetFPS(uint FPS);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& AVERAGE_TASK_TOLERANCE();
     // NOLINTEND
 
 public:

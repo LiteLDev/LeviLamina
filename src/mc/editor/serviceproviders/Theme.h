@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/settings/ThemeSettingsColorKey.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/common/editor/ThemeSettingsColorKey.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -53,6 +53,8 @@ public:
     MCAPI ::std::unordered_map<::HashedString, ::mce::Color>
     _cloneThemeColorProps(::std::unordered_map<::HashedString, ::mce::Color> colorProps);
 
+    MCAPI ::Scripting::Error _getThemeDoesNotExistError(::std::string const& themeId, bool isCustom) const;
+
     MCAPI ::Scripting::Result<void, ::Scripting::Error> addNewTheme(
         ::std::string const&                  id,
         ::std::optional<::std::string> const& name,
@@ -64,13 +66,7 @@ public:
 
     MCAPI ::Scripting::Result<void, ::Scripting::Error> deleteTheme(::std::string const& id, bool notifyUpdate);
 
-    MCFOLD ::std::string const& getCurrentTheme() const;
-
     MCAPI ::std::optional<::Editor::Settings::ThemePalette> getThemeColors(::std::string const& id) const;
-
-    MCAPI ::std::vector<::std::string> getThemeIdList() const;
-
-    MCAPI ::Scripting::Result<::std::string, ::Scripting::Error> getThemeName(::std::string const& id) const;
 
     MCAPI ::Scripting::Result<::Editor::Settings::ThemePalette, ::Scripting::Error>
     getThemePalette(::std::string const& id) const;
@@ -82,16 +78,12 @@ public:
     MCAPI ::Scripting::Result<void, ::Scripting::Error>
     setThemeName(::std::string const& id, ::std::string const& name);
 
-    MCAPI void updateSettings(::Editor::Settings::ThemeProps const& props, bool notifyUpdate);
-
     MCAPI ::Scripting::Result<void, ::Scripting::Error> updateThemeColor(
         ::std::string const&                      id,
         ::Editor::Settings::ThemeSettingsColorKey key,
         ::mce::Color const&                       newColor,
         bool                                      notifyUpdate
     );
-
-    MCAPI ~Theme();
     // NOLINTEND
 
 public:
@@ -127,12 +119,6 @@ public:
                                                     onThemeColorUpdatedCallback,
         ::std::function<void(::std::string const&)> onThemeDeletedCallback
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

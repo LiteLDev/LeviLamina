@@ -30,15 +30,6 @@ MCAPI void forNormalGravitySystems(::std::function<void(::TickingSystemWithInfo&
 
 MCAPI bool isCenterTopAndBottomNotInAir(::Vec3 const& pos, ::IConstBlockSource const& region, ::Vec2 const& aabbDim);
 
-MCAPI bool shouldApplyLiquidGravity(
-    ::NavigationComponent const*    navigationComponent,
-    ::PhysicsComponent const*       physicsComponent,
-    ::ActorDataFlagComponent const& actorData,
-    ::Vec3 const&                   pos,
-    ::IConstBlockSource const&      region,
-    ::Vec2 const&                   aabbDim
-);
-
 MCAPI void tickAirGravity(
     ::StrictEntityContext const&,
     ::ActorDataFlagComponent const& synchedActorData,

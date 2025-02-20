@@ -79,13 +79,13 @@ public:
     );
 
     MCAPI void generateSmallDoor(
-        ::BlockSource& region,
-        ::Random&,
-        ::BoundingBox const&             chunkBB,
-        ::StrongholdPiece::SmallDoorType doorType,
-        int                              footX,
+        ::BlockSource&                   region,
+        ::Random&                        chunkBB,
+        ::BoundingBox const&             doorType,
+        ::StrongholdPiece::SmallDoorType footX,
         int                              footY,
-        int                              footZ
+        int                              footZ,
+        int
     );
 
     MCAPI ::StructurePiece* generateSmallDoorChildForward(

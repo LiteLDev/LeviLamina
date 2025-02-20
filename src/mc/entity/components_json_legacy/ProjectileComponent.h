@@ -3,20 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/world/Difficulty.h"
-#include "mc/world/actor/projectile/ProjectileAnchor.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/world/actor/TempEPtr.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class BaseGameVersion;
+class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
 class HitResult;
 class Level;
+class Vec2;
 class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class ProjectileComponent {
@@ -120,6 +121,9 @@ public:
 
     MCAPI ProjectileComponent(::ProjectileComponent const&);
 
+    MCAPI ::std::tuple<::BlockPos, float>
+    _getInitialTargetParams(::Actor const& owner, ::TempEPtr<::Actor> target) const;
+
     MCAPI void _handleLightningOnHit(::Actor& owner);
 
     MCAPI void _selectNextMoveDirection(::Actor const& owner, ::ProjectileComponent::EAxis avoidAxis);
@@ -128,55 +132,19 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCFOLD ::ProjectileAnchor getAnchor();
-
     MCAPI ::HitResult getCachedHitResult() const;
-
-    MCAPI bool getCatchFire() const;
-
-    MCAPI bool getEnchantChanneling() const;
-
-    MCAPI float getGravity() const;
 
     MCAPI ::HitResult getHitResult() const;
 
-    MCFOLD bool getIsDangerous();
-
-    MCFOLD float getKnockbackForce() const;
-
-    MCFOLD bool getNoPhysics() const;
-
-    MCAPI ::Vec3 getOffset();
-
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent getShootSound();
-
-    MCAPI bool getShootTarget();
-
     MCAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
 
-    MCFOLD bool getShouldBounce() const;
-
-    MCFOLD bool getStopOnHurt() const;
-
-    MCAPI float getThrowPower() const;
-
-    MCAPI float getUncertainty(::Difficulty diff) const;
-
-    MCAPI float getUncertaintyBase() const;
-
-    MCAPI float getUncertaintyMultiplier() const;
+    MCAPI float getUncertainty(::SharedTypes::Legacy::Difficulty diff) const;
 
     MCAPI void handleMovementGravity(::Actor& owner);
 
     MCAPI void handleMovementHoming(::Actor& owner);
 
     MCAPI void hurt(::Actor& owner, ::ActorDamageSource const& damageSource);
-
-    MCAPI int incrementFlightTime();
-
-    MCAPI int incrementLife();
-
-    MCAPI int incrementOnGroundTime();
 
     MCAPI void initFromDefinition(::Actor& owner);
 
@@ -186,33 +154,9 @@ public:
 
     MCAPI ::ProjectileComponent& operator=(::ProjectileComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& dataLoadHelper, ::DataLoadHelper&);
 
-    MCAPI void setActiveTarget(::Actor const& owner, ::Actor* target);
-
-    MCAPI void setCatchFire(bool catchFire);
-
-    MCAPI void setChanneling(bool channeling);
-
-    MCAPI void setEnchantImpaler(int const& level);
-
-    MCAPI void setGravity(float gravity);
-
-    MCAPI void setHitSound(::SharedTypes::Legacy::LevelSoundEvent hitSound);
-
-    MCAPI void setKnockbackForce(float force);
-
-    MCFOLD void setNoPhysics(bool value);
-
-    MCFOLD void setOwnerId(::ActorUniqueID id);
-
-    MCAPI void setPotionEffect(int potionEffect);
-
-    MCAPI void setShouldBounce(bool bounce);
-
-    MCAPI void setSplashRange(float range);
-
-    MCAPI void setStopOnHurt(bool stopOnHurt);
+    MCAPI void setHitResult(::HitResult result);
 
     MCAPI void shoot(::Actor& owner, ::Actor& shooter);
 
@@ -220,6 +164,12 @@ public:
     shoot(::Actor& owner, ::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed, ::Actor* target);
 
     MCAPI ~ProjectileComponent();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Vec2 dampenShooterAngle(::Vec2 const& angle, float angleOffset, ::BaseGameVersion const& currVer);
     // NOLINTEND
 
 public:

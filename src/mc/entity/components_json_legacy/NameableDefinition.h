@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class NameableComponent;
 struct NameAction;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -27,17 +25,12 @@ public:
     // prevent constructor by default
     NameableDefinition& operator=(NameableDefinition const&);
     NameableDefinition(NameableDefinition const&);
+    NameableDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NameableDefinition();
-
     MCAPI void addNameAction(::NameAction const& nameAction);
-
-    MCAPI void initialize(::EntityContext& entity, ::NameableComponent& component) const;
-
-    MCAPI ~NameableDefinition();
     // NOLINTEND
 
 public:
@@ -46,17 +39,5 @@ public:
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NameableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

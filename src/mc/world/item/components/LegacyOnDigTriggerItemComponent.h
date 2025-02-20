@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class Block;
+class HashedString;
 class ItemStack;
 class SemVersion;
 struct LegacyOnDigTriggerItemComponentData;
@@ -40,7 +41,7 @@ public:
     virtual void _initializeComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~LegacyOnDigTriggerItemComponent() /*override*/;
+    virtual ~LegacyOnDigTriggerItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,6 +53,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&& componentData);
@@ -60,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

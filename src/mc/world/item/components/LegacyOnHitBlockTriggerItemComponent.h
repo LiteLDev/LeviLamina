@@ -5,6 +5,16 @@
 // auto generated inclusion list
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class HashedString;
+class ItemStack;
+class Mob;
+struct LegacyOnHitBlockTriggerItemComponentData;
+// clang-format on
+
 class LegacyOnHitBlockTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
@@ -27,6 +37,26 @@ public:
 
     // vIndex: 0
     virtual ~LegacyOnHitBlockTriggerItemComponent() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LegacyOnHitBlockTriggerItemComponent(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
+
+    MCAPI void _onHitBlock(::ItemStack& item, ::Block const& blockPos, ::BlockPos const& attacker, ::Mob&);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LegacyOnHitBlockTriggerItemComponentData&& componentData);
     // NOLINTEND
 
 public:

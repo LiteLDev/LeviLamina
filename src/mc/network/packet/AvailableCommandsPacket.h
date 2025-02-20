@@ -37,9 +37,26 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        EnumData& operator=(EnumData const&);
+        EnumData(EnumData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI EnumData();
+
+        MCAPI EnumData(::AvailableCommandsPacket::EnumData&&);
+
         MCAPI ~EnumData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+
+        MCFOLD void* $ctor(::AvailableCommandsPacket::EnumData&&);
         // NOLINTEND
 
     public:
@@ -67,9 +84,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        SoftEnumData& operator=(SoftEnumData const&);
+        SoftEnumData(SoftEnumData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI SoftEnumData(::AvailableCommandsPacket::SoftEnumData&&);
+
         MCAPI ~SoftEnumData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::AvailableCommandsPacket::SoftEnumData&&);
         // NOLINTEND
 
     public:
@@ -89,9 +119,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ConstrainedValueData& operator=(ConstrainedValueData const&);
+        ConstrainedValueData(ConstrainedValueData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ConstrainedValueData(::AvailableCommandsPacket::ConstrainedValueData&&);
+
         MCAPI ~ConstrainedValueData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::AvailableCommandsPacket::ConstrainedValueData&&);
         // NOLINTEND
 
     public:
@@ -112,9 +155,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        ParamData& operator=(ParamData const&);
+        ParamData(ParamData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ParamData(::AvailableCommandsPacket::ParamData&&);
+
         MCAPI ~ParamData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::AvailableCommandsPacket::ParamData&&);
         // NOLINTEND
 
     public:
@@ -133,9 +189,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        OverloadData& operator=(OverloadData const&);
+        OverloadData(OverloadData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI OverloadData(::AvailableCommandsPacket::OverloadData&&);
+
         MCAPI ~OverloadData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::AvailableCommandsPacket::OverloadData&&);
         // NOLINTEND
 
     public:
@@ -214,40 +283,6 @@ public:
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AvailableCommandsPacket();
-
-    MCAPI AvailableCommandsPacket(
-        ::std::vector<::std::string> const&                               enumValues,
-        ::std::vector<::std::string> const&                               chainedSubcommandValues,
-        ::std::vector<::std::string> const&                               postfixes,
-        ::std::vector<::AvailableCommandsPacket::EnumData>&&              enumData,
-        ::std::vector<::AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
-        ::std::vector<::AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
-        ::std::vector<::AvailableCommandsPacket::CommandData>&&           commandData,
-        ::std::vector<::AvailableCommandsPacket::SoftEnumData>&&          softEnumData
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::std::vector<::std::string> const&                               enumValues,
-        ::std::vector<::std::string> const&                               chainedSubcommandValues,
-        ::std::vector<::std::string> const&                               postfixes,
-        ::std::vector<::AvailableCommandsPacket::EnumData>&&              enumData,
-        ::std::vector<::AvailableCommandsPacket::ChainedSubcommandData>&& chainedSubcommandData,
-        ::std::vector<::AvailableCommandsPacket::ConstrainedValueData>&&  constraints,
-        ::std::vector<::AvailableCommandsPacket::CommandData>&&           commandData,
-        ::std::vector<::AvailableCommandsPacket::SoftEnumData>&&          softEnumData
-    );
     // NOLINTEND
 
 public:

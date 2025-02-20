@@ -14,7 +14,6 @@
 class BlockPos;
 class ChunkPos;
 class LevelChunk;
-class LevelChunkBlockActorAccessToken;
 class Random;
 struct Bounds;
 struct LevelChunkFinalDeleter;
@@ -64,21 +63,13 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkViewSource(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI ChunkViewSource(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
-
     MCAPI ChunkViewSource(
         ::ChunkSource&                                              mainSource,
         ::LevelChunkGridAreaElement<::std::weak_ptr<::LevelChunk>>& gridArea,
         ::Bounds const&                                             bounds
     );
 
-    MCAPI void clear();
-
     MCAPI void clearEntryAtChunkPos(::ChunkPos const& chunkPos);
-
-    MCAPI ::std::vector<::LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
-
-    MCFOLD ::GridArea<::std::shared_ptr<::LevelChunk>>& getArea();
 
     MCAPI void move(
         ::Bounds const&               bounds,
@@ -105,26 +96,12 @@ public:
         ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add,
         float const*                                                                                   serverBuildRatio
     );
-
-    MCAPI void rebuildSpecificArea(
-        ::Bounds const& bounds,
-        bool,
-        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)> add
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ChunkSourceViewGenerateMode getGenerateMode(bool isClientSide, bool isClientSideGenerationEnabled);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChunkViewSource const& otherChunkViewSource);
-
-    MCAPI void* $ctor(::ChunkSource& mainSource, ::ChunkSource::LoadMode parentLoadMode);
 
     MCAPI void* $ctor(
         ::ChunkSource&                                              mainSource,

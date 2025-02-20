@@ -76,7 +76,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TheEndGenerator() /*override*/ = default;
+    virtual ~TheEndGenerator() /*override*/;
 
     // vIndex: 11
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
@@ -139,20 +139,16 @@ public:
     MCAPI void _prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
-        bool                  factorInBeardsAndShavers,
-        ::std::vector<short>* ZXheights,
+        bool                  ZXheights,
+        ::std::vector<short>* factorInBeardsAndShavers,
         int                   skipTopN
     );
+
+    MCAPI void buildSurfaces(::BlockVolume& box, ::ChunkPos const& levelChunk, ::LevelChunk& chunkPos);
 
     MCAPI ::Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
     MCAPI float getIslandHeightValue(int chunkX, int chunkZ, int cellOffsetX, int cellOffsetZ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isOutsideCentralIslandArea(::ChunkPos const& chunkPos);
     // NOLINTEND
 
 public:
@@ -164,7 +160,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -18,21 +18,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI HitboxComponent(::HitboxComponent const& rhs);
-
-    MCAPI ::HitboxComponent& operator=(::HitboxComponent&&);
-
-    MCAPI ~HitboxComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::HitboxComponent const& rhs);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

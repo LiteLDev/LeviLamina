@@ -53,12 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FireworksItem(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ItemInstance const& initFireworksRocketItem(
@@ -79,12 +73,6 @@ public:
     MCAPI static ::std::string const& TAG_E_FLIGHT();
 
     MCAPI static ::std::string const& TAG_FIREWORKS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

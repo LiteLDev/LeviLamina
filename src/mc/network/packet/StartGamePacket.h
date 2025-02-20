@@ -15,13 +15,11 @@ class BinaryStream;
 class BlockDefinitionGroup;
 class CompoundTag;
 class ContentIdentity;
-class ItemRegistryRef;
 class LevelSettings;
 class ReadOnlyBinaryStream;
 class Vec2;
 class Vec3;
 struct ActorUniqueID;
-struct ItemData;
 struct NetworkPermissions;
 struct PlayerMovementSettings;
 struct SyncedPlayerMovementSettings;
@@ -32,7 +30,7 @@ class StartGamePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 1376, ::LevelSettings>              mSettings;
+    ::ll::TypedStorage<8, 1352, ::LevelSettings>              mSettings;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                 mEntityId;
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
     ::ll::TypedStorage<4, 4, ::GameType>                      mEntityGameType;
@@ -47,7 +45,6 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                          mLevelCurrentTime;
     ::ll::TypedStorage<4, 4, int>                             mEnchantmentSeed;
     ::ll::TypedStorage<8, 32, ::std::string>                  mMultiplayerCorrelationId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemData>>      mItemData;
     ::ll::TypedStorage<1, 1, bool>                            mEnableItemStackNetManager;
     ::ll::TypedStorage<8, 32, ::std::string>                  mServerVersion;
     ::ll::TypedStorage<8, 24, ::CompoundTag>                  mPlayerPropertyData;
@@ -83,7 +80,6 @@ public:
     MCAPI StartGamePacket();
 
     MCAPI StartGamePacket(
-        ::ItemRegistryRef               itemRegistry,
         ::LevelSettings const&          settings,
         ::ActorUniqueID                 entityId,
         ::ActorRuntimeID                runtimeId,
@@ -113,7 +109,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(
-        ::ItemRegistryRef               itemRegistry,
         ::LevelSettings const&          settings,
         ::ActorUniqueID                 entityId,
         ::ActorRuntimeID                runtimeId,

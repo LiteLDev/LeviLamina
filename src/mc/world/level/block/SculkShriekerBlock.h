@@ -14,9 +14,8 @@ class BlockPos;
 class BlockSource;
 class EntityContext;
 class Experiments;
-class Material;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SculkShriekerBlock : public ::ActorBlock {
@@ -31,9 +30,6 @@ public:
 
     // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -54,15 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkShriekerBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -79,8 +69,6 @@ public:
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 

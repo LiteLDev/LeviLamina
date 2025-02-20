@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileInfo(::Core::Path _filePath, int _fileSize, ::std::string _fileHash);
+    MCAPI FileInfo(::Core::Path _filePath, int _fileHash, ::std::string _fileSize);
 
     MCAPI ~FileInfo();
     // NOLINTEND
@@ -33,7 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path _filePath, int _fileSize, ::std::string _fileHash);
+    MCAPI void* $ctor(::Core::Path _filePath, int _fileHash, ::std::string _fileSize);
     // NOLINTEND
 
 public:

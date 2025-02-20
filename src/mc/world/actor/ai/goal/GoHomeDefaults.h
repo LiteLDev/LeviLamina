@@ -9,8 +9,6 @@ MCAPI float const& CALCULATE_NEW_PATH_RADIUS();
 
 MCAPI float const& GOAL_RADIUS();
 
-MCAPI int const& INTERVAL();
-
 MCAPI float const& SPEED_MULTIPLIER();
 // NOLINTEND
 

@@ -3,26 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/resource/PackCategory.h"
-#include "mc/deps/core/resource/PackOrigin.h"
-#include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/resources/ManifestOrigin.h"
 #include "mc/resources/ManifestType.h"
 #include "mc/resources/PackCapability.h"
 #include "mc/resources/PackManifestFormat.h"
 #include "mc/resources/PackScope.h"
-#include "mc/resources/TemplateLockState.h"
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
-class ContentIdentity;
-class MinEngineVersion;
 class ResourceInformation;
-class ResourceLocation;
-class ResourceMetadata;
-struct ModuleIdentifier;
 struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
@@ -40,10 +29,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 56>  mUnkb1c40e;
-    ::ll::UntypedStorage<8, 136> mUnk1e2f34;
+    ::ll::UntypedStorage<8, 48>  mUnk1e2f34;
     ::ll::UntypedStorage<8, 24>  mUnk7ab187;
-    ::ll::UntypedStorage<8, 120> mUnkde7951;
-    ::ll::UntypedStorage<8, 120> mUnk5f3fbd;
+    ::ll::UntypedStorage<8, 32>  mUnkde7951;
+    ::ll::UntypedStorage<8, 32>  mUnk5f3fbd;
     ::ll::UntypedStorage<8, 64>  mUnkc59183;
     ::ll::UntypedStorage<8, 32>  mUnk4edafd;
     ::ll::UntypedStorage<8, 32>  mUnkdf5b3f;
@@ -102,9 +91,13 @@ public:
 
     MCAPI explicit PackManifest(::ManifestType type);
 
+    MCAPI void _serailizeLegacyModuleDependencies(::Json::Value& destination) const;
+
     MCAPI void _serializeDependencies(::Json::Value& destination) const;
 
     MCAPI void _serializeHeader(::Json::Value& destination) const;
+
+    MCAPI void _serializeMeta(::Json::Value& destination) const;
 
     MCAPI void _serializeModules(::Json::Value& destination) const;
 
@@ -114,99 +107,25 @@ public:
 
     MCAPI void addPackDependency(::PackIdVersion const& packId);
 
-    MCFOLD ::ContentIdentity const& getContentIdentity() const;
-
-    MCAPI ::std::vector<::PackIdVersion> const& getDependentPackIdentities() const;
-
     MCAPI ::std::string getDescription() const;
-
-    MCAPI ::PackManifestFormat getFormatVersion() const;
-
-    MCFOLD ::PackIdVersion const& getIdentity() const;
-
-    MCAPI ::std::vector<::std::string> const& getLanguageCodesForPackKeywords() const;
-
-    MCFOLD ::ResourceLocation const& getLocation() const;
-
-    MCAPI ::ManifestOrigin getManifestOrigin() const;
-
-    MCAPI ::ResourceMetadata const& getMetaData() const;
-
-    MCFOLD ::MinEngineVersion const& getMinEngineVersion() const;
-
-    MCFOLD ::std::vector<::ModuleIdentifier> const& getModuleDependencies() const;
-
-    MCFOLD ::std::vector<::ResourceInformation> const& getModules() const;
 
     MCAPI ::std::string getName() const;
 
     MCAPI ::std::string getNameForTelemetry() const;
 
-    MCAPI ::PackManifestFormat getOriginalFormatVersion() const;
-
-    MCAPI ::PackCategory getPackCategory() const;
-
-    MCAPI ::PackOrigin getPackOrigin() const;
-
-    MCAPI uint64 getPackSize() const;
-
-    MCAPI ::PackType getPackType() const;
-
-    MCAPI ::BaseGameVersion const& getRequiredBaseGameVersion() const;
-
-    MCAPI ::std::vector<::std::string> getTrustedCapabilities() const;
-
-    MCAPI bool hasClientScript() const;
-
-    MCAPI bool hasEducationMetadata() const;
-
-    MCAPI bool hasLegacyModuleDependencies() const;
-
-    MCAPI bool hasModule(::PackIdVersion const& moduleIdentity) const;
-
     MCAPI bool hasPackCapability(::std::string_view capability) const;
 
-    MCAPI bool hasPlugins() const;
-
-    MCAPI bool isAddon() const;
-
-    MCAPI bool isPremium() const;
-
-    MCAPI bool isUsingPackDescriptionKeyword() const;
+    MCAPI bool isRestrictedPack() const;
 
     MCAPI bool isUsingPackNameKeyword() const;
 
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
 
-    MCAPI void setCanBeRedownloaded(bool redownloadable);
-
     MCAPI void setDescription(::std::string const& description);
-
-    MCAPI void setHasEducationMetadata(bool containsEducationMetadata);
-
-    MCAPI void setIdentity(::PackIdVersion const& identity);
-
-    MCAPI void setLanguageCodesForPackKeywords(::std::vector<::std::string> languageCodes);
 
     MCAPI void setLastModifiedDate(int64 lastModifiedDate);
 
     MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
-
-    MCAPI void setManifestOrigin(::ManifestOrigin const& origin);
-
-    MCAPI void setName(::std::string const& name);
-
-    MCAPI void setOptionLockedState(::TemplateLockState isWorldTemplateOptionLocked);
-
-    MCAPI void setPackCategory(::PackCategory packCategory);
-
-    MCAPI void setPackOrigin(::PackOrigin packOrigin);
-
-    MCAPI void setPackType(::PackType packType);
-
-    MCAPI void setRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
-
-    MCAPI void setSourceIdentity(::ContentIdentity const& contentIdentity);
     // NOLINTEND
 
 public:

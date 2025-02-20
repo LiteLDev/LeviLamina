@@ -20,6 +20,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
 class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -37,8 +38,7 @@ public:
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 10
     virtual ::AABB const& getVisualShapeInWorld(
@@ -58,7 +58,7 @@ public:
     getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 87
@@ -81,8 +81,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PortalBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tryMatchPortalRecordToFrameBlocksContainingPos(::BlockSource& region, ::BlockPos const& pos) const;
@@ -94,12 +92,6 @@ public:
     MCAPI static void trySpawnPigZombie(::BlockSource& region, ::BlockPos const& pos, ::PortalAxis axis);
 
     MCAPI static bool trySpawnPortal(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -117,7 +109,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const&             block,

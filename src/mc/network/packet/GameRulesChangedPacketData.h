@@ -15,11 +15,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameRulesChangedPacketData& operator=(GameRulesChangedPacketData const&);
+    GameRulesChangedPacketData(GameRulesChangedPacketData const&);
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addRule(::GameRule const& rule);
-
-    MCFOLD ::std::vector<::GameRule> const& getRules() const;
+    MCAPI ::GameRulesChangedPacketData& operator=(::GameRulesChangedPacketData&&);
 
     MCAPI void setRules(::std::vector<::GameRule> rules);
 

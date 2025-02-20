@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/DragonBaseGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class DragonChargePlayerGoal : public ::DragonBaseGoal {
 public:
     // member variables
@@ -41,18 +36,6 @@ public:
 
     // vIndex: 0
     virtual ~DragonChargePlayerGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DragonChargePlayerGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

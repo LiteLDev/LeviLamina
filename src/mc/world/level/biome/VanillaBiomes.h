@@ -38,8 +38,6 @@ public:
     MCAPI static void initSurfaceBuilders(::SurfaceBuilderRegistry& registry, ::BaseGameVersion const& baseGameVersion);
 
     MCAPI static void initVanillaBiomeTypeComponent(::BiomeRegistry& registry);
-
-    MCAPI static void shutdownBiomes();
     // NOLINTEND
 
 public:

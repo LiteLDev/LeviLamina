@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -17,17 +17,13 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptBlockFillOptions& operator=(ScriptBlockFillOptions const&);
     ScriptBlockFillOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBlockFillOptions(::ScriptModuleMinecraft::ScriptBlockFillOptions const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockFillOptions& operator=(::ScriptModuleMinecraft::ScriptBlockFillOptions&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockFillOptions&
-    operator=(::ScriptModuleMinecraft::ScriptBlockFillOptions const&);
 
     MCAPI ~ScriptBlockFillOptions();
     // NOLINTEND

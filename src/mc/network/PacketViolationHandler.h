@@ -3,47 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/IPacketSecurityHandler.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/PacketViolationResponse.h"
+#include "mc/platform/ErrorInfo.h"
 
-// auto generated forward declare list
-// clang-format off
-class NetworkIdentifier;
-// clang-format on
-
-class PacketViolationHandler {
-public:
-    // PacketViolationHandler inner types declare
-    // clang-format off
-    struct PacketViolation;
-    // clang-format on
-
-    // PacketViolationHandler inner types define
-    struct PacketViolation {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 160> mUnk5e5775;
-        ::ll::UntypedStorage<4, 4>   mUnk21da3b;
-        ::ll::UntypedStorage<4, 4>   mUnk331e7c;
-        ::ll::UntypedStorage<4, 4>   mUnka0ab1b;
-        ::ll::UntypedStorage<8, 24>  mUnke39d1d;
-        ::ll::UntypedStorage<4, 4>   mUnk344fc3;
-        ::ll::UntypedStorage<8, 8>   mUnkdf4bf6;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PacketViolation& operator=(PacketViolation const&);
-        PacketViolation(PacketViolation const&);
-        PacketViolation();
-    };
-
+class PacketViolationHandler : public ::IPacketSecurityHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32> mUnkd8ca2f;
-    ::ll::UntypedStorage<8, 16> mUnke5464e;
+    ::ll::UntypedStorage<4, 32>  mUnkd8ca2f;
+    ::ll::UntypedStorage<8, 8>   mUnk906264;
+    ::ll::UntypedStorage<8, 160> mUnk14f8c8;
     // NOLINTEND
 
 public:
@@ -53,13 +24,50 @@ public:
     PacketViolationHandler();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ::PacketViolationResponse checkForViolation(
+        ::MinecraftPacketIds                                                     packetId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
+        bool*                                                                    outIsNewOrUpdatedViolation
+    ) /*override*/;
+
+    // vIndex: 1
+    virtual void getTelemetryData(uint& violationCount) /*override*/;
+
+    // vIndex: 2
+    virtual ~PacketViolationHandler() /*override*/ = default;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PacketViolationResponse _handleViolation(
-        ::MinecraftPacketIds       packetId,
-        ::std::error_code const&   result,
-        ::NetworkIdentifier const& netId,
-        bool*                      outIsNewOrUpdatedViolation
+    MCAPI ::PacketViolationResponse
+    _handleViolation(::MinecraftPacketIds packetId, ::std::error_code const& result, bool* outIsNewOrUpdatedViolation);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::PacketViolationResponse $checkForViolation(
+        ::MinecraftPacketIds                                                     packetId,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
+        bool*                                                                    outIsNewOrUpdatedViolation
     );
+
+    MCAPI void $getTelemetryData(uint& violationCount);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

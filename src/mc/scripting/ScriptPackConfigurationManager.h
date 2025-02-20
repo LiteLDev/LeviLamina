@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CommandsRegistryConfiguration;
 class ScriptPackConfiguration;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ScriptPackConfigurationManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,6 +20,7 @@ public:
     ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>> const>       mConfigDirectory;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ScriptPackConfiguration>> mPackConfigurations;
     ::ll::TypedStorage<8, 224, ::ScriptPackConfiguration>                                     mDefaultPackConfiguration;
+    ::ll::TypedStorage<8, 104, ::std::optional<::CommandsRegistryConfiguration>> mCommandsRegistryConfiguration;
     // NOLINTEND
 
 public:
@@ -40,11 +43,9 @@ public:
 
     MCAPI explicit ScriptPackConfigurationManager(::std::optional<::Core::PathBuffer<::std::string>> configDirectory);
 
-    MCFOLD ::std::optional<::Core::PathBuffer<::std::string>> const& getConfigPath() const;
-
     MCAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 
-    MCAPI void loadPackConfigs();
+    MCAPI void loadConfigs(::cereal::ReflectionCtx ctx);
     // NOLINTEND
 
 public:

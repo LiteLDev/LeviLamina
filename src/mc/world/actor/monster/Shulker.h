@@ -31,40 +31,34 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 160
+    // vIndex: 155
     virtual int getArmorValue() const /*override*/;
-
-    // vIndex: 63
-    virtual bool shouldRender() const /*override*/;
 
     // vIndex: 7
     virtual void _doInitialMove() /*override*/;
 
-    // vIndex: 178
+    // vIndex: 174
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 157
+    // vIndex: 152
     virtual float getMaxHeadXRot() /*override*/;
 
-    // vIndex: 31
-    virtual bool isInWall() const /*override*/;
-
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
@@ -82,7 +76,13 @@ public:
 
     MCAPI void _calculateBB();
 
+    MCAPI bool _canOpenLidAt(::BlockPos position, uchar direction) const;
+
+    MCAPI bool _getAttached() const;
+
     MCAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
+
+    MCAPI bool _isValidAttach(::BlockPos attachPos, uchar direction);
 
     MCAPI void _peekAmountTick();
 
@@ -103,9 +103,6 @@ public:
     MCAPI static void applyShulkerBounds(::ShulkerBounds const& bounds, ::EntityContext& shulker);
 
     MCAPI static ::ShulkerBounds computeShulkerBounds(::ShulkerBoundsInput const& input);
-
-    MCAPI static void
-    postSetPosSetShulkerAttachPosAndPeekAmount(::SynchedActorDataWriter data, ::BlockPos const& newAttachPos);
 
     MCAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
     // NOLINTEND
@@ -149,8 +146,6 @@ public:
 
     MCAPI int $getArmorValue() const;
 
-    MCFOLD bool $shouldRender() const;
-
     MCFOLD void $_doInitialMove();
 
     MCFOLD ::std::unique_ptr<::BodyControl> $initBodyControl();
@@ -158,8 +153,6 @@ public:
     MCFOLD float $getShadowRadius() const;
 
     MCFOLD float $getMaxHeadXRot();
-
-    MCAPI bool $isInWall() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND

@@ -2,14 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/pathfinder/CanJumpIntoNode.h"
-#include "mc/world/level/pathfinder/NodeType.h"
-
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 class BlockSource;
 class Mob;
 class NavigationComponent;
@@ -24,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PathNavigation();
+    virtual ~PathNavigation() = default;
 
     // vIndex: 1
     virtual void initializeInternal(::Mob& mob, ::NavigationDescription* description);
@@ -69,21 +64,12 @@ public:
     MCAPI float _getHighestBlockHeight(::BlockSource& region, ::Mob& mob, ::Vec3 const& pos, ::Vec2 const& aabb) const;
 
     MCAPI bool _isPositionOnlyInAir(::BlockSource const& region, ::Vec3 const& pos, ::Vec2 const& aabb) const;
-
-    MCAPI ::NodeType isFree(
-        ::NavigationComponent& parent,
-        ::Mob&                 mob,
-        ::BlockPos const&      lastPathPos,
-        ::BlockPos const&      testPos,
-        ::BlockPos const&      size,
-        ::CanJumpIntoNode      jumpIntoNode
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

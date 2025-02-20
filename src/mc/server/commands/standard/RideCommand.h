@@ -58,7 +58,6 @@ public:
     // prevent constructor by default
     RideCommand& operator=(RideCommand const&);
     RideCommand(RideCommand const&);
-    RideCommand();
 
 public:
     // virtual functions
@@ -73,6 +72,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RideCommand();
+
     MCAPI void evictPassengers(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void startRiding(::CommandOrigin const& origin, ::CommandOutput& output) const;
@@ -88,6 +89,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

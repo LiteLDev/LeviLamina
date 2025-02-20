@@ -16,7 +16,6 @@ struct PositionPassengerRequestComponent;
 struct RenderPositionComponent;
 struct RenderRotationComponent;
 struct StandAnimationComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -52,7 +51,5 @@ public:
             ::Include<::VehicleComponent>,
             ::RenderPositionComponent const> horseView
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

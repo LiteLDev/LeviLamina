@@ -10,7 +10,6 @@
 class BlockPos;
 class IBlockWorldGenAPI;
 class Random;
-class RenderParams;
 // clang-format on
 
 class VegetationPatchFeature : public ::IFeature {
@@ -50,15 +49,17 @@ public:
     virtual ~VegetationPatchFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _isExposedDirection(::IBlockWorldGenAPI& target, ::BlockPos const& pos, uchar direction) const;
+
+    MCAPI bool
+    _placeGround(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& posAtSurface, uchar towardsSurface)
+        const;
 
     MCAPI ::std::vector<::BlockPos>
     _placeGroundPatch(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& origin, int xRadius, int zRadius)
@@ -74,8 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

@@ -4,17 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/CopperType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
 class CopperBehavior;
-class HashedString;
-class Material;
-class Player;
+class Experiments;
 class Random;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class CopperBlock : public ::BlockLegacy {
@@ -30,71 +28,29 @@ public:
     // vIndex: 27
     virtual ::CopperBehavior const* tryGetCopperBehavior() const /*override*/;
 
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
-
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 18
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
-    virtual ~CopperBlock() /*override*/;
+    virtual ~CopperBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CopperBlock(
-        ::std::string const&  nameId,
-        int                   id,
-        ::Material const&     material,
-        ::CopperType          copperType,
-        ::HashedString const& previousVariant,
-        bool                  hasTransparency
-    );
-
-    MCAPI CopperBlock(
-        ::std::string const&  nameId,
-        int                   id,
-        ::Material const&     material,
-        ::CopperType          copperType,
-        ::HashedString const& previousVariant,
-        ::HashedString const& nextAgeVariant,
-        ::HashedString const& waxedVariant,
-        bool                  hasTransparency
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&  nameId,
-        int                   id,
-        ::Material const&     material,
-        ::CopperType          copperType,
-        ::HashedString const& previousVariant,
-        bool                  hasTransparency
-    );
-
-    MCAPI void* $ctor(
-        ::std::string const&  nameId,
-        int                   id,
-        ::Material const&     material,
-        ::CopperType          copperType,
-        ::HashedString const& previousVariant,
-        ::HashedString const& nextAgeVariant,
-        ::HashedString const& waxedVariant,
-        bool                  hasTransparency
-    );
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -102,11 +58,11 @@ public:
     // NOLINTBEGIN
     MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
-
     MCFOLD void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

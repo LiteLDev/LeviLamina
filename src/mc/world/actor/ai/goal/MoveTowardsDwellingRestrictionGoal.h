@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/MoveTowardsRestrictionGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class MoveTowardsDwellingRestrictionGoal : public ::MoveTowardsRestrictionGoal {
 public:
     // virtual functions
@@ -22,18 +17,6 @@ public:
 
     // vIndex: 0
     virtual ~MoveTowardsDwellingRestrictionGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MoveTowardsDwellingRestrictionGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

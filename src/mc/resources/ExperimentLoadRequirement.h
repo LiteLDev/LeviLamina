@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/resources/JsonBetaState.h"
-#include "mc/world/level/storage/AllExperiments.h"
-
-// auto generated forward declare list
-// clang-format off
-class IPackLoadContext;
-class PackLoadRequirement;
-// clang-format on
-
 class ExperimentLoadRequirement {
 public:
     // member variables
@@ -24,27 +14,4 @@ public:
     ExperimentLoadRequirement& operator=(ExperimentLoadRequirement const&);
     ExperimentLoadRequirement(ExperimentLoadRequirement const&);
     ExperimentLoadRequirement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ExperimentLoadRequirement(::AllExperiments experiment);
-
-    MCFOLD ::AllExperiments const& getExperiment() const;
-
-    MCAPI bool satisfied(::IPackLoadContext const& context, ::JsonBetaState) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::vector<::AllExperiments>
-    getRequiredExperiments(::std::vector<::PackLoadRequirement> const& requirements);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::AllExperiments experiment);
-    // NOLINTEND
 };

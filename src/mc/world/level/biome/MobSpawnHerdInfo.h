@@ -31,7 +31,7 @@ public:
         uint                 herdEventSkipCount
     );
 
-    MCAPI ::MobSpawnHerdInfo& operator=(::MobSpawnHerdInfo const&);
+    MCFOLD ::MobSpawnHerdInfo& operator=(::MobSpawnHerdInfo const&);
 
     MCAPI ~MobSpawnHerdInfo();
     // NOLINTEND

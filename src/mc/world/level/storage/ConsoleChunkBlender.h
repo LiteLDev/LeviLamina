@@ -39,11 +39,12 @@ public:
     // prevent constructor by default
     ConsoleChunkBlender& operator=(ConsoleChunkBlender const&);
     ConsoleChunkBlender(ConsoleChunkBlender const&);
-    ConsoleChunkBlender();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ConsoleChunkBlender();
+
     MCAPI void _blendChunkEnd4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
 
     MCAPI void _blendChunkNether4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
@@ -63,6 +64,8 @@ public:
         int                                    z,
         ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
     );
+
+    MCAPI ::ChunkLocalHeight _findHighestStoneOrBedrockHeight(::LevelChunk& lc, int x, int z);
 
     MCAPI ::ChunkLocalHeight _findTopMostWaterHeight(
         ::LevelChunk&                                     lc,
@@ -85,6 +88,12 @@ public:
     );
 
     MCAPI ~ConsoleChunkBlender();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

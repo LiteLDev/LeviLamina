@@ -41,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StyledWriter();
-
     MCAPI void indent();
 
     MCAPI bool isMultineArray(::Json::Value const& value);
@@ -56,12 +54,8 @@ public:
     MCAPI void writeIndent();
 
     MCAPI void writeValue(::Json::Value const& value);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void writeWithIndent(::std::string const& value);
     // NOLINTEND
 
 public:

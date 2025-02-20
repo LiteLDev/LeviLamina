@@ -17,14 +17,11 @@ struct CurrentTickComponent;
 struct ElytraFlightTimeTicksComponent;
 struct ServerPlayerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace PlayerPostTravelSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createGlidingGameEventSystem();
-
 MCAPI void doServerPlayerPostTravel(
     ::ActorDataFlagComponent const&         synchedActorData,
     ::ElytraFlightTimeTicksComponent const& elytraFlightTimeTicks,

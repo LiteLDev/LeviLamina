@@ -12,8 +12,6 @@
 // clang-format off
 class ServerNetworkEventHandler;
 class ServerNetworkEventListener;
-struct DiagnosticsEvent;
-struct MessageEvent;
 // clang-format on
 
 class ServerNetworkEventCoordinator : public ::EventCoordinator<::ServerNetworkEventListener> {
@@ -33,15 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ServerNetworkEventHandler& getServerNetworkEventHandler();
-
     MCFOLD void registerServerNetworkEventHandler(::std::unique_ptr<::ServerNetworkEventHandler>&& handler);
 
-    MCAPI void sendDiagnostics(::DiagnosticsEvent& diagnosticsEvent);
-
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableServerNetworkGameplayEvent<::CoordinatorResult>> event);
-
-    MCAPI void sendMessage(::MessageEvent& messageEvent);
     // NOLINTEND
 
 public:

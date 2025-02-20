@@ -13,7 +13,6 @@ class PackCapabilityRegistry;
 class PackManifest;
 class PackReport;
 class ResourceLocation;
-class SemVersion;
 class SubpackInfoCollection;
 namespace Core { class Path; }
 // clang-format on
@@ -63,12 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string contentKeyLookup(::std::string const& packIdentity);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Core::Path const& MANIFEST_LOG_PATH();
@@ -80,8 +73,6 @@ public:
     MCAPI static ::Core::Path const& MANIFEST_PATH_OLD();
 
     MCAPI static ::Core::Path const& MANIFEST_PATH_OLD_BACKUP();
-
-    MCAPI static ::SemVersion const& REQUIRED_VANILLA_FOR_OLD_PACKS();
 
     MCAPI static ::std::unordered_map<::std::string, ::std::vector<char> const>& mAlternateContentKeys();
 

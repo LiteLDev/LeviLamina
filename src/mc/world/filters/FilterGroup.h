@@ -60,10 +60,6 @@ public:
     // NOLINTBEGIN
     MCAPI FilterGroup(::FilterGroup const&);
 
-    MCAPI void _fillOperator(int value, ::FilterInputs& inputs);
-
-    MCAPI void _fillSubject(int value, ::FilterInputs& inputs);
-
     MCAPI bool _parseFilterInputs(
         ::SharedTypes::v1_21_20::FilterTestData const& filterTestData,
         ::FilterTest::Definition const&                filterDef,
@@ -89,17 +85,7 @@ public:
 
     MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCAPI bool addFilterTest(::std::string const& filterName, ::FilterInputs const& inputs);
-
-    MCAPI bool empty() const;
-
     MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
-
-    MCAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
-
-    MCFOLD ::std::vector<::std::shared_ptr<::FilterGroup>> const& getChildren() const;
-
-    MCFOLD ::std::vector<::std::shared_ptr<::FilterTest>> const& getMembers() const;
 
     MCAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND

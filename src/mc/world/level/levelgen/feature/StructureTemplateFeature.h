@@ -8,9 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class StructureTemplateFeature : public ::IFeature {
@@ -27,6 +24,7 @@ public:
     // prevent constructor by default
     StructureTemplateFeature& operator=(StructureTemplateFeature const&);
     StructureTemplateFeature(StructureTemplateFeature const&);
+    StructureTemplateFeature();
 
 public:
     // virtual functions
@@ -35,21 +33,7 @@ public:
     virtual ~StructureTemplateFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructureTemplateFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
@@ -61,8 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

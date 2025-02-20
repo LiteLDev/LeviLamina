@@ -44,12 +44,11 @@ public:
     // prevent constructor by default
     GeneticsComponent& operator=(GeneticsComponent const&);
     GeneticsComponent(GeneticsComponent const&);
+    GeneticsComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeneticsComponent();
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCAPI void buildDebugInfo(::std::string& out) const;
@@ -58,7 +57,7 @@ public:
 
     MCAPI void initializeGenesFromParents(::Actor& owner, ::Actor& parentalUnit1, ::Actor& parentalUnit2);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const& owner, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
@@ -68,14 +67,6 @@ public:
 
     MCAPI static ::std::string const& HIDDEN_ALLELE();
 
-    MCAPI static int const& INVALID_ALLELE_VALUE();
-
     MCAPI static ::std::string const& MAIN_ALLELE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

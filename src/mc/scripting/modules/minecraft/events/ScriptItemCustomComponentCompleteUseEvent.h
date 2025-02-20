@@ -14,7 +14,6 @@
 class ItemStack;
 class Level;
 class Player;
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -64,27 +63,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptItemCustomComponentCompleteUseEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                          scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentCompleteUseEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                          scope
-    );
     // NOLINTEND
 
 public:

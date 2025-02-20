@@ -13,13 +13,20 @@ public:
 public:
     // prevent constructor by default
     SoundDefinition& operator=(SoundDefinition const&);
-    SoundDefinition(SoundDefinition const&);
     SoundDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SoundDefinition(::SoundDefinition const&);
+
     MCAPI ~SoundDefinition();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::SoundDefinition const&);
     // NOLINTEND
 
 public:

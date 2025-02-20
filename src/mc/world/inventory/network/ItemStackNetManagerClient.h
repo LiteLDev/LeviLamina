@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerType.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 
@@ -154,8 +154,11 @@ public:
     virtual ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest() /*override*/;
 
     // vIndex: 9
-    virtual void
-    _addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::ContainerType, int) /*override*/;
+    virtual void _addLegacyTransactionRequestSetItemSlot(
+        ::ItemStackNetManagerScreen&,
+        ::SharedTypes::Legacy::ContainerType,
+        int
+    ) /*override*/;
 
     // vIndex: 10
     virtual void _initScreen(::ItemStackNetManagerScreen&) /*override*/;

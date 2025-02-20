@@ -3,20 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class LeashableComponent;
 class LeashableDefinition;
-class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -33,12 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptLeashableComponent(
-        ::WeakEntityRef const&                entity,
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::std::string const&                  id
-    );
-
     MCAPI ::Scripting::Result_deprecated<bool> getCanBeStolen() const;
 
     MCAPI ::Scripting::Result_deprecated<float> getHardDistance() const;
@@ -71,13 +63,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
     // NOLINTEND
 
 public:

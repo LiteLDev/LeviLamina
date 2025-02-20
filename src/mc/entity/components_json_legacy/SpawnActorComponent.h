@@ -7,7 +7,6 @@
 class Actor;
 class CompoundTag;
 class DataLoadHelper;
-struct SpawnActorEntry;
 // clang-format on
 
 class SpawnActorComponent {
@@ -28,10 +27,8 @@ public:
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCFOLD ::std::vector<::SpawnActorEntry>& getSpawnEntries();
-
     MCAPI ::SpawnActorComponent& operator=(::SpawnActorComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(::Actor& tag, ::CompoundTag const&, ::DataLoadHelper&);
     // NOLINTEND
 };

@@ -46,22 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MovementEffectPacket();
-
-    MCAPI MovementEffectPacket(::ActorRuntimeID runtimeId, ::MovementEffectType effectType, int duration, uint64 tick);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorRuntimeID runtimeId, ::MovementEffectType effectType, int duration, uint64 tick);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

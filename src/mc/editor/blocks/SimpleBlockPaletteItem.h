@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor {
@@ -31,16 +30,12 @@ public:
 
     MCAPI ::Editor::SimpleBlockPaletteItem& operator=(::Editor::SimpleBlockPaletteItem&&);
 
-    MCAPI bool operator==(::Editor::SimpleBlockPaletteItem const& other) const;
-
     MCAPI ~SimpleBlockPaletteItem();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static ::Editor::SimpleBlockPaletteItem createDefault();
     // NOLINTEND
 

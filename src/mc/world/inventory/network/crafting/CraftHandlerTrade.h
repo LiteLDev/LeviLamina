@@ -12,8 +12,8 @@
 // clang-format off
 class ContainerScreenContext;
 class ItemStack;
-class ItemStackBase;
 class ItemStackRequestActionCraftBase;
+class MerchantRecipe;
 struct FullContainerName;
 struct RecipeNetIdTag;
 // clang-format on
@@ -52,13 +52,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::tuple<::ItemStackNetResult, ::MerchantRecipe const*>
+    _getMerchantRecipeFromNetId(::RecipeNetId const& tradeRecipeNetId);
+
     MCAPI ::ItemStackNetResult _handleTrade1(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
 
     MCAPI ::ItemStackNetResult _initResultItem(::RecipeNetId const& tradeRecipeNetId, uchar numCrafts);
 
     MCAPI ::ItemStackNetResult _initTrade2Consumes();
-
-    MCAPI bool _matchesAuxValueTrade2(::ItemStackBase const& consumedItem, ::ItemStackBase const& expected) const;
     // NOLINTEND
 
 public:

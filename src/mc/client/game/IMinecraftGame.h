@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/commands/test/TestAssetCommandType.h"
+#include "mc/client/commands/test/TestCommandType.h"
 #include "mc/client/game/DeferredTaskCategory.h"
 #include "mc/client/game/IClientInstances.h"
 #include "mc/client/game/IGameServerShutdown.h"
@@ -26,8 +28,6 @@
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/TextboxTextUpdateReason.h"
 #include "mc/platform/MultiplayerLockedContext.h"
-#include "mc/server/commands/test/TestAssetCommandType.h"
-#include "mc/server/commands/test/TestCommandType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -100,11 +100,11 @@ class PersonaService;
 class PixelCalc;
 class Player;
 class PlayerMessagingService;
+class ProfanityContext;
 class RealmsAPI;
 class RenderControllerGroup;
 class ResetCallbackObject;
 class ResourceLoadManager;
-class ResourcePackFileDownloaderManager;
 class ResourcePackManager;
 class SceneFactory;
 class SceneStack;
@@ -123,7 +123,6 @@ class TextureAtlas;
 class TreatmentPackDownloadMonitor;
 class TrialManager;
 class UIMeasureStrategy;
-class UIProfanityContext;
 class Vec3;
 class WebSocketCommManager;
 class WorldTemplateManager;
@@ -147,9 +146,9 @@ namespace Social { class IUserManager; }
 namespace Social { class MultiplayerGameInfo; }
 namespace Social { class MultiplayerServiceManager; }
 namespace Social { class PresenceManager; }
-namespace Social { class System; }
+namespace Social { class SocialSystem; }
 namespace Social { class User; }
-namespace World { class System; }
+namespace World { class WorldSystem; }
 namespace mce { class TextureGroup; }
 namespace mce { class UUID; }
 // clang-format on
@@ -699,10 +698,10 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> getWorldTemplateManager() const = 0;
 
     // vIndex: 170
-    virtual ::World::System& getWorldSystem() const = 0;
+    virtual ::World::WorldSystem& getWorldSystem() const = 0;
 
     // vIndex: 171
-    virtual ::Social::System& getSocialSystem() const = 0;
+    virtual ::Social::SocialSystem& getSocialSystem() const = 0;
 
     // vIndex: 172
     virtual ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSystem> getRealmsSystem() const = 0;
@@ -786,130 +785,114 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper> getTextToIconMapper() = 0;
 
     // vIndex: 199
-    virtual ::std::string getDevConsoleLogFileName() const = 0;
-
-    // vIndex: 200
-    virtual void setOptionsSetForAutomation(bool) = 0;
-
-    // vIndex: 201
-    virtual bool IsRunningOnTestCloud() const = 0;
-
-    // vIndex: 202
-    virtual void SetRunningOnTestCloud(bool) = 0;
-
-    // vIndex: 203
     virtual void onPrimaryUserReconnect(::Social::UserPlatformConnectionResult, bool) = 0;
 
-    // vIndex: 204
+    // vIndex: 200
     virtual void setSmoothFontStyle() = 0;
 
-    // vIndex: 205
+    // vIndex: 201
     virtual void setUIFontStyle() = 0;
 
-    // vIndex: 206
+    // vIndex: 202
     virtual void copyInternalSettingsFolderToExternalLocation() const = 0;
 
-    // vIndex: 207
+    // vIndex: 203
     virtual void joinRealmFromInvite(::Realms::World const&) = 0;
 
-    // vIndex: 208
+    // vIndex: 204
     virtual void joinRealmFromConnectLink(::Realms::World const&) = 0;
 
-    // vIndex: 209
+    // vIndex: 205
     virtual ::Bedrock::NotNullNonOwnerPtr<::ClubsService> getClubsService() = 0;
 
-    // vIndex: 210
+    // vIndex: 206
     virtual ::std::shared_ptr<::Realms::GenericRequestServiceHandler> getGenericRealmsService() = 0;
 
-    // vIndex: 211
+    // vIndex: 207
     virtual ::Bedrock::NotNullNonOwnerPtr<::Realms::SubscriptionService> getRealmsSubscriptionService() = 0;
 
-    // vIndex: 212
+    // vIndex: 208
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity() = 0;
 
-    // vIndex: 213
+    // vIndex: 209
     virtual ::Bedrock::NonOwnerPointer<::ActiveDirectoryIdentity> getNullableActiveDirectoryIdentity() = 0;
 
-    // vIndex: 214
+    // vIndex: 210
     virtual ::PackSourceFactory& getPackSourceFactory() const = 0;
 
-    // vIndex: 215
-    virtual ::std::weak_ptr<::ResourcePackFileDownloaderManager>
-    getResourcePackDownloadManager(::std::string const&) const = 0;
-
-    // vIndex: 216
+    // vIndex: 211
     virtual void displayActiveDirectoryLoginDialog() = 0;
 
-    // vIndex: 217
+    // vIndex: 212
     virtual void resetInput() = 0;
 
-    // vIndex: 218
+    // vIndex: 213
     virtual ::Bedrock::NotNullNonOwnerPtr<::Social::PresenceManager> getPresenceManager() = 0;
 
-    // vIndex: 219
+    // vIndex: 214
     virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getPrimaryGuiData() = 0;
 
-    // vIndex: 220
+    // vIndex: 215
     virtual bool isPrimaryUserSigninInProgress() const = 0;
 
-    // vIndex: 221
+    // vIndex: 216
     virtual void setupCommandParser(::IClientInstance&) = 0;
 
-    // vIndex: 222
+    // vIndex: 217
     virtual void stopSound(::std::string const&) = 0;
 
-    // vIndex: 223
+    // vIndex: 218
     virtual void stopSounds() = 0;
 
-    // vIndex: 224
+    // vIndex: 219
     virtual ::PackDownloadManager& getPackDownloadManager() = 0;
 
-    // vIndex: 225
+    // vIndex: 220
     virtual void addSubClientInstanceAndAssociateToUser(int) = 0;
 
-    // vIndex: 226
+    // vIndex: 221
     virtual void forEachClientInstance(::std::function<void(::IClientInstance&)>) = 0;
 
-    // vIndex: 227
+    // vIndex: 222
     virtual bool isInitialized() const = 0;
 
-    // vIndex: 229
+    // vIndex: 224
     virtual ::std::shared_ptr<::Options> getPrimaryUserOptions() = 0;
 
-    // vIndex: 228
+    // vIndex: 223
     virtual ::std::shared_ptr<::Options const> getPrimaryUserOptions() const = 0;
 
-    // vIndex: 230
+    // vIndex: 225
     virtual ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> getSeasonsRenderer() = 0;
 
-    // vIndex: 231
+    // vIndex: 226
     virtual ::std::shared_ptr<::ActorAnimationGroup> getActorAnimationGroup() const = 0;
 
-    // vIndex: 232
+    // vIndex: 227
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationControllerGroup> getActorAnimationControllerGroup() const = 0;
 
-    // vIndex: 233
+    // vIndex: 228
     virtual bool isMultiplayerServiceManagerReady() const = 0;
 
-    // vIndex: 234
+    // vIndex: 229
     virtual ::Bedrock::NotNullNonOwnerPtr<::WebSocketCommManager> getWebSocketCommManager() = 0;
 
-    // vIndex: 235
+    // vIndex: 230
     virtual void doPrimaryClientReadyWork(::std::function<void()>) = 0;
 
-    // vIndex: 236
+    // vIndex: 231
     virtual void doUserManagerReadyWork(::std::function<void()>) = 0;
 
-    // vIndex: 237
+    // vIndex: 232
     virtual ::Bedrock::NotNullNonOwnerPtr<::ScreenshotRecorder> getScreenshotRecorder() = 0;
 
-    // vIndex: 238
+    // vIndex: 233
     virtual ::std::shared_ptr<::ClientBlobCache::Cache> getClientBlobCache() = 0;
 
-    // vIndex: 239
+    // vIndex: 234
     virtual ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint> const getContentFileLogEndPoint() const = 0;
 
-    // vIndex: 240
+    // vIndex: 235
     virtual void tryShowXblFirstLaunchScreen(bool) = 0;
 
     // vIndex: 0
@@ -918,56 +901,56 @@ public:
     // vIndex: 1
     virtual uchar getSplitScreenCount() const = 0;
 
-    // vIndex: 241
+    // vIndex: 236
     virtual ::IGameModuleApp& getGameModule() = 0;
 
-    // vIndex: 242
+    // vIndex: 237
     virtual ::std::shared_ptr<void*> requestMusicDeferment() = 0;
 
-    // vIndex: 243
+    // vIndex: 238
     virtual bool isMusicEnabled() const = 0;
 
-    // vIndex: 244
+    // vIndex: 239
     virtual void queueCustomMusic(::std::string const&, float, float, ::MusicRepeatMode) = 0;
 
-    // vIndex: 245
+    // vIndex: 240
     virtual void playCustomMusic(::std::string const&, float, float, ::MusicRepeatMode) = 0;
 
-    // vIndex: 246
+    // vIndex: 241
     virtual void stopCustomMusic(float) = 0;
 
-    // vIndex: 247
+    // vIndex: 242
     virtual void setMusicCommandVolumeMultiplier(float) = 0;
 
-    // vIndex: 248
+    // vIndex: 243
     virtual float calculateScreenSizeToResolutionScalar(int const, int const) const = 0;
 
-    // vIndex: 249
+    // vIndex: 244
     virtual ::Bedrock::NotNullNonOwnerPtr<::GlobalResourcesCrashRecovery const>
     GetGlobalResourcesCrashRecovery() const = 0;
 
-    // vIndex: 250
+    // vIndex: 245
     virtual ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> getLevelDbEnv() = 0;
 
-    // vIndex: 251
+    // vIndex: 246
     virtual ::Bedrock::NonOwnerPointer<::ChunkSource> getClientGenChunkSource(::DimensionType const&) = 0;
 
-    // vIndex: 252
+    // vIndex: 247
     virtual bool isEditorModeEnabled() const = 0;
 
-    // vIndex: 253
+    // vIndex: 248
     virtual void setResetCallbackObject(::ResetCallbackObject*) = 0;
 
-    // vIndex: 254
+    // vIndex: 249
     virtual void resetThreadCallbacks() = 0;
 
-    // vIndex: 255
+    // vIndex: 250
     virtual void shutdownServer() = 0;
 
-    // vIndex: 256
-    virtual ::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> getUIProfanityContext() = 0;
+    // vIndex: 251
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() = 0;
 
-    // vIndex: 257
+    // vIndex: 252
     virtual double getGameUpdateDurationInSeconds() const = 0;
     // NOLINTEND
 

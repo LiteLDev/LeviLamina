@@ -38,25 +38,19 @@ public:
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual int _getNumCandles(::Block const& block) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual void
     _iterateCandles(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback)
         const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
     // vIndex: 0
     virtual ~CandleBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CandleBlock(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -66,12 +60,6 @@ public:
     _forEachCandle(::Block const& block, ::BlockPos const& pos, ::std::function<void(::Vec3 const&, int)> callback);
 
     MCAPI static bool tryLightFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

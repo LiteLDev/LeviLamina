@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class BlockSource;
 class CommandArea;
 class CompoundTag;
-class Dimension;
 class StructureSettings;
 // clang-format on
 
@@ -40,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StructureAnimationData(::StructureAnimationData&&);
+
     MCAPI StructureAnimationData(
         ::std::unique_ptr<::CommandArea> cmdArea,
         uint64                           tickQueued,
@@ -49,37 +46,9 @@ public:
         ::BlockPos const&                placementPos
     );
 
-    MCAPI bool allBlocksPlaced() const;
-
-    MCAPI uint getBlocksExpectedToPlace(uint64 currentTick) const;
-
-    MCFOLD uint getBlocksPlaced() const;
-
-    MCAPI ::BlockSource& getDimensionBlockSource() const;
-
-    MCFOLD ::BlockPos const& getPosition() const;
-
-    MCAPI uint getQueueID() const;
-
-    MCFOLD ::std::string const& getStructureName() const;
-
-    MCFOLD ::StructureSettings const& getStructureSettings() const;
-
-    MCFOLD uchar getStructureVersion() const;
-
-    MCFOLD ::DimensionType const& getTargetDimension() const;
-
-    MCAPI uint getTotalBlocks() const;
-
     MCAPI ::CompoundTag& serialize(::CompoundTag& tag);
 
-    MCFOLD void setBlocksPlaced(uint blocksPlaced);
-
     MCAPI void setCmdArea(::std::unique_ptr<::CommandArea> cmdArea);
-
-    MCAPI void setQueueID(uint queueID);
-
-    MCAPI void setTargetDimension(::DimensionType const& targetDimension);
 
     MCAPI ~StructureAnimationData();
     // NOLINTEND
@@ -93,6 +62,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::StructureAnimationData&&);
+
     MCAPI void* $ctor(
         ::std::unique_ptr<::CommandArea> cmdArea,
         uint64                           tickQueued,

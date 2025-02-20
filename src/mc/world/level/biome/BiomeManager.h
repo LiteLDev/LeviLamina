@@ -10,15 +10,12 @@
 // clang-format off
 class AutomaticFeatureRules;
 class BaseGameVersion;
-class BiomeComponentFactory;
 class BiomeRegistry;
 class Experiments;
-class ILevelStorageManagerConnector;
 class IWorldRegistriesProvider;
 class LevelSeed64;
 class LevelStorage;
 class ResourcePackManager;
-class SurfaceBuilderRegistry;
 // clang-format on
 
 class BiomeManager {
@@ -29,6 +26,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk618caa;
     ::ll::UntypedStorage<8, 16>  mUnk5f2b2c;
     ::ll::UntypedStorage<8, 8>   mUnk6f2312;
+    ::ll::UntypedStorage<8, 64>  mUnk3a5e8f;
     ::ll::UntypedStorage<8, 128> mUnk524485;
     // NOLINTEND
 
@@ -48,12 +46,6 @@ public:
         ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules
     );
 
-    MCAPI ::BiomeComponentFactory& getBiomeComponentFactory();
-
-    MCFOLD ::BiomeRegistry& getBiomeRegistry();
-
-    MCAPI ::SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
-
     MCAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
         ::Experiments const&        experiments,
         ::IWorldRegistriesProvider& worldRegistries,
@@ -63,18 +55,7 @@ public:
         ::BaseGameVersion const&    baseGameVersion
     );
 
-    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
-    );
-
-    MCAPI void loadBiomeData(::LevelStorage& levelStorage);
-
     MCAPI ~BiomeManager();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool use3DBiomeMaps(::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:

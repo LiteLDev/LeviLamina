@@ -46,21 +46,7 @@ public:
 
     MCAPI void addToResultList(::std::string const& key, ::std::string const& element);
 
-    MCAPI bool empty() const;
-
     MCAPI void error(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
-
-    MCAPI void forceOutput(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
-
-    MCFOLD ::CommandPropertyBag const& getData() const;
-
-    MCFOLD ::std::vector<::CommandOutputMessage> const& getMessages() const;
-
-    MCFOLD int getSuccessCount() const;
-
-    MCFOLD ::CommandOutputType getType() const;
-
-    MCAPI bool hasErrorMessage() const;
 
     MCAPI void load(
         ::CommandOutputType                       type,
@@ -69,13 +55,7 @@ public:
         ::std::unique_ptr<::CommandPropertyBag>&& data
     );
 
-    MCFOLD void setHasPlayerText();
-
-    MCAPI void success();
-
     MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
-
-    MCFOLD bool wantsData() const;
 
     MCAPI ~CommandOutput();
     // NOLINTEND

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PlayerSleepStatus;
-// clang-format on
-
 class PlayerSleepManager {
 public:
     // member variables
@@ -19,6 +14,7 @@ public:
     // prevent constructor by default
     PlayerSleepManager& operator=(PlayerSleepManager const&);
     PlayerSleepManager(PlayerSleepManager const&);
+    PlayerSleepManager();
 
 public:
     // virtual functions
@@ -28,22 +24,6 @@ public:
 
     // vIndex: 1
     virtual void updateSleepingPlayerList();
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayerSleepManager();
-
-    MCFOLD ::PlayerSleepStatus const& getPlayerSleepStatus() const;
-
-    MCAPI void setSleepStatus(::PlayerSleepStatus const& sleepStatus);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

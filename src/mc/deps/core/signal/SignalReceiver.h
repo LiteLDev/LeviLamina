@@ -49,26 +49,7 @@ public:
     // prevent constructor by default
     SignalReceiver& operator=(SignalReceiver const&);
     SignalReceiver(SignalReceiver const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SignalReceiver();
-
-    MCAPI ~SignalReceiver();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
+    SignalReceiver();
 };
 
 } // namespace Bedrock

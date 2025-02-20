@@ -47,16 +47,4 @@ public:
     ContainerOwner& operator=(ContainerOwner const&);
     ContainerOwner(ContainerOwner const&);
     ContainerOwner();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ContainerOwner();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

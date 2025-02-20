@@ -13,10 +13,6 @@ namespace MobJumpFromGroundSystem {
 MCAPI ::TickingSystemWithInfo createCleanupFilterJumpRequestSystem();
 
 MCAPI ::TickingSystemWithInfo createCleanupTriggerJumpRequestSystem();
-
-MCAPI ::TickingSystemWithInfo createFilterSystem();
-
-MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace MobJumpFromGroundSystem

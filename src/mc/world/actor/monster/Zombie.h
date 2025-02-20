@@ -31,16 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 97
+    // vIndex: 95
     virtual bool canPickupItem(::ItemStack const& item) const /*override*/;
 
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 160
+    // vIndex: 155
     virtual int getArmorValue() const /*override*/;
 
     // vIndex: 8
@@ -55,6 +55,8 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCFOLD void setZombieType(::Zombie::ZombieType type);
     // NOLINTEND
 
 public:

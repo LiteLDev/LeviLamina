@@ -10,12 +10,9 @@
 // clang-format off
 class Actor;
 class ActorDefinitionDescriptor;
-class BlockDescriptor;
 class BlockPos;
 class Mob;
 class Path;
-class PathNavigation;
-class Vec3;
 struct NavigationDescription;
 // clang-format on
 
@@ -56,77 +53,15 @@ public:
 public:
     // prevent constructor by default
     NavigationComponent& operator=(NavigationComponent const&);
+    NavigationComponent(NavigationComponent const&);
+    NavigationComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NavigationComponent();
-
-    MCAPI NavigationComponent(::NavigationComponent const& other);
-
-    MCAPI ::std::unique_ptr<::Path> createPath(::Mob& owner, ::Vec3 const& position);
-
-    MCAPI ::std::unique_ptr<::Path> createPath(::Mob& owner, ::Actor const& target);
-
-    MCFOLD bool getAvoidDamageBlocks() const;
-
-    MCFOLD bool getAvoidPortals() const;
-
-    MCFOLD bool getAvoidSun() const;
-
-    MCFOLD bool getAvoidWater() const;
-
-    MCFOLD ::std::vector<::BlockDescriptor> const& getBlocksToAvoid() const;
-
-    MCFOLD bool getCanBreach() const;
-
-    MCFOLD bool getCanFloat() const;
-
-    MCFOLD bool getCanJump() const;
-
-    MCFOLD bool getCanOpenDoors() const;
-
-    MCAPI bool getCanOpenIronDoors() const;
-
-    MCFOLD bool getCanPassDoors() const;
-
-    MCFOLD bool getCanPathOverLava() const;
-
-    MCFOLD bool getCanSink() const;
-
-    MCFOLD bool getCanWalkInLava() const;
-
-    MCFOLD float getEndPathRadiusSqr() const;
-
-    MCFOLD bool getHasDestination() const;
-
-    MCAPI bool getHasEndPathRadius() const;
-
-    MCFOLD bool getIsAmphibious() const;
-
-    MCAPI bool getIsFollowingRivers() const;
-
-    MCAPI ::Vec3 getLastStuckCheckPosition() const;
-
-    MCAPI float getMaxDistance(::Actor const& owner) const;
-
-    MCFOLD ::Path* getPath() const;
-
-    MCFOLD float getSpeed() const;
-
-    MCFOLD ::Vec3 const& getTargetOffset() const;
-
-    MCFOLD float getTerminationThreshold() const;
-
-    MCFOLD int getTickTimeout() const;
-
-    MCAPI void incrementTick();
-
     MCAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
     MCAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
-
-    MCAPI bool isDone() const;
 
     MCAPI ::NodeType isFree(
         ::Mob&            owner,
@@ -136,75 +71,13 @@ public:
         ::CanJumpIntoNode jumpIntoNode
     );
 
-    MCAPI bool isStuck(int stuckTimeThreshold) const;
-
     MCAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
-
-    MCAPI bool moveTo(::Mob& owner, ::Vec3 const& position, float speed);
 
     MCAPI bool moveTo(::Mob& owner, ::Actor& target, float speed);
 
-    MCAPI bool moveTo(::Mob& owner, ::Vec3 const& position, float speed, ::Vec3 const& targetOffset);
-
     MCAPI ::NavigationComponent& operator=(::NavigationComponent&&);
 
-    MCAPI void resetPath();
-
-    MCFOLD void setAvoidDamageBlocks(bool avoidDamageBlocks);
-
-    MCFOLD void setAvoidPortals(bool avoidPortals);
-
-    MCAPI void setAvoidSun(bool avoidSun);
-
-    MCFOLD void setAvoidWater(bool avoidWater);
-
-    MCFOLD void setCanFloat(bool canFloat);
-
-    MCFOLD void setCanJump(bool canJump);
-
-    MCFOLD void setCanOpenDoors(bool canOpenDoors);
-
-    MCAPI void setCanPassDoors(bool canPass);
-
-    MCFOLD void setCanSink(bool canSink);
-
-    MCAPI void setEndPathRadius(float radius);
-
-    MCFOLD void setHasDestination(bool hasDestination);
-
-    MCAPI void setHasEndPathRadius(bool hasEndPathRadius);
-
-    MCAPI void setInternalType(::std::unique_ptr<::PathNavigation> type);
-
-    MCAPI void setIsFollowingRivers(bool isFollowingRivers);
-
-    MCAPI void setPath(::std::unique_ptr<::Path> path);
-
-    MCAPI void setSpeed(float speed);
-
-    MCAPI void setTargetOffset(::Vec3 const& targetOffset);
-
-    MCAPI void setTerminationThreshold(float threshold);
-
-    MCFOLD void setTickTimeout(int timeout);
-
-    MCAPI void stop(::Mob& owner);
-
-    MCAPI bool travel(::Mob& owner, float& xa, float& ya, float& za);
-
-    MCAPI void update(::Mob& owner);
-
-    MCAPI void updateLastStuckCheck(::Mob const& owner);
-
     MCAPI ~NavigationComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::NavigationComponent const& other);
     // NOLINTEND
 
 public:

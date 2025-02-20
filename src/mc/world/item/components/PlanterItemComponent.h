@@ -14,6 +14,7 @@ class BlockPos;
 class CompoundTag;
 class HashedString;
 class ItemStack;
+class ItemStackBase;
 class SemVersion;
 class Vec3;
 namespace SharedTypes::v1_21_40 { struct PlanterItemComponent; }
@@ -59,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlanterItemComponent(::Block const& block);
-
     MCAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
 
     MCAPI bool _placeBlock(
@@ -74,15 +73,17 @@ public:
 
     MCAPI void _useOn(
         bool&              result,
-        ::ItemStack const& initialItemStack,
-        ::ItemStack&       currentItemStack,
-        ::Actor&           entity,
-        ::BlockPos const&  blockPos,
-        uchar              face,
-        ::Vec3 const&      clickPos
+        ::ItemStack const& currentItemStack,
+        ::ItemStack&       entity,
+        ::Actor&           blockPos,
+        ::BlockPos const&  face,
+        uchar              clickPos,
+        ::Vec3 const&      initialItemStack
     );
 
-    MCFOLD bool isReplacingBlockItem() const;
+    MCAPI bool calculatePlacePos(::ItemStackBase const& entity, ::Actor& face, uchar& pos, ::BlockPos& instance) const;
+
+    MCAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
     // NOLINTEND
 
 public:
@@ -90,8 +91,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
@@ -100,8 +101,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block);
-
     MCAPI void* $ctor(::SharedTypes::v1_21_40::PlanterItemComponent component);
     // NOLINTEND
 

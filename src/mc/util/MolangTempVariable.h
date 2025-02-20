@@ -19,9 +19,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangTempVariable& operator=(MolangTempVariable const&);
+    MolangTempVariable(MolangTempVariable const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit MolangTempVariable(::HashedString const& value);
+
+    MCFOLD ::MolangTempVariable& operator=(::MolangTempVariable&&);
 
     MCAPI ~MolangTempVariable();
     // NOLINTEND

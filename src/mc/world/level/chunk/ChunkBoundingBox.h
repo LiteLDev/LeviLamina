@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BoundingBox;
-// clang-format on
-
 namespace br {
 
 struct ChunkBoundingBox {
@@ -21,12 +16,6 @@ public:
     ChunkBoundingBox& operator=(ChunkBoundingBox const&);
     ChunkBoundingBox(ChunkBoundingBox const&);
     ChunkBoundingBox();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::BoundingBox const* operator->() const;
-    // NOLINTEND
 };
 
 } // namespace br

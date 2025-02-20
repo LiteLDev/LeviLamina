@@ -48,8 +48,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::EaseOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -65,8 +63,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::PosOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -83,8 +79,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::RotOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -107,8 +101,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::ViewOffsetOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -132,8 +124,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::EntityOffsetOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -149,8 +139,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::SetInstruction::FacingOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -208,8 +196,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction::TimeOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -227,8 +213,6 @@ public:
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
             MCAPI static ::Bedrock::Result<::CameraInstruction::FadeInstruction::ColorOption>
             read(::ReadOnlyBinaryStream& stream);
             // NOLINTEND
@@ -239,12 +223,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::TimeOption>>  mTime;
         ::ll::TypedStorage<4, 16, ::std::optional<::CameraInstruction::FadeInstruction::ColorOption>> mColor;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::CameraInstruction::FadeInstruction const& other) const;
         // NOLINTEND
 
     public:
@@ -273,8 +251,6 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
         MCAPI static ::Bedrock::Result<::CameraInstruction::TargetInstruction> read(::ReadOnlyBinaryStream& stream);
         // NOLINTEND
     };
@@ -300,8 +276,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static ::Bedrock::Result<::CameraInstruction> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

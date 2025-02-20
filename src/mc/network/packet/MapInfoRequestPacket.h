@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class MapItemSavedData;
 class ReadOnlyBinaryStream;
 struct ActorUniqueID;
 // clang-format on
@@ -40,30 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~MapInfoRequestPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MapInfoRequestPacket();
-
-    MCAPI explicit MapInfoRequestPacket(::ActorUniqueID mapId);
-
-    MCAPI MapInfoRequestPacket(::ActorUniqueID mapId, ::MapItemSavedData& map);
-
-    MCFOLD ::ActorUniqueID getMapId() const;
-
-    MCAPI bool replaceServerPixels(::MapItemSavedData& map) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorUniqueID mapId);
-
-    MCAPI void* $ctor(::ActorUniqueID mapId, ::MapItemSavedData& map);
     // NOLINTEND
 
 public:

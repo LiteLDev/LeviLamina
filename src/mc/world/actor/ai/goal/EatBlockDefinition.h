@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EatBlockGoal;
-class EntityContext;
 class ExpressionNode;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -28,6 +26,7 @@ public:
     // prevent constructor by default
     EatBlockDefinition& operator=(EatBlockDefinition const&);
     EatBlockDefinition(EatBlockDefinition const&);
+    EatBlockDefinition();
 
 public:
     // virtual functions
@@ -39,11 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EatBlockDefinition();
-
     MCAPI void addSuccessChanceExpressionNode(::ExpressionNode const& node);
-
-    MCAPI void initialize(::EntityContext& entity, ::EatBlockGoal& goal) const;
     // NOLINTEND
 
 public:
@@ -53,12 +48,6 @@ public:
         ::std::string const&                                                                               name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EatBlockDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

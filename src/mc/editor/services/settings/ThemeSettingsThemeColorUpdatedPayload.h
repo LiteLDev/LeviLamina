@@ -4,13 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
-#include "mc/editor/settings/ThemeSettingsColorKey.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-namespace mce { class Color; }
-// clang-format on
 
 namespace Editor::Network {
 
@@ -35,35 +28,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ThemeSettingsThemeColorUpdatedPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ThemeSettingsThemeColorUpdatedPayload(
-        ::std::string const&                      themeId,
-        ::Editor::Settings::ThemeSettingsColorKey colorKey,
-        ::mce::Color const&                       color
-    );
-
-    MCFOLD ::mce::Color const& getColor() const;
-
-    MCFOLD ::Editor::Settings::ThemeSettingsColorKey getColorKey() const;
-
-    MCFOLD ::std::string const& getThemeId() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& themeId, ::Editor::Settings::ThemeSettingsColorKey colorKey, ::mce::Color const& color);
     // NOLINTEND
 
 public:

@@ -64,6 +64,8 @@ public:
     // NOLINTBEGIN
     MCAPI BPSTracker();
 
+    MCAPI void Push1(uint64 time, uint64 value1);
+
     MCAPI ~BPSTracker();
     // NOLINTEND
 

@@ -154,11 +154,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool AckTimeout(uint64 curTime);
-
     MCAPI ::RakNet::InternalPacket* AllocateFromInternalPacketPool();
-
-    MCAPI bool AreAcksWaiting();
 
     MCAPI ::RakNet::InternalPacket*
     BuildPacketFromSplitPacketList(::RakNet::SplitPacketChannel* splitPacketChannel, uint64 time);
@@ -168,8 +164,8 @@ public:
         uint64                   time,
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
-        ::RakNet::RakNetRandom*  rnr,
-        ::RakNet::BitStream&     updateBitStream
+        ::RakNet::RakNetRandom*  updateBitStream,
+        ::RakNet::BitStream&     rnr
     );
 
     MCAPI void ClearPacketsAndDatagrams();
@@ -184,33 +180,23 @@ public:
 
     MCAPI ::RakNet::RakNetStatistics* GetStatistics(::RakNet::RakNetStatistics* rns);
 
-    MCAPI uint GetTimeoutTime();
-
     MCAPI bool HandleSocketReceiveFromConnectedPlayer(
         char const*                                          buffer,
         uint                                                 length,
         ::RakNet::SystemAddress&                             systemAddress,
         ::DataStructures::List<::RakNet::PluginInterface2*>& messageHandlerList,
-        int                                                  MTUSize,
-        ::RakNet::RakNetSocket2*                             s,
-        ::RakNet::RakNetRandom*                              rnr,
-        uint64                                               timeRead,
-        ::RakNet::BitStream&                                 updateBitStream
+        int                                                  s,
+        ::RakNet::RakNetSocket2*                             timeRead,
+        ::RakNet::RakNetRandom*                              updateBitStream,
+        uint64                                               MTUSize,
+        ::RakNet::BitStream&                                 rnr
     );
 
     MCAPI void InitializeVariables();
 
     MCAPI void InsertIntoSplitPacketList(::RakNet::InternalPacket* internalPacket, uint64 time);
 
-    MCAPI bool IsDeadConnection() const;
-
-    MCAPI bool IsOutgoingDataWaiting();
-
-    MCAPI void PushDatagram();
-
-    MCAPI void PushPacket(uint64 time, ::RakNet::InternalPacket* internalPacket, bool isReliable);
-
-    MCAPI uint Receive(uchar** data);
+    MCAPI void PushPacket(uint64 internalPacket, ::RakNet::InternalPacket* isReliable, bool time);
 
     MCAPI void ReleaseToInternalPacketPool(::RakNet::InternalPacket* ip);
 
@@ -225,7 +211,7 @@ public:
         ::RakNet::SystemAddress const&                       systemAddress
     );
 
-    MCAPI void Reset(bool resetVariables, int MTUSize, bool _useSecurity);
+    MCAPI void ResetPacketsAndDatagrams();
 
     MCAPI bool Send(
         char*               data,
@@ -234,44 +220,38 @@ public:
         ::PacketReliability reliability,
         uchar               orderingChannel,
         bool                makeDataCopy,
-        int                 MTUSize,
-        uint64              currentTime,
-        uint                receipt
+        int                 currentTime,
+        uint64              receipt,
+        uint                MTUSize
     );
 
     MCAPI void SendACKs(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         uint64                   time,
-        ::RakNet::RakNetRandom*  rnr,
-        ::RakNet::BitStream&     updateBitStream
+        ::RakNet::RakNetRandom*  updateBitStream,
+        ::RakNet::BitStream&     rnr
     );
 
     MCAPI void SendBitStream(
         ::RakNet::RakNetSocket2* s,
         ::RakNet::SystemAddress& systemAddress,
         ::RakNet::BitStream*     bitStream,
-        ::RakNet::RakNetRandom*  rnr,
-        uint64                   currentTime
+        ::RakNet::RakNetRandom*  currentTime,
+        uint64                   rnr
     );
-
-    MCFOLD void SetSplitMessageProgressInterval(int interval);
-
-    MCAPI void SetTimeoutTime(uint time);
-
-    MCAPI void SetUnreliableTimeout(uint timeoutMS);
 
     MCAPI void SplitPacket(::RakNet::InternalPacket* internalPacket);
 
     MCAPI void Update(
         ::RakNet::RakNetSocket2*                             s,
         ::RakNet::SystemAddress&                             systemAddress,
-        int                                                  MTUSize,
-        uint64                                               time,
-        uint                                                 bitsPerSecondLimit,
-        ::DataStructures::List<::RakNet::PluginInterface2*>& messageHandlerList,
-        ::RakNet::RakNetRandom*                              rnr,
-        ::RakNet::BitStream&                                 updateBitStream
+        int                                                  time,
+        uint64                                               bitsPerSecondLimit,
+        uint                                                 messageHandlerList,
+        ::DataStructures::List<::RakNet::PluginInterface2*>& updateBitStream,
+        ::RakNet::RakNetRandom*                              MTUSize,
+        ::RakNet::BitStream&                                 rnr
     );
 
     MCAPI uint WriteToBitStreamFromInternalPacket(

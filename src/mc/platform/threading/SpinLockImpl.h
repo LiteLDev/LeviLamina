@@ -16,30 +16,13 @@ public:
     // prevent constructor by default
     SpinLockImpl& operator=(SpinLockImpl const&);
     SpinLockImpl(SpinLockImpl const&);
+    SpinLockImpl();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpinLockImpl();
-
     MCAPI void lock();
 
-    MCAPI bool try_lock();
-
     MCAPI void unlock();
-
-    MCAPI ~SpinLockImpl();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

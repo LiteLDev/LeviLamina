@@ -19,10 +19,10 @@ class GravelBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
     // vIndex: 74
@@ -42,18 +42,6 @@ public:
 
     // vIndex: 0
     virtual ~GravelBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GravelBlock(::std::string const& nameId, int type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int type);
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@
 // clang-format off
 class IFileReadAccess;
 class IFileWriteAccess;
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class IFileAccess : public ::Bedrock::EnableNonOwnerReferences {
@@ -20,7 +20,7 @@ public:
     virtual ~IFileAccess() /*override*/;
 
     // vIndex: 1
-    virtual void* fopen(::Core::Path const&, ::std::string const&) = 0;
+    virtual void* fopen(::Core::PathView, ::std::string const&) = 0;
 
     // vIndex: 2
     virtual int fclose(void*) = 0;
@@ -44,18 +44,12 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

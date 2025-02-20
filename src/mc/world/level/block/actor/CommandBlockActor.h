@@ -16,17 +16,18 @@ class BlockSource;
 class CommandBlock;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class Player;
+class ProfanityContext;
 class SaveContext;
-class UIProfanityContext;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class CommandBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::BaseCommandBlock> mBaseCB;
+    ::ll::TypedStorage<8, 192, ::BaseCommandBlock> mBaseCB;
     ::ll::TypedStorage<1, 1, bool>                 mPowered;
     ::ll::TypedStorage<1, 1, bool>                 mConditionMet;
     ::ll::TypedStorage<1, 1, bool>                 mRedstoneMode;
@@ -46,7 +47,7 @@ public:
     virtual void saveBlockData(::CompoundTag& tag, ::BlockSource& region) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 5
     virtual void
@@ -62,14 +63,14 @@ public:
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 24
-    virtual ::std::string const& getCustomName() const /*override*/;
+    virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
     // vIndex: 25
-    virtual ::std::string const&
-    getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context) /*override*/;
+    virtual ::std::string const& getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context
+    ) /*override*/;
 
     // vIndex: 27
-    virtual void setCustomName(::std::string const& name) /*override*/;
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
 
     // vIndex: 43
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
@@ -91,25 +92,9 @@ public:
 
     MCAPI void _setAutomatic(::BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
 
-    MCFOLD ::BaseCommandBlock& getBaseCommandBlock();
-
-    MCAPI ::std::string const& getCommand() const;
-
     MCAPI ::CommandBlock const* getCommandBlock(::BlockSource& region) const;
 
     MCAPI bool getConditionalMode(::BlockSource& region) const;
-
-    MCAPI int getDelayOnActivation() const;
-
-    MCAPI ::CommandBlockMode getMode(::BlockSource& region) const;
-
-    MCAPI bool getPowered() const;
-
-    MCAPI int getSuccessCount() const;
-
-    MCAPI int getTickDelay() const;
-
-    MCAPI bool isAutomatic() const;
 
     MCAPI bool markConditionMet(::BlockSource& region);
 
@@ -119,23 +104,17 @@ public:
 
     MCAPI bool performCommand(::BlockSource& region);
 
-    MCAPI void setPowered(bool powered);
-
-    MCAPI void setSuccessCount(int successCount);
-
     MCAPI void updateBlock(
-        ::BlockSource&       region,
-        ::std::string const& cmd,
-        ::std::string const& name,
-        ::CommandBlockMode   newMode,
-        bool                 isConditional,
-        bool                 redstoneMode,
-        bool                 trackOutput,
-        int                  tickDelay,
-        bool                 executeFirstTick
+        ::BlockSource&                             region,
+        ::std::string const&                       cmd,
+        ::Bedrock::Safety::RedactableString const& name,
+        ::CommandBlockMode                         newMode,
+        bool                                       isConditional,
+        bool                                       redstoneMode,
+        bool                                       trackOutput,
+        int                                        tickDelay,
+        bool                                       executeFirstTick
     );
-
-    MCAPI bool wasConditionMet();
     // NOLINTEND
 
 public:
@@ -157,7 +136,7 @@ public:
 
     MCAPI void $saveBlockData(::CompoundTag& tag, ::BlockSource& region) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper);
 
@@ -167,12 +146,11 @@ public:
 
     MCAPI void $onPlace(::BlockSource& region);
 
-    MCAPI ::std::string const& $getCustomName() const;
+    MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
-    MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context
-    );
+    MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
-    MCAPI void $setCustomName(::std::string const& name);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 

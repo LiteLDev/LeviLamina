@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 50
     virtual bool requiresInteract() const /*override*/;
@@ -62,10 +62,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canBeCopied(::CompoundTag const* tag);
-
-    MCAPI static int getGeneration(::CompoundTag const* tag);
-
     MCAPI static int getPageCount(::ItemStack const& book);
 
     MCAPI static ::std::vector<::PageContent> getPages(::ItemStack const& book);
@@ -74,8 +70,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_GENERATION();
-
     MCAPI static int const& MAX_PAGES();
 
     MCAPI static int const& MAX_PAGE_LENGTH();
@@ -89,8 +83,6 @@ public:
     MCAPI static ::std::string_view const& TAG_FILTERED_TITLE();
 
     MCAPI static ::std::string_view const& TAG_GENERATION();
-
-    MCAPI static ::std::string_view const& TAG_ID();
 
     MCAPI static ::std::string_view const& TAG_PAGES();
 
@@ -118,7 +110,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCFOLD bool $requiresInteract() const;
 

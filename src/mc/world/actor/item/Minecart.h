@@ -17,7 +17,6 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-struct AABBShapeComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -53,46 +52,46 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void destroy(::ActorDamageSource const&, bool dropMinecartComponents);
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::MinecartType getType() = 0;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const;
 
-    // vIndex: 146
+    // vIndex: 141
     virtual int getDefaultDisplayOffset() const;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 93
+    // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 15
     virtual float getInterpolatedBodyYaw(float) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 124
+    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 142
     virtual void applyNaturalSlowdown(::BlockSource&);
 
-    // vIndex: 148
+    // vIndex: 143
     virtual void _lazyInitDisplayBlock();
     // NOLINTEND
 
@@ -114,12 +113,6 @@ public:
     MCAPI ::BlockPos preNormalTick();
 
     MCAPI void setDisplayBlock(::Block const& block);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static float getHeightOffset(::AABBShapeComponent const& aabb);
     // NOLINTEND
 
 public:

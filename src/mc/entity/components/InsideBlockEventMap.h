@@ -40,26 +40,6 @@ public:
         ::ActorDefinitionTrigger const& exitedEvent
     );
 
-    MCAPI ::gsl::not_null<::Block const*> getBlock() const;
-
-    MCFOLD ::ActorDefinitionTrigger const& getEnteredEvent() const;
-
-    MCFOLD ::ActorDefinitionTrigger const& getExitedEvent() const;
-
-    MCAPI bool isActorCurrentlyInside() const;
-
-    MCFOLD bool isIgnoringStates() const;
-
-    MCFOLD bool isWatchingIfActorEnters() const;
-
-    MCAPI bool isWatchingIfActorExits() const;
-
-    MCFOLD void setCurrentlyInside(bool isInside);
-
-    MCAPI void setWasInside(bool wasInside);
-
-    MCAPI bool wasActorInsideLastTick() const;
-
     MCAPI ~InsideBlockEventMap();
     // NOLINTEND
 

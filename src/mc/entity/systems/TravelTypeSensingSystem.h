@@ -24,15 +24,8 @@ struct MovementAbilitiesComponent;
 struct OnGroundFlagComponent;
 struct PlayerFlyingTravelComponent;
 struct SubBBsComponent;
-struct TickingSystemWithInfo;
 struct WasInWaterFlagComponent;
 struct WaterTravelFlagComponent;
 // clang-format on
 
-struct TravelTypeSensingSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createTravelTypeSensingSystem();
-    // NOLINTEND
-};
+struct TravelTypeSensingSystem {};

@@ -24,21 +24,11 @@ public:
 
     MCAPI explicit HashedString(char const* str);
 
-    MCAPI explicit HashedString(::std::string_view str);
-
     MCAPI HashedString(uint64 hash, char const* str);
 
     MCAPI char const* c_str() const;
 
-    MCAPI void clear();
-
-    MCFOLD bool empty() const;
-
-    MCFOLD uint64 getHash() const;
-
-    MCFOLD ::std::string const& getString() const;
-
-    MCFOLD bool isEmpty() const;
+    MCAPI bool empty() const;
 
     MCAPI explicit operator ::std::string_view() const;
 
@@ -52,11 +42,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 computeHash(char const* str);
-
     MCAPI static uint64 computeHash(::std::string const& str);
 
-    MCAPI static ::HashedString const& getEmptyString();
+    MCFOLD static ::HashedString const& getEmptyString();
     // NOLINTEND
 
 public:
@@ -74,11 +62,9 @@ public:
 
     MCAPI void* $ctor(::HashedString const& rhs);
 
-    MCAPI void* $ctor(::std::string const& str);
+    MCFOLD void* $ctor(::std::string const& str);
 
     MCAPI void* $ctor(char const* str);
-
-    MCAPI void* $ctor(::std::string_view str);
 
     MCAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND

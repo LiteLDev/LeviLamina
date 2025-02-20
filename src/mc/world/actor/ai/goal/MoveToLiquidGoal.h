@@ -10,7 +10,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class MoveToLiquidGoal : public ::BaseMoveToBlockGoal {
@@ -40,34 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~MoveToLiquidGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MoveToLiquidGoal(
-        ::Mob&         mob,
-        float          speedModifier,
-        int            searchRange,
-        int            searchHeight,
-        int            searchCount,
-        ::MaterialType materialType,
-        float          goalRadius
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&         mob,
-        float          speedModifier,
-        int            searchRange,
-        int            searchHeight,
-        int            searchCount,
-        ::MaterialType materialType,
-        float          goalRadius
-    );
     // NOLINTEND
 
 public:

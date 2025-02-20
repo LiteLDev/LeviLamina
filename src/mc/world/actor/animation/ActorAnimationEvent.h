@@ -26,8 +26,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorAnimationEvent& operator=(ActorAnimationEvent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorAnimationEvent(::ActorAnimationEvent const&);
+
     MCAPI ActorAnimationEvent(
         float                time,
         ::std::string const& event,
@@ -37,12 +43,16 @@ public:
 
     MCAPI void fire(::RenderParams& renderParams, ::Actor* actor) const;
 
+    MCAPI ::ActorAnimationEvent& operator=(::ActorAnimationEvent&&);
+
     MCAPI ~ActorAnimationEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorAnimationEvent const&);
+
     MCAPI void*
     $ctor(float time, ::std::string const& event, ::CurrentCmdVersion commandVersion, ::MolangVersion molangVersion);
     // NOLINTEND

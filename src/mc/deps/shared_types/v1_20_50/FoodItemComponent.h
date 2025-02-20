@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_20_50::FoodItemComponent& operator=(::SharedTypes::v1_20_50::FoodItemComponent&&);
-
     MCAPI ~FoodItemComponent();
     // NOLINTEND
 

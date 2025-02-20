@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
-class Block;
+class BlockLegacy;
 class BlockVolume;
 class ChunkPos;
 class Random;
@@ -19,20 +19,18 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, short const> mSeaLevel;
-    ::ll::TypedStorage<1, 1, bool>        mAllowMegaRavines;
+    ::ll::TypedStorage<1, 1, bool>        mAllowMegaCanyons;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CanyonFeature();
-
-    // vIndex: 1
-    virtual bool carve(
-        ::BlockVolume&           blocks,
-        ::BiomeSource const&     localBiomeSource,
-        ::Random&                random,
+    virtual bool _carve(
+        ::BlockVolume&                                   blocks,
+        ::BiomeSource const&                             localBiomeSource,
+        ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
+        ::Random&,
         ::ChunkPos const&        pos,
         ::Vec3 const&            startPos,
         ::Vec3 const&            originalStartPos,
@@ -44,12 +42,18 @@ public:
         int                      z1,
         float                    rad,
         float                    yRad,
-        ::gsl::span<float const> rs,
+        ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const& context
     ) const;
 
-    // vIndex: 2
-    virtual void addFeature(
+    // vIndex: 1
+    virtual bool _isDiggable(::BlockLegacy const& block) const;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _addFeature(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
@@ -59,33 +63,28 @@ public:
         int                                              z,
         ::WorldGenContext const&                         context
     );
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CanyonFeature(short seaLevel);
-
-    MCAPI void addTunnel(
-        ::BlockVolume&           blocks,
-        ::BiomeSource const&     localBiomeSource,
-        ::Random&                _random,
-        ::ChunkPos const&        pos,
-        ::Vec3 const&            startPos,
-        ::Vec3 const&            originalStartPos,
-        float                    thickness,
-        float                    yRot,
-        float                    xRot,
-        int                      step,
-        int                      dist,
-        float                    yScale,
-        ::WorldGenContext const& context
+    MCAPI void _addTunnel(
+        ::BlockVolume&                                   blocks,
+        ::BiomeSource const&                             localBiomeSource,
+        ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
+        ::Random&                                        random,
+        ::ChunkPos const&                                pos,
+        ::Vec3 const&                                    startPos,
+        ::Vec3 const&                                    originalStartPos,
+        float                                            thickness,
+        float                                            yRot,
+        float                                            xRot,
+        int                                              yScale,
+        int                                              context,
+        float                                            step,
+        ::WorldGenContext const&                         dist
     ) const;
 
     MCAPI void apply(
         ::BlockVolume&                                   blocks,
         ::ChunkPos const&                                pos,
-        ::BiomeSource const&                             biomeSource,
+        ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
         ::Random&                                        random,
         uint                                             levelSeed,
@@ -94,30 +93,13 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isDiggable(::Block const& block, ::Block const& above);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(short seaLevel);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $carve(
-        ::BlockVolume&           blocks,
-        ::BiomeSource const&     localBiomeSource,
-        ::Random&                random,
+    MCAPI bool $_carve(
+        ::BlockVolume&                                   blocks,
+        ::BiomeSource const&                             localBiomeSource,
+        ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
+        ::Random&,
         ::ChunkPos const&        pos,
         ::Vec3 const&            startPos,
         ::Vec3 const&            originalStartPos,
@@ -129,20 +111,11 @@ public:
         int                      z1,
         float                    rad,
         float                    yRad,
-        ::gsl::span<float const> rs,
+        ::gsl::span<float const> widthRandomization,
         ::WorldGenContext const& context
     ) const;
 
-    MCAPI void $addFeature(
-        ::BlockVolume&                                   blocks,
-        ::BiomeSource const&                             localBiomeSource,
-        ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
-        ::ChunkPos const&                                pos,
-        ::Random&                                        random,
-        int                                              x,
-        int                                              z,
-        ::WorldGenContext const&                         context
-    );
+    MCAPI bool $_isDiggable(::BlockLegacy const& block) const;
     // NOLINTEND
 
 public:

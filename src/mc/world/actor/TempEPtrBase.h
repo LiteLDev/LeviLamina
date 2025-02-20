@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/_TickPtr.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-// clang-format on
-
 class TempEPtrBase : public ::_TickPtr {
 public:
     // member variables
@@ -22,13 +17,15 @@ public:
 
 public:
     // prevent constructor by default
+    TempEPtrBase& operator=(TempEPtrBase const&);
+    TempEPtrBase(TempEPtrBase const&);
     TempEPtrBase();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ~TempEPtrBase() /*override*/;
+    virtual ~TempEPtrBase() /*override*/ = default;
 
     // vIndex: 0
     virtual void invalidate() /*override*/;
@@ -37,29 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TempEPtrBase(::TempEPtrBase const& e);
-
-    MCAPI ::Actor* _lock() const;
-
-    MCAPI void _set(::Actor* e);
-
     MCAPI bool isValid() const;
-
-    MCAPI ::TempEPtrBase& operator=(::TempEPtrBase const& e);
 
     MCAPI void unset();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::TempEPtrBase const& e);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

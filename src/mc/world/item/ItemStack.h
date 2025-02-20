@@ -3,29 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/inventory/network/TypedClientNetId.h"
-#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/item/ItemStackBase.h"
-#include "mc/world/item/ItemUseMethod.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Block;
 class BlockLegacy;
 class BlockPalette;
 class CompoundTag;
+class ILevel;
 class InteractionResult;
 class Item;
 class ItemInstance;
-class Level;
 class Mob;
 class NetworkItemStackDescriptor;
-class Player;
-class RecipeIngredient;
 class Vec3;
-struct ItemStackLegacyRequestIdTag;
-struct ItemStackNetIdTag;
 struct ItemStackNetIdVariant;
 struct ItemUsedOnEventContext;
 // clang-format on
@@ -67,15 +59,11 @@ public:
     // NOLINTBEGIN
     MCAPI ItemStack();
 
-    MCAPI explicit ItemStack(::RecipeIngredient const& ingredient);
-
     MCAPI ItemStack(::ItemStack const& rhs);
 
     MCAPI explicit ItemStack(::ItemInstance const& rhs);
 
     MCAPI ItemStack(::BlockLegacy const& block, int count);
-
-    MCAPI ItemStack(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI ItemStack(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
@@ -83,21 +71,9 @@ public:
 
     MCAPI void _assignNetIdVariant(::ItemStack const& fromItem) const;
 
-    MCAPI void clientInitLegacyRequestId(::ItemStackLegacyRequestId const& legacyClientRequestId);
-
-    MCAPI ::ItemStack clone() const;
-
-    MCAPI float getDestroySpeed(::Block const& block) const;
-
-    MCFOLD ::ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
-
     MCAPI int getMaxUseDuration() const;
 
     MCAPI ::ItemStack getStrippedNetworkItem() const;
-
-    MCAPI bool hasItemStackNetId() const;
-
-    MCAPI bool inventoryTick(::Level& level, ::Actor& owner, int slot, bool selected);
 
     MCAPI bool matchesAndNetIdVariantMatches(::ItemStack const& other) const;
 
@@ -107,15 +83,9 @@ public:
 
     MCAPI void playSoundIncrementally(::Mob& mob) const;
 
-    MCAPI void releaseUsing(::Player* player, int durationLeft);
-
     MCAPI bool sameItemAndAuxAndBlockData(::ItemStack const& otherItemStack) const;
 
     MCAPI void serverInitNetId();
-
-    MCAPI ::ItemStackNetId const* tryGetItemStackNetId() const;
-
-    MCAPI ::ItemStack& use(::Player& player);
 
     MCAPI void useAsFuel();
 
@@ -128,8 +98,6 @@ public:
         ::Vec3 const&            clickPos,
         ::ItemUsedOnEventContext itemUsedOnEventContext
     );
-
-    MCAPI ::ItemUseMethod useTimeDepleted(::Level* level, ::Player* player);
     // NOLINTEND
 
 public:
@@ -140,7 +108,7 @@ public:
 
     MCAPI static ::ItemStack fromTag(::CompoundTag const& tag);
 
-    MCAPI static ::ItemStack fromTag(::CompoundTag const& tag, ::Level& level);
+    MCAPI static ::ItemStack fromTag(::CompoundTag const& tag, ::ILevel& level);
     // NOLINTEND
 
 public:
@@ -154,15 +122,11 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::RecipeIngredient const& ingredient);
-
     MCAPI void* $ctor(::ItemStack const& rhs);
 
     MCAPI void* $ctor(::ItemInstance const& rhs);
 
     MCAPI void* $ctor(::BlockLegacy const& block, int count);
-
-    MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 

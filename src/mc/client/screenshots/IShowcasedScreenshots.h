@@ -13,9 +13,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32>  mUnk3c5613;
-    ::ll::UntypedStorage<8, 64>  mUnk72b2cf;
-    ::ll::UntypedStorage<8, 32>  mUnkd763f3;
-    ::ll::UntypedStorage<8, 16>  mUnk282215;
+    ::ll::UntypedStorage<8, 184> mUnkf67306;
+    ::ll::UntypedStorage<8, 8>   mUnkc57975;
     ::ll::UntypedStorage<1, 1>   mUnkb24f62;
     ::ll::UntypedStorage<1, 1>   mUnk9c024a;
     ::ll::UntypedStorage<1, 1>   mUnke7ddee;
@@ -53,7 +52,7 @@ public:
 
     // vIndex: 6
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
-    removeShowcasedScreenshot(::std::string const&, bool) = 0;
+    removeShowcasedScreenshot(::std::string const&) = 0;
 
     // vIndex: 7
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> setFeaturedScreenshot(::std::string const&) = 0;

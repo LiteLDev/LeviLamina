@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class CompoundTag;
-class DataLoadHelper;
-// clang-format on
-
 struct DimensionTransitionComponent {
 public:
     // member variables
@@ -24,14 +17,6 @@ public:
     DimensionTransitionComponent& operator=(DimensionTransitionComponent const&);
     DimensionTransitionComponent(DimensionTransitionComponent const&);
     DimensionTransitionComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-    // NOLINTEND
 
 public:
     // static variables

@@ -9,9 +9,8 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
-class CommandRegistry;
 class IScriptDebugger;
-struct ScriptSettings;
+class ScriptDiagnosticsPublishToFile;
 // clang-format on
 
 class ServerScriptDebugCommand : public ::ScriptDebugCommand {
@@ -21,7 +20,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkbe492c;
     ::ll::UntypedStorage<4, 4>  mUnk16a659;
     ::ll::UntypedStorage<4, 4>  mUnk79156f;
-    ::ll::UntypedStorage<4, 4>  mUnk31d6cd;
+    ::ll::UntypedStorage<4, 4>  mUnke39369;
     ::ll::UntypedStorage<8, 32> mUnkb35c35;
     ::ll::UntypedStorage<4, 4>  mUnk9e0646;
     // NOLINTEND
@@ -43,14 +42,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::IScriptDebugger* debugger, ::ScriptSettings const& settings);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::ScriptDiagnosticsPublishToFile*& sDiagnosticsPublishToFile();
+
     MCAPI static ::std::optional<ushort>& sForcedPort();
 
     MCAPI static ::IScriptDebugger*& sServerScriptDebugger();

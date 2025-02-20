@@ -11,7 +11,7 @@ class BlockSource;
 namespace LightningBoltUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void _clearCopperOnLightningStrike(::BlockSource& region, ::BlockPos const& pos);
+MCAPI void _doCopperCleaningStrike(::BlockSource& region, ::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace LightningBoltUtil

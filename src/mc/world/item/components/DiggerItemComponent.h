@@ -8,7 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class HashedString;
+class ItemStackBase;
 class SemVersion;
 namespace SharedTypes::v1_20_50 { struct DiggerItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -34,12 +36,19 @@ public:
         // prevent constructor by default
         BlockInfo& operator=(BlockInfo const&);
         BlockInfo(BlockInfo const&);
-        BlockInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI BlockInfo();
+
         MCAPI ~BlockInfo();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -73,6 +82,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
+
+    MCAPI float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
     // NOLINTEND
 
 public:
@@ -80,8 +91,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();

@@ -124,15 +124,6 @@ public:
         char*              errorBuffer,
         uint64             errorBufferSize
     );
-
-    MCAPI ::Bedrock::PlatformBootstrap::SaveResult _rawSaveFile_cstdio(
-        char const*        buffer,
-        uint64             bufferSize,
-        ::std::string_view root,
-        char const*        path,
-        char*              errorBuffer,
-        uint64             errorBufferSize
-    );
     // NOLINTEND
 
 public:
@@ -146,8 +137,6 @@ public:
 
     MCAPI static ::Bedrock::PlatformBootstrap::SaveResult
     _makeSaveError(::Bedrock::PlatformBootstrap::SaveResultCode, char*, uint64, char const*, ...);
-
-    MCAPI static ::Bedrock::PlatformBootstrap& getSharedInstance();
     // NOLINTEND
 
 public:

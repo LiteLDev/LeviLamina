@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AvoidMobTypeGoal;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -38,6 +36,7 @@ public:
     // prevent constructor by default
     AvoidMobTypeDefinition& operator=(AvoidMobTypeDefinition const&);
     AvoidMobTypeDefinition(AvoidMobTypeDefinition const&);
+    AvoidMobTypeDefinition();
 
 public:
     // virtual functions
@@ -47,26 +46,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AvoidMobTypeDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::AvoidMobTypeGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                   name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AvoidMobTypeDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

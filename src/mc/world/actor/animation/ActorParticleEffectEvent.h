@@ -16,8 +16,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorParticleEffectEvent& operator=(ActorParticleEffectEvent const&);
+    ActorParticleEffectEvent(ActorParticleEffectEvent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::ActorParticleEffectEvent& operator=(::ActorParticleEffectEvent&&);
+
     MCAPI ~ActorParticleEffectEvent();
     // NOLINTEND
 

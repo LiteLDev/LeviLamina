@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class CompoundTag;
-// clang-format on
-
 class EntityStorageKeyComponent {
 public:
     // member variables
@@ -26,18 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EntityStorageKeyComponent(::std::string const& storageKey);
-
-    MCAPI void addAdditionalSaveData(::Actor const& owner, ::CompoundTag& tag) const;
-
     MCAPI ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
-
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& storageKey);
     // NOLINTEND
 };

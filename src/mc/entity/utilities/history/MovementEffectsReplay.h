@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/input/CorrectionType.h"
-#include "mc/input/IMovementCorrection.h"
+#include "mc/entity/utilities/IMovementCorrection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnk586136;
     ::ll::UntypedStorage<4, 4>  mUnk5c62aa;
-    ::ll::UntypedStorage<1, 1>  mUnk98116b;
+    ::ll::UntypedStorage<4, 4>  mUnk12db08;
     // NOLINTEND
 
 public:
@@ -32,14 +31,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 4
     virtual void advanceFrame(::EntityContext&) const /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual void advanceLiveFrame(::Actor&, ::std::optional<uint64>) /*override*/;
 
-    // vIndex: 4
-    virtual ::CorrectionType getCorrectionType() const /*override*/;
+    // vIndex: 3
+    virtual ::std::bitset<2> getCorrectionTypeBitset() const /*override*/;
 
     // vIndex: 0
     virtual ~MovementEffectsReplay() /*override*/ = default;

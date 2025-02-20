@@ -17,12 +17,11 @@ public:
 public:
     // prevent constructor by default
     CommandOutputMessage& operator=(CommandOutputMessage const&);
+    CommandOutputMessage(CommandOutputMessage const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandOutputMessage(::CommandOutputMessage const& rhs);
-
     MCAPI CommandOutputMessage(::CommandOutputMessage&& rhs);
 
     MCAPI CommandOutputMessage(
@@ -31,20 +30,12 @@ public:
         ::std::vector<::std::string>&& params
     );
 
-    MCFOLD ::std::string const& getMessageId() const;
-
-    MCFOLD ::std::vector<::std::string> const& getParams() const;
-
-    MCFOLD ::CommandOutputMessageType getType() const;
-
     MCAPI ~CommandOutputMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandOutputMessage const& rhs);
-
     MCAPI void* $ctor(::CommandOutputMessage&& rhs);
 
     MCAPI void*

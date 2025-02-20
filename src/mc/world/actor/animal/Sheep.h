@@ -6,13 +6,6 @@
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/animal/Animal.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
-// clang-format on
-
 class Sheep : public ::Animal {
 public:
     // member variables
@@ -29,41 +22,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 8
     virtual ~Sheep() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Sheep(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
-    MCAPI bool isGrazing() const;
-
-    MCAPI void preAiStep();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& EAT_ANIMATION_TICKS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

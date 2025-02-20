@@ -17,22 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorAddEffectEvent& operator=(ActorAddEffectEvent const&);
-    ActorAddEffectEvent(ActorAddEffectEvent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAddEffectEvent(::ActorAddEffectEvent&&);
-
     MCAPI ~ActorAddEffectEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorAddEffectEvent&&);
     // NOLINTEND
 
 public:

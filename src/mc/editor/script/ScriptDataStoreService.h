@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/editor/datastore/EventType.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptDataStoreService(::Editor::ScriptModule::ScriptDataStoreService&&);
+
     MCAPI ScriptDataStoreService(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,
@@ -68,6 +70,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreService&&);
+
     MCAPI void* $ctor(
         ::Editor::Services::DataStoreServiceProvider*      dataStoreService,
         ::Editor::Services::TelemetryServiceProvider*      telemetryService,

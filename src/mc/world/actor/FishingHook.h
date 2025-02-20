@@ -13,6 +13,7 @@ class ActorDefinitionGroup;
 class BlockPos;
 class EntityContext;
 class HitResult;
+class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -46,16 +47,16 @@ public:
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 126
+    // vIndex: 124
     virtual bool shouldDropDeathLoot() const /*override*/;
 
     // vIndex: 2
@@ -77,6 +78,8 @@ public:
 
     MCAPI void _fishhookEvent();
 
+    MCAPI int _getServerFishSpeed();
+
     MCAPI float _getWaterPercentage();
 
     MCAPI ::HitResult _hitCheck();
@@ -89,19 +92,15 @@ public:
 
     MCAPI void _updateGravity();
 
-    MCAPI void _updateServer();
+    MCAPI ::Actor* getFishingTarget();
 
     MCAPI ::Actor* getOwner();
 
     MCAPI void postNormalTick();
 
     MCAPI int retrieve();
-    // NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& BOBBER_SIZE();
+    MCAPI void shoot(::Vec3 dir, float pow, float uncertainty);
     // NOLINTEND
 
 public:

@@ -36,17 +36,7 @@ public:
 
     MCAPI void setWorldRealmEventPublished(::RealmEventId eventId);
 
-    MCAPI bool wasPlayerRealmEventPublished(::RealmEventId eventId, ::std::string const& xuid) const;
-
-    MCAPI bool wasWorldRealmEventPublished(::RealmEventId eventId) const;
-
     MCAPI ~RealmsStoriesData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& getRealmEventInternalName(::RealmEventId eventId);
     // NOLINTEND
 
 public:

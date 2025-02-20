@@ -49,24 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SimpleEventPacket();
-
-    MCAPI explicit SimpleEventPacket(::SimpleEventPacket::Subtype const& st);
-
-    MCFOLD ::SimpleEventPacket::Subtype const& getSubtype() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SimpleEventPacket::Subtype const& st);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

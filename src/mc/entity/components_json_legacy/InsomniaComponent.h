@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class CompoundTag;
-class DataLoadHelper;
-// clang-format on
-
 class InsomniaComponent {
 public:
     // member variables
@@ -23,20 +16,4 @@ public:
     InsomniaComponent& operator=(InsomniaComponent const&);
     InsomniaComponent(InsomniaComponent const&);
     InsomniaComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCFOLD int getInsomniaTimerTicks() const;
-
-    MCFOLD int getTicksUntilInsomnia() const;
-
-    MCAPI int incrementTimeSinceRest();
-
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCFOLD void restartTimer();
-    // NOLINTEND
 };

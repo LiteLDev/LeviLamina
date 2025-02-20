@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/animal/Animal.h"
 
@@ -11,7 +11,6 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class Block;
 class BlockPos;
 class EntityContext;
 struct ActorDefinitionIdentifier;
@@ -21,32 +20,29 @@ class Parrot : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 176
+    // vIndex: 171
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 64
+    // vIndex: 62
     virtual void playAmbientSound() /*override*/;
 
-    // vIndex: 65
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual void setSitting(bool value) /*override*/;
 
-    // vIndex: 98
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
     virtual ~Parrot() /*override*/ = default;
@@ -98,8 +94,6 @@ public:
     MCAPI float $getShadowRadius() const;
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
-
-    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

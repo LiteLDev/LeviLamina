@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
+#include "mc/world/level/block/LiquidType.h"
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BlockSource;
 class Vec3;
@@ -23,7 +23,6 @@ namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -47,10 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlock(::ScriptModuleMinecraft::ScriptBlock&&);
-
-    MCAPI ScriptBlock(::BlockSource& region, ::BlockPos pos, ::Scripting::WeakLifetimeScope const& scope);
-
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -64,6 +59,20 @@ public:
     below(int steps) const;
 
     MCAPI ::Vec3 bottomCenter() const;
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::Error>
+    canBeDestroyedByLiquidSpread(::LiquidType liquidType) const;
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::Error>
+    canContainLiquid(::LiquidType liquidType) const;
 
     MCAPI ::Scripting::Result<
         bool,
@@ -85,8 +94,6 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     east(int steps) const;
-
-    MCAPI ::Block const& getBlock() const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>,
@@ -167,6 +174,8 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     hasTag(::std::string const& tag) const;
 
+    MCAPI bool hasTag_010(::std::string const& tag) const;
+
     MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -182,8 +191,29 @@ public:
     MCAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::Error>
+    isLiquidBlocking(::LiquidType liquidType) const;
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     isSolid() const;
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::Error>
+    liquidCanFlowFromDirection(::LiquidType liquidType, ::ScriptModuleMinecraft::ScriptFacing flowDirection) const;
+
+    MCAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
+        ::Scripting::Error>
+    liquidSpreadCausesSpawn(::LiquidType liquidType) const;
 
     MCAPI ::Scripting::Result<
         bool,
@@ -205,8 +235,6 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     offset(::Vec3 const& offset) const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlock& operator=(::ScriptModuleMinecraft::ScriptBlock&&);
 
     MCAPI ::Scripting::Result<
         void,
@@ -230,8 +258,6 @@ public:
         ::Scripting::Error>
     setWaterlogged(bool setWaterlogged);
 
-    MCAPI ::Scripting::Result<void> setWaterlogged_010(bool setWaterlogged);
-
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -249,24 +275,12 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     west(int steps) const;
-
-    MCAPI ~ScriptBlock();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlock> bind();
-
-    MCAPI static ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    setPermutationStatic(
-        ::BlockSource&                                         region,
-        ::BlockPos const&                                      location,
-        ::ScriptModuleMinecraft::ScriptBlockPermutation const& blockData
-    );
 
     MCAPI static ::Scripting::Result<
         void,
@@ -280,20 +294,6 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::std::string> const& blockType
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlock&&);
-
-    MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

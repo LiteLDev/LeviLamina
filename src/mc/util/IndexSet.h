@@ -13,37 +13,13 @@ public:
 public:
     // prevent constructor by default
     IndexSet& operator=(IndexSet const&);
+    IndexSet(IndexSet const&);
+    IndexSet();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IndexSet();
-
-    MCAPI IndexSet(::IndexSet const& other);
-
-    MCAPI IndexSet(::IndexSet&& other);
-
-    MCAPI bool contains(uint64 index) const;
-
-    MCFOLD ::std::vector<uint64> const& getPacked() const;
-
-    MCAPI void insert(uint64 index);
-
-    MCAPI bool operator==(::IndexSet const& other) const;
-
-    MCAPI void remove(uint64 index);
-
     MCAPI ~IndexSet();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCAPI void* $ctor(::IndexSet const& other);
-
-    MCAPI void* $ctor(::IndexSet&& other);
     // NOLINTEND
 
 public:

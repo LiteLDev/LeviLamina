@@ -33,20 +33,7 @@ public:
         // prevent constructor by default
         AtomicMemoryAccumulator& operator=(AtomicMemoryAccumulator const&);
         AtomicMemoryAccumulator(AtomicMemoryAccumulator const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI AtomicMemoryAccumulator();
-
-        MCAPI uint64 getMemoryAverage() const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor();
-        // NOLINTEND
+        AtomicMemoryAccumulator();
     };
 
     struct PaletteData {

@@ -12,21 +12,27 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class ActorOwnerComponent;
 class EntitySystems;
 class LocalSpatialEntityFetcher;
-class ReplayStateComponent;
+class PredictedMovementComponent;
 class StrictEntityContext;
+class Vec3;
 struct AABBShapeComponent;
 struct ActorComponent;
 struct ActorIsFirstTickFlagComponent;
 struct ActorMovementTickNeededComponent;
+struct DepenetrationComponent;
 struct DimensionTypeComponent;
 struct FallingBlockFlagComponent;
 struct IsSolidMobComponent;
 struct IsSolidMobNearbyComponent;
 struct LocalSpatialEntityFetcherFactoryComponent;
 struct MobFlagComponent;
+struct MoveRequestComponent;
+struct MovementInterpolatorComponent;
+struct OffsetsComponent;
 struct ServerCatchupMovementTrackerComponent;
 struct ShouldBeSimulatedComponent;
 struct StateVectorComponent;
@@ -36,11 +42,7 @@ struct TickingSystemWithInfo;
 namespace SolidMobSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void componentCopySystem(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::ReplayStateComponent&      replay,
-    ::IsSolidMobNearbyComponent& solidNearby
-);
+MCAPI ::TickingSystemWithInfo createRewindShapeRefreshSystem();
 
 MCAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
 
@@ -136,7 +138,26 @@ MCAPI void flagSolidMobsFromNearbySystem(
     ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
 );
 
+MCAPI ::std::optional<::AABB> getLatestAABB(
+    ::StrictEntityContext const&                                                                e,
+    ::ViewT<::StrictEntityContext, ::AABBShapeComponent const, ::OffsetsComponent const> const& aabbs,
+    ::ViewT<::StrictEntityContext, ::PredictedMovementComponent const> const&                   pmcs,
+    ::ViewT<::StrictEntityContext, ::MovementInterpolatorComponent const> const&                interpolators
+);
+
+MCAPI ::std::optional<::Vec3> getLatestPosition(
+    ::StrictEntityContext const&                                                 e,
+    ::ViewT<::StrictEntityContext, ::PredictedMovementComponent const> const&    pmcs,
+    ::ViewT<::StrictEntityContext, ::MovementInterpolatorComponent const> const& interpolators
+);
+
 MCAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
+
+MCAPI void storeNearbyMobsOnMoveRequest(
+    ::IsSolidMobNearbyComponent const& nearby,
+    ::DepenetrationComponent&          depenetration,
+    ::MoveRequestComponent&            request
+);
 // NOLINTEND
 
 } // namespace SolidMobSystem

@@ -17,17 +17,12 @@ struct ActorMovementTickNeededComponent;
 struct LocalPlayerComponent;
 struct PlayerComponent;
 struct SkipNormalTickComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct NormalTickFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createGenericSystem();
-
-    MCAPI static ::TickingSystemWithInfo createLocalPlayerSystem();
-
     MCAPI static void tickGenericSystem(
         ::ViewT<
             ::StrictEntityContext,

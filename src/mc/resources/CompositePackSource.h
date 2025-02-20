@@ -41,26 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CompositePackSource();
-
-    MCAPI explicit CompositePackSource(::std::vector<::PackSource*>&& packSources);
-
-    MCAPI void addPackSource(::PackSource* packSource);
-
-    MCAPI void clear();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::PackSource*>&& packSources);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

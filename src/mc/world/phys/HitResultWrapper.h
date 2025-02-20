@@ -6,7 +6,6 @@
 // clang-format off
 class Actor;
 class EntityContext;
-class HitResult;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
 // clang-format on
@@ -30,13 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onActorRemoved(::Actor const& actor);
+    MCFOLD void _onActorRemoved(::Actor const& actor);
 
     MCAPI void _onGameplayUserRemoved(::EntityContext const& entity);
 
-    MCFOLD ::HitResult& getHitResult();
-
-    MCFOLD ::HitResult& getLiquidHitResult();
+    MCFOLD void _removeIfActorMatches(::Actor const& actor);
 
     MCAPI void initialize(
         ::IActorManagerConnector&        actorManagerConnector,

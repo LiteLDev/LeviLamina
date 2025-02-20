@@ -7,16 +7,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorInteraction;
+class BaseGameVersion;
 class CompoundTag;
 class DataLoadHelper;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
 struct IntRange;
-struct Tick;
-struct Trade;
 struct TradeTable;
 // clang-format on
 
@@ -45,13 +43,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EconomyTradeableComponent(::Actor& owner);
+    MCAPI void _calculateDemandPrices(
+        int               lowTierDiscount,
+        int               highTierDiscount,
+        int               nearbyCuredDiscount,
+        int               heroEffectAmplifier,
+        bool              hasHeroOfTheVillage,
+        ::BaseGameVersion baseGameVersion
+    );
 
     MCAPI bool _generateTrades();
 
     MCAPI ::TradeTable* _getTradeTable();
 
-    MCAPI void _rearrangeTradeList(::std::vector<::Trade>& tradeList, uint64 sampleCount);
+    MCAPI uint _getTradeTierFromCurrentExp() const;
 
     MCAPI void _setMaxTradeTier(int tradeTier);
 
@@ -65,21 +70,13 @@ public:
 
     MCAPI ::IntRange getCurrentCuredDiscount() const;
 
-    MCFOLD ::std::string const& getDisplayName() const;
+    MCAPI int getCurrentNearbyCuredDiscount() const;
 
     MCAPI bool getInteraction(::Player& player, ::ActorInteraction& interaction);
 
     MCAPI ::MerchantRecipeList* getOffers();
 
-    MCFOLD int getRiches() const;
-
     MCAPI uint getTradeTier() const;
-
-    MCAPI bool hasSupplyRemaining() const;
-
-    MCFOLD void initFromDefinition();
-
-    MCAPI ::std::string const& loadDisplayName();
 
     MCAPI void loadOffersFromTag(::CompoundTag const* tag);
 
@@ -91,40 +88,14 @@ public:
 
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void reloadComponent();
-
-    MCAPI void resupplyTrades();
+    MCAPI void setCurrentTradeExp(int currentTradeExp);
 
     MCAPI void setNearbyCuredDiscount(int discount);
-
-    MCAPI void setOffers(::MerchantRecipeList& offers);
-
-    MCFOLD void setRiches(int riches);
-
-    MCAPI bool shouldConvertTrades() const;
-
-    MCAPI bool shouldPersistTrades() const;
-
-    MCAPI bool showTradeScreen();
-
-    MCAPI void tickDiscountDegradationTimer(::Tick currentTick);
 
     MCAPI void tryIncrementCuredDiscount();
 
     MCAPI void tryIncrementNearbyCuredDiscount();
 
     MCAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isUseNewTradeScreen(::Actor const& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& owner);
     // NOLINTEND
 };

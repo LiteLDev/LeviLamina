@@ -33,17 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CDNConfig(::Core::Path const& filePath);
-
     MCAPI void _readConfigFile(::Core::Path const& filePath);
-
-    MCAPI ::std::vector<::std::pair<::std::string, ::std::string>> getCDNUrls();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& filePath);
     // NOLINTEND
 
 public:

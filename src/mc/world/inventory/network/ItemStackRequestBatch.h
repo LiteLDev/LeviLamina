@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -25,22 +24,8 @@ public:
     ItemStackRequestBatch();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void write(::BinaryStream& stream) const;
-
-    MCAPI ~ItemStackRequestBatch();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestBatch>> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

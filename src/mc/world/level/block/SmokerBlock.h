@@ -29,18 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SmokerBlock(::std::string const& nameId, int id, bool lit);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

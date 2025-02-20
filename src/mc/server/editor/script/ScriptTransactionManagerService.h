@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Closure.h"
-#include "mc/server/editor/transactions/EntityOperation.h"
+#include "mc/common/editor/EntityOperation.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -81,6 +81,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptTransactionManagerService(::Editor::ScriptModule::ScriptTransactionManagerService&&);
 
+    MCAPI ::Scripting::Error _getInvalidTransactionServiceError() const;
+
     MCAPI ::Scripting::Result<bool, ::Scripting::Error> addEntityOperation(
         ::ScriptModuleMinecraft::ScriptActor const&            entity,
         ::Editor::Transactions::EntityOperation::OperationType type
@@ -131,8 +133,6 @@ public:
     MCAPI ::Scripting::Result<void> undo();
 
     MCAPI ::Scripting::Result_deprecated<int> undoSize() const;
-
-    MCAPI ~ScriptTransactionManagerService();
     // NOLINTEND
 
 public:
@@ -145,12 +145,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptTransactionManagerService&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

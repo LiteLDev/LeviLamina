@@ -2,15 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct PlayerTickComponent;
-// clang-format on
-
 struct IPlayerTickPolicy {
 public:
     // IPlayerTickPolicy inner types define
-    enum class TickAction : int {
+    enum class TickAction : schar {
         ProcessTick    = 0,
         StopProcessing = 1,
         SkipTick       = 2,
@@ -23,10 +18,10 @@ public:
     virtual ~IPlayerTickPolicy() = default;
 
     // vIndex: 1
-    virtual uint64 getMaxTickCount(::PlayerTickComponent const&) const = 0;
+    virtual uint64 getMaxTickCount(uint64, bool) const = 0;
 
     // vIndex: 2
-    virtual ::IPlayerTickPolicy::TickAction shouldTickPlayer(::PlayerTickComponent const&, uint64) const = 0;
+    virtual ::IPlayerTickPolicy::TickAction shouldTickPlayer(uint64, uint64) const = 0;
     // NOLINTEND
 
 public:

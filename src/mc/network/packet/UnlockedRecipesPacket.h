@@ -51,22 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UnlockedRecipesPacket();
-
-    MCAPI UnlockedRecipesPacket(::std::vector<::std::string> unlockedRecipes, ::UnlockedRecipesPacket::PacketType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::std::string> unlockedRecipes, ::UnlockedRecipesPacket::PacketType type);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

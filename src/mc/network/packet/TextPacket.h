@@ -13,8 +13,6 @@
 class BinaryStream;
 class ReadOnlyBinaryStream;
 class ResolvedTextObject;
-namespace PlayerCapabilities { struct IPlayerData; }
-namespace PlayerCapabilities { struct ISharedController; }
 // clang-format on
 
 class TextPacket : public ::Packet {
@@ -76,11 +74,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool const _shouldHandleTextPacketForPlayer(
-        ::PlayerCapabilities::IPlayerData&             playerData,
-        ::PlayerCapabilities::ISharedController const& sharedController
-    );
-
     MCAPI static ::TextPacket createAnnouncement(
         ::std::string const&           author,
         ::std::string const&           message,
@@ -108,12 +101,6 @@ public:
         ::ResolvedTextObject const& resolvedTextObject,
         ::std::string               fromXuid,
         ::std::string               fromPlatformId
-    );
-
-    MCAPI static ::TextPacket createTextObjectWhisperMessage(
-        ::std::string const& message,
-        ::std::string const& xuid,
-        ::std::string const& platformId
     );
 
     MCAPI static ::TextPacket createTextObjectWhisperMessage(

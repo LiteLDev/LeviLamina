@@ -12,7 +12,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class ItemInstance;
-class Material;
 class Vec3;
 // clang-format on
 
@@ -32,33 +31,13 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
     // vIndex: 0
-    virtual ~RotatedPillarBlock() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RotatedPillarBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<int const[]> mRotatedX();
-
-    MCAPI static ::std::add_lvalue_reference_t<int const[]> mRotatedZ();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    virtual ~RotatedPillarBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

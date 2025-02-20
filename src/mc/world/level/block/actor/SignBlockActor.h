@@ -4,23 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
-class Level;
 class Player;
 class SaveContext;
 class TextObjectRoot;
 struct ActorUniqueID;
-namespace mce { class Color; }
 // clang-format on
 
 class SignBlockActor : public ::BlockActor {
@@ -80,6 +76,8 @@ public:
         ::ll::UntypedStorage<8, 32>  mUnk7dddfe;
         ::ll::UntypedStorage<8, 8>   mUnkeb613c;
         ::ll::UntypedStorage<1, 1>   mUnk6a42b3;
+        ::ll::UntypedStorage<4, 4>   mUnkcd7811;
+        ::ll::UntypedStorage<4, 4>   mUnk770afe;
         // NOLINTEND
 
     public:
@@ -103,7 +101,7 @@ public:
         ::ll::UntypedStorage<8, 32>  mUnk88dc11;
         ::ll::UntypedStorage<8, 32>  mUnkaa8b5f;
         ::ll::UntypedStorage<8, 32>  mUnk5885e2;
-        ::ll::UntypedStorage<8, 216> mUnk5f1573;
+        ::ll::UntypedStorage<8, 224> mUnk5f1573;
         ::ll::UntypedStorage<4, 16>  mUnke0f953;
         ::ll::UntypedStorage<1, 1>   mUnkf0c705;
         ::ll::UntypedStorage<1, 1>   mUnkd4ffb0;
@@ -135,6 +133,8 @@ public:
         MCAPI void load(::CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
 
         MCAPI bool save(::CompoundTag& tag) const;
+
+        MCAPI void setEditedBy(::std::string const& playerXuid);
 
         MCAPI void setMessage(::TextObjectRoot message);
 
@@ -179,13 +179,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SignBlockActor() /*override*/;
+    virtual ~SignBlockActor() /*override*/ = default;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
     virtual void onChanged(::BlockSource& region) /*override*/;
@@ -224,53 +224,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
-
     MCAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
 
-    MCAPI bool getIsGlowing(::SignTextSide side) const;
-
-    MCAPI bool getIsLockedForEditing(::ILevel& level);
-
-    MCFOLD bool getIsWaxed() const;
-
-    MCAPI ::std::string const& getMessage(::SignTextSide side) const;
-
-    MCAPI ::std::string const& getRawMessage(::SignTextSide side) const;
-
     MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
-
-    MCAPI ::mce::Color const& getSignTextColor(::SignTextSide side) const;
-
-    MCAPI ::TextObjectRoot const& getTextObject(::SignTextSide side) const;
-
-    MCAPI bool isStringMessage(::SignTextSide side) const;
-
-    MCAPI void serverOnlySetIsLockedForEditing(::Player& player);
-
-    MCAPI void setHideGlowOutline(::SignTextSide side, bool hideGlowOutline);
-
-    MCAPI void setIsGlowing(::SignTextSide side, bool isGlowing);
 
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
     MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
-
-    MCAPI void setSignTextColor(::SignTextSide side, ::mce::Color const& color);
-
-    MCAPI void setWaxed(bool waxed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -278,7 +244,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCFOLD void $onChanged(::BlockSource& region);
 

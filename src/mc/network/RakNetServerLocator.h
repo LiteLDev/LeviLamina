@@ -333,11 +333,13 @@ public:
     MCAPI bool _handleUnconnectedPong(
         ::std::string const&    data,
         ::RakNet::Packet const* p,
-        bool                    insertAtBeginning,
-        uint64                  readTime
+        bool                    readTime,
+        uint64                  insertAtBeginning
     );
 
     MCAPI void _initializeBroadcastAddresses();
+
+    MCAPI void _onPingSend(::std::string const& guid, ::std::string const& ipVersion, int addr);
 
     MCAPI bool
     _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);

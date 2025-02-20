@@ -29,9 +29,37 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CrossbowEnchant(
+        ::Enchant::Type __param6,
+        ::Enchant::Frequency,
+        ::std::string_view,
+        ::std::string_view,
+        ::Enchant::VillagerTrading,
+        int,
+        int
+    );
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Enchant::Type __param6,
+        ::Enchant::Frequency,
+        ::std::string_view,
+        ::std::string_view,
+        ::Enchant::VillagerTrading,
+        int,
+        int
+    );
     // NOLINTEND
 
 public:

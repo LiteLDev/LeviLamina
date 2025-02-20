@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Level;
 class Mob;
 class OnHitSubcomponent;
 class Vec3;
@@ -29,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProjectileFactory(::Level& level);
-
     MCAPI ::Actor* shootProjectileFromDefinition(
         ::ActorDefinitionIdentifier const& identifier,
         ::Mob*                             owner,
@@ -50,8 +47,6 @@ public:
     createSubcomponent(::Json::Value& trigger, ::std::string const& name);
 
     MCAPI static void initFactory();
-
-    MCAPI static void shutdown();
     // NOLINTEND
 
 public:
@@ -59,11 +54,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, ::std::function<::std::unique_ptr<::OnHitSubcomponent>()>>&
     mSubcomponentMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::Level& level);
     // NOLINTEND
 };

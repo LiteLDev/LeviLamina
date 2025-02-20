@@ -20,7 +20,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnka6d25a;
     ::ll::UntypedStorage<8, 24> mUnk7deb6f;
     ::ll::UntypedStorage<4, 4>  mUnk97bf5a;
-    ::ll::UntypedStorage<8, 32> mUnk79c1f1;
+    ::ll::UntypedStorage<4, 4>  mUnkfdfd01;
     ::ll::UntypedStorage<8, 32> mUnk53165d;
     ::ll::UntypedStorage<8, 32> mUnkabbb85;
     ::ll::UntypedStorage<1, 1>  mUnkaf5c0a;
@@ -28,16 +28,13 @@ public:
 
 public:
     // prevent constructor by default
+    GameTestReport& operator=(GameTestReport const&);
     GameTestReport(GameTestReport const&);
     GameTestReport();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameTestReport& operator=(::GameTestReport const&);
-
-    MCAPI ::GameTestReport& operator=(::GameTestReport&&);
-
     MCAPI ~GameTestReport();
     // NOLINTEND
 

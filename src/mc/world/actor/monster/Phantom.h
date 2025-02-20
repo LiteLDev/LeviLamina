@@ -19,11 +19,8 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
-
-    // vIndex: 63
-    virtual bool shouldRender() const /*override*/;
 
     // vIndex: 8
     virtual ~Phantom() /*override*/ = default;
@@ -61,8 +58,6 @@ public:
     MCAPI void $normalTick();
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
-
-    MCFOLD bool $shouldRender() const;
     // NOLINTEND
 
 public:

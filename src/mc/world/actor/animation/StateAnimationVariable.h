@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class RenderParams;
+// clang-format on
+
 class StateAnimationVariable {
 public:
     // member variables
@@ -14,6 +19,19 @@ public:
 public:
     // prevent constructor by default
     StateAnimationVariable& operator=(StateAnimationVariable const&);
-    StateAnimationVariable(StateAnimationVariable const&);
     StateAnimationVariable();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI StateAnimationVariable(::StateAnimationVariable const&);
+
+    MCAPI void setVariable(::RenderParams& renderParams) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::StateAnimationVariable const&);
+    // NOLINTEND
 };

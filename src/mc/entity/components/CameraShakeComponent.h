@@ -23,10 +23,4 @@ public:
     CameraShakeComponent& operator=(CameraShakeComponent const&);
     CameraShakeComponent(CameraShakeComponent const&);
     CameraShakeComponent();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static float getMaxIntensity();
-    // NOLINTEND
 };

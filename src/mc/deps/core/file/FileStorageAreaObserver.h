@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class SingleThreadedLock; }
 // clang-format on
 
@@ -24,10 +24,10 @@ public:
     virtual void _onEndWrites() = 0;
 
     // vIndex: 4
-    virtual void _onWriteFile(::Core::Path const&) = 0;
+    virtual void _onWriteFile(::Core::PathView) = 0;
 
     // vIndex: 5
-    virtual void _onDeleteFile(::Core::Path const&) = 0;
+    virtual void _onDeleteFile(::Core::PathView) = 0;
 
     // vIndex: 0
     virtual ~FileStorageAreaObserver() /*override*/ = default;

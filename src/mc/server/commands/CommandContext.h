@@ -19,17 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandContext(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);
-
-    MCFOLD ::CommandOrigin const& getCommandOrigin() const;
-
     MCAPI ~CommandContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& cmd, ::std::unique_ptr<::CommandOrigin> origin, int version);
     // NOLINTEND
 
 public:

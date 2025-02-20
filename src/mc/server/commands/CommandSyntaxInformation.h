@@ -15,19 +15,12 @@ public:
     // prevent constructor by default
     CommandSyntaxInformation& operator=(CommandSyntaxInformation const&);
     CommandSyntaxInformation(CommandSyntaxInformation const&);
+    CommandSyntaxInformation();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandSyntaxInformation();
-
     MCAPI ~CommandSyntaxInformation();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

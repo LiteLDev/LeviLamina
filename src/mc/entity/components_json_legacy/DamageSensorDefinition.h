@@ -32,8 +32,6 @@ public:
     MCAPI void addDamageSensorTrigger(::DamageSensorTrigger const& trigger);
 
     MCAPI void initialize(::EntityContext& entity, ::DamageSensorComponent& component) const;
-
-    MCAPI void uninitialize(::EntityContext& entity, ::DamageSensorComponent& component) const;
     // NOLINTEND
 
 public:

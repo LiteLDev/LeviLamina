@@ -6,22 +6,23 @@
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorInfoRegistry;
 class BaseGameVersion;
-class Block;
 class BlockDefinitionGroup;
-class BlockLegacy;
-class CompoundTag;
 class CreativeItemRegistry;
 class Experiments;
 class HashedString;
+class IDynamicContainerSerialization;
 class IPackLoadContext;
 class Item;
 class ItemRegistryRef;
+class LevelData;
 class ResourcePackManager;
+struct ItemData;
 struct ItemParseContext;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
@@ -48,9 +49,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>  mUnk3d8ae0;
-        ::ll::UntypedStorage<8, 112> mUnkb0fb71;
-        ::ll::UntypedStorage<8, 16>  mUnk48eade;
+        ::ll::UntypedStorage<8, 16> mUnk3d8ae0;
+        ::ll::UntypedStorage<8, 24> mUnkb0fb71;
+        ::ll::UntypedStorage<8, 16> mUnk48eade;
         // NOLINTEND
 
     public:
@@ -73,14 +74,14 @@ public:
     };
 
     using CreativeItemsServerInitCallbackSignature =
-        void(::ItemRegistryRef, ::ActorInfoRegistry*, ::BlockDefinitionGroup*, ::CreativeItemRegistry*, bool, ::BaseGameVersion const&, ::Experiments const&);
+        void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&);
 
     struct ItemAlias {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48>  mUnk2254ff;
-        ::ll::UntypedStorage<8, 120> mUnk541114;
+        ::ll::UntypedStorage<8, 48> mUnk2254ff;
+        ::ll::UntypedStorage<8, 32> mUnk541114;
         // NOLINTEND
 
     public:
@@ -106,8 +107,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnk627c3a;
-        ::ll::UntypedStorage<8, 120> mUnk99d309;
+        ::ll::UntypedStorage<8, 8>  mUnk627c3a;
+        ::ll::UntypedStorage<8, 32> mUnk99d309;
         // NOLINTEND
 
     public:
@@ -119,7 +120,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
+
+        MCAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
+
         MCAPI ~ItemHashAlias();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
         // NOLINTEND
 
     public:
@@ -133,8 +144,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 152> mUnkbbb797;
-        ::ll::UntypedStorage<8, 32>  mUnkb57c73;
+        ::ll::UntypedStorage<8, 64> mUnkbbb797;
+        ::ll::UntypedStorage<8, 32> mUnkb57c73;
         // NOLINTEND
 
     public:
@@ -159,7 +170,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>>                       mCerealContext;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::cereal::ReflectionCtx>>>      mCerealContext;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedPtr<::Item>>>                              mItemRegistry;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::WeakPtr<::Item>>>                    mIdToItemMap;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::WeakPtr<::Item>>>         mNameToItemMap;
@@ -182,10 +193,10 @@ public:
         8,
         8,
         ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>>
-                                                                              mFinishedInitPublisher;
+                                                                              mFinishedInitServerPublisher;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::atomic<int>>>          mCanUpdateTags;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedPtr<::Item>>>             mDeadItemRegistry;
-    ::ll::TypedStorage<8, 120, ::BaseGameVersion>                             mWorldBaseGameVersion;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mWorldBaseGameVersion;
     ::ll::TypedStorage<1, 1, bool>                                            mCheckForItemWorldCompatibility;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::Mutex>> mCompatibilityCheckMutex;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CreativeItemRegistry>>       mCreativeItemRegistry;
@@ -201,43 +212,40 @@ public:
 
     MCAPI void addItemToTagMap(::Item const& item);
 
+    MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
+
     MCAPI void clearItemAndCreativeItemRegistry();
 
-    MCAPI void digestServerItemComponents(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& items);
-
-    MCAPI void finishedRegistration(::Experiments const& experiments);
+    MCAPI void finishedRegistration();
 
     MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasSplitNames(::HashedString const& oldName) const;
 
     MCAPI ::WeakPtr<::Item> getItem(short id);
 
-    MCAPI ::WeakPtr<::Item> getItem(::HashedString const& id);
-
     MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
-    MCAPI void
-    init(::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::ResourcePackManager* rpm);
+    MCAPI ::HashedString getNameFromLegacyID(short id);
 
     MCAPI void initCreativeItemsServer(
-        ::ActorInfoRegistry*    actorInfoRegistry,
-        ::BlockDefinitionGroup* blockDefinitionGroup,
-        bool                    isClient,
-        ::Experiments const&    experiments,
+        ::BlockDefinitionGroup const& blockDefinitionGroup,
+        ::Experiments const&          experiments,
+        ::ResourcePackManager const&  resourcePackManager,
         ::std::function<
-            void(::ItemRegistryRef, ::ActorInfoRegistry*, ::BlockDefinitionGroup*, ::CreativeItemRegistry*, bool, ::BaseGameVersion const&, ::Experiments const&)>
+            void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&)>
             registerCallback
     );
 
-    MCAPI bool isComplexAlias(::HashedString const& oldName) const;
-
-    MCAPI ::WeakPtr<::Item> lookupByName(::HashedString const& inString) const;
+    MCAPI void
+    initServer(::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::ResourcePackManager* rpm);
 
     MCAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
+
+    MCAPI void onLevelInit(::WeakRef<::IDynamicContainerSerialization> containerSerialization);
 
     MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion);
@@ -259,8 +267,7 @@ public:
 
     MCAPI void unregisterItem(::HashedString const& itemName);
 
-    MCAPI ::std::vector<::std::string>
-    validateServerItemComponents(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& items);
+    MCAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& items);
 
     MCAPI ~ItemRegistry();
     // NOLINTEND
@@ -280,17 +287,11 @@ public:
         ::Core::Path const&                   filenameWithExtension,
         ::cereal::ReflectionCtx const&        ctx
     );
-
-    MCAPI static short getBlockItemId(::Block const& block);
-
-    MCAPI static short getBlockItemId(::BlockLegacy const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& LOG_CREATIVE_ITEM_REGISTRY_DURING_INIT();
-
     MCAPI static ::std::string_view const& MINECRAFT_NAMESPACE();
     // NOLINTEND
 

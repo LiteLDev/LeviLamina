@@ -7,7 +7,6 @@
 class EntityContext;
 class IGameplayUserManagerConnector;
 class PacketSender;
-class PlayerListEntry;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -15,12 +14,14 @@ class PlayerListManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk1a674c;
-    ::ll::UntypedStorage<8, 24> mUnke5760d;
-    ::ll::UntypedStorage<8, 16> mUnka300dc;
-    ::ll::UntypedStorage<8, 16> mUnkadd5e8;
-    ::ll::UntypedStorage<8, 16> mUnk7dba24;
-    ::ll::UntypedStorage<8, 8>  mUnk6f10d4;
+    ::ll::UntypedStorage<8, 64>  mUnk1a674c;
+    ::ll::UntypedStorage<8, 24>  mUnke5760d;
+    ::ll::UntypedStorage<8, 128> mUnkf12915;
+    ::ll::UntypedStorage<8, 128> mUnkc4af1d;
+    ::ll::UntypedStorage<8, 16>  mUnka300dc;
+    ::ll::UntypedStorage<8, 16>  mUnkadd5e8;
+    ::ll::UntypedStorage<8, 16>  mUnk7dba24;
+    ::ll::UntypedStorage<8, 8>   mUnk6f10d4;
     // NOLINTEND
 
 public:
@@ -39,17 +40,11 @@ public:
 
     MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCFOLD ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& getPlayerList() const;
-
-    MCAPI ::std::string const& getPlayerPlatformOnlineId(::mce::UUID const& uuid) const;
-
-    MCAPI ::std::string const& getPlayerXUID(::mce::UUID const& uuid) const;
-
     MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI void setPacketSender(::PacketSender& packetSender);
+    MCAPI void removeByUUID(::mce::UUID const& uuid);
 
-    MCAPI ::PlayerListEntry* tryGetPlayerEntry(::mce::UUID const& uuid);
+    MCAPI void setPacketSender(::PacketSender& packetSender);
 
     MCAPI ~PlayerListManager();
     // NOLINTEND

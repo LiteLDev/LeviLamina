@@ -48,39 +48,19 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~BegGoal() /*override*/ = default;
+    virtual ~BegGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BegGoal(
-        ::Mob&                                 tamableAnimal,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        float                                  lookDistance,
-        int                                    minLookTime,
-        int                                    maxLookTime
-    );
-
     MCAPI bool _playerHoldingInteresting(::Player* player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 tamableAnimal,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        float                                  lookDistance,
-        int                                    minLookTime,
-        int                                    maxLookTime
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

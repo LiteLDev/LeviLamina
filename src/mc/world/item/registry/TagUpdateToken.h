@@ -18,15 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TagUpdateToken(::std::weak_ptr<::std::atomic<int>> tokenCount);
-
     MCAPI ~TagUpdateToken();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::weak_ptr<::std::atomic<int>> tokenCount);
     // NOLINTEND
 
 public:

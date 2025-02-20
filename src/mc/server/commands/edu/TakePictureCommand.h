@@ -27,7 +27,6 @@ public:
     // prevent constructor by default
     TakePictureCommand& operator=(TakePictureCommand const&);
     TakePictureCommand(TakePictureCommand const&);
-    TakePictureCommand();
 
 public:
     // virtual functions
@@ -40,9 +39,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI TakePictureCommand();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

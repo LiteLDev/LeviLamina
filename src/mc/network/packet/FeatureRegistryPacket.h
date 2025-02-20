@@ -41,18 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit FeatureRegistryPacket(::std::vector<::FeatureRegistry::FeatureBinaryJsonFormat> const& featuresData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::FeatureRegistry::FeatureBinaryJsonFormat> const& featuresData);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

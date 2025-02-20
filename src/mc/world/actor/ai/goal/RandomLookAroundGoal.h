@@ -50,23 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RandomLookAroundGoal(
-        ::Mob& mob,
-        int    minLookTime,
-        int    maxLookTime,
-        float  minAngleOfView,
-        float  maxAngleOfView,
-        float  probability
-    );
-
     MCAPI void _setRandomLook();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, int minLookTime, int maxLookTime, float minAngleOfView, float maxAngleOfView, float probability);
     // NOLINTEND
 
 public:

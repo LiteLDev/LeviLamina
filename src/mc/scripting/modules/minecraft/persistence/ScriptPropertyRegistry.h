@@ -3,12 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class ServerLevel;
 namespace ScriptModuleMinecraft { class ScriptActorType; }
 namespace ScriptModuleMinecraft { class ScriptDynamicPropertiesDefinition; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -32,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptPropertyRegistry(::ServerLevel& level);
-
     MCAPI ::Scripting::Result<void> registerEntityTypeDynamicProperties(
         ::Scripting::WeakLifetimeScope                                          scope,
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&       dynamicPropertiesDefinition,
@@ -49,12 +46,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ServerLevel& level);
     // NOLINTEND
 };
 

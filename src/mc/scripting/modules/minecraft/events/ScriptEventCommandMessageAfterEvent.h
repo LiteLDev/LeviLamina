@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,12 +27,14 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptEventCommandMessageAfterEvent(ScriptEventCommandMessageAfterEvent const&);
+    ScriptEventCommandMessageAfterEvent& operator=(ScriptEventCommandMessageAfterEvent const&);
     ScriptEventCommandMessageAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
+
     MCAPI ScriptEventCommandMessageAfterEvent(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
     MCAPI ScriptEventCommandMessageAfterEvent(
@@ -43,9 +45,6 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
 
     MCAPI ~ScriptEventCommandMessageAfterEvent();
     // NOLINTEND
@@ -59,6 +58,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
+
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
 
     MCAPI void* $ctor(

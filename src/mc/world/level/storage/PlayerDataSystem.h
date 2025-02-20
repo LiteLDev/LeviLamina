@@ -33,8 +33,6 @@ legacyLoadClientPlayer(::std::string const& clientUniqueName, ::Core::Path const
 
 MCAPI ::std::unique_ptr<::CompoundTag> legacyLoadPlayer(::LevelStorage& storage, ::std::string const& clientUniqueName);
 
-MCAPI ::std::unique_ptr<::CompoundTag> loadLocalPlayerData(::LevelStorage& storage);
-
 MCAPI ::std::unique_ptr<::CompoundTag>
 loadPlayerData(::LevelStorage& storage, ::PlayerStorageIds const& playerIds, bool isHostingPlayer);
 

@@ -20,27 +20,11 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PermissionsHandler& operator=(PermissionsHandler const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PermissionsHandler();
-
-    MCAPI PermissionsHandler(::PermissionsHandler const& rhs);
-
     MCAPI void addSaveData(::CompoundTag& tag) const;
 
-    MCFOLD ::CommandPermissionLevel getCommandPermissions() const;
-
-    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
-
     MCAPI bool loadSaveData(::CompoundTag const& tag);
-
-    MCFOLD void setCommandPermissions(::CommandPermissionLevel permissions);
-
-    MCFOLD void setPlayerPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:
@@ -57,13 +41,5 @@ public:
     MCAPI static ::std::string const& DIFF_COMMAND_PERMISSION();
 
     MCAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCAPI void* $ctor(::PermissionsHandler const& rhs);
     // NOLINTEND
 };

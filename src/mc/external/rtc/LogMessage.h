@@ -45,6 +45,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void AddLogToStream(::rtc::LogSink*, ::rtc::LoggingSeverity);
+
     MCAPI static int GetMinLogSeverity();
 
     MCAPI static bool IsNoop(::rtc::LoggingSeverity);
@@ -52,6 +54,10 @@ public:
     MCAPI static int64 LogStartTime();
 
     MCAPI static void OutputToDebug(::rtc::LogLineRef const&);
+
+    MCAPI static void RemoveLogToStream(::rtc::LogSink*);
+
+    MCAPI static void UpdateMinLogSeverity();
 
     MCAPI static uint WallClockStartTime();
     // NOLINTEND

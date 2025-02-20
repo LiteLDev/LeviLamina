@@ -7,6 +7,7 @@
 class Actor;
 class ActorInteraction;
 class Player;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class NameableComponent {
@@ -21,20 +22,13 @@ public:
     // prevent constructor by default
     NameableComponent& operator=(NameableComponent const&);
     NameableComponent(NameableComponent const&);
+    NameableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NameableComponent();
-
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
-    MCAPI void nameEntity(::Actor& owner, ::std::string const& name);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
     // NOLINTEND
 };

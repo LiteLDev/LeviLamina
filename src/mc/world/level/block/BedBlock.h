@@ -83,7 +83,7 @@ public:
     // vIndex: 109
     virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
@@ -97,8 +97,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BedBlock(::std::string const& nameId, int id);
-
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -111,24 +109,12 @@ public:
     findWakeupPosition(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::Vec3> const& enteredBedPos);
 
     MCAPI static bool isValidStandUpPosition(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static void setOccupied(::BlockSource& region, ::BlockPos const& pos, bool occupied);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<int[][2]> HEAD_DIRECTION_OFFSETS();
-
-    MCAPI static ushort const& HEAD_PIECE_DATA();
-
-    MCAPI static ushort const& OCCUPIED_DATA();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

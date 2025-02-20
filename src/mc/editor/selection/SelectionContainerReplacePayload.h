@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundBlockVolumeItem;
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -38,22 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    SelectionContainerReplacePayload(::mce::UUID const& id, ::CompoundBlockVolumeItem const& item, bool eventOnly);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::UUID const& id, ::CompoundBlockVolumeItem const& item, bool eventOnly);
     // NOLINTEND
 
 public:

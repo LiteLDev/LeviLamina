@@ -4,13 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
-#include "mc/world/ContainerType.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainerBase.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class Player;
 class Vec3;
@@ -43,24 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RandomizableBlockActorContainer(
-        ::BlockActorType     blockEntityType,
-        ::std::string const& id,
-        ::BlockPos const&    pos,
-        ::ContainerType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::BlockActorType blockEntityType, ::std::string const& id, ::BlockPos const& pos, ::ContainerType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -71,7 +50,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $setContainerChanged(int slot);
 
-    MCAPI void $startOpen(::Player& player);
+    MCFOLD void $startOpen(::Player& player);
 
     MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 

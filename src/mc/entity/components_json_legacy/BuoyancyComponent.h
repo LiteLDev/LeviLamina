@@ -25,47 +25,19 @@ public:
 
 public:
     // prevent constructor by default
-    BuoyancyComponent& operator=(BuoyancyComponent const&);
     BuoyancyComponent(BuoyancyComponent const&);
+    BuoyancyComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BuoyancyComponent();
-
     MCAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
-
-    MCFOLD float getBaseBuoyancy() const;
-
-    MCFOLD float getBigWaveProbability() const;
-
-    MCFOLD float getBigWaveSpeedMultiplier() const;
-
-    MCAPI double getTimer() const;
-
-    MCAPI void increaseTimer(float toAdd);
 
     MCAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
 
     MCAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCFOLD bool shouldApplyGravity() const;
-
-    MCFOLD bool shouldSimulateWaves() const;
-
-    MCAPI ~BuoyancyComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
     // NOLINTEND
 };

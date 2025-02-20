@@ -16,12 +16,6 @@ public:
     ContentTierIncompatibleReason();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ContentTierIncompatibleReason(uint errorValue);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getExpandedI18nErrorList(
@@ -35,11 +29,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::ContentTierIncompatibleReason& NoError();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(uint errorValue);
     // NOLINTEND
 };

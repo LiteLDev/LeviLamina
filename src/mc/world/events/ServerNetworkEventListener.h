@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerNetworkEventListener() = default;
+    virtual ~ServerNetworkEventListener();
 
     // vIndex: 1
     virtual ::EventResult onEvent(::ServerNetworkGameplayNotificationEvent const&);
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

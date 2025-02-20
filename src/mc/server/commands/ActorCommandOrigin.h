@@ -77,18 +77,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ActorCommandOrigin(::Actor& origin);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& origin);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -11,9 +11,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ExternalLinkSettings& operator=(ExternalLinkSettings const&);
+    ExternalLinkSettings(ExternalLinkSettings const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ExternalLinkSettings(::ExternalLinkSettings&&);
+
     MCAPI ~ExternalLinkSettings();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ExternalLinkSettings&&);
     // NOLINTEND
 
 public:

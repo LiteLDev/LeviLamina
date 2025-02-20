@@ -8,19 +8,16 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class ChestBoat : public ::Boat {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 124
+    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void destroy(::Actor* source) /*override*/;
 
     // vIndex: 30
@@ -28,26 +25,6 @@ public:
 
     // vIndex: 8
     virtual ~ChestBoat() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChestBoat(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

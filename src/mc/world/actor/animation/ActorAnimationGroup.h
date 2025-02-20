@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
@@ -14,7 +15,9 @@ class HashedString;
 class MinEngineVersion;
 class PackStats;
 class ResourcePackManager;
+struct ActorAnimationGroupParseMetaData;
 namespace Core { class Path; }
+namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -31,6 +34,7 @@ public:
     // prevent constructor by default
     ActorAnimationGroup& operator=(ActorAnimationGroup const&);
     ActorAnimationGroup(ActorAnimationGroup const&);
+    ActorAnimationGroup();
 
 public:
     // virtual functions
@@ -42,7 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationGroup();
+    MCAPI ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
+    _buildAnimationFileSchema_v1_8(bool isPersonaPack);
 
     MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
 
@@ -59,12 +65,6 @@ public:
     );
 
     MCAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

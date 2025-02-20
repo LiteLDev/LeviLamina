@@ -17,19 +17,12 @@ public:
     // prevent constructor by default
     StunRelayServer& operator=(StunRelayServer const&);
     StunRelayServer(StunRelayServer const&);
+    StunRelayServer();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StunRelayServer();
-
     MCAPI ~StunRelayServer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

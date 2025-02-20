@@ -67,18 +67,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RuinedPortalFeature(uint seed, bool nether);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed, bool nether);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

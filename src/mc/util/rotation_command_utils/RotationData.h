@@ -18,26 +18,6 @@ public:
     ::ll::TypedStorage<4, 8, ::RelativeFloat>          mRotY;
     ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mCommandOriginRotation;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RotationData(
-        ::RelativeFloat const&         rotX,
-        ::RelativeFloat const&         rotY,
-        ::std::optional<::Vec2> const& commandOriginRotation
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::RelativeFloat const&         rotX,
-        ::RelativeFloat const&         rotY,
-        ::std::optional<::Vec2> const& commandOriginRotation
-    );
-    // NOLINTEND
 };
 
 } // namespace RotationCommandUtils

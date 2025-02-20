@@ -16,18 +16,7 @@ public:
     // prevent constructor by default
     RealtimeRoute& operator=(RealtimeRoute const&);
     RealtimeRoute(RealtimeRoute const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RealtimeRoute();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
+    RealtimeRoute();
 };
 
 } // namespace Social::Events

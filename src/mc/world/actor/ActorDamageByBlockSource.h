@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorDamageSource.h"
 
 // auto generated forward declare list
@@ -34,18 +33,6 @@ public:
 
     // vIndex: 0
     virtual ~ActorDamageByBlockSource() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorDamageByBlockSource(::Block const& block, ::ActorDamageCause cause);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block, ::ActorDamageCause cause);
     // NOLINTEND
 
 public:

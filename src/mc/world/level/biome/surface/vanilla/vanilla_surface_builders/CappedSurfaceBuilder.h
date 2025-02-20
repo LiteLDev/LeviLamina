@@ -73,6 +73,7 @@ public:
     // prevent constructor by default
     CappedSurfaceBuilder& operator=(CappedSurfaceBuilder const&);
     CappedSurfaceBuilder(CappedSurfaceBuilder const&);
+    CappedSurfaceBuilder();
 
 public:
     // virtual functions
@@ -85,18 +86,6 @@ public:
 
     // vIndex: 0
     virtual ~CappedSurfaceBuilder() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CappedSurfaceBuilder();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

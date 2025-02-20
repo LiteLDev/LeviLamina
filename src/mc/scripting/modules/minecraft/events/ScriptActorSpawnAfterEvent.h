@@ -3,7 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/world/actor/ActorInitializationMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -22,9 +29,27 @@ public:
     ScriptActorSpawnAfterEvent();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptActorSpawnAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
+        ::ActorInitializationMethod                                                cause
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActorSpawnAfterEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
+        ::ActorInitializationMethod                                                cause
+    );
     // NOLINTEND
 };
 

@@ -2,14 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/RNS2Type.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { struct NetworkAdapter; }
 namespace RakNet { struct RNS2_SendParameters; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -42,28 +37,6 @@ public:
 
     // vIndex: 2
     virtual void SetMulticastInterface(int interfaceIndex);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::RakNet::SystemAddress GetBoundAddress() const;
-
-    MCFOLD ::RakNet::RNS2Type GetSocketType() const;
-
-    MCFOLD uint GetUserConnectionSocketIndex() const;
-
-    MCAPI bool IsBerkleySocket() const;
-
-    MCAPI void SetUserConnectionSocketIndex(uint i);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);
-
-    MCAPI static void GetMyIP(::RakNet::SystemAddress* const addresses);
     // NOLINTEND
 
 public:

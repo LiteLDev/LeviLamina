@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+class SemVersionConstant;
 namespace Json { class Value; }
 // clang-format on
 
@@ -23,6 +24,8 @@ MCAPI void _convertPropertyToStateInObjectContainsConditionObject(::Json::Value&
 
 MCAPI void _convertPropertyToStateInObjectContainsSetBlockStateObject(::Json::Value& obj);
 
+MCAPI void _convertPropertyToStateInPermutation(::Json::Value& root);
+
 MCAPI void _copyMembers(::Json::Value& from, ::Json::Value& to);
 
 MCAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& root);
@@ -30,7 +33,7 @@ MCAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& ro
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::SemVersion const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
+MCAPI ::SemVersionConstant const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
 // NOLINTEND
 
 } // namespace BlockPropertyToStateConverter

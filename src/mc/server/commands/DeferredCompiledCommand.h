@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Command;
-class CommandOrigin;
 class MinecraftCommands;
 // clang-format on
 
@@ -34,19 +32,6 @@ public:
 
     // vIndex: 1
     virtual void execute(::MinecraftCommands&) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    DeferredCompiledCommand(::gsl::not_null<::Command*> compiledCommand, ::std::unique_ptr<::CommandOrigin> origin);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::Command*> compiledCommand, ::std::unique_ptr<::CommandOrigin> origin);
     // NOLINTEND
 
 public:

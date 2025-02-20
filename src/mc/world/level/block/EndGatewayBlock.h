@@ -14,11 +14,10 @@ class Block;
 class BlockActor;
 class BlockLegacy;
 class BlockPos;
-class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class EndGatewayBlock : public ::ActorBlock {
@@ -36,8 +35,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 72
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const /*override*/;
@@ -51,18 +49,6 @@ public:
 
     // vIndex: 0
     virtual ~EndGatewayBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EndGatewayBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -83,13 +69,13 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
     // NOLINTEND
 
 public:

@@ -38,40 +38,16 @@ public:
 
     MCAPI ActorDefinitionIdentifier(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
 
-    MCAPI ::ActorType _getLegacyActorType() const;
-
     MCAPI void _initialize();
-
-    MCAPI void clear();
-
-    MCFOLD ::HashedString const& getCanonicalHash() const;
-
-    MCFOLD ::std::string const& getCanonicalName() const;
-
-    MCFOLD ::std::string const& getFullName() const;
-
-    MCFOLD ::std::string const& getIdentifier() const;
-
-    MCFOLD ::std::string const& getInitEvent() const;
-
-    MCFOLD ::std::string const& getNamespace() const;
 
     MCAPI void initialize(::std::string const& fullName);
 
     MCAPI void
     initialize(::std::string const& nameSpace, ::std::string const& identifier, ::std::string const& initEvent);
 
-    MCAPI bool isEmpty() const;
-
-    MCAPI bool isVanilla() const;
-
     MCAPI ::ActorDefinitionIdentifier& operator=(::ActorDefinitionIdentifier const&);
 
     MCAPI bool operator==(::ActorDefinitionIdentifier const& other) const;
-
-    MCAPI void setIdentifier(::std::string const& identifier);
-
-    MCAPI void setInitEvent(::std::string const& initEvent);
 
     MCAPI ~ActorDefinitionIdentifier();
     // NOLINTEND

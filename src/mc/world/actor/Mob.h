@@ -3,23 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/shared_types/EquipmentSlot.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
+#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/world/actor/Actor.h"
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/ArmorMaterialType.h"
 #include "mc/world/actor/MobSpawnMethod.h"
 #include "mc/world/actor/TravelType.h"
-#include "mc/world/item/ArmorSlot.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class ActorDamageSource;
 class ActorDefinitionGroup;
+class BaseAttributeMap;
 class Block;
 class BlockPos;
 class BodyControl;
@@ -27,22 +27,17 @@ class ClockSpriteCalculator;
 class CompassSpriteCalculator;
 class CompoundTag;
 class DataLoadHelper;
-class Dimension;
 class EntityContext;
-class GoalSelectorComponent;
 class HashedString;
 class ItemStack;
-class Level;
 class ListTag;
 class Options;
-class Player;
 class SaveContext;
+class SynchedActorDataWriter;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct BuiltInMobComponents;
-struct Description;
-struct InterpolationPair;
 struct JumpPreventionResult;
 struct LegacyGoalDefinition;
 struct VariantParameterList;
@@ -53,7 +48,6 @@ class Mob : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                        mHurtDuration;
     ::ll::TypedStorage<4, 4, float>                      mHurtDir;
     ::ll::TypedStorage<4, 4, float>                      mOTilt;
     ::ll::TypedStorage<4, 4, float>                      mTilt;
@@ -97,47 +91,47 @@ public:
     // vIndex: 8
     virtual ~Mob() /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void
     knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
 
-    // vIndex: 124
+    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 125
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 126
+    // vIndex: 124
     virtual bool shouldDropDeathLoot() const /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual void spawnAnim();
 
-    // vIndex: 48
+    // vIndex: 47
     virtual bool isAlive() const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual bool isSleeping() const /*override*/;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual void setSleeping(bool val) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual bool isBlocking() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual void setSprinting(bool shouldSprint);
 
-    // vIndex: 98
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 141
     virtual ::SharedTypes::Legacy::LevelSoundEvent getDeathSound();
 
-    // vIndex: 147
+    // vIndex: 142
     virtual float getSpeed() const;
 
-    // vIndex: 148
+    // vIndex: 143
     virtual void setSpeed(float speed);
 
     // vIndex: 16
@@ -149,118 +143,118 @@ public:
     // vIndex: 25
     virtual void baseTick() /*override*/;
 
-    // vIndex: 149
+    // vIndex: 144
     virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    // vIndex: 68
+    // vIndex: 66
     virtual bool doFireHurt(int amount) /*override*/;
 
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep();
 
-    // vIndex: 151
+    // vIndex: 146
     virtual void pushActors();
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool);
 
-    // vIndex: 153
+    // vIndex: 148
     virtual bool checkSpawnObstruction() const;
 
     // vIndex: 28
-    virtual void addPassenger(::Actor& newPassenger) /*override*/;
+    virtual void addPassenger(::Actor& passenger) /*override*/;
 
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 71
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    // vIndex: 69
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 154
+    // vIndex: 149
     virtual int getItemUseDuration() const;
 
-    // vIndex: 155
+    // vIndex: 150
     virtual float getItemUseStartupProgress() const;
 
-    // vIndex: 156
+    // vIndex: 151
     virtual float getItemUseIntervalProgress() const;
 
-    // vIndex: 113
+    // vIndex: 111
     virtual void swing() /*override*/;
 
-    // vIndex: 157
+    // vIndex: 152
     virtual float getMaxHeadXRot();
 
-    // vIndex: 41
+    // vIndex: 40
     virtual bool isImmobile() const /*override*/;
 
     // vIndex: 19
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
-    // vIndex: 52
-    virtual void setTarget(::Actor* target) /*override*/;
+    // vIndex: 51
+    virtual void setTarget(::Actor* entity) /*override*/;
 
-    // vIndex: 54
-    virtual bool attack(::Actor& target, ::ActorDamageCause const& cause) /*override*/;
+    // vIndex: 53
+    virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
-    // vIndex: 158
+    // vIndex: 153
     virtual bool isAlliedTo(::Mob*);
 
-    // vIndex: 159
-    virtual bool doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
+    // vIndex: 154
+    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&);
 
-    // vIndex: 67
-    virtual ::ActorDamageCause getBlockDamageCause(::Block const& block) const /*override*/;
+    // vIndex: 65
+    virtual ::SharedTypes::Legacy::ActorDamageCause getBlockDamageCause(::Block const&) const /*override*/;
 
-    // vIndex: 99
+    // vIndex: 97
     virtual bool inCaravan() const /*override*/;
 
-    // vIndex: 160
+    // vIndex: 155
     virtual int getArmorValue() const;
 
-    // vIndex: 161
+    // vIndex: 156
     virtual void hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
 
-    // vIndex: 162
-    virtual void setDamagedArmor(::ArmorSlot slot, ::ItemStack const& item);
+    // vIndex: 157
+    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&);
 
-    // vIndex: 163
+    // vIndex: 158
     virtual void sendArmorDamage(::std::bitset<5> const);
 
-    // vIndex: 164
+    // vIndex: 159
     virtual void sendArmor(::std::bitset<5> const armorSlots);
 
+    // vIndex: 73
+    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot) const /*override*/;
+
+    // vIndex: 74
+    virtual int getArmorTextureIndexInSlot(::SharedTypes::Legacy::ArmorSlot) const /*override*/;
+
     // vIndex: 75
-    virtual ::ArmorMaterialType getArmorMaterialTypeInSlot(::ArmorSlot slot) const /*override*/;
+    virtual float getArmorColorInSlot(::SharedTypes::Legacy::ArmorSlot, int) const /*override*/;
 
-    // vIndex: 76
-    virtual int getArmorTextureIndexInSlot(::ArmorSlot slot) const /*override*/;
-
-    // vIndex: 77
-    virtual float getArmorColorInSlot(::ArmorSlot slot, int channelRGBA) const /*override*/;
-
-    // vIndex: 165
+    // vIndex: 160
     virtual ::std::vector<::ItemStack const*> getAllHand() const;
 
-    // vIndex: 166
+    // vIndex: 161
     virtual ::std::vector<::ItemStack const*> getAllEquipment() const;
 
-    // vIndex: 106
+    // vIndex: 104
     virtual int getDeathTime() const /*override*/;
 
-    // vIndex: 168
+    // vIndex: 163
     virtual void dropEquipmentOnDeath(::ActorDamageSource const& source);
 
-    // vIndex: 167
+    // vIndex: 162
     virtual void dropEquipmentOnDeath();
 
-    // vIndex: 169
+    // vIndex: 164
     virtual void clearVanishEnchantedItemsOnDeath();
 
-    // vIndex: 170
+    // vIndex: 165
     virtual void sendInventory(bool);
 
-    // vIndex: 104
+    // vIndex: 102
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
     // vIndex: 13
@@ -272,28 +266,28 @@ public:
     // vIndex: 15
     virtual float getInterpolatedBodyYaw(float a) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual bool isSurfaceMob() const /*override*/;
 
-    // vIndex: 171
+    // vIndex: 166
     virtual float getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
 
-    // vIndex: 172
+    // vIndex: 167
     virtual bool createAIGoals();
 
-    // vIndex: 173
+    // vIndex: 168
     virtual void onBorn(::Actor&, ::Actor&);
 
-    // vIndex: 174
+    // vIndex: 169
     virtual bool setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
-    // vIndex: 175
+    // vIndex: 170
     virtual void setTransitioningSitting(bool value);
 
     // vIndex: 0
     virtual bool hasComponent(::HashedString const& name) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 88
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
     // vIndex: 21
@@ -305,63 +299,58 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    // vIndex: 176
+    // vIndex: 171
     virtual float _getWalkTargetValue(::BlockPos const&);
 
-    // vIndex: 177
+    // vIndex: 172
     virtual bool canExistWhenDisallowMob() const;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual bool canPowerJump() const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 76
     virtual void setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 123
+    // vIndex: 121
     virtual void renderDebugServerState(::Options const& options) /*override*/;
 
-    // vIndex: 87
+    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 173
+    virtual void tickDeath();
+
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 178
+    // vIndex: 174
     virtual ::std::unique_ptr<::BodyControl> initBodyControl();
 
-    // vIndex: 94
+    // vIndex: 92
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
     // vIndex: 1
     virtual void outOfWorld() /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool) /*override*/;
 
-    // vIndex: 179
+    // vIndex: 175
     virtual void newServerAiStep();
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
-
-    // vIndex: 180
-    virtual void tickDeath();
 
     // vIndex: 7
     virtual void _doInitialMove() /*override*/;
 
-    // vIndex: 181
+    // vIndex: 176
     virtual ::AABB _getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const&) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Mob(::Level& level, ::EntityContext& entityContext);
-
     MCAPI
     Mob(::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
@@ -369,13 +358,11 @@ public:
 
     MCAPI ::BuiltInMobComponents _addBuiltInMobComponents();
 
-    MCAPI void _doSprintParticleEffect();
+    MCAPI void _doSoulSpeedParticleEffect();
 
     MCAPI bool _initHardCodedComponents(bool isClientSide);
 
     MCAPI void _initialize(::EntityContext& entityContext, bool isClientSide);
-
-    MCAPI bool _isDoingMaceSmashAttack() const;
 
     MCAPI void _logMobComponentInitializationError(
         ::std::string const& typeName,
@@ -387,16 +374,9 @@ public:
 
     MCAPI void _registerMobAttributes();
 
-    MCAPI ::GoalSelectorComponent* _tryGetGoalSelectorComponent();
-
-    MCAPI void _updateSprintingState();
+    MCAPI ::std::unique_ptr<::ListTag> _saveArmor(::SaveContext const& saveContext) const;
 
     MCAPI void _verifyAttributes();
-
-    MCAPI void
-    addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
-
-    MCFOLD void ate();
 
     MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
@@ -422,12 +402,6 @@ public:
 
     MCAPI int getArmorTypeHash();
 
-    MCAPI float getAttackAnim(float a);
-
-    MCAPI ::BlockPos getBoundOrigin() const;
-
-    MCAPI ::ActorUniqueID getCaravanHead() const;
-
     MCAPI int getCaravanSize() const;
 
     MCAPI int getCurrentSwingDuration();
@@ -436,11 +410,9 @@ public:
 
     MCAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
 
-    MCAPI float getDamageAfterPostHitDamageImmunityReduction(::ActorDamageSource const& source, float damage) const;
-
     MCAPI float getDamageAfterResistanceEffect(::ActorDamageSource const& source, float damage) const;
 
-    MCAPI ::ActorDamageCause getDamageCause() const;
+    MCAPI ::SharedTypes::Legacy::ActorDamageCause getDamageCause() const;
 
     MCAPI int getEatCounter() const;
 
@@ -448,107 +420,43 @@ public:
 
     MCAPI ::Mob* getFirstCaravanHead();
 
-    MCAPI int getGlidingTicks() const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent getHurtSound(::SharedTypes::Legacy::ActorDamageCause cause);
 
     MCAPI ::ItemStack const& getItemSlot(::SharedTypes::Legacy::EquipmentSlot slot) const;
 
     MCAPI float getJumpEffectAmplifierValue();
 
-    MCAPI float getJumpMultiplier();
-
     MCAPI ::JumpPreventionResult getJumpPrevention();
 
-    MCAPI int getJumpTicks() const;
-
     MCAPI int getMeleeKnockbackBonus();
-
-    MCAPI float getMovementComponentCurrentSpeed() const;
-
-    MCAPI int getNoActionTime() const;
-
-    MCAPI ::ActorUniqueID getTargetCaptain() const;
 
     MCAPI ::TravelType getTravelType();
 
     MCAPI float getYBodyRotation() const;
 
-    MCAPI ::InterpolationPair getYBodyRotationsNewOld() const;
-
-    MCAPI bool hasBoundOrigin() const;
-
-    MCAPI bool hasCaravanTail() const;
-
     MCAPI void hurtArmor(::ActorDamageSource const& source, int dmg);
-
-    MCAPI bool isAbleToMove() const;
-
-    MCAPI bool isEating() const;
-
-    MCAPI bool isGliding() const;
-
-    MCAPI bool isLayingEgg() const;
-
-    MCAPI bool isPregnant() const;
-
-    MCAPI bool isSprinting() const;
-
-    MCAPI bool isTransitioningSitting() const;
-
-    MCAPI void joinCaravan(::Mob* head);
 
     MCAPI void jumpFromGround();
 
-    MCAPI void knockback(::Actor* source, int dmg, float xd, float zd);
-
     MCAPI void knockback(::Actor* source, int dmg, float xd, float zd, float horizontalPower, float verticalPower);
-
-    MCAPI void leaveCaravan();
 
     MCAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
 
-    MCAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
-
     MCAPI void onPlayerJump(int jumpAmount);
-
-    MCAPI void playSpawnSound();
 
     MCAPI void removeSpeedModifier(::mce::UUID const& attributeID);
 
     MCAPI void resetAttributes();
 
-    MCAPI void resetNoActionTime();
-
     MCAPI ::std::unique_ptr<::ListTag> saveOffhand(::SaveContext const& saveContext) const;
 
-    MCAPI void sendArmorDamageSlot(::ArmorSlot slot);
-
-    MCAPI void sendArmorSlot(::ArmorSlot slot);
+    MCAPI void sendArmorSlot(::SharedTypes::Legacy::ArmorSlot slot);
 
     MCAPI void setEatCounter(int value);
 
-    MCAPI void setEating(bool value);
-
-    MCAPI void setIsLayingEgg(bool layingEgg);
-
-    MCAPI void setIsPregnant(bool pregnant);
-
     MCAPI void setJumpTicks(int ticks);
 
-    MCAPI void setMovementComponentCurrentSpeed(float movementComponentCurrentSpeed);
-
-    MCAPI void setNaturallySpawned(bool naturallySpawned);
-
-    MCAPI void setSpawnMethod(::MobSpawnMethod method);
-
-    MCAPI void setSpeedModifier(float speed);
-
-    MCAPI void setSurfaceMob(bool isSurfaceMob);
-
-    MCAPI void setTargetCaptain(::ActorUniqueID id);
-
     MCAPI void setYBodyRotation(float rotation);
-
-    MCAPI void setYBodyRotations(float rotation, float oldRotation);
 
     MCAPI bool shouldApplyWaterGravity();
 
@@ -558,14 +466,6 @@ public:
 
     MCAPI void tickMobEffectsVisuals();
 
-    MCAPI void tryFrostWalk();
-
-    MCAPI void tryProcessSoulSpeed();
-
-    MCAPI void tryUpdateAI();
-
-    MCAPI void updateAttackAnim();
-
     MCAPI void updateEquipment();
 
     MCAPI void updateGlidingDurability();
@@ -574,21 +474,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static char const* _getDescriptionJsonName(::Description const* description);
-
-    MCAPI static ::Mob* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+    MCAPI static void setSprinting(::BaseAttributeMap& attributes, ::SynchedActorDataWriter data, bool shouldSprint);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& ARMOR_DAMAGE_DIVISOR();
-
-    MCAPI static float const& ARMOR_PROTECTION_DIVIDER();
-
     MCAPI static float const& ASCEND_BLOCK_BY_JUMPING_SPEED();
-
-    MCAPI static float const& BASE_ARMOR_TOUGHNESS();
 
     MCAPI static float const& DEFAULT_GRAVITY();
 
@@ -602,28 +494,12 @@ public:
 
     MCAPI static float const& LADDER_CLIMB_SPEED();
 
-    MCAPI static float const& MAX_ARMOR();
-
-    MCAPI static int const& MAX_INACTIVITY_TIMER();
-
-    MCAPI static float const& MIN_ARMOR_RATIO();
-
-    MCAPI static float const& NUM_ARMOR_ITEMS();
-
-    MCAPI static float const& PLAYER_SWIMMING_SURFACE_OFFSET();
-
-    MCAPI static int const& REMOVE_PASSENGERS_DELAY();
-
     MCAPI static float const& SLOW_FALL_GRAVITY();
-
-    MCAPI static int const& SPAWN_XP_DELAY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level, ::EntityContext& entityContext);
-
     MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
@@ -693,11 +569,11 @@ public:
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI void $addPassenger(::Actor& newPassenger);
+    MCAPI void $addPassenger(::Actor& passenger);
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCFOLD int $getItemUseDuration() const;
 
@@ -713,15 +589,9 @@ public:
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCAPI void $setTarget(::Actor* target);
-
-    MCAPI bool $attack(::Actor& target, ::ActorDamageCause const& cause);
+    MCFOLD void $setTarget(::Actor* entity);
 
     MCFOLD bool $isAlliedTo(::Mob*);
-
-    MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
-
-    MCAPI ::ActorDamageCause $getBlockDamageCause(::Block const& block) const;
 
     MCAPI bool $inCaravan() const;
 
@@ -729,17 +599,9 @@ public:
 
     MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
 
-    MCAPI void $setDamagedArmor(::ArmorSlot slot, ::ItemStack const& item);
-
     MCFOLD void $sendArmorDamage(::std::bitset<5> const);
 
     MCAPI void $sendArmor(::std::bitset<5> const armorSlots);
-
-    MCAPI ::ArmorMaterialType $getArmorMaterialTypeInSlot(::ArmorSlot slot) const;
-
-    MCAPI int $getArmorTextureIndexInSlot(::ArmorSlot slot) const;
-
-    MCAPI float $getArmorColorInSlot(::ArmorSlot slot, int channelRGBA) const;
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHand() const;
 
@@ -794,6 +656,8 @@ public:
 
     MCAPI bool $canFreeze() const;
 
+    MCAPI void $tickDeath();
+
     MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
@@ -806,11 +670,7 @@ public:
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool);
 
-    MCAPI void $newServerAiStep();
-
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
-
-    MCAPI void $tickDeath();
+    MCFOLD void $newServerAiStep();
 
     MCAPI void $_doInitialMove();
 

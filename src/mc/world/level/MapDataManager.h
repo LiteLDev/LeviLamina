@@ -15,7 +15,6 @@ class ILevelStorageManagerConnector;
 class IMapDataManagerOptions;
 class LevelStorage;
 class MapItemSavedData;
-class PacketSender;
 struct ActorUniqueID;
 // clang-format on
 
@@ -93,7 +92,7 @@ public:
 
     MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI void setPacketSender(::PacketSender& packetSender);
+    MCAPI void tick();
     // NOLINTEND
 
 public:

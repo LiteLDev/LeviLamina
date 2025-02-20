@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/SaplingBlock.h"
+#include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,7 @@ class Random;
 class Vec3;
 // clang-format on
 
-class BambooSaplingBlock : public ::SaplingBlock {
+class BambooSaplingBlock : public ::BushBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,15 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BambooSaplingBlock(::std::string const& nameId, int id);
-
     MCAPI bool _grow(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

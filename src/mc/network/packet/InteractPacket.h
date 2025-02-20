@@ -56,16 +56,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InteractPacket();
-
     MCAPI InteractPacket(::InteractPacket::Action action, ::ActorRuntimeID targetId, ::Vec3 const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::InteractPacket::Action action, ::ActorRuntimeID targetId, ::Vec3 const& pos);
     // NOLINTEND
 

@@ -36,6 +36,7 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -47,8 +48,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Definition();
-
         MCAPI void initialize(::EntityContext& entity, ::CroakGoal& goal) const;
         // NOLINTEND
 
@@ -59,12 +58,6 @@ public:
             ::std::string const&                                                                                  name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CroakGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -109,18 +102,6 @@ public:
 
     // vIndex: 0
     virtual ~CroakGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CroakGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

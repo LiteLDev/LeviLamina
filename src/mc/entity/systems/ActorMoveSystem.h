@@ -16,7 +16,5 @@ public:
     MCAPI static ::TickingSystemWithInfo createConfigureDepenetrationSystem();
 
     MCAPI static ::TickingSystemWithInfo createUpdateDepenetrationSystem();
-
-    MCAPI static ::TickingSystemWithInfo createUpdateHitboxSystem();
     // NOLINTEND
 };

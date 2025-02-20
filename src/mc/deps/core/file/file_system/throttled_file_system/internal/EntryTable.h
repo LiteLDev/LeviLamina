@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 
 namespace Core::Internal {
 
@@ -35,10 +33,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnke23ec0;
-    ::ll::UntypedStorage<8, 64> mUnk9c1801;
-    ::ll::UntypedStorage<8, 24> mUnka5776a;
-    ::ll::UntypedStorage<8, 64> mUnk77b312;
+    ::ll::UntypedStorage<8, 16> mUnkdcb8ef;
+    ::ll::UntypedStorage<8, 16> mUnke899ea;
+    ::ll::UntypedStorage<8, 24> mUnkbd3a8a;
+    ::ll::UntypedStorage<8, 16> mUnk84e42d;
     // NOLINTEND
 
 public:

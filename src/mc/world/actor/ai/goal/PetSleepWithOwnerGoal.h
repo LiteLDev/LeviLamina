@@ -51,18 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PetSleepWithOwnerGoal(::Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

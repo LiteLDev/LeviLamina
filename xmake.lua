@@ -9,6 +9,7 @@ end
 add_requires("entt")
 add_requires("gsl")
 add_requires("glm")
+add_requires("fmt 10.2.1")
 add_requires("leveldb")
 add_requires("type_safe")
 add_requires("expected-lite")
@@ -26,8 +27,8 @@ target("bdsheader")
     add_defines("UNICODE", "WIN32_LEAN_AND_MEAN", "_AMD64_", "NOMINMAX", "_CRT_SECURE_NO_WARNINGS")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("test/**.cpp")
-    add_packages("gsl", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite")
-    before_build(function (target)
+    add_packages("gsl", "fmt", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite")
+    on_config(function (target)
         headers = "// clang-format off\n#ifndef __INCLUDE_ALL_H__\n#define __INCLUDE_ALL_H__\n\n"
         for _,x in ipairs(os.files("src/**.h")) do
             headers = headers.."#include \""..path.relative(x, "src/").."\"\n"

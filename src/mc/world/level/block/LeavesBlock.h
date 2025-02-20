@@ -3,9 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ParticleType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
 
@@ -19,8 +17,8 @@ class BlockSource;
 class HashedString;
 class Random;
 class Vec3;
+struct BlockAnimateTickData;
 struct BlockGraphicsModeChangeContext;
-namespace mce { class Color; }
 // clang-format on
 
 class LeavesBlock : public ::BlockLegacy {
@@ -35,26 +33,33 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk61bec4;
-        ::ll::UntypedStorage<4, 4> mUnk885c5b;
+        ::ll::UntypedStorage<8, 56> mUnk3d19fc;
+        ::ll::UntypedStorage<4, 4>  mUnk885c5b;
         // NOLINTEND
 
     public:
         // prevent constructor by default
         ParticleParams& operator=(ParticleParams const&);
-        ParticleParams(ParticleParams const&);
         ParticleParams();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ParticleParams(::ParticleType particleType, int oneOutOfChance);
+        MCAPI ParticleParams(::LeavesBlock::ParticleParams const&);
+
+        MCAPI ~ParticleParams();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::ParticleType particleType, int oneOutOfChance);
+        MCAPI void* $ctor(::LeavesBlock::ParticleParams const&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -64,7 +69,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                            mHasTransparentLeaves;
     ::ll::TypedStorage<1, 1, bool>                                            mHasFastAlphaTest;
     ::ll::TypedStorage<8, 8, ::HashedString const&>                           mSapling;
-    ::ll::TypedStorage<4, 12, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
     ::ll::TypedStorage<1, 1, bool>                                            mUseSeasonsOpaqueLayerIfSnowingBiome;
     // NOLINTEND
 
@@ -84,15 +89,11 @@ public:
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 148
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
-
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 124
-    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
@@ -125,15 +126,21 @@ public:
         ::std::optional<::LeavesBlock::ParticleParams> particleParams
     );
 
+    MCAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI ::LeavesBlock& setUseSeasonsOpaqueLayerIfSnowingBiome(bool enabled);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isTransparent(::Block const& block, ::BlockProperty const& propertyCheck);
-
     MCAPI static void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::LeavesBlock::ParticleParams const& BIOME_TINTED_LEAVES_PARTICLE_PARAMS();
     // NOLINTEND
 
 public:
@@ -164,11 +171,9 @@ public:
 
     MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 

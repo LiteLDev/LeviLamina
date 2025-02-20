@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -21,24 +21,9 @@ public:
     ScriptPotionModifierType();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptPotionModifierType&
-    operator=(::ScriptModuleMinecraft::ScriptPotionModifierType&&);
-
-    MCAPI ~ScriptPotionModifierType();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPotionModifierType> bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

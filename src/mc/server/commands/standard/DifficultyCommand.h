@@ -16,7 +16,7 @@ class DifficultyCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk63aab9;
+    ::ll::UntypedStorage<4, 4> mUnk94fa4e;
     ::ll::UntypedStorage<4, 4> mUnkbb8d42;
     // NOLINTEND
 

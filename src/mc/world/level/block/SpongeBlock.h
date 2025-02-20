@@ -10,8 +10,8 @@
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Material;
 class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -23,8 +23,7 @@ public:
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -40,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpongeBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void _attemptAbsorbWater(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _evaporateWater(::BlockSource& region, ::BlockPos const& pos) const;
@@ -56,12 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -72,7 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

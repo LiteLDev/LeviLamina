@@ -5,30 +5,23 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/DevConnectionQuality.h"
 #include "mc/network/NetworkEnableDisableListener.h"
-#include "mc/network/PacketViolationResponse.h"
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/connection/DisconnectFailReason.h"
-#include "mc/platform/ErrorInfo.h"
 
 // auto generated forward declare list
 // clang-format off
-class CompressedNetworkPeer;
 class EncryptedNetworkPeer;
-class IPacketObserver;
-class NetEventCallback;
 class NetworkConnection;
 class NetworkIdentifier;
 class NetworkPeer;
-class NetworkStatistics;
 class Packet;
-class PacketSender;
+class PacketSecurityController;
 class RemoteConnector;
-class ResourcePackFileUploadManager;
-class ServerLocator;
 class WeakEntityRef;
+struct NetworkIdentifierWithSubId;
 // clang-format on
 
 class NetworkSystem : public ::RakNetConnector::ConnectionCallbacks,
@@ -47,12 +40,12 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk9c4ba3;
-        ::ll::UntypedStorage<8, 40> mUnk414dc8;
         ::ll::UntypedStorage<8, 8>  mUnke8cab9;
         ::ll::UntypedStorage<8, 8>  mUnkdd05b9;
         ::ll::UntypedStorage<8, 24> mUnk331fbf;
         ::ll::UntypedStorage<8, 24> mUnkf4c1a6;
         ::ll::UntypedStorage<4, 24> mUnkfbdc8b;
+        ::ll::UntypedStorage<8, 64> mUnkacfb81;
         // NOLINTEND
 
     public:
@@ -106,21 +99,17 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk3b9a02;
     ::ll::UntypedStorage<8, 32> mUnka48e1c;
     ::ll::UntypedStorage<8, 80> mUnk71a258;
-    ::ll::UntypedStorage<8, 8>  mUnk55fc57;
     ::ll::UntypedStorage<8, 32> mUnkacc61e;
     ::ll::UntypedStorage<1, 1>  mUnkb3ee22;
     ::ll::UntypedStorage<2, 2>  mUnkee3efc;
     ::ll::UntypedStorage<2, 2>  mUnk5e3f1d;
     ::ll::UntypedStorage<1, 1>  mUnk148327;
     ::ll::UntypedStorage<8, 8>  mUnk71c9a9;
-    ::ll::UntypedStorage<8, 8>  mUnk7efe4a;
+    ::ll::UntypedStorage<8, 64> mUnk7f3cc3;
+    ::ll::UntypedStorage<8, 64> mUnkaaded0;
     ::ll::UntypedStorage<1, 1>  mUnk214764;
     ::ll::UntypedStorage<4, 24> mUnk7bbd3c;
-    ::ll::UntypedStorage<8, 40> mUnk96d90d;
     ::ll::UntypedStorage<1, 1>  mUnk248b46;
-    ::ll::UntypedStorage<4, 4>  mUnkc0317f;
-    ::ll::UntypedStorage<4, 4>  mUnkfaec22;
-    ::ll::UntypedStorage<4, 4>  mUnk25fcb3;
     // NOLINTEND
 
 public:
@@ -163,31 +152,21 @@ public:
 
     // vIndex: 3
     virtual void onConnectionClosed(
-        ::NetworkIdentifier const&               id,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::std::string const&                     reasonMessage,
-        bool                                     skipDisconnectMessage
+        ::NetworkIdentifier const&,
+        ::Connection::DisconnectFailReason const,
+        ::std::string const&,
+        bool
     ) /*override*/;
 
     // vIndex: 4
-    virtual void onAllConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    ) /*override*/;
+    virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
 
     // vIndex: 5
-    virtual void onAllRemoteConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    ) /*override*/;
+    virtual void
+    onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
 
     // vIndex: 6
-    virtual void onOutgoingConnectionFailed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage
-    ) /*override*/;
+    virtual void onOutgoingConnectionFailed(::Connection::DisconnectFailReason, ::std::string const&) /*override*/;
 
     // vIndex: 7
     virtual void onWebsocketRequest(
@@ -204,18 +183,7 @@ public:
 
     MCAPI ::NetworkConnection* _getConnectionFromId(::NetworkIdentifier const& id) const;
 
-    MCAPI void _handlePacketViolation(
-        ::Bedrock::ErrorInfo<::std::error_code> const& error,
-        ::PacketViolationResponse                      violationResponse,
-        ::MinecraftPacketIds                           violatingPacketId,
-        ::NetworkIdentifier const&                     netId,
-        ::NetworkConnection&                           connection,
-        ::SubClientId                                  clientSubId
-    );
-
     MCAPI bool _isUsingNetherNetTransportLayer() const;
-
-    MCAPI void _sendInternal(::NetworkIdentifier const& id, ::Packet const& packet, ::std::string const& data);
 
     MCAPI bool
     _sortAndPacketizeEvents(::NetworkConnection& connection, ::std::chrono::steady_clock::time_point endTime);
@@ -224,41 +192,21 @@ public:
 
     MCAPI void enableAsyncFlush(::NetworkIdentifier const& id);
 
-    MCAPI ::std::weak_ptr<::CompressedNetworkPeer> getCompressedPeerForUser(::NetworkIdentifier const& id);
-
-    MCFOLD ::std::vector<::std::unique_ptr<::NetworkConnection>> const& getConnections() const;
-
     MCAPI ::std::weak_ptr<::EncryptedNetworkPeer> getEncryptedPeerForUser(::NetworkIdentifier const& id);
-
-    MCFOLD ::NetworkStatistics const* getNetworkStatistics() const;
 
     MCAPI ::NetworkPeer* getPeerForUser(::NetworkIdentifier const& id);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector const> getRemoteConnector() const;
-
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getRemoteConnector();
-
-    MCAPI ::ResourcePackFileUploadManager& getResourcePackUploadManager(
-        ::PacketSender&            packetSender,
-        ::NetworkIdentifier const& source,
-        ::std::string const&       resourceName
-    );
-
-    MCFOLD ::ServerLocator& getServerLocator();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::RemoteConnector> getRemoteConnector();
 
     MCAPI bool isServer() const;
-
-    MCAPI void registerServerInstance(::NetEventCallback& callback);
 
     MCAPI void runEvents(bool networkIsCritical);
 
     MCAPI void send(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId senderSubId);
 
-    MCAPI void setCloseConnection(::NetworkIdentifier const& id);
+    MCAPI void sendToMultiple(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
-    MCAPI void setPacketObserver(::IPacketObserver* packetObserver);
-
-    MCAPI void unregisterClientOrServerInstance(::SubClientId const& subID);
+    MCAPI void setDevConnectionQuality(::DevConnectionQuality quality);
 
     MCAPI void update(::std::vector<::WeakEntityRef> const* userList);
     // NOLINTEND
@@ -280,7 +228,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $useIPv4Only() const;
 
-    MCFOLD bool $useIPv6Only() const;
+    MCAPI bool $useIPv6Only() const;
 
     MCAPI ushort $getDefaultGamePort() const;
 
@@ -293,28 +241,6 @@ public:
     MCAPI bool $onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
 
     MCAPI bool $onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
-
-    MCAPI void $onConnectionClosed(
-        ::NetworkIdentifier const&               id,
-        ::Connection::DisconnectFailReason const discoReason,
-        ::std::string const&                     reasonMessage,
-        bool                                     skipDisconnectMessage
-    );
-
-    MCAPI void $onAllConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    );
-
-    MCAPI void $onAllRemoteConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    );
-
-    MCAPI void
-    $onOutgoingConnectionFailed(::Connection::DisconnectFailReason discoReason, ::std::string const& reasonMessage);
 
     MCAPI void $onWebsocketRequest(
         ::std::string const&    serverAddress,

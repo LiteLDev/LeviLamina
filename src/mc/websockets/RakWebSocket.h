@@ -122,6 +122,8 @@ public:
 
     MCAPI void _processDataFrames(::RakNet::BitStream& newIncoming);
 
+    MCAPI bool _processPacket(::std::function<void(::RakNet::BitStream&)> const& processStep, bool acceptNewConnection);
+
     MCAPI void _reset();
 
     MCAPI bool _sendControlFrame(uchar const* payload, uint64 size, ::OpCode opCode);

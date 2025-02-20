@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AgeableComponent;
-class EntityContext;
 class ItemDescriptor;
 struct ActorDefinitionFeedItem;
 namespace JsonUtil { class EmptyClass; }
@@ -40,12 +38,6 @@ public:
     MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
 
     MCAPI void addFeedItemByName(::std::string const& itemName);
-
-    MCAPI bool canGrowUp() const;
-
-    MCAPI int getTicksAsBaby() const;
-
-    MCAPI void initialize(::EntityContext& entity, ::AgeableComponent& component) const;
 
     MCAPI ~AgeableDefinition();
     // NOLINTEND

@@ -51,8 +51,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetActorDataPacket();
-
     MCAPI SetActorDataPacket(
         ::ActorRuntimeID                 id,
         ::SynchedActorDataEntityWrapper& entityData,
@@ -65,8 +63,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(
         ::ActorRuntimeID                 id,
         ::SynchedActorDataEntityWrapper& entityData,

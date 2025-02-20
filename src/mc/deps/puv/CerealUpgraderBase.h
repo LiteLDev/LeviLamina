@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Puv { class Logger; }
 namespace Puv::internal { struct PathElement; }
-namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -79,11 +77,7 @@ public:
     MCAPI void copy(
         ::entt::meta_any&                                  inputAny_,
         ::entt::meta_any&                                  outputAny_,
-        ::Puv::internal::CerealUpgraderBase::UpgradeState& state,
-        ::entt::meta_type const&                           srcType,
-        uint                                               srcId,
-        ::entt::meta_type const&                           dstType,
-        uint                                               dstId
+        ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
     MCAPI void copyAssociative(
@@ -95,8 +89,6 @@ public:
     MCAPI bool copyEnum(
         ::entt::meta_any&                                  source,
         ::entt::meta_any&                                  target,
-        ::cereal::SerializerEnumMapping const*             sourceMapping,
-        ::cereal::SerializerEnumMapping const*             targetMapping,
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
@@ -118,8 +110,6 @@ public:
         ::Puv::internal::CerealUpgraderBase::UpgradeState& state
     ) const;
 
-    MCFOLD ::cereal::ReflectionCtx const& ctx() const;
-
     MCAPI void ignore(::std::vector<::std::string> source);
 
     MCAPI int iterate(
@@ -130,8 +120,6 @@ public:
     ) const;
 
     MCAPI void move(::std::vector<::std::string> source, ::std::vector<::std::string> destination);
-
-    MCAPI void performUpgrade(::entt::meta_any& source, ::entt::meta_any destination, ::Puv::Logger& log) const;
 
     MCAPI void unwrapOrCopy(
         ::entt::meta_any&                                  inputAny,
@@ -146,13 +134,10 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::std::pair<::cereal::SerializerContext::ContextType, ::std::string>>
-    buildPath(::std::vector<::Puv::internal::PathElement> const& path, ::cereal::ReflectionCtx const& ctx);
+    buildPath(::std::vector<::Puv::internal::PathElement> const& path);
 
-    MCAPI static ::entt::meta_any constructOrLog(
-        ::cereal::ReflectionCtx const&                     ctx,
-        ::entt::meta_type const&                           t,
-        ::Puv::internal::CerealUpgraderBase::UpgradeState& state
-    );
+    MCAPI static ::entt::meta_any
+    constructOrLog(::entt::meta_type const& t, ::Puv::internal::CerealUpgraderBase::UpgradeState& state);
     // NOLINTEND
 
 public:

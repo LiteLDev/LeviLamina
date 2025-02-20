@@ -114,7 +114,9 @@ class PacketSender;
 class PersonaRepository;
 class PixelCalc;
 class Player;
+class PlayerAuthentication;
 class PlayerReportHandler;
+class ProfanityContext;
 class ResourcePackManager;
 class SceneFactory;
 class SceneStack;
@@ -132,8 +134,6 @@ class Timer;
 class ToastManager;
 class TrialManager;
 class UIEventCoordinator;
-class UIProfanityContext;
-class UserAuthentication;
 class Vec2;
 class Vec3;
 class VoiceSystem;
@@ -171,7 +171,6 @@ namespace mce { class Camera; }
 namespace mce { class Texture; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
-namespace mce { class UUID; }
 namespace mce { struct ViewportInfo; }
 namespace persona { class PersonaPieceCollectionModel; }
 namespace ui { class ScreenTechStackSelector; }
@@ -605,7 +604,7 @@ public:
     virtual void navigateToDressingRoomOfferScreen(::std::string const&) = 0;
 
     // vIndex: 140
-    virtual void navigateToProfileScreen() = 0;
+    virtual bool navigateToProfileScreen(::std::string const&, bool const) = 0;
 
     // vIndex: 141
     virtual void navigateToServersScreen(bool const) = 0;
@@ -654,10 +653,10 @@ public:
     virtual uint64 getClientRandomId() const = 0;
 
     // vIndex: 156
-    virtual ::UserAuthentication& getUserAuthentication() = 0;
+    virtual ::PlayerAuthentication& getPlayerAuthentication() = 0;
 
     // vIndex: 157
-    virtual ::std::weak_ptr<::UserAuthentication> getWeakUserAuthentication() = 0;
+    virtual ::std::weak_ptr<::PlayerAuthentication> getWeakPlayerAuthentication() = 0;
 
     // vIndex: 158
     virtual void registerToUserManager(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int) = 0;
@@ -666,10 +665,10 @@ public:
     virtual void resumeWithUserManager(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int) = 0;
 
     // vIndex: 161
-    virtual void createUserAuthentication(::std::string const&) = 0;
+    virtual void createPlayerAuthentication(::std::string const&) = 0;
 
     // vIndex: 160
-    virtual void createUserAuthentication(uint64, ::std::string const&) = 0;
+    virtual void createPlayerAuthentication(uint64, ::std::string const&) = 0;
 
     // vIndex: 162
     virtual ::std::string getPlatformId() const = 0;
@@ -1034,7 +1033,7 @@ public:
     virtual void forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)>) = 0;
 
     // vIndex: 282
-    virtual void showPlayerProfile(::std::string const&, ::mce::UUID, ::std::string const&, ::std::string const&) = 0;
+    virtual void showPlayerProfile(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 283
     virtual bool isInGameInputEnabled() const = 0;
@@ -1279,7 +1278,7 @@ public:
     virtual bool checkForPiracy() = 0;
 
     // vIndex: 363
-    virtual void updateChatFilterStatus(::UIProfanityContext&) = 0;
+    virtual void updateChatFilterStatus(::ProfanityContext&) = 0;
 
     // vIndex: 364
     virtual void updateControllerHandling() = 0;
@@ -1349,7 +1348,7 @@ public:
     virtual ::std::deque<::std::string>& getDevConsoleMessageHistory() = 0;
 
     // vIndex: 386
-    virtual ::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> getUIProfanityContext() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() const = 0;
 
     // vIndex: 387
     virtual void initTTSClient(::std::shared_ptr<::TextToSpeechClient>) = 0;
@@ -1537,6 +1536,15 @@ public:
     virtual bool isUserBanned() const = 0;
 
     // vIndex: 448
+    virtual void setupPauseManagers() = 0;
+
+    // vIndex: 449
+    virtual bool isEligibleForPauseFeature() const = 0;
+
+    // vIndex: 450
+    virtual void openContentLogHistory() = 0;
+
+    // vIndex: 451
     virtual double getGameUpdateDurationInSeconds() const = 0;
     // NOLINTEND
 

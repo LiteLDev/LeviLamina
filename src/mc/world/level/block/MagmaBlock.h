@@ -11,6 +11,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Random;
+struct BlockAnimateTickData;
 struct Brightness;
 // clang-format on
 
@@ -28,14 +29,13 @@ public:
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::Brightness getEmissiveBrightness(::Block const&) const /*override*/;
 
     // vIndex: 135
@@ -48,15 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MagmaBlock(::std::string const& nameId, int id);
-
     MCAPI void addToTickQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -74,7 +66,7 @@ public:
 
     MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

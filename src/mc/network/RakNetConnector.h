@@ -234,70 +234,64 @@ public:
     // vIndex: 0
     virtual ~RakNetConnector() /*override*/;
 
-    // vIndex: 11
+    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 10
     virtual bool connect(
         ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     ) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void disconnect() /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void tick() /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void runEvents() /*override*/;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual void closeNetworkConnection(::NetworkIdentifier const& id) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const& id) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual bool isServer() const /*override*/;
 
     // vIndex: 1
-    virtual ::std::vector<::std::string> getLocalIps() const /*override*/;
-
-    // vIndex: 2
     virtual ::std::string getLocalIp() /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual ushort getPort() const /*override*/;
 
-    // vIndex: 4
-    virtual ::std::vector<::RakNet::SystemAddress> getRefinedLocalIps() const /*override*/;
-
-    // vIndex: 5
+    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 4
     virtual bool isIPv4Supported() const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 5
     virtual bool isIPv6Supported() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 6
     virtual ushort getIPv4Port() const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 7
     virtual ushort getIPv6Port() const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 19
     virtual ::RakNet::RakPeerInterface* getPeer();
 
-    // vIndex: 20
+    // vIndex: 18
     virtual ::RakNet::RakPeerInterface const* getPeer() const;
 
-    // vIndex: 10
+    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const /*override*/;
 
     // vIndex: 1
@@ -316,6 +310,10 @@ public:
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
         ::RakNet::RakPeerConfiguration const&            rakPeerConfig
     );
+
+    MCAPI ::std::vector<::std::string> _getLocalIps() const;
+
+    MCAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
 
     MCAPI void _storeLocalIP();
 
@@ -361,13 +359,9 @@ public:
 
     MCAPI bool $isServer() const;
 
-    MCAPI ::std::vector<::std::string> $getLocalIps() const;
-
     MCAPI ::std::string $getLocalIp();
 
     MCAPI ushort $getPort() const;
-
-    MCAPI ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
 
     MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 

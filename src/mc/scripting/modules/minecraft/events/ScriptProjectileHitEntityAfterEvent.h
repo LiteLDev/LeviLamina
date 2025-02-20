@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptProjectileHitInfoAfterEvent.h"
 
 // auto generated forward declare list
@@ -31,9 +31,6 @@ public:
     MCAPI ScriptProjectileHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
 
     MCAPI ::ScriptModuleMinecraft::ScriptEntityHitInformation getEntityHit() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent&&);
     // NOLINTEND
 
 public:

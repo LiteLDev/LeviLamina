@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/EditorManager.h"
-#include "mc/external/scripting/runtime/Result.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ServerInstanceEventListener.h"

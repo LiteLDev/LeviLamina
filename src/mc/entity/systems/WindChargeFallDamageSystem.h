@@ -22,7 +22,6 @@ struct OnGroundFlagComponent;
 struct PassengerComponent;
 struct PlayerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct WasInWaterFlagComponent;
 struct WindChargeKnockbackComponent;
 // clang-format on
@@ -47,8 +46,6 @@ MCAPI void _tickWindChargeFallDamageSystem(
     ::Optional<::ActorDataFlagComponent const>       actorDataFlag,
     ::EntityModifier<::WindChargeKnockbackComponent> modifier
 );
-
-MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace WindChargeFallDamageSystem

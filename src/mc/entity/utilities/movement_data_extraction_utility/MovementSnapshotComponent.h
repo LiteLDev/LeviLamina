@@ -53,11 +53,10 @@ public:
     ::ll::UntypedStorage<4, 12>  mUnkf8a3ba;
     ::ll::UntypedStorage<4, 12>  mUnk5335d5;
     ::ll::UntypedStorage<4, 12>  mUnk6e5575;
-    ::ll::UntypedStorage<4, 12>  mUnk6c32a0;
+    ::ll::UntypedStorage<4, 16>  mUnk6c32a0;
     ::ll::UntypedStorage<4, 12>  mUnkd70513;
     ::ll::UntypedStorage<4, 16>  mUnk1fee59;
     ::ll::UntypedStorage<8, 16>  mUnk5bcd09;
-    ::ll::UntypedStorage<4, 20>  mUnk618eb6;
     ::ll::UntypedStorage<8, 16>  mUnk3bf9dc;
     ::ll::UntypedStorage<8, 24>  mUnkff91d9;
     ::ll::UntypedStorage<8, 24>  mUnk6587d6;
@@ -70,16 +69,17 @@ public:
     ::ll::UntypedStorage<4, 32>  mUnkc0b9c9;
     ::ll::UntypedStorage<4, 36>  mUnk75c6c8;
     ::ll::UntypedStorage<4, 40>  mUnkba7c80;
+    ::ll::UntypedStorage<4, 20>  mUnk618eb6;
     ::ll::UntypedStorage<8, 48>  mUnk4e5dd6;
     ::ll::UntypedStorage<4, 48>  mUnkccce64;
     ::ll::UntypedStorage<8, 56>  mUnk97019d;
     ::ll::UntypedStorage<8, 56>  mUnkcc34f4;
     ::ll::UntypedStorage<8, 56>  mUnkee5855;
     ::ll::UntypedStorage<4, 68>  mUnkc563d3;
+    ::ll::UntypedStorage<2, 4>   mUnk93b58c;
     ::ll::UntypedStorage<8, 80>  mUnkcf510d;
     ::ll::UntypedStorage<8, 88>  mUnk2a0baf;
-    ::ll::UntypedStorage<8, 88>  mUnk27f3f6;
-    ::ll::UntypedStorage<8, 136> mUnk93b58c;
+    ::ll::UntypedStorage<8, 96>  mUnk27f3f6;
     ::ll::UntypedStorage<8, 168> mUnk3a040c;
     ::ll::UntypedStorage<8, 112> mUnke83d64;
     ::ll::UntypedStorage<8, 24>  mUnkac54aa;
@@ -88,37 +88,8 @@ public:
 public:
     // prevent constructor by default
     MovementSnapshotComponent& operator=(MovementSnapshotComponent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MovementSnapshotComponent();
-
-    MCAPI MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCAPI MovementSnapshotComponent(::MovementDataExtractionUtility::MovementSnapshotComponent const&);
-
-    MCAPI ::MovementDataExtractionUtility::MovementSnapshotComponent&
-    operator=(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCAPI ~MovementSnapshotComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::MovementDataExtractionUtility::MovementSnapshotComponent&&);
-
-    MCAPI void* $ctor(::MovementDataExtractionUtility::MovementSnapshotComponent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
+    MovementSnapshotComponent(MovementSnapshotComponent const&);
+    MovementSnapshotComponent();
 };
 
 } // namespace MovementDataExtractionUtility

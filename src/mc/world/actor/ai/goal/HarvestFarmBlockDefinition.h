@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class HarvestFarmBlockGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -31,6 +29,7 @@ public:
     // prevent constructor by default
     HarvestFarmBlockDefinition& operator=(HarvestFarmBlockDefinition const&);
     HarvestFarmBlockDefinition(HarvestFarmBlockDefinition const&);
+    HarvestFarmBlockDefinition();
 
 public:
     // virtual functions
@@ -40,26 +39,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HarvestFarmBlockDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::HarvestFarmBlockGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                       name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HarvestFarmBlockDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

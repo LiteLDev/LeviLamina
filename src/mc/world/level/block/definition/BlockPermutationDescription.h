@@ -13,13 +13,23 @@ public:
 public:
     // prevent constructor by default
     BlockPermutationDescription& operator=(BlockPermutationDescription const&);
-    BlockPermutationDescription(BlockPermutationDescription const&);
-    BlockPermutationDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockPermutationDescription();
+
+    MCAPI BlockPermutationDescription(::BlockPermutationDescription const&);
+
     MCAPI ~BlockPermutationDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::BlockPermutationDescription const&);
     // NOLINTEND
 
 public:

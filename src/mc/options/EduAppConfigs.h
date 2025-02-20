@@ -56,6 +56,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCAPI static ::PackIdVersion const& EDUOreUIResourcePack();
+
     MCAPI static ::PackIdVersion const& EDUResourcePack();
     // NOLINTEND
 

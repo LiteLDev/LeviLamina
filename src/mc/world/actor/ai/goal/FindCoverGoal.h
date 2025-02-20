@@ -48,13 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FindCoverGoal(::Mob& mob, float speed, float cooldown);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed, float cooldown);
+    MCAPI bool getHidePos(::Vec3& result) const;
     // NOLINTEND
 
 public:
@@ -68,7 +62,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
     MCAPI void $start();
 

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,12 +29,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptChatSendAfterEvent(ScriptChatSendAfterEvent const&);
     ScriptChatSendAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptChatSendAfterEvent(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+
     MCAPI ScriptChatSendAfterEvent(
         ::ChatEvent const&                    chatEvent,
         ::Player const&                       player,
@@ -59,6 +60,8 @@ public:
 
     MCAPI ::Scripting::Result<void>
     setTargets_V010(::std::vector<::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> targets);
+
+    MCAPI ~ScriptChatSendAfterEvent();
     // NOLINTEND
 
 public:
@@ -72,8 +75,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendAfterEvent const&);
+
     MCAPI void*
     $ctor(::ChatEvent const& chatEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

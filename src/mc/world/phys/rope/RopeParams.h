@@ -37,22 +37,4 @@ public:
     ::ll::TypedStorage<4, 4, float>   mLength;
     ::ll::TypedStorage<4, 4, float>   mOriginalNodeDist;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RopeParams();
-
-    MCAPI RopeParams(::Vec3 const& startPin, ::Vec3 const& endPin, float length);
-
-    MCAPI void leadInit();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Vec3 const& startPin, ::Vec3 const& endPin, float length);
-    // NOLINTEND
 };

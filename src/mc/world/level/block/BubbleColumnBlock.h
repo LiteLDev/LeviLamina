@@ -18,8 +18,10 @@ class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
 class Random;
+struct BlockAnimateTickData;
 struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class BubbleColumnBlock : public ::BlockLegacy {
@@ -33,11 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 70
     virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
@@ -99,9 +97,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BubbleColumnBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -109,19 +107,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void _createParticles(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool down);
 
-    MCAPI static bool _getFlowDownward(::Block const& block);
-
     MCAPI static bool addBubbleColumnSegment(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static bool shouldDragDown(::Block const& block);
-
     MCAPI static void spawnBubbles(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -133,9 +121,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
 

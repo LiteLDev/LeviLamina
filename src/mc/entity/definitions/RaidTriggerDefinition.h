@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -30,7 +29,5 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RaidTriggerDefinition>>& root
     );
-
-    MCAPI static ::SemVersion getStrictParsingVersion();
     // NOLINTEND
 };

@@ -3,16 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/target/NearestAttackableTargetGoal.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class Mob;
 class TrustComponent;
 struct ActorUniqueID;
-struct MobDescriptor;
 // clang-format on
 
 class DefendTrustedTargetGoal : public ::NearestAttackableTargetGoal {
@@ -42,33 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefendTrustedTargetGoal(
-        ::Mob&                                 mob,
-        ::std::vector<::MobDescriptor> const&  targetTypes,
-        float                                  within,
-        int                                    attackInterval,
-        bool                                   mustSee,
-        int                                    mustSeeForgetTicks,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::ActorDefinitionTrigger const&        onStartEvent
-    );
-
     MCAPI ::ActorUniqueID _findTrustedTarget(::TrustComponent const& trust);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 mob,
-        ::std::vector<::MobDescriptor> const&  targetTypes,
-        float                                  within,
-        int                                    attackInterval,
-        bool                                   mustSee,
-        int                                    mustSeeForgetTicks,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::ActorDefinitionTrigger const&        onStartEvent
-    );
     // NOLINTEND
 
 public:

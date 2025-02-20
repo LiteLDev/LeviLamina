@@ -9,8 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class IPlayerDeathManagerProxy;
-class PacketSender;
 class Player;
 // clang-format on
 
@@ -42,17 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerDeathManager(::std::unique_ptr<::IPlayerDeathManagerProxy> playerDeathManagerProxy);
-
     MCAPI void playerDied(::Player& player, ::ActorDamageSource const& source);
-
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::IPlayerDeathManagerProxy> playerDeathManagerProxy);
     // NOLINTEND
 
 public:

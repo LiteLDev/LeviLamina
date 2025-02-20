@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/Mode.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-class Player;
 namespace Editor { class ServiceProviderCollection; }
 // clang-format on
 
@@ -63,19 +62,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerStateControllerService(::Editor::ServiceProviderCollection& providers);
-
-    MCAPI ::Player* _getPlayer() const;
-
     MCAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
     MCAPI void _syncFlyingNoClip(::Editor::ServiceProviderCollection&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

@@ -68,6 +68,8 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk261e43;
     ::ll::UntypedStorage<8, 24> mUnkfaadd9;
     ::ll::UntypedStorage<8, 24> mUnkda32c3;
+    ::ll::UntypedStorage<8, 24> mUnk227c67;
+    ::ll::UntypedStorage<1, 1>  mUnkf9748f;
     // NOLINTEND
 
 public:
@@ -156,7 +158,7 @@ public:
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 767> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 783> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;
@@ -218,31 +220,34 @@ public:
     // vIndex: 159
     virtual ::std::vector<::std::string> const& getRecentSkinIds() /*override*/;
 
-    // vIndex: 347
+    // vIndex: 351
     virtual float getDefaultPlatformSafeZoneX() const /*override*/;
 
-    // vIndex: 348
+    // vIndex: 352
     virtual float getDefaultPlatformSafeZoneY() const /*override*/;
 
-    // vIndex: 349
+    // vIndex: 353
     virtual bool getServerboundClientDiagnosticsEnabled() const /*override*/;
 
-    // vIndex: 350
+    // vIndex: 354
     virtual ::ScriptDebuggerSettings getScriptDebuggerSettings() const /*override*/;
 
-    // vIndex: 351
+    // vIndex: 355
     virtual ::Scripting::WatchdogSettings getScriptWatchdogSettings() const /*override*/;
 
-    // vIndex: 95
+    // vIndex: 88
     virtual ::GraphicsMode getGraphicsMode() const /*override*/;
 
-    // vIndex: 369
-    virtual void setSaveDeferralCount(int) /*override*/;
-
-    // vIndex: 370
-    virtual int getSaveDeferralCount() const /*override*/;
+    // vIndex: 95
+    virtual int getGraphicsQualityPresetMode() const /*override*/;
 
     // vIndex: 371
+    virtual void setSaveDeferralCount(int) /*override*/;
+
+    // vIndex: 372
+    virtual int getSaveDeferralCount() const /*override*/;
+
+    // vIndex: 373
     virtual ::std::optional<::DeviceMemoryTier> getScriptingMemoryTierOverride() const /*override*/;
     // NOLINTEND
 

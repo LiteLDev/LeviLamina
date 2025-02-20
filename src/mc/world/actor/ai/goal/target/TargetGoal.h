@@ -71,60 +71,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TargetGoal(
-        ::Mob& pathMob,
-        bool   mustSee,
-        int    mustSeeForgetTicks,
-        bool   mustReach,
-        float  withinDefault,
-        bool   attackOwner,
-        int    persistTargetTicks
-    );
+    MCAPI bool _canAttack(::Actor* target, bool outDescriptorMatch, ::MobDescriptor const** allowInvulnerable);
 
-    MCAPI TargetGoal(
-        ::Mob&                                pathMob,
-        ::std::vector<::MobDescriptor> const& targetTypes,
-        bool                                  mustSee,
-        int                                   mustSeeForgetTicks,
-        bool                                  mustReach,
-        float                                 withinDefault,
-        bool                                  attackOwner,
-        int                                   persistTargetTicks
-    );
-
-    MCAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
-
-    MCAPI bool _canReachAfterDelay(::Actor& target);
+    MCAPI bool _canReach(::Actor& target);
 
     MCAPI bool
     _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
 
     MCAPI bool _withinRange(::Actor const& target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob& pathMob,
-        bool   mustSee,
-        int    mustSeeForgetTicks,
-        bool   mustReach,
-        float  withinDefault,
-        bool   attackOwner,
-        int    persistTargetTicks
-    );
-
-    MCAPI void* $ctor(
-        ::Mob&                                pathMob,
-        ::std::vector<::MobDescriptor> const& targetTypes,
-        bool                                  mustSee,
-        int                                   mustSeeForgetTicks,
-        bool                                  mustReach,
-        float                                 withinDefault,
-        bool                                  attackOwner,
-        int                                   persistTargetTicks
-    );
     // NOLINTEND
 
 public:

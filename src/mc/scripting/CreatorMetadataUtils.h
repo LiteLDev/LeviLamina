@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/reflection/Privilege.h"
+#include "mc/deps/scripting/reflection/Privilege.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
@@ -78,19 +78,6 @@ MCAPI ::std::unordered_map<::std::string, ::std::string> _getPropertyToEntityNam
 MCAPI void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
 
 MCAPI void generateCooldownCategoriesDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
-
-MCAPI void generateCreatorScriptingMetadata(
-    ::Scripting::ScriptEngine&                                                       scriptEngine,
-    ::Core::Path const&                                                              scriptModuleFolder,
-    ::Core::Path const&                                                              vanillaDataFolder,
-    ::Core::Path const&                                                              engineDataFolder,
-    ::Core::Path const&                                                              schemaDataFolder,
-    ::ItemRegistryRef                                                                itemRegistry,
-    ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList,
-    ::CameraPresets const&                                                           presets,
-    ::BiomeRegistry const&                                                           biomes,
-    ::cereal::ReflectionCtx&                                                         reflectionCtx
-);
 
 MCAPI void generateItemsDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry);
 

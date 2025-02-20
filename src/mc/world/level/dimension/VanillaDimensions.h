@@ -31,10 +31,6 @@ public:
     MCAPI static ::Bedrock::Result<::DimensionType> fromSerializedInt(::Bedrock::Result<int>&& i);
 
     MCAPI static ::DimensionType fromString(::std::string const& name);
-
-    MCAPI static int toSerializedInt(::DimensionType const& type);
-
-    MCAPI static ::std::string const toString(::DimensionType const& type);
     // NOLINTEND
 
 public:

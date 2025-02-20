@@ -9,7 +9,7 @@
 // clang-format off
 class Actor;
 class BlockPos;
-class Item;
+class CompoundTag;
 class ItemStack;
 class Vec3;
 namespace Json { class Value; }
@@ -36,21 +36,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SeedItemComponentLegacy(::Item& owner);
+    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
-
-    MCFOLD bool isPlanting() const;
-
-    MCAPI void setPlanting(bool planting);
 
     MCAPI bool
     useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const& clickPos);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Item& owner);
+    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 };

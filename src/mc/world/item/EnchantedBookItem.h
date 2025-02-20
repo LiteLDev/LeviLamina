@@ -34,18 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EnchantedBookItem(::std::string const& name, int id, bool isGlint);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, bool isGlint);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -23,12 +23,13 @@ public:
 
 public:
     // prevent constructor by default
-    EditorBlockPalette(EditorBlockPalette const&);
     EditorBlockPalette();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EditorBlockPalette(::Editor::EditorBlockPalette const&);
+
     MCAPI EditorBlockPalette(
         ::HashedString                                                                                           id,
         ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,
@@ -48,8 +49,6 @@ public:
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCAPI static ::Editor::EditorBlockPalette createDefault();
-
-    MCAPI static bool isValidIndex(int index);
     // NOLINTEND
 
 public:
@@ -63,6 +62,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Editor::EditorBlockPalette const&);
+
     MCAPI void* $ctor(
         ::HashedString                                                                                           id,
         ::std::array<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>, 9> items,

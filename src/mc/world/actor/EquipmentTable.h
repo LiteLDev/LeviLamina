@@ -27,13 +27,9 @@ public:
     // NOLINTBEGIN
     MCAPI EquipmentTable(::EquipmentTable const&);
 
-    MCAPI explicit EquipmentTable(::std::string lootTable);
-
-    MCAPI explicit EquipmentTable(::CompoundTag const& tag);
-
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
+
+    MCAPI ~EquipmentTable();
     // NOLINTEND
 
 public:
@@ -49,9 +45,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::EquipmentTable const&);
+    // NOLINTEND
 
-    MCAPI void* $ctor(::std::string lootTable);
-
-    MCAPI void* $ctor(::CompoundTag const& tag);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

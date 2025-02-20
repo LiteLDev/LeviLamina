@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
@@ -41,27 +40,8 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 144
-    virtual ::BlockRenderLayer getRenderLayer() const /*override*/;
-
-    // vIndex: 143
-    virtual ::BlockRenderLayer getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const
-        /*override*/;
-
     // vIndex: 0
     virtual ~MushroomBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MushroomBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -85,10 +65,6 @@ public:
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer() const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

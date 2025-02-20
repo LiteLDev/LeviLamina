@@ -9,7 +9,6 @@
 // clang-format off
 class BlockComponentFactory;
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 class EntityContext;
 class SemVersion;
@@ -70,12 +69,6 @@ public:
 
     // vIndex: 10
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

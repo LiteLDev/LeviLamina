@@ -15,6 +15,8 @@ MCAPI void registerNormalJumpSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
+
+MCAPI void registerPowerJumpSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace VanillaSystemsRegistration::Jump

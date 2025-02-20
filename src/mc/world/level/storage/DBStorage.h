@@ -171,7 +171,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk67fb43;
     ::ll::UntypedStorage<8, 64>  mUnk3bbb25;
     ::ll::UntypedStorage<8, 64>  mUnkff454d;
-    ::ll::UntypedStorage<8, 24>  mUnk459c5c;
+    ::ll::UntypedStorage<8, 40>  mUnkfc7d2a;
     ::ll::UntypedStorage<8, 24>  mUnk863951;
     ::ll::UntypedStorage<1, 1>   mUnkd274df;
     ::ll::UntypedStorage<1, 1>   mUnk42ad31;
@@ -184,6 +184,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk440898;
     ::ll::UntypedStorage<8, 8>   mUnk69426f;
     ::ll::UntypedStorage<8, 8>   mUnk9a9098;
+    ::ll::UntypedStorage<8, 192> mUnkc63a35;
     // NOLINTEND
 
 public:
@@ -310,8 +311,6 @@ public:
 
     MCAPI void _handleErrorStatus(::leveldb::Status const& status);
 
-    MCAPI bool _isMarkedAsCorrupted() const;
-
     MCAPI void _markAsCorrupted(::std::string_view message) const;
 
     MCAPI void _mergeIntoWriteCache(::LevelStorageWriteBatch const& batchToMerge);
@@ -328,8 +327,6 @@ public:
 
     MCAPI ::DBStorage::PendingWriteResult
     _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
-
-    MCAPI void _removeCorruptedMark() const;
 
     MCAPI void _scheduleNextAutoCompaction();
 
@@ -360,7 +357,7 @@ public:
 
     MCFOLD ::Core::LevelStorageResult $getState() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 

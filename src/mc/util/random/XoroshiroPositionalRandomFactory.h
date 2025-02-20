@@ -38,7 +38,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::XoroshiroRandom forBlockPosImpl(::BlockPos const& blockPos) const;
+
     MCAPI ::XoroshiroRandom forStringImpl(::std::string const& s) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::XoroshiroRandom forBlockPosImplNoSeed(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

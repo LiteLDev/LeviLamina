@@ -15,15 +15,12 @@ struct MoveRequestComponent;
 struct OffsetsComponent;
 struct StateVectorComponent;
 struct SubBBsComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct NoClipOrNoBlockMoveFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create();
-
     MCAPI static void tick(
         ::StrictEntityContext const&             context,
         ::MoveRequestComponent const&            moveRequest,

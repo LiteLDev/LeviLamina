@@ -104,31 +104,32 @@ public:
         ::StructureBlockPalette&         palette
     );
 
-    MCAPI void
-    _placeEntitiesInWorld(::BlockSource& region, ::DataLoadHelper& dataLoadHelper, bool shouldReloadActorEquipment)
-        const;
-
-    MCAPI void _placeNextBlockSegmentInWorld(
+    MCAPI void _placeEntitiesInWorld(
         ::BlockSource&                 region,
-        uint64                         startPlacement,
-        uint64                         endPlacement,
-        ::StructureSettings const&     structureSettings,
         ::DataLoadHelper&              dataLoadHelper,
-        ::StructureBlockPalette const& structureBlockPalette,
-        ::BlockPalette const&          globalBlockPalette,
-        ::BlockPos                     position,
-        ::BlockPos const&              offset,
-        ::Vec3 const&                  pivot,
-        ::Rotation                     rotation,
-        ::Mirror                       mirror,
-        float                          integrityValue,
-        uint                           integritySeed,
-        ::StructureTelemetryServerData*,
-        bool updateItemData,
-        bool ignoreJigsawBlocks
+        bool                           shouldReloadActorEquipment,
+        ::std::optional<::BoundingBox> overlapBB
     ) const;
 
-    MCFOLD ::IStructureTemplate const& asStructureTemplate() const;
+    MCAPI void _placeNextBlockSegmentInWorld(
+        ::BlockSource&                  region,
+        uint64                          startPlacement,
+        uint64                          endPlacement,
+        ::StructureSettings const&      structureSettings,
+        ::DataLoadHelper&               dataLoadHelper,
+        ::StructureBlockPalette const&  structureBlockPalette,
+        ::BlockPalette const&           position,
+        ::BlockPos                      offset,
+        ::BlockPos const&               pivot,
+        ::Vec3 const&                   rotation,
+        ::Rotation                      mirror,
+        ::Mirror                        integrityValue,
+        float                           integritySeed,
+        uint                            updateItemData,
+        ::StructureTelemetryServerData* ignoreJigsawBlocks,
+        bool                            globalBlockPalette,
+        bool
+    ) const;
 
     MCAPI void fillEmpty(::BlockPos const& size);
 
@@ -138,29 +139,26 @@ public:
         ::StructureSettings const& structureSettings
     );
 
-    MCAPI ::Block const& getBlockAtPos(::BlockPos const& pos) const;
-
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD bool getRemovable() const;
-
-    MCFOLD ::BlockPos const& getSize() const;
-
-    MCAPI bool isLoaded() const;
 
     MCAPI bool const isWaterlogged(::BlockPos const& pos) const;
 
     MCAPI void optimizePalette(::std::string const& paletteName);
 
+    MCAPI void placeEntitiesInWorld(
+        ::BlockSource&             region,
+        ::BlockPos const&          position,
+        ::StructureSettings const& structureSettings,
+        ::BoundingBox              overlapBB
+    ) const;
+
     MCAPI void placeInWorld(
         ::BlockSource&                  region,
-        ::BlockPalette const&           globalBlockPalette,
-        ::BlockPos const&               position,
-        ::StructureSettings const&      structureSettings,
-        ::StructureTelemetryServerData* telemetryServerData,
-        bool                            updateItemData
+        ::BlockPalette const&           position,
+        ::BlockPos const&               structureSettings,
+        ::StructureSettings const&      updateItemData,
+        ::StructureTelemetryServerData* globalBlockPalette,
+        bool                            telemetryServerData
     ) const;
 
     MCAPI void placeNextSegmentInWorld(
@@ -171,15 +169,6 @@ public:
     MCAPI bool setBlock(::BlockPos const& pos, ::Block const* block, bool waterlogged);
 
     MCAPI void setStructureTemplateData(::StructureTemplateData const& data);
-
-    MCAPI bool structureTemplateDataIsValid(
-        ::BlockSource const&       region,
-        ::std::string const&       structureName,
-        ::BlockPos const&          capturePosition,
-        ::StructureSettings const& structureSettings
-    ) const;
-
-    MCAPI ::Block const* tryGetBlockAtPos(::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

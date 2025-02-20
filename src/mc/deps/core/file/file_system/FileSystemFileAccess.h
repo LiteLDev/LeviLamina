@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/file_system/FileSystemMode.h"
 #include "mc/deps/core/file/file_system/IFileAccess.h"
 #include "mc/deps/core/file/file_system/IFileReadAccess.h"
 #include "mc/deps/core/file/file_system/IFileWriteAccess.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class FileSystemFileAccess : public ::IFileAccess {
@@ -103,7 +102,7 @@ public:
     virtual ~FileSystemFileAccess() /*override*/ = default;
 
     // vIndex: 1
-    virtual void* fopen(::Core::Path const& filePath, ::std::string const& mode) /*override*/;
+    virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) /*override*/;
 
     // vIndex: 2
     virtual int fclose(void* file) /*override*/;
@@ -125,18 +124,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit FileSystemFileAccess(::FileSystemMode mode);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FileSystemMode mode);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -145,7 +132,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $fopen(::Core::Path const& filePath, ::std::string const& mode);
+    MCAPI void* $fopen(::Core::PathView filePath, ::std::string const& mode);
 
     MCAPI int $fclose(void* file);
 

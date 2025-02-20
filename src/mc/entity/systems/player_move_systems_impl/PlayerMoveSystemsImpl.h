@@ -16,7 +16,7 @@ struct StateVectorComponent;
 struct WasOnGroundFlagComponent;
 // clang-format on
 
-namespace PlayerMoveSystemsImpl {
+namespace VanillaSystems::PlayerMoveSystemsImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void _doPlayerPreMoveSystem(
@@ -29,4 +29,4 @@ MCAPI void _doPlayerPreMoveSystem(
 );
 // NOLINTEND
 
-} // namespace PlayerMoveSystemsImpl
+} // namespace VanillaSystems::PlayerMoveSystemsImpl

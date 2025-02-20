@@ -18,7 +18,7 @@ class TextureSetLayerDefinition : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 208> mUnkd9360c;
+    ::ll::UntypedStorage<8, 120> mUnkd9360c;
     ::ll::UntypedStorage<1, 1>   mUnkf64bec;
     // NOLINTEND
 

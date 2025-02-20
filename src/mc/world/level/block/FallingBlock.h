@@ -11,9 +11,9 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Material;
-class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -25,29 +25,25 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const&) const = 0;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const&) const = 0;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual bool falling() const;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 155
+    // vIndex: 154
     virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 156
+    // vIndex: 155
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
@@ -61,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FallingBlock(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI void _scheduleCheck(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, int delay) const;
 
     MCAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
 
@@ -69,13 +65,7 @@ public:
 
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void triggerFallCheck(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -89,9 +79,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $falling() const;
 
@@ -103,11 +91,5 @@ public:
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

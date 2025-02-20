@@ -58,8 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BannerAddPatternRecipe(::std::string const& recipeId);
-
     MCAPI BannerAddPatternRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
 
     MCAPI ::Bedrock::NonOwnerPointer<::BannerPattern const> const matchPatterns(::CraftingContainer const& craftSlots
@@ -75,8 +73,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId);
-
     MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 

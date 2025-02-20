@@ -13,22 +13,15 @@ public:
 public:
     // prevent constructor by default
     NameAction& operator=(NameAction const&);
+    NameAction(NameAction const&);
     NameAction();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NameAction(::NameAction const&);
-
-    MCFOLD void addNameFilterByName(::std::string const& name);
+    MCAPI void addNameFilterByName(::std::string const& name);
 
     MCAPI ~NameAction();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NameAction const&);
     // NOLINTEND
 
 public:

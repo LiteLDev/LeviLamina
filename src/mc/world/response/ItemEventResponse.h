@@ -4,13 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
+class SemVersionConstant;
 // clang-format on
 
 namespace ItemEventResponse {
 // static variables
 // NOLINTBEGIN
-MCAPI ::SemVersion const& EVENT_RESPONSE_VERSION_1_16_100();
+MCAPI ::SemVersionConstant const& EVENT_RESPONSE_VERSION_1_16_100();
 // NOLINTEND
 
 } // namespace ItemEventResponse

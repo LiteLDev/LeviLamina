@@ -55,15 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EatBlockGoal(::Mob& mob);
-
     MCAPI float getEatSuccessChance(::Actor& owner) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

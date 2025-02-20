@@ -55,13 +55,13 @@ public:
 
     MCAPI void _initializePins();
 
-    MCAPI void _initializePins(::Vec3 const& startPin, ::Vec3 const& endPin);
-
     MCAPI void _integrate();
 
     MCAPI void _prepareAABBBuckets();
 
     MCAPI void _pruneDenyList();
+
+    MCAPI void _pushRange(uint64 begin, uint64 end);
 
     MCAPI void _resizeRope();
 
@@ -79,13 +79,7 @@ public:
 
     MCAPI void _tickWaves();
 
-    MCAPI void cutAtPercent(float percent);
-
-    MCAPI void initialize(::RopeParams const& params);
-
-    MCAPI bool isCut() const;
-
-    MCAPI bool isDestroyed() const;
+    MCAPI void _updateRenderPoints();
 
     MCAPI void queueTick(::BlockSource& region, ::std::shared_ptr<::RopeSystem>& self);
 
@@ -95,11 +89,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& sBucketLength();
-
     MCAPI static bool& sEnabled();
-
-    MCAPI static float const& sEpsilon();
     // NOLINTEND
 
 public:

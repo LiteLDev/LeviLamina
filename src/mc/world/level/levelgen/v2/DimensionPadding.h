@@ -17,18 +17,6 @@ public:
     DimensionPadding& operator=(DimensionPadding const&);
     DimensionPadding(DimensionPadding const&);
     DimensionPadding();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DimensionPadding(uint amount);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(uint amount);
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

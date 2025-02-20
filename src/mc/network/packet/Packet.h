@@ -14,8 +14,6 @@
 // clang-format off
 class BinaryStream;
 class IPacketHandlerDispatcher;
-class NetEventCallback;
-class NetworkIdentifier;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -66,9 +64,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
-    handle(::NetworkIdentifier const& source, ::NetEventCallback& callback, ::std::shared_ptr<::Packet>& packet);
-
     MCAPI ::Bedrock::Result<void> readNoHeader(::ReadOnlyBinaryStream& bitstream, ::SubClientId const& subid);
     // NOLINTEND
 

@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/IWeatherManagerProxy.h"
-
-// auto generated forward declare list
-// clang-format off
-class LevelData;
-// clang-format on
 
 class WeatherManagerProxy : public ::IWeatherManagerProxy {
 public:
@@ -53,18 +47,6 @@ public:
 
     // vIndex: 0
     virtual ~WeatherManagerProxy() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit WeatherManagerProxy(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
     // NOLINTEND
 
 public:

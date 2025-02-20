@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
@@ -18,21 +19,9 @@ namespace cereal::internal {
 
 class DefaultCompositeSchema : public ::cereal::internal::BasicSchema {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfc2431;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DefaultCompositeSchema& operator=(DefaultCompositeSchema const&);
-    DefaultCompositeSchema(DefaultCompositeSchema const&);
-    DefaultCompositeSchema();
-
-public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
+    // vIndex: 4
     virtual void doLoad(
         ::cereal::SchemaReader&      value,
         ::entt::meta_any&            any,
@@ -40,16 +29,10 @@ public:
         ::cereal::SerializerContext& context
     ) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 5
     virtual void
     doSave(::cereal::SchemaWriter& writer, ::entt::meta_any const& any, ::cereal::SerializerContext& context) const
         /*override*/;
-
-    // vIndex: 1
-    virtual void members(::std::function<void(uint, ::entt::meta_data)> cb) const /*override*/;
-
-    // vIndex: 2
-    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(uint memberId) const /*override*/;
 
     // vIndex: 0
     virtual ~DefaultCompositeSchema() /*override*/ = default;
@@ -58,16 +41,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefaultCompositeSchema(::cereal::ReflectionCtx const& ctx, ::entt::type_info const& type);
+    MCAPI void
+    constraintDescriptionIfAny(::cereal::SchemaDescription& description, ::cereal::Constraint const* constraint) const;
 
-    MCAPI ::cereal::SchemaDescription
-    makeDescriptionForType(::entt::meta_type const& type, ::cereal::internal::BasicSchema::DescriptionMode mode) const;
-    // NOLINTEND
+    MCAPI void iterateMembers(
+        ::cereal::ReflectionCtx const&                 ctx,
+        ::entt::meta_type const&                       type,
+        ::std::function<void(uint, ::entt::meta_data)> cb
+    ) const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::entt::type_info const& type);
+    MCAPI ::cereal::SchemaDescription makeDescriptionForType(
+        ::cereal::ReflectionCtx const&                   ctx,
+        ::entt::meta_type const&                         type,
+        ::cereal::internal::BasicSchema::DescriptionMode mode
+    ) const;
+
+    MCAPI ::cereal::internal::BasicSchema::MemberDescriptor const*
+    memberDescriptor(::entt::meta_type const& type, uint memberId) const;
     // NOLINTEND
 
 public:
@@ -88,16 +78,6 @@ public:
 
     MCAPI void
     $doSave(::cereal::SchemaWriter& writer, ::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
-
-    MCAPI void $members(::std::function<void(uint, ::entt::meta_data)> cb) const;
-
-    MCAPI ::cereal::internal::BasicSchema::MemberDescriptor const* $member(uint memberId) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

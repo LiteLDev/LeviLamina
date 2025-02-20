@@ -10,12 +10,10 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Container;
 class Experiments;
-class ItemStack;
 class Level;
 class Player;
-class Random;
+struct BlockAnimateTickData;
 struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
@@ -28,8 +26,7 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 139
     virtual bool use(::Player& player, ::BlockPos const& anchorBlockPos, uchar) const /*override*/;
@@ -63,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RespawnAnchorBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -78,23 +73,6 @@ public:
 
     MCAPI static bool
     _trySetSpawn(::Player& player, ::BlockPos const& anchorBlockPos, ::BlockSource& region, ::Level& level);
-
-    MCAPI static bool addItem(
-        ::Container&       fromContainer,
-        int                slot,
-        ::ItemStack const& item,
-        ::BlockSource&     region,
-        ::Block const&     block,
-        ::BlockPos const&  pos
-    );
-
-    MCAPI static int getChargeLevel(::Block const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -108,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& anchorBlockPos, uchar) const;
 

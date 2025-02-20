@@ -39,4 +39,10 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+    // NOLINTEND
 };

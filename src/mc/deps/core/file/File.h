@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/FileBufferingMode.h"
-#include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
-namespace Core { class Path; }
+namespace Core { class FileSystemImpl; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -33,10 +33,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
+
     MCAPI ::Core::Result close();
 
+    MCAPI ::Core::Result getPosition(uint64* pPosition);
+
+    MCAPI ::Core::Result getSize(uint64* pSize);
+
     MCAPI ::Core::Result
-    open(::Core::Path const& fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
+    open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
+
+    MCAPI ::Core::File& operator=(::Core::File&& rhs);
+
+    MCAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
+
+    MCAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
+
+    MCAPI ::Core::Result setPosition(uint64 position);
 
     MCAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
 
@@ -46,20 +61,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> cleanPath(::Core::Path const& entryPath);
-
-    MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
-    cleanPathSeparators(::Core::Path const& entryPath);
-
-    MCAPI static ::Core::Result writeCreateOrAppendFileData(
-        ::Core::Path const&         path,
-        uint64                      offset,
-        uint64                      numBytesToWrite,
-        ::std::vector<uchar> const& buffer
-    );
-
     MCAPI static ::Core::Result
-    writeCreateOrAppendFileData(::Core::Path const& path, uint64 offset, uint64 numBytesToWrite, uchar const* buffer);
+    writeCreateOrAppendFileData(::Core::PathView path, uint64 offset, uint64 numBytesToWrite, uchar const* buffer);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void*
+    $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
     // NOLINTEND
 
 public:

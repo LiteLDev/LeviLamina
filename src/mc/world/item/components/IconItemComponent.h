@@ -44,8 +44,6 @@ public:
 
     MCAPI ::std::string const& getDefaultTexture() const;
 
-    MCAPI ::std::string const& getDyedTexture() const;
-
     MCAPI void setTexturePath(::std::string const& texturePath);
     // NOLINTEND
 
@@ -54,8 +52,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();

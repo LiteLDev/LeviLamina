@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/ZipCompressionLevel.h"
-
 namespace Core::ZipUtils {
 
 class ZipSettings {
@@ -30,8 +27,6 @@ public:
     // NOLINTBEGIN
     MCAPI ZipSettings();
 
-    MCAPI explicit ZipSettings(::Core::ZipUtils::ZipCompressionLevel compression);
-
     MCAPI ~ZipSettings();
     // NOLINTEND
 
@@ -39,8 +34,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Core::ZipUtils::ZipCompressionLevel compression);
     // NOLINTEND
 
 public:

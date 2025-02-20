@@ -23,26 +23,24 @@ public:
 
 public:
     // prevent constructor by default
-    AnimatedImageData& operator=(AnimatedImageData const&);
+    AnimatedImageData(AnimatedImageData const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimatedImageData(::AnimatedImageData const& rhs);
-
     MCAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,
         ::mce::Image const&            animatedImage,
         float                          frames
     );
+
+    MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AnimatedImageData const& rhs);
-
     MCAPI void* $ctor(
         ::persona::AnimatedTextureType type,
         ::persona::AnimationExpression animationExpression,

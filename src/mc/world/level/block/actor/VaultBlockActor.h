@@ -4,19 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/level/block/VaultBlockState.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class Dimension;
+class ILevel;
 class ItemStack;
 class Level;
 class Player;
@@ -194,16 +194,6 @@ public:
             ::SharedTypes::Legacy::LevelSoundEvent sound
         );
 
-        MCAPI static void setVaultState(
-            ::BlockSource&                        region,
-            ::BlockPos                            pos,
-            ::Block const&                        oldBlock,
-            ::VaultBlockState                     newState,
-            ::VaultBlockState                     currentState,
-            ::VaultBlockActor::VaultConfig const& config,
-            ::VaultBlockActor::VaultSharedData&   sharedData
-        );
-
         MCAPI static void tick(
             ::BlockSource&                        region,
             ::BlockPos                            pos,
@@ -228,15 +218,6 @@ public:
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData,
             ::VaultBlockActor::VaultServerData&   serverData
-        );
-
-        MCAPI static void unlock(
-            ::BlockSource&                        region,
-            ::BlockPos                            pos,
-            ::VaultBlockActor::VaultConfig const& config,
-            ::VaultBlockActor::VaultServerData&   serverData,
-            ::VaultBlockActor::VaultSharedData&   sharedData,
-            ::std::vector<::ItemStack>&&          itemsToEject
         );
 
         MCAPI static void updateConnectedPlayersWithinRange(
@@ -266,6 +247,13 @@ public:
         );
 
         MCAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
+
+        MCAPI static void tick(
+            ::BlockSource&                            region,
+            ::BlockPos                                pos,
+            ::VaultBlockActor::VaultClientData&       clientData,
+            ::VaultBlockActor::VaultSharedData const& sharedData
+        );
         // NOLINTEND
     };
 
@@ -282,13 +270,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~VaultBlockActor() /*override*/;
+    virtual ~VaultBlockActor() /*override*/ = default;
 
     // vIndex: 7
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -304,17 +292,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit VaultBlockActor(::BlockPos const& pos);
-
-    MCAPI void tryInsertKey(::BlockSource& region, ::Player& player);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::VaultBlockState _getCurrentState(::Block const& block);
-
     MCAPI static void
-    _javaSpawnItem(::BlockSource& region, ::ItemStack const& item, int accuracy, uchar direction, ::Vec3 position);
+    _javaSpawnItem(::BlockSource& region, ::ItemStack const& item, int position, uchar accuracy, ::Vec3 direction);
     // NOLINTEND
 
 public:
@@ -326,7 +310,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -334,7 +318,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

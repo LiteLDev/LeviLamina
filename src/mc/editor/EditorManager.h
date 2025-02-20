@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/IEditorManager.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/serviceproviders/EditorManagerServiceProvider.h"
 #include "mc/editor/services/EditorServiceList.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/server/editor/IEditorManager.h"
 #include "mc/world/level/FileArchiver.h"
 
 // auto generated forward declare list
@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorManager(bool isClient, ::PacketSender& packetSender, ::IMinecraftEventing& eventing);
+    MCAPI EditorManager(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool isClient, ::PacketSender& packetSender, ::IMinecraftEventing& eventing);
+    MCAPI void* $ctor(bool packetSender, ::PacketSender& eventing, ::IMinecraftEventing& isClient);
     // NOLINTEND
 
 public:

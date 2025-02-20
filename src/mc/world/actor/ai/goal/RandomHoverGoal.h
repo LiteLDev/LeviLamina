@@ -51,35 +51,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RandomHoverGoal(
-        ::Mob&     mob,
-        float      speedMultiplier,
-        int        interval,
-        float      xzDist,
-        float      yDist,
-        float      yOffset,
-        ::IntRange hoverHeight
-    );
-
     MCAPI bool _computeNewTarget();
+
+    MCAPI ::std::unique_ptr<::Path> _findNewTarget() const;
 
     MCAPI bool _mobMeetsPreconditions() const;
 
     MCAPI void _moveToTarget();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&     mob,
-        float      speedMultiplier,
-        int        interval,
-        float      xzDist,
-        float      yDist,
-        float      yOffset,
-        ::IntRange hoverHeight
-    );
     // NOLINTEND
 
 public:

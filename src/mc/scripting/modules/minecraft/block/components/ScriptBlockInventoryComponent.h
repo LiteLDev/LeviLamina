@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
 // auto generated forward declare list
@@ -27,7 +27,6 @@ public:
 public:
     // prevent constructor by default
     ScriptBlockInventoryComponent& operator=(ScriptBlockInventoryComponent const&);
-    ScriptBlockInventoryComponent(ScriptBlockInventoryComponent const&);
     ScriptBlockInventoryComponent();
 
 public:
@@ -40,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBlockInventoryComponent(::ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
+
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>>
     getOrCreateContainer();
@@ -60,6 +61,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockInventoryComponent const&);
     // NOLINTEND
 
 public:

@@ -10,9 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
-class SemVersion;
 class Vec3;
 struct MobDescriptor;
 namespace JsonUtil { class EmptyClass; }
@@ -54,12 +52,6 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::PlayGoal& goal) const;
-        // NOLINTEND
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void buildSchema(
@@ -67,8 +59,6 @@ public:
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlayGoal::PlayDefinition>>&
                 root
         );
-
-        MCAPI static ::SemVersion getStrictParsingVersion();
         // NOLINTEND
 
     public:
@@ -123,18 +113,6 @@ public:
 
     // vIndex: 0
     virtual ~PlayGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

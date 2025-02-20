@@ -78,17 +78,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool addEntry(::AllowListEntry const& entry);
-
-    MCFOLD ::std::vector<::AllowListEntry> const& getEntries() const;
-
-    MCAPI bool isAllowed(::mce::UUID const& uuid, ::std::string const& xuid) const;
-
     MCAPI bool isIgnoringPlayerLimit(::mce::UUID const& uuid, ::std::string const& xuid) const;
 
-    MCAPI bool removeByName(::std::string const& name);
-
-    MCAPI void tryUpdateEntries(::mce::UUID const& uuid, ::std::string const& xuid, ::std::string const& name);
+    MCAPI void tryUpdateEntries(::mce::UUID const& xuid, ::std::string const& name, ::std::string const& uuid);
     // NOLINTEND
 
 public:

@@ -72,10 +72,6 @@ public:
     addPreloadedPath(::Core::Path const& path, ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> archiveReader);
 
     MCAPI ::Bedrock::Resources::PreloadedPathHandle findPreloadedPath(::Core::Path const& path) const;
-
-    MCAPI ::Bedrock::Resources::PreloadState getAsset(::Core::Path const& path, ::std::string& contents) const;
-
-    MCAPI ::Bedrock::Resources::PreloadState hasAsset(::Core::Path const& path) const;
     // NOLINTEND
 
 public:
@@ -86,8 +82,6 @@ public:
         ::Core::Path const&                                 path,
         ::Bedrock::Resources::Archive::Reader*              reader
     );
-
-    MCAPI static ::std::shared_ptr<::Bedrock::Resources::PreloadCache> create();
     // NOLINTEND
 
 public:

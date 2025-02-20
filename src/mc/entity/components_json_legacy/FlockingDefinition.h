@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class FlockingComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -40,14 +38,7 @@ public:
     // prevent constructor by default
     FlockingDefinition& operator=(FlockingDefinition const&);
     FlockingDefinition(FlockingDefinition const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FlockingDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::FlockingComponent& component) const;
-    // NOLINTEND
+    FlockingDefinition();
 
 public:
     // static functions
@@ -55,11 +46,5 @@ public:
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FlockingDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

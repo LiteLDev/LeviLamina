@@ -37,19 +37,19 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual bool isTargetable() const /*override*/;
 
-    // vIndex: 177
+    // vIndex: 172
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
@@ -64,12 +64,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI int getCountdown() const;
-
-    MCAPI bool interactWithPlayer(::Player& player);
-
-    MCAPI bool isActivated() const;
 
     MCAPI void startTakingPicture(::Player& player);
     // NOLINTEND

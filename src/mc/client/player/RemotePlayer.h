@@ -47,65 +47,65 @@ public:
     // vIndex: 0
     virtual ~RemotePlayer() /*override*/ = default;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual void prepareRegion(::ChunkSource& mainChunkSource) /*override*/;
 
-    // vIndex: 183
+    // vIndex: 178
     virtual void destroyRegion() /*override*/;
 
-    // vIndex: 184
+    // vIndex: 179
     virtual void suspendRegion() /*override*/;
 
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep() /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 187
+    // vIndex: 182
     virtual void tickWorld(::Tick const&) /*override*/;
 
-    // vIndex: 188
+    // vIndex: 183
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
-    // vIndex: 225
+    // vIndex: 220
     virtual void setContainerData(::IContainerManager&, int, int) /*override*/;
 
-    // vIndex: 226
+    // vIndex: 221
     virtual void
     slotChanged(::IContainerManager&, ::Container&, int, ::ItemStack const&, ::ItemStack const&, bool) /*override*/;
 
-    // vIndex: 227
+    // vIndex: 222
     virtual void refreshContainer(::IContainerManager&) /*override*/;
 
-    // vIndex: 219
+    // vIndex: 214
     virtual void initHUDContainerManager() /*override*/;
 
-    // vIndex: 230
+    // vIndex: 225
     virtual bool isTeacher() const /*override*/;
 
-    // vIndex: 214
+    // vIndex: 209
     virtual void playEmote(::std::string const&, bool const) /*override*/;
 
-    // vIndex: 233
+    // vIndex: 228
     virtual void sendInventoryTransaction(::InventoryTransaction const&) const /*override*/;
 
-    // vIndex: 70
+    // vIndex: 68
     virtual void feed(int itemId) /*override*/;
 
-    // vIndex: 234
+    // vIndex: 229
     virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction>) const /*override*/;
 
-    // vIndex: 236
+    // vIndex: 231
     virtual ::PlayerEventCoordinator& getPlayerEventCoordinator() /*override*/;
 
-    // vIndex: 245
+    // vIndex: 240
     virtual ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> getEditorPlayer() const /*override*/;
 
-    // vIndex: 246
+    // vIndex: 241
     virtual void destroyEditorPlayer() /*override*/;
 
-    // vIndex: 242
+    // vIndex: 237
     virtual void onMovePlayerPacketNormal(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot) /*override*/;
 
     // vIndex: 1

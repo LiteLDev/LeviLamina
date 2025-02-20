@@ -53,18 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SculkSensorVibrationConfig(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

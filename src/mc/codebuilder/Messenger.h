@@ -35,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Messenger() /*override*/;
+    virtual ~Messenger() /*override*/ = default;
 
     // vIndex: 1
     virtual void
@@ -188,21 +188,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Messenger(::Bedrock::NonOwnerPointer<::CodeBuilder::IClient> codeBuilderClient);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::CodeBuilder::IClient> codeBuilderClient);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

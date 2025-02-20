@@ -150,24 +150,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerAuthInputPacket();
-
     MCAPI PlayerAuthInputPacket(::PlayerAuthInputPacket&&);
-
-    MCAPI bool getInput(::PlayerAuthInputPacket::InputData point) const;
 
     MCAPI ::PlayerAuthInputPacket& operator=(::PlayerAuthInputPacket&&);
 
     MCAPI ::PlayerActionComponent readIntoComponent() const;
-
-    MCAPI ::PlayerAuthInputPacket takeCopy() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::PlayerAuthInputPacket&&);
     // NOLINTEND
 

@@ -8,10 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockLegacy;
-class BlockPos;
-class BlockSource;
-class LodestoneBlockActor;
-class Material;
 // clang-format on
 
 class LodestoneBlock : public ::ActorBlock {
@@ -20,24 +16,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~LodestoneBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LodestoneBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::LodestoneBlockActor* getBlockActor(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/spawn_category/Type.h"
 #include "mc/world/level/SpawnBlockRequirements.h"
 #include "mc/world/level/chunk/LevelChunk.h"
 #include "mc/world/level/material/MaterialType.h"
@@ -11,14 +12,14 @@
 // clang-format off
 class Actor;
 class ActorSpawnRuleGroup;
+class Biome;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
-class Experiments;
+class IRandom;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
-class Level;
 class LevelChunk;
 class LevelChunkVolumeData;
 class Mob;
@@ -32,6 +33,7 @@ struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct SpawnSettings;
 namespace br::spawn { class EntityTypeCache; }
+namespace br::spawn { struct State; }
 // clang-format on
 
 class Spawner {
@@ -79,15 +81,28 @@ public:
     virtual ::br::spawn::EntityTypeCache* getEntityTypeCache() const = 0;
 
     // vIndex: 8
-    virtual ::Mob*
-    spawnMob(::BlockSource&, ::ActorDefinitionIdentifier const&, ::Actor*, ::Vec3 const&, bool, bool, bool) = 0;
+    virtual ::Mob* spawnMob(
+        ::BlockSource&                     region,
+        ::ActorDefinitionIdentifier const& id,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      pos,
+        bool                               naturalSpawn,
+        bool                               surface,
+        bool                               fromSpawner
+    );
 
     // vIndex: 9
-    virtual ::ItemActor* spawnItem(::BlockSource&, ::ItemStack const&, ::Actor*, ::Vec3 const&, int) = 0;
+    virtual ::ItemActor*
+    spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
     // vIndex: 10
-    virtual ::Actor*
-    spawnProjectile(::BlockSource&, ::ActorDefinitionIdentifier const&, ::Actor*, ::Vec3 const&, ::Vec3 const&) = 0;
+    virtual ::Actor* spawnProjectile(
+        ::BlockSource&                     region,
+        ::ActorDefinitionIdentifier const& id,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      position,
+        ::Vec3 const&                      direction
+    );
 
     // vIndex: 11
     virtual void postProcessSpawnMobs(::BlockSource&, int, int, ::Random&) = 0;
@@ -107,6 +122,18 @@ public:
     // vIndex: 16
     virtual ::std::unordered_set<::ActorUniqueID>
     spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) = 0;
+
+    // vIndex: 17
+    virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
+    filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
+
+    // vIndex: 18
+    virtual void
+    spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
+        const;
+
+    // vIndex: 19
+    virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
     // NOLINTEND
 
 public:
@@ -118,8 +145,6 @@ public:
         ::std::optional<::MaterialType> materialToSpawnIn,
         ::SpawnBlockRequirements        spawnBlockRequirements
     );
-
-    MCAPI static ::std::unique_ptr<::Spawner> from(::Level& level, ::Experiments const&);
 
     MCAPI static bool isSpawnPositionOk(
         ::MobSpawnRules const& rules,
@@ -138,7 +163,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::Mob* $spawnMob(
+        ::BlockSource&                     region,
+        ::ActorDefinitionIdentifier const& id,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      pos,
+        bool                               naturalSpawn,
+        bool                               surface,
+        bool                               fromSpawner
+    );
 
+    MCAPI ::ItemActor*
+    $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
+
+    MCAPI ::Actor* $spawnProjectile(
+        ::BlockSource&                     region,
+        ::ActorDefinitionIdentifier const& id,
+        ::Actor*                           spawner,
+        ::Vec3 const&                      position,
+        ::Vec3 const&                      direction
+    );
+
+    MCAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
+    $filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
+
+    MCFOLD void
+    $spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&)
+        const;
+
+    MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
     // NOLINTEND
 
 public:

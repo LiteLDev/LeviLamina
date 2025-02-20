@@ -23,28 +23,11 @@ public:
     // prevent constructor by default
     TickWorldComponent& operator=(TickWorldComponent const&);
     TickWorldComponent(TickWorldComponent const&);
+    TickWorldComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TickWorldComponent();
-
-    MCAPI TickWorldComponent(::TickWorldComponent&& other);
-
-    MCFOLD uint getChunkRadius() const;
-
-    MCFOLD float getMaxDistToPlayers() const;
-
-    MCAPI ::std::shared_ptr<::ITickingArea> getTickingArea();
-
-    MCAPI bool hasTickingArea() const;
-
-    MCAPI void initFromDefinition(::Actor& owner);
-
-    MCFOLD bool isAlwaysActive() const;
-
-    MCAPI ::TickWorldComponent& operator=(::TickWorldComponent&& other);
-
     MCAPI void removeArea();
 
     MCAPI void setTickingArea(::Actor& owner, ::std::shared_ptr<::ITickingArea> tickingArea);
@@ -52,14 +35,6 @@ public:
     MCAPI void updateArea(::Actor& owner);
 
     MCAPI ~TickWorldComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::TickWorldComponent&& other);
     // NOLINTEND
 
 public:

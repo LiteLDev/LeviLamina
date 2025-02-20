@@ -4,16 +4,38 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 class SemVersion;
 // clang-format on
 
 class IFeature {
+public:
+    // IFeature inner types declare
+    // clang-format off
+    struct PlacementContext;
+    // clang-format on
+
+    // IFeature inner types define
+    struct PlacementContext {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk82d3a6;
+        ::ll::UntypedStorage<4, 12> mUnke9f615;
+        ::ll::UntypedStorage<8, 8>  mUnk7c4004;
+        ::ll::UntypedStorage<8, 8>  mUnk7b914f;
+        ::ll::UntypedStorage<8, 8>  mUnk45ed6b;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlacementContext& operator=(PlacementContext const&);
+        PlacementContext(PlacementContext const&);
+        PlacementContext();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,33 +50,13 @@ public:
     virtual ~IFeature();
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI&, ::BlockPos const&, ::Random&, ::RenderParams&) const = 0;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const&) const = 0;
 
     // vIndex: 2
     virtual bool isValidPlacement(::std::string const& pass);
 
     // vIndex: 3
     virtual void upgradeFormat(::SemVersion const&);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isAllowedToPlaceFeature(::IFeature const& feature) const;
-
-    MCFOLD bool isInternal() const;
-
-    MCAPI bool operator==(::IFeature const& other) const;
-
-    MCAPI bool
-    setBlockSafe(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int updateFlags) const;
-
-    MCAPI bool setBlockSafeSimple(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCFOLD void setCanUseInternalFeature(bool canUseInternalFeature);
-
-    MCFOLD void setIsInternal(bool isInternal);
     // NOLINTEND
 
 public:

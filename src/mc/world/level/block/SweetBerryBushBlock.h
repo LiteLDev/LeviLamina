@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
@@ -45,7 +44,7 @@ public:
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 138
@@ -56,12 +55,6 @@ public:
 
     // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
-
-    // vIndex: 144
-    virtual ::BlockRenderLayer getRenderLayer() const /*override*/;
-
-    // vIndex: 143
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const /*override*/;
 
     // vIndex: 5
     virtual ::AABB
@@ -155,10 +148,6 @@ public:
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 
     MCAPI int $getVariant(::Block const& block) const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer() const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const;
 
     MCFOLD ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)

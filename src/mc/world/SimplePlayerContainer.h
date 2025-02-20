@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerType.h"
 #include "mc/world/SimpleContainer.h"
 
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
-class Player;
 // clang-format on
 
 class SimplePlayerContainer : public ::SimpleContainer {
@@ -35,26 +33,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SimplePlayerContainer(
-        ::Player&            player,
-        ::std::string const& name,
-        bool                 customName,
-        int                  size,
-        ::ContainerType      containerType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Player& player, ::std::string const& name, bool customName, int size, ::ContainerType containerType);
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
     // NOLINTEND
 
 public:
@@ -68,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
     // NOLINTEND
 
 public:

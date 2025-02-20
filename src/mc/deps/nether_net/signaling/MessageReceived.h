@@ -18,18 +18,6 @@ public:
     MessageReceived& operator=(MessageReceived const&);
     MessageReceived(MessageReceived const&);
     MessageReceived();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~MessageReceived();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace NetherNet::SignalingEvents

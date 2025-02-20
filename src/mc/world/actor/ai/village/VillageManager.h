@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockLegacy;
 class BlockPos;
@@ -18,7 +17,6 @@ class HashedString;
 class ILevelStorageManagerConnector;
 class LevelStorage;
 class POIInstance;
-class Vec3;
 class Village;
 class WanderingTraderScheduler;
 struct ActorUniqueID;
@@ -57,18 +55,6 @@ public:
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Village>> village;
         ::ll::TypedStorage<1, 1, bool>                          positionIsWithinVillageBounds;
         ::ll::TypedStorage<4, 4, float>                         distanceToClosestEdgeOfVillage;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~VillageInfo();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -146,6 +132,8 @@ public:
 
     MCAPI void _loadPOIBlueprints();
 
+    MCAPI void _processNextUnclusteredPOIQuery();
+
     MCAPI void _removeEligibleVillages();
 
     MCAPI void _removeVillage(::Village& village);
@@ -168,6 +156,8 @@ public:
 
     MCAPI ::HashedString getPOIInitEventFromName(::HashedString const& name) const;
 
+    MCAPI ::HashedString const& getPOINameFromBlueprint(::Block const& block) const;
+
     MCAPI bool hasPOI(::BlockPos const& position, ::POIType type) const;
 
     MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
@@ -177,17 +167,7 @@ public:
 
     MCAPI bool isValidPOIType(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool isWanderingTraderManagedByScheduler(::Actor const& actor);
-
-    MCAPI void loadAllVillages();
-
     MCAPI void removePOI(::std::weak_ptr<::POIInstance> poi);
-
-    MCAPI void submitFindPOIQuery(::ActorUniqueID const& actorID);
-
-    MCAPI void tick(::Tick const& tick);
-
-    MCAPI void tickVillages(::Tick const& tick, ::Vec3 const& position, ::BlockSource& region);
 
     MCAPI ::std::shared_ptr<::POIInstance> tryCreatePOI(::BlockPos const& position, ::Block const& block);
     // NOLINTEND
@@ -195,11 +175,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint64 const& MAX_POI_QUERIES();
-
     MCAPI static int const& MAX_POI_TOLERANCE_DIST();
-
-    MCAPI static int const& MAX_QUERY_SCAN_ITERATIONS();
 
     MCAPI static ::EffectDuration const& VILLAGE_HERO_EFFECT_DURATION();
     // NOLINTEND

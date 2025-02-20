@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class Player;
 // clang-format on
@@ -36,18 +35,6 @@ public:
 
     // vIndex: 0
     virtual ~BarrelBlockActor() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BarrelBlockActor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

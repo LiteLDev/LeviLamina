@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/PacketViolationResponse.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/network/packet/PacketViolationSeverity.h"
 #include "mc/network/packet/PacketViolationType.h"
@@ -49,26 +48,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PacketViolationWarningPacket();
-
-    MCAPI PacketViolationWarningPacket(
-        ::std::error_code const&  error_code,
-        ::PacketViolationResponse violationResponse,
-        ::MinecraftPacketIds      violatingPacketId,
-        ::std::string const&      violationContext
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::std::error_code const&  error_code,
-        ::PacketViolationResponse violationResponse,
-        ::MinecraftPacketIds      violatingPacketId,
-        ::std::string const&      violationContext
-    );
     // NOLINTEND
 
 public:

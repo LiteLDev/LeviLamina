@@ -48,11 +48,7 @@ public:
 
     MCAPI void _removeEntity(::EntityContext const& entity);
 
-    MCFOLD ::ActorRuntimeID getNextRuntimeID();
-
     MCAPI ::Actor* getRuntimeActorEntity(::ActorRuntimeID actorId, bool getRemoved) const;
-
-    MCAPI ::std::vector<::Actor*> getRuntimeActorList() const;
 
     MCAPI void initialize(::IActorManagerConnector& actorManagerConnector);
 

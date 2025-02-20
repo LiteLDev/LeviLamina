@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/FindCoverGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-// clang-format on
-
 class FleeSunGoal : public ::FindCoverGoal {
 public:
     // virtual functions
@@ -22,18 +17,6 @@ public:
 
     // vIndex: 0
     virtual ~FleeSunGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FleeSunGoal(::Mob& mob, float speed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed);
     // NOLINTEND
 
 public:

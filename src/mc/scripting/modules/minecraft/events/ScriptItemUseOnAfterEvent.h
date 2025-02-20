@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemUseOnEvent.h"
 
 // auto generated forward declare list
@@ -30,6 +30,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptItemUseOnAfterEvent& operator=(ScriptItemUseOnAfterEvent const&);
     ScriptItemUseOnAfterEvent(ScriptItemUseOnAfterEvent const&);
     ScriptItemUseOnAfterEvent();
 
@@ -44,12 +45,6 @@ public:
     );
 
     MCAPI ::Scripting::Result_deprecated<::BlockPos> getBlockLocation_V010() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
     // NOLINTEND
 
 public:

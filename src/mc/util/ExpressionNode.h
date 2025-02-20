@@ -15,7 +15,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ExperimentStorage;
-class Experiments;
 class HashedString;
 class IMolangInstruction;
 class MolangVariableMap;
@@ -26,7 +25,6 @@ struct MolangProgramBuildState;
 struct MolangQueryFunction;
 struct MolangScriptArg;
 namespace Json { class Value; }
-namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -40,7 +38,7 @@ public:
             bool
         )>;
 
-    using GetParticleColorFunc = ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>;
+    using GetParticleTintFunc = ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>;
 
 public:
     // member variables
@@ -68,15 +66,7 @@ public:
 
     MCAPI ExpressionNode(::ExpressionNode const& rhs);
 
-    MCAPI explicit ExpressionNode(float value);
-
     MCAPI ExpressionNode(::MolangScriptArg& value, ::ExpressionOp op);
-
-    MCAPI ExpressionNode(
-        ::std::string const&              expression,
-        ::MolangVersion                   molangVersion,
-        ::gsl::span<::HashedString const> querySetID
-    );
 
     MCAPI ExpressionNode(
         ::Json::Value const&              value,
@@ -93,8 +83,6 @@ public:
             ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*> const&
             allowedQueryPtrs
     ) const;
-
-    MCAPI void _logEvaluatedToNan() const;
 
     MCAPI bool _optimize(::MolangVersion version, ::RenderParams& outRenderParams, int recursionDepth);
 
@@ -133,8 +121,6 @@ public:
 
     MCAPI ::std::string const& getExpressionString();
 
-    MCFOLD ::MolangVersion const getMolangVersion() const;
-
     MCAPI uint64 getTreeHash(bool sideEffectsReturnZero) const;
 
     MCAPI bool getTreeString(::std::string& dest, bool sideEffectsReturnZero) const;
@@ -144,8 +130,6 @@ public:
     MCAPI bool hasMadd() const;
 
     MCAPI bool hasSideEffects(bool countRandomAsSideEffect) const;
-
-    MCAPI bool isInitialized() const;
 
     MCFOLD bool isValid() const;
 
@@ -209,9 +193,6 @@ public:
     );
 
     MCAPI static ::MolangScriptArg const*
-    _getReferencedMemberVariableScriptArg(::MolangEvalParams& state, ::ExpressionNode const& memberAccessorNode);
-
-    MCAPI static ::MolangScriptArg const*
     _getScriptArgFromMemberAccessedVariable(::MolangEvalParams& state, ::ExpressionNode const& memberAccessorNode);
 
     MCAPI static bool _initializeMolangQueries();
@@ -228,13 +209,9 @@ public:
         ::MolangScriptArg const& value
     );
 
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static void buildExpressionOpTable();
 
     MCAPI static float fast_atof_positiveOnly(char const*& ptr);
-
-    MCAPI static ::Experiments& getExperiments();
 
     MCAPI static char const* getOpFriendlyName(::ExpressionOp op);
 
@@ -258,8 +235,6 @@ public:
         ::std::initializer_list<int> const& experiments
     );
 
-    MCAPI static void setExperiments(::Experiments const& experiments);
-
     MCAPI static void
     unregisterQueryFunction(::std::string const& queryFunctionName, ::HashedString querySetIdentifier);
     // NOLINTEND
@@ -277,7 +252,7 @@ public:
     MCAPI static ::std::vector<::std::string>& mExpressionOpTokens();
 
     MCAPI static ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>&
-    mGetParticleColorFunc();
+    mGetParticleTintFunc();
 
     MCAPI static bool& mMolangInitialized();
 
@@ -295,12 +270,7 @@ public:
 
     MCAPI void* $ctor(::ExpressionNode const& rhs);
 
-    MCAPI void* $ctor(float value);
-
     MCAPI void* $ctor(::MolangScriptArg& value, ::ExpressionOp op);
-
-    MCAPI void*
-    $ctor(::std::string const& expression, ::MolangVersion molangVersion, ::gsl::span<::HashedString const> querySetID);
 
     MCAPI void*
     $ctor(::Json::Value const& value, ::MolangVersion molangVersion, ::gsl::span<::HashedString const> querySetID);

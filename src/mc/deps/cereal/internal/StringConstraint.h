@@ -17,20 +17,13 @@ public:
 public:
     // prevent constructor by default
     StringConstraint& operator=(StringConstraint const&);
+    StringConstraint(StringConstraint const&);
     StringConstraint();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StringConstraint(::cereal::internal::StringConstraint const&);
-
     MCAPI ~StringConstraint();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::internal::StringConstraint const&);
     // NOLINTEND
 
 public:

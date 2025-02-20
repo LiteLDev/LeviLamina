@@ -47,8 +47,6 @@ public:
     // NOLINTBEGIN
     MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier const&);
 
-    MCAPI explicit Modifier(::br::worldgen::processors::BlockEntity::Passthrough);
-
     MCAPI Modifier(::br::worldgen::processors::BlockEntity::Modifier&&);
     // NOLINTEND
 
@@ -56,8 +54,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier const&);
-
-    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Passthrough);
 
     MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::Modifier&&);
     // NOLINTEND

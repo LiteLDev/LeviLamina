@@ -53,26 +53,13 @@ public:
 public:
     // prevent constructor by default
     ShooterItemComponent& operator=(ShooterItemComponent const&);
+    ShooterItemComponent(ShooterItemComponent const&);
     ShooterItemComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const&);
-
-    MCAPI ::SharedTypes::v1_20_50::ShooterItemComponent& operator=(::SharedTypes::v1_20_50::ShooterItemComponent&&);
-    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const&);
     // NOLINTEND
 };
 

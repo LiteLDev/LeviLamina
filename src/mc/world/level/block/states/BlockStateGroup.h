@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
 class BlockState;
 class BlockStateMeta;
 struct BlockStateDefinition;
@@ -35,13 +34,9 @@ public:
 
     MCAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
 
-    MCAPI ::BlockStateMeta const* getBlockStateFromName(::std::string const& name) const;
-
     MCAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
 
     MCAPI void registerExistingBlockState(::BlockState const& state);
-
-    MCAPI void registerToBlock(::BlockLegacy& block);
     // NOLINTEND
 
 public:

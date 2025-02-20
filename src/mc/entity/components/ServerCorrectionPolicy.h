@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/entity/components/IReplayStatePolicy.h"
-#include "mc/input/AdvanceFrameResult.h"
+#include "mc/entity/utilities/AdvanceFrameResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk2554b0;
     ::ll::UntypedStorage<8, 16> mUnk2fab45;
-    ::ll::UntypedStorage<4, 24> mUnk93eaea;
+    ::ll::UntypedStorage<4, 20> mUnk93eaea;
     // NOLINTEND
 
 public:
@@ -32,22 +32,23 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual ::MovementCorrection
-    shouldCorrectMovement(::EntityContext& entity, ::PlayerAuthInputPacket const& packet, uint64 frame) /*override*/;
+    virtual ::MovementCorrection shouldCorrectMovement(
+        ::EntityContext&               entity,
+        ::PlayerAuthInputPacket const& packet,
+        uint64                         frame,
+        uchar const                    currentCounter
+    ) /*override*/;
 
     // vIndex: 2
-    virtual bool canRewindToFrame(::EntityContext const&, uint64) /*override*/;
+    virtual bool canRewind(::EntityContext const&) /*override*/;
 
     // vIndex: 1
     virtual bool isReplayNeeded(::AdvanceFrameResult) const /*override*/;
 
     // vIndex: 4
-    virtual void flagUnsupportedMovement(uint64) /*override*/;
+    virtual bool validateFrameSupport(::EntityContext&) /*override*/;
 
     // vIndex: 5
-    virtual void storeCurrentFrameSupported(uint64, ::EntityContext&) /*override*/;
-
-    // vIndex: 6
     virtual void notifyOfExternalCorrection(uint64 frame) /*override*/;
 
     // vIndex: 0
@@ -63,16 +64,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MovementCorrection
-    $shouldCorrectMovement(::EntityContext& entity, ::PlayerAuthInputPacket const& packet, uint64 frame);
+    MCAPI ::MovementCorrection $shouldCorrectMovement(
+        ::EntityContext&               entity,
+        ::PlayerAuthInputPacket const& packet,
+        uint64                         frame,
+        uchar const                    currentCounter
+    );
 
-    MCFOLD bool $canRewindToFrame(::EntityContext const&, uint64);
+    MCFOLD bool $canRewind(::EntityContext const&);
 
     MCFOLD bool $isReplayNeeded(::AdvanceFrameResult) const;
 
-    MCFOLD void $flagUnsupportedMovement(uint64);
-
-    MCFOLD void $storeCurrentFrameSupported(uint64, ::EntityContext&);
+    MCFOLD bool $validateFrameSupport(::EntityContext&);
 
     MCAPI void $notifyOfExternalCorrection(uint64 frame);
     // NOLINTEND

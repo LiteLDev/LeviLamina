@@ -18,9 +18,9 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SmallDripleafBlock : public ::BushBlock {
@@ -67,8 +67,8 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 150
+    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     // vIndex: 31
     virtual bool isLavaBlocking() const /*override*/;
@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SmallDripleafBlock(::std::string const& nameId, int id);
+    MCAPI bool _isViablePlacePos(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
@@ -95,12 +95,6 @@ public:
 
     MCAPI static bool
     tryPlaceSmallDripleaf(::BlockSource& region, ::BlockPos const& pos, int directionState, int updateFlags);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -138,7 +132,7 @@ public:
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD bool $isLavaBlocking() const;
 

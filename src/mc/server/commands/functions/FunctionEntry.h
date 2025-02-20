@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/functions/FunctionQueueOrder.h"
-#include "mc/server/commands/functions/FunctionState.h"
 #include "mc/server/commands/functions/IFunctionEntry.h"
 
 // auto generated forward declare list
@@ -36,12 +35,6 @@ public:
     // vIndex: 1
     virtual void
     execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::FunctionState getErrorState() const;
     // NOLINTEND
 
 public:

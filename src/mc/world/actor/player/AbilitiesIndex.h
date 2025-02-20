@@ -23,5 +23,6 @@ enum class AbilitiesIndex : schar {
     WorldBuilder      = 16,
     NoClip            = 17,
     PrivilegedBuilder = 18,
-    AbilityCount      = 19,
+    VerticalFlySpeed  = 19,
+    AbilityCount      = 20,
 };

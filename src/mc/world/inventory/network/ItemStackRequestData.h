@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/platform/Result.h"
-#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 
 // auto generated forward declare list
@@ -29,22 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestAction const* tryFindAction(::ItemStackRequestActionType type) const;
-
     MCAPI void write(::BinaryStream& stream) const;
-
-    MCAPI ~ItemStackRequestData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestData>> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

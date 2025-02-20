@@ -61,27 +61,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CameraAimAssistPacket(::CameraAimAssistPacket::Action action);
-
-    MCAPI CameraAimAssistPacket(
-        ::std::string                       presetId,
-        ::Vec2 const&                       viewAngle,
-        float                               distance,
-        ::CameraAimAssistPacket::TargetMode targetMode
-    );
+    MCAPI CameraAimAssistPacket();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CameraAimAssistPacket::Action action);
-
-    MCAPI void* $ctor(
-        ::std::string                       presetId,
-        ::Vec2 const&                       viewAngle,
-        float                               distance,
-        ::CameraAimAssistPacket::TargetMode targetMode
-    );
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

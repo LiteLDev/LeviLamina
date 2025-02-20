@@ -7,14 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CompoundTag;
-class DataItem;
 class EntityContext;
-class SynchedActorData;
-class SynchedActorDataReader;
 class SynchedActorDataWriter;
-class Vec3;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
 struct SynchedActorDataComponent;
@@ -35,13 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);
 
-    MCAPI ::gsl::not_null<::SynchedActorData const*> _get() const;
-
-    MCFOLD ::gsl::not_null<::SynchedActorData*> _get();
-
     MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
-
-    MCAPI float getFloat(ushort id) const;
 
     MCAPI int getInt(ushort id) const;
 
@@ -49,25 +38,7 @@ public:
 
     MCAPI schar getInt8(ushort id) const;
 
-    MCFOLD ::BlockPos getPosition(ushort id) const;
-
-    MCAPI short getShort(ushort id) const;
-
-    MCAPI ::std::string const& getString(ushort id) const;
-
-    MCAPI ::Vec3 getVec3(ushort id) const;
-
     MCAPI bool hasData(ushort id) const;
-
-    MCAPI bool isDirty() const;
-
-    MCAPI void markDirty(ushort id);
-
-    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll() const;
-
-    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty();
-
-    MCFOLD ::SynchedActorDataReader reader() const;
 
     MCAPI ::SynchedActorDataWriter writer();
 

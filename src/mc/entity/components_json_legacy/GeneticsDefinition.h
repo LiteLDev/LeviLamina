@@ -25,12 +25,11 @@ public:
     // prevent constructor by default
     GeneticsDefinition& operator=(GeneticsDefinition const&);
     GeneticsDefinition(GeneticsDefinition const&);
+    GeneticsDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeneticsDefinition();
-
     MCAPI void addGeneDefinition(::GeneDefinition const& geneDefinition);
 
     MCAPI void initialize(::EntityContext& entity, ::GeneticsComponent& component) const;
@@ -42,17 +41,5 @@ public:
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_MUTATION_RATE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

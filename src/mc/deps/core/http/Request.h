@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class Response; }
-namespace Bedrock::Http { struct Method; }
 // clang-format on
 
 namespace Bedrock::Http {
@@ -35,13 +33,11 @@ public:
 
     MCAPI Request(::Bedrock::Http::Request const&);
 
+    MCAPI ::std::error_code _validate() const;
+
     MCAPI ::Bedrock::Http::Request& operator=(::Bedrock::Http::Request const&);
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> send();
-
-    MCAPI void setHeaders(::Bedrock::Http::HeaderCollection const& headers);
-
-    MCAPI void setMethod(::Bedrock::Http::Method method);
 
     MCAPI ~Request();
     // NOLINTEND

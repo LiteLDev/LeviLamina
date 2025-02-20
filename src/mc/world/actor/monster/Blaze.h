@@ -8,10 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
 class IConstBlockSource;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Blaze : public ::Monster {
@@ -34,16 +31,16 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep() /*override*/;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual bool isOnFire() const /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 24
@@ -51,28 +48,6 @@ public:
 
     // vIndex: 8
     virtual ~Blaze() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Blaze(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
-    MCAPI void preTravel();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

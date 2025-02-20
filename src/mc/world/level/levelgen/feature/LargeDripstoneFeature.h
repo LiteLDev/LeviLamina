@@ -10,7 +10,6 @@
 class BlockPos;
 class IBlockWorldGenAPI;
 class Random;
-class RenderParams;
 namespace DripstoneUtils { class WindOffsetter; }
 // clang-format on
 
@@ -56,8 +55,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
     // vIndex: 0
     virtual ~LargeDripstoneFeature() /*override*/ = default;
@@ -72,8 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/CommandPermissionLevel.h"
+
 // auto generated forward declare list
 // clang-format off
 struct AgentCapabilities;
@@ -15,7 +18,8 @@ public:
     // EducationLevelSettings inner types define
     using HiddenCommands = ::std::string;
 
-    using CommandOverrideFunctor = ::std::function<void(::CommandFlag&, ::std::string const&)>;
+    using CommandOverrideFunctor =
+        ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>;
 
 public:
     // member variables
@@ -35,9 +39,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EducationLevelSettings();
+
     MCAPI EducationLevelSettings(::EducationLevelSettings const&);
 
-    MCAPI ::std::function<void(::CommandFlag&, ::std::string const&)> getCommandOverrideFunctor() const;
+    MCAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
+    getCommandOverrideFunctor() const;
 
     MCAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
 
@@ -53,6 +60,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::EducationLevelSettings const&);
     // NOLINTEND
 

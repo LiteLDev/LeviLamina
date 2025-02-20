@@ -49,8 +49,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnParticleEffectPacket();
-
     MCAPI SpawnParticleEffectPacket(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,
@@ -62,8 +60,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(
         ::Vec3 const&                        pos,
         ::std::string const&                 name,

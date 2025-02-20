@@ -48,15 +48,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageAreaStateListener();
-
     MCAPI void initListener(::std::shared_ptr<::Core::FileStorageArea> fileStorageArea);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void removeListener();
     // NOLINTEND
 
 public:

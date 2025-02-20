@@ -40,8 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JournaledFile(::std::function<::Core::Result(::Core::Path)>&& validationCallback);
-
     MCAPI void _flushFiles();
 
     MCAPI ::Core::Result close();
@@ -66,12 +64,6 @@ public:
     MCAPI static void populateImportantFiles(::Core::Path fileName, ::std::vector<::std::string>& importantFiles);
 
     MCAPI static ::Core::Result replaceHeadFileWithBackup(::Core::Path fileName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<::Core::Result(::Core::Path)>&& validationCallback);
     // NOLINTEND
 
 public:

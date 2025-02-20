@@ -84,7 +84,7 @@ public:
 
     MCAPI void _attemptMoveToTargetPosition(::Actor& target, bool canReachTarget, float targetDistanceSq);
 
-    MCAPI float _getTargetDistanceSqXZ(::Actor const& target) const;
+    MCAPI bool _inSunlight(::Actor const& actor) const;
     // NOLINTEND
 
 public:
@@ -106,7 +106,7 @@ public:
 
     MCAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCFOLD void $start();
 
     MCAPI void $stop();
 

@@ -43,8 +43,6 @@ MCAPI void _tickAddLocalPlayerEntityMovedSystemAsynchronous1(
         ::ActorSetPositionRequestComponent> modifier
 );
 
-MCAPI void _tickAddLocalPlayerEntityMovedSystemSynchronous1(::ActorOwnerComponent const& actorOwnerComponent);
-
 MCAPI void _tickChunkMoveNeededSystemAsynchronous4(
     ::StrictEntityContext&          context,
     ::ChunkPositionComponent const& chunkPositionComponent,

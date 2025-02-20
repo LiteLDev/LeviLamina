@@ -18,20 +18,4 @@ public:
     ::ll::TypedStorage<8, 8, ::Tick>         tick;
     ::ll::TypedStorage<4, 4, int>            priorityOffset;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TickNextTickData(::BlockPos const& pos, ::Block const& block, ::Tick const& tick, int pOffset);
-
-    MCAPI bool operator==(::TickNextTickData const& t) const;
-
-    MCAPI bool operator>(::TickNextTickData const& tnd) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::Block const& block, ::Tick const& tick, int pOffset);
-    // NOLINTEND
 };

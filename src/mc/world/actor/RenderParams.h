@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/minecraft_renderer/game/ShadowContext.h"
-#include "mc/deps/shared_types/FilterSubject.h"
+#include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/world/actor/animation/AttachableSlotIndex.h"
 #include "mc/world/response/ResponseParameterContext.h"
 
@@ -90,39 +90,35 @@ public:
     // NOLINTBEGIN
     MCAPI RenderParams();
 
+    MCAPI RenderParams(::RenderParams&&);
+
     MCAPI RenderParams(::RenderParams const&);
 
     MCAPI ::Actor* getActorTarget(::SharedTypes::Legacy::FilterSubject subject) const;
 
     MCAPI ::RenderParams& init(
-        ::BaseActorRenderContext*            baseActorRenderContext,
-        ::Actor*                             actor,
-        ::AnimationComponent*                animationComponent,
-        ::MolangVariableMap*                 variableMap,
-        ::std::shared_ptr<::DataDrivenModel> model,
-        float                                frameAlpha,
-        float                                modelScale
+        ::BaseActorRenderContext*            actor,
+        ::Actor*                             animationComponent,
+        ::AnimationComponent*                variableMap,
+        ::MolangVariableMap*                 model,
+        ::std::shared_ptr<::DataDrivenModel> modelScale,
+        float                                baseActorRenderContext,
+        float                                frameAlpha
     );
 
     MCAPI ::RenderParams& operator=(::RenderParams const&);
 
     MCAPI ::RenderParams& operator=(::RenderParams&&);
 
-    MCAPI float& operator[](uint64 i);
-
     MCAPI ~RenderParams();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static ::RenderParams& getRenderParams(::Actor& actor);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::RenderParams&&);
 
     MCAPI void* $ctor(::RenderParams const&);
     // NOLINTEND

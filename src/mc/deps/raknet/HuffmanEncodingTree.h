@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/data_structures/LinkedList.h"
-
-// auto generated forward declare list
-// clang-format off
-struct HuffmanEncodingTreeNode;
-// clang-format on
-
 namespace RakNet {
 
 class HuffmanEncodingTree {
@@ -46,6 +38,7 @@ public:
     // prevent constructor by default
     HuffmanEncodingTree& operator=(HuffmanEncodingTree const&);
     HuffmanEncodingTree(HuffmanEncodingTree const&);
+    HuffmanEncodingTree();
 
 public:
     // member functions
@@ -53,27 +46,6 @@ public:
     MCAPI void FreeMemory();
 
     MCAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
-
-    MCAPI HuffmanEncodingTree();
-
-    MCAPI void InsertNodeIntoSortedList(
-        ::HuffmanEncodingTreeNode*                                node,
-        ::DataStructures::LinkedList<::HuffmanEncodingTreeNode*>* huffmanEncodingTreeNodeList
-    ) const;
-
-    MCAPI ~HuffmanEncodingTree();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

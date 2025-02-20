@@ -54,49 +54,23 @@ public:
     virtual int getRandomEatingEnd() const;
 
     // vIndex: 0
-    virtual ~SnackGoal() /*override*/ = default;
+    virtual ~SnackGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    SnackGoal(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
-
     MCAPI bool _hasSnackableItems();
 
-    MCAPI void _updateHand(::ItemStack const& item);
-    // NOLINTEND
+    MCAPI bool _isSnackableItem(::ItemStack const& item) const;
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& CHEW_CHANCE();
-
-    MCAPI static int const& EATING_TIME();
-
-    MCAPI static float const& PATH_RANGE();
-
-    MCAPI static int const& RANDOM_EATING_END();
-
-    MCAPI static int const& RANDOM_EATING_START();
-
-    MCAPI static float const& SEARCH_SIZE();
-
-    MCAPI static float const& STOP_DIST_SQRD();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, ::std::vector<::ItemDescriptor> const& itemList, float cooldown, float min, float stopChance);
+    MCFOLD void _updateHand(::ItemStack const& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

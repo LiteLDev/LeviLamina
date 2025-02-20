@@ -8,9 +8,8 @@ struct PlayerTickResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7c089f;
+    ::ll::UntypedStorage<8, 8> mUnk758b71;
     ::ll::UntypedStorage<1, 1> mUnk3753b7;
-    ::ll::UntypedStorage<8, 8> mUnk9e7f12;
     // NOLINTEND
 
 public:

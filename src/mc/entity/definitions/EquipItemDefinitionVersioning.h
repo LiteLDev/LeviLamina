@@ -11,7 +11,7 @@ class Level;
 namespace EquipItemDefinitionVersioning {
 // functions
 // NOLINTBEGIN
-MCAPI bool isSupported(::Level const& level, ::BaseGameVersion version);
+MCFOLD bool isSupported(::Level const& level, ::BaseGameVersion version);
 // NOLINTEND
 
 // static variables

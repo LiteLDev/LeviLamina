@@ -34,17 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerScoreboardEventListener();
-
     MCAPI ::SubscribedObjectives& getPlayerSubscriptions(::ScoreboardId const& id, ::Player const& player);
-
-    MCAPI void removePlayerSubscriptions(::ScoreboardId const& id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

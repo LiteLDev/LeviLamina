@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -13,6 +13,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 2> mUnk91ce25;
     ::ll::UntypedStorage<1, 2> mUnk55c309;
+    ::ll::UntypedStorage<1, 2> mUnke320d7;
     // NOLINTEND
 
 public:

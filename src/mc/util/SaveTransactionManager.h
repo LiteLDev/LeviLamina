@@ -45,10 +45,6 @@ public:
     MCAPI void _hideGlobalSaveIcon();
 
     MCAPI void _showGlobalSaveIcon();
-
-    MCAPI void onBeginCompaction();
-
-    MCAPI void onEndCompaction();
     // NOLINTEND
 
 public:

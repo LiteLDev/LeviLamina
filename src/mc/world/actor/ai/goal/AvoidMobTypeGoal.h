@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -68,29 +68,23 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~AvoidMobTypeGoal() /*override*/ = default;
+    virtual ~AvoidMobTypeGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AvoidMobTypeGoal(::Mob& mob);
-
     MCAPI bool canFindAvoidPath(::Actor* actor);
+
+    MCAPI bool canFindAvoidPos(::Actor& entity);
 
     MCAPI ::Actor* findNearestEntityToAvoid(float dist);
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -8,9 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class GrowingPlantFeature : public ::IFeature {
@@ -79,6 +76,7 @@ public:
     // prevent constructor by default
     GrowingPlantFeature& operator=(GrowingPlantFeature const&);
     GrowingPlantFeature(GrowingPlantFeature const&);
+    GrowingPlantFeature();
 
 public:
     // virtual functions
@@ -87,21 +85,7 @@ public:
     virtual ~GrowingPlantFeature() /*override*/;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GrowingPlantFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
@@ -113,8 +97,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

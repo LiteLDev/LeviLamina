@@ -77,6 +77,8 @@ public:
 
     MCAPI void
     registerWithPlayerDimensionTransferConnector(::IPlayerDimensionTransferConnector& playerDimensionTransferConnector);
+
+    MCAPI void tickCheckToWakeUpPlayers();
     // NOLINTEND
 
 public:

@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+struct LegacyOnCompleteTriggerItemComponentData;
+// clang-format on
+
 class LegacyOnCompleteTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
@@ -27,6 +33,24 @@ public:
 
     // vIndex: 0
     virtual ~LegacyOnCompleteTriggerItemComponent() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LegacyOnCompleteTriggerItemComponent(::LegacyOnCompleteTriggerItemComponentData&& componentData);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::LegacyOnCompleteTriggerItemComponentData&& componentData);
     // NOLINTEND
 
 public:

@@ -13,9 +13,9 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class ILevel;
 class ItemStack;
 class ItemStackBase;
-class Level;
 class Player;
 class SaveContext;
 // clang-format on
@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -55,8 +55,8 @@ public:
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
+        int containerSlot,
+        int,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
@@ -67,10 +67,10 @@ public:
     virtual int getMaxStackSize() const /*override*/;
 
     // vIndex: 7
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 43
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
@@ -87,11 +87,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DecoratedPotBlockActor(::BlockPos const& pos);
 
+    MCAPI void _onInsertFailFeedback(::BlockSource& region, ::Player& player);
+
     MCAPI void _onInsertFeedback(::BlockSource& region, ::ItemStack const& newContainedItem, ::Player& player);
 
     MCAPI void _setContainedItem(::ItemStack const& item);
-
-    MCFOLD ::std::array<::std::string, 4> const& getSherdNames() const;
 
     MCAPI void tryAddItem(::Player& player);
     // NOLINTEND
@@ -105,8 +105,6 @@ public:
 
     MCAPI static void
     saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
-
-    MCAPI static ::DecoratedPotBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static ::std::optional<::std::array<::std::string, 4>> tryGetSherdsFromTag(::CompoundTag const& tag);
     // NOLINTEND
@@ -132,25 +130,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCAPI void
+    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCFOLD int $getContainerSize() const;
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 

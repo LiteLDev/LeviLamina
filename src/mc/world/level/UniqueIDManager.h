@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class LevelData;
-struct ActorUniqueID;
 // clang-format on
 
 class UniqueIDManager {
@@ -24,12 +23,6 @@ public:
     UniqueIDManager& operator=(UniqueIDManager const&);
     UniqueIDManager(UniqueIDManager const&);
     UniqueIDManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ActorUniqueID getNewUniqueID();
-    // NOLINTEND
 
 public:
     // static functions

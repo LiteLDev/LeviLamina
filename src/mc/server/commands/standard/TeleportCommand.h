@@ -67,6 +67,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TeleportCommand();
+
+    MCAPI void doArmorStandTeleportBackwardCompability(::Actor& target, ::Actor const* destinationEntity) const;
+
     MCAPI ::RotationCommandUtils::FacingResult getFacingDirection(
         ::CommandOrigin const& origin,
         ::CommandOutput&       output,
@@ -98,6 +102,12 @@ public:
     );
 
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

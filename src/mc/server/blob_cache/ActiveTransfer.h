@@ -18,14 +18,6 @@ public:
     ActiveTransfer& operator=(ActiveTransfer const&);
     ActiveTransfer(ActiveTransfer const&);
     ActiveTransfer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isDone() const;
-
-    MCAPI void onAckReceived(uint64 acked);
-    // NOLINTEND
 };
 
 } // namespace ClientBlobCache::Server

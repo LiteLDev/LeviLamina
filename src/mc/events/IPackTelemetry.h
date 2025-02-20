@@ -13,7 +13,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPackTelemetry();
+    virtual ~IPackTelemetry() = default;
 
     // vIndex: 1
     virtual void fireEventPackUpgradeAttempt(::PackManifest const&, ::PackReport const&) = 0;
@@ -22,7 +22,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

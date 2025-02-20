@@ -9,9 +9,6 @@
 // clang-format off
 class BlockPos;
 class FeatureRegistry;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class LegacyTreeFeature : public ::IFeature {
@@ -56,13 +53,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+
     // vIndex: 0
     virtual ~LegacyTreeFeature() /*override*/ = default;
-
-    // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
     // NOLINTEND
 
 public:
@@ -86,8 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

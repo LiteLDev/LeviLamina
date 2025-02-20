@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/InHandUpdateType.h"
 #include "mc/world/item/Item.h"
 
@@ -101,31 +101,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShieldItem(::std::string const& name, int id);
-
-    MCAPI void playBlockSound(::Player* player) const;
-
-    MCAPI void playBreakSound(::Player* player) const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static int const& EFFECTIVE_BLOCK_DELAY();
 
-    MCAPI static int const& IN_HAND_BLOCK_DURATION();
-
-    MCAPI static int const& NO_SHIELD_PATTERN();
-
     MCAPI static ::std::string const& TIMESTAMP_TAG();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

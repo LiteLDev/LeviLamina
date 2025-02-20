@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"

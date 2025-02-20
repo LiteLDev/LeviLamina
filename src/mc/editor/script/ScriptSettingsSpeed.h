@@ -3,16 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/script/ScriptSettingsSpeedPropType.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Editor::Settings { class Speed; }
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
 
 namespace Editor::ScriptModule {
 
@@ -33,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSettingsSpeed(::Editor::Settings::Speed* speedSettings, ::Scripting::WeakLifetimeScope const& scope);
-
     MCAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> getAll() const;
 
     MCAPI ::Scripting::Result<void>
@@ -51,12 +43,6 @@ public:
 
     MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::Editor::ScriptModule::ScriptSettingsSpeedPropType>
     bindScriptPropsEnum();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Settings::Speed* speedSettings, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

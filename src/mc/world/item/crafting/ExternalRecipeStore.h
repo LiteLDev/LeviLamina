@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockReducer;
-class ItemStack;
-// clang-format on
-
 class ExternalRecipeStore {
 public:
     // member variables
@@ -20,12 +14,4 @@ public:
     ExternalRecipeStore& operator=(ExternalRecipeStore const&);
     ExternalRecipeStore(ExternalRecipeStore const&);
     ExternalRecipeStore();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void registerBlockReduction(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
-
-    MCFOLD void setBlockReducer(::BlockReducer* reducer);
-    // NOLINTEND
 };

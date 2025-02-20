@@ -28,18 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChestBoatItem(::std::string const& name, int id, int woodType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, int woodType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

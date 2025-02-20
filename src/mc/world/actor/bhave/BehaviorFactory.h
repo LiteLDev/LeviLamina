@@ -21,12 +21,11 @@ public:
     // prevent constructor by default
     BehaviorFactory& operator=(BehaviorFactory const&);
     BehaviorFactory(BehaviorFactory const&);
+    BehaviorFactory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BehaviorFactory();
-
     MCAPI void _initNodes();
 
     MCAPI ::std::unique_ptr<::BehaviorDefinition>
@@ -37,11 +36,5 @@ public:
         ::std::function<::std::unique_ptr<::BehaviorDefinition>()> definitionCreator,
         ::std::function<::std::unique_ptr<::BehaviorNode>()>       nodeCreator
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

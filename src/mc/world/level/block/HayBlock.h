@@ -34,15 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HayBlock(::std::string const& nameId, int id);
-
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

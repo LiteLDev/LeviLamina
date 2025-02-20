@@ -6,7 +6,7 @@ struct AbilitiesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 1372> mUnkcf112e;
+    ::ll::UntypedStorage<4, 1444> mUnkcf112e;
     // NOLINTEND
 
 public:

@@ -35,19 +35,14 @@ public:
     // prevent constructor by default
     AngryDefinition& operator=(AngryDefinition const&);
     AngryDefinition(AngryDefinition const&);
+    AngryDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AngryDefinition();
-
     MCAPI void addBroadcastTargetByName(::std::string const& name);
 
     MCAPI void initialize(::EntityContext& entity, ::AngryComponent& component) const;
-
-    MCAPI void uninitialize(::EntityContext& entity, ::AngryComponent&) const;
-
-    MCAPI ~AngryDefinition();
     // NOLINTEND
 
 public:
@@ -55,17 +50,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AngryDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

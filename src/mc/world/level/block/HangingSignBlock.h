@@ -44,10 +44,10 @@ public:
     // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual float getYRotationInDegrees(::Block const& block) const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual ::ItemInstance _getItemInstance() const /*override*/;
 
     // vIndex: 0
@@ -57,29 +57,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HangingSignBlock(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
-
     MCAPI bool _canAttachTo(::BlockSource& region, ::BlockPos attachPos, uchar attachFace, uchar ourFace) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isHangingSign(::Block const& block);
-
-    MCFOLD static bool _isSideAttached(::Block const& block);
-
-    MCAPI static bool isDoubleChainHangingSign(::Block const& block);
-
     MCAPI static bool isSideAttachedHangingSign(::Block const& block);
-
-    MCAPI static bool isVShapedHangingSign(::Block const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
     // NOLINTEND
 
 public:

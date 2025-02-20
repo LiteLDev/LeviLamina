@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -20,16 +20,13 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptTeleportOptions(ScriptTeleportOptions const&);
+    ScriptTeleportOptions& operator=(ScriptTeleportOptions const&);
     ScriptTeleportOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptTeleportOptions& operator=(::ScriptModuleMinecraft::ScriptTeleportOptions&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptTeleportOptions&
-    operator=(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
+    MCAPI ScriptTeleportOptions(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
 
     MCAPI ~ScriptTeleportOptions();
     // NOLINTEND
@@ -38,6 +35,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptTeleportOptions> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTeleportOptions const&);
     // NOLINTEND
 
 public:

@@ -11,8 +11,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class EntityContext;
-class Mob;
 struct Tick;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -41,20 +39,13 @@ public:
         // prevent constructor by default
         MoveOutdoorsDefinition& operator=(MoveOutdoorsDefinition const&);
         MoveOutdoorsDefinition(MoveOutdoorsDefinition const&);
+        MoveOutdoorsDefinition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~MoveOutdoorsDefinition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI MoveOutdoorsDefinition();
-
-        MCAPI void initialize(::EntityContext& entity, ::MoveOutdoorsGoal& goal) const;
+        virtual ~MoveOutdoorsDefinition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -69,15 +60,9 @@ public:
         // NOLINTEND
 
     public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
-
-    public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+
         // NOLINTEND
 
     public:
@@ -117,21 +102,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MoveOutdoorsGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool mobHasClearSpaceAbove(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
@@ -145,7 +118,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $start();
 
-    MCAPI bool $canUse();
+    MCFOLD bool $canUse();
 
     MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 

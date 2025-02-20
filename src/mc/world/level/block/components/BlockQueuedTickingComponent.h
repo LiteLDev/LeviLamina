@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Random;
 namespace BlockEvents { class BlockEventManager; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -37,8 +36,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
-
-    MCAPI int getRandomTickDelay(::Random& random) const;
 
     MCAPI void onTick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
     // NOLINTEND

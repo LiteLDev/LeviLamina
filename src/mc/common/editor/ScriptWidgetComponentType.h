@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/services/widgets/WidgetComponentType.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 
 namespace Editor::ScriptModule::ScriptWidgetComponentType {
 // functions

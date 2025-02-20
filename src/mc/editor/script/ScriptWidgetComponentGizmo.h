@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/WidgetComponentType.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
-#include "mc/editor/services/widgets/WidgetComponentType.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off

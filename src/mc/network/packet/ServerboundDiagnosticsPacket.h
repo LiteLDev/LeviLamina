@@ -18,14 +18,14 @@ class ServerboundDiagnosticsPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 44, ::ProfilerLiteTelemetry> mTelemetry;
+    ::ll::TypedStorage<4, 48, ::ProfilerLiteTelemetry> mTelemetry;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerboundDiagnosticsPacket() /*override*/;
+    virtual ~ServerboundDiagnosticsPacket() /*override*/ = default;
 
     // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -41,15 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ProfilerLiteTelemetry const& getTelemetry() const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

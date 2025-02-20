@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Random;
-// clang-format on
-
 class BlockTickConfigurationComponent {
 public:
     // member variables
@@ -21,10 +16,4 @@ public:
     BlockTickConfigurationComponent& operator=(BlockTickConfigurationComponent const&);
     BlockTickConfigurationComponent(BlockTickConfigurationComponent const&);
     BlockTickConfigurationComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD int getRandomTickDelay(::Random& random) const;
-    // NOLINTEND
 };

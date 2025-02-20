@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 
@@ -19,13 +19,17 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWidgetComponentBaseOptions& operator=(ScriptWidgetComponentBaseOptions const&);
     ScriptWidgetComponentBaseOptions(ScriptWidgetComponentBaseOptions const&);
     ScriptWidgetComponentBaseOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptWidgetComponentBaseOptions(::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&&);
+
+    MCAPI ::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentBaseOptions const&);
+
     MCAPI ~ScriptWidgetComponentBaseOptions();
     // NOLINTEND
 
@@ -34,6 +38,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentBaseOptions>
     bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentBaseOptions&&);
     // NOLINTEND
 
 public:

@@ -39,10 +39,6 @@ public:
     );
 
     MCAPI void PopulateEvent(::Social::Events::Event& event, bool clear);
-
-    MCFOLD void SetApplicationId(::std::string const& appId);
-
-    MCAPI bool ShouldSendEvent() const;
     // NOLINTEND
 };
 

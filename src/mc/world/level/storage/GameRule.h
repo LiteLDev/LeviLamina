@@ -75,12 +75,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    GameRule(GameRule const&);
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI GameRule(::GameRule const&);
+
     MCAPI GameRule(::GameRule&&);
 
     MCAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
@@ -89,33 +87,11 @@ public:
 
     MCAPI ::GameRule& _setDefaultValue(int i);
 
-    MCFOLD bool allowUseInCommand() const;
-
-    MCFOLD bool allowUseInScripting() const;
-
-    MCFOLD bool canBeModifiedByPlayer() const;
-
-    MCFOLD bool getBool() const;
-
-    MCFOLD float getFloat() const;
-
-    MCFOLD int getInt() const;
-
     MCAPI ::std::string getLowercaseName() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD ::GameRule::Type getType() const;
-
-    MCFOLD ::GameRule::Value const& getValue() const;
 
     MCAPI ::GameRule& operator=(::GameRule&&);
 
     MCAPI ::GameRule& operator=(::GameRule const&);
-
-    MCAPI bool requiresCheats() const;
-
-    MCAPI void resetType(::GameRule::Type type);
 
     MCAPI bool setBool(bool value, bool* pValidated, ::GameRule::ValidationError* errorOutput);
 
@@ -134,6 +110,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::GameRule const&);
+
     MCAPI void* $ctor(::GameRule&&);
 
     MCAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);

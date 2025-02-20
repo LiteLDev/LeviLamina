@@ -31,6 +31,8 @@ public:
 
     MCAPI bool deleteFile(::Core::Path const& fileName);
 
+    MCAPI bool findFile(::Core::Path const& fileName, ::std::shared_ptr<::InMemoryFile>& outFile);
+
     MCAPI void flushToDisk();
 
     MCAPI void populateFileList(::std::vector<::std::string>& fileList);

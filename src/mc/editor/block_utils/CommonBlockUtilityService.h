@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/serviceproviders/CommonBlockUtilityServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
 class BlockSource;
 class ChunkPos;
-namespace Editor { class ServiceProviderCollection; }
 // clang-format on
 
 namespace Editor::BlockUtils {
@@ -80,15 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommonBlockUtilityService(::Editor::ServiceProviderCollection& providers);
-
     MCAPI ::BlockSource& _getBlockSource() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

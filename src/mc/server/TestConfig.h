@@ -11,7 +11,7 @@ class TestConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk688455;
+    ::ll::UntypedStorage<4, 4>  mUnk9d6546;
     ::ll::UntypedStorage<4, 4>  mUnk5d82e6;
     ::ll::UntypedStorage<1, 1>  mUnk1524f2;
     ::ll::UntypedStorage<4, 4>  mUnkddc2c8;
@@ -28,6 +28,7 @@ public:
 
 public:
     // prevent constructor by default
+    TestConfig& operator=(TestConfig const&);
     TestConfig(TestConfig const&);
     TestConfig();
 
@@ -38,23 +39,7 @@ public:
 
     MCAPI ::std::string _readFile(::std::string const& fileName) const;
 
-    MCFOLD ::cereal::ReflectionCtx const& context() const;
-
-    MCFOLD bool isLoaded() const;
-
-    MCAPI ::TestConfig& operator=(::TestConfig const&);
-
-    MCAPI ::TestConfig& operator=(::TestConfig&&);
-
-    MCFOLD void setLoaded();
-
     MCAPI ~TestConfig();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

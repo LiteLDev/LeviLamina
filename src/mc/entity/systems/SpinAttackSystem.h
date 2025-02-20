@@ -50,12 +50,6 @@ MCAPI void _fetchEntitiesForSpinAttack(
     ::EntityModifier<::SpinAttackResultsComponent>                modifier
 );
 
-MCAPI void _removeSpinAttack(
-    ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::RiptideTridentSpinAttackComponent>>
-                                                                                        filter,
-    ::EntityModifier<::RiptideTridentSpinAttackComponent, ::SpinAttackResultsComponent> modifier
-);
-
 MCAPI void _stopSpinAttack(
     ::StrictEntityContext const&                                entity,
     ::ActorDataFlagComponent&                                   actorData,
@@ -105,11 +99,6 @@ MCAPI void _tickSpinAttackAction(
 );
 
 MCAPI void createSystems(::EntitySystems& systemRegistry, bool isClientSide);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCAPI int const& DAMAGE_NEARBY_MOBS_DURATION();
 // NOLINTEND
 
 } // namespace SpinAttackSystem

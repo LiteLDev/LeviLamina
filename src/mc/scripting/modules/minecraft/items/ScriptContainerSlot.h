@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/world/item/ItemLockMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class ItemContext;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidContainerSlotError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
@@ -41,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptContainerSlot(::ItemContext itemContext, ::Scripting::WeakLifetimeScope scope);
-
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError>
     clearDynamicProperties(::Scripting::ContextConfig const& contextConfig);
 
@@ -118,6 +114,12 @@ public:
     setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError, ::Scripting::Error>
+    setDynamicProperties(
+        ::Scripting::ContextConfig const& contextConfig,
+        ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
+    );
+
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError, ::Scripting::Error>
     setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
@@ -145,12 +147,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptContainerSlot> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemContext itemContext, ::Scripting::WeakLifetimeScope scope);
     // NOLINTEND
 };
 

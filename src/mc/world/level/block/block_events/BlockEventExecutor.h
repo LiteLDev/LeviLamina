@@ -39,8 +39,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Bedrock::PubSub::Subscription _subscribe(::std::function<void(::BlockEvents::BlockEventBase&)>&& func);
-
-    MCAPI void setOwnerSubscription(::Bedrock::PubSub::Subscription&& subscription);
     // NOLINTEND
 
 public:

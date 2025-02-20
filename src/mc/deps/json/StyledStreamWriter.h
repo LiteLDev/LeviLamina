@@ -40,8 +40,6 @@ public:
 
     MCAPI void unindent();
 
-    MCAPI void write(::std::ostream& out, ::Json::Value const& root);
-
     MCAPI void writeArrayValue(::Json::Value const& value);
 
     MCAPI void writeValue(::Json::Value const& value);

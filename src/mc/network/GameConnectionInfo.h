@@ -2,17 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/ConnectionType.h"
-
-// auto generated forward declare list
-// clang-format off
-class GatheringServerInfo;
-class ThirdPartyInfo;
-namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
-// clang-format on
-
 namespace Social {
 
 class GameConnectionInfo {
@@ -31,30 +20,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GameConnectionInfo(GameConnectionInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI GameConnectionInfo();
 
-    MCAPI GameConnectionInfo(::Social::GameConnectionInfo const&);
-
-    MCAPI GameConnectionInfo(
-        ::RakNet::SystemAddress      connection,
-        ::RakNet::RakNetGUID const&  rakGuid,
-        ::ThirdPartyInfo const&      serverInfo,
-        ::GatheringServerInfo const& gatheringServerInfo
-    );
-
-    MCFOLD ::std::string const& getHostIpAddress() const;
-
-    MCFOLD int getPort() const;
-
-    MCFOLD ::ThirdPartyInfo const& getThirdPartyServerInfo() const;
-
-    MCFOLD ::Social::ConnectionType getType() const;
-
     MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
-
-    MCAPI void setUnresolvedUrl(::std::string const& url);
 
     MCAPI ~GameConnectionInfo();
     // NOLINTEND
@@ -63,15 +37,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Social::GameConnectionInfo const&);
-
-    MCAPI void* $ctor(
-        ::RakNet::SystemAddress      connection,
-        ::RakNet::RakNetGUID const&  rakGuid,
-        ::ThirdPartyInfo const&      serverInfo,
-        ::GatheringServerInfo const& gatheringServerInfo
-    );
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class LocalConnectivitySystem;
-namespace RakNet { struct SystemAddress; }
+class NetworkIdentifier;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -36,39 +36,35 @@ public:
     virtual ~LocalConnector() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::vector<::std::string> getLocalIps() const /*override*/;
-
-    // vIndex: 2
     virtual ::std::string getLocalIp() /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual ushort getPort() const /*override*/;
 
-    // vIndex: 4
-    virtual ::std::vector<::RakNet::SystemAddress> getRefinedLocalIps() const /*override*/;
-
-    // vIndex: 5
+    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 4
     virtual bool isIPv4Supported() const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 5
     virtual bool isIPv6Supported() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 6
     virtual ushort getIPv4Port() const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 7
     virtual ushort getIPv6Port() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LocalConnector(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
+
     MCAPI void disconnect();
 
     MCAPI void onRemoteDisconnected(::LocalConnector& otherConnector);
@@ -83,6 +79,12 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks, ::NetworkIdentifier const& localId);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -91,13 +93,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::string> $getLocalIps() const;
-
     MCFOLD ::std::string $getLocalIp();
 
     MCFOLD ushort $getPort() const;
-
-    MCFOLD ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
 
     MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
@@ -108,6 +106,8 @@ public:
     MCFOLD ushort $getIPv4Port() const;
 
     MCFOLD ushort $getIPv6Port() const;
+
+    MCFOLD ::TransportLayer $getNetworkType() const;
     // NOLINTEND
 
 public:

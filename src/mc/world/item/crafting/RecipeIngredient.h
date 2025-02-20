@@ -10,16 +10,11 @@
 class Block;
 class BlockLegacy;
 class Item;
-class ItemDescriptor;
 class ReadOnlyBinaryStream;
 struct ItemTag;
 // clang-format on
 
 class RecipeIngredient : public ::ItemDescriptorCount {
-public:
-    // prevent constructor by default
-    RecipeIngredient& operator=(RecipeIngredient const&);
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,13 +33,13 @@ public:
 
     MCAPI RecipeIngredient(::Block const& block, ushort stackSize);
 
-    MCAPI RecipeIngredient(::ItemDescriptor const& descriptor, ushort stackSize);
-
     MCAPI RecipeIngredient(::ItemTag const& itemTag, ushort stackSize);
 
     MCAPI RecipeIngredient(::std::string_view item, int auxValue, ushort stackSize);
 
     MCAPI RecipeIngredient(::Item const& item, int auxValue, ushort stackSize);
+
+    MCFOLD ::RecipeIngredient& operator=(::RecipeIngredient const&);
     // NOLINTEND
 
 public:
@@ -63,8 +58,6 @@ public:
     MCAPI void* $ctor(::BlockLegacy const& block, ushort stackSize);
 
     MCAPI void* $ctor(::Block const& block, ushort stackSize);
-
-    MCAPI void* $ctor(::ItemDescriptor const& descriptor, ushort stackSize);
 
     MCAPI void* $ctor(::ItemTag const& itemTag, ushort stackSize);
 

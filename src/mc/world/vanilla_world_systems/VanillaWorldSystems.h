@@ -19,11 +19,11 @@ namespace VanillaWorldSystems {
 // functions
 // NOLINTBEGIN
 MCAPI ::std::shared_ptr<::VanillaWorldSystems::Impl> init(
-    ::Bedrock::NonOwnerPointer<::Level> const&                     level,
-    ::Experiments const&                                           experiments,
-    ::BaseGameVersion const&                                       baseGameVersion,
-    ::ItemRegistryRef                                              itemRegistry,
-    ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
+    ::Bedrock::NonOwnerPointer<::Level> const& level,
+    ::Experiments const&                       experiments,
+    ::BaseGameVersion const&                   baseGameVersion,
+    ::ItemRegistryRef                          itemRegistry,
+    ::ServerScriptManager const*               scriptManager
 );
 // NOLINTEND
 

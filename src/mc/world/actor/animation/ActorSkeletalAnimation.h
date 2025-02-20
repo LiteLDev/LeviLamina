@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BoneAnimation;
-// clang-format on
-
 class ActorSkeletalAnimation {
 public:
     // member variables
@@ -36,8 +31,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorSkeletalAnimation(::std::string const& name, ::std::string const& sourceFilePathWithExtension);
-
-    MCAPI ::BoneAnimation& addBoneAnimation(::std::string const& name);
 
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
 

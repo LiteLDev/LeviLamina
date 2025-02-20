@@ -47,8 +47,6 @@ public:
 
     MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance> generate(::br::worldgen::GenerationContext& context
     ) const;
-
-    MCAPI bool operator==(::br::worldgen::Structure const& rhs) const;
     // NOLINTEND
 
 public:

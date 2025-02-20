@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace NetherNet::RunLoop { class Condition; }
-// clang-format on
-
 namespace NetherNet::RunLoop {
 
 class Controller {
@@ -20,29 +15,12 @@ public:
     // prevent constructor by default
     Controller& operator=(Controller const&);
     Controller(Controller const&);
+    Controller();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Controller();
-
-    MCAPI ::NetherNet::RunLoop::Condition GetCondition() const;
-
-    MCAPI bool IsThreadRunning() const;
-
-    MCAPI void RequestRun() const;
-
-    MCAPI void RequestStop() const;
-
-    MCAPI void RequestSuspend() const;
-
     MCAPI ~Controller();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

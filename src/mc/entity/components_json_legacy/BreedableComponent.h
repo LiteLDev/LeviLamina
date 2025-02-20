@@ -7,12 +7,11 @@
 class Actor;
 class ActorInteraction;
 class AttributeInstance;
-class CompoundTag;
-class DataLoadHelper;
 class IRandom;
 class ItemStack;
 class Player;
 struct BreedableType;
+struct MutableAttributeWithContext;
 // clang-format on
 
 class BreedableComponent {
@@ -45,7 +44,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -65,12 +64,11 @@ public:
     // prevent constructor by default
     BreedableComponent& operator=(BreedableComponent const&);
     BreedableComponent(BreedableComponent const&);
+    BreedableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BreedableComponent();
-
     MCAPI bool _canBreed(::Actor& owner, ::Player& player, ::ItemStack const& playerItem);
 
     MCAPI ::std::optional<::BreedableType> _determineBreedType(::Actor const& partner) const;
@@ -87,49 +85,27 @@ public:
 
     MCAPI void _useBreedItem(::Actor& owner, ::Player& player, ::ItemStack const&);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
     MCAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
-
-    MCFOLD void decrementBreedCooldown();
-
-    MCAPI void decrementLoveTimer();
-
-    MCFOLD int getBreedCooldown() const;
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI ::Player* getLoveCause(::Actor const& owner) const;
 
-    MCFOLD int getLoveTimer() const;
-
     MCAPI ::BreedableComponent::MatingResult mate(::Actor& owner, ::Actor& partner);
 
     MCAPI bool meetsSittingRequirements(::Actor const& actor) const;
-
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI void resetLove(::Actor& owner);
-
-    MCFOLD void setLoveTimer(int loveTimer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setOffspringAttributesWithParentCentricBlending(
-        ::AttributeInstance&       offspring,
-        ::AttributeInstance const& owner,
-        ::AttributeInstance const& partner,
-        ::IRandom&                 random,
-        float                      attributeRangeMin,
-        float                      attributeRangeMax
+        ::MutableAttributeWithContext& offspring,
+        ::AttributeInstance const&     owner,
+        ::AttributeInstance const&     partner,
+        ::IRandom&                     random,
+        float                          attributeRangeMin,
+        float                          attributeRangeMax
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

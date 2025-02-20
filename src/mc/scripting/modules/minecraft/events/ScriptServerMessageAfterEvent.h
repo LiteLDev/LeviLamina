@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -27,6 +27,8 @@ public:
     // NOLINTBEGIN
     MCAPI ::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
+
+    MCAPI ~ScriptServerMessageAfterEvent();
     // NOLINTEND
 
 public:
@@ -34,6 +36,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>
     bind();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -16,15 +16,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TaskResult& operator=(TaskResult const&);
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TaskResult();
-
-    MCAPI bool hasDelay() const;
-
-    MCFOLD bool isDone() const;
-
-    MCFOLD bool isWaiting() const;
+    MCAPI TaskResult(::TaskResult const&);
 
     MCAPI ~TaskResult();
     // NOLINTEND
@@ -46,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::TaskResult const&);
     // NOLINTEND
 
 public:

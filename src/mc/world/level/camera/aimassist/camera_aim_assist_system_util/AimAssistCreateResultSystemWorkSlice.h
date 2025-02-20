@@ -5,8 +5,8 @@
 namespace CameraAimAssistSystemUtil {
 
 enum class AimAssistCreateResultSystemWorkSlice : int {
-    WaitForAllBlockPosResultsToBeCaptured    = 0,
-    CreateAimAssistResultFromBlockPosResults = 1,
+    UpdateEntityResultAndWaitForAllBlockPosResultsToBeCaptured = 0,
+    CreateAimAssistResultFromBlockPosResults                   = 1,
 };
 
 }

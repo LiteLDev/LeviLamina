@@ -61,23 +61,14 @@ public:
     // prevent constructor by default
     FilePickerSettings& operator=(FilePickerSettings const&);
     FilePickerSettings(FilePickerSettings const&);
+    FilePickerSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilePickerSettings();
-
     MCAPI void addFileDescription(::std::string const& extension, ::std::string const& name, bool isDefaultExtension);
 
-    MCAPI void setPickerTitle(::std::string FilePickerTitle);
-
     MCAPI ~FilePickerSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

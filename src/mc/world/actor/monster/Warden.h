@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/monster/Monster.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorDamageSource;
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Warden : public ::Monster {
@@ -35,55 +32,35 @@ public:
     // vIndex: 20
     virtual bool canDisableShield() /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 129
+    // vIndex: 126
     virtual void onPush(::Actor& source) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 52
-    virtual void setTarget(::Actor* entity) /*override*/;
+    // vIndex: 51
+    virtual void setTarget(::Actor* target) /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 153
+    // vIndex: 148
     virtual bool checkSpawnObstruction() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 159
-    virtual bool doHurtTarget(::Actor* target, ::ActorDamageCause const& cause) /*override*/;
+    // vIndex: 154
+    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     // vIndex: 8
     virtual ~Warden() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Warden(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -105,7 +82,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI void $setTarget(::Actor* entity);
+    MCAPI void $setTarget(::Actor* target);
 
     MCFOLD bool $checkSpawnRules(bool);
 
@@ -113,7 +90,7 @@ public:
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
+    MCAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
     // NOLINTEND
 
 public:

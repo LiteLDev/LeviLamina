@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/BlockRenderLayer.h"
-
 // auto generated forward declare list
 // clang-format off
 struct BlockMaterialInstancesDescription;
@@ -29,8 +26,6 @@ public:
     MCAPI explicit BlockMaterialInstancesComponent(
         ::BlockMaterialInstancesDescription const& blockMaterialInstancesDescription
     );
-
-    MCAPI ::BlockRenderLayer getRenderLayer() const;
     // NOLINTEND
 
 public:

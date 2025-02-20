@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionTrigger;
 class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -36,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OnUseOnItemComponentLegacyFactoryData(::DefinitionTrigger trigger);
-
     MCFOLD ::OnUseOnItemComponentLegacyFactoryData& operator=(::OnUseOnItemComponentLegacyFactoryData const&);
 
     MCFOLD ::OnUseOnItemComponentLegacyFactoryData& operator=(::OnUseOnItemComponentLegacyFactoryData&&);
@@ -48,17 +45,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DefinitionTrigger trigger);
     // NOLINTEND
 
 public:

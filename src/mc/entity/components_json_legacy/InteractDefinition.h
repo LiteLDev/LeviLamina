@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class InteractComponent;
 class Interaction;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -30,8 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addInteraction(::Interaction const& interaction);
-
-    MCAPI void initialize(::EntityContext&, ::InteractComponent& component) const;
     // NOLINTEND
 
 public:

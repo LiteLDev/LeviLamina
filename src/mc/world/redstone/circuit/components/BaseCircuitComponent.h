@@ -124,20 +124,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseCircuitComponent();
-
     MCAPI void addSourceItem(::CircuitComponentList::Item const& item);
-
-    MCAPI bool hasDirectPower();
-
-    MCAPI bool isRemoved() const;
-
-    MCAPI ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::CircuitComponentList::Item>>>
-    removeFromSourceAndDestinationList(
-        ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::CircuitComponentList::Item>>> iter
-    );
-
-    MCAPI void setRemoved();
 
     MCAPI bool trackPowerSource(
         ::CircuitTrackingInfo const& info,
@@ -146,12 +133,6 @@ public:
         int                          data,
         bool                         isDirectional
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -167,9 +148,9 @@ public:
 
     MCFOLD int $getDirection() const;
 
-    MCFOLD void $setStrength(int strength);
+    MCAPI void $setStrength(int strength);
 
-    MCFOLD void $setDirection(uchar direction);
+    MCAPI void $setDirection(uchar direction);
 
     MCFOLD void $setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
 

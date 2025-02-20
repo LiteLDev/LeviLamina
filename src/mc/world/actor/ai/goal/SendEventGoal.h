@@ -49,27 +49,19 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 0
-    virtual ~SendEventGoal() /*override*/ = default;
+    virtual ~SendEventGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SendEventGoal(::Mob& caster, ::std::vector<::SendEventData> const& spellTypes);
-
     MCAPI int _selectBestSpell();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& caster, ::std::vector<::SendEventData> const& spellTypes);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -75,8 +75,6 @@ public:
 
     MCAPI ::BaseCircuitComponent* getComponent(::BlockPos const& pos, ::CircuitComponentType typeID);
 
-    MCAPI ::BaseCircuitComponent* getFromPendingAdd(::BlockPos const& pos, ::CircuitComponentType typeID);
-
     MCAPI void invalidatePos(::BlockPos const& pos);
 
     MCAPI void preSetupPoweredBlocks(::ChunkPos const& chunkPos);

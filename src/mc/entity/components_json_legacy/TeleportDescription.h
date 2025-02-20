@@ -28,6 +28,7 @@ public:
     // prevent constructor by default
     TeleportDescription& operator=(TeleportDescription const&);
     TeleportDescription(TeleportDescription const&);
+    TeleportDescription();
 
 public:
     // virtual functions
@@ -40,18 +41,6 @@ public:
 
     // vIndex: 1
     virtual ~TeleportDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TeleportDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

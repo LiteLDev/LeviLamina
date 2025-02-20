@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ActorRuntimeID;
 class BinaryStream;
 class ReadOnlyBinaryStream;
@@ -53,30 +52,6 @@ public:
 
     // vIndex: 0
     virtual ~AnimatePacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AnimatePacket();
-
-    MCAPI AnimatePacket(::AnimatePacket::Action action, ::Actor& e);
-
-    MCAPI AnimatePacket(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId);
-
-    MCAPI AnimatePacket(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId, float data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::AnimatePacket::Action action, ::Actor& e);
-
-    MCAPI void* $ctor(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId);
-
-    MCAPI void* $ctor(::AnimatePacket::Action action, ::ActorRuntimeID runtimeId, float data);
     // NOLINTEND
 
 public:

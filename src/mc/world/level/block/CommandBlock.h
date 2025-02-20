@@ -18,9 +18,9 @@ class CommandBlockActor;
 class Experiments;
 class ItemInstance;
 class Player;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CommandBlock : public ::ActorBlock {
@@ -50,9 +50,6 @@ public:
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 108
     virtual bool canInstatick() const /*override*/;
@@ -87,27 +84,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlock(::std::string const& nameId, int id, ::CommandBlockMode mode);
-
     MCAPI void
     _execute(::BlockSource& region, ::CommandBlockActor& entity, ::BlockPos const& pos, bool commandSet) const;
 
     MCAPI void _executeChain(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _executeChainBlock(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::CommandBlockActor& blockActor,
-        bool                 fromTickQueue
-    ) const;
-
-    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool bLoading) const;
-
     MCAPI void execute(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::CommandBlockMode getMode() const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void
     updateBlock(::BlockSource& region, ::BlockPos const& pos, ::CommandBlockMode newMode, bool conditional) const;
@@ -117,12 +103,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<int[]> mCBModeMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::CommandBlockMode mode);
     // NOLINTEND
 
 public:
@@ -145,8 +125,6 @@ public:
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool $canInstatick() const;
 

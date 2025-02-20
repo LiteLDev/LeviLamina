@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/threading/AsyncStatus.h"
-
 class TaskStatus {
 public:
     // TaskStatus inner types define
@@ -27,20 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TaskStatus();
-
-    MCAPI bool isComplete() const;
-
-    MCFOLD explicit operator ::TaskStatus::Value() const;
-
-    MCAPI ::Bedrock::Threading::AsyncStatus toAsyncStatus() const;
-
     MCAPI ::std::error_code toErrorCode() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

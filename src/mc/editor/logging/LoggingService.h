@@ -3,16 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/logging/LoggingServiceProvider.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/script/LoggingServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class LogMessage; }
-namespace Editor { class ServiceProviderCollection; }
 // clang-format on
 
 namespace Editor::Services {
@@ -45,20 +44,6 @@ public:
     // vIndex: 4
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LoggingService(::Editor::ServiceProviderCollection& providers);
-
-    MCAPI void _dispatchLogMessageEvent(::Editor::LogMessage const& message);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

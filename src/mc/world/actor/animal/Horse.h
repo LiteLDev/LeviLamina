@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/animal/Animal.h"
 #include "mc/world/actor/animal/HorseFlags.h"
 
@@ -11,19 +12,12 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class Block;
-class BlockPos;
 class EntityContext;
 class Player;
 class Vec2;
 class Vec3;
-struct ActorDataDirtyFlagsComponent;
-struct ActorDataHorseFlagComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct RenderPositionComponent;
-struct RenderRotationComponent;
-struct StandAnimationComponent;
 struct VariantParameterList;
 // clang-format on
 
@@ -34,65 +28,62 @@ public:
     // vIndex: 8
     virtual ~Horse() /*override*/ = default;
 
-    // vIndex: 125
-    virtual void die(::ActorDamageSource const& source) /*override*/;
+    // vIndex: 123
+    virtual void die(::ActorDamageSource const& damagesource) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual void setHorseEating(bool state);
 
-    // vIndex: 183
+    // vIndex: 178
     virtual float getStandAnim(float a) const;
 
-    // vIndex: 184
+    // vIndex: 179
     virtual bool isHorseEating() const;
 
-    // vIndex: 185
+    // vIndex: 180
     virtual bool isMouthOpen() const;
 
-    // vIndex: 60
+    // vIndex: 59
     virtual void setStanding(bool value) /*override*/;
 
-    // vIndex: 59
+    // vIndex: 58
     virtual void onFailedTame() /*override*/;
 
-    // vIndex: 186
+    // vIndex: 181
     virtual void makeMad();
 
-    // vIndex: 93
+    // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 187
+    // vIndex: 182
     virtual bool tameToPlayer(::Player& player, bool tamingParticles);
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 112
+    // vIndex: 110
     virtual void openContainerComponent(::Player& player) /*override*/;
 
     // vIndex: 17
     virtual ::Vec3 getInterpolatedRidingOffset(float a, int const) const /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 70
+    // vIndex: 68
     virtual void feed(int itemId) /*override*/;
 
-    // vIndex: 87
+    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual bool isImmobile() const /*override*/;
 
-    // vIndex: 94
+    // vIndex: 92
     virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& _onBlock) /*override*/;
 
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -107,9 +98,11 @@ public:
         ::EntityContext&                   entityContext
     );
 
+    MCAPI bool _getHorseFlag(::HorseFlags flag) const;
+
     MCAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
 
-    MCAPI void openMouth();
+    MCAPI bool _setHorseType(::ActorType actorType);
 
     MCAPI void postAiStep();
 
@@ -119,29 +112,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 getInterpolatedRidingOffset(
-        ::RenderRotationComponent const& renderRotationComponent,
-        ::StandAnimationComponent const& standAnimationComponent,
-        float                            alpha
-    );
-
     MCAPI static ::Vec3
     getInterpolatedRidingOffset(::Vec2 const& renderRot, float standAnimO, float standAnim, float alpha);
 
-    MCAPI static ::Vec3 getNewPassengerPos(
-        ::RenderPositionComponent const& horseRenderPosComponent,
-        ::RenderRotationComponent const& horseRenderRotComponent,
-        ::StandAnimationComponent const& horseStandAnimComponent,
-        float                            alpha,
-        float                            passengerPosY
-    );
-
-    MCAPI static void setHorseFlag(
-        ::ActorDataHorseFlagComponent&  actorDataHorseFlag,
-        ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags,
-        ::HorseFlags                    flag,
-        bool                            shouldAddFlag
-    );
+    MCAPI static bool isImmobile(::EntityContext const& entity);
     // NOLINTEND
 
 public:
@@ -163,7 +137,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& damagesource);
 
     MCAPI void $setHorseEating(bool state);
 
@@ -200,8 +174,6 @@ public:
     MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
-
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& _onBlock);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND

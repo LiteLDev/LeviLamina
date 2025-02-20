@@ -28,26 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SerializedPersonaPieceHandle(
-        ::std::string const& pieceId,
-        ::persona::PieceType pieceType,
-        ::mce::UUID          packId,
-        bool                 isDefaultPiece,
-        ::std::string const& productId
-    );
-
     MCAPI ::SerializedPersonaPieceHandle& operator=(::SerializedPersonaPieceHandle const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const& pieceId,
-        ::persona::PieceType pieceType,
-        ::mce::UUID          packId,
-        bool                 isDefaultPiece,
-        ::std::string const& productId
-    );
     // NOLINTEND
 };

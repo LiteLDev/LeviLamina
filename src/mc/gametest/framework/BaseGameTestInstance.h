@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -115,21 +114,11 @@ public:
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
 
-    MCAPI void addListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
-
     MCAPI ::gametest::GameTestSequence& createSequence();
 
     MCAPI void fail(::gametest::GameTestError error, bool canRetry);
 
     MCAPI void finish(bool canRetry);
-
-    MCFOLD ::std::optional<::gametest::GameTestError> const& getError() const;
-
-    MCFOLD ::Rotation getRotation() const;
-
-    MCAPI ::std::string const& getTestName() const;
-
-    MCAPI bool hasRetryAttempts() const;
 
     MCAPI void removeListener(::std::shared_ptr<::gametest::IGameTestListener> listener);
 

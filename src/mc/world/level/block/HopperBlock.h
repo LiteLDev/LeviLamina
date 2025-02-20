@@ -110,31 +110,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HopperBlock(::std::string const& nameId, int id);
-
     MCAPI ::AABB _getSpoutAABB(::Block const& block) const;
 
-    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BlockPos getAttachedOffset(uchar facing);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& HOPPER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

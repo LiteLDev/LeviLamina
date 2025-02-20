@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/item/ItemUseMethod.h"
 
@@ -278,8 +278,8 @@ public:
     MCAPI LegacyTelemetryEventPacket(
         ::Player const&        player,
         ::ItemStackBase const& item,
-        ::ItemUseMethod        useMethod,
-        int                    useCount
+        ::ItemUseMethod        useCount,
+        int                    useMethod
     );
 
     MCAPI LegacyTelemetryEventPacket(
@@ -291,29 +291,29 @@ public:
     );
 
     MCAPI LegacyTelemetryEventPacket(
-        ::Player const*               player,
-        ::Actor const*                killerEntity,
-        ::gsl::not_null<::Mob const*> killedMob,
-        ::ActorDamageCause            cause,
-        ::ActorType                   damageChildType
+        ::Player const*                         player,
+        ::Actor const*                          killerEntity,
+        ::ActorUniqueID const&                  killedMobID,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::ActorType                             damageChildType
     );
 
     MCAPI LegacyTelemetryEventPacket(
-        ::Player const*    player,
-        int                killerId,
-        int                killerVariant,
-        ::ActorDamageCause cause,
-        bool               inRaid
+        ::Player const*                         player,
+        int                                     killerId,
+        int                                     killerVariant,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        bool                                    inRaid
     );
 
     MCAPI LegacyTelemetryEventPacket(
-        ::Player const*               player,
-        ::Actor const*                killerEntity,
-        ::gsl::not_null<::Mob const*> killedMob,
-        ::ActorDamageCause            cause,
-        ::std::string                 traderName,
-        int                           traderTier,
-        ::ActorType                   damageChildType
+        ::Player const*                         player,
+        ::Actor const*                          killerEntity,
+        ::ActorUniqueID const&                  killedMobID,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::std::string                           traderName,
+        int                                     traderTier,
+        ::ActorType                             damageChildType
     );
 
     MCAPI ::LegacyTelemetryEventPacket& operator=(::LegacyTelemetryEventPacket&&);
@@ -350,7 +350,7 @@ public:
 
     MCAPI void* $ctor(::Player const* player, short contentsType, uint contentsColor, short fillLevel);
 
-    MCAPI void* $ctor(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useMethod, int useCount);
+    MCAPI void* $ctor(::Player const& player, ::ItemStackBase const& item, ::ItemUseMethod useCount, int useMethod);
 
     MCAPI void* $ctor(
         ::Player const*      player,
@@ -361,23 +361,29 @@ public:
     );
 
     MCAPI void* $ctor(
-        ::Player const*               player,
-        ::Actor const*                killerEntity,
-        ::gsl::not_null<::Mob const*> killedMob,
-        ::ActorDamageCause            cause,
-        ::ActorType                   damageChildType
+        ::Player const*                         player,
+        ::Actor const*                          killerEntity,
+        ::ActorUniqueID const&                  killedMobID,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::ActorType                             damageChildType
     );
 
-    MCAPI void* $ctor(::Player const* player, int killerId, int killerVariant, ::ActorDamageCause cause, bool inRaid);
+    MCAPI void* $ctor(
+        ::Player const*                         player,
+        int                                     killerId,
+        int                                     killerVariant,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        bool                                    inRaid
+    );
 
     MCAPI void* $ctor(
-        ::Player const*               player,
-        ::Actor const*                killerEntity,
-        ::gsl::not_null<::Mob const*> killedMob,
-        ::ActorDamageCause            cause,
-        ::std::string                 traderName,
-        int                           traderTier,
-        ::ActorType                   damageChildType
+        ::Player const*                         player,
+        ::Actor const*                          killerEntity,
+        ::ActorUniqueID const&                  killedMobID,
+        ::SharedTypes::Legacy::ActorDamageCause cause,
+        ::std::string                           traderName,
+        int                                     traderTier,
+        ::ActorType                             damageChildType
     );
     // NOLINTEND
 

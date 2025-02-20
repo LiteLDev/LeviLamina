@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ApplicationDataStores() /*override*/ = default;
+    virtual ~ApplicationDataStores() /*override*/;
 
     // vIndex: 1
     virtual void init() /*override*/;
@@ -65,7 +65,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

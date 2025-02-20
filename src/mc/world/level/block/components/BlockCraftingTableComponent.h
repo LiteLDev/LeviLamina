@@ -16,10 +16,4 @@ public:
     BlockCraftingTableComponent& operator=(BlockCraftingTableComponent const&);
     BlockCraftingTableComponent(BlockCraftingTableComponent const&);
     BlockCraftingTableComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::BlockCraftingTableComponent& operator=(::BlockCraftingTableComponent&&);
-    // NOLINTEND
 };

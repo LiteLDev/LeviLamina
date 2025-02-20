@@ -104,7 +104,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlatWorldGenerator(::Dimension& dimension, uint, ::Json::Value const& generationOptionsJSON);
+    MCAPI FlatWorldGenerator(::Dimension& dimension, uint generationOptionsJSON, ::Json::Value const&);
 
     MCAPI void _generatePrototypeBlockValues(::FlatWorldGeneratorOptions const& layersDesc, short);
     // NOLINTEND
@@ -112,7 +112,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, uint, ::Json::Value const& generationOptionsJSON);
+    MCAPI void* $ctor(::Dimension& dimension, uint generationOptionsJSON, ::Json::Value const&);
     // NOLINTEND
 
 public:

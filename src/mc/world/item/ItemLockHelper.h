@@ -26,11 +26,11 @@ public:
 
     MCAPI static bool isItemLocked(::ItemStackBase const& item);
 
-    MCAPI static bool isItemLockedInSlot(::ItemStackBase const& item);
+    MCAPI static bool removeItemLockMode(::ItemStackBase& item);
+
+    MCAPI static bool removeKeepOnDeath(::ItemStackBase& item);
 
     MCAPI static void setItemLockMode(::ItemStackBase& item, ::ItemLockMode lockMode);
-
-    MCAPI static void setKeepOnDeath(::ItemStackBase& item, bool value);
 
     MCAPI static bool shouldKeepOnDeath(::ItemStackBase const& item);
 

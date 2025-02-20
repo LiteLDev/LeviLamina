@@ -87,7 +87,7 @@ public:
 
     MCFOLD bool $canConsumerPower() const;
 
-    MCFOLD bool $isSecondaryPowered() const;
+    MCAPI bool $isSecondaryPowered() const;
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND

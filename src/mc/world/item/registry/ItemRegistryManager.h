@@ -38,8 +38,6 @@ public:
         // NOLINTBEGIN
         MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
 
-        MCAPI explicit ScopedItemRegistry(::ItemRegistryRef registryRef);
-
         MCAPI void construct(::ItemRegistryRef registryRef);
 
         MCAPI ~ScopedItemRegistry();
@@ -49,8 +47,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
-
-        MCAPI void* $ctor(::ItemRegistryRef registryRef);
         // NOLINTEND
 
     public:

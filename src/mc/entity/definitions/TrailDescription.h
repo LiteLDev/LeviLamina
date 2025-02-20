@@ -23,6 +23,7 @@ public:
     // prevent constructor by default
     TrailDescription& operator=(TrailDescription const&);
     TrailDescription(TrailDescription const&);
+    TrailDescription();
 
 public:
     // virtual functions
@@ -35,18 +36,6 @@ public:
 
     // vIndex: 1
     virtual ~TrailDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TrailDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -26,20 +26,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ServerTextSettings(::std::bitset<3> const& settings);
-
-    MCFOLD ::std::bitset<3> const& getEnabledServerTextEvents() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::bitset<3> const& settings);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

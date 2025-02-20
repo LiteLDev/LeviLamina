@@ -47,8 +47,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Scheduler>  scheduler,
         ::br::worldgen::StructureSetRegistry const& structureSetRegistry
     );
-
-    MCFOLD ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& getDimensionOwnerPtrFactory();
     // NOLINTEND
 
 public:

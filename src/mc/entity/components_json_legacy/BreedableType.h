@@ -15,12 +15,19 @@ public:
     // prevent constructor by default
     BreedableType& operator=(BreedableType const&);
     BreedableType(BreedableType const&);
-    BreedableType();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BreedableType();
+
     MCAPI ~BreedableType();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

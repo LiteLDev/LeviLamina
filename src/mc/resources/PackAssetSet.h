@@ -30,7 +30,7 @@ public:
     virtual ~PackAssetSet() = default;
 
     // vIndex: 1
-    virtual void addAsset(::Core::Path const&, ::std::string const&) = 0;
+    virtual void addAsset(::Core::Path, ::std::string) = 0;
 
     // vIndex: 2
     virtual void deleteAsset(::Core::Path const&) = 0;

@@ -32,7 +32,7 @@ public:
     // vIndex: 136
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 54
@@ -57,17 +57,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DetectorRailBlock(::std::string const& nameId, int id);
-
     MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _handlePressed(::BlockSource& region, ::BlockPos const& pos, bool shouldBePressed) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

@@ -140,14 +140,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandOrigin();
-
     MCAPI ::std::unique_ptr<::CommandArea> getAreaAt(::BlockPos const& pos, int commandVersion) const;
 
     MCAPI ::std::unique_ptr<::CommandArea>
     getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
-
-    MCAPI ::std::unique_ptr<::CommandArea> getAreaAtWithBuffer(::BlockPos const& pos, int commandVersion) const;
 
     MCAPI ::std::unique_ptr<::CommandArea>
     getAreaAtWithBuffer(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks)
@@ -169,12 +165,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::NetworkIdentifier& sUnknownSource();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

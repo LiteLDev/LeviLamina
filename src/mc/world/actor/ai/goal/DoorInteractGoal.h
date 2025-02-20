@@ -34,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DoorInteractGoal() /*override*/;
+    virtual ~DoorInteractGoal() /*override*/ = default;
 
     // vIndex: 1
     virtual bool canUse() /*override*/;
@@ -53,12 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DoorInteractGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(
@@ -71,15 +65,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

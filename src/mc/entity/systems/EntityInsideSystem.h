@@ -13,11 +13,9 @@
 class Actor;
 class ActorOwnerComponent;
 class Block;
-class BlockPos;
 class FreezingComponent;
 class LocalConstBlockSource;
 class StrictEntityContext;
-class Vec2;
 class Vec3;
 struct AABBShapeComponent;
 struct ActorGameTypeComponent;
@@ -50,12 +48,7 @@ namespace EntityInsideSystem {
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
-
 MCAPI bool isAir(::Block const& block);
-
-MCAPI bool
-isSlidingDown(::BlockPos const& blockPos, ::Vec3 const& entityPos, ::Vec3 const& entityPosDelta, ::Vec2 const& aabbDim);
 
 MCAPI void onBoatAboveBubbleColumn(::Actor& actor);
 

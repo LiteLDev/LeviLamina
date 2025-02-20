@@ -5,17 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/feature_loading/FeatureVersion.h"
 
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-// clang-format on
-
 class FeatureTypeVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnk8bb473;
-    ::ll::UntypedStorage<1, 1>   mUnkbafaa0;
+    ::ll::UntypedStorage<8, 24> mUnk8bb473;
+    ::ll::UntypedStorage<1, 1>  mUnkbafaa0;
     // NOLINTEND
 
 public:
@@ -27,9 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
-
-    MCFOLD ::SemVersion const& getFormatVersion() const;
+    MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion isInternal, bool version);
 
     MCAPI ~FeatureTypeVersion();
     // NOLINTEND
@@ -37,7 +30,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureLoading::FeatureVersion version, bool isInternal);
+    MCAPI void* $ctor(::FeatureLoading::FeatureVersion isInternal, bool version);
     // NOLINTEND
 
 public:

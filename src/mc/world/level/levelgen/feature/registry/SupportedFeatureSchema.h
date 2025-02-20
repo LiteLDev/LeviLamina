@@ -6,8 +6,8 @@ struct SupportedFeatureSchema {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 232> mUnkbf6518;
-    ::ll::UntypedStorage<8, 16>  mUnkd15819;
+    ::ll::UntypedStorage<8, 56> mUnkbf6518;
+    ::ll::UntypedStorage<8, 16> mUnkd15819;
     // NOLINTEND
 
 public:

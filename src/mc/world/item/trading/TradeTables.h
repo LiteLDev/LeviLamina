@@ -26,12 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
-    _parseAndStoreTradeTable(::Level& level, ::ResourcePackManager* resourceLoader, ::Core::Path const& tradeTablePath);
+    MCAPI void _parseAndStoreTradeTable(
+        ::Level&               level,
+        ::ResourcePackManager* resourceLoader,
+        ::Core::Path const&    tradeTablePath,
+        bool                   usingUpcomingCreatorFeaturesExperiment
+    );
 
     MCAPI ::TradeTable* fetchTable(::std::string const& path);
 
-    MCAPI void reload(::Level& level);
+    MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment);
 
     MCAPI ~TradeTables();
     // NOLINTEND

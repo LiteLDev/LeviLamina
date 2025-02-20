@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/item/components/ComponentItem.h"
 
 // auto generated forward declare list
@@ -67,7 +67,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ActorDamageCause> const& ABSORBABLE_DAMAGE_CAUSES();
+    MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& ABSORBABLE_DAMAGE_CAUSES();
 
     MCAPI static ::std::vector<::DurabilityThreshold> const& DURABILITY_THRESHOLDS();
     // NOLINTEND

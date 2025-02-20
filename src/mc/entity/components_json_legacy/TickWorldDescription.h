@@ -23,6 +23,7 @@ public:
     // prevent constructor by default
     TickWorldDescription& operator=(TickWorldDescription const&);
     TickWorldDescription(TickWorldDescription const&);
+    TickWorldDescription();
 
 public:
     // virtual functions
@@ -35,18 +36,6 @@ public:
 
     // vIndex: 1
     virtual ~TickWorldDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TickWorldDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

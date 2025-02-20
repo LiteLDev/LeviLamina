@@ -45,34 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetDisplayObjectivePacket();
-
-    MCAPI SetDisplayObjectivePacket(
-        ::std::string const& displaySlotName,
-        ::std::string const& objectiveName,
-        ::std::string const& dispalyName,
-        ::std::string const& criteriaName,
-        ::ObjectiveSortOrder order
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::std::string const& displaySlotName,
-        ::std::string const& objectiveName,
-        ::std::string const& dispalyName,
-        ::std::string const& criteriaName,
-        ::ObjectiveSortOrder order
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

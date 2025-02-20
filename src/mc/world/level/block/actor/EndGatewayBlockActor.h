@@ -11,9 +11,10 @@ class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
+class BlockVolume;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class SaveContext;
 class WorldGenerator;
 // clang-format on
@@ -36,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -63,11 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EndGatewayBlockActor(::BlockPos const& pos);
-
-    MCAPI ::BlockPos getExitPosition() const;
-
-    MCAPI void setExitPosition(::BlockPos const& exitPosition);
+    MCAPI int getParticleAmount(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void teleportEntity(::Actor& entity);
     // NOLINTEND
@@ -75,29 +72,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static int _getHighestSection(::WorldGenerator& endGenerator, ::BlockVolume& box, ::BlockPos const& pos);
+
     MCAPI static ::BlockPos findExitPortal(::WorldGenerator& endGenerator, ::BlockPos const& origin);
 
     MCAPI static ::BlockPos
-    findTallestBlock(::BlockSource& region, ::BlockPos const& around, int dist, bool allowBedrock);
-
-    MCAPI static ::BlockPos
     findValidSpawnAround(::BlockSource& region, ::BlockPos const& around, bool searchForEndStoneOnly, int searchRadius);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& COOLDOWN_TIME();
-
-    MCAPI static int const& EVENT_COOLDOWN();
-
-    MCAPI static int const& SPAWN_TIME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -109,7 +89,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

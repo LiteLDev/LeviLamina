@@ -61,18 +61,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EndCityFeature(::Dimension& dimension, uint& seed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, uint& seed);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

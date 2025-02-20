@@ -3,13 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/ISharedSpawnGetter.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class LevelData;
 // clang-format on
 
 class SharedSpawnGetter : public ::ISharedSpawnGetter {
@@ -33,18 +31,6 @@ public:
 
     // vIndex: 1
     virtual ::BlockPos const& getSharedSpawnPosition() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SharedSpawnGetter(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData const> levelData);
     // NOLINTEND
 
 public:

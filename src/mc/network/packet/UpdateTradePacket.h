@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,16 +21,16 @@ class UpdateTradePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID>   mContainerId;
-    ::ll::TypedStorage<1, 1, ::ContainerType> mType;
-    ::ll::TypedStorage<8, 32, ::std::string>  mDisplayName;
-    ::ll::TypedStorage<4, 4, int>             mSize;
-    ::ll::TypedStorage<4, 4, int>             mTraderTier;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLastTradingPlayer;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>  mData;
-    ::ll::TypedStorage<1, 1, bool>            mUseNewTradeScreen;
-    ::ll::TypedStorage<1, 1, bool>            mUsingEconomyTrade;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mDisplayName;
+    ::ll::TypedStorage<4, 4, int>                                  mSize;
+    ::ll::TypedStorage<4, 4, int>                                  mTraderTier;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mLastTradingPlayer;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                       mData;
+    ::ll::TypedStorage<1, 1, bool>                                 mUseNewTradeScreen;
+    ::ll::TypedStorage<1, 1, bool>                                 mUsingEconomyTrade;
     // NOLINTEND
 
 public:
@@ -58,16 +58,16 @@ public:
     MCAPI UpdateTradePacket();
 
     MCAPI UpdateTradePacket(
-        ::ContainerID          containerID,
-        ::ContainerType        type,
-        int                    size,
-        ::std::string const&   displayName,
-        ::CompoundTag&&        tag,
-        ::ActorUniqueID const& entityID,
-        ::ActorUniqueID const& playerID,
-        int                    traderTier,
-        bool                   useNewTradeScreen,
-        bool                   usingEconomyTrade
+        ::ContainerID                        containerID,
+        ::SharedTypes::Legacy::ContainerType displayName,
+        int                                  tag,
+        ::std::string const&                 entityID,
+        ::CompoundTag&&                      playerID,
+        ::ActorUniqueID const&               traderTier,
+        ::ActorUniqueID const&               useNewTradeScreen,
+        int                                  usingEconomyTrade,
+        bool                                 type,
+        bool                                 size
     );
     // NOLINTEND
 
@@ -77,16 +77,16 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(
-        ::ContainerID          containerID,
-        ::ContainerType        type,
-        int                    size,
-        ::std::string const&   displayName,
-        ::CompoundTag&&        tag,
-        ::ActorUniqueID const& entityID,
-        ::ActorUniqueID const& playerID,
-        int                    traderTier,
-        bool                   useNewTradeScreen,
-        bool                   usingEconomyTrade
+        ::ContainerID                        containerID,
+        ::SharedTypes::Legacy::ContainerType displayName,
+        int                                  tag,
+        ::std::string const&                 entityID,
+        ::CompoundTag&&                      playerID,
+        ::ActorUniqueID const&               traderTier,
+        ::ActorUniqueID const&               useNewTradeScreen,
+        int                                  usingEconomyTrade,
+        bool                                 type,
+        bool                                 size
     );
     // NOLINTEND
 
@@ -101,7 +101,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCFOLD ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
     MCAPI void $write(::BinaryStream& bitStream) const;
 

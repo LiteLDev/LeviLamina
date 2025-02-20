@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/script_engine/Closure.h"
-#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/world/level/GameType.h"
@@ -188,8 +188,6 @@ public:
     MCAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError> relativeBlockPosition(::Vec3 const& worldPos) const;
 
     MCAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError> relativePosition(::Vec3 const& worldPos) const;
-
-    MCAPI void removeSimulatedPlayer(::ScriptModuleGameTest::ScriptSimulatedPlayer const& scriptSimulatedPlayer);
 
     MCAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptFacing, ::gametest::GameTestError>
     rotateDirection(::ScriptModuleMinecraft::ScriptFacing direction) const;

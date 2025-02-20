@@ -22,7 +22,7 @@ public:
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 172
+    // vIndex: 167
     virtual bool createAIGoals() /*override*/;
 
     // vIndex: 4

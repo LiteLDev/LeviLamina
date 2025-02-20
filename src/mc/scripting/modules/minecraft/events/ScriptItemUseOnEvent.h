@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -20,12 +20,13 @@ public:
 public:
     // prevent constructor by default
     ScriptItemUseOnEvent& operator=(ScriptItemUseOnEvent const&);
-    ScriptItemUseOnEvent(ScriptItemUseOnEvent const&);
     ScriptItemUseOnEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptItemUseOnEvent(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
+
     MCAPI ~ScriptItemUseOnEvent();
     // NOLINTEND
 
@@ -33,6 +34,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseOnEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnEvent const&);
     // NOLINTEND
 
 public:

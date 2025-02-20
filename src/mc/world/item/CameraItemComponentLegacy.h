@@ -11,7 +11,7 @@
 class Actor;
 class BlockPos;
 class CameraCallbacks;
-class Item;
+class CompoundTag;
 class ItemStack;
 class Player;
 class Vec3;
@@ -96,19 +96,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CameraItemComponentLegacy(::Item& owner);
-
     MCAPI ::CameraItemComponentLegacy::UseAction
     _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos)
         const;
+
+    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Item& owner);
+    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
@@ -138,9 +138,9 @@ public:
 
     MCFOLD float $shutterDuration() const;
 
-    MCFOLD float $pictureDuration() const;
+    MCAPI float $pictureDuration() const;
 
-    MCFOLD float $slideAwayDuration() const;
+    MCAPI float $slideAwayDuration() const;
 
     MCAPI void $registerCallbacks(::CameraCallbacks* callbacks);
     // NOLINTEND

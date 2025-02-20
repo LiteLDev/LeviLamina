@@ -21,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isSuccess() const;
-
     MCAPI ~ValidationResult();
     // NOLINTEND
 

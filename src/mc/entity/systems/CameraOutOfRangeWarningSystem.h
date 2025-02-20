@@ -12,7 +12,6 @@ class StrictEntityContext;
 struct CameraOutOfRangeWarningSentComponent;
 struct ServerActiveCameraComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace CameraOutOfRangeWarningSystem {
@@ -25,8 +24,6 @@ MCAPI void _tick(
     ::EntityModifier<::CameraOutOfRangeWarningSentComponent> modifier,
     ::IConstBlockSource const&                               region
 );
-
-MCAPI ::TickingSystemWithInfo create();
 // NOLINTEND
 
 } // namespace CameraOutOfRangeWarningSystem

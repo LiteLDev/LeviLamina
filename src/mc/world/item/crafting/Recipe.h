@@ -49,15 +49,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Results(::std::vector<::ItemInstance> const& results);
-
         MCAPI ~Results();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::std::vector<::ItemInstance> const& results);
         // NOLINTEND
 
     public:
@@ -78,7 +70,7 @@ public:
         ::ll::TypedStorage<4, 4, int>                                priority;
         ::ll::TypedStorage<8, 8, ::mce::UUID const*>                 uuid;
         ::ll::TypedStorage<8, 32, ::RecipeUnlockingRequirement>      unlockingRequirement;
-        ::ll::TypedStorage<8, 112, ::SemVersion>                     formatVersion;
+        ::ll::TypedStorage<8, 24, ::SemVersion>                      formatVersion;
         // NOLINTEND
 
     public:
@@ -106,7 +98,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredient>> mMyIngredients;
     ::ll::TypedStorage<8, 56, ::Recipe::Results>                 mResults;
     ::ll::TypedStorage<8, 32, ::RecipeUnlockingRequirement>      mUnlockingRequirement;
-    ::ll::TypedStorage<8, 112, ::SemVersion>                     mRecipeDataVersion;
+    ::ll::TypedStorage<8, 24, ::SemVersion>                      mRecipeDataVersion;
     ::ll::TypedStorage<8, 48, ::HashedString>                    mTag;
     // NOLINTEND
 
@@ -167,21 +159,9 @@ public:
 
     MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
 
+    MCAPI void generateUUID();
+
     MCAPI ::Recipe::ConstructionContext getConstructionContext() const;
-
-    MCFOLD int getHeight() const;
-
-    MCAPI ::RecipeNetId const& getNetId() const;
-
-    MCFOLD ::std::string const& getRecipeId() const;
-
-    MCFOLD ::HashedString const& getTag() const;
-
-    MCFOLD ::RecipeUnlockingRequirement const& getUnlockingRequirement() const;
-
-    MCFOLD int getWidth() const;
-
-    MCAPI void setNetId(::RecipeNetId const& recipeNetId);
     // NOLINTEND
 
 public:

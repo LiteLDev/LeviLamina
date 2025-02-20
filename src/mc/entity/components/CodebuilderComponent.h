@@ -14,10 +14,4 @@ public:
     CodebuilderComponent& operator=(CodebuilderComponent const&);
     CodebuilderComponent(CodebuilderComponent const&);
     CodebuilderComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void resetCodeStatus();
-    // NOLINTEND
 };

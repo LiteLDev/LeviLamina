@@ -47,16 +47,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlaySoundPacket();
-
     MCAPI PlaySoundPacket(::std::string name, ::Vec3 const& pos, float volume, float pitch);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::std::string name, ::Vec3 const& pos, float volume, float pitch);
     // NOLINTEND
 

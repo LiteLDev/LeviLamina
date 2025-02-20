@@ -24,21 +24,25 @@ public:
 
 public:
     // prevent constructor by default
-    CooldownItemComponent& operator=(CooldownItemComponent const&);
-    CooldownItemComponent(CooldownItemComponent const&);
     CooldownItemComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CooldownItemComponent() /*override*/;
+    virtual ~CooldownItemComponent() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CooldownItemComponent(::CooldownItemComponent const&);
+
     MCAPI explicit CooldownItemComponent(::SharedTypes::v1_20_50::CooldownItemComponent component);
+
+    MCAPI ::CooldownItemComponent& operator=(::CooldownItemComponent&&);
+
+    MCAPI ::CooldownItemComponent& operator=(::CooldownItemComponent const&);
     // NOLINTEND
 
 public:
@@ -46,8 +50,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
@@ -56,13 +60,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::CooldownItemComponent const&);
+
     MCAPI void* $ctor(::SharedTypes::v1_20_50::CooldownItemComponent component);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

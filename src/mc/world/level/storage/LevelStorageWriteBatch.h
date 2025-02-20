@@ -111,20 +111,7 @@ public:
     // NOLINTBEGIN
     MCAPI LevelStorageWriteBatch(::LevelStorageWriteBatch&& rhs);
 
-    MCAPI void addFlushCallback(::std::function<void()> callback);
-
     MCAPI void clear();
-
-    MCAPI void erase(::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<
-                         ::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>> const& it);
-
-    MCAPI ::std::_Tree_const_iterator<::std::_Tree_val<
-        ::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>
-    find(::std::string const& key) const;
-
-    MCAPI ::std::_Tree_iterator<::std::_Tree_val<
-        ::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>
-    find(::std::string const& key);
     // NOLINTEND
 
 public:

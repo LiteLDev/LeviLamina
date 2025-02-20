@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void sanitizeState();
+    MCAPI bool operator==(::Editor::Cursor::CursorState const& rhs) const;
     // NOLINTEND
 
 public:

@@ -4,24 +4,17 @@
 
 // auto generated forward declare list
 // clang-format off
-class BiomeFilterGroup;
+class Experiments;
 class IWorldRegistriesProvider;
 class MobSpawnRules;
 class MobSpawnerData;
 class Random;
 class ResourcePackManager;
-class SemVersion;
-struct ActorDefinitionIdentifier;
-struct ActorSpawnRuleData;
-struct Tick;
+namespace br::spawn { class SpawnPlacements; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ActorSpawnRuleGroup {
-public:
-    // ActorSpawnRuleGroup inner types define
-    using SpawnRulesHandler =
-        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>;
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,31 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSpawnRuleGroup(::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& registries);
-
-    MCAPI void _getResources(
-        ::ResourcePackManager& resourcePackManager,
-        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
-            callback
-    );
-
-    MCAPI bool _readJson(::std::string data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
-
-    MCAPI void _registerSpawnRules(
-        ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
-                              callback,
-        ::ActorSpawnRuleData& spawnRuleData
-    );
-
-    MCAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
-
-    MCAPI int getDelayEnd(::std::string const& id) const;
-
-    MCAPI void offSetDelayByCurrentTick(::Tick const& currentTick);
-
-    MCAPI void readResourceFiles(
-        ::ResourcePackManager&                                     resourcePackManager,
-        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap
+    MCAPI ActorSpawnRuleGroup(
+        ::ResourcePackManager&         resourcePackManager,
+        ::IWorldRegistriesProvider&    registries,
+        ::br::spawn::SpawnPlacements&  spawnPlacements,
+        ::cereal::ReflectionCtx const& ctx,
+        ::Experiments const&           experiments
     );
 
     MCAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
@@ -73,7 +47,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& registries);
+    MCAPI void* $ctor(
+        ::ResourcePackManager&         resourcePackManager,
+        ::IWorldRegistriesProvider&    registries,
+        ::br::spawn::SpawnPlacements&  spawnPlacements,
+        ::cereal::ReflectionCtx const& ctx,
+        ::Experiments const&           experiments
+    );
     // NOLINTEND
 
 public:

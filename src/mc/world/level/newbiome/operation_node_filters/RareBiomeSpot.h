@@ -26,18 +26,6 @@ public:
     RareBiomeSpot& operator=(RareBiomeSpot const&);
     RareBiomeSpot(RareBiomeSpot const&);
     RareBiomeSpot();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RareBiomeSpot(uint oneInXChance, ::Biome const& fromBiome, ::Biome const& toBiome);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(uint oneInXChance, ::Biome const& fromBiome, ::Biome const& toBiome);
-    // NOLINTEND
 };
 
 } // namespace OperationNodeFilters

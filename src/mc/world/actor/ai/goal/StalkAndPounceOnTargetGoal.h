@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorFilterGroup;
+class BlockPos;
 class Mob;
 class Vec3;
 struct Tick;
@@ -73,43 +74,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StalkAndPounceOnTargetGoal(
-        ::Mob&                    mob,
-        ::ActorFilterGroup const& stuckBlocks,
-        float                     stalkSpeed,
-        float                     stalkGiveUpDist,
-        float                     leapHeight,
-        float                     leapDist,
-        float                     maxPounceDist,
-        float                     strikeDistance,
-        float                     interestedTime,
-        float                     stuckTime,
-        bool                      setPersistent
-    );
-
     MCAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+
+    MCAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
+
+    MCAPI bool _isStuckBlock(::BlockPos blockPos) const;
 
     MCAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
     MCAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                    mob,
-        ::ActorFilterGroup const& stuckBlocks,
-        float                     stalkSpeed,
-        float                     stalkGiveUpDist,
-        float                     leapHeight,
-        float                     leapDist,
-        float                     maxPounceDist,
-        float                     strikeDistance,
-        float                     interestedTime,
-        float                     stuckTime,
-        bool                      setPersistent
-    );
+    MCAPI void _stuck();
     // NOLINTEND
 
 public:

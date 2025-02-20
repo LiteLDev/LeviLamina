@@ -8,9 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class NetworkIdentifier;
-class ServerNetworkSystem;
 namespace ClientBlobCache::Server { class Blob; }
-namespace ClientBlobCache::Server { class TransferBuilder; }
 // clang-format on
 
 namespace ClientBlobCache::Server {
@@ -42,13 +40,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~TransferTracker();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCAPI void onAckReceived(uint64 acked);
         // NOLINTEND
     };
 
@@ -64,6 +56,7 @@ public:
     // prevent constructor by default
     ActiveTransfersManager& operator=(ActiveTransfersManager const&);
     ActiveTransfersManager(ActiveTransfersManager const&);
+    ActiveTransfersManager();
 
 public:
     // virtual functions
@@ -75,35 +68,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveTransfersManager();
-
-    MCFOLD void collectTrackingData() const;
-
-    MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
-
     MCAPI void enableCacheFor(::NetworkIdentifier const& client);
-
-    MCAPI ::ClientBlobCache::Server::ActiveTransfersManager::TransferTracker*
-    getTrackerFor(::NetworkIdentifier const& client) const;
-
-    MCAPI bool isCacheEnabledFor(::NetworkIdentifier const& client) const;
-
-    MCAPI void onPeerDisconnected(::NetworkIdentifier const& client);
 
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob>
     rememberBlob(uint64 id, ::std::string& data, bool isChunkInTickRange);
-
-    MCAPI ::ClientBlobCache::Server::TransferBuilder startTransfer(::NetworkIdentifier const& client) const;
-
-    MCAPI ::ClientBlobCache::Server::TransferBuilder tryStartTransfer(::NetworkIdentifier const& client) const;
-
-    MCAPI void updateNetworkConditions(::ServerNetworkSystem& handler);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

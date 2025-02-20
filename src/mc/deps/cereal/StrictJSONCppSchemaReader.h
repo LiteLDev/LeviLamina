@@ -16,37 +16,37 @@ class StrictJSONCppSchemaReader : public ::cereal::JSONCppSchemaReaderBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 23
+    // vIndex: 24
     virtual bool _allowAsBool() /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual bool _allowAsInt8() /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual bool _allowAsUInt8() /*override*/;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual bool _allowAsInt16() /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual bool _allowAsUInt16() /*override*/;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual bool _allowAsInt32() /*override*/;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual bool _allowAsUInt32() /*override*/;
 
-    // vIndex: 30
+    // vIndex: 31
     virtual bool _allowAsInt64() /*override*/;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual bool _allowAsUInt64() /*override*/;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual bool _allowAsFloat() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual bool _allowAsDouble() /*override*/;
 
     // vIndex: 0
@@ -86,11 +86,11 @@ public:
 
     MCAPI bool $_allowAsInt32();
 
-    MCAPI bool $_allowAsUInt32();
+    MCFOLD bool $_allowAsUInt32();
 
     MCAPI bool $_allowAsInt64();
 
-    MCAPI bool $_allowAsUInt64();
+    MCFOLD bool $_allowAsUInt64();
 
     MCFOLD bool $_allowAsFloat();
 

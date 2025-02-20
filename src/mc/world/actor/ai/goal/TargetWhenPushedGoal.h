@@ -46,18 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TargetWhenPushedGoal(::Mob& mob, ::std::vector<::MobDescriptor> targetTypes, float percentChance);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::vector<::MobDescriptor> targetTypes, float percentChance);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

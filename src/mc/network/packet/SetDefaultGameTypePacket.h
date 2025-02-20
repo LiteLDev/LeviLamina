@@ -41,22 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetDefaultGameTypePacket();
-
-    MCAPI explicit SetDefaultGameTypePacket(::GameType defaultGameType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::GameType defaultGameType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

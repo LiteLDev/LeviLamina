@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
+class SemVersionConstant;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -21,13 +21,14 @@ public:
 
 public:
     // prevent constructor by default
-    Contents& operator=(Contents const&);
+    Contents(Contents const&);
     Contents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureSet::Contents const&);
+    MCAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Contents&
+    operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Contents const&);
 
     MCAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Contents&&);
@@ -44,13 +45,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersion const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureSet::Contents const&);
+    MCAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:

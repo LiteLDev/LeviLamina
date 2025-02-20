@@ -103,14 +103,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::array<char const*, 13>& CATEGORY_NAMES();
-
-    MCAPI static ::std::array<char const*, 4>& OPERATION_NAMES();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

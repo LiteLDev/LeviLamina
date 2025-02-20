@@ -7,7 +7,6 @@
 class ScriptClientDiagnosticsListener;
 class ScriptDiagnostics;
 class ScriptPluginManager;
-class ServerInstance;
 class ServerLevel;
 namespace Scripting { class DependencyLocator; }
 // clang-format on
@@ -16,9 +15,8 @@ namespace ScriptDiagnosticsCollectors {
 // functions
 // NOLINTBEGIN
 MCAPI void AddScriptStatCollectors(
-    ::ScriptDiagnostics& diagnostics,
-    ::ServerLevel&       serverLevel,
-    ::ServerInstance&,
+    ::ScriptDiagnostics&               diagnostics,
+    ::ServerLevel&                     serverLevel,
     ::ScriptPluginManager&             pluginManager,
     ::ScriptClientDiagnosticsListener& clientDiagnostics,
     ::Scripting::DependencyLocator&    locator

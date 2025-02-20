@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/platform/threading/ThreadLocalObject.h"
 #include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
 
 // auto generated forward declare list
@@ -59,19 +60,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk23d05c;
-    ::ll::UntypedStorage<8, 8>   mUnk9aabdc;
-    ::ll::UntypedStorage<8, 64>  mUnkfb28da;
-    ::ll::UntypedStorage<8, 8>   mUnka245fa;
-    ::ll::UntypedStorage<8, 8>   mUnk8e797c;
-    ::ll::UntypedStorage<8, 8>   mUnk32375c;
-    ::ll::UntypedStorage<8, 24>  mUnk52a125;
-    ::ll::UntypedStorage<8, 24>  mUnkcd56a8;
-    ::ll::UntypedStorage<8, 64>  mUnkb461fc;
-    ::ll::UntypedStorage<8, 64>  mUnk7f47fd;
-    ::ll::UntypedStorage<1, 1>   mUnk62b104;
-    ::ll::UntypedStorage<8, 8>   mUnkbe4b51;
-    ::ll::UntypedStorage<8, 120> mUnk918728;
+    ::ll::UntypedStorage<8, 64> mUnk23d05c;
+    ::ll::UntypedStorage<8, 8>  mUnk9aabdc;
+    ::ll::UntypedStorage<8, 64> mUnkfb28da;
+    ::ll::UntypedStorage<8, 8>  mUnka245fa;
+    ::ll::UntypedStorage<8, 8>  mUnk8e797c;
+    ::ll::UntypedStorage<8, 8>  mUnk32375c;
+    ::ll::UntypedStorage<8, 24> mUnk52a125;
+    ::ll::UntypedStorage<8, 24> mUnkcd56a8;
+    ::ll::UntypedStorage<8, 64> mUnkb461fc;
+    ::ll::UntypedStorage<8, 64> mUnk7f47fd;
+    ::ll::UntypedStorage<1, 1>  mUnk62b104;
+    ::ll::UntypedStorage<8, 8>  mUnkbe4b51;
+    ::ll::UntypedStorage<8, 32> mUnk918728;
     // NOLINTEND
 
 public:
@@ -111,7 +112,7 @@ public:
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
     // vIndex: 15
-    virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk) /*override*/;
+    virtual void writeEntityChunkTransfer(::LevelChunk& lc) /*override*/;
 
     // vIndex: 16
     virtual void writeEntityChunkTransfersToUnloadedChunk(
@@ -168,7 +169,7 @@ public:
 
     MCAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
 
-    MCAPI ::std::shared_ptr<::LevelStorageWriteBatch> _getBuffer();
+    MCAPI ::std::optional<::LevelChunkFormat> _getLevelChunkFormat(::std::string_view prefix, ::std::string& buffer);
 
     MCAPI bool _hasChunk(::DBChunkStorageKey const& key);
 
@@ -268,7 +269,7 @@ public:
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
+    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
 
     MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,
@@ -277,7 +278,7 @@ public:
 
     MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCFOLD void $hintDiscardBatchBegin();
+    MCAPI void $hintDiscardBatchBegin();
 
     MCAPI void $hintDiscardBatchEnd();
 

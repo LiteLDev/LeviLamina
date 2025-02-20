@@ -51,23 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShadowBanList(
-        ::std::function<void(::std::string const&)> addBanCallback,
-        ::std::chrono::seconds                      banExpiryDuration,
-        ::std::chrono::seconds                      appHandshakeGracePeriod
-    );
-
     MCAPI ushort addBan(::RakNet::SystemAddress const& addr, ::std::chrono::seconds time);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::function<void(::std::string const&)> addBanCallback,
-        ::std::chrono::seconds                      banExpiryDuration,
-        ::std::chrono::seconds                      appHandshakeGracePeriod
-    );
     // NOLINTEND
 };
 

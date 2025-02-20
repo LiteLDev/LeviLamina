@@ -3,13 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScriptPackConfigurationManager;
-namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct JSON; }
 // clang-format on
 
@@ -32,11 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptServerVariables(
-        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
-        ::Scripting::ContextConfig const&                            contextConfig
-    );
-
     MCAPI ::std::optional<::Scripting::JSON> get(::std::string const& name) const;
 
     MCAPI ::std::vector<::std::string> getAllVariableNames() const;
@@ -48,15 +40,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleServerAdmin::ScriptServerVariables> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(
-        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
-        ::Scripting::ContextConfig const&                            contextConfig
-    );
     // NOLINTEND
 
 public:

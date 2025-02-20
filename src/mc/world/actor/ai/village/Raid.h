@@ -3,11 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/Difficulty.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class CompoundTag;
 class Vec3;
 struct ActorUniqueID;
@@ -83,7 +82,7 @@ public:
         int                                      groupCompleteDelayInTicks,
         int                                      locationHelpDelayInTicks,
         int                                      finishedDelayInTicks,
-        ::Difficulty                             difficulty,
+        ::SharedTypes::Legacy::Difficulty        difficulty,
         uchar                                    allowedSpawnFailures,
         ::std::function<bool(uint64, ::Vec3&)>&& pickSpawnPointCallback,
         ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)>&& spawnGroupCallback,
@@ -101,17 +100,7 @@ public:
 
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void addPlayerToHeroList(::Actor const& actor);
-
-    MCAPI void addRaider(::ActorUniqueID const& actor, float maxHealth);
-
-    MCAPI void appendDebugInfo(::std::string& infoString) const;
-
     MCAPI float getBossBarFilledFraction() const;
-
-    MCFOLD uint64 getRemainingRaiders() const;
-
-    MCAPI bool isRaider(::ActorUniqueID actor) const;
 
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
@@ -124,12 +113,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Vec3 const& INVALID_SPAWN_POINT();
-
-    MCAPI static uchar const& NUM_GROUPS_ON_EASY();
-
-    MCAPI static uchar const& NUM_GROUPS_ON_HARD();
-
-    MCAPI static uchar const& NUM_GROUPS_ON_NORMAL();
     // NOLINTEND
 
 public:
@@ -140,7 +123,7 @@ public:
         int                                      groupCompleteDelayInTicks,
         int                                      locationHelpDelayInTicks,
         int                                      finishedDelayInTicks,
-        ::Difficulty                             difficulty,
+        ::SharedTypes::Legacy::Difficulty        difficulty,
         uchar                                    allowedSpawnFailures,
         ::std::function<bool(uint64, ::Vec3&)>&& pickSpawnPointCallback,
         ::std::function<bool(uint64, ::Vec3, uchar, ::std::unordered_set<::ActorUniqueID>&)>&& spawnGroupCallback,

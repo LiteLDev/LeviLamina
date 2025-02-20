@@ -35,15 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MeleeBoxAttackGoal(::Mob& mob);
-
     MCAPI ::AABB _getTargetHitBox(::Actor const& target) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
     // NOLINTEND
 
 public:

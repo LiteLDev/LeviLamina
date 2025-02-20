@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/player/ScriptPlayer.h"
 #include "mc/server/sim/LookDuration.h"
@@ -15,7 +15,6 @@
 // clang-format off
 class Actor;
 class BlockPos;
-class Player;
 class SimulatedPlayer;
 class Vec2;
 class Vec3;
@@ -23,7 +22,6 @@ namespace ScriptModuleGameTest { struct ScriptMoveToOptions; }
 namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
 // clang-format on
@@ -149,8 +147,6 @@ public:
 
     MCAPI ::Scripting::Result<void> swim() const;
 
-    MCAPI ::SimulatedPlayer* tryGetSimulatedPlayer() const;
-
     MCAPI ::Scripting::Result_deprecated<bool> useItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack
     ) const;
 
@@ -185,9 +181,6 @@ public:
     );
 
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptSimulatedPlayer> bind();
-
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSimulatedPlayer>
-    getHandle(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

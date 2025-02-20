@@ -12,7 +12,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DeferredCommandBase();
+    virtual ~DeferredCommandBase() = default;
 
     // vIndex: 1
     virtual void execute(::MinecraftCommands&) = 0;
@@ -21,7 +21,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

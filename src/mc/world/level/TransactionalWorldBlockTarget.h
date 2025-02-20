@@ -116,18 +116,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TransactionalWorldBlockTarget(::IBlockWorldGenAPI& target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IBlockWorldGenAPI& target);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -171,9 +159,9 @@ public:
 
     MCFOLD short $getHeightmap(int x, int z);
 
-    MCAPI bool $isLegacyLevel();
+    MCFOLD bool $isLegacyLevel();
 
-    MCAPI ::Biome const* $getBiome(::BlockPos const& pos) const;
+    MCFOLD ::Biome const* $getBiome(::BlockPos const& pos) const;
 
     MCAPI bool $isInBounds(::Pos const& pos) const;
 
@@ -181,7 +169,7 @@ public:
 
     MCAPI ::LevelData const& $getLevelData() const;
 
-    MCFOLD ::WorldGenContext const& $getContext();
+    MCAPI ::WorldGenContext const& $getContext();
 
     MCFOLD void $disableBlockSimple();
     // NOLINTEND

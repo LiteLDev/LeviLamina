@@ -9,10 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class ItemStack;
 class Player;
 class Vec3;
@@ -55,25 +53,25 @@ public:
     // vIndex: 22
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    // vIndex: 40
+    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::ItemStack _getPickupItem() const = 0;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
     // vIndex: 8
@@ -83,35 +81,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AbstractArrow(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
-    MCAPI bool isPlayerOwned() const;
-
-    MCAPI void setFavoredSlot(int favoredSlot);
-
-    MCAPI void setIsCreative(bool creativeOnly);
-
-    MCAPI void setIsPlayerOwned(bool isPlayerOwned);
+    MCAPI void _playPickupSound();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Actor* spawnPlayerProjectile(::ActorDefinitionIdentifier const& id, ::Player& player, ::Vec3 aimDir);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -125,11 +101,11 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCFOLD void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
     MCAPI void $playerTouch(::Player& player);
 

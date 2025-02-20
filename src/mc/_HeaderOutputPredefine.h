@@ -100,6 +100,9 @@
 // expected_lite C++ Library
 #include "nonstd/expected.hpp"
 
+// fmt C++ Library
+#include "fmt/format.h"
+
 struct HWND__;
 struct _TP_CALLBACK_INSTANCE;
 struct _TP_WAIT;

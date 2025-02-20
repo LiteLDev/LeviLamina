@@ -25,6 +25,7 @@ public:
     // prevent constructor by default
     md5& operator=(md5 const&);
     md5(md5 const&);
+    md5();
 
 public:
     // virtual functions
@@ -49,14 +50,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void const* _body(void const* data, uint size);
-
-    MCAPI md5();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

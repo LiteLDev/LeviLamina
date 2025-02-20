@@ -12,12 +12,12 @@
 #include "mc/client/options/UIProfile.h"
 #include "mc/client/options/VRStickyMining.h"
 #include "mc/client/options/XboxSandboxEnvironment.h"
+#include "mc/client/store/DisplayLoggedErrorType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/deps/input/VRControllerType.h"
-#include "mc/deps/minecraft_renderer/renderer/RenderingProfile.h"
 #include "mc/deviceinfo/DeviceMemoryTier.h"
 #include "mc/diagnostics/bedrock_log/LogCategory.h"
 #include "mc/input/NewInteractionModel.h"
@@ -123,7 +123,7 @@ public:
     virtual ::ChatOptions& getChatOptions() = 0;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 767> const& getAllRegisteredOptions() = 0;
+    virtual ::std::array<::std::unique_ptr<::Option>, 783> const& getAllRegisteredOptions() = 0;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) = 0;
@@ -315,7 +315,7 @@ public:
     virtual bool getVRHandsVisible() const = 0;
 
     // vIndex: 88
-    virtual ::mce::RenderingProfile getRenderingProfile() const = 0;
+    virtual ::GraphicsMode getGraphicsMode() const = 0;
 
     // vIndex: 89
     virtual bool getTransparentLeaves() const = 0;
@@ -336,7 +336,7 @@ public:
     virtual bool getDeferred() const = 0;
 
     // vIndex: 95
-    virtual ::GraphicsMode getGraphicsMode() const = 0;
+    virtual int getGraphicsQualityPresetMode() const = 0;
 
     // vIndex: 96
     virtual bool getUseMouseForDigging() const = 0;
@@ -566,604 +566,610 @@ public:
     // vIndex: 171
     virtual bool getDevAssertionsShowDialog() const = 0;
 
-    // vIndex: 172
-    virtual void setDevShowDevConsoleButton(bool) = 0;
-
     // vIndex: 173
-    virtual bool getDevShowDevConsoleButton() const = 0;
+    virtual bool getDevShowDisplayLoggedError() const = 0;
+
+    // vIndex: 172
+    virtual bool getDevShowDisplayLoggedError(::DisplayLoggedErrorType) const = 0;
 
     // vIndex: 174
-    virtual bool getDevIgnoreUserInput() const = 0;
+    virtual void setDevShowDevConsoleButton(bool) = 0;
 
     // vIndex: 175
-    virtual bool getDevDisplayTreatmentPanel() const = 0;
+    virtual bool getDevShowDevConsoleButton() const = 0;
 
     // vIndex: 176
-    virtual void setDevDisplayTreatmentPanel(bool) = 0;
+    virtual bool getDevIgnoreUserInput() const = 0;
 
     // vIndex: 177
-    virtual void setDevShowMinecraftTCUIReplacement(bool) = 0;
+    virtual bool getDevDisplayTreatmentPanel() const = 0;
 
     // vIndex: 178
-    virtual bool getDevShowMinecraftTCUIReplacement() const = 0;
+    virtual void setDevDisplayTreatmentPanel(bool) = 0;
 
     // vIndex: 179
-    virtual bool getDevCreateRealmWithoutPurchase() const = 0;
+    virtual void setDevShowMinecraftTCUIReplacement(bool) = 0;
 
     // vIndex: 180
-    virtual bool getDevDisableConnectedStoragePush() const = 0;
+    virtual bool getDevShowMinecraftTCUIReplacement() const = 0;
 
     // vIndex: 181
-    virtual bool getDevDisableConnectedStoragePull() const = 0;
+    virtual bool getDevCreateRealmWithoutPurchase() const = 0;
 
     // vIndex: 182
-    virtual void setDevFindMobs(bool) = 0;
+    virtual bool getDevDisableConnectedStoragePush() const = 0;
 
     // vIndex: 183
-    virtual bool getDevFindMobs() const = 0;
+    virtual bool getDevDisableConnectedStoragePull() const = 0;
 
     // vIndex: 184
-    virtual void setDevRenderBoundingBoxes(bool) = 0;
+    virtual void setDevFindMobs(bool) = 0;
 
     // vIndex: 185
-    virtual bool getDevRenderBoundingBoxes() const = 0;
+    virtual bool getDevFindMobs() const = 0;
 
     // vIndex: 186
-    virtual void setDevRenderPaths(bool) = 0;
+    virtual void setDevRenderBoundingBoxes(bool) = 0;
 
     // vIndex: 187
-    virtual bool getDevRenderPaths() const = 0;
+    virtual bool getDevRenderBoundingBoxes() const = 0;
 
     // vIndex: 188
-    virtual void setDevRenderMobInfoState(bool) = 0;
+    virtual void setDevRenderPaths(bool) = 0;
 
     // vIndex: 189
-    virtual bool getDevRenderMobInfoState() const = 0;
+    virtual bool getDevRenderPaths() const = 0;
 
     // vIndex: 190
-    virtual void setDevRenderGoalState(bool) = 0;
+    virtual void setDevRenderMobInfoState(bool) = 0;
 
     // vIndex: 191
-    virtual bool getDevRenderGoalState() const = 0;
+    virtual bool getDevRenderMobInfoState() const = 0;
 
     // vIndex: 192
-    virtual void setDevRenderSchedulerInfo(bool) = 0;
+    virtual void setDevRenderGoalState(bool) = 0;
 
     // vIndex: 193
-    virtual bool getDevRenderSchedulerInfo() const = 0;
+    virtual bool getDevRenderGoalState() const = 0;
 
     // vIndex: 194
-    virtual void setDevRenderCoordinateSystems(bool) = 0;
+    virtual void setDevRenderSchedulerInfo(bool) = 0;
 
     // vIndex: 195
-    virtual bool getDevRenderCoordinateSystems() const = 0;
+    virtual bool getDevRenderSchedulerInfo() const = 0;
 
     // vIndex: 196
-    virtual bool getDevResetClientId() const = 0;
+    virtual void setDevRenderCoordinateSystems(bool) = 0;
 
     // vIndex: 197
-    virtual void setDevLogFlushImmediate(bool) = 0;
+    virtual bool getDevRenderCoordinateSystems() const = 0;
 
     // vIndex: 198
-    virtual bool getDevLogFlushImmediate() const = 0;
+    virtual bool getDevResetClientId() const = 0;
 
     // vIndex: 199
-    virtual void setDevLogTimestamp(bool) = 0;
+    virtual void setDevLogFlushImmediate(bool) = 0;
 
     // vIndex: 200
-    virtual bool getDevLogTimestamp() const = 0;
+    virtual bool getDevLogFlushImmediate() const = 0;
 
     // vIndex: 201
-    virtual void setDevLogTrace(bool) = 0;
+    virtual void setDevLogTimestamp(bool) = 0;
 
     // vIndex: 202
-    virtual bool getDevLogTrace() const = 0;
+    virtual bool getDevLogTimestamp() const = 0;
 
     // vIndex: 203
-    virtual void setDevLogArea(bool) = 0;
+    virtual void setDevLogTrace(bool) = 0;
 
     // vIndex: 204
-    virtual bool getDevLogArea() const = 0;
+    virtual bool getDevLogTrace() const = 0;
 
     // vIndex: 205
-    virtual void setDevLogPriority(bool) = 0;
+    virtual void setDevLogArea(bool) = 0;
 
     // vIndex: 206
-    virtual bool getDevLogPriority() const = 0;
+    virtual bool getDevLogArea() const = 0;
 
     // vIndex: 207
-    virtual void setDevLogThread(bool) = 0;
+    virtual void setDevLogPriority(bool) = 0;
 
     // vIndex: 208
-    virtual bool getDevLogThread() const = 0;
+    virtual bool getDevLogPriority() const = 0;
 
     // vIndex: 209
-    virtual void setDevLogAppend(bool) = 0;
+    virtual void setDevLogThread(bool) = 0;
 
     // vIndex: 210
-    virtual bool getDevLogAppend() const = 0;
+    virtual bool getDevLogThread() const = 0;
 
     // vIndex: 211
-    virtual void setDevLogProcessId(bool) = 0;
+    virtual void setDevLogAppend(bool) = 0;
 
     // vIndex: 212
-    virtual bool getDevLogProcessId() const = 0;
+    virtual bool getDevLogAppend() const = 0;
 
     // vIndex: 213
-    virtual void setDevLogThreadId(bool) = 0;
+    virtual void setDevLogProcessId(bool) = 0;
 
     // vIndex: 214
-    virtual bool getDevLogThreadId() const = 0;
+    virtual bool getDevLogProcessId() const = 0;
 
     // vIndex: 215
-    virtual void setDevLogMessageId(bool) = 0;
+    virtual void setDevLogThreadId(bool) = 0;
 
     // vIndex: 216
-    virtual bool getDevLogMessageId() const = 0;
+    virtual bool getDevLogThreadId() const = 0;
 
     // vIndex: 217
-    virtual void setDevLogSilentLogging(bool) = 0;
+    virtual void setDevLogMessageId(bool) = 0;
 
     // vIndex: 218
-    virtual bool getDevLogSilentLogging() const = 0;
+    virtual bool getDevLogMessageId() const = 0;
 
     // vIndex: 219
-    virtual void setDevLogPriorityFilter(::std::string const&) = 0;
+    virtual void setDevLogSilentLogging(bool) = 0;
 
     // vIndex: 220
-    virtual ::std::string const& getDevLogPriorityFilter() const = 0;
+    virtual bool getDevLogSilentLogging() const = 0;
 
     // vIndex: 221
-    virtual void setDevLogAreaFilter(::std::string const&) = 0;
+    virtual void setDevLogPriorityFilter(::std::string const&) = 0;
 
     // vIndex: 222
-    virtual ::std::string const& getDevLogAreaFilter() const = 0;
+    virtual ::std::string const& getDevLogPriorityFilter() const = 0;
 
     // vIndex: 223
-    virtual void setDevGameEventRetentionTicks(ushort) = 0;
+    virtual void setDevLogAreaFilter(::std::string const&) = 0;
 
     // vIndex: 224
-    virtual ushort getDevGameEventRetentionTicks() const = 0;
+    virtual ::std::string const& getDevLogAreaFilter() const = 0;
 
     // vIndex: 225
-    virtual void setDevDeepDarkDebugRender(bool) = 0;
+    virtual void setDevGameEventRetentionTicks(ushort) = 0;
 
     // vIndex: 226
-    virtual bool getDevDeepDarkDebugRender() const = 0;
+    virtual ushort getDevGameEventRetentionTicks() const = 0;
 
     // vIndex: 227
-    virtual bool isLogCategoryEnabled(::BedrockLog::LogCategory) const = 0;
+    virtual void setDevDeepDarkDebugRender(bool) = 0;
 
     // vIndex: 228
-    virtual bool getDevEnableProfilerOutput() = 0;
+    virtual bool getDevDeepDarkDebugRender() const = 0;
 
     // vIndex: 229
-    virtual bool getDevAddUsersSilently() const = 0;
+    virtual bool isLogCategoryEnabled(::BedrockLog::LogCategory) const = 0;
 
     // vIndex: 230
-    virtual int getDevBenchmarkModeTime() = 0;
+    virtual bool getDevEnableProfilerOutput() = 0;
 
     // vIndex: 231
-    virtual bool getDevDisableClientBlobCache() const = 0;
+    virtual bool getDevAddUsersSilently() const = 0;
 
     // vIndex: 232
-    virtual bool getDevClientBlobCacheOnLocalServer() const = 0;
+    virtual int getDevBenchmarkModeTime() = 0;
 
     // vIndex: 233
-    virtual void setLogFlushDelay(int) = 0;
+    virtual bool getDevDisableClientBlobCache() const = 0;
 
     // vIndex: 234
-    virtual int getLogFlushDelay() = 0;
+    virtual bool getDevClientBlobCacheOnLocalServer() const = 0;
 
     // vIndex: 235
-    virtual int getAutomationParallelSlices() const = 0;
+    virtual void setLogFlushDelay(int) = 0;
 
     // vIndex: 236
-    virtual int getAutomationParallelCurrentSlice() const = 0;
+    virtual int getLogFlushDelay() = 0;
 
     // vIndex: 237
-    virtual void setIsRunningInAppCenter(bool const) = 0;
+    virtual int getAutomationParallelSlices() const = 0;
 
     // vIndex: 238
-    virtual bool getIsAutomationRun() const = 0;
+    virtual int getAutomationParallelCurrentSlice() const = 0;
 
     // vIndex: 239
-    virtual bool getShouldQuitAppAfterTesting() const = 0;
+    virtual bool getIsAutomationRun() const = 0;
 
     // vIndex: 240
-    virtual bool shouldUploadTestArtifacts() const = 0;
+    virtual bool getShouldQuitAppAfterTesting() const = 0;
 
     // vIndex: 241
-    virtual bool hasAutomationTestRunTimedOut() const = 0;
+    virtual bool shouldUploadTestArtifacts() const = 0;
 
     // vIndex: 242
-    virtual bool hasAutomationTestRunReachedCrashLimit() const = 0;
+    virtual bool hasAutomationTestRunTimedOut() const = 0;
 
     // vIndex: 243
-    virtual bool shouldAppendDebugLogTimestamp() const = 0;
+    virtual bool hasAutomationTestRunReachedCrashLimit() const = 0;
 
     // vIndex: 244
-    virtual ::std::string getAutomationServerIp() const = 0;
+    virtual bool shouldAppendDebugLogTimestamp() const = 0;
 
     // vIndex: 245
-    virtual ::std::string getAutomationServerPort() const = 0;
+    virtual ::std::string getAutomationServerIp() const = 0;
 
     // vIndex: 246
-    virtual ::std::string getAutomationArtifactUploadSas() const = 0;
+    virtual ::std::string getAutomationServerPort() const = 0;
 
     // vIndex: 247
-    virtual ::std::string getAutomationArtifactUploadUrl() const = 0;
+    virtual ::std::string getAutomationArtifactUploadSas() const = 0;
 
     // vIndex: 248
-    virtual ::std::string getAutomationRelativeBlobpath() const = 0;
+    virtual ::std::string getAutomationArtifactUploadUrl() const = 0;
 
     // vIndex: 249
-    virtual ::std::string getAutomationFunctionalTestTags() const = 0;
+    virtual ::std::string getAutomationRelativeBlobpath() const = 0;
 
     // vIndex: 250
-    virtual ::std::string getAutomationServerTestTags() const = 0;
+    virtual ::std::string getAutomationFunctionalTestTags() const = 0;
 
     // vIndex: 251
-    virtual ::std::string getAutomationUnitTestTags() const = 0;
+    virtual ::std::string getAutomationServerTestTags() const = 0;
 
     // vIndex: 252
-    virtual ::std::string getAutomationFunctionalBrokenTestTags() const = 0;
+    virtual ::std::string getAutomationUnitTestTags() const = 0;
 
     // vIndex: 253
-    virtual ::std::string getAutomationServerBrokenTestTags() const = 0;
+    virtual ::std::string getAutomationFunctionalBrokenTestTags() const = 0;
 
     // vIndex: 254
-    virtual ::std::string getAutomationUnitBrokenTestTags() const = 0;
+    virtual ::std::string getAutomationServerBrokenTestTags() const = 0;
 
     // vIndex: 255
-    virtual ::std::string getAutomationTestBuildID() const = 0;
+    virtual ::std::string getAutomationUnitBrokenTestTags() const = 0;
 
     // vIndex: 256
-    virtual ::std::string getAutomationUploadToken() const = 0;
+    virtual ::std::string getAutomationTestBuildID() const = 0;
 
     // vIndex: 257
-    virtual ::std::string getAutomationEnabledFeatures() const = 0;
+    virtual ::std::string getAutomationUploadToken() const = 0;
 
     // vIndex: 258
-    virtual ::std::string getAutomationEnabledExperiments() const = 0;
+    virtual ::std::string getAutomationEnabledFeatures() const = 0;
 
     // vIndex: 259
-    virtual bool getAutomationShouldGroupServerTests() const = 0;
+    virtual ::std::string getAutomationEnabledExperiments() const = 0;
 
     // vIndex: 260
-    virtual bool getAutomationUnrandomTestsEnabled() const = 0;
+    virtual bool getAutomationShouldGroupServerTests() const = 0;
 
     // vIndex: 261
-    virtual bool getAutomationRunEntireServerTestGroup() const = 0;
+    virtual bool getAutomationUnrandomTestsEnabled() const = 0;
 
     // vIndex: 262
-    virtual bool getAutomationRunServerTestAfterEachTest() const = 0;
+    virtual bool getAutomationRunEntireServerTestGroup() const = 0;
 
     // vIndex: 263
-    virtual ::std::string const& getTestBranchName() const = 0;
+    virtual bool getAutomationRunServerTestAfterEachTest() const = 0;
 
     // vIndex: 264
-    virtual bool getFunctionalTestBlockInput() const = 0;
+    virtual ::std::string const& getTestBranchName() const = 0;
 
     // vIndex: 265
-    virtual bool shouldBlockUserInput() const = 0;
+    virtual bool getFunctionalTestBlockInput() const = 0;
 
     // vIndex: 266
-    virtual bool hasSetSafeZone() const = 0;
+    virtual bool shouldBlockUserInput() const = 0;
 
     // vIndex: 267
-    virtual bool getAutomationDisableTreatmentPackDownloads() const = 0;
+    virtual bool hasSetSafeZone() const = 0;
 
     // vIndex: 268
-    virtual bool getAutomationProfilerCaptureEnabled() const = 0;
+    virtual bool getAutomationDisableTreatmentPackDownloads() const = 0;
 
     // vIndex: 269
-    virtual int getAutomationRepeatCount() const = 0;
+    virtual bool getAutomationProfilerCaptureEnabled() const = 0;
 
     // vIndex: 270
-    virtual int getAutomationSoakTestRunDurationMinutes() const = 0;
+    virtual bool getAutomationProfilerFlipEnabled() const = 0;
 
     // vIndex: 271
-    virtual bool getAutomationRerunFailuresOnly() const = 0;
+    virtual int getAutomationRepeatCount() const = 0;
 
     // vIndex: 272
-    virtual int getAutomationUnitPerTestcaseTimeout() const = 0;
+    virtual int getAutomationSoakTestRunDurationMinutes() const = 0;
 
     // vIndex: 273
-    virtual int getAutomationFunctionalPerTestcaseTimeout() const = 0;
+    virtual bool getAutomationRerunFailuresOnly() const = 0;
 
     // vIndex: 274
-    virtual int getAutomationServerPerTestcaseTimeout() const = 0;
+    virtual int getAutomationUnitPerTestcaseTimeout() const = 0;
 
     // vIndex: 275
-    virtual void setAutomationFunctionalBrokenTestTags(::std::string const&) = 0;
+    virtual int getAutomationFunctionalPerTestcaseTimeout() const = 0;
 
     // vIndex: 276
-    virtual void setAutomationUnitBrokenTestTags(::std::string const&) = 0;
+    virtual int getAutomationServerPerTestcaseTimeout() const = 0;
 
     // vIndex: 277
-    virtual void setAutomationUploadToken(::std::string const&) = 0;
+    virtual void setAutomationFunctionalBrokenTestTags(::std::string const&) = 0;
 
     // vIndex: 278
-    virtual bool getDevAchievmentsAlwaysEnabled() = 0;
+    virtual void setAutomationUnitBrokenTestTags(::std::string const&) = 0;
 
     // vIndex: 279
-    virtual bool shouldServerTestsLogWorlds() const = 0;
+    virtual void setAutomationUploadToken(::std::string const&) = 0;
 
     // vIndex: 280
-    virtual bool shouldServerTestsAssertOnLevelDiff() const = 0;
+    virtual bool getDevAchievmentsAlwaysEnabled() = 0;
 
     // vIndex: 281
-    virtual ::std::string getAutomationMultiplayerSessionName() const = 0;
+    virtual bool shouldServerTestsLogWorlds() const = 0;
 
     // vIndex: 282
-    virtual int getAutomationMultiplayerDeviceIndex() const = 0;
+    virtual bool shouldServerTestsAssertOnLevelDiff() const = 0;
 
     // vIndex: 283
-    virtual ::DevConnectionQuality getDevConnectionQuality() const = 0;
+    virtual ::std::string getAutomationMultiplayerSessionName() const = 0;
 
     // vIndex: 284
-    virtual int getDevRenderAttachPos() const = 0;
+    virtual int getAutomationMultiplayerDeviceIndex() const = 0;
 
     // vIndex: 285
-    virtual void setMultiPlayerGame(bool) = 0;
+    virtual ::DevConnectionQuality getDevConnectionQuality() const = 0;
 
     // vIndex: 286
-    virtual bool getMultiPlayerGame() const = 0;
+    virtual int getDevRenderAttachPos() const = 0;
 
     // vIndex: 287
-    virtual void setXboxLiveVisible(bool) = 0;
+    virtual void setMultiPlayerGame(bool) = 0;
 
     // vIndex: 288
-    virtual bool getHMDPositionDisplacement() const = 0;
+    virtual bool getMultiPlayerGame() const = 0;
 
     // vIndex: 289
-    virtual bool getVRHeadSteering() const = 0;
+    virtual void setXboxLiveVisible(bool) = 0;
 
     // vIndex: 290
-    virtual bool getStutterTurn() const = 0;
+    virtual bool getHMDPositionDisplacement() const = 0;
 
     // vIndex: 291
-    virtual float getStutterAngle() const = 0;
+    virtual bool getVRHeadSteering() const = 0;
 
     // vIndex: 292
-    virtual bool getStutterTurnSound() const = 0;
+    virtual bool getStutterTurn() const = 0;
 
     // vIndex: 293
-    virtual bool getStutterConstantTimeMode() const = 0;
+    virtual float getStutterAngle() const = 0;
 
     // vIndex: 294
-    virtual int getVRRightStickPitchAssistSteppings() const = 0;
+    virtual bool getStutterTurnSound() const = 0;
 
     // vIndex: 295
-    virtual int getVRRightStickPitchMaxAngle() const = 0;
+    virtual bool getStutterConstantTimeMode() const = 0;
 
     // vIndex: 296
-    virtual void setVRLivingRoomHintTime(int) = 0;
+    virtual int getVRRightStickPitchAssistSteppings() const = 0;
 
     // vIndex: 297
-    virtual int getVRLivingRoomHintTime() = 0;
+    virtual int getVRRightStickPitchMaxAngle() const = 0;
 
     // vIndex: 298
-    virtual bool wasLoggedInLastSession() = 0;
+    virtual void setVRLivingRoomHintTime(int) = 0;
 
     // vIndex: 299
-    virtual void setHasEverLoggedIntoXbl(bool) = 0;
+    virtual int getVRLivingRoomHintTime() = 0;
 
     // vIndex: 300
-    virtual bool getHasEverLoggedIntoXbl() const = 0;
+    virtual bool wasLoggedInLastSession() = 0;
 
     // vIndex: 301
-    virtual void setHasChosenNotToSignInToXbl(bool) = 0;
+    virtual void setHasEverLoggedIntoXbl(bool) = 0;
 
     // vIndex: 302
-    virtual bool getHasChosenNotToSignInToXbl() const = 0;
+    virtual bool getHasEverLoggedIntoXbl() const = 0;
 
     // vIndex: 303
-    virtual void setAcknowledgedAutoSave(bool) = 0;
+    virtual void setHasChosenNotToSignInToXbl(bool) = 0;
 
     // vIndex: 304
-    virtual bool getAcknowledgedAutoSave() const = 0;
+    virtual bool getHasChosenNotToSignInToXbl() const = 0;
 
     // vIndex: 305
-    virtual void setRealmsInviteShowFriendsOption(bool) = 0;
+    virtual void setAcknowledgedAutoSave(bool) = 0;
 
     // vIndex: 306
-    virtual bool getRealmsInviteShowFriendsOption() const = 0;
+    virtual bool getAcknowledgedAutoSave() const = 0;
 
     // vIndex: 307
-    virtual void setNumberOfOwnedRealms(int) = 0;
+    virtual void setRealmsInviteShowFriendsOption(bool) = 0;
 
     // vIndex: 308
-    virtual int getNumberOfOwnedRealms() const = 0;
+    virtual bool getRealmsInviteShowFriendsOption() const = 0;
 
     // vIndex: 309
-    virtual void setNumberOfFriendsRealms(int) = 0;
+    virtual void setNumberOfOwnedRealms(int) = 0;
 
     // vIndex: 310
-    virtual int getNumberOfFriendsRealms() const = 0;
+    virtual int getNumberOfOwnedRealms() const = 0;
 
     // vIndex: 311
-    virtual void setCreateRealmUpsellCount(int) = 0;
+    virtual void setNumberOfFriendsRealms(int) = 0;
 
     // vIndex: 312
-    virtual int getCreateRealmUpsellCount() const = 0;
+    virtual int getNumberOfFriendsRealms() const = 0;
 
     // vIndex: 313
-    virtual void setSaveAndQuitCount(int) = 0;
+    virtual void setCreateRealmUpsellCount(int) = 0;
 
     // vIndex: 314
-    virtual int getSaveAndQuitCount() const = 0;
+    virtual int getCreateRealmUpsellCount() const = 0;
 
     // vIndex: 315
-    virtual void setIsRatingsPromptShown(bool) = 0;
+    virtual void setSaveAndQuitCount(int) = 0;
 
     // vIndex: 316
-    virtual bool getIsRatingsPromptShown() const = 0;
+    virtual int getSaveAndQuitCount() const = 0;
 
     // vIndex: 317
-    virtual void setShowRealmsTrialButtonFromPlayScreen(bool) = 0;
+    virtual void setIsRatingsPromptShown(bool) = 0;
 
     // vIndex: 318
-    virtual bool getShowRealmsTrialButtonFromPlayScreen() const = 0;
+    virtual bool getIsRatingsPromptShown() const = 0;
 
     // vIndex: 319
-    virtual ::AutoUpdateMode getAutoUpdateMode() const = 0;
+    virtual void setShowRealmsTrialButtonFromPlayScreen(bool) = 0;
 
     // vIndex: 320
-    virtual void setCanUseCellularData(bool) = 0;
+    virtual bool getShowRealmsTrialButtonFromPlayScreen() const = 0;
 
     // vIndex: 321
-    virtual bool getCanUseCellularData() const = 0;
+    virtual ::AutoUpdateMode getAutoUpdateMode() const = 0;
 
     // vIndex: 322
-    virtual void setRequireWebsocketEncryption(bool) = 0;
+    virtual void setCanUseCellularData(bool) = 0;
 
     // vIndex: 323
-    virtual bool getRequireWebsocketEncryption() const = 0;
+    virtual bool getCanUseCellularData() const = 0;
 
     // vIndex: 324
-    virtual void setUseIPv6Only(bool) = 0;
+    virtual void setRequireWebsocketEncryption(bool) = 0;
 
     // vIndex: 325
-    virtual bool getUseIPv6Only() const = 0;
+    virtual bool getRequireWebsocketEncryption() const = 0;
 
     // vIndex: 326
-    virtual void setUseRetailXboxSandbox(bool const) = 0;
+    virtual void setWebsocketsEnabled(bool) = 0;
 
     // vIndex: 327
-    virtual bool getUseRetailXboxSandbox() const = 0;
+    virtual bool getWebsocketsEnabled() const = 0;
 
     // vIndex: 328
-    virtual void setXboxLiveSandbox(::XboxSandboxEnvironment) = 0;
+    virtual void setUseIPv6Only(bool) = 0;
 
     // vIndex: 329
-    virtual ::std::string const& getXboxLiveSandbox() const = 0;
+    virtual bool getUseIPv6Only() const = 0;
 
     // vIndex: 330
-    virtual void setRealmsEnvironment(::RealmsEnvironment) = 0;
+    virtual void setUseRetailXboxSandbox(bool const) = 0;
 
     // vIndex: 331
-    virtual ::RealmsEnvironment getRealmsEnvironment() const = 0;
+    virtual bool getUseRetailXboxSandbox() const = 0;
 
     // vIndex: 332
-    virtual void setRealmsEndpoint(::std::string const&) = 0;
+    virtual void setXboxLiveSandbox(::XboxSandboxEnvironment) = 0;
 
     // vIndex: 333
-    virtual ::std::string const& getRealmsEndpoint() const = 0;
+    virtual ::std::string const& getXboxLiveSandbox() const = 0;
 
     // vIndex: 334
-    virtual ::std::string const& getRealmsV2Endpoint() const = 0;
+    virtual void setRealmsEnvironment(::RealmsEnvironment) = 0;
 
     // vIndex: 335
-    virtual void setRealmsEndpointPayment(::std::string const&) = 0;
+    virtual ::RealmsEnvironment getRealmsEnvironment() const = 0;
 
     // vIndex: 336
-    virtual ::std::string const& getRealmsEndpointPayment() const = 0;
+    virtual void setRealmsEndpoint(::std::string const&) = 0;
 
     // vIndex: 337
-    virtual void setRealmsRelyingParty(::std::string const&) = 0;
+    virtual ::std::string const& getRealmsEndpoint() const = 0;
 
     // vIndex: 338
-    virtual ::std::string const& getRealmsRelyingParty() const = 0;
+    virtual ::std::string const& getRealmsV2Endpoint() const = 0;
 
     // vIndex: 339
-    virtual void setRealmsRelyingPartyPayment(::std::string const&) = 0;
+    virtual void setRealmsEndpointPayment(::std::string const&) = 0;
 
     // vIndex: 340
-    virtual ::std::string const& getRealmsRelyingPartyPayment() const = 0;
+    virtual ::std::string const& getRealmsEndpointPayment() const = 0;
 
     // vIndex: 341
-    virtual void setStoreHasPurchasedCoins(bool) = 0;
+    virtual void setRealmsRelyingParty(::std::string const&) = 0;
 
     // vIndex: 342
-    virtual bool getStoreHasPurchasedCoins() const = 0;
+    virtual ::std::string const& getRealmsRelyingParty() const = 0;
 
     // vIndex: 343
-    virtual void setShowUnfulfilledPurchaseModal(bool) = 0;
+    virtual void setRealmsRelyingPartyPayment(::std::string const&) = 0;
 
     // vIndex: 344
-    virtual bool getShowUnfulfilledPurchaseModal() const = 0;
+    virtual ::std::string const& getRealmsRelyingPartyPayment() const = 0;
 
     // vIndex: 345
-    virtual void setSwitchCoinDebug(bool) = 0;
+    virtual void setStoreHasPurchasedCoins(bool) = 0;
 
     // vIndex: 346
-    virtual bool getSwitchCoinDebug() const = 0;
+    virtual bool getStoreHasPurchasedCoins() const = 0;
 
     // vIndex: 347
-    virtual float getDefaultPlatformSafeZoneX() const = 0;
+    virtual void setShowUnfulfilledPurchaseModal(bool) = 0;
 
     // vIndex: 348
-    virtual float getDefaultPlatformSafeZoneY() const = 0;
+    virtual bool getShowUnfulfilledPurchaseModal() const = 0;
 
     // vIndex: 349
-    virtual bool getServerboundClientDiagnosticsEnabled() const = 0;
+    virtual void setSwitchCoinDebug(bool) = 0;
 
     // vIndex: 350
-    virtual ::ScriptDebuggerSettings getScriptDebuggerSettings() const = 0;
+    virtual bool getSwitchCoinDebug() const = 0;
 
     // vIndex: 351
-    virtual ::Scripting::WatchdogSettings getScriptWatchdogSettings() const = 0;
+    virtual float getDefaultPlatformSafeZoneX() const = 0;
 
     // vIndex: 352
-    virtual void setEduHasLoggedIn(bool) = 0;
+    virtual float getDefaultPlatformSafeZoneY() const = 0;
 
     // vIndex: 353
-    virtual bool getEduHasLoggedIn() const = 0;
+    virtual bool getServerboundClientDiagnosticsEnabled() const = 0;
 
     // vIndex: 354
-    virtual void setShownPlatformNetworkConnectConfirmation(bool) = 0;
+    virtual ::ScriptDebuggerSettings getScriptDebuggerSettings() const = 0;
 
     // vIndex: 355
-    virtual bool getShownPlatformNetworkConnectConfirmation() const = 0;
+    virtual ::Scripting::WatchdogSettings getScriptWatchdogSettings() const = 0;
 
     // vIndex: 356
-    virtual void setShownPlatformPremiumUpsell(bool) = 0;
+    virtual void setEduHasLoggedIn(bool) = 0;
 
     // vIndex: 357
-    virtual bool getShownPlatformPremiumUpsell() const = 0;
+    virtual bool getEduHasLoggedIn() const = 0;
 
     // vIndex: 358
-    virtual void setAppLaunchedCount(int) = 0;
+    virtual void setShownPlatformNetworkConnectConfirmation(bool) = 0;
 
     // vIndex: 359
-    virtual int getAppLaunchedCount() const = 0;
+    virtual bool getShownPlatformNetworkConnectConfirmation() const = 0;
 
     // vIndex: 360
-    virtual void setEcoMode(bool) = 0;
+    virtual void setShownPlatformPremiumUpsell(bool) = 0;
 
     // vIndex: 361
-    virtual bool getEcoMode() const = 0;
+    virtual bool getShownPlatformPremiumUpsell() const = 0;
 
     // vIndex: 362
-    virtual void setEduCloudBackupToggle(bool) = 0;
+    virtual void setAppLaunchedCount(int) = 0;
 
     // vIndex: 363
-    virtual bool getEduCloudBackupToggle() const = 0;
+    virtual int getAppLaunchedCount() const = 0;
 
     // vIndex: 364
-    virtual void setUseFontOverrides(bool) = 0;
+    virtual void setEcoMode(bool) = 0;
 
     // vIndex: 365
-    virtual bool getUseFontOverrides() const = 0;
+    virtual bool getEcoMode() const = 0;
 
     // vIndex: 366
-    virtual void setEduCloudResumableUpload(bool) = 0;
+    virtual void setEduCloudBackupToggle(bool) = 0;
 
     // vIndex: 367
-    virtual bool getEduCloudResumableUpload() const = 0;
+    virtual bool getEduCloudBackupToggle() const = 0;
 
     // vIndex: 368
-    virtual ::NewInteractionModel getEffectiveTouchScheme() const = 0;
+    virtual void setUseFontOverrides(bool) = 0;
 
     // vIndex: 369
-    virtual void setSaveDeferralCount(int) = 0;
+    virtual bool getUseFontOverrides() const = 0;
 
     // vIndex: 370
-    virtual int getSaveDeferralCount() const = 0;
+    virtual ::NewInteractionModel getEffectiveTouchScheme() const = 0;
 
     // vIndex: 371
+    virtual void setSaveDeferralCount(int) = 0;
+
+    // vIndex: 372
+    virtual int getSaveDeferralCount() const = 0;
+
+    // vIndex: 373
     virtual ::std::optional<::DeviceMemoryTier> getScriptingMemoryTierOverride() const = 0;
     // NOLINTEND
 

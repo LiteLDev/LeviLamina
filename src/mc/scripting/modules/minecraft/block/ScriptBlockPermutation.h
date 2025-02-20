@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/world/level/block/LiquidType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,6 +18,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -62,13 +65,15 @@ public:
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
     _createPropertyV010(::std::string const& propertyName);
 
+    MCAPI ::Scripting::Result<bool, ::Scripting::Error> canBeDestroyedByLiquidSpread(::LiquidType liquidType) const;
+
+    MCAPI ::Scripting::Result<bool, ::Scripting::Error> canContainLiquid(::LiquidType liquidType) const;
+
     MCAPI ::std::vector<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
     getAllPropertiesV010();
 
     MCAPI ::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>> getAllStates() const;
-
-    MCFOLD ::Block const& getBlock() const;
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     getItemStack(int amount) const;
@@ -83,13 +88,16 @@ public:
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> getType() const;
 
+    MCAPI bool hasTag(::std::string const& tag) const;
+
+    MCAPI ::Scripting::Result<bool, ::Scripting::Error> isLiquidBlocking(::LiquidType liquidType) const;
+
+    MCAPI ::Scripting::Result<bool, ::Scripting::Error> liquidSpreadCausesSpawn(::LiquidType liquidType) const;
+
     MCAPI bool matches(
         ::std::string                                                                                  blockName,
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> properties
     ) const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptBlockPermutation&
-    operator=(::ScriptModuleMinecraft::ScriptBlockPermutation&&);
 
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
@@ -99,8 +107,6 @@ public:
         ::std::string                            name,
         ::std::variant<int, ::std::string, bool> value
     );
-
-    MCAPI ~ScriptBlockPermutation();
     // NOLINTEND
 
 public:
@@ -120,12 +126,6 @@ public:
         ::std::string const&                                                                                  blockName,
         ::std::optional<::std::unordered_map<::std::string, ::std::variant<int, ::std::string, bool>>> const& properties
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

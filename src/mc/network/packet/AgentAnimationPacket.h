@@ -43,22 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AgentAnimationPacket();
-
-    MCAPI AgentAnimationPacket(::AgentAnimation anim, ::ActorRuntimeID runtimeId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::AgentAnimation anim, ::ActorRuntimeID runtimeId);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

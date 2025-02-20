@@ -16,6 +16,7 @@ class ItemStackBase;
 class Level;
 class Mob;
 class Player;
+class Vec3;
 struct ResolvedItemIconInfo;
 // clang-format on
 
@@ -34,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 108
     virtual ::ResolvedItemIconInfo
@@ -46,7 +47,7 @@ public:
         /*override*/;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 79
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
@@ -77,24 +78,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrossbowItem(::std::string const& name, int id);
+    MCAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
 
     MCAPI void
     _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
 
     MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_USE_DURATION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -106,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
@@ -114,9 +103,7 @@ public:
     MCAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
-
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class Status; }
 // clang-format on
 
@@ -22,24 +21,17 @@ public:
 public:
     // prevent constructor by default
     Response& operator=(Response const&);
-    Response(Response const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI Response();
 
-    MCAPI Response(::Bedrock::Http::Response&&);
+    MCAPI Response(::Bedrock::Http::Response const&);
 
     MCAPI explicit Response(::Bedrock::Http::Status status);
 
     MCAPI ::gsl::span<uchar const> getBodyAsBytes() const;
-
-    MCAPI ::std::string getBodyAsUtf8String() const;
-
-    MCFOLD ::Bedrock::Http::HeaderCollection const& getHeaders() const;
-
-    MCAPI ::Bedrock::Http::Status getStatus() const;
 
     MCAPI ~Response();
     // NOLINTEND
@@ -49,7 +41,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::Bedrock::Http::Response&&);
+    MCAPI void* $ctor(::Bedrock::Http::Response const&);
 
     MCAPI void* $ctor(::Bedrock::Http::Status status);
     // NOLINTEND

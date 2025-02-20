@@ -37,8 +37,6 @@ MCAPI ::std::vector<::std::string> const getImportantFiles();
 
 MCAPI bool isLevelMarkedForSync(::Core::Path const& directory);
 
-MCAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
-
 MCAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
 MCAPI ::Core::Result
@@ -66,7 +64,7 @@ MCAPI void saveLevelData(
 );
 
 MCAPI void
-saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
+saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelData, ::LevelData const& levelId);
 
 MCAPI void saveLevelDisplayDataToCache(
     ::std::string const&          levelId,

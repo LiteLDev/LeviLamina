@@ -47,22 +47,22 @@ public:
     // vIndex: 22
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual float getThrowPower();
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual float getThrowUpAngleOffset();
 
-    // vIndex: 145
+    // vIndex: 140
     virtual float getGravity();
 
     // vIndex: 8
@@ -80,7 +80,7 @@ public:
 
     MCAPI void shoot(::Mob& shooter);
 
-    MCAPI void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCAPI void shoot(::Vec3 const& dir, float pow, float baseSpeed, ::Vec3 const& uncertainty);
     // NOLINTEND
 
 public:

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/gametest/framework/BaseGameTestHelper.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
-#include "mc/world/item/ArmorSlot.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
@@ -199,7 +199,7 @@ public:
     // vIndex: 44
     virtual ::std::optional<::gametest::GameTestError> assertEntityHasArmor(
         ::ActorDefinitionIdentifier const&,
-        ::ArmorSlot,
+        ::SharedTypes::Legacy::ArmorSlot,
         ::std::string const&,
         int,
         ::BlockPos const&,

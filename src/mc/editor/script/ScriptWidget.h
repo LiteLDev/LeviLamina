@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/script/ScriptWidget_ComponentInterface.h"
 #include "mc/editor/script/ScriptWidget_GroupInterface.h"
 #include "mc/editor/script/ScriptWidget_ServiceInterface.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -222,6 +222,11 @@ public:
         ::Scripting::Error>
     _deleteWidget();
 
+    MCAPI void _forEachComponent(
+        ::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>)>
+            func
+    ) const;
+
     MCAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetComponentBase>>,
         ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
@@ -301,6 +306,8 @@ public:
     MCAPI void _setVisible(bool visible);
 
     MCAPI ::mce::UUID const& getGroupId() const;
+
+    MCAPI bool isValid() const;
 
     MCAPI void setPosition(::Vec3 const& pos);
 

@@ -50,33 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventorySlotPacket();
-
     MCAPI InventorySlotPacket(::ContainerID id, uint slot, ::ItemStack const& item);
-
-    MCAPI InventorySlotPacket(
-        ::ContainerID              id,
-        uint                       slot,
-        ::ItemStack const&         item,
-        ::FullContainerName const& fullContainerName,
-        ::ItemStack const&         storageItem
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ContainerID id, uint slot, ::ItemStack const& item);
-
-    MCAPI void* $ctor(
-        ::ContainerID              id,
-        uint                       slot,
-        ::ItemStack const&         item,
-        ::FullContainerName const& fullContainerName,
-        ::ItemStack const&         storageItem
-    );
     // NOLINTEND
 
 public:

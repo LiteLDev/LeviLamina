@@ -12,8 +12,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct PlayerScoreboardId;
-struct ScoreboardId;
 struct ScoreboardIdentityPacketInfo;
 // clang-format on
 
@@ -42,13 +40,6 @@ public:
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::SetScoreboardIdentityPacket
-    change(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
     // NOLINTEND
 
 public:

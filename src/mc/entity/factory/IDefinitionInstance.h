@@ -52,12 +52,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void save(::EntityRegistry const& registry, ::EntityContext const& context, ::CompoundTag& tag) const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

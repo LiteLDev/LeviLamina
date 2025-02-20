@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/world/actor/selectors/ActorSelectorType.h"
 
 // auto generated forward declare list
@@ -48,21 +48,21 @@ public:
     MCAPI static ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     queryActors(
-        ::ActorSelectorType                                                      selectionType,
-        ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
-        ::Scripting::WeakLifetimeScope const&                                    scope,
-        ::Dimension*                                                             dimension,
-        ::Level&                                                                 level
+        ::ActorSelectorType                                                      options,
+        ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& scope,
+        ::Scripting::WeakLifetimeScope const&                                    dimension,
+        ::Dimension*                                                             level,
+        ::Level&                                                                 selectionType
     );
 
     MCAPI static ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorIterator>>
     queryActors_V010(
-        ::ActorSelectorType                                                      selectionType,
-        ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& options,
-        ::Scripting::WeakLifetimeScope const&                                    scope,
-        ::Dimension*                                                             dimension,
-        ::Level&                                                                 level
+        ::ActorSelectorType                                                      options,
+        ::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> const& scope,
+        ::Scripting::WeakLifetimeScope const&                                    dimension,
+        ::Dimension*                                                             level,
+        ::Level&                                                                 selectionType
     );
 
     MCAPI static ::Scripting::Result_deprecated<

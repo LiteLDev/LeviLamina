@@ -4,31 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
-#include "mc/deps/shared_types/UseAnimation.h"
-#include "mc/world/item/ArmorSlot.h"
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BaseGameVersion;
 class Block;
-class BlockActor;
 class BlockLegacy;
-class BlockSource;
 class ComponentItem;
 class CompoundTag;
 class ContainerComponent;
 class DynamicProperties;
 class HashedString;
-class IDataInput;
-class IDataOutput;
 class Item;
-class ItemComponent;
 class ItemDescriptor;
 class ItemEnchants;
 class ItemInstance;
-class Level;
-class Player;
 class RecipeIngredient;
 class RenderParams;
 class SaveContext;
@@ -106,8 +97,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackBase();
-
     MCAPI explicit ItemStackBase(::RecipeIngredient const& ingredient);
 
     MCAPI ItemStackBase(::ItemStackBase const& rhs);
@@ -115,8 +104,6 @@ public:
     MCAPI ItemStackBase(::BlockLegacy const& block, int count);
 
     MCAPI ItemStackBase(::Block const& block, int count, ::CompoundTag const* _userData);
-
-    MCAPI ItemStackBase(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI ItemStackBase(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
 
@@ -126,67 +113,35 @@ public:
 
     MCAPI ::std::string _getHoverFormattingPrefix() const;
 
-    MCAPI void _loadItem(::CompoundTag const& compoundTag);
+    MCAPI void _loadComponents(::CompoundTag const& compoundTag);
 
-    MCAPI void _saveComponents(::CompoundTag& tag) const;
+    MCAPI void _loadItem(::CompoundTag const& compoundTag);
 
     MCAPI void _setChargedItem(::ItemInstance const& item);
 
     MCAPI bool _setItem(int id, bool doRemap);
 
-    MCAPI void _updateCompareHashes();
+    MCAPI void _setItemFromBlockName(::HashedString const& blockName);
 
-    MCAPI void add(int inCount);
+    MCAPI void _updateCompareHashes();
 
     MCAPI bool addComponents(::Json::Value const& root, ::std::string& errorMsg);
 
     MCAPI void addCustomUserData(::ContainerComponent const& containerComponent);
 
-    MCAPI void addCustomUserData(::BlockActor& blockEntity, ::BlockSource& region);
-
-    MCAPI bool canBeCharged() const;
-
-    MCAPI bool canDestroy(::Block const* block) const;
-
-    MCAPI bool canDestroySpecial(::Block const& block) const;
-
-    MCAPI bool canPlaceOn(::Block const* block) const;
-
-    MCAPI bool clearAllDynamicProperties(::std::string const& collection);
-
     MCAPI void clearChargedItem();
 
     MCAPI void clearCustomLore();
 
-    MCAPI bool componentsMatch(::ItemStackBase const& other) const;
-
     MCAPI ::ItemEnchants constructItemEnchantsFromUserData() const;
 
-    MCAPI void deserializeComponents(::IDataInput& input);
-
-    MCAPI ::ArmorSlot getArmorSlot() const;
-
-    MCAPI int getAttackDamage() const;
+    MCAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlot() const;
 
     MCAPI short getAuxValue() const;
 
     MCAPI int getBaseRepairCost() const;
 
-    MCFOLD ::Block const* getBlock() const;
-
-    MCFOLD ::Tick const& getBlockingTick() const;
-
-    MCFOLD ::std::vector<::BlockLegacy const*> const& getCanDestroy() const;
-
-    MCFOLD ::std::vector<::BlockLegacy const*> const& getCanPlaceOn() const;
-
-    MCAPI ::std::string getCategoryName() const;
-
-    MCAPI ::ItemInstance const& getChargedItem() const;
-
     MCAPI ::mce::Color getColor() const;
-
-    MCAPI ::ItemComponent const* getComponent(::HashedString const& id) const;
 
     MCAPI ::ComponentItem const* getComponentItem() const;
 
@@ -205,15 +160,7 @@ public:
     MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
-    MCAPI ::std::string getEffectName() const;
-
-    MCAPI int getEnchantSlot() const;
-
-    MCAPI int getEnchantValue() const;
-
     MCAPI ::HashedString const& getFullNameHash() const;
-
-    MCAPI ::std::string getHoverName() const;
 
     MCAPI short getId() const;
 
@@ -241,33 +188,15 @@ public:
 
     MCAPI ::Bedrock::Safety::RedactableString getRedactedName() const;
 
-    MCAPI ::BaseGameVersion const& getRequiredBaseGameVersion() const;
-
-    MCAPI ::SharedTypes::Legacy::UseAnimation getUseAnimation() const;
-
-    MCAPI ::CompoundTag const* getUserData() const;
-
-    MCFOLD ::CompoundTag* getUserData();
-
-    MCFOLD bool getWasPickedUp() const;
-
-    MCAPI bool hasChargedItem() const;
-
     MCAPI bool hasContainerData() const;
 
     MCAPI bool hasCustomHoverName() const;
-
-    MCAPI bool hasDamageValue() const;
 
     MCAPI bool hasSameAuxValue(::ItemStackBase const& other) const;
 
     MCAPI bool hasSameUserData(::ItemStackBase const& other) const;
 
-    MCAPI bool hasTag(uint64 const& hash) const;
-
     MCAPI bool hasTag(::ItemTag const& string) const;
-
-    MCFOLD bool hasUserData() const;
 
     MCAPI bool hurtAndBreak(int deltaDamage, ::Actor* owner);
 
@@ -281,10 +210,6 @@ public:
 
     MCAPI bool isBlock() const;
 
-    MCAPI bool isBlockInstance(::HashedString const& blockName) const;
-
-    MCAPI bool isCoolableItem() const;
-
     MCAPI bool isDamageableItem() const;
 
     MCAPI bool isDamaged() const;
@@ -292,10 +217,6 @@ public:
     MCAPI bool isEnchanted() const;
 
     MCAPI bool isEnchantingBook() const;
-
-    MCAPI bool isExplodable() const;
-
-    MCAPI bool isFireResistant() const;
 
     MCAPI bool isFullStack() const;
 
@@ -307,30 +228,17 @@ public:
 
     MCAPI bool isHumanoidWearableBlockItem() const;
 
-    MCAPI bool isHumanoidWearableItem() const;
-
     MCAPI bool isInstance(::HashedString const& itemName, bool useItemLookup) const;
-
-    MCAPI bool isLiquidClipItem() const;
-
-    MCAPI bool isMusicDiscItem() const;
 
     MCAPI bool isNull() const;
 
-    MCAPI bool isOffhandItem() const;
-
     MCAPI bool isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds
-    ) const;
-
-    MCAPI bool isOneOfBlockInstances(::std::initializer_list<::std::reference_wrapper<::HashedString const>> blocks
     ) const;
 
     MCAPI bool isOneOfInstances(
         ::std::initializer_list<::std::reference_wrapper<::HashedString const>> items,
         bool                                                                    useItemLookup
     ) const;
-
-    MCAPI bool isPattern() const;
 
     MCAPI bool isPotionItem() const;
 
@@ -340,15 +248,7 @@ public:
 
     MCAPI bool isStackedByData() const;
 
-    MCAPI bool isValidAuxValue(int value) const;
-
-    MCAPI void load(::CompoundTag const& compoundTag);
-
-    MCAPI void load(::CompoundTag const& compoundTag, ::Level& level);
-
-    MCAPI bool matches(::ItemStackBase const& other) const;
-
-    MCAPI bool matchesChargedItem(::ItemStackBase const& other) const;
+    MCFOLD bool matches(::ItemStackBase const& other) const;
 
     MCAPI bool matchesEitherWearableCase(::CompoundTag const* userData) const;
 
@@ -360,23 +260,15 @@ public:
 
     MCAPI ::ItemStackBase& operator=(::ItemStackBase const& rhs);
 
-    MCAPI bool operator==(::ItemStackBase const& rhs) const;
-
-    MCAPI void refreshedInContainer(::Level& level) const;
+    MCFOLD bool operator==(::ItemStackBase const& rhs) const;
 
     MCAPI void remove(int inCount);
-
-    MCAPI void removeDamageValue();
-
-    MCAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
 
     MCAPI void removeEnchants();
 
     MCAPI void resetHoverName();
 
-    MCAPI bool sameItem(::ItemStackBase const& other, ::ItemStackBase::ComparisonOptions const& options) const;
-
-    MCAPI bool sameItemAndAux(::ItemStackBase const& other) const;
+    MCAPI bool sameItem(int itemId, int auxValue) const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> save(::SaveContext const& saveContext) const;
 
@@ -384,17 +276,7 @@ public:
 
     MCAPI bool sendEventTriggered(::std::string const& event, ::RenderParams const& params);
 
-    MCAPI void serializeComponents(::IDataOutput& output) const;
-
     MCAPI void set(int inCount);
-
-    MCAPI void setAuxValue(short value);
-
-    MCFOLD void setBlock(::Block const* block);
-
-    MCAPI bool setCanDestroy(::std::vector<::std::string> const& blockIds);
-
-    MCAPI bool setCanPlaceOn(::std::vector<::std::string> const& blockIds);
 
     MCAPI void setChargedItem(::ItemInstance const& instance, bool isSwapping);
 
@@ -410,23 +292,9 @@ public:
         ::std::string const&                                              collectionName
     );
 
-    MCAPI void setJustBrewed(bool crafted);
-
-    MCAPI void setPickupTime();
-
     MCAPI void setRepairCost(int cost);
 
-    MCFOLD void setShowPickUp(bool show);
-
     MCAPI void setUserData(::std::unique_ptr<::CompoundTag> tag);
-
-    MCFOLD void setWasPickedUp(bool wasPickedUp);
-
-    MCAPI bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
-
-    MCAPI bool shouldVanish() const;
-
-    MCAPI void startCoolDown(::Player* player) const;
 
     MCAPI bool updateComponent(::std::string const& name, ::Json::Value const& data);
     // NOLINTEND
@@ -441,10 +309,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ItemStackBase::ComparisonOptions const& COMPARISONOPTIONS_RELEVANTUSERDATA();
-
-    MCAPI static int const& MAX_STACK_SIZE();
-
     MCAPI static ::std::string const& TAG_CAN_DESTROY();
 
     MCAPI static ::std::string const& TAG_CAN_PLACE_ON();
@@ -471,8 +335,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::RecipeIngredient const& ingredient);
 
     MCAPI void* $ctor(::ItemStackBase const& rhs);
@@ -480,8 +342,6 @@ public:
     MCAPI void* $ctor(::BlockLegacy const& block, int count);
 
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
-
-    MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
     // NOLINTEND

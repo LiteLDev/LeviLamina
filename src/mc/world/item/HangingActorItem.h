@@ -35,18 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HangingActorItem(::std::string const& name, int id, ::ActorType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ActorType type);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -20,8 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addExplodePosition(::Vec3 const& position);
-
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
     MCAPI ~ParticlesBlockExplosionEvent();

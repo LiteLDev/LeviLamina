@@ -5,8 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class ItemStack;
 class ItemStackBase;
-class ListTag;
 class SaveContext;
 struct FullContainerName;
 namespace StorageItemUtility { class StorageItemWeightData; }
@@ -22,12 +22,15 @@ MCAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase cons
 MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataServer(::ItemStackBase const& item);
 
-MCAPI void
-saveDataFixupBySaveContext(::CompoundTag* tag, ::SaveContext const& saveContext, ::ItemStackBase const& item);
+MCAPI void removeSerializedContainerIDs(::ItemStack& item);
+
+MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
+    ::std::unique_ptr<::CompoundTag> tag,
+    ::SaveContext const&             saveContext,
+    ::ItemStackBase const&           item
+);
 
 MCAPI void tryFlattenStorageItem(::ItemStackBase& item);
-
-MCAPI ::ListTag const* tryGetContentData(::ItemStackBase const& item);
 
 MCAPI void tryRemoveStorageItemContentData(::ItemStackBase& item);
 // NOLINTEND

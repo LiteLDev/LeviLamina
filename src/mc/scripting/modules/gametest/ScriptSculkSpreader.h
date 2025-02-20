@@ -3,12 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 class Vec3;
+namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleGameTest {
@@ -31,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
+
     MCAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;
 
     MCAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
@@ -38,20 +44,15 @@ public:
     MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
 
     MCAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
-
-    MCAPI ~ScriptSculkSpreader();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleGameTest::ScriptSculkSpreader> bind();
-    // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>>
+    getHandle(::BlockSource& region, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

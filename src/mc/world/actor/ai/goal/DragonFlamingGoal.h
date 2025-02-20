@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class EnderDragon;
-class Mob;
 struct EffectDuration;
 namespace mce { class Color; }
 // clang-format on
@@ -52,18 +51,6 @@ public:
 
     // vIndex: 0
     virtual ~DragonFlamingGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DragonFlamingGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

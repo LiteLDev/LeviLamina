@@ -13,7 +13,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Dimension;
-class Experiments;
 class ItemRegistryRef;
 class ItemStack;
 class Level;
@@ -68,7 +67,6 @@ public:
     // prevent constructor by default
     LootCommand& operator=(LootCommand const&);
     LootCommand(LootCommand const&);
-    LootCommand();
 
 public:
     // virtual functions
@@ -83,6 +81,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LootCommand();
+
     MCAPI ::std::optional<::std::vector<::ItemStack>> _getItemsFromSource(
         ::CommandOrigin const& origin,
         ::CommandOutput&       output,
@@ -106,8 +106,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    setup(::CommandRegistry& registry, ::ItemRegistryRef itemRegistry, ::Experiments const* experiments);
+    MCAPI static void setup(::CommandRegistry& registry, ::ItemRegistryRef itemRegistry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

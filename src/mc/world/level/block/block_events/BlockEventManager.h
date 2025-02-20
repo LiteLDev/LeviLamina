@@ -29,6 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _assertMainOrServerThread() const;
+
     MCAPI ::BlockEvents::BlockEventExecutor& _getOrAddExecutor(::BlockEvents::EventType type);
 
     MCAPI ::BlockEvents::BlockEventExecutor const* tryGetExecutor(::BlockEvents::EventType type) const;

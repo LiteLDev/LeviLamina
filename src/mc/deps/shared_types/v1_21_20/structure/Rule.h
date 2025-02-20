@@ -8,10 +8,10 @@ struct Rule {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnka705f0;
-    ::ll::UntypedStorage<8, 56> mUnkc6c8e7;
-    ::ll::UntypedStorage<4, 32> mUnk78ec91;
-    ::ll::UntypedStorage<8, 56> mUnkbdde4a;
+    ::ll::UntypedStorage<8, 48> mUnka705f0;
+    ::ll::UntypedStorage<8, 48> mUnkc6c8e7;
+    ::ll::UntypedStorage<4, 28> mUnk78ec91;
+    ::ll::UntypedStorage<8, 48> mUnkbdde4a;
     ::ll::UntypedStorage<8, 96> mUnkbebde2;
     // NOLINTEND
 

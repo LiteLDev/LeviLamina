@@ -45,15 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ControlledByPlayerGoal(::Mob& mob);
-
     MCAPI bool _canBeControlledByPassenger();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

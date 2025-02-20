@@ -28,34 +28,21 @@ public:
     // prevent constructor by default
     CSHA1& operator=(CSHA1 const&);
     CSHA1(CSHA1 const&);
+    CSHA1();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CSHA1();
-
     MCAPI void Final();
 
-    MCFOLD uchar* GetHash() const;
-
-    MCFOLD void Reset();
-
     MCAPI void Transform(uint* pState, uchar const* pBuffer);
-
-    MCAPI void Update(uchar const* pbData, uint uLen);
 
     MCAPI ~CSHA1();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

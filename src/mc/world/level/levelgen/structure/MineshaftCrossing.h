@@ -55,6 +55,19 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::BoundingBox findCrossing(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction
+    );
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

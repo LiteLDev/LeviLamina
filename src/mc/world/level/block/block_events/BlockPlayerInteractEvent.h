@@ -8,9 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class ItemStack;
-class Player;
-class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -39,24 +36,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockPlayerInteractEvent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void configureRenderParamsForTrigger(::RenderParams& params);
-
-    MCFOLD ::Player const& getPlayer() const;
-
-    MCFOLD bool isClientSide() const;
-
-    MCAPI bool isInteractionFailure() const;
-
-    MCAPI void setInteractionFailure();
-
-    MCAPI void setInteractionSuccessful();
-
-    MCAPI void setPlayerSelectedItem(::ItemStack& item);
     // NOLINTEND
 
 public:

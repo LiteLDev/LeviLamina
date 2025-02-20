@@ -11,6 +11,7 @@ class BaseAttributeMap;
 class CompoundTag;
 class ListTag;
 class TemporalAttributeBuff;
+struct AttributeModificationContext;
 // clang-format on
 
 class SharedAttributes {
@@ -22,19 +23,20 @@ public:
 
     MCAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);
 
-    MCAPI static void _loadAttribute(::AttributeInstance& instance, ::CompoundTag const* tag);
+    MCAPI static void
+    _loadAttribute(::AttributeInstance& instance, ::CompoundTag const* tag, ::AttributeModificationContext& context);
 
     MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
-
-    MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttributeBuff(::TemporalAttributeBuff const& buff);
 
     MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttributeModifier(::AttributeModifier const& modifier);
 
     MCAPI static bool checkIsDeprecated(::std::string& name);
 
-    MCAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);
+    MCAPI static ::TemporalAttributeBuff loadAttributeBuff(::CompoundTag const& tag);
 
-    MCAPI static ::std::unique_ptr<::ListTag> saveAttributes(::BaseAttributeMap const* attributes);
+    MCAPI static ::std::shared_ptr<::AttributeModifier> loadAttributeModifier(::CompoundTag const& tag);
+
+    MCAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);
     // NOLINTEND
 
 public:

@@ -35,19 +35,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TargetGoalDefinition() /*override*/;
+    virtual ~TargetGoalDefinition() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::TargetGoal& goal) const;
+    MCAPI void initialize(::EntityContext& goal, ::TargetGoal& entity) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

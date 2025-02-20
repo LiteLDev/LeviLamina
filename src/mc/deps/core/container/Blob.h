@@ -56,50 +56,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Blob& operator=(Blob const&);
-    Blob(Blob const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Blob();
-
-    MCAPI Blob(::mce::Blob&& rhs);
-
-    MCAPI explicit Blob(uint64 size);
-
-    MCFOLD uchar const* cbegin() const;
-
-    MCAPI uchar const* cend() const;
-
-    MCFOLD bool empty() const;
-
-    MCAPI ::mce::Blob& operator=(::mce::Blob&& rhs);
-
-    MCAPI ~Blob();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void defaultDeleter(uchar* ptr);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::mce::Blob&& rhs);
-
-    MCAPI void* $ctor(uint64 size);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

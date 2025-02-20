@@ -13,10 +13,12 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Random;
 struct BlockGraphicsModeChangeContext;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CactusBlock : public ::BlockLegacy {
@@ -25,9 +27,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 5
     virtual ::AABB
@@ -58,6 +57,9 @@ public:
     // vIndex: 128
     virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~CactusBlock() /*override*/ = default;
     // NOLINTEND
@@ -65,13 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CactusBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -84,8 +80,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
@@ -105,6 +99,8 @@ public:
     MCFOLD bool $isValidAuxValue(int value) const;
 
     MCFOLD bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

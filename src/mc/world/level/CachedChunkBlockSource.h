@@ -28,24 +28,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CachedChunkBlockSource(::BlockSource& region);
-
     MCAPI ushort _updateCacheAndGetIndex(::BlockPos const& position);
 
     MCAPI ::Block const& getBlock(::BlockPos const& position);
 
-    MCFOLD ::BlockSource& getBlockSource();
-
     MCAPI ::Block const& getLiquidBlock(::BlockPos const& position);
 
     MCAPI ::Material const& getMaterial(::BlockPos const& pos);
-
-    MCAPI void prefetchForPosition(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region);
     // NOLINTEND
 };

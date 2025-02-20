@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Mob;
-struct MobDescriptor;
 // clang-format on
 
 class OwnerHurtTargetGoal : public ::TargetGoal {
@@ -32,18 +31,6 @@ public:
 
     // vIndex: 0
     virtual ~OwnerHurtTargetGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OwnerHurtTargetGoal(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes);
     // NOLINTEND
 
 public:

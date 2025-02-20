@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -53,40 +53,6 @@ public:
 
     // vIndex: 0
     virtual ~SneezeGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SneezeGoal(
-        ::Mob&                                mob,
-        float                                 cooldownTime,
-        float                                 probability,
-        float                                 dropItemChance,
-        ::std::string const&                  lootTable,
-        ::std::string const&                  sneezeSound,
-        ::std::string const&                  preSneezeSound,
-        float                                 prepareTime,
-        ::std::vector<::MobDescriptor> const& reactMobFilters,
-        float                                 reactWithin
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                mob,
-        float                                 cooldownTime,
-        float                                 probability,
-        float                                 dropItemChance,
-        ::std::string const&                  lootTable,
-        ::std::string const&                  sneezeSound,
-        ::std::string const&                  preSneezeSound,
-        float                                 prepareTime,
-        ::std::vector<::MobDescriptor> const& reactMobFilters,
-        float                                 reactWithin
-    );
     // NOLINTEND
 
 public:

@@ -10,7 +10,6 @@
 class Actor;
 class BlockPos;
 class BlockSource;
-class Material;
 class Random;
 // clang-format on
 
@@ -25,7 +24,7 @@ public:
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 0
@@ -35,15 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LiquidBlockStatic(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void _setDynamic(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

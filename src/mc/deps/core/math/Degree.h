@@ -19,8 +19,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit Degree(::mce::Radian rad);
-
-    MCFOLD float const& asFloat() const;
     // NOLINTEND
 
 public:

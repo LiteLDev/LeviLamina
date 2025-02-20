@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -43,18 +43,6 @@ public:
         PlainData& operator=(PlainData const&);
         PlainData(PlainData const&);
         PlainData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~PlainData();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     struct SoundData {
@@ -95,7 +83,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 8> mUnk5be6b0;
-        ::ll::UntypedStorage<4, 4> mUnk9ef37b;
+        ::ll::UntypedStorage<4, 4> mUnk68bc8c;
         // NOLINTEND
 
     public:
@@ -136,20 +124,28 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SoundEventRequest(::SoundEventRequest&&);
-
-    MCAPI ~SoundEventRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+        ::DimensionType                        dimension,
+        ::ActorDataFlagComponent const&        actorData,
+        ::ActorDefinitionIdentifier const&     id,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        bool                                   isGlobal
+    );
+
     MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
         ::DimensionType                        dimension,
         ::ActorDataFlagComponent const&        actorData,
         ::ActorDefinitionIdentifier const&     id,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::StrictEntityContext const&           entity,
-        ::ActorLocation                        location,
+        ::SharedTypes::Legacy::ActorLocation   location,
         int                                    data
     );
     // NOLINTEND
@@ -158,11 +154,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SoundEventRequest&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

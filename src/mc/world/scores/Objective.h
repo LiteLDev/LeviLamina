@@ -36,21 +36,9 @@ public:
     // NOLINTBEGIN
     MCAPI Objective(::std::string const& name, ::ObjectiveCriteria const& criteria);
 
-    MCFOLD ::ObjectiveCriteria const& getCriteria() const;
-
-    MCFOLD ::std::string const& getDisplayName() const;
-
-    MCFOLD ::std::string const& getName() const;
-
     MCAPI ::ScoreInfo getPlayerScore(::ScoreboardId const& id) const;
 
-    MCAPI ::std::vector<::ScoreboardId> getPlayers() const;
-
-    MCFOLD ::std::unordered_map<::ScoreboardId, int> const& getScores() const;
-
     MCAPI bool hasScore(::ScoreboardId const& id) const;
-
-    MCFOLD bool hasScores() const;
     // NOLINTEND
 
 public:

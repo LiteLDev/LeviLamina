@@ -19,9 +19,9 @@ class IConstBlockSource;
 class Material;
 class Random;
 class Vec3;
+struct BlockAnimateTickData;
 struct BlockGraphicsModeChangeContext;
 namespace BlockEvents { class BlockPlaceEvent; }
-namespace mce { class Color; }
 // clang-format on
 
 class LiquidBlock : public ::BlockLegacy {
@@ -36,13 +36,8 @@ public:
     getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const /*override*/;
 
-    // vIndex: 148
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
-
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -59,7 +54,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~LiquidBlock() /*override*/;
+    virtual ~LiquidBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -80,23 +75,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 _getFlow(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
-
-    MCAPI static int getDepth(::IConstBlockSource const& region, ::BlockPos const& pos, ::Material const& material);
-
-    MCAPI static float getHeightFromDepth(int depth);
-
-    MCAPI static void handleEntityInside(
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::Vec3&                    current,
-        ::Material const&          material
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -108,9 +92,7 @@ public:
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

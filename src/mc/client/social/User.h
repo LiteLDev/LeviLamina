@@ -193,149 +193,149 @@ public:
     virtual ::std::string getDisplayName(::Social::IdentityType) const = 0;
 
     // vIndex: 48
-    virtual void setDisplayName(::std::string const&) = 0;
-
-    // vIndex: 49
     virtual ::std::shared_ptr<::Core::FileStorageArea> const getStorageArea() const = 0;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual ::Core::Path getSettingsDirectoryPath() const = 0;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual bool hasValidSettingsDirectoryPath() const = 0;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual ::std::shared_ptr<::IOptions> const getOptions() const = 0;
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::Social::XboxLiveUser& getLiveUser() const = 0;
 
-    // vIndex: 54
+    // vIndex: 53
     virtual void setLiveUser(::std::unique_ptr<::Social::XboxLiveUser>) = 0;
 
-    // vIndex: 55
+    // vIndex: 54
     virtual void
     checkPrivilegeWithUIAsync(int, ::std::string const&, ::std::function<void(::Social::PermissionCheckResult)>) = 0;
 
-    // vIndex: 56
+    // vIndex: 55
     virtual ::RelationshipStatus mayChatWith(::std::string const&) = 0;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual bool mayChatWithMe(::std::string const&) const = 0;
 
-    // vIndex: 58
+    // vIndex: 57
     virtual bool isMutedPlayer(::std::string const&) = 0;
 
-    // vIndex: 59
+    // vIndex: 58
     virtual ::Social::PermissionCheckResult multiplayerAllowed() const = 0;
 
-    // vIndex: 60
+    // vIndex: 59
     virtual ::Social::PermissionCheckResult chatAllowed() const = 0;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual ::Social::PermissionCheckResult addFriendAllowed() const = 0;
 
-    // vIndex: 62
+    // vIndex: 61
     virtual ::Social::PermissionCheckResult userGeneratedContentAllowed() const = 0;
 
-    // vIndex: 63
+    // vIndex: 62
     virtual ::Social::PermissionCheckResult createAndJoinClubsAllowed() const = 0;
 
-    // vIndex: 64
+    // vIndex: 63
     virtual ::Social::PermissionCheckResult viewingProfilesAllowed() const = 0;
 
-    // vIndex: 65
+    // vIndex: 64
     virtual ::Social::PermissionCheckResult uploadCapturesAllowed() const = 0;
 
-    // vIndex: 66
+    // vIndex: 65
     virtual bool isRemotePlatformUser() const = 0;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual bool shouldClearChatOnJoinGame() const = 0;
 
-    // vIndex: 68
+    // vIndex: 67
     virtual int getGameControllerId() const = 0;
 
-    // vIndex: 69
+    // vIndex: 68
     virtual void setGameControllerId(int) = 0;
 
-    // vIndex: 70
+    // vIndex: 69
     virtual ::std::string getPlatformID() const = 0;
 
-    // vIndex: 71
+    // vIndex: 70
     virtual bool hasPremiumPlatformAccess() const = 0;
 
-    // vIndex: 72
+    // vIndex: 71
     virtual void checkPremiumPlatformStatusAsync(::std::function<void(bool)>) = 0;
 
-    // vIndex: 73
+    // vIndex: 72
     virtual bool hasPlatformIcons() const = 0;
 
-    // vIndex: 74
+    // vIndex: 73
     virtual bool hasPlatformProfileCards() const = 0;
 
-    // vIndex: 75
+    // vIndex: 74
     virtual void
     getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) = 0;
 
-    // vIndex: 76
+    // vIndex: 75
     virtual void
     getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) = 0;
 
-    // vIndex: 77
+    // vIndex: 76
     virtual ::Social::PlatformImageService& getPlatformFriendsImageService() = 0;
 
-    // vIndex: 78
+    // vIndex: 77
     virtual void
     getPlatformProfile(::std::string const&, ::std::function<void(::Social::PlatformUserProfileData&)>) = 0;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual void
     getPlatformProfiles(::std::vector<::std::string> const&, ::std::function<void(::std::vector<::Social::PlatformUserProfileData>&&)>) = 0;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual ::Social::ProfileImageOptions getDefaultProfileImageOptions() const = 0;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::shared_ptr<::mce::Image>>>
     getProfileImage(::Social::ProfileImageOptions const&) = 0;
 
-    // vIndex: 82
+    // vIndex: 81
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Core::PathBuffer<::std::string>>>
     getProfileImageFile(::Social::ProfileImageOptions const&) = 0;
 
-    // vIndex: 83
+    // vIndex: 82
     virtual bool canSignInToXBL() const = 0;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual void setNeedsPlatformReconnect() = 0;
 
-    // vIndex: 85
+    // vIndex: 84
     virtual ::std::string getPlatformOfflineID() const = 0;
 
-    // vIndex: 86
+    // vIndex: 85
     virtual ::std::string getPlatformOnlineID() const = 0;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void associateClientInstance(::std::shared_ptr<::IClientInstance>) = 0;
 
-    // vIndex: 89
+    // vIndex: 88
     virtual ::std::weak_ptr<::IClientInstance> getAssociateClientInstance() = 0;
 
-    // vIndex: 88
+    // vIndex: 87
     virtual ::std::weak_ptr<::IClientInstance const> const getAssociateClientInstance() const = 0;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual void setPresence(::std::string const&) = 0;
 
-    // vIndex: 91
+    // vIndex: 90
     virtual void clearPresence() = 0;
 
-    // vIndex: 92
+    // vIndex: 91
     virtual bool hasPlayedLegacyGame() const = 0;
 
+    // vIndex: 92
+    virtual bool getLegacyOptionsData(::std::vector<uchar>&) const = 0;
+
     // vIndex: 93
-    virtual bool getLegacyOptionsData(::std::vector<uchar>&) = 0;
+    virtual void onAppSuspend() = 0;
 
     // vIndex: 94
     virtual void onAppResumed() = 0;
@@ -350,39 +350,33 @@ public:
     virtual ::std::string const& getBanExpiration() const = 0;
 
     // vIndex: 98
-    virtual void sendPlayerAccountPermissionsTelemetry() const = 0;
-
-    // vIndex: 99
     virtual void initIdentity() = 0;
 
-    // vIndex: 100
+    // vIndex: 99
     virtual void setUserManager(::Bedrock::NonOwnerPointer<::Social::UserManager>) = 0;
 
-    // vIndex: 101
+    // vIndex: 100
     virtual void _onSignOut(::Social::IdentityType) = 0;
 
-    // vIndex: 102
+    // vIndex: 101
     virtual void
         _notifyIdentitiesOfSignIn(::std::shared_ptr<::Social::Identity>, ::std::function<bool(::Social::IdentityEventResponse, ::std::shared_ptr<::Social::Identity>)>) = 0;
 
-    // vIndex: 103
+    // vIndex: 102
     virtual void _notifyIdentitySignInEventSubscribers(::Social::IdentityType) = 0;
 
-    // vIndex: 104
+    // vIndex: 103
     virtual void _notifyIdentitySignOutEventSubscribers(::Social::IdentityType) = 0;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual void setStorageArea(::std::shared_ptr<::Core::FileStorageArea>, ::BuildPlatform) = 0;
 
-    // vIndex: 106
+    // vIndex: 105
     virtual void _postSignInSteps(::Social::MultiIdentitySigninResult, ::std::vector<::Social::IdentityType>&) = 0;
 
-    // vIndex: 107
+    // vIndex: 106
     virtual void
     _finalizeSignIn(::Social::MultiIdentitySigninResult&&, ::std::vector<::Social::IdentityType>&&, ::std::set<::Social::IdentityType>&&) = 0;
-
-    // vIndex: 108
-    virtual void _setEnteringOfflineMode(bool) = 0;
     // NOLINTEND
 
 public:

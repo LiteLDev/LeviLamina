@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/world/item/BlockItem.h"
 #include "mc/world/item/Rarity.h"
 #include "mc/world/level/block/BlockShape.h"
@@ -15,7 +15,6 @@ class Actor;
 class BlockPos;
 class BlockSource;
 class Container;
-class HashedString;
 class InteractionResult;
 class ItemStack;
 class ItemStackBase;
@@ -47,7 +46,7 @@ public:
     virtual int getEnchantSlot() const /*override*/;
 
     // vIndex: 101
-    virtual ::ActorLocation getEquipLocation() const /*override*/;
+    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
     // vIndex: 102
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
@@ -62,18 +61,6 @@ public:
 
     // vIndex: 0
     virtual ~SkullItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SkullItem(::std::string const& name, int id, ::HashedString const& blockName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::HashedString const& blockName);
     // NOLINTEND
 
 public:
@@ -97,7 +84,7 @@ public:
 
     MCAPI int $getEnchantSlot() const;
 
-    MCFOLD ::ActorLocation $getEquipLocation() const;
+    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 

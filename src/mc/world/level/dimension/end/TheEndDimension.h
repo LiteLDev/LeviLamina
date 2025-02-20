@@ -41,13 +41,13 @@ public:
     // vIndex: 0
     virtual ~TheEndDimension() /*override*/ = default;
 
-    // vIndex: 37
+    // vIndex: 34
     virtual void startLeaveGame() /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void tick() /*override*/;
 
     // vIndex: 23
@@ -56,25 +56,19 @@ public:
     // vIndex: 1
     virtual bool isNaturalDimension() const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool isValidSpawn(int x, int z) const /*override*/;
 
     // vIndex: 22
     virtual short getCloudHeight() const /*override*/;
 
-    // vIndex: 29
-    virtual bool isDay() const /*override*/;
-
     // vIndex: 24
     virtual bool mayRespawnViaBed() const /*override*/;
 
     // vIndex: 25
-    virtual bool hasGround() const /*override*/;
-
-    // vIndex: 26
     virtual ::BlockPos getSpawnPos() const /*override*/;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual int getSpawnYPosition() const /*override*/;
 
     // vIndex: 9
@@ -86,26 +80,26 @@ public:
     // vIndex: 2
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 28
     virtual float getTimeOfDay(int time, float a) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual ::std::unique_ptr<::WorldGenerator>
     createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 36
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 37
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
@@ -116,12 +110,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI TheEndDimension(::ILevel& level, ::Scheduler& context);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& AMBIENT_MULTIPLIER();
     // NOLINTEND
 
 public:
@@ -153,15 +141,11 @@ public:
 
     MCFOLD short $getCloudHeight() const;
 
-    MCFOLD bool $isDay() const;
-
     MCFOLD bool $mayRespawnViaBed() const;
-
-    MCFOLD bool $hasGround() const;
 
     MCAPI ::BlockPos $getSpawnPos() const;
 
-    MCAPI int $getSpawnYPosition() const;
+    MCFOLD int $getSpawnYPosition() const;
 
     MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
@@ -176,7 +160,7 @@ public:
 
     MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
     MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 

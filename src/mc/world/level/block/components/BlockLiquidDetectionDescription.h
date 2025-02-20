@@ -71,12 +71,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string const& NameID();
 
-    MCAPI static ::std::initializer_list<::std::pair<::std::string const, ::LiquidReaction>> const&
-    liquidReactionEnumValues();
-
     MCAPI static ::BidirectionalUnorderedMap<::std::string, ::LiquidReaction> const& liquidReactionNameBiMap();
-
-    MCAPI static ::std::initializer_list<::std::pair<::std::string const, ::LiquidType>> const& liquidTypeEnumValues();
 
     MCAPI static ::BidirectionalUnorderedMap<::std::string, ::LiquidType> const& liquidTypeNameBiMap();
     // NOLINTEND

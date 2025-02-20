@@ -12,17 +12,14 @@ class Actor;
 class ActorDamageSource;
 class BlockSource;
 class EnchantmentInstance;
-class HashedString;
 class Item;
 class ItemEnchants;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Mob;
-class Random;
 class Vec3;
 struct ActorUniqueID;
-struct EnchantResult;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
@@ -30,13 +27,13 @@ class EnchantUtils {
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _convertBookCheck(::ItemStackBase& out);
+
     MCAPI static void appendEnchantToFormattedText(
         ::Enchant::Type                      type,
         ::std::string_view                   enchantName,
         ::Bedrock::Safety::RedactableString& formattedEnchantmentText
     );
-
-    MCAPI static bool applyEnchant(::ItemStackBase& out, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
 
     MCAPI static bool applyEnchant(::ItemStackBase& out, ::Enchant::Type type, int level, bool allowNonVanilla);
 
@@ -45,16 +42,8 @@ public:
     MCAPI static float
     calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
 
-    MCAPI static ::EnchantResult
-    canEnchant(::ItemStackBase const& item, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
-
-    MCAPI static ::EnchantResult
-    canEnchant(::ItemStackBase const& item, ::Enchant::Type type, int level, bool allowNonVanilla);
-
     MCAPI static int
     combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
-
-    MCAPI static int determineActivation(::Enchant::Type enchantType);
 
     MCAPI static void doPostDamageEffects(::Actor& victim, ::Actor& attacker);
 
@@ -82,8 +71,6 @@ public:
 
     MCAPI static ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, ::Vec3 const& pos);
 
-    MCAPI static ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
-
     MCAPI static ::std::string getLevelString(int level);
 
     MCAPI static float getMeleeDamageBonus(::Actor const& victim, ::Actor& attacker);
@@ -95,21 +82,7 @@ public:
 
     MCAPI static ::std::string getRandomName();
 
-    MCAPI static int getTotalProtectionLevels(::Enchant::Type type, ::Mob const& target);
-
-    MCAPI static int getTradeableRandomEnchantIndex(::Random& random);
-
-    MCAPI static bool hasCurse(::ItemStackBase const& item);
-
     MCAPI static bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
-
-    MCAPI static bool isCurse(::Enchant::Type enchantType);
-
-    MCFOLD static void randomlyEnchant(::ItemStack& out, int cost, int valueBuff, bool treasure);
-
-    MCAPI static void randomlyEnchant(::ItemInstance&, int, int, bool);
-
-    MCAPI static void removeEnchants(::ItemStack& out);
 
     MCAPI static ::ItemEnchants selectEnchantments(::Item const* item, int enchantCost, int valueBuff, bool treasure);
     // NOLINTEND
@@ -118,8 +91,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static int const& MAX_EXP_REPAIR_COST();
-
-    MCAPI static int const& PROTECTIONFACTOR_PRIMARYCAP();
 
     MCAPI static int const& PROTECTIONFACTOR_SECONDARYCAP();
 

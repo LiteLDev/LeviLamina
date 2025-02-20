@@ -15,7 +15,7 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class IConstBlockSource;
-class Level;
+class ILevel;
 class PistonBlockActor;
 class SaveContext;
 class Vec3;
@@ -42,7 +42,7 @@ public:
     virtual ~MovingBlockActor() /*override*/ = default;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -81,8 +81,6 @@ public:
 
     MCAPI ::Vec3 getDrawPos(::IConstBlockSource const& region, float a) const;
 
-    MCFOLD ::Block const& getWrappedBlock() const;
-
     MCAPI void moveCollidedEntities(::PistonBlockActor& pistonBlock, ::BlockSource& region);
     // NOLINTEND
 
@@ -101,7 +99,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

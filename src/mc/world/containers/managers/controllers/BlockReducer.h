@@ -42,6 +42,7 @@ public:
     // prevent constructor by default
     BlockReducer& operator=(BlockReducer const&);
     BlockReducer(BlockReducer const&);
+    BlockReducer();
 
 public:
     // virtual functions
@@ -56,19 +57,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockReducer();
+    MCAPI int _getBlockKey(::ItemDescriptor const& block) const;
 
     MCAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
 
-    MCFOLD ::std::unordered_map<int, ::std::vector<::ItemStack>> const& getReductionMap() const;
-
     MCAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

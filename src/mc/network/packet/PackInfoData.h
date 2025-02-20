@@ -14,7 +14,7 @@ struct PackInfoData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 136, ::PackIdVersion>  mPackIdVersion;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion>   mPackIdVersion;
     ::ll::TypedStorage<8, 8, uint64>             mPackSize;
     ::ll::TypedStorage<8, 32, ::std::string>     mContentKey;
     ::ll::TypedStorage<8, 32, ::std::string>     mSubpackName;
@@ -27,15 +27,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    PackInfoData& operator=(PackInfoData const&);
-    PackInfoData(PackInfoData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInfoData(::PackInfoData&&);
-
     MCAPI PackInfoData(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,
@@ -55,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackInfoData&&);
-
     MCAPI void* $ctor(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,

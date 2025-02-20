@@ -35,46 +35,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChangeDimensionRequest& operator=(ChangeDimensionRequest const&);
-    ChangeDimensionRequest(ChangeDimensionRequest const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChangeDimensionRequest();
-
-    MCAPI ChangeDimensionRequest(::ChangeDimensionRequest&&);
-
-    MCAPI ChangeDimensionRequest(
-        ::DimensionType fromId,
-        ::DimensionType toId,
-        ::Vec3          fromLocation,
-        ::Vec3          toLocation,
-        bool            usePortal,
-        bool            respawn
-    );
-
-    MCAPI ::ChangeDimensionRequest& operator=(::ChangeDimensionRequest&&);
-
     MCAPI ~ChangeDimensionRequest();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ChangeDimensionRequest&&);
-
-    MCAPI void* $ctor(
-        ::DimensionType fromId,
-        ::DimensionType toId,
-        ::Vec3          fromLocation,
-        ::Vec3          toLocation,
-        bool            usePortal,
-        bool            respawn
-    );
     // NOLINTEND
 
 public:

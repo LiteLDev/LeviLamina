@@ -10,6 +10,7 @@
 // clang-format off
 class ContainerScreenContext;
 class ContainerScreenValidation;
+class ItemInstance;
 class ItemStack;
 struct ContainerValidationCraftInputs;
 struct ContainerValidationCraftResult;
@@ -38,6 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::ItemInstance
+    _getResultFromId(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId);
+
     MCAPI bool _recipeMatches(
         ::ContainerScreenContext const& screenContext,
         ::RecipeNetId const&            recipeNetId,

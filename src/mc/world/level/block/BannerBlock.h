@@ -20,8 +20,8 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class BannerBlock : public ::ActorBlock {
@@ -34,9 +34,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
 
@@ -72,9 +69,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerBlock(::std::string const& nameId, int id, bool onGround);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -98,12 +95,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -112,8 +103,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 
     MCFOLD ::AABB

@@ -22,7 +22,6 @@ struct ActorMovementTickNeededComponent;
 struct BaseGameVersionComponent;
 struct IsHorizontalPoseFlagComponent;
 struct OffsetsComponent;
-struct PassengerRenderingRidingOffsetComponent;
 struct PlayerComponent;
 struct PlayerIsSleepingFlagComponent;
 struct TickingSystemWithInfo;
@@ -72,13 +71,6 @@ public:
     MCAPI static ::TickingSystemWithInfo createSystem(bool isClientSide);
 
     MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
-
-    MCAPI static ::Vec3 getCameraPosition(
-        ::Vec3 const&                                    interpolatedRidingPosition,
-        ::PassengerRenderingRidingOffsetComponent const* passengerOffset,
-        ::VanillaOffsetComponent const*                  cameraOffset,
-        float                                            alpha
-    );
     // NOLINTEND
 
 public:

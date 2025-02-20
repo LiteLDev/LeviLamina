@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicContextOwner.h"
-#include "mc/deps/cereal/SerializerContext.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaReader; }
 namespace cereal::internal { class BasicSchema; }
 // clang-format on
@@ -18,7 +18,7 @@ class BasicLoader : public ::cereal::BasicContextOwner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkab84fe;
+    ::ll::UntypedStorage<8, 72> mUnkab84fe;
     // NOLINTEND
 
 public:
@@ -37,9 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::string> getErrors() const;
-
-    MCAPI ::std::vector<::cereal::SerializerContext::LogEntry> const& getLog() const;
+    MCAPI explicit BasicLoader(::cereal::ReflectionCtx const& reflectionCtx);
 
     MCAPI bool loadImpl(
         ::cereal::SchemaReader&                reader,
@@ -47,6 +45,12 @@ public:
         ::entt::meta_any const&                loadContext,
         ::cereal::internal::BasicSchema const& fallback
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

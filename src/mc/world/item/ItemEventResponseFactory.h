@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemEventResponseFactory() /*override*/ = default;
+    virtual ~ItemEventResponseFactory() /*override*/;
 
     // vIndex: 1
     virtual void initializeFactory(::IPackLoadContext const& packLoadContext) /*override*/;
@@ -26,21 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ItemEventResponseFactory(::IPackLoadContext const& packLoadContext);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IPackLoadContext const& packLoadContext);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

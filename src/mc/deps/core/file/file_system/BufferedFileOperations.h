@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileSystemImpl; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -15,25 +15,18 @@ class BufferedFileOperations {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result copyDirectory(
-        ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::Path const&     sourceDirectoryPath,
-        ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::Path const&     targetDirectoryPath
-    );
-
     MCAPI static ::Core::Result copyFile(
         ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::Path const&     sourceFilePath,
+        ::Core::PathView        sourceFilePath,
         ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::Path const&     targetFilePath
+        ::Core::PathView        targetFilePath
     );
 
     MCAPI static ::Core::Result copyFileWithLimit(
         ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::Path const&     sourceFilePath,
+        ::Core::PathView        sourceFilePath,
         ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::Path const&     targetFilePath,
+        ::Core::PathView        targetFilePath,
         uint64                  startPosition,
         uint64&                 outBytesWritten,
         uint64&                 outBytesRemaining
@@ -41,16 +34,16 @@ public:
 
     MCAPI static ::Core::Result moveDirectory(
         ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::Path const&     sourceDirectoryPath,
+        ::Core::PathView        sourceDirectoryPath,
         ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::Path const&     targetDirectoryPath
+        ::Core::PathView        targetDirectoryPath
     );
 
     MCAPI static ::Core::Result moveFile(
         ::Core::FileSystemImpl* pSourceTransaction,
-        ::Core::Path const&     sourceFilePath,
+        ::Core::PathView        sourceFilePath,
         ::Core::FileSystemImpl* pTargetTransaction,
-        ::Core::Path const&     targetFilePath
+        ::Core::PathView        targetFilePath
     );
     // NOLINTEND
 };

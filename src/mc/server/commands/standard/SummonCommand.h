@@ -36,7 +36,6 @@ public:
     // prevent constructor by default
     SummonCommand& operator=(SummonCommand const&);
     SummonCommand(SummonCommand const&);
-    SummonCommand();
 
 public:
     // virtual functions
@@ -51,6 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SummonCommand();
+
     MCAPI ::RotationCommandUtils::FacingResult
     _getFacingDirection(::CommandOrigin const& origin, ::CommandOutput& output, ::Vec3& faceTarget) const;
     // NOLINTEND
@@ -59,6 +60,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

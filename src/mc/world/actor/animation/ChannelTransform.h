@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChannelTransform_Float;
+class ExpressionNode;
 class Vec3;
 // clang-format on
 
@@ -25,6 +27,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ChannelTransform(::ExpressionNode const& expression);
+
+    MCAPI explicit ChannelTransform(::ChannelTransform_Float const& rhs);
+
+    MCAPI ChannelTransform(::ExpressionNode const& expression, ::Vec3 const& axis);
+
+    MCAPI ChannelTransform(::ExpressionNode const& expression, int axisIndex);
+
     MCAPI bool getDataValues(::Vec3& minValue, ::Vec3& maxValue) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ExpressionNode const& expression);
+
+    MCAPI void* $ctor(::ChannelTransform_Float const& rhs);
+
+    MCAPI void* $ctor(::ExpressionNode const& expression, ::Vec3 const& axis);
+
+    MCAPI void* $ctor(::ExpressionNode const& expression, int axisIndex);
     // NOLINTEND
 };

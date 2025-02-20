@@ -41,15 +41,18 @@ public:
     virtual void dataMob(::std::string const&) = 0;
 
     // vIndex: 8
-    virtual bool encryptConnection(::std::string const&, ::CodeBuilder::EncryptionRequest const&) = 0;
+    virtual void dataTutorial(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 9
-    virtual void subscribe(::std::string const&, ::std::string const&) = 0;
+    virtual bool encryptConnection(::std::string const&, ::CodeBuilder::EncryptionRequest const&) = 0;
 
     // vIndex: 10
-    virtual void unsubscribe(::std::string const&, ::std::string const&) = 0;
+    virtual void subscribe(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 11
+    virtual void unsubscribe(::std::string const&, ::std::string const&) = 0;
+
+    // vIndex: 12
     virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const&) = 0;
     // NOLINTEND
 

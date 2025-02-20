@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ControlledByPlayerGoal;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -26,20 +24,13 @@ public:
     // prevent constructor by default
     ControlledByPlayerDefinition& operator=(ControlledByPlayerDefinition const&);
     ControlledByPlayerDefinition(ControlledByPlayerDefinition const&);
+    ControlledByPlayerDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ControlledByPlayerDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ControlledByPlayerDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::ControlledByPlayerGoal& goal) const;
     // NOLINTEND
 
 public:
@@ -50,12 +41,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ControlledByPlayerDefinition>>&
             root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -17,11 +17,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Color(float r_, float g_, float b_, float a_);
+    MCAPI Color();
+
+    MCAPI bool operator!=(::mce::Color const& c) const;
 
     MCAPI bool operator==(::mce::Color const& c) const;
-
-    MCAPI int toABGR() const;
 
     MCAPI int toARGB() const;
 
@@ -31,6 +31,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::mce::Color fromARGB(int col);
+
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
     MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);
@@ -79,7 +81,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float r_, float g_, float b_, float a_);
+    MCFOLD void* $ctor();
     // NOLINTEND
 };
 

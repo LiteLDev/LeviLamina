@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorAnimationControllerInfo;
-class ActorAnimationControllerPtr;
 class HashedString;
 class MinEngineVersion;
 class ResourcePackManager;
@@ -35,6 +34,7 @@ public:
     // prevent constructor by default
     ActorAnimationControllerGroup& operator=(ActorAnimationControllerGroup const&);
     ActorAnimationControllerGroup(ActorAnimationControllerGroup const&);
+    ActorAnimationControllerGroup();
 
 public:
     // virtual functions
@@ -46,16 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationControllerGroup();
-
     MCAPI void _loadActorAnimationController(
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,
         ::MinEngineVersion const& minEngineVersion,
         ::CurrentCmdVersion       packCommandVersion
     );
-
-    MCAPI ::ActorAnimationControllerPtr getActorAnimationController(::HashedString const& name);
 
     MCAPI ::std::shared_ptr<::ActorAnimationControllerInfo> getActorAnimationControllerInfo(::HashedString const& name);
 
@@ -75,12 +71,6 @@ public:
     MCAPI static bool loadFormatVersion(::Json::Value const& root, ::SemVersion& version);
 
     MCAPI static bool upgrade_v1_8_to_v1_10(::Json::Value& root, ::MinEngineVersion const& minEngineVersion);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class IContentKeyProvider;
-class IInPackagePacks;
 class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
@@ -57,18 +56,6 @@ public:
 
     // vIndex: 4
     virtual ::PackType getPackType() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI InPackagePackSource(::std::shared_ptr<::IInPackagePacks> const& packs, ::PackType packType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::IInPackagePacks> const& packs, ::PackType packType);
     // NOLINTEND
 
 public:

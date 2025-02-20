@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/GeneratorType.h"
+
 class PlayerRespawnRandomizer {
 public:
     // member variables
@@ -21,4 +24,16 @@ public:
     PlayerRespawnRandomizer& operator=(PlayerRespawnRandomizer const&);
     PlayerRespawnRandomizer(PlayerRespawnRandomizer const&);
     PlayerRespawnRandomizer();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayerRespawnRandomizer(uint spawnRadius, ::GeneratorType const& worldType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint spawnRadius, ::GeneratorType const& worldType);
+    // NOLINTEND
 };

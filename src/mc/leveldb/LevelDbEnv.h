@@ -16,12 +16,13 @@ public:
     // prevent constructor by default
     LevelDbEnv& operator=(LevelDbEnv const&);
     LevelDbEnv(LevelDbEnv const&);
+    LevelDbEnv();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LevelDbEnv() /*override*/;
+    virtual ~LevelDbEnv() /*override*/ = default;
 
     // vIndex: 1
     virtual ::leveldb::Status
@@ -87,29 +88,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool IsComplete() const;
-
-    MCAPI LevelDbEnv();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::LevelDbEnv*& sSingleton();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

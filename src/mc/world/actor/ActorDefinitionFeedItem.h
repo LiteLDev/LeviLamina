@@ -18,7 +18,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorDefinitionFeedItem(::ActorDefinitionFeedItem const&);
+
+    MCFOLD ::ActorDefinitionFeedItem& operator=(::ActorDefinitionFeedItem const&);
+
     MCAPI ~ActorDefinitionFeedItem();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ActorDefinitionFeedItem const&);
     // NOLINTEND
 
 public:

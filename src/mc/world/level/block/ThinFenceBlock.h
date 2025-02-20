@@ -16,7 +16,6 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
 // clang-format on
 
 class ThinFenceBlock : public ::BlockLegacy {
@@ -33,7 +32,7 @@ public:
     virtual void addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::BlockPos const&          blockPos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
@@ -96,33 +95,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ThinFenceBlock(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 singleSide,
-        bool                 doesNotCollideWithCamera
-    );
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 singleSide,
-        bool                 doesNotCollideWithCamera
-    );
     // NOLINTEND
 
 public:
@@ -137,7 +112,7 @@ public:
     MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::BlockPos const&          blockPos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const;

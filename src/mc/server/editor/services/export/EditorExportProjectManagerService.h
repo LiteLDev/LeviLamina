@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/export/ExportResult.h"
-#include "mc/external/scripting/runtime/Result.h"
 #include "mc/server/editor/serviceproviders/EditorPlayerExportProjectServiceProvider.h"
 
 // auto generated forward declare list

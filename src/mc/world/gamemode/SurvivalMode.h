@@ -12,7 +12,6 @@ class Block;
 class BlockPos;
 class InteractionResult;
 class ItemStack;
-class Player;
 class Vec3;
 // clang-format on
 
@@ -85,8 +84,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SurvivalMode(::Player& player);
-
     MCAPI void _messagePlayers(::std::string message);
 
     MCAPI void _showTrialReminder(bool force);
@@ -96,12 +93,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static bool& mTrialHasEnded();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:
@@ -140,7 +131,7 @@ public:
 
     MCAPI void $setTrialMode(bool isEnabled);
 
-    MCFOLD bool $isInTrialMode();
+    MCAPI bool $isInTrialMode();
 
     MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
     // NOLINTEND

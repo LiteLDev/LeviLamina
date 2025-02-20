@@ -18,7 +18,6 @@ class EntityContext;
 class GameplayUserManager;
 class IActorManagerConnector;
 class ILevelStorageManagerConnector;
-class Level;
 class LevelStorage;
 class Objective;
 class PacketSender;
@@ -146,8 +145,6 @@ public:
 
     MCAPI void deserialize(::std::unique_ptr<::CompoundTag> root);
 
-    MCFOLD void initializeImGui(::Level& level);
-
     MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     );
 
@@ -183,7 +180,7 @@ public:
 
     MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 
-    MCFOLD void $setPacketSender(::PacketSender* sender);
+    MCAPI void $setPacketSender(::PacketSender* sender);
 
     MCAPI ::DisplayObjective const* $setDisplayObjective(
         ::std::string const&       displaySlotName,

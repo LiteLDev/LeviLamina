@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -24,8 +23,6 @@ public:
 
 public:
     // prevent constructor by default
-    KeyBindingUnregisterPayload& operator=(KeyBindingUnregisterPayload const&);
-    KeyBindingUnregisterPayload(KeyBindingUnregisterPayload const&);
     KeyBindingUnregisterPayload();
 
 public:
@@ -38,25 +35,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KeyBindingUnregisterPayload(::HashedString const& contextId, ::HashedString const& bindingId);
-    // NOLINTEND
+    MCAPI KeyBindingUnregisterPayload(::Editor::Network::KeyBindingUnregisterPayload const&);
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI KeyBindingUnregisterPayload(::HashedString const& contextId, ::HashedString const& bindingId);
+
+    MCFOLD ::Editor::Network::KeyBindingUnregisterPayload&
+    operator=(::Editor::Network::KeyBindingUnregisterPayload const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Editor::Network::KeyBindingUnregisterPayload const&);
+
     MCAPI void* $ctor(::HashedString const& contextId, ::HashedString const& bindingId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

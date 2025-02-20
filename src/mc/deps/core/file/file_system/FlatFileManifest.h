@@ -9,7 +9,7 @@
 // clang-format off
 class ReadOnlyBinaryStream;
 namespace Core { class FlatFileManifestInfo; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -34,12 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addMissingDirectoriesForEntry(::Core::Path const& fileOrDirectoryPath);
+    MCAPI void _addMissingDirectoriesForEntry(::Core::PathView fileOrDirectoryPath);
 
     MCAPI void _clear();
 
     MCAPI void _createFromVector(
-        ::Core::Path const&                                manifestPath,
+        ::Core::PathView                                   manifestPath,
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
         uint64                                             version,
         bool                                               validatePaths
@@ -48,10 +48,10 @@ public:
     MCAPI ::Bedrock::Result<void> _readHeaderFromStream(::ReadOnlyBinaryStream& manifestFileStream);
 
     MCAPI ::Core::FlatFileManifestInfo const*
-    findFileOrDirectoryEntry(::Core::Path const& filePath, bool skipDeleted) const;
+    findFileOrDirectoryEntry(::Core::PathView filePath, bool skipDeleted) const;
 
     MCAPI ::Bedrock::Result<void>
-    readFromStream(::std::string const& manifestFileStr, ::Core::Path const& manifestPath, bool validatePaths);
+    readFromStream(::std::string const& manifestFileStr, ::Core::PathView manifestPath, bool validatePaths);
     // NOLINTEND
 };
 

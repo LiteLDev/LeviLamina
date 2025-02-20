@@ -3,10 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/scripting/modules/gametest/BaseScriptGameTestFunction.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleGameTest { class ScriptGameTestHelper; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 namespace gametest { class IGameTestFunctionRunResult; }
@@ -36,6 +40,28 @@ public:
 
     // vIndex: 0
     virtual ~SyncScriptGameTestFunction() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI SyncScriptGameTestFunction(
+        ::Scripting::WeakLifetimeScope scope,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
+                             functionHandle,
+        ::std::string const& testName
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::WeakLifetimeScope scope,
+        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
+                             functionHandle,
+        ::std::string const& testName
+    );
     // NOLINTEND
 
 public:

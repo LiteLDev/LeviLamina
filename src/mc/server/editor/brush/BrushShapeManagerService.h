@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Closure.h"
 #include "mc/server/editor/serviceproviders/BrushShapeManagerServiceProvider.h"
 
 // auto generated forward declare list
@@ -43,7 +43,9 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk656590;
     ::ll::UntypedStorage<8, 64> mUnk51d4db;
     ::ll::UntypedStorage<4, 12> mUnk37d1f3;
-    ::ll::UntypedStorage<4, 4>  mUnke3f843;
+    ::ll::UntypedStorage<4, 4>  mUnkc4a1dd;
+    ::ll::UntypedStorage<4, 4>  mUnka8c474;
+    ::ll::UntypedStorage<4, 4>  mUnk55056d;
     ::ll::UntypedStorage<1, 1>  mUnk97eafd;
     // NOLINTEND
 
@@ -140,9 +142,15 @@ public:
     virtual ::Vec3 getBrushShapeOffset() const /*override*/;
 
     // vIndex: 19
-    virtual void setSmoothStrength(int const smoothStrength) /*override*/;
+    virtual void setTerrainStrength(int const terrainStrength) /*override*/;
 
     // vIndex: 20
+    virtual void setFlattenHeight(int const flattenHeight) /*override*/;
+
+    // vIndex: 21
+    virtual void setFlattenRadius(int const flattenRadius) /*override*/;
+
+    // vIndex: 22
     virtual void setBrushShapeVisible(bool const visible) /*override*/;
     // NOLINTEND
 
@@ -229,7 +237,11 @@ public:
 
     MCAPI ::Vec3 $getBrushShapeOffset() const;
 
-    MCAPI void $setSmoothStrength(int const smoothStrength);
+    MCAPI void $setTerrainStrength(int const terrainStrength);
+
+    MCAPI void $setFlattenHeight(int const flattenHeight);
+
+    MCAPI void $setFlattenRadius(int const flattenRadius);
 
     MCAPI void $setBrushShapeVisible(bool const visible);
     // NOLINTEND

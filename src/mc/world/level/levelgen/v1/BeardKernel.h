@@ -4,20 +4,8 @@
 
 struct BeardKernel {
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BeardKernel();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float getContribution(int dx, int dy, int dz);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI static ::std::array<float, 13824> const& getKernel();
     // NOLINTEND
 };

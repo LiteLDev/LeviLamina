@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/GameType.h"
-
 // auto generated forward declare list
 // clang-format off
 class Player;
@@ -20,17 +17,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Editor::Services::ModeServiceProvider const* _getModeServiceConst(::Player const& player);
 
-    MCAPI static bool canChangeGameType(::Player const& player, ::GameType newGameType);
-
-    MCFOLD static bool canInteractWithOtherEntitiesInGame(::Player const& player);
-
-    MCAPI static bool canSleep(::Player const& player);
-
     MCAPI static ::Editor::ServiceProviderCollection& getServiceProviders(::Player& player);
-
-    MCAPI static bool isFireImmune(::Player const& player);
-
-    MCFOLD static bool isPlayerAudible(::Player const& player);
     // NOLINTEND
 };
 

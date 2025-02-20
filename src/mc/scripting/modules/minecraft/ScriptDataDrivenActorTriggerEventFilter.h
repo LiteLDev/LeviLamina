@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptActorEventFilter.h"
 
 // auto generated forward declare list
@@ -45,9 +45,6 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
-
-    MCAPI bool
-    shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilterData const& data);
     // NOLINTEND
 
 public:

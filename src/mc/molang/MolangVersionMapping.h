@@ -14,6 +14,6 @@ class MolangVersionMapping {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MolangVersion const getVersion(::SemVersion const& semVersion);
+    MCAPI static ::MolangVersion getVersion(::SemVersion const& semVersion);
     // NOLINTEND
 };

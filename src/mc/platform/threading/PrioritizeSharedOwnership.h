@@ -17,14 +17,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void lock();
-
-    MCAPI void lock_shared();
-
-    MCAPI bool try_lock();
-
-    MCAPI void unlock();
-
-    MCAPI void unlock_shared();
     // NOLINTEND
 };
 

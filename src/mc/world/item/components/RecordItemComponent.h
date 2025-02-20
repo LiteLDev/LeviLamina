@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -28,6 +27,7 @@ public:
     // prevent constructor by default
     RecordItemComponent& operator=(RecordItemComponent const&);
     RecordItemComponent(RecordItemComponent const&);
+    RecordItemComponent();
 
 public:
     // virtual functions
@@ -39,19 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecordItemComponent();
-
-    MCAPI RecordItemComponent(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
-
     MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
-    MCFOLD int getComparatorSignal() const;
-
-    MCFOLD float getDuration() const;
-
     MCAPI ::std::string getRecordDescription() const;
-
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent getSound() const;
     // NOLINTEND
 
 public:
@@ -59,19 +49,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::SharedTypes::Legacy::LevelSoundEvent soundEvent, float duration, int comparatorSignal);
     // NOLINTEND
 
 public:

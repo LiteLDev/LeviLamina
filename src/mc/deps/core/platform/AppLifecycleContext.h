@@ -16,16 +16,5 @@ public:
     // prevent constructor by default
     AppLifecycleContext& operator=(AppLifecycleContext const&);
     AppLifecycleContext(AppLifecycleContext const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AppLifecycleContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
+    AppLifecycleContext();
 };

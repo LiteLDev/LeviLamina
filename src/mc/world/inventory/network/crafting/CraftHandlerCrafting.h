@@ -14,9 +14,7 @@
 class ItemInstance;
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftHandler;
 class ItemStackRequestActionCraftRecipeAuto;
-class Player;
 class Recipes;
 struct CreativeItemNetIdTag;
 struct FullContainerName;
@@ -67,9 +65,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    CraftHandlerCrafting(bool workbench, ::Player& player, ::ItemStackRequestActionCraftHandler& craftRequestHandler);
-
     MCAPI ::ItemStackNetResult _handleAutoCraft(::ItemStackRequestActionCraftRecipeAuto const& requestAction);
 
     MCAPI void _handleCarefulRestoration(::ItemInstance const& itemInstance) const;
@@ -79,12 +74,6 @@ public:
 
     MCAPI ::ItemStackNetResult _handleCraftOutput(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool workbench, ::Player& player, ::ItemStackRequestActionCraftHandler& craftRequestHandler);
     // NOLINTEND
 
 public:

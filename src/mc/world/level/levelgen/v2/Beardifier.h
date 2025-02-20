@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ChunkPos;
 namespace br::worldgen { class StructureCache; }
 // clang-format on
@@ -23,16 +22,11 @@ public:
     // prevent constructor by default
     Beardifier& operator=(Beardifier const&);
     Beardifier(Beardifier const&);
+    Beardifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Beardifier();
-
-    MCAPI double compute(::BlockPos pos) const;
-
-    MCFOLD bool empty() const;
-
     MCAPI ::br::worldgen::Beardifier& operator=(::br::worldgen::Beardifier&&);
 
     MCAPI ~Beardifier();
@@ -43,12 +37,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::Beardifier
     forStructuresInChunk(::br::worldgen::StructureCache const& structureCache, ::ChunkPos pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

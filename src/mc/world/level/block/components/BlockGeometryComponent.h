@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BlockGeometryDescription;
+// clang-format on
+
 struct BlockGeometryComponent {
 public:
     // member variables
@@ -23,7 +28,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
+
+    MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
+
     MCAPI ~BlockGeometryComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription);
     // NOLINTEND
 
 public:

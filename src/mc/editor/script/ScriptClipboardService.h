@@ -3,16 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptClipboardItem; }
-namespace Editor::Services { class ClipboardServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -34,11 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptClipboardService(
-        ::Editor::Services::ClipboardServiceProvider& provider,
-        ::Scripting::WeakLifetimeScope const&         scope
-    );
-
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
     create();
@@ -52,13 +45,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptClipboardService> bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void*
-    $ctor(::Editor::Services::ClipboardServiceProvider& provider, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

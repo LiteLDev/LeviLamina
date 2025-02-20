@@ -46,23 +46,6 @@ MCAPI void immediatePassengerRemoval(
     ::EntityModifier<::RemovePassengersComponent> modifier
 );
 
-MCAPI void singleDeferredPassengerRemoval(
-    ::StrictEntityContext const&                         passenger,
-    ::PassengerComponent const&                          passengerComponent,
-    ::ActorUniqueIDComponent const&                      actorUniqueIdComponent,
-    ::EntityModifier<::PendingRemovePassengersComponent> modifier
-);
-
-MCAPI void singleImmediatePassengerRemoval(
-    ::StrictEntityContext const& passenger,
-    ::PassengerComponent const&  passengerComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
-        destroyedPassengers,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
-                                                  switchingVehiclePassengers,
-    ::EntityModifier<::RemovePassengersComponent> modifier
-);
-
 MCAPI void singleTickDeferredPassengerRemoval(
     ::StrictEntityContext const& entity,
     ::ViewT<
@@ -77,26 +60,6 @@ MCAPI void singleTickDeferredPassengerRemoval(
 MCAPI void singleTickImmediatePassengerRemoval(
     ::StrictEntityContext const&                                                                        entity,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::PassengerComponent const> view,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
-        destroyedPassengers,
-    ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>
-                                                  switchingVehiclePassengers,
-    ::EntityModifier<::RemovePassengersComponent> modifier
-);
-
-MCAPI void tickDeferredPassengerRemoval(
-    ::ViewT<::StrictEntityContext, ::VehicleComponent const> view,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::StopRidingRequestComponent>,
-        ::Exclude<::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent>,
-        ::PassengerComponent const,
-        ::ActorUniqueIDComponent const>                  passengersToRemove,
-    ::EntityModifier<::PendingRemovePassengersComponent> modifier
-);
-
-MCAPI void tickImmediatePassengerRemoval(
-    ::ViewT<::StrictEntityContext, ::VehicleComponent const> view,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ActorIsBeingDestroyedFlagComponent>>
         destroyedPassengers,
     ::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::SwitchingVehiclesFlagComponent>>

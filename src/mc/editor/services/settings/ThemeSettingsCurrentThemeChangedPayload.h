@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class ThemeSettingsCurrentThemeChangedPayload
@@ -31,26 +26,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ThemeSettingsCurrentThemeChangedPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ThemeSettingsCurrentThemeChangedPayload(::std::string const& themeId);
-
-    MCFOLD ::std::string const& getThemeId() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& themeId);
     // NOLINTEND
 
 public:

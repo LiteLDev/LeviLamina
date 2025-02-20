@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { struct ScriptAsyncSignalHandle; }
-// clang-format on
-
 namespace ScriptModuleMinecraft {
 
 class ScriptAsyncEventList {
@@ -25,14 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool deferredFlush();
-
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptAsyncSignalHandle const*>
-    getAllSignalsByEventType(uint64 signalHashCode) const;
-
-    MCAPI void postFlush();
-
-    MCAPI void preFlush();
+    MCAPI ::ScriptModuleMinecraft::ScriptAsyncEventList& operator=(::ScriptModuleMinecraft::ScriptAsyncEventList&&);
 
     MCAPI ~ScriptAsyncEventList();
     // NOLINTEND

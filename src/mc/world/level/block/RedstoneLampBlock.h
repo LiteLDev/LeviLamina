@@ -56,15 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedstoneLampBlock(::std::string const& nameId, int id, bool isLit);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool isLit);
     // NOLINTEND
 
 public:

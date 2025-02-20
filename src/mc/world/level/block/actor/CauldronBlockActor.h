@@ -14,8 +14,8 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class ILevel;
 class ItemStack;
-class Level;
 class Player;
 class SaveContext;
 namespace mce { class Color; }
@@ -42,7 +42,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 26
     virtual ::std::string getName() const /*override*/;
@@ -66,7 +66,7 @@ public:
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -96,21 +96,15 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CauldronBlockActor(::BlockPos const& pos);
 
-    MCAPI ::mce::Color getColor() const;
-
     MCAPI ::mce::Color getCustomColor() const;
 
     MCAPI ::mce::Color getMixDyeColor();
 
     MCAPI ::mce::Color getPotionColor() const;
 
-    MCFOLD ::Potion::PotionType getPotionType() const;
-
     MCAPI void mixDyes();
 
     MCAPI void setCustomColor(::mce::Color const& color);
-
-    MCFOLD void setPotionType(::Potion::PotionType type);
     // NOLINTEND
 
 public:
@@ -136,7 +130,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 
@@ -152,7 +146,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

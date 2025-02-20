@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/NewType.h"
-
 class LoadingScreenIdManager {
 public:
     // member variables
@@ -17,10 +14,4 @@ public:
     LoadingScreenIdManager& operator=(LoadingScreenIdManager const&);
     LoadingScreenIdManager(LoadingScreenIdManager const&);
     LoadingScreenIdManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::NewType<::std::optional<uint>> getNextLoadingScreenId();
-    // NOLINTEND
 };

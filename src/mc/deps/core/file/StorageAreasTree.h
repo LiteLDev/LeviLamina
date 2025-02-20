@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -51,6 +51,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ::Core::StorageAreasTree::TreeChild& operator=(::Core::StorageAreasTree::TreeChild&&);
+
         MCAPI ~TreeChild();
         // NOLINTEND
 
@@ -77,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Core::FileStorageArea* getStorageArea(::Core::Path const& path) const;
+    MCAPI ::Core::FileStorageArea* getStorageArea(::Core::PathView path) const;
 
     MCAPI void insertStorageArea(::Core::FileStorageArea& storageArea);
 

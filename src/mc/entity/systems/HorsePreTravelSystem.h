@@ -18,14 +18,7 @@ struct HorseFlagComponent;
 struct HorseWasOnGroundPreTravelComponent;
 struct MobFlagComponent;
 struct OnGroundFlagComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
-class HorsePreTravelSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createHorsePreTravelSystem();
-    // NOLINTEND
-};
+class HorsePreTravelSystem {};

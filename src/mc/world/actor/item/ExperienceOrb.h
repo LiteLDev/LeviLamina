@@ -10,8 +10,6 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class Block;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -55,29 +53,26 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
 
-    // vIndex: 135
+    // vIndex: 132
     virtual void doWaterSplashEffect() /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
     virtual ~ExperienceOrb() /*override*/ = default;
@@ -96,7 +91,7 @@ public:
 
     MCAPI void _tryMergeExistingOrbs();
 
-    MCAPI int getIconIndex() const;
+    MCAPI int getValue() const;
 
     MCAPI void postNormalTick();
     // NOLINTEND
@@ -112,15 +107,6 @@ public:
         ::BlockSource&            region,
         ::Vec3 const&             pos,
         int                       xpValue,
-        ::ExperienceOrb::DropType dropType,
-        ::Player*                 owner
-    );
-
-    MCAPI static void spawnOrbs(
-        ::BlockSource&            region,
-        ::Vec3 const&             pos,
-        int                       randValueMin,
-        int                       randValueMax,
         ::ExperienceOrb::DropType dropType,
         ::Player*                 owner
     );
@@ -160,8 +146,6 @@ public:
     MCAPI bool $_hurt(::ActorDamageSource const&, float damage, bool, bool);
 
     MCFOLD void $doWaterSplashEffect();
-
-    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

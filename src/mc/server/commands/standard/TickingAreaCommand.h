@@ -74,7 +74,7 @@ public:
     _add(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
 
     MCAPI void
-    _list(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
+    _list(::CommandOrigin const& output, ::CommandOutput& level, ::Level& dimension, ::Dimension& origin) const;
 
     MCAPI void
     _preload(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
@@ -83,7 +83,7 @@ public:
     _remove(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
 
     MCAPI void
-    _removeAll(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::Dimension& dimension) const;
+    _removeAll(::CommandOrigin const& output, ::CommandOutput& level, ::Level& dimension, ::Dimension& origin) const;
     // NOLINTEND
 
 public:

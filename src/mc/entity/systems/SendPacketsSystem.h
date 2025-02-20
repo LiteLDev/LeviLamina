@@ -7,10 +7,10 @@
 struct TickingSystemWithInfo;
 // clang-format on
 
-struct SendPacketsSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSendPacketsSystem();
-    // NOLINTEND
-};
+namespace SendPacketsSystem {
+// functions
+// NOLINTBEGIN
+MCAPI ::TickingSystemWithInfo createSendPacketsSystem();
+// NOLINTEND
+
+} // namespace SendPacketsSystem

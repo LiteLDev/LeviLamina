@@ -12,15 +12,12 @@ class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct PassengerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class PassengerFreezeMovementSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void freezeMovement(::StrictEntityContext&, ::StateVectorComponent& stateVector);
 
     MCAPI static void

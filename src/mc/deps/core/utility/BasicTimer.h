@@ -14,12 +14,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
-
-    MCAPI bool isFinished() const;
-
-    MCAPI void resetTime();
-
     MCAPI ~BasicTimer();
     // NOLINTEND
 
@@ -27,12 +21,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static double getSecondsSinceLaunch();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(double timeDelay, ::std::function<double()> getTimeCallback);
     // NOLINTEND
 
 public:

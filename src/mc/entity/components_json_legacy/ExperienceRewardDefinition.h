@@ -2,15 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
-
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class ExperienceRewardComponent;
 class ExpressionNode;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class ExperienceRewardDefinition {
@@ -33,15 +27,5 @@ public:
     MCAPI void addBredExpressionNode(::ExpressionNode const& node);
 
     MCAPI void addDeathExpressionNode(::ExpressionNode const& node);
-
-    MCAPI void initialize(::EntityContext&, ::ExperienceRewardComponent& component) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ExperienceRewardDefinition>>& root
-    );
     // NOLINTEND
 };

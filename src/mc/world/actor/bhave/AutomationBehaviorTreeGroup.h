@@ -4,10 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BehaviorFactory;
 class BehaviorTreeDefinition;
 class BehaviorTreeDefinitionPtr;
-class ResourcePackManager;
 // clang-format on
 
 class AutomationBehaviorTreeGroup {
@@ -29,19 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AutomationBehaviorTreeGroup(::ResourcePackManager& packManager, ::BehaviorFactory& factory);
-
     MCAPI void _removeRef(::BehaviorTreeDefinitionPtr& ref);
 
     MCAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
 
     MCAPI ~AutomationBehaviorTreeGroup();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager& packManager, ::BehaviorFactory& factory);
     // NOLINTEND
 
 public:

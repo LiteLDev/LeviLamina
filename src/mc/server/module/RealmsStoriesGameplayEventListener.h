@@ -47,7 +47,7 @@ public:
     // vIndex: 30
     virtual ::EventResult onEvent(::ActorKilledEvent const& actorKilledEvent) /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent) /*override*/;
 
     // vIndex: 16
@@ -94,16 +94,25 @@ public:
         ::std::unique_ptr<::IRealmEventLogger> realmEventLogger
     );
 
-    MCAPI void _handleDragonKilledEvent(::Actor const& killedActor);
+    MCAPI void _checkForBiomeRealmEvents(::Player const& player);
+
+    MCAPI void _checkForStructureRealmEvents(::Player const& player);
 
     MCAPI void _handlePillagerKilledEvent(::Actor const& killedActor, ::ActorKilledEvent const& actorKilledEvent);
-
-    MCAPI void _handleWitherKilledEvent(::Actor const& killedActor);
 
     MCAPI void
     _publishEventForRealmsService(::RealmEventId id, ::std::string const& xuid, ::Json::Value const& metadata) const;
 
     MCAPI void _publishLocationWorldEventIfFirstTime(::RealmEventId id, ::Player const& player);
+
+    MCAPI void
+    _publishPlayerEventIfFirstTime(::RealmEventId id, ::std::string const& playerXuid, ::Json::Value const& metadata);
+
+    MCAPI void _publishWorldEventFirstOrOtherTime(
+        ::RealmEventId       firstTimeId,
+        ::RealmEventId       otherTimeId,
+        ::std::string const& xuid
+    );
     // NOLINTEND
 
 public:

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class IRandom;
-struct IntProvider;
 // clang-format on
 
 struct ConstantInt : public ::IntProviderType {
@@ -38,12 +37,6 @@ public:
 
     // vIndex: 0
     virtual ~ConstantInt() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::IntProvider of(int value);
     // NOLINTEND
 
 public:

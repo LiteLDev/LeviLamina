@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorFilterGroup;
-class EntityContext;
 class Mob;
 struct FloatRange;
 namespace JsonUtil { class EmptyClass; }
@@ -48,12 +47,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::MoveAroundTargetGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -116,18 +109,6 @@ public:
 
     // vIndex: 0
     virtual ~MoveAroundTargetGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MoveAroundTargetGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

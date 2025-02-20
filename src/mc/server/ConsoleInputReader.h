@@ -15,28 +15,11 @@ public:
     // prevent constructor by default
     ConsoleInputReader& operator=(ConsoleInputReader const&);
     ConsoleInputReader(ConsoleInputReader const&);
+    ConsoleInputReader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConsoleInputReader();
-
-    MCAPI bool getLine(::std::string& outLine);
-
     MCAPI void unblockReading();
-
-    MCAPI ~ConsoleInputReader();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

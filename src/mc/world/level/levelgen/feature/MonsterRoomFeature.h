@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/Direction.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
 
 // auto generated forward declare list
@@ -17,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MonsterRoomFeature() /*override*/;
+    virtual ~MonsterRoomFeature() /*override*/ = default;
 
     // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
@@ -26,19 +27,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MonsterRoomFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI ::Direction::Type
+    _getDirection(::BlockSource& region, ::BlockPos const& blockPos, int offsetX, int offsetZ) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

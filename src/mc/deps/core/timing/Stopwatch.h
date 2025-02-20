@@ -17,6 +17,7 @@ public:
     // prevent constructor by default
     Stopwatch& operator=(Stopwatch const&);
     Stopwatch(Stopwatch const&);
+    Stopwatch();
 
 public:
     // virtual functions
@@ -32,22 +33,6 @@ public:
 
     // vIndex: 3
     virtual void print(::std::string const& prepend);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Stopwatch();
-
-    MCAPI void reset();
-
-    MCAPI void start();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

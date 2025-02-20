@@ -3,39 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/ecs/systems/ITickingSystem.h"
+#include "mc/deps/ecs/ViewT.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityRegistry;
+class StrictEntityContext;
+struct OverflowTickComponent;
+struct ServerPlayerMovementComponent;
 // clang-format on
 
-class PlayerMovementRateSystem : public ::ITickingSystem {
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    // vIndex: 2
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+namespace PlayerMovementRateSystem {
+// functions
+// NOLINTBEGIN
+MCAPI void tickEntity(::ServerPlayerMovementComponent& serverPlayerMovement, uint64 numberOfTick);
 
-    // vIndex: 0
-    virtual ~PlayerMovementRateSystem() /*override*/ = default;
-    // NOLINTEND
+MCAPI void tickSystem(
+    ::ViewT<::StrictEntityContext, ::ServerPlayerMovementComponent> view,
+    ::OptionalGlobal<::OverflowTickComponent>                       overflowTick
+);
+// NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
-    // NOLINTEND
-};
+} // namespace PlayerMovementRateSystem

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-// clang-format on
-
 class ActorOwnerComponent {
 public:
     // member variables
@@ -19,34 +14,4 @@ public:
     ActorOwnerComponent& operator=(ActorOwnerComponent const&);
     ActorOwnerComponent(ActorOwnerComponent const&);
     ActorOwnerComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorOwnerComponent(::ActorOwnerComponent&& other);
-
-    MCAPI explicit ActorOwnerComponent(::std::unique_ptr<::Actor> uniqueActor);
-
-    MCFOLD ::Actor& getActor() const;
-
-    MCAPI ::Actor& getActor();
-
-    MCAPI ::ActorOwnerComponent& operator=(::ActorOwnerComponent&& other);
-
-    MCAPI ~ActorOwnerComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ActorOwnerComponent&& other);
-
-    MCAPI void* $ctor(::std::unique_ptr<::Actor> uniqueActor);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

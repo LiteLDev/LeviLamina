@@ -2,6 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/spawn/EntityPredicateToken.h"
+#include "mc/world/level/spawn/EntitySpawnReason.h"
+#include "mc/world/level/spawn/HeightmapToken.h"
+#include "mc/world/level/spawn/PlacementTypeToken.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BlockSource;
+class IRandom;
+namespace br::spawn { struct EntityType; }
+// clang-format on
+
 namespace br::spawn {
 
 class SpawnPlacements {
@@ -50,7 +64,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk94afb8;
     ::ll::UntypedStorage<8, 24> mUnkdbc747;
-    ::ll::UntypedStorage<8, 24> mUnk979594;
+    ::ll::UntypedStorage<8, 24> mUnk5032c7;
     ::ll::UntypedStorage<8, 24> mUnkbcbe53;
     ::ll::UntypedStorage<8, 24> mUnkc2c742;
     // NOLINTEND
@@ -60,6 +74,32 @@ public:
     SpawnPlacements& operator=(SpawnPlacements const&);
     SpawnPlacements(SpawnPlacements const&);
     SpawnPlacements();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::br::spawn::SpawnPlacements::PlacementRecord record(
+        ::std::string_view                typeId,
+        ::br::spawn::PlacementTypeToken   placementType,
+        ::br::spawn::HeightmapToken       heightmap,
+        ::br::spawn::EntityPredicateToken spawnPlacement
+    );
+
+    MCAPI ::br::spawn::EntityPredicateToken record(
+        ::std::string_view key,
+        ::std::function<
+            bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>
+            predicate
+    );
+
+    MCAPI ~SpawnPlacements();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace br::spawn

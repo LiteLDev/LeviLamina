@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ParticleType.h"
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/world/actor/projectile/PredictableProjectile.h"
 
 // auto generated forward declare list
@@ -38,25 +38,25 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual float getInertia();
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::ParticleType getTrailParticle();
 
-    // vIndex: 145
+    // vIndex: 140
     virtual bool shouldBurn();
 
     // vIndex: 8

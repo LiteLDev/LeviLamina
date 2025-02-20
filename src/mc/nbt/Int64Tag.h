@@ -48,18 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Int64Tag(int64 data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int64 data);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
@@ -62,13 +62,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDamageByChildActorSource(::Actor const& childActor, ::Actor const& actor, ::ActorDamageCause cause);
+    MCAPI ActorDamageByChildActorSource(
+        ::Actor const&                          childActor,
+        ::Actor const&                          actor,
+        ::SharedTypes::Legacy::ActorDamageCause cause
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::ActorDamageCause cause);
+    MCAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:

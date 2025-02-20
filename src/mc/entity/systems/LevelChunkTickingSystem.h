@@ -14,7 +14,6 @@ class EntityRegistry;
 class LevelChunk;
 class LoadedChunksComponent;
 struct Tick;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class LevelChunkTickingSystem : public ::ITickingSystem {
@@ -47,8 +46,6 @@ public:
         ::ActorOwnerComponent&   actorOwnerComponent,
         ::LoadedChunksComponent& loadedChunksComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createPlayerPassengerSystem();
     // NOLINTEND
 
 public:

@@ -10,7 +10,6 @@
 class ActorDefinitionEvent;
 class ActorEventResponseFactory;
 class MinEngineVersion;
-class SemVersion;
 namespace Json { class Value; }
 // clang-format on
 
@@ -29,14 +28,6 @@ public:
     MCAPI static ::ActorDefinitionEvent _loadEvent(
         ::Json::Value&                     root,
         ::MinEngineVersion const&          minEngineVersion,
-        ::ActorEventResponseFactory const* responseFactory,
-        ::JsonBetaState                    useBetaFeatures
-    );
-
-    MCAPI static ::ActorDefinitionEvent loadEvent(
-        ::Json::Value                      root,
-        ::MinEngineVersion const&          minEngineVersion,
-        ::SemVersion const&                formatVersion,
         ::ActorEventResponseFactory const* responseFactory,
         ::JsonBetaState                    useBetaFeatures
     );

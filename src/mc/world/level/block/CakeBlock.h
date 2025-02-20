@@ -13,9 +13,10 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class ItemInstance;
 class Player;
-class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CakeBlock : public ::BlockLegacy {
@@ -38,9 +39,6 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
@@ -58,6 +56,9 @@ public:
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~CakeBlock() /*override*/ = default;
     // NOLINTEND
@@ -65,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CakeBlock(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -73,12 +74,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     removeCakeSlice(::Player& player, ::BlockSource& region, ::BlockPos const& pos, ::Block const* cakeBlock);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -100,8 +95,6 @@ public:
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI int $getVariant(::Block const& block) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
@@ -111,6 +104,8 @@ public:
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -8,7 +8,6 @@
 #include "mc/world/actor/Mob.h"
 #include "mc/world/actor/agent/AgentAnimation.h"
 #include "mc/world/actor/agent/AgentTravelType.h"
-#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,11 +19,9 @@ class BodyControl;
 class EntityContext;
 class ItemStack;
 class Player;
-class Vec2;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct AgentRenderData;
 struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
@@ -60,32 +57,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 35
+    // vIndex: 34
     virtual ::mce::Color getNameTagTextColor() const /*override*/;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual bool canShowNameTag() const /*override*/;
 
-    // vIndex: 98
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 107
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 172
+    // vIndex: 167
     virtual bool createAIGoals() /*override*/;
 
-    // vIndex: 79
+    // vIndex: 77
     virtual void setCarriedItem(::ItemStack const& item) /*override*/;
 
     // vIndex: 24
@@ -98,25 +95,25 @@ public:
     virtual void
     teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 172
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual bool isTargetable() const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool isInvisible() const /*override*/;
 
-    // vIndex: 124
+    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 56
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    // vIndex: 55
+    virtual void setOwner(::ActorUniqueID const id) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 178
+    // vIndex: 174
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
     // vIndex: 8
@@ -132,17 +129,11 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI ::AgentTravelType checkTravelType();
-
-    MCAPI void doClientTravel(::AABB const& aabb);
+    MCAPI bool _isOnGround(::AABB const& aabb);
 
     MCAPI ::Vec3 doServerTravel(::AABB const& aabb, ::AgentTravelType travelType);
 
     MCAPI float getMoveSpeedScalar() const;
-
-    MCAPI ::AgentRenderData& getRenderData();
-
-    MCFOLD int getSelectedSlot() const;
 
     MCAPI int getSwingAnimationDuration() const;
 
@@ -150,25 +141,11 @@ public:
 
     MCAPI bool isArmSwinging() const;
 
-    MCAPI bool isIdling();
-
     MCAPI bool isShrugging() const;
-
-    MCAPI bool isValidSlotNum(int slotNum);
-
-    MCAPI void setGameType(::GameType gameType);
-
-    MCAPI void setMoveTarget(float target);
-
-    MCAPI void setMoveTarget(::Vec2 target);
 
     MCAPI void setNameTagFromOwner(::Player const& player);
 
     MCAPI void shrug();
-
-    MCAPI void startCommandMode();
-
-    MCAPI void stopCommandMode();
 
     MCAPI void swingArm();
 
@@ -178,8 +155,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 roundTeleportPos(::Vec3 const& pos);
-
     MCAPI static ::Agent* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
@@ -232,7 +207,7 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerId);
+    MCAPI void $setOwner(::ActorUniqueID const id);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

@@ -10,7 +10,7 @@
 // clang-format off
 namespace Core { class FileSystemImpl; }
 namespace Core { class FlatFileManifestInfo; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace Core { struct ExcludedPath; }
 // clang-format on
@@ -23,34 +23,40 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Core::Result copyFlatFile(
         ::Core::FileSystemImpl*                    sourceTransaction,
-        ::Core::Path const&                        sourceDirectoryPath,
+        ::Core::PathView                           sourceDirectoryPath,
         ::Core::FileSystemImpl*                    targetTransaction,
-        ::Core::Path const&                        targetDirectoryPath,
+        ::Core::PathView                           targetDirectoryPath,
         ::std::vector<::Core::ExcludedPath> const& exclusionDirectories,
         ::std::vector<::Core::ExcludedPath> const& excludedFiles
     );
 
     MCAPI static ::Core::Result createFlatFile(
         ::Core::FileSystemImpl*                    sourceTransaction,
-        ::Core::Path const&                        sourceDirectoryPath,
+        ::Core::PathView                           sourceDirectoryPath,
         ::Core::FileSystemImpl*                    targetTransaction,
-        ::Core::Path const&                        targetDirectoryPath,
+        ::Core::PathView                           targetDirectoryPath,
         ::std::vector<::Core::ExcludedPath> const& exclusionPaths,
         bool                                       deleteSourceDirectory
     );
 
+    MCAPI static ::Core::Result createFlatFileManifest(
+        ::Core::FileSystemImpl&                            transaction,
+        ::Core::PathView                                   flatFileManifestPath,
+        ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector
+    );
+
     MCAPI static ::Core::Result replaceFlatFileManifest(
         ::Core::FileSystemImpl&                            transaction,
-        ::Core::Path const&                                flatFileManifestPath,
+        ::Core::PathView                                   flatFileManifestPath,
         ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
         bool                                               keepCached
     );
 
     MCAPI static ::Core::Result transferFlatFileDirectory(
         ::Core::FileSystemImpl* sourceTransaction,
-        ::Core::Path const&     sourceDirectoryPath,
+        ::Core::PathView        sourceDirectoryPath,
         ::Core::FileSystemImpl* targetTransaction,
-        ::Core::Path const&     targetDirectoryPath
+        ::Core::PathView        targetDirectoryPath
     );
     // NOLINTEND
 
@@ -66,8 +72,6 @@ public:
     MCAPI static uint64 const& FLAT_FILE_INVALID_VERSION();
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& FLAT_FILE_MANIFEST_EXTENSION();
-
-    MCAPI static uint64 const& FLAT_FILE_WRITE_CHUNK_SIZE();
     // NOLINTEND
 };
 

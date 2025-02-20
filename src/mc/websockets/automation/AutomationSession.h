@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/codebuilder/EncryptionCipherMode.h"
 #include "mc/codebuilder/IRequestHandler.h"
 #include "mc/platform/WebviewObserver.h"
 #include "mc/websockets/CloseStatusCode.h"
@@ -88,16 +87,19 @@ public:
     virtual void dataMob(::std::string const& requestId) /*override*/;
 
     // vIndex: 8
+    virtual void dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath) /*override*/;
+
+    // vIndex: 9
     virtual bool
     encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void subscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual void unsubscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const& message) /*override*/;
     // NOLINTEND
 
@@ -126,15 +128,6 @@ public:
 
     MCAPI ::WSConnectionResult
     connect(::std::string const& serverUri, ::std::vector<::std::string> const& subProtocols);
-
-    MCAPI bool
-    dhKeyExchange(::std::string const& requestId, ::std::string const& publicKey, ::std::string const& salt, ::CodeBuilder::EncryptionCipherMode cipherMode, ::std::string&);
-
-    MCAPI void disconnect();
-
-    MCAPI bool isConnecting();
-
-    MCAPI bool isReady();
 
     MCAPI bool isSubscribedtoEvent(::std::string const& eventName);
 
@@ -173,6 +166,8 @@ public:
     MCAPI void $dataItem(::std::string const& requestId);
 
     MCAPI void $dataMob(::std::string const& requestId);
+
+    MCAPI void $dataTutorial(::std::string const& requestId, ::std::string const& tutorialPath);
 
     MCAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
 

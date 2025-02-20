@@ -7,6 +7,7 @@
 class FillingContainer;
 class StorageItemComponent;
 class StorageItemContainerModel;
+class StorageWeightLimitItemComponent;
 struct FullContainerName;
 // clang-format on
 
@@ -21,7 +22,8 @@ public:
     virtual ::std::shared_ptr<::FillingContainer> getBackingContainer(::FullContainerName const&) = 0;
 
     // vIndex: 2
-    virtual void tryCreateEntry(::StorageItemComponent*, ::FullContainerName const&) = 0;
+    virtual void
+    tryCreateEntry(::StorageItemComponent*, ::StorageWeightLimitItemComponent*, ::FullContainerName const&) = 0;
 
     // vIndex: 3
     virtual ~IContainerRegistryAccess();

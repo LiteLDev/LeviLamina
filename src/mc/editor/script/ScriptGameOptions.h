@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/editor/GameOptions.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/server/commands/PlayerPermissionLevel.h"
 #include "mc/world/level/DaylightCycle.h"
@@ -16,13 +16,12 @@ class ScriptGameOptions : public ::Editor::GameOptions {
 public:
     // prevent constructor by default
     ScriptGameOptions& operator=(ScriptGameOptions const&);
+    ScriptGameOptions(ScriptGameOptions const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptGameOptions(::Editor::ScriptModule::ScriptGameOptions&&);
-
-    MCAPI ScriptGameOptions(::Editor::ScriptModule::ScriptGameOptions const&);
 
     MCAPI ~ScriptGameOptions();
     // NOLINTEND
@@ -45,14 +44,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptGameOptions&&);
-
-    MCFOLD void* $ctor(::Editor::ScriptModule::ScriptGameOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -8,7 +8,6 @@ struct TagMatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkaa1d56;
     ::ll::UntypedStorage<8, 32> mUnkd1450f;
     // NOLINTEND
 

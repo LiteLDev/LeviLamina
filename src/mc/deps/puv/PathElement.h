@@ -20,13 +20,12 @@ public:
 public:
     // prevent constructor by default
     PathElement& operator=(PathElement const&);
+    PathElement(PathElement const&);
     PathElement();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PathElement(::Puv::internal::PathElement const&);
-
     MCAPI PathElement(::Puv::internal::PathElement&&);
 
     MCAPI
@@ -38,8 +37,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Puv::internal::PathElement const&);
-
     MCAPI void* $ctor(::Puv::internal::PathElement&&);
 
     MCAPI void*

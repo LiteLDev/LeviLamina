@@ -22,24 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AABBBucket();
-
-    MCAPI void clearDirty();
-
-    MCAPI void clearNeedsFinalize();
-
-    MCAPI bool isDirty();
-
-    MCFOLD void markDirty();
-
     MCAPI void mergeAABBs();
-
-    MCFOLD bool needsFinalize() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

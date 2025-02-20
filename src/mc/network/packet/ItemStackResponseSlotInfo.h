@@ -24,9 +24,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemStackResponseSlotInfo& operator=(ItemStackResponseSlotInfo const&);
+    ItemStackResponseSlotInfo(ItemStackResponseSlotInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemStackResponseSlotInfo(::ItemStackResponseSlotInfo&&);
+
     MCAPI ~ItemStackResponseSlotInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemStackResponseSlotInfo&&);
     // NOLINTEND
 
 public:

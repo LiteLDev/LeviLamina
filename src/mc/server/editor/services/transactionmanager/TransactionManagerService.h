@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/EntityOperation.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/server/editor/serviceproviders/TransactionManagerServiceProvider.h"
-#include "mc/server/editor/transactions/EntityOperation.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
@@ -52,7 +52,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 51
+    // vIndex: 52
     virtual ::EventResult onEvent(::PlayerDimensionChangeBeforeEvent const&) /*override*/;
 
     // vIndex: 0
@@ -223,7 +223,7 @@ public:
 
     MCAPI uint64 $pendingOperationsSize() const;
 
-    MCAPI bool $hasOpenTransaction() const;
+    MCFOLD bool $hasOpenTransaction() const;
 
     MCAPI void $clearAllTransactionData();
 

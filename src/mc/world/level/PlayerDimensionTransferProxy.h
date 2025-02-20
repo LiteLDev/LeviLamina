@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerDimensionTransferProxy() /*override*/;
+    virtual ~PlayerDimensionTransferProxy() /*override*/ = default;
 
     // vIndex: 1
     virtual void playerDimensionChangedEvent(
@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

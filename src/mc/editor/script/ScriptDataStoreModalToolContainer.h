@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkf88096;
     ::ll::UntypedStorage<8, 8>  mUnk16164e;
-    ::ll::UntypedStorage<8, 32> mUnk12984e;
+    ::ll::UntypedStorage<8, 32> mUnk15a62c;
     ::ll::UntypedStorage<1, 1>  mUnk517e55;
     // NOLINTEND
 

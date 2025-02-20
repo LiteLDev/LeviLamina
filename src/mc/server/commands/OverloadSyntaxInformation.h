@@ -20,14 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverloadSyntaxInformation(::std::string const& _text, uint _start, uint _end);
-
     MCAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& _text, uint _start, uint _end);
     // NOLINTEND
 };

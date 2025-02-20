@@ -10,7 +10,6 @@
 // clang-format off
 class HashedString;
 class SemVersion;
-struct IntRange;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -36,33 +35,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DurabilityItemComponent(int maxDamage);
-
-    MCAPI ::IntRange getDamageChanceRange() const;
-
-    MCFOLD int getMaxDamage() const;
-
-    MCFOLD void setMaxDamage(int maxDamage);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int maxDamage);
     // NOLINTEND
 
 public:

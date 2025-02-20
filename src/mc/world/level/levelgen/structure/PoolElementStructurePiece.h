@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
@@ -17,8 +16,6 @@ class BoundingBox;
 class ChunkPos;
 class Dimension;
 class Random;
-class StructurePoolElement;
-struct JigsawJunction;
 // clang-format on
 
 class PoolElementStructurePiece : public ::StructurePiece {
@@ -74,41 +71,13 @@ public:
     virtual bool _needsPostProcessing(::BlockSource& region);
 
     // vIndex: 0
-    virtual ~PoolElementStructurePiece() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PoolElementStructurePiece(
-        ::StructurePoolElement const& element,
-        ::BlockPos                    position,
-        ::Rotation                    rotation,
-        int                           genDepth,
-        ::JigsawJunction&             junction,
-        ::BoundingBox const&          box,
-        ::BlockPos                    refPos
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::StructurePoolElement const& element,
-        ::BlockPos                    position,
-        ::Rotation                    rotation,
-        int                           genDepth,
-        ::JigsawJunction&             junction,
-        ::BoundingBox const&          box,
-        ::BlockPos                    refPos
-    );
+    virtual ~PoolElementStructurePiece() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

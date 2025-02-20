@@ -6,7 +6,6 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,22 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~LevelEventGenericPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LevelEventGenericPacket();
-
-    MCAPI LevelEventGenericPacket(::LevelEvent eventId, ::CompoundTag const& data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::LevelEvent eventId, ::CompoundTag const& data);
     // NOLINTEND
 
 public:

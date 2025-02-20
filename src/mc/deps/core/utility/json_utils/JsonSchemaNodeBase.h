@@ -8,16 +8,16 @@ class JsonSchemaNodeBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk689ef1;
-    ::ll::UntypedStorage<8, 112> mUnk26697d;
-    ::ll::UntypedStorage<8, 32>  mUnkeb533d;
-    ::ll::UntypedStorage<1, 1>   mUnk2cf354;
-    ::ll::UntypedStorage<8, 16>  mUnk239121;
-    ::ll::UntypedStorage<1, 1>   mUnk53cc41;
-    ::ll::UntypedStorage<8, 48>  mUnkc96539;
-    ::ll::UntypedStorage<8, 8>   mUnk972890;
-    ::ll::UntypedStorage<8, 8>   mUnk58f69a;
-    ::ll::UntypedStorage<8, 32>  mUnkf9df10;
+    ::ll::UntypedStorage<8, 48> mUnk689ef1;
+    ::ll::UntypedStorage<8, 24> mUnk26697d;
+    ::ll::UntypedStorage<8, 32> mUnkeb533d;
+    ::ll::UntypedStorage<1, 1>  mUnk2cf354;
+    ::ll::UntypedStorage<8, 16> mUnk239121;
+    ::ll::UntypedStorage<1, 1>  mUnk53cc41;
+    ::ll::UntypedStorage<8, 48> mUnkc96539;
+    ::ll::UntypedStorage<8, 8>  mUnk972890;
+    ::ll::UntypedStorage<8, 8>  mUnk58f69a;
+    ::ll::UntypedStorage<8, 32> mUnkf9df10;
     // NOLINTEND
 
 public:

@@ -161,8 +161,6 @@ public:
 
     MCAPI void recordTaskCompleted(::LevelChunk const& lc, ::ChunkRecyclerTelemetryData::TaskInfo const& taskInfo);
 
-    MCAPI void startLevel(::Level const& level);
-
     MCAPI void tickLevel(::Level const& level);
     // NOLINTEND
 

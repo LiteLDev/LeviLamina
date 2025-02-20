@@ -17,6 +17,7 @@ class Minecraft;
 class PermissionsFile;
 class PropertiesSettings;
 class TestConfig;
+struct PlayerMovementSettings;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
 namespace Core { class FilePathManager; }
@@ -96,7 +97,7 @@ public:
     virtual ::IGameModuleShared& getGameModuleShared() /*override*/;
 
     // vIndex: 7
-    virtual void requestServerShutdown(::std::string const& message) /*override*/;
+    virtual void requestServerShutdown(::std::string const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -105,6 +106,8 @@ public:
     MCAPI DedicatedServer();
 
     MCAPI void initializeAppConfigs();
+
+    MCAPI void initializeBindings();
 
     MCAPI void initializeCodeBuilder();
 
@@ -126,6 +129,13 @@ public:
 
     MCAPI ::DedicatedServer::StartResult
     start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    logAuthorityMode(::PlayerMovementSettings const& fromServerProperties, ::PlayerMovementSettings const& fromLevel);
     // NOLINTEND
 
 public:
@@ -159,7 +169,7 @@ public:
 
     MCFOLD ::IGameModuleShared& $getGameModuleShared();
 
-    MCAPI void $requestServerShutdown(::std::string const& message);
+    MCAPI void $requestServerShutdown(::std::string const&);
     // NOLINTEND
 
 public:

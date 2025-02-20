@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/FeedItem.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -24,6 +27,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _applyEffects(::Actor& owner, ::std::vector<::FeedItem::Effect> const& effects);
+
     MCAPI static bool _canHeal(::Actor& owner, ::ItemStack const& item, ::HealableDefinition const* healableDefinition);
     // NOLINTEND
 };

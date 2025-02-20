@@ -18,6 +18,12 @@ public:
     InheritFromVisitor& operator=(InheritFromVisitor const&);
     InheritFromVisitor(InheritFromVisitor const&);
     InheritFromVisitor();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void operator()(float);
+    // NOLINTEND
 };
 
 } // namespace MovementAbilitiesExt

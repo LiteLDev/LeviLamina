@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ExpressionNode;
 class HashedString;
 class ListTag;
 class PropertyMetadata;
@@ -39,6 +40,13 @@ public:
     MCAPI PropertyGroup();
 
     MCAPI void _addBoolProperty(::std::string const& name, bool clientSync, bool defaultValue);
+
+    MCAPI void _addEnumIndexProperty(
+        ::std::string const&                 name,
+        bool                                 clientSync,
+        ::ExpressionNode&&                   defaultExpression,
+        ::std::vector<::HashedString> const& enumValues
+    );
 
     MCAPI void _addEnumIndexProperty(
         ::std::string const&                 name,
@@ -84,8 +92,6 @@ public:
     MCAPI ::ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
 
     MCAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
-
-    MCAPI bool hasAnyClientSyncProperties() const;
 
     MCAPI ~PropertyGroup();
     // NOLINTEND

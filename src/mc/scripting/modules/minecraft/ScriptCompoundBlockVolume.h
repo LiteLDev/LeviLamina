@@ -3,22 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/scripting/modules/minecraft/ScriptBlockVolumeIterable.h"
 #include "mc/world/level/block/CompoundBlockVolumeAction.h"
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
-
-// auto generated forward declare list
-// clang-format off
-class CompoundBlockVolume;
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptCompoundBlockVolume
-: public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptCompoundBlockVolume> {
+: public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>,
+  public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,14 +28,17 @@ public:
     ScriptCompoundBlockVolume();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ScriptCompoundBlockVolume() /*override*/ = default;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCompoundBlockVolume(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
-
     MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
-
-    MCAPI ~ScriptCompoundBlockVolume();
     // NOLINTEND
 
 public:
@@ -56,15 +55,15 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundBlockVolume const& volume, ::Scripting::WeakLifetimeScope const& scope);
+
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // vftables
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

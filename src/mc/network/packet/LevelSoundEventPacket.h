@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
@@ -44,36 +44,6 @@ public:
 
     // vIndex: 0
     virtual ~LevelSoundEventPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LevelSoundEventPacket();
-
-    MCAPI LevelSoundEventPacket(
-        ::SharedTypes::Legacy::LevelSoundEvent id,
-        ::Vec3 const&                          pos,
-        int                                    data,
-        ::std::string const&                   entityType,
-        bool                                   isBabyMob,
-        bool                                   isGlobal
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::SharedTypes::Legacy::LevelSoundEvent id,
-        ::Vec3 const&                          pos,
-        int                                    data,
-        ::std::string const&                   entityType,
-        bool                                   isBabyMob,
-        bool                                   isGlobal
-    );
     // NOLINTEND
 
 public:

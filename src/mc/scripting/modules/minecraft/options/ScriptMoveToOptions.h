@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,10 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getFaceTarget() const;
-
-    MCFOLD float getSpeed() const;
-
     MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND
 

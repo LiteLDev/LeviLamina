@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class Mob;
 // clang-format on
 
 class StrollTowardsVillageGoal : public ::MoveToVillageGoal {
@@ -32,26 +31,6 @@ public:
 
     // vIndex: 0
     virtual ~StrollTowardsVillageGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StrollTowardsVillageGoal(
-        ::Mob& mob,
-        float  speedModifier,
-        float  goalRadius,
-        float  cooldown,
-        int    searchRange,
-        float  startChance
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, float speedModifier, float goalRadius, float cooldown, int searchRange, float startChance);
     // NOLINTEND
 
 public:

@@ -67,7 +67,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FollowOwnerGoal(
+        ::Mob& mob,
+        float  speed,
+        float  startDistance,
+        float  stopDistance,
+        bool   canTeleport,
+        int    postTeleportDistance,
+        bool   ignoreVibrations,
+        float  maxDistance
+    );
+
     MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Mob& mob,
+        float  speed,
+        float  startDistance,
+        float  stopDistance,
+        bool   canTeleport,
+        int    postTeleportDistance,
+        bool   ignoreVibrations,
+        float  maxDistance
+    );
     // NOLINTEND
 
 public:

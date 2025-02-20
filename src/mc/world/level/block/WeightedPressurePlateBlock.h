@@ -12,7 +12,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class ItemInstance;
-class Material;
 // clang-format on
 
 class WeightedPressurePlateBlock : public ::BasePressurePlateBlock {
@@ -25,43 +24,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 151
+    // vIndex: 150
     virtual int getTickDelay() const /*override*/;
 
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual int getSignalForData(int data) const /*override*/;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
     // vIndex: 0
     virtual ~WeightedPressurePlateBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WeightedPressurePlateBlock(::std::string const& nameId, int id, ::Material const& material, int maxWeight);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_WEIGHT_HEAVY();
-
-    MCAPI static int const& MAX_WEIGHT_LIGHT();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, int maxWeight);
     // NOLINTEND
 
 public:

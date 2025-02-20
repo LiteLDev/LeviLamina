@@ -44,18 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BrushItem(::std::string const& nameId, short id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, short id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

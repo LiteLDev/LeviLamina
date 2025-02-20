@@ -54,6 +54,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool isItemAllowed(::ItemStackBase const& item) const;
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

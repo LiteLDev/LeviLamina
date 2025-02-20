@@ -20,13 +20,7 @@ public:
     // clang-format on
 
     // EntityContext inner types define
-    struct Hash {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI uint64 operator()(::EntityContext const& entity) const;
-        // NOLINTEND
-    };
+    struct Hash {};
 
 public:
     // member variables
@@ -39,24 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntityContext(::EntityRegistry& registry, ::EntityId entity);
-
-    MCAPI ::EntityId _getEntityId() const;
-
-    MCAPI uint _getRegistryId() const;
-
-    MCFOLD ::EntityRegistry& _registry() const;
-
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
 
     MCAPI bool isValid() const;
-
-    MCAPI bool operator==(::EntityContext const& other) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityRegistry& registry, ::EntityId entity);
     // NOLINTEND
 };

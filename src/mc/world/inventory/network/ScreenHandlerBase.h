@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackRequestAction;
-class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerBase {
@@ -28,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScreenHandlerBase();
+    virtual ~ScreenHandlerBase() = default;
 
     // vIndex: 1
     virtual ::ItemStackNetResult handleAction(::ItemStackRequestAction const& requestAction);
@@ -44,21 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScreenHandlerBase(::ItemStackRequestActionHandler& requestHandler);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestActionHandler& requestHandler);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

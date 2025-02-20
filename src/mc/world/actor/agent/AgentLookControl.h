@@ -25,21 +25,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AgentLookControl();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static float& sBaseYMax();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

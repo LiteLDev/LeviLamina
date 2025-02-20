@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/animal/Animal.h"
 
 // auto generated forward declare list
@@ -17,10 +17,10 @@ class Cat : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 58
+    // vIndex: 57
     virtual void onTame() /*override*/;
 
-    // vIndex: 65
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
     // vIndex: 8
@@ -34,14 +34,6 @@ public:
     Cat(::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& SNEAK_SPEED_MOD();
-
-    MCAPI static float const& SPRINT_SPEED_MOD();
     // NOLINTEND
 
 public:

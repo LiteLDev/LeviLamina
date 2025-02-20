@@ -146,15 +146,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tryStandardDespawnRules(
+    MCAPI bool _canDespawn(
+        ::Actor&                            actor,
+        ::DespawnComponent::IWorldAccessor& worldAccessor,
+        ::DespawnDefinition const&          definition
+    ) const;
+
+    MCAPI bool _instantRulesPrescribeDespawn(
+        ::Actor&                                  actor,
+        ::DespawnDefinition const&                definition,
+        ::DespawnComponent::IWorldAccessor const& worldAccessor
+    ) const;
+
+    MCAPI bool _softRulesPrescribeDespawn(
         ::Actor&                            actor,
         ::DespawnDefinition const&          definition,
         ::DespawnComponent::IWorldAccessor& worldAccessor
     ) const;
-
-    MCAPI ::DespawnDefinition const& getDefinition(::Actor& actor) const;
-
-    MCAPI void onDespawn(::Actor& actor);
 
     MCAPI void tick(::Actor& actor);
     // NOLINTEND

@@ -68,33 +68,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SleepGoal(
-        ::Mob& mob,
-        float  walkSpeed,
-        float  sleepColliderHeight,
-        float  sleepColliderWidth,
-        bool   canSleepWhileRiding,
-        float  sleepYOffset,
-        int    cooldown,
-        float  cooldownTimeout
-    );
+    MCAPI void _findExitPos();
 
-    MCAPI void _wakeUp();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob& mob,
-        float  walkSpeed,
-        float  sleepColliderHeight,
-        float  sleepColliderWidth,
-        bool   canSleepWhileRiding,
-        float  sleepYOffset,
-        int    cooldown,
-        float  cooldownTimeout
-    );
+    MCAPI void _lockPosToBedPos();
     // NOLINTEND
 
 public:

@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPos;
 class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -40,22 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~OpenSignPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OpenSignPacket();
-
-    MCAPI OpenSignPacket(::BlockPos const& pos, bool isFrontSide);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockPos const& pos, bool isFrontSide);
     // NOLINTEND
 
 public:

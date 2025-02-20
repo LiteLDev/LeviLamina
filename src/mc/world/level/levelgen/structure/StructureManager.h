@@ -8,7 +8,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/Loader.h"
-#include "mc/network/packet/StructureTemplateResponseType.h"
 #include "mc/world/level/chunk/ChunksLoadedStatus.h"
 #include "mc/world/level/chunk/QueueRequestResult.h"
 #include "mc/world/level/levelgen/structure/StructureDeleteResult.h"
@@ -31,12 +30,11 @@ class ServerLevel;
 class StructureAnimationData;
 class StructureSettings;
 class StructureTemplate;
-class StructureTemplateDataResponsePacket;
 struct Tick;
 namespace Core { class Path; }
-namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadata; }
 namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadataFile; }
 namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadataRegistry; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class StructureManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -53,7 +51,8 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry>> mUnknownBlockRegistry;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ResourcePackManager> const> mPackManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry>>
-        mMetadataRegistry;
+                                                                         mMetadataRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>> mCerealContext;
     // NOLINTEND
 
 public:
@@ -102,32 +101,14 @@ public:
     MCAPI void
     _savePlacementQueueItem(::std::string const& dimensionPrefix, ::StructureAnimationData& structureAnimationData);
 
-    MCAPI void clearAndShutdownStructurePlacement();
-
     MCAPI ::StructureTemplate&
     cloneStructure(::StructureTemplate const& structureTemplate, ::std::string const& structureName);
 
-    MCAPI ::StructureTemplateDataResponsePacket createStructureDataExportPacket(
-        ::std::string const&            structureName,
-        ::ResourcePackManager const*    packManager,
-        ::LevelStorage*                 levelStorage,
-        ::StructureTemplateResponseType responseType
-    );
-
     MCAPI ::StructureDeleteResult deleteStructure(::std::string const& structureName, ::LevelStorage& levelStorage);
-
-    MCAPI ::std::optional<::SharedTypes::v1_21_50::JigsawStructureMetadata>
-    getJigsawStructureMetadata(uint64 metadataKey) const;
 
     MCAPI ::StructureTemplate& getOrCreate(::std::string const& structureName);
 
     MCAPI ::LegacyStructureTemplate& getOrCreateLegacy(::std::string const& structureName);
-
-    MCAPI ::StructureTemplate* getOrLoadStructure(
-        ::std::string const&         structureName,
-        ::ResourcePackManager const* packManager,
-        ::LevelStorage*              levelStorage
-    );
 
     MCAPI ::StructureTemplate* getStructure(::std::string const& structureName) const;
 
@@ -141,6 +122,8 @@ public:
         ::LevelStorage*              levelStorage
     );
 
+    MCAPI bool loadLegacy(::LegacyStructureTemplate& structure, ::std::string& data);
+
     MCAPI void loadMetadataRegistries(::ResourcePackManager& packManager);
 
     MCAPI void loadPlacementQueue(::LevelStorage& storage, ::Level& level, ::Dimension& dimension);
@@ -152,14 +135,7 @@ public:
 
     MCAPI bool readStructure(::StructureTemplate& structureTemplate);
 
-    MCAPI void reset();
-
     MCAPI void saveToLevel(::StructureTemplate const& structureTemplate, ::LevelStorage& levelStorage);
-
-    MCAPI void setJigsawStructureMetadata(
-        uint64                                           metadataKey,
-        ::SharedTypes::v1_21_50::JigsawStructureMetadata jigsawStructureMetadata
-    );
 
     MCAPI void setUnknownBlockRegistry(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
@@ -181,7 +157,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry>
-    _loadMetadataRegistries(::ResourcePackManager& packManager, bool excludeLatest);
+    _loadMetadataRegistries(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& packManager, bool excludeLatest);
 
     MCAPI static void _metadataPackForEachCallback(
         ::SharedTypes::v1_21_50::JigsawStructureMetadataRegistry&            registry,

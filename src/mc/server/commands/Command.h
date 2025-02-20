@@ -11,7 +11,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class CommandSelectorBase;
-class Player;
 struct CommandFlag;
 // clang-format on
 
@@ -42,14 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Command();
-
-    MCAPI ::std::string getCommandName() const;
-
-    MCFOLD ::CommandRegistry const& getRegistry() const;
-
-    MCAPI bool hasFlag(::CommandFlag flag) const;
-
     MCAPI void run(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void sendTelemetry(::CommandOrigin const& origin, ::CommandOutput& output) const;
@@ -60,15 +51,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Player* getPlayerFromOrigin(::CommandOrigin const& origin);
-
     MCAPI static bool isTemplateLockedAction(::CommandOrigin const& origin);
 
     MCAPI static bool isWildcard(::CommandSelectorBase const& selector);
 
     MCAPI static bool shouldUseCommandOriginRotation(::CommandOrigin const& origin, int version);
-
-    MCAPI static bool validData(int input, ushort& data, ::CommandOutput& output);
 
     MCAPI static bool validRange(float input, float low, float high, ::CommandOutput& output);
 
@@ -82,15 +69,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

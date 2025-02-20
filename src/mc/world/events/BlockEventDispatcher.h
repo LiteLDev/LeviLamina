@@ -37,24 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockEventDispatcher();
-
-    MCAPI void
-    dispatchEvent(::BlockPos const& pos, uint layer, ::Block const& block, ::Block const& oldBlock, ::Actor* source);
-
     MCAPI ::BlockEventDispatcherToken registerListener(
         ::Vec3 const&                                                            shapePos,
         float                                                                    shapeRadius,
         ::std::function<void(::BlockPos const&, uint, ::Block const&, ::Actor*)> callback
     );
-
-    MCAPI void updatePosition(int handle, ::Vec3 const& newPosition);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -41,8 +41,6 @@ public:
 
     MCAPI ::mce::Image clone() const;
 
-    MCAPI bool isEmpty() const;
-
     MCAPI ::mce::Image& operator=(::mce::Image&&);
 
     MCAPI void resizeImageBytesToFitImageDescription();

@@ -11,7 +11,6 @@
 // clang-format off
 class CommandOrigin;
 class CompoundTag;
-struct ActorUniqueID;
 // clang-format on
 
 class ActorServerCommandOrigin : public ::ActorCommandOrigin {
@@ -47,14 +46,6 @@ public:
 
     // vIndex: 29
     virtual ::CompoundTag serialize() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ActorUniqueID getTargetOther() const;
-
-    MCAPI void setTargetOther(::ActorUniqueID targetOther);
     // NOLINTEND
 
 public:

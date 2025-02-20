@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransactionFrame(::Core::FileAccessType accessType, ::Core::Path const& path);
+    MCAPI TransactionFrame(::Core::FileAccessType accessType, ::Core::PathView path);
 
     MCAPI ~TransactionFrame();
     // NOLINTEND
@@ -38,7 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::FileAccessType accessType, ::Core::Path const& path);
+    MCAPI void* $ctor(::Core::FileAccessType accessType, ::Core::PathView path);
     // NOLINTEND
 
 public:

@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class ContainerScreenContext;
 class ItemStack;
-class Player;
 // clang-format on
 
 class BeaconContainerManagerModel : public ::LevelContainerManagerModel {
@@ -49,24 +46,6 @@ public:
 
     // vIndex: 20
     virtual ::ContainerScreenContext _postInit() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BeaconContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& PAYMENT_SLOT();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:

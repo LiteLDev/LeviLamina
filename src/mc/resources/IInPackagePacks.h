@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackType.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
 
 class IInPackagePacks {
 public:
@@ -33,18 +27,6 @@ public:
         MetaData& operator=(MetaData const&);
         MetaData(MetaData const&);
         MetaData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI MetaData(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
-        // NOLINTEND
     };
 
 public:

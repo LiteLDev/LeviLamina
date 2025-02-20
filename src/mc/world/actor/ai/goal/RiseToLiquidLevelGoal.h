@@ -39,15 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RiseToLiquidLevelGoal(::Mob& mob, float liquidYOffset, float riseDelta, float sinkDelta);
-
     MCAPI float findLiquidLevel();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float liquidYOffset, float riseDelta, float sinkDelta);
     // NOLINTEND
 
 public:

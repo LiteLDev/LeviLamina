@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    virtual void tick(::EntityRegistry&) /*override*/;
 
     // vIndex: 0
     virtual ~ClientLoadingProgressTickingSystem() /*override*/ = default;

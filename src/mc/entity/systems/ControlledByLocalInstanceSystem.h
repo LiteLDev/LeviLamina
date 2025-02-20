@@ -42,7 +42,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo
     createCalculateControlledByLocalInstanceSystem(::ControlledByLocalInstanceSystem::Config const& config);
-
-    MCAPI static ::TickingSystemWithInfo createWasControlledByLocalInstanceSystem();
     // NOLINTEND
 };

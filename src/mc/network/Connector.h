@@ -10,7 +10,6 @@
 // clang-format off
 class NetworkIdentifier;
 class NetworkPeer;
-namespace RakNet { struct SystemAddress; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -76,46 +75,28 @@ public:
     virtual ~Connector();
 
     // vIndex: 1
-    virtual ::std::vector<::std::string> getLocalIps() const;
-
-    // vIndex: 2
     virtual ::std::string getLocalIp();
 
-    // vIndex: 3
+    // vIndex: 2
     virtual ushort getPort() const;
 
-    // vIndex: 4
-    virtual ::std::vector<::RakNet::SystemAddress> getRefinedLocalIps() const;
-
-    // vIndex: 5
+    // vIndex: 3
     virtual ::Social::GameConnectionInfo const& getConnectedGameInfo() const;
 
-    // vIndex: 6
+    // vIndex: 4
     virtual bool isIPv4Supported() const;
 
-    // vIndex: 7
+    // vIndex: 5
     virtual bool isIPv6Supported() const;
 
-    // vIndex: 8
+    // vIndex: 6
     virtual ushort getIPv4Port() const;
 
-    // vIndex: 9
+    // vIndex: 7
     virtual ushort getIPv6Port() const;
 
-    // vIndex: 10
+    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Connector(::Connector::ConnectionCallbacks& callbacks);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Connector::ConnectionCallbacks& callbacks);
     // NOLINTEND
 
 public:
@@ -127,13 +108,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::string> $getLocalIps() const;
-
     MCFOLD ::std::string $getLocalIp();
 
     MCFOLD ushort $getPort() const;
-
-    MCFOLD ::std::vector<::RakNet::SystemAddress> $getRefinedLocalIps() const;
 
     MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 

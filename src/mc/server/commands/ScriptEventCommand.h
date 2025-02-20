@@ -38,6 +38,12 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ushort const& MAX_MESSAGE_LENGTH();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -101,6 +101,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BiomeRegistry(::BaseGameVersion const& baseGameVersion);
 
+    MCAPI void _initEngineBiome(::BaseGameVersion const& baseGameVersion);
+
     MCAPI void _initTagRegistry();
 
     MCAPI ::Biome& _register(::std::string const& name, ushort id);
@@ -113,30 +115,22 @@ public:
 
     MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
 
-    MCAPI ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& getTagRegistry() const;
-
-    MCFOLD ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& getTagRegistry();
-
     MCAPI void initServerFromPacks(::ResourcePackManager& loader, ::IWorldRegistriesProvider& worldRegistries);
 
     MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     );
 
-    MCAPI bool isRegistrationFinished() const;
-
     MCAPI void loadBiomeData(::LevelStorage const& levelStorage);
 
     MCAPI void loadBiomeTable(::LevelStorage const& levelStorage, ::BaseGameVersion const& baseGameVersion);
 
-    MCAPI ::Biome* lookupByHash(::HashedString const& hash) const;
+    MCAPI ::Biome const* lookupByHash(::HashedString const&) const;
 
-    MCAPI ::Biome* lookupById(ushort id) const;
+    MCFOLD ::Biome* lookupByHash(::HashedString const& hash);
 
-    MCAPI ::Biome* lookupByName(::std::string const& name) const;
+    MCAPI ::Biome const* lookupByName(::std::string const&) const;
 
-    MCAPI ::Biome& registerBiomeWithExplicitId(::std::string const& name, ushort id);
-
-    MCAPI ::Biome& registerCustomBiome(::std::string const& name);
+    MCFOLD ::Biome* lookupByName(::std::string const& name);
 
     MCAPI void saveBiomeTable(::LevelStorage& levelStorage, ::BaseGameVersion const& baseGameVersion) const;
     // NOLINTEND

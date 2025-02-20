@@ -41,42 +41,6 @@ public:
         ::ll::TypedStorage<8, 8, ::HeightmapWrapper const&>                      mPreWorldGenHeightmap;
         ::ll::TypedStorage<1, 1, bool const>                                     mUseCCOrLater;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI BuildParameters(
-            ::Biome const&                                 biome,
-            ::Random&                                      random,
-            ::BlockVolume&                                 blocks,
-            ::BlockPos const&                              pos,
-            float                                          depthValue,
-            short                                          seaLevel,
-            ::std::unique_ptr<::PerlinSimplexNoise> const& materialAdjNoise,
-            ::ISurfaceBuilder::WaterLevelStrategy          waterLevelStrategy,
-            int                                            lowerLimit,
-            ::HeightmapWrapper const&                      preWorldGenHeightmap,
-            bool                                           useCCOrLater
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::Biome const&                                 biome,
-            ::Random&                                      random,
-            ::BlockVolume&                                 blocks,
-            ::BlockPos const&                              pos,
-            float                                          depthValue,
-            short                                          seaLevel,
-            ::std::unique_ptr<::PerlinSimplexNoise> const& materialAdjNoise,
-            ::ISurfaceBuilder::WaterLevelStrategy          waterLevelStrategy,
-            int                                            lowerLimit,
-            ::HeightmapWrapper const&                      preWorldGenHeightmap,
-            bool                                           useCCOrLater
-        );
-        // NOLINTEND
     };
 
 public:

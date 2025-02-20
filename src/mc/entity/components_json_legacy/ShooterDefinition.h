@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class ShooterComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -34,8 +32,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addSoundByName(::std::string const& name);
-
-    MCAPI void initialize(::EntityContext&, ::ShooterComponent& component) const;
 
     MCAPI void setActorDefByName(::std::string const& name);
     // NOLINTEND

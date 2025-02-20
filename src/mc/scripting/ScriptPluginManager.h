@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/resource/ResourceInformation.h"
-#include "mc/external/scripting/reflection/Privilege.h"
+#include "mc/deps/scripting/reflection/Privilege.h"
 #include "mc/scripting/PluginExecutionGroup.h"
 
 // auto generated forward declare list
 // clang-format off
 class IScriptPluginSourceEnumerator;
-class PackCapability;
 class PackManifest;
 class ScriptPackConfigurationManager;
 class ScriptPlugin;
@@ -18,12 +17,10 @@ class ScriptPluginManagerResult;
 class ScriptPluginResult;
 struct ModuleIdentifier;
 struct PackIdVersion;
-struct ScriptPluginStats;
 namespace Scripting { class IRuntime; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct RuntimeStats; }
 namespace Scripting { struct ScriptContextResult; }
-namespace mce { class UUID; }
 // clang-format on
 
 class ScriptPluginManager {
@@ -57,19 +54,18 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnke51876;
-    ::ll::UntypedStorage<8, 8>   mUnk49bd90;
-    ::ll::UntypedStorage<8, 8>   mUnk98aafc;
-    ::ll::UntypedStorage<8, 24>  mUnk41c329;
-    ::ll::UntypedStorage<8, 24>  mUnk7a19bb;
-    ::ll::UntypedStorage<8, 24>  mUnk174121;
+    ::ll::UntypedStorage<8, 32> mUnke51876;
+    ::ll::UntypedStorage<8, 8>  mUnk49bd90;
+    ::ll::UntypedStorage<8, 8>  mUnk98aafc;
+    ::ll::UntypedStorage<8, 24> mUnk41c329;
+    ::ll::UntypedStorage<8, 24> mUnk174121;
     // NOLINTEND
 
 public:
@@ -95,42 +91,35 @@ public:
 
     MCAPI void _runPlugin(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult, ::Scripting::Privilege privilege);
 
-    MCAPI ::Scripting::RuntimeStats computeRuntimeStats() const;
+    MCAPI ::Scripting::RuntimeStats collectRuntimeStats() const;
 
     MCAPI ::ScriptPluginManagerResult createContextsForGroup(::PluginExecutionGroup group);
 
     MCAPI ::ScriptPluginManagerResult discoverPlugins(
-        ::ResourceInformation::ResourceType     moduleType,
-        ::IScriptPluginSourceEnumerator&        pluginEnumerator,
-        ::ScriptPackConfigurationManager const& packConfigManager,
+        ::ResourceInformation::ResourceType     pluginEnumerator,
+        ::IScriptPluginSourceEnumerator&        packConfigManager,
+        ::ScriptPackConfigurationManager const& moduleFilters,
         ::std::vector<::std::function<
             bool(::PackManifest const&, ::Scripting::ModuleDescriptor const&, ::Scripting::ModuleDescriptor const&, ::ScriptPluginResult&)>> const&
-                                     moduleFilters,
-        ::std::vector<::std::string> excludeModuleIDs,
-        ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&&
-            pluginExecutionGroupSelector
+                                     excludeModuleIDs,
+        ::std::vector<::std::string> pluginExecutionGroupSelector,
+        ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&& moduleType
     );
+
+    MCAPI void forEachPlugin(::std::function<void(::ScriptPlugin&)> func);
 
     MCAPI void forEachRuntime(::std::function<void(::Scripting::IRuntime&)> func);
 
-    MCAPI ::ScriptPlugin* getPluginByModuleUuid(::mce::UUID const& moduleUUID);
-
     MCAPI ::std::vector<::ScriptPluginManager::PackNameAndWeakScope> getPluginScopes() const;
 
-    MCAPI ::std::vector<::ScriptPluginStats> getPluginStats() const;
-
-    MCAPI ::std::vector<::ScriptPluginStats> getPluginStatsByIdType(uint id) const;
-
-    MCFOLD ::std::vector<::std::unique_ptr<::ScriptPlugin>>& getPlugins();
-
-    MCAPI void releaseAll();
-
     MCAPI ::ScriptPluginManagerResult runGroup(::PluginExecutionGroup group);
+
+    MCAPI ~ScriptPluginManager();
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI static ::PackCapability getPackCapability();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -104,7 +104,7 @@ public:
 
     MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
-    MCAPI ::std::string const& $getFullName() const;
+    MCFOLD ::std::string const& $getFullName() const;
 
     MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
 
@@ -116,7 +116,7 @@ public:
 
     MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
-    MCAPI uint64 $getHash() const;
+    MCFOLD uint64 $getHash() const;
     // NOLINTEND
 
 public:

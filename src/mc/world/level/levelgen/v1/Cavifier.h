@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CavifierNoises;
 class Vec3;
 // clang-format on
 
@@ -26,16 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Cavifier(::CavifierNoises const& cavifierNoises, float minCellY, float densityBoost);
-
     MCAPI float _getSpaghetti2d(::Vec3 worldPos) const;
 
-    MCAPI float cavify(::Vec3 worldPos, int, float density) const;
-    // NOLINTEND
+    MCAPI float _getSpaghetti3D(::Vec3 worldPos) const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CavifierNoises const& cavifierNoises, float minCellY, float densityBoost);
+    MCAPI float cavify(::Vec3 worldPos, int density, float) const;
     // NOLINTEND
 };

@@ -40,18 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RunAroundLikeCrazyGoal(::Mob& mob, float speedModifier);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -62,7 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canUse();
 
-    MCAPI void $start();
+    MCFOLD void $start();
 
     MCAPI bool $canContinueToUse();
 

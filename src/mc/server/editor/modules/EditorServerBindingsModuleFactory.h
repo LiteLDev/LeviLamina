@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,8 +32,8 @@ public:
     MCAPI ::Scripting::ModuleBinding _generateBindings(
         ::Editor::ServiceProviderCollection& managerServices,
         ::Scripting::ModuleBindingBuilder&   builder,
-        bool                                 allowUntagged,
-        ::std::vector<::std::string> const&  additionalTags
+        bool                                 additionalTags,
+        ::std::vector<::std::string> const&  allowUntagged
     );
     // NOLINTEND
 

@@ -14,7 +14,6 @@
 class AnimatedImageData;
 class BinaryStream;
 class ConnectionRequest;
-class LevelData;
 class MinEngineVersion;
 class ReadOnlyBinaryStream;
 class SerializedPersonaPieceHandle;
@@ -38,7 +37,7 @@ public:
     ::ll::TypedStorage<8, 48, ::mce::Image>                                               mCapeImage;
     ::ll::TypedStorage<8, 24, ::std::vector<::AnimatedImageData>>                         mSkinAnimatedImages;
     ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryData;
-    ::ll::TypedStorage<8, 120, ::MinEngineVersion>                                        mGeometryDataMinEngineVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>                                         mGeometryDataMinEngineVersion;
     ::ll::TypedStorage<8, 16, ::Json::Value>                                              mGeometryDataMutable;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mAnimationData;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mCapeId;
@@ -69,10 +68,6 @@ public:
 
     MCAPI float getAnimationFrames(::persona::AnimatedTextureType animationType) const;
 
-    MCFOLD ::std::string const& getName() const;
-
-    MCAPI bool isTrustedSkin() const;
-
     MCAPI ::SerializedSkin& operator=(::SerializedSkin&&);
 
     MCAPI ::SerializedSkin& operator=(::SerializedSkin const& rhs);
@@ -81,23 +76,11 @@ public:
 
     MCAPI void setArmSizeFromString(::std::string const& armSizeStr);
 
-    MCAPI void setIsTrustedSkin(bool isTrustedSkin);
-
     MCAPI void updateGeometryName();
-
-    MCAPI bool useBlinkingAnimation() const;
 
     MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~SerializedSkin();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::SerializedSkin createTrustedDefaultSerializedSkin();
-
-    MCAPI static bool isSkinDisabled(::SerializedSkin const& skin, ::LevelData const& levelData);
     // NOLINTEND
 
 public:

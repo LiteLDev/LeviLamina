@@ -51,7 +51,31 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI IntermediateStorage(
+            bool&              result,
+            ::ItemStack const& initialItemStack,
+            ::ItemStack&       actor,
+            ::Actor&           location,
+            ::BlockPos         face,
+            uchar              clickPos,
+            ::Vec3
+        );
+
         MCAPI ~IntermediateStorage();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            bool&              result,
+            ::ItemStack const& initialItemStack,
+            ::ItemStack&       actor,
+            ::Actor&           location,
+            ::BlockPos         face,
+            uchar              clickPos,
+            ::Vec3
+        );
         // NOLINTEND
 
     public:
@@ -71,26 +95,26 @@ public:
 public:
     // prevent constructor by default
     ScriptItemCustomComponentUseOnEvent& operator=(ScriptItemCustomComponentUseOnEvent const&);
-    ScriptItemCustomComponentUseOnEvent(ScriptItemCustomComponentUseOnEvent const&);
     ScriptItemCustomComponentUseOnEvent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptItemCustomComponentUseOnEvent() /*override*/ = default;
+    virtual ~ScriptItemCustomComponentUseOnEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptItemCustomComponentUseOnEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
+
+    MCAPI ScriptItemCustomComponentUseOnEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent const&);
+
     MCAPI ScriptItemCustomComponentUseOnEvent(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                    scope
     );
-
-    MCAPI ::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
     // NOLINTEND
 
 public:
@@ -102,6 +126,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent&&);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent const&);
+
     MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentUseOnEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                    scope
@@ -111,7 +139,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

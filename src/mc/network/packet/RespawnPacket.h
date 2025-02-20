@@ -45,22 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RespawnPacket();
-
-    MCAPI RespawnPacket(::Vec3 const& pos, ::PlayerRespawnState const& state);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Vec3 const& pos, ::PlayerRespawnState const& state);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

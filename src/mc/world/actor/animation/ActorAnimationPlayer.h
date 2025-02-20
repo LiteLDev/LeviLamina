@@ -10,6 +10,7 @@
 // clang-format off
 class AnimationComponent;
 class BoneOrientation;
+class ExpressionNode;
 class HashedString;
 class RenderParams;
 // clang-format on
@@ -66,6 +67,18 @@ public:
 
     // vIndex: 9
     virtual ::HashedString const& getRawName() const = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ActorAnimationPlayer(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HashedString const& friendlyName, ::ExpressionNode const& blendExpression);
     // NOLINTEND
 
 public:

@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::BlockPos getSize(::Rotation) const /*override*/;
+    virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
     // vIndex: 1
     virtual ::std::vector<::JigsawBlockInfo>

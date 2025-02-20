@@ -26,15 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int resolveY(::br::worldgen::WorldGenContext const& heightAccessor) const;
-
     MCAPI ::std::string toString() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::VerticalAnchor absolute(int value);
     // NOLINTEND
 };
 

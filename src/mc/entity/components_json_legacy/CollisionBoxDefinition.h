@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CollisionBoxComponent;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -28,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::CollisionBoxComponent& component) const;
-
     MCAPI void setHeight(float const& height);
 
     MCAPI void setWidth(float const& width);

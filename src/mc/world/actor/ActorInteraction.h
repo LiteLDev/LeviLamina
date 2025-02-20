@@ -22,15 +22,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ActorInteraction(bool noCapture);
 
-    MCFOLD void capture(::std::function<void()> interactFunc);
-
-    MCFOLD ::std::string const& getInteractText() const;
-
-    MCAPI void interact();
+    MCAPI void capture(::std::function<void()> interactFunc);
 
     MCFOLD void setInteractText(::std::string const& text);
-
-    MCAPI bool shouldCapture() const;
 
     MCAPI ~ActorInteraction();
     // NOLINTEND

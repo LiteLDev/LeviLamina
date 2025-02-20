@@ -13,7 +13,8 @@ class HashedString;
 class IWorldRegistriesProvider;
 class MinEngineVersion;
 class ResourcePackManager;
-class SemVersion;
+class SemVersionConstant;
+struct BiomeDecorationFeature;
 namespace SharedTypes::v1_21_20 { struct AutomaticFeatureRulesData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -56,7 +57,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 360> mUnk333374;
+    ::ll::UntypedStorage<8, 200> mUnka8c11c;
     // NOLINTEND
 
 public:
@@ -89,8 +90,9 @@ public:
     ) const;
 
     MCAPI void attachAutomaticFeatures(
-        ::ResourcePackManager&      resourcePackManager,
-        ::IWorldRegistriesProvider& worldRegistries
+        ::ResourcePackManager&                                          resourcePackManager,
+        ::IWorldRegistriesProvider&                                     worldRegistries,
+        ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>& biomeDecorationFeatureMap
     ) const;
 
     MCAPI ::std::unordered_map<
@@ -106,7 +108,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersion const& SCHEMA_VERSION_1();
+    MCAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
     // NOLINTEND
 
 public:

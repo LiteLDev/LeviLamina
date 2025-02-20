@@ -11,7 +11,7 @@ class BinaryLoader : public ::cereal::BasicLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkac09ce;
+    ::ll::UntypedStorage<8, 72> mUnkac09ce;
     // NOLINTEND
 
 public:
@@ -24,13 +24,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BinaryLoader() /*override*/ = default;
+    virtual ~BinaryLoader() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

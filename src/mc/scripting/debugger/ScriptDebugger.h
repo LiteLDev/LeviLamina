@@ -16,9 +16,9 @@ class ScriptPluginManager;
 class ScriptStat;
 class ServerLevel;
 struct ScriptDebuggerSettings;
-struct ScriptResourceStats;
 namespace Core { class Path; }
 namespace ScriptDebuggerMessages { struct CommandMessage; }
+namespace ScriptDebuggerMessages { struct ProfilerMessage; }
 namespace Scripting { class ScriptEngine; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -58,7 +58,7 @@ public:
     ::ll::UntypedStorage<8, 104> mUnkaa78c0;
     ::ll::UntypedStorage<8, 8>   mUnkd106a5;
     ::ll::UntypedStorage<8, 8>   mUnkf7195e;
-    ::ll::UntypedStorage<8, 24>  mUnkbae419;
+    ::ll::UntypedStorage<8, 8>   mUnk2f3c05;
     ::ll::UntypedStorage<8, 8>   mUnkbce03b;
     ::ll::UntypedStorage<8, 8>   mUnkd6e3ed;
     ::ll::UntypedStorage<8, 8>   mUnk85bc4f;
@@ -103,39 +103,38 @@ public:
     // vIndex: 5
     virtual ::std::vector<::Core::Path> stopProfiler() /*override*/;
 
-    // vIndex: 6
-    virtual ::ScriptResourceStats getResourceStats() const /*override*/;
-
     // vIndex: 1
     virtual bool isStatPublisherEnabled() const /*override*/;
 
     // vIndex: 2
-    virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat>&& stats) /*override*/;
+    virtual void publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptDebugger(
-        ::ScriptDebuggerSettings       settings,
-        ::ServerLevel&                 serverLevel,
-        ::MinecraftCommands&           commands,
-        ::cereal::ReflectionCtx const& ctx,
-        ::Scripting::ScriptEngine&     scriptEngine,
-        ::ScriptPluginManager&         pluginManager,
-        ::IScriptDebuggerWatchdog&     watchdog,
-        ::IScriptTelemetryLogger&      telemetry
+        ::ScriptDebuggerSettings   settings,
+        ::ServerLevel&             serverLevel,
+        ::MinecraftCommands&       commands,
+        ::cereal::ReflectionCtx&   ctx,
+        ::Scripting::ScriptEngine& scriptEngine,
+        ::ScriptPluginManager&     pluginManager,
+        ::IScriptDebuggerWatchdog& watchdog,
+        ::IScriptTelemetryLogger&  telemetry
     );
 
     MCAPI void _debuggerMessageHandler(::std::string_view message);
 
     MCAPI void _handleCommandMessage(::ScriptDebuggerMessages::CommandMessage const& commandMessage);
 
+    MCAPI void _handleStopProfilerMessage(::ScriptDebuggerMessages::ProfilerMessage const& profilerMessage);
+
     MCAPI ::std::string _sanitizeHostName(::std::string const& host) const;
 
     MCAPI ushort _sanitizePort(uint port) const;
 
-    MCAPI void _sendNotification(::LogLevel logLevel, ::std::string_view message);
+    MCAPI void _sendNotification(::LogLevel message, ::std::string_view logLevel);
 
     MCAPI bool _tryAttachRuntime(bool expectRuntime);
 
@@ -152,14 +151,14 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::ScriptDebuggerSettings       settings,
-        ::ServerLevel&                 serverLevel,
-        ::MinecraftCommands&           commands,
-        ::cereal::ReflectionCtx const& ctx,
-        ::Scripting::ScriptEngine&     scriptEngine,
-        ::ScriptPluginManager&         pluginManager,
-        ::IScriptDebuggerWatchdog&     watchdog,
-        ::IScriptTelemetryLogger&      telemetry
+        ::ScriptDebuggerSettings   settings,
+        ::ServerLevel&             serverLevel,
+        ::MinecraftCommands&       commands,
+        ::cereal::ReflectionCtx&   ctx,
+        ::Scripting::ScriptEngine& scriptEngine,
+        ::ScriptPluginManager&     pluginManager,
+        ::IScriptDebuggerWatchdog& watchdog,
+        ::IScriptTelemetryLogger&  telemetry
     );
     // NOLINTEND
 
@@ -184,11 +183,9 @@ public:
 
     MCAPI ::std::vector<::Core::Path> $stopProfiler();
 
-    MCAPI ::ScriptResourceStats $getResourceStats() const;
-
     MCAPI bool $isStatPublisherEnabled() const;
 
-    MCAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat>&& stats);
+    MCAPI void $publishStats(uint64 collectedTick, ::std::vector<::ScriptStat> const& stats);
     // NOLINTEND
 
 public:

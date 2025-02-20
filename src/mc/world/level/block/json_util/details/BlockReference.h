@@ -16,12 +16,19 @@ public:
     // prevent constructor by default
     BlockReference& operator=(BlockReference const&);
     BlockReference(BlockReference const&);
-    BlockReference();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockReference();
+
     MCAPI ~BlockReference();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

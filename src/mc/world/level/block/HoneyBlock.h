@@ -16,7 +16,6 @@ class EntityContext;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
@@ -35,7 +34,7 @@ public:
     // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 11
@@ -48,8 +47,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HoneyBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
@@ -57,12 +54,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void triggerSlidingDownEffects(::Actor& entity, ::BlockPos const& pos, ::Block const& honeyBlock);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -18,6 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk5fdd0d;
+    ::ll::UntypedStorage<4, 4> mUnk5821f9;
     // NOLINTEND
 
 public:
@@ -34,18 +34,6 @@ public:
 
     // vIndex: 0
     virtual ~CentralSpikedFeature() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CentralSpikedFeature(::Block const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block);
     // NOLINTEND
 
 public:

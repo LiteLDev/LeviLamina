@@ -15,7 +15,7 @@ class BlockPos;
 class BlockSource;
 class ItemInstance;
 class Player;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class FurnaceBlock : public ::ActorBlock {
@@ -32,8 +32,7 @@ public:
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 139
     virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
@@ -65,12 +64,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FurnaceBlock(::std::string const& nameId, int id, bool lit);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setLit(
@@ -84,12 +77,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -100,7 +87,7 @@ public:
     // NOLINTBEGIN
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 

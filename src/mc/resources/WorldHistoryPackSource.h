@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -16,7 +15,6 @@ class IPackManifestFactory;
 class Pack;
 class PackSourceReport;
 class WorldPackHistory;
-namespace Core { class Path; }
 // clang-format on
 
 class WorldHistoryPackSource : public ::PackSource {
@@ -65,28 +63,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType type);
-
     MCAPI void _addPackFromHistoryPack(::WorldPackHistory const& worldPackHistory);
 
     MCAPI ::std::unique_ptr<::Pack> _createPackFromHistoryPack(::WorldPackHistory const& worldPackHistory);
 
     MCAPI bool _readWorldHistoryFile();
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getPathToWorld() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string>
-    generateHistoryFilePath(::Core::Path const& pathToWorld, ::PackType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& pathToWorld, ::PackType type);
     // NOLINTEND
 
 public:

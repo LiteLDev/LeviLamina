@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/monster/HumanoidMonster.h"
 
 // auto generated forward declare list
@@ -12,7 +12,6 @@ class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class EntityContext;
-class WitherBoss;
 struct ActorDefinitionIdentifier;
 namespace mce { class UUID; }
 // clang-format on
@@ -42,25 +41,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 125
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 159
-    virtual bool doHurtTarget(::Actor* target, ::ActorDamageCause const& cause) /*override*/;
+    // vIndex: 154
+    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
-    // vIndex: 107
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 87
+    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 115
+    // vIndex: 113
     virtual void getDebugText(::std::vector<::std::string>& outputInfo) /*override*/;
 
     // vIndex: 8
@@ -76,7 +75,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void setWitherParent(::WitherBoss* wither);
+    MCFOLD void setSkeletonType(::Skeleton::SkeletonType type);
     // NOLINTEND
 
 public:
@@ -105,8 +104,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $die(::ActorDamageSource const& source);
-
-    MCAPI bool $doHurtTarget(::Actor* target, ::ActorDamageCause const& cause);
 
     MCAPI bool $canBeAffected(uint id) const;
 

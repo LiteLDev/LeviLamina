@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct InternalPacket; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
@@ -86,12 +85,6 @@ public:
 
     // vIndex: 16
     virtual void OnPushBackPacket(char const*, uint const, ::RakNet::SystemAddress);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void SetRakPeerInterface(::RakNet::RakPeerInterface* ptr);
     // NOLINTEND
 
 public:

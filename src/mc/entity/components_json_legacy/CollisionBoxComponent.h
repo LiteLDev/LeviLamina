@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec2;
-class Vec3;
-// clang-format on
-
 class CollisionBoxComponent {
 public:
     // member variables
@@ -20,12 +14,4 @@ public:
     CollisionBoxComponent& operator=(CollisionBoxComponent const&);
     CollisionBoxComponent(CollisionBoxComponent const&);
     CollisionBoxComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void fromVec3(::Vec3 const& vec);
-
-    MCFOLD ::Vec2 const& getDefaultBB() const;
-    // NOLINTEND
 };

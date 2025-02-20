@@ -25,17 +25,9 @@ public:
     // NOLINTBEGIN
     MCAPI void add(::std::shared_ptr<::IDefinitionInstance> const& definition);
 
-    MCAPI void clear();
-
     MCAPI void combine(::DefinitionInstanceGroup const& other);
 
-    MCAPI bool contains(::DefinitionInstanceGroup const& other) const;
-
-    MCAPI bool overlaps(::DefinitionInstanceGroup const& other) const;
-
     MCAPI void remove(::std::shared_ptr<::IDefinitionInstance> const& definition);
-
-    MCAPI void subtract(::DefinitionInstanceGroup const& other);
 
     MCAPI ~DefinitionInstanceGroup();
     // NOLINTEND

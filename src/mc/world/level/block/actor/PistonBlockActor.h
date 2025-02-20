@@ -10,16 +10,16 @@
 // clang-format off
 class AABB;
 class Actor;
-class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class IConstBlockSource;
-class Level;
+class ILevel;
+class Randomize;
 class SaveContext;
 class Vec3;
+struct ResourceDropsContext;
 // clang-format on
 
 class PistonBlockActor : public ::BlockActor {
@@ -45,7 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -115,35 +115,18 @@ public:
 
     MCAPI void _spawnMovingBlocks(::BlockSource& region);
 
-    MCAPI void _tryFixupStickyPistonArm(::BlockSource& region);
-
-    MCFOLD ::std::vector<::BlockPos> const& getAttachedBlocks() const;
-
-    MCAPI ::Block const* getCorrectArmBlock() const;
-
-    MCAPI ::BlockPos const& getFacingDir(::IConstBlockSource const& region) const;
-
-    MCAPI float getProgress(float a) const;
-
-    MCAPI bool isExpanded() const;
-
-    MCAPI bool isExpanding() const;
-
-    MCAPI bool isMoving() const;
-
-    MCAPI bool isRetracted() const;
-
-    MCAPI bool isRetracting() const;
-
     MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
-
-    MCFOLD void setShouldVerifyArmType(bool shouldVerify);
     // NOLINTEND
 
 public:
-    // static variables
+    // static functions
     // NOLINTBEGIN
-    MCAPI static float const& ARM_ANIMATION_SPEED();
+    MCAPI static void _spawnResourcesForBlockAndExtraBlock(
+        ::BlockSource&                region,
+        ::BlockPos const&             blockPos,
+        ::Randomize                   randomize,
+        ::ResourceDropsContext const& resourceDropsContext
+    );
     // NOLINTEND
 
 public:
@@ -161,7 +144,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

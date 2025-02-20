@@ -4,18 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 namespace ScriptModuleMinecraft {
 
 class ScriptVector : public ::Vec3 {
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptVector const& rhs) const;
-    // NOLINTEND
-
 public:
     // static functions
     // NOLINTBEGIN

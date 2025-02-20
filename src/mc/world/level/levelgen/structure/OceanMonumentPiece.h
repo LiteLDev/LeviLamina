@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
 class BoundingBox;
 class LevelChunk;
@@ -54,18 +55,32 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI OceanMonumentPiece(
-        int                                 genDepth,
-        int&                                orientation,
-        ::std::shared_ptr<::RoomDefinition> roomDefinition,
-        int                                 roomWidth,
+        int                                 orientation,
+        int&                                roomDefinition,
+        ::std::shared_ptr<::RoomDefinition> roomWidth,
         int                                 roomHeight,
-        int                                 roomDepth
+        int                                 roomDepth,
+        int                                 genDepth
+    );
+
+    MCAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
+
+    MCAPI void generateBoxOnFillOnly(
+        ::BlockSource&       region,
+        ::BoundingBox const& chunkBB,
+        int                  x0,
+        int                  y0,
+        int                  z0,
+        int                  x1,
+        int                  y1,
+        int                  z1,
+        ::Block const&       targetBlock
     );
 
     MCAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
+    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& x, int z, int chunkBB, int y);
     // NOLINTEND
 
 public:
@@ -90,12 +105,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        int                                 genDepth,
-        int&                                orientation,
-        ::std::shared_ptr<::RoomDefinition> roomDefinition,
-        int                                 roomWidth,
+        int                                 orientation,
+        int&                                roomDefinition,
+        ::std::shared_ptr<::RoomDefinition> roomWidth,
         int                                 roomHeight,
-        int                                 roomDepth
+        int                                 roomDepth,
+        int                                 genDepth
     );
     // NOLINTEND
 

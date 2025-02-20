@@ -24,12 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::TrimMaterial> const& getAllEntries() const;
-
     MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByItemName(::HashedString const& itemName) const;
 
     MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
-
-    MCAPI void initializeServer();
     // NOLINTEND
 };

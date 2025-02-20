@@ -4,9 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/IContainerManager.h"
 
 // auto generated forward declare list
@@ -16,7 +15,6 @@ class ContainerModel;
 class ContainerScreenContext;
 class ItemStack;
 class Player;
-struct ActorUniqueID;
 struct FullContainerName;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -32,8 +30,8 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkfee45b;
     ::ll::UntypedStorage<8, 24>  mUnkf245ae;
     ::ll::UntypedStorage<1, 1>   mUnk5c726e;
-    ::ll::UntypedStorage<1, 1>   mUnk23f34b;
-    ::ll::UntypedStorage<8, 8>   mUnkabe955;
+    ::ll::UntypedStorage<1, 1>   mUnkb3fe56;
+    ::ll::UntypedStorage<8, 8>   mUnk3505e0;
     ::ll::UntypedStorage<8, 64>  mUnk466296;
     ::ll::UntypedStorage<8, 40>  mUnkbb37fd;
     ::ll::UntypedStorage<8, 64>  mUnke23970;
@@ -62,14 +60,15 @@ public:
     virtual void setContainerId(::ContainerID id) /*override*/;
 
     // vIndex: 3
-    virtual ::ContainerType getContainerType() const /*override*/;
+    virtual ::SharedTypes::Legacy::ContainerType getContainerType() const /*override*/;
 
     // vIndex: 4
-    virtual void setContainerType(::ContainerType type) /*override*/;
+    virtual void setContainerType(::SharedTypes::Legacy::ContainerType type) /*override*/;
 
     // vIndex: 5
     virtual ::Bedrock::PubSub::Subscription
-    registerContainerTypeListener(::std::function<void(::ContainerType)> callback) const /*override*/;
+    registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const
+        /*override*/;
 
     // vIndex: 15
     virtual void debitPlayerLevels(int levels);
@@ -110,25 +109,11 @@ public:
 
     MCAPI void _addContainer(::std::shared_ptr<::ContainerModel> containerModel);
 
-    MCAPI ::ContainerScreenContext _containerScreenContext(::ActorUniqueID actorId);
-
-    MCAPI ::ContainerScreenContext _containerScreenContext(::BlockPos const& blockPos);
-
-    MCAPI ::std::shared_ptr<::ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
-
     MCAPI bool _isPlayerInRangeOfPosition(::BlockPos const& blockPos, float pickRange) const;
 
     MCAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
 
-    MCFOLD ::Player& getPlayer() const;
-
     MCAPI void postInit();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _appendCopies(::std::vector<::ItemStack>& out, ::std::vector<::ItemStack> const& items);
     // NOLINTEND
 
 public:
@@ -152,12 +137,12 @@ public:
 
     MCFOLD void $setContainerId(::ContainerID id);
 
-    MCFOLD ::ContainerType $getContainerType() const;
+    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
-    MCAPI void $setContainerType(::ContainerType type);
+    MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI ::Bedrock::PubSub::Subscription $registerContainerTypeListener(::std::function<void(::ContainerType)> callback
-    ) const;
+    MCAPI ::Bedrock::PubSub::Subscription
+    $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
     MCAPI void $debitPlayerLevels(int levels);
 

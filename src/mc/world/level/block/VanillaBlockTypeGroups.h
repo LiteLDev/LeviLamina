@@ -70,8 +70,6 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Doubl
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& FenceBlockIds();
 
-MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& FlowerIds();
-
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassPaneIds();
@@ -149,6 +147,8 @@ MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Stone
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TerracottaIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TntIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TulipIds();
 
 MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodAndStrippedWoodBlockIds();
 

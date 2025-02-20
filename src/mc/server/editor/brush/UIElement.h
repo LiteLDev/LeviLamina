@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/script_engine/Closure.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off

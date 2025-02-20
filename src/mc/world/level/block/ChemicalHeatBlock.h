@@ -22,7 +22,7 @@ public:
     // vIndex: 136
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 56
@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChemicalHeatBlock(::std::string const& nameId, int id);
+    MCAPI void _queueTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
@@ -47,12 +47,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::BlockPos> const& _getRelativeOffsets();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

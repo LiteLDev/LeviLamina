@@ -104,38 +104,14 @@ public:
 public:
     // prevent constructor by default
     Logger& operator=(Logger const&);
+    Logger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Logger();
-
     MCAPI Logger(::Puv::Logger const&);
 
     MCAPI Logger(::Puv::Logger&&);
-
-    MCAPI ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<::std::_Vector_const_iterator<
-            ::std::_Vector_val<::std::_Simple_types<::cereal::SerializerContext::LogEntry>>>>,
-        ::Puv::LoggerIterator<::std::_Vector_const_iterator<
-            ::std::_Vector_val<::std::_Simple_types<::cereal::SerializerContext::LogEntry>>>>>
-    getParseLog(::cereal::ResultCode mask) const;
-
-    MCAPI ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>,
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>>
-    getUpgradeLog(::Puv::Logger::UpgradeResultCode mask) const;
-
-    MCAPI ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>,
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>>
-    getValidationLog(::Puv::Logger::ValidationResultCode mask) const;
-
-    MCFOLD bool hasErrors() const;
 
     MCAPI ::Puv::Logger& log(::Puv::Logger::ValidationResultCode res, ::std::string msg);
 
@@ -150,8 +126,6 @@ public:
         ::std::vector<::std::pair<::cereal::SerializerContext::ContextType, ::std::string>> dst,
         ::std::string                                                                       msg);
 
-    MCAPI void merge(::Puv::Logger log);
-
     MCAPI ::Puv::Logger& operator=(::Puv::Logger&&);
 
     MCAPI ~Logger();
@@ -160,8 +134,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Puv::Logger const&);
 
     MCAPI void* $ctor(::Puv::Logger&&);

@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void captureWorldExitSnapshot();
+
     MCAPI void captureWorldStartSnapshot();
 
     MCAPI void pushSnapshot();

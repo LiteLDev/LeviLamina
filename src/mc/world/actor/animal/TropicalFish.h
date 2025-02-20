@@ -22,14 +22,14 @@ public:
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 172
+    // vIndex: 167
     virtual bool createAIGoals() /*override*/;
 
     // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
     // vIndex: 8

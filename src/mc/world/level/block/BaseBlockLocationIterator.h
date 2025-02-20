@@ -19,7 +19,9 @@ public:
 
 public:
     // prevent constructor by default
+    BaseBlockLocationIterator& operator=(BaseBlockLocationIterator const&);
     BaseBlockLocationIterator(BaseBlockLocationIterator const&);
+    BaseBlockLocationIterator();
 
 public:
     // virtual functions
@@ -41,32 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BaseBlockLocationIterator();
-
-    MCAPI BaseBlockLocationIterator(::BlockPos const& min, ::BlockPos const& max, bool begin);
-
-    MCFOLD bool done() const;
-
-    MCAPI bool operator!=(::BaseBlockLocationIterator const& rhs);
-
-    MCFOLD ::BlockPos operator*() const;
-
-    MCAPI ::BaseBlockLocationIterator& operator=(::BaseBlockLocationIterator const& other);
-
-    MCFOLD void reset();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockPos const& min, ::BlockPos const& max, bool begin);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -77,12 +53,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $_begin();
 
-    MCAPI void $_end();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCFOLD void $_end();
     // NOLINTEND
 };

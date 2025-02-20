@@ -8,7 +8,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/server/ServerPlayer.h"
-#include "mc/server/sim/LookDuration.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/level/GameType.h"
 
@@ -16,11 +15,12 @@
 // clang-format off
 class Actor;
 class BlockPos;
-class Certificate;
+class BlockSource;
 class ChunkSource;
 class ChunkViewSource;
 class Dimension;
 class EntityContext;
+class GameServerToken;
 class ItemStack;
 class Level;
 class NavigationComponent;
@@ -52,7 +52,7 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                                      mDestroyingBlockFace;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper>> mGameTestHelper;
     ::ll::TypedStorage<8, 8, uint64>                                                      mCooldownTick;
-    ::ll::TypedStorage<8, 72, ::PlayerMovementSettings>                                   mMovementSettings;
+    ::ll::TypedStorage<8, 80, ::PlayerMovementSettings>                                   mMovementSettings;
     ::ll::TypedStorage<4, 4, float>                                                       mBaseInputSpeed;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mXuid;
     ::ll::TypedStorage<8, 40, ::PlayerSuspendLevelStorageSaveToken const> mPlayerSuspendLevelStorageSaveToken;
@@ -65,16 +65,16 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep() /*override*/;
 
-    // vIndex: 237
+    // vIndex: 232
     virtual bool isSimulated() const /*override*/;
 
-    // vIndex: 238
+    // vIndex: 233
     virtual ::std::string getXuid() const /*override*/;
 
-    // vIndex: 239
+    // vIndex: 234
     virtual ::PlayerMovementSettings const& getMovementSettings() const /*override*/;
 
     // vIndex: 21
@@ -86,13 +86,13 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    // vIndex: 247
+    // vIndex: 242
     virtual int _getSpawnChunkLimit() const /*override*/;
 
-    // vIndex: 243
+    // vIndex: 238
     virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
-    // vIndex: 248
+    // vIndex: 243
     virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
 
     // vIndex: 0
@@ -112,11 +112,11 @@ public:
         ::SubClientId                                      subid,
         ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
         ::mce::UUID                                        uuid,
-        ::std::string const&                               deviceId,
-        ::std::unique_ptr<::Certificate>                   certificate,
-        int                                                maxChunkRadius,
-        bool                                               enableItemStackNetManager,
-        ::EntityContext&                                   entityContext
+        ::std::string const&                               token,
+        ::GameServerToken const&                           maxChunkRadius,
+        int                                                enableItemStackNetManager,
+        bool                                               entityContext,
+        ::EntityContext&                                   deviceId
     );
 
     MCAPI void _addMoveComponent();
@@ -124,53 +124,27 @@ public:
     MCAPI ::ScriptModuleGameTest::ScriptNavigationResult _createNavigationResult(::NavigationComponent* navigation
     ) const;
 
+    MCFOLD ::BlockSource& _getRegion();
+
     MCAPI bool _trySwing();
 
-    MCAPI void _updateMovement();
-
     MCAPI void _updateRidingComponents();
-
-    MCAPI ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> getGameTestHelper() const;
-
-    MCAPI void postAiStep();
 
     MCAPI void preAiStep();
 
     MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);
 
-    MCAPI void setXuid(::std::string const& xuid);
-
     MCAPI bool simulateAttack();
-
-    MCAPI bool simulateAttack(::Actor* actor);
 
     MCAPI void simulateChat(::std::string const& message);
 
-    MCAPI bool simulateDestroyBlock(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
-
-    MCAPI void simulateDisconnect();
-
-    MCAPI bool simulateDropSelectedItem();
-
-    MCAPI void simulateFly();
-
-    MCAPI bool simulateGiveItem(::ItemStack& item, bool selectSlot);
-
     MCAPI bool simulateInteract();
-
-    MCAPI bool simulateInteract(::Actor& actor);
 
     MCAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
 
     MCAPI bool simulateJump();
 
     MCAPI void simulateLocalMove(::Vec3 const& localDirection, float);
-
-    MCAPI void simulateLookAt(::Actor& actor, ::sim::LookDuration lookType);
-
-    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType);
-
-    MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType);
 
     MCAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
 
@@ -181,36 +155,11 @@ public:
 
     MCAPI void simulateNavigateToLocations(::std::vector<::Vec3>&& positions, float speed);
 
-    MCAPI bool simulateRespawn();
-
     MCAPI void simulateSetBodyRotation(float degY);
-
-    MCAPI bool simulateSetItem(::ItemStack& item, bool selectSlot, int slot);
-
-    MCAPI void simulateStartBuildInSlot(int slot);
-
-    MCAPI void simulateStopBuild();
 
     MCAPI void simulateStopDestroyingBlock();
 
-    MCAPI void simulateStopFlying();
-
-    MCAPI void simulateStopInteracting();
-
-    MCAPI void simulateStopMoving();
-
-    MCAPI void simulateStopUsingItem();
-
-    MCAPI bool simulateUseItem(::ItemStack& item);
-
     MCAPI bool simulateUseItemInSlot(int slot);
-
-    MCAPI bool simulateUseItemInSlotOnBlock(
-        int                                   slot,
-        ::BlockPos const&                     pos,
-        ::ScriptModuleMinecraft::ScriptFacing face,
-        ::Vec3 const&                         facePos
-    );
 
     MCAPI bool simulateUseItemOnBlock(
         ::ItemStack&                          item,
@@ -232,8 +181,6 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
         ::std::string const&                                  xuid
     );
-
-    MCAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
     // NOLINTEND
 
 public:
@@ -249,11 +196,11 @@ public:
         ::SubClientId                                      subid,
         ::std::function<void(::ServerPlayer&)>             playerLoadedCallback,
         ::mce::UUID                                        uuid,
-        ::std::string const&                               deviceId,
-        ::std::unique_ptr<::Certificate>                   certificate,
-        int                                                maxChunkRadius,
-        bool                                               enableItemStackNetManager,
-        ::EntityContext&                                   entityContext
+        ::std::string const&                               token,
+        ::GameServerToken const&                           maxChunkRadius,
+        int                                                enableItemStackNetManager,
+        bool                                               entityContext,
+        ::EntityContext&                                   deviceId
     );
     // NOLINTEND
 

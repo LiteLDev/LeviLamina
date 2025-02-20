@@ -38,6 +38,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void containerContentChanged(::Actor& actor);
+
+    MCAPI void validateFlyEnabledItem(::Actor& actor);
     // NOLINTEND
 
 public:

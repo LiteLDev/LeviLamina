@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/editor/script/ScriptWidgetComponentRenderPrimTypeBase.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 
@@ -28,12 +28,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ScriptWidgetComponentRenderPrimType_Box() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box const& other) const;
     // NOLINTEND
 
 public:

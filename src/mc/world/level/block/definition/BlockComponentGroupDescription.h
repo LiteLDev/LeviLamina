@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 struct BlockComponentDescription;
+namespace cereal { class DynamicValue; }
 // clang-format on
 
 struct BlockComponentGroupDescription {
@@ -30,6 +31,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI void _setCustomComponent(
+            ::std::string_view                               compName,
+            ::std::shared_ptr<::cereal::DynamicValue> const& compData,
+            bool                                             overridePlayerInteract,
+            bool                                             overridePlayerPlacing
+        );
+
+        MCAPI ::std::shared_ptr<::cereal::DynamicValue> getCustomComponent(::std::string_view compName) const;
+
         MCFOLD ::BlockComponentGroupDescription::Components&
         operator=(::BlockComponentGroupDescription::Components const&);
 
@@ -53,6 +63,7 @@ public:
 
 public:
     // prevent constructor by default
+    BlockComponentGroupDescription& operator=(BlockComponentGroupDescription const&);
     BlockComponentGroupDescription();
 
 public:
@@ -64,9 +75,9 @@ public:
 
     MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
 
-    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
+    MCAPI void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
 
-    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription const&);
+    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 
     MCAPI ~BlockComponentGroupDescription();
     // NOLINTEND

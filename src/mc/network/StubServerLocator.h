@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~StubServerLocator() /*override*/;
+    virtual ~StubServerLocator() /*override*/ = default;
 
     // vIndex: 3
     virtual void startAnnouncingServer(
@@ -86,7 +86,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

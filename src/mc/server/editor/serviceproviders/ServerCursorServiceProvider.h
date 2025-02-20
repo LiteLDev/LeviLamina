@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +14,7 @@ namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Cursor { class ServerCursor; }
 namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
+namespace Editor::Cursor { struct Position; }
 namespace Editor::Cursor { struct Ray; }
 // clang-format on
 
@@ -51,6 +52,11 @@ public:
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
         listenForCursorStateChanges(::std::function<
                                     void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)>) = 0;
+
+    // vIndex: 9
+    virtual ::Bedrock::PubSub::Subscription
+        listenForCursorPositionChanges(::std::function<
+                                       void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>) = 0;
     // NOLINTEND
 
 public:

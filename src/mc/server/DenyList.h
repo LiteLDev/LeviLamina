@@ -85,8 +85,6 @@ public:
 
     MCAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
-    MCAPI void removeEntry(::DenyList::Entry const& entry);
-
     MCAPI ~DenyList();
     // NOLINTEND
 

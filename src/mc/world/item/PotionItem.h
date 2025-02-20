@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
@@ -20,7 +21,6 @@ class ItemStack;
 class ItemStackBase;
 class Level;
 class Player;
-class ThrownPotion;
 class Vec3;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
@@ -94,14 +94,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PotionItem(::std::string const& name, int id);
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void applyEffect(::ThrownPotion* potion, ::ItemStack const& slotItem);
-
-    MCAPI static bool isDestructivePotion(::Potion::PotionVariant potionVariant);
+    MCAPI bool const _isBlockConvertibleToMud(::BlockLegacy const& block) const;
     // NOLINTEND
 
 public:

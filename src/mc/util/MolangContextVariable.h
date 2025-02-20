@@ -19,9 +19,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MolangContextVariable& operator=(MolangContextVariable const&);
+    MolangContextVariable(MolangContextVariable const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit MolangContextVariable(::HashedString const& value);
+
+    MCFOLD ::MolangContextVariable& operator=(::MolangContextVariable&&);
 
     MCAPI ~MolangContextVariable();
     // NOLINTEND

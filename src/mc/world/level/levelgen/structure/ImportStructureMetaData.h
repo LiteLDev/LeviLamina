@@ -36,10 +36,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
-
-    MCAPI bool const isSpecificStructureDirty(::std::string const& name);
-
-    MCAPI void setSpecificStructureDirty(::std::string const& name, bool dirty);
     // NOLINTEND
 
 public:

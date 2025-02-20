@@ -12,8 +12,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scheduler& client();
-
-    MCAPI static void destroyClientSingleton();
     // NOLINTEND
 
 public:

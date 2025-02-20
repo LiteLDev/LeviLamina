@@ -20,13 +20,13 @@ class Ghast : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 182
+    // vIndex: 177
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    // vIndex: 176
+    // vIndex: 171
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 2

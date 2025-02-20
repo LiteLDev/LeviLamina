@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Actor;
 class BlockSource;
 class Vec3;
@@ -17,6 +18,8 @@ namespace TeleportCommandHelpers {
 // NOLINTBEGIN
 MCAPI ::TeleportAnalysis
 actorToLocationTeleportAnalysis(::BlockSource const& region, ::Actor const& actor, ::Vec3 destination);
+
+MCAPI ::AABB getSafetyAABB(::Actor const& actor, ::Vec3 destination);
 // NOLINTEND
 
 } // namespace TeleportCommandHelpers

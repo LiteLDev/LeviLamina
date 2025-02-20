@@ -11,7 +11,6 @@ class Actor;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Material;
 class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
@@ -23,7 +22,7 @@ public:
     // vIndex: 136
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 131
@@ -36,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LiquidBlockDynamic(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
 
     MCAPI bool _isLiquidBlocking(
@@ -64,14 +61,6 @@ public:
     MCAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
-    MCAPI bool shouldBecomeStatic(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

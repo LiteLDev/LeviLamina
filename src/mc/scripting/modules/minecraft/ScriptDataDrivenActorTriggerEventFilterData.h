@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { class ScriptActor; }
-// clang-format on
-
 namespace ScriptModuleMinecraft::EventFilters {
 
 struct ScriptDataDrivenActorTriggerEventFilterData {
@@ -30,16 +22,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~ScriptDataDrivenActorTriggerEventFilterData();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilterData>
-    create(
-        ::std::string const&                                                              eventType,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& actor
-    );
     // NOLINTEND
 
 public:

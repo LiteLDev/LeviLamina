@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/components/ComponentItem.h"
 
 // auto generated forward declare list
@@ -32,7 +32,7 @@ public:
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 3
-    virtual ::RecordItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::RecordItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     // vIndex: 0
     virtual ~RecordItem() /*override*/ = default;
@@ -77,7 +77,7 @@ public:
     MCFOLD ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& description);
+    MCFOLD ::RecordItem& $setDescriptionId(::std::string const& descriptionId);
     // NOLINTEND
 
 public:

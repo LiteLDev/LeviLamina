@@ -31,33 +31,30 @@ public:
     // vIndex: 9
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual ::std::unique_ptr<::WorldGenerator>
     createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
     // vIndex: 22
     virtual short getCloudHeight() const /*override*/;
 
     // vIndex: 21
-    virtual bool hasPrecipitationFog() const /*override*/;
-
-    // vIndex: 20
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
         /*override*/;
 
-    // vIndex: 39
+    // vIndex: 36
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 37
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
@@ -97,8 +94,6 @@ public:
     MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
     MCAPI short $getCloudHeight() const;
-
-    MCFOLD bool $hasPrecipitationFog() const;
 
     MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/CallStack.h"
 #include "mc/platform/ErrorInfoBuilder.h"
 
 // auto generated forward declare list
@@ -15,10 +14,6 @@ namespace Core { class Path; }
 namespace Bedrock::Detail {
 // functions
 // NOLINTBEGIN
-MCAPI ::Bedrock::CallStack::Context createContext(::std::string value);
-
-MCFOLD ::std::nullopt_t createContext();
-
 MCAPI ::Bedrock::Detail::ErrorInfoBuilder<::std::error_code> createError(::std::errc errc);
 
 MCAPI void defaultDataStoreDelete(::Core::Path const& path);

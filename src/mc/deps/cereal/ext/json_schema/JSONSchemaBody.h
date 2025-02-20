@@ -22,8 +22,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk1b79c8;
     ::ll::UntypedStorage<1, 2>  mUnk9bbde5;
+    ::ll::UntypedStorage<8, 80> mUnk16357b;
     ::ll::UntypedStorage<8, 32> mUnk813aa7;
     ::ll::UntypedStorage<8, 32> mUnk2db52f;
+    ::ll::UntypedStorage<8, 24> mUnk889be1;
     ::ll::UntypedStorage<8, 24> mUnkafc4ae;
     ::ll::UntypedStorage<8, 16> mUnk200d94;
     ::ll::UntypedStorage<8, 16> mUnkdb80fe;
@@ -31,6 +33,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkdb5419;
     ::ll::UntypedStorage<8, 40> mUnkeb7b38;
     ::ll::UntypedStorage<8, 24> mUnk3c894b;
+    ::ll::UntypedStorage<8, 24> mUnk560a0b;
     // NOLINTEND
 
 public:
@@ -48,20 +51,13 @@ public:
 
     MCAPI void fillBody(::cereal::SchemaDescription const& schemaInfo, ::cereal::ext::internal::OutRefsMap& outRefs);
 
+    MCAPI void fillBodyIfEnum(::cereal::SchemaDescription const& schemaInfo);
+
     MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
 
     MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
 
     MCAPI ~JSONSchemaBody();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void overwriteIfAny(
-        ::std::shared_ptr<::cereal::ext::internal::JSONSchemaDef>&          that,
-        ::std::shared_ptr<::cereal::internal::ConstraintDescription> const& other
-    );
     // NOLINTEND
 
 public:

@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-class Item;
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -28,11 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Item const& getItem() const;
-
     MCAPI ::std::string getName() const;
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptItemType const& other) const;
     // NOLINTEND
 
 public:

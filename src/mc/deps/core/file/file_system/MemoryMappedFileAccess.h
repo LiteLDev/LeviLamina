@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class FileAccessTransforms;
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class MemoryMappedFileAccess : public ::IFileAccess {
@@ -156,7 +156,7 @@ public:
     virtual ~MemoryMappedFileAccess() /*override*/;
 
     // vIndex: 1
-    virtual void* fopen(::Core::Path const& filePath, ::std::string const& mode) /*override*/;
+    virtual void* fopen(::Core::PathView filePath, ::std::string const& mode) /*override*/;
 
     // vIndex: 2
     virtual int fclose(void* file) /*override*/;
@@ -210,7 +210,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $fopen(::Core::Path const& filePath, ::std::string const& mode);
+    MCAPI void* $fopen(::Core::PathView filePath, ::std::string const& mode);
 
     MCAPI int $fclose(void* file);
 

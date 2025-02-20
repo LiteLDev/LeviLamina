@@ -13,7 +13,6 @@ class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorMovementTickNeededComponent;
 struct SkipMobTravelComponent;
-struct TickingSystemWithInfo;
 struct VillagerV2FlagComponent;
 // clang-format on
 
@@ -34,7 +33,5 @@ public:
             ::ActorDataFlagComponent const>        view,
         ::EntityModifier<::SkipMobTravelComponent> modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

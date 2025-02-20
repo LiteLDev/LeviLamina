@@ -47,6 +47,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _sendSoundTheAlarmAchievement() const;
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

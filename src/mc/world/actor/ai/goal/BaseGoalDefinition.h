@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class Goal;
 class Mob;
 // clang-format on
 
@@ -35,12 +33,6 @@ public:
 
     // vIndex: 2
     virtual bool validate(::Mob&) const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::Goal& goal) const;
     // NOLINTEND
 
 public:

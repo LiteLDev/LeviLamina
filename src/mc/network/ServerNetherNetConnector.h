@@ -15,19 +15,19 @@ struct ServerNetherNetConnector : public ::NetherNetConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 11
+    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void disconnect() /*override*/;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual bool isServer() const /*override*/;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId) /*override*/;
 
     // vIndex: 0

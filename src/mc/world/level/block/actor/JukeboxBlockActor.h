@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
 
 // auto generated forward declare list
@@ -14,6 +14,7 @@ class BlockSource;
 class CompoundTag;
 class Container;
 class DataLoadHelper;
+class ILevel;
 class ItemStack;
 class Level;
 class Player;
@@ -38,7 +39,7 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 7
     virtual void tick(::BlockSource& region) /*override*/;
@@ -56,10 +57,10 @@ public:
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
     // vIndex: 7
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 22
     virtual void startOpen(::Player&) /*override*/;
@@ -78,8 +79,8 @@ public:
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
+        int containerSlot,
+        int,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
@@ -101,12 +102,6 @@ public:
     MCAPI void _onChanged(::BlockSource& region, ::SharedTypes::Legacy::LevelSoundEvent sound);
 
     MCAPI void _spawnMusicParticles(::Level& level, float recordDuration);
-
-    MCAPI void ejectRecord(::BlockSource& region);
-
-    MCFOLD ::ItemStack const& getRecord() const;
-
-    MCAPI bool isRecordPlaying() const;
 
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
@@ -132,7 +127,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $tick(::BlockSource& region);
 
@@ -144,9 +139,9 @@ public:
 
     MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $startOpen(::Player&);
 
@@ -158,11 +153,8 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCAPI void
+    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 

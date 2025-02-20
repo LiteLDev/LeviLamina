@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,9 +19,9 @@ class ContainerClosePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID>   mContainerId;
-    ::ll::TypedStorage<1, 1, ::ContainerType> mContainerType;
-    ::ll::TypedStorage<1, 1, bool>            mServerInitiatedClose;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
+    ::ll::TypedStorage<1, 1, bool>                                 mServerInitiatedClose;
     // NOLINTEND
 
 public:
@@ -41,22 +41,6 @@ public:
 
     // vIndex: 0
     virtual ~ContainerClosePacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContainerClosePacket();
-
-    MCAPI ContainerClosePacket(::ContainerID containerId, ::ContainerType containerType, bool serverInitiated);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ContainerID containerId, ::ContainerType containerType, bool serverInitiated);
     // NOLINTEND
 
 public:

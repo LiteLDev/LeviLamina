@@ -14,7 +14,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~OnHitSubcomponent();
+    virtual ~OnHitSubcomponent() = default;
 
     // vIndex: 1
     virtual void readfromJSON(::Json::Value&) = 0;
@@ -32,21 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OnHitSubcomponent();
-
     MCAPI bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

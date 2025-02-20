@@ -43,18 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BoneMealItem(::std::string const& name, int id, bool allowLegacyUseAsDye);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, bool allowLegacyUseAsDye);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -68,8 +56,6 @@ public:
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     MCFOLD bool $isDye() const;
-
-    MCFOLD ::ItemColor $getItemColor() const;
 
     MCFOLD bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND

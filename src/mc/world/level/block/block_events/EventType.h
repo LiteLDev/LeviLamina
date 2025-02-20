@@ -15,6 +15,7 @@ enum class EventType : uchar {
     StepOff        = 7,
     StepOn         = 8,
     IsValidSpawn   = 9,
+    Count          = 10,
 };
 
 }

@@ -44,12 +44,6 @@ public:
     MCAPI explicit AsynchronousIPResolver(::std::string url);
 
     MCAPI void _resolve();
-
-    MCAPI ::std::string getIp() const;
-
-    MCFOLD ::std::string const& getOriginalUrl() const;
-
-    MCAPI bool isDone() const;
     // NOLINTEND
 
 public:

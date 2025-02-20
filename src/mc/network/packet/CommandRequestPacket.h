@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
@@ -12,9 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class CommandContext;
-class ILevel;
-class NetworkIdentifier;
 class ReadOnlyBinaryStream;
 struct CommandOriginData;
 // clang-format on
@@ -46,27 +42,6 @@ public:
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CommandRequestPacket();
-
-    MCAPI CommandRequestPacket(::CommandContext& context, bool internalSource);
-
-    MCAPI ::std::unique_ptr<::CommandContext>
-    createCommandContext(::NetworkIdentifier const& source, ::Bedrock::NonOwnerPointer<::ILevel> const& level) const;
-
-    MCFOLD bool getInternalSource() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CommandContext& context, bool internalSource);
     // NOLINTEND
 
 public:

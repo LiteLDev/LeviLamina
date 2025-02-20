@@ -48,15 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DragonTakeoffGoal(::EnderDragon& mob);
-
     MCAPI void _findNewTarget();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::EnderDragon& mob);
     // NOLINTEND
 
 public:

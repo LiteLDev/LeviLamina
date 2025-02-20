@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorCategory.h"
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorType.h"
 
@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDamageByActorSource(::Actor const& actor, ::ActorDamageCause cause);
+    MCAPI ActorDamageByActorSource(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& actor, ::ActorDamageCause cause);
+    MCAPI void* $ctor(::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
@@ -100,7 +100,7 @@ public:
 
     MCFOLD ::ActorType $getEntityType() const;
 
-    MCFOLD ::ActorCategory $getEntityCategories() const;
+    MCAPI ::ActorCategory $getEntityCategories() const;
 
     MCFOLD ::ActorUniqueID $getDamagingEntityUniqueID() const;
 

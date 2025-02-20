@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -11,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class DirectoryPackSource;
-class IDynamicPackagePacks;
 class InPackagePackSource;
 class WorldHistoryPackSource;
 class WorldTemplateManager;
@@ -62,18 +60,6 @@ public:
 
     // vIndex: 10
     virtual void removeFromDirectoryPackSource(::Core::Path const&) = 0;
-
-    // vIndex: 11
-    virtual ::InPackagePackSource& createDynamicPackagePackSource(::PackType) = 0;
-
-    // vIndex: 12
-    virtual ::InPackagePackSource* getDynamicPackagePackSource(::PackType) = 0;
-
-    // vIndex: 13
-    virtual void setDynamicPackagePacks(::std::shared_ptr<::IDynamicPackagePacks> const&) = 0;
-
-    // vIndex: 14
-    virtual void setDynamicPackageRoot(::Core::PathBuffer<::std::string>) = 0;
     // NOLINTEND
 
 public:

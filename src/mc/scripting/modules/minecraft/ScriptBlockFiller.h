@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -64,16 +64,6 @@ public:
     );
 
     MCAPI ~ScriptBlockFiller();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const*& ERROR_MSG_FILL_BAD_HEIGHT();
-
-    MCAPI static char const*& ERROR_MSG_FILL_TOO_BIG();
-
-    MCAPI static char const*& ERROR_MSG_FILL_UNKNOWN_BLOCK();
     // NOLINTEND
 
 public:

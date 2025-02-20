@@ -56,19 +56,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoteBlock(::std::string const& nameId, int id);
-
     MCAPI void _triggerNoteParticle(::Level& level, ::Vec3 const& vPos, int note) const;
 
     MCAPI ::NoteBlock& enableSkullPlacement(bool enabled);
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

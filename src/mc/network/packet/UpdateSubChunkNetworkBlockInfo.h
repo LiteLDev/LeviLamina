@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class NetworkBlockPosition;
 struct ActorBlockSyncMessage;
 // clang-format on
@@ -19,14 +20,27 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    UpdateSubChunkNetworkBlockInfo& operator=(UpdateSubChunkNetworkBlockInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~UpdateSubChunkNetworkBlockInfo();
+    MCAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
+
+    MCAPI UpdateSubChunkNetworkBlockInfo(
+        ::BlockPos const&              pos,
+        uint                           blockId,
+        uchar                          updateFlags,
+        ::ActorBlockSyncMessage const& syncMsg
+    );
     // NOLINTEND
 
 public:
-    // destructor thunk
+    // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
+
+    MCAPI void* $ctor(::BlockPos const& pos, uint blockId, uchar updateFlags, ::ActorBlockSyncMessage const& syncMsg);
     // NOLINTEND
 };

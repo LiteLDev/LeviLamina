@@ -22,7 +22,7 @@ public:
     virtual bool isSpawnPositionOk(::BlockSource&, ::BlockPos, ::br::spawn::EntityType const&) const = 0;
 
     // vIndex: 2
-    virtual ::BlockPos adjustSpawnPos(::BlockSource&, ::BlockPos) const;
+    virtual ::BlockPos adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
     // NOLINTEND
 
 public:
@@ -34,7 +34,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
+    // NOLINTEND
 
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

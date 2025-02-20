@@ -44,23 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AgentActionEventPacket();
-
-    MCAPI
-    AgentActionEventPacket(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

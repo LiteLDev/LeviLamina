@@ -17,13 +17,14 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
 class Player;
-class Random;
 class Vec3;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class PistonArmBlock : public ::BlockLegacy {
@@ -83,8 +84,8 @@ public:
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~PistonArmBlock() /*override*/ = default;
@@ -93,15 +94,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PistonArmBlock(::std::string const& nameId, int id, ::PistonBlock::Type type);
-
     MCAPI void _getCollisions(::AABB& armBaseAABB, ::AABB& armAABB, ::AABB& frontAABB, uchar facingDir) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::PistonBlock::Type type);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -147,7 +142,7 @@ public:
 
     MCAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -40,11 +40,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& mInitialized();
-
     MCAPI static ::std::shared_ptr<::BrazeSDKManager>& mInstance();
-
-    MCAPI static bool& mIsReady();
     // NOLINTEND
 
 public:

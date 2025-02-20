@@ -49,22 +49,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShowCreditsPacket();
-
-    MCAPI ShowCreditsPacket(::ActorRuntimeID playerID, ::ShowCreditsPacket::CreditsState creditsState);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorRuntimeID playerID, ::ShowCreditsPacket::CreditsState creditsState);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/world/item/enchanting/Enchant.h"
 
 namespace ScriptModuleMinecraft {

@@ -3,14 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
+class ContainerComponent;
 class ItemStack;
 class Mob;
+class ShareableComponent;
 class WeakEntityRef;
 struct FloatRange;
 struct Tick;
@@ -67,6 +69,9 @@ public:
     );
 
     MCAPI void _removeItemFromOffhandSlot() const;
+
+    MCAPI void
+    _tryPlaceItemInInventory(::ContainerComponent& containerComponent, ::ShareableComponent const& shareableComponent);
     // NOLINTEND
 
 public:

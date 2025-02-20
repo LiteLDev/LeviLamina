@@ -44,22 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AvailableActorIdentifiersPacket();
-
-    MCAPI explicit AvailableActorIdentifiersPacket(::std::vector<::ActorInfo> const& identifierList);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::ActorInfo> const& identifierList);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

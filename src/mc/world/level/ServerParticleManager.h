@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class PacketSender;
 class Vec3;
 // clang-format on
 
@@ -29,17 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerParticleManager(bool isClientSide);
-
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-
     MCAPI void
     spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::DimensionType dimensionType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool isClientSide);
     // NOLINTEND
 };

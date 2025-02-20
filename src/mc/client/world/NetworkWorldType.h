@@ -9,5 +9,4 @@ enum class NetworkWorldType : int {
     Friend              = 3,
     CrossPlatformFriend = 4,
     ThirdParty          = 5,
-    Gathering           = 6,
 };

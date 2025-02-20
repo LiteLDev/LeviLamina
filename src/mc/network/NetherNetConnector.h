@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/nether_net/ERelayServerConfigurationResult.h"
-#include "mc/deps/nether_net/ESendType.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/INetherNetTransportInterfaceCallbacks.h"
-#include "mc/deps/nether_net/IWebRTCSignalingInterface.h"
-#include "mc/deps/nether_net/SignalingHostConnectionStatus.h"
 #include "mc/network/Connector.h"
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
@@ -21,7 +17,6 @@ class NetworkIdentifier;
 class WebRTCNetworkPeer;
 struct ConnectionDefinition;
 namespace NetherNet { struct NetworkID; }
-namespace NetherNet { struct SessionState; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -117,28 +112,28 @@ public:
     // vIndex: 0
     virtual ~NetherNetConnector() /*override*/;
 
-    // vIndex: 11
+    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 10
     virtual bool connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void tick() /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void runEvents() /*override*/;
 
-    // vIndex: 18
+    // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual void closeNetworkConnection(::NetworkIdentifier const&) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 8
     virtual ::TransportLayer getNetworkType() const /*override*/;
 
     // vIndex: 1
@@ -147,25 +142,25 @@ public:
     // vIndex: 2
     virtual void _onEnable() /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void OnSpopViolation() /*override*/;
 
-    // vIndex: 3
+    // vIndex: 4
     virtual void OnSessionClose(
         ::NetherNet::NetworkID     networkID,
         uint64                     sessionId,
         ::NetherNet::ESessionError sessionError
     ) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void
     OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) /*override*/;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) /*override*/;
 
-    // vIndex: 0
-    virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID id, uint* flags) /*override*/;
+    // vIndex: 1
+    virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags) /*override*/;
     // NOLINTEND
 
 public:
@@ -176,27 +171,7 @@ public:
     MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>>
     _getOrCreatePeer(uint64 remoteId, uint64 sessionId, ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&);
 
-    MCAPI void clearPacketData(::NetherNet::NetworkID remoteId, uint64 sessionId) const;
-
-    MCAPI bool closeSessionWithUser(::NetherNet::NetworkID remoteId, uint64 sessionId);
-
-    MCAPI bool
-    getSessionState(::NetherNet::NetworkID remoteId, uint64 sessionId, ::NetherNet::SessionState* connectionState)
-        const;
-
-    MCAPI bool isPacketAvailable(::NetherNet::NetworkID remoteId, uint64 sessionId, uint* pcbMessageSize) const;
-
-    MCAPI bool
-    readPacket(::NetherNet::NetworkID remoteId, uint64 sessionId, void* pubDest, uint cbDest, uint* pcbMessageSize)
-        const;
-
-    MCAPI bool sendPacket(
-        ::NetherNet::NetworkID remoteId,
-        uint64                 sessionId,
-        char const*            pbData,
-        uint                   cbData,
-        ::NetherNet::ESendType eSendType
-    ) const;
+    MCAPI void _prepareForNewSession();
 
     MCAPI void setBroadcastRequestCallback(::std::function<bool(void*, int*)>&& broadcastRequestCallback);
 
@@ -249,7 +224,7 @@ public:
 
     MCAPI bool $OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize);
 
-    MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID id, uint* flags);
+    MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
     // NOLINTEND
 
 public:

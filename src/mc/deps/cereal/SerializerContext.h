@@ -82,6 +82,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkf221bd;
     ::ll::UntypedStorage<8, 24> mUnk9d8c60;
     ::ll::UntypedStorage<2, 2>  mUnkfac550;
+    ::ll::UntypedStorage<8, 8>  mUnk71cf13;
     // NOLINTEND
 
 public:
@@ -93,21 +94,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void consumeContext(::cereal::SerializerContext const& context);
-
     MCAPI ::cereal::SerializerContext detachContext();
 
     MCAPI ::std::vector<::std::string> getErrors() const;
 
-    MCFOLD ::std::vector<::cereal::SerializerContext::LogEntry> const& getLog() const;
-
-    MCFOLD ::cereal::ResultCode getStatus() const;
-
-    MCAPI bool isValid() const;
-
     MCAPI void log(::cereal::ResultCode res, ::std::string msg);
 
-    MCAPI void popContext();
+    MCAPI ::cereal::SerializerContext& operator=(::cereal::SerializerContext&&);
 
     MCAPI ::cereal::SerializerContext&
     pushContext(::cereal::SerializerContext::ContextType contextType, ::std::string contextToken);

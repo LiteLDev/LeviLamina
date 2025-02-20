@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 #include "mc/world/level/GameType.h"
 
@@ -15,6 +15,7 @@ struct ActorAddEffectEvent;
 struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ChatEvent;
+struct ClientJoinedEvent;
 struct ExplosionStartedEvent;
 struct ItemUseEvent;
 struct ItemUseOnEvent;
@@ -109,6 +110,9 @@ public:
     // vIndex: 14
     virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
+
+    // vIndex: 15
+    virtual void onClientJoinedEvent(::ClientJoinedEvent const&);
     // NOLINTEND
 
 public:
@@ -125,14 +129,6 @@ public:
 
     MCFOLD void
     $onBeforeWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&);
-
-    MCFOLD ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
-    $onBeforeWeatherChangedEvent(
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        ::ScriptModuleMinecraft::ScriptWeatherType,
-        int
-    );
 
     MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
@@ -171,6 +167,8 @@ public:
 
     MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
+
+    MCFOLD void $onClientJoinedEvent(::ClientJoinedEvent const&);
     // NOLINTEND
 
 public:

@@ -19,9 +19,10 @@ class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
-class Random;
 class Vec3;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -29,9 +30,6 @@ class ScaffoldingBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 5
     virtual ::AABB getCollisionShape(
         ::Block const& block,
@@ -70,15 +68,14 @@ public:
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -90,25 +87,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScaffoldingBlock(::std::string const& nameId, int id);
-
     MCAPI bool _updateBlockStability(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI int calculateStability(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static int const& MAX_STABILITY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -120,8 +111,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
@@ -153,7 +142,7 @@ public:
 
     MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

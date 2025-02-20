@@ -6,7 +6,7 @@ class LevelCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 864> mUnk6a83ab;
+    ::ll::UntypedStorage<8, 776> mUnk6a83ab;
     ::ll::UntypedStorage<8, 16>  mUnk5b972a;
     ::ll::UntypedStorage<1, 1>   mUnk541c7c;
     ::ll::UntypedStorage<1, 1>   mUnkebaf06;

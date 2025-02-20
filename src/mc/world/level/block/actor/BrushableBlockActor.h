@@ -14,8 +14,8 @@ class CompoundTag;
 class DataLoadHelper;
 class ExpiringTick;
 class HashedString;
+class ILevel;
 class ItemStack;
-class Level;
 class Player;
 class SaveContext;
 class WeakEntityRef;
@@ -56,7 +56,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BrushableBlockActor() /*override*/ = default;
+    virtual ~BrushableBlockActor() /*override*/;
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
@@ -87,7 +87,7 @@ public:
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -118,8 +118,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
-
-    MCAPI static ::BrushableBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -131,7 +129,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -157,7 +155,7 @@ public:
 
     MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

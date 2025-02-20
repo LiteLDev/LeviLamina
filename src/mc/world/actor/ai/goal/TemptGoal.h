@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
@@ -63,45 +63,13 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~TemptGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TemptGoal(
-        ::Mob&                                 mob,
-        float                                  speed,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        bool                                   canGetScared,
-        float                                  temptDistance,
-        bool                                   canTemptVertically,
-        bool                                   canTemptWhileRidden
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 mob,
-        float                                  speed,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        bool                                   canGetScared,
-        float                                  temptDistance,
-        bool                                   canTemptVertically,
-        bool                                   canTemptWhileRidden
-    );
+    virtual ~TemptGoal() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

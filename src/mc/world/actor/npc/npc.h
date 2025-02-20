@@ -28,37 +28,37 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 179
+    // vIndex: 175
     virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 125
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 107
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 35
+    // vIndex: 34
     virtual ::mce::Color getNameTagTextColor() const /*override*/;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual bool canShowNameTag() const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual bool isTargetable() const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 102
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
-    // vIndex: 98
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 177
+    // vIndex: 172
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
     // vIndex: 8
@@ -105,7 +105,7 @@ public:
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $newServerAiStep();
+    MCFOLD void $newServerAiStep();
 
     MCFOLD void $die(::ActorDamageSource const& source);
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class IBlockSource;
-// clang-format on
-
 class MockableOwnedBlockSource {
 public:
     // member variables
@@ -20,12 +15,4 @@ public:
     MockableOwnedBlockSource& operator=(MockableOwnedBlockSource const&);
     MockableOwnedBlockSource(MockableOwnedBlockSource const&);
     MockableOwnedBlockSource();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::IBlockSource const& get() const;
-
-    MCFOLD ::IBlockSource& get();
-    // NOLINTEND
 };

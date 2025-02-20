@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class ReadOnlyBinaryStream;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackNetIdTag;
@@ -25,47 +24,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemStackNetIdVariant& operator=(ItemStackNetIdVariant const&);
+    ItemStackNetIdVariant(ItemStackNetIdVariant const&);
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackNetIdVariant();
-
-    MCAPI ItemStackNetIdVariant(::ItemStackNetIdVariant const&);
-
-    MCAPI ItemStackNetIdVariant(::ItemStackNetIdVariant&&);
-
     MCAPI ::Bedrock::Result<void> deserialize(::ReadOnlyBinaryStream& stream);
-
-    MCAPI bool hasServerNetId() const;
-
-    MCAPI bool isValid() const;
-
-    MCFOLD ::ItemStackNetIdVariant& operator=(::ItemStackNetIdVariant const&);
-
-    MCAPI ::ItemStackNetIdVariant& operator=(::ItemStackNetId const& serverNetId);
 
     MCAPI ::ItemStackNetIdVariant& operator=(::ItemStackNetIdVariant&&);
 
-    MCAPI ::ItemStackNetIdVariant& operator=(::ItemStackLegacyRequestId const& legacyClientRequestId);
-
-    MCAPI bool operator==(::ItemStackNetIdVariant const& other) const;
-
-    MCAPI void serialize(::BinaryStream& stream) const;
-
     MCAPI ::std::string toString() const;
 
-    MCAPI ::ItemStackNetId const* tryGetServerNetId() const;
-
     MCAPI ~ItemStackNetIdVariant();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::ItemStackNetIdVariant const&);
-
-    MCAPI void* $ctor(::ItemStackNetIdVariant&&);
     // NOLINTEND
 
 public:

@@ -13,7 +13,6 @@
 class BlockPos;
 class XoroshiroPositionalRandomFactory;
 struct TargetPoint;
-struct TerrainInfo;
 // clang-format on
 
 struct OverworldNoises3d {
@@ -53,13 +52,11 @@ public:
     MCAPI ::ChunkLocalNoiseCache::CacheEntry _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos
     ) const;
 
+    MCAPI ::std::pair<float, float> computeErosionAndDepth(::BlockPos position) const;
+
     MCAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
 
-    MCAPI ::TerrainInfo computeOffsetAndFactor(::DividedPos2d<4> const& worldQuartPos) const;
-
     MCAPI ::TargetPoint sample(::BlockPos position) const;
-
-    MCAPI ::TargetPoint sample(int blockY, ::ChunkLocalNoiseCache::CacheEntry const& cachedNoises) const;
 
     MCAPI ~OverworldNoises3d();
     // NOLINTEND
@@ -67,9 +64,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float
-    computeInitialDensity(int blockY, float biomeDensityOffset, float biomeDensityFactor, float biomeDensityJaggedness);
-
     MCAPI static ::OverworldNoises3d make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 

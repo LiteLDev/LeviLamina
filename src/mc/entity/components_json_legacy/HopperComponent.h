@@ -21,16 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HopperComponent();
-
-    MCFOLD ::BlockPos getLastPosition() const;
-
     MCAPI bool pullInItems(::Actor& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

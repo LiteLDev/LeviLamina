@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class SubChunkPos;
+// clang-format on
+
 class SubChunkInterlocker {
 public:
     // member variables
@@ -15,4 +20,12 @@ public:
     SubChunkInterlocker& operator=(SubChunkInterlocker const&);
     SubChunkInterlocker(SubChunkInterlocker const&);
     SubChunkInterlocker();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool tryLock3x3xN(::SubChunkPos const& bottom, int top);
+
+    MCAPI void unlock3x3xN(::SubChunkPos const& bottom, int top);
+    // NOLINTEND
 };

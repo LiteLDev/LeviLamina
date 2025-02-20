@@ -32,22 +32,6 @@ public:
         Data& operator=(Data const&);
         Data(Data const&);
         Data();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCFOLD ::std::string const& toBinary() const;
-
-        MCFOLD ::cereal::DynamicValue const& toDynamicValue() const;
-
-        MCFOLD ::Json::Value const& toJsonCpp() const;
-
-        MCFOLD ::std::string const& toJsonString() const;
-
-        MCFOLD ::rapidjson::
-            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
-            toRapidjson() const;
-        // NOLINTEND
     };
 
 public:

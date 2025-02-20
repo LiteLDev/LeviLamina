@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,6 @@ namespace Editor::ScriptModule { class ScriptEditorStructure; }
 namespace Editor::ScriptModule { class ScriptSelectionContainer; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
 namespace Scripting { struct Error; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -43,8 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> clear();
-
-    MCFOLD ::mce::UUID const& getId() const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>>

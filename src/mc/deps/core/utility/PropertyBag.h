@@ -16,28 +16,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PropertyBag();
-
-    MCAPI explicit PropertyBag(::Json::Value const& jsonValue);
-
-    MCFOLD ::Json::Value const& toJsonValue() const;
-
-    MCAPI ::std::string toString() const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::PropertyBag& EMPTY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Json::Value const& jsonValue);
     // NOLINTEND
 };

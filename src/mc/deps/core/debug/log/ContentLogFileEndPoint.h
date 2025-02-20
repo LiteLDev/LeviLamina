@@ -43,7 +43,7 @@ public:
     virtual void flush() /*override*/;
 
     // vIndex: 3
-    virtual void setEnabled(bool enabled) /*override*/;
+    virtual void setEnabled(bool newState) /*override*/;
 
     // vIndex: 4
     virtual bool isEnabled() const /*override*/;
@@ -87,7 +87,7 @@ public:
 
     MCAPI void $flush();
 
-    MCAPI void $setEnabled(bool enabled);
+    MCAPI void $setEnabled(bool newState);
 
     MCFOLD bool $isEnabled() const;
 

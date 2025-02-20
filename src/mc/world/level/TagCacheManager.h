@@ -45,8 +45,6 @@ public:
     MCAPI void incrementTagCache(::std::string const& tag);
 
     MCAPI void initialize(::IActorManagerConnector& actorManagerConnector);
-
-    MCAPI ~TagCacheManager();
     // NOLINTEND
 
 public:
@@ -56,11 +54,5 @@ public:
         ::Bedrock::NonOwnerPointer<::CommandManager>       commandManager,
         ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

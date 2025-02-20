@@ -43,7 +43,26 @@ public:
         // prevent constructor by default
         DebugMarkerData& operator=(DebugMarkerData const&);
         DebugMarkerData(DebugMarkerData const&);
-        DebugMarkerData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI DebugMarkerData();
+
+        MCAPI ~DebugMarkerData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
     };
 
 public:
@@ -75,10 +94,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientboundDebugRendererPacket();
-
-    MCAPI explicit ClientboundDebugRendererPacket(::ClientboundDebugRendererPacket::Type type);
-
     MCAPI ClientboundDebugRendererPacket(
         ::std::string               text,
         ::mce::Color const&         color,
@@ -90,10 +105,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ClientboundDebugRendererPacket::Type type);
-
     MCAPI void*
     $ctor(::std::string text, ::mce::Color const& color, ::Vec3 const& position, ::std::chrono::milliseconds duration);
     // NOLINTEND

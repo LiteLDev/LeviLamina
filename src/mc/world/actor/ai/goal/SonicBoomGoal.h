@@ -4,13 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class ExpiringTick;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
@@ -53,12 +52,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::SonicBoomGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -129,18 +122,6 @@ public:
 
     // vIndex: 0
     virtual ~SonicBoomGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SonicBoomGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

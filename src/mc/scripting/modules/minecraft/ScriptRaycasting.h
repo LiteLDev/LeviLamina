@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/facing/Name.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/legacy/facing/Name.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -2,15 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct AssertHandlerContext;
+// clang-format on
+
 class DebugAssertException : public ::std::exception {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka5fc83;
-    ::ll::UntypedStorage<8, 8> mUnka90998;
-    ::ll::UntypedStorage<4, 4> mUnk53ae2e;
-    ::ll::UntypedStorage<8, 8> mUnke29a13;
-    ::ll::UntypedStorage<8, 8> mUnkc21f47;
+    ::ll::UntypedStorage<8, 168> mUnkc1f125;
+    ::ll::UntypedStorage<8, 32>  mUnkd8bc9e;
     // NOLINTEND
 
 public:
@@ -21,33 +23,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~DebugAssertException() /*override*/;
-
     // vIndex: 1
     virtual char const* what() const /*override*/;
+
+    // vIndex: 0
+    virtual ~DebugAssertException() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DebugAssertException(::DebugAssertException const& e);
+    MCAPI DebugAssertException(::DebugAssertException const&);
 
-    MCAPI DebugAssertException(char const* desc, char const* arg, int line, char const* file, char const* function);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static char const* const& WHAT();
+    MCAPI explicit DebugAssertException(::AssertHandlerContext context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DebugAssertException const& e);
+    MCAPI void* $ctor(::DebugAssertException const&);
 
-    MCAPI void* $ctor(char const* desc, char const* arg, int line, char const* file, char const* function);
+    MCAPI void* $ctor(::AssertHandlerContext context);
     // NOLINTEND
 
 public:

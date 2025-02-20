@@ -15,20 +15,5 @@ public:
     // prevent constructor by default
     StructureTelemetryServerData& operator=(StructureTelemetryServerData const&);
     StructureTelemetryServerData(StructureTelemetryServerData const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructureTelemetryServerData();
-
-    MCFOLD bool hasBeenActivatedByRedstone();
-
-    MCFOLD void setHasBeenActivedByRedstone();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
+    StructureTelemetryServerData();
 };

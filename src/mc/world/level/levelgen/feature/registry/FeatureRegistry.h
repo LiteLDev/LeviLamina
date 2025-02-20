@@ -32,9 +32,22 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&);
+        FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+
         MCAPI ~FeatureBinaryJsonFormat();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat&&);
         // NOLINTEND
 
     public:
@@ -75,14 +88,6 @@ public:
         bool                         serializeFeatures
     );
 
-    MCAPI void forEachFeature(::std::function<void(::HashedString const&, ::WeakRef<::IFeature>)> callback) const;
-
-    MCAPI ::std::vector<::std::string> getLargeFeaturePasses() const;
-
-    MCAPI ::std::vector<::std::string> getSmallFeaturePasses() const;
-
-    MCAPI bool isFeaturePassDefined(::std::string const& featurePass) const;
-
     MCAPI void loadFromDefinitions(
         ::IWorldRegistriesProvider&  worldRegistries,
         ::ResourcePackManager const& rpm,
@@ -94,12 +99,6 @@ public:
     MCAPI ::WeakRef<::IFeature> lookupOrReserveFeature(::std::string const& featureName);
 
     MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
-
-    MCAPI ::std::string const& reverseLookupString(::IFeature const& feature) const;
-
-    MCAPI void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
-
-    MCAPI void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
 
     MCAPI ~FeatureRegistry();
     // NOLINTEND

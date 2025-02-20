@@ -42,16 +42,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerToClientHandshakePacket();
-
     MCAPI explicit ServerToClientHandshakePacket(::std::string const& webTokenData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::std::string const& webTokenData);
     // NOLINTEND
 

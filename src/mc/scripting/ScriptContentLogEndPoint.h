@@ -7,11 +7,6 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 
-// auto generated forward declare list
-// clang-format off
-class ScriptDebugger;
-// clang-format on
-
 class ScriptContentLogEndPoint : public ::ContentLogEndPoint {
 public:
     // member variables
@@ -42,22 +37,10 @@ public:
     virtual void flush() /*override*/;
 
     // vIndex: 3
-    virtual void setEnabled(bool enabled) /*override*/;
+    virtual void setEnabled(bool newState) /*override*/;
 
     // vIndex: 4
     virtual bool isEnabled() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptContentLogEndPoint(::ScriptDebugger& debugger);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptDebugger& debugger);
     // NOLINTEND
 
 public:
@@ -75,7 +58,7 @@ public:
 
     MCFOLD void $flush();
 
-    MCFOLD void $setEnabled(bool enabled);
+    MCFOLD void $setEnabled(bool newState);
 
     MCFOLD bool $isEnabled() const;
     // NOLINTEND

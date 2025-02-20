@@ -19,43 +19,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 abs() const;
+    MCAPI Vec3();
 
-    MCAPI ::Vec3 ceil() const;
+    MCAPI Vec3(float x_, float y_, float z_);
 
-    MCAPI float distanceToLineSquared(::Vec3 const& p0, ::Vec3 const& p1) const;
-
-    MCAPI float distanceToSqr(::Vec3 const& p) const;
-
-    MCAPI ::Vec3 floor(float offset) const;
+    MCAPI float distanceTo(::Vec3 const& p) const;
 
     MCAPI bool isNan() const;
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
 
-    MCAPI float maxComponent() const;
+    MCAPI float lengthSquared() const;
 
     MCAPI ::Vec3 normalized() const;
+
+    MCAPI ::Vec3 operator*(float k) const;
+
+    MCAPI ::Vec3 operator+(::Vec3 const& rhs) const;
+
+    MCAPI ::Vec3 operator-() const;
+
+    MCAPI ::Vec3 operator-(::Vec3 const& rhs) const;
 
     MCAPI ::std::string toJsonString() const;
 
     MCAPI ::std::string toString() const;
-
-    MCAPI ::Vec3 xz() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 clamp(::Vec3 const& v, ::Vec3 const& clipMin, ::Vec3 const& clipMax);
-
     MCAPI static ::Vec3 directionFromRotation(::Vec2 const& rot);
-
-    MCAPI static ::Vec3 directionFromRotation(float rotX, float rotY);
-
-    MCAPI static ::Vec3 fromXZ(::Vec2 const& xz, float y);
-
-    MCAPI static ::Vec2 rotationFromDirection(::Vec3 const& dir);
     // NOLINTEND
 
 public:
@@ -67,15 +61,9 @@ public:
 
     MCAPI static ::Vec3 const& MIN();
 
-    MCAPI static ::Vec3 const& NEG_UNIT_X();
-
     MCAPI static ::Vec3 const& NEG_UNIT_Y();
 
-    MCAPI static ::Vec3 const& NEG_UNIT_Z();
-
     MCAPI static ::Vec3 const& ONE();
-
-    MCAPI static ::Vec3 const& TWO();
 
     MCAPI static ::Vec3 const& UNIT_X();
 
@@ -84,5 +72,13 @@ public:
     MCAPI static ::Vec3 const& UNIT_Z();
 
     MCAPI static ::Vec3 const& ZERO();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor();
+
+    MCAPI void* $ctor(float x_, float y_, float z_);
     // NOLINTEND
 };

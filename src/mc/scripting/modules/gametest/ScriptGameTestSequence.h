@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/script_engine/Closure.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 
 namespace ScriptModuleGameTest {
 
@@ -36,8 +36,6 @@ public:
     thenExecuteFor(int tickCount, ::Scripting::Closure<void()> fn);
 
     MCAPI void thenFail(::std::string error);
-
-    MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int tickDelay);
 
     MCAPI ::Scripting::WeakTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestSequence>
     thenWait(::Scripting::Closure<void()> fn);

@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class Vec3;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct MaxAutoStepComponent;
@@ -23,9 +21,6 @@ namespace SneakMovementSystem {
 // functions
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo create();
-
-MCAPI ::AABB
-getMaxCollisionVolume(::Vec3 const& speed, ::MaxAutoStepComponent const& step, ::AABBShapeComponent const& shape);
 
 MCAPI bool storeSneakStateAndReturnDoSneakMovement(
     ::ActorDataFlagComponent const&           actorData,

@@ -5,40 +5,18 @@
 // auto generated inclusion list
 #include "mc/util/CerealSchemaUpgrade.h"
 
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-// clang-format on
-
 class BlockCerealSchemaUpgrade : public ::CerealSchemaUpgrade {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockCerealSchemaUpgrade() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockCerealSchemaUpgrade(
-        ::SemVersion         targetVersion,
-        ::std::string const& mSchemaKey,
-        ::std::string const& mJsonMemberName
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::SemVersion targetVersion, ::std::string const& mSchemaKey, ::std::string const& mJsonMemberName);
+    virtual ~BlockCerealSchemaUpgrade() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

@@ -36,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RealmsUnknownPackSource() /*override*/;
+    virtual ~RealmsUnknownPackSource() /*override*/ = default;
 
     // vIndex: 1
     virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
@@ -60,7 +60,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

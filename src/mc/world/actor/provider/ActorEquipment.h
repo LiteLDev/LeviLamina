@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class ItemStack;
 class Player;
 class SimpleContainer;
 // clang-format on
@@ -13,15 +12,11 @@ class SimpleContainer;
 namespace ActorEquipment {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::ItemStack const*> getAllArmor(::EntityContext const& provider);
-
 MCFOLD ::SimpleContainer const& getArmorContainer(::EntityContext const& provider);
 
 MCAPI ::SimpleContainer& getArmorContainer(::EntityContext&);
 
-MCAPI ::SimpleContainer const& getHandContainer(::EntityContext const&);
-
-MCFOLD ::SimpleContainer& getHandContainer(::EntityContext& provider);
+MCAPI ::SimpleContainer& getHandContainer(::EntityContext& provider);
 
 MCAPI void initializeActor(::EntityContext& provider);
 

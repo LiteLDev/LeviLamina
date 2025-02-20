@@ -12,11 +12,9 @@ class Vec3;
 namespace ActorValueValidation {
 // functions
 // NOLINTBEGIN
-MCAPI void _fireTelemetryEvent(::std::string const& invalidValue, char const* caller);
+MCAPI void _fireTelemetryEvent(::BlockPos const& invalidBlockPos, char const* caller);
 
-MCAPI bool isLegalPlayerPosition(::Vec3 const& pos, char const* caller);
-
-MCAPI bool validateBlockPos(::BlockPos const& blockPos, char const* caller);
+MCAPI void _fireTelemetryEvent(::Vec3 const& invalidPos, char const* caller);
 
 MCAPI bool validateHeadRotationFloatValue(float value, char const* caller);
 

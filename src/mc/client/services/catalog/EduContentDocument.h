@@ -6,7 +6,7 @@ struct EduContentDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1112> mUnk862a3a;
+    ::ll::UntypedStorage<8, 1208> mUnk862a3a;
     ::ll::UntypedStorage<8, 1648> mUnk86b802;
     // NOLINTEND
 

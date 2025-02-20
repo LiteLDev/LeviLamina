@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -18,12 +18,13 @@ public:
 public:
     // prevent constructor by default
     ScriptActorHitEntityAfterEvent& operator=(ScriptActorHitEntityAfterEvent const&);
-    ScriptActorHitEntityAfterEvent(ScriptActorHitEntityAfterEvent const&);
     ScriptActorHitEntityAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorHitEntityAfterEvent(::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent const&);
+
     MCAPI ~ScriptActorHitEntityAfterEvent();
     // NOLINTEND
 
@@ -32,6 +33,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>
     bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent const&);
     // NOLINTEND
 
 public:

@@ -20,6 +20,15 @@ struct PackImportStateObject;
 
 class IContentAcquisition {
 public:
+    // IContentAcquisition inner types declare
+    // clang-format off
+    struct ImportCallbackId;
+    // clang-format on
+
+    // IContentAcquisition inner types define
+    struct ImportCallbackId : public ::NewType<uint64> {};
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -100,11 +109,11 @@ public:
     virtual void addUpdateFoundCallback(::std::function<void(::std::string const&, ::DurableDocument const&)>) = 0;
 
     // vIndex: 25
-    virtual ::NewType<uint64>
+    virtual ::IContentAcquisition::ImportCallbackId
         addPackImportCallback(::std::weak_ptr<bool>, ::std::function<void(::PackImportStateObject&)>) = 0;
 
     // vIndex: 26
-    virtual void removePackImportCallback(::NewType<uint64>) = 0;
+    virtual void removePackImportCallback(::IContentAcquisition::ImportCallbackId) = 0;
 
     // vIndex: 27
     virtual bool areAnyDownloadsActive() const = 0;

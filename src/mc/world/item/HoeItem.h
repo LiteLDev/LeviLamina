@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/DiggerItem.h"
-#include "mc/world/item/Item.h"
 
 class HoeItem : public ::DiggerItem {
 public:
@@ -15,18 +14,6 @@ public:
 
     // vIndex: 0
     virtual ~HoeItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HoeItem(::std::string const& name, int id, ::Item::Tier const& tier);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::Item::Tier const& tier);
     // NOLINTEND
 
 public:

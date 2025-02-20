@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class RideableComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -37,8 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addFamilyTypeByName(::std::string const& name);
-
-    MCAPI void initialize(::EntityContext& entity, ::RideableComponent& component) const;
     // NOLINTEND
 
 public:

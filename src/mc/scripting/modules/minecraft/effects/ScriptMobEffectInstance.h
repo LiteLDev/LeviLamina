@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-namespace Scripting { class WeakLifetimeScope; }
+class MobEffectInstance;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -32,6 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptMobEffectInstance(::Actor const& actor, uint effectIdx);
+
     MCAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
@@ -40,16 +41,26 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<int> getDuration() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId() const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
+
+    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
+
+    MCAPI ::ScriptModuleMinecraft::ScriptMobEffectInstance&
+    operator=(::ScriptModuleMinecraft::ScriptMobEffectInstance&&);
+
+    MCAPI ::MobEffectInstance const* tryGetEffect() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptMobEffectInstance> bind();
+    // NOLINTEND
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>
-    getHandle(::Actor const& actor, uint effectIdx, ::Scripting::WeakLifetimeScope const& scope);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Actor const& actor, uint effectIdx);
     // NOLINTEND
 };
 

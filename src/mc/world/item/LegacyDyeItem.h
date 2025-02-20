@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/DyePowderItem.h"
-#include "mc/world/item/ItemColor.h"
 
 class LegacyDyeItem : public ::DyePowderItem {
 public:
@@ -21,18 +20,6 @@ public:
 
     // vIndex: 0
     virtual ~LegacyDyeItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LegacyDyeItem(::std::string const& name, int id, ::ItemColor color, bool allowLegacyUseAsDye);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ItemColor color, bool allowLegacyUseAsDye);
     // NOLINTEND
 
 public:

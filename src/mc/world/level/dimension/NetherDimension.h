@@ -28,7 +28,7 @@ public:
     // vIndex: 0
     virtual ~NetherDimension() /*override*/ = default;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
     // vIndex: 23
@@ -37,41 +37,38 @@ public:
     // vIndex: 1
     virtual bool isNaturalDimension() const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual bool isValidSpawn(int x, int z) const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 27
     virtual bool showSky() const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 28
     virtual float getTimeOfDay(int time, float a) const /*override*/;
 
     // vIndex: 24
     virtual bool mayRespawnViaBed() const /*override*/;
 
-    // vIndex: 31
-    virtual bool forceCheckAllNeighChunkSavedStat() const /*override*/;
-
     // vIndex: 9
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual ::std::unique_ptr<::WorldGenerator>
     createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void fixWallChunk(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 36
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 37
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
         ::std::unique_ptr<::ChunkSource> storageSource,
         ::StorageVersion                 levelVersion
@@ -113,8 +110,6 @@ public:
 
     MCFOLD bool $mayRespawnViaBed() const;
 
-    MCFOLD bool $forceCheckAllNeighChunkSavedStat() const;
-
     MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
     MCAPI ::std::unique_ptr<::WorldGenerator>
@@ -122,7 +117,7 @@ public:
 
     MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCFOLD void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
     MCFOLD void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 

@@ -16,7 +16,7 @@ class Rabbit : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
     // vIndex: 8

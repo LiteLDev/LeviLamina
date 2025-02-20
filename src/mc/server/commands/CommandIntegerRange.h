@@ -27,6 +27,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCFOLD void* $ctor(int minVal, int maxVal, bool invert, bool inclusive);
+    MCAPI void* $ctor(int minVal, int maxVal, bool invert, bool inclusive);
     // NOLINTEND
 };

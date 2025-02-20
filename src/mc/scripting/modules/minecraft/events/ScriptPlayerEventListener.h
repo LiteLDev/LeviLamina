@@ -40,32 +40,32 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 55
+    // vIndex: 56
     virtual ::EventResult onEvent(::PlayerRespawnEvent const& respawnEvent) /*override*/;
 
-    // vIndex: 58
+    // vIndex: 59
     virtual ::EventResult onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent) /*override*/;
 
-    // vIndex: 59
+    // vIndex: 60
     virtual ::EventResult onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent) /*override*/;
 
     // vIndex: 45
     virtual ::EventResult onEvent(::PlayerInputPermissionCategoryChangeEvent const& event) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual ::EventResult onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent
     ) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::EventResult onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent) /*override*/;
 
     // vIndex: 39
     virtual ::EventResult onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual ::EventResult onEvent(::PlayerEmoteEvent const& playerEmoteEvent) /*override*/;
 
     // vIndex: 46

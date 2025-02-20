@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Color; }
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -24,12 +19,6 @@ public:
     ScriptColor& operator=(ScriptColor const&);
     ScriptColor(ScriptColor const&);
     ScriptColor();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::mce::Color const& getColor() const;
-    // NOLINTEND
 
 public:
     // static functions

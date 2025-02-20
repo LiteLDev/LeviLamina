@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Util::CodeBuilder { struct Event; }
-// clang-format on
-
 namespace CodeBuilder {
 
 struct EventMessage {
@@ -26,15 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EventMessage(::Util::CodeBuilder::Event const& event);
-
     MCAPI ~EventMessage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Util::CodeBuilder::Event const& event);
     // NOLINTEND
 
 public:

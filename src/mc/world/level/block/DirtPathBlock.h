@@ -14,11 +14,12 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemStack;
 class Player;
-class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class DirtPathBlock : public ::BlockLegacy {
@@ -42,9 +43,6 @@ public:
     // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -58,6 +56,9 @@ public:
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~DirtPathBlock() /*override*/ = default;
     // NOLINTEND
@@ -65,19 +66,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DirtPathBlock(::std::string const& nameId, int id);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::AABB& BLOCK_AABB();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -100,8 +95,6 @@ public:
 
     MCFOLD bool $canBeOriginalSurface() const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
@@ -109,6 +102,8 @@ public:
     MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

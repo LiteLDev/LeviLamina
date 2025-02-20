@@ -46,12 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Igloo(short seaLevel, int west, int north);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
@@ -61,12 +55,6 @@ public:
     MCAPI static ::std::string const& STRUCTURE_LOCATION_LABORATORY();
 
     MCAPI static ::std::string const& STRUCTURE_LOCATION_LADDER();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(short seaLevel, int west, int north);
     // NOLINTEND
 
 public:

@@ -205,22 +205,6 @@ public:
         int                        primarySlots,
         int                        secondarySlots
     );
-
-    MCAPI bool canEnchant(int slot, bool allowNonVanilla) const;
-
-    MCAPI ::std::string getDescriptionId() const;
-
-    MCFOLD ::Enchant::Type getEnchantType() const;
-
-    MCFOLD ::Enchant::Frequency getFrequency() const;
-
-    MCFOLD ::HashedString const& getScriptStringId() const;
-
-    MCFOLD ::HashedString const& getStringId() const;
-
-    MCFOLD bool isAvailable() const;
-
-    MCFOLD bool isDisabled() const;
     // NOLINTEND
 
 public:
@@ -228,15 +212,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Enchant::Slot enchantSlotFromString(::std::string_view str);
 
-    MCAPI static ::Enchant const* getEnchant(::Enchant::Type const& type);
-
-    MCAPI static ::Enchant const* getEnchantFromName(::HashedString const& name);
-
-    MCAPI static ::Enchant::Type getEnchantTypeFromName(::HashedString const& name);
-
     MCAPI static void initEnchants();
-
-    MCAPI static void shutdownEnchants();
 
     MCAPI static ::std::string stringFromEnchantSlot(::Enchant::Slot const& enchantSlot);
     // NOLINTEND

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 
@@ -24,7 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataStoreModalToolActivationChangedEvent(::std::optional<::std::string> toolId, bool isActive);
+    MCAPI ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&
+    operator=(::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&&);
     // NOLINTEND
 
 public:
@@ -33,12 +34,6 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilder<
         ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent>
     bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::optional<::std::string> toolId, bool isActive);
     // NOLINTEND
 };
 

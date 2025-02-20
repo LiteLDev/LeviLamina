@@ -42,22 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ResourcePackClientResponsePacket();
-
-    MCFOLD ::std::set<::std::string> const& getDownloadingPacks() const;
-
-    MCAPI bool isResponse(::ResourcePackResponse haveThis) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

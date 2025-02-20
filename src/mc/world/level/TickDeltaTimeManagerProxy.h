@@ -16,6 +16,7 @@ public:
     // prevent constructor by default
     TickDeltaTimeManagerProxy& operator=(TickDeltaTimeManagerProxy const&);
     TickDeltaTimeManagerProxy(TickDeltaTimeManagerProxy const&);
+    TickDeltaTimeManagerProxy();
 
 public:
     // virtual functions
@@ -28,18 +29,6 @@ public:
 
     // vIndex: 2
     virtual double calculateDeltaTimeAndReset() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TickDeltaTimeManagerProxy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

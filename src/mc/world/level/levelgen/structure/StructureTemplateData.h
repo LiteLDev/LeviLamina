@@ -47,21 +47,15 @@ public:
 
     MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
 
+    MCAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
+
     MCAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
+
+    MCAPI void _saveEntities(::CompoundTag& structureTag) const;
 
     MCAPI void _savePalettes(::CompoundTag& structureTag) const;
 
-    MCAPI void _saveStructureTag(::CompoundTag& tag) const;
-
-    MCFOLD ::std::unordered_map<::std::string, ::StructureBlockPalette> const& getAllPalettes() const;
-
-    MCFOLD ::std::vector<int> const& getBlockIndices() const;
-
-    MCFOLD ::std::vector<int> const& getExtraBlockIndices() const;
-
     MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
-
-    MCFOLD ::BlockPos const& getSize() const;
 
     MCAPI bool load(::CompoundTag const& tag);
 

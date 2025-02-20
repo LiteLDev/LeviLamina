@@ -9,6 +9,7 @@ enum class ServerAuthMovementFlight : uchar {
     ClientAuthWithServerOption = 1,
     ServerAuthVanillaOnly      = 2,
     ServerAuthAll              = 3,
+    ServerAuthRetail           = 4,
 };
 
 }

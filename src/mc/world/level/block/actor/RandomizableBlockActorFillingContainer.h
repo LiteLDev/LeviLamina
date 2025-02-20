@@ -3,14 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerType.h"
 #include "mc/world/inventory/FillingContainer.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/RandomizableBlockActorContainerBase.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class Player;
 class Vec3;
@@ -40,30 +37,6 @@ public:
 
     // vIndex: 38
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RandomizableBlockActorFillingContainer(
-        ::BlockActorType     blockEntityType,
-        ::std::string const& id,
-        ::BlockPos const&    pos,
-        int                  numTotalSlots,
-        ::ContainerType      containerType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockActorType     blockEntityType,
-        ::std::string const& id,
-        ::BlockPos const&    pos,
-        int                  numTotalSlots,
-        ::ContainerType      containerType
-    );
     // NOLINTEND
 
 public:

@@ -11,10 +11,8 @@
 // clang-format off
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftHandler;
 class Recipe;
 class Recipes;
-class SimpleSparseContainer;
 struct FullContainerName;
 struct RecipeNetIdTag;
 // clang-format on
@@ -42,7 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CraftHandlerBase();
+    virtual ~CraftHandlerBase() = default;
 
     // vIndex: 1
     virtual ::ItemStackNetResult handleConsumedItem(::FullContainerName const&, uchar const, ::ItemStack const&);
@@ -66,34 +64,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CraftHandlerBase(::ItemStackRequestActionCraftHandler& craftRequestHandler);
-
     MCAPI ::std::tuple<::ItemStackNetResult, ::Recipe const*> _getRecipeFromNetId(::RecipeNetId const& recipeNetId);
-
-    MCFOLD bool _isNonImplementedTrustClientResults() const;
-
-    MCAPI ::std::shared_ptr<::SimpleSparseContainer> _tryGetSparseContainer(::FullContainerName const& openContainerId);
-
-    MCAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
 
     MCAPI ::ItemStackNetResult
     handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
-
-    MCFOLD bool isCraftRequest();
 
     MCAPI void postRequest(bool wasSuccess);
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestActionCraftHandler& craftRequestHandler);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

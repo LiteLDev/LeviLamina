@@ -132,78 +132,69 @@ public:
     virtual void requestReloadUserPacks() = 0;
 
     // vIndex: 32
-    virtual void requestReloadDynamicPackagePacks() = 0;
-
-    // vIndex: 33
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getKeyProvider() const = 0;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual ::PackManifestFactory& getPackManifestFactory() = 0;
 
-    // vIndex: 35
+    // vIndex: 34
     virtual ::PackSettingsFactory& getPackSettingsFactory() const = 0;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual ::PackSourceFactory& getPackSourceFactory() = 0;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual ::CompositePackSource const* getWorldPackSource() const = 0;
 
-    // vIndex: 38
+    // vIndex: 37
     virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin) const = 0;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType) const = 0;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual ::std::vector<::ResourcePack*> getPacksByCategory(::PackCategory) const = 0;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual void addInvalidPack(::ResourceLocation const&, ::PackType) = 0;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType) const = 0;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const&) const = 0;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual void deletePack(::ResourceLocation const&) = 0;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual void deletePackFiles(::ResourceLocation const&) = 0;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual void postDeletePack(::ResourceLocation const&) = 0;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual void untrackInvalidPack(::ResourceLocation const&) = 0;
 
-    // vIndex: 48
+    // vIndex: 47
     virtual void registerResourcePackRemovedCallback(void*, ::std::function<void(::ResourcePack*)>) = 0;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual void unregisterResourcePackRemovedCallback(void*) = 0;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual bool isInitialized() = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

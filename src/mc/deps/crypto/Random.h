@@ -15,19 +15,12 @@ public:
     // prevent constructor by default
     Random& operator=(Random const&);
     Random(Random const&);
+    Random();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Random();
-
     MCAPI ::std::string getBytes(uint amount);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };
 

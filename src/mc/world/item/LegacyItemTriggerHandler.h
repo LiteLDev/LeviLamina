@@ -11,7 +11,6 @@ class DefinitionEvent;
 class DefinitionTrigger;
 class ItemStackBase;
 class RenderParams;
-struct LegacyItemTriggerHandlerConfig;
 // clang-format on
 
 class LegacyItemTriggerHandler : public ::ILegacyItemTriggerHandler {
@@ -45,8 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyItemTriggerHandler(::LegacyItemTriggerHandlerConfig&& config);
-
     MCAPI void _executeEvent(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
         ::ItemStackBase&                                                      item,
@@ -62,12 +59,6 @@ public:
         ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
         ::RenderParams&                                                       params
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::LegacyItemTriggerHandlerConfig&& config);
     // NOLINTEND
 
 public:

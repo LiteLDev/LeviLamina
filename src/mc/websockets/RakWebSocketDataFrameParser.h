@@ -31,21 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RakWebSocketDataFrameParser(bool parseServerFrame);
-
     MCAPI ::std::shared_ptr<::RakWebSocketDataFrame> _failReadFrame(::std::string const& error, ::CloseStatusCode code);
 
     MCAPI ::std::shared_ptr<::RakWebSocketDataFrame> readFrame(::RakNet::BitStream& data);
 
-    MCFOLD void setOnFailHandler(::std::function<void(::std::string const&, ::CloseStatusCode)> handler);
-
     MCAPI ~RakWebSocketDataFrameParser();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool parseServerFrame);
     // NOLINTEND
 
 public:

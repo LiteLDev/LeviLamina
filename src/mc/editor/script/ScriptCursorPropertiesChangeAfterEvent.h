@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 
@@ -12,6 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 96> mUnk1d3d8d;
+    ::ll::UntypedStorage<4, 20> mUnka51558;
     // NOLINTEND
 
 public:

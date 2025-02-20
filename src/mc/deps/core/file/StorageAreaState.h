@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/LevelStorageState.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
-namespace Core { class Path; }
 namespace Core { class StorageAreaStateListener; }
 // clang-format on
 
@@ -36,10 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StorageAreaState(::Core::Path storageAreaRootPath);
-
-    MCAPI void addListener(::Core::StorageAreaStateListener* l);
-
     MCAPI void checkUserStorage(
         ::std::weak_ptr<::Core::FileStorageArea>& fileStorageAreaWeakPtr,
         uint64                                    freeSpace,
@@ -47,21 +39,7 @@ public:
         uint64                                    totalCapacity
     );
 
-    MCAPI bool isCriticalDiskError() const;
-
-    MCAPI bool isOutOfDiskSpaceError() const;
-
-    MCAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
-
-    MCAPI void removeListener(::Core::StorageAreaStateListener* l);
-
     MCAPI ~StorageAreaState();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path storageAreaRootPath);
     // NOLINTEND
 
 public:

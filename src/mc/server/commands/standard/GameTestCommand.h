@@ -14,6 +14,7 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class MinecraftGameTest;
+namespace gametest { struct TestParameters; }
 // clang-format on
 
 class GameTestCommand : public ::ServerCommand {
@@ -65,6 +66,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::gametest::TestParameters _createTestParameters(::BlockSource& region, ::CommandOrigin const& origin) const;
+
     MCAPI void _handleCreateTest(::BlockSource& region, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void _handleRun(

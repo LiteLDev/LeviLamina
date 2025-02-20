@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
@@ -11,18 +10,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CallbackToken;
 class ContainerScreenContext;
-class ItemStack;
 class ItemStackNetManagerScreen;
 class ItemStackRequestBatch;
 class ItemStackRequestData;
 class ServerPlayer;
-class TextFilteringProcessor;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
-struct ItemStackRequestSlotInfo;
 struct ItemStackResponseInfo;
 // clang-format on
 
@@ -104,23 +99,9 @@ public:
 
     MCAPI ::gsl::final_action<::std::function<void()>> _retainSetItemStackNetIdVariantScope();
 
-    MCAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
+    MCAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
 
-    MCAPI void handleRequest(
-        ::std::unique_ptr<::ItemStackRequestData>            request,
-        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
-    );
-
-    MCAPI void handleRequestBatch(
-        ::ItemStackRequestBatch const&                       requestBatch,
-        ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
-    );
-
-    MCAPI bool itemMatches(::ItemStackRequestSlotInfo const& slotInfo, ::ItemStack const& expectedItem);
-
-    MCAPI void normalTick();
-
-    MCAPI void startCrafting(bool workbench, ::BlockPos const& pos);
+    MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
 
     MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND

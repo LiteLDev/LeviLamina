@@ -4,11 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/input/InputMode.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
@@ -20,7 +19,7 @@ class ScriptInputInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnk1fab8f;
+    ::ll::UntypedStorage<8, 96> mUnk1fab8f;
     // NOLINTEND
 
 public:
@@ -32,26 +31,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptInputInfo(::ScriptModuleMinecraft::ScriptActorData const& playerData);
-
     MCAPI ::Scripting::Result<::InputMode, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::EngineError>
     getLastInputModeUsed() const;
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> isHotbarOnlyTouch() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptInputInfo& operator=(::ScriptModuleMinecraft::ScriptInputInfo&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData const& playerData);
     // NOLINTEND
 };
 

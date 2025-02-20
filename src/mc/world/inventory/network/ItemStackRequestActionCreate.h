@@ -39,12 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD uchar getResultsIndex() const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

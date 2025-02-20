@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptTransferCollectionNameData; }
 namespace Editor::ScriptModule { class ScriptTransferServiceDataResponse; }
-namespace Editor::Services { class ServerDataTransferServiceProvider; }
 namespace Scripting { class ScriptObjectFactory; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -39,11 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataTransferService(
-        ::Editor::Services::ServerDataTransferServiceProvider* transferService,
-        ::Scripting::WeakLifetimeScope const&                  scope
-    );
-
     MCAPI ::Scripting::
         Result<::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData>, ::Scripting::Error>
         _getRegisteredAccessors();
@@ -65,15 +58,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptDataTransferService> bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(
-        ::Editor::Services::ServerDataTransferServiceProvider* transferService,
-        ::Scripting::WeakLifetimeScope const&                  scope
-    );
     // NOLINTEND
 };
 

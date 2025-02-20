@@ -12,7 +12,9 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class ChorusFlowerBlock : public ::BlockLegacy {
@@ -24,9 +26,6 @@ public:
 
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -47,6 +46,9 @@ public:
     // vIndex: 31
     virtual bool isLavaBlocking() const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~ChorusFlowerBlock() /*override*/ = default;
     // NOLINTEND
@@ -54,43 +56,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChorusFlowerBlock(::std::string const& nameId, int id);
-
     MCAPI void _placeDeadFlower(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _placeGrownFlower(::BlockSource& region, ::BlockPos const& pos, int newAge) const;
+
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool _allNeighborsEmpty(::BlockSource& region, ::BlockPos const& pos, uchar ignore);
+
     MCAPI static void _growTreeRecursive(
         ::BlockSource&    region,
         ::BlockPos const& current,
         ::BlockPos const& startPos,
         ::Random&         random,
-        int               maxHorizontalSpread,
-        int               depth
+        int               depth,
+        int               maxHorizontalSpread
     );
-
-    MCAPI static void
-    generatePlant(::BlockSource& region, ::BlockPos const& target, ::Random& random, int maxHorizontalSpread);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& BRANCH_DIRECTIONS();
-
-    MCAPI static ushort const& DEAD_AGE();
-
-    MCAPI static int const& GROW_RATE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -106,8 +91,6 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
@@ -119,6 +102,8 @@ public:
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
     MCFOLD bool $isLavaBlocking() const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

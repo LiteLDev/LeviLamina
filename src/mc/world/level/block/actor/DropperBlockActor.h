@@ -35,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _tryPushToComposter(::BlockSource& region, int facingDirection);
+
     MCAPI bool pushOutItems(::BlockSource& region);
     // NOLINTEND
 
@@ -42,7 +44,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
-    addItemsToContainerAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int face);
+    _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int slot, int face, int stackSizeLimit);
 
     MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
     // NOLINTEND

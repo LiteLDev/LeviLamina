@@ -9,9 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContainerScreenContext;
 class ItemStackRequestAction;
-class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerLabTable : public ::ScreenHandlerBase {
@@ -48,19 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScreenHandlerLabTable(
-        ::ContainerScreenContext const&  screenContext,
-        ::ItemStackRequestActionHandler& craftRequestHandler
-    );
-
     MCAPI ::ItemStackNetResult _handleLabTableCombine(::ItemStackRequestActionDataless<9> const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& craftRequestHandler);
     // NOLINTEND
 
 public:

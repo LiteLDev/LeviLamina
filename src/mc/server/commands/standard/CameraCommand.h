@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -11,6 +12,7 @@ class CameraPresets;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class EntityRegistry;
 class Experiments;
 struct CameraInstruction;
 // clang-format on
@@ -83,7 +85,6 @@ public:
     // prevent constructor by default
     CameraCommand& operator=(CameraCommand const&);
     CameraCommand(CameraCommand const&);
-    CameraCommand();
 
 public:
     // virtual functions
@@ -98,18 +99,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CameraCommand();
+
     MCAPI bool prepareInstruction(
-        ::CameraInstruction&   cameraInstruction,
-        ::CameraPresets const& cameraPresets,
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output
+        ::CameraInstruction&               cameraInstruction,
+        ::CameraPresets const&             cameraPresets,
+        ::CommandOrigin const&             origin,
+        ::CommandOutput&                   output,
+        ::Experiments const&               experiments,
+        ::StackRefResult<::EntityRegistry> registry
     ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::Experiments const* experiments);
+    MCAPI static void setup(::CommandRegistry& registry, ::Experiments const*);
     // NOLINTEND
 
 public:
@@ -174,6 +179,12 @@ public:
     MCAPI static char const*& OPTION_TIME();
 
     MCAPI static char const*& OPTION_VIEW_OFFSET();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

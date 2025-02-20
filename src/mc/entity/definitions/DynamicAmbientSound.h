@@ -13,13 +13,20 @@ public:
 public:
     // prevent constructor by default
     DynamicAmbientSound& operator=(DynamicAmbientSound const&);
-    DynamicAmbientSound(DynamicAmbientSound const&);
     DynamicAmbientSound();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DynamicAmbientSound(::DynamicAmbientSound const&);
+
     MCAPI ~DynamicAmbientSound();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DynamicAmbientSound const&);
     // NOLINTEND
 
 public:

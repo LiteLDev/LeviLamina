@@ -14,8 +14,6 @@ class Dimension;
 class Level;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
-namespace gametest { class GameTestRegistry; }
-namespace gametest { class GameTestTicker; }
 namespace gametest { class IGameTestListener; }
 namespace gametest { struct TestParameters; }
 // clang-format on
@@ -55,15 +53,7 @@ public:
 
     MCAPI void clearAllTests(::BlockSource& region);
 
-    MCFOLD ::gametest::GameTestRegistry& getRegistry();
-
-    MCFOLD ::gametest::GameTestTicker& getTicker();
-
-    MCAPI void loadExistingTests(::Level& level);
-
     MCAPI void registerDefaultGameBatches(::Level& level);
-
-    MCFOLD void registerNativeGameTests();
 
     MCAPI ::std::string
     runTest(::std::string const& testName, ::Dimension& dimension, ::gametest::TestParameters const& params);
@@ -80,8 +70,6 @@ public:
 
     MCAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestInstance>> const&
     runTests(::Dimension& dimension, ::gametest::TestParameters&& params);
-
-    MCAPI void stopAllTests();
     // NOLINTEND
 
 public:

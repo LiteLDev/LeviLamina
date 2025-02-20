@@ -45,7 +45,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, bool isDedicatedServer);
+    MCAPI static void setup(::CommandRegistry& registry, bool isDedicatedServer, bool isEditorWorld);
     // NOLINTEND
 
 public:

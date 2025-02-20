@@ -6,8 +6,8 @@ struct ServicePack {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 136> mUnkee4d44;
-    ::ll::UntypedStorage<8, 32>  mUnkc598fa;
+    ::ll::UntypedStorage<8, 48> mUnkee4d44;
+    ::ll::UntypedStorage<8, 32> mUnkc598fa;
     // NOLINTEND
 
 public:

@@ -19,15 +19,12 @@ struct BoatPaddleComponent;
 struct RuntimeIDComponent;
 struct SendPacketsComponent;
 struct ShouldBeSimulatedComponent;
-struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
 // clang-format on
 
 namespace BoatPaddleAnimationSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
-
 MCAPI void sendAnimationPackets(
     ::entt::type_list<
         ::Include<::ActorMovementTickNeededComponent, ::BoatFlagComponent, ::ShouldBeSimulatedComponent>,

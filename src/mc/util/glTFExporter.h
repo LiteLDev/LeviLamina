@@ -49,8 +49,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string_view const& BINARY_EXTENSION();
 
-    MCAPI static ::std::string_view const& GLB_BUFFER_URI();
-
     MCAPI static ::std::string_view const& GLB_EXTENSION();
 
     MCAPI static ::std::string_view const& GLTF_EXTENSION();

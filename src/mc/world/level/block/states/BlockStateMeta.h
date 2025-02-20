@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/nbt/Tag.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockState;
-// clang-format on
-
 class BlockStateMeta {
 public:
     // member variables
@@ -30,20 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool const getBool(int index) const;
-
-    MCAPI uint64 getID() const;
-
-    MCAPI int const getInt(int index) const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD ::BlockState const& getState() const;
-
-    MCAPI ::std::string const& getString(int index) const;
-
-    MCFOLD ::Tag::Type const getType() const;
-
     MCAPI int indexOf(uint64 const& h) const;
     // NOLINTEND
 };

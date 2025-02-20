@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptChatSendAfterEvent.h"
 
 namespace ScriptModuleMinecraft {
@@ -18,8 +18,16 @@ public:
 public:
     // prevent constructor by default
     ScriptChatSendBeforeEvent& operator=(ScriptChatSendBeforeEvent const&);
-    ScriptChatSendBeforeEvent(ScriptChatSendBeforeEvent const&);
     ScriptChatSendBeforeEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptChatSendBeforeEvent(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
+    operator=(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
+    // NOLINTEND
 
 public:
     // static functions
@@ -27,6 +35,12 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bind();
 
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bindV010();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
     // NOLINTEND
 };
 

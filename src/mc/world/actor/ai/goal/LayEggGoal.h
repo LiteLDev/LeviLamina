@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 #include "mc/world/level/material/MaterialType.h"
 
@@ -83,8 +83,6 @@ public:
     );
 
     MCAPI bool _isTargetBlock(::BlockLegacy const& block) const;
-
-    MCAPI void _layEgg(::BlockPos const& pos);
     // NOLINTEND
 
 public:

@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/nether_net/ERelayServerConfigurationResult.h"
+#include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ESendType.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/ILanEventHandler.h"
 #include "mc/deps/nether_net/INetherNetTransportInterface.h"
 #include "mc/deps/nether_net/ISignalingEventHandler.h"
-#include "mc/deps/nether_net/IWebRTCSignalingInterface.h"
 #include "mc/deps/nether_net/SignalingChannelId.h"
-#include "mc/deps/nether_net/SignalingHostConnectionStatus.h"
 #include "mc/deps/nether_net/utils/ErrorOr.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 
@@ -23,7 +21,7 @@ namespace NetherNet { class ConnectError; }
 namespace NetherNet { class ConnectRequest; }
 namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { class INetherNetTransportInterfaceCallbacks; }
-namespace NetherNet { class IWebRTCSignalingInterface; }
+namespace NetherNet { class ISignalingInterface; }
 namespace NetherNet { struct NetherNetTransportServerConfiguration; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
@@ -32,12 +30,12 @@ namespace NetherNet::LanEvents { struct DiscoveryRequest; }
 namespace NetherNet::LanEvents { struct DiscoveryResponse; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
 namespace NetherNet::SignalingEvents { struct MessageReceived; }
-namespace NetherNet::SignalingEvents { struct TurnAuthReceived; }
 // clang-format on
 
 namespace NetherNet {
 
-class SimpleNetworkInterfaceImpl : public ::NetherNet::INetherNetTransportInterface,
+class SimpleNetworkInterfaceImpl : public ::NetherNet::ContextProxy,
+                                   public ::NetherNet::INetherNetTransportInterface,
                                    public ::NetherNet::ISignalingEventHandler,
                                    public ::NetherNet::ILanEventHandler {
 public:
@@ -50,13 +48,9 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkb5d73e;
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
     ::ll::UntypedStorage<8, 384> mUnkcf1ee0;
-    ::ll::UntypedStorage<8, 32>  mUnk70bfe1;
-    ::ll::UntypedStorage<8, 32>  mUnkd9b18b;
-    ::ll::UntypedStorage<1, 1>   mUnk9290d1;
-    ::ll::UntypedStorage<8, 16>  mUnkc9d8ae;
+    ::ll::UntypedStorage<8, 16>  mUnk6e9a1e;
     ::ll::UntypedStorage<8, 16>  mUnkd76d91;
     ::ll::UntypedStorage<8, 16>  mUnk9e7ad4;
-    ::ll::UntypedStorage<8, 64>  mUnk8337d1;
     ::ll::UntypedStorage<8, 8>   mUnka1effb;
     ::ll::UntypedStorage<8, 8>   mUnk51d62d;
     // NOLINTEND
@@ -74,25 +68,21 @@ public:
     virtual ~SimpleNetworkInterfaceImpl() /*override*/;
 
     // vIndex: 1
-    virtual bool IsSignedIntoSignalingService() const /*override*/;
-
-    // vIndex: 2
     virtual bool SendPacket(
         ::NetherNet::NetworkID remoteId,
         uint64                 connectionId,
-        char const*            pbData,
-        uint                   cbData,
+        ::std::string const&   data,
         ::NetherNet::ESendType eSendType
     ) /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual bool
     IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual void ClearPacketData(::NetherNet::NetworkID remoteId, uint64 connectionId) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual bool ReadPacket(
         ::NetherNet::NetworkID remoteId,
         uint64                 connectionId,
@@ -101,66 +91,45 @@ public:
         uint*                  pcbMessageSize
     ) /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual bool OpenSessionWithUser(::NetherNet::NetworkID networkIDRemote) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
+        ::NetherNet::NetworkID     peerId,
         uint64                     connectionId,
         ::NetherNet::SessionState* pConnectionState
     ) /*override*/;
 
+    // vIndex: 8
+    virtual void
+    SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface
+    ) /*override*/;
+
     // vIndex: 9
-    virtual void SetWebRTCSignalingInterface(
-        ::std::shared_ptr<::NetherNet::IWebRTCSignalingInterface> const& pWebRTCSignalingInterface
-    ) /*override*/;
+    virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config) /*override*/;
 
-    // vIndex: 10
-    virtual void SignIntoSignalingService(
-        ::std::function<void(::std::error_code)> const&                                signInCallback,
-        ::std::function<void(::NetherNet::SignalingHostConnectionStatus, uint)> const& connectionStatusChangedCallback,
-        ::NetherNet::IWebRTCSignalingInterface::SignalingConfiguration const&          signalingConfig
-    ) /*override*/;
-
-    // vIndex: 11
-    virtual void SignOutFromSignalingService() /*override*/;
-
-    // vIndex: 12
-    virtual void RegisterRelayServerCredentialsReadyCallback(
-        ::std::function<void(::NetherNet::ERelayServerConfigurationResult)> const& callback
-    ) /*override*/;
-
-    // vIndex: 19
+    // vIndex: 14
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler
     ) /*override*/;
 
-    // vIndex: 18
+    // vIndex: 13
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 10
     virtual bool IsBroadcastDiscoveryEnabled() /*override*/;
 
-    // vIndex: 14
+    // vIndex: 11
     virtual void EnableBroadcastDiscovery() /*override*/;
 
-    // vIndex: 15
+    // vIndex: 12
     virtual void DisableBroadcastDiscovery() /*override*/;
 
-    // vIndex: 16
-    virtual void EnableSignalingOverLAN() /*override*/;
-
-    // vIndex: 17
-    virtual void DisableSignalingOverLAN() /*override*/;
-
-    // vIndex: 6
+    // vIndex: 1
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event) /*override*/;
-
-    // vIndex: 2
-    virtual void OnSignalingEvent(::NetherNet::SignalingEvents::TurnAuthReceived const& event) /*override*/;
 
     // vIndex: 3
     virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event) /*override*/;
@@ -175,36 +144,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Finalize();
-
-    MCAPI uint GetConnectionFlags(::NetherNet::NetworkID networkIDRemote);
-
-    MCAPI ::std::chrono::seconds GetNegotiationTimeout() const;
-
     MCAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 
     MCAPI void InitializeConfiguration(
         ::NetherNet::NetherNetTransportServerConfiguration const* pConfiguration,
         ::webrtc::PeerConnectionInterface::RTCConfiguration*      pRtcConfigOut
-    );
-
-    MCAPI void MakeDefaultSignalingChannel(::NetherNet::NetherNetTransportServerConfiguration const* pConfiguration);
-
-    MCAPI void NotifyOnSessionClose(
-        ::NetherNet::NetworkID     networkIDRemote,
-        uint64                     connectionId,
-        ::NetherNet::ESessionError errorCode
-    );
-
-    MCAPI void NotifyOnSessionOpen(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
-
-    MCAPI bool NotifyOnSessionRequested(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
-
-    MCAPI void PeriodicUpdateOnSignalThread();
-
-    MCAPI void ProcessTurnConfig(
-        ::NetherNet::ErrorOr<::std::vector<::NetherNet::StunRelayServer>, ::NetherNet::ERelayServerConfigurationResult>
-            iceServersOrError
     );
 
     MCAPI void ReceiveFromSignalingChannel(
@@ -222,20 +166,6 @@ public:
             ::NetherNet::CandidateAdd> const&            signal,
         ::std::optional<::NetherNet::SignalingChannelId> preference
     );
-
-    MCAPI SimpleNetworkInterfaceImpl(
-        ::NetherNet::NetworkID                              networkID,
-        ::NetherNet::NetherNetTransportServerConfiguration* pConfiguration
-    );
-
-    MCAPI void UpdateConfigWithRelayToken(::webrtc::PeerConnectionInterface::RTCConfiguration* pRtcConfigOut);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::NetherNet::NetworkID networkID, ::NetherNet::NetherNetTransportServerConfiguration* pConfiguration);
     // NOLINTEND
 
 public:
@@ -247,13 +177,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $IsSignedIntoSignalingService() const;
-
     MCAPI bool $SendPacket(
         ::NetherNet::NetworkID remoteId,
         uint64                 connectionId,
-        char const*            pbData,
-        uint                   cbData,
+        ::std::string const&   data,
         ::NetherNet::ESendType eSendType
     );
 
@@ -268,27 +195,13 @@ public:
 
     MCAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
-    MCAPI bool $GetSessionState(
-        ::NetherNet::NetworkID     networkIDRemote,
-        uint64                     connectionId,
-        ::NetherNet::SessionState* pConnectionState
-    );
+    MCAPI bool
+    $GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
 
-    MCAPI void $SetWebRTCSignalingInterface(
-        ::std::shared_ptr<::NetherNet::IWebRTCSignalingInterface> const& pWebRTCSignalingInterface
-    );
+    MCAPI void
+    $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);
 
-    MCAPI void $SignIntoSignalingService(
-        ::std::function<void(::std::error_code)> const&                                signInCallback,
-        ::std::function<void(::NetherNet::SignalingHostConnectionStatus, uint)> const& connectionStatusChangedCallback,
-        ::NetherNet::IWebRTCSignalingInterface::SignalingConfiguration const&          signalingConfig
-    );
-
-    MCAPI void $SignOutFromSignalingService();
-
-    MCAPI void $RegisterRelayServerCredentialsReadyCallback(
-        ::std::function<void(::NetherNet::ERelayServerConfigurationResult)> const& callback
-    );
+    MCAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
 
     MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 
@@ -300,13 +213,7 @@ public:
 
     MCAPI void $DisableBroadcastDiscovery();
 
-    MCAPI void $EnableSignalingOverLAN();
-
-    MCAPI void $DisableSignalingOverLAN();
-
     MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
-
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::TurnAuthReceived const& event);
 
     MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
 
@@ -321,6 +228,8 @@ public:
     MCAPI static void** $vftableForISignalingEventHandler();
 
     MCAPI static void** $vftableForILanEventHandler();
+
+    MCAPI static void** $vftableForContextProxy();
 
     MCAPI static void** $vftableForINetherNetTransportInterface();
     // NOLINTEND

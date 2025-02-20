@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class PackReport;
-struct PackIdVersion;
-// clang-format on
-
 class PackSourceReport {
 public:
     // member variables
@@ -27,10 +21,6 @@ public:
     MCAPI PackSourceReport(::PackSourceReport const&);
 
     MCAPI PackSourceReport(::PackSourceReport&&);
-
-    MCAPI void addReport(::PackIdVersion const& packId, ::PackReport&& report);
-
-    MCFOLD ::std::unordered_map<::PackIdVersion, ::PackReport> const& getReports() const;
 
     MCAPI bool hasErrors() const;
 

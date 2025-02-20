@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,8 +34,6 @@ public:
     );
 
     MCAPI ::std::string getId() const;
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorType const& other) const;
     // NOLINTEND
 
 public:

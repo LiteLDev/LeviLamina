@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/scripting/modules/minecraft/actor/ErrorMemberType.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace Scripting { struct ErrorBinding; }
 // clang-format on
@@ -31,6 +33,13 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptInvalidActorError(
+        ::ScriptModuleMinecraft::ErrorMemberType    invalidActor,
+        ::ScriptModuleMinecraft::ScriptActor const& functionName,
+        ::std::string_view                          memberType
+    );
+
+    MCAPI ScriptInvalidActorError(
+        ::ScriptModuleMinecraft::ErrorMemberType        memberType,
         ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
         ::std::string_view                              functionName
     );
@@ -47,8 +56,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::ScriptModuleMinecraft::ScriptActorData const& invalidActorData, ::std::string_view functionName);
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ErrorMemberType    invalidActor,
+        ::ScriptModuleMinecraft::ScriptActor const& functionName,
+        ::std::string_view                          memberType
+    );
+
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ErrorMemberType        memberType,
+        ::ScriptModuleMinecraft::ScriptActorData const& invalidActorData,
+        ::std::string_view                              functionName
+    );
     // NOLINTEND
 
 public:

@@ -8,9 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class ITreeFeature : public ::IFeature {
@@ -36,15 +33,13 @@ public:
     virtual ~ITreeFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI&, ::BlockPos const&, ::Random&, ::RenderParams&) const = 0;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const&) const = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    _place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> _place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

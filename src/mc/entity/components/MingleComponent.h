@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-struct ActorUniqueID;
-// clang-format on
-
 class MingleComponent {
 public:
     // MingleComponent inner types define
@@ -31,26 +25,5 @@ public:
     // prevent constructor by default
     MingleComponent& operator=(MingleComponent const&);
     MingleComponent(MingleComponent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MingleComponent();
-
-    MCAPI ::MingleComponent& clearPreviousPartnerId();
-
-    MCAPI ::Actor* fetchCurrentPartner(::Actor const& actorInLevel) const;
-
-    MCAPI void resetState();
-
-    MCFOLD ::MingleComponent& setMingleState(::MingleComponent::MingleState val);
-
-    MCAPI ::MingleComponent& setPartnerId(::ActorUniqueID val);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
+    MingleComponent();
 };

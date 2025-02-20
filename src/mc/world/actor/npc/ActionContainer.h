@@ -27,21 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::variant<::npc::CommandAction, ::npc::UrlAction> const* at(uint64) const;
-
-    MCFOLD ::std::variant<::npc::CommandAction, ::npc::UrlAction>* at(uint64 i);
-
-    MCAPI uint64 countUrl() const;
-
-    MCFOLD ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>> const& data() const;
-
     MCAPI ::npc::ActionContainer& operator=(::npc::ActionContainer&&);
 
     MCAPI void push(::std::variant<::npc::CommandAction, ::npc::UrlAction>&& action);
 
     MCAPI void reset(::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& data);
-
-    MCFOLD uint64 size() const;
 
     MCAPI ~ActionContainer();
     // NOLINTEND

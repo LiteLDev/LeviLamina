@@ -11,12 +11,12 @@
 // clang-format off
 class Container;
 class ContainerWeakRef;
-class DynamicContainerTracker;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class SparseContainerClient;
 struct FullContainerName;
+struct SlotData;
 // clang-format on
 
 class ContainerModel : public ::ContainerContentChangeListener {
@@ -26,7 +26,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk853b36;
     ::ll::UntypedStorage<8, 32> mUnkdae880;
     ::ll::UntypedStorage<4, 12> mUnk510e36;
-    ::ll::UntypedStorage<8, 64> mUnk7e68a8;
+    ::ll::UntypedStorage<8, 64> mUnke0d973;
     ::ll::UntypedStorage<8, 24> mUnk77eb28;
     ::ll::UntypedStorage<8, 64> mUnk4e59ea;
     ::ll::UntypedStorage<8, 24> mUnk6fb30b;
@@ -134,16 +134,17 @@ public:
 
     MCAPI void _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI int getModelSlot(int containerSlot) const;
-
     MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI void receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
+    MCAPI void
+    registerOnContainerChangedCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
     MCAPI void
     registerPlayerNotificationCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
     MCAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
+
+    MCAPI void setItemSource(int slot, ::SlotData const& srcSlot);
     // NOLINTEND
 
 public:

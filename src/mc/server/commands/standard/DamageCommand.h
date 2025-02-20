@@ -28,7 +28,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnk643088;
     ::ll::UntypedStorage<8, 200> mUnk250bbd;
-    ::ll::UntypedStorage<4, 4>   mUnkccd1b8;
+    ::ll::UntypedStorage<4, 4>   mUnk79080c;
     ::ll::UntypedStorage<4, 4>   mUnk598fc7;
     ::ll::UntypedStorage<1, 1>   mUnk507f07;
     // NOLINTEND
@@ -37,7 +37,6 @@ public:
     // prevent constructor by default
     DamageCommand& operator=(DamageCommand const&);
     DamageCommand(DamageCommand const&);
-    DamageCommand();
 
 public:
     // virtual functions
@@ -52,6 +51,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DamageCommand();
+
     MCAPI void
     _applyDamage(::CommandSelectorResults<::Actor>& targets, ::ActorDamageSource const& source, ::CommandOutput& output)
         const;
@@ -61,6 +62,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

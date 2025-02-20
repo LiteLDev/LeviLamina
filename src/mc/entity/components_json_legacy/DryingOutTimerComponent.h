@@ -7,10 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class CompoundTag;
-class DataLoadHelper;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -42,8 +38,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::DryingOutTimerComponent& dryingOutComponent) const;
-
         MCAPI ~DryingOutTimerDefinition();
         // NOLINTEND
 
@@ -86,14 +80,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DryingOutTimerComponent(::DryingOutTimerComponent&&);
-
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI bool canBeAffectedByWaterBottle() const;
-
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI void refillTimeWithWaterBottle();
 
     MCAPI ~DryingOutTimerComponent();
     // NOLINTEND

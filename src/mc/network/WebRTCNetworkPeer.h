@@ -56,20 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    WebRTCNetworkPeer(::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector, uint64 peerId, uint64 sessionId);
-
     MCAPI void _updateConnectionStatus();
-
-    MCFOLD uint64 getPeerId() const;
-
-    MCFOLD uint64 getSessionId() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::NetherNetConnector>&& connector, uint64 peerId, uint64 sessionId);
     // NOLINTEND
 
 public:

@@ -24,9 +24,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorAcquiredItemEvent& operator=(ActorAcquiredItemEvent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorAcquiredItemEvent(::ActorAcquiredItemEvent const&);
+
     MCAPI ~ActorAcquiredItemEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ActorAcquiredItemEvent const&);
     // NOLINTEND
 
 public:

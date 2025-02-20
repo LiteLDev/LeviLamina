@@ -13,12 +13,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _finalizeBlockTriggerComponents(::BlockLegacy& blockLegacy);
 
-    MCAPI void _finalizeCollisionBoxComponent(::BlockLegacy& blockLegacy);
-
-    MCAPI void _finalizeSelectionBoxComponent(::BlockLegacy& blockLegacy);
-
-    MCAPI void addRemainingComponents(::BlockLegacy& blockLegacy);
-
     MCAPI void finalizeComponentData(::BlockLegacy& blockLegacy);
     // NOLINTEND
 };

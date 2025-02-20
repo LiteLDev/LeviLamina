@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class Vec3;
-// clang-format on
-
 class BlockBreakSensorComponent {
 public:
     // member variables
@@ -23,17 +17,14 @@ public:
     // prevent constructor by default
     BlockBreakSensorComponent& operator=(BlockBreakSensorComponent const&);
     BlockBreakSensorComponent(BlockBreakSensorComponent const&);
+    BlockBreakSensorComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockBreakSensorComponent();
-
-    MCAPI void initialize(::Actor& actor);
+    MCAPI BlockBreakSensorComponent(::BlockBreakSensorComponent&&);
 
     MCAPI ::BlockBreakSensorComponent& operator=(::BlockBreakSensorComponent&&);
-
-    MCAPI void updateSensorPos(::Vec3 const& newPos);
 
     MCAPI ~BlockBreakSensorComponent();
     // NOLINTEND
@@ -41,7 +32,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::BlockBreakSensorComponent&&);
     // NOLINTEND
 
 public:

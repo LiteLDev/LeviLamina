@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class IDynamicContainerSerialization;
-class ItemDescriptor;
 class ItemStack;
 class ListTag;
 class Player;
@@ -26,8 +23,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk45037d;
-    ::ll::UntypedStorage<4, 4>  mUnkace282;
-    ::ll::UntypedStorage<4, 4>  mUnk2bce8c;
     ::ll::UntypedStorage<1, 1>  mUnk2e38d3;
     ::ll::UntypedStorage<8, 24> mUnk4527c9;
     ::ll::UntypedStorage<8, 24> mUnkcfe413;
@@ -54,22 +49,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool getAllowNestedStorageItem() const;
-
-    MCFOLD ::std::vector<::ItemDescriptor> const& getAllowedItems() const;
-
-    MCFOLD ::std::vector<::ItemDescriptor> const& getBannedItems() const;
-
-    MCFOLD int getNumSlot() const;
-
-    MCFOLD int getWeightInStorageItem() const;
-
-    MCFOLD int getWeightLimit() const;
-
     MCAPI ::std::unique_ptr<::ListTag>
     serializeStorageItem(::FullContainerName const& name, ::SaveContext const& saveContext) const;
-
-    MCAPI void setSerializationHandler(::WeakRef<::IDynamicContainerSerialization> serialization);
     // NOLINTEND
 
 public:
@@ -77,8 +58,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();

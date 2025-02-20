@@ -34,6 +34,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void set(bool v, bool saveOptionChange);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

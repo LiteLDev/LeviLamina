@@ -51,25 +51,13 @@ public:
     virtual bool _setWantedPosition();
 
     // vIndex: 0
-    virtual ~RandomStrollGoal() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RandomStrollGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval);
+    virtual ~RandomStrollGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -77,7 +65,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
     MCAPI void $start();
 

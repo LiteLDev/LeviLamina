@@ -25,11 +25,12 @@ public:
     // prevent constructor by default
     ReflectProjectileDefinition& operator=(ReflectProjectileDefinition const&);
     ReflectProjectileDefinition(ReflectProjectileDefinition const&);
-    ReflectProjectileDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ReflectProjectileDefinition();
+
     MCAPI void _addProjectileToReflect(::std::string const& projectileName);
     // NOLINTEND
 
@@ -39,5 +40,11 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ReflectProjectileDefinition>>& root
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 };

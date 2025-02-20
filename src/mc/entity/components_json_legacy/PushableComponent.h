@@ -6,7 +6,6 @@
 // clang-format off
 class Actor;
 class Vec3;
-struct PushableDescription;
 // clang-format on
 
 class PushableComponent {
@@ -22,23 +21,14 @@ public:
     // prevent constructor by default
     PushableComponent& operator=(PushableComponent const&);
     PushableComponent(PushableComponent const&);
+    PushableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PushableComponent();
-
     MCAPI ::std::pair<::Vec3, ::Vec3> _calculatePushVectorBoat(::Actor& owner, ::Actor& other, bool pushSelfOnly);
 
     MCAPI ::std::pair<::Vec3, ::Vec3> _calculatePushVectorMinecart(::Actor& owner, ::Actor& other, bool pushSelfOnly);
-
-    MCAPI void initFromDefinition(::Actor& actor);
-
-    MCAPI void initFromDefinition(::Actor&, ::PushableDescription const& desc);
-
-    MCFOLD bool isPushable() const;
-
-    MCFOLD bool isPushableByPiston() const;
 
     MCAPI void push(::Actor& owner, ::Vec3 const& vec);
 
@@ -51,11 +41,5 @@ public:
     MCAPI static void pullToRide(::Actor& owner, ::Actor& other);
 
     MCAPI static bool skipPush(::Actor& owner, ::Actor& other);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

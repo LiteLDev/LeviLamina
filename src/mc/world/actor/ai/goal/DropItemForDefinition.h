@@ -40,6 +40,7 @@ public:
     // prevent constructor by default
     DropItemForDefinition& operator=(DropItemForDefinition const&);
     DropItemForDefinition(DropItemForDefinition const&);
+    DropItemForDefinition();
 
 public:
     // virtual functions
@@ -51,8 +52,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DropItemForDefinition();
-
     MCAPI void initialize(::EntityContext& entity, ::DropItemForGoal& goal) const;
     // NOLINTEND
 
@@ -63,12 +62,6 @@ public:
         ::std::string const&                                                                                  name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DropItemForDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

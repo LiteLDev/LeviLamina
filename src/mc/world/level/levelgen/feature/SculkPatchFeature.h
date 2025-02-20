@@ -9,8 +9,6 @@
 // clang-format off
 class BlockPos;
 class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class SculkPatchFeature : public ::IFeature {
@@ -41,8 +39,13 @@ public:
     virtual ~SculkPatchFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool _canSpreadFrom(::IBlockWorldGenAPI& target, ::BlockPos const& originPos) const;
     // NOLINTEND
 
 public:
@@ -54,8 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
-namespace Editor::Cursor { struct Position; }
 // clang-format on
 
 namespace Editor::Cursor {
@@ -30,6 +29,7 @@ public:
     // prevent constructor by default
     Cursor& operator=(Cursor const&);
     Cursor(Cursor const&);
+    Cursor();
 
 public:
     // virtual functions
@@ -51,24 +51,6 @@ public:
 
     // vIndex: 5
     virtual ::Scripting::Result_deprecated<::BlockPos> moveCursor(::glm::ivec3 const& offset);
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Cursor();
-
-    MCFOLD ::std::optional<::Editor::Cursor::Position>& _getBlockPosition();
-
-    MCAPI ::Editor::Cursor::AttachmentProperties getAttachmentProperties() const;
-
-    MCAPI ::Editor::Cursor::CursorState getCursorState() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

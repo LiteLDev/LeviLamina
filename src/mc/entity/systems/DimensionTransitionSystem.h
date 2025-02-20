@@ -55,25 +55,13 @@ public:
 
     MCAPI static ::TickingSystemWithInfo createPortalTransition();
 
-    MCAPI static ::TickingSystemWithInfo createReadyToContinueServer();
-
     MCAPI static ::TickingSystemWithInfo createVehicleDismount();
-
-    MCAPI static void removeChangeDimensionRequest(
-        ::StrictEntityContext const&                              entity,
-        ::EntityModifier<::PlayerChangeDimensionRequestComponent> modifier
-    );
 
     MCAPI static void requestPlayerChangeDimension(
         ::StrictEntityContext const&                                                      player,
         ::ChangeDimensionRequest&&                                                        request,
         ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> playerData,
         ::EntityModifier<::PlayerChangeDimensionRequestComponent>                         modifier
-    );
-
-    MCAPI static bool shouldLevelWaitForSystem(
-        ::StrictEntityContext const&                                                  entity,
-        ::ViewT<::StrictEntityContext, ::PlayerChangeDimensionRequestComponent const> view
     );
 
     MCAPI static void tryHandleChangeDimensionRequestLevel(

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_50 {
 
 struct CooldownItemComponent {
@@ -27,16 +22,10 @@ public:
     // NOLINTBEGIN
     MCFOLD ::SharedTypes::v1_20_50::CooldownItemComponent& operator=(::SharedTypes::v1_20_50::CooldownItemComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_50::CooldownItemComponent&
+    MCFOLD ::SharedTypes::v1_20_50::CooldownItemComponent&
     operator=(::SharedTypes::v1_20_50::CooldownItemComponent const&);
 
     MCAPI ~CooldownItemComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

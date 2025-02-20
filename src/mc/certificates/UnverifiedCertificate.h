@@ -24,15 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UnverifiedCertificate(::UnverifiedCertificate&& other);
-
     MCAPI UnverifiedCertificate(::UnverifiedCertificate const& other);
 
     MCAPI void addToChain(::Json::Value& chain) const;
 
     MCAPI ::std::string getIdentityPublicKey() const;
 
-    MCFOLD ::std::string toString() const;
+    MCAPI ::std::string toString() const;
 
     MCAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;
 
@@ -48,8 +46,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UnverifiedCertificate&& other);
-
     MCAPI void* $ctor(::UnverifiedCertificate const& other);
     // NOLINTEND
 

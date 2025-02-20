@@ -3,8 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -26,8 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptPlayerJoinAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
+        ::std::string const&                                                        playerName,
+        ::std::string const&                                                        playerId
+    );
+
     MCAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
+
+    MCAPI ~ScriptPlayerJoinAfterEvent();
     // NOLINTEND
 
 public:
@@ -36,6 +50,22 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilderReadOnly<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent> bind();
 
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent> bindV010();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
+        ::std::string const&                                                        playerName,
+        ::std::string const&                                                        playerId
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

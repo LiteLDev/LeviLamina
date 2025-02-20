@@ -20,12 +20,19 @@ public:
     // prevent constructor by default
     ActorFactoryData& operator=(ActorFactoryData const&);
     ActorFactoryData(ActorFactoryData const&);
-    ActorFactoryData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorFactoryData();
+
     MCAPI ~ActorFactoryData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

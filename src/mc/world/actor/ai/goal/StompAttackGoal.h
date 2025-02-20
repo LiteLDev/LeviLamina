@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/MeleeAttackGoal.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class StompAttackGoal : public ::MeleeAttackGoal {
 public:
     // member variables
@@ -36,6 +41,12 @@ public:
 
     // vIndex: 0
     virtual ~StompAttackGoal() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _attemptAttack(::Actor& target);
     // NOLINTEND
 
 public:

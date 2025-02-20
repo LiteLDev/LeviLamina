@@ -20,21 +20,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    TripWireTripEvent& operator=(TripWireTripEvent const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TripWireTripEvent(::TripWireTripEvent const&);
-
     MCAPI ~TripWireTripEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::TripWireTripEvent const&);
     // NOLINTEND
 
 public:

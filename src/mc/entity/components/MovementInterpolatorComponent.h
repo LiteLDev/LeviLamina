@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec2;
-class Vec3;
-// clang-format on
-
 struct MovementInterpolatorComponent {
 public:
     // member variables
@@ -26,18 +20,4 @@ public:
     MovementInterpolatorComponent& operator=(MovementInterpolatorComponent const&);
     MovementInterpolatorComponent(MovementInterpolatorComponent const&);
     MovementInterpolatorComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isActive() const;
-
-    MCAPI void lerpTo(::Vec3 const& pos, ::Vec2 const& rot, int steps);
-
-    MCAPI void lerpToRotation(::Vec2 const& rot, int steps);
-
-    MCAPI void reset();
-
-    MCAPI void setHeadYawLerpTarget(float headYaw, int steps);
-    // NOLINTEND
 };

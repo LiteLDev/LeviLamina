@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
 #include "mc/server/editor/api/EditorPlayerExtensionServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
@@ -80,20 +79,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorPlayerExtensionService(::Editor::ServiceProviderCollection& providers);
-
     MCAPI ::Scripting::Result<void>
     _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
     MCAPI ::Scripting::Result<void> _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
     MCAPI ::Scripting::Result<void> _destroyExtensionContexts();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

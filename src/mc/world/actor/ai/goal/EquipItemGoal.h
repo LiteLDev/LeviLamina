@@ -3,17 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class ItemStack;
 class Mob;
 class MobEquipmentPacket;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class EquipItemGoal : public ::Goal {
@@ -30,22 +27,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::EquipItemGoal& goal) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EquipItemGoal::Definition>>&
-                root
-        );
         // NOLINTEND
 
     public:
@@ -90,17 +71,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EquipItemGoal(::Mob& mob);
-
     MCAPI void _dropItem(::ItemStack const& item) const;
 
     MCAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

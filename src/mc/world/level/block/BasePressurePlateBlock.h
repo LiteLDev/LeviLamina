@@ -17,9 +17,8 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class BasePressurePlateBlock : public ::BlockLegacy {
@@ -40,7 +39,7 @@ public:
     getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual int getTickDelay() const;
 
     // vIndex: 57
@@ -57,14 +56,11 @@ public:
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 96
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const
         /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 67
@@ -85,19 +81,19 @@ public:
     // vIndex: 119
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual int getSignalStrength(::BlockSource&, ::BlockPos const&) const = 0;
 
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual int getSignalForData(int) const = 0;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual int getRedstoneSignal(int) const = 0;
 
-    // vIndex: 155
+    // vIndex: 154
     virtual ::AABB const getSensitiveAABB(::BlockPos const& pos) const;
 
     // vIndex: 131
@@ -110,19 +106,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BasePressurePlateBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void
     checkPressed(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceEntity, int oldSignal, int newSignal)
         const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -150,8 +140,6 @@ public:
 
     MCFOLD bool $isSignalSource() const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
@@ -172,11 +160,5 @@ public:
     MCAPI ::AABB const $getSensitiveAABB(::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

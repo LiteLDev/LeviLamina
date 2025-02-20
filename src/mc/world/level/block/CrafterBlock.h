@@ -84,25 +84,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrafterBlock(::std::string const& nameId, int id);
-
     MCAPI void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI uchar getFacing(::Block const& block) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static int getAttachedFace(int facing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

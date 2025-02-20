@@ -7,7 +7,6 @@
 #include "mc/deps/crypto/asymmetric/Padding.h"
 #include "mc/deps/crypto/asymmetric/PrivateKeySigningFormat.h"
 #include "mc/deps/crypto/asymmetric/PubKeyFormat.h"
-#include "mc/deps/crypto/asymmetric/System.h"
 #include "mc/deps/crypto/hash/HashType.h"
 
 namespace Crypto::Asymmetric {
@@ -69,20 +68,6 @@ public:
     // vIndex: 6
     virtual ::std::string
     computeSharedSecret(::std::string const& myPrivateKey, ::std::string const& peerPublicKey) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Asymmetric(::Crypto::Asymmetric::System system);
-
-    MCAPI bool canComputeSecret();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Crypto::Asymmetric::System system);
     // NOLINTEND
 
 public:

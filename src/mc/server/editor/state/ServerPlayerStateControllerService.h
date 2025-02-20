@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/state/PlayerStateControllerService.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,6 +21,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk2b7edb;
     ::ll::UntypedStorage<1, 1>  mUnkddf2a9;
     ::ll::UntypedStorage<8, 16> mUnka1bb56;
+    ::ll::UntypedStorage<4, 4>  mUnk9a4c14;
     // NOLINTEND
 
 public:

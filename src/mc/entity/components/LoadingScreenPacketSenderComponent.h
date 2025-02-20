@@ -12,12 +12,12 @@ public:
 public:
     // prevent constructor by default
     LoadingScreenPacketSenderComponent& operator=(LoadingScreenPacketSenderComponent const&);
-    LoadingScreenPacketSenderComponent(LoadingScreenPacketSenderComponent const&);
+    LoadingScreenPacketSenderComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LoadingScreenPacketSenderComponent();
+    MCAPI LoadingScreenPacketSenderComponent(::LoadingScreenPacketSenderComponent const&);
 
     MCAPI ~LoadingScreenPacketSenderComponent();
     // NOLINTEND
@@ -25,7 +25,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI void* $ctor(::LoadingScreenPacketSenderComponent const&);
     // NOLINTEND
 
 public:

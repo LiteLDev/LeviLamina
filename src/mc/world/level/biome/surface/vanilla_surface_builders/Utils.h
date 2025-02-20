@@ -12,6 +12,7 @@ class Block;
 class BlockPos;
 class BlockVolume;
 class HeightmapWrapper;
+class Pos;
 class Random;
 struct SurfaceMaterialAdjustmentEvaluated;
 struct SurfaceMaterialAttributes;
@@ -41,16 +42,14 @@ MCAPI void buildSurface(::ISurfaceBuilder::BuildParameters const& buildParameter
 
 MCAPI void ensureValidSurfaceMaterials(::SurfaceMaterialAttributes& surfaceMaterials);
 
+MCAPI short findGroundHeight(::BlockVolume const& blocks, ::Pos p, ::HeightmapWrapper const& preWorldGenHeightmap);
+
 MCAPI bool isSteepTerrain(
     ::BlockVolume const&                       blocks,
     ::BlockPos const&                          pos,
     ::MountainAttributes::SteepMaterial const& steepMaterial,
     ::HeightmapWrapper const&                  preWorldGenHeightmap
 );
-
-MCAPI void placeBedrockCeiling(::Random& random, ::BlockVolume& blocks, ::BlockPos const& pos);
-
-MCAPI void placeBedrockFloor(::Random& random, ::BlockVolume& blocks, ::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace VanillaSurfaceBuilders::Utils

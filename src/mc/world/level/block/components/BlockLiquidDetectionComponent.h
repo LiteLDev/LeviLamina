@@ -2,11 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-class BlockPos;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/block/LiquidType.h"
 
 struct BlockLiquidDetectionComponent {
 public:
@@ -22,21 +19,8 @@ public:
     BlockLiquidDetectionComponent();
 
 public:
-    // static functions
+    // static variables
     // NOLINTBEGIN
-    MCAPI static bool canBeDestroyedByLiquidSpread(::Block const& block);
-
-    MCFOLD static bool canContainLiquid(::Block const& block);
-
-    MCAPI static bool isLiquidBlocking(::Block const& block);
-
-    MCAPI static bool liquidCanFlowIntoFromDirection(
-        ::Block const&                                            block,
-        uchar                                                     flowIntoFacing,
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos
-    );
-
-    MCAPI static bool liquidSpreadCausesSpawn(::Block const& block);
+    MCAPI static ::std::set<::LiquidType> const& supportedLiquids();
     // NOLINTEND
 };

@@ -125,7 +125,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameMode();
+    virtual ~GameMode() = default;
 
     // vIndex: 1
     virtual bool startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
@@ -201,9 +201,15 @@ public:
 
     MCAPI bool _attack(::Actor& entity, bool playPredictiveSound);
 
+    MCAPI ::BlockPos _calculatePlacePos(::ItemStack& heldStack, ::BlockPos const& pos, uchar& face) const;
+
+    MCAPI bool _canDestroy(::BlockPos const& pos, uchar face);
+
     MCAPI bool _canUseBlock(::Block const& block);
 
     MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
+
+    MCAPI void _destroyBlockInternal(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock) const;
 
     MCAPI bool _enableBlockBreakDelay() const;
 
@@ -217,6 +223,13 @@ public:
         bool               isFirstEvent
     );
 
+    MCAPI void _sendPlayerInteractWithEntityAfterEvent(
+        ::ItemStack const& beforeItem,
+        ::ItemStack const& afterItem,
+        ::Player&          player,
+        ::Actor const&     entity
+    );
+
     MCAPI ::std::optional<::ItemStack>
     _sendTryDestroyBlockEvent(::Block const& block, ::BlockPos const& pos, ::ItemStack itemBeforeEvent) const;
 
@@ -224,61 +237,19 @@ public:
     _sendUseItemOnEvents(::ItemStack& item, ::BlockPos const& at, uchar face, ::Vec3 const& hit, bool isFirstEvent)
         const;
 
-    MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
-
-    MCAPI bool _tickContinueDestroyBlock(
-        ::BlockPos const&              hitPos,
-        ::Vec3 const&                  playerPos,
-        uchar                          hitFace,
-        bool&                          hasDestroyedBlock,
-        ::std::function<void()> const& crackBlock
-    );
-
     MCAPI bool baseUseItem(::ItemStack& item);
 
     MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
 
-    MCAPI ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
-        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)> callback
-    );
-
-    MCFOLD uchar getDestroyBlockFace() const;
-
-    MCFOLD ::BlockPos const& getDestroyBlockPos() const;
-
     MCAPI float getDestroyRate(::Block const& block);
 
     MCAPI float getMaxPickRange();
-
-    MCAPI float getMaxPickRangeSqr();
-
-    MCFOLD bool isLastBuildBlockInteractive() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static float const& MIN_MOVING_NON_CREATIVE_BUILD_DELAY();
-
-    MCAPI static float const& PICKRANGE_CREATIVE_MAXIMUM();
-
-    MCAPI static float const& PICKRANGE_CREATIVE_MAXIMUM_SQR();
-
-    MCAPI static float const& PICKRANGE_GAMEPAD();
-
-    MCAPI static float const& PICKRANGE_MOUSE();
-
-    MCAPI static float const& PICKRANGE_SURVIVAL_MAXIMUM();
-
-    MCAPI static float const& PICKRANGE_SURVIVAL_MAXIMUM_SQR();
-
-    MCAPI static float const& PICKRANGE_TOUCH_CREATIVE();
-
-    MCAPI static float const& PICKRANGE_TOUCH_SURVIVAL();
-
-    MCAPI static float const& PICKRANGE_VR_CREATIVE();
-
-    MCAPI static float const& PICKRANGE_VR_SURVIVAL();
     // NOLINTEND
 
 public:
@@ -294,7 +265,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -29,6 +29,7 @@ public:
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING&
     operator=(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
     ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const&);
+    ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 
 public:
     // virtual functions
@@ -43,25 +44,13 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
-    virtual ~ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    virtual ~ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

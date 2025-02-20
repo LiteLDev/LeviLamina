@@ -45,6 +45,8 @@ fillNegativeSubChunksWithGenerationOrAir(::LevelChunk& lc, ::LevelChunk& generat
 
 MCAPI void fixStemBlockStates(::BlockSource& region, ::BlockPos updatePos, ::Block const& block);
 
+MCAPI void fixUnderwaterLavaLakes(::LevelChunk& lc, ::BlockSource&);
+
 MCAPI void fixUselessDynamicWater(::LevelChunk& lc, ::BlockSource& region);
 
 MCAPI void fixWallBlockStates(::BlockSource& region, ::BlockPos updatePos);
@@ -61,9 +63,9 @@ MCAPI void replaceSkullsWithFlattenedVersions(::LevelChunk& levelChunk);
 
 MCAPI bool upgradeArmorStandComponents(::CompoundTag& tag);
 
-MCAPI void upgradeLevelChunk(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
-
 MCAPI void upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers, bool isTemplateWorld);
+
+MCAPI void upgradeWorldHeight(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::BlockSource& region);
 // NOLINTEND
 
 // static variables

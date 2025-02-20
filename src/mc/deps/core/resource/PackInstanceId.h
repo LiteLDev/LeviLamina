@@ -11,8 +11,8 @@ struct PackInstanceId {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 136, ::PackIdVersion> mPackId;
-    ::ll::TypedStorage<8, 32, ::std::string>    mSubpackName;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion> mPackId;
+    ::ll::TypedStorage<8, 32, ::std::string>   mSubpackName;
     // NOLINTEND
 
 public:
@@ -25,10 +25,6 @@ public:
     // NOLINTBEGIN
     MCAPI PackInstanceId(::PackInstanceId&&);
 
-    MCAPI PackInstanceId(::PackIdVersion const& packId, ::std::string const& subpackName);
-
-    MCAPI bool operator==(::PackInstanceId const& rhs) const;
-
     MCAPI ~PackInstanceId();
     // NOLINTEND
 
@@ -36,8 +32,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::PackInstanceId&&);
-
-    MCAPI void* $ctor(::PackIdVersion const& packId, ::std::string const& subpackName);
     // NOLINTEND
 
 public:

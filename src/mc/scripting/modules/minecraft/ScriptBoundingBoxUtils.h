@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,11 +19,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBoundingBoxUtils> bind();
 
-    MCAPI static ::BoundingBox createValid(::Vec3 const& min, ::Vec3 max);
-
     MCAPI static ::BoundingBox dilate(::BoundingBox const& box, ::Vec3 const& size);
-
-    MCAPI static ::BoundingBox expand(::BoundingBox const& box, ::BoundingBox const& other);
 
     MCAPI static ::Vec3 getCenter(::BoundingBox const& box);
 

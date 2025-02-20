@@ -12,7 +12,6 @@
 // clang-format off
 class ActorRuntimeID;
 class BinaryStream;
-class BlockPos;
 class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -46,54 +45,6 @@ public:
 
     // vIndex: 0
     virtual ~PlayerActionPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayerActionPacket();
-
-    MCAPI PlayerActionPacket(::PlayerActionType action, ::ActorRuntimeID runtimeId);
-
-    MCAPI PlayerActionPacket(::PlayerActionType action, ::BlockPos const& pos, ::ActorRuntimeID runtimeId);
-
-    MCAPI PlayerActionPacket(::PlayerActionType action, ::BlockPos const& pos, int data, ::ActorRuntimeID runtimeId);
-
-    MCAPI PlayerActionPacket(::PlayerActionType action, ::BlockPos const& pos, uchar face, ::ActorRuntimeID runtimeId);
-
-    MCAPI PlayerActionPacket(
-        ::PlayerActionType action,
-        ::BlockPos const&  pos,
-        ::BlockPos const&  resultPos,
-        int                data,
-        ::ActorRuntimeID   runtimeId
-    );
-
-    MCFOLD bool getIsFromServerPlayerMovementSystem() const;
-
-    MCFOLD void setFromServerPlayerMovementSystem(bool value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::PlayerActionType action, ::ActorRuntimeID runtimeId);
-
-    MCAPI void* $ctor(::PlayerActionType action, ::BlockPos const& pos, ::ActorRuntimeID runtimeId);
-
-    MCAPI void* $ctor(::PlayerActionType action, ::BlockPos const& pos, int data, ::ActorRuntimeID runtimeId);
-
-    MCAPI void* $ctor(::PlayerActionType action, ::BlockPos const& pos, uchar face, ::ActorRuntimeID runtimeId);
-
-    MCAPI void* $ctor(
-        ::PlayerActionType action,
-        ::BlockPos const&  pos,
-        ::BlockPos const&  resultPos,
-        int                data,
-        ::ActorRuntimeID   runtimeId
-    );
     // NOLINTEND
 
 public:

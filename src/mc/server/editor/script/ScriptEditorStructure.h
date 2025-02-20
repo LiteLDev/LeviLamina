@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 
@@ -18,13 +18,15 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptEditorStructure& operator=(ScriptEditorStructure const&);
     ScriptEditorStructure(ScriptEditorStructure const&);
     ScriptEditorStructure();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::Editor::ScriptModule::ScriptEditorStructure&
+    operator=(::Editor::ScriptModule::ScriptEditorStructure const&);
+
     MCAPI ::Editor::ScriptModule::ScriptEditorStructure& operator=(::Editor::ScriptModule::ScriptEditorStructure&&);
 
     MCAPI ~ScriptEditorStructure();

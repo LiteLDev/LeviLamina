@@ -9,7 +9,6 @@
 // clang-format off
 class Container;
 class ItemStack;
-class Player;
 struct FullContainerName;
 // clang-format on
 
@@ -57,18 +56,6 @@ public:
 
     // vIndex: 5
     virtual ::Container* _getContainer() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI InventoryMenu(::Player& player, ::Container* container);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::Container* container);
     // NOLINTEND
 
 public:

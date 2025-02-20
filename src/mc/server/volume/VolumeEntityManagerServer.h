@@ -59,12 +59,6 @@ public:
 
     MCAPI ::std::vector<::WeakRef<::EntityContext>>
     getAllVolumesOverlappingChunkPosition(::ChunkPos const& pos, ::DimensionType chunkDimension) const;
-
-    MCAPI void sendAllVolumesToClient(
-        ::UserEntityIdentifierComponent const& userIdentifier,
-        ::NetworkIdentifier const&             source,
-        ::PacketSender&                        packetSender
-    ) const;
     // NOLINTEND
 
 public:

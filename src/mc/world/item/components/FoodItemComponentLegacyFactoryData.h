@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -28,7 +27,6 @@ public:
     // prevent constructor by default
     FoodItemComponentLegacyFactoryData& operator=(FoodItemComponentLegacyFactoryData const&);
     FoodItemComponentLegacyFactoryData(FoodItemComponentLegacyFactoryData const&);
-    FoodItemComponentLegacyFactoryData();
 
 public:
     // virtual functions
@@ -38,15 +36,25 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI FoodItemComponentLegacyFactoryData();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
+    // NOLINTEND
 
-    MCAPI static ::HashedString const& getIdentifier();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

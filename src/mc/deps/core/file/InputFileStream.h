@@ -23,12 +23,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI InputFileStream();
+
     MCAPI InputFileStream(::Core::Path const& fileName, int openMode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor();
+
     MCAPI void* $ctor(::Core::Path const& fileName, int openMode);
     // NOLINTEND
 

@@ -11,40 +11,33 @@ public:
     using ID = ushort;
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::DataItemType const> mType;
-    ::ll::TypedStorage<2, 2, ushort const>         mId;
-    // NOLINTEND
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DataItem();
+    virtual ~DataItem() = default;
 
     // vIndex: 1
-    virtual bool isDataEqual(::DataItem const& rhs) const;
+    virtual ushort getId() const = 0;
 
     // vIndex: 2
+    virtual ::DataItemType getType() const = 0;
+
+    // vIndex: 3
+    virtual bool isDataEqual(::DataItem const&) const = 0;
+
+    // vIndex: 4
     virtual ::std::unique_ptr<::DataItem> clone() const = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isDataEqual(::DataItem const& rhs) const;
-    // NOLINTEND
 
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

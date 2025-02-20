@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+namespace Util { class XXHash; }
 namespace br::worldgen::processors::BlockEntity { struct Modifier; }
 namespace br::worldgen::processors::BlockRules { struct Test; }
 namespace br::worldgen::processors::PosRules { struct Test; }
@@ -34,6 +35,8 @@ public:
     MCAPI RuleSet(::br::worldgen::processors::RuleSet const&);
 
     MCAPI RuleSet(::br::worldgen::processors::RuleSet&&);
+
+    MCAPI void appendMetadataKey(::Util::XXHash& hash) const;
 
     MCAPI ::br::worldgen::processors::RuleSet& operator=(::br::worldgen::processors::RuleSet&&);
 

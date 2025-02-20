@@ -49,7 +49,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~HorseEquipContainerValidation() /*override*/ = default;
+    virtual ~HorseEquipContainerValidation() /*override*/;
     // NOLINTEND
 
 public:
@@ -67,7 +67,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

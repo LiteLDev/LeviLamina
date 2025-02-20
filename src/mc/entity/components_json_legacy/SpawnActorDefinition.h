@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::SpawnActorComponent& component) const;
+    MCAPI void initialize(::EntityContext& component, ::SpawnActorComponent&) const;
     // NOLINTEND
 
 public:

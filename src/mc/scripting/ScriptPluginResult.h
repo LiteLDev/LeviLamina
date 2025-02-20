@@ -126,7 +126,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 136> mUnk1834eb;
+    ::ll::UntypedStorage<8, 48>  mUnk1834eb;
     ::ll::UntypedStorage<8, 104> mUnk14873c;
     ::ll::UntypedStorage<8, 24>  mUnkf68085;
     ::ll::UntypedStorage<8, 24>  mUnkd65271;
@@ -149,19 +149,13 @@ public:
 
     MCAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
-    MCFOLD ::std::vector<::ScriptPluginResult::Error> const& getErrors() const;
-
-    MCFOLD ::Scripting::ModuleDescriptor const& getModuleDescriptor() const;
-
-    MCAPI ::std::chrono::microseconds getRunDuration() const;
-
-    MCFOLD ::std::vector<::ScriptPluginResult::Warning> const& getWarnings() const;
-
     MCAPI void logError(::std::string const& error);
 
     MCAPI void logErrors(::std::vector<::std::string> const& errors);
 
     MCAPI void logInfo(::std::string const& info);
+
+    MCAPI void logWarning(::std::string const& warning);
 
     MCAPI ~ScriptPluginResult();
     // NOLINTEND

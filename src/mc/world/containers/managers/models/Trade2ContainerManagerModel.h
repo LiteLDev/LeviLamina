@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ContainerScreenContext;
 class ItemStack;
 class Player;
@@ -66,6 +67,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Trade2ContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
+
+    MCFOLD ::Actor* getEntity() const;
     // NOLINTEND
 
 public:

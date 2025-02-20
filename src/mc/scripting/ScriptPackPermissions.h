@@ -21,12 +21,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isModuleAllowed(::std::string const& moduleName) const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& sWildCardModuleName();

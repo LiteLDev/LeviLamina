@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class BlockPalette;
 class ItemInstance;
 class ItemStackDescriptor;
@@ -27,7 +26,6 @@ public:
     // prevent constructor by default
     NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&);
     NetworkItemInstanceDescriptor(NetworkItemInstanceDescriptor const&);
-    NetworkItemInstanceDescriptor();
 
 public:
     // virtual functions
@@ -39,6 +37,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetworkItemInstanceDescriptor();
+
+    MCAPI NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
+
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemStackDescriptor const& descriptor);
 
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
@@ -46,13 +48,15 @@ public:
     MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
-    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::NetworkItemInstanceDescriptor&&);
+
     MCAPI void* $ctor(::ItemStackDescriptor const& descriptor);
 
     MCAPI void* $ctor(::ItemInstance const& item);

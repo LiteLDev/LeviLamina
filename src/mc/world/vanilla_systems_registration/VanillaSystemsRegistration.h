@@ -7,14 +7,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
 class EntitySystems;
+class Experiments;
 class ILevel;
+struct PlayerMovementSettings;
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
 
 namespace VanillaSystemsRegistration {
 // functions
 // NOLINTBEGIN
+MCAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
+    bool                            movementSettings,
+    bool                            baseGameVersion,
+    ::PlayerMovementSettings const& experiments,
+    ::BaseGameVersion const&        isClientSide,
+    ::Experiments const&            connectedToThirdPartyServer
+);
+
 MCAPI void registerActorAiStepSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
@@ -60,7 +71,17 @@ MCAPI void registerEnvironmentSensingSystems(
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
+MCAPI void registerInputIndependentTickSystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
+
 MCAPI void registerMinecartMovementSystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
+
+MCAPI void registerMoveIntentSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
@@ -71,6 +92,11 @@ MCAPI void registerMovementInputSystems(
 );
 
 MCAPI void registerMovementTickEligibilitySystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
+
+MCAPI void registerPostMoveTravelVelocitySystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
@@ -93,6 +119,11 @@ MCAPI void registerResetMovementValuesSystems(
 MCAPI void registerSharedVanillaPlayerInteractionSystems(::EntitySystems& systemRegistry);
 
 MCAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);
+
+MCAPI void registerTravelEligibilitySystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
 
 MCAPI void registerVanillaServerRuntimeInitializers(
     ::EntitySystems&                                         systems,

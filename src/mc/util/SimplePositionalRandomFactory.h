@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class IRandom;
-class SimpleRandom;
 // clang-format on
 
 class SimplePositionalRandomFactory : public ::IPositionalRandomFactory {
@@ -36,20 +35,6 @@ public:
 
     // vIndex: 0
     virtual ~SimplePositionalRandomFactory() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SimplePositionalRandomFactory(int64 seed);
-
-    MCAPI ::SimpleRandom forBlockPosImpl(::BlockPos const& blockPos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int64 seed);
     // NOLINTEND
 
 public:

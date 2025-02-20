@@ -21,9 +21,9 @@ MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDr
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 customWhenSilkTouchOrToolOtherwise(
-    ::HashedString const&                                                                         toolItemId,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy
+    ::HashedString const&                                                                         dropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
 );
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
@@ -33,23 +33,21 @@ customWhenSilkTouchOtherwise(
 );
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> customWhenTool(
-    ::HashedString const&                                                                         toolItemId,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
+    ::HashedString const&                                                                         dropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
 );
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 customWhenToolOtherwise(
-    ::HashedString const&                                                                         toolItemId,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy
+    ::HashedString const&                                                                         dropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
 );
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> item(
     ::HashedString const&                                                             itemId,
     ::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider
 );
-
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> nothing();
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 self(::std::function<int(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> countProvider);
@@ -60,12 +58,15 @@ MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDr
 );
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
-selfWhenSilkTouchOrTool(::HashedString const& toolItemId, ::std::vector<::BlockState const*> statesToKeep);
+selfWhenSilkTouch(::std::vector<::BlockState const*> statesToKeep);
+
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+selfWhenSilkTouchOrTool(::HashedString const& statesToKeep, ::std::vector<::BlockState const*> toolItemId);
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 selfWhenSilkTouchOrToolOtherwise(
-    ::HashedString const&                                                                         toolItemId,
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> otherDropStrategy
+    ::HashedString const&                                                                         otherDropStrategy,
+    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> toolItemId
 );
 
 MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>

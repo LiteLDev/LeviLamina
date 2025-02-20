@@ -7,11 +7,6 @@
 #include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 namespace Core {
 
 class FilePathManager : public ::Bedrock::EnableNonOwnerReferences {
@@ -44,12 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilePathManager(::Core::Path const& root, bool isDedicatedServer);
-
-    MCAPI ::Core::PathBuffer<::std::string> getLevelArchivePath() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> getResourcePacksPath() const;
-
     MCAPI ::Core::PathBuffer<::std::string> getUserDataPath() const;
 
     MCAPI ::Core::PathBuffer<::std::string> getWorldsPath() const;
@@ -69,12 +58,6 @@ public:
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& RESOURCE_PACKS_DIR();
 
     MCAPI static ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& WORLDS_DIR();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& root, bool isDedicatedServer);
     // NOLINTEND
 
 public:

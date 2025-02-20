@@ -59,22 +59,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcRequestPacket();
-
     MCAPI NpcRequestPacket(
         ::ActorRuntimeID                id,
         ::NpcRequestPacket::RequestType type,
         ::std::string                   actions,
         uchar                           actionIndex
     );
-
-    MCFOLD ::std::string const& getInteractText() const;
-
-    MCFOLD ::std::string const& getNpcName() const;
-
-    MCFOLD ::std::string const& getSceneName() const;
-
-    MCFOLD int getSkin() const;
     // NOLINTEND
 
 public:
@@ -83,15 +73,11 @@ public:
     MCAPI static ::NpcRequestPacket requestSetInteractText(::ActorRuntimeID id, ::std::string text);
 
     MCAPI static ::NpcRequestPacket requestSetName(::ActorRuntimeID id, ::std::string name);
-
-    MCAPI static ::NpcRequestPacket requestSetSkin(::ActorRuntimeID id, int skin);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void*
     $ctor(::ActorRuntimeID id, ::NpcRequestPacket::RequestType type, ::std::string actions, uchar actionIndex);
     // NOLINTEND

@@ -16,14 +16,12 @@ class CompoundTag;
 class Dimension;
 class IActorManagerConnector;
 class ILevelStorageManagerConnector;
-class ITickingArea;
 class Level;
 class LevelStorage;
 class TickingAreaList;
 struct ActorUniqueID;
 struct Bounds;
 struct PendingArea;
-struct Tick;
 struct TickingAreaDescription;
 // clang-format on
 
@@ -97,17 +95,6 @@ public:
     MCAPI ::AddTickingAreaStatus addArea(
         ::DimensionType                       dimensionId,
         ::std::string const&                  name,
-        ::BlockPos const&                     center,
-        int                                   radius,
-        ::TickingAreasManager::AreaLimitCheck limitCheck,
-        bool                                  isPersistent,
-        ::TickingAreaLoadMode                 loadMode,
-        ::LevelStorage&                       levelStorage
-    );
-
-    MCAPI ::AddTickingAreaStatus addArea(
-        ::DimensionType                       dimensionId,
-        ::std::string const&                  name,
         ::BlockPos const&                     min,
         ::BlockPos const&                     max,
         ::TickingAreasManager::AreaLimitCheck limitCheck,
@@ -127,32 +114,11 @@ public:
         ::LevelStorage&        levelStorage
     );
 
-    MCAPI void addTickingAreaListForDimension(
-        ::DimensionType                             dimensionId,
-        ::std::shared_ptr<::TickingAreaList> const& tickingAreaList
-    );
-
     MCAPI uint countActiveStandaloneTickingAreas() const;
 
     MCAPI uint countStandaloneTickingAreas() const;
 
-    MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>>
-    findStandaloneAreasNamedInDimension(::DimensionType dimensionType, ::std::string const& name) const;
-
-    MCAPI ::std::vector<::TickingAreaDescription> getPendingStandaloneAreaDescriptions(::DimensionType dimensionId
-    ) const;
-
-    MCAPI ::std::vector<::TickingAreaDescription>
-    getPendingStandaloneAreaDescriptionsByName(::DimensionType dimensionId, ::std::string const& name) const;
-
-    MCAPI ::std::vector<::TickingAreaDescription>
-    getPendingStandaloneAreaDescriptionsByPosition(::DimensionType dimensionId, ::BlockPos const& position) const;
-
-    MCFOLD bool isPreloadDone() const;
-
     MCAPI void loadArea(::std::string const& key, ::CompoundTag const* tag);
-
-    MCAPI void loadAreasFromSaveData(::LevelStorage& levelStorage);
 
     MCAPI void onTickingEntityAdded(::DimensionType dimensionId, ::Actor& actor, ::LevelStorage& levelStorage);
 
@@ -179,8 +145,6 @@ public:
         ::TickingAreaLoadMode loadMode,
         ::LevelStorage&       levelStorage
     );
-
-    MCAPI void tick(::Tick const& currentTick);
 
     MCAPI void update(::Level& level, ::LevelStorage& levelStorage);
 

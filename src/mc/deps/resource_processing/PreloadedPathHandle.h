@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/platform/brstd/function_ref.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 namespace Bedrock::Resources {
 
 class PreloadedPathHandle {
@@ -24,23 +16,12 @@ public:
     // prevent constructor by default
     PreloadedPathHandle& operator=(PreloadedPathHandle const&);
     PreloadedPathHandle(PreloadedPathHandle const&);
+    PreloadedPathHandle();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PreloadedPathHandle();
-
-    MCAPI void forEach(::brstd::function_ref<void(::Core::Path const&)> callback) const;
-
-    MCFOLD explicit operator bool() const;
-
     MCAPI ~PreloadedPathHandle();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -16,7 +16,6 @@ class EntityContext;
 class EntityRegistry;
 class GameplayUserManager;
 class ILevelCrashDumpManager;
-class IPlayerDimensionTransferConnector;
 class IPlayerDimensionTransferer;
 class PacketSender;
 class Player;
@@ -76,15 +75,9 @@ public:
         ::Dimension&              toDimension
     );
 
-    MCAPI ::IPlayerDimensionTransferConnector& getPlayerDimensionTransferConnector();
-
     MCAPI void handleChangeDimensionRequests();
 
-    MCAPI void loadAllOwnedLimboActors();
-
     MCAPI void requestPlayerChangeDimension(::Player const& player, ::ChangeDimensionRequest&& changeRequest);
-
-    MCAPI void setLevelFinishedInitializing();
 
     MCAPI void setPacketSender(::PacketSender& packetSender);
 

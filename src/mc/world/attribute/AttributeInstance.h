@@ -9,9 +9,8 @@ class AttributeBuff;
 class AttributeInstanceDelegate;
 class AttributeInstanceHandle;
 class AttributeModifier;
-class BaseAttributeMap;
 class TemporalAttributeBuff;
-namespace mce { class UUID; }
+struct AttributeModificationContext;
 // clang-format on
 
 class AttributeInstance {
@@ -22,7 +21,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BaseAttributeMap*>                             mAttributeMap;
     ::ll::TypedStorage<8, 8, ::Attribute const*>                              mAttribute;
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>>             mModifierList;
     ::ll::TypedStorage<8, 24, ::std::vector<::TemporalAttributeBuff>>         mTemporalBuffs;
@@ -57,7 +55,7 @@ public:
     virtual ~AttributeInstance();
 
     // vIndex: 1
-    virtual void tick();
+    virtual void tick(::AttributeModificationContext context);
     // NOLINTEND
 
 public:
@@ -69,79 +67,25 @@ public:
 
     MCAPI float _sanitizeValue(float value);
 
-    MCAPI void addBuff(::AttributeBuff const& buff);
+    MCAPI void addBuff(::AttributeBuff const& buff, ::AttributeModificationContext context);
 
-    MCAPI void addModifier(::std::shared_ptr<::AttributeModifier> modifier);
-
-    MCAPI void addModifier(::AttributeModifier const& modifier);
-
-    MCFOLD ::Attribute const* getAttribute() const;
-
-    MCAPI float getCurrentValue() const;
-
-    MCAPI float getDefaultValue(int operand) const;
-
-    MCAPI ::AttributeInstanceHandle getHandle() const;
-
-    MCAPI float getMaxValue() const;
-
-    MCAPI float getMinValue() const;
-
-    MCAPI ::AttributeModifier getModifier(::mce::UUID const& id) const;
+    MCAPI void addModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 
     MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
-
-    MCAPI bool hasModifier(::mce::UUID const& id) const;
 
     MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
 
     MCAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
-    MCAPI bool hasModifiers() const;
-
-    MCAPI bool hasTemporalBuffs() const;
-
-    MCAPI void inheritFrom(::AttributeInstance const& other, ::BaseAttributeMap* attributeMap);
-
-    MCFOLD bool isValid() const;
-
-    MCAPI void recalculateModifiers();
-
-    MCAPI void registerListener(::AttributeInstance const& listener);
-
-    MCAPI void removeBuff(::std::shared_ptr<::AttributeBuff> buff);
-
     MCAPI void removeBuff(::AttributeBuff const& buff);
 
-    MCAPI void removeBuffs();
+    MCAPI void removeModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 
-    MCAPI bool removeModifier(::mce::UUID const& id);
+    MCAPI void removeModifiers(::AttributeModificationContext context);
 
-    MCAPI void removeModifier(::std::shared_ptr<::AttributeModifier> modifier);
+    MCAPI void setRange(float min, float defaultValue, float max, ::AttributeModificationContext context);
 
-    MCAPI void removeModifier(::AttributeModifier const& modifier);
-
-    MCAPI void resetToDefaultValue();
-
-    MCAPI void resetToMaxValue();
-
-    MCAPI void resetToMinValue();
-
-    MCAPI void serializationSetValue(float currentValue, int operand, float maxValue);
-
-    MCAPI void setCurrentValue(float value);
-
-    MCAPI void setDefaultValue(float defaultValue, int operand);
-
-    MCAPI void setDefaultValueOnly(float newDefaultValue);
-
-    MCAPI void setDelegate(::std::shared_ptr<::AttributeInstanceDelegate> delegate);
-
-    MCAPI void setMaxValue(float max);
-
-    MCAPI void setRange(float min, float defaultValue, float max);
-
-    MCAPI void updateModifier(::AttributeModifier const& takeOver);
+    MCAPI void updateModifier(::AttributeModifier const& takeOver, ::AttributeModificationContext context);
     // NOLINTEND
 
 public:
@@ -159,7 +103,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCAPI void $tick(::AttributeModificationContext context);
     // NOLINTEND
 
 public:

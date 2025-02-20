@@ -7,11 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class EntityId;
 class EntityRegistry;
-class OwnerStorageEntity;
-class StackResultStorageEntity;
 // clang-format on
 
 class WeakStorageEntity {
@@ -20,35 +17,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>> mRegistry;
     ::ll::TypedStorage<4, 4, ::EntityId>                   mEntity;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WeakStorageEntity();
-
-    MCAPI explicit WeakStorageEntity(::EntityContext const& stackRef);
-
-    MCAPI explicit WeakStorageEntity(::OwnerStorageEntity const& stackResultStorage);
-
-    MCAPI explicit WeakStorageEntity(::StackResultStorageEntity const&);
-
-    MCAPI bool _isSet() const;
-
-    MCAPI void _reset();
-
-    MCAPI bool operator==(::WeakStorageEntity const& w) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::EntityContext const& stackRef);
-
-    MCFOLD void* $ctor(::OwnerStorageEntity const& stackResultStorage);
-
-    MCAPI void* $ctor(::StackResultStorageEntity const&);
     // NOLINTEND
 };

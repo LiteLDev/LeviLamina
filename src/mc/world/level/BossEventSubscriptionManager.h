@@ -43,13 +43,13 @@ public:
     virtual bool areBossEventSubscribersReady() const = 0;
 
     // vIndex: 0
-    virtual ~BossEventSubscriptionManager() /*override*/;
+    virtual ~BossEventSubscriptionManager() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

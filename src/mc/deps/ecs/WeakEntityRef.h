@@ -27,15 +27,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit WeakEntityRef(::WeakRef<::EntityContext> entityRef);
 
-    MCAPI explicit operator ::WeakRef<::EntityContext>() const;
-
-    MCAPI bool operator!=(::WeakEntityRef entityRef) const;
-
     MCFOLD ::WeakEntityRef& operator=(::WeakEntityRef&&);
-
-    MCFOLD bool operator==(::WeakEntityRef entityRef) const;
-
-    MCAPI bool operator==(::WeakRef<::EntityContext>) const;
 
     MCAPI ~WeakEntityRef();
     // NOLINTEND

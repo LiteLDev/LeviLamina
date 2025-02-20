@@ -17,6 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkada739;
+    ::ll::UntypedStorage<8, 16> mUnk4bb590;
     // NOLINTEND
 
 public:
@@ -36,18 +37,6 @@ public:
 
     // vIndex: 0
     virtual ~BinaryInput() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BinaryInput(::std::string data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string data);
     // NOLINTEND
 
 public:

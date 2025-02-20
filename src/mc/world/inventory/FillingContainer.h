@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/Container.h"
-#include "mc/world/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,6 +24,7 @@ public:
 public:
     // prevent constructor by default
     FillingContainer& operator=(FillingContainer const&);
+    FillingContainer(FillingContainer const&);
     FillingContainer();
 
 public:
@@ -61,7 +61,7 @@ public:
     virtual void loadFromTag(::ListTag const& inventoryList);
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
@@ -92,13 +92,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FillingContainer(::FillingContainer const&);
-
-    MCAPI FillingContainer(::Player* player, int numTotalSlots, ::ContainerType containerType);
-
     MCAPI int _addResource(::ItemStack const& item);
-
-    MCAPI void _doDrop(::ItemStack& item, bool randomly);
 
     MCAPI int _getFreeSlot() const;
 
@@ -108,21 +102,9 @@ public:
 
     MCAPI void _release(int slot);
 
-    MCFOLD int getHotbarSize() const;
-
     MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
 
-    MCAPI bool hasResource(int type);
-
     MCAPI bool removeResource(int type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FillingContainer const&);
-
-    MCAPI void* $ctor(::Player* player, int numTotalSlots, ::ContainerType containerType);
     // NOLINTEND
 
 public:
@@ -152,7 +134,7 @@ public:
 
     MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 

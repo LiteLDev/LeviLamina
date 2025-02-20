@@ -43,30 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UpdateSoftEnumPacket();
-
-    MCAPI UpdateSoftEnumPacket(
-        ::SoftEnumUpdateType                type,
-        ::std::string const&                enumName,
-        ::std::vector<::std::string> const& values
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void*
-    $ctor(::SoftEnumUpdateType type, ::std::string const& enumName, ::std::vector<::std::string> const& values);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

@@ -11,7 +11,7 @@
 // clang-format off
 namespace Core { class FileOpenMode; }
 namespace Core { class FileSystem_windows; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -87,12 +87,10 @@ public:
     MCAPI static ::Core::Result _open(
         ::Core::FileSystem_windows*          pTransaction,
         ::std::unique_ptr<::Core::FileImpl>& uptFile,
-        ::Core::Path const&                  filePath,
+        ::Core::PathView                     filePath,
         ::Core::FileOpenMode                 fileOpenMode,
         ::Core::FileBufferingMode            bufferingMode
     );
-
-    MCAPI static void initialize();
     // NOLINTEND
 
 public:

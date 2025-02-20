@@ -9,9 +9,9 @@ struct MovementAbilitiesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk72f491;
-    ::ll::UntypedStorage<4, 4> mUnk5df2d9;
-    ::ll::UntypedStorage<4, 4> mUnk1a7e02;
+    ::ll::UntypedStorage<4, 4> mUnk884a2f;
+    ::ll::UntypedStorage<4, 4> mUnke2ca47;
+    ::ll::UntypedStorage<4, 8> mUnk64940f;
     // NOLINTEND
 
 public:
@@ -23,12 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getBool(::MovementAbilities ability) const;
+    MCAPI float getFloat(::MovementAbilities ability) const;
 
-    MCFOLD float getFlySpeed() const;
-
-    MCAPI void setBool(::MovementAbilities ability, bool value);
-
-    MCAPI void setFlySpeed(float newSpeed);
+    MCAPI void setFloat(::MovementAbilities ability, float value);
     // NOLINTEND
 };

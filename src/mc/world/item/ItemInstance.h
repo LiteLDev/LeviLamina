@@ -15,6 +15,10 @@ class Item;
 
 class ItemInstance : public ::ItemStackBase {
 public:
+    // prevent constructor by default
+    ItemInstance& operator=(ItemInstance const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -46,10 +50,6 @@ public:
     MCAPI ItemInstance(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCAPI ItemInstance(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
-
-    MCAPI ::ItemInstance clone() const;
-
-    MCAPI ::ItemInstance& operator=(::ItemInstance const& rhs);
     // NOLINTEND
 
 public:

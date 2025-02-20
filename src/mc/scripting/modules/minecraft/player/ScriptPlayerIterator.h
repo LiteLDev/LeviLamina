@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptVectorIterator.h"
 
 // auto generated forward declare list
@@ -18,24 +18,20 @@ class ScriptPlayerIterator : public ::ScriptModuleMinecraft::ScriptVectorIterato
                                  ::ScriptModuleMinecraft::ScriptPlayerIterator,
                                  ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> {
 public:
+    // prevent constructor by default
+    ScriptPlayerIterator& operator=(ScriptPlayerIterator const&);
+    ScriptPlayerIterator(ScriptPlayerIterator const&);
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptPlayerIterator(
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers
-    );
+    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerIterator& operator=(::ScriptModuleMinecraft::ScriptPlayerIterator&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerIterator> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void*
-    $ctor(::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>&& scriptPlayers);
     // NOLINTEND
 };
 

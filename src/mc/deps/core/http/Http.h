@@ -11,8 +11,6 @@ namespace Bedrock::Http {
 // functions
 // NOLINTBEGIN
 MCAPI ::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance> initializeLibHttpClient();
-
-MCAPI bool isInitialized();
 // NOLINTEND
 
 } // namespace Bedrock::Http

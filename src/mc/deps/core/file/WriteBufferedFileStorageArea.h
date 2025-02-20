@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileSystemImpl; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -53,7 +53,7 @@ public:
     // vIndex: 5
     virtual ::Core::Result getUsedSize(uint64&) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual uint64 getTransactionWriteSizeLimit() const /*override*/;
 
     // vIndex: 9
@@ -63,24 +63,27 @@ public:
     virtual void informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack) /*override*/;
 
     // vIndex: 11
+    virtual uint64 estimatePendingWriteDiskSize(uint64 rawFileSize) const /*override*/;
+
+    // vIndex: 12
     virtual void informStorageAreaCopy(uint64 storageAreaSize) /*override*/;
 
-    // vIndex: 26
-    virtual ::Core::Result setSaveDataIcon(::Core::Path const& iconPath) /*override*/;
+    // vIndex: 27
+    virtual ::Core::Result setSaveDataIcon(::Core::PathView iconPath) /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual void flushImmediately() /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void enableFlushToDisk(bool) /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual bool checkCorrupt(bool handleCorruption) /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual void _onTeardown() /*override*/;
     // NOLINTEND
 

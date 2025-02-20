@@ -19,8 +19,6 @@ public:
 
     MCAPI ::npc::ActionValue& operator=(::std::string_view newName);
 
-    MCFOLD ::std::string_view rawValue() const;
-
     MCAPI ~ActionValue();
     // NOLINTEND
 

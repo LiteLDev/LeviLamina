@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class Actor;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -33,28 +32,6 @@ public:
         ::ll::TypedStorage<1, 1, bool const>    mGuarded;
         ::ll::TypedStorage<4, 24, ::AABB const> mTopBoundingBox;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI EndSpike(int centerX, int centerZ, int radius, int height, bool guarded);
-
-        MCFOLD int getCenterX() const;
-
-        MCFOLD int getCenterZ() const;
-
-        MCFOLD int getHeight() const;
-
-        MCAPI ::AABB getTopBoundingBox() const;
-
-        MCAPI bool startsInChunk(::BlockPos const& chunkOrigin) const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(int centerX, int centerZ, int radius, int height, bool guarded);
-        // NOLINTEND
     };
 
 public:
@@ -78,21 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SpikeFeature(::SpikeFeature::EndSpike const& spike);
-
-    MCAPI bool placeManually(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Actor* placer);
-
     MCAPI void postProcessMobsAt(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void setCrystalBeamTarget(::BlockPos const& target);
-
-    MCAPI void setCrystalInvulnerable(bool invulnerable);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SpikeFeature::EndSpike const& spike);
     // NOLINTEND
 
 public:

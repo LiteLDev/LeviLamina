@@ -17,7 +17,6 @@ class EntityContext;
 class GameRules;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
-class Level;
 class LevelEventListener;
 class LevelGameplayHandler;
 namespace Bedrock::PubSub { class Subscription; }
@@ -44,13 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelEventCoordinator();
-
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
 
     MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod initializationMethod);
-
-    MCFOLD ::LevelGameplayHandler& getLevelGameplayHandler();
 
     MCAPI void registerGameRules(::GameRules& gameRules);
 
@@ -64,15 +59,7 @@ public:
 
     MCAPI void sendEvent(::EventRef<::LevelGameplayEvent<void>> const& event);
 
-    MCAPI void sendLevelInitialized(::Level& level);
-
     MCAPI void sendLevelRemovedActor(::Actor& actor);
-
-    MCAPI void sendLevelTick(::Level& level);
-
-    MCAPI void sendLevelTickEnd(::Level& level);
-
-    MCAPI void sendLevelTickStart(::Level& level);
 
     MCAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,
@@ -81,12 +68,6 @@ public:
         bool                 isRaining,
         bool                 isLightning
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

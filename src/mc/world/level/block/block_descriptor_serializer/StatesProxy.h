@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_20_50/BlockDescriptor.h"
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fromMap(::std::map<::std::string, ::SharedTypes::v1_20_50::BlockDescriptor::Compound> const& proxyMap);
+    MCAPI void fromMap(::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> const& proxyMap);
 
     MCAPI ::BlockDescriptorSerializer::StatesProxy& operator=(::BlockDescriptorSerializer::StatesProxy&&);
 
@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::map<::std::string, ::SharedTypes::v1_20_50::BlockDescriptor::Compound>
+    MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound>
     toMap(::BlockDescriptorSerializer::StatesProxy const& instance);
     // NOLINTEND
 

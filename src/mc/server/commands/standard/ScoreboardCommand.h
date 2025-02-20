@@ -16,7 +16,6 @@ class CommandOutput;
 class CommandRegistry;
 class Objective;
 class Scoreboard;
-class ServerLevel;
 struct ActorUniqueID;
 struct ScoreboardId;
 // clang-format on
@@ -42,18 +41,6 @@ public:
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit InitProxy(::ServerLevel& level);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ServerLevel& level);
-        // NOLINTEND
     };
 
     struct SetScoreOutput {
@@ -128,7 +115,6 @@ public:
     // prevent constructor by default
     ScoreboardCommand& operator=(ScoreboardCommand const&);
     ScoreboardCommand(ScoreboardCommand const&);
-    ScoreboardCommand();
 
 public:
     // virtual functions
@@ -143,6 +129,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScoreboardCommand();
+
     MCAPI void _generateCumulativeOutput(
         ::ScoreboardCommand::SetScoreOutput const& cumulativeOutput,
         ::Objective const&                         objective,
@@ -209,7 +197,7 @@ public:
         ::CommandOutput&                                              output
     ) const;
 
-    MCAPI void objectives(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI void objectives(::Scoreboard& scoreboard, ::CommandOrigin const& output, ::CommandOutput& origin) const;
 
     MCAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
@@ -256,6 +244,12 @@ public:
     MCAPI static ::std::vector<::std::string> _getSortableDisplaySlots(::Scoreboard& scoreboard);
 
     MCAPI static void setup(::CommandRegistry& registry, ::ScoreboardCommand::InitProxy&& dependencies);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

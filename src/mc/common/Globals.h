@@ -5,26 +5,24 @@
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/core/file/file_system/FileType.h"
-#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/sem_ver/SemVersionBase.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/ecs/strict/EntityModifier.h"
 #include "mc/deps/json/ValueType.h"
-#include "mc/deps/shared_types/FilterSubject.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/deps/shared_types/UseAnimation.h"
+#include "mc/deps/shared_types/legacy/FilterSubject.h"
+#include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/external/lib_http_client/HCTraceLevel.h"
 #include "mc/external/lib_http_client/http_stl_allocator.h"
 #include "mc/external/libsrtp/srtp_err_status_t.h"
 #include "mc/network/packet/AgentActionType.h"
 #include "mc/options/DiscoveryEnvironment.h"
-#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/gltf/Accessor.h"
 #include "mc/util/gltf/Image.h"
 #include "mc/util/gltf/Material.h"
 #include "mc/world/actor/ActorCategory.h"
 #include "mc/world/actor/ActorFilterGroup.h"
-#include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/ActorTypeNamespaceRules.h"
 #include "mc/world/containers/ContainerEnumName.h"
@@ -48,6 +46,7 @@ class ActorOwnerComponent;
 class Biome;
 class BiomeArea;
 class Block;
+class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class BlockState;
@@ -68,16 +67,17 @@ class LeashFenceKnotActor;
 class LevelData;
 class ListTag;
 class RecipeIngredient;
-class SemVersion;
+class SemVersionConstant;
+class StrictEntityContext;
 class SubChunkBrightnessStorage;
 class ThirdPartyInfo;
 class WorkerPool;
 struct AccessorTypeEnumHasher;
+struct ActorDefinitionIdentifier;
 struct ActorFactoryData;
 struct ActorMapping;
 struct AssertHandlerContext;
 struct BlockLayer;
-struct BlockMaterialInstance;
 struct DynDnsResult;
 struct HCTraceImplArea;
 struct HC_CALL;
@@ -85,14 +85,18 @@ struct ImageMimeTypeEnumHasher;
 struct KeyOrNameResult;
 struct MCRESULT;
 struct MaterialAlphaModeEnumHasher;
+struct MobOnPlayerJumpRequestComponent;
 struct ScatterParamsMolangVariableIndices;
+struct SendPacketsComponent;
 struct TextProcessingEventOriginEnumHasher;
+struct ThreadConfiguration;
 struct TypeMapping;
 struct WorkerConfiguration;
 struct srtp_auth_t;
+namespace Bedrock { class StaticOptimizedString; }
 namespace Bedrock { class WorkerPoolHandleInterface; }
 namespace Core { class File; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace Json { class Value; }
 namespace RakNet { class RakPeerInterface; }
@@ -118,10 +122,6 @@ MCAPI ::HashedString const& EntityCanonicalName(::ActorType entityType);
 
 MCAPI ::ActorType EntityTypeFromString(::std::string const& str);
 
-MCAPI ::std::string EntityTypeIdWithoutCategories(::ActorType entityType, ::ActorTypeNamespaceRules namespaceRule);
-
-MCAPI ::std::string EntityTypeResolveAlias(::std::string const& fromString, ::ActorTypeNamespaceRules namespaceRule);
-
 MCAPI ::std::string EntityTypeToFormattedLocString(::ActorType entityType, ::ActorTypeNamespaceRules namespaceRule);
 
 MCAPI ::std::string EntityTypeToLocString(::ActorType entityType, ::ActorTypeNamespaceRules namespaceRule);
@@ -133,9 +133,6 @@ MCAPI void EntityTypeToStringAndNamespace(::ActorType entityType, ::std::string&
 MCAPI float FoodSaturationFromString(::std::string const& str);
 
 MCAPI ::std::unordered_map<::std::string, ::ActorFactoryData>& GetActorDataRegistry();
-
-MCAPI ::std::initializer_list<::std::pair<::std::string const, ::CreativeItemCategory>>
-GetCreativeItemCategoryStrings();
 
 MCAPI double GetEngagementMetricsTimeSinceAppStart_DEPRECATED();
 
@@ -153,27 +150,21 @@ MCAPI bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL*);
 
 MCAPI long Mock_Internal_ReadRequestBodyIntoMemory(::HC_CALL*, ::std::vector<uchar, ::http_stl_allocator<uchar>>*);
 
-MCAPI ::PackType PackTypeFromString(::std::string const& value);
-
 MCAPI void PlatformBedrockLogOut(uint _priority, char const* buf, uint64 nullTerminatorPos);
-
-MCAPI void RakSleep(uint ms);
 
 MCAPI ::std::string StringFromCreativeItemCategory(::CreativeItemCategory category);
 
 MCAPI ::std::string StringFromMaterialType(::MaterialType const& materialType);
 
-MCAPI uint SuperFastHashIncremental(char const* data, int len, uint lastHash);
-
 MCAPI ::SharedTypes::Legacy::UseAnimation UseAnimationFromString(::std::string const& str);
 
 MCAPI void _addEnvironmentSubfilter(
     ::std::string const&                 legacyPredicate,
-    ::FilterGroup::CollectionType        type,
-    ::std::string const&                 filterName,
-    ::SharedTypes::Legacy::FilterSubject subject,
-    ::FilterOperator                     op,
-    ::ActorFilterGroup::Processing       process
+    ::FilterGroup::CollectionType        filterName,
+    ::std::string const&                 op,
+    ::SharedTypes::Legacy::FilterSubject process,
+    ::FilterOperator                     type,
+    ::ActorFilterGroup::Processing       subject
 );
 
 MCAPI void _addLegacyFilterDefinition(
@@ -189,9 +180,13 @@ MCAPI void _checkTickedActorsForOutOfWorld(::ActorOwnerComponent& actorOwnerComp
 
 MCAPI ::std::unique_ptr<::ListTag> _createBlockStateEnum(::BlockState const& state);
 
+MCAPI uchar _facingToDirection(uchar facing);
+
 MCAPI uint _facingToVineDirection(uchar facing);
 
 MCAPI ::ScatterParamsMolangVariableIndices& _getScatterParamsMolangVariableIndices();
+
+MCAPI bool _hasAirBuffer(::Json::Value const& blockLayers);
 
 MCAPI ::Block const* _loadLayerBlock(::Json::Value const& layer);
 
@@ -215,10 +210,14 @@ _parseLayersV5(::Json::Value const& root, ::LevelData const& levelData);
 MCAPI ::std::optional<::std::vector<::BlockLayer>>
 _parseLayersV6(::Json::Value const& root, ::LevelData const& levelData, ::WorldVersion worldVersion);
 
+MCAPI ::std::unique_ptr<::ListTag> _saveBlockList(::std::vector<::BlockLegacy const*> const& blockList);
+
 MCAPI void
 _tickBribeableComponent(::ActorOwnerComponent& actorOwnerComponent, ::BribeableComponent& bribeableComponent);
 
-MCFOLD ::std::vector<::std::string> _versionSplit(::std::string const& str, char delim);
+MCAPI void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
+
+MCAPI void bindMaterialType(::cereal::ReflectionCtx& ctx);
 
 MCAPI char const* blockSlotToString(::BlockSlot slot);
 
@@ -236,9 +235,16 @@ MCAPI void checkComponent(
     bool                                                                      goingDown
 );
 
+MCAPI bool checkTypeFilter(
+    ::ActorDefinitionIdentifier const& entityIdentifier,
+    ::ActorDefinitionIdentifier const& identifierFilter
+);
+
 MCAPI void compoundBlockVolumeActionBindType(::cereal::ReflectionCtx& ctx);
 
 MCAPI void compoundBlockVolumePositionRelativityBindType(::cereal::ReflectionCtx& ctx);
+
+MCAPI void configureThread(::ThreadConfiguration const& config);
 
 MCAPI ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>
 createUniqueRakPeer(::RakNet::RakPeerConfiguration const& config);
@@ -247,6 +253,12 @@ MCAPI ::Bedrock::NonOwnerPointer<::WorkerPool> createWorkerPool(
     ::std::string_view                                       name,
     ::WorkerConfiguration const&                             config,
     ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>& destHandle
+);
+
+MCAPI void doSendPacket(
+    ::StrictEntityContext const&              entity,
+    ::MobOnPlayerJumpRequestComponent const&  mobOnPlayerJumpRequestComponent,
+    ::EntityModifier<::SendPacketsComponent>& modifier
 );
 
 MCAPI ::ActorCategory entityCategoriesFromString(::std::string const& str);
@@ -267,6 +279,8 @@ MCAPI ::srtp_err_status_t external_hmac_start(void*);
 
 MCAPI ::srtp_err_status_t external_hmac_update(void*, uchar const*, int);
 
+MCAPI int fclose(::Core::File& file);
+
 MCAPI ::LeashFenceKnotActor* findKnotAt(::BlockSource& region, ::BlockPos const& pos);
 
 MCAPI void forEachEntityType(::std::function<bool(::ActorType, ::std::string const&)> callback);
@@ -277,43 +291,50 @@ MCAPI int fseek(::Core::File& file, int64 offset, int origin);
 
 MCAPI ::std::string gatherTypeStrings(::std::vector<::Json::ValueType> const& types);
 
-MCAPI ::std::string getCPUName();
-
 MCAPI ::std::string const getEdition();
 
-MCAPI ::FileType getFileType(::Core::Path const& filePath, ::IFileAccess& fileAccess);
+MCAPI ::FileType getFileType(::Core::PathView filePath, ::IFileAccess& fileAccess);
 
 MCAPI ::I18n& getI18n();
 
 MCAPI ::std::string getJsonTypeString(::Json::ValueType const& type);
 
-MCAPI ::std::bitset<119> const& getMovementActorFlagsBitset();
-
-MCFOLD ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeEventMapAccess();
-
-MCFOLD ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeLOCMapAccess();
-
-MCAPI ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::Legacy::LevelSoundEvent> initializeLevelSoundEventMap();
-
 MCAPI ::std::string join(::std::string prefix, ::std::string_view chunkKey);
 
 MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag);
 
-MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag, uint i);
-
-MCAPI ::ActorType lookupActualEntityType(::ActorType entityType);
+MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag i, uint tag);
 
 MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
 
-MCAPI bool operator<(::HashedString const& lhs, ::HashedString const& rhs);
+MCAPI bool operator<(
+    ::SemVersionBase<::std::string_view> const&               lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
+);
 
-MCAPI ::std::ostream& operator<<(::std::ostream& os, ::ActorFlags const& flag);
+MCAPI bool operator<(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
+);
+
+MCAPI bool operator<(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::std::string_view> const&               rhs
+);
 
 MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
 
-MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
+MCAPI bool operator==(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
+);
 
-MCAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
+MCAPI bool operator==(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::std::string_view> const&               rhs
+);
+
+MCFOLD bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI ::BlockProperty operator|(::BlockProperty lhs, ::BlockProperty b);
 
@@ -434,7 +455,7 @@ MCAPI ::MCRESULT const& MCRESULT_TooManyPendingRequests();
 
 MCAPI ::MCRESULT const& MCRESULT_VersionMismatch();
 
-MCAPI ::SemVersion const& MIN_ENGINE_VERSION_MINIMUM_V2();
+MCAPI ::SemVersionConstant const& MIN_ENGINE_VERSION_MINIMUM_V2();
 
 MCAPI ::std::unordered_map<
     ::glTF::Material::AlphaMode,
@@ -442,8 +463,6 @@ MCAPI ::std::unordered_map<
     ::MaterialAlphaModeEnumHasher,
     ::std::equal_to<::glTF::Material::AlphaMode>> const&
 MaterialAlphaModeEnumMap();
-
-MCAPI ::std::initializer_list<::std::pair<::std::string const, ::MaterialType>> const& MaterialToStringMap();
 
 MCAPI ::std::bitset<38> const& PLAYER_ACTION_MOVEMENT_BITSET();
 
@@ -464,27 +483,17 @@ MCAPI ::std::unordered_map<
     ::std::equal_to<::TextProcessingEventOrigin>> const&
 TextProcessingEventOriginEnumMap();
 
-MCAPI uint const& UNINITIALIZED_BLOCK_NETWORKID();
-
 MCAPI ::std::array<::HashedString, 17> const& VanillaStructureFeatureTypes();
 
 MCAPI ::std::unordered_map<::std::string, ::ActorFilterGroup::LegacyMapping>& _environmentSubfilters();
 
 MCAPI ::std::unordered_map<::std::string, ::ActorFilterGroup::LegacyMapping>& _legacyPredicates();
 
-MCAPI char const*& base64Map();
-
 MCAPI ::std::unordered_map<int, ::std::string> const& discoveryEnvironmentLabels();
 
 MCAPI ::std::unordered_map<::std::string, ::DiscoveryEnvironment> const& discoveryEnvironmentStrings();
 
 MCAPI ::std::unordered_map<::DiscoveryEnvironment, ::std::string> const& discoveryEnvironments();
-
-MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64)> dlMallocDirectMMap();
-
-MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64)> dlMallocMMap();
-
-MCAPI ::std::add_lvalue_reference_t<int (*)(void*, uint64)> dlMallocMUnmap();
 
 MCAPI ::std::add_lvalue_reference_t<uint[]> englishCharacterFrequencies();
 
@@ -513,15 +522,9 @@ MCAPI ::std::add_lvalue_reference_t<void (*)(char const*, long)> notifyOutOfMemo
 MCAPI ::std::unordered_map<uint64, ::std::pair<::std::pair<::std::string, ::std::string>, ::std::string>>&
 preOptimizedHashes();
 
-MCAPI ::std::add_lvalue_reference_t<void (*)(void*)> rakFree();
-
 MCAPI ::std::add_lvalue_reference_t<void (*)(void*, char const*, uint)> rakFree_Ex();
 
-MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64)> rakMalloc();
-
 MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64, char const*, uint)> rakMalloc_Ex();
-
-MCAPI ::std::add_lvalue_reference_t<void* (*)(void*, uint64)> rakRealloc();
 
 MCAPI ::std::add_lvalue_reference_t<void* (*)(void*, uint64, char const*, uint)> rakRealloc_Ex();
 

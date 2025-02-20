@@ -72,21 +72,13 @@ public:
 
     MCAPI ::Actor* addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::Actor* addActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
-
     MCAPI ::Actor* addGlobalActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
 
     MCAPI void cleanupActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void cleanupRemovedActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
-
     MCAPI ::OwnerPtr<::EntityContext> deleteActorEntityFromWorldAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCAPI void forceRemoveActor(::Actor& actor);
-
     MCAPI void forceRemoveActorFromWorld(::Actor& actor);
-
-    MCFOLD ::std::vector<::OwnerPtr<::EntityContext>> const& getEntities() const;
 
     MCAPI void onChunkDiscarded(::WeakEntityRef entityRef);
 
@@ -94,9 +86,9 @@ public:
 
     MCAPI ::OwnerPtr<::EntityContext> removeActorEntityAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
+    MCAPI void removeActorEntityReferencesForDeletion(::Actor& actor);
 
-    MCFOLD void setLevelIsTearingDown();
+    MCAPI ::OwnerPtr<::EntityContext> removeEntity(::WeakEntityRef entityRef);
 
     MCAPI ::OwnerPtr<::EntityContext> takeEntity(::WeakEntityRef entityRef, ::LevelChunk& levelChunk);
     // NOLINTEND
@@ -124,7 +116,7 @@ public:
     MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
     $getRegisterPostReloadActorConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
     // NOLINTEND
 
 public:

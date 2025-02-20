@@ -54,44 +54,22 @@ public:
 
     MCAPI void _loadLocalizationFiles();
 
-    MCAPI ::PackAccessStrategy const* getAccessStrategy() const;
-
-    MCFOLD ::PackAccessStrategy* getAccessStrategy();
-
-    MCAPI ::PackManifest const& getManifest() const;
-
-    MCFOLD ::PackManifest& getManifest();
-
-    MCAPI ::Bedrock::NonOwnerPointer<::PackManifest> getManifestPtr();
-
-    MCFOLD ::SubpackInfoCollection* getSubpackInfoStack();
-
     MCAPI void move(::Pack&& pack);
 
-    MCAPI void notifyDeleted();
-
     MCAPI void notifyUpdated();
-
-    MCAPI void registerPackDeletedCallback(void* ptr, ::std::function<void(::Pack&)> callback);
-
-    MCAPI void registerPackUpdatedCallback(void* ptr, ::std::function<void(::Pack&)> callback);
-
-    MCAPI void unregisterPackDeletedCallback(void* ptr);
-
-    MCAPI void unregisterPackUpdatedCallback(void* ptr);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::Pack> createPack(
-        ::ResourceLocation const&                                         fileLocation,
-        ::PackType                                                        type,
-        ::PackOrigin                                                      origin,
-        ::IPackManifestFactory&                                           manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::PackSourceReport*                                               report,
-        ::Core::Path const&                                               zipSubDir
+        ::ResourceLocation const&                               fileLocation,
+        ::PackType                                              type,
+        ::PackOrigin                                            origin,
+        ::IPackManifestFactory&                                 manifestFactory,
+        ::Bedrock::NonOwnerPointer<::IContentKeyProvider const> keyProvider,
+        ::PackSourceReport*                                     report,
+        ::Core::Path const&                                     zipSubDir
     );
 
     MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(

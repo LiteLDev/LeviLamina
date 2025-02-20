@@ -61,19 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RequestPermissionsPacket();
-
     MCAPI bool getCustomAbilityValue(::AbilitiesIndex ability) const;
-
-    MCFOLD ::PlayerPermissionLevel getPlayerPermissions() const;
-
-    MCFOLD ::ActorUniqueID getTargetPlayerId() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -23,7 +23,6 @@ public:
 
 public:
     // prevent constructor by default
-    ChargeableItemComponentLegacyFactoryData& operator=(ChargeableItemComponentLegacyFactoryData const&);
     ChargeableItemComponentLegacyFactoryData(ChargeableItemComponentLegacyFactoryData const&);
     ChargeableItemComponentLegacyFactoryData();
 
@@ -35,12 +34,20 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData const&);
+
+    MCAPI ::ChargeableItemComponentLegacyFactoryData& operator=(::ChargeableItemComponentLegacyFactoryData&&);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();

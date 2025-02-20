@@ -18,25 +18,14 @@ public:
     // prevent constructor by default
     LegacyStructureBlockPalette& operator=(LegacyStructureBlockPalette const&);
     LegacyStructureBlockPalette(LegacyStructureBlockPalette const&);
+    LegacyStructureBlockPalette();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyStructureBlockPalette();
-
-    MCAPI void addMapping(int id, ::Block const& block);
-
-    MCFOLD void clearMap();
-
     MCAPI ::Block const& getBlock(int id);
 
     MCAPI ~LegacyStructureBlockPalette();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

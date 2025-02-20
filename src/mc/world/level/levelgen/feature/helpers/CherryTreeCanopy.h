@@ -69,6 +69,8 @@ public:
         int                             radius,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
+
+    MCAPI bool _shouldSkipPosition(::Random& random, ::BlockPos const& pos, int radius) const;
     // NOLINTEND
 
 public:

@@ -60,12 +60,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

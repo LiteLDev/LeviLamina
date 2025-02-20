@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,6 +32,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptBlockTypes();
 
+    MCAPI void _generateAllBlockHandles(::Scripting::WeakLifetimeScope& scope);
+
     MCAPI void _registerBlockTypeAlias(
         ::std::string                                                                  blockName,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> blockHandle
@@ -47,8 +49,6 @@ public:
     get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
 
     MCAPI ::ScriptModuleMinecraft::ScriptBlockTypes& operator=(::ScriptModuleMinecraft::ScriptBlockTypes&&);
-
-    MCAPI ~ScriptBlockTypes();
     // NOLINTEND
 
 public:
@@ -63,12 +63,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

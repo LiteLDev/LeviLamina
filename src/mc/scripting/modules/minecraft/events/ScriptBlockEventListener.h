@@ -8,11 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockEventListener;
 class BlockPos;
-class Dimension;
 class ItemStackBase;
 class Player;
 struct ButtonPushEvent;
@@ -68,14 +66,6 @@ public:
     // vIndex: 13
     virtual ::EventResult onEvent(::ExplosionStartedEvent const& explosionStartedEvent) /*override*/;
 
-    // vIndex: 8
-    virtual ::EventResult onBlockExploded(
-        ::Dimension&      dimension,
-        ::BlockPos const& blockPos,
-        ::Block const&    destroyedBlock,
-        ::Actor*          source
-    ) /*override*/;
-
     // vIndex: 1
     virtual ::EventResult onBlockPlacedByPlayer(
         ::Player&         player,
@@ -129,13 +119,6 @@ public:
     MCAPI ::EventResult $onEvent(::TargetBlockHitEvent const& targetBlockHitEvent);
 
     MCAPI ::EventResult $onEvent(::ExplosionStartedEvent const& explosionStartedEvent);
-
-    MCAPI ::EventResult $onBlockExploded(
-        ::Dimension&      dimension,
-        ::BlockPos const& blockPos,
-        ::Block const&    destroyedBlock,
-        ::Actor*          source
-    );
 
     MCAPI ::EventResult
     $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);

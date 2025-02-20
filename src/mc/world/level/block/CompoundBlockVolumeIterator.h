@@ -20,6 +20,7 @@ public:
 public:
     // prevent constructor by default
     CompoundBlockVolumeIterator& operator=(CompoundBlockVolumeIterator const&);
+    CompoundBlockVolumeIterator(CompoundBlockVolumeIterator const&);
     CompoundBlockVolumeIterator();
 
 public:
@@ -44,16 +45,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundBlockVolumeIterator(::CompoundBlockVolumeIterator const& other);
-
     MCAPI CompoundBlockVolumeIterator(::CompoundBlockVolume const& vol, bool begin);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundBlockVolumeIterator const& other);
-
     MCAPI void* $ctor(::CompoundBlockVolume const& vol, bool begin);
     // NOLINTEND
 
@@ -70,7 +67,7 @@ public:
 
     MCAPI void $_begin();
 
-    MCAPI void $_end();
+    MCFOLD void $_end();
     // NOLINTEND
 
 public:

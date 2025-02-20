@@ -29,16 +29,15 @@ public:
 public:
     // prevent constructor by default
     PingedCompatibleServer& operator=(PingedCompatibleServer const&);
-    PingedCompatibleServer();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PingedCompatibleServer();
+
     MCAPI PingedCompatibleServer(::PingedCompatibleServer&&);
 
     MCAPI PingedCompatibleServer(::PingedCompatibleServer const&);
-
-    MCAPI ::PingedCompatibleServer& operator=(::PingedCompatibleServer&&);
 
     MCAPI ~PingedCompatibleServer();
     // NOLINTEND
@@ -46,6 +45,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::PingedCompatibleServer&&);
 
     MCAPI void* $ctor(::PingedCompatibleServer const&);

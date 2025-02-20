@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-struct MesaSurfaceAttributes;
 // clang-format on
 
 struct MesaSurfaceBlocks {
@@ -25,20 +24,8 @@ public:
     MesaSurfaceBlocks();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MesaSurfaceBlocks(::MesaSurfaceAttributes const& attributes);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::array<::Block const*, 16> buildClayMaterials(::Block const& base);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MesaSurfaceAttributes const& attributes);
     // NOLINTEND
 };

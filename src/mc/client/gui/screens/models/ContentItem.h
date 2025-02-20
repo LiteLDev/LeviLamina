@@ -6,13 +6,14 @@
 #include "mc/client/gui/screens/models/ContentFlags.h"
 #include "mc/client/gui/screens/models/ContentItemType.h"
 #include "mc/client/gui/screens/models/ContentType.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
 struct ContentSource;
 // clang-format on
 
-struct ContentItem {
+struct ContentItem : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContentItem() = default;
+    virtual ~ContentItem() /*override*/ = default;
     // NOLINTEND
 
 public:

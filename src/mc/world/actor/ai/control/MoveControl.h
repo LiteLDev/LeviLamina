@@ -33,8 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveControl();
-
     MCAPI float
     calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
 
@@ -44,28 +42,20 @@ public:
         ::Vec3 const&                 positionDifference,
         float                         maxMoveSpeed
     );
+    // NOLINTEND
 
-    MCAPI bool shouldSlowSpeed(::MoveControlComponent const& parent, ::Mob const& mob, float endDistanceSqr);
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Vec3 getDiffVector(::Vec3 const& wantedPosition, ::Mob const& mob);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& MIN_DELTA_TO_JUMP();
-
-    MCAPI static float const& MIN_DELTA_TO_JUMP_UNDERWATER();
-
     MCAPI static float const& MIN_DELTA_TO_MOVE();
 
-    MCAPI static float const& MIN_SPEED();
-
     MCAPI static float const& MIN_SPEED_SQR();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

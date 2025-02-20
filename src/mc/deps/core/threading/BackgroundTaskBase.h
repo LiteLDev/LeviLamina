@@ -3,14 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/deps/core/threading/TaskRunResult.h"
 
 // auto generated forward declare list
 // clang-format off
-class IBackgroundTaskOwner;
 class ITaskExecutionContext;
-struct TaskStartInfoBase;
 // clang-format on
 
 class BackgroundTaskBase {
@@ -25,16 +22,7 @@ public:
     // BackgroundTaskBase inner types define
     class PriorityComparer {};
 
-    class PendingComparer {
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator()(
-            ::std::shared_ptr<::BackgroundTaskBase> const& lhs,
-            ::std::shared_ptr<::BackgroundTaskBase> const& rhs
-        ) const;
-        // NOLINTEND
-    };
+    class PendingComparer {};
 
     class CurrentTaskAutoScope {
     public:
@@ -52,15 +40,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit CurrentTaskAutoScope(::BackgroundTaskBase* curr);
-
         MCAPI ~CurrentTaskAutoScope();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BackgroundTaskBase* curr);
         // NOLINTEND
 
     public:
@@ -108,64 +88,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BackgroundTaskBase(
-        ::gsl::not_null<::IBackgroundTaskOwner*> group,
-        ::TaskStartInfoBase const&               startInfo,
-        bool                                     isAsync
-    );
-
-    MCAPI void _makeOrphan();
-
-    MCAPI void backDownPriority();
-
-    MCAPI bool canBeRunBy(::std::thread::id workerId) const;
-
-    MCFOLD ::IBackgroundTaskOwner* getGroup();
-
-    MCFOLD ::TaskGroupState getGroupState() const;
-
-    MCAPI ::std::shared_ptr<::BackgroundTaskBase> getNext();
-
-    MCFOLD ::BackgroundTaskBase* getPrev();
-
-    MCFOLD ::std::chrono::steady_clock::time_point getStartAfterTime() const;
-
-    MCAPI bool hasAffinity() const;
-
-    MCFOLD bool isAsync() const;
-
-    MCAPI bool isOrphaned() const;
-
-    MCAPI bool isReadyToStart(::std::chrono::steady_clock::time_point t) const;
-
     MCAPI void setNext(::std::shared_ptr<::BackgroundTaskBase> next);
-
-    MCFOLD void setPrev(::BackgroundTaskBase* prev);
-
-    MCFOLD void setStartAfterTime(::std::chrono::steady_clock::time_point t);
-
-    MCAPI void setSyncPriority();
-
-    MCAPI void taskComplete();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BackgroundTaskBase* getCurrent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BackgroundTaskBase*& gCurrentTask();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::gsl::not_null<::IBackgroundTaskOwner*> group, ::TaskStartInfoBase const& startInfo, bool isAsync);
     // NOLINTEND
 
 public:

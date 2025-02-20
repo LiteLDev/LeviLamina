@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BaseGameVersion;
 class Block;
 class BlockLegacy;
@@ -112,6 +113,12 @@ public:
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos, int strength) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _tryEquipChest(::Actor& actor);
     // NOLINTEND
 
 public:

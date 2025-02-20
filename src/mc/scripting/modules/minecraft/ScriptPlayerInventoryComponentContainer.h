@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptInventoryComponentContainer.h"
 
 // auto generated forward declare list
 // clang-format off
 class Container;
 class ItemContext;
-class WeakEntityRef;
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -21,22 +19,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/;
+    virtual ~ScriptPlayerInventoryComponentContainer() /*override*/ = default;
 
     // vIndex: 13
     virtual ::Container* _tryGetContainer() const /*override*/;
 
     // vIndex: 14
     virtual ::ItemContext _getItemContext(int slot) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlayerInventoryComponentContainer(
-        ::WeakEntityRef const&                entityRef,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
     // NOLINTEND
 
 public:
@@ -47,15 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakEntityRef const& entityRef, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

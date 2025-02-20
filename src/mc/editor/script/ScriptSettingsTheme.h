@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/settings/ThemeSettingsColorKey.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/common/editor/ThemeSettingsColorKey.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,8 +49,6 @@ public:
     MCAPI ::std::vector<::std::string> getThemeIdList() const;
 
     MCAPI ::Scripting::Result<::std::string, ::Scripting::Error> getThemeName(::std::string const& id) const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptRGBA resolveColorKey(::Editor::Settings::ThemeSettingsColorKey key) const;
 
     MCAPI ::Scripting::Result<void, ::Scripting::Error> setCurrentTheme(::std::string const& id);
 

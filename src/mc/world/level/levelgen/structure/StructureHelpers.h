@@ -33,10 +33,10 @@ public:
         ::BoundingBox const& chunkBB,
         ::Random&            random,
         int                  x,
-        int                  y,
         int                  z,
         int                  facing,
-        ::std::string const& lootTable
+        int                  lootTable,
+        ::std::string const& y
     );
 
     MCAPI static bool createMinecartChest(
@@ -45,10 +45,10 @@ public:
         ::BoundingBox const& chunkBB,
         ::Random&            random,
         int                  x,
-        int                  y,
         int                  z,
-        int                  direction,
-        ::std::string const& lootTable
+        int                  lootTable,
+        int                  y,
+        ::std::string const& direction
     );
 
     MCAPI static void fillColumnDown(

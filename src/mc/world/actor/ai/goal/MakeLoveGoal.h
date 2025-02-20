@@ -46,6 +46,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _breed(::VillagerBase& partner) const;
+
     MCAPI ::VillagerBase* _findMate() const;
     // NOLINTEND
 

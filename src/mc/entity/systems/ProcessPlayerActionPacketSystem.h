@@ -15,8 +15,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void _foreachTransactionPacket(
         ::PlayerActionComponent const&                              actions,
-        bool                                                        isClientSide,
-        ::std::function<void(::InventoryTransactionPacket&)> const& callback
+        bool                                                        callback,
+        ::std::function<void(::InventoryTransactionPacket&)> const& isClientSide
     );
 
     MCAPI static ::TickingSystemWithInfo createSystem();

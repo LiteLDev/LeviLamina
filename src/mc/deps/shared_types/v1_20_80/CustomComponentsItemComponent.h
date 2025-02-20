@@ -23,21 +23,9 @@ public:
     CustomComponentsItemComponent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~CustomComponentsItemComponent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -11,6 +11,7 @@
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal::internal { struct ConstraintDescription; }
+namespace cereal::internal { struct EnumValue; }
 namespace cereal::internal { struct Member; }
 // clang-format on
 
@@ -20,8 +21,8 @@ struct SchemaDescription : public ::cereal::internal::SchemaInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 272> mUnk9dbec0;
-    ::ll::UntypedStorage<8, 24>  mUnk1c3f11;
+    ::ll::UntypedStorage<8, 304> mUnk9dbec0;
+    ::ll::UntypedStorage<8, 32>  mUnk5e1b13;
     ::ll::UntypedStorage<8, 32>  mUnkd4aea8;
     ::ll::UntypedStorage<8, 32>  mUnk702fe6;
     ::ll::UntypedStorage<8, 24>  mUnkef7750;

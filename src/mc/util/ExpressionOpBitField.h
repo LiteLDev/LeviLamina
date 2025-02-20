@@ -21,7 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool areBitsSet(::ExpressionOp op0, ::ExpressionOp op1) const;
+    MCAPI bool
+    areBitsSet(::ExpressionOp op0, ::ExpressionOp op1, ::ExpressionOp op2, ::ExpressionOp op3, ::ExpressionOp op4)
+        const;
 
     MCAPI bool areBitsSet(
         ::ExpressionOp op0,

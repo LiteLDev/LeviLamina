@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/entity/enums/ClientInputLockCategory.h"
-
 struct ClientInputLockCategoryAPIMetadata {
 public:
     // member variables
@@ -34,8 +31,6 @@ public:
     MCAPI static ::std::array<::ClientInputLockCategoryAPIMetadata, 11> const& getAllMetadata();
 
     MCAPI static ::std::vector<::std::string> getCommandFacingNames();
-
-    MCAPI static ::std::optional<::ClientInputLockCategoryAPIMetadata> getMetadata(::ClientInputLockCategory category);
     // NOLINTEND
 
 public:

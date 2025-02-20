@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/SplineType.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/editor/services/render_helper/PrimitiveType.h"
-#include "mc/editor/services/render_helper/SplineType.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
 
 namespace Editor::ScriptModule::RenderHelper {
 // functions

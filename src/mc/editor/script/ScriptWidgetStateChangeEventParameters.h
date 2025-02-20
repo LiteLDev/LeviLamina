@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
 
 namespace Editor::ScriptModule {
 
@@ -28,7 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptWidgetStateChangeEventParameters();
+    MCAPI ::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters&
+    operator=(::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters&&);
     // NOLINTEND
 
 public:
@@ -37,12 +38,6 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilderReadOnly<
         ::Editor::ScriptModule::ScriptWidgetStateChangeEventParameters>
     bindScript();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

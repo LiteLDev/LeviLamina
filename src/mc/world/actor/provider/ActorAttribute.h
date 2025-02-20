@@ -11,8 +11,6 @@ namespace ActorAttribute {
 // functions
 // NOLINTBEGIN
 MCAPI int getHealth(::EntityContext const& provider);
-
-MCAPI int getMaxHealth(::EntityContext const& provider);
 // NOLINTEND
 
 } // namespace ActorAttribute

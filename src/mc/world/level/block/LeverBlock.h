@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/LeverDirection.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,9 +18,9 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class LeverBlock : public ::BlockLegacy {
@@ -59,9 +58,6 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -93,7 +89,7 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 0
@@ -103,27 +99,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeverBlock(::std::string const& nameId, int id);
-
-    MCAPI uchar _getFacing(::Block const& block) const;
-
-    MCAPI int getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+
     MCAPI void toggle(::BlockSource& region, ::BlockPos const& pos, ::Player* player) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::LeverDirection getLeverFacing(int facing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -149,15 +129,13 @@ public:
 
     MCFOLD bool $canSpawnOn(::Actor*) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

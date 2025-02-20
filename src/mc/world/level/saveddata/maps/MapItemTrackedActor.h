@@ -35,8 +35,19 @@ public:
     public:
         // prevent constructor by default
         UniqueId& operator=(UniqueId const&);
-        UniqueId(UniqueId const&);
         UniqueId();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI UniqueId(::MapItemTrackedActor::UniqueId const& rhs);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::MapItemTrackedActor::UniqueId const& rhs);
+        // NOLINTEND
     };
 
 public:
@@ -66,11 +77,7 @@ public:
     // NOLINTBEGIN
     MCAPI MapItemTrackedActor(::MapItemTrackedActor::UniqueId const& id, ::BlockSource& region);
 
-    MCAPI float getDecorationRotation(::BlockSource& region);
-
     MCAPI ::std::unique_ptr<::Packet> nextUpdatePacket(::MapItemSavedData const& savedData);
-
-    MCAPI void setNeedsResend();
     // NOLINTEND
 
 public:

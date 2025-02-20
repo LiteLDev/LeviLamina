@@ -34,13 +34,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CreativeGroupInfo() /*override*/ = default;
+    virtual ~CreativeGroupInfo() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI CreativeGroupInfo(::CreativeGroupInfo const&);
+
+    MCAPI CreativeGroupInfo(
+        ::CreativeItemRegistry* registry,
+        ::CreativeItemCategory  category,
+        ::HashedString const&   name,
+        uint                    index,
+        ::ItemInstance const&   icon
+    );
 
     MCAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
     // NOLINTEND
@@ -49,12 +57,20 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CreativeGroupInfo const&);
+
+    MCAPI void* $ctor(
+        ::CreativeItemRegistry* registry,
+        ::CreativeItemCategory  category,
+        ::HashedString const&   name,
+        uint                    index,
+        ::ItemInstance const&   icon
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

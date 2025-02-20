@@ -23,15 +23,7 @@ namespace BlockMovementSlowdownMultiplierSystem {
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createAdjustFallDistanceSystem();
 
-MCAPI ::TickingSystemWithInfo createApplySlowdownOnMoveSystem();
-
 MCAPI ::TickingSystemWithInfo createCleanupSystem();
-
-MCAPI ::TickingSystemWithInfo createImmunePlayerSystem();
-
-MCAPI ::TickingSystemWithInfo createImmuneSpiderSystem();
-
-MCAPI ::TickingSystemWithInfo createImmuneWitherBossSystem();
 
 MCAPI ::TickingSystemWithInfo createWeavingMobSystem();
 

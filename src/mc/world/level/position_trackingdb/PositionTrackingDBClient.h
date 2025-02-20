@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Level;
 class PositionTrackingId;
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on
@@ -31,24 +30,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PositionTrackingDBClient(::Level& level);
-
     MCAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
-
-    MCAPI ~PositionTrackingDBClient();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };
 

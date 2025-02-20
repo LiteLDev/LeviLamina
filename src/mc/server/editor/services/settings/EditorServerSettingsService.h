@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ThemeSettingsColorKey.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/settings/EditorSettingsService.h"
-#include "mc/editor/settings/ThemeSettingsColorKey.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off

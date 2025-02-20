@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     HugeMushroomFeature& operator=(HugeMushroomFeature const&);
     HugeMushroomFeature(HugeMushroomFeature const&);
+    HugeMushroomFeature();
 
 public:
     // virtual functions
@@ -38,21 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HugeMushroomFeature();
-
-    MCAPI explicit HugeMushroomFeature(int forcedType);
-
     MCAPI bool _canSurvive(::Block const& belowBlock) const;
 
     MCAPI bool placeFixed(::BlockSource& region, ::BlockPos const& pos, int mushroomType, int height) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(int forcedType);
     // NOLINTEND
 
 public:

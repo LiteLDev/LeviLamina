@@ -25,17 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
-        ::entt::internal::dense_map_node<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>>>>
-    begin() const;
-
-    MCFOLD ::entt::internal::dense_map_iterator<::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<
-        ::entt::internal::dense_map_node<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>>>>
-    end() const;
-
     MCAPI ::std::shared_ptr<::br::worldgen::Structure const> get(::std::string_view key) const;
-
-    MCAPI uint64 size() const;
 
     MCAPI ~StructureRegistry();
     // NOLINTEND

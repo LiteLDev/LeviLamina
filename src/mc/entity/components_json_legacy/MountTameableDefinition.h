@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class MountTamingComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -30,14 +28,11 @@ public:
     // prevent constructor by default
     MountTameableDefinition& operator=(MountTameableDefinition const&);
     MountTameableDefinition(MountTameableDefinition const&);
+    MountTameableDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MountTameableDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::MountTamingComponent& component) const;
-
     MCAPI ~MountTameableDefinition();
     // NOLINTEND
 
@@ -47,12 +42,6 @@ public:
     MCAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MountTameableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

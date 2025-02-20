@@ -39,22 +39,15 @@ public:
 
     MCAPI ::BlockPatternBuilder& define(char pattern, ::Block const& block);
 
-    MCAPI ::BlockPatternBuilder&
-    define(char pattern, ::std::function<bool(::BlockSource&, ::BlockPos const&, ::Block const&)> tester);
-
-    MCFOLD bool isReadyForMatch();
-
     MCAPI ::BuildMatch match(::BlockPos const& pos);
-
-    MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex);
 
     MCAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up);
 
     MCAPI void replaceBlocks(
-        char                                                     subPattern,
-        ::BuildMatch                                             buildMatch,
-        ::Block const&                                           block,
-        ::std::function<void(::Block const&, ::BlockPos const&)> preReplaceCallback
+        char                                                     buildMatch,
+        ::BuildMatch                                             block,
+        ::Block const&                                           preReplaceCallback,
+        ::std::function<void(::Block const&, ::BlockPos const&)> subPattern
     );
     // NOLINTEND
 

@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AddRiderComponent;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,12 +22,6 @@ public:
     AddRiderDefinition& operator=(AddRiderDefinition const&);
     AddRiderDefinition(AddRiderDefinition const&);
     AddRiderDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::AddRiderComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

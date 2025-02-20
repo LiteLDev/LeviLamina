@@ -43,15 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedstoneBlock(::std::string const& nameId, int id);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

@@ -35,7 +35,7 @@ public:
     // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual void updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 139
@@ -72,15 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DaylightDetectorBlock(::std::string const& nameId, int id, bool isInverted);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool isInverted);
     // NOLINTEND
 
 public:

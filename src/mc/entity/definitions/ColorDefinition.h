@@ -14,7 +14,7 @@ struct ColorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk20238a;
+    ::ll::UntypedStorage<1, 1> mUnkb1b293;
     // NOLINTEND
 
 public:
@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void setColorChoice(int const& colorChoice);
+    MCAPI void setColorChoice(int const& colorChoice);
     // NOLINTEND
 
 public:

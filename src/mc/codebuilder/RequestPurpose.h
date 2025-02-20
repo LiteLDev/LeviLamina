@@ -16,7 +16,8 @@ enum class RequestPurpose : uchar {
     DataRequestItem        = 8,
     DataRequestMob         = 9,
     EncryptConnection      = 10,
-    Count                  = 11,
+    DataRequestTutorial    = 11,
+    Count                  = 12,
 };
 
 }

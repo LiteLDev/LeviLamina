@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftApp;
 namespace Automation { class AutomationClient; }
 namespace CodeBuilder { class IMessenger; }
 // clang-format on
@@ -40,18 +39,6 @@ public:
 
     // vIndex: 2
     virtual ::Bedrock::NotNullNonOwnerPtr<::CodeBuilder::IMessenger> getEventing() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Manager(::IMinecraftApp& minecraftApp);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftApp& minecraftApp);
     // NOLINTEND
 
 public:

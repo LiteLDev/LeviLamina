@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class EntityContext;
-// clang-format on
-
 class ScaleByAgeComponent {
 public:
     // member variables
@@ -19,18 +14,5 @@ public:
     // prevent constructor by default
     ScaleByAgeComponent& operator=(ScaleByAgeComponent const&);
     ScaleByAgeComponent(ScaleByAgeComponent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScaleByAgeComponent();
-
-    MCAPI void _initializeScale(::EntityContext& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
+    ScaleByAgeComponent();
 };

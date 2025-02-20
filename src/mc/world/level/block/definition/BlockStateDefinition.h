@@ -13,26 +13,18 @@ public:
 
 public:
     // prevent constructor by default
+    BlockStateDefinition& operator=(BlockStateDefinition const&);
+    BlockStateDefinition(BlockStateDefinition const&);
     BlockStateDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockStateDefinition(::BlockStateDefinition const& rhs);
-
     MCAPI void _copy(::BlockStateDefinition const& rhs);
 
     MCAPI ::BlockStateDefinition& operator=(::BlockStateDefinition&&);
 
-    MCAPI ::BlockStateDefinition& operator=(::BlockStateDefinition const& rhs);
-
     MCAPI ~BlockStateDefinition();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockStateDefinition const& rhs);
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 // clang-format off
 class ChunkPos;
 class Dimension;
+class Random;
 // clang-format on
 
 class EndCityStart : public ::StructureStart {
@@ -35,6 +36,12 @@ public:
 
     // vIndex: 4
     virtual ::std::string_view getStructureName() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
     // NOLINTEND
 
 public:

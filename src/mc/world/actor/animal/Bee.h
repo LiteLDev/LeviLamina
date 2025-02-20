@@ -6,13 +6,6 @@
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/animal/Animal.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
-// clang-format on
-
 class Bee : public ::Animal {
 public:
     // member variables
@@ -37,31 +30,16 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    Bee(::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext);
-
     MCAPI void _registerLoopingSounds();
 
     MCAPI void postNormalTick();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

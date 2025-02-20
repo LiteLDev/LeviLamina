@@ -165,7 +165,7 @@ public:
 
     MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
-    MCFOLD bool $canRecurse() const;
+    MCAPI bool $canRecurse() const;
 
     MCFOLD void $unload();
 

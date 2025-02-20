@@ -14,11 +14,11 @@
 class Actor;
 class HashedString;
 class Item;
-class ItemDescriptor;
 class ItemStack;
 class Level;
 class Player;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct FoodItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -73,7 +73,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemDescriptor getUsingConvertsToItemDescriptor() const;
+    MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
 
     MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack const&, ::ItemStack&, ::Actor&)>& onConsume();
     // NOLINTEND
@@ -83,11 +83,17 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
     // NOLINTEND
 
 public:

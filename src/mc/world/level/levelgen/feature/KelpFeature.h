@@ -14,6 +14,18 @@ class Random;
 
 class KelpFeature : public ::Feature {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk5d3848;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    KelpFeature& operator=(KelpFeature const&);
+    KelpFeature(KelpFeature const&);
+    KelpFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4

@@ -42,22 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameTestRequestPacket();
-
-    MCFOLD ::gametest::TestParameters const& getParams() const;
-
-    MCFOLD ::std::string getTestName() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

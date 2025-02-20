@@ -15,15 +15,6 @@ namespace Json { class Value; }
 namespace JsonPackUtils {
 // functions
 // NOLINTBEGIN
-MCAPI int readIntAndReport(
-    ::Json::Value const&          parent,
-    ::std::string const&          element,
-    ::std::vector<::std::string>& errorPath,
-    ::PackReport&                 report,
-    bool                          optional,
-    int                           defaultVal
-);
-
 MCAPI ::std::pair<::Json::Value const, ::PackParseErrorType>
 readRequiredValue(::Json::Value const& value, ::std::string const& propertyName, ::Json::ValueType type);
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
-
 class DistanceConstraint {
 public:
     // member variables
@@ -25,20 +20,4 @@ public:
     DistanceConstraint& operator=(DistanceConstraint const&);
     DistanceConstraint(DistanceConstraint const&);
     DistanceConstraint();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DistanceConstraint(float massA, float massB, float desiredDistance);
-
-    MCAPI float setup(::Vec3 const& posA, ::Vec3 const& posB, float baumgarteTerm, float slop);
-
-    MCAPI void solve(::Vec3& velA, ::Vec3& velB);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(float massA, float massB, float desiredDistance);
-    // NOLINTEND
 };

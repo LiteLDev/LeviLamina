@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BoundingBox;
-// clang-format on
-
 class BeardingDescriptionCache {
 public:
     // member variables
@@ -23,16 +18,4 @@ public:
     BeardingDescriptionCache& operator=(BeardingDescriptionCache const&);
     BeardingDescriptionCache(BeardingDescriptionCache const&);
     BeardingDescriptionCache();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BeardingDescriptionCache(::BoundingBox const& bb, int deltaY);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BoundingBox const& bb, int deltaY);
-    // NOLINTEND
 };

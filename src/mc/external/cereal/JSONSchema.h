@@ -25,7 +25,6 @@ public:
 
 public:
     // prevent constructor by default
-    JSONSchema& operator=(JSONSchema const&);
     JSONSchema(JSONSchema const&);
 
 public:
@@ -39,6 +38,10 @@ public:
         ::cereal::ext::internal::OutRefsMap&              outRefs,
         ::std::vector<::cereal::SchemaDescription> const& descriptions
     );
+
+    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
+
+    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
 
     MCAPI ~JSONSchema();
     // NOLINTEND

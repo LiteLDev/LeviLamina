@@ -3,16 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/ILifetimeScopeListener.h"
+#include "mc/deps/scripting/lifetime_registry/ILifetimeObjectListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScriptPlugin;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ObjectHandle; }
 // clang-format on
 
-class ScriptPluginHandleCounter : public ::Scripting::ILifetimeScopeListener {
+class ScriptPluginHandleCounter : public ::Scripting::ILifetimeObjectListener {
 public:
     // ScriptPluginHandleCounter inner types declare
     // clang-format off
@@ -30,9 +29,6 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnkd4cd85;
         ::ll::UntypedStorage<4, 4>  mUnk6d6437;
         ::ll::UntypedStorage<4, 4>  mUnkbf890e;
-        ::ll::UntypedStorage<4, 4>  mUnk33b8bd;
-        ::ll::UntypedStorage<4, 4>  mUnk971dd2;
-        ::ll::UntypedStorage<4, 4>  mUnkaa4c8a;
         ::ll::UntypedStorage<8, 8>  mUnk5cb9a0;
         ::ll::UntypedStorage<8, 8>  mUnk6dc587;
         // NOLINTEND
@@ -89,35 +85,6 @@ public:
         uint                     size
     ) /*override*/;
 
-    // vIndex: 3
-    virtual void onTrackObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const& type,
-        uint                     size
-    ) /*override*/;
-
-    // vIndex: 4
-    virtual void onUntrackObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const& type,
-        uint                     size
-    ) /*override*/;
-
-    // vIndex: 5
-    virtual void onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle) /*override*/;
-
-    // vIndex: 6
-    virtual void
-    onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle) /*override*/;
-
-    // vIndex: 7
-    virtual void onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
-
-    // vIndex: 8
-    virtual void onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&) /*override*/;
-
     // vIndex: 0
     virtual ~ScriptPluginHandleCounter() /*override*/ = default;
     // NOLINTEND
@@ -125,21 +92,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptPluginHandleCounter(::ScriptPlugin& plug);
-
     MCAPI ::ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(::entt::meta_type const& type);
-
-    MCAPI ::std::string getName() const;
-
-    MCFOLD ::ScriptPlugin& getScriptPlugin();
-
-    MCAPI ::ScriptPluginHandleCounter::TypeStats const* getStatsById(uint id) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptPlugin& plug);
     // NOLINTEND
 
 public:
@@ -160,24 +113,6 @@ public:
         ::entt::meta_type const& type,
         uint                     size
     );
-
-    MCAPI void
-    $onTrackObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const& type, uint size);
-
-    MCAPI void $onUntrackObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const& type,
-        uint                     size
-    );
-
-    MCFOLD void $onObjectReducedToSingleOwner(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
-
-    MCFOLD void $onObjectPromotedToMultipleOwners(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle);
-
-    MCFOLD void $onPreLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
-
-    MCFOLD void $onPostLifetimeScopeDestroy(::Scripting::LifetimeRegistry&);
     // NOLINTEND
 
 public:

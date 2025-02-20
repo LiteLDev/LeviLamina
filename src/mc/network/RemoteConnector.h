@@ -4,13 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/Connector.h"
 #include "mc/network/NetworkEnableDisableListener.h"
 
 // auto generated forward declare list
 // clang-format off
-class AppPlatform;
 class NetworkIdentifier;
 struct ConnectionDefinition;
 namespace Social { class GameConnectionInfo; }
@@ -22,51 +20,35 @@ class RemoteConnector : public ::Connector,
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 11
+    // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) = 0;
 
-    // vIndex: 12
+    // vIndex: 10
     virtual bool connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&) = 0;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void disconnect() = 0;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void tick() = 0;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void runEvents() = 0;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual bool isServer() const = 0;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual void closeNetworkConnection(::NetworkIdentifier const&) = 0;
 
-    // vIndex: 18
+    // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const = 0;
 
-    // vIndex: 19
+    // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) = 0;
 
     // vIndex: 0
     virtual ~RemoteConnector() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RemoteConnector(
-        ::Connector::ConnectionCallbacks&                callbacks,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Connector::ConnectionCallbacks& callbacks, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
     // NOLINTEND
 
 public:

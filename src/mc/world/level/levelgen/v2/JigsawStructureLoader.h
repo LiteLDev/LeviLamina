@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ResourcePackManager;
-namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,10 +16,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk1ee9b7;
-    ::ll::UntypedStorage<8, 360> mUnk156fc5;
-    ::ll::UntypedStorage<8, 360> mUnk8af7fc;
-    ::ll::UntypedStorage<8, 360> mUnkdfb909;
-    ::ll::UntypedStorage<8, 360> mUnkc492ef;
+    ::ll::UntypedStorage<8, 200> mUnkeb430c;
+    ::ll::UntypedStorage<8, 200> mUnk46b138;
+    ::ll::UntypedStorage<8, 200> mUnka24d43;
+    ::ll::UntypedStorage<8, 200> mUnkc54a45;
     // NOLINTEND
 
 public:
@@ -50,8 +49,6 @@ public:
     MCAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
     MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
-
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> takeJigsawStructureData();
     // NOLINTEND
 
 public:

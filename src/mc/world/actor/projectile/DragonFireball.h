@@ -3,58 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ParticleType.h"
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/world/actor/projectile/Fireball.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class DragonFireball : public ::Fireball {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 144
+    // vIndex: 139
     virtual ::ParticleType getTrailParticle() /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual bool shouldBurn() /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
     // vIndex: 8
     virtual ~DragonFireball() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DragonFireball(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float& SPLASH_RANGE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

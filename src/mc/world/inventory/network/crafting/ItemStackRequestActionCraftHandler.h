@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
-#include "mc/world/inventory/network/ItemStackRequestActionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,14 +12,7 @@ class ItemInstance;
 class ItemStackRequestActionConsume;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING;
-class ItemStackRequestActionCreate;
-class ItemStackRequestActionHandler;
-class Player;
-class SimpleSparseContainer;
 struct ContainerValidationCraftInputs;
-struct FullContainerName;
-struct ItemStackRequestHandlerSlotInfo;
-struct ItemStackRequestSlotInfo;
 // clang-format on
 
 class ItemStackRequestActionCraftHandler {
@@ -51,15 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackRequestActionCraftHandler(::ItemStackRequestActionHandler& actionHandler, ::Player& player);
-
-    MCAPI ::ItemStackNetResult _beginCraftRequest();
-
     MCAPI ::std::unique_ptr<::ContainerValidationCraftInputs>
     _createCraftInputs(::ItemStackRequestActionCraftBase const& requestAction);
-
-    MCAPI ::std::shared_ptr<::SimpleSparseContainer>
-    _getOrInitSparseContainer(::FullContainerName const& openContainerId);
 
     MCAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
 
@@ -67,11 +52,7 @@ public:
 
     MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
 
-    MCAPI ::ItemStackRequestHandlerSlotInfo _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo);
-
     MCAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
-
-    MCAPI void endRequestBatch();
 
     MCAPI ::ItemStackNetResult handleConsume(::ItemStackRequestActionConsume const& requestAction);
 
@@ -80,21 +61,7 @@ public:
     MCAPI ::ItemStackNetResult
     handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
 
-    MCAPI ::ItemStackNetResult handleCreate(::ItemStackRequestActionCreate const& requestAction);
-
-    MCAPI bool isCraftRequest() const;
-
     MCAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
-
-    MCAPI void postRequest(bool wasSuccess);
-
-    MCAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestActionHandler& actionHandler, ::Player& player);
     // NOLINTEND
 
 public:

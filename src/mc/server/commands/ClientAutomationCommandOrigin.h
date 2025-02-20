@@ -88,18 +88,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ClientAutomationCommandOrigin(::std::string const& requestId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& requestId);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

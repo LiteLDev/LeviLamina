@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace Editor::API {
 
@@ -26,6 +26,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EditorExtensionOptionalParameters(::Editor::API::EditorExtensionOptionalParameters&&);
+
+    MCFOLD ::Editor::API::EditorExtensionOptionalParameters&
+    operator=(::Editor::API::EditorExtensionOptionalParameters&&);
 
     MCAPI ~EditorExtensionOptionalParameters();
     // NOLINTEND

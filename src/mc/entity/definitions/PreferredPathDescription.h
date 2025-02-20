@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     PreferredPathDescription& operator=(PreferredPathDescription const&);
     PreferredPathDescription(PreferredPathDescription const&);
+    PreferredPathDescription();
 
 public:
     // virtual functions
@@ -36,18 +37,6 @@ public:
 
     // vIndex: 1
     virtual ~PreferredPathDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PreferredPathDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -6,7 +6,6 @@
 // clang-format off
 namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
-namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
@@ -30,8 +29,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnk25883b;
+        ::ll::UntypedStorage<8, 32> mUnka7498e;
         ::ll::UntypedStorage<8, 72> mUnkace713;
         ::ll::UntypedStorage<8, 32> mUnk5fc8e6;
+        ::ll::UntypedStorage<1, 1>  mUnk7fcb00;
         // NOLINTEND
 
     public:
@@ -39,6 +41,18 @@ public:
         TypeDescriptor& operator=(TypeDescriptor const&);
         TypeDescriptor(TypeDescriptor const&);
         TypeDescriptor();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~TypeDescriptor();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCAPI void $dtor();
+        // NOLINTEND
     };
 
     struct SetterDescriptor {
@@ -46,6 +60,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkc28d37;
+        ::ll::UntypedStorage<8, 8> mUnk7833a6;
         // NOLINTEND
 
     public:
@@ -60,6 +75,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnkf6e459;
+        ::ll::UntypedStorage<8, 8>  mUnkcc5bac;
         ::ll::UntypedStorage<8, 32> mUnkc97556;
         ::ll::UntypedStorage<8, 8>  mUnkb0e062;
         ::ll::UntypedStorage<8, 72> mUnk86263e;
@@ -76,11 +92,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI MemberDescriptor(
-            ::std::unique_ptr<::cereal::internal::BasicSchema> ref,
-            ::std::string                                      name,
-            ::entt::meta_type (*argCtor)(::entt::meta_ctx const&)
-        );
+        MCAPI MemberDescriptor(::cereal::internal::BasicSchema::MemberDescriptor&&);
 
         MCAPI ~MemberDescriptor();
         // NOLINTEND
@@ -88,11 +100,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::std::unique_ptr<::cereal::internal::BasicSchema> ref,
-            ::std::string                                      name,
-            ::entt::meta_type (*argCtor)(::entt::meta_ctx const&)
-        );
+        MCAPI void* $ctor(::cereal::internal::BasicSchema::MemberDescriptor&&);
         // NOLINTEND
 
     public:
@@ -135,111 +143,71 @@ public:
     };
 
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc84a50;
-    ::ll::UntypedStorage<8, 8> mUnk58e4a5;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BasicSchema& operator=(BasicSchema const&);
-    BasicSchema(BasicSchema const&);
-    BasicSchema();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BasicSchema();
+    virtual ~BasicSchema() = default;
 
     // vIndex: 1
-    virtual void members(::std::function<void(uint, ::entt::meta_data)> cb) const;
+    virtual void members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
 
     // vIndex: 2
-    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(uint) const;
-
-    // vIndex: 4
-    virtual void enumMapping(::cereal::SerializerEnumMapping);
+    virtual ::cereal::internal::BasicSchema::MemberDescriptor const* member(::cereal::ReflectionCtx const&, uint) const;
 
     // vIndex: 3
-    virtual ::cereal::SerializerEnumMapping const* enumMapping() const;
+    virtual void validateConstraint(
+        ::cereal::ReflectionCtx const&,
+        ::cereal::Constraint const&  constraint,
+        ::entt::meta_any const&      any,
+        ::cereal::SerializerContext& context
+    ) const;
 
-    // vIndex: 6
-    virtual void constraint(::std::unique_ptr<::cereal::Constraint> constraint);
-
-    // vIndex: 5
-    virtual ::cereal::Constraint const* constraint() const;
-
-    // vIndex: 7
+    // vIndex: 4
     virtual void
     doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
         const;
 
-    // vIndex: 8
+    // vIndex: 5
     virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
 
-    // vIndex: 9
+    // vIndex: 6
     virtual bool doVerifyInitialization(::cereal::SchemaWriter const&, ::entt::meta_any const&) const;
 
-    // vIndex: 10
-    virtual ::cereal::SchemaDescription makeDescription(::cereal::internal::BasicSchema::DescriptionMode) const = 0;
+    // vIndex: 7
+    virtual ::cereal::SchemaDescription
+    makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BasicSchema(::cereal::ReflectionCtx const& ctx);
-
-    MCFOLD ::cereal::ReflectionCtx const& ctx() const;
-
-    MCAPI ::cereal::SchemaDescription description(::cereal::internal::BasicSchema::DescriptionMode mode) const;
-
-    MCAPI bool isProperlyInitialized(::cereal::SchemaWriter const& writer, ::entt::meta_any const& any) const;
-
     MCAPI void load(
         ::cereal::SchemaReader&      value,
         ::entt::meta_any&            any,
         ::entt::meta_any const&      udata,
         ::cereal::SerializerContext& context
     ) const;
-
-    MCAPI void
-    save(::cereal::SchemaWriter& value, ::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::cereal::internal::BasicSchema const& lookup(::cereal::ReflectionCtx const& reflectionCtx, uint id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $members(::std::function<void(uint, ::entt::meta_data)> cb) const;
+    MCFOLD void $members(::cereal::ReflectionCtx const&, ::std::function<void(uint, ::entt::meta_data)>) const;
 
-    MCFOLD ::cereal::internal::BasicSchema::MemberDescriptor const* $member(uint) const;
+    MCFOLD ::cereal::internal::BasicSchema::MemberDescriptor const* $member(::cereal::ReflectionCtx const&, uint) const;
 
-    MCAPI void $enumMapping(::cereal::SerializerEnumMapping);
-
-    MCFOLD ::cereal::SerializerEnumMapping const* $enumMapping() const;
-
-    MCAPI void $constraint(::std::unique_ptr<::cereal::Constraint> constraint);
-
-    MCFOLD ::cereal::Constraint const* $constraint() const;
+    MCAPI void $validateConstraint(
+        ::cereal::ReflectionCtx const&,
+        ::cereal::Constraint const&  constraint,
+        ::entt::meta_any const&      any,
+        ::cereal::SerializerContext& context
+    ) const;
 
     MCAPI void
     $doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
@@ -248,12 +216,6 @@ public:
     MCAPI void $doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
 
     MCFOLD bool $doVerifyInitialization(::cereal::SchemaWriter const&, ::entt::meta_any const&) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

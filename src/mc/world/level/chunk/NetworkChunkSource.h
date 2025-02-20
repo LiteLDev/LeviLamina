@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
-class Dimension;
 class LevelChunk;
 struct LevelChunkFinalDeleter;
 // clang-format on
@@ -57,18 +56,6 @@ public:
 
     // vIndex: 0
     virtual ~NetworkChunkSource() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NetworkChunkSource(::Dimension& dimension);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
     // NOLINTEND
 
 public:

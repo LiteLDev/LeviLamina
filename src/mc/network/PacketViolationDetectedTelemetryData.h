@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/PacketViolationResponse.h"
-
 // auto generated forward declare list
 // clang-format off
-class NetworkIdentifier;
 namespace Social::Events { class Event; }
 // clang-format on
 
@@ -32,14 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PacketViolationDetectedTelemetryData(
-        uint64                     readResult,
-        ::std::string              readResultContext,
-        ::PacketViolationResponse  violationResponse,
-        ::MinecraftPacketIds       violatingPacketId,
-        ::NetworkIdentifier const& netId
-    );
-
     MCAPI void WriteEventData(::Social::Events::Event& event) const;
 
     MCAPI ~PacketViolationDetectedTelemetryData();
@@ -49,18 +36,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& mEventName();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        uint64                     readResult,
-        ::std::string              readResultContext,
-        ::PacketViolationResponse  violationResponse,
-        ::MinecraftPacketIds       violatingPacketId,
-        ::NetworkIdentifier const& netId
-    );
     // NOLINTEND
 
 public:

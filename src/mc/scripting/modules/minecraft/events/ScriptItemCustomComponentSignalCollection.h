@@ -4,16 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/scripting/modules/minecraft/events/IScriptItemCustomComponentSignalCollection.h"
-#include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
 class HashedString;
-namespace Json { class Value; }
+class ScriptDeferredFlushTracker;
+struct ItemCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -43,8 +42,10 @@ public:
     ) /*override*/;
 
     // vIndex: 13
-    virtual void
-    subscribeToItemForComponent(::ComponentItem& item, ::std::vector<::std::string> const& componentNames) /*override*/;
+    virtual void subscribeToItemForComponent(
+        ::ComponentItem&                                item,
+        ::std::vector<::ItemCustomComponentData> const& components
+    ) /*override*/;
 
     // vIndex: 14
     virtual void clear() /*override*/;
@@ -53,7 +54,7 @@ public:
     virtual void onPreFlushAfterEvents() /*override*/;
 
     // vIndex: 7
-    virtual bool onFlushItemCustomComponentAfterEvents() /*override*/;
+    virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
     // vIndex: 9
     virtual void onPostFlushAfterEvents() /*override*/;
@@ -67,11 +68,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptItemCustomComponentSignalCollection();
 
-    MCAPI explicit ScriptItemCustomComponentSignalCollection(
-        ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
-            ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface>&& metadata
-    );
-
     MCAPI void bindMetadata(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
@@ -79,20 +75,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-
-    MCAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
-                      ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface>&& metadata);
     // NOLINTEND
 
 public:
@@ -109,13 +97,14 @@ public:
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCAPI void $subscribeToItemForComponent(::ComponentItem& item, ::std::vector<::std::string> const& componentNames);
+    MCAPI void
+    $subscribeToItemForComponent(::ComponentItem& item, ::std::vector<::ItemCustomComponentData> const& components);
 
     MCAPI void $clear();
 
     MCAPI void $onPreFlushAfterEvents();
 
-    MCAPI bool $onFlushItemCustomComponentAfterEvents();
+    MCAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
     MCAPI void $onPostFlushAfterEvents();
     // NOLINTEND

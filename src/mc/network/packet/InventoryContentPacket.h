@@ -50,8 +50,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryContentPacket();
-
     MCAPI InventoryContentPacket(
         ::ContainerID                     id,
         ::std::vector<::ItemStack> const& items,
@@ -69,8 +67,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(
         ::ContainerID                     id,
         ::std::vector<::ItemStack> const& items,

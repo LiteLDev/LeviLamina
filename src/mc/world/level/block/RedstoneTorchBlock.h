@@ -15,7 +15,7 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class ItemInstance;
-class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -37,10 +37,9 @@ public:
         /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual int getTickDelay();
 
     // vIndex: 54
@@ -71,17 +70,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedstoneTorchBlock(::std::string const& nameId, int id, bool on);
-
     MCAPI void _installCircuit(::BlockSource& source, ::BlockPos const& pos) const;
 
     MCFOLD void onPlaceRedstoneTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
     // NOLINTEND
 
 public:
@@ -97,7 +88,7 @@ public:
 
     MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD int $getTickDelay();
 

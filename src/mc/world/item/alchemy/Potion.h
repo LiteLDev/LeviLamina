@@ -67,13 +67,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Potion& operator=(Potion const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Potion(::Potion const&);
+    MCAPI explicit Potion(::std::string_view nameId);
 
     MCAPI Potion(
         ::std::string_view         nameId,
@@ -101,23 +97,9 @@ public:
         float                                timeMod
     ) const;
 
-    MCAPI ::std::string getDescriptionId() const;
-
     MCAPI ::std::string getDescriptionId(::Potion::PotionType potionType) const;
 
-    MCFOLD ::MobEffectInstance const& getMobEffect() const;
-
-    MCAPI int getMobEffectId() const;
-
-    MCFOLD ::std::vector<::MobEffectInstance> const& getMobEffects() const;
-
     MCAPI ::std::string getPotencyDescription(::Potion::PotionType potionType, float timeMod) const;
-
-    MCFOLD int getPotionId() const;
-
-    MCFOLD ::Potion::PotionVariant getPotionVariant() const;
-
-    MCFOLD ::std::string getPrefix() const;
 
     MCAPI ~Potion();
     // NOLINTEND
@@ -149,15 +131,9 @@ public:
         ::MobEffectInstance const& effect
     );
 
-    MCAPI static ::std::shared_ptr<::Potion const> getPotion(int potionId);
-
     MCAPI static ::std::shared_ptr<::Potion const> getPotion(::std::string_view potionNameId);
 
-    MCAPI static int getPotionCount();
-
     MCAPI static void initPotions(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
-
-    MCAPI static void shutdownPotions();
     // NOLINTEND
 
 public:
@@ -267,7 +243,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Potion const&);
+    MCAPI void* $ctor(::std::string_view nameId);
 
     MCAPI void* $ctor(
         ::std::string_view         nameId,

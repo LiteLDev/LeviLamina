@@ -146,19 +146,15 @@ public:
 
     MCAPI int execute(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
-    MCAPI ::FunctionEntry* getFunction(::std::string const& functionName);
+    MCAPI int getExecutionLimit() const;
 
     MCAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
-
-    MCAPI void tick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string getFunctionNameFromPath(::Core::Path const& filename);
-
-    MCAPI static ::FunctionQueueOrder getQueueOrderForCommandVersion(::CurrentCmdVersion version);
     // NOLINTEND
 
 public:

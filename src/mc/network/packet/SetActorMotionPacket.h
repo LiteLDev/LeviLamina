@@ -48,16 +48,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetActorMotionPacket();
-
     MCAPI explicit SetActorMotionPacket(::Actor const& entity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
 

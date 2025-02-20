@@ -10,6 +10,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes::v1_20_50 { struct HoverTextColorItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,8 +23,6 @@ public:
 
 public:
     // prevent constructor by default
-    HoverTextColorItemComponent& operator=(HoverTextColorItemComponent const&);
-    HoverTextColorItemComponent(HoverTextColorItemComponent const&);
     HoverTextColorItemComponent();
 
 public:
@@ -33,7 +32,19 @@ public:
     virtual void _initializeComponent() /*override*/;
 
     // vIndex: 0
-    virtual ~HoverTextColorItemComponent() /*override*/;
+    virtual ~HoverTextColorItemComponent() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
+
+    MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+
+    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
+
+    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
     // NOLINTEND
 
 public:
@@ -41,17 +52,25 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HoverTextColorItemComponent const&);
+
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class ThemeSettingsNewThemeCreatedPayload
@@ -38,36 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThemeSettingsNewThemeCreatedPayload(
-        ::std::string const&                  themeId,
-        ::std::optional<::std::string> const& name,
-        ::std::optional<::std::string> const& sourceId
-    );
-
-    MCFOLD ::std::optional<::std::string> const& getSourceId() const;
-
-    MCFOLD ::std::string const& getThemeId() const;
-
-    MCFOLD ::std::optional<::std::string> const& getThemeName() const;
-
     MCAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
     operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload&&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                  themeId,
-        ::std::optional<::std::string> const& name,
-        ::std::optional<::std::string> const& sourceId
-    );
     // NOLINTEND
 
 public:

@@ -7,7 +7,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IScreenChangedEventing();
+    virtual ~IScreenChangedEventing() = default;
 
     // vIndex: 1
     virtual void
@@ -21,7 +21,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

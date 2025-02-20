@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft::ScriptPropertyComponents { struct PropertyComponentRegistration; }
 namespace Scripting { class ModuleBindingBuilder; }
@@ -19,10 +18,6 @@ GetComponentRegistration();
 MCAPI void bind(
     ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
     ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
-);
-
-MCAPI void registerScriptPropertyComponentFactories(
-    ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>& factory
 );
 // NOLINTEND
 

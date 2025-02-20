@@ -12,7 +12,6 @@ class ActorDamageSource;
 class Dimension;
 class ILevel;
 class ItemStack;
-class Level;
 class LootTable;
 class Player;
 struct ActorUniqueID;
@@ -51,31 +50,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Builder(::ILevel* level, ::DimensionType dimensionId);
-
         MCAPI ::LootTableContext create() const;
 
-        MCAPI ::LootTableContext::Builder& withDeathSource(::ActorDamageSource const* deathSource);
-
-        MCAPI ::LootTableContext::Builder& withExplosionRadius(float explosionRadius);
-
-        MCAPI ::LootTableContext::Builder& withKilledActor(::Actor* actor);
-
-        MCAPI ::LootTableContext::Builder& withKillerPlayer(::Player* player);
-
-        MCAPI ::LootTableContext::Builder& withLuck(float luck);
-
-        MCAPI ::LootTableContext::Builder& withThisEntity(::Actor* actor);
-
-        MCFOLD ::LootTableContext::Builder& withTool(::ItemStack const* tool);
-
         MCAPI ~Builder();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ILevel* level, ::DimensionType dimensionId);
         // NOLINTEND
 
     public:
@@ -121,8 +98,6 @@ public:
         ::DimensionType            dimensionId,
         ::ItemStack const*         tool
     );
-
-    MCFOLD ::Level* getLevel() const;
 
     MCAPI void removeVisitedTable(::LootTable const* table);
 

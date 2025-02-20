@@ -39,7 +39,7 @@ public:
     virtual void flush() /*override*/;
 
     // vIndex: 3
-    virtual void setEnabled(bool enabled) /*override*/;
+    virtual void setEnabled(bool) /*override*/;
 
     // vIndex: 4
     virtual bool isEnabled() const /*override*/;

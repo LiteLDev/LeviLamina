@@ -64,16 +64,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& CHANCE_TO_SPAWN_IN_WILDERNESS();
-
     MCAPI static ::std::vector<float> const& CHANCE_TO_SPAWN_PER_DAY();
-
-    MCAPI static int const& DISTANCE_IN_BLOCKS_FROM_MEETING_AREA();
-
-    MCAPI static int const& DISTANCE_IN_BLOCKS_FROM_PLAYER();
-
-    MCAPI static int const& DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE();
-
-    MCAPI static int const& LENGTH_OF_DAY_IN_TICKS();
     // NOLINTEND
 };

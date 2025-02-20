@@ -13,9 +13,7 @@ class HashedString;
 class SemVersion;
 class Vec2;
 class Vec3;
-namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
-namespace JsonUtil { class JsonSchemaNodeBase; }
 // clang-format on
 
 namespace JsonUtil {
@@ -37,11 +35,6 @@ MCAPI ::Json::Value& getMemberByCaseInsensitiveName(::Json::Value& node, ::std::
 
 MCAPI ::Json::Value const&
 getMemberByCaseInsensitiveNameConst(::Json::Value const& node, ::std::string_view memberName);
-
-MCAPI ::std::map<::HashedString, ::std::map<::SemVersion, ::std::shared_ptr<::JsonUtil::JsonSchemaNodeBase>>>&
-getSchemaMap();
-
-MCAPI ::Bedrock::Threading::Mutex& getSchemaMapLock();
 
 MCAPI bool parseBannerBlockType(::BannerBlockType& outType, ::Json::Value const& root);
 

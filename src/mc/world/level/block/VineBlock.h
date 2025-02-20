@@ -13,11 +13,12 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Random;
 class Vec3;
-namespace mce { class Color; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class VineBlock : public ::BlockLegacy {
@@ -45,9 +46,6 @@ public:
     // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 148
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const /*override*/;
-
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -55,13 +53,13 @@ public:
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -76,11 +74,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VineBlock(::std::string const& nameId, int id);
-
     MCAPI bool _canGrowDown(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool _canGrowSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
 
     MCAPI bool _canSideSpread(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -91,13 +85,13 @@ public:
     MCAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
 
     MCAPI void growUp(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
+
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& getBlockForFace(uchar face);
-
     MCAPI static bool isAcceptableNeighbour(::Block const& block);
     // NOLINTEND
 
@@ -113,12 +107,6 @@ public:
     MCAPI static int const& VINE_SOUTH();
 
     MCAPI static int const& VINE_WEST();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -147,17 +135,15 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const;
-
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

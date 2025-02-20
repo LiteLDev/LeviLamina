@@ -16,8 +16,9 @@ class BlockSource;
 class Experiments;
 class ItemInstance;
 class Player;
-class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class RepeaterBlock : public ::DiodeBlock {
@@ -33,18 +34,14 @@ public:
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -67,16 +64,16 @@ public:
     // vIndex: 70
     virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
 
-    // vIndex: 162
+    // vIndex: 161
     virtual int getTurnOnDelay(::Block const& block) const /*override*/;
 
-    // vIndex: 163
+    // vIndex: 162
     virtual ::Block const* getOnBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 164
+    // vIndex: 163
     virtual ::Block const* getOffBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 158
+    // vIndex: 157
     virtual bool isAlternateInput(::Block const& block) const /*override*/;
 
     // vIndex: 131
@@ -89,9 +86,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RepeaterBlock(::std::string const& nameId, int id, bool on);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void updateDelay(::BlockSource& region, ::BlockPos const& pos, bool doIncrement) const;
     // NOLINTEND
@@ -102,12 +99,6 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<int const[]> DELAYS();
 
     MCAPI static ::std::add_lvalue_reference_t<float const[]> DELAY_RENDER_OFFSETS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
     // NOLINTEND
 
 public:
@@ -129,9 +120,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 

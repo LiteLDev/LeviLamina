@@ -36,7 +36,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
+        MCAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
 
         MCAPI ~ComponentInfo();
         // NOLINTEND
@@ -69,8 +69,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
-
-    MCAPI void addComponentSaveData(::Actor const& owner, ::CompoundTag& tag);
 
     MCAPI void initializeComponents(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) const;
     // NOLINTEND

@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RideableComponentData& operator=(::RideableComponentData&&);
-
     MCAPI ~RideableComponentData();
     // NOLINTEND
 

@@ -17,18 +17,4 @@ public:
     PlayerDestroyProgressCacheComponent& operator=(PlayerDestroyProgressCacheComponent const&);
     PlayerDestroyProgressCacheComponent(PlayerDestroyProgressCacheComponent const&);
     PlayerDestroyProgressCacheComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayerDestroyProgressCacheComponent(uint64 initBlock);
-
-    MCAPI void reset();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 initBlock);
-    // NOLINTEND
 };

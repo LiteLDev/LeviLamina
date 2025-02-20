@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -41,8 +41,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<void> _destroyServices();
-
-    MCAPI ::Editor::Services::IEditorService* _findService(::std::string const& serviceName) const;
 
     MCAPI ::Scripting::Result<void> _initServices();
 

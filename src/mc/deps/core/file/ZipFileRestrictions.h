@@ -27,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addRestrictedExtensions(::std::vector<::std::string> const& extensions);
-
     MCAPI bool allowFile(::Core::Path const& file) const;
     // NOLINTEND
 };

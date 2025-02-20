@@ -17,9 +17,9 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class IConstBlockSource;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class PistonBlock : public ::ActorBlock {
@@ -70,9 +70,6 @@ public:
     // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -98,21 +95,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PistonBlock(::std::string const& nameId, int id, ::PistonBlock::Type isSticky);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<::BlockPos const[]> ARM_DIRECTION_OFFSETS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::PistonBlock::Type isSticky);
     // NOLINTEND
 
 public:
@@ -142,8 +133,6 @@ public:
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCFOLD bool $isValidAuxValue(int value) const;
-
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

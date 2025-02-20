@@ -12,6 +12,7 @@
 // clang-format off
 class ContentIdentity;
 class IContentKeyProvider;
+class IFileAccess;
 class ResourceLocation;
 namespace Core { class Path; }
 // clang-format on
@@ -26,6 +27,7 @@ public:
     ::ll::UntypedStorage<8, 56> mUnke45de1;
     ::ll::UntypedStorage<8, 16> mUnk1b31b5;
     ::ll::UntypedStorage<8, 24> mUnkdf74db;
+    ::ll::UntypedStorage<8, 24> mUnk9e54a2;
     ::ll::UntypedStorage<8, 8>  mUnkeca0b7;
     // NOLINTEND
 
@@ -108,7 +110,8 @@ public:
     MCAPI DirectoryPackWithEncryptionAccessStrategy(
         ::ResourceLocation const&                                         packLocation,
         ::ResourceLocation const&                                         encryptedContentLocation,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::IFileAccess&                                                    fileAccess
     );
 
     MCAPI bool _getUnencryptedAsset(::Core::Path const& packRelativePath, ::std::string& result) const;
@@ -122,7 +125,8 @@ public:
     MCAPI void* $ctor(
         ::ResourceLocation const&                                         packLocation,
         ::ResourceLocation const&                                         encryptedContentLocation,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::IFileAccess&                                                    fileAccess
     );
     // NOLINTEND
 

@@ -33,23 +33,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemEventCoordinator();
-
-    MCFOLD ::ItemGameplayHandler& getItemGameplayHandler();
-
-    MCAPI void onItemModifiedActor(::ItemStackBase const& item, ::Actor const& modifiedActor);
-
     MCAPI void onItemSpawnedActor(::ItemStackBase const& item, ::Actor const& spawnedActor);
 
     MCAPI void registerItemGameplayHandler(::std::unique_ptr<::ItemGameplayHandler> handler);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableItemGameplayEvent<::CoordinatorResult>> event);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

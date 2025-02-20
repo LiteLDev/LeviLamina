@@ -30,10 +30,6 @@ public:
         ::std::string const& saveId
     );
 
-    MCAPI ::std::string createSaveID(::std::string const& savePrefix, ::std::string const& dimensionPrefix);
-
-    MCAPI void deleteDataWithID(::std::string const& levelStorageId, ::LevelStorage& levelStorage);
-
     MCAPI void forEachKeyWithDimensionPrefix(
         ::std::string const&                                                     savePrefix,
         ::std::string const&                                                     dimensionPrefix,

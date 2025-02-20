@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/pathfinder/NodeType.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
-
 class PathfinderNode {
 public:
     // member variables
@@ -30,31 +22,6 @@ public:
 public:
     // prevent constructor by default
     PathfinderNode& operator=(PathfinderNode const&);
+    PathfinderNode(PathfinderNode const&);
     PathfinderNode();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PathfinderNode(::PathfinderNode const& node);
-
-    MCAPI PathfinderNode(::BlockPos const& pos, ::NodeType type);
-
-    MCAPI float distanceTo(::PathfinderNode* to) const;
-
-    MCAPI float distanceToSqr(::PathfinderNode* to) const;
-
-    MCAPI bool equals(::PathfinderNode* o);
-
-    MCFOLD ::NodeType getType() const;
-
-    MCAPI bool inOpenSet();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PathfinderNode const& node);
-
-    MCAPI void* $ctor(::BlockPos const& pos, ::NodeType type);
-    // NOLINTEND
 };

@@ -14,10 +14,10 @@ class CompoundTag;
 class CraftableCompounds;
 class DataLoadHelper;
 class HashedString;
+class ILevel;
 class ItemStack;
 class LabTablePacket;
 class LabTableReaction;
-class Level;
 class Player;
 class Random;
 class SaveContext;
@@ -53,7 +53,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
@@ -65,13 +65,13 @@ public:
     virtual void startOpen(::Player& p) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& p) /*override*/;
+    virtual void stopOpen(::Player& player) /*override*/;
 
     // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -98,8 +98,6 @@ public:
     MCAPI void _popPendingReactionOutput(::BlockSource& region);
 
     MCAPI ::HashedString const& _updateType(::BlockSource& region);
-
-    MCAPI bool isSameType(::HashedString const& type) const;
 
     MCAPI void playerOpenLabTable(::Player& player);
 
@@ -131,7 +129,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 
@@ -139,11 +137,11 @@ public:
 
     MCFOLD void $startOpen(::Player& p);
 
-    MCAPI void $stopOpen(::Player& p);
+    MCAPI void $stopOpen(::Player& player);
 
     MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

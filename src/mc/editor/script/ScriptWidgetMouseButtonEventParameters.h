@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/editor/script/ScriptWidgetMouseButtonEventType.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 

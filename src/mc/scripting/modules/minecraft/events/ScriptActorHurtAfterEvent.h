@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -16,12 +16,13 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkbc914a;
     ::ll::UntypedStorage<8, 40> mUnk2ac240;
     ::ll::UntypedStorage<8, 40> mUnk4c5039;
-    ::ll::UntypedStorage<4, 4>  mUnkc62760;
+    ::ll::UntypedStorage<4, 4>  mUnk829ec8;
     ::ll::UntypedStorage<8, 32> mUnk3edad4;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptActorHurtAfterEvent& operator=(ScriptActorHurtAfterEvent const&);
     ScriptActorHurtAfterEvent();
 
 public:
@@ -33,9 +34,6 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
     MCAPI ~ScriptActorHurtAfterEvent();
     // NOLINTEND

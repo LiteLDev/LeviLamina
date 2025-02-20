@@ -77,7 +77,7 @@ public:
         int           attackTicks
     );
 
-    MCAPI static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
+    MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
 
     MCAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
     // NOLINTEND

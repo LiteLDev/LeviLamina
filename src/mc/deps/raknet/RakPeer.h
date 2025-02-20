@@ -680,29 +680,27 @@ public:
 
     MCAPI ::RakNet::Packet* AllocPacket(uint dataSize, char const* file, uint line);
 
+    MCAPI ::RakNet::Packet* AllocPacket(uint dataSize, uchar* data, char const* file, uint line);
+
     MCAPI bool AllowIncomingConnections() const;
 
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct* AssignSystemAddressToRemoteSystemList(
         ::RakNet::SystemAddress                            systemAddress,
-        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
-        ::RakNet::RakNetSocket2*                           incomingRakNetSocket,
-        bool*                                              thisIPConnectedRecently,
-        ::RakNet::SystemAddress                            bindingAddress,
-        int                                                incomingMTU,
-        ::RakNet::RakNetGUID                               guid,
+        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode incomingRakNetSocket,
+        ::RakNet::RakNetSocket2*                           thisIPConnectedRecently,
+        bool*                                              bindingAddress,
+        ::RakNet::SystemAddress                            incomingMTU,
+        int                                                guid,
+        ::RakNet::RakNetGUID                               connectionMode,
         bool                                               useSecurity
     );
 
     MCAPI void
     CallPluginCallbacks(::DataStructures::List<::RakNet::PluginInterface2*>& pluginList, ::RakNet::Packet* packet);
 
-    MCAPI void ClearBufferedCommands();
-
     MCAPI void ClearBufferedPackets();
 
     MCAPI void ClearRequestedConnectionList();
-
-    MCAPI void ClearSocketQueryOutput();
 
     MCAPI void CloseConnectionInternal(
         ::RakNet::AddressOrGUID const& systemIdentifier,
@@ -718,12 +716,9 @@ public:
 
     MCAPI void FillIPList();
 
+    MCAPI uint64 GetBestClockDifferential(::RakNet::SystemAddress systemAddress) const;
+
     MCAPI int GetIndexFromSystemAddress(::RakNet::SystemAddress systemAddress, bool calledFromNetworkThread) const;
-
-    MCAPI uint GetRakNetSocketFromUserConnectionSocketIndex(uint userIndex) const;
-
-    MCAPI ::RakNet::RakPeer::RemoteSystemStruct*
-    GetRemoteSystem(::RakNet::AddressOrGUID systemIdentifier, bool calledFromNetworkThread, bool onlyActive) const;
 
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct* GetRemoteSystemFromSystemAddress(
         ::RakNet::SystemAddress systemAddress,
@@ -733,12 +728,17 @@ public:
 
     MCAPI uint GetRemoteSystemIndex(::RakNet::SystemAddress const& sa) const;
 
+    MCAPI bool IsLoopbackAddress(::RakNet::AddressOrGUID const& systemIdentifier, bool matchPort) const;
+
     MCAPI void NotifyAndFlagForShutdown(
         ::RakNet::SystemAddress systemAddress,
         bool                    performImmediate,
         uchar                   orderingChannel,
         ::PacketPriority        disconnectionNotificationPriority
     );
+
+    MCAPI void
+    OnConnectedPong(uint64 sendPingTime, uint64 sendPongTime, ::RakNet::RakPeer::RemoteSystemStruct* remoteSystem);
 
     MCAPI void OnConnectionRequest(::RakNet::RakPeer::RemoteSystemStruct* remoteSystem, uint64 incomingTimestamp);
 
@@ -776,8 +776,8 @@ public:
         char                                               orderingChannel,
         ::RakNet::AddressOrGUID                            systemIdentifier,
         bool                                               broadcast,
-        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode connectionMode,
-        uint                                               receipt
+        ::RakNet::RakPeer::RemoteSystemStruct::ConnectMode receipt,
+        uint                                               connectionMode
     );
 
     MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
@@ -785,12 +785,12 @@ public:
         ushort               remotePort,
         char const*          passwordData,
         int                  passwordDataLength,
-        ::RakNet::PublicKey* publicKey,
-        uint                 connectionSocketIndex,
-        uint                 extraData,
+        ::RakNet::PublicKey* connectionSocketIndex,
         uint                 sendConnectionAttemptCount,
         uint                 timeBetweenSendConnectionAttemptsMS,
-        uint                 timeoutTime
+        uint                 timeoutTime,
+        uint                 publicKey,
+        uint                 extraData
     );
 
     MCAPI ::RakNet::ConnectionAttemptResult SendConnectionRequest(
@@ -798,13 +798,13 @@ public:
         ushort                   remotePort,
         char const*              passwordData,
         int                      passwordDataLength,
-        ::RakNet::PublicKey*     publicKey,
-        uint                     connectionSocketIndex,
-        uint                     extraData,
-        uint                     sendConnectionAttemptCount,
+        ::RakNet::PublicKey*     sendConnectionAttemptCount,
         uint                     timeBetweenSendConnectionAttemptsMS,
         uint                     timeoutTime,
-        ::RakNet::RakNetSocket2* socket
+        uint                     socket,
+        uint                     publicKey,
+        uint                     connectionSocketIndex,
+        ::RakNet::RakNetSocket2* extraData
     );
 
     MCAPI bool SendImmediate(
@@ -819,8 +819,6 @@ public:
         uint64                  currentTime,
         uint                    receipt
     );
-
-    MCAPI void ShiftIncomingTimestamp(uchar* data, ::RakNet::SystemAddress const& systemAddress) const;
     // NOLINTEND
 
 public:

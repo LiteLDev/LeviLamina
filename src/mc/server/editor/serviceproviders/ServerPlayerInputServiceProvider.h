@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 namespace Editor::Input { class KeyBinding; }
+namespace Editor::Input { class MouseBinding; }
 namespace Editor::Input { struct BindingInfo; }
 // clang-format on
 
@@ -29,6 +30,13 @@ public:
     virtual ::Scripting::Result<void> unregisterKeyBinding(::HashedString const&, ::HashedString const&) = 0;
 
     // vIndex: 3
+    virtual ::Scripting::Result<void>
+    registerMouseBinding(::HashedString const&, ::HashedString const&, ::Editor::Input::MouseBinding const&) = 0;
+
+    // vIndex: 4
+    virtual ::Scripting::Result<void> unregisterMouseBinding(::HashedString const&, ::HashedString const&) = 0;
+
+    // vIndex: 5
     virtual ::Scripting::Result<void> setViewportFocus(bool) = 0;
     // NOLINTEND
 

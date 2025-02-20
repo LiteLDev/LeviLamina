@@ -4,9 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionInstanceGroup;
-class EntityContext;
-class EntityRegistry;
 class IJsonDefinitionSerializer;
 // clang-format on
 
@@ -29,16 +26,6 @@ public:
     MCFOLD ::IJsonDefinitionSerializer* tryGetDefinitionSerializer(::std::string const& name);
 
     MCAPI ~EntityGoalFactory();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void addGoals(
-        ::EntityRegistry&                entityRegistry,
-        ::EntityContext&                 entity,
-        ::DefinitionInstanceGroup const& definitionGroup
-    );
     // NOLINTEND
 
 public:

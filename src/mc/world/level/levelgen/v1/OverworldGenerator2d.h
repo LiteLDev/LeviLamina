@@ -90,7 +90,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~OverworldGenerator2d() /*override*/ = default;
+    virtual ~OverworldGenerator2d() /*override*/;
     // NOLINTEND
 
 public:
@@ -111,7 +111,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -128,7 +128,7 @@ public:
 
     MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCFOLD ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
     MCFOLD void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;

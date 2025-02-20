@@ -22,19 +22,16 @@ public:
 public:
     // prevent constructor by default
     ArmorTrim& operator=(ArmorTrim const&);
-    ArmorTrim(ArmorTrim const&);
     ArmorTrim();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ArmorTrim(::CompoundTag const& tag);
+    MCAPI ArmorTrim(::ArmorTrim const&);
 
     MCAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
 
-    MCFOLD ::HashedString const& getMaterialId() const;
-
-    MCFOLD ::HashedString const& getPatternId() const;
+    MCAPI void load(::CompoundTag const& tag);
 
     MCAPI ~ArmorTrim();
     // NOLINTEND
@@ -72,7 +69,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundTag const& tag);
+    MCFOLD void* $ctor(::ArmorTrim const&);
 
     MCAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
     // NOLINTEND

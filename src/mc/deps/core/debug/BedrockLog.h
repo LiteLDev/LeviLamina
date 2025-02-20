@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 class LogSettingsUpdater;
-namespace Bedrock { class ScopeExit; }
 namespace BedrockLog { class LogAreaFilter; }
 namespace Core { class Path; }
 // clang-format on
@@ -26,8 +25,6 @@ _constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::
 
 MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
 
-MCAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
-
 MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
 
 MCAPI void _initAreaFilterMap();
@@ -39,9 +36,9 @@ MCAPI ::std::string _messageIdString(int _messageId);
 MCAPI void _openChannel(
     ::Core::Path const&       path,
     ::std::string const&      filename,
-    ::std::string const&      _debugLogTimestamp,
-    ::BedrockLog::LogCategory category,
-    ::BedrockLog::LogChannel  channel,
+    ::std::string const&      channel,
+    ::BedrockLog::LogCategory _debugLogTimestamp,
+    ::BedrockLog::LogChannel  category,
     bool                      _createLogFile,
     ::LogSettingsUpdater*     _settings,
     double                    _logCycleInS
@@ -54,17 +51,13 @@ MCAPI void closeAndResetAllLogs();
 MCAPI void createLog(
     ::Core::Path const&       _path,
     ::std::string const&      _labelDescription,
-    ::std::string const&      _debugLogTimestamp,
-    ::BedrockLog::LogCategory _category,
-    ::std::bitset<3>          _channels,
+    ::std::string const&      _channels,
+    ::BedrockLog::LogCategory _debugLogTimestamp,
+    ::std::bitset<3>          _category,
     bool                      _createLogFile,
     ::LogSettingsUpdater*     _settings,
     double                    _logCycleInS
 );
-
-MCAPI ::Bedrock::ScopeExit initialize();
-
-MCAPI void initializeLogExtensions();
 
 MCAPI void log_va(
     ::BedrockLog::LogCategory _category,
@@ -80,8 +73,6 @@ MCAPI void log_va(
 
 MCAPI int rakDebugLog(char const*, ...);
 
-MCAPI void update();
-
 MCAPI void updateLogFilter(
     ::std::unique_ptr<::LogSettingsUpdater> options,
     ::std::string const&                    filterType,
@@ -89,8 +80,6 @@ MCAPI void updateLogFilter(
     ::std::string&                          result,
     bool                                    toggle
 );
-
-MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
 // NOLINTEND
 
 // static variables

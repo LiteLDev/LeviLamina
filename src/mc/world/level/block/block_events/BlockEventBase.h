@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockSource;
 // clang-format on
 
@@ -28,7 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BlockEventBase();
+    virtual ~BlockEventBase() = default;
 
     // vIndex: 1
     virtual ::Block const& getBlock() const;
@@ -38,21 +37,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BlockEventBase(::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos pos);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

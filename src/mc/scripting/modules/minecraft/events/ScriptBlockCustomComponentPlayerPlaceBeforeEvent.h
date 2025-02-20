@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace BlockEvents { class BlockPlayerPlacingEvent; }
-namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -32,7 +31,6 @@ public:
     // prevent constructor by default
     ScriptBlockCustomComponentPlayerPlaceBeforeEvent&
     operator=(ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
-    ScriptBlockCustomComponentPlayerPlaceBeforeEvent(ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
     ScriptBlockCustomComponentPlayerPlaceBeforeEvent();
 
 public:
@@ -45,33 +43,37 @@ public:
     virtual bool shouldCancel() const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptBlockCustomComponentPlayerPlaceBeforeEvent() /*override*/ = default;
+    virtual ~ScriptBlockCustomComponentPlayerPlaceBeforeEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
+                                                               ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
+
+    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(::ScriptModuleMinecraft::
+                                                               ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+
     MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::BlockEvents::BlockPlayerPlacingEvent const& engineEvent,
         ::Scripting::WeakLifetimeScope const&         scope
     );
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&
-    operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCAPI static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
-    tryGetComponentsToExecute(::BlockEvents::BlockPlayerPlacingEvent const& eventData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+
     MCAPI void*
     $ctor(::BlockEvents::BlockPlayerPlacingEvent const& engineEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
@@ -79,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

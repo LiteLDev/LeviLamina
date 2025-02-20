@@ -15,7 +15,7 @@ class BlockDefinitionLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 368> mUnkdeb880;
+    ::ll::UntypedStorage<8, 208> mUnkdaeef1;
     // NOLINTEND
 
 public:

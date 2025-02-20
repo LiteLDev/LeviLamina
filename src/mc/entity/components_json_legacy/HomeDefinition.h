@@ -30,13 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _finalize() const;
-
     MCAPI void _setRestrictionRadius(int const& restrictionRadius);
 
     MCAPI void _setRestrictionType(::std::string const& restrictionType);
 
-    MCAPI void initialize(::EntityContext&, ::HomeComponent& component) const;
+    MCAPI void initialize(::EntityContext& component, ::HomeComponent&) const;
     // NOLINTEND
 
 public:

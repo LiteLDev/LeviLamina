@@ -44,11 +44,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LegacyForestFoliageFeature() /*override*/ = default;
-
     // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
+
+    // vIndex: 0
+    virtual ~LegacyForestFoliageFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

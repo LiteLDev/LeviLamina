@@ -70,8 +70,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PaleMossCarpetBlock(::std::string const& nameId, int id);
-
     MCAPI void _onOneHalfDestroyed(::BlockSource& region, ::BlockPos const& pos, bool wasBottom) const;
     // NOLINTEND
 
@@ -79,12 +77,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void placeWithRandomizedSides(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

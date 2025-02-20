@@ -8,7 +8,6 @@ struct AppendLoot {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnka4786e;
     ::ll::UntypedStorage<8, 32> mUnk3e925c;
     // NOLINTEND
 

@@ -215,6 +215,10 @@ public:
         _recursiveCorridor(::WoodlandMansionPieces::SimpleGrid& grid, int x, int y, uchar heading, int depth);
 
         MCAPI void _setupThirdFloor();
+
+        MCAPI uchar
+        get1x2RoomDirection(::WoodlandMansionPieces::SimpleGrid const& x, int y, int floorNum, int roomId, int grid)
+            const;
         // NOLINTEND
 
     public:
@@ -356,15 +360,30 @@ public:
             ::WoodlandMansionPieces::SimpleGrid*                aboveGrid
         );
 
+        MCAPI void _entrance(
+            ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+            ::WoodlandMansionPieces::PlacementData&             data
+        );
+
+        MCAPI void _traverseInnerTurn(
+            ::std::vector<::std::unique_ptr<::StructurePiece>>& data,
+            ::WoodlandMansionPieces::PlacementData&             pieces
+        );
+
         MCAPI void _traverseOuterWalls(
             ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
             ::WoodlandMansionPieces::PlacementData&             data,
             ::WoodlandMansionPieces::SimpleGrid&                grid,
-            uchar                                               gridDirection,
-            int                                                 startX,
+            uchar                                               startX,
             int                                                 startY,
             int                                                 endX,
-            int                                                 endY
+            int                                                 endY,
+            int                                                 gridDirection
+        );
+
+        MCAPI void _traverseTurn(
+            ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+            ::WoodlandMansionPieces::PlacementData&             data
         );
 
         MCAPI void _traverseWallPiece(

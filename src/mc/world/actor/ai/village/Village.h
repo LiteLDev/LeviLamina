@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/entity/components_json_legacy/DwellerRole.h"
 #include "mc/world/actor/ai/village/POIType.h"
 
@@ -154,6 +155,8 @@ public:
 
     MCAPI void _loadVillagePOIs(::CompoundTag const& tag);
 
+    MCAPI void _playSoundFrom(::Vec3 const& soundOrigin, ::SharedTypes::Legacy::LevelSoundEvent sound);
+
     MCAPI void _readyRaidGroup(::std::unordered_set<::ActorUniqueID>& spawnedMobs);
 
     MCAPI void _ringBells(::BlockSource& region, ::Random& random) const;
@@ -169,6 +172,8 @@ public:
     MCAPI void _saveVillagePlayerStanding(::LevelStorage& levelStorage) const;
 
     MCAPI void _saveVillageRaid(::LevelStorage& levelStorage) const;
+
+    MCAPI void _sendSoundTheAlarmAchievement(::Player const& player) const;
 
     MCAPI void _spawnPassiveDwellers(::BlockSource& region, int);
 
@@ -201,31 +206,11 @@ public:
 
     MCAPI ::std::weak_ptr<::POIInstance> fetchOwnedPOI(::ActorUniqueID const& id, ::POIType type);
 
-    MCAPI void fireSoundTheAlarm();
-
     MCAPI uint64 getBedPOICount() const;
-
-    MCFOLD ::AABB const& getBounds() const;
-
-    MCAPI ::Vec3 getCenter() const;
 
     MCAPI ::Actor* getClosestAggressor(::Actor* from);
 
-    MCAPI ::Player* getClosestBadStandingPlayer(::Actor& from);
-
     MCAPI ::std::weak_ptr<::POIInstance> getClosestPOI(::POIType type, ::BlockPos const& position);
-
-    MCFOLD ::Raid const* getRaid() const;
-
-    MCFOLD ::AABB const& getRaidBounds() const;
-
-    MCFOLD ::Raid* getRaidMutable();
-
-    MCFOLD ::mce::UUID getUniqueID() const;
-
-    MCAPI bool hasInvalidRole(::ActorUniqueID const& actorId, ::DwellerRole const& role);
-
-    MCAPI bool hasRaid() const;
 
     MCAPI bool hasSpecificDweller(::DwellerRole role, ::ActorUniqueID const& id) const;
 
@@ -241,13 +226,7 @@ public:
 
     MCAPI void removeVillageSavedData();
 
-    MCAPI void resetDwellerTimer(::DwellerRole role, ::ActorUniqueID const& id);
-
-    MCAPI void resetNoBreedTimer();
-
     MCAPI void rewardAllPlayers(int deltaAmount);
-
-    MCAPI void setSavedDwellerPosition(::DwellerRole role, ::ActorUniqueID const& id, ::BlockPos pos);
 
     MCAPI void tick(::Tick tick, ::BlockSource& region);
 
@@ -255,13 +234,9 @@ public:
 
     MCAPI void triggerRaid();
 
-    MCAPI void trySetVillagerWorkTimestamp(::ActorUniqueID const& id);
-
     MCAPI void unlinkMismatchedJobsites(::Actor const& villager);
 
     MCAPI bool villagerLivesHere(::ActorUniqueID const& villager) const;
-
-    MCAPI bool withinVillageBounds(::Vec3 const& pos, float tolerance) const;
 
     MCAPI ~Village();
     // NOLINTEND
@@ -269,23 +244,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::shared_ptr<::POIInstance> _findPreferredPOI(
+        ::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack,
+        ::HashedString const&                          preferredPOI
+    );
+
     MCAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE();
-
     MCAPI static ::std::string const& CELEBRATION_EVENT();
 
     MCAPI static bool& DEBUG_DRAWING();
-
-    MCAPI static float const& DWELLER_REMOVAL_TOLERANCE();
-
-    MCAPI static int const& MAX_VILLAGE_STANDING();
-
-    MCAPI static int const& MIN_VILLAGE_STANDING();
 
     MCAPI static ::Vec3 const& RAID_BOUNDS_PADDING();
 
@@ -303,10 +275,6 @@ public:
 
     MCAPI static ::Tick const& RAID_TIMEOUT_IN_TICKS();
 
-    MCAPI static uint64 const& STANDING_DECAY_INTERVAL_BAD();
-
-    MCAPI static uint64 const& STANDING_DECAY_INTERVAL_GOOD();
-
     MCAPI static ::std::string const& STORAGE_KEY_DWELLERS();
 
     MCAPI static ::std::string const& STORAGE_KEY_PLAYERS();
@@ -317,31 +285,7 @@ public:
 
     MCAPI static ::std::string const& STORAGE_KEY_RAID();
 
-    MCAPI static char const& STORAGE_KEY_SEPARATOR();
-
     MCAPI static ::std::string const& STORAGE_KEY_VILLAGE();
-
-    MCAPI static int const& UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS();
-
-    MCAPI static int64 const& VILLAGER_EXPECTED_WORK_INTERVAL();
-
-    MCAPI static int const& VILLAGE_HERO_BESTOW_TIME();
-
-    MCAPI static uint64 const& VILLAGE_POI_PURGE_TIME();
-
-    MCAPI static float const& VILLAGE_RADIUS_APPROX_SCALAR();
-
-    MCAPI static uint64 const& VILLAGE_SAVE_TICK_DELAY();
-
-    MCAPI static int const& VILLAGE_START_HEIGHT();
-
-    MCAPI static int const& VILLAGE_START_XZ_BOUNDS();
-
-    MCAPI static int const& VILLAGE_UNCLAIMED_POI_CAP();
-
-    MCAPI static uint64 const& VILLAGE_UPDATE_TICK_DELAY();
-
-    MCAPI static uchar const& VILLAGE_VERSION_CURRENT();
     // NOLINTEND
 
 public:

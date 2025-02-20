@@ -3,14 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-class Actor;
-struct ActorAddEffectEvent;
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -33,13 +26,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorAddEffectBeforeEvent(
-        ::ActorAddEffectEvent&                actorEffectAddedEvent,
-        ::Actor const&                        actor,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
+    operator=(::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&&);
 
-    MCAPI void copyTo(::ActorAddEffectEvent& addEffectEvent);
+    MCAPI ~ScriptActorAddEffectBeforeEvent();
     // NOLINTEND
 
 public:
@@ -49,13 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorAddEffectEvent&                actorEffectAddedEvent,
-        ::Actor const&                        actor,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

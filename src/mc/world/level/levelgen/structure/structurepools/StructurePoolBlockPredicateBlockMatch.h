@@ -10,7 +10,6 @@
 // clang-format off
 class Block;
 class BlockPos;
-class HashedString;
 class Randomize;
 namespace Util { class XXHash; }
 // clang-format on
@@ -45,22 +44,6 @@ public:
 
     // vIndex: 0
     virtual ~StructurePoolBlockPredicateBlockMatch() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(::Block const& block);
-
-    MCAPI explicit StructurePoolBlockPredicateBlockMatch(::std::vector<::HashedString> blockMatchings);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block);
-
-    MCAPI void* $ctor(::std::vector<::HashedString> blockMatchings);
     // NOLINTEND
 
 public:

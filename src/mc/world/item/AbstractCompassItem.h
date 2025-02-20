@@ -45,19 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    AbstractCompassItem(::std::string const& name, int id, ::CompassSpriteCalculator (*getSpriteCalculator)(::Mob&));
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::CompassSpriteCalculator (*getSpriteCalculator)(::Mob&));
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -72,11 +59,5 @@ public:
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
     MCAPI int $getEnchantSlot() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

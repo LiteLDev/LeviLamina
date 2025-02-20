@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Random;
-// clang-format on
-
 namespace ValueProviders {
 
 struct ClampedNormalFloat {
@@ -24,18 +19,6 @@ public:
     ClampedNormalFloat& operator=(ClampedNormalFloat const&);
     ClampedNormalFloat(ClampedNormalFloat const&);
     ClampedNormalFloat();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI float generateNext(::Random& random) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static float generateNext(::Random& random, float mean, float deviation, float min, float max);
-    // NOLINTEND
 };
 
 } // namespace ValueProviders

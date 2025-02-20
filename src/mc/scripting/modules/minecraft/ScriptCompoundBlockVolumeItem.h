@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,21 +16,20 @@ class ScriptCompoundBlockVolumeItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkaf6d04;
+    ::ll::UntypedStorage<8, 48> mUnkaf6d04;
     ::ll::UntypedStorage<4, 8>  mUnka0e799;
     ::ll::UntypedStorage<4, 8>  mUnk686d88;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptCompoundBlockVolumeItem(ScriptCompoundBlockVolumeItem const&);
     ScriptCompoundBlockVolumeItem();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptCompoundBlockVolumeItem(::CompoundBlockVolumeItem const& item);
-
-    MCAPI ScriptCompoundBlockVolumeItem(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
 
     MCAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
     operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
@@ -51,8 +50,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CompoundBlockVolumeItem const& item);
-
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
     // NOLINTEND
 
 public:

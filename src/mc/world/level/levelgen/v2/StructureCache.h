@@ -70,8 +70,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureCache();
-
     MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance const> at(::BlockPos pos) const;
 
     MCAPI ::std::vector<::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>>>
@@ -84,12 +82,6 @@ public:
     );
 
     MCAPI void tick();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };
 

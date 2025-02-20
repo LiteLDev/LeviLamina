@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldBeforeEvents.h"
 #include "mc/world/level/GameType.h"
@@ -18,6 +18,7 @@ struct ActorAddEffectEvent;
 struct BlockTryDestroyByPlayerEvent;
 struct BlockTryPlaceByPlayerEvent;
 struct ChatEvent;
+struct ClientJoinedEvent;
 struct ExplosionStartedEvent;
 struct ItemUseEvent;
 struct ItemUseOnEvent;
@@ -52,20 +53,23 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk56ca7e;
     ::ll::UntypedStorage<8, 8>  mUnkfd5958;
     ::ll::UntypedStorage<8, 16> mUnkbcc9f2;
-    ::ll::UntypedStorage<8, 32> mUnkff0077;
-    ::ll::UntypedStorage<8, 32> mUnk7d93b7;
-    ::ll::UntypedStorage<8, 32> mUnkb629d7;
-    ::ll::UntypedStorage<8, 32> mUnk7fcac5;
-    ::ll::UntypedStorage<8, 32> mUnk1ed8ad;
-    ::ll::UntypedStorage<8, 32> mUnke1a77a;
-    ::ll::UntypedStorage<8, 32> mUnk2d38a6;
-    ::ll::UntypedStorage<8, 32> mUnk7e3148;
-    ::ll::UntypedStorage<8, 32> mUnkc2129a;
-    ::ll::UntypedStorage<8, 32> mUnkc9e779;
-    ::ll::UntypedStorage<8, 32> mUnkdcea26;
-    ::ll::UntypedStorage<8, 32> mUnk9d3b4c;
-    ::ll::UntypedStorage<8, 32> mUnk5e7ab5;
-    ::ll::UntypedStorage<8, 32> mUnke86ebc;
+    ::ll::UntypedStorage<8, 32> mUnk34667f;
+    ::ll::UntypedStorage<8, 32> mUnk332e62;
+    ::ll::UntypedStorage<8, 32> mUnkfbaade;
+    ::ll::UntypedStorage<8, 32> mUnkec6f78;
+    ::ll::UntypedStorage<8, 32> mUnk30c72e;
+    ::ll::UntypedStorage<8, 32> mUnk4c983f;
+    ::ll::UntypedStorage<8, 32> mUnk76b4f3;
+    ::ll::UntypedStorage<8, 32> mUnk1f7b92;
+    ::ll::UntypedStorage<8, 32> mUnk7fb5b3;
+    ::ll::UntypedStorage<8, 32> mUnk703a2d;
+    ::ll::UntypedStorage<8, 32> mUnk191653;
+    ::ll::UntypedStorage<8, 32> mUnkb41bda;
+    ::ll::UntypedStorage<8, 32> mUnkd3693e;
+    ::ll::UntypedStorage<8, 32> mUnkada2d9;
+    ::ll::UntypedStorage<8, 32> mUnk27c8e4;
+    ::ll::UntypedStorage<8, 8>  mUnkf4e2ae;
+    ::ll::UntypedStorage<8, 24> mUnk1788f8;
     // NOLINTEND
 
 public:
@@ -143,6 +147,9 @@ public:
     // vIndex: 7
     virtual void onBeforePlayerLeave(::Player const& player) /*override*/;
 
+    // vIndex: 15
+    virtual void onClientJoinedEvent(::ClientJoinedEvent const& e) /*override*/;
+
     // vIndex: 9
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
@@ -166,6 +173,8 @@ public:
     MCAPI ScriptWorldBeforeEvents(::Scripting::WeakLifetimeScope scope, ::Level* level);
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::SignalNameSubscriberCount> getFineGrainedSignalSubscriberStats() const;
+
+    MCAPI void onTick();
 
     MCAPI ::ScriptModuleMinecraft::ScriptWorldBeforeEvents&
     operator=(::ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
@@ -239,6 +248,8 @@ public:
     );
 
     MCAPI void $onBeforePlayerLeave(::Player const& player);
+
+    MCAPI void $onClientJoinedEvent(::ClientJoinedEvent const& e);
 
     MCAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>

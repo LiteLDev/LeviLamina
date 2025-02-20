@@ -14,8 +14,8 @@ class BlockSource;
 class CompoundTag;
 class Container;
 class DataLoadHelper;
+class ILevel;
 class ItemStack;
-class Level;
 class Player;
 class Random;
 class SaveContext;
@@ -44,7 +44,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
@@ -59,7 +59,7 @@ public:
     virtual void stopOpen(::Player& player) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -81,7 +81,7 @@ public:
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~DispenserBlockActor() /*override*/ = default;
+    virtual ~DispenserBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -105,7 +105,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -119,17 +119,17 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI void $startOpen(::Player& player);
+    MCFOLD void $startOpen(::Player& player);
 
     MCFOLD void $stopOpen(::Player& player);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

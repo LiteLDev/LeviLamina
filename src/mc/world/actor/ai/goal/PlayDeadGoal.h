@@ -31,7 +31,7 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnk1e8f68;
         ::ll::UntypedStorage<4, 8>  mUnk1d2779;
         ::ll::UntypedStorage<1, 1>  mUnk278a3a;
-        ::ll::UntypedStorage<8, 24> mUnk951603;
+        ::ll::UntypedStorage<8, 24> mUnk5f3f3f;
         ::ll::UntypedStorage<8, 64> mUnkd46bef;
         // NOLINTEND
 
@@ -39,6 +39,7 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -50,8 +51,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Definition();
-
         MCAPI void addDamageCause(::std::string const& causeCased);
 
         MCAPI void initialize(::EntityContext& entity, ::PlayDeadGoal& goal) const;
@@ -65,12 +64,6 @@ public:
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlayDeadGoal::Definition>>&
                 root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -117,18 +110,6 @@ public:
 
     // vIndex: 0
     virtual ~PlayDeadGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayDeadGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

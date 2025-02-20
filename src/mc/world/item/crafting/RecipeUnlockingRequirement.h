@@ -31,12 +31,6 @@ public:
 
     MCAPI explicit RecipeUnlockingRequirement(::std::vector<::RecipeIngredient> unlockingIngredients);
 
-    MCAPI bool canBeUnlockedByContext(::RecipeUnlockingRequirement::UnlockingContext context) const;
-
-    MCAPI bool canBeUnlockedByIngredient(::RecipeIngredient const& ingredient) const;
-
-    MCAPI bool isUnlockable() const;
-
     MCAPI ~RecipeUnlockingRequirement();
     // NOLINTEND
 
@@ -50,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
 
     MCAPI void* $ctor(::std::vector<::RecipeIngredient> unlockingIngredients);
     // NOLINTEND

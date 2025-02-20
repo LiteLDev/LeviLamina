@@ -16,15 +16,21 @@ class MolangVariable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>          mName;
-    ::ll::TypedStorage<8, 88, ::MolangScriptArg>       mValue;
-    ::ll::TypedStorage<8, 88, ::MolangScriptArg>       mPublicValue;
-    ::ll::TypedStorage<4, 8, ::MolangVariableSettings> mSettings;
+    ::ll::TypedStorage<8, 48, ::HashedString>                      mName;
+    ::ll::TypedStorage<8, 88, ::MolangScriptArg>                   mValue;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MolangScriptArg>> mPublicValue;
+    ::ll::TypedStorage<4, 8, ::MolangVariableSettings>             mSettings;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MolangVariable& operator=(MolangVariable const&);
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MolangVariable(::MolangVariable const& rhs);
+
     MCAPI MolangVariable(::MolangVariableIndex index, ::HashedString name, ::MolangScriptArg value);
 
     MCAPI ~MolangVariable();
@@ -33,10 +39,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _resetToLowWaterMark();
-
-    MCAPI static void _updateLowWaterMark();
-
     MCAPI static ::MolangVariableIndex getVariableIndex(::HashedString const& name);
 
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
@@ -65,6 +67,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::MolangVariable const& rhs);
+
     MCAPI void* $ctor(::MolangVariableIndex index, ::HashedString name, ::MolangScriptArg value);
     // NOLINTEND
 

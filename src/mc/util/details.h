@@ -10,17 +10,12 @@
 class Block;
 namespace JsonUtil { class EmptyClass; }
 namespace JsonUtil::details { struct BlockReference; }
-namespace JsonUtil::details { struct ChanceInfoIntermediate; }
 // clang-format on
 
 namespace JsonUtil::details {
 // functions
 // NOLINTBEGIN
 MCAPI ::Block const* _getBlockDefaultState(::std::string const& blockTypeName);
-
-MCAPI ::std::shared_ptr<
-    ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JsonUtil::details::ChanceInfoIntermediate>>
-_getChanceInformationSchema();
 
 MCAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JsonUtil::details::BlockReference>>
 _getOrMakeBlockReferenceSchema();

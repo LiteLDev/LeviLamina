@@ -28,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
+    // vIndex: 5
     virtual void onAppResumed() /*override*/;
 
     // vIndex: 0

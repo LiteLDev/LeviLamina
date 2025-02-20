@@ -38,22 +38,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 22
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
@@ -73,31 +73,23 @@ public:
 
     MCAPI void dealExplosionDamage();
 
-    MCAPI int getLifeTime() const;
-
     MCAPI void init(
-        ::Level& level,
-        ::Vec3 const&,
-        ::CompoundTag const& rocketUserData,
-        ::Vec3 const&        dir,
-        ::ActorUniqueID      attachedEntity,
-        bool                 isProjectile
+        ::Level&             level,
+        ::Vec3 const&        rocketUserData,
+        ::CompoundTag const& dir,
+        ::Vec3 const&        attachedEntity,
+        ::ActorUniqueID      isProjectile,
+        bool
     );
 
     MCAPI void initTagData(::Random& random);
 
-    MCAPI bool isAttachedToEntity() const;
-
     MCAPI void postNormalTick();
-
-    MCFOLD void setDispensed(bool dispensed);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void defineData(::SynchedActorDataEntityWrapper& data);
-
     MCAPI static void initData(
         ::SynchedActorDataEntityWrapper& data,
         ::CompoundTag const&             rocketUserData,

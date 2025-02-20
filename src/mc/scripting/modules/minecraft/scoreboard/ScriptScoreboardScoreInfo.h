@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -19,12 +19,11 @@ public:
     // prevent constructor by default
     ScriptScoreboardScoreInfo& operator=(ScriptScoreboardScoreInfo const&);
     ScriptScoreboardScoreInfo(ScriptScoreboardScoreInfo const&);
+    ScriptScoreboardScoreInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptScoreboardScoreInfo();
-
     MCAPI ~ScriptScoreboardScoreInfo();
     // NOLINTEND
 
@@ -32,12 +31,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardScoreInfo> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

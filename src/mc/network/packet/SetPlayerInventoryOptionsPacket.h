@@ -41,24 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetPlayerInventoryOptionsPacket();
-
-    MCAPI explicit SetPlayerInventoryOptionsPacket(::InventoryOptions const& inventoryOptions);
-
-    MCFOLD ::InventoryOptions const& getInventoryOptions() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::InventoryOptions const& inventoryOptions);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/ClipboardServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,6 @@ class BlockPos;
 class CompoundBlockVolume;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class EditorStructureTemplate; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Selection { class SelectionContainer; }
 namespace Editor::Services { class ClipboardItem; }
 namespace Editor::Services { struct ClipboardWriteOptions; }
@@ -44,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ClipboardService() /*override*/ = default;
+    virtual ~ClipboardService() /*override*/;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> init() /*override*/;
@@ -130,21 +129,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ClipboardService(::Editor::ServiceProviderCollection& providers);
-
     MCAPI void _updateClient(::Editor::Services::ClipboardItem const& item) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

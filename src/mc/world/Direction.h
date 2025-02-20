@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
-
 class Direction {
 public:
     // Direction inner types define
@@ -20,20 +16,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Direction::Type convertFacingDirectionToDirection(uchar facingDirection);
-
     MCAPI static ::Direction::Type getDirection(float xd, float zd);
-
-    MCAPI static ::Direction::Type mirrorDirection(::Mirror mirror, ::Direction::Type direction);
-
-    MCAPI static ::Direction::Type rotateDirection(::Direction::Type direction, ::Rotation rotation);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_CLOCKWISE();
-
     MCAPI static ::std::add_lvalue_reference_t<::Direction::Type const[]> DIRECTION_COUNTER_CLOCKWISE();
 
     MCAPI static ::std::array<uchar, 4> const& DIRECTION_FACING();

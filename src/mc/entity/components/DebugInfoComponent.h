@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/SubClientId.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorEventListener;
-class HashedString;
-class NetworkIdentifier;
 struct ActorDefinitionTriggeredEvent;
 // clang-format on
 
@@ -83,13 +80,7 @@ public:
 
     MCAPI DebugInfoComponent(::DebugInfoComponent const&);
 
-    MCAPI void addListener(::HashedString const& messageType, ::NetworkIdentifier source, ::SubClientId subClientId);
-
-    MCFOLD bool listenersEmpty() const;
-
     MCAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
-
-    MCAPI void removeListener(::HashedString const&, ::NetworkIdentifier networkIdentifier, ::SubClientId subClientId);
     // NOLINTEND
 
 public:

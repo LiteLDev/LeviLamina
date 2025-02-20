@@ -22,8 +22,8 @@ class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class Player;
-class Random;
 class Vec3;
+struct BlockAnimateTickData;
 // clang-format on
 
 class StairBlock : public ::BlockLegacy {
@@ -71,17 +71,13 @@ public:
         /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 124
-    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 95
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
@@ -146,15 +142,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StairBlock(::std::string const& nameId, int id, ::BlockLegacy const& base);
-
-    MCAPI bool _neighboringBlockCheckForCreatingBarrierInDirection(
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos,
-        ::Block const&                                            otherBlock,
-        int                                                       directionToCheck
-    ) const;
-
     MCAPI bool setInnerPieceShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
@@ -170,26 +157,12 @@ public:
         ::AABB&                    shape,
         bool                       shrink
     ) const;
-
-    MCAPI void shapeZFightShrink(::AABB& shape) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static uchar stairDirectionToFacing(int stairDirection);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<int[][2]> DEAD_SPACES();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockLegacy const& base);
     // NOLINTEND
 
 public:
@@ -224,11 +197,11 @@ public:
     MCAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
     MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 

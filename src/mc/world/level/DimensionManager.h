@@ -10,14 +10,12 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/IDimensionManagerConnector.h"
-#include "mc/world/level/dimension/DimensionDefinitionGroup.h"
 
 // auto generated forward declare list
 // clang-format off
 class Dimension;
 class DimensionDefinitionGroup;
 class IDimensionFactory;
-class Random;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
@@ -53,26 +51,9 @@ public:
         ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
     );
 
-    MCFOLD void forEachDimension(::std::function<bool(::Dimension&)> callback);
-
-    MCAPI void forEachDimension(::std::function<bool(::Dimension const&)>) const;
-
-    MCAPI ::WeakRef<::Dimension> getDimension(::DimensionType dimensionType) const;
-
-    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
-    getDimensionDefinition(::std::string const& dimensionName) const;
-
-    MCFOLD ::std::optional<::DimensionDefinitionGroup> const& getDimensionDefinitionGroup() const;
+    MCAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
-
-    MCAPI ::WeakRef<::Dimension> getRandomDimension(::Random& random);
-
-    MCFOLD bool hasDimensions() const;
-
-    MCAPI void setDimensionDefinitionGroup(::std::optional<::DimensionDefinitionGroup> dimensionDefinitions);
-
-    MCAPI void shutdown();
     // NOLINTEND
 
 public:

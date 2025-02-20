@@ -12,6 +12,7 @@ class CraftingContainer;
 class CraftingContext;
 class ItemDescriptor;
 class ItemInstance;
+class ItemStack;
 namespace mce { class UUID; }
 // clang-format on
 
@@ -46,6 +47,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit UserDataShapelessRecipe(::Recipe::ConstructionContext&& context);
+
+    MCAPI bool _itemShouldKeepUserData(::ItemStack const& item) const;
     // NOLINTEND
 
 public:

@@ -5,8 +5,9 @@
 enum class ModalScreenButtonMode : int {
     ThreeButtons                   = 0,
     DestructiveThreeButtons        = 1,
-    TwoButtonsLeftRight            = 2,
-    DestructiveTwoButtonsLeftRight = 3,
-    OneButtonMiddle                = 4,
-    NoButtons                      = 5,
+    TwoButtonsCheckbox             = 2,
+    TwoButtonsLeftRight            = 3,
+    DestructiveTwoButtonsLeftRight = 4,
+    OneButtonMiddle                = 5,
+    NoButtons                      = 6,
 };

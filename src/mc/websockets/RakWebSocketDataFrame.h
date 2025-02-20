@@ -41,28 +41,11 @@ public:
     // prevent constructor by default
     RakWebSocketDataFrame& operator=(RakWebSocketDataFrame const&);
     RakWebSocketDataFrame(RakWebSocketDataFrame const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RakWebSocketDataFrame();
-
-    MCAPI ~RakWebSocketDataFrame();
-    // NOLINTEND
+    RakWebSocketDataFrame();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isContinuation(uchar opCode);
-
-    MCAPI static bool _isControl(uchar opCode);
-
-    MCAPI static bool _isNonControl(uchar opCode);
-
-    MCAPI static bool _isUnsupported(uchar opCode);
-
-    MCAPI static void _maskUnmaskData(uchar* payload, uint size, uint maskingIndexOffset, uint mask);
-
     MCAPI static void writeFrameToStream(
         ::RakNet::BitStream& stream,
         uchar const*         payload,
@@ -71,17 +54,5 @@ public:
         bool                 isFin,
         uint                 maskKey
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

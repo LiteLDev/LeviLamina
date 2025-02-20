@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     GrantXPSubcomponent& operator=(GrantXPSubcomponent const&);
     GrantXPSubcomponent(GrantXPSubcomponent const&);
+    GrantXPSubcomponent();
 
 public:
     // virtual functions
@@ -42,18 +43,6 @@ public:
 
     // vIndex: 4
     virtual char const* getName() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GrantXPSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

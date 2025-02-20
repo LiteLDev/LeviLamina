@@ -45,12 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::Bedrock::Threading::AsyncResult::ToXAsyncBlock> create(::XTaskQueueObject* queue);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::XTaskQueueObject* queue);

@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 struct CrashDumpEventData;
-struct CrashDumpFrameData;
 struct CrashDumpKeyValueData;
 struct CrashDump_AllData;
 namespace Bedrock::Threading { class Mutex; }
@@ -19,25 +18,11 @@ public:
 
     MCAPI static void logEvent(::CrashDumpEventData const& eventData);
 
-    MCAPI static void logFrame(::CrashDumpFrameData const& frameData);
-
     MCAPI static void logKeyValue(::CrashDumpKeyValueData const& keyValueData);
-
-    MCAPI static void setAssertMessage(char const* desc, int line, char const* file, char const* function);
-
-    MCAPI static void setBehaviorPackIds(::std::vector<::std::string> const& packIds);
 
     MCAPI static bool setDeviceSessionID(::std::string const& str);
 
-    MCAPI static void setGameVersion(char const* gameVersion);
-
-    MCAPI static void setPlatform(char const* platformString);
-
-    MCAPI static void setTotalMemory(uint64 memory);
-
     MCAPI static bool startCrashDumpLogThread();
-
-    MCAPI static void stopCrashDumpLogThread();
     // NOLINTEND
 
 public:

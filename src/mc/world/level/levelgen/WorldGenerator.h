@@ -125,14 +125,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldGenerator(::Dimension& dimension);
-
     MCAPI
     WorldGenerator(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
 
     MCAPI ::std::vector<short> computeChunkHeightMap(::ChunkPos const& pos);
-
-    MCFOLD ::StructureFeatureRegistry& getStructureFeatureRegistry() const;
 
     MCAPI void postProcessStructureFeatures(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 
@@ -159,8 +155,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
-
     MCAPI void* $ctor(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
     // NOLINTEND
 

@@ -57,7 +57,7 @@ public:
     ::ll::UntypedStorage<8, 64>    mUnkc054fe;
     ::ll::UntypedStorage<8, 64>    mUnkd324ee;
     ::ll::UntypedStorage<8, 64>    mUnkbf613f;
-    ::ll::UntypedStorage<8, 10272> mUnk598673;
+    ::ll::UntypedStorage<8, 10336> mUnkd22028;
     ::ll::UntypedStorage<4, 16>    mUnk2fd154;
     ::ll::UntypedStorage<8, 24>    mUnk20f3d4;
     ::ll::UntypedStorage<8, 8>     mUnk67953e;
@@ -123,10 +123,6 @@ public:
     MCAPI void _initRakNetProfileTracking();
 
     MCAPI void _logPeerConnectionInfo(::std::vector<::WeakEntityRef> const& userList, bool includeAverages) const;
-
-    MCAPI ::std::unordered_map<int, ::PacketObserver::PacketStats> getAndResetDebuggerStats();
-
-    MCFOLD ::std::array<::std::string, 321> const& getPacketNames() const;
 
     MCAPI ::std::string getVerboseInfo() const;
 

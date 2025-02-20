@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
-// auto generated forward declare list
-// clang-format off
-class Mob;
-struct MobDescriptor;
-// clang-format on
-
 class VexCopyOwnerTargetGoal : public ::TargetGoal {
 public:
     // virtual functions
@@ -26,18 +20,6 @@ public:
 
     // vIndex: 0
     virtual ~VexCopyOwnerTargetGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI VexCopyOwnerTargetGoal(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::vector<::MobDescriptor> const& targetTypes);
     // NOLINTEND
 
 public:

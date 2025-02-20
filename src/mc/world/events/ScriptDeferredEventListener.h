@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScriptDeferredFlushTracker;
+// clang-format on
+
 class ScriptDeferredEventListener {
 public:
     // virtual functions
@@ -10,25 +15,25 @@ public:
     virtual ~ScriptDeferredEventListener() = default;
 
     // vIndex: 1
-    virtual bool onRunSystemTick();
+    virtual void onRunSystemTick(::ScriptDeferredFlushTracker&);
 
     // vIndex: 2
-    virtual bool onFlushWorldAfterEvents();
+    virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 3
-    virtual bool onFlushSystemAfterEvents();
+    virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 4
-    virtual bool onFlushEditorExtensionContextAfterEvents();
+    virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 5
-    virtual bool onFlushBlockCustomComponentAfterEvents();
+    virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 6
-    virtual bool onFlushEditorDataStoreAfterEvents();
+    virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 7
-    virtual bool onFlushItemCustomComponentAfterEvents();
+    virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 8
     virtual void onPreFlushAfterEvents();
@@ -52,19 +57,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $onRunSystemTick();
+    MCFOLD void $onRunSystemTick(::ScriptDeferredFlushTracker&);
 
-    MCFOLD bool $onFlushWorldAfterEvents();
+    MCFOLD void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD bool $onFlushSystemAfterEvents();
+    MCFOLD void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD bool $onFlushEditorExtensionContextAfterEvents();
+    MCFOLD void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD bool $onFlushBlockCustomComponentAfterEvents();
+    MCFOLD void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD bool $onFlushEditorDataStoreAfterEvents();
+    MCFOLD void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
 
-    MCFOLD bool $onFlushItemCustomComponentAfterEvents();
+    MCFOLD void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
     MCFOLD void $onPreFlushAfterEvents();
 

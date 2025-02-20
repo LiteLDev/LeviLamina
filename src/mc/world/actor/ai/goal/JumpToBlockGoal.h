@@ -48,6 +48,7 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -59,8 +60,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Definition();
-
         MCAPI void initialize(::EntityContext& entity, ::JumpToBlockGoal& goal) const;
         // NOLINTEND
 
@@ -72,12 +71,6 @@ public:
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JumpToBlockGoal::Definition>>&
                 root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:

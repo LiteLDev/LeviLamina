@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class RenderParams;
+class HashedString;
 class StateAnimationVariable;
 // clang-format on
 
@@ -35,11 +35,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ActorAnimationControllerState(::HashedString const& name);
+
+    MCAPI void addAnimation(::HashedString const& name);
+
     MCAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
 
-    MCAPI void setVariables(::RenderParams& renderParams) const;
-
     MCAPI ~ActorAnimationControllerState();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::HashedString const& name);
     // NOLINTEND
 
 public:

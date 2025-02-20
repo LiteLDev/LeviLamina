@@ -14,7 +14,6 @@ class ActorComponentFactory;
 class ActorDefinitionGroup;
 class ActorGoalFactory;
 class BlockPos;
-class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class DimensionHeightRange;
@@ -83,12 +82,10 @@ public:
     MCAPI ::std::vector<::std::pair<::std::string, ::ActorDefinitionIdentifier const*>>
     buildSummonEntityTypeEnum(::Experiments const& experiments) const;
 
-    MCAPI void clearDefinitionGroup();
-
     MCAPI ::OwnerPtr<::EntityContext> clientCreateDisplayActor(
         ::ActorDefinitionIdentifier const& identifier,
-        ::Actor*                           spawner,
-        ::Vec3 const&                      position,
+        ::Actor*                           position,
+        ::Vec3 const&                      spawner,
         ::Vec2 const&                      rotation
     );
 
@@ -113,19 +110,7 @@ public:
     );
 
     MCAPI ::OwnerPtr<::EntityContext>
-    createSummonedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* spawner, ::Vec3 const& position);
-
-    MCAPI ::OwnerPtr<::EntityContext>
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
-
-    MCFOLD ::ActorGoalFactory& getGoalFactory();
-
-    MCAPI void init(::Experiments const& experiments);
-
-    MCAPI ::OwnerPtr<::EntityContext> loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI ::OwnerPtr<::EntityContext>
-    loadActor(::CompoundTag* tag, ::DataLoadHelper& dataLoadHelper, ::DimensionHeightRange const& heightRange);
 
     MCAPI ::OwnerPtr<::EntityContext> loadActor(
         ::CompoundTag*                tag,
@@ -135,25 +120,17 @@ public:
     );
 
     MCAPI ::ActorType lookupEntityType(::ActorDefinitionIdentifier const& identifier) const;
-
-    MCAPI void setDefinitionGroup(::ActorDefinitionGroup* group);
-
-    MCFOLD void setEntityInitializer(::std::shared_ptr<::IEntityInitializer> entityInitializer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void clearEntityMappings();
-
     MCAPI static void fillFactoryData(
         ::ActorDefinitionIdentifier const&                             identifier,
         ::ActorDefinitionIdentifier const&                             baseIdentifier,
         ::std::unordered_map<::std::string, ::ActorFactoryData> const& factoryFunctions,
         ::ActorFactoryData&                                            data
     );
-
-    MCAPI static ::Actor* fixLegacyEntity(::BlockSource& region, ::CompoundTag const* tag);
 
     MCAPI static void registerEntityMapping(
         ::ActorType const& actorType,

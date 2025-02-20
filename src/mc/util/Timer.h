@@ -14,6 +14,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                     mFrameStepAlignmentRemainder;
     ::ll::TypedStorage<4, 4, float>                     mLastTimeSeconds;
     ::ll::TypedStorage<4, 4, float>                     mLastTimestep;
+    ::ll::TypedStorage<4, 4, float>                     mOverflowTime;
     ::ll::TypedStorage<8, 8, int64>                     mLastMs;
     ::ll::TypedStorage<8, 8, int64>                     mLastMsSysTime;
     ::ll::TypedStorage<4, 4, float>                     mAdjustTime;
@@ -24,32 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Timer(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
-
     MCAPI void advanceTime(float preferredFrameStep);
-
-    MCAPI uint64 getTicks() const;
-
-    MCFOLD float getTimeScale() const;
-
-    MCAPI void resetTimePassed();
-
-    MCAPI void setTimeScale(float timeScale);
-
-    MCAPI void stepTick(int numSteps);
-
-    MCAPI bool stepping() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static int64 getMillisecondsSinceLaunch();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
     // NOLINTEND
 };

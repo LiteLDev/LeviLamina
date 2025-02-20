@@ -39,21 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DoorItem(::std::string const& name, int id, ::DoorBlock::DoorType type);
+    MCAPI bool _place(::BlockSource& region, ::BlockPos pos, ::Block const& block) const;
 
     MCAPI ::Block const* getDoorBlock() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool place(::BlockSource* source, int x, int y, int z, int dir, ::Block const* block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::DoorBlock::DoorType type);
     // NOLINTEND
 
 public:

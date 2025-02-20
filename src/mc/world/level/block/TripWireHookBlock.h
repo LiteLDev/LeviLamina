@@ -17,9 +17,9 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class TripWireHookBlock : public ::BlockLegacy {
@@ -55,9 +55,6 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
@@ -79,8 +76,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TripWireHookBlock(::std::string const& nameId, int id);
-
     MCAPI void _emitState(
         ::BlockSource&    region,
         ::BlockPos const& pos,
@@ -91,15 +86,11 @@ public:
     ) const;
 
     MCAPI void
-    calculateState(::BlockSource& region, ::BlockPos const& pos, bool isBeingDestroyed, int wireSourceIdx) const;
+    calculateState(::BlockSource& region, ::BlockPos const& pos, bool wireSourceIdx, int isBeingDestroyed) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -130,8 +121,6 @@ public:
         const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;

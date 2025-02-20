@@ -36,18 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ClayFeature(int radius);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int radius);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

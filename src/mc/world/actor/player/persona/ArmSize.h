@@ -22,6 +22,12 @@ public:
     using SizeInfoList = ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo>;
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::string getStringFromType(::persona::ArmSize::Type armSizeType);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::persona::ArmSize::Type, ::persona::SizeInfo> const& mInfoList();

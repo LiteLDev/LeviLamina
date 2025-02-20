@@ -45,22 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UpdatePlayerGameTypePacket();
-
-    MCAPI UpdatePlayerGameTypePacket(::GameType playerGameType, ::ActorUniqueID const& targetPlayer, uint64 tick);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::GameType playerGameType, ::ActorUniqueID const& targetPlayer, uint64 tick);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

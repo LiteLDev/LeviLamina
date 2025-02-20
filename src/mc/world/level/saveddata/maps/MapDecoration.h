@@ -56,8 +56,14 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    MapDecoration& operator=(MapDecoration const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MapDecoration(::MapDecoration const&);
+
     MCAPI MapDecoration(
         ::MapDecoration::Type img,
         schar                 x,
@@ -67,24 +73,14 @@ public:
         ::mce::Color const&   color
     );
 
-    MCFOLD ::mce::Color const& getColor() const;
-
-    MCFOLD ::MapDecoration::Type getImg() const;
-
-    MCFOLD ::std::string const& getLabel() const;
-
-    MCFOLD schar getRot() const;
-
-    MCFOLD schar getX() const;
-
-    MCFOLD schar getY() const;
-
     MCAPI ~MapDecoration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::MapDecoration const&);
+
     MCAPI void* $ctor(
         ::MapDecoration::Type img,
         schar                 x,

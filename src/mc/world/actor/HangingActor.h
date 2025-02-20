@@ -40,25 +40,25 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual int getWidth() const = 0;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual int getHeight() const = 0;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual void dropItem() = 0;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 141
     virtual bool placeHangingEntity(::BlockSource& region, int direction);
 
-    // vIndex: 147
+    // vIndex: 142
     virtual bool wouldSurvive(::BlockSource& region);
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 2
@@ -67,13 +67,13 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
@@ -89,23 +89,15 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _blockContainsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
-
     MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
     MCAPI void _calculateAABB();
 
     MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 
+    MCAPI bool _canSurviveOnBlock(::BlockSource const& region, ::BlockPos const& blockPos, bool beingPlaced) const;
+
     MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
-
-    MCAPI int getDirection() const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& HANGING_OFFSET();
     // NOLINTEND
 
 public:

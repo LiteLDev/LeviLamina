@@ -37,14 +37,23 @@ public:
 
     public:
         // prevent constructor by default
-        ShooterAmmunitionEntry& operator=(ShooterAmmunitionEntry const&);
-        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&);
         ShooterAmmunitionEntry();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ShooterAmmunitionEntry(::ShooterItemComponent::ShooterAmmunitionEntry const&);
+
+        MCFOLD ::ShooterItemComponent::ShooterAmmunitionEntry&
+        operator=(::ShooterItemComponent::ShooterAmmunitionEntry const&);
+
         MCAPI ~ShooterAmmunitionEntry();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::ShooterItemComponent::ShooterAmmunitionEntry const&);
         // NOLINTEND
 
     public:
@@ -117,7 +126,7 @@ public:
         bool               fromOffhand
     ) const;
 
-    MCAPI int _getAmmunition(::Player const* player, bool, ::ItemStack& ammo, bool& fromOffhand) const;
+    MCAPI int _getAmmunition(::Player const* player, bool ammo, ::ItemStack& fromOffhand, bool&) const;
 
     MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
 
@@ -131,8 +140,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();

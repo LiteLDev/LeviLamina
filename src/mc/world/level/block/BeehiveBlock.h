@@ -14,7 +14,7 @@ class BlockPos;
 class BlockSource;
 class ItemStack;
 class Player;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class BeehiveBlock : public ::FaceDirectionalActorBlock {
@@ -37,8 +37,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 105
     virtual bool hasComparatorSignal() const /*override*/;
@@ -64,8 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BeehiveBlock(::std::string const& nameId, int id);
-
     MCAPI void _fillHoneyBottle(
         ::Player&         player,
         ::ItemStack&      emptyBottle,
@@ -75,29 +72,15 @@ public:
     ) const;
 
     MCAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void evictAll(::BlockSource& region, ::BlockPos const& pos, bool angry) const;
-
-    MCAPI void onPlayerPlace(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void deliverNectar(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
-
     MCAPI static ::ItemStack
     getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
 
-    MCAPI static bool hasHoneyToHarvest(::Block const& block);
-
     MCAPI static void resetHoneyLevel(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -121,7 +104,7 @@ public:
         ::Actor&             sourceEntity
     ) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $hasComparatorSignal() const;
 

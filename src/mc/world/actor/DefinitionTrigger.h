@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/FilterSubject.h"
-
 // auto generated forward declare list
 // clang-format off
-class ExpressionNode;
-class RenderParams;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -23,16 +18,12 @@ public:
 
 public:
     // prevent constructor by default
-    DefinitionTrigger(DefinitionTrigger const&);
     DefinitionTrigger();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    DefinitionTrigger(::std::string type, ::SharedTypes::Legacy::FilterSubject target, ::ExpressionNode condition);
-
-    MCAPI bool canTrigger(::RenderParams& params) const;
+    MCAPI DefinitionTrigger(::DefinitionTrigger const&);
 
     MCAPI ::DefinitionTrigger& operator=(::DefinitionTrigger&&);
 
@@ -50,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string type, ::SharedTypes::Legacy::FilterSubject target, ::ExpressionNode condition);
+    MCAPI void* $ctor(::DefinitionTrigger const&);
     // NOLINTEND
 
 public:

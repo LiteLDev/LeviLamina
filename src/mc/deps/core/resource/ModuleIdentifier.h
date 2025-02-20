@@ -6,8 +6,8 @@ struct ModuleIdentifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnke37bbb;
-    ::ll::UntypedStorage<8, 112> mUnk4c4111;
+    ::ll::UntypedStorage<8, 32> mUnke37bbb;
+    ::ll::UntypedStorage<8, 24> mUnk4c4111;
     // NOLINTEND
 
 public:
@@ -25,6 +25,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -18,8 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool isNull() const;
-
     MCAPI ~ActorAnimationControllerPtr();
     // NOLINTEND
 

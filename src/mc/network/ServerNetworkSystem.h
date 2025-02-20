@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/ServiceReference.h"
 #include "mc/network/NetworkSystem.h"
 
 // auto generated forward declare list
@@ -16,7 +15,6 @@ class NetworkDebugManager;
 class NetworkIdentifier;
 class NetworkSessionOwner;
 class Scheduler;
-class ServicesManager;
 struct ConnectionDefinition;
 struct NetworkSettingOptions;
 struct NetworkSystemToggles;
@@ -27,20 +25,20 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ServerNetworkSystem() /*override*/;
+    virtual ~ServerNetworkSystem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ServerNetworkSystem(
-        ::Scheduler&                                             receiveThread,
-        ::std::vector<::std::string> const&                      overrideBroadcastAddresses,
-        ::NetworkSystemToggles const&                            networkToggles,
-        ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager,
-        ::ServiceReference<::ServicesManager>                    sharedServicesManager,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>     networkSessionOwner,
-        ::NetworkSettingOptions                                  networkSettingOption
+        ::Scheduler&                                         receiveThread,
+        ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
+        ::NetworkSystemToggles const&                        networkToggles,
+        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
+        ::NetworkSettingOptions const&                       networkSettingOption
     );
 
     MCAPI void _createNetworkStatistics(
@@ -49,10 +47,6 @@ public:
     );
 
     MCAPI ::NetworkIdentifier getLocalNetworkId() const;
-
-    MCAPI ::std::string getMultiplayerCorrelationId() const;
-
-    MCAPI ::NetworkIdentifier getPrimaryNetworkId() const;
 
     MCAPI bool host(::ConnectionDefinition const& definition);
     // NOLINTEND
@@ -65,11 +59,10 @@ public:
         ::Scheduler&                                         receiveThread,
         ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                        networkToggles,
-        ::ServiceReference<::ServicesManager>                sharedServicesManager,
         ::NetherNetTransportFactory const&                   transportFactory,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const&     appPlatform,
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::NetworkSettingOptions                              networkSettingOptions
+        ::NetworkSettingOptions const&                       networkSettingOptions
     );
     // NOLINTEND
 
@@ -77,20 +70,20 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::Scheduler&                                             receiveThread,
-        ::std::vector<::std::string> const&                      overrideBroadcastAddresses,
-        ::NetworkSystemToggles const&                            networkToggles,
-        ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager,
-        ::ServiceReference<::ServicesManager>                    sharedServicesManager,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>     networkSessionOwner,
-        ::NetworkSettingOptions                                  networkSettingOption
+        ::Scheduler&                                         receiveThread,
+        ::std::vector<::std::string> const&                  overrideBroadcastAddresses,
+        ::NetworkSystemToggles const&                        networkToggles,
+        ::Bedrock::NonOwnerPointer<::NetworkDebugManager>    networkDebugManager,
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform>         appPlatform,
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
+        ::NetworkSettingOptions const&                       networkSettingOption
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

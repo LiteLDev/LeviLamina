@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CommandOrigin;
 class CompoundTag;
 class Dimension;
 class ICommandOriginLoader;
@@ -47,27 +46,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FunctionAction(::std::string const& filePath, ::std::unique_ptr<::CommandOrigin> commandOrigin);
-
     MCAPI void _printOriginInvalidError(::ServerLevel& level);
 
     MCAPI void _printOutput(::ServerLevel& level, int successCount);
-
-    MCFOLD ::std::string const& getFilePath() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
-
     MCAPI static ::std::unique_ptr<::FunctionAction> load(::CompoundTag const& tag, ::ICommandOriginLoader& loader);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& filePath, ::std::unique_ptr<::CommandOrigin> commandOrigin);
     // NOLINTEND
 
 public:

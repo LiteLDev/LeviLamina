@@ -49,8 +49,6 @@ public:
     // NOLINTBEGIN
     MCAPI FolderSizeAndModifyDateSnapshot();
 
-    MCAPI FolderSizeAndModifyDateSnapshot(::FolderSizeAndModifyDateSnapshot&&);
-
     MCAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot const&);
 
     MCAPI ::FolderSizeAndModifyDateSnapshot& operator=(::FolderSizeAndModifyDateSnapshot&&);
@@ -68,8 +66,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::FolderSizeAndModifyDateSnapshot&&);
     // NOLINTEND
 
 public:

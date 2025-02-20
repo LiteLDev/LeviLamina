@@ -23,26 +23,13 @@ public:
     // prevent constructor by default
     LoadTimeProfiler& operator=(LoadTimeProfiler const&);
     LoadTimeProfiler(LoadTimeProfiler const&);
+    LoadTimeProfiler();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~LoadTimeProfiler() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LoadTimeProfiler();
-
-    MCFOLD void setEnabled(bool enabled);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

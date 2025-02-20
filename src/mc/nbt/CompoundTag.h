@@ -63,7 +63,7 @@ public:
     virtual uint64 hash() const /*override*/;
 
     // vIndex: 6
-    virtual bool equals(::Tag const& rhs) const /*override*/;
+    virtual bool equals(::Tag const& obj) const /*override*/;
     // NOLINTEND
 
 public:
@@ -75,10 +75,6 @@ public:
 
     MCAPI void append(::CompoundTag const& tag);
 
-    MCFOLD ::std::_Tree_const_iterator<
-        ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::CompoundTagVariant>>>>
-    begin() const;
-
     MCAPI void clear();
 
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
@@ -89,13 +85,7 @@ public:
 
     MCAPI void deepCopy(::CompoundTag const& other);
 
-    MCFOLD ::std::_Tree_const_iterator<
-        ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::CompoundTagVariant>>>>
-    end() const;
-
     MCAPI ::Tag const* get(::std::string_view name) const;
-
-    MCAPI ::Tag* get(::std::string_view name);
 
     MCAPI bool getBoolean(::std::string_view string) const;
 
@@ -123,15 +113,11 @@ public:
 
     MCFOLD ::ListTag* getList(::std::string_view name);
 
-    MCAPI short getShort(::std::string_view name) const;
-
     MCAPI ::ShortTag const* getShortTag(::std::string_view name) const;
 
     MCAPI ::std::string const& getString(::std::string_view name) const;
 
     MCAPI ::StringTag const* getStringTag(::std::string_view name) const;
-
-    MCFOLD bool isEmpty() const;
 
     MCAPI ::CompoundTag& operator=(::CompoundTag&& rhs);
 
@@ -158,14 +144,6 @@ public:
     MCAPI short& putShort(::std::string name, short value);
 
     MCAPI ::std::string& putString(::std::string name, ::std::string value);
-
-    MCFOLD ::std::map<::std::string, ::CompoundTagVariant, ::std::less<void>> const& rawView() const;
-
-    MCAPI bool remove(::std::string_view name);
-
-    MCAPI void rename(::std::string_view name, ::std::string newName);
-
-    MCFOLD uint64 size() const;
     // NOLINTEND
 
 public:
@@ -179,7 +157,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -199,7 +177,7 @@ public:
 
     MCAPI uint64 $hash() const;
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCAPI bool $equals(::Tag const& obj) const;
     // NOLINTEND
 
 public:

@@ -44,8 +44,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& THORNS_CHANCE_PER_LEVEL();
-
     MCAPI static ::std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
     // NOLINTEND
 

@@ -11,7 +11,6 @@
 // clang-format off
 class ActorRuntimeID;
 class BinaryStream;
-class Painting;
 class ReadOnlyBinaryStream;
 class Vec3;
 struct ActorUniqueID;
@@ -45,22 +44,6 @@ public:
 
     // vIndex: 0
     virtual ~AddPaintingPacket() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AddPaintingPacket();
-
-    MCAPI explicit AddPaintingPacket(::Painting const& painting);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Painting const& painting);
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
     findTargetPositionAndSetPosition(::Actor&, ::DimensionType, ::DimensionType, ::IDimension const&, ::PortalForcer const&, ::std::optional<::Vec3> const&) = 0;
 
     // vIndex: 3
-    virtual void transferActor(::Actor&, ::Dimension&, ::Vec3 const&, ::std::optional<::Vec3> const&) = 0;
+    virtual void transferActor(::Actor&, ::Dimension&, ::Vec3 const&) = 0;
     // NOLINTEND
 
 public:

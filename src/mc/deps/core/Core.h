@@ -6,7 +6,7 @@
 // clang-format off
 namespace Core { class FileStorageArea; }
 namespace Core { class FileSystemImpl; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -14,20 +14,16 @@ namespace Core {
 // functions
 // NOLINTBEGIN
 MCAPI ::Core::Result transferDirectory(
-    ::Core::FileSystemImpl*                                                          pSourceTransaction,
-    ::Core::Path const&                                                              sourceDirectoryPath,
-    ::Core::FileSystemImpl*                                                          pTargetTransaction,
-    ::Core::Path const&                                                              targetDirectoryPath,
-    ::std::function<::Core::Result(::Core::Path const&, ::Core::Path const&)> const& fileTransferFunction
+    ::Core::FileSystemImpl*                                                    pSourceTransaction,
+    ::Core::PathView                                                           sourceDirectoryPath,
+    ::Core::FileSystemImpl*                                                    pTargetTransaction,
+    ::Core::PathView                                                           targetDirectoryPath,
+    ::std::function<::Core::Result(::Core::PathView, ::Core::PathView)> const& fileTransferFunction
 );
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI char const*& RESULT_FAILED_MESSAGE();
-
-MCAPI char const*& RESULT_NOT_IMPLEMENTED_MESSAGE();
-
 MCAPI char const*& RESULT_SUCCEEDED_MESSAGE();
 
 MCAPI ::std::string const& sLockBlobName();

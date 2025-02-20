@@ -10,7 +10,10 @@ class PauseManager {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1>  mUnk994f71;
+    ::ll::UntypedStorage<1, 1>  mUnkf88b2a;
     ::ll::UntypedStorage<1, 1>  mUnk99ce49;
+    ::ll::UntypedStorage<8, 8>  mUnkd10131;
     ::ll::UntypedStorage<8, 48> mUnk18b65e;
     // NOLINTEND
 
@@ -21,27 +24,8 @@ public:
     PauseManager();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::SimulationType getSimulationType() const;
-
-    MCAPI void setSimulationType(::SimulationType simulationType);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::SimulationType getSimulationType(::StackRefResult<::PauseManager const> pauseManager);
-
-    MCAPI static bool
-    isSimulationType(::StackRefResult<::PauseManager const> pauseManager, ::SimulationType simulationType);
-
-    MCAPI static void setSimulationType(::StackRefResult<::PauseManager> pauseManager, ::SimulationType simulationType);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::SimulationType const& DEFAULT_SIMULATION_TYPE();
     // NOLINTEND
 };

@@ -44,18 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MinecartItem(::std::string const& name, int id, ::MinecartType type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::MinecartType type);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

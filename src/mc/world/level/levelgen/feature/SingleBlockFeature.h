@@ -11,8 +11,6 @@ class Block;
 class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class SingleBlockFeature : public ::IFeature {
@@ -96,8 +94,7 @@ public:
     virtual ~SingleBlockFeature() /*override*/;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
@@ -118,8 +115,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams&) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

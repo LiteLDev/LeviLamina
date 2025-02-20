@@ -13,7 +13,6 @@ class ActorDefinitionTrigger;
 class ActorFilterGroup;
 class EntityContext;
 class Mob;
-class SemVersion;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -71,8 +70,6 @@ public:
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::KnockbackRoarGoal::KnockbackRoarDefinition>>&
                 root
         );
-
-        MCAPI static ::SemVersion getStrictParsingVersion();
         // NOLINTEND
 
     public:
@@ -131,18 +128,6 @@ public:
 
     // vIndex: 0
     virtual ~KnockbackRoarGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit KnockbackRoarGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -46,6 +46,7 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -57,8 +58,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Definition();
-
         MCAPI void initialize(::EntityContext& entity, ::AvoidBlockGoal& goal) const;
 
         MCAPI void setSoundEvent(::std::string const& soundEvent);
@@ -74,12 +73,6 @@ public:
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AvoidBlockGoal::Definition>>&
                 root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -135,13 +128,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AvoidBlockGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI bool _findTargetBlock();
     // NOLINTEND
 
 public:

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkSource;
-class ChunkViewSource;
 class Dimension;
 struct Bounds;
 struct Tick;
@@ -28,14 +27,6 @@ public:
     ChunksLoadedInfo& operator=(ChunksLoadedInfo const&);
     ChunksLoadedInfo(ChunksLoadedInfo const&);
     ChunksLoadedInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ChunkViewSource> getChunkViewSource() const;
-
-    MCFOLD ::ChunksLoadedStatus getChunksLoadedStatus() const;
-    // NOLINTEND
 
 public:
     // static functions

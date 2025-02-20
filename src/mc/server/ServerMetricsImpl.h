@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ServerCommunicationInterface;
 class ServerInstance;
 // clang-format on
 
@@ -69,15 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerMetricsImpl(::ServerCommunicationInterface* serverCommunicationInterface);
-
     MCAPI void sendPeriodicMetricsInternal(::ServerInstance& serverInstance);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerCommunicationInterface* serverCommunicationInterface);
     // NOLINTEND
 
 public:

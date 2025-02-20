@@ -11,11 +11,11 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Block;
 class BlockPalette;
 class BlockPos;
 class IItemUseTransactionSubject;
 class ILegacyItemUseTransactionSubject;
+class InventoryTransaction;
 class ItemStack;
 class NetworkBlockPosition;
 class NetworkItemStackDescriptor;
@@ -84,7 +84,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemUseInventoryTransaction();
+
     MCAPI ItemUseInventoryTransaction(::ItemUseInventoryTransaction const&);
+
+    MCAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
 
     MCAPI ::InventoryTransactionError
     handle(::IItemUseTransactionSubject& player, ::ILegacyItemUseTransactionSubject& legacy, bool isSenderAuthority)
@@ -93,8 +97,6 @@ public:
     MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 
     MCAPI ::ItemUseInventoryTransaction& setSelectedItem(::ItemStack const& item);
-
-    MCAPI ::ItemUseInventoryTransaction& setTargetBlock(::Block const& targetBlock);
     // NOLINTEND
 
 public:
@@ -115,7 +117,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::ItemUseInventoryTransaction const&);
+
+    MCAPI void* $ctor(::InventoryTransaction const& transaction);
     // NOLINTEND
 
 public:

@@ -6,8 +6,6 @@
 // clang-format off
 class Actor;
 class ActorDefinitionTrigger;
-class HashedString;
-struct ActorDefinitionAttribute;
 struct VariantParameterList;
 // clang-format on
 
@@ -101,16 +99,6 @@ public:
 
     MCAPI bool contains(::ActorDefinitionDescriptor const& rhs) const;
 
-    MCAPI ::std::optional<::ActorDefinitionAttribute> findAttributeByName(::std::string const& attributeName) const;
-
-    MCAPI bool hasComponent(::HashedString const& name) const;
-
-    MCAPI bool hasJumpSubComponent();
-
-    MCAPI bool hasMovementSubComponent();
-
-    MCAPI bool hasNavigationSubComponent();
-
     MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
 
     MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor const&);
@@ -132,6 +120,13 @@ public:
         ::VariantParameterList const&                                         list
     );
 
+    MCAPI static bool _executeTrigger(
+        ::Actor&                                                              entity,
+        ::ActorDefinitionTrigger const&                                       trigger,
+        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
+        ::VariantParameterList const&                                         list
+    );
+
     MCAPI static void _forceExecuteTrigger(
         ::Actor&                                                              entity,
         ::ActorDefinitionTrigger const&                                       trigger,
@@ -143,18 +138,6 @@ public:
 
     MCAPI static bool
     executeTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
-
-    MCAPI static void
-    forceExecuteTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
-
-    MCAPI static void forceExecuteTriggerChain(
-        ::Actor&                                                              entity,
-        ::ActorDefinitionTrigger const&                                       trigger,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::VariantParameterList const&                                         list
-    );
-
-    MCAPI static bool hasEvent(::Actor const& entity, ::std::string const& name);
     // NOLINTEND
 
 public:

@@ -16,7 +16,6 @@ struct EditorActorPausedComponent;
 struct EditorWidgetDisplayEntityComponent;
 struct FallingBlockFlagComponent;
 struct PlayerComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 struct EditorFilterPausedSystem {
@@ -34,9 +33,5 @@ public:
             ::Include<::ActorComponent const>>         view,
         ::EntityModifier<::EditorActorPausedComponent> entityModifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createAddPaused();
-
-    MCAPI static ::TickingSystemWithInfo createRemovePaused();
     // NOLINTEND
 };

@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/EnumBitset.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentEventTypes.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptCustomComponentEventMetadata.h"
@@ -16,6 +15,8 @@ class Block;
 class BlockCustomComponentsComponent;
 class BlockLegacy;
 class HashedString;
+class ScriptDeferredEventCoordinator;
+class ScriptDeferredFlushTracker;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerDestroyEvent; }
@@ -52,7 +53,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnk3b457e;
+        ::ll::UntypedStorage<2, 2>   mUnk6a4664;
         ::ll::UntypedStorage<8, 208> mUnk346989;
         ::ll::UntypedStorage<8, 40>  mUnk53a6c9;
         ::ll::UntypedStorage<1, 1>   mUnk9ffddb;
@@ -85,16 +86,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk8848d2;
     ::ll::UntypedStorage<8, 24> mUnk1fa307;
     ::ll::UntypedStorage<8, 24> mUnk61196d;
     ::ll::UntypedStorage<8, 64> mUnkb5c618;
     ::ll::UntypedStorage<8, 24> mUnk9d5cb6;
+    ::ll::UntypedStorage<2, 2>  mUnkf295dd;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptBlockCustomComponentsRegistry& operator=(ScriptBlockCustomComponentsRegistry const&);
     ScriptBlockCustomComponentsRegistry(ScriptBlockCustomComponentsRegistry const&);
+    ScriptBlockCustomComponentsRegistry();
 
 public:
     // virtual functions
@@ -103,7 +107,7 @@ public:
     virtual void onPreFlushAfterEvents() /*override*/;
 
     // vIndex: 5
-    virtual bool onFlushBlockCustomComponentAfterEvents() /*override*/;
+    virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
     // vIndex: 9
     virtual void onPostFlushAfterEvents() /*override*/;
@@ -121,11 +125,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentsRegistry();
+    MCAPI explicit ScriptBlockCustomComponentsRegistry(::ScriptDeferredEventCoordinator& deferredEventCoordinator);
 
-    MCAPI bool _checkDifferentEventRegistered(
-        ::EnumBitset<::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes, 9> const& originalSet,
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&                   newSet
+    MCAPI void _bindComponentToCereal(
+        ::HashedString const&                                               compName,
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const& closures
     );
 
     MCAPI ::Scripting::Result<
@@ -165,14 +169,10 @@ public:
         ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>> const& comps
     );
 
-    MCAPI void _validateBlockQueuedTickingComponentPresentWithClosure(::Block const& block) const;
-
     MCAPI void beforeOnPlayerPlace(::BlockEvents::BlockPlayerPlacingEvent& eventData) const;
 
-    MCAPI bool hasSubscriptionFor(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type,
-        ::BlockCustomComponentsComponent const&                       customComponents
-    ) const;
+    MCAPI bool
+    hasSubscriptionFor(::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes type, ::Block const& block) const;
 
     MCAPI void onEntityFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
@@ -189,9 +189,6 @@ public:
     MCAPI void onStepOff(::BlockEvents::BlockStepOffEvent const& eventData) const;
 
     MCAPI void onStepOn(::BlockEvents::BlockStepOnEvent const& eventData) const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*
-    tryGetRegisteredComponent(::HashedString const& name) const;
 
     MCAPI ::Scripting::Result<
         void,
@@ -238,7 +235,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::ScriptDeferredEventCoordinator& deferredEventCoordinator);
     // NOLINTEND
 
 public:
@@ -252,7 +249,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onPreFlushAfterEvents();
 
-    MCAPI bool $onFlushBlockCustomComponentAfterEvents();
+    MCAPI void $onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
     MCAPI void $onPostFlushAfterEvents();
 

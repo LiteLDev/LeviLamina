@@ -27,9 +27,13 @@ namespace BlockSourceVisitor { struct CollisionShape; }
 namespace MoveCollisionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createCollisionShapesCopySystem();
+MCAPI void addCollisionShapes(
+    ::std::vector<::BlockSourceVisitor::CollisionShape> const& tempCollisionShapes,
+    ::AABB const&                                              terrainIntersectTestBox,
+    ::MoveRequestComponent&                                    request
+);
 
-MCAPI ::TickingSystemWithInfo createSystem();
+MCAPI ::TickingSystemWithInfo createCollisionShapesCopySystem();
 
 MCAPI void fetchCollisionShapes(
     ::StrictEntityContext const&                       entity,

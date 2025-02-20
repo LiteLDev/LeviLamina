@@ -28,18 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI JunglePyramidPiece(short seaLevel, int west, int north);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(short seaLevel, int west, int north);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -14,10 +14,8 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class IConstBlockSource;
+class ILevel;
 class ItemStack;
-class Level;
-class Player;
 class SaveContext;
 class TextObjectRoot;
 struct ActorUniqueID;
@@ -98,6 +96,12 @@ public:
         ChalkboardFinder& operator=(ChalkboardFinder const&);
         ChalkboardFinder(ChalkboardFinder const&);
         ChalkboardFinder();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI bool confirmedBroken(::ChalkboardBlockActor& compare, ::BlockSource& region) const;
+        // NOLINTEND
     };
 
 public:
@@ -127,7 +131,7 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
     virtual void onChanged(::BlockSource& region) /*override*/;
@@ -156,33 +160,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChalkboardBlockActor(::BlockPos const& pos);
 
-    MCAPI ::ChalkboardBlockActor const* getBaseChalkboard(::IConstBlockSource const& region) const;
-
-    MCAPI ::ChalkboardBlockActor* getBaseChalkboard(::BlockSource& region) const;
-
-    MCAPI ::ChalkboardSize const getChalkboardSize() const;
-
-    MCAPI bool getLocked() const;
-
-    MCAPI int getRotation(::BlockSource& region) const;
+    MCAPI ::std::vector<::BlockPos> const& _getSiblings(::BlockSource& region);
 
     MCAPI ::std::string const& getText() const;
 
-    MCAPI int getTextCharCount() const;
-
-    MCAPI bool isBaseChalkboard() const;
-
-    MCAPI bool isOnGround() const;
-
-    MCAPI bool playerMayDestroy(::Player& player) const;
-
-    MCAPI bool playerMayEdit(::Player& player) const;
-
-    MCAPI bool playerMayToggleLock(::Player& player) const;
-
     MCAPI void setText(::std::string const& text);
-
-    MCAPI void setText(::std::string const& text, ::TextObjectRoot&& root);
 
     MCAPI void validate(::BlockSource& region);
     // NOLINTEND
@@ -190,6 +172,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::ChalkboardBlockActor::ChalkboardFinder _findChalkboard(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static ::std::vector<::BlockPos>
     calculateAllBlocks(::BlockPos const& basePos, ::ChalkboardSize boardSize, int dir);
 
@@ -237,7 +221,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $onChanged(::BlockSource& region);
 

@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
-#include "mc/deps/core/container/SmallSet.h"
 #include "mc/deps/core/threading/BackgroundTaskBase.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/brstd/flat_set.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -58,23 +58,28 @@ public:
         uint64                                        threadCount,
         ::Bedrock::Threading::OSThreadPriority const& priority,
         ::std::optional<uint64>                       coreAffinityMask,
-        bool                                          suppressWorkerProfiling,
-        ::std::optional<int>                          idealCore
+        bool                                          idealCore,
+        ::std::optional<int>                          suppressWorkerProfiling
     );
 
     MCAPI bool _checkPendingWork();
 
     MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 
-    MCAPI uint64 size() const;
-
     MCAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void _registerPool(::WorkerPool& pool);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SmallSet<::WorkerPool*>& sAllPools();
+    MCAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
+    sAllPools();
 
     MCAPI static ::Bedrock::Threading::Mutex& sAllPoolsMutex();
     // NOLINTEND
@@ -89,8 +94,8 @@ public:
         uint64                                        threadCount,
         ::Bedrock::Threading::OSThreadPriority const& priority,
         ::std::optional<uint64>                       coreAffinityMask,
-        bool                                          suppressWorkerProfiling,
-        ::std::optional<int>                          idealCore
+        bool                                          idealCore,
+        ::std::optional<int>                          suppressWorkerProfiling
     );
     // NOLINTEND
 

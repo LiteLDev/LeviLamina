@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
@@ -16,8 +16,6 @@ class ImitateMobSoundsComponent {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getRandomImitatedSound(::Randomize const& randomize);
-
     MCAPI static bool imitateNearbyMobs(::Actor& actor, ::Randomize const& randomize);
     // NOLINTEND
 

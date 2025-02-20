@@ -40,22 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PassengerJumpPacket();
-
-    MCAPI explicit PassengerJumpPacket(int jumpScale);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(int jumpScale);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

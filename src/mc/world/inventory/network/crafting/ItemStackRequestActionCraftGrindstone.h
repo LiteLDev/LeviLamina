@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftGrindstone& operator=(ItemStackRequestActionCraftGrindstone const&);
     ItemStackRequestActionCraftGrindstone(ItemStackRequestActionCraftGrindstone const&);
+    ItemStackRequestActionCraftGrindstone();
 
 public:
     // virtual functions
@@ -39,20 +40,6 @@ public:
 
     // vIndex: 0
     virtual ~ItemStackRequestActionCraftGrindstone() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackRequestActionCraftGrindstone();
-
-    MCFOLD int getRepairCost() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

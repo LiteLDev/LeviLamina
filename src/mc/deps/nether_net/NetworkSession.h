@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/ESendType.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/SignalingChannelId.h"
@@ -16,7 +17,6 @@ namespace NetherNet { class CandidateAdd; }
 namespace NetherNet { class ConnectResponse; }
 namespace NetherNet { class NetworkSessionManager; }
 namespace NetherNet { struct NetworkID; }
-namespace NetherNet { struct SessionState; }
 namespace cricket { class Candidate; }
 namespace webrtc { class DataChannelInterface; }
 namespace webrtc { class IceCandidateInterface; }
@@ -26,7 +26,7 @@ namespace webrtc { class StatsReport; }
 
 namespace NetherNet {
 
-class NetworkSession : public ::webrtc::PeerConnectionObserver {
+class NetworkSession : public ::NetherNet::ContextProxy, public ::webrtc::PeerConnectionObserver {
 public:
     // NetworkSession inner types define
     enum class Direction : int {
@@ -53,7 +53,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkb2ad91;
     ::ll::UntypedStorage<8, 8>  mUnkea75f3;
     ::ll::UntypedStorage<8, 24> mUnk67ae30;
-    ::ll::UntypedStorage<8, 8>  mUnkcd4a0d;
+    ::ll::UntypedStorage<8, 8>  mUnk11904d;
     ::ll::UntypedStorage<4, 4>  mUnk4e1a8f;
     ::ll::UntypedStorage<4, 4>  mUnk592b9c;
     ::ll::UntypedStorage<8, 8>  mUnk5fa546;
@@ -131,11 +131,7 @@ public:
 
     MCAPI void CheckUpdateStats();
 
-    MCAPI void CloseWithReason(::NetherNet::ESessionError error) const;
-
     MCAPI void EnterNewNegotiationState(::NetherNet::NetworkSession::ENegotiationState negotiationState);
-
-    MCAPI bool GetSessionState(::NetherNet::SessionState* pSessionState);
 
     MCAPI ::NetherNet::ESessionError InitializeIncoming(
         ::NetherNet::NetworkID                                   remoteID,
@@ -146,19 +142,11 @@ public:
 
     MCAPI void InitializeOutgoing(::NetherNet::NetworkID remoteID);
 
-    MCAPI bool IsConnectionAlive() const;
-
     MCAPI ::NetherNet::ESessionError IsDeadSession(::std::chrono::seconds negotiationTimeout);
-
-    MCAPI ::NetherNet::ESessionError IsInactiveSession();
 
     MCAPI void MaybeProcessIceCandidates();
 
-    MCAPI explicit NetworkSession(::NetherNet::NetworkSessionManager* pManager);
-
-    MCAPI NetworkSession(::NetherNet::NetworkSessionManager* pManager, uint64 connectionId);
-
-    MCAPI void OnSetRemoteDescriptionSuccess();
+    MCAPI NetworkSession(::NetherNet::ContextProxy const& ctx, ::NetherNet::NetworkSessionManager& manager);
 
     MCAPI void OnStatsRequestComplete(::std::vector<::webrtc::StatsReport const*> const& reports);
 
@@ -178,9 +166,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NetherNet::NetworkSessionManager* pManager);
-
-    MCAPI void* $ctor(::NetherNet::NetworkSessionManager* pManager, uint64 connectionId);
+    MCAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::NetherNet::NetworkSessionManager& manager);
     // NOLINTEND
 
 public:
@@ -214,7 +200,9 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI static void** $vftableForContextProxy();
+
+    MCAPI static void** $vftableForPeerConnectionObserver();
     // NOLINTEND
 };
 

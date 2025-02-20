@@ -87,8 +87,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FeatureToggles(::AppPlatform& appPlatform);
-
     MCAPI ::std::function<void(::Option&)>
     _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID optionIdToCheck) const;
 
@@ -96,8 +94,6 @@ public:
         ::std::vector<::FeatureOptionID> expectedDisabledOptions,
         ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
-
-    MCAPI ::std::function<void(bool&)> _getLockIfInGameCallback();
 
     MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
         ::std::vector<::FeatureOptionID> expectedDisabledOptions,
@@ -124,8 +120,6 @@ public:
 
     MCAPI void _setupDependencies();
 
-    MCAPI ::Option* get(::FeatureOptionID featureID);
-
     MCAPI bool isEnabled(::FeatureOptionID featureID) const;
     // NOLINTEND
 
@@ -133,12 +127,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::FeatureToggles>& mFeatureToggles();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AppPlatform& appPlatform);
     // NOLINTEND
 
 public:

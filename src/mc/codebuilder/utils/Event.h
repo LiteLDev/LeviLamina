@@ -21,15 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Event(::std::string const& name);
-
     MCAPI ~Event();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name);
     // NOLINTEND
 
 public:

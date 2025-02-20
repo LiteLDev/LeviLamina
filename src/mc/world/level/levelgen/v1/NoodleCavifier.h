@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class NoiseCellInterpolator;
 class NoodleCavifierNoises;
 class Vec3;
@@ -36,8 +35,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI NoodleCavifier(::NoodleCavifierNoises const& noises, short minWorldHeight);
-
-    MCAPI float cavify(float noiseValue, ::BlockPos const& worldPos) const;
 
     MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
 

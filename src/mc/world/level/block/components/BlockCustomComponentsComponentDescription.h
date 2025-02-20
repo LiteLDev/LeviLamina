@@ -9,6 +9,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -16,7 +17,10 @@ class BlockCustomComponentsComponentDescription : public ::BlockComponentDescrip
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8f1ab3;
+    ::ll::UntypedStorage<8, 24> mUnk2d324e;
+    ::ll::UntypedStorage<1, 1>  mUnkb0463b;
+    ::ll::UntypedStorage<1, 1>  mUnk9ef4ac;
+    ::ll::UntypedStorage<1, 1>  mUnk99a643;
     // NOLINTEND
 
 public:
@@ -45,6 +49,17 @@ public:
 
     // vIndex: 0
     virtual ~BlockCustomComponentsComponentDescription() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void addCustomComponent(
+        ::std::string_view     compName,
+        ::cereal::DynamicValue compData,
+        bool                   overridePlayerInteract,
+        bool                   overridePlayerPlacing
+    );
     // NOLINTEND
 
 public:

@@ -88,31 +88,9 @@ public:
 
     MCAPI ::BackgroundWorker::RunOneResult _runOneTask();
 
-    MCAPI uint64 getApproximateTaskCount() const;
-
-    MCAPI ::std::thread::id getThreadId() const;
-
-    MCAPI bool isIdle() const;
-
-    MCAPI bool processTaskSync();
-
     MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task);
 
-    MCAPI void requestStop(bool wait);
-
-    MCAPI void resetWorkerThreadID();
-
-    MCAPI void resortPriorityQueue();
-
     MCAPI void start();
-
-    MCAPI void wake();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BackgroundWorker* getLocal();
     // NOLINTEND
 
 public:

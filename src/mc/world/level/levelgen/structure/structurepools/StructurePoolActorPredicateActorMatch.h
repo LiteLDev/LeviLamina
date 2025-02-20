@@ -37,18 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit StructurePoolActorPredicateActorMatch(::std::string actor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string actor);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

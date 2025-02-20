@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorFilterGroup;
-class EntityContext;
 class Mob;
 struct Tick;
 namespace JsonUtil { class EmptyClass; }
@@ -43,12 +42,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~DrinkMilkDefinition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::DrinkMilkGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -107,18 +100,6 @@ public:
 
     // vIndex: 0
     virtual ~DrinkMilkGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DrinkMilkGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

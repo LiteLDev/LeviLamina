@@ -67,7 +67,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FilterTest();
+    virtual ~FilterTest() = default;
 
     // vIndex: 1
     virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
@@ -91,6 +91,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _testValuesWithOperator(float a, float b) const;
+
     MCAPI bool _testValuesWithOperator(bool a, bool b) const;
 
     MCAPI ::Json::Value serialize() const;
@@ -99,7 +101,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

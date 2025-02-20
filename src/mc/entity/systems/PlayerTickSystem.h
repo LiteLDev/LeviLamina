@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct PlayerTickComponent;
+struct ServerPlayerMovementComponent;
 struct TickingSystemWithInfo;
 // clang-format on
 
@@ -13,7 +13,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create(bool isCatchup);
-
-    MCAPI static ::TickingSystemWithInfo createAddMovementTickNeededForCatchupSystem();
     // NOLINTEND
 };

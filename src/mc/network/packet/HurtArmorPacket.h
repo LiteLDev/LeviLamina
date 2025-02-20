@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/world/actor/ActorDamageCause.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,9 +18,9 @@ class HurtArmorPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ActorDamageCause> mCause;
-    ::ll::TypedStorage<4, 4, int>                mDmg;
-    ::ll::TypedStorage<4, 4, ::std::bitset<5>>   mArmorSlots;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
+    ::ll::TypedStorage<4, 4, int>                                     mDmg;
+    ::ll::TypedStorage<4, 4, ::std::bitset<5>>                        mArmorSlots;
     // NOLINTEND
 
 public:
@@ -40,22 +40,6 @@ public:
 
     // vIndex: 0
     virtual ~HurtArmorPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HurtArmorPacket();
-
-    MCAPI HurtArmorPacket(::ActorDamageCause cause, int dmg, ::std::bitset<5> armorSlots);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorDamageCause cause, int dmg, ::std::bitset<5> armorSlots);
     // NOLINTEND
 
 public:

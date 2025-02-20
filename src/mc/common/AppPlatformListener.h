@@ -8,13 +8,15 @@
 // auto generated forward declare list
 // clang-format off
 class PushNotificationMessage;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class AppPlatformListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mListenerRegistered;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mLowMemorySubscription;
+    ::ll::TypedStorage<1, 1, bool>                             mListenerRegistered;
     // NOLINTEND
 
 public:
@@ -24,77 +26,67 @@ public:
     virtual ~AppPlatformListener();
 
     // vIndex: 1
-    virtual void onLowMemory();
-
-    // vIndex: 2
     virtual void onAppPaused();
 
-    // vIndex: 3
+    // vIndex: 2
     virtual void onAppUnpaused();
 
-    // vIndex: 4
+    // vIndex: 3
     virtual void onAppPreSuspended();
 
-    // vIndex: 5
+    // vIndex: 4
     virtual void onAppSuspended();
 
-    // vIndex: 6
+    // vIndex: 5
     virtual void onAppResumed();
 
-    // vIndex: 7
+    // vIndex: 6
     virtual void onAppFocusLost();
 
-    // vIndex: 8
+    // vIndex: 7
     virtual void onAppFocusGained();
 
-    // vIndex: 9
+    // vIndex: 8
     virtual void onAppTerminated();
 
-    // vIndex: 10
-    virtual void onOperationModeChanged(::OperationMode const operationMode);
+    // vIndex: 9
+    virtual void onOperationModeChanged(::OperationMode const);
 
-    // vIndex: 11
+    // vIndex: 10
     virtual void onPerformanceModeChanged(bool const boost);
 
-    // vIndex: 12
+    // vIndex: 11
     virtual void onPushNotificationReceived(::PushNotificationMessage const& msg);
 
-    // vIndex: 13
+    // vIndex: 12
     virtual void onResizeBegin();
 
-    // vIndex: 14
+    // vIndex: 13
     virtual void onResizeEnd();
 
-    // vIndex: 15
+    // vIndex: 14
     virtual void onDeviceLost();
 
-    // vIndex: 16
+    // vIndex: 15
     virtual void onAppSurfaceCreated();
 
-    // vIndex: 17
+    // vIndex: 16
     virtual void onAppSurfaceDestroyed();
 
-    // vIndex: 18
+    // vIndex: 17
     virtual void onClipboardCopy(::std::string const&);
 
-    // vIndex: 19
+    // vIndex: 18
     virtual void onClipboardPaste(::std::string const&);
+
+    // vIndex: 19
+    virtual void onLowMemory();
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AppPlatformListener(bool doInit);
-
     MCAPI void initListener(float priority);
-
-    MCAPI void terminate();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool doInit);
     // NOLINTEND
 
 public:
@@ -106,8 +98,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onLowMemory();
-
     MCFOLD void $onAppPaused();
 
     MCFOLD void $onAppUnpaused();
@@ -123,8 +113,6 @@ public:
     MCFOLD void $onAppFocusGained();
 
     MCFOLD void $onAppTerminated();
-
-    MCFOLD void $onOperationModeChanged(::OperationMode const operationMode);
 
     MCFOLD void $onPerformanceModeChanged(bool const boost);
 
@@ -143,6 +131,8 @@ public:
     MCFOLD void $onClipboardCopy(::std::string const&);
 
     MCFOLD void $onClipboardPaste(::std::string const&);
+
+    MCFOLD void $onLowMemory();
     // NOLINTEND
 
 public:

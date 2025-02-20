@@ -17,7 +17,6 @@ class LevelChunk;
 class LevelChunkPacket;
 class NetworkIdentifier;
 class ServerNetworkSystem;
-class SpinLockImpl;
 class VarIntDataOutput;
 class Vec3;
 struct ChunkPositionAndDimension;
@@ -56,9 +55,7 @@ public:
         8,
         40,
         ::std::queue<::ClientGenerationRequestHandler, ::std::deque<::ClientGenerationRequestHandler>>>
-                                              mGenerationRequests;
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl> mServerChunkSourceAccessorLock;
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl> mPublisherLock;
+        mGenerationRequests;
     // NOLINTEND
 
 public:
@@ -88,22 +85,11 @@ public:
 
     MCAPI void clearRegion();
 
-    MCAPI void destroyRegion();
-
-    MCAPI int getChunksSentSinceStart() const;
-
-    MCAPI bool is2DPositionRelevant(::BlockPos const& position) const;
-
     MCAPI void moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
     MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
 
-    MCAPI void resetInitialSpawn();
-
     MCAPI void sendQueuedChunks();
-
-    MCAPI void
-    setServerSettings(::ServerNetworkSystem& network, ::ClientBlobCache::Server::ActiveTransfersManager& cacheManager);
     // NOLINTEND
 
 public:

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/TypedRuntimeId.h"
 
 // auto generated forward declare list
@@ -15,13 +15,13 @@ class CompoundTag;
 class ContainerCloseListener;
 class ContainerContentChangeListener;
 class ContainerSizeChangeListener;
-class DynamicContainerTracker;
 class ItemStack;
 class Player;
 class Random;
 class Vec3;
 struct ContainerOwner;
 struct ContainerRuntimeIdTag;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class Container {
@@ -63,8 +63,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerType>                                          mContainerType;
-    ::ll::TypedStorage<1, 1, ::ContainerType>                                          mGameplayContainerType;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>                     mContainerType;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>                     mGameplayContainerType;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerContentChangeListener*>> mContentChangeListeners;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerSizeChangeListener*>>    mSizeChangeListeners;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ContainerCloseListener*>>         mCloseListeners;
@@ -73,11 +73,11 @@ public:
         8,
         40,
         ::std::deque<::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>>>
-                                                   mTransactionContextStack;
-    ::ll::TypedStorage<8, 32, ::std::string>       mName;
-    ::ll::TypedStorage<1, 1, bool>                 mCustomName;
-    ::ll::TypedStorage<8, 24, ::ContainerOwner>    mContainerOwner;
-    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId> mContainerRuntimeId;
+                                                                   mTransactionContextStack;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
+    ::ll::TypedStorage<1, 1, bool>                                 mCustomName;
+    ::ll::TypedStorage<8, 24, ::ContainerOwner>                    mContainerOwner;
+    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId>                 mContainerRuntimeId;
     // NOLINTEND
 
 public:
@@ -90,11 +90,7 @@ public:
     virtual void init();
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) = 0;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) = 0;
 
     // vIndex: 3
     virtual void addContentChangeListener(::ContainerContentChangeListener* listener);
@@ -109,7 +105,7 @@ public:
     virtual bool hasRemovedSubscribers() const;
 
     // vIndex: 7
-    virtual ::ItemStack const& getItem(int slot) const = 0;
+    virtual ::ItemStack const& getItem(int) const = 0;
 
     // vIndex: 8
     virtual bool hasRoomForItem(::ItemStack const& item);
@@ -124,7 +120,7 @@ public:
     virtual bool addItemToFirstEmptySlot(::ItemStack const& item);
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) = 0;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) = 0;
 
     // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
@@ -187,7 +183,7 @@ public:
     virtual void setContainerMoved();
 
     // vIndex: 33
-    virtual void setCustomName(::std::string const& name);
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     // vIndex: 34
     virtual bool hasCustomName() const;
@@ -219,41 +215,23 @@ public:
     // NOLINTBEGIN
     MCAPI Container(::Container const&);
 
-    MCAPI explicit Container(::ContainerType type);
+    MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI Container(::ContainerType type, ::std::string const& name, bool customName);
+    MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
     MCAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI int _getEmptySlotsCount(int start, int end) const;
-
     MCAPI void
     _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
-
-    MCAPI void addCloseListener(::ContainerCloseListener* listener);
-
-    MCFOLD ::ContainerType getContainerType() const;
-
-    MCFOLD ::ContainerType getGameplayContainerType() const;
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
     MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 
-    MCFOLD ::ContainerRuntimeId const& getRuntimeId() const;
-
-    MCAPI void initRuntimeId();
-
     MCAPI ::Container& operator=(::Container const&);
 
-    MCAPI void receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
-
     MCAPI void removeCloseListener(::ContainerCloseListener* listener);
-
-    MCAPI void serverInitItemStackIdsAll(::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
-
-    MCFOLD void setGameplayContainerType(::ContainerType type);
 
     MCAPI void triggerTransactionChange(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
     // NOLINTEND
@@ -261,15 +239,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ContainerType getContainerTypeId(::std::string const& name);
-
-    MCAPI static ::std::string const& getContainerTypeName(::ContainerType type);
+    MCAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::ContainerType, ::std::string> const& containerTypeMap();
+    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const&
+    containerTypeMap();
     // NOLINTEND
 
 public:
@@ -277,9 +254,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Container const&);
 
-    MCAPI void* $ctor(::ContainerType type);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI void* $ctor(::ContainerType type, ::std::string const& name, bool customName);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
     // NOLINTEND
 
 public:
@@ -329,7 +306,7 @@ public:
 
     MCAPI ::std::vector<::ItemStack const*> const $getSlots() const;
 
-    MCAPI int $getEmptySlotsCount() const;
+    MCFOLD int $getEmptySlotsCount() const;
 
     MCAPI int $getItemCount(::ItemStack const& compare) const;
 
@@ -343,7 +320,7 @@ public:
 
     MCAPI void $setContainerMoved();
 
-    MCAPI void $setCustomName(::std::string const& name);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     MCAPI bool $hasCustomName() const;
 

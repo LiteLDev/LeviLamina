@@ -12,7 +12,6 @@ class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorMovementTickNeededComponent;
 struct SwimAmountComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class CurrentSwimAmountSystem {
@@ -24,8 +23,6 @@ public:
         ::SwimAmountComponent&          swimAmountComponent,
         ::ActorDataFlagComponent const& synchedActorDataComponent
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
 
     MCAPI static void tick(::ViewT<
                            ::StrictEntityContext,

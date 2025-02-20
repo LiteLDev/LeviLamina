@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -42,14 +41,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockBreathabilityDescription() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

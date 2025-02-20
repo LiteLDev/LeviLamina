@@ -4,19 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/actor/ActorLocation.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
 class Vec3;
 struct AABBShapeComponent;
-struct ActorHeadRotationComponent;
 struct ActorRotationComponent;
 struct GetAttachPositionViews;
 struct OffsetsComponent;
 struct PassengerRenderingRidingOffsetComponent;
-struct StateVectorComponent;
 struct VanillaOffsetComponent;
 // clang-format on
 
@@ -24,7 +22,7 @@ namespace GetAttachPositionUtility {
 // functions
 // NOLINTBEGIN
 MCAPI ::Vec3 _getBaseAttachPoint(
-    ::ActorLocation                                                 location,
+    ::SharedTypes::Legacy::ActorLocation                            location,
     ::Vec3 const&                                                   interpolatedPosition,
     ::AABBShapeComponent const&                                     aabbShapeComponent,
     ::ActorRotationComponent const&                                 actorRotationComponent,
@@ -36,35 +34,17 @@ MCAPI ::Vec3 _getBaseAttachPoint(
 );
 
 MCAPI ::std::optional<::Vec3> getAttachPosition(
-    ::StrictEntityContext const&    entity,
-    ::GetAttachPositionViews const& views,
-    ::ActorLocation                 location,
-    ::Vec3 const&                   interpolatedPosition
-);
-
-MCAPI ::Vec3 getNonPassengerAttachPos(
-    ::StateVectorComponent const&                      stateVector,
-    ::optional_ref<::ActorHeadRotationComponent const> headRotation,
-    ::AABBShapeComponent const&                        aabbShape,
-    ::ActorRotationComponent const&                    actorRotation,
-    ::OffsetsComponent const&                          offsets,
-    ::optional_ref<::VanillaOffsetComponent const>     vanillaOffset,
-    ::ActorLocation                                    location,
-    float                                              alpha
+    ::StrictEntityContext const&         entity,
+    ::GetAttachPositionViews const&      views,
+    ::SharedTypes::Legacy::ActorLocation location,
+    ::Vec3 const&                        interpolatedPosition
 );
 
 MCAPI ::Vec3 getPassengerAttachPos(
-    ::StrictEntityContext const&    entity,
-    ::GetAttachPositionViews const& views,
-    ::ActorLocation                 location,
-    float                           alpha
-);
-
-MCAPI ::std::optional<::Vec3> tryGetPassengerAttachPos(
-    ::StrictEntityContext const&    entity,
-    ::GetAttachPositionViews const& views,
-    ::ActorLocation                 location,
-    float                           alpha
+    ::StrictEntityContext const&         entity,
+    ::GetAttachPositionViews const&      views,
+    ::SharedTypes::Legacy::ActorLocation location,
+    float                                alpha
 );
 // NOLINTEND
 

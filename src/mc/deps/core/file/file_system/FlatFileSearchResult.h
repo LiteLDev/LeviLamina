@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class FlatFileManifest; }
+// clang-format on
+
 namespace Core {
 
 class FlatFileSearchResult {
@@ -21,6 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCFOLD ::std::shared_ptr<::Core::FlatFileManifest const> getManifest() const;
+
     MCAPI ~FlatFileSearchResult();
     // NOLINTEND
 

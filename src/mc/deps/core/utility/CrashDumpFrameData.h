@@ -27,29 +27,8 @@ public:
     CrashDumpFrameData();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CrashDumpFrameData(
-        int    numControllers,
-        int    primaryControllerId,
-        uint64 freeMemory,
-        float  x,
-        float  y,
-        float  z,
-        float  direction
-    );
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[]> kFormat();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(int numControllers, int primaryControllerId, uint64 freeMemory, float x, float y, float z, float direction);
     // NOLINTEND
 };

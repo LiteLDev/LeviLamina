@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-class Vec3;
-struct ActorUniqueID;
-// clang-format on
-
 struct EventingRequest {
 public:
     // EventingRequest inner types declare
@@ -134,24 +127,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ~EventingRequest();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::EventingRequest
-    addPersonaEmotePlayed(::std::string const& emoteProductId, bool isEmoteEndedEarly, int emoteSlotId);
-
-    MCAPI static ::EventingRequest addPlayerActionComparisonFailure(::std::string const& message);
-
-    MCAPI static ::EventingRequest
-    addPlayerBounced(::ActorUniqueID const& playerID, ::Block const& block, int bounceHeight);
-
-    MCAPI static ::EventingRequest
-    addPlayerUnexpectedFallDamage(float fallDistance, bool isVehicle, float divergenceAmount);
-
-    MCAPI static ::EventingRequest
-    addVehiclePositionComparisonFailure(::Vec3 const& clientPos, ::Vec3 const& serverPos);
     // NOLINTEND
 
 public:

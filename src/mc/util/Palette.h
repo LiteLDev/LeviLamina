@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/PaletteColor.h"
+#include "mc/deps/shared_types/legacy/actor/PaletteColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,9 +14,7 @@ class Palette {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PaletteColor fromByte(uchar id);
-
-    MCAPI static ::mce::Color const& getColor(::PaletteColor id);
+    MCAPI static ::mce::Color const& getColor(::SharedTypes::Legacy::PaletteColor id);
     // NOLINTEND
 
 public:

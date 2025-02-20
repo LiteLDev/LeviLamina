@@ -42,7 +42,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Definition() /*override*/;
+        virtual ~Definition() /*override*/ = default;
         // NOLINTEND
 
     public:
@@ -58,7 +58,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+
         // NOLINTEND
 
     public:
@@ -122,7 +122,7 @@ public:
 
     MCAPI void $start();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCAPI void $tick();
 

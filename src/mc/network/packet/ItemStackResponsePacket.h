@@ -41,24 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackResponsePacket();
-
-    MCAPI explicit ItemStackResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
-
-    MCFOLD ::std::vector<::ItemStackResponseInfo> const& getResponses() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::ItemStackResponseInfo>&& responses);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

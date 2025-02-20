@@ -31,7 +31,6 @@ public:
     // prevent constructor by default
     ScriptItemCustomComponentBeforeDurabilityDamageEvent&
     operator=(ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
-    ScriptItemCustomComponentBeforeDurabilityDamageEvent(ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
     ScriptItemCustomComponentBeforeDurabilityDamageEvent();
 
 public:
@@ -44,14 +43,19 @@ public:
     virtual bool shouldCancel() const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptItemCustomComponentBeforeDurabilityDamageEvent() /*override*/ = default;
+    virtual ~ScriptItemCustomComponentBeforeDurabilityDamageEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
+    MCAPI
+    ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::
+                                                             ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
+
+    MCAPI
+    ScriptItemCustomComponentBeforeDurabilityDamageEvent(::ScriptModuleMinecraft::
+                                                             ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
     // NOLINTEND
 
 public:
@@ -61,9 +65,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent&&);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentBeforeDurabilityDamageEvent const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

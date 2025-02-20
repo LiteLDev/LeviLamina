@@ -4,7 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class GameEvent;
+struct GameEventContext;
 // clang-format on
 
 namespace VibrationListenerUtils {
@@ -12,7 +14,14 @@ namespace VibrationListenerUtils {
 // NOLINTBEGIN
 MCAPI int getGameEventFrequency(::GameEvent const& gameEvent);
 
-MCAPI ::GameEvent const& getResonateEventByFrequency(int frequency);
+MCAPI bool ignoreVibrationIfOnVibrationDampeningBlock(
+    ::BlockSource&            region,
+    ::GameEvent const&        gameEvent,
+    ::GameEventContext const& gameEventContext
+);
+
+MCAPI bool
+ignoreVibrationIfSneaking(::BlockSource& gameEvent, ::GameEvent const& gameEventContext, ::GameEventContext const&);
 // NOLINTEND
 
 } // namespace VibrationListenerUtils

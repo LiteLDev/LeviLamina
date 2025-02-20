@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
 class Container;
+class ItemStack;
 class Vec3;
 // clang-format on
 
@@ -25,15 +27,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI SaddleItem(::std::string const& nameId, short id);
-    // NOLINTEND
+    MCAPI static bool _tryEquipSaddleViaComponents(::Actor& actor, ::ItemStack const& saddle);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, short id);
+    MCAPI static bool _tryEquipSaddleViaEvents(::Actor& actor);
     // NOLINTEND
 
 public:

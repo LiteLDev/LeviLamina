@@ -12,17 +12,15 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Random;
+class Experiments;
 class Vec3;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class LanternBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
@@ -48,6 +46,9 @@ public:
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~LanternBlock() /*override*/ = default;
     // NOLINTEND
@@ -55,15 +56,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LanternBlock(::std::string const& nameId, int id);
+    MCFOLD void _checkToQueueTick(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool _couldHang(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -75,8 +72,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCAPI ::Block const&
@@ -92,6 +87,8 @@ public:
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

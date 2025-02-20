@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
-
 struct StateVectorComponent {
 public:
     // member variables
@@ -21,10 +16,4 @@ public:
     StateVectorComponent& operator=(StateVectorComponent const&);
     StateVectorComponent(StateVectorComponent const&);
     StateVectorComponent();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::Vec3 const& ABS_LIMIT();
-    // NOLINTEND
 };

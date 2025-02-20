@@ -13,7 +13,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ChunkSource;
-class IMinecraftEventing;
 class LevelChunk;
 struct ActorBlockSyncMessage;
 // clang-format on
@@ -52,18 +51,6 @@ public:
 
     // vIndex: 0
     virtual ~ClassroomModeListener() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ClassroomModeListener(::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

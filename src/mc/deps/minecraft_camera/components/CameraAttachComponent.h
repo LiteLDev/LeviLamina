@@ -13,13 +13,22 @@ public:
 public:
     // prevent constructor by default
     CameraAttachComponent& operator=(CameraAttachComponent const&);
-    CameraAttachComponent(CameraAttachComponent const&);
     CameraAttachComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI CameraAttachComponent(::CameraAttachComponent const&);
+
+    MCAPI ::CameraAttachComponent& operator=(::CameraAttachComponent&&);
+
     MCAPI ~CameraAttachComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CameraAttachComponent const&);
     // NOLINTEND
 
 public:

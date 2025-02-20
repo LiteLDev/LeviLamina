@@ -25,8 +25,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void AddReference();
-
     MCAPI static void RemoveReference();
     // NOLINTEND
 

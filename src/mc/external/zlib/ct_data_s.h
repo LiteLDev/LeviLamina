@@ -6,8 +6,8 @@ struct ct_data_s {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk830bda;
-    ::ll::UntypedStorage<2, 2> mUnke6cded;
+    ::ll::UntypedStorage<2, 2> mUnkcdce18;
+    ::ll::UntypedStorage<2, 2> mUnk5a5803;
     // NOLINTEND
 
 public:

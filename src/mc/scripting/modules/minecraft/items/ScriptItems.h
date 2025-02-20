@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,7 +48,8 @@ public:
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>& registry,
         ::Scripting::WeakLifetimeScope                                                      scope,
-        ::std::string                                                                       itemName
+        ::std::string                                                                       itemName,
+        bool                                                                                allowAirBlockItem
     );
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
@@ -57,15 +58,18 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> itemHandle
     );
 
-    MCAPI void _registerItems(::Scripting::WeakLifetimeScope& scope);
+    MCAPI void _registerItems(::Scripting::WeakLifetimeScope& scope, bool allowAirBlockItem);
 
     MCAPI void _tryRegisterItemTypeAlias(::HashedString const& aliasName);
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
-    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName);
+    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName, bool allowAirBlockItem);
+
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
+    getAll(::Scripting::WeakLifetimeScope& scope, bool allowAirBlockItem);
 
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
-    getOrAdd(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName);
+    getOrAdd(::Scripting::WeakLifetimeScope& scope, ::std::string const& itemName, bool allowAirBlockItem);
     // NOLINTEND
 
 public:
@@ -77,7 +81,7 @@ public:
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::ItemRegistryRef itemRegistry);
 
     MCAPI static ::std::unordered_map<::std::string, ::std::string>
-    generateItemPropertyNameToRawNameMap(::ItemRegistryRef itemRegistry);
+    generateItemPropertyNameToRawNameMap(::ItemRegistryRef itemRegistry, bool allowAirBlockItem);
 
     MCAPI static ::std::vector<::std::string> generatetItemCooldownCategories(::ItemRegistryRef itemRegistry);
 

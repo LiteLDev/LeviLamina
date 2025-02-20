@@ -46,16 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockActorDataPacket();
-
     MCAPI BlockActorDataPacket(::BlockPos const& pos, ::CompoundTag tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::BlockPos const& pos, ::CompoundTag tag);
     // NOLINTEND
 

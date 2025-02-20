@@ -6,8 +6,6 @@
 // clang-format off
 class Actor;
 class ActorFilterGroup;
-class CompoundTag;
-class DataLoadHelper;
 class ExpiringTick;
 struct EffectDuration;
 // clang-format on
@@ -27,21 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEffectComponent();
-
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
-
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
-
     MCAPI void tick(::Actor& owner);
 
     MCAPI ~MobEffectComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

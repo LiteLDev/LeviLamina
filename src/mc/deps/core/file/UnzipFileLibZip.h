@@ -5,13 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/UnzipFile.h"
 #include "mc/deps/core/file/UnzipResult.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-class IFileAccess;
-namespace Core { class Path; }
-// clang-format on
 
 namespace Core {
 
@@ -27,6 +20,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkd58109;
     ::ll::UntypedStorage<8, 8>  mUnk3631e8;
     ::ll::UntypedStorage<8, 8>  mUnkba5020;
+    ::ll::UntypedStorage<8, 32> mUnk2168f3;
     // NOLINTEND
 
 public:
@@ -39,13 +33,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~UnzipFileLibZip() /*override*/;
+    virtual ~UnzipFileLibZip() /*override*/ = default;
 
     // vIndex: 1
     virtual bool isGood() const /*override*/;
 
     // vIndex: 2
-    virtual ::Core::ZipUtils::UnzipResult locateFile(char const* fileName, int caseSensitivity) /*override*/;
+    virtual ::Core::ZipUtils::UnzipResult locateFile(char const*, int) /*override*/;
 
     // vIndex: 3
     virtual ::Core::ZipUtils::UnzipResult goToFirstFile() /*override*/;
@@ -63,64 +57,28 @@ public:
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() /*override*/;
 
     // vIndex: 8
-    virtual void appendCurrentFileContents(
-        ::std::string&                                   str,
-        uint64                                           bufferSize,
-        ::std::function<void(int, ::std::string const&)> onReadCallback
-    ) /*override*/;
+    virtual void readCurrentFileContentsIntoMemory(::std::string&) /*override*/;
 
     // vIndex: 9
+    virtual void readCurrentFileContents(uint64, ::std::function<void(int, void const*)>) /*override*/;
+
+    // vIndex: 10
     virtual uint64 getTotalFilesInZip() /*override*/;
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UnzipFileLibZip(::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess, ::Core::Path const& zipPath);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess, ::Core::Path const& zipPath);
+    // vIndex: 11
+    virtual uint64 getCurrentFileUncompressedSize() /*override*/;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isGood() const;
 
-    MCAPI ::Core::ZipUtils::UnzipResult $locateFile(char const* fileName, int caseSensitivity);
-
-    MCAPI ::Core::ZipUtils::UnzipResult $goToFirstFile();
-
-    MCAPI ::Core::ZipUtils::UnzipResult $goToNextFile();
-
-    MCAPI ::std::string $getCurrentFileName() const;
-
-    MCAPI ::Core::ZipUtils::UnzipResult $openCurrentFileForReading();
-
-    MCAPI ::Core::ZipUtils::UnzipResult $closeCurrentFile();
-
-    MCAPI void $appendCurrentFileContents(
-        ::std::string&                                   str,
-        uint64                                           bufferSize,
-        ::std::function<void(int, ::std::string const&)> onReadCallback
-    );
-
-    MCAPI uint64 $getTotalFilesInZip();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

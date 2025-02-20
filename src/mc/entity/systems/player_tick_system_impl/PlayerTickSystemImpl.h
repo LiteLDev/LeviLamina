@@ -11,7 +11,6 @@
 class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct PassengerComponent;
-struct PlayerTickComponent;
 struct ServerPlayerMovementComponent;
 // clang-format on
 
@@ -20,7 +19,6 @@ namespace PlayerTickSystemImpl {
 // NOLINTBEGIN
 MCAPI void _addMovementTickNeededForCatchup(
     ::StrictEntityContext const&                         entity,
-    ::PlayerTickComponent const&                         playerTick,
     ::ServerPlayerMovementComponent const&               serverPlayerMovement,
     ::Optional<::PassengerComponent const> const&        passengerComponent,
     ::EntityModifier<::ActorMovementTickNeededComponent> modifier

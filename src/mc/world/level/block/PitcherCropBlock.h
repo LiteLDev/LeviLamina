@@ -15,10 +15,12 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
 class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class PitcherCropBlock : public ::BushBlock {
@@ -79,8 +81,11 @@ public:
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 150
+    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~PitcherCropBlock() /*override*/ = default;
@@ -91,15 +96,7 @@ public:
     // NOLINTBEGIN
     MCAPI PitcherCropBlock(::std::string const& nameId, int id);
 
-    MCAPI bool _canLowerPartSurvive(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
     MCAPI bool _grow(::BlockSource& region, ::BlockPos const& pos, bool instantGrowth) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static int getMaxGrowthStage();
     // NOLINTEND
 
 public:
@@ -146,7 +143,9 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

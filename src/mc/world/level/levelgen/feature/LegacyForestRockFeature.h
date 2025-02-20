@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class FeatureRegistry;
 class Random;
 // clang-format on
 
@@ -34,18 +33,6 @@ public:
 
     // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LegacyForestRockFeature(::FeatureRegistry const& registry);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:

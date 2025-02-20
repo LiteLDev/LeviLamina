@@ -52,5 +52,7 @@ enum class LogAreaID : int {
     LogAreaStore           = 46,
     LogAreaWorld           = 47,
     LogAreaMessaging       = 48,
-    NumLogAreas            = 49,
+    LogAreaNethernet       = 49,
+    LogAreaSerialization   = 50,
+    NumLogAreas            = 51,
 };

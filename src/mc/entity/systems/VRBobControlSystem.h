@@ -17,14 +17,7 @@ struct MobTravelComponent;
 struct MovementAbilitiesComponent;
 struct PlayerInputModeComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct WasInWaterFlagComponent;
 // clang-format on
 
-struct VRBobControlSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create();
-    // NOLINTEND
-};
+struct VRBobControlSystem {};

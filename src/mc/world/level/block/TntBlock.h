@@ -57,8 +57,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TntBlock(::std::string const& nameId, int id);
-
     MCAPI void _setAllowUnderwater(::Actor* e) const;
 
     MCAPI bool _shouldAllowUnderwater(::Block const& block) const;
@@ -70,12 +68,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool tryLightTnt(::Player& player, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

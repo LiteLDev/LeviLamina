@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Editor::Settings { struct SpeedProps; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class SpeedSettingsChangedPayload
@@ -32,26 +26,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~SpeedSettingsChangedPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SpeedSettingsChangedPayload(::Editor::Settings::SpeedProps const& props);
-
-    MCFOLD ::Editor::Settings::SpeedProps const& getSpeedSettingsProps() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Settings::SpeedProps const& props);
     // NOLINTEND
 
 public:

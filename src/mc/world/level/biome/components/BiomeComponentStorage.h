@@ -22,13 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool _addingComponentsIsAllowed() const;
-
-    MCAPI bool _hasComponent(::Bedrock::typeid_t<void> typeId) const;
-
     MCAPI void _removeComponent(::Bedrock::typeid_t<void> typeId);
-
-    MCAPI void finalizeComponents();
 
     MCAPI ~BiomeComponentStorage();
     // NOLINTEND

@@ -11,7 +11,9 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class ChiseledBookshelfBlockActor;
 class ItemInstance;
+class ItemStack;
 class Player;
 class Vec3;
 // clang-format on
@@ -55,13 +57,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChiseledBookshelfBlock(::std::string const& nameId, int id);
-    // NOLINTEND
+    MCAPI bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int hitSlot) const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI void
+    _setBook(::Player& player, ::ItemStack heldItem, ::ChiseledBookshelfBlockActor& bookshelfActor, int hitSlot) const;
     // NOLINTEND
 
 public:

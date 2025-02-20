@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
 class BlockDescriptor;
 class BlockPos;
 class BlockSource;
@@ -167,19 +168,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RandomSearchAndDigGoal(::Mob& mob);
-
     MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
 
     MCAPI void _digUpItems();
 
-    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
-    // NOLINTEND
+    MCAPI void _emitDiggingParticles();
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
+
+    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
+
+    MCAPI void _triggerEvent(::ActorDefinitionTrigger const& eventTrigger) const;
     // NOLINTEND
 
 public:

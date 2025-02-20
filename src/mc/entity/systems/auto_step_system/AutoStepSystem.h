@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
-class Vec3;
 struct AABBShapeComponent;
 struct AutoStepRequestFlagComponent;
 struct MaxAutoStepComponent;
@@ -29,9 +27,6 @@ MCAPI void doAutoStepSystemImpl(
     ::AABBShapeComponent&         aabbShapeComponent,
     ::SubBBsComponent&            subBBsComponent
 );
-
-MCAPI ::AABB
-getMaxCollisionVolume(::Vec3 const& preMoveSpeed, ::MaxAutoStepComponent const& step, ::AABB const& preMoveShape);
 // NOLINTEND
 
 } // namespace AutoStepSystem

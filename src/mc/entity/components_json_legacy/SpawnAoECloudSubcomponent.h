@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnke7e606;
     ::ll::UntypedStorage<4, 4>  mUnkf1a6ae;
-    ::ll::UntypedStorage<4, 4>  mUnk13610f;
+    ::ll::UntypedStorage<4, 4>  mUnk85c000;
     ::ll::UntypedStorage<4, 4>  mUnk3d3a04;
     ::ll::UntypedStorage<4, 4>  mUnk85af42;
     ::ll::UntypedStorage<4, 4>  mUnk392b11;
@@ -30,6 +30,7 @@ public:
     // prevent constructor by default
     SpawnAoECloudSubcomponent& operator=(SpawnAoECloudSubcomponent const&);
     SpawnAoECloudSubcomponent(SpawnAoECloudSubcomponent const&);
+    SpawnAoECloudSubcomponent();
 
 public:
     // virtual functions
@@ -48,18 +49,6 @@ public:
 
     // vIndex: 4
     virtual char const* getName() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SpawnAoECloudSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

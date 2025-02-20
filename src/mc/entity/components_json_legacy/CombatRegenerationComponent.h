@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class CombatRegenerationDefinition;
+class Player;
 // clang-format on
 
 class CombatRegenerationComponent {
@@ -28,6 +29,8 @@ public:
     MCAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
 
     MCAPI ::CombatRegenerationDefinition const* _getDefinition(::Actor& actor) const;
+
+    MCAPI void _trySendPlayerGeneratedByAxolotlTelemetryEvent(::Player const& player) const;
 
     MCAPI void tick(::Actor& owner);
     // NOLINTEND

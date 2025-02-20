@@ -20,7 +20,7 @@ class ResourcePacksInfoPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 168, ::PacksInfoData> mData;
+    ::ll::TypedStorage<8, 80, ::PacksInfoData> mData;
     // NOLINTEND
 
 public:
@@ -45,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePacksInfoPacket();
-
     MCAPI ResourcePacksInfoPacket(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,
@@ -58,8 +56,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(
         bool                           resourcePackRequired,
         ::std::vector<::PackInfoData>& resourcePacks,

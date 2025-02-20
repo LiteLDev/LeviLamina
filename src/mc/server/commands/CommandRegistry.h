@@ -4,11 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/typeid_t.h"
+#include "mc/platform/brstd/copyable_function.h"
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
-#include "mc/server/commands/CommandStatus.h"
-#include "mc/server/commands/CommandTypeFlag.h"
 #include "mc/server/commands/SemanticConstraint.h"
 #include "mc/world/actor/selectors/InvertableFilter.h"
 
@@ -81,12 +80,8 @@ public:
 
         MCAPI bool _parse(::std::string const& in);
 
-        MCAPI ::std::unique_ptr<::Command> createCommand(::CommandOrigin const& origin);
-
         MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
         createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
-
-        MCFOLD ::std::string const& getErrorMessage() const;
 
         MCAPI ::std::vector<::std::string> getErrorParams() const;
 
@@ -128,7 +123,8 @@ public:
 
     using ConstrainedValueLookupKey = ::std::pair<uint64, uint>;
 
-    using CommandOverrideFunctor = ::std::function<void(::CommandFlag&, ::std::string const&)>;
+    using CommandOverrideFunctor =
+        ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>;
 
     using ScoreboardScoreAccessor = ::std::function<int(bool&, ::std::string const&, ::Actor const&)>;
 
@@ -235,22 +231,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int> mValue;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit Symbol(uint64 value);
-
-        MCAPI uint64 toIndex() const;
-
-        MCFOLD int value() const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(uint64 value);
-        // NOLINTEND
     };
 
     struct SymbolHasher {};
@@ -273,46 +253,17 @@ public:
     struct Overload {
     public:
         // Overload inner types define
-        using AllocFunction = ::std::unique_ptr<::Command> (*)();
+        using AllocFunction = ::brstd::copyable_function<::std::unique_ptr<::Command>() const>;
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 8, ::CommandVersion>                          version;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command> (*)()>        alloc;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandParameterData>>    params;
-        ::ll::TypedStorage<4, 4, int>                                       versionOffset;
-        ::ll::TypedStorage<1, 1, bool>                                      isChaining;
-        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>> paramsSymbol;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Overload& operator=(Overload const&);
-        Overload(Overload const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Overload(::CommandRegistry::Overload&&);
-
-        MCAPI Overload(::CommandVersion version_, ::std::unique_ptr<::Command> (*alloc_)());
-
-        MCAPI ~Overload();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::CommandRegistry::Overload&&);
-
-        MCAPI void* $ctor(::CommandVersion version_, ::std::unique_ptr<::Command> (*alloc_)());
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
+        ::ll::TypedStorage<4, 8, ::CommandVersion>                                                  version;
+        ::ll::TypedStorage<8, 64, ::brstd::copyable_function<::std::unique_ptr<::Command>() const>> alloc;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandParameterData>>                            params;
+        ::ll::TypedStorage<4, 4, int>                                                               versionOffset;
+        ::ll::TypedStorage<1, 1, bool>                                                              isChaining;
+        ::ll::TypedStorage<8, 24, ::std::vector<::CommandRegistry::Symbol>>                         paramsSymbol;
         // NOLINTEND
     };
 
@@ -722,8 +673,9 @@ public:
     ::ll::TypedStorage<4, 100, ::CommandRegistry::ParamSymbols>                        mArgs;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>                               mSkipOnEpsAutocompleteSymbols;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>                               mAllowEmptySymbols;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::CommandFlag&, ::std::string const&)>> mCommandOverrideFunctor;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRunStats>>                         mCommandRunStats;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>>
+                                                                   mCommandOverrideFunctor;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRunStats>> mCommandRunStats;
     // NOLINTEND
 
 public:
@@ -736,9 +688,9 @@ public:
         ::std::vector<::std::pair<::std::string, uint>> const& strings,
         ::Bedrock::typeid_t<::CommandRegistry>                 type,
         bool (CommandRegistry::*
-                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+                  signature)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
             const,
-        ::CommandRegistry::Signature* signature
+        ::CommandRegistry::Signature* parse
     );
 
     MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
@@ -746,9 +698,9 @@ public:
         ::std::vector<::std::pair<uint64, uint>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>          type,
         bool (CommandRegistry::*
-                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
+                  signature)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
             const,
-        ::CommandRegistry::Signature* signature
+        ::CommandRegistry::Signature* parse
     );
 
     MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
@@ -848,12 +800,6 @@ public:
     MCAPI bool
     buildSelector(::ActorSelectorArgs const& args, ::CommandSelectorBase* output, ::std::string& error) const;
 
-    MCAPI bool checkOriginCommandFlags(
-        ::CommandOrigin const&   origin,
-        ::CommandFlag            flags,
-        ::CommandPermissionLevel permissionLevel
-    ) const;
-
     MCAPI ::std::unique_ptr<::Command> createCommand(
         ::CommandRegistry::ParseToken const& root,
         ::CommandOrigin const&               origin,
@@ -867,31 +813,23 @@ public:
     MCAPI ::std::string describe(::CommandRegistry::Symbol symbol) const;
 
     MCAPI ::std::string describe(
-        ::CommandRegistry::Signature const& command,
-        ::std::string const&                alias,
-        ::CommandRegistry::Overload const&  overload,
-        uint                                highlight,
-        uint*                               start,
-        uint*                               length
+        ::CommandRegistry::Signature const& alias,
+        ::std::string const&                overload,
+        ::CommandRegistry::Overload const&  highlight,
+        uint                                start,
+        uint*                               length,
+        uint*                               command
     ) const;
 
-    MCAPI bool enabledInEditor(::std::string const& nameIn) const;
+    MCAPI ::CommandRegistry::Signature const* findCommand(::std::string const&) const;
 
-    MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
-
-    MCAPI ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
-
-    MCAPI ::CommandRegistry::Signature* findCommand(::std::string const& name);
-
-    MCAPI ::CommandRegistry::Symbol findEnum(::std::string const& name) const;
+    MCFOLD ::CommandRegistry::Signature* findCommand(::std::string const& name);
 
     MCAPI ::CommandRegistry::Symbol findEnumValue(::std::string const& name) const;
 
     MCAPI ::CommandRegistry::Symbol findIdentifierInfo(::std::string const& name) const;
 
     MCAPI ::CommandRegistry::Symbol findPostfix(::std::string const& input) const;
-
-    MCAPI ::CommandRegistry::Symbol findSoftEnum(::std::string const& name) const;
 
     MCAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
 
@@ -908,19 +846,9 @@ public:
     MCAPI ::CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;
 
-    MCFOLD ::CommandRunStats& getCommandRunStats() const;
-
-    MCAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
-
-    MCAPI uint64 getEnumData(::CommandRegistry::ParseToken const& token) const;
-
     MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
 
-    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
-
     MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
-
-    MCAPI bool isValidCommand(::std::string const& commandName) const;
 
     MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
 
@@ -949,15 +877,11 @@ public:
 
     MCAPI void removeSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
-    MCAPI bool requiresCheatsEnabled(::std::string const& nameIn) const;
-
     MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
 
-    MCAPI void setCommandRegistrationOverride(::std::function<void(::CommandFlag&, ::std::string const&)> functor);
-
-    MCAPI void setNetworkUpdateCallback(::std::function<void(::Packet const&)> callback);
-
-    MCAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
+    MCAPI void setCommandRegistrationOverride(
+        ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)> functor
+    );
 
     MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
@@ -974,8 +898,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
-
-    MCFOLD static void buildOverload(::CommandRegistry::Overload& overload);
 
     MCFOLD static ::CommandRegistry::ParseToken*
     collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);

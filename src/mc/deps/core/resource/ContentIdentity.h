@@ -16,32 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContentIdentity();
-
-    MCAPI ContentIdentity(::ContentIdentity const&);
-
-    MCAPI ContentIdentity(::ContentIdentity&&);
-
-    MCAPI explicit ContentIdentity(::mce::UUID const& uuid);
-
-    MCAPI ::std::string asString() const;
-
-    MCFOLD ::mce::UUID const& getAsUUID() const;
-
-    MCFOLD bool isValid() const;
-
-    MCAPI bool operator!=(::ContentIdentity const& rhs) const;
-
-    MCFOLD ::ContentIdentity& operator=(::ContentIdentity&&);
-
-    MCAPI ::ContentIdentity& operator=(::ContentIdentity const&);
-
-    MCAPI bool operator==(::ContentIdentity const& rhs) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ContentIdentity fromString(::std::string const& uuidString);
@@ -51,17 +25,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::ContentIdentity& EMPTY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCFOLD void* $ctor(::ContentIdentity const&);
-
-    MCAPI void* $ctor(::ContentIdentity&&);
-
-    MCAPI void* $ctor(::mce::UUID const& uuid);
     // NOLINTEND
 };

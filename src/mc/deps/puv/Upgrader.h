@@ -14,8 +14,8 @@ class Upgrader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnk90f022;
-    ::ll::UntypedStorage<8, 112> mUnk85be2e;
+    ::ll::UntypedStorage<8, 24> mUnk90f022;
+    ::ll::UntypedStorage<8, 24> mUnk85be2e;
     // NOLINTEND
 
 public:
@@ -38,10 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI Upgrader(::SemVersion const& from, ::SemVersion const& to);
-
-    MCFOLD ::SemVersion const& sourceVersion() const;
-
-    MCFOLD ::SemVersion const& targetVersion() const;
 
     MCAPI ::Puv::LoadResultAny upgrade(::Puv::LoadResultAny source) const;
     // NOLINTEND

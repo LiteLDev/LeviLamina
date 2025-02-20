@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -16,7 +15,7 @@ class DamageAbsorptionItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbcf3e5;
+    ::ll::UntypedStorage<8, 24> mUnk2f9b4d;
     ::ll::UntypedStorage<1, 1>  mUnkfcb71a;
     // NOLINTEND
 
@@ -24,6 +23,7 @@ public:
     // prevent constructor by default
     DamageAbsorptionItemComponent& operator=(DamageAbsorptionItemComponent const&);
     DamageAbsorptionItemComponent(DamageAbsorptionItemComponent const&);
+    DamageAbsorptionItemComponent();
 
 public:
     // virtual functions
@@ -35,10 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DamageAbsorptionItemComponent();
-
-    MCAPI explicit DamageAbsorptionItemComponent(::std::vector<::ActorDamageCause> const& absorbableDamageCauses);
-
     MCAPI explicit DamageAbsorptionItemComponent(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
     // NOLINTEND
 
@@ -51,10 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::ActorDamageCause> const& absorbableDamageCauses);
-
     MCAPI void* $ctor(::SharedTypes::v1_21_10::DamageAbsorptionItemComponent data);
     // NOLINTEND
 

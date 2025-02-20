@@ -15,12 +15,11 @@ public:
     // prevent constructor by default
     PackedItemUseLegacyInventoryTransaction& operator=(PackedItemUseLegacyInventoryTransaction const&);
     PackedItemUseLegacyInventoryTransaction(PackedItemUseLegacyInventoryTransaction const&);
+    PackedItemUseLegacyInventoryTransaction();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackedItemUseLegacyInventoryTransaction();
-
     MCAPI PackedItemUseLegacyInventoryTransaction(::PackedItemUseLegacyInventoryTransaction&&);
 
     MCAPI ~PackedItemUseLegacyInventoryTransaction();
@@ -29,8 +28,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::PackedItemUseLegacyInventoryTransaction&&);
     // NOLINTEND
 

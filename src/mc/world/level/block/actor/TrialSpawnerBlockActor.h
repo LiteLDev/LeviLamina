@@ -7,16 +7,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class SaveContext;
 class TrialSpawner;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class TrialSpawnerBlockActor : public ::BlockActor {
@@ -33,7 +31,7 @@ public:
     virtual ~TrialSpawnerBlockActor() /*override*/ = default;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -55,8 +53,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit TrialSpawnerBlockActor(::BlockPos const& pos);
-
-    MCAPI void setMob(::BlockSource& region, ::ActorDefinitionIdentifier const& identifier, ::Actor* usingActor);
     // NOLINTEND
 
 public:
@@ -74,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

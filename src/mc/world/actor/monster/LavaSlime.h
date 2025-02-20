@@ -23,28 +23,28 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    // vIndex: 160
+    // vIndex: 155
     virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 186
+    // vIndex: 181
     virtual ::OwnerPtr<::EntityContext> createChild(int i) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual bool isOnFire() const /*override*/;
 
-    // vIndex: 185
+    // vIndex: 180
     virtual void decreaseSquish() /*override*/;
 
-    // vIndex: 183
+    // vIndex: 178
     virtual bool doPlayLandSound() /*override*/;
 
     // vIndex: 8

@@ -16,6 +16,7 @@ class HashedString;
 class Player;
 class SemVersion;
 class Vec3;
+namespace SharedTypes::v1_20_50 { struct ProjectileItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -43,9 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+
     MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
 
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+
+    MCAPI ::Vec3 getShootDir(::Player const& player, float angleOffset) const;
 
     MCAPI ::Actor*
     shootProjectile(::BlockSource& region, ::Vec3 const& aimPos, ::Vec3 const& aimDir, float power, ::Player* player)
@@ -57,8 +62,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
@@ -67,6 +72,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+
     MCAPI void* $ctor(::ActorType actorType, float minCriticalPower);
     // NOLINTEND
 

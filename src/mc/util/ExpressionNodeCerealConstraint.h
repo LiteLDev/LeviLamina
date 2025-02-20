@@ -40,14 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ExpressionNodeCerealConstraint& disallowSideEffects(bool countRandomAsSideEffect);
-
-    MCAPI ::ExpressionNodeCerealConstraint& onlyAllowQueries(::std::vector<::std::string> const& allowedQueries);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

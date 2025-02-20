@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ContentTierInfo;
-struct SubpackInfo;
-// clang-format on
-
 class SubpackInfoCollection {
 public:
     // member variables
@@ -20,18 +14,4 @@ public:
     SubpackInfoCollection& operator=(SubpackInfoCollection const&);
     SubpackInfoCollection(SubpackInfoCollection const&);
     SubpackInfoCollection();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void addSubpackInfo(::SubpackInfo&& subpack);
-
-    MCAPI ::ContentTierInfo getSubpackContentTier(int index) const;
-
-    MCAPI ::std::string const& getSubpackFolderName(int index) const;
-
-    MCFOLD ::std::vector<::SubpackInfo> const& getSubpackInfo() const;
-
-    MCAPI bool hasSubpacks() const;
-    // NOLINTEND
 };

@@ -34,27 +34,27 @@ public:
     // vIndex: 0
     virtual ~EditorBlockSource() /*override*/ = default;
 
-    // vIndex: 26
+    // vIndex: 27
     virtual void addListener(::BlockSourceListener&) /*override*/;
 
-    // vIndex: 27
+    // vIndex: 28
     virtual void removeListener(::BlockSourceListener&) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 30
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::Actor const*, ::AABB const&, bool, bool) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 29
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual bool hasChunksAt(::Bounds const&, bool) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual bool hasChunksAt(::BlockPos const&, int, bool) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual bool hasChunksAt(::AABB const&, bool) const /*override*/;
     // NOLINTEND
 

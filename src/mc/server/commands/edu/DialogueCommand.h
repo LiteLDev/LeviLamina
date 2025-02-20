@@ -34,7 +34,6 @@ public:
     // prevent constructor by default
     DialogueCommand& operator=(DialogueCommand const&);
     DialogueCommand(DialogueCommand const&);
-    DialogueCommand();
 
 public:
     // virtual functions
@@ -47,9 +46,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI DialogueCommand();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

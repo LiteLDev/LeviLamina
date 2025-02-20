@@ -15,9 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class StrictEntityContext;
-class Vec3;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct BounceComponent;
@@ -89,8 +87,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo create();
-
-    MCAPI static ::AABB getMaxCollisionVolume(::Vec3 const& speed, ::AABB const& shape);
 
     MCAPI static void tickVerticalCollisionSystem(
         ::StrictEntityContext const&  context,

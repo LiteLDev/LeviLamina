@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -18,12 +18,13 @@ public:
 public:
     // prevent constructor by default
     ScriptBlockEvent& operator=(ScriptBlockEvent const&);
-    ScriptBlockEvent(ScriptBlockEvent const&);
     ScriptBlockEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptBlockEvent(::ScriptModuleMinecraft::ScriptBlockEvent const&);
+
     MCAPI ~ScriptBlockEvent();
     // NOLINTEND
 
@@ -31,6 +32,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockEvent const&);
     // NOLINTEND
 
 public:

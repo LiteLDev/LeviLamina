@@ -15,9 +15,9 @@ class ChunkPos;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
-class Level;
 class LevelChunkVolumeData;
 class Mob;
+class MobSpawnRules;
 class MobSpawnerData;
 class Random;
 class Randomize;
@@ -41,6 +41,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk5ec8f1;
     ::ll::UntypedStorage<8, 8>   mUnk2bf45e;
     ::ll::UntypedStorage<8, 8>   mUnk86ad24;
+    ::ll::UntypedStorage<8, 120> mUnk6f4ad5;
     ::ll::UntypedStorage<4, 56>  mUnk8d4b8a;
     ::ll::UntypedStorage<8, 128> mUnk39b4be;
     ::ll::UntypedStorage<4, 4>   mUnkc641af;
@@ -81,17 +82,6 @@ public:
     // vIndex: 7
     virtual ::br::spawn::EntityTypeCache* getEntityTypeCache() const /*override*/;
 
-    // vIndex: 8
-    virtual ::Mob* spawnMob(
-        ::BlockSource&                     region,
-        ::ActorDefinitionIdentifier const& id,
-        ::Actor*                           spawner,
-        ::Vec3 const&                      pos,
-        bool                               naturalSpawn,
-        bool                               surface,
-        bool                               fromSpawner
-    ) /*override*/;
-
     // vIndex: 9
     virtual ::ItemActor* spawnItem(
         ::BlockSource&     region,
@@ -99,15 +89,6 @@ public:
         ::Actor*           spawner,
         ::Vec3 const&      pos,
         int                throwTime
-    ) /*override*/;
-
-    // vIndex: 10
-    virtual ::Actor* spawnProjectile(
-        ::BlockSource&                     region,
-        ::ActorDefinitionIdentifier const& id,
-        ::Actor*                           spawner,
-        ::Vec3 const&                      position,
-        ::Vec3 const&                      direction
     ) /*override*/;
 
     // vIndex: 11
@@ -143,8 +124,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BedrockSpawner(::Level& level);
-
     MCAPI int
     _handlePopulationCap(::MobSpawnerData const* mobType, ::SpawnConditions const& conditions, int inSpawnCount);
 
@@ -171,6 +150,8 @@ public:
     );
 
     MCAPI void _updateBaseTypeCount(::BlockSource& region, ::ChunkPos const& center);
+
+    MCAPI void _updateGroupPersistence(::MobSpawnRules const& spawnRules, ::std::vector<::Mob*> const& spawnGroup);
     // NOLINTEND
 
 public:
@@ -183,12 +164,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_set<::ChunkPos> const& SPAWN_RING_OFFSETS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:
@@ -214,26 +189,8 @@ public:
 
     MCFOLD ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
 
-    MCAPI ::Mob* $spawnMob(
-        ::BlockSource&                     region,
-        ::ActorDefinitionIdentifier const& id,
-        ::Actor*                           spawner,
-        ::Vec3 const&                      pos,
-        bool                               naturalSpawn,
-        bool                               surface,
-        bool                               fromSpawner
-    );
-
     MCAPI ::ItemActor*
     $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
-
-    MCAPI ::Actor* $spawnProjectile(
-        ::BlockSource&                     region,
-        ::ActorDefinitionIdentifier const& id,
-        ::Actor*                           spawner,
-        ::Vec3 const&                      position,
-        ::Vec3 const&                      direction
-    );
 
     MCAPI void $postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random);
 

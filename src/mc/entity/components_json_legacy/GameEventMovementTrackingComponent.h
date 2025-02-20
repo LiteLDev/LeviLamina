@@ -27,11 +27,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void initializeFromCode(::Actor& actor, bool considerVerticalComponentForAmphibiousMovement);
-
-    MCAPI bool shouldEmitEntityMoveGameEvent();
-
-    MCAPI bool shouldEmitFlapGameEvent();
-
-    MCAPI bool shouldEmitSwimGameEvent();
     // NOLINTEND
 };

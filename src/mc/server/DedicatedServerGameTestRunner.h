@@ -18,8 +18,8 @@ class DedicatedServerGameTestRunner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 160> mUnk67324a;
-    ::ll::UntypedStorage<8, 184> mUnkd3a2d2;
+    ::ll::UntypedStorage<8, 128> mUnk67324a;
+    ::ll::UntypedStorage<8, 152> mUnkd3a2d2;
     ::ll::UntypedStorage<8, 64>  mUnk991b8c;
     ::ll::UntypedStorage<8, 64>  mUnkfee08d;
     ::ll::UntypedStorage<1, 1>   mUnka6cf52;
@@ -50,8 +50,6 @@ public:
 
     MCAPI ::Dimension* _ensureDimension(::DimensionType dimensionType);
 
-    MCAPI void _finalizeReport();
-
     MCAPI void _initializeReport();
 
     MCAPI void _runTestGroup(::std::vector<::std::string> const& tags);
@@ -59,8 +57,6 @@ public:
     MCAPI bool _saveReport();
 
     MCAPI bool _writeFile(::std::string const& fileName, ::std::string const& contents);
-
-    MCAPI bool isDone() const;
 
     MCAPI void tick();
     // NOLINTEND

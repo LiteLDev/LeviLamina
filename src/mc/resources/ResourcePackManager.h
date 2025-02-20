@@ -17,7 +17,6 @@ class PackSourceReport;
 class ResourceGroup;
 class ResourceLocation;
 class ResourceLocationPair;
-class ResourcePackListener;
 class ResourcePackStack;
 namespace Core { class Path; }
 // clang-format on
@@ -26,21 +25,21 @@ class ResourcePackManager : public ::ResourceLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnkb96c8d;
-    ::ll::UntypedStorage<8, 8>   mUnk4f9819;
-    ::ll::UntypedStorage<8, 8>   mUnk809618;
-    ::ll::UntypedStorage<8, 8>   mUnkd638dd;
-    ::ll::UntypedStorage<8, 8>   mUnk7a20a8;
-    ::ll::UntypedStorage<8, 8>   mUnk296ec8;
-    ::ll::UntypedStorage<8, 8>   mUnk9cce53;
-    ::ll::UntypedStorage<8, 8>   mUnk69ba5b;
-    ::ll::UntypedStorage<8, 32>  mUnk67648f;
-    ::ll::UntypedStorage<1, 1>   mUnk84ade0;
-    ::ll::UntypedStorage<1, 1>   mUnkacc084;
-    ::ll::UntypedStorage<1, 1>   mUnk384e00;
-    ::ll::UntypedStorage<8, 8>   mUnk661f94;
-    ::ll::UntypedStorage<8, 24>  mUnk77052a;
-    ::ll::UntypedStorage<8, 112> mUnk3bf93e;
+    ::ll::UntypedStorage<8, 64> mUnkb96c8d;
+    ::ll::UntypedStorage<8, 8>  mUnk4f9819;
+    ::ll::UntypedStorage<8, 8>  mUnk809618;
+    ::ll::UntypedStorage<8, 8>  mUnkd638dd;
+    ::ll::UntypedStorage<8, 8>  mUnk7a20a8;
+    ::ll::UntypedStorage<8, 8>  mUnk296ec8;
+    ::ll::UntypedStorage<8, 8>  mUnk9cce53;
+    ::ll::UntypedStorage<8, 8>  mUnk69ba5b;
+    ::ll::UntypedStorage<8, 32> mUnk67648f;
+    ::ll::UntypedStorage<1, 1>  mUnk84ade0;
+    ::ll::UntypedStorage<1, 1>  mUnkacc084;
+    ::ll::UntypedStorage<1, 1>  mUnk384e00;
+    ::ll::UntypedStorage<8, 8>  mUnk661f94;
+    ::ll::UntypedStorage<8, 24> mUnk77052a;
+    ::ll::UntypedStorage<8, 24> mUnk3bf93e;
     // NOLINTEND
 
 public:
@@ -67,9 +66,9 @@ public:
 
     // vIndex: 1
     virtual bool load(
-        ::ResourceLocationPair const&    resourceLocationPair,
+        ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     // vIndex: 4
@@ -90,8 +89,7 @@ public:
 
     // vIndex: 7
     virtual ::Core::PathBuffer<::std::string>
-    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const
-        /*override*/;
+    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
 
     // vIndex: 10
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const& resourceLocation
@@ -100,13 +98,13 @@ public:
     // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     // vIndex: 11
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const /*override*/;
 
     // vIndex: 12
@@ -132,11 +130,7 @@ public:
         ::std::vector<::Core::Path>& resources
     ) const;
 
-    MCAPI bool _shouldRebuildStack() const;
-
     MCAPI void _updateLanguageSubpacks();
-
-    MCAPI void clearStack(::ResourcePackStackType stackType, bool composeStack);
 
     MCAPI int composeFullStack(
         ::ResourcePackStack&       output,
@@ -145,25 +139,13 @@ public:
         ::ResourcePackStack const& addonStack
     ) const;
 
-    MCFOLD ::PackSourceReport const* getPackSourceReport() const;
-
     MCAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
 
     MCAPI ::ResourceGroup getResourcesOfGroup(::PackInstance const& packInstance, ::std::string const& group) const;
 
     MCAPI ::ResourcePackStack const& getStack(::ResourcePackStackType stackType) const;
 
-    MCAPI void handlePendingStackChanges();
-
-    MCAPI bool isAssetExtractionViableForFullStack() const;
-
-    MCAPI bool isOnlyBaseGamePacks() const;
-
     MCAPI void iteratePacks(::std::function<void(::PackInstance const&)> const& pred) const;
-
-    MCAPI bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
-
-    MCAPI void registerResourcePackListener(::ResourcePackListener& listener);
 
     MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& pred);
 
@@ -171,8 +153,6 @@ public:
 
     MCAPI bool
     setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType, bool composeStack);
-
-    MCAPI void unRegisterResourcePackListener(::ResourcePackListener& listener);
     // NOLINTEND
 
 public:
@@ -203,9 +183,9 @@ public:
     ) const;
 
     MCAPI bool $load(
-        ::ResourceLocationPair const&    resourceLocationPair,
+        ::ResourceLocationPair const&    resourceLocation,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
@@ -220,19 +200,19 @@ public:
     MCAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
     MCAPI ::Core::PathBuffer<::std::string>
-    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
+    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation
     ) const;
 
     MCAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
+        ::gsl::span<::std::string const> extensions
     ) const;
 
     MCAPI bool $hasCapability(::std::string_view requiredCapability) const;

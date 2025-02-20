@@ -34,18 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AuxDataBlockItem(::std::string const& name, int id, ::Block const* parentBlock);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::Block const* parentBlock);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

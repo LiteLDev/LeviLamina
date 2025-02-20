@@ -2,57 +2,42 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct NullType; }
+// clang-format on
+
 namespace cereal {
 
 class DynamicValue {
 public:
     // DynamicValue inner types define
     enum class Type : int {
-        Boolean = 0,
-        Integer = 1,
-        Number  = 2,
-        String  = 3,
-        Object  = 4,
+        Null    = 0,
+        Boolean = 1,
+        Integer = 2,
+        Number  = 3,
+        String  = 4,
         Array   = 5,
+        Object  = 6,
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk35e0d5;
+    ::ll::UntypedStorage<8, 72> mUnk3bb901;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DynamicValue& operator=(DynamicValue const&);
+    DynamicValue(DynamicValue const&);
     DynamicValue();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicValue(::cereal::DynamicValue const&);
-
     MCAPI DynamicValue(::cereal::DynamicValue&&);
-
-    MCAPI ::std::vector<::cereal::DynamicValue> const& asArray() const;
-
-    MCFOLD ::std::vector<::cereal::DynamicValue>& asArray();
-
-    MCAPI bool const& asBool() const;
-
-    MCAPI int64 const& asInteger() const;
-
-    MCAPI double const& asNumber() const;
-
-    MCAPI ::std::unordered_map<::std::string, ::cereal::DynamicValue> const& asObject() const;
-
-    MCFOLD ::std::unordered_map<::std::string, ::cereal::DynamicValue>& asObject();
-
-    MCAPI ::std::string const& asString() const;
-
-    MCAPI ::cereal::DynamicValue const& operator[](uint64 pos) const;
-
-    MCAPI ::cereal::DynamicValue::Type type() const;
 
     MCAPI ~DynamicValue();
     // NOLINTEND
@@ -60,8 +45,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::DynamicValue const&);
-
     MCAPI void* $ctor(::cereal::DynamicValue&&);
     // NOLINTEND
 

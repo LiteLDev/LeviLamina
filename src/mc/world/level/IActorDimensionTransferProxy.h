@@ -25,8 +25,7 @@ public:
 
     // vIndex: 3
     virtual void
-    transferActorToDimension(::Actor const&, ::Dimension&, ::Vec3 const&, ::std::unique_ptr<::CompoundTag>, bool)
-        const = 0;
+    transferActorToDimension(::Actor const&, ::Dimension&, ::Vec3 const&, ::std::unique_ptr<::CompoundTag>) const = 0;
     // NOLINTEND
 
 public:

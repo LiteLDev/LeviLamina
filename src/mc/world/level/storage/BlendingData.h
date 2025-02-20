@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/ScalarOptional.h"
-#include "mc/world/level/storage/BlendingBlockType.h"
-
 class BlendingData {
 public:
     // member variables
@@ -23,18 +19,4 @@ public:
     BlendingData& operator=(BlendingData const&);
     BlendingData(BlendingData const&);
     BlendingData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ScalarOptional<ushort> getBiome(int cellX, int cellZ, int quartY) const;
-
-    MCAPI ::BlendingBlockType getBlockType(int cellX, int cellZ, int cellY) const;
-
-    MCAPI ::ScalarOptional<float> getDensity(int cellX, int cellZ, int cellY) const;
-
-    MCAPI ::ScalarOptional<short> getHeight(int cellX, int cellZ) const;
-
-    MCAPI bool hasBlendDataAt(int cellX, int cellZ) const;
-    // NOLINTEND
 };

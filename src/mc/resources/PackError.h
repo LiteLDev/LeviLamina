@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/resources/PackErrorType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
+
 class PackError {
 public:
     // member variables
@@ -33,15 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackError(::PackErrorType packErrorType, ::std::vector<::std::string> const& errorParam);
-
-    MCFOLD ::std::vector<::std::string> const& getErrorParameters() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PackErrorType packErrorType, ::std::vector<::std::string> const& errorParam);
+    MCAPI void serialize(::Json::Value& out);
     // NOLINTEND
 
 public:

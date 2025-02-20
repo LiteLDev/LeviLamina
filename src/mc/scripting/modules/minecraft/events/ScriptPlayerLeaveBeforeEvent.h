@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-class Player;
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -27,21 +21,9 @@ public:
     ScriptPlayerLeaveBeforeEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlayerLeaveBeforeEvent(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerLeaveBeforeEvent> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

@@ -13,7 +13,6 @@ class ActorOwnerComponent;
 class StrictEntityContext;
 struct NeedsUpgradeToBodySlotFlagComponent;
 struct SkipBodySlotUpgradeFlagComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class UpgradeToBodySlotSystem {
@@ -30,7 +29,5 @@ public:
         ::ActorOwnerComponent& actorOwnerComponent,
         ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

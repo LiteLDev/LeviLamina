@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/Facing.h"
+#include "mc/deps/shared_types/legacy/Facing.h"
 #include "mc/world/level/block/LiquidReaction.h"
 #include "mc/world/level/block/LiquidType.h"
 

@@ -60,6 +60,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MovePlayerPacket();
+
     MCAPI MovePlayerPacket(::Player const& player, ::Vec3 const& pos);
 
     MCAPI MovePlayerPacket(
@@ -73,6 +75,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::Player const& player, ::Vec3 const& pos);
 
     MCAPI void* $ctor(

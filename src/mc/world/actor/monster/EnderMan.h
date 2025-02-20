@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/monster/Monster.h"
 
 // auto generated forward declare list
@@ -42,28 +42,25 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 179
+    // vIndex: 175
     virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 149
+    // vIndex: 144
     virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 108
+    // vIndex: 106
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
-    // vIndex: 65
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 63
-    virtual bool shouldRender() const /*override*/;
-
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
@@ -82,12 +79,6 @@ public:
     MCAPI ::Block const& getCarryingBlock() const;
 
     MCAPI void setCarryingBlock(::Block const& block);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void shutdown();
     // NOLINTEND
 
 public:
@@ -130,8 +121,6 @@ public:
     MCFOLD bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
-
-    MCFOLD bool $shouldRender() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

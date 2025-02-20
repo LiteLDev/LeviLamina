@@ -23,8 +23,6 @@ public:
     MCFOLD ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails&&);
 
     MCFOLD ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails const&);
-
-    MCAPI bool operator==(::ScriptDebuggerMessages::PluginDetails const&) const;
     // NOLINTEND
 };
 

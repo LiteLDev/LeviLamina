@@ -49,16 +49,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SwamplandHut(short seaLevel, int west, int north);
-
     MCAPI void
-    placeCauldron(::BlockSource& region, ::Random& random, int x, int y, int z, ::BoundingBox const& chunkBB);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(short seaLevel, int west, int north);
+    placeCauldron(::BlockSource& region, ::Random& random, int chunkBB, int x, int y, ::BoundingBox const& z);
     // NOLINTEND
 
 public:

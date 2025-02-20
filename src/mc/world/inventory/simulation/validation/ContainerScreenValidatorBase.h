@@ -26,6 +26,7 @@ public:
     // prevent constructor by default
     ContainerScreenValidatorBase& operator=(ContainerScreenValidatorBase const&);
     ContainerScreenValidatorBase(ContainerScreenValidatorBase const&);
+    ContainerScreenValidatorBase();
 
 public:
     // virtual functions
@@ -50,21 +51,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContainerScreenValidatorBase();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

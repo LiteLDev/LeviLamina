@@ -13,16 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::optional<::Scripting::WeakLifetimeScope>> mSpecificScopeForEvent;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptModuleShutdownEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -52,26 +52,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LabTablePacket();
-
-    MCAPI LabTablePacket(::BlockPos const& pos, ::LabTableReactionType reaction);
-
-    MCAPI LabTablePacket(::LabTablePacket::Type type, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockPos const& pos, ::LabTableReactionType reaction);
-
-    MCAPI void* $ctor(::LabTablePacket::Type type, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

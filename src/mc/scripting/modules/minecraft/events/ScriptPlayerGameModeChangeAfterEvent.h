@@ -3,7 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/world/level/GameType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Player;
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -23,9 +30,31 @@ public:
     ScriptPlayerGameModeChangeAfterEvent();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPlayerGameModeChangeAfterEvent(
+        ::Player const&                       player,
+        ::GameType                            fromGameMode,
+        ::GameType                            toGameMode,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Player const&                       player,
+        ::GameType                            fromGameMode,
+        ::GameType                            toGameMode,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 };
 

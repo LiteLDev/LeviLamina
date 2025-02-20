@@ -48,18 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OcelotSitOnBlockGoal(::Mob& mob, float speedMod);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedMod);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

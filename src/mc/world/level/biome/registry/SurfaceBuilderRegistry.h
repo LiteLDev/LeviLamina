@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class ISurfaceBuilder;
 // clang-format on
 
 class SurfaceBuilderRegistry {
@@ -42,10 +41,4 @@ public:
     SurfaceBuilderRegistry& operator=(SurfaceBuilderRegistry const&);
     SurfaceBuilderRegistry(SurfaceBuilderRegistry const&);
     SurfaceBuilderRegistry();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ISurfaceBuilder* getBestBuilder(::Biome& biome) const;
-    // NOLINTEND
 };

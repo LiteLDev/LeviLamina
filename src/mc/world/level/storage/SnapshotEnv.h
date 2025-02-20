@@ -36,6 +36,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI ::leveldb::Status execute(::leveldb::Env* targetEnv);
+
         MCAPI ~DeleteFileEntry();
         // NOLINTEND
 
@@ -94,19 +96,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SnapshotEnv(::leveldb::Env* env);
-
     MCAPI bool _isQueuedForRemoval(::Core::PathBuffer<::std::string> const& file);
+
+    MCAPI ::leveldb::Status _newWrappedWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
     MCAPI ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::Core::Path const& dir);
 
     MCAPI void releaseSnapshot();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::leveldb::Env* env);
     // NOLINTEND
 
 public:

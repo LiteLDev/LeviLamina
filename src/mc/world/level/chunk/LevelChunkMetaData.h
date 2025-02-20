@@ -5,8 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class IDataInput;
-class IDataOutput;
 // clang-format on
 
 class LevelChunkMetaData {
@@ -19,21 +17,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelChunkMetaData& operator=(LevelChunkMetaData const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelChunkMetaData(::LevelChunkMetaData const& otherMetaData);
-
-    MCAPI explicit LevelChunkMetaData(::IDataInput& stream);
-
     MCAPI void _recomputeHash() const;
-
-    MCAPI uint64 getCurrentHash() const;
-
-    MCAPI void serialize(::IDataOutput& stream) const;
 
     MCAPI ~LevelChunkMetaData();
     // NOLINTEND
@@ -45,16 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelChunkMetaData const& otherMetaData);
-
-    MCAPI void* $ctor(::IDataInput& stream);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

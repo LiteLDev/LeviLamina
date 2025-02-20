@@ -55,29 +55,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Goal();
-
-    MCFOLD int getRequiredControlFlags() const;
-
-    MCFOLD ushort getTypeId() const;
-
-    MCFOLD void setRequiredControlFlags(int requiredControlFlags);
-
-    MCAPI void setTypeId(ushort typeId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

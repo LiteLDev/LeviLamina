@@ -52,18 +52,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI VaultBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -84,7 +72,7 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::Block const& $getRenderBlock() const;
+    MCFOLD ::Block const& $getRenderBlock() const;
 
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 

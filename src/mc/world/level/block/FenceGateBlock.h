@@ -19,7 +19,6 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
 class Random;
-class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -51,11 +50,6 @@ public:
     // vIndex: 136
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
-
     // vIndex: 139
     virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
@@ -79,7 +73,7 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 0
@@ -89,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FenceGateBlock(::std::string const& nameId, int id, ::WoodType woodType);
+    MCAPI FenceGateBlock(::std::string const& nameId, int id, ::WoodType);
 
     MCAPI void _setOpen(
         ::BlockSource&                  region,
@@ -114,7 +108,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType woodType);
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType);
     // NOLINTEND
 
 public:
@@ -140,10 +134,6 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 

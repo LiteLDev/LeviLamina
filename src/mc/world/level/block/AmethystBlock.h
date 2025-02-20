@@ -10,7 +10,6 @@
 class Actor;
 class BlockPos;
 class BlockSource;
-class Material;
 // clang-format on
 
 class AmethystBlock : public ::BlockLegacy {
@@ -24,25 +23,13 @@ public:
     virtual bool isSilentWhenJumpingOff() const /*override*/;
 
     // vIndex: 0
-    virtual ~AmethystBlock() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AmethystBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    virtual ~AmethystBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

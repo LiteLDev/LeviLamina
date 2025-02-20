@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class BiomeSource;
 class BlockPos;
 class ChunkPos;
@@ -57,18 +56,6 @@ public:
 
     // vIndex: 0
     virtual ~AncientCityFeature() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AncientCityFeature(uint seed, ::BaseGameVersion const& baseGameVersion);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:

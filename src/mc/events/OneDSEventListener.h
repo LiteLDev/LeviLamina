@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/events/AggregationEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class Response; }
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Social::Events { class Event; }
@@ -67,11 +69,17 @@ public:
 
     MCAPI void AddPartC(::Social::Events::Event const& event, ::Json::Value& eventBody);
 
+    MCAPI ::std::string BuildCommonSchemaMsg(::Social::Events::Event const& event);
+
     MCAPI explicit OneDSEventListener(::Core::Path logFileName);
 
     MCAPI ::std::vector<::std::string> _buildEventPayloads(
         ::std::vector<::Social::Events::Event>                            events,
         ::std::function<void(::std::string const&, ::std::string const&)> onEventSerialized
+    );
+
+    MCAPI void
+    _handleAsyncResponse(::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> asyncResponse
     );
 
     MCAPI bool _sendBatch();

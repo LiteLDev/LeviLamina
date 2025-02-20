@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -43,13 +43,5 @@ public:
     );
 
     MCAPI void setLevel(::Level& level);
-
-    MCAPI ~DanceComponentListener();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

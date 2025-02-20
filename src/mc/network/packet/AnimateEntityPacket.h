@@ -50,32 +50,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimateEntityPacket();
-
     MCAPI AnimateEntityPacket(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,
         ::std::string const&                   nextState,
         float                                  blendOutTime,
         ::std::string const&                   stopExpression,
-        ::MolangVersion                        stopExpressionVersion,
-        ::std::string const&                   controller
+        ::MolangVersion                        controller,
+        ::std::string const&                   stopExpressionVersion
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,
         ::std::string const&                   nextState,
         float                                  blendOutTime,
         ::std::string const&                   stopExpression,
-        ::MolangVersion                        stopExpressionVersion,
-        ::std::string const&                   controller
+        ::MolangVersion                        controller,
+        ::std::string const&                   stopExpressionVersion
     );
     // NOLINTEND
 

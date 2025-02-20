@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+class BinaryStream;
 class ReadOnlyBinaryStream;
 struct NetherNetConnector;
 struct PingedCompatibleServer;
@@ -51,6 +52,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+
+        MCAPI void write(::BinaryStream& stream) const;
 
         MCAPI ~ServerData();
         // NOLINTEND
@@ -122,11 +125,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _cacheDiscoveryResponseData(::NetherNetServerLocator::ServerData const& serverData);
 
-    MCAPI bool _isNetherNetOverLANAllowed() const;
-
     MCAPI void _onDiscoveryResponse(uint64 networkID, ::gsl::span<char const> responseData);
-
-    MCAPI void _pruneStaleServers(::std::chrono::seconds staleAfter);
 
     MCAPI void _setIsAnnouncing(bool isAnnouncing);
 

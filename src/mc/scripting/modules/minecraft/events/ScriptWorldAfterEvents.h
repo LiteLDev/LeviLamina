@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldAfterEvents.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class Level;
-namespace Json { class Value; }
+class ScriptDeferredFlushTracker;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectAfterEventIntermediateData; }
@@ -24,10 +24,10 @@ namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorLoadAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptButtonPushAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptGameRuleChangeAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseAfterEvent; }
@@ -64,7 +64,6 @@ namespace ScriptModuleMinecraft { struct ScriptWeatherChangedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldInitializeAfterEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -114,7 +113,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
-        virtual bool onFlushWorldAfterEvents() /*override*/;
+        virtual void onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
         // vIndex: 0
         virtual ~ScriptWorldAfterEventsDeferredEventListener() /*override*/ = default;
@@ -129,7 +128,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $onFlushWorldAfterEvents();
+        MCAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
 
     public:
@@ -198,7 +197,7 @@ public:
 
     // vIndex: 15
     virtual void onDataDrivenActorEventSend(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     // vIndex: 12
@@ -227,8 +226,8 @@ public:
     ) /*override*/;
 
     // vIndex: 32
-    virtual void onExplodeBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>& blockExplodeEvent
+    virtual void
+    onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>& eventData
     ) /*override*/;
 
     // vIndex: 34
@@ -422,18 +421,13 @@ public:
     getFineGrainedSignalSubscriberStats() const;
 
     MCAPI void
-    registerListeners(bool worldListener, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& globalEventListeners);
+    registerListeners(bool globalEventListeners, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& worldListener);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-
-    MCAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
 
     MCAPI static ::ScriptModuleMinecraft::ScriptAsyncEventMetadata<
         ::ScriptModuleMinecraft::ScriptWorldAfterEvents> const&
@@ -482,7 +476,7 @@ public:
     $onActorSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorSpawnAfterEvent>& eventData);
 
     MCAPI void $onDataDrivenActorEventSend(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>& eventData
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onActorHitEntity(
@@ -505,8 +499,8 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>& blockPlaceEvent
     );
 
-    MCAPI void $onExplodeBlock(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>& blockExplodeEvent
+    MCAPI void
+    $onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>& eventData
     );
 
     MCAPI void $onPlayerBreakBlock(

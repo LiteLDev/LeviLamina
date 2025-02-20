@@ -14,16 +14,4 @@ public:
     SynchedActorDataComponent& operator=(SynchedActorDataComponent const&);
     SynchedActorDataComponent(SynchedActorDataComponent const&);
     SynchedActorDataComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~SynchedActorDataComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

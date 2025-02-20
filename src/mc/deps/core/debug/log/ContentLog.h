@@ -78,18 +78,6 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::gsl::not_null<::ContentLogEndPoint*>> mContentLogEndPoint;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit ContentLogEndPointData(::gsl::not_null<::ContentLogEndPoint*> contentLogEndPoint);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::gsl::not_null<::ContentLogEndPoint*> contentLogEndPoint);
-        // NOLINTEND
     };
 
     class ThreadSpecificData {
@@ -142,7 +130,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ContentLog() /*override*/ = default;
+    virtual ~ContentLog() /*override*/;
     // NOLINTEND
 
 public:
@@ -153,8 +141,6 @@ public:
     MCAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
 
     MCAPI ::std::string getScope();
-
-    MCFOLD bool isEnabled() const;
 
     MCAPI void log(bool, ::LogLevel, ::LogArea, ...);
 
@@ -180,7 +166,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -25,14 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::Command const* getCommand() const;
-
-    MCFOLD void setCommand(::std::unique_ptr<::Command> command);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
