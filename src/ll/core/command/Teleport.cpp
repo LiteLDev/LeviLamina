@@ -3,7 +3,6 @@
 #include "ll/api/command/CommandHandle.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/service/GamingStatus.h"
 #include "ll/core/Config.h"
 
 #include "mc/server/commands/CommandOrigin.h"
@@ -11,6 +10,7 @@
 #include "mc/server/commands/CommandPositionFloat.h"
 #include "mc/server/commands/CommandSelector.h"
 #include "mc/world/actor/Actor.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/DimensionConversionData.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/dimension/Dimension.h"
@@ -62,14 +62,13 @@ void registerTpdimCommand() {
                 return;
             }
             self->teleport(pos, param.dimension);
-            auto&       dimNameMap = VanillaDimensions::DimensionMap();
-            std::string dimName;
-            if (dimNameMap.contains(param.dimension)) {
-                dimName = dimNameMap.at(param.dimension);
-            } else {
-                dimName = fmt::format("dimension.dimensionName{}", param.dimension.id);
-            }
-            output.success("Teleported {0} to {1} {2}"_tr(origin.getName(), dimName, pos.toString()));
+            output.success(
+                "Teleported {0} to {1} {2}"_tr(
+                    origin.getName(),
+                    VanillaDimensions::toString(param.dimension),
+                    pos.toString()
+                )
+            );
         });
     cmd.overload<TpTarget>()
         .required("victim")
@@ -98,11 +97,13 @@ void registerTpdimCommand() {
             for (auto actor : victim) {
                 actor->teleport(pos, param.dimension);
             }
-            output.success("Teleported {0} to {1} {2}"_tr(
-                CommandOutputParameter{victim}.mString,
-                VanillaDimensions::toString(param.dimension),
-                pos.toString()
-            ));
+            output.success(
+                "Teleported {0} to {1} {2}"_tr(
+                    CommandOutputParameter{victim}.mString,
+                    VanillaDimensions::toString(param.dimension),
+                    pos.toString()
+                )
+            );
         });
 }
 } // namespace ll::command
