@@ -15,12 +15,11 @@ public:
     // prevent constructor by default
     ItemStackResponseInfo& operator=(ItemStackResponseInfo const&);
     ItemStackResponseInfo(ItemStackResponseInfo const&);
+    ItemStackResponseInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackResponseInfo();
-
     MCAPI ItemStackResponseInfo(::ItemStackResponseInfo&&);
 
     MCAPI ~ItemStackResponseInfo();
@@ -29,8 +28,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ItemStackResponseInfo&&);
     // NOLINTEND
 

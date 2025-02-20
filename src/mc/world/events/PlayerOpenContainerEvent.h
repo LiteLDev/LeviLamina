@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerType.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,10 +16,10 @@ struct PlayerOpenContainerEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>  mPlayer;
-    ::ll::TypedStorage<1, 1, ::ContainerType>   mContainerType;
-    ::ll::TypedStorage<4, 12, ::BlockPos const> mBlockPos;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>   mEntityUniqueId;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                     mPlayer;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                    mBlockPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueId;
     // NOLINTEND
 
 public:

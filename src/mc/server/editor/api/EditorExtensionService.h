@@ -5,19 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/script/ServerScriptPackType.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Closure.h"
 #include "mc/server/editor/api/EditorExtensionServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::API { struct EditorExtensionOptionalParameters; }
@@ -50,7 +49,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorExtensionService() /*override*/ = default;
+    virtual ~EditorExtensionService() /*override*/;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> init() /*override*/;
@@ -119,21 +118,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorExtensionService(::Editor::ServiceProviderCollection& providers);
-
     MCAPI void _sortExtensionListIntoExecutionOrder();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

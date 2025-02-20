@@ -12,7 +12,6 @@ class Actor;
 class HashedString;
 class RenderParams;
 struct MolangEvalStackState;
-struct MolangScriptArg;
 // clang-format on
 
 struct MolangEvalParams {
@@ -40,11 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* getActorFromArg(::MolangScriptArg const& arg) const;
-
-    MCAPI ::Actor*
-    getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
-
     MCAPI ::Actor* popActor();
 
     MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);

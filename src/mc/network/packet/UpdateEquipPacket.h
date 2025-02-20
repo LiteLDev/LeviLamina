@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,11 +21,11 @@ class UpdateEquipPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID>   mContainerId;
-    ::ll::TypedStorage<1, 1, ::ContainerType> mType;
-    ::ll::TypedStorage<4, 4, int>             mSize;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueID;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>  mData;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mType;
+    ::ll::TypedStorage<4, 4, int>                                  mSize;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                       mData;
     // NOLINTEND
 
 public:
@@ -48,34 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UpdateEquipPacket();
-
-    MCAPI UpdateEquipPacket(
-        ::ContainerID          containerID,
-        ::ContainerType        type,
-        int                    size,
-        ::CompoundTag&&        tag,
-        ::ActorUniqueID const& entityID
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::ContainerID          containerID,
-        ::ContainerType        type,
-        int                    size,
-        ::CompoundTag&&        tag,
-        ::ActorUniqueID const& entityID
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -86,7 +58,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCFOLD ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
     MCAPI void $write(::BinaryStream& bitStream) const;
 

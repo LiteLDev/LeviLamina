@@ -3,16 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPos;
 class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
 struct ActorUniqueID;
@@ -22,10 +21,10 @@ class ContainerOpenPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID>           mContainerId;
-    ::ll::TypedStorage<1, 1, ::ContainerType>         mType;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>         mEntityUniqueID;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mType;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>              mPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
     // NOLINTEND
 
 public:
@@ -45,28 +44,6 @@ public:
 
     // vIndex: 0
     virtual ~ContainerOpenPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContainerOpenPacket();
-
-    MCAPI ContainerOpenPacket(
-        ::ContainerID          containerId,
-        ::ContainerType        type,
-        ::BlockPos const&      pos,
-        ::ActorUniqueID const& id
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void*
-    $ctor(::ContainerID containerId, ::ContainerType type, ::BlockPos const& pos, ::ActorUniqueID const& id);
     // NOLINTEND
 
 public:

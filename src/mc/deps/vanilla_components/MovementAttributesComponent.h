@@ -21,16 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float getHealth() const;
-
-    MCAPI float getHunger() const;
-
-    MCAPI float getJumpStrength() const;
-
-    MCAPI float getLavaMovementSpeed() const;
-
-    MCAPI float getMovementSpeed() const;
-
-    MCFOLD float getUnderwaterMovementSpeed() const;
+    MCAPI bool operator==(::MovementAttributesComponent const& other) const;
     // NOLINTEND
 };

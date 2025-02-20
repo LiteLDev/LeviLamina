@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/nether_net/DiscoveryPacketType.h"
-
 namespace NetherNet {
 
 struct DiscoveryPacketHeader {
@@ -20,14 +17,6 @@ public:
     DiscoveryPacketHeader& operator=(DiscoveryPacketHeader const&);
     DiscoveryPacketHeader(DiscoveryPacketHeader const&);
     DiscoveryPacketHeader();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ushort PacketLength() const;
-
-    MCFOLD ::NetherNet::DiscoveryPacketType PacketType() const;
-    // NOLINTEND
 };
 
 } // namespace NetherNet

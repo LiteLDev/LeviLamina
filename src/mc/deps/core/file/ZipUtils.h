@@ -11,7 +11,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
-namespace Core { class Result; }
 namespace Core::ZipUtils { class UnzipSettings; }
 namespace Core::ZipUtils { class ZipProgress; }
 namespace Core::ZipUtils { class ZipSettings; }
@@ -22,8 +21,6 @@ namespace Core::ZipUtils {
 // NOLINTBEGIN
 MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::Path const& path);
 
-MCAPI bool exists(::Core::Path const& zipPath, ::Core::Path const& filePath);
-
 MCAPI bool getFilenames(
     ::Core::Path const&                               zipPath,
     ::std::vector<::Core::PathBuffer<::std::string>>& result,
@@ -33,9 +30,6 @@ MCAPI bool getFilenames(
 MCAPI ::Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int inputResult);
 
 MCAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int inputResult);
-
-MCAPI ::Core::Result
-isFolderDepthValid(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& filePath, uint64 maxFileDepth);
 
 MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::Path const&                    zipInputPath,

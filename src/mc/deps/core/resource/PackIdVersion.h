@@ -15,27 +15,27 @@ struct PackIdVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>   mId;
-    ::ll::TypedStorage<8, 112, ::SemVersion> mVersion;
-    ::ll::TypedStorage<1, 1, ::PackType>     mPackType;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>  mId;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mVersion;
+    ::ll::TypedStorage<1, 1, ::PackType>    mPackType;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PackIdVersion& operator=(PackIdVersion const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackIdVersion();
+    MCAPI PackIdVersion(::PackIdVersion const&);
 
     MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
 
     MCAPI ::std::string asString() const;
 
-    MCAPI bool operator!=(::PackIdVersion const& rhs) const;
-
     MCAPI bool operator<(::PackIdVersion const& rhs) const;
 
-    MCAPI bool operator==(::PackIdVersion const& rhs) const;
-
-    MCAPI bool satisfies(::PackIdVersion const& rhs) const;
+    MCAPI ::PackIdVersion& operator=(::PackIdVersion&&);
 
     MCAPI ~PackIdVersion();
     // NOLINTEND
@@ -47,9 +47,15 @@ public:
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::PackIdVersion& EMPTY();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::PackIdVersion const&);
 
     MCAPI void* $ctor(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
     // NOLINTEND

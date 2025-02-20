@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class EntityContext;
-// clang-format on
-
 class TripodCameraActivatedComponent {
 public:
     // TripodCameraActivatedComponent inner types declare
@@ -27,12 +22,6 @@ public:
         Definition& operator=(Definition const&);
         Definition(Definition const&);
         Definition();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext&, ::TripodCameraActivatedComponent& component) const;
-        // NOLINTEND
     };
 
 public:

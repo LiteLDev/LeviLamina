@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SimulatedPlayer;
 namespace sim { struct MoveInDirectionIntent; }
 namespace sim { struct MoveToPositionIntent; }
 namespace sim { struct NavigateToEntityIntent; }
@@ -38,6 +39,8 @@ public:
                                   ::sim::MoveToPositionIntent,
                                   ::sim::NavigateToPositionsIntent,
                                   ::sim::NavigateToEntityIntent> type);
+
+    MCAPI void finalize(::SimulatedPlayer& player);
 
     MCAPI ~MovementIntent();
     // NOLINTEND

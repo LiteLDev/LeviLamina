@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/device/ScriptSystemInfo.h"
 
 // auto generated forward declare list
@@ -39,6 +39,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit ScriptClientSystemInfo(::Player const& player);
+
+    MCAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo& operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
     // NOLINTEND
 
 public:

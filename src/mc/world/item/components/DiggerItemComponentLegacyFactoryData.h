@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    DiggerItemComponentLegacyFactoryData(DiggerItemComponentLegacyFactoryData const&);
     DiggerItemComponentLegacyFactoryData();
 
 public:
@@ -35,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DiggerItemComponentLegacyFactoryData(::DiggerItemComponentLegacyFactoryData const&);
-
     MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData const&);
 
     MCAPI ::DiggerItemComponentLegacyFactoryData& operator=(::DiggerItemComponentLegacyFactoryData&&);
@@ -47,15 +46,9 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DiggerItemComponentLegacyFactoryData const&);
     // NOLINTEND
 
 public:

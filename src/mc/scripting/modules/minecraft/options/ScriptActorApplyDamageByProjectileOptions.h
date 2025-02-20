@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -18,12 +18,14 @@ public:
 public:
     // prevent constructor by default
     ScriptActorApplyDamageByProjectileOptions& operator=(ScriptActorApplyDamageByProjectileOptions const&);
-    ScriptActorApplyDamageByProjectileOptions(ScriptActorApplyDamageByProjectileOptions const&);
     ScriptActorApplyDamageByProjectileOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorApplyDamageByProjectileOptions(::ScriptModuleMinecraft::
+                                                        ScriptActorApplyDamageByProjectileOptions const&);
+
     MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const& other) const;
 
     MCAPI ~ScriptActorApplyDamageByProjectileOptions();
@@ -38,9 +40,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

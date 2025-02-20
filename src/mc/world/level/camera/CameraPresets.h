@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class Experiments;
 class ReadOnlyBinaryStream;
 class ResourcePackManager;
@@ -54,6 +53,7 @@ public:
 
 public:
     // prevent constructor by default
+    CameraPresets& operator=(CameraPresets const&);
     CameraPresets(CameraPresets const&);
 
 public:
@@ -81,17 +81,9 @@ public:
 
     MCAPI ::std::optional<uint> getCameraPresetIndex(::std::string const& presetName) const;
 
-    MCFOLD ::std::vector<::CameraPreset> const& getPresets() const;
-
-    MCFOLD bool isEmpty() const;
-
     MCAPI void loadPresets(::ResourcePackManager& resourcePackManager, ::Experiments const&);
 
-    MCAPI ::CameraPresets& operator=(::CameraPresets const&);
-
     MCAPI ::CameraPresets& operator=(::CameraPresets&&);
-
-    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~CameraPresets();
     // NOLINTEND

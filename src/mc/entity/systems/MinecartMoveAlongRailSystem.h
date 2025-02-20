@@ -92,9 +92,5 @@ public:
     MCAPI static ::TickingSystemWithInfo createCleanupSystem();
 
     MCAPI static ::TickingSystemWithInfo createPostRailMovementPositionSystem();
-
-    MCAPI static ::TickingSystemWithInfo createPreRailMovementPositionSystem();
-
-    MCAPI static ::TickingSystemWithInfo createRailMovementSystem();
     // NOLINTEND
 };

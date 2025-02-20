@@ -73,18 +73,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                       mIsExclusive;
     ::ll::TypedStorage<1, 1, ::FocusImpact>              mFocusImpact;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    ActionEvent(int actionId, ::ActionEvent::ActionState actionState, bool isExclusive, ::FocusImpact focusImpact);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void*
-    $ctor(int actionId, ::ActionEvent::ActionState actionState, bool isExclusive, ::FocusImpact focusImpact);
-    // NOLINTEND
 };

@@ -19,8 +19,6 @@ MCAPI int const& LAST_HURT_BY_MOB_TIMEOUT();
 MCAPI int const& LAST_HURT_BY_PLAYER_TIMEOUT();
 
 MCAPI ::Vec3 const& LAVA_AABB_SHRINK_AMOUNT();
-
-MCAPI ::Vec3 const& WATER_AABB_SHRINK_AMOUNT();
 // NOLINTEND
 
 } // namespace ActorConstants

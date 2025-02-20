@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/crypto/asymmetric/System.h"
-#include "mc/deps/crypto/hash/HashType.h"
 
 class KeyManager {
 public:
@@ -34,11 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI KeyManager(::std::string const& publicKey, ::Crypto::Asymmetric::System system);
-
-    MCAPI ::std::string getPublicKey() const;
-
-    MCAPI bool
-    verify(::std::string const& data, ::std::string const& signature, ::Crypto::Hash::HashType hashType) const;
     // NOLINTEND
 
 public:

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct TargetPoint;
 namespace ClimateUtils { struct Parameter; }
 // clang-format on
 
@@ -34,8 +33,6 @@ public:
         ::ClimateUtils::Parameter weirdness,
         float                     offset
     );
-
-    MCAPI int64 fitness(::TargetPoint const& other) const;
     // NOLINTEND
 
 public:

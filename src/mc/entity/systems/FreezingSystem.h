@@ -26,8 +26,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& FREEZE_EFFECT_UUID();
-
-    MCAPI static int const& VULNERABLE_MOB_FREEZE_DAMAGE();
     // NOLINTEND
 
 public:

@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deviceinfo/DeviceMemoryTier.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -29,21 +28,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptSystemInfo(::DeviceMemoryTier memoryTier);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptSystemInfo> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DeviceMemoryTier memoryTier);
     // NOLINTEND
 
 public:

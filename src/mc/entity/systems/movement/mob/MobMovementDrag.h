@@ -25,8 +25,6 @@ MCAPI void forLiquidDragSystems(::std::function<void(::TickingSystemWithInfo&&)>
 
 MCAPI void forNormalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void forWingFlapVerticalDragSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
-
 MCAPI void tickApplyWaterDrag(
     ::entt::type_list<::Include<::WaterTravelFlagComponent>>,
     ::Optional<::OnGroundFlagComponent const>  onGroundFlag,

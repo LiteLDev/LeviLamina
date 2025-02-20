@@ -44,18 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DragonDeathGoal(::EnderDragon& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::EnderDragon& mob);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

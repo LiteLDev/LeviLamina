@@ -9,6 +9,7 @@
 // clang-format off
 class BaseGameVersion;
 class IResourcePackRepository;
+class ResourcePack;
 class ResourcePackStack;
 namespace mce { class UUID; }
 // clang-format on
@@ -25,8 +26,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 120> mUnk745cd0;
-        ::ll::UntypedStorage<8, 8>   mUnk5b766c;
+        ::ll::UntypedStorage<8, 32> mUnk745cd0;
+        ::ll::UntypedStorage<8, 8>  mUnk5b766c;
         // NOLINTEND
 
     public:
@@ -58,12 +59,11 @@ public:
     // prevent constructor by default
     BaseGamePackSlices& operator=(BaseGamePackSlices const&);
     BaseGamePackSlices(BaseGamePackSlices const&);
+    BaseGamePackSlices();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseGamePackSlices();
-
     MCAPI void addFromVersions(
         ::std::vector<::BaseGameVersion> const&                               baseGameVersions,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
@@ -80,14 +80,18 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI static void _add(
+        ::std::vector<::BaseGamePackSlices::BaseGameVersionPack>& baseGameVersionPacks,
+        ::BaseGameVersion const&                                  baseGameVersion,
+        ::ResourcePack&                                           pack
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

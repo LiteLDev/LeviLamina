@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockSource;
 class Vec3;
 // clang-format on
@@ -22,20 +21,11 @@ public:
     // prevent constructor by default
     ClockSpriteCalculator& operator=(ClockSpriteCalculator const&);
     ClockSpriteCalculator(ClockSpriteCalculator const&);
+    ClockSpriteCalculator();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClockSpriteCalculator();
-
-    MCAPI int update(::Actor& entity, bool instant);
-
-    MCAPI int update(::BlockSource const& region, ::Vec3 const& pos, bool instant);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI int update(::BlockSource const& region, ::Vec3 const& instant, bool pos);
     // NOLINTEND
 };

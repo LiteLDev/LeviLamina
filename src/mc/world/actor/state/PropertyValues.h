@@ -15,24 +15,17 @@ public:
 public:
     // prevent constructor by default
     PropertyValues& operator=(PropertyValues const&);
+    PropertyValues(PropertyValues const&);
     PropertyValues();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyValues(::PropertyValues const&);
-
     MCAPI ::PropertyValues& operator=(::PropertyValues&&);
 
     MCAPI void resize(uint64 numInts, uint64 numFloats, uint64 numBools, uint64 numEnums);
 
     MCAPI ~PropertyValues();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PropertyValues const&);
     // NOLINTEND
 
 public:

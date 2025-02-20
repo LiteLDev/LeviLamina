@@ -3,16 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptPlayerInteractWithEntityEvent.h"
-
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class Player;
-struct PlayerInteractWithEntityBeforeEvent;
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -31,32 +23,10 @@ public:
     ScriptPlayerInteractWithEntityBeforeEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithEntityBeforeEvent(
-        ::Player&                                    player,
-        ::Actor&                                     target,
-        ::PlayerInteractWithEntityBeforeEvent const& eventData,
-        ::Scripting::WeakLifetimeScope&              scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>
     bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Player&                                    player,
-        ::Actor&                                     target,
-        ::PlayerInteractWithEntityBeforeEvent const& eventData,
-        ::Scripting::WeakLifetimeScope&              scope
-    );
     // NOLINTEND
 };
 

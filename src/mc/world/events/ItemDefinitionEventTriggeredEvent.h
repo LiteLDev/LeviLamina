@@ -18,9 +18,25 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemDefinitionEventTriggeredEvent& operator=(ItemDefinitionEventTriggeredEvent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent&&);
+
+    MCAPI ItemDefinitionEventTriggeredEvent(::ItemDefinitionEventTriggeredEvent const&);
+
     MCAPI ~ItemDefinitionEventTriggeredEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemDefinitionEventTriggeredEvent&&);
+
+    MCAPI void* $ctor(::ItemDefinitionEventTriggeredEvent const&);
     // NOLINTEND
 
 public:

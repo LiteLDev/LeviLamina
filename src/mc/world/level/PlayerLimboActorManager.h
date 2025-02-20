@@ -63,8 +63,6 @@ public:
 
     MCAPI void saveOwnedLimboActorsForPlayer(::ActorUniqueID playerId) const;
 
-    MCAPI void transferActorToOwnedEntityLimbo(::ActorUniqueID playerUniqueID, ::Actor& actor);
-
     MCAPI ~PlayerLimboActorManager();
     // NOLINTEND
 

@@ -43,18 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DyePowderItem(::std::string const& name, int id, ::ItemColor color);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ItemColor color);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -68,8 +56,6 @@ public:
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
     MCFOLD bool $isDye() const;
-
-    MCFOLD ::ItemColor $getItemColor() const;
 
     MCFOLD bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND

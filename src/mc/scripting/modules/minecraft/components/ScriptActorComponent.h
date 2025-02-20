@@ -3,18 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class Mob;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -30,7 +27,6 @@ public:
 public:
     // prevent constructor by default
     ScriptActorComponent& operator=(ScriptActorComponent const&);
-    ScriptActorComponent(ScriptActorComponent const&);
     ScriptActorComponent();
 
 public:
@@ -43,21 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptActorComponent(::ScriptModuleMinecraft::ScriptActorComponent const&);
+
     MCAPI ScriptActorComponent(
         ::WeakEntityRef const&                entity,
         ::Scripting::WeakLifetimeScope const& context,
         ::std::string const&                  id
     );
-
-    MCAPI ::Scripting::Error _functionError(::std::string_view functionName) const;
-
-    MCAPI ::Scripting::Error _getPropertyError(::std::string_view propertyName) const;
-
-    MCAPI ::Scripting::Error _setPropertyError(::std::string_view propertyName) const;
-
-    MCAPI ::Actor* _tryGetOwner() const;
-
-    MCAPI ::Mob* _tryGetOwnerAsMob() const;
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> getEntity() const;
     // NOLINTEND
@@ -73,6 +61,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorComponent const&);
+
     MCAPI void*
     $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& context, ::std::string const& id);
     // NOLINTEND

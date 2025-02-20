@@ -8,10 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class ContainerScreenContext;
 class ItemStackRequestAction;
 class ItemStackRequestActionBeaconPayment;
-class ItemStackRequestActionHandler;
 // clang-format on
 
 class ScreenHandlerBeacon : public ::ScreenHandlerBase {
@@ -50,16 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScreenHandlerBeacon(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
-
     MCAPI ::ItemStackNetResult _handleBeaconPaymentAction(::ItemStackRequestActionBeaconPayment const& requestAction);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerScreenContext const& screenContext, ::ItemStackRequestActionHandler& requestHandler);
     // NOLINTEND
 
 public:

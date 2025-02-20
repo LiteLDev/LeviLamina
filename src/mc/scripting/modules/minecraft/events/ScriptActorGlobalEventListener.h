@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 
@@ -11,7 +10,7 @@
 // clang-format off
 class ActorEventListener;
 struct ActorAddEffectEvent;
-namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
+struct ActorDefinitionEndedEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -58,15 +57,11 @@ public:
     // vIndex: 18
     virtual ::EventResult onEvent(::ActorAddEffectEvent const& actorAddEffectEvent) /*override*/;
 
+    // vIndex: 36
+    virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent) /*override*/;
+
     // vIndex: 0
     virtual ~ScriptActorGlobalEventListener() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void
-    unregisterListener(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents> handle);
     // NOLINTEND
 
 public:
@@ -79,6 +74,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::EventResult $onEvent(::ActorAddEffectEvent const& actorAddEffectEvent);
+
+    MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefinitionEndedEvent);
     // NOLINTEND
 
 public:

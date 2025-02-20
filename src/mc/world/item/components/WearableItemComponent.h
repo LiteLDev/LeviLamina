@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/EquipmentSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -44,12 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WearableItemComponent(::SharedTypes::Legacy::EquipmentSlot slot, int protection);
-
-    MCFOLD ::SharedTypes::Legacy::EquipmentSlot getSlot() const;
-
-    MCAPI bool shouldForceAllowOffHand() const;
-
     MCAPI void use(bool& result, ::ItemStack& instance, ::Player& player) const;
     // NOLINTEND
 
@@ -58,17 +51,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::EquipmentSlot slot, int protection);
     // NOLINTEND
 
 public:

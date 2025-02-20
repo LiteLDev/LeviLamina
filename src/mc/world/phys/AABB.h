@@ -69,17 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AABB(::Vec3 const& min, float side);
-
-    MCAPI AABB(float minX, float minY, float minZ, float maxX, float maxY, float maxZ);
-
-    MCAPI ::Vec3 axisInside(::AABB const& other, ::Vec3 axis) const;
-
     MCAPI ::AABBHitResult clip(::Vec3 const& a, ::Vec3 const& b) const;
-
-    MCAPI ::Vec3 clipCollide(::AABB const& c, ::Vec3 const& velocity, bool oneWay, float* penetration) const;
-
-    MCAPI ::AABB cloneAndAddAABB(::AABB const& rhs) const;
 
     MCAPI ::AABB cloneAndExpandAlongDirection(::Vec3 const& direction) const;
 
@@ -93,21 +83,9 @@ public:
 
     MCAPI ::AABB cloneAndTransformByMatrix(::Matrix const& transform) const;
 
-    MCAPI float distanceTo(::AABB const& aabb) const;
-
     MCAPI float distanceTo(::Vec3 const& pos) const;
 
     MCAPI float distanceToSqr(::AABB const& aabb) const;
-
-    MCAPI ::Vec3 getBottomCenter() const;
-
-    MCAPI ::Vec3 getBounds() const;
-
-    MCAPI ::Vec3 getCenter() const;
-
-    MCAPI float getSize() const;
-
-    MCAPI float getVolume() const;
 
     MCAPI bool intersectSegment(
         ::Vec3 const& segmentBegin,
@@ -116,25 +94,9 @@ public:
         ::Vec3&       intersectNorm
     ) const;
 
-    MCAPI bool intersects(::AABB const& c) const;
-
     MCAPI bool intersects(::Vec3 const& segmentBegin, ::Vec3 const& segmentEnd) const;
 
     MCAPI bool intersectsInner(::AABB const& c) const;
-
-    MCAPI bool isNan() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI ::AABB& set(::AABB const& b);
-
-    MCFOLD ::AABB& set(::Vec3 const& min, ::Vec3 const& max);
-
-    MCAPI ::AABB& set(float minX, float minY, float minZ, float maxX, float maxY, float maxZ);
-
-    MCAPI ::AABB& shrink(::Vec3 const& offset);
-
-    MCAPI ::AABB& translateCenterTo(::Vec3 const& center);
     // NOLINTEND
 
 public:
@@ -142,6 +104,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ClipCollideResult
     clipCollide(::AABB const& stationary, ::AABB const& moving, ::Vec3 const& velocity);
+
+    MCAPI static ::AABB fromPoints(::Vec3 const& A, ::Vec3 const& B);
     // NOLINTEND
 
 public:
@@ -150,15 +114,5 @@ public:
     MCAPI static ::AABB const& BLOCK_SHAPE();
 
     MCAPI static ::AABB const& BOX_AT_ORIGIN_WITH_NO_VOLUME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::Vec3 const& min, ::Vec3 const& max);
-
-    MCAPI void* $ctor(::Vec3 const& min, float side);
-
-    MCAPI void* $ctor(float minX, float minY, float minZ, float maxX, float maxY, float maxZ);
     // NOLINTEND
 };

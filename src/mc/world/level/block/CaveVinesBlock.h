@@ -6,7 +6,6 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/CaveVinesVariant.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,6 +22,7 @@ class ItemInstance;
 class Player;
 class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CaveVinesBlock : public ::BlockLegacy {
@@ -41,11 +41,8 @@ public:
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -106,17 +103,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CaveVinesBlock(::std::string const& nameId, int id, ::CaveVinesVariant variant);
-
-    MCAPI int _getAgeForPlacement(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool _isCaveVinesHead(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI bool _pickBerries(::BlockSource& region, ::BlockPos const& pos, ::Actor& sourceEntity) const;
 
     MCAPI void _updateBlockBasedOnNeighborBelow(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI void
+    _updateVineBlockAndBroadcastEvents(::BlockSource& region, ::BlockPos const& pos, ::Block const& vineBlock) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -124,12 +120,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     tryGrow(::BlockSource& region, ::BlockPos const& pos, float randomNumberForGrowing, float randomNumberForBerries);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::CaveVinesVariant variant);
     // NOLINTEND
 
 public:
@@ -145,9 +135,7 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -167,7 +155,7 @@ public:
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 

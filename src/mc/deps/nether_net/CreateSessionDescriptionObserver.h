@@ -42,15 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::webrtc::CreateSessionDescriptionObserver* Create(
-        ::std::function<void(::webrtc::SessionDescriptionInterface*)>&& onSuccess,
-        ::std::function<void(::webrtc::RTCError const&)>&&              onError
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

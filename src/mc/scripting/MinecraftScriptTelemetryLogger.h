@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
 class ScriptPluginManagerResult;
 // clang-format on
 
@@ -42,18 +41,6 @@ public:
 
     // vIndex: 0
     virtual ~MinecraftScriptTelemetryLogger() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MinecraftScriptTelemetryLogger(::IMinecraftEventing& eventing, bool isClientside);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftEventing& eventing, bool isClientside);
     // NOLINTEND
 
 public:

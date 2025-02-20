@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
-
-// auto generated forward declare list
-// clang-format off
-class EntityContext;
-struct PhysicsComponent;
-namespace JsonUtil { class EmptyClass; }
-// clang-format on
-
 class PhysicsDefinition {
 public:
     // member variables
@@ -25,25 +15,5 @@ public:
     // prevent constructor by default
     PhysicsDefinition& operator=(PhysicsDefinition const&);
     PhysicsDefinition(PhysicsDefinition const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PhysicsDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::PhysicsComponent& component) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PhysicsDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
+    PhysicsDefinition();
 };

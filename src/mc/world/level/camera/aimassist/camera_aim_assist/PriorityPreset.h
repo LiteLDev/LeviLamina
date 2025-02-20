@@ -14,8 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk6002d4;
-    ::ll::UntypedStorage<8, 48> mUnk5f4ca9;
-    ::ll::UntypedStorage<8, 64> mUnk1d6179;
+    ::ll::UntypedStorage<8, 64> mUnk30db63;
     ::ll::UntypedStorage<8, 64> mUnk8e40ff;
     ::ll::UntypedStorage<8, 64> mUnk115493;
     ::ll::UntypedStorage<8, 48> mUnkaf34d6;
@@ -33,8 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI PriorityPreset(
         ::HashedString const&                                       id,
-        ::HashedString const&                                       priorityCategoryListId,
-        ::std::unordered_set<::HashedString> const&                 blockExclusionList,
+        ::std::unordered_set<::HashedString> const&                 exclusionList,
         ::std::unordered_set<::HashedString> const&                 liquidTargetingItemsList,
         ::std::unordered_map<::HashedString, ::HashedString> const& itemCategoryIdTable,
         ::HashedString const&                                       handCategory,
@@ -55,8 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::HashedString const&                                       id,
-        ::HashedString const&                                       priorityCategoryListId,
-        ::std::unordered_set<::HashedString> const&                 blockExclusionList,
+        ::std::unordered_set<::HashedString> const&                 exclusionList,
         ::std::unordered_set<::HashedString> const&                 liquidTargetingItemsList,
         ::std::unordered_map<::HashedString, ::HashedString> const& itemCategoryIdTable,
         ::HashedString const&                                       handCategory,

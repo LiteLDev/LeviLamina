@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class CommandOrigin;
 class CommandOutput;
 class ReadOnlyBinaryStream;
 struct CommandOriginData;
@@ -41,22 +40,6 @@ public:
 
     // vIndex: 0
     virtual ~CommandOutputPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CommandOutputPacket();
-
-    MCAPI CommandOutputPacket(::CommandOrigin const& origin, ::CommandOutput const& output);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CommandOrigin const& origin, ::CommandOutput const& output);
     // NOLINTEND
 
 public:

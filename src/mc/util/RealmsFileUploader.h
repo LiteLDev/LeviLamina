@@ -113,14 +113,11 @@ public:
     virtual ~RealmsFileUploader() /*override*/ = default;
 
     // vIndex: 1
-    virtual void update() /*override*/;
-
-    // vIndex: 2
     virtual void
     initFileUploader(::std::string const&, ::FileInfo const&, int, ::Json::Value const&, ::std::function<void(bool)>) /*override*/
         ;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual void uploadStream(
         ::FileInfo const&                                               file,
         uint64                                                          streamSize,
@@ -128,16 +125,16 @@ public:
         ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     ) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool canCancelUpload(::FileInfo const&) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual void cancelUpload(::FileInfo const&) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::UploadError getInitErrorCode() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual float getUploadProgress(::FileInfo const&) const /*override*/;
     // NOLINTEND
 

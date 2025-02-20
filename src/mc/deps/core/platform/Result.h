@@ -25,29 +25,13 @@ public:
     // NOLINTBEGIN
     MCAPI Result(::Core::Result&&);
 
-    MCAPI explicit Result(::Bedrock::ErrorInfo<::std::error_code>&& error);
+    MCAPI explicit Result(::Bedrock::ErrorInfo<::Bedrock::OSError>&& error);
 
     MCAPI explicit Result(bool success);
 
-    MCFOLD void architecturalProblem() const;
-
-    MCFOLD bool catastrophic() const;
-
-    MCFOLD bool failed() const;
-
     MCAPI ::std::string message() const;
 
-    MCFOLD explicit operator bool() const;
-
     MCAPI ::Core::Result& operator=(::Core::Result&&);
-
-    MCFOLD bool peekFailed() const;
-
-    MCFOLD bool peekSucceeded() const;
-
-    MCFOLD bool succeeded() const;
-
-    MCFOLD bool throwFailed() const;
 
     MCAPI ~Result();
     // NOLINTEND
@@ -58,8 +42,6 @@ public:
     MCAPI static ::Core::Result either(::Core::Result&& r1, ::Core::Result&& r2);
 
     MCAPI static ::std::string format(char const*, ...);
-
-    MCAPI static ::Core::Result makeFailure();
 
     MCAPI static ::Core::Result makeFailureNotImplemented();
 
@@ -75,9 +57,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Result&&);
+    MCFOLD void* $ctor(::Core::Result&&);
 
-    MCAPI void* $ctor(::Bedrock::ErrorInfo<::std::error_code>&& error);
+    MCAPI void* $ctor(::Bedrock::ErrorInfo<::Bedrock::OSError>&& error);
 
     MCAPI void* $ctor(bool success);
     // NOLINTEND

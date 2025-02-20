@@ -15,10 +15,4 @@ public:
     BiomeHeight& operator=(BiomeHeight const&);
     BiomeHeight(BiomeHeight const&);
     BiomeHeight();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& MIN_DEPTH();
-    // NOLINTEND
 };

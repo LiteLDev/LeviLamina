@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class MobEffect;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -25,9 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::MobEffect const& getEffect() const;
+    MCAPI ::std::string getName_V1() const;
 
-    MCAPI ::std::string getName() const;
+    MCAPI ::std::string getName_V2() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptEffectType> bind();
     // NOLINTEND
 };
 

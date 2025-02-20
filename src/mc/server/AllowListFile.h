@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class AllowList;
+namespace Core { class Path; }
 // clang-format on
 
 class AllowListFile {
@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::AllowList& getAllowList() const;
+    MCAPI explicit AllowListFile(::Core::Path const& filePath);
 
     MCAPI ::FileReadResult reload();
 
@@ -40,6 +40,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::AllowListFile loadFromDefaultLocations();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Core::Path const& filePath);
     // NOLINTEND
 
 public:

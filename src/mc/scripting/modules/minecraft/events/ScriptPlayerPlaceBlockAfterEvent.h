@@ -3,8 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class Player;
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -22,9 +29,25 @@ public:
     ScriptPlayerPlaceBlockAfterEvent();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptPlayerPlaceBlockAfterEvent(
+        ::Player&                             player,
+        ::BlockPos const&                     pos,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& player, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

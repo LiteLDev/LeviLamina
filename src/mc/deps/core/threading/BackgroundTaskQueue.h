@@ -39,11 +39,7 @@ public:
 
     MCAPI void flush();
 
-    MCFOLD uint64 getApproximateTaskCount() const;
-
     MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
-
-    MCAPI void resortPriorityQueue();
 
     MCAPI ::std::shared_ptr<::BackgroundTaskBase> tryPop(int minPriority);
 

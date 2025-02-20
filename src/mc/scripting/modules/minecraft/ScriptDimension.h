@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 
 // auto generated forward declare list
@@ -95,6 +95,7 @@ public:
 public:
     // prevent constructor by default
     ScriptDimension& operator=(ScriptDimension const&);
+    ScriptDimension(ScriptDimension const&);
     ScriptDimension();
 
 public:
@@ -107,8 +108,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDimension(::ScriptModuleMinecraft::ScriptDimension const&);
-
     MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     _spawnEntity(
         ::std::string const&                      identifier,
@@ -231,8 +230,6 @@ public:
         bool                                                                                        allowUnloadedChunks
     ) const;
 
-    MCAPI ::Dimension& getDimension() const;
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getEntities(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
@@ -280,8 +277,6 @@ public:
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getTopmostBlock(::Scripting::WeakLifetimeScope scope, ::VecXZ const& locationXZ, ::std::optional<float> minHeight)
         const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptDimension& operator=(::ScriptModuleMinecraft::ScriptDimension&&);
 
     MCAPI ::Scripting::Result<void> playSound(
         ::std::string const&                                              soundID,
@@ -391,16 +386,7 @@ public:
     bindScriptWeatherType();
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
-    getOrCreateHandle(::Dimension& dimension, ::Scripting::WeakLifetimeScope const& scope);
-
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
     getOrCreateHandle(::DimensionType id, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptDimension const&);
     // NOLINTEND
 
 public:

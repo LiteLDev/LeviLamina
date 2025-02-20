@@ -50,19 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BookEditPacket();
-
     MCAPI ::Bedrock::Result<void> _readPage(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void _writePage(::BinaryStream& stream) const;
-
     MCAPI ::PageContent getPage() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

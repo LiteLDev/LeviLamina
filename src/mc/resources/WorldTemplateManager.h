@@ -24,23 +24,23 @@ class WorldTemplateManager : public ::IWorldTemplateManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk660c52;
-    ::ll::UntypedStorage<8, 24>   mUnk1dd9db;
-    ::ll::UntypedStorage<8, 8>    mUnk2c9270;
-    ::ll::UntypedStorage<8, 24>   mUnk599bd5;
-    ::ll::UntypedStorage<8, 8>    mUnk2685b9;
-    ::ll::UntypedStorage<8, 24>   mUnk34968b;
-    ::ll::UntypedStorage<8, 24>   mUnkcb8451;
-    ::ll::UntypedStorage<8, 80>   mUnk4899ec;
-    ::ll::UntypedStorage<1, 1>    mUnkc27adc;
-    ::ll::UntypedStorage<1, 1>    mUnke65739;
-    ::ll::UntypedStorage<8, 616>  mUnk8c2b95;
-    ::ll::UntypedStorage<8, 1056> mUnk674939;
-    ::ll::UntypedStorage<8, 360>  mUnkce7a2f;
-    ::ll::UntypedStorage<8, 8>    mUnk88fcdd;
-    ::ll::UntypedStorage<8, 8>    mUnk4fa3c5;
-    ::ll::UntypedStorage<8, 64>   mUnk5edc72;
-    ::ll::UntypedStorage<8, 128>  mUnk54cec9;
+    ::ll::UntypedStorage<8, 8>   mUnk660c52;
+    ::ll::UntypedStorage<8, 24>  mUnk1dd9db;
+    ::ll::UntypedStorage<8, 8>   mUnk2c9270;
+    ::ll::UntypedStorage<8, 24>  mUnk599bd5;
+    ::ll::UntypedStorage<8, 8>   mUnk2685b9;
+    ::ll::UntypedStorage<8, 24>  mUnk34968b;
+    ::ll::UntypedStorage<8, 24>  mUnkcb8451;
+    ::ll::UntypedStorage<8, 80>  mUnk4899ec;
+    ::ll::UntypedStorage<1, 1>   mUnkc27adc;
+    ::ll::UntypedStorage<1, 1>   mUnke65739;
+    ::ll::UntypedStorage<8, 616> mUnk8c2b95;
+    ::ll::UntypedStorage<8, 792> mUnk674939;
+    ::ll::UntypedStorage<8, 360> mUnkce7a2f;
+    ::ll::UntypedStorage<8, 8>   mUnk88fcdd;
+    ::ll::UntypedStorage<8, 8>   mUnk4fa3c5;
+    ::ll::UntypedStorage<8, 64>  mUnk5edc72;
+    ::ll::UntypedStorage<8, 128> mUnk54cec9;
     // NOLINTEND
 
 public:

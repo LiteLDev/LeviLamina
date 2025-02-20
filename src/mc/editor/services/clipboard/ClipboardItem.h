@@ -4,15 +4,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPalette;
 class BlockPos;
 class BlockSource;
 class CompoundBlockVolume;
 class StructureSettings;
-namespace Editor { class EditorStructureTemplate; }
-namespace Editor::Selection { class SelectionContainer; }
 namespace Editor::Services { struct ClipboardWriteOptions; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
@@ -34,20 +30,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ClipboardItem(::mce::UUID id);
-
-    MCFOLD void clear();
-
-    MCFOLD ::mce::UUID const& getId() const;
-
     MCAPI ::CompoundBlockVolume getPredictedWriteAsVolume(
         ::BlockPos const&                                position,
         ::Editor::Services::ClipboardWriteOptions const* options
     ) const;
-
-    MCAPI ::BlockPos getSize() const;
-
-    MCFOLD ::Editor::EditorStructureTemplate* getStructureData() const;
 
     MCAPI ::StructureSettings getStructureSettingsFromOptions(
         ::BlockPos const&                                size,
@@ -56,26 +42,9 @@ public:
 
     MCAPI bool isEmpty() const;
 
-    MCAPI void readFromSelection(::BlockSource& region, ::Editor::Selection::SelectionContainer const& selection);
-
     MCAPI void readFromVolume(::BlockSource& region, ::CompoundBlockVolume const& volume);
 
     MCAPI void readFromWorld(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
-
-    MCAPI void setStructureData(::Editor::EditorStructureTemplate const& structure);
-
-    MCAPI bool writeToWorld(
-        ::BlockSource&                                   region,
-        ::BlockPalette const&                            levelPalette,
-        ::BlockPos const&                                position,
-        ::Editor::Services::ClipboardWriteOptions const* options
-    ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::UUID id);
     // NOLINTEND
 };
 

@@ -15,9 +15,8 @@ struct Capped {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk59813e;
-    ::ll::UntypedStorage<8, 48> mUnkcb18fd;
-    ::ll::UntypedStorage<4, 16> mUnkf07a09;
+    ::ll::UntypedStorage<8, 40> mUnkcb18fd;
+    ::ll::UntypedStorage<4, 12> mUnkf07a09;
     // NOLINTEND
 
 public:
@@ -35,7 +34,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

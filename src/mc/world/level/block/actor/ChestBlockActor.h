@@ -18,8 +18,8 @@ class CompoundTag;
 class Container;
 class ContainerContentChangeListener;
 class DataLoadHelper;
+class ILevel;
 class ItemStack;
-class Level;
 class Player;
 class SaveContext;
 struct ActorUniqueID;
@@ -71,7 +71,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
@@ -84,10 +84,10 @@ public:
     ) /*override*/;
 
     // vIndex: 46
-    virtual void loadItems(::CompoundTag const& base, ::Level& level);
+    virtual void loadItems(::CompoundTag const& base, ::ILevel& level);
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 47
     virtual bool saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
@@ -191,15 +191,15 @@ public:
     // NOLINTBEGIN
     MCAPI ChestBlockActor(
         ::BlockActorType       type,
-        ::std::string const&   id,
-        ::BlockActorRendererId renderId,
-        ::BlockPos const&      pos,
+        ::std::string const&   renderId,
+        ::BlockActorRendererId pos,
+        ::BlockPos const&      id,
         bool                   isTrapped
     );
 
     MCAPI void _closeChest(::BlockSource& region, ::Player* player);
 
-    MCAPI void _getCenter(float& outx, float& outy, float& outz);
+    MCAPI bool _detectBlockObstruction(::BlockSource& region) const;
 
     MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -207,29 +207,15 @@ public:
 
     MCAPI void _unpair();
 
-    MCAPI bool canOpen(::BlockSource& region) const;
+    MCAPI void _validatePairedChest(::BlockSource& region);
 
     MCAPI bool canPairWith(::BlockActor* entity, ::BlockSource& region);
 
     MCAPI void forceCloseChest(::BlockSource& region);
 
-    MCAPI int getOpenCount() const;
-
-    MCAPI float getOpenness() const;
-
-    MCFOLD ::BlockPos const& getPairedChestPosition();
-
-    MCAPI bool isFindable() const;
-
-    MCAPI bool isLargeChest() const;
-
-    MCFOLD void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to);
-
     MCAPI void pairWith(::ChestBlockActor* chest, bool lead);
 
-    MCAPI void setFindable(bool isFindable);
-
-    MCFOLD void unpair(::BlockSource& region);
+    MCAPI void unpair(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -237,9 +223,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::BlockActorType       type,
-        ::std::string const&   id,
-        ::BlockActorRendererId renderId,
-        ::BlockPos const&      pos,
+        ::std::string const&   renderId,
+        ::BlockActorRendererId pos,
+        ::BlockPos const&      id,
         bool                   isTrapped
     );
     // NOLINTEND
@@ -261,7 +247,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
@@ -271,9 +257,9 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI void $loadItems(::CompoundTag const& base, ::Level& level);
+    MCAPI void $loadItems(::CompoundTag const& base, ::ILevel& level);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
 

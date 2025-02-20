@@ -14,7 +14,6 @@ struct MoveInputComponent;
 struct MovementAbilitiesComponent;
 struct PlayerInputRequestComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct WasInWaterFlagComponent;
 // clang-format on
 
@@ -22,8 +21,6 @@ class WaterSinkInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createWaterSinkInputSystem();
-
     MCAPI static void doInWaterSinkInputSystem(
         ::MovementAbilitiesComponent const& abilitiesComponent,
         ::MoveInputComponent const&         moveInputComponent,

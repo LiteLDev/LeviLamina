@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::BlockPos getSize(::Rotation) const /*override*/;
+    virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
     // vIndex: 2
     virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::Rotation rotation) const
@@ -54,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getSize(::Rotation) const;
+    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
 
     MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 

@@ -18,7 +18,6 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
-class Material;
 class Player;
 struct ActorBlockSyncMessage;
 // clang-format on
@@ -69,7 +68,7 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 98
-    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
+    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const
         /*override*/;
 
     // vIndex: 139
@@ -77,20 +76,6 @@ public:
 
     // vIndex: 0
     virtual ~LightBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    LightBlock(::std::string const& nameId, int id, ::Material const& material, ::HashedString const& nextLightLevel);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::Material const& material, ::HashedString const& nextLightLevel);
     // NOLINTEND
 
 public:
@@ -117,11 +102,11 @@ public:
 
     MCAPI bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $tryToPlace(
+    MCFOLD bool $tryToPlace(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
         ::Block const&                 block,
@@ -130,7 +115,7 @@ public:
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
     // NOLINTEND

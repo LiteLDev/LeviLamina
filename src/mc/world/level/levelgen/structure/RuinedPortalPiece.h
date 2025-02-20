@@ -112,10 +112,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
-
-    MCAPI static bool _isLava(::BlockSource& region, ::BlockPos pos);
-
     MCAPI static bool _willLavaFlowIn(::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 

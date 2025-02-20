@@ -6,9 +6,6 @@
 // clang-format off
 class Block;
 class BlockPos;
-class BlockSource;
-class IRandom;
-class IStructurePoolBlockPredicate;
 class Random;
 // clang-format on
 
@@ -31,21 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockRule(
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& sourceBlockPredicate,
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& targetBlockPredicate,
-        ::Block const*                                      resultBlock
-    );
-
-    MCAPI StructurePoolBlockRule(
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& sourceBlockPredicate,
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& targetBlockPredicate,
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& distancePredicate,
-        ::Block const*                                      resultBlock
-    );
-
-    MCFOLD bool finalizeRule(::BlockSource& region, ::IRandom& random);
-
     MCAPI bool processRule(
         ::Block const&    sourceBlock,
         ::Block const&    targetBlock,
@@ -54,22 +36,5 @@ public:
         ::BlockPos const& worldPos,
         ::BlockPos const& refPos
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& sourceBlockPredicate,
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& targetBlockPredicate,
-        ::Block const*                                      resultBlock
-    );
-
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& sourceBlockPredicate,
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& targetBlockPredicate,
-        ::std::unique_ptr<::IStructurePoolBlockPredicate>&& distancePredicate,
-        ::Block const*                                      resultBlock
-    );
     // NOLINTEND
 };

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Error.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off

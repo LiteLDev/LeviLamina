@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileSizePresetToken; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -33,10 +33,10 @@ public:
     // NOLINTBEGIN
     // vIndex: 1
     virtual ::std::unique_ptr<::Core::FileSizePresetToken>
-    presetInitialSizeForFile(::Core::Path const& filePath, uint64 initialFileSize) /*override*/;
+    presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize) /*override*/;
 
     // vIndex: 2
-    virtual ::std::optional<uint64> checkFileInitialSize(::Core::Path const& filePath) /*override*/;
+    virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView filePath) /*override*/;
 
     // vIndex: 0
     virtual ~FileSizePresetManagerImpl() /*override*/ = default;
@@ -52,9 +52,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::unique_ptr<::Core::FileSizePresetToken>
-    $presetInitialSizeForFile(::Core::Path const& filePath, uint64 initialFileSize);
+    $presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize);
 
-    MCAPI ::std::optional<uint64> $checkFileInitialSize(::Core::Path const& filePath);
+    MCAPI ::std::optional<uint64> $checkFileInitialSize(::Core::PathView filePath);
     // NOLINTEND
 
 public:

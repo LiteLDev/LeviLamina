@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class DynamicValue; }
 namespace cereal { class PropertyReader; }
+namespace cereal { struct NullType; }
 // clang-format on
 
 namespace cereal {
@@ -25,10 +25,14 @@ public:
     // prevent constructor by default
     DynamicValueSchemaWriter& operator=(DynamicValueSchemaWriter const&);
     DynamicValueSchemaWriter(DynamicValueSchemaWriter const&);
+    DynamicValueSchemaWriter();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 13
+    virtual bool write(::cereal::NullType, ::cereal::PropertyReader const&) /*override*/;
+
     // vIndex: 12
     virtual bool write(bool value, ::cereal::PropertyReader const&) /*override*/;
 
@@ -65,37 +69,23 @@ public:
     // vIndex: 1
     virtual bool write(::std::string_view const value, ::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual bool pushMember(::std::string_view const value, ::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void popMember() /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual bool openObject(::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual bool openArray(uint64 len, ::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void close() /*override*/;
 
     // vIndex: 0
     virtual ~DynamicValueSchemaWriter() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DynamicValueSchemaWriter();
-
-    MCFOLD ::cereal::DynamicValue& value();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -107,6 +97,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $write(::cereal::NullType, ::cereal::PropertyReader const&);
+
     MCAPI bool $write(bool value, ::cereal::PropertyReader const&);
 
     MCAPI bool $write(char value, ::cereal::PropertyReader const&);

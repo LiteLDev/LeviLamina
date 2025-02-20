@@ -45,21 +45,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GoatHornItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void addGoatHornVarationSaveData(::Goat& goat, ::ItemStack& instance);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

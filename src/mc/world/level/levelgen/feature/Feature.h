@@ -7,13 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class IBlockWorldGenAPI;
 class Random;
-class RenderParams;
 class WorldChangeTransaction;
 struct ActorUniqueID;
 // clang-format on
@@ -36,25 +33,13 @@ public:
     virtual bool place(::BlockSource&, ::BlockPos const&, ::Random&) const = 0;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Feature(::Actor* placer);
-
     MCAPI bool _placeBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI void _setManuallyPlaced(::Actor* placer);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor* placer);
     // NOLINTEND
 
 public:
@@ -66,8 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

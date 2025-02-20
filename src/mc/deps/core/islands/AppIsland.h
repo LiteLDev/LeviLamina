@@ -23,6 +23,7 @@ public:
     // prevent constructor by default
     AppIsland& operator=(AppIsland const&);
     AppIsland(AppIsland const&);
+    AppIsland();
 
 public:
     // virtual functions
@@ -50,18 +51,6 @@ public:
 
     // vIndex: 7
     virtual void processActivationArguments(::Bedrock::ActivationArguments const& args) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AppIsland();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -41,7 +41,7 @@ public:
     virtual ::std::string toString() const /*override*/;
 
     // vIndex: 7
-    virtual void print(::std::string const& prefix, ::PrintStream& out) const /*override*/;
+    virtual void print(::std::string const& prefix_, ::PrintStream& out) const /*override*/;
 
     // vIndex: 9
     virtual ::std::unique_ptr<::Tag> copy() const /*override*/;
@@ -70,27 +70,11 @@ public:
 
     MCAPI ::Tag* get(int index) const;
 
-    MCAPI ::CompoundTag const* getCompound(uint64) const;
-
-    MCFOLD ::CompoundTag* getCompound(uint64 index);
-
-    MCAPI double getDouble(int index) const;
+    MCAPI ::CompoundTag* getCompound(uint64 index);
 
     MCAPI float getFloat(int index) const;
 
-    MCAPI int getInt(int index) const;
-
-    MCAPI int64 getInt64(int index) const;
-
-    MCAPI ::std::string const& getString(int index) const;
-
     MCFOLD int size() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -110,7 +94,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI void $print(::std::string const& prefix, ::PrintStream& out) const;
+    MCAPI void $print(::std::string const& prefix_, ::PrintStream& out) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 
@@ -118,7 +102,7 @@ public:
 
     MCAPI bool $equals(::Tag const& rhs) const;
 
-    MCFOLD void $deleteChildren();
+    MCAPI void $deleteChildren();
     // NOLINTEND
 
 public:

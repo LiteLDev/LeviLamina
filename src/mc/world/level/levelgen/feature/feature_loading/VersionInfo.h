@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace Puv { class VersionRange; }
 // clang-format on
 
@@ -17,8 +16,8 @@ struct VersionInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 232> mUnk8fc99f;
-    ::ll::UntypedStorage<4, 4>   mUnk291884;
+    ::ll::UntypedStorage<8, 56> mUnk8fc99f;
+    ::ll::UntypedStorage<4, 4>  mUnk291884;
     // NOLINTEND
 
 public:
@@ -36,8 +35,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SemVersion getMinFormatVersion(::FeatureLoading::FeatureVersion const& version);
-
     MCAPI static ::std::optional<::Puv::VersionRange>
     getRangeFromVersion(::FeatureLoading::FeatureVersion const& version);
     // NOLINTEND
@@ -45,7 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

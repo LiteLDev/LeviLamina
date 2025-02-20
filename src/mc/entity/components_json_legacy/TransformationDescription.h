@@ -37,6 +37,7 @@ public:
     // prevent constructor by default
     TransformationDescription& operator=(TransformationDescription const&);
     TransformationDescription(TransformationDescription const&);
+    TransformationDescription();
 
 public:
     // virtual functions
@@ -49,18 +50,6 @@ public:
 
     // vIndex: 1
     virtual ~TransformationDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TransformationDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

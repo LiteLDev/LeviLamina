@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     WaterMovementDescription& operator=(WaterMovementDescription const&);
     WaterMovementDescription(WaterMovementDescription const&);
+    WaterMovementDescription();
 
 public:
     // virtual functions
@@ -33,18 +34,6 @@ public:
 
     // vIndex: 1
     virtual ~WaterMovementDescription() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WaterMovementDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

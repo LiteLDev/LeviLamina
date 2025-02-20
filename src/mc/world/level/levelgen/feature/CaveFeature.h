@@ -107,9 +107,7 @@ public:
     virtual ~CaveFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
     // vIndex: 2
     virtual bool isValidPlacement(::std::string const& pass) /*override*/;
@@ -196,14 +194,6 @@ public:
     ) const;
 
     MCAPI bool detectWater(::IBlockWorldGenAPI& target, ::BoundingBox const& volume) const;
-
-    MCAPI float getWidthModifier(::RenderParams& renderParams) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool shouldSkipCarving(float yd, float xd_sq, float yd_sq, float zd_sq, float floorLevel);
     // NOLINTEND
 
 public:
@@ -221,8 +211,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
     MCAPI bool $isValidPlacement(::std::string const& pass);
 

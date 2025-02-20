@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
-class Block;
-class BlockPos;
 class EntityContext;
 struct ActorDefinitionIdentifier;
 // clang-format on
@@ -18,9 +16,6 @@ class Chicken : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
-
     // vIndex: 8
     virtual ~Chicken() /*override*/ = default;
     // NOLINTEND
@@ -49,12 +44,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

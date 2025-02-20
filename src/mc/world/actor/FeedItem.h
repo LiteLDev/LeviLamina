@@ -59,9 +59,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI FeedItem(::FeedItem const&);
+
     MCAPI void addEffect(::FeedItem::Effect const& effect);
 
+    MCAPI ::FeedItem& operator=(::FeedItem const&);
+
+    MCAPI ::FeedItem& operator=(::FeedItem&&);
+
     MCAPI ~FeedItem();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FeedItem const&);
     // NOLINTEND
 
 public:

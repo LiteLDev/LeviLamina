@@ -38,9 +38,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string asString() const;
 
-    MCAPI bool isEmpty() const;
+    MCAPI bool operator!=(::mce::UUID const& rhs) const;
 
-    MCAPI bool operator<(::mce::UUID const& rhs) const;
+    MCFOLD bool operator==(::mce::UUID const& rhs) const;
     // NOLINTEND
 
 public:

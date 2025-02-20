@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,18 +46,13 @@ public:
 public:
     // prevent constructor by default
     ScriptBiomeType& operator=(ScriptBiomeType const&);
+    ScriptBiomeType(ScriptBiomeType const&);
     ScriptBiomeType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBiomeType(::ScriptModuleMinecraft::ScriptBiomeType const&);
-
     MCAPI ::std::string getId() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptBiomeType& operator=(::ScriptModuleMinecraft::ScriptBiomeType&&);
-
-    MCAPI ~ScriptBiomeType();
     // NOLINTEND
 
 public:
@@ -67,18 +62,6 @@ public:
 
     MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
     getOrCreateHandle(::Biome const& biome, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBiomeType const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

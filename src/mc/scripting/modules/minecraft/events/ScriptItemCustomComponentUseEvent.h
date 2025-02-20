@@ -11,6 +11,7 @@
 // clang-format off
 class ItemStack;
 class Player;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -61,21 +62,24 @@ public:
 public:
     // prevent constructor by default
     ScriptItemCustomComponentUseEvent& operator=(ScriptItemCustomComponentUseEvent const&);
-    ScriptItemCustomComponentUseEvent(ScriptItemCustomComponentUseEvent const&);
     ScriptItemCustomComponentUseEvent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptItemCustomComponentUseEvent() /*override*/ = default;
+    virtual ~ScriptItemCustomComponentUseEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent&&);
+    MCAPI ScriptItemCustomComponentUseEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent const&);
+
+    MCAPI ScriptItemCustomComponentUseEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                  scope
+    );
     // NOLINTEND
 
 public:
@@ -85,9 +89,20 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent const&);
+
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                  scope
+    );
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

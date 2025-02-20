@@ -22,6 +22,7 @@ class IConstBlockSource;
 class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class BambooStalkBlock : public ::BlockLegacy {
@@ -43,9 +44,6 @@ public:
 
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 92
     virtual ::Block const&
@@ -72,7 +70,7 @@ public:
         /*override*/;
 
     // vIndex: 48
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB&) const /*override*/;
@@ -93,27 +91,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BambooStalkBlock(::std::string const& nameId, int id);
-
     MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::LeafSize _getLeafSize(::Block const& block) const;
 
+    MCAPI ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue) const;
+
     MCAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static int getMaxHeight(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -136,8 +124,6 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
@@ -153,7 +139,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int value) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 

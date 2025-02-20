@@ -54,8 +54,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ProducerComponent();
-
-    MCAPI void allowAttachments(bool bAttached);
     // NOLINTEND
 
 public:
@@ -81,7 +79,7 @@ public:
 
     MCAPI bool $canStopPower() const;
 
-    MCFOLD void $setStopPower(bool bPower);
+    MCAPI void $setStopPower(bool bPower);
 
     MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinition;
 struct DynamicPropertyDefinition;
 // clang-format on
 
@@ -35,8 +34,6 @@ public:
         ::std::string&                       error
     ) const;
 
-    MCAPI void clear();
-
     MCAPI ::std::optional<::DynamicPropertyDefinePropertyError>
     defineProperty(::std::string const& identifier, ::DynamicPropertyDefinition definition);
 
@@ -46,13 +43,6 @@ public:
     tryMergeDefinitions(::DynamicPropertiesDefinition const& other, ::std::string const& identifier, uint64 sizeLimit);
 
     MCAPI ~DynamicPropertiesDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    clearAll(::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& definitionList);
     // NOLINTEND
 
 public:

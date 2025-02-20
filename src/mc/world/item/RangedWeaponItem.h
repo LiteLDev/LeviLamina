@@ -39,20 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RangedWeaponItem(::std::string const& name, short id);
-
-    MCAPI float getLaunchPower(int durationLeft, int maxDrawDuration, int maxUseDuration) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, short id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();
@@ -71,11 +57,5 @@ public:
     MCFOLD int $getEnchantValue() const;
 
     MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

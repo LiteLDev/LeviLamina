@@ -6,7 +6,6 @@
 // clang-format off
 class Block;
 class BlockPos;
-class CompoundTag;
 // clang-format on
 
 namespace br::worldgen {
@@ -30,10 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::br::worldgen::StructureBlockInfo clone() const;
-
-    MCAPI bool operator!=(::br::worldgen::StructureBlockInfo const& rhs) const;
-
     MCAPI ~StructureBlockInfo();
     // NOLINTEND
 
@@ -42,9 +37,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::br::worldgen::StructureBlockInfo
     from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState);
-
-    MCAPI static ::br::worldgen::StructureBlockInfo
-    from(::BlockPos pos, ::Block const& state, ::Block const* extraBlockState, ::std::unique_ptr<::CompoundTag>&& nbt);
     // NOLINTEND
 
 public:

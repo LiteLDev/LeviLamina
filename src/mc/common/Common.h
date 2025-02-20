@@ -12,8 +12,6 @@ namespace Common {
 // NOLINTBEGIN
 MCAPI ::Common::BuildInfo getBuildInfo();
 
-MCAPI ::std::string getGameDevVersionString();
-
 MCAPI ::std::string getGameSemVerString();
 
 MCAPI ::std::string getGameVersionString();

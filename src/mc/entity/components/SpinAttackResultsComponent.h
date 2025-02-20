@@ -12,17 +12,6 @@ public:
 public:
     // prevent constructor by default
     SpinAttackResultsComponent& operator=(SpinAttackResultsComponent const&);
+    SpinAttackResultsComponent(SpinAttackResultsComponent const&);
     SpinAttackResultsComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SpinAttackResultsComponent(::SpinAttackResultsComponent const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SpinAttackResultsComponent const&);
-    // NOLINTEND
 };

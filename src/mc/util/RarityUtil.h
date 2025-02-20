@@ -9,8 +9,6 @@ namespace RarityUtil {
 // functions
 // NOLINTBEGIN
 MCAPI ::Rarity getRarityFromName(::std::string const& name);
-
-MCAPI ::std::string const& getTitleColor(::Rarity rarity);
 // NOLINTEND
 
 // static variables

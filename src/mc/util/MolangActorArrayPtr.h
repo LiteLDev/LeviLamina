@@ -17,15 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MolangActorArrayPtr(::std::vector<::Actor*> actors);
-
     MCAPI ~MolangActorArrayPtr();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::vector<::Actor*> actors);
     // NOLINTEND
 
 public:

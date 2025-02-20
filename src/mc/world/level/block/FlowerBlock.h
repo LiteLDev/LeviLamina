@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BushBlock.h"
 
 // auto generated forward declare list
@@ -37,12 +36,6 @@ public:
     // vIndex: 15
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 144
-    virtual ::BlockRenderLayer getRenderLayer() const /*override*/;
-
-    // vIndex: 143
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const /*override*/;
-
     // vIndex: 5
     virtual ::AABB
     getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
@@ -68,7 +61,7 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
@@ -79,7 +72,7 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
     // vIndex: 0
-    virtual ~FlowerBlock() /*override*/;
+    virtual ~FlowerBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -97,17 +90,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer() const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const;
 
     MCFOLD ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
@@ -119,11 +108,11 @@ public:
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 

@@ -42,25 +42,22 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IFileChunkUploader();
+    virtual ~IFileChunkUploader() = default;
 
     // vIndex: 1
-    virtual void update();
-
-    // vIndex: 2
     virtual void
     initFileUploader(::std::string const&, ::FileInfo const&, int, ::Json::Value const&, ::std::function<void(bool)>) = 0;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual void getServerMissingChunks(
         ::FileInfo const&                                     file,
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback
     ) const;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual void confirmChunkReceived(::FileInfo const& file, ::FileChunkInfo const& chunk);
 
-    // vIndex: 5
+    // vIndex: 4
     virtual void uploadChunk(
         ::FileInfo const&           file,
         ::FileChunkInfo const&      chunk,
@@ -68,7 +65,7 @@ public:
         ::std::function<void(bool)> onCompleteCallback
     );
 
-    // vIndex: 6
+    // vIndex: 5
     virtual void uploadStream(
         ::FileInfo const&                                               file,
         uint64                                                          streamSize,
@@ -76,45 +73,31 @@ public:
         ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     );
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool canCancelUpload(::FileInfo const&) const = 0;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual void cancelUpload(::FileInfo const&) = 0;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::UploadError getInitErrorCode() const = 0;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual float getUploadProgress(::FileInfo const&) const = 0;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI IFileChunkUploader();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $update();
-
     MCAPI void $getServerMissingChunks(
         ::FileInfo const&                                     file,
         ::std::function<void(::std::vector<::FileChunkInfo>)> callback

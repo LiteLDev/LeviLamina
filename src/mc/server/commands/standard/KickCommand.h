@@ -46,26 +46,23 @@ public:
     _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
 
     MCAPI ::Player const* _findTarget(
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::Level&               level,
+        ::CommandOrigin const& output,
+        ::CommandOutput&       level,
+        ::Level&               idOrName,
+        ::std::string const&   origin,
         ::std::string const&   message,
-        ::std::string const&   reason,
-        ::std::string const&   idOrName
+        ::std::string const&   reason
     ) const;
 
     MCAPI void
     _generateSuccessOutput(::CommandOutput& output, ::std::string const& playerNameTag, ::std::string const& reason)
         const;
 
-    MCAPI ::Player const* _loopPlayers(
-        ::CommandOrigin const&,
-        ::CommandOutput&,
-        ::Level& level,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::function<bool(::Player const*)> condition
-    ) const;
+    MCAPI ::Player const*
+    _loopPlayers(::CommandOrigin const& level, ::CommandOutput& condition, ::Level&, ::std::string const&, ::std::string const&, ::std::function<bool(::Player const*)>)
+        const;
+
+    MCAPI void _refreshJoinCode(::Level& level) const;
     // NOLINTEND
 
 public:

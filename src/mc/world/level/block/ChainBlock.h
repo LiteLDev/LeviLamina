@@ -12,7 +12,6 @@ class AABB;
 class Block;
 class BlockActor;
 class ItemInstance;
-class Material;
 // clang-format on
 
 class ChainBlock : public ::RotatedPillarBlock {
@@ -33,18 +32,6 @@ public:
 
     // vIndex: 0
     virtual ~ChainBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChainBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

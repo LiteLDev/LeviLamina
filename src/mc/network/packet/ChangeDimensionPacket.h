@@ -7,7 +7,6 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/util/NewType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,16 +14,17 @@ class BinaryStream;
 class Dimension;
 class ReadOnlyBinaryStream;
 class Vec3;
+struct LoadingScreenId;
 // clang-format on
 
 class ChangeDimensionPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::DimensionType>                  mDimensionId;
-    ::ll::TypedStorage<4, 12, ::Vec3>                          mPos;
-    ::ll::TypedStorage<1, 1, bool>                             mRespawn;
-    ::ll::TypedStorage<4, 8, ::NewType<::std::optional<uint>>> mLoadingScreenId;
+    ::ll::TypedStorage<4, 4, ::DimensionType>   mDimensionId;
+    ::ll::TypedStorage<4, 12, ::Vec3>           mPos;
+    ::ll::TypedStorage<1, 1, bool>              mRespawn;
+    ::ll::TypedStorage<4, 8, ::LoadingScreenId> mLoadingScreenId;
     // NOLINTEND
 
 public:
@@ -44,28 +44,6 @@ public:
 
     // vIndex: 0
     virtual ~ChangeDimensionPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChangeDimensionPacket();
-
-    MCAPI ChangeDimensionPacket(
-        ::DimensionType                  dimensionId,
-        ::Vec3                           pos,
-        bool                             respawn,
-        ::NewType<::std::optional<uint>> loadingScreenId
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void*
-    $ctor(::DimensionType dimensionId, ::Vec3 pos, bool respawn, ::NewType<::std::optional<uint>> loadingScreenId);
     // NOLINTEND
 
 public:

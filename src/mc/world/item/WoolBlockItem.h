@@ -30,18 +30,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WoolBlockItem(::std::string const& name, int id, bool isCarpet);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, bool isCarpet);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -6,7 +6,7 @@ struct ServerAnticipateClientLoadingScreenComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4a5fbc;
+    ::ll::UntypedStorage<8, 24> mUnk271336;
     // NOLINTEND
 
 public:

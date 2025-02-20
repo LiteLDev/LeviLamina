@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptBlockPalette; }
 namespace Editor::ScriptModule { class ScriptIBlockPaletteItem; }
-namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -38,11 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockPaletteService(
-        ::Editor::Services::EditorBlockPaletteServiceProvider& provider,
-        ::Scripting::WeakLifetimeScope const&                  scope
-    );
-
     MCAPI void addOrReplacePalette(
         ::std::string const&                                                             paletteId,
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> palette
@@ -82,13 +75,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptBlockPaletteService> bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void*
-    $ctor(::Editor::Services::EditorBlockPaletteServiceProvider& provider, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

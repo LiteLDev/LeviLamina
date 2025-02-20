@@ -12,15 +12,12 @@ class StrictEntityContext;
 struct ActorRotationComponent;
 struct DisplayObjectMessageRequestComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct UnloadedChunkTimerComponent;
 // clang-format on
 
 namespace UnloadedChunkWarningSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
-
 MCAPI void tickEntity(
     ::StrictEntityContext const&                                                            entity,
     ::StateVectorComponent const&                                                           stateVector,

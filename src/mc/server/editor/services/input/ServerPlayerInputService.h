@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
 #include "mc/server/editor/serviceproviders/ServerPlayerInputServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 namespace Editor::Input { class KeyBinding; }
+namespace Editor::Input { class MouseBinding; }
 namespace Editor::Input { struct BindingInfo; }
 // clang-format on
 
@@ -46,6 +47,17 @@ public:
     unregisterKeyBinding(::HashedString const& contextId, ::HashedString const& eventId) /*override*/;
 
     // vIndex: 3
+    virtual ::Scripting::Result<void> registerMouseBinding(
+        ::HashedString const&                contextId,
+        ::HashedString const&                eventId,
+        ::Editor::Input::MouseBinding const& binding
+    ) /*override*/;
+
+    // vIndex: 4
+    virtual ::Scripting::Result<void>
+    unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId) /*override*/;
+
+    // vIndex: 5
     virtual ::Scripting::Result<void> setViewportFocus(bool focused) /*override*/;
     // NOLINTEND
 
@@ -73,6 +85,15 @@ public:
 
     MCAPI ::Scripting::Result<void>
     $unregisterKeyBinding(::HashedString const& contextId, ::HashedString const& eventId);
+
+    MCAPI ::Scripting::Result<void> $registerMouseBinding(
+        ::HashedString const&                contextId,
+        ::HashedString const&                eventId,
+        ::Editor::Input::MouseBinding const& binding
+    );
+
+    MCAPI ::Scripting::Result<void>
+    $unregisterMouseBinding(::HashedString const& contextId, ::HashedString const& eventId);
 
     MCAPI ::Scripting::Result<void> $setViewportFocus(bool focused);
     // NOLINTEND

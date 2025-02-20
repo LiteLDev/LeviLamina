@@ -59,7 +59,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~TradeInterestGoal() /*override*/ = default;
+    virtual ~TradeInterestGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -73,6 +73,8 @@ public:
         float  carriedTime,
         float  cooldown
     );
+
+    MCAPI bool _isLookingAtMe(::Player const& target) const;
     // NOLINTEND
 
 public:
@@ -85,7 +87,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

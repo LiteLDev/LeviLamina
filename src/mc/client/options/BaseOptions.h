@@ -5,14 +5,15 @@
 // auto generated inclusion list
 #include "mc/client/options/AutoUpdateMode.h"
 #include "mc/client/options/DebugHudOptions.h"
+#include "mc/client/options/GraphicsMode.h"
 #include "mc/client/options/IOptions.h"
 #include "mc/client/options/RealmsEnvironment.h"
 #include "mc/client/options/SplitScreenDirection.h"
 #include "mc/client/options/UIProfile.h"
 #include "mc/client/options/VRStickyMining.h"
 #include "mc/client/options/XboxSandboxEnvironment.h"
+#include "mc/client/store/DisplayLoggedErrorType.h"
 #include "mc/deps/input/InputMode.h"
-#include "mc/deps/minecraft_renderer/renderer/RenderingProfile.h"
 #include "mc/diagnostics/bedrock_log/LogCategory.h"
 #include "mc/input/NewInteractionModel.h"
 #include "mc/network/DevConnectionQuality.h"
@@ -27,10 +28,9 @@ class BaseOptions : public ::IOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 6136> mUnka3b515;
+    ::ll::UntypedStorage<8, 6264> mUnk3b472d;
     ::ll::UntypedStorage<8, 16>   mUnk8e592b;
     ::ll::UntypedStorage<1, 1>    mUnk4523d5;
-    ::ll::UntypedStorage<1, 1>    mUnkf9c43e;
     ::ll::UntypedStorage<1, 1>    mUnkb0c321;
     // NOLINTEND
 
@@ -62,7 +62,7 @@ public:
     virtual ::std::optional<::Option const*> getIfValid(::OptionID) const /*override*/;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 767> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 783> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;
@@ -236,7 +236,7 @@ public:
     virtual bool getVRHandsVisible() const /*override*/;
 
     // vIndex: 88
-    virtual ::mce::RenderingProfile getRenderingProfile() const /*override*/;
+    virtual ::GraphicsMode getGraphicsMode() const /*override*/;
 
     // vIndex: 89
     virtual bool getTransparentLeaves() const /*override*/;
@@ -439,583 +439,589 @@ public:
     // vIndex: 171
     virtual bool getDevAssertionsShowDialog() const /*override*/;
 
-    // vIndex: 172
-    virtual void setDevShowDevConsoleButton(bool) /*override*/;
-
     // vIndex: 173
-    virtual bool getDevShowDevConsoleButton() const /*override*/;
+    virtual bool getDevShowDisplayLoggedError() const /*override*/;
+
+    // vIndex: 172
+    virtual bool getDevShowDisplayLoggedError(::DisplayLoggedErrorType) const /*override*/;
 
     // vIndex: 174
-    virtual bool getDevIgnoreUserInput() const /*override*/;
+    virtual void setDevShowDevConsoleButton(bool) /*override*/;
 
     // vIndex: 175
-    virtual bool getDevDisplayTreatmentPanel() const /*override*/;
+    virtual bool getDevShowDevConsoleButton() const /*override*/;
 
     // vIndex: 176
-    virtual void setDevDisplayTreatmentPanel(bool) /*override*/;
+    virtual bool getDevIgnoreUserInput() const /*override*/;
 
     // vIndex: 177
-    virtual void setDevShowMinecraftTCUIReplacement(bool) /*override*/;
+    virtual bool getDevDisplayTreatmentPanel() const /*override*/;
 
     // vIndex: 178
-    virtual bool getDevShowMinecraftTCUIReplacement() const /*override*/;
+    virtual void setDevDisplayTreatmentPanel(bool) /*override*/;
 
     // vIndex: 179
-    virtual bool getDevCreateRealmWithoutPurchase() const /*override*/;
+    virtual void setDevShowMinecraftTCUIReplacement(bool) /*override*/;
 
     // vIndex: 180
-    virtual bool getDevDisableConnectedStoragePush() const /*override*/;
+    virtual bool getDevShowMinecraftTCUIReplacement() const /*override*/;
 
     // vIndex: 181
-    virtual bool getDevDisableConnectedStoragePull() const /*override*/;
+    virtual bool getDevCreateRealmWithoutPurchase() const /*override*/;
 
     // vIndex: 182
-    virtual void setDevFindMobs(bool) /*override*/;
+    virtual bool getDevDisableConnectedStoragePush() const /*override*/;
 
     // vIndex: 183
-    virtual bool getDevFindMobs() const /*override*/;
+    virtual bool getDevDisableConnectedStoragePull() const /*override*/;
 
     // vIndex: 184
-    virtual void setDevRenderBoundingBoxes(bool) /*override*/;
+    virtual void setDevFindMobs(bool) /*override*/;
 
     // vIndex: 185
-    virtual bool getDevRenderBoundingBoxes() const /*override*/;
+    virtual bool getDevFindMobs() const /*override*/;
 
     // vIndex: 186
-    virtual void setDevRenderPaths(bool) /*override*/;
+    virtual void setDevRenderBoundingBoxes(bool) /*override*/;
 
     // vIndex: 187
-    virtual bool getDevRenderPaths() const /*override*/;
+    virtual bool getDevRenderBoundingBoxes() const /*override*/;
 
     // vIndex: 188
-    virtual void setDevRenderMobInfoState(bool) /*override*/;
+    virtual void setDevRenderPaths(bool) /*override*/;
 
     // vIndex: 189
-    virtual bool getDevRenderMobInfoState() const /*override*/;
+    virtual bool getDevRenderPaths() const /*override*/;
 
     // vIndex: 190
-    virtual void setDevRenderGoalState(bool) /*override*/;
+    virtual void setDevRenderMobInfoState(bool) /*override*/;
 
     // vIndex: 191
-    virtual bool getDevRenderGoalState() const /*override*/;
+    virtual bool getDevRenderMobInfoState() const /*override*/;
 
     // vIndex: 192
-    virtual void setDevRenderSchedulerInfo(bool) /*override*/;
+    virtual void setDevRenderGoalState(bool) /*override*/;
 
     // vIndex: 193
-    virtual bool getDevRenderSchedulerInfo() const /*override*/;
+    virtual bool getDevRenderGoalState() const /*override*/;
 
     // vIndex: 194
-    virtual void setDevRenderCoordinateSystems(bool) /*override*/;
+    virtual void setDevRenderSchedulerInfo(bool) /*override*/;
 
     // vIndex: 195
-    virtual bool getDevRenderCoordinateSystems() const /*override*/;
+    virtual bool getDevRenderSchedulerInfo() const /*override*/;
 
     // vIndex: 196
-    virtual bool getDevResetClientId() const /*override*/;
+    virtual void setDevRenderCoordinateSystems(bool) /*override*/;
 
     // vIndex: 197
-    virtual void setDevLogFlushImmediate(bool) /*override*/;
+    virtual bool getDevRenderCoordinateSystems() const /*override*/;
 
     // vIndex: 198
-    virtual bool getDevLogFlushImmediate() const /*override*/;
+    virtual bool getDevResetClientId() const /*override*/;
 
     // vIndex: 199
-    virtual void setDevLogTimestamp(bool) /*override*/;
+    virtual void setDevLogFlushImmediate(bool) /*override*/;
 
     // vIndex: 200
-    virtual bool getDevLogTimestamp() const /*override*/;
+    virtual bool getDevLogFlushImmediate() const /*override*/;
 
     // vIndex: 201
-    virtual void setDevLogTrace(bool) /*override*/;
+    virtual void setDevLogTimestamp(bool) /*override*/;
 
     // vIndex: 202
-    virtual bool getDevLogTrace() const /*override*/;
+    virtual bool getDevLogTimestamp() const /*override*/;
 
     // vIndex: 203
-    virtual void setDevLogArea(bool) /*override*/;
+    virtual void setDevLogTrace(bool) /*override*/;
 
     // vIndex: 204
-    virtual bool getDevLogArea() const /*override*/;
+    virtual bool getDevLogTrace() const /*override*/;
 
     // vIndex: 205
-    virtual void setDevLogPriority(bool) /*override*/;
+    virtual void setDevLogArea(bool) /*override*/;
 
     // vIndex: 206
-    virtual bool getDevLogPriority() const /*override*/;
+    virtual bool getDevLogArea() const /*override*/;
 
     // vIndex: 207
-    virtual void setDevLogThread(bool) /*override*/;
+    virtual void setDevLogPriority(bool) /*override*/;
 
     // vIndex: 208
-    virtual bool getDevLogThread() const /*override*/;
+    virtual bool getDevLogPriority() const /*override*/;
 
     // vIndex: 209
-    virtual void setDevLogAppend(bool) /*override*/;
+    virtual void setDevLogThread(bool) /*override*/;
 
     // vIndex: 210
-    virtual bool getDevLogAppend() const /*override*/;
+    virtual bool getDevLogThread() const /*override*/;
 
     // vIndex: 211
-    virtual void setDevLogProcessId(bool) /*override*/;
+    virtual void setDevLogAppend(bool) /*override*/;
 
     // vIndex: 212
-    virtual bool getDevLogProcessId() const /*override*/;
+    virtual bool getDevLogAppend() const /*override*/;
 
     // vIndex: 213
-    virtual void setDevLogThreadId(bool) /*override*/;
+    virtual void setDevLogProcessId(bool) /*override*/;
 
     // vIndex: 214
-    virtual bool getDevLogThreadId() const /*override*/;
+    virtual bool getDevLogProcessId() const /*override*/;
 
     // vIndex: 215
-    virtual void setDevLogMessageId(bool) /*override*/;
+    virtual void setDevLogThreadId(bool) /*override*/;
 
     // vIndex: 216
-    virtual bool getDevLogMessageId() const /*override*/;
+    virtual bool getDevLogThreadId() const /*override*/;
 
     // vIndex: 217
-    virtual void setDevLogSilentLogging(bool) /*override*/;
+    virtual void setDevLogMessageId(bool) /*override*/;
 
     // vIndex: 218
-    virtual bool getDevLogSilentLogging() const /*override*/;
+    virtual bool getDevLogMessageId() const /*override*/;
 
     // vIndex: 219
-    virtual void setDevLogPriorityFilter(::std::string const&) /*override*/;
+    virtual void setDevLogSilentLogging(bool) /*override*/;
 
     // vIndex: 220
-    virtual ::std::string const& getDevLogPriorityFilter() const /*override*/;
+    virtual bool getDevLogSilentLogging() const /*override*/;
 
     // vIndex: 221
-    virtual void setDevLogAreaFilter(::std::string const&) /*override*/;
+    virtual void setDevLogPriorityFilter(::std::string const&) /*override*/;
 
     // vIndex: 222
-    virtual ::std::string const& getDevLogAreaFilter() const /*override*/;
+    virtual ::std::string const& getDevLogPriorityFilter() const /*override*/;
 
     // vIndex: 223
-    virtual void setDevGameEventRetentionTicks(ushort) /*override*/;
+    virtual void setDevLogAreaFilter(::std::string const&) /*override*/;
 
     // vIndex: 224
-    virtual ushort getDevGameEventRetentionTicks() const /*override*/;
+    virtual ::std::string const& getDevLogAreaFilter() const /*override*/;
 
     // vIndex: 225
-    virtual void setDevDeepDarkDebugRender(bool) /*override*/;
+    virtual void setDevGameEventRetentionTicks(ushort) /*override*/;
 
     // vIndex: 226
-    virtual bool getDevDeepDarkDebugRender() const /*override*/;
+    virtual ushort getDevGameEventRetentionTicks() const /*override*/;
 
     // vIndex: 227
-    virtual bool isLogCategoryEnabled(::BedrockLog::LogCategory) const /*override*/;
+    virtual void setDevDeepDarkDebugRender(bool) /*override*/;
 
     // vIndex: 228
-    virtual bool getDevEnableProfilerOutput() /*override*/;
+    virtual bool getDevDeepDarkDebugRender() const /*override*/;
 
     // vIndex: 229
-    virtual bool getDevAddUsersSilently() const /*override*/;
+    virtual bool isLogCategoryEnabled(::BedrockLog::LogCategory) const /*override*/;
 
     // vIndex: 230
-    virtual int getDevBenchmarkModeTime() /*override*/;
+    virtual bool getDevEnableProfilerOutput() /*override*/;
 
     // vIndex: 231
-    virtual bool getDevDisableClientBlobCache() const /*override*/;
+    virtual bool getDevAddUsersSilently() const /*override*/;
 
     // vIndex: 232
-    virtual bool getDevClientBlobCacheOnLocalServer() const /*override*/;
+    virtual int getDevBenchmarkModeTime() /*override*/;
 
     // vIndex: 233
-    virtual void setLogFlushDelay(int) /*override*/;
+    virtual bool getDevDisableClientBlobCache() const /*override*/;
 
     // vIndex: 234
-    virtual int getLogFlushDelay() /*override*/;
+    virtual bool getDevClientBlobCacheOnLocalServer() const /*override*/;
 
     // vIndex: 235
-    virtual int getAutomationParallelSlices() const /*override*/;
+    virtual void setLogFlushDelay(int) /*override*/;
 
     // vIndex: 236
-    virtual int getAutomationParallelCurrentSlice() const /*override*/;
+    virtual int getLogFlushDelay() /*override*/;
 
     // vIndex: 237
-    virtual void setIsRunningInAppCenter(bool const) /*override*/;
+    virtual int getAutomationParallelSlices() const /*override*/;
 
     // vIndex: 238
-    virtual bool getIsAutomationRun() const /*override*/;
+    virtual int getAutomationParallelCurrentSlice() const /*override*/;
 
     // vIndex: 239
-    virtual bool getShouldQuitAppAfterTesting() const /*override*/;
+    virtual bool getIsAutomationRun() const /*override*/;
 
     // vIndex: 240
-    virtual bool shouldUploadTestArtifacts() const /*override*/;
+    virtual bool getShouldQuitAppAfterTesting() const /*override*/;
 
     // vIndex: 241
-    virtual bool hasAutomationTestRunTimedOut() const /*override*/;
+    virtual bool shouldUploadTestArtifacts() const /*override*/;
 
     // vIndex: 242
-    virtual bool hasAutomationTestRunReachedCrashLimit() const /*override*/;
+    virtual bool hasAutomationTestRunTimedOut() const /*override*/;
 
     // vIndex: 243
-    virtual bool shouldAppendDebugLogTimestamp() const /*override*/;
+    virtual bool hasAutomationTestRunReachedCrashLimit() const /*override*/;
 
     // vIndex: 244
-    virtual ::std::string getAutomationServerIp() const /*override*/;
+    virtual bool shouldAppendDebugLogTimestamp() const /*override*/;
 
     // vIndex: 245
-    virtual ::std::string getAutomationServerPort() const /*override*/;
+    virtual ::std::string getAutomationServerIp() const /*override*/;
 
     // vIndex: 246
-    virtual ::std::string getAutomationArtifactUploadSas() const /*override*/;
+    virtual ::std::string getAutomationServerPort() const /*override*/;
 
     // vIndex: 247
-    virtual ::std::string getAutomationArtifactUploadUrl() const /*override*/;
+    virtual ::std::string getAutomationArtifactUploadSas() const /*override*/;
 
     // vIndex: 248
-    virtual ::std::string getAutomationRelativeBlobpath() const /*override*/;
+    virtual ::std::string getAutomationArtifactUploadUrl() const /*override*/;
 
     // vIndex: 249
-    virtual ::std::string getAutomationFunctionalTestTags() const /*override*/;
+    virtual ::std::string getAutomationRelativeBlobpath() const /*override*/;
 
     // vIndex: 250
-    virtual ::std::string getAutomationServerTestTags() const /*override*/;
+    virtual ::std::string getAutomationFunctionalTestTags() const /*override*/;
 
     // vIndex: 251
-    virtual ::std::string getAutomationUnitTestTags() const /*override*/;
+    virtual ::std::string getAutomationServerTestTags() const /*override*/;
 
     // vIndex: 252
-    virtual ::std::string getAutomationFunctionalBrokenTestTags() const /*override*/;
+    virtual ::std::string getAutomationUnitTestTags() const /*override*/;
 
     // vIndex: 253
-    virtual ::std::string getAutomationServerBrokenTestTags() const /*override*/;
+    virtual ::std::string getAutomationFunctionalBrokenTestTags() const /*override*/;
 
     // vIndex: 254
-    virtual ::std::string getAutomationUnitBrokenTestTags() const /*override*/;
+    virtual ::std::string getAutomationServerBrokenTestTags() const /*override*/;
 
     // vIndex: 255
-    virtual ::std::string getAutomationTestBuildID() const /*override*/;
+    virtual ::std::string getAutomationUnitBrokenTestTags() const /*override*/;
 
     // vIndex: 256
-    virtual ::std::string getAutomationUploadToken() const /*override*/;
+    virtual ::std::string getAutomationTestBuildID() const /*override*/;
 
     // vIndex: 257
-    virtual ::std::string getAutomationEnabledFeatures() const /*override*/;
+    virtual ::std::string getAutomationUploadToken() const /*override*/;
 
     // vIndex: 258
-    virtual ::std::string getAutomationEnabledExperiments() const /*override*/;
+    virtual ::std::string getAutomationEnabledFeatures() const /*override*/;
 
     // vIndex: 259
-    virtual bool getAutomationShouldGroupServerTests() const /*override*/;
+    virtual ::std::string getAutomationEnabledExperiments() const /*override*/;
 
     // vIndex: 260
-    virtual bool getAutomationUnrandomTestsEnabled() const /*override*/;
+    virtual bool getAutomationShouldGroupServerTests() const /*override*/;
 
     // vIndex: 261
-    virtual bool getAutomationRunEntireServerTestGroup() const /*override*/;
+    virtual bool getAutomationUnrandomTestsEnabled() const /*override*/;
 
     // vIndex: 262
-    virtual bool getAutomationRunServerTestAfterEachTest() const /*override*/;
+    virtual bool getAutomationRunEntireServerTestGroup() const /*override*/;
 
     // vIndex: 263
-    virtual ::std::string const& getTestBranchName() const /*override*/;
+    virtual bool getAutomationRunServerTestAfterEachTest() const /*override*/;
 
     // vIndex: 264
-    virtual bool getFunctionalTestBlockInput() const /*override*/;
+    virtual ::std::string const& getTestBranchName() const /*override*/;
 
     // vIndex: 265
-    virtual bool shouldBlockUserInput() const /*override*/;
+    virtual bool getFunctionalTestBlockInput() const /*override*/;
 
     // vIndex: 266
-    virtual bool hasSetSafeZone() const /*override*/;
+    virtual bool shouldBlockUserInput() const /*override*/;
 
     // vIndex: 267
-    virtual bool getAutomationDisableTreatmentPackDownloads() const /*override*/;
+    virtual bool hasSetSafeZone() const /*override*/;
 
     // vIndex: 268
-    virtual bool getAutomationProfilerCaptureEnabled() const /*override*/;
+    virtual bool getAutomationDisableTreatmentPackDownloads() const /*override*/;
 
     // vIndex: 269
-    virtual int getAutomationRepeatCount() const /*override*/;
+    virtual bool getAutomationProfilerCaptureEnabled() const /*override*/;
 
     // vIndex: 270
-    virtual int getAutomationSoakTestRunDurationMinutes() const /*override*/;
+    virtual bool getAutomationProfilerFlipEnabled() const /*override*/;
 
     // vIndex: 271
-    virtual bool getAutomationRerunFailuresOnly() const /*override*/;
+    virtual int getAutomationRepeatCount() const /*override*/;
 
     // vIndex: 272
-    virtual int getAutomationUnitPerTestcaseTimeout() const /*override*/;
+    virtual int getAutomationSoakTestRunDurationMinutes() const /*override*/;
 
     // vIndex: 273
-    virtual int getAutomationFunctionalPerTestcaseTimeout() const /*override*/;
+    virtual bool getAutomationRerunFailuresOnly() const /*override*/;
 
     // vIndex: 274
-    virtual int getAutomationServerPerTestcaseTimeout() const /*override*/;
+    virtual int getAutomationUnitPerTestcaseTimeout() const /*override*/;
 
     // vIndex: 275
-    virtual void setAutomationFunctionalBrokenTestTags(::std::string const&) /*override*/;
+    virtual int getAutomationFunctionalPerTestcaseTimeout() const /*override*/;
 
     // vIndex: 276
-    virtual void setAutomationUnitBrokenTestTags(::std::string const&) /*override*/;
+    virtual int getAutomationServerPerTestcaseTimeout() const /*override*/;
 
     // vIndex: 277
-    virtual void setAutomationUploadToken(::std::string const&) /*override*/;
+    virtual void setAutomationFunctionalBrokenTestTags(::std::string const&) /*override*/;
 
     // vIndex: 278
-    virtual bool getDevAchievmentsAlwaysEnabled() /*override*/;
+    virtual void setAutomationUnitBrokenTestTags(::std::string const&) /*override*/;
 
     // vIndex: 279
-    virtual bool shouldServerTestsLogWorlds() const /*override*/;
+    virtual void setAutomationUploadToken(::std::string const&) /*override*/;
 
     // vIndex: 280
-    virtual bool shouldServerTestsAssertOnLevelDiff() const /*override*/;
+    virtual bool getDevAchievmentsAlwaysEnabled() /*override*/;
 
     // vIndex: 281
-    virtual ::std::string getAutomationMultiplayerSessionName() const /*override*/;
+    virtual bool shouldServerTestsLogWorlds() const /*override*/;
 
     // vIndex: 282
-    virtual int getAutomationMultiplayerDeviceIndex() const /*override*/;
+    virtual bool shouldServerTestsAssertOnLevelDiff() const /*override*/;
 
     // vIndex: 283
-    virtual ::DevConnectionQuality getDevConnectionQuality() const /*override*/;
+    virtual ::std::string getAutomationMultiplayerSessionName() const /*override*/;
 
     // vIndex: 284
-    virtual int getDevRenderAttachPos() const /*override*/;
+    virtual int getAutomationMultiplayerDeviceIndex() const /*override*/;
 
     // vIndex: 285
-    virtual void setMultiPlayerGame(bool) /*override*/;
+    virtual ::DevConnectionQuality getDevConnectionQuality() const /*override*/;
 
     // vIndex: 286
-    virtual bool getMultiPlayerGame() const /*override*/;
+    virtual int getDevRenderAttachPos() const /*override*/;
 
     // vIndex: 287
-    virtual void setXboxLiveVisible(bool) /*override*/;
+    virtual void setMultiPlayerGame(bool) /*override*/;
 
     // vIndex: 288
-    virtual bool getHMDPositionDisplacement() const /*override*/;
+    virtual bool getMultiPlayerGame() const /*override*/;
 
     // vIndex: 289
-    virtual bool getVRHeadSteering() const /*override*/;
+    virtual void setXboxLiveVisible(bool) /*override*/;
 
     // vIndex: 290
-    virtual bool getStutterTurn() const /*override*/;
+    virtual bool getHMDPositionDisplacement() const /*override*/;
 
     // vIndex: 291
-    virtual float getStutterAngle() const /*override*/;
+    virtual bool getVRHeadSteering() const /*override*/;
 
     // vIndex: 292
-    virtual bool getStutterTurnSound() const /*override*/;
+    virtual bool getStutterTurn() const /*override*/;
 
     // vIndex: 293
-    virtual bool getStutterConstantTimeMode() const /*override*/;
+    virtual float getStutterAngle() const /*override*/;
 
     // vIndex: 294
-    virtual int getVRRightStickPitchAssistSteppings() const /*override*/;
+    virtual bool getStutterTurnSound() const /*override*/;
 
     // vIndex: 295
-    virtual int getVRRightStickPitchMaxAngle() const /*override*/;
+    virtual bool getStutterConstantTimeMode() const /*override*/;
 
     // vIndex: 296
-    virtual void setVRLivingRoomHintTime(int) /*override*/;
+    virtual int getVRRightStickPitchAssistSteppings() const /*override*/;
 
     // vIndex: 297
-    virtual int getVRLivingRoomHintTime() /*override*/;
+    virtual int getVRRightStickPitchMaxAngle() const /*override*/;
 
     // vIndex: 298
-    virtual bool wasLoggedInLastSession() /*override*/;
+    virtual void setVRLivingRoomHintTime(int) /*override*/;
 
     // vIndex: 299
-    virtual void setHasEverLoggedIntoXbl(bool) /*override*/;
+    virtual int getVRLivingRoomHintTime() /*override*/;
 
     // vIndex: 300
-    virtual bool getHasEverLoggedIntoXbl() const /*override*/;
+    virtual bool wasLoggedInLastSession() /*override*/;
 
     // vIndex: 301
-    virtual void setHasChosenNotToSignInToXbl(bool) /*override*/;
+    virtual void setHasEverLoggedIntoXbl(bool) /*override*/;
 
     // vIndex: 302
-    virtual bool getHasChosenNotToSignInToXbl() const /*override*/;
+    virtual bool getHasEverLoggedIntoXbl() const /*override*/;
 
     // vIndex: 303
-    virtual void setAcknowledgedAutoSave(bool) /*override*/;
+    virtual void setHasChosenNotToSignInToXbl(bool) /*override*/;
 
     // vIndex: 304
-    virtual bool getAcknowledgedAutoSave() const /*override*/;
+    virtual bool getHasChosenNotToSignInToXbl() const /*override*/;
 
     // vIndex: 305
-    virtual void setRealmsInviteShowFriendsOption(bool) /*override*/;
+    virtual void setAcknowledgedAutoSave(bool) /*override*/;
 
     // vIndex: 306
-    virtual bool getRealmsInviteShowFriendsOption() const /*override*/;
+    virtual bool getAcknowledgedAutoSave() const /*override*/;
 
     // vIndex: 307
-    virtual void setNumberOfOwnedRealms(int) /*override*/;
+    virtual void setRealmsInviteShowFriendsOption(bool) /*override*/;
 
     // vIndex: 308
-    virtual int getNumberOfOwnedRealms() const /*override*/;
+    virtual bool getRealmsInviteShowFriendsOption() const /*override*/;
 
     // vIndex: 309
-    virtual void setNumberOfFriendsRealms(int) /*override*/;
+    virtual void setNumberOfOwnedRealms(int) /*override*/;
 
     // vIndex: 310
-    virtual int getNumberOfFriendsRealms() const /*override*/;
+    virtual int getNumberOfOwnedRealms() const /*override*/;
 
     // vIndex: 311
-    virtual void setCreateRealmUpsellCount(int) /*override*/;
+    virtual void setNumberOfFriendsRealms(int) /*override*/;
 
     // vIndex: 312
-    virtual int getCreateRealmUpsellCount() const /*override*/;
+    virtual int getNumberOfFriendsRealms() const /*override*/;
 
     // vIndex: 313
-    virtual void setSaveAndQuitCount(int) /*override*/;
+    virtual void setCreateRealmUpsellCount(int) /*override*/;
 
     // vIndex: 314
-    virtual int getSaveAndQuitCount() const /*override*/;
+    virtual int getCreateRealmUpsellCount() const /*override*/;
 
     // vIndex: 315
-    virtual void setIsRatingsPromptShown(bool) /*override*/;
+    virtual void setSaveAndQuitCount(int) /*override*/;
 
     // vIndex: 316
-    virtual bool getIsRatingsPromptShown() const /*override*/;
+    virtual int getSaveAndQuitCount() const /*override*/;
 
     // vIndex: 317
-    virtual void setShowRealmsTrialButtonFromPlayScreen(bool) /*override*/;
+    virtual void setIsRatingsPromptShown(bool) /*override*/;
 
     // vIndex: 318
-    virtual bool getShowRealmsTrialButtonFromPlayScreen() const /*override*/;
+    virtual bool getIsRatingsPromptShown() const /*override*/;
 
     // vIndex: 319
-    virtual ::AutoUpdateMode getAutoUpdateMode() const /*override*/;
+    virtual void setShowRealmsTrialButtonFromPlayScreen(bool) /*override*/;
 
     // vIndex: 320
-    virtual void setCanUseCellularData(bool) /*override*/;
+    virtual bool getShowRealmsTrialButtonFromPlayScreen() const /*override*/;
 
     // vIndex: 321
+    virtual ::AutoUpdateMode getAutoUpdateMode() const /*override*/;
+
+    // vIndex: 322
+    virtual void setCanUseCellularData(bool) /*override*/;
+
+    // vIndex: 323
     virtual bool getCanUseCellularData() const /*override*/;
 
     // vIndex: 137
     virtual int getPlayerViewPerspective() const /*override*/;
 
-    // vIndex: 322
+    // vIndex: 324
     virtual void setRequireWebsocketEncryption(bool) /*override*/;
 
-    // vIndex: 323
+    // vIndex: 325
     virtual bool getRequireWebsocketEncryption() const /*override*/;
 
-    // vIndex: 324
-    virtual void setUseIPv6Only(bool) /*override*/;
-
-    // vIndex: 325
-    virtual bool getUseIPv6Only() const /*override*/;
-
     // vIndex: 326
-    virtual void setUseRetailXboxSandbox(bool const) /*override*/;
+    virtual void setWebsocketsEnabled(bool) /*override*/;
 
     // vIndex: 327
-    virtual bool getUseRetailXboxSandbox() const /*override*/;
+    virtual bool getWebsocketsEnabled() const /*override*/;
 
     // vIndex: 328
-    virtual void setXboxLiveSandbox(::XboxSandboxEnvironment) /*override*/;
+    virtual void setUseIPv6Only(bool) /*override*/;
 
     // vIndex: 329
-    virtual ::std::string const& getXboxLiveSandbox() const /*override*/;
+    virtual bool getUseIPv6Only() const /*override*/;
 
     // vIndex: 330
-    virtual void setRealmsEnvironment(::RealmsEnvironment) /*override*/;
+    virtual void setUseRetailXboxSandbox(bool const) /*override*/;
 
     // vIndex: 331
-    virtual ::RealmsEnvironment getRealmsEnvironment() const /*override*/;
+    virtual bool getUseRetailXboxSandbox() const /*override*/;
 
     // vIndex: 332
-    virtual void setRealmsEndpoint(::std::string const&) /*override*/;
+    virtual void setXboxLiveSandbox(::XboxSandboxEnvironment) /*override*/;
 
     // vIndex: 333
-    virtual ::std::string const& getRealmsEndpoint() const /*override*/;
+    virtual ::std::string const& getXboxLiveSandbox() const /*override*/;
 
     // vIndex: 334
-    virtual ::std::string const& getRealmsV2Endpoint() const /*override*/;
+    virtual void setRealmsEnvironment(::RealmsEnvironment) /*override*/;
 
     // vIndex: 335
-    virtual void setRealmsEndpointPayment(::std::string const&) /*override*/;
+    virtual ::RealmsEnvironment getRealmsEnvironment() const /*override*/;
 
     // vIndex: 336
-    virtual ::std::string const& getRealmsEndpointPayment() const /*override*/;
+    virtual void setRealmsEndpoint(::std::string const&) /*override*/;
 
     // vIndex: 337
-    virtual void setRealmsRelyingParty(::std::string const&) /*override*/;
+    virtual ::std::string const& getRealmsEndpoint() const /*override*/;
 
     // vIndex: 338
-    virtual ::std::string const& getRealmsRelyingParty() const /*override*/;
+    virtual ::std::string const& getRealmsV2Endpoint() const /*override*/;
 
     // vIndex: 339
-    virtual void setRealmsRelyingPartyPayment(::std::string const&) /*override*/;
+    virtual void setRealmsEndpointPayment(::std::string const&) /*override*/;
 
     // vIndex: 340
-    virtual ::std::string const& getRealmsRelyingPartyPayment() const /*override*/;
+    virtual ::std::string const& getRealmsEndpointPayment() const /*override*/;
 
     // vIndex: 341
-    virtual void setStoreHasPurchasedCoins(bool) /*override*/;
+    virtual void setRealmsRelyingParty(::std::string const&) /*override*/;
 
     // vIndex: 342
-    virtual bool getStoreHasPurchasedCoins() const /*override*/;
+    virtual ::std::string const& getRealmsRelyingParty() const /*override*/;
 
     // vIndex: 343
-    virtual void setShowUnfulfilledPurchaseModal(bool) /*override*/;
+    virtual void setRealmsRelyingPartyPayment(::std::string const&) /*override*/;
 
     // vIndex: 344
-    virtual bool getShowUnfulfilledPurchaseModal() const /*override*/;
+    virtual ::std::string const& getRealmsRelyingPartyPayment() const /*override*/;
 
     // vIndex: 345
-    virtual void setSwitchCoinDebug(bool) /*override*/;
+    virtual void setStoreHasPurchasedCoins(bool) /*override*/;
 
     // vIndex: 346
+    virtual bool getStoreHasPurchasedCoins() const /*override*/;
+
+    // vIndex: 347
+    virtual void setShowUnfulfilledPurchaseModal(bool) /*override*/;
+
+    // vIndex: 348
+    virtual bool getShowUnfulfilledPurchaseModal() const /*override*/;
+
+    // vIndex: 349
+    virtual void setSwitchCoinDebug(bool) /*override*/;
+
+    // vIndex: 350
     virtual bool getSwitchCoinDebug() const /*override*/;
 
-    // vIndex: 352
+    // vIndex: 356
     virtual void setEduHasLoggedIn(bool) /*override*/;
 
-    // vIndex: 353
+    // vIndex: 357
     virtual bool getEduHasLoggedIn() const /*override*/;
 
-    // vIndex: 354
+    // vIndex: 358
     virtual void setShownPlatformNetworkConnectConfirmation(bool) /*override*/;
 
-    // vIndex: 355
+    // vIndex: 359
     virtual bool getShownPlatformNetworkConnectConfirmation() const /*override*/;
 
-    // vIndex: 356
+    // vIndex: 360
     virtual void setShownPlatformPremiumUpsell(bool) /*override*/;
 
-    // vIndex: 357
+    // vIndex: 361
     virtual bool getShownPlatformPremiumUpsell() const /*override*/;
 
-    // vIndex: 358
+    // vIndex: 362
     virtual void setAppLaunchedCount(int) /*override*/;
 
-    // vIndex: 359
+    // vIndex: 363
     virtual int getAppLaunchedCount() const /*override*/;
 
-    // vIndex: 360
+    // vIndex: 364
     virtual void setEcoMode(bool) /*override*/;
 
-    // vIndex: 361
+    // vIndex: 365
     virtual bool getEcoMode() const /*override*/;
 
-    // vIndex: 362
+    // vIndex: 366
     virtual void setEduCloudBackupToggle(bool) /*override*/;
 
-    // vIndex: 363
+    // vIndex: 367
     virtual bool getEduCloudBackupToggle() const /*override*/;
 
-    // vIndex: 364
+    // vIndex: 368
     virtual void setUseFontOverrides(bool) /*override*/;
 
-    // vIndex: 365
+    // vIndex: 369
     virtual bool getUseFontOverrides() const /*override*/;
 
-    // vIndex: 366
-    virtual void setEduCloudResumableUpload(bool) /*override*/;
-
-    // vIndex: 367
-    virtual bool getEduCloudResumableUpload() const /*override*/;
-
-    // vIndex: 368
+    // vIndex: 370
     virtual ::NewInteractionModel getEffectiveTouchScheme() const /*override*/;
     // NOLINTEND
 

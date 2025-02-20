@@ -40,22 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OnScreenTextureAnimationPacket();
-
-    MCAPI explicit OnScreenTextureAnimationPacket(uint effectID);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(uint effectID);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

@@ -27,29 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockEventDispatcherToken();
-
-    MCAPI BlockEventDispatcherToken(::BlockEventDispatcherToken&& rhs);
-
-    MCFOLD ::BlockEventDispatcher* getDispatcher() const;
-
-    MCFOLD int getHandle() const;
-
-    MCAPI bool isValid() const;
-
     MCAPI ::BlockEventDispatcherToken& operator=(::BlockEventDispatcherToken&& rhs);
 
     MCAPI void unregister();
 
     MCAPI ~BlockEventDispatcherToken();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::BlockEventDispatcherToken&& rhs);
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 6
+    // vIndex: 5
     virtual void onAppResumed() /*override*/;
 
     // vIndex: 0
@@ -31,7 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tryCreateInstance();
+    MCAPI static void invalidateThreadIndex();
     // NOLINTEND
 
 public:

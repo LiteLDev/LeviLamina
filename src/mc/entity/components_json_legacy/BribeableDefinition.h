@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BribeableComponent;
-class EntityContext;
 class ItemDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -31,8 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD void addBribeItem(::ItemDescriptor const& itemDescriptor);
-
-    MCAPI void initialize(::EntityContext&, ::BribeableComponent& component) const;
     // NOLINTEND
 
 public:

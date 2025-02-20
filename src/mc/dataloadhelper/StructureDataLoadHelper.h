@@ -98,34 +98,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructureDataLoadHelper(
-        ::BlockPos const& structurePlacementLocation,
-        ::BlockPos const& structureWorldOrigin,
-        ::Vec3 const&     rotationPivot,
-        ::ActorUniqueID   ownerID,
-        ::Rotation        rotation,
-        ::Mirror          mirror,
-        ::Level&          level
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockPos const& structurePlacementLocation,
-        ::BlockPos const& structureWorldOrigin,
-        ::Vec3 const&     rotationPivot,
-        ::ActorUniqueID   ownerID,
-        ::Rotation        rotation,
-        ::Mirror          mirror,
-        ::Level&          level
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

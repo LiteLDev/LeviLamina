@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
@@ -46,18 +46,6 @@ public:
 
     // vIndex: 0
     virtual ~ChargeAttackGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ChargeAttackGoal(::Mob& pathMob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& pathMob);
     // NOLINTEND
 
 public:

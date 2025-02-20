@@ -36,31 +36,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EndPodiumFeature(bool active);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& CORNER_ROUNDING();
-
     MCAPI static ::BlockPos const& END_PODIUM_CHUNK_POSITION();
 
     MCAPI static ::BlockPos const& END_PODIUM_LOCATION();
-
-    MCAPI static int const& PODIUM_PILLAR_HEIGHT();
-
-    MCAPI static int const& PODIUM_RADIUS();
-
-    MCAPI static int const& RIM_RADIUS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool active);
     // NOLINTEND
 
 public:

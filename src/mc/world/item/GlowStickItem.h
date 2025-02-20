@@ -32,23 +32,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlowStickItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<::ItemColor const[]> COLORS();
-
-    MCAPI static int const& MAX_ACTIVE_TICKS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

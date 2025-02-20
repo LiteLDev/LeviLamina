@@ -11,9 +11,9 @@ class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class ItemStack;
 class StorageItemComponent;
+class StorageWeightLimitItemComponent;
 struct ContainerOwner;
 struct FullContainerName;
-struct PlayerContainerRefresher;
 // clang-format on
 
 class DynamicContainerTracker {
@@ -40,8 +40,11 @@ public:
         ::WeakRef<::IContainerRegistryTracker> registryManager
     );
 
-    MCAPI ::std::optional<::ItemStack>
-    _initializeStorageItem(::ItemStack const& item, ::StorageItemComponent* storageItemComponent);
+    MCAPI ::std::optional<::ItemStack> _initializeStorageItem(
+        ::ItemStack const&                 item,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
+    );
 
     MCAPI void _markAux(::ItemStack const& item, int depth);
 
@@ -49,15 +52,7 @@ public:
 
     MCAPI ::std::pair<::FullContainerName, ::ItemStack> _tryInitID(::ItemStack const& item) const;
 
-    MCAPI void broadcastChanges(::PlayerContainerRefresher& refresher) const;
-
     MCAPI void giveContainerLifetimes(::ContainerOwner& containerOwner) const;
-
-    MCAPI bool hasTrackingData() const;
-
-    MCAPI void mark(::ItemStack const& item);
-
-    MCAPI void sweep();
 
     MCAPI ::std::optional<::ItemStack> tryTrackContainer(::ItemStack const& item);
     // NOLINTEND

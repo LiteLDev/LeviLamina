@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/actor/ScriptActor.h"
 #include "mc/world/level/GameType.h"
 
@@ -22,6 +22,7 @@ namespace ScriptModuleMinecraft { class ScriptClientSystemInfo; }
 namespace ScriptModuleMinecraft { class ScriptInputInfo; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptMolangVariableMap; }
+namespace ScriptModuleMinecraft { class ScriptPlayerAimAssist; }
 namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace ScriptModuleMinecraft { struct ScriptCamera; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
@@ -44,6 +45,7 @@ class ScriptPlayer : public ::ScriptModuleMinecraft::ScriptActor {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnke7a12b;
     ::ll::UntypedStorage<8, 32> mUnke4f065;
     ::ll::UntypedStorage<8, 40> mUnk5c4fca;
     ::ll::UntypedStorage<8, 40> mUnk49ae46;
@@ -82,7 +84,7 @@ public:
     virtual ::ScoreboardId const& _getScoreboardId(::Scoreboard const& scoreboard) const /*override*/;
 
     // vIndex: 0
-    virtual ~ScriptPlayer() /*override*/ = default;
+    virtual ~ScriptPlayer() /*override*/;
     // NOLINTEND
 
 public:
@@ -96,6 +98,8 @@ public:
         ::ScriptModuleMinecraft::ScriptActorData const& playerData,
         ::Scripting::WeakLifetimeScope const&           scope
     );
+
+    MCAPI uint _calculateTotalXp(::Player const& player) const;
 
     MCAPI ::Scripting::Result<void> _playOrQueueMusic(
         ::Player&                                                    player,
@@ -116,6 +120,8 @@ public:
     MCAPI ::Scripting::Result_deprecated<uint> calculateTotalXp() const;
 
     MCAPI ::Scripting::Result<void> eatItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack);
+
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerAimAssist> getAimAssist() const;
 
     MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCamera>>
     getCamera();
@@ -213,17 +219,12 @@ public:
     MCAPI ::Scripting::Result<void> startItemCooldown(::std::string const& itemType, int duration);
 
     MCAPI ::Scripting::Result<void> stopMusic();
-
-    MCAPI ::Player* tryGetPlayer() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayer> bind();
-
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>
-    getHandle(::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);
@@ -243,7 +244,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

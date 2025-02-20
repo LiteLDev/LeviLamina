@@ -20,8 +20,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemStackRequestSlotInfo& operator=(ItemStackRequestSlotInfo const&);
+    ItemStackRequestSlotInfo(ItemStackRequestSlotInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::ItemStackRequestSlotInfo& operator=(::ItemStackRequestSlotInfo&&);
+
     MCAPI ~ItemStackRequestSlotInfo();
     // NOLINTEND
 

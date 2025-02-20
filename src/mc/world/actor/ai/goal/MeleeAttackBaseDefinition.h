@@ -55,7 +55,7 @@ public:
     // NOLINTBEGIN
     MCAPI MeleeAttackBaseDefinition();
 
-    MCAPI void initialize(::EntityContext& entity, ::MeleeAttackBaseGoal& goal) const;
+    MCAPI void initialize(::EntityContext& goal, ::MeleeAttackBaseGoal& entity) const;
     // NOLINTEND
 
 public:

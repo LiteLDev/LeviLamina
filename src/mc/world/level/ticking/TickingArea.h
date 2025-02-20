@@ -197,7 +197,7 @@ public:
 
     MCAPI bool $isAlwaysActive() const;
 
-    MCFOLD float $getMaxDistToPlayers() const;
+    MCAPI float $getMaxDistToPlayers() const;
 
     MCFOLD ::ITickingAreaView const& $getView() const;
 

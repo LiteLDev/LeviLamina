@@ -72,7 +72,7 @@ public:
         ::std::string const&,
         ::std::string const&,
         ::std::function<void(::EduCloud::UploadWorldProgress, ::MSGraph::GraphResponse)>,
-        ::std::function<void(uint64, uint64, bool)>,
+        ::std::function<void(uint64, uint64)>,
         bool
     ) = 0;
 

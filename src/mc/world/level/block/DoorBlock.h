@@ -21,8 +21,9 @@ class IConstBlockSource;
 class ItemInstance;
 class Material;
 class Player;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockPlayerInteractEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class DoorBlock : public ::BlockLegacy {
@@ -88,9 +89,6 @@ public:
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
-
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
@@ -104,9 +102,6 @@ public:
 
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 89
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
@@ -141,7 +136,10 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 149
+    // vIndex: 150
+    virtual void _useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+
+    // vIndex: 148
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 0
@@ -155,27 +153,20 @@ public:
 
     MCAPI ::Direction::Type getBlockedDirection(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI int getDir(::IConstBlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI void
-    getDoorPosition(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& lowerPos, ::BlockPos& upperPos) const;
-
-    MCAPI float getDoorThickness() const;
-
-    MCAPI bool hasRightHinge(::IConstBlockSource const& region, ::BlockPos const& pos) const;
-
     MCAPI bool isToggled(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void setToggled(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor, bool toggled) const;
+
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isDoorComplete(::BlockSource const& region, ::BlockPos const& pos);
-
     MCAPI static void getDoorBlocks(
         ::IConstBlockSource const& region,
         ::BlockLegacy const&       expectedDoorBlockLegacy,
@@ -183,8 +174,6 @@ public:
         ::Block const*&            outLowerBlock,
         ::Block const*&            outUpperBlock
     );
-
-    MCAPI static uchar getDoorFacing(int facing);
     // NOLINTEND
 
 public:
@@ -221,8 +210,6 @@ public:
     MCAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
-
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
@@ -230,8 +217,6 @@ public:
     MCFOLD bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -252,6 +237,8 @@ public:
     MCFOLD bool $isDoorBlock() const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+    MCAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
     // NOLINTEND

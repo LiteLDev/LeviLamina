@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_20_50/BlockDescriptor.h"
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
 #include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
@@ -13,8 +13,7 @@ class CompoundTag;
 class ExpressionNode;
 class HashedString;
 class SpinLockImpl;
-namespace SharedTypes::v1_20_50 { struct BlockDescriptor; }
-namespace cereal { struct ReflectionCtx; }
+namespace SharedTypes::Legacy { struct BlockDescriptor; }
 // clang-format on
 
 class BlockDescriptor {
@@ -30,24 +29,26 @@ public:
     // clang-format on
 
     // BlockDescriptor inner types define
-    using CompoundProxy = ::SharedTypes::v1_20_50::BlockDescriptor::Compound;
+    using CompoundProxy = ::SharedTypes::Legacy::BlockDescriptor::Compound;
 
     struct State {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 48, ::HashedString>                                     mName;
-        ::ll::TypedStorage<8, 40, ::SharedTypes::v1_20_50::BlockDescriptor::Compound> mState;
+        ::ll::TypedStorage<8, 48, ::HashedString>                                   mName;
+        ::ll::TypedStorage<8, 40, ::SharedTypes::Legacy::BlockDescriptor::Compound> mState;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        State(State const&);
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI State(::HashedString name, int intState);
-
-        MCAPI State(::HashedString name, ::SharedTypes::v1_20_50::BlockDescriptor::Compound state);
-
         MCAPI State(::HashedString name, ::std::string const& stringState);
+
+        MCAPI ::BlockDescriptor::State& operator=(::BlockDescriptor::State const&);
 
         MCAPI ~State();
         // NOLINTEND
@@ -55,10 +56,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::HashedString name, int intState);
-
-        MCAPI void* $ctor(::HashedString name, ::SharedTypes::v1_20_50::BlockDescriptor::Compound state);
-
         MCAPI void* $ctor(::HashedString name, ::std::string const& stringState);
         // NOLINTEND
 
@@ -127,7 +124,7 @@ public:
     // NOLINTBEGIN
     MCAPI BlockDescriptor();
 
-    MCAPI explicit BlockDescriptor(::SharedTypes::v1_20_50::BlockDescriptor desc);
+    MCAPI explicit BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCAPI explicit BlockDescriptor(::HashedString const& fullName);
 
@@ -137,17 +134,15 @@ public:
 
     MCAPI BlockDescriptor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
 
+    MCAPI bool _anyTagsMatch(::Block const& block) const;
+
+    MCAPI void _resolve(bool logInvalidBlocks) const;
+
+    MCAPI bool _statesMatch(::Block const& block) const;
+
     MCAPI ::Block const& getBlockOrUnknownBlock() const;
 
     MCAPI ::BlockDescriptor::CompareType const& getCompareType() const;
-
-    MCAPI ::std::string const& getFullName() const;
-
-    MCFOLD ::std::vector<::BlockDescriptor::State> const& getStates() const;
-
-    MCAPI ::std::string const& getTagExpression() const;
-
-    MCAPI bool isValid() const;
 
     MCAPI bool matches(::Block const& block) const;
 
@@ -157,15 +152,9 @@ public:
 
     MCAPI void operator=(::BlockDescriptor const& rhs);
 
-    MCAPI bool operator==(::BlockDescriptor const& rhs) const;
-
-    MCAPI void setContentLogOnError(bool value) const;
-
     MCAPI ::std::unique_ptr<::CompoundTag> toCompoundTag() const;
 
     MCAPI ::Block const* tryGetBlock() const;
-
-    MCAPI ::Block const* tryGetBlockNoLogging() const;
 
     MCAPI ~BlockDescriptor();
     // NOLINTEND
@@ -177,8 +166,6 @@ public:
 
     MCAPI static bool
     anyMatch(::std::vector<::BlockDescriptor> const& blockDescriptors, ::BlockDescriptor const& otherBlockDescriptor);
-
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCAPI static ::BlockDescriptor fromCompoundTag(::CompoundTag const& tag);
 
@@ -200,7 +187,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::BlockDescriptor desc);
+    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCAPI void* $ctor(::HashedString const& fullName);
 

@@ -24,16 +24,4 @@ public:
     DimensionStateComponent& operator=(DimensionStateComponent const&);
     DimensionStateComponent(DimensionStateComponent const&);
     DimensionStateComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DimensionStateComponent(::std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::chrono::steady_clock::time_point loadIntoDimensionTimeout);
-    // NOLINTEND
 };

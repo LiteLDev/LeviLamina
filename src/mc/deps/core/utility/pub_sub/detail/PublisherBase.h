@@ -46,20 +46,12 @@ public:
         ::Bedrock::PubSub::ConnectPosition                                        at,
         ::std::optional<int>                                                      group
     );
-
-    MCFOLD bool empty() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

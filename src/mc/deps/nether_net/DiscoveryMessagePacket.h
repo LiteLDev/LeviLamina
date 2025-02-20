@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/DiscoveryPacket.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace NetherNet { struct NetworkID; }
-// clang-format on
-
 namespace NetherNet {
 
 struct DiscoveryMessagePacket : public ::NetherNet::DiscoveryPacket {
@@ -28,23 +23,9 @@ public:
     DiscoveryMessagePacket();
 
 public:
-    // member functions
+    // static variables
     // NOLINTBEGIN
-    MCAPI DiscoveryMessagePacket(
-        ::NetherNet::NetworkID senderId,
-        ::NetherNet::NetworkID recipientId,
-        ::std::string_view     message
-    );
-
-    MCAPI ::std::string_view MessageData() const;
-
-    MCAPI ::NetherNet::NetworkID RecipientId() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NetherNet::NetworkID senderId, ::NetherNet::NetworkID recipientId, ::std::string_view message);
+    MCAPI static uint64 const& PAYLOAD_SIZE_MAX();
     // NOLINTEND
 };
 

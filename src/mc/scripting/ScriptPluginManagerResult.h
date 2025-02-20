@@ -28,11 +28,7 @@ public:
     MCAPI ::ScriptPluginResult&
     getOrCreatePluginResults(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
-    MCFOLD ::std::vector<::ScriptPluginResult> const& getResults() const;
-
     MCAPI void logMessages() const;
-
-    MCAPI void logPlugins() const;
 
     MCAPI ~ScriptPluginManagerResult();
     // NOLINTEND

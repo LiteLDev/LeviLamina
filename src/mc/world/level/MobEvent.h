@@ -23,12 +23,6 @@ public:
 
     MCAPI MobEvent(::std::string name, ::std::string localizableName, bool val);
 
-    MCFOLD ::std::string const& getLocalizableName() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD bool isEnabled() const;
-
     MCAPI ~MobEvent();
     // NOLINTEND
 

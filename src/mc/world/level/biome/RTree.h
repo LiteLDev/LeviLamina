@@ -23,7 +23,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 112> mUnk81eae8;
         ::ll::UntypedStorage<8, 24>  mUnkb13f4d;
-        ::ll::UntypedStorage<8, 16>  mUnk6f35b4;
+        ::ll::UntypedStorage<8, 16>  mUnk2d76d4;
         ::ll::UntypedStorage<8, 8>   mUnk8b9903;
         // NOLINTEND
 
@@ -88,6 +88,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RTree(::RTree&&);
+
     MCAPI ~RTree();
     // NOLINTEND
 
@@ -97,6 +99,12 @@ public:
     MCAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
 
     MCAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::RTree&&);
     // NOLINTEND
 
 public:

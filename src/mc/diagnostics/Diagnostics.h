@@ -10,11 +10,7 @@
 namespace Bedrock::Diagnostics {
 // functions
 // NOLINTBEGIN
-MCAPI void debugBreak();
-
 MCAPI bool handleAssert(char const* fmt, char const* assert, int areaId, char const* file, char const* function, ...);
-
-MCAPI void interceptAsserts(::std::function<void()> const& f, ::std::function<void(::std::string)> const& handleAssert);
 
 MCAPI void
 log(::BedrockLog::LogCategory,

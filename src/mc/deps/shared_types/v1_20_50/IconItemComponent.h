@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_50 {
 
 struct IconItemComponent {
@@ -27,12 +22,6 @@ public:
     MCFOLD ::SharedTypes::v1_20_50::IconItemComponent& operator=(::SharedTypes::v1_20_50::IconItemComponent&&);
 
     MCFOLD ::SharedTypes::v1_20_50::IconItemComponent& operator=(::SharedTypes::v1_20_50::IconItemComponent const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

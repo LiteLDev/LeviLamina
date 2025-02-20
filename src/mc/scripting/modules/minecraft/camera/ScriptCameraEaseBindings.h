@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/EasingType.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 

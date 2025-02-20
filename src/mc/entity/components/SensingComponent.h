@@ -29,8 +29,6 @@ public:
     // NOLINTBEGIN
     MCAPI bool canSee(::Mob& owner, ::Actor const& target);
 
-    MCAPI void reset();
-
     MCAPI bool withinFOV(::Mob& owner, ::Vec3 const& targetPosition, float fov);
 
     MCAPI ~SensingComponent();

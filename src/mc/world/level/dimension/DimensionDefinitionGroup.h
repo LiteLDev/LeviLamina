@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/world/level/GeneratorType.h"
-#include "mc/world/level/dimension/DimensionDocument.h"
 
 // auto generated forward declare list
 // clang-format off
+class DimensionDataLoader;
 class ResourcePackManager;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -46,21 +46,14 @@ public:
     // NOLINTBEGIN
     MCAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
 
-    MCAPI DimensionDefinitionGroup(
-        ::cereal::ReflectionCtx&     ctx,
-        ::ResourcePackManager* const rpm,
-        bool                         cavesAndCliffsExperimentIsEnabled
+    MCAPI DimensionDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
+
+    MCAPI ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup&&);
+
+    MCAPI bool tryAddDimensionDefinitionByString(
+        ::std::string const&  dimensionDefinitionJSON,
+        ::DimensionDataLoader dimensionLoader
     );
-
-    MCAPI bool _checkValidDimensionBounds(::DimensionDocument::Dimension const& dimension);
-
-    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
-    getDimensionDefinition(::std::string const& dimensionName) const;
-
-    MCFOLD bool isEmpty() const;
-
-    MCAPI bool
-    tryAddDimensionDefinitionByString(::cereal::ReflectionCtx& ctx, ::std::string const& dimensionDefinitionJSON);
 
     MCAPI ~DimensionDefinitionGroup();
     // NOLINTEND
@@ -70,8 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::DimensionDefinitionGroup const&);
 
-    MCAPI void*
-    $ctor(::cereal::ReflectionCtx& ctx, ::ResourcePackManager* const rpm, bool cavesAndCliffsExperimentIsEnabled);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
     // NOLINTEND
 
 public:

@@ -15,7 +15,6 @@ struct AABBShapeComponent;
 struct EntityNeedsInitializeFlagComponent;
 struct KeepRidingEvenIfTooLargeForVehicleFlagComponent;
 struct PassengerComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class PreventMobEjectionFromLegacyVehicleSystem {
@@ -39,7 +38,5 @@ public:
         ::ViewT<::StrictEntityContext, ::RideableComponent const>           vehicleView,
         ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent> modifier
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

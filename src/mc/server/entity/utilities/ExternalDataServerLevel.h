@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputMode.h"
 #include "mc/entity/utilities/ExternalDataInterface.h"
 #include "mc/input/ClientPlayMode.h"
@@ -11,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ILevel;
 class Vec3;
 struct AdventureSettings;
 // clang-format on
@@ -55,18 +53,6 @@ public:
 
     // vIndex: 7
     virtual ::Vec3 getWorldSpaceVRRealityGazeDir() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ExternalDataServerLevel(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel const> level);
     // NOLINTEND
 
 public:

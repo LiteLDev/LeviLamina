@@ -30,7 +30,7 @@ public:
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMinBounds;
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMaxBounds;
     ::ll::TypedStorage<4, 4, ::DimensionType>         mDimensionType;
-    ::ll::TypedStorage<8, 120, ::MinEngineVersion>    mMinEngineVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>     mMinEngineVersion;
     ::ll::TypedStorage<4, 4, ::EntityNetId>           mEntityNetId;
     // NOLINTEND
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/components/ECSScriptActorComponent.h"
 
 // auto generated forward declare list
@@ -12,10 +12,8 @@
 class ActorFilterGroup;
 class HealableComponent;
 class HealableDefinition;
-class WeakEntityRef;
 struct FeedItem;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -32,12 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptHealableComponent(
-        ::WeakEntityRef const&                entity,
-        ::Scripting::WeakLifetimeScope const& scope,
-        ::std::string const&                  id
-    );
-
     MCAPI ::Scripting::Result_deprecated<::ActorFilterGroup> getFilters() const;
 
     MCAPI ::Scripting::Result_deprecated<bool> getForceUse() const;
@@ -56,13 +48,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static char const*& ComponentId();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::WeakEntityRef const& entity, ::Scripting::WeakLifetimeScope const& scope, ::std::string const& id);
     // NOLINTEND
 
 public:

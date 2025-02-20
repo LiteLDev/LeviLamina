@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ScriptModuleStartupEvent;
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -24,16 +18,14 @@ public:
 public:
     // prevent constructor by default
     ScriptModuleStartupBeforeEvent& operator=(ScriptModuleStartupBeforeEvent const&);
-    ScriptModuleStartupBeforeEvent(ScriptModuleStartupBeforeEvent const&);
     ScriptModuleStartupBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptModuleStartupBeforeEvent(
-        ::ScriptModuleStartupEvent const&     eventData,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI ScriptModuleStartupBeforeEvent(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
+
+    MCAPI ~ScriptModuleStartupBeforeEvent();
     // NOLINTEND
 
 public:
@@ -46,7 +38,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleStartupEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

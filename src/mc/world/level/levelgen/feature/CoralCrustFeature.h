@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BlockSource;
 class LegacyStructureSettings;
@@ -29,6 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos) const;
+
     MCAPI ::BlockPos _getCropOffsetFromRot(int rot, int type) const;
 
     MCAPI ::BlockPos _getOffsetFromRot(int rot, int type) const;
@@ -50,9 +51,9 @@ public:
         ::LegacyStructureSettings& settings
     ) const;
 
-    MCAPI void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
+    MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
 
-    MCFOLD ::gsl::not_null<::Block const*> _setCoralHangData(int face, int color, int type) const;
+    MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

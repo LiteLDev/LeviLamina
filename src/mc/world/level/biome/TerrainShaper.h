@@ -26,9 +26,9 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCFOLD static float getContinents(::TerrainShaper::Point const& point);
+        MCAPI static float getContinents(::TerrainShaper::Point const& point);
 
-        MCFOLD static float getErosion(::TerrainShaper::Point const& point);
+        MCAPI static float getErosion(::TerrainShaper::Point const& point);
 
         MCFOLD static float getRidges(::TerrainShaper::Point const& point);
 
@@ -73,10 +73,6 @@ public:
         ::ToFloatFunction<::TerrainShaper::Point> jaggednessSpline
     );
 
-    MCAPI float factor(float continentalness, float erosion, float weirdness) const;
-
-    MCAPI float jaggedness(float continentalness, float erosion, float weirdness) const;
-
     MCAPI float offset(float continentalness, float erosion, float weirdness) const;
 
     MCAPI ~TerrainShaper();
@@ -86,9 +82,9 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ToFloatFunction<::TerrainShaper::Point> buildErosionJaggednessSpline(
-        float jaggednessFactorAtPeakRidgeAndErosionIndex0,
         float jaggednessFactorAtPeakRidgeAndErosionIndex1,
         float jaggednessFactorAtHighRidgeAndErosionIndex0,
+        float jaggednessFactorAtPeakRidgeAndErosionIndex0,
         float jaggednessFactorAtHighRidgeAndErosionIndex1
     );
 

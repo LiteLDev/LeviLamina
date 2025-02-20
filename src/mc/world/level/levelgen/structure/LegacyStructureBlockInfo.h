@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-class BlockPos;
-class CompoundTag;
-// clang-format on
-
 class LegacyStructureBlockInfo {
 public:
     // member variables
@@ -24,22 +17,4 @@ public:
     LegacyStructureBlockInfo& operator=(LegacyStructureBlockInfo const&);
     LegacyStructureBlockInfo(LegacyStructureBlockInfo const&);
     LegacyStructureBlockInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LegacyStructureBlockInfo(
-        ::BlockPos const&                pos,
-        ::std::unique_ptr<::CompoundTag> tag,
-        ::Block const&                   block,
-        ::Block const&                   extraBlock
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::BlockPos const& pos, ::std::unique_ptr<::CompoundTag> tag, ::Block const& block, ::Block const& extraBlock);
-    // NOLINTEND
 };

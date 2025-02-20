@@ -13,18 +13,5 @@ public:
     // prevent constructor by default
     CallbackTokenCancelState& operator=(CallbackTokenCancelState const&);
     CallbackTokenCancelState(CallbackTokenCancelState const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CallbackTokenCancelState();
-
-    MCAPI bool wasCanceled() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
+    CallbackTokenCancelState();
 };

@@ -134,7 +134,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& getEmptyString();
+    MCFOLD static ::HashedString const& getEmptyString();
     // NOLINTEND
 
 public:
@@ -152,11 +152,9 @@ public:
 
     MCAPI void* $ctor(::HashedString const& rhs);
 
-    MCAPI void* $ctor(::std::string const& str);
+    MCFOLD void* $ctor(::std::string const& str);
 
     MCAPI void* $ctor(char const* str);
-
-    MCAPI void* $ctor(::std::string_view str);
 
     MCAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND

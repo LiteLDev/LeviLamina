@@ -26,6 +26,7 @@ class PackSourceReport;
 class ResourceLocation;
 class ResourcePack;
 class ResourcePackStack;
+class SemVersion;
 class TaskGroup;
 struct InvalidPacksFilterGroup;
 struct PackIdVersion;
@@ -51,7 +52,7 @@ public:
         ::ll::TypedStorage<1, 1, bool>                          mDiscoveredOnDisk;
         ::ll::TypedStorage<8, 56, ::ResourceLocation>           mResourceLocation;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPastHashes;
-        ::ll::TypedStorage<8, 136, ::PackIdVersion>             mIdentity;
+        ::ll::TypedStorage<8, 48, ::PackIdVersion>              mIdentity;
         // NOLINTEND
     };
 
@@ -67,7 +68,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mWorldPackSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mPremiumWorldTemplatePackSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mTempWorldTemplatePackSource;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mDynamicPackageSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSourceReport>>                   mPackSourceReport;
     ::ll::TypedStorage<8, 8, ::ResourcePack*>                                         mEditorPack;
     ::ll::TypedStorage<8, 8, ::ResourcePack*>                                         mVanillaPack;
@@ -90,8 +90,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                       mCancelInitialization;
     ::ll::TypedStorage<1, 1, bool>                                                       mInitialized;
     ::ll::TypedStorage<1, 1, bool>                                                       mReloadUserPacksRequested;
-    ::ll::TypedStorage<1, 1, bool>               mReloadDynamicPackagePacksRequested;
-    ::ll::TypedStorage<1, 1, bool>               mRefreshPacksRequested;
+    ::ll::TypedStorage<1, 1, bool>                                                       mRefreshPacksRequested;
     ::ll::TypedStorage<8, 24, ::ContentIdentity> mCurrentPremiumWorldTemplateIdentity;
     // NOLINTEND
 
@@ -208,62 +207,59 @@ public:
     virtual void requestReloadUserPacks() /*override*/;
 
     // vIndex: 32
-    virtual void requestReloadDynamicPackagePacks() /*override*/;
-
-    // vIndex: 33
     virtual ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> getKeyProvider() const /*override*/;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual ::PackManifestFactory& getPackManifestFactory() /*override*/;
 
-    // vIndex: 35
+    // vIndex: 34
     virtual ::PackSettingsFactory& getPackSettingsFactory() const /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual ::PackSourceFactory& getPackSourceFactory() /*override*/;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual ::CompositePackSource const* getWorldPackSource() const /*override*/;
 
-    // vIndex: 38
+    // vIndex: 37
     virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin type) const /*override*/;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType type) const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual ::std::vector<::ResourcePack*> getPacksByCategory(::PackCategory category) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual void addInvalidPack(::ResourceLocation const& packLocation, ::PackType type) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType type) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const
         /*override*/;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual void deletePack(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual void deletePackFiles(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual void postDeletePack(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual void untrackInvalidPack(::ResourceLocation const& packLocation) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 47
     virtual void
     registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual void unregisterResourcePackRemovedCallback(void* ptr) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual bool isInitialized() /*override*/;
     // NOLINTEND
 
@@ -293,11 +289,15 @@ public:
 
     MCAPI void _loadPacks();
 
+    MCAPI bool _packExists(::mce::UUID const& packId, ::SemVersion const& version, ::PackOrigin origin) const;
+
     MCAPI void _reloadUserPacks();
 
     MCAPI bool _removePack(::ResourceLocation const& packLocation, bool unregisterDeleteCallback);
 
     MCAPI void _triggerRemoveResourcePackCallback(::ResourcePack* resourcePack);
+
+    MCAPI void _validateDependencies();
     // NOLINTEND
 
 public:
@@ -397,8 +397,6 @@ public:
     MCAPI void $refreshPacks();
 
     MCAPI void $requestReloadUserPacks();
-
-    MCAPI void $requestReloadDynamicPackagePacks();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
 

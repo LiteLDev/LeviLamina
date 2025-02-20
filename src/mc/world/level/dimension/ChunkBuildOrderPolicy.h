@@ -39,6 +39,12 @@ public:
         Influence& operator=(Influence const&);
         Influence(Influence const&);
         Influence();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI int getPriority(::ChunkPos const& cp) const;
+        // NOLINTEND
     };
 
 public:

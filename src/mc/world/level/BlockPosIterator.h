@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
-
 class BlockPosIterator {
 public:
     // BlockPosIterator inner types declare
@@ -40,23 +35,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FromCenter(::BlockPos const& pos, ::BlockPos const& reach);
-
-        MCAPI ::BlockPosIterator::FromCenter begin() const;
-
-        MCAPI ::BlockPosIterator::FromCenter end() const;
-
-        MCFOLD bool operator!=(::BlockPosIterator::FromCenter const& other) const;
-
-        MCFOLD ::BlockPos const& operator*();
-
         MCAPI ::BlockPosIterator::FromCenter& operator++();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockPos const& pos, ::BlockPos const& reach);
         // NOLINTEND
     };
 
@@ -76,23 +55,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ManhattanDistance(::BlockPos const& pos, int distance);
-
-        MCAPI ::BlockPosIterator::ManhattanDistance begin() const;
-
-        MCAPI ::BlockPosIterator::ManhattanDistance end() const;
-
-        MCFOLD bool operator!=(::BlockPosIterator::ManhattanDistance const& other) const;
-
-        MCFOLD ::BlockPos const& operator*();
-
         MCAPI ::BlockPosIterator::ManhattanDistance& operator++();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockPos const& pos, int distance);
         // NOLINTEND
     };
 
@@ -114,22 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPosIterator(::BlockPos const& a, ::BlockPos const& b);
-
-    MCAPI ::BlockPosIterator begin() const;
-
     MCAPI ::BlockPosIterator end() const;
-
-    MCAPI bool operator!=(::BlockPosIterator const& other) const;
-
-    MCFOLD ::BlockPos const& operator*();
-
-    MCAPI ::BlockPosIterator& operator++();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& a, ::BlockPos const& b);
     // NOLINTEND
 };

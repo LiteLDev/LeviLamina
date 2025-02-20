@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/network/packet/PlayerActionType.h"
-
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
-
 struct PlayerActionComponent {
 public:
     // member variables
@@ -25,25 +17,12 @@ public:
     // prevent constructor by default
     PlayerActionComponent& operator=(PlayerActionComponent const&);
     PlayerActionComponent(PlayerActionComponent const&);
+    PlayerActionComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerActionComponent();
-
     MCAPI PlayerActionComponent(::PlayerActionComponent&&);
-
-    MCAPI void addAbortDestroyBlock(::BlockPos const& pos, int data);
-
-    MCAPI void addAction(::PlayerActionType action);
-
-    MCAPI void addContinueDestroyBlock(::BlockPos const& pos, int facing);
-
-    MCAPI void addStartDestroyBlock(::BlockPos const& pos, int facing);
-
-    MCAPI void addStopDestroyBlock();
-
-    MCAPI void clear();
 
     MCAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
 
@@ -60,14 +39,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::PlayerActionComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -50,40 +50,20 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~ShareItemsGoal() /*override*/ = default;
+    virtual ~ShareItemsGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShareItemsGoal(
-        ::Mob&                                mob,
-        ::std::vector<::MobDescriptor> const& mobFilters,
-        float                                 speedModifier,
-        int                                   searchRange,
-        float                                 goalRadius
-    );
-
     MCAPI ::std::pair<int, ::ItemStack>
     selectEntityToShareWith(::std::vector<::std::pair<int, ::ItemStack>> const& shareableItems);
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                mob,
-        ::std::vector<::MobDescriptor> const& mobFilters,
-        float                                 speedModifier,
-        int                                   searchRange,
-        float                                 goalRadius
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

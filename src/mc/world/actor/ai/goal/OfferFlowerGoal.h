@@ -10,9 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorFilterGroup;
-class EntityContext;
 class Mob;
-class SemVersion;
 class Vec3;
 class WeakEntityRef;
 struct Tick;
@@ -53,12 +51,6 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::OfferFlowerGoal& goal) const;
-        // NOLINTEND
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void buildSchema(
@@ -67,8 +59,6 @@ public:
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OfferFlowerGoal::OfferFlowerDefinition>>&
                 root
         );
-
-        MCAPI static ::SemVersion getStrictParsingVersion();
         // NOLINTEND
 
     public:
@@ -121,20 +111,6 @@ public:
 
     // vIndex: 0
     virtual ~OfferFlowerGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit OfferFlowerGoal(::Mob& mob);
-
-    MCFOLD int getMaxOfferFlowerDurationTicks() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

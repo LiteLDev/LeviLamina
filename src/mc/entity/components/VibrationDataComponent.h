@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-class ILevel;
-struct Tick;
-// clang-format on
-
 class VibrationDataComponent {
 public:
     // member variables
@@ -22,16 +15,4 @@ public:
     VibrationDataComponent& operator=(VibrationDataComponent const&);
     VibrationDataComponent(VibrationDataComponent const&);
     VibrationDataComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void clearLastVibrationPos();
-
-    MCFOLD ::std::optional<::BlockPos> const& getLastVibrationPos() const;
-
-    MCAPI ::std::optional<uint64> getTicksSinceLastVibration(::ILevel const& level) const;
-
-    MCAPI void setLastVibrationPos(::BlockPos pos, ::Tick tick);
-    // NOLINTEND
 };

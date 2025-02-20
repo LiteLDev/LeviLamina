@@ -19,11 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void Lock();
-
     MCAPI SimpleMutex();
-
-    MCFOLD void Unlock();
 
     MCAPI ~SimpleMutex();
     // NOLINTEND

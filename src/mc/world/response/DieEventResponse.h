@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
-#include "mc/deps/shared_types/FilterSubject.h"
+#include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/util/Factory.h"
 #include "mc/world/response/EventResponse.h"
 

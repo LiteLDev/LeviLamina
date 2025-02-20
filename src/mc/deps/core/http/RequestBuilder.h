@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Http { class Request; }
-// clang-format on
-
 namespace Bedrock::Http {
 
 class RequestBuilder {
@@ -25,18 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Http::RequestBuilder& POST();
-
     MCAPI RequestBuilder();
 
-    MCAPI ::Bedrock::Http::RequestBuilder&
-    addHeader(::std::string const& header, ::std::string const& value, bool ignoreRestrictedHeaderCheck);
-
     MCAPI ::Bedrock::Http::RequestBuilder& body(::std::string const& plainText);
-
-    MCAPI ::Bedrock::Http::Request& build();
-
-    MCAPI ::Bedrock::Http::RequestBuilder& timeout(::std::chrono::seconds timeout);
 
     MCAPI ::Bedrock::Http::RequestBuilder& url(::std::string const& url);
 

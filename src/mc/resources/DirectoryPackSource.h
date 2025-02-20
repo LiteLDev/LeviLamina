@@ -72,6 +72,8 @@ public:
         bool                isDeveloperDirectory
     );
 
+    MCAPI void addPack(::std::unique_ptr<::Pack>&& pack);
+
     MCAPI bool removePack(::Core::Path const& fullPath);
     // NOLINTEND
 
@@ -101,7 +103,7 @@ public:
 
     MCFOLD void $forEachPack(::std::function<void(::Pack&)> callback);
 
-    MCFOLD ::PackOrigin $getPackOrigin() const;
+    MCAPI ::PackOrigin $getPackOrigin() const;
 
     MCFOLD ::PackType $getPackType() const;
 

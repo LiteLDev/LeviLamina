@@ -3,15 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ContainerScreenContext;
 class ItemStack;
-class Player;
-struct ActorUniqueID;
 // clang-format on
 
 class HorseContainerManagerModel : public ::LevelContainerManagerModel {
@@ -49,13 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HorseContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
-    // NOLINTEND
+    MCAPI void _onEquipSlotChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID const& uniqueId);
+    MCFOLD ::Actor* getEntity() const;
     // NOLINTEND
 
 public:

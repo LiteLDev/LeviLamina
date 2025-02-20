@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Objective;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -38,22 +37,6 @@ public:
 
     // vIndex: 0
     virtual ~RemoveObjectivePacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RemoveObjectivePacket();
-
-    MCAPI explicit RemoveObjectivePacket(::Objective const& objective);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Objective const& objective);
     // NOLINTEND
 
 public:

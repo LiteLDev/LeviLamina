@@ -15,7 +15,6 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Dimension;
-class Level;
 class PortalRecord;
 class PortalShape;
 struct DimensionTransitionComponent;
@@ -67,31 +66,19 @@ public:
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
     // vIndex: 0
-    virtual ~PortalForcer() /*override*/ = default;
+    virtual ~PortalForcer() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PortalForcer(::Level& level);
-
     MCAPI ::std::optional<::PortalRecord>
-    _findPortal(::DimensionType dimensionId, ::BlockPos const& centerBlockPos, int radius, ::BlockPos& targetBlockPos)
+    _findPortal(::DimensionType dimensionId, ::BlockPos const& centerBlockPos, int targetBlockPos, ::BlockPos& radius)
         const;
-
-    MCAPI ::PortalRecord const& addPortalRecord(::DimensionType dimensionType, ::PortalShape const& shape);
-
-    MCAPI ::PortalRecord const& addPortalRecord(::DimensionType dimensionType, ::PortalRecord toAdd);
 
     MCAPI ::PortalRecord const& createPortal(::Actor const& entity, int radius);
 
-    MCAPI bool
-    findPortal(::DimensionType dimensionId, ::BlockPos const& centerBlockPos, int radius, ::BlockPos& targetBlockPos)
-        const;
-
     MCAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
-
-    MCAPI bool portalRecordExists(::DimensionType dimensionType, ::PortalRecord const& record) const;
 
     MCAPI void removeMisalignedPortalRecords(
         ::BlockSource&        region,
@@ -117,15 +104,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

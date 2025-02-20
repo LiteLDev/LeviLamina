@@ -20,9 +20,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldGenContext& operator=(WorldGenContext const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI WorldGenContext(::WorldGenContext const&);
+
     MCAPI ~WorldGenContext();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::WorldGenContext const&);
     // NOLINTEND
 
 public:

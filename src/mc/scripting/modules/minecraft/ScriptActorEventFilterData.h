@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
-struct ActorUniqueID;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 // clang-format on
 
@@ -31,8 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorEventFilterData(::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
-
     MCAPI ~ScriptActorEventFilterData();
     // NOLINTEND
 
@@ -41,12 +37,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::optional<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData>
     create(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& actor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorUniqueID const& actorId, ::HashedString const& typeIdHash);
     // NOLINTEND
 
 public:

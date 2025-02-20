@@ -51,27 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplateDataResponsePacket();
-
-    MCAPI StructureTemplateDataResponsePacket(
-        ::std::string const&             structureName,
-        ::std::unique_ptr<::CompoundTag> structureTag,
-        ::StructureTemplateResponseType  type
-    );
-
     MCAPI ::StructureTemplateDataResponsePacket& operator=(::StructureTemplateDataResponsePacket&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::std::string const&             structureName,
-        ::std::unique_ptr<::CompoundTag> structureTag,
-        ::StructureTemplateResponseType  type
-    );
     // NOLINTEND
 
 public:

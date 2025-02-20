@@ -11,11 +11,9 @@
 // clang-format off
 class ActorDefinitionGroup;
 class BlockPos;
-class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class SpawnConditions;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
@@ -50,37 +48,37 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 183
+    // vIndex: 178
     virtual bool doPlayLandSound();
 
-    // vIndex: 184
+    // vIndex: 179
     virtual void playJumpSound();
 
-    // vIndex: 176
+    // vIndex: 171
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 185
+    // vIndex: 180
     virtual void decreaseSquish();
 
-    // vIndex: 186
+    // vIndex: 181
     virtual ::OwnerPtr<::EntityContext> createChild(int i);
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
@@ -96,9 +94,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI float getOldSquishValue() const;
-
-    MCAPI float getSquishValue() const;
+    MCFOLD int getSlimeSize() const;
 
     MCAPI void justJumped();
 
@@ -106,15 +102,7 @@ public:
 
     MCAPI void postNormalTick(bool wasOnGround);
 
-    MCAPI void preNormalTick();
-
     MCAPI void setSlimeSize(int size);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::function<bool(::SpawnConditions const&, ::BlockSource&)> getSpawnRulesCallback();
     // NOLINTEND
 
 public:

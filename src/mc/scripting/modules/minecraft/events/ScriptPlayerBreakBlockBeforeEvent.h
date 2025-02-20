@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 // auto generated forward declare list
@@ -29,12 +29,15 @@ public:
 public:
     // prevent constructor by default
     ScriptPlayerBreakBlockBeforeEvent& operator=(ScriptPlayerBreakBlockBeforeEvent const&);
-    ScriptPlayerBreakBlockBeforeEvent(ScriptPlayerBreakBlockBeforeEvent const&);
     ScriptPlayerBreakBlockBeforeEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
+
+    MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
+
     MCAPI ScriptPlayerBreakBlockBeforeEvent(
         ::Player const&                       player,
         ::Dimension&                          dimension,
@@ -42,6 +45,8 @@ public:
         ::ItemStackBase const&                item,
         ::Scripting::WeakLifetimeScope const& scope
     );
+
+    MCAPI ~ScriptPlayerBreakBlockBeforeEvent();
     // NOLINTEND
 
 public:
@@ -53,6 +58,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent&&);
+
     MCAPI void* $ctor(
         ::Player const&                       player,
         ::Dimension&                          dimension,
@@ -60,6 +69,12 @@ public:
         ::ItemStackBase const&                item,
         ::Scripting::WeakLifetimeScope const& scope
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

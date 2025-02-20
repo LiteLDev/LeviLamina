@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DragonFlamingGoal;
-class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -31,6 +29,7 @@ public:
     // prevent constructor by default
     DragonFlamingDefinition& operator=(DragonFlamingDefinition const&);
     DragonFlamingDefinition(DragonFlamingDefinition const&);
+    DragonFlamingDefinition();
 
 public:
     // virtual functions
@@ -43,26 +42,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DragonFlamingDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::DragonFlamingGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                    name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DragonFlamingDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

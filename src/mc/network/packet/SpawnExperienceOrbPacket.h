@@ -42,22 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SpawnExperienceOrbPacket();
-
-    MCAPI SpawnExperienceOrbPacket(::Vec3 const& pos, int xpValue);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Vec3 const& pos, int xpValue);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

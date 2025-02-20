@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/resources/PackError.h"
-#include "mc/resources/PackParseErrorType.h"
 
 class PackLoadError : public ::PackError {
 public:
@@ -18,18 +17,6 @@ public:
 
     // vIndex: 0
     virtual ~PackLoadError() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PackLoadError(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PackParseErrorType errorType, ::std::vector<::std::string> const& errorParam);
     // NOLINTEND
 
 public:

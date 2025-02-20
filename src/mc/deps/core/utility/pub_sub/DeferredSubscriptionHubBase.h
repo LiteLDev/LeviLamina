@@ -76,7 +76,7 @@ public:
 
     MCAPI uint64 $size() const;
 
-    MCFOLD bool $empty() const;
+    MCAPI bool $empty() const;
 
     MCAPI void $_join(::Bedrock::PubSub::DeferredSubscription&& subscription);
     // NOLINTEND

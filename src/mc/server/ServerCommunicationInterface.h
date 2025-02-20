@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-struct ChunkLoadTelemetryData;
 struct NetworkAddress;
 namespace Json { class Value; }
 // clang-format on
@@ -36,24 +35,12 @@ public:
         ::std::string const& xuid
     );
 
-    MCAPI void sendChunkLoadTelemtryData(::ChunkLoadTelemetryData const& data);
-
     MCAPI void sendServerStarted();
-
-    MCAPI void sendServerTickTime(::std::chrono::nanoseconds timepoint);
-
-    MCAPI ~ServerCommunicationInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ServerCommunicationInterface> create(::NetworkAddress const& address);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

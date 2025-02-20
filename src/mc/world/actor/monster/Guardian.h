@@ -55,25 +55,25 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual void setTarget(::Actor* entity) /*override*/;
 
-    // vIndex: 157
+    // vIndex: 152
     virtual float getMaxHeadXRot() /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
 
@@ -86,29 +86,13 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI int getAttackDuration();
-
     MCAPI ::Vec3 getMoveEyeVector();
 
     MCAPI bool isElder() const;
 
-    MCAPI bool isElderGhost() const;
-
     MCAPI void preAiStep();
 
     MCAPI void registerLoopingSounds();
-
-    MCFOLD void setAttackTime(int time);
-
-    MCAPI void setElder(bool value);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& ATTACK_TIME();
-
-    MCAPI static int const& FIRST_DAMAGE_TIME();
     // NOLINTEND
 
 public:

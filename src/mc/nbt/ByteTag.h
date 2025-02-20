@@ -59,14 +59,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(uchar data);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

@@ -26,6 +26,8 @@ public:
 
     MCAPI static ::JsonValidator::Property getStepSliderProperty(bool requiresDefault);
 
+    MCAPI static ::JsonValidator::Property getStringOrObjectProperty();
+
     MCAPI static ::JsonValidator::Property getTextInputProperty(bool requiresDefault);
 
     MCAPI static ::JsonValidator::Property getToggleProperty(bool requiresDefault);

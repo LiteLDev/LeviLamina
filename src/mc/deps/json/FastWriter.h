@@ -33,15 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FastWriter();
-
     MCAPI void writeValue(::Json::Value const& value);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

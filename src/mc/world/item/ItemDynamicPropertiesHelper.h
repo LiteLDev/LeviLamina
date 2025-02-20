@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DynamicProperties;
 class ItemStackBase;
 class Vec3;
 namespace cereal { struct ReflectionCtx; }
@@ -14,9 +13,6 @@ namespace ItemDynamicPropertiesHelper {
 // functions
 // NOLINTBEGIN
 MCAPI bool clearAllDynamicProperties(::ItemStackBase& item, ::std::string const& collection);
-
-MCAPI ::std::unique_ptr<::DynamicProperties>
-getDynamicProperties(::ItemStackBase const& item, ::cereal::ReflectionCtx const& ctx);
 
 MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(
     ::ItemStackBase const&         item,

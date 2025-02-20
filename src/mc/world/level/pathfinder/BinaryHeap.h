@@ -19,29 +19,18 @@ public:
     // prevent constructor by default
     BinaryHeap& operator=(BinaryHeap const&);
     BinaryHeap(BinaryHeap const&);
+    BinaryHeap();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BinaryHeap();
-
     MCAPI void changeCost(::PathfinderNode* node, float newCost);
 
-    MCAPI void clear();
-
     MCAPI ::PathfinderNode* insert(::PathfinderNode* node);
-
-    MCFOLD bool isEmpty();
 
     MCAPI ::PathfinderNode* pop();
 
     MCAPI ~BinaryHeap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

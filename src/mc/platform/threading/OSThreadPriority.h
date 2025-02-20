@@ -18,12 +18,6 @@ public:
     OSThreadPriority();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD explicit operator int() const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Threading::OSThreadPriority const& Elevated();

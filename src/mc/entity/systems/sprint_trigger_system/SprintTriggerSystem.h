@@ -36,8 +36,6 @@ struct WasInWaterFlagComponent;
 namespace SprintTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createActionSystem();
-
 MCAPI ::TickingSystemWithInfo createIntentSystem();
 
 MCAPI ::TickingSystemWithInfo createSetRequestSystem();

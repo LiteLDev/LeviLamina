@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class FertilizeFarmBlockGoal : public ::BaseMoveToBlockGoal {
@@ -54,17 +53,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FertilizeFarmBlockGoal(::Mob& mob);
-
     MCAPI bool _findFertilizer();
 
     MCAPI bool tryFertilizeCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

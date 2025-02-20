@@ -62,6 +62,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI bool hasSlopes() const;
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

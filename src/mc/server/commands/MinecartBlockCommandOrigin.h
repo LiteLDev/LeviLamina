@@ -15,6 +15,7 @@ class BlockSource;
 class CommandBlockActor;
 class CommandOrigin;
 class CompoundTag;
+class Level;
 class Vec2;
 class Vec3;
 struct ActorUniqueID;
@@ -77,6 +78,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI MinecartBlockCommandOrigin(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::MinecartBlockCommandOrigin> load(::CompoundTag const& tag, ::Level& level);
     // NOLINTEND
 
 public:

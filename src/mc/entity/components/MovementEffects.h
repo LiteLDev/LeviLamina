@@ -7,6 +7,9 @@
 class EntityContext;
 class MovementEffect;
 class MovementEffectPacket;
+class ReplayStateComponent;
+struct MovementEffectsComponent;
+struct RuntimeIDComponent;
 // clang-format on
 
 namespace MovementEffects {
@@ -14,6 +17,14 @@ namespace MovementEffects {
 // NOLINTBEGIN
 MCAPI ::std::optional<::MovementEffectPacket>
 addToEntity(::EntityContext& entity, ::MovementEffect movementEffect, bool isClientSide);
+
+MCAPI ::std::optional<::MovementEffectPacket> addToEntity(
+    ::MovementEffectsComponent& movementEffects,
+    ::ReplayStateComponent*     replayState,
+    ::RuntimeIDComponent const* runtimeID,
+    ::MovementEffect            movementEffect,
+    bool                        isClientSide
+);
 // NOLINTEND
 
 } // namespace MovementEffects

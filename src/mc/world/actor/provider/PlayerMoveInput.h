@@ -11,8 +11,6 @@ namespace PlayerMoveInput {
 // functions
 // NOLINTBEGIN
 MCAPI void initializePlayer(::EntityContext& entity);
-
-MCAPI bool isSneakDown(::EntityContext const& entity);
 // NOLINTEND
 
 } // namespace PlayerMoveInput

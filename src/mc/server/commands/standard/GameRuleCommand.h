@@ -11,7 +11,6 @@ class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class GameRule;
-class Level;
 namespace Json { class Value; }
 // clang-format on
 
@@ -35,18 +34,6 @@ public:
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit InitProxy(::Level& level);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Level& level);
-        // NOLINTEND
     };
 
 public:

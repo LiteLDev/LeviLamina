@@ -20,10 +20,9 @@ public:
     MCAPI static ::std::shared_ptr<
         ::std::unordered_map<::std::string, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>>>
     _getSupportedItemComponents(
-        ::std::vector<::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry> const&
-                                 supportedComponentTypeNames,
-        ::BaseGameVersion const& version,
-        ::std::string const&     prerelease
+        ::std::vector<::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry> const& version,
+        ::BaseGameVersion const&                                                              prerelease,
+        ::std::string const& supportedComponentTypeNames
     );
 
     MCAPI static void bind(

@@ -8,7 +8,6 @@ struct BlockMatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4795f5;
     ::ll::UntypedStorage<8, 32> mUnk61a87c;
     // NOLINTEND
 

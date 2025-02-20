@@ -13,8 +13,8 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class ILevel;
 class ItemStack;
-class Level;
 class Player;
 class SaveContext;
 // clang-format on
@@ -34,7 +34,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 26
     virtual ::std::string getName() const /*override*/;
@@ -80,7 +80,7 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -92,7 +92,7 @@ public:
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~ChiseledBookshelfBlockActor() /*override*/;
+    virtual ~ChiseledBookshelfBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -100,9 +100,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChiseledBookshelfBlockActor(::BlockPos const& pos);
 
-    MCAPI void _loadItems(::CompoundTag const& base, ::Level& level);
+    MCAPI void _loadItems(::CompoundTag const& base, ::ILevel& level);
 
-    MCAPI uint getLastInteractedSlot() const;
+    MCAPI void _setItemInternal(int slot, ::ItemStack const& item, bool isLoading);
 
     MCAPI ::ItemStack retrieveBook(int slot);
     // NOLINTEND
@@ -111,8 +111,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool allowedItem(::ItemStack const& item);
-
-    MCAPI static ::ChiseledBookshelfBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -124,7 +122,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -132,7 +130,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 
@@ -164,7 +162,7 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

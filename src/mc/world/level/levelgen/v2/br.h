@@ -13,9 +13,7 @@ class BoundingBox;
 class IDataOutput;
 class StructureStart;
 namespace br { class LevelChunkDataRegistry; }
-namespace br { struct StaticSpawnArea; }
 namespace br { struct StructureKey; }
-namespace br { struct StructureType; }
 namespace br::worldgen { class StructureInstance; }
 namespace br::worldgen { struct SpawnerData; }
 // clang-format on
@@ -47,12 +45,6 @@ MCAPI void insertStructure(
     ::br::StructureKey                       key,
     ::br::worldgen::StructureInstance const& instance
 );
-
-MCFOLD bool serialize(::IDataOutput& stream, ::br::StructureKey const& val);
-
-MCAPI bool serialize(::IDataOutput& stream, ::br::StructureType const& val);
-
-MCAPI bool serialize(::IDataOutput&, ::br::StaticSpawnArea const&);
 
 MCAPI bool serialize(::IDataOutput& stream, ::br::LevelChunkDataRegistry const& val);
 

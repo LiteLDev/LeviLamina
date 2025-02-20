@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class InsomniaComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,12 +22,6 @@ public:
     InsomniaDefinition& operator=(InsomniaDefinition const&);
     InsomniaDefinition(InsomniaDefinition const&);
     InsomniaDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::InsomniaComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

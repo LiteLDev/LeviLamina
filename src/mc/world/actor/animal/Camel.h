@@ -8,10 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
-class Block;
-class BlockPos;
 class EntityContext;
-class ExpiringTick;
 class Vec3;
 struct ActorDefinitionIdentifier;
 // clang-format on
@@ -34,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep() /*override*/;
 
     // vIndex: 24
@@ -42,9 +39,6 @@ public:
 
     // vIndex: 17
     virtual ::Vec3 getInterpolatedRidingOffset(float, int const) const /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
     virtual ~Camel() /*override*/ = default;
@@ -60,8 +54,6 @@ public:
     );
 
     MCAPI void _monitorSitting();
-
-    MCAPI ::std::optional<::ExpiringTick> getDashCooldown() const;
     // NOLINTEND
 
 public:
@@ -88,8 +80,6 @@ public:
     MCAPI void $normalTick();
 
     MCAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
-
-    MCAPI void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

@@ -14,7 +14,7 @@ class CerealSchemaDeprecate : public ::CerealSchemaUpgrade {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnk8bda53;
+    ::ll::UntypedStorage<8, 24> mUnk8bda53;
     // NOLINTEND
 
 public:

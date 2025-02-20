@@ -22,10 +22,6 @@ public:
     MCAPI explicit ChunkPos(::BlockPos const& pos);
 
     MCAPI explicit ChunkPos(::Vec3 const& pos);
-
-    MCAPI bool isWithinBounds(::ChunkPos const& min, ::ChunkPos const& max) const;
-
-    MCAPI ::Vec3 toBlockSpaceVec3(float y) const;
     // NOLINTEND
 
 public:

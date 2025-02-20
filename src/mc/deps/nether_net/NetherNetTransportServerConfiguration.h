@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 1536> mUnk30759b;
     ::ll::UntypedStorage<4, 4>    mUnkd9fee8;
-    ::ll::UntypedStorage<8, 512>  mUnka32350;
+    ::ll::UntypedStorage<8, 1280> mUnka32350;
     ::ll::UntypedStorage<4, 4>    mUnk93ceeb;
     ::ll::UntypedStorage<1, 1>    mUnk577bee;
     ::ll::UntypedStorage<1, 1>    mUnkc81bff;
@@ -31,19 +31,12 @@ public:
     // prevent constructor by default
     NetherNetTransportServerConfiguration& operator=(NetherNetTransportServerConfiguration const&);
     NetherNetTransportServerConfiguration(NetherNetTransportServerConfiguration const&);
+    NetherNetTransportServerConfiguration();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetherNetTransportServerConfiguration();
-
     MCAPI ~NetherNetTransportServerConfiguration();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

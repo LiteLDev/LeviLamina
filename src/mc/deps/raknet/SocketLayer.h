@@ -17,8 +17,6 @@ public:
     MCAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);
 
     MCAPI static ::RakNet::RakString GetSubNetForSocketAndIp(::RakNet::RakString inIpString);
-
-    MCAPI static void SetSocketOptions(uint64 listenSocket, bool blockingSocket, bool setBroadcast);
     // NOLINTEND
 
 public:

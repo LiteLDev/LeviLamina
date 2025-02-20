@@ -14,27 +14,4 @@ public:
     ::ll::TypedStorage<8, 16, ::std::optional<::std::reference_wrapper<::FeatureRegistry>>> mRegistry;
     ::ll::TypedStorage<8, 8, uint64>                                                        mIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeakStorageFeature& operator=(WeakStorageFeature const&);
-    WeakStorageFeature(WeakStorageFeature const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WeakStorageFeature();
-
-    MCAPI WeakStorageFeature(::WeakStorageFeature&& other);
-
-    MCAPI ::WeakStorageFeature& operator=(::WeakStorageFeature&& other);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::WeakStorageFeature&& other);
-    // NOLINTEND
 };

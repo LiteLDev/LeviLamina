@@ -13,15 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::queue<::ParticleEventRequest, ::std::deque<::ParticleEventRequest>>> mRequests;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ParticleEventRequestQueueComponent& operator=(ParticleEventRequestQueueComponent const&);
-    ParticleEventRequestQueueComponent(ParticleEventRequestQueueComponent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ParticleEventRequestQueueComponent& operator=(::ParticleEventRequestQueueComponent&&);
-    // NOLINTEND
 };

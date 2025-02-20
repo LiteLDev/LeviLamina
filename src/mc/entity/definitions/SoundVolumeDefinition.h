@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -23,12 +22,6 @@ public:
     SoundVolumeDefinition& operator=(SoundVolumeDefinition const&);
     SoundVolumeDefinition(SoundVolumeDefinition const&);
     SoundVolumeDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity) const;
-    // NOLINTEND
 
 public:
     // static functions

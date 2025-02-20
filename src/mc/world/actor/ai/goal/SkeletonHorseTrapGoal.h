@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/Difficulty.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class Horse;
+class Player;
 class Skeleton;
 // clang-format on
 
@@ -43,17 +44,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkeletonHorseTrapGoal(::Horse& mob, int trapLifeTicks, float triggerDistance);
+    MCAPI ::Horse* _createHorse(::SharedTypes::Legacy::Difficulty const& difficulty);
 
-    MCAPI ::Horse* _createHorse(::Difficulty const& difficulty);
+    MCAPI ::Skeleton* _createSkeleton(::SharedTypes::Legacy::Difficulty const& otherHorse, ::Horse const& difficulty);
 
-    MCAPI ::Skeleton* _createSkeleton(::Difficulty const& difficulty, ::Horse const& otherHorse);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Horse& mob, int trapLifeTicks, float triggerDistance);
+    MCAPI ::Player* _getClosestPlayer() const;
     // NOLINTEND
 
 public:

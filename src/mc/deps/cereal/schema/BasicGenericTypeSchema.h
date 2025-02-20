@@ -25,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BasicGenericTypeSchema();
+
     MCAPI void doLoadWithSchema(
         ::entt::meta_type const&     type,
         ::cereal::SchemaReader&      value,
@@ -43,9 +45,21 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

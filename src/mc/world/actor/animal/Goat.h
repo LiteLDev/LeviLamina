@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/animal/Animal.h"
@@ -14,7 +14,6 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class Mob;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
@@ -23,23 +22,23 @@ class Goat : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
     // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 65
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 141
     virtual ::SharedTypes::Legacy::LevelSoundEvent getDeathSound() /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 8
@@ -54,26 +53,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI int getHornCount() const;
-
-    MCAPI bool isScreaming();
-
-    MCAPI void reduceHornCount();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent> getCustomHurtSound(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int& DEFAULT_HORN_COUNT();
-
-    MCAPI static int& SCREAMING_GOAT_VARIANT();
     // NOLINTEND
 
 public:

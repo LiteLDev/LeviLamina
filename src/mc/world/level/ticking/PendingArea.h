@@ -47,6 +47,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::PendingArea load(::std::string const& key, ::CompoundTag const& tag);
+
+    MCAPI static bool validTag(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

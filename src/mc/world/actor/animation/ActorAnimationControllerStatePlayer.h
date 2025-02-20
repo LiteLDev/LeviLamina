@@ -81,12 +81,6 @@ public:
         ::ExpressionNode const&                                  blendExpression,
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
-
-    MCAPI bool allAnimationsFinished() const;
-
-    MCAPI bool anyAnimationsFinished() const;
-
-    MCAPI float getStateTime() const;
     // NOLINTEND
 
 public:

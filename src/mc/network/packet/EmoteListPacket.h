@@ -43,25 +43,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmoteListPacket();
-
-    MCAPI explicit EmoteListPacket(::ActorRuntimeID runtimeId);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static int const& MAX_EMOTE_PIECE_IDS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorRuntimeID runtimeId);
     // NOLINTEND
 
 public:

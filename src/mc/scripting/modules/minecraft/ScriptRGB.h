@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Color; }
-// clang-format on
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -38,21 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptRGB(::mce::Color const& color);
-
-    MCFOLD ::mce::Color const& getColor() const;
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRGB const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptRGB> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::Color const& color);
     // NOLINTEND
 
 public:

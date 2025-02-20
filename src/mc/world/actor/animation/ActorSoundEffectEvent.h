@@ -14,16 +14,4 @@ public:
     ::ll::TypedStorage<8, 48, ::ActorSoundEffect> mSoundEffect;
     ::ll::TypedStorage<4, 4, float>               mTime;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorSoundEffectEvent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

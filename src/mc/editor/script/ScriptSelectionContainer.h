@@ -4,10 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/ScriptBlockVolumeIterable.h"
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
 
 // auto generated forward declare list
@@ -23,7 +24,8 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace Editor::ScriptModule {
 
 class ScriptSelectionContainer
-: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptSelectionContainer> {
+: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptSelectionContainer>,
+  public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,10 +40,15 @@ public:
     ScriptSelectionContainer();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ScriptSelectionContainer() /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSelectionContainer(::Editor::ScriptModule::ScriptSelectionContainer&&);
-
     MCAPI ScriptSelectionContainer(
         ::WeakRef<::Editor::Selection::SelectionContainer> containerObjectRef,
         ::Scripting::WeakLifetimeScope const&              scope
@@ -52,8 +59,6 @@ public:
     MCAPI ::Scripting::Result_deprecated<::BoundingBox> containerBoundingBox();
 
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getFillColor() const;
-
-    MCAPI ::WeakRef<::Editor::Selection::SelectionContainer> getNativeContainerRef() const;
 
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA> getOutlineColor() const;
 
@@ -78,8 +83,6 @@ public:
     MCAPI ::Scripting::Result<void> setOutlineColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
     MCAPI ::Scripting::Result<void> setVisible(bool visible);
-
-    MCAPI ~ScriptSelectionContainer();
     // NOLINTEND
 
 public:
@@ -91,8 +94,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptSelectionContainer&&);
-
     MCAPI void* $ctor(
         ::WeakRef<::Editor::Selection::SelectionContainer> containerObjectRef,
         ::Scripting::WeakLifetimeScope const&              scope
@@ -103,6 +104,12 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

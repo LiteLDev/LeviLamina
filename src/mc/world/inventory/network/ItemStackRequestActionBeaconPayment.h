@@ -40,14 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD int getPrimaryEffectId() const;
-
-    MCFOLD int getSecondaryEffectId() const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct FullContainerName;
-// clang-format on
-
 struct ContainerValidationSlotData {
 public:
     // member variables
@@ -22,20 +17,8 @@ public:
     ContainerValidationSlotData();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ContainerValidationSlotData(::FullContainerName const& container, int slotIndex);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::ContainerValidationSlotData const& AUTOPLACE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FullContainerName const& container, int slotIndex);
     // NOLINTEND
 };

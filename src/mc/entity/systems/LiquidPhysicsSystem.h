@@ -56,8 +56,6 @@ MCAPI void _singleTickLiquidBlocksFetch(
 );
 
 MCAPI ::TickingSystemWithInfo createFilterSystem(bool isClientSide);
-
-MCAPI ::TickingSystemWithInfo createLiquidFetchingSystem();
 // NOLINTEND
 
 } // namespace LiquidPhysicsSystem

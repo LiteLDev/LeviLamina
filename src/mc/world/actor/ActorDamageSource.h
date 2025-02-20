@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorCategory.h"
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ActorType.h"
 
 // auto generated forward declare list
@@ -19,14 +19,14 @@ class ActorDamageSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ActorDamageCause> mCause;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActorDamageSource();
+    virtual ~ActorDamageSource() = default;
 
     // vIndex: 1
     virtual bool isEntitySource() const;
@@ -94,45 +94,28 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ActorDamageSource(::ActorDamageCause cause);
-
-    MCFOLD ::ActorDamageCause getCause() const;
-
-    MCFOLD void setCause(::ActorDamageCause cause);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::std::string, ::ActorDamageCause>>
+    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
     generateDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
-    MCAPI static ::std::vector<::std::pair<::std::string, ::ActorDamageCause>>
+    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
     generateNewDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
     MCAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    MCAPI static ::ActorDamageCause getCauseMapVersionCutoffInclusive(::Scripting::Version scriptingVersion);
+    MCAPI static ::SharedTypes::Legacy::ActorDamageCause
+    getCauseMapVersionCutoffInclusive(::Scripting::Version scriptingVersion);
 
-    MCAPI static bool isDamageCausedByMob(::ActorDamageCause cause);
+    MCAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
 
-    MCAPI static ::ActorDamageCause lookupCause(::std::string const& name);
-
-    MCAPI static ::std::string const& lookupCauseName(::ActorDamageCause cause);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDamageCause cause);
+    MCAPI static ::std::string const& lookupCauseName(::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

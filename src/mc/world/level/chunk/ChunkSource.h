@@ -13,7 +13,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlendingDataProvider;
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class ChunkKey;
@@ -170,8 +169,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChunkSource(::std::unique_ptr<::ChunkSource> parent);
 
-    MCAPI ChunkSource(::Dimension* dimension, int side);
-
     MCAPI bool _checkAndDispatchTaskForLevelChunk(
         ::std::pair<::ChunkPos, ::ChunkState> const& chunkPosAndExpectedState,
         bool                                         areInTask
@@ -240,20 +237,8 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
 
-    MCAPI ::std::shared_ptr<::LevelChunk> getAvailableChunkAt(::BlockPos const& pos);
-
-    MCFOLD int getChunkSide() const;
-
-    MCFOLD ::Dimension& getDimension() const;
-
-    MCAPI ::std::shared_ptr<::LevelChunk> getGeneratedChunk(::ChunkPos const& cp);
-
-    MCFOLD ::Level& getLevel() const;
-
     MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector
     );
-
-    MCAPI void setShuttingDown(bool value);
 
     MCAPI bool shouldServerGeneratePos(::ChunkPos const& chunkPos, float serverBuildRatio, int viewRadius);
     // NOLINTEND
@@ -268,8 +253,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> parent);
-
-    MCAPI void* $ctor(::Dimension* dimension, int side);
     // NOLINTEND
 
 public:

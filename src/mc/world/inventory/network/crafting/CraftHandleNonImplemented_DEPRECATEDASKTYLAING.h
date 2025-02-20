@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftHandler;
 // clang-format on
 
 class CraftHandleNonImplemented_DEPRECATEDASKTYLAING : public ::CraftHandlerBase {
@@ -21,20 +20,6 @@ public:
 
     // vIndex: 0
     virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CraftHandleNonImplemented_DEPRECATEDASKTYLAING(
-        ::ItemStackRequestActionCraftHandler& craftRequestHandler
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestActionCraftHandler& craftRequestHandler);
     // NOLINTEND
 
 public:

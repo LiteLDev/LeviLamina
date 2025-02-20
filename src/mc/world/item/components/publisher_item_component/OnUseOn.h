@@ -11,6 +11,7 @@
 class Actor;
 class BlockPos;
 class CompoundTag;
+class HashedString;
 class ItemStack;
 class Vec3;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -33,7 +34,6 @@ public:
     // prevent constructor by default
     OnUseOn& operator=(OnUseOn const&);
     OnUseOn(OnUseOn const&);
-    OnUseOn();
 
 public:
     // virtual functions
@@ -49,6 +49,24 @@ public:
 
     // vIndex: 0
     virtual ~OnUseOn() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI OnUseOn();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -35,12 +35,6 @@ namespace MobJumpSystem {
 // NOLINTBEGIN
 MCAPI ::TickingSystemWithInfo createCleanupSystem();
 
-MCAPI ::TickingSystemWithInfo createDecrementNoJumpDelaySystem();
-
-MCAPI ::TickingSystemWithInfo createMobJumpSystem();
-
-MCAPI ::TickingSystemWithInfo createResetNoJumpDelaySystem();
-
 MCAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
 
 MCAPI void doMobJumpSystem(
@@ -66,6 +60,14 @@ MCAPI void doMobJumpSystem(
 );
 
 MCAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
+
+MCAPI void doSwimmerSwimUp(
+    ::Optional<::JumpControlComponent const> const& jumpControl,
+    ::Optional<::SquidFlagComponent const> const&   isSquid,
+    ::MobEffectsComponent const&                    mobEffects,
+    ::MobJumpComponent&                             mobJump,
+    ::StateVectorComponent&                         stateVector
+);
 
 MCAPI bool shouldAscendLadder(
     ::Optional<::PlayerComponent const> const&                   isPlayer,

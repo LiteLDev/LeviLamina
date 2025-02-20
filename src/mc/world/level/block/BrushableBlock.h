@@ -14,9 +14,10 @@ class BlockActor;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class HashedString;
 class ItemInstance;
-class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -40,19 +41,16 @@ public:
     // vIndex: 125
     virtual ::BlockLegacy& init() /*override*/;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 118
@@ -70,6 +68,9 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~BrushableBlock() /*override*/ = default;
     // NOLINTEND
@@ -78,6 +79,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BrushableBlock(::std::string const& nameID, int id);
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -101,13 +104,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockLegacy& $init();
+    MCFOLD ::BlockLegacy& $init();
 
     MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::mce::Color $getDustColor(::Block const&) const;
 
@@ -120,7 +121,9 @@ public:
 
     MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

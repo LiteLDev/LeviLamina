@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace webrtc { class SessionDescriptionInterface; }
-// clang-format on
-
 namespace NetherNet {
 
 class ConnectRequest {
@@ -26,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::webrtc::SessionDescriptionInterface> GetSdp() const;
-
     MCAPI ::std::string ToString() const;
 
     MCAPI ~ConnectRequest();

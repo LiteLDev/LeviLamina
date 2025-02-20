@@ -34,29 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkIdentifier();
-
-    MCAPI explicit NetworkIdentifier(::sockaddr_in const& address);
-
-    MCAPI explicit NetworkIdentifier(::sockaddr_in6 const& address);
-
-    MCAPI explicit NetworkIdentifier(::RakNet::RakNetGUID const& guid);
-
-    MCAPI explicit NetworkIdentifier(uint64 nethernetId);
-
     MCAPI ::std::string getAddress() const;
 
     MCAPI ::std::string getCorrelationId() const;
 
     MCAPI uint64 getHash() const;
-
-    MCFOLD ::RakNet::RakNetGUID const& getRakNetGUID() const;
-
-    MCFOLD ::sockaddr_in const& getSocketAddress() const;
-
-    MCFOLD ::sockaddr_in6 const& getSocketAddress6() const;
-
-    MCFOLD ::NetworkIdentifier::Type getType() const;
 
     MCAPI bool isUnassigned() const;
 
@@ -77,19 +59,5 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::NetworkIdentifier& INVALID_ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::sockaddr_in const& address);
-
-    MCAPI void* $ctor(::sockaddr_in6 const& address);
-
-    MCAPI void* $ctor(::RakNet::RakNetGUID const& guid);
-
-    MCAPI void* $ctor(uint64 nethernetId);
     // NOLINTEND
 };

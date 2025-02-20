@@ -21,9 +21,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PlayerInteractWithEntityBeforeEvent& operator=(PlayerInteractWithEntityBeforeEvent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PlayerInteractWithEntityBeforeEvent(::PlayerInteractWithEntityBeforeEvent const&);
+
     MCAPI ~PlayerInteractWithEntityBeforeEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::PlayerInteractWithEntityBeforeEvent const&);
     // NOLINTEND
 
 public:

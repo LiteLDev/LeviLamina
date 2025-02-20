@@ -6,9 +6,9 @@ struct ConstDeserializeDataParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk53e6e0;
-    ::ll::UntypedStorage<8, 112> mUnkcb3186;
-    ::ll::UntypedStorage<8, 120> mUnk25c848;
+    ::ll::UntypedStorage<8, 8>  mUnk53e6e0;
+    ::ll::UntypedStorage<8, 24> mUnkcb3186;
+    ::ll::UntypedStorage<8, 32> mUnk25c848;
     // NOLINTEND
 
 public:

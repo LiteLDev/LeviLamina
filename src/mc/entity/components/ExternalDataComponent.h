@@ -14,16 +14,4 @@ public:
     ExternalDataComponent& operator=(ExternalDataComponent const&);
     ExternalDataComponent(ExternalDataComponent const&);
     ExternalDataComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ExternalDataComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

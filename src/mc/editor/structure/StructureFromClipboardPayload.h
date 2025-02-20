@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class StructureFromClipboardPayload
@@ -37,12 +32,6 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Editor::Network::StructureFromClipboardPayload&
     operator=(::Editor::Network::StructureFromClipboardPayload const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -32,11 +32,7 @@ public:
         // NOLINTBEGIN
         MCAPI Tag();
 
-        MCAPI Tag(::LevelDataValue::Tag&& tag);
-
         MCAPI explicit Tag(::CompoundTag&& tag);
-
-        MCFOLD ::LevelDataValue::Tag& operator=(::LevelDataValue::Tag&& tag);
 
         MCAPI ~Tag();
         // NOLINTEND
@@ -45,8 +41,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor();
-
-        MCFOLD void* $ctor(::LevelDataValue::Tag&& tag);
 
         MCAPI void* $ctor(::CompoundTag&& tag);
         // NOLINTEND

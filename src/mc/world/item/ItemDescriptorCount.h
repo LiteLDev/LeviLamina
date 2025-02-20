@@ -8,11 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Block;
-class BlockLegacy;
-class Item;
-class ReadOnlyBinaryStream;
-struct ItemTag;
 // clang-format on
 
 class ItemDescriptorCount : public ::ItemDescriptor {
@@ -35,45 +30,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDescriptorCount();
+    MCAPI ItemDescriptorCount(::ItemDescriptorCount const&);
 
-    MCAPI explicit ItemDescriptorCount(::ReadOnlyBinaryStream& stream);
+    MCAPI explicit operator bool() const;
 
-    MCAPI ItemDescriptorCount(::Block const& block, ushort stackSize);
-
-    MCAPI ItemDescriptorCount(::BlockLegacy const& block, ushort stackSize);
-
-    MCAPI ItemDescriptorCount(::ItemDescriptor const& descriptor, ushort stackSize);
-
-    MCAPI ItemDescriptorCount(::ItemTag const& itemTag, ushort stackSize);
-
-    MCAPI ItemDescriptorCount(::Item const& item, int auxValue, ushort stackSize);
-
-    MCAPI ItemDescriptorCount(::std::string_view item, int auxValue, ushort stackSize);
-
-    MCAPI short getStackSize() const;
-
-    MCFOLD void setStackSize(short size);
+    MCFOLD ::ItemDescriptorCount& operator=(::ItemDescriptorCount const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
-
-    MCAPI void* $ctor(::Block const& block, ushort stackSize);
-
-    MCAPI void* $ctor(::BlockLegacy const& block, ushort stackSize);
-
-    MCAPI void* $ctor(::ItemDescriptor const& descriptor, ushort stackSize);
-
-    MCAPI void* $ctor(::ItemTag const& itemTag, ushort stackSize);
-
-    MCAPI void* $ctor(::Item const& item, int auxValue, ushort stackSize);
-
-    MCAPI void* $ctor(::std::string_view item, int auxValue, ushort stackSize);
+    MCAPI void* $ctor(::ItemDescriptorCount const&);
     // NOLINTEND
 
 public:

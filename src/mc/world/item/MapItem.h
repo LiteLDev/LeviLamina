@@ -13,6 +13,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Dimension;
+class ILevel;
 class Item;
 class ItemDescriptor;
 class ItemStack;
@@ -64,7 +65,7 @@ public:
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 96
-    virtual void fixupCommon(::ItemStackBase& stack, ::Level& level) const /*override*/;
+    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
     // vIndex: 0
     virtual ~MapItem() /*override*/ = default;
@@ -73,10 +74,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapItem(::std::string const& itemName, short itemId);
-
-    MCAPI void blockTick(::ItemStack& item, ::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void updateMap(::Level& level, ::Actor& player, ::MapItemSavedData& map) const;
     // NOLINTEND
 
@@ -111,10 +108,6 @@ public:
     );
 
     MCAPI static void serializeMapData(::std::vector<::MapSample> const& mapSamples, ::std::string& output);
-
-    MCAPI static void setItemInstanceInfo(::ItemStackBase& item, ::MapItemSavedData& savedData);
-
-    MCAPI static void setMapNameIndex(::ItemStack& item, int mapNameIndex);
     // NOLINTEND
 
 public:
@@ -133,12 +126,6 @@ public:
     MCAPI static ::std::string const& TAG_MAP_SCALING();
 
     MCAPI static ::std::string const& TAG_MAP_UUID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& itemName, short itemId);
     // NOLINTEND
 
 public:
@@ -172,7 +159,7 @@ public:
 
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCAPI void $fixupCommon(::ItemStackBase& stack, ::Level& level) const;
+    MCAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
     // NOLINTEND
 
 public:

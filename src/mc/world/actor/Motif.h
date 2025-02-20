@@ -36,8 +36,6 @@ public:
 
         MCAPI ::std::vector<::Motif const*> _getR21Motifs() const;
 
-        MCAPI void clear();
-
         MCAPI ::Motif const& getMotifByName(::std::string const& name) const;
 
         MCAPI void init(::BaseGameVersion const& baseGameVersion);
@@ -66,12 +64,6 @@ public:
     Motif& operator=(Motif const&);
     Motif(Motif const&);
     Motif();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::string const getName() const;
-    // NOLINTEND
 
 public:
     // static variables

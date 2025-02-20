@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/levelgen/structure/Projection.h"
-
 struct JigsawJunction {
 public:
     // member variables
@@ -21,32 +18,4 @@ public:
     JigsawJunction& operator=(JigsawJunction const&);
     JigsawJunction(JigsawJunction const&);
     JigsawJunction();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI JigsawJunction(
-        int          sourceX,
-        int          sourceZ,
-        int          deltaSourceY,
-        int          deltaTargetY,
-        ::Projection sourceProjection,
-        ::Projection targetProjection
-    );
-
-    MCFOLD int getDeltaTargetY() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int          sourceX,
-        int          sourceZ,
-        int          deltaSourceY,
-        int          deltaTargetY,
-        ::Projection sourceProjection,
-        ::Projection targetProjection
-    );
-    // NOLINTEND
 };

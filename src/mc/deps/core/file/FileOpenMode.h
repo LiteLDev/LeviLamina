@@ -27,8 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit FileOpenMode(char const* p);
-
-    MCAPI wchar_t const* cModeWide();
     // NOLINTEND
 
 public:

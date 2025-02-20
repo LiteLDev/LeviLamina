@@ -17,7 +17,6 @@ class LevelData;
 class LevelStorageObserver;
 class LevelStorageWriteBatch;
 class Player;
-struct PlayerStorageIds;
 struct SnapshotFilenameAndLength;
 namespace Core { struct LevelStorageResult; }
 // clang-format on
@@ -140,15 +139,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getServerId(::PlayerStorageIds const& playerId);
-
     MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 
     MCAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
-
-    MCAPI ::std::unique_ptr<::CompoundTag> loadLocalPlayerData();
-
-    MCAPI ::std::unique_ptr<::CompoundTag> loadPlayerDataFromTag(::std::string_view saveTag);
 
     MCAPI ::std::unique_ptr<::CompoundTag> loadServerPlayerData(::Player const& client, bool isXboxLive);
 

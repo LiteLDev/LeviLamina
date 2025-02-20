@@ -39,16 +39,16 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual bool isOnFire() const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8

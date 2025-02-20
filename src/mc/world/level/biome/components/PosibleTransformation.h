@@ -13,13 +13,14 @@ public:
 
 public:
     // prevent constructor by default
-    PosibleTransformation& operator=(PosibleTransformation const&);
     PosibleTransformation();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI PosibleTransformation(::PosibleTransformation const&);
+
+    MCAPI ::PosibleTransformation& operator=(::PosibleTransformation const&);
 
     MCAPI ~PosibleTransformation();
     // NOLINTEND

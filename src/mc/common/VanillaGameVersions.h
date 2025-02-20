@@ -42,6 +42,8 @@ MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U4();
 
 MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U5();
 
+MCAPI ::BaseGameVersion const& Summer24UpdateVersion_U6();
+
 MCAPI ::BaseGameVersion const& TrailsAndTalesVersion();
 
 MCAPI ::BaseGameVersion const& TrailsAndTalesVersion_U1();

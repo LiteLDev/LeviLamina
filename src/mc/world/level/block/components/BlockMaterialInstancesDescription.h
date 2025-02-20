@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -30,6 +31,7 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnk560526;
         ::ll::UntypedStorage<1, 1>  mUnkb5483c;
         ::ll::UntypedStorage<1, 1>  mUnk73da79;
+        ::ll::UntypedStorage<1, 1>  mUnkc44bf0;
         // NOLINTEND
 
     public:
@@ -97,7 +99,8 @@ public:
         ::std::string const& textureName,
         ::BlockRenderLayer   renderLayer,
         float                ambientOcclusion,
-        bool                 faceDimming
+        bool                 faceDimming,
+        ::TintMethod         tintMethod
     );
 
     MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
@@ -124,8 +127,13 @@ public:
 
     MCAPI void* $ctor(::BlockMaterialInstancesDescription const&);
 
-    MCAPI void*
-    $ctor(::std::string const& textureName, ::BlockRenderLayer renderLayer, float ambientOcclusion, bool faceDimming);
+    MCAPI void* $ctor(
+        ::std::string const& textureName,
+        ::BlockRenderLayer   renderLayer,
+        float                ambientOcclusion,
+        bool                 faceDimming,
+        ::TintMethod         tintMethod
+    );
     // NOLINTEND
 
 public:

@@ -3,18 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::ScriptModule { class ScriptCursorProperties; }
 namespace Editor::ScriptModule { class ScriptCursorRay; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -37,9 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScriptCursorService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
-
     MCAPI ::Scripting::Result_deprecated<uchar> getFacingDirection() const;
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getPosition() const;
@@ -59,12 +54,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptCursorService> bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

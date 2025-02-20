@@ -9,20 +9,12 @@ struct Brightness : public ::NewType<uchar> {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Brightness(uchar const&);
-
-    MCAPI Brightness(::Brightness const&);
-
-    MCFOLD ::Brightness& operator=(::Brightness&&);
-
-    MCAPI ::Brightness& operator=(::Brightness const&);
+    MCAPI explicit Brightness(uchar&&);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Brightness const& INVALID();
-
     MCAPI static ::Brightness const& MAX();
 
     MCAPI static ::Brightness const& MIN();
@@ -31,8 +23,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(uchar const&);
-
-    MCAPI void* $ctor(::Brightness const&);
+    MCAPI void* $ctor(uchar&&);
     // NOLINTEND
 };

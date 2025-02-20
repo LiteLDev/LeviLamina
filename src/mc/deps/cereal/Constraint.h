@@ -25,12 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void validate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

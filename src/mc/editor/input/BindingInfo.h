@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Input {
 
 struct BindingInfo {
@@ -31,12 +26,6 @@ public:
     MCAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo&&);
 
     MCAPI ~BindingInfo();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

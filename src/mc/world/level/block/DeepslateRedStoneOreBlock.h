@@ -25,23 +25,11 @@ public:
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
     virtual ~DeepslateRedStoneOreBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DeepslateRedStoneOreBlock(::std::string const& nameId, int id, bool lit);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
     // NOLINTEND
 
 public:

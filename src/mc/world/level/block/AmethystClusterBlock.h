@@ -14,7 +14,8 @@ class Block;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
-class Random;
+class Experiments;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class AmethystClusterBlock : public ::AmethystBlock {
@@ -31,14 +32,11 @@ public:
     // vIndex: 125
     virtual ::BlockLegacy& init() /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 80
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -48,7 +46,7 @@ public:
         /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -57,6 +55,9 @@ public:
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~AmethystClusterBlock() /*override*/ = default;
     // NOLINTEND
@@ -64,15 +65,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AmethystClusterBlock(::std::string const& nameId, int id, int height, int aabbOffset);
-
     MCAPI ::AABB _shapeFromDirection(int facing) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, int height, int aabbOffset);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -86,21 +81,19 @@ public:
     // NOLINTBEGIN
     MCAPI ::BlockLegacy& $init();
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
-
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

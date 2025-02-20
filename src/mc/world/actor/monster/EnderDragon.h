@@ -14,7 +14,6 @@ class AABB;
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class BlockLegacy;
 class BlockPos;
 class EnderCrystal;
 class EntityContext;
@@ -48,7 +47,6 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnkab9a7d;
     ::ll::UntypedStorage<4, 12>  mUnke72f4d;
     ::ll::UntypedStorage<4, 4>   mUnk893b82;
-    ::ll::UntypedStorage<1, 1>   mUnk70fc7d;
     ::ll::UntypedStorage<1, 1>   mUnkf1cd69;
     ::ll::UntypedStorage<8, 24>  mUnka92db8;
     ::ll::UntypedStorage<8, 24>  mUnk45bb48;
@@ -77,38 +75,38 @@ public:
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual void setSitting(bool value) /*override*/;
 
-    // vIndex: 107
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual bool isImmobile() const /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual ::Vec3 getHeadLookVector(float a) const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 98
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 139
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
-
-    // vIndex: 180
+    // vIndex: 173
     virtual void tickDeath() /*override*/;
+
+    // vIndex: 135
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
     // NOLINTEND
 
 public:
@@ -124,6 +122,8 @@ public:
 
     MCAPI bool _checkWalls(::AABB bb);
 
+    MCAPI float _getHeadYOffset(float a) const;
+
     MCAPI bool _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
 
     MCAPI void _hurtEntities(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
@@ -131,7 +131,7 @@ public:
     MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
     MCAPI ::std::unique_ptr<::Path>
-    _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType completionType);
+    _reconstructPath(::PathfinderNode& to, ::PathfinderNode& completionType, ::PathCompletionType from);
 
     MCAPI void dieNaturally();
 
@@ -141,41 +141,11 @@ public:
 
     MCAPI ::std::unique_ptr<::Path> findPath(int startIndex, int endIndex, ::PathfinderNode* finalNode);
 
-    MCAPI int getFlameCount() const;
-
-    MCAPI float getFlapTime() const;
-
-    MCAPI ::BlockPos getHeadPos() const;
-
     MCAPI ::std::vector<float> const getLatencyPos(int step, float a) const;
-
-    MCAPI int getNumCrystalsAlive();
-
-    MCAPI ::Vec3 getTargetPos() const;
-
-    MCAPI void incrementFlameCount();
 
     MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
 
     MCAPI void postAiStep();
-
-    MCAPI void resetFlameCount();
-
-    MCAPI void setDragonKilledCallback(::std::function<void(::EnderDragon&)> onKilled);
-
-    MCAPI void setHasDragonPreviouslyBeenKilled(bool beenKilled);
-
-    MCAPI void setNumCrystalsAlive(int crystalCount);
-
-    MCAPI void setTargetPos(::Vec3 pos);
-
-    MCAPI void setTurnSpeed(float speed);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _isDragonImmuneBlock(::BlockLegacy const& block);
     // NOLINTEND
 
 public:
@@ -217,9 +187,7 @@ public:
 
     MCFOLD bool $canBeAffected(uint id) const;
 
-    MCAPI bool $isImmobile() const;
-
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCFOLD bool $isImmobile() const;
 
     MCAPI ::Vec3 $getHeadLookVector(float a) const;
 
@@ -231,9 +199,9 @@ public:
 
     MCFOLD bool $canBePulledIntoVehicle() const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
     MCAPI void $tickDeath();
+
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND
 
 public:

@@ -117,7 +117,9 @@ class PacketSender;
 class PersonaRepository;
 class PixelCalc;
 class Player;
+class PlayerAuthentication;
 class PlayerReportHandler;
+class ProfanityContext;
 class ResourcePackManager;
 class SceneFactory;
 class SceneStack;
@@ -135,8 +137,6 @@ class Timer;
 class ToastManager;
 class TrialManager;
 class UIEventCoordinator;
-class UIProfanityContext;
-class UserAuthentication;
 class Vec2;
 class Vec3;
 class VoiceSystem;
@@ -174,7 +174,6 @@ namespace mce { class Camera; }
 namespace mce { class Texture; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
-namespace mce { class UUID; }
 namespace mce { struct ViewportInfo; }
 namespace persona { class PersonaPieceCollectionModel; }
 namespace ui { class ScreenTechStackSelector; }
@@ -265,7 +264,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk59f993;
     ::ll::UntypedStorage<8, 8>   mUnk5310df;
     ::ll::UntypedStorage<8, 8>   mUnk12a970;
-    ::ll::UntypedStorage<8, 16>  mUnkcde76f;
+    ::ll::UntypedStorage<8, 16>  mUnk3a3d21;
     ::ll::UntypedStorage<8, 8>   mUnk9fe1ff;
     ::ll::UntypedStorage<8, 8>   mUnk29790b;
     ::ll::UntypedStorage<8, 24>  mUnk10018d;
@@ -374,13 +373,16 @@ public:
     ::ll::UntypedStorage<8, 56>  mUnk90f4d3;
     ::ll::UntypedStorage<8, 8>   mUnkf8bdff;
     ::ll::UntypedStorage<8, 24>  mUnkfbc948;
+    ::ll::UntypedStorage<8, 24>  mUnk5bb96b;
     ::ll::UntypedStorage<1, 1>   mUnkc75c08;
     ::ll::UntypedStorage<4, 4>   mUnkcef468;
     ::ll::UntypedStorage<4, 4>   mUnk573d1d;
     ::ll::UntypedStorage<8, 16>  mUnkdc75f9;
     ::ll::UntypedStorage<8, 80>  mUnk3892fa;
     ::ll::UntypedStorage<8, 16>  mUnka5c62e;
+    ::ll::UntypedStorage<8, 8>   mUnk513b4d;
     ::ll::UntypedStorage<8, 24>  mUnk7433ce;
+    ::ll::UntypedStorage<8, 8>   mUnk4efc95;
     // NOLINTEND
 
 public:
@@ -821,7 +823,7 @@ public:
     virtual void navigateToDressingRoomOfferScreen(::std::string const&) /*override*/;
 
     // vIndex: 140
-    virtual void navigateToProfileScreen() /*override*/;
+    virtual bool navigateToProfileScreen(::std::string const&, bool const) /*override*/;
 
     // vIndex: 141
     virtual void navigateToServersScreen(bool const) /*override*/;
@@ -871,10 +873,10 @@ public:
     virtual uint64 getClientRandomId() const /*override*/;
 
     // vIndex: 156
-    virtual ::UserAuthentication& getUserAuthentication() /*override*/;
+    virtual ::PlayerAuthentication& getPlayerAuthentication() /*override*/;
 
     // vIndex: 157
-    virtual ::std::weak_ptr<::UserAuthentication> getWeakUserAuthentication() /*override*/;
+    virtual ::std::weak_ptr<::PlayerAuthentication> getWeakPlayerAuthentication() /*override*/;
 
     // vIndex: 158
     virtual void registerToUserManager(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int) /*override*/;
@@ -883,10 +885,10 @@ public:
     virtual void resumeWithUserManager(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int) /*override*/;
 
     // vIndex: 161
-    virtual void createUserAuthentication(::std::string const&) /*override*/;
+    virtual void createPlayerAuthentication(::std::string const&) /*override*/;
 
     // vIndex: 160
-    virtual void createUserAuthentication(uint64, ::std::string const&) /*override*/;
+    virtual void createPlayerAuthentication(uint64, ::std::string const&) /*override*/;
 
     // vIndex: 162
     virtual ::std::string getPlatformId() const /*override*/;
@@ -1252,8 +1254,7 @@ public:
     virtual void forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)>) /*override*/;
 
     // vIndex: 282
-    virtual void
-    showPlayerProfile(::std::string const&, ::mce::UUID, ::std::string const&, ::std::string const&) /*override*/;
+    virtual void showPlayerProfile(::std::string const&, ::std::string const&) /*override*/;
 
     // vIndex: 283
     virtual bool isInGameInputEnabled() const /*override*/;
@@ -1498,7 +1499,7 @@ public:
     virtual bool checkForPiracy() /*override*/;
 
     // vIndex: 363
-    virtual void updateChatFilterStatus(::UIProfanityContext&) /*override*/;
+    virtual void updateChatFilterStatus(::ProfanityContext&) /*override*/;
 
     // vIndex: 364
     virtual void updateControllerHandling() /*override*/;
@@ -1624,7 +1625,7 @@ public:
     virtual ::std::deque<::std::string>& getDevConsoleMessageHistory() /*override*/;
 
     // vIndex: 386
-    virtual ::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> getUIProfanityContext() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() const /*override*/;
 
     // vIndex: 387
     virtual void initTTSClient(::std::shared_ptr<::TextToSpeechClient>) /*override*/;
@@ -1809,7 +1810,16 @@ public:
     // vIndex: 447
     virtual bool isUserBanned() const /*override*/;
 
+    // vIndex: 449
+    virtual bool isEligibleForPauseFeature() const /*override*/;
+
     // vIndex: 448
+    virtual void setupPauseManagers() /*override*/;
+
+    // vIndex: 450
+    virtual void openContentLogHistory() /*override*/;
+
+    // vIndex: 451
     virtual double getGameUpdateDurationInSeconds() const /*override*/;
     // NOLINTEND
 

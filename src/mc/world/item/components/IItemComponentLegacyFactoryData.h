@@ -19,14 +19,21 @@ public:
 
     public:
         // prevent constructor by default
-        Components(Components const&);
         Components();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Components(::IItemComponentLegacyFactoryData::Components const&);
+
         MCFOLD ::IItemComponentLegacyFactoryData::Components&
         operator=(::IItemComponentLegacyFactoryData::Components const&);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::IItemComponentLegacyFactoryData::Components const&);
         // NOLINTEND
     };
 

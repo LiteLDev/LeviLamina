@@ -5,10 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class BaseLightData;
-class BlockPos;
 class Dimension;
 class IClientInstance;
-struct BrightnessPair;
 // clang-format on
 
 class BaseLightTextureImageBuilder {
@@ -50,12 +48,6 @@ public:
     virtual void init(::Dimension*);
 
     // vIndex: 2
-    virtual bool hasBrightnessModifier() const;
-
-    // vIndex: 3
-    virtual void getModifiedBlockBrightnessColor(::BlockPos const&, ::BrightnessPair&) const;
-
-    // vIndex: 4
     virtual ::std::unique_ptr<::BaseLightData> createBaseLightTextureData(::IClientInstance*, ::BaseLightData const&);
     // NOLINTEND
 

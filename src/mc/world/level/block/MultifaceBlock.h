@@ -14,14 +14,15 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IBlockWorldGenAPI;
 class IConstBlockSource;
 class Material;
 class MultifaceSpreader;
-class Random;
 class Vec3;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class MultifaceBlock : public ::BlockLegacy {
@@ -35,7 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MultifaceBlock() /*override*/;
+    virtual ~MultifaceBlock() /*override*/ = default;
 
     // vIndex: 10
     virtual ::AABB const&
@@ -54,7 +55,7 @@ public:
 
     // vIndex: 4
     virtual ::HitResult
-    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+    clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
         const /*override*/;
 
     // vIndex: 92
@@ -65,9 +66,6 @@ public:
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -83,13 +81,14 @@ public:
 
     // vIndex: 50
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultifaceBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI MultifaceBlock(
         ::std::string const&                         nameId,
         int                                          id,
@@ -112,18 +111,24 @@ public:
         uchar                faceDirection,
         bool                 canSpawnParticles
     ) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _getNumSides(::Block const& block);
-
     MCAPI static bool _hasAnyFace(::Block const& block);
 
-    MCAPI static int convertOldMultifaceToNewMultifaceValue(int oldMultifaceDirections);
-
     MCAPI static ::Block const& getBlockForPlacement(
+        ::Block const&    oldBlock,
+        ::Block const&    placementBlock,
+        ::BlockSource&    region,
+        ::BlockPos const& placementPos,
+        uchar             placementDirection
+    );
+
+    MCAPI static ::Block const& getBlockForPlacementOrFillMoreFaces(
         ::Block const&    oldBlock,
         ::Block const&    placementBlock,
         ::BlockSource&    region,
@@ -165,8 +170,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void* $ctor(
         ::std::string const&                         nameId,
         int                                          id,
@@ -178,7 +181,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -196,13 +199,15 @@ public:
     $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue)
         const;
 
+    MCAPI ::HitResult
+    $clip(::Block const& block, ::BlockSource const&, ::BlockPos const& pos, ::Vec3 const& origin, ::Vec3 const& end, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
+        const;
+
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -213,6 +218,8 @@ public:
     MCFOLD bool $isLavaBlocking() const;
 
     MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

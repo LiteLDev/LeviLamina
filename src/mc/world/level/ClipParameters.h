@@ -32,32 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClipParameters(::Vec3 const& a, ::Vec3 const& b);
-
-    MCAPI ClipParameters(
-        ::Vec3 const&                                                            a,
-        ::Vec3 const&                                                            b,
-        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
-    );
-
     MCAPI ~ClipParameters();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& a, ::Vec3 const& b);
-
-    MCAPI void* $ctor(
-        ::Vec3 const&                                                            a,
-        ::Vec3 const&                                                            b,
-        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

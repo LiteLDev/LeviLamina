@@ -28,6 +28,7 @@ public:
 public:
     // prevent constructor by default
     RepairableItemComponent& operator=(RepairableItemComponent const&);
+    RepairableItemComponent(RepairableItemComponent const&);
     RepairableItemComponent();
 
 public:
@@ -40,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RepairableItemComponent(::RepairableItemComponent const&);
-
     MCAPI explicit RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent component);
 
     MCAPI int
@@ -59,8 +58,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
@@ -69,8 +68,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RepairableItemComponent const&);
-
     MCAPI void* $ctor(::SharedTypes::v1_20_50::RepairableItemComponent component);
     // NOLINTEND
 

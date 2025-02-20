@@ -3,20 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 class Vec3;
 namespace Editor::ScriptModule { class ScriptBlockMaskList; }
 namespace Editor::ScriptModule { class ScriptBrushShape; }
 namespace Editor::ScriptModule { class ScriptUIElement; }
+namespace Editor::Services { class BrushShapeManagerServiceProvider; }
 namespace ScriptModuleMinecraft { class ScriptCompoundBlockVolume; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -43,6 +46,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptBrushShapeManagerService(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
+
+    MCAPI ScriptBrushShapeManagerService(
+        ::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider,
+        ::Player&                                             player,
+        ::Scripting::WeakLifetimeScope&                       scope
+    );
+
+    MCAPI void _onBrushPaintCompletion(::Editor::Brush::BrushPaintCompletionState state);
 
     MCFOLD void activateBrushTool();
 
@@ -84,6 +95,12 @@ public:
                   ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCompoundBlockVolume>> const& shape
     );
 
+    MCFOLD void setFlattenHeight(int flattenHeight);
+
+    MCFOLD void setFlattenRadius(int flattenRadius);
+
+    MCFOLD void setTerrainStrength(int terrainStrength);
+
     MCAPI ::Scripting::Result<void, ::Scripting::Error>
     singlePaint(::Scripting::Closure<void(::Editor::Brush::BrushPaintCompletionState)> const& closureEvent);
 
@@ -98,6 +115,8 @@ public:
         ::std::string const&                               elementName,
         ::std::variant<float, bool, ::Vec3, ::std::string> newValue
     );
+
+    MCAPI ~ScriptBrushShapeManagerService();
     // NOLINTEND
 
 public:
@@ -110,6 +129,18 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptBrushShapeManagerService const&);
+
+    MCAPI void* $ctor(
+        ::Editor::Services::BrushShapeManagerServiceProvider& serviceProvider,
+        ::Player&                                             player,
+        ::Scripting::WeakLifetimeScope&                       scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

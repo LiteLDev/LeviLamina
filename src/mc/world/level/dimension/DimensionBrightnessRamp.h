@@ -23,12 +23,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI float getBrightnessRampValue(int index) const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

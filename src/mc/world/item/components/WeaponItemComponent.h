@@ -23,6 +23,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WeaponItemComponent(WeaponItemComponent const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -36,8 +40,6 @@ public:
 
     MCAPI WeaponItemComponent(::WeaponItemComponent&&);
 
-    MCAPI WeaponItemComponent(::WeaponItemComponent const&);
-
     MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
 
     MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent&&);
@@ -48,8 +50,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
@@ -61,8 +63,6 @@ public:
     MCAPI void* $ctor();
 
     MCAPI void* $ctor(::WeaponItemComponent&&);
-
-    MCAPI void* $ctor(::WeaponItemComponent const&);
     // NOLINTEND
 
 public:

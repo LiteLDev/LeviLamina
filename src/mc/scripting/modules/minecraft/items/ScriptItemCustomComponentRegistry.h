@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptCustomComponentRegistry.h"
 #include "mc/scripting/modules/minecraft/items/IScriptItemCustomComponentRegistry.h"
 
@@ -12,6 +12,7 @@
 class HashedString;
 class Item;
 class ItemRegistryRef;
+class ScriptDeferredEventCoordinator;
 class ScriptDeferredEventListener;
 namespace ScriptModuleMinecraft { class IScriptItemCustomComponentSignalCollection; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
@@ -66,6 +67,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk952d18;
+    ::ll::UntypedStorage<8, 8>  mUnkdbb6de;
     ::ll::UntypedStorage<8, 16> mUnk58737c;
     ::ll::UntypedStorage<8, 16> mUnke262ca;
     ::ll::UntypedStorage<8, 8>  mUnke3cee5;
@@ -81,6 +83,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~ScriptItemCustomComponentRegistry() /*override*/;
+
     // vIndex: 1
     virtual ::Scripting::Result<
         void,
@@ -127,18 +132,18 @@ public:
 
     // vIndex: 2
     virtual void _onScriptInitializationComplete() /*override*/;
-
-    // vIndex: 0
-    virtual ~ScriptItemCustomComponentRegistry() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ScriptItemCustomComponentRegistry(
-        ::ItemRegistryRef                                                                        itemRegistry,
+        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
+        ::ItemRegistryRef                 itemRegistry,
         ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals
     );
+
+    MCAPI void _bindComponentToCereal(::HashedString const& compName);
 
     MCAPI void _subscribeItemToComponents(::Item* item, ::std::unordered_set<::HashedString>& unusedComponents);
 
@@ -161,7 +166,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::ItemRegistryRef                                                                        itemRegistry,
+        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
+        ::ItemRegistryRef                 itemRegistry,
         ::std::unique_ptr<::ScriptModuleMinecraft::IScriptItemCustomComponentSignalCollection>&& signals
     );
     // NOLINTEND

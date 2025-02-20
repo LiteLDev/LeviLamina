@@ -76,12 +76,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uchar const& VARIABLE_NUMBER_OF_PARAMETERS();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

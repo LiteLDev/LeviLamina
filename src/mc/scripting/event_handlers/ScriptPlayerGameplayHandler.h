@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/gameplayhandlers/EventHandlerDispatcher.h"
 #include "mc/gameplayhandlers/GameplayHandlerResult.h"
@@ -15,7 +15,9 @@
 // auto generated forward declare list
 // clang-format off
 class PlayerGameplayHandler;
+struct ClientJoinedEvent;
 struct PlayerDisconnectEvent;
+struct PlayerGameModeChangeEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -25,8 +27,11 @@ class ScriptPlayerGameplayHandler : public ::EventHandlerDispatcher<::PlayerGame
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 27
+    // vIndex: 28
     virtual ::HandlerResult handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent) /*override*/;
+
+    // vIndex: 12
+    virtual ::HandlerResult handleEvent(::ClientJoinedEvent const& playerJoined) /*override*/;
 
     // vIndex: 1
     virtual ::GameplayHandlerResult<::CoordinatorResult>
@@ -43,6 +48,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _handleClientJoinedEvent(
+        ::ClientJoinedEvent const&                                                        joinEventData,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
+    ) const;
+
     MCAPI bool _handleCoordinatorPlayerGameplayEvent(
         ::PlayerGameplayEvent<::CoordinatorResult> const&                                 event,
         ::Scripting::WeakLifetimeScope const&                                             scope,
@@ -60,6 +71,12 @@ public:
         ::Scripting::WeakLifetimeScope const&                                             scope,
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
     ) const;
+
+    MCAPI bool _handlePlayerGameModeChangeEvent(
+        ::PlayerGameModeChangeEvent&                                                      playerGameModeChangeEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
+    ) const;
     // NOLINTEND
 
 public:
@@ -72,6 +89,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
+
+    MCAPI ::HandlerResult $handleEvent(::ClientJoinedEvent const& playerJoined);
 
     MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);

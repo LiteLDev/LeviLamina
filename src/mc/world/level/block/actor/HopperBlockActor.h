@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/Container.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/actor/Hopper.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
@@ -16,8 +16,8 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class FurnaceBlockActor;
+class ILevel;
 class ItemStack;
-class Level;
 class Player;
 class SaveContext;
 struct Tick;
@@ -38,7 +38,7 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -47,7 +47,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 26
     virtual ::std::string getName() const /*override*/;
@@ -108,15 +108,13 @@ public:
 
     MCAPI void _tick(::BlockSource& region, int maxRecursion);
 
-    MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
-
     MCAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
 
     MCAPI bool isAttachedToChestAndFurnace(::BlockSource& region);
 
-    MCAPI bool isAttachedToContainerType(::BlockSource& region, ::ContainerType containerType);
+    MCAPI bool isAttachedToContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
 
-    MCAPI bool isSourceOfContainerType(::BlockSource& region, ::ContainerType containerType);
+    MCAPI bool isSourceOfContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
 
     MCAPI void updateCooldownAfterMove(::Tick const& currentTick, int time);
     // NOLINTEND
@@ -138,13 +136,13 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 

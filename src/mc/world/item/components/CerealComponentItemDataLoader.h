@@ -13,8 +13,8 @@ class CerealComponentItemDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnkb7cdf9;
-    ::ll::UntypedStorage<8, 112> mUnkaa5bf5;
+    ::ll::UntypedStorage<8, 104> mUnkc056db;
+    ::ll::UntypedStorage<8, 24>  mUnkaa5bf5;
     ::ll::UntypedStorage<8, 8>   mUnk1db8fd;
     // NOLINTEND
 

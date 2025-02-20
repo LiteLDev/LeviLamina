@@ -11,10 +11,11 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
-class Random;
+class Experiments;
 class Vec3;
+struct BlockAnimateTickData;
 struct Brightness;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class AbstractCandleBlock : public ::BlockLegacy {
@@ -34,67 +35,51 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
+    // vIndex: 150
     virtual int _getNumCandles(::Block const&) const;
 
-    // vIndex: 152
-    virtual void
-    _iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)> callback) const;
+    // vIndex: 151
+    virtual void _iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)>) const;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual void _tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
     // vIndex: 0
-    virtual ~AbstractCandleBlock() /*override*/;
+    virtual ~AbstractCandleBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AbstractCandleBlock(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI void _addExtinguishEffects(::Block const& region, ::BlockSource& pos, ::BlockPos const&) const;
 
-    MCFOLD void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
     _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _canBeLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static bool _isLit(::Block const& block);
-
-    MCAPI static void _setLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, bool litFlag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -106,11 +91,9 @@ public:
 
     MCFOLD bool $isLavaBlocking() const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
@@ -118,17 +101,6 @@ public:
 
     MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
 
-    MCFOLD int $_getNumCandles(::Block const&) const;
-
-    MCFOLD void
-    $_iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)> callback) const;
-
-    MCFOLD void $_tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 };

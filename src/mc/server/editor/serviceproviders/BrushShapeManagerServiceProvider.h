@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -87,9 +87,15 @@ public:
     virtual ::Vec3 getBrushShapeOffset() const = 0;
 
     // vIndex: 19
-    virtual void setSmoothStrength(int const) = 0;
+    virtual void setTerrainStrength(int const) = 0;
 
     // vIndex: 20
+    virtual void setFlattenHeight(int const) = 0;
+
+    // vIndex: 21
+    virtual void setFlattenRadius(int const) = 0;
+
+    // vIndex: 22
     virtual void setBrushShapeVisible(bool const) = 0;
     // NOLINTEND
 

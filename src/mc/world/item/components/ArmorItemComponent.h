@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CerealSchemaUpgradeSet;
 class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -23,29 +22,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ArmorItemComponent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

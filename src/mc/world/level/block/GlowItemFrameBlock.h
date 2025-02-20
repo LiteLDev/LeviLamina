@@ -14,23 +14,11 @@ class GlowItemFrameBlock : public ::ItemFrameBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 151
+    // vIndex: 150
     virtual ::HashedString getSpawnedItemName() const /*override*/;
 
     // vIndex: 0
     virtual ~GlowItemFrameBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlowItemFrameBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

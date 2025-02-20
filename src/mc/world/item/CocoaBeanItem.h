@@ -44,23 +44,11 @@ public:
 
     // vIndex: 120
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     // vIndex: 0
     virtual ~CocoaBeanItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CocoaBeanItem(::std::string const& name, int id, bool allowLegacyUseAsDye);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, bool allowLegacyUseAsDye);
     // NOLINTEND
 
 public:
@@ -78,12 +66,10 @@ public:
 
     MCFOLD bool $isDye() const;
 
-    MCFOLD ::ItemColor $getItemColor() const;
-
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:

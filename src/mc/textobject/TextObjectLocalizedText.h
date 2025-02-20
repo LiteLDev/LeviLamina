@@ -41,18 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TextObjectLocalizedText(::std::string text);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string text);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

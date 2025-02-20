@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/script/ScriptIBlockPaletteItem.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +31,8 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptProbabilityBlockPaletteItem& operator=(ScriptProbabilityBlockPaletteItem const&);
+    ScriptProbabilityBlockPaletteItem(ScriptProbabilityBlockPaletteItem const&);
     ScriptProbabilityBlockPaletteItem();
 
 public:
@@ -59,8 +61,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProbabilityBlockPaletteItem(::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem const&);
-
     MCAPI ::Scripting::Result<void, ::Scripting::Error> addBlock(
         ::std::variant<
             ::std::string,
@@ -71,9 +71,6 @@ public:
 
     MCAPI ::std::vector<::Editor::ScriptModule::ScriptWeightedBlock> getBlocks() const;
 
-    MCAPI ::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem&
-    operator=(::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem const&);
-
     MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::Error> removeBlockAt(int index);
     // NOLINTEND
 
@@ -82,12 +79,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem>
     bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptProbabilityBlockPaletteItem const&);
     // NOLINTEND
 
 public:

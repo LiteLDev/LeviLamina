@@ -2,46 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/external/rtc/AsyncListenSocket.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace rtc { class Socket; }
-namespace rtc { class SocketAddress; }
 // clang-format on
 
 namespace rtc {
 
-class AsyncTcpListenSocket : public ::rtc::AsyncListenSocket {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk41d212;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AsyncTcpListenSocket& operator=(AsyncTcpListenSocket const&);
-    AsyncTcpListenSocket(AsyncTcpListenSocket const&);
-    AsyncTcpListenSocket();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::rtc::AsyncListenSocket::State GetState() const /*override*/;
-
-    // vIndex: 2
-    virtual ::rtc::SocketAddress GetLocalAddress() const /*override*/;
-
-    // vIndex: 3
-    virtual void HandleIncomingConnection(::rtc::Socket*);
-
-    // vIndex: 0
-    virtual ~AsyncTcpListenSocket() /*override*/ = default;
-    // NOLINTEND
-
+class AsyncTcpListenSocket {
 public:
     // member functions
     // NOLINTBEGIN
@@ -54,18 +22,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::unique_ptr<::rtc::Socket>);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
     // NOLINTEND
 
 public:

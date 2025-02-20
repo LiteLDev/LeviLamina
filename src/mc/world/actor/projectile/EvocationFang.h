@@ -8,10 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
 class Mob;
-struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 // clang-format on
 
@@ -34,13 +31,13 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 8
@@ -50,23 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EvocationFang(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI void _dealDamageTo(::Mob& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

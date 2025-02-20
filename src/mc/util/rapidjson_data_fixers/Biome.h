@@ -14,11 +14,6 @@ MCAPI bool addDescriptionWithIdentifier(
     ::std::string const&            identifier
 );
 
-MCAPI ::std::string getOnlyDocumentMemberName(::rapidjson::GenericDocument<
-                                              ::rapidjson::UTF8<char>,
-                                              ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-                                              ::rapidjson::CrtAllocator> const& document);
-
 MCAPI void moveBiomeTagsToNewTagsComponent(::rapidjson::GenericDocument<
                                            ::rapidjson::UTF8<char>,
                                            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
@@ -28,15 +23,6 @@ MCAPI bool moveComponentsUnderNewBiomeParent(::rapidjson::GenericDocument<
                                              ::rapidjson::UTF8<char>,
                                              ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
                                              ::rapidjson::CrtAllocator>& document);
-
-MCAPI bool removeMemberFromMember(
-    ::rapidjson::GenericDocument<
-        ::rapidjson::UTF8<char>,
-        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-        ::rapidjson::CrtAllocator>& document,
-    ::std::string const&            childToRemoveName,
-    ::std::string const&            parentName
-);
 
 MCAPI bool renameObjectMember(
     ::rapidjson::GenericDocument<

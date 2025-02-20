@@ -12,15 +12,12 @@ class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct FrictionModifierComponent;
 struct PlayerInputRequestComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class ResetFrictionModifierSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void
     tickResetFrictionModifierSystem(::ViewT<
                                     ::StrictEntityContext,

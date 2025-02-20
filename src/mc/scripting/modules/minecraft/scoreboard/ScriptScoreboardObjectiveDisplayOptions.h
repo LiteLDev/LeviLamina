@@ -3,7 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/scoreboard/ScriptObjectiveSortOrderType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptScoreboardObjective; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -24,6 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptScoreboardObjectiveDisplayOptions(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
+        ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
+    );
+
     MCAPI ~ScriptScoreboardObjectiveDisplayOptions();
     // NOLINTEND
 
@@ -32,6 +44,15 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
     bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
+        ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
+    );
     // NOLINTEND
 
 public:

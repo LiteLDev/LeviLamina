@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPalette;
 class ComplexInventoryTransaction;
 class ReadOnlyBinaryStream;
 struct ItemStackLegacyRequestIdTag;
@@ -50,24 +49,6 @@ public:
 
     // vIndex: 0
     virtual ~InventoryTransactionPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI InventoryTransactionPacket();
-
-    MCAPI InventoryTransactionPacket(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
-
-    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::unique_ptr<::ComplexInventoryTransaction> transaction, bool isClientSide);
     // NOLINTEND
 
 public:

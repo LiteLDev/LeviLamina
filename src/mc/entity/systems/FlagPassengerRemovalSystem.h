@@ -12,7 +12,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createDeferredSystem();
-
-    MCAPI static ::TickingSystemWithInfo createImmediateSystem();
     // NOLINTEND
 };

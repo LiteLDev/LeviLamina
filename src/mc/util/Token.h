@@ -36,8 +36,6 @@ public:
 
     MCAPI bool _parseRandom();
 
-    MCAPI ::std::string const& getText(::std::string const& defaultValue) const;
-
     MCAPI ~Token();
     // NOLINTEND
 

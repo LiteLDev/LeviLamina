@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class MoveToLandGoal : public ::BaseMoveToBlockGoal {
@@ -33,26 +32,6 @@ public:
 
     // vIndex: 0
     virtual ~MoveToLandGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MoveToLandGoal(
-        ::Mob& mob,
-        float  speedModifier,
-        int    searchRange,
-        int    searchHeight,
-        int    searchCount,
-        float  goalRadius
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, float speedModifier, int searchRange, int searchHeight, int searchCount, float goalRadius);
     // NOLINTEND
 
 public:

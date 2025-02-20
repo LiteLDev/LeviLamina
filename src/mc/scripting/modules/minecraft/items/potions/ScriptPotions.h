@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/world/item/alchemy/Potion.h"
 
 // auto generated forward declare list
@@ -26,6 +26,10 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk2bba6d;
     ::ll::UntypedStorage<8, 64> mUnke6c4c9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptPotions& operator=(ScriptPotions const&);
 
 public:
     // member functions
@@ -50,8 +54,6 @@ public:
 
     MCAPI ::ScriptModuleMinecraft::ScriptPotions& operator=(::ScriptModuleMinecraft::ScriptPotions&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPotions& operator=(::ScriptModuleMinecraft::ScriptPotions const&);
-
     MCAPI ~ScriptPotions();
     // NOLINTEND
 
@@ -70,7 +72,14 @@ public:
     getPotionEffectType(::Scripting::WeakLifetimeScope scope, ::Potion::PotionVariant potionVariant);
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
+    getPotionLiquidType(::Scripting::WeakLifetimeScope scope, ::Potion::PotionType potionType);
+
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
     getPotionLiquidType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionTypeId);
+
+    MCAPI static ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
+    getPotionModifierType(::Scripting::WeakLifetimeScope scope, int potionId);
 
     MCAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>

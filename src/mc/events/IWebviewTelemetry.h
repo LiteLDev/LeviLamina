@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IMinecraftEventing;
 struct WebviewDownloadInfo;
 // clang-format on
 
@@ -41,18 +40,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit IWebviewTelemetry(::IMinecraftEventing const& eventing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftEventing const& eventing);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -66,11 +53,5 @@ public:
     MCAPI void $onDownloadComplete(::WebviewDownloadInfo const& downloadInfo);
 
     MCAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

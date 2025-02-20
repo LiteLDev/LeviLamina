@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class EntityId;
 // clang-format on
 
@@ -33,17 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntityRegistry();
-
     MCAPI explicit EntityRegistry(::std::string identifier);
 
-    MCAPI ::EntityContext _createEntity();
-
-    MCAPI void _destroyEntity(::EntityContext entity);
-
     MCAPI ::WeakRef<::EntityRegistry> getWeakRef();
-
-    MCAPI ~EntityRegistry();
     // NOLINTEND
 
 public:
@@ -55,14 +46,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::std::string identifier);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -91,6 +91,8 @@ public:
         bool                isLocked,
         ::BlockPos const&   mapOrigin
     );
+
+    MCAPI bool isOfType(::ClientboundMapItemDataPacket::Type type) const;
     // NOLINTEND
 
 public:

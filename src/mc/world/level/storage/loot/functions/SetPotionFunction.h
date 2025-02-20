@@ -9,6 +9,7 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
+class ItemStackBase;
 class LootItemCondition;
 class LootTableContext;
 class Random;
@@ -39,6 +40,12 @@ public:
 
     // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
     // NOLINTEND
 
 public:

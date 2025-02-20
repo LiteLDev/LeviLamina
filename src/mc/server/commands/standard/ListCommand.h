@@ -9,7 +9,6 @@
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
-class CommandRegistry;
 // clang-format on
 
 class ListCommand : public ::ServerCommand {
@@ -21,12 +20,6 @@ public:
 
     // vIndex: 0
     virtual ~ListCommand() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:

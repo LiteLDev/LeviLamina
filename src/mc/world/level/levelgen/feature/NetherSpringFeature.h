@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -35,18 +34,6 @@ public:
 
     // vIndex: 0
     virtual ~NetherSpringFeature() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NetherSpringFeature(::Block const& block, bool insideRock);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Block const& block, bool insideRock);
     // NOLINTEND
 
 public:

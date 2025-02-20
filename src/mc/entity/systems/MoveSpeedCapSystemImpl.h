@@ -26,7 +26,7 @@ struct PlayerIsSleepingFlagComponent;
 struct VehicleInputIntentComponent;
 // clang-format on
 
-namespace MoveSpeedCapSystemImpl {
+namespace VanillaSystems::MoveSpeedCapSystemImpl {
 // functions
 // NOLINTBEGIN
 MCAPI void tickMoveSpeedCap(
@@ -50,4 +50,4 @@ MCAPI void tickMoveSpeedCap(
 );
 // NOLINTEND
 
-} // namespace MoveSpeedCapSystemImpl
+} // namespace VanillaSystems::MoveSpeedCapSystemImpl

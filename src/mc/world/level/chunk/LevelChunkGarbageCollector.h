@@ -25,19 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LevelChunkGarbageCollector(::Dimension& dim);
-
     MCAPI void flush();
 
-    MCAPI uint64 getPendingDeletesCount() const;
-
     MCAPI ~LevelChunkGarbageCollector();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dim);
     // NOLINTEND
 
 public:

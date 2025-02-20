@@ -2,13 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-
 // auto generated forward declare list
 // clang-format off
 class WorldTemplatePackManifest;
-class WorldTemplatePackSource;
 // clang-format on
 
 struct WorldTemplateInfo {
@@ -38,16 +34,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit WorldTemplateInfo(::WorldTemplatePackManifest const& manifest);
-
-    MCAPI void addWorldTemplatePackSource(::WorldTemplatePackSource& source);
-
-    MCFOLD ::WorldTemplatePackManifest const& getPackManifest() const;
-
-    MCFOLD ::std::string const& getWorldName() const;
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getWorldPath() const;
-
-    MCAPI bool isVirtualCatalogItem() const;
 
     MCAPI ~WorldTemplateInfo();
     // NOLINTEND

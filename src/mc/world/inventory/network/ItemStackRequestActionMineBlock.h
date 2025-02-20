@@ -11,7 +11,6 @@
 class BinaryStream;
 class ReadOnlyBinaryStream;
 struct ItemStackNetIdVariant;
-struct ItemStackRequestSlotInfo;
 // clang-format on
 
 class ItemStackRequestActionMineBlock : public ::ItemStackRequestAction {
@@ -42,18 +41,6 @@ public:
 
     // vIndex: 0
     virtual ~ItemStackRequestActionMineBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
-
-    MCFOLD int getPredictedDurability() const;
-
-    MCAPI ::ItemStackRequestSlotInfo getSrc() const;
-
-    MCFOLD void setPreValidationStatus(::ItemStackRequestActionMineBlock::PreValidationStatus status) const;
     // NOLINTEND
 
 public:

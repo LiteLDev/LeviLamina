@@ -42,7 +42,6 @@ public:
 
 public:
     // prevent constructor by default
-    CollisionShapes& operator=(CollisionShapes const&);
     CollisionShapes();
 
 public:
@@ -50,17 +49,11 @@ public:
     // NOLINTBEGIN
     MCAPI CollisionShapes(::CollisionShapes const&);
 
-    MCAPI void addCollisionShape(::AABB const& aabb);
-
-    MCAPI void addCollisionShape(::AABB const& aabb, ::Block const& block, ::BlockPos const& blockPos);
-
     MCAPI ::std::pair<::BlockPos, ::Block const*> getBlockPosCurrentlyStandingOn(::AABB box) const;
 
+    MCAPI ::CollisionShapes& operator=(::CollisionShapes const&);
+
     MCAPI ::CollisionShapes& operator=(::CollisionShapes&&);
-
-    MCAPI void reserve(uint64 size);
-
-    MCFOLD uint64 size() const;
 
     MCAPI ~CollisionShapes();
     // NOLINTEND

@@ -38,12 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LodestoneCompassItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::LodestoneCompassComponent* _tryGetOrAddComponent(
@@ -52,12 +46,6 @@ public:
     );
 
     MCAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

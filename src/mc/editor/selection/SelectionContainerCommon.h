@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class SelectionContainerCommon {
@@ -22,12 +17,6 @@ public:
     SelectionContainerCommon& operator=(SelectionContainerCommon const&);
     SelectionContainerCommon(SelectionContainerCommon const&);
     SelectionContainerCommon();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
 };
 
 } // namespace Editor::Network

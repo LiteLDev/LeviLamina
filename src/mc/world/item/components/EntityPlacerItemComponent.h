@@ -10,6 +10,7 @@
 // clang-format off
 class Actor;
 class BlockDescriptor;
+class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class Container;
@@ -57,16 +58,24 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
 
+    MCAPI void _positionAndRotateActor(
+        ::Actor&             actor,
+        ::Vec3               position,
+        uchar                face,
+        ::Vec3 const&        playerFeetPos,
+        ::BlockLegacy const* blockLegacy
+    ) const;
+
     MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
 
     MCAPI void _useOn(
         bool&              result,
-        ::ItemStack const& initialItemStack,
-        ::ItemStack&       currentItemStack,
-        ::Actor&           usingActor,
-        ::BlockPos const&  pos,
-        uchar              face,
-        ::Vec3 const&      clickPos
+        ::ItemStack const& currentItemStack,
+        ::ItemStack&       usingActor,
+        ::Actor&           pos,
+        ::BlockPos const&  face,
+        uchar              clickPos,
+        ::Vec3 const&      initialItemStack
     );
 
     MCAPI void
@@ -80,8 +89,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();

@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class SynchedActorData;
-class SynchedActorDataReader;
-// clang-format on
-
 class SynchedActorDataWriter {
 public:
     // member variables
@@ -22,12 +16,4 @@ public:
     SynchedActorDataWriter& operator=(SynchedActorDataWriter const&);
     SynchedActorDataWriter(SynchedActorDataWriter const&);
     SynchedActorDataWriter();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::gsl::not_null<::SynchedActorData*> _get();
-
-    MCFOLD ::SynchedActorDataReader reader() const;
-    // NOLINTEND
 };

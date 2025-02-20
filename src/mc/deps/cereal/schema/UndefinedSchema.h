@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
+namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 // clang-format on
@@ -18,23 +19,18 @@ class UndefinedSchema : public ::cereal::internal::BasicSchema {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
+    // vIndex: 4
     virtual void
     doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
         const /*override*/;
 
-    // vIndex: 10
-    virtual ::cereal::SchemaDescription makeDescription(::cereal::internal::BasicSchema::DescriptionMode) const
+    // vIndex: 7
+    virtual ::cereal::SchemaDescription
+    makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const
         /*override*/;
 
     // vIndex: 0
     virtual ~UndefinedSchema() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::cereal::internal::UndefinedSchema const& instance();
     // NOLINTEND
 
 public:
@@ -50,7 +46,8 @@ public:
     $doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext& context)
         const;
 
-    MCAPI ::cereal::SchemaDescription $makeDescription(::cereal::internal::BasicSchema::DescriptionMode) const;
+    MCAPI ::cereal::SchemaDescription
+    $makeDescription(::cereal::ReflectionCtx const&, ::cereal::internal::BasicSchema::DescriptionMode) const;
     // NOLINTEND
 
 public:

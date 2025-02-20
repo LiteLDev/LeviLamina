@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/PaletteColor.h"
-#include "mc/world/actor/ParticleType.h"
+#include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/shared_types/legacy/actor/PaletteColor.h"
 
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class Block;
-class BlockPos;
 class ILevel;
 class Random;
 class Vec2;
@@ -22,20 +20,15 @@ namespace ActorParticles {
 // NOLINTBEGIN
 MCAPI uint calculateDustParticleNumberFromFall(float fallDistance);
 
-MCAPI ::Vec3 getDustParticlePosition(::Vec3 const& position, ::AABB const& aabb);
-
-MCAPI void
-spawnBalloonPopParticles(uint particleCount, ::AABB aabb, ::PaletteColor color, ::ILevel& level, ::Random& random);
+MCAPI void spawnBalloonPopParticles(
+    uint                                aabb,
+    ::AABB                              color,
+    ::SharedTypes::Legacy::PaletteColor level,
+    ::ILevel&                           random,
+    ::Random&                           particleCount
+);
 
 MCAPI void spawnDeathParticles(::Vec3 position, ::Vec2 aabbDim, float heightOffset, ::ILevel& level);
-
-MCAPI void spawnDustParticlesFromFalling(
-    uint           particleCount,
-    ::Vec3         position,
-    ::ILevel&      level,
-    ::Block const& block,
-    ::BlockPos     blockPos
-);
 
 MCAPI void spawnParticlesInArea(
     ::ILevel&      level,
@@ -47,21 +40,21 @@ MCAPI void spawnParticlesInArea(
 );
 
 MCAPI void spawnPukeParticles(
-    uint      numLines,
-    uint      particlesPerLine,
-    ::Vec3    position,
-    ::Vec3    lookDirection,
-    ::ILevel& level,
-    ::Random& random
+    uint      position,
+    uint      lookDirection,
+    ::Vec3    level,
+    ::Vec3    random,
+    ::ILevel& numLines,
+    ::Random& particlesPerLine
 );
 
 MCAPI void spawnTreasureHuntingParticles(
-    uint      particleCount,
-    ::Vec3    position,
+    uint      position,
     ::Vec3    direction,
-    ::Vec2    aabbDim,
-    ::ILevel& level,
-    ::Random& random
+    ::Vec3    aabbDim,
+    ::Vec2    level,
+    ::ILevel& random,
+    ::Random& particleCount
 );
 // NOLINTEND
 

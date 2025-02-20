@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 
 namespace ScriptModuleMinecraft {
@@ -23,13 +23,6 @@ public:
     ScriptTargetBlockHitAfterEvent& operator=(ScriptTargetBlockHitAfterEvent const&);
     ScriptTargetBlockHitAfterEvent(ScriptTargetBlockHitAfterEvent const&);
     ScriptTargetBlockHitAfterEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent&&);
-    // NOLINTEND
 
 public:
     // static functions

@@ -16,12 +16,11 @@ public:
 public:
     // prevent constructor by default
     LegacyItemTriggerHandlerConfig& operator=(LegacyItemTriggerHandlerConfig const&);
+    LegacyItemTriggerHandlerConfig();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyItemTriggerHandlerConfig();
-
     MCAPI LegacyItemTriggerHandlerConfig(::LegacyItemTriggerHandlerConfig const&);
 
     MCAPI ~LegacyItemTriggerHandlerConfig();
@@ -30,8 +29,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::LegacyItemTriggerHandlerConfig const&);
     // NOLINTEND
 

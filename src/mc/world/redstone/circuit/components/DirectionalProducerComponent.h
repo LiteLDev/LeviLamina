@@ -34,20 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DirectionalProducerComponent();
-
-    MCAPI void setAllowedConnections(::std::bitset<6> allowedConnections);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

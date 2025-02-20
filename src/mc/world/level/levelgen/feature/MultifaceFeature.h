@@ -9,9 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class IBlockWorldGenAPI;
 class Random;
-class RenderParams;
 // clang-format on
 
 class MultifaceFeature : public ::IFeature {
@@ -32,14 +30,13 @@ public:
     // prevent constructor by default
     MultifaceFeature& operator=(MultifaceFeature const&);
     MultifaceFeature(MultifaceFeature const&);
+    MultifaceFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI&, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
     // vIndex: 0
     virtual ~MultifaceFeature() /*override*/ = default;
@@ -48,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultifaceFeature();
-
     MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
         ::BlockSource&              region,
         ::BlockPos const&           pos,
@@ -67,12 +62,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -81,8 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI&, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

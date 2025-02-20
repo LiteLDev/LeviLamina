@@ -70,7 +70,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~NetherGenerator() /*override*/ = default;
+    virtual ~NetherGenerator() /*override*/;
 
     // vIndex: 11
     virtual void loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad) /*override*/;
@@ -126,8 +126,8 @@ public:
     MCAPI void _prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
-        bool                  factorInBeardsAndShavers,
-        ::std::vector<short>* ZXheights,
+        bool                  ZXheights,
+        ::std::vector<short>* factorInBeardsAndShavers,
         int                   skipTopN
     );
 
@@ -145,7 +145,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

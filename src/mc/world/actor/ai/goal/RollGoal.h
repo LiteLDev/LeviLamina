@@ -52,15 +52,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RollGoal(::Mob& mob, float probability);
+    MCAPI bool _checkForDamagingBlocks() const;
 
     MCAPI void _handleRoll(int rollCounter, ::Vec3& positionDelta, float& rollX, float& rollZ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float probability);
     // NOLINTEND
 
 public:

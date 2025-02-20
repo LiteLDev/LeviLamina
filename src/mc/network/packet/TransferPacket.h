@@ -42,26 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TransferPacket();
-
-    MCAPI explicit TransferPacket(bool reloadWorld);
-
-    MCAPI TransferPacket(::std::string const& serverAddress, int serverPort);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(bool reloadWorld);
-
-    MCAPI void* $ctor(::std::string const& serverAddress, int serverPort);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

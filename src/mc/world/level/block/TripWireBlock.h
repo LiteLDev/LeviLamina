@@ -52,7 +52,7 @@ public:
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const
         /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 131
@@ -65,19 +65,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TripWireBlock(::std::string const& nameId, int id);
-
     MCAPI void _checkPressed(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _updateSource(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

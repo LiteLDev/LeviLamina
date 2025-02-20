@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Tag;
-// clang-format on
-
 class PositionTrackingId {
 public:
     // member variables
@@ -16,23 +11,13 @@ public:
 
 public:
     // prevent constructor by default
+    PositionTrackingId& operator=(PositionTrackingId const&);
+    PositionTrackingId(PositionTrackingId const&);
     PositionTrackingId();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PositionTrackingId(::PositionTrackingId const&);
-
-    MCAPI PositionTrackingId(::PositionTrackingId&&);
-
-    MCAPI void fromTag(::Tag const* tag);
-
-    MCAPI ::std::unique_ptr<::Tag> getTag() const;
-
-    MCFOLD ::PositionTrackingId& operator=(::PositionTrackingId const&);
-
-    MCAPI ::PositionTrackingId& operator=(::PositionTrackingId&&);
-
     MCAPI ::std::string const toString() const;
     // NOLINTEND
 
@@ -42,13 +27,5 @@ public:
     MCAPI static ::PositionTrackingId const& INVALID_ID();
 
     MCAPI static uint& sNextId();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::PositionTrackingId const&);
-
-    MCAPI void* $ctor(::PositionTrackingId&&);
     // NOLINTEND
 };

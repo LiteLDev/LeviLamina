@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Biome;
-class CompoundTag;
-class IWorldRegistriesProvider;
-struct BiomeJsonDocumentGlue;
-// clang-format on
-
 class BiomeComponentFactory {
 public:
     // BiomeComponentFactory inner types define
@@ -44,14 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::BiomeJsonDocumentGlue& getBiomeJsonDocumentGlue();
-
-    MCAPI void registrationFinished();
-
-    MCAPI void
-    writeComponentsToTag(::Biome const& biome, ::IWorldRegistriesProvider const& lookupProvider, ::CompoundTag& tag)
-        const;
-
     MCAPI ~BiomeComponentFactory();
     // NOLINTEND
 

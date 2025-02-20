@@ -5,11 +5,10 @@
 #include "mc/server/commands/CommandPosition.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/server/commands/CommandSelectionOrder.h"
 #include "mc/server/commands/CommandSelectionType.h"
 #include "mc/world/actor/selectors/InvertableFilter.h"
-#include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -60,13 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandSelectorBase(bool forcePlayer);
-
     MCAPI void addFamilyFilter(::InvertableFilter<::std::string> const& filter);
-
-    MCAPI void addFilter(::std::function<bool(::CommandOrigin const&, ::Actor const&)> filter);
-
-    MCAPI void addGameModeFilter(::InvertableFilter<::GameType> const& filter);
 
     MCAPI void addHasItemFilter(
         ::std::string const&                 itemName,
@@ -84,23 +77,13 @@ public:
         ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>> const& optionalValue
     );
 
-    MCAPI void addLevelFilter(::std::pair<int, int> const& level);
-
-    MCAPI void addNameFilter(::InvertableFilter<::std::string> const& filter);
-
     MCAPI void addScoreFilter(
         ::std::string const&                                              objName,
         ::CommandIntegerRange const&                                      range,
         ::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback
     );
 
-    MCAPI void addTagFilter(::InvertableFilter<::std::string> const& filter);
-
     MCAPI void addTypeFilter(::InvertableFilter<::std::string> const& filter);
-
-    MCAPI void addXRotationFilter(::std::pair<float, float> const& xRotation);
-
-    MCAPI void addYRotationFilter(::std::pair<float, float> const& yRotation);
 
     MCAPI bool compareName(::std::string const& name) const;
 
@@ -110,15 +93,9 @@ public:
 
     MCAPI ::std::string getName() const;
 
-    MCFOLD ::CommandSelectionOrder getOrder() const;
-
-    MCAPI uint64 getResultCount() const;
-
-    MCAPI bool hasName() const;
-
     MCAPI bool isExpansionAllowed(::CommandOrigin const& origin) const;
 
-    MCFOLD bool isExplicitIdSelector() const;
+    MCAPI bool isInDimension(::CommandOrigin const& origin, ::Actor& entity) const;
 
     MCAPI bool matchFamily(::Actor const& entity) const;
 
@@ -130,30 +107,6 @@ public:
 
     MCAPI ::std::shared_ptr<::std::vector<::Actor*>> newResults(::CommandOrigin const& origin) const;
 
-    MCAPI void setBox(::Vec3 const& deltas);
-
-    MCAPI void setExcludeAgents(bool excludeAgents);
-
-    MCAPI void setExplicitIdSelector(::std::string const& playerName);
-
-    MCAPI void setForceDimensionFiltering(bool forceDimensionFiltering);
-
-    MCAPI void setIncludeDeadPlayers(bool includeDead);
-
-    MCAPI void setOrder(::CommandSelectionOrder order);
-
-    MCAPI void setPosition(::CommandPosition const& position);
-
-    MCAPI void setRadiusMax(float r);
-
-    MCAPI void setRadiusMin(float rm);
-
-    MCAPI void setResultCount(uint64 count, bool setWithSelector);
-
-    MCAPI void setType(::CommandSelectionType type);
-
-    MCFOLD void setVersion(int version);
-
     MCAPI ~CommandSelectorBase();
     // NOLINTEND
 
@@ -161,12 +114,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Vec3 const getFeetPos(int version, ::Actor const& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool forcePlayer);
     // NOLINTEND
 
 public:

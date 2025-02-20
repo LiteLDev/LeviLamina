@@ -11,7 +11,7 @@ struct DefaultSystemTraits {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ComponentInfo> generateDetailedComponentInfo();
+    MCFOLD static ::std::vector<::ComponentInfo> generateDetailedComponentInfo();
 
     MCAPI static ::std::string generateName(::std::string name);
     // NOLINTEND

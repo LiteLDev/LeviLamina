@@ -22,13 +22,13 @@ class PackLoadContext : public ::IPackLoadContext, public ::BedrockLoadContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnkf67099;
-    ::ll::UntypedStorage<1, 1>   mUnk6aa892;
-    ::ll::UntypedStorage<1, 1>   mUnk4164b4;
-    ::ll::UntypedStorage<8, 16>  mUnk36beeb;
-    ::ll::UntypedStorage<8, 72>  mUnk8a75c5;
-    ::ll::UntypedStorage<1, 1>   mUnk30bb35;
-    ::ll::UntypedStorage<8, 64>  mUnk6abfbf;
+    ::ll::UntypedStorage<8, 32> mUnkf67099;
+    ::ll::UntypedStorage<1, 1>  mUnk6aa892;
+    ::ll::UntypedStorage<1, 1>  mUnk4164b4;
+    ::ll::UntypedStorage<8, 16> mUnk36beeb;
+    ::ll::UntypedStorage<8, 72> mUnk8a75c5;
+    ::ll::UntypedStorage<1, 1>  mUnk30bb35;
+    ::ll::UntypedStorage<8, 64> mUnk6abfbf;
     // NOLINTEND
 
 public:
@@ -104,13 +104,13 @@ public:
 
     MCFOLD bool $isBaseGamePack() const;
 
-    MCFOLD bool $isTrustedPack() const;
+    MCAPI bool $isTrustedPack() const;
 
     MCFOLD ::mce::UUID const& $getPackUUID() const;
 
     MCFOLD ::Experiments const& $getExperiments() const;
 
-    MCFOLD ::PackType $getPackType() const;
+    MCAPI ::PackType $getPackType() const;
 
     MCFOLD ::PackLoadStorage& $getStorage();
 

@@ -7,6 +7,7 @@
 class BlockPos;
 class BlockSource;
 class CompoundTag;
+class SpawnData;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -43,7 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~BaseMobSpawner();
+    virtual ~BaseMobSpawner() = default;
 
     // vIndex: 1
     virtual void tick(::BlockSource& source);
@@ -68,6 +69,8 @@ public:
     MCAPI void removeDisplayEntity();
 
     MCAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
+
+    MCAPI void setNextSpawnData(::std::unique_ptr<::SpawnData> nextSpawnData);
     // NOLINTEND
 
 public:
@@ -79,7 +82,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

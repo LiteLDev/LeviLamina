@@ -17,31 +17,5 @@ public:
     // prevent constructor by default
     RoleChecker& operator=(RoleChecker const&);
     RoleChecker(RoleChecker const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RoleChecker();
-
-    MCAPI void checkRole(
-        ::std::string const&                                                           jsonCredentials,
-        ::std::function<void(::edu::Role, ::std::string const&, ::std::string const&)> callback
-    );
-
-    MCAPI bool lookupInProgress() const;
-
-    MCAPI ~RoleChecker();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
+    RoleChecker();
 };

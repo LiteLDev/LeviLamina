@@ -38,13 +38,23 @@ public:
     public:
         // prevent constructor by default
         Element& operator=(Element const&);
-        Element(Element const&);
-        Element();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Element();
+
+        MCAPI Element(::SurfaceMaterialAdjustmentAttributes::Element const&);
+
         MCAPI ~Element();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor();
+
+        MCAPI void* $ctor(::SurfaceMaterialAdjustmentAttributes::Element const&);
         // NOLINTEND
 
     public:
@@ -74,8 +84,8 @@ public:
         ::RenderParams&                        molangParams,
         ::gsl::not_null<::PerlinSimplexNoise*> noise,
         ::BlockPos const&                      pos,
-        int                                    heightMin,
-        int                                    heightMax
+        int                                    heightMax,
+        int                                    heightMin
     ) const;
 
     MCFOLD void parseExpressionNodeFloat(

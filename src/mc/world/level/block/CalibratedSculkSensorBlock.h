@@ -11,6 +11,7 @@
 class Block;
 class BlockPos;
 class BlockSource;
+class CircuitSystem;
 // clang-format on
 
 class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
@@ -34,21 +35,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CalibratedSculkSensorBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int getInputStrength(::BlockSource const& region, ::BlockPos const& pos);
-    // NOLINTEND
+    MCAPI static bool
+    _wouldBePoweredByCircuit(::CircuitSystem& circuitSystem, ::BlockPos const& pos, uchar connectionDirection);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI static int getInputStrength(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

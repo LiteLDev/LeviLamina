@@ -9,7 +9,7 @@
 // clang-format off
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class SaveContext;
 // clang-format on
 
@@ -29,7 +29,7 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 0
     virtual ~NetherReactorBlockActor() /*override*/ = default;
@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:

@@ -39,7 +39,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(::Json::Value const& entryJson);
+    MCAPI static ::std::unique_ptr<::LootPoolEntry>
+    deserialize(::Json::Value const& entryJson, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:

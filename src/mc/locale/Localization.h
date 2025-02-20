@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Localization(::std::string const& code, ::Localization* fallbackLocale);
-
     MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
 
     MCAPI ::OptionalString _getSimple(::std::string const& id) const;
@@ -56,8 +54,6 @@ public:
 
     MCAPI bool get(::std::string const& id, ::std::string& out, ::std::vector<::std::string> const& params) const;
 
-    MCFOLD ::std::string getFullLanguageCode() const;
-
     MCAPI void loadFromPack(
         ::std::string const&                keyPrefix,
         ::PackAccessStrategy const&         accessStrategy,
@@ -78,13 +74,5 @@ public:
     MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
 
     MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
-
-    MCAPI static ::std::string getLanguageCode(::std::string const& fullCode);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& code, ::Localization* fallbackLocale);
     // NOLINTEND
 };

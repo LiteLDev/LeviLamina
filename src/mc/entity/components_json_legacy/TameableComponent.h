@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorInteraction;
 class Player;
 // clang-format on
 
@@ -21,15 +20,14 @@ public:
     // prevent constructor by default
     TameableComponent& operator=(TameableComponent const&);
     TameableComponent(TameableComponent const&);
+    TameableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TameableComponent();
-
     MCAPI bool _attemptToTame(::Actor& owner, ::Player& player);
 
-    MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
+    MCAPI bool _canTame(::Actor& owner, ::Player& player);
 
     MCAPI void tame(::Actor& owner, ::Player& player);
     // NOLINTEND
@@ -38,11 +36,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _becomeTame(::Actor& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

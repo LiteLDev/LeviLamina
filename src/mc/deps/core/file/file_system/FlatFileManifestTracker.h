@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FlatFileManifest; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -29,13 +29,11 @@ public:
     // NOLINTBEGIN
     MCAPI FlatFileManifestTracker();
 
-    MCAPI ::std::shared_ptr<::Core::FlatFileManifest const> loadManifest(::Core::Path const& manifestPath);
+    MCAPI ::std::shared_ptr<::Core::FlatFileManifest const> loadManifest(::Core::PathView manifestPath);
 
-    MCAPI bool manifestExists(::Core::Path const& manifestPath) const;
+    MCAPI bool manifestExists(::Core::PathView manifestPath) const;
 
-    MCAPI bool tryUnloadManifest(::Core::Path const& manifestPath);
-
-    MCAPI void unloadAllManifests();
+    MCAPI bool tryUnloadManifest(::Core::PathView manifestPath);
 
     MCAPI void updateManifest(::std::shared_ptr<::Core::FlatFileManifest> manifest, bool keepCached);
     // NOLINTEND

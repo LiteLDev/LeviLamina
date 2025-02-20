@@ -48,21 +48,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GameEventDynamicRegistration(::std::shared_ptr<::GameEventListener> listener);
-
     MCAPI void _onActorChangedChunk(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
-
-    MCAPI void onActorLoadedIntoChunk(::BlockSource const& region, ::ChunkPos chunkPos, ::DimensionType dimensionId);
-
-    MCAPI void
-    onActorMovedBetweenChunks(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
-
-    MCAPI void onActorRemoved();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::GameEventListener> listener);
     // NOLINTEND
 };

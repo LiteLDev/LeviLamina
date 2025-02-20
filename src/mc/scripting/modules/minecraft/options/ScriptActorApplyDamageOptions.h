@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -11,26 +11,19 @@ struct ScriptActorApplyDamageOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4432bc;
+    ::ll::UntypedStorage<4, 4>  mUnk232874;
     ::ll::UntypedStorage<8, 40> mUnkbfc0ea;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ScriptActorApplyDamageOptions& operator=(ScriptActorApplyDamageOptions const&);
     ScriptActorApplyDamageOptions(ScriptActorApplyDamageOptions const&);
     ScriptActorApplyDamageOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptActorApplyDamageOptions&
-    operator=(::ScriptModuleMinecraft::ScriptActorApplyDamageOptions const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptActorApplyDamageOptions&
-    operator=(::ScriptModuleMinecraft::ScriptActorApplyDamageOptions&&);
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptActorApplyDamageOptions const& other) const;
-
     MCAPI ~ScriptActorApplyDamageOptions();
     // NOLINTEND
 

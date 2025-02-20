@@ -14,6 +14,7 @@ class Dimension;
 class ICommandOriginLoader;
 class IRequestAction;
 class ITickingAreaView;
+class JigsawStructureElementRegistry;
 class LevelChunk;
 struct Bounds;
 struct DeserializedChunkLoadedRequest;
@@ -48,13 +49,6 @@ public:
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCAPI ChunkLoadedRequest(
-        ::Bounds const&                     bounds,
-        ::std::unique_ptr<::IRequestAction> requestAction,
-        bool                                isCircleArea,
-        bool                                allowNonTickingPlayerAndTickingAreaChunks
-    );
-
     MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
 
     MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
@@ -69,11 +63,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static bool isValidTag(::CompoundTag const& tag);
+
     MCAPI static ::DeserializedChunkLoadedRequest load(
-        ::std::string const&    key,
-        ::CompoundTag const&    tag,
-        ::ICommandOriginLoader& loader,
-        ::std::string const&    dimensionPrefix
+        ::std::string const&                    key,
+        ::CompoundTag const&                    tag,
+        ::ICommandOriginLoader&                 loader,
+        ::std::string const&                    dimensionPrefix,
+        ::JigsawStructureElementRegistry const& elementReg
     );
     // NOLINTEND
 
@@ -87,18 +84,11 @@ public:
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
-
-    MCAPI void* $ctor(
-        ::Bounds const&                     bounds,
-        ::std::unique_ptr<::IRequestAction> requestAction,
-        bool                                isCircleArea,
-        bool                                allowNonTickingPlayerAndTickingAreaChunks
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

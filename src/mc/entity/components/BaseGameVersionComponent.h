@@ -6,7 +6,7 @@ struct BaseGameVersionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnkd486fc;
+    ::ll::UntypedStorage<8, 32> mUnkd486fc;
     // NOLINTEND
 
 public:

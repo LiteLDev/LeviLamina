@@ -10,7 +10,7 @@
 class BaseGameVersion;
 class BlockPos;
 class BlockSource;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class UnderwaterTorchBlock : public ::TorchBlock {
@@ -18,8 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
@@ -35,18 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UnderwaterTorchBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -55,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 

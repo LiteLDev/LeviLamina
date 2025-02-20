@@ -39,7 +39,6 @@ public:
     // prevent constructor by default
     AcaciaTreeTrunk& operator=(AcaciaTreeTrunk const&);
     AcaciaTreeTrunk(AcaciaTreeTrunk const&);
-    AcaciaTreeTrunk();
 
 public:
     // virtual functions
@@ -65,6 +64,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AcaciaTreeTrunk();
+
     MCAPI void _placeLeaningBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
@@ -85,6 +86,12 @@ public:
         ::RenderParams&                 renderParams,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

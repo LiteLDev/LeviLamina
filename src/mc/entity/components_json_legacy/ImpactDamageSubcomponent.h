@@ -34,6 +34,7 @@ public:
     // prevent constructor by default
     ImpactDamageSubcomponent& operator=(ImpactDamageSubcomponent const&);
     ImpactDamageSubcomponent(ImpactDamageSubcomponent const&);
+    ImpactDamageSubcomponent();
 
 public:
     // virtual functions
@@ -52,18 +53,6 @@ public:
 
     // vIndex: 4
     virtual char const* getName() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ImpactDamageSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

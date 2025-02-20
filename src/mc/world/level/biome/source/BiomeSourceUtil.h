@@ -19,21 +19,6 @@ MCAPI short determineDestinationHeight(::Dimension const& dimension, ::BlockPos 
 MCAPI ::std::optional<::BlockPos> locateBiome(
     ::std::function<bool(::Biome const&)> const& predicate,
     ::BiomeSource const&                         biomeSource,
-    ::BoundingBox const&                         bounds,
-    uint                                         resolution
-);
-
-MCAPI ::std::optional<::BlockPos> locateBiome(
-    ::std::function<bool(::Biome const&)> const& predicate,
-    ::BiomeSource const&                         biomeSource,
-    ::BlockPos const&                            center,
-    ::BlockPos const&                            ranges,
-    uint                                         resolution
-);
-
-MCAPI ::std::optional<::BlockPos> locateBiome(
-    ::std::function<bool(::Biome const&)> const& predicate,
-    ::BiomeSource const&                         biomeSource,
     ::BlockPos const&                            center,
     ::BoundingBox                                worldBounds,
     uint                                         resolution

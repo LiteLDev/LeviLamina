@@ -20,21 +20,17 @@ class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
 class ItemInstance;
-class MapItemSavedData;
 class Player;
-class Random;
 class Vec3;
 struct ResourceDropsContext;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class ItemFrameBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
@@ -90,7 +86,7 @@ public:
     // vIndex: 31
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::HashedString getSpawnedItemName() const;
 
     // vIndex: 131
@@ -108,23 +104,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemFrameBlock(::std::string const& nameId, int id);
-
-    MCAPI int _addMapCollection(
-        ::std::vector<::MapItemSavedData*>& detectionGrid,
-        ::BlockPos const&                   centerPos,
-        ::BlockSource&                      region
-    ) const;
-
     MCAPI void _checkAchievements(::Player& player, ::BlockPos const& currentPos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -136,8 +120,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;

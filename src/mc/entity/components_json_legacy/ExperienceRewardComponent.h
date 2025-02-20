@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class CompoundTag;
-class DataLoadHelper;
-// clang-format on
-
 class ExperienceRewardComponent {
 public:
     // member variables
@@ -27,16 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCFOLD bool getIsExperienceDropEnabled() const;
-
-    MCAPI int getOnDeathExperience(::Actor& owner) const;
-
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCFOLD void setIsExperienceDropEnabled(bool isExperienceDropEnabled);
-
     MCAPI ~ExperienceRewardComponent();
     // NOLINTEND
 

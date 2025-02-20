@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class EntityContext;
 class Mob;
 class Vec3;
 namespace JsonUtil { class EmptyClass; }
@@ -36,20 +35,13 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::InvestigateSuspiciousLocationGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -61,12 +53,6 @@ public:
                 ::JsonUtil::EmptyClass,
                 ::InvestigateSuspiciousLocationGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -117,18 +103,6 @@ public:
 
     // vIndex: 0
     virtual ~InvestigateSuspiciousLocationGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit InvestigateSuspiciousLocationGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

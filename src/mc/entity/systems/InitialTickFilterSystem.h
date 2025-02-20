@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntitySystems;
 class IConstBlockSource;
 class StrictEntityContext;
 class TickWorldComponent;
@@ -21,15 +22,12 @@ struct ActorWalkAnimationComponent;
 struct CurrentTickComponent;
 struct MobBodyRotationComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace InitialTickFilterSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createTickingAreaFilterSystem();
-
-MCAPI ::TickingSystemWithInfo createValidChunkFilterSystem();
+MCAPI void registerSystems(::EntitySystems& systemRegistry);
 
 MCAPI void tickingAreaFilterTickEntity(
     ::StrictEntityContext const&                          context,

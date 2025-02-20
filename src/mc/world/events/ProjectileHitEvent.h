@@ -17,9 +17,21 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ProjectileHitEvent& operator=(ProjectileHitEvent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ProjectileHitEvent(::ProjectileHitEvent const&);
+
     MCAPI ~ProjectileHitEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ProjectileHitEvent const&);
     // NOLINTEND
 
 public:

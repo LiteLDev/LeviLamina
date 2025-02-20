@@ -14,7 +14,6 @@ class EntityContext;
 class NetEventCallback;
 class NetworkIdentifier;
 class Packet;
-class ServerNetworkSystem;
 class UserEntityIdentifierComponent;
 struct NetworkIdentifierWithSubId;
 // clang-format on
@@ -39,49 +38,34 @@ public:
     virtual void send(::Packet& packet) /*override*/;
 
     // vIndex: 3
-    virtual void sendToServer(::Packet& packet) /*override*/;
+    virtual void sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet) /*override*/;
 
     // vIndex: 4
-    virtual void sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId subid) /*override*/;
+    virtual void sendToServer(::Packet& packet) /*override*/;
 
     // vIndex: 5
-    virtual void
-    sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet) /*override*/;
+    virtual void sendToClient(::NetworkIdentifier const& id, ::Packet const& packet, ::SubClientId subid) /*override*/;
 
     // vIndex: 6
     virtual void
-    sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
-
-    // vIndex: 8
-    virtual void sendBroadcast(::Packet const& packet) /*override*/;
+    sendToClient(::UserEntityIdentifierComponent const* userIdentifier, ::Packet const& packet) /*override*/;
 
     // vIndex: 7
     virtual void
-    sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet) /*override*/;
+    sendToClients(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet) /*override*/;
 
     // vIndex: 9
+    virtual void sendBroadcast(::Packet const& packet) /*override*/;
+
+    // vIndex: 8
+    virtual void
+    sendBroadcast(::NetworkIdentifier const& exceptId, ::SubClientId exceptSubid, ::Packet const& packet) /*override*/;
+
+    // vIndex: 10
     virtual void flush(::NetworkIdentifier const& id, ::std::function<void()>&& callback) /*override*/;
 
     // vIndex: 0
     virtual ~LoopbackPacketSender() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LoopbackPacketSender(::SubClientId subid, ::ServerNetworkSystem& network);
-
-    MCAPI void addLoopbackCallback(::NetEventCallback& callback);
-
-    MCAPI void removeLoopbackCallback(::NetEventCallback& callback);
-
-    MCFOLD void setUserList(::std::vector<::OwnerPtr<::EntityContext>> const* userList);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientId subid, ::ServerNetworkSystem& network);
     // NOLINTEND
 
 public:
@@ -96,6 +80,8 @@ public:
     MCAPI bool $isInitialized() const;
 
     MCAPI void $send(::Packet& packet);
+
+    MCAPI void $sendTo(::NetworkIdentifier const& id, ::SubClientId subid, ::Packet& packet);
 
     MCAPI void $sendToServer(::Packet& packet);
 

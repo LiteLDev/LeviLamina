@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,14 +30,26 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScriptingWorldInitializeEvent& operator=(ScriptingWorldInitializeEvent const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptingWorldInitializeEvent(::ScriptingWorldInitializeEvent const&);
+
     MCAPI ~ScriptingWorldInitializeEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptingWorldInitializeEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

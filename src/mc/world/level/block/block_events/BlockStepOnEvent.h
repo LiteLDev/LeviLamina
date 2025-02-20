@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockSource;
-class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -35,16 +33,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockStepOnEvent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void configureRenderParamsForTrigger(::RenderParams& params) const;
-
-    MCFOLD ::Actor const& getEntity() const;
-
-    MCFOLD bool isClientSide() const;
     // NOLINTEND
 
 public:

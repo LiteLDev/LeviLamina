@@ -26,8 +26,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
 
-    MCAPI bool isEmpty() const;
-
     MCAPI ~ItemGroup();
     // NOLINTEND
 

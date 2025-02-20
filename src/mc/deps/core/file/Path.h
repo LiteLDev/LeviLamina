@@ -38,7 +38,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Core::Result makeFailure(char const* format, ::Core::PathView path);
+    MCAPI static ::Core::Result
+    makeFailure(::fmt::v10::basic_format_string<char, char const*> const& format, ::Core::PathView path);
     // NOLINTEND
 
 public:

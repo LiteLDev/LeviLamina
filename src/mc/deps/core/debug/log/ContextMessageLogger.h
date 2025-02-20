@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/debug/log/LogArea.h"
-#include "mc/deps/core/debug/log/LogLevel.h"
-
 class ContextMessageLogger {
 public:
     // member variables
@@ -26,12 +22,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ContextMessageLogger() = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void log(::LogArea area, ::LogLevel level, char const* message);
     // NOLINTEND
 
 public:

@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Editor { class LogMessage; }
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class LogMessagePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::LogMessagePayload> {
@@ -24,34 +18,13 @@ public:
     // prevent constructor by default
     LogMessagePayload& operator=(LogMessagePayload const&);
     LogMessagePayload(LogMessagePayload const&);
+    LogMessagePayload();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~LogMessagePayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LogMessagePayload();
-
-    MCAPI explicit LogMessagePayload(::Editor::LogMessage&& message);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Editor::LogMessage&& message);
     // NOLINTEND
 
 public:

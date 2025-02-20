@@ -10,7 +10,7 @@ namespace Scripting { struct RuntimeCondition; }
 namespace ScriptingRuntimeConditionIds {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Scripting::RuntimeCondition const& FocusTargetCameraExperiment();
+MCAPI ::Scripting::RuntimeCondition const& CameraAimAssistExperiment();
 
 MCAPI ::Scripting::RuntimeCondition const& ThirdPersonCameraExperiment();
 // NOLINTEND

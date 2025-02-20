@@ -3,16 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/Difficulty.h"
 #include "mc/world/effect/MobEffect.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class ActorDamageSource;
-class BaseAttributeMap;
 class CompoundTag;
-class HashedString;
 struct EffectDuration;
 namespace mce { class Color; }
 // clang-format on
@@ -43,78 +38,15 @@ public:
 
     MCAPI explicit MobEffectInstance(uint id);
 
-    MCAPI MobEffectInstance(uint id, ::EffectDuration duration);
-
-    MCAPI MobEffectInstance(uint id, ::EffectDuration duration, int amplifier);
-
-    MCAPI MobEffectInstance(
-        uint             id,
-        ::EffectDuration duration,
-        int              amplifier,
-        bool             ambient,
-        bool             effectVisible,
-        bool             displayAnimation
-    );
-
-    MCAPI void applyEffects(::Actor& mob) const;
-
-    MCFOLD bool displaysOnScreenTextureAnimation() const;
-
-    MCFOLD int getAmplifier() const;
-
-    MCAPI ::HashedString const& getComponentName() const;
-
-    MCAPI ::std::string getDescriptionId() const;
-
-    MCAPI ::EffectDuration getDifficultyDuration(::Difficulty difficulty) const;
-
     MCAPI ::std::string getDisplayName() const;
-
-    MCAPI ::EffectDuration getDuration() const;
-
-    MCFOLD uint getId() const;
-
-    MCAPI ::EffectDuration getLingerDuration() const;
-
-    MCAPI ::EffectDuration getSplashDuration() const;
-
-    MCAPI ::MobEffectInstance getSplashEffect() const;
-
-    MCAPI bool isAmbient() const;
-
-    MCAPI bool isEffectVisible() const;
-
-    MCAPI void onActorDied(::Actor& mob) const;
-
-    MCAPI void onActorHurt(::Actor& mob, ::ActorDamageSource const& source, float damage) const;
-
-    MCAPI void onEffectsExpired(::Actor& mob) const;
-
-    MCAPI bool operator!=(::MobEffectInstance const& obj) const;
 
     MCAPI ::MobEffectInstance& operator=(::MobEffectInstance&&);
 
     MCAPI ::MobEffectInstance& operator=(::MobEffectInstance const&);
 
-    MCFOLD void pauseCounterThisTick();
-
-    MCAPI void removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom) const;
-
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCAPI void setDifficultyDuration(::Difficulty difficulty, ::EffectDuration duration);
-
-    MCFOLD void setDuration(::EffectDuration dur);
-
-    MCAPI void splitDurations(int splitValue);
-
-    MCAPI bool tick();
-
-    MCAPI void tryInitializeMobEffectData();
-
     MCAPI void update(::MobEffectInstance const& takeOver);
-
-    MCAPI void updateEffects(::Actor* mob) const;
 
     MCAPI ~MobEffectInstance();
     // NOLINTEND
@@ -130,8 +62,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MAX_AMPLIFIER_COUNT();
-
     MCAPI static ::MobEffectInstance const& NO_EFFECT();
 
     MCAPI static float& splashDurationMultiplier();
@@ -145,13 +75,6 @@ public:
     MCAPI void* $ctor(::MobEffectInstance const&);
 
     MCAPI void* $ctor(uint id);
-
-    MCAPI void* $ctor(uint id, ::EffectDuration duration);
-
-    MCAPI void* $ctor(uint id, ::EffectDuration duration, int amplifier);
-
-    MCAPI void*
-    $ctor(uint id, ::EffectDuration duration, int amplifier, bool ambient, bool effectVisible, bool displayAnimation);
     // NOLINTEND
 
 public:

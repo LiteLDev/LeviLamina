@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-struct ExplosionStartedEvent;
 namespace ScriptModuleMinecraft { class ScriptBlock; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -36,15 +34,10 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptExplosionStartedAfterEvent(::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
 
-    MCAPI ScriptExplosionStartedAfterEvent(
-        ::ExplosionStartedEvent const&        explosionStartedEvent,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
-    MCAPI void copyTo(::ExplosionStartedEvent& explosionStartedEvent) const;
-
     MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>
     getImpactedBlocks() const;
+
+    MCAPI ~ScriptExplosionStartedAfterEvent();
     // NOLINTEND
 
 public:
@@ -57,9 +50,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
+    // NOLINTEND
 
-    MCAPI void*
-    $ctor(::ExplosionStartedEvent const& explosionStartedEvent, ::Scripting::WeakLifetimeScope const& scope);
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

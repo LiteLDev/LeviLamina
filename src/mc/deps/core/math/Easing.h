@@ -9,8 +9,6 @@ class Easing {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::function<float(float, float, float)> getEasingFunc(::EasingType easingType);
-
     MCAPI static ::std::string const& getStringFromEasingType(::EasingType easingType);
     // NOLINTEND
 

@@ -3,7 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+class Player;
+struct ItemUseEvent;
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -18,8 +27,18 @@ public:
 public:
     // prevent constructor by default
     ScriptItemUseAfterEvent& operator=(ScriptItemUseAfterEvent const&);
-    ScriptItemUseAfterEvent(ScriptItemUseAfterEvent const&);
     ScriptItemUseAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptItemUseAfterEvent(::ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
+
+    MCAPI
+    ScriptItemUseAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemUseEvent const& scope, ::Scripting::WeakLifetimeScope const&);
+
+    MCAPI ~ScriptItemUseAfterEvent();
+    // NOLINTEND
 
 public:
     // static functions
@@ -27,6 +46,21 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseAfterEvent> bind();
 
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemUseAfterEvent> bindV010();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptItemUseAfterEvent const&);
+
+    MCAPI void*
+    $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemUseEvent const& scope, ::Scripting::WeakLifetimeScope const&);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

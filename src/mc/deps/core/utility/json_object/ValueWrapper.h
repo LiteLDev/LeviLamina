@@ -73,12 +73,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Bedrock::JSONObject::ValueWrapper emptyObject();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

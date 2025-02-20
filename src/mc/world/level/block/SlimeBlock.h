@@ -10,7 +10,6 @@
 class BlockPos;
 class EntityContext;
 class Experiments;
-class Material;
 struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
@@ -32,7 +31,7 @@ public:
     // vIndex: 69
     virtual bool isBounceBlock() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 0
@@ -42,15 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SlimeBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

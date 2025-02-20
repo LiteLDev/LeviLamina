@@ -28,11 +28,7 @@ public:
 
     MCAPI explicit CommandPosition(::Vec3 const& absoluteOffset);
 
-    MCAPI ::BlockPos getBlockPos(::Vec3 const& ref, ::Vec3 const& offsetFromBase) const;
-
     MCAPI ::BlockPos getBlockPos(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
-
-    MCAPI ::Vec3 getPosition(::Vec3 const& ref, ::Vec3 const& offsetFromBase) const;
 
     MCAPI ::Vec3 getPosition(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
 

@@ -25,6 +25,7 @@ public:
     // prevent constructor by default
     HurtOwnerSubcomponent& operator=(HurtOwnerSubcomponent const&);
     HurtOwnerSubcomponent(HurtOwnerSubcomponent const&);
+    HurtOwnerSubcomponent();
 
 public:
     // virtual functions
@@ -43,18 +44,6 @@ public:
 
     // vIndex: 4
     virtual char const* getName() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HurtOwnerSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

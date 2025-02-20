@@ -17,11 +17,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BoostItem& operator=(BoostItem const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BoostItem(::BoostItem const&);
+
     MCAPI void setReplacementItemDescriptor(::ItemDescriptor const& replacementItemDescriptor);
 
     MCAPI ~BoostItem();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BoostItem const&);
     // NOLINTEND
 
 public:

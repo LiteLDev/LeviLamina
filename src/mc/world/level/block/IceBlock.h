@@ -44,23 +44,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI IceBlock(::std::string const& nameId, int id, bool packed);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Block const& _getMeltedBlockAndSendEvents(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static void melt(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool packed);
     // NOLINTEND
 
 public:
@@ -78,7 +64,7 @@ public:
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

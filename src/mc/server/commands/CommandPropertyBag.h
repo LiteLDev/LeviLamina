@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class Vec3;
-namespace Json { class Value; }
 // clang-format on
 
 class CommandPropertyBag : public ::PropertyBag {
@@ -23,19 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandPropertyBag(::Json::Value const& jsonValue);
-
     MCAPI void set(::std::string const& key, ::BlockPos const& pos);
 
     MCAPI void set(::std::string const& key, ::Vec3 size);
-
-    MCAPI void set(::std::string const& key, ::Json::Value const& val);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::Value const& jsonValue);
     // NOLINTEND
 
 public:

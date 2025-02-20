@@ -15,15 +15,9 @@ public:
 
 public:
     // prevent constructor by default
+    TemplatePoolElement& operator=(TemplatePoolElement const&);
     TemplatePoolElement(TemplatePoolElement const&);
     TemplatePoolElement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::TemplatePoolElement&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::TemplatePoolElement const&);
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool

@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/common/editor/WorldType.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EducationEditionOffer.h"
-#include "mc/world/Difficulty.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
@@ -34,7 +34,7 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnk66426f;
     ::ll::UntypedStorage<1, 1>   mUnk57412d;
     ::ll::UntypedStorage<1, 1>   mUnke30c4b;
-    ::ll::UntypedStorage<4, 4>   mUnkda0b87;
+    ::ll::UntypedStorage<4, 4>   mUnk298125;
     ::ll::UntypedStorage<8, 8>   mUnkf73d72;
     ::ll::UntypedStorage<4, 4>   mUnkeb97bb;
     ::ll::UntypedStorage<8, 8>   mUnkc435b8;
@@ -54,7 +54,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnkf49ceb;
     ::ll::UntypedStorage<8, 32>  mUnk2b57e9;
     ::ll::UntypedStorage<8, 72>  mUnkf9dbe5;
-    ::ll::UntypedStorage<8, 120> mUnkf2671b;
+    ::ll::UntypedStorage<8, 32>  mUnkf2671b;
     ::ll::UntypedStorage<1, 1>   mUnk8d22fd;
     ::ll::UntypedStorage<1, 1>   mUnk5b0010;
     ::ll::UntypedStorage<8, 64>  mUnk93b919;
@@ -86,7 +86,7 @@ public:
         ::GameType                            gameType,
         bool                                  isHardcore,
         bool                                  playerHasDied,
-        ::Difficulty                          gameDifficulty,
+        ::SharedTypes::Legacy::Difficulty     gameDifficulty,
         ::LevelSeed64                         seed,
         int                                   npv,
         uint64                                sizeOnDisk,
@@ -122,14 +122,6 @@ public:
     MCAPI ::LevelSummary& setName(::std::string Name);
 
     MCAPI ~LevelSummary();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> buildCustomIconPath(::Core::Path const& worldDirectory);
-
-    MCAPI static ::Core::PathBuffer<::std::string> buildWorldIconPath(::Core::Path const& worldDirectory);
     // NOLINTEND
 
 public:
@@ -172,7 +164,7 @@ public:
         ::GameType                            gameType,
         bool                                  isHardcore,
         bool                                  playerHasDied,
-        ::Difficulty                          gameDifficulty,
+        ::SharedTypes::Legacy::Difficulty     gameDifficulty,
         ::LevelSeed64                         seed,
         int                                   npv,
         uint64                                sizeOnDisk,

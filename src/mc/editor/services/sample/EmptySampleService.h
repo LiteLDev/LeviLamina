@@ -3,14 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/serviceproviders/EmptySampleServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Editor { class ServiceProviderCollection; }
-// clang-format on
 
 namespace Editor::Services {
 
@@ -33,18 +28,6 @@ public:
 
     // vIndex: 1
     virtual void SampleMethod() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EmptySampleService(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

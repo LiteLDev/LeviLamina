@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilderReadOnly.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilderReadOnly.h"
 
 // auto generated forward declare list
 // clang-format off
-struct ActorDefinitionEndedEvent;
 struct ActorDefinitionModifier;
-namespace Scripting { class WeakLifetimeScope; }
+namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -32,11 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptDataDrivenActorTriggerAfterEvent(
-        ::ActorDefinitionEndedEvent const&    actorDefinitionEvent,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
-
     MCAPI ::std::vector<::ActorDefinitionModifier> getModifiers() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&
@@ -55,13 +49,6 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilderReadOnly<
         ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>
     bindV010();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::ActorDefinitionEndedEvent const& actorDefinitionEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

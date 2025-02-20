@@ -60,8 +60,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SoulSandBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -71,12 +69,6 @@ public:
     MCAPI static ::AABB& BLOCK_AABB();
 
     MCAPI static ::BaseGameVersion const& SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

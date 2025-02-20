@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
-class NearestAttackableTargetGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -41,12 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~NearestAttackableTargetDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::NearestAttackableTargetGoal& goal) const;
     // NOLINTEND
 
 public:

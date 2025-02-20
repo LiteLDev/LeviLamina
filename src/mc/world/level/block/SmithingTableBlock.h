@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class Material;
 class Player;
 // clang-format on
 
@@ -27,18 +26,6 @@ public:
 
     // vIndex: 0
     virtual ~SmithingTableBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SmithingTableBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

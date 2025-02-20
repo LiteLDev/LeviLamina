@@ -12,9 +12,8 @@ class Actor;
 class BaseGameVersion;
 class Block;
 class BlockPos;
-class BlockSource;
-class Random;
 class Vec3;
+struct BlockAnimateTickData;
 // clang-format on
 
 class ColoredTorchBlock : public ::TorchBlock {
@@ -28,8 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 92
     virtual ::Block const&
@@ -44,18 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ColoredTorchBlock(::std::string const& nameId, int id, ::ColoredTorchColor baseColor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::ColoredTorchColor baseColor);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -64,7 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)

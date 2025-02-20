@@ -89,27 +89,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangScriptArg();
-
-    MCAPI MolangScriptArg(::MolangScriptArg&&);
-
     MCAPI MolangScriptArg(::MolangScriptArg const&);
 
     MCAPI MolangScriptArg(float value);
 
     MCAPI ::MolangMemberArray* getAsNonConstMolangMemberArray();
 
-    MCFOLD ::MolangScriptArgType getBaseType() const;
-
-    MCAPI bool isEqual(::MolangScriptArg const& rhs) const;
+    MCAPI ::MolangScriptArg& operator=(::MolangMemberArray const&);
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg const&);
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&&);
 
     MCAPI void reportGetFailure() const;
-
-    MCFOLD void setType(::MolangScriptArgType type);
 
     MCAPI ~MolangScriptArg();
     // NOLINTEND
@@ -135,10 +127,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::MolangScriptArg&&);
-
     MCAPI void* $ctor(::MolangScriptArg const&);
 
     MCAPI void* $ctor(float value);

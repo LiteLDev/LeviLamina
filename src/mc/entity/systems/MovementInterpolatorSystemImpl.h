@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+class Vec2;
 struct MovementInterpolatorComponent;
 struct StateVectorComponent;
 // clang-format on
@@ -17,6 +18,14 @@ public:
         ::StrictEntityContext const&,
         ::MovementInterpolatorComponent const& movementInterpolatorComponent,
         ::StateVectorComponent&                stateVectorComponent
+    );
+
+    MCAPI static float _tickHeadYaw(::MovementInterpolatorComponent& movementInterpolatorComponent, float yHeadRot);
+
+    MCAPI static ::std::tuple<::Vec2, ::Vec2> _tickRotation(
+        ::MovementInterpolatorComponent& movementInterpolatorComponent,
+        ::Vec2 const&                    actorCurrentRotation,
+        ::Vec2 const&                    actorPreviousRotation
     );
     // NOLINTEND
 };

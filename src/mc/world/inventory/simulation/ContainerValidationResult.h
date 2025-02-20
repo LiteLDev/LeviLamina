@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/inventory/simulation/ContainerValidationOperationType.h"
-#include "mc/world/inventory/simulation/ContainerValidationOutcome.h"
-
-// auto generated forward declare list
-// clang-format off
-struct ContainerValidationOperation;
-// clang-format on
-
 struct ContainerValidationResult {
 public:
     // member variables
@@ -23,17 +14,12 @@ public:
 public:
     // prevent constructor by default
     ContainerValidationResult& operator=(ContainerValidationResult const&);
-    ContainerValidationResult(ContainerValidationResult const&);
     ContainerValidationResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContainerValidationResult(::ContainerValidationOutcome outcome);
-
-    MCFOLD bool isSuccess() const;
-
-    MCAPI ::ContainerValidationOperation const* tryGetOperation(::ContainerValidationOperationType type) const;
+    MCAPI ContainerValidationResult(::ContainerValidationResult const&);
 
     MCAPI ~ContainerValidationResult();
     // NOLINTEND
@@ -41,7 +27,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerValidationOutcome outcome);
+    MCAPI void* $ctor(::ContainerValidationResult const&);
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk5c6cf4;
+        ::ll::UntypedStorage<8, 80> mUnk123bde;
         ::ll::UntypedStorage<4, 4>  mUnk26934b;
         // NOLINTEND
 
@@ -54,15 +54,12 @@ public:
 public:
     // prevent constructor by default
     DiggerItemComponent& operator=(DiggerItemComponent const&);
+    DiggerItemComponent(DiggerItemComponent const&);
     DiggerItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent const&);
-
-    MCAPI ::SharedTypes::v1_20_50::DiggerItemComponent& operator=(::SharedTypes::v1_20_50::DiggerItemComponent&&);
-
     MCAPI ~DiggerItemComponent();
     // NOLINTEND
 
@@ -73,15 +70,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent const&);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

@@ -10,7 +10,6 @@
 class BlockPos;
 class BoundingBox;
 class ChunkPos;
-class ListBlockVolumeIterator;
 class Vec3;
 // clang-format on
 
@@ -23,6 +22,10 @@ public:
     ::ll::UntypedStorage<4, 12> mUnk33cf4c;
     ::ll::UntypedStorage<8, 8>  mUnk7cf3db;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ListBlockVolume();
 
 public:
     // virtual functions
@@ -61,17 +64,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ListBlockVolume();
-
-    MCAPI explicit ListBlockVolume(::std::vector<::Vec3> const& blockPositions);
-
     MCAPI explicit ListBlockVolume(::std::vector<::BlockPos> const& blockPositions);
 
     MCAPI ListBlockVolume(::ListBlockVolume const& rhs);
-
-    MCAPI ::ListBlockVolumeIterator begin() const;
-
-    MCAPI void erase(::std::vector<::Vec3> const& blockPositions);
 
     MCAPI void insert(::std::vector<::Vec3> const& blockPositions);
 
@@ -81,10 +76,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::Vec3> const& blockPositions);
-
     MCAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
 
     MCAPI void* $ctor(::ListBlockVolume const& rhs);

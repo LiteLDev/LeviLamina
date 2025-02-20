@@ -19,10 +19,10 @@ class Piglin : public ::HumanoidMonster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 120
+    // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 8

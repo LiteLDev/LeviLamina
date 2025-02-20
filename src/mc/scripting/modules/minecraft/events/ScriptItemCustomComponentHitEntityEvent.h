@@ -12,6 +12,7 @@
 class Actor;
 class ItemStack;
 class Mob;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -44,7 +45,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI IntermediateStorage(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
+
         MCAPI ~IntermediateStorage();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
         // NOLINTEND
 
     public:
@@ -66,21 +75,27 @@ public:
 public:
     // prevent constructor by default
     ScriptItemCustomComponentHitEntityEvent& operator=(ScriptItemCustomComponentHitEntityEvent const&);
-    ScriptItemCustomComponentHitEntityEvent(ScriptItemCustomComponentHitEntityEvent const&);
     ScriptItemCustomComponentHitEntityEvent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptItemCustomComponentHitEntityEvent() /*override*/ = default;
+    virtual ~ScriptItemCustomComponentHitEntityEvent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
+    MCAPI
+    ScriptItemCustomComponentHitEntityEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent const&);
+
+    MCAPI ScriptItemCustomComponentHitEntityEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
+
+    MCAPI ScriptItemCustomComponentHitEntityEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                        scope
+    );
     // NOLINTEND
 
 public:
@@ -90,9 +105,22 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent const&);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
+
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                        scope
+    );
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

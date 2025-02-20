@@ -12,9 +12,7 @@
 class BinaryStream;
 class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
-class SubChunkPos;
 struct UpdateSubChunkBlocksChangedInfo;
-struct UpdateSubChunkNetworkBlockInfo;
 // clang-format on
 
 class UpdateSubChunkBlocksPacket : public ::Packet {
@@ -42,30 +40,6 @@ public:
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UpdateSubChunkBlocksPacket();
-
-    MCAPI UpdateSubChunkBlocksPacket(
-        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& blocksChanged,
-        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& extraBlocksChanged
-    );
-
-    MCAPI void setSubChunkPosition(::SubChunkPos const& subChunkPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& blocksChanged,
-        ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& extraBlocksChanged
-    );
     // NOLINTEND
 
 public:

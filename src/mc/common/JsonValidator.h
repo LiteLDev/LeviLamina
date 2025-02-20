@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/json/ValueType.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -46,19 +43,11 @@ public:
         MCAPI ::JsonValidator::Property&
         addConditionalProperty(::Json::Value const& value, ::JsonValidator::Property const& prop);
 
-        MCAPI ::JsonValidator::Property& addType(::Json::ValueType type);
-
-        MCAPI ::JsonValidator::Property& description(::std::string const& description);
-
         MCAPI ::JsonValidator::Property& operator=(::JsonValidator::Property const&);
 
         MCAPI ::JsonValidator::Property& operator=(::JsonValidator::Property&&);
 
         MCAPI ::JsonValidator::Property& operator[](::std::string const& propName);
-
-        MCAPI ::JsonValidator::Property& requireConditionalProperty();
-
-        MCAPI ::JsonValidator::Property& required();
 
         MCAPI ~Property();
         // NOLINTEND

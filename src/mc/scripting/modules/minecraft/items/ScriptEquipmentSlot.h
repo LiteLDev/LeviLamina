@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/EquipmentSlot.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 
 namespace ScriptModuleMinecraft {
 

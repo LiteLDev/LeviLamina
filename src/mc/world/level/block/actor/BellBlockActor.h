@@ -10,11 +10,10 @@
 // clang-format off
 class Actor;
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class SaveContext;
 // clang-format on
 
@@ -38,7 +37,7 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 43
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
@@ -53,19 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BellBlockActor(::BlockPos const& pos);
-
-    MCAPI void ejectItem(::BlockPos const& pos, ::Actor& actor) const;
-
-    MCAPI bool isRinging() const;
-
     MCAPI bool ring(::Direction::Type direction, ::BlockSource& region, ::Actor* sourceActor, bool alarmNearbyDwellers);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -81,7 +68,7 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 

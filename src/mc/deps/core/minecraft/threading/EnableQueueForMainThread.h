@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/threading/EnableQueueForThread.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
 
 namespace Bedrock::Threading {
 
@@ -20,11 +19,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EnableQueueForMainThread(::std::string name);
-
-    MCAPI void flushMainThreadTasks();
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    queueForMainThread(::std::function<void()>&& callback);
     // NOLINTEND
 
 public:

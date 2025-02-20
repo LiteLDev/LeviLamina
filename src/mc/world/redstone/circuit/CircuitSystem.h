@@ -7,7 +7,6 @@
 class BaseCircuitComponent;
 class BlockPos;
 class BlockSource;
-class ChunkPos;
 class CircuitSceneGraph;
 // clang-format on
 
@@ -39,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CircuitSystem();
-
     MCAPI ::BaseCircuitComponent*
     createComponent(::BlockPos const& pos, uchar direction, ::std::unique_ptr<::BaseCircuitComponent> newComponent);
 
@@ -50,31 +47,12 @@ public:
 
     MCAPI int getStrength(::BlockPos const& pos);
 
-    MCAPI void invalidatePos(::BlockPos const& pos);
-
     MCAPI bool isAvailableAt(::BlockPos const& pos);
-
-    MCAPI bool isConnectionAllowed(
-        ::BaseCircuitComponent& component,
-        ::BlockPos const&       componentPos,
-        uchar                   connectionDirection,
-        bool                    directilyPowered
-    );
-
-    MCAPI void preSetupPoweredBlocks(::ChunkPos const& chunkPos);
 
     MCAPI void removeComponents(::BlockPos const& pos);
 
     MCAPI void setStrength(::BlockPos const& pos, int strength);
 
     MCAPI void updateBlocks(::BlockSource& region, ::BlockPos const& chunkPos);
-
-    MCAPI void updateDependencies(::BlockSource* region);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

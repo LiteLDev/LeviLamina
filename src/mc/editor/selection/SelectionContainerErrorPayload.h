@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -38,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SelectionContainerErrorPayload(::mce::UUID const& id, ::std::string const& msg, bool eventOnly);
-
     MCAPI ::Editor::Network::SelectionContainerErrorPayload&
     operator=(::Editor::Network::SelectionContainerErrorPayload const&);
     // NOLINTEND
@@ -48,12 +45,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::UUID const& id, ::std::string const& msg, bool eventOnly);
     // NOLINTEND
 
 public:

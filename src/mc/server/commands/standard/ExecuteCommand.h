@@ -7,9 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
+class CommandPosition;
+class CommandPositionFloat;
 class CommandRegistry;
+struct ExecuteCommandPositionData;
 // clang-format on
 
 class ExecuteCommand : public ::Command {
@@ -51,6 +55,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::ExecuteCommandPositionData getExecutePositionData(
+        int                           version,
+        ::Actor&                      actor,
+        ::CommandPositionFloat const& commandPosition,
+        ::CommandPosition const&      detectCommandPosition,
+        ::ExecuteCommand::Mode        mode
+    );
+
     MCAPI static void setup(::CommandRegistry& registry, bool isLegacyActive, int newExecuteStartVersion);
     // NOLINTEND
 

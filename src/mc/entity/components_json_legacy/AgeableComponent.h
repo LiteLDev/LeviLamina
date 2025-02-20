@@ -6,8 +6,6 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
-class CompoundTag;
-class DataLoadHelper;
 class Player;
 // clang-format on
 
@@ -27,14 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCFOLD int getAge() const;
-
     MCAPI bool getInteraction(::Actor& actor, ::Player& player, ::ActorInteraction& interaction);
-
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
-
-    MCAPI void setAge(int age);
     // NOLINTEND
 };

@@ -21,13 +21,13 @@ public:
     virtual ::RakNet::RNS2BindResult Bind(::RakNet::RNS2_BerkleyBindParameters*, char const*, uint) = 0;
 
     // vIndex: 0
-    virtual ~IRNS2_Berkley() /*override*/;
+    virtual ~IRNS2_Berkley() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@ enum class ScriptSettingsGraphicsPropType : int {
     ShowInvisibleBlocks = 0,
     ShowChunkBoundaries = 1,
     ShowCompass         = 2,
+    NightVision         = 3,
 };
 
 }

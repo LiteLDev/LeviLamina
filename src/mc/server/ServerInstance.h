@@ -55,7 +55,6 @@ namespace Core { class FilePathManager; }
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class RegistryManager; }
-namespace Scripting { class ScriptEngine; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
@@ -127,7 +126,7 @@ public:
     // vIndex: 0
     virtual ~ServerInstance() /*override*/;
 
-    // vIndex: 1
+    // vIndex: 19
     virtual void onLowMemory() /*override*/;
 
     // vIndex: 1
@@ -163,10 +162,10 @@ public:
     // vIndex: 4
     virtual void onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual void onAppSuspended() /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual void onAppResumed() /*override*/;
 
     // vIndex: 10
@@ -191,21 +190,9 @@ public:
 
     MCAPI void disconnectAllClientsWithMessage(::std::string msg);
 
-    MCAPI bool enableItemStackNetManager() const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::CDNConfig> getCDNConfig() const;
-
     MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> getEventCoordinator();
-
-    MCAPI ::ServerScriptManager* getScriptManager();
-
-    MCAPI ::Scripting::ScriptEngine* getScriptingEngine();
-
     MCAPI ::ItemRegistryRef getServerItemRegistry() const;
-
-    MCAPI ::Bedrock::NonOwnerPointer<::ServerTextSettings> getServerTextSettings() const;
 
     MCAPI bool initializeServer(
         ::IMinecraftApp&                                                             app,
@@ -218,42 +205,43 @@ public:
         ::std::string                                                                serverName,
         ::LevelSettings                                                              levelSettings,
         int                                                                          maxChunkRadius,
-        bool                                                                         shouldAnnounce,
-        ::ConnectionDefinition                                                       connectionDefinition,
-        ::NetworkServerConfig                                                        networkServerConfig,
-        ::mce::UUID const&                                                           localPlayerId,
-        ::IMinecraftEventing&                                                        eventing,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&              resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const&            contentTierManager,
-        ::ResourcePackManager&                                                       clientResourcePackManager,
-        ::std::function<::Bedrock::UniqueOwnerPointer<::LevelStorage>(::Scheduler&)> createLevelStorageCallback,
-        ::std::string const&                                                         basePath,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                                   levelData,
-        ::std::string                                        playerSafetyServiceTextProcessorConfig,
+        bool                                                                         connectionDefinition,
+        ::ConnectionDefinition                                                       networkServerConfig,
+        ::NetworkServerConfig                                                        localPlayerId,
+        ::mce::UUID const&                                                           eventing,
+        ::IMinecraftEventing&                                                        resourcePackRepository,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&              contentTierManager,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const&            clientResourcePackManager,
+        ::ResourcePackManager&                                                       createLevelStorageCallback,
+        ::std::function<::Bedrock::UniqueOwnerPointer<::LevelStorage>(::Scheduler&)> basePath,
+        ::std::string const&                                                         levelData,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelData>           playerSafetyServiceTextProcessorConfig,
         ::std::string                                        serverId,
         ::std::string                                        applicationId,
         ::std::string                                        applicationTenantId,
-        ::std::unique_ptr<::EducationOptions>                educationOptions,
-        ::ResourcePackManager*                               localServerResourcePackManager,
-        ::std::function<void()>                              criticalSaveCallback,
-        ::std::function<void()>                              compactionCallback,
-        ::ServerMetrics*                                     serverMetrics,
-        ::DebugEndPoint*                                     debugEndPoint,
-        bool                                                 enableWorldSessionEndPoint,
-        ::std::shared_ptr<::Core::FileStorageArea>           storageAreaForLevel,
-        ::NetworkSettingOptions const&                       networkSettings,
-        bool                                                 enableItemStackNetManager,
-        bool                                                 enableItemTransactionLogger,
-        ::std::optional<::PlayerMovementSettings>            playerMovementSettings,
-        ::std::optional<::ScriptSettings>                    scriptSettings,
-        ::Experiments const&                                 levelExperiments,
-        bool                                                 isServerVisibleToLanDiscovery,
-        float                                                worldSizeMB,
-        ::std::optional<bool>                                clientSideGenerationEnabled,
-        ::ForceBlockNetworkIdsAreHashes                      blockNetworkIdsAreHashes,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> networkSessionOwner,
-        ::Bedrock::NonOwnerPointer<::CDNConfig>              cdnConfig,
-        ::Bedrock::NonOwnerPointer<::ServerTextSettings>     serverTextSettings
+        ::std::string                                        educationOptions,
+        ::std::unique_ptr<::EducationOptions>                criticalSaveCallback,
+        ::ResourcePackManager*                               compactionCallback,
+        ::std::function<void()>                              serverMetrics,
+        ::std::function<void()>                              debugEndPoint,
+        ::ServerMetrics*                                     enableWorldSessionEndPoint,
+        ::DebugEndPoint*                                     storageAreaForLevel,
+        bool                                                 networkSettings,
+        ::std::shared_ptr<::Core::FileStorageArea>           enableItemStackNetManager,
+        ::NetworkSettingOptions const&                       enableItemTransactionLogger,
+        bool                                                 playerMovementSettings,
+        bool                                                 scriptSettings,
+        ::std::optional<::PlayerMovementSettings>            levelExperiments,
+        ::ScriptSettings&&                                   isServerVisibleToLanDiscovery,
+        ::Experiments const&                                 enablePacketRateLimiting,
+        bool                                                 worldSizeMB,
+        bool                                                 clientSideGenerationEnabled,
+        float                                                blockNetworkIdsAreHashes,
+        ::std::optional<bool>                                networkSessionOwner,
+        ::ForceBlockNetworkIdsAreHashes                      cdnConfig,
+        ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner> serverTextSettings,
+        ::Bedrock::NonOwnerPointer<::CDNConfig>              shouldAnnounce,
+        ::Bedrock::NonOwnerPointer<::ServerTextSettings>     localServerResourcePackManager
     );
 
     MCAPI void leaveGameSync();

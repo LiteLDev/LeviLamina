@@ -51,24 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(
-        float minChance,
-        float maxChance,
-        int   mMinDistance,
-        int   mMaxDistance,
-        uchar axis
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(float minChance, float maxChance, int mMinDistance, int mMaxDistance, uchar axis);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

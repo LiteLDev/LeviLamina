@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class GuardianAttackGoal;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -31,6 +29,7 @@ public:
     // prevent constructor by default
     GuardianAttackDefinition& operator=(GuardianAttackDefinition const&);
     GuardianAttackDefinition(GuardianAttackDefinition const&);
+    GuardianAttackDefinition();
 
 public:
     // virtual functions
@@ -43,26 +42,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GuardianAttackDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::GuardianAttackGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                     name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GuardianAttackDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

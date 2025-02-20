@@ -22,6 +22,7 @@ public:
     // prevent constructor by default
     PushableDescription& operator=(PushableDescription const&);
     PushableDescription(PushableDescription const&);
+    PushableDescription();
 
 public:
     // virtual functions
@@ -34,18 +35,6 @@ public:
 
     // vIndex: 1
     virtual ~PushableDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PushableDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

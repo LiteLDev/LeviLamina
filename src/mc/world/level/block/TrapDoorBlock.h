@@ -19,9 +19,9 @@ class Experiments;
 class IConstBlockSource;
 class ItemInstance;
 class Material;
-class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class TrapDoorBlock : public ::BlockLegacy {
@@ -47,9 +47,6 @@ public:
 
     // vIndex: 23
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
-
-    // vIndex: 139
-    virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
     // vIndex: 92
     virtual ::Block const&
@@ -82,7 +79,10 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 149
+    // vIndex: 150
+    virtual void _useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+
+    // vIndex: 148
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 0
@@ -96,9 +96,9 @@ public:
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void setOpen(::BlockSource& region, ::BlockPos const& pos, bool shouldOpen) const;
-
     MCAPI void toggleOpen(::BlockSource& region, ::Actor* user, ::BlockPos const& pos) const;
+
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -135,8 +135,6 @@ public:
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
-    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
-
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
@@ -156,6 +154,8 @@ public:
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+
+    MCAPI void $_useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
     MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
     // NOLINTEND

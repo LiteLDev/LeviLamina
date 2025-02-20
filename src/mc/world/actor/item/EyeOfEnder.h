@@ -8,12 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class BlockPos;
-class EntityContext;
-class Player;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -45,7 +40,7 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 8
@@ -55,25 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EyeOfEnder(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI void preNormalTick();
-
-    MCAPI void signalTo(::Player const& player, ::BlockPos& target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

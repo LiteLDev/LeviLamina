@@ -4,9 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
-class BlockPos;
-class BlockSource;
 class LegacyStructureSettings;
 // clang-format on
 
@@ -31,13 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LegacyBlockPlacementProcessor(::LegacyStructureSettings const& settings);
-
-    MCAPI ::Block const*
-    applyBlockRules(::BlockSource& region, ::BlockPos& pos, ::Block const* blockToPlace, ::BlockPos const& refPos);
-
-    MCAPI ::BlockPos& applyGravity(::BlockSource& region, int yOffset, ::BlockPos& pos) const;
-
-    MCAPI bool canPlace();
 
     MCAPI ~LegacyBlockPlacementProcessor();
     // NOLINTEND

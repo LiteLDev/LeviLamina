@@ -24,7 +24,7 @@ public:
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8

@@ -16,8 +16,9 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SoulFireBlock : public ::BlockLegacy {
@@ -33,7 +34,7 @@ public:
     virtual ::AABB const&
     getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 78
@@ -45,12 +46,8 @@ public:
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -66,21 +63,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SoulFireBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isValidSoulFireFuel(::BlockLegacy const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -107,9 +92,7 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

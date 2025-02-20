@@ -65,11 +65,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Random();
+
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
     MCAPI uint _genRandInt32();
-
-    MCAPI uint _genUniformRandomInt();
 
     MCAPI float nextGaussian();
     // NOLINTEND
@@ -85,6 +85,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 

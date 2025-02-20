@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/script_engine/Closure.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,6 +66,8 @@ public:
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>,
         ::Scripting::Error>
     getPlayerServiceContext(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer);
+
+    MCAPI ::Editor::API::EditorScriptInternalAPI& operator=(::Editor::API::EditorScriptInternalAPI&&);
     // NOLINTEND
 
 public:

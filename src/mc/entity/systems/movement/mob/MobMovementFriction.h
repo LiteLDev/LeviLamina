@@ -23,17 +23,6 @@ struct VexFlagComponent;
 namespace MobMovementFriction {
 // functions
 // NOLINTBEGIN
-MCAPI void applyFriction(
-    ::CurrentLocalMoveVelocityComponent const* currentLocalMoveVelocityComponent,
-    ::VexFlagComponent const*                  vexFlagComponent,
-    ::MovementAbilitiesComponent const*        abilities,
-    ::PlayerInputModeComponent const*          playerInputMode,
-    ::ActorDataFlagComponent const&            synchedActorData,
-    ::StateVectorComponent&                    stateVector,
-    float                                      finalFriction,
-    bool                                       usingModifiedFriction
-);
-
 MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
 MCAPI void tickLavaWalkFriction(

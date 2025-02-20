@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
@@ -13,21 +12,17 @@
 class ActorInfoRegistry;
 class BaseGameVersion;
 class BlockDefinitionGroup;
-class CompoundTag;
 class CreativeItemRegistry;
 class Experiments;
 class HashedString;
 class IDynamicContainerSerialization;
 class Item;
-class ItemInstance;
 class ItemRegistry;
 class LevelData;
 class ResourcePackManager;
-class ServerScriptManager;
-class TagUpdateToken;
+struct ItemData;
 struct ItemRegistryComplexAlias;
 struct ItemTag;
-namespace Bedrock::Threading { class Mutex; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -40,7 +35,7 @@ public:
 
     // ItemRegistryRef inner types define
     using CreativeItemsServerInitCallbackSignature =
-        void(::ItemRegistryRef, ::ActorInfoRegistry*, ::BlockDefinitionGroup*, ::CreativeItemRegistry*, bool, ::BaseGameVersion const&, ::Experiments const&);
+        void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&);
 
     class LockGuard {
     public:
@@ -58,15 +53,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit LockGuard(::std::shared_ptr<::Bedrock::Threading::Mutex> mutex);
-
         MCAPI ~LockGuard();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::std::shared_ptr<::Bedrock::Threading::Mutex> mutex);
         // NOLINTEND
 
     public:
@@ -89,21 +76,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemRegistryRef();
-
     MCAPI ItemRegistryRef(::ItemRegistryRef const&);
-
-    MCAPI explicit ItemRegistryRef(::std::weak_ptr<::ItemRegistry> registry);
 
     MCAPI ::std::shared_ptr<::ItemRegistry> _lockRegistry() const;
 
     MCAPI void addItemToTagMap(::Item const& item) const;
 
-    MCAPI ::TagUpdateToken allowTagUpdate() const;
-
     MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* infoRegistry, ::LevelData& levelData) const;
-
-    MCAPI void bindDynamicScriptTypes(::ServerScriptManager& script, ::Experiments const& experiments) const;
 
     MCAPI bool canUpdateTags() const;
 
@@ -111,17 +90,11 @@ public:
 
     MCAPI void clearDeadItemRegistry() const;
 
-    MCAPI void digestServerItemComponents(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& itemTags
-    ) const;
-
-    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
-    getComplexAliasSplitNames(::HashedString const& oldName) const;
-
     MCAPI ::Bedrock::NonOwnerPointer<::CreativeItemRegistry const> getCreativeItemRegistry() const;
 
     MCAPI ::Bedrock::NonOwnerPointer<::CreativeItemRegistry> getCreativeItemRegistry();
 
-    MCAPI ::WeakPtr<::Item> getItem(::HashedString const& id) const;
+    MCFOLD ::WeakPtr<::Item> getItem(::HashedString const& id) const;
 
     MCAPI ::WeakPtr<::Item> getItem(short itemId) const;
 
@@ -133,30 +106,16 @@ public:
 
     MCAPI ::BaseGameVersion getWorldBaseGameVersion() const;
 
-    MCAPI void
-    init(::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::ResourcePackManager* rpm) const;
-
     MCAPI void initCreativeItemsServer(
-        ::ActorInfoRegistry*    actorInfoRegistry,
-        ::BlockDefinitionGroup* blockDefinitionGroup,
-        bool                    isClient,
-        ::Experiments const&    experiment,
+        ::BlockDefinitionGroup const& blockDefinitionGroup,
+        ::Experiments const&          experiment,
+        ::ResourcePackManager const&  resourcePackManager,
         ::std::function<
-            void(::ItemRegistryRef, ::ActorInfoRegistry*, ::BlockDefinitionGroup*, ::CreativeItemRegistry*, bool, ::BaseGameVersion const&, ::Experiments const&)>
+            void(::ItemRegistryRef, ::BlockDefinitionGroup const&, ::CreativeItemRegistry*, ::BaseGameVersion const&, ::Experiments const&, ::ResourcePackManager const&, ::cereal::ReflectionCtx const&)>
             registerCallback
     ) const;
 
     MCAPI bool isComplexAlias(::HashedString const& oldName) const;
-
-    MCAPI bool isCreativeItem(::ItemInstance const& itemInstance) const;
-
-    MCAPI bool isRegistryInitialized() const;
-
-    MCAPI bool isServerInitializingCreativeItems() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI ::ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
 
     MCAPI ::WeakPtr<::Item> lookupByName(::HashedString const& inString) const;
 
@@ -168,13 +127,9 @@ public:
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::HashedString const& inString) const;
 
-    MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
-
     MCAPI ::std::unordered_set<::Item const*> lookupByTag(::ItemTag const& tag) const;
 
-    MCAPI ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
-
-    MCAPI ::Bedrock::PubSub::Connector<void()>* onFinishedInit() const;
+    MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
 
     MCAPI void onLevelInit(::WeakRef<::IDynamicContainerSerialization> containerSerialization) const;
 
@@ -200,14 +155,11 @@ public:
 
     MCAPI void setServerInitializingCreativeItems(bool value) const;
 
-    MCAPI bool shouldCheckForItemWorldCompatibility() const;
-
     MCAPI void shutdown() const;
 
     MCAPI void unregisterItem(::HashedString const& itemName) const;
 
-    MCAPI ::std::vector<::std::string>
-    validateServerItemComponents(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& itemTags) const;
+    MCAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& itemData);
 
     MCAPI ~ItemRegistryRef();
     // NOLINTEND
@@ -215,11 +167,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCFOLD void* $ctor(::ItemRegistryRef const&);
-
-    MCFOLD void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
     // NOLINTEND
 
 public:

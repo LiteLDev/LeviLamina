@@ -14,10 +14,4 @@ public:
     BlockLootComponent& operator=(BlockLootComponent const&);
     BlockLootComponent(BlockLootComponent const&);
     BlockLootComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::string const& getLootTable() const;
-    // NOLINTEND
 };

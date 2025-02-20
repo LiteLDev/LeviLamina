@@ -16,7 +16,7 @@ public:
     ::ll::UntypedStorage<8, 40> mUnk3231c4;
     ::ll::UntypedStorage<4, 16> mUnk76ad7d;
     ::ll::UntypedStorage<4, 8>  mUnke2f52b;
-    ::ll::UntypedStorage<4, 8>  mUnk40f177;
+    ::ll::UntypedStorage<4, 8>  mUnk8b4d53;
     ::ll::UntypedStorage<1, 2>  mUnk8af916;
     ::ll::UntypedStorage<1, 2>  mUnk8d511f;
     ::ll::UntypedStorage<1, 2>  mUnke9602a;
@@ -29,11 +29,12 @@ public:
     ::ll::UntypedStorage<1, 2>  mUnkbdc040;
     ::ll::UntypedStorage<1, 2>  mUnk5ec46b;
     ::ll::UntypedStorage<1, 2>  mUnkc1a987;
+    ::ll::UntypedStorage<1, 2>  mUnk6a5dd4;
+    ::ll::UntypedStorage<4, 8>  mUnk619676;
     ::ll::UntypedStorage<1, 2>  mUnk83ba42;
     ::ll::UntypedStorage<4, 8>  mUnk81fb84;
     ::ll::UntypedStorage<8, 40> mUnk845420;
     ::ll::UntypedStorage<4, 8>  mUnk26f451;
-    ::ll::UntypedStorage<4, 8>  mUnk619676;
     ::ll::UntypedStorage<1, 2>  mUnk923f85;
     ::ll::UntypedStorage<4, 8>  mUnk87c67e;
     ::ll::UntypedStorage<1, 2>  mUnk12b1a0;
@@ -74,13 +75,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Editor::GameOptions const&);
+    MCAPI void* $ctor(::Editor::GameOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

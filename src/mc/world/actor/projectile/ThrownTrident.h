@@ -47,31 +47,31 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 73
+    // vIndex: 71
     virtual void despawn() /*override*/;
 
     // vIndex: 1
     virtual void outOfWorld() /*override*/;
 
-    // vIndex: 62
+    // vIndex: 61
     virtual bool isEnchanted() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::ItemStack _getPickupItem() const /*override*/;
 
     // vIndex: 8
@@ -87,13 +87,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void doNormalTick();
-
-    MCAPI ::ItemStack getPickupItem() const;
-
     MCAPI void returnWithLoyalty(int enchantLevel);
-
-    MCAPI void setTridentItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
@@ -117,7 +111,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCFOLD void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
     MCAPI void $playerTouch(::Player& player);
 

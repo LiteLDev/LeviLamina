@@ -64,22 +64,22 @@ public:
     onDisconnect(::NetworkIdentifier const&, ::Connection::DisconnectFailReason const, ::std::string const&, bool, ::std::string const&) /*override*/
         ;
 
-    // vIndex: 224
+    // vIndex: 227
     virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&) /*override*/;
 
-    // vIndex: 63
+    // vIndex: 64
     virtual void handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&) /*override*/;
 
-    // vIndex: 217
+    // vIndex: 220
     virtual void handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&) /*override*/;
 
-    // vIndex: 216
+    // vIndex: 219
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&) /*override*/;
 
-    // vIndex: 218
+    // vIndex: 221
     virtual void handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&) /*override*/;
 
-    // vIndex: 209
+    // vIndex: 212
     virtual void handle(::NetworkIdentifier const&, ::StartGamePacket const&) /*override*/;
 
     // vIndex: 2

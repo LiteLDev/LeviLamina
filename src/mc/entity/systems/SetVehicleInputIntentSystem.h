@@ -17,7 +17,6 @@ struct MobFlagComponent;
 struct PassengerComponent;
 struct PlayerComponent;
 struct ShouldBeSimulatedComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 struct VehicleInputIntentComponent;
 // clang-format on
@@ -25,8 +24,6 @@ struct VehicleInputIntentComponent;
 namespace SetVehicleInputIntentSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
-
 MCAPI void doSetVehicleInputIntent(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                                                               context,

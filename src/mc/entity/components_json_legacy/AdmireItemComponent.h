@@ -6,8 +6,6 @@
 // clang-format off
 class Actor;
 class ItemStack;
-class WeakEntityRef;
-struct Tick;
 // clang-format on
 
 class AdmireItemComponent {
@@ -29,13 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ItemStack const& getAdmireItem() const;
-
-    MCFOLD ::Tick const& getAdmireUntil() const;
-
-    MCAPI ::WeakEntityRef getItemOwnerRef() const;
-
-    MCFOLD bool isAdmiring() const;
+    MCAPI AdmireItemComponent(::AdmireItemComponent&&);
 
     MCAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
 
@@ -44,6 +36,12 @@ public:
     MCAPI void stopAdmiring();
 
     MCAPI ~AdmireItemComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AdmireItemComponent&&);
     // NOLINTEND
 
 public:

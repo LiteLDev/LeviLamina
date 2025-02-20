@@ -44,12 +44,11 @@ public:
     // prevent constructor by default
     ActorReplication& operator=(ActorReplication const&);
     ActorReplication(ActorReplication const&);
+    ActorReplication();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorReplication();
-
     MCAPI void processReplicationForPlayers(
         ::std::vector<::WeakEntityRef> const& playerList,
         ::Level const&                        level,
@@ -57,12 +56,6 @@ public:
     );
 
     MCAPI ~ActorReplication();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

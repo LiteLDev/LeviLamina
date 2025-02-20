@@ -39,7 +39,7 @@ public:
     virtual ::IGameModuleShared& getGameModuleShared() = 0;
 
     // vIndex: 7
-    virtual void requestServerShutdown(::std::string const& message) = 0;
+    virtual void requestServerShutdown(::std::string const&) = 0;
 
     // vIndex: 8
     virtual ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const = 0;

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -17,10 +18,12 @@ class Level;
 class Mob;
 class Random;
 class SpawnData;
+class Tag;
 class TrialSpawnerConfigRegistry;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
+struct TrialSpawnerConfig;
 // clang-format on
 
 class TrialSpawner {
@@ -167,8 +170,6 @@ public:
 
     MCAPI ::TrialSpawner::PlayerScanResult _doPlayerScan(::BlockSource& region);
 
-    MCAPI void _ejectReward(::BlockSource& region, ::BlockPos pos) const;
-
     MCAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
 
     MCAPI ::std::optional<::Vec3>
@@ -182,8 +183,6 @@ public:
 
     MCAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 center);
 
-    MCAPI void _setUpdated(::BlockSource& region);
-
     MCAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
 
     MCAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos, ::Vec3 spawnPos);
@@ -195,8 +194,6 @@ public:
     MCAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
     MCAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
-
-    MCAPI ::CompoundTag createUpdatePacket();
 
     MCAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
 
@@ -211,14 +208,19 @@ public:
     MCAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
 
     MCAPI void tick(::BlockSource& region);
-
-    MCAPI ~TrialSpawner();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _ejectItem(::BlockSource& region, ::Vec3 pos, ::ItemStack const& item);
+
+    MCAPI static void _ejectResultItems(
+        ::BlockSource&                    region,
+        ::BlockPos                        blockPos,
+        ::std::vector<::ItemStack> const& items,
+        int                               lootCount
+    );
 
     MCAPI static ::std::optional<::Vec3>
     _findFreePositionAbove(::BlockSource const& region, ::Vec3 const& from, int distance);
@@ -233,27 +235,15 @@ public:
     MCAPI static bool _isAllowedToSpawnInLevel(::Level& level);
 
     MCAPI static bool _isOminous(::BlockSource& region, ::BlockPos pos);
-    // NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& DELAY_BETWEEN_ITEM_DISPENSING();
+    MCAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
 
-    MCAPI static int const& SPAWN_ITEM_DELAY_MAX();
-
-    MCAPI static int const& SPAWN_ITEM_DELAY_MIN();
+    MCAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

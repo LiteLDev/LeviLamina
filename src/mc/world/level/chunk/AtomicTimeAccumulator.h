@@ -15,18 +15,5 @@ public:
     // prevent constructor by default
     AtomicTimeAccumulator& operator=(AtomicTimeAccumulator const&);
     AtomicTimeAccumulator(AtomicTimeAccumulator const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AtomicTimeAccumulator();
-
-    MCAPI void addTime(::std::chrono::nanoseconds const& time);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
+    AtomicTimeAccumulator();
 };

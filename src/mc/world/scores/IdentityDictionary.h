@@ -30,10 +30,6 @@ public:
     MCAPI ::ScoreboardId const&
     convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
-    MCAPI ::ScoreboardId const& getScoreboardId(::PlayerScoreboardId const& playerId) const;
-
-    MCAPI bool shouldConvertFakePlayer(::PlayerScoreboardId const& playerId, ::std::string const& displayName);
-
     MCAPI ~IdentityDictionary();
     // NOLINTEND
 

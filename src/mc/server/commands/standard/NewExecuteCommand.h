@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/server/commands/Command.h"
 #include "mc/server/commands/CommandChainedSubcommand.h"
 #include "mc/server/commands/CommandCompareOperator.h"
 #include "mc/server/commands/CommandSelector.h"
-#include "mc/world/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -187,7 +187,7 @@ public:
     ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>                                  mTargets;
     ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>                                  mSources;
     ::ll::TypedStorage<8, 32, ::std::string>                                                mAxesAlignment;
-    ::ll::TypedStorage<4, 4, ::ActorLocation>                                               mActorLocation;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorLocation>                          mActorLocation;
     ::ll::TypedStorage<4, 16, ::CommandPositionFloat>                                       mPosition;
     ::ll::TypedStorage<4, 16, ::CommandPosition>                                            mBlockPosition;
     ::ll::TypedStorage<4, 16, ::CommandPosition>                                            mEndPosition;

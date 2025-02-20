@@ -14,10 +14,11 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ::Bedrock::Result<::Bedrock::Memory::IVirtualAllocator::ReservationInfo>
-    reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) /*override*/;
+    reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64) /*override*/;
 
     // vIndex: 1
-    virtual ::Bedrock::Result<void> commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) /*override*/;
+    virtual ::Bedrock::Result<void>
+    commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64, int) /*override*/;
 
     // vIndex: 2
     virtual ::Bedrock::Result<void> decommit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64) /*override*/;

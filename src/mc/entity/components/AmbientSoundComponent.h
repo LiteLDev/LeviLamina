@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-// clang-format on
-
 class AmbientSoundComponent {
 public:
     // member variables
@@ -22,10 +17,4 @@ public:
     AmbientSoundComponent& operator=(AmbientSoundComponent const&);
     AmbientSoundComponent(AmbientSoundComponent const&);
     AmbientSoundComponent();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void setAmbientSoundRemainingTime(::Actor& owner, float seconds);
-    // NOLINTEND
 };

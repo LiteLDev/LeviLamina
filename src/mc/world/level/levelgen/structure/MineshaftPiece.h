@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
 class BoundingBox;
 class Random;
@@ -69,6 +70,8 @@ public:
         int                                                 direction,
         int                                                 depth
     );
+
+    MCAPI void setPlanksBlock(::BlockSource& region, ::Block const& planksBlock, int x, int y, int z);
     // NOLINTEND
 
 public:

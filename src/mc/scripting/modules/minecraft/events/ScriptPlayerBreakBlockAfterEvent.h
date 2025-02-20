@@ -3,8 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class ItemStackBase;
+class Player;
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -21,20 +30,54 @@ public:
 public:
     // prevent constructor by default
     ScriptPlayerBreakBlockAfterEvent& operator=(ScriptPlayerBreakBlockAfterEvent const&);
-    ScriptPlayerBreakBlockAfterEvent(ScriptPlayerBreakBlockAfterEvent const&);
     ScriptPlayerBreakBlockAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
+    MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
+
+    MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
+
+    MCAPI ScriptPlayerBreakBlockAfterEvent(
+        ::Player&                             player,
+        ::BlockPos const&                     pos,
+        ::Block const&                        destroyedBlock,
+        ::ItemStackBase const&                afterBreakItem,
+        ::ItemStackBase const&                beforeBreakItem,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+
+    MCAPI ~ScriptPlayerBreakBlockAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent const&);
+
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
+
+    MCAPI void* $ctor(
+        ::Player&                             player,
+        ::BlockPos const&                     pos,
+        ::Block const&                        destroyedBlock,
+        ::ItemStackBase const&                afterBreakItem,
+        ::ItemStackBase const&                beforeBreakItem,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -42,32 +42,32 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void destroy(::Actor* source);
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 29
     virtual ::std::string getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const
         /*override*/;
 
-    // vIndex: 96
+    // vIndex: 94
     virtual bool canAddPassenger(::Actor& passenger) const /*override*/;
 
-    // vIndex: 93
+    // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 115
     virtual float getPassengerYRotation(::Actor const& passenger) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
@@ -83,9 +83,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI uchar getWoodID() const;
-
-    MCAPI void postNormalTick();
+    MCFOLD uchar getWoodID() const;
     // NOLINTEND
 
 public:

@@ -3,23 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ThemeSettingsColorKey.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/editor/Mode.h"
-#include "mc/editor/settings/ThemeSettingsColorKey.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
-class ScriptDeferredEventCoordinator;
+class ScriptDeferredFlushTracker;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Cursor { struct CursorState; }
+namespace Editor::Cursor { struct Position; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
 namespace Editor::Services { struct SelectionEvent; }
-namespace Json { class Value; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ModuleDescriptor; }
 namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
@@ -42,7 +40,8 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 4
-        virtual bool onFlushEditorExtensionContextAfterEvents() /*override*/;
+        virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker
+        ) /*override*/;
 
         // vIndex: 0
         virtual ~ScriptExtensionContextAfterEventsDeferredEventListener() /*override*/ = default;
@@ -57,7 +56,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $onFlushEditorExtensionContextAfterEvents();
+        MCAPI void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
 
     public:
@@ -88,16 +87,16 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptExtensionContextAfterEvents(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
 
-    MCAPI ScriptExtensionContextAfterEvents(
-        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
-
     MCAPI void _handleClipboardItemChangeEvent(::mce::UUID const& itemId, bool isPrimary);
 
     MCAPI void _handleCurrentThemeChanged(
         ::Editor::Services::EditorSettingsServiceProvider* settingsServiceProvider,
         ::std::string const&                               themeId
+    );
+
+    MCAPI void _handleCursorPositionChanged(
+        ::std::optional<::Editor::Cursor::Position> const& newPosition,
+        ::Editor::Cursor::CursorState const&               cursorState
     );
 
     MCAPI void
@@ -127,11 +126,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
-
     MCAPI static ::ScriptModuleMinecraft::ScriptAsyncEventMetadata<
         ::Editor::ScriptModule::ScriptExtensionContextAfterEvents> const&
     getMetadata();
@@ -141,11 +135,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
-
-    MCAPI void* $ctor(
-        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
     // NOLINTEND
 
 public:

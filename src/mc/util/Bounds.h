@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ChunkPos;
 class Pos;
 // clang-format on
 
@@ -46,17 +45,5 @@ public:
     ::ll::TypedStorage<4, 4, int>    mArea;
     ::ll::TypedStorage<4, 4, int>    mVolume;
     ::ll::TypedStorage<4, 4, int>    mSide;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Bounds(::ChunkPos const& min, ::ChunkPos const& max);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkPos const& min, ::ChunkPos const& max);
     // NOLINTEND
 };

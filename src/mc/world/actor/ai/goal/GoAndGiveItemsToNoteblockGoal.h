@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class EntityContext;
 class Mob;
 class Path;
 namespace JsonUtil { class EmptyClass; }
@@ -41,20 +40,13 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::GoAndGiveItemsToNoteblockGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -66,12 +58,6 @@ public:
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToNoteblockGoal::Definition>>&
                 root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -125,18 +111,6 @@ public:
 
     // vIndex: 0
     virtual ~GoAndGiveItemsToNoteblockGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GoAndGiveItemsToNoteblockGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

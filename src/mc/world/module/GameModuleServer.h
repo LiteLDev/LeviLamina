@@ -43,7 +43,7 @@ public:
 
     // vIndex: 3
     virtual void
-    configureLevel(::Bedrock::NotNullNonOwnerPtr<::Level> const&, ::Experiments const&, ::ResourcePackManager&, ::BaseGameVersion const&, ::std::optional<::gsl::not_null<::ServerScriptManager const*>>) = 0;
+    configureLevel(::Bedrock::NotNullNonOwnerPtr<::Level> const&, ::Experiments const&, ::ResourcePackManager&, ::BaseGameVersion const&, ::ServerScriptManager const*) = 0;
 
     // vIndex: 4
     virtual void configureNewPlayer(::Player&) = 0;
@@ -60,18 +60,6 @@ public:
     // vIndex: 8
     virtual void
     configureServerNetworkHandler(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler>) = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GameModuleServer();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

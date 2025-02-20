@@ -14,24 +14,25 @@ class ActorRuntimeID;
 class BinaryStream;
 class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class CommandBlockUpdatePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mBlockPos;
-    ::ll::TypedStorage<2, 2, ::CommandBlockMode>      mMode;
-    ::ll::TypedStorage<1, 1, bool>                    mRedstoneMode;
-    ::ll::TypedStorage<1, 1, bool>                    mIsConditional;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>        mEntityId;
-    ::ll::TypedStorage<8, 32, ::std::string>          mCommand;
-    ::ll::TypedStorage<8, 32, ::std::string>          mLastOutput;
-    ::ll::TypedStorage<8, 32, ::std::string>          mName;
-    ::ll::TypedStorage<4, 4, int>                     mTickDelay;
-    ::ll::TypedStorage<1, 1, bool>                    mTrackOutput;
-    ::ll::TypedStorage<1, 1, bool>                    mExecuteOnFirstTick;
-    ::ll::TypedStorage<1, 1, bool>                    mIsBlock;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>              mBlockPos;
+    ::ll::TypedStorage<2, 2, ::CommandBlockMode>                   mMode;
+    ::ll::TypedStorage<1, 1, bool>                                 mRedstoneMode;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsConditional;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                     mEntityId;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mCommand;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mLastOutput;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
+    ::ll::TypedStorage<4, 4, int>                                  mTickDelay;
+    ::ll::TypedStorage<1, 1, bool>                                 mTrackOutput;
+    ::ll::TypedStorage<1, 1, bool>                                 mExecuteOnFirstTick;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsBlock;
     // NOLINTEND
 
 public:
@@ -60,16 +61,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockUpdatePacket();
-
     MCAPI CommandBlockUpdatePacket(::CommandBlockUpdatePacket const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::CommandBlockUpdatePacket const&);
     // NOLINTEND
 

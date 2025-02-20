@@ -32,6 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _consolidateLevelChunkMetaData(::LevelChunk& levelChunk);
+
     MCAPI void _onNewDimensionCreated(::Dimension& dimension);
 
     MCFOLD ::std::shared_ptr<::LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
@@ -39,8 +41,6 @@ public:
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
-
-    MCAPI void tick();
 
     MCAPI void updateLevelChunkMetaDataForSaving(
         ::LevelChunk&                 lc,
@@ -64,9 +64,6 @@ public:
         ::BaseGameVersion const&      currentBaseGameVersion,
         ::LevelChunkMetaData&         metaData
     );
-
-    MCAPI static void
-    inferTargetMetaData(::BaseGameVersion const& version, ::DimensionType dimensionID, ::LevelChunkMetaData& metaData);
 
     MCAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
         ::DimensionType               dimensionId,

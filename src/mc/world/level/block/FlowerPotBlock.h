@@ -13,10 +13,12 @@ class BlockActor;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class FlowerPotBlockActor;
 class ItemInstance;
 class Player;
 class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class FlowerPotBlock : public ::ActorBlock {
@@ -32,9 +34,6 @@ public:
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
@@ -61,6 +60,9 @@ public:
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~FlowerPotBlock() /*override*/ = default;
     // NOLINTEND
@@ -68,8 +70,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlowerPotBlock(::std::string const& nameId, int id);
-
     MCAPI bool _tryPlaceFlower(::Player& player, ::BlockPos const& blockPos) const;
 
     MCAPI bool _tryTakeFlower(::Player& player, ::BlockPos const& blockPos) const;
@@ -81,18 +81,14 @@ public:
         ::Block const*         flowerBlock,
         ::Actor*               sourceActor
     ) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool isValidResource(::Block const& plant);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -110,8 +106,6 @@ public:
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
@@ -127,6 +121,8 @@ public:
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

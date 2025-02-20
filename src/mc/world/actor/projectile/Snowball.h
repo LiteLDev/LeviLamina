@@ -8,9 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -23,26 +20,6 @@ public:
 
     // vIndex: 8
     virtual ~Snowball() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Snowball(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

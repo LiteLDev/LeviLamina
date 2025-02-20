@@ -41,22 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MultiplayerSettingsPacket();
-
-    MCAPI explicit MultiplayerSettingsPacket(::MultiplayerSettingsPacketType packetType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::MultiplayerSettingsPacketType packetType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

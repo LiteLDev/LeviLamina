@@ -1,0 +1,57 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/vanilla_systems/IBlockSourceFactoryAdapter.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace VanillaSystems { class IOwnedConstBlockSource; }
+// clang-format on
+
+namespace VanillaSystems {
+
+class VanillaBlockSourceFactoryAdapter : public ::VanillaSystems::IBlockSourceFactoryAdapter {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkdaffcc;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    VanillaBlockSourceFactoryAdapter& operator=(VanillaBlockSourceFactoryAdapter const&);
+    VanillaBlockSourceFactoryAdapter(VanillaBlockSourceFactoryAdapter const&);
+    VanillaBlockSourceFactoryAdapter();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> createBlockSource() /*override*/;
+
+    // vIndex: 0
+    virtual ~VanillaBlockSourceFactoryAdapter() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::VanillaSystems::IOwnedConstBlockSource> $createBlockSource();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
+    // NOLINTEND
+};
+
+} // namespace VanillaSystems

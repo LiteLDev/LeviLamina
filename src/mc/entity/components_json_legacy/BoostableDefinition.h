@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
-
-// auto generated forward declare list
-// clang-format off
-class BoostableComponent;
-class EntityContext;
-namespace JsonUtil { class EmptyClass; }
-// clang-format on
-
 class BoostableDefinition {
 public:
     // member variables
@@ -26,18 +16,4 @@ public:
     BoostableDefinition& operator=(BoostableDefinition const&);
     BoostableDefinition(BoostableDefinition const&);
     BoostableDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::BoostableComponent& component) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void
-    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BoostableDefinition>>& root
-    );
-    // NOLINTEND
 };

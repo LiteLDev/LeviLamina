@@ -14,12 +14,21 @@ public:
     // prevent constructor by default
     RepairItemResult& operator=(RepairItemResult const&);
     RepairItemResult(RepairItemResult const&);
-    RepairItemResult();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RepairItemResult();
+
+    MCAPI ::RepairItemResult& operator=(::RepairItemResult&&);
+
     MCAPI ~RepairItemResult();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

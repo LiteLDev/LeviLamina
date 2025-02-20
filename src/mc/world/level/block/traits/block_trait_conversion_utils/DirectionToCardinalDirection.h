@@ -13,6 +13,8 @@ namespace BlockTraitConversionUtils::DirectionToCardinalDirection {
 MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20();
 
 MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
+
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R21U6();
 // NOLINTEND
 
 } // namespace BlockTraitConversionUtils::DirectionToCardinalDirection

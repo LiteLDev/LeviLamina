@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-// clang-format on
-
 struct VolumeDefinition {
 public:
     // VolumeDefinition inner types declare
@@ -32,9 +27,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkc1bc7b;
-    ::ll::UntypedStorage<8, 72>  mUnk344d33;
-    ::ll::UntypedStorage<8, 120> mUnk8a75ea;
+    ::ll::UntypedStorage<8, 32> mUnkc1bc7b;
+    ::ll::UntypedStorage<8, 72> mUnk344d33;
+    ::ll::UntypedStorage<8, 32> mUnk8a75ea;
     // NOLINTEND
 
 public:
@@ -42,12 +37,6 @@ public:
     VolumeDefinition& operator=(VolumeDefinition const&);
     VolumeDefinition(VolumeDefinition const&);
     VolumeDefinition();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::SemVersion const& getMaxSupportedVersion();
-    // NOLINTEND
 
 public:
     // static variables

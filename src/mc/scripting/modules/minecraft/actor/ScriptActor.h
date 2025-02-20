@@ -4,14 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
-#include "mc/deps/game_refs/WeakRef.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Promise.h"
-#include "mc/scripting/modules/minecraft/actor/ScriptActorLifetimeState.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,6 +19,7 @@ class MobEffect;
 class Scoreboard;
 class Vec2;
 class Vec3;
+class VecXZ;
 class WeakEntityRef;
 struct DynamicPropertyDefinition;
 struct ScoreboardId;
@@ -172,6 +171,11 @@ public:
         bool                                                                   safeTeleport
     );
 
+    MCFOLD ::std::optional<::Scripting::Error> _validateDynamicProperty(
+        ::std::string const&                                              key,
+        ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
+    );
+
     MCAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
         ::Actor&                                                          self,
         ::std::string const&                                              key,
@@ -210,8 +214,16 @@ public:
             ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>> const& options
     );
 
+    MCAPI ::Scripting::Result<void> applyKnockback_V1(
+        ::Actor& self,
+        float    directionX,
+        float    directionZ,
+        float    horizontalStrength,
+        float    verticalStrength
+    );
+
     MCAPI ::Scripting::Result<void>
-    applyKnockback(::Actor& self, float directionX, float directionZ, float horizontalStrength, float verticalStrength);
+    applyKnockback_V2(::Actor& self, ::VecXZ const& horizontalForce, float verticalStrength);
 
     MCAPI ::Scripting::Result<void>
     clearDynamicProperties(::Actor& self, ::Scripting::ContextConfig const& contextConfig);
@@ -239,6 +251,13 @@ public:
         ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>> const&
                              factories,
         ::std::string const& id
+    );
+
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
+    getComponents(
+        ::Scripting::WeakLifetimeScope scope,
+        ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>> const&
+            factories
     );
 
     MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
@@ -296,8 +315,6 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::std::string> getId_010(::Actor const& self) const;
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptActorLifetimeState getLifetimeState() const;
-
     MCAPI ::Scripting::Result_deprecated<::Vec3> getLocation(::Actor const& self) const;
 
     MCAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<float, bool, ::std::string>>>
@@ -332,7 +349,12 @@ public:
     MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector> getViewVector_010(::Actor const& self
     ) const;
 
-    MCAPI ::WeakRef<::EntityContext> getWeakEntity() const;
+    MCAPI bool hasComponent(
+        ::Scripting::WeakLifetimeScope scope,
+        ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>> const&
+                             factories,
+        ::std::string const& name
+    );
 
     MCAPI ::Scripting::Result_deprecated<bool> hasTag(::Actor const& self, ::std::string const& tag) const;
 
@@ -403,6 +425,12 @@ public:
     MCAPI ::Scripting::Result_deprecated<::Scripting::JSON>
     runCommand_V010(::Actor& self, ::Scripting::ContextConfig const& contextConfig, ::std::string const& commandString);
 
+    MCAPI ::Scripting::Result<void> setDynamicProperties(
+        ::Actor&                          self,
+        ::Scripting::ContextConfig const& contextConfig,
+        ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
+    );
+
     MCAPI ::Scripting::Result<void> setDynamicProperty(
         ::Actor&                                                                           self,
         ::Scripting::ContextConfig const&                                                  contextConfig,
@@ -417,8 +445,6 @@ public:
         ::std::variant<double, float, bool, ::std::string, ::Vec3>& value
     );
 
-    MCAPI void setLoaded();
-
     MCAPI void setLoading(::Actor const& actor);
 
     MCAPI ::Scripting::Result_deprecated<bool> setOnFire(::Actor& self, int seconds, bool useEffects);
@@ -428,8 +454,6 @@ public:
         ::std::string const&                              identifier,
         ::std::variant<float, bool, ::std::string> const& value
     );
-
-    MCAPI void setRemoved();
 
     MCAPI ::Scripting::Result<void> setRotation(::Actor& self, ::Vec2 rotation);
 
@@ -466,8 +490,6 @@ public:
 
     MCAPI ::Scripting::Result<void> triggerEvent_V010(::Actor& self, ::std::string const& eventName);
 
-    MCAPI ::Actor* tryGetActor() const;
-
     MCAPI ::Scripting::Result_deprecated<bool> tryTeleport(
         ::Actor&                                                               self,
         ::Vec3 const&                                                          location,
@@ -481,9 +503,6 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptActor>
     bind(::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
              supportedComponentFactories);
-
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>
-    getHandle(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);

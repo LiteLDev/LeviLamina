@@ -49,21 +49,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShearsItem(::std::string const& name, int itemId);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _tryShearActor(::BlockSource& region, ::Actor& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int itemId);
     // NOLINTEND
 
 public:

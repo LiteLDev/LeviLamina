@@ -9,11 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class BiomeRegistry;
-class ChunkBlenderFactory;
-class ParameterList;
 struct GetBiomeOptions;
-struct OverworldNoises3d;
+struct TargetPoint;
 // clang-format on
 
 class BlendedMultiNoiseBiomeProvider {
@@ -35,12 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlendedMultiNoiseBiomeProvider(
-        ::OverworldNoises3d const& overworldNoises,
-        ::ParameterList            parameterList,
-        ::ChunkBlenderFactory&     attenuatorFactory,
-        ::BiomeRegistry const&     biomeRegistry
-    );
+    MCAPI ::Biome const* _selectBestFittingBiome(::TargetPoint const& current, ::RTree::Hint* hint) const;
 
     MCAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
@@ -51,17 +43,6 @@ public:
     ) const;
 
     MCAPI ~BlendedMultiNoiseBiomeProvider();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::OverworldNoises3d const& overworldNoises,
-        ::ParameterList            parameterList,
-        ::ChunkBlenderFactory&     attenuatorFactory,
-        ::BiomeRegistry const&     biomeRegistry
-    );
     // NOLINTEND
 
 public:

@@ -9,22 +9,21 @@ struct ActorGameTypeComponent;
 struct ExternalDataInterface;
 struct FrictionModifierComponent;
 struct MoveInputComponent;
+struct MovementAbilitiesComponent;
 struct PlayerInputRequestComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace VerticalFlySpeedControlSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
-
 MCAPI void doFlySpeedControlSystem(
     ::StrictEntityContext const&,
     ::MoveInputComponent const&          moveInputComponent,
     ::PlayerInputRequestComponent const& playerInputRequestComponent,
     ::ActorGameTypeComponent const&      actorGameTypeComponent,
     ::FrictionModifierComponent&         frictionModifierComponent,
+    ::MovementAbilitiesComponent const&  movementAbilitiesComponent,
     ::StateVectorComponent&              stateVectorComponent,
     ::ExternalDataInterface const&       externalData
 );

@@ -11,15 +11,12 @@ class ActorOwnerComponent;
 class StrictEntityContext;
 struct PlayerPreMobTravelComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class PlayerMovementStatsEventSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
-
     MCAPI static void tickPlayerMovementStatsEventSystem(::ViewT<
                                                          ::StrictEntityContext,
                                                          ::ActorOwnerComponent,

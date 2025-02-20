@@ -2,17 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/levelgen/feature/canyon_feature_utils/TerrainGenVersion.h"
-
 namespace CanyonFeatureUtils {
 
 struct CanyonConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CanyonFeatureUtils::TerrainGenVersion> version;
-    ::ll::TypedStorage<4, 4, int>                                     minHeight;
+    ::ll::TypedStorage<4, 4, int>  mYOffset;
+    ::ll::TypedStorage<4, 4, int>  mMaxCarveHeight;
+    ::ll::TypedStorage<1, 1, bool> mCanGenerateInOceans;
+    ::ll::TypedStorage<1, 1, bool> mCanGenerateMegaCanyons;
+    ::ll::TypedStorage<1, 1, bool> mUseUniformYDistribution;
+    ::ll::TypedStorage<4, 4, int>  mOneOutOfChanceToGenerate;
     // NOLINTEND
 };
 

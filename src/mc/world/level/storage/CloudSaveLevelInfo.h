@@ -31,8 +31,6 @@ public:
 
     MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
 
-    MCAPI bool const hasInfo() const;
-
     MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
 
     MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);

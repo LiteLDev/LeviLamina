@@ -27,8 +27,6 @@ public:
     // NOLINTBEGIN
     MCAPI HMAC(::Crypto::Hash::HashType type, ::std::string const& key, int resultSize);
 
-    MCAPI uint64 resultSize() const;
-
     MCAPI void signAndAppend(::std::string const& data, ::std::string& out, uint64 counter);
     // NOLINTEND
 

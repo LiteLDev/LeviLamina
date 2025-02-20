@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 struct ScriptDebuggerSettings;
-struct ScriptResourceStats;
 namespace Core { class Path; }
 // clang-format on
 
@@ -30,15 +29,14 @@ public:
 
     // vIndex: 5
     virtual ::std::vector<::Core::Path> stopProfiler() = 0;
-
-    // vIndex: 6
-    virtual ::ScriptResourceStats getResourceStats() const = 0;
     // NOLINTEND
 
 public:
-    // static functions
+    // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::Path getMemoryDumpSavePath();
+    MCAPI static ::std::string_view const& DIAGNOSTICS_CAPTURES_FOLDER();
+
+    MCAPI static ::std::string_view const& PROFILER_CAPTURES_FOLDER();
     // NOLINTEND
 
 public:

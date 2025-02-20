@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::std::string> bindV010();
 
-    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::ActorDamageCause> bindV1();
+    MCAPI static ::Scripting::EnumBindingBuilder<::std::string, ::SharedTypes::Legacy::ActorDamageCause> bindV1();
     // NOLINTEND
 };
 

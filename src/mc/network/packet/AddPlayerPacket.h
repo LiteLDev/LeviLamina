@@ -42,7 +42,7 @@ public:
     ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
     ::ll::TypedStorage<4, 4, float>                                         mYHeadRot;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mUnpack;
-    ::ll::TypedStorage<4, 1372, ::LayeredAbilities>                         mAbilities;
+    ::ll::TypedStorage<4, 1444, ::LayeredAbilities>                         mAbilities;
     ::ll::TypedStorage<8, 32, ::std::string>                                mDeviceId;
     ::ll::TypedStorage<4, 4, ::BuildPlatform>                               mBuildPlatform;
     ::ll::TypedStorage<4, 4, ::GameType>                                    mPlayerGameType;

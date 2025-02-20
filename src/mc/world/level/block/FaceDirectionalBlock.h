@@ -11,7 +11,6 @@
 class Actor;
 class Block;
 class BlockPos;
-class Material;
 class Vec3;
 // clang-format on
 
@@ -41,43 +40,16 @@ public:
         /*override*/;
 
     // vIndex: 48
-    virtual bool isValidAuxValue(int value) const /*override*/;
+    virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 0
-    virtual ~FaceDirectionalBlock() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FaceDirectionalBlock(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 horizontalOnly,
-        float                yRotOffset
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static uchar getFacingDirection(::Block const& block, bool horizontalOnly);
-
-    MCAPI static uchar getMappedFaceStatic(uchar face, ::Block const& block, bool horizontalOnly);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::Material const& material, bool horizontalOnly, float yRotOffset);
+    virtual ~FaceDirectionalBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -91,12 +63,6 @@ public:
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI bool $isValidAuxValue(int value) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCAPI bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
 };

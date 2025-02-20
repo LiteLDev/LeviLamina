@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void process();
-
     MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptMessageReceiveEventFilterData const& data);
 
     MCAPI ~ScriptMessageReceiveEventFilter();

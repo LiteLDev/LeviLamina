@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class ExplodeComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -27,7 +25,7 @@ public:
     ::ll::UntypedStorage<1, 1> mUnkeffd91;
     ::ll::UntypedStorage<1, 1> mUnk4b9529;
     ::ll::UntypedStorage<4, 4> mUnkfff79c;
-    ::ll::UntypedStorage<2, 2> mUnk20681a;
+    ::ll::UntypedStorage<2, 2> mUnk5eadf2;
     ::ll::UntypedStorage<4, 4> mUnk456eda;
     ::ll::UntypedStorage<1, 1> mUnk729fed;
     ::ll::UntypedStorage<1, 1> mUnk1b2d1c;
@@ -37,19 +35,14 @@ public:
     // prevent constructor by default
     ExplodeDefinition& operator=(ExplodeDefinition const&);
     ExplodeDefinition(ExplodeDefinition const&);
+    ExplodeDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExplodeDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::ExplodeComponent& component) const;
-
     MCAPI void setParticleDefinitionByName(::std::string const& name);
 
     MCAPI void setSoundDefinitionByName(::std::string const& name);
-
-    MCFOLD void uninitialize(::EntityContext& entity) const;
     // NOLINTEND
 
 public:
@@ -57,11 +50,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ExplodeDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

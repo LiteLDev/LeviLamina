@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ConditionalBandwidthOptimizationDefinition;
 struct ConditionalBandwidthOptimization;
 // clang-format on
 
@@ -22,19 +21,28 @@ public:
 public:
     // prevent constructor by default
     ConditionalBandwidthOptimizationComponent& operator=(ConditionalBandwidthOptimizationComponent const&);
-    ConditionalBandwidthOptimizationComponent(ConditionalBandwidthOptimizationComponent const&);
     ConditionalBandwidthOptimizationComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
+    MCAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent const&);
 
-    MCAPI void initFromDefinition(::Actor& actor, ::ConditionalBandwidthOptimizationDefinition const& def);
+    MCAPI ConditionalBandwidthOptimizationComponent(::ConditionalBandwidthOptimizationComponent&&);
+
+    MCAPI ::ConditionalBandwidthOptimization getCurrentOptimizationValues(::Actor& owner);
 
     MCAPI ::ConditionalBandwidthOptimizationComponent& operator=(::ConditionalBandwidthOptimizationComponent&&);
 
     MCAPI ~ConditionalBandwidthOptimizationComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ConditionalBandwidthOptimizationComponent const&);
+
+    MCAPI void* $ctor(::ConditionalBandwidthOptimizationComponent&&);
     // NOLINTEND
 
 public:

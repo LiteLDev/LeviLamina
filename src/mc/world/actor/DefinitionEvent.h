@@ -29,6 +29,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DefinitionEvent();
+
     MCAPI DefinitionEvent(::DefinitionEvent const&);
 
     MCAPI DefinitionEvent(::DefinitionEvent&&);
@@ -43,6 +45,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::DefinitionEvent const&);
 
     MCAPI void* $ctor(::DefinitionEvent&&);

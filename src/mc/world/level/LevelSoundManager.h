@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/level/ILevelSoundManagerConnector.h"
 
 // auto generated forward declare list
@@ -111,17 +111,6 @@ public:
         bool                                   isBabyMob,
         bool                                   isGlobal
     );
-
-    MCAPI void playSynchronizedSound_DEPRECATED(
-        ::IDimension&                          dimension,
-        ::SharedTypes::Legacy::LevelSoundEvent type,
-        ::Vec3 const&                          pos,
-        ::Player*                              primaryLocalPlayer,
-        int                                    data,
-        ::ActorDefinitionIdentifier const&     entityType,
-        bool                                   isBabyMob,
-        bool                                   isGlobal
-    );
     // NOLINTEND
 
 public:
@@ -154,14 +143,14 @@ public:
     )>&
     $getOnLevelSoundEventConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
+    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&, ::Vec3 const&, float, float)>&
     $getOnLevelSoundEventWithVolumeAndPitchConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
     // NOLINTEND
 
 public:

@@ -8,15 +8,7 @@ class MainProcScope {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MainProcScope();
-
     MCAPI ~MainProcScope();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

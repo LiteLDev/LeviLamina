@@ -27,9 +27,6 @@ public:
     virtual uint64 getUsableSize(void*) /*override*/;
 
     // vIndex: 6
-    virtual void logCurrentState() /*override*/;
-
-    // vIndex: 7
     virtual void* _realloc(::gsl::not_null<void*>, uint64) /*override*/;
 
     // vIndex: 0

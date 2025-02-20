@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,6 +18,7 @@ class BaseGameVersion;
 class CompoundTag;
 class Experiments;
 class HashedString;
+class InstantaneousAttributeBuff;
 class TemporalAttributeBuff;
 struct EffectDuration;
 namespace mce { class Color; }
@@ -150,6 +151,9 @@ public:
         bool                 drawParticles
     );
 
+    MCAPI ::InstantaneousAttributeBuff
+    _createInstantBuff(::AttributeBuff const& baseBuff, int amplification, float scale) const;
+
     MCAPI ::TemporalAttributeBuff
     _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
 
@@ -163,22 +167,6 @@ public:
     applyModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification)
         const;
 
-    MCFOLD ::mce::Color const& getColor() const;
-
-    MCFOLD ::std::string const& getDescriptionId() const;
-
-    MCFOLD float getDurationModifier() const;
-
-    MCFOLD uint getId() const;
-
-    MCAPI ::HashedString const& getParticleEffect(bool isAmbient) const;
-
-    MCFOLD ::std::string const& getResourceName() const;
-
-    MCFOLD bool isHarmful() const;
-
-    MCFOLD bool isVisible() const;
-
     MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
     MCAPI ::MobEffect& setFactorCalculationData(::MobEffect::FactorCalculationData const& factorCalculationData);
@@ -187,10 +175,9 @@ public:
 
     MCAPI void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
-    MCAPI void updateEffects(::Actor* target, ::EffectDuration durationTicks, int amplification);
-
-    MCAPI ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>> const&
-    viewAttributeModifiers() const;
+    MCAPI void
+    updateModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification)
+        const;
     // NOLINTEND
 
 public:
@@ -199,17 +186,11 @@ public:
     MCAPI static void
     darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
 
-    MCAPI static ::MobEffect* getById(uint effectId);
-
     MCAPI static ::MobEffect* getByName(::std::string const& name);
 
     MCAPI static ::MobEffect::FactorCalculationData getDarknessEffectFactorCalculationData();
 
-    MCAPI static ::std::string getNameById(uint effectId);
-
     MCAPI static void initEffects(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
-
-    MCAPI static void shutdownEffects();
     // NOLINTEND
 
 public:

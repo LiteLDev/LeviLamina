@@ -43,12 +43,12 @@ public:
     );
 
     MCAPI FilterParamDefinition(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterParamOption      opt,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
+        ::FilterParamType        requirement,
+        ::FilterParamRequirement description,
+        ::std::string            def,
+        ::FilterParamOption      stringMap,
+        ::FilterInput            type,
+        ::FilterStringMap        opt
     );
 
     MCAPI ::FilterParamDefinition& operator=(::FilterParamDefinition&&);
@@ -68,12 +68,12 @@ public:
     );
 
     MCAPI void* $ctor(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterParamOption      opt,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
+        ::FilterParamType        requirement,
+        ::FilterParamRequirement description,
+        ::std::string            def,
+        ::FilterParamOption      stringMap,
+        ::FilterInput            type,
+        ::FilterStringMap        opt
     );
     // NOLINTEND
 

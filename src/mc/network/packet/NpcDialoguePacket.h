@@ -56,8 +56,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcDialoguePacket();
-
     MCAPI explicit NpcDialoguePacket(::ActorUniqueID npcID);
 
     MCAPI ::Bedrock::Result<void> _verifyJson(::std::string const& actionJSON) const;
@@ -82,8 +80,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::ActorUniqueID npcID);
     // NOLINTEND
 

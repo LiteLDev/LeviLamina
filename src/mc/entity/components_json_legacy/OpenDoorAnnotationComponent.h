@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class EntityContext;
 class Mob;
 // clang-format on
 
@@ -20,26 +18,13 @@ public:
     // prevent constructor by default
     OpenDoorAnnotationComponent& operator=(OpenDoorAnnotationComponent const&);
     OpenDoorAnnotationComponent(OpenDoorAnnotationComponent const&);
+    OpenDoorAnnotationComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OpenDoorAnnotationComponent();
-
     MCAPI void _cleanUp(::Mob& mob);
 
     MCAPI void checkPath(::Mob& mob);
-
-    MCAPI void initFromDefinition(::Actor& owner);
-
-    MCAPI void onComponentRemoved(::EntityContext& entity);
-
-    MCAPI ::OpenDoorAnnotationComponent& operator=(::OpenDoorAnnotationComponent&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

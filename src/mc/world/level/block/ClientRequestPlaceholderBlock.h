@@ -14,7 +14,6 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class HitResult;
-class Material;
 class Vec3;
 // clang-format on
 
@@ -29,18 +28,6 @@ public:
 
     // vIndex: 0
     virtual ~ClientRequestPlaceholderBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ClientRequestPlaceholderBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

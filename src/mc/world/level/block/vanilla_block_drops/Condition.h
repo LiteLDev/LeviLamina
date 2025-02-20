@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class HashedString;
 class Randomize;
 struct ResourceDropsContext;
 // clang-format on
@@ -16,6 +17,9 @@ MCAPI ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext 
     ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> condition1,
     ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> condition2
 );
+
+MCAPI ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+toolMatches(::HashedString const& itemId);
 // NOLINTEND
 
 } // namespace VanillaBlockDrops::Condition

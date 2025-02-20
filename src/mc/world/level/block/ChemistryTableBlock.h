@@ -13,7 +13,6 @@ class Block;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
-class HashedString;
 class Player;
 class Vec3;
 // clang-format on
@@ -53,25 +52,6 @@ public:
 
     // vIndex: 0
     virtual ~ChemistryTableBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ChemistryTableBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool
-    isUIValidForPlayer(::BlockPos const& pos, ::Player& player, float pickRange, ::HashedString const& expectedType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

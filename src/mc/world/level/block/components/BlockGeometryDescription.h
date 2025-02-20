@@ -47,7 +47,6 @@ public:
 
 public:
     // prevent constructor by default
-    BlockGeometryDescription(BlockGeometryDescription const&);
     BlockGeometryDescription();
 
 public:
@@ -72,7 +71,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BlockGeometryDescription(::BlockGeometryDescription const&);
+
     MCAPI explicit BlockGeometryDescription(::HashedString const& geometryName);
+
+    MCAPI BlockGeometryDescription(::HashedString const& geometryName, ::HashedString const& cullingName);
 
     MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
 
@@ -100,7 +103,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockGeometryDescription const&);
+
     MCAPI void* $ctor(::HashedString const& geometryName);
+
+    MCAPI void* $ctor(::HashedString const& geometryName, ::HashedString const& cullingName);
     // NOLINTEND
 
 public:

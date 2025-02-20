@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/animal/Animal.h"
 
@@ -12,12 +11,9 @@
 // clang-format off
 class Actor;
 class ActorDamageSource;
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class Mob;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Wolf : public ::Animal {
@@ -41,31 +37,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 179
+    // vIndex: 175
     virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 84
+    // vIndex: 82
     virtual bool load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 173
+    // vIndex: 168
     virtual void onBorn(::Actor&, ::Actor& parentRight) /*override*/;
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual void setSitting(bool value) /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 158
+    // vIndex: 153
     virtual bool isAlliedTo(::Mob* other) /*override*/;
 
-    // vIndex: 65
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
@@ -75,42 +71,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Wolf(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI void _avoidSnowBury();
 
     MCAPI void _updateTintColor();
 
-    MCAPI float getHeadRollAngle(float a);
-
-    MCAPI float getShakeAnim() const;
-
-    MCAPI float getTailAngle();
-
-    MCAPI bool isShaking() const;
-
     MCAPI void postNormalTick();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>
-    getCustomHurtSound(::Mob& mob, ::ActorDamageCause cause);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -130,7 +95,7 @@ public:
 
     MCAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void $setSitting(bool value);
+    MCFOLD void $setSitting(bool value);
 
     MCAPI bool $isAlliedTo(::Mob* other);
 

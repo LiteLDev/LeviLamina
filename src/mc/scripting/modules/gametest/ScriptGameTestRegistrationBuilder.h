@@ -3,11 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptDimensionType; }
+namespace Scripting { struct EngineError; }
+namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
 namespace ScriptModuleGameTest {
@@ -56,8 +60,14 @@ public:
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     setupTicks(int setupTicks);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    structureLocation(::Vec3 structureLocation);
+    MCAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::EngineError>
+    structureLocation(
+        ::Vec3                                                                                       structureLocation,
+        ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptDimensionType, ::std::string>> dimensionTypeVar
+    );
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
     structureName(::std::string structureName);

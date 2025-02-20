@@ -39,12 +39,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& ITEMS_SIZE();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

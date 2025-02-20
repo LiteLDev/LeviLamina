@@ -12,7 +12,5 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::TickingSystemWithInfo createPassengerSystem();
-
-    MCAPI static ::TickingSystemWithInfo createVehicleSystem();
     // NOLINTEND
 };

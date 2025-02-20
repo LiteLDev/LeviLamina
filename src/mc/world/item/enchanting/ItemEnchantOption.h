@@ -20,9 +20,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemEnchantOption(::ItemEnchantOption&&);
+
     MCAPI ::ItemEnchantOption& operator=(::ItemEnchantOption const&);
 
     MCAPI ~ItemEnchantOption();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemEnchantOption&&);
     // NOLINTEND
 
 public:

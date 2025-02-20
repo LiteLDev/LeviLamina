@@ -62,20 +62,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeBranch(
-        ::IBlockWorldGenAPI&       target,
-        ::std::vector<::BlockPos>* canopyAttachmentPositions,
-        ::Random&                  random,
-        int                        treeHeight,
-        ::RenderParams&,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::BlockPos&                     logPos,
-        int                             currentHeight,
-        uchar                           branchDir,
-        int                             branchPos,
-        int                             branchSteps,
-        ::Block const*                  trunkBlock
-    ) const;
+    MCAPI void
+    _placeBranch(::IBlockWorldGenAPI& target, ::std::vector<::BlockPos>* canopyAttachmentPositions, ::Random& random, int treeHeight, ::RenderParams& treeParams, ::TreeHelper::TreeParams const& logPos, ::BlockPos& currentHeight, int branchDir, uchar branchPos, int branchSteps, int trunkBlock, ::Block const*)
+        const;
     // NOLINTEND
 
 public:

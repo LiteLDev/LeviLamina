@@ -28,6 +28,7 @@ public:
     // prevent constructor by default
     SpawnChanceSubcomponent& operator=(SpawnChanceSubcomponent const&);
     SpawnChanceSubcomponent(SpawnChanceSubcomponent const&);
+    SpawnChanceSubcomponent();
 
 public:
     // virtual functions
@@ -46,18 +47,6 @@ public:
 
     // vIndex: 4
     virtual char const* getName() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SpawnChanceSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

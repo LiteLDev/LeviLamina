@@ -38,15 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShulkerBoxBlockItem(::std::string const& name, int id);
-
     MCAPI ::std::string _buildContainedItemList(::CompoundTag const* containerList) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

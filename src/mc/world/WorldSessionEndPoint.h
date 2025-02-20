@@ -7,11 +7,6 @@
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 
-// auto generated forward declare list
-// clang-format off
-class IMinecraftEventing;
-// clang-format on
-
 class WorldSessionEndPoint : public ::ContentLogEndPoint {
 public:
     // member variables
@@ -36,7 +31,7 @@ public:
     virtual void flush() /*override*/;
 
     // vIndex: 3
-    virtual void setEnabled(bool enabled) /*override*/;
+    virtual void setEnabled(bool newState) /*override*/;
 
     // vIndex: 4
     virtual bool isEnabled() const /*override*/;
@@ -46,18 +41,6 @@ public:
 
     // vIndex: 0
     virtual ~WorldSessionEndPoint() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit WorldSessionEndPoint(::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
@@ -73,7 +56,7 @@ public:
 
     MCFOLD void $flush();
 
-    MCFOLD void $setEnabled(bool enabled);
+    MCFOLD void $setEnabled(bool newState);
 
     MCFOLD bool $isEnabled() const;
 

@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,13 +48,12 @@ public:
 public:
     // prevent constructor by default
     ScriptBlockType& operator=(ScriptBlockType const&);
+    ScriptBlockType(ScriptBlockType const&);
     ScriptBlockType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockType(::ScriptModuleMinecraft::ScriptBlockType const&);
-
     MCAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
     createDefaultBlockPermutationV010() const;
@@ -62,10 +61,6 @@ public:
     MCAPI ::BlockLegacy const& getBlock() const;
 
     MCAPI ::std::string getId() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptBlockType& operator=(::ScriptModuleMinecraft::ScriptBlockType&&);
-
-    MCAPI ~ScriptBlockType();
     // NOLINTEND
 
 public:
@@ -78,18 +73,6 @@ public:
 
     MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
     tryGetHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockLegacy const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockType const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

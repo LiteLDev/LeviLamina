@@ -7,11 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class GeodeFeature : public ::IFeature {
@@ -55,24 +51,27 @@ public:
     // prevent constructor by default
     GeodeFeature& operator=(GeodeFeature const&);
     GeodeFeature(GeodeFeature const&);
-    GeodeFeature();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& origin, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
     // vIndex: 0
     virtual ~GeodeFeature() /*override*/ = default;
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static bool canSupportGeode(::Block const& block);
+    MCAPI GeodeFeature();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -84,8 +83,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& origin, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

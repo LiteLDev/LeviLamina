@@ -19,7 +19,6 @@ struct MovementAttributesComponent;
 struct OnGroundFlagComponent;
 struct PowerJumpFlagComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct TriggerJumpRequestComponent;
 // clang-format on
 
@@ -27,8 +26,6 @@ struct ApplyJumpModifierSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createApplyJumpModifierSystem();
-
     MCAPI static void tickApplyJumpModifierSystem(
         ::StrictEntityContext const&,
         ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,

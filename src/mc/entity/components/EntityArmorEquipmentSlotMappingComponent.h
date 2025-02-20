@@ -6,7 +6,7 @@ struct EntityArmorEquipmentSlotMappingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk39b4bb;
+    ::ll::UntypedStorage<4, 4> mUnk85dfa0;
     // NOLINTEND
 
 public:

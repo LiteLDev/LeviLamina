@@ -56,15 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AzaleaBlock(::std::string const& nameId, int id);
-
     MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

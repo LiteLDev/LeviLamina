@@ -8,11 +8,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
+class Block;
 class IConstBlockSource;
 class NavigationComponent;
 class StrictEntityContext;
-class Vec3;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct AutoClimbTravelFlagComponent;
@@ -41,15 +40,11 @@ MCAPI bool canAutoClimbNow(
 
 MCAPI void forAutoClimbSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI ::Vec3 getAutoClimbBlockTestPos(::AABBShapeComponent const& aabbShape, ::StateVectorComponent const& stateVector);
-
-MCAPI ::BlockLegacy const& getBlockLegacyAtFeet(
+MCAPI ::Block const& getBlockAtFeet(
     ::AABBShapeComponent const&   aabbShape,
     ::StateVectorComponent const& stateVector,
     ::IConstBlockSource const&    constBlockSource
 );
-
-MCAPI bool isAutoClimbableBlock(bool canClimbInPowderSnow, ::BlockLegacy const& block);
 
 MCAPI void tickAutoClimbingMob(
     ::StrictEntityContext const&                          entity,

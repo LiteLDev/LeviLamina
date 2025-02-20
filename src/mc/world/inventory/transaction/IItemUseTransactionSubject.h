@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/components/ServerAuthMovementMode.h"
 #include "mc/world/ContainerID.h"
 
 // auto generated forward declare list
@@ -93,6 +94,9 @@ public:
 
     // vIndex: 22
     virtual ::DepenetrationComponent& getDepenetrationComponent() = 0;
+
+    // vIndex: 23
+    virtual ::ServerAuthMovementMode getMovementAuthorityMode() const = 0;
     // NOLINTEND
 
 public:

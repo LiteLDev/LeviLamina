@@ -142,33 +142,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseRailBlock(::std::string const& nameId, int id, bool usesDataBit);
+    MCFOLD void _updatePlacement(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void updateDir(::BlockSource& region, ::BlockPos const& pos, bool first) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static bool isCorner(::BlockSource const& region, ::BlockPos const& pos);
-
-    MCAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);
-
-    MCAPI static bool isRail(::Block const& block);
-
-    MCAPI static bool isRail(::IConstBlockSource const& region, ::BlockPos const& pos);
-
-    MCAPI static bool isSlope(::Block const& block);
-
-    MCAPI static bool isSlope(int railDirection);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool usesDataBit);
     // NOLINTEND
 
 public:
@@ -194,7 +178,7 @@ public:
 
     MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD bool $isRailBlock() const;
 
@@ -209,11 +193,5 @@ public:
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

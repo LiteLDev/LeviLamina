@@ -12,7 +12,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class ItemInstance;
-class Material;
 class Random;
 // clang-format on
 
@@ -31,24 +30,6 @@ public:
 
     // vIndex: 0
     virtual ~BuddingAmethystBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BuddingAmethystBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool canBudGrowAtPos(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

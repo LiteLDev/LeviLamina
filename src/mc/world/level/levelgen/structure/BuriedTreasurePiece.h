@@ -43,6 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _buryChest(::BlockSource& region, ::Random& random, ::BlockPos& blockPos) const;
+
     MCAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
     // NOLINTEND
 

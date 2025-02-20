@@ -67,6 +67,8 @@ public:
 
     MCAPI float nextFloat(float min, float max);
 
+    MCAPI int nextInt(int min, int max);
+
     MCAPI int nextIntInclusive(int min, int max);
 
     MCAPI void setSeed(uint seed);

@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
+namespace SharedTypes { struct Color255RGB; }
 // clang-format on
 
 struct BlockMapColorDescription : public ::BlockComponentDescription {
@@ -15,6 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk121012;
+    ::ll::UntypedStorage<1, 1>  mUnk3d9d2e;
     // NOLINTEND
 
 public:
@@ -32,8 +35,17 @@ public:
     // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
+    // vIndex: 4
+    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
     // vIndex: 0
-    virtual ~BlockMapColorDescription() /*override*/ = default;
+    virtual ~BlockMapColorDescription() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BlockMapColorDescription(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:
@@ -43,9 +55,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -54,6 +72,8 @@ public:
     MCAPI ::std::string const& $getName() const;
 
     MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:

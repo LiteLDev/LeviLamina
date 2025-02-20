@@ -35,5 +35,7 @@ public:
     );
 
     MCAPI void clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
+
+    MCAPI bool hasPendingGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId) const;
     // NOLINTEND
 };

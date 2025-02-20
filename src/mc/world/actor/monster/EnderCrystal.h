@@ -9,7 +9,6 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -35,19 +34,19 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
@@ -62,16 +61,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCFOLD void setBeamTarget(::BlockPos const& target);
-
-    MCAPI void setCrystalDamagedCallback(::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)> onDamaged);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& HEAL_DISTANCE();
     // NOLINTEND
 
 public:

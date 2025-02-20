@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -53,11 +53,7 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
             ::Scripting::Error,
             void>
-        process(
-            ::Scripting::WeakLifetimeScope const&,
-            ::Scripting::ScriptObjectFactory&                                                         factory,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
-        );
+        process(::Scripting::WeakLifetimeScope const& factory, ::Scripting::ScriptObjectFactory& requestHandle, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const&);
         // NOLINTEND
 
     public:
@@ -75,7 +71,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptNetHttpClient& operator=(ScriptNetHttpClient const&);
     ScriptNetHttpClient(ScriptNetHttpClient const&);
     ScriptNetHttpClient();
 
@@ -91,6 +86,9 @@ public:
         void>
     get(::Scripting::WeakLifetimeScope const& scope, ::Scripting::ScriptObjectFactory& factory, ::std::string const& uri
     );
+
+    MCFOLD ::ScriptModuleMinecraftNet::ScriptNetHttpClient&
+    operator=(::ScriptModuleMinecraftNet::ScriptNetHttpClient const&);
 
     MCAPI ::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,

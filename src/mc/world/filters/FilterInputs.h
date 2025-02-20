@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/FilterSubject.h"
+#include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/world/filters/FilterOperator.h"
 
 // auto generated forward declare list
@@ -31,10 +31,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI FilterInputs(
-        ::SharedTypes::Legacy::FilterSubject subject,
-        ::FilterInput                        domain,
-        ::FilterOperator                     op,
-        ::FilterInput                        value
+        ::SharedTypes::Legacy::FilterSubject domain,
+        ::FilterInput                        value,
+        ::FilterOperator                     subject,
+        ::FilterInput                        op
     );
 
     MCAPI ~FilterInputs();
@@ -44,7 +44,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void*
-    $ctor(::SharedTypes::Legacy::FilterSubject subject, ::FilterInput domain, ::FilterOperator op, ::FilterInput value);
+    $ctor(::SharedTypes::Legacy::FilterSubject domain, ::FilterInput value, ::FilterOperator subject, ::FilterInput op);
     // NOLINTEND
 
 public:

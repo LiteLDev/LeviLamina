@@ -46,16 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraInstructionPacket();
-
     MCAPI explicit CameraInstructionPacket(::CameraInstruction const& cameraInstruction);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::CameraInstruction const& cameraInstruction);
     // NOLINTEND
 

@@ -18,8 +18,8 @@ class CompassSpriteCalculator;
 class CompoundTag;
 class DataLoadHelper;
 class HashedString;
+class ILevel;
 class ItemInstance;
-class Level;
 class SaveContext;
 class WeakEntityRef;
 // clang-format on
@@ -48,7 +48,7 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -69,7 +69,7 @@ public:
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~ItemFrameBlockActor() /*override*/;
+    virtual ~ItemFrameBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -77,7 +77,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ItemFrameBlockActor(::BlockPos pos);
 
-    MCAPI ItemFrameBlockActor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
+    MCAPI ItemFrameBlockActor(::BlockPos pos, ::BlockActorType id, ::std::string const& type);
+
+    MCAPI void _checkMapRemoval(::BlockSource& region, ::ItemInstance& item);
 
     MCAPI void
     _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
@@ -85,14 +87,6 @@ public:
     MCAPI void actuallyDropItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
     MCAPI void dropFramedItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
-
-    MCFOLD ::ItemInstance const& getFramedItem() const;
-
-    MCFOLD float getRotation();
-
-    MCAPI void rotateFramedItem(::BlockSource& region, ::Actor& entitySource);
-
-    MCAPI void setIgnoreLighting(bool ignoreLighting);
 
     MCAPI void setItem(::BlockSource& region, ::ItemInstance const& item, ::Actor* entitySource);
 
@@ -110,13 +104,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos pos);
 
-    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
+    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType id, ::std::string const& type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
@@ -124,7 +118,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

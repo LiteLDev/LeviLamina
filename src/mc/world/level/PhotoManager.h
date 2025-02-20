@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/world/level/IPhotoManagerConnector.h"
@@ -13,7 +12,6 @@
 class Actor;
 class AppPlatform;
 class LevelStorage;
-class PhotoStorage;
 struct ScreenshotOptions;
 namespace cg { class ImageBuffer; }
 // clang-format on
@@ -26,7 +24,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnkb6ff69;
     ::ll::UntypedStorage<8, 32>  mUnk15bb57;
     ::ll::UntypedStorage<1, 1>   mUnk418844;
-    ::ll::UntypedStorage<8, 128> mUnk9d71fc;
+    ::ll::UntypedStorage<8, 128> mUnk52a34c;
     // NOLINTEND
 
 public:
@@ -42,7 +40,8 @@ public:
     virtual ~PhotoManager() = default;
 
     // vIndex: 0
-    virtual ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&)>&
+    virtual ::Bedrock::PubSub::Connector<
+        void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>)>&
     getPictureTakenConnector() /*override*/;
     // NOLINTEND
 
@@ -54,13 +53,6 @@ public:
     MCAPI void createPhotoStorage();
 
     MCAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
-
-    MCAPI ::PhotoStorage& getPhotoStorage();
-
-    MCFOLD ::Core::PathBuffer<::std::string> const& getScreenshotsFolder() const;
-
-    MCAPI void
-    takePicture(::cg::ImageBuffer& outImage, ::Actor* camera, ::Actor* target, ::ScreenshotOptions& screenshotOptions);
     // NOLINTEND
 
 public:
@@ -78,7 +70,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&)>&
+    MCAPI ::Bedrock::PubSub::Connector<
+        void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>)>&
     $getPictureTakenConnector();
     // NOLINTEND
 

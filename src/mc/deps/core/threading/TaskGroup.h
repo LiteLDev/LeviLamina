@@ -90,26 +90,15 @@ public:
 
     MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
-    MCAPI void disableOwnerThreadChecks();
-
     MCAPI void flush(::std::function<void()> waitFn);
 
-    MCAPI ::std::string_view getName() const;
-
-    MCFOLD ::Scheduler& getScheduler();
-
     MCAPI bool isEmpty() const;
-
-    MCAPI void pause();
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
         ::std::string_view                            name,
         ::brstd::move_only_function<::TaskResult()>&& task,
         ::std::function<void()>&&                     callback
     );
-
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    queueSync(::std::string_view name, ::brstd::move_only_function<::TaskResult()>&& task);
 
     MCAPI void sync_DEPRECATED_ASK_TOMMO(::std::function<void()> waitFn);
     // NOLINTEND
@@ -118,11 +107,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::IBackgroundTaskOwner* getCurrentTaskGroup();
-
-    MCAPI static ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queueChildSync_DEPRECATED(
-        ::TaskStartInfoEx<void> const&                startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task
-    );
 
     MCAPI static ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queueChild_DEPRECATED(
         ::TaskStartInfoEx<void> const&                startInfo,

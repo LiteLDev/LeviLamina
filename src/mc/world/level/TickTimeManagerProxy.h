@@ -3,12 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/ITickTimeManagerProxy.h"
 
 // auto generated forward declare list
 // clang-format off
-class LevelData;
 struct Tick;
 // clang-format on
 
@@ -45,18 +43,6 @@ public:
 
     // vIndex: 5
     virtual ::Tick getCurrentTick() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TickTimeManagerProxy(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData);
     // NOLINTEND
 
 public:

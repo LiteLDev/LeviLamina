@@ -84,7 +84,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI SubChunkPacketData(
+            ::SubChunkPacket::SubChunkPosOffset const& pos,
+            ::SubChunkPacket::SubChunkRequestResult    requestResult
+        );
+
         MCAPI ~SubChunkPacketData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void*
+        $ctor(::SubChunkPacket::SubChunkPosOffset const& pos, ::SubChunkPacket::SubChunkRequestResult requestResult);
         // NOLINTEND
 
     public:
@@ -102,6 +114,10 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPacket::SubChunkPacketData>> mSubChunkData;
     ::ll::TypedStorage<4, 12, ::SubChunkPos>                                       mCenterPos;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SubChunkPacket& operator=(SubChunkPacket const&);
 
 public:
     // virtual functions
@@ -125,17 +141,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SubChunkPacket();
-
-    MCAPI SubChunkPacket(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
+    MCAPI SubChunkPacket(::SubChunkPacket const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::DimensionType const& dimension, ::SubChunkPos const& centerPos, bool cacheEnabled);
+    MCAPI void* $ctor(::SubChunkPacket const&);
     // NOLINTEND
 
 public:

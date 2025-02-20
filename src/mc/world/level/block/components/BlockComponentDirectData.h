@@ -5,10 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-struct BlockCollisionBoxComponent;
-struct BlockDestructibleByMiningComponent;
-struct BlockSelectionBoxComponent;
-struct Brightness;
 // clang-format on
 
 struct BlockComponentDirectData {
@@ -56,29 +52,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _finalizeInit(::Block const& block);
-
-    MCFOLD bool _useNewTessellationInternal() const;
-
-    MCFOLD ::BlockCollisionBoxComponent const* blockCollisionBoxComponent() const;
-
-    MCFOLD ::BlockSelectionBoxComponent const* blockSelectionBoxComponent() const;
-
-    MCFOLD ::BlockDestructibleByMiningComponent const* destructibleByMiningComponent() const;
-
-    MCAPI void finalize(::Block const& block, ::BlockComponentDirectData::LayerBitMask layersToFinalize);
-
-    MCFOLD int getBurnOdds() const;
-
-    MCAPI float getDestroySpeed() const;
-
-    MCFOLD float getExplosionResistance() const;
-
-    MCFOLD int getFlameOdds() const;
-
-    MCFOLD float getFriction() const;
-
-    MCAPI ::Brightness light() const;
-
-    MCAPI ::Brightness lightEmission() const;
     // NOLINTEND
 };

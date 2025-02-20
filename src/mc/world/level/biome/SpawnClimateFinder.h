@@ -57,11 +57,9 @@ public:
         ::DimensionHeightRange const&      dimensionHeightRange
     );
 
+    MCAPI int64 _calculateClimateMinFitness(::BlockPos pos) const;
+
     MCAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
-
-    MCAPI ::std::pair<::BlockPos, int64> _getSpawnPositionAndFitness(::BlockPos samplePos) const;
-
-    MCAPI ::BlockPos findSpawnPosition() const;
 
     MCAPI ~SpawnClimateFinder();
     // NOLINTEND

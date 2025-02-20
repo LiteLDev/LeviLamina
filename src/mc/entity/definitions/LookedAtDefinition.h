@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-struct LookedAtComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -25,7 +23,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkae44a1;
+        ::ll::UntypedStorage<4, 4> mUnk62964c;
         ::ll::UntypedStorage<4, 4> mUnkd67202;
         // NOLINTEND
 
@@ -53,6 +51,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk2506d4;
     ::ll::UntypedStorage<4, 4>   mUnkf8292c;
     ::ll::UntypedStorage<4, 4>   mUnkde9d21;
+    ::ll::UntypedStorage<4, 4>   mUnkfc9623;
     ::ll::UntypedStorage<1, 1>   mUnkb54097;
     ::ll::UntypedStorage<1, 1>   mUnkaa520a;
     ::ll::UntypedStorage<1, 1>   mUnkef3718;
@@ -62,14 +61,11 @@ public:
     // prevent constructor by default
     LookedAtDefinition& operator=(LookedAtDefinition const&);
     LookedAtDefinition(LookedAtDefinition const&);
+    LookedAtDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LookedAtDefinition();
-
-    MCAPI void initialize(::EntityContext&, ::LookedAtComponent& component) const;
-
     MCAPI void setFieldOfView(float const& fieldOfViewInDegrees);
 
     MCAPI void setLineOfSightObstructionType(::std::string const& str);
@@ -85,12 +81,6 @@ public:
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LookedAtDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

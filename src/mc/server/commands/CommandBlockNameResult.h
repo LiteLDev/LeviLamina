@@ -30,12 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Block const* getBlock() const;
-
-    MCFOLD ::CommandBlockNameResult::Result getResult() const;
-
-    MCFOLD bool isComplexAlias() const;
-
     MCAPI bool isSameBlock(::Block const& rhs, bool onlyCompareBlockLegacy) const;
 
     MCAPI ~CommandBlockNameResult();

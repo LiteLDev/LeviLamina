@@ -31,16 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 98
+    // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 176
+    // vIndex: 171
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep() /*override*/;
 
-    // vIndex: 172
+    // vIndex: 167
     virtual bool createAIGoals() /*override*/;
 
     // vIndex: 4

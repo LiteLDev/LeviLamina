@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/script/ScriptWidgetGroup_ServiceInterface.h"
 #include "mc/editor/script/ScriptWidgetGroup_WidgetInterface.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +24,6 @@ namespace Editor::ScriptModule { class ScriptWidgetGroupErrorInvalidObject; }
 namespace Editor::ScriptModule { class ScriptWidgetService; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -128,9 +127,6 @@ public:
 
     MCAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
     _scriptSetVisible(bool visible);
-
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
-    getWidget(::mce::UUID const& widgetId) const;
     // NOLINTEND
 
 public:

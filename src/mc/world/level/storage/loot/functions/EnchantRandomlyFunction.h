@@ -9,8 +9,10 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
+class LootItemCondition;
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class EnchantRandomlyFunction : public ::LootItemFunction {
@@ -38,6 +40,13 @@ public:
 
     // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:

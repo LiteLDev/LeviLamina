@@ -53,24 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EmotePacket();
-
-    MCAPI bool isServerSide() const;
-
-    MCAPI void setEmoteChatMute();
-
-    MCAPI void setServerSide();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

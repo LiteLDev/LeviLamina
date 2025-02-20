@@ -73,6 +73,7 @@ public:
     // prevent constructor by default
     MangroveTreeCanopy& operator=(MangroveTreeCanopy const&);
     MangroveTreeCanopy(MangroveTreeCanopy const&);
+    MangroveTreeCanopy();
 
 public:
     // virtual functions
@@ -89,18 +90,6 @@ public:
         ::TreeHelper::TreeParams const&  treeParams,
         ::std::vector<::BlockPos> const& attachmentPositions
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MangroveTreeCanopy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

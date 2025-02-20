@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorFlags.h"
 #include "mc/world/actor/ai/goal/MeleeAttackGoal.h"
 
@@ -53,9 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DelayedAttackGoal(::Mob& mob);
-
-    MCAPI void _attemptStartAttacking(::Actor* target) const;
+    MCAPI void _attemptAttack(::Actor* target, bool canReach, bool hasLineOfSight);
     // NOLINTEND
 
 public:
@@ -68,12 +66,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& mMinLineOfSightFixVersion();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -13,7 +13,6 @@ class Block;
 class BlockPos;
 class BlockSource;
 class ItemInstance;
-class ItemStackBase;
 class RecipeIngredient;
 struct ElementInfo;
 namespace mce { class Color; }
@@ -29,7 +28,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const /*override*/;
 
     // vIndex: 112
@@ -46,12 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ElementBlock(::std::string const& nameId, int id, ::ElementType type);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::ElementInfo getElementInfo(::ElementType e);
@@ -61,26 +54,12 @@ public:
     MCAPI static ::ItemInstance getItemForElement(::ElementType e, int stackCount);
 
     MCAPI static void initElements();
-
-    MCAPI static bool isElement(::BlockLegacy const& block);
-
-    MCAPI static bool isElement(::ItemStackBase const& item);
-
-    MCAPI static void shutdownElements();
-
-    MCAPI static ::BlockLegacy const* tryGetBlockLegacyForElement(::ElementType e);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::vector<::BlockLegacy const*>& mElements();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::ElementType type);
     // NOLINTEND
 
 public:

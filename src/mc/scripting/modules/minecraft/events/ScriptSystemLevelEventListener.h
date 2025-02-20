@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/events/ScriptDeferredEventListener.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScriptDeferredFlushTracker;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptSystemLevelEventListener : public ::ScriptDeferredEventListener {
@@ -25,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool onRunSystemTick() /*override*/;
+    virtual void onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptSystemLevelEventListener() /*override*/ = default;
@@ -40,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $onRunSystemTick();
+    MCAPI void $onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker);
     // NOLINTEND
 
 public:

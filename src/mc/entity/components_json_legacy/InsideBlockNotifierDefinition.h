@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class InsideBlockNotifierComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,12 +22,6 @@ public:
     InsideBlockNotifierDefinition& operator=(InsideBlockNotifierDefinition const&);
     InsideBlockNotifierDefinition(InsideBlockNotifierDefinition const&);
     InsideBlockNotifierDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::InsideBlockNotifierComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

@@ -5,24 +5,17 @@
 // auto generated inclusion list
 #include "mc/world/actor/Mob.h"
 
-// auto generated forward declare list
-// clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
-// clang-format on
-
 class WaterAnimal : public ::Mob {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual float getFlopVerticalVelocityFactor() const;
 
-    // vIndex: 183
+    // vIndex: 178
     virtual float getFlopHorizontalVelocityFactor() const;
 
     // vIndex: 8
@@ -32,23 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WaterAnimal(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI void preAiStep();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

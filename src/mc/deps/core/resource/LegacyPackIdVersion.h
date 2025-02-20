@@ -24,17 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyPackIdVersion(::std::string const& id, ::std::string const& version);
-
     MCAPI ::PackIdVersion getUpgradedPackId() const;
 
     MCAPI ~LegacyPackIdVersion();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& id, ::std::string const& version);
     // NOLINTEND
 
 public:

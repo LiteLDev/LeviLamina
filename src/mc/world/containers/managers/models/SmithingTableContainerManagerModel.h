@@ -68,8 +68,6 @@ public:
 
     MCAPI static int const& MATERIAL_SLOT();
 
-    MCAPI static int const& RESULT_SLOT();
-
     MCAPI static int const& TEMPLATE_SLOT();
     // NOLINTEND
 

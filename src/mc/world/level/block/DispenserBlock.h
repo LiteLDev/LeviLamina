@@ -65,14 +65,14 @@ public:
     // vIndex: 136
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual int getTickDelay() const;
 
     // vIndex: 141
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
         /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 131
@@ -85,8 +85,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DispenserBlock(::std::string const& nameId, int id);
-
     MCAPI void ejectItem(
         ::BlockSource&     region,
         ::Vec3 const&      pos,
@@ -99,8 +97,6 @@ public:
 
     MCAPI ::Vec3 getDispensePosition(::BlockSource& region, ::Vec3 const& pos) const;
 
-    MCAPI uchar getFacing(::Block const& block) const;
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -112,13 +108,7 @@ public:
     MCAPI static void
     ejectItem(::BlockSource& region, ::Vec3 const& pos, uchar face, ::ItemStack const& item, int countLimit);
 
-    MCAPI static void setupConsumerRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI static void openInventoryContainer(::Player& player, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

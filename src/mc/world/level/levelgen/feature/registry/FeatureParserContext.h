@@ -6,9 +6,9 @@ struct FeatureParserContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk19a66b;
-    ::ll::UntypedStorage<8, 8>   mUnkc286ce;
-    ::ll::UntypedStorage<8, 120> mUnk1a0f48;
+    ::ll::UntypedStorage<8, 8>  mUnk19a66b;
+    ::ll::UntypedStorage<8, 8>  mUnkc286ce;
+    ::ll::UntypedStorage<8, 32> mUnk1a0f48;
     // NOLINTEND
 
 public:

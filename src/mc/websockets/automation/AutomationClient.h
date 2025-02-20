@@ -10,8 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActivationUri;
-class CommandOrigin;
-class IMinecraftApp;
 namespace Automation { class AutomationSession; }
 namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { struct AgentMessage; }
@@ -32,6 +30,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk133ab6;
     ::ll::UntypedStorage<8, 8>  mUnk9e65e2;
     ::ll::UntypedStorage<4, 4>  mUnkde21bd;
+    ::ll::UntypedStorage<1, 1>  mUnkc2550d;
     ::ll::UntypedStorage<1, 1>  mUnkda283b;
     ::ll::UntypedStorage<4, 4>  mUnk94c7c4;
     ::ll::UntypedStorage<1, 1>  mUnk60f2b9;
@@ -85,8 +84,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AutomationClient(::IMinecraftApp& minecraft);
-
     MCAPI void _forEachSession(::std::function<bool(::Automation::AutomationSession&)> const& callback);
 
     MCAPI void _removeSession(::Automation::AutomationSession const& session);
@@ -96,20 +93,6 @@ public:
     MCAPI ::std::shared_ptr<::Automation::AutomationSession> getDefaultSession();
 
     MCAPI ::std::shared_ptr<::CodeBuilder::GameContext> getGameContext() const;
-
-    MCAPI ::std::shared_ptr<::Automation::AutomationSession> getSessionForCommand(::CommandOrigin const& origin);
-
-    MCFOLD bool isReadyForInGameCommands();
-
-    MCAPI void setRequireEncryption(bool isEncryptionRequired);
-
-    MCFOLD void setServerRetryTime(float retryTime);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftApp& minecraft);
     // NOLINTEND
 
 public:

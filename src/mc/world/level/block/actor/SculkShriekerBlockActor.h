@@ -12,7 +12,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class Player;
 class SaveContext;
 class VibrationListener;
@@ -58,7 +58,7 @@ public:
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -82,8 +82,6 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static ::SculkShriekerBlockActor* tryGet(::BlockSource& region, ::BlockPos blockPos);
-
     MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
     // NOLINTEND
 
@@ -106,7 +104,7 @@ public:
 
     MCFOLD void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
     // NOLINTEND

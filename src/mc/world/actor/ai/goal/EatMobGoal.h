@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 class Path;
 class Vec3;
@@ -41,6 +40,7 @@ public:
     public:
         // prevent constructor by default
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -52,10 +52,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::EatMobGoal& goal) const;
-
         MCAPI ::EatMobGoal::Definition& operator=(::EatMobGoal::Definition const&);
         // NOLINTEND
 
@@ -66,12 +62,6 @@ public:
             ::std::string const&                                                                                   name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EatMobGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -130,18 +120,6 @@ public:
 
     // vIndex: 0
     virtual ~EatMobGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EatMobGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

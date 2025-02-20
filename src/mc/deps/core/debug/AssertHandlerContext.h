@@ -17,13 +17,20 @@ public:
 public:
     // prevent constructor by default
     AssertHandlerContext& operator=(AssertHandlerContext const&);
-    AssertHandlerContext(AssertHandlerContext const&);
     AssertHandlerContext();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AssertHandlerContext(::AssertHandlerContext const&);
+
     MCAPI ~AssertHandlerContext();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AssertHandlerContext const&);
     // NOLINTEND
 
 public:

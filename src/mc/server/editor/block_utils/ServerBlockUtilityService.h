@@ -3,16 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/block_utils/CommonBlockUtilityService.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/server/editor/serviceproviders/ServerBlockUtilityServiceProvider.h"
+#include "mc/editor/script/ServerBlockUtilityServiceProvider.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockVolumeBase;
 class CompoundBlockVolume;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::BlockUtils { class CommonBlockUtilityServiceProvider; }
 // clang-format on
 
@@ -43,18 +42,6 @@ public:
 
     // vIndex: 9
     virtual ::Scripting::Result<void> _implQuit() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ServerBlockUtilityService(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

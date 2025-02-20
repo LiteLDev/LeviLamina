@@ -18,18 +18,19 @@ public:
         ClientRenderServerCores = 1,
     };
 
+    enum class UseAsyncOrDiskPoolForLoading : int {
+        Async = 0,
+        Disk  = 1,
+    };
+
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void configureMainThread();
 
-    MCAPI static void configureServerThread();
-
     MCAPI static void createSingletons();
 
     MCAPI static void destroySingletons();
-
-    MCFOLD static void initializeDefaults(::MinecraftWorkerPool::CoreConfigFlavor nxCoreConfigFlavor);
 
     MCAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND

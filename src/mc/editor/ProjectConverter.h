@@ -105,7 +105,7 @@ public:
         ::std::unordered_set<::mce::UUID> const& packsToRemove
     ) const;
 
-    MCAPI ::std::string _getLevelIdFromFolderPath(::Core::PathBuffer<::std::string> const& levelFolder) const;
+    MCAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
     // NOLINTEND
 
 public:

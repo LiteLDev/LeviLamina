@@ -9,9 +9,11 @@
 // clang-format off
 class ItemInstance;
 class ItemStack;
+class LootItemCondition;
 class LootTableContext;
 class Random;
 struct Trade;
+namespace Json { class Value; }
 // clang-format on
 
 class EnchantWithLevelsFunction : public ::LootItemFunction {
@@ -47,6 +49,13 @@ public:
     // vIndex: 1
     virtual int
     apply(::ItemInstance& item, ::Random& random, ::Trade const& trade, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:

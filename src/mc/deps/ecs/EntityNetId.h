@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -21,8 +20,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::EntityNetId _serverGetEntityNetId(::EntityContext const& entity);
-
     MCAPI static ::Bedrock::Result<::EntityNetId> deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

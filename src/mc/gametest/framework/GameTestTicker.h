@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI void clear();
 
-    MCAPI bool empty() const;
+    MCAPI void forceStop();
 
     MCAPI void tick();
     // NOLINTEND

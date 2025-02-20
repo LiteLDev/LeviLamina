@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct FileChunkInfo;
-// clang-format on
-
 class FileChunkManager {
 public:
     // member variables
@@ -25,36 +20,13 @@ public:
     // prevent constructor by default
     FileChunkManager& operator=(FileChunkManager const&);
     FileChunkManager(FileChunkManager const&);
+    FileChunkManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileChunkManager();
-
     MCAPI void _generateChunkInfo();
 
-    MCAPI ::FileChunkInfo getChunkInfo(int chunkID) const;
-
-    MCFOLD ::std::vector<::FileChunkInfo> const& getChunks() const;
-
-    MCFOLD int getTotalNumberOfChunks();
-
-    MCAPI void reset();
-
     MCAPI void reset(uint64 totalSize, uint chunkSize);
-
-    MCAPI ~FileChunkManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

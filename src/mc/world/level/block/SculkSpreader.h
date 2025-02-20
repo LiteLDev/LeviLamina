@@ -28,33 +28,12 @@ public:
     // prevent constructor by default
     SculkSpreader& operator=(SculkSpreader const&);
     SculkSpreader(SculkSpreader const&);
+    SculkSpreader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkSpreader();
-
-    MCAPI SculkSpreader(
-        bool isWorldGen,
-        int  growthSpawnCost,
-        int  noGrowthRadius,
-        int  chargeDecayRate,
-        int  additionalDecayRate
-    );
-
     MCAPI void addCursors(::BlockPos const& pos, int charge);
-
-    MCAPI void clearCursors();
-
-    MCAPI ::BlockPos getCursorPosition(int index) const;
-
-    MCFOLD int getMaxCharge() const;
-
-    MCAPI int getNumberOfCursors() const;
-
-    MCAPI int getTotalCharge() const;
-
-    MCAPI void load(::CompoundTag const& tag);
 
     MCAPI void save(::CompoundTag& tag) const;
 
@@ -67,15 +46,6 @@ public:
     );
 
     MCAPI ~SculkSpreader();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void*
-    $ctor(bool isWorldGen, int growthSpawnCost, int noGrowthRadius, int chargeDecayRate, int additionalDecayRate);
     // NOLINTEND
 
 public:

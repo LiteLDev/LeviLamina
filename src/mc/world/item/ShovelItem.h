@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/DiggerItem.h"
-#include "mc/world/item/Item.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,18 +28,6 @@ public:
 
     // vIndex: 0
     virtual ~ShovelItem() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShovelItem(::std::string const& name, int id, ::Item::Tier const& tier);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::Item::Tier const& tier);
     // NOLINTEND
 
 public:

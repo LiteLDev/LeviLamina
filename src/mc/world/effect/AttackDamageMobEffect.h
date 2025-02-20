@@ -22,14 +22,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static float getDamageAfterDamageBoost(float initialDamage, int count);
-
-    MCAPI static float getDamageAfterWeakness(float initialDamage, int count);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

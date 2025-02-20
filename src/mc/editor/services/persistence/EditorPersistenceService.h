@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPersistenceServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/persistence/PersistentDataType.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -116,8 +116,6 @@ public:
     MCAPI explicit EditorPersistenceService(::Editor::ServiceProviderCollection& providers);
 
     MCAPI void _updatePersistData(::Editor::Persistence::PersistentData const& data);
-
-    MCAPI bool isTimeOut() const;
     // NOLINTEND
 
 public:

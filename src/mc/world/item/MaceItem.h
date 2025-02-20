@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/Item.h"
 #include "mc/world/item/WeaponItem.h"
 
 // auto generated forward declare list
@@ -45,18 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MaceItem(::std::string const& name, int id, ::Item::Tier const& tier);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::Item::Tier const& tier);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -74,7 +61,7 @@ public:
 
     MCAPI float $getAttackDamageBonus(::Actor const& attacker, float) const;
 
-    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
     // NOLINTEND

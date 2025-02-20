@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,6 +21,12 @@ public:
     VanillaBlockData& operator=(VanillaBlockData const&);
     VanillaBlockData(VanillaBlockData const&);
     VanillaBlockData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    // NOLINTEND
 
 public:
     // static functions

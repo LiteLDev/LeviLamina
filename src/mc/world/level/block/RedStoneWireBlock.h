@@ -20,6 +20,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
 class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -56,8 +57,7 @@ public:
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 54
     virtual bool
@@ -77,15 +77,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedStoneWireBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -115,7 +107,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;

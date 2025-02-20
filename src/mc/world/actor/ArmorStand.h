@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/EquipmentSlot.h"
+#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/world/actor/Mob.h"
 
 // auto generated forward declare list
@@ -65,34 +65,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 120
+    // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 124
+    // vIndex: 122
     virtual void kill() /*override*/;
 
-    // vIndex: 125
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 151
+    // vIndex: 146
     virtual void pushActors() /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 8
@@ -121,8 +121,6 @@ public:
     MCAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
 
     MCAPI void _updatePoseFromSynchedData();
-
-    MCAPI ::std::unique_ptr<::CompoundTag> _writePose() const;
 
     MCAPI void setPoseIndex(int poseIndex);
     // NOLINTEND
@@ -155,8 +153,6 @@ public:
     MCAPI static ::ArmorStand::Pose const& POSE_ZERO_ROTATION();
 
     MCAPI static ::ArmorStand::Pose const& POSE_ZOMBIE();
-
-    MCAPI static ::std::add_lvalue_reference_t<::ArmorStand::Pose const*[]> STAND_POSES();
     // NOLINTEND
 
 public:

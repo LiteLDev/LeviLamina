@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/Mob.h"
@@ -49,19 +49,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 153
+    // vIndex: 148
     virtual bool checkSpawnObstruction() const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
     // vIndex: 2
@@ -82,10 +82,6 @@ public:
     );
 
     MCAPI ::Vec3 _randomInkDir();
-
-    MCAPI float getTentacleAngle() const;
-
-    MCAPI float getZBodyRot() const;
 
     MCAPI void postAiStep();
 

@@ -55,12 +55,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int64 data);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

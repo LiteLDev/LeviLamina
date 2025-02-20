@@ -52,12 +52,7 @@ public:
     ) /*override*/;
 
     // vIndex: 3
-    virtual void transferActor(
-        ::Actor&                       actor,
-        ::Dimension&                   toDimension,
-        ::Vec3 const&                  targetPosition,
-        ::std::optional<::Vec3> const& actorPosition
-    ) /*override*/;
+    virtual void transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition) /*override*/;
     // NOLINTEND
 
 public:
@@ -98,12 +93,7 @@ public:
         ::std::optional<::Vec3> const& actorPosition
     );
 
-    MCAPI void $transferActor(
-        ::Actor&                       actor,
-        ::Dimension&                   toDimension,
-        ::Vec3 const&                  targetPosition,
-        ::std::optional<::Vec3> const& actorPosition
-    );
+    MCAPI void $transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition);
     // NOLINTEND
 
 public:

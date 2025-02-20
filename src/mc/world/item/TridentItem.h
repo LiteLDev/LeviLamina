@@ -45,7 +45,7 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
@@ -69,8 +69,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TridentItem(::std::string const& name, int id);
-
     MCAPI ::Actor* _setupProjectile(::Actor* trident, ::ItemStack item, bool creative) const;
     // NOLINTEND
 
@@ -80,12 +78,6 @@ public:
     MCAPI static int const& CHARGE_THRESHOLD_TIME();
 
     MCAPI static int const& THROW_THRESHOLD_TIME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
@@ -112,7 +104,7 @@ public:
 
     MCFOLD int $getEnchantValue() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
 

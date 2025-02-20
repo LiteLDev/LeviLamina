@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/persistence/EditorPersistenceService.h"
 #include "mc/editor/services/persistence/PersistentDataType.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off

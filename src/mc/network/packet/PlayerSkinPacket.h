@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::mce::UUID>       mUUID;
-    ::ll::TypedStorage<8, 616, ::SerializedSkin> mSkin;
+    ::ll::TypedStorage<8, 528, ::SerializedSkin> mSkin;
     ::ll::TypedStorage<8, 32, ::std::string>     mLocalizedNewSkinName;
     ::ll::TypedStorage<8, 32, ::std::string>     mLocalizedOldSkinName;
     // NOLINTEND
@@ -41,22 +41,10 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlayerSkinPacket();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -74,7 +62,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
     MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

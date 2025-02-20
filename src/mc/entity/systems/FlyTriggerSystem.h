@@ -10,8 +10,6 @@ struct TickingSystemWithInfo;
 namespace FlyTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createActionSystem();
-
 MCAPI ::TickingSystemWithInfo createIntentSystem();
 
 MCAPI ::TickingSystemWithInfo createRemovePermissionFlyFlagSystem();

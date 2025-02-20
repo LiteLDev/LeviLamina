@@ -24,6 +24,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI uchar _randomDirection(::Random& random, ::BlockSource const& region, ::BlockPos const& pos) const;
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

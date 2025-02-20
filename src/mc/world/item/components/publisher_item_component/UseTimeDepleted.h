@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class ItemStack;
 class Level;
 class Player;
@@ -26,6 +27,12 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~UseTimeDepleted() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

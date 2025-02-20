@@ -3,16 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/logging/LogLevel.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor::ScriptModule { class ScriptLogProperties; }
-namespace Editor::Services { class LoggingServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -35,11 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptLoggingService(
-        ::Editor::Services::LoggingServiceProvider* loggingService,
-        ::Scripting::WeakLifetimeScope const&       scope
-    );
-
     MCAPI ::Scripting::Result<void> _logMessage(
         ::Editor::LogLevel                                           level,
         ::std::string                                                message,
@@ -55,6 +48,8 @@ public:
     MCAPI ::Scripting::Result<void>
     info(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
 
+    MCAPI ::Editor::ScriptModule::ScriptLoggingService& operator=(::Editor::ScriptModule::ScriptLoggingService&&);
+
     MCAPI ::Scripting::Result<void>
     warning(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
     // NOLINTEND
@@ -63,13 +58,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptLoggingService> bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Editor::Services::LoggingServiceProvider* loggingService, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

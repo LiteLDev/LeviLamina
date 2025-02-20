@@ -203,6 +203,10 @@ public:
 
     MCAPI ::std::shared_ptr<::Localization> _findLocaleFor(::std::string const& code);
 
+    MCAPI ::std::string _generatePackKeyPrefix(::PackManifest const& manifest);
+
+    MCAPI ::std::string& _getLocaleCodeFor(::std::string const& code);
+
     MCAPI ::gsl::not_null<::std::shared_ptr<::Localization>> _getPackKeywordLocale(::std::string const& langCode);
 
     MCAPI void _notifyLanguagesLoaded();

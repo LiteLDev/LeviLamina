@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DamageOverTimeComponent;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -25,12 +23,6 @@ public:
     DamageOverTimeDefinition& operator=(DamageOverTimeDefinition const&);
     DamageOverTimeDefinition(DamageOverTimeDefinition const&);
     DamageOverTimeDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::DamageOverTimeComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

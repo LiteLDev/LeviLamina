@@ -9,7 +9,6 @@ class ChunkSource;
 class Dimension;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
-class LevelSettings;
 // clang-format on
 
 class ChunkTickRangeManager {
@@ -34,17 +33,15 @@ public:
 
     MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
-    MCAPI uint getAdjustedChunkTickRange(::LevelSettings const& levelSettings);
-
     MCAPI bool isChunkInTickRange(::LevelChunk const& lc, ::std::optional<int> minDistToPlayer) const;
 
     MCAPI bool isChunkInTickRange(
         ::ChunkPos const&  chunkPos,
         ::Dimension const& dimension,
-        bool               shouldServerGenerate,
-        float              serverBuildRatio,
-        int                chunkViewRadius,
-        int                numActiveUsers
+        bool               serverBuildRatio,
+        float              chunkViewRadius,
+        int                numActiveUsers,
+        int                shouldServerGenerate
     ) const;
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);

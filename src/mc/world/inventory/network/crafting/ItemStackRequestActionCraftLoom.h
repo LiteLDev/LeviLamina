@@ -23,6 +23,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftLoom& operator=(ItemStackRequestActionCraftLoom const&);
     ItemStackRequestActionCraftLoom(ItemStackRequestActionCraftLoom const&);
+    ItemStackRequestActionCraftLoom();
 
 public:
     // virtual functions
@@ -35,18 +36,6 @@ public:
 
     // vIndex: 0
     virtual ~ItemStackRequestActionCraftLoom() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackRequestActionCraftLoom();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

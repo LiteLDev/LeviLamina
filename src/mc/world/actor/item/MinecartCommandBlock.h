@@ -9,13 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class Block;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -23,53 +20,33 @@ class MinecartCommandBlock : public ::Minecart {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 33
+    // vIndex: 32
     virtual bool canShowNameTag() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::MinecartType getType() /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual ::Block const* getDefaultDisplayBlock() const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 142
     virtual void applyNaturalSlowdown(::BlockSource& region) /*override*/;
 
-    // vIndex: 148
+    // vIndex: 143
     virtual void _lazyInitDisplayBlock() /*override*/;
 
     // vIndex: 8
     virtual ~MinecartCommandBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MinecartCommandBlock(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -93,7 +70,7 @@ public:
 
     MCAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCAPI void $applyNaturalSlowdown(::BlockSource& region);
+    MCFOLD void $applyNaturalSlowdown(::BlockSource& region);
 
     MCAPI void $_lazyInitDisplayBlock();
     // NOLINTEND

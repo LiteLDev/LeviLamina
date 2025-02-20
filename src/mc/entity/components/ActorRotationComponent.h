@@ -12,12 +12,7 @@ public:
 
 public:
     // prevent constructor by default
+    ActorRotationComponent& operator=(ActorRotationComponent const&);
     ActorRotationComponent(ActorRotationComponent const&);
     ActorRotationComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ActorRotationComponent& operator=(::ActorRotationComponent const&);
-    // NOLINTEND
 };

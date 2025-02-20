@@ -14,12 +14,4 @@ public:
     SchedulerComponent& operator=(SchedulerComponent const&);
     SchedulerComponent(SchedulerComponent const&);
     SchedulerComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD int getCurrentEventIndex() const;
-
-    MCFOLD void setCurrentEventIndex(int index);
-    // NOLINTEND
 };

@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ILevelSoundManagerConnector() /*override*/;
+    virtual ~ILevelSoundManagerConnector() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Bedrock::PubSub::Connector<void(
@@ -48,7 +48,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

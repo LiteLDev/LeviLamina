@@ -63,12 +63,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LevelChunkEventManager(::std::unique_ptr<::ILevelChunkEventManagerProxy> levelChunkEventManagerProxy
     );
-
-    MCAPI void onChunkDiscarded(::LevelChunk& levelChunk);
-
-    MCAPI void onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
-
-    MCAPI void onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
     // NOLINTEND
 
 public:
@@ -90,7 +84,7 @@ public:
 
     MCFOLD ::Bedrock::PubSub::Connector<void(::ChunkSource&, ::LevelChunk&)>& $getOnChunkReloadedConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::LevelChunk&)>& $getOnChunkDiscardedConnector();
     // NOLINTEND
 
 public:

@@ -17,6 +17,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Container;
+class HashedString;
 class InteractionResult;
 class ItemDescriptor;
 class ItemInstance;
@@ -38,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 91
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
@@ -50,7 +51,7 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 80
-    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
+    virtual void releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const /*override*/;
 
     // vIndex: 79
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
@@ -96,8 +97,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BucketItem(::std::string const& name, int id, ::BucketFillType type);
-
     MCAPI bool _canEmptyBucketIntoBlock(
         ::BlockSource&    region,
         ::BlockPos const& pos,
@@ -113,6 +112,8 @@ public:
         ::ItemStack const& instance,
         uchar              face
     ) const;
+
+    MCAPI bool _supportsEntityType(::ActorType const& entityType, ::HashedString& bucketType) const;
 
     MCAPI bool _takeLiquid(::ItemStack& item, ::Actor& entity, ::BlockPos const& pos) const;
 
@@ -130,15 +131,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DRINK_DURATION();
-
     MCAPI static ::std::vector<::std::pair<::BucketFillType, ::ActorType>> const& mFillTypeToEntityType();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::BucketFillType type);
     // NOLINTEND
 
 public:
@@ -150,7 +143,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
@@ -158,7 +151,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 

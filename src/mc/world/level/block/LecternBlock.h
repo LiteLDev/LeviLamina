@@ -16,9 +16,10 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class Player;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class LecternBlock : public ::ActorBlock {
@@ -57,9 +58,6 @@ public:
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
@@ -81,19 +79,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LecternBlock(::std::string const& nameId, int id);
+    MCAPI bool _dropBook(::Player& player, ::BlockPos const& pos) const;
+
+    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _updateRedstone(::BlockSource& region, ::BlockPos const& pos, bool powered) const;
 
     MCAPI void emitRedstonePulse(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -124,8 +122,6 @@ public:
     MCFOLD bool $hasComparatorSignal() const;
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool $isSignalSource() const;
 

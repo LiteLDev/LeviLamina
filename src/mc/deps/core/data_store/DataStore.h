@@ -33,15 +33,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnk36485c;
-        ::ll::UntypedStorage<8, 40>  mUnk7c4cd3;
-        ::ll::UntypedStorage<8, 32>  mUnka16edc;
-        ::ll::UntypedStorage<8, 192> mUnkbf5d9d;
-        ::ll::UntypedStorage<8, 88>  mUnka2b527;
-        ::ll::UntypedStorage<8, 8>   mUnkb96eba;
-        ::ll::UntypedStorage<8, 24>  mUnk6aa7f3;
-        ::ll::UntypedStorage<8, 16>  mUnk431661;
-        ::ll::UntypedStorage<8, 24>  mUnk71a5a1;
+        ::ll::UntypedStorage<8, 8>  mUnk36485c;
+        ::ll::UntypedStorage<8, 40> mUnk7c4cd3;
+        ::ll::UntypedStorage<8, 32> mUnka16edc;
+        ::ll::UntypedStorage<8, 24> mUnkbf5d9d;
+        ::ll::UntypedStorage<8, 88> mUnka2b527;
+        ::ll::UntypedStorage<8, 8>  mUnkb96eba;
+        ::ll::UntypedStorage<8, 24> mUnk6aa7f3;
+        ::ll::UntypedStorage<8, 16> mUnk431661;
+        ::ll::UntypedStorage<8, 24> mUnk71a5a1;
         // NOLINTEND
 
     public:
@@ -53,17 +53,12 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Impl(::Bedrock::DataStore* owner);
+        MCAPI ::Bedrock::JSONObject::Node*
+        _setValueForKey(char const* key, uint64 keyLength, ::Bedrock::JSONObject::ValueWrapper const& value);
 
         MCAPI void load();
 
         MCAPI ~Impl();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::DataStore* owner);
         // NOLINTEND
 
     public:
@@ -141,9 +136,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnk78e097;
-        ::ll::UntypedStorage<8, 64> mUnkd4a032;
-        ::ll::UntypedStorage<8, 64> mUnk530bf3;
+        ::ll::UntypedStorage<8, 8> mUnka2167c;
+        ::ll::UntypedStorage<8, 8> mUnkafbedc;
+        ::ll::UntypedStorage<8, 8> mUnkf5b462;
         // NOLINTEND
 
     public:
@@ -151,28 +146,6 @@ public:
         CustomFileHandlers& operator=(CustomFileHandlers const&);
         CustomFileHandlers(CustomFileHandlers const&);
         CustomFileHandlers();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI CustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers&&);
-
-        MCFOLD ::Bedrock::DataStore::CustomFileHandlers& operator=(::Bedrock::DataStore::CustomFileHandlers&&);
-
-        MCAPI ~CustomFileHandlers();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::DataStore::CustomFileHandlers&&);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
-        // NOLINTEND
     };
 
     template <typename T0, typename T1>
@@ -200,12 +173,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DataStore();
-
-    MCAPI void load();
-
-    MCAPI void setCustomFileHandlers(::Bedrock::DataStore::CustomFileHandlers handlers);
-
-    MCAPI void setFilePath(::Core::Path const& filePath);
     // NOLINTEND
 
 public:

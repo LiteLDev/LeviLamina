@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ItemStack;
-// clang-format on
-
 struct EquipItemComponent {
 public:
     // member variables
@@ -25,8 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onEquipItemPickedUp(::ItemStack item, int countToPickup);
-
     MCAPI ~EquipItemComponent();
     // NOLINTEND
 

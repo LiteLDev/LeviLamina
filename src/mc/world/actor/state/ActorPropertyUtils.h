@@ -15,12 +15,35 @@ struct MolangScriptArg;
 namespace ActorPropertyUtils {
 // functions
 // NOLINTBEGIN
+MCAPI bool _checkAndQueueBoolValue(
+    ::PropertyGroup const&     overallIndex,
+    uint64                     actorDiffList,
+    ::ActorDefinitionDiffList* value,
+    bool
+);
+
 MCAPI bool _checkAndQueueEnumIndexValueByHash(
     ::PropertyGroup const&     propertyGroup,
     uint64                     enumIndexArrayIndex,
     uint64                     overallIndex,
     ::ActorDefinitionDiffList* actorDiffList,
     uint64                     value
+);
+
+MCAPI bool _checkAndQueueFloatValue(
+    ::PropertyGroup const& overallIndex,
+    uint64                 actorDiffList,
+    uint64                 value,
+    ::ActorDefinitionDiffList*,
+    float
+);
+
+MCAPI bool _checkAndQueueIntValue(
+    ::PropertyGroup const& overallIndex,
+    uint64                 actorDiffList,
+    uint64                 value,
+    ::ActorDefinitionDiffList*,
+    int
 );
 
 MCAPI void addPendingEventResponseChange(

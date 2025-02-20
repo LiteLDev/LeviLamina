@@ -65,10 +65,10 @@ public:
     MCAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
 
     MCAPI static void _exportSubcommand(
-        ::CommandOrigin const&,
-        ::CommandOutput&                        output,
-        ::ProjectCommand::ExportSubcommandTypes commandExportType,
-        ::ActorUniqueID                         callingPlayerUniqueId
+        ::CommandOrigin const&                  output,
+        ::CommandOutput&                        commandExportType,
+        ::ProjectCommand::ExportSubcommandTypes callingPlayerUniqueId,
+        ::ActorUniqueID
     );
 
     MCAPI static ::Core::PathBuffer<::std::string> _getLevelExportPath(

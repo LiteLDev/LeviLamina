@@ -19,8 +19,9 @@ class UnzipFileMinizip : public ::Core::UnzipFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk27a55a;
-    ::ll::UntypedStorage<8, 8> mUnk5c2091;
+    ::ll::UntypedStorage<8, 8>  mUnk27a55a;
+    ::ll::UntypedStorage<8, 8>  mUnk5c2091;
+    ::ll::UntypedStorage<8, 32> mUnkb32ca0;
     // NOLINTEND
 
 public:
@@ -57,14 +58,17 @@ public:
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() /*override*/;
 
     // vIndex: 8
-    virtual void appendCurrentFileContents(
-        ::std::string&                                   str,
-        uint64                                           bufferSize,
-        ::std::function<void(int, ::std::string const&)> onReadCallback
-    ) /*override*/;
+    virtual void readCurrentFileContentsIntoMemory(::std::string& str) /*override*/;
 
     // vIndex: 9
+    virtual void
+    readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback) /*override*/;
+
+    // vIndex: 10
     virtual uint64 getTotalFilesInZip() /*override*/;
+
+    // vIndex: 11
+    virtual uint64 getCurrentFileUncompressedSize() /*override*/;
     // NOLINTEND
 
 public:
@@ -102,13 +106,13 @@ public:
 
     MCAPI ::Core::ZipUtils::UnzipResult $closeCurrentFile();
 
-    MCAPI void $appendCurrentFileContents(
-        ::std::string&                                   str,
-        uint64                                           bufferSize,
-        ::std::function<void(int, ::std::string const&)> onReadCallback
-    );
+    MCAPI void $readCurrentFileContentsIntoMemory(::std::string& str);
+
+    MCAPI void $readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback);
 
     MCAPI uint64 $getTotalFilesInZip();
+
+    MCAPI uint64 $getCurrentFileUncompressedSize();
     // NOLINTEND
 
 public:

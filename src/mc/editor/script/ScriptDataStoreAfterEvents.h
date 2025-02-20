@@ -3,21 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/editor/datastore/EventType.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-class ScriptDeferredEventCoordinator;
+class ScriptDeferredFlushTracker;
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Services { class DataStoreServiceProvider; }
 namespace Json { class Value; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -38,7 +36,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 6
-        virtual bool onFlushEditorDataStoreAfterEvents() /*override*/;
+        virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
         // vIndex: 0
         virtual ~ScriptDataStoreAfterEventsDeferredEventListener() /*override*/ = default;
@@ -53,7 +51,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $onFlushEditorDataStoreAfterEvents();
+        MCAPI void $onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
 
     public:
@@ -84,11 +82,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptDataStoreAfterEvents(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
 
-    MCAPI ScriptDataStoreAfterEvents(
-        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
-
     MCAPI void
     _handleDataStorePayloadEvent(::HashedString const& dataTag, ::Editor::DataStore::EventType, ::Json::Value const& payload, ::Editor::DataStore::PayloadDescription const&);
 
@@ -104,11 +97,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-
-    MCAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
     // NOLINTEND
 
 public:
@@ -123,11 +111,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Editor::ScriptModule::ScriptDataStoreAfterEvents&&);
-
-    MCAPI void* $ctor(
-        ::gsl::not_null<::ScriptDeferredEventCoordinator*> eventCoordinator,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
     // NOLINTEND
 
 public:

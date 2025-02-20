@@ -44,11 +44,16 @@ public:
     virtual ::Core::ZipUtils::UnzipResult closeCurrentFile() = 0;
 
     // vIndex: 8
-    virtual void
-    appendCurrentFileContents(::std::string&, uint64, ::std::function<void(int, ::std::string const&)>) = 0;
+    virtual void readCurrentFileContentsIntoMemory(::std::string&) = 0;
 
     // vIndex: 9
+    virtual void readCurrentFileContents(uint64, ::std::function<void(int, void const*)>) = 0;
+
+    // vIndex: 10
     virtual uint64 getTotalFilesInZip() = 0;
+
+    // vIndex: 11
+    virtual uint64 getCurrentFileUncompressedSize() = 0;
     // NOLINTEND
 
 public:
@@ -64,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
 struct BoatPaddleComponent;
 struct MoveInputComponent;
@@ -17,17 +18,12 @@ struct PassengerComponent;
 struct PlayerInputModeComponent;
 struct PlayerInputRequestComponent;
 struct PlayerInteractionModelComponent;
-struct TickingSystemWithInfo;
 struct VehicleInputIntentComponent;
 // clang-format on
 
 namespace BoatPaddleInputSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createPassengerSystem();
-
-MCAPI ::TickingSystemWithInfo createVehicleSystem();
-
 MCAPI void doPassengerTick(
     ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
     ::StrictEntityContext const&                               context,
@@ -40,6 +36,12 @@ MCAPI void doPassengerTick(
         ::ActorRotationComponent const,
         ::BoatPaddleComponent const,
         ::VehicleInputIntentComponent> const& vehicleView
+);
+
+MCAPI void doVehicleTick(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::VehicleInputIntentComponent const& vehicleInputIntent,
+    ::BoatPaddleComponent&               boatPaddle
 );
 // NOLINTEND
 

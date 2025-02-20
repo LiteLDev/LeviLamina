@@ -24,7 +24,6 @@ struct MobIsJumpingFlagComponent;
 struct OnFireComponent;
 struct PassengerComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 namespace HardcodedAnimationSystem {
@@ -34,8 +33,6 @@ MCAPI void
 addOffsetToMovementThisTick(::DynamicRenderOffsetComponent const& offset, ::ActorWalkAnimationComponent& walk);
 
 MCAPI void computeMovementThisTick(::StateVectorComponent const& stateVector, ::ActorWalkAnimationComponent& walk);
-
-MCAPI ::TickingSystemWithInfo createSystem();
 
 MCAPI void doHardcodedAnimation(
     ::StrictEntityContext const&,

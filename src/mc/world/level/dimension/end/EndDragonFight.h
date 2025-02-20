@@ -12,9 +12,9 @@ class ActorDamageSource;
 class BlockPatternBuilder;
 class BlockPos;
 class BlockSource;
+class ChunkPos;
 class ChunkViewSource;
 class CompoundTag;
-class EndGatewayBlockActor;
 class EnderCrystal;
 class EnderDragon;
 struct ActorUniqueID;
@@ -101,6 +101,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EndDragonFight(::BlockSource& level);
 
+    MCAPI bool _areaIsLoaded(::ChunkPos const& center, ::ChunkViewSource& source, int radius) const;
+
     MCAPI bool _canSpawnNewGateway(::ChunkViewSource* source, ::BlockPos const& pos) const;
 
     MCAPI void _createNewDragon();
@@ -120,8 +122,6 @@ public:
         ::BlockPos const& destinationPos,
         bool              lookForGateway
     );
-
-    MCAPI void _setEndGatewayExitPositions();
 
     MCAPI void _setRespawnStage(::RespawnAnimation stage);
 
@@ -157,31 +157,13 @@ public:
 
     MCAPI void tryRespawn();
 
-    MCAPI void verifyExitPositions(::EndGatewayBlockActor& endGatewayBlockActor);
-
     MCAPI ~EndDragonFight();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& ARENA_SIZE_CHUNKS();
-
     MCAPI static ::BlockPos const& DEFAULT_PORTAL_LOCATION();
-
-    MCAPI static int const& GATEWAY_CHUNK_RADIUS();
-
-    MCAPI static int const& GATEWAY_COUNT();
-
-    MCAPI static int const& GATEWAY_DISTANCE();
-
-    MCAPI static int const& GATEWAY_HEIGHT();
-
-    MCAPI static int const& TIME_BETWEEN_CRYSTAL_SCANS();
-
-    MCAPI static int const& TIME_BETWEEN_PLAYER_SCANS();
-
-    MCAPI static int const& TIME_BETWEEN_PORTAL_SCANS();
     // NOLINTEND
 
 public:

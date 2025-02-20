@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/nether_net/ContextProxy.h"
 #include "mc/deps/nether_net/Controller.h"
 #include "mc/external/rtc/Thread.h"
 #include "mc/external/sigslot/has_slots.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { class Subscription; }
 namespace NetherNet { struct DiscoveryResponsePacket; }
-namespace NetherNet { struct ILanEventHandler; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct ThreadInit; }
 namespace rtc { class AsyncPacketSocket; }
@@ -22,13 +21,14 @@ namespace sigslot { class single_threaded; }
 
 namespace NetherNet {
 
-class LanThreadManager : public ::NetherNet::RunLoop::Controller,
+class LanThreadManager : public ::NetherNet::ContextProxy,
+                         public ::NetherNet::RunLoop::Controller,
                          public ::rtc::Thread,
                          public ::sigslot::has_slots<::sigslot::single_threaded> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96>  mUnk15d021;
+    ::ll::UntypedStorage<8, 144> mUnk15d021;
     ::ll::UntypedStorage<8, 16>  mUnk1df5ad;
     ::ll::UntypedStorage<8, 8>   mUnkf60678;
     ::ll::UntypedStorage<8, 128> mUnk4506fd;
@@ -46,6 +46,7 @@ public:
     // prevent constructor by default
     LanThreadManager& operator=(LanThreadManager const&);
     LanThreadManager(LanThreadManager const&);
+    LanThreadManager();
 
 public:
     // virtual functions
@@ -63,29 +64,27 @@ public:
 
     MCAPI void CreateEncryptedBroadcastSocket();
 
+    MCAPI void DestroyLanResources();
+
     MCAPI void DisableBroadcastDiscovery(::NetherNet::NetworkID id);
 
     MCAPI void EnableBroadcastDiscovery(::NetherNet::NetworkID id);
 
     MCAPI void Initialize(
-        char const*                    threadName,
-        ::NetherNet::ThreadInit const& threadInit,
-        uint64                         applicationId,
-        ushort                         port,
-        ::std::chrono::milliseconds    interval
+        char const*                    threadInit,
+        ::NetherNet::ThreadInit const& applicationId,
+        uint64                         port,
+        ushort                         interval,
+        ::std::chrono::milliseconds    threadName
     );
 
     MCAPI bool IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
 
-    MCAPI bool IsNetworkIdOnLan(::NetherNet::NetworkID networkId);
-
-    MCAPI LanThreadManager();
+    MCAPI explicit LanThreadManager(::NetherNet::ContextProxy const& ctx);
 
     MCAPI void OnNetworkDiscoveryComplete();
 
-    MCAPI void OnPacket(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const& packet);
-
-    MCAPI ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
+    MCAPI void OnPacket(::rtc::AsyncPacketSocket* packet, ::rtc::ReceivedPacket const&);
 
     MCAPI void SendLanBroadcastRequest(::std::unique_ptr<::rtc::AsyncPacketSocket>& socket, ::NetherNet::NetworkID id);
 
@@ -120,7 +119,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::NetherNet::ContextProxy const& ctx);
     // NOLINTEND
 
 public:
@@ -135,6 +134,8 @@ public:
     MCAPI static void** $vftableForHasSlots();
 
     MCAPI static void** $vftableForThread();
+
+    MCAPI static void** $vftableForContextProxy();
     // NOLINTEND
 };
 

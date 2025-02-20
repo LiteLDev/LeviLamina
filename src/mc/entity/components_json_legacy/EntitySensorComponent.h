@@ -23,23 +23,16 @@ public:
     // prevent constructor by default
     EntitySensorComponent& operator=(EntitySensorComponent const&);
     EntitySensorComponent(EntitySensorComponent const&);
+    EntitySensorComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySensorComponent();
-
     MCAPI ::EntitySensorComponent& operator=(::EntitySensorComponent&&);
 
     MCAPI void tick(::ActorOwnerComponent& actorOwnerComponent, ::Tick const& currentTick);
 
     MCAPI ~EntitySensorComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

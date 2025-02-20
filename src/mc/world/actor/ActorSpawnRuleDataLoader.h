@@ -9,24 +9,28 @@
 // clang-format off
 struct ActorSpawnRuleData;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
+namespace br::spawn { class SpawnPlacements; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ActorSpawnRuleDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 368> mUnk952f41;
+    ::ll::UntypedStorage<8, 104> mUnk7467cf;
+    ::ll::UntypedStorage<8, 208> mUnkba8a95;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ActorSpawnRuleDataLoader& operator=(ActorSpawnRuleDataLoader const&);
     ActorSpawnRuleDataLoader(ActorSpawnRuleDataLoader const&);
+    ActorSpawnRuleDataLoader();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSpawnRuleDataLoader();
+    MCAPI ActorSpawnRuleDataLoader(::cereal::ReflectionCtx const& ctx, ::br::spawn::SpawnPlacements& spawnPlacements);
 
     MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
@@ -36,12 +40,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::br::spawn::SpawnPlacements& spawnPlacements);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

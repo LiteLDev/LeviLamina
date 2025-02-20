@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ChemistryItem.h"
+#include "mc/world/item/ItemColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,15 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BalloonItem(::std::string const& name, int id);
-
     MCAPI ::LeashFenceKnotActor* _createKnot(::BlockSource& region, ::BlockPos pos, ::ItemInstance const& item) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCAPI ::ItemColor _getColorIndex(::ItemDescriptor const& itemInstance) const;
     // NOLINTEND
 
 public:

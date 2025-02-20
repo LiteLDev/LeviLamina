@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { class SocketLayerOverride; }
 namespace RakNet { struct RNS2_BerkleyBindParameters; }
 namespace RakNet { struct RNS2_SendParameters; }
 // clang-format on
@@ -41,12 +40,6 @@ public:
 
     // vIndex: 1
     virtual int Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::RakNet::SocketLayerOverride* GetSocketLayerOverride();
     // NOLINTEND
 
 public:

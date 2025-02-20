@@ -31,28 +31,4 @@ public:
     NoiseCellInterpolator& operator=(NoiseCellInterpolator const&);
     NoiseCellInterpolator(NoiseCellInterpolator const&);
     NoiseCellInterpolator();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NoiseCellInterpolator(::gsl::span<float const> noiseBuffer);
-
-    MCAPI NoiseCellInterpolator(::gsl::span<float const> noiseBuffer, int blocksPerCellXZ, int blocksPerCellY);
-
-    MCAPI float getLerpedValue() const;
-
-    MCAPI void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx);
-
-    MCAPI void updateForX(uchar x);
-
-    MCAPI void updateForZ(uchar z);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::span<float const> noiseBuffer);
-
-    MCAPI void* $ctor(::gsl::span<float const> noiseBuffer, int blocksPerCellXZ, int blocksPerCellY);
-    // NOLINTEND
 };

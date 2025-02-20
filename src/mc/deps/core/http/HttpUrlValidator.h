@@ -27,6 +27,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit HttpUrlValidator(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

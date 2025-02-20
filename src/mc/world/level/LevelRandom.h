@@ -22,6 +22,7 @@ public:
     // prevent constructor by default
     LevelRandom& operator=(LevelRandom const&);
     LevelRandom(LevelRandom const&);
+    LevelRandom();
 
 public:
     // virtual functions
@@ -37,18 +38,6 @@ public:
 
     // vIndex: 0
     virtual ~LevelRandom() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LevelRandom();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

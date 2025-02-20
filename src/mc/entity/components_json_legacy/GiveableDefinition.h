@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class GiveableComponent;
 struct GiveableTrigger;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -30,8 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addGiveableTrigger(::GiveableTrigger const& trigger);
-
-    MCAPI void initialize(::EntityContext&, ::GiveableComponent& component) const;
     // NOLINTEND
 
 public:

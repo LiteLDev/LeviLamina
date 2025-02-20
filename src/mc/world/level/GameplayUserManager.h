@@ -16,7 +16,6 @@ class IServerMapDataManagerConnector;
 class LevelStorage;
 class MapItemSavedData;
 class Player;
-class Random;
 class WeakEntityRef;
 // clang-format on
 
@@ -97,20 +96,6 @@ public:
 
     MCAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
 
-    MCAPI void forEachActivePlayer(::std::function<bool(::Player&)> callback) const;
-
-    MCAPI void forEachActivePlayerIncludeRemoved(::std::function<bool(::Player&)> callback) const;
-
-    MCAPI uint64 getActiveGameplayUserCount() const;
-
-    MCFOLD ::std::vector<::WeakEntityRef> const& getActiveGameplayUsers() const;
-
-    MCAPI uint64 getActivePlayerCount() const;
-
-    MCFOLD ::std::vector<::OwnerPtr<::EntityContext>> const& getGameplayUserEntities() const;
-
-    MCAPI uint64 getGameplayUserEntityCount() const;
-
     MCAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
 
     MCAPI void queueResumePlayer(::EntityContext const& playerEntity);
@@ -121,11 +106,7 @@ public:
 
     MCAPI void registerMapDataManagerListener(::IServerMapDataManagerConnector& serverMapDataManagerConnector);
 
-    MCAPI void shuffleActiveUsers(::Random& random);
-
     MCAPI void startLeaveGame();
-
-    MCAPI void tickSuspensions();
     // NOLINTEND
 
 public:
@@ -143,13 +124,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserAddedConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserAddedConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserResumedConnector();
 
     MCFOLD ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserSuspendedConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Player const&)>& $getPlayerRenamedConnector();
+    MCAPI ::Bedrock::PubSub::Connector<void(::Player const&)>& $getPlayerRenamedConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserRemovedConnector();
 

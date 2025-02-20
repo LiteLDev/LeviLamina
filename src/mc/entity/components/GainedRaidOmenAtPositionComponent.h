@@ -24,7 +24,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
     // NOLINTEND
 };

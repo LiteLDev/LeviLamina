@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 120
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     // vIndex: 0
@@ -31,15 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArmorStandItem(::std::string const& name, short id);
-
     MCAPI bool _shouldRemove(::BlockSource& region, ::BlockPos pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, short id);
     // NOLINTEND
 
 public:
@@ -52,7 +44,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& spawningActor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:

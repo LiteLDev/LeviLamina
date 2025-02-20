@@ -21,20 +21,13 @@ public:
     // prevent constructor by default
     TrustingComponent& operator=(TrustingComponent const&);
     TrustingComponent(TrustingComponent const&);
+    TrustingComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrustingComponent();
-
     MCAPI void _becomeTrusting(::Actor& owner);
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

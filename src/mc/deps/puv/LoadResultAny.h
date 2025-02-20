@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 namespace Puv { class Logger; }
 // clang-format on
 
@@ -14,9 +13,9 @@ class LoadResultAny {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnk545455;
-    ::ll::UntypedStorage<8, 40>  mUnk8aa8ef;
-    ::ll::UntypedStorage<8, 80>  mUnk6e20bb;
+    ::ll::UntypedStorage<8, 24> mUnk545455;
+    ::ll::UntypedStorage<8, 40> mUnk8aa8ef;
+    ::ll::UntypedStorage<8, 80> mUnk6e20bb;
     // NOLINTEND
 
 public:
@@ -29,16 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI LoadResultAny(::Puv::LoadResultAny&&);
-
-    MCFOLD bool isValid() const;
-
-    MCAPI ::Puv::Logger const& log() const;
-
-    MCFOLD ::Puv::Logger& log();
-
-    MCFOLD explicit operator bool() const;
-
-    MCFOLD ::SemVersion const& version() const;
 
     MCAPI ~LoadResultAny();
     // NOLINTEND
@@ -58,7 +47,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

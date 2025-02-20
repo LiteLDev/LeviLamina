@@ -31,8 +31,6 @@ public:
     MCAPI CameraComponent(::CameraComponent const&);
 
     MCAPI ::CameraComponent& operator=(::CameraComponent&&);
-
-    MCAPI ~CameraComponent();
     // NOLINTEND
 
 public:
@@ -41,11 +39,5 @@ public:
     MCAPI void* $ctor(::CameraComponent&&);
 
     MCAPI void* $ctor(::CameraComponent const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -20,14 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WebSocketPacketData(::std::string const& ip);
-
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::std::string const& ip);
     // NOLINTEND
 };

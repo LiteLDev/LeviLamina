@@ -2,13 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/server/commands/CommandRegistry.h"
-
 // auto generated forward declare list
 // clang-format off
-class CommandOrigin;
-class Scoreboard;
 class TextObjectRoot;
 namespace Json { class Value; }
 // clang-format on
@@ -36,23 +31,6 @@ public:
         ServerData& operator=(ServerData const&);
         ServerData(ServerData const&);
         ServerData();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ServerData(
-            ::CommandRegistry::Parser& parser,
-            ::CommandOrigin const&     commandOrigin,
-            ::Scoreboard const&        scoreboard
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void*
-        $ctor(::CommandRegistry::Parser& parser, ::CommandOrigin const& commandOrigin, ::Scoreboard const& scoreboard);
-        // NOLINTEND
     };
 
     struct ErrorLocalization {
@@ -116,19 +94,12 @@ public:
     MCAPI static bool _textObjectFromString(
         ::std::string const&                   jsonAsString,
         ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
+        ::TextObjectParser::ServerData*        errorLocalization,
+        ::TextObjectParser::ErrorLocalization& serverData
     );
 
     MCAPI static bool
     textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
-
-    MCAPI static bool textObjectFromJsonServer(
-        ::Json::Value const&                   root,
-        ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData         serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
 
     MCAPI static bool textObjectFromJsonString(
         ::std::string const& jsonAsString,

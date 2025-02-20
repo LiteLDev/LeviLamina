@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/facing/Axis.h"
-#include "mc/common/facing/Name.h"
-#include "mc/common/facing/Rotation.h"
-#include "mc/deps/shared_types/Facing.h"
-#include "mc/world/Direction.h"
-#include "mc/world/level/block/WeirdoDirection.h"
+#include "mc/legacy/facing/Name.h"
+#include "mc/legacy/facing/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,31 +17,7 @@ class Vec3;
 namespace Facing {
 // functions
 // NOLINTBEGIN
-MCAPI uchar convertDirectionToFacingDirection(::Direction::Type direction);
-
-MCAPI uchar convertWeirdoDirectionToFacingDirection(::WeirdoDirection weirdoDirection);
-
-MCAPI uchar convertYRotationToFacingDirection(float yRotation);
-
-MCAPI ::Facing::Name from2DDataValue(int data);
-
-MCAPI uchar fromSharedTypesFacing(::SharedTypes::Facing facing);
-
 MCAPI uchar fromVec3(::Vec3 const& dir);
-
-MCAPI ::Facing::Axis getAxis(uchar face);
-
-MCAPI ::std::optional<::Facing::Axis> getAxisFromStandingRotation(int standingRotation);
-
-MCAPI uchar getClockWise(uchar face);
-
-MCAPI ::Facing::Rotation getClosestRotation(float degree);
-
-MCAPI uchar getCounterClockWise(uchar face);
-
-MCAPI ::Vec3 getFaceLocation(uchar face, float u, float v);
-
-MCAPI uchar getFacingDirection(::Vec3 const& currentPos, ::Vec3 const& TargetPos);
 
 MCAPI ::std::vector<uchar>
 getMostPrioritizedFacingDirection(::Vec2 const& viewVector, uchar clickedFace, bool isReplacingABlock);
@@ -54,13 +26,7 @@ MCAPI ::std::array<uchar, 6> getMostPrioritizedFacingDirectionFromViewVector(::V
 
 MCAPI uchar getOpposite(uchar face);
 
-MCAPI int getRandomFace(::Random& random);
-
-MCAPI int getRandomFaceHorizontal(::Random& random);
-
 MCAPI ::glm::mat3x3 getRotationMatrix(uchar facing, ::Facing::Rotation rotation);
-
-MCAPI ::std::vector<uchar> getShuffledDirections();
 
 MCAPI ::std::vector<uchar> getShuffledDirections(::Random& random);
 
@@ -70,15 +36,9 @@ MCAPI int getStepY(uchar facing);
 
 MCAPI int getStepZ(uchar facing);
 
-MCAPI bool isHorizontal(uchar facing);
-
-MCAPI bool isValidDirection(int face);
-
-MCAPI uchar rotateFace(uchar face, ::Facing::Rotation rot);
+MCAPI ::std::array<uchar, 6> makeDirectionArray(uchar axis1, uchar axis2, uchar axis3);
 
 MCAPI uchar rotateFaceAroundGivenFace(uchar faceToRotate, uchar faceToRotateAround, ::Facing::Rotation rotation);
-
-MCAPI ::std::string_view toString(uchar face);
 // NOLINTEND
 
 // static variables
@@ -96,8 +56,6 @@ MCAPI ::std::add_lvalue_reference_t<::BlockPos const[]> DIRECTION();
 MCAPI ::std::add_lvalue_reference_t<::Facing::Name const[]> DIRECTIONS();
 
 MCAPI ::std::add_lvalue_reference_t<uchar const[]> FACINGMASK();
-
-MCAPI ::std::add_lvalue_reference_t<uchar const[]> FACINGMASK_INV();
 
 MCAPI ::std::unordered_map<::std::string, uchar> const& FROM_STRING_MAP();
 

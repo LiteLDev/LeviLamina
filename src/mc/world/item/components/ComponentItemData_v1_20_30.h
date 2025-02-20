@@ -22,11 +22,12 @@ public:
     // prevent constructor by default
     ComponentItemData_v1_20_30& operator=(ComponentItemData_v1_20_30 const&);
     ComponentItemData_v1_20_30(ComponentItemData_v1_20_30 const&);
-    ComponentItemData_v1_20_30();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ComponentItemData_v1_20_30();
+
     MCAPI ~ComponentItemData_v1_20_30();
     // NOLINTEND
 
@@ -42,6 +43,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Puv::VersionRange const& SUPPORTED_VERSIONS();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

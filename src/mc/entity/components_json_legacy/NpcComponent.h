@@ -12,9 +12,7 @@ class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
 class Player;
-struct ActorUniqueID;
 namespace Json { class Value; }
-namespace npc { struct ActionContainer; }
 namespace npc { struct CommandAction; }
 namespace npc { struct UrlAction; }
 // clang-format on
@@ -58,9 +56,9 @@ public:
 
     MCAPI void _deserializeData(::Json::Value const& npcData);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
+    MCAPI void _loadData(::Actor& owner);
 
-    MCAPI void clearSceneStateForAllPlayers();
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
     MCAPI void executeClosingCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
@@ -69,27 +67,11 @@ public:
 
     MCAPI void executeOpeningCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
-    MCFOLD ::npc::ActionContainer& getActionsContainer();
-
     MCAPI ::std::vector<int> getCommandCounts() const;
-
-    MCFOLD ::std::string const& getDefaultSceneId() const;
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
 
     MCAPI ::std::string const& getInteractiveText(::Actor& owner) const;
-
-    MCAPI ::std::string const& getName(::Actor const& owner) const;
-
-    MCAPI ::std::string const& getNameRawText(::Actor const& owner) const;
-
-    MCAPI ::std::string const& getSceneStateForPlayer(::ActorUniqueID const& playerID) const;
-
-    MCAPI uint64 getSkinCount() const;
-
-    MCAPI int getSkinIndex() const;
-
-    MCAPI int getUrlCount() const;
 
     MCAPI void initClientOnlyData(::Actor& owner);
 
@@ -99,28 +81,20 @@ public:
 
     MCAPI void loadInteractiveRawText(::Actor& owner);
 
-    MCAPI void loadNPCData(::Actor& owner);
-
-    MCAPI void loadNameRawText(::Actor& owner);
-
     MCAPI ::NpcComponent& operator=(::NpcComponent&& rhs);
 
     MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
+    MCAPI ::std::string sanitizeRawText(::std::string const& rawText) const;
+
     MCAPI void
     setActions(::Actor& owner, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& newActions);
-
-    MCAPI void setDefaultSceneId(::std::string sceneId);
 
     MCAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
 
     MCAPI void setInteractiveText(::Actor& owner, ::std::string const& text, bool setLocal);
 
     MCAPI void setName(::Actor& owner, ::std::string const& name, bool setLocal);
-
-    MCAPI void setSceneStateForPlayer(::Actor& owner, ::ActorUniqueID const& playerID, ::std::string const& sceneName);
-
-    MCAPI bool setSkin(::Actor& owner);
 
     MCAPI bool setSkinIndex(::Actor& owner, int skinIndex, bool setLocal);
     // NOLINTEND

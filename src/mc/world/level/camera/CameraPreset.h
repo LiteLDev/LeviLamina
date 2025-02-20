@@ -42,6 +42,8 @@ public:
     ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>                       mViewOffset;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                       mEntityOffset;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mRadius;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mYawLimitMin;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                         mYawLimitMax;
     ::ll::TypedStorage<1, 2, ::std::optional<::CameraPreset::AudioListener>> mListener;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                          mPlayerEffects;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                          mAlignTargetAndCameraForward;

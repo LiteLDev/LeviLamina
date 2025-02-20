@@ -48,10 +48,6 @@ public:
 
     MCAPI static ::std::string getCurrentTimestampFileName();
 
-    MCAPI static ::tm getRealDateTime(::DateManager::TimeZoneType returnType);
-
-    MCAPI static int64 getRealTime();
-
     MCAPI static bool toDateTime(
         ::std::string const&         strTime,
         ::tm*                        result,
@@ -59,20 +55,12 @@ public:
         int*                         resultTimeZoneMinutes
     );
 
-    MCAPI static ::tm toDateTime(int64 time, ::DateManager::TimeZoneType returnType);
-
-    MCAPI static int64 toEpochTime(::std::string const& strTime);
-
-    MCAPI static int64 toEpochTime(::tm* dateTime, ::DateManager::TimeZoneType inputType);
-
-    MCAPI static ::std::string toString(::tm const& time, ::std::string const& format);
+    MCAPI static int64 toEpochTime(::tm const* dateTime, ::DateManager::TimeZoneType inputType);
 
     MCAPI static ::std::string
-    toString(int64 const& time, ::DateManager::TimeZoneType outputType, ::std::string const& format);
+    toString(::tm const& time, ::std::string const& format, ::std::optional<::std::locale> const& locale);
 
     MCAPI static ::std::string toString_DateTime(::tm const& time, ::DateManager::TimeZoneType outputType);
-
-    MCAPI static ::std::string toString_DateTime(int64 const& time, ::DateManager::TimeZoneType outputType);
     // NOLINTEND
 
 public:

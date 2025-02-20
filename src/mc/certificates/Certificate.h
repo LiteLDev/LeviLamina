@@ -30,24 +30,13 @@ public:
     // NOLINTBEGIN
     MCAPI Certificate(::Certificate const& other);
 
-    MCAPI Certificate(
-        ::UnverifiedCertificate const&   unverifiedCertificate,
-        ::std::unique_ptr<::Certificate> parentCertificate
-    );
-
     MCAPI int64 getExpirationDate() const;
-
-    MCAPI ::Json::Value getExtraData(::std::string const& key, ::Json::Value const& defaultValue) const;
 
     MCAPI ::std::string getIdentityPublicKey() const;
 
     MCAPI int64 getNotBeforeDate() const;
 
-    MCFOLD bool isSelfSigned() const;
-
-    MCFOLD bool isValid() const;
-
-    MCFOLD ::std::string toString() const;
+    MCAPI bool isCertificateAuthority() const;
 
     MCAPI bool validate(int64 currentTime, bool isSelfSigned, bool checkExpired);
 
@@ -62,8 +51,8 @@ public:
         int64                notBeforeDate,
         int64                expirationDate,
         ::std::string const& identityPublicKey,
-        bool                 isCertificateAuthority,
-        ::Json::Value const* extraData
+        bool                 extraData,
+        ::Json::Value const* isCertificateAuthority
     );
 
     MCAPI static ::std::unique_ptr<::Certificate> createWrappedCertificate(
@@ -71,9 +60,9 @@ public:
         int64                            notBeforeDate,
         int64                            expirationDate,
         ::std::string const&             identityPublicKey,
-        bool                             isCertificateAuthority,
-        ::Json::Value const*             extraData,
-        ::std::unique_ptr<::Certificate> parentCertificate
+        bool                             extraData,
+        ::Json::Value const*             parentCertificate,
+        ::std::unique_ptr<::Certificate> isCertificateAuthority
     );
     // NOLINTEND
 
@@ -81,9 +70,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Certificate const& other);
-
-    MCAPI void*
-    $ctor(::UnverifiedCertificate const& unverifiedCertificate, ::std::unique_ptr<::Certificate> parentCertificate);
     // NOLINTEND
 
 public:

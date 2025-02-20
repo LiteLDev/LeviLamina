@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/ILegacyStructureTemplate.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplate.h"
 
@@ -64,8 +62,6 @@ public:
     // NOLINTBEGIN
     MCAPI LegacyStructureTemplate();
 
-    MCFOLD ::IStructureTemplate const& asStructureTemplate() const;
-
     MCAPI ::BlockPos calculateConnectedPosition(
         ::LegacyStructureSettings const& settings1,
         ::BlockPos const&                connection1,
@@ -73,22 +69,9 @@ public:
         ::BlockPos const&                connection2
     ) const;
 
-    MCAPI void
-    finalizeBlockRules(::BlockSource& region, ::BlockPos const& position, ::LegacyStructureSettings& settings, ::Random&)
-        const;
-
     MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCAPI ::BlockPos getSize(::Rotation rotation) const;
-
     MCAPI void load(::CompoundTag const& tag);
-
-    MCAPI void placeInWorldChunk(
-        ::BlockSource&             region,
-        ::BlockPos const&          position,
-        ::LegacyStructureSettings& settings,
-        ::Random&                  random
-    );
     // NOLINTEND
 
 public:
@@ -97,9 +80,6 @@ public:
     MCAPI static void _fixItemStack(::CompoundTag& itemTag, int dataVersion);
 
     MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
-
-    MCAPI static ::Block const*
-    _mapPropertyToExtraBlock(::std::string const& propertyString, ::std::string const& valueString);
 
     MCAPI static void _mapPropertyToTag(
         ::CompoundTag&       originalTag,
@@ -120,11 +100,6 @@ public:
 
     MCAPI static ::Block const*
     _mapToProperty(::std::string const& propertyString, ::std::string const& valueString, ::Block const& block);
-
-    MCAPI static ::BlockPos
-    getZeroPositionWithTransform(::BlockPos const& zeroPos, ::Mirror mirror, ::Rotation rotation, int sizeX, int sizeZ);
-
-    MCAPI static ::BlockPos transform(::BlockPos pos, ::Mirror mirror, ::Rotation rotation);
     // NOLINTEND
 
 public:
@@ -157,8 +132,6 @@ public:
     MCAPI static ::std::string const& PALETTE_TAG();
 
     MCAPI static ::std::string const& SIZE_TAG();
-
-    MCAPI static int const& STRUCTURE_VERSION();
 
     MCAPI static ::std::string const& VERSION_TAG();
     // NOLINTEND

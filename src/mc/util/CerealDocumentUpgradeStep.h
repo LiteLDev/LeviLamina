@@ -11,13 +11,14 @@ class CerealDocumentUpgradeStep {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkdb1730;
-    ::ll::UntypedStorage<8, 24>  mUnkca76f1;
+    ::ll::UntypedStorage<8, 24> mUnkdb1730;
+    ::ll::UntypedStorage<8, 24> mUnkca76f1;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     CerealDocumentUpgradeStep& operator=(CerealDocumentUpgradeStep const&);
+    CerealDocumentUpgradeStep(CerealDocumentUpgradeStep const&);
     CerealDocumentUpgradeStep();
 
 public:
@@ -30,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CerealDocumentUpgradeStep(::CerealDocumentUpgradeStep const&);
-
     MCAPI bool apply(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
@@ -39,12 +38,6 @@ public:
             ::rapidjson::CrtAllocator>& document,
         ::SemVersion const&             documentVersion
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CerealDocumentUpgradeStep const&);
     // NOLINTEND
 
 public:

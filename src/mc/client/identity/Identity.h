@@ -82,146 +82,143 @@ public:
     virtual bool isRemote() const;
 
     // vIndex: 13
-    virtual void onDisplayNameUpdate(::std::string const&);
-
-    // vIndex: 14
     virtual ::gsl::span<::Social::IdentityType const> getDependencies() const;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::Social::IdentityEventResponse onIdentitySignIn(::Social::Identity&);
 
-    // vIndex: 16
+    // vIndex: 15
     virtual ::Social::IdentityEventResponse onIdentitySignOut(::Social::IdentityType);
 
-    // vIndex: 17
+    // vIndex: 16
     virtual ::std::string const& getId() const;
 
-    // vIndex: 18
+    // vIndex: 17
     virtual ::Social::PlayerIDs getIds() const;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Social::AuthToken>>
     getAuthToken(::std::string const&) const;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual void getUserDataObject(::Social::IUserDataObject&) const;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual void setUserDataObject(::Social::IUserDataObject const&);
 
-    // vIndex: 22
+    // vIndex: 21
     virtual ::Social::UserData const getUserData(::std::string const&) const;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual void setUserData(::std::string const&, ::Social::UserData const&);
 
-    // vIndex: 24
+    // vIndex: 23
     virtual bool hasCachedCredentials() const;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual void clearCachedCredentials();
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::string const& getDisplayName() const;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual void setPresence(::std::string const&);
 
-    // vIndex: 28
+    // vIndex: 27
     virtual void clearPresence();
 
-    // vIndex: 29
+    // vIndex: 28
     virtual bool hasPlayedLegacyGame() const;
 
-    // vIndex: 30
+    // vIndex: 29
     virtual bool getLegacyOptionsData(::std::vector<uchar>&);
 
-    // vIndex: 31
+    // vIndex: 30
     virtual void checkIsLegacyPlayer(::std::weak_ptr<::Social::User>);
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool hasPremiumPlatformAccess() const;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual void checkPremiumPlatformStatusAsync(::std::function<void(bool)>);
 
-    // vIndex: 34
+    // vIndex: 33
     virtual bool hasPlatformIcons() const;
 
-    // vIndex: 35
+    // vIndex: 34
     virtual bool hasPlatformProfileCards() const;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual ::std::string getPlatformId() const;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual ::std::string getPlatformOfflineID() const;
 
-    // vIndex: 38
+    // vIndex: 37
     virtual ::std::string getPlatformOnlineID() const;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual ::Social::PermissionDenyReason isMultiplayerAllowed() const;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual ::Social::PermissionDenyReason isChatAllowed() const;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual ::Social::PermissionDenyReason isAddFriendAllowed() const;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::Social::PermissionDenyReason isUserGeneratedContentAllowed() const;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual ::Social::PermissionDenyReason isCreateAndJoinClubsAllowed() const;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual ::Social::PermissionDenyReason isViewingProfilesAllowed() const;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual ::Social::PermissionDenyReason isUploadCapturesAllowed() const;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual int addPermissionsChangeListener(::std::function<void()>);
 
-    // vIndex: 47
+    // vIndex: 46
     virtual void removePermissionsChangeListener(int);
 
-    // vIndex: 48
+    // vIndex: 47
     virtual bool isPlatformParentalControlsEnabled() const;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual void refreshPlatformParentalControlsSetting();
 
-    // vIndex: 50
+    // vIndex: 49
     virtual void refreshFriendListProfileDataIfAllowed();
 
-    // vIndex: 51
+    // vIndex: 50
     virtual bool isBlockingUser(::std::string const&) const;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Social::PlatformUserProfileData>>
     getProfile(::std::string const&);
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::vector<::Social::PlatformUserProfileData>>>
     getProfiles(::std::vector<::std::string> const&);
 
-    // vIndex: 54
+    // vIndex: 53
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::vector<::Social::PlatformUserProfileData>>>
     getFriendProfiles();
 
-    // vIndex: 55
+    // vIndex: 54
     virtual void pruneProfileImageCache();
 
-    // vIndex: 56
+    // vIndex: 55
     virtual void getLinkedXuids(
         ::std::function<void(::std::string, ::std::string)>,
         ::std::vector<::std::string> const&,
         ::std::shared_ptr<::Social::Identity> const
     );
 
-    // vIndex: 57
+    // vIndex: 56
     virtual void
     getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&);
     // NOLINTEND

@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class HitboxComponent;
 struct HitboxJson;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -30,8 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void addAABB(::HitboxJson const& aabb);
-
-    MCAPI void initialize(::EntityContext&, ::HitboxComponent& component) const;
     // NOLINTEND
 
 public:

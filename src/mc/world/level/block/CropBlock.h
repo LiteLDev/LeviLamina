@@ -81,7 +81,7 @@ public:
         /*override*/;
 
     // vIndex: 0
-    virtual ~CropBlock() /*override*/;
+    virtual ~CropBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -99,7 +99,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -115,7 +115,7 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCFOLD ::AABB
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)

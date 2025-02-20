@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,12 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD float getFade() const;
-
-    MCAPI bool getLoop() const;
-
-    MCFOLD float getVolume() const;
-
     MCAPI ::std::optional<::Scripting::Error> validate() const;
     // NOLINTEND
 

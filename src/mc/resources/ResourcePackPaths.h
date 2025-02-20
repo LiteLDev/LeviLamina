@@ -8,12 +8,6 @@
 namespace ResourcePackPaths {
 // functions
 // NOLINTBEGIN
-MCAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath();
-
-MCAPI ::Core::PathBuffer<::std::string> getCachedResourcePacksPath();
-
-MCAPI ::std::vector<::std::string> const& getExpectedFileExtensions();
-
 MCAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath();
 
 MCAPI ::Core::PathBuffer<::std::string> getPremiumPackPath();
@@ -21,12 +15,6 @@ MCAPI ::Core::PathBuffer<::std::string> getPremiumPackPath();
 MCAPI ::Core::PathBuffer<::std::string> getPremiumResourcePackPath();
 
 MCAPI ::Core::PathBuffer<::std::string> getPremiumWorldTemplatePath();
-
-MCAPI ::Core::PathBuffer<::std::string> getSystemServicePackPath();
-
-MCAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumBehaviorPacksPath();
-
-MCAPI ::Core::PathBuffer<::std::string> getTemporaryPremiumResourcePacksPath();
 // NOLINTEND
 
 // static variables

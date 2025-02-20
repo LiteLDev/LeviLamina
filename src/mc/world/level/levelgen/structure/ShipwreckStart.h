@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShipwreckStart(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
+    MCAPI ShipwreckStart(::BiomeSource const& source, ::Random& x, int z, int seaLevel, short);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeSource const& source, ::Random&, int x, int z, short seaLevel);
+    MCAPI void* $ctor(::BiomeSource const& source, ::Random& x, int z, int seaLevel, short);
     // NOLINTEND
 
 public:

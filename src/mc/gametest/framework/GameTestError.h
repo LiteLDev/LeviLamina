@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
-#include "mc/external/scripting/runtime/Error.h"
+#include "mc/deps/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Error.h"
+#include "mc/gametest/framework/GameTestErrorType.h"
 
 namespace gametest {
 
@@ -28,6 +29,12 @@ public:
     // NOLINTBEGIN
     MCAPI GameTestError(::gametest::GameTestError&&);
 
+    MCAPI GameTestError(
+        ::gametest::GameTestErrorType type_,
+        ::std::string const&          message_,
+        ::std::vector<::std::string>  params_
+    );
+
     MCAPI ~GameTestError();
     // NOLINTEND
 
@@ -41,6 +48,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::gametest::GameTestError&&);
+
+    MCAPI void*
+    $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_);
     // NOLINTEND
 
 public:

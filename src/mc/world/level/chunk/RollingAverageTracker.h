@@ -16,24 +16,11 @@ public:
     // prevent constructor by default
     RollingAverageTracker& operator=(RollingAverageTracker const&);
     RollingAverageTracker(RollingAverageTracker const&);
+    RollingAverageTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RollingAverageTracker();
-
-    MCAPI void addSample(::std::chrono::nanoseconds dt);
-
-    MCFOLD ::std::chrono::nanoseconds getAverage() const;
-
-    MCAPI ::std::chrono::nanoseconds getLastSample() const;
-
     MCAPI ::std::vector<::std::chrono::nanoseconds> getLastSamples(uint count) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -36,8 +36,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ChunkPos calcChunkOffset(::glm::ivec2 delta) const;
-
     MCAPI ::ChunkPos placementChunk(
         ::br::worldgen::StructurePlacement const&           def,
         ::br::worldgen::ChunkGeneratorStructureState const& state,

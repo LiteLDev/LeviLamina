@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ITickDeltaTimeManagerProxy;
-// clang-format on
-
 class TickDeltaTimeManager {
 public:
     // member variables
@@ -20,28 +15,4 @@ public:
     TickDeltaTimeManager& operator=(TickDeltaTimeManager const&);
     TickDeltaTimeManager(TickDeltaTimeManager const&);
     TickDeltaTimeManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit TickDeltaTimeManager(::std::unique_ptr<::ITickDeltaTimeManagerProxy> tickDeltaTimeManagerProxy);
-
-    MCAPI void captureDeltaTime();
-
-    MCFOLD double getTickDeltaTime() const;
-
-    MCAPI ~TickDeltaTimeManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ITickDeltaTimeManagerProxy> tickDeltaTimeManagerProxy);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

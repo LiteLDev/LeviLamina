@@ -7,15 +7,8 @@
 class BaseGameVersion;
 class Experiments;
 class IWorldRegistriesProvider;
-class JigsawStructureActorRulesRegistry;
-class JigsawStructureBlockRulesRegistry;
-class JigsawStructureBlockTagRulesRegistry;
-class JigsawStructureElementRegistry;
 class StructureSpawnRegistry;
 class StructureTemplatePool;
-namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
-namespace br::worldgen { class StructureRegistry; }
-namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 
 class JigsawStructureRegistry {
@@ -42,16 +35,6 @@ public:
     // NOLINTBEGIN
     MCAPI JigsawStructureRegistry();
 
-    MCAPI ::JigsawStructureActorRulesRegistry& getJigsawStructureActorRulesRegistry();
-
-    MCFOLD ::JigsawStructureBlockRulesRegistry& getJigsawStructureBlockRulesRegistry();
-
-    MCFOLD ::JigsawStructureBlockTagRulesRegistry& getJigsawStructureBlockTagRulesRegistry();
-
-    MCFOLD ::SharedTypes::v1_21_20::JigsawStructureData const* getJigsawStructureData() const;
-
-    MCFOLD ::JigsawStructureElementRegistry& getJigsawStructureElementRegistry();
-
     MCAPI void initialize(
         ::StructureSpawnRegistry&   structureSpawnRegistry,
         ::BaseGameVersion const&    baseGameVersion,
@@ -62,15 +45,6 @@ public:
     MCAPI ::StructureTemplatePool const* lookupByName(::std::string const& name) const;
 
     MCAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
-
-    MCAPI void
-    setJigsawStructureData(::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>&& jigsawStructureData);
-
-    MCAPI ::br::worldgen::StructureRegistry const& structureRegistry() const;
-
-    MCFOLD ::br::worldgen::StructureRegistry& structureRegistry();
-
-    MCFOLD ::br::worldgen::StructureSetRegistry& structureSetRegistry();
 
     MCAPI ~JigsawStructureRegistry();
     // NOLINTEND

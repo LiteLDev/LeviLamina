@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Add(::std::string_view hostname, int family, ::std::vector<::rtc::IPAddress> const& result);
-
     MCAPI void
     Add(::std::string_view                      hostname,
         int                                     family,

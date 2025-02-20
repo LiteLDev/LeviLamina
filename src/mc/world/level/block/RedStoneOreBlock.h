@@ -15,6 +15,7 @@ class EntityContext;
 class ItemInstance;
 class Player;
 class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class RedStoneOreBlock : public ::BlockLegacy {
@@ -40,8 +41,7 @@ public:
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
@@ -49,7 +49,7 @@ public:
     // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 0
@@ -59,15 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedStoneOreBlock(::std::string const& nameId, int id, bool lit);
-
     MCAPI void _poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
     // NOLINTEND
 
 public:
@@ -87,7 +79,7 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 

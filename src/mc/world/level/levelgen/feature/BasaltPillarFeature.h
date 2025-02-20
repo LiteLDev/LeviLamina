@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -21,6 +22,21 @@ public:
 
     // vIndex: 0
     virtual ~BasaltPillarFeature() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void
+    _blendAtGroundLevel(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Block const& basalt) const;
+
+    MCAPI bool _growColumn(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Random&         random,
+        float             placeChance,
+        ::Block const&    basalt
+    ) const;
     // NOLINTEND
 
 public:

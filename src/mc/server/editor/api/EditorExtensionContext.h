@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -57,7 +57,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EditorExtensionContext() /*override*/ = default;
+    virtual ~EditorExtensionContext() /*override*/;
     // NOLINTEND
 
 public:
@@ -103,7 +103,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

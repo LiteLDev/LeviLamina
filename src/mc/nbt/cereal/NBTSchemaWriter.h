@@ -9,6 +9,7 @@
 // clang-format off
 class Tag;
 namespace cereal { class PropertyReader; }
+namespace cereal { struct NullType; }
 // clang-format on
 
 class NBTSchemaWriter : public ::cereal::SchemaWriter {
@@ -56,10 +57,14 @@ public:
     // prevent constructor by default
     NBTSchemaWriter& operator=(NBTSchemaWriter const&);
     NBTSchemaWriter(NBTSchemaWriter const&);
+    NBTSchemaWriter();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 13
+    virtual bool write(::cereal::NullType, ::cereal::PropertyReader const&) /*override*/;
+
     // vIndex: 12
     virtual bool write(bool value, ::cereal::PropertyReader const&) /*override*/;
 
@@ -96,48 +101,42 @@ public:
     // vIndex: 1
     virtual bool write(::std::string_view const value, ::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual bool pushMember(::std::string_view const memberName, ::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void popMember() /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual bool openObject(::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual bool openArray(uint64, ::cereal::PropertyReader const&) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void close() /*override*/;
 
     // vIndex: 0
-    virtual ~NBTSchemaWriter() /*override*/;
+    virtual ~NBTSchemaWriter() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NBTSchemaWriter();
-
     MCAPI bool _serializeTag(::std::unique_ptr<::Tag> tag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $write(::cereal::NullType, ::cereal::PropertyReader const&);
+
     MCFOLD bool $write(bool value, ::cereal::PropertyReader const&);
 
     MCFOLD bool $write(char value, ::cereal::PropertyReader const&);

@@ -4,19 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/selection/SelectionContainer.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class CompoundBlockVolume;
 class CompoundBlockVolumeItem;
 class SimpleBlockVolume;
-namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class INetworkPayload; }
-namespace Editor::Network { class PayloadServiceProvider; }
 namespace mce { class Color; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Selection {
@@ -103,25 +100,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerSelectionContainer(
-        ::Editor::ServiceProviderCollection&       serviceProviders,
-        ::Editor::Network::PayloadServiceProvider& payloadService,
-        ::mce::UUID                                id,
-        bool                                       requiresReplication
-    );
-
     MCAPI void _sendNotifications(::Editor::Network::INetworkPayload&& eventPayload) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&       serviceProviders,
-        ::Editor::Network::PayloadServiceProvider& payloadService,
-        ::mce::UUID                                id,
-        bool                                       requiresReplication
-    );
     // NOLINTEND
 
 public:

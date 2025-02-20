@@ -9,6 +9,7 @@
 // clang-format off
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class LootItemRandomDifficultyChanceCondition : public ::LootItemCondition {
@@ -32,6 +33,18 @@ public:
 
     // vIndex: 1
     virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit LootItemRandomDifficultyChanceCondition(::Json::Value object);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Json::Value object);
     // NOLINTEND
 
 public:

@@ -7,9 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class ResolvedTextObject;
-class Scoreboard;
 struct ResolveData;
 namespace Json { class Value; }
 // clang-format on
@@ -46,15 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addChild(::std::unique_ptr<::ITextObject> childObject);
-
     MCAPI ::std::vector<::std::string> asStringVector() const;
 
-    MCFOLD void clear();
-
-    MCFOLD bool isEmpty() const;
-
-    MCAPI ::ResolvedTextObject resolveRoot(::Actor const& actor, ::Scoreboard const& scoreboard) const;
+    MCAPI ::TextObjectRoot& operator=(::TextObjectRoot&&);
     // NOLINTEND
 
 public:

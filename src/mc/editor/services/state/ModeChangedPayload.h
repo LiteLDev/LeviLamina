@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/Mode.h"
 #include "mc/editor/network/NetworkPayload.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
 
 namespace Editor::Network {
 
@@ -31,26 +25,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ModeChangedPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ModeChangedPayload(::Editor::Mode newMode);
-
-    MCFOLD ::Editor::Mode getNewMode() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::Mode newMode);
     // NOLINTEND
 
 public:

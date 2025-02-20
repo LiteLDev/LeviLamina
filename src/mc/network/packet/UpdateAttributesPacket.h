@@ -12,6 +12,7 @@
 class Actor;
 class ActorRuntimeID;
 class AttributeInstanceHandle;
+class BaseAttributeMap;
 class BinaryStream;
 class ReadOnlyBinaryStream;
 struct AttributeData;
@@ -49,17 +50,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateAttributesPacket();
-
     MCAPI UpdateAttributesPacket(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
+
+    MCAPI UpdateAttributesPacket(
+        ::ActorRuntimeID const&                         id,
+        ::BaseAttributeMap const&                       map,
+        ::std::vector<::AttributeInstanceHandle> const& dirtyData,
+        ::PlayerInputTick                               tick
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
+
+    MCAPI void* $ctor(
+        ::ActorRuntimeID const&                         id,
+        ::BaseAttributeMap const&                       map,
+        ::std::vector<::AttributeInstanceHandle> const& dirtyData,
+        ::PlayerInputTick                               tick
+    );
     // NOLINTEND
 
 public:

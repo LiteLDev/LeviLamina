@@ -8,8 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionGroup;
-class Block;
-class BlockPos;
 class EntityContext;
 struct ActorDefinitionIdentifier;
 // clang-format on
@@ -25,20 +23,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 107
+    // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 183
+    // vIndex: 178
     virtual float getModelScale() const;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
-
-    // vIndex: 63
-    virtual bool shouldRender() const /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
     virtual ~Spider() /*override*/ = default;
@@ -78,10 +70,6 @@ public:
     MCFOLD float $getModelScale() const;
 
     MCFOLD float $getShadowRadius() const;
-
-    MCFOLD bool $shouldRender() const;
-
-    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

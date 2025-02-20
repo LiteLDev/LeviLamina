@@ -93,8 +93,8 @@ public:
         bool                                          isSafeAndFast,
         ::Bedrock::NonOwnerPointer<::IPacketObserver> packetObserver,
         ::Scheduler&                                  mainThread,
-        bool                                          isRawRecordingEnabled,
-        ::NetworkSettingOptions const&                settings
+        bool                                          settings,
+        ::NetworkSettingOptions const&                isRawRecordingEnabled
     );
 
     MCAPI ::NetworkPeer::DataStatus receivePacket(
@@ -114,8 +114,8 @@ public:
         bool                                          isSafeAndFast,
         ::Bedrock::NonOwnerPointer<::IPacketObserver> packetObserver,
         ::Scheduler&                                  mainThread,
-        bool                                          isRawRecordingEnabled,
-        ::NetworkSettingOptions const&                settings
+        bool                                          settings,
+        ::NetworkSettingOptions const&                isRawRecordingEnabled
     );
     // NOLINTEND
 

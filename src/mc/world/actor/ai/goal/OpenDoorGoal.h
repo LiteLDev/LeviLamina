@@ -45,18 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OpenDoorGoal(::Mob& mob, bool closeDoorAfter);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, bool closeDoorAfter);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

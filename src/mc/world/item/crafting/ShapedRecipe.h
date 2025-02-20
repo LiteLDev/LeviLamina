@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ShapedRecipe() /*override*/;
+    virtual ~ShapedRecipe() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer&, ::CraftingContext&) const /*override*/;
@@ -54,25 +54,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShapedRecipe(::Recipe::ConstructionContext&& context, int width, int height, bool assumeSymmetry);
-
-    MCFOLD bool assumeSymmetry() const;
-
     MCAPI uint64 getIngredientsHashOffset(int simulatedWidth, int simulatedHeight, int offsetX, int offsetY) const;
 
     MCAPI bool matches(::CraftingContainer const& craftSlots, int xOffs, int yOffs, bool xFlip) const;
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Recipe::ConstructionContext&& context, int width, int height, bool assumeSymmetry);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

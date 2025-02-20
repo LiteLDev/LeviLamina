@@ -36,17 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorEventResponseFactory(::IPackLoadContext const& packLoadContext);
-
     MCAPI void initSchema();
 
     MCAPI void initializeFactory(::IPackLoadContext const& packLoadContext);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IPackLoadContext const& packLoadContext);
     // NOLINTEND
 
 public:

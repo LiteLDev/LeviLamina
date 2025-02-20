@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -21,12 +21,6 @@ public:
     ScriptCameraFadeTimeOptions& operator=(ScriptCameraFadeTimeOptions const&);
     ScriptCameraFadeTimeOptions(ScriptCameraFadeTimeOptions const&);
     ScriptCameraFadeTimeOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isValid();
-    // NOLINTEND
 
 public:
     // static functions

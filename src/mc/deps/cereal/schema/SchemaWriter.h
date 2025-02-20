@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class PropertyReader; }
+namespace cereal { struct NullType; }
 // clang-format on
 
 namespace cereal {
@@ -15,6 +16,9 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~SchemaWriter() = default;
+
+    // vIndex: 13
+    virtual bool write(::cereal::NullType, ::cereal::PropertyReader const&) = 0;
 
     // vIndex: 12
     virtual bool write(bool, ::cereal::PropertyReader const&) = 0;
@@ -52,22 +56,22 @@ public:
     // vIndex: 1
     virtual bool write(::std::string_view const, ::cereal::PropertyReader const&) = 0;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual bool pushMember(::std::string_view const, ::cereal::PropertyReader const&) = 0;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void popMember() = 0;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual bool openObject(::cereal::PropertyReader const&) = 0;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual bool openArray(uint64, ::cereal::PropertyReader const&) = 0;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void close() = 0;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool isSequenceWriter() const;
     // NOLINTEND
 

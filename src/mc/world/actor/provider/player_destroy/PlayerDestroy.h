@@ -5,9 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class EntityContext;
 class ItemStack;
-struct PlayerDestroyProgressCacheComponent;
 namespace PlayerDestroy { struct DestroyProgressContext; }
 // clang-format on
 
@@ -19,8 +17,6 @@ MCAPI bool canDestroyOptimally(::Block const& block, ::ItemStack const& selected
 MCAPI float getDestroyProgress(::PlayerDestroy::DestroyProgressContext& context);
 
 MCAPI float getDestroySpeed(::PlayerDestroy::DestroyProgressContext& context);
-
-MCAPI ::PlayerDestroyProgressCacheComponent& initializePlayer(::EntityContext& provider);
 // NOLINTEND
 
 } // namespace PlayerDestroy

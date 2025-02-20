@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ChemistryItem.h"
-#include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemUseMethod.h"
 
 // auto generated forward declare list
@@ -63,26 +62,20 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
-    virtual ~ChemistryStickItem() /*override*/;
+    virtual ~ChemistryStickItem() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChemistryStickItem(::std::string const& name, short id);
-
-    MCAPI ::std::string _getColorName(int data) const;
-
     MCAPI void _storeActivationTimestamp(::ItemStack& item, uint64 curTime, int desiredPercent) const;
+
+    MCAPI bool _tick(::ItemStack& item, uint64 curTime) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemColor getColorType(int data);
-
-    MCAPI static bool isActive(int data);
-
     MCAPI static bool isChemistryStick(::ItemStackBase const& item);
     // NOLINTEND
 
@@ -90,30 +83,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& ACTIVATION_TIMESTAMP_TAG();
-
-    MCAPI static int const& ACTIVE_BIT();
-
-    MCAPI static int const& COLOR_BITS();
-
-    MCAPI static int const& COLOR_MASK();
-
-    MCAPI static int const& DAMAGE_BITS();
-
-    MCAPI static int const& DAMAGE_MASK();
-
-    MCAPI static int const& DAMAGE_START_BIT();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, short id);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -140,11 +115,5 @@ public:
     MCFOLD bool $showsDurabilityInCreative() const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

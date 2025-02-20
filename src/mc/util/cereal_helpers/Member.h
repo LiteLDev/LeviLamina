@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { class SerializerEnumMapping; }
-// clang-format on
-
 namespace CerealHelpers {
 
 struct Member {
@@ -37,7 +32,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkebe7f3;
     ::ll::UntypedStorage<4, 8>  mUnkf02687;
     ::ll::UntypedStorage<4, 8>  mUnk49b864;
-    ::ll::UntypedStorage<8, 32> mUnkc01557;
+    ::ll::UntypedStorage<8, 32> mUnka4ad0e;
     // NOLINTEND
 
 public:
@@ -49,16 +44,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Member(::std::string_view name, ::cereal::SerializerEnumMapping enumMapping, bool required);
-
-    MCAPI Member(
-        ::std::string_view            name,
-        ::CerealHelpers::Member::Type type,
-        bool                          required,
-        ::std::optional<float>        min,
-        ::std::optional<float>        max
-    );
-
     MCAPI bool check(::rapidjson::GenericValue<
                      ::rapidjson::UTF8<char>,
                      ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
@@ -68,20 +53,6 @@ public:
                        ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value) const;
 
     MCAPI ~Member();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view name, ::cereal::SerializerEnumMapping enumMapping, bool required);
-
-    MCAPI void* $ctor(
-        ::std::string_view            name,
-        ::CerealHelpers::Member::Type type,
-        bool                          required,
-        ::std::optional<float>        min,
-        ::std::optional<float>        max
-    );
     // NOLINTEND
 
 public:

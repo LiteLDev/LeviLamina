@@ -8,12 +8,12 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class SaveContext;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class BeehiveBlockActor : public ::BlockActor {
@@ -38,6 +38,18 @@ public:
         Occupant& operator=(Occupant const&);
         Occupant(Occupant const&);
         Occupant();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI Occupant(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
+        // NOLINTEND
     };
 
 public:
@@ -54,7 +66,7 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -66,33 +78,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BeehiveBlockActor(::BlockPos const& pos);
-
     MCAPI ::Actor* _revive(::BlockSource& region, ::BeehiveBlockActor::Occupant const& occupant, uchar spawnDirection);
 
     MCAPI bool _tickOccupant(::BlockSource& region, ::BeehiveBlockActor::Occupant& occupant);
 
     MCAPI void _trySpawnBees(::BlockSource& region);
 
-    MCAPI void disableBeeSpawn();
-
     MCAPI void evictAll(::BlockSource& region, bool angry);
 
     MCAPI void saveUserData(::CompoundTag& tag) const;
 
     MCAPI bool tryAdmit(::Actor& actor);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint const& MAX_OCCUPANCY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -106,7 +102,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
     // NOLINTEND

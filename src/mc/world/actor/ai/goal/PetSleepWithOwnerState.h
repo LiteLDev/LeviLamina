@@ -32,6 +32,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void dampenSpeed();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
 

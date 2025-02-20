@@ -17,16 +17,8 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Attribute& getAttribute(::HashedString const& name);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool hasAttribute(::HashedString const& name);
-
     MCAPI static ::AttributeCollection& instance();
     // NOLINTEND
 };

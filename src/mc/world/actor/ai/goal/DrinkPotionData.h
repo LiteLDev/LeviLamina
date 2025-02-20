@@ -15,12 +15,19 @@ public:
     // prevent constructor by default
     DrinkPotionData& operator=(DrinkPotionData const&);
     DrinkPotionData(DrinkPotionData const&);
-    DrinkPotionData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI DrinkPotionData();
+
     MCAPI ~DrinkPotionData();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

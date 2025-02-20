@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_50 {
 
 struct EntityPlacerItemComponent {
@@ -14,8 +9,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkaa1be6;
-    ::ll::UntypedStorage<8, 24> mUnk6ac15c;
-    ::ll::UntypedStorage<8, 24> mUnkc53718;
+    ::ll::UntypedStorage<8, 24> mUnkadc727;
+    ::ll::UntypedStorage<8, 24> mUnkdba18d;
     // NOLINTEND
 
 public:
@@ -33,12 +28,6 @@ public:
     operator=(::SharedTypes::v1_20_50::EntityPlacerItemComponent const&);
 
     MCAPI ~EntityPlacerItemComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

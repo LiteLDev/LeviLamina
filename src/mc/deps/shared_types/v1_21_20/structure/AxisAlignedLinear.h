@@ -8,7 +8,6 @@ struct AxisAlignedLinear {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb5b0ac;
     ::ll::UntypedStorage<4, 4> mUnkdc1521;
     ::ll::UntypedStorage<4, 4> mUnkef0f99;
     ::ll::UntypedStorage<4, 4> mUnk98eb54;

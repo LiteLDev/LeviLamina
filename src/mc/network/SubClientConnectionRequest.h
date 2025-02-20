@@ -3,20 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/platform/BuildPlatform.h"
-#include "mc/deps/core/platform/PlatformType.h"
-#include "mc/deps/input/InputMode.h"
-#include "mc/deviceinfo/DeviceMemoryTier.h"
 #include "mc/world/actor/player/persona/PieceType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AnimatedImageData;
-class Certificate;
 class MinEngineVersion;
 class SerializedPersonaPieceHandle;
 class TintMapColor;
 class WebToken;
+namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -24,9 +20,9 @@ class SubClientConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkaac929;
-    ::ll::UntypedStorage<8, 8> mUnkc557a5;
     ::ll::UntypedStorage<8, 8> mUnk2af921;
+    ::ll::UntypedStorage<8, 8> mUnkaac929;
+    ::ll::UntypedStorage<8, 8> mUnke31d2b;
     // NOLINTEND
 
 public:
@@ -49,23 +45,11 @@ public:
 
     MCFOLD ::std::string getCapeId() const;
 
-    MCFOLD ushort getCapeImageHeight() const;
-
-    MCFOLD ushort getCapeImageWidth() const;
-
-    MCFOLD ::Certificate const* getCertificate() const;
-
     MCFOLD uint64 getClientRandomId() const;
 
-    MCFOLD ::InputMode getCurrentInputMode() const;
+    MCFOLD ::Json::Value getData(::std::string const& key) const;
 
     MCFOLD ::std::string getDeviceId() const;
-
-    MCFOLD ::BuildPlatform getDeviceOS() const;
-
-    MCFOLD int getMaxViewDistance() const;
-
-    MCFOLD ::DeviceMemoryTier getMemoryTier() const;
 
     MCFOLD ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
@@ -76,8 +60,6 @@ public:
     MCFOLD ::std::string getPlatformOfflineId() const;
 
     MCFOLD ::std::string getPlatformOnlineId() const;
-
-    MCFOLD ::PlatformType getPlatformType() const;
 
     MCFOLD ::std::string getPlayFabId() const;
 
@@ -95,35 +77,17 @@ public:
 
     MCFOLD ::std::string getSkinId() const;
 
-    MCFOLD ushort getSkinImageHeight() const;
-
-    MCFOLD ushort getSkinImageWidth() const;
-
     MCAPI ::std::string getSkinResourcePatch() const;
 
     MCFOLD ::std::string getThirdPartyName() const;
 
-    MCFOLD bool isCapeOnClassicSkin() const;
-
-    MCFOLD bool isCompatibleWithClientSideChunkGen() const;
-
-    MCFOLD bool isOverrideSkin() const;
-
     MCFOLD bool isPersonaSkin() const;
-
-    MCFOLD bool isPremiumSkin() const;
-
-    MCAPI bool isPrimaryUser() const;
-
-    MCFOLD bool isThirdPartyNameOnly() const;
-
-    MCFOLD bool isTrustedSkin() const;
 
     MCFOLD ::std::string toString();
 
     MCAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime);
 
-    MCAPI bool verifySelfSigned();
+    MCFOLD bool verifySelfSigned();
 
     MCAPI ~SubClientConnectionRequest();
     // NOLINTEND

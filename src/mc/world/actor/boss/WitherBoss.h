@@ -14,14 +14,12 @@ class AABB;
 class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class Block;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class Level;
 class MobEffectInstance;
-class Vec2;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
@@ -99,37 +97,37 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 150
+    // vIndex: 145
     virtual void aiStep() /*override*/;
 
-    // vIndex: 179
+    // vIndex: 175
     virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 87
+    // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
-    // vIndex: 107
-    virtual bool canBeAffected(uint effectId) const /*override*/;
+    // vIndex: 105
+    virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 106
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 144
     virtual void hurtEffects(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 94
+    // vIndex: 92
     virtual float causeFallDamageToActor(float, float, ::ActorDamageSource) /*override*/;
 
-    // vIndex: 160
+    // vIndex: 155
     virtual int getArmorValue() const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
     // vIndex: 11
@@ -138,16 +136,16 @@ public:
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 12
     virtual ::Vec3 getFiringPos() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 8
@@ -175,19 +173,15 @@ public:
 
     MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
 
-    MCAPI void awardSpawnWitherAchievement() const;
-
     MCAPI bool canShoot();
+
+    MCAPI bool getAerialAttack() const;
+
+    MCAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
 
     MCAPI ::Vec3 getHeadPos(int headID) const;
 
-    MCAPI ::Vec2 getHeadRot(int headID) const;
-
     MCAPI int getInvulnerableTicks() const;
-
-    MCAPI float getOverlayAlpha();
-
-    MCAPI float getSwellAmount(float a) const;
 
     MCAPI bool hasAerialAttack() const;
 
@@ -195,27 +189,11 @@ public:
 
     MCAPI ::WitherBossPreAIStepResult preAiStep();
 
-    MCFOLD void removeSkeleton();
-
     MCAPI void setAerialAttack(bool aerialAttack);
 
     MCAPI void setAlternativeTarget(int headIndex, ::ActorUniqueID entityId);
 
     MCAPI void setInvulnerableTicks(int invulnerableTicks);
-
-    MCAPI void setIsPathing(bool isPathing);
-
-    MCAPI void setShotDelay(int delay);
-
-    MCAPI void setWantsToMove(bool shouldMove);
-
-    MCFOLD bool wantsToMove();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool canDestroy(::Block const& block, ::WitherBoss::WitherAttackType attackType);
     // NOLINTEND
 
 public:
@@ -253,7 +231,7 @@ public:
 
     MCFOLD bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint effectId) const;
+    MCAPI bool $canBeAffected(uint id) const;
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 

@@ -6,7 +6,6 @@
 // clang-format off
 class CompoundTag;
 class Vec3;
-struct DynamicPropertyDefinition;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -67,20 +66,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearCollection(::std::string const& collectionName);
+    MCAPI DynamicProperties(::DynamicProperties&&);
 
     MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
 
-    MCFOLD uint64 getCollectionCount() const;
-
-    MCAPI ::std::variant<double, float, bool, ::std::string, ::Vec3> const*
-    getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
-
     MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
-
-    MCAPI uint64 getTotalByteCount() const;
-
-    MCAPI uint64 getTotalByteCount(::std::string const& collectionName) const;
 
     MCAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
 
@@ -100,15 +90,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static ::std::optional<::std::string> validateDynamicProperty(
-        ::std::string const&                                              key,
-        ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
-    );
-
-    MCAPI static ::std::string validateDynamicProperty_V010(
-        ::DynamicPropertyDefinition const*                                propertyDefinition,
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
     );
@@ -118,6 +100,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& STORAGE_TAG();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::DynamicProperties&&);
     // NOLINTEND
 
 public:

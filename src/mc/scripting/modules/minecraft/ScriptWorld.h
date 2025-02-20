@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptTimeOfDay.h"
 
 // auto generated forward declare list
@@ -14,6 +14,7 @@
 class ServerLevel;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptAimAssistRegistry; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptGameRules; }
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
@@ -47,6 +48,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkbcdaa5;
     ::ll::UntypedStorage<8, 32> mUnk735be8;
     ::ll::UntypedStorage<8, 32> mUnk2d1c88;
+    ::ll::UntypedStorage<8, 32> mUnk2f187d;
     // NOLINTEND
 
 public:
@@ -58,6 +60,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptWorld(::ScriptModuleMinecraft::ScriptWorld&&);
+
     MCAPI ScriptWorld(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::gsl::not_null<::ServerLevel*>                      level,
@@ -76,6 +80,11 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
     );
 
+    MCFOLD ::std::optional<::Scripting::Error> _validateDynamicProperty(
+        ::std::string const&                                              key,
+        ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
+    ) const;
+
     MCAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
@@ -86,6 +95,8 @@ public:
     MCAPI int getAbsoluteTime() const;
 
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldAfterEvents> getAfterEvents();
+
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistRegistry> getAimAssist() const;
 
     MCAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
@@ -160,6 +171,11 @@ public:
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
     setDefaultSpawnLocation(::Vec3 const& spawnPosition);
 
+    MCAPI ::Scripting::Result<void> setDynamicProperties(
+        ::Scripting::ContextConfig const& contextConfig,
+        ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
+    );
+
     MCAPI ::Scripting::Result<void> setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
@@ -175,8 +191,6 @@ public:
     MCAPI ::Scripting::Result<void> setTimeOfDay(::std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay> timeOfDay
     );
 
-    MCAPI void stopMusic();
-
     MCAPI ~ScriptWorld();
     // NOLINTEND
 
@@ -189,6 +203,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorld&&);
+
     MCAPI void* $ctor(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::gsl::not_null<::ServerLevel*>                      level,

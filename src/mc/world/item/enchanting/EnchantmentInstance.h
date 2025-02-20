@@ -12,28 +12,4 @@ public:
     ::ll::TypedStorage<1, 1, ::Enchant::Type> mEnchantType;
     ::ll::TypedStorage<4, 4, int>             mLevel;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EnchantmentInstance();
-
-    MCAPI EnchantmentInstance(::Enchant::Type enchantType, int level);
-
-    MCFOLD int getEnchantLevel() const;
-
-    MCFOLD ::Enchant::Type getEnchantType() const;
-
-    MCFOLD void setEnchantLevel(int level);
-
-    MCFOLD void setEnchantType(::Enchant::Type enchantType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Enchant::Type enchantType, int level);
-    // NOLINTEND
 };

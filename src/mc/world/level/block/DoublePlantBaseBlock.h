@@ -18,9 +18,9 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class DoublePlantBaseBlock : public ::BushBlock {
@@ -48,8 +48,8 @@ public:
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 150
+    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     // vIndex: 16
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos, int& seed) const /*override*/;
@@ -102,6 +102,8 @@ public:
     // NOLINTBEGIN
     MCAPI DoublePlantBaseBlock(::std::string const& nameId, int id);
 
+    MCAPI void _preventCreativeDropFromBottomPart(::Player const& player, ::BlockPos const& bottomHalfPos) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -130,7 +132,7 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos, int& seed) const;
 

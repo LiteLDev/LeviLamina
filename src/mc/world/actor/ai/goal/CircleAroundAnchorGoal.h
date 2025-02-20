@@ -58,17 +58,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CircleAroundAnchorGoal(::Mob& mob);
-
     MCAPI void _selectNext();
 
-    MCAPI void _setAnchorAboveTarget();
-    // NOLINTEND
+    MCAPI void _setAnchorAboveGround();
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI void _setAnchorAboveTarget();
     // NOLINTEND
 
 public:
@@ -82,7 +76,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $start();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCFOLD bool $canUse();
 

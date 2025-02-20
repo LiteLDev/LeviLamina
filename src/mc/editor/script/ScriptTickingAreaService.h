@@ -3,14 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace Editor::Services { class EditorTickingAreaServiceProvider; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -33,11 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTickingAreaService(
-        ::Editor::Services::EditorTickingAreaServiceProvider& serviceProvider,
-        ::Scripting::WeakLifetimeScope&                       scope
-    );
-
     MCAPI ::Scripting::Result<bool, ::Scripting::Error> isTickingAreaActive(::std::string const& areaIdentifier);
 
     MCAPI ::Scripting::Result<bool, ::Scripting::Error> purgeTickingAreas(::std::string const& areaIdentifier);
@@ -52,13 +45,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptTickingAreaService> bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Editor::Services::EditorTickingAreaServiceProvider& serviceProvider, ::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 };
 

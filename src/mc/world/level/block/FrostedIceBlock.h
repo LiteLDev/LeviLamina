@@ -46,25 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FrostedIceBlock(::std::string const& nameId, int id, bool packed);
-
     MCAPI void _slightlyMelt(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool propagate) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_AGE();
-
-    MCAPI static int const& MIN_NEIGHBORS();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool packed);
     // NOLINTEND
 
 public:

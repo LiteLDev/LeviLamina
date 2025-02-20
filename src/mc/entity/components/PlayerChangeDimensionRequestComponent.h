@@ -22,16 +22,4 @@ public:
     PlayerChangeDimensionRequestComponent& operator=(PlayerChangeDimensionRequestComponent const&);
     PlayerChangeDimensionRequestComponent(PlayerChangeDimensionRequestComponent const&);
     PlayerChangeDimensionRequestComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~PlayerChangeDimensionRequestComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

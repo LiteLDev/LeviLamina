@@ -15,11 +15,13 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
 class Random;
 struct BlockGraphicsModeChangeContext;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SugarCaneBlock : public ::BlockLegacy {
@@ -28,9 +30,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -56,16 +55,14 @@ public:
     getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const /*override*/;
 
-    // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
-        /*override*/;
-
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 115
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
+
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
     virtual ~SugarCaneBlock() /*override*/ = default;
@@ -74,13 +71,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SugarCaneBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -93,8 +84,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -111,12 +100,11 @@ public:
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
-
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCFOLD void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

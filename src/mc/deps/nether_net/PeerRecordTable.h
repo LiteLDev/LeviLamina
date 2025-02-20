@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/nether_net/ContextProxy.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace NetherNet { struct NetworkID; }
@@ -10,7 +13,7 @@ namespace rtc { class SocketAddress; }
 
 namespace NetherNet {
 
-class PeerRecordTable {
+class PeerRecordTable : public ::NetherNet::ContextProxy {
 public:
     // PeerRecordTable inner types declare
     // clang-format off
@@ -58,6 +61,13 @@ public:
     PeerRecordTable();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~PeerRecordTable() /*override*/ = default;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool AddOrUpdate(
@@ -65,18 +75,13 @@ public:
         ::rtc::SocketAddress const&             address,
         ::std::chrono::steady_clock::time_point timeOfDiscovery
     );
-
-    MCAPI bool Contains(::NetherNet::NetworkID networkID);
-
-    MCAPI bool Find(::NetherNet::NetworkID networkID, ::rtc::SocketAddress* pOut);
-
-    MCAPI ~PeerRecordTable();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void RemoveExpiredRecords(
+    MCAPI static ::std::vector<::std::pair<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>
+    RemoveExpiredRecords(
         ::NetherNet::Utils::ThreadSafe<
             ::std::map<::NetherNet::NetworkID, ::NetherNet::PeerRecordTable::PeerRecord>>::View const& exclusiveTable
     );
@@ -85,7 +90,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

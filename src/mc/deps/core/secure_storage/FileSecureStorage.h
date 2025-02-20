@@ -28,10 +28,10 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual bool getData(::std::string& output, ::Core::Path path);
+        virtual bool getData(::std::string&, ::Core::Path);
 
         // vIndex: 1
-        virtual void setData(::std::string const& data, ::Core::Path path);
+        virtual void setData(::std::string const&, ::Core::Path);
 
         // vIndex: 2
         virtual ~StorageSystem() = default;
@@ -46,15 +46,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $getData(::std::string& output, ::Core::Path path);
 
-        MCFOLD void $setData(::std::string const& data, ::Core::Path path);
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -150,8 +142,8 @@ public:
     // NOLINTBEGIN
     MCAPI FileSecureStorage(
         ::Core::PathBuffer<::std::string> const&                        settingsPath,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& baseSettingsPath,
-        ::ISecureStorageKeySystem*                                      sskSystem,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& sskSystem,
+        ::ISecureStorageKeySystem*                                      baseSettingsPath,
         ::Core::Path const&                                             userDataPath,
         ::FileSecureStorage::StorageSystem*                             storage
     );
@@ -172,8 +164,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Core::PathBuffer<::std::string> const&                        settingsPath,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& baseSettingsPath,
-        ::ISecureStorageKeySystem*                                      sskSystem,
+        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& sskSystem,
+        ::ISecureStorageKeySystem*                                      baseSettingsPath,
         ::Core::Path const&                                             userDataPath,
         ::FileSecureStorage::StorageSystem*                             storage
     );

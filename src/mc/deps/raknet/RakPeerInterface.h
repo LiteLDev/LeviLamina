@@ -363,11 +363,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void DestroyInstance(::RakNet::RakPeerInterface* i);
-
     MCAPI static uint64 Get64BitUniqueRandomNumber();
-
-    MCAPI static ::RakNet::RakPeerInterface* GetInstance();
     // NOLINTEND
 
 public:

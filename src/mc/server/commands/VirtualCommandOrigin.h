@@ -83,7 +83,7 @@ public:
     virtual bool hasTellPerms() const /*override*/;
 
     // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
 
     // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
@@ -140,8 +140,6 @@ public:
         ::CommandPositionFloat const& commandPosition,
         int                           version
     );
-
-    MCFOLD ::CommandOrigin* getOrigin() const;
     // NOLINTEND
 
 public:
@@ -210,7 +208,7 @@ public:
 
     MCAPI bool $hasTellPerms() const;
 
-    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 
     MCAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 

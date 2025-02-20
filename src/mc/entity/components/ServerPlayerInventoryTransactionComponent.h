@@ -14,10 +14,4 @@ public:
     ServerPlayerInventoryTransactionComponent& operator=(ServerPlayerInventoryTransactionComponent const&);
     ServerPlayerInventoryTransactionComponent(ServerPlayerInventoryTransactionComponent const&);
     ServerPlayerInventoryTransactionComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ServerPlayerInventoryTransactionComponent& operator=(::ServerPlayerInventoryTransactionComponent&&);
-    // NOLINTEND
 };

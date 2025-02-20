@@ -3,13 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
-
-// auto generated forward declare list
-// clang-format off
-struct LevelWeatherChangedEvent;
-// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -28,12 +23,6 @@ public:
     ScriptWeatherChangedBeforeEvent& operator=(ScriptWeatherChangedBeforeEvent const&);
     ScriptWeatherChangedBeforeEvent(ScriptWeatherChangedBeforeEvent const&);
     ScriptWeatherChangedBeforeEvent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void copyTo(::LevelWeatherChangedEvent& weatherChangedEvent) const;
-    // NOLINTEND
 
 public:
     // static functions

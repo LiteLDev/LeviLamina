@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk705d9d;
-    ::ll::UntypedStorage<1, 3>  mUnk9a807a;
+    ::ll::UntypedStorage<1, 4>  mUnk9a807a;
     // NOLINTEND
 
 public:
@@ -25,43 +25,9 @@ public:
     Graphics();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Graphics(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
-
-    MCFOLD bool getShowChunkBoundaries() const;
-
-    MCFOLD bool getShowCompass() const;
-
-    MCFOLD bool getShowInvisibleBlocks() const;
-
-    MCAPI void setShowChunkBoundaries(bool shouldShow);
-
-    MCAPI void setShowCompass(bool shouldShow);
-
-    MCAPI void setShowInvisibleBlocks(bool shouldShow);
-
-    MCAPI void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
-
-    MCAPI ~Graphics();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<void(::Editor::Settings::GraphicsProps const&)> callback);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

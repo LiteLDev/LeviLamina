@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct ScoreboardId;
-// clang-format on
-
 struct PlayerScore {
 public:
     // member variables
@@ -20,10 +15,4 @@ public:
     PlayerScore& operator=(PlayerScore const&);
     PlayerScore(PlayerScore const&);
     PlayerScore();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ScoreboardId const& getId() const;
-    // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/UseAnimation.h"
+#include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 
 // auto generated forward declare list
 // clang-format off

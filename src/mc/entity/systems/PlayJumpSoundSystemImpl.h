@@ -14,8 +14,8 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/entity/systems/play_jump_sound_system/SoundType.h"
-#include "mc/world/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -121,7 +121,7 @@ public:
         ::IConstBlockSource const&                                    region,
         ::ActorDataFlagComponent const&                               synchedActorDataComponent,
         ::ActorDefinitionIdentifierComponent const&                   actorDefinitionIdentifierComponent,
-        ::ActorLocation const&                                        location,
+        ::SharedTypes::Legacy::ActorLocation const&                   location,
         ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueueComponent,
         int                                                           soundData
     );

@@ -13,7 +13,6 @@ class Block;
 class BlockLegacy;
 class BlockPos;
 class BlockSource;
-class Material;
 // clang-format on
 
 class GlowLichenBlock : public ::MultifaceBlock {
@@ -39,13 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GlowLichenBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI bool fertilize(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

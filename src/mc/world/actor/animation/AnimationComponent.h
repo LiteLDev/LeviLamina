@@ -9,16 +9,13 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorAnimationControllerStatePlayer;
 class ActorAnimationPlayer;
 class AnimationComponentID;
 class BoneOrientation;
 class CommonResourceDefinitionMap;
 class ExpressionNode;
 class HashedString;
-class ModelPartLocator;
 class MolangVariableMap;
-class RenderParams;
 // clang-format on
 
 class AnimationComponent {
@@ -90,17 +87,8 @@ public:
         ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
     );
 
-    MCFOLD ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& getAllBoneOrientations();
-
     MCAPI ::std::vector<::BoneOrientation>*
     getBoneOrientations(::SkeletalHierarchyIndex skeletalHierarchyIndex, bool missingIsOkay);
-
-    MCFOLD ::std::shared_ptr<::ActorAnimationControllerStatePlayer> const
-    getCurrentAnimationControllerStatePlayer() const;
-
-    MCAPI ::ModelPartLocator* getLocator(uint64 const& locatorNameHash);
-
-    MCFOLD ::RenderParams& getRenderParams();
 
     MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
 
@@ -110,27 +98,11 @@ public:
         ::std::function<void(::ActorAnimationPlayer&)>   animationComponentInitFunction
     );
 
-    MCAPI bool isInitialized();
-
     MCAPI void serverUpdate(::Actor& actor);
 
     MCAPI void setDirty();
 
-    MCAPI void setLastReloadInitTimeStampClient(uint64 lastReloadInitTimeStamp);
-
-    MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;
-
-    MCAPI bool usesLastReloadInitTimeStampClient() const;
-
     MCAPI ~AnimationComponent();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static uint64 getReloadTimeStampClient();
-
-    MCAPI static void incrementCurrentServerFrameIndex();
     // NOLINTEND
 
 public:

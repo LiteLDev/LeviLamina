@@ -49,6 +49,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _hasSpaceToWander() const;
+
     MCAPI bool _setWantedPosition();
     // NOLINTEND
 

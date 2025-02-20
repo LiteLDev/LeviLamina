@@ -20,7 +20,7 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
@@ -41,12 +41,11 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
@@ -64,15 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EndPortalBlock(::std::string const& nameId, int id);
-
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -97,7 +88,7 @@ public:
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 

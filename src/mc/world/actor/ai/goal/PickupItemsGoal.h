@@ -66,58 +66,32 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~PickupItemsGoal() /*override*/ = default;
+    virtual ~PickupItemsGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PickupItemsGoal(
-        ::Mob&                                 mob,
-        float                                  speedModifier,
-        bool                                   trackTarget,
-        int                                    searchRange,
-        int                                    searchHeight,
-        float                                  goalRadius,
-        bool                                   pickupBasedOnChance,
-        bool                                   canPickupAnyItem,
-        int                                    timeoutAfterBeingAttacked,
-        bool                                   canPickupToHandOrEquipment,
-        bool                                   pickupSameItemsAsInHand,
-        ::std::vector<::ItemDescriptor> const& excludedItemsList
-    );
+    MCAPI void _dropItem(::ItemStack const& item) const;
 
     MCAPI ::std::vector<::WeakEntityRef> _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities
     ) const;
 
     MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 
-    MCAPI void _pickItemUp(::ItemActor* itemActor);
-    // NOLINTEND
+    MCAPI void _handlePickupItem(::Actor& itemEntity);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 mob,
-        float                                  speedModifier,
-        bool                                   trackTarget,
-        int                                    searchRange,
-        int                                    searchHeight,
-        float                                  goalRadius,
-        bool                                   pickupBasedOnChance,
-        bool                                   canPickupAnyItem,
-        int                                    timeoutAfterBeingAttacked,
-        bool                                   canPickupToHandOrEquipment,
-        bool                                   pickupSameItemsAsInHand,
-        ::std::vector<::ItemDescriptor> const& excludedItemsList
-    );
+    MCAPI bool _hasRoomForCarriedItem() const;
+
+    MCAPI bool _isSameItemAsInHand(::ItemStack const& item) const;
+
+    MCAPI void _pickItemUp(::ItemActor* itemActor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

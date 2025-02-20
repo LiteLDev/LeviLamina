@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 struct RopePoint;
 // clang-format on
 
@@ -19,18 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void beginRope();
-
-    MCAPI void endRope();
-
-    MCAPI void freezeInterpolation();
-
-    MCAPI void pushBack(::Vec3 const& newPoint);
-
-    MCAPI void reserve(uint64 size);
-
-    MCFOLD uint64 size() const;
-
     MCAPI ~RopePoints();
     // NOLINTEND
 

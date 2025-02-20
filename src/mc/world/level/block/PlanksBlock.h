@@ -33,21 +33,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PlanksBlock(::std::string const& nameId, int id, ::WoodType woodType);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::array<::std::string, 10> const& WOOD_NAMES();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType woodType);
     // NOLINTEND
 
 public:
@@ -61,7 +49,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

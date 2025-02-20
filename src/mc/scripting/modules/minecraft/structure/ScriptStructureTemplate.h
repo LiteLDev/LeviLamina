@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/util/AnimationMode.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
@@ -16,6 +16,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class LevelStorage;
 class StructureManager;
 class StructureTemplate;
@@ -58,6 +59,9 @@ public:
         ::LevelStorage&                                                                     levelStorage
     );
 
+    MCAPI ::Scripting::InvalidArgumentError
+    _createBoundsError(int pos, ::BlockPos const& size, ::BlockPos const& index) const;
+
     MCAPI ::StructureTemplate* _getStructureTemplate() const;
 
     MCAPI ::Scripting::Result<
@@ -66,13 +70,7 @@ public:
         ::Scripting::InvalidArgumentError>
     getBlockPermutation(::Vec3 const& location) const;
 
-    MCFOLD ::std::string const& getId() const;
-
     MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
-
-    MCAPI ::StructureTemplate* getStructureTemplate() const;
-
-    MCAPI bool isValid() const;
 
     MCAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
@@ -92,7 +90,8 @@ public:
         setBlockPermutation(
             ::Vec3 const& location,
             ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
-                blockPermutation
+                 blockPermutation,
+            bool waterlogged
         );
     // NOLINTEND
 

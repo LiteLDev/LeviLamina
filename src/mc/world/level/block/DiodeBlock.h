@@ -39,62 +39,56 @@ public:
     // vIndex: 52
     virtual int getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual int getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 152
-    virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const;
+    // vIndex: 151
+    virtual bool isLocked(::BlockSource&, ::BlockPos const&) const;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual bool isSameDiode(::Block const& block) const;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual bool shouldPrioritize(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 119
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 155
+    // vIndex: 154
     virtual bool isOn() const;
 
-    // vIndex: 156
+    // vIndex: 155
     virtual bool shouldTurnOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 157
+    // vIndex: 156
     virtual int getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 158
-    virtual bool isAlternateInput(::Block const& block) const;
+    // vIndex: 157
+    virtual bool isAlternateInput(::Block const&) const;
 
-    // vIndex: 159
+    // vIndex: 158
     virtual int getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 160
+    // vIndex: 159
     virtual int getOutputSignal(::Block const& block) const;
 
-    // vIndex: 161
+    // vIndex: 160
     virtual int getTurnOffDelay(::Block const& block) const;
 
-    // vIndex: 162
+    // vIndex: 161
     virtual int getTurnOnDelay(::Block const&) const = 0;
 
-    // vIndex: 163
+    // vIndex: 162
     virtual ::Block const* getOnBlock(::Block const*) const = 0;
 
-    // vIndex: 164
+    // vIndex: 163
     virtual ::Block const* getOffBlock(::Block const*) const = 0;
 
     // vIndex: 0
-    virtual ~DiodeBlock() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DiodeBlock(::std::string const& nameId, int id, bool on);
+    virtual ~DiodeBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -104,24 +98,14 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
     MCAPI int $getVariant(::Block const& block) const;
@@ -131,8 +115,6 @@ public:
     MCAPI int $getSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
     MCFOLD bool $isSignalSource() const;
-
-    MCFOLD bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool $isSameDiode(::Block const& block) const;
 
@@ -146,18 +128,10 @@ public:
 
     MCAPI int $getInputSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $isAlternateInput(::Block const& block) const;
-
     MCAPI int $getAlternateSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD int $getOutputSignal(::Block const& block) const;
 
-    MCAPI int $getTurnOffDelay(::Block const& block) const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCFOLD int $getTurnOffDelay(::Block const& block) const;
     // NOLINTEND
 };

@@ -5,9 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class CompoundTag;
-class DataLoadHelper;
-class Level;
 // clang-format on
 
 class TimerComponent {
@@ -29,32 +26,13 @@ public:
     // prevent constructor by default
     TimerComponent& operator=(TimerComponent const&);
     TimerComponent(TimerComponent const&);
+    TimerComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TimerComponent();
-
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCFOLD bool getHasExecuted() const;
-
-    MCFOLD bool getLooping() const;
-
     MCAPI int getRandomTime(::Actor& actor);
 
-    MCAPI uint64 getTimeStamp(::Level const& level);
-
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCAPI void restartTimer(::Actor& actor);
-
-    MCFOLD void setHasExecuted(bool hasExecuted);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI ::TimerComponent& operator=(::TimerComponent&&);
     // NOLINTEND
 };

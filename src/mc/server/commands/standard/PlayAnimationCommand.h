@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -29,7 +28,6 @@ public:
     // prevent constructor by default
     PlayAnimationCommand& operator=(PlayAnimationCommand const&);
     PlayAnimationCommand(PlayAnimationCommand const&);
-    PlayAnimationCommand();
 
 public:
     // virtual functions
@@ -42,15 +40,21 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI PlayAnimationCommand();
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static ::MolangVersion const& mStopExpressionVersion();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

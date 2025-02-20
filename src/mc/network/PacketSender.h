@@ -34,25 +34,34 @@ public:
     virtual void send(::Packet&) = 0;
 
     // vIndex: 3
-    virtual void sendToServer(::Packet&) = 0;
-
-    // vIndex: 5
-    virtual void sendToClient(::UserEntityIdentifierComponent const*, ::Packet const&) = 0;
+    virtual void sendTo(::NetworkIdentifier const&, ::SubClientId, ::Packet&) = 0;
 
     // vIndex: 4
-    virtual void sendToClient(::NetworkIdentifier const&, ::Packet const&, ::SubClientId) = 0;
+    virtual void sendToServer(::Packet&) = 0;
 
     // vIndex: 6
-    virtual void sendToClients(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) = 0;
+    virtual void sendToClient(::UserEntityIdentifierComponent const*, ::Packet const&) = 0;
 
-    // vIndex: 8
-    virtual void sendBroadcast(::Packet const&) = 0;
+    // vIndex: 5
+    virtual void sendToClient(::NetworkIdentifier const&, ::Packet const&, ::SubClientId) = 0;
 
     // vIndex: 7
-    virtual void sendBroadcast(::NetworkIdentifier const&, ::SubClientId, ::Packet const&) = 0;
+    virtual void sendToClients(::std::vector<::NetworkIdentifierWithSubId> const&, ::Packet const&) = 0;
 
     // vIndex: 9
+    virtual void sendBroadcast(::Packet const&) = 0;
+
+    // vIndex: 8
+    virtual void sendBroadcast(::NetworkIdentifier const&, ::SubClientId, ::Packet const&) = 0;
+
+    // vIndex: 10
     virtual void flush(::NetworkIdentifier const&, ::std::function<void()>&&) = 0;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void sendToPrimaryClient(::NetworkIdentifier const& id, ::Packet const& packet);
     // NOLINTEND
 
 public:
@@ -65,11 +74,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

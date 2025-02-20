@@ -87,8 +87,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorPlacerItem(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
-
     MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
     MCAPI ::Actor* _spawnActorAt(
@@ -108,8 +106,6 @@ public:
     MCAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
-    MCAPI static ::std::string getCustomSpawnEggName(int runtimeId);
-
     MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
     MCAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
@@ -118,19 +114,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& EGG_MASK_ID();
-
-    MCAPI static int const& NUM_SPAWN_EGG_TEXTURES();
-
     MCAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
 
     MCAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
     // NOLINTEND
 
 public:

@@ -19,12 +19,12 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class ItemInstance;
 class Player;
 class Random;
 class Vec3;
 struct ActorBlockSyncMessage;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -98,20 +98,17 @@ public:
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 102
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
     // vIndex: 98
-    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
+    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const
         /*override*/;
 
     // vIndex: 97
@@ -123,10 +120,10 @@ public:
     // vIndex: 31
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 155
+    // vIndex: 154
     virtual bool isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 156
+    // vIndex: 155
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const
         /*override*/;
@@ -141,25 +138,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TopSnowBlock(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
-
     MCAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const* item) const;
-
-    MCAPI ::ItemInstance getResourceItemFromFalling() const;
 
     MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void startFallingIfLostSupport(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Block const& buildSnowBlock(::BlockSource& region, ::BlockPos const& pos, int height, bool additive);
-
-    MCAPI static ::Block const& getCoveredBlock(::BlockSource const& region, ::BlockPos const& pos);
 
     MCAPI static ::Block const&
     getSnowBlockToBuild(::BlockSource const& region, ::BlockPos const& pos, int height, bool additive);
@@ -168,23 +161,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& HALF_HEIGHT();
-
-    MCAPI static int const& HEIGHT_IMPASSABLE();
-
     MCAPI static int const& MAX_HEIGHT();
 
     MCAPI static ::BaseGameVersion const& TOP_SNOW_FALL_ON_PLACE();
 
     MCAPI static ::BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();
-
-    MCAPI static float const& TOP_SNOW_LAYER_HEIGHT();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool usePartialHeight, bool allowFallOnPlace);
     // NOLINTEND
 
 public:
@@ -239,15 +220,13 @@ public:
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
     MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
     MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const;
 
     MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const;
 

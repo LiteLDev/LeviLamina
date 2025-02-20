@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
@@ -51,6 +51,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCFOLD ::ScriptModuleMinecraftServerUI::ScriptModalFormData::IconData&
+        operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormData::IconData&&);
+
         MCAPI ~IconData();
         // NOLINTEND
 

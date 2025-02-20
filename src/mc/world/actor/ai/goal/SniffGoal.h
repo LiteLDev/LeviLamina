@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 class Vec3;
 struct DistanceSortedActor;
@@ -42,6 +41,7 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -51,26 +51,12 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::SniffGoal& goal) const;
-        // NOLINTEND
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void buildSchema(
             ::std::string const&                                                                                  name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SniffGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -127,17 +113,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SniffGoal(::Mob& mob);
-
     MCAPI ::std::vector<::DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
 
     MCAPI ::std::optional<::DistanceSortedActor> _fetchNearestSniffableActor() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

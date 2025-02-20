@@ -97,7 +97,7 @@ public:
         virtual ::std::vector<::JigsawBlockInfo> const& getJigsawMarkers() const /*override*/;
 
         // vIndex: 2
-        virtual ::BlockPos getSize(::Rotation) const /*override*/;
+        virtual ::BlockPos getSize(::Rotation rotation) const /*override*/;
 
         // vIndex: 3
         virtual bool isLegacyStructure() const /*override*/;
@@ -146,6 +146,8 @@ public:
         // NOLINTBEGIN
         MCFOLD ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
 
+        MCAPI ::BlockPos $getSize(::Rotation rotation) const;
+
         MCAPI bool $isLegacyStructure() const;
         // NOLINTEND
 
@@ -181,7 +183,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::BlockPos getSize(::Rotation) const;
+    virtual ::BlockPos getSize(::Rotation rotation) const;
 
     // vIndex: 2
     virtual ::std::vector<::JigsawBlockInfo> getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
@@ -301,13 +303,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
-    empty();
-
-    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
     single(::std::string_view location);
-
-    MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
-    single(::std::string_view location, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const* blockRules);
 
     MCAPI static ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>
     single(
@@ -371,6 +367,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::BlockPos $getSize(::Rotation rotation) const;
+
     MCAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
     MCAPI ::std::vector<::JigsawBlockInfo>
@@ -380,9 +378,9 @@ public:
 
     MCFOLD void $setProjection(::Projection projection);
 
-    MCFOLD ::Projection $getProjection() const;
+    MCAPI ::Projection $getProjection() const;
 
-    MCFOLD ::PostProcessSettings $getPostProcessSettings() const;
+    MCAPI ::PostProcessSettings $getPostProcessSettings() const;
 
     MCAPI bool $place(
         ::BlockSource&                                                                  region,

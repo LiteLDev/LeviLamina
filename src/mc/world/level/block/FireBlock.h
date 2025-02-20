@@ -18,6 +18,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Random;
 class Randomize;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -38,13 +39,12 @@ public:
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 78
     virtual bool mayPick() const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 79
@@ -68,8 +68,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FireBlock(::std::string const& nameId, int id);
-
     MCAPI void _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos) const;
@@ -91,12 +89,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -114,7 +106,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $mayPick() const;
 

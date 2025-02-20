@@ -22,8 +22,6 @@ public:
     // NOLINTBEGIN
     MCAPI BiomeArea(::BoundingBox const& area, uint scale);
 
-    MCAPI bool containsAny(::gsl::span<uint64 const> ids);
-
     MCAPI ~BiomeArea();
     // NOLINTEND
 

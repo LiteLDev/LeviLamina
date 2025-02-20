@@ -17,14 +17,4 @@ public:
     CommandRunStats& operator=(CommandRunStats const&);
     CommandRunStats(CommandRunStats const&);
     CommandRunStats();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void clearRunCounts();
-
-    MCFOLD ::std::unordered_map<::CommandOriginType, uint64> const& getRunCountMap() const;
-
-    MCAPI void incrementRunCount(::CommandOriginType originType);
-    // NOLINTEND
 };

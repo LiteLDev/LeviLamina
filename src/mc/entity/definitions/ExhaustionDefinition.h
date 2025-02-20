@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-struct ExhaustionComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -32,12 +30,6 @@ public:
     ExhaustionDefinition& operator=(ExhaustionDefinition const&);
     ExhaustionDefinition(ExhaustionDefinition const&);
     ExhaustionDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::ExhaustionComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

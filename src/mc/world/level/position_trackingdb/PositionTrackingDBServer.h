@@ -3,15 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/position_trackingdb/ResultCode.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class Dimension;
 class Level;
-class PositionTrackingDBClientRequestPacket;
 class PositionTrackingId;
 class Scheduler;
 namespace PositionTrackingDB { class TrackingRecord; }
@@ -44,20 +40,17 @@ public:
 
     MCAPI void _addRecordToPendingUpdateQueue(::PositionTrackingDB::TrackingRecord* record);
 
+    MCAPI void
+    _beginWriteTrackingRecordToLevelStorage(::PositionTrackingDB::TrackingRecord const* record, bool forceWrite);
+
     MCAPI void _broadcastUpdateToClients(::PositionTrackingDB::TrackingRecord const* record);
 
     MCAPI void _initializeNewPositionTrackerId(::PositionTrackingId& inOut, bool writeToPersistent);
-
-    MCAPI void _updateRecordDirtyStatus(::PositionTrackingDB::TrackingRecord* record);
-
-    MCAPI ::PositionTrackingId createTracker(::BlockPos const& positionToTrack, ::DimensionType const& dimension);
 
     MCAPI ::PositionTrackingDB::ResultCode destroyTracker(::PositionTrackingId const& id, bool forceLocalCacheEntry);
 
     MCAPI ::PositionTrackingDB::ResultCode
     findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
-
-    MCAPI void onReceivePacket(::PositionTrackingDBClientRequestPacket const& packet);
 
     MCAPI bool tick();
 

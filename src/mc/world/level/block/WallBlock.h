@@ -21,7 +21,6 @@ class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
-class Material;
 class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -90,22 +89,20 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~WallBlock() /*override*/;
+    virtual ~WallBlock() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WallBlock(::std::string const& nameId, int id, ::BlockLegacy const& baseBlock);
-
-    MCAPI WallBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI ::WallConnectionType
     _desiredConnectionState(::BlockSource& region, ::BlockPos const& pos, uchar neighbor) const;
 
     MCAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
 
     MCAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+
+    MCAPI bool _shouldUpdateConnectionStates(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -119,27 +116,13 @@ public:
     // NOLINTBEGIN
     MCAPI static float const& POST_HEIGHT();
 
-    MCAPI static float const& POST_WIDTH();
-
     MCAPI static ::BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-
-    MCAPI static float const& WALL_HEIGHT();
-
-    MCAPI static float const& WALL_WIDTH();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockLegacy const& baseBlock);
-
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -149,13 +132,13 @@ public:
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI ::AABB const&
     $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)

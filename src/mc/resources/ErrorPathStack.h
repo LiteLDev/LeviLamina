@@ -18,15 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ErrorPathStack(::std::vector<::std::string>& errorPath, ::std::string const& element);
-
     MCAPI ~ErrorPathStack();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::std::string>& errorPath, ::std::string const& element);
     // NOLINTEND
 
 public:

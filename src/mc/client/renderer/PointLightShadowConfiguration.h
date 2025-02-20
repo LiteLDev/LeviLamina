@@ -6,10 +6,10 @@ struct PointLightShadowConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 28> mUnk6988ad;
-    ::ll::UntypedStorage<4, 28> mUnk3b39bf;
-    ::ll::UntypedStorage<4, 28> mUnkcd5c62;
-    ::ll::UntypedStorage<4, 28> mUnka7f63c;
+    ::ll::UntypedStorage<4, 36> mUnk6988ad;
+    ::ll::UntypedStorage<4, 36> mUnk3b39bf;
+    ::ll::UntypedStorage<4, 36> mUnkcd5c62;
+    ::ll::UntypedStorage<4, 36> mUnka7f63c;
     // NOLINTEND
 
 public:

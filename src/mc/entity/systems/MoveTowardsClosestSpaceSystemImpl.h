@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
 #include "mc/deps/ecs/strict/EntityFactoryT.h"
 #include "mc/deps/ecs/strict/Filter.h"
@@ -36,6 +37,7 @@ struct MobBodyRotationComponent;
 struct MobFlagComponent;
 struct MoveTowardsClosestSpaceFlagComponent;
 struct MovementAbilitiesComponent;
+struct MovementInterpolatorComponent;
 struct OffsetsComponent;
 struct ParrotFlagComponent;
 struct PassengerComponent;
@@ -78,12 +80,25 @@ struct MoveTowardsClosestSpaceSystemImpl
           ::VanillaOffsetComponent,
           ::PassengerRenderingRidingOffsetComponent,
           ::DepenetrationComponent,
-          ::DimensionTypeComponent>,
+          ::DimensionTypeComponent,
+          ::MovementInterpolatorComponent>,
       ::Write<::StateVectorComponent>,
       ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
       ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
       ::GlobalWrite<>,
       ::EntityFactoryT<>>> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnkc85792;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MoveTowardsClosestSpaceSystemImpl& operator=(MoveTowardsClosestSpaceSystemImpl const&);
+    MoveTowardsClosestSpaceSystemImpl(MoveTowardsClosestSpaceSystemImpl const&);
+    MoveTowardsClosestSpaceSystemImpl();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -117,7 +132,8 @@ public:
                           ::VanillaOffsetComponent,
                           ::PassengerRenderingRidingOffsetComponent,
                           ::DepenetrationComponent,
-                          ::DimensionTypeComponent>,
+                          ::DimensionTypeComponent,
+                          ::MovementInterpolatorComponent>,
                       ::Write<::StateVectorComponent>,
                       ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
                       ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
@@ -132,11 +148,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void doTick(
-        ::StrictEntityContext const&    entity,
-        ::ActorDataFlagComponent const& synchedActorData,
-        ::AABBShapeComponent const&     aabbShape,
-        ::DepenetrationComponent const& depenetration,
-        ::StateVectorComponent&         stateVector,
+        ::StrictEntityContext const&                      entity,
+        ::ActorDataFlagComponent const&                   synchedActorData,
+        ::AABBShapeComponent const&                       aabbShape,
+        ::DepenetrationComponent const&                   depenetration,
+        ::Optional<::MovementInterpolatorComponent const> moveInterpolator,
+        ::StateVectorComponent&                           stateVector,
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnSnowFlagComponent,
@@ -166,12 +183,14 @@ public:
                 ::VanillaOffsetComponent,
                 ::PassengerRenderingRidingOffsetComponent,
                 ::DepenetrationComponent,
-                ::DimensionTypeComponent>,
+                ::DimensionTypeComponent,
+                ::MovementInterpolatorComponent>,
             ::Write<::StateVectorComponent>,
             ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
             ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,
             ::GlobalWrite<>,
             ::EntityFactoryT<>>&   executionContext,
+        bool                       isClientSide,
         ::IConstBlockSource const& region
     );
     // NOLINTEND
@@ -214,7 +233,8 @@ public:
                          ::VanillaOffsetComponent,
                          ::PassengerRenderingRidingOffsetComponent,
                          ::DepenetrationComponent,
-                         ::DimensionTypeComponent>,
+                         ::DimensionTypeComponent,
+                         ::MovementInterpolatorComponent>,
                      ::Write<::StateVectorComponent>,
                      ::AddRemove<::MoveTowardsClosestSpaceFlagComponent>,
                      ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent>,

@@ -44,26 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ServerNetworkController(
-        bool                                                           isDedicatedServer,
-        ::mce::UUID const&                                             hostID,
-        ::std::function<bool(::ServerPlayer const&, ::AbilitiesIndex)> canUseAbility
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        bool                                                           isDedicatedServer,
-        ::mce::UUID const&                                             hostID,
-        ::std::function<bool(::ServerPlayer const&, ::AbilitiesIndex)> canUseAbility
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

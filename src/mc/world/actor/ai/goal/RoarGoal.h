@@ -3,17 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 class WeakEntityRef;
 struct Tick;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class RoarGoal : public ::Goal {
@@ -35,35 +32,13 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::RoarGoal& goal) const;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const&                                                                                 name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RoarGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -116,13 +91,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RoarGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
+    MCAPI ::std::optional<::WeakEntityRef> _findRoarTarget() const;
     // NOLINTEND
 
 public:

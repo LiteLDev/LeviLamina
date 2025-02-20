@@ -15,9 +15,7 @@ class BlockPos;
 class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
 class Player;
-class Random;
 struct ActorBlockSyncMessage;
 // clang-format on
 
@@ -88,12 +86,6 @@ public:
         ::ActorBlockSyncMessage const* syncMsg
     ) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 124
-    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 85
     virtual void
     destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const
@@ -105,18 +97,6 @@ public:
 
     // vIndex: 0
     virtual ~AirBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AirBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -175,10 +155,6 @@ public:
         ::Block const&                 block,
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
-
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCFOLD void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;

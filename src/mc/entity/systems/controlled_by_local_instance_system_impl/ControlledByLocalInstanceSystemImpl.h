@@ -21,12 +21,6 @@ struct VehicleComponent;
 namespace ControlledByLocalInstanceSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void _addOrRemoveCBLI(
-    ::StrictEntityContext const&                           entity,
-    ::EntityModifier<::ControlledByLocalInstanceComponent> modifier,
-    bool                                                   isLocallyControlled
-);
-
 MCAPI void _calculateBoatControlledByLocalInstanceSystem(
     ::StrictEntityContext const& entity,
     ::VehicleComponent const&    vehicleComponent,

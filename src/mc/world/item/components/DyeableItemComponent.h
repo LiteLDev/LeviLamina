@@ -41,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DyeableItemComponent(::mce::Color const& color);
-
     MCAPI void
     appendFormattedHovertext(::ItemStackBase const& item, ::Bedrock::Safety::RedactableString& hovertext, bool) const;
 
@@ -50,11 +48,9 @@ public:
 
     MCAPI ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCFOLD ::mce::Color const& getDefaultColor() const;
-
     MCAPI bool hasCustomColor(::ItemStackBase const& instance) const;
 
-    MCFOLD void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    MCAPI void setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
     // NOLINTEND
 
 public:
@@ -62,17 +58,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::Color const& color);
     // NOLINTEND
 
 public:

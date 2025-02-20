@@ -26,32 +26,18 @@ public:
     // NOLINTBEGIN
     MCAPI ActorInfoRegistry();
 
-    MCAPI ::ActorInfo const& getActorInfo(uint infoRuntimeId) const;
-
     MCAPI uint getActorInfoId(uint64 const& name) const;
 
     MCAPI uint getActorInfoId(::std::string const& name) const;
 
-    MCAPI ::std::vector<::ActorInfo> getActorInfoList() const;
-
     MCAPI bool isSpawnEggAvailable(::std::string identifier);
 
     MCAPI void registerActorInfo(::ActorInfo const& info);
-
-    MCAPI void setSpawnEggAvailable(::std::string identifier, bool val);
-
-    MCAPI ~ActorInfoRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -17,10 +17,4 @@ public:
     ActorGoalFactory& operator=(ActorGoalFactory const&);
     ActorGoalFactory(ActorGoalFactory const&);
     ActorGoalFactory();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _initializeBedrock();
-    // NOLINTEND
 };

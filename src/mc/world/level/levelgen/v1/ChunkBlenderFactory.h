@@ -7,7 +7,6 @@
 class BlendingData;
 class ChunkBlender;
 class ChunkPos;
-class Dimension;
 namespace ChunkBlenderUtil { struct AttenuationData; }
 // clang-format on
 
@@ -74,8 +73,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChunkBlenderFactory(::Dimension& dimension);
-
     MCAPI ::std::shared_ptr<::ChunkBlender> _createChunkBlendingAttenuator(::ChunkPos const& lcPosition) const;
 
     MCAPI ::std::vector<::std::array<::ChunkBlenderUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(
@@ -93,13 +90,5 @@ public:
     ) const;
 
     MCAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
-
-    MCAPI bool isClientSide() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
     // NOLINTEND
 };

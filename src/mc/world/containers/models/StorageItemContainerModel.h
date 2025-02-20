@@ -11,6 +11,7 @@ class Container;
 class ContainerWeakRef;
 class ItemStack;
 class StorageItemComponent;
+class StorageWeightLimitItemComponent;
 struct FullContainerName;
 // clang-format on
 
@@ -19,6 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk73691b;
+    ::ll::UntypedStorage<8, 8>  mUnkf04aff;
     ::ll::UntypedStorage<8, 16> mUnke587b9;
     // NOLINTEND
 
@@ -60,25 +62,25 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI StorageItemContainerModel(
-        ::FullContainerName const&     name,
-        ::std::shared_ptr<::Container> container,
-        bool                           isClientSide,
-        ::StorageItemComponent*        storageItemComponent
+        ::FullContainerName const&         name,
+        ::std::shared_ptr<::Container>     container,
+        bool                               isClientSide,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
 
     MCAPI void _refreshSlot(int modelSlot);
-
-    MCAPI ::StorageItemComponent const* getStorageItemComponent() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::FullContainerName const&     name,
-        ::std::shared_ptr<::Container> container,
-        bool                           isClientSide,
-        ::StorageItemComponent*        storageItemComponent
+        ::FullContainerName const&         name,
+        ::std::shared_ptr<::Container>     container,
+        bool                               isClientSide,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
     // NOLINTEND
 

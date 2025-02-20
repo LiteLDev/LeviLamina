@@ -16,7 +16,7 @@ class TradeTableDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 368> mUnkd1cc7d;
+    ::ll::UntypedStorage<8, 208> mUnk71be79;
     // NOLINTEND
 
 public:

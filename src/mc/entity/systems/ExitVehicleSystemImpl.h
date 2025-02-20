@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/AddRemove.h"
@@ -16,12 +17,16 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/world/actor/VehicleUtils.h"
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class BaseGameVersion;
+class GetCollisionShapeInterface;
 class IConstBlockSource;
 class StrictEntityContext;
+class Vec3;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorDataSeatOffsetComponent;
@@ -96,8 +101,8 @@ struct ExitVehicleSystemImpl : public ::IStrictTickingSystem<::StrictExecutionCo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnk391aec;
-    ::ll::UntypedStorage<1, 1>   mUnk380d8c;
+    ::ll::UntypedStorage<8, 32> mUnk391aec;
+    ::ll::UntypedStorage<1, 1>  mUnk380d8c;
     // NOLINTEND
 
 public:
@@ -250,6 +255,21 @@ public:
             ::EntityFactoryT<>>&   executionContext,
         bool                       isClientSide,
         ::IConstBlockSource const& region
+    );
+
+    MCAPI static auto getExitStrategy(
+        ::BaseGameVersion const&                                       version,
+        ::Optional<::EjectedByActivatorRailFlagComponent const> const& ejectedByActivatorRail,
+        ::Optional<::ExitFromPassengerFlagComponent const> const&      exitFromPassenger
+    )
+        -> ::std::optional<
+            ::Vec3> (*)(::VehicleUtils::VehicleDirections const&, ::std::function<bool(::Vec3 const&, ::Vec3 const&)>);
+
+    MCAPI static bool tryPlaceAt(
+        ::Vec3 const&                                      groundPos,
+        ::AABB const&                                      aabbEntity,
+        ::IConstBlockSource const&                         region,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     );
     // NOLINTEND
 

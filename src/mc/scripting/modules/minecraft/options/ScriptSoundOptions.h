@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -26,12 +21,6 @@ public:
     ScriptSoundOptions& operator=(ScriptSoundOptions const&);
     ScriptSoundOptions(ScriptSoundOptions const&);
     ScriptSoundOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Vec3 getLocation() const;
-    // NOLINTEND
 
 public:
     // static functions

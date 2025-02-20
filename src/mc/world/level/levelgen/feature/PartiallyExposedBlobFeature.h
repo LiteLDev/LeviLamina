@@ -9,8 +9,6 @@
 // clang-format off
 class BlockPos;
 class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 // clang-format on
 
 class PartiallyExposedBlobFeature : public ::IFeature {
@@ -33,9 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& origin, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
     // vIndex: 0
     virtual ~PartiallyExposedBlobFeature() /*override*/ = default;
@@ -56,8 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& origin, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

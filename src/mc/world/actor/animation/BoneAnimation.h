@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk5ae1b5;
     ::ll::UntypedStorage<8, 24> mUnk7f55de;
-    ::ll::UntypedStorage<4, 4>  mUnkdacf56;
+    ::ll::UntypedStorage<1, 1>  mUnkdacf56;
     // NOLINTEND
 
 public:
@@ -20,11 +20,15 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BoneAnimation(::BoneAnimation const&);
+
+    MCAPI explicit BoneAnimation(::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BoneAnimation const&);
+
+    MCAPI void* $ctor(::std::string const& name);
     // NOLINTEND
 };

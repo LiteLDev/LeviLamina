@@ -52,8 +52,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ThrowableItemComponent(bool doSwing);
-
     MCAPI void
     _doThrow(::ItemStack& item, ::Player& player, ::ProjectileItemComponent const& projectileComponent, float power)
         const;
@@ -64,17 +62,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool doSwing);
     // NOLINTEND
 
 public:

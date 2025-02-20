@@ -23,7 +23,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mAddOnIdsAndVersions;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mTexturePackIdsAndVersions;
-    ::ll::TypedStorage<8, 120, ::BaseGameVersion>              mBaseGameVersion;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>               mBaseGameVersion;
     ::ll::TypedStorage<1, 1, bool>                             mTexturePackRequired;
     ::ll::TypedStorage<8, 72, ::ExperimentStorage>             mExperiments;
     ::ll::TypedStorage<1, 1, bool>                             mIncludeEditorPacks;

@@ -65,8 +65,6 @@ public:
     // NOLINTBEGIN
     MCAPI void
     _captureChunkData(::std::map<::ChunkPos, ::std::vector<::std::string>>& data, ::ChunkSource& chunkSource);
-
-    MCAPI void captureServerChunkData(::ChunkSource& serverChunkSource);
     // NOLINTEND
 
 public:

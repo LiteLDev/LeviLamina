@@ -3,16 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/HudVisibility.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
-class WeakEntityRef;
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptTitleDisplayOptions; }
 // clang-format on
@@ -37,8 +36,6 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScriptScreenDisplay(::Player const& player);
 
-    MCAPI explicit ScriptScreenDisplay(::WeakEntityRef const& playerRef);
-
     MCAPI ::Scripting::Result_deprecated<::std::string> _getJsonString(
         ::Player& player,
         ::std::variant<
@@ -53,6 +50,8 @@ public:
     MCAPI ::Scripting::Result<void> hideAllExcept(::std::optional<::std::vector<::HudElement>> hudElement);
 
     MCAPI ::Scripting::Result_deprecated<bool> isForcedHidden(::HudElement hudElement);
+
+    MCFOLD ::ScriptModuleMinecraft::ScriptScreenDisplay& operator=(::ScriptModuleMinecraft::ScriptScreenDisplay&&);
 
     MCAPI ::Scripting::Result<void> resetHudElements();
 
@@ -95,8 +94,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCFOLD void* $ctor(::Player const& player);
-
-    MCFOLD void* $ctor(::WeakEntityRef const& playerRef);
     // NOLINTEND
 };
 

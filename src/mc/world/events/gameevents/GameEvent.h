@@ -12,10 +12,4 @@ public:
     ::ll::TypedStorage<4, 4, ::GameEventConfig::GameEventType const> mType;
     ::ll::TypedStorage<1, 1, uchar const>                            mCategories;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::GameEventConfig::GameEventType const getType() const;
-    // NOLINTEND
 };

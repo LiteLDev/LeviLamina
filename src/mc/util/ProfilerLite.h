@@ -79,7 +79,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -138,7 +138,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mDebugServerTickTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mDebugServerNetworkTime;
     ::ll::TypedStorage<4, 4, float>                                                 mDebugRemoteServerTickTime;
-    ::ll::TypedStorage<4, 44, ::ProfilerLiteTelemetry>                              mTelemetry;
+    ::ll::TypedStorage<4, 48, ::ProfilerLiteTelemetry>                              mTelemetry;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mCachedProfileString;
     ::ll::TypedStorage<4, 16, ::std::array<uint, 4>>                                mLastNetworkStatSampleNum;
     ::ll::TypedStorage<8, 8, uint64>                                                mPrevTotalBytesWritten;
@@ -150,12 +150,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ProfilerLite();
-
-    MCAPI void calculateAndSetServerNetworkTime(::std::chrono::steady_clock::time_point tp);
-
-    MCAPI void calculateAndSetServerTickTimes(::std::chrono::steady_clock::time_point tp);
-
-    MCAPI ::std::chrono::nanoseconds getServerTickTime() const;
 
     MCAPI ~ProfilerLite();
     // NOLINTEND

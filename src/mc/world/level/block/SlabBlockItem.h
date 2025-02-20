@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Block;
 class BlockPos;
 class HashedString;
 class InteractionResult;
@@ -44,7 +45,7 @@ public:
     // NOLINTBEGIN
     MCAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
 
-    MCAPI void setDoubleSlabId(::HashedString const& doubleSlabId);
+    MCAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor& face, uchar& block, ::Block const&) const;
     // NOLINTEND
 
 public:

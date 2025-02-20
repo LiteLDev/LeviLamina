@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerType.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/inventory/FillingContainer.h"
 
 // auto generated forward declare list
@@ -54,6 +54,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
+    // vIndex: 49
+    virtual void
+    _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset) /*override*/;
+
     // vIndex: 0
     virtual ~LockingFillingContainer() /*override*/ = default;
     // NOLINTEND
@@ -63,7 +67,7 @@ public:
     // NOLINTBEGIN
     MCAPI LockingFillingContainer(
         int                                                         numTotalSlots,
-        ::ContainerType                                             containerType,
+        ::SharedTypes::Legacy::ContainerType                        containerType,
         ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex,
         bool                                                        isClientSide
     );
@@ -76,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         int                                                         numTotalSlots,
-        ::ContainerType                                             containerType,
+        ::SharedTypes::Legacy::ContainerType                        containerType,
         ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex> serializationMutex,
         bool                                                        isClientSide
     );
@@ -106,6 +110,8 @@ public:
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
+
+    MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
 // auto generated forward declare list
@@ -11,7 +10,6 @@
 class Container;
 class ContainerWeakRef;
 class ItemStack;
-class Player;
 // clang-format on
 
 class InventoryContainerModel : public ::ContainerModel {
@@ -56,18 +54,6 @@ public:
 
     // vIndex: 21
     virtual ::Container* _getContainer() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI InventoryContainerModel(::ContainerEnumName containerName, int size, ::Player& player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerEnumName containerName, int size, ::Player& player);
     // NOLINTEND
 
 public:

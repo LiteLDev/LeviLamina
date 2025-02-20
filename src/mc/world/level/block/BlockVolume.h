@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class Pos;
 // clang-format on
 
@@ -37,16 +36,6 @@ public:
         ::ll::TypedStorage<4, 12, ::Pos>                                      dims;
         ::ll::TypedStorage<8, 8, ::buffer_span_mut<::Block const*>::iterator> blockIter;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator!=(::BlockVolume::BlockVolumeIter const& c) const;
-
-        MCAPI ::std::pair<::Block const*, ::Pos> const operator*();
-
-        MCAPI ::BlockVolume::BlockVolumeIter& operator++();
-        // NOLINTEND
     };
 
 public:
@@ -63,53 +52,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockVolume(
-        ::buffer_span_mut<::Block const*> buffer,
-        int                               width,
-        int                               height,
-        int                               depth,
-        ::Block const&                    initBlock,
-        int                               dimensionBottom
-    );
-
-    MCAPI ::BlockVolume::BlockVolumeIter begin() const;
-
     MCAPI ::std::unique_ptr<::std::vector<short>> computeHeightMap() const;
-
-    MCAPI ::BlockVolume::BlockVolumeIter end() const;
-
-    MCAPI short findHighestNonAirBlock() const;
-
-    MCAPI short
-    getAboveTopSolidBlock(::BlockPos const& start, bool dimensionShowsSky, bool includeWater, bool includeLeaves) const;
-
-    MCAPI ::Pos getDimensions() const;
-
-    MCAPI uint getIndexBounds() const;
-
-    MCFOLD uint index(::BlockPos const& pos) const;
-
-    MCAPI uint index(::Pos const&) const;
-
-    MCFOLD uint indexNoBoundsCheck(::Pos const& pos) const;
-
-    MCAPI uint indexNoBoundsCheck(::BlockPos const&) const;
-
-    MCFOLD bool isInBounds(::BlockPos const& pos) const;
-
-    MCAPI bool isInBounds(::Pos const&) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::buffer_span_mut<::Block const*> buffer,
-        int                               width,
-        int                               height,
-        int                               depth,
-        ::Block const&                    initBlock,
-        int                               dimensionBottom
-    );
     // NOLINTEND
 };

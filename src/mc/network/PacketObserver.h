@@ -36,18 +36,6 @@ public:
         PacketStats& operator=(PacketStats const&);
         PacketStats(PacketStats const&);
         PacketStats();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit PacketStats(uint id);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(uint id);
-        // NOLINTEND
     };
 
 public:

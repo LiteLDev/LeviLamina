@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/serviceproviders/EditorTickingAreaServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-namespace Editor { class ServiceProviderCollection; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -51,18 +50,6 @@ public:
     // vIndex: 4
     virtual ::Scripting::Result<bool, ::Scripting::Error> purgeTickingAreas(::std::string const& areaIdentifierPrefix
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit EditorTickingAreaService(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
     // NOLINTEND
 
 public:

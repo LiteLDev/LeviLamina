@@ -17,16 +17,19 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
+class Player;
 class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class WeepingVinesBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 139
+    virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
     // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -70,32 +73,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeepingVinesBlock(::std::string const& nameId, int id);
-
-    MCAPI int _getAge(::Block const& block) const;
+    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void _tryGrow(::BlockSource& region, ::BlockPos const& pos, int age) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void placeVineString(
-        ::BlockSource&    region,
-        ::Random&         random,
-        ::BlockPos const& vinePos,
-        int               vineHeight,
-        int               minAge,
-        int               maxAge
-    );
-    // NOLINTEND
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -107,7 +93,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
     MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

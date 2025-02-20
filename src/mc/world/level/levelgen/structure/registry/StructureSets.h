@@ -22,7 +22,7 @@ public:
         ::br::worldgen::StructureSetRegistry&                                       context,
         ::BaseGameVersion const&                                                    baseGameVersion,
         ::Experiments const&                                                        experiments,
-        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const& structureSetsData
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const* structureSetsData
     );
     // NOLINTEND
 };

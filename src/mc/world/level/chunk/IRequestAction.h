@@ -13,9 +13,10 @@ class IRequestAction {
 public:
     // IRequestAction inner types define
     enum class RequestActionType : uchar {
-        FunctionAction           = 0,
-        TestAction               = 1,
-        StructureAnimationAction = 2,
+        FunctionAction                   = 0,
+        TestAction                       = 1,
+        StructureAnimationAction         = 2,
+        JigsawStructurePostprocessAction = 3,
     };
 
 public:
@@ -38,24 +39,6 @@ public:
 
     // vIndex: 3
     virtual bool operator==(::IRequestAction const& action) const;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit IRequestAction(::IRequestAction::RequestActionType const& actionType);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::IRequestAction::RequestActionType const& actionType);
     // NOLINTEND
 
 public:

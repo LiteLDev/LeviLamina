@@ -2,17 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/common/SubClientId.h"
-#include "mc/deps/game_refs/StackRefResult.h"
-
-// auto generated forward declare list
-// clang-format off
-class EntityRegistry;
-class EntitySystems;
-class PauseManager;
-// clang-format on
-
 class EntitySystemsManager {
 public:
     // member variables
@@ -33,26 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySystemsManager(
-        bool                                                       isClientSide,
-        ::SubClientId                                              subClientId,
-        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
-        ::gsl::not_null<::StackRefResult<::PauseManager>> const&   pauseManager
-    );
-
-    MCFOLD ::EntitySystems& getEntitySystems();
-
     MCAPI void tickEntitySystems();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        bool                                                       isClientSide,
-        ::SubClientId                                              subClientId,
-        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
-        ::gsl::not_null<::StackRefResult<::PauseManager>> const&   pauseManager
-    );
     // NOLINTEND
 };

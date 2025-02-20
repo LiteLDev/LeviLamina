@@ -17,6 +17,7 @@ class Packet;
 class SaveContext;
 class StorageItemComponent;
 class StorageItemContainerModel;
+class StorageWeightLimitItemComponent;
 struct DynamicTrackedContainer;
 struct FullContainerName;
 // clang-format on
@@ -60,14 +61,18 @@ public:
     virtual ::std::shared_ptr<::FillingContainer> getBackingContainer(::FullContainerName const& name) /*override*/;
 
     // vIndex: 2
-    virtual void
-    tryCreateEntry(::StorageItemComponent* storageItemComponent, ::FullContainerName const& name) /*override*/;
+    virtual void tryCreateEntry(
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent,
+        ::FullContainerName const&         name
+    ) /*override*/;
 
     // vIndex: 0
     virtual ::std::unique_ptr<::DynamicContainerManager> createContainerManager(
-        ::FullContainerName const& id,
-        ::ItemStack const&         storageItem,
-        ::StorageItemComponent*    storageItemComponent
+        ::FullContainerName const&         id,
+        ::ItemStack const&                 storageItem,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     ) /*override*/;
 
     // vIndex: 1
@@ -88,8 +93,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ContainerRegistry(bool isClientSide);
 
-    MCAPI ::DynamicTrackedContainer&
-    _getOrCreate(::FullContainerName const& id, ::StorageItemComponent* storageItemComponent);
+    MCAPI ::DynamicTrackedContainer& _getOrCreate(
+        ::FullContainerName const&         id,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
+    );
 
     MCAPI void _serverCleanUp(::std::function<void(::Packet&)> broadcastPacketFunction);
 
@@ -129,12 +137,17 @@ public:
 
     MCAPI ::std::shared_ptr<::FillingContainer> $getBackingContainer(::FullContainerName const& name);
 
-    MCAPI void $tryCreateEntry(::StorageItemComponent* storageItemComponent, ::FullContainerName const& name);
+    MCAPI void $tryCreateEntry(
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent,
+        ::FullContainerName const&         name
+    );
 
     MCAPI ::std::unique_ptr<::DynamicContainerManager> $createContainerManager(
-        ::FullContainerName const& id,
-        ::ItemStack const&         storageItem,
-        ::StorageItemComponent*    storageItemComponent
+        ::FullContainerName const&         id,
+        ::ItemStack const&                 storageItem,
+        ::StorageItemComponent*            storageItemComponent,
+        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
 
     MCAPI uint $generateNewID();

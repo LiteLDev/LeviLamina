@@ -33,7 +33,7 @@ public:
 
     MCAPI void set(::ExpressionNode const& expression);
 
-    MCAPI void set(::ExpressionNode const& expression, ::Vec3 const& axis);
+    MCAPI void set(::ExpressionNode const& expression, int axisIndex);
 
     MCAPI ~KeyFrameTransform();
     // NOLINTEND

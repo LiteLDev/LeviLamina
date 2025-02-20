@@ -8,9 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -22,34 +19,14 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual float getFlopVerticalVelocityFactor() const /*override*/;
 
-    // vIndex: 183
+    // vIndex: 178
     virtual float getFlopHorizontalVelocityFactor() const /*override*/;
 
     // vIndex: 8
     virtual ~Tadpole() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Tadpole(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityId
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityId
-    );
     // NOLINTEND
 
 public:

@@ -69,17 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelChunkPacket();
-
-    MCAPI void pushSubChunkMetadata(uint64 id);
-
     MCAPI ::Bedrock::Result<void> readCacheMetadata(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -65,23 +65,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EndPortalFrameBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void createPortal(::BlockSource& region, ::BlockPos const& origin);
 
     MCAPI static void removePortal(::BlockSource& region, ::BlockPos const& origin);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

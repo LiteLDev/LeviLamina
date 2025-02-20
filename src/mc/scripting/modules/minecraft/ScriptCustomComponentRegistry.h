@@ -44,20 +44,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isReloading() const;
-
-    MCAPI void onReload();
-
-    MCAPI void onScriptInitializationComplete();
-
-    MCAPI void onScriptModuleStartupComplete();
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptCustomComponentRegistry::State const& state() const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -2,16 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/block/CopperType.h"
-
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
 class BlockSource;
-class HashedString;
-class Player;
+namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class CopperBehavior {
@@ -34,63 +30,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CopperBehavior(
-        ::CopperType                                                                  copperType,
-        ::HashedString const&                                                         unwaxedOrPreviousAgeVariant,
-        ::std::function<::Block const&(::HashedString const&, ::Block const&)> const& copyStateFunc
-    );
-
-    MCAPI CopperBehavior(
-        ::CopperType                                                                  copperType,
-        ::HashedString const&                                                         previousAgeVariant,
-        ::HashedString const&                                                         nextAgeVariant,
-        ::HashedString const&                                                         waxedVariant,
-        ::std::function<::Block const&(::HashedString const&, ::Block const&)> const& copyStateFunc
-    );
-
-    MCAPI bool canDecrementAge() const;
+    MCAPI void
+    _incrementAge(::BlockSource& region, ::Block const& block, ::BlockPos const& pos, float generatedOxidizeChance)
+        const;
 
     MCAPI ::Block const& getCorrespondingWaxedBlock(::Block const& block) const;
 
-    MCAPI bool isWaxable() const;
+    MCAPI ::Block const& getNextAgingBlock(::Block const& block) const;
 
-    MCFOLD bool isWaxed() const;
-
-    MCAPI bool tryDecrementAge(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool tryIncrementAge(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        float             generatedDailyChance,
-        float             generatedOxidizeChance
-    ) const;
-
-    MCAPI bool use(::Player& player, ::BlockPos const& pos, uchar) const;
-
-    MCAPI ~CopperBehavior();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::CopperType                                                                  copperType,
-        ::HashedString const&                                                         unwaxedOrPreviousAgeVariant,
-        ::std::function<::Block const&(::HashedString const&, ::Block const&)> const& copyStateFunc
-    );
-
-    MCAPI void* $ctor(
-        ::CopperType                                                                  copperType,
-        ::HashedString const&                                                         previousAgeVariant,
-        ::HashedString const&                                                         nextAgeVariant,
-        ::HashedString const&                                                         waxedVariant,
-        ::std::function<::Block const&(::HashedString const&, ::Block const&)> const& copyStateFunc
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI bool use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 };

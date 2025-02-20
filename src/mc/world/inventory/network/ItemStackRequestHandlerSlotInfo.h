@@ -19,18 +19,4 @@ public:
     ItemStackRequestHandlerSlotInfo& operator=(ItemStackRequestHandlerSlotInfo const&);
     ItemStackRequestHandlerSlotInfo(ItemStackRequestHandlerSlotInfo const&);
     ItemStackRequestHandlerSlotInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD explicit operator bool() const;
-
-    MCAPI ~ItemStackRequestHandlerSlotInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

@@ -39,7 +39,8 @@ public:
         Outdated           = 2,
         AlphaEnded         = 3,
         UserNotAllowed     = 4,
-        Other              = 5,
+        Forbidden          = 5,
+        Other              = 6,
     };
 
     enum class InviteAction : int {
@@ -88,6 +89,7 @@ public:
     ::ll::UntypedStorage<8, 16>  mUnk434ed6;
     ::ll::UntypedStorage<8, 16>  mUnk879a51;
     ::ll::UntypedStorage<1, 1>   mUnk8b6fa0;
+    ::ll::UntypedStorage<1, 1>   mUnk3840a6;
     ::ll::UntypedStorage<8, 80>  mUnkd7e02a;
     ::ll::UntypedStorage<8, 16>  mUnkfe7c75;
     ::ll::UntypedStorage<8, 16>  mUnk739a87;

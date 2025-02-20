@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/common/WeakPtr.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/deps/shared_types/UseAnimation.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
+#include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/resources/JsonBetaState.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/interactions/mining/MineBlockItemEffectType.h"
 #include "mc/world/item/CreativeItemCategory.h"
 #include "mc/world/item/InHandUpdateType.h"
@@ -17,6 +17,7 @@
 #include "mc/world/item/ItemCommandVisibility.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/Rarity.h"
+#include "mc/world/item/registry/ItemVersion.h"
 #include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
@@ -32,15 +33,14 @@ class CompoundTag;
 class Container;
 class FoodItemComponentLegacy;
 class HashedString;
-class ICameraItemComponent;
 class IDataInput;
 class IDataOutput;
 class IFoodItemComponent;
+class ILevel;
 class IPackLoadContext;
 class InteractionResult;
 class ItemComponent;
 class ItemDescriptor;
-class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
@@ -56,7 +56,6 @@ struct Brightness;
 struct CommandName;
 struct ItemTag;
 struct ItemUsedOnEventContext;
-struct NewBlockID;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
@@ -87,33 +86,12 @@ public:
         Tier& operator=(Tier const&);
         Tier(Tier const&);
         Tier();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Tier(int level, int uses, float speed, int damage, int enchant);
-
-        MCFOLD int getAttackDamageBonus() const;
-
-        MCFOLD int getEnchantmentValue() const;
-
-        MCFOLD int getLevel() const;
-
-        MCFOLD float getSpeed() const;
-
-        MCFOLD int getUses() const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(int level, int uses, float speed, int damage, int enchant);
-        // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::ItemVersion>                                   mItemParseVersion;
     ::ll::TypedStorage<8, 32, ::std::string>                                  mTextureAtlasFile;
     ::ll::TypedStorage<4, 4, int>                                             mFrameCount;
     ::ll::TypedStorage<1, 1, bool>                                            mAnimatesInToolbar;
@@ -142,7 +120,7 @@ public:
     bool                                                                      mAllowOffhand         : 1;
     bool                                                                      mIgnoresPermissions   : 1;
     ::ll::TypedStorage<4, 4, int>                                             mMaxUseDuration;
-    ::ll::TypedStorage<8, 120, ::BaseGameVersion>                             mMinRequiredBaseGameVersion;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mMinRequiredBaseGameVersion;
     ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>>                  mLegacyBlock;
     ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                          mCreativeCategory;
     ::ll::TypedStorage<8, 8, ::Item*>                                         mCraftingRemainingItem;
@@ -460,7 +438,7 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack) const;
 
     // vIndex: 96
-    virtual void fixupCommon(::ItemStackBase& stack, ::Level&) const;
+    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
     // vIndex: 98
     virtual ::InHandUpdateType getInHandUpdateType(
@@ -478,7 +456,7 @@ public:
     virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
     // vIndex: 101
-    virtual ::ActorLocation getEquipLocation() const;
+    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const;
 
     // vIndex: 102
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const;
@@ -563,85 +541,25 @@ public:
         ::Vec3 const&        clickPos
     ) const;
 
-    MCAPI void addOnResetBAIcallback(::std::function<void()> const& callback);
-
     MCAPI ::Item& addTag(::HashedString const& tag);
 
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
     MCAPI ::Item& addTags(::std::initializer_list<::std::reference_wrapper<::ItemTag const>> tags);
 
-    MCAPI bool allowOffhand() const;
-
     MCAPI ::std::string buildCategoryDescriptionName() const;
-
-    MCAPI ::ItemDescriptor buildDescriptor(short auxValue, ::CompoundTag const*) const;
 
     MCAPI bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI void clearTags();
-
-    MCAPI float destroySpeedBonus(::ItemStackBase const& inst) const;
-
-    MCAPI void fixupOnLoad(::ItemStackBase& stack) const;
-
-    MCAPI void fixupOnLoad(::ItemStackBase& stack, ::Level& level) const;
-
-    MCAPI ::ICameraItemComponent* getCamera() const;
-
     MCAPI ::std::vector<::CommandName> getCommandNames() const;
-
-    MCAPI ::CreativeItemCategory getCreativeCategory() const;
-
-    MCAPI ::std::string const& getCreativeGroup() const;
-
-    MCAPI short getDamageValue(::CompoundTag const* userData) const;
-
-    MCFOLD int getFrameCount() const;
-
-    MCAPI ::std::string const& getFullItemName() const;
-
-    MCFOLD ::HashedString const& getFullNameHash() const;
-
-    MCAPI float getFurnaceBurnIntervalMultipler() const;
-
-    MCAPI short getId() const;
-
-    MCFOLD ::WeakPtr<::BlockLegacy const> const& getLegacyBlock() const;
-
-    MCFOLD ::Interactions::Mining::MineBlockItemEffectType getMineBlockType() const;
-
-    MCFOLD ::std::string const& getNamespace() const;
-
-    MCFOLD ::HashedString const& getRawNameHash() const;
-
-    MCAPI ::std::string const& getRawNameId() const;
-
-    MCFOLD ::BaseGameVersion const& getRequiredBaseGameVersion() const;
 
     MCAPI ::std::string getSerializedName() const;
 
-    MCAPI ::SharedTypes::Legacy::UseAnimation getUseAnimation() const;
-
-    MCAPI bool hasDamageValue(::CompoundTag const* userData) const;
-
     MCAPI bool hasTag(::HashedString const& tag) const;
-
-    MCAPI bool hasTag(::ItemTag const& tag) const;
-
-    MCAPI bool hasTag(uint64 const& tag) const;
 
     MCAPI bool isCommandOnly(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI bool isElytra() const;
-
-    MCAPI bool isExplodable() const;
-
-    MCAPI bool isFireResistant() const;
-
-    MCAPI bool isNameTag() const;
-
-    MCAPI bool isSeed() const;
 
     MCAPI bool operator==(::Item const& rhs) const;
 
@@ -649,43 +567,17 @@ public:
 
     MCAPI ::Item& setAllowOffhand(bool offhand);
 
-    MCAPI ::Item& setBaseRarity(::Rarity baseRarity);
-
-    MCAPI ::Item& setCategory(::CreativeItemCategory creativeCategory);
-
     MCAPI ::Item& setCreativeGroup(::std::string const& group);
 
     MCAPI void setDamageValue(::ItemStackBase& stack, short newDamage) const;
 
-    MCAPI ::Item& setExplodable(bool boom);
-
-    MCAPI ::Item& setFireResistant(bool resistant);
-
-    MCAPI ::Item& setFurnaceBurnIntervalMultiplier(float multiplier);
-
-    MCAPI ::Item& setFurnaceXPmultiplier(float multiplier);
-
-    MCAPI ::Item& setHandEquipped();
-
-    MCAPI ::Item& setHoverTextColorFormat(::std::string_view hoverTextColorFormat);
-
     MCAPI ::Item& setIsGlint(bool glint);
 
-    MCAPI ::Item& setIsMirroredArt(bool val);
-
-    MCAPI ::Item& setMaxStackSize(uchar max);
-
     MCAPI ::Item& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
-
-    MCAPI ::Item& setRequiresWorldBuilder(bool value);
 
     MCAPI ::Item& setShouldDespawn(bool despawn);
 
     MCAPI ::Item& setStackedByData(bool isStackedByData);
-
-    MCAPI ::Item& setUseAnimation(::SharedTypes::Legacy::UseAnimation anim);
-
-    MCAPI bool shouldDespawn() const;
 
     MCAPI bool
     updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
@@ -709,11 +601,7 @@ public:
 
     MCAPI static bool isElytraBroken(int value);
 
-    MCAPI static bool isFlyEnabled(::ItemInstance const& item);
-
     MCAPI static bool isSameTypeAndItem(::ItemStackBase const& firstItem, ::ItemStackBase const& secondItem);
-
-    MCAPI static ::NewBlockID toBlockId(short itemId);
     // NOLINTEND
 
 public:
@@ -745,9 +633,9 @@ public:
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
 
-    MCFOLD ::std::string const& $getDescriptionId() const;
+    MCAPI ::std::string const& $getDescriptionId() const;
 
-    MCFOLD int $getMaxUseDuration(::ItemStack const*) const;
+    MCAPI int $getMaxUseDuration(::ItemStack const*) const;
 
     MCFOLD ::WeakPtr<::BlockLegacy const> const& $getLegacyBlockForRendering() const;
 
@@ -783,7 +671,7 @@ public:
 
     MCFOLD ::ItemComponent* $getComponent(::HashedString const&) const;
 
-    MCAPI ::IFoodItemComponent* $getFood() const;
+    MCFOLD ::IFoodItemComponent* $getFood() const;
 
     MCAPI ::Item& $setMaxDamage(int maxDamage);
 
@@ -794,8 +682,6 @@ public:
     MCAPI void $initializeFromNetwork(::CompoundTag const& tag);
 
     MCFOLD ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const&);
-
-    MCFOLD ::BlockShape $getBlockShape() const;
 
     MCAPI bool $canBeDepleted() const;
 
@@ -856,6 +742,8 @@ public:
 
     MCFOLD int $getToughnessValue() const;
 
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
+
     MCFOLD bool $isComplex() const;
 
     MCFOLD bool $isValidAuxValue(int) const;
@@ -898,7 +786,7 @@ public:
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCFOLD void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     MCFOLD float $getDestroySpeed(::ItemStackBase const&, ::Block const&) const;
 
@@ -933,7 +821,7 @@ public:
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
-    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::Level&) const;
+    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
     MCAPI ::InHandUpdateType $getInHandUpdateType(
         ::Player const&,
@@ -947,7 +835,7 @@ public:
 
     MCFOLD void $enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
-    MCFOLD ::ActorLocation $getEquipLocation() const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCFOLD bool $shouldSendInteractionGameEvents() const;
 
@@ -975,7 +863,7 @@ public:
 
     MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCAPI bool
+    MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;

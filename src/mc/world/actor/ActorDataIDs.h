@@ -135,5 +135,7 @@ enum class ActorDataIDs : uchar {
     PlayerHasDied                    = 129,
     CollisionBox                     = 130,
     VisibleMobEffects                = 131,
-    Count                            = 132,
+    FilteredName                     = 132,
+    EnterBedPosition                 = 133,
+    Count                            = 134,
 };

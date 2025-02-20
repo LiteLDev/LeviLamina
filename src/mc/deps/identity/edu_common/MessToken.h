@@ -27,9 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isExpired() const;
-
-    MCAPI ::MessToken& operator=(::MessToken&&);
+    MCFOLD ::MessToken& operator=(::MessToken&&);
 
     MCAPI ::std::string toString() const;
 

@@ -34,12 +34,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -50,12 +44,6 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canContinueToUse();
 
-    MCAPI void $start();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCFOLD void $start();
     // NOLINTEND
 };

@@ -25,6 +25,7 @@ public:
 
 public:
     // prevent constructor by default
+    DepenetrationComponent& operator=(DepenetrationComponent const&);
     DepenetrationComponent(DepenetrationComponent const&);
     DepenetrationComponent();
 
@@ -32,15 +33,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
-
-    MCAPI ::DepenetrationComponent& operator=(::DepenetrationComponent const&);
-
-    MCAPI ~DepenetrationComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_20_60/OverworldGenerationRulesBiomeJsonComponent.h"
+#include "mc/deps/shared_types/v1_20_60/biome/components/OverworldGenerationRulesBiomeJsonComponent.h"
 
 // auto generated forward declare list
 // clang-format off

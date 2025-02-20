@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ReadOnlyBinaryStream(::std::string&& buffer);
-
     MCAPI ReadOnlyBinaryStream(::std::string_view buffer, bool copyBuffer);
 
     MCAPI bool canReadBool() const;
@@ -72,14 +70,12 @@ public:
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
 
-    MCFOLD bool hasOverflowed() const;
+    MCAPI void setReadPointer(uint64 pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string&& buffer);
-
     MCAPI void* $ctor(::std::string_view buffer, bool copyBuffer);
     // NOLINTEND
 

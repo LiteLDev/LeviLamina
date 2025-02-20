@@ -38,7 +38,7 @@ public:
     virtual ::Potion::PotionType getPotionType() const /*override*/;
 
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 87
     virtual ::std::string
@@ -76,18 +76,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LingeringPotionItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -98,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Potion::PotionType $getPotionType() const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;

@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPos;
 class ReadOnlyBinaryStream;
 struct ActorBlockSyncMessage;
 // clang-format on
@@ -39,29 +38,6 @@ public:
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UpdateBlockSyncedPacket();
-
-    MCAPI UpdateBlockSyncedPacket(
-        ::BlockPos const&              pos,
-        uint                           layer,
-        uint                           runtimeId,
-        uchar                          updateFlags,
-        ::ActorBlockSyncMessage const& syncMsg
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void*
-    $ctor(::BlockPos const& pos, uint layer, uint runtimeId, uchar updateFlags, ::ActorBlockSyncMessage const& syncMsg);
     // NOLINTEND
 
 public:

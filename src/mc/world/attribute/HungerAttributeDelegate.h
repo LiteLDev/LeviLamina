@@ -9,6 +9,7 @@
 // clang-format off
 class AttributeInstance;
 class Player;
+struct AttributeModificationContext;
 // clang-format on
 
 class HungerAttributeDelegate : public ::AttributeInstanceDelegate {
@@ -25,10 +26,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void tick() /*override*/;
+    virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context) /*override*/;
 
     // vIndex: 2
-    virtual void notify(int64 type) /*override*/;
+    virtual void notify(int64 type, ::AttributeModificationContext& context) /*override*/;
 
     // vIndex: 0
     virtual ~HungerAttributeDelegate() /*override*/ = default;
@@ -37,13 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HungerAttributeDelegate(::AttributeInstance const& attribute, ::Player* player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributeInstance const& attribute, ::Player* player);
+    MCAPI bool _canPlayerBeAffectedByHunger() const;
     // NOLINTEND
 
 public:
@@ -55,9 +50,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
-    MCAPI void $notify(int64 type);
+    MCAPI void $notify(int64 type, ::AttributeModificationContext& context);
     // NOLINTEND
 
 public:

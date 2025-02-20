@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/external/rtc/RefCountedObject.h"
-#include "mc/external/webrtc/scoped_refptr.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,13 +35,6 @@ public:
 
     // vIndex: 3
     virtual void OnSetRemoteDescriptionComplete(::webrtc::RTCError error) /*override*/;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::webrtc::scoped_refptr<::webrtc::SetRemoteDescriptionObserverInterface>
-    Create(::std::function<void()>&& onSuccess, ::std::function<void(::webrtc::RTCError const&)>&& onFailure);
     // NOLINTEND
 
 public:

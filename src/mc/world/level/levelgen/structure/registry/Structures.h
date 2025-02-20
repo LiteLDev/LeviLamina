@@ -18,13 +18,8 @@ struct Structures {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bootstrap(
-        ::br::worldgen::StructureRegistry& context,
-        ::BaseGameVersion const&,
-        ::Experiments const&                                                               experiments,
-        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const& jigsawDefinitions,
-        ::IWorldRegistriesProvider&                                                        registries
-    );
+    MCAPI static void
+    bootstrap(::br::worldgen::StructureRegistry& context, ::BaseGameVersion const& experiments, ::Experiments const& jigsawDefinitions, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const* registries, ::IWorldRegistriesProvider&);
 
     MCAPI static ::std::shared_ptr<::br::worldgen::JigsawStructure> makeTrailRuinsJigsaw();
     // NOLINTEND

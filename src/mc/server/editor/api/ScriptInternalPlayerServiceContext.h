@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,16 +30,19 @@ public:
 public:
     // prevent constructor by default
     ScriptInternalPlayerServiceContext& operator=(ScriptInternalPlayerServiceContext const&);
-    ScriptInternalPlayerServiceContext(ScriptInternalPlayerServiceContext const&);
     ScriptInternalPlayerServiceContext();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptInternalPlayerServiceContext(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
+
     MCAPI ScriptInternalPlayerServiceContext(
         ::Editor::ServiceProviderCollection&  playerServices,
         ::Scripting::WeakLifetimeScope const& scope
     );
+
+    MCAPI ~ScriptInternalPlayerServiceContext();
     // NOLINTEND
 
 public:
@@ -52,7 +55,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Editor::ScriptModule::ScriptInternalPlayerServiceContext const&);
+
     MCAPI void* $ctor(::Editor::ServiceProviderCollection& playerServices, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

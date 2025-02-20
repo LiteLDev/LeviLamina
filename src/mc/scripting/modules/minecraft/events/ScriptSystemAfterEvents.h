@@ -3,21 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAsyncEventMetadata.h"
 
 // auto generated forward declare list
 // clang-format off
-class ServerLevel;
-namespace Json { class Value; }
-namespace ScriptModuleMinecraft { class ScriptAsyncEventList; }
+class ScriptDeferredFlushTracker;
 namespace ScriptModuleMinecraft { class ScriptGlobalEventListeners; }
-namespace ScriptModuleMinecraft { class ScriptTickSignal; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -66,7 +61,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 3
-        virtual bool onFlushSystemAfterEvents() /*override*/;
+        virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
         // vIndex: 0
         virtual ~ScriptSystemAfterEventsDeferredEventListener() /*override*/ = default;
@@ -81,7 +76,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $onFlushSystemAfterEvents();
+        MCAPI void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
         // NOLINTEND
 
     public:
@@ -115,14 +110,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptSystemAfterEvents(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
 
-    MCAPI ScriptSystemAfterEvents(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
-
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptAsyncEventList const& getSignalList() const;
 
     MCAPI ::ScriptModuleMinecraft::ScriptSystemAfterEvents&
     operator=(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
@@ -140,11 +129,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
-
     MCAPI static ::ScriptModuleMinecraft::ScriptAsyncEventMetadata<
         ::ScriptModuleMinecraft::ScriptSystemAfterEvents> const&
     getMetadata();
@@ -154,8 +138,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
-
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
     // NOLINTEND
 
 public:

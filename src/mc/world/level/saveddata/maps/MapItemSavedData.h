@@ -23,10 +23,8 @@ class MapItemTrackedActor;
 class Packet;
 class Player;
 class Random;
-class SpinLockImpl;
 class Vec3;
 struct ActorUniqueID;
-struct ClientTerrainPixel;
 namespace mce { class Color; }
 // clang-format on
 
@@ -156,6 +154,8 @@ public:
 
     MCAPI void _deserializeData(::CompoundTag const& tag);
 
+    MCAPI bool _isPlayerHoldingMap(::Player& player);
+
     MCAPI void _removeDecoration(::MapItemTrackedActor::UniqueId const& id);
 
     MCAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
@@ -178,60 +178,17 @@ public:
     MCAPI ::std::shared_ptr<::MapItemTrackedActor>
     addTrackedMapEntity(::Actor& entity, ::MapDecoration::Type decorationType);
 
-    MCAPI ::std::shared_ptr<::MapItemTrackedActor>
-    addTrackedMapEntity(::BlockPos const& position, ::BlockSource& region, ::MapDecoration::Type decorationType);
-
-    MCFOLD bool areClientPixelsDirty() const;
-
     MCAPI void checkNeedsResampling();
-
-    MCAPI void copyMapData(::MapItemSavedData const& map);
-
-    MCAPI void deserialize(::CompoundTag const& tag);
-
-    MCAPI void enableUnlimitedTracking();
-
-    MCFOLD ::std::vector<::ClientTerrainPixel>& getClientPixels();
-
-    MCFOLD ::SpinLockImpl* getClientSamplingLock();
 
     MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
 
-    MCFOLD ::ActorUniqueID getMapId() const;
+    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level& pos, ::BlockPos const&) const;
 
-    MCFOLD ::ActorUniqueID getParentMapId() const;
-
-    MCAPI ::buffer_span<uint> getPixels() const;
-
-    MCAPI ::std::shared_ptr<::MapItemTrackedActor> getTrackedMapEntity(::Actor& entity);
-
-    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
-
-    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
-
-    MCAPI bool hasParentMap() const;
-
-    MCAPI bool isAdjacent(::MapItemSavedData const& other, int dir) const;
-
-    MCAPI bool isChunkAllEmpty(::MapItemSavedData::ChunkBounds bb) const;
-
-    MCAPI bool isFullyExplored() const;
-
-    MCAPI bool isLocked() const;
-
-    MCAPI bool needsResampling() const;
-
-    MCAPI void removeTrackedMapEntity(::BlockPos const& position);
+    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& entity, ::Level&, ::Actor&) const;
 
     MCAPI void save(::LevelStorage& storage);
 
     MCAPI void serialize(::CompoundTag& tag) const;
-
-    MCAPI void setClientPixelsDirty(bool isDirty);
-
-    MCAPI void setDirtyForSaveAndPixelData();
-
-    MCAPI void setLocked();
 
     MCAPI void setMapSection(::buffer_span<uint> src, ::MapItemSavedData::ChunkBounds bb);
 
@@ -244,19 +201,9 @@ public:
         ::BlockPos const& worldCenter
     );
 
-    MCAPI bool setPixel(uint color, uint x, uint y);
-
-    MCAPI void setScale(int mapScale);
-
-    MCAPI void setScaleAndParentMapId(int mapScale, ::ActorUniqueID parentMapId);
-
     MCAPI void tickByBlock(::BlockPos const& pos, ::BlockSource& region);
 
     MCAPI void tickCarriedBy(::Actor& player, ::CompoundTag const* item);
-
-    MCAPI void trySave(::LevelStorage& storage);
-
-    MCAPI ~MapItemSavedData();
     // NOLINTEND
 
 public:
@@ -269,11 +216,5 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ActorUniqueID mapId, bool isDLCworld);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

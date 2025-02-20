@@ -59,7 +59,7 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCFOLD bool $equals(::Tag const& rhs) const;
 
     MCAPI ::std::unique_ptr<::Tag> $copy() const;
 

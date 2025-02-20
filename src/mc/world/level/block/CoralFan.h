@@ -19,7 +19,6 @@ class HashedString;
 class IConstBlockSource;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
-namespace mce { class Color; }
 // clang-format on
 
 class CoralFan : public ::BushBlock {
@@ -38,10 +37,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
-
     // vIndex: 48
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
@@ -90,8 +85,6 @@ public:
     // NOLINTBEGIN
     MCAPI CoralFan(::std::string const& nameId, int id, ::HashedString const& deadVersion);
 
-    MCFOLD ::HashedString const& getDeadVersion() const;
-
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -110,8 +103,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
     MCAPI bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;

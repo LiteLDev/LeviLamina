@@ -3,8 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEventIntermediateData; }
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -19,20 +25,46 @@ public:
 public:
     // prevent constructor by default
     ScriptBlockExplodedAfterEvent& operator=(ScriptBlockExplodedAfterEvent const&);
-    ScriptBlockExplodedAfterEvent(ScriptBlockExplodedAfterEvent const&);
     ScriptBlockExplodedAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
+    MCAPI ScriptBlockExplodedAfterEvent(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
+
+    MCAPI ScriptBlockExplodedAfterEvent(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
+
+    MCAPI ScriptBlockExplodedAfterEvent(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
+
+    MCAPI ~ScriptBlockExplodedAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent> bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
+
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData> const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                            scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

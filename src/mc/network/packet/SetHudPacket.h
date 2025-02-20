@@ -43,22 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetHudPacket();
-
-    MCAPI SetHudPacket(::std::vector<::HudElement> hudElement, ::HudVisibility hudVisible);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::vector<::HudElement> hudElement, ::HudVisibility hudVisible);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

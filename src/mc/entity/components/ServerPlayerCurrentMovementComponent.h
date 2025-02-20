@@ -18,16 +18,4 @@ public:
     ServerPlayerCurrentMovementComponent& operator=(ServerPlayerCurrentMovementComponent const&);
     ServerPlayerCurrentMovementComponent(ServerPlayerCurrentMovementComponent const&);
     ServerPlayerCurrentMovementComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ServerPlayerCurrentMovementComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

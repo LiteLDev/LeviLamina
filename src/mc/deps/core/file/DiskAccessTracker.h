@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -63,7 +63,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk164044;
     ::ll::UntypedStorage<8, 56> mUnk893e32;
     ::ll::UntypedStorage<8, 8>  mUnk3bd5a4;
-    ::ll::UntypedStorage<8, 8>  mUnk4f3ff3;
+    ::ll::UntypedStorage<8, 8>  mUnk1e7d48;
     ::ll::UntypedStorage<8, 80> mUnka734d7;
     ::ll::UntypedStorage<8, 80> mUnk37a284;
     ::ll::UntypedStorage<1, 1>  mUnk51bb1c;
@@ -79,9 +79,7 @@ public:
     // NOLINTBEGIN
     MCAPI DiskAccessTracker();
 
-    MCAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::Path const& path);
-
-    MCAPI void addIgnoredPath(::Core::Path const& path);
+    MCAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
     // NOLINTEND
 
 public:

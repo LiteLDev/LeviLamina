@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
-class Player;
 class SimpleContainer;
 // clang-format on
 
@@ -32,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FullPlayerInventoryWrapper(::Player& player);
-
     MCAPI int _clearSimpleContainerItem(::SimpleContainer& container, ::ContainerID containerId, int slot);
 
     MCAPI int _getSimpleContainerItemCount(
@@ -65,11 +62,5 @@ public:
         bool                                      requireExactAux,
         int                                       maxCount
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 };

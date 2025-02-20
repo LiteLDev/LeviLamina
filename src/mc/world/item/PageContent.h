@@ -39,8 +39,6 @@ public:
 
     MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> createTag() const;
-
     MCAPI ::PageContent& operator=(::PageContent const&);
 
     MCAPI ~PageContent();

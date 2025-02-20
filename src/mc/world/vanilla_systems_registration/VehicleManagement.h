@@ -12,6 +12,11 @@ namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 namespace VanillaSystemsRegistration::VehicleManagement {
 // functions
 // NOLINTBEGIN
+MCAPI void registerActorPositionPassenger(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
+
 MCAPI void
 registerExitVehicle(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options);
 

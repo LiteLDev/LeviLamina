@@ -27,6 +27,7 @@ public:
     // prevent constructor by default
     FeatureTypeFactory& operator=(FeatureTypeFactory const&);
     FeatureTypeFactory(FeatureTypeFactory const&);
+    FeatureTypeFactory();
 
 public:
     // virtual functions
@@ -38,8 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureTypeFactory();
-
     MCAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
 
     MCAPI bool processFeature(
@@ -50,12 +49,6 @@ public:
         ::Json::Value const&         featureData,
         ::MinEngineVersion const&    minEngineVersion
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

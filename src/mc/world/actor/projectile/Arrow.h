@@ -51,31 +51,31 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
-    // vIndex: 122
+    // vIndex: 120
     virtual void setAuxValue(int aux) /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual ::ItemStack _getPickupItem() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual void applyParticleColor(::Particle* p);
 
-    // vIndex: 146
+    // vIndex: 141
     virtual ::mce::Color getEffectColor();
 
     // vIndex: 8
@@ -98,8 +98,6 @@ public:
     MCAPI void setCritical(bool isCrit);
 
     MCAPI void setEnchantFlame(int level);
-
-    MCAPI void setEnchantInfinity(int level);
 
     MCAPI void setEnchantPower(int level);
 

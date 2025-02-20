@@ -12,7 +12,6 @@
 class Actor;
 class ActorFactory;
 class ActorManager;
-class Dimension;
 class EntityContext;
 class EntityRegistry;
 class IAddActorEntityProxy;
@@ -21,7 +20,7 @@ class ILevelStorageManagerConnector;
 class LevelChunk;
 class LevelStorage;
 class ListTag;
-struct ActorUniqueID;
+class WeakEntityRef;
 // clang-format on
 
 class AutonomousActorManager {
@@ -64,17 +63,13 @@ public:
     MCAPI ::Actor*
     addAutonomousActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::Actor* addAutonomousActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
-
-    MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(::ActorUniqueID actorUniqueID) const;
-
     MCAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
-
-    MCAPI void onLevelTearingDown();
 
     MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCAPI bool removeActiveAutonomousActorEntity(::WeakEntityRef weakEntityRef);
 
     MCAPI ~AutonomousActorManager();
     // NOLINTEND

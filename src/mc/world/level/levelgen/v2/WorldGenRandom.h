@@ -23,6 +23,12 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    WorldGenRandom& operator=(WorldGenRandom const&);
+    WorldGenRandom(WorldGenRandom const&);
+    WorldGenRandom();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -74,33 +80,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldGenRandom();
-
-    MCAPI WorldGenRandom(::br::worldgen::WorldGenRandom const& other);
-
     MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
 
-    MCAPI ::br::worldgen::WorldGenRandom& operator=(::br::worldgen::WorldGenRandom const& other);
-
     MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
-
-    MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureWithSalt(int64 seed, int x, int z, int blend);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::WorldGenRandom create(int64 seed);
-
     MCAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::br::worldgen::WorldGenRandom const& other);
     // NOLINTEND
 
 public:

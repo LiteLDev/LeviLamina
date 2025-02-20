@@ -64,17 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StemBlock(::std::string const& nameId, int id, ::BlockLegacy const& fruit);
-
-    MCAPI ::BlockLegacy const& getFruitBlock() const;
-
     MCAPI float getGrowthSpeed(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockLegacy const& fruit);
     // NOLINTEND
 
 public:

@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct HC_WEBSOCKET_OBSERVER;
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/threading/AsyncPromise.h"
 
 namespace Bedrock::Http {
 
@@ -21,12 +19,13 @@ public:
     // prevent constructor by default
     WebSocket& operator=(WebSocket const&);
     WebSocket(WebSocket const&);
+    WebSocket();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WebSocket();
+    virtual ~WebSocket() = default;
 
     // vIndex: 1
     virtual void onMessage(::std::string_view);
@@ -39,59 +38,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WebSocket();
-
-    MCAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket();
-
-    MCAPI void connect(
-        ::std::string const&                                            uri,
-        ::std::vector<::std::pair<::std::string, ::std::string>> const& headers,
-        ::std::function<void(::std::error_code)>&&                      onComplete
-    );
-
-    MCAPI void disconnect();
-
-    MCAPI bool isConnected() const;
-
-    MCAPI void send(::std::string const& message, ::std::function<void(::std::error_code)>&& onComplete) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static long _deallocateSocket(::HC_WEBSOCKET_OBSERVER* handle);
-
-    MCAPI static void _deallocateSocketAsync(::HC_WEBSOCKET_OBSERVER* handle);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onMessage(::std::string_view);
 
-    MCFOLD void $onBinaryMessage(::gsl::span<uchar const>);
-
-    MCFOLD void $onClose(uint);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

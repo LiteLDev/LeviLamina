@@ -16,8 +16,8 @@ class ParserBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkdde19d;
-    ::ll::UntypedStorage<8, 232> mUnk480fe1;
+    ::ll::UntypedStorage<8, 24> mUnkdde19d;
+    ::ll::UntypedStorage<8, 56> mUnk480fe1;
     // NOLINTEND
 
 public:
@@ -40,10 +40,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
-
-    MCFOLD ::SemVersion const& parserVersion() const;
-
-    MCFOLD ::Puv::VersionRange const& supportedVersions() const;
     // NOLINTEND
 
 public:

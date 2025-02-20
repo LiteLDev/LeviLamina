@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct BlockRandomTickingDescription : public ::BlockComponentDescription {
@@ -35,12 +34,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockRandomTickingDescription() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

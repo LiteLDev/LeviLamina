@@ -14,6 +14,7 @@ class BlockSource;
 class BoundingBox;
 class IRandom;
 class Random;
+namespace SharedTypes::v1_21_50 { struct PoolElementStructureSection; }
 namespace br::worldgen { struct JigsawJunction; }
 namespace br::worldgen { struct Rigid; }
 // clang-format on
@@ -67,6 +68,12 @@ public:
 
     // vIndex: 0
     virtual ~PoolElementStructureSection() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection serialize() const;
     // NOLINTEND
 
 public:

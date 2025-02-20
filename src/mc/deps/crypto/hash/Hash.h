@@ -13,7 +13,7 @@ namespace mce { class UUID; }
 namespace Crypto::Hash {
 // functions
 // NOLINTBEGIN
-MCAPI ::mce::UUID generateUUID(::std::string const& in, ::Crypto::Hash::HashType type);
+MCAPI ::mce::UUID generateUUID(void const* in, uint size, ::Crypto::Hash::HashType type);
 
 MCAPI ::std::string hash(::Crypto::Hash::HashType type, ::std::string const& in);
 

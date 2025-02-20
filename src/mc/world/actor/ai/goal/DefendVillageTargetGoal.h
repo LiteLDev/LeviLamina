@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Mob;
 class WeakEntityRef;
 // clang-format on
 
@@ -36,18 +35,6 @@ public:
 
     // vIndex: 0
     virtual ~DefendVillageTargetGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DefendVillageTargetGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class SemVersion;
 struct ActorSpawnRuleData;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
 // clang-format on
@@ -16,7 +15,7 @@ class SpawnGroupDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 368> mUnkfb070f;
+    ::ll::UntypedStorage<8, 208> mUnkff76e9;
     // NOLINTEND
 
 public:
@@ -28,8 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SpawnGroupDataLoader();
-
-    MCFOLD ::SemVersion const& firstCerealSlice() const;
 
     MCAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
@@ -45,6 +42,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

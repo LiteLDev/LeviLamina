@@ -38,12 +38,6 @@ public:
     MCAPI ::CreativeGroupInfo* addAnonymousGroup();
 
     MCAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
-
-    MCAPI ::CreativeGroupInfo* getChildGroup(::HashedString const& name);
-
-    MCFOLD ::CreativeItemCategory getCreativeCategory();
-
-    MCAPI ::CreativeGroupInfo* getOrAddTailAnonymousGroup();
     // NOLINTEND
 
 public:

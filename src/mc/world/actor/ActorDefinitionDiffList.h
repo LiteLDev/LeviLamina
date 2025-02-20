@@ -6,7 +6,6 @@
 // clang-format off
 class ActorDefinitionDescriptor;
 class ActorDefinitionGroup;
-class DefinitionInstanceGroup;
 struct DiffListPair;
 // clang-format on
 
@@ -41,29 +40,11 @@ public:
 
     MCAPI void addDefinition(::std::string const& def);
 
-    MCAPI void addPendingPropertyChange(uint64 overallPropertyIndex, ::std::variant<int, float, bool, uint64> value);
-
     MCAPI void clearChangedDescription();
-
-    MCAPI void clearDefinitions();
 
     MCAPI ::std::string definitionListToString(::std::string const& delimiter) const;
 
-    MCFOLD ::DefinitionInstanceGroup const& getAddedDefinitionGroup() const;
-
-    MCFOLD ::ActorDefinitionDescriptor& getChangedDescription();
-
-    MCFOLD ::std::vector<::DiffListPair> const& getDefinitionStack() const;
-
     MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
-
-    MCFOLD ::DefinitionInstanceGroup const& getRemovedDefinitionGroup() const;
-
-    MCFOLD bool hasChanged() const;
-
-    MCAPI bool hasDefinition(::std::string const& def) const;
-
-    MCAPI void lockChanges();
 
     MCAPI void removeDefinition(::std::string const& def);
 

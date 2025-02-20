@@ -23,7 +23,6 @@ class ItemStackNetManagerScreen;
 class ItemStackNetManagerServer;
 class ItemStackRequestAction;
 class ItemStackRequestActionCraftHandler;
-class ItemStackRequestActionDestroy;
 class ItemStackRequestActionTransferBase;
 class Player;
 class ScreenHandlerBase;
@@ -195,10 +194,10 @@ public:
         ::ItemStackNetId const&     serverNetId
     );
 
+    MCAPI ::std::unique_ptr<::ScreenHandlerBase> _createScreenHandler(::ContainerScreenContext const& screenContext);
+
     MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     _getOrInitSparseContainer(::FullContainerName const& openContainerId);
-
-    MCAPI ::ItemStackNetResult _handleDestroy(::ItemStackRequestActionDestroy const& requestAction);
 
     MCAPI ::ItemStackNetResult _handleRemove(
         ::ItemStackRequestActionTransferBase const& requestAction,
@@ -208,9 +207,9 @@ public:
 
     MCAPI ::ItemStackNetResult _handleTransfer(
         ::ItemStackRequestActionTransferBase const& requestAction,
+        bool                                        isSwap,
         bool                                        isSrcHintSlot,
-        bool                                        isDstHintSlot,
-        bool                                        isSwap
+        bool                                        isDstHintSlot
     );
 
     MCAPI void _initScreen(::ItemStackNetManagerScreen& screen);
@@ -220,8 +219,12 @@ public:
         ::ContainerRuntimeId const&       containerRuntimeId
     );
 
+    MCAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
+
     MCAPI ::ItemStackRequestHandlerSlotInfo
     _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
+
+    MCAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
 
     MCAPI void beginRequest(::ItemStackRequestId const& clientRequestId, ::ItemStackNetManagerScreen& screen);
 
@@ -229,8 +232,6 @@ public:
     endRequest(::ItemStackNetResult currentResult);
 
     MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
-
-    MCFOLD ::ItemStackRequestId const& getRequestId() const;
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
 
@@ -240,25 +241,15 @@ public:
 
     MCAPI bool hasFilteredStrings(::ItemStackRequestId requestId) const;
 
-    MCAPI bool isValidationCraftingImplemented();
-
     MCAPI void normalTick();
 
     MCAPI ::std::vector<::ItemInstance>
     tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar numCrafts);
-
-    MCAPI ~ItemStackRequestActionHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

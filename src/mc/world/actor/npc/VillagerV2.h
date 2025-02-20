@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/npc/VillagerBase.h"
 
@@ -12,6 +12,7 @@
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class ActorInteraction;
+class DwellerComponent;
 class EntityContext;
 class Player;
 class Vec3;
@@ -26,22 +27,22 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 179
+    // vIndex: 175
     virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 125
+    // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 104
+    // vIndex: 102
     virtual void buildDebugInfo(::std::string& out) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 65
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
     // vIndex: 8
@@ -56,6 +57,8 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+
+    MCAPI void _fixupVillagerProfessionSkinIfNeeded(::DwellerComponent const& dweller);
     // NOLINTEND
 
 public:

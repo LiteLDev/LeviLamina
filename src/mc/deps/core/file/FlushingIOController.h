@@ -22,7 +22,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~Flusher() = default;
+        virtual ~Flusher();
 
         // vIndex: 1
         virtual ::Core::Result _flushBuffer(void const*, uint64) = 0;
@@ -31,13 +31,19 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
 
+        // NOLINTEND
+
+    public:
+        // vftables
+        // NOLINTBEGIN
+        MCAPI static void** $vftable();
         // NOLINTEND
     };
 
@@ -59,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Core::Result flush();
+    MCAPI ::Core::Result write(void const* data, uint64 byteCount);
     // NOLINTEND
 };
 

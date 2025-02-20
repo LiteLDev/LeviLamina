@@ -25,12 +25,11 @@ public:
     // prevent constructor by default
     BossDefinition& operator=(BossDefinition const&);
     BossDefinition(BossDefinition const&);
+    BossDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BossDefinition();
-
     MCAPI void initialize(::EntityContext& entity, ::BossComponent& component) const;
     // NOLINTEND
 
@@ -39,11 +38,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BossDefinition>>& root);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

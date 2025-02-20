@@ -3,17 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/world/level/block/LevelEvent.h"
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Block;
 class BlockPos;
 class BlockSource;
 class ItemStack;
+class Randomize;
 class Vec3;
 struct ActorUniqueID;
+struct ResourceDropsContext;
 // clang-format on
 
 class Explosion {
@@ -29,7 +32,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                   mCanToggleBlocks;
     ::ll::TypedStorage<4, 4, float>                                  mDamageScaling;
     ::ll::TypedStorage<1, 1, bool>                                   mIgnoreBlockExplosionResistance;
-    ::ll::TypedStorage<2, 2, ::LevelEvent>                           mParticleType;
+    ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::LevelEvent>      mParticleType;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundExplosionType;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mSourceID;
     ::ll::TypedStorage<8, 8, ::BlockSource&>                         mRegion;
@@ -42,33 +45,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Explosion(::BlockSource& region, ::Actor* optSource, ::Vec3 const& pos, float radius);
-
     MCAPI ::std::vector<::gsl::not_null<::Actor*>> _getActorsInRange(::Actor* optSource, float range) const;
 
     MCAPI bool explode();
 
-    MCAPI void overrideInWater(bool inWater);
-
-    MCAPI void setAllowUnderwater(bool val);
-
-    MCAPI void setBreaking(bool val);
-
-    MCAPI void setCanToggleBlocks(bool toggleBlocks);
-
-    MCAPI void setDamageScaling(float damageScaling);
-
-    MCAPI void setExplosionParticleType(::LevelEvent particlesExplosionType);
-
-    MCAPI void setExplosionSound(::SharedTypes::Legacy::LevelSoundEvent soundExplosionType);
-
-    MCFOLD void setFire(bool val);
-
-    MCFOLD void setIgnoreBlockResistance(bool shouldIgnore);
-
-    MCAPI void setKnockbackScaling(float scaling);
-
-    MCAPI void setMaxResistance(float resistance);
+    MCAPI ::Vec3 getEyePos(::Actor& actor) const;
 
     MCAPI ~Explosion();
     // NOLINTEND
@@ -81,12 +62,15 @@ public:
         ::BlockPos                                           pos,
         ::std::vector<::std::pair<::ItemStack, ::BlockPos>>& itemStacks
     );
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::Actor* optSource, ::Vec3 const& pos, float radius);
+    MCAPI static void _spawnExtraResourcesAndMergeItemDropsForBlock(
+        ::BlockSource&                                       region,
+        ::BlockPos const&                                    blockPos,
+        ::Block const&                                       block,
+        ::Randomize&                                         randomize,
+        ::ResourceDropsContext const&                        resourceDropsContext,
+        ::std::vector<::std::pair<::ItemStack, ::BlockPos>>& itemStacks
+    );
     // NOLINTEND
 
 public:

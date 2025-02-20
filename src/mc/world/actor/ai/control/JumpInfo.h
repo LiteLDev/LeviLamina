@@ -17,24 +17,4 @@ public:
     JumpInfo& operator=(JumpInfo const&);
     JumpInfo(JumpInfo const&);
     JumpInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI JumpInfo(float distanceScale, float height, int jumpDelay, int animDuration);
-
-    MCFOLD int getAnimDuration() const;
-
-    MCFOLD float getDistanceScale() const;
-
-    MCFOLD float getHeight() const;
-
-    MCFOLD int getJumpDelay() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(float distanceScale, float height, int jumpDelay, int animDuration);
-    // NOLINTEND
 };

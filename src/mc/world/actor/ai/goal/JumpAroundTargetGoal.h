@@ -12,7 +12,6 @@
 class AABB;
 class ActorFilterGroup;
 class BlockPos;
-class EntityContext;
 class Mob;
 class Vec3;
 struct FloatRange;
@@ -62,12 +61,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::JumpAroundTargetGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -178,6 +171,12 @@ public:
     MCAPI explicit JumpAroundTargetGoal(::Mob& mob);
 
     MCAPI ::std::optional<::JumpAroundTargetGoal::Jump> _calculateOptimalJumpVector(::Vec3 const& targetPosition) const;
+
+    MCAPI bool _canJumpFromCurrentPosition() const;
+
+    MCAPI void _jump() const;
+
+    MCAPI void _postJumpCleanup() const;
 
     MCAPI ::std::optional<::BlockPos> _snapToSurface(::Vec3 const& targetPosition) const;
     // NOLINTEND

@@ -16,7 +16,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
-class Container;
 class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
@@ -87,7 +86,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -105,9 +104,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComposterBlock(::std::string const& nameId, int id);
-
-    MCAPI void _emitBoneMeal(::Level&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _emitBoneMeal(::Level& region, ::BlockSource& pos, ::BlockPos const&) const;
 
     MCAPI void _notifyClientComposterUsed(
         ::Player const&                              player,
@@ -123,33 +120,10 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
 
-    MCAPI static bool addItem(
-        ::Container&      fromContainer,
-        int               slot,
-        ::ItemStack&      item,
-        ::BlockSource&    region,
-        ::Block const&    block,
-        ::BlockPos const& pos
-    );
-
-    MCAPI static bool addItems(
-        ::Container&      fromContainer,
-        int               slot,
-        ::ItemStack&      item,
-        int               amount,
-        ::BlockSource&    region,
-        ::Block const&    block,
-        ::BlockPos const& pos
-    );
-
     MCAPI static int
     addItems(::ItemStack const& item, int amount, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
     MCAPI static void empty(::BlockSource& region, ::Block const& composter, ::BlockPos const& pos);
-
-    MCAPI static ::ItemStack extractItem(::BlockSource& region, ::Block const& composter, ::BlockPos const& pos);
-
-    MCAPI static ::Block const* getComposterAt(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static schar getFillChance(::ItemStackBase const& item);
     // NOLINTEND
@@ -160,12 +134,6 @@ public:
     MCAPI static ::BaseGameVersion const& COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
 
     MCAPI static ::Vec3 const& PARTICLE_OFFSET();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -205,6 +173,8 @@ public:
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
+
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD int $getVariant(::Block const& block) const;
 

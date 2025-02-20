@@ -18,7 +18,7 @@ public:
     virtual void flush() = 0;
 
     // vIndex: 3
-    virtual void setEnabled(bool enabled) = 0;
+    virtual void setEnabled(bool) = 0;
 
     // vIndex: 4
     virtual bool isEnabled() const = 0;

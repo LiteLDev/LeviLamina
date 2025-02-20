@@ -48,19 +48,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    StructurePoolBlockPredicateAlwaysTrueExcept(::std::set<::Block const*> const& cannotReplace, float probability);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::set<::Block const*> const& cannotReplace, float probability);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -27,23 +27,14 @@ public:
 
     public:
         // prevent constructor by default
+        RepairItemEntry& operator=(RepairItemEntry const&);
+        RepairItemEntry(RepairItemEntry const&);
         RepairItemEntry();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RepairItemEntry(::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const&);
-
-        MCAPI ::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry&
-        operator=(::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const&);
-
         MCAPI ~RepairItemEntry();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const&);
         // NOLINTEND
 
     public:
@@ -62,13 +53,12 @@ public:
 public:
     // prevent constructor by default
     RepairableItemComponent& operator=(RepairableItemComponent const&);
+    RepairableItemComponent(RepairableItemComponent const&);
     RepairableItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RepairableItemComponent(::SharedTypes::v1_20_50::RepairableItemComponent const&);
-
     MCAPI ~RepairableItemComponent();
     // NOLINTEND
 
@@ -76,12 +66,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::RepairableItemComponent const&);
     // NOLINTEND
 
 public:

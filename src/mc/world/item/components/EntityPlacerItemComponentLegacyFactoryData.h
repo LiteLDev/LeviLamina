@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    EntityPlacerItemComponentLegacyFactoryData& operator=(EntityPlacerItemComponentLegacyFactoryData const&);
     EntityPlacerItemComponentLegacyFactoryData(EntityPlacerItemComponentLegacyFactoryData const&);
     EntityPlacerItemComponentLegacyFactoryData();
 
@@ -36,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::EntityPlacerItemComponentLegacyFactoryData& operator=(::EntityPlacerItemComponentLegacyFactoryData const&);
+    MCAPI EntityPlacerItemComponentLegacyFactoryData(::EntityPlacerItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:
@@ -44,9 +45,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::EntityPlacerItemComponentLegacyFactoryData&&);
     // NOLINTEND
 
 public:

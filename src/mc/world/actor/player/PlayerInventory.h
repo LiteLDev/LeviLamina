@@ -4,20 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerContentChangeListener.h"
-#include "mc/world/ContainerID.h"
 #include "mc/world/ContainerSizeChangeListener.h"
 
 // auto generated forward declare list
 // clang-format off
 class Container;
-class HudContainerManagerModel;
 class Inventory;
 class ItemStack;
-class Level;
-class ListTag;
-class SaveContext;
-class SemVersion;
-struct PlayerInventorySlotData;
 // clang-format on
 
 class PlayerInventory : public ::ContainerSizeChangeListener, public ::ContainerContentChangeListener {
@@ -62,74 +55,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayerInventory(::std::unique_ptr<::Inventory> inv);
 
-    MCAPI ::std::weak_ptr<::HudContainerManagerModel> _getHudContainerManagerModel() const;
-
-    MCAPI bool add(::ItemStack& item, bool linkEmptySlot);
-
-    MCAPI void addListener(::ContainerContentChangeListener* listener);
-
-    MCAPI bool canAdd(::ItemStack const& item) const;
-
-    MCAPI void clearSlot(int slot, ::ContainerID containerId);
-
-    MCAPI void clearVanishEnchantedItemsOnDeath();
-
-    MCAPI void dropAllOnDeath(bool onlyClearContainer);
-
-    MCAPI ::std::vector<::ContainerID> const& getAllContainerIds();
-
-    MCAPI ::std::vector<::ItemStack> const& getComplexItems(::ContainerID containerId) const;
-
-    MCFOLD ::Container& getContainer();
-
-    MCAPI int getContainerSize(::ContainerID containerId) const;
-
-    MCAPI int getFirstEmptySlot() const;
-
-    MCAPI int getHotbarSize() const;
-
-    MCAPI ::ItemStack const& getItem(int slot, ::ContainerID containerId) const;
-
-    MCAPI ::ContainerID getSelectedContainerId();
-
-    MCAPI ::ItemStack const& getSelectedItem() const;
-
-    MCAPI ::PlayerInventorySlotData getSelectedSlot() const;
-
-    MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
-
-    MCAPI ::std::vector<::ItemStack const*> getSlots() const;
-
-    MCAPI bool hasResource(int type);
-
-    MCAPI void init(::std::weak_ptr<::HudContainerManagerModel> hud);
-
-    MCAPI void load(::ListTag const& inventoryList, ::SemVersion const&, ::Level&);
-
-    MCAPI void removeItem(int slot, int count, ::ContainerID containerId);
-
-    MCAPI void removeListener(::ContainerContentChangeListener* listener);
+    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
     MCAPI bool removeResource(int type);
-
-    MCAPI ::std::unique_ptr<::ListTag> save(::SaveContext const& saveContext);
-
-    MCAPI bool selectSlot(int slot, ::ContainerID containerId);
-
-    MCAPI void
-    serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
-
-    MCAPI void setContainerChanged(int slot);
-
-    MCAPI void setItem(int slot, ::ItemStack const& item, ::ContainerID containerId, bool forceBalanced);
-
-    MCAPI void setSelectedItem(::ItemStack const& item);
-
-    MCAPI void setupDefaultInventory();
-
-    MCAPI void swapSlots(int from, int to);
-
-    MCAPI void tick();
     // NOLINTEND
 
 public:

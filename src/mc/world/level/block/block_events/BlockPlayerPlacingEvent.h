@@ -7,11 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
-class Block;
-class BlockPos;
 class BlockSource;
-class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -41,44 +37,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockPlayerPlacingEvent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockPlayerPlacingEvent(
-        ::BlockSource&                  region,
-        ::BlockPos                      pos,
-        ::Actor&                        actor,
-        uchar                           face,
-        ::gsl::not_null<::Block const*> permutationToPlace
-    );
-
-    MCAPI void cancelEvent();
-
-    MCAPI void configureRenderParamsForTrigger(::RenderParams& params);
-
-    MCFOLD ::Actor const& getActor() const;
-
-    MCAPI ::Block const& getPermutationToPlace() const;
-
-    MCFOLD bool isCancelled() const;
-
-    MCFOLD bool isClientSide() const;
-
-    MCAPI void setPermutationToPlace(::Block const& perm);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockSource&                  region,
-        ::BlockPos                      pos,
-        ::Actor&                        actor,
-        uchar                           face,
-        ::gsl::not_null<::Block const*> permutationToPlace
-    );
     // NOLINTEND
 
 public:

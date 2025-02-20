@@ -13,23 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobEffects;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobEffectsComponent& operator=(MobEffectsComponent const&);
-    MobEffectsComponent(MobEffectsComponent const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::MobEffectsComponent& operator=(::MobEffectsComponent&&);
-
-    MCAPI ~MobEffectsComponent();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

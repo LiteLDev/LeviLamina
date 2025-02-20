@@ -7,10 +7,8 @@
 class BlockPos;
 class ITickingArea;
 class LevelStorage;
-class Random;
 class Vec3;
 struct ActorUniqueID;
-struct Tick;
 struct TickingAreaDescription;
 // clang-format on
 
@@ -31,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~TickingAreaListBase();
+    virtual ~TickingAreaListBase() = default;
 
     // vIndex: 1
     virtual bool removeDistantEntityAreasAndCheckForRemoved(
@@ -44,19 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void add(::std::unique_ptr<::ITickingArea> area);
-
     MCAPI uint countEntityTickingAreas() const;
-
-    MCAPI void destroyAreas();
 
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasContaining(::BlockPos const& position);
 
     MCAPI ::std::vector<::std::shared_ptr<::ITickingArea>> findStandaloneAreasNamed(::std::string const& name) const;
 
     MCAPI ::std::shared_ptr<::ITickingArea> getAreaFor(::ActorUniqueID const& entityId) const;
-
-    MCFOLD ::std::vector<::std::shared_ptr<::ITickingArea>> const& getAreas() const;
 
     MCAPI ::std::vector<::TickingAreaDescription> getStandaloneTickingAreaDescriptions() const;
 
@@ -68,16 +60,12 @@ public:
 
     MCAPI ::std::vector<::TickingAreaDescription>
     removeAreas(::std::vector<::std::shared_ptr<::ITickingArea>> const& areasToRemove, ::LevelStorage& levelStorage);
-
-    MCAPI void tickSeasons(::Random& random);
-
-    MCAPI void updateBlockSourceCurrentTick(::Tick const& currentTick);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-
 namespace Core {
 
 struct ExcludedPath {
@@ -20,18 +17,6 @@ public:
     ExcludedPath& operator=(ExcludedPath const&);
     ExcludedPath(ExcludedPath const&);
     ExcludedPath();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ExcludedPath(::Core::PathBuffer<::std::string> path, bool copyLooseFile);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::PathBuffer<::std::string> path, bool copyLooseFile);
-    // NOLINTEND
 };
 
 } // namespace Core

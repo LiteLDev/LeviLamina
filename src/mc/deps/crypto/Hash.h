@@ -43,17 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Hash(::Crypto::Hash::HashType type);
-
-    MCAPI ::std::string final();
-
     MCAPI ::mce::UUID getUUID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Crypto::Hash::HashType type);
     // NOLINTEND
 
 public:
@@ -69,7 +59,7 @@ public:
 
     MCAPI void $update(void const* data, uint size);
 
-    MCFOLD void $final(uchar* result);
+    MCAPI void $final(uchar* result);
 
     MCAPI uint64 $resultSize() const;
     // NOLINTEND

@@ -5,8 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Mob;
-struct ActorUniqueID;
 // clang-format on
 
 class FlockingComponent {
@@ -47,19 +45,14 @@ public:
     // prevent constructor by default
     FlockingComponent& operator=(FlockingComponent const&);
     FlockingComponent(FlockingComponent const&);
+    FlockingComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlockingComponent();
-
-    MCAPI void addFlockMember(::ActorUniqueID e);
-
-    MCAPI void breakFlock(::Actor const& owner);
+    MCAPI FlockingComponent(::FlockingComponent&&);
 
     MCAPI void calculateFlockVector(::Actor const& owner);
-
-    MCAPI void calculateGoalHeading(::Mob& owner);
 
     MCAPI bool canJoinFlock(::Actor& owner) const;
 
@@ -72,11 +65,13 @@ public:
     MCAPI ::FlockingComponent& operator=(::FlockingComponent&&);
 
     MCAPI void updateNeighborhoodData(::Actor const& owner);
+
+    MCAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::FlockingComponent&&);
     // NOLINTEND
 };

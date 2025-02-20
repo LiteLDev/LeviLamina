@@ -38,12 +38,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::ItemStackRequestSlotInfo const& getSrc() const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

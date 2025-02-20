@@ -93,6 +93,9 @@ public:
         ::BlockPos const&         lastPathPos
     );
 
+    MCAPI ::NodeType
+    _classifyNode(::ActorPathingData const& data, ::BlockPos const& fromPos, ::BlockPos const& testPos);
+
     MCAPI ::NodeType _classifyNode(
         ::ActorPathingData const& data,
         ::BlockPos const&         lastPathPos,
@@ -116,6 +119,10 @@ public:
         float                     maxDist
     );
 
+    MCAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float mobHeight) const;
+
+    MCAPI float _getHeightBelowBlock(::BlockPos const& blockPos, float mobHeight) const;
+
     MCAPI ::std::optional<::BlockPos> _getHighestReachablePosByJumping(
         ::BlockPos const& originalTargetPos,
         float             maxReachableHeight,
@@ -124,6 +131,15 @@ public:
 
     MCAPI ::ActorPathingData::MinMaxHeightCacheEntry
     _getMinAndMaxHeightAroundBlock(::ActorPathingData const& data, ::BlockPos const& blockPos, float mobHeight) const;
+
+    MCAPI int _getNeighbors(
+        ::ActorPathingData const& data,
+        ::PathfinderNode&         pos,
+        ::PathfinderNode const&   size,
+        ::PathfinderNode const&   target,
+        uint                      maxDistSqr,
+        ::std::bitset<18> const&  validPositions
+    );
 
     MCAPI ::PathfinderNode* _getNode(::BlockPos const& pos, ::NodeType nodeType);
 
@@ -162,6 +178,9 @@ public:
         ::BlockPos const&         size
     );
 
+    MCAPI ::NodeType
+    _isFreeWaterNode(::ActorPathingData const& data, ::BlockPos const& lastPos, ::BlockPos const& blockPos);
+
     MCAPI bool _isNeighborPotentiallyValid(
         ::PathfinderNode const& node,
         ::PathfinderNode const& target,
@@ -171,19 +190,6 @@ public:
 
     MCAPI ::std::unique_ptr<::Path>
     _reconstructPath(::PathfinderNode* to, ::PathCompletionType completionType, ::ActorUniqueID actorId);
-
-    MCAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
-
-    MCAPI ::std::unique_ptr<::Path> findPath(::Actor& from, int x, int y, int z, float maxDist);
-
-    MCAPI ::NodeType isFree(
-        ::Actor&           actor,
-        ::BlockPos const&  fromPos,
-        ::BlockPos const&  testPos,
-        ::BlockPos const&  size,
-        ::CanJumpIntoNode  jumpIntoNode,
-        ::CanClimbIntoNode climbIntoNode
-    );
 
     MCAPI ::NodeType isFree(
         ::ActorPathingData const& data,
@@ -200,6 +206,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static float _calculateMoveCost(
+        ::ActorPathingData const& data,
+        ::PathfinderNode&         start,
+        ::BlockPos const&         fromPos,
+        ::CachedChunkBlockSource& region
+    );
+
     MCAPI static ::BlockPos _getStartPositionFlyingActor(
         ::IPathBlockSource const& pathBlockSource,
         ::BlockPos                originalStartPos,

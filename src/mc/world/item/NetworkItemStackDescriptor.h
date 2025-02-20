@@ -4,17 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/platform/Result.h"
-#include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/item/ItemDescriptorCount.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class BlockPalette;
 class ItemStack;
 class ItemStackDescriptor;
 class ReadOnlyBinaryStream;
-struct ItemStackNetIdTag;
 struct ItemStackNetIdVariant;
 // clang-format on
 
@@ -30,7 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    NetworkItemStackDescriptor& operator=(NetworkItemStackDescriptor const&);
     NetworkItemStackDescriptor(NetworkItemStackDescriptor const&);
 
 public:
@@ -55,13 +51,9 @@ public:
 
     MCAPI ::NetworkItemStackDescriptor& operator=(::NetworkItemStackDescriptor&&);
 
+    MCAPI ::NetworkItemStackDescriptor& operator=(::NetworkItemStackDescriptor const&);
+
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
-    MCFOLD void setIncludeNetIds(bool includeNetIds) const;
-
-    MCAPI ::ItemStackNetId const* tryGetServerNetId() const;
-
-    MCAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:

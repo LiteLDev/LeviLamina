@@ -10,7 +10,6 @@
 // clang-format off
 class BlockPos;
 class ContainerScreenContext;
-class ItemEnchantOption;
 class ItemStack;
 class Player;
 // clang-format on
@@ -63,8 +62,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EnchantingContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
-    MCFOLD ::std::vector<::ItemEnchantOption> const& getEnchantOptions() const;
 
     MCAPI void recalculateOptions();
     // NOLINTEND

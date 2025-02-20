@@ -20,33 +20,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SavedDataStorage();
+    virtual ~SavedDataStorage() = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SavedDataStorage(::LevelStorage* levelStorage);
-
     MCAPI void _save(::SavedData const& data);
 
     MCAPI bool loadAndSet(::SavedData& inoutData, ::std::string const& id);
-
-    MCAPI void save();
-
-    MCAPI void set(::std::string const& id, ::SavedData& data);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelStorage* levelStorage);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

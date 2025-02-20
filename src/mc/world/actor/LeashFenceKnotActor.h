@@ -8,15 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class ActorInteraction;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class Player;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -30,31 +27,31 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod) /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual int getWidth() const /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual int getHeight() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual void dropItem() /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 142
     virtual bool wouldSurvive(::BlockSource& region) /*override*/;
 
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 120
+    // vIndex: 118
     virtual bool getInteraction(::Player&, ::ActorInteraction& interaction, ::Vec3 const&) /*override*/;
 
     // vIndex: 21
@@ -73,25 +70,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeashFenceKnotActor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
     MCAPI int numberofAnimalsAttached();
 
     MCAPI void removeAnimals();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

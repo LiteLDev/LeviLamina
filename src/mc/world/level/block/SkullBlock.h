@@ -69,10 +69,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkullBlock(::std::string const& nameId, int id);
-
-    MCAPI void _updatedDragonCircuit(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI bool checkMobSpawn(::Level& level, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -82,12 +78,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Block const& getFlattenedBlock(::Block const& block, ::BlockActor const& actor);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

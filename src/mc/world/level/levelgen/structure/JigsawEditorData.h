@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/shared_types/JigsawJointType.h"
-
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
@@ -29,53 +26,16 @@ public:
     // prevent constructor by default
     JigsawEditorData& operator=(JigsawEditorData const&);
     JigsawEditorData(JigsawEditorData const&);
+    JigsawEditorData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawEditorData();
-
-    MCAPI JigsawEditorData(
-        ::std::string const&           name,
-        ::std::string const&           target,
-        ::std::string const&           targetPool,
-        ::std::string const&           finalBlockName,
-        ::SharedTypes::JigsawJointType jointType,
-        int                            placement,
-        int                            selection
-    );
-
-    MCFOLD ::std::string const& getFinalBlock() const;
-
-    MCFOLD ::SharedTypes::JigsawJointType const& getJointType() const;
-
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD int getPlacementPriority() const;
-
-    MCFOLD int getSelectionPriority() const;
-
-    MCFOLD ::std::string const& getTarget() const;
-
-    MCFOLD ::std::string const& getTargetPool() const;
-
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
 
     MCAPI void save(::CompoundTag& tag) const;
-
-    MCAPI void setFinalBlock(::std::string const& finalBlock);
-
-    MCAPI void setJointType(::SharedTypes::JigsawJointType const& jointType);
-
-    MCAPI void setJointTypeVisible(bool visible);
-
-    MCFOLD void setName(::std::string const& name);
-
-    MCFOLD void setTarget(::std::string const& target);
-
-    MCAPI void setTargetPool(::std::string const& targetPool);
 
     MCAPI ~JigsawEditorData();
     // NOLINTEND
@@ -84,22 +44,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::std::string const&           name,
-        ::std::string const&           target,
-        ::std::string const&           targetPool,
-        ::std::string const&           finalBlockName,
-        ::SharedTypes::JigsawJointType jointType,
-        int                            placement,
-        int                            selection
-    );
     // NOLINTEND
 
 public:

@@ -11,7 +11,6 @@
 // clang-format off
 class Player;
 class UserEntityIdentifierComponent;
-namespace Core { class Path; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -32,15 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PermissionsFile(::Core::Path const& filePath);
-
     MCAPI void applyPlayerPermissionsFromDisk(
         ::Player&                              player,
         ::UserEntityIdentifierComponent const& userIdentifier,
         ::CommandPermissionLevel               opCommandPermissionLevel
     );
 
-    MCFOLD ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& getPermissions() const;
+    MCAPI bool fileExists() const;
 
     MCAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
 
@@ -58,19 +55,5 @@ public:
     MCAPI ::FileReadResult reload();
 
     MCAPI void setDefaultPlayerPermission(::Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
-
-    MCAPI ~PermissionsFile();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& filePath);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

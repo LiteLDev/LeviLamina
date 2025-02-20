@@ -27,42 +27,15 @@ public:
     // prevent constructor by default
     TeleportComponent& operator=(TeleportComponent const&);
     TeleportComponent(TeleportComponent const&);
+    TeleportComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TeleportComponent();
-
-    MCFOLD float getDarkTeleportChance();
-
-    MCFOLD float getLightTeleportChance();
-
-    MCFOLD int getMaxTeleportTime();
-
-    MCFOLD int getMinTeleportTime();
-
-    MCFOLD bool getRandomTeleports();
-
-    MCFOLD float getTargetDistance();
-
-    MCFOLD float getTargetTeleportChance();
-
-    MCFOLD int getTeleportTime();
-
-    MCAPI void initFromDefinition(::Actor& actor);
-
     MCAPI bool randomTeleport(::Actor& owner);
-
-    MCAPI void setTeleportTime(int teleportTime);
 
     MCAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
 
     MCAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class BrewingStandBlockActor;
 class ContainerScreenContext;
 class ItemStack;
 class Player;
@@ -62,6 +63,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI BrewingStandContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+
+    MCAPI ::BrewingStandBlockActor* _getBrewingStandEntity();
     // NOLINTEND
 
 public:

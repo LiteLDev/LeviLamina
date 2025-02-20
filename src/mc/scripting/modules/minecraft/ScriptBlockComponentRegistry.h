@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +14,7 @@ namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentReloadNewEven
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentReloadVersionError; }
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryError; }
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentNameError; }
+namespace ScriptModuleMinecraft { struct ScriptNamespaceNameError; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct EngineError; }
@@ -39,7 +40,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Scripting::Result<
         void,
-        ::ScriptModuleMinecraft::ScriptCustomComponentNameError,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
         ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentAlreadyRegisteredError,
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentReloadVersionError,

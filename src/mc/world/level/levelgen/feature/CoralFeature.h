@@ -56,14 +56,9 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
-    MCAPI void _buildSmallClump(
-        ::BlockSource&             region,
-        ::BlockPos const&          pos,
-        ::Random&                  random,
-        ::std::vector<::BlockPos>& topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>&,
-        ::gsl::not_null<::Block const*> block
-    ) const;
+    MCAPI void
+    _buildSmallClump(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::std::vector<::BlockPos>& topDec, ::std::vector<::std::pair<::BlockPos, uchar>>& block, ::gsl::not_null<::Block const*>)
+        const;
 
     MCAPI void _buildSpire(
         ::BlockSource&                                 region,
@@ -74,9 +69,13 @@ public:
         ::gsl::not_null<::Block const*>                block
     ) const;
 
+    MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color) const;
+
     MCAPI int _getColor(::Block const& block) const;
 
-    MCAPI void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
+    MCFOLD void _placeSideDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uchar dir) const;
+
+    MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool
     _setBlock(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
@@ -85,7 +84,25 @@ public:
     _setBlockOnSolid(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color)
         const;
 
-    MCFOLD ::gsl::not_null<::Block const*> _setCoralHangData(int face, int color, int type) const;
+    MCAPI void _starCorners(
+        ::BlockSource&                  region,
+        ::Random&                       random,
+        ::BlockPos const&               pos,
+        ::gsl::not_null<::Block const*> block,
+        float                           iteration,
+        int                             chance,
+        bool                            negateChance
+    ) const;
+
+    MCAPI void _starFormation(
+        ::BlockSource&                  region,
+        ::Random&                       random,
+        ::BlockPos const&               pos,
+        ::gsl::not_null<::Block const*> block,
+        float                           chance,
+        int                             iteration,
+        bool                            negateChance
+    ) const;
     // NOLINTEND
 
 public:

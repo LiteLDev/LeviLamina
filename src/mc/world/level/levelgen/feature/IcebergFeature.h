@@ -55,17 +55,6 @@ public:
         int               elllipseC,
         ::Block const&    blockToPlace
     ) const;
-
-    MCAPI void setIcebergBlock(
-        ::BlockPos const& pos,
-        ::BlockSource&    region,
-        ::Random&         random,
-        int               hDiff,
-        int               height,
-        bool              snowOnTop,
-        bool              isEllipse,
-        ::Block const&    blockToPlace
-    ) const;
     // NOLINTEND
 
 public:

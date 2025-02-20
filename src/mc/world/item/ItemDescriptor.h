@@ -13,12 +13,10 @@ class Block;
 class BlockLegacy;
 class CompoundTag;
 class Item;
-class ItemStack;
 class ReadOnlyBinaryStream;
 struct ItemTag;
 namespace Json { class Value; }
 namespace SharedTypes::Legacy { struct ItemDescriptor; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ItemDescriptor {
@@ -36,6 +34,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::Item const*> mItem;
         ::ll::TypedStorage<2, 2, short>         mAuxValue;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::Block const* getBlock() const;
         // NOLINTEND
     };
 
@@ -146,6 +150,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemDescriptor(ItemDescriptor const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -161,19 +169,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDescriptor();
-
     MCAPI explicit ItemDescriptor(::Block const& block);
 
     MCAPI explicit ItemDescriptor(::BlockLegacy const& block);
 
-    MCAPI explicit ItemDescriptor(::SharedTypes::Legacy::ItemDescriptor const& desc);
-
     MCAPI explicit ItemDescriptor(::ItemTag const& itemTag);
-
-    MCAPI ItemDescriptor(::ItemDescriptor&& rhs);
-
-    MCAPI ItemDescriptor(::ItemDescriptor const& rhs);
 
     MCAPI explicit ItemDescriptor(::ReadOnlyBinaryStream& stream);
 
@@ -183,15 +183,13 @@ public:
 
     MCAPI ItemDescriptor(::Json::Value const& val, ::MolangVersion molangVersion);
 
+    MCAPI void _resolve() const;
+
     MCAPI bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
     MCAPI short getAuxValue() const;
 
     MCAPI ::Block const* getBlock() const;
-
-    MCAPI ::std::string getFullName() const;
-
-    MCAPI uint64 getHash() const;
 
     MCAPI short getId() const;
 
@@ -205,21 +203,13 @@ public:
 
     MCAPI ::std::string getSerializedNameAndAux() const;
 
-    MCAPI bool isDefinedAsItemName() const;
-
     MCAPI bool isNull() const;
 
     MCAPI bool isValid(bool shouldResolve) const;
 
-    MCAPI bool operator!=(::ItemDescriptor const& rhs) const;
-
     MCAPI void operator=(::ItemDescriptor const& rhs);
 
     MCAPI void operator=(::ItemDescriptor&& rhs);
-
-    MCAPI bool operator==(::ItemDescriptor const& rhs) const;
-
-    MCAPI bool sameItem(::ItemStack const& item, bool compareAux) const;
 
     MCAPI bool sameItem(::ItemDescriptor const& otherItemDescriptor, bool compareAux) const;
 
@@ -229,8 +219,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static ::std::optional<::ItemDescriptor> fromTag(::CompoundTag const* tag);
 
     MCAPI static ::SharedTypes::Legacy::ItemDescriptor toSharedTypes(::ItemDescriptor const& id);
@@ -239,19 +227,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Block const& block);
 
     MCAPI void* $ctor(::BlockLegacy const& block);
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::ItemDescriptor const& desc);
-
     MCAPI void* $ctor(::ItemTag const& itemTag);
-
-    MCAPI void* $ctor(::ItemDescriptor&& rhs);
-
-    MCAPI void* $ctor(::ItemDescriptor const& rhs);
 
     MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 

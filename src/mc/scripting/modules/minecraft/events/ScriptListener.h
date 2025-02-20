@@ -17,18 +17,6 @@ public:
     ScriptListener& operator=(ScriptListener const&);
     ScriptListener(ScriptListener const&);
     ScriptListener();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ScriptListener();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ScriptModuleMinecraft

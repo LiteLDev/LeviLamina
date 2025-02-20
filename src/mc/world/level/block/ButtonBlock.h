@@ -17,7 +17,6 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Material;
 class Player;
 class Random;
 class Vec3;
@@ -86,7 +85,7 @@ public:
     // vIndex: 136
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor&) const /*override*/;
 
     // vIndex: 94
@@ -123,7 +122,7 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
     // vIndex: 0
@@ -133,8 +132,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ButtonBlock(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
-
     MCAPI void
     _buttonUnpressed(::BlockSource& region, ::Block const& buttonBlock, ::Vec3 const& pos, ::Actor* sourceActor) const;
 
@@ -152,12 +149,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canAttachTo(::BlockSource& region, ::BlockPos const& pos, uchar facing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, bool sensitive);
     // NOLINTEND
 
 public:
@@ -193,7 +184,7 @@ public:
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 

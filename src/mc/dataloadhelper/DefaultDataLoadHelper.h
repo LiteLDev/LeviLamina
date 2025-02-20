@@ -53,10 +53,10 @@ public:
     virtual ::Direction::Type loadDirection(::Direction::Type direction) /*override*/;
 
     // vIndex: 11
-    virtual ::Rotation loadRotation(::Rotation) /*override*/;
+    virtual ::Rotation loadRotation(::Rotation rotation) /*override*/;
 
     // vIndex: 12
-    virtual ::Mirror loadMirror(::Mirror) /*override*/;
+    virtual ::Mirror loadMirror(::Mirror mirror) /*override*/;
 
     // vIndex: 13
     virtual ::ActorUniqueID loadActorUniqueID(::ActorUniqueID id) /*override*/;
@@ -108,6 +108,10 @@ public:
     MCFOLD ::Vec3 $loadDirection(::Vec3 const& direction);
 
     MCFOLD ::Direction::Type $loadDirection(::Direction::Type direction);
+
+    MCFOLD ::Rotation $loadRotation(::Rotation rotation);
+
+    MCFOLD ::Mirror $loadMirror(::Mirror mirror);
 
     MCFOLD ::ActorUniqueID $loadActorUniqueID(::ActorUniqueID id);
 

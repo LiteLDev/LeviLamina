@@ -3,11 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
-#include "mc/external/scripting/script_engine/Promise.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
 
 // auto generated forward declare list
@@ -15,12 +16,15 @@
 class Player;
 namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormRejectError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponse; }
+namespace ScriptModuleMinecraftServerUI { class ScriptMessageFormResponseV2; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { struct ContextConfig; }
+namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {
@@ -51,6 +55,9 @@ public:
     MCAPI ::Scripting::Result_deprecated<::Json::Value>
     _buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
 
+    MCAPI ::Scripting::Result_deprecated<::Json::Value>
+    _buildJsonV2(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+
     MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormData>
     body(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text);
 
@@ -77,6 +84,20 @@ public:
         ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
     show(
+        ::Scripting::ContextConfig const&      config,
+        ::Scripting::ScriptObjectFactory&      factory,
+        ::Scripting::DependencyLocator&        locator,
+        ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer
+    );
+
+    MCAPI ::Scripting::Result<
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageFormResponseV2>,
+            ::ScriptModuleMinecraftServerUI::ScriptFormRejectError,
+            void>,
+        ::Scripting::EngineError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    showV2(
         ::Scripting::ContextConfig const&      config,
         ::Scripting::ScriptObjectFactory&      factory,
         ::Scripting::DependencyLocator&        locator,

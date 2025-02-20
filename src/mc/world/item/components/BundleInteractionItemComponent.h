@@ -10,7 +10,6 @@
 // clang-format off
 class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_21_30 { struct BundleInteractionItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -35,29 +34,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BundleInteractionItemComponent(
-        ::SharedTypes::v1_21_30::BundleInteractionItemComponent const& component
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_30::BundleInteractionItemComponent const& component);
     // NOLINTEND
 
 public:

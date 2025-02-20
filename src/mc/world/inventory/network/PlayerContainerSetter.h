@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
-class Player;
 // clang-format on
 
 class PlayerContainerSetter : public ::IPlayerContainerSetter {
@@ -38,18 +37,6 @@ public:
 
     // vIndex: 3
     virtual void setPlayerUIItem(int slot, ::ItemStack const& item) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayerContainerSetter(::Player& player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:

@@ -36,21 +36,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CommandOriginLoader(::ServerLevel& level);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::CommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerLevel& level);
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/facing/Name.h"
+#include "mc/legacy/facing/Name.h"
 #include "mc/world/actor/bhave/BehaviorStatus.h"
 #include "mc/world/actor/bhave/node/BehaviorNode.h"
 

@@ -80,11 +80,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ObserverBlock(::std::string const& nameId, int id);
-
-    MCAPI uchar _getPoweredDirection(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool calledFromLoad, bool turnOn) const;
+
+    MCAPI void _startSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
     _updateState(::BlockSource& region, ::BlockPos const& pos, ::PulseCapacitor& component, bool turnOn) const;
@@ -96,12 +94,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Tick const& MAX_TICK_DELAY();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

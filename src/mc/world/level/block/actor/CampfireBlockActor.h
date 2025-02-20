@@ -8,13 +8,12 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class HashedString;
+class ILevel;
 class ItemInstance;
-class Level;
 class SaveContext;
 // clang-format on
 
@@ -35,7 +34,7 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -59,31 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CampfireBlockActor(::BlockPos const& pos);
-
     MCAPI void _finishCooking(::BlockSource& region, int slot);
 
     MCAPI void dropAllItems(::BlockSource& region);
 
     MCAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
 
-    MCAPI ::ItemInstance const& getCookingItem(int slot);
-
-    MCAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& MAX_SMOKE_THRESHOLD_COUNTER();
-
-    MCAPI static int const& MIN_SMOKE_THRESHOLD_COUNTER();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCAPI bool setItem(::BlockSource& item, ::ItemInstance const&);
     // NOLINTEND
 
 public:
@@ -97,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

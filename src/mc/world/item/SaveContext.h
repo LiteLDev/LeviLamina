@@ -21,12 +21,4 @@ public:
     // NOLINTBEGIN
     ::SaveContext::SaveUseCase mSaveUseCase{SaveUseCase::Clone};
     // NOLINTEND
-
-    constexpr SaveContext(SaveUseCase saveUseCase = SaveUseCase::Clone) : mSaveUseCase{saveUseCase} {}
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::SaveContext::SaveOperation getOperation() const;
-    // NOLINTEND
 };

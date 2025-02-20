@@ -7,10 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
 class CompoundTag;
 class Container;
 class ItemDescriptor;
+class ItemStack;
 class ItemStackBase;
 class Level;
 class Vec3;
@@ -76,17 +78,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HorseArmorItem(::std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
-
-    MCFOLD ::HorseArmorItem::Tier getTier() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void ResetDefaultHorseLeatherColor();
+    MCAPI static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
     // NOLINTEND
 
 public:
@@ -95,12 +89,6 @@ public:
     MCAPI static ::mce::Color& DEFAULT_HORSE_LEATHER_COLOR();
 
     MCAPI static ::std::add_lvalue_reference_t<int const[]> mHealthPerTier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, int icon, ::HorseArmorItem::Tier tier);
     // NOLINTEND
 
 public:

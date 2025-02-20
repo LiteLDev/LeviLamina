@@ -35,18 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FloatGoal(::Mob& mob, bool sinkWithPassengers);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, bool sinkWithPassengers);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

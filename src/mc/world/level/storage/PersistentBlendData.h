@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/chunk/BlendVersion.h"
+
+// auto generated forward declare list
+// clang-format off
+class StringByteInput;
+// clang-format on
+
 struct PersistentBlendData {
 public:
     // member variables
@@ -17,4 +25,22 @@ public:
     PersistentBlendData& operator=(PersistentBlendData const&);
     PersistentBlendData(PersistentBlendData const&);
     PersistentBlendData();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PersistentBlendData(::StringByteInput& stream);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::PersistentBlendData createNoBlend(::BlendVersion blendVersion);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::StringByteInput& stream);
+    // NOLINTEND
 };

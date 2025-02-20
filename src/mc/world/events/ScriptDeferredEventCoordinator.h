@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/events/EventCoordinatorNoTracking.h"
 
 // auto generated forward declare list
 // clang-format off
 class ScriptDeferredEventListener;
-namespace Json { class Value; }
-namespace Scripting { struct ModuleDescriptor; }
+class ScriptDeferredFlushTracker;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class ScriptDeferredEventCoordinator : public ::EventCoordinatorNoTracking<::ScriptDeferredEventListener> {
@@ -24,7 +25,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkc51bd3;
+        ::ll::UntypedStorage<8, 8>  mUnk6fef1a;
         ::ll::UntypedStorage<8, 64> mUnkce87df;
         // NOLINTEND
 
@@ -48,6 +49,18 @@ public:
     };
 
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
+            void(::ScriptDeferredFlushTracker&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>>
+        mFlushCoroutinePublisher;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -57,28 +70,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _sendFlushBlockCustomComponentAfterEvents();
+    MCAPI ScriptDeferredEventCoordinator();
 
-    MCAPI bool _sendFlushEditorDataStoreAfterEvents();
+    MCAPI void _sendFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI bool _sendFlushEditorExtensionContextAfterEvents();
+    MCAPI void _sendFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI bool _sendFlushItemCustomComponentAfterEvents();
+    MCAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI bool _sendFlushSystemAfterEvents();
+    MCAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI bool _sendFlushWorldAfterEvents();
+    MCAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void sendAllDeferredEvents();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
+    MCAPI void _sendFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
     // NOLINTEND
 
 public:
@@ -86,6 +90,12 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
     sEventExecutionOrder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

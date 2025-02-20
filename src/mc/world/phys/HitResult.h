@@ -14,7 +14,6 @@ class Actor;
 class BlockPos;
 class Vec3;
 class WeakEntityRef;
-struct AABBHitResult;
 // clang-format on
 
 class HitResult {
@@ -48,23 +47,9 @@ public:
     // NOLINTBEGIN
     MCAPI HitResult();
 
-    MCAPI explicit HitResult(::AABBHitResult const& hit);
-
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
-
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
+    MCAPI HitResult(::HitResult const&);
 
     MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
-
-    MCAPI HitResult(
-        ::Vec3 const&     startPos,
-        ::Vec3 const&     rayDir,
-        ::BlockPos const& blockPos,
-        uchar             facing,
-        ::Vec3 const&     pos
-    );
-
-    MCAPI float distanceTo(::Actor const& otherEntity) const;
 
     MCAPI ::Actor* getEntity() const;
 
@@ -82,16 +67,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::AABBHitResult const& hit);
-
-    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity);
-
-    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Vec3 const& rayEnd);
+    MCAPI void* $ctor(::HitResult const&);
 
     MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
-
-    MCAPI void*
-    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::BlockPos const& blockPos, uchar facing, ::Vec3 const& pos);
     // NOLINTEND
 
 public:

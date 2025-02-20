@@ -12,7 +12,7 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class WitherRoseBlock : public ::FlowerBlock {
@@ -20,10 +20,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 74
@@ -52,18 +51,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WitherRoseBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -72,7 +59,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
 

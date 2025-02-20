@@ -14,7 +14,7 @@
 // clang-format off
 namespace Core { class FileImpl; }
 namespace Core { class FileOpenMode; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace Core { struct DirectoryIterationItem; }
 // clang-format on
@@ -53,76 +53,76 @@ public:
     // vIndex: 7
     virtual ::Core::Result _openFile(
         ::std::unique_ptr<::Core::FileImpl>&,
-        ::Core::Path const&,
+        ::Core::PathView,
         ::Core::FileOpenMode,
         ::Core::FileBufferingMode
     ) /*override*/;
 
     // vIndex: 8
-    virtual bool _fileExists(::Core::Path const&) /*override*/;
+    virtual bool _fileExists(::Core::PathView) /*override*/;
 
     // vIndex: 9
-    virtual ::Core::Result _deleteFile(::Core::Path const&) /*override*/;
+    virtual ::Core::Result _deleteFile(::Core::PathView) /*override*/;
 
     // vIndex: 10
-    virtual ::Core::Result _getFileSize(::Core::Path const&, uint64*) /*override*/;
+    virtual ::Core::Result _getFileSize(::Core::PathView, uint64*) /*override*/;
 
     // vIndex: 11
-    virtual ::Core::Result _renameFile(::Core::Path const&, ::Core::Path const&) /*override*/;
+    virtual ::Core::Result _renameFile(::Core::PathView, ::Core::PathView) /*override*/;
 
     // vIndex: 12
-    virtual ::Core::Result _createEmptyFile(::Core::Path const& fileName) /*override*/;
+    virtual ::Core::Result _createEmptyFile(::Core::PathView fileName) /*override*/;
 
     // vIndex: 16
-    virtual ::Core::Result _createOneDirectory(::Core::Path const&) /*override*/;
+    virtual ::Core::Result _createOneDirectory(::Core::PathView) /*override*/;
 
     // vIndex: 17
-    virtual ::Core::Result _createOneDirectoryIfNotExisting(::Core::Path const& directoryPath) /*override*/;
+    virtual ::Core::Result _createOneDirectoryIfNotExisting(::Core::PathView directoryPath) /*override*/;
 
     // vIndex: 18
-    virtual ::Core::Result _createDirectoryRecursively(::Core::Path const& directoryPath) /*override*/;
+    virtual ::Core::Result _createDirectoryRecursively(::Core::PathView directoryPath) /*override*/;
 
     // vIndex: 19
-    virtual bool _directoryExists(::Core::Path const&) /*override*/;
+    virtual bool _directoryExists(::Core::PathView) /*override*/;
 
     // vIndex: 20
-    virtual ::Core::Result _deleteEmptyDirectory(::Core::Path const&) /*override*/;
+    virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView) /*override*/;
 
     // vIndex: 21
-    virtual ::Core::Result _deleteDirectoryAndContentsRecursively(::Core::Path const& directoryPath) /*override*/;
+    virtual ::Core::Result _deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath) /*override*/;
 
     // vIndex: 22
-    virtual ::Core::Result _deleteDirectoryContentsRecursively(::Core::Path const& directoryPath) /*override*/;
+    virtual ::Core::Result _deleteDirectoryContentsRecursively(::Core::PathView directoryPath) /*override*/;
 
     // vIndex: 24
-    virtual ::Core::Result _renameDirectory(::Core::Path const&, ::Core::Path const&) /*override*/;
+    virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
     // vIndex: 25
     virtual ::Core::Result
-    _iterateOverDirectory(::Core::Path const&, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/
+        _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/
         ;
 
     // vIndex: 31
-    virtual bool _fileOrDirectoryExists(::Core::Path const&) /*override*/;
+    virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
 
     // vIndex: 33
-    virtual ::Core::Result _getEntryType(::Core::Path const&, ::Core::FileType&) /*override*/;
+    virtual ::Core::Result _getEntryType(::Core::PathView, ::Core::FileType&) /*override*/;
 
     // vIndex: 34
-    virtual ::Core::Result _addIgnoredThrottlePath(::Core::Path const&) /*override*/;
+    virtual ::Core::Result _addIgnoredThrottlePath(::Core::PathView) /*override*/;
 
     // vIndex: 35
-    virtual ::Core::Result _removeIgnoredThrottlePath(::Core::Path const&) /*override*/;
+    virtual ::Core::Result _removeIgnoredThrottlePath(::Core::PathView) /*override*/;
 
     // vIndex: 36
     virtual ::Core::Result
-    _createFlatFile(::Core::Path const& sourceDirectoryPath, ::Core::Path const& targetDirectoryPath) /*override*/;
+    _createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) /*override*/;
 
     // vIndex: 44
-    virtual ::Core::Result _getLastModificationTime(::Core::Path const&, int64*) /*override*/;
+    virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) /*override*/;
 
     // vIndex: 45
-    virtual ::Core::Result _copyTimeAndAccessRights(::Core::Path const&, ::Core::Path const&) /*override*/;
+    virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) /*override*/;
 
     // vIndex: 46
     virtual ::Core::Result _endTransaction() /*override*/;

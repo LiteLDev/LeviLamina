@@ -20,35 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit XXHash(uint64 seed);
-
-    MCAPI void _updateImpl(void const* input, uint64 length);
-
-    MCAPI uint64 digest();
-
-    MCFOLD void update(bool data);
-
-    MCAPI void update(uchar);
-
-    MCAPI void update(float data);
-
-    MCFOLD void update(int data);
-
-    MCAPI void update(uint);
-
     MCAPI ~XXHash();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static uint64 _hash64Impl(void const* input, uint64 len, uint64 seed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 seed);
     // NOLINTEND
 
 public:

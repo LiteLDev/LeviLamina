@@ -6,9 +6,9 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/resources/JsonBetaState.h"
-#include "mc/world/actor/ActorLocation.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/enchanting/Enchant.h"
@@ -38,7 +38,6 @@ class Level;
 class ListTag;
 class Mob;
 class Player;
-class RenderParams;
 class SemVersion;
 class Vec3;
 struct ComponentItemDataAll_Latest;
@@ -251,7 +250,7 @@ public:
     virtual int getCooldownTime() const /*override*/;
 
     // vIndex: 101
-    virtual ::ActorLocation getEquipLocation() const /*override*/;
+    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
     // vIndex: 102
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
@@ -286,14 +285,10 @@ public:
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
 
     // vIndex: 123
     virtual bool shouldUseJsonForRenderMatrix() const;
-
-    // vIndex: 8
-    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
-        /*override*/;
 
     // vIndex: 27
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag() const /*override*/;
@@ -333,6 +328,10 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> _buildItemPropertiesNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
+    MCAPI ::std::unique_ptr<::ListTag> _buildItemTagsNetworkTag() const;
+
+    MCAPI bool _doesNotTakeDurabilityDamage() const;
+
     MCAPI void _initializeLoadedComponents(
         ::std::optional<::SemVersion>  documentVersion,
         ::std::optional<::Experiments> _experiments
@@ -359,10 +358,6 @@ public:
 
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool checkComponentDataForContentErrors() const;
-
-    MCAPI float getMovementModifier() const;
-
     MCAPI void
     init(::ComponentItemDataAll_Latest&& data, ::SemVersion const& documentVersion, ::Experiments const& experiments);
 
@@ -385,10 +380,6 @@ public:
 
     MCAPI ::Bedrock::PubSub::Connector<void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>&
     onUseTimeDepleted();
-
-    MCAPI void setAttackDamage(int damage);
-
-    MCAPI void setCanDestroyInCreative(bool canDestroyInCreative);
     // NOLINTEND
 
 public:
@@ -463,7 +454,7 @@ public:
 
     MCAPI short $getMaxDamage() const;
 
-    MCFOLD int $getAttackDamage() const;
+    MCAPI int $getAttackDamage() const;
 
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
@@ -553,11 +544,9 @@ public:
 
     MCAPI bool $canBeCharged() const;
 
-    MCFOLD ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
-
-    MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
 
@@ -565,7 +554,7 @@ public:
 
     MCAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
 
-    MCAPI bool
+    MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class BiomeRegistry;
 // clang-format on
 
 namespace OperationNodeFilters {
@@ -26,18 +25,6 @@ public:
     Shore& operator=(Shore const&);
     Shore(Shore const&);
     Shore();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Shore(::BiomeRegistry const& registry, ::Biome const& defaultShore);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeRegistry const& registry, ::Biome const& defaultShore);
-    // NOLINTEND
 };
 
 } // namespace OperationNodeFilters

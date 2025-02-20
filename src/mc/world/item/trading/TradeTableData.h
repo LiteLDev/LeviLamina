@@ -25,7 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeTableData(::SharedTypes::v1_21_30::TradeTableData parsedData, ::ItemRegistryRef itemRegistry);
+    MCAPI TradeTableData(
+        ::SharedTypes::v1_21_30::TradeTableData parsedData,
+        ::ItemRegistryRef                       itemRegistry,
+        bool                                    usingUpcomingCreatorFeaturesExperiment
+    );
 
     MCAPI ~TradeTableData();
     // NOLINTEND
@@ -39,7 +43,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeTableData parsedData, ::ItemRegistryRef itemRegistry);
+    MCAPI void* $ctor(
+        ::SharedTypes::v1_21_30::TradeTableData parsedData,
+        ::ItemRegistryRef                       itemRegistry,
+        bool                                    usingUpcomingCreatorFeaturesExperiment
+    );
     // NOLINTEND
 
 public:

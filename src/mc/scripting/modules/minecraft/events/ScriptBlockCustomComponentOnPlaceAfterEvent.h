@@ -8,9 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -31,32 +29,9 @@ public:
     ScriptBlockCustomComponentOnPlaceAfterEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentOnPlaceAfterEvent(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                          scope
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCFOLD static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
-    tryGetComponentsToExecute(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const& eventData
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                          scope
-    );
     // NOLINTEND
 };
 

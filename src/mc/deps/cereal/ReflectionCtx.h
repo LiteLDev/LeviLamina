@@ -10,6 +10,10 @@ namespace cereal {
 
 struct ReflectionCtx : public ::cereal::internal::ReflectionContext, public ::Bedrock::EnableNonOwnerReferences {
 public:
+    // prevent constructor by default
+    ReflectionCtx& operator=(ReflectionCtx const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -19,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReflectionCtx();
+    MCAPI ReflectionCtx(::cereal::ReflectionCtx const&);
     // NOLINTEND
 
 public:
@@ -31,7 +35,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::cereal::ReflectionCtx const&);
     // NOLINTEND
 
 public:

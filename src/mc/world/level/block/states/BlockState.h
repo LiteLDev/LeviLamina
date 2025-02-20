@@ -26,29 +26,9 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit StateListNode(::BlockState* state);
-
-        MCAPI ~StateListNode();
-        // NOLINTEND
-
-    public:
         // static variables
         // NOLINTBEGIN
         MCAPI static ::BlockState::StateListNode*& mHead();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockState* state);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -72,12 +52,6 @@ public:
 
     // vIndex: 2
     virtual bool fromNBT(::CompoundTag const&, int&) const = 0;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void forEachState(::std::function<bool(::BlockState const&)> callback);
     // NOLINTEND
 
 public:

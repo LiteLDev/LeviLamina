@@ -11,15 +11,12 @@
 class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct PlayerPositionModeComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class ResetPositionModeSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createResetPositionModeSystem();
-
     MCAPI static void tickResetPositionModeSystem(
         ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::PlayerPositionModeComponent>
             view

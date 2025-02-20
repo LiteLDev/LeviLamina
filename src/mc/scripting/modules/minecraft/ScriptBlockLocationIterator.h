@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
+namespace ScriptModuleMinecraft { class ScriptBlockVolumeIterable; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -18,7 +20,8 @@ class ScriptBlockLocationIterator
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkdea65b;
+    ::ll::UntypedStorage<8, 32> mUnk38fd69;
+    ::ll::UntypedStorage<8, 8>  mUnkdea65b;
     // NOLINTEND
 
 public:
@@ -30,12 +33,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockLocationIterator(::ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
-
-    MCAPI explicit ScriptBlockLocationIterator(::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockLocationIterator&
-    operator=(::ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
+    MCAPI ScriptBlockLocationIterator(
+        ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
+            strongTypedIterableHandle
+    );
     // NOLINTEND
 
 public:
@@ -47,9 +49,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
-
-    MCAPI void* $ctor(::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator);
+    MCAPI void* $ctor(
+        ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
+            strongTypedIterableHandle
+    );
     // NOLINTEND
 };
 

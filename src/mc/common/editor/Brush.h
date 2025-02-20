@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
 #include "mc/editor/services/native_brush/BrushShapeMethod.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
 
 namespace Editor::Brush {
 // functions

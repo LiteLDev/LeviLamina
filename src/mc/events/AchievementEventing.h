@@ -35,9 +35,6 @@ public:
 
     MCAPI void AwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievementId);
 
-    MCAPI void
-    BlockBroken(::Player const& player, ::Block const& destroyedBlock, int method, int variantData, ushort auxType);
-
     MCAPI void CaravanChanged(::Mob& mob, int caravanSize);
 
     MCAPI void ItemUsed(::Player const& player, ::ItemDescriptor const& item, uint useMethod);
@@ -52,8 +49,6 @@ public:
 
     MCAPI void
     PlayerTravelled(::Player const& player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome);
-
-    MCAPI ~AchievementEventing();
     // NOLINTEND
 
 public:
@@ -66,12 +61,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

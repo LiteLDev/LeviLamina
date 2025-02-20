@@ -5,9 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class InventoryAction;
-class InventoryTransaction;
 class ItemStack;
-class Player;
 // clang-format on
 
 class InventoryTransactionManager {
@@ -29,31 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InventoryTransactionManager(::Player& player);
-
     MCAPI void _createServerSideAction(::ItemStack const& oldItem, ::ItemStack const& newItem);
-
-    MCFOLD void _logExpectedActions() const;
 
     MCAPI void addAction(::InventoryAction const& action, bool forceBalanced);
 
-    MCAPI void addExpectedAction(::InventoryAction const& action);
-
     MCAPI void forceBalanceTransaction();
 
-    MCFOLD ::std::unique_ptr<::InventoryTransaction> const& getCurrentTransaction() const;
-
-    MCAPI void reset();
-
-    MCAPI void resetExpectedActions();
-
     MCAPI ~InventoryTransactionManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:

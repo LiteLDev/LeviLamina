@@ -9,9 +9,9 @@
 // clang-format off
 class Block;
 class CompoundTag;
+class ILevel;
 class ItemDescriptor;
 class ItemStackBase;
-class Level;
 // clang-format on
 
 class LeavesBlockItem : public ::BlockItem {
@@ -35,7 +35,7 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 96
-    virtual void fixupCommon(::ItemStackBase& stack, ::Level& level) const /*override*/;
+    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
     // vIndex: 0
     virtual ~LeavesBlockItem() /*override*/ = default;
@@ -57,7 +57,7 @@ public:
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
-    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::Level& level) const;
+    MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
     // NOLINTEND
 
 public:

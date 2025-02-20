@@ -20,7 +20,6 @@ class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
-class Material;
 class Player;
 class Vec3;
 // clang-format on
@@ -98,8 +97,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FenceBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void fetchPathableNeighbors(
         ::std::vector<::BlockPos>& outNeighbors,
         ::BlockSource&             region,
@@ -112,12 +109,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

@@ -7,7 +7,6 @@
 class Biome;
 class BiomeArea;
 class BlockPos;
-class BlockPosIterator;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class LevelChunk;
@@ -47,12 +46,6 @@ public:
 
     // vIndex: 9
     virtual bool hasByHashId(uint64) const = 0;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::BlockPosIterator getAreaIterator(::BoundingBox const& areaBounds, uint scale);
     // NOLINTEND
 
 public:

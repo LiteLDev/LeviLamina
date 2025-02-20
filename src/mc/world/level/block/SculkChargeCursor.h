@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkChargeCursor(::CompoundTag const& tag);
+    MCAPI void load(::CompoundTag const& tag);
 
     MCAPI void update(
         ::IBlockWorldGenAPI& target,
@@ -56,13 +56,6 @@ public:
 
     MCAPI static ::SculkBehavior const& _getSculkBehavior(::Block const& block);
 
-    MCAPI static ::std::optional<::BlockPos> _getValidMovementPos(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::SculkSpreader&     spreader,
-        ::Random&            random
-    );
-
     MCAPI static bool
     _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);
     // NOLINTEND
@@ -75,11 +68,5 @@ public:
     MCAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
 
     MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CompoundTag const& tag);
     // NOLINTEND
 };

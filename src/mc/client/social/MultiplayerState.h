@@ -19,6 +19,7 @@ enum class MultiplayerState : int {
     ClientInGame                    = 10,
     ClientNATDiscovery              = 12,
     ClientWaitingForServerSignaling = 13,
+    ClientWaitingForClientSignaling = 14,
 };
 
 }

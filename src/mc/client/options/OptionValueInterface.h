@@ -3,21 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/options/CloudQuality.h"
 #include "mc/client/options/PointLightLODingQuality.h"
 #include "mc/client/options/PointLightShadowQuality.h"
 #include "mc/client/options/ReflectionsQuality.h"
 #include "mc/client/options/ShadowQuality.h"
+#include "mc/client/options/UpscalingMode.h"
 #include "mc/client/options/UpscalingQuality.h"
 #include "mc/client/options/VRHUDPosition.h"
 #include "mc/client/options/VolumetricFogQuality.h"
 
 // auto generated forward declare list
 // clang-format off
+struct CloudConfiguration;
 struct PointLightLODingConfiguration;
 struct PointLightShadowConfiguration;
 struct ReflectionConfiguration;
-struct ResolutionConfiguration;
 struct ShadowConfiguration;
+struct UpscalingConfiguration;
 struct VolumetricFogConfiguration;
 // clang-format on
 
@@ -71,46 +74,55 @@ public:
     virtual void setShadowConfiguration(::ShadowConfiguration const&) = 0;
 
     // vIndex: 15
-    virtual void setPointLightShadowQuality(::PointLightShadowQuality const) const = 0;
+    virtual void setCloudQuality(::CloudQuality const) const = 0;
 
     // vIndex: 16
-    virtual void setPointLightShadowConfiguration(::PointLightShadowConfiguration const&) = 0;
+    virtual void setCloudConfiguration(::CloudConfiguration const&) = 0;
 
     // vIndex: 17
-    virtual void setVolumetricFogQuality(::VolumetricFogQuality const) const = 0;
+    virtual void setPointLightShadowQuality(::PointLightShadowQuality const) const = 0;
 
     // vIndex: 18
-    virtual void setVolumetricFogConfiguration(::VolumetricFogConfiguration const&) = 0;
+    virtual void setPointLightShadowConfiguration(::PointLightShadowConfiguration const&) = 0;
 
     // vIndex: 19
-    virtual void setPointLightLODingQuality(::PointLightLODingQuality const) = 0;
+    virtual void setVolumetricFogQuality(::VolumetricFogQuality const) const = 0;
 
     // vIndex: 20
-    virtual void setPointLightLODingConfiguration(::PointLightLODingConfiguration const&) = 0;
+    virtual void setVolumetricFogConfiguration(::VolumetricFogConfiguration const&) = 0;
 
     // vIndex: 21
-    virtual void setReflectionsQuality(::ReflectionsQuality const) const = 0;
+    virtual void setPointLightLODingQuality(::PointLightLODingQuality const) = 0;
 
     // vIndex: 22
-    virtual void setReflectionConfiguration(::ReflectionConfiguration const&) = 0;
+    virtual void setPointLightLODingConfiguration(::PointLightLODingConfiguration const&) = 0;
 
     // vIndex: 23
-    virtual void setBloomMultiplier(float const) const = 0;
+    virtual void setReflectionsQuality(::ReflectionsQuality const) const = 0;
 
     // vIndex: 24
-    virtual void setPlayerUIGamma(float const) const = 0;
+    virtual void setReflectionConfiguration(::ReflectionConfiguration const&) = 0;
 
     // vIndex: 25
-    virtual void setBloomEnabledDefault(bool) = 0;
+    virtual void setBloomMultiplier(float const) const = 0;
 
     // vIndex: 26
-    virtual bool getBloomEnabledDefault() const = 0;
+    virtual void setPlayerUIGamma(float const) const = 0;
 
     // vIndex: 27
-    virtual void setDeferredResolutionConfiguration(::ResolutionConfiguration const&) = 0;
+    virtual void setBloomEnabledDefault(bool) = 0;
 
     // vIndex: 28
+    virtual bool getBloomEnabledDefault() const = 0;
+
+    // vIndex: 29
+    virtual void setDeferredUpscalingConfiguration(::UpscalingConfiguration const&) = 0;
+
+    // vIndex: 30
     virtual void setDeferredUpscalingQuality(::UpscalingQuality const) const = 0;
+
+    // vIndex: 31
+    virtual void setDeferredUpscalingMode(::UpscalingMode const) const = 0;
     // NOLINTEND
 
 public:

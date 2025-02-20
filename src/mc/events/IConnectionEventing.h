@@ -37,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IConnectionEventing();
+    virtual ~IConnectionEventing() = default;
 
     // vIndex: 1
     virtual void
@@ -53,7 +53,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

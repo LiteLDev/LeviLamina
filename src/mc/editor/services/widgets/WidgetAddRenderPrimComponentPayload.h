@@ -8,7 +8,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
+namespace Editor::Network { class WidgetPrimComponentAxialSphere; }
+namespace Editor::Network { class WidgetPrimComponentBox; }
+namespace Editor::Network { class WidgetPrimComponentDisc; }
+namespace Editor::Network { class WidgetPrimComponentLine; }
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -19,7 +25,7 @@ class WidgetAddRenderPrimComponentPayload
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 52> mUnk25a3a6;
+    ::ll::UntypedStorage<4, 48> mUnk25a3a6;
     // NOLINTEND
 
 public:
@@ -36,9 +42,49 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI WidgetAddRenderPrimComponentPayload(
+        ::mce::UUID const&   serviceId,
+        ::mce::UUID const&   groupId,
+        ::mce::UUID const&   widgetId,
+        ::mce::UUID const&   componentId,
+        ::std::string const& componentName,
+        ::Vec3 const&        pos,
+        bool                 visible,
+        bool                 lockToSurface,
+        ::std::variant<
+            ::Editor::Network::WidgetPrimComponentBox,
+            ::Editor::Network::WidgetPrimComponentLine,
+            ::Editor::Network::WidgetPrimComponentDisc,
+            ::Editor::Network::WidgetPrimComponentAxialSphere> primitive
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::mce::UUID const&   serviceId,
+        ::mce::UUID const&   groupId,
+        ::mce::UUID const&   widgetId,
+        ::mce::UUID const&   componentId,
+        ::std::string const& componentName,
+        ::Vec3 const&        pos,
+        bool                 visible,
+        bool                 lockToSurface,
+        ::std::variant<
+            ::Editor::Network::WidgetPrimComponentBox,
+            ::Editor::Network::WidgetPrimComponentLine,
+            ::Editor::Network::WidgetPrimComponentDisc,
+            ::Editor::Network::WidgetPrimComponentAxialSphere> primitive
+    );
     // NOLINTEND
 
 public:

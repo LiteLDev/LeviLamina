@@ -9,7 +9,6 @@
 // clang-format off
 class ChunkPos;
 class Dimension;
-class LevelChunk;
 // clang-format on
 
 class ChunkKey {
@@ -23,20 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChunkKey(::LevelChunk const& lc);
-
-    MCAPI ChunkKey(::ChunkPos const& pos, ::DimensionType id);
-
-    MCAPI ::std::string_view asSpan() const;
-
     MCAPI uint64 hashCode() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelChunk const& lc);
-
-    MCAPI void* $ctor(::ChunkPos const& pos, ::DimensionType id);
     // NOLINTEND
 };

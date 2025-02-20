@@ -8,44 +8,17 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDamageSource;
-class ActorDefinitionGroup;
-class Block;
-class BlockPos;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Pig : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite) /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
     virtual ~Pig() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    Pig(::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -58,8 +31,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $_hurt(::ActorDamageSource const& source, float dmg, bool knock, bool ignite);
-
-    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

@@ -31,13 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 12
     virtual ::Vec3 getFiringPos() const /*override*/;
 
-    // vIndex: 171
+    // vIndex: 166
     virtual float getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const /*override*/;
 
     // vIndex: 8
@@ -52,8 +52,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI void preAiStep();
     // NOLINTEND
 
 public:

@@ -3,16 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/world/scores/PlayerScoreSetFunction.h"
 
 // auto generated forward declare list
 // clang-format off
-class Objective;
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardScoreInfo; }
 // clang-format on
@@ -45,6 +45,8 @@ public:
         int                      score
     );
 
+    MCAPI ::ScriptModuleMinecraft::ScriptScoreboard* _tryGetScoreboard() const;
+
     MCAPI ::Scripting::Result_deprecated<int> addScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
@@ -76,6 +78,11 @@ public:
                    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
                    ::std::string> const& participant) const;
 
+    MCFOLD ::ScriptModuleMinecraft::ScriptScoreboardObjective&
+    operator=(::ScriptModuleMinecraft::ScriptScoreboardObjective&&);
+
+    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptScoreboardObjective const& other) const;
+
     MCAPI ::Scripting::Result_deprecated<bool>
     removeParticipant(::std::variant<
                       ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
@@ -89,8 +96,6 @@ public:
             ::std::string>& participant,
         int                 score
     );
-
-    MCAPI ::Objective* tryGetObjective() const;
     // NOLINTEND
 
 public:

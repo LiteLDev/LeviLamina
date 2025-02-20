@@ -6,7 +6,7 @@ struct DurableDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1112> mUnk81c89b;
+    ::ll::UntypedStorage<8, 1208> mUnk81c89b;
     ::ll::UntypedStorage<8, 1248> mUnkc2b3b2;
     // NOLINTEND
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Dimension;
 // clang-format on
 
 class AddActorEntityProxy : public ::IAddActorEntityProxy {
@@ -37,18 +36,6 @@ public:
 
     // vIndex: 0
     virtual ~AddActorEntityProxy() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit AddActorEntityProxy(::Dimension& dimension);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
     // NOLINTEND
 
 public:

@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class FertilizeFarmBlockGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -30,20 +28,13 @@ public:
     // prevent constructor by default
     FertilizeFarmBlockDefinition& operator=(FertilizeFarmBlockDefinition const&);
     FertilizeFarmBlockDefinition(FertilizeFarmBlockDefinition const&);
+    FertilizeFarmBlockDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~FertilizeFarmBlockDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FertilizeFarmBlockDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::FertilizeFarmBlockGoal& goal) const;
     // NOLINTEND
 
 public:
@@ -54,12 +45,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FertilizeFarmBlockDefinition>>&
             root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

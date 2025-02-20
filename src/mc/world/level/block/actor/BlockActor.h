@@ -19,13 +19,14 @@ class CompoundTag;
 class Container;
 class DataLoadHelper;
 class IConstBlockSource;
-class Level;
+class ILevel;
 class LevelChunk;
 class PistonBlockActor;
 class Player;
+class ProfanityContext;
 class SaveContext;
-class UIProfanityContext;
 class Vec3;
+namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
 class BlockActor {
@@ -45,25 +46,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                          mTickCount;
-    ::ll::TypedStorage<8, 8, ::Block const*>               mBlock;
-    ::ll::TypedStorage<4, 4, float>                        mDestroyTimer;
-    ::ll::TypedStorage<4, 12, ::Vec3>                      mDestroyDirection;
-    ::ll::TypedStorage<4, 4, float>                        mDestroyProgress;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                  mPosition;
-    ::ll::TypedStorage<4, 24, ::AABB>                      mBB;
-    ::ll::TypedStorage<4, 4, ::BlockActorType const>       mType;
-    ::ll::TypedStorage<4, 4, ::BlockActorRendererId>       mRendererId;
-    ::ll::TypedStorage<8, 32, ::std::string>               mCustomName;
-    ::ll::TypedStorage<8, 32, ::std::string>               mFilteredCustomName;
-    ::ll::TypedStorage<4, 4, int>                          mRepairCost;
-    ::ll::TypedStorage<1, 1, bool>                         mClientSideOnly;
-    ::ll::TypedStorage<1, 1, bool>                         mIsMovable;
-    ::ll::TypedStorage<1, 1, bool>                         mSaveCustomName;
-    ::ll::TypedStorage<1, 1, bool>                         mCanRenderCustomName;
-    ::ll::TypedStorage<4, 4, float const>                  signShadowRadius;
-    ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData> mTerrainInterlockData;
-    ::ll::TypedStorage<1, 1, bool>                         mChanged;
+    ::ll::TypedStorage<4, 4, int>                                  mTickCount;
+    ::ll::TypedStorage<8, 8, ::Block const*>                       mBlock;
+    ::ll::TypedStorage<4, 4, float>                                mDestroyTimer;
+    ::ll::TypedStorage<4, 12, ::Vec3>                              mDestroyDirection;
+    ::ll::TypedStorage<4, 4, float>                                mDestroyProgress;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                          mPosition;
+    ::ll::TypedStorage<4, 24, ::AABB>                              mBB;
+    ::ll::TypedStorage<4, 4, ::BlockActorType const>               mType;
+    ::ll::TypedStorage<4, 4, ::BlockActorRendererId>               mRendererId;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mCustomName;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mFilteredCustomName;
+    ::ll::TypedStorage<4, 4, int>                                  mRepairCost;
+    ::ll::TypedStorage<1, 1, bool>                                 mClientSideOnly;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsMovable;
+    ::ll::TypedStorage<1, 1, bool>                                 mSaveCustomName;
+    ::ll::TypedStorage<1, 1, bool>                                 mCanRenderCustomName;
+    ::ll::TypedStorage<4, 4, float const>                          signShadowRadius;
+    ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData>         mTerrainInterlockData;
+    ::ll::TypedStorage<1, 1, bool>                                 mChanged;
     // NOLINTEND
 
 public:
@@ -73,7 +74,7 @@ public:
     virtual ~BlockActor();
 
     // vIndex: 1
-    virtual void load(::Level&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    virtual void load(::ILevel&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const&) const;
@@ -142,17 +143,17 @@ public:
     virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos);
 
     // vIndex: 24
-    virtual ::std::string const& getCustomName() const;
+    virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
 
     // vIndex: 25
-    virtual ::std::string const&
-    getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context);
+    virtual ::std::string const& getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context
+    );
 
     // vIndex: 26
     virtual ::std::string getName() const;
 
     // vIndex: 27
-    virtual void setCustomName(::std::string const& name);
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     // vIndex: 28
     virtual ::std::string getImmersiveReaderText(::BlockSource&);
@@ -214,29 +215,7 @@ public:
     // NOLINTBEGIN
     MCAPI BlockActor(::BlockActorType type, ::BlockPos const& pos, ::std::string const&);
 
-    MCFOLD ::AABB const& getAABB() const;
-
-    MCFOLD ::Block const* getBlock() const;
-
-    MCFOLD ::BlockPos const& getPosition() const;
-
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> getServerUpdatePacket(::BlockSource& region);
-
-    MCFOLD ::BlockActorType const& getType() const;
-
-    MCFOLD bool isChanged() const;
-
-    MCFOLD bool isType(::BlockActorType type) const;
-
-    MCAPI void moveTo(::BlockPos const& newPos);
-
     MCAPI bool onUpdatePacket(::CompoundTag const& data, ::BlockSource& region, ::Player const* fromPlayer);
-
-    MCAPI void setChanged();
-
-    MCFOLD void setCustomNameSaved(bool saveCustomName);
-
-    MCFOLD void setMovable(bool canMove);
     // NOLINTEND
 
 public:
@@ -244,10 +223,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::map<::std::string, ::BlockActorType> _createIdClassMap();
 
-    MCFOLD static bool isType(::BlockActor& te, ::BlockActorType type);
-
     MCAPI static ::std::shared_ptr<::BlockActor>
-    loadStatic(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    loadStatic(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
@@ -273,7 +250,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCAPI void $load(::ILevel&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const&) const;
 
@@ -285,11 +262,11 @@ public:
 
     MCFOLD void $onCustomTagLoadDone(::BlockSource&);
 
-    MCFOLD void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
     MCFOLD void $onChanged(::BlockSource&);
 
-    MCFOLD bool $isMovable(::BlockSource&);
+    MCAPI bool $isMovable(::BlockSource&);
 
     MCAPI bool $isCustomNameSaved();
 
@@ -319,18 +296,17 @@ public:
 
     MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos);
 
-    MCFOLD ::std::string const& $getCustomName() const;
+    MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
-    MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::UIProfanityContext> const& context
-    );
+    MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
     MCFOLD ::std::string $getName() const;
 
-    MCAPI void $setCustomName(::std::string const& name);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     MCFOLD ::std::string $getImmersiveReaderText(::BlockSource&);
 
-    MCFOLD int $getRepairCost() const;
+    MCAPI int $getRepairCost() const;
 
     MCFOLD ::PistonBlockActor* $getOwningPiston(::BlockSource&);
 

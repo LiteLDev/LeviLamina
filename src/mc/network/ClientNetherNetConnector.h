@@ -15,19 +15,19 @@ struct ClientNetherNetConnector : public ::NetherNetConnector {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 12
+    // vIndex: 10
     virtual bool connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void disconnect() /*override*/;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual bool isServer() const /*override*/;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual bool OnSessionRequested(::NetherNet::NetworkID, uint64) /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual void OnSessionOpen(::NetherNet::NetworkID, uint64) /*override*/;
 
     // vIndex: 0

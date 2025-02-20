@@ -20,7 +20,6 @@ public:
 
 public:
     // prevent constructor by default
-    ActorPropertiesDescription& operator=(ActorPropertiesDescription const&);
     ActorPropertiesDescription(ActorPropertiesDescription const&);
     ActorPropertiesDescription();
 
@@ -37,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::ActorPropertiesDescription& operator=(::ActorPropertiesDescription const&);
+
     MCAPI void parse(::Json::Value& root, ::MolangVersion molangVersion);
     // NOLINTEND
 

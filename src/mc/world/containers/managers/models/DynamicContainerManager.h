@@ -2,15 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/ContainerID.h"
-
 // auto generated forward declare list
 // clang-format off
 class Container;
 class ContainerModel;
 class ItemStack;
-struct ContainerOwner;
 struct FullContainerName;
 struct PlayerContainerRefresher;
 // clang-format on
@@ -44,16 +40,6 @@ public:
     );
 
     MCAPI void broadcastChanges(::PlayerContainerRefresher const& refresher);
-
-    MCFOLD ::ContainerID getContainerId() const;
-
-    MCFOLD ::FullContainerName getDynamicContainerId() const;
-
-    MCAPI ::std::vector<::ItemStack> const& getItems() const;
-
-    MCFOLD ::ItemStack const& getStorageItemForNetworkPacket() const;
-
-    MCAPI void shareContainer(::ContainerOwner& containerOwner);
 
     MCAPI ~DynamicContainerManager();
     // NOLINTEND

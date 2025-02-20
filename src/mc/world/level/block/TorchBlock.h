@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/TorchFacing.h"
 
 // auto generated forward declare list
@@ -18,9 +17,10 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
 class Vec3;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class TorchBlock : public ::BlockLegacy {
@@ -48,17 +48,10 @@ public:
         const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
-
-    // vIndex: 143
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 142
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
@@ -70,13 +63,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TorchBlock(::std::string const& nameId, int id);
-
-    MCAPI ::Vec3 _flameParticlePos(::BlockPos const& pos, ::TorchFacing dir) const;
-
     MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 
     MCAPI void onPlaceTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -85,12 +76,6 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<::TorchFacing const[]> DATA_FROM_FACING();
 
     MCAPI static ::std::add_lvalue_reference_t<ushort const[]> FACING_FROM_DATA();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -116,13 +101,9 @@ public:
     $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>)
         const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCFOLD ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource&, ::BlockPos const&) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND

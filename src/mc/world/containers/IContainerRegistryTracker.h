@@ -8,6 +8,7 @@ class DynamicContainerManager;
 class ItemStack;
 class ListTag;
 class StorageItemComponent;
+class StorageWeightLimitItemComponent;
 struct FullContainerName;
 // clang-format on
 
@@ -17,7 +18,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ::std::unique_ptr<::DynamicContainerManager>
-    createContainerManager(::FullContainerName const&, ::ItemStack const&, ::StorageItemComponent*) = 0;
+    createContainerManager(::FullContainerName const&, ::ItemStack const&, ::StorageItemComponent*, ::StorageWeightLimitItemComponent*) = 0;
 
     // vIndex: 1
     virtual uint generateNewID() = 0;

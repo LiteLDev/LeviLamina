@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/Container.h"
 #include "mc/world/ContainerContentChangeListener.h"
-#include "mc/world/containers/ContainerEnumName.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,7 +45,7 @@ public:
     virtual ~SparseContainer() /*override*/ = default;
 
     // vIndex: 7
-    virtual ::ItemStack const& getItem(int slot) const /*override*/;
+    virtual ::ItemStack const& getItem(int) const /*override*/;
 
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
@@ -58,14 +57,10 @@ public:
     virtual void containerContentChanged(int) /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     // vIndex: 22
     virtual void startOpen(::Player&) /*override*/;
@@ -81,15 +76,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _onItemNetworkChanged(int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-
-    MCAPI void addItemNetworkChangedCallback(
-        ::ContainerEnumName                                                name,
-        ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> itemNetworkChangedCallback
-    );
-
-    MCAPI bool isUsingLegacyScreenTransactions() const;
-
-    MCAPI void removeItemNetworkChangedCallback(::ContainerEnumName name);
     // NOLINTEND
 
 public:

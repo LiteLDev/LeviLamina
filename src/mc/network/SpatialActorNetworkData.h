@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class MoveActorAbsoluteData;
 class Player;
 class Vec2;
@@ -42,14 +41,6 @@ public:
         MCAPI static int& DEFAULT_DROP_PACKET_CHANCE();
 
         MCAPI static int& DEFAULT_SEND_EVERY_N_PACKETS();
-
-        MCAPI static int& MAX_DROP_PACKET_CHANCE();
-
-        MCAPI static int& MAX_SEND_EVERY_N_PACKETS();
-
-        MCAPI static int& MIN_DROP_PACKET_CHANCE();
-
-        MCAPI static int& MIN_SEND_EVERY_N_PACKETS();
         // NOLINTEND
     };
 
@@ -73,12 +64,6 @@ public:
         DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI float getSavingsPercentage() const;
-        // NOLINTEND
     };
 
 public:
@@ -101,19 +86,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SpatialActorNetworkData(::Actor& entity);
-
     MCAPI ::std::vector<::NetworkIdentifierWithSubId> _findRelevantPlayersToSendUpdate();
 
     MCAPI uint64 _getOptimizationScore(::Player& player) const;
 
+    MCAPI void _initializeLastSentValues();
+
     MCAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
 
-    MCFOLD void enableAutoSend(bool enable);
-
     MCAPI void handleClientData(::MoveActorAbsoluteData const& moveData);
-
-    MCFOLD bool isAutoSendEnabled() const;
 
     MCAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
 
@@ -125,22 +106,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::SpatialActorNetworkData::DebugSendRateModifiers& mDebugSendRateModifiers();
 
     MCAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& entity);
     // NOLINTEND
 };

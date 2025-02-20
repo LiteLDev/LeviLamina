@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ParticleType.h"
+#include "mc/comprehensive/ParticleType.h"
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/world/level/BlockSourceListener.h"
-#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -79,16 +79,23 @@ public:
     virtual void onLevelDestruction(::std::string const&);
 
     // vIndex: 25
-    virtual void levelEvent(::LevelEvent, ::Vec3 const&, int);
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
 
     // vIndex: 24
-    virtual void levelEvent(::LevelEvent, ::CompoundTag const&);
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
 
     // vIndex: 26
-    virtual void takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&);
+    virtual void
+    takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>);
 
     // vIndex: 27
     virtual void playerListChanged();
+
+    // vIndex: 28
+    virtual void onLevelDataCommandsChanged(bool);
+
+    // vIndex: 29
+    virtual void onLevelDataWorldTemplateOptionsUnlocked();
     // NOLINTEND
 
 public:
@@ -101,6 +108,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD void $allChanged();
+
+    MCFOLD void $sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int);
 
     MCFOLD void
     $addParticleEffect(::HashedString const&, ::Actor const&, ::HashedString const&, ::Vec3 const&, ::MolangVariableMap const&);
@@ -130,9 +139,14 @@ public:
 
     MCFOLD void $onLevelDestruction(::std::string const&);
 
-    MCFOLD void $takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&);
+    MCAPI void
+    $takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>);
 
     MCFOLD void $playerListChanged();
+
+    MCFOLD void $onLevelDataCommandsChanged(bool);
+
+    MCFOLD void $onLevelDataWorldTemplateOptionsUnlocked();
     // NOLINTEND
 
 public:

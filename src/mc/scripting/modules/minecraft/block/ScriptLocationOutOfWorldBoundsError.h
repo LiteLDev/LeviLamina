@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ErrorBindingBuilder.h"
-#include "mc/external/scripting/runtime/Error.h"
+#include "mc/deps/scripting/binding_type/ErrorBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Error.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,8 +17,6 @@ struct ScriptLocationOutOfWorldBoundsError : public ::Scripting::Error {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptLocationOutOfWorldBoundsError(::Vec3 const& pos);
-
     MCAPI ScriptLocationOutOfWorldBoundsError(::std::string const& details, ::Vec3 const& pos);
 
     MCAPI ~ScriptLocationOutOfWorldBoundsError();
@@ -33,8 +31,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& pos);
-
     MCAPI void* $ctor(::std::string const& details, ::Vec3 const& pos);
     // NOLINTEND
 

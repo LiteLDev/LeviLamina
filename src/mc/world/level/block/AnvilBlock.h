@@ -18,7 +18,7 @@ class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
 class Player;
-class Random;
+struct BlockAnimateTickData;
 namespace mce { class Color; }
 // clang-format on
 
@@ -39,19 +39,19 @@ public:
     // vIndex: 139
     virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 124
-    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual void animateTick(::BlockAnimateTickData const&) const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual bool falling() const /*override*/;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 30
@@ -69,16 +69,10 @@ public:
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 23
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 0
     virtual ~AnvilBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AnvilBlock(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -87,14 +81,6 @@ public:
     MCAPI static ::AABB const& _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue);
 
     MCAPI static int getDamageForName(::HashedString const& name);
-
-    MCAPI static ::HashedString const& getNameForDamage(int damage);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -119,7 +105,7 @@ public:
 
     MCFOLD ::std::string $getDustParticleName(::Block const&) const;
 
-    MCFOLD void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $animateTick(::BlockAnimateTickData const&) const;
 
     MCFOLD bool $falling() const;
 
@@ -133,8 +119,6 @@ public:
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCFOLD bool $isInteractiveBlock() const;
-
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
     // NOLINTEND
 
 public:

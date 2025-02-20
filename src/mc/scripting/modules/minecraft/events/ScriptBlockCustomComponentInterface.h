@@ -18,11 +18,6 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptBlockCustomComponentInterface(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
 
-    MCAPI bool isEmpty() const;
-
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&
-    operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
-
     MCAPI ~ScriptBlockCustomComponentInterface();
     // NOLINTEND
 

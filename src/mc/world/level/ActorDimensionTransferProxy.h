@@ -31,21 +31,8 @@ public:
         ::Actor const&                   actor,
         ::Dimension&                     dimension,
         ::Vec3 const&                    targetPosition,
-        ::std::unique_ptr<::CompoundTag> saveTag,
-        bool                             usePortal
+        ::std::unique_ptr<::CompoundTag> saveTag
     ) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorDimensionTransferProxy();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -65,8 +52,7 @@ public:
         ::Actor const&                   actor,
         ::Dimension&                     dimension,
         ::Vec3 const&                    targetPosition,
-        ::std::unique_ptr<::CompoundTag> saveTag,
-        bool                             usePortal
+        ::std::unique_ptr<::CompoundTag> saveTag
     ) const;
     // NOLINTEND
 

@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/world/level/block/actor/LabTableReactionComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class HashedString;
 class LabTableReaction;
+class Vec3;
 // clang-format on
 
 class BurstReactionComponent : public ::LabTableReactionComponent {
@@ -39,6 +42,36 @@ public:
 
     // vIndex: 3
     virtual void _onEnd(::LabTableReaction& owner, ::BlockSource& region) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BurstReactionComponent(
+        ::ParticleType        type,
+        ::Vec3 const&         dims,
+        ::Vec3 const&         dirRange,
+        int                   count,
+        int                   dataMin,
+        int                   dataMax,
+        bool                  dirOneWay,
+        ::HashedString const& newParticle
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ParticleType        type,
+        ::Vec3 const&         dims,
+        ::Vec3 const&         dirRange,
+        int                   count,
+        int                   dataMin,
+        int                   dataMax,
+        bool                  dirOneWay,
+        ::HashedString const& newParticle
+    );
     // NOLINTEND
 
 public:

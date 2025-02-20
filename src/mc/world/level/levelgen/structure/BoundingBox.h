@@ -82,7 +82,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BoundingBox(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
+    MCAPI BoundingBox(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
 
     MCAPI void applyTransformation(::BlockPos const& pivot, ::Rotation rotationXZ, bool mirrorX, bool mirrorZ);
 
@@ -93,6 +93,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::optional<::BoundingBox> intersect(::BoundingBox const& lhs, ::BoundingBox const& rhs);
+
+    MCAPI static ::BoundingBox orientBox(
+        int footX,
+        int footY,
+        int footZ,
+        int offX,
+        int offY,
+        int width,
+        int height,
+        int depth,
+        int orientation,
+        int offZ
+    );
     // NOLINTEND
 
 public:
@@ -100,6 +113,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor();
 
-    MCAPI void* $ctor(::BlockPos const& min, ::BlockPos const& size, ::Rotation rotation);
+    MCAPI void* $ctor(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
     // NOLINTEND
 };

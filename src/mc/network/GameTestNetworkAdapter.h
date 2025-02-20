@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class MinecraftGameTest;
 class PacketSender;
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { struct TestParameters; }
@@ -84,19 +83,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GameTestNetworkAdapter(::MinecraftGameTest& gameTest);
-
     MCAPI void rungametest(
         ::gsl::not_null<::PacketSender*>  packetSender,
         ::std::string const&              testName,
         ::Dimension&                      dimension,
         ::gametest::TestParameters const& params
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::MinecraftGameTest& gameTest);
     // NOLINTEND
 };

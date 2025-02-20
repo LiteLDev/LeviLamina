@@ -22,8 +22,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk34f8f2;
-    ::ll::UntypedStorage<8, 112> mUnkd5595a;
+    ::ll::UntypedStorage<8, 24> mUnk34f8f2;
+    ::ll::UntypedStorage<8, 24> mUnkd5595a;
     // NOLINTEND
 
 public:
@@ -65,6 +65,8 @@ public:
         ::std::optional<::SemVersion> const&              minVersion,
         ::std::function<bool(::SemVersion const&)> const& shouldUpgrade
     ) const;
+
+    MCAPI ~CerealDocumentUpgrader();
     // NOLINTEND
 
 public:
@@ -80,5 +82,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::SemVersion terminus);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

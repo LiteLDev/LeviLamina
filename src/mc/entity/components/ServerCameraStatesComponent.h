@@ -34,6 +34,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnkab46cd;
     ::ll::UntypedStorage<8, 24> mUnk2bb3e1;
     // NOLINTEND
 
@@ -41,20 +42,19 @@ public:
     // prevent constructor by default
     ServerCameraStatesComponent& operator=(ServerCameraStatesComponent const&);
     ServerCameraStatesComponent(ServerCameraStatesComponent const&);
+    ServerCameraStatesComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerCameraStatesComponent();
-
     MCAPI explicit ServerCameraStatesComponent(::CameraPresets const& presets);
+
+    MCAPI ::ServerCameraStatesComponent& operator=(::ServerCameraStatesComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
     MCAPI void* $ctor(::CameraPresets const& presets);
     // NOLINTEND
 };

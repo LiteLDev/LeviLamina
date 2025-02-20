@@ -14,10 +14,11 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
-class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class PinkPetalsBlock : public ::BlockLegacy {
@@ -37,9 +38,6 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 139
     virtual bool use(::Player& player, ::BlockPos const& pos, uchar face) const /*override*/;
 
@@ -57,6 +55,9 @@ public:
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~PinkPetalsBlock() /*override*/ = default;
     // NOLINTEND
@@ -64,19 +65,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PinkPetalsBlock(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool tryGrow(::BlockSource& region, ::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -94,9 +89,7 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar face) const;
 
@@ -108,6 +101,8 @@ public:
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

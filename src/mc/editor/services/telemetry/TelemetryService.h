@@ -3,15 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/serviceproviders/TelemetryServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-class IMinecraftEventing;
-namespace Editor { class ServiceProviderCollection; }
-// clang-format on
 
 namespace Editor::Services {
 
@@ -66,18 +60,6 @@ public:
         ::std::string const& eventName,
         ::std::string const& metadata
     ) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI TelemetryService(::Editor::ServiceProviderCollection& providers, ::IMinecraftEventing& eventing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

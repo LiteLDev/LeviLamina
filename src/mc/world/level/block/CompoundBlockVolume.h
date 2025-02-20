@@ -25,6 +25,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CompoundBlockVolume(CompoundBlockVolume const&);
+    CompoundBlockVolume();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -34,42 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundBlockVolume();
-
-    MCAPI CompoundBlockVolume(::CompoundBlockVolume&& other);
-
-    MCAPI CompoundBlockVolume(::CompoundBlockVolume const& other);
-
     MCAPI void _recalculateBounds();
 
     MCAPI ::CompoundBlockVolumeIterator begin() const;
 
     MCAPI ::BoundingBox calculateBoundsWithItem(::CompoundBlockVolumeItem const& item);
 
-    MCAPI uint64 capacity() const;
-
-    MCAPI void clear(bool resetOrigin);
-
-    MCAPI ::CompoundBlockVolumeIterator end() const;
-
     MCAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
 
-    MCAPI void
-    forEachVolumeItem(::std::function<bool(::CompoundBlockVolumeItem const&, ::CompoundBlockVolume const&)> func) const;
-
     MCAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
-
-    MCAPI ::BoundingBox getBoundingBox() const;
-
-    MCAPI ::BlockPos getMax() const;
-
-    MCAPI ::BlockPos getMin() const;
-
-    MCFOLD ::BlockPos const& getOrigin() const;
-
-    MCAPI ::std::vector<::CompoundBlockVolumeItem> getVolumeList() const;
-
-    MCAPI bool isEmpty() const;
 
     MCAPI bool isInside(::BlockPos const& pos) const;
 
@@ -79,34 +57,12 @@ public:
 
     MCAPI ::std::optional<::CompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
-
-    MCAPI bool popVolume();
-
-    MCFOLD void pushVolume(::CompoundBlockVolumeItem&& item);
-
-    MCAPI void pushVolume(::CompoundBlockVolumeItem const&);
-
-    MCAPI void setOrigin(::BlockPos const& newPos, bool preserveExistingVolumes);
-
-    MCAPI void translateOrigin(::BlockPos const& deltaPos, bool preserveExistingVolumes);
-
-    MCAPI uint64 volumeCount() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::CompoundBlockVolume&& other);
-
-    MCAPI void* $ctor(::CompoundBlockVolume const& other);
     // NOLINTEND
 
 public:

@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     ItemStackRequestActionCraftRecipeOptional& operator=(ItemStackRequestActionCraftRecipeOptional const&);
     ItemStackRequestActionCraftRecipeOptional(ItemStackRequestActionCraftRecipeOptional const&);
+    ItemStackRequestActionCraftRecipeOptional();
 
 public:
     // virtual functions
@@ -42,18 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackRequestActionCraftRecipeOptional();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -66,7 +55,7 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCFOLD int $getFilteredStringIndex() const;
+    MCAPI int $getFilteredStringIndex() const;
     // NOLINTEND
 
 public:

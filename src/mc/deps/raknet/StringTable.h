@@ -18,14 +18,6 @@ public:
     StringTable();
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void AddReference();
-
-    MCAPI static void RemoveReference();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::RakNet::StringTable*& instance();

@@ -13,15 +13,23 @@ public:
 public:
     // prevent constructor by default
     RepairItemEntry& operator=(RepairItemEntry const&);
-    RepairItemEntry(RepairItemEntry const&);
-    RepairItemEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::RepairItemEntry const& rhs) const;
+    MCAPI RepairItemEntry();
+
+    MCAPI RepairItemEntry(::RepairItemEntry const&);
 
     MCAPI ~RepairItemEntry();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::RepairItemEntry const&);
     // NOLINTEND
 
 public:

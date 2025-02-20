@@ -20,10 +20,4 @@ public:
     StopwatchHandler& operator=(StopwatchHandler const&);
     StopwatchHandler(StopwatchHandler const&);
     StopwatchHandler();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void clearAll();
-    // NOLINTEND
 };

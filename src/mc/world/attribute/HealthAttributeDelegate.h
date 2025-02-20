@@ -10,6 +10,7 @@
 class AttributeBuff;
 class AttributeInstance;
 class Mob;
+struct AttributeModificationContext;
 // clang-format on
 
 class HealthAttributeDelegate : public ::AttributeInstanceDelegate {
@@ -24,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void tick() /*override*/;
+    virtual void tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context) /*override*/;
 
     // vIndex: 3
     virtual bool willChange(float oldValue, float newValue, ::AttributeBuff const& buff) /*override*/;
@@ -40,18 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI HealthAttributeDelegate(::AttributeInstance const& attribute, ::Mob* mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::AttributeInstance const& attribute, ::Mob* mob);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -60,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
     MCAPI bool $willChange(float oldValue, float newValue, ::AttributeBuff const& buff);
 

@@ -6,9 +6,9 @@
 #include "mc/common/editor/IEditorPlayer.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/serviceproviders/EditorPlayerServiceProvider.h"
 #include "mc/editor/services/EditorServiceList.h"
-#include "mc/external/scripting/runtime/Result.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/PlayerEventListener.h"
 
@@ -93,10 +93,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit EditorPlayerCommon(::Player& player);
-
-    MCAPI ::Editor::EditorPlayerCommon::InitializationState _getInitializationState() const;
-
-    MCAPI void _setInitializationState(::Editor::EditorPlayerCommon::InitializationState value);
     // NOLINTEND
 
 public:

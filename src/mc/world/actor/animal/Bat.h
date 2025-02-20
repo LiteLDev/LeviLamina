@@ -32,19 +32,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 179
+    // vIndex: 175
     virtual void newServerAiStep() /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 146
     virtual void pushActors() /*override*/;
 
     // vIndex: 8

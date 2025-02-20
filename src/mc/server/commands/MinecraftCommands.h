@@ -20,13 +20,11 @@ class CommandOutput;
 class CommandOutputSender;
 class CommandRegistry;
 class DeferredCommandBase;
-class DeferredScriptCommand;
 class Experiments;
 class HashedString;
 class ItemRegistryRef;
 class Level;
 class Minecraft;
-class Packet;
 class Recipes;
 struct MCRESULT;
 namespace br::worldgen { class StructureRegistry; }
@@ -67,19 +65,12 @@ public:
 
     MCAPI void enqueueDeferredCommand(
         ::std::unique_ptr<::CommandContext> context,
-        bool                                suppressOutput,
         bool                                isRequest,
-        ::std::function<void(::MCRESULT)>   callback
+        bool                                callback,
+        ::std::function<void(::MCRESULT)>   suppressOutput
     );
 
-    MCAPI void
-    enqueueDeferredCompiledCommand(::gsl::not_null<::Command*> command, ::std::unique_ptr<::CommandOrigin> origin);
-
-    MCAPI bool enqueueDeferredScriptCommand(::std::unique_ptr<::DeferredScriptCommand> scriptCommand);
-
     MCAPI ::MCRESULT executeCommand(::CommandContext& context, bool suppressOutput) const;
-
-    MCFOLD ::CommandRegistry& getRegistry();
 
     MCAPI void handleOutput(::CommandOrigin const& origin, ::CommandOutput const& output) const;
 
@@ -98,15 +89,6 @@ public:
     );
 
     MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
-
-    MCAPI void runCommand(::Command& command, ::CommandOrigin& origin);
-
-    MCAPI void
-    runCommand(::HashedString const& commandStr, ::CommandOrigin& origin, ::CurrentCmdVersion commandVersion);
-
-    MCAPI void setRegistryNetworkUpdateCallback(::std::function<void(::Packet const&)> callback) const;
-
-    MCAPI void tick();
     // NOLINTEND
 
 public:
@@ -131,8 +113,8 @@ public:
 
     MCAPI static void initStructureFeatureEnum(
         ::CommandRegistry&                       registry,
-        ::Experiments const&                     experiments,
-        ::br::worldgen::StructureRegistry const& structureRegistry
+        ::Experiments const&                     structureRegistry,
+        ::br::worldgen::StructureRegistry const& experiments
     );
 
     MCAPI static void initUnlockableRecipesEnum(::CommandRegistry& registry, ::Recipes const& recipes);

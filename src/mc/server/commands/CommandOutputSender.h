@@ -24,6 +24,7 @@ public:
     // prevent constructor by default
     CommandOutputSender& operator=(CommandOutputSender const&);
     CommandOutputSender(CommandOutputSender const&);
+    CommandOutputSender();
 
 public:
     // virtual functions
@@ -41,8 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandOutputSender();
-
     MCAPI void
     sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
     // NOLINTEND
@@ -50,13 +49,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD static ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
     // NOLINTEND
 
 public:

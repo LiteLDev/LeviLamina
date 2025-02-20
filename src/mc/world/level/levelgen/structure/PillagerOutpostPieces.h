@@ -166,15 +166,6 @@ public:
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Dimension&                                        dimension
     );
-
-    MCAPI static void addPieces(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
-        ::BlockPos const&                                   position,
-        ::Rotation const&                                   rotation,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        ::Dimension&                                        dimension
-    );
     // NOLINTEND
 
 public:

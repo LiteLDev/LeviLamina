@@ -9,30 +9,17 @@ namespace CerealHelpers { struct Member; }
 namespace Json { class Value; }
 namespace SharedTypes::v1_21_20 { struct FilterGroupData; }
 namespace SharedTypes::v1_21_20 { struct FilterTestData; }
-namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace CerealHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void bindBoundingBox(::cereal::ReflectionCtx& ctx);
-
 MCAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
-
-MCAPI void bindIntRange(::cereal::ReflectionCtx& ctx);
-
-MCAPI void bindMceUUID(::cereal::ReflectionCtx& ctx);
 
 MCAPI void bindRotationAndMirror(::cereal::ReflectionCtx& ctx);
 
 MCAPI ::std::array<int, 3> blockPosAsArray(::BlockPos const& instance);
-
-MCFOLD void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);
-
-MCAPI bool checkBoolSchema(::rapidjson::GenericValue<
-                           ::rapidjson::UTF8<char>,
-                           ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
 
 MCAPI bool checkBrightnessSchema(
     ::rapidjson::
@@ -52,8 +39,12 @@ MCAPI bool checkDefinitionTriggerSchema(::rapidjson::GenericValue<
 MCAPI bool checkEnumSchema(
     ::rapidjson::
         GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value,
-    ::cereal::SerializerEnumMapping const& mapping
+    ::gsl::span<::std::string const>                                                                              values
 );
+
+MCAPI bool checkExpressionNodeSchema(::rapidjson::GenericValue<
+                                     ::rapidjson::UTF8<char>,
+                                     ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
 
 MCAPI bool checkFloatSchema(
     ::rapidjson::

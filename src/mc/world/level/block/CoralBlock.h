@@ -11,8 +11,8 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class HashedString;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CoralBlock : public ::BlockLegacy {
@@ -28,9 +28,6 @@ public:
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -48,14 +45,8 @@ public:
     MCAPI CoralBlock(::std::string const& nameId, int id, ::HashedString const& deadVersion);
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& DEAD_CORAL_BIT();
-
-    MCAPI static int const& DEAD_CORAL_OFFSET();
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -74,8 +65,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 

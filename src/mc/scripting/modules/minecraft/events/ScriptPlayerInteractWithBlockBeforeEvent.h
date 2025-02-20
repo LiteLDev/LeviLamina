@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/events/ScriptPlayerInteractWithBlockEvent.h"
 
 // auto generated forward declare list
@@ -32,6 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+
     MCAPI ScriptPlayerInteractWithBlockBeforeEvent(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
@@ -49,6 +51,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent&&);
+
     MCAPI void* $ctor(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,

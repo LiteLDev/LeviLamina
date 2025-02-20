@@ -57,12 +57,6 @@ public:
     GenerationStub& operator=(GenerationStub const&);
     GenerationStub(GenerationStub const&);
     GenerationStub();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::br::worldgen::GenerationStub::BuildResult build(::br::worldgen::GenerationContext& context);
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

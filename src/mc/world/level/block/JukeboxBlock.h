@@ -55,19 +55,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JukeboxBlock(::std::string const& nameId, int id);
-
-    MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void dropRecording(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

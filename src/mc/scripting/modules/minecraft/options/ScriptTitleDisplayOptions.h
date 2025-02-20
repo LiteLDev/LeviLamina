@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -19,20 +19,13 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptTitleDisplayOptions& operator=(ScriptTitleDisplayOptions const&);
     ScriptTitleDisplayOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
-
     MCAPI ScriptTitleDisplayOptions(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
-    operator=(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptTitleDisplayOptions&
-    operator=(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
 
     MCAPI ~ScriptTitleDisplayOptions();
     // NOLINTEND
@@ -46,8 +39,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTitleDisplayOptions&&);
-
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptTitleDisplayOptions const&);
     // NOLINTEND
 

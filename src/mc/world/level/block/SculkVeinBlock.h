@@ -12,7 +12,6 @@ class Block;
 class BlockActor;
 class BlockPos;
 class ItemInstance;
-class Material;
 // clang-format on
 
 class SculkVeinBlock : public ::MultifaceBlock {
@@ -28,18 +27,6 @@ public:
 
     // vIndex: 0
     virtual ~SculkVeinBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SculkVeinBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

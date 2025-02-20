@@ -35,8 +35,6 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkAccessor(::Dimension& dimension, ::BiomeSource const& biomeSource);
 
-    MCFOLD ::Dimension& dimension();
-
     MCAPI int getFirstFreeHeight(int x, int z, ::br::worldgen::HeightmapProjection::Type heightmapProjection) const;
 
     MCAPI ~ChunkAccessor();

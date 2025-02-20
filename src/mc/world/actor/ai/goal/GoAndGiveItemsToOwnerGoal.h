@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class Mob;
 class Path;
 struct Tick;
@@ -40,20 +39,13 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::GoAndGiveItemsToOwnerGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -64,12 +56,6 @@ public:
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToOwnerGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -128,15 +114,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GoAndGiveItemsToOwnerGoal(::Mob& mob);
-
     MCAPI bool _attemptToGiveItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

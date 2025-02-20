@@ -26,8 +26,6 @@ public:
 
     MCAPI ::ScriptDebuggerMessages::ProtocolEvent& operator=(::ScriptDebuggerMessages::ProtocolEvent&&);
 
-    MCAPI bool operator==(::ScriptDebuggerMessages::ProtocolEvent const&) const;
-
     MCAPI ~ProtocolEvent();
     // NOLINTEND
 

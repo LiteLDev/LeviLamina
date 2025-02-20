@@ -104,13 +104,9 @@ public:
     MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
 
-    MCFOLD bool isCraftingImplemented();
-
     MCAPI bool tryCommitActionResults();
 
     MCAPI ::ContainerValidationResult tryConsume(::ContainerValidationSlotData const& srcSlotData, int transferAmount);
-
-    MCAPI ::ContainerValidationResult tryDestroy(::ContainerValidationSlotData const& srcSlotData, int transferAmount);
 
     MCAPI ::ContainerValidationResult
     tryDrop(::ContainerValidationSlotData const& srcSlotData, int transferAmount, bool dropRandomly);

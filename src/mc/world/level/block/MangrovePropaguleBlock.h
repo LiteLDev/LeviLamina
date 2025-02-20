@@ -41,7 +41,7 @@ public:
 
     // vIndex: 74
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
     // vIndex: 11
@@ -65,17 +65,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MangrovePropaguleBlock(::std::string const& nameId, int id);
-
     MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool _isFullyGrown(::Block const& block) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI bool _isHanging(::Block const& block) const;
     // NOLINTEND
 
 public:
@@ -98,7 +92,7 @@ public:
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 

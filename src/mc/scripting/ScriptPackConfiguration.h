@@ -30,12 +30,6 @@ public:
 
     MCAPI ScriptPackConfiguration(::ScriptPackConfiguration&&);
 
-    MCFOLD ::ScriptPackPermissions const& getPermissions() const;
-
-    MCFOLD ::std::unordered_map<::std::string, ::std::string> const& getSecrets() const;
-
-    MCFOLD ::std::unordered_map<::std::string, ::Json::Value> const& getVariables() const;
-
     MCAPI ::ScriptPackConfiguration& operator=(::ScriptPackConfiguration&&);
 
     MCAPI ~ScriptPackConfiguration();

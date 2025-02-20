@@ -11,7 +11,6 @@
 // clang-format off
 class ActorDefinitionTrigger;
 class BlockPos;
-class EntityContext;
 class Mob;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -46,13 +45,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~GoHomeDefinition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void initialize(::EntityContext& entity, ::GoHomeGoal& goal) const;
+        virtual ~GoHomeDefinition() /*override*/;
         // NOLINTEND
 
     public:
@@ -68,7 +61,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -114,29 +107,27 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~GoHomeGoal() /*override*/ = default;
+    virtual ~GoHomeGoal() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GoHomeGoal(::Mob& mob);
+    MCAPI ::BlockPos _getHomePos() const;
+
+    MCAPI bool _hasReachedHome() const;
 
     MCAPI bool _hasRequiredComponents() const;
+
+    MCAPI bool _isInHomeDimension() const;
 
     MCAPI void _triggerOnFailedEvents();
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

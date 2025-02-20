@@ -23,12 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isValid() const;
-
     MCAPI bool roll(::Random& random) const;
-
-    MCAPI void set(float value);
-
-    MCAPI void set(uint numerator, uint denominator);
     // NOLINTEND
 };

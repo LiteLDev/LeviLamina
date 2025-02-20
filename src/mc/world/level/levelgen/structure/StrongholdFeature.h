@@ -15,7 +15,6 @@ class HashedString;
 class IPreliminarySurfaceProvider;
 class Random;
 class StructureStart;
-class VillageFeature;
 // clang-format on
 
 class StrongholdFeature : public ::StructureFeature {
@@ -92,8 +91,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StrongholdFeature(::VillageFeature* villages, uint seed);
-
     MCAPI ::StrongholdFeature::StrongholdResult const _generateStronghold(uint levelSeed, ::ChunkPos const& cp);
 
     MCAPI bool _getNearestStronghold(
@@ -117,12 +114,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BlockPos const& START_OFFSET();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::VillageFeature* villages, uint seed);
     // NOLINTEND
 
 public:

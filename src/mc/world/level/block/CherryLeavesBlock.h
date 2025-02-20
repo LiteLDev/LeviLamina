@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockSource;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class CherryLeavesBlock : public ::SeasonsAgnosticLeavesBlock {
@@ -17,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 124
-    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0
     virtual ~CherryLeavesBlock() /*override*/ = default;
@@ -32,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:

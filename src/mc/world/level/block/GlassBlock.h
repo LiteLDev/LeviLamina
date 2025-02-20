@@ -12,7 +12,6 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class IConstBlockSource;
-class Material;
 // clang-format on
 
 class GlassBlock : public ::BlockLegacy {
@@ -46,32 +45,6 @@ public:
 
     // vIndex: 0
     virtual ~GlassBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlassBlock(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 doesDrops,
-        bool                 useableInCommands,
-        bool                 doesNotCollideWithCamera
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const& nameId,
-        int                  id,
-        ::Material const&    material,
-        bool                 doesDrops,
-        bool                 useableInCommands,
-        bool                 doesNotCollideWithCamera
-    );
     // NOLINTEND
 
 public:

@@ -8,10 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class GameplayUserManager;
-class LayeredAbilities;
-class PacketSender;
 class Player;
-struct ActorUniqueID;
 // clang-format on
 
 class PlayerAbilitiesManager {
@@ -21,6 +18,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnkc638fa;
     ::ll::UntypedStorage<8, 24> mUnkdac0ef;
     ::ll::UntypedStorage<8, 24> mUnk9614c6;
+    ::ll::UntypedStorage<8, 48> mUnkfcfc82;
     // NOLINTEND
 
 public:
@@ -34,13 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
-
     MCAPI void sendAllPlayerAbilities(::Player const& playerReference);
-
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-
-    MCAPI void setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities);
 
     MCAPI ~PlayerAbilitiesManager();
     // NOLINTEND

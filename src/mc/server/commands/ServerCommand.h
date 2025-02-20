@@ -16,6 +16,7 @@ class IMinecraftEventing;
 class Minecraft;
 class Player;
 class ServerNetworkHandler;
+class TextFilteringProcessor;
 // clang-format on
 
 class ServerCommand : public ::Command {
@@ -34,9 +35,9 @@ public:
         ::CommandOutput&                    output,
         ::std::vector<::std::string> const& text,
         ::TextProcessingEventOrigin const&  textOrigin,
-        ::std::function<void(::std::vector<::std::string> const&, ::std::vector<::Safety::TextFilteringEvent> const&)>
-             callback,
-        bool passThrough
+        ::std::function<
+            void(::std::vector<::std::string> const&, ::std::vector<::std::string> const&, ::std::vector<::Safety::TextFilteringEvent> const&)>
+            callback
     ) const;
     // NOLINTEND
 
@@ -55,6 +56,8 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::Minecraft*& mGame();
+
+    MCAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
     // NOLINTEND
 
 public:

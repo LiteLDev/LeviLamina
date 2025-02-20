@@ -11,7 +11,6 @@ class Block;
 class BlockActor;
 class HashedString;
 class ItemInstance;
-class Material;
 // clang-format on
 
 class StoneBricksBlock : public ::BlockLegacy {
@@ -32,24 +31,6 @@ public:
 
     // vIndex: 0
     virtual ~StoneBricksBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StoneBricksBlock(
-        ::std::string const&  nameId,
-        int                   id,
-        ::Material const&     material,
-        ::HashedString const& infestedBlockId
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, ::Material const& material, ::HashedString const& infestedBlockId);
     // NOLINTEND
 
 public:

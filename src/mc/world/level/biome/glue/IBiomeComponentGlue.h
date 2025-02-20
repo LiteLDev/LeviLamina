@@ -6,7 +6,6 @@
 // clang-format off
 class Biome;
 class BiomeRegistry;
-class Block;
 class BlockDescriptor;
 namespace SharedTypes::v1_20_60 { struct BlockSpecifier; }
 namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
@@ -29,11 +28,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockDescriptor
-    _getBlockDescriptorOrCrash(::std::unique_ptr<::BlockDescriptor> const& blockDescriptor);
-
-    MCAPI static ::Block const* _getBlockOrCrash(::std::unique_ptr<::BlockDescriptor> const& blockDescriptor);
-
     MCAPI static ::std::unique_ptr<::BlockDescriptor>
     _getResolvedBlock(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier, ::std::string const& fieldName);
 

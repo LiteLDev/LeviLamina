@@ -35,15 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DecoratedPotBlockItem(::std::string const& name, int id);
-
     MCAPI ::std::string buildIngredientItemList(::CompoundTag const* ingredientList) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

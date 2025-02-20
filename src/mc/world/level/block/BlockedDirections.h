@@ -3,12 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/Facing.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
+#include "mc/deps/shared_types/legacy/Facing.h"
 
 struct BlockedDirections {
 public:
@@ -26,8 +21,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindBlockedDirections(::cereal::ReflectionCtx& ctx);
-
     MCAPI static void
     facingVectorToMask(::BlockedDirections& instance, ::std::vector<::SharedTypes::Facing> const& faces);
     // NOLINTEND

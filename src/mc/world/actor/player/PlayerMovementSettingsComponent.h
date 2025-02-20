@@ -6,7 +6,7 @@ class PlayerMovementSettingsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk94d3a3;
+    ::ll::UntypedStorage<8, 80> mUnk94d3a3;
     // NOLINTEND
 
 public:

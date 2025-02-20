@@ -40,19 +40,19 @@ public:
     // vIndex: 2
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual void tick() /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual void flushImmediately() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 34
     virtual void _onTeardown() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual void _initialize(::Scheduler&, ::WorkerPool&);
 
-    // vIndex: 35
+    // vIndex: 36
     virtual void _finalize();
     // NOLINTEND
 

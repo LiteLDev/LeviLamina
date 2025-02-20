@@ -16,21 +16,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockListEventMap& operator=(BlockListEventMap const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockListEventMap(::BlockListEventMap const&);
-
     MCAPI ~BlockListEventMap();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockListEventMap const&);
     // NOLINTEND
 
 public:

@@ -23,13 +23,14 @@ public:
 
 public:
     // prevent constructor by default
-    FoodItemComponentData_v1_20_30& operator=(FoodItemComponentData_v1_20_30 const&);
-    FoodItemComponentData_v1_20_30(FoodItemComponentData_v1_20_30 const&);
+    FoodItemComponentData_v1_20_30();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FoodItemComponentData_v1_20_30();
+    MCAPI FoodItemComponentData_v1_20_30(::FoodItemComponentData_v1_20_30 const&);
+
+    MCAPI ::FoodItemComponentData_v1_20_30& operator=(::FoodItemComponentData_v1_20_30 const&);
     // NOLINTEND
 
 public:
@@ -37,14 +38,14 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI void* $ctor(::FoodItemComponentData_v1_20_30 const&);
     // NOLINTEND
 };

@@ -58,12 +58,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static uint64 const& MAX_STORED_MESSAGE_COUNT();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

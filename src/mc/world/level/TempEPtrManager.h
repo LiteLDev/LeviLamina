@@ -18,22 +18,11 @@ public:
     // prevent constructor by default
     TempEPtrManager& operator=(TempEPtrManager const&);
     TempEPtrManager(TempEPtrManager const&);
+    TempEPtrManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TempEPtrManager();
-
-    MCAPI void registerTemporaryPointer(::_TickPtr& ptr);
-
-    MCAPI void tickTemporaryPointers();
-
     MCAPI void unregisterTemporaryPointer(::_TickPtr& ptr);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 };

@@ -12,8 +12,6 @@
 // clang-format off
 class EnchantingContainerManagerModel;
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftHandler;
-class Player;
 struct RecipeNetIdTag;
 // clang-format on
 
@@ -52,17 +50,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftHandlerEnchant(::Player& player, ::ItemStackRequestActionCraftHandler& craftRequestHandler);
-
     MCAPI ::EnchantingContainerManagerModel& _getEnchantingModel() const;
 
     MCAPI ::ItemStackNetResult _handleEnchant(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::ItemStackRequestActionCraftHandler& craftRequestHandler);
     // NOLINTEND
 
 public:

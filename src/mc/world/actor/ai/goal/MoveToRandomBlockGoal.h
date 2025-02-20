@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 class Mob;
 class Vec3;
 // clang-format on
@@ -54,13 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToRandomBlockGoal(::Mob& mob, float speedModifier, float within, float blockDistance);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier, float within, float blockDistance);
+    MCAPI bool _isValidDestinationBlock(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

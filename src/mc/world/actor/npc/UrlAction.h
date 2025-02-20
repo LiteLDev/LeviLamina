@@ -21,8 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator!=(::npc::UrlAction const& rhs) const;
-
     MCAPI ~UrlAction();
     // NOLINTEND
 

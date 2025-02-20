@@ -20,7 +20,7 @@ public:
     virtual ~ITickingSystem() /*override*/ = default;
 
     // vIndex: 2
-    virtual void tick(::EntityRegistry& registry) = 0;
+    virtual void tick(::EntityRegistry&) = 0;
 
     // vIndex: 4
     virtual void singleTick(::EntityRegistry& registry, ::EntityContext& entity);

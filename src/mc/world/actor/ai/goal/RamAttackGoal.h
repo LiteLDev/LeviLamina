@@ -50,6 +50,7 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -61,8 +62,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Definition();
-
         MCAPI void addPreRamSoundEventByName(::std::string const& name);
 
         MCAPI void addRamImpactSoundEventByName(::std::string const& name);
@@ -78,12 +77,6 @@ public:
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RamAttackGoal::Definition>>&
                 root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -177,7 +170,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 0
-    virtual ~RamAttackGoal() /*override*/ = default;
+    virtual ~RamAttackGoal() /*override*/;
     // NOLINTEND
 
 public:
@@ -192,6 +185,8 @@ public:
     MCAPI void _resetCooldown();
 
     MCAPI void _tryKnockbackTarget();
+
+    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
     // NOLINTEND
 
 public:
@@ -203,7 +198,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

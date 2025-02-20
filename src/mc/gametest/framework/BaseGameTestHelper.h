@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/gametest/framework/GameTestErrorType.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
-#include "mc/world/item/ArmorSlot.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
@@ -24,7 +24,6 @@ class SimulatedPlayer;
 class Vec3;
 struct ActorDefinitionIdentifier;
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
-namespace gametest { class GameTestSequence; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
@@ -211,7 +210,7 @@ public:
     // vIndex: 44
     virtual ::std::optional<::gametest::GameTestError> assertEntityHasArmor(
         ::ActorDefinitionIdentifier const&,
-        ::ArmorSlot,
+        ::SharedTypes::Legacy::ArmorSlot,
         ::std::string const&,
         int,
         ::BlockPos const&,
@@ -287,14 +286,12 @@ public:
 
     MCAPI ::std::optional<::gametest::GameTestError> assertCondition(bool condition, ::std::string const& message);
 
-    MCAPI void fail(::gametest::GameTestError error);
-
     MCAPI void failIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCAPI ::gametest::GameTestError generateErrorWithContext(
-        ::gametest::GameTestErrorType errorType,
-        ::std::string                 message,
-        ::BlockPos const&             relativePos
+        ::gametest::GameTestErrorType message,
+        ::std::string                 relativePos,
+        ::BlockPos const&             errorType
     ) const;
 
     MCAPI ::gametest::GameTestError generateErrorWithContext(
@@ -304,29 +301,11 @@ public:
         ::BlockPos const&             relativePos
     ) const;
 
-    MCAPI uchar getTestDirection() const;
-
-    MCAPI float getTestRotationAngle() const;
-
     MCAPI ::std::variant<::gametest::GameTestError, uchar> rotateDirection(uchar direction) const;
-
-    MCAPI ::std::variant<::gametest::GameTestError, ::Vec3> rotateVector(::Vec3 const& vec) const;
 
     MCAPI void runAfterDelay(int ticksToDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCAPI void runAtTickTime(int tickTime, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCAPI ::std::optional<::gametest::GameTestError> setBlock(::BlockPos const& pos, ::Block const& block);
-
-    MCAPI ::gametest::GameTestSequence& startSequence();
-
-    MCAPI void succeed();
-
-    MCAPI void succeedIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
-
-    MCAPI void succeedOnTick(int tick);
-
-    MCAPI void succeedOnTickWhen(int tick, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCAPI void succeedWhen(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 

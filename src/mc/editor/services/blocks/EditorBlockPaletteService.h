@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorBlockPaletteServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -134,9 +134,6 @@ public:
 
     MCAPI void _addOrReplacePalette(::Editor::EditorBlockPalette const& palette);
 
-    MCAPI ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
-    _checkAndClampWeights(::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> item);
-
     MCAPI ::Scripting::Result<void> _checkForDuplicateBlocks(
         ::HashedString const&                                                                          paletteId,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
@@ -144,9 +141,13 @@ public:
 
     MCAPI ::Editor::EditorBlockPalette& _getActivePalette() const;
 
+    MCAPI ::Scripting::Error _getAttemptingToRemoveOnlyPaletteError(::HashedString const& paletteId) const;
+
     MCAPI ::Scripting::Error _getIndexOutOfBoundsError(int index, int max) const;
 
     MCAPI ::Editor::EditorBlockPalette* _getPalette(::HashedString const& paletteId) const;
+
+    MCAPI ::Scripting::Error _getPaletteIdNotFoundError(::HashedString const& paletteId) const;
 
     MCAPI ::Scripting::Result<void> _removePalette(::HashedString const& paletteId);
 
@@ -157,8 +158,6 @@ public:
         int                                                                                            index,
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
     );
-
-    MCAPI ::Scripting::Result<void> _updateSelectedPaletteIndex(int index);
     // NOLINTEND
 
 public:

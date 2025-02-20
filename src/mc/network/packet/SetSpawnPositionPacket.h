@@ -12,7 +12,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPos;
 class Dimension;
 class NetworkBlockPosition;
 class ReadOnlyBinaryStream;
@@ -45,30 +44,6 @@ public:
 
     // vIndex: 0
     virtual ~SetSpawnPositionPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SetSpawnPositionPacket();
-
-    MCAPI SetSpawnPositionPacket(
-        ::DimensionType   dimension,
-        ::BlockPos const& playerPosition,
-        ::BlockPos const& spawnBlockPos
-    );
-
-    MCAPI SetSpawnPositionPacket(::SpawnPositionType spawnPosType, ::DimensionType dimension, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::DimensionType dimension, ::BlockPos const& playerPosition, ::BlockPos const& spawnBlockPos);
-
-    MCAPI void* $ctor(::SpawnPositionType spawnPosType, ::DimensionType dimension, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

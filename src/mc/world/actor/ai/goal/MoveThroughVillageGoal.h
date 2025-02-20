@@ -43,18 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MoveThroughVillageGoal(::Mob& mob, float speedModifier, bool onlyAtNight);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier, bool onlyAtNight);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

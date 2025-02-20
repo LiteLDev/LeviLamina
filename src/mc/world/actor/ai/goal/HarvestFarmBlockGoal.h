@@ -9,7 +9,6 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class HarvestFarmBlockGoal : public ::BaseMoveToBlockGoal {
@@ -62,15 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HarvestFarmBlockGoal(::Mob& mob);
-
     MCAPI bool trySowCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

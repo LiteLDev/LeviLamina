@@ -114,31 +114,13 @@ public:
 
     MCAPI ::Core::Result close();
 
-    MCAPI ::Core::Result flush();
-
-    MCFOLD uint64 getBlockSize() const;
-
-    MCFOLD ::Core::FileOpenMode const& getOpenMode() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> getPath() const;
-
     MCAPI ::Core::Result getPosition(uint64* pPosition);
-
-    MCAPI ::Core::Result getRemainingSize(uint64* pSize);
-
-    MCAPI ::Core::Result getSize(uint64* pSize);
-
-    MCFOLD ::Core::FileSystemImpl* getTransaction();
-
-    MCFOLD bool isOpen();
 
     MCAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCAPI ::Core::Result readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
-
-    MCFOLD void setLoggingEnabled(bool loggingEnabled);
 
     MCAPI ::Core::Result setPosition(uint64 position);
 

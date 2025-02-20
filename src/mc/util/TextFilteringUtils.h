@@ -29,10 +29,5 @@ public:
         ::NetworkIdentifier const&                         source,
         ::SubClientId const&                               subClientId
     );
-
-    MCAPI static bool findChatFilteringEvent(
-        ::std::vector<::Safety::TextFilteringEvent> const& events,
-        ::Safety::TextFilteringEvent                       action
-    );
     // NOLINTEND
 };

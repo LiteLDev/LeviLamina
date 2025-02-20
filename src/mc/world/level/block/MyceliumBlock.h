@@ -10,6 +10,7 @@
 class BlockPos;
 class BlockSource;
 class Random;
+struct BlockAnimateTickData;
 struct Brightness;
 // clang-format on
 
@@ -21,17 +22,10 @@ public:
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0
     virtual ~MyceliumBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MyceliumBlock(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -40,12 +34,6 @@ public:
     MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_PERSIST();
 
     MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_SPREAD();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -59,7 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:

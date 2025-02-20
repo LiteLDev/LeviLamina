@@ -17,8 +17,8 @@ class BlockSource;
 class Experiments;
 class ItemInstance;
 class Player;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class ComparatorBlock : public ::ActorBlock {
@@ -42,9 +42,6 @@ public:
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -93,19 +90,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComparatorBlock(::std::string const& nameId, int id, bool on);
-
     MCAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool loading) const;
 
     MCAPI void _refreshOutputState(::BlockSource& region, ::BlockPos const& pos, int strength) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool on);
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -125,15 +116,13 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 

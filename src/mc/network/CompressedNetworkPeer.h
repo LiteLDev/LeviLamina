@@ -47,20 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit CompressedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer);
-
-    MCAPI void setCompressionEnabled(bool val, ::NetworkSettingOptions options);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::NetworkPeer> peer);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

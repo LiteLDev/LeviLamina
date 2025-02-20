@@ -47,38 +47,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ResourcePackDataInfoPacket();
-
-    MCAPI ResourcePackDataInfoPacket(
-        ::std::string const& name,
-        uint                 chunkSize,
-        int                  nbChunk,
-        uint64               fileSize,
-        ::std::string const& fileHash,
-        bool                 isPremium,
-        ::PackType           packType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(
-        ::std::string const& name,
-        uint                 chunkSize,
-        int                  nbChunk,
-        uint64               fileSize,
-        ::std::string const& fileHash,
-        bool                 isPremium,
-        ::PackType           packType
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

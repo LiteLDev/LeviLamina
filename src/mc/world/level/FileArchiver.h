@@ -48,8 +48,8 @@ public:
         Level               = 0,
         Template            = 1,
         Project             = 2,
-        Playtest            = 3,
-        PlayableEditorLevel = 4,
+        PlayableEditorLevel = 3,
+        PackagedLevel       = 4,
     };
 
     enum class ShowToast : int {
@@ -343,12 +343,12 @@ public:
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> _enqueueExportWorldTasks(
         ::Core::Path const&                                         outputFilePath,
         ::std::string const&                                        worldId,
-        bool                                                        isBundle,
-        ::FileArchiver::ExportType                                  exportType,
-        ::FileArchiver::ShowToast                                   showToast,
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> preTaskHandle,
-        ::std::function<void(::FileArchiver::Result&)>              cleanupTask,
-        ::std::function<void(::LevelData&)>                         convertPreExportCallback
+        bool                                                        exportType,
+        ::FileArchiver::ExportType                                  showToast,
+        ::FileArchiver::ShowToast                                   preTaskHandle,
+        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> cleanupTask,
+        ::std::function<void(::FileArchiver::Result&)>              convertPreExportCallback,
+        ::std::function<void(::LevelData&)>                         isBundle
     );
 
     MCAPI void _exportLevelFiles(
@@ -378,25 +378,25 @@ public:
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentEditorLevel(
         ::Level*                            level,
-        ::Core::Path const&                 exportFilePath,
-        ::std::function<void(::LevelData&)> preExportConvertedCallback,
-        ::FileArchiver::ExportType          exportType,
+        ::Core::Path const&                 preExportConvertedCallback,
+        ::std::function<void(::LevelData&)> exportType,
+        ::FileArchiver::ExportType          exportFilePath,
         ::FileArchiver::ShowToast           toast
     );
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentLevel(
         ::Level*                   level,
-        bool                       isBundle,
-        ::FileArchiver::ExportType exportType,
-        ::Core::Path const&        exportFilePath
+        bool                       exportType,
+        ::FileArchiver::ExportType exportFilePath,
+        ::Core::Path const&        isBundle
     );
 
     MCAPI void exportCurrentLevel(
         ::Level*                                       level,
-        bool                                           isBundle,
-        ::FileArchiver::ExportType                     exportType,
-        ::Core::Path const&                            exportFilePath,
-        ::std::function<void(::FileArchiver::Result&)> exportCallback
+        bool                                           exportType,
+        ::FileArchiver::ExportType                     exportFilePath,
+        ::Core::Path const&                            exportCallback,
+        ::std::function<void(::FileArchiver::Result&)> isBundle
     );
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>>

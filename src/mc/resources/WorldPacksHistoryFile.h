@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class WorldPackHistory;
 struct PackIdVersion;
 namespace Json { class Value; }
 // clang-format on
@@ -28,27 +27,16 @@ public:
     // prevent constructor by default
     WorldPacksHistoryFile& operator=(WorldPacksHistoryFile const&);
     WorldPacksHistoryFile(WorldPacksHistoryFile const&);
+    WorldPacksHistoryFile();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPacksHistoryFile();
-
-    MCFOLD ::std::vector<::WorldPackHistory> const& getPacks() const;
-
     MCAPI ::WorldPacksHistoryFile::ParseResult initializeFromJson(::Json::Value const& value);
 
     MCAPI void removePack(::PackIdVersion const& packId);
 
-    MCAPI ::Json::Value toJsonValue() const;
-
     MCAPI ~WorldPacksHistoryFile();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

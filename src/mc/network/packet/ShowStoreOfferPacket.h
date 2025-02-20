@@ -43,22 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShowStoreOfferPacket();
-
-    MCAPI ShowStoreOfferPacket(::mce::UUID const& offerId, ::ShowStoreOfferRedirectType redirectType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::mce::UUID const& offerId, ::ShowStoreOfferRedirectType redirectType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

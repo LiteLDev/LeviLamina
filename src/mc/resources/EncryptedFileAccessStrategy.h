@@ -85,8 +85,6 @@ public:
         bool                                                               canRecurse,
         ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
     );
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> _getKeyProvider() const;
     // NOLINTEND
 
 public:

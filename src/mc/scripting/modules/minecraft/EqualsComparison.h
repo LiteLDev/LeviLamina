@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -23,8 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool operator==(::ScriptModuleMinecraft::EqualsComparison const& other) const;
-
     MCAPI ~EqualsComparison();
     // NOLINTEND
 

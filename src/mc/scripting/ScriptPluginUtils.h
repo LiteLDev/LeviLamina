@@ -13,8 +13,6 @@ class ScriptPlugin;
 namespace ScriptPluginUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string GetFileExtensionFromRuntimeType(::ScriptRuntimeType runtimeType);
-
 MCAPI ::ScriptRuntimeType GetRuntimeType(::std::string const& runtimeName);
 
 MCAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(::std::string const& fileExt);

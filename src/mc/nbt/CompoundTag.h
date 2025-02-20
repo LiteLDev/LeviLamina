@@ -73,7 +73,7 @@ public:
     virtual uint64 hash() const /*override*/;
 
     // vIndex: 6
-    virtual bool equals(::Tag const& rhs) const /*override*/;
+    virtual bool equals(::Tag const& obj) const /*override*/;
     // NOLINTEND
 
 public:
@@ -82,8 +82,6 @@ public:
 
     MCAPI void append(::CompoundTag const& tag);
 
-    MCFOLD TagMap::const_iterator begin() const;
-
     MCAPI void clear();
 
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
@@ -91,16 +89,6 @@ public:
     MCAPI bool contains(::std::string_view name) const;
 
     MCAPI bool contains(::std::string_view name, ::Tag::Type type) const;
-
-    MCFOLD TagMap::const_iterator end() const;
-
-    MCFOLD bool isEmpty() const;
-
-    MCFOLD TagMap const& rawView() const;
-
-    MCAPI bool remove(::std::string_view name);
-
-    MCAPI void rename(::std::string_view name, ::std::string newName);
     // NOLINTEND
 
 public:
@@ -114,7 +102,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -134,7 +122,7 @@ public:
 
     MCAPI uint64 $hash() const;
 
-    MCAPI bool $equals(::Tag const& rhs) const;
+    MCAPI bool $equals(::Tag const& obj) const;
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/block_serialization_utils/NBTState.h"
 #include "mc/world/level/block/block_serialization_utils/NbtToBlockCache.h"
 
@@ -12,7 +11,6 @@
 class Block;
 class CompoundTag;
 class HashedString;
-class IUnknownBlockTypeRegistry;
 namespace BlockSerializationUtils { struct NbtToBlockCache; }
 // clang-format on
 
@@ -25,13 +23,6 @@ MCAPI void addToCache(
     ::BlockSerializationUtils::NBTState                    nbtState,
     ::Block const*                                         block
 );
-
-MCAPI void clearBlockReplaceDataMap();
-
-MCAPI void clearNBTToBlockCache();
-
-MCAPI ::Block const&
-getBlockFromNBT(::CompoundTag const& tag, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
 MCAPI void initBlockReplaceDataMap();
 

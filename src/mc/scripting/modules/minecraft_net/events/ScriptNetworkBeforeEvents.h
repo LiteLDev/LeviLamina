@@ -3,19 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/scripting/modules/minecraft_net/events/IScriptNetworkBeforeEvents.h"
 
 // auto generated forward declare list
 // clang-format off
-class ServerLevel;
 struct IncomingPacketEvent;
 struct OutgoingPacketEvent;
 namespace ScriptModuleMinecraftNet { struct ScriptPacketReceiveBeforeEvent; }
 namespace ScriptModuleMinecraftNet { struct ScriptPacketSendBeforeEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -29,8 +27,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnka62ae6;
     ::ll::UntypedStorage<8, 8>  mUnk3f8513;
     ::ll::UntypedStorage<8, 16> mUnk6a86ea;
-    ::ll::UntypedStorage<8, 32> mUnk6ff13e;
-    ::ll::UntypedStorage<8, 32> mUnka9ad96;
+    ::ll::UntypedStorage<8, 32> mUnkcdc6a8;
+    ::ll::UntypedStorage<8, 32> mUnka6ad66;
     // NOLINTEND
 
 public:
@@ -59,9 +57,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNetworkBeforeEvents(::Scripting::WeakLifetimeScope scope, ::gsl::not_null<::ServerLevel*> level);
+    MCAPI ScriptNetworkBeforeEvents(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
 
-    MCAPI void registerListeners();
+    MCAPI ::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&
+    operator=(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
     // NOLINTEND
 
 public:
@@ -73,7 +72,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::gsl::not_null<::ServerLevel*> level);
+    MCAPI void* $ctor(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
     // NOLINTEND
 
 public:

@@ -65,18 +65,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit MainChunkSource(::std::unique_ptr<::ChunkSource> storage);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> storage);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -41,26 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptMessagePacket();
-
-    MCAPI ScriptMessagePacket(::std::string const& messageId, ::std::string const& messageValue);
-
-    MCFOLD ::std::string const& getMessageId() const;
-
-    MCFOLD ::std::string const& getMessageValue() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::string const& messageId, ::std::string const& messageValue);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

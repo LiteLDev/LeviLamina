@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
-class SemVersion;
 class SwimUpForBreathGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -50,8 +49,6 @@ public:
         ::std::string const&                                                                                      name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwimUpForBreathDefinition>>& root
     );
-
-    MCAPI static ::SemVersion getStrictParsingVersion();
     // NOLINTEND
 
 public:

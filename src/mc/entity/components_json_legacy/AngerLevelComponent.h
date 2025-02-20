@@ -3,13 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class CompoundTag;
-class DataLoadHelper;
 class ILevel;
 struct ActorUniqueID;
 // clang-format on
@@ -121,15 +120,9 @@ public:
 
     MCAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
 
-    MCAPI int getAngerForAnimations(::Actor& owner) const;
-
     MCAPI ::std::optional<::std::pair<::Actor*, int>> getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
 
-    MCAPI bool isAngry() const;
-
     MCAPI ::AngerLevelComponent& operator=(::AngerLevelComponent&&);
-
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI void tick(::Actor* owner, ::ILevel const& level);
 
@@ -141,15 +134,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS();
-
     MCAPI static int const& DEFAULT_ANGRY_BOOST();
 
     MCAPI static int const& DEFAULT_ANGRY_THRESHOLD();
 
     MCAPI static int const& DEFAULT_MAX_ANGER_LEVEL();
-
-    MCAPI static bool const& DEFAULT_SHOULD_REMOVE_TARGET();
     // NOLINTEND
 
 public:

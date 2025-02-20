@@ -42,26 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MapCreateLockedCopyPacket();
-
-    MCAPI MapCreateLockedCopyPacket(::ActorUniqueID originalMapId, ::ActorUniqueID newMapId);
-
-    MCFOLD ::ActorUniqueID getNewMapId() const;
-
-    MCFOLD ::ActorUniqueID getOriginalMapId() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorUniqueID originalMapId, ::ActorUniqueID newMapId);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

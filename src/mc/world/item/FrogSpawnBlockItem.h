@@ -35,18 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FrogSpawnBlockItem(::std::string const& name, int blockId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int blockId);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

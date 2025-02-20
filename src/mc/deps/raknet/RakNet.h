@@ -8,7 +8,6 @@ namespace RakNet { class BitStream; }
 namespace RakNet { class RakNetSocket2; }
 namespace RakNet { class RakPeer; }
 namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SplitPacketChannel; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
@@ -20,10 +19,6 @@ MCAPI uint ConnectionAttemptLoop(void* arguments);
 MCFOLD uint64 GetTime();
 
 MCFOLD uint GetTimeMS();
-
-MCAPI uint64 GetTimeUS();
-
-MCAPI bool NonNumericHostString(char const* host);
 
 MCAPI void ProcessNetworkPacket(
     ::RakNet::SystemAddress  systemAddress,
@@ -45,29 +40,15 @@ MCAPI bool ProcessOfflineNetworkPacket(
     uint64                   timeRead
 );
 
-MCAPI int SplitPacketChannelComp(ushort const& key, ::RakNet::SplitPacketChannel* const& data);
-
 MCAPI uint UpdateNetworkLoop(void* arguments);
 
 MCAPI uint UpdateTCPInterfaceLoop(void* arguments);
 
-MCFOLD void* _DLMallocDirectMMap(uint64 size);
-
-MCFOLD void* _DLMallocMMap(uint64 size);
-
-MCFOLD int _DLMallocMUnmap(void* p, uint64 size);
-
-MCFOLD void _RakFree(void* p);
-
 MCFOLD void _RakFree_Ex(void* p, char const* file, uint line);
-
-MCFOLD void* _RakMalloc(uint64 size);
 
 MCFOLD void* _RakMalloc_Ex(uint64 size, char const* file, uint line);
 
-MCFOLD void* _RakRealloc(void* p, uint64 size);
-
-MCFOLD void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
+MCAPI void* _RakRealloc_Ex(void* p, uint64 size, char const* file, uint line);
 // NOLINTEND
 
 // static variables

@@ -4,12 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/CauldronLiquidType.h"
-#include "mc/world/level/block/LevelEvent.h"
 #include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
@@ -32,8 +32,10 @@ class Level;
 class Player;
 class Random;
 class Vec3;
+struct BlockAnimateTickData;
 struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CauldronBlock : public ::ActorBlock {
@@ -86,26 +88,22 @@ public:
         /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 138
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual ::Brightness getLight(::Block const& block) const /*override*/;
 
     // vIndex: 126
@@ -121,13 +119,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CauldronBlock(::std::string const& nameId, int id);
-
     MCAPI void _checkForStalactiteDrip(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _explodeCauldronContents(::BlockSource& region, ::BlockPos const& pos, ushort) const;
 
-    MCAPI void _flushCauldronEvent(::BlockSource& region, ::BlockPos const& pos, int prevColor) const;
+    MCAPI bool const _mayUpdateLiquidLevel(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _sendCauldronUsedEventToClient(
         ::Player const&                              player,
@@ -135,7 +131,9 @@ public:
         ::MinecraftEventing::POIBlockInteractionType interactionType
     ) const;
 
-    MCAPI void _spawnCauldronEvent(::BlockSource& region, ::BlockPos const& pos, ::LevelEvent levelEvent) const;
+    MCAPI void
+    _spawnCauldronEvent(::BlockSource& region, ::BlockPos const& pos, ::SharedTypes::Legacy::LevelEvent levelEvent)
+        const;
 
     MCAPI bool _useDyeableComponent(
         ::ItemStack&          itemInstance,
@@ -153,10 +151,10 @@ public:
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void receiveStalactiteDrip(::BlockSource& region, ::BlockPos const& pos, ::MaterialType liquidType) const;
-
     MCAPI void
     setLiquidLevel(::BlockSource& region, ::BlockPos const& pos, int liquidLevel, ::CauldronLiquidType type) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -164,27 +162,13 @@ public:
     // NOLINTBEGIN
     MCAPI static bool canReceiveStalactiteDrip(::BlockSource& region, ::BlockPos const& pos, ::MaterialType liquidType);
 
-    MCAPI static int clampLiquidLevel(int fillLevel);
-
-    MCAPI static void spawnPotionParticles(::Level& level, ::Vec3 const& pos, ::Random&, int color, int count);
+    MCAPI static void spawnPotionParticles(::Level& level, ::Vec3 const& pos, ::Random& color, int, int count);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& BASE_WATER_PIXEL();
-
     MCAPI static ::BaseGameVersion const& CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-
-    MCAPI static int const& FILL_LEVEL_PER_DRIP();
-
-    MCAPI static int const& PIXEL_PER_LEVEL();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -226,15 +210,13 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 
     MCFOLD int $getExtraRenderLayers() const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 

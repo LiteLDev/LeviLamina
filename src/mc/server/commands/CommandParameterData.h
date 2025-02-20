@@ -62,43 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandParameterData(
-        ::Bedrock::typeid_t<::CommandRegistry> typeIndex,
-        bool (CommandRegistry::*
-                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const,
-        char const*                name,
-        ::CommandParameterDataType paramType,
-        char const*                enumNameOrPostfix,
-        char const*                chainedSubcommand,
-        int                        offset,
-        bool                       optional,
-        int                        setOffset
-    );
-
-    MCAPI ::CommandParameterData& addOptions(::CommandParameterOption options);
-
     MCAPI ~CommandParameterData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandParameterData const& p);
-
-    MCAPI void* $ctor(
-        ::Bedrock::typeid_t<::CommandRegistry> typeIndex,
-        bool (CommandRegistry::*
-                  parse)(void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)
-            const,
-        char const*                name,
-        ::CommandParameterDataType paramType,
-        char const*                enumNameOrPostfix,
-        char const*                chainedSubcommand,
-        int                        offset,
-        bool                       optional,
-        int                        setOffset
-    );
     // NOLINTEND
 
 public:

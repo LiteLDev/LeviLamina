@@ -10,9 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class LayeredAbilities;
 class ReadOnlyBinaryStream;
-struct ActorUniqueID;
 struct SerializedAbilitiesData;
 // clang-format on
 
@@ -40,22 +38,6 @@ public:
 
     // vIndex: 0
     virtual ~UpdateAbilitiesPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UpdateAbilitiesPacket();
-
-    MCAPI UpdateAbilitiesPacket(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities);
     // NOLINTEND
 
 public:

@@ -55,6 +55,8 @@ class ChunkRadiusUpdatedPacket;
 class ClientCacheBlobStatusPacket;
 class ClientCacheMissResponsePacket;
 class ClientCacheStatusPacket;
+class ClientCameraAimAssistPacket;
+class ClientMovementPredictionSyncPacket;
 class ClientToServerHandshakePacket;
 class ClientboundCloseFormPacket;
 class ClientboundDebugRendererPacket;
@@ -96,7 +98,7 @@ class InventoryActionPacket;
 class InventoryContentPacket;
 class InventorySlotPacket;
 class InventoryTransactionPacket;
-class ItemComponentPacket;
+class ItemRegistryPacket;
 class ItemStackRequestPacket;
 class ItemStackResponsePacket;
 class JigsawStructureDataPacket;
@@ -133,6 +135,7 @@ class NpcRequestPacket;
 class OnScreenTextureAnimationPacket;
 class OpenSignPacket;
 class Packet;
+class PacketSecurityController;
 class PacketViolationWarningPacket;
 class PassengerJumpPacket;
 class PhotoTransferPacket;
@@ -276,668 +279,684 @@ public:
     virtual void onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>);
 
     // vIndex: 10
-    virtual void sendPacketViolationDetectedTelemetryData(
-        uint64,
-        ::std::string,
-        ::PacketViolationResponse,
-        ::MinecraftPacketIds,
+    virtual void handlePacketViolation(
+        ::std::shared_ptr<::PacketSecurityController> const&,
+        ::std::error_code const&,
+        ::PacketViolationResponse const,
+        ::MinecraftPacketIds const,
+        ::std::string&&,
         ::NetworkIdentifier const&,
-        uint,
-        ::SubClientId,
-        ::SubClientId,
-        uint
+        ::SubClientId const,
+        ::SubClientId const,
+        uint const
     );
 
     // vIndex: 11
-    virtual void onTransferRequest(::NetworkIdentifier const&, ::std::string const&, int);
+    virtual void sendPacketViolationWarningPacket(
+        ::std::error_code const&,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        ::std::string const&,
+        ::NetworkIdentifier const&,
+        ::SubClientId
+    );
 
     // vIndex: 12
-    virtual bool getIsConnectedToApplicationLayer() const;
+    virtual void onTransferRequest(::NetworkIdentifier const&, ::std::string const&, int);
 
     // vIndex: 13
-    virtual ::GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
-
-    // vIndex: 225
-    virtual void handle(::NetworkIdentifier const&, ::PacketViolationWarningPacket const&);
-
-    // vIndex: 224
-    virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&);
-
-    // vIndex: 223
-    virtual void handle(::NetworkIdentifier const&, ::EmoteListPacket const&);
-
-    // vIndex: 222
-    virtual void handle(::NetworkIdentifier const&, ::EmotePacket const&);
-
-    // vIndex: 221
-    virtual void handle(::NetworkIdentifier const&, ::LoginPacket const&);
-
-    // vIndex: 220
-    virtual void handle(::NetworkIdentifier const&, ::SubClientLoginPacket const&);
-
-    // vIndex: 219
-    virtual void handle(::NetworkIdentifier const&, ::ClientToServerHandshakePacket const&);
-
-    // vIndex: 218
-    virtual void handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&);
-
-    // vIndex: 217
-    virtual void handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&);
-
-    // vIndex: 216
-    virtual void handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&);
-
-    // vIndex: 215
-    virtual void handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
-
-    // vIndex: 214
-    virtual void handle(::NetworkIdentifier const&, ::PositionTrackingDBClientRequestPacket const&);
-
-    // vIndex: 213
-    virtual void handle(::NetworkIdentifier const&, ::PositionTrackingDBServerBroadcastPacket const&);
-
-    // vIndex: 212
-    virtual void handle(::NetworkIdentifier const&, ::PlayStatusPacket const&);
-
-    // vIndex: 211
-    virtual void handle(::NetworkIdentifier const&, ::SetTimePacket const&);
-
-    // vIndex: 210
-    virtual void handle(::NetworkIdentifier const&, ::TextPacket const&);
-
-    // vIndex: 209
-    virtual void handle(::NetworkIdentifier const&, ::StartGamePacket const&);
-
-    // vIndex: 208
-    virtual void handle(::NetworkIdentifier const&, ::AddItemActorPacket const&);
-
-    // vIndex: 207
-    virtual void handle(::NetworkIdentifier const&, ::AddPaintingPacket const&);
-
-    // vIndex: 206
-    virtual void handle(::NetworkIdentifier const&, ::TakeItemActorPacket const&);
-
-    // vIndex: 205
-    virtual void handle(::NetworkIdentifier const&, ::AddActorPacket const&);
-
-    // vIndex: 204
-    virtual void handle(::NetworkIdentifier const&, ::AddMobPacket const&);
-
-    // vIndex: 203
-    virtual void handle(::NetworkIdentifier const&, ::AddPlayerPacket const&);
-
-    // vIndex: 202
-    virtual void handle(::NetworkIdentifier const&, ::RemoveActorPacket const&);
-
-    // vIndex: 201
-    virtual void handle(::NetworkIdentifier const&, ::MoveActorAbsolutePacket const&);
-
-    // vIndex: 200
-    virtual void handle(::NetworkIdentifier const&, ::MoveActorDeltaPacket const&);
-
-    // vIndex: 199
-    virtual void handle(::NetworkIdentifier const&, ::MovePlayerPacket const&);
-
-    // vIndex: 198
-    virtual void handle(::NetworkIdentifier const&, ::PassengerJumpPacket const&);
-
-    // vIndex: 197
-    virtual void handle(::NetworkIdentifier const&, ::SetPlayerGameTypePacket const&);
-
-    // vIndex: 196
-    virtual void handle(::NetworkIdentifier const&, ::UpdatePlayerGameTypePacket const&);
-
-    // vIndex: 195
-    virtual void handle(::NetworkIdentifier const&, ::SetDefaultGameTypePacket const&);
-
-    // vIndex: 194
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockPacket>);
-
-    // vIndex: 193
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockSyncedPacket>);
-
-    // vIndex: 192
-    virtual void handle(::NetworkIdentifier const&, ::SpawnParticleEffectPacket const&);
-
-    // vIndex: 191
-    virtual void handle(::NetworkIdentifier const&, ::LevelSoundEventPacket const&);
-
-    // vIndex: 190
-    virtual void handle(::NetworkIdentifier const&, ::LevelSoundEventPacketV1 const&);
-
-    // vIndex: 189
-    virtual void handle(::NetworkIdentifier const&, ::LevelSoundEventPacketV2 const&);
-
-    // vIndex: 188
-    virtual void handle(::NetworkIdentifier const&, ::LevelEventPacket const&);
-
-    // vIndex: 187
-    virtual void handle(::NetworkIdentifier const&, ::LevelEventGenericPacket const&);
-
-    // vIndex: 186
-    virtual void handle(::NetworkIdentifier const&, ::BlockEventPacket const&);
-
-    // vIndex: 185
-    virtual void handle(::NetworkIdentifier const&, ::BlockPickRequestPacket const&);
-
-    // vIndex: 184
-    virtual void handle(::NetworkIdentifier const&, ::ActorPickRequestPacket const&);
-
-    // vIndex: 183
-    virtual void handle(::NetworkIdentifier const&, ::GuiDataPickItemPacket const&);
-
-    // vIndex: 182
-    virtual void handle(::NetworkIdentifier const&, ::ActorEventPacket const&);
-
-    // vIndex: 181
-    virtual void handle(::NetworkIdentifier const&, ::MobEffectPacket const&);
-
-    // vIndex: 180
-    virtual void handle(::NetworkIdentifier const&, ::MovementEffectPacket const&);
-
-    // vIndex: 179
-    virtual void handle(::NetworkIdentifier const&, ::MobEquipmentPacket const&);
-
-    // vIndex: 178
-    virtual void handle(::NetworkIdentifier const&, ::MobArmorEquipmentPacket const&);
-
-    // vIndex: 177
-    virtual void handle(::NetworkIdentifier const&, ::SetActorDataPacket const&);
-
-    // vIndex: 176
-    virtual void handle(::NetworkIdentifier const&, ::SetActorMotionPacket const&);
-
-    // vIndex: 175
-    virtual void handle(::NetworkIdentifier const&, ::MotionPredictionHintsPacket const&);
-
-    // vIndex: 174
-    virtual void handle(::NetworkIdentifier const&, ::SetHealthPacket const&);
-
-    // vIndex: 173
-    virtual void handle(::NetworkIdentifier const&, ::SetActorLinkPacket const&);
-
-    // vIndex: 172
-    virtual void handle(::NetworkIdentifier const&, ::SetSpawnPositionPacket const&);
-
-    // vIndex: 171
-    virtual void handle(::NetworkIdentifier const&, ::InteractPacket const&);
-
-    // vIndex: 170
-    virtual void handle(::NetworkIdentifier const&, ::PlayerActionPacket const&);
-
-    // vIndex: 169
-    virtual void handle(::NetworkIdentifier const&, ::ActorFallPacket const&);
-
-    // vIndex: 168
-    virtual void handle(::NetworkIdentifier const&, ::HurtArmorPacket const&);
-
-    // vIndex: 167
-    virtual void handle(::NetworkIdentifier const&, ::PlayerArmorDamagePacket const&);
-
-    // vIndex: 166
-    virtual void handle(::NetworkIdentifier const&, ::ItemStackRequestPacket const&);
-
-    // vIndex: 165
-    virtual void handle(::NetworkIdentifier const&, ::ItemStackResponsePacket const&);
-
-    // vIndex: 164
-    virtual void handle(::NetworkIdentifier const&, ::ContainerOpenPacket const&);
-
-    // vIndex: 163
-    virtual void handle(::NetworkIdentifier const&, ::ContainerClosePacket const&);
-
-    // vIndex: 162
-    virtual void handle(::NetworkIdentifier const&, ::ContainerRegistryCleanupPacket const&);
-
-    // vIndex: 161
-    virtual void handle(::NetworkIdentifier const&, ::ContainerSetDataPacket const&);
-
-    // vIndex: 160
-    virtual void handle(::NetworkIdentifier const&, ::PlayerHotbarPacket const&);
-
-    // vIndex: 159
-    virtual void handle(::NetworkIdentifier const&, ::InventoryContentPacket const&);
-
-    // vIndex: 158
-    virtual void handle(::NetworkIdentifier const&, ::InventorySlotPacket const&);
-
-    // vIndex: 157
-    virtual void handle(::NetworkIdentifier const&, ::CraftingDataPacket const&);
-
-    // vIndex: 156
-    virtual void handle(::NetworkIdentifier const&, ::AnimatePacket const&);
-
-    // vIndex: 155
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::BlockActorDataPacket>);
-
-    // vIndex: 154
-    virtual void handle(::NetworkIdentifier const&, ::PlayerAuthInputPacket const&);
-
-    // vIndex: 153
-    virtual void handle(::NetworkIdentifier const&, ::PlayerInputPacket const&);
-
-    // vIndex: 152
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::LevelChunkPacket>);
-
-    // vIndex: 151
-    virtual void handle(::NetworkIdentifier const&, ::SubChunkPacket const&);
-
-    // vIndex: 150
-    virtual void handle(::NetworkIdentifier const&, ::SubChunkRequestPacket const&);
-
-    // vIndex: 149
-    virtual void handle(::NetworkIdentifier const&, ::ClientCacheBlobStatusPacket const&);
-
-    // vIndex: 148
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::ClientCacheMissResponsePacket>);
-
-    // vIndex: 147
-    virtual void handle(::NetworkIdentifier const&, ::SetCommandsEnabledPacket const&);
-
-    // vIndex: 146
-    virtual void handle(::NetworkIdentifier const&, ::SetDifficultyPacket const&);
-
-    // vIndex: 145
-    virtual void handle(::NetworkIdentifier const&, ::SimpleEventPacket const&);
-
-    // vIndex: 144
-    virtual void handle(::NetworkIdentifier const&, ::ChangeDimensionPacket const&);
-
-    // vIndex: 143
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket>);
-
-    // vIndex: 142
-    virtual void handle(::NetworkIdentifier const&, ::PlayerListPacket const&);
-
-    // vIndex: 141
-    virtual void handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const&);
-
-    // vIndex: 140
-    virtual void handle(::NetworkIdentifier const&, ::SpawnExperienceOrbPacket const&);
-
-    // vIndex: 139
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundDebugRendererPacket const&);
-
-    // vIndex: 138
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const&);
-
-    // vIndex: 137
-    virtual void handle(::NetworkIdentifier const&, ::ClientboundCloseFormPacket const&);
-
-    // vIndex: 136
-    virtual void handle(::NetworkIdentifier const&, ::ClientCacheStatusPacket const&);
-
-    // vIndex: 135
-    virtual void handle(::NetworkIdentifier const&, ::RequestChunkRadiusPacket const&);
-
-    // vIndex: 134
-    virtual void handle(::NetworkIdentifier const&, ::MapCreateLockedCopyPacket const&);
-
-    // vIndex: 133
-    virtual void handle(::NetworkIdentifier const&, ::MapInfoRequestPacket const&);
-
-    // vIndex: 132
-    virtual void handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const&);
-
-    // vIndex: 131
-    virtual void handle(::NetworkIdentifier const&, ::BossEventPacket const&);
-
-    // vIndex: 130
-    virtual void handle(::NetworkIdentifier const&, ::UpdateTradePacket const&);
-
-    // vIndex: 129
-    virtual void handle(::NetworkIdentifier const&, ::UpdateEquipPacket const&);
-
-    // vIndex: 128
-    virtual void handle(::NetworkIdentifier const&, ::AvailableCommandsPacket const&);
-
-    // vIndex: 127
-    virtual void handle(::NetworkIdentifier const&, ::CommandRequestPacket const&);
-
-    // vIndex: 126
-    virtual void handle(::NetworkIdentifier const&, ::CommandOutputPacket const&);
-
-    // vIndex: 125
-    virtual void handle(::NetworkIdentifier const&, ::CommandBlockUpdatePacket const&);
-
-    // vIndex: 124
-    virtual void handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const&);
-
-    // vIndex: 123
-    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const&);
-
-    // vIndex: 122
-    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const&);
-
-    // vIndex: 121
-    virtual void handle(::NetworkIdentifier const&, ::CameraInstructionPacket const&);
-
-    // vIndex: 120
-    virtual void handle(::NetworkIdentifier const&, ::CameraPacket const&);
-
-    // vIndex: 119
-    virtual void handle(::NetworkIdentifier const&, ::CameraPresetsPacket const&);
-
-    // vIndex: 118
-    virtual void handle(::NetworkIdentifier const&, ::CameraShakePacket const&);
-
-    // vIndex: 117
-    virtual void handle(::NetworkIdentifier const&, ::InventoryActionPacket const&);
-
-    // vIndex: 116
-    virtual void handle(::NetworkIdentifier const&, ::GameRulesChangedPacket const&);
-
-    // vIndex: 115
-    virtual void handle(::NetworkIdentifier const&, ::ResourcePackDataInfoPacket const&);
-
-    // vIndex: 114
-    virtual void handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const&);
-
-    // vIndex: 113
-    virtual void handle(::NetworkIdentifier const&, ::ResourcePackChunkRequestPacket const&);
-
-    // vIndex: 112
-    virtual void handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const&);
-
-    // vIndex: 111
-    virtual void handle(::NetworkIdentifier const&, ::StructureBlockUpdatePacket const&);
-
-    // vIndex: 110
-    virtual void handle(::NetworkIdentifier const&, ::StructureTemplateDataRequestPacket const&);
-
-    // vIndex: 109
-    virtual void handle(::NetworkIdentifier const&, ::StructureTemplateDataResponsePacket const&);
-
-    // vIndex: 108
-    virtual void handle(::NetworkIdentifier const&, ::TransferPacket const&);
-
-    // vIndex: 107
-    virtual void handle(::NetworkIdentifier const&, ::PlaySoundPacket const&);
-
-    // vIndex: 106
-    virtual void handle(::NetworkIdentifier const&, ::StopSoundPacket const&);
-
-    // vIndex: 105
-    virtual void handle(::NetworkIdentifier const&, ::SetTitlePacket const&);
-
-    // vIndex: 104
-    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket>);
-
-    // vIndex: 103
-    virtual void handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const&);
-
-    // vIndex: 102
-    virtual void handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const&);
-
-    // vIndex: 101
-    virtual void handle(::NetworkIdentifier const&, ::PurchaseReceiptPacket const&);
-
-    // vIndex: 100
-    virtual void handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const&);
-
-    // vIndex: 99
-    virtual void handle(::NetworkIdentifier const&, ::SetDisplayObjectivePacket const&);
-
-    // vIndex: 98
-    virtual void handle(::NetworkIdentifier const&, ::AutomationClientConnectPacket const&);
-
-    // vIndex: 97
-    virtual void handle(::NetworkIdentifier const&, ::ModalFormRequestPacket const&);
-
-    // vIndex: 96
-    virtual void handle(::NetworkIdentifier const&, ::ModalFormResponsePacket const&);
-
-    // vIndex: 95
-    virtual void handle(::NetworkIdentifier const&, ::ToastRequestPacket const&);
-
-    // vIndex: 94
-    virtual void handle(::NetworkIdentifier const&, ::OnScreenTextureAnimationPacket const&);
-
-    // vIndex: 93
-    virtual void handle(::NetworkIdentifier const&, ::ServerSettingsRequestPacket const&);
-
-    // vIndex: 92
-    virtual void handle(::NetworkIdentifier const&, ::ServerSettingsResponsePacket const&);
-
-    // vIndex: 91
-    virtual void handle(::NetworkIdentifier const&, ::ShowProfilePacket const&);
-
-    // vIndex: 90
-    virtual void handle(::NetworkIdentifier const&, ::SetScorePacket const&);
-
-    // vIndex: 89
-    virtual void handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const&);
-
-    // vIndex: 88
-    virtual void handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const&);
-
-    // vIndex: 87
-    virtual void handle(::NetworkIdentifier const&, ::UpdateSoftEnumPacket const&);
-
-    // vIndex: 86
-    virtual void handle(::NetworkIdentifier const&, ::AvailableActorIdentifiersPacket const&);
-
-    // vIndex: 85
-    virtual void handle(::NetworkIdentifier const&, ::AddVolumeEntityPacket const&);
-
-    // vIndex: 84
-    virtual void handle(::NetworkIdentifier const&, ::RemoveVolumeEntityPacket const&);
-
-    // vIndex: 83
-    virtual void handle(::NetworkIdentifier const&, ::DimensionDataPacket const&);
-
-    // vIndex: 82
-    virtual void handle(::NetworkIdentifier const&, ::EditorNetworkPacket const&);
-
-    // vIndex: 81
-    virtual void handle(::NetworkIdentifier const&, ::RefreshEntitlementsPacket const&);
-
-    // vIndex: 80
-    virtual void handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const&);
-
-    // vIndex: 79
-    virtual void handle(::NetworkIdentifier const&, ::RespawnPacket const&);
-
-    // vIndex: 78
-    virtual void handle(::NetworkIdentifier const&, ::ShowCreditsPacket const&);
-
-    // vIndex: 77
-    virtual void handle(::NetworkIdentifier const&, ::PlayerSkinPacket const&);
-
-    // vIndex: 76
-    virtual void handle(::NetworkIdentifier const&, ::PlayerStartItemCooldownPacket const&);
-
-    // vIndex: 75
-    virtual void handle(::NetworkIdentifier const&, ::PlayerToggleCrafterSlotRequestPacket const&);
-
-    // vIndex: 74
-    virtual void handle(::NetworkIdentifier const&, ::SetLastHurtByPacket const&);
-
-    // vIndex: 73
-    virtual void handle(::NetworkIdentifier const&, ::BookAddPagePacket const&);
-
-    // vIndex: 72
-    virtual void handle(::NetworkIdentifier const&, ::BookDeletePagePacket const&);
-
-    // vIndex: 71
-    virtual void handle(::NetworkIdentifier const&, ::LecternUpdatePacket const&);
-
-    // vIndex: 70
-    virtual void handle(::NetworkIdentifier const&, ::BookEditPacket const&);
-
-    // vIndex: 69
-    virtual void handle(::NetworkIdentifier const&, ::BookSignPacket const&);
-
-    // vIndex: 68
-    virtual void handle(::NetworkIdentifier const&, ::BookSwapPagesPacket const&);
-
-    // vIndex: 67
-    virtual void handle(::NetworkIdentifier const&, ::NpcRequestPacket const&);
-
-    // vIndex: 66
-    virtual void handle(::NetworkIdentifier const&, ::PhotoTransferPacket const&);
-
-    // vIndex: 65
-    virtual void handle(::NetworkIdentifier const&, ::LabTablePacket const&);
-
-    // vIndex: 64
-    virtual void handle(::NetworkIdentifier const&, ::NetworkSettingsPacket const&);
-
-    // vIndex: 63
-    virtual void handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&);
-
-    // vIndex: 62
-    virtual void handle(::NetworkIdentifier const&, ::ServerStatsPacket const&);
-
-    // vIndex: 61
-    virtual void handle(::NetworkIdentifier const&, ::SetLocalPlayerAsInitializedPacket const&);
-
-    // vIndex: 60
-    virtual void handle(::NetworkIdentifier const&, ::ScriptMessagePacket const&);
-
-    // vIndex: 59
-    virtual void handle(::NetworkIdentifier const&, ::BiomeDefinitionListPacket const&);
-
-    // vIndex: 58
-    virtual void handle(::NetworkIdentifier const&, ::EducationSettingsPacket const&);
-
-    // vIndex: 57
-    virtual void handle(::NetworkIdentifier const&, ::EduUriResourcePacket const&);
-
-    // vIndex: 56
-    virtual void handle(::NetworkIdentifier const&, ::MultiplayerSettingsPacket const&);
-
-    // vIndex: 55
-    virtual void handle(::NetworkIdentifier const&, ::SettingsCommandPacket const&);
-
-    // vIndex: 54
-    virtual void handle(::NetworkIdentifier const&, ::AnvilDamagePacket const&);
-
-    // vIndex: 53
-    virtual void handle(::NetworkIdentifier const&, ::CreativeContentPacket const&);
-
-    // vIndex: 52
-    virtual void handle(::NetworkIdentifier const&, ::CodeBuilderPacket const&);
-
-    // vIndex: 51
-    virtual void handle(::NetworkIdentifier const&, ::PlayerEnchantOptionsPacket const&);
-
-    // vIndex: 50
-    virtual void handle(::NetworkIdentifier const&, ::DebugInfoPacket const&);
-
-    // vIndex: 49
-    virtual void handle(::NetworkIdentifier const&, ::ChangeMobPropertyPacket const&);
-
-    // vIndex: 48
-    virtual void handle(::NetworkIdentifier const&, ::AnimateEntityPacket const&);
-
-    // vIndex: 47
-    virtual void handle(::NetworkIdentifier const&, ::CorrectPlayerMovePredictionPacket const&);
-
-    // vIndex: 46
-    virtual void handle(::NetworkIdentifier const&, ::PlayerFogPacket const&);
-
-    // vIndex: 45
-    virtual void handle(::NetworkIdentifier const&, ::ItemComponentPacket const&);
-
-    // vIndex: 44
-    virtual void handle(::NetworkIdentifier const&, ::LessonProgressPacket const&);
-
-    // vIndex: 43
-    virtual void handle(::NetworkIdentifier const&, ::FeatureRegistryPacket const&);
-
-    // vIndex: 42
-    virtual void handle(::NetworkIdentifier const&, ::SyncActorPropertyPacket const&);
-
-    // vIndex: 41
-    virtual void handle(::NetworkIdentifier const&, ::SimulationTypePacket const&);
-
-    // vIndex: 40
-    virtual void handle(::NetworkIdentifier const&, ::NpcDialoguePacket const&);
-
-    // vIndex: 39
-    virtual void handle(::NetworkIdentifier const&, ::CreatePhotoPacket const&);
-
-    // vIndex: 38
-    virtual void handle(::NetworkIdentifier const&, ::UpdateSubChunkBlocksPacket const&);
-
-    // vIndex: 37
-    virtual void handle(::NetworkIdentifier const&, ::CodeBuilderSourcePacket const&);
-
-    // vIndex: 36
-    virtual void handle(::NetworkIdentifier const&, ::AgentActionEventPacket const&);
-
-    // vIndex: 35
-    virtual void handle(::NetworkIdentifier const&, ::DeathInfoPacket const&);
-
-    // vIndex: 34
-    virtual void handle(::NetworkIdentifier const&, ::RequestAbilityPacket const&);
-
-    // vIndex: 33
-    virtual void handle(::NetworkIdentifier const&, ::RequestPermissionsPacket const&);
-
-    // vIndex: 32
-    virtual void handle(::NetworkIdentifier const&, ::UpdateAbilitiesPacket const&);
-
-    // vIndex: 31
-    virtual void handle(::NetworkIdentifier const&, ::UpdateAdventureSettingsPacket const&);
-
-    // vIndex: 30
-    virtual void handle(::NetworkIdentifier const&, ::RequestNetworkSettingsPacket const&);
-
-    // vIndex: 29
-    virtual void handle(::NetworkIdentifier const&, ::GameTestRequestPacket const&);
-
-    // vIndex: 28
-    virtual void handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&);
-
-    // vIndex: 27
-    virtual void handle(::NetworkIdentifier const&, ::UpdateClientInputLocksPacket const&);
-
-    // vIndex: 26
-    virtual void handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const&);
-
-    // vIndex: 25
-    virtual void handle(::NetworkIdentifier const&, ::CompressedBiomeDefinitionListPacket const&);
-
-    // vIndex: 24
-    virtual void handle(::NetworkIdentifier const&, ::TrimDataPacket const&);
-
-    // vIndex: 23
-    virtual void handle(::NetworkIdentifier const&, ::OpenSignPacket const&);
-
-    // vIndex: 22
-    virtual void handle(::NetworkIdentifier const&, ::AgentAnimationPacket const&);
-
-    // vIndex: 21
-    virtual void handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const&);
-
-    // vIndex: 20
-    virtual void handle(::NetworkIdentifier const&, ::SetHudPacket const&);
-
-    // vIndex: 19
-    virtual void handle(::NetworkIdentifier const&, ::AwardAchievementPacket const&);
-
-    // vIndex: 18
-    virtual void handle(::NetworkIdentifier const&, ::ServerboundLoadingScreenPacket const&);
-
-    // vIndex: 17
-    virtual void handle(::NetworkIdentifier const&, ::ServerboundDiagnosticsPacket const&);
-
-    // vIndex: 16
-    virtual void handle(::NetworkIdentifier const&, ::JigsawStructureDataPacket const&);
-
-    // vIndex: 15
-    virtual void handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const&);
+    virtual bool getIsConnectedToApplicationLayer() const;
 
     // vIndex: 14
+    virtual ::GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
+
+    // vIndex: 228
+    virtual void handle(::NetworkIdentifier const&, ::PacketViolationWarningPacket const&);
+
+    // vIndex: 227
+    virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&);
+
+    // vIndex: 226
+    virtual void handle(::NetworkIdentifier const&, ::EmoteListPacket const&);
+
+    // vIndex: 225
+    virtual void handle(::NetworkIdentifier const&, ::EmotePacket const&);
+
+    // vIndex: 224
+    virtual void handle(::NetworkIdentifier const&, ::LoginPacket const&);
+
+    // vIndex: 223
+    virtual void handle(::NetworkIdentifier const&, ::SubClientLoginPacket const&);
+
+    // vIndex: 222
+    virtual void handle(::NetworkIdentifier const&, ::ClientToServerHandshakePacket const&);
+
+    // vIndex: 221
+    virtual void handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&);
+
+    // vIndex: 220
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&);
+
+    // vIndex: 219
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&);
+
+    // vIndex: 218
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePackClientResponsePacket const&);
+
+    // vIndex: 217
+    virtual void handle(::NetworkIdentifier const&, ::PositionTrackingDBClientRequestPacket const&);
+
+    // vIndex: 216
+    virtual void handle(::NetworkIdentifier const&, ::PositionTrackingDBServerBroadcastPacket const&);
+
+    // vIndex: 215
+    virtual void handle(::NetworkIdentifier const&, ::PlayStatusPacket const&);
+
+    // vIndex: 214
+    virtual void handle(::NetworkIdentifier const&, ::SetTimePacket const&);
+
+    // vIndex: 213
+    virtual void handle(::NetworkIdentifier const&, ::TextPacket const&);
+
+    // vIndex: 212
+    virtual void handle(::NetworkIdentifier const&, ::StartGamePacket const&);
+
+    // vIndex: 211
+    virtual void handle(::NetworkIdentifier const&, ::AddItemActorPacket const&);
+
+    // vIndex: 210
+    virtual void handle(::NetworkIdentifier const&, ::AddPaintingPacket const&);
+
+    // vIndex: 209
+    virtual void handle(::NetworkIdentifier const&, ::TakeItemActorPacket const&);
+
+    // vIndex: 208
+    virtual void handle(::NetworkIdentifier const&, ::AddActorPacket const&);
+
+    // vIndex: 207
+    virtual void handle(::NetworkIdentifier const&, ::AddMobPacket const&);
+
+    // vIndex: 206
+    virtual void handle(::NetworkIdentifier const&, ::AddPlayerPacket const&);
+
+    // vIndex: 205
+    virtual void handle(::NetworkIdentifier const&, ::RemoveActorPacket const&);
+
+    // vIndex: 204
+    virtual void handle(::NetworkIdentifier const&, ::MoveActorAbsolutePacket const&);
+
+    // vIndex: 203
+    virtual void handle(::NetworkIdentifier const&, ::MoveActorDeltaPacket const&);
+
+    // vIndex: 202
+    virtual void handle(::NetworkIdentifier const&, ::MovePlayerPacket const&);
+
+    // vIndex: 201
+    virtual void handle(::NetworkIdentifier const&, ::PassengerJumpPacket const&);
+
+    // vIndex: 200
+    virtual void handle(::NetworkIdentifier const&, ::SetPlayerGameTypePacket const&);
+
+    // vIndex: 199
+    virtual void handle(::NetworkIdentifier const&, ::UpdatePlayerGameTypePacket const&);
+
+    // vIndex: 198
+    virtual void handle(::NetworkIdentifier const&, ::SetDefaultGameTypePacket const&);
+
+    // vIndex: 197
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockPacket>);
+
+    // vIndex: 196
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateBlockSyncedPacket>);
+
+    // vIndex: 195
+    virtual void handle(::NetworkIdentifier const&, ::SpawnParticleEffectPacket const&);
+
+    // vIndex: 194
+    virtual void handle(::NetworkIdentifier const&, ::LevelSoundEventPacket const&);
+
+    // vIndex: 193
+    virtual void handle(::NetworkIdentifier const&, ::LevelSoundEventPacketV1 const&);
+
+    // vIndex: 192
+    virtual void handle(::NetworkIdentifier const&, ::LevelSoundEventPacketV2 const&);
+
+    // vIndex: 191
+    virtual void handle(::NetworkIdentifier const&, ::LevelEventPacket const&);
+
+    // vIndex: 190
+    virtual void handle(::NetworkIdentifier const&, ::LevelEventGenericPacket const&);
+
+    // vIndex: 189
+    virtual void handle(::NetworkIdentifier const&, ::BlockEventPacket const&);
+
+    // vIndex: 188
+    virtual void handle(::NetworkIdentifier const&, ::BlockPickRequestPacket const&);
+
+    // vIndex: 187
+    virtual void handle(::NetworkIdentifier const&, ::ActorPickRequestPacket const&);
+
+    // vIndex: 186
+    virtual void handle(::NetworkIdentifier const&, ::GuiDataPickItemPacket const&);
+
+    // vIndex: 185
+    virtual void handle(::NetworkIdentifier const&, ::ActorEventPacket const&);
+
+    // vIndex: 184
+    virtual void handle(::NetworkIdentifier const&, ::MobEffectPacket const&);
+
+    // vIndex: 183
+    virtual void handle(::NetworkIdentifier const&, ::MovementEffectPacket const&);
+
+    // vIndex: 182
+    virtual void handle(::NetworkIdentifier const&, ::MobEquipmentPacket const&);
+
+    // vIndex: 181
+    virtual void handle(::NetworkIdentifier const&, ::MobArmorEquipmentPacket const&);
+
+    // vIndex: 180
+    virtual void handle(::NetworkIdentifier const&, ::SetActorDataPacket const&);
+
+    // vIndex: 179
+    virtual void handle(::NetworkIdentifier const&, ::SetActorMotionPacket const&);
+
+    // vIndex: 178
+    virtual void handle(::NetworkIdentifier const&, ::MotionPredictionHintsPacket const&);
+
+    // vIndex: 177
+    virtual void handle(::NetworkIdentifier const&, ::SetHealthPacket const&);
+
+    // vIndex: 176
+    virtual void handle(::NetworkIdentifier const&, ::SetActorLinkPacket const&);
+
+    // vIndex: 175
+    virtual void handle(::NetworkIdentifier const&, ::SetSpawnPositionPacket const&);
+
+    // vIndex: 174
+    virtual void handle(::NetworkIdentifier const&, ::InteractPacket const&);
+
+    // vIndex: 173
+    virtual void handle(::NetworkIdentifier const&, ::PlayerActionPacket const&);
+
+    // vIndex: 172
+    virtual void handle(::NetworkIdentifier const&, ::ActorFallPacket const&);
+
+    // vIndex: 171
+    virtual void handle(::NetworkIdentifier const&, ::HurtArmorPacket const&);
+
+    // vIndex: 170
+    virtual void handle(::NetworkIdentifier const&, ::PlayerArmorDamagePacket const&);
+
+    // vIndex: 169
+    virtual void handle(::NetworkIdentifier const&, ::ItemStackRequestPacket const&);
+
+    // vIndex: 168
+    virtual void handle(::NetworkIdentifier const&, ::ItemStackResponsePacket const&);
+
+    // vIndex: 167
+    virtual void handle(::NetworkIdentifier const&, ::ContainerOpenPacket const&);
+
+    // vIndex: 166
+    virtual void handle(::NetworkIdentifier const&, ::ContainerClosePacket const&);
+
+    // vIndex: 165
+    virtual void handle(::NetworkIdentifier const&, ::ContainerRegistryCleanupPacket const&);
+
+    // vIndex: 164
+    virtual void handle(::NetworkIdentifier const&, ::ContainerSetDataPacket const&);
+
+    // vIndex: 163
+    virtual void handle(::NetworkIdentifier const&, ::PlayerHotbarPacket const&);
+
+    // vIndex: 162
+    virtual void handle(::NetworkIdentifier const&, ::InventoryContentPacket const&);
+
+    // vIndex: 161
+    virtual void handle(::NetworkIdentifier const&, ::InventorySlotPacket const&);
+
+    // vIndex: 160
+    virtual void handle(::NetworkIdentifier const&, ::CraftingDataPacket const&);
+
+    // vIndex: 159
+    virtual void handle(::NetworkIdentifier const&, ::AnimatePacket const&);
+
+    // vIndex: 158
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::BlockActorDataPacket>);
+
+    // vIndex: 157
+    virtual void handle(::NetworkIdentifier const&, ::PlayerAuthInputPacket const&);
+
+    // vIndex: 156
+    virtual void handle(::NetworkIdentifier const&, ::PlayerInputPacket const&);
+
+    // vIndex: 155
+    virtual void handle(::NetworkIdentifier const&, ::ClientMovementPredictionSyncPacket const&);
+
+    // vIndex: 154
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::LevelChunkPacket>);
+
+    // vIndex: 153
+    virtual void handle(::NetworkIdentifier const&, ::SubChunkPacket const&);
+
+    // vIndex: 152
+    virtual void handle(::NetworkIdentifier const&, ::SubChunkRequestPacket const&);
+
+    // vIndex: 151
+    virtual void handle(::NetworkIdentifier const&, ::ClientCacheBlobStatusPacket const&);
+
+    // vIndex: 150
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::ClientCacheMissResponsePacket>);
+
+    // vIndex: 149
+    virtual void handle(::NetworkIdentifier const&, ::SetCommandsEnabledPacket const&);
+
+    // vIndex: 148
+    virtual void handle(::NetworkIdentifier const&, ::SetDifficultyPacket const&);
+
+    // vIndex: 147
+    virtual void handle(::NetworkIdentifier const&, ::SimpleEventPacket const&);
+
+    // vIndex: 146
+    virtual void handle(::NetworkIdentifier const&, ::ChangeDimensionPacket const&);
+
+    // vIndex: 145
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket>);
+
+    // vIndex: 144
+    virtual void handle(::NetworkIdentifier const&, ::PlayerListPacket const&);
+
+    // vIndex: 143
+    virtual void handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const&);
+
+    // vIndex: 142
+    virtual void handle(::NetworkIdentifier const&, ::SpawnExperienceOrbPacket const&);
+
+    // vIndex: 141
+    virtual void handle(::NetworkIdentifier const&, ::ClientCameraAimAssistPacket const&);
+
+    // vIndex: 140
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundDebugRendererPacket const&);
+
+    // vIndex: 139
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundMapItemDataPacket const&);
+
+    // vIndex: 138
+    virtual void handle(::NetworkIdentifier const&, ::ClientboundCloseFormPacket const&);
+
+    // vIndex: 137
+    virtual void handle(::NetworkIdentifier const&, ::ClientCacheStatusPacket const&);
+
+    // vIndex: 136
+    virtual void handle(::NetworkIdentifier const&, ::RequestChunkRadiusPacket const&);
+
+    // vIndex: 135
+    virtual void handle(::NetworkIdentifier const&, ::MapCreateLockedCopyPacket const&);
+
+    // vIndex: 134
+    virtual void handle(::NetworkIdentifier const&, ::MapInfoRequestPacket const&);
+
+    // vIndex: 133
+    virtual void handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const&);
+
+    // vIndex: 132
+    virtual void handle(::NetworkIdentifier const&, ::BossEventPacket const&);
+
+    // vIndex: 131
+    virtual void handle(::NetworkIdentifier const&, ::UpdateTradePacket const&);
+
+    // vIndex: 130
+    virtual void handle(::NetworkIdentifier const&, ::UpdateEquipPacket const&);
+
+    // vIndex: 129
+    virtual void handle(::NetworkIdentifier const&, ::AvailableCommandsPacket const&);
+
+    // vIndex: 128
+    virtual void handle(::NetworkIdentifier const&, ::CommandRequestPacket const&);
+
+    // vIndex: 127
+    virtual void handle(::NetworkIdentifier const&, ::CommandOutputPacket const&);
+
+    // vIndex: 126
+    virtual void handle(::NetworkIdentifier const&, ::CommandBlockUpdatePacket const&);
+
+    // vIndex: 125
+    virtual void handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const&);
+
+    // vIndex: 124
+    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const&);
+
+    // vIndex: 123
+    virtual void handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const&);
+
+    // vIndex: 122
+    virtual void handle(::NetworkIdentifier const&, ::CameraInstructionPacket const&);
+
+    // vIndex: 121
+    virtual void handle(::NetworkIdentifier const&, ::CameraPacket const&);
+
+    // vIndex: 120
+    virtual void handle(::NetworkIdentifier const&, ::CameraPresetsPacket const&);
+
+    // vIndex: 119
+    virtual void handle(::NetworkIdentifier const&, ::CameraShakePacket const&);
+
+    // vIndex: 118
+    virtual void handle(::NetworkIdentifier const&, ::InventoryActionPacket const&);
+
+    // vIndex: 117
+    virtual void handle(::NetworkIdentifier const&, ::GameRulesChangedPacket const&);
+
+    // vIndex: 116
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePackDataInfoPacket const&);
+
+    // vIndex: 115
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const&);
+
+    // vIndex: 114
+    virtual void handle(::NetworkIdentifier const&, ::ResourcePackChunkRequestPacket const&);
+
+    // vIndex: 113
+    virtual void handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const&);
+
+    // vIndex: 112
+    virtual void handle(::NetworkIdentifier const&, ::StructureBlockUpdatePacket const&);
+
+    // vIndex: 111
+    virtual void handle(::NetworkIdentifier const&, ::StructureTemplateDataRequestPacket const&);
+
+    // vIndex: 110
+    virtual void handle(::NetworkIdentifier const&, ::StructureTemplateDataResponsePacket const&);
+
+    // vIndex: 109
+    virtual void handle(::NetworkIdentifier const&, ::TransferPacket const&);
+
+    // vIndex: 108
+    virtual void handle(::NetworkIdentifier const&, ::PlaySoundPacket const&);
+
+    // vIndex: 107
+    virtual void handle(::NetworkIdentifier const&, ::StopSoundPacket const&);
+
+    // vIndex: 106
+    virtual void handle(::NetworkIdentifier const&, ::SetTitlePacket const&);
+
+    // vIndex: 105
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket>);
+
+    // vIndex: 104
+    virtual void handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const&);
+
+    // vIndex: 103
+    virtual void handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const&);
+
+    // vIndex: 102
+    virtual void handle(::NetworkIdentifier const&, ::PurchaseReceiptPacket const&);
+
+    // vIndex: 101
+    virtual void handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const&);
+
+    // vIndex: 100
+    virtual void handle(::NetworkIdentifier const&, ::SetDisplayObjectivePacket const&);
+
+    // vIndex: 99
+    virtual void handle(::NetworkIdentifier const&, ::AutomationClientConnectPacket const&);
+
+    // vIndex: 98
+    virtual void handle(::NetworkIdentifier const&, ::ModalFormRequestPacket const&);
+
+    // vIndex: 97
+    virtual void handle(::NetworkIdentifier const&, ::ModalFormResponsePacket const&);
+
+    // vIndex: 96
+    virtual void handle(::NetworkIdentifier const&, ::ToastRequestPacket const&);
+
+    // vIndex: 95
+    virtual void handle(::NetworkIdentifier const&, ::OnScreenTextureAnimationPacket const&);
+
+    // vIndex: 94
+    virtual void handle(::NetworkIdentifier const&, ::ServerSettingsRequestPacket const&);
+
+    // vIndex: 93
+    virtual void handle(::NetworkIdentifier const&, ::ServerSettingsResponsePacket const&);
+
+    // vIndex: 92
+    virtual void handle(::NetworkIdentifier const&, ::ShowProfilePacket const&);
+
+    // vIndex: 91
+    virtual void handle(::NetworkIdentifier const&, ::SetScorePacket const&);
+
+    // vIndex: 90
+    virtual void handle(::NetworkIdentifier const&, ::SetScoreboardIdentityPacket const&);
+
+    // vIndex: 89
+    virtual void handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const&);
+
+    // vIndex: 88
+    virtual void handle(::NetworkIdentifier const&, ::UpdateSoftEnumPacket const&);
+
+    // vIndex: 87
+    virtual void handle(::NetworkIdentifier const&, ::AvailableActorIdentifiersPacket const&);
+
+    // vIndex: 86
+    virtual void handle(::NetworkIdentifier const&, ::AddVolumeEntityPacket const&);
+
+    // vIndex: 85
+    virtual void handle(::NetworkIdentifier const&, ::RemoveVolumeEntityPacket const&);
+
+    // vIndex: 84
+    virtual void handle(::NetworkIdentifier const&, ::DimensionDataPacket const&);
+
+    // vIndex: 83
+    virtual void handle(::NetworkIdentifier const&, ::EditorNetworkPacket const&);
+
+    // vIndex: 82
+    virtual void handle(::NetworkIdentifier const&, ::RefreshEntitlementsPacket const&);
+
+    // vIndex: 81
+    virtual void handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const&);
+
+    // vIndex: 80
+    virtual void handle(::NetworkIdentifier const&, ::RespawnPacket const&);
+
+    // vIndex: 79
+    virtual void handle(::NetworkIdentifier const&, ::ShowCreditsPacket const&);
+
+    // vIndex: 78
+    virtual void handle(::NetworkIdentifier const&, ::PlayerSkinPacket const&);
+
+    // vIndex: 77
+    virtual void handle(::NetworkIdentifier const&, ::PlayerStartItemCooldownPacket const&);
+
+    // vIndex: 76
+    virtual void handle(::NetworkIdentifier const&, ::PlayerToggleCrafterSlotRequestPacket const&);
+
+    // vIndex: 75
+    virtual void handle(::NetworkIdentifier const&, ::SetLastHurtByPacket const&);
+
+    // vIndex: 74
+    virtual void handle(::NetworkIdentifier const&, ::BookAddPagePacket const&);
+
+    // vIndex: 73
+    virtual void handle(::NetworkIdentifier const&, ::BookDeletePagePacket const&);
+
+    // vIndex: 72
+    virtual void handle(::NetworkIdentifier const&, ::LecternUpdatePacket const&);
+
+    // vIndex: 71
+    virtual void handle(::NetworkIdentifier const&, ::BookEditPacket const&);
+
+    // vIndex: 70
+    virtual void handle(::NetworkIdentifier const&, ::BookSignPacket const&);
+
+    // vIndex: 69
+    virtual void handle(::NetworkIdentifier const&, ::BookSwapPagesPacket const&);
+
+    // vIndex: 68
+    virtual void handle(::NetworkIdentifier const&, ::NpcRequestPacket const&);
+
+    // vIndex: 67
+    virtual void handle(::NetworkIdentifier const&, ::PhotoTransferPacket const&);
+
+    // vIndex: 66
+    virtual void handle(::NetworkIdentifier const&, ::LabTablePacket const&);
+
+    // vIndex: 65
+    virtual void handle(::NetworkIdentifier const&, ::NetworkSettingsPacket const&);
+
+    // vIndex: 64
+    virtual void handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&);
+
+    // vIndex: 63
+    virtual void handle(::NetworkIdentifier const&, ::ServerStatsPacket const&);
+
+    // vIndex: 62
+    virtual void handle(::NetworkIdentifier const&, ::SetLocalPlayerAsInitializedPacket const&);
+
+    // vIndex: 61
+    virtual void handle(::NetworkIdentifier const&, ::ScriptMessagePacket const&);
+
+    // vIndex: 60
+    virtual void handle(::NetworkIdentifier const&, ::BiomeDefinitionListPacket const&);
+
+    // vIndex: 59
+    virtual void handle(::NetworkIdentifier const&, ::EducationSettingsPacket const&);
+
+    // vIndex: 58
+    virtual void handle(::NetworkIdentifier const&, ::EduUriResourcePacket const&);
+
+    // vIndex: 57
+    virtual void handle(::NetworkIdentifier const&, ::MultiplayerSettingsPacket const&);
+
+    // vIndex: 56
+    virtual void handle(::NetworkIdentifier const&, ::SettingsCommandPacket const&);
+
+    // vIndex: 55
+    virtual void handle(::NetworkIdentifier const&, ::AnvilDamagePacket const&);
+
+    // vIndex: 54
+    virtual void handle(::NetworkIdentifier const&, ::CreativeContentPacket const&);
+
+    // vIndex: 53
+    virtual void handle(::NetworkIdentifier const&, ::CodeBuilderPacket const&);
+
+    // vIndex: 52
+    virtual void handle(::NetworkIdentifier const&, ::PlayerEnchantOptionsPacket const&);
+
+    // vIndex: 51
+    virtual void handle(::NetworkIdentifier const&, ::DebugInfoPacket const&);
+
+    // vIndex: 50
+    virtual void handle(::NetworkIdentifier const&, ::ChangeMobPropertyPacket const&);
+
+    // vIndex: 49
+    virtual void handle(::NetworkIdentifier const&, ::AnimateEntityPacket const&);
+
+    // vIndex: 48
+    virtual void handle(::NetworkIdentifier const&, ::CorrectPlayerMovePredictionPacket const&);
+
+    // vIndex: 47
+    virtual void handle(::NetworkIdentifier const&, ::PlayerFogPacket const&);
+
+    // vIndex: 46
+    virtual void handle(::NetworkIdentifier const&, ::ItemRegistryPacket const&);
+
+    // vIndex: 45
+    virtual void handle(::NetworkIdentifier const&, ::LessonProgressPacket const&);
+
+    // vIndex: 44
+    virtual void handle(::NetworkIdentifier const&, ::FeatureRegistryPacket const&);
+
+    // vIndex: 43
+    virtual void handle(::NetworkIdentifier const&, ::SyncActorPropertyPacket const&);
+
+    // vIndex: 42
+    virtual void handle(::NetworkIdentifier const&, ::SimulationTypePacket const&);
+
+    // vIndex: 41
+    virtual void handle(::NetworkIdentifier const&, ::NpcDialoguePacket const&);
+
+    // vIndex: 40
+    virtual void handle(::NetworkIdentifier const&, ::CreatePhotoPacket const&);
+
+    // vIndex: 39
+    virtual void handle(::NetworkIdentifier const&, ::UpdateSubChunkBlocksPacket const&);
+
+    // vIndex: 38
+    virtual void handle(::NetworkIdentifier const&, ::CodeBuilderSourcePacket const&);
+
+    // vIndex: 37
+    virtual void handle(::NetworkIdentifier const&, ::AgentActionEventPacket const&);
+
+    // vIndex: 36
+    virtual void handle(::NetworkIdentifier const&, ::DeathInfoPacket const&);
+
+    // vIndex: 35
+    virtual void handle(::NetworkIdentifier const&, ::RequestAbilityPacket const&);
+
+    // vIndex: 34
+    virtual void handle(::NetworkIdentifier const&, ::RequestPermissionsPacket const&);
+
+    // vIndex: 33
+    virtual void handle(::NetworkIdentifier const&, ::UpdateAbilitiesPacket const&);
+
+    // vIndex: 32
+    virtual void handle(::NetworkIdentifier const&, ::UpdateAdventureSettingsPacket const&);
+
+    // vIndex: 31
+    virtual void handle(::NetworkIdentifier const&, ::RequestNetworkSettingsPacket const&);
+
+    // vIndex: 30
+    virtual void handle(::NetworkIdentifier const&, ::GameTestRequestPacket const&);
+
+    // vIndex: 29
+    virtual void handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&);
+
+    // vIndex: 28
+    virtual void handle(::NetworkIdentifier const&, ::UpdateClientInputLocksPacket const&);
+
+    // vIndex: 27
+    virtual void handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const&);
+
+    // vIndex: 26
+    virtual void handle(::NetworkIdentifier const&, ::CompressedBiomeDefinitionListPacket const&);
+
+    // vIndex: 25
+    virtual void handle(::NetworkIdentifier const&, ::TrimDataPacket const&);
+
+    // vIndex: 24
+    virtual void handle(::NetworkIdentifier const&, ::OpenSignPacket const&);
+
+    // vIndex: 23
+    virtual void handle(::NetworkIdentifier const&, ::AgentAnimationPacket const&);
+
+    // vIndex: 22
+    virtual void handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const&);
+
+    // vIndex: 21
+    virtual void handle(::NetworkIdentifier const&, ::SetHudPacket const&);
+
+    // vIndex: 20
+    virtual void handle(::NetworkIdentifier const&, ::AwardAchievementPacket const&);
+
+    // vIndex: 19
+    virtual void handle(::NetworkIdentifier const&, ::ServerboundLoadingScreenPacket const&);
+
+    // vIndex: 18
+    virtual void handle(::NetworkIdentifier const&, ::ServerboundDiagnosticsPacket const&);
+
+    // vIndex: 17
+    virtual void handle(::NetworkIdentifier const&, ::JigsawStructureDataPacket const&);
+
+    // vIndex: 16
+    virtual void handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const&);
+
+    // vIndex: 15
     virtual void handle(::NetworkIdentifier const&, ::SetMovementAuthorityPacket const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -962,6 +981,27 @@ public:
     );
 
     MCFOLD void $onWebsocketRequest(::std::string const&, ::std::string const&, ::std::function<void()>);
+
+    MCFOLD void $handlePacketViolation(
+        ::std::shared_ptr<::PacketSecurityController> const&,
+        ::std::error_code const&,
+        ::PacketViolationResponse const,
+        ::MinecraftPacketIds const,
+        ::std::string&&,
+        ::NetworkIdentifier const&,
+        ::SubClientId const,
+        ::SubClientId const,
+        uint const
+    );
+
+    MCFOLD void $sendPacketViolationWarningPacket(
+        ::std::error_code const&,
+        ::PacketViolationResponse,
+        ::MinecraftPacketIds,
+        ::std::string const&,
+        ::NetworkIdentifier const&,
+        ::SubClientId
+    );
 
     MCFOLD void $onTransferRequest(::NetworkIdentifier const&, ::std::string const&, int);
 
@@ -1115,6 +1155,8 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerInputPacket const&);
 
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientMovementPredictionSyncPacket const&);
+
     MCFOLD void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::LevelChunkPacket>);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::SubChunkPacket const&);
@@ -1140,6 +1182,8 @@ public:
     MCFOLD void $handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::SpawnExperienceOrbPacket const&);
+
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ClientCameraAimAssistPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::ClientboundDebugRendererPacket const&);
 
@@ -1329,7 +1373,7 @@ public:
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::PlayerFogPacket const&);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::ItemComponentPacket const&);
+    MCFOLD void $handle(::NetworkIdentifier const&, ::ItemRegistryPacket const&);
 
     MCFOLD void $handle(::NetworkIdentifier const&, ::LessonProgressPacket const&);
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class Material;
 // clang-format on
 
 class CobblestoneBlock : public ::BlockLegacy {
@@ -20,18 +19,6 @@ public:
 
     // vIndex: 0
     virtual ~CobblestoneBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CobblestoneBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

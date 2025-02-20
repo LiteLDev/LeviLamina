@@ -27,6 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI SpawnSettings(::SpawnSettings&&);
+
     MCAPI SpawnSettings(::SpawnSettings const&);
 
     MCAPI ~SpawnSettings();
@@ -35,6 +37,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::SpawnSettings&&);
+
     MCAPI void* $ctor(::SpawnSettings const&);
     // NOLINTEND
 

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Matrix;
-// clang-format on
-
 class Quaternion {
 public:
     // member variables
@@ -19,16 +14,4 @@ public:
     Quaternion& operator=(Quaternion const&);
     Quaternion(Quaternion const&);
     Quaternion();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit Quaternion(::Matrix const& rot);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Matrix const& rot);
-    // NOLINTEND
 };

@@ -6,8 +6,8 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
 
 // auto generated forward declare list
@@ -17,10 +17,7 @@ class BoundingBox;
 class CompoundBlockVolume;
 class CompoundBlockVolumeItem;
 class SimpleBlockVolume;
-namespace Editor { class ServiceProviderCollection; }
-namespace Editor::Network { class PayloadServiceProvider; }
 namespace mce { class Color; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Selection {
@@ -52,7 +49,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SelectionContainer() /*override*/;
+    virtual ~SelectionContainer() /*override*/ = default;
 
     // vIndex: 1
     virtual void setVisible(bool visible) = 0;
@@ -145,39 +142,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SelectionContainer(
-        ::Editor::ServiceProviderCollection&       serviceProviders,
-        ::Editor::Network::PayloadServiceProvider& payloadService,
-        ::mce::UUID                                id,
-        bool                                       requiresReplication
-    );
-
-    MCFOLD bool _isPendingDestroy() const;
-
-    MCFOLD void _logMessage(::std::string const& msg);
-
-    MCFOLD void _setPendingDestroy(bool destroy);
-
-    MCFOLD void _setScriptRefCount(uint value);
-
-    MCFOLD ::CompoundBlockVolume const& getCompoundVolume() const;
-
-    MCAPI ::mce::Color const& getFillColor() const;
-
-    MCFOLD ::mce::UUID const& getId();
-
-    MCAPI ::mce::Color const& getOutlineColor() const;
-
-    MCFOLD uint getScriptRefCount() const;
-
-    MCFOLD bool isVisible() const;
-
-    MCFOLD bool requiresReplication() const;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::Color const& mDefaultBorderColor();
@@ -186,20 +150,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&       serviceProviders,
-        ::Editor::Network::PayloadServiceProvider& payloadService,
-        ::mce::UUID                                id,
-        bool                                       requiresReplication
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

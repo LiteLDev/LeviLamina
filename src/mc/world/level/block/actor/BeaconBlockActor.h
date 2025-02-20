@@ -15,9 +15,9 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class ILevel;
 class ItemDescriptor;
 class ItemStack;
-class Level;
 class MobEffect;
 class Player;
 class SaveContext;
@@ -58,7 +58,7 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 20
     virtual bool hasAlphaLayer() const /*override*/;
@@ -67,7 +67,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;
@@ -114,10 +114,6 @@ public:
 
     MCAPI void _applyEffects(::BlockSource& region);
 
-    MCAPI bool _isEffectValid(int effectId) const;
-
-    MCAPI bool _isSecondaryEffectValid(int effectId) const;
-
     MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCAPI bool _setEffect(int effectId, int& outEffectId, int& outTier);
@@ -127,10 +123,6 @@ public:
     MCAPI ::CompoundTag getBeaconData(::SaveContext const& saveContext);
 
     MCAPI bool isEffectAvailable(int effectId) const;
-
-    MCAPI bool isSecondaryAvailable() const;
-
-    MCAPI bool setPrimaryEffect(int effectId);
 
     MCAPI bool setSecondaryEffect(int effectId);
     // NOLINTEND
@@ -162,13 +154,13 @@ public:
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCFOLD bool $hasAlphaLayer() const;
 
     MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD void $removeItem(int slot, int count);
 

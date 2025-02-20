@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
 class HashedString;
+class ItemInstance;
 class MultiRecipe;
 class NetworkItemInstanceDescriptor;
 class Recipe;
@@ -36,11 +36,11 @@ public:
     // NOLINTBEGIN
     MCAPI CraftingDataEntry(::CraftingDataEntry&& entry);
 
+    MCAPI void fillFromFurnaceAuxRecipe(int itemData, ::ItemInstance const& result, ::HashedString const& tag);
+
     MCAPI void fillFromMultiRecipe(::MultiRecipe const& recipe);
 
     MCAPI void fillFromRecipe(::Recipe const& recipe);
-
-    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~CraftingDataEntry();
     // NOLINTEND

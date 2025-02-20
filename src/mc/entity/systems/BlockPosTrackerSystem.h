@@ -4,13 +4,14 @@
 
 // auto generated forward declare list
 // clang-format off
-struct TickingSystemWithInfo;
+class Actor;
+struct BlockPosTrackerComponent;
 // clang-format on
 
 namespace BlockPosTrackerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCAPI void _tickBlockPosTrackerComponent(::Actor& actor, ::BlockPosTrackerComponent& blockPosTrackerComponent);
 // NOLINTEND
 
 } // namespace BlockPosTrackerSystem

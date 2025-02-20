@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,6 @@ class ItemContext;
 namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -97,8 +96,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptContainer(::Scripting::WeakLifetimeScope const& scope);
-
     MCAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     addItem(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
@@ -114,12 +111,6 @@ public:
     MCAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
 
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptContainer> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

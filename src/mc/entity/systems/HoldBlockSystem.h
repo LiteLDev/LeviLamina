@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual void tick(::EntityRegistry& registry) /*override*/;
+    virtual void tick(::EntityRegistry&) /*override*/;
 
     // vIndex: 1
     virtual void registerEvents(::entt::dispatcher& dispatcher) /*override*/;
@@ -40,7 +40,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::EntityRegistry& registry);
+    MCFOLD void $tick(::EntityRegistry&);
 
     MCAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND

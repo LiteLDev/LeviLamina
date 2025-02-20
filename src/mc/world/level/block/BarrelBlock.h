@@ -11,7 +11,6 @@
 class Block;
 class BlockPos;
 class BlockSource;
-class Material;
 class Player;
 // clang-format on
 
@@ -52,21 +51,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BarrelBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setOpen(bool isOpen, ::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

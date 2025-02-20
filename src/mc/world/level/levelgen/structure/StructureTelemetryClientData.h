@@ -17,16 +17,4 @@ public:
     StructureTelemetryClientData& operator=(StructureTelemetryClientData const&);
     StructureTelemetryClientData(StructureTelemetryClientData const&);
     StructureTelemetryClientData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD uint getMirrorEditCount() const;
-
-    MCFOLD uint getOffsetEditCount() const;
-
-    MCFOLD uint getRotationEditCount() const;
-
-    MCFOLD uint getSizeEditCount() const;
-    // NOLINTEND
 };

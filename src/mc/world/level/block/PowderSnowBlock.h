@@ -14,13 +14,10 @@ class BaseGameVersion;
 class Block;
 class BlockActor;
 class BlockPos;
-class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Level;
-class Material;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
@@ -64,8 +61,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PowderSnowBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
@@ -73,16 +68,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool canWalkOnTop(::GetCollisionShapeInterface const& actor);
-
-    MCAPI static void clearFire(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
-
-    MCAPI static void spawnPowderSnowParticles(::Level& level, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -108,6 +93,8 @@ public:
     MCFOLD bool $causesFreezeEffect() const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+
+    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCFOLD bool $isLavaBlocking() const;
 

@@ -19,24 +19,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockName(uint64 blockNameHash = 0);
-
-    MCAPI ::std::string getDescriptionId() const;
-
-    MCFOLD explicit operator uint64() const;
-
     MCAPI ::CommandBlockNameResult resolveBlock(int data) const;
 
     MCAPI ::CommandBlockNameResult
     resolveBlock(::std::vector<::BlockStateCommandParam> const& states, ::CommandOutput& output) const;
-
-    MCAPI ::CommandBlockNameResult
-    resolveBlock(::std::vector<::BlockStateCommandParam> const& states, int data, ::CommandOutput& output) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(uint64 blockNameHash);
     // NOLINTEND
 };

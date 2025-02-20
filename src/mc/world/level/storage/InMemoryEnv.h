@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/FlushableEnv.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 class InMemoryEnv : public ::FlushableEnv {
 public:
     // member variables
@@ -63,15 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InMemoryEnv(::leveldb::Env* env, ::Core::Path const& rootDbPath);
-
     MCAPI void _flushWithTransaction();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::leveldb::Env* env, ::Core::Path const& rootDbPath);
     // NOLINTEND
 
 public:

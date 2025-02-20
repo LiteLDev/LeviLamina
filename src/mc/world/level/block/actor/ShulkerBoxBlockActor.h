@@ -3,8 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/actor/BlockActorRendererId.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 
 // auto generated forward declare list
@@ -12,13 +10,12 @@
 class AABB;
 class Actor;
 class BlockActorDataPacket;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class ILevel;
 class ItemStack;
 class ItemStackBase;
-class Level;
 class Player;
 class SaveContext;
 class Vec3;
@@ -48,7 +45,7 @@ public:
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -87,41 +84,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShulkerBoxBlockActor(
-        ::BlockActorType       type,
-        ::std::string const&   id,
-        ::BlockActorRendererId renderId,
-        ::BlockPos const&      pos
-    );
-
-    MCAPI void _addRedstoneComponent(::BlockSource& region) const;
-
-    MCAPI void _calculateBB();
+    MCAPI ::Vec3 _calculateActorMovementIntoShulker(
+        ::std::vector<::AABB> const& intersectingAABBs,
+        ::AABB const&                actorAabbAfterMovement
+    ) const;
 
     MCAPI ::Vec3 _calculateMovementWithCollisions(::BlockSource& region, ::Actor* actor) const;
 
-    MCAPI void setFacingDir(uchar facing);
-
-    MCFOLD void setupRedstoneComponent(::BlockSource& region) const;
+    MCAPI void _moveCollidedEntities(::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& ITEMS_SIZE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::BlockActorType type, ::std::string const& id, ::BlockActorRendererId renderId, ::BlockPos const& pos);
+    MCAPI static bool itemAllowed(::ItemStackBase const& item);
     // NOLINTEND
 
 public:
@@ -137,9 +113,9 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCFOLD void $onPlace(::BlockSource& region);
+    MCAPI void $onPlace(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

@@ -8,7 +8,7 @@ struct VariantHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk77d4b4;
+    ::ll::UntypedStorage<8, 64> mUnk77d4b4;
     ::ll::UntypedStorage<1, 1>  mUnk3cc19c;
     // NOLINTEND
 

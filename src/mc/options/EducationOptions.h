@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~EducationOptions() /*override*/ = default;
+    virtual ~EducationOptions() /*override*/;
 
     // vIndex: 1
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) /*override*/;
@@ -51,9 +51,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ServiceReference<::EducationOptions> _getCurrentOptions();
 
-    MCAPI static bool isBaseCodeBuilderEnabled();
-
-    MCAPI static bool isChemistryEnabled();
+    MCFOLD static bool isChemistryEnabled();
 
     MCAPI static bool isCodeBuilderEnabled();
     // NOLINTEND
@@ -73,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

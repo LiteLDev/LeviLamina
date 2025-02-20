@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 #include "mc/editor/cursor/ControlMode.h"
 #include "mc/editor/cursor/TargetMode.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,7 +30,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptCursorProperties& operator=(ScriptCursorProperties const&);
     ScriptCursorProperties(ScriptCursorProperties const&);
     ScriptCursorProperties();
 
@@ -39,7 +38,10 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ScriptCursorProperties(::Editor::Cursor::CursorState const& stateToCopy);
 
-    MCAPI ::Editor::ScriptModule::ScriptCursorProperties& operator=(::Editor::ScriptModule::ScriptCursorProperties&&);
+    MCFOLD ::Editor::ScriptModule::ScriptCursorProperties& operator=(::Editor::ScriptModule::ScriptCursorProperties&&);
+
+    MCAPI ::Editor::ScriptModule::ScriptCursorProperties&
+    operator=(::Editor::ScriptModule::ScriptCursorProperties const&);
 
     MCAPI ~ScriptCursorProperties();
     // NOLINTEND

@@ -52,6 +52,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::br::worldgen::JigsawStructureBuilder create(::std::string_view key, ::HashedString type);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);

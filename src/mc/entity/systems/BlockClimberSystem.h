@@ -7,7 +7,6 @@
 class BlockLegacy;
 class BlockPos;
 class IConstBlockSource;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class BlockClimberSystem {
@@ -22,7 +21,5 @@ public:
         bool                       hasLightweightFamily,
         bool                       isPlayer
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

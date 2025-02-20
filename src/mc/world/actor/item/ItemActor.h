@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class AddActorBasePacket;
@@ -20,7 +19,6 @@ class EntityContext;
 class ItemStack;
 class ListTag;
 class Player;
-struct AABBShapeComponent;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -70,34 +68,34 @@ public:
     // vIndex: 8
     virtual ~ItemActor() /*override*/ = default;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual void playerTouch(::Player& player) /*override*/;
 
     // vIndex: 23
     virtual ::std::unique_ptr<::AddActorBasePacket> tryCreateAddActorPacket() /*override*/;
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 101
+    // vIndex: 99
     virtual bool canSynchronizeNewEntity() const /*override*/;
 
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 18
     virtual bool isFireImmune() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float damage, bool, bool) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
     // NOLINTEND
 
@@ -112,29 +110,17 @@ public:
 
     MCAPI void _addComponents();
 
+    MCAPI void _dropContents();
+
     MCAPI void _dropItemList(::ListTag* itemList);
 
     MCAPI bool _merge(::ItemActor* target);
 
+    MCAPI void _mergeWithNeighbours();
+
     MCAPI void _validateItem();
 
     MCAPI void postNormalTick();
-
-    MCAPI void setSourceEntity(::Actor const* owner);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::AABB getLiquidAABB(::AABBShapeComponent const& aabbShapeComponent);
-
-    MCAPI static ::ItemActor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& LIFETIME();
     // NOLINTEND
 
 public:
@@ -166,7 +152,7 @@ public:
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool $canSynchronizeNewEntity() const;
+    MCFOLD bool $canSynchronizeNewEntity() const;
 
     MCAPI bool $isFireImmune() const;
 

@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/editor/input/KeyInputType.h"
-#include "mc/editor/input/Modifier.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Input {
 
 class KeyBinding {
@@ -27,26 +18,6 @@ public:
     KeyBinding& operator=(KeyBinding const&);
     KeyBinding(KeyBinding const&);
     KeyBinding();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI KeyBinding(int key, ::Editor::Input::Modifier modifier, ::Editor::Input::KeyInputType inputType);
-
-    MCAPI bool isValid() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int key, ::Editor::Input::Modifier modifier, ::Editor::Input::KeyInputType inputType);
-    // NOLINTEND
 };
 
 } // namespace Editor::Input

@@ -63,17 +63,22 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::std::function<::Block const*(int)>> mCallback;
-        ::ll::TypedStorage<8, 120, ::BaseGameVersion>                   mMinRequiredVersion;
-        ::ll::TypedStorage<8, 112, ::SemVersion>                        mFlattenedInBlocksJsonVersion;
+        ::ll::TypedStorage<8, 32, ::BaseGameVersion>                    mMinRequiredVersion;
+        ::ll::TypedStorage<8, 24, ::SemVersion>                         mFlattenedInBlocksJsonVersion;
         ::ll::TypedStorage<4, 4, int>                                   mStartVariant;
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        BlockComplexAliasContent& operator=(BlockComplexAliasContent const&);
+        BlockComplexAliasContent(BlockComplexAliasContent const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::BaseGameVersion const& getRequiredBaseGameVersion() const;
-
         MCAPI ::Block const* operator()(int data) const;
+
+        MCAPI ::BlockTypeRegistry::BlockComplexAliasContent& operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
 
         MCAPI ~BlockComplexAliasContent();
         // NOLINTEND
@@ -152,11 +157,6 @@ public:
         bool                                         logNotFound = false
     );
 
-    MCAPI static ::Block const* _lookupByNameImplSetNewBlockStates(
-        ::Block const&                                                         block,
-        ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states
-    );
-
     MCAPI static void checkBlockPermutationCap();
 
     MCAPI static uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion);
@@ -178,17 +178,7 @@ public:
 
     MCAPI static void initHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCAPI static void initRWLock();
-
     MCAPI static bool isComplexAliasBlock(::HashedString const& blockName);
-
-    MCAPI static ::Block const* lookupByName(::HashedString const& name, int data, bool logNotFound = false);
-
-    MCAPI static ::Block const* lookupByName(
-        ::HashedString const&                                                  name,
-        ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states,
-        bool                                                                   logNotFound = false
-    );
 
     MCAPI static ::WeakPtr<::BlockLegacy> lookupByName(::HashedString const& name, bool logNotFound = false);
 
@@ -225,6 +215,8 @@ public:
     mBlockComplexAliasPostSplitBlockNamesList();
 
     MCAPI static ::entt::dense_map<uint64, uint64>& mBlockComplexAliasPostSplitBlockNamesLookupMap();
+
+    MCAPI static ::std::map<::HashedString, ::HashedString>& mBlockComplexAliasPreSplitBlockNamesLookupMap();
 
     MCAPI static ::std::map<::HashedString, ::SharedPtr<::BlockLegacy>>& mBlockLookupMap();
 

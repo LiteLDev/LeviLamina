@@ -43,7 +43,7 @@ public:
     virtual void tick() /*override*/;
 
     // vIndex: 7
-    virtual void appendDebugInfo(::std::string& str) const /*override*/;
+    virtual void appendDebugInfo(::std::string&) const /*override*/;
 
     // vIndex: 11
     virtual bool isValidTarget(::BlockSource& region, ::BlockPos const& pos) /*override*/;
@@ -55,16 +55,16 @@ public:
     virtual bool _canReach(::BlockPos const& pos) /*override*/;
 
     // vIndex: 18
-    virtual void _createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    virtual void _createBreakProgressParticles(::Level&, ::BlockSource&, ::BlockPos);
 
     // vIndex: 19
-    virtual void _createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    virtual void _createDestroyParticles(::Level&, ::BlockSource&, ::BlockPos);
 
     // vIndex: 20
-    virtual void _playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    virtual void _playBreakProgressSound(::Level&, ::BlockSource&, ::BlockPos);
 
     // vIndex: 21
-    virtual void _playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    virtual void _playDestroySound(::Level&, ::BlockSource&, ::BlockPos);
 
     // vIndex: 0
     virtual ~StompBlockGoal() /*override*/ = default;
@@ -91,26 +91,10 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
-
     MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI void $_moveToBlock();
 
     MCAPI bool $_canReach(::BlockPos const& pos);
-
-    MCFOLD void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
-
-    MCFOLD void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
-
-    MCFOLD void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
-
-    MCFOLD void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -11,7 +11,6 @@
 // clang-format off
 class AABB;
 class BlockPos;
-class EntityContext;
 class Mob;
 struct Tick;
 namespace JsonUtil { class EmptyClass; }
@@ -37,6 +36,7 @@ public:
         // prevent constructor by default
         MoveIndoorsDefinition& operator=(MoveIndoorsDefinition const&);
         MoveIndoorsDefinition(MoveIndoorsDefinition const&);
+        MoveIndoorsDefinition();
 
     public:
         // virtual functions
@@ -48,11 +48,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI MoveIndoorsDefinition();
-
         MCAPI void addCooldownTicksBySeconds(float const& seconds);
-
-        MCAPI void initialize(::EntityContext& entity, ::MoveIndoorsGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -64,12 +60,6 @@ public:
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveIndoorsGoal::MoveIndoorsDefinition>>&
                 root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -127,15 +117,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MoveIndoorsGoal(::Mob& mob);
+    MCAPI bool _isInside(::BlockPos const& pos);
 
     MCAPI void _startPathfinding();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

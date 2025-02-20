@@ -117,6 +117,9 @@
 #include "ll/api/base/Alias.h"
 #include "ll/api/base/StdInt.h"
 
+// fmt C++ Library
+#include "fmt/format.h"
+
 struct HWND__;
 struct _TP_CALLBACK_INSTANCE;
 struct _TP_WAIT;

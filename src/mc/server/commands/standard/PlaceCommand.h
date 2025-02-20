@@ -8,19 +8,26 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class BoundingBox;
 class CommandOrigin;
 class CommandOutput;
 class CommandPosition;
 class CommandRegistry;
 class Dimension;
+class Experiments;
+class HashedString;
+class IFeature;
+struct BiomeDecorationFeature;
 // clang-format on
 
 class PlaceCommand : public ::ServerCommand {
 public:
     // PlaceCommand inner types define
     enum class PlaceAction : int {
-        Structure = 0,
-        Jigsaw    = 1,
+        Structure   = 0,
+        Jigsaw      = 1,
+        Feature     = 2,
+        FeatureRule = 3,
     };
 
 public:
@@ -31,10 +38,12 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk6570bc;
     ::ll::UntypedStorage<4, 4>  mUnk194dc9;
     ::ll::UntypedStorage<4, 16> mUnke003e7;
-    ::ll::UntypedStorage<8, 32> mUnk85c293;
+    ::ll::UntypedStorage<8, 32> mUnkd4ce49;
+    ::ll::UntypedStorage<8, 8>  mUnkf720b6;
     ::ll::UntypedStorage<1, 1>  mUnk663c8d;
     ::ll::UntypedStorage<1, 1>  mUnk5c7fb5;
     ::ll::UntypedStorage<1, 1>  mUnk77c817;
+    ::ll::UntypedStorage<1, 1>  mUnk7d4350;
     // NOLINTEND
 
 public:
@@ -56,12 +65,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _placeFeature(
+        ::IFeature const*        feature,
+        ::CommandPosition const& pos,
+        ::CommandOrigin const&   origin,
+        ::CommandOutput&         output
+    ) const;
+
+    MCAPI void _placeFeatureRule(
+        ::std::string const&     featureRuleName,
+        ::CommandPosition const& pos,
+        ::CommandOrigin const&   origin,
+        ::CommandOutput&         output
+    ) const;
+
     MCAPI void _placeJigsaw(
         ::std::string const&     pool,
         ::std::string const&     target,
         schar                    maxDepth,
         ::CommandPosition const& pos,
         bool                     keepJigsaws,
+        bool                     includeEntities,
         ::CommandOrigin const&   origin,
         ::CommandOutput&         output
     ) const;
@@ -71,6 +95,7 @@ public:
         ::CommandPosition const& pos,
         bool                     ignoreStartHeight,
         bool                     keepJigsaws,
+        bool                     includeEntities,
         ::CommandOrigin const&   origin,
         ::CommandOutput&         output
     ) const;
@@ -79,24 +104,30 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::nonstd::expected<void, ::std::string_view> placeJigsaw(
+    MCAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeJigsaw(
         ::std::string const& pool,
         ::std::string const& target,
         schar                maxDepth,
         ::BlockPos const&    position,
         bool                 keepJigsaws,
+        bool                 includeEntities,
         ::Dimension&         dimension
     );
 
-    MCAPI static ::nonstd::expected<void, ::std::string_view> placeStructure(
+    MCAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeStructure(
         ::std::string const& id,
         ::BlockPos const&    pos,
         ::Dimension&         dimension,
         bool                 ignoreStartHeight,
-        bool                 keepJigsaws
+        bool                 keepJigsaws,
+        bool                 includeEntities
     );
 
-    MCAPI static void setup(::CommandRegistry& registry);
+    MCAPI static void setup(
+        ::CommandRegistry&                                                    registry,
+        ::std::unordered_map<::HashedString, ::BiomeDecorationFeature> const& biomeDecorationFeatures,
+        ::Experiments const&                                                  experiments
+    );
     // NOLINTEND
 
 public:

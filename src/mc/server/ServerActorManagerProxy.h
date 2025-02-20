@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Level;
 // clang-format on
 
 class ServerActorManagerProxy : public ::ActorManagerProxy {
@@ -44,18 +43,6 @@ public:
 
     // vIndex: 0
     virtual ~ServerActorManagerProxy() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ServerActorManagerProxy(::Level& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:

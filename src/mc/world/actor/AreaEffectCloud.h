@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
-#include "mc/world/actor/ParticleType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -49,19 +49,19 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
-    // vIndex: 56
+    // vIndex: 55
     virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
@@ -85,12 +85,6 @@ public:
 
     MCAPI float getEffectiveRadius() const;
 
-    MCAPI ::ParticleType getParticle() const;
-
-    MCAPI void notifyPickup();
-
-    MCFOLD void setAffectOwner(bool shouldAffect);
-
     MCAPI void setDuration(::EffectDuration duration);
 
     MCAPI void setInitialRadius(float radius);
@@ -99,13 +93,13 @@ public:
 
     MCAPI void setParticleColor(::mce::Color& c);
 
+    MCAPI void setPickupCount(int useCount);
+
     MCAPI void setPotion(short potionAUX);
 
     MCAPI void setRadiusChangeOnPickup(float changeAmount);
 
-    MCAPI void setRadiusOnUse(float radiusOnUse);
-
-    MCAPI void setReapplicationDelay(int delay);
+    MCAPI void setRadiusPerTick(float radiusPerTick);
     // NOLINTEND
 
 public:

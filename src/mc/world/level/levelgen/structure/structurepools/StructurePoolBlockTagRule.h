@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class CompoundTag;
 class IStructurePoolBlockTagPredicate;
 // clang-format on
 
@@ -30,6 +32,8 @@ public:
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
     );
+
+    MCAPI bool processRule(::Block const& sourceBlock, ::CompoundTag& sourceTag) const;
     // NOLINTEND
 
 public:

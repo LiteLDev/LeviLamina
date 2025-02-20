@@ -113,8 +113,6 @@ public:
     MCAPI BatchedNetworkPeer(::std::shared_ptr<::NetworkPeer> peer, ::Scheduler& scheduler);
 
     MCAPI void _startSendTask();
-
-    MCAPI void setAsyncEnabled(bool val);
     // NOLINTEND
 
 public:

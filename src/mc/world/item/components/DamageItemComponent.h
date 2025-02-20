@@ -10,7 +10,6 @@
 // clang-format off
 class HashedString;
 class SemVersion;
-namespace SharedTypes::v1_20_50 { struct DamageItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -38,27 +37,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DamageItemComponent(::SharedTypes::v1_20_50::DamageItemComponent component);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::DamageItemComponent component);
     // NOLINTEND
 
 public:

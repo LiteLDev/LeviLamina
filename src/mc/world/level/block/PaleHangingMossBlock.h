@@ -19,6 +19,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Random;
 class Vec3;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -67,11 +68,10 @@ public:
         /*override*/;
 
     // vIndex: 124
-    virtual void animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -83,15 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PaleHangingMossBlock(::std::string const& nameId, int id);
-
     MCAPI void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -107,9 +99,9 @@ public:
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
@@ -129,9 +121,9 @@ public:
     MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD void $animateTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

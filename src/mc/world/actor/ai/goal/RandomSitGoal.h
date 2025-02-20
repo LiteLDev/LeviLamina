@@ -46,18 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RandomSitGoal(::Mob& mob, float startChance, float stopChance, float cooldown, float minTime);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float startChance, float stopChance, float cooldown, float minTime);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -46,10 +46,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI int _flushoutput();
-
-    MCAPI void close();
-
-    MCAPI bool isOpen() const;
     // NOLINTEND
 
 public:

@@ -10,8 +10,6 @@
 class BlockPos;
 class BoundingBox;
 class ChunkPos;
-class SimpleBlockVolumeIterator;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class SimpleBlockVolume : public ::BlockVolumeBase {
@@ -43,6 +41,8 @@ public:
 
 public:
     // prevent constructor by default
+    SimpleBlockVolume& operator=(SimpleBlockVolume const&);
+    SimpleBlockVolume(SimpleBlockVolume const&);
     SimpleBlockVolume();
 
 public:
@@ -82,63 +82,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimpleBlockVolume(::SimpleBlockVolume&& volume);
-
-    MCAPI SimpleBlockVolume(::SimpleBlockVolume const&);
-
-    MCAPI SimpleBlockVolume(::BlockPos&& from, ::BlockPos&& to);
-
-    MCAPI SimpleBlockVolume(::BlockPos const&, ::BlockPos const&);
-
-    MCAPI ::SimpleBlockVolumeIterator begin() const;
-
-    MCFOLD bool contains(::BlockPos const& pos) const;
-
     MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
-
-    MCAPI bool doesBlockTouchFaces(::BlockPos const& blockPos) const;
-
-    MCAPI ::BlockPos getFrom() const;
-
-    MCAPI ::BlockPos getTo() const;
 
     MCAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
 
-    MCAPI ::SimpleBlockVolume& operator=(::SimpleBlockVolume&& other);
-
-    MCAPI ::SimpleBlockVolume& operator=(::SimpleBlockVolume const& other);
-
-    MCAPI bool operator==(::SimpleBlockVolume const& other) const;
-
     MCAPI ::std::string toString() const;
-
-    MCAPI ::SimpleBlockVolume& translate(::glm::ivec3 const& delta);
-
-    MCAPI ::SimpleBlockVolume translated(::glm::ivec3 const& delta) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void cerealBindTypes(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::SimpleBlockVolume&& volume);
-
-    MCAPI void* $ctor(::SimpleBlockVolume const&);
-
-    MCFOLD void* $ctor(::BlockPos&& from, ::BlockPos&& to);
-
-    MCAPI void* $ctor(::BlockPos const&, ::BlockPos const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -154,7 +108,7 @@ public:
 
     MCAPI int $getCapacity() const;
 
-    MCFOLD bool $isInside(::BlockPos const& pos) const;
+    MCAPI bool $isInside(::BlockPos const& pos) const;
 
     MCAPI void $translate(::BlockPos const& delta);
 

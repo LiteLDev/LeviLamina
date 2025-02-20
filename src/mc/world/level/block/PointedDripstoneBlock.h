@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/actor/ParticleType.h"
 #include "mc/world/level/block/DripstoneThickness.h"
 #include "mc/world/level/block/FallingBlock.h"
 #include "mc/world/level/material/MaterialType.h"
@@ -22,7 +22,9 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Random;
 class Vec3;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -46,8 +48,7 @@ public:
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
@@ -55,9 +56,6 @@ public:
 
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
 
     // vIndex: 15
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const /*override*/;
@@ -71,16 +69,16 @@ public:
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
         /*override*/;
 
-    // vIndex: 153
+    // vIndex: 152
     virtual bool falling() const /*override*/;
 
-    // vIndex: 154
+    // vIndex: 153
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
     // vIndex: 11
@@ -96,7 +94,7 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
         /*override*/;
 
-    // vIndex: 156
+    // vIndex: 155
     virtual void
     startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const
         /*override*/;
@@ -108,11 +106,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PointedDripstoneBlock(::std::string const& nameId, int id);
+    MCAPI void _queueColumnForFall(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _updateBlockThickness(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -127,12 +127,7 @@ public:
 
     MCAPI static bool _canDrip(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static bool _canFillCauldron(::Block const& block);
-
     MCAPI static bool _canTipGrow(::BlockSource& region, ::BlockPos const& tipPos);
-
-    MCAPI static void
-    _createDripstone(::BlockSource& region, ::BlockPos const& pos, uchar direction, ::DripstoneThickness thickness);
 
     MCAPI static void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos);
 
@@ -148,14 +143,7 @@ public:
     MCAPI static ::std::optional<::BlockPos>
     _findRootBlock(::BlockSource& region, ::BlockPos const& pos, int maxSearchLength);
 
-    MCAPI static ::std::optional<::BlockPos>
-    _findTip(::BlockSource& region, ::BlockPos const& pos, uchar searchDirection, int maxSearchLength, bool);
-
     MCAPI static ::std::optional<::BlockPos> _getBlockAboveStalactiteRoot(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static uchar _getDripstoneDirection(::Block const& block);
-
-    MCFOLD static uchar _getTipDirection(::Block const& pointedDripstoneBlock);
 
     MCAPI static void _grow(::BlockSource& region, ::BlockPos const& growFromPos, uchar growToDirection);
 
@@ -163,9 +151,11 @@ public:
 
     MCAPI static bool _isStalactiteBase(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static bool _isTip(::Block const& block, uchar tipDirection, bool includeMergedTip);
-
     MCAPI static bool _isValidPointedDripstonePlacement(::BlockSource& region, ::BlockPos const& pos, bool isHanging);
+
+    MCAPI static bool _mayPlaceHanging(::BlockSource& region, ::BlockPos const& pos);
+
+    MCAPI static bool _mayPlaceStanding(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void addDripParticle(::BlockSource& region, ::BlockPos const& pos, ::ParticleType particleType);
 
@@ -173,24 +163,15 @@ public:
 
     MCAPI static void fillCauldron(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static ::std::optional<::BlockPos>
-    findStalactiteTipAboveCauldron(::BlockSource& region, ::BlockPos const& cauldronPos);
-
     MCAPI static ::std::optional<::MaterialType>
     getCauldronFillLiquidType(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static ::std::optional<::BlockPos>
-    getStalactiteTipBelowFillSource(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void growStalactite(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void growStalagmite(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI static ::std::optional<::ParticleType>
+    shouldDrip(::BlockSource& region, ::BlockPos const& pos, float randomValue);
     // NOLINTEND
 
 public:
@@ -204,7 +185,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI ::BlockLegacy& $init();
+    MCFOLD ::BlockLegacy& $init();
 
     MCAPI int $getVariant(::Block const& block) const;
 
@@ -212,13 +193,11 @@ public:
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 

@@ -8,12 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
 class HashedString;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -25,50 +22,20 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 122
+    // vIndex: 120
     virtual void setAuxValue(int aux) /*override*/;
 
-    // vIndex: 85
+    // vIndex: 83
     virtual ::HashedString const& queryEntityRenderer() const /*override*/;
 
     // vIndex: 8
     virtual ~ThrownPotion() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ThrownPotion(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
-    MCAPI short getPotionId() const;
-
-    MCAPI void setLinger(bool linger);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& SPLASH_RANGE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -86,7 +53,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $setAuxValue(int aux);
+    MCFOLD void $setAuxValue(int aux);
 
     MCAPI ::HashedString const& $queryEntityRenderer() const;
     // NOLINTEND

@@ -48,19 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FireChargeItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& LEVEL_SOUND_EVENT_VOLUME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCAPI bool _tryLightPortal(::Actor& actor, ::BlockPos actionPos) const;
     // NOLINTEND
 
 public:

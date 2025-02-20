@@ -26,9 +26,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScorePacketInfo& operator=(ScorePacketInfo const&);
+    ScorePacketInfo(ScorePacketInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScorePacketInfo(::ScorePacketInfo&&);
+
     MCAPI ~ScorePacketInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScorePacketInfo&&);
     // NOLINTEND
 
 public:

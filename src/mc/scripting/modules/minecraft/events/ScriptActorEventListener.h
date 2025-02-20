@@ -12,7 +12,6 @@
 class Actor;
 class ActorEventListener;
 struct ActorAttackEvent;
-struct ActorDefinitionEndedEvent;
 struct ActorDiedEvent;
 struct ActorHealthChangedEvent;
 struct ActorHurtEvent;
@@ -46,9 +45,6 @@ public:
 
     // vIndex: 27
     virtual ::EventResult onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent) /*override*/;
-
-    // vIndex: 36
-    virtual ::EventResult onEvent(::ActorDefinitionEndedEvent const& actorDefintionEvent) /*override*/;
 
     // vIndex: 39
     virtual ::EventResult onEvent(::ActorAttackEvent const& actorAttackEvent) /*override*/;
@@ -84,8 +80,6 @@ public:
     MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
     MCFOLD ::EventResult $onEvent(::ActorRemoveEffectEvent const& actorRemoveEffectEvent);
-
-    MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& actorDefintionEvent);
 
     MCAPI ::EventResult $onEvent(::ActorAttackEvent const& actorAttackEvent);
 

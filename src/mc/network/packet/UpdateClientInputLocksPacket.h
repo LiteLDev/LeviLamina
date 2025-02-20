@@ -12,7 +12,6 @@
 class BinaryStream;
 class ReadOnlyBinaryStream;
 class Vec3;
-struct ClientInputLockComponent;
 // clang-format on
 
 class UpdateClientInputLocksPacket : public ::Packet {
@@ -40,22 +39,6 @@ public:
 
     // vIndex: 0
     virtual ~UpdateClientInputLocksPacket() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI UpdateClientInputLocksPacket();
-
-    MCAPI UpdateClientInputLocksPacket(::ClientInputLockComponent const& inputLockComponent, ::Vec3 const& serverPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::ClientInputLockComponent const& inputLockComponent, ::Vec3 const& serverPos);
     // NOLINTEND
 
 public:

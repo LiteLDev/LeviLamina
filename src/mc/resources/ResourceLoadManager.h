@@ -96,12 +96,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void
+    _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
+
     MCAPI bool cancel(::ResourceLoadType resourceLoadType);
 
     MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
-        ::ResourceLoadType                          resourceLoadType,
-        ::brstd::move_only_function<::TaskResult()> threadedCallback,
-        ::std::function<void()>                     mainThreadCallback,
+        ::ResourceLoadType                          threadedCallback,
+        ::brstd::move_only_function<::TaskResult()> mainThreadCallback,
+        ::std::function<void()>                     resourceLoadType,
         uint                                        taskPriority
     );
     // NOLINTEND

@@ -8,11 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
 // clang-format on
@@ -28,13 +25,13 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 86
+    // vIndex: 84
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
     // vIndex: 1
@@ -42,26 +39,6 @@ public:
 
     // vIndex: 8
     virtual ~WindChargeProjectile() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI WindChargeProjectile(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -73,7 +50,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
@@ -81,7 +58,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::ActorUniqueID $getSourceUniqueID() const;
+    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
     MCAPI void $outOfWorld();
     // NOLINTEND

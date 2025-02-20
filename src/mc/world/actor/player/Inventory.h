@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
-class Player;
 // clang-format on
 
 class Inventory : public ::FillingContainer {
@@ -37,7 +36,7 @@ public:
     virtual void setContainerSize(int size);
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
@@ -46,19 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Inventory(::Player* player);
-
     MCAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
+
+    MCAPI ::std::vector<::ItemStack> getComplexItems();
 
     MCAPI void setupDefault();
 
     MCAPI void tick(int selectedSlot);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player* player);
     // NOLINTEND
 
 public:
@@ -78,11 +71,11 @@ public:
 
     MCAPI int $getFirstEmptySlot() const;
 
-    MCAPI int $getEmptySlotsCount() const;
+    MCFOLD int $getEmptySlotsCount() const;
 
     MCAPI void $setContainerSize(int size);
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
     // NOLINTEND

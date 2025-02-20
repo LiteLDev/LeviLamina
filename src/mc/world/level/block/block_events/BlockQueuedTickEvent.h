@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -17,9 +16,9 @@ class BlockQueuedTickEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk578d5e;
     ::ll::UntypedStorage<8, 8> mUnk418fe2;
     ::ll::UntypedStorage<8, 8> mUnkfd915d;
-    ::ll::UntypedStorage<1, 1> mUnk578d5e;
     // NOLINTEND
 
 public:
@@ -36,14 +35,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockQueuedTickEvent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD void configureRenderParamsForTrigger(::RenderParams& params) const;
-
-    MCFOLD bool isClientSide() const;
     // NOLINTEND
 
 public:

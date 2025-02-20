@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockPos;
 class Container;
 class ContainerWeakRef;
@@ -89,8 +88,6 @@ public:
         ::BlockPos const&   blockPos,
         ::ContainerCategory category
     );
-
-    MCAPI ::Actor* _getEntity() const;
 
     MCAPI void _refreshSlot(int modelSlot);
 

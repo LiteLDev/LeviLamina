@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-class BlockPos;
-// clang-format on
-
 struct BlockPosTrackerComponent {
 public:
     // member variables
@@ -24,18 +18,4 @@ public:
     BlockPosTrackerComponent& operator=(BlockPosTrackerComponent const&);
     BlockPosTrackerComponent(BlockPosTrackerComponent const&);
     BlockPosTrackerComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockPosTrackerComponent(bool onGround, ::BlockPos const& pos);
-
-    MCAPI void onRemove(::Actor& owner);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool onGround, ::BlockPos const& pos);
-    // NOLINTEND
 };

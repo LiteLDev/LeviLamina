@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 struct MolangJsonContainer {
 public:
     // member variables
@@ -33,8 +28,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
     MCAPI static void valueFromString(::MolangJsonContainer& instance, ::std::string const& str);
     // NOLINTEND
 

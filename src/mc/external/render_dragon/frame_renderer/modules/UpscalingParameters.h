@@ -6,8 +6,16 @@ namespace dragon::framerenderer::modules {
 
 struct UpscalingParameters {
 public:
+    // UpscalingParameters inner types define
+    enum class Mode : int {
+        Taau     = 0,
+        Bilinear = 1,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk79a5ec;
     ::ll::UntypedStorage<4, 4> mUnk47aa27;
     ::ll::UntypedStorage<1, 1> mUnk397fb4;
     ::ll::UntypedStorage<1, 1> mUnk33ee91;

@@ -11,7 +11,6 @@ class AABB;
 class BlockPos;
 class BlockSource;
 class HashedString;
-class Random;
 class Vec3;
 struct TextureUVCoordinateSet;
 namespace BlockTessellationFallbackUtils { struct TessellationConfigInfo; }
@@ -53,7 +52,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkb0552c;
     ::ll::UntypedStorage<4, 4>  mUnkf361c7;
     ::ll::UntypedStorage<1, 1>  mUnk9d7c1f;
-    ::ll::UntypedStorage<4, 4>  mUnkd7c873;
+    ::ll::UntypedStorage<4, 4>  mUnkb40d00;
     ::ll::UntypedStorage<1, 1>  mUnk56f9b4;
     ::ll::UntypedStorage<1, 1>  mUnk3736cf;
     ::ll::UntypedStorage<8, 32> mUnk232607;
@@ -97,19 +96,16 @@ public:
     // vIndex: 7
     virtual ::TextureUVCoordinateSet const& getCarriedTexture(uint64, int) const;
 
-    // vIndex: 8
-    virtual void animateTick(::BlockSource&, ::BlockPos const&, ::Random&);
-
-    // vIndex: 10
+    // vIndex: 9
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const&, int&) const;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const&) const;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual void setVisualShape(::AABB const&);
 
-    // vIndex: 11
+    // vIndex: 10
     virtual void setVisualShape(::Vec3 const&, ::Vec3 const&);
     // NOLINTEND
 

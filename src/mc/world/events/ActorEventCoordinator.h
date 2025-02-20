@@ -18,7 +18,6 @@ class ActorGameplayHandler;
 class EntityContext;
 class IActorManagerConnector;
 class IGameplayUserManagerConnector;
-class Player;
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
@@ -45,38 +44,15 @@ public:
 
     MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
-    MCFOLD ::ActorGameplayHandler& getActorGameplayHandler();
-
-    MCFOLD void registerActorGameplayHandler(::std::unique_ptr<::ActorGameplayHandler>&& handler);
-
     MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
 
     MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
-
-    MCAPI void sendActorCreationAttemptFailed(::Actor& actor, ::std::string_view reason);
-
-    MCAPI void sendActorSneakChanged(::Actor& actor, bool isSneaking);
-
-    MCAPI void sendActorStartRiding(::Actor& actor, ::Actor& vehicle);
-
-    MCAPI void
-    sendActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
-
-    MCAPI void sendActorTargetAcquired(::Actor& actor, ::Actor& target);
-
-    MCAPI void sendActorTeleported(::Actor& actor);
-
-    MCAPI void sendActorTick(::Actor& actor);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::ActorGameplayEvent<::CoordinatorResult>> const& event);
 
     MCAPI void sendEvent(::EventRef<::ActorGameplayEvent<void>> const& event);
-
-    MCAPI void sendServerPlayerAuthInputApplied(::Player& player);
-
-    MCAPI void sendServerPlayerAuthInputReceived(::Player& player);
     // NOLINTEND
 
 public:

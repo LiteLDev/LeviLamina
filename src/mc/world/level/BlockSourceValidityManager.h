@@ -9,7 +9,6 @@
 // clang-format off
 class DimensionManager;
 class GameplayUserManager;
-class IBlockSource;
 class IBlockSourceValidityProxy;
 // clang-format on
 
@@ -39,11 +38,7 @@ public:
         ::std::unique_ptr<::IBlockSourceValidityProxy>       blockSourceValidityProxy
     );
 
-    MCAPI void addBlockSourceForValidityTracking(::IBlockSource* region);
-
     MCAPI void checkBlockSourceValidity();
-
-    MCAPI void removeBlockSourceFromValidityTracking(::IBlockSource* region);
 
     MCAPI ~BlockSourceValidityManager();
     // NOLINTEND

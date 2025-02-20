@@ -34,7 +34,7 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
 
     // vIndex: 0
     virtual ~CompressedBiomeDefinitionListPacket() /*override*/ = default;
@@ -43,16 +43,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompressedBiomeDefinitionListPacket();
-
     MCAPI explicit CompressedBiomeDefinitionListPacket(::CompoundTag biomeData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::CompoundTag biomeData);
     // NOLINTEND
 
@@ -71,7 +67,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
     // NOLINTEND
 
 public:

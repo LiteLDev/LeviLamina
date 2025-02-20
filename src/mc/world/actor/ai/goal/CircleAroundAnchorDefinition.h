@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CircleAroundAnchorGoal;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -32,20 +30,13 @@ public:
     // prevent constructor by default
     CircleAroundAnchorDefinition& operator=(CircleAroundAnchorDefinition const&);
     CircleAroundAnchorDefinition(CircleAroundAnchorDefinition const&);
+    CircleAroundAnchorDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~CircleAroundAnchorDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CircleAroundAnchorDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::CircleAroundAnchorGoal& goal) const;
     // NOLINTEND
 
 public:
@@ -56,12 +47,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CircleAroundAnchorDefinition>>&
             root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

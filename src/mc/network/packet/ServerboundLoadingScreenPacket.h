@@ -7,12 +7,12 @@
 #include "mc/network/packet/Packet.h"
 #include "mc/network/packet/ServerboundLoadingScreenPacketType.h"
 #include "mc/platform/Result.h"
-#include "mc/util/NewType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+struct LoadingScreenId;
 // clang-format on
 
 class ServerboundLoadingScreenPacket : public ::Packet {
@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ServerboundLoadingScreenPacketType> mServerboundLoadingScreenPacketType;
-    ::ll::TypedStorage<4, 8, ::NewType<::std::optional<uint>>>     mLoadingScreenId;
+    ::ll::TypedStorage<4, 8, ::LoadingScreenId>                    mLoadingScreenId;
     // NOLINTEND
 
 public:
@@ -40,22 +40,6 @@ public:
 
     // vIndex: 8
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& bitStream) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ServerboundLoadingScreenPacket();
-
-    MCAPI ::NewType<::std::optional<uint>> getLoadingScreenId() const;
-
-    MCFOLD ::ServerboundLoadingScreenPacketType getServerboundLoadingScreenPacketType() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

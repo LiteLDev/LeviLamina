@@ -13,18 +13,16 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class Player;
-class Random;
 class Vec3;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class GrindstoneBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 139
     virtual bool use(::Player&, ::BlockPos const&, uchar) const /*override*/;
 
@@ -49,6 +47,9 @@ public:
     // vIndex: 23
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~GrindstoneBlock() /*override*/ = default;
     // NOLINTEND
@@ -56,15 +57,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GrindstoneBlock(::std::string const& nameId, int id);
+    MCAPI ::Block const& _determineAttachment(::Actor const& by, ::BlockPos const& face, uchar pos) const;
 
-    MCAPI ::Block const& _determineAttachment(::Actor const& by, ::BlockPos const& pos, uchar face) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -76,8 +71,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD bool $use(::Player&, ::BlockPos const&, uchar) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
@@ -93,6 +86,8 @@ public:
     MCFOLD bool $isInteractiveBlock() const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

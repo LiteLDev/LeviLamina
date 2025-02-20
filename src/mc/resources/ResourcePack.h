@@ -4,9 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackOrigin.h"
-#include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -18,11 +16,10 @@ class PackManifest;
 class PackReport;
 class ResourceLocation;
 class ResourceSignature;
-class SemVersion;
+class SubpackInfoCollection;
 struct SubpackInfo;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
-namespace mce { class UUID; }
 // clang-format on
 
 class ResourcePack : public ::Bedrock::EnableNonOwnerReferences {
@@ -37,7 +34,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mError;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Pack>>            mPack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>           mSubpackAccessStrategy;
-    ::ll::TypedStorage<8, 432, ::PackReport>                                    mPackReport;
+    ::ll::TypedStorage<8, 256, ::PackReport>                                    mPackReport;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Pack>>>         mSubPacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ResourcePack>>> mSubResourcePacks;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                mIconPath;
@@ -82,33 +79,21 @@ public:
 
     MCAPI ::PackManifest& getManifest();
 
-    MCAPI ::PackCategory getPackCategory() const;
-
-    MCAPI ::mce::UUID const& getPackId() const;
-
     MCAPI ::PackOrigin getPackOrigin() const;
 
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
 
     MCAPI ::ResourceLocation const& getResourceLocation() const;
 
-    MCAPI ::SemVersion const& getVersion() const;
+    MCAPI ::SubpackInfoCollection const& getSubpackInfoStack() const;
 
     MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
 
     MCAPI bool isAssetExtractionViable() const;
 
-    MCAPI bool isType(::PackType packType) const;
-
     MCAPI bool isZipped() const;
 
-    MCAPI void markForRemoval();
-
     MCAPI ::Bedrock::Resources::PreloadedPathHandle preloadPath(::Core::Path const& packRelativePath) const;
-
-    MCAPI void setAsSlicePack();
-
-    MCAPI void setError();
 
     MCAPI void setLocale(::std::string const& code);
 

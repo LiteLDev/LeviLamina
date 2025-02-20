@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerType.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 
 // auto generated forward declare list
@@ -71,8 +71,11 @@ public:
     virtual ::SparseContainer* initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
     // vIndex: 9
-    virtual void
-    _addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
+    virtual void _addLegacyTransactionRequestSetItemSlot(
+        ::ItemStackNetManagerScreen&,
+        ::SharedTypes::Legacy::ContainerType containerType,
+        int                                  slot
+    );
 
     // vIndex: 10
     virtual void _initScreen(::ItemStackNetManagerScreen&);
@@ -81,17 +84,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackNetManagerBase(::Player& player, bool isClientSide, bool isEnabled);
+    MCAPI ItemStackNetManagerBase(::Player& player, bool isEnabled, bool isClientSide);
 
     MCAPI bool _isRequestActionAllowed(::ItemStackRequestAction const& requestAction);
 
     MCAPI void _pushScreen(::ContainerScreenContext screenContext);
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
-
-    MCFOLD bool isClientSide() const;
-
-    MCAPI bool isScreenOpen() const;
     // NOLINTEND
 
 public:
@@ -101,7 +100,7 @@ public:
 
     MCAPI static bool setPlayerContainer(
         ::Player&                                        player,
-        ::ContainerType                                  containerType,
+        ::SharedTypes::Legacy::ContainerType             containerType,
         int                                              slot,
         ::ItemStack const&                               item,
         ::ItemStack&                                     slotItem,
@@ -112,7 +111,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, bool isClientSide, bool isEnabled);
+    MCAPI void* $ctor(::Player& player, bool isEnabled, bool isClientSide);
     // NOLINTEND
 
 public:
@@ -136,8 +135,11 @@ public:
 
     MCFOLD ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
-    MCFOLD void
-    $_addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::ContainerType containerType, int slot);
+    MCFOLD void $_addLegacyTransactionRequestSetItemSlot(
+        ::ItemStackNetManagerScreen&,
+        ::SharedTypes::Legacy::ContainerType containerType,
+        int                                  slot
+    );
 
     MCFOLD void $_initScreen(::ItemStackNetManagerScreen&);
     // NOLINTEND

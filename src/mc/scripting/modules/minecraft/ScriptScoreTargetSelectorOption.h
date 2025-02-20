@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -22,11 +22,13 @@ public:
     // prevent constructor by default
     ScriptScoreTargetSelectorOption& operator=(ScriptScoreTargetSelectorOption const&);
     ScriptScoreTargetSelectorOption(ScriptScoreTargetSelectorOption const&);
+    ScriptScoreTargetSelectorOption();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptScoreTargetSelectorOption();
+    MCAPI ::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
+    operator=(::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
     // NOLINTEND
 
 public:
@@ -36,12 +38,6 @@ public:
 
     MCAPI static ::Scripting::InterfaceBindingBuilder<::ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
     bindV1();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };
 

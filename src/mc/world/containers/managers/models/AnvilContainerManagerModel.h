@@ -64,10 +64,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& INPUT_SLOT();
-
-    MCAPI static int const& MATERIAL_SLOT();
-
     MCAPI static int const& RESULT_SLOT();
     // NOLINTEND
 

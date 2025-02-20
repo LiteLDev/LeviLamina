@@ -9,11 +9,8 @@
 // auto generated forward declare list
 // clang-format off
 class AABB;
-class ActorDefinitionGroup;
 class BlockPos;
-class EntityContext;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -25,34 +22,14 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 176
+    // vIndex: 171
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 181
+    // vIndex: 176
     virtual ::AABB _getAdjustedAABBForSpawnCheck(::AABB const& aabb, ::Vec3 const& mobPos) const /*override*/;
 
     // vIndex: 8
     virtual ~Axolotl() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Axolotl(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

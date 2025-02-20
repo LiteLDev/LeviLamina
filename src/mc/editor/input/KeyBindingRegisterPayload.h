@@ -10,7 +10,6 @@
 class HashedString;
 namespace Editor::Input { class KeyBinding; }
 namespace Editor::Input { struct BindingInfo; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace Editor::Network {
@@ -28,7 +27,6 @@ public:
 
 public:
     // prevent constructor by default
-    KeyBindingRegisterPayload(KeyBindingRegisterPayload const&);
     KeyBindingRegisterPayload();
 
 public:
@@ -41,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI KeyBindingRegisterPayload(::Editor::Network::KeyBindingRegisterPayload const&);
+
     MCAPI KeyBindingRegisterPayload(
         ::HashedString const&               contextId,
         ::HashedString const&               bindingId,
@@ -52,14 +52,10 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Editor::Network::KeyBindingRegisterPayload const&);
+
     MCAPI void* $ctor(
         ::HashedString const&               contextId,
         ::HashedString const&               bindingId,

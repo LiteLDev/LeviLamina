@@ -23,7 +23,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnke9d210;
     ::ll::UntypedStorage<4, 4>   mUnk358232;
     ::ll::UntypedStorage<8, 24>  mUnk90bfd0;
-    ::ll::UntypedStorage<8, 336> mUnke9901d;
+    ::ll::UntypedStorage<8, 376> mUnke9901d;
     ::ll::UntypedStorage<8, 24>  mUnkc7d542;
     ::ll::UntypedStorage<8, 24>  mUnk991dfa;
     ::ll::UntypedStorage<8, 24>  mUnkb3e856;

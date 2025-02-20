@@ -17,4 +17,18 @@ public:
     CameraAimAssistComponent& operator=(CameraAimAssistComponent const&);
     CameraAimAssistComponent(CameraAimAssistComponent const&);
     CameraAimAssistComponent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCFOLD ::CameraAimAssistComponent& operator=(::CameraAimAssistComponent&&);
+
+    MCAPI ~CameraAimAssistComponent();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };

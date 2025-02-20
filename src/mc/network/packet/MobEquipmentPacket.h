@@ -58,8 +58,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEquipmentPacket();
-
     MCAPI MobEquipmentPacket(::MobEquipmentPacket&&);
 
     MCAPI MobEquipmentPacket(
@@ -77,13 +75,13 @@ public:
         int                selectedSlot,
         ::ContainerID      containerId
     );
+
+    MCAPI void _convertFromBytes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::MobEquipmentPacket&&);
 
     MCAPI void* $ctor(

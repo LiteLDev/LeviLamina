@@ -83,25 +83,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
+    // static functions
     // NOLINTBEGIN
-    MCAPI ServerCommandOrigin(
-        ::std::string const&     requestId,
-        ::ServerLevel&           level,
-        ::CommandPermissionLevel permission,
-        ::DimensionType          dimensionType
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&     requestId,
-        ::ServerLevel&           level,
-        ::CommandPermissionLevel permission,
-        ::DimensionType          dimensionType
-    );
+    MCAPI static ::std::unique_ptr<::ServerCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
     // NOLINTEND
 
 public:

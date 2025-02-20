@@ -31,14 +31,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& SNEAK_SPEED_MOD();
-
-    MCAPI static float const& SPRINT_SPEED_MOD();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

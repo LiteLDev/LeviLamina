@@ -40,8 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockStateCommandParam(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);
-
     MCAPI bool _createCompoundTag(::CompoundTag& tag, ::CommandOutput& output) const;
 
     MCAPI ::BlockState const* _getBlockState(::Block const& block) const;
@@ -52,12 +50,6 @@ public:
     MCAPI bool setBlockState(::Block const** inputBlock, ::CommandOutput& output) const;
 
     MCAPI ~BlockStateCommandParam();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string state, ::std::string value, ::BlockStateCommandParam::Type type);
     // NOLINTEND
 
 public:

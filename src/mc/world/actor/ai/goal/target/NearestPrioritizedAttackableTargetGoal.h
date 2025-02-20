@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Mob;
 struct ActorUniqueID;
 struct MobDescriptor;
 // clang-format on
@@ -24,46 +23,6 @@ public:
 
     // vIndex: 0
     virtual ~NearestPrioritizedAttackableTargetGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI NearestPrioritizedAttackableTargetGoal(
-        ::Mob&                                mob,
-        ::std::vector<::MobDescriptor> const& targetTypes,
-        float                                 within,
-        int                                   attackInterval,
-        bool                                  mustSee,
-        int                                   mustSeeForgetTicks,
-        bool                                  mustReach,
-        bool                                  reselectTargets,
-        int                                   scanInterval,
-        float                                 targetSearchHeight,
-        bool                                  attackOwner,
-        int                                   persistTargetTicks,
-        bool                                  setPersistent
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                mob,
-        ::std::vector<::MobDescriptor> const& targetTypes,
-        float                                 within,
-        int                                   attackInterval,
-        bool                                  mustSee,
-        int                                   mustSeeForgetTicks,
-        bool                                  mustReach,
-        bool                                  reselectTargets,
-        int                                   scanInterval,
-        float                                 targetSearchHeight,
-        bool                                  attackOwner,
-        int                                   persistTargetTicks,
-        bool                                  setPersistent
-    );
     // NOLINTEND
 
 public:

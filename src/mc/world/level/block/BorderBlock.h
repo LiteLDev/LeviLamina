@@ -13,7 +13,7 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class IConstBlockSource;
-class Random;
+struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -36,8 +36,7 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -55,15 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BorderBlock(::std::string const& nameId, int id);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -85,7 +76,7 @@ public:
 
     MCFOLD int $getVariant(::Block const& block) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 

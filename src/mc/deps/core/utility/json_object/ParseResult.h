@@ -18,12 +18,6 @@ public:
     ParseResult& operator=(ParseResult const&);
     ParseResult(ParseResult const&);
     ParseResult();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool isError() const;
-    // NOLINTEND
 };
 
 } // namespace Bedrock::JSONObject

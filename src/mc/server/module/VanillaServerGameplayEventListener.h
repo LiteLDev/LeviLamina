@@ -31,10 +31,10 @@ public:
     // vIndex: 32
     virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
 
-    // vIndex: 63
+    // vIndex: 64
     virtual ::EventResult onEvent(::PlayerDamageEvent const& playerDamageEvent) /*override*/;
 
-    // vIndex: 57
+    // vIndex: 58
     virtual ::EventResult onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent) /*override*/;
 
     // vIndex: 8

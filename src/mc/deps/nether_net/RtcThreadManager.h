@@ -23,6 +23,7 @@ public:
     // prevent constructor by default
     RtcThreadManager& operator=(RtcThreadManager const&);
     RtcThreadManager(RtcThreadManager const&);
+    RtcThreadManager();
 
 public:
     // member functions
@@ -35,21 +36,9 @@ public:
         ::std::unique_ptr<::rtc::SocketServer>&& socketServer
     );
 
-    MCAPI bool IsOnThread() const;
-
-    MCAPI ::std::shared_ptr<::rtc::Thread> LoadRtcThread() const;
-
-    MCAPI RtcThreadManager();
-
     MCAPI void Shutdown();
 
     MCAPI ~RtcThreadManager();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:

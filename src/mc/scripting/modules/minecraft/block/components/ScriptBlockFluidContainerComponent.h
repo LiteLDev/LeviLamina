@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/block/ScriptFluidType.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockComponent.h"
 
@@ -16,6 +17,7 @@ namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { class ScriptRGBA; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 // clang-format on
 
@@ -35,8 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<int> _tryGetFillLevel() const;
-
     MCAPI ::Scripting::Result<void, ::Scripting::Error> addDye(::ScriptModuleMinecraft::ScriptItemType const& dye);
 
     MCAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Scripting::Error> getCustomColor() const;
@@ -65,6 +65,10 @@ public:
 
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+
+    MCAPI static ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>
+    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

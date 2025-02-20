@@ -12,12 +12,7 @@ public:
 
 public:
     // prevent constructor by default
+    AABBShapeComponent& operator=(AABBShapeComponent const&);
     AABBShapeComponent(AABBShapeComponent const&);
     AABBShapeComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::AABBShapeComponent& operator=(::AABBShapeComponent const&);
-    // NOLINTEND
 };

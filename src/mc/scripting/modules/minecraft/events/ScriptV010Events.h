@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/script_engine/Closure.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldAfterEvents.h"
 #include "mc/scripting/modules/minecraft/events/IScriptWorldBeforeEvents.h"
 #include "mc/scripting/modules/minecraft/events/ScriptFilteredEventSignal.h"
@@ -33,6 +34,7 @@ namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemReleaseUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemStartUseAfterEvent; }
@@ -76,7 +78,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptTickEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTickEvent>)>>>>
         mTickSignal;
     ::ll::TypedStorage<
         8,
@@ -84,7 +88,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>)>>>>
         mWeatherChangeSignal;
     ::ll::TypedStorage<
         8,
@@ -92,7 +98,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>)>>>>
         mWorldInitializeSignal;
     ::ll::TypedStorage<
         8,
@@ -100,7 +108,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>)>>>>
         mPlayerJoinEventSignal;
     ::ll::TypedStorage<
         8,
@@ -108,7 +118,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>)>>>>
         mPlayerLeaveEventSignal;
     ::ll::TypedStorage<
         8,
@@ -116,7 +128,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>)>>>>
         mBeforeChatSignal;
     ::ll::TypedStorage<
         8,
@@ -124,7 +138,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptActorCreateEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorCreateEvent>)>>>>
         mEntityCreateSignal;
     ::ll::TypedStorage<
         8,
@@ -132,7 +148,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptActorHitAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter>>>
+            ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitAfterEvent>)>>>>
         mEntityHitSignal;
     ::ll::TypedStorage<
         8,
@@ -140,7 +158,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter>>>
+            ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter,
+            ::Scripting::Closure<void(::Scripting::StrongTypedObjectHandle<
+                                      ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>)>>>>
         mDataDrivenEntityEventSend;
     ::ll::TypedStorage<
         8,
@@ -148,7 +168,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter>>>
+            ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>)>>>>
         mEntityHurtSignal;
     ::ll::TypedStorage<
         8,
@@ -156,7 +178,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptItemUseBeforeEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>)>>>>
         mItemBeforeUseEventSignal;
     ::ll::TypedStorage<
         8,
@@ -164,7 +188,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>)>>>>
         mItemBeforeUseOnEventSignal;
     ::ll::TypedStorage<
         8,
@@ -172,7 +198,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>)>>>>
         mItemUseOnEventSignal;
     ::ll::TypedStorage<
         8,
@@ -180,7 +208,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>)>>>>
         mItemStartChargeEventSignal;
     ::ll::TypedStorage<
         8,
@@ -188,7 +218,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>)>>>>
         mItemCompleteChargeEventSignal;
     ::ll::TypedStorage<
         8,
@@ -196,7 +228,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>)>>>>
         mItemReleaseChargeEventSignal;
     ::ll::TypedStorage<
         8,
@@ -204,7 +238,9 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptFilteredEventSignal<
             ::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent,
             0,
-            ::ScriptModuleMinecraft::EmptyFilter>>>
+            ::ScriptModuleMinecraft::EmptyFilter,
+            ::Scripting::Closure<
+                void(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>)>>>>
         mItemStopChargeEventSignal;
     // NOLINTEND
 
@@ -263,7 +299,7 @@ public:
 
     // vIndex: 15
     virtual void onDataDrivenActorEventSend(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&
             dataDrivenActorEventSend
     ) /*override*/;
 
@@ -344,7 +380,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Level& $getLevel() const;
+    MCAPI ::Level& $getLevel() const;
 
     MCAPI void
     $onWeatherChanged(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&
@@ -377,7 +413,7 @@ public:
     );
 
     MCAPI void $onDataDrivenActorEventSend(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&
+        ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&
             dataDrivenActorEventSend
     );
 

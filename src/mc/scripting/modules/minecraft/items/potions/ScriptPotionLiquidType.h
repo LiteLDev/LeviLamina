@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -23,32 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPotionLiquidType(::ScriptModuleMinecraft::ScriptPotionLiquidType&&);
-
     MCAPI ::std::string getPotionLiquidTypeId() const;
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptPotionLiquidType&
-    operator=(::ScriptModuleMinecraft::ScriptPotionLiquidType&&);
-
-    MCAPI ~ScriptPotionLiquidType();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPotionLiquidType> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPotionLiquidType&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };
 

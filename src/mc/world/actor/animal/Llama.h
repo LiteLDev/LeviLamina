@@ -9,8 +9,6 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class Block;
-class BlockPos;
 class EntityContext;
 struct ActorDefinitionIdentifier;
 // clang-format on
@@ -19,14 +17,11 @@ class Llama : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 59
+    // vIndex: 58
     virtual void onFailedTame() /*override*/;
 
-    // vIndex: 94
+    // vIndex: 92
     virtual float causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source) /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
     virtual ~Llama() /*override*/ = default;
@@ -64,8 +59,6 @@ public:
     MCAPI void $onFailedTame();
 
     MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
-
-    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

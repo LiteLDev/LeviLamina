@@ -11,7 +11,6 @@
 class BlockPos;
 class BlockSource;
 class BoundingBox;
-class ChunkPos;
 class IRandom;
 class Random;
 namespace br::worldgen { struct JigsawJunction; }
@@ -55,22 +54,6 @@ public:
 
     // vIndex: 5
     virtual void placeEntities(::BlockSource&, ::BoundingBox const&) const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit StructureSection(::BoundingBox bb);
-
-    MCFOLD ::BoundingBox const& boundingBox() const;
-
-    MCAPI bool isNearChunk(::ChunkPos pos, int distance) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BoundingBox bb);
     // NOLINTEND
 
 public:

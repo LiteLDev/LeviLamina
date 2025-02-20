@@ -18,8 +18,8 @@ namespace SurfaceMatAdjustGlueInternals {
 MCAPI bool resolveAndVerifyMolang(
     ::std::optional<::ExpressionNode>& expressionNode,
     ::MolangJsonContainer const&       molangJson,
-    ::MolangVersion                    molangVersion,
-    ::gsl::span<::HashedString const>  querySetID
+    ::MolangVersion                    querySetID,
+    ::gsl::span<::HashedString const>  molangVersion
 );
 // NOLINTEND
 

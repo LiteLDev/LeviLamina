@@ -12,9 +12,12 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Dimension;
 class Experiments;
+class Level;
 class Player;
 class Random;
+class Randomize;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
@@ -28,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource&, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 60
@@ -68,8 +71,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TurtleEggBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -81,12 +82,9 @@ public:
 
     MCAPI static void
     _destroyEgg(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor, int randomness, bool brokenWithSilkTouch);
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI static bool
+    shouldUpdateHatchLevel(::Level const& level, ::Dimension const& dimension, ::Randomize const& randomize);
     // NOLINTEND
 
 public:

@@ -10,8 +10,8 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ComponentItem;
 class ItemStack;
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -62,30 +62,47 @@ public:
 public:
     // prevent constructor by default
     ScriptItemCustomComponentConsumeEvent& operator=(ScriptItemCustomComponentConsumeEvent const&);
-    ScriptItemCustomComponentConsumeEvent(ScriptItemCustomComponentConsumeEvent const&);
     ScriptItemCustomComponentConsumeEvent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptItemCustomComponentConsumeEvent() /*override*/ = default;
+    virtual ~ScriptItemCustomComponentConsumeEvent() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptItemCustomComponentConsumeEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent const&);
+
+    MCAPI ScriptItemCustomComponentConsumeEvent(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                      scope
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
+    // NOLINTEND
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
-        void(::ItemStack const&, ::ItemStack&, ::Actor&)>
-    getConnectors(::ComponentItem& item);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent const&);
+
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentConsumeEvent::IntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                      scope
+    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

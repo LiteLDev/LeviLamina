@@ -16,22 +16,4 @@ public:
     ScriptCommand& operator=(ScriptCommand const&);
     ScriptCommand(ScriptCommand const&);
     ScriptCommand();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ScriptCommand(::std::string const& commandString);
-
-    MCFOLD ::std::string getMessages() const;
-
-    MCFOLD int getSuccessCount() const;
-
-    MCAPI void setOutput(int successCount, ::std::string&& messages);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& commandString);
-    // NOLINTEND
 };

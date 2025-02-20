@@ -11,7 +11,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-class ResolvedTextObject;
 // clang-format on
 
 class SetTitlePacket : public ::Packet {
@@ -68,13 +67,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetTitlePacket();
-
     MCAPI SetTitlePacket(::SetTitlePacket const&);
 
     MCAPI explicit SetTitlePacket(::SetTitlePacket::TitleType type);
-
-    MCAPI SetTitlePacket(::SetTitlePacket::TitleType type, ::ResolvedTextObject const& resolvedTextObject);
 
     MCAPI SetTitlePacket(int fadeInTime, int stayTime, int fadeOutTime);
 
@@ -90,13 +85,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::SetTitlePacket const&);
 
     MCAPI void* $ctor(::SetTitlePacket::TitleType type);
-
-    MCAPI void* $ctor(::SetTitlePacket::TitleType type, ::ResolvedTextObject const& resolvedTextObject);
 
     MCAPI void* $ctor(int fadeInTime, int stayTime, int fadeOutTime);
 

@@ -26,26 +26,6 @@ public:
     SessionInfo& operator=(SessionInfo const&);
     SessionInfo(SessionInfo const&);
     SessionInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::string const& getBranchId() const;
-
-    MCFOLD ::std::string const& getBuildId() const;
-
-    MCFOLD ::std::string const& getCommitId() const;
-
-    MCFOLD int64 getCrashTimestamp() const;
-
-    MCFOLD ::std::optional<uint> const& getErrorCode() const;
-
-    MCFOLD ::std::string const& getErrorMessage() const;
-
-    MCFOLD ::std::string const& getSessionId() const;
-
-    MCFOLD ::std::map<::std::string, ::std::string>& getTags();
-    // NOLINTEND
 };
 
 } // namespace Bedrock

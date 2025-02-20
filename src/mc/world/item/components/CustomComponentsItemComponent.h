@@ -8,14 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace SharedTypes::v1_20_80 { struct CustomComponentsItemComponent; }
+namespace SharedTypes::v1_21_60 { struct CustomComponentsItemComponent; }
 // clang-format on
 
 class CustomComponentsItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7cb388;
+    ::ll::UntypedStorage<8, 24> mUnk9e5340;
     // NOLINTEND
 
 public:
@@ -34,9 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CustomComponentsItemComponent(::SharedTypes::v1_20_80::CustomComponentsItemComponent component);
-
-    MCFOLD ::std::vector<::std::string> const& getComponentNames() const;
+    MCAPI explicit CustomComponentsItemComponent(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
+    );
     // NOLINTEND
 
 public:
@@ -48,7 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::CustomComponentsItemComponent component);
+    MCAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
     // NOLINTEND
 
 public:

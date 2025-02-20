@@ -12,14 +12,22 @@ public:
 
 public:
     // prevent constructor by default
-    ItemSpecificSpeed& operator=(ItemSpecificSpeed const&);
-    ItemSpecificSpeed(ItemSpecificSpeed const&);
     ItemSpecificSpeed();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemSpecificSpeed(::ItemSpecificSpeed const&);
+
+    MCFOLD ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
+
     MCAPI ~ItemSpecificSpeed();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::ItemSpecificSpeed const&);
     // NOLINTEND
 
 public:

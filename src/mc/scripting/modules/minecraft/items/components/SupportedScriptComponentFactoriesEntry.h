@@ -13,21 +13,23 @@ struct SupportedScriptComponentFactoriesEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnk73b536;
-    ::ll::UntypedStorage<8, 128> mUnk1a3f89;
-    ::ll::UntypedStorage<8, 32>  mUnkcacf96;
-    ::ll::UntypedStorage<8, 64>  mUnk7a6a40;
+    ::ll::UntypedStorage<8, 32> mUnk73b536;
+    ::ll::UntypedStorage<8, 40> mUnk1a3f89;
+    ::ll::UntypedStorage<8, 32> mUnkcacf96;
+    ::ll::UntypedStorage<8, 64> mUnk7a6a40;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     SupportedScriptComponentFactoriesEntry& operator=(SupportedScriptComponentFactoriesEntry const&);
-    SupportedScriptComponentFactoriesEntry(SupportedScriptComponentFactoriesEntry const&);
     SupportedScriptComponentFactoriesEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI
+    SupportedScriptComponentFactoriesEntry(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
+
     MCAPI SupportedScriptComponentFactoriesEntry(
         ::BaseGameVersion                   minVersion,
         ::std::unordered_set<::std::string> supportedComponentTypeNames,
@@ -41,6 +43,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
+
     MCAPI void* $ctor(
         ::BaseGameVersion                   minVersion,
         ::std::unordered_set<::std::string> supportedComponentTypeNames,

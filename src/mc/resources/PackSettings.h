@@ -22,8 +22,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _initPackSetting(::std::string const& name, ::Json::Value const& value);
 
-    MCFOLD ::Json::Value const& getAllSettings() const;
-
     MCAPI void loadPackSettings(::PackIdVersion const& packId, ::Json::Value const& packSettings);
     // NOLINTEND
 };

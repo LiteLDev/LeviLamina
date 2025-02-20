@@ -6,6 +6,8 @@
 // clang-format off
 class CompoundTag;
 class DataLoadHelper;
+class GameEvent;
+struct GameEventContext;
 // clang-format on
 
 class VibrationInfo {
@@ -28,8 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI VibrationInfo(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
+
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void save(::CompoundTag& tag) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, float distance);
     // NOLINTEND
 };

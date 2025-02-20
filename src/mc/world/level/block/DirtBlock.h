@@ -49,7 +49,7 @@ public:
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
         /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
@@ -58,18 +58,6 @@ public:
 
     // vIndex: 0
     virtual ~DirtBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DirtBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -98,7 +86,7 @@ public:
 
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

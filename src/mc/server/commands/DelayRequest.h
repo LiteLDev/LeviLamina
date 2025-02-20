@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class CompoundTag;
-class Dimension;
-class ICommandOriginLoader;
-class IRequestAction;
-class ServerLevel;
-// clang-format on
-
 class DelayRequest {
 public:
     // member variables
@@ -29,44 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DelayRequest(::std::unique_ptr<::IRequestAction> action, uint64 tickToExecuteOn);
-
-    MCAPI void executeAction(::ServerLevel& level, ::Dimension& dimension);
-
-    MCAPI ::gsl::not_null<::IRequestAction*> getAction() const;
-
-    MCFOLD ::std::string const& getSerializationId() const;
-
-    MCFOLD uint64 getTickToExecuteOn() const;
-
     MCAPI ::DelayRequest& operator=(::DelayRequest&&);
 
-    MCAPI bool operator>(::DelayRequest const& rhs) const;
-
-    MCAPI ::CompoundTag serialize();
-
-    MCAPI void setSerializationId(::std::string const& newID);
-
     MCAPI ~DelayRequest();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
-
-    MCAPI static ::DelayRequest load(
-        ::std::string const&    key,
-        ::CompoundTag const&    tag,
-        ::ICommandOriginLoader& loader,
-        ::std::string const&    dimensionPrefix
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::IRequestAction> action, uint64 tickToExecuteOn);
     // NOLINTEND
 
 public:

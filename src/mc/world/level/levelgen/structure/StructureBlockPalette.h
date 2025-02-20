@@ -46,9 +46,21 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        BlockPositionData& operator=(BlockPositionData const&);
+
+    public:
         // member functions
         // NOLINTBEGIN
+        MCAPI BlockPositionData(::StructureBlockPalette::BlockPositionData const& rhs);
+
         MCAPI ~BlockPositionData();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::StructureBlockPalette::BlockPositionData const& rhs);
         // NOLINTEND
 
     public:
@@ -74,6 +86,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI StructureBlockPalette();
+
     MCAPI StructureBlockPalette(::StructureBlockPalette&&);
 
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPalette(::CompoundTag const& tag);
@@ -82,19 +96,17 @@ public:
 
     MCAPI ::StructureBlockPaletteLoadResult _parseBlockPositionDataList(::CompoundTag const& tag);
 
+    MCAPI void _saveBlockPalette(::CompoundTag& tag) const;
+
     MCAPI void _saveBlockPositionDataList(::CompoundTag& tag) const;
 
     MCAPI ::Block const& getBlock(
-        ::BlockPalette const&                                   blockPalette,
-        uint64                                                  paletteId,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
+        ::BlockPalette const&                                   paletteId,
+        uint64                                                  unknownBlockRegistry,
+        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockPalette
     ) const;
 
     MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
-
-    MCFOLD uint64 getSize() const;
-
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
     MCAPI ::Block const*
     tryGetBlock(uint64 paletteId, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry) const;
@@ -105,6 +117,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::StructureBlockPalette&&);
     // NOLINTEND
 

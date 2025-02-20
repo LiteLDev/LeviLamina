@@ -15,29 +15,11 @@ class DropperBlock : public ::DispenserBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 152
+    // vIndex: 151
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
     virtual ~DropperBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DropperBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static int getAttachedFace(int facing);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

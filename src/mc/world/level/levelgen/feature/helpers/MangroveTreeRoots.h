@@ -34,7 +34,6 @@ public:
     // prevent constructor by default
     MangroveTreeRoots& operator=(MangroveTreeRoots const&);
     MangroveTreeRoots(MangroveTreeRoots const&);
-    MangroveTreeRoots();
 
 public:
     // virtual functions
@@ -56,6 +55,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI MangroveTreeRoots();
+
     MCAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI ::std::vector<::BlockPos>
@@ -74,9 +75,9 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
+    // constructor thunks
     // NOLINTBEGIN
-    MCAPI static float const& RANDOM_SKEW_CHANCE();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

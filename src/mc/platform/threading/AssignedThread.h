@@ -45,10 +45,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void assign(::std::thread::id const& thread);
-
-    MCAPI bool isOnThread() const;
-
-    MCFOLD bool operator==(::std::thread::id const& id) const;
     // NOLINTEND
 };
 

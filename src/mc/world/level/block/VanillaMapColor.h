@@ -2,20 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/actor/PaletteColor.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
 
 namespace VanillaMapColor {
-// functions
-// NOLINTBEGIN
-MCAPI ::mce::Color getColorFromPaletteColor(::PaletteColor color);
-// NOLINTEND
-
 // static variables
 // NOLINTBEGIN
 MCAPI ::mce::Color const& CLAY();
@@ -100,6 +92,8 @@ MCAPI ::mce::Color const& ICE();
 
 MCAPI ::mce::Color const& LAPIS();
 
+MCAPI ::mce::Color const& LEAVES();
+
 MCAPI ::mce::Color const& METAL();
 
 MCAPI ::mce::Color const& NETHER();
@@ -154,6 +148,8 @@ MCAPI ::mce::Color const& TERRACOTTA_WHITE();
 
 MCAPI ::mce::Color const& TERRACOTTA_YELLOW();
 
+MCAPI ::mce::Color const& VINE();
+
 MCAPI ::mce::Color const& WARPED_HYPHAE();
 
 MCAPI ::mce::Color const& WARPED_NYLIUM();
@@ -163,6 +159,8 @@ MCAPI ::mce::Color const& WARPED_STEM();
 MCAPI ::mce::Color const& WARPED_WART_BLOCK();
 
 MCAPI ::mce::Color const& WATER();
+
+MCAPI ::mce::Color const& WATERLOGGED();
 
 MCAPI ::mce::Color const& WOOD();
 

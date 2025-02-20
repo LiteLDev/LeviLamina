@@ -2,15 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/Difficulty.h"
-
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class BlockSource;
+class IRandom;
 class MobSpawnerData;
-class MobSpawnerPermutation;
 class Random;
 class SpawnConditions;
 struct ActorDefinitionIdentifier;
@@ -32,8 +28,8 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk1e8675;
     ::ll::UntypedStorage<4, 4>  mUnk3ade4e;
     ::ll::UntypedStorage<4, 4>  mUnk75c012;
-    ::ll::UntypedStorage<4, 4>  mUnk16bafa;
-    ::ll::UntypedStorage<4, 4>  mUnk5da43d;
+    ::ll::UntypedStorage<4, 4>  mUnkb7ca7e;
+    ::ll::UntypedStorage<4, 4>  mUnk64e3da;
     ::ll::UntypedStorage<4, 4>  mUnk8fd342;
     ::ll::UntypedStorage<4, 4>  mUnke5872a;
     ::ll::UntypedStorage<4, 4>  mUnk6e66eb;
@@ -75,97 +71,13 @@ public:
 
     MCAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    MCAPI int getAboveBlockDistance() const;
-
-    MCAPI ::std::pair<int, int> const getDelayRange() const;
-
-    MCFOLD int getDelaySpawnChance() const;
-
-    MCFOLD ::std::vector<::MobSpawnerPermutation> const& getGuaranteedPermutations() const;
-
-    MCFOLD ::std::vector<::MobSpawnHerdInfo>& getHerdListMutable();
-
-    MCAPI ::std::string const getMobToDelayId() const;
-
-    MCFOLD ::std::vector<::MobSpawnerPermutation> const& getPermutations() const;
-
-    MCAPI bool getPersistence() const;
-
-    MCAPI int getPopulationCap(::SpawnConditions const& conditions) const;
-
-    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnAboveBlockList() const;
-
-    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnAboveBlockListMutable();
-
-    MCAPI int getSpawnCount(
-        ::SpawnConditions const&  conditions,
-        ::BlockSource&            region,
-        ::Random&                 random,
-        ::MobSpawnHerdInfo const& herdInfo
-    ) const;
-
-    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnOnBlockList() const;
-
-    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnOnBlockListMutable();
-
-    MCFOLD ::std::vector<::BlockDescriptor> const& getSpawnOnBlockPreventedList() const;
-
-    MCFOLD ::std::vector<::BlockDescriptor>& getSpawnOnBlockPreventedListMutable();
-
-    MCFOLD bool isLavaSpawner() const;
-
-    MCFOLD bool isUnderwaterSpawner() const;
-
     MCAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
 
     MCAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
 
-    MCAPI ::MobSpawnHerdInfo const& selectRandomHerd(::Random& random) const;
-
-    MCAPI ::MobSpawnRules& setAboveBlockDistance(int distance);
-
-    MCAPI ::MobSpawnRules& setBrightnessRange(int minBrightness, int maxBrightness, bool adjustForWeather);
-
-    MCFOLD ::MobSpawnRules& setBubbleSpawner(bool isBubbleSpawner);
-
-    MCAPI ::MobSpawnRules& setDelayRange(int min, int max, ::std::string const& id);
-
-    MCAPI ::MobSpawnRules& setDelaySpawnChance(int chance);
-
-    MCAPI ::MobSpawnRules& setDifficultyRange(::Difficulty minDifficulty, ::Difficulty maxDifficulty);
-
-    MCAPI ::MobSpawnRules& setExperimentalGameplay();
-
-    MCAPI ::MobSpawnRules&
-    setHardcodedSpawnRuleCallback(::std::function<bool(::SpawnConditions const&, ::BlockSource&)> callback);
-
-    MCAPI ::MobSpawnRules& setHeightRange(int minHeight, int maxHeight);
-
-    MCAPI ::MobSpawnRules& setLavaSpawner();
+    MCAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
 
     MCAPI ::MobSpawnRules& setMobEventType(::std::string const& eventName);
-
-    MCAPI ::MobSpawnRules& setPersistence(bool persistence);
-
-    MCAPI ::MobSpawnRules& setPlayerInVillageBorderTolerance(uint tolerance);
-
-    MCAPI ::MobSpawnRules& setPlayerInVillageDistance(uint distance);
-
-    MCAPI ::MobSpawnRules& setPopulationCap(int surfaceCap, int undergroundCap);
-
-    MCAPI ::MobSpawnRules& setRarity(int rarity);
-
-    MCFOLD ::MobSpawnRules& setSpawnDistanceCap(int max);
-
-    MCAPI ::MobSpawnRules& setSpawnDistances(int min, int max);
-
-    MCAPI ::MobSpawnRules& setSurfaceSpawner();
-
-    MCAPI ::MobSpawnRules& setUndergroundSpawner();
-
-    MCAPI ::MobSpawnRules& setUnderwaterSpawner();
-
-    MCAPI ::MobSpawnRules& setWorldAgeRange(uint64 min, uint64 max);
 
     MCAPI ~MobSpawnRules();
     // NOLINTEND

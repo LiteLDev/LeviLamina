@@ -11,6 +11,7 @@
 class Actor;
 class BiomeRegistry;
 class BlockPos;
+class BlockSource;
 class Dimension;
 class ILevelStorageManagerConnector;
 class Packet;
@@ -59,12 +60,15 @@ public:
 
     // vIndex: 11
     virtual ::Actor* fetchEntity(::ActorUniqueID, bool) const = 0;
+
+    // vIndex: 12
+    virtual ::BlockSource& getBlockSourceFromMainChunkSource() const = 0;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

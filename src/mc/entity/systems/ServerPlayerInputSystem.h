@@ -9,7 +9,6 @@
 // clang-format off
 class EntityContext;
 class InteractPacket;
-class InventoryTransactionPacket;
 class PlayerAuthInputPacket;
 class StrictEntityContext;
 struct ServerPlayerCurrentMovementComponent;
@@ -34,11 +33,6 @@ MCAPI void _tickPlayerMovement(
 MCAPI ::TickingSystemWithInfo create();
 
 MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
-
-MCAPI bool onInventoryTransactionPacket(
-    ::ServerPlayerMovementComponent&                component,
-    ::std::shared_ptr<::InventoryTransactionPacket> packet
-);
 
 MCAPI bool onPlayerAuthInputPacket(::ServerPlayerMovementComponent& component, ::PlayerAuthInputPacket const& packet);
 

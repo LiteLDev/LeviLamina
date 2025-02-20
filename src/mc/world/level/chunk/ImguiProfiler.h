@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class TimeAccumulator;
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
@@ -87,18 +86,6 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~ScopedTimer() /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ScopedTimer(char const* group, char const* name, bool isClient);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(char const* group, char const* name, bool isClient);
         // NOLINTEND
 
     public:
@@ -211,7 +198,7 @@ public:
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCAPI void $dtor();
             // NOLINTEND
         };
 
@@ -300,6 +287,7 @@ public:
     // prevent constructor by default
     ImguiProfiler& operator=(ImguiProfiler const&);
     ImguiProfiler(ImguiProfiler const&);
+    ImguiProfiler();
 
 public:
     // virtual functions
@@ -311,11 +299,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ImguiProfiler();
-
-    MCAPI ::TimeAccumulator
-    getTimeAccumulator(::std::string const& group, ::std::string const& name, bool isClientSide);
-
     MCAPI void update();
     // NOLINTEND
 
@@ -327,12 +310,6 @@ public:
     MCAPI static int& sProduceRecords();
 
     MCAPI static ::Bedrock::Threading::Mutex& sRecordMutex();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

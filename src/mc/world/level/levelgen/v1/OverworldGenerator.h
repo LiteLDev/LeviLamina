@@ -14,6 +14,8 @@ class Biome;
 class BiomeArea;
 class Block;
 class BlockPos;
+class BlockSource;
+class BlockTickingQueue;
 class BlockVolume;
 class BlockVolumeTarget;
 class BoundingBox;
@@ -54,18 +56,6 @@ public:
         ::ll::TypedStorage<8, 8, float*>                                   fis;
         ::ll::TypedStorage<8, 2568, ::Random>                              random;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ThreadData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
-        // NOLINTEND
     };
 
 public:
@@ -94,7 +84,7 @@ public:
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     // vIndex: 9
-    virtual bool postProcess(::ChunkViewSource& neighborhoodIn) /*override*/;
+    virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
 
     // vIndex: 48
     virtual ::Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(::ChunkPos const& chunkPos
@@ -178,6 +168,13 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void
+    _fixWaterAlongEdges(::LevelChunk const& lc, ::BlockSource& source, ::BlockTickingQueue& instaTickQueue);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Dimension& dimension, bool isLegacyWorld);
@@ -194,7 +191,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $postProcess(::ChunkViewSource& neighborhoodIn);
+    MCAPI bool $postProcess(::ChunkViewSource& neighborhood);
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 

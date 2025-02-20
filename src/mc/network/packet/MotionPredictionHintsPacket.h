@@ -47,16 +47,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MotionPredictionHintsPacket();
-
     MCAPI explicit MotionPredictionHintsPacket(::Actor const& entity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
 

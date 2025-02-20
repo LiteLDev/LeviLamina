@@ -198,10 +198,10 @@ public:
         ::Dimension const&              toDimension
     );
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionType)>&
+    MCAPI ::Bedrock::PubSub::Connector<void(::DimensionType)>&
     $getOnAnyPlayerChangeDimensionPreSuspendRegionConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnAnyPlayerChangeDimensionPrepareRegionCompleteConnector();
 
     MCAPI bool $playerWaitForServer(::Player& player, ::std::chrono::steady_clock::time_point currentTime);
 

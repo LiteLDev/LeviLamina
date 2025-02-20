@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class EquippableComponent;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,12 +22,6 @@ public:
     EquippableDefinition& operator=(EquippableDefinition const&);
     EquippableDefinition(EquippableDefinition const&);
     EquippableDefinition();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext&, ::EquippableComponent& component) const;
-    // NOLINTEND
 
 public:
     // static functions

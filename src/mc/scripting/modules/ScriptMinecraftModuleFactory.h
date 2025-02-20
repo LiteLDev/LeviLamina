@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_factory/GenericModuleBindingFactory.h"
+#include "mc/deps/scripting/binding_factory/GenericModuleBindingFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,8 +54,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::std::string, ::std::unique_ptr<::ScriptModuleMinecraft::IComponentFactory>>&
     getActorComponentFactories();
-
-    MCAPI static ::std::string getModuleUUIDAsString();
 
     MCAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
     // NOLINTEND

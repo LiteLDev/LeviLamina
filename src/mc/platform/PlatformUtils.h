@@ -11,8 +11,6 @@ namespace Bedrock::PlatformUtils {
 MCAPI ::Core::PathBuffer<::std::string> const& getExternalStoragePath();
 
 MCAPI ::std::string const& getPackageFamilyName();
-
-MCAPI bool isCentennial();
 // NOLINTEND
 
 } // namespace Bedrock::PlatformUtils

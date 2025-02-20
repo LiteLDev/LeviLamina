@@ -10,7 +10,6 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class ServerLevel;
 // clang-format on
 
 class MobEventCommand : public ::Command {
@@ -33,18 +32,6 @@ public:
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI explicit InitProxy(::ServerLevel& level);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ServerLevel& level);
-        // NOLINTEND
     };
 
 public:

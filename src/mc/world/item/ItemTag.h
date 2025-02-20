@@ -9,7 +9,15 @@ struct ItemTag : public ::HashedString {
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit ItemTag(::std::string const& str);
+
     MCAPI ~ItemTag();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCFOLD void* $ctor(::std::string const& str);
     // NOLINTEND
 
 public:

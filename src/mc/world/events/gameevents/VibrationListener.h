@@ -66,53 +66,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VibrationListener(
-        ::std::unique_ptr<::VibrationListenerConfig>&& config,
-        ::GameEvents::PositionSource                   positionSource,
-        uint                                           range,
-        ::VibrationListener::OwnerType                 ownerType
-    );
+    MCAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
 
     MCAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
 
-    MCAPI bool _tryAdvanceInFlightVibration(::BlockSource& region);
+    MCAPI void _tickInternal(::BlockSource& region);
 
     MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
-        ::BlockSource&            region,
-        ::GameEvent const&        gameEvent,
-        ::GameEventContext const& gameEventContext,
-        ::Vec3 const&             sensorPos
+        ::BlockSource&            gameEvent,
+        ::GameEvent const&        gameEventContext,
+        ::GameEventContext const& sensorPos,
+        ::Vec3 const&             region
     );
-
-    MCFOLD ::GameEvent const& getLatestReceivedVibration() const;
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void save(::CompoundTag& tag) const;
-
-    MCAPI void tick(::BlockSource& region);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isVibrationOccluded(::BlockSource& region, ::Vec3 const& originPos, ::Vec3 const& targetPos);
-
     MCAPI static bool _shouldIgnoreVibration(
         ::BlockSource&            region,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::VibrationListenerConfig>&& config,
-        ::GameEvents::PositionSource                   positionSource,
-        uint                                           range,
-        ::VibrationListener::OwnerType                 ownerType
     );
     // NOLINTEND
 

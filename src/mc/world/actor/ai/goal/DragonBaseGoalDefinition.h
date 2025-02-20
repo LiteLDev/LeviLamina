@@ -47,10 +47,4 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $validateMobType(::Mob& mob) const;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
-    // NOLINTEND
 };

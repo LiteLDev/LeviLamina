@@ -6,7 +6,6 @@
 // clang-format off
 class BlockPos;
 class CommandArea;
-class Dimension;
 struct Bounds;
 // clang-format on
 
@@ -26,21 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandAreaFactory(::Dimension& dimension);
-
     MCAPI ::std::unique_ptr<::CommandArea> _getArea(
         ::Bounds const& requiredArea,
         bool            allowNonTickingPlayerAndTickingAreaChunks,
         bool            allowUnloadedChunks,
         bool            allowPlayerChunks
-    ) const;
-
-    MCAPI ::std::unique_ptr<::CommandArea> findArea(
-        ::BlockPos const& min,
-        ::BlockPos const& max,
-        bool              allowNonTickingPlayerAndTickingAreaChunks,
-        bool              allowUnloadedChunks,
-        bool              allowPlayerChunks
     ) const;
 
     MCAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
@@ -50,17 +39,5 @@ public:
         bool              allowUnloadedChunks,
         bool              allowPlayerChunks
     ) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool shouldAllowNonTickingPlayerAndTickingAreaChunks(int commandVersion);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::Dimension& dimension);
     // NOLINTEND
 };

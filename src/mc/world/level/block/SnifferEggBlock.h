@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/world/level/block/BlockLegacy.h"
-#include "mc/world/level/block/LevelEvent.h"
+#include "mc/world/level/block/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,8 +14,9 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class Random;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
+namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
 class SnifferEggBlock : public ::BlockLegacy {
@@ -24,8 +26,8 @@ public:
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+    // vIndex: 23
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
@@ -47,9 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SnifferEggBlock(::std::string const& nameId, int id);
+    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -57,13 +63,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void _addToRandomTickingQueue(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static void _spawnParticles(::LevelEvent particleEvent, ::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCAPI static void
+    _spawnParticles(::SharedTypes::Legacy::LevelEvent region, ::BlockSource& pos, ::BlockPos const& particleEvent);
     // NOLINTEND
 
 public:
@@ -77,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 

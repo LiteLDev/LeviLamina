@@ -9,7 +9,6 @@
 // clang-format off
 class BlockSource;
 class Container;
-class Material;
 class Vec3;
 // clang-format on
 
@@ -23,18 +22,6 @@ public:
 
     // vIndex: 0
     virtual ~GlowstoneBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI GlowstoneBlock(::std::string const& nameId, int id, ::Material const& material);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:

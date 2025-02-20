@@ -24,18 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Hopper(int moveItemSpeed, bool isEntity);
-
     MCAPI bool _addItem(::BlockSource& region, ::Container& container, ::ItemStack& item, int face, int itemCount);
 
-    MCAPI ::Container* _getAttachedContainerInBlock(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
-
-    MCAPI ::std::vector<::Container*>
-    _getAttachedContainers(::BlockSource& region, ::Vec3 const& pos, int attachedFace);
+    MCAPI ::Container* _getContainerInBlock(::BlockSource& region, ::Vec3 const& pos);
 
     MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
 
-    MCAPI ::std::vector<::Container*> _getSourceContainers(::BlockSource& region, ::Vec3 const& pos);
+    MCAPI bool _isEmptyContainer(::Container& container, int face);
+
+    MCAPI bool _isFullContainer(::Container& container, int);
 
     MCAPI bool
     _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
@@ -65,17 +62,5 @@ public:
         int            slot,
         int            face
     );
-
-    MCFOLD int getCooldownTime() const;
-
-    MCFOLD bool isOnCooldown() const;
-
-    MCFOLD void setCooldownTime(int time);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int moveItemSpeed, bool isEntity);
     // NOLINTEND
 };

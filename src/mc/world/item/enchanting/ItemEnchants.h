@@ -23,21 +23,20 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemEnchants& operator=(ItemEnchants const&);
+    ItemEnchants(ItemEnchants const&);
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemEnchants(int slot);
-
-    MCAPI ItemEnchants(int slot, ::ListTag const& tag);
+    MCAPI void _fromList(::ListTag const& tag);
 
     MCAPI ::std::unique_ptr<::ListTag> _toList() const;
 
     MCAPI bool addEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
 
-    MCAPI int addEnchants(::ItemEnchants const& enchants, bool allowNonVanilla);
-
     MCAPI ::EnchantResult canEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
-
-    MCAPI int count() const;
 
     MCAPI ::std::vector<::EnchantmentInstance> getAllEnchants() const;
 
@@ -47,27 +46,15 @@ public:
 
     MCAPI ::std::vector<::EnchantmentInstance> const& getEnchants(int activationType) const;
 
-    MCFOLD int getSlot() const;
-
     MCAPI int getTotalValue(bool bookModifier) const;
 
     MCAPI int hasEnchant(::Enchant::Type enchantType) const;
 
-    MCAPI bool isEmpty() const;
+    MCAPI ::ItemEnchants& operator=(::ItemEnchants&&);
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void removeEnchantment(::Enchant::Type enchantType);
-
     MCAPI ~ItemEnchants();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int slot);
-
-    MCAPI void* $ctor(int slot, ::ListTag const& tag);
     // NOLINTEND
 
 public:

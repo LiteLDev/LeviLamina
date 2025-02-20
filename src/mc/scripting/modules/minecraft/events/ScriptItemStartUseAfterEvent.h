@@ -3,7 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+class Player;
+struct ItemStartUseEvent;
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraft {
 
@@ -19,8 +28,22 @@ public:
 public:
     // prevent constructor by default
     ScriptItemStartUseAfterEvent& operator=(ScriptItemStartUseAfterEvent const&);
-    ScriptItemStartUseAfterEvent(ScriptItemStartUseAfterEvent const&);
     ScriptItemStartUseAfterEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ScriptItemStartUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
+
+    MCAPI ScriptItemStartUseAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemStartUseEvent const&                                                     itemEvent,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
+
+    MCAPI ~ScriptItemStartUseAfterEvent();
+    // NOLINTEND
 
 public:
     // static functions
@@ -28,6 +51,25 @@ public:
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent> bind();
 
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent> bindV010();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
+
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Player const&                                                                player,
+        ::ItemStartUseEvent const&                                                     itemEvent,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

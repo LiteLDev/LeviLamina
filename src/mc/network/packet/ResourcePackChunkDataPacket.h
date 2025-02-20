@@ -43,27 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ResourcePackChunkDataPacket();
-
-    MCAPI ResourcePackChunkDataPacket(
-        ::std::string const&        name,
-        int                         chunkID,
-        uint64                      byteOffset,
-        ::std::vector<uchar> const& data
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::std::string const& name, int chunkID, uint64 byteOffset, ::std::vector<uchar> const& data);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();

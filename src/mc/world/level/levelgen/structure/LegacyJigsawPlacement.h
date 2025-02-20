@@ -39,13 +39,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyJigsawPlacement(
-        int maxDepth,
-        ::std::function<::std::unique_ptr<
-            ::PoolElementStructurePiece>(::StructurePoolElement const&, ::BlockPos const&, ::Rotation const&, int, ::JigsawJunction&, ::BoundingBox const&, ::BlockPos const&)>
-            factory
-    );
-
     MCAPI void _addPiece(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::PoolElementStructurePiece const&                  sourcePiece,
@@ -84,17 +77,6 @@ public:
     );
 
     MCAPI ~LegacyJigsawPlacement();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int maxDepth,
-        ::std::function<::std::unique_ptr<
-            ::PoolElementStructurePiece>(::StructurePoolElement const&, ::BlockPos const&, ::Rotation const&, int, ::JigsawJunction&, ::BoundingBox const&, ::BlockPos const&)>
-            factory
-    );
     // NOLINTEND
 
 public:

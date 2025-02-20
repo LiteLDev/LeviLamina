@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/export/ExportResult.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class LevelData;
-class Player;
 namespace Editor::ScriptModule { class ScriptGameOptions; }
 namespace Scripting { struct Error; }
 // clang-format on
@@ -42,8 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptExportManager(::Player& player);
-
     MCAPI void _setGameOptions(::LevelData const& levelData, ::Editor::ScriptModule::ScriptGameOptions& gameOptions);
 
     MCAPI ::Editor::ScriptModule::ScriptGameOptions getGameOptions(::std::optional<bool> useDefault);
@@ -58,12 +55,6 @@ public:
 
     MCAPI static ::Scripting::EnumBindingBuilder<::Editor::ExportResult, ::Editor::ExportResult>
     bindExportResultEnums();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:

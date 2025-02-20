@@ -29,23 +29,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LeadItem(::std::string const& name, int id);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool bindPlayerMobs(::Actor& holderActor, int x, int y, int z, ::ItemInstance* itemUsed);
 
     MCAPI static bool canBindPlayerMobs(::Actor const& entity, ::BlockPos const& blockPos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:

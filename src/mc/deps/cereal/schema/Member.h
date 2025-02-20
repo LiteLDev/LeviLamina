@@ -11,8 +11,9 @@ struct Member : public ::cereal::SchemaDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3205d4;
-    ::ll::UntypedStorage<1, 1> mUnkd0026d;
+    ::ll::UntypedStorage<1, 1>  mUnk3205d4;
+    ::ll::UntypedStorage<1, 1>  mUnkd0026d;
+    ::ll::UntypedStorage<8, 80> mUnk173a57;
     // NOLINTEND
 
 public:
@@ -24,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::cereal::internal::Member& operator=(::cereal::internal::Member&&);
+
     MCAPI ~Member();
     // NOLINTEND
 

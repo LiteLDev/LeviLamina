@@ -40,21 +40,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI InfestedBlock(::std::string const& nameId, int id, ::HashedString const& uninfestedBlockId);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void spawnSilverfish(::BlockSource& region, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& uninfestedBlockId);
     // NOLINTEND
 
 public:
@@ -68,7 +56,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Block const* $tryGetUninfested(::Block const& block) const;
 
-    MCAPI void $spawnAfterBreak(
+    MCFOLD void $spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
         ::BlockPos const&             pos,

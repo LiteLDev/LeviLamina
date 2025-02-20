@@ -66,49 +66,17 @@ public:
         ::std::vector<::std::string> const&                              exclude
     ) const;
 
-    MCFOLD void clearListeners();
-
-    MCAPI void disableEventRecording();
-
-    MCAPI void enableEventRecording();
-
-    MCAPI ::std::optional<::Social::Events::Property> getCommonProperty(::std::string const& name) const;
-
-    MCAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
-
     MCAPI ::Social::Events::Property getPlayerCommonProperty(uint userId, ::std::string const& name) const;
 
     MCAPI ::Social::Events::Property getPlayerGlobalProperty(uint userId, ::std::string const& name) const;
-
-    MCAPI bool isEventRecordingEnabled();
 
     MCAPI void recordDelayedEventAction(::std::string const& action);
 
     MCAPI void recordEvent(::Social::Events::Event& event);
 
-    MCAPI void removeCommonProperty(::std::string const& name);
-
-    MCAPI void removeDynamicCommonProperty(::std::string const& containerName);
-
-    MCAPI void removeGlobalProperty(::std::string const& name);
-
     MCAPI void removePlayerCommonProperty(uint userId, ::std::string const& name);
 
-    MCAPI void removePlayerCommonPropertyForAllPlayers(::std::string const& name);
-
-    MCAPI ::std::shared_ptr<void*> requestEventDeferment();
-
-    MCAPI void sendEvents(bool forceSend);
-
-    MCAPI void setAcceptNewEvents(bool acceptNewEvents);
-
     MCAPI void setupCommonProperties();
-
-    MCFOLD void shutdown();
-
-    MCAPI void stopDebugEventLoggingForAllListeners();
-
-    MCAPI void tick();
 
     MCAPI ~EventManager();
     // NOLINTEND

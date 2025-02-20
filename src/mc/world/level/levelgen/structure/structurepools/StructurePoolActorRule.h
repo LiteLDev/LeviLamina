@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class IStructurePoolActorPredicate;
-// clang-format on
-
 class StructurePoolActorRule {
 public:
     // member variables
@@ -20,28 +15,4 @@ public:
     StructurePoolActorRule& operator=(StructurePoolActorRule const&);
     StructurePoolActorRule(StructurePoolActorRule const&);
     StructurePoolActorRule();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructurePoolActorRule(
-        ::std::unique_ptr<::IStructurePoolActorPredicate>&& sourceActorPredicate,
-        ::std::string                                       resultActor
-    );
-
-    MCAPI ~StructurePoolActorRule();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::unique_ptr<::IStructurePoolActorPredicate>&& sourceActorPredicate, ::std::string resultActor);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

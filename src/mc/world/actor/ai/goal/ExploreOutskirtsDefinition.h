@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class ExploreOutskirtsGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -34,6 +32,7 @@ public:
     // prevent constructor by default
     ExploreOutskirtsDefinition& operator=(ExploreOutskirtsDefinition const&);
     ExploreOutskirtsDefinition(ExploreOutskirtsDefinition const&);
+    ExploreOutskirtsDefinition();
 
 public:
     // virtual functions
@@ -43,26 +42,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ExploreOutskirtsDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::ExploreOutskirtsGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                       name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ExploreOutskirtsDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

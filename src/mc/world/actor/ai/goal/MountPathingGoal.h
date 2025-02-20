@@ -53,18 +53,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI MountPathingGoal(::Mob& mob, float speed, float targetDist, bool trackTarget);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed, float targetDist, bool trackTarget);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

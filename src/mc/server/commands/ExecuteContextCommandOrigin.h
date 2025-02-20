@@ -3,11 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandOriginType.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/world/actor/ActorLocation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,7 +18,6 @@ class Level;
 class ServerLevel;
 class Vec2;
 class Vec3;
-struct ActorUniqueID;
 // clang-format on
 
 class ExecuteContextCommandOrigin : public ::CommandOrigin {
@@ -32,7 +29,7 @@ public:
     ::ll::UntypedStorage<4, 12> mUnkef108c;
     ::ll::UntypedStorage<8, 8>  mUnk7a9c6b;
     ::ll::UntypedStorage<8, 8>  mUnk537eb8;
-    ::ll::UntypedStorage<4, 4>  mUnk32fbb7;
+    ::ll::UntypedStorage<4, 4>  mUnk145a23;
     ::ll::UntypedStorage<4, 4>  mUnk6bc1f5;
     ::ll::UntypedStorage<8, 8>  mUnk5bc335;
     ::ll::UntypedStorage<4, 4>  mUnkb8eb4f;
@@ -98,57 +95,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ExecuteContextCommandOrigin(
-        ::ActorUniqueID                executionEntity,
-        ::Vec3 const&                  position,
-        ::std::optional<::Vec2> const& rotation,
-        ::ActorUniqueID                rotationActor,
-        ::ActorUniqueID                positionActor,
-        ::ActorLocation                anchor,
-        ::DimensionType                dimensionType,
-        ::Level&                       level,
-        int                            version
-    );
-
-    MCAPI ::Actor const* getPositionEntity();
-
-    MCAPI void setDimension(::Dimension const& dimension);
-
-    MCAPI void setDimension(::DimensionType const& dimensionType);
-
-    MCAPI void setExecutionEntity(::Actor const& entity);
-
-    MCAPI void setPosition(::Vec3 const& position);
-
-    MCAPI void setPositionEntity(::Actor const& entity);
-
-    MCAPI void setRotation(::Vec2 const& rotation);
-
-    MCAPI void setRotationEntity(::Actor const& entity);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ExecuteContextCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorUniqueID                executionEntity,
-        ::Vec3 const&                  position,
-        ::std::optional<::Vec2> const& rotation,
-        ::ActorUniqueID                rotationActor,
-        ::ActorUniqueID                positionActor,
-        ::ActorLocation                anchor,
-        ::DimensionType                dimensionType,
-        ::Level&                       level,
-        int                            version
-    );
     // NOLINTEND
 
 public:

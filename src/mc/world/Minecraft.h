@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/ecs/gamerefs_entity/IEntityRegistryOwner.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
@@ -15,13 +14,11 @@
 // auto generated forward declare list
 // clang-format off
 class AllowList;
-class ClientNetworkSystem;
 class ClientOrServerNetworkSystemRef;
 class EntityContext;
 class EntityRegistry;
 class EntitySystems;
 class Experiments;
-class FileArchiver;
 class GameCallbacks;
 class GameModuleServer;
 class GameSession;
@@ -42,7 +39,6 @@ class ResourcePackManager;
 class Scheduler;
 class ServerMetrics;
 class ServerNetworkHandler;
-class ServerNetworkSystem;
 class StructureManager;
 class TextFilteringProcessor;
 class Timer;
@@ -149,62 +145,34 @@ public:
         ::std::string const&               reasonMessage
     );
 
-    MCAPI void earlyShutdownMainthread();
-
-    MCAPI ::ClientNetworkSystem& getClientNetworkSystem();
-
-    MCFOLD ::MinecraftCommands& getCommands();
-
-    MCFOLD ::IMinecraftEventing& getEventing() const;
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> getFileArchiver() const;
-
-    MCFOLD ::GameModuleServer& getGameModuleServer();
-
-    MCAPI ::optional_ref<::MinecraftGameTest> getGameTest();
-
-    MCAPI double getLastTimestep();
-
     MCAPI ::Level* getLevel() const;
-
-    MCFOLD ::ResourcePackManager& getResourceLoader();
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
-    MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
-
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
-
-    MCAPI bool hasCommands();
 
     MCAPI bool hostMultiplayer(
         ::std::string const&                                                 serverName,
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
-        ::Player*                                                            localPlayer,
-        ::mce::UUID const&                                                   localPlayerId,
-        ::std::unique_ptr<::NetEventCallback>                                clientNetworkHandler,
-        int                                                                  maxChunkRadius,
-        bool                                                                 shouldAnnounce,
-        ::ConnectionDefinition const&                                        connectionDefinition,
-        ::std::unordered_map<::PackIdVersion, ::std::string> const&          packIdToContentKey,
-        ::Scheduler&                                                         scheduler,
-        ::TextFilteringProcessor*                                            textFilteringProcessor,
-        ::NetworkServerConfig const&                                         packetHandlerConfig
+        ::Player*                                                            localPlayerId,
+        ::mce::UUID const&                                                   clientNetworkHandler,
+        ::std::unique_ptr<::NetEventCallback>                                maxChunkRadius,
+        int                                                                  connectionDefinition,
+        bool                                                                 packIdToContentKey,
+        ::ConnectionDefinition const&                                        scheduler,
+        ::std::unordered_map<::PackIdVersion, ::std::string> const&          textFilteringProcessor,
+        ::Scheduler&                                                         packetHandlerConfig,
+        ::TextFilteringProcessor*                                            localPlayer,
+        ::NetworkServerConfig const&                                         shouldAnnounce
     );
 
-    MCFOLD void init();
+    MCAPI void init();
 
-    MCFOLD void initAsDedicatedServer();
-
-    MCAPI bool isDedicatedServer() const;
-
-    MCAPI bool isLeaveGameDone() const;
-
-    MCAPI void requestResourceReload();
-
-    MCAPI void requestServerShutdown(::std::string const& message);
+    MCAPI void setupServerCommands(::std::string const& networkCommands, ::std::string const& networkTestCommands);
 
     MCAPI void startLeaveGame(bool stopNetwork);
+
+    MCAPI void tickSimtime(int nTick, int maxTick);
 
     MCAPI bool update();
     // NOLINTEND

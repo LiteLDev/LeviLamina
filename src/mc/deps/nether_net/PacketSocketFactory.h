@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace rtc { class SocketFactory; }
 namespace webrtc { class AsyncDnsResolverInterface; }
-namespace webrtc { class TaskQueueBase; }
 // clang-format on
 
 namespace NetherNet {
@@ -36,18 +34,6 @@ public:
 
     // vIndex: 4
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAsyncDnsResolver() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PacketSocketFactory(::rtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::rtc::SocketFactory* socketFactory, ::webrtc::TaskQueueBase* workerThread);
     // NOLINTEND
 
 public:

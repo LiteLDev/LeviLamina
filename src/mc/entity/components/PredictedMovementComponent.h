@@ -55,7 +55,7 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
-        virtual ~HistoryItem();
+        virtual ~HistoryItem() = default;
 
         // vIndex: 1
         virtual bool isValidStartItem() const = 0;
@@ -85,7 +85,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+
         // NOLINTEND
 
     public:
@@ -163,9 +163,9 @@ public:
 
         MCFOLD ::Vec3 const& $getPos() const;
 
-        MCFOLD ::Vec2 const& $getRot() const;
+        MCAPI ::Vec2 const& $getRot() const;
 
-        MCFOLD float $getYHeadRot() const;
+        MCAPI float $getYHeadRot() const;
 
         MCFOLD bool $isOnGround() const;
         // NOLINTEND
@@ -290,14 +290,6 @@ public:
         );
 
         MCAPI ::std::string toString();
-
-        MCAPI ~HistoryCache();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -324,12 +316,6 @@ public:
             LerpedInterval& operator=(LerpedInterval const&);
             LerpedInterval(LerpedInterval const&);
             LerpedInterval();
-
-        public:
-            // static variables
-            // NOLINTBEGIN
-            MCAPI static uint const& mMaxTicks();
-            // NOLINTEND
         };
 
     public:
@@ -456,12 +442,11 @@ public:
     // prevent constructor by default
     PredictedMovementComponent& operator=(PredictedMovementComponent const&);
     PredictedMovementComponent(PredictedMovementComponent const&);
+    PredictedMovementComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PredictedMovementComponent();
-
     MCAPI void _debugLog(
         ::PredictedMovementSystemParams&                       params,
         ::PredictedMovementComponent::PredictionDbgData const& debugData
@@ -481,14 +466,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint const& LERP_STEP_SIZE();
-
     MCAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>& mGlobalRuntimePredictionData();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

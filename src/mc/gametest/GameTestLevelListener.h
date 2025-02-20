@@ -10,7 +10,6 @@
 // clang-format off
 class Level;
 struct LevelNotificationEvent;
-namespace gametest { class GameTestTicker; }
 // clang-format on
 
 class GameTestLevelListener : public ::LevelEventListener {
@@ -37,18 +36,6 @@ public:
 
     // vIndex: 0
     virtual ~GameTestLevelListener() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GameTestLevelListener(::gametest::GameTestTicker& testTicker);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::gametest::GameTestTicker& testTicker);
     // NOLINTEND
 
 public:

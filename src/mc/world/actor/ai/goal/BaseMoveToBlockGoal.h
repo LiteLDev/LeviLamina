@@ -77,7 +77,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $findTargetBlock();
 
-    MCAPI bool $canUse();
+    MCFOLD bool $canUse();
 
     MCAPI bool $canContinueToUse();
 

@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Player const* _findTarget(::CommandOutput& output, ::Level& level, ::std::string const& pfidOrMSA) const;
+    MCAPI ::Player const* _loopPlayers(::Level& level, ::std::function<bool(::Player const*)> condition) const;
     // NOLINTEND
 
 public:

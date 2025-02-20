@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace webrtc { class IceCandidateInterface; }
-// clang-format on
-
 namespace NetherNet {
 
 class CandidateAdd {
@@ -26,17 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::webrtc::IceCandidateInterface* GetSdp() const;
-
     MCAPI ::std::string ToString() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::NetherNet::CandidateAdd>
-    TryCreate(uint64 sessionId, ::webrtc::IceCandidateInterface const& rtcCandidate);
-
     MCAPI static ::std::optional<::NetherNet::CandidateAdd> TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 

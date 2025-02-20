@@ -35,17 +35,6 @@ public:
 public:
     // prevent constructor by default
     PassengersToPositionComponent& operator=(PassengersToPositionComponent const&);
+    PassengersToPositionComponent(PassengersToPositionComponent const&);
     PassengersToPositionComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI PassengersToPositionComponent(::PassengersToPositionComponent const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::PassengersToPositionComponent const&);
-    // NOLINTEND
 };

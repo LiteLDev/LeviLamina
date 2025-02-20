@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -37,20 +36,12 @@ public:
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                         scope
     );
-
-    MCFOLD ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
-
-    MCFOLD static ::std::vector<::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
-    tryGetComponentsToExecute(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData
-    );
     // NOLINTEND
 
 public:

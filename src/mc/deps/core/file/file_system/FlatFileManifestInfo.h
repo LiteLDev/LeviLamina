@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/FileType.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class ReadOnlyBinaryStream;
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -32,17 +34,30 @@ public:
 
 public:
     // prevent constructor by default
-    FlatFileManifestInfo(FlatFileManifestInfo const&);
-    FlatFileManifestInfo();
+    FlatFileManifestInfo& operator=(FlatFileManifestInfo const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Core::FlatFileManifestInfo& operator=(::Core::FlatFileManifestInfo const&);
+    MCAPI FlatFileManifestInfo();
+
+    MCAPI FlatFileManifestInfo(::Core::FlatFileManifestInfo const&);
 
     MCAPI ::Bedrock::Result<void> readFromStream(::ReadOnlyBinaryStream& manifestFileStream);
 
+    MCAPI void setAttributes(::Core::FileType fileType, bool isDeleted);
+
+    MCAPI void setPath(::Core::PathView path);
+
     MCAPI ~FlatFileManifestInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::Core::FlatFileManifestInfo const&);
     // NOLINTEND
 
 public:

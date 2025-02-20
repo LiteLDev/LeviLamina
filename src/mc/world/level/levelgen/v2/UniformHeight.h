@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class IRandom;
-namespace br::worldgen { class VerticalAnchor; }
 namespace br::worldgen { class WorldGenContext; }
 // clang-format on
 
@@ -43,13 +42,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::std::string toString() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::UniformHeight
-    of(::br::worldgen::VerticalAnchor min, ::br::worldgen::VerticalAnchor max);
     // NOLINTEND
 
 public:

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/EditorPlayerCommon.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -20,6 +20,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk511710;
     ::ll::UntypedStorage<8, 32> mUnkede228;
     ::ll::UntypedStorage<4, 16> mUnk5533a3;
+    ::ll::UntypedStorage<4, 8>  mUnkd60431;
     ::ll::UntypedStorage<1, 1>  mUnk42288f;
     ::ll::UntypedStorage<4, 4>  mUnkf34e45;
     ::ll::UntypedStorage<4, 4>  mUnk8b439f;
@@ -57,21 +58,15 @@ public:
         ::std::string                batchName,
         ::std::string                testName,
         ::std::string                structureName,
+        int                          tags,
         int                          maxTicks,
         int                          setupTicks,
-        int                          padding,
+        bool                         padding,
         bool                         rotate,
-        bool                         required,
+        int                          required,
         int                          requiredSuccesses,
-        int                          attempts,
-        ::std::vector<::std::string> tags
+        ::std::vector<::std::string> attempts
     );
-
-    MCAPI void _addTag(::std::string tag);
-
-    MCAPI bool getRotate() const;
-
-    MCFOLD ::std::string const& getTestName() const;
 
     MCAPI bool hasTag(::std::string const& tag) const;
     // NOLINTEND
@@ -83,14 +78,14 @@ public:
         ::std::string                batchName,
         ::std::string                testName,
         ::std::string                structureName,
+        int                          tags,
         int                          maxTicks,
         int                          setupTicks,
-        int                          padding,
+        bool                         padding,
         bool                         rotate,
-        bool                         required,
+        int                          required,
         int                          requiredSuccesses,
-        int                          attempts,
-        ::std::vector<::std::string> tags
+        ::std::vector<::std::string> attempts
     );
     // NOLINTEND
 

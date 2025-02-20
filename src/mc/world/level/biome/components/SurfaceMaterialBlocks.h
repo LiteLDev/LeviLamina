@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct SurfaceMaterialAttributes;
+// clang-format on
+
 struct SurfaceMaterialBlocks {
 public:
     // member variables
@@ -19,4 +24,16 @@ public:
     SurfaceMaterialBlocks& operator=(SurfaceMaterialBlocks const&);
     SurfaceMaterialBlocks(SurfaceMaterialBlocks const&);
     SurfaceMaterialBlocks();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SurfaceMaterialBlocks(::SurfaceMaterialAttributes const& attributes);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::SurfaceMaterialAttributes const& attributes);
+    // NOLINTEND
 };

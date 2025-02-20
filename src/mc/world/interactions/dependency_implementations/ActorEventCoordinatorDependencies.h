@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorEventCoordinator;
 class EntityContext;
 class ItemStack;
 // clang-format on
@@ -37,18 +36,6 @@ public:
 
     // vIndex: 0
     virtual ~ActorEventCoordinatorDependencies() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ActorEventCoordinatorDependencies(::ActorEventCoordinator& impl);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorEventCoordinator& impl);
     // NOLINTEND
 
 public:

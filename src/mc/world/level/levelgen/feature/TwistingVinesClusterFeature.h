@@ -24,19 +24,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _placeVineString(
-        ::BlockSource&    region,
-        ::Random&         random,
-        ::BlockPos const& vinePos,
-        int               vineHeight,
-        int               minAge,
-        int               maxAge
-    ) const;
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/item/SignItem.h"
-#include "mc/world/level/block/SignBlock.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,19 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HangingSignItem(::std::string const& name, int id, ::SignBlock::SignType type);
-
     MCAPI ::Block const*
     _getCeilingHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
 
     MCAPI ::Block const*
     _getWallHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::SignBlock::SignType type);
     // NOLINTEND
 
 public:

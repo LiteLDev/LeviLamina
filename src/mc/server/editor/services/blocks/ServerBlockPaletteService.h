@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/services/blocks/EditorBlockPaletteService.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -89,11 +89,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addOrReplaceAndSyncPalette(::Editor::EditorBlockPalette const& palette);
+    MCAPI bool _loadActiveBlockPaletteId();
 
     MCAPI bool _loadAllBlockPalettes();
 
     MCAPI ::std::shared_ptr<::Editor::EditorBlockPalette> _loadBlockPalette(::HashedString const& blockPaletteId) const;
+
+    MCAPI bool _loadSelectedBlockPaletteItem();
 
     MCAPI void _removeSavedBlockPalette(::HashedString const& blockPaletteId);
 

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class Experiments;
 class Item;
 class ItemDescriptor;
 class ItemInstance;
@@ -43,9 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundItem(::std::string const& name, int id, ::Experiments const& experiments);
-
-    MCAPI void _registerSpecialCompounds(::Experiments const& experiments);
+    MCAPI void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
     // NOLINTEND
 
 public:
@@ -60,8 +57,6 @@ public:
     MCAPI static ::ItemInstance getItemForCompound(::CompoundType type, int stackCount);
 
     MCAPI static bool isCompoundItem(::ItemStackBase const& instance);
-
-    MCAPI static void unregisterSpecialCompounds();
     // NOLINTEND
 
 public:
@@ -70,12 +65,6 @@ public:
     MCAPI static ::std::unordered_map<int, int>& mIdToSpecialCompound();
 
     MCAPI static ::std::unordered_map<int, ::ItemInstance>& mTypeToSpecialCompound();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::Experiments const& experiments);
     // NOLINTEND
 
 public:

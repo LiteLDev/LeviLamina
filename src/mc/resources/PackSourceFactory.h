@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -13,7 +12,6 @@
 // clang-format off
 class ContentCatalogPackSource;
 class DirectoryPackSource;
-class IDynamicPackagePacks;
 class IInPackagePacks;
 class InPackagePackSource;
 class TreatmentPackSource;
@@ -21,6 +19,7 @@ class WorldHistoryPackSource;
 class WorldTemplateManager;
 class WorldTemplatePackSource;
 struct PackIdVersion;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class Path; }
 namespace mce { class UUID; }
 // clang-format on
@@ -55,6 +54,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mSubscriptions;
     ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::shared_ptr<::ContentCatalogPackSource>>>
         mContentCatalogPackSources;
     ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::TreatmentPackSource>>>
@@ -66,12 +66,9 @@ public:
     ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldHistoryPackSource>>>
         mWorldHistoryPackSources;
     ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldTemplatePackSource>>>
-        mWorldTemplatePackSources;
-    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::InPackagePackSource>>>
-                                                                             mDynamicPackagePackSources;
+                                                                             mWorldTemplatePackSources;
     ::ll::TypedStorage<8, 16, ::PackSourceFactory::RealmsUnknownPackSources> mRealmsUnknownPackSources;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IInPackagePacks>>          mInPackagePacksProvider;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IDynamicPackagePacks>>     mDynamicPackagePacksProvider;
     // NOLINTEND
 
 public:
@@ -123,19 +120,6 @@ public:
 
     // vIndex: 10
     virtual void removeFromDirectoryPackSource(::Core::Path const& fullPathToPack) /*override*/;
-
-    // vIndex: 11
-    virtual ::InPackagePackSource& createDynamicPackagePackSource(::PackType packType) /*override*/;
-
-    // vIndex: 12
-    virtual ::InPackagePackSource* getDynamicPackagePackSource(::PackType packType) /*override*/;
-
-    // vIndex: 13
-    virtual void setDynamicPackagePacks(::std::shared_ptr<::IDynamicPackagePacks> const& dynamicPackagePacks
-    ) /*override*/;
-
-    // vIndex: 14
-    virtual void setDynamicPackageRoot(::Core::PathBuffer<::std::string> path) /*override*/;
     // NOLINTEND
 
 public:
@@ -190,14 +174,6 @@ public:
     MCAPI ::DirectoryPackSource* $getDirectoryPackSourceContaining(::PackIdVersion const& packId) const;
 
     MCAPI void $removeFromDirectoryPackSource(::Core::Path const& fullPathToPack);
-
-    MCAPI ::InPackagePackSource& $createDynamicPackagePackSource(::PackType packType);
-
-    MCAPI ::InPackagePackSource* $getDynamicPackagePackSource(::PackType packType);
-
-    MCAPI void $setDynamicPackagePacks(::std::shared_ptr<::IDynamicPackagePacks> const& dynamicPackagePacks);
-
-    MCAPI void $setDynamicPackageRoot(::Core::PathBuffer<::std::string> path);
     // NOLINTEND
 
 public:

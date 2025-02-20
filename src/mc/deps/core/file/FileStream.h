@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     FileStream& operator=(FileStream const&);
     FileStream(FileStream const&);
+    FileStream();
 
 public:
     // virtual functions
@@ -32,8 +33,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileStream();
-
     MCAPI FileStream(::Core::Path const& filename, int openMode);
 
     MCAPI void open(::Core::Path const& filename, int om);
@@ -42,8 +41,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Core::Path const& filename, int openMode);
     // NOLINTEND
 

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
-namespace mce { class UUID; }
 // clang-format on
 
 namespace persona {
@@ -45,13 +44,7 @@ MCAPI ::std::string const& ANIMATED_FACE_NAME();
 
 MCAPI ::HashedString const& ANIMATED_FACE_TEXTURE_FRAMES_VARIABLE();
 
-MCAPI int const& INVALID_INDEX();
-
-MCAPI ::mce::UUID const& NONE_PIECE_ID();
-
 MCAPI ::std::string const& NONE_PIECE_PATH();
-
-MCAPI ::mce::UUID const& NO_PIECE_SELECTED();
 
 MCAPI ::HashedString const& USE_BLINKING_ANIMATION_VARIABLE();
 // NOLINTEND

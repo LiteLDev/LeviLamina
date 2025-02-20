@@ -14,9 +14,6 @@
 class Block;
 class BlockLegacy;
 class BlockPos;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 struct ReplaceRule;
 // clang-format on
 
@@ -101,25 +98,7 @@ public:
     virtual ~OreFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OreFeature();
-
-    MCAPI OreFeature(int count, ::std::vector<::ReplaceRule>&& replaceRules);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(int count, ::std::vector<::ReplaceRule>&& replaceRules);
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
@@ -131,8 +110,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

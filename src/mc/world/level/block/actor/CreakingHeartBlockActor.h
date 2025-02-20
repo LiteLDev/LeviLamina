@@ -7,10 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class ILevel;
 class Level;
 class SaveContext;
 struct ActorUniqueID;
@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -51,9 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getComparatorSignal(::Level& level) const;
-
-    MCAPI void onSpawnedCreakingDamaged(::BlockSource& region, ::Actor& creaking);
+    MCAPI void despawnSpawnedCreaking(::Level& level);
     // NOLINTEND
 
 public:
@@ -65,7 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

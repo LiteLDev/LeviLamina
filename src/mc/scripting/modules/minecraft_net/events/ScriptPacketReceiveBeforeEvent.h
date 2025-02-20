@@ -3,7 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+struct IncomingPacketEvent;
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace Scripting { class WeakLifetimeScope; }
+// clang-format on
 
 namespace ScriptModuleMinecraftNet {
 
@@ -24,15 +32,11 @@ public:
     ScriptPacketReceiveBeforeEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent&
-    operator=(::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+    _resolvePlayer(::Scripting::WeakLifetimeScope const& scope, ::IncomingPacketEvent const& packetEvent);
+
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent> bind();
     // NOLINTEND
 };

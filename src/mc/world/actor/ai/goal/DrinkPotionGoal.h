@@ -55,14 +55,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI DrinkPotionGoal(::Mob& mob, float walkSpeedModifier, ::std::vector<::DrinkPotionData> const& drinkPotionData);
+
+    MCAPI ::std::optional<int> _findPotionToUse() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& SPEED_MODIFIER_DRINKING_UUID();
-
-    MCAPI static int const& THROTTLE_COOLDOWN();
     // NOLINTEND
 
 public:

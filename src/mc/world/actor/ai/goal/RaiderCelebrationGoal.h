@@ -4,14 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class EntityContext;
 class Mob;
 struct FloatRange;
 namespace JsonUtil { class EmptyClass; }
@@ -40,6 +39,7 @@ public:
         // prevent constructor by default
         RaiderCelebrationDefinition& operator=(RaiderCelebrationDefinition const&);
         RaiderCelebrationDefinition(RaiderCelebrationDefinition const&);
+        RaiderCelebrationDefinition();
 
     public:
         // virtual functions
@@ -51,11 +51,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RaiderCelebrationDefinition();
-
         MCAPI void addCelebrationSoundByName(::std::string const& name);
-
-        MCAPI void initialize(::EntityContext& entity, ::RaiderCelebrationGoal& goal) const;
         // NOLINTEND
 
     public:
@@ -67,12 +63,6 @@ public:
                 ::JsonUtil::EmptyClass,
                 ::RaiderCelebrationGoal::RaiderCelebrationDefinition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -125,18 +115,6 @@ public:
 
     // vIndex: 0
     virtual ~RaiderCelebrationGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit RaiderCelebrationGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

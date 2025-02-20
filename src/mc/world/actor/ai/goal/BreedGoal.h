@@ -49,17 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BreedGoal(::Mob& animal, float speed);
-
     MCAPI bool _isCloseEnoughToBreed(::Vec3 pos1, ::Vec2 size1, ::Vec3 pos2, ::Vec2 size2) const;
 
     MCAPI ::Mob* _moveToFreePartner() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& animal, float speed);
     // NOLINTEND
 
 public:

@@ -14,13 +14,14 @@ public:
 
 public:
     // prevent constructor by default
-    ActorDefinitionModifier& operator=(ActorDefinitionModifier const&);
     ActorDefinitionModifier();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
+
+    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier const&);
 
     MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
 

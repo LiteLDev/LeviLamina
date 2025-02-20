@@ -22,7 +22,6 @@ public:
 
 public:
     // prevent constructor by default
-    DisplayNameItemComponent& operator=(DisplayNameItemComponent const&);
     DisplayNameItemComponent(DisplayNameItemComponent const&);
     DisplayNameItemComponent();
 
@@ -36,7 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setDescriptionId(::std::string const& descriptionId);
+    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent&&);
+
+    MCAPI ::DisplayNameItemComponent& operator=(::DisplayNameItemComponent const&);
     // NOLINTEND
 
 public:
@@ -44,8 +45,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();

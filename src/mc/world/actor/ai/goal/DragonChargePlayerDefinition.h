@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DragonChargePlayerGoal;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -24,20 +22,13 @@ public:
     // prevent constructor by default
     DragonChargePlayerDefinition& operator=(DragonChargePlayerDefinition const&);
     DragonChargePlayerDefinition(DragonChargePlayerDefinition const&);
+    DragonChargePlayerDefinition();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~DragonChargePlayerDefinition() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DragonChargePlayerDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::DragonChargePlayerGoal& goal) const;
     // NOLINTEND
 
 public:
@@ -48,12 +39,6 @@ public:
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DragonChargePlayerDefinition>>&
             root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

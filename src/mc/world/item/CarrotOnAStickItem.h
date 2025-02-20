@@ -36,18 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CarrotOnAStickItem(::std::string const& name, short id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, short id);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

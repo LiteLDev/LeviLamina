@@ -56,17 +56,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+    MCAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int z, int chunkBB, ::BoundingBox const& y);
+
+    MCAPI void
+    _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int z, int y1);
+
+    MCAPI void
+    _placeDoubleLowerOrUpperSupport(::BlockSource& region, ::BoundingBox const& chunkBB, int z, int x, int y);
 
     MCAPI void _placeSupport(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
+        int                  z,
+        int                  random,
         int                  x0,
         int                  y0,
-        int                  z,
         int                  y1,
-        int                  x1,
-        ::Random&            random
+        ::Random&            x1
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::BoundingBox findCorridorSize(
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction
     );
     // NOLINTEND
 

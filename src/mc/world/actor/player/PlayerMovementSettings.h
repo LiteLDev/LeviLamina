@@ -24,8 +24,8 @@ public:
     ::ll::TypedStorage<4, 4, float>                                       DistanceThreshold;
     ::ll::TypedStorage<4, 4, float>                                       DistanceThresholdSqr;
     ::ll::TypedStorage<4, 4, int>                                         DurationThreshold;
-    ::ll::TypedStorage<4, 24, ::ReplayStateConfig>                        mReplay;
-    ::ll::TypedStorage<8, 16, ::PlayerTickConfig>                         mPlayerTickConfig;
+    ::ll::TypedStorage<4, 20, ::ReplayStateConfig>                        mReplay;
+    ::ll::TypedStorage<8, 24, ::PlayerTickConfig>                         mPlayerTickConfig;
     ::ll::TypedStorage<1, 1, bool>                                        ServerAuthBlockBreaking;
     ::ll::TypedStorage<4, 4, float>                                       mServerPlayerPickRangeScalar;
     // NOLINTEND

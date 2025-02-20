@@ -20,7 +20,6 @@ struct JumpPreventionResult;
 struct MobEffectsComponent;
 struct MovementAttributesComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 struct TriggerJumpRequestComponent;
 // clang-format on
 
@@ -28,8 +27,6 @@ struct ApplyDashSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create();
-
     MCAPI static void doDash(
         ::StrictEntityContext const&                    context,
         ::JumpPreventionResult const&                   jumpPreventionResult,

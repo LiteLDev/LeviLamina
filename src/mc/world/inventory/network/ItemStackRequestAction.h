@@ -45,14 +45,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit ItemStackRequestAction(::ItemStackRequestActionType actionType);
-
-    MCFOLD ::ItemStackRequestActionType getActionType() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::std::unique_ptr<::ItemStackRequestAction>> read(::ReadOnlyBinaryStream& stream);
@@ -65,15 +57,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackRequestActionType actionType);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

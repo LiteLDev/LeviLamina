@@ -23,10 +23,10 @@ class ConcretePowderBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 151
+    // vIndex: 150
     virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 151
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
     // vIndex: 87
@@ -49,17 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConcretePowderBlock(::std::string const& nameId, int id);
-
     MCAPI bool _tryTouchWater(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::HashedString> name) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

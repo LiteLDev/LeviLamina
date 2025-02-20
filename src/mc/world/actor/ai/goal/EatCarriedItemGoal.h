@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
 class Mob;
 // clang-format on
 
@@ -47,21 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EatCarriedItemGoal(::Mob& mob, int startDelay);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& CHEW_CHANCE();
-
-    MCAPI static int const& EATING_TIME();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, int startDelay);
+    MCFOLD void _updateHand(::ItemStack const& item);
     // NOLINTEND
 
 public:

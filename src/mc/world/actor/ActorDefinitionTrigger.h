@@ -2,12 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-struct VariantParameterListConst;
-// clang-format on
-
 class ActorDefinitionTrigger {
 public:
     // member variables
@@ -25,8 +19,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ActorDefinitionTrigger();
-
-    MCAPI bool canTrigger(::Actor const& entity, ::VariantParameterListConst const& list) const;
 
     MCAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger&&);
 

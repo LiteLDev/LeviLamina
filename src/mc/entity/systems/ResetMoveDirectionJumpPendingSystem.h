@@ -16,7 +16,6 @@ struct JumpPendingScaleComponent;
 struct MobAllowStandSlidingFlagComponent;
 struct MobTravelComponent;
 struct OnGroundFlagComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -24,8 +23,6 @@ class ResetMoveDirectionJumpPendingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem();
-
     MCAPI static void tickResetMoveDirectionJumpPendingSystem(::ViewT<
                                                               ::StrictEntityContext,
                                                               ::Include<::OnGroundFlagComponent>,

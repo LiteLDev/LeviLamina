@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/runtime/IDebuggerTransport.h"
+#include "mc/deps/scripting/runtime/IDebuggerTransport.h"
 
 class ScriptDebuggerTransport : public ::Scripting::IDebuggerTransport {
 public:

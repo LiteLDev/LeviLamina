@@ -5,11 +5,9 @@
 // auto generated inclusion list
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
-#include "mc/network/PacketCompressionAlgorithm.h"
+#include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/network/TransportLayer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
-#include "mc/server/commands/PlayerPermissionLevel.h"
-#include "mc/world/Difficulty.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
@@ -54,6 +52,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mIsItemTransactionLoggingEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mIsPropertiesFileLoaded;
     ::ll::TypedStorage<1, 1, bool>                                                mIsServerVisibleToLanDiscovery;
+    ::ll::TypedStorage<1, 1, bool>                                                mIsPacketRateLimitingEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mEncryptionDisabled;
     ::ll::TypedStorage<4, 4, int>                                                 mMaxViewDistanceChunks;
     ::ll::TypedStorage<4, 4, ::std::chrono::minutes>                              mMaxIdleTime;
@@ -70,8 +69,8 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                mUseWebsocketEncryption;
     ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                            mNetworkSettings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
-    ::ll::TypedStorage<8, 72, ::PlayerMovementSettings>                           mPlayerMovementSettings;
-    ::ll::TypedStorage<8, 648, ::ScriptSettings>                                  mScriptSettings;
+    ::ll::TypedStorage<8, 80, ::PlayerMovementSettings>                           mPlayerMovementSettings;
+    ::ll::TypedStorage<8, 704, ::ScriptSettings>                                  mScriptSettings;
     ::ll::TypedStorage<1, 1, ::ChatRestrictionLevel>                              mChatRestrictionLevel;
     ::ll::TypedStorage<1, 1, bool>                                                mPersonaDisabled;
     ::ll::TypedStorage<1, 1, bool>                                                mCustomSkinsDisabled;
@@ -93,131 +92,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PropertiesSettings(::std::string const& filename);
 
-    MCAPI bool adventureModeOverridesEnabled() const;
-
-    MCAPI bool allowCheats() const;
-
-    MCAPI bool areCustomSkinsDisabled() const;
-
-    MCAPI bool blockNetworkIdsAreHashes() const;
-
-    MCAPI bool canEmitTelemetryEvents() const;
-
-    MCAPI bool disablePlayerInteractions() const;
-
-    MCAPI bool enableItemStackNetManager() const;
-
-    MCAPI bool forceGamemode() const;
-
-    MCFOLD bool getAllowSubclientLogin() const;
-
-    MCAPI bool getAllowUnconnectedPings() const;
-
-    MCAPI ::std::string const& getApplicationId() const;
-
-    MCAPI ::std::string const& getApplicationTenantId() const;
-
     MCAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues() const;
 
-    MCFOLD ::ChatRestrictionLevel getChatRestrictionLevel() const;
-
-    MCAPI float getClientThrottleScalar() const;
-
-    MCFOLD int getClientThrottleThreshold() const;
-
-    MCAPI ::PacketCompressionAlgorithm getCompressionAlgorithm() const;
-
-    MCAPI ushort getCompressionThresholdBytesize() const;
-
-    MCFOLD ::LogLevel getContentLogLevel() const;
-
-    MCAPI ::std::string const& getCustomProperty(::std::string const& propertyName) const;
-
-    MCAPI ::PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
-
-    MCAPI ::Difficulty getDifficulty() const;
-
-    MCFOLD ::std::vector<::std::string> const& getExtraTrustedKeys() const;
-
-    MCAPI ::GameType getGameMode() const;
-
-    MCFOLD ::std::string const& getLanguage() const;
-
-    MCFOLD ::std::string const& getLevelName() const;
-
-    MCFOLD ::std::string const& getLevelSeed() const;
-
-    MCFOLD ::std::string const& getLevelType() const;
-
-    MCAPI ::std::chrono::minutes getMaxPlayerIdleTime() const;
-
-    MCFOLD int getMaxPlayers() const;
-
-    MCAPI uint getMaxThreads() const;
-
-    MCAPI int getMaxViewDistanceChunks() const;
-
-    MCFOLD ::std::string const& getMotd() const;
-
-    MCAPI ::NetworkPermissions const& getNetworkPermissions() const;
+    MCAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
 
     MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
-
-    MCFOLD ::PlayerMovementSettings const& getPlayerMovementSettings() const;
-
-    MCAPI ::NetworkAddress getRemoteServerCommunicationEndpoint() const;
-
-    MCFOLD ::ScriptSettings const& getScriptSettings() const;
-
-    MCAPI ::std::optional<float> getServerBuildRatioOverride() const;
-
-    MCFOLD ::std::string const& getServerId() const;
-
-    MCAPI ushort getServerPort() const;
-
-    MCAPI ushort getServerPortv6() const;
-
-    MCFOLD ::std::bitset<3> const& getServerTextSettings() const;
-
-    MCAPI int getServerTickRange() const;
-
-    MCFOLD ::std::string const& getServerType() const;
-
-    MCAPI int getServerWakeupFrequency() const;
-
-    MCAPI ::TransportLayer getTransportLayerType() const;
-
-    MCAPI bool isClientSideGenEnabled() const;
-
-    MCAPI bool isContentLogConsoleOutputEnabled() const;
-
-    MCFOLD bool isContentLogFileEnabled() const;
-
-    MCAPI bool isEmoteChatMuted() const;
-
-    MCAPI bool isEncryptionDisabled() const;
-
-    MCAPI bool isHardcore() const;
-
-    MCAPI bool isItemTransactionManagerLoggingEnabled() const;
-
-    MCAPI bool const isPropertiesFileLoaded() const;
-
-    MCAPI bool isRakNetJoinFloodProtectionEnabled() const;
-
-    MCFOLD bool isServerVisibleToLanDiscovery() const;
-
-    MCAPI bool texturePackRequired() const;
-
-    MCAPI bool useAllowList() const;
-
-    MCFOLD bool useMsaGamertagsOnly() const;
-
-    MCAPI bool useOnlineAuthentication() const;
-
-    MCAPI bool useWebsocketEncryption() const;
-
-    MCAPI float websocketRetryTime() const;
 
     MCAPI ~PropertiesSettings();
     // NOLINTEND

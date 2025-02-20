@@ -68,7 +68,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ValidatorRegistry() /*override*/ = default;
+    virtual ~ValidatorRegistry() /*override*/;
     // NOLINTEND
 
 public:
@@ -78,6 +78,9 @@ public:
 
     MCAPI static bool
     findValidators(::std::string const& validatorName, ::ValidatorRegistry::ValidatorRegistryValidators& validatorPair);
+
+    MCAPI static ::std::unordered_map<::std::string, ::ValidatorRegistry::ValidatorRegistryValidators> const&
+    getValidatorMap();
 
     MCAPI static void registerValidators(
         ::std::string_view                                                                                validatorName,
@@ -90,7 +93,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

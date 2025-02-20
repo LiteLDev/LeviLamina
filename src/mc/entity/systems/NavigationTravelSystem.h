@@ -12,15 +12,12 @@ class ActorOwnerComponent;
 class NavigationComponent;
 class StrictEntityContext;
 struct MobTravelComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class NavigationTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createNavigationTravelSystem();
-
     MCAPI static void tickNavigationTravelSystem(
         ::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::MobTravelComponent, ::NavigationComponent> view,
         ::EntityModifier<::MobTravelComponent>                                                             mod

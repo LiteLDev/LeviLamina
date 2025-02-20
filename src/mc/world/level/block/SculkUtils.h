@@ -6,6 +6,7 @@
 // clang-format off
 class Block;
 class BlockPos;
+class BlockSource;
 class IBlockWorldGenAPI;
 // clang-format on
 
@@ -18,7 +19,8 @@ MCAPI ::std::set<::Block const*> const generateSculkReplaceableBlocks();
 
 MCAPI ::std::set<::Block const*> const generateSculkReplaceableBlocksWorldgen();
 
-MCAPI bool isSculkOrSculkVein(::Block const& block);
+MCAPI void
+requestChargeEffects(::IBlockWorldGenAPI& region, ::BlockSource* pos, ::BlockPos const& charge, int facingData, int);
 // NOLINTEND
 
 } // namespace SculkUtils

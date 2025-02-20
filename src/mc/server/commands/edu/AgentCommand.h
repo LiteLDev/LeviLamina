@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Agent;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -112,6 +113,8 @@ public:
 
     MCAPI void directionCommand(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
+    MCAPI void drop(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
     MCAPI void getPosition(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void itemCommand(::CommandOrigin const& origin, ::CommandOutput& output) const;
@@ -120,9 +123,13 @@ public:
 
     MCAPI void reportSuccess(bool success, ::CommandOutput& output) const;
 
+    MCAPI void setAgentOwner(::Agent& agent, ::Player& owner) const;
+
     MCAPI void setItem(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
     MCAPI void tpAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+    MCAPI void transfer(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:

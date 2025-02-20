@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::DataStore {
 
 struct PayloadDescription {
@@ -27,15 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription&&);
+    MCFOLD ::Editor::DataStore::PayloadDescription& operator=(::Editor::DataStore::PayloadDescription&&);
 
     MCAPI ~PayloadDescription();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

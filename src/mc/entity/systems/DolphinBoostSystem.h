@@ -5,41 +5,33 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
 // clang-format off
+class EntitySystems;
+class ReplayStateComponent;
 class StrictEntityContext;
-struct ActorDataFlagComponent;
 struct IsNearDolphinsFlagComponent;
+struct MovementEffectsComponent;
+struct RuntimeIDComponent;
 struct ScanForDolphinFlagComponent;
-struct ScanForDolphinTimerComponent;
-struct SwimSpeedMultiplierComponent;
-struct TickingSystemWithInfo;
+struct SendPacketsComponent;
 // clang-format on
 
-struct DolphinBoostSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tickScan(
-        ::StrictEntityContext const&                    context,
-        ::ActorDataFlagComponent const&                 synchedActorDataComponent,
-        ::ScanForDolphinTimerComponent&                 scanForDolphinTimerComponent,
-        ::EntityModifier<::ScanForDolphinFlagComponent> modifier
-    );
+namespace DolphinBoostSystem {
+// functions
+// NOLINTBEGIN
+MCAPI void _addDolphinBoostEffectServer(
+    ::entt::type_list<::Include<::IsNearDolphinsFlagComponent, ::ScanForDolphinFlagComponent>>,
+    ::StrictEntityContext const&             context,
+    ::RuntimeIDComponent const&              runtimeID,
+    ::MovementEffectsComponent&              movementEffects,
+    ::Optional<::ReplayStateComponent>       replayState,
+    ::EntityModifier<::SendPacketsComponent> mod
+);
 
-    MCAPI static void _tickSwimSpeedModifier(
-        ::StrictEntityContext const&,
-        ::ActorDataFlagComponent const&           synchedActorDataComponent,
-        ::SwimSpeedMultiplierComponent&           swimSpeedMultiplierComponent,
-        ::Optional<::ScanForDolphinFlagComponent> scanForDolphinFlagComponent,
-        ::Optional<::IsNearDolphinsFlagComponent> isNearDolphinComponent
-    );
+MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+// NOLINTEND
 
-    MCAPI static ::TickingSystemWithInfo createFindDolphinsSystem();
-
-    MCAPI static ::TickingSystemWithInfo createScanSystem();
-
-    MCAPI static ::TickingSystemWithInfo createSwimSpeedModifierSystem();
-    // NOLINTEND
-};
+} // namespace DolphinBoostSystem

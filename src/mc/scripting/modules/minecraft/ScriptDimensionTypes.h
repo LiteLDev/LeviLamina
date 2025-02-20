@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptDimensionTypes& operator=(ScriptDimensionTypes const&);
     ScriptDimensionTypes(ScriptDimensionTypes const&);
     ScriptDimensionTypes();
 
@@ -34,9 +35,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType>>
     get(::Scripting::WeakLifetimeScope scope, ::std::string const& identifier);
-
-    MCAPI ::ScriptModuleMinecraft::ScriptDimensionTypes&
-    operator=(::ScriptModuleMinecraft::ScriptDimensionTypes const&);
 
     MCAPI void registerTypes(::Scripting::WeakLifetimeScope scope);
     // NOLINTEND

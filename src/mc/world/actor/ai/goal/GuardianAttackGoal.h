@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Guardian;
-class Mob;
 // clang-format on
 
 class GuardianAttackGoal : public ::Goal {
@@ -50,18 +49,6 @@ public:
 
     // vIndex: 0
     virtual ~GuardianAttackGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GuardianAttackGoal(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

@@ -86,6 +86,7 @@ public:
     // prevent constructor by default
     RenderOffsetsItemComponent& operator=(RenderOffsetsItemComponent const&);
     RenderOffsetsItemComponent(RenderOffsetsItemComponent const&);
+    RenderOffsetsItemComponent();
 
 public:
     // virtual functions
@@ -95,18 +96,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RenderOffsetsItemComponent();
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
 
     MCAPI static ::HashedString const& getIdentifier();
@@ -118,12 +113,6 @@ public:
     MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
 
     MCAPI static ::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

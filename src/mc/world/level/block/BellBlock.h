@@ -16,9 +16,9 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class Player;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class BellBlock : public ::ActorBlock {
@@ -33,13 +33,10 @@ public:
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 139
     virtual bool use(::Player& player, ::BlockPos const& pos, uchar) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor) const /*override*/;
 
     // vIndex: 142
@@ -73,7 +70,7 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const
         /*override*/;
 
@@ -84,8 +81,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BellBlock(::std::string const& nameId, int id);
-
     MCAPI ::Block const&
     _determineAttachment(::Actor const& by, ::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
@@ -100,12 +95,8 @@ public:
     MCAPI bool hasValidAttachment(::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -122,8 +113,6 @@ public:
     MCAPI ::Block const&
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
-
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI bool $use(::Player& player, ::BlockPos const& pos, uchar) const;
 

@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileSizePresetToken; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -18,10 +18,10 @@ public:
     virtual ~FileSizePresetManager();
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetInitialSizeForFile(::Core::Path const&, uint64) = 0;
+    virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetInitialSizeForFile(::Core::PathView, uint64) = 0;
 
     // vIndex: 2
-    virtual ::std::optional<uint64> checkFileInitialSize(::Core::Path const&) = 0;
+    virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView) = 0;
     // NOLINTEND
 
 public:

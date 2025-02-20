@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     Test& operator=(Test const&);
+    Test();
 
 public:
     // virtual functions
@@ -44,16 +45,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Test();
-
     MCAPI Test(::br::worldgen::processors::PosRules::Test const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::br::worldgen::processors::PosRules::Test const&);
     // NOLINTEND
 

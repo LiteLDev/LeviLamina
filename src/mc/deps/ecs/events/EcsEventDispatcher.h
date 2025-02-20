@@ -20,10 +20,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::entt::dispatcher> mDispatcher;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void update();
-    // NOLINTEND
 };

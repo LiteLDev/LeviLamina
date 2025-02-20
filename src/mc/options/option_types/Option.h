@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/options/option_types/OptionID.h"
+#include "mc/options/option_types/OptionOwnerType.h"
+#include "mc/options/option_types/OptionResetFlags.h"
+#include "mc/options/option_types/OptionType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
@@ -46,7 +52,29 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI Impl(
+            ::OptionID           id,
+            ::OptionOwnerType    ownerType,
+            ::OptionResetFlags   resetFlags,
+            ::std::string const& captionId,
+            ::std::string const& saveTag,
+            ::OptionType         optionType
+        );
+
         MCAPI ~Impl();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(
+            ::OptionID           id,
+            ::OptionOwnerType    ownerType,
+            ::OptionResetFlags   resetFlags,
+            ::std::string const& captionId,
+            ::std::string const& saveTag,
+            ::OptionType         optionType
+        );
         // NOLINTEND
 
     public:
@@ -90,6 +118,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Option(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        ::OptionType         optionType
+    );
+
     MCAPI void _updatePropertyVector(
         ::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector,
         ::std::string const&                                      value
@@ -107,6 +144,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool read(::std::string const& valueString, bool& output);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::OptionID           id,
+        ::OptionOwnerType    ownerType,
+        ::OptionResetFlags   resetFlags,
+        ::std::string const& captionId,
+        ::std::string const& saveTag,
+        ::OptionType         optionType
+    );
     // NOLINTEND
 
 public:

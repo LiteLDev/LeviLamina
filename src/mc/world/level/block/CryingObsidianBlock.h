@@ -7,9 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
-class BlockSource;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class CryingObsidianBlock : public ::BlockLegacy {
@@ -17,23 +15,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0
     virtual ~CryingObsidianBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI CryingObsidianBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -45,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:

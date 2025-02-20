@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ItemStackRequestPacket() /*override*/ = default;
+    virtual ~ItemStackRequestPacket() /*override*/;
 
     // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
@@ -41,23 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ItemStackRequestPacket();
-
-    MCFOLD ::ItemStackRequestBatch const& getRequestBatch() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

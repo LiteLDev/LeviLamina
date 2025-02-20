@@ -3,15 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/v1_21_10/CoordinateEvaluationOrder.h"
+#include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class IBlockWorldGenAPI;
-class Random;
-class RenderParams;
 class ScatterParams;
 namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace SharedTypes::v1_21_10 { struct CoordinateRangeData; }
@@ -32,6 +29,7 @@ public:
     // prevent constructor by default
     ScatterFeature& operator=(ScatterFeature const&);
     ScatterFeature(ScatterFeature const&);
+    ScatterFeature();
 
 public:
     // virtual functions
@@ -40,16 +38,12 @@ public:
     virtual ~ScatterFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterFeature();
-
     MCAPI ::SharedTypes::v1_21_10::CoordinateRangeData
     _createCoordinateRangeDataFromExpression(::SharedTypes::Legacy::ExpressionNode const& expressionNode);
 
@@ -107,12 +101,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -121,8 +109,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

@@ -13,7 +13,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class SaveContext;
 struct ActorUniqueID;
 // clang-format on
@@ -41,7 +41,7 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -68,19 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BedBlockActor(::BlockPos const& pos);
-
-    MCAPI bool claimPetSleepOnBed(::ActorUniqueID petId);
-
-    MCAPI void startSleepingOn();
-
     MCAPI void stopSleepingOn(::BlockSource& region, bool forcefulAwake);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -98,7 +86,7 @@ public:
 
     MCFOLD void $onChanged(::BlockSource& region);
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

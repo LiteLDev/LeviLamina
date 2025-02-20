@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class OcelotAttackGoal;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -33,6 +31,7 @@ public:
     // prevent constructor by default
     OcelotAttackDefinition& operator=(OcelotAttackDefinition const&);
     OcelotAttackDefinition(OcelotAttackDefinition const&);
+    OcelotAttackDefinition();
 
 public:
     // virtual functions
@@ -42,26 +41,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI OcelotAttackDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::OcelotAttackGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                   name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OcelotAttackDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

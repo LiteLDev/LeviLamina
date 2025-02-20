@@ -14,7 +14,6 @@ class BlockPalette;
 class BlockPos;
 class BlockSource;
 class BoundingBox;
-class CompoundBlockVolume;
 class CompoundTag;
 class IUnknownBlockTypeRegistry;
 class StructureSettings;
@@ -36,7 +35,6 @@ public:
 public:
     // prevent constructor by default
     EditorStructureTemplate& operator=(EditorStructureTemplate const&);
-    EditorStructureTemplate(EditorStructureTemplate const&);
     EditorStructureTemplate();
 
 public:
@@ -68,6 +66,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI EditorStructureTemplate(::Editor::EditorStructureTemplate const&);
+
     MCAPI explicit EditorStructureTemplate(::std::string_view name);
 
     MCAPI EditorStructureTemplate(
@@ -75,29 +75,21 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
 
-    MCAPI ::std::string getLocation() const;
-
-    MCAPI ::std::vector<::std::string> getTags() const;
-
     MCAPI void placeStructureTemplateInWorldForEditor(
         ::BlockSource&             region,
-        ::BlockPalette const&      globalBlockPalette,
-        ::BoundingBox const&       transformedBounds,
-        ::StructureSettings const& structureSettings
+        ::BlockPalette const&      transformedBounds,
+        ::BoundingBox const&       structureSettings,
+        ::StructureSettings const& globalBlockPalette
     ) const;
 
-    MCAPI void setBounds(::CompoundBlockVolume const& volume);
-
-    MCAPI void setBounds(::BlockPos const& from, ::BlockPos const& to);
-
     MCAPI void setLocation(::std::string location);
-
-    MCAPI void setTags(::std::vector<::std::string> tags);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::Editor::EditorStructureTemplate const&);
+
     MCAPI void* $ctor(::std::string_view name);
 
     MCAPI void* $ctor(

@@ -12,20 +12,13 @@ public:
 public:
     // prevent constructor by default
     VehicleComponent& operator=(VehicleComponent const&);
+    VehicleComponent(VehicleComponent const&);
     VehicleComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VehicleComponent(::VehicleComponent const&);
-
     MCAPI ~VehicleComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::VehicleComponent const&);
     // NOLINTEND
 
 public:

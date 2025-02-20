@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct EducationLevelSettings;
-// clang-format on
-
 class EducationSettingsManager {
 public:
     // member variables
@@ -19,12 +14,4 @@ public:
     EducationSettingsManager& operator=(EducationSettingsManager const&);
     EducationSettingsManager(EducationSettingsManager const&);
     EducationSettingsManager();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::optional<::EducationLevelSettings> const& getEducationLevelSettings() const;
-
-    MCAPI void setEducationLevelSettings(::EducationLevelSettings settings);
-    // NOLINTEND
 };

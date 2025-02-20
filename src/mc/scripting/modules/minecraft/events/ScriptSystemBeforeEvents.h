@@ -3,18 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/TypedObjectHandle.h"
-#include "mc/external/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 
 // auto generated forward declare list
 // clang-format off
-class ServerLevel;
-namespace ScriptModuleMinecraft { struct ScriptModuleShutdownBeforeEvent; }
-namespace ScriptModuleMinecraft { struct ScriptModuleStartupBeforeEvent; }
-namespace ScriptModuleMinecraft { struct ScriptWatchdogTerminateBeforeEvent; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -61,9 +54,9 @@ public:
     ::ll::UntypedStorage<8, 16> mUnke94250;
     ::ll::UntypedStorage<8, 16> mUnk1881fb;
     ::ll::UntypedStorage<8, 8>  mUnk578908;
-    ::ll::UntypedStorage<8, 32> mUnkb07964;
-    ::ll::UntypedStorage<8, 32> mUnkd8d158;
-    ::ll::UntypedStorage<8, 32> mUnkc1b293;
+    ::ll::UntypedStorage<8, 32> mUnk8513df;
+    ::ll::UntypedStorage<8, 32> mUnka9f66b;
+    ::ll::UntypedStorage<8, 32> mUnk6701a7;
     // NOLINTEND
 
 public:
@@ -75,26 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemBeforeEvents(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
+    MCAPI ScriptSystemBeforeEvents(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
 
     MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI void onBeforeModuleShutdown(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptModuleShutdownBeforeEvent> eventData
-    );
-
-    MCAPI void onBeforeModuleStartup(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent> eventData
-    );
-
-    MCAPI void onBeforeWatchdogTerminate(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>
-            beforeWatchdogTerminateEvent
-    );
-
-    MCAPI void registerHandler(::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptSystemBeforeEvents> handle
-    );
+    MCAPI ::ScriptModuleMinecraft::ScriptSystemBeforeEvents&
+    operator=(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
 
     MCAPI ~ScriptSystemBeforeEvents();
     // NOLINTEND
@@ -108,7 +88,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
     // NOLINTEND
 
 public:

@@ -16,9 +16,9 @@ MCAPI void setupCommonEnums(::CommandRegistry& registry);
 
 MCAPI void setupStandardServer(
     ::Minecraft&         server,
+    ::std::string const& permissionsFile,
     ::std::string const& networkCommands,
-    ::std::string const& networkTestCommands,
-    ::PermissionsFile*   permissionsFile
+    ::PermissionsFile*   networkTestCommands
 );
 // NOLINTEND
 

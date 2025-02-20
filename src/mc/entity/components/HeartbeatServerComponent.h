@@ -19,15 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HeartbeatServerComponent(::HeartbeatServerComponent&&);
-
     MCAPI ~HeartbeatServerComponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::HeartbeatServerComponent&&);
     // NOLINTEND
 
 public:

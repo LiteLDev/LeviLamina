@@ -13,7 +13,7 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class Level;
+class ILevel;
 class SaveContext;
 class StructureEditorData;
 class StructureTelemetryServerData;
@@ -24,7 +24,7 @@ class StructureBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::StructureEditorData>         mStructureEditorData;
+    ::ll::TypedStorage<8, 216, ::StructureEditorData>         mStructureEditorData;
     ::ll::TypedStorage<4, 16, ::StructureTelemetryServerData> mTelemetryServerData;
     ::ll::TypedStorage<1, 1, bool>                            mIsPowered;
     // NOLINTEND
@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -54,15 +54,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StructureBlockActor(::BlockPos const& pos);
-
     MCAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
 
     MCAPI bool _saveStructure(::BlockSource& region, ::BlockPos const& position, bool redstoneTriggered);
-
-    MCFOLD ::StructureEditorData const& getStructureData() const;
-
-    MCAPI void setIsWaterlogged(bool waterlogged);
 
     MCAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
@@ -72,19 +66,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& MAX_WIREFRAME_RENDER_DISTANCE();
-
     MCAPI static ::mce::Color const& X_AXIS_COLOR();
 
     MCAPI static ::mce::Color const& Y_AXIS_COLOR();
 
     MCAPI static ::mce::Color const& Z_AXIS_COLOR();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -96,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

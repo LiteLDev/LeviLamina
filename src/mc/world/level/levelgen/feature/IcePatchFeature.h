@@ -37,18 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit IcePatchFeature(int radius);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(int radius);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -21,12 +21,6 @@ public:
     ScriptBlockAreaSize& operator=(ScriptBlockAreaSize const&);
     ScriptBlockAreaSize(ScriptBlockAreaSize const&);
     ScriptBlockAreaSize();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptBlockAreaSize const& other) const;
-    // NOLINTEND
 
 public:
     // static functions

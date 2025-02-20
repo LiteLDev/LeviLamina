@@ -31,20 +31,14 @@ public:
 
 public:
     // prevent constructor by default
-    MoveInputComponent& operator=(MoveInputComponent const&);
     MoveInputComponent(MoveInputComponent const&);
+    MoveInputComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveInputComponent();
+    MCFOLD ::MoveInputComponent& operator=(::MoveInputComponent&&);
 
-    MCAPI ::MoveInputComponent& operator=(::MoveInputComponent&&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI ::MoveInputComponent& operator=(::MoveInputComponent const&);
     // NOLINTEND
 };

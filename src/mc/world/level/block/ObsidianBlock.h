@@ -9,7 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Random;
+struct BlockAnimateTickData;
 // clang-format on
 
 class ObsidianBlock : public ::BlockLegacy {
@@ -23,8 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0
     virtual ~ObsidianBlock() /*override*/ = default;
@@ -33,15 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ObsidianBlock(::std::string const& nameId, int id, bool isGlowing);
-
     MCAPI void poofParticles(::BlockSource& region, ::BlockPos const& pos) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool isGlowing);
     // NOLINTEND
 
 public:
@@ -53,7 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:

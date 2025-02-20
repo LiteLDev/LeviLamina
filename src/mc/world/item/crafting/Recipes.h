@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
+#include "mc/world/item/crafting/RecipeUnlockingRequirement.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -145,6 +146,9 @@ public:
 
     MCAPI void _addMapRecipes();
 
+    MCAPI ::RecipeUnlockingRequirement
+    _createUnlockingRequirementFromContext(::RecipeUnlockingRequirement::UnlockingContext context) const;
+
     MCAPI bool _isRecipeValidToAdd(::Recipe const& recipe);
 
     MCAPI bool _loadBrewingMix(::Json::Value const& objData, ::MinEngineVersion const& minEngineVersion);
@@ -162,6 +166,9 @@ public:
 
     MCAPI ::RecipeIngredient const
     _loadInputIngredientFromJson(::Json::Value const& obj, ::MinEngineVersion const& minEngineVersion) const;
+
+    MCAPI ::RecipeIngredient const
+    _loadOutputIngredientFromJson(::Json::Value const& obj, ::MolangVersion molangVersion) const;
 
     MCAPI bool _loadSmithingTransform(
         ::Json::Value const&                 objData,
@@ -204,12 +211,12 @@ public:
         ::std::string const&                  r0,
         ::std::vector<::Recipes::Type> const& types,
         ::std::vector<::HashedString> const&  tags,
-        int                                   priority,
+        int                                   constructor,
         ::std::function<::std::unique_ptr<
             ::ShapedRecipe>(::std::string, int, int, ::std::vector<::RecipeIngredient> const&, ::std::vector<::ItemInstance> const&, ::HashedString, bool, int, ::mce::UUID const*, ::RecipeUnlockingRequirement const&, ::SemVersion const&)>
-                                            constructor,
-        ::RecipeUnlockingRequirement const& unlockingReq,
-        ::SemVersion const&                 formatVersion,
+                                            unlockingReq,
+        ::RecipeUnlockingRequirement const& formatVersion,
+        ::SemVersion const&                 priority,
         bool                                assumeSymmetry
     );
 
@@ -304,21 +311,11 @@ public:
 
     MCAPI ::std::pair<::std::string, ::Json::Value> extractRecipeObjInfo(::Json::Value const& obj);
 
-    MCAPI void
-    forEachRecipeFor(::HashedString const& tag, ::std::function<void(::Recipe const&)> const& callback) const;
-
-    MCAPI void forEachUnlockableRecipe(::std::function<void(::Recipe const&)> const& callback) const;
-
     MCAPI ::ItemInstance getFurnaceRecipeResult(::ItemStackBase const& item, ::HashedString const& tag) const;
-
-    MCAPI uint getNumberOfUnlockableRecipes() const;
 
     MCAPI ::Recipe const* getRecipeByNetId(::RecipeNetId const& netId) const;
 
     MCAPI ::Recipe* getRecipeFor(::ItemInstance const& result, ::HashedString const& tag) const;
-
-    MCFOLD ::std::map<::HashedString, ::std::map<::std::string, ::std::shared_ptr<::Recipe>>> const&
-    getRecipesAllTags() const;
 
     MCAPI void init(
         ::ResourcePackManager&   resourcePackManager,

@@ -7,15 +7,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class Biome;
 class BiomeSource;
 class BlockPos;
 class BlockSource;
+class BoundingBox;
 class ChunkPos;
 class Dimension;
 class HashedString;
 class IPreliminarySurfaceProvider;
-class LevelChunk;
 class Random;
 class StructureStart;
 namespace Bedrock::Threading { class Mutex; }
@@ -90,14 +89,6 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
-
-    MCAPI ::BlockPos chunkStartAtSurfaceLevel(
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::ChunkPos                           pos,
-        int                                  defaultYLevel
-    );
-
     MCAPI void createBlueprints(
         ::Dimension&                         dimension,
         ::ChunkPos const&                    cp,
@@ -105,15 +96,13 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCAPI void debugRender();
-
     MCAPI ::std::vector<::ChunkPos> findFarAwayStructures(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
+
+    MCAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
 
     MCAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
     MCAPI bool isInsideBoundingFeature(int cellX, int cellY, int cellZ);
-
-    MCAPI bool postProcess(::BlockSource& region, ::Random& random, int chunkX, int chunkZ);
 
     MCAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
     // NOLINTEND
@@ -133,14 +122,8 @@ public:
         int                                    minFeatureSeparation,
         int                                    randomSalt,
         bool                                   tiltedSpacing,
-        int                                    maxSearchRadius,
-        bool                                   mustBeInNewChunks
-    );
-
-    MCAPI static ::std::pair<::BlockPos const, ::Biome const*> getBiomeForFeatureGeneration(
-        ::BiomeSource const&                 biomeSource,
-        ::ChunkPos const&                    chunkPos,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+        int                                    mustBeInNewChunks,
+        bool                                   maxSearchRadius
     );
 
     MCAPI static ::ChunkPos getChunkPosInSpace(
@@ -152,8 +135,6 @@ public:
         int               salt,
         bool              tiltedSpacing
     );
-
-    MCAPI static void setRandomSeedFor(::Random& result, int x, int z, int salt, uint levelSeed);
     // NOLINTEND
 
 public:

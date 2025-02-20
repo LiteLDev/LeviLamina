@@ -38,15 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SystemFilePicker();
-
     MCAPI ::FileInfo _fillFileInfo(::Core::Path const& filePath);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -27,31 +27,6 @@ public:
         ::ll::TypedStorage<8, 32, ::std::string>                                string;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandSelector<::Actor>>> selection;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MessageComponent& operator=(MessageComponent const&);
-        MessageComponent(MessageComponent const&);
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI MessageComponent(::CommandMessage::MessageComponent&& m);
-
-        MCAPI explicit MessageComponent(::std::string&& s);
-
-        MCAPI explicit MessageComponent(::std::unique_ptr<::CommandSelector<::Actor>>&& s);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::CommandMessage::MessageComponent&& m);
-
-        MCAPI void* $ctor(::std::string&& s);
-
-        MCAPI void* $ctor(::std::unique_ptr<::CommandSelector<::Actor>>&& s);
-        // NOLINTEND
     };
 
 public:
@@ -63,22 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandMessage();
-
     MCAPI ::GenerateMessageResult generateMessage(::CommandOrigin const& origin, int maxLength) const;
-
-    MCAPI ~CommandMessage();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

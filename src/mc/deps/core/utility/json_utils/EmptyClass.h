@@ -8,7 +8,7 @@ class EmptyClass {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 120> mUnk221ded;
+    ::ll::UntypedStorage<8, 32> mUnk221ded;
     // NOLINTEND
 
 public:

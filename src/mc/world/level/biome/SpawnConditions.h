@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class MobSpawnRules;
-// clang-format on
-
 class SpawnConditions {
 public:
     // member variables
@@ -26,11 +21,4 @@ public:
     SpawnConditions& operator=(SpawnConditions const&);
     SpawnConditions(SpawnConditions const&);
     SpawnConditions();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::SpawnConditions
-    createSpawnConditionsWithSpawnRules(::SpawnConditions const& spawnConditions, ::MobSpawnRules const& spawnRules);
-    // NOLINTEND
 };

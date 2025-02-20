@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorComponentFactory;
 class ActorDefinition;
 class ActorDefinitionPtr;
 class Experiments;
@@ -121,8 +120,6 @@ public:
         ::Experiments const&   experiments
     );
 
-    MCAPI void _addRef(::ActorDefinitionPtr& ptr);
-
     MCAPI void _getResources(::Level& level);
 
     MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
@@ -156,10 +153,6 @@ public:
 
     MCAPI ::std::vector<::std::string> buildActorEventList() const;
 
-    MCAPI ::ActorComponentFactory* getComponentFactory();
-
-    MCAPI ::ActorDefinitionPtr tryGetDefinition(::std::string const& definitionId);
-
     MCAPI ::ActorDefinitionPtr tryGetDefinitionGroup(::std::string const& base, ::std::string const& definitionId);
     // NOLINTEND
 
@@ -171,6 +164,8 @@ public:
         ::std::string const&                                         componentName,
         ::std::function<void(::Json::Value&, ::Json::Value&)> const& callback
     );
+
+    MCAPI static void loadActorDefinitionFormatVersion(::Json::Value const& root, ::SemVersion& formatVersion);
 
     MCAPI static bool loadActorDefinitionIdentifier(
         ::Json::Value const& root,

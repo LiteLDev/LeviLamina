@@ -56,8 +56,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BookCloningRecipe(::std::string const& recipeId);
-
     MCAPI BookCloningRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 
@@ -70,8 +68,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId);
-
     MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 

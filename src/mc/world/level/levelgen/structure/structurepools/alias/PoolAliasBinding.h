@@ -9,8 +9,6 @@
 // clang-format off
 class BlockPos;
 class IRandom;
-class JigsawStructureRegistry;
-struct StructureTemplateRegistrationContext;
 // clang-format on
 
 class PoolAliasBinding {
@@ -37,8 +35,6 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::string_view getOrDefault(::std::string_view alias, ::std::string_view defaultValue) const;
-
         MCAPI ~PoolAliasLookup();
         // NOLINTEND
 
@@ -69,17 +65,6 @@ public:
 
     MCAPI static ::std::shared_ptr<::PoolAliasBinding>
     random(::std::string&& id, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>&& targets);
-
-    MCAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
-        ::std::vector<::Core::SimpleWeightedEntry<::std::vector<::std::shared_ptr<::PoolAliasBinding>>>>&& targets
-    );
-
-    MCAPI static void registerTargetsAsPools(
-        ::JigsawStructureRegistry&                                  registry,
-        ::StructureTemplateRegistrationContext&                     context,
-        ::std::string_view                                          fallback,
-        ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliasBindings
-    );
 
     MCAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
         ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,

@@ -33,23 +33,8 @@ public:
 
     MCAPI void generateTagsList();
 
-    MCAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>> getAllTestFunctions();
-
-    MCFOLD ::std::vector<::std::string> const& getAllTestTags() const;
-
-    MCAPI ::std::shared_ptr<::gametest::BaseGameTestFunction> getTestFunction(::std::string const& testName);
-
-    MCAPI ::std::vector<::std::shared_ptr<::gametest::BaseGameTestFunction>>
-    getTestFunctionsWithTag(::std::string const& tag);
-
-    MCFOLD bool isReady() const;
-
-    MCAPI bool isTestTag(::std::string const& tag) const;
-
     MCAPI bool
     registerTestMethod(::std::string const& className, ::std::shared_ptr<::gametest::BaseGameTestFunction> fn);
-
-    MCFOLD void setReady();
     // NOLINTEND
 };
 

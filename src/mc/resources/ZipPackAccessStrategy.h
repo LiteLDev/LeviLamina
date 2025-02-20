@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackAccessStrategy.h"
 #include "mc/resources/PackAccessStrategyType.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContentIdentity;
+class IFileAccess;
 class ResourceLocation;
 namespace Core { class Path; }
 // clang-format on
@@ -93,6 +95,9 @@ public:
     // vIndex: 16
     virtual bool supportsSignatureVerification() const /*override*/;
 
+    // vIndex: 17
+    virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
+
     // vIndex: 21
     virtual void unload() /*override*/;
 
@@ -103,11 +108,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ZipPackAccessStrategy(
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& fileAccess,
+        ::ResourceLocation const&                           location,
+        ::Core::Path const&                                 subPath
+    );
+
     MCAPI bool _tryReadFromPendingQueue(::Core::Path const& packRelativePath, ::std::string& result) const;
 
     MCAPI bool initZipFile() const;
 
     MCAPI void shutdown();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& fileAccess,
+        ::ResourceLocation const&                           location,
+        ::Core::Path const&                                 subPath
+    );
     // NOLINTEND
 
 public:
@@ -152,6 +173,8 @@ public:
     MCFOLD ::Core::PathBuffer<::std::string> const& $getSubPath() const;
 
     MCFOLD bool $supportsSignatureVerification() const;
+
+    MCAPI ::std::unique_ptr<::PackAccessStrategy> $createSubPack(::Core::Path const& subPath) const;
 
     MCAPI void $unload();
 

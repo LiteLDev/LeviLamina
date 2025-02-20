@@ -20,14 +20,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::std::string const& getName() const;
-
-    MCFOLD bool isReadOnly() const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::ObjectiveCriteria> deserialize(::CompoundTag const& dataTag);

@@ -31,10 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DolphinMoveControl();
-
-    MCAPI float _calcRotX(float xd, float yd, float zd);
-
     MCAPI bool _clearOfObstacles(::Mob const& mob, float x, float z, int distance) const;
 
     MCAPI void _handleBreaching(::Mob& mob);
@@ -42,12 +38,6 @@ public:
     MCAPI bool _isInWater(::Mob const& mob) const;
 
     MCAPI void _setupBreach(::Mob& mob);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

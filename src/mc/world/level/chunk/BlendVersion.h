@@ -10,4 +10,5 @@ enum class BlendVersion : uchar {
     V1_20_0   = 4,
     V1_20_0_1 = 5,
     V1_21_50  = 6,
+    V1_21_60  = 7,
 };

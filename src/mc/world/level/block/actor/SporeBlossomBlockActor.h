@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 // clang-format on
 
@@ -20,18 +19,6 @@ public:
 
     // vIndex: 0
     virtual ~SporeBlossomBlockActor() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit SporeBlossomBlockActor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

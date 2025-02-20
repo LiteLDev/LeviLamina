@@ -48,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::std::string data);
     // NOLINTEND
 

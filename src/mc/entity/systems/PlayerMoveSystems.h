@@ -14,7 +14,5 @@ public:
     MCAPI static ::TickingSystemWithInfo createLocalPlayerFilterAutoJumpSystem();
 
     MCAPI static ::TickingSystemWithInfo createPlayerPostMoveSystem();
-
-    MCAPI static ::TickingSystemWithInfo createPlayerPreMoveSystem();
     // NOLINTEND
 };

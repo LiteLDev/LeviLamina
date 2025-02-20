@@ -15,7 +15,9 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkfb2e45;
     ::ll::UntypedStorage<8, 8>  mUnkc598fa;
+    ::ll::UntypedStorage<8, 8>  mUnk4f71e5;
     ::ll::UntypedStorage<8, 32> mUnkab068e;
+    ::ll::UntypedStorage<8, 8>  mUnk91ad15;
     // NOLINTEND
 
 public:
@@ -49,7 +51,7 @@ public:
 
     // vIndex: 6
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>
-    removeShowcasedScreenshot(::std::string const&, bool) /*override*/;
+    removeShowcasedScreenshot(::std::string const&) /*override*/;
 
     // vIndex: 7
     virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>>

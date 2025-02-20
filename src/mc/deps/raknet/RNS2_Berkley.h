@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { struct RNS2_BerkleyBindParameters; }
+namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -55,15 +56,13 @@ public:
     MCAPI uint RecvFromLoopInt();
 
     MCAPI void SetBroadcastSocket(int broadcast);
-
-    MCAPI void SetDoNotFragment(int opt);
-
-    MCAPI void SignalStopRecvPollingThread();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void GetSystemAddressIPV4And6(int rns2Socket, ::RakNet::SystemAddress* systemAddressOut);
+
     MCAPI static uint RecvFromLoop(void* arguments);
     // NOLINTEND
 

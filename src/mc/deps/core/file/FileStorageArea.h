@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/FileAccessType.h"
-#include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/WriteOperation.h"
 #include "mc/deps/core/file/file_system/TransactionFlags.h"
 
@@ -12,7 +12,7 @@
 // clang-format off
 namespace Core { class FileStats; }
 namespace Core { class FileSystemImpl; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace Core { class StorageAreasTree; }
 // clang-format on
@@ -115,77 +115,79 @@ public:
     virtual void informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
 
     // vIndex: 11
-    virtual void informStorageAreaCopy(uint64 storageAreaSize);
+    virtual uint64 estimatePendingWriteDiskSize(uint64 rawFileSize) const;
 
     // vIndex: 12
-    virtual bool supportsExtendSize() const;
+    virtual void informStorageAreaCopy(uint64 storageAreaSize);
 
     // vIndex: 13
-    virtual bool canExtendSize() const;
+    virtual bool supportsExtendSize() const;
 
     // vIndex: 14
-    virtual void resetCanAttemptExtendSize();
+    virtual bool canExtendSize() const;
 
     // vIndex: 15
-    virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
+    virtual void resetCanAttemptExtendSize();
 
     // vIndex: 16
-    virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
+    virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
 
     // vIndex: 17
+    virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
+
+    // vIndex: 18
     virtual void preemptiveExtendSize(
         uint64 const            expectedContentSize,
         ::std::function<void()> successCallback,
         ::std::function<void()> failureCallback
     );
 
-    // vIndex: 18
+    // vIndex: 19
     virtual uint64 getAvailableUserStorageSize();
 
-    // vIndex: 19
+    // vIndex: 20
     virtual void unloadFlatFileManifests(bool shouldClearManifests);
 
-    // vIndex: 20
+    // vIndex: 21
     virtual void tick();
 
-    // vIndex: 21
+    // vIndex: 22
     virtual void flushImmediately();
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void enableFlushToDisk(bool);
 
-    // vIndex: 23
+    // vIndex: 24
     virtual bool checkCorrupt(bool handleCorruption);
 
-    // vIndex: 24
+    // vIndex: 25
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual uint64 getTransactionWriteSizeLimit() const;
 
-    // vIndex: 26
-    virtual ::Core::Result setSaveDataIcon(::Core::Path const& iconPath);
-
     // vIndex: 27
-    virtual bool shouldAllowCommit() const;
+    virtual ::Core::Result setSaveDataIcon(::Core::PathView iconPath);
 
     // vIndex: 28
-    virtual void
-    trackBytesWritten(::Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+    virtual bool shouldAllowCommit() const;
 
     // vIndex: 29
-    virtual void trackWriteOperation(::Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
+    virtual void trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
     // vIndex: 30
-    virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
+    virtual void trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
     // vIndex: 31
-    virtual ::Core::Result _commit();
+    virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo();
 
     // vIndex: 32
-    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+    virtual ::Core::Result _commit();
 
     // vIndex: 33
+    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+
+    // vIndex: 34
     virtual void _onTeardown();
     // NOLINTEND
 
@@ -194,15 +196,13 @@ public:
     // NOLINTBEGIN
     MCAPI FileStorageArea(
         ::Core::FileAccessType                     type,
-        ::Core::Path const&                        rootPath,
+        ::Core::PathView                           rootPath,
         bool                                       usesFlatFiles,
-        bool                                       isAccessedDirectly,
-        ::std::shared_ptr<::Core::FileStorageArea> parent
+        bool                                       parent,
+        ::std::shared_ptr<::Core::FileStorageArea> isAccessedDirectly
     );
 
     MCAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
-
-    MCAPI void _addReadWriteOperation(bool succeeded, uint64 numBytesRead, uint64 numBytesWritten);
 
     MCAPI void _addWriteOperation(bool succeeded, uint64 numBytesWritten);
 
@@ -210,25 +210,25 @@ public:
 
     MCAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCAPI void _onDeleteFile(::Core::Path const& filePath);
+    MCAPI void _notifyEndWrite();
 
-    MCAPI void _onWriteFile(::Core::Path const& filePath);
+    MCAPI bool canWrite() const;
 
     MCAPI void checkUserStorage();
 
-    MCAPI ::Core::PathBuffer<::std::string> const& getRootPath() const;
+    MCAPI bool isOutOfDiskSpaceError() const;
+
+    MCAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Core::Result
-    _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::Path const& path);
+    _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
 
     MCAPI static ::Core::Result
-    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::Path const& path);
-
-    MCAPI static void teardown();
+    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
     // NOLINTEND
 
 public:
@@ -246,10 +246,10 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(
         ::Core::FileAccessType                     type,
-        ::Core::Path const&                        rootPath,
+        ::Core::PathView                           rootPath,
         bool                                       usesFlatFiles,
-        bool                                       isAccessedDirectly,
-        ::std::shared_ptr<::Core::FileStorageArea> parent
+        bool                                       parent,
+        ::std::shared_ptr<::Core::FileStorageArea> isAccessedDirectly
     );
     // NOLINTEND
 
@@ -274,6 +274,8 @@ public:
     MCFOLD bool $handlesPendingWrites() const;
 
     MCFOLD void $informPendingWriteSize(uint64 numBytesWritePending, bool const fromResourcePack);
+
+    MCFOLD uint64 $estimatePendingWriteDiskSize(uint64 rawFileSize) const;
 
     MCFOLD void $informStorageAreaCopy(uint64 storageAreaSize);
 
@@ -309,13 +311,13 @@ public:
 
     MCFOLD uint64 $getTransactionWriteSizeLimit() const;
 
-    MCFOLD ::Core::Result $setSaveDataIcon(::Core::Path const& iconPath);
+    MCFOLD ::Core::Result $setSaveDataIcon(::Core::PathView iconPath);
 
     MCAPI bool $shouldAllowCommit() const;
 
-    MCAPI void $trackBytesWritten(::Core::Path const& targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
+    MCAPI void $trackBytesWritten(::Core::PathView targetPath, uint64 amount, ::Core::WriteOperation writeOperation);
 
-    MCAPI void $trackWriteOperation(::Core::Path const& targetPath, ::Core::WriteOperation writeOperation);
+    MCAPI void $trackWriteOperation(::Core::PathView targetPath, ::Core::WriteOperation writeOperation);
 
     MCAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 

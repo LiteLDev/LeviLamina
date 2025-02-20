@@ -26,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI VariantParameterList();
-
-    MCAPI explicit operator ::VariantParameterListConst() const;
     // NOLINTEND
 
 public:

@@ -119,19 +119,9 @@ public:
 
     MCAPI void _addToAssetSet(::Core::Path const& path, ::std::string const& data);
 
-    MCAPI void _deleteFromAssetSet(::Core::Path const& path);
-
     MCAPI void _forEachInAssetSet(::std::function<void(::Core::Path const&)> callback) const;
 
-    MCAPI bool _isInAssetSet(::Core::Path const& path) const;
-
-    MCAPI bool _isInAssetSetCaseInsensative(::Core::Path const& path) const;
-
     MCAPI void _upgradeContentsFile(::Json::Value& root);
-
-    MCAPI bool hasGeneratedAssetSet() const;
-
-    MCAPI bool isAssetSetEmpty() const;
 
     MCAPI ::Bedrock::Resources::PreloadedPathHandle preload(::Core::Path const& packRelativePath) const;
     // NOLINTEND

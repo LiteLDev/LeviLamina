@@ -21,6 +21,7 @@ public:
     // prevent constructor by default
     BreakBlocksDescription& operator=(BreakBlocksDescription const&);
     BreakBlocksDescription(BreakBlocksDescription const&);
+    BreakBlocksDescription();
 
 public:
     // virtual functions
@@ -33,18 +34,6 @@ public:
 
     // vIndex: 1
     virtual ~BreakBlocksDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BreakBlocksDescription();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

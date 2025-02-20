@@ -59,8 +59,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PumpkinBlock(::std::string const& nameId, int id, bool lit, bool carved);
-
     MCAPI bool _canDispense(::BlockSource& region, ::Vec3 const& pos, uchar) const;
 
     MCAPI bool _canSpawnGolem(::BlockSource& region, ::BlockPos const& pos) const;
@@ -78,12 +76,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& GOLEM_ONLY_FROM_CARVED_PUMPKINS_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit, bool carved);
     // NOLINTEND
 
 public:

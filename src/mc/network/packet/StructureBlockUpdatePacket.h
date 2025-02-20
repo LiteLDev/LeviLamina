@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mBlockPos;
-    ::ll::TypedStorage<8, 176, ::StructureEditorData> mData;
+    ::ll::TypedStorage<8, 216, ::StructureEditorData> mData;
     ::ll::TypedStorage<1, 1, bool>                    mTrigger;
     ::ll::TypedStorage<1, 1, bool>                    mIsWaterlogged;
     // NOLINTEND
@@ -42,18 +42,6 @@ public:
 
     // vIndex: 0
     virtual ~StructureBlockUpdatePacket() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI StructureBlockUpdatePacket();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -12,6 +12,7 @@
 class Actor;
 class ActorRuntimeID;
 class AttributeInstanceHandle;
+class BaseAttributeMap;
 class BinaryStream;
 class DataItem;
 class ReadOnlyBinaryStream;
@@ -42,6 +43,7 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::SyncedAttribute>>             mAttributes;
     ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>     mAttributeHandles;
+    ::ll::TypedStorage<8, 8, ::BaseAttributeMap const*>                     mMap;
     ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper*>              mEntityData;
     // NOLINTEND
 

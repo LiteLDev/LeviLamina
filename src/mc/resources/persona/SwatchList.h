@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace persona::color { struct Swatch; }
+// clang-format on
+
 namespace persona::color {
 
 class SwatchList : public ::Bedrock::EnableNonOwnerReferences {
@@ -25,6 +30,18 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~SwatchList() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit SwatchList(::std::vector<::persona::color::Swatch>&& swatches);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::vector<::persona::color::Swatch>&& swatches);
     // NOLINTEND
 
 public:

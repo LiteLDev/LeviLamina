@@ -2,9 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/script_engine/Promise.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraftNet { struct ScriptNetHeader; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetRequest; }
+namespace ScriptModuleMinecraftNet { struct ScriptNetResponse; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -70,6 +77,14 @@ public:
     );
 
     MCAPI void rejectAll(::std::string const& reason);
+
+    MCAPI uint track(
+        ::Scripting::Promise<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetResponse>,
+            ::Scripting::Error,
+            void> const&                                                                          promise,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptNetRequest> const& requestHandle
+    );
     // NOLINTEND
 };
 

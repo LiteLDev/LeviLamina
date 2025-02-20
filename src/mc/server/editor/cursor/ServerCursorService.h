@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 #include "mc/server/editor/serviceproviders/ServerCursorServiceProvider.h"
 
 // auto generated forward declare list
@@ -18,6 +18,7 @@ namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Cursor { class ServerCursor; }
 namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
+namespace Editor::Cursor { struct Position; }
 namespace Editor::Cursor { struct Ray; }
 namespace Editor::Network { class CursorServicePositionChangePayload; }
 // clang-format on
@@ -34,6 +35,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkcf80cc;
     ::ll::UntypedStorage<8, 24> mUnka7b08b;
     ::ll::UntypedStorage<8, 48> mUnkb594c0;
+    ::ll::UntypedStorage<8, 48> mUnk282724;
     ::ll::UntypedStorage<8, 48> mUnk50310b;
     // NOLINTEND
 
@@ -88,6 +90,12 @@ public:
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
     ) /*override*/;
+
+    // vIndex: 9
+    virtual ::Bedrock::PubSub::Subscription listenForCursorPositionChanges(
+        ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
+            callback
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -131,6 +139,11 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForCursorStateChanges(
         ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
+    );
+
+    MCAPI ::Bedrock::PubSub::Subscription $listenForCursorPositionChanges(
+        ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
+            callback
     );
     // NOLINTEND
 

@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class CommandOrigin;
 // clang-format on
 
@@ -34,18 +33,6 @@ public:
 
     // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit GameDirectorEntityServerCommandOrigin(::Actor& origin);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& origin);
     // NOLINTEND
 
 public:

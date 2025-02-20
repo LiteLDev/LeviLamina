@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void deserialize(::Json::Value const& table);
+    MCAPI void deserialize(::Json::Value const& table, bool usingUpcomingCreatorFeaturesExperiment);
 
     MCAPI void fill(::Container& container, ::Random& random, ::LootTableContext& context);
 

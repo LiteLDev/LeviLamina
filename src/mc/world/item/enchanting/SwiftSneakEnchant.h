@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
-// auto generated forward declare list
-// clang-format off
-class Actor;
-// clang-format on
-
 class SwiftSneakEnchant : public ::Enchant {
 public:
     // virtual functions
@@ -31,12 +26,6 @@ public:
 
     // vIndex: 0
     virtual ~SwiftSneakEnchant() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static float getExtraSneakingMovementFactor(::Actor const& entity);
     // NOLINTEND
 
 public:

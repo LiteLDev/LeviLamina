@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -34,12 +33,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockUnitCubeDescription() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

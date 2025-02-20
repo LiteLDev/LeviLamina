@@ -14,10 +14,6 @@ namespace UseItemGoalUtility {
 // NOLINTBEGIN
 MCAPI void finishUsingItem(::Mob& mob, ::Tick& finishUsingItemTick);
 
-MCAPI bool isUsingItem(::Mob const& mob);
-
-MCAPI void setUsingItem(::Mob& mob, bool isUsingItem);
-
 MCAPI bool startUsingItem(::Mob& mob, ::ItemStack const& item, ::Tick& finishUsingItemTick);
 // NOLINTEND
 

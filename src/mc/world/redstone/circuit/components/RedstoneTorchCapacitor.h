@@ -99,19 +99,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RedstoneTorchCapacitor();
-
-    MCAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem&, bool& bPowerFromSelf);
-
-    MCAPI void resetBurnOutCount();
-
-    MCAPI void setOn(bool bOn);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCAPI int _findStrongestStrength(::BlockPos const& targetPos, ::CircuitSystem& bPowerFromSelf, bool&);
     // NOLINTEND
 
 public:
@@ -140,7 +128,7 @@ public:
 
     MCAPI bool $isHalfPulse() const;
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
 
     MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 

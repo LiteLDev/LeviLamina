@@ -7,8 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::v1_20_50 { struct BlockDescriptor; }
-namespace cereal { struct ReflectionCtx; }
+namespace SharedTypes::Legacy { struct BlockDescriptor; }
 // clang-format on
 
 namespace BlockDescriptorSerializer {
@@ -31,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockDescriptorProxy(::SharedTypes::v1_20_50::BlockDescriptor desc);
+    MCAPI explicit BlockDescriptorProxy(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCAPI BlockDescriptorProxy(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
 
@@ -42,15 +41,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::BlockDescriptor desc);
+    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCAPI void* $ctor(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
     // NOLINTEND

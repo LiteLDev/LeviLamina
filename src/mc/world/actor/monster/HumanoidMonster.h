@@ -15,29 +15,17 @@ class HumanoidMonster : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 154
+    // vIndex: 149
     virtual int getItemUseDuration() const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
     virtual ~HumanoidMonster() /*override*/;
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& MAX_ENCHANTED_ARMOR_CHANCE();
-
-    MCAPI static float const& MAX_ENCHANTED_WEAPON_CHANCE();
-
-    MCAPI static float const& MAX_PICKUP_LOOT_CHANCE();
-
-    MCAPI static float const& MAX_WEARING_ARMOR_CHANCE();
     // NOLINTEND
 
 public:

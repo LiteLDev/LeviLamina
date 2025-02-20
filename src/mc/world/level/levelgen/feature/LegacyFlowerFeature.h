@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
-#include "mc/world/level/levelgen/feature/helpers/FlowerPlacementType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,6 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk6a2ff7;
     ::ll::UntypedStorage<8, 40> mUnk2a37af;
+    ::ll::UntypedStorage<4, 4>  mUnka5beed;
     // NOLINTEND
 
 public:
@@ -30,23 +30,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LegacyFlowerFeature() /*override*/ = default;
-
     // vIndex: 4
     virtual bool place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit LegacyFlowerFeature(::FlowerPlacementType placementType);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FlowerPlacementType placementType);
+    // vIndex: 0
+    virtual ~LegacyFlowerFeature() /*override*/ = default;
     // NOLINTEND
 
 public:

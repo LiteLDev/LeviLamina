@@ -67,7 +67,7 @@ public:
         ) /*override*/;
 
         // vIndex: 0
-        virtual ~OceanRuinPiece() /*override*/ = default;
+        virtual ~OceanRuinPiece() /*override*/;
         // NOLINTEND
 
     public:
@@ -82,6 +82,8 @@ public:
             bool                                              isLarge,
             ::OceanTempCategory                               type
         );
+
+        MCAPI int _getHeight(::BlockPos& pos, ::BlockSource& region, ::BlockPos const& corner);
 
         MCAPI void _loadTemplate();
         // NOLINTEND
@@ -103,7 +105,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:

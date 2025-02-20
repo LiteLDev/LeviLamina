@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/Container.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
@@ -18,11 +18,11 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class HashedString;
+class ILevel;
 class Item;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
-class Level;
 class LevelChunk;
 class Player;
 class Recipes;
@@ -102,7 +102,7 @@ public:
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 6
     virtual void onCustomTagLoadDone(::BlockSource& region) /*override*/;
@@ -142,18 +142,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FurnaceBlockActor(::BlockPos const& pos);
-
     MCAPI FurnaceBlockActor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
         ::HashedString const&                  recipeTag,
         ::SharedTypes::Legacy::LevelSoundEvent smeltSound,
-        ::ContainerType                        containerType,
+        ::SharedTypes::Legacy::ContainerType   containerType,
         int                                    burnInterval,
         ::Block const&                         unlitFurnace,
         ::Block const&                         litFurnace
     );
+
+    MCAPI void _tryBroadcastBurnSound(::BlockSource& region);
 
     MCAPI void burn(::Recipes const& recipes);
 
@@ -162,28 +162,6 @@ public:
     MCAPI void checkForAlternativeFuelAchievement(::BlockSource& region, ::ItemStack const& item);
 
     MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
-
-    MCFOLD int getLitDuration() const;
-
-    MCFOLD int getLitTime() const;
-
-    MCAPI int getStoredXP() const;
-
-    MCFOLD int getTickCount() const;
-
-    MCAPI bool isEmptiedByHopper(::BlockSource& region);
-
-    MCAPI void onFurnaceBlockRemoved(::BlockSource& region);
-
-    MCFOLD void setLitDuration(int value);
-
-    MCFOLD void setLitTime(int value);
-
-    MCAPI void setStoredXP(int value);
-
-    MCFOLD void setTickCount(int value);
-
-    MCAPI void storeXPRewardForRemovingWithHopper(::ItemStackBase const& item, int numItemsSmelted);
 
     MCAPI int withdrawStoredXPReward();
     // NOLINTEND
@@ -200,10 +178,6 @@ public:
     MCAPI static float getBurnDuration(::ItemStackBase const& itemInstance, float burnInterval);
 
     MCAPI static float getItemBurnDuration(::Item const& item, float burnInterval);
-
-    MCAPI static int getXPRewardFromSmeltingItems(::ItemStackBase const& item, int numItemsSmelted);
-
-    MCAPI static bool isItemAllowedInFuelSlot(int slot, ::ItemStackBase const& item, int amount);
     // NOLINTEND
 
 public:
@@ -221,6 +195,8 @@ public:
 
     MCAPI static float const& DEFAULT_SMELTING_TIME();
 
+    MCAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
+
     MCAPI static ::std::string const& ITEMS_LIST_KEY();
 
     MCAPI static ::std::string const& LAST_FUEL_KEY();
@@ -235,14 +211,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
-
     MCAPI void* $ctor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
         ::HashedString const&                  recipeTag,
         ::SharedTypes::Legacy::LevelSoundEvent smeltSound,
-        ::ContainerType                        containerType,
+        ::SharedTypes::Legacy::ContainerType   containerType,
         int                                    burnInterval,
         ::Block const&                         unlitFurnace,
         ::Block const&                         litFurnace
@@ -282,7 +256,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void $onCustomTagLoadDone(::BlockSource& region);
 

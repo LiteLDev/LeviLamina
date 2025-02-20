@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/datastore/EventType.h"
 #include "mc/editor/serviceproviders/DataStoreServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
-namespace Editor::DataStore { class PayloadEventDispatcher; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Network { class DataStoreEventPayload; }
 namespace Editor::Network { class ServerScriptTeardownRebuildPayload; }
@@ -91,8 +90,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit DataStoreService(::Editor::ServiceProviderCollection& providers);
-
-    MCFOLD ::Editor::DataStore::PayloadEventDispatcher& _getDispatcher();
 
     MCAPI void _handleDataStoreEventPacket(::Editor::Network::DataStoreEventPayload const& packet);
 

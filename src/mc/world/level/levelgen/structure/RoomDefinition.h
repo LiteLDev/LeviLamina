@@ -24,8 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI RoomDefinition(::RoomDefinition const&);
 
-    MCAPI explicit RoomDefinition(int roomIndex);
-
     MCAPI bool findSource(int scanIndex);
 
     MCAPI void setConnection(uchar const& direction, ::std::shared_ptr<::RoomDefinition> definition);
@@ -37,8 +35,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::RoomDefinition const&);
-
-    MCAPI void* $ctor(int roomIndex);
     // NOLINTEND
 
 public:

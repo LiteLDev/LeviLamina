@@ -6,10 +6,10 @@ struct ShadowConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 184> mUnkcf4a0e;
-    ::ll::UntypedStorage<4, 184> mUnk6b889d;
-    ::ll::UntypedStorage<4, 184> mUnka2f286;
-    ::ll::UntypedStorage<4, 184> mUnkfafd62;
+    ::ll::UntypedStorage<4, 172> mUnkcf4a0e;
+    ::ll::UntypedStorage<4, 172> mUnk6b889d;
+    ::ll::UntypedStorage<4, 172> mUnka2f286;
+    ::ll::UntypedStorage<4, 172> mUnkfafd62;
     // NOLINTEND
 
 public:

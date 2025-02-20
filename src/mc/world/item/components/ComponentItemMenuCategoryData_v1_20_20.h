@@ -22,16 +22,13 @@ public:
 public:
     // prevent constructor by default
     ComponentItemMenuCategoryData_v1_20_20& operator=(ComponentItemMenuCategoryData_v1_20_20 const&);
+    ComponentItemMenuCategoryData_v1_20_20(ComponentItemMenuCategoryData_v1_20_20 const&);
     ComponentItemMenuCategoryData_v1_20_20();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemMenuCategoryData_v1_20_20(::ComponentItemMenuCategoryData_v1_20_20 const&);
-
     MCAPI ::ComponentItemMenuCategoryData_v1_20_20& operator=(::ComponentItemMenuCategoryData_v1_20_20&&);
-
-    MCAPI ~ComponentItemMenuCategoryData_v1_20_20();
     // NOLINTEND
 
 public:
@@ -43,17 +40,5 @@ public:
         ::std::optional<::CreativeItemCategory>&                   oldData,
         ::std::optional<::ComponentItemMenuCategoryData_v1_20_20>& newData
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemMenuCategoryData_v1_20_20 const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
     // NOLINTEND
 };

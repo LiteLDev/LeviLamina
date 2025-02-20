@@ -60,8 +60,6 @@ MCAPI void ExplicitZeroMemory(void*, uint64);
 
 MCAPI ::rtc::IPAddress GetAnyIP(int);
 
-MCAPI ::rtc::IPAddress GetLoopbackIP(int);
-
 MCAPI double GetNextMovingAverage(double, double, double);
 
 MCAPI uint GetPrefix(::_IP_ADAPTER_PREFIX_XP*, ::rtc::IPAddress const&, ::rtc::IPAddress*);

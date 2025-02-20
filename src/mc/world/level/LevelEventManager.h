@@ -6,8 +6,8 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/world/level/ILevelEventManagerCoordinator.h"
-#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,14 +30,16 @@ public:
     ::ll::TypedStorage<
         8,
         128,
-        ::Bedrock::PubSub::
-            Publisher<void(::LevelEvent, ::Vec3 const&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        ::Bedrock::PubSub::Publisher<
+            void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
         mLevelEventDataPublisher;
     ::ll::TypedStorage<
         8,
         128,
-        ::Bedrock::PubSub::
-            Publisher<void(::LevelEvent, ::CompoundTag const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        ::Bedrock::PubSub::Publisher<
+            void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
         mLevelEventCompoundTagPublisher;
     // NOLINTEND
 
@@ -48,11 +50,11 @@ public:
     virtual ~LevelEventManager() /*override*/;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(::LevelEvent, ::Vec3 const&, int)>&
+    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     getLevelEventDataConnector() /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Connector<void(::LevelEvent, ::CompoundTag const&)>&
+    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
     getLevelEventCompoundTagConnector() /*override*/;
     // NOLINTEND
 
@@ -63,19 +65,20 @@ public:
     LevelEventManager(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
 
     MCAPI void broadcastLevelEvent(
-        ::LevelEvent                           type,
+        ::SharedTypes::Legacy::LevelEvent      type,
         ::CompoundTag const&                   tag,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
     MCAPI void broadcastLevelEvent(
-        ::LevelEvent                           type,
+        ::SharedTypes::Legacy::LevelEvent      type,
         ::Vec3 const&                          pos,
         int                                    data,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
-    MCAPI void broadcastLocalEvent(::IDimension& dimension, ::LevelEvent type, ::Vec3 const& pos, int data);
+    MCAPI void
+    broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
     // NOLINTEND
 
 public:
@@ -93,9 +96,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelEvent, ::Vec3 const&, int)>& $getLevelEventDataConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    $getLevelEventDataConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelEvent, ::CompoundTag const&)>& $getLevelEventCompoundTagConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    $getLevelEventCompoundTagConnector();
     // NOLINTEND
 
 public:

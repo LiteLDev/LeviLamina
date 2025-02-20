@@ -19,7 +19,6 @@ struct PassengerComponent;
 struct PositionPassengerRequestComponent;
 struct RidingHeightComponent;
 struct SynchedActorDataComponent;
-struct TickingSystemWithInfo;
 struct VehicleComponent;
 // clang-format on
 
@@ -65,7 +64,5 @@ public:
         ::ViewT<::StrictEntityContext, ::RidingHeightComponent const>            ridingHeightView,
         ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
     );
-
-    MCAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

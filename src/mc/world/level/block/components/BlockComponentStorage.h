@@ -49,16 +49,6 @@ public:
     // NOLINTBEGIN
     MCAPI void _addStatelessComponent(::Bedrock::typeid_t<void> typeId);
 
-    MCAPI ::BlockComponentStorage::ComponentBase* _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
-
-    MCAPI void allowComponentReplacement();
-
-    MCAPI void allowTryGetComponentBeforeFinalization();
-
-    MCFOLD void finalizeComponents();
-
-    MCFOLD bool modificationIsAllowed() const;
-
     MCAPI ~BlockComponentStorage();
     // NOLINTEND
 

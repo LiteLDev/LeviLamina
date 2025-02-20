@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class AquiferNoises;
-class Block;
 class BlockPos;
 class ChunkPos;
 class SurfaceLevelCache;
@@ -88,19 +87,18 @@ public:
         int                        seaLevel
     );
 
+    MCAPI float _calculatePressure(
+        ::BlockPos                    worldPos,
+        float&                        barrierNoiseValue,
+        ::Aquifer::FluidSample const& fluidYClosest1,
+        ::Aquifer::FluidSample const& fluidYClosest2
+    ) const;
+
     MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
     MCAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
 
     MCAPI void computeAt(::BlockPos const& worldPos);
-
-    MCFOLD float getLastBarrier() const;
-
-    MCAPI ::Block const* getLastFluidBlockType(bool canTickUpdate) const;
-
-    MCFOLD int getLastFluidLevel() const;
-
-    MCFOLD bool shouldScheduleFluidUpdate() const;
     // NOLINTEND
 
 public:

@@ -42,11 +42,7 @@ public:
 
     MCAPI void thenFail(::gametest::GameTestError error);
 
-    MCAPI ::gametest::GameTestSequence& thenIdle(int tickDelay);
-
     MCAPI void thenSucceed();
-
-    MCAPI ::gametest::GameTestSequence& thenWait(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCAPI ::gametest::GameTestSequence&
     thenWaitAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);

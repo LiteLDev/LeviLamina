@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LookAtActorGoal() /*override*/ = default;
+    virtual ~LookAtActorGoal() /*override*/;
 
     // vIndex: 1
     virtual bool canUse() /*override*/;
@@ -57,37 +57,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LookAtActorGoal(
-        ::Mob& mob,
-        float  lookDistance,
-        float  probability,
-        int    minLookTime,
-        int    maxLookTime,
-        int    angleOfViewX,
-        int    angleOfViewY
-    );
-
     MCAPI bool _withinFieldOfView(::Actor& entity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob& mob,
-        float  lookDistance,
-        float  probability,
-        int    minLookTime,
-        int    maxLookTime,
-        int    angleOfViewX,
-        int    angleOfViewY
-    );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

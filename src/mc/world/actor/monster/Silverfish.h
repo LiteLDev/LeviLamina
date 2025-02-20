@@ -8,57 +8,30 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
-class Block;
 class BlockPos;
-class EntityContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Silverfish : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 71
+    // vIndex: 69
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 182
+    // vIndex: 177
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual void spawnAnim() /*override*/;
 
-    // vIndex: 176
+    // vIndex: 171
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 152
+    // vIndex: 147
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
-
-    // vIndex: 142
-    virtual void _playStepSound(::BlockPos const& pos, ::Block const& onBlock) /*override*/;
 
     // vIndex: 8
     virtual ~Silverfish() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Silverfish(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:
@@ -77,8 +50,6 @@ public:
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
     MCAPI bool $checkSpawnRules(bool fromSpawner);
-
-    MCFOLD void $_playStepSound(::BlockPos const& pos, ::Block const& onBlock);
     // NOLINTEND
 
 public:

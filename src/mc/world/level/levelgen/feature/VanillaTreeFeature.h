@@ -5,17 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/json_utils/JsonParseState.h"
 #include "mc/deps/core/utility/json_utils/JsonSchemaObjectNode.h"
+#include "mc/world/level/levelgen/feature/IFeature.h"
 #include "mc/world/level/levelgen/feature/ITreeFeature.h"
 #include "mc/world/level/levelgen/feature/feature_loading/ConcreteFeatureHolder.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class IBlockWorldGenAPI;
 class ITreeCanopyWrapper;
 class ITreeTrunkWrapper;
-class Random;
-class RenderParams;
 namespace FeatureLoading { struct FeatureRootParseContext; }
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
@@ -29,9 +27,7 @@ public:
     virtual ~VanillaTreeFeature() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
     // NOLINTEND
 
 public:
@@ -68,8 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

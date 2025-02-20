@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/CaveFeature.h"
+#include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -35,9 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::BlockPos>
-    place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const
-        /*override*/;
+    virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
     // vIndex: 4
     virtual void addRoom(
@@ -92,8 +91,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
-    $place(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
     MCAPI void $addRoom(
         ::IBlockWorldGenAPI&                                                target,

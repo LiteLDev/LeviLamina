@@ -10,5 +10,6 @@ enum class MovementAbilities : int {
     NoClip                  = 4,
     WorldBuilder            = 5,
     FlySpeed                = 6,
-    Count                   = 7,
+    VerticalFlySpeed        = 7,
+    Count                   = 8,
 };

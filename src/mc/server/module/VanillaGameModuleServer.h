@@ -31,6 +31,7 @@ class VanillaGameModuleServer : public ::GameModuleServer {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk1138e3;
     ::ll::UntypedStorage<8, 8>  mUnk1e51f3;
     ::ll::UntypedStorage<8, 8>  mUnk2d0737;
     ::ll::UntypedStorage<8, 16> mUnkf08fc4;
@@ -40,6 +41,7 @@ public:
     // prevent constructor by default
     VanillaGameModuleServer& operator=(VanillaGameModuleServer const&);
     VanillaGameModuleServer(VanillaGameModuleServer const&);
+    VanillaGameModuleServer();
 
 public:
     // virtual functions
@@ -61,11 +63,11 @@ public:
 
     // vIndex: 3
     virtual void configureLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::Level> const&                  level,
-        ::Experiments const&                                           experiments,
-        ::ResourcePackManager&                                         resourcePackManager,
-        ::BaseGameVersion const&                                       baseGameVersion,
-        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
+        ::Bedrock::NotNullNonOwnerPtr<::Level> const& level,
+        ::Experiments const&                          experiments,
+        ::ResourcePackManager&                        resourcePackManager,
+        ::BaseGameVersion const&                      baseGameVersion,
+        ::ServerScriptManager const*                  scriptManager
     ) /*override*/;
 
     // vIndex: 4
@@ -93,8 +95,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VanillaGameModuleServer();
-
     MCAPI void _configureWorldGen(
         ::IWorldRegistriesProvider&    worldRegistries,
         ::SpawnSettings const&         spawnSettings,
@@ -106,12 +106,6 @@ public:
     );
 
     MCAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -134,11 +128,11 @@ public:
     );
 
     MCAPI void $configureLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::Level> const&                  level,
-        ::Experiments const&                                           experiments,
-        ::ResourcePackManager&                                         resourcePackManager,
-        ::BaseGameVersion const&                                       baseGameVersion,
-        ::std::optional<::gsl::not_null<::ServerScriptManager const*>> scriptManager
+        ::Bedrock::NotNullNonOwnerPtr<::Level> const& level,
+        ::Experiments const&                          experiments,
+        ::ResourcePackManager&                        resourcePackManager,
+        ::BaseGameVersion const&                      baseGameVersion,
+        ::ServerScriptManager const*                  scriptManager
     );
 
     MCFOLD void $configureNewPlayer(::Player& player);

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/animal/Animal.h"
 
 // auto generated forward declare list
@@ -31,13 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 175
+    // vIndex: 170
     virtual void setTransitioningSitting(bool value) /*override*/;
 
-    // vIndex: 65
+    // vIndex: 63
     virtual ::SharedTypes::Legacy::LevelSoundEvent getAmbientSound() const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
@@ -53,15 +53,11 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI float getLieOnBackAmount(float a) const;
-
     MCAPI float getSitAmount(float a) const;
 
     MCAPI void postNormalTick();
 
     MCAPI void updateLaying();
-
-    MCAPI void updateRollAmount();
 
     MCAPI void updateSitting();
     // NOLINTEND

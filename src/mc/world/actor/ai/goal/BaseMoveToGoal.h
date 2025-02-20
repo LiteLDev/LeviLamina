@@ -75,43 +75,19 @@ public:
     virtual uint64 _getRepathTime() const;
 
     // vIndex: 0
-    virtual ~BaseMoveToGoal() /*override*/;
+    virtual ~BaseMoveToGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseMoveToGoal(
-        ::Mob& mob,
-        float  speedModifier,
-        float  cooldownTimeout,
-        float  goalRadius,
-        int    maxStayTicks,
-        int    giveUpTicks
-    );
-
-    MCAPI ::BlockPos _blockAboveTarget() const;
-
     MCAPI void _checkIfStuck();
-
-    MCAPI bool _isCooldownActive() const;
-
-    MCAPI void setInterval(int interval);
-
-    MCAPI void setTargetPositionOffset(::Vec3 const& offset);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, float speedModifier, float cooldownTimeout, float goalRadius, int maxStayTicks, int giveUpTicks);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:
@@ -123,11 +99,11 @@ public:
 
     MCAPI void $start();
 
-    MCAPI void $stop();
+    MCFOLD void $stop();
 
     MCAPI void $tick();
 
-    MCFOLD bool $hasReachedTarget() const;
+    MCAPI bool $hasReachedTarget() const;
 
     MCAPI int $_nextStartTick();
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/util/TargetSelectionMethod.h"
-#include "mc/world/actor/ActorDamageCause.h"
 #include "mc/world/actor/ai/village/POIType.h"
 
 // auto generated forward declare list
@@ -98,7 +98,7 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnk679194;
     ::ll::UntypedStorage<1, 1>   mUnk46605e;
     ::ll::UntypedStorage<8, 32>  mUnk7f7c32;
-    ::ll::UntypedStorage<8, 24>  mUnk58dbf5;
+    ::ll::UntypedStorage<8, 24>  mUnkd2becf;
     ::ll::UntypedStorage<4, 4>   mUnk3924a9;
     ::ll::UntypedStorage<4, 4>   mUnk589592;
     ::ll::UntypedStorage<4, 4>   mUnke34152;
@@ -242,18 +242,12 @@ public:
 
     MCAPI static ::POIType _getPOITypeFromString(::std::string poiStr);
 
-    MCAPI static ::std::vector<::ActorDamageCause>
+    MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause>
     _getPanicGoalDamageSources(::ConstDeserializeDataParams const& deserializeDataParams);
 
     MCAPI static ::TargetSelectionMethod _getTargetSelectionMethodFromString(::std::string const& methodStr);
 
-    MCAPI static ::std::unique_ptr<::Goal> createGoal(::Mob& mob, ::LegacyGoalDefinition const& def);
-
     MCAPI static bool goalExists(::std::string const& name);
-
-    MCFOLD static void init();
-
-    MCAPI static void shutdown();
     // NOLINTEND
 
 public:

@@ -23,30 +23,23 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnkb113c1;
-        ::ll::UntypedStorage<8, 24>  mUnkeca172;
-        ::ll::UntypedStorage<8, 120> mUnkbe701a;
+        ::ll::UntypedStorage<8, 8>  mUnkb113c1;
+        ::ll::UntypedStorage<8, 24> mUnkeca172;
+        ::ll::UntypedStorage<8, 32> mUnkbe701a;
         // NOLINTEND
 
     public:
         // prevent constructor by default
         TraitMetadata& operator=(TraitMetadata const&);
+        TraitMetadata(TraitMetadata const&);
         TraitMetadata();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI TraitMetadata(::BlockTraitFactory::TraitMetadata const&);
-
         MCAPI ::BlockTraitFactory::TraitMetadata& operator=(::BlockTraitFactory::TraitMetadata&&);
 
         MCAPI ~TraitMetadata();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockTraitFactory::TraitMetadata const&);
         // NOLINTEND
 
     public:
@@ -81,9 +74,6 @@ public:
     MCAPI static ::BlockTraitFactory* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static void registerAllTraits(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::std::unordered_map<::std::string, ::BlockTraitFactory::TraitMetadata> const*
-    registeredTraits(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static ::BlockTraitFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND

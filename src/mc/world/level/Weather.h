@@ -3,14 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
 #include "mc/world/level/LevelListener.h"
-#include "mc/world/level/block/LevelEvent.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
-class Dimension;
 class IRandom;
 class Vec3;
 // clang-format on
@@ -46,51 +45,29 @@ public:
     virtual ~Weather() /*override*/ = default;
 
     // vIndex: 25
-    virtual void levelEvent(::LevelEvent, ::Vec3 const&, int) /*override*/;
+    virtual void levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Weather(::Dimension& d, ::IRandom& random);
-
     MCAPI int calcSnowBlockDepth(::BlockSource& region, ::BlockPos const& pos, int maxLayerDepth) const;
 
     MCAPI bool canPlaceTopSnow(
         ::BlockSource&    region,
         ::BlockPos const& pos,
-        bool              fromFallingSnow,
         bool              checkSnowDepthLevel,
-        int*              newHeightAfterPlacement
+        bool              newHeightAfterPlacement,
+        int*              fromFallingSnow
     ) const;
-
-    MCFOLD float getFogLevel() const;
-
-    MCAPI float getLightningLevel(float a) const;
-
-    MCAPI float getRainLevel(float a) const;
-
-    MCAPI bool isLightning() const;
 
     MCAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isRaining() const;
-
     MCAPI bool isRainingAt(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool isSnowingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void serverTick();
 
-    MCFOLD void setSkyFlashTime(int flash);
-
-    MCFOLD void setTargetLightningLevel(float lightningLevel);
-
-    MCAPI void setTargetRainLevel(float rainLevel);
-
     MCAPI void stop();
-
-    MCAPI void tick();
 
     MCAPI bool
     tryToPlaceTopSnow(::BlockSource& region, ::BlockPos const& pos, bool fromFallingSnow, bool fillLowerNeighborsFirst);
@@ -103,15 +80,7 @@ public:
 
     MCFOLD static int calcRainCycleTime(::IRandom& random);
 
-    MCAPI static int calcRainDuration(::IRandom& random);
-
     MCAPI static void rebuildTopSnowToDepth(::BlockSource& region, ::BlockPos const& testPos, int desiredDepth);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& d, ::IRandom& random);
     // NOLINTEND
 
 public:

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+class ListTag;
 // clang-format on
 
 class CustomBlockStateVariant : public ::BlockState {
@@ -35,6 +36,18 @@ public:
 
     // vIndex: 0
     virtual ~CustomBlockStateVariant() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI CustomBlockStateVariant(uint64 id, ::std::string const& name, ::ListTag const& values);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uint64 id, ::std::string const& name, ::ListTag const& values);
     // NOLINTEND
 
 public:

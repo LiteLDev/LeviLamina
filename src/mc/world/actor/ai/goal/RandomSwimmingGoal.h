@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Mob;
+class BlockPos;
 // clang-format on
 
 class RandomSwimmingGoal : public ::RandomStrollGoal {
@@ -39,13 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RandomSwimmingGoal(::Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speed, int xzDist, int yDist, int interval, bool avoidSurface);
+    MCAPI void
+    _getWaterHeights(::BlockPos testPos, short& groundLevel, float& waterLevel, float& minHeight, float& maxHeight)
+        const;
     // NOLINTEND
 
 public:

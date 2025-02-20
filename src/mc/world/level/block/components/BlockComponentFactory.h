@@ -8,8 +8,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Experiments;
 class IPackLoadContext;
+class SemVersion;
 struct BlockComponentDescription;
+namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -25,11 +28,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnka06669;
-        ::ll::UntypedStorage<8, 24>  mUnkfbf74d;
-        ::ll::UntypedStorage<8, 120> mUnk6beadb;
-        ::ll::UntypedStorage<8, 24>  mUnk445a76;
-        ::ll::UntypedStorage<8, 64>  mUnka32189;
+        ::ll::UntypedStorage<8, 8>  mUnka06669;
+        ::ll::UntypedStorage<8, 24> mUnkfbf74d;
+        ::ll::UntypedStorage<8, 32> mUnk6beadb;
+        ::ll::UntypedStorage<8, 24> mUnk445a76;
+        ::ll::UntypedStorage<8, 64> mUnk9ed2fe;
         // NOLINTEND
 
     public:
@@ -88,9 +91,6 @@ public:
     contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
-    setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

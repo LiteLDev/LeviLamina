@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct FullContainerName;
-// clang-format on
-
 struct AllowedAnywhereConsume {
 public:
     // member variables
@@ -21,16 +16,4 @@ public:
     AllowedAnywhereConsume& operator=(AllowedAnywhereConsume const&);
     AllowedAnywhereConsume(AllowedAnywhereConsume const&);
     AllowedAnywhereConsume();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AllowedAnywhereConsume(::FullContainerName const& openContainerNetId, uchar minSlot, uchar maxSlot);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::FullContainerName const& openContainerNetId, uchar minSlot, uchar maxSlot);
-    // NOLINTEND
 };

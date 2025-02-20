@@ -41,17 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BarterGoal(::Mob& mob);
-
     MCAPI ::Vec3 _getThrowVector();
 
     MCAPI void _sendBarterEventPacket(::BarterComponent* barterComponent);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

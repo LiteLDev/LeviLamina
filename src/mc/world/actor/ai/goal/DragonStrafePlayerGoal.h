@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class Mob;
 class Path;
 class WeakEntityRef;
 // clang-format on
@@ -57,19 +56,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DragonStrafePlayerGoal(::Mob& mob);
-
     MCAPI void findNewTarget();
 
     MCAPI void navigateToNextPathNode();
 
     MCAPI void setTarget(::Actor* target);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

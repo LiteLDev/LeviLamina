@@ -63,13 +63,9 @@ public:
         ::ActorFilterGroup const& wakeMobExceptions
     );
 
-    MCAPI bool _detectsMobs() const;
-    // NOLINTEND
+    MCAPI bool _canSleep(::Tick const& currentTick) const;
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& MOB_DETECT_TIME();
+    MCAPI bool _detectsMobs() const;
     // NOLINTEND
 
 public:

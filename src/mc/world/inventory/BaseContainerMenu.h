@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerContentChangeListener.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 #include "mc/world/containers/managers/IContainerManager.h"
 
 // auto generated forward declare list
@@ -25,9 +25,9 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkfaaaf0;
     ::ll::UntypedStorage<8, 16> mUnk8690bc;
     ::ll::UntypedStorage<1, 1>  mUnk1149f4;
-    ::ll::UntypedStorage<1, 1>  mUnk3d21e1;
+    ::ll::UntypedStorage<1, 1>  mUnk56cb6d;
     ::ll::UntypedStorage<4, 4>  mUnkdde237;
-    ::ll::UntypedStorage<8, 8>  mUnk306103;
+    ::ll::UntypedStorage<8, 8>  mUnkc9caf8;
     // NOLINTEND
 
 public:
@@ -76,14 +76,15 @@ public:
     virtual void setContainerId(::ContainerID id) /*override*/;
 
     // vIndex: 3
-    virtual ::ContainerType getContainerType() const /*override*/;
+    virtual ::SharedTypes::Legacy::ContainerType getContainerType() const /*override*/;
 
     // vIndex: 4
-    virtual void setContainerType(::ContainerType type) /*override*/;
+    virtual void setContainerType(::SharedTypes::Legacy::ContainerType type) /*override*/;
 
     // vIndex: 5
     virtual ::Bedrock::PubSub::Subscription
-    registerContainerTypeListener(::std::function<void(::ContainerType)> callback) const /*override*/;
+    registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const
+        /*override*/;
 
     // vIndex: 13
     virtual void broadcastChanges() /*override*/;
@@ -95,13 +96,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseContainerMenu(::Player& player, ::ContainerType containerType);
+    MCAPI BaseContainerMenu(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
+
+    MCAPI void _saveLastSlots(::Container* container);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::ContainerType containerType);
+    MCAPI void* $ctor(::Player& player, ::SharedTypes::Legacy::ContainerType containerType);
     // NOLINTEND
 
 public:
@@ -123,14 +126,14 @@ public:
 
     MCFOLD ::ContainerID $getContainerId() const;
 
-    MCFOLD void $setContainerId(::ContainerID id);
+    MCAPI void $setContainerId(::ContainerID id);
 
-    MCFOLD ::ContainerType $getContainerType() const;
+    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
-    MCAPI void $setContainerType(::ContainerType type);
+    MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI ::Bedrock::PubSub::Subscription $registerContainerTypeListener(::std::function<void(::ContainerType)> callback
-    ) const;
+    MCAPI ::Bedrock::PubSub::Subscription
+    $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
     MCAPI void $broadcastChanges();
     // NOLINTEND

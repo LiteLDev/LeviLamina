@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,9 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptRawTextInterface& operator=(::ScriptModuleMinecraft::ScriptRawTextInterface&&);
-
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
+    MCFOLD bool operator==(::ScriptModuleMinecraft::ScriptRawTextInterface const& other) const;
 
     MCAPI ~ScriptRawTextInterface();
     // NOLINTEND

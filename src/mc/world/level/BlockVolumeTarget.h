@@ -3,21 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/world/level/BlockDataFetchResult.h"
 #include "mc/world/level/IBlockWorldGenAPI.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class BiomeSource;
 class Block;
 class BlockPos;
-class BlockVolume;
 class BoundingBox;
-class Dimension;
 class Feature;
-class Level;
 class LevelData;
 class Pos;
 class Random;
@@ -32,7 +27,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkfdc169;
     ::ll::UntypedStorage<8, 8>  mUnk7f7cce;
-    ::ll::UntypedStorage<8, 8>  mUnk9ec553;
+    ::ll::UntypedStorage<8, 8>  mUnk81f5ca;
     ::ll::UntypedStorage<4, 4>  mUnk719c7d;
     ::ll::UntypedStorage<8, 80> mUnk48ff4c;
     // NOLINTEND
@@ -124,30 +119,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BlockVolumeTarget(
-        ::BlockVolume&           blockVolume,
-        ::Level&                 level,
-        ::BiomeSource const&     biomeSource,
-        ::DimensionType          dimensionType,
-        ::WorldGenContext const& context
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockVolume&           blockVolume,
-        ::Level&                 level,
-        ::BiomeSource const&     biomeSource,
-        ::DimensionType          dimensionType,
-        ::WorldGenContext const& context
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -160,7 +131,7 @@ public:
 
     MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCFOLD ::Block const& $getExtraBlock(::BlockPos const&) const;
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const&) const;
 
     MCAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 

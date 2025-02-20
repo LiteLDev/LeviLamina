@@ -155,7 +155,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnkc120fe;
     ::ll::UntypedStorage<8, 40>  mUnkeefdc7;
     ::ll::UntypedStorage<8, 288> mUnk7e0308;
-    ::ll::UntypedStorage<8, 192> mUnk8e863b;
+    ::ll::UntypedStorage<8, 200> mUnk8e863b;
     ::ll::UntypedStorage<4, 4>   mUnkf2b035;
     ::ll::UntypedStorage<4, 4>   mUnke5955e;
     ::ll::UntypedStorage<4, 4>   mUnk4f5d25;
@@ -169,26 +169,17 @@ public:
     // prevent constructor by default
     PerfContextTracker& operator=(PerfContextTracker const&);
     PerfContextTracker(PerfContextTracker const&);
+    PerfContextTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PerfContextTracker();
-
-    MCAPI void incrementPacketReceivedInfo(uint packetSize);
-
-    MCAPI void incrementPacketSentInfo(uint packetSize);
+    MCAPI void _reset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::PerfContextTracker& getInstance();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

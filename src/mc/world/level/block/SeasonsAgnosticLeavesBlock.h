@@ -13,17 +13,12 @@ class BlockPos;
 class BlockSource;
 class HashedString;
 struct BlockGraphicsModeChangeContext;
-namespace mce { class Color; }
 // clang-format on
 
 class SeasonsAgnosticLeavesBlock : public ::LeavesBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
-
     // vIndex: 143
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
@@ -66,8 +61,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
     MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);

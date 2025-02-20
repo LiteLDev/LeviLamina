@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
 #include "mc/world/actor/ai/village/POIType.h"
 
@@ -56,7 +56,7 @@ public:
     virtual void useWorkstation();
 
     // vIndex: 0
-    virtual ~WorkGoal() /*override*/;
+    virtual ~WorkGoal() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,14 +70,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& RAIN_CHECK_MAX_COOLDOWN();
-
-    MCAPI static int const& WORK_TIMESTAMP_UPDATE_INVERVAL();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Mob& mob);
@@ -86,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+
     // NOLINTEND
 
 public:

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogArea.h"
-#include "mc/deps/shared_types/v1_21_10/CoordinateEvaluationOrder.h"
-#include "mc/deps/shared_types/v1_21_10/RandomDistributionType.h"
+#include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
+#include "mc/deps/shared_types/v1_21_10/scatter_params/RandomDistributionType.h"
 #include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
@@ -39,14 +39,6 @@ public:
         ::ll::TypedStorage<8, 8, ::ScatterParams const&> mScatterParams;
         ::ll::TypedStorage<4, 12, ::BlockPos>            mOrigin;
         ::ll::TypedStorage<4, 4, uint>                   mIterations;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool empty();
-
-        MCAPI ::BlockPos nextPos();
         // NOLINTEND
     };
 
@@ -134,8 +126,16 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScatterParams& operator=(ScatterParams const&);
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ScatterParams();
+
+    MCAPI ScatterParams(::ScatterParams const&);
+
     MCAPI void _fillCoordinateRangeFromData(
         ::std::string const&                                coordinateName,
         ::ScatterParams::CoordinateRange&                   coordinateRange,
@@ -165,9 +165,6 @@ public:
 
     MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
 
-    MCAPI ::ScatterParams::ScatteredPositions
-    scatter(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random) const;
-
     MCAPI ~ScatterParams();
     // NOLINTEND
 
@@ -175,8 +172,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random);
+    // NOLINTEND
 
-    MCAPI static void initScatterParamIndices();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::ScatterParams const&);
     // NOLINTEND
 
 public:

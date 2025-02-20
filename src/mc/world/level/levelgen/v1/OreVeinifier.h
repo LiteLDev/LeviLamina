@@ -64,8 +64,6 @@ public:
     MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
 
     MCAPI ::Block const* getVeinBlockOrFallback(::Vec3 worldPos, ::Block const* defaultBlock) const;
-
-    MCAPI ::std::array<::NoiseCellInterpolator*, 3> resetAndGetInterpolators();
     // NOLINTEND
 
 public:

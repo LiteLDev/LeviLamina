@@ -55,10 +55,10 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 94
+    // vIndex: 92
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
     // vIndex: 21
@@ -70,19 +70,19 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    // vIndex: 90
+    // vIndex: 88
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
-    // vIndex: 95
+    // vIndex: 93
     virtual void onSynchedDataUpdate(int dataId) /*override*/;
 
-    // vIndex: 139
+    // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const&, float, bool, bool) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
@@ -105,8 +105,6 @@ public:
     MCAPI void doNormalTick(::ITickDelegate& tickDelegate);
 
     MCAPI ::Block const& getFallingBlock() const;
-
-    MCAPI void setFallDamageAmount(float amount);
 
     MCAPI void setFallingBlock(::Block const& block, bool creative);
     // NOLINTEND

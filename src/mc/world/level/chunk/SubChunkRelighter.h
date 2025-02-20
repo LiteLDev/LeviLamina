@@ -70,17 +70,10 @@ public:
 
     MCAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex coordIndex, uint& subChunkIndex);
 
-    MCAPI ::SubChunk* _getAbsorption(::SubChunkLightIndex coordIndex, uchar& absorption) const;
-
-    MCAPI ::SubChunk* _getAbsorptionAndEmissivenessAndSubChunkIndex(
-        ::SubChunkLightIndex coordIndex,
-        uchar&               absorption,
-        uchar&               emissiveness,
-        uint&                subChunkIndex
-    ) const;
-
     MCAPI ::SubChunk*
     _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
+
+    MCAPI ::SubChunkBrightnessStorage::LightPair _getLightPair(::SubChunkLightIndex coordIndex) const;
 
     MCAPI void _propagateBlockLight();
 
@@ -120,17 +113,6 @@ public:
         ::Brightness         newAbsorption
     );
 
-    MCAPI void getBlock(::Pos const& pos, ::Block const*& block, ::Block const*& extraBlock);
-
-    MCAPI ::Pos getCentralSubchunkOrigin();
-
-    MCAPI ::SubChunkBrightnessStorage::LightPair getLightPair(::Pos const& coord) const;
-
-    MCAPI ::SubChunkBrightnessStorage::LightPair getLightPairWithPlaceholderCheck(
-        ::Pos const&                                  coord,
-        ::SubChunkBrightnessStorage::LightPair const& defaultLightPairIfPlaceholderSubChunk
-    ) const;
-
     MCAPI void relightSubChunk(
         ::LevelChunk const&                         levelChunk,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList,
@@ -145,16 +127,6 @@ public:
         ::Brightness newAbsorption
     );
 
-    MCAPI void setSkyLight(
-        ::Pos const& pos,
-        ::Brightness oldBrightness,
-        ::Brightness newBrightness,
-        ::Brightness oldAbsorption,
-        ::Brightness newAbsorption
-    );
-
-    MCAPI void update(::BlockPos const&, uint64);
-
     MCAPI ~SubChunkRelighter();
     // NOLINTEND
 
@@ -166,8 +138,6 @@ public:
     MCAPI static ::std::bitset<196608> computeOuterEdgeOfComputationBits();
 
     MCAPI static void initializeStatics();
-
-    MCAPI static void shutdownStatics();
     // NOLINTEND
 
 public:

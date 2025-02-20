@@ -9,6 +9,7 @@
 // clang-format off
 class ComponentItem;
 class HashedString;
+struct ItemCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 // clang-format on
 
@@ -26,7 +27,7 @@ public:
     registerClosures(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
 
     // vIndex: 13
-    virtual void subscribeToItemForComponent(::ComponentItem&, ::std::vector<::std::string> const&) = 0;
+    virtual void subscribeToItemForComponent(::ComponentItem&, ::std::vector<::ItemCustomComponentData> const&) = 0;
 
     // vIndex: 14
     virtual void clear() = 0;

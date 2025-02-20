@@ -8,9 +8,9 @@ struct DataStoreInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk622ba4;
-    ::ll::UntypedStorage<8, 64>  mUnkc8f768;
-    ::ll::UntypedStorage<8, 192> mUnk4413f7;
+    ::ll::UntypedStorage<8, 16> mUnkbaaa9c;
+    ::ll::UntypedStorage<8, 8>  mUnk6b9e42;
+    ::ll::UntypedStorage<8, 24> mUnk4413f7;
     // NOLINTEND
 
 public:
@@ -18,18 +18,6 @@ public:
     DataStoreInfo& operator=(DataStoreInfo const&);
     DataStoreInfo(DataStoreInfo const&);
     DataStoreInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~DataStoreInfo();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Bedrock::DataStoreDetail

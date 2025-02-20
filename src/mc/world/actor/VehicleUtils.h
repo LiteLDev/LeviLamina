@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class Block;
 class BlockPos;
 class IConstBlockSource;
@@ -39,17 +38,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::optional<float>
     calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
-
-    MCAPI static ::VehicleUtils::VehicleDirections
-    calculateVehicleDirections(::Vec3 const& currentPos, ::Vec3 const& prevPos);
-
-    MCAPI static auto getActivatorRailExitPatternStrategy(::BaseGameVersion const& version)
-        -> ::std::optional<
-            ::Vec3> (*)(::VehicleUtils::VehicleDirections const&, ::std::function<bool(::Vec3 const&, ::Vec3 const&)>);
-
-    MCAPI static auto getActorExitPatternStrategy(::BaseGameVersion const& version)
-        -> ::std::optional<
-            ::Vec3> (*)(::VehicleUtils::VehicleDirections const&, ::std::function<bool(::Vec3 const&, ::Vec3 const&)>);
 
     MCAPI static bool ignoredExitCollisionBlock(::Block const& block);
 

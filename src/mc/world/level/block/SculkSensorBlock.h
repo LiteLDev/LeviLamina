@@ -6,7 +6,6 @@
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,9 +16,10 @@ class BlockPos;
 class BlockSource;
 class EntityContext;
 class Experiments;
-class Random;
+struct BlockAnimateTickData;
 struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SculkSensorBlock : public ::ActorBlock {
@@ -36,7 +36,7 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
     // vIndex: 134
-    virtual void onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const /*override*/;
+    virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -49,17 +49,13 @@ public:
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const
-        /*override*/;
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::Brightness getEmissiveBrightness(::Block const& block) const /*override*/;
 
     // vIndex: 105
@@ -86,11 +82,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkSensorBlock(::std::string const& nameId, int id);
-
-    MCAPI SculkSensorBlock(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
-
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -100,13 +94,8 @@ public:
 
     MCAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI static bool isActive(::Block const& block);
-
-    MCAPI static bool isActive(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static bool isOnCooldown(::Block const& block);
-
-    MCAPI static bool isOnCooldown(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static void
+    _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
 
     MCAPI static void setActivePhase(
         ::BlockSource&    region,
@@ -115,14 +104,6 @@ public:
         int               redstoneStrength,
         int               vibrationFrequency
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::BlockActorType type, int activeTicks);
     // NOLINTEND
 
 public:
@@ -136,7 +117,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCAPI void $onStandOn(::EntityContext& entityContext, ::BlockPos const& pos) const;
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -145,9 +126,7 @@ public:
     MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI void $animateTickBedrockLegacy(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 

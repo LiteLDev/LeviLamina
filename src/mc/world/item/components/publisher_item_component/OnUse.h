@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class ItemStack;
 class Player;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
@@ -23,6 +24,12 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~OnUse() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:

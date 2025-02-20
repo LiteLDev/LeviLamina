@@ -12,15 +12,22 @@ public:
 
 public:
     // prevent constructor by default
-    AliasInfoDescription(AliasInfoDescription const&);
     AliasInfoDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AliasInfoDescription(::AliasInfoDescription const&);
+
     MCAPI ::AliasInfoDescription& operator=(::AliasInfoDescription const&);
 
     MCAPI ~AliasInfoDescription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AliasInfoDescription const&);
     // NOLINTEND
 
 public:

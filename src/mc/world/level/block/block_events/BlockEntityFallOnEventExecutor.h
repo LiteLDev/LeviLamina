@@ -36,12 +36,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void disableCallToBase();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

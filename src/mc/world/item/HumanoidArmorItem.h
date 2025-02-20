@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/LevelSoundEvent.h"
-#include "mc/world/actor/ActorLocation.h"
-#include "mc/world/item/ArmorSlot.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/world/item/Item.h"
 
 // auto generated forward declare list
@@ -68,7 +68,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ArmorSlot const>                         mSlot;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot const>    mSlot;
     ::ll::TypedStorage<4, 4, int const>                                 mDefense;
     ::ll::TypedStorage<4, 4, int const>                                 mModelIndex;
     ::ll::TypedStorage<8, 8, ::HumanoidArmorItem::ArmorMaterial const&> mArmorType;
@@ -122,7 +122,7 @@ public:
     virtual bool isTrimAllowed() const /*override*/;
 
     // vIndex: 101
-    virtual ::ActorLocation getEquipLocation() const /*override*/;
+    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
     // vIndex: 102
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
@@ -162,24 +162,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HumanoidArmorItem(
-        ::std::string const&                      name,
-        short                                     id,
-        ::HumanoidArmorItem::ArmorMaterial const& armorType,
-        int                                       icon,
-        ::ArmorSlot                               slot,
-        bool                                      currentVersionAllowsTrim
-    );
-
     MCAPI ::ItemInstance getTierItem() const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void ResetDefaultLeatherColor();
-
-    MCAPI static bool isDamageable(::ItemDescriptor const& item);
     // NOLINTEND
 
 public:
@@ -207,19 +190,6 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                      name,
-        short                                     id,
-        ::HumanoidArmorItem::ArmorMaterial const& armorType,
-        int                                       icon,
-        ::ArmorSlot                               slot,
-        bool                                      currentVersionAllowsTrim
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 
@@ -240,7 +210,7 @@ public:
 
     MCAPI int $getEnchantValue() const;
 
-    MCAPI int $getArmorValue() const;
+    MCFOLD int $getArmorValue() const;
 
     MCAPI int $getToughnessValue() const;
 
@@ -257,8 +227,6 @@ public:
     MCAPI bool $isDyeable() const;
 
     MCAPI bool $isTrimAllowed() const;
-
-    MCAPI ::ActorLocation $getEquipLocation() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 

@@ -29,17 +29,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Ingredient(::ItemInstance const& item);
-
-        MCFOLD int getData() const;
-
-        MCFOLD int getItemId() const;
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::ItemInstance const& item);
+        MCAPI bool equals(::ItemDescriptor const& input) const;
         // NOLINTEND
     };
 
@@ -58,15 +48,21 @@ public:
         ::ItemDescriptor const&            to
     );
 
+    MCAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
+
     MCAPI static int getFuelValue(::ItemDescriptor const& item);
 
     MCAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);
 
     MCAPI static void initPotionBrewing();
 
+    MCAPI static bool isContainerIngredient(::ItemDescriptor const& item);
+
     MCAPI static bool isFuel(::ItemDescriptor const& item);
 
-    MCAPI static bool isIngredient(::ItemDescriptor const& item);
+    MCAPI static bool isPotionContainer(::ItemDescriptor const& item);
+
+    MCAPI static bool isPotionIngredient(::ItemDescriptor const& item);
 
     MCAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
 

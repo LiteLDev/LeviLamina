@@ -10,7 +10,6 @@
 class BlockDescriptor;
 class BlockPos;
 class BlockSource;
-class Mob;
 // clang-format on
 
 class RaidGardenGoal : public ::BaseMoveToBlockGoal {
@@ -50,42 +49,6 @@ public:
 
     // vIndex: 0
     virtual ~RaidGardenGoal() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI RaidGardenGoal(
-        ::Mob&                                  mob,
-        float                                   speedModifier,
-        int                                     searchRange,
-        int                                     searchHeight,
-        int                                     searchCount,
-        float                                   goalRadius,
-        int                                     maxToEat,
-        int                                     hasEatenFillDelay,
-        int                                     eatDelay,
-        int                                     initialEatDelay,
-        ::std::vector<::BlockDescriptor> const& eatBlocks
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                  mob,
-        float                                   speedModifier,
-        int                                     searchRange,
-        int                                     searchHeight,
-        int                                     searchCount,
-        float                                   goalRadius,
-        int                                     maxToEat,
-        int                                     hasEatenFillDelay,
-        int                                     eatDelay,
-        int                                     initialEatDelay,
-        ::std::vector<::BlockDescriptor> const& eatBlocks
-    );
     // NOLINTEND
 
 public:

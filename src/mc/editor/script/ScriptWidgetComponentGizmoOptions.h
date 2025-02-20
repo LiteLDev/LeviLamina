@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 
@@ -19,12 +20,13 @@ public:
 public:
     // prevent constructor by default
     ScriptWidgetComponentGizmoOptions& operator=(ScriptWidgetComponentGizmoOptions const&);
+    ScriptWidgetComponentGizmoOptions(ScriptWidgetComponentGizmoOptions const&);
     ScriptWidgetComponentGizmoOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWidgetComponentGizmoOptions(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
+    MCAPI ::Scripting::Result<void> validate() const;
 
     MCAPI ~ScriptWidgetComponentGizmoOptions();
     // NOLINTEND
@@ -34,12 +36,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::InterfaceBindingBuilder<::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions>
     bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
     // NOLINTEND
 
 public:

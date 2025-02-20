@@ -8,12 +8,13 @@
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
-class Block;
+class BlockLegacy;
 class BlockVolume;
 class ChunkPos;
 class Random;
 class Vec3;
 struct WorldGenContext;
+namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 // clang-format on
 
 class UnderwaterCanyonFeature : public ::CanyonFeature {
@@ -21,74 +22,21 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool carve(
-        ::BlockVolume&           blocks,
-        ::BiomeSource const&     localBiomeSource,
-        ::Random&                random,
-        ::ChunkPos const&        pos,
-        ::Vec3 const&            startPos,
-        ::Vec3 const&            originalStartPos,
-        int                      x0,
-        int                      x1,
-        int                      y0,
-        int                      y1,
-        int                      z0,
-        int                      z1,
-        float                    rad,
-        float                    yRad,
-        ::gsl::span<float const> rs,
-        ::WorldGenContext const& context
-    ) const /*override*/;
+    virtual bool _isDiggable(::BlockLegacy const& block) const /*override*/;
 
     // vIndex: 0
-    virtual ~UnderwaterCanyonFeature() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit UnderwaterCanyonFeature(short seaLevel);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCFOLD static bool isDiggable(::Block const& block);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(short seaLevel);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-
+    virtual bool _carve(::BlockVolume& blocks, ::BiomeSource const& localBiomeSource, ::CanyonFeatureUtils::CanyonConfiguration const&, ::Random& random, ::ChunkPos const& pos, ::Vec3 const& startPos, ::Vec3 const& originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float rad, float yRad, ::gsl::span<float const> widthRandomization, ::WorldGenContext const&)
+        const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $carve(
-        ::BlockVolume&           blocks,
-        ::BiomeSource const&     localBiomeSource,
-        ::Random&                random,
-        ::ChunkPos const&        pos,
-        ::Vec3 const&            startPos,
-        ::Vec3 const&            originalStartPos,
-        int                      x0,
-        int                      x1,
-        int                      y0,
-        int                      y1,
-        int                      z0,
-        int                      z1,
-        float                    rad,
-        float                    yRad,
-        ::gsl::span<float const> rs,
-        ::WorldGenContext const& context
-    ) const;
+    MCAPI bool $_isDiggable(::BlockLegacy const& block) const;
+
+    MCAPI bool
+    $_carve(::BlockVolume& blocks, ::BiomeSource const& localBiomeSource, ::CanyonFeatureUtils::CanyonConfiguration const&, ::Random& random, ::ChunkPos const& pos, ::Vec3 const& startPos, ::Vec3 const& originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float rad, float yRad, ::gsl::span<float const> widthRandomization, ::WorldGenContext const&)
+        const;
     // NOLINTEND
 
 public:

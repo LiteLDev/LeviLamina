@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class DataLoadHelper;
 // clang-format on
 
 class HideComponent {
@@ -20,30 +19,11 @@ public:
     // prevent constructor by default
     HideComponent& operator=(HideComponent const&);
     HideComponent(HideComponent const&);
+    HideComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HideComponent();
-
     MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
-
-    MCFOLD bool isInRaid();
-
-    MCFOLD bool isReactingToBell();
-
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
-
-    MCFOLD void setInRaid();
-
-    MCAPI void setNotHiding();
-
-    MCFOLD void setReactingToBell();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

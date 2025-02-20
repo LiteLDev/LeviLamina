@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/attribute/AttributeBuff.h"
-#include "mc/world/attribute/AttributeBuffType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -52,25 +51,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI TemporalAttributeBuff(::TemporalAttributeBuff const&);
-
-    MCAPI TemporalAttributeBuff(
-        float                amount,
-        ::EffectDuration     duration,
-        ::AttributeBuffType  type,
-        bool                 serialize,
-        ::std::string const& name
-    );
-
-    MCFOLD float getBaseAmount() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::TemporalAttributeBuff const&);
-
-    MCAPI void*
-    $ctor(float amount, ::EffectDuration duration, ::AttributeBuffType type, bool serialize, ::std::string const& name);
     // NOLINTEND
 
 public:
@@ -88,7 +74,7 @@ public:
 
     MCFOLD bool $isInstantaneous() const;
 
-    MCFOLD bool $isSerializable() const;
+    MCAPI bool $isSerializable() const;
 
     MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
     // NOLINTEND

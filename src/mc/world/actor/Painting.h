@@ -7,14 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionGroup;
 class AddActorBasePacket;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
-class EntityContext;
-class Motif;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class Painting : public ::HangingActor {
@@ -33,57 +29,35 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 36
+    // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
     // vIndex: 23
     virtual ::std::unique_ptr<::AddActorBasePacket> tryCreateAddActorPacket() /*override*/;
 
-    // vIndex: 143
+    // vIndex: 138
     virtual int getWidth() const /*override*/;
 
-    // vIndex: 144
+    // vIndex: 139
     virtual int getHeight() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 140
     virtual void dropItem() /*override*/;
 
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 146
+    // vIndex: 141
     virtual bool placeHangingEntity(::BlockSource& region, int direction) /*override*/;
 
-    // vIndex: 141
+    // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 8
     virtual ~Painting() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI Painting(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
-
-    MCAPI ::Motif const& getCurrentMotif() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
     // NOLINTEND
 
 public:

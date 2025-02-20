@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
-#include "mc/editor/serviceproviders/PayloadServiceProvider.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/selection/PayloadServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -26,6 +26,7 @@ public:
     // prevent constructor by default
     ParticleOnHitSubcomponent& operator=(ParticleOnHitSubcomponent const&);
     ParticleOnHitSubcomponent(ParticleOnHitSubcomponent const&);
+    ParticleOnHitSubcomponent();
 
 public:
     // virtual functions
@@ -44,18 +45,6 @@ public:
 
     // vIndex: 4
     virtual char const* getName() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ParticleOnHitSubcomponent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

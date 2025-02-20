@@ -37,18 +37,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PlayerData(::Player const& player);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

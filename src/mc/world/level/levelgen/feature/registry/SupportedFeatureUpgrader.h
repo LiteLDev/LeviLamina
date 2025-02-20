@@ -6,8 +6,8 @@ struct SupportedFeatureUpgrader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnkc5ad82;
-    ::ll::UntypedStorage<8, 112> mUnk297f96;
+    ::ll::UntypedStorage<8, 24> mUnkc5ad82;
+    ::ll::UntypedStorage<8, 24> mUnk297f96;
     // NOLINTEND
 
 public:
@@ -15,4 +15,16 @@ public:
     SupportedFeatureUpgrader& operator=(SupportedFeatureUpgrader const&);
     SupportedFeatureUpgrader(SupportedFeatureUpgrader const&);
     SupportedFeatureUpgrader();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~SupportedFeatureUpgrader();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
 };

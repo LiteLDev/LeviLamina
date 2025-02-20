@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class DelayedAttackGoal;
-class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -26,6 +24,7 @@ public:
     // prevent constructor by default
     DelayedAttackDefinition& operator=(DelayedAttackDefinition const&);
     DelayedAttackDefinition(DelayedAttackDefinition const&);
+    DelayedAttackDefinition();
 
 public:
     // virtual functions
@@ -35,26 +34,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DelayedAttackDefinition();
-
-    MCAPI void initialize(::EntityContext& entity, ::DelayedAttackGoal& goal) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void buildSchema(
         ::std::string const&                                                                                    name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DelayedAttackDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

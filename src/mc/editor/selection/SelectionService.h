@@ -6,10 +6,10 @@
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/scripting/runtime/Result.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/selection/SelectionServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
-#include "mc/external/scripting/runtime/Result.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,7 +54,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SelectionService() /*override*/ = default;
+    virtual ~SelectionService() /*override*/;
 
     // vIndex: 1
     virtual ::Scripting::Result<void> init() /*override*/;
@@ -95,16 +95,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SelectionService(::Editor::ServiceProviderCollection& providers);
-
     MCAPI void _cleanGarbageCollection(::Editor::ServiceProviderCollection&);
 
     MCAPI ::WeakRef<::Editor::Selection::SelectionContainer>
     _createContainer(::mce::UUID const& newId, bool isPrimary, bool requiresReplication, bool fromNetwork);
 
     MCAPI ::Scripting::Result<void> _destroyContainer(::mce::UUID const& idToDestroy, bool force, bool fromNetwork);
-
-    MCAPI ::StackRefResult<::Editor::Selection::SelectionContainer> _getContainer(::mce::UUID const& id) const;
 
     MCAPI void _handlePayloadClone(::Editor::Network::SelectionContainerClonePayload const& payload);
 
@@ -129,15 +125,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection& providers);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

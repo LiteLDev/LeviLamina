@@ -17,6 +17,7 @@ class LevelChunk;
 class Random;
 struct Bounds;
 struct Tick;
+namespace LevelChunkTicking { struct Registry; }
 // clang-format on
 
 class TickingAreaView : public ::ITickingAreaView {
@@ -81,7 +82,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _tickChunk(::Tick const& currentTick, ::BlockSource& region, ::Level& level, ::ChunkPos const& cp);
+    MCAPI bool _tickChunk(
+        ::Tick const&                  currentTick,
+        ::BlockSource&                 region,
+        ::Level&                       level,
+        ::ChunkPos const&              cp,
+        ::LevelChunkTicking::Registry* registry
+    );
     // NOLINTEND
 
 public:
@@ -105,7 +112,7 @@ public:
 
     MCAPI bool $isCircle() const;
 
-    MCFOLD bool $isDoneLoading() const;
+    MCAPI bool $isDoneLoading() const;
 
     MCAPI bool $checkInitialLoadDone(::Tick currentLevelTick);
 

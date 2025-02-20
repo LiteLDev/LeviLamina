@@ -20,16 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD int getPriority() const;
-
-    MCFOLD bool getToStart() const;
-
-    MCFOLD bool getUsed() const;
-
-    MCFOLD void setToStart(bool start);
-
-    MCFOLD void setUsed(bool used);
-
     MCAPI ~PrioritizedGoal();
     // NOLINTEND
 

@@ -3,16 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/Result.h"
 #include "mc/deps/core/threading/XAsyncOp.h"
 #include "mc/external/lib_http_client/HCWebSocketCloseStatus.h"
 #include "mc/external/lib_http_client/http_stl_allocator.h"
 
 // auto generated forward declare list
 // clang-format off
-struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
-struct WebSocketPerformInfo;
 struct XAsyncBlock;
 struct XAsyncProviderData;
 namespace xbox::httpclient { struct HeaderCompare; }
@@ -66,10 +63,6 @@ public:
     uint RegisterEventCallbacks(void (*)(::HC_WEBSOCKET_OBSERVER*, char const*, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, uchar const*, uint, bool, void*), void (*)(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void*), void*);
 
     MCAPI long SendAsync(char const*, ::XAsyncBlock*);
-
-    MCAPI long SetHeader(::http_string&&, ::http_string&&);
-
-    MCAPI WebSocket(uint64, ::WebSocketPerformInfo, ::HC_PERFORM_ENV*);
     // NOLINTEND
 
 public:
@@ -85,23 +78,9 @@ public:
 
     MCAPI static void ConnectComplete(::XAsyncBlock*);
 
-    MCAPI static ::Result<::std::shared_ptr<::xbox::httpclient::WebSocket>> Initialize();
-
     MCAPI static void MessageFunc(::HC_WEBSOCKET_OBSERVER*, char const*, void*);
 
     MCAPI static void NotifyWebSocketRoutedHandlers(::HC_WEBSOCKET_OBSERVER*, bool, char const*, uchar const*, uint64);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint64, ::WebSocketPerformInfo, ::HC_PERFORM_ENV*);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

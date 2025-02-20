@@ -30,6 +30,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 2
+    virtual ~MyStatsObserver() /*override*/ = default;
+
     // vIndex: 0
     virtual void AddRef() const /*override*/;
 
@@ -38,9 +41,6 @@ public:
 
     // vIndex: 3
     virtual void OnComplete(::std::vector<::webrtc::StatsReport const*> const& reports) /*override*/;
-
-    // vIndex: 2
-    virtual ~MyStatsObserver() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $AddRef() const;
+    MCFOLD void $AddRef() const;
 
     MCAPI ::webrtc::RefCountReleaseStatus $Release() const;
 

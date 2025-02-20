@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/editor/script/ScriptSettingsGraphicsPropType.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
 
 namespace Editor::ScriptModule {
 

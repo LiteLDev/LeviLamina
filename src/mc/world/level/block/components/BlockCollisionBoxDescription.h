@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-class CerealSchemaUpgradeSet;
 class CompoundTag;
 class Vec3;
 namespace cereal { struct ReflectionCtx; }
@@ -60,14 +59,6 @@ public:
     MCAPI explicit BlockCollisionBoxDescription(bool enabled);
 
     MCAPI BlockCollisionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-    MCAPI static void registerVersionUpgrades(::CerealSchemaUpgradeSet& schemaUpgrades);
     // NOLINTEND
 
 public:

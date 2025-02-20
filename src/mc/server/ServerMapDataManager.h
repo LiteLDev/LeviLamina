@@ -9,8 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class DimensionManager;
 class EntityContext;
 class IGameplayUserManagerConnector;
+class IMapDataManagerOptions;
+class LevelStorage;
 class MapItemSavedData;
 struct ActorUniqueID;
 // clang-format on
@@ -55,7 +58,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ServerMapDataManager(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
+
     MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::DimensionManager&                         dimensionManager,
+        ::LevelStorage*                             levelStorage,
+        ::std::unique_ptr<::IMapDataManagerOptions> mapDataManagerOptions,
+        ::std::function<::ActorUniqueID()>          getNewUniqueID
+    );
     // NOLINTEND
 
 public:

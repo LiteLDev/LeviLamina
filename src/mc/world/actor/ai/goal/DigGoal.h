@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorDefinitionTrigger;
-class EntityContext;
 class Mob;
 struct Tick;
 namespace JsonUtil { class EmptyClass; }
@@ -52,6 +51,7 @@ public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
+        Definition();
 
     public:
         // virtual functions
@@ -61,26 +61,12 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI Definition();
-
-        MCAPI void initialize(::EntityContext& entity, ::DigGoal& goal) const;
-        // NOLINTEND
-
-    public:
         // static functions
         // NOLINTBEGIN
         MCAPI static void buildSchema(
             ::std::string const&                                                                                name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DigGoal::Definition>>& root
         );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -139,15 +125,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DigGoal(::Mob& mob);
-
     MCAPI ::DigGoal::CanUseResult _canUse() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:

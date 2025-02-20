@@ -9,7 +9,6 @@
 // clang-format off
 class Actor;
 class MingleComponent;
-class Mob;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 // clang-format on
@@ -57,51 +56,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MingleGoal(
-        ::Mob&                      actor,
-        float                       speedModifier,
-        float                       mingleDurationSecs,
-        float                       cooldownDurationSecs,
-        ::ActorDefinitionIdentifier desiredPartnerType,
-        float                       mingleDistance
-    );
-
     MCAPI void _findNewPartner(::ActorUniqueID previousPartnerId);
 
     MCAPI ::MingleComponent& _getMingleComponent() const;
 
     MCAPI bool _isWithinInteractRange(::Actor& partner) const;
 
-    MCAPI void _partnerWith(::Actor& target);
+    MCAPI void _tickPartneredActive(::MingleComponent& mingleComponent);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::MingleComponent* _tryGetMingleComponent(::Actor& actor);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& FIND_PARTNER_INTERVAL_TICKS();
-
-    MCAPI static int const& SPEAK_INTERVAL_TICKS_MAX();
-
-    MCAPI static int const& SPEAK_INTERVAL_TICKS_MIN();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                      actor,
-        float                       speedModifier,
-        float                       mingleDurationSecs,
-        float                       cooldownDurationSecs,
-        ::ActorDefinitionIdentifier desiredPartnerType,
-        float                       mingleDistance
-    );
     // NOLINTEND
 
 public:

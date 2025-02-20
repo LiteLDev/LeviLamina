@@ -7,8 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::JSONObject { class DocumentOptions; }
-namespace Bedrock::JSONObject { class Node; }
 namespace Bedrock::JSONObject { class NodeBase; }
 namespace Bedrock::JSONObject { class ParseResult; }
 namespace Bedrock::JSONObject { class StringNode; }
@@ -65,8 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Document(::Bedrock::JSONObject::DocumentOptions const& options);
-
     MCAPI void* _acquireNode(
         ::Bedrock::Intrusive::
             list<::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase>&
@@ -87,17 +83,7 @@ public:
 
     MCAPI ::Bedrock::JSONObject::ParseResult const& loadString(::std::string_view str);
 
-    MCAPI void reset();
-
-    MCAPI ::Bedrock::JSONObject::Node* setRoot(::Bedrock::JSONObject::ValueWrapper const& value);
-
     MCAPI ~Document();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::JSONObject::DocumentOptions const& options);
     // NOLINTEND
 
 public:

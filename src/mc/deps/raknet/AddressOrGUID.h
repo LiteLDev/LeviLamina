@@ -29,6 +29,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit AddressOrGUID(::RakNet::RakNetGUID const& input);
+
+    MCAPI explicit AddressOrGUID(::RakNet::SystemAddress const& input);
+
     MCAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
 
     MCAPI bool IsUndefined() const;
@@ -37,6 +41,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::RakNet::RakNetGUID const& input);
+
+    MCAPI void* $ctor(::RakNet::SystemAddress const& input);
+
     MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
 };

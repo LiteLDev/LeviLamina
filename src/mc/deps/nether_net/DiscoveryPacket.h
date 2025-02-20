@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/nether_net/DiscoveryPacketHeader.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace NetherNet { struct NetworkID; }
-// clang-format on
-
 namespace NetherNet {
 
 struct DiscoveryPacket : public ::NetherNet::DiscoveryPacketHeader {
@@ -25,12 +20,6 @@ public:
     DiscoveryPacket& operator=(DiscoveryPacket const&);
     DiscoveryPacket(DiscoveryPacket const&);
     DiscoveryPacket();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::NetherNet::NetworkID SenderId() const;
-    // NOLINTEND
 };
 
 } // namespace NetherNet

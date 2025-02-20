@@ -29,12 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static bool& isTriggerVolumesEnabled();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

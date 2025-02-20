@@ -58,18 +58,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit PoweredBlockComponent(uchar connections);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uchar connections);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

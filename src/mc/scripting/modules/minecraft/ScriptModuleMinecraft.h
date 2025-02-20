@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/ScriptTimeOfDay.h"
 #include "mc/scripting/modules/minecraft/events/ScriptEventSource.h"
@@ -21,6 +21,8 @@ class BlockPos;
 class Potion;
 namespace ScriptModuleMinecraft { class IScriptItemComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
+namespace ScriptModuleMinecraft { class ScriptAimAssistPresetSettings; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
@@ -29,13 +31,13 @@ namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct EnumBinding; }
 namespace Scripting { struct Error; }
+namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
+namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 // functions
 // NOLINTBEGIN
-MCAPI void SetUpScriptAssertHandler();
-
 MCAPI ::std::
     unordered_map<::std::string, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
     _getAllSupportedItemComponents();
@@ -88,6 +90,11 @@ MCAPI ::std::shared_ptr<::Potion const> const getPotion(
     ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType> modifier
 );
 
+MCAPI ::std::optional<int> getPotionId(
+    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>   effect,
+    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType> modifier
+);
+
 MCAPI ::std::string getScriptScoreboardParticipantName(
     ::std::variant<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
@@ -96,6 +103,12 @@ MCAPI ::std::string getScriptScoreboardParticipantName(
 );
 
 MCAPI ::std::shared_ptr<::Potion const> const getStrongPotion(::Potion::PotionVariant potionEffect);
+
+MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition
+makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& category);
+
+MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition
+makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
 // NOLINTEND
 
 // static variables

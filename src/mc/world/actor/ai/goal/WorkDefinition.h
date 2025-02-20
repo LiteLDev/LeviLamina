@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+class WorkGoal;
+// clang-format on
+
 class WorkDefinition : public ::BaseGoalDefinition {
 public:
     // member variables
@@ -34,6 +40,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void initialize(::EntityContext& entity, ::WorkGoal& goal) const;
+
     MCAPI ::WorkDefinition& operator=(::WorkDefinition const&);
     // NOLINTEND
 

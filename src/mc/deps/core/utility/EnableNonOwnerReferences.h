@@ -33,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&);
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -43,18 +47,22 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI EnableNonOwnerReferences();
+
+    MCAPI EnableNonOwnerReferences(::Bedrock::EnableNonOwnerReferences const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCFOLD void* $ctor();
+
+    MCFOLD void* $ctor(::Bedrock::EnableNonOwnerReferences const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

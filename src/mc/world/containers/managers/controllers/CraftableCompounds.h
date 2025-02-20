@@ -68,8 +68,6 @@ public:
 
     MCAPI ::std::vector<::ItemStack> const* getComponents(::ItemDescriptor const& compound) const;
 
-    MCAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
-
     MCAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
 
     MCAPI void registerCompounds();

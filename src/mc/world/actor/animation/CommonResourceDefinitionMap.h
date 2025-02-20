@@ -7,7 +7,6 @@
 class ActorAnimationControllerPtr;
 class ActorSkeletalAnimationPtr;
 class HashedString;
-struct MolangVariableSettings;
 struct NamedMolangScript;
 // clang-format on
 
@@ -32,16 +31,6 @@ public:
     MCAPI CommonResourceDefinitionMap();
 
     MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
-
-    MCFOLD ::std::unordered_map<::HashedString, ::ActorAnimationControllerPtr> const& getAnimationControllers() const;
-
-    MCFOLD ::std::unordered_map<::HashedString, ::ActorSkeletalAnimationPtr> const& getAnimations() const;
-
-    MCFOLD ::std::vector<::MolangVariableSettings> const& getVariableSettings() const;
-
-    MCAPI bool isCommonResourceDefinitionMapEmpty() const;
-
-    MCAPI void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
 
     MCAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
 

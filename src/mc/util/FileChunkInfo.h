@@ -16,20 +16,4 @@ public:
     FileChunkInfo& operator=(FileChunkInfo const&);
     FileChunkInfo(FileChunkInfo const&);
     FileChunkInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI FileChunkInfo(int _chunk, uint64 _startByte, uint64 _endByte);
-
-    MCAPI bool isValid() const;
-
-    MCAPI int size() const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(int _chunk, uint64 _startByte, uint64 _endByte);
-    // NOLINTEND
 };

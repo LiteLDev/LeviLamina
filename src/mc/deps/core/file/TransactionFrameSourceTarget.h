@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransactionFrameSourceTarget(::Core::Path const& source, ::Core::Path const& target);
+    MCAPI TransactionFrameSourceTarget(::Core::PathView source, ::Core::PathView target);
 
     MCAPI ~TransactionFrameSourceTarget();
     // NOLINTEND
@@ -40,8 +40,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Core::Result exec(
-        ::Core::Path const&                                                    source,
-        ::Core::Path const&                                                    target,
+        ::Core::PathView                                                       source,
+        ::Core::PathView                                                       target,
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction
     );
@@ -50,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& source, ::Core::Path const& target);
+    MCAPI void* $ctor(::Core::PathView source, ::Core::PathView target);
     // NOLINTEND
 
 public:

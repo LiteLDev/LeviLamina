@@ -4,10 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
-class EntityRegistry;
 struct IMovementCorrection;
-struct IReplayableActorInput;
 // clang-format on
 
 class ActorHistory {
@@ -24,7 +21,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkbab8be;
         ::ll::UntypedStorage<8, 24> mUnk4712e3;
-        ::ll::UntypedStorage<8, 24> mUnkb40e17;
+        ::ll::UntypedStorage<8, 8>  mUnk9d9e50;
         ::ll::UntypedStorage<1, 1>  mUnked986d;
         // NOLINTEND
 
@@ -33,18 +30,6 @@ public:
         Snapshot& operator=(Snapshot const&);
         Snapshot(Snapshot const&);
         Snapshot();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI ~Snapshot();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
@@ -53,9 +38,9 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkb333c9;
     ::ll::UntypedStorage<8, 40> mUnkb07939;
     ::ll::UntypedStorage<8, 8>  mUnkf30cca;
-    ::ll::UntypedStorage<1, 1>  mUnk6f3591;
+    ::ll::UntypedStorage<4, 4>  mUnke9658f;
     ::ll::UntypedStorage<8, 24> mUnkb8d0de;
-    ::ll::UntypedStorage<8, 24> mUnkf6138a;
+    ::ll::UntypedStorage<8, 8>  mUnka27fb0;
     // NOLINTEND
 
 public:
@@ -67,40 +52,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorHistory(uint64 historyWindow);
-
     MCAPI void addCorrectionToFrame(::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
-    MCAPI bool addFrame(::EntityContext& entity, uint64 frame, ::EntityRegistry& registry);
-
-    MCAPI void addInputToFrame(::std::shared_ptr<::IReplayableActorInput> input, uint64 frame);
-
-    MCAPI void addInputToFrontOfFrame(::std::shared_ptr<::IReplayableActorInput> input, uint64 frame);
-
-    MCAPI void clearFrames();
-
-    MCAPI ::ActorHistory::Snapshot const* getFrame(uint64 frame) const;
-
-    MCFOLD uint64 getOldestFrame() const;
-
     MCAPI void queueCorrection(::std::shared_ptr<::IMovementCorrection> correction);
-
-    MCAPI void queueInputSimulation(::std::unique_ptr<::IReplayableActorInput> input);
-
-    MCAPI void setSnapshotAsCorrection(uint64 frame);
-
-    MCAPI ~ActorHistory();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint64 historyWindow);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -42,9 +42,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 112> mUnk66603e;
-        ::ll::UntypedStorage<8, 120> mUnkf1018e;
-        ::ll::UntypedStorage<8, 112> mUnkd4f5d9;
+        ::ll::UntypedStorage<8, 24>  mUnk66603e;
+        ::ll::UntypedStorage<8, 32>  mUnkf1018e;
+        ::ll::UntypedStorage<8, 24>  mUnkd4f5d9;
         ::ll::UntypedStorage<8, 176> mUnk960d05;
         ::ll::UntypedStorage<1, 1>   mUnkd6d7a8;
         ::ll::UntypedStorage<8, 32>  mUnke5554e;
@@ -94,6 +94,8 @@ public:
     // NOLINTBEGIN
     MCAPI explicit BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx);
 
+    MCAPI void _applyBlockStates(::BlockLegacy* block, ::BlockDefinition const& definition);
+
     MCAPI void _buildBlockDescriptionSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
     );
@@ -121,6 +123,8 @@ public:
 
     MCAPI void
     _loadComponentsForLegacyCompabitility(::SemVersion const& originalJsonVersion, ::BlockDefinition& definition);
+
+    MCAPI bool _loadDefinitionFormatVersion(::Json::Value const& root, ::SemVersion& version);
 
     MCAPI bool
     _loadEvents(::Json::Value const& root, ::BlockDefinition& definition, ::IPackLoadContext& packLoadContext);
@@ -161,8 +165,6 @@ public:
 
     MCAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
 
-    MCAPI void initializeBlocks(::Level& level);
-
     MCAPI ::std::unique_ptr<::BlockDefinition> loadResource(
         ::std::string                            upgradedJsonData,
         ::Core::PathBuffer<::std::string> const& res,
@@ -173,8 +175,6 @@ public:
     MCAPI void loadResources(::ResourcePackManager const& resourcePackManager, ::Experiments const& experiments);
 
     MCAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);
-
-    MCAPI void registerBlocks();
 
     MCAPI ::WeakPtr<::BlockLegacy> registerDataDrivenBlock(::BlockDescription const& desc);
 

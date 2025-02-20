@@ -5,8 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class EntityContext;
-class PositionTrackingId;
 namespace PositionTrackingDB { class OperationBase; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 // clang-format on
@@ -50,13 +48,9 @@ public:
 
     MCAPI void deserialize(::CompoundTag const& tag);
 
-    MCAPI ::EntityContext& getEntity();
-
-    MCFOLD ::PositionTrackingId const& getId() const;
-
-    MCAPI ::PositionTrackingDB::TrackingRecord::RecordStatus const getStatus() const;
-
     MCAPI bool loadRecordFromStorage(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
+
+    MCAPI bool processPendingTransactions(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> parent);
 
     MCAPI ::CompoundTag serialize() const;
     // NOLINTEND

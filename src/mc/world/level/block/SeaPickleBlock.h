@@ -21,6 +21,7 @@ class IConstBlockSource;
 class Random;
 struct Brightness;
 namespace BlockEvents { class BlockPlaceEvent; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class SeaPickleBlock : public ::BushBlock {
@@ -33,6 +34,9 @@ public:
 
     // vIndex: 136
     virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
+
+    // vIndex: 150
+    virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     // vIndex: 137
     virtual void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
@@ -85,15 +89,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SeaPickleBlock(::std::string const& nameId, int id);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -108,6 +104,8 @@ public:
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+
+    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void $randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 

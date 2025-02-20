@@ -94,6 +94,8 @@ public:
 
     MCAPI void _checkIfStuck();
 
+    MCAPI bool _findTargetBlock();
+
     MCAPI bool _isValidTarget(::Block const& candidateBlock) const;
 
     MCAPI void _moveToBlock();

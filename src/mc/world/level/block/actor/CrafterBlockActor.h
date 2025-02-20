@@ -8,10 +8,12 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class CraftingContainer;
 class DataLoadHelper;
+class ILevel;
 class ItemInstance;
 class ItemStack;
 class Level;
@@ -75,7 +77,7 @@ public:
     virtual bool isSlotDisabled(int slot) const /*override*/;
 
     // vIndex: 1
-    virtual void load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -96,15 +98,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getDisabledSlotsCount() const;
-
-    MCAPI void onDisabledSlotToggleRequested(::BlockSource& region, int slot, bool shouldDisable);
-
-    MCAPI void setToCraftingVisualState(::BlockSource& region);
+    MCAPI explicit CrafterBlockActor(::BlockPos pos);
 
     MCAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
-
-    MCAPI void unsetCraftingVisualState(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -114,6 +110,12 @@ public:
     _getRecipesForCraftingGrid(::Level& level, ::CraftingContainer& craftingContainer);
 
     MCAPI static ::std::vector<::ItemInstance> getCraftableItem(::CraftingContainer& craftingGrid, ::Level& level);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos pos);
     // NOLINTEND
 
 public:
@@ -131,7 +133,7 @@ public:
 
     MCAPI bool $isSlotDisabled(int slot) const;
 
-    MCAPI void $load(::Level& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

@@ -3,15 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/services/playtest/SessionResult.h"
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/binding_type/EnumBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-class Player;
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
+#include "mc/common/editor/SessionResult.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/binding_type/EnumBindingBuilder.h"
 
 namespace Editor::ScriptModule {
 
@@ -38,24 +32,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ScriptPlaytestLauncher(::Player& player, ::Scripting::WeakLifetimeScope const& scope);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::Editor::ScriptModule::ScriptPlaytestLauncher> bindClass();
 
     MCAPI static ::Scripting::EnumBindingBuilder<::Editor::Playtest::SessionResult, ::Editor::Playtest::SessionResult>
     bindSessionResultEnums();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

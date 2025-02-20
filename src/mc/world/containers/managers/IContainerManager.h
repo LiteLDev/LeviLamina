@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/world/ContainerID.h"
-#include "mc/world/ContainerType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,14 +27,14 @@ public:
     virtual void setContainerId(::ContainerID) = 0;
 
     // vIndex: 3
-    virtual ::ContainerType getContainerType() const = 0;
+    virtual ::SharedTypes::Legacy::ContainerType getContainerType() const = 0;
 
     // vIndex: 4
-    virtual void setContainerType(::ContainerType) = 0;
+    virtual void setContainerType(::SharedTypes::Legacy::ContainerType) = 0;
 
     // vIndex: 5
     virtual ::Bedrock::PubSub::Subscription
-        registerContainerTypeListener(::std::function<void(::ContainerType)>) const = 0;
+        registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)>) const = 0;
 
     // vIndex: 6
     virtual void serverInitItemStackIds() = 0;

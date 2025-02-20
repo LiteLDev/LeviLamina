@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ChestBlockActor;
 class Player;
 // clang-format on
 
@@ -23,6 +22,7 @@ public:
     // prevent constructor by default
     EnderChestContainer& operator=(EnderChestContainer const&);
     EnderChestContainer(EnderChestContainer const&);
+    EnderChestContainer();
 
 public:
     // virtual functions
@@ -41,26 +41,6 @@ public:
 
     // vIndex: 0
     virtual ~EnderChestContainer() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI EnderChestContainer();
-
-    MCAPI void setActiveChest(::ChestBlockActor* chest);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static int const& ITEMS_SIZE();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

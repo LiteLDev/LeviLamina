@@ -6,6 +6,7 @@
 // clang-format off
 class EntityContext;
 class EntityRegistry;
+class Experiments;
 class ILevel;
 class IRandom;
 struct ExternalDataInterface;
@@ -14,7 +15,12 @@ struct ExternalDataInterface;
 namespace LevelProvider {
 // functions
 // NOLINTBEGIN
-MCAPI void addLevelComponents(::EntityContext& levelEntity, ::IRandom& random, bool isClientSide);
+MCAPI void addLevelComponents(
+    ::EntityContext&     levelEntity,
+    ::IRandom&           random,
+    ::Experiments const& experiments,
+    bool                 isClientSide
+);
 
 MCAPI void initializeGlobalComponents(::EntityRegistry& registry);
 
@@ -23,11 +29,8 @@ MCAPI void registerExternalDataComponent(
     ::std::unique_ptr<::ExternalDataInterface> externalDataInterface
 );
 
-MCAPI void registerLevelGlobalComponents(::EntityRegistry& registry, ::ILevel& level);
-
-MCAPI void removeGlobalComponents(::EntityRegistry& registry);
-
-MCAPI void unregisterLevelGlobalComponents(::EntityRegistry& registry);
+MCAPI void
+registerLevelGlobalComponents(::EntityRegistry& registry, ::ILevel& level, bool registerOverflowTickComponent);
 // NOLINTEND
 
 } // namespace LevelProvider

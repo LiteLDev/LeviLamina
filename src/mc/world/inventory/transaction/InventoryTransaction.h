@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockPalette;
 class InventoryAction;
 class InventorySource;
 class InventoryTransactionItemGroup;
@@ -36,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCAPI InventoryTransaction(::InventoryTransaction const&);
 
-    MCFOLD void _logTransaction(bool isClientSide) const;
+    MCAPI explicit InventoryTransaction(::std::vector<::InventoryAction> const& in);
 
     MCAPI void addAction(::InventoryAction const& action);
 
@@ -48,11 +47,11 @@ public:
 
     MCAPI ::std::vector<::InventoryAction> const& getActions(::InventorySource const& source) const;
 
-    MCAPI void postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
-
-    MCAPI void serialize(::BinaryStream& stream, bool isClientSide) const;
+    MCAPI void markValidActionsForSerialization(bool isClientSide) const;
 
     MCAPI ::InventoryTransactionError verifyFull(::Player& p, bool isSenderAuthority) const;
+
+    MCAPI void write(::BinaryStream& stream) const;
 
     MCAPI ~InventoryTransaction();
     // NOLINTEND
@@ -63,8 +62,6 @@ public:
     MCAPI static bool checkTransactionItemsMatch(::ItemStack const& serverItem, ::ItemStack const& clientItem);
 
     MCAPI static ::Bedrock::Result<::InventoryTransaction> deserialize(::ReadOnlyBinaryStream& stream);
-
-    MCAPI static ::std::string const getInventoryTransactionErrorName(::InventoryTransactionError type);
     // NOLINTEND
 
 public:
@@ -78,6 +75,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::InventoryTransaction const&);
+
+    MCAPI void* $ctor(::std::vector<::InventoryAction> const& in);
     // NOLINTEND
 
 public:

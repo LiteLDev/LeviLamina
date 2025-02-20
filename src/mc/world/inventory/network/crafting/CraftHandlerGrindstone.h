@@ -11,8 +11,6 @@
 // clang-format off
 class ItemStack;
 class ItemStackRequestActionCraftBase;
-class ItemStackRequestActionCraftHandler;
-class Player;
 struct ItemStackNetIdVariant;
 // clang-format on
 
@@ -69,8 +67,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftHandlerGrindstone(::Player& player, ::ItemStackRequestActionCraftHandler& craftRequestHandler);
-
     MCAPI int _getExperienceFromItem(::ItemStack const& stack) const;
 
     MCAPI bool
@@ -88,12 +84,6 @@ public:
 
     MCAPI static ::std::pair<::ItemStack, ::ItemStackNetIdVariant>
     getResultItem(::ItemStack const& input, ::ItemStack const& additional);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::ItemStackRequestActionCraftHandler& craftRequestHandler);
     // NOLINTEND
 
 public:

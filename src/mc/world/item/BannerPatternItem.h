@@ -42,18 +42,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BannerPatternItem(::std::string const& name, int id, ::BannerPatternItem::Type type);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::BannerPatternItem::Type type);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

@@ -26,12 +26,7 @@ public:
     // prevent constructor by default
     LeashableDefinition& operator=(LeashableDefinition const&);
     LeashableDefinition(LeashableDefinition const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI LeashableDefinition();
-    // NOLINTEND
+    LeashableDefinition();
 
 public:
     // static functions
@@ -39,11 +34,5 @@ public:
     MCAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LeashableDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
     // NOLINTEND
 };

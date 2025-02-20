@@ -7,10 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockLegacy;
-class BlockState;
 class CompoundTagUpdaterContext;
-struct ItemRegistryComplexAlias;
 namespace FlatteningUtils { class RemovedState; }
 namespace FlatteningUtils { struct LegacyBlockInfo; }
 // clang-format on
@@ -28,11 +27,8 @@ MCAPI void addUpdate(
 MCAPI ::std::vector<::WeakPtr<::BlockLegacy const>>
 getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
-MCAPI ::ItemRegistryComplexAlias
-getSimpleItemComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, bool allowCommands);
-
-MCAPI ::std::function<void()>
-removeSimpleStateCollection(::BlockState const& statRef, ::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo);
+MCAPI ::std::function<::Block const*(int)>
+getSimpleBlockComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 // NOLINTEND
 
 // static variables

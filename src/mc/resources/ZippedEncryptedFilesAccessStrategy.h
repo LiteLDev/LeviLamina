@@ -85,12 +85,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::string _getRawContentsFile(::Core::Path const& pathToPack, ::Core::Path const& subPath);
-
-    MCAPI static bool isValidZippedEncryptedPack(
-        ::Core::Path const& pathToPack,
-        ::ContentIdentity&  contentIdentity,
-        ::Core::Path const& subPath
-    );
     // NOLINTEND
 
 public:
@@ -114,7 +108,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ResourceLocation const& $getPackLocation() const;
+    MCAPI ::ResourceLocation const& $getPackLocation() const;
 
     MCAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 

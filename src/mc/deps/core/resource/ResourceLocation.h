@@ -27,17 +27,13 @@ public:
     // NOLINTBEGIN
     MCAPI ResourceLocation();
 
-    MCAPI explicit ResourceLocation(::Core::Path const& path);
-
     MCAPI ResourceLocation(::Core::Path const& path, ::ResourceFileSystem fileSystem);
 
     MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> const& getRelativePath() const;
+    MCAPI bool operator==(::ResourceLocation const& rhs) const;
 
     MCAPI void serialize(::Json::Value& out) const;
-
-    MCAPI void setRelativePath(::Core::PathBuffer<::std::string> const& path);
 
     MCAPI ~ResourceLocation();
     // NOLINTEND
@@ -52,8 +48,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::Core::Path const& path);
 
     MCAPI void* $ctor(::Core::Path const& path, ::ResourceFileSystem fileSystem);
     // NOLINTEND

@@ -39,30 +39,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SpawnGroupRegistry(::ResourcePackManager& resourcePackManager);
-
     MCAPI void _addSpawnRules(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
     MCAPI void _getResources(
-        ::ResourcePackManager& resourcePackManager,
+        ::ResourcePackManager& callback,
         ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
-            callback
+            resourcePackManager
     );
 
     MCAPI bool _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
 
-    MCAPI ::SpawnGroupData const* getSpawnGroup(::std::string const& identifier) const;
-
     MCAPI void readResourceFiles(
-        ::ResourcePackManager&                                     resourcePackManager,
-        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap
+        ::ResourcePackManager&                                     dataMap,
+        ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& resourcePackManager
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:

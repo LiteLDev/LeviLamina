@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/data_structures/List.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class BitStream; }
-// clang-format on
-
 namespace RakNet {
 
 class RakString {
@@ -46,6 +41,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RakString& operator=(RakString const&);
+    RakString(RakString const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI void Allocate(uint64 len);
@@ -54,31 +54,19 @@ public:
 
     MCAPI void Assign(char const* str, char* ap);
 
-    MCAPI bool Deserialize(::RakNet::BitStream* bs);
-
     MCAPI void Free();
-
-    MCAPI uint64 GetLength() const;
-
-    MCAPI bool IPAddressMatch(char const* IP);
-
-    MCAPI bool IsEmpty() const;
 
     MCAPI RakString();
 
-    MCAPI RakString(::RakNet::RakString const& rhs);
-
     MCAPI RakString(char const*, ...);
 
-    MCFOLD ::RakNet::RakString& operator=(char* str);
-
-    MCAPI ::RakNet::RakString& operator=(char const*);
-
-    MCAPI ::RakNet::RakString& operator=(::RakNet::RakString const& rhs);
-
-    MCAPI bool operator==(::RakNet::RakString const& rhs) const;
-
     MCAPI ~RakString();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static void FreeMemoryNoMutex();
     // NOLINTEND
 
 public:
@@ -93,8 +81,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::RakNet::RakString const& rhs);
 
     MCAPI void* $ctor(char const*, ...);
     // NOLINTEND

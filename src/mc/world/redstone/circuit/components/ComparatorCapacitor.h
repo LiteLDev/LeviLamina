@@ -68,28 +68,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ComparatorCapacitor();
-
-    MCAPI void clearAnalogStrength(uchar dir);
-
-    MCAPI int getOldStrength();
-
-    MCAPI bool isSubtractMode();
-
-    MCAPI void setAnalogStrength(int strength, uchar dir);
-
-    MCFOLD void setMode(::ComparatorCapacitor::Mode mode);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
 

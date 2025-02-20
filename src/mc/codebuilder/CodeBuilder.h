@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/codebuilder/EncryptionCipherMode.h"
 #include "mc/codebuilder/RequestPurpose.h"
 #include "mc/codebuilder/ResponsePurpose.h"
 
@@ -26,6 +27,8 @@ namespace CodeBuilder {
 MCAPI ::MCRESULT deserialize(::Json::Value const& json, ::CodeBuilder::RequestHeader& result);
 
 MCAPI bool fromString(::std::string const& messagePurpose, ::CodeBuilder::RequestPurpose& outPurpose);
+
+MCAPI bool fromString(::std::string const& modeString, ::CodeBuilder::EncryptionCipherMode& mode);
 
 MCAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message);
 

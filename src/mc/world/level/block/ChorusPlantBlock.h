@@ -14,18 +14,16 @@ class Actor;
 class Block;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-class Random;
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class ChorusPlantBlock : public ::BlockLegacy {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
@@ -56,6 +54,9 @@ public:
     // vIndex: 23
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
+
     // vIndex: 0
     virtual ~ChorusPlantBlock() /*override*/ = default;
     // NOLINTEND
@@ -63,27 +64,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChorusPlantBlock(::std::string const& nameId, int id);
-
     MCAPI ::AABB const& _getShape(::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
-    // NOLINTEND
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool canGrowChorus(::Block const& block);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& PLANT_ITEM_DIMENSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -95,8 +78,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
@@ -115,6 +96,8 @@ public:
     MCFOLD bool $isLavaBlocking() const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -17,10 +17,9 @@ class Experiments;
 class GetCollisionShapeInterface;
 class HashedString;
 class IConstBlockSource;
-class Random;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
-namespace mce { class Color; }
+namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class CoralPlantBlock : public ::BlockLegacy {
@@ -33,12 +32,6 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const /*override*/;
-
-    // vIndex: 136
-    virtual void tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const /*override*/;
-
     // vIndex: 15
     virtual ::Vec3 randomlyModifyPosition(::BlockPos const& pos) const /*override*/;
 
@@ -87,6 +80,8 @@ public:
     MCAPI void checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -104,10 +99,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const&) const;
-
-    MCAPI void $tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
     MCFOLD ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
     MCFOLD ::AABB

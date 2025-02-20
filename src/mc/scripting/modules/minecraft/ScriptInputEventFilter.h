@@ -20,16 +20,14 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptInputEventFilter& operator=(ScriptInputEventFilter const&);
     ScriptInputEventFilter(ScriptInputEventFilter const&);
     ScriptInputEventFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void process();
-
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilterData const& data) const;
+    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter const&);
 
     MCAPI ~ScriptInputEventFilter();
     // NOLINTEND

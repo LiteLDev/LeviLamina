@@ -41,22 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddBiomeVisited(::std::string biome);
-
-    MCAPI void BlockBroken(
-        ::std::string const& blockNamespace,
-        ::std::string const& blockName,
-        ::std::string const& toolName,
-        bool                 brokebyCommand
-    );
-
-    MCAPI void BlockPlaced(
-        ::std::string const& blockNamespace,
-        ::std::string const& blockName,
-        ::std::string const& toolName,
-        bool                 placedByCommand
-    );
-
     MCAPI void ItemUsed(::std::string const& itemName, ::std::string const& useMethod);
 
     MCAPI PlayerTelemetry();
@@ -64,8 +48,6 @@ public:
     MCAPI void PopulateEvent(::Social::Events::Event& event) const;
 
     MCAPI void SetPosition(::std::string dimension, ::Vec3 pos, double metersTravelled);
-
-    MCAPI bool ShouldSendEvent() const;
 
     MCAPI void UpdatePlayerLoadout(::Player& player);
 

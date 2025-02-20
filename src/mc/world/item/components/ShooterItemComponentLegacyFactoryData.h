@@ -32,9 +32,22 @@ public:
 
     public:
         // prevent constructor by default
-        ShooterAmmunitionEntry& operator=(ShooterAmmunitionEntry const&);
-        ShooterAmmunitionEntry(ShooterAmmunitionEntry const&);
         ShooterAmmunitionEntry();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ShooterAmmunitionEntry(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+
+        MCFOLD ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
+        operator=(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCFOLD void* $ctor(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+        // NOLINTEND
     };
 
 public:
@@ -48,6 +61,7 @@ public:
 
 public:
     // prevent constructor by default
+    ShooterItemComponentLegacyFactoryData& operator=(ShooterItemComponentLegacyFactoryData const&);
     ShooterItemComponentLegacyFactoryData(ShooterItemComponentLegacyFactoryData const&);
     ShooterItemComponentLegacyFactoryData();
 
@@ -59,20 +73,12 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::ShooterItemComponentLegacyFactoryData& operator=(::ShooterItemComponentLegacyFactoryData&&);
-
-    MCAPI ::ShooterItemComponentLegacyFactoryData& operator=(::ShooterItemComponentLegacyFactoryData const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
+        ::std::vector<::AllExperiments> const& releasedMinFormatVersion,
+        ::std::optional<::SemVersion>          requiredToggles
     );
     // NOLINTEND
 

@@ -3,13 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/InterfaceBindingBuilder.h"
-#include "mc/external/scripting/runtime/Result.h"
-
-// auto generated forward declare list
-// clang-format off
-class Vec3;
-// clang-format on
+#include "mc/deps/scripting/binding_type/InterfaceBindingBuilder.h"
+#include "mc/deps/scripting/runtime/Result.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -29,8 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 getBoundingSize() const;
-
     MCAPI ::Scripting::Result<void> validate() const;
     // NOLINTEND
 

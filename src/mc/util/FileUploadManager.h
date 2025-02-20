@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/UploadError.h"
-
 // auto generated forward declare list
 // clang-format off
 class IFileChunkUploader;
@@ -57,18 +54,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72>  mUnkd53a1f;
-    ::ll::UntypedStorage<8, 96>  mUnk7e81a8;
-    ::ll::UntypedStorage<4, 4>   mUnk3637b8;
-    ::ll::UntypedStorage<4, 4>   mUnkcdb53c;
-    ::ll::UntypedStorage<8, 16>  mUnk572878;
-    ::ll::UntypedStorage<8, 16>  mUnkbea5f5;
-    ::ll::UntypedStorage<8, 8>   mUnka99ce1;
-    ::ll::UntypedStorage<8, 24>  mUnkc47b3b;
-    ::ll::UntypedStorage<1, 1>   mUnk976e6e;
-    ::ll::UntypedStorage<1, 1>   mUnk64961a;
-    ::ll::UntypedStorage<1, 1>   mUnk2e4039;
-    ::ll::UntypedStorage<8, 616> mUnk1fdfcf;
+    ::ll::UntypedStorage<8, 72> mUnkd53a1f;
+    ::ll::UntypedStorage<8, 96> mUnk7e81a8;
+    ::ll::UntypedStorage<4, 4>  mUnk3637b8;
+    ::ll::UntypedStorage<4, 4>  mUnkcdb53c;
+    ::ll::UntypedStorage<8, 16> mUnk572878;
+    ::ll::UntypedStorage<8, 16> mUnkbea5f5;
+    ::ll::UntypedStorage<8, 8>  mUnka99ce1;
+    ::ll::UntypedStorage<8, 24> mUnkc47b3b;
+    ::ll::UntypedStorage<1, 1>  mUnk976e6e;
+    ::ll::UntypedStorage<1, 1>  mUnk64961a;
+    ::ll::UntypedStorage<1, 1>  mUnk2e4039;
     // NOLINTEND
 
 public:
@@ -109,14 +105,6 @@ public:
 
     MCAPI void addCallbackQueue(::std::function<void()> callback);
 
-    MCAPI void setFailed(::UploadError reason);
-
-    MCAPI void setUseStream(bool stream);
-
-    MCAPI void update();
-
-    MCAPI void uploadChunk(int chunkID);
-
     MCAPI void uploadFile(
         ::std::string const& uploadId,
         ::Core::Path const&  filePath,
@@ -129,8 +117,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& BOUNDARY();
-
-    MCAPI static int const& CHUNK_UPLOAD_SIZE();
     // NOLINTEND
 
 public:

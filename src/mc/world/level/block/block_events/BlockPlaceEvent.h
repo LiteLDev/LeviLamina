@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class RenderParams;
 // clang-format on
 
 namespace BlockEvents {
@@ -35,14 +34,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockPlaceEvent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void configureRenderParamsForTrigger(::RenderParams& params) const;
-
-    MCAPI bool isClientSide() const;
     // NOLINTEND
 
 public:

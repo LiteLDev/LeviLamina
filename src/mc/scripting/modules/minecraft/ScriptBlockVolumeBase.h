@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/external/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
+#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/scripting/modules/minecraft/ScriptBlockVolumeIterable.h"
 
 // auto generated forward declare list
 // clang-format off
+class BaseBlockLocationIterator;
 class BlockPos;
 class BoundingBox;
 class Vec3;
@@ -18,7 +21,8 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockVolumeBase {
+class ScriptBlockVolumeBase : public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptBlockVolumeBase>,
+                              public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,11 +39,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ScriptBlockVolumeBase();
+    virtual ~ScriptBlockVolumeBase() /*override*/ = default;
 
     // vIndex: 1
     virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
         getBlockLocationIterator(::Scripting::WeakLifetimeScope) = 0;
+
+    // vIndex: 2
+    virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() = 0;
     // NOLINTEND
 
 public:
@@ -49,9 +56,17 @@ public:
 
     MCAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
 
+    MCAPI int getCapacity() const;
+
     MCAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
 
     MCAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
+
+    MCAPI ::Vec3 getSpan() const;
+
+    MCAPI bool isInside(::Vec3 const& location) const;
+
+    MCAPI void translate(::Vec3 const& delta);
     // NOLINTEND
 
 public:
@@ -63,7 +78,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+
     // NOLINTEND
 
 public:

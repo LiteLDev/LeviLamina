@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,10 +18,10 @@ namespace ScriptModuleMinecraft { struct ScriptActorHurtAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorLoadAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorRemoveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorSpawnAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptBlockExplodedAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptButtonPushAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptChatSendAfterEvent; }
-namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptDataDrivenActorTriggerAfterEventIntermediateData; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionStartedAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptGameRuleChangeAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemCompleteUseAfterEvent; }
@@ -121,8 +121,9 @@ public:
     onServerMessage(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>&);
 
     // vIndex: 15
-    virtual void onDataDrivenActorEventSend(::Scripting::StrongTypedObjectHandle<
-                                            ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&);
+    virtual void
+    onDataDrivenActorEventSend(::std::shared_ptr<
+                               ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>&);
 
     // vIndex: 16
     virtual void onActorHurt(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
@@ -189,7 +190,7 @@ public:
 
     // vIndex: 32
     virtual void
-    onExplodeBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>&);
+    onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>&);
 
     // vIndex: 33
     virtual void onPlayerPlaceBlock(::Scripting::StrongTypedObjectHandle<
@@ -267,18 +268,6 @@ public:
     $onGameRuleChange(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEvent>&);
 
     MCFOLD void
-    $onWeatherChanged(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>&);
-
-    MCFOLD void
-    $onWorldInitialize(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>&);
-
-    MCFOLD void
-    $onPlayerJoin(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>&);
-
-    MCFOLD void
-    $onPlayerLeave(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>&);
-
-    MCFOLD void
     $onActorAddEffect(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData>&);
 
     MCFOLD void $onChat(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendAfterEvent>&);
@@ -289,21 +278,7 @@ public:
     $onActorSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorSpawnAfterEvent>&);
 
     MCFOLD void
-    $onActorRemoved(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const&, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorRemoveAfterEvent>&);
-
-    MCFOLD void
-    $onActorHitEntity(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>&);
-
-    MCFOLD void
-    $onActorHitBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>&);
-
-    MCFOLD void
     $onServerMessage(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptServerMessageAfterEvent>&);
-
-    MCFOLD void $onDataDrivenActorEventSend(::Scripting::StrongTypedObjectHandle<
-                                            ::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>&);
-
-    MCFOLD void $onActorHurt(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtAfterEvent>&);
 
     MCFOLD void $onActorHealthChanged(::Scripting::StrongTypedObjectHandle<
                                       ::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>&);
@@ -351,7 +326,7 @@ public:
     $onExplosion(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>&);
 
     MCFOLD void
-    $onExplodeBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>&);
+    $onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>&);
 
     MCFOLD void $onPlayerPlaceBlock(::Scripting::StrongTypedObjectHandle<
                                     ::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&);
@@ -373,37 +348,17 @@ public:
 
     MCFOLD void $onItemUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseAfterEvent>&);
 
-    MCFOLD void $onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>&);
-
     MCFOLD void
     $onItemStartUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>&);
 
     MCFOLD void
     $onItemStopUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>&);
 
-    MCFOLD void
-    $onItemStartUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>&);
-
-    MCFOLD void
-    $onItemCompleteUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>&);
-
-    MCFOLD void
-    $onItemReleaseUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>&);
-
-    MCFOLD void
-    $onItemStopUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>&);
-
     MCFOLD void $onProjectileHitEntity(::Scripting::StrongTypedObjectHandle<
                                        ::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&);
 
     MCFOLD void $onProjectileHitBlock(::Scripting::StrongTypedObjectHandle<
                                       ::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

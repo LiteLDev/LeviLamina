@@ -67,30 +67,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DiggerItem(
-        ::std::string const&  name,
-        short                 id,
-        int                   attackDamage,
-        ::Item::Tier const&   tier,
-        ::HashedString const& blockDestructionTag
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&  name,
-        short                 id,
-        int                   attackDamage,
-        ::Item::Tier const&   tier,
-        ::HashedString const& blockDestructionTag
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

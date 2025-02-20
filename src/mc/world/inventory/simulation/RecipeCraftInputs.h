@@ -17,16 +17,4 @@ public:
     RecipeCraftInputs& operator=(RecipeCraftInputs const&);
     RecipeCraftInputs(RecipeCraftInputs const&);
     RecipeCraftInputs();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~RecipeCraftInputs();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
 };

@@ -45,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SyncActorPropertyPacket();
-
     MCAPI SyncActorPropertyPacket(
         ::HashedString const&         actorCanonicalName,
         ::PropertyGroupManager const& propertyGroupManager
@@ -56,8 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::HashedString const& actorCanonicalName, ::PropertyGroupManager const& propertyGroupManager);
     // NOLINTEND
 

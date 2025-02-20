@@ -2,13 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-class BlockPos;
-class CompoundTag;
-// clang-format on
-
 class JigsawStructureBlockInfo {
 public:
     // member variables
@@ -23,18 +16,4 @@ public:
     JigsawStructureBlockInfo& operator=(JigsawStructureBlockInfo const&);
     JigsawStructureBlockInfo(JigsawStructureBlockInfo const&);
     JigsawStructureBlockInfo();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI JigsawStructureBlockInfo(::BlockPos const& pos, ::std::unique_ptr<::CompoundTag> tag, ::Block const& block);
-
-    MCAPI ::CompoundTag* getNonEmptyTag();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::std::unique_ptr<::CompoundTag> tag, ::Block const& block);
-    // NOLINTEND
 };

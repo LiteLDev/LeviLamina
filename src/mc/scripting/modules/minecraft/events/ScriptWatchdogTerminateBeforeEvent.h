@@ -3,13 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/external/scripting/binding_type/ClassBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-struct BeforeWatchdogTerminateEvent;
-namespace Scripting { class WeakLifetimeScope; }
-// clang-format on
+#include "mc/deps/scripting/binding_type/ClassBindingBuilder.h"
 
 namespace ScriptModuleMinecraft {
 
@@ -28,23 +22,9 @@ public:
     ScriptWatchdogTerminateBeforeEvent();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI
-    ScriptWatchdogTerminateBeforeEvent(::BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent, ::Scripting::WeakLifetimeScope const&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent> bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::BeforeWatchdogTerminateEvent const& beforeWatchdogTerminateEvent, ::Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 };
 

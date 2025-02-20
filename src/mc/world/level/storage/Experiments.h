@@ -15,23 +15,7 @@ class Experiments : public ::ExperimentStorage {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool BetaApis() const;
-
-    MCAPI bool CameraAimAssist() const;
-
-    MCAPI bool DataDrivenBiomes() const;
-
     MCAPI Experiments();
-
-    MCAPI bool FocusTargetCamera() const;
-
-    MCAPI bool JigsawStructures() const;
-
-    MCAPI bool ThirdPersonCameras() const;
-
-    MCAPI bool UpcomingCreatorFeatures() const;
-
-    MCAPI bool VillagerTradesRebalance() const;
 
     MCAPI ::std::string getExperimentsActiveAsJSONList() const;
 
@@ -41,19 +25,13 @@ public:
 
     MCAPI bool isExperimentEnabled(::AllExperiments experiment) const;
 
+    MCAPI void setExperimentByToggleIndex(uint64 index, bool value);
+
     MCAPI void setExperimentEnabled(::AllExperiments experiment, bool value);
 
     MCAPI void setTagData(::CompoundTag& tag) const;
 
     MCAPI ~Experiments();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::std::string const& getExperimentTextID(::AllExperiments experiment);
-
-    MCAPI static ::gsl::span<::std::string const> getToggleNames();
     // NOLINTEND
 
 public:

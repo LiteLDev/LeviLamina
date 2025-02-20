@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Network {
 
 class CursorServicePositionChangePayload
@@ -18,8 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 36> mUnk53742e;
-    ::ll::UntypedStorage<4, 16> mUnkc675c0;
-    ::ll::UntypedStorage<1, 2>  mUnka76729;
+    ::ll::UntypedStorage<4, 20> mUnkc71f1e;
     // NOLINTEND
 
 public:
@@ -33,12 +27,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~CursorServicePositionChangePayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
