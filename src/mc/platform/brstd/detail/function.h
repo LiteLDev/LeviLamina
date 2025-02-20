@@ -450,7 +450,8 @@ class function_invoke : public function_invoke_base<Type, Signature> {
 
     template <class Fn>
     static constexpr bool enable_one_arg_constructor =
-        !std::is_same_v<std::remove_cvref_t<Fn>, function_invoke>
+        !(std::is_same_v<std::remove_cvref_t<Fn>, function_invoke>
+          || std::is_base_of_v<function_invoke, std::remove_cvref_t<Fn>>)
         && !ll::traits::is_specialization_of_v<std::remove_cvref_t<Fn>, std::in_place_type_t>
         && base::template is_callable_from<std::decay_t<Fn>>;
 
@@ -471,7 +472,9 @@ public:
     function_invoke(F&& f) {
         using Fn = std::decay_t<F>;
         static_assert(std::is_constructible_v<Fn, F>);
-        if constexpr (std::is_member_pointer_v<Fn> || std::is_pointer_v<Fn> || requires(F e) { e == nullptr; }) {
+        if constexpr (std::is_member_pointer_v<Fn> || std::is_pointer_v<Fn> || requires(F e) {
+                          { e == nullptr } -> std::same_as<bool>;
+                      }) {
             if (f == nullptr) {
                 this->construct_empty();
                 return;
