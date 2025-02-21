@@ -10,6 +10,9 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
+#include "mc/deps/vanilla_components/AABBShapeComponent.h"
+#include "mc/entity/components/ActorRotationComponent.h"
+#include "mc/entity/components/OnFireComponent.h"
 #include "mc/entity/systems/OnFireSystem.h"
 #include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
@@ -20,9 +23,10 @@
 #include "mc/util/rotation_command_utils/RotationData.h"
 #include "mc/world//actor/player/Player.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
-#include "mc/world/actor/ActorDamageCause.h"
+#include "mc/world/actor/ActorDamageSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
-#include "mc/world/actor/ActorLocation.h"
+#include "mc/world/actor/BuiltInActorComponents.h"
+#include "mc/world/actor/animation/AnimationComponent.h"
 #include "mc/world/actor/provider/ActorCollision.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
@@ -39,9 +43,9 @@ void                       Actor::refresh() { _sendDirtyActorData(); }
 optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> dimId) const {
     StackRefResult<Dimension> dim{};
     if (dimId) {
-        dim = const_cast<Actor*>(this)->getLevel().getOrCreateDimension(*dimId).lock();
+        dim = const_cast<Actor*>(this)->mLevel->getOrCreateDimension(*dimId).lock();
     } else {
-        dim = getDimension().getWeakRef().lock();
+        dim = mDimension->lock();
     }
     if (!dim) {
         return nullptr;
@@ -56,11 +60,11 @@ optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> d
     return dim->getBlockSourceFromMainChunkSource().spawnActor(nbt);
 }
 
-std::string const& Actor::getTypeName() const { return getActorIdentifier().getCanonicalName(); }
+std::string const& Actor::getTypeName() const { return getActorIdentifier().mCanonicalName->getString(); }
 
 class Vec3 Actor::getFeetPos() const { return CommandUtils::getFeetPos(this); }
 
-class Vec3 Actor::getHeadPos() const { return getAttachPos(ActorLocation::Head); }
+class Vec3 Actor::getHeadPos() const { return getAttachPos(SharedTypes::Legacy::ActorLocation::Head); }
 
 class BlockPos Actor::getFeetBlockPos() const { return {CommandUtils::getFeetPos(this)}; }
 
@@ -75,7 +79,13 @@ void Actor::setOnFire(int time, bool isEffect) {
         OnFireSystem::setOnFireNoEffects(*this, time);
     }
 }
-void Actor::stopFire() { OnFireSystem::stopFire(*this); }
+void Actor::stopFire() {
+    if (!isClientSide()) {
+        if (getEntityContext().hasComponent<OnFireComponent>()) {
+            getEntityContext().removeComponent<OnFireComponent>();
+        }
+    }
+}
 
 float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getPosDelta().length() * 20.0); }
 
@@ -83,7 +93,9 @@ bool Actor::hurtByCause(float damage, ::SharedTypes::Legacy::ActorDamageCause ca
     if (attacker) {
         return _hurt(ActorDamageByActorSource(attacker.value(), cause), damage, true, false);
     }
-    return _hurt(ActorDamageSource(cause), damage, true, false);
+    ActorDamageSource src;
+    src.mCause = cause;
+    return _hurt(src, damage, true, false);
 }
 
 class HitResult Actor::traceRay(
@@ -120,7 +132,7 @@ class HitResult Actor::traceRay(
             rayDir,
             tMax,
             origin,
-            getAABB(),
+            mBuiltInComponents->mUnk9f8195.as<gsl::not_null<AABBShapeComponent*>>()->mUnk9bd6b8.as<AABB>(),
             (Actor*)(this),
             (Player*)(this),
             resDistance,
@@ -136,7 +148,8 @@ class HitResult Actor::traceRay(
 }
 
 void Actor::teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 const& rotation) {
-    Vec2 relativeRotation = rotation - getRotation();
+    Vec2 relativeRotation =
+        rotation - mBuiltInComponents->mUnk2570a0.as<gsl::not_null<ActorRotationComponent*>>()->mUnkf62500.as<Vec2>();
     TeleportCommand::applyTarget(
         *this,
         TeleportCommand::computeTarget(
@@ -166,5 +179,5 @@ void Actor::setName(std::string const& name) {
 
 float Actor::evalMolang(std::string const& expression) {
     return ExpressionNode(expression, MolangVersion::Latest, {{HashedString{"default"}}})
-        .evalAsFloat(getRenderParams());
+        .evalAsFloat(getAnimationComponent().mUnk323831.as<RenderParams>());
 }
