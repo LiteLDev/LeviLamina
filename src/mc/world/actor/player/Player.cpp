@@ -17,6 +17,8 @@
 #include "mc/server/ServerLevel.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/actor/player/LayeredAbilities.h"
+#include "mc/world/actor/player/PermissionsHandler.h"
+#include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/storage/AdventureSettings.h"
 
 UserEntityIdentifierComponent const& Player::getUserEntityIdentifier() const {
@@ -88,7 +90,7 @@ void Player::sendMessage(std::string_view msg) const { TextPacket::createRawMess
 
 LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     auto& abilities = getAbilities();
-    auto  flying    = abilities.getAbility(AbilitiesIndex::Flying).getBool();
+    auto  flying    = abilities.getAbility(AbilitiesIndex::Flying).mValue->mUnk45a32a.as<bool>();
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {
         abilities.setAbility(AbilitiesIndex::MayFly, value);
     }
@@ -96,20 +98,20 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
         abilities.setAbility(AbilitiesIndex::Flying, false);
     }
     abilities.setAbility(index, value);
-    auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).getBool();
-    auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).getBool();
-    setCanFly(mayfly || noclip);
+    auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).mValue->mUnk45a32a.as<bool>();
+    auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).mValue->mUnk45a32a.as<bool>();
+    SynchedActorDataAccess::setActorFlag(getEntityContext(), ActorFlags::Canfly, mayfly || noclip);
     if (index == AbilitiesIndex::NoClip) {
         abilities.setAbility(AbilitiesIndex::Flying, value);
     }
-    flying = abilities.getAbility(AbilitiesIndex::Flying).getBool();
-    abilities.getAbility(AbilitiesLayer::Base, AbilitiesIndex::Flying).setBool(flying);
+    flying = abilities.getAbility(AbilitiesIndex::Flying).mValue->mUnk45a32a.as<bool>();
+    abilities.getAbility(AbilitiesLayer::Base, AbilitiesIndex::Flying).mValue->mUnk45a32a.as<bool>() = flying;
     UpdateAbilitiesPacket{getOrCreateUniqueID(), abilities}.sendTo(*this);
     abilities.setAbility(AbilitiesIndex::Flying, flying);
     UpdateAdventureSettingsPacket{}.sendTo(*this);
 }
 
-bool Player::isOperator() const { return getPlayerPermissionLevel() == PlayerPermissionLevel::Operator; }
+bool Player::isOperator() const { return getAbilities().mPermissions->mPlayerPermissions == PlayerPermissionLevel::Operator; }
 
 bool Player::addAndRefresh(class ItemStack& item) {
     auto rtn = add(item);

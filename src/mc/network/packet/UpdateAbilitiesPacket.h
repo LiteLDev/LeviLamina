@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/SerializedAbilitiesData.h"
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
@@ -15,6 +16,10 @@ struct SerializedAbilitiesData;
 // clang-format on
 
 class UpdateAbilitiesPacket : public ::Packet {
+public:
+    UpdateAbilitiesPacket(::ActorUniqueID targetPlayer, ::LayeredAbilities const& layeredAbilities)
+    : mData(targetPlayer, layeredAbilities) {}
+
 public:
     // member variables
     // NOLINTBEGIN

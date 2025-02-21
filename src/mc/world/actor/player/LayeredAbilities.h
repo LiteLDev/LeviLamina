@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/player/AbilitiesLayer.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/PlayerPermissionLevel.h"
@@ -15,6 +16,12 @@ class PermissionsHandler;
 // clang-format on
 
 class LayeredAbilities {
+public:
+    LLNDAPI Ability& getAbility(::AbilitiesIndex val);
+    LLNDAPI Ability&       getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
+    LLNDAPI void           setAbility(::AbilitiesIndex val, float value);
+    LLNDAPI void           setAbility(::AbilitiesIndex val, bool value);
+
 public:
     // member variables
     // NOLINTBEGIN
