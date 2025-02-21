@@ -2,7 +2,6 @@
 
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/command/ExecuteCommandEvent.h"
-#include "ll/api/event/player/PlayerChangePermEvent.h"
 #include "ll/api/event/player/PlayerChatEvent.h"
 #include "ll/api/event/player/ServerPlayerEvent.h"
 #include "ll/core/LeviLamina.h"
@@ -16,13 +15,11 @@ using namespace event;
 struct SimpleServerLogger::Impl {
     ll::event::ListenerPtr playerChat;
     ll::event::ListenerPtr playerCommand;
-    ll::event::ListenerPtr playerPermission;
 
     ~Impl() {
         auto& bus = EventBus::getInstance();
         bus.removeListener(playerCommand);
         bus.removeListener(playerChat);
-        bus.removeListener(playerPermission);
     }
 };
 void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
@@ -44,18 +41,6 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
                     "[PlayerCmd] <{}> {}",
                     ((Player*)(context.mOrigin->getEntity()))->getRealName(),
                     context.mCommand
-                );
-            });
-        }
-        if (config.playerPermission && !impl->playerPermission) {
-            impl->playerPermission = bus.emplaceListener<PlayerChangePermEvent>([](PlayerChangePermEvent& ev) {
-                getLogger().info(
-                    "[PlayerPerm] <{}> {}({}) -> {}({})",
-                    ev.self().getRealName(),
-                    magic_enum::enum_name(ev.self().getCommandPermissionLevel()),
-                    fmt::underlying(ev.self().getCommandPermissionLevel()),
-                    magic_enum::enum_name(ev.newPerm()),
-                    fmt::underlying(ev.newPerm())
                 );
             });
         }
