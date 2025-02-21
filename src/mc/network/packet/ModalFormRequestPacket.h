@@ -15,6 +15,9 @@ class ReadOnlyBinaryStream;
 
 class ModalFormRequestPacket : public ::Packet {
 public:
+    ModalFormRequestPacket(uint formId, ::std::string const& formJSON) : mFormId(formId), mFormJSON(formJSON) {}
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint>           mFormId;
