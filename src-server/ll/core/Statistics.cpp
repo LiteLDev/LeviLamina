@@ -81,12 +81,12 @@ static nlohmann::json getCustomCharts() {
     ));
     res.emplace_back(addSimplePie(
         "online_mode",
-        service::getPropertiesSettings().value().useOnlineAuthentication() ? "true" : "false"
+        service::getPropertiesSettings().value().mIsOnlineMode ? "true" : "false"
     ));
     SmallDenseMap<std::string_view, int> platforms;
     service::getLevel().transform([&platforms](auto& level) {
         level.forEachPlayer([&platforms](Player& player) {
-            std::string_view platformName = magic_enum::enum_name(player.getPlatform());
+            std::string_view platformName = magic_enum::enum_name(player.mBuildPlatform);
             if (platforms.find(platformName) == platforms.end()) {
                 platforms.emplace(platformName, 1);
             } else {
