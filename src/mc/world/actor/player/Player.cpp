@@ -31,7 +31,11 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
     if (isSimulatedPlayer()) {
         return std::nullopt;
     }
-    return ll::service::getServerNetworkHandler()->fetchConnectionRequest(getNetworkIdentifier());
+    auto pos = ll::service::getServerNetworkHandler()->mClients->find(getNetworkIdentifier());
+    if (pos != ll::service::getServerNetworkHandler()->mClients->end()) {
+        return pos->second->mPrimaryRequest.get();
+    }
+    return std::nullopt;
 }
 
 NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
