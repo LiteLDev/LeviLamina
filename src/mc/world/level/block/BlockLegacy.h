@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/AttachmentType.h"
+#include "mc/world/level/block/BigDripleafTilt.h"
 #include "mc/world/level/block/states/BlockState.h"
 #include "mc/world/level/block/states/BlockStateInstance.h"
 
@@ -84,6 +86,11 @@ namespace mce { class Color; }
 // clang-format on
 
 class BlockLegacy {
+public:
+    template <class T>
+        requires(std::is_same_v<T, int> || std::is_same_v<T, Direction::Type> || std::is_same_v<T, AttachmentType> || std::is_same_v<T, bool> || std::is_same_v<T, BigDripleafTilt> || std::is_same_v<T, unsigned char> || std::is_same_v<T, unsigned short>)
+    MCAPI Block const* trySetState(const BlockState& state, T, int data);
+
 public:
     // BlockLegacy inner types declare
     // clang-format off
@@ -422,13 +429,11 @@ public:
 
     // vIndex: 4
     virtual ::HitResult
-    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    clip(::Block const&, ::BlockSource const&, ::BlockPos const&, ::Vec3 const&, ::Vec3 const&, ::ShapeType, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     // vIndex: 5
     virtual ::AABB
-    getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     // vIndex: 6
     virtual bool getCollisionShapeForCamera(
@@ -462,9 +467,12 @@ public:
     getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     // vIndex: 10
-    virtual ::AABB const&
-    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
-        const;
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::AABB& bufferAABB
+    ) const;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const&, ::AABB&) const;
@@ -726,9 +734,13 @@ public:
     spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
 
     // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    virtual ::Block const& getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     // vIndex: 93
     virtual int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
@@ -968,17 +980,22 @@ public:
 
     MCAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
-    MCAPI ::ResourceDrops
-    getResourceDrops(::Block const& block, ::Randomize& randomize, ::ResourceDropsContext const& resourceDropsContext)
-        const;
+    MCAPI ::ResourceDrops getResourceDrops(
+        ::Block const&                block,
+        ::Randomize&                  randomize,
+        ::ResourceDropsContext const& resourceDropsContext
+    ) const;
 
     MCAPI bool hasState(::BlockState const& stateType) const;
 
     MCAPI bool hasTag(::HashedString const& tag) const;
 
-    MCAPI bool
-    isValidSpawn(::BlockSource& region, ::Block const& state, ::BlockPos pos, ::br::spawn::EntityType const& entityType)
-        const;
+    MCAPI bool isValidSpawn(
+        ::BlockSource&                 region,
+        ::Block const&                 state,
+        ::BlockPos                     pos,
+        ::br::spawn::EntityType const& entityType
+    ) const;
 
     MCAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
@@ -1004,8 +1021,8 @@ public:
 
     MCAPI ::BlockLegacy& setIsHiddenInCommands(bool isHiddenInCommands);
 
-    MCAPI ::BlockLegacy&
-    setIsValidSpawn(bool (*predicate)(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&)
+    MCAPI ::BlockLegacy& setIsValidSpawn(
+        bool (*predicate)(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&)
     );
 
     MCAPI ::BlockLegacy& setLightBlock(::Brightness brightness);
@@ -1099,8 +1116,7 @@ public:
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
     MCAPI ::AABB
-    $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>)
-        const;
+    $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     MCAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
@@ -1129,9 +1145,12 @@ public:
     MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCFOLD ::AABB const&
-    $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB)
-        const;
+    MCFOLD ::AABB const& $getVisualShapeInWorld(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const&,
+        ::AABB& bufferAABB
+    ) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
 
@@ -1309,9 +1328,13 @@ public:
     MCFOLD void
     $spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
 
-    MCAPI ::Block const&
-    $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
-        const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
