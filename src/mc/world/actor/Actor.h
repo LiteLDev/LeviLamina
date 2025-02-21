@@ -151,6 +151,8 @@ public:
 
     LLNDAPI float evalMolang(std::string const& expression);
 
+    LLNDAPI const AABB& getAABB() const;
+
 public:
     // member variables
     // NOLINTBEGIN

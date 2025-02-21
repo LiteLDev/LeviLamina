@@ -22,27 +22,28 @@ void PlayerChangePermEvent::deserialize(CompoundTag const& nbt) {
 
 CommandPermissionLevel& PlayerChangePermEvent::newPerm() const { return mMewPerm; }
 
-LL_TYPE_INSTANCE_HOOK(
-    PlayerChangePermEventHook,
-    HookPriority::Normal,
-    Player,
-    &Player::setPermissions,
-    void,
-    CommandPermissionLevel perm
-) {
-    auto event = PlayerChangePermEvent{*this, perm};
-    EventBus::getInstance().publish(event);
-    if (event.isCancelled()) {
-        return;
-    }
-    origin(perm);
-}
-
-static std::unique_ptr<EmitterBase> emitterFactory();
-class PlayerChangePermEventEmitter : public Emitter<emitterFactory, PlayerChangePermEvent> {
-    memory::HookRegistrar<PlayerChangePermEventHook> hook;
-};
-
-static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerChangePermEventEmitter>(); }
+// TODO： fix this
+// LL_TYPE_INSTANCE_HOOK(
+//    PlayerChangePermEventHook,
+//    HookPriority::Normal,
+//    Player,
+//    &Player::setPermissions,
+//    void,
+//    CommandPermissionLevel perm
+//) {
+//    auto event = PlayerChangePermEvent{*this, perm};
+//    EventBus::getInstance().publish(event);
+//    if (event.isCancelled()) {
+//        return;
+//    }
+//    origin(perm);
+//}
+//
+// static std::unique_ptr<EmitterBase> emitterFactory();
+// class PlayerChangePermEventEmitter : public Emitter<emitterFactory, PlayerChangePermEvent> {
+//    memory::HookRegistrar<PlayerChangePermEventHook> hook;
+//};
+//
+// static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerChangePermEventEmitter>(); }
 
 } // namespace ll::event::inline player

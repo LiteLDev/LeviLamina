@@ -18,7 +18,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name) {
     return BlockLegacy::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
-        return block.getDefaultState();
+        return block.mDefaultState;
     });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, ushort legacyData) {
@@ -38,7 +38,7 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block
     }
     HashedString nameHash{name};
     if (!BlockTypeRegistry::isComplexAliasBlock(nameHash)) {
-        return blockLegacyPtr->getDefaultState();
+        return blockLegacyPtr->mDefaultState;
     }
     std::vector<BlockTypeRegistry::BlockComplexAliasBlockState> stateList;
     for (auto& [k, v] : states) {
@@ -55,7 +55,25 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block
         }
         stateList.emplace_back(stateNameHash, value);
     }
-    return BlockTypeRegistry::lookupByName(nameHash, stateList);
+    auto block =
+        BlockTypeRegistry::_lookupByNameImpl(nameHash, 0, BlockTypeRegistry::LookupByNameImplResolve::Block).mBlock;
+    if (block) {
+        for (auto& state : stateList) {
+            if (block) {
+                auto legacyBlock = block->mLegacyBlock.get();
+                if (!legacyBlock) {
+                    return std::nullopt;
+                }
+                auto blockState = legacyBlock->getBlockState(state.stateName);
+                if (!blockState) {
+                    block = nullptr;
+                    break;
+                }
+                block = legacyBlock->trySetState(*blockState, state.value, block->mData);
+            }
+        }
+    }
+    return block;
 }
 optional_ref<Block const> Block::tryGetFromRegistry(class CompoundTag const& nbt) {
     return BlockSerializationUtils::tryGetBlockFromNBT(nbt, nullptr).second;

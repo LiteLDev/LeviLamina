@@ -66,6 +66,8 @@ public:
 
     LLAPI explicit operator BoundingBox() const;
 
+    LLAPI bool intersects(::AABB const& c) const;
+
 public:
     // member functions
     // NOLINTBEGIN

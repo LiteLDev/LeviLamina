@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/world/actor/player/PlayerInventory.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -11,6 +12,7 @@
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/server/ServerPlayer.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
@@ -54,13 +56,15 @@ public:
 
     [[nodiscard]] inline bool simulateSneaking() {
         setSneaking(true);
-        return isSneaking();
+        return SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
     }
     [[nodiscard]] inline bool simulateStopSneaking() {
         setSneaking(false);
-        return !isSneaking();
+        return !SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
     }
-    inline bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); }
+    inline bool simulateUseItem() { return simulateUseItemInSlot(mInventory->mUnkb0b19d.as<int>()); }
+
+    LLAPI bool simulateDestroyBlock(BlockPos const&, ScriptModuleMinecraft::ScriptFacing);
 
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
 
@@ -143,8 +147,8 @@ public:
 
     MCAPI void _addMoveComponent();
 
-    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult _createNavigationResult(::NavigationComponent* navigation
-    ) const;
+    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
+    _createNavigationResult(::NavigationComponent* navigation) const;
 
     MCFOLD ::BlockSource& _getRegion();
 

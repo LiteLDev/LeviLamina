@@ -23,7 +23,6 @@ public:
     }
 
     HitResult(::HitResult&&)      = default;
-    HitResult(::HitResult const&) = default;
 
 public:
     // member variables

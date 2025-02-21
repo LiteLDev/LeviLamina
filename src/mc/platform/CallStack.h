@@ -39,8 +39,8 @@ public:
 
     public:
         // prevent constructor by default
-        Context& operator=(Context const&);
-        Context(Context const&);
+        Context& operator=(Context const&) = default;
+        Context(Context const&)            = default;
 
     public:
         // member functions
@@ -65,8 +65,8 @@ public:
 
     public:
         // prevent constructor by default
-        FrameWithContext& operator=(FrameWithContext const&);
-        FrameWithContext(FrameWithContext const&);
+        FrameWithContext& operator=(FrameWithContext const&) = default;
+        FrameWithContext(FrameWithContext const&)            = default;
 
     public:
         // member functions

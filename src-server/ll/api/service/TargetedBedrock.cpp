@@ -4,9 +4,8 @@
 
 #include "mc/common/IMinecraftApp.h"
 #include "mc/deps/raknet/RakPeer.h"
-#include "mc/deps/raknet/RakPeerInterface.h"
+#include "mc/gameplayhandlers/ServerInstanceEventHandler.h"
 #include "mc/network/NetworkSystem.h"
-#include "mc/network/RakNetConnector.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/resources/ResourcePackRepository.h"
 #include "mc/server/DedicatedServer.h"
@@ -49,7 +48,7 @@ LL_TYPE_INSTANCE_HOOK(
 // Minecraft
 static std::atomic<Minecraft*> minecraft;
 
-LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::initAsDedicatedServer, void) {
+LL_TYPE_INSTANCE_HOOK(MinecraftInit, HookPriority::High, Minecraft, &Minecraft::init, void) {
     minecraft = this;
     origin();
 }
@@ -112,7 +111,7 @@ LL_TYPE_INSTANCE_HOOK(
     ServerLevelInit,
     HookPriority::High,
     ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
     void,
     ServerInstance& ins
 ) {

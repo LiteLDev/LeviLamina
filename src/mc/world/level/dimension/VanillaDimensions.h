@@ -16,6 +16,8 @@ class Vec3;
 
 class VanillaDimensions {
 public:
+    LLNDAPI static std::string toString(DimensionType const& dimension);
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool convertPointBetweenDimensions(
