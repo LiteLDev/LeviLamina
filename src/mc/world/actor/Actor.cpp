@@ -185,6 +185,4 @@ float Actor::evalMolang(std::string const& expression) {
     return 0.0f;
 }
 
-const AABB& Actor::getAABB() const {
-    return mBuiltInComponents->mUnk9f8195.as<gsl::not_null<AABBShapeComponent*>>()->mUnk9bd6b8.as<AABB>();
-}
+const AABB& Actor::getAABB() const { return (*mBuiltInComponents->mAABBShapeComponent)->mAABB; }

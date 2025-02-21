@@ -19,8 +19,8 @@ class LayeredAbilities {
 public:
     LLNDAPI Ability& getAbility(::AbilitiesIndex val);
     LLNDAPI Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
-    LLAPI void       setAbility(::AbilitiesIndex val, float value);
-    LLAPI void       setAbility(::AbilitiesIndex val, bool value);
+    LLAPI bool       setAbility(::AbilitiesIndex val, float value);
+    LLAPI bool       setAbility(::AbilitiesIndex val, bool value);
 
 public:
     // member variables

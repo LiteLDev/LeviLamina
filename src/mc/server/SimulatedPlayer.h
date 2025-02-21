@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/actor/player/PlayerInventory.h"
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
@@ -62,7 +61,7 @@ public:
         setSneaking(false);
         return !SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
     }
-    inline bool simulateUseItem() { return simulateUseItemInSlot(mInventory->mUnkb0b19d.as<int>()); }
+    inline bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); }
 
     LLAPI bool simulateDestroyBlock(BlockPos const&, ScriptModuleMinecraft::ScriptFacing);
 
@@ -147,8 +146,8 @@ public:
 
     MCAPI void _addMoveComponent();
 
-    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
-    _createNavigationResult(::NavigationComponent* navigation) const;
+    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult _createNavigationResult(::NavigationComponent* navigation
+    ) const;
 
     MCFOLD ::BlockSource& _getRegion();
 

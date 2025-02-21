@@ -18,6 +18,7 @@
 #include "mc/world/Minecraft.h"
 #include "mc/world/actor/player/LayeredAbilities.h"
 #include "mc/world/actor/player/PermissionsHandler.h"
+#include "mc/world/actor/player/PlayerInventory.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
 #include "mc/world/level/storage/AdventureSettings.h"
 
@@ -44,10 +45,12 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
 NetworkIdentifier const& Player::getNetworkIdentifier() const { return getUserEntityIdentifier().mNetworkId; }
 
 optional_ref<Certificate const> Player::getCertificate() const {
-    return getUserEntityIdentifier().mGameServerToken.mUnkffc19b.as<std::unique_ptr<Certificate>>().get();
+    return getUserEntityIdentifier().mGameServerToken.mCertificate.get();
 }
 
 SubClientId const& Player::getClientSubId() const { return getUserEntityIdentifier().mClientSubId; }
+
+int Player::getSelectedItemSlot() const { return mInventory->mSelected; }
 
 mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mClientUUID; }
 
@@ -92,7 +95,7 @@ void Player::sendMessage(std::string_view msg) const { TextPacket::createRawMess
 
 LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     auto& abilities = getAbilities();
-    auto  flying    = abilities.getAbility(AbilitiesIndex::Flying).mValue->mUnk45a32a.as<bool>();
+    auto  flying    = abilities.getAbility(AbilitiesIndex::Flying).mValue->mBoolVal;
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {
         abilities.setAbility(AbilitiesIndex::MayFly, value);
     }
@@ -100,14 +103,14 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
         abilities.setAbility(AbilitiesIndex::Flying, false);
     }
     abilities.setAbility(index, value);
-    auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).mValue->mUnk45a32a.as<bool>();
-    auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).mValue->mUnk45a32a.as<bool>();
+    auto mayfly = abilities.getAbility(AbilitiesIndex::MayFly).mValue->mBoolVal;
+    auto noclip = abilities.getAbility(AbilitiesIndex::NoClip).mValue->mBoolVal;
     SynchedActorDataAccess::setActorFlag(getEntityContext(), ActorFlags::Canfly, mayfly || noclip);
     if (index == AbilitiesIndex::NoClip) {
         abilities.setAbility(AbilitiesIndex::Flying, value);
     }
-    flying = abilities.getAbility(AbilitiesIndex::Flying).mValue->mUnk45a32a.as<bool>();
-    abilities.getAbility(AbilitiesLayer::Base, AbilitiesIndex::Flying).mValue->mUnk45a32a.as<bool>() = flying;
+    flying = abilities.getAbility(AbilitiesIndex::Flying).mValue->mBoolVal;
+    abilities.getAbility(AbilitiesLayer::Base, AbilitiesIndex::Flying).mValue->mBoolVal = flying;
     UpdateAbilitiesPacket{getOrCreateUniqueID(), abilities}.sendTo(*this);
     abilities.setAbility(AbilitiesIndex::Flying, flying);
     UpdateAdventureSettingsPacket{}.sendTo(*this);

@@ -219,6 +219,8 @@ public:
 
     LLNDAPI SubClientId const& getClientSubId() const;
 
+    LLNDAPI int getSelectedItemSlot() const;
+
     /**
      * @brief Get the player's uuid
      * @return Player's uuid

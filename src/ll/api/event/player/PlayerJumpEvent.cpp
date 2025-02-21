@@ -79,10 +79,10 @@ LL_STATIC_HOOK(
     if (auto level = ll::service::getLevel(); level) {
         if (Actor* actor = Actor::tryGetFromEntity(strictEntityContext, *level->getEntityRegistry(), false); actor) {
             if (actor->isPlayer()) {
-                auto& inputstate = input.mUnk705c07.as<MoveInputState>();
-                auto& pkt        = serverPlayerCurrentMovementComponent.mUnkc49fdc.as<PlayerAuthInputPacket>();
+                auto& inputstate = *input.mInputState;
+                auto& pkt        = *serverPlayerCurrentMovementComponent.mCurrentUpdate;
                 if (pkt.mInputData.get()[(size_t)::PlayerAuthInputPacket::InputData::StartJumping]
-                    && inputstate.mUnk4c2da7.as<bool>() && input.mUnkdc47ce.as<bool>()) {
+                    && inputstate.mUnk4c2da7.as<bool>() && input.mJumping) {
                     EventBus::getInstance().publish(PlayerJumpEvent(static_cast<ServerPlayer&>(*actor)));
                 }
             }

@@ -19,6 +19,9 @@ public:
     // NOLINTEND
 
 public:
+    CommandVersion(int from = 0, int to = CurrentVersion()) : mFrom(from), mTo(to) {}
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::CurrentCmdVersion const getVersionMapping(::SemVersion const& engineVersion);
