@@ -132,7 +132,7 @@ class HitResult Actor::traceRay(
             rayDir,
             tMax,
             origin,
-            mBuiltInComponents->mUnk9f8195.as<gsl::not_null<AABBShapeComponent*>>()->mUnk9bd6b8.as<AABB>(),
+            getAABB(),
             (Actor*)(this),
             (Player*)(this),
             resDistance,
@@ -180,4 +180,8 @@ void Actor::setName(std::string const& name) {
 float Actor::evalMolang(std::string const& expression) {
     return ExpressionNode(expression, MolangVersion::Latest, {{HashedString{"default"}}})
         .evalAsFloat(getAnimationComponent().mUnk323831.as<RenderParams>());
+}
+
+const AABB& Actor::getAABB() const {
+    return mBuiltInComponents->mUnk9f8195.as<gsl::not_null<AABBShapeComponent*>>()->mUnk9bd6b8.as<AABB>();
 }

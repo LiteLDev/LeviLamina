@@ -32,7 +32,7 @@ BlockSource::getEntities(AABB const& range, float extendDistance, ActorType acto
             if (chunk == nullptr) {
                 continue;
             }
-            for (auto& weakEntityRef : chunk->getChunkEntities()) {
+            for (auto& weakEntityRef : chunk->mEntities.get()) {
                 auto actor = weakEntityRef.tryUnwrap();
                 if (actor && (actorType == ActorType::TypeMask || actor->isType(actorType) != ignoreType)
                     && range.intersects(actor->getAABB())) {
@@ -59,7 +59,7 @@ optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
         return nullptr;
     }
     actor->_setLevelPtr(&level);
-    actor->setDimension(getDimension().getWeakRef());
+    actor->setDimension(mDimension);
     level.addEntity(*this, std::move(actorOwnerPtr));
     actor->refresh();
     return actor;
