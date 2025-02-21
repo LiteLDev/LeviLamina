@@ -37,12 +37,12 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         if (config.playerCommand && !impl->playerCommand) {
             impl->playerCommand = bus.emplaceListener<ExecutingCommandEvent>([](ExecutingCommandEvent& ev) {
                 auto& context = ev.commandContext();
-                if (context.getCommandOrigin().getOriginType() != CommandOriginType::Player) {
+                if (context.mOrigin->getOriginType() != CommandOriginType::Player) {
                     return;
                 }
                 getLogger().info(
                     "[PlayerCmd] <{}> {}",
-                    ((Player*)(context.getCommandOrigin().getEntity()))->getRealName(),
+                    ((Player*)(context.mOrigin->getEntity()))->getRealName(),
                     context.mCommand
                 );
             });
