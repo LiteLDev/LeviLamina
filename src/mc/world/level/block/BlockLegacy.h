@@ -89,7 +89,7 @@ class BlockLegacy {
 public:
     template <class T>
         requires(std::is_same_v<T, int> || std::is_same_v<T, Direction::Type> || std::is_same_v<T, AttachmentType> || std::is_same_v<T, bool> || std::is_same_v<T, BigDripleafTilt> || std::is_same_v<T, unsigned char> || std::is_same_v<T, unsigned short>)
-    MCAPI Block const* trySetState(const BlockState& state, T, int data);
+    MCAPI Block const* trySetState(BlockState const& state, T, uint16_t data) const;
 
 public:
     // BlockLegacy inner types declare
