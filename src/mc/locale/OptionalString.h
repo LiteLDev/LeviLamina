@@ -6,15 +6,9 @@ struct OptionalString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4561b1;
-    ::ll::UntypedStorage<8, 32> mUnkdfc92f;
+    ::ll::TypedStorage<1, 1, bool>           valid;
+    ::ll::TypedStorage<8, 32, ::std::string> string;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OptionalString& operator=(OptionalString const&);
-    OptionalString(OptionalString const&);
-    OptionalString();
 
 public:
     // member functions

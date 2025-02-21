@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/Subject.h"
 #include "mc/locale/I18n.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@ class PackAccessStrategy;
 class PackManifest;
 class ResourceLoadManager;
 class ResourcePackManager;
+namespace Bedrock::Threading { class Mutex; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -30,40 +32,33 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkc50413;
-        ::ll::UntypedStorage<8, 16> mUnk264029;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Localization>> mCurrentLanguage;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Localization>> mCurrentPackMetaLanguage;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CurrentLanguageInfo& operator=(CurrentLanguageInfo const&);
-        CurrentLanguageInfo(CurrentLanguageInfo const&);
-        CurrentLanguageInfo();
     };
+
+    using LockedCurrentLanguageInfo =
+        ::Bedrock::Threading::SharedLockbox<::I18nImpl::CurrentLanguageInfo, ::std::shared_mutex>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk9376ff;
-    ::ll::UntypedStorage<8, 40>  mUnk1db5c2;
-    ::ll::UntypedStorage<8, 24>  mUnk850180;
-    ::ll::UntypedStorage<8, 24>  mUnkac16d9;
-    ::ll::UntypedStorage<8, 64>  mUnk8ed9f6;
-    ::ll::UntypedStorage<8, 24>  mUnkadbc53;
-    ::ll::UntypedStorage<8, 24>  mUnk2cf824;
-    ::ll::UntypedStorage<8, 64>  mUnke0b471;
-    ::ll::UntypedStorage<1, 1>   mUnk9ee6e7;
-    ::ll::UntypedStorage<8, 8>   mUnk64d343;
-    ::ll::UntypedStorage<8, 8>   mUnkea19e8;
-    ::ll::UntypedStorage<8, 24>  mUnk30b5e0;
-    ::ll::UntypedStorage<8, 8>   mUnkb7bd07;
-    ::ll::UntypedStorage<8, 104> mUnk23e1f9;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Localization const>> mEmptyLanguage;
+    ::ll::TypedStorage<8, 40, ::Bedrock::Threading::SharedLockbox<::I18nImpl::CurrentLanguageInfo, ::std::shared_mutex>>
+                                                                                                 mCurrentLanguageInfo;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Localization>>>                  mLanguages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                      mLanguageCodes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>>                mLanguageNames;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Localization>>>                  mPackKeywordLanguages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>                                mPackReservedKeys;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::vector<::std::string>>> mFormatDictionary;
+    ::ll::TypedStorage<1, 1, bool>                                              mLanguageSupportsHypenSplitting;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager*>                            mResourcePackManager;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                               mAdditionalTranslationsBackupMutex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Localization>>> mAdditionalTranslationsBackup;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                               mLocalizationMutex;
+    ::ll::TypedStorage<8, 104, ::Core::Subject<::I18nObserver, ::Bedrock::Threading::Mutex>> mSubject;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    I18nImpl& operator=(I18nImpl const&);
-    I18nImpl(I18nImpl const&);
 
 public:
     // virtual functions
