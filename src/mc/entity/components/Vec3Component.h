@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct Vec3Component {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk5ee234;
+    ::ll::TypedStorage<4, 12, ::Vec3> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Vec3Component& operator=(Vec3Component const&);
-    Vec3Component(Vec3Component const&);
-    Vec3Component();
 };

@@ -6,15 +6,9 @@ class AmbientSoundComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk498ea8;
-    ::ll::UntypedStorage<4, 4> mUnkc9a3b7;
-    ::ll::UntypedStorage<4, 4> mUnkc381c9;
-    ::ll::UntypedStorage<4, 4> mUnk920583;
+    ::ll::TypedStorage<1, 1, bool> mNeedsInitialization;
+    ::ll::TypedStorage<4, 4, int>  mMinimumTimeTicks;
+    ::ll::TypedStorage<4, 4, int>  mMaxAdditionalTimeTicks;
+    ::ll::TypedStorage<4, 4, int>  mRemainingTimeTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AmbientSoundComponent& operator=(AmbientSoundComponent const&);
-    AmbientSoundComponent(AmbientSoundComponent const&);
-    AmbientSoundComponent();
 };

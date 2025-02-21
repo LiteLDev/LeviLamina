@@ -13,6 +13,7 @@ class ItemStack;
 class Player;
 class ProjectileItemComponent;
 class SemVersion;
+namespace Bedrock::PubSub { class Subscription; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,21 +21,15 @@ class ThrowableItemComponent : public ::NetworkedItemComponent<::ThrowableItemCo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkc1676f;
-    ::ll::UntypedStorage<4, 4>  mUnk1f0ce3;
-    ::ll::UntypedStorage<4, 4>  mUnk23ffa3;
-    ::ll::UntypedStorage<4, 4>  mUnkc7e551;
-    ::ll::UntypedStorage<4, 4>  mUnke21ec1;
-    ::ll::UntypedStorage<1, 1>  mUnkebd949;
-    ::ll::UntypedStorage<1, 1>  mUnkc139a5;
-    ::ll::UntypedStorage<8, 16> mUnkacf3b1;
+    ::ll::TypedStorage<1, 1, bool>                             mDoSwing;
+    ::ll::TypedStorage<4, 4, float>                            mMinDrawDuration;
+    ::ll::TypedStorage<4, 4, float>                            mDrawDuration;
+    ::ll::TypedStorage<4, 4, float>                            mLaunchPowerScale;
+    ::ll::TypedStorage<4, 4, float>                            mMaxLaunchPower;
+    ::ll::TypedStorage<1, 1, bool>                             mScalePowerByDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>                             mTriggerActorUseItemEvent;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ThrowableItemComponent& operator=(ThrowableItemComponent const&);
-    ThrowableItemComponent(ThrowableItemComponent const&);
-    ThrowableItemComponent();
 
 public:
     // virtual functions

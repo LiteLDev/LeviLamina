@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Tick;
+// clang-format on
+
 struct AttackCooldownComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfc4cf2;
-    ::ll::UntypedStorage<1, 1> mUnk408e46;
+    ::ll::TypedStorage<8, 8, ::Tick> mCompleteTick;
+    ::ll::TypedStorage<1, 1, bool>   mHasExecuted;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttackCooldownComponent& operator=(AttackCooldownComponent const&);
-    AttackCooldownComponent(AttackCooldownComponent const&);
-    AttackCooldownComponent();
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -17,14 +18,8 @@ class UseAnimationItemComponent : public ::NetworkedItemComponent<::UseAnimation
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5efada;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation> mUseAnimation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UseAnimationItemComponent& operator=(UseAnimationItemComponent const&);
-    UseAnimationItemComponent(UseAnimationItemComponent const&);
-    UseAnimationItemComponent();
 
 public:
     // virtual functions

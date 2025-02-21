@@ -20,14 +20,8 @@ class InteractComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk206731;
+    ::ll::TypedStorage<2, 2, short> mCooldownCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InteractComponent& operator=(InteractComponent const&);
-    InteractComponent(InteractComponent const&);
-    InteractComponent();
 
 public:
     // member functions

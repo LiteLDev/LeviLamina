@@ -14,14 +14,8 @@ class TransformationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8b34f8;
+    ::ll::TypedStorage<4, 4, int> mDelayTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TransformationComponent& operator=(TransformationComponent const&);
-    TransformationComponent(TransformationComponent const&);
-    TransformationComponent();
 
 public:
     // member functions

@@ -2,29 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/Difficulty.h"
+
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Mob;
 class Path;
+struct ActorUniqueID;
 // clang-format on
 
 class BreakDoorAnnotationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk8b315f;
-    ::ll::UntypedStorage<4, 4>  mUnk39c5af;
-    ::ll::UntypedStorage<8, 8>  mUnk42e51a;
-    ::ll::UntypedStorage<4, 4>  mUnke7e61a;
-    ::ll::UntypedStorage<4, 16> mUnkff469b;
-    ::ll::UntypedStorage<8, 8>  mUnk76972b;
+    ::ll::TypedStorage<4, 4, int>                               mBreakTicks;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty> mMinDifficulty;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                   mTargetID;
+    ::ll::TypedStorage<4, 4, int>                               mBreakingTime;
+    ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>>      mObstructionPos;
+    ::ll::TypedStorage<8, 8, uint64>                            mLastPathIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreakDoorAnnotationComponent& operator=(BreakDoorAnnotationComponent const&);
-    BreakDoorAnnotationComponent(BreakDoorAnnotationComponent const&);
-    BreakDoorAnnotationComponent();
 
 public:
     // member functions

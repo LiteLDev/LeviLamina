@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorDefinitionIdentifier;
+// clang-format on
+
 struct ActorDefinitionIdentifierComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnk5cd7ba;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mIdentifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorDefinitionIdentifierComponent& operator=(ActorDefinitionIdentifierComponent const&);
-    ActorDefinitionIdentifierComponent(ActorDefinitionIdentifierComponent const&);
-    ActorDefinitionIdentifierComponent();
 
 public:
     // member functions

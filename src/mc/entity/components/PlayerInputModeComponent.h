@@ -2,17 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/InputMode.h"
+#include "mc/input/ClientPlayMode.h"
+
 struct PlayerInputModeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8ff5d6;
-    ::ll::UntypedStorage<4, 4> mUnk9e57d6;
+    ::ll::TypedStorage<4, 4, ::InputMode>      mInputMode;
+    ::ll::TypedStorage<4, 4, ::ClientPlayMode> mPlayMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInputModeComponent& operator=(PlayerInputModeComponent const&);
-    PlayerInputModeComponent(PlayerInputModeComponent const&);
-    PlayerInputModeComponent();
 };

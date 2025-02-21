@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/LoadingState.h"
+
 class LoadingStateComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc78660;
-    ::ll::UntypedStorage<4, 4> mUnk2151c6;
+    ::ll::TypedStorage<4, 4, ::LoadingState> mLoadingState;
+    ::ll::TypedStorage<4, 4, float>          mLoadingProgress;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoadingStateComponent& operator=(LoadingStateComponent const&);
-    LoadingStateComponent(LoadingStateComponent const&);
-    LoadingStateComponent();
 };

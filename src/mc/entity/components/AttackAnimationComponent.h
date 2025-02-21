@@ -6,12 +6,6 @@ struct AttackAnimationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc82487;
+    ::ll::TypedStorage<4, 4, int> mAttackAnimationTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AttackAnimationComponent& operator=(AttackAnimationComponent const&);
-    AttackAnimationComponent(AttackAnimationComponent const&);
-    AttackAnimationComponent();
 };

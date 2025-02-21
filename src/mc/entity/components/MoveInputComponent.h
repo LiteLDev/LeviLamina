@@ -2,37 +2,43 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+class Vec3;
+struct MoveInputState;
+// clang-format on
+
 struct MoveInputComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 40> mUnk705c07;
-    ::ll::UntypedStorage<4, 40> mUnkda2abf;
-    ::ll::UntypedStorage<8, 8>  mUnk8b209e;
-    ::ll::UntypedStorage<4, 8>  mUnkfa4f8b;
-    ::ll::UntypedStorage<4, 8>  mUnk65b877;
-    ::ll::UntypedStorage<4, 8>  mUnka9d040;
-    ::ll::UntypedStorage<4, 12> mUnkb2a138;
-    ::ll::UntypedStorage<4, 12> mUnk301a3a;
-    ::ll::UntypedStorage<4, 12> mUnk2e591f;
-    ::ll::UntypedStorage<1, 1>  mUnka8b261;
-    ::ll::UntypedStorage<1, 1>  mUnk5642ae;
-    ::ll::UntypedStorage<1, 1>  mUnk45b91a;
-    ::ll::UntypedStorage<1, 1>  mUnkfe8eb3;
-    ::ll::UntypedStorage<1, 1>  mUnkdc47ce;
-    ::ll::UntypedStorage<1, 1>  mUnkb9161f;
-    ::ll::UntypedStorage<1, 1>  mUnkfcfe23;
-    ::ll::UntypedStorage<1, 1>  mUnkc77914;
-    ::ll::UntypedStorage<1, 1>  mUnk7b767d;
-    ::ll::UntypedStorage<1, 1>  mUnk548127;
-    ::ll::UntypedStorage<1, 1>  mUnka9ad8e;
-    ::ll::UntypedStorage<1, 2>  mUnk3e7ce7;
+    ::ll::TypedStorage<4, 40, ::MoveInputState>                       mInputState;
+    ::ll::TypedStorage<4, 40, ::MoveInputState>                       mRawInputState;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mHoldAutoJumpInWaterUntil;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                  mMove;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                  mLookDelta;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                  mInteractDir;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                 mDisplacement;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                 mDisplacementDelta;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                 mCameraOrientation;
+    ::ll::TypedStorage<1, 1, bool>                                    mSneaking;
+    ::ll::TypedStorage<1, 1, bool>                                    mSprinting;
+    ::ll::TypedStorage<1, 1, bool>                                    mWantUp;
+    ::ll::TypedStorage<1, 1, bool>                                    mWantDown;
+    ::ll::TypedStorage<1, 1, bool>                                    mJumping;
+    ::ll::TypedStorage<1, 1, bool>                                    mAutoJumpingInWater;
+    ::ll::TypedStorage<1, 1, bool>                                    mMoveInputStateLocked;
+    ::ll::TypedStorage<1, 1, bool>                                    mPersistSneak;
+    ::ll::TypedStorage<1, 1, bool>                                    mAutoJumpEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsCameraRelativeMovementEnabled;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsRotControlledByMoveDirection;
+    ::ll::TypedStorage<1, 2, ::std::array<bool, 2>>                   mIsPaddling;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     MoveInputComponent(MoveInputComponent const&);
-    MoveInputComponent();
 
 public:
     // member functions

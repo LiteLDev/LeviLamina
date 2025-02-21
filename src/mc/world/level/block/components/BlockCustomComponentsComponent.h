@@ -2,10 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockLegacy;
+struct BlockCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
 // clang-format on
 
 class BlockCustomComponentsComponent {
@@ -34,18 +39,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk9c24ff;
-    ::ll::UntypedStorage<1, 1>  mUnk3e06e2;
-    ::ll::UntypedStorage<1, 1>  mUnkffbf10;
-    ::ll::UntypedStorage<8, 16> mUnkfa138d;
-    ::ll::UntypedStorage<8, 24> mUnkaf5f13;
+    ::ll::TypedStorage<1, 1, bool> mIsCustomComponentsV1;
+    ::ll::TypedStorage<1, 1, bool> mHasPlayerInteractEvent;
+    ::ll::TypedStorage<1, 1, bool> mHasPlayerPlacingEvent;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry>> mScriptRegistry;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockCustomComponentData>> mCustomComponentData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCustomComponentsComponent& operator=(BlockCustomComponentsComponent const&);
-    BlockCustomComponentsComponent(BlockCustomComponentsComponent const&);
-    BlockCustomComponentsComponent();
 
 public:
     // member functions

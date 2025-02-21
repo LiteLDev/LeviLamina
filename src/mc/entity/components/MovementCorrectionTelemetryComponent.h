@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorType.h"
+
 struct MovementCorrectionTelemetryComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk20700c;
-    ::ll::UntypedStorage<8, 24> mUnk83a3ec;
-    ::ll::UntypedStorage<4, 4>  mUnk982e44;
+    ::ll::TypedStorage<4, 4, ::ActorType>           mActorType;
+    ::ll::TypedStorage<8, 24, ::std::vector<float>> mDivergences;
+    ::ll::TypedStorage<4, 4, int>                   mTickCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementCorrectionTelemetryComponent& operator=(MovementCorrectionTelemetryComponent const&);
-    MovementCorrectionTelemetryComponent(MovementCorrectionTelemetryComponent const&);
-    MovementCorrectionTelemetryComponent();
 };

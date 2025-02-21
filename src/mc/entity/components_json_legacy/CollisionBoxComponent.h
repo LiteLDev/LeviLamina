@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 class CollisionBoxComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk518745;
+    ::ll::TypedStorage<4, 8, ::Vec2> mBBDim;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CollisionBoxComponent& operator=(CollisionBoxComponent const&);
-    CollisionBoxComponent(CollisionBoxComponent const&);
-    CollisionBoxComponent();
 };

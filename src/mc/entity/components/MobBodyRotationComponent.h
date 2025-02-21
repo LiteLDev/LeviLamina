@@ -6,13 +6,7 @@ struct MobBodyRotationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkdb6ed3;
-    ::ll::UntypedStorage<4, 4> mUnk353ea1;
+    ::ll::TypedStorage<4, 4, float> mYBodyRot;
+    ::ll::TypedStorage<4, 4, float> mYBodyRotO;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobBodyRotationComponent& operator=(MobBodyRotationComponent const&);
-    MobBodyRotationComponent(MobBodyRotationComponent const&);
-    MobBodyRotationComponent();
 };

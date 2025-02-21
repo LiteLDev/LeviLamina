@@ -6,12 +6,6 @@ class LoadedChunksComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk34296f;
+    ::ll::TypedStorage<4, 4, int> mLoadedChunksCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoadedChunksComponent& operator=(LoadedChunksComponent const&);
-    LoadedChunksComponent(LoadedChunksComponent const&);
-    LoadedChunksComponent();
 };

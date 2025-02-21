@@ -16,6 +16,7 @@ class FrameUpdateContextBase;
 class IContainerManager;
 class InventoryTransaction;
 class ItemStack;
+class LocalPlayer;
 class PlayerEventCoordinator;
 class Vec2;
 class Vec3;
@@ -27,19 +28,13 @@ class RemotePlayer : public ::Player, public ::LocalPlayer::RegionListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkca87c8;
-    ::ll::UntypedStorage<8, 16> mUnka1e2fb;
-    ::ll::UntypedStorage<8, 32> mUnk58ac1b;
-    ::ll::UntypedStorage<4, 4>  mUnk79732d;
-    ::ll::UntypedStorage<1, 1>  mUnkfb36e4;
-    ::ll::UntypedStorage<1, 1>  mUnk778702;
+    ::ll::TypedStorage<8, 8, ::LocalPlayer*>           mLocalPlayer;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>> mExistenceTracker;
+    ::ll::TypedStorage<8, 32, ::std::string>           mQueuedEmote;
+    ::ll::TypedStorage<4, 4, int>                      mEmoteQueuedTicks;
+    ::ll::TypedStorage<1, 1, bool>                     mTicked;
+    ::ll::TypedStorage<1, 1, bool>                     mQueuedEmotePlayChatMessage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemotePlayer& operator=(RemotePlayer const&);
-    RemotePlayer(RemotePlayer const&);
-    RemotePlayer();
 
 public:
     // virtual functions

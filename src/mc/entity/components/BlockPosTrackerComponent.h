@@ -2,20 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+// clang-format on
+
 struct BlockPosTrackerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3cda05;
-    ::ll::UntypedStorage<4, 12> mUnk2f8bc4;
-    ::ll::UntypedStorage<8, 8>  mUnk2d0026;
-    ::ll::UntypedStorage<4, 12> mUnk916095;
-    ::ll::UntypedStorage<1, 1>  mUnk169778;
+    ::ll::TypedStorage<1, 1, bool>           mPreviousOnGround;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mPreviousBlockPos;
+    ::ll::TypedStorage<8, 8, ::Block const*> mCurrentBlock;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mCurrentBlockPos;
+    ::ll::TypedStorage<1, 1, bool>           mShouldTriggerOnStandOn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPosTrackerComponent& operator=(BlockPosTrackerComponent const&);
-    BlockPosTrackerComponent(BlockPosTrackerComponent const&);
-    BlockPosTrackerComponent();
 };

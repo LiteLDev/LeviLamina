@@ -15,17 +15,15 @@ class SaveContext;
 
 class FillingContainer : public ::Container {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkcb7e75;
-    ::ll::UntypedStorage<8, 8>  mUnk3a7f59;
-    // NOLINTEND
+    // FillingContainer inner types define
+    using ItemList = ::std::vector<::ItemStack>;
 
 public:
-    // prevent constructor by default
-    FillingContainer& operator=(FillingContainer const&);
-    FillingContainer(FillingContainer const&);
-    FillingContainer();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
+    ::ll::TypedStorage<8, 8, ::Player*>                   mPlayer;
+    // NOLINTEND
 
 public:
     // virtual functions

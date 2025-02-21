@@ -18,21 +18,15 @@ class BurstReactionComponent : public ::LabTableReactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkb70d1c;
-    ::ll::UntypedStorage<8, 48> mUnka64ca9;
-    ::ll::UntypedStorage<4, 12> mUnk8c8eff;
-    ::ll::UntypedStorage<4, 12> mUnk84f5c1;
-    ::ll::UntypedStorage<4, 4>  mUnkc46d85;
-    ::ll::UntypedStorage<4, 4>  mUnkad6848;
-    ::ll::UntypedStorage<4, 4>  mUnk7bb8bc;
-    ::ll::UntypedStorage<1, 1>  mUnka41855;
+    ::ll::TypedStorage<4, 4, ::ParticleType>  mParticleType;
+    ::ll::TypedStorage<8, 48, ::HashedString> mNewParticleType;
+    ::ll::TypedStorage<4, 12, ::Vec3>         mDims;
+    ::ll::TypedStorage<4, 12, ::Vec3>         mDirRange;
+    ::ll::TypedStorage<4, 4, int>             mCount;
+    ::ll::TypedStorage<4, 4, int>             mDataMin;
+    ::ll::TypedStorage<4, 4, int>             mDataMax;
+    ::ll::TypedStorage<1, 1, bool>            mDirOneWay;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BurstReactionComponent& operator=(BurstReactionComponent const&);
-    BurstReactionComponent(BurstReactionComponent const&);
-    BurstReactionComponent();
 
 public:
     // virtual functions

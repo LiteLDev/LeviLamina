@@ -2,21 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/world/level/block/PortalAxis.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class Vec3;
+// clang-format on
+
 struct DimensionTransitionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk36982a;
-    ::ll::UntypedStorage<4, 4>  mUnk4e8a80;
-    ::ll::UntypedStorage<4, 4>  mUnkdf9be8;
-    ::ll::UntypedStorage<4, 16> mUnk60be73;
+    ::ll::TypedStorage<4, 12, ::Vec3>                  mPortalEntrancePosition;
+    ::ll::TypedStorage<4, 4, ::DimensionType>          mPortalEntranceDimension;
+    ::ll::TypedStorage<4, 4, ::PortalAxis>             mPortalEntranceAxis;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mExisitingTargetPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DimensionTransitionComponent& operator=(DimensionTransitionComponent const&);
-    DimensionTransitionComponent(DimensionTransitionComponent const&);
-    DimensionTransitionComponent();
 
 public:
     // static variables

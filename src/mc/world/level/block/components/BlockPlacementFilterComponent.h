@@ -6,20 +6,15 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+struct BlockPlacementCondition;
 // clang-format on
 
 struct BlockPlacementFilterComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3b53af;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPlacementCondition>> conditions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPlacementFilterComponent& operator=(BlockPlacementFilterComponent const&);
-    BlockPlacementFilterComponent(BlockPlacementFilterComponent const&);
-    BlockPlacementFilterComponent();
 
 public:
     // member functions

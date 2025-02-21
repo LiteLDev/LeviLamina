@@ -2,19 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ExpressionNode;
+class RenderParams;
+// clang-format on
+
 struct HeartbeatServerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkcfe0d9;
-    ::ll::UntypedStorage<8, 496> mUnk92c81f;
+    ::ll::TypedStorage<8, 216, ::ExpressionNode> mHeartRateExpression;
+    ::ll::TypedStorage<8, 496, ::RenderParams>   mRenderParams;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HeartbeatServerComponent& operator=(HeartbeatServerComponent const&);
-    HeartbeatServerComponent(HeartbeatServerComponent const&);
-    HeartbeatServerComponent();
 
 public:
     // member functions

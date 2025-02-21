@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorType.h"
+
 struct ActorTypeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1c2f29;
+    ::ll::TypedStorage<4, 4, ::ActorType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorTypeComponent& operator=(ActorTypeComponent const&);
-    ActorTypeComponent(ActorTypeComponent const&);
-    ActorTypeComponent();
 };

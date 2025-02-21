@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+// clang-format on
+
 struct BaseGameVersionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd486fc;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mBaseGameVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BaseGameVersionComponent& operator=(BaseGameVersionComponent const&);
-    BaseGameVersionComponent(BaseGameVersionComponent const&);
-    BaseGameVersionComponent();
 };

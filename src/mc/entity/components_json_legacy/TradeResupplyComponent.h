@@ -6,12 +6,6 @@ class TradeResupplyComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke42fd5;
+    ::ll::TypedStorage<1, 1, bool> mHasResupplied;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeResupplyComponent& operator=(TradeResupplyComponent const&);
-    TradeResupplyComponent(TradeResupplyComponent const&);
-    TradeResupplyComponent();
 };

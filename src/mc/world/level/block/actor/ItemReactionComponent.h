@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
+class ItemStack;
 class LabTableReaction;
 // clang-format on
 
@@ -15,14 +16,8 @@ class ItemReactionComponent : public ::LabTableReactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk746a81;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStack>> mItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemReactionComponent& operator=(ItemReactionComponent const&);
-    ItemReactionComponent(ItemReactionComponent const&);
-    ItemReactionComponent();
 
 public:
     // virtual functions

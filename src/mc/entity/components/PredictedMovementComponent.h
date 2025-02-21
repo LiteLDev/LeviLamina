@@ -11,6 +11,7 @@ class MoveActorAbsoluteData;
 class Vec2;
 class Vec3;
 struct PredictedMovementSystemParams;
+struct PredictedMovementValues;
 // clang-format on
 
 class PredictedMovementComponent {
@@ -423,26 +424,23 @@ public:
         // NOLINTEND
     };
 
+    using PredictionEventsListenerFunction = ::std::function<void(::MovePredictionType)>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk298ee1;
-    ::ll::UntypedStorage<8, 8>  mUnkdb73d4;
-    ::ll::UntypedStorage<8, 16> mUnk2a8dac;
-    ::ll::UntypedStorage<8, 16> mUnkb7e1c1;
-    ::ll::UntypedStorage<8, 8>  mUnk38f40d;
-    ::ll::UntypedStorage<1, 1>  mUnkabe8c3;
-    ::ll::UntypedStorage<1, 1>  mUnk54c36b;
-    ::ll::UntypedStorage<4, 4>  mUnk644a6d;
-    ::ll::UntypedStorage<8, 64> mUnk27b476;
-    ::ll::UntypedStorage<8, 16> mUnk81e165;
+    ::ll::TypedStorage<4, 4, ::std::bitset<2>> mDisableConditions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>>
+        mRuntimePredictionData;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>> mLastStartItem;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PredictedMovementComponent::HistoryItem const>> mLastEndItem;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PredictedMovementComponent::HistoryCache>>       mHistoryCache;
+    ::ll::TypedStorage<1, 1, bool>                                         mForceTeleportAfterResuming;
+    ::ll::TypedStorage<1, 1, bool>                                         mAllowTeleportingWithoutRegion;
+    ::ll::TypedStorage<4, 4, uint>                                         mLastCompletedInterpolationSequenceID;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::MovePredictionType)>> mPredictionEventsListenerFunc;
+    ::ll::TypedStorage<8, 16, ::PredictedMovementValues>                   mPredictedMovementValues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PredictedMovementComponent& operator=(PredictedMovementComponent const&);
-    PredictedMovementComponent(PredictedMovementComponent const&);
-    PredictedMovementComponent();
 
 public:
     // member functions

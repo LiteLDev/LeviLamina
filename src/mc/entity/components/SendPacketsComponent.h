@@ -10,14 +10,12 @@ struct SendPacketToOwnerInfo;
 
 struct SendPacketsComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkee6797;
-    // NOLINTEND
+    // SendPacketsComponent inner types define
+    using Variant = ::std::variant<::SendPacketInfo, ::SendPacketToOwnerInfo>;
 
 public:
-    // prevent constructor by default
-    SendPacketsComponent& operator=(SendPacketsComponent const&);
-    SendPacketsComponent(SendPacketsComponent const&);
-    SendPacketsComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<::SendPacketInfo, ::SendPacketToOwnerInfo>>> mPacketsToSend;
+    // NOLINTEND
 };

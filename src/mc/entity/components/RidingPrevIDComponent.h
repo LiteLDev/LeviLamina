@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct StrictActorIDEntityContextPair;
+// clang-format on
+
 struct RidingPrevIDComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf8ec7e;
+    ::ll::TypedStorage<8, 16, ::StrictActorIDEntityContextPair> mVehicle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RidingPrevIDComponent& operator=(RidingPrevIDComponent const&);
-    RidingPrevIDComponent(RidingPrevIDComponent const&);
-    RidingPrevIDComponent();
 };

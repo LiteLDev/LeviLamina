@@ -6,14 +6,8 @@ struct WindChargeKnockbackComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb5c54d;
-    ::ll::UntypedStorage<4, 4> mUnkbd4c34;
-    ::ll::UntypedStorage<1, 1> mUnkb371bf;
+    ::ll::TypedStorage<4, 4, float> mKnockbackStartYCoordinate;
+    ::ll::TypedStorage<4, 4, uint>  mTicksAfterAddition;
+    ::ll::TypedStorage<1, 1, bool>  mShouldSendAwardAchievement;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WindChargeKnockbackComponent& operator=(WindChargeKnockbackComponent const&);
-    WindChargeKnockbackComponent(WindChargeKnockbackComponent const&);
-    WindChargeKnockbackComponent();
 };

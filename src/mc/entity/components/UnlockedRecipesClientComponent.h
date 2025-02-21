@@ -6,16 +6,10 @@ class UnlockedRecipesClientComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk2c48d1;
-    ::ll::UntypedStorage<4, 4>  mUnk3c54ca;
-    ::ll::UntypedStorage<8, 64> mUnkcce768;
-    ::ll::UntypedStorage<8, 64> mUnk2943fc;
-    ::ll::UntypedStorage<8, 64> mUnkd429fb;
+    ::ll::TypedStorage<4, 4, int>                                  mUnlockedCategories;
+    ::ll::TypedStorage<4, 4, int>                                  mNewlyUnlockedCategories;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>           mUnlockedItems;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mUnlockedRecipes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mNewlyUnlockedRecipes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UnlockedRecipesClientComponent& operator=(UnlockedRecipesClientComponent const&);
-    UnlockedRecipesClientComponent(UnlockedRecipesClientComponent const&);
-    UnlockedRecipesClientComponent();
 };

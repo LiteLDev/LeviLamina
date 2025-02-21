@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ClientAcceptanceConfig;
+// clang-format on
+
 struct ClientAcceptanceThresholdsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnkd7b330;
-    ::ll::UntypedStorage<4, 24> mUnk212b2e;
-    ::ll::UntypedStorage<4, 4>  mUnk85c182;
-    ::ll::UntypedStorage<1, 1>  mUnk6cd5ff;
-    ::ll::UntypedStorage<1, 1>  mUnke5c628;
+    ::ll::TypedStorage<4, 24, ::ClientAcceptanceConfig> mStrictThreshold;
+    ::ll::TypedStorage<4, 24, ::ClientAcceptanceConfig> mPermissiveThreshold;
+    ::ll::TypedStorage<4, 4, float>                     mCurrentCooldown;
+    ::ll::TypedStorage<1, 1, uchar>                     mCurrentServerInitiatedMotionCooldown;
+    ::ll::TypedStorage<1, 1, uchar>                     mMaxServerInitiatedMotionCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientAcceptanceThresholdsComponent& operator=(ClientAcceptanceThresholdsComponent const&);
-    ClientAcceptanceThresholdsComponent(ClientAcceptanceThresholdsComponent const&);
-    ClientAcceptanceThresholdsComponent();
 };

@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct DynamicRenderOffsetComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk7b895a;
-    ::ll::UntypedStorage<4, 12> mUnkc2f2bc;
+    ::ll::TypedStorage<4, 12, ::Vec3> mCurrentOffset;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPreviousOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynamicRenderOffsetComponent& operator=(DynamicRenderOffsetComponent const&);
-    DynamicRenderOffsetComponent(DynamicRenderOffsetComponent const&);
-    DynamicRenderOffsetComponent();
 };

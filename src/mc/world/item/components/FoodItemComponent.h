@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
@@ -14,32 +15,39 @@
 class Actor;
 class HashedString;
 class Item;
+class ItemDescriptor;
 class ItemStack;
 class Level;
 class Player;
 class SemVersion;
+namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace SharedTypes::v1_20_50 { struct FoodItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class FoodItemComponent : public ::NetworkedItemComponent<::FoodItemComponent>, public ::IFoodItemComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk66a403;
-    ::ll::UntypedStorage<4, 4>  mUnkb1ddb3;
-    ::ll::UntypedStorage<8, 16> mUnk2e30dd;
-    ::ll::UntypedStorage<1, 1>  mUnk1e72b9;
-    ::ll::UntypedStorage<8, 8>  mUnk9ca5c8;
-    ::ll::UntypedStorage<8, 16> mUnk28346c;
-    ::ll::UntypedStorage<8, 16> mUnka08e56;
-    // NOLINTEND
+    // FoodItemComponent inner types define
+    using ConsumeSignature = void(::ItemStack const&, ::ItemStack&, ::Actor&);
 
 public:
-    // prevent constructor by default
-    FoodItemComponent& operator=(FoodItemComponent const&);
-    FoodItemComponent(FoodItemComponent const&);
-    FoodItemComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>               mNutrition;
+    ::ll::TypedStorage<4, 4, float>             mSaturationModifier;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor> mUsingConvertsTo;
+    ::ll::TypedStorage<1, 1, bool>              mCanAlwaysEat;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
+            void(::ItemStack const&, ::ItemStack&, ::Actor&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>>
+                                                               mOnConsumePublisher;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseTimeDepletedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
+    // NOLINTEND
 
 public:
     // virtual functions

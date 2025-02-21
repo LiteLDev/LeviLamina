@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Tick;
+// clang-format on
+
 struct CurrentTickComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc12333;
+    ::ll::TypedStorage<8, 8, ::Tick> mCurrentTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CurrentTickComponent& operator=(CurrentTickComponent const&);
-    CurrentTickComponent(CurrentTickComponent const&);
-    CurrentTickComponent();
 };

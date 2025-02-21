@@ -12,18 +12,12 @@ class TickWorldComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk24ecfb;
-    ::ll::UntypedStorage<4, 4>  mUnk2dac6c;
-    ::ll::UntypedStorage<1, 1>  mUnkb86528;
-    ::ll::UntypedStorage<1, 1>  mUnk46359c;
-    ::ll::UntypedStorage<8, 16> mUnk75da0b;
+    ::ll::TypedStorage<4, 4, uint>                             mChunkRadius;
+    ::ll::TypedStorage<4, 4, float>                            mMaxDistToPlayers;
+    ::ll::TypedStorage<1, 1, bool>                             mAlwaysActive;
+    ::ll::TypedStorage<1, 1, bool>                             mChanged;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ITickingArea>> mTickingArea;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickWorldComponent& operator=(TickWorldComponent const&);
-    TickWorldComponent(TickWorldComponent const&);
-    TickWorldComponent();
 
 public:
     // member functions

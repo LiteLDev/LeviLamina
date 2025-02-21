@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
+
 struct TintColorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk8a1f87;
-    ::ll::UntypedStorage<4, 16> mUnke75837;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mTintColor;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mTintColor2;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TintColorComponent& operator=(TintColorComponent const&);
-    TintColorComponent(TintColorComponent const&);
-    TintColorComponent();
 };

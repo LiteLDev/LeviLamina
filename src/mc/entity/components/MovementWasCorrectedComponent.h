@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct MovementWasCorrectedComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk551105;
-    ::ll::UntypedStorage<1, 1>  mUnk50cbf2;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDivergence;
+    ::ll::TypedStorage<1, 1, bool>    mShouldReportTelemetry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementWasCorrectedComponent& operator=(MovementWasCorrectedComponent const&);
-    MovementWasCorrectedComponent(MovementWasCorrectedComponent const&);
-    MovementWasCorrectedComponent();
 };

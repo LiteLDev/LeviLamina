@@ -6,15 +6,9 @@ struct OnFireComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk86dc6c;
-    ::ll::UntypedStorage<1, 1> mUnkf4f992;
+    ::ll::TypedStorage<4, 4, int>  mOnFireTicks;
+    ::ll::TypedStorage<1, 1, bool> mIgnitedThisTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OnFireComponent& operator=(OnFireComponent const&);
-    OnFireComponent(OnFireComponent const&);
-    OnFireComponent();
 
 public:
     // static variables

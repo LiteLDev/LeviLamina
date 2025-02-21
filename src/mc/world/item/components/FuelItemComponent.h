@@ -17,14 +17,8 @@ class FuelItemComponent : public ::NetworkedItemComponent<::FuelItemComponent> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1e95f0;
+    ::ll::TypedStorage<4, 4, float> mFuelDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FuelItemComponent& operator=(FuelItemComponent const&);
-    FuelItemComponent(FuelItemComponent const&);
-    FuelItemComponent();
 
 public:
     // virtual functions

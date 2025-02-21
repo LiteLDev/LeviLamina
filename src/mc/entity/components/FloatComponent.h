@@ -6,12 +6,6 @@ struct FloatComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbcfbe9;
+    ::ll::TypedStorage<4, 4, float> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FloatComponent& operator=(FloatComponent const&);
-    FloatComponent(FloatComponent const&);
-    FloatComponent();
 };

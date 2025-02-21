@@ -6,22 +6,18 @@
 // clang-format off
 class Actor;
 class CombatRegenerationDefinition;
+class CombatRegenerationListener;
 class Player;
+struct ActorUniqueID;
 // clang-format on
 
 class CombatRegenerationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc4a785;
-    ::ll::UntypedStorage<8, 8> mUnk9df321;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                 mTargetID;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CombatRegenerationListener>> mCombatRegenerationListener;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CombatRegenerationComponent& operator=(CombatRegenerationComponent const&);
-    CombatRegenerationComponent(CombatRegenerationComponent const&);
-    CombatRegenerationComponent();
 
 public:
     // member functions

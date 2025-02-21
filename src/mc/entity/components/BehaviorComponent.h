@@ -2,20 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BehaviorData;
+class BehaviorNode;
+class BehaviorTreeDefinitionPtr;
+// clang-format on
+
 class BehaviorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkce21a5;
-    ::ll::UntypedStorage<8, 8>  mUnk713829;
-    ::ll::UntypedStorage<8, 88> mUnk6a4c1d;
+    ::ll::TypedStorage<8, 16, ::BehaviorTreeDefinitionPtr>      mTreeDefinition;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mRoot;
+    ::ll::TypedStorage<8, 88, ::BehaviorData>                   mBehaviorData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     BehaviorComponent& operator=(BehaviorComponent const&);
     BehaviorComponent(BehaviorComponent const&);
-    BehaviorComponent();
 
 public:
     // member functions

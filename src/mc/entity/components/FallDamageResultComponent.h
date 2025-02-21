@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct FallDamageResultComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkfc50aa;
-    ::ll::UntypedStorage<4, 12> mUnkd0e95f;
+    ::ll::TypedStorage<4, 4, float>   mFallDistance;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FallDamageResultComponent& operator=(FallDamageResultComponent const&);
-    FallDamageResultComponent(FallDamageResultComponent const&);
-    FallDamageResultComponent();
 };

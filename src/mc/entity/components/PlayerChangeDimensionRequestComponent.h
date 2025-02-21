@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChangeDimensionRequest;
+// clang-format on
+
 struct PlayerChangeDimensionRequestComponent {
 public:
     // PlayerChangeDimensionRequestComponent inner types define
@@ -13,13 +18,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkce4386;
-    ::ll::UntypedStorage<8, 48> mUnkbc626d;
+    ::ll::TypedStorage<1, 1, ::PlayerChangeDimensionRequestComponent::State> mState;
+    ::ll::TypedStorage<8, 48, ::ChangeDimensionRequest>                      mRequest;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerChangeDimensionRequestComponent& operator=(PlayerChangeDimensionRequestComponent const&);
-    PlayerChangeDimensionRequestComponent(PlayerChangeDimensionRequestComponent const&);
-    PlayerChangeDimensionRequestComponent();
 };

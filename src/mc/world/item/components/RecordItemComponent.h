@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -18,16 +19,10 @@ class RecordItemComponent : public ::NetworkedItemComponent<::RecordItemComponen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke31a3c;
-    ::ll::UntypedStorage<4, 4> mUnk1484e2;
-    ::ll::UntypedStorage<4, 4> mUnk70d250;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<4, 4, float>                                  mDuration;
+    ::ll::TypedStorage<4, 4, int>                                    mComparatorSignal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RecordItemComponent& operator=(RecordItemComponent const&);
-    RecordItemComponent(RecordItemComponent const&);
-    RecordItemComponent();
 
 public:
     // virtual functions

@@ -6,12 +6,6 @@ struct RailMovementComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd1fa4d;
+    ::ll::TypedStorage<4, 4, float> mMaxSpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RailMovementComponent& operator=(RailMovementComponent const&);
-    RailMovementComponent(RailMovementComponent const&);
-    RailMovementComponent();
 };

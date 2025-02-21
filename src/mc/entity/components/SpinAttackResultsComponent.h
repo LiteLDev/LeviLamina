@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+// clang-format on
+
 struct SpinAttackResultsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf87294;
+    ::ll::TypedStorage<8, 24, ::std::vector<::StrictEntityContext>> mEntities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpinAttackResultsComponent& operator=(SpinAttackResultsComponent const&);
-    SpinAttackResultsComponent(SpinAttackResultsComponent const&);
-    SpinAttackResultsComponent();
 };

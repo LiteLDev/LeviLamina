@@ -28,12 +28,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk16bec1;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockCollisionEvaluationQueueComponent::Data>> mToEvaluate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCollisionEvaluationQueueComponent& operator=(BlockCollisionEvaluationQueueComponent const&);
-    BlockCollisionEvaluationQueueComponent(BlockCollisionEvaluationQueueComponent const&);
-    BlockCollisionEvaluationQueueComponent();
 };

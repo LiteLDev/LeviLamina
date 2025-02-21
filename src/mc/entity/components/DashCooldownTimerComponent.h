@@ -6,12 +6,6 @@ struct DashCooldownTimerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk60ddee;
+    ::ll::TypedStorage<4, 4, uint> mRemainingTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DashCooldownTimerComponent& operator=(DashCooldownTimerComponent const&);
-    DashCooldownTimerComponent(DashCooldownTimerComponent const&);
-    DashCooldownTimerComponent();
 };

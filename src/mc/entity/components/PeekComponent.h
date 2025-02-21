@@ -6,13 +6,7 @@ struct PeekComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk32571b;
-    ::ll::UntypedStorage<4, 4> mUnk7c6bf0;
+    ::ll::TypedStorage<1, 1, bool> mHadTarget;
+    ::ll::TypedStorage<4, 4, int>  mDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PeekComponent& operator=(PeekComponent const&);
-    PeekComponent(PeekComponent const&);
-    PeekComponent();
 };

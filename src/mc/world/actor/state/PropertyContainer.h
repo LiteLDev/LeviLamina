@@ -12,21 +12,16 @@ class RenderParams;
 class Tag;
 struct MolangScriptArg;
 struct PropertySyncData;
+struct PropertyValues;
 // clang-format on
 
 class PropertyContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk3be86d;
-    ::ll::UntypedStorage<8, 104> mUnkab9c5c;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>>> mPropertyGroup;
+    ::ll::TypedStorage<8, 104, ::PropertyValues>                                         mValues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PropertyContainer& operator=(PropertyContainer const&);
-    PropertyContainer(PropertyContainer const&);
-    PropertyContainer();
 
 public:
     // member functions

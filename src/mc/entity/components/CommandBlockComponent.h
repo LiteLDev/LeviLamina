@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BaseCommandBlock;
 class CompoundTag;
 class DataLoadHelper;
 namespace Bedrock::Safety { class RedactableString; }
@@ -14,16 +15,15 @@ class CommandBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnkb08e21;
-    ::ll::UntypedStorage<4, 4>   mUnkf0a1f3;
-    ::ll::UntypedStorage<1, 1>   mUnk962098;
+    ::ll::TypedStorage<8, 192, ::BaseCommandBlock> mBaseCommandBlock;
+    ::ll::TypedStorage<4, 4, int>                  mCurrentTickCount;
+    ::ll::TypedStorage<1, 1, bool>                 mTicking;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     CommandBlockComponent& operator=(CommandBlockComponent const&);
     CommandBlockComponent(CommandBlockComponent const&);
-    CommandBlockComponent();
 
 public:
     // member functions

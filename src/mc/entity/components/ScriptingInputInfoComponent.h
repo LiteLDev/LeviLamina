@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/input/InputMode.h"
+#include "mc/input/ScriptingInputButtonState.h"
+
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 struct ScriptingInputInfoComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk374de4;
-    ::ll::UntypedStorage<4, 4> mUnk8ddc79;
-    ::ll::UntypedStorage<4, 4> mUnk33b115;
-    ::ll::UntypedStorage<4, 4> mUnkb9d7d9;
-    ::ll::UntypedStorage<4, 8> mUnkf46ddc;
+    ::ll::TypedStorage<1, 1, bool>                        mIsHotbarOnlyTouch;
+    ::ll::TypedStorage<4, 4, ::InputMode>                 mInputMode;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mSneakState;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mJumpState;
+    ::ll::TypedStorage<4, 8, ::Vec2>                      mMove;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptingInputInfoComponent& operator=(ScriptingInputInfoComponent const&);
-    ScriptingInputInfoComponent(ScriptingInputInfoComponent const&);
-    ScriptingInputInfoComponent();
 };

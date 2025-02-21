@@ -6,12 +6,6 @@ class PreviousDefinitionsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd2d609;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::string> const*> mPreviousDefinitions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PreviousDefinitionsComponent& operator=(PreviousDefinitionsComponent const&);
-    PreviousDefinitionsComponent(PreviousDefinitionsComponent const&);
-    PreviousDefinitionsComponent();
 };

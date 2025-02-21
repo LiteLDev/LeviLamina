@@ -5,21 +5,17 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockLegacy;
+class Vec3;
 // clang-format on
 
 struct TrailComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7e3696;
-    ::ll::UntypedStorage<4, 12> mUnkb5faa3;
+    ::ll::TypedStorage<8, 8, ::BlockLegacy const*> mBlockType;
+    ::ll::TypedStorage<4, 12, ::Vec3>              mSpawnOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrailComponent& operator=(TrailComponent const&);
-    TrailComponent(TrailComponent const&);
-    TrailComponent();
 
 public:
     // member functions

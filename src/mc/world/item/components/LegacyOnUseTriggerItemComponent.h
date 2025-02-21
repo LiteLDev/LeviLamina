@@ -7,25 +7,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class DefinitionTrigger;
 class HashedString;
 class ItemStack;
 class Player;
 struct LegacyOnUseTriggerItemComponentData;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnUseTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnke3ca41;
-    ::ll::UntypedStorage<8, 264> mUnk5dba27;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnUseSubscription;
+    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnUseTrigger;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyOnUseTriggerItemComponent& operator=(LegacyOnUseTriggerItemComponent const&);
-    LegacyOnUseTriggerItemComponent(LegacyOnUseTriggerItemComponent const&);
-    LegacyOnUseTriggerItemComponent();
 
 public:
     // virtual functions

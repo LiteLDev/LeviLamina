@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class SimpleContainer;
+// clang-format on
+
 struct ActorEquipmentComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfd56aa;
-    ::ll::UntypedStorage<8, 8> mUnkdb8ce8;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimpleContainer>> mHand;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimpleContainer>> mArmor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorEquipmentComponent& operator=(ActorEquipmentComponent const&);
-    ActorEquipmentComponent(ActorEquipmentComponent const&);
-    ActorEquipmentComponent();
 
 public:
     // member functions

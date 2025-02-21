@@ -6,12 +6,6 @@ struct BlockMovementSlowdownAppliedComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk1a0bed;
+    ::ll::TypedStorage<1, 1, bool const> mWasZero;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockMovementSlowdownAppliedComponent& operator=(BlockMovementSlowdownAppliedComponent const&);
-    BlockMovementSlowdownAppliedComponent(BlockMovementSlowdownAppliedComponent const&);
-    BlockMovementSlowdownAppliedComponent();
 };

@@ -8,26 +8,22 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class DefinitionTrigger;
 class HashedString;
 class ItemStack;
 class Mob;
 struct LegacyOnHitActorTriggerItemComponentData;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnHitActorTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk6eb2b0;
-    ::ll::UntypedStorage<8, 16>  mUnke8bf7d;
-    ::ll::UntypedStorage<8, 264> mUnk9419a2;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanUseOnHitActor;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnHitActorSubscription;
+    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnHitActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyOnHitActorTriggerItemComponent& operator=(LegacyOnHitActorTriggerItemComponent const&);
-    LegacyOnHitActorTriggerItemComponent(LegacyOnHitActorTriggerItemComponent const&);
-    LegacyOnHitActorTriggerItemComponent();
 
 public:
     // virtual functions

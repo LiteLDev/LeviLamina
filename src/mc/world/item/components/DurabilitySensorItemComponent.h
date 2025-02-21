@@ -16,14 +16,8 @@ class DurabilitySensorItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd6755f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DurabilityThreshold>> mDurabilityThresholds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DurabilitySensorItemComponent& operator=(DurabilitySensorItemComponent const&);
-    DurabilitySensorItemComponent(DurabilitySensorItemComponent const&);
-    DurabilitySensorItemComponent();
 
 public:
     // virtual functions

@@ -9,14 +9,8 @@ struct CreatureSpawnProbabilityComponent : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9241bf;
+    ::ll::TypedStorage<4, 4, float> mProbability;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CreatureSpawnProbabilityComponent& operator=(CreatureSpawnProbabilityComponent const&);
-    CreatureSpawnProbabilityComponent(CreatureSpawnProbabilityComponent const&);
-    CreatureSpawnProbabilityComponent();
 
 public:
     // virtual functions

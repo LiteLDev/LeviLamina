@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ClientBlockPipeline { struct BakedMaterialMap; }
+// clang-format on
+
 struct BlockBakedMaterialDataComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke05803;
-    ::ll::UntypedStorage<1, 1>  mUnkf24d4c;
+    ::ll::TypedStorage<8, 32, ::ClientBlockPipeline::BakedMaterialMap> mBakedMaterials;
+    ::ll::TypedStorage<1, 1, bool>                                     mIsSolidOpaque;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockBakedMaterialDataComponent& operator=(BlockBakedMaterialDataComponent const&);
-    BlockBakedMaterialDataComponent(BlockBakedMaterialDataComponent const&);
-    BlockBakedMaterialDataComponent();
 };

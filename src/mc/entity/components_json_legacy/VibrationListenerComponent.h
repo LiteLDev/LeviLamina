@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class VibrationListener;
+// clang-format on
+
 class VibrationListenerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkc64c8f;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::VibrationListener>> mVibrationListener;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VibrationListenerComponent& operator=(VibrationListenerComponent const&);
-    VibrationListenerComponent(VibrationListenerComponent const&);
-    VibrationListenerComponent();
 };

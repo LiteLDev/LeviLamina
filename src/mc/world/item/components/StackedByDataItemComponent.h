@@ -17,14 +17,8 @@ class StackedByDataItemComponent : public ::NetworkedItemComponent<::StackedByDa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7fcfb8;
+    ::ll::TypedStorage<1, 1, bool> mIsStackedByData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StackedByDataItemComponent& operator=(StackedByDataItemComponent const&);
-    StackedByDataItemComponent(StackedByDataItemComponent const&);
-    StackedByDataItemComponent();
 
 public:
     // virtual functions

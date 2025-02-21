@@ -17,13 +17,12 @@ class DisplayNameItemComponent : public ::NetworkedItemComponent<::DisplayNameIt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2f719c;
+    ::ll::TypedStorage<8, 32, ::std::string> mDescriptionId;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DisplayNameItemComponent(DisplayNameItemComponent const&);
-    DisplayNameItemComponent();
 
 public:
     // virtual functions

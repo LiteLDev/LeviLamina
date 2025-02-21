@@ -11,8 +11,10 @@ class Actor;
 class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
+class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
+struct ActorUniqueID;
 struct TradeTable;
 // clang-format on
 
@@ -20,23 +22,22 @@ class LegacyTradeableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk49718b;
-    ::ll::UntypedStorage<1, 1>  mUnkcee2d3;
-    ::ll::UntypedStorage<1, 1>  mUnkbfac9b;
-    ::ll::UntypedStorage<4, 4>  mUnk115ed3;
-    ::ll::UntypedStorage<4, 4>  mUnk42201e;
-    ::ll::UntypedStorage<4, 4>  mUnkd5b1d7;
-    ::ll::UntypedStorage<8, 8>  mUnkce5243;
-    ::ll::UntypedStorage<8, 8>  mUnk291139;
-    ::ll::UntypedStorage<8, 32> mUnk931e36;
-    ::ll::UntypedStorage<8, 24> mUnkd131b8;
+    ::ll::TypedStorage<1, 1, bool>                                    mAddRecipeOnUpdate;
+    ::ll::TypedStorage<1, 1, bool>                                    mResetLockedOnFirstTrade;
+    ::ll::TypedStorage<1, 1, bool>                                    mWillingToBreed;
+    ::ll::TypedStorage<4, 4, int>                                     mRiches;
+    ::ll::TypedStorage<4, 4, int>                                     mTradeTier;
+    ::ll::TypedStorage<4, 4, int>                                     mUpdateMerchantTimer;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                         mLastPlayerTradeID;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MerchantRecipeList>> mOffers;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDisplayName;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                     mTradeRecipeFirstTime;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     LegacyTradeableComponent& operator=(LegacyTradeableComponent const&);
     LegacyTradeableComponent(LegacyTradeableComponent const&);
-    LegacyTradeableComponent();
 
 public:
     // member functions

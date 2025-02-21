@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/input/NewInteractionModel.h"
+
 struct PlayerInteractionModelComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb213c6;
-    ::ll::UntypedStorage<1, 1> mUnkc0a28e;
+    ::ll::TypedStorage<4, 4, ::NewInteractionModel> mModel;
+    ::ll::TypedStorage<1, 1, bool>                  mShouldApplyBlockBreakingDelay;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInteractionModelComponent& operator=(PlayerInteractionModelComponent const&);
-    PlayerInteractionModelComponent(PlayerInteractionModelComponent const&);
-    PlayerInteractionModelComponent();
 };

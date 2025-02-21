@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct StrictActorIDEntityContextPair;
+// clang-format on
+
 struct PushedByComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk5e056e;
+    ::ll::TypedStorage<8, 16, ::StrictActorIDEntityContextPair> mPushedBy;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PushedByComponent& operator=(PushedByComponent const&);
-    PushedByComponent(PushedByComponent const&);
-    PushedByComponent();
 };

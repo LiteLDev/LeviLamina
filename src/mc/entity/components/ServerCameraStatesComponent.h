@@ -34,15 +34,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkab46cd;
-    ::ll::UntypedStorage<8, 24> mUnk2bb3e1;
+    ::ll::TypedStorage<8, 32, ::std::string>                                       mActiveCameraPreset;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ServerCameraStatesComponent::State>> mStates;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ServerCameraStatesComponent& operator=(ServerCameraStatesComponent const&);
     ServerCameraStatesComponent(ServerCameraStatesComponent const&);
-    ServerCameraStatesComponent();
 
 public:
     // member functions

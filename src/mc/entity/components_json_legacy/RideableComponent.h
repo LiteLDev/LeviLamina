@@ -8,20 +8,20 @@ class Actor;
 class ActorInteraction;
 class Player;
 class Vec3;
+struct RideableComponentData;
 // clang-format on
 
 class RideableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk9c58ce;
+    ::ll::TypedStorage<8, 96, ::RideableComponentData> mData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     RideableComponent& operator=(RideableComponent const&);
     RideableComponent(RideableComponent const&);
-    RideableComponent();
 
 public:
     // member functions

@@ -6,12 +6,6 @@ struct HorseStandCounterComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfd3551;
+    ::ll::TypedStorage<4, 4, int> mCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HorseStandCounterComponent& operator=(HorseStandCounterComponent const&);
-    HorseStandCounterComponent(HorseStandCounterComponent const&);
-    HorseStandCounterComponent();
 };

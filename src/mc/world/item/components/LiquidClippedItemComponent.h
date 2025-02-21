@@ -17,14 +17,8 @@ class LiquidClippedItemComponent : public ::NetworkedItemComponent<::LiquidClipp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc310fd;
+    ::ll::TypedStorage<1, 1, bool> mIsLiquidClipped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LiquidClippedItemComponent& operator=(LiquidClippedItemComponent const&);
-    LiquidClippedItemComponent(LiquidClippedItemComponent const&);
-    LiquidClippedItemComponent();
 
 public:
     // virtual functions

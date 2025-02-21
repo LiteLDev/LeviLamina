@@ -4,15 +4,13 @@
 
 struct UnloadedChunkTimerComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk14925a;
-    ::ll::UntypedStorage<8, 8> mUnk614953;
-    // NOLINTEND
+    // UnloadedChunkTimerComponent inner types define
+    using Duration_t = ::std::chrono::seconds;
 
 public:
-    // prevent constructor by default
-    UnloadedChunkTimerComponent& operator=(UnloadedChunkTimerComponent const&);
-    UnloadedChunkTimerComponent(UnloadedChunkTimerComponent const&);
-    UnloadedChunkTimerComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::seconds>                  mDuration;
+    // NOLINTEND
 };

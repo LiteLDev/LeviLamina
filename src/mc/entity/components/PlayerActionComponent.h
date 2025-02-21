@@ -2,22 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStackRequestData;
+class PlayerBlockActions;
+class Vec2;
+struct PackedItemUseLegacyInventoryTransaction;
+// clang-format on
+
 struct PlayerActionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk95b4e4;
-    ::ll::UntypedStorage<8, 312> mUnk478719;
-    ::ll::UntypedStorage<8, 8>   mUnk317b59;
-    ::ll::UntypedStorage<8, 24>  mUnke1e403;
-    ::ll::UntypedStorage<4, 8>   mUnk6075a7;
+    ::ll::TypedStorage<8, 8, ::std::bitset<38>>                                            mPlayerActions;
+    ::ll::TypedStorage<8, 312, ::std::optional<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
+    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mPreSimulationRotation;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     PlayerActionComponent& operator=(PlayerActionComponent const&);
     PlayerActionComponent(PlayerActionComponent const&);
-    PlayerActionComponent();
 
 public:
     // member functions

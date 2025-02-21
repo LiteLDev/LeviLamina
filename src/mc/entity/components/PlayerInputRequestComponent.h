@@ -2,31 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+class Vec3;
+struct CanSprintResult;
+// clang-format on
+
 struct PlayerInputRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnke1106d;
-    ::ll::UntypedStorage<1, 1>  mUnkf310e1;
-    ::ll::UntypedStorage<1, 1>  mUnk55d727;
-    ::ll::UntypedStorage<1, 1>  mUnkc6cb59;
-    ::ll::UntypedStorage<1, 1>  mUnk1c59a5;
-    ::ll::UntypedStorage<1, 1>  mUnkcbbb56;
-    ::ll::UntypedStorage<1, 1>  mUnk668e5b;
-    ::ll::UntypedStorage<1, 1>  mUnkb622ef;
-    ::ll::UntypedStorage<1, 2>  mUnk2491e4;
-    ::ll::UntypedStorage<4, 12> mUnkf0de6a;
-    ::ll::UntypedStorage<1, 1>  mUnkf964cf;
-    ::ll::UntypedStorage<1, 1>  mUnk4cf1ae;
-    ::ll::UntypedStorage<1, 1>  mUnka9c823;
-    ::ll::UntypedStorage<1, 1>  mUnk8f0f50;
-    ::ll::UntypedStorage<1, 1>  mUnk92bf1f;
-    ::ll::UntypedStorage<1, 1>  mUnkdaba02;
+    ::ll::TypedStorage<4, 8, ::Vec2>            mMove;
+    ::ll::TypedStorage<1, 1, bool>              mIsSprinting;
+    ::ll::TypedStorage<1, 1, bool>              mSprintCanceled;
+    ::ll::TypedStorage<1, 1, bool>              mStopSprinting;
+    ::ll::TypedStorage<1, 1, bool>              mIsPlayerRiding;
+    ::ll::TypedStorage<1, 1, bool>              mUnblockedToStand;
+    ::ll::TypedStorage<1, 1, bool>              mUnblockedToSneak;
+    ::ll::TypedStorage<1, 1, bool>              mUnblockedToCrawl;
+    ::ll::TypedStorage<1, 2, ::CanSprintResult> mCanSprint;
+    ::ll::TypedStorage<4, 12, ::Vec3>           mBreathingPoint;
+    ::ll::TypedStorage<1, 1, bool>              mBreathingInAir;
+    ::ll::TypedStorage<1, 1, bool>              mBreathingInLiquid;
+    ::ll::TypedStorage<1, 1, bool>              mHasFlyIntent;
+    ::ll::TypedStorage<1, 1, bool>              mHasGlideIntent;
+    ::ll::TypedStorage<1, 1, bool>              mInstabuild;
+    ::ll::TypedStorage<1, 1, bool>              mMayFly;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerInputRequestComponent& operator=(PlayerInputRequestComponent const&);
-    PlayerInputRequestComponent(PlayerInputRequestComponent const&);
-    PlayerInputRequestComponent();
 };

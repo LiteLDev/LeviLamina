@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class PlayerSuspendLevelStorageSaveToken;
+// clang-format on
+
 class PlayerDimensionTransferSaveSuspensionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk38f85b;
+    ::ll::TypedStorage<8, 40, ::PlayerSuspendLevelStorageSaveToken const> mPlayerSuspendLevelStorageSaveToken;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDimensionTransferSaveSuspensionComponent& operator=(PlayerDimensionTransferSaveSuspensionComponent const&);
-    PlayerDimensionTransferSaveSuspensionComponent(PlayerDimensionTransferSaveSuspensionComponent const&);
-    PlayerDimensionTransferSaveSuspensionComponent();
 };

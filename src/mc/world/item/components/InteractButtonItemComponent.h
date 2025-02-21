@@ -19,14 +19,13 @@ class InteractButtonItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk2a1aac;
-    ::ll::UntypedStorage<8, 32> mUnk69b303;
+    ::ll::TypedStorage<1, 1, bool>           mRequiresInteract;
+    ::ll::TypedStorage<8, 32, ::std::string> mInteractText;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     InteractButtonItemComponent(InteractButtonItemComponent const&);
-    InteractButtonItemComponent();
 
 public:
     // virtual functions

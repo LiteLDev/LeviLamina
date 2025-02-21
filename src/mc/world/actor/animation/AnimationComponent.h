@@ -9,13 +9,18 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorAnimationControllerInfo;
+class ActorAnimationControllerStatePlayer;
 class ActorAnimationPlayer;
 class AnimationComponentID;
 class BoneOrientation;
 class CommonResourceDefinitionMap;
+class DataDrivenModel;
 class ExpressionNode;
 class HashedString;
+class ModelPartLocator;
 class MolangVariableMap;
+class RenderParams;
 // clang-format on
 
 class AnimationComponent {
@@ -45,33 +50,31 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk598a18;
-    ::ll::UntypedStorage<8, 24>  mUnkf3e183;
-    ::ll::UntypedStorage<8, 24>  mUnk42e54c;
-    ::ll::UntypedStorage<8, 64>  mUnkcb5e24;
-    ::ll::UntypedStorage<8, 496> mUnk323831;
-    ::ll::UntypedStorage<8, 16>  mUnke37e59;
-    ::ll::UntypedStorage<8, 8>   mUnk46fcee;
-    ::ll::UntypedStorage<8, 16>  mUnk666a77;
-    ::ll::UntypedStorage<8, 8>   mUnkd23b12;
-    ::ll::UntypedStorage<8, 64>  mUnk47f31e;
-    ::ll::UntypedStorage<8, 24>  mUnk9b9031;
-    ::ll::UntypedStorage<8, 64>  mUnkef9142;
-    ::ll::UntypedStorage<1, 1>   mUnkfe723c;
-    ::ll::UntypedStorage<4, 4>   mUnkfb87d6;
-    ::ll::UntypedStorage<8, 8>   mUnkd62667;
-    ::ll::UntypedStorage<8, 8>   mUnk202620;
-    ::ll::UntypedStorage<8, 8>   mUnk921ace;
-    ::ll::UntypedStorage<8, 16>  mUnkcd5ccb;
-    ::ll::UntypedStorage<1, 1>   mUnk215963;
-    ::ll::UntypedStorage<1, 1>   mUnk9f6884;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorAnimationControllerStatePlayer>>
+        mCurrentAnimationControllerStatePlayer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ActorAnimationPlayer>>> mComponentAnimationPlayers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ActorAnimationControllerInfo>>>
+                                                                                        mOwnedAnimationControllers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ModelPartLocator>> mModelPartLocators;
+    ::ll::TypedStorage<8, 496, ::RenderParams>                                          mRenderParams;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorAnimationPlayer>>                mPlaySingleAnimation;
+    ::ll::TypedStorage<8, 8, void*>                                           mModelRenderControllerCacheWasBuiltFrom;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CommonResourceDefinitionMap>> mCommonResourceDefinitionMap;
+    ::ll::TypedStorage<8, 8, ::std::unordered_map<::HashedString, ::HashedString> const*> mParticleEffectMap;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::ActorAnimationPlayer&)>> mAnimationComponentInitFunction;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AnimationComponent::ChildAnimationComponentInfo>>
+        mChildAnimationComponents;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>>
+                                                                        mBoneOrientations;
+    ::ll::TypedStorage<1, 1, bool>                                      mAnimationComponentInitialized;
+    ::ll::TypedStorage<4, 4, ::AnimationComponentGroupType>             mAnimationComponentGroupType;
+    ::ll::TypedStorage<8, 8, ::AnimationComponentID>                    mOwnerUUID;
+    ::ll::TypedStorage<8, 8, int64>                                     mLastUpdateFrame;
+    ::ll::TypedStorage<8, 8, uint64>                                    mLastReloadInitTimeStampClient;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenModel const>> mLastModelInitializedWith;
+    ::ll::TypedStorage<1, 1, bool>                                      mApplyAnimations;
+    ::ll::TypedStorage<1, 1, bool>                                      mNeedToUpdateQueryableBoneOrientations;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AnimationComponent& operator=(AnimationComponent const&);
-    AnimationComponent(AnimationComponent const&);
-    AnimationComponent();
 
 public:
     // member functions

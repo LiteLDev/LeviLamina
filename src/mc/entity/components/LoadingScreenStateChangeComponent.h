@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/LoadingScreenStateChangeType.h"
+
 struct LoadingScreenStateChangeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk139c5a;
+    ::ll::TypedStorage<4, 4, ::LoadingScreenStateChangeType> mLoadingScreenStateChangeType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LoadingScreenStateChangeComponent& operator=(LoadingScreenStateChangeComponent const&);
-    LoadingScreenStateChangeComponent(LoadingScreenStateChangeComponent const&);
-    LoadingScreenStateChangeComponent();
 };

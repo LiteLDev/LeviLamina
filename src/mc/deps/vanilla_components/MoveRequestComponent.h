@@ -2,24 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Vec2;
+class Vec3;
+struct CollisionShapes;
+// clang-format on
+
 struct MoveRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk302010;
-    ::ll::UntypedStorage<4, 24> mUnk28069b;
-    ::ll::UntypedStorage<4, 12> mUnk86f744;
-    ::ll::UntypedStorage<4, 12> mUnk1e5c02;
-    ::ll::UntypedStorage<4, 12> mUnk426cd3;
-    ::ll::UntypedStorage<1, 1>  mUnk6a3ae6;
-    ::ll::UntypedStorage<1, 1>  mUnk686831;
-    ::ll::UntypedStorage<8, 56> mUnkb8821e;
-    ::ll::UntypedStorage<4, 8>  mUnke71886;
+    ::ll::TypedStorage<4, 24, ::AABB>            mOriginalAABBShape;
+    ::ll::TypedStorage<4, 24, ::AABB>            mMoveCollisionLastFetchedBox;
+    ::ll::TypedStorage<4, 12, ::Vec3>            mPreCollisionSpeed;
+    ::ll::TypedStorage<4, 12, ::Vec3>            mSpeed;
+    ::ll::TypedStorage<4, 12, ::Vec3>            mMaxDepenetration;
+    ::ll::TypedStorage<1, 1, bool>               mIsPenetrating;
+    ::ll::TypedStorage<1, 1, bool>               mSneaking;
+    ::ll::TypedStorage<8, 56, ::CollisionShapes> mCollisionShapes;
+    ::ll::TypedStorage<4, 8, ::Vec2>             mPreviousHorizontalDelta;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveRequestComponent& operator=(MoveRequestComponent const&);
-    MoveRequestComponent(MoveRequestComponent const&);
-    MoveRequestComponent();
 };

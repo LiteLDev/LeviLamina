@@ -8,9 +8,11 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorFilterGroup;
 class CompoundTag;
 class ILevel;
 struct ActorUniqueID;
+struct Tick;
 // clang-format on
 
 class AngerLevelComponent {
@@ -53,6 +55,8 @@ public:
         NuisanceCompare();
     };
 
+    using ActorNuisance = ::std::pair<::Actor*, int>;
+
     struct ConditionalSound {
     public:
         // member variables
@@ -83,25 +87,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkcebbd5;
-    ::ll::UntypedStorage<4, 4>  mUnkc4f740;
-    ::ll::UntypedStorage<4, 4>  mUnk96ec96;
-    ::ll::UntypedStorage<4, 4>  mUnked907d;
-    ::ll::UntypedStorage<4, 4>  mUnk5c1352;
-    ::ll::UntypedStorage<4, 4>  mUnk3547f6;
-    ::ll::UntypedStorage<1, 1>  mUnk9578e1;
-    ::ll::UntypedStorage<4, 4>  mUnke41be2;
-    ::ll::UntypedStorage<4, 4>  mUnkab1960;
-    ::ll::UntypedStorage<8, 72> mUnk45ba20;
-    ::ll::UntypedStorage<8, 24> mUnkd125da;
-    ::ll::UntypedStorage<4, 4>  mUnkee5906;
-    ::ll::UntypedStorage<8, 24> mUnk55cf36;
+    ::ll::TypedStorage<8, 8, ::Tick>                               mNextAngerDecrementTick;
+    ::ll::TypedStorage<4, 4, int>                                  mDefaultAnnoyingness;
+    ::ll::TypedStorage<4, 4, int>                                  mDefaultProjectileAnnoyingness;
+    ::ll::TypedStorage<4, 4, int>                                  mAngerDecrementIntervalTicks;
+    ::ll::TypedStorage<4, 4, int>                                  mMaxAngerLevel;
+    ::ll::TypedStorage<4, 4, int>                                  mAngryThreshold;
+    ::ll::TypedStorage<1, 1, bool>                                 mRemoveTargetWhenBelowAngryThreshold;
+    ::ll::TypedStorage<4, 4, int>                                  mAngryBoost;
+    ::ll::TypedStorage<4, 4, int>                                  mTopAnger;
+    ::ll::TypedStorage<8, 72, ::std::optional<::ActorFilterGroup>> mNuisanceFilter;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AngerLevelComponent::ConditionalSound>> mOnIncreaseSoundDefinitions;
+    ::ll::TypedStorage<4, 4, ::AngerLevelComponent::NuisanceCompare>                  mNuisanceCompare;
+    ::ll::TypedStorage<8, 24, ::std::multiset<::AngerLevelComponent::Nuisance, ::AngerLevelComponent::NuisanceCompare>>
+        mNuisances;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AngerLevelComponent& operator=(AngerLevelComponent const&);
-    AngerLevelComponent();
 
 public:
     // member functions

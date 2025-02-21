@@ -17,14 +17,8 @@ class DamageItemComponent : public ::NetworkedItemComponent<::DamageItemComponen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9a1dec;
+    ::ll::TypedStorage<1, 1, uchar> mDamage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageItemComponent& operator=(DamageItemComponent const&);
-    DamageItemComponent(DamageItemComponent const&);
-    DamageItemComponent();
 
 public:
     // virtual functions

@@ -17,14 +17,8 @@ class BundleInteractionItemComponent : public ::NetworkedItemComponent<::BundleI
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf6c2d9;
+    ::ll::TypedStorage<4, 4, int> mNumViewableSlots;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BundleInteractionItemComponent& operator=(BundleInteractionItemComponent const&);
-    BundleInteractionItemComponent(BundleInteractionItemComponent const&);
-    BundleInteractionItemComponent();
 
 public:
     // virtual functions

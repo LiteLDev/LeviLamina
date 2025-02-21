@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class DefinitionTrigger;
 class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -17,9 +18,9 @@ struct WeaponItemComponent : public ::IItemComponentLegacyFactoryData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 256> mUnkec044b;
-    ::ll::UntypedStorage<8, 256> mUnkc8a0f0;
-    ::ll::UntypedStorage<8, 256> mUnk38ff7b;
+    ::ll::TypedStorage<8, 256, ::DefinitionTrigger> mOnHurtActor;
+    ::ll::TypedStorage<8, 256, ::DefinitionTrigger> mOnHitActor;
+    ::ll::TypedStorage<8, 256, ::DefinitionTrigger> mOnHitBlock;
     // NOLINTEND
 
 public:

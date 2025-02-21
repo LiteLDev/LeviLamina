@@ -13,14 +13,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc69ddf;
-    ::ll::UntypedStorage<4, 8> mUnk4451f4;
-    ::ll::UntypedStorage<1, 1> mUnk3636dd;
+    ::ll::TypedStorage<4, 4, float>                                           mStartingRadius;
+    ::ll::TypedStorage<4, 8, ::glm::vec2>                                     mStartingOrientation;
+    ::ll::TypedStorage<1, 1, ::CameraThirdPersonBoomComponent::RotationSpace> mRotSpace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraThirdPersonBoomComponent& operator=(CameraThirdPersonBoomComponent const&);
-    CameraThirdPersonBoomComponent(CameraThirdPersonBoomComponent const&);
-    CameraThirdPersonBoomComponent();
 };

@@ -18,16 +18,10 @@ class LockingFillingContainer : public ::FillingContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkdb4d71;
-    ::ll::UntypedStorage<4, 4>  mUnk48d385;
-    ::ll::UntypedStorage<1, 1>  mUnk58680d;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Bedrock::Threading::SharedRecursiveMutex>> mContainerContextMutex;
+    ::ll::TypedStorage<4, 4, int>                                                          mWeightInStorageItem;
+    ::ll::TypedStorage<1, 1, bool>                                                         mIsClientSide;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LockingFillingContainer& operator=(LockingFillingContainer const&);
-    LockingFillingContainer(LockingFillingContainer const&);
-    LockingFillingContainer();
 
 public:
     // virtual functions

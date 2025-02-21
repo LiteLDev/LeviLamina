@@ -24,8 +24,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 4> mUnk45a32a;
-        ::ll::UntypedStorage<4, 4> mUnk46b742;
+        ::ll::TypedStorage<1, 4, bool>  mBoolVal;
+        ::ll::TypedStorage<4, 4, float> mFloatVal;
         // NOLINTEND
     };
 

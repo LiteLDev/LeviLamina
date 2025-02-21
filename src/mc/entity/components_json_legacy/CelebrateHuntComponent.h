@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Tick;
+// clang-format on
+
 class CelebrateHuntComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk773bf1;
-    ::ll::UntypedStorage<8, 8> mUnk9bb89d;
-    ::ll::UntypedStorage<8, 8> mUnka57f9c;
+    ::ll::TypedStorage<1, 1, bool>   mCelebrating;
+    ::ll::TypedStorage<8, 8, ::Tick> mCelebrateUntil;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextSoundEventTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CelebrateHuntComponent& operator=(CelebrateHuntComponent const&);
-    CelebrateHuntComponent(CelebrateHuntComponent const&);
-    CelebrateHuntComponent();
 };

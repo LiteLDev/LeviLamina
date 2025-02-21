@@ -5,8 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/shared_types/legacy/ContainerType.h"
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/network/packet/PlayerRespawnState.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/player/BedSleepingResult.h"
@@ -31,22 +33,31 @@ class Dimension;
 class EntityContext;
 class FrameUpdateContextBase;
 class HashedString;
+class IClientInstance;
 class IContainerManager;
 class IMinecraftEventing;
+class InventoryMenu;
 class InventoryTransaction;
 class ItemStack;
 class LayeredAbilities;
 class MobEffectInstance;
+class NetworkChunkSubscriber;
 class Packet;
+class PlayerAutomationObserver;
 class PlayerEventCoordinator;
 class SubChunkPos;
+class SubChunkRequestSubscriber;
 class TextObjectRoot;
+class Vec2;
 class Vec3;
 struct ActorUniqueID;
+struct Brightness;
 struct INpcDialogueData;
 struct Tick;
 namespace Editor { class IEditorPlayer; }
 namespace MovementDataExtractionUtility { class SnapshotAccessor; }
+namespace OreUI { class GameplayRouteHandler; }
+namespace mce { class UUID; }
 // clang-format on
 
 class LocalPlayer : public ::Player {
@@ -89,15 +100,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk5a0ee4;
-        ::ll::UntypedStorage<1, 1> mUnkc7ef26;
+        ::ll::TypedStorage<8, 8, int64> mEmoteButtonDownStartTime;
+        ::ll::TypedStorage<1, 1, bool>  mIsExpediateSelectionActive;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EmoteExpediateData& operator=(EmoteExpediateData const&);
-        EmoteExpediateData(EmoteExpediateData const&);
-        EmoteExpediateData();
     };
 
     class FellFromWorldHeightAchievementTracker {
@@ -113,103 +118,80 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk7c63bb;
-        ::ll::UntypedStorage<4, 4> mUnk232252;
-        ::ll::UntypedStorage<1, 1> mUnk9539cd;
+        ::ll::TypedStorage<1, 1, ::LocalPlayer::FellFromWorldHeightAchievementTracker::FallState> mState;
+        ::ll::TypedStorage<4, 4, int>                                                             mCheckAliveTicks;
+        ::ll::TypedStorage<1, 1, bool>                                                            mHasSentAchievement;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FellFromWorldHeightAchievementTracker& operator=(FellFromWorldHeightAchievementTracker const&);
-        FellFromWorldHeightAchievementTracker(FellFromWorldHeightAchievementTracker const&);
-        FellFromWorldHeightAchievementTracker();
     };
 
     class UndergroundTelemetryHeuristic {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkb7ba7b;
-        ::ll::UntypedStorage<1, 1>  mUnk33e0c1;
-        ::ll::UntypedStorage<1, 1>  mUnka0f5b7;
-        ::ll::UntypedStorage<4, 12> mUnk1f2966;
-        ::ll::UntypedStorage<1, 1>  mUnk3d50c4;
+        ::ll::TypedStorage<1, 1, bool>         mIsUndergroundCurrentTick;
+        ::ll::TypedStorage<1, 1, bool>         mWasUndergroundPreviousTick;
+        ::ll::TypedStorage<1, 1, bool>         mForceInitialEventingPropertyUpdate;
+        ::ll::TypedStorage<4, 12, ::BlockPos>  mPreviousBlockPos;
+        ::ll::TypedStorage<1, 1, ::Brightness> mPreviousNaturalLightLevel;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UndergroundTelemetryHeuristic& operator=(UndergroundTelemetryHeuristic const&);
-        UndergroundTelemetryHeuristic(UndergroundTelemetryHeuristic const&);
-        UndergroundTelemetryHeuristic();
     };
 
     struct ContainerCloseInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnka57e96;
-        ::ll::UntypedStorage<1, 1> mUnkb96359;
+        ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerTypeToClose;
+        ::ll::TypedStorage<1, 1, bool>                                 mShouldCloseContainerScreen;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ContainerCloseInfo& operator=(ContainerCloseInfo const&);
-        ContainerCloseInfo(ContainerCloseInfo const&);
-        ContainerCloseInfo();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 112> mUnk3d5255;
-    ::ll::UntypedStorage<4, 4>   mUnk7589e9;
-    ::ll::UntypedStorage<4, 4>   mUnkbae363;
-    ::ll::UntypedStorage<8, 16>  mUnk5c64bf;
-    ::ll::UntypedStorage<4, 20>  mUnk70b1a1;
-    ::ll::UntypedStorage<4, 12>  mUnk3e8d73;
-    ::ll::UntypedStorage<8, 8>   mUnkb90009;
-    ::ll::UntypedStorage<4, 4>   mUnke2d246;
-    ::ll::UntypedStorage<4, 12>  mUnk682e5a;
-    ::ll::UntypedStorage<4, 8>   mUnk490fbd;
-    ::ll::UntypedStorage<4, 8>   mUnkc5c42a;
-    ::ll::UntypedStorage<1, 1>   mUnk7fedf4;
-    ::ll::UntypedStorage<1, 1>   mUnkf25d4b;
-    ::ll::UntypedStorage<8, 152> mUnkc99a3d;
-    ::ll::UntypedStorage<8, 152> mUnk215439;
-    ::ll::UntypedStorage<4, 4>   mUnkffca5a;
-    ::ll::UntypedStorage<1, 2>   mUnk5d8cc0;
-    ::ll::UntypedStorage<8, 8>   mUnkfb5df3;
-    ::ll::UntypedStorage<8, 24>  mUnk9cdd4e;
-    ::ll::UntypedStorage<1, 1>   mUnkee2578;
-    ::ll::UntypedStorage<1, 1>   mUnk333a23;
-    ::ll::UntypedStorage<1, 1>   mUnk34071a;
-    ::ll::UntypedStorage<1, 1>   mUnk92e34b;
-    ::ll::UntypedStorage<1, 1>   mUnk6cf217;
-    ::ll::UntypedStorage<8, 32>  mUnk74735e;
-    ::ll::UntypedStorage<8, 64>  mUnk52a682;
-    ::ll::UntypedStorage<8, 48>  mUnk7eb512;
-    ::ll::UntypedStorage<8, 152> mUnk10da53;
-    ::ll::UntypedStorage<4, 4>   mUnka14c22;
-    ::ll::UntypedStorage<4, 4>   mUnkb8d3bf;
-    ::ll::UntypedStorage<4, 4>   mUnk9f8b8b;
-    ::ll::UntypedStorage<8, 8>   mUnk9831df;
-    ::ll::UntypedStorage<8, 8>   mUnk83dea4;
-    ::ll::UntypedStorage<4, 4>   mUnk5680d8;
-    ::ll::UntypedStorage<8, 32>  mUnk5c3e98;
-    ::ll::UntypedStorage<1, 1>   mUnk121b1b;
-    ::ll::UntypedStorage<4, 12>  mUnk15bfa8;
-    ::ll::UntypedStorage<4, 4>   mUnk7e6a26;
-    ::ll::UntypedStorage<8, 32>  mUnkff1c1d;
-    ::ll::UntypedStorage<8, 112> mUnkfafd16;
-    ::ll::UntypedStorage<8, 8>   mUnk2c3861;
-    ::ll::UntypedStorage<1, 1>   mUnk2da1b7;
+    ::ll::TypedStorage<8, 112, ::InventoryMenu>                             mInventoryMenu;
+    ::ll::TypedStorage<4, 4, float>                                         mPortalEffectTime;
+    ::ll::TypedStorage<4, 4, float>                                         mOPortalEffectTime;
+    ::ll::TypedStorage<8, 16, ::LocalPlayer::EmoteExpediateData>            mEmoteExpediateData;
+    ::ll::TypedStorage<4, 20, ::LocalPlayer::UndergroundTelemetryHeuristic> mUndergroundTelemetryHeuristic;
+    ::ll::TypedStorage<4, 12, ::LocalPlayer::FellFromWorldHeightAchievementTracker>
+                                                                             mFellFromWorldHeightAchievementTracker;
+    ::ll::TypedStorage<8, 8, ::IClientInstance&>                             mClient;
+    ::ll::TypedStorage<4, 4, int>                                            mCanCloseScreenOnHurtAfterTime;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mlastFrameDelta;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                         mLastHmdRot;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                         mHmdAngleDelta;
+    ::ll::TypedStorage<1, 1, bool>                                           mHmdRotRecorded;
+    ::ll::TypedStorage<1, 1, bool>                                           mEnablePortalEffect;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                                  mSentOffhandItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                                  mSentInventoryItem;
+    ::ll::TypedStorage<4, 4, int>                                            mSentSelectedSlot;
+    ::ll::TypedStorage<1, 2, ::LocalPlayer::ContainerCloseInfo>              mContainerCloseInfo;
+    ::ll::TypedStorage<8, 8, uint64>                                         mSessionTickCount;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LocalPlayer::RegionListener*>> mRegionListeners;
+    ::ll::TypedStorage<1, 1, bool>                                           mDamagedByMobThisFrame;
+    ::ll::TypedStorage<1, 1, bool>                                           mLeavingLevel;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsTeacher;
+    ::ll::TypedStorage<1, 1, bool>                                           mHasBeenInitialized;
+    ::ll::TypedStorage<1, 1, bool>                                           mPrevTransitionBlocking;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mInventorySearchString;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::mce::UUID>>             mAllSentEmotePieceIds;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                mCurrentStructureFeature;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                                  mItemActivationItem;
+    ::ll::TypedStorage<4, 4, int>                                            mItemActivationTicks;
+    ::ll::TypedStorage<4, 4, float>                                          mItemActivationOffsetX;
+    ::ll::TypedStorage<4, 4, float>                                          mItemActivationOffsetY;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerAutomationObserver>>  mAutomationObserver;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkRequestSubscriber>> mSubChunkSubscriber;
+    ::ll::TypedStorage<4, 4, uint>                                           mTickingAreaChunkIndexToCheckForRequests;
+    ::ll::TypedStorage<8, 32, ::NetworkChunkSubscriber>                      mChunkSubscriberView;
+    ::ll::TypedStorage<1, 1, ::PlayerRespawnState>                           mClientRespawnState;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                        mClientRespawnPotentialPosition;
+    ::ll::TypedStorage<4, 4, int>                                            mResetHMDAfterSleepTickDelay;
+    ::ll::TypedStorage<8, 32, ::std::string>                                 mLastDeathInfo;
+    ::ll::TypedStorage<8, 112, ::OreUI::GameplayRouteHandler>                mGameplayRouteHandler;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>     mEditorClientPlayer;
+    ::ll::TypedStorage<1, 1, bool>                                           mPreparedMainChunkSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LocalPlayer& operator=(LocalPlayer const&);
-    LocalPlayer(LocalPlayer const&);
-    LocalPlayer();
 
 public:
     // virtual functions

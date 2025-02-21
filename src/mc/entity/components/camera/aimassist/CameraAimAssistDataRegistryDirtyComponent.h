@@ -2,19 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 struct CameraAimAssistDataRegistryDirtyComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk71ba4a;
-    ::ll::UntypedStorage<8, 64> mUnkbb8a7f;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::HashedString>> mDirtyPresets;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::HashedString>> mDirtyCategories;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     CameraAimAssistDataRegistryDirtyComponent& operator=(CameraAimAssistDataRegistryDirtyComponent const&);
     CameraAimAssistDataRegistryDirtyComponent(CameraAimAssistDataRegistryDirtyComponent const&);
-    CameraAimAssistDataRegistryDirtyComponent();
 
 public:
     // member functions

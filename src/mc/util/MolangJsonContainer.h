@@ -4,9 +4,13 @@
 
 struct MolangJsonContainer {
 public:
+    // MolangJsonContainer inner types define
+    using ContainerValue = ::std::variant<float, ::std::string>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk2d9234;
+    ::ll::TypedStorage<8, 40, ::std::variant<float, ::std::string>> mValue;
     // NOLINTEND
 
 public:

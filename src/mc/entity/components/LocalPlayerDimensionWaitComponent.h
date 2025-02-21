@@ -6,13 +6,7 @@ struct LocalPlayerDimensionWaitComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk6f09bd;
-    ::ll::UntypedStorage<8, 8> mUnk48413f;
+    ::ll::TypedStorage<1, 1, bool>                                    mWaitingForServerDimensionChangeAcknowledgment;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mServerDimensionChangeTimer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LocalPlayerDimensionWaitComponent& operator=(LocalPlayerDimensionWaitComponent const&);
-    LocalPlayerDimensionWaitComponent(LocalPlayerDimensionWaitComponent const&);
-    LocalPlayerDimensionWaitComponent();
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -12,6 +13,7 @@ class HashedString;
 class ItemStack;
 class Player;
 class SemVersion;
+namespace Bedrock::PubSub { class Subscription; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -19,16 +21,10 @@ class WearableItemComponent : public ::NetworkedItemComponent<::WearableItemComp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk671605;
-    ::ll::UntypedStorage<4, 4>  mUnkce0421;
-    ::ll::UntypedStorage<8, 16> mUnk18a372;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
+    ::ll::TypedStorage<4, 4, int>                                  mProtection;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>     mOnUseSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WearableItemComponent& operator=(WearableItemComponent const&);
-    WearableItemComponent(WearableItemComponent const&);
-    WearableItemComponent();
 
 public:
     // virtual functions

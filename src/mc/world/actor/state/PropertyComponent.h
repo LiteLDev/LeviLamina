@@ -9,6 +9,7 @@
 // clang-format off
 class CompoundTag;
 class HashedString;
+class PropertyContainer;
 class PropertyGroup;
 class RenderParams;
 struct PropertySyncData;
@@ -18,20 +19,19 @@ class PropertyComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk69cc48;
-    ::ll::UntypedStorage<4, 4>   mUnkc8cddf;
-    ::ll::UntypedStorage<4, 4>   mUnk1e10c4;
-    ::ll::UntypedStorage<4, 4>   mUnkb23db7;
-    ::ll::UntypedStorage<4, 4>   mUnkd8981d;
-    ::ll::UntypedStorage<1, 1>   mUnk4ecda4;
-    ::ll::UntypedStorage<8, 120> mUnk9f800e;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>>> mPropertyGroup;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyIntProperties;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyFloatProperties;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyBoolProperties;
+    ::ll::TypedStorage<4, 4, ::std::bitset<32>>                                          mDirtyEnumIndexProperties;
+    ::ll::TypedStorage<1, 1, bool>                                                       mEverythingDirty;
+    ::ll::TypedStorage<8, 120, ::PropertyContainer>                                      mPropertyContainer;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     PropertyComponent& operator=(PropertyComponent const&);
     PropertyComponent(PropertyComponent const&);
-    PropertyComponent();
 
 public:
     // member functions

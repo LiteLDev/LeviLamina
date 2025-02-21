@@ -9,15 +9,9 @@ class DocumentComponent : public ::StoreUIComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd64939;
-    ::ll::UntypedStorage<8, 32> mUnk3d9d58;
+    ::ll::TypedStorage<8, 32, ::std::string> mDocumentReference;
+    ::ll::TypedStorage<8, 32, ::std::string> mDocumentId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DocumentComponent& operator=(DocumentComponent const&);
-    DocumentComponent(DocumentComponent const&);
-    DocumentComponent();
 
 public:
     // virtual functions

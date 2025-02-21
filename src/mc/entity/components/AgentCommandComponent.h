@@ -11,14 +11,8 @@ class AgentCommandComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkafd5e0;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AgentCommands::Command>> mCurrentCommand;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AgentCommandComponent& operator=(AgentCommandComponent const&);
-    AgentCommandComponent(AgentCommandComponent const&);
-    AgentCommandComponent();
 
 public:
     // member functions

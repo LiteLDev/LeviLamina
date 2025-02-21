@@ -6,15 +6,14 @@ struct DisplayObjectMessageRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk9aa1ec;
-    ::ll::UntypedStorage<8, 32> mUnk525352;
+    ::ll::TypedStorage<8, 32, ::std::string> mLocalizableText;
+    ::ll::TypedStorage<8, 32, ::std::string> mColor;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DisplayObjectMessageRequestComponent& operator=(DisplayObjectMessageRequestComponent const&);
     DisplayObjectMessageRequestComponent(DisplayObjectMessageRequestComponent const&);
-    DisplayObjectMessageRequestComponent();
 
 public:
     // member functions

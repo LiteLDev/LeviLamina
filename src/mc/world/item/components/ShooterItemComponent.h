@@ -12,6 +12,7 @@ class HashedString;
 class ItemStack;
 class Player;
 class SemVersion;
+namespace Bedrock::PubSub { class Subscription; }
 namespace SharedTypes::v1_20_50 { struct ShooterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -86,19 +87,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4af28f;
-    ::ll::UntypedStorage<4, 4>  mUnk897ef8;
-    ::ll::UntypedStorage<1, 1>  mUnkc35ddc;
-    ::ll::UntypedStorage<1, 1>  mUnk6a0e62;
-    ::ll::UntypedStorage<8, 16> mUnk56d780;
-    ::ll::UntypedStorage<8, 16> mUnk7edfbd;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ShooterItemComponent::ShooterAmmunitionEntry>> mAmmunition;
+    ::ll::TypedStorage<4, 4, ::ShooterItemComponent::DrawDuration>                           mDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>                                                           mScalePowerByDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>                                                           mChargeOnDraw;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseTimeDepletedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShooterItemComponent& operator=(ShooterItemComponent const&);
-    ShooterItemComponent(ShooterItemComponent const&);
-    ShooterItemComponent();
 
 public:
     // virtual functions

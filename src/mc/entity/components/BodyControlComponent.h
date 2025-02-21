@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BodyControl;
+// clang-format on
+
 class BodyControlComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6d8010;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BodyControl>> mBodyControl;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BodyControlComponent& operator=(BodyControlComponent const&);
-    BodyControlComponent(BodyControlComponent const&);
-    BodyControlComponent();
 };

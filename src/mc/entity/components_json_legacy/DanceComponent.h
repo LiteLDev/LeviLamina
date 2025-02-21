@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DanceComponentListener;
+// clang-format on
+
 class DanceComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3953e9;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DanceComponentListener>> mListener;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DanceComponent& operator=(DanceComponent const&);
-    DanceComponent(DanceComponent const&);
-    DanceComponent();
 };

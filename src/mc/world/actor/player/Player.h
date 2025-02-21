@@ -133,15 +133,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkde7026;
-        ::ll::UntypedStorage<1, 1>  mUnk875f06;
+        ::ll::TypedStorage<4, 12, ::Vec3> mPosition;
+        ::ll::TypedStorage<1, 1, bool>    mIsAboveLeaves;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        FixedSpawnPositionData_DEPRECATED& operator=(FixedSpawnPositionData_DEPRECATED const&);
-        FixedSpawnPositionData_DEPRECATED(FixedSpawnPositionData_DEPRECATED const&);
-        FixedSpawnPositionData_DEPRECATED();
     };
 
     struct FixedSpawnPositionData {
@@ -176,24 +170,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkf15551;
-        ::ll::UntypedStorage<4, 12> mUnkbdb6fc;
-        ::ll::UntypedStorage<4, 12> mUnk82496c;
-        ::ll::UntypedStorage<1, 1>  mUnkfc42fc;
-        ::ll::UntypedStorage<4, 12> mUnke269b5;
-        ::ll::UntypedStorage<1, 1>  mUnkdb180f;
-        ::ll::UntypedStorage<4, 12> mUnk86fc74;
-        ::ll::UntypedStorage<1, 1>  mUnk25f21c;
-        ::ll::UntypedStorage<1, 1>  mUnkfcf0b8;
-        ::ll::UntypedStorage<1, 1>  mUnk21b90a;
-        ::ll::UntypedStorage<1, 1>  mUnk3a5b14;
+        ::ll::TypedStorage<4, 4, ::DimensionType> mRespawnDimensionId;
+        ::ll::TypedStorage<4, 12, ::Vec3>         mActualRespawnPosition;
+        ::ll::TypedStorage<4, 12, ::BlockPos>     mRequestedRespawnPosition;
+        ::ll::TypedStorage<1, 1, bool>            mHasRespawnPosition;
+        ::ll::TypedStorage<4, 12, ::BlockPos>     mSharedSpawnPosition;
+        ::ll::TypedStorage<1, 1, bool>            mRespawnReady;
+        ::ll::TypedStorage<4, 12, ::Vec3>         mPlayerPos;
+        ::ll::TypedStorage<1, 1, bool>            mIsForcedRespawn;
+        ::ll::TypedStorage<1, 1, bool>            mIsAdventure;
+        ::ll::TypedStorage<1, 1, bool>            mIsFlyingOrNotOverworld;
+        ::ll::TypedStorage<1, 1, bool>            mPositionLoadedFromSave;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CachedSpawnData& operator=(CachedSpawnData const&);
-        CachedSpawnData(CachedSpawnData const&);
-        CachedSpawnData();
     };
 
     using PlayerListenerList = ::std::vector<::PlayerListener*>;

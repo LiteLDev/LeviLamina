@@ -6,12 +6,6 @@ struct IntComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk608d0c;
+    ::ll::TypedStorage<4, 4, int> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IntComponent& operator=(IntComponent const&);
-    IntComponent(IntComponent const&);
-    IntComponent();
 };

@@ -6,14 +6,8 @@ struct HorseAnimationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4a0be1;
-    ::ll::UntypedStorage<4, 4> mUnk874397;
-    ::ll::UntypedStorage<4, 4> mUnk37682b;
+    ::ll::TypedStorage<4, 4, int> mEatCounter;
+    ::ll::TypedStorage<4, 4, int> mMouthCounter;
+    ::ll::TypedStorage<4, 4, int> mTailCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HorseAnimationComponent& operator=(HorseAnimationComponent const&);
-    HorseAnimationComponent(HorseAnimationComponent const&);
-    HorseAnimationComponent();
 };

@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct VanillaOffsetComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkc5dc89;
-    ::ll::UntypedStorage<4, 12> mUnk3d3381;
+    ::ll::TypedStorage<4, 12, ::Vec3> mCurrentOffset;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPreviousOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VanillaOffsetComponent& operator=(VanillaOffsetComponent const&);
-    VanillaOffsetComponent(VanillaOffsetComponent const&);
-    VanillaOffsetComponent();
 };

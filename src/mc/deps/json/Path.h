@@ -11,16 +11,16 @@ namespace Json {
 
 class Path {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk280b06;
-    // NOLINTEND
+    // Path inner types define
+    using InArgs = ::std::vector<::Json::PathArgument const*>;
+
+    using Args = ::std::vector<::Json::PathArgument>;
 
 public:
-    // prevent constructor by default
-    Path& operator=(Path const&);
-    Path(Path const&);
-    Path();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::Json::PathArgument>> args_;
+    // NOLINTEND
 };
 
 } // namespace Json

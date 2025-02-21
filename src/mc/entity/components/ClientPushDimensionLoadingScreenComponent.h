@@ -2,16 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+// clang-format on
+
 struct ClientPushDimensionLoadingScreenComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8b1a66;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mToDimensionType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientPushDimensionLoadingScreenComponent& operator=(ClientPushDimensionLoadingScreenComponent const&);
-    ClientPushDimensionLoadingScreenComponent(ClientPushDimensionLoadingScreenComponent const&);
-    ClientPushDimensionLoadingScreenComponent();
 };

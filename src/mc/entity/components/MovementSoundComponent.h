@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/MovementSoundTravelType.h"
+
 struct MovementSoundComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk54c434;
-    ::ll::UntypedStorage<1, 1> mUnkc3a938;
-    ::ll::UntypedStorage<4, 4> mUnka28be9;
-    ::ll::UntypedStorage<4, 4> mUnk7aa84c;
-    ::ll::UntypedStorage<4, 4> mUnk836f11;
+    ::ll::TypedStorage<1, 1, bool>                      mMakesFlySound;
+    ::ll::TypedStorage<1, 1, bool>                      mMakesStepSound;
+    ::ll::TypedStorage<4, 4, float>                     mCrystalSoundIntensity;
+    ::ll::TypedStorage<4, 4, int>                       mLastCrystalSoundPlayTick;
+    ::ll::TypedStorage<4, 4, ::MovementSoundTravelType> mTravelType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementSoundComponent& operator=(MovementSoundComponent const&);
-    MovementSoundComponent(MovementSoundComponent const&);
-    MovementSoundComponent();
 };

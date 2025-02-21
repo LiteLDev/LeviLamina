@@ -17,14 +17,8 @@ class HandEquippedItemComponent : public ::NetworkedItemComponent<::HandEquipped
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5e5e73;
+    ::ll::TypedStorage<1, 1, bool> mHandEquipped;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HandEquippedItemComponent& operator=(HandEquippedItemComponent const&);
-    HandEquippedItemComponent(HandEquippedItemComponent const&);
-    HandEquippedItemComponent();
 
 public:
     // virtual functions

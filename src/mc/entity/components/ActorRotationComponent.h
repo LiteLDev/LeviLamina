@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 struct ActorRotationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkf62500;
-    ::ll::UntypedStorage<4, 8> mUnkc71aec;
+    ::ll::TypedStorage<4, 8, ::Vec2> mRotationDegree;
+    ::ll::TypedStorage<4, 8, ::Vec2> mRotationDegreePrevious;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorRotationComponent& operator=(ActorRotationComponent const&);
-    ActorRotationComponent(ActorRotationComponent const&);
-    ActorRotationComponent();
 };

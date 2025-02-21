@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ExternalDataInterface;
+// clang-format on
+
 struct ExternalDataComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7f0d98;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ExternalDataInterface>> mExternalDataInterface;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExternalDataComponent& operator=(ExternalDataComponent const&);
-    ExternalDataComponent(ExternalDataComponent const&);
-    ExternalDataComponent();
 };

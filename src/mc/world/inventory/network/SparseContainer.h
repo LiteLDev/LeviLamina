@@ -5,38 +5,57 @@
 // auto generated inclusion list
 #include "mc/world/Container.h"
 #include "mc/world/ContainerContentChangeListener.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/simulation/SparseContainerBackingSetType.h"
 
 // auto generated forward declare list
 // clang-format off
+class IPlayerContainerSetter;
+class ISparseContainerSetListener;
 class ItemStack;
+class ItemStackBase;
 class Player;
 // clang-format on
 
 class SparseContainer : public ::Container, public ::ContainerContentChangeListener {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkfc8c12;
-    ::ll::UntypedStorage<8, 8>  mUnk326db3;
-    ::ll::UntypedStorage<8, 64> mUnk21a7b6;
-    ::ll::UntypedStorage<8, 8>  mUnke393da;
-    ::ll::UntypedStorage<8, 8>  mUnk396104;
-    ::ll::UntypedStorage<8, 64> mUnkd3ef8f;
-    ::ll::UntypedStorage<8, 64> mUnkdb90f7;
-    ::ll::UntypedStorage<8, 64> mUnk7940ec;
-    ::ll::UntypedStorage<8, 64> mUnk1c5250;
-    ::ll::UntypedStorage<8, 64> mUnk844bcd;
-    ::ll::UntypedStorage<8, 64> mUnkaccc54;
-    ::ll::UntypedStorage<8, 64> mUnkd59f21;
-    ::ll::UntypedStorage<1, 1>  mUnk199304;
-    ::ll::UntypedStorage<1, 1>  mUnk835af1;
-    // NOLINTEND
+    // SparseContainer inner types define
+    using ItemNetworkChangedCallback = ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>;
 
 public:
-    // prevent constructor by default
-    SparseContainer& operator=(SparseContainer const&);
-    SparseContainer(SparseContainer const&);
-    SparseContainer();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::SparseContainerBackingSetType const>            mBackingSetType;
+    ::ll::TypedStorage<8, 8, ::Container&>                                     mBackingContainer;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::ItemStack>>          mItems;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ISparseContainerSetListener>> mNetManagerSetter;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPlayerContainerSetter>>      mPlayerSetter;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::ContainerEnumName, ::std::function<void(int, ::ItemStack const&, ::ItemStack const&)>>>
+        mItemNetworkChangedCallbacks;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::ContainerEnumName, ::std::function<bool(int, ::ItemStackBase const&, int)>>>
+        mItemAllowedInSlotCallbacks;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::function<bool(::ItemStackBase const&)>>>
+        mItemAllowedToAddCallbacks;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::ContainerEnumName, ::std::function<int(int, ::ItemStackBase const&)>>>
+        mAvailableSetCountCallbacks;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::function<bool(int)>>>
+        mValidSlotForContainerCallbacks;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::function<bool(::ItemStackBase const&)>>>
+        mItemAllowedToRemoveCallbacks;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerEnumName, ::std::function<bool(::ItemStackBase const&)>>>
+                                         mItemAllowedInContainerCallbacks;
+    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    ::ll::TypedStorage<1, 1, bool const> mIsItemStackNetManagerEnabled;
+    // NOLINTEND
 
 public:
     // virtual functions

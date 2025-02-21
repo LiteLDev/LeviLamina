@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct ServerCatchupMovementTrackerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkff7c5b;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPosAtLastSimulationTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerCatchupMovementTrackerComponent& operator=(ServerCatchupMovementTrackerComponent const&);
-    ServerCatchupMovementTrackerComponent(ServerCatchupMovementTrackerComponent const&);
-    ServerCatchupMovementTrackerComponent();
 };

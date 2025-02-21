@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct RidingOffsetInterpolationPair;
+// clang-format on
+
 struct PassengerRenderingRidingOffsetComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnke5dc52;
+    ::ll::TypedStorage<4, 8, ::RidingOffsetInterpolationPair> mInterpolationPair;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PassengerRenderingRidingOffsetComponent& operator=(PassengerRenderingRidingOffsetComponent const&);
-    PassengerRenderingRidingOffsetComponent(PassengerRenderingRidingOffsetComponent const&);
-    PassengerRenderingRidingOffsetComponent();
 };

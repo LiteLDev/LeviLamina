@@ -19,17 +19,16 @@ class DamageSensorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk24d3d6;
-    ::ll::UntypedStorage<1, 1>  mUnkd57d7c;
-    ::ll::UntypedStorage<4, 4>  mUnk3a8b9f;
-    ::ll::UntypedStorage<8, 24> mUnk44565b;
+    ::ll::TypedStorage<4, 4, int>                                   mDamageAmount;
+    ::ll::TypedStorage<1, 1, bool>                                  mDamageIsFatal;
+    ::ll::TypedStorage<4, 4, int>                                   mDamageCause;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DamageSensorTrigger>> mTriggers;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DamageSensorComponent& operator=(DamageSensorComponent const&);
     DamageSensorComponent(DamageSensorComponent const&);
-    DamageSensorComponent();
 
 public:
     // member functions

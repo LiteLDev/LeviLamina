@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Tick;
+// clang-format on
+
 class LevelTickTrackingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk25b937;
+    ::ll::TypedStorage<8, 8, ::Tick> mLastTicked;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelTickTrackingComponent& operator=(LevelTickTrackingComponent const&);
-    LevelTickTrackingComponent(LevelTickTrackingComponent const&);
-    LevelTickTrackingComponent();
 };

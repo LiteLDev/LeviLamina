@@ -6,12 +6,6 @@ class ItemStackNetManagerEnabledComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6732c6;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mManagerCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemStackNetManagerEnabledComponent& operator=(ItemStackNetManagerEnabledComponent const&);
-    ItemStackNetManagerEnabledComponent(ItemStackNetManagerEnabledComponent const&);
-    ItemStackNetManagerEnabledComponent();
 };

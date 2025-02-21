@@ -7,20 +7,15 @@
 class Actor;
 class CompoundTag;
 class DataLoadHelper;
+struct FogCommandSettings;
 // clang-format on
 
 class FogCommandComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdf5f86;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FogCommandSettings>> mFogStack;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FogCommandComponent& operator=(FogCommandComponent const&);
-    FogCommandComponent(FogCommandComponent const&);
-    FogCommandComponent();
 
 public:
     // member functions

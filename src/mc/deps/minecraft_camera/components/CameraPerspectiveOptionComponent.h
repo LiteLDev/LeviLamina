@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_camera/PlayerViewMode.h"
+
 class CameraPerspectiveOptionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1c76cb;
+    ::ll::TypedStorage<4, 4, ::PlayerViewMode> mActivateForViewMode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraPerspectiveOptionComponent& operator=(CameraPerspectiveOptionComponent const&);
-    CameraPerspectiveOptionComponent(CameraPerspectiveOptionComponent const&);
-    CameraPerspectiveOptionComponent();
 };

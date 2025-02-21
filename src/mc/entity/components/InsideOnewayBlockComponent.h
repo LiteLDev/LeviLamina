@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+// clang-format on
+
 struct InsideOnewayBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk22b425;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InsideOnewayBlockComponent& operator=(InsideOnewayBlockComponent const&);
-    InsideOnewayBlockComponent(InsideOnewayBlockComponent const&);
-    InsideOnewayBlockComponent();
 };

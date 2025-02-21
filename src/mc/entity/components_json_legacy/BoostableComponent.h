@@ -14,17 +14,11 @@ class BoostableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk22fc92;
-    ::ll::UntypedStorage<4, 4> mUnk75c6d9;
-    ::ll::UntypedStorage<4, 4> mUnkc3e906;
-    ::ll::UntypedStorage<4, 4> mUnka56f75;
+    ::ll::TypedStorage<1, 1, bool>  mIsBoosting;
+    ::ll::TypedStorage<4, 4, int>   mBoostTime;
+    ::ll::TypedStorage<4, 4, int>   mBoostTimeTotal;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoostableComponent& operator=(BoostableComponent const&);
-    BoostableComponent(BoostableComponent const&);
-    BoostableComponent();
 
 public:
     // member functions

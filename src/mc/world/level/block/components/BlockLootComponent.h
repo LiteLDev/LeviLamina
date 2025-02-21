@@ -6,12 +6,6 @@ struct BlockLootComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb77f25;
+    ::ll::TypedStorage<8, 32, ::std::string> mLootTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockLootComponent& operator=(BlockLootComponent const&);
-    BlockLootComponent(BlockLootComponent const&);
-    BlockLootComponent();
 };

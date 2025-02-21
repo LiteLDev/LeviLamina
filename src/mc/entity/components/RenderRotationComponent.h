@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 struct RenderRotationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk95ed81;
+    ::ll::TypedStorage<4, 8, ::Vec2> mRot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderRotationComponent& operator=(RenderRotationComponent const&);
-    RenderRotationComponent(RenderRotationComponent const&);
-    RenderRotationComponent();
 };

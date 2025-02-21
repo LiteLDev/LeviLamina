@@ -17,14 +17,8 @@ class CompostableItemComponent : public ::NetworkedItemComponent<::CompostableIt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8e064c;
+    ::ll::TypedStorage<1, 1, char> mCompostingChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CompostableItemComponent& operator=(CompostableItemComponent const&);
-    CompostableItemComponent(CompostableItemComponent const&);
-    CompostableItemComponent();
 
 public:
     // virtual functions

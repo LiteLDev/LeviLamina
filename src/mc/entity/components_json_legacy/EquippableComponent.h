@@ -7,20 +7,20 @@
 class Actor;
 class CompoundTag;
 class ItemStack;
+struct SlotDescriptor;
 // clang-format on
 
 class EquippableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkca0284;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SlotDescriptor>> mSlots;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     EquippableComponent& operator=(EquippableComponent const&);
     EquippableComponent(EquippableComponent const&);
-    EquippableComponent();
 
 public:
     // member functions

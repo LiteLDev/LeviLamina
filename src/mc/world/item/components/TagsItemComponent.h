@@ -17,14 +17,8 @@ class TagsItemComponent : public ::NetworkedItemComponent<::TagsItemComponent> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk651b15;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TagsItemComponent& operator=(TagsItemComponent const&);
-    TagsItemComponent(TagsItemComponent const&);
-    TagsItemComponent();
 
 public:
     // virtual functions

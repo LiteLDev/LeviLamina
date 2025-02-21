@@ -2,17 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+struct Tick;
+// clang-format on
+
 class VibrationDataComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk5c94ff;
-    ::ll::UntypedStorage<8, 8>  mUnk19090b;
+    ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>> mLastVibrationPos;
+    ::ll::TypedStorage<8, 8, ::Tick>                       mLastVibrationTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VibrationDataComponent& operator=(VibrationDataComponent const&);
-    VibrationDataComponent(VibrationDataComponent const&);
-    VibrationDataComponent();
 };

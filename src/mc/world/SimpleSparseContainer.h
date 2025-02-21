@@ -17,20 +17,18 @@ class Player;
 
 class SimpleSparseContainer : public ::Container, public ::ContainerContentChangeListener {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc19c02;
-    ::ll::UntypedStorage<4, 4>  mUnk8270ae;
-    ::ll::UntypedStorage<8, 64> mUnkbbe490;
-    ::ll::UntypedStorage<8, 8>  mUnk466ce8;
-    ::ll::UntypedStorage<8, 8>  mUnk3bf502;
-    // NOLINTEND
+    // SimpleSparseContainer inner types define
+    using SparseContainerData = ::std::unordered_map<int, ::ItemStack>;
 
 public:
-    // prevent constructor by default
-    SimpleSparseContainer& operator=(SimpleSparseContainer const&);
-    SimpleSparseContainer(SimpleSparseContainer const&);
-    SimpleSparseContainer();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::Container&>                                     mBackingContainer;
+    ::ll::TypedStorage<4, 4, ::SparseContainerBackingSetType const>            mBackingSetType;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::ItemStack>>          mItems;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ISparseContainerSetListener>> mSparseContainerSetListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPlayerContainerSetter>>      mPlayerSetter;
+    // NOLINTEND
 
 public:
     // virtual functions

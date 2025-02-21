@@ -16,16 +16,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6949f6;
-    ::ll::UntypedStorage<4, 4>  mUnkbd0085;
-    ::ll::UntypedStorage<4, 4>  mUnkb7a133;
+    ::ll::TypedStorage<8, 32, ::std::string>             key_;
+    ::ll::TypedStorage<4, 4, uint>                       index_;
+    ::ll::TypedStorage<4, 4, ::Json::PathArgument::Kind> kind_;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PathArgument& operator=(PathArgument const&);
-    PathArgument(PathArgument const&);
-    PathArgument();
 };
 
 } // namespace Json

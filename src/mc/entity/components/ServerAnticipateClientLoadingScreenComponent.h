@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct LoadingScreenId;
+// clang-format on
+
 struct ServerAnticipateClientLoadingScreenComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk271336;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LoadingScreenId>> mLoadingScreenIds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerAnticipateClientLoadingScreenComponent& operator=(ServerAnticipateClientLoadingScreenComponent const&);
-    ServerAnticipateClientLoadingScreenComponent(ServerAnticipateClientLoadingScreenComponent const&);
-    ServerAnticipateClientLoadingScreenComponent();
 };

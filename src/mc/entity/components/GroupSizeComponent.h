@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Tick;
+// clang-format on
+
 struct GroupSizeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8aab86;
-    ::ll::UntypedStorage<8, 8> mUnk9dc3d0;
+    ::ll::TypedStorage<4, 4, int>    mCount;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GroupSizeComponent& operator=(GroupSizeComponent const&);
-    GroupSizeComponent(GroupSizeComponent const&);
-    GroupSizeComponent();
 };

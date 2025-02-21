@@ -18,12 +18,8 @@ class HoverTextColorItemComponent : public ::NetworkedItemComponent<::HoverTextC
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk43ec06;
+    ::ll::TypedStorage<8, 48, ::HashedString> mHoverTextColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HoverTextColorItemComponent();
 
 public:
     // virtual functions

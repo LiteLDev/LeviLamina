@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class LayeredAbilities;
+// clang-format on
+
 struct AbilitiesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 1444> mUnkcf112e;
+    ::ll::TypedStorage<4, 1444, ::LayeredAbilities> mAbilities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AbilitiesComponent& operator=(AbilitiesComponent const&);
-    AbilitiesComponent(AbilitiesComponent const&);
-    AbilitiesComponent();
 };

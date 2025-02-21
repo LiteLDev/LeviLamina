@@ -6,13 +6,7 @@ struct EmotePlayedTelemetryDataComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk677049;
-    ::ll::UntypedStorage<4, 4>  mUnk717dbb;
+    ::ll::TypedStorage<8, 32, ::std::string> mEmoteProductId;
+    ::ll::TypedStorage<4, 4, int>            mEmoteSlotNumber;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EmotePlayedTelemetryDataComponent& operator=(EmotePlayedTelemetryDataComponent const&);
-    EmotePlayedTelemetryDataComponent(EmotePlayedTelemetryDataComponent const&);
-    EmotePlayedTelemetryDataComponent();
 };

@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct SuspendPlayerSave;
+// clang-format on
+
 struct PlayerSaveSuspensionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk8ecc89;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SuspendPlayerSave>> mWeakSuspendToken;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerSaveSuspensionComponent& operator=(PlayerSaveSuspensionComponent const&);
-    PlayerSaveSuspensionComponent(PlayerSaveSuspensionComponent const&);
-    PlayerSaveSuspensionComponent();
 };

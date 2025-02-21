@@ -41,15 +41,19 @@ public:
         InsideColumnData();
     };
 
+    using DataVariant = ::std::variant<
+        ::InsideBubbleColumnBlockComponent::AboveColumnData,
+        ::InsideBubbleColumnBlockComponent::InsideColumnData>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk337972;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::variant<
+            ::InsideBubbleColumnBlockComponent::AboveColumnData,
+            ::InsideBubbleColumnBlockComponent::InsideColumnData>>>
+        mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InsideBubbleColumnBlockComponent& operator=(InsideBubbleColumnBlockComponent const&);
-    InsideBubbleColumnBlockComponent(InsideBubbleColumnBlockComponent const&);
-    InsideBubbleColumnBlockComponent();
 };

@@ -3,21 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/TempEPtr.h"
+#include "mc/world/actor/projectile/ProjectileAnchor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorDamageSource;
+class ActorDefinitionTrigger;
 class BaseGameVersion;
 class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
 class HitResult;
 class Level;
+class OnHitSubcomponent;
 class Vec2;
 class Vec3;
+struct ActorUniqueID;
 // clang-format on
 
 class ProjectileComponent {
@@ -33,79 +40,79 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk1aa13f;
-    ::ll::UntypedStorage<1, 1>   mUnka8d1b2;
-    ::ll::UntypedStorage<8, 8>   mUnk3b785c;
-    ::ll::UntypedStorage<4, 12>  mUnk657cc6;
-    ::ll::UntypedStorage<4, 12>  mUnk7c8d4e;
-    ::ll::UntypedStorage<1, 1>   mUnk5aecd5;
-    ::ll::UntypedStorage<4, 4>   mUnkdd1f46;
-    ::ll::UntypedStorage<4, 4>   mUnk2bc10a;
-    ::ll::UntypedStorage<4, 4>   mUnkf349f5;
-    ::ll::UntypedStorage<4, 4>   mUnk7cd454;
-    ::ll::UntypedStorage<4, 12>  mUnkc2eea9;
-    ::ll::UntypedStorage<4, 12>  mUnk2263ef;
-    ::ll::UntypedStorage<4, 12>  mUnkc7d9cf;
-    ::ll::UntypedStorage<4, 4>   mUnk13d33c;
-    ::ll::UntypedStorage<4, 4>   mUnk707b20;
-    ::ll::UntypedStorage<8, 112> mUnkcd25a0;
-    ::ll::UntypedStorage<1, 1>   mUnk2b94ea;
-    ::ll::UntypedStorage<1, 1>   mUnk71f9fd;
-    ::ll::UntypedStorage<4, 4>   mUnk80d589;
-    ::ll::UntypedStorage<4, 4>   mUnk298be6;
-    ::ll::UntypedStorage<4, 4>   mUnkc7874d;
-    ::ll::UntypedStorage<4, 12>  mUnk4c7f8c;
-    ::ll::UntypedStorage<4, 4>   mUnk988780;
-    ::ll::UntypedStorage<4, 4>   mUnk2fd125;
-    ::ll::UntypedStorage<4, 4>   mUnk9ca64a;
-    ::ll::UntypedStorage<8, 24>  mUnkcd3873;
-    ::ll::UntypedStorage<8, 104> mUnk707d4c;
-    ::ll::UntypedStorage<4, 4>   mUnkf7f5a1;
-    ::ll::UntypedStorage<4, 4>   mUnk31ad7f;
-    ::ll::UntypedStorage<4, 4>   mUnk879fd3;
-    ::ll::UntypedStorage<4, 4>   mUnkc02d3a;
-    ::ll::UntypedStorage<4, 4>   mUnkc3e8cb;
-    ::ll::UntypedStorage<4, 4>   mUnk982ebf;
-    ::ll::UntypedStorage<1, 1>   mUnk859d78;
-    ::ll::UntypedStorage<4, 4>   mUnk3e2490;
-    ::ll::UntypedStorage<1, 1>   mUnk31aaef;
-    ::ll::UntypedStorage<1, 1>   mUnke7d0a1;
-    ::ll::UntypedStorage<1, 1>   mUnk21e1d1;
-    ::ll::UntypedStorage<4, 4>   mUnka620bc;
-    ::ll::UntypedStorage<4, 4>   mUnkbcaa50;
-    ::ll::UntypedStorage<1, 1>   mUnk5ecef6;
-    ::ll::UntypedStorage<4, 4>   mUnk19991a;
-    ::ll::UntypedStorage<4, 4>   mUnkff1095;
-    ::ll::UntypedStorage<4, 4>   mUnkceef96;
-    ::ll::UntypedStorage<4, 4>   mUnkaf8ccc;
-    ::ll::UntypedStorage<1, 1>   mUnk1292de;
-    ::ll::UntypedStorage<1, 1>   mUnkbcf82d;
-    ::ll::UntypedStorage<1, 1>   mUnkc9a6b0;
-    ::ll::UntypedStorage<1, 1>   mUnk94c1af;
-    ::ll::UntypedStorage<1, 1>   mUnk86a969;
-    ::ll::UntypedStorage<1, 1>   mUnk505c09;
-    ::ll::UntypedStorage<1, 1>   mUnk8f3a1a;
-    ::ll::UntypedStorage<1, 1>   mUnk6adbd1;
-    ::ll::UntypedStorage<1, 1>   mUnke18b2a;
-    ::ll::UntypedStorage<1, 1>   mUnk6bd043;
-    ::ll::UntypedStorage<4, 4>   mUnkdfb0b3;
-    ::ll::UntypedStorage<4, 4>   mUnkd349b9;
-    ::ll::UntypedStorage<8, 24>  mUnk967ef0;
-    ::ll::UntypedStorage<1, 1>   mUnk6a7fb7;
-    ::ll::UntypedStorage<1, 1>   mUnk7033d4;
-    ::ll::UntypedStorage<8, 8>   mUnkb4cbcc;
-    ::ll::UntypedStorage<8, 40>  mUnkc4e2b7;
-    ::ll::UntypedStorage<8, 8>   mUnk72ef3d;
-    ::ll::UntypedStorage<4, 12>  mUnk364d68;
-    ::ll::UntypedStorage<4, 4>   mUnk4a912f;
-    ::ll::UntypedStorage<4, 4>   mUnk883c26;
-    ::ll::UntypedStorage<8, 8>   mUnkfa3426;
-    ::ll::UntypedStorage<1, 1>   mUnk264555;
-    ::ll::UntypedStorage<4, 4>   mUnk915496;
-    ::ll::UntypedStorage<1, 1>   mUnk48a1b6;
-    ::ll::UntypedStorage<1, 1>   mUnk30160f;
-    ::ll::UntypedStorage<8, 112> mUnk20821c;
-    ::ll::UntypedStorage<1, 1>   mUnk559450;
+    ::ll::TypedStorage<1, 1, bool>                                   mWasOnGround;
+    ::ll::TypedStorage<1, 1, bool>                                   mNoPhysics;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mOwnerId;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mThrownPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mApexPos;
+    ::ll::TypedStorage<1, 1, bool>                                   mFoundApex;
+    ::ll::TypedStorage<4, 4, int>                                    mLife;
+    ::ll::TypedStorage<4, 4, int>                                    mFlightTime;
+    ::ll::TypedStorage<4, 4, int>                                    mOnGroundTime;
+    ::ll::TypedStorage<4, 4, int>                                    mShakeTime;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mBlock;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                            mStuckToBlockPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mCollisionPos;
+    ::ll::TypedStorage<4, 4, int>                                    mEnchantPower;
+    ::ll::TypedStorage<4, 4, int>                                    mEnchantImpaler;
+    ::ll::TypedStorage<8, 112, ::HitResult>                          mHitResult;
+    ::ll::TypedStorage<1, 1, uchar>                                  mHitFacing;
+    ::ll::TypedStorage<1, 1, bool>                                   mReflect;
+    ::ll::TypedStorage<4, 4, int>                                    mReflectImmunityTicks;
+    ::ll::TypedStorage<4, 4, float>                                  mPower;
+    ::ll::TypedStorage<4, 4, float>                                  mDamage;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mOffset;
+    ::ll::TypedStorage<4, 4, ::ParticleType>                         mHitParticle;
+    ::ll::TypedStorage<4, 4, float>                                  mGravity;
+    ::ll::TypedStorage<4, 4, float>                                  mUpwardsAngleOffset;
+    ::ll::TypedStorage<8, 24, ::std::vector<::OnHitSubcomponent*>>   mOnHitCommands;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnHitEvent;
+    ::ll::TypedStorage<4, 4, float>                                  mUncertaintyBase;
+    ::ll::TypedStorage<4, 4, float>                                  mUncertaintyMultiplier;
+    ::ll::TypedStorage<4, 4, ::ActorType>                            mFilterType;
+    ::ll::TypedStorage<4, 4, float>                                  mOnFireTime;
+    ::ll::TypedStorage<4, 4, int>                                    mPotionEffect;
+    ::ll::TypedStorage<4, 4, float>                                  mSplashRange;
+    ::ll::TypedStorage<1, 1, bool>                                   mKnockback;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackForce;
+    ::ll::TypedStorage<1, 1, bool>                                   mCatchFire;
+    ::ll::TypedStorage<1, 1, bool>                                   mChanneling;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsSplash;
+    ::ll::TypedStorage<4, 4, float>                                  mInertiaMod;
+    ::ll::TypedStorage<4, 4, float>                                  mLiquidInertia;
+    ::ll::TypedStorage<1, 1, bool>                                   mSemiRandomDiffDamage;
+    ::ll::TypedStorage<4, 4, ::ProjectileAnchor>                     mSpawnPosAnchor;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mHitEntitySound;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mHitGroundSound;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mShootSound;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsDangerous;
+    ::ll::TypedStorage<1, 1, bool>                                   mShootTarget;
+    ::ll::TypedStorage<1, 1, bool>                                   mDamageOwner;
+    ::ll::TypedStorage<1, 1, bool>                                   mReflectOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                   mDestroyOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                   mStopOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                   mCritParticleOnHurt;
+    ::ll::TypedStorage<1, 1, bool>                                   mHitWater;
+    ::ll::TypedStorage<1, 1, bool>                                   mHitActor;
+    ::ll::TypedStorage<1, 1, bool>                                   mMultipleHits;
+    ::ll::TypedStorage<4, 4, int>                                    mPiercingEnchantLevel;
+    ::ll::TypedStorage<4, 4, int>                                    mActorHitCount;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorType>>            mIgnoredEntities;
+    ::ll::TypedStorage<1, 1, bool>                                   mHitNearestPassenger;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsHoming;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mPendingTargetID;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>                   mTarget;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mTargetID;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mTargetDelta;
+    ::ll::TypedStorage<4, 4, int>                                    mFlightSteps;
+    ::ll::TypedStorage<4, 4, ::ProjectileComponent::EAxis>           mCurrentMoveDirection;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mLastReflectActor;
+    ::ll::TypedStorage<1, 1, bool>                                   mShouldBounce;
+    ::ll::TypedStorage<4, 4, uint>                                   mCurrentDelay;
+    ::ll::TypedStorage<1, 1, bool>                                   mWaitingForServer;
+    ::ll::TypedStorage<1, 1, bool>                                   mWaitingForServerHitGround;
+    ::ll::TypedStorage<8, 112, ::HitResult>                          mCachedHitResult;
+    ::ll::TypedStorage<1, 1, bool>                                   mDelayOneFrame;
     // NOLINTEND
 
 public:

@@ -9,25 +9,21 @@
 // clang-format off
 class Actor;
 class BlockPos;
+class DefinitionTrigger;
 class HashedString;
 class ItemStack;
 class OnUseOnItemComponentLegacyFactoryData;
 class Vec3;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnUseOnTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkbee362;
-    ::ll::UntypedStorage<8, 264> mUnk8022c3;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnUseOnSubscription;
+    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnUseOnTrigger;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyOnUseOnTriggerItemComponent& operator=(LegacyOnUseOnTriggerItemComponent const&);
-    LegacyOnUseOnTriggerItemComponent(LegacyOnUseOnTriggerItemComponent const&);
-    LegacyOnUseOnTriggerItemComponent();
 
 public:
     // virtual functions

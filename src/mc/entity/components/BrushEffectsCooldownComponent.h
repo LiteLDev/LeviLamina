@@ -11,14 +11,8 @@ class BrushEffectsCooldownComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk580520;
+    ::ll::TypedStorage<8, 16, ::ExpiringTick> mCooldown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BrushEffectsCooldownComponent& operator=(BrushEffectsCooldownComponent const&);
-    BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&);
-    BrushEffectsCooldownComponent();
 
 public:
     // static variables

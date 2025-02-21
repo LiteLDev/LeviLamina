@@ -11,22 +11,34 @@ class BlockPos;
 class CompassSpriteCalculator;
 class Dimension;
 class LodestoneCompassComponentCalculator;
+class PositionTrackingId;
 struct ActorUniqueID;
 // clang-format on
 
 class LodestoneCompassComponent {
 public:
+    // LodestoneCompassComponent inner types define
+    using CompassIdMap = ::std::unordered_map<
+        ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>,
+        ::std::unique_ptr<::LodestoneCompassComponentCalculator>>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd7217f;
-    ::ll::UntypedStorage<8, 64> mUnkb85952;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId> mTrackingHandle;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>,
+            ::std::unique_ptr<::LodestoneCompassComponentCalculator>>>
+        mCalculators;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     LodestoneCompassComponent& operator=(LodestoneCompassComponent const&);
     LodestoneCompassComponent(LodestoneCompassComponent const&);
-    LodestoneCompassComponent();
 
 public:
     // member functions

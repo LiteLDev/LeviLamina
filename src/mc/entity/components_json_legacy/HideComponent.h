@@ -11,15 +11,9 @@ class HideComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk63e831;
-    ::ll::UntypedStorage<1, 1> mUnkdb1802;
+    ::ll::TypedStorage<1, 1, bool> mIsInRaid;
+    ::ll::TypedStorage<1, 1, bool> mReactToBell;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HideComponent& operator=(HideComponent const&);
-    HideComponent(HideComponent const&);
-    HideComponent();
 
 public:
     // member functions

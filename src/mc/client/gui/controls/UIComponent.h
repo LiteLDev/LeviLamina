@@ -18,14 +18,8 @@ class UIComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc64f0c;
+    ::ll::TypedStorage<8, 8, ::UIControl&> mOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UIComponent& operator=(UIComponent const&);
-    UIComponent(UIComponent const&);
-    UIComponent();
 
 public:
     // virtual functions

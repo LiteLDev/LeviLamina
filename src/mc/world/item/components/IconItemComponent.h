@@ -18,14 +18,8 @@ class IconItemComponent : public ::NetworkedItemComponent<::IconItemComponent> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkf8b283;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mTextures;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    IconItemComponent& operator=(IconItemComponent const&);
-    IconItemComponent(IconItemComponent const&);
-    IconItemComponent();
 
 public:
     // virtual functions

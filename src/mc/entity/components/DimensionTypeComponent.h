@@ -2,16 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+// clang-format on
+
 struct DimensionTypeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfafbcc;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DimensionTypeComponent& operator=(DimensionTypeComponent const&);
-    DimensionTypeComponent(DimensionTypeComponent const&);
-    DimensionTypeComponent();
 };

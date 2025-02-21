@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
+
 struct ClimbingLadderBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf821fd;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClimbingLadderBlockComponent& operator=(ClimbingLadderBlockComponent const&);
-    ClimbingLadderBlockComponent(ClimbingLadderBlockComponent const&);
-    ClimbingLadderBlockComponent();
 };

@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
+
 struct EntityArmorEquipmentSlotMappingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk85dfa0;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot> mArmorSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityArmorEquipmentSlotMappingComponent& operator=(EntityArmorEquipmentSlotMappingComponent const&);
-    EntityArmorEquipmentSlotMappingComponent(EntityArmorEquipmentSlotMappingComponent const&);
-    EntityArmorEquipmentSlotMappingComponent();
 };

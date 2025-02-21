@@ -10,6 +10,8 @@
 // clang-format off
 class Actor;
 class Block;
+class BlockDescriptor;
+class BlockLegacyPtr;
 class BlockPos;
 class CompoundTag;
 class HashedString;
@@ -17,6 +19,7 @@ class ItemStack;
 class ItemStackBase;
 class SemVersion;
 class Vec3;
+namespace Bedrock::PubSub { class Subscription; }
 namespace SharedTypes::v1_21_40 { struct PlanterItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -25,18 +28,12 @@ class PlanterItemComponent : public ::NetworkedItemComponent<::PlanterItemCompon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkab983d;
-    ::ll::UntypedStorage<8, 24> mUnkf07137;
-    ::ll::UntypedStorage<8, 16> mUnk9103bb;
-    ::ll::UntypedStorage<1, 1>  mUnkb0b7c1;
-    ::ll::UntypedStorage<1, 1>  mUnkd129bf;
+    ::ll::TypedStorage<8, 8, ::BlockLegacyPtr>                  mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedUseBlocks;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mOnUseOnSubscription;
+    ::ll::TypedStorage<1, 1, bool>                              mCanUseBlockAsIcon;
+    ::ll::TypedStorage<1, 1, bool>                              mReplaceBlockItem;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlanterItemComponent& operator=(PlanterItemComponent const&);
-    PlanterItemComponent(PlanterItemComponent const&);
-    PlanterItemComponent();
 
 public:
     // virtual functions

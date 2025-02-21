@@ -2,20 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Vec3;
+struct CollisionShapes;
+// clang-format on
+
 struct RewindCollisionShapesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkad7624;
-    ::ll::UntypedStorage<8, 56> mUnk13a09c;
-    ::ll::UntypedStorage<4, 24> mUnk2b1208;
+    ::ll::TypedStorage<4, 12, ::Vec3>            mFetchedPosition;
+    ::ll::TypedStorage<8, 56, ::CollisionShapes> mCollisionShapes;
+    ::ll::TypedStorage<4, 24, ::AABB>            mMoveCollisionLastFetchedBox;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RewindCollisionShapesComponent& operator=(RewindCollisionShapesComponent const&);
-    RewindCollisionShapesComponent(RewindCollisionShapesComponent const&);
-    RewindCollisionShapesComponent();
 
 public:
     // member functions

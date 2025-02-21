@@ -16,6 +16,7 @@ class HashedString;
 class Player;
 class SemVersion;
 class Vec3;
+struct ActorDefinitionIdentifier;
 namespace SharedTypes::v1_20_50 { struct ProjectileItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -24,15 +25,9 @@ class ProjectileItemComponent : public ::NetworkedItemComponent<::ProjectileItem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk6c13ef;
-    ::ll::UntypedStorage<8, 176> mUnk23fa74;
+    ::ll::TypedStorage<4, 4, float>                         mMinCriticalPower;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProjectileItemComponent& operator=(ProjectileItemComponent const&);
-    ProjectileItemComponent(ProjectileItemComponent const&);
-    ProjectileItemComponent();
 
 public:
     // virtual functions

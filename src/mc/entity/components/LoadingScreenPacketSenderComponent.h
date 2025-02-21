@@ -2,17 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Packet;
+// clang-format on
+
 struct LoadingScreenPacketSenderComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkf94cb5;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Packet>>> mPackets;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     LoadingScreenPacketSenderComponent& operator=(LoadingScreenPacketSenderComponent const&);
-    LoadingScreenPacketSenderComponent();
 
 public:
     // member functions

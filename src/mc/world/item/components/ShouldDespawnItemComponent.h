@@ -17,14 +17,8 @@ class ShouldDespawnItemComponent : public ::NetworkedItemComponent<::ShouldDespa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk526ebd;
+    ::ll::TypedStorage<1, 1, bool> mShouldDespawn;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShouldDespawnItemComponent& operator=(ShouldDespawnItemComponent const&);
-    ShouldDespawnItemComponent(ShouldDespawnItemComponent const&);
-    ShouldDespawnItemComponent();
 
 public:
     // virtual functions

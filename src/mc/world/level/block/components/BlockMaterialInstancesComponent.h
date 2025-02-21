@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+struct BlockMaterialInstance;
 struct BlockMaterialInstancesDescription;
 // clang-format on
 
@@ -11,14 +13,8 @@ struct BlockMaterialInstancesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk627ac4;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::BlockMaterialInstance>> mMaterials;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockMaterialInstancesComponent& operator=(BlockMaterialInstancesComponent const&);
-    BlockMaterialInstancesComponent(BlockMaterialInstancesComponent const&);
-    BlockMaterialInstancesComponent();
 
 public:
     // member functions

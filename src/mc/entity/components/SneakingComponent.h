@@ -6,12 +6,6 @@ struct SneakingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke41bcf;
+    ::ll::TypedStorage<4, 4, float> mSneakingMovementFactor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SneakingComponent& operator=(SneakingComponent const&);
-    SneakingComponent(SneakingComponent const&);
-    SneakingComponent();
 };

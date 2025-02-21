@@ -2,23 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Frustum;
+class Vec3;
+// clang-format on
+
 struct CameraAimAssistCachedFrustumComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnkc21043;
-    ::ll::UntypedStorage<4, 12>  mUnkd9ac34;
-    ::ll::UntypedStorage<4, 12>  mUnkb82a7a;
-    ::ll::UntypedStorage<4, 12>  mUnka2bffd;
-    ::ll::UntypedStorage<4, 12>  mUnk84d5ef;
-    ::ll::UntypedStorage<4, 4>   mUnk619a90;
-    ::ll::UntypedStorage<4, 4>   mUnk9c9c9e;
-    ::ll::UntypedStorage<4, 192> mUnk58a42b;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mDirection;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mStart;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mFarCenter;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mLeft;
+    ::ll::TypedStorage<4, 12, ::Vec3>     mUp;
+    ::ll::TypedStorage<4, 4, float>       mLeftLength;
+    ::ll::TypedStorage<4, 4, float>       mUpLength;
+    ::ll::TypedStorage<4, 192, ::Frustum> mFrustum;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAimAssistCachedFrustumComponent& operator=(CameraAimAssistCachedFrustumComponent const&);
-    CameraAimAssistCachedFrustumComponent(CameraAimAssistCachedFrustumComponent const&);
-    CameraAimAssistCachedFrustumComponent();
 };

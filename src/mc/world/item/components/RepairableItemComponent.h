@@ -13,6 +13,7 @@ class HashedString;
 class ItemStack;
 class ItemStackBase;
 class SemVersion;
+struct RepairItemEntry;
 struct RepairItemResult;
 namespace SharedTypes::v1_20_50 { struct RepairableItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -22,14 +23,13 @@ class RepairableItemComponent : public ::NetworkedItemComponent<::RepairableItem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb9cd42;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RepairItemEntry>> mRepairItems;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     RepairableItemComponent& operator=(RepairableItemComponent const&);
     RepairableItemComponent(RepairableItemComponent const&);
-    RepairableItemComponent();
 
 public:
     // virtual functions

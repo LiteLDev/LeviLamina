@@ -6,12 +6,6 @@ class SchedulerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk541a31;
+    ::ll::TypedStorage<4, 4, int> mCurrentEventIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SchedulerComponent& operator=(SchedulerComponent const&);
-    SchedulerComponent(SchedulerComponent const&);
-    SchedulerComponent();
 };

@@ -2,18 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+// clang-format on
+
 struct BounceComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk93c7f9;
-    ::ll::UntypedStorage<8, 8>  mUnk55a419;
-    ::ll::UntypedStorage<4, 4>  mUnk72f5f2;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mBounceStartPos;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBounceBlock;
+    ::ll::TypedStorage<4, 4, int>            mBounceHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BounceComponent& operator=(BounceComponent const&);
-    BounceComponent(BounceComponent const&);
-    BounceComponent();
 };

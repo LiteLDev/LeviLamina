@@ -8,20 +8,15 @@
 // auto generated forward declare list
 // clang-format off
 class ItemStack;
+class Player;
 // clang-format on
 
 class SimplePlayerContainer : public ::SimpleContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk824404;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SimplePlayerContainer& operator=(SimplePlayerContainer const&);
-    SimplePlayerContainer(SimplePlayerContainer const&);
-    SimplePlayerContainer();
 
 public:
     // virtual functions

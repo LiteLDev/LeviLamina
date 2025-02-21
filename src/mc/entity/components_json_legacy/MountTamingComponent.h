@@ -13,17 +13,11 @@ class MountTamingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk63f4c5;
-    ::ll::UntypedStorage<4, 4> mUnk11cb63;
-    ::ll::UntypedStorage<4, 4> mUnkf6aa4b;
-    ::ll::UntypedStorage<4, 4> mUnk792c31;
+    ::ll::TypedStorage<4, 4, int> mTemper;
+    ::ll::TypedStorage<4, 4, int> mCounter;
+    ::ll::TypedStorage<4, 4, int> mTemperMod;
+    ::ll::TypedStorage<4, 4, int> mWaitCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MountTamingComponent& operator=(MountTamingComponent const&);
-    MountTamingComponent(MountTamingComponent const&);
-    MountTamingComponent();
 
 public:
     // member functions
