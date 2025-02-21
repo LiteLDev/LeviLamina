@@ -11,22 +11,22 @@ struct OptionalString;
 
 class Localization {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3a4afe;
-    ::ll::UntypedStorage<8, 32> mUnk9f615d;
-    ::ll::UntypedStorage<8, 32> mUnk92496e;
-    ::ll::UntypedStorage<8, 16> mUnke15a78;
-    ::ll::UntypedStorage<8, 16> mUnk2634de;
-    ::ll::UntypedStorage<8, 8>  mUnkc08da8;
-    ::ll::UntypedStorage<1, 1>  mUnk2e91af;
-    // NOLINTEND
+    // Localization inner types define
+    using Map = ::std::map<::std::string, ::std::string>;
+
+    using StoreLocMap = ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>>;
 
 public:
-    // prevent constructor by default
-    Localization& operator=(Localization const&);
-    Localization(Localization const&);
-    Localization();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                                      mCommaSeperator;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mDigitGroupSeparator;
+    ::ll::TypedStorage<8, 32, ::std::string const>                      mCode;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>> mStrings;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>> mCaseSensitiveCache;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                       mCaseSensitiveCacheMutex;
+    ::ll::TypedStorage<1, 1, bool>                                      mMayContainIdentifier;
+    // NOLINTEND
 
 public:
     // member functions
