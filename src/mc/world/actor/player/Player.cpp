@@ -31,14 +31,14 @@ UserEntityIdentifierComponent& Player::getUserEntityIdentifier() {
 }
 
 optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
-    // TODO: fix this
-    //    if (isSimulatedPlayer()) {
-    //        return std::nullopt;
-    //    }
-    //    auto pos = ll::service::getServerNetworkHandler()->mClients->find(getNetworkIdentifier());
-    //    if (pos != ll::service::getServerNetworkHandler()->mClients->end()) {
-    //        return pos->second->mPrimaryRequest.get();
-    //    }
+    if (isSimulated()) {
+        return std::nullopt;
+    }
+    auto& clients = *ll::service::getServerNetworkHandler()->mClients;
+    auto  pos     = clients.find(getNetworkIdentifier());
+    if (pos != clients.end()) {
+        return pos->second->mPrimaryRequest.get();
+    }
     return std::nullopt;
 }
 
@@ -57,10 +57,9 @@ mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mCli
 std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
 
 std::string Player::getLocaleCode() const {
-    // TODO: fix this
-    //    if (auto request = getConnectionRequest()) {
-    //        return request->mRawToken->mDataInfo["LanguageCode"].asString({});
-    //    }
+    if (auto request = getConnectionRequest()) {
+        return std::as_const(request->mRawToken->mDataInfo)["LanguageCode"].asString({});
+    }
     return {};
 }
 

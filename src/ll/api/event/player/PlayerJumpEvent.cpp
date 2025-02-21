@@ -58,8 +58,8 @@ LL_STATIC_HOOK(
     ActorDataFlagComponent&                                  actorDataFlag,
     ActorDataDirtyFlagsComponent&                            actorDataDirtyFlags,
     VanillaClientGameplayComponent&                          vanillaClientGameplayComponent,
-    ::Optional<const ::SneakingComponent>                    sneakingComponent,
-    ::Optional<const ::WasInWaterFlagComponent>              isInWater,
+    ::Optional<::SneakingComponent const>                    sneakingComponent,
+    ::Optional<::WasInWaterFlagComponent const>              isInWater,
     OptionalGlobal<::PlayerMovementSettingsComponent const>& playerMovementSettingsComponent
 ) {
     origin(
@@ -82,7 +82,7 @@ LL_STATIC_HOOK(
                 auto& inputstate = *input.mInputState;
                 auto& pkt        = *serverPlayerCurrentMovementComponent.mCurrentUpdate;
                 if (pkt.mInputData.get()[(size_t)::PlayerAuthInputPacket::InputData::StartJumping]
-                    && inputstate.mUnk4c2da7.as<bool>() && input.mJumping) {
+                    && inputstate.mJumpDown && input.mJumping) {
                     EventBus::getInstance().publish(PlayerJumpEvent(static_cast<ServerPlayer&>(*actor)));
                 }
             }

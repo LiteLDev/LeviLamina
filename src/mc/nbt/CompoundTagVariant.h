@@ -265,12 +265,12 @@ public:
 
     template <size_t N>
     [[nodiscard]] CompoundTagVariant& operator[](char const (&index)[N]) { // make EDG happy
-        return operator[](std::string_view{index});
+        return operator[](std::string_view{index, N - 1});
     }
 
     template <size_t N>
     [[nodiscard]] CompoundTagVariant const& operator[](char const (&index)[N]) const { // make EDG happy
-        return operator[](std::string_view{index});
+        return operator[](std::string_view{index, N - 1});
     }
 
     [[nodiscard]] UniqueTagPtr toUniqueCopy() const& {

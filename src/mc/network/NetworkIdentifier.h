@@ -61,3 +61,10 @@ public:
     MCAPI static ::NetworkIdentifier& INVALID_ID();
     // NOLINTEND
 };
+
+namespace std {
+template <>
+struct hash<NetworkIdentifier> {
+    size_t operator()(NetworkIdentifier const& d) const noexcept { return d.getHash(); }
+};
+} // namespace std

@@ -24,25 +24,22 @@ public:
     using iterator_category = ::std::bidirectional_iterator_tag;
 
 public:
-    ValueIteratorBase& operator++() {
-        increment();
-        return *this;
+    ~ValueIteratorBase() {
+        if (isArray_) {
+            using IterT = decltype(array_);
+            array_.~IterT();
+        } else {
+            using IterT = decltype(map_);
+            map_.~IterT();
+        }
     }
-
-    Json::Value& operator*() const { return deref(); }
 
 public:
     // member variables
     // NOLINTBEGIN
     union {
-        ::ll::TypedStorage<8, 8, ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::Json::Value*>>>>
-            array_;
-        ::ll::TypedStorage<
-            8,
-            8,
-            ::std::_Tree_iterator<
-                ::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::Json::Value::CZString const, ::Json::Value>>>>>
-            map_;
+        Json::Value::ArrayValues::iterator  array_;
+        Json::Value::ObjectValues::iterator map_;
     };
     ::ll::TypedStorage<1, 1, bool> isArray_;
     // NOLINTEND
