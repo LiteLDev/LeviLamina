@@ -17,6 +17,10 @@ public:
     // NOLINTEND
 
 public:
+    LLNDAPI std::string const& getBlockName() const;
+    LLNDAPI std::string getDescriptionId() const;
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::CommandBlockNameResult resolveBlock(int data) const;

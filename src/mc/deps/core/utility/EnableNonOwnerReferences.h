@@ -33,8 +33,7 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&);
+    EnableNonOwnerReferences& operator=(EnableNonOwnerReferences const&) = default;
 
 public:
     // virtual functions

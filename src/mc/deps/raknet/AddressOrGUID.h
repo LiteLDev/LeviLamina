@@ -22,6 +22,7 @@ public:
 
 public:
     AddressOrGUID()                                = default;
+    AddressOrGUID(AddressOrGUID const&)            = default;
     AddressOrGUID& operator=(AddressOrGUID const&) = default;
     AddressOrGUID(::RakNet::SystemAddress const& input) : rakNetGuid{-1, -1} { systemAddress = input; }
     AddressOrGUID(::RakNet::RakNetGUID const& input) : rakNetGuid(input), systemAddress{} {}
@@ -29,12 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AddressOrGUID(::RakNet::RakNetGUID const& input);
-
-    MCAPI explicit AddressOrGUID(::RakNet::SystemAddress const& input);
-
-    MCAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
-
     MCAPI bool IsUndefined() const;
     // NOLINTEND
 

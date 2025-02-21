@@ -6,6 +6,8 @@
 #include <type_traits>
 #include <utility>
 
+#include "gsl/pointers"
+
 namespace ll {
 
 template <size_t Align, size_t Size>
@@ -99,6 +101,10 @@ template <size_t A, size_t S, class T>
     requires(std::is_reference_v<T> || std::is_scalar_v<T>)
 struct TypedStorageType<A, S, T> {
     using Type = T;
+};
+template <size_t A, size_t S, class T>
+struct TypedStorageType<A, S, gsl::not_null<T>> {
+    using Type = gsl::not_null<T>;
 };
 template <size_t A, size_t S, class T>
 struct TypedStorageType<A, S, std::unique_ptr<T>> {

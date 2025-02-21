@@ -82,7 +82,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
     ll::memory::HookPriority::Normal,
     ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
     void,
     ::ServerInstance& ins
 ) {

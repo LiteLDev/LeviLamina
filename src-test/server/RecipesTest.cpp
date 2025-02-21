@@ -20,7 +20,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     TestRecipesHook,
     HookPriority::Normal,
     ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
     void,
     ::ServerInstance& ins
 ) {

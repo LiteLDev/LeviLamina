@@ -25,6 +25,8 @@ public:
     ::ll::TypedStorage<2, 2, ::CommandFlag>            mFlags;
     // NOLINTEND
 
+    LLNDAPI std::string getCommandName() const;
+
 public:
     // virtual functions
     // NOLINTBEGIN

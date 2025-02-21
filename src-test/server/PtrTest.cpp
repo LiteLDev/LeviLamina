@@ -65,7 +65,7 @@
 //     ServerStartedEventHook,
 //     ll::memory::HookPriority::Low,
 //     ServerInstanceEventCoordinator,
-//     &ServerInstanceEventCoordinator::sendServerThreadStarted,
+//     &ServerInstanceEventCoordinator::sendServerInitializeEnd,
 //     void,
 //     ::ServerInstance& ins
 //) {

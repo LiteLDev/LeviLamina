@@ -58,6 +58,16 @@ public:
     // NOLINTEND
 
 public:
+    ExpressionNode(
+        std::string const&                value,
+        ::MolangVersion                   molangVersion,
+        ::gsl::span<::HashedString const> querySetID
+    )
+    : ExpressionNode() {
+        parse(value, molangVersion, querySetID);
+    }
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI ExpressionNode();

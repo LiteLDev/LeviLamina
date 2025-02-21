@@ -147,7 +147,7 @@ class HitResult Actor::traceRay(
 }
 
 void Actor::teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 const& rotation) {
-    Vec2 relativeRotation = rotation - (*mBuiltInComponents->mActorRotationComponent)->mRotationDegree;
+    Vec2 relativeRotation = rotation - mBuiltInComponents->mActorRotationComponent->mRotationDegree;
     TeleportCommand::applyTarget(
         *this,
         TeleportCommand::computeTarget(
@@ -184,7 +184,7 @@ float Actor::evalMolang(std::string const& expression) {
         .evalAsFloat(getAnimationComponent().mRenderParams);
 }
 
-const AABB& Actor::getAABB() const { return (*mBuiltInComponents->mAABBShapeComponent)->mAABB; }
+const AABB& Actor::getAABB() const { return mBuiltInComponents->mAABBShapeComponent->mAABB; }
 
 Actor* Actor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
     return tryGetFromEntity(

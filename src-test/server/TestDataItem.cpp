@@ -14,8 +14,8 @@
 
 LL_AUTO_TYPE_INSTANCE_HOOK(ACTickHook, HookPriority::Normal, ItemActor, &ItemActor::postNormalTick, void) {
     origin();
-    SetActorDataPacket packet;
-    packet.mId = getRuntimeID();
+    SetActorDataPacket packet{getRuntimeID(), mEntityData, nullptr, mLevel->getCurrentTick().tickID, false};
+    packet.mPackedItems.clear();
     packet.mPackedItems.emplace_back(DataItem::create(ActorDataIDs::Name, item().getTypeName()));
     packet.mPackedItems.emplace_back(DataItem::create(ActorDataIDs::NametagAlwaysShow, true));
 

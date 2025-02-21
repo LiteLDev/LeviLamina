@@ -8,7 +8,7 @@
 namespace ll::command::detail {
 void printCommandError(::Command const& command, ::CommandOutput& output) noexcept {
     try {
-        getLogger().error("Error in command {}:", command.mRegistry->symbolToString(command.mCommandSymbol));
+        getLogger().error("Error in command {}:", command.getCommandName());
         output.error("command threw an exception");
     } catch (...) {}
     error_utils::printCurrentException(getLogger());

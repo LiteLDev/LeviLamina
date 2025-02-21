@@ -99,6 +99,8 @@ namespace MovementDataExtractionUtility { class SnapshotAccessor; }
 namespace mce { class Color; }
 // clang-format on
 
+class Level;
+
 class Actor {
 public:
     // Actor inner types define
@@ -154,6 +156,8 @@ public:
     LLNDAPI const AABB& getAABB() const;
 
     LLAPI static ::Actor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+
+    [[nodiscard]] Level& getLevel() const { return *reinterpret_cast<Level*>(mLevel); }
 
 public:
     // member variables
