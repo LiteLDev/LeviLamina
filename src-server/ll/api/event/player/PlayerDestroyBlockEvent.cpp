@@ -14,28 +14,29 @@ void PlayerDestroyBlockEvent::serialize(CompoundTag& nbt) const {
 
 BlockPos const& PlayerDestroyBlockEvent::pos() const { return mPos; }
 
-LL_TYPE_INSTANCE_HOOK(
-    PlayerDestroyBlockEventHook,
-    HookPriority::Normal,
-    Block,
-    &Block::playerWillDestroy,
-    Block const*,
-    Player&         player,
-    BlockPos const& pos
-) {
-    auto event = PlayerDestroyBlockEvent{player, pos};
-    EventBus::getInstance().publish(event);
-    if (event.isCancelled()) {
-        return nullptr;
-    }
-    return origin(player, pos);
-}
-
-static std::unique_ptr<EmitterBase> emitterFactory();
-class PlayerDestroyBlockEventEmitter : public Emitter<emitterFactory, PlayerDestroyBlockEvent> {
-    memory::HookRegistrar<PlayerDestroyBlockEventHook> hook;
-};
-
-static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerDestroyBlockEventEmitter>(); }
+// TODO: fix this
+// LL_TYPE_INSTANCE_HOOK(
+//    PlayerDestroyBlockEventHook,
+//    HookPriority::Normal,
+//    Block,
+//    &Block::playerWillDestroy,
+//    Block const*,
+//    Player&         player,
+//    BlockPos const& pos
+//) {
+//    auto event = PlayerDestroyBlockEvent{player, pos};
+//    EventBus::getInstance().publish(event);
+//    if (event.isCancelled()) {
+//        return nullptr;
+//    }
+//    return origin(player, pos);
+//}
+//
+// static std::unique_ptr<EmitterBase> emitterFactory();
+// class PlayerDestroyBlockEventEmitter : public Emitter<emitterFactory, PlayerDestroyBlockEvent> {
+//    memory::HookRegistrar<PlayerDestroyBlockEventHook> hook;
+//};
+//
+// static std::unique_ptr<EmitterBase> emitterFactory() { return std::make_unique<PlayerDestroyBlockEventEmitter>(); }
 
 } // namespace ll::event::inline player

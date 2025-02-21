@@ -16,28 +16,30 @@ optional_ref<SimulatedPlayer> SimulatedPlayer::create(
     DimensionType              dimId,
     Vec2 const&                rotation
 ) {
-    auto ownerPtr = ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
-        return handler.createSimulatedPlayer(name, std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)));
-    });
-    auto player   = ownerPtr.tryUnwrap<SimulatedPlayer>();
-    if (!player) {
-        return nullptr;
-    }
-    player->mInventory->mUnk53f793.as<std::unique_ptr<Inventory>>()->setupDefault();
-    player->mLevel->addUser(std::move(ownerPtr));
-    if (!pos) {
-        player->mUnk26a7dc.as<bool>() = true;
-        player->doInitialSpawn();
-        return player;
-    }
-    player->mRespawnPositionCandidate = *pos + Vec3{0, 1.62001, 0};
-    player->mRespawnReady             = true;
-    player->mRespawningFromTheEnd     = false;
-    player->setRespawnPosition(*pos, dimId);
-    player->mUnk26a7dc.as<bool>() = true;
-    player->doInitialSpawn();
-    player->teleport(*pos, dimId, rotation);
-    return player;
+    // TODO: fix this
+    //    auto ownerPtr = ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
+    //        return handler.createSimulatedPlayer(name, std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)));
+    //    });
+    //    auto player   = ownerPtr.tryUnwrap<SimulatedPlayer>();
+    //    if (!player) {
+    //        return nullptr;
+    //    }
+    //    player->mInventory->mUnk53f793.as<std::unique_ptr<Inventory>>()->setupDefault();
+    //    player->mLevel->addUser(std::move(ownerPtr));
+    //    if (!pos) {
+    //        player->mUnk26a7dc.as<bool>() = true;
+    //        player->doInitialSpawn();
+    //        return player;
+    //    }
+    //    player->mRespawnPositionCandidate = *pos + Vec3{0, 1.62001, 0};
+    //    player->mRespawnReady             = true;
+    //    player->mRespawningFromTheEnd     = false;
+    //    player->setRespawnPosition(*pos, dimId);
+    //    player->mUnk26a7dc.as<bool>() = true;
+    //    player->doInitialSpawn();
+    //    player->teleport(*pos, dimId, rotation);
+    //    return player;
+    return nullptr;
 }
 
 bool SimulatedPlayer::simulateDestroyBlock(const BlockPos& pos, ScriptModuleMinecraft::ScriptFacing face) {

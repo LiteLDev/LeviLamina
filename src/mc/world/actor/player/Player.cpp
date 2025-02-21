@@ -30,13 +30,14 @@ UserEntityIdentifierComponent& Player::getUserEntityIdentifier() {
 }
 
 optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
-    if (isSimulatedPlayer()) {
-        return std::nullopt;
-    }
-    auto pos = ll::service::getServerNetworkHandler()->mClients->find(getNetworkIdentifier());
-    if (pos != ll::service::getServerNetworkHandler()->mClients->end()) {
-        return pos->second->mPrimaryRequest.get();
-    }
+    // TODO: fix this
+    //    if (isSimulatedPlayer()) {
+    //        return std::nullopt;
+    //    }
+    //    auto pos = ll::service::getServerNetworkHandler()->mClients->find(getNetworkIdentifier());
+    //    if (pos != ll::service::getServerNetworkHandler()->mClients->end()) {
+    //        return pos->second->mPrimaryRequest.get();
+    //    }
     return std::nullopt;
 }
 
@@ -53,9 +54,10 @@ mce::UUID const& Player::getUuid() const { return getUserEntityIdentifier().mCli
 std::string Player::getIPAndPort() const { return getNetworkIdentifier().getIPAndPort(); }
 
 std::string Player::getLocaleCode() const {
-    if (auto request = getConnectionRequest()) {
-        return request->mRawToken->mDataInfo["LanguageCode"].asString({});
-    }
+    // TODO: fix this
+    //    if (auto request = getConnectionRequest()) {
+    //        return request->mRawToken->mDataInfo["LanguageCode"].asString({});
+    //    }
     return {};
 }
 
@@ -111,7 +113,9 @@ LLAPI void Player::setAbility(::AbilitiesIndex index, bool value) {
     UpdateAdventureSettingsPacket{}.sendTo(*this);
 }
 
-bool Player::isOperator() const { return getAbilities().mPermissions->mPlayerPermissions == PlayerPermissionLevel::Operator; }
+bool Player::isOperator() const {
+    return getAbilities().mPermissions->mPlayerPermissions == PlayerPermissionLevel::Operator;
+}
 
 bool Player::addAndRefresh(class ItemStack& item) {
     auto rtn = add(item);

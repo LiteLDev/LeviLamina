@@ -15,9 +15,7 @@
 #include "ll/api/Versions.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/io/Logger.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/mod/Mod.h"
 #include "ll/api/service/Bedrock.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/service/PlayerInfo.h"
@@ -25,6 +23,7 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 
+#include "mc/gameplayhandlers/ServerInstanceEventHandler.h"
 #include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/commands/StopCommand.h"
@@ -86,8 +85,9 @@ void checkOtherBdsInstance() {
                 getLogger().error("Detected the existence of another BDS process with the same path!"_tr());
                 getLogger().error("This may cause the network port and the level to be occupied"_tr());
                 while (true) {
-                    getLogger().error("Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid
-                    ));
+                    getLogger().error(
+                        "Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid)
+                    );
                     char input;
                     rewind(stdin);
                     input = static_cast<char>(getchar());
@@ -112,10 +112,12 @@ void checkOtherBdsInstance() {
 void checkProtocolVersion() {
     auto currentProtocol = getNetworkProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        getLogger().warn("Protocol version not match, target version: {0}, current version: {1}"_tr(
-            TARGET_BDS_PROTOCOL_VERSION,
-            currentProtocol
-        ));
+        getLogger().warn(
+            "Protocol version not match, target version: {0}, current version: {1}"_tr(
+                TARGET_BDS_PROTOCOL_VERSION,
+                currentProtocol
+            )
+        );
         getLogger().warn(
             "This will most likely crash the server, please use the LeviLamina that matches the BDS version!"_tr()
         );
@@ -233,7 +235,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     EnableAllModsHook,
     HookPriority::High,
     ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
     void,
     ::ServerInstance& ins
 ) {

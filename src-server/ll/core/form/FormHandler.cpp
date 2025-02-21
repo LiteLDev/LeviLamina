@@ -7,8 +7,6 @@
 #include "ll/api/service/Bedrock.h"
 #include "ll/core/LeviLamina.h"
 
-#include "mc/deps/json/Value.h"
-#include "mc/deps/json/ValueConstIterator.h"
 #include "mc/network/PacketHandlerDispatcherInstance.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/packet/ModalFormResponsePacket.h"
@@ -23,36 +21,37 @@ namespace ll::form::handler {
 
 
 nlohmann::ordered_json jsonCppValueToNlohmannOrderedJson(Json::Value const& value) {
-    if (value.isObject()) {
-        nlohmann::ordered_json result = nlohmann::ordered_json::object();
-        for (auto const& key : value.getMemberNames()) {
-            result[key] = jsonCppValueToNlohmannOrderedJson(value[key]);
-        }
-        return result;
-    } else if (value.isArray()) {
-        nlohmann::ordered_json result = nlohmann::ordered_json::array();
-        for (auto const& item : value) {
-            result.push_back(jsonCppValueToNlohmannOrderedJson(item));
-        }
-        return result;
-    } else if (value.isString()) {
-        return value.asString({});
-    } else if (value.isBool()) {
-        return value.asBool(false);
-    } else if (value.isIntegral()) {
-        if (value.isNumeric() && !value.isDouble()) {
-            auto intVal  = value.asLargestInt();
-            auto uintVal = value.asLargestUInt();
-            if (intVal >= 0 && static_cast<uint64>(intVal) == uintVal) {
-                return uintVal;
-            }
-            return intVal;
-        }
-    } else if (value.isDouble()) {
-        return value.asDouble(0);
-    } else if (value.isNull()) {
-        return nullptr;
-    }
+    // TODO: fix this
+    //    if (value.isObject()) {
+    //        nlohmann::ordered_json result = nlohmann::ordered_json::object();
+    //        for (auto const& key : value.getMemberNames()) {
+    //            result[key] = jsonCppValueToNlohmannOrderedJson(value[key]);
+    //        }
+    //        return result;
+    //    } else if (value.isArray()) {
+    //        nlohmann::ordered_json result = nlohmann::ordered_json::array();
+    //        for (auto const& item : value) {
+    //            result.push_back(jsonCppValueToNlohmannOrderedJson(item));
+    //        }
+    //        return result;
+    //    } else if (value.isString()) {
+    //        return value.asString({});
+    //    } else if (value.isBool()) {
+    //        return value.asBool(false);
+    //    } else if (value.isIntegral()) {
+    //        if (value.isNumeric() && !value.isDouble()) {
+    //            auto intVal  = value.asLargestInt();
+    //            auto uintVal = value.asLargestUInt();
+    //            if (intVal >= 0 && static_cast<uint64>(intVal) == uintVal) {
+    //                return uintVal;
+    //            }
+    //            return intVal;
+    //        }
+    //    } else if (value.isDouble()) {
+    //        return value.asDouble(0);
+    //    } else if (value.isNull()) {
+    //        return nullptr;
+    //    }
     return nullptr;
 }
 

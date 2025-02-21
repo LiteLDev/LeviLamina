@@ -7,7 +7,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
 #include "mc/deps/vanilla_components/AABBShapeComponent.h"
@@ -30,7 +29,6 @@
 #include "mc/world/actor/provider/ActorCollision.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/BlockSource.h"
-#include "mc/world/level/ClipDefaults.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/dimension/Dimension.h"
 #include "mc/world/phys/HitDetection.h"
@@ -80,11 +78,12 @@ void Actor::setOnFire(int time, bool isEffect) {
     }
 }
 void Actor::stopFire() {
-    if (!isClientSide()) {
-        if (getEntityContext().hasComponent<OnFireComponent>()) {
-            getEntityContext().removeComponent<OnFireComponent>();
-        }
-    }
+    // TODO: fix this
+    //    if (!isClientSide()) {
+    //        if (getEntityContext().hasComponent<OnFireComponent>()) {
+    //            getEntityContext().removeComponent<OnFireComponent>();
+    //        }
+    //    }
 }
 
 float Actor::getPosDeltaPerSecLength() const { return static_cast<float>(getPosDelta().length() * 20.0); }
@@ -148,20 +147,22 @@ class HitResult Actor::traceRay(
 }
 
 void Actor::teleport(class Vec3 const& pos, DimensionType dimId, class Vec2 const& rotation) {
-    Vec2 relativeRotation =
-        rotation - mBuiltInComponents->mUnk2570a0.as<gsl::not_null<ActorRotationComponent*>>()->mUnkf62500.as<Vec2>();
-    TeleportCommand::applyTarget(
-        *this,
-        TeleportCommand::computeTarget(
-            *this,
-            pos,
-            nullptr,
-            dimId,
-            RotationCommandUtils::RotationData{relativeRotation.x, relativeRotation.y, std::nullopt},
-            1
-        ),
-        false
-    );
+    // TODO: fix this
+    //    Vec2 relativeRotation =
+    //        rotation -
+    //        mBuiltInComponents->mUnk2570a0.as<gsl::not_null<ActorRotationComponent*>>()->mUnkf62500.as<Vec2>();
+    //    TeleportCommand::applyTarget(
+    //        *this,
+    //        TeleportCommand::computeTarget(
+    //            *this,
+    //            pos,
+    //            nullptr,
+    //            dimId,
+    //            RotationCommandUtils::RotationData{relativeRotation.x, relativeRotation.y, std::nullopt},
+    //            1
+    //        ),
+    //        false
+    //    );
 }
 
 void Actor::teleport(class Vec3 const& pos, DimensionType dimId) {
@@ -178,8 +179,10 @@ void Actor::setName(std::string const& name) {
 }
 
 float Actor::evalMolang(std::string const& expression) {
-    return ExpressionNode(expression, MolangVersion::Latest, {{HashedString{"default"}}})
-        .evalAsFloat(getAnimationComponent().mUnk323831.as<RenderParams>());
+    // TODO: fix this
+    //    return ExpressionNode(expression, MolangVersion::Latest, {{HashedString{"default"}}})
+    //        .evalAsFloat(getAnimationComponent().mUnk323831.as<RenderParams>());
+    return 0.0f;
 }
 
 const AABB& Actor::getAABB() const {

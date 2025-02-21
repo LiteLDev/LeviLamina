@@ -3,9 +3,9 @@
 #include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
-
+#include "mc/gameplayhandlers/ServerInstanceEventHandler.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 namespace ll::event::inline server {
 
@@ -20,7 +20,7 @@ LL_TYPE_INSTANCE_HOOK(
     ServerStartedEventHook,
     ll::memory::HookPriority::Normal,
     ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerThreadStarted,
+    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
     void,
     ::ServerInstance& ins
 ) {
