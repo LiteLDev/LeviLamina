@@ -153,6 +153,8 @@ public:
 
     LLNDAPI const AABB& getAABB() const;
 
+    LLAPI static ::Actor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+
 public:
     // member variables
     // NOLINTBEGIN

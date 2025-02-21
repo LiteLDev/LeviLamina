@@ -79,10 +79,9 @@ static nlohmann::json getCustomCharts() {
         "players",
         service::getLevel().transform([](auto& level) { return level.getActivePlayerCount(); }).value_or(0)
     ));
-    res.emplace_back(addSimplePie(
-        "online_mode",
-        service::getPropertiesSettings().value().mIsOnlineMode ? "true" : "false"
-    ));
+    res.emplace_back(
+        addSimplePie("online_mode", service::getPropertiesSettings().value().mIsOnlineMode ? "true" : "false")
+    );
     SmallDenseMap<std::string_view, int> platforms;
     service::getLevel().transform([&platforms](auto& level) {
         level.forEachPlayer([&platforms](Player& player) {

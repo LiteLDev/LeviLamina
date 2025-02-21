@@ -15,9 +15,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
     CommandOutputMessage& operator=(CommandOutputMessage const&) = default;
-    CommandOutputMessage(CommandOutputMessage const&) = default;
+    CommandOutputMessage(CommandOutputMessage const&)            = default;
 
 public:
     // member functions

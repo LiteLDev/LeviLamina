@@ -8,8 +8,9 @@ namespace ll::form {
 uint FormIdManager::genFormId() {
     std::lock_guard lock(mMutex);
 
-    auto scriptManager =
-        ll::service::getServerInstance().and_then([](auto& ins) { return optional_ref{ins.mServerScriptManager.get()}; });
+    auto scriptManager = ll::service::getServerInstance().and_then([](auto& ins) {
+        return optional_ref{ins.mServerScriptManager.get()};
+    });
     if (scriptManager && scriptManager->mFormPromiseTracker) {
         return ++scriptManager->mFormPromiseTracker->mLastRequestId;
     } else {

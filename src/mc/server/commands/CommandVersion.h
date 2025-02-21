@@ -19,7 +19,7 @@ public:
     // NOLINTEND
 
 public:
-    CommandVersion(int from = 0, int to = CurrentVersion()) : mFrom(from), mTo(to) {}
+    CommandVersion(int from = 0, int to = 0x7FFFFFFF) : mFrom(from), mTo(to) {}
 
 public:
     // static functions

@@ -48,6 +48,8 @@ class Mob : public ::Actor {
 public:
     LLAPI void refreshInventory();
 
+    LLAPI static ::Mob* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
+
 public:
     // member variables
     // NOLINTBEGIN

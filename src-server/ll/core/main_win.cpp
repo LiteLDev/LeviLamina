@@ -85,9 +85,8 @@ void checkOtherBdsInstance() {
                 getLogger().error("Detected the existence of another BDS process with the same path!"_tr());
                 getLogger().error("This may cause the network port and the level to be occupied"_tr());
                 while (true) {
-                    getLogger().error(
-                        "Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid)
-                    );
+                    getLogger().error("Do you want to terminate the process with PID {0}?  (y=Yes, n=No, e=Exit)"_tr(pid
+                    ));
                     char input;
                     rewind(stdin);
                     input = static_cast<char>(getchar());
@@ -112,12 +111,10 @@ void checkOtherBdsInstance() {
 void checkProtocolVersion() {
     auto currentProtocol = getNetworkProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol) {
-        getLogger().warn(
-            "Protocol version not match, target version: {0}, current version: {1}"_tr(
-                TARGET_BDS_PROTOCOL_VERSION,
-                currentProtocol
-            )
-        );
+        getLogger().warn("Protocol version not match, target version: {0}, current version: {1}"_tr(
+            TARGET_BDS_PROTOCOL_VERSION,
+            currentProtocol
+        ));
         getLogger().warn(
             "This will most likely crash the server, please use the LeviLamina that matches the BDS version!"_tr()
         );

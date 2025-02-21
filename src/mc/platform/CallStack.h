@@ -38,7 +38,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
         Context& operator=(Context const&) = default;
         Context(Context const&)            = default;
 
@@ -64,7 +63,6 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
         FrameWithContext& operator=(FrameWithContext const&) = default;
         FrameWithContext(FrameWithContext const&)            = default;
 

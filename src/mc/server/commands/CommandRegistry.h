@@ -662,9 +662,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::std::function<void(::Packet const&)>                            mNetworkUpdateCallback;
-    ScoreboardScoreAccessor                                           mGetScoreForObjective;
-    bool  mIsEduMode;
+    ::std::function<void(::Packet const&)>                   mNetworkUpdateCallback;
+    ScoreboardScoreAccessor                                  mGetScoreForObjective;
+    bool                                                     mIsEduMode;
     ::std::vector<::CommandRegistry::ParseRule>              mRules;
     ::std::map<uint, ::CommandRegistry::ParseTable>          mParseTables;
     ::std::vector<::CommandRegistry::OptionalParameterChain> mOptionals;

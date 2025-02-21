@@ -46,12 +46,8 @@ namespace sim { struct MovementIntent; }
 
 class SimulatedPlayer : public ::ServerPlayer {
 public:
-    LLAPI static optional_ref<SimulatedPlayer> create(
-        std::string const&         name,
-        std::optional<Vec3> const& pos      = std::nullopt,
-        DimensionType              dimId    = 0,
-        Vec2 const&                rotation = {0, 0}
-    );
+    LLAPI static optional_ref<SimulatedPlayer>
+    create(std::string const& name, Vec3 const& pos, DimensionType dimId = 0, Vec2 const& rotation = {0, 0});
 
     [[nodiscard]] inline bool simulateSneaking() {
         setSneaking(true);
@@ -66,6 +62,8 @@ public:
     LLAPI bool simulateDestroyBlock(BlockPos const&, ScriptModuleMinecraft::ScriptFacing);
 
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
+
+    LLAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
 public:
     // member variables

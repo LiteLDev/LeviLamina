@@ -5,50 +5,31 @@
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/actor/player/Inventory.h"
+#include "mc/world/actor/player/PlayerInventory.h"
 #include "mc/world/actor/player/PlayerItemInUse.h"
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/block/Block.h"
 #include "mc/world/phys/HitResult.h"
 
-optional_ref<SimulatedPlayer> SimulatedPlayer::create(
-    std::string const&         name,
-    std::optional<Vec3> const& pos,
-    DimensionType              dimId,
-    Vec2 const&                rotation
-) {
-    // TODO: fix this
-    //    auto ownerPtr = ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
-    //        return handler.createSimulatedPlayer(name, std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)));
-    //    });
-    //    auto player   = ownerPtr.tryUnwrap<SimulatedPlayer>();
-    //    if (!player) {
-    //        return nullptr;
-    //    }
-    //    player->mInventory->mUnk53f793.as<std::unique_ptr<Inventory>>()->setupDefault();
-    //    player->mLevel->addUser(std::move(ownerPtr));
-    //    if (!pos) {
-    //        player->mUnk26a7dc.as<bool>() = true;
-    //        player->doInitialSpawn();
-    //        return player;
-    //    }
-    //    player->mRespawnPositionCandidate = *pos + Vec3{0, 1.62001, 0};
-    //    player->mRespawnReady             = true;
-    //    player->mRespawningFromTheEnd     = false;
-    //    player->setRespawnPosition(*pos, dimId);
-    //    player->mUnk26a7dc.as<bool>() = true;
-    //    player->doInitialSpawn();
-    //    player->teleport(*pos, dimId, rotation);
-    //    return player;
-    return nullptr;
+optional_ref<SimulatedPlayer>
+SimulatedPlayer::create(std::string const& name, Vec3 const& pos, DimensionType dimId, Vec2 const& rotation) {
+    auto handler = ll::service::getServerNetworkHandler();
+    if (!handler) {
+        return nullptr;
+    }
+    auto player =
+        create(name, BlockPos{pos}, dimId, *handler, std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)));
+    if (!player) {
+        return nullptr;
+    }
+    player->teleport(pos, dimId, rotation);
+    return player;
 }
 
 bool SimulatedPlayer::simulateDestroyBlock(const BlockPos& pos, ScriptModuleMinecraft::ScriptFacing face) {
     if (isAlive()) {
-        if (mDestroyingBlockPos->has_value() && mDestroyingBlockFace->has_value()) {
-            if (pos.x == mDestroyingBlockPos->value_or(BlockPos::ZERO()).x
-                && pos.y == mDestroyingBlockPos->value_or(BlockPos::ZERO()).y
-                && pos.z == mDestroyingBlockPos->value_or(BlockPos::ZERO()).z
-                && (uchar)face == mDestroyingBlockFace->value()) {
+        if (*mDestroyingBlockPos && *mDestroyingBlockFace) {
+            if (pos == **mDestroyingBlockPos && (uchar)face == **mDestroyingBlockFace) {
                 return true;
             }
             simulateStopDestroyingBlock();
@@ -56,7 +37,7 @@ bool SimulatedPlayer::simulateDestroyBlock(const BlockPos& pos, ScriptModuleMine
 
         BlockLegacy const& block = getDimensionBlockSource().getBlock(pos).getLegacyBlock();
 
-        if (block.mayPick() && !mItemInUse->mUnkf0096a.as<ItemStack>().isNull()) {
+        if (block.mayPick() && mItemInUse->mUnkf0096a.as<ItemStack>().isNull()) {
             mDestroyingBlockPos  = pos;
             mDestroyingBlockFace = (uchar)face;
             return true;
@@ -73,4 +54,12 @@ bool SimulatedPlayer::simulateDestroyLookAt(float handLength) {
         return false;
     }
     return simulateDestroyBlock(hitResult.mBlock, (ScriptModuleMinecraft::ScriptFacing)hitResult.mFacing);
+}
+
+::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
+    auto result = static_cast<SimulatedPlayer*>(Player::tryGetFromEntity(entity, includeRemoved));
+    if (result && result->isSimulated()) {
+        return result;
+    }
+    return nullptr;
 }

@@ -44,7 +44,7 @@ public:
     }
 
     template <class T>
-    inline bool removeComponent() const {
+    inline bool removeComponent() {
         return getRegistry().remove<T>(mEntity);
     }
 

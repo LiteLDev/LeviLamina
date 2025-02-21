@@ -22,7 +22,7 @@ public:
         return mType == HitResultType::Tile || mType == HitResultType::Entity;
     }
 
-    HitResult(::HitResult&&)      = default;
+    HitResult(::HitResult&&) = default;
 
 public:
     // member variables

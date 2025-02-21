@@ -21,27 +21,25 @@
 
 std::vector<Actor*>
 BlockSource::getEntities(AABB const& range, float extendDistance, ActorType actorType, bool ignoreType) const {
-    // TODO: fix this
-    //    std::vector<Actor*> entities;
-    //    ChunkPos minChunk{range.min.x - extendDistance, range.min.z - extendDistance};
-    //    ChunkPos maxChunk{range.max.x + extendDistance, range.max.z + extendDistance};
-    //
-    //    for (int x = minChunk.x; x <= maxChunk.x; x++)
-    //        for (int z = minChunk.z; z <= maxChunk.z; z++) {
-    //            auto* chunk = getChunk(x, z);
-    //            if (chunk == nullptr) {
-    //                continue;
-    //            }
-    //            for (auto& weakEntityRef : chunk->mEntities.get()) {
-    //                auto actor = weakEntityRef.tryUnwrap();
-    //                if (actor && (actorType == ActorType::TypeMask || actor->isType(actorType) != ignoreType)
-    //                    && range.intersects(actor->getAABB())) {
-    //                    entities.emplace_back(actor);
-    //                }
-    //            }
-    //        }
-    //    return entities;
-    return {};
+    std::vector<Actor*> entities;
+    ChunkPos            minChunk{range.min.x - extendDistance, range.min.z - extendDistance};
+    ChunkPos            maxChunk{range.max.x + extendDistance, range.max.z + extendDistance};
+
+    for (int x = minChunk.x; x <= maxChunk.x; x++)
+        for (int z = minChunk.z; z <= maxChunk.z; z++) {
+            auto* chunk = getChunk(x, z);
+            if (chunk == nullptr) {
+                continue;
+            }
+            for (auto& weakEntityRef : chunk->mEntities.get()) {
+                auto actor = weakEntityRef.tryUnwrap();
+                if (actor && (actorType == ActorType::TypeMask || actor->isType(actorType) != ignoreType)
+                    && range.intersects(actor->getAABB())) {
+                    entities.emplace_back(actor);
+                }
+            }
+        }
+    return entities;
 }
 
 optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) {
@@ -49,24 +47,23 @@ optional_ref<Container> BlockSource::tryGetContainer(class BlockPos const& pos) 
 }
 
 optional_ref<Actor> BlockSource::spawnActor(CompoundTag const& nbt) {
-    // TODO: fix this
-    //    auto&                      level = getLevel();
-    //    NewUniqueIdsDataLoadHelper dataLoadHelper;
-    //    dataLoadHelper.mLevel = &level;
-    //    auto actorOwnerPtr =
-    //        level.getActorFactory()
-    //            .loadActor(const_cast<CompoundTag*>(&nbt), dataLoadHelper, getDimension().mHeightRange, nullptr);
-    //    if (!actorOwnerPtr) {
-    //        return nullptr;
-    //    }
-    //    auto actor = actorOwnerPtr.tryUnwrap();
-    //    if (!actor) {
-    //        return nullptr;
-    //    }
-    //    actor->mLevel = &level;
-    //    actor->setDimension(getDimension().weak_from_this());
-    //    level.addEntity(*this, std::move(actorOwnerPtr));
-    //    actor->refresh();
-    //    return actor;
+    auto&                      level = getLevel();
+    NewUniqueIdsDataLoadHelper dataLoadHelper;
+    dataLoadHelper.mLevel = &level;
+    auto actorOwnerPtr =
+        level.getActorFactory()
+            .loadActor(const_cast<CompoundTag*>(&nbt), dataLoadHelper, getDimension().mHeightRange, nullptr);
+    if (!actorOwnerPtr) {
+        return nullptr;
+    }
+    auto actor = actorOwnerPtr.tryUnwrap();
+    if (!actor) {
+        return nullptr;
+    }
+    actor->mLevel = &level;
+    actor->setDimension(getDimension().weak_from_this());
+    level.addEntity(*this, std::move(actorOwnerPtr));
+    actor->refresh();
+    return actor;
     return std::nullopt;
 }

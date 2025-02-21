@@ -8,11 +8,19 @@ namespace Bedrock {
 template <typename T>
 class NonOwnerPointer {
 public:
-    std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> mControlBlock;
-    T*                                                               mPointer{};
-    NonOwnerPointer(std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> cb, T* p)
+    std::shared_ptr<::Bedrock::EnableNonOwnerReferences::ControlBlock> mControlBlock;
+    T*                                                                 mPointer{};
+
+    NonOwnerPointer(std::shared_ptr<::Bedrock::EnableNonOwnerReferences::ControlBlock> cb, T* p)
     : mControlBlock(std::move(cb)),
       mPointer(p) {}
+
+    NonOwnerPointer(T const& t)
+    : NonOwnerPointer(
+          static_cast<::Bedrock::EnableNonOwnerReferences const&>(t).mControlBlock,
+          const_cast<T*>(std::addressof(t))
+      ) {}
+
     NonOwnerPointer() noexcept {}
     NonOwnerPointer(std::nullptr_t) noexcept {}
     T* get() const {
