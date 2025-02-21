@@ -30,12 +30,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk303234;
+    ::ll::TypedStorage<
+        4,
+        12,
+        ::std::variant<
+            ::ShouldUpdateBoundingBoxRequestComponent::UpdateFromDefinition,
+            ::ShouldUpdateBoundingBoxRequestComponent::UpdateFromValue>>
+        mUpdate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShouldUpdateBoundingBoxRequestComponent& operator=(ShouldUpdateBoundingBoxRequestComponent const&);
-    ShouldUpdateBoundingBoxRequestComponent(ShouldUpdateBoundingBoxRequestComponent const&);
-    ShouldUpdateBoundingBoxRequestComponent();
 };

@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+// clang-format on
+
 struct SubBBsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8c562f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>> mSubBBs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubBBsComponent& operator=(SubBBsComponent const&);
-    SubBBsComponent(SubBBsComponent const&);
-    SubBBsComponent();
 };

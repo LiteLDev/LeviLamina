@@ -2,29 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
 struct ActorDefinitionIdentifier;
+struct ShooterProjectileData;
 // clang-format on
 
 class ShooterComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk95712c;
-    ::ll::UntypedStorage<8, 24>  mUnk45ffcc;
-    ::ll::UntypedStorage<8, 176> mUnk8b74b3;
-    ::ll::UntypedStorage<4, 4>   mUnk11e1e3;
-    ::ll::UntypedStorage<4, 4>   mUnk7e6473;
-    ::ll::UntypedStorage<1, 1>   mUnk5a545f;
+    ::ll::TypedStorage<4, 4, float>                                   mThrowPower;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ShooterProjectileData>> mShooterProjectileData;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>           mDefaultActorDef;
+    ::ll::TypedStorage<4, 4, int>                                     mDefaultAuxValue;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>  mSoundEvent;
+    ::ll::TypedStorage<1, 1, bool>                                    mMagicAttacks;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ShooterComponent& operator=(ShooterComponent const&);
     ShooterComponent(ShooterComponent const&);
-    ShooterComponent();
 
 public:
     // member functions

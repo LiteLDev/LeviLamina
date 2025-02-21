@@ -7,25 +7,20 @@
 class ActorDefinitionDescriptor;
 class Mob;
 class MoveControl;
+class Vec3;
 // clang-format on
 
 class MoveControlComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4cda91;
-    ::ll::UntypedStorage<4, 12> mUnk4f43ea;
-    ::ll::UntypedStorage<1, 1>  mUnk2107d2;
-    ::ll::UntypedStorage<4, 4>  mUnk7ca02b;
-    ::ll::UntypedStorage<4, 4>  mUnkddc4cd;
-    ::ll::UntypedStorage<8, 16> mUnk4c82b8;
+    ::ll::TypedStorage<1, 1, bool>                              mHasWanted;
+    ::ll::TypedStorage<4, 12, ::Vec3>                           mWantedPosition;
+    ::ll::TypedStorage<1, 1, bool>                              mShouldBreach;
+    ::ll::TypedStorage<4, 4, float>                             mMaxTurn;
+    ::ll::TypedStorage<4, 4, float>                             mSpeedModifier;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MoveControl>> mMoveControl;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MoveControlComponent& operator=(MoveControlComponent const&);
-    MoveControlComponent(MoveControlComponent const&);
-    MoveControlComponent();
 
 public:
     // member functions

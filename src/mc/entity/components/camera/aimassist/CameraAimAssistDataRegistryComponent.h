@@ -14,6 +14,7 @@ class HashedString;
 class PacketSender;
 class ResourcePackManager;
 struct CameraAimAssistDataRegistryDirtyComponent;
+namespace Bedrock::Threading { class Mutex; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoriesFile; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
@@ -25,16 +26,18 @@ class CameraAimAssistDataRegistryComponent : public ::Bedrock::EnableNonOwnerRef
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9bdd5b;
-    ::ll::UntypedStorage<8, 64> mUnkaee6d6;
-    ::ll::UntypedStorage<8, 80> mUnkccf88c;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>>
+        mPresets;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>>
+                                                           mCategories;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mRegistriesLock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAimAssistDataRegistryComponent& operator=(CameraAimAssistDataRegistryComponent const&);
-    CameraAimAssistDataRegistryComponent(CameraAimAssistDataRegistryComponent const&);
-    CameraAimAssistDataRegistryComponent();
 
 public:
     // virtual functions

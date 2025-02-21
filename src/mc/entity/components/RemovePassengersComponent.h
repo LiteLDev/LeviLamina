@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+// clang-format on
+
 struct RemovePassengersComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk349689;
+    ::ll::TypedStorage<8, 24, ::std::vector<::StrictEntityContext>> mPassengersToRemove;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemovePassengersComponent& operator=(RemovePassengersComponent const&);
-    RemovePassengersComponent(RemovePassengersComponent const&);
-    RemovePassengersComponent();
 
 public:
     // member functions

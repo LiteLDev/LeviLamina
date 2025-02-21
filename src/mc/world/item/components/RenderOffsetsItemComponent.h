@@ -78,15 +78,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 72> mUnk982987;
-    ::ll::UntypedStorage<4, 72> mUnk20441b;
+    ::ll::TypedStorage<4, 72, ::RenderOffsetsItemComponent::ItemTransforms> mMainHand;
+    ::ll::TypedStorage<4, 72, ::RenderOffsetsItemComponent::ItemTransforms> mOffhand;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderOffsetsItemComponent& operator=(RenderOffsetsItemComponent const&);
-    RenderOffsetsItemComponent(RenderOffsetsItemComponent const&);
-    RenderOffsetsItemComponent();
 
 public:
     // virtual functions

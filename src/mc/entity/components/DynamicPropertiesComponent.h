@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DynamicProperties;
+// clang-format on
+
 class DynamicPropertiesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk3d5904;
+    ::ll::TypedStorage<8, 64, ::DynamicProperties> mDynamicProperties;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynamicPropertiesComponent& operator=(DynamicPropertiesComponent const&);
-    DynamicPropertiesComponent(DynamicPropertiesComponent const&);
-    DynamicPropertiesComponent();
 };

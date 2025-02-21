@@ -2,22 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorFilterGroup;
+class BlockEventDispatcherToken;
+class BlockListEventMap;
+class Vec3;
+// clang-format on
+
 class BlockBreakSensorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk64c207;
-    ::ll::UntypedStorage<4, 12> mUnk4b67dd;
-    ::ll::UntypedStorage<8, 32> mUnke2081e;
-    ::ll::UntypedStorage<8, 24> mUnk6d2d59;
-    ::ll::UntypedStorage<8, 24> mUnka79c49;
+    ::ll::TypedStorage<4, 4, float>                               mSensorRadius;
+    ::ll::TypedStorage<4, 12, ::Vec3>                             mSensorPos;
+    ::ll::TypedStorage<8, 32, ::BlockEventDispatcherToken>        mListener;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockListEventMap>> mBlockSets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorFilterGroup>>  mSourceFilters;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     BlockBreakSensorComponent& operator=(BlockBreakSensorComponent const&);
     BlockBreakSensorComponent(BlockBreakSensorComponent const&);
-    BlockBreakSensorComponent();
 
 public:
     // member functions

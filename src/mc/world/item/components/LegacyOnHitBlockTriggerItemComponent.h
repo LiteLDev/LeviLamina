@@ -9,25 +9,21 @@
 // clang-format off
 class Block;
 class BlockPos;
+class DefinitionTrigger;
 class HashedString;
 class ItemStack;
 class Mob;
 struct LegacyOnHitBlockTriggerItemComponentData;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnHitBlockTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkd1d76d;
-    ::ll::UntypedStorage<8, 264> mUnkcfcfc8;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>       mOnHitBlockSubscription;
+    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>> mOnHitBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyOnHitBlockTriggerItemComponent& operator=(LegacyOnHitBlockTriggerItemComponent const&);
-    LegacyOnHitBlockTriggerItemComponent(LegacyOnHitBlockTriggerItemComponent const&);
-    LegacyOnHitBlockTriggerItemComponent();
 
 public:
     // virtual functions

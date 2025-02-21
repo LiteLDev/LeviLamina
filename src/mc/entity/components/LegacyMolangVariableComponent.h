@@ -35,12 +35,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb2b1e8;
+    ::ll::TypedStorage<4, 4, ::LegacyMolangVariableComponent::VariableUpdateType> mVariableUpdateType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyMolangVariableComponent& operator=(LegacyMolangVariableComponent const&);
-    LegacyMolangVariableComponent(LegacyMolangVariableComponent const&);
-    LegacyMolangVariableComponent();
 };

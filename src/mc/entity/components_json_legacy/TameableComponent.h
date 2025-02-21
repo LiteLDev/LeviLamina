@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Item;
 class Player;
 // clang-format on
 
@@ -12,15 +13,9 @@ class TameableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk9970b0;
-    ::ll::UntypedStorage<8, 16> mUnka41297;
+    ::ll::TypedStorage<4, 4, float>                      mChance;
+    ::ll::TypedStorage<8, 16, ::std::set<::Item const*>> mTameItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TameableComponent& operator=(TameableComponent const&);
-    TameableComponent(TameableComponent const&);
-    TameableComponent();
 
 public:
     // member functions

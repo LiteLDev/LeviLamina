@@ -2,17 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+struct MoveInputState;
+// clang-format on
+
 struct RawMoveInputComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 40> mUnk1cf999;
-    ::ll::UntypedStorage<4, 8>  mUnk551b01;
+    ::ll::TypedStorage<4, 40, ::MoveInputState> mRawInput;
+    ::ll::TypedStorage<4, 8, ::Vec2>            mRawMove;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RawMoveInputComponent& operator=(RawMoveInputComponent const&);
-    RawMoveInputComponent(RawMoveInputComponent const&);
-    RawMoveInputComponent();
 };

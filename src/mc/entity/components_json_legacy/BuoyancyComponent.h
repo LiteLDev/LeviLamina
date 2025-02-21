@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 class IConstBlockSource;
 class SemVersion;
 struct StateVectorComponent;
@@ -13,20 +14,19 @@ class BuoyancyComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd49cb8;
-    ::ll::UntypedStorage<4, 4>  mUnk90b5b6;
-    ::ll::UntypedStorage<4, 4>  mUnk29a4fc;
-    ::ll::UntypedStorage<4, 4>  mUnk743c34;
-    ::ll::UntypedStorage<1, 1>  mUnkb926b0;
-    ::ll::UntypedStorage<1, 1>  mUnkf3368c;
-    ::ll::UntypedStorage<8, 8>  mUnke73503;
-    ::ll::UntypedStorage<8, 24> mUnkc70479;
+    ::ll::TypedStorage<4, 4, float>                             mBaseBuoyancy;
+    ::ll::TypedStorage<4, 4, float>                             mDragDownOnRemoval;
+    ::ll::TypedStorage<4, 4, float>                             mBigWaveProbability;
+    ::ll::TypedStorage<4, 4, float>                             mBigWaveSpeedMultiplier;
+    ::ll::TypedStorage<1, 1, bool>                              mSimulateWaves;
+    ::ll::TypedStorage<1, 1, bool>                              mApplyGravity;
+    ::ll::TypedStorage<8, 8, double>                            mTimer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mLiquidBlocks;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     BuoyancyComponent(BuoyancyComponent const&);
-    BuoyancyComponent();
 
 public:
     // member functions

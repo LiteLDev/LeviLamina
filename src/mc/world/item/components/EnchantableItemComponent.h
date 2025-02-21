@@ -18,14 +18,13 @@ class EnchantableItemComponent : public ::NetworkedItemComponent<::EnchantableIt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnke8fb13;
-    ::ll::UntypedStorage<8, 32> mUnk637dea;
+    ::ll::TypedStorage<1, 1, uchar>          mEnchantValue;
+    ::ll::TypedStorage<8, 32, ::std::string> mEnchantSlot;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     EnchantableItemComponent(EnchantableItemComponent const&);
-    EnchantableItemComponent();
 
 public:
     // virtual functions

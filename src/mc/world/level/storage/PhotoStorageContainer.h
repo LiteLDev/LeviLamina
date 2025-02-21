@@ -2,17 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/storage/PhotoType.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+// clang-format on
+
 struct PhotoStorageContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk64bb8f;
-    ::ll::UntypedStorage<8, 8> mUnk4ffc6e;
+    ::ll::TypedStorage<1, 1, ::PhotoType>     mType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PhotoStorageContainer& operator=(PhotoStorageContainer const&);
-    PhotoStorageContainer(PhotoStorageContainer const&);
-    PhotoStorageContainer();
 };

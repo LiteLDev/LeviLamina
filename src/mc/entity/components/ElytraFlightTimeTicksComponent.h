@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Tick;
+// clang-format on
+
 struct ElytraFlightTimeTicksComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9254a3;
+    ::ll::TypedStorage<8, 8, ::Tick> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ElytraFlightTimeTicksComponent& operator=(ElytraFlightTimeTicksComponent const&);
-    ElytraFlightTimeTicksComponent(ElytraFlightTimeTicksComponent const&);
-    ElytraFlightTimeTicksComponent();
 };

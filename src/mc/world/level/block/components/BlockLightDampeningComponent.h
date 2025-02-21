@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Brightness;
+// clang-format on
+
 struct BlockLightDampeningComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9a6022;
+    ::ll::TypedStorage<1, 1, ::Brightness> mLightLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockLightDampeningComponent& operator=(BlockLightDampeningComponent const&);
-    BlockLightDampeningComponent(BlockLightDampeningComponent const&);
-    BlockLightDampeningComponent();
 };

@@ -2,17 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/TintMethod.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace mce { class Color; }
+// clang-format on
+
 struct BlockMapColorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnkbc4e29;
-    ::ll::UntypedStorage<1, 1>  mUnkda3d8b;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mMapColor;
+    ::ll::TypedStorage<1, 1, ::TintMethod>  mTintMethod;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockMapColorComponent& operator=(BlockMapColorComponent const&);
-    BlockMapColorComponent(BlockMapColorComponent const&);
-    BlockMapColorComponent();
 };

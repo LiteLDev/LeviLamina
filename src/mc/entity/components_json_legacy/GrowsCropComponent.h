@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class GrowsCropComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke44fe2;
-    ::ll::UntypedStorage<4, 12> mUnk8c9fd2;
-    ::ll::UntypedStorage<4, 12> mUnk1642ea;
+    ::ll::TypedStorage<4, 4, int>         mCharges;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mTargetCrop;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLastGrownCrop;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GrowsCropComponent& operator=(GrowsCropComponent const&);
-    GrowsCropComponent(GrowsCropComponent const&);
-    GrowsCropComponent();
 };

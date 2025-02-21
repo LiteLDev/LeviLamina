@@ -2,18 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BlockBakedMaterialDataComponent;
+struct BlockGeometryComponent;
+struct BlockMaterialInstancesComponent;
+// clang-format on
+
 struct BlockItemVisualComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk819e64;
-    ::ll::UntypedStorage<8, 8> mUnkc424d9;
-    ::ll::UntypedStorage<8, 8> mUnk7166a9;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockGeometryComponent>>          mGeometryComponent;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockMaterialInstancesComponent>> mMaterialInstanceComponent;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockBakedMaterialDataComponent>> mBakedBlockMaterialData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockItemVisualComponent& operator=(BlockItemVisualComponent const&);
-    BlockItemVisualComponent(BlockItemVisualComponent const&);
-    BlockItemVisualComponent();
 };

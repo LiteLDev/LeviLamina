@@ -6,13 +6,7 @@ struct BlockFlammableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5e8ce2;
-    ::ll::UntypedStorage<4, 4> mUnkc6d4aa;
+    ::ll::TypedStorage<4, 4, int> mCatchChanceModifier;
+    ::ll::TypedStorage<4, 4, int> mDestroyChanceModifier;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockFlammableComponent& operator=(BlockFlammableComponent const&);
-    BlockFlammableComponent(BlockFlammableComponent const&);
-    BlockFlammableComponent();
 };

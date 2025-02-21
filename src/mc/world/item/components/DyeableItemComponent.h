@@ -14,6 +14,7 @@ class ItemDescriptor;
 class ItemStackBase;
 class SemVersion;
 namespace Bedrock::Safety { class RedactableString; }
+namespace SharedTypes { struct Color255RGB; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -22,14 +23,8 @@ class DyeableItemComponent : public ::NetworkedItemComponent<::DyeableItemCompon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnkc4fc5f;
+    ::ll::TypedStorage<4, 16, ::SharedTypes::Color255RGB> mDefaultColor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DyeableItemComponent& operator=(DyeableItemComponent const&);
-    DyeableItemComponent(DyeableItemComponent const&);
-    DyeableItemComponent();
 
 public:
     // virtual functions

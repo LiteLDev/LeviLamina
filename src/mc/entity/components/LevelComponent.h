@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ILevel;
+// clang-format on
+
 class LevelComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1cbec1;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ILevel>> mLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelComponent& operator=(LevelComponent const&);
-    LevelComponent(LevelComponent const&);
-    LevelComponent();
 };

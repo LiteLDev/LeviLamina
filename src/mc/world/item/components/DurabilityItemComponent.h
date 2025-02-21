@@ -10,6 +10,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace SharedTypes { struct IntRange; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,15 +18,9 @@ class DurabilityItemComponent : public ::NetworkedItemComponent<::DurabilityItem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5daae1;
-    ::ll::UntypedStorage<4, 8> mUnk92cad9;
+    ::ll::TypedStorage<4, 4, int>                     mMaxDamage;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::IntRange> mDamageChance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DurabilityItemComponent& operator=(DurabilityItemComponent const&);
-    DurabilityItemComponent(DurabilityItemComponent const&);
-    DurabilityItemComponent();
 
 public:
     // virtual functions

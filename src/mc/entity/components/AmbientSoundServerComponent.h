@@ -2,20 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DynamicAmbientSound;
+// clang-format on
+
 class AmbientSoundServerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3611a7;
-    ::ll::UntypedStorage<8, 32> mUnk6cbb68;
-    ::ll::UntypedStorage<4, 4>  mUnk39e8ba;
-    ::ll::UntypedStorage<4, 4>  mUnk5222ba;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DynamicAmbientSound>> mDynamicSounds;
+    ::ll::TypedStorage<8, 32, ::std::string>                        mDefaultEventName;
+    ::ll::TypedStorage<4, 4, uint>                                  mReevaluationTimeTicks;
+    ::ll::TypedStorage<4, 4, uint>                                  mTicksSinceReevaluation;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AmbientSoundServerComponent& operator=(AmbientSoundServerComponent const&);
-    AmbientSoundServerComponent();
 
 public:
     // member functions

@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ReplayStateTrackerDiff;
+// clang-format on
+
 struct ReplayStateTrackerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnke2a85a;
+    ::ll::TypedStorage<8, 88, ::ReplayStateTrackerDiff> mDiff;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ReplayStateTrackerComponent& operator=(ReplayStateTrackerComponent const&);
-    ReplayStateTrackerComponent(ReplayStateTrackerComponent const&);
-    ReplayStateTrackerComponent();
 };

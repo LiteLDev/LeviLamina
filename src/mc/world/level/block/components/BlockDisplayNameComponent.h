@@ -6,12 +6,6 @@ struct BlockDisplayNameComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4ab293;
+    ::ll::TypedStorage<8, 32, ::std::string> mDisplayName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockDisplayNameComponent& operator=(BlockDisplayNameComponent const&);
-    BlockDisplayNameComponent(BlockDisplayNameComponent const&);
-    BlockDisplayNameComponent();
 };

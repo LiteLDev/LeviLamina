@@ -6,6 +6,7 @@
 // clang-format off
 class Actor;
 class ActorInteraction;
+class Item;
 class Player;
 // clang-format on
 
@@ -13,15 +14,9 @@ class TrustingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkfacd32;
-    ::ll::UntypedStorage<8, 16> mUnk934ba9;
+    ::ll::TypedStorage<4, 4, float>                      mChance;
+    ::ll::TypedStorage<8, 16, ::std::set<::Item const*>> mTrustItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrustingComponent& operator=(TrustingComponent const&);
-    TrustingComponent(TrustingComponent const&);
-    TrustingComponent();
 
 public:
     // member functions

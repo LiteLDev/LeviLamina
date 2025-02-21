@@ -84,13 +84,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk4f1c50;
-        ::ll::UntypedStorage<8, 8> mUnk330383;
-        ::ll::UntypedStorage<8, 8> mUnkf4e697;
-        ::ll::UntypedStorage<1, 8> mUnk219d49;
-        ::ll::UntypedStorage<8, 8> mUnkddcfb0;
-        ::ll::UntypedStorage<8, 8> mUnk796975;
-        ::ll::UntypedStorage<8, 8> mUnk835d26;
+        ::ll::TypedStorage<8, 8, int64>                    int_;
+        ::ll::TypedStorage<8, 8, uint64>                   uint_;
+        ::ll::TypedStorage<8, 8, double>                   real_;
+        ::ll::TypedStorage<1, 8, bool>                     bool_;
+        ::ll::TypedStorage<8, 8, ::Json::Value::CZString*> string_;
+        ::ll::TypedStorage<8, 8, ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>*>
+                                                                 map_;
+        ::ll::TypedStorage<8, 8, ::std::vector<::Json::Value*>*> array_;
         // NOLINTEND
     };
 

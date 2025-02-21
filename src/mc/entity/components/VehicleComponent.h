@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct StrictActorIDEntityContextPair;
+// clang-format on
+
 struct VehicleComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5fcf58;
+    ::ll::TypedStorage<8, 24, ::std::vector<::StrictActorIDEntityContextPair>> mPassengers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VehicleComponent& operator=(VehicleComponent const&);
-    VehicleComponent(VehicleComponent const&);
-    VehicleComponent();
 
 public:
     // member functions

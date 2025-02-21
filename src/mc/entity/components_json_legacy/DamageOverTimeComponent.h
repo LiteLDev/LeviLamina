@@ -6,14 +6,8 @@ class DamageOverTimeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk319214;
-    ::ll::UntypedStorage<4, 4> mUnk13f547;
-    ::ll::UntypedStorage<4, 4> mUnkcf6bc9;
+    ::ll::TypedStorage<4, 4, int> mHurtValue;
+    ::ll::TypedStorage<4, 4, int> mDamageTimeInterval;
+    ::ll::TypedStorage<4, 4, int> mDamageTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageOverTimeComponent& operator=(DamageOverTimeComponent const&);
-    DamageOverTimeComponent(DamageOverTimeComponent const&);
-    DamageOverTimeComponent();
 };

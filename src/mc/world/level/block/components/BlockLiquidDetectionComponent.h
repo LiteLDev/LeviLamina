@@ -5,18 +5,17 @@
 // auto generated inclusion list
 #include "mc/world/level/block/LiquidType.h"
 
+// auto generated forward declare list
+// clang-format off
+struct DetectionRule;
+// clang-format on
+
 struct BlockLiquidDetectionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 4> mUnkf69ae4;
+    ::ll::TypedStorage<1, 4, ::DetectionRule> mWaterDetectionRule;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockLiquidDetectionComponent& operator=(BlockLiquidDetectionComponent const&);
-    BlockLiquidDetectionComponent(BlockLiquidDetectionComponent const&);
-    BlockLiquidDetectionComponent();
 
 public:
     // static variables

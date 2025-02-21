@@ -2,16 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct AABBShapeComponent;
+struct OffsetsComponent;
+// clang-format on
+
 struct CustomSizeUpdateComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke6ccb6;
+    ::ll::TypedStorage<8, 8, void (*)(::AABBShapeComponent const&, ::OffsetsComponent&)> mUpdateSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CustomSizeUpdateComponent& operator=(CustomSizeUpdateComponent const&);
-    CustomSizeUpdateComponent(CustomSizeUpdateComponent const&);
-    CustomSizeUpdateComponent();
 };

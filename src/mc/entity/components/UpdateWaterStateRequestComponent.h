@@ -2,20 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/UpdateWaterStateFlowRequest.h"
+#include "mc/world/level/material/MaterialType.h"
+
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct UpdateWaterStateRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6b00dc;
-    ::ll::UntypedStorage<1, 1>  mUnk4413c9;
-    ::ll::UntypedStorage<1, 1>  mUnk78b058;
-    ::ll::UntypedStorage<1, 1>  mUnke7d7ae;
-    ::ll::UntypedStorage<4, 12> mUnkc407c9;
+    ::ll::TypedStorage<4, 4, ::MaterialType>                mMaterialType;
+    ::ll::TypedStorage<1, 1, ::UpdateWaterStateFlowRequest> mShouldApplyFlow;
+    ::ll::TypedStorage<1, 1, bool>                          mHasAdjacentFlowingBlocks;
+    ::ll::TypedStorage<1, 1, bool>                          mIsAnyWaterInBB;
+    ::ll::TypedStorage<4, 12, ::Vec3>                       mAccumulatedFlow;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateWaterStateRequestComponent& operator=(UpdateWaterStateRequestComponent const&);
-    UpdateWaterStateRequestComponent(UpdateWaterStateRequestComponent const&);
-    UpdateWaterStateRequestComponent();
 };

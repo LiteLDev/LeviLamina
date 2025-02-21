@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct LookedAtDefinition;
+// clang-format on
+
 struct LookedAtComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka5ed8f;
-    ::ll::UntypedStorage<4, 4> mUnk922e2e;
-    ::ll::UntypedStorage<4, 4> mUnk87f707;
+    ::ll::TypedStorage<8, 8, ::LookedAtDefinition const*> mDefinition;
+    ::ll::TypedStorage<4, 4, int>                         mCooldown;
+    ::ll::TypedStorage<4, 4, int>                         mLookedAtDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookedAtComponent& operator=(LookedAtComponent const&);
-    LookedAtComponent(LookedAtComponent const&);
-    LookedAtComponent();
 };

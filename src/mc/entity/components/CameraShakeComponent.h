@@ -2,25 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/minecraft_camera/CameraShakeType.h"
+
+// auto generated forward declare list
+// clang-format off
+class SimplexNoise;
+struct CameraShakeEvent;
+// clang-format on
+
 class CameraShakeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka70a70;
-    ::ll::UntypedStorage<8, 8>  mUnk4af12c;
-    ::ll::UntypedStorage<8, 8>  mUnk25c1e6;
-    ::ll::UntypedStorage<8, 8>  mUnk48300a;
-    ::ll::UntypedStorage<8, 8>  mUnkb2f591;
-    ::ll::UntypedStorage<4, 4>  mUnk706a18;
-    ::ll::UntypedStorage<4, 4>  mUnk8d03b0;
-    ::ll::UntypedStorage<4, 4>  mUnka13555;
-    ::ll::UntypedStorage<1, 1>  mUnk75cd60;
-    ::ll::UntypedStorage<1, 1>  mUnk695edd;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CameraShakeEvent>> mShakeEvents;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>  xAxisNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>  yAxisNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SimplexNoise>>  zAxisNoise;
+    ::ll::TypedStorage<8, 8, double>                             mLastUpdatedTime;
+    ::ll::TypedStorage<4, 4, float>                              mNoiseTime;
+    ::ll::TypedStorage<4, 4, float>                              mShakeIntensity;
+    ::ll::TypedStorage<4, 4, float>                              mDecayRate;
+    ::ll::TypedStorage<1, 1, ::CameraShakeType>                  mShakeType;
+    ::ll::TypedStorage<1, 1, bool>                               mWasShaking;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraShakeComponent& operator=(CameraShakeComponent const&);
-    CameraShakeComponent(CameraShakeComponent const&);
-    CameraShakeComponent();
 };

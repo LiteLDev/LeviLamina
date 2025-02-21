@@ -56,18 +56,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4330a0;
-    ::ll::UntypedStorage<1, 1>  mUnk3a575d;
-    ::ll::UntypedStorage<4, 4>  mUnk4095d0;
-    ::ll::UntypedStorage<8, 64> mUnkf90bdd;
-    ::ll::UntypedStorage<8, 64> mUnkeeb8e1;
-    ::ll::UntypedStorage<8, 24> mUnk82a12d;
+    ::ll::TypedStorage<1, 1, bool>                                 mInventoryHasChanged;
+    ::ll::TypedStorage<1, 1, bool>                                 mInitialDataSent;
+    ::ll::TypedStorage<4, 4, uint>                                 mUsedContexts;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mUnlockedRecipes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>           mChangedInventorySlots;
+    ::ll::TypedStorage<8, 24, ::std::vector<::UnlockedRecipesServerComponent::UnlockingInstruction>>
+        mUnlockingInstructions;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     UnlockedRecipesServerComponent& operator=(UnlockedRecipesServerComponent const&);
-    UnlockedRecipesServerComponent();
 
 public:
     // member functions

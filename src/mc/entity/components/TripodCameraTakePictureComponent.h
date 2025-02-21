@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 class TripodCameraTakePictureComponent {
 public:
     // TripodCameraTakePictureComponent inner types declare
@@ -15,12 +23,6 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk811d7d;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSubject;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TripodCameraTakePictureComponent& operator=(TripodCameraTakePictureComponent const&);
-    TripodCameraTakePictureComponent(TripodCameraTakePictureComponent const&);
-    TripodCameraTakePictureComponent();
 };

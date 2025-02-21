@@ -61,15 +61,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk8bb44e;
-    ::ll::UntypedStorage<8, 24> mUnka5d0f9;
+    ::ll::TypedStorage<1, 1, bool>                                             mUseEfficiency;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DiggerItemComponent::BlockInfo>> mDestroySpeeds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DiggerItemComponent& operator=(DiggerItemComponent const&);
-    DiggerItemComponent(DiggerItemComponent const&);
-    DiggerItemComponent();
 
 public:
     // virtual functions

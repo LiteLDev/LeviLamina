@@ -6,20 +6,14 @@ struct ExhaustionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4b7cd5;
-    ::ll::UntypedStorage<4, 4> mUnka9e395;
-    ::ll::UntypedStorage<4, 4> mUnkd5f5c1;
-    ::ll::UntypedStorage<4, 4> mUnk201760;
-    ::ll::UntypedStorage<4, 4> mUnke5ea51;
-    ::ll::UntypedStorage<4, 4> mUnkb9afee;
-    ::ll::UntypedStorage<4, 4> mUnk4cb9bb;
-    ::ll::UntypedStorage<4, 4> mUnk3102ed;
-    ::ll::UntypedStorage<4, 4> mUnk98cf91;
+    ::ll::TypedStorage<4, 4, float> mHeal;
+    ::ll::TypedStorage<4, 4, float> mJump;
+    ::ll::TypedStorage<4, 4, float> mSprintJump;
+    ::ll::TypedStorage<4, 4, float> mMine;
+    ::ll::TypedStorage<4, 4, float> mAttack;
+    ::ll::TypedStorage<4, 4, float> mDamage;
+    ::ll::TypedStorage<4, 4, float> mWalk;
+    ::ll::TypedStorage<4, 4, float> mSprint;
+    ::ll::TypedStorage<4, 4, float> mSwim;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExhaustionComponent& operator=(ExhaustionComponent const&);
-    ExhaustionComponent(ExhaustionComponent const&);
-    ExhaustionComponent();
 };

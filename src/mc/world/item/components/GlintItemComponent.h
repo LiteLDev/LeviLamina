@@ -17,14 +17,8 @@ class GlintItemComponent : public ::NetworkedItemComponent<::GlintItemComponent>
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk859d15;
+    ::ll::TypedStorage<1, 1, bool> mIsGlint;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlintItemComponent& operator=(GlintItemComponent const&);
-    GlintItemComponent(GlintItemComponent const&);
-    GlintItemComponent();
 
 public:
     // virtual functions

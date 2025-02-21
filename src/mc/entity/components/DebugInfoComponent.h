@@ -9,7 +9,9 @@
 // auto generated forward declare list
 // clang-format off
 class ActorEventListener;
+class HashedString;
 struct ActorDefinitionTriggeredEvent;
+struct ActorUniqueID;
 // clang-format on
 
 class DebugInfoComponent : public ::EventListenerDispatcher<::ActorEventListener> {
@@ -51,17 +53,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke06071;
-    ::ll::UntypedStorage<8, 64> mUnk7fafc0;
-    ::ll::UntypedStorage<8, 40> mUnka34b10;
-    ::ll::UntypedStorage<1, 1>  mUnk69b71c;
-    ::ll::UntypedStorage<8, 8>  mUnk9cfb9b;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DebugInfoComponent::Listener>> mListeners;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, uint64>>  mPacketHashes;
+    ::ll::TypedStorage<8, 40, ::std::deque<::std::string>>                   mSentEvents;
+    ::ll::TypedStorage<1, 1, bool>                                           mEventListenerRegistered;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                mMobUniqueId;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DebugInfoComponent& operator=(DebugInfoComponent const&);
-    DebugInfoComponent();
 
 public:
     // virtual functions

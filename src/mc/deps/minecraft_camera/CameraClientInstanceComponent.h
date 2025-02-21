@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ICameraClientInstance;
+// clang-format on
+
 struct CameraClientInstanceComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2bb378;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ICameraClientInstance>> mClientInstance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraClientInstanceComponent& operator=(CameraClientInstanceComponent const&);
-    CameraClientInstanceComponent(CameraClientInstanceComponent const&);
-    CameraClientInstanceComponent();
 };

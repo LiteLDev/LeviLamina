@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntitySet;
+// clang-format on
+
 class EntitiesInsideVolumeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkfd7e79;
+    ::ll::TypedStorage<8, 64, ::EntitySet> mEntities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntitiesInsideVolumeComponent& operator=(EntitiesInsideVolumeComponent const&);
-    EntitiesInsideVolumeComponent(EntitiesInsideVolumeComponent const&);
-    EntitiesInsideVolumeComponent();
 };

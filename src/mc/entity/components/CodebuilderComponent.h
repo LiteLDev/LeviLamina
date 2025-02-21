@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/code_builder_execution_state/CodeStatus.h"
+
 class CodebuilderComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk722b23;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus> mCodeStatus;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CodebuilderComponent& operator=(CodebuilderComponent const&);
-    CodebuilderComponent(CodebuilderComponent const&);
-    CodebuilderComponent();
 };

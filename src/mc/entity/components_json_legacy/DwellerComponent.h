@@ -12,6 +12,7 @@ class ActorDamageSource;
 class BlockPos;
 class CompoundTag;
 class DataLoadHelper;
+class HashedString;
 class Mob;
 class Village;
 namespace mce { class UUID; }
@@ -28,27 +29,26 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk660a6a;
-    ::ll::UntypedStorage<1, 1>  mUnkf674f0;
-    ::ll::UntypedStorage<1, 1>  mUnkf07d14;
-    ::ll::UntypedStorage<1, 1>  mUnkb37ecd;
-    ::ll::UntypedStorage<1, 1>  mUnk9b4fd0;
-    ::ll::UntypedStorage<8, 48> mUnk2e55d2;
-    ::ll::UntypedStorage<4, 4>  mUnk47c4dd;
-    ::ll::UntypedStorage<4, 4>  mUnk8076a1;
-    ::ll::UntypedStorage<8, 8>  mUnk79352c;
-    ::ll::UntypedStorage<8, 8>  mUnk4e6f5e;
-    ::ll::UntypedStorage<4, 4>  mUnk39d5b8;
-    ::ll::UntypedStorage<4, 4>  mUnk3c946f;
-    ::ll::UntypedStorage<4, 4>  mUnk499c22;
-    ::ll::UntypedStorage<8, 16> mUnk339202;
+    ::ll::TypedStorage<1, 1, bool>                             mCanFindPOI;
+    ::ll::TypedStorage<1, 1, bool>                             mCanMigrate;
+    ::ll::TypedStorage<1, 1, bool>                             mHasJoinedDwelling;
+    ::ll::TypedStorage<1, 1, bool>                             mFixUpRole;
+    ::ll::TypedStorage<1, 1, bool>                             mRewardPlayersOnFirstFounding;
+    ::ll::TypedStorage<8, 48, ::HashedString>                  mPreferredProfession;
+    ::ll::TypedStorage<4, 4, int>                              mFirstFoundingReward;
+    ::ll::TypedStorage<4, 4, int>                              mUpdateIntervalVariant;
+    ::ll::TypedStorage<8, 8, uint64>                           mDwellingUpdateInterval;
+    ::ll::TypedStorage<8, 8, uint64>                           mUpdateIntervalBase;
+    ::ll::TypedStorage<4, 4, float>                            mDwellingBoundsTolerance;
+    ::ll::TypedStorage<4, 4, ::DwellerComponent::DwellingType> mType;
+    ::ll::TypedStorage<4, 4, ::DwellerRole>                    mRole;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                     mDwellingUniqueID;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DwellerComponent& operator=(DwellerComponent const&);
     DwellerComponent(DwellerComponent const&);
-    DwellerComponent();
 
 public:
     // member functions

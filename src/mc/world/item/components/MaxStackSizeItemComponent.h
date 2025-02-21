@@ -17,14 +17,8 @@ class MaxStackSizeItemComponent : public ::NetworkedItemComponent<::MaxStackSize
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc1f405;
+    ::ll::TypedStorage<1, 1, uchar> mMaxStackSize;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MaxStackSizeItemComponent& operator=(MaxStackSizeItemComponent const&);
-    MaxStackSizeItemComponent(MaxStackSizeItemComponent const&);
-    MaxStackSizeItemComponent();
 
 public:
     // virtual functions

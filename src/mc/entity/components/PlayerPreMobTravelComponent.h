@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct PlayerPreMobTravelComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk9b9b63;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerPreMobTravelComponent& operator=(PlayerPreMobTravelComponent const&);
-    PlayerPreMobTravelComponent(PlayerPreMobTravelComponent const&);
-    PlayerPreMobTravelComponent();
 };

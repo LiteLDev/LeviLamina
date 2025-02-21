@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InventoryTransactionPacket;
+// clang-format on
+
 struct ServerPlayerInventoryTransactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk860296;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::InventoryTransactionPacket>>> mCurrentTransactions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerPlayerInventoryTransactionComponent& operator=(ServerPlayerInventoryTransactionComponent const&);
-    ServerPlayerInventoryTransactionComponent(ServerPlayerInventoryTransactionComponent const&);
-    ServerPlayerInventoryTransactionComponent();
 };

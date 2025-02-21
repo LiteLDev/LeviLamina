@@ -13,14 +13,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk79995c;
-    ::ll::UntypedStorage<1, 1> mUnkdadde5;
-    ::ll::UntypedStorage<4, 4> mUnk949498;
+    ::ll::TypedStorage<4, 4, ::ActorInWallDetectionComponent::DetectionType> mDetectionType;
+    ::ll::TypedStorage<1, 1, bool>                                           mWasInWallLastTick;
+    ::ll::TypedStorage<4, 4, int>                                            mTicksInWall;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorInWallDetectionComponent& operator=(ActorInWallDetectionComponent const&);
-    ActorInWallDetectionComponent(ActorInWallDetectionComponent const&);
-    ActorInWallDetectionComponent();
 };

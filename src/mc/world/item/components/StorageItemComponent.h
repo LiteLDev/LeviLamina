@@ -3,18 +3,22 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class IDynamicContainerSerialization;
+class ItemDescriptor;
 class ItemStack;
 class ListTag;
 class Player;
 class SaveContext;
 class SemVersion;
 struct FullContainerName;
+namespace Bedrock::PubSub { class Subscription; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -22,19 +26,13 @@ class StorageItemComponent : public ::NetworkedItemComponent<::StorageItemCompon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk45037d;
-    ::ll::UntypedStorage<1, 1>  mUnk2e38d3;
-    ::ll::UntypedStorage<8, 24> mUnk4527c9;
-    ::ll::UntypedStorage<8, 24> mUnkcfe413;
-    ::ll::UntypedStorage<8, 16> mUnke98af7;
-    ::ll::UntypedStorage<8, 16> mUnkef69e6;
+    ::ll::TypedStorage<4, 4, int>                                          mNumSlots;
+    ::ll::TypedStorage<1, 1, bool>                                         mAllowNestedStorageItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mBannedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mAllowedItems;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IDynamicContainerSerialization>> mContainerSerialization;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mOnUseSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StorageItemComponent& operator=(StorageItemComponent const&);
-    StorageItemComponent(StorageItemComponent const&);
-    StorageItemComponent();
 
 public:
     // virtual functions

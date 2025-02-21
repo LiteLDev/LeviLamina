@@ -10,18 +10,16 @@ class Vec3;
 
 class PushableComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkdda82e;
-    ::ll::UntypedStorage<1, 1> mUnkf753ca;
-    ::ll::UntypedStorage<4, 4> mUnka85a2d;
-    // NOLINTEND
+    // PushableComponent inner types define
+    using PushVectors = ::std::pair<::Vec3, ::Vec3>;
 
 public:
-    // prevent constructor by default
-    PushableComponent& operator=(PushableComponent const&);
-    PushableComponent(PushableComponent const&);
-    PushableComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>  mIsPushable;
+    ::ll::TypedStorage<1, 1, bool>  mIsPushableByPiston;
+    ::ll::TypedStorage<4, 4, float> mPushthrough;
+    // NOLINTEND
 
 public:
     // member functions

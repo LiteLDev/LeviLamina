@@ -6,16 +6,15 @@ class EntityStorageKeyComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk7b9fd1;
-    ::ll::UntypedStorage<8, 32> mUnk603187;
-    ::ll::UntypedStorage<1, 1>  mUnk3883e8;
+    ::ll::TypedStorage<8, 32, ::std::string> mStorageKey;
+    ::ll::TypedStorage<8, 32, ::std::string> mLastSerializedActorState;
+    ::ll::TypedStorage<1, 1, bool>           mDirtyFromNonSerializedState;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     EntityStorageKeyComponent& operator=(EntityStorageKeyComponent const&);
     EntityStorageKeyComponent(EntityStorageKeyComponent const&);
-    EntityStorageKeyComponent();
 
 public:
     // member functions

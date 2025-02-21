@@ -4,7 +4,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorFilterGroup;
 class ActorOwnerComponent;
+class EntitySubsensor;
+class Vec3;
 struct Tick;
 // clang-format on
 
@@ -12,18 +15,17 @@ class EntitySensorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkc5cd48;
-    ::ll::UntypedStorage<4, 12> mUnkaf1316;
-    ::ll::UntypedStorage<8, 64> mUnkda0812;
-    ::ll::UntypedStorage<8, 24> mUnk114a97;
-    ::ll::UntypedStorage<1, 1>  mUnkd48ab6;
+    ::ll::TypedStorage<1, 1, bool>                              mRelativeRange;
+    ::ll::TypedStorage<4, 12, ::Vec3>                           mMaxSensorRange;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>               mEventCondition;
+    ::ll::TypedStorage<8, 24, ::std::vector<::EntitySubsensor>> mSubsensors;
+    ::ll::TypedStorage<1, 1, bool>                              mCanFireEventWithNoEntities;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     EntitySensorComponent& operator=(EntitySensorComponent const&);
     EntitySensorComponent(EntitySensorComponent const&);
-    EntitySensorComponent();
 
 public:
     // member functions

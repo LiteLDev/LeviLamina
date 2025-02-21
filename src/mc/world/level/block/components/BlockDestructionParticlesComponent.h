@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/TintMethod.h"
+
 struct BlockDestructionParticlesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkeb1d0a;
-    ::ll::UntypedStorage<2, 2>  mUnke732e0;
-    ::ll::UntypedStorage<1, 1>  mUnkae3a16;
+    ::ll::TypedStorage<8, 32, ::std::string> mTexture;
+    ::ll::TypedStorage<2, 2, ushort>         mPreFlatteningAux;
+    ::ll::TypedStorage<1, 1, ::TintMethod>   mTintMethod;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockDestructionParticlesComponent& operator=(BlockDestructionParticlesComponent const&);
-    BlockDestructionParticlesComponent(BlockDestructionParticlesComponent const&);
-    BlockDestructionParticlesComponent();
 };

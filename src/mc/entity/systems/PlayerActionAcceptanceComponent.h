@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct PlayerActionComponent;
+// clang-format on
+
 struct PlayerActionAcceptanceComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 360> mUnkcb00e8;
-    ::ll::UntypedStorage<1, 1>   mUnk9517d4;
+    ::ll::TypedStorage<8, 360, ::PlayerActionComponent> mClientPlayerActions;
+    ::ll::TypedStorage<1, 1, bool>                      mShouldCompare;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerActionAcceptanceComponent& operator=(PlayerActionAcceptanceComponent const&);
-    PlayerActionAcceptanceComponent(PlayerActionAcceptanceComponent const&);
-    PlayerActionAcceptanceComponent();
 
 public:
     // member functions

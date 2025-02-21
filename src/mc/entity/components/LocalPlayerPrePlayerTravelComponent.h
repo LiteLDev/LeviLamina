@@ -6,12 +6,6 @@ struct LocalPlayerPrePlayerTravelComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbae895;
+    ::ll::TypedStorage<4, 4, float> mFlySpeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LocalPlayerPrePlayerTravelComponent& operator=(LocalPlayerPrePlayerTravelComponent const&);
-    LocalPlayerPrePlayerTravelComponent(LocalPlayerPrePlayerTravelComponent const&);
-    LocalPlayerPrePlayerTravelComponent();
 };

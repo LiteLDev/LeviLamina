@@ -25,6 +25,7 @@ class Actor;
 class ActorDamageSource;
 class BlockActor;
 class BlockPos;
+class CallbackToken;
 class ChunkSource;
 class ComplexInventoryTransaction;
 class CompoundTag;
@@ -37,6 +38,7 @@ class FrameUpdateContextBase;
 class GameServerToken;
 class HashedString;
 class IContainerManager;
+class InventoryMenu;
 class InventoryTransaction;
 class ItemStack;
 class Level;
@@ -67,6 +69,8 @@ public:
     // clang-format on
 
     // ServerPlayer inner types define
+    using OnPlayerLoadedCallback = ::std::function<void(::ServerPlayer&)>;
+
     struct NearbyActor {
     public:
         // NearbyActor inner types define
@@ -80,53 +84,41 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk6d3516;
-        ::ll::UntypedStorage<4, 4> mUnk2fbf1a;
-        ::ll::UntypedStorage<8, 8> mUnkbc87d2;
+        ::ll::TypedStorage<1, 1, bool>                               isAutonomous;
+        ::ll::TypedStorage<4, 4, ::ServerPlayer::NearbyActor::State> state;
+        ::ll::TypedStorage<8, 8, ::Actor*>                           tempActor;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NearbyActor& operator=(NearbyActor const&);
-        NearbyActor(NearbyActor const&);
-        NearbyActor();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkdb462f;
-    ::ll::UntypedStorage<4, 4>   mUnk95d1b9;
-    ::ll::UntypedStorage<4, 4>   mUnkcbf603;
-    ::ll::UntypedStorage<8, 8>   mUnk171665;
-    ::ll::UntypedStorage<8, 64>  mUnk8c5640;
-    ::ll::UntypedStorage<8, 112> mUnkcdade5;
-    ::ll::UntypedStorage<1, 1>   mUnk89a6e5;
-    ::ll::UntypedStorage<4, 4>   mUnk79cb49;
-    ::ll::UntypedStorage<1, 1>   mUnk939ae5;
-    ::ll::UntypedStorage<1, 1>   mUnk797704;
-    ::ll::UntypedStorage<1, 1>   mUnk26a7dc;
-    ::ll::UntypedStorage<1, 1>   mUnk2dee73;
-    ::ll::UntypedStorage<8, 8>   mUnkaf8cdb;
-    ::ll::UntypedStorage<4, 4>   mUnk63ea4d;
-    ::ll::UntypedStorage<4, 4>   mUnkeff8d8;
-    ::ll::UntypedStorage<1, 1>   mUnk94fdf8;
-    ::ll::UntypedStorage<4, 4>   mUnke2daef;
-    ::ll::UntypedStorage<8, 48>  mUnk39c820;
-    ::ll::UntypedStorage<4, 4>   mUnkebef37;
-    ::ll::UntypedStorage<8, 64>  mUnka2e19b;
-    ::ll::UntypedStorage<8, 16>  mUnk14a1b0;
-    ::ll::UntypedStorage<8, 8>   mUnkb6b13f;
-    ::ll::UntypedStorage<1, 1>   mUnk8c8f70;
-    ::ll::UntypedStorage<1, 1>   mUnk81899d;
-    ::ll::UntypedStorage<4, 52>  mUnk18c92f;
+    ::ll::TypedStorage<4, 4, ::DeviceMemoryTier>                      mMemoryTier;
+    ::ll::TypedStorage<4, 4, ::PlatformType>                          mPlatformType;
+    ::ll::TypedStorage<4, 4, int>                                     mMaxClientViewDistance;
+    ::ll::TypedStorage<8, 8, ::ServerNetworkSystem&>                  mNetwork;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::ServerPlayer&)>> mOnPlayerLoadedCallback;
+    ::ll::TypedStorage<8, 112, ::InventoryMenu>                       mInventoryMenu;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                           mContainerCounter;
+    ::ll::TypedStorage<4, 4, uint>                                    mMaxChunkRadius;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsInitialPlayerLoadHappening;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsTeacher;
+    ::ll::TypedStorage<1, 1, bool>                                    mLocalPlayerInitialized;
+    ::ll::TypedStorage<1, 1, bool>                                    mWaitingForTickingAreasPreload;
+    ::ll::TypedStorage<8, 8, ::Tick>                                  mPrevShieldBlockingTick;
+    ::ll::TypedStorage<4, 4, uint>                                    mClientViewRadius;
+    ::ll::TypedStorage<4, 4, uint>                                    mClientRequestedRadius;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsCompatibleWithClientSideChunkGen;
+    ::ll::TypedStorage<4, 4, int>                                     mRemainingStructureRefreshTicks;
+    ::ll::TypedStorage<8, 48, ::HashedString>                         mCurrentStructureFeature;
+    ::ll::TypedStorage<4, 4, int>                                     mLastKnownSyncTick;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ServerPlayer::NearbyActor>> mNearbyActors;
+    ::ll::TypedStorage<8, 16, ::CallbackToken>                                                    mCloseContainerToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>                          mEditorServerPlayer;
+    ::ll::TypedStorage<1, 1, bool>                                                                mHasQueuedViewMove;
+    ::ll::TypedStorage<1, 1, bool>                                                                mIsPendingDisconnect;
+    ::ll::TypedStorage<4, 52, ::std::array<::HudVisibility, 13>> mHudElementsVisibilityState;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerPlayer& operator=(ServerPlayer const&);
-    ServerPlayer(ServerPlayer const&);
-    ServerPlayer();
 
 public:
     // virtual functions

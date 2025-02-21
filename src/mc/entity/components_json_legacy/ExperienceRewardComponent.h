@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ExpressionNode;
+// clang-format on
+
 class ExperienceRewardComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc3c919;
-    ::ll::UntypedStorage<8, 24> mUnk134277;
-    ::ll::UntypedStorage<1, 1>  mUnk372774;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mOnBred;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mOnDeath;
+    ::ll::TypedStorage<1, 1, bool>                             mIsExperienceDropEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExperienceRewardComponent& operator=(ExperienceRewardComponent const&);
-    ExperienceRewardComponent(ExperienceRewardComponent const&);
-    ExperienceRewardComponent();
 
 public:
     // member functions

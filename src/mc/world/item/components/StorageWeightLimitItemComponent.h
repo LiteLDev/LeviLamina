@@ -17,14 +17,8 @@ class StorageWeightLimitItemComponent : public ::NetworkedItemComponent<::Storag
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk4d92fb;
+    ::ll::TypedStorage<4, 4, int> mWeightLimit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StorageWeightLimitItemComponent& operator=(StorageWeightLimitItemComponent const&);
-    StorageWeightLimitItemComponent(StorageWeightLimitItemComponent const&);
-    StorageWeightLimitItemComponent();
 
 public:
     // virtual functions

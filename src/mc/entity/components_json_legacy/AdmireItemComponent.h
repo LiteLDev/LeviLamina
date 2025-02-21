@@ -6,23 +6,24 @@
 // clang-format off
 class Actor;
 class ItemStack;
+class WeakEntityRef;
+struct Tick;
 // clang-format on
 
 class AdmireItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk130b49;
-    ::ll::UntypedStorage<8, 152> mUnk59b799;
-    ::ll::UntypedStorage<8, 8>   mUnk297c7e;
-    ::ll::UntypedStorage<8, 24>  mUnkf3815e;
+    ::ll::TypedStorage<1, 1, bool>             mIsAdmiring;
+    ::ll::TypedStorage<8, 152, ::ItemStack>    mAdmireItem;
+    ::ll::TypedStorage<8, 8, ::Tick>           mAdmireUntil;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mItemOwnerRef;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AdmireItemComponent& operator=(AdmireItemComponent const&);
     AdmireItemComponent(AdmireItemComponent const&);
-    AdmireItemComponent();
 
 public:
     // member functions

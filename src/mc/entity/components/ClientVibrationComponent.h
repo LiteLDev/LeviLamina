@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Tick;
+// clang-format on
+
 class ClientVibrationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkc72d53;
+    ::ll::TypedStorage<8, 16, ::std::optional<::Tick>> mLastVibrationTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientVibrationComponent& operator=(ClientVibrationComponent const&);
-    ClientVibrationComponent(ClientVibrationComponent const&);
-    ClientVibrationComponent();
 };

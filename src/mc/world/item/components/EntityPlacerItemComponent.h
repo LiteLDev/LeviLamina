@@ -18,6 +18,8 @@ class HashedString;
 class ItemStack;
 class SemVersion;
 class Vec3;
+struct ActorDefinitionIdentifier;
+namespace Bedrock::PubSub { class Subscription; }
 namespace SharedTypes::v1_20_50 { struct EntityPlacerItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -26,19 +28,13 @@ class EntityPlacerItemComponent : public ::NetworkedItemComponent<::EntityPlacer
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnkd6c2a6;
-    ::ll::UntypedStorage<8, 24>  mUnkaf08de;
-    ::ll::UntypedStorage<8, 24>  mUnk382de7;
-    ::ll::UntypedStorage<1, 1>   mUnka64b69;
-    ::ll::UntypedStorage<1, 1>   mUnk149d97;
-    ::ll::UntypedStorage<8, 16>  mUnk9f0794;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>     mIdentifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedUseBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedDispenseBlocks;
+    ::ll::TypedStorage<1, 1, bool>                              mCanUseOnMonsterSpawners;
+    ::ll::TypedStorage<1, 1, bool>                              mShouldContentErrorWithoutLiquidClipped;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mOnUseOnSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityPlacerItemComponent& operator=(EntityPlacerItemComponent const&);
-    EntityPlacerItemComponent(EntityPlacerItemComponent const&);
-    EntityPlacerItemComponent();
 
 public:
     // virtual functions

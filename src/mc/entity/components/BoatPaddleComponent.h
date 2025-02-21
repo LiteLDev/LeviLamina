@@ -2,17 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Paddle;
+struct Tick;
+// clang-format on
+
 struct BoatPaddleComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 40> mUnk81a45e;
-    ::ll::UntypedStorage<8, 8>  mUnkb08ad7;
+    ::ll::TypedStorage<4, 40, ::std::array<::Paddle, 2>> mPaddles;
+    ::ll::TypedStorage<8, 8, ::Tick>                     mLocalTick;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BoatPaddleComponent& operator=(BoatPaddleComponent const&);
-    BoatPaddleComponent(BoatPaddleComponent const&);
-    BoatPaddleComponent();
 };

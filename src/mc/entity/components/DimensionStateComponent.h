@@ -15,13 +15,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc474f6;
-    ::ll::UntypedStorage<8, 8> mUnk6df981;
+    ::ll::TypedStorage<4, 4, ::DimensionStateComponent::DimensionState> mDimensionState;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>   mLoadIntoDimensionTimeout;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DimensionStateComponent& operator=(DimensionStateComponent const&);
-    DimensionStateComponent(DimensionStateComponent const&);
-    DimensionStateComponent();
 };

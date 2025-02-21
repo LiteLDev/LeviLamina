@@ -5,22 +5,17 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+struct EquipmentTableDropChance;
 // clang-format on
 
 struct SlotDropChancesComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 48> mUnk4301cc;
-    ::ll::UntypedStorage<4, 4>  mUnkb0fc84;
-    ::ll::UntypedStorage<4, 4>  mUnk28169d;
+    ::ll::TypedStorage<4, 48, ::std::array<::EquipmentTableDropChance, 6>> mDropChances;
+    ::ll::TypedStorage<4, 4, float>                                        mDefaultChance;
+    ::ll::TypedStorage<4, 4, float>                                        mDefaultChanceForInvalidSlots;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SlotDropChancesComponent& operator=(SlotDropChancesComponent const&);
-    SlotDropChancesComponent(SlotDropChancesComponent const&);
-    SlotDropChancesComponent();
 
 public:
     // member functions

@@ -18,13 +18,9 @@ class CooldownItemComponent : public ::NetworkedItemComponent<::CooldownItemComp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk4c1c3d;
-    ::ll::UntypedStorage<4, 4>  mUnkadce17;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCoolDownType;
+    ::ll::TypedStorage<4, 4, float>           mCooldownTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CooldownItemComponent();
 
 public:
     // virtual functions

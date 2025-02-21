@@ -2,18 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InsideBlockEventMap;
+// clang-format on
+
 class InsideBlockNotifierComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7d1ee6;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InsideBlockEventMap>> mBlockList;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     InsideBlockNotifierComponent& operator=(InsideBlockNotifierComponent const&);
     InsideBlockNotifierComponent(InsideBlockNotifierComponent const&);
-    InsideBlockNotifierComponent();
 
 public:
     // member functions

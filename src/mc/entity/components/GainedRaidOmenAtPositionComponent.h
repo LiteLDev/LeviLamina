@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class CompoundTag;
 // clang-format on
 
@@ -11,14 +12,8 @@ struct GainedRaidOmenAtPositionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk631dcc;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GainedRaidOmenAtPositionComponent& operator=(GainedRaidOmenAtPositionComponent const&);
-    GainedRaidOmenAtPositionComponent(GainedRaidOmenAtPositionComponent const&);
-    GainedRaidOmenAtPositionComponent();
 
 public:
     // member functions

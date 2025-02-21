@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+// clang-format on
+
 struct PassengersToPositionComponent {
 public:
     // PassengersToPositionComponent inner types declare
@@ -28,13 +33,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4cf956;
-    ::ll::UntypedStorage<8, 24> mUnkb8156a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PassengersToPositionComponent::Data>> mData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::StrictEntityContext>>                 mStack;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PassengersToPositionComponent& operator=(PassengersToPositionComponent const&);
-    PassengersToPositionComponent(PassengersToPositionComponent const&);
-    PassengersToPositionComponent();
 };

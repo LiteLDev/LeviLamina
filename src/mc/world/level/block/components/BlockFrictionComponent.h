@@ -6,12 +6,6 @@ struct BlockFrictionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbedd11;
+    ::ll::TypedStorage<4, 4, float> mFriction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockFrictionComponent& operator=(BlockFrictionComponent const&);
-    BlockFrictionComponent(BlockFrictionComponent const&);
-    BlockFrictionComponent();
 };

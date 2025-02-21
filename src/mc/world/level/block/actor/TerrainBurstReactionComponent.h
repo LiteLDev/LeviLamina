@@ -9,24 +9,19 @@
 // clang-format off
 class BlockSource;
 class LabTableReaction;
+class Vec3;
 // clang-format on
 
 class TerrainBurstReactionComponent : public ::LabTableReactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6866b3;
-    ::ll::UntypedStorage<4, 12> mUnk4bdb9c;
-    ::ll::UntypedStorage<4, 12> mUnkf0e0e6;
-    ::ll::UntypedStorage<4, 4>  mUnk6f5c33;
-    ::ll::UntypedStorage<1, 1>  mUnk3fae10;
+    ::ll::TypedStorage<4, 4, int>     mData;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDims;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDirRange;
+    ::ll::TypedStorage<4, 4, int>     mCount;
+    ::ll::TypedStorage<1, 1, bool>    mDirOneWay;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TerrainBurstReactionComponent& operator=(TerrainBurstReactionComponent const&);
-    TerrainBurstReactionComponent(TerrainBurstReactionComponent const&);
-    TerrainBurstReactionComponent();
 
 public:
     // virtual functions

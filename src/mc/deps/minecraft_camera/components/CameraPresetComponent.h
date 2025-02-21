@@ -6,12 +6,6 @@ class CameraPresetComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5ddf63;
+    ::ll::TypedStorage<8, 8, uint64> mPresetIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraPresetComponent& operator=(CameraPresetComponent const&);
-    CameraPresetComponent(CameraPresetComponent const&);
-    CameraPresetComponent();
 };

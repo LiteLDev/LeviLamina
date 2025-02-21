@@ -10,16 +10,23 @@ class PrioritizedGoal;
 
 class GoalSelectorComponent {
 public:
+    // GoalSelectorComponent inner types define
+    using GoalElement = ::std::pair<ushort, ::PrioritizedGoal>;
+
+    using GoalCondition = bool (*)(::std::pair<ushort, ::PrioritizedGoal>&);
+
+    using GoalMap = ::std::vector<::std::pair<ushort, ::PrioritizedGoal>>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk499863;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<ushort, ::PrioritizedGoal>>> mGoalMap;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     GoalSelectorComponent& operator=(GoalSelectorComponent const&);
     GoalSelectorComponent(GoalSelectorComponent const&);
-    GoalSelectorComponent();
 
 public:
     // member functions

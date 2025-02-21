@@ -6,12 +6,6 @@ struct GlidingCollisionDamageComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfcc444;
+    ::ll::TypedStorage<4, 4, float> mDamage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlidingCollisionDamageComponent& operator=(GlidingCollisionDamageComponent const&);
-    GlidingCollisionDamageComponent(GlidingCollisionDamageComponent const&);
-    GlidingCollisionDamageComponent();
 };

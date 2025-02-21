@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+// clang-format on
+
 class MingleComponent {
 public:
     // MingleComponent inner types define
@@ -16,14 +21,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5ed224;
-    ::ll::UntypedStorage<8, 8> mUnkcbaa3e;
-    ::ll::UntypedStorage<8, 8> mUnk7deb29;
+    ::ll::TypedStorage<4, 4, ::MingleComponent::MingleState> mMingleState;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mPartnerId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mPreviousPartnerId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MingleComponent& operator=(MingleComponent const&);
-    MingleComponent(MingleComponent const&);
-    MingleComponent();
 };

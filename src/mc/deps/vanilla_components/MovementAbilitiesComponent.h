@@ -7,18 +7,16 @@
 
 struct MovementAbilitiesComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk884a2f;
-    ::ll::UntypedStorage<4, 4> mUnke2ca47;
-    ::ll::UntypedStorage<4, 8> mUnk64940f;
-    // NOLINTEND
+    // MovementAbilitiesComponent inner types define
+    using Bitset = ::std::bitset<8>;
 
 public:
-    // prevent constructor by default
-    MovementAbilitiesComponent& operator=(MovementAbilitiesComponent const&);
-    MovementAbilitiesComponent(MovementAbilitiesComponent const&);
-    MovementAbilitiesComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::std::bitset<8>>       mOverrides;
+    ::ll::TypedStorage<4, 4, ::std::bitset<8>>       mFlagValues;
+    ::ll::TypedStorage<4, 8, ::std::array<float, 2>> mFloatValues;
+    // NOLINTEND
 
 public:
     // member functions

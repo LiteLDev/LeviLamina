@@ -5,47 +5,48 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Vec3;
+struct ActorUniqueID;
 // clang-format on
 
 class FlockingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2ac316;
-    ::ll::UntypedStorage<4, 12> mUnk260d0b;
-    ::ll::UntypedStorage<4, 12> mUnkc87136;
-    ::ll::UntypedStorage<4, 12> mUnk20cf3b;
-    ::ll::UntypedStorage<4, 12> mUnk10a040;
-    ::ll::UntypedStorage<1, 1>  mUnkd5aebc;
-    ::ll::UntypedStorage<1, 1>  mUnkbf0011;
-    ::ll::UntypedStorage<1, 1>  mUnk8e5a9c;
-    ::ll::UntypedStorage<1, 1>  mUnkdafef7;
-    ::ll::UntypedStorage<1, 1>  mUnkbc9af2;
-    ::ll::UntypedStorage<1, 1>  mUnkaa0b41;
-    ::ll::UntypedStorage<1, 1>  mUnkf5de12;
-    ::ll::UntypedStorage<1, 1>  mUnk64dad6;
-    ::ll::UntypedStorage<4, 4>  mUnk13248b;
-    ::ll::UntypedStorage<4, 4>  mUnk672d0c;
-    ::ll::UntypedStorage<4, 4>  mUnkaa2a83;
-    ::ll::UntypedStorage<4, 4>  mUnk563eba;
-    ::ll::UntypedStorage<4, 4>  mUnk1ebf5a;
-    ::ll::UntypedStorage<4, 4>  mUnke0b962;
-    ::ll::UntypedStorage<4, 4>  mUnk42c128;
-    ::ll::UntypedStorage<4, 4>  mUnk90f6fa;
-    ::ll::UntypedStorage<4, 4>  mUnke5af87;
-    ::ll::UntypedStorage<4, 4>  mUnk82b1e6;
-    ::ll::UntypedStorage<4, 4>  mUnk5f4885;
-    ::ll::UntypedStorage<4, 4>  mUnk2374cb;
-    ::ll::UntypedStorage<4, 4>  mUnkc37b7c;
-    ::ll::UntypedStorage<4, 4>  mUnkef8707;
-    ::ll::UntypedStorage<1, 1>  mUnk577294;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mNeighborhood;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mCenterOfMass;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mGroupVelocity;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mGoalHeading;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mCurrentHeading;
+    ::ll::TypedStorage<1, 1, bool>                            mInWater;
+    ::ll::TypedStorage<1, 1, bool>                            mMatchVariant;
+    ::ll::TypedStorage<1, 1, bool>                            mUseCenterOfMass;
+    ::ll::TypedStorage<1, 1, bool>                            mIsLeader;
+    ::ll::TypedStorage<1, 1, bool>                            mInFlock;
+    ::ll::TypedStorage<1, 1, bool>                            mIsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                            mHasTargetGoal;
+    ::ll::TypedStorage<1, 1, bool>                            mUsingDirection;
+    ::ll::TypedStorage<4, 4, int>                             mFlockLimit;
+    ::ll::TypedStorage<4, 4, float>                           mLonerChance;
+    ::ll::TypedStorage<4, 4, float>                           mGoalWeight;
+    ::ll::TypedStorage<4, 4, float>                           mInfluenceRadius;
+    ::ll::TypedStorage<4, 4, float>                           mBreachInfluence;
+    ::ll::TypedStorage<4, 4, float>                           mSeparationWeight;
+    ::ll::TypedStorage<4, 4, float>                           mSeparationThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mCohesionWeight;
+    ::ll::TypedStorage<4, 4, float>                           mCohesionThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mInnerCohesionThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mMinHeight;
+    ::ll::TypedStorage<4, 4, float>                           mMaxHeight;
+    ::ll::TypedStorage<4, 4, float>                           mBlockDist;
+    ::ll::TypedStorage<4, 4, float>                           mBlockWeight;
+    ::ll::TypedStorage<1, 1, bool>                            mOverspeedRequired;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     FlockingComponent& operator=(FlockingComponent const&);
     FlockingComponent(FlockingComponent const&);
-    FlockingComponent();
 
 public:
     // member functions

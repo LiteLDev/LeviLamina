@@ -14,21 +14,19 @@ namespace Json {
 
 class MinecraftJsonStyledWriter : public ::Json::Writer {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7a87b5;
-    ::ll::UntypedStorage<8, 32> mUnkcc8d6d;
-    ::ll::UntypedStorage<8, 32> mUnkf33152;
-    ::ll::UntypedStorage<4, 4>  mUnk5b5953;
-    ::ll::UntypedStorage<4, 4>  mUnkc1eccf;
-    ::ll::UntypedStorage<1, 1>  mUnk2dbaac;
-    // NOLINTEND
+    // MinecraftJsonStyledWriter inner types define
+    using ChildValues = ::std::vector<::std::string>;
 
 public:
-    // prevent constructor by default
-    MinecraftJsonStyledWriter& operator=(MinecraftJsonStyledWriter const&);
-    MinecraftJsonStyledWriter(MinecraftJsonStyledWriter const&);
-    MinecraftJsonStyledWriter();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mChildValues;
+    ::ll::TypedStorage<8, 32, ::std::string>                mDocument;
+    ::ll::TypedStorage<8, 32, ::std::string>                mIndentString;
+    ::ll::TypedStorage<4, 4, int>                           mRightMargin;
+    ::ll::TypedStorage<4, 4, int>                           mIndentSize;
+    ::ll::TypedStorage<1, 1, bool>                          mAddChildValues;
+    // NOLINTEND
 
 public:
     // virtual functions

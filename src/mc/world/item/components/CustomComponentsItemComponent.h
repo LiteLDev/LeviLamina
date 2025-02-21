@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+struct ItemCustomComponentData;
 namespace SharedTypes::v1_21_60 { struct CustomComponentsItemComponent; }
 // clang-format on
 
@@ -15,14 +16,8 @@ class CustomComponentsItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9e5340;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemCustomComponentData>> mComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CustomComponentsItemComponent& operator=(CustomComponentsItemComponent const&);
-    CustomComponentsItemComponent(CustomComponentsItemComponent const&);
-    CustomComponentsItemComponent();
 
 public:
     // virtual functions

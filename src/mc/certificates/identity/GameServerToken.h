@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Certificate;
 namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
@@ -12,12 +13,8 @@ class GameServerToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkffc19b;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Certificate>> mCertificate;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GameServerToken();
 
 public:
     // member functions

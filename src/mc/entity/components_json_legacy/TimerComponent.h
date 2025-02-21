@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/WeightedChoices.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -11,22 +14,21 @@ class TimerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkb4fff2;
-    ::ll::UntypedStorage<8, 8>  mUnkeb854b;
-    ::ll::UntypedStorage<1, 1>  mUnke61b8b;
-    ::ll::UntypedStorage<1, 1>  mUnkc17464;
-    ::ll::UntypedStorage<4, 4>  mUnk6e4789;
-    ::ll::UntypedStorage<1, 1>  mUnk9d6738;
-    ::ll::UntypedStorage<4, 4>  mUnk38df3b;
-    ::ll::UntypedStorage<4, 4>  mUnke1c772;
-    ::ll::UntypedStorage<8, 24> mUnk13f9a4;
+    ::ll::TypedStorage<4, 4, int>                       mTime;
+    ::ll::TypedStorage<8, 8, uint64>                    mTimeStamp;
+    ::ll::TypedStorage<1, 1, bool>                      mHasExecuted;
+    ::ll::TypedStorage<1, 1, bool>                      mLooping;
+    ::ll::TypedStorage<4, 4, int>                       mStartTime;
+    ::ll::TypedStorage<1, 1, bool>                      mRandomInterval;
+    ::ll::TypedStorage<4, 4, int>                       mMinTime;
+    ::ll::TypedStorage<4, 4, int>                       mMaxTime;
+    ::ll::TypedStorage<8, 24, ::WeightedChoices<float>> mTimeChoices;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     TimerComponent& operator=(TimerComponent const&);
     TimerComponent(TimerComponent const&);
-    TimerComponent();
 
 public:
     // member functions

@@ -29,12 +29,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkd120d0;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::queue<
+            ::DebugRenderPositionQueueComponent::DebugRenderInfo,
+            ::std::deque<::DebugRenderPositionQueueComponent::DebugRenderInfo>>>
+        mPositions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DebugRenderPositionQueueComponent& operator=(DebugRenderPositionQueueComponent const&);
-    DebugRenderPositionQueueComponent(DebugRenderPositionQueueComponent const&);
-    DebugRenderPositionQueueComponent();
 };

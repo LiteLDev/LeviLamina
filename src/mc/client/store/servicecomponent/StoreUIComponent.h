@@ -5,29 +5,30 @@
 // auto generated inclusion list
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/gui/GameEventNotification.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class MainMenuScreenModel;
 class StoreDataDrivenScreenController;
+class StoreVisualStyle;
 struct ImageTelemetryInfo;
 namespace Json { class Value; }
 // clang-format on
 
 class StoreUIComponent : public ::std::enable_shared_from_this<::StoreUIComponent> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8bd2f3;
-    ::ll::UntypedStorage<8, 16> mUnkf5fc51;
-    ::ll::UntypedStorage<8, 24> mUnk733091;
-    ::ll::UntypedStorage<2, 2>  mUnkbf596f;
-    // NOLINTEND
+    // StoreUIComponent inner types define
+    using ID = ushort;
 
 public:
-    // prevent constructor by default
-    StoreUIComponent& operator=(StoreUIComponent const&);
-    StoreUIComponent(StoreUIComponent const&);
-    StoreUIComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::StoreVisualStyle&>                                            mOwner;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MainMenuScreenModel>>                      mMainMenuScreenModel;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::StoreDataDrivenScreenController>> mController;
+    ::ll::TypedStorage<2, 2, ushort>                                                         mId;
+    // NOLINTEND
 
 public:
     // virtual functions

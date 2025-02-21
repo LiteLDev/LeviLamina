@@ -9,27 +9,24 @@
 // clang-format off
 class Actor;
 class Block;
+class DefinitionTrigger;
 class HashedString;
 class ItemStack;
 class SemVersion;
+struct DiggerBlockDefinitionTrigger;
 struct LegacyOnDigTriggerItemComponentData;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnDigTriggerItemComponent : public ::LegacyTriggerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk203b19;
-    ::ll::UntypedStorage<8, 16>  mUnk97ea7b;
-    ::ll::UntypedStorage<8, 264> mUnkc36d97;
-    ::ll::UntypedStorage<8, 24>  mUnk76eee2;
+    ::ll::TypedStorage<1, 1, bool>                                           mCanUseOnDig;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mOnMineBlockSubscription;
+    ::ll::TypedStorage<8, 264, ::std::optional<::DefinitionTrigger>>         mOnDigDefault;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockDefinitionTrigger>> mOnDigTriggers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyOnDigTriggerItemComponent& operator=(LegacyOnDigTriggerItemComponent const&);
-    LegacyOnDigTriggerItemComponent(LegacyOnDigTriggerItemComponent const&);
-    LegacyOnDigTriggerItemComponent();
 
 public:
     // virtual functions

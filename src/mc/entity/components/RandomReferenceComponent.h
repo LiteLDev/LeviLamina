@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class StrictEntityContext;
+// clang-format on
+
 struct RandomReferenceComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkcd04d0;
+    ::ll::TypedStorage<4, 8, ::StrictEntityContext> mRandomOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomReferenceComponent& operator=(RandomReferenceComponent const&);
-    RandomReferenceComponent(RandomReferenceComponent const&);
-    RandomReferenceComponent();
 };

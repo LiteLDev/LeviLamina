@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Matrix;
+class Vec3;
+// clang-format on
+
 class BlockTransformationComponent {
 public:
     // BlockTransformationComponent inner types declare
@@ -46,16 +52,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk53772d;
-    ::ll::UntypedStorage<4, 12> mUnk5bbee8;
-    ::ll::UntypedStorage<4, 24> mUnkfbfec2;
-    ::ll::UntypedStorage<4, 24> mUnkdb3432;
-    ::ll::UntypedStorage<4, 64> mUnk7ece44;
+    ::ll::TypedStorage<1, 1, bool>                                          mShouldHandleSchematicValidation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mTranslation;
+    ::ll::TypedStorage<4, 24, ::BlockTransformationComponent::RotationType> mRotation;
+    ::ll::TypedStorage<4, 24, ::BlockTransformationComponent::ScaleType>    mScale;
+    ::ll::TypedStorage<4, 64, ::Matrix>                                     mTransformationMatrix;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockTransformationComponent& operator=(BlockTransformationComponent const&);
-    BlockTransformationComponent(BlockTransformationComponent const&);
-    BlockTransformationComponent();
 };

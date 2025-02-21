@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct LoadingScreenId;
+// clang-format on
+
 struct PlayerLoadingScreenComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkd68149;
+    ::ll::TypedStorage<4, 8, ::LoadingScreenId> mLoadingScreenId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerLoadingScreenComponent& operator=(PlayerLoadingScreenComponent const&);
-    PlayerLoadingScreenComponent(PlayerLoadingScreenComponent const&);
-    PlayerLoadingScreenComponent();
 };

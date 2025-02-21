@@ -65,16 +65,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 320> mUnka9c32c;
-    ::ll::UntypedStorage<4, 4>   mUnk7f46b1;
-    ::ll::UntypedStorage<4, 4>   mUnk3c1784;
+    ::ll::TypedStorage<8, 320, ::DryingOutTimerComponent::DryingOutTimerDefinition> mDefinition;
+    ::ll::TypedStorage<4, 4, int>                                                   mTicksRemainingUntilDryOut;
+    ::ll::TypedStorage<4, 4, ::DryingOutTimerComponent::DryingOutState>             mState;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DryingOutTimerComponent& operator=(DryingOutTimerComponent const&);
     DryingOutTimerComponent(DryingOutTimerComponent const&);
-    DryingOutTimerComponent();
 
 public:
     // member functions

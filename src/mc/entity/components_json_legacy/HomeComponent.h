@@ -2,33 +2,40 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/WeakPtr.h"
+#include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/entity/components_json_legacy/RestrictionType.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class BlockLegacy;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
+class Dimension;
 // clang-format on
 
 class HomeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke4d7e6;
-    ::ll::UntypedStorage<4, 4>  mUnkf877d7;
-    ::ll::UntypedStorage<4, 4>  mUnk814ab0;
-    ::ll::UntypedStorage<4, 4>  mUnkb1e8f1;
-    ::ll::UntypedStorage<4, 4>  mUnkd6819b;
-    ::ll::UntypedStorage<8, 24> mUnk5482c7;
-    ::ll::UntypedStorage<4, 12> mUnk2d8353;
-    ::ll::UntypedStorage<4, 4>  mUnkbdd2fa;
+    ::ll::TypedStorage<4, 4, ::RestrictionType>                              mRestrictionType;
+    ::ll::TypedStorage<4, 4, int>                                            mRestrictionRadius;
+    ::ll::TypedStorage<4, 4, int>                                            mRestrictionRadiusSqr;
+    ::ll::TypedStorage<4, 4, int>                                            mCooldownTicksMax;
+    ::ll::TypedStorage<4, 4, int>                                            mCooldownTicks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeakPtr<::BlockLegacy const>>> mHomeBlocks;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                    mHomePos;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                                mDimensionId;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     HomeComponent& operator=(HomeComponent const&);
     HomeComponent(HomeComponent const&);
-    HomeComponent();
 
 public:
     // member functions

@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct AABBShapeComponent;
+struct ActorRotationComponent;
+struct ActorWalkAnimationComponent;
+struct StateVectorComponent;
+// clang-format on
+
 struct BuiltInActorComponents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd8dbc6;
-    ::ll::UntypedStorage<8, 8> mUnk9f8195;
-    ::ll::UntypedStorage<8, 8> mUnk2570a0;
-    ::ll::UntypedStorage<8, 8> mUnkf40446;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::StateVectorComponent*>>        mStateVectorComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::AABBShapeComponent*>>          mAABBShapeComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorRotationComponent*>>      mActorRotationComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorWalkAnimationComponent*>> mWalkAnimationComponent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BuiltInActorComponents& operator=(BuiltInActorComponents const&);
-    BuiltInActorComponents(BuiltInActorComponents const&);
-    BuiltInActorComponents();
 };

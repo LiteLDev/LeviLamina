@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class DefinitionTrigger;
 class HashedString;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -17,13 +18,12 @@ class OnUseItemComponent : public ::IItemComponentLegacyFactoryData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 256> mUnk1dd064;
+    ::ll::TypedStorage<8, 256, ::DefinitionTrigger> mOnUse;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     OnUseItemComponent(OnUseItemComponent const&);
-    OnUseItemComponent();
 
 public:
     // virtual functions

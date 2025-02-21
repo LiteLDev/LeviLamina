@@ -6,12 +6,6 @@ struct SwiftSneakEnchantComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk97aa1b;
+    ::ll::TypedStorage<4, 4, int> mEnchantLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwiftSneakEnchantComponent& operator=(SwiftSneakEnchantComponent const&);
-    SwiftSneakEnchantComponent(SwiftSneakEnchantComponent const&);
-    SwiftSneakEnchantComponent();
 };

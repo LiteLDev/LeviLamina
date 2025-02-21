@@ -2,20 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class LockingFillingContainer;
+class StorageItemContainerModel;
+// clang-format on
+
 struct DynamicTrackedContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk2ea795;
-    ::ll::UntypedStorage<8, 16> mUnkeebd3d;
-    ::ll::UntypedStorage<1, 1>  mUnk2f6e24;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageItemContainerModel>> mModel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LockingFillingContainer>>   mBackingContainer;
+    ::ll::TypedStorage<1, 1, bool>                                            mExpired;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynamicTrackedContainer& operator=(DynamicTrackedContainer const&);
-    DynamicTrackedContainer(DynamicTrackedContainer const&);
-    DynamicTrackedContainer();
 
 public:
     // member functions

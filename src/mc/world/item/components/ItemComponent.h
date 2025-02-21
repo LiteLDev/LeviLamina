@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class CompoundTag;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
@@ -16,14 +17,8 @@ class ItemComponent : public ::IItemComponentLegacyFactoryData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka8cff0;
+    ::ll::TypedStorage<8, 8, ::ComponentItem*> mOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemComponent& operator=(ItemComponent const&);
-    ItemComponent(ItemComponent const&);
-    ItemComponent();
 
 public:
     // virtual functions

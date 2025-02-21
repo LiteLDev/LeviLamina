@@ -11,26 +11,35 @@ class Actor;
 class ActorInteraction;
 class CompoundTag;
 class DataLoadHelper;
+class NpcI18nObserver;
 class Player;
+struct ActorUniqueID;
+struct NpcGUIOffset;
+struct SkinData;
 namespace Json { class Value; }
+namespace npc { struct ActionContainer; }
 namespace npc { struct CommandAction; }
 namespace npc { struct UrlAction; }
 // clang-format on
 
 class NpcComponent {
 public:
+    // NpcComponent inner types define
+    using TextFilter = ::std::function<::std::string(::std::string const&)>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk354bf2;
-    ::ll::UntypedStorage<4, 36> mUnk49165d;
-    ::ll::UntypedStorage<4, 36> mUnk5afe49;
-    ::ll::UntypedStorage<8, 24> mUnk899cb8;
-    ::ll::UntypedStorage<8, 48> mUnk3b24bb;
-    ::ll::UntypedStorage<8, 64> mUnk26a8e1;
-    ::ll::UntypedStorage<8, 32> mUnk32d0a0;
-    ::ll::UntypedStorage<8, 40> mUnka8d1f7;
-    ::ll::UntypedStorage<8, 64> mUnk6661a6;
-    ::ll::UntypedStorage<8, 8>  mUnk10772e;
+    ::ll::TypedStorage<4, 4, int>                                                   mCurrentSkin;
+    ::ll::TypedStorage<4, 36, ::NpcGUIOffset>                                       mPortraitOffsets;
+    ::ll::TypedStorage<4, 36, ::NpcGUIOffset>                                       mPickerOffsets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SkinData>>                            mNPCSkins;
+    ::ll::TypedStorage<8, 48, ::npc::ActionContainer>                               mActionsContainer;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::string>> mPlayerSceneState;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mDefaultSceneId;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                       mInteractText;
+    ::ll::TypedStorage<8, 64, ::std::function<::std::string(::std::string const&)>> mInteractTextFilter;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NpcI18nObserver>>                  mNpcI18nObserver;
     // NOLINTEND
 
 public:

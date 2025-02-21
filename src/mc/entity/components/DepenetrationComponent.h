@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class Vec3;
+// clang-format on
+
 struct DepenetrationComponent {
 public:
     // DepenetrationComponent inner types define
@@ -14,20 +20,21 @@ public:
         Count                   = 5,
     };
 
+    using Bitset = ::std::bitset<5>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf806dd;
-    ::ll::UntypedStorage<4, 12> mUnk4dc042;
-    ::ll::UntypedStorage<8, 24> mUnkb9e726;
-    ::ll::UntypedStorage<4, 16> mUnk9116cf;
+    ::ll::TypedStorage<4, 4, ::std::bitset<5>>         mBits;
+    ::ll::TypedStorage<4, 12, ::Vec3>                  mMaxDepenetration;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>   mOneWayPhysicsBlocks;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mTemporaryOverride;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     DepenetrationComponent& operator=(DepenetrationComponent const&);
     DepenetrationComponent(DepenetrationComponent const&);
-    DepenetrationComponent();
 
 public:
     // member functions

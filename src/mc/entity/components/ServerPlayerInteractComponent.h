@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class InteractPacket;
+// clang-format on
+
 struct ServerPlayerInteractComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnkf0c14c;
+    ::ll::TypedStorage<8, 80, ::InteractPacket> mCurrentInteraction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerPlayerInteractComponent& operator=(ServerPlayerInteractComponent const&);
-    ServerPlayerInteractComponent(ServerPlayerInteractComponent const&);
-    ServerPlayerInteractComponent();
 };

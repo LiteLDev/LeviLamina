@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ItemSpecificSpeed;
+// clang-format on
+
 struct BlockDestructibleByMiningComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk560512;
-    ::ll::UntypedStorage<8, 24> mUnk3dbb3e;
+    ::ll::TypedStorage<4, 4, float>                               mSecondsToDestroy;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemSpecificSpeed>> mItemSpecificSpeeds;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockDestructibleByMiningComponent& operator=(BlockDestructibleByMiningComponent const&);
-    BlockDestructibleByMiningComponent(BlockDestructibleByMiningComponent const&);
-    BlockDestructibleByMiningComponent();
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/Rarity.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -17,14 +18,8 @@ class RarityItemComponent : public ::NetworkedItemComponent<::RarityItemComponen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbf4e62;
+    ::ll::TypedStorage<4, 4, ::Rarity> mRarity;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RarityItemComponent& operator=(RarityItemComponent const&);
-    RarityItemComponent(RarityItemComponent const&);
-    RarityItemComponent();
 
 public:
     // virtual functions

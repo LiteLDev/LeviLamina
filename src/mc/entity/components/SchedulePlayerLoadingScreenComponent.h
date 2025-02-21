@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct LoadingScreenScheduleData;
+// clang-format on
+
 struct SchedulePlayerLoadingScreenComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb2f03f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LoadingScreenScheduleData>> mSchedule;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SchedulePlayerLoadingScreenComponent& operator=(SchedulePlayerLoadingScreenComponent const&);
-    SchedulePlayerLoadingScreenComponent(SchedulePlayerLoadingScreenComponent const&);
-    SchedulePlayerLoadingScreenComponent();
 };

@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class DefinitionTrigger;
+namespace Bedrock::PubSub { class Subscription; }
 namespace BlockEvents { class BlockEventManager; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
@@ -12,15 +14,9 @@ struct BlockRandomTickingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 256> mUnk58250a;
-    ::ll::UntypedStorage<8, 16>  mUnka8f7c1;
+    ::ll::TypedStorage<8, 256, ::DefinitionTrigger>            mOnTimeDown;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockRandomTickingComponent& operator=(BlockRandomTickingComponent const&);
-    BlockRandomTickingComponent(BlockRandomTickingComponent const&);
-    BlockRandomTickingComponent();
 
 public:
     // virtual functions

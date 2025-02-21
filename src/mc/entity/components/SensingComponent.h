@@ -12,17 +12,15 @@ struct ActorUniqueID;
 
 class SensingComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk87de40;
-    ::ll::UntypedStorage<8, 64> mUnk70ff8a;
-    // NOLINTEND
+    // SensingComponent inner types define
+    using ActorSet = ::std::unordered_set<::ActorUniqueID>;
 
 public:
-    // prevent constructor by default
-    SensingComponent& operator=(SensingComponent const&);
-    SensingComponent(SensingComponent const&);
-    SensingComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mSeen;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mUnseen;
+    // NOLINTEND
 
 public:
     // member functions

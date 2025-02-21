@@ -6,13 +6,7 @@ struct StandAnimationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkcaa78e;
-    ::ll::UntypedStorage<4, 4> mUnkf9ef38;
+    ::ll::TypedStorage<4, 4, float> mStandAnim;
+    ::ll::TypedStorage<4, 4, float> mStandAnimO;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StandAnimationComponent& operator=(StandAnimationComponent const&);
-    StandAnimationComponent(StandAnimationComponent const&);
-    StandAnimationComponent();
 };

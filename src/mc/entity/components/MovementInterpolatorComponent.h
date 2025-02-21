@@ -2,22 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+class Vec3;
+// clang-format on
+
 struct MovementInterpolatorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnka3e4c0;
-    ::ll::UntypedStorage<4, 8>  mUnkb94c7d;
-    ::ll::UntypedStorage<4, 4>  mUnkdd6ad9;
-    ::ll::UntypedStorage<4, 4>  mUnk1411e8;
-    ::ll::UntypedStorage<4, 4>  mUnkcda0b1;
-    ::ll::UntypedStorage<4, 4>  mUnk734337;
-    ::ll::UntypedStorage<1, 1>  mUnkadfe34;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 8, ::Vec2>  mRot;
+    ::ll::TypedStorage<4, 4, float>   mHeadYaw;
+    ::ll::TypedStorage<4, 4, int>     mPositionSteps;
+    ::ll::TypedStorage<4, 4, int>     mRotationSteps;
+    ::ll::TypedStorage<4, 4, int>     mHeadYawSteps;
+    ::ll::TypedStorage<1, 1, bool>    mPlayerControlServerVehicle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MovementInterpolatorComponent& operator=(MovementInterpolatorComponent const&);
-    MovementInterpolatorComponent(MovementInterpolatorComponent const&);
-    MovementInterpolatorComponent();
 };

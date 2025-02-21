@@ -2,31 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorFilterGroup;
 class CompoundTag;
 class DataLoadHelper;
+class Vec3;
+struct ActorUniqueID;
+struct Tick;
 // clang-format on
 
 class AreaAttackComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk478a6e;
-    ::ll::UntypedStorage<4, 4>  mUnkd28980;
-    ::ll::UntypedStorage<4, 4>  mUnk83c6fe;
-    ::ll::UntypedStorage<8, 64> mUnk13e75f;
-    ::ll::UntypedStorage<4, 4>  mUnk77028f;
-    ::ll::UntypedStorage<1, 1>  mUnk8bc53e;
-    ::ll::UntypedStorage<8, 24> mUnkf15f1e;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                              mDamageRange;
+    ::ll::TypedStorage<4, 4, int>                                                  mDamagePerTick;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause>              mDamageCause;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                  mEntityFilter;
+    ::ll::TypedStorage<4, 4, int>                                                  mAttackCooldownTicks;
+    ::ll::TypedStorage<1, 1, bool>                                                 mPlayAttackSound;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ActorUniqueID, ::Tick>>> mAttackCooldownVector;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AreaAttackComponent& operator=(AreaAttackComponent const&);
     AreaAttackComponent(AreaAttackComponent const&);
-    AreaAttackComponent();
 
 public:
     // member functions

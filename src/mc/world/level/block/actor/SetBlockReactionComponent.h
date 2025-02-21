@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class BlockPos;
 class BlockSource;
 class LabTableReaction;
 // clang-format on
@@ -15,15 +17,9 @@ class SetBlockReactionComponent : public ::LabTableReactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk67a092;
-    ::ll::UntypedStorage<8, 8> mUnkd70598;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockPos>> mPos;
+    ::ll::TypedStorage<8, 8, ::Block const&>                mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetBlockReactionComponent& operator=(SetBlockReactionComponent const&);
-    SetBlockReactionComponent(SetBlockReactionComponent const&);
-    SetBlockReactionComponent();
 
 public:
     // virtual functions

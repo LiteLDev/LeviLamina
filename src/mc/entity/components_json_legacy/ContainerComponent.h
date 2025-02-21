@@ -15,6 +15,7 @@ class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class Dimension;
+class FillingContainer;
 class ItemActor;
 class ItemStack;
 class Level;
@@ -27,20 +28,19 @@ class ContainerComponent : public ::ContainerContentChangeListener, public ::Con
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 520> mUnk1c3237;
-    ::ll::UntypedStorage<8, 8>   mUnkc1711d;
-    ::ll::UntypedStorage<1, 1>   mUnk28f48e;
-    ::ll::UntypedStorage<1, 1>   mUnk233069;
-    ::ll::UntypedStorage<1, 1>   mUnkc98536;
-    ::ll::UntypedStorage<8, 32>  mUnk84bbac;
-    ::ll::UntypedStorage<4, 4>   mUnk7aba8e;
+    ::ll::TypedStorage<8, 520, ::FillingContainer> mContainer;
+    ::ll::TypedStorage<8, 8, ::Actor*>             mListenerShim;
+    ::ll::TypedStorage<1, 1, bool>                 mCanBeSiphonedFrom;
+    ::ll::TypedStorage<1, 1, bool>                 mPrivate;
+    ::ll::TypedStorage<1, 1, bool>                 mRestrictToOwner;
+    ::ll::TypedStorage<8, 32, ::std::string>       mLootTable;
+    ::ll::TypedStorage<4, 4, int>                  mLootTableSeed;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ContainerComponent& operator=(ContainerComponent const&);
     ContainerComponent(ContainerComponent const&);
-    ContainerComponent();
 
 public:
     // virtual functions

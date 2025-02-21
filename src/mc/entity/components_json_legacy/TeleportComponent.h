@@ -12,22 +12,16 @@ class TeleportComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkd27a78;
-    ::ll::UntypedStorage<4, 4>  mUnkfb25d6;
-    ::ll::UntypedStorage<4, 4>  mUnkdd4329;
-    ::ll::UntypedStorage<4, 12> mUnk414724;
-    ::ll::UntypedStorage<4, 4>  mUnkd76162;
-    ::ll::UntypedStorage<4, 4>  mUnkced562;
-    ::ll::UntypedStorage<4, 4>  mUnkca4db8;
-    ::ll::UntypedStorage<4, 4>  mUnk87c23f;
-    ::ll::UntypedStorage<4, 4>  mUnk578ac0;
+    ::ll::TypedStorage<1, 1, bool>    mRandomTeleports;
+    ::ll::TypedStorage<4, 4, int>     mMinTeleportTime;
+    ::ll::TypedStorage<4, 4, int>     mMaxTeleportTime;
+    ::ll::TypedStorage<4, 12, ::Vec3> mRandomTeleportCube;
+    ::ll::TypedStorage<4, 4, float>   mTargetDistance;
+    ::ll::TypedStorage<4, 4, float>   mTargetTeleportChance;
+    ::ll::TypedStorage<4, 4, float>   mLightTeleportChance;
+    ::ll::TypedStorage<4, 4, float>   mDarkTeleportChance;
+    ::ll::TypedStorage<4, 4, int>     mTeleportTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TeleportComponent& operator=(TeleportComponent const&);
-    TeleportComponent(TeleportComponent const&);
-    TeleportComponent();
 
 public:
     // member functions

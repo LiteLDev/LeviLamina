@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/actor/ActorDamageCause.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -15,15 +16,9 @@ class DamageAbsorptionItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2f9b4d;
-    ::ll::UntypedStorage<1, 1>  mUnkfcb71a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ActorDamageCause>> mAbsorbableDamageCauses;
+    ::ll::TypedStorage<1, 1, bool>                                                    mAbsorbAllDamageCauses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DamageAbsorptionItemComponent& operator=(DamageAbsorptionItemComponent const&);
-    DamageAbsorptionItemComponent(DamageAbsorptionItemComponent const&);
-    DamageAbsorptionItemComponent();
 
 public:
     // virtual functions

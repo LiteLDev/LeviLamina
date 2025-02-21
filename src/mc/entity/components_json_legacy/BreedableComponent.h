@@ -7,9 +7,11 @@
 class Actor;
 class ActorInteraction;
 class AttributeInstance;
+class BreedableDefinition;
 class IRandom;
 class ItemStack;
 class Player;
+struct ActorUniqueID;
 struct BreedableType;
 struct MutableAttributeWithContext;
 // clang-format on
@@ -51,20 +53,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk466f49;
-    ::ll::UntypedStorage<4, 4> mUnkadd2ab;
-    ::ll::UntypedStorage<4, 4> mUnka2166d;
-    ::ll::UntypedStorage<4, 4> mUnkf37f45;
-    ::ll::UntypedStorage<1, 1> mUnkc4b040;
-    ::ll::UntypedStorage<1, 1> mUnk5cd18c;
-    ::ll::UntypedStorage<8, 8> mUnk75cbd6;
+    ::ll::TypedStorage<8, 8, ::BreedableDefinition const*> mStaticData;
+    ::ll::TypedStorage<4, 4, int>                          mLoveTimer;
+    ::ll::TypedStorage<4, 4, int>                          mBreedCooldown;
+    ::ll::TypedStorage<4, 4, int>                          mBreedCooldownTime;
+    ::ll::TypedStorage<1, 1, bool>                         mInheritTamed;
+    ::ll::TypedStorage<1, 1, bool>                         mCausesPregnancy;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>              mLoveCause;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BreedableComponent& operator=(BreedableComponent const&);
-    BreedableComponent(BreedableComponent const&);
-    BreedableComponent();
 
 public:
     // member functions

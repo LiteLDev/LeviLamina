@@ -10,6 +10,7 @@
 // clang-format off
 class HashedString;
 class SemVersion;
+namespace Bedrock::PubSub { class Subscription; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,16 +18,10 @@ class UseModifiersItemComponent : public ::NetworkedItemComponent<::UseModifiers
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4d8034;
-    ::ll::UntypedStorage<4, 8>  mUnk84bfad;
-    ::ll::UntypedStorage<8, 16> mUnkaac728;
+    ::ll::TypedStorage<4, 4, float>                            mUseDuration;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>           mMovementModifier;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UseModifiersItemComponent& operator=(UseModifiersItemComponent const&);
-    UseModifiersItemComponent(UseModifiersItemComponent const&);
-    UseModifiersItemComponent();
 
 public:
     // virtual functions

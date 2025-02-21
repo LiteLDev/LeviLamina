@@ -6,14 +6,8 @@ struct WingFlapComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5fe166;
-    ::ll::UntypedStorage<4, 4> mUnk4044ab;
-    ::ll::UntypedStorage<4, 4> mUnk244166;
+    ::ll::TypedStorage<4, 4, float> mFlap;
+    ::ll::TypedStorage<4, 4, float> mFlapSpeed;
+    ::ll::TypedStorage<4, 4, float> mFlapping;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WingFlapComponent& operator=(WingFlapComponent const&);
-    WingFlapComponent(WingFlapComponent const&);
-    WingFlapComponent();
 };

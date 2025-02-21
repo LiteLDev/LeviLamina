@@ -5,30 +5,31 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorFilterGroup;
 class Mob;
+struct Tick;
 // clang-format on
 
 class AngryComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1762df;
-    ::ll::UntypedStorage<1, 1>  mUnk28ed13;
-    ::ll::UntypedStorage<1, 1>  mUnk15f19c;
-    ::ll::UntypedStorage<1, 1>  mUnkea9761;
-    ::ll::UntypedStorage<1, 1>  mUnk7ac011;
-    ::ll::UntypedStorage<1, 1>  mUnk5621fd;
-    ::ll::UntypedStorage<4, 4>  mUnk7a699b;
-    ::ll::UntypedStorage<8, 64> mUnkeb7214;
-    ::ll::UntypedStorage<8, 64> mUnk2a0619;
-    ::ll::UntypedStorage<8, 8>  mUnk200d4e;
+    ::ll::TypedStorage<4, 4, int>                 mDuration;
+    ::ll::TypedStorage<1, 1, bool>                mHasTicked;
+    ::ll::TypedStorage<1, 1, bool>                mBroadcastAnger;
+    ::ll::TypedStorage<1, 1, bool>                mBroadcastOnAttack;
+    ::ll::TypedStorage<1, 1, bool>                mBroadcastOnBeingAttacked;
+    ::ll::TypedStorage<1, 1, bool>                mBroadcastAngerWhenDying;
+    ::ll::TypedStorage<4, 4, int>                 mBroadcastRange;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mBroadcastFilter;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mSubjectFilter;
+    ::ll::TypedStorage<8, 8, ::Tick>              mNextSoundEventTick;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     AngryComponent& operator=(AngryComponent const&);
     AngryComponent(AngryComponent const&);
-    AngryComponent();
 
 public:
     // member functions

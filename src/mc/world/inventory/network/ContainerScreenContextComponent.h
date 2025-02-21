@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerScreenContext;
+// clang-format on
+
 struct ContainerScreenContextComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk3714e3;
+    ::ll::TypedStorage<8, 40, ::ContainerScreenContext> mContext;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ContainerScreenContextComponent& operator=(ContainerScreenContextComponent const&);
-    ContainerScreenContextComponent(ContainerScreenContextComponent const&);
-    ContainerScreenContextComponent();
 };

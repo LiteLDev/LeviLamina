@@ -2,21 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AABB;
+struct InsideBlockData;
+// clang-format on
+
 struct InsideGenericBlockComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1f6810;
-    ::ll::UntypedStorage<4, 28> mUnk85d629;
-    ::ll::UntypedStorage<4, 4>  mUnk7d7ff3;
-    ::ll::UntypedStorage<1, 1>  mUnk46e41f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InsideBlockData>> mData;
+    ::ll::TypedStorage<4, 28, ::std::optional<::AABB>>          mSubstituteAABB;
+    ::ll::TypedStorage<4, 4, float>                             mGrow;
+    ::ll::TypedStorage<1, 1, bool>                              mHasChunks;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     InsideGenericBlockComponent& operator=(InsideGenericBlockComponent const&);
     InsideGenericBlockComponent(InsideGenericBlockComponent const&);
-    InsideGenericBlockComponent();
 
 public:
     // member functions

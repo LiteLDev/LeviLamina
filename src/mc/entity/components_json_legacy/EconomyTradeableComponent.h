@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorInteraction;
 class BaseGameVersion;
 class CompoundTag;
@@ -14,6 +15,7 @@ class DataLoadHelper;
 class MerchantRecipeList;
 class Player;
 class UpdateTradePacket;
+struct ActorUniqueID;
 struct IntRange;
 struct TradeTable;
 // clang-format on
@@ -22,23 +24,17 @@ class EconomyTradeableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk59fee2;
-    ::ll::UntypedStorage<4, 4>  mUnkaa12b0;
-    ::ll::UntypedStorage<1, 1>  mUnk698dba;
-    ::ll::UntypedStorage<4, 4>  mUnkd43c37;
-    ::ll::UntypedStorage<8, 8>  mUnkaf6f5f;
-    ::ll::UntypedStorage<8, 8>  mUnkdfc605;
-    ::ll::UntypedStorage<8, 32> mUnk70e3fb;
-    ::ll::UntypedStorage<8, 32> mUnkf1b3ea;
-    ::ll::UntypedStorage<1, 1>  mUnk6e61ae;
-    ::ll::UntypedStorage<4, 4>  mUnkf5aad7;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                         mLastTradingPlayer;
+    ::ll::TypedStorage<4, 4, int>                                     mUpdateMerchantTimer;
+    ::ll::TypedStorage<1, 1, bool>                                    mAddRecipeOnUpdate;
+    ::ll::TypedStorage<4, 4, int>                                     mRiches;
+    ::ll::TypedStorage<8, 8, ::Actor&>                                mOwner;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MerchantRecipeList>> mOffers;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDisplayName;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mGeneratedTablePath;
+    ::ll::TypedStorage<1, 1, bool>                                    mConvertedFromVillagerV1;
+    ::ll::TypedStorage<4, 4, int>                                     mDiscountDegradationTimeStamp;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EconomyTradeableComponent& operator=(EconomyTradeableComponent const&);
-    EconomyTradeableComponent(EconomyTradeableComponent const&);
-    EconomyTradeableComponent();
 
 public:
     // member functions

@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorDataBoundingBoxComponent;
+struct ActorDataFlagComponent;
+struct ActorUniqueID;
+struct MovementAttributesComponent;
+// clang-format on
+
 struct ServerPlayerMovementSyncComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc5e620;
-    ::ll::UntypedStorage<8, 16> mUnkc5eeb3;
-    ::ll::UntypedStorage<4, 12> mUnk2cd9e5;
-    ::ll::UntypedStorage<4, 48> mUnkf23a33;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                  mActorID;
+    ::ll::TypedStorage<8, 16, ::ActorDataFlagComponent>        mActorDataFlag;
+    ::ll::TypedStorage<4, 12, ::ActorDataBoundingBoxComponent> mActorDataBoundingBox;
+    ::ll::TypedStorage<4, 48, ::MovementAttributesComponent>   mMovementAttributes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerPlayerMovementSyncComponent& operator=(ServerPlayerMovementSyncComponent const&);
-    ServerPlayerMovementSyncComponent(ServerPlayerMovementSyncComponent const&);
-    ServerPlayerMovementSyncComponent();
 };

@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 struct MobJumpComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk3a6030;
-    ::ll::UntypedStorage<1, 1>  mUnk97fd1f;
-    ::ll::UntypedStorage<4, 4>  mUnkf8f42e;
+    ::ll::TypedStorage<4, 12, ::Vec3> mJumpStartPos;
+    ::ll::TypedStorage<1, 1, bool>    mJumpVelRedux;
+    ::ll::TypedStorage<4, 4, int>     mNoJumpDelay;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobJumpComponent& operator=(MobJumpComponent const&);
-    MobJumpComponent(MobJumpComponent const&);
-    MobJumpComponent();
 };

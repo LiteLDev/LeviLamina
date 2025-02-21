@@ -7,20 +7,15 @@
 class Actor;
 class CompoundTag;
 class DataLoadHelper;
+struct ActorUniqueID;
 // clang-format on
 
 class TrustComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk8f05b8;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mTrustedPlayerIDs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrustComponent& operator=(TrustComponent const&);
-    TrustComponent(TrustComponent const&);
-    TrustComponent();
 
 public:
     // member functions

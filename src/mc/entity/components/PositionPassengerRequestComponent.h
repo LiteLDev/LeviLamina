@@ -6,13 +6,7 @@ struct PositionPassengerRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk623ac8;
-    ::ll::UntypedStorage<4, 4> mUnk39f97a;
+    ::ll::TypedStorage<4, 4, float> mVehicleRelativeSeatRotation;
+    ::ll::TypedStorage<4, 4, float> mPassengerRelativeSeatRotation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PositionPassengerRequestComponent& operator=(PositionPassengerRequestComponent const&);
-    PositionPassengerRequestComponent(PositionPassengerRequestComponent const&);
-    PositionPassengerRequestComponent();
 };

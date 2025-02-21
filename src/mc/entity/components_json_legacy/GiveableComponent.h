@@ -13,14 +13,8 @@ class GiveableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4012e3;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mCoolDownTimeStamps;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GiveableComponent& operator=(GiveableComponent const&);
-    GiveableComponent(GiveableComponent const&);
-    GiveableComponent();
 
 public:
     // member functions

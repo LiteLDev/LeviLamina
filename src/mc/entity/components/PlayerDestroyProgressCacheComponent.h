@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemDescriptor;
+// clang-format on
+
 struct PlayerDestroyProgressCacheComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2>  mUnk6a5ee4;
-    ::ll::UntypedStorage<4, 8>  mUnkcab980;
-    ::ll::UntypedStorage<8, 8>  mUnkf5e23c;
-    ::ll::UntypedStorage<8, 16> mUnk2d0c4d;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>  mCurrentToolIsOptimalToolForMining;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mCurrentToolBlockDestroySpeed;
+    ::ll::TypedStorage<8, 8, uint64>                 mLastBlockBeingDestroyed;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>      mLastItemUsedToDestroy;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDestroyProgressCacheComponent& operator=(PlayerDestroyProgressCacheComponent const&);
-    PlayerDestroyProgressCacheComponent(PlayerDestroyProgressCacheComponent const&);
-    PlayerDestroyProgressCacheComponent();
 };

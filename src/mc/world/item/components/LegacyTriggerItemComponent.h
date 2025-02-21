@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -10,20 +11,25 @@
 class DefinitionTrigger;
 class ItemStackBase;
 class RenderParams;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class LegacyTriggerItemComponent : public ::ItemComponent {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnkff9e52;
-    // NOLINTEND
+    // LegacyTriggerItemComponent inner types define
+    using TriggerSignature = void(bool&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&);
 
 public:
-    // prevent constructor by default
-    LegacyTriggerItemComponent& operator=(LegacyTriggerItemComponent const&);
-    LegacyTriggerItemComponent(LegacyTriggerItemComponent const&);
-    LegacyTriggerItemComponent();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(bool&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnTriggerPublisher;
+    // NOLINTEND
 
 public:
     // virtual functions

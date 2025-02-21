@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct GetAttachPositionViews;
+// clang-format on
+
 struct GetAttachPositionViewsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 440> mUnkf15f8c;
+    ::ll::TypedStorage<8, 440, ::GetAttachPositionViews> mViews;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GetAttachPositionViewsComponent& operator=(GetAttachPositionViewsComponent const&);
-    GetAttachPositionViewsComponent(GetAttachPositionViewsComponent const&);
-    GetAttachPositionViewsComponent();
 };

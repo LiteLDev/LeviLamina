@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct InterpolationPair;
+// clang-format on
+
 struct ShulkerPeekAmountComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk8f0008;
+    ::ll::TypedStorage<4, 8, ::InterpolationPair> mPeekAmount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShulkerPeekAmountComponent& operator=(ShulkerPeekAmountComponent const&);
-    ShulkerPeekAmountComponent(ShulkerPeekAmountComponent const&);
-    ShulkerPeekAmountComponent();
 };

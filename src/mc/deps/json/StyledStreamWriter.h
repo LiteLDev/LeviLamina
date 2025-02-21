@@ -11,21 +11,19 @@ namespace Json {
 
 class StyledStreamWriter {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdf6a63;
-    ::ll::UntypedStorage<8, 8>  mUnkd9fcde;
-    ::ll::UntypedStorage<8, 32> mUnkebccaa;
-    ::ll::UntypedStorage<4, 4>  mUnkda2712;
-    ::ll::UntypedStorage<8, 32> mUnk5e7fc7;
-    ::ll::UntypedStorage<1, 1>  mUnk689d12;
-    // NOLINTEND
+    // StyledStreamWriter inner types define
+    using ChildValues = ::std::vector<::std::string>;
 
 public:
-    // prevent constructor by default
-    StyledStreamWriter& operator=(StyledStreamWriter const&);
-    StyledStreamWriter(StyledStreamWriter const&);
-    StyledStreamWriter();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> childValues_;
+    ::ll::TypedStorage<8, 8, ::std::ostream*>               document_;
+    ::ll::TypedStorage<8, 32, ::std::string>                indentString_;
+    ::ll::TypedStorage<4, 4, int>                           rightMargin_;
+    ::ll::TypedStorage<8, 32, ::std::string>                indentation_;
+    ::ll::TypedStorage<1, 1, bool>                          addChildValues_;
+    // NOLINTEND
 
 public:
     // member functions

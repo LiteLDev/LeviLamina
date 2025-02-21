@@ -7,22 +7,17 @@
 class Actor;
 class CompoundTag;
 class DataLoadHelper;
+struct ActorUniqueID;
 // clang-format on
 
 class BalloonComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk77d551;
-    ::ll::UntypedStorage<4, 4> mUnk515d08;
-    ::ll::UntypedStorage<1, 1> mUnk81ca02;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mAttachedID;
+    ::ll::TypedStorage<4, 4, float>           mMaxHeight;
+    ::ll::TypedStorage<1, 1, bool>            mShouldDropAttached;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BalloonComponent& operator=(BalloonComponent const&);
-    BalloonComponent(BalloonComponent const&);
-    BalloonComponent();
 
 public:
     // member functions

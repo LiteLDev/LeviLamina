@@ -6,12 +6,6 @@ struct ActorDataDirtyFlagsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8ec220;
+    ::ll::TypedStorage<8, 24, ::std::bitset<134>> mDirtyFlags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorDataDirtyFlagsComponent& operator=(ActorDataDirtyFlagsComponent const&);
-    ActorDataDirtyFlagsComponent(ActorDataDirtyFlagsComponent const&);
-    ActorDataDirtyFlagsComponent();
 };

@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct JumpPreventionResult;
+// clang-format on
+
 struct TriggerJumpRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnke67177;
+    ::ll::TypedStorage<4, 16, ::JumpPreventionResult> mJumpPreventionResult;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TriggerJumpRequestComponent& operator=(TriggerJumpRequestComponent const&);
-    TriggerJumpRequestComponent(TriggerJumpRequestComponent const&);
-    TriggerJumpRequestComponent();
 };

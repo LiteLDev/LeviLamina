@@ -7,6 +7,8 @@
 class Actor;
 class CompoundTag;
 class DataLoadHelper;
+class GeneticsDefinition;
+class Random;
 // clang-format on
 
 class GeneticsComponent {
@@ -35,16 +37,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk95498a;
-    ::ll::UntypedStorage<8, 8>  mUnk1ff6a2;
-    ::ll::UntypedStorage<8, 8>  mUnk855ac2;
+    ::ll::TypedStorage<8, 24, ::std::vector<::GeneticsComponent::Gene>> mGenes;
+    ::ll::TypedStorage<8, 8, ::GeneticsDefinition const*>               mGeneticsDescription;
+    ::ll::TypedStorage<8, 8, ::Random*>                                 mRandom;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GeneticsComponent& operator=(GeneticsComponent const&);
-    GeneticsComponent(GeneticsComponent const&);
-    GeneticsComponent();
 
 public:
     // member functions

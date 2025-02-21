@@ -5,20 +5,15 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class AddRiderComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnkd5d64e;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mPassengerType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AddRiderComponent& operator=(AddRiderComponent const&);
-    AddRiderComponent(AddRiderComponent const&);
-    AddRiderComponent();
 
 public:
     // member functions

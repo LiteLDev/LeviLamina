@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChestBlockActor;
 class Player;
 // clang-format on
 
@@ -15,14 +16,8 @@ class EnderChestContainer : public ::FillingContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk6035c6;
+    ::ll::TypedStorage<8, 8, ::ChestBlockActor*> activeChest;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EnderChestContainer& operator=(EnderChestContainer const&);
-    EnderChestContainer(EnderChestContainer const&);
-    EnderChestContainer();
 
 public:
     // virtual functions

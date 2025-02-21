@@ -15,15 +15,9 @@ class SimpleContainer : public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk82a08a;
-    ::ll::UntypedStorage<8, 24> mUnk4a64a4;
+    ::ll::TypedStorage<4, 4, int>                         mSize;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SimpleContainer& operator=(SimpleContainer const&);
-    SimpleContainer(SimpleContainer const&);
-    SimpleContainer();
 
 public:
     // virtual functions

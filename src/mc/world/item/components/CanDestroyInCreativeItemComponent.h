@@ -17,14 +17,8 @@ class CanDestroyInCreativeItemComponent : public ::NetworkedItemComponent<::CanD
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka04b8d;
+    ::ll::TypedStorage<1, 1, bool> mCanDestroyInCreative;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CanDestroyInCreativeItemComponent& operator=(CanDestroyInCreativeItemComponent const&);
-    CanDestroyInCreativeItemComponent(CanDestroyInCreativeItemComponent const&);
-    CanDestroyInCreativeItemComponent();
 
 public:
     // virtual functions

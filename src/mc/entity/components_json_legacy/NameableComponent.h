@@ -14,15 +14,9 @@ class NameableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb3857d;
-    ::ll::UntypedStorage<1, 1> mUnk1b5885;
+    ::ll::TypedStorage<1, 1, bool> mAllowNameTagRenaming;
+    ::ll::TypedStorage<1, 1, bool> mAlwaysShow;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NameableComponent& operator=(NameableComponent const&);
-    NameableComponent(NameableComponent const&);
-    NameableComponent();
 
 public:
     // member functions

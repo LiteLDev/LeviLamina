@@ -9,27 +9,28 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ActorHistory;
 struct IMovementCorrection;
+struct IReplayStatePolicy;
 // clang-format on
 
 class ReplayStateComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7e24cc;
-    ::ll::UntypedStorage<1, 1> mUnkd7fd0e;
-    ::ll::UntypedStorage<1, 1> mUnk248d76;
-    ::ll::UntypedStorage<1, 1> mUnk61e742;
-    ::ll::UntypedStorage<8, 8> mUnk5a088a;
-    ::ll::UntypedStorage<8, 8> mUnkb84ec7;
-    ::ll::UntypedStorage<8, 8> mUnk827b65;
+    ::ll::TypedStorage<1, 1, bool>                                    mForceCorrection;
+    ::ll::TypedStorage<1, 1, bool>                                    mShouldReportNextCorrectionTelemetry;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsCorrectionTelemetryEnabled;
+    ::ll::TypedStorage<1, 1, uchar>                                   mDivergenceCounter;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorHistory>>       mHistory;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IReplayStatePolicy>> mPolicy;
+    ::ll::TypedStorage<8, 8, uint64>                                  mCurrentTick;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ReplayStateComponent& operator=(ReplayStateComponent const&);
     ReplayStateComponent(ReplayStateComponent const&);
-    ReplayStateComponent();
 
 public:
     // member functions

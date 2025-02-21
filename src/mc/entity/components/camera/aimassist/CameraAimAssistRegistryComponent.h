@@ -2,17 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+namespace CameraAimAssist { class PriorityCategory; }
+namespace CameraAimAssist { class PriorityPreset; }
+// clang-format on
+
 class CameraAimAssistRegistryComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk6d240f;
-    ::ll::UntypedStorage<8, 64> mUnk735161;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::CameraAimAssist::PriorityPreset>> mPriorityPresets;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::CameraAimAssist::PriorityCategory>>
+        mPriorityCategoryList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraAimAssistRegistryComponent& operator=(CameraAimAssistRegistryComponent const&);
-    CameraAimAssistRegistryComponent(CameraAimAssistRegistryComponent const&);
-    CameraAimAssistRegistryComponent();
 };

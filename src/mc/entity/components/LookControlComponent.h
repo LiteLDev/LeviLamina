@@ -7,26 +7,21 @@
 class Actor;
 class LookControl;
 class Mob;
+class Vec3;
 // clang-format on
 
 class LookControlComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkdc6eb3;
-    ::ll::UntypedStorage<1, 1>  mUnk880742;
-    ::ll::UntypedStorage<4, 4>  mUnk278be0;
-    ::ll::UntypedStorage<4, 4>  mUnkf851b9;
-    ::ll::UntypedStorage<4, 12> mUnkd68554;
-    ::ll::UntypedStorage<4, 12> mUnk707269;
-    ::ll::UntypedStorage<8, 8>  mUnkf75eb4;
+    ::ll::TypedStorage<1, 1, bool>                             mHasWantedPosition;
+    ::ll::TypedStorage<1, 1, bool>                             mHasWantedRotation;
+    ::ll::TypedStorage<4, 4, float>                            mYMax;
+    ::ll::TypedStorage<4, 4, float>                            mXMax;
+    ::ll::TypedStorage<4, 12, ::Vec3>                          mWantedPosition;
+    ::ll::TypedStorage<4, 12, ::Vec3>                          mWantedRotation;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LookControl>> mLookControl;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LookControlComponent& operator=(LookControlComponent const&);
-    LookControlComponent(LookControlComponent const&);
-    LookControlComponent();
 
 public:
     // member functions

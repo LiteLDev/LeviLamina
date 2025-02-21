@@ -6,13 +6,7 @@ class UpdateAndRenderThrottleComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke35b63;
-    ::ll::UntypedStorage<1, 1> mUnkb03f62;
+    ::ll::TypedStorage<1, 1, bool> mCanUpdateAndRender;
+    ::ll::TypedStorage<1, 1, bool> mWasVisibleLastRender;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UpdateAndRenderThrottleComponent& operator=(UpdateAndRenderThrottleComponent const&);
-    UpdateAndRenderThrottleComponent(UpdateAndRenderThrottleComponent const&);
-    UpdateAndRenderThrottleComponent();
 };

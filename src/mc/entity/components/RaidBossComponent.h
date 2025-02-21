@@ -7,10 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class Actor;
 class Mob;
 class Player;
 class Raid;
+class Village;
+struct ActorUniqueID;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
@@ -18,24 +21,23 @@ class RaidBossComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk54a715;
-    ::ll::UntypedStorage<8, 8>  mUnkb278e6;
-    ::ll::UntypedStorage<8, 72> mUnkcfdf48;
-    ::ll::UntypedStorage<8, 32> mUnk6c8ed2;
-    ::ll::UntypedStorage<4, 4>  mUnk76ce15;
-    ::ll::UntypedStorage<1, 1>  mUnkace95d;
-    ::ll::UntypedStorage<1, 1>  mUnk6b9171;
-    ::ll::UntypedStorage<1, 1>  mUnk367d90;
-    ::ll::UntypedStorage<4, 4>  mUnkfa9046;
-    ::ll::UntypedStorage<4, 24> mUnkc4a5c3;
-    ::ll::UntypedStorage<8, 8>  mUnk4f7ecc;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Village>>             mVillage;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                         mOwnerID;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>    mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mProgress;
+    ::ll::TypedStorage<4, 4, int>                                     mPlayersRegistered;
+    ::ll::TypedStorage<1, 1, bool>                                    mWaveStarted;
+    ::ll::TypedStorage<1, 1, bool>                                    mRaidInProgress;
+    ::ll::TypedStorage<1, 1, bool>                                    mHealthBarVisible;
+    ::ll::TypedStorage<4, 4, float>                                   mHealthPercent;
+    ::ll::TypedStorage<4, 24, ::AABB>                                 mBossBarVisibleBounds;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastPlayerUpdate;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     RaidBossComponent& operator=(RaidBossComponent const&);
     RaidBossComponent(RaidBossComponent const&);
-    RaidBossComponent();
 
 public:
     // member functions

@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class Mob;
 // clang-format on
 
@@ -11,14 +12,8 @@ class OpenDoorAnnotationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk689b2a;
+    ::ll::TypedStorage<8, 40, ::std::queue<::BlockPos, ::std::deque<::BlockPos>>> mPassedDoorPositions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OpenDoorAnnotationComponent& operator=(OpenDoorAnnotationComponent const&);
-    OpenDoorAnnotationComponent(OpenDoorAnnotationComponent const&);
-    OpenDoorAnnotationComponent();
 
 public:
     // member functions

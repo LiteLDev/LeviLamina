@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 struct AABBRelativeSizeUpdateComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk2af883;
-    ::ll::UntypedStorage<4, 12> mUnk963884;
-    ::ll::UntypedStorage<4, 12> mUnk9aad49;
-    ::ll::UntypedStorage<4, 12> mUnkb88b70;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mHeadScalar;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mEyeScalar;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mBreathingScalar;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mMouthScalar;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AABBRelativeSizeUpdateComponent& operator=(AABBRelativeSizeUpdateComponent const&);
-    AABBRelativeSizeUpdateComponent(AABBRelativeSizeUpdateComponent const&);
-    AABBRelativeSizeUpdateComponent();
 };

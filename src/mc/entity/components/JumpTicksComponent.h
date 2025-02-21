@@ -6,12 +6,6 @@ struct JumpTicksComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk18585f;
+    ::ll::TypedStorage<4, 4, int> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JumpTicksComponent& operator=(JumpTicksComponent const&);
-    JumpTicksComponent(JumpTicksComponent const&);
-    JumpTicksComponent();
 };

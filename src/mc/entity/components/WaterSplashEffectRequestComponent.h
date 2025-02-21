@@ -2,16 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/liquid_splash_request/SplashType.h"
+
 struct WaterSplashEffectRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9d2c06;
+    ::ll::TypedStorage<4, 4, ::LiquidSplashRequest::SplashType> mSplashType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WaterSplashEffectRequestComponent& operator=(WaterSplashEffectRequestComponent const&);
-    WaterSplashEffectRequestComponent(WaterSplashEffectRequestComponent const&);
-    WaterSplashEffectRequestComponent();
 };

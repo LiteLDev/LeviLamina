@@ -30,13 +30,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkf87beb;
-    ::ll::UntypedStorage<4, 28> mUnkf740c1;
+    ::ll::TypedStorage<4, 4, uint>                                                             mPresetIndex;
+    ::ll::TypedStorage<4, 28, ::std::optional<::ServerCameraInstructionComponent::EaseOption>> mEase;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerCameraInstructionComponent& operator=(ServerCameraInstructionComponent const&);
-    ServerCameraInstructionComponent(ServerCameraInstructionComponent const&);
-    ServerCameraInstructionComponent();
 };

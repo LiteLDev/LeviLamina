@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelEvent.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -12,30 +16,24 @@ class ExplodeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk19c889;
-    ::ll::UntypedStorage<4, 4> mUnk99d116;
-    ::ll::UntypedStorage<4, 4> mUnk62a77f;
-    ::ll::UntypedStorage<4, 4> mUnkb32111;
-    ::ll::UntypedStorage<1, 1> mUnk5ddf5d;
-    ::ll::UntypedStorage<1, 1> mUnk8a65b7;
-    ::ll::UntypedStorage<4, 4> mUnkd971d3;
-    ::ll::UntypedStorage<1, 1> mUnk25b64a;
-    ::ll::UntypedStorage<1, 1> mUnk89afe7;
-    ::ll::UntypedStorage<1, 1> mUnk1207e7;
-    ::ll::UntypedStorage<1, 1> mUnkea255f;
-    ::ll::UntypedStorage<1, 1> mUnk9a50a6;
-    ::ll::UntypedStorage<1, 1> mUnk3c0b59;
-    ::ll::UntypedStorage<4, 4> mUnka3f423;
-    ::ll::UntypedStorage<2, 2> mUnkec48ae;
-    ::ll::UntypedStorage<4, 4> mUnkfb9442;
-    ::ll::UntypedStorage<1, 1> mUnk2ce52b;
+    ::ll::TypedStorage<4, 4, int>                                    mFuseLength;
+    ::ll::TypedStorage<4, 4, int>                                    mInitialFuseLength;
+    ::ll::TypedStorage<4, 4, float>                                  mExplosionPower;
+    ::ll::TypedStorage<4, 4, float>                                  mMaxResistance;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsFuseLit;
+    ::ll::TypedStorage<1, 1, bool>                                   mCausesFire;
+    ::ll::TypedStorage<4, 4, float>                                  mDamageScaling;
+    ::ll::TypedStorage<1, 1, bool>                                   mBreaksBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                   mTogglesBlocks;
+    ::ll::TypedStorage<1, 1, bool>                                   mFireAffectedByGriefing;
+    ::ll::TypedStorage<1, 1, bool>                                   mDestroyAffectedByGriefing;
+    ::ll::TypedStorage<1, 1, bool>                                   mAllowUnderwater;
+    ::ll::TypedStorage<1, 1, bool>                                   mRequiresTntExplodeGameRuleEnabled;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackScaling;
+    ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::LevelEvent>      mParticleType;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEffect;
+    ::ll::TypedStorage<1, 1, bool>                                   mNegatesFallDamage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ExplodeComponent& operator=(ExplodeComponent const&);
-    ExplodeComponent(ExplodeComponent const&);
-    ExplodeComponent();
 
 public:
     // member functions
