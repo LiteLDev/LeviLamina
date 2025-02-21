@@ -18,9 +18,9 @@ class PermissionsHandler;
 class LayeredAbilities {
 public:
     LLNDAPI Ability& getAbility(::AbilitiesIndex val);
-    LLNDAPI Ability&       getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
-    LLNDAPI void           setAbility(::AbilitiesIndex val, float value);
-    LLNDAPI void           setAbility(::AbilitiesIndex val, bool value);
+    LLNDAPI Ability& getAbility(::AbilitiesLayer layer, ::AbilitiesIndex val);
+    LLAPI void       setAbility(::AbilitiesIndex val, float value);
+    LLAPI void       setAbility(::AbilitiesIndex val, bool value);
 
 public:
     // member variables
