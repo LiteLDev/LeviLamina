@@ -44,7 +44,6 @@ void leviLaminaMain() {
     if (config.language != "system") {
         i18n::defaultLocaleCode() = config.language;
     }
-    CrashLogger::init();
 
     printWelcomeMsg();
 
@@ -71,6 +70,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     service::bedrock::serverInstance = std::addressof(ins);
 
     auto& config = getLeviConfig();
+
+    CrashLogger::init();
+
     if (config.modules.crashLogger.enabled && config.modules.crashLogger.uploadToSentry) {
         CrashLogger::submitCrashInfo();
     }
