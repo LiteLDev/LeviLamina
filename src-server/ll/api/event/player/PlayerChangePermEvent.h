@@ -2,20 +2,21 @@
 
 #include "ll/api/event/Cancellable.h"
 #include "ll/api/event/player/PlayerEvent.h"
+#include "mc/server/commands/PlayerPermissionLevel.h"
 
 namespace ll::event::inline player {
 
 class PlayerChangePermEvent final : public Cancellable<PlayerEvent> {
-    CommandPermissionLevel& mMewPerm;
+    PlayerPermissionLevel& mMewPerm;
 
 public:
-    constexpr explicit PlayerChangePermEvent(Player& player, CommandPermissionLevel& newPerm)
+    constexpr explicit PlayerChangePermEvent(Player& player, PlayerPermissionLevel& newPerm)
     : Cancellable(player),
       mMewPerm(newPerm) {}
 
     LLAPI void serialize(CompoundTag&) const override;
     LLAPI void deserialize(CompoundTag const&) override;
 
-    LLNDAPI CommandPermissionLevel& newPerm() const;
+    LLNDAPI PlayerPermissionLevel& newPerm() const;
 };
 } // namespace ll::event::inline player

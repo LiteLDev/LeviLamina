@@ -50,7 +50,7 @@ void SimpleServerLogger::call(SimpleServerLoggerConfig const& config) {
         if (config.playerPermission && !impl->playerPermission) {
             impl->playerPermission = bus.emplaceListener<PlayerChangePermEvent>([](PlayerChangePermEvent& ev) {
                 getLogger().info(
-                    "[PlayerPerm] <{}> {}({}) -> {}({})",
+                    "[PlayerPerm] <{}> {}({}) {}({})",
                     ev.self().getRealName(),
                     magic_enum::enum_name(ev.self().getCommandPermissionLevel()),
                     fmt::underlying(ev.self().getCommandPermissionLevel()),

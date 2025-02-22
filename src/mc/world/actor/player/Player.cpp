@@ -2,9 +2,7 @@
 
 #include "ll/api/service/Bedrock.h"
 
-#include "mc/certificates/WebToken.h"
 #include "mc/deps/ecs/gamerefs_entity/EntityContext.h"
-#include "mc/deps/json/Value.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/network/ConnectionRequest.h"
 #include "mc/network/NetworkIdentifier.h"
