@@ -48,7 +48,7 @@ public:
 
 static std::unique_ptr<CrashLoggerNew> cln;
 
-std::string toString(_CONTEXT const& c) {
+static std::string toString(_CONTEXT const& c) {
     return fmt::format("RAX: 0x{:016X}  RBX: 0x{:016X}  RCX: 0x{:016X}\n", c.Rax, c.Rbx, c.Rcx)
          + fmt::format("RDX: 0x{:016X}  RSI: 0x{:016X}  RDI: 0x{:016X}\n", c.Rdx, c.Rsi, c.Rdi)
          + fmt::format("RBP: 0x{:016X}  RSP: 0x{:016X}  R8:  0x{:016X}\n", c.Rbp, c.Rsp, c.R8)
@@ -68,7 +68,7 @@ std::string toString(_CONTEXT const& c) {
          );
 }
 
-bool saveCrashInfo(
+static bool saveCrashInfo(
     std::filesystem::path const& logPath,
     std::string const&           minidumpName,
     std::string const&           traceName,
@@ -79,7 +79,7 @@ bool saveCrashInfo(
 }
 
 // Read log and dump file path from logs/crash/sentry_xxx, then submit them to sentry
-void CrashLogger::submitCrashInfo() {
+static void builtinSubmitCrashInfo() {
     auto path = file_utils::u8path(pl::pl_log_path) / u8"crash";
     if (!std::filesystem::exists(path)) {
         return;
@@ -145,16 +145,26 @@ void CrashLogger::submitCrashInfo() {
 }
 
 void CrashLogger::init() {
-    auto& config = getLeviConfig();
+    static std::atomic_bool inited{false};
 
-    if (!config.modules.crashLogger.enabled) {
+    if (inited.exchange(true)) {
+        return;
+    }
+
+    auto& config = getLeviConfig().modules.crashLogger;
+
+    if (config.builtin && config.uploadToSentry) {
+        builtinSubmitCrashInfo();
+    }
+
+    if (!config.enabled) {
         return;
     }
     if (IsDebuggerPresent()) {
         crashLoggerPtr->warn("Debugger detected, CrashLogger will not be enabled"_tr());
         return;
     }
-    if (config.modules.crashLogger.builtin) {
+    if (config.builtin) {
         cln = std::make_unique<CrashLoggerNew>();
         return;
     }
@@ -171,14 +181,14 @@ void CrashLogger::init() {
 
     std::wstring cmd = string_utils::str2wstr(fmt::format(
         R"({} -p {} -b "{}" --lv "{}" {} --username "{}" --moddir "{}" {})",
-        getSelfModIns()->getModDir() / sv2u8sv(config.modules.crashLogger.externalpath.value_or("CrashLogger.exe")),
+        getSelfModIns()->getModDir() / sv2u8sv(config.externalpath.value_or("CrashLogger.exe")),
         GetCurrentProcessId(),
         getGameVersion().to_string(),
         getLoaderVersion().to_string(),
         getLoaderVersion().to_string().find('+') != std::string::npos ? "--isdev" : "",
         getServiceUuid(),
         mod::getModsRoot(),
-        config.modules.crashLogger.uploadToSentry ? "--enablesentry" : ""
+        config.uploadToSentry ? "--enablesentry" : ""
     ));
 
     if (!CreateProcess(nullptr, cmd.data(), &sa, &sa, true, 0, nullptr, nullptr, &si, &pi)) {
