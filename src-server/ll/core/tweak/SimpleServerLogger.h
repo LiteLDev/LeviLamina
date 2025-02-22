@@ -7,6 +7,7 @@ struct SimpleServerLoggerConfig {
     bool enabled          = false;
     bool playerChat       = true;
     bool playerCommand    = true;
+    bool playerPermission = true;
 };
 struct SimpleServerLogger {
     struct Impl;
