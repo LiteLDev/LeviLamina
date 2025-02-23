@@ -8,7 +8,7 @@ class BlockPos;
 class Vec3;
 // clang-format on
 
-class ChunkPos : public ll::math::intN2<ChunkPos> {
+class alignas(uint64) ChunkPos : public ll::math::intN2<ChunkPos> {
 public:
     template <std::floating_point T0, std::floating_point T1>
     [[nodiscard]] constexpr ChunkPos(T0 x, T1 z)
