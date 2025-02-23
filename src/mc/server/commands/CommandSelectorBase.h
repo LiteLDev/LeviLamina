@@ -4,6 +4,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/server/commands/CommandPosition.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
@@ -32,30 +33,33 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    int                                                                          mVersion;
-    ::CommandSelectionType                                                       mType;
-    ::CommandSelectionOrder                                                      mOrder;
-    ::std::vector<::InvertableFilter<::std::string>>                             mNameFilters;
-    ::std::vector<::InvertableFilter<::ActorDefinitionIdentifier>>               mTypeFilters;
-    ::std::vector<::InvertableFilter<::HashedString>>                            mFamilyFilters;
-    ::std::vector<::InvertableFilter<::std::string>>                             mTagFilters;
-    ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>> mFilterChain;
-    ::CommandPosition                                                            mPosition;
-    ::Vec3                                                                       mBoxDeltas;
-    float                                                                        mRadiusMinSqr;
-    float                                                                        mRadiusMaxSqr;
-    uint64                                                                       mCount;
-    bool                                                                         mIncludeDeadPlayers;
-    bool                                                                         mIsPositionBound;
-    bool                                                                         mDistanceFiltered;
-    bool                                                                         mPositionFiltered;
-    bool                                                                         mCountFiltered;
-    bool                                                                         mHaveDeltas;
-    bool                                                                         mForcePlayer;
-    bool                                                                         mExcludeAgents;
-    bool                                                                         mIsExplicitIdSelector;
-    bool                                                                         mForceDimensionFiltering;
+    int                                                                          mVersion{};
+    ::CommandSelectionType                                                       mType{};
+    ::CommandSelectionOrder                                                      mOrder{};
+    ::std::vector<::InvertableFilter<::std::string>>                             mNameFilters{};
+    ::std::vector<::InvertableFilter<::ActorDefinitionIdentifier>>               mTypeFilters{};
+    ::std::vector<::InvertableFilter<::HashedString>>                            mFamilyFilters{};
+    ::std::vector<::InvertableFilter<::std::string>>                             mTagFilters{};
+    ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>> mFilterChain{};
+    ::CommandPosition                                                            mPosition{};
+    ::Vec3                                                                       mBoxDeltas{};
+    float                                                                        mRadiusMinSqr{0.0f};
+    float                                                                        mRadiusMaxSqr{std::numeric_limits<float>::max()};
+    uint64                                                                       mCount{std::numeric_limits<uint>::max()};
+    bool                                                                         mIncludeDeadPlayers{};
+    bool                                                                         mIsPositionBound{};
+    bool                                                                         mDistanceFiltered{};
+    bool                                                                         mPositionFiltered{};
+    bool                                                                         mCountFiltered{};
+    bool                                                                         mHaveDeltas{};
+    bool                                                                         mForcePlayer{};
+    bool                                                                         mExcludeAgents{};
+    bool                                                                         mIsExplicitIdSelector{};
+    bool                                                                         mForceDimensionFiltering{};
     // NOLINTEND
+
+    CommandSelectorBase() = default;
+    CommandSelectorBase(bool forcePlayer) : mForcePlayer(forcePlayer) {}
 
 public:
     // member functions
