@@ -4,5 +4,5 @@
 
 template <typename T>
 struct IDType {
-    std::optional<std::uint64_t> id;
+    std::optional<unsigned long> mID;
 };
