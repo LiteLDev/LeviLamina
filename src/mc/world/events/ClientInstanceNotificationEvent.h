@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/events/PlayerViewPerspectiveChangedEvent.h"
+#include "mc/world/events/ScreenSizeChangedEvent.h"
 
 // auto generated inclusion list
 #include "mc/world/events/EventVariantImpl.h"

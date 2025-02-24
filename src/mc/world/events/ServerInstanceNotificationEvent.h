@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/events/ServerInstanceLeaveGameDoneEvent.h"
+#include "mc/world/events/ServerInstanceRequestResourceReload.h"
 
 // auto generated inclusion list
 #include "mc/world/events/EventVariantImpl.h"

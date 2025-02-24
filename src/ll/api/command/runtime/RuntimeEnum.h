@@ -19,12 +19,7 @@ struct ParamTraits<RuntimeEnum> : ParamTraitsBase<RuntimeEnum> {
         bool
         operator()(CommandRegistry const& registry, void* storage, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
             const {
-            auto enumName = token.toString();
-            auto iter     = registry.mEnumValueLookup.find(enumName);
-            if (iter == registry.mEnumValueLookup.end()) {
-                return false;
-            }
-            *(RuntimeEnum*)storage = {std::move(enumName), iter->second};
+            *(RuntimeEnum*)storage = {token.toString(), registry.getEnumData(token)};
             return true;
         }
     };

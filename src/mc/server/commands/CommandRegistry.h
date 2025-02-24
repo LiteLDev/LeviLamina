@@ -266,6 +266,8 @@ public:
         }
 
         [[nodiscard]] inline bool operator==(Symbol const& other) const { return mValue == other.mValue; }
+
+        uint64 toIndex() const { return mValue & 0xffffffffe00fffffull; }
     };
 
     struct SymbolHasher {};
@@ -715,6 +717,16 @@ public:
         std::string&                       error,
         std::vector<std::string>&          errorParams
     ) const;
+
+    uint64 getEnumData(ParseToken const& token) const {
+        auto& values = mEnums[token.type.toIndex()].values;
+        return std::lower_bound(
+                   values.begin(),
+                   values.end(),
+                   token.child->type.toIndex(),
+                   [](auto& pair, auto& child) { return pair.first < child; }
+        )->second;
+    }
 
 public:
     // member functions

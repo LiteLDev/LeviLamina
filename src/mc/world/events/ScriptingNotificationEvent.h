@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/events/BeforeWatchdogTerminateEvent.h"
+#include "mc/world/events/ScriptCommandMessageEvent.h"
+#include "mc/world/events/ScriptModuleShutdownEvent.h"
+#include "mc/world/events/ScriptModuleStartupEvent.h"
 
 // auto generated inclusion list
 #include "mc/world/events/EventVariantImpl.h"

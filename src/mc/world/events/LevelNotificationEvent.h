@@ -1,6 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/events/LevelAddedActorEvent.h"
+#include "mc/world/events/LevelBroadcastEvent.h"
+#include "mc/world/events/LevelDayCycleEvent.h"
+#include "mc/world/events/LevelGameRuleChangeEvent.h"
+#include "mc/world/events/LevelStartLeaveGameEvent.h"
+#include "mc/world/events/LevelWeatherChangedEvent.h"
+#include "mc/world/events/ScriptingWorldInitializeEvent.h"
+#include "mc/world/level/LevelSoundBroadcastEvent.h"
 
 // auto generated inclusion list
 #include "mc/world/events/EventVariantImpl.h"
