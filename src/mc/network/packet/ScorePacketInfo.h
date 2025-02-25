@@ -26,9 +26,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ScorePacketInfo& operator=(ScorePacketInfo const&);
-    ScorePacketInfo(ScorePacketInfo const&);
+    ScorePacketInfo& operator=(ScorePacketInfo const&) = default;
+    ScorePacketInfo(ScorePacketInfo const&)            = default;
+    ScorePacketInfo()                                  = default;
 
 public:
     // member functions
