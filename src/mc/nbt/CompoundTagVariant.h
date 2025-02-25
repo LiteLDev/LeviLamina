@@ -54,6 +54,98 @@ public:
 
     using Variant = Types::to<::std::variant>;
 
+    template <bool Const>
+    class Iterator {
+    public:
+        using iterator_category = std::bidirectional_iterator_tag;
+        using difference_type   = ptrdiff_t;
+        using value_type        = Tag;
+        using reference         = std::conditional_t<Const, value_type const, value_type>&;
+        using pointer           = std::add_pointer_t<reference>;
+
+        std::conditional_t<
+            Const,
+            std::variant<CompoundTagVariant const*, CompoundTag::const_iterator, ListTag::const_iterator>,
+            std::variant<CompoundTagVariant*, CompoundTag::iterator, ListTag::iterator>>
+            iter;
+
+        static Iterator makeBegin(auto& var) noexcept {
+            Iterator res;
+            switch (var.index()) {
+            case Tag::List:
+                res.iter.emplace<2>(var.get<ListTag>().begin());
+                break;
+            case Tag::Compound:
+                res.iter.emplace<1>(var.get<CompoundTag>().begin());
+                break;
+            case Tag::End:
+                res.iter.emplace<0>(std::addressof(var) + 1);
+                break;
+            default:
+                res.iter.emplace<0>(std::addressof(var));
+            }
+            return res;
+        }
+
+        static Iterator makeEnd(auto& var) noexcept {
+            Iterator res;
+            switch (var.index()) {
+            case Tag::List:
+                res.iter.emplace<2>(var.get<ListTag>().end());
+                break;
+            case Tag::Compound:
+                res.iter.emplace<1>(var.get<CompoundTag>().end());
+                break;
+            default:
+                res.iter.emplace<0>(std::addressof(var) + 1);
+            }
+            return res;
+        }
+
+        [[nodiscard]] reference operator*() const noexcept {
+            switch (iter.index()) {
+            case 0:
+                return std::get<0>(iter)->get();
+            case 1:
+                return std::get<1>(iter)->second.get();
+            case 2:
+                return *std::get<2>(iter)->get();
+            default:
+                LL_UNREACHABLE;
+            }
+            LL_UNREACHABLE;
+        }
+
+        [[nodiscard]] pointer operator->() const noexcept { return std::addressof(**this); }
+
+        Iterator& operator++() noexcept {
+            std::visit([](auto& val) { ++val; }, iter);
+            return *this;
+        }
+
+        Iterator operator++(int) noexcept {
+            Iterator tmp = *this;
+            ++*this;
+            return tmp;
+        }
+
+        Iterator& operator--() noexcept {
+            std::visit([](auto& val) { --val; }, iter);
+            return *this;
+        }
+
+        Iterator operator--(int) noexcept {
+            Iterator tmp = *this;
+            --*this;
+            return tmp;
+        }
+
+        [[nodiscard]] bool operator==(Iterator const& r) const noexcept { return this->iter == r.iter; }
+    };
+
+    using iterator       = Iterator<false>;
+    using const_iterator = Iterator<true>;
+
 public:
     // member variables
     Variant mTagStorage;
@@ -136,6 +228,14 @@ public:
     template <size_t N>
     [[nodiscard]] constexpr CompoundTagVariant(char const (&str)[N])
     : CompoundTagVariant(std::string_view{str, N - 1}) {}
+
+    [[nodiscard]] iterator       begin() noexcept { return iterator::makeBegin(*this); }
+    [[nodiscard]] const_iterator begin() const noexcept { return cbegin(); }
+    [[nodiscard]] const_iterator cbegin() const noexcept { return const_iterator::makeBegin(*this); }
+
+    [[nodiscard]] iterator       end() noexcept { return iterator::makeEnd(*this); }
+    [[nodiscard]] const_iterator end() const noexcept { return cend(); }
+    [[nodiscard]] const_iterator cend() const noexcept { return const_iterator::makeEnd(*this); }
 
     [[nodiscard]] constexpr Tag::Type index() const noexcept { return Tag::Type(mTagStorage.index()); }
     [[nodiscard]] constexpr Tag::Type getId() const noexcept { return index(); }
@@ -335,6 +435,20 @@ public:
     }
 };
 
+[[nodiscard]] inline auto CompoundTag::begin() noexcept { return mTags.begin(); }
+[[nodiscard]] inline auto CompoundTag::begin() const noexcept { return mTags.begin(); }
+[[nodiscard]] inline auto CompoundTag::end() noexcept { return mTags.end(); }
+[[nodiscard]] inline auto CompoundTag::end() const noexcept { return mTags.end(); }
+[[nodiscard]] inline auto CompoundTag::rbegin() noexcept { return mTags.rbegin(); }
+[[nodiscard]] inline auto CompoundTag::rbegin() const noexcept { return mTags.rbegin(); }
+[[nodiscard]] inline auto CompoundTag::rend() noexcept { return mTags.rend(); }
+[[nodiscard]] inline auto CompoundTag::rend() const noexcept { return mTags.rend(); }
+[[nodiscard]] inline auto CompoundTag::cbegin() const noexcept { return mTags.cbegin(); }
+[[nodiscard]] inline auto CompoundTag::cend() const noexcept { return mTags.cend(); }
+[[nodiscard]] inline auto CompoundTag::crbegin() const noexcept { return mTags.crbegin(); }
+[[nodiscard]] inline auto CompoundTag::crend() const noexcept { return mTags.crend(); }
+inline bool               CompoundTag::erase(std::string_view name) { return mTags.erase(name); }
+
 [[nodiscard]] inline CompoundTagVariant& CompoundTag::operator[](std::string_view index) {
     if (auto it = mTags.find(index); it != mTags.end()) {
         return it->second;
@@ -346,6 +460,13 @@ public:
         return it->second;
     }
     throw std::out_of_range("invalid nbt key");
+}
+[[nodiscard]] inline void CompoundTag::rename(std::string_view name, std::string_view newName) {
+    if (auto it = mTags.find(name); it != mTags.end()) {
+        CompoundTagVariant tmp{std::move(it->second)};
+        mTags.erase(it);
+        mTags.try_emplace(std::string{newName}, std::move(tmp));
+    }
 }
 
 [[nodiscard]] constexpr ListTag::ListTag(std::vector<CompoundTagVariant> tags) {

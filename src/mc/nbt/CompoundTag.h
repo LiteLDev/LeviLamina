@@ -16,6 +16,11 @@ public:
 
     TagMap mTags;
 
+    using iterator               = TagMap::iterator;
+    using const_iterator         = TagMap::const_iterator;
+    using reverse_iterator       = TagMap::reverse_iterator;
+    using const_reverse_iterator = TagMap::const_reverse_iterator;
+
     CompoundTag() = default;
 
     CompoundTag(TagMap tags) : mTags(std::move(tags)) {}
@@ -43,7 +48,24 @@ public:
     LLNDAPI std::string                      toNetworkNbt() const;
     LLNDAPI static ll::Expected<CompoundTag> fromNetworkNbt(std::string const& data) noexcept;
 
-    size_t size() const noexcept { return mTags.size(); }
+    [[nodiscard]] size_t size() const noexcept { return mTags.size(); }
+    [[nodiscard]] bool   empty() const noexcept { return mTags.empty(); }
+
+    [[nodiscard]] auto begin() noexcept;
+    [[nodiscard]] auto begin() const noexcept;
+    [[nodiscard]] auto end() noexcept;
+    [[nodiscard]] auto end() const noexcept;
+    [[nodiscard]] auto rbegin() noexcept;
+    [[nodiscard]] auto rbegin() const noexcept;
+    [[nodiscard]] auto rend() noexcept;
+    [[nodiscard]] auto rend() const noexcept;
+    [[nodiscard]] auto cbegin() const noexcept;
+    [[nodiscard]] auto cend() const noexcept;
+    [[nodiscard]] auto crbegin() const noexcept;
+    [[nodiscard]] auto crend() const noexcept;
+
+    bool erase(std::string_view name);
+    void rename(std::string_view name, std::string_view newName);
 
 public:
     // virtual functions
@@ -81,8 +103,6 @@ public:
     // NOLINTBEGIN
 
     MCAPI void append(::CompoundTag const& tag);
-
-    MCAPI void clear();
 
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
 

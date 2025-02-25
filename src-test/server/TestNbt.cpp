@@ -16,26 +16,30 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
     using namespace ll::literals;
 
     auto nbt = CompoundTag{
-        {    "anull",                                       nullptr                     },
+        {    "anull",                                     nullptr                     },
         {  "string?", R"(streee _ _o-ix 我超, utf8 "\asfa%"*)##q)$\\"\Q34\\""'':)"_tag},
-        {     "1num",                                                                  1},
-        {     "nums",                                                           (int16)3},
-        {     "byte",                                                          (int8)127},
-        {     "list",                  ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}},
+        {     "1num",                                                                1},
+        {     "nums",                                                         (int16)3},
+        {     "byte",                                                        (int8)127},
+        {     "list",                ListTag{5_b, ByteTag{true}, ByteTag{false}, -2_b}},
         { "compound",
          {
          {"float", 0.1f},
          {"long", 10000ull},
          {"double", 0.3},
          {"sdouble", 1.0},
-         }                                                                              },
-        {"bytearray",                            ByteArrayTag{1, 2, 3, 4, 5, 62, 63, 66}},
-        { "intarray",                             IntArrayTag{1, 2, 3, 4, 5, -2, -3, -6}},
+         }                                                                            },
+        {"bytearray",                          ByteArrayTag{1, 2, 3, 4, 5, 62, 63, 66}},
+        { "intarray",                           IntArrayTag{1, 2, 3, 4, 5, -2, -3, -6}},
     };
 
     nbt["some"]["new"]["compound"]          = nbt;
     nbt["hello"]["789\xDB\xFE"]["\u123456"] = std::string{R"(\n\t\r\b\u1234\uffffffff)"} + "\xDB\xFE";
 
+
+    for (auto& i : nbt["list"]) {
+        ll::getLogger().debug("iter {}", i.toSnbt(SnbtFormat::Minimize, 0));
+    }
 
     nlohmann::json j{
         { "num",         1},
