@@ -26,6 +26,9 @@ public:
     // NOLINTEND
 
 public:
+    SetScorePacket() = default;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
