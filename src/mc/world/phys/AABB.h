@@ -68,6 +68,14 @@ public:
 
     LLAPI bool intersects(::AABB const& c) const;
 
+    [[nodiscard]] constexpr Vec3 center() const noexcept { return (min + max) * 0.5f; }
+
+    [[nodiscard]] constexpr AABB& shrink(float f) noexcept {
+        min += f;
+        max -= f;
+        return *this;
+    }
+
 public:
     // member functions
     // NOLINTBEGIN
