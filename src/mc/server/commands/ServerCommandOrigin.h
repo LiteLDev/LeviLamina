@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/ServerLevel.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
@@ -29,6 +30,18 @@ public:
     ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mCommandPermissionLevel;
     ::ll::TypedStorage<4, 4, ::DimensionType>          mDimensionType;
     // NOLINTEND
+
+public:
+    ServerCommandOrigin(
+        std::string const&     requestId,
+        ServerLevel&           level,
+        CommandPermissionLevel permission,
+        DimensionType          dimensionType
+    )
+    : mServerLevel(level),
+      mRequestId(requestId),
+      mCommandPermissionLevel(permission),
+      mDimensionType(dimensionType) {}
 
 public:
     // virtual functions
