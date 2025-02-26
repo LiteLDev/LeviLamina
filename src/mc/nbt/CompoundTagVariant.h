@@ -447,8 +447,13 @@ public:
 [[nodiscard]] inline auto CompoundTag::cend() const noexcept { return mTags.cend(); }
 [[nodiscard]] inline auto CompoundTag::crbegin() const noexcept { return mTags.crbegin(); }
 [[nodiscard]] inline auto CompoundTag::crend() const noexcept { return mTags.crend(); }
-inline bool               CompoundTag::erase(std::string_view name) { return mTags.erase(name); }
-
+inline bool               CompoundTag::erase(std::string_view name) {
+    if (auto it = mTags.find(name); it != mTags.end()) {
+        mTags.erase(it);
+        return true;
+    }
+    return false;
+}
 [[nodiscard]] inline CompoundTagVariant& CompoundTag::operator[](std::string_view index) {
     if (auto it = mTags.find(index); it != mTags.end()) {
         return it->second;
