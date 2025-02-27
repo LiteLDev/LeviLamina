@@ -5,8 +5,6 @@
 #include "mc/network/serialize/serialize.h"
 #include "mc/util/BigEndianStringByteInput.h"
 #include "mc/util/BigEndianStringByteOutput.h"
-#include "mc/util/VarIntDataInput.h"
-#include "mc/util/VarIntDataOutput.h"
 
 namespace ll::nbt::detail {
 ll::Expected<CompoundTagVariant> parseSnbtValue(std::string_view&) noexcept;
@@ -62,24 +60,6 @@ ll::Expected<CompoundTag> CompoundTag::fromBinaryNbt(std::string_view dataView, 
 } catch (...) {
     return ll::makeExceptionError();
 }
-
-template <>
-struct serialize<CompoundTag> {
-public:
-    static void write(CompoundTag const& tag, class BinaryStream& stream) {
-        auto io = VarIntDataOutput{stream};
-        NbtIo::write(&tag, io);
-    }
-
-    static Bedrock::Result<CompoundTag> read(class ReadOnlyBinaryStream& stream) {
-        auto io = VarIntDataInput{stream};
-        if (auto res = NbtIo::read(io); res) {
-            return std::move(*res->get());
-        } else {
-            return nonstd::make_unexpected(res.error());
-        }
-    }
-};
 
 std::string CompoundTag::toNetworkNbt() const {
     std::string  result;
