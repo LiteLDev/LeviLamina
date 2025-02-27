@@ -22,6 +22,7 @@ public:
         return StackResultStorageEntity(*this).tryUnwrap<Entity, IncludeRemoved>();
     }
 
+    WeakStorageEntity()                                      = default;
     WeakStorageEntity(::WeakStorageEntity&&)                 = default;
     WeakStorageEntity(::WeakStorageEntity const&)            = default;
     WeakStorageEntity& operator=(::WeakStorageEntity&&)      = default;
