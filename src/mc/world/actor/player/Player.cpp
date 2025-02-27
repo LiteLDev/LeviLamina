@@ -32,7 +32,11 @@ optional_ref<ConnectionRequest const> Player::getConnectionRequest() const {
     if (isSimulated()) {
         return std::nullopt;
     }
-    auto& clients = *ll::service::getServerNetworkHandler()->mClients;
+    auto handler = ll::service::getServerNetworkHandler();
+    if (!handler) {
+        return std::nullopt;
+    }
+    auto& clients = *handler->mClients;
     auto  pos     = clients.find(getNetworkIdentifier());
     if (pos != clients.end()) {
         return pos->second->mPrimaryRequest.get();
