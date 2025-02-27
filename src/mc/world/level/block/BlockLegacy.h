@@ -87,9 +87,68 @@ namespace mce { class Color; }
 
 class BlockLegacy {
 public:
-    template <class T>
-        requires(std::is_same_v<T, int> || std::is_same_v<T, Direction::Type> || std::is_same_v<T, AttachmentType> || std::is_same_v<T, bool> || std::is_same_v<T, BigDripleafTilt> || std::is_same_v<T, unsigned char> || std::is_same_v<T, unsigned short>)
-    MCAPI Block const* trySetState(BlockState const& state, T, uint16_t data) const;
+    template <typename T>
+    std::optional<T> getState(uint64 id, ushort data) const {
+        auto it = mStates->find(id);
+
+        if (it == mStates->end()) {
+            {
+                for (const auto& collection : *mAlteredStateCollections) {
+                    if (collection && collection->mBlockState->get().mID == id) {
+                        auto result = collection->getState(*this, data);
+                        if (result) {
+                            return result;
+                        }
+                    }
+                }
+
+                return std::nullopt;
+            }
+        }
+
+        return it->second.get<T>(data);
+    }
+
+    template <typename T>
+    std::optional<T> getState(BlockState const& stateType, ushort data) const {
+        return getState<T>(stateType.mID, data);
+    }
+
+    template <typename T>
+        requires(std::is_integral_v<T> || std::is_enum_v<T>)
+    optional_ref<Block const> trySetState(uint64 id, T val, ushort data) {
+        auto it = mStates->find(id);
+
+        if (it != mStates->end()) {
+            auto& stateInstance = it->second;
+
+            if (static_cast<uchar>(val) < stateInstance.mVariationCount) {
+                ushort maskedData = (data & ~stateInstance.mMask)
+                                  | (static_cast<ushort>(val) << (stateInstance.mEndBit - stateInstance.mNumBits + 1));
+
+                if (maskedData < mBlockPermutations->size()) {
+                    return *mBlockPermutations->at(maskedData);
+                }
+                return nullptr;
+            }
+        }
+
+        for (auto& collection : *mAlteredStateCollections) {
+            if (collection && collection->mBlockState->get().mID == id) {
+                auto result = collection->setState(*this, data, val);
+                if (result) {
+                    return result;
+                }
+            }
+        }
+
+        return mReturnDefaultBlockOnUnidentifiedBlockState ? mDefaultState : nullptr;
+    }
+
+    template <typename T>
+    optional_ref<Block const> trySetState(BlockState const& stateType, T val, ushort data) {
+        return trySetState(stateType.mID, val, data);
+    }
 
 public:
     // BlockLegacy inner types declare

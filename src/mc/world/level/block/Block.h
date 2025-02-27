@@ -51,6 +51,26 @@ public:
 
     [[nodiscard]] inline ushort getData() const { return mData; }
 
+    template <typename T>
+    std::optional<T> getState(uint64 id) const {
+        return mLegacyBlock->getState<T>(id, mData);
+    }
+
+    template <typename T>
+    std::optional<T> getState(BlockState const& state) const {
+        return mLegacyBlock->getState<T>(state, mData);
+    }
+
+    template <typename T>
+    optional_ref<Block const> setState(uint64 id, T value) const {
+        return mLegacyBlock->trySetState(id, value, mData);
+    }
+
+    template <typename T>
+    optional_ref<Block const> setState(BlockState const& state, T value) const {
+        return mLegacyBlock->trySetState(state, value, mData);
+    }
+
 public:
     // member variables
     // NOLINTBEGIN
