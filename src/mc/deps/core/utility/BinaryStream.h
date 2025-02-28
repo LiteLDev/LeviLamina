@@ -31,10 +31,12 @@ public:
         serialize<T>::write(x, *this);
     }
 
-    MCTAPI void writeType(class NetworkItemStackDescriptor const&, char const*, char const*);
+    MCTAPI void writeType(class BlockPos const&, char const*, char const*);
+    MCTAPI void writeType(class Vec3 const&, char const*, char const*);
     MCTAPI void writeType(class MoveActorAbsoluteData const&, char const*, char const*);
-    MCTAPI void writeType(class NetworkItemInstanceDescriptor const&, char const*, char const*);
-    MCTAPI void writeType(struct PropertySyncData const&, char const*, char const*);
+    MCTAPI void writeType(class BaseGameVersion const&, char const*, char const*);
+    MCTAPI void writeType(struct ActorLink const&, char const*, char const*);
+    MCTAPI void writeType(struct GameRulesChangedPacketData const&, char const*, char const*);
 
     BinaryStream() : ReadOnlyBinaryStream({}, true), mBuffer(mOwnedBuffer) {}
     BinaryStream(std::string& buffer) : ReadOnlyBinaryStream(buffer, false), mBuffer(buffer) {}
