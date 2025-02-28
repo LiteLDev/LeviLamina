@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0-rc.2] - 2025-02-28
+
+### Added
+
+- Added template class IDType, TagsComponent and TagRegistry @ShrBox
+- Added nbt iterators @OEOTYAN
+- Added some missing functions in AABB @OEOTYAN
+- Added operator== and hash for PlayerScoreboardId @ShrBox
+- Fixed Core::Observer @OEOTYAN
+- Added block state getter and setter @Dofes
+
+### Changed
+
+- Exported serialize<::CompoundTag> @OEOTYAN
+- Updated BinaryStream::writeType @ShrBox
+- Modified EntityId's initial value to -1 @ShrBox
+
+### Fixed
+
+- Fixed CommandSelectorBase constructor @OEOTYAN
+- Fixed ChunkPos alignment @OEOTYAN
+- Fixed enum for command #1631 @OEOTYAN
+- Fixed ScorePacketInfo @ShrBox
+- Added missing constructor for CommandOrigin and ServerCommandOrigin @ShrBox
+- Fixed CompoundTag::erase @OEOTYAN
+
 ## [1.1.0-rc.1] - 2025-02-22
 
 ### Added

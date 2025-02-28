@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "tooth": "github.com/LiteLDev/LeviLamina",
-    "version": "1.1.0-rc.1",
+    "version": "1.1.0-rc.2",
     "info": {
         "name": "LeviLamina",
         "description": "A lightweight, modular and versatile mod loader for Minecraft Bedrock Edition.",
