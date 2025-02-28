@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.0-rc.2] - 2025-02-28
+## [1.1.0] - 2025-02-28
 
 ### Added
 
@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed CommandSelectorBase constructor @OEOTYAN
 - Fixed ChunkPos alignment @OEOTYAN
-- Fixed enum for command #1631 @OEOTYAN
+- Fixed enum for command [#1631] @OEOTYAN
 - Fixed ScorePacketInfo @ShrBox
 - Added missing constructor for CommandOrigin and ServerCommandOrigin @ShrBox
 - Fixed CompoundTag::erase @OEOTYAN
@@ -837,8 +837,10 @@ For lip and tooth-hub test only.
 [#1610]: https://github.com/LiteLDev/LeviLamina/issues/1610
 [#1611]: https://github.com/LiteLDev/LeviLamina/issues/1611
 [#1622]: https://github.com/LiteLDev/LeviLamina/issues/1622
+[#1631]: https://github.com/LiteLDev/LeviLamina/issues/1631
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0-rc.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0-rc.1...v1.1.0
 [1.1.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.1...v1.1.0-rc.1
 [1.0.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0-rc.3...v1.0.0
