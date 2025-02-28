@@ -11,7 +11,7 @@ public:
 
 class EntityId : public entt::entt_traits<EntityId> {
 public:
-    entity_type mRawId{};
+    entity_type mRawId = -1;
 
     [[nodiscard]] constexpr EntityId() = default;
 
