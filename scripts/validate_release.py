@@ -53,14 +53,6 @@ def validate_tooth_json(version: str):
     if not re.search(r"\"version\": \"{}\"".format(version), content):
         raise Exception("tooth.json has wrong version")
 
-    if not re.search(
-        r"\"asset_url\": \"https://github.com/LiteLDev/LeviLamina/releases/download/v{}/levilamina-release-windows-x64.zip\"".format(
-            version
-        ),
-        content,
-    ):
-        raise Exception("tooth.json has wrong version in asset_url")
-
 
 if __name__ == "__main__":
     main()
