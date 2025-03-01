@@ -15,6 +15,17 @@ public:
     };
 
 public:
+    bool operator==(InventorySource const& rhs) const {
+        if (mType != rhs.mType) {
+            return false;
+        }
+        if (mType == InventorySourceType::ContainerInventory) {
+            return mContainerId == rhs.mContainerId;
+        }
+        return mType == InventorySourceType::GlobalInventory;
+    }
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::InventorySourceType>                   mType;
