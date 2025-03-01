@@ -46,7 +46,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 88
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& item) const /*override*/;
 
     // vIndex: 63
     virtual bool uniqueAuxValues() const /*override*/;
@@ -109,7 +109,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& item) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 

@@ -9,17 +9,27 @@ class StructurePoolActorRule;
 
 class JigsawStructureActorRulesRegistry {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfcfca1;
-    ::ll::UntypedStorage<8, 64> mUnk478b5e;
-    // NOLINTEND
+    // JigsawStructureActorRulesRegistry inner types define
+    using ActorRulesRegistryMap =
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>;
+
+    using ActorRulesLookupMap =
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>;
 
 public:
-    // prevent constructor by default
-    JigsawStructureActorRulesRegistry& operator=(JigsawStructureActorRulesRegistry const&);
-    JigsawStructureActorRulesRegistry(JigsawStructureActorRulesRegistry const&);
-    JigsawStructureActorRulesRegistry();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolActorRule>>>>>
+        mActorRulesRegistry;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>>
+        mActorRuleLookupMap;
+    // NOLINTEND
 
 public:
     // member functions

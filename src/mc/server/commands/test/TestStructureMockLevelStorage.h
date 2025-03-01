@@ -6,21 +6,21 @@
 #include "mc/world/level/storage/MockLevelStorage.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class StructureSettings;
+// clang-format on
+
 class TestStructureMockLevelStorage : public ::MockLevelStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk6ce6a4;
-    ::ll::UntypedStorage<8, 8>  mUnkdf7559;
-    ::ll::UntypedStorage<8, 32> mUnkb0d095;
-    ::ll::UntypedStorage<8, 8>  mUnke9bbc0;
+    ::ll::TypedStorage<8, 32, ::std::string const>       mStructureSaveId;
+    ::ll::TypedStorage<8, 8, ::StructureSettings const&> mStructureSettings;
+    ::ll::TypedStorage<8, 32, ::std::string const>       mStructureName;
+    ::ll::TypedStorage<8, 8, ::BlockPos const&>          mPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TestStructureMockLevelStorage& operator=(TestStructureMockLevelStorage const&);
-    TestStructureMockLevelStorage(TestStructureMockLevelStorage const&);
-    TestStructureMockLevelStorage();
 
 public:
     // virtual functions

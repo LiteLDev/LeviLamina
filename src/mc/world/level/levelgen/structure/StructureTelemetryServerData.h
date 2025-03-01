@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+// clang-format on
+
 class StructureTelemetryServerData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkbbae54;
-    ::ll::UntypedStorage<1, 1>  mUnkdd889c;
-    ::ll::UntypedStorage<4, 12> mUnk520fff;
+    ::ll::TypedStorage<1, 1, bool>        mHasBeenActivatedByRedstone;
+    ::ll::TypedStorage<1, 1, bool>        mHasLoadedIntoUnloadedChunks;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLastOffsetWhenLoadingIntoUnloadedChunks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureTelemetryServerData& operator=(StructureTelemetryServerData const&);
-    StructureTelemetryServerData(StructureTelemetryServerData const&);
-    StructureTelemetryServerData();
 };

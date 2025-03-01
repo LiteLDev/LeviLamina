@@ -18,15 +18,26 @@ namespace br::worldgen::processors::BlockEntity {
 
 struct Modifier : public ::br::worldgen::processors::BlockEntity::ModifierType {
 public:
+    // Modifier inner types define
+    using Type = ::std::variant<
+        ::br::worldgen::processors::BlockEntity::Passthrough,
+        ::br::worldgen::processors::BlockEntity::AppendLoot>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkba0901;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<
+            ::br::worldgen::processors::BlockEntity::Passthrough,
+            ::br::worldgen::processors::BlockEntity::AppendLoot>>
+        mData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     Modifier& operator=(Modifier const&);
-    Modifier();
 
 public:
     // virtual functions

@@ -71,7 +71,7 @@ public:
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
     // vIndex: 5
-    virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
+    virtual void use(bool& result, ::ItemStack& instance, ::Player& player) /*override*/;
 
     // vIndex: 6
     virtual ::Item const*
@@ -123,7 +123,7 @@ public:
 
     MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
+    MCAPI void $use(bool& result, ::ItemStack& instance, ::Player& player);
     // NOLINTEND
 
 public:

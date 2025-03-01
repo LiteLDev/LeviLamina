@@ -17,17 +17,16 @@ struct RuleSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk139138;
-    ::ll::UntypedStorage<8, 72> mUnk62294c;
-    ::ll::UntypedStorage<4, 48> mUnk3022cc;
-    ::ll::UntypedStorage<8, 8>  mUnk4fa241;
-    ::ll::UntypedStorage<8, 56> mUnka4d452;
+    ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test>      mInputPredicate;
+    ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test>      mLocPredicate;
+    ::ll::TypedStorage<4, 48, ::br::worldgen::processors::PosRules::Test>        mPosPredicate;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                     mOutputState;
+    ::ll::TypedStorage<8, 56, ::br::worldgen::processors::BlockEntity::Modifier> mBlockEntityModifier;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     RuleSet& operator=(RuleSet const&);
-    RuleSet();
 
 public:
     // member functions

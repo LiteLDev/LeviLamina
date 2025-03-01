@@ -8,14 +8,8 @@ struct StaticSpawnArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk16d4c0;
+    ::ll::TypedStorage<4, 4, int> offset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StaticSpawnArea& operator=(StaticSpawnArea const&);
-    StaticSpawnArea(StaticSpawnArea const&);
-    StaticSpawnArea();
 };
 
 } // namespace br

@@ -11,16 +11,15 @@ namespace br::worldgen {
 
 class StructureRegistry {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnk6b4ac6;
-    // NOLINTEND
+    // StructureRegistry inner types define
+    using Map = ::entt::dense_map<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>;
 
 public:
-    // prevent constructor by default
-    StructureRegistry& operator=(StructureRegistry const&);
-    StructureRegistry(StructureRegistry const&);
-    StructureRegistry();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<::std::string, ::std::shared_ptr<::br::worldgen::Structure>>>
+        mStructures;
+    // NOLINTEND
 
 public:
     // member functions

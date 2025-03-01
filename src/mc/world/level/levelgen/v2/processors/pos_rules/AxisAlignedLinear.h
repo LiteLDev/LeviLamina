@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/facing/Axis.h"
 #include "mc/world/level/levelgen/v2/processors/pos_rules/TestType.h"
 
 // auto generated forward declare list
@@ -18,18 +19,12 @@ struct AxisAlignedLinear : public ::br::worldgen::processors::PosRules::TestType
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc28b6e;
-    ::ll::UntypedStorage<4, 4> mUnkb8a9f6;
-    ::ll::UntypedStorage<4, 4> mUnk9f49d3;
-    ::ll::UntypedStorage<4, 4> mUnkb4448d;
-    ::ll::UntypedStorage<4, 4> mUnk9f8710;
+    ::ll::TypedStorage<4, 4, float>          mMinChance;
+    ::ll::TypedStorage<4, 4, float>          mMaxChance;
+    ::ll::TypedStorage<4, 4, int>            mMinDist;
+    ::ll::TypedStorage<4, 4, int>            mMaxDist;
+    ::ll::TypedStorage<4, 4, ::Facing::Axis> mAxis;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AxisAlignedLinear& operator=(AxisAlignedLinear const&);
-    AxisAlignedLinear(AxisAlignedLinear const&);
-    AxisAlignedLinear();
 
 public:
     // virtual functions

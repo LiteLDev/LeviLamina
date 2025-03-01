@@ -154,7 +154,7 @@ public:
     virtual void moveView() /*override*/;
 
     // vIndex: 186
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
+    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
 
     // vIndex: 183
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
@@ -485,7 +485,7 @@ public:
 
     MCAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
+    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 

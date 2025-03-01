@@ -40,7 +40,7 @@ public:
         /*override*/;
 
     // vIndex: 48
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 0
     virtual ~FaceDirectionalBlock() /*override*/ = default;
@@ -63,6 +63,6 @@ public:
     $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue)
         const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int value) const;
     // NOLINTEND
 };

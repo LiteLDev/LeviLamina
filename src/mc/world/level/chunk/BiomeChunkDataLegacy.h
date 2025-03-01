@@ -6,15 +6,9 @@ struct BiomeChunkDataLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2f4216;
-    ::ll::UntypedStorage<1, 1> mUnkb5c63e;
-    ::ll::UntypedStorage<1, 1> mUnk9eeb97;
-    ::ll::UntypedStorage<1, 1> mUnka3199a;
+    ::ll::TypedStorage<1, 1, uchar> biome;
+    ::ll::TypedStorage<1, 1, uchar> r;
+    ::ll::TypedStorage<1, 1, uchar> g;
+    ::ll::TypedStorage<1, 1, uchar> b;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeChunkDataLegacy& operator=(BiomeChunkDataLegacy const&);
-    BiomeChunkDataLegacy(BiomeChunkDataLegacy const&);
-    BiomeChunkDataLegacy();
 };

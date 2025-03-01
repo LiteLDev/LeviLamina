@@ -13,16 +13,10 @@ class LegacyStructureActorInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk12b508;
-    ::ll::UntypedStorage<4, 12> mUnke67835;
-    ::ll::UntypedStorage<8, 24> mUnk7ae825;
+    ::ll::TypedStorage<4, 12, ::Vec3>        mPos;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPos;
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyStructureActorInfo& operator=(LegacyStructureActorInfo const&);
-    LegacyStructureActorInfo(LegacyStructureActorInfo const&);
-    LegacyStructureActorInfo();
 
 public:
     // member functions

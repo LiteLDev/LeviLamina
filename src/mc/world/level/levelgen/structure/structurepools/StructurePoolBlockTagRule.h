@@ -13,16 +13,10 @@ class StructurePoolBlockTagRule {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk5e9b61;
-    ::ll::UntypedStorage<8, 32> mUnk41ce9d;
-    ::ll::UntypedStorage<8, 32> mUnk8c2cad;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IStructurePoolBlockTagPredicate> const> mSourcePredicate;
+    ::ll::TypedStorage<8, 32, ::std::string const>                                       mResultKey;
+    ::ll::TypedStorage<8, 32, ::std::string const>                                       mResultValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockTagRule& operator=(StructurePoolBlockTagRule const&);
-    StructurePoolBlockTagRule(StructurePoolBlockTagRule const&);
-    StructurePoolBlockTagRule();
 
 public:
     // member functions

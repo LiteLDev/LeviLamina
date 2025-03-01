@@ -14,15 +14,9 @@ struct DeserializedChunkLoadedRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 128> mUnkd56883;
-    ::ll::UntypedStorage<1, 1>   mUnk8c13bb;
+    ::ll::TypedStorage<8, 128, ::ChunkLoadedRequest> mChunkLoadedRequest;
+    ::ll::TypedStorage<1, 1, ::ChunkRequestListType> mChunkRequestListType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DeserializedChunkLoadedRequest& operator=(DeserializedChunkLoadedRequest const&);
-    DeserializedChunkLoadedRequest(DeserializedChunkLoadedRequest const&);
-    DeserializedChunkLoadedRequest();
 
 public:
     // member functions

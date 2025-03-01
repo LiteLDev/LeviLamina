@@ -6,15 +6,9 @@ class StructureTelemetryClientData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke26682;
-    ::ll::UntypedStorage<4, 4> mUnk8bf69c;
-    ::ll::UntypedStorage<4, 4> mUnk9c22a4;
-    ::ll::UntypedStorage<4, 4> mUnk7921a0;
+    ::ll::TypedStorage<4, 4, uint> mSizeEditCount;
+    ::ll::TypedStorage<4, 4, uint> mOffsetEditCount;
+    ::ll::TypedStorage<4, 4, uint> mRotationEditCount;
+    ::ll::TypedStorage<4, 4, uint> mMirrorEditCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureTelemetryClientData& operator=(StructureTelemetryClientData const&);
-    StructureTelemetryClientData(StructureTelemetryClientData const&);
-    StructureTelemetryClientData();
 };

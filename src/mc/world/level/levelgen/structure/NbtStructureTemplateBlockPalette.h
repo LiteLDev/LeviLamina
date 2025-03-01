@@ -12,17 +12,15 @@ namespace br::worldgen {
 
 struct NbtStructureTemplateBlockPalette {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnked7ece;
-    ::ll::UntypedStorage<8, 8> mUnk28d649;
-    // NOLINTEND
+    // NbtStructureTemplateBlockPalette inner types define
+    using Data = ::std::vector<::LegacyStructureBlockInfo>;
 
 public:
-    // prevent constructor by default
-    NbtStructureTemplateBlockPalette& operator=(NbtStructureTemplateBlockPalette const&);
-    NbtStructureTemplateBlockPalette(NbtStructureTemplateBlockPalette const&);
-    NbtStructureTemplateBlockPalette();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::std::vector<::LegacyStructureBlockInfo> const*> mNbt;
+    ::ll::TypedStorage<8, 8, uint64>                                           mIndex;
+    // NOLINTEND
 
 public:
     // member functions

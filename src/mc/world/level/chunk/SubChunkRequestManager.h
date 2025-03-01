@@ -2,20 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+
+// auto generated forward declare list
+// clang-format off
+class Dimension;
+class SubChunkPos;
+class SubChunkRequestSubscriber;
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 class SubChunkRequestManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4d8fd6;
-    ::ll::UntypedStorage<8, 64> mUnkf1d155;
-    ::ll::UntypedStorage<8, 64> mUnk6d0ea0;
-    ::ll::UntypedStorage<8, 80> mUnk169d22;
-    ::ll::UntypedStorage<8, 80> mUnk83e740;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::DimensionType, ::SubChunkPos>>> mQueuedRequests;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::DimensionType,
+            ::std::unordered_map<::SubChunkPos, ::std::vector<::SubChunkRequestSubscriber*>>>>
+        mActiveSubChunkRequests;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::DimensionType,
+            ::std::unordered_map<::SubChunkPos, ::std::chrono::steady_clock::time_point>>>
+                                                           mActiveSubChunkRequestStartTimes;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mQueuedRequestsMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mActiveRequestsMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkRequestManager& operator=(SubChunkRequestManager const&);
-    SubChunkRequestManager(SubChunkRequestManager const&);
-    SubChunkRequestManager();
 };

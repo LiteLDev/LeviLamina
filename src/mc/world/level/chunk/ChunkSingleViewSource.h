@@ -15,14 +15,8 @@ class ChunkSingleViewSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf520ff;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunk>> mLevelChunk;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkSingleViewSource& operator=(ChunkSingleViewSource const&);
-    ChunkSingleViewSource(ChunkSingleViewSource const&);
-    ChunkSingleViewSource();
 
 public:
     // virtual functions

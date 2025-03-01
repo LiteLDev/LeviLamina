@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class IStructurePoolActorPredicate;
+// clang-format on
+
 class StructurePoolActorRule {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk89e0b5;
-    ::ll::UntypedStorage<8, 32> mUnk49fbcc;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IStructurePoolActorPredicate> const> mSourcePredicate;
+    ::ll::TypedStorage<8, 32, ::std::string const>                                    mResultActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolActorRule& operator=(StructurePoolActorRule const&);
-    StructurePoolActorRule(StructurePoolActorRule const&);
-    StructurePoolActorRule();
 };

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class IRandom;
+namespace br::worldgen { class VerticalAnchor; }
 namespace br::worldgen { class WorldGenContext; }
 // clang-format on
 
@@ -17,14 +18,8 @@ class ConstantHeight : public ::br::worldgen::HeightProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk39616d;
+    ::ll::TypedStorage<8, 16, ::br::worldgen::VerticalAnchor> mAnchor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConstantHeight& operator=(ConstantHeight const&);
-    ConstantHeight(ConstantHeight const&);
-    ConstantHeight();
 
 public:
     // virtual functions

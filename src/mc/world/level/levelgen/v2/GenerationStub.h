@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class BoundingBox;
+namespace br::worldgen { class StructureSection; }
 namespace br::worldgen { struct GenerationContext; }
 // clang-format on
 
@@ -22,15 +24,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 24> mUnk6f19eb;
-        ::ll::UntypedStorage<8, 24> mUnkb8f58f;
+        ::ll::TypedStorage<4, 24, ::BoundingBox>                                                      mBox;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::br::worldgen::StructureSection>>> mSections;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BuildResult& operator=(BuildResult const&);
-        BuildResult(BuildResult const&);
-        BuildResult();
 
     public:
         // member functions
@@ -45,18 +41,20 @@ public:
         // NOLINTEND
     };
 
+    using PiecePlacer = ::std::function<
+        ::br::worldgen::GenerationStub::BuildResult(::br::worldgen::GenerationContext&, ::BlockPos const&)>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk13d408;
-    ::ll::UntypedStorage<8, 64> mUnk615198;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<
+            ::br::worldgen::GenerationStub::BuildResult(::br::worldgen::GenerationContext&, ::BlockPos const&)>>
+        mPlacer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GenerationStub& operator=(GenerationStub const&);
-    GenerationStub(GenerationStub const&);
-    GenerationStub();
 };
 
 } // namespace br::worldgen

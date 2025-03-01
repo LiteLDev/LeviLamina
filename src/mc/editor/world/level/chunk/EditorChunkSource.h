@@ -15,14 +15,8 @@ class EditorChunkSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk926524;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::LevelChunk>>> mStructureLevelChunks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EditorChunkSource& operator=(EditorChunkSource const&);
-    EditorChunkSource(EditorChunkSource const&);
-    EditorChunkSource();
 
 public:
     // virtual functions

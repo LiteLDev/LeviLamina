@@ -28,6 +28,12 @@ struct VehicleComponent;
 
 class DimensionTransitionSystem {
 public:
+    // DimensionTransitionSystem inner types define
+    using DimensionRequestHandler = ::std::function<bool(::Player&, ::ChangeDimensionRequest&)>;
+
+    using IsSuspended = ::std::function<bool(::Player&)>;
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _tickPortalTransition(

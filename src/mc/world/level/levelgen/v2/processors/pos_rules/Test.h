@@ -18,15 +18,26 @@ namespace br::worldgen::processors::PosRules {
 
 struct Test : public ::br::worldgen::processors::PosRules::TestType {
 public:
+    // Test inner types define
+    using Type = ::std::variant<
+        ::br::worldgen::processors::PosRules::AlwaysTrue,
+        ::br::worldgen::processors::PosRules::AxisAlignedLinear>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 40> mUnk36986d;
+    ::ll::TypedStorage<
+        4,
+        40,
+        ::std::variant<
+            ::br::worldgen::processors::PosRules::AlwaysTrue,
+            ::br::worldgen::processors::PosRules::AxisAlignedLinear>>
+        mData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     Test& operator=(Test const&);
-    Test();
 
 public:
     // virtual functions

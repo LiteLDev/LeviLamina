@@ -35,7 +35,7 @@ public:
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
     // vIndex: 56
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
 
     // vIndex: 127
     virtual ::Block const* tryLegacyUpgrade(ushort extraData) const /*override*/;
@@ -75,7 +75,7 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
     MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
     // NOLINTEND

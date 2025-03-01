@@ -2,21 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+// clang-format on
+
 struct ClientChunkGenerationDifferenceData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk306aa8;
-    ::ll::UntypedStorage<4, 4>  mUnk949966;
-    ::ll::UntypedStorage<4, 4>  mUnk58ae3c;
-    ::ll::UntypedStorage<8, 16> mUnke82de4;
-    ::ll::UntypedStorage<8, 24> mUnk54702c;
-    ::ll::UntypedStorage<8, 8>  mUnk3278a8;
+    ::ll::TypedStorage<4, 4, uint> mDifferentBlocksCount;
+    ::ll::TypedStorage<4, 4, uint> mSubChunksCheckedCount;
+    ::ll::TypedStorage<4, 4, uint> mSubChunksFoundDifferentCount;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::pair<::Block const*, ::Block const*>, uint>> mDifferentBlocksMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<float, ::BlockPos>>>                 mDifferentBlockList;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                            mSharedMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientChunkGenerationDifferenceData& operator=(ClientChunkGenerationDifferenceData const&);
-    ClientChunkGenerationDifferenceData(ClientChunkGenerationDifferenceData const&);
-    ClientChunkGenerationDifferenceData();
 };

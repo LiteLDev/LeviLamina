@@ -16,15 +16,9 @@ class StructurePoolBlockTagPredicateBlockTagMatch : public ::IStructurePoolBlock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc773f8;
-    ::ll::UntypedStorage<8, 8> mUnk3b60c0;
+    ::ll::TypedStorage<8, 8, ::Block const&>       mBlock;
+    ::ll::TypedStorage<8, 8, ::CompoundTag const&> mTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockTagPredicateBlockTagMatch& operator=(StructurePoolBlockTagPredicateBlockTagMatch const&);
-    StructurePoolBlockTagPredicateBlockTagMatch(StructurePoolBlockTagPredicateBlockTagMatch const&);
-    StructurePoolBlockTagPredicateBlockTagMatch();
 
 public:
     // virtual functions

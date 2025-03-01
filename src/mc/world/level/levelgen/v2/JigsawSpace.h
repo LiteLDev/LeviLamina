@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BoundingBox;
+// clang-format on
+
 namespace br::worldgen {
 
 struct JigsawSpace {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk262cb0;
-    ::ll::UntypedStorage<8, 24> mUnkce1057;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                mMySpace;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BoundingBox>> mChildrensSpace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawSpace& operator=(JigsawSpace const&);
-    JigsawSpace(JigsawSpace const&);
-    JigsawSpace();
 
 public:
     // member functions

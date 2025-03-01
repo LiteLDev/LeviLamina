@@ -5,6 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class SubChunkPos;
+namespace Bedrock::Threading { class Mutex; }
+// clang-format on
+
 class PlayerRenderChunkModificationLatencyTracker : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // PlayerRenderChunkModificationLatencyTracker inner types declare
@@ -29,6 +36,8 @@ public:
         TimeDelta();
     };
 
+    using TimeStamp = ::std::chrono::steady_clock::time_point;
+
     struct TimeMarker {
     public:
         // member variables
@@ -47,19 +56,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk8e7234;
-    ::ll::UntypedStorage<8, 8>  mUnkafcd6b;
-    ::ll::UntypedStorage<8, 24> mUnk18501a;
-    ::ll::UntypedStorage<4, 12> mUnk87d66a;
-    ::ll::UntypedStorage<4, 12> mUnk90fcd5;
-    ::ll::UntypedStorage<8, 80> mUnk425fc7;
+    ::ll::TypedStorage<1, 1, bool>                                                                      mTimingIsActive;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                                   mStartTime;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PlayerRenderChunkModificationLatencyTracker::TimeMarker>> mTimeMarkers;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                               mBlockToTrack;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos>               mRenderChunkPosToTrack;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerRenderChunkModificationLatencyTracker& operator=(PlayerRenderChunkModificationLatencyTracker const&);
-    PlayerRenderChunkModificationLatencyTracker(PlayerRenderChunkModificationLatencyTracker const&);
-    PlayerRenderChunkModificationLatencyTracker();
 
 public:
     // virtual functions

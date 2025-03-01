@@ -27,6 +27,7 @@ class StructurePoolBlockTagRule;
 struct ActorDefinitionIdentifier;
 struct StructurePoolElementSettings;
 struct StructureTemplateRegistrationContext;
+namespace Bedrock::Threading { class Mutex; }
 namespace SharedTypes::v1_21_50 { struct JigsawStructureMetadata; }
 namespace br::worldgen { struct StructureProcessor; }
 // clang-format on
@@ -40,6 +41,11 @@ public:
     // clang-format on
 
     // StructurePoolElement inner types define
+    using StructureProcessorPtr = ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>;
+
+    using StructureProcessorList =
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>;
+
     class ITemplate {
     public:
         // virtual functions
@@ -161,23 +167,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk642a51;
-    ::ll::UntypedStorage<8, 80> mUnkf7f964;
-    ::ll::UntypedStorage<8, 8>  mUnk2365b7;
-    ::ll::UntypedStorage<8, 56> mUnk4bb825;
-    ::ll::UntypedStorage<8, 8>  mUnkb873ee;
-    ::ll::UntypedStorage<8, 32> mUnkf5dc5e;
-    ::ll::UntypedStorage<8, 24> mUnkaeed49;
-    ::ll::UntypedStorage<8, 32> mUnkcf2d70;
-    ::ll::UntypedStorage<8, 16> mUnk2ea9b5;
-    ::ll::UntypedStorage<1, 1>  mUnk285188;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_50::JigsawStructureMetadata>> mMetadata;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                        mMetadataMutex;
+    ::ll::TypedStorage<8, 8, ::std::once_flag>                                                    mTemplateOnceFlag;
+    ::ll::TypedStorage<8, 56, ::std::optional<::StructurePoolElement::LazyTemplate>>              mTemplate;
+    ::ll::TypedStorage<8, 8, uint64>                                                              mMetadataKey;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                      mLocation;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>>                  mManager;
+    ::ll::TypedStorage<8, 32, ::StructurePoolElementSettings>                                     mSettings;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::gsl::not_null<::std::shared_ptr<
+            ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const>>>
+                                   mProcessors;
+    ::ll::TypedStorage<1, 1, bool> mValid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolElement& operator=(StructurePoolElement const&);
-    StructurePoolElement(StructurePoolElement const&);
-    StructurePoolElement();
 
 public:
     // virtual functions

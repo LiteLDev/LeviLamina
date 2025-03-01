@@ -10,18 +10,40 @@ namespace br::worldgen { struct StructureProcessor; }
 
 class JigsawStructureBlockRulesRegistry {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk566d5a;
-    ::ll::UntypedStorage<8, 64> mUnka73fcf;
-    ::ll::UntypedStorage<8, 64> mUnk9fc2c0;
-    // NOLINTEND
+    // JigsawStructureBlockRulesRegistry inner types define
+    using StructureProcessorPtr = ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>;
+
+    using StructureProcessorList =
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>;
+
+    using BlockRulesRegistryMap =
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>;
+
+    using BlockRulesLookupMap =
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>;
 
 public:
-    // prevent constructor by default
-    JigsawStructureBlockRulesRegistry& operator=(JigsawStructureBlockRulesRegistry const&);
-    JigsawStructureBlockRulesRegistry(JigsawStructureBlockRulesRegistry const&);
-    JigsawStructureBlockRulesRegistry();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>>
+        mBlockRulesRegistry;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>>
+        mBlockRuleLookupMap;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::gsl::not_null<::std::shared_ptr<
+                ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> const>>>>
+        mProcessors;
+    // NOLINTEND
 
 public:
     // member functions

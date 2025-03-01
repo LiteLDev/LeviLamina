@@ -80,7 +80,7 @@ public:
     virtual ::std::optional<::Vec3> getCursorHitPos() const /*override*/;
 
     // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
 
     // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
@@ -137,7 +137,7 @@ public:
 
     MCAPI ::std::optional<::Vec3> $getCursorHitPos() const;
 
-    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     MCFOLD bool $isSelectorExpansionAllowed() const;
 

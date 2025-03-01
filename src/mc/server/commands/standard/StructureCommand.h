@@ -4,12 +4,18 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/standard/StructureActionType.h"
+#include "mc/util/AnimationMode.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+#include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class CommandOrigin;
 class CommandOutput;
+class CommandPosition;
 class CommandRegistry;
 class DimensionHeightRange;
 // clang-format on
@@ -18,28 +24,22 @@ class StructureCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke9991e;
-    ::ll::UntypedStorage<1, 1>  mUnkc76918;
-    ::ll::UntypedStorage<1, 1>  mUnk13e44e;
-    ::ll::UntypedStorage<1, 1>  mUnk2c2649;
-    ::ll::UntypedStorage<1, 1>  mUnkcfa2b7;
-    ::ll::UntypedStorage<4, 4>  mUnk166000;
-    ::ll::UntypedStorage<8, 32> mUnk3a7673;
-    ::ll::UntypedStorage<8, 32> mUnk9e031b;
-    ::ll::UntypedStorage<4, 16> mUnk664ea0;
-    ::ll::UntypedStorage<4, 16> mUnkad9d43;
-    ::ll::UntypedStorage<4, 4>  mUnk2b06ac;
-    ::ll::UntypedStorage<1, 1>  mUnkf37440;
-    ::ll::UntypedStorage<1, 1>  mUnk731542;
-    ::ll::UntypedStorage<1, 1>  mUnkfffaf8;
-    ::ll::UntypedStorage<1, 1>  mUnk175227;
+    ::ll::TypedStorage<4, 4, ::StructureActionType>       mAction;
+    ::ll::TypedStorage<1, 1, ::StructureRedstoneSaveMode> mSaveMode;
+    ::ll::TypedStorage<1, 1, ::Rotation>                  mRotation;
+    ::ll::TypedStorage<1, 1, ::Mirror>                    mMirror;
+    ::ll::TypedStorage<1, 1, ::AnimationMode>             mAnimationMode;
+    ::ll::TypedStorage<4, 4, float>                       mAnimationTimeSeconds;
+    ::ll::TypedStorage<8, 32, ::std::string>              mName;
+    ::ll::TypedStorage<8, 32, ::std::string>              mSeed;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>          mFrom;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>          mTo;
+    ::ll::TypedStorage<4, 4, float>                       mIntegrity;
+    ::ll::TypedStorage<1, 1, bool>                        mSeedSpecified;
+    ::ll::TypedStorage<1, 1, bool>                        mIncludeEntities;
+    ::ll::TypedStorage<1, 1, bool>                        mIncludeBlocks;
+    ::ll::TypedStorage<1, 1, bool>                        mWaterlogged;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureCommand& operator=(StructureCommand const&);
-    StructureCommand(StructureCommand const&);
-    StructureCommand();
 
 public:
     // virtual functions

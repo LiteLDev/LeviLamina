@@ -9,22 +9,17 @@ class ChunkSource;
 class Dimension;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class ChunkTickRangeManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkaf70ed;
-    ::ll::UntypedStorage<4, 4>  mUnked1b1f;
-    ::ll::UntypedStorage<4, 4>  mUnkbfc781;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkLoaded;
+    ::ll::TypedStorage<4, 4, uint>                             mChunkTickRange;
+    ::ll::TypedStorage<4, 4, uint>                             mMaxSimRadiusInChunks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkTickRangeManager& operator=(ChunkTickRangeManager const&);
-    ChunkTickRangeManager(ChunkTickRangeManager const&);
-    ChunkTickRangeManager();
 
 public:
     // member functions

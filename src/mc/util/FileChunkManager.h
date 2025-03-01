@@ -2,25 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/MovePriorityQueue.h"
+
+// auto generated forward declare list
+// clang-format off
+struct FileChunk;
+struct FileChunkInfo;
+// clang-format on
+
 class FileChunkManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk75a1ec;
-    ::ll::UntypedStorage<4, 4>  mUnk14ab71;
-    ::ll::UntypedStorage<8, 8>  mUnk357f73;
-    ::ll::UntypedStorage<8, 8>  mUnk28283b;
-    ::ll::UntypedStorage<8, 8>  mUnkf83456;
-    ::ll::UntypedStorage<8, 8>  mUnka2a2bc;
-    ::ll::UntypedStorage<8, 24> mUnkac2dc4;
-    ::ll::UntypedStorage<8, 24> mUnk29e33c;
+    ::ll::TypedStorage<8, 8, uint64>                                                      mTotalSize;
+    ::ll::TypedStorage<4, 4, uint>                                                        mChunkSize;
+    ::ll::TypedStorage<8, 8, uint64>                                                      mTotalNbChunks;
+    ::ll::TypedStorage<8, 8, uint64>                                                      mRequestedChunks;
+    ::ll::TypedStorage<8, 8, uint64>                                                      mReceivedChunks;
+    ::ll::TypedStorage<8, 8, uint64>                                                      mWrittenChunks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FileChunkInfo>>                             mChunkInfo;
+    ::ll::TypedStorage<8, 24, ::MovePriorityQueue<::FileChunk, ::std::less<::FileChunk>>> mChunkQueue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FileChunkManager& operator=(FileChunkManager const&);
-    FileChunkManager(FileChunkManager const&);
-    FileChunkManager();
 
 public:
     // member functions

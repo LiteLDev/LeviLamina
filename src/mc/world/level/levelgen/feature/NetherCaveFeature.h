@@ -52,19 +52,19 @@ public:
 
     // vIndex: 5
     virtual void addTunnel(
-        ::IBlockWorldGenAPI&                                                target,
+        ::IBlockWorldGenAPI&                                                blocks,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
-        ::Random&                                                           random,
+        ::Random&                                                           _random,
         ::ChunkPos const&                                                   chunkPos,
         ::Vec3 const&                                                       startPos,
         float                                                               thickness,
-        float                                                               horizontalRotation,
-        float                                                               verticalRotation,
+        float                                                               yRot,
+        float                                                               xRot,
         int                                                                 step,
         int                                                                 dist,
         float                                                               yScale,
         ::RenderParams&                                                     renderParams,
-        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::CaveFeatureUtils::CarvingParameters const&                        carveValues,
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const /*override*/;
 
@@ -105,19 +105,19 @@ public:
     ) const;
 
     MCAPI void $addTunnel(
-        ::IBlockWorldGenAPI&                                                target,
+        ::IBlockWorldGenAPI&                                                blocks,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
-        ::Random&                                                           random,
+        ::Random&                                                           _random,
         ::ChunkPos const&                                                   chunkPos,
         ::Vec3 const&                                                       startPos,
         float                                                               thickness,
-        float                                                               horizontalRotation,
-        float                                                               verticalRotation,
+        float                                                               yRot,
+        float                                                               xRot,
         int                                                                 step,
         int                                                                 dist,
         float                                                               yScale,
         ::RenderParams&                                                     renderParams,
-        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::CaveFeatureUtils::CarvingParameters const&                        carveValues,
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 

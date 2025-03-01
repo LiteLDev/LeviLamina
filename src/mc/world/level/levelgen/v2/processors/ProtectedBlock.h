@@ -22,14 +22,8 @@ class ProtectedBlock : public ::br::worldgen::StructureProcessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk7ddcf8;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCannotReplace;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ProtectedBlock& operator=(ProtectedBlock const&);
-    ProtectedBlock(ProtectedBlock const&);
-    ProtectedBlock();
 
 public:
     // virtual functions

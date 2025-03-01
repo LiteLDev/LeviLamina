@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+// clang-format on
+
 struct ActorChunkTransferEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3a409d;
-    ::ll::UntypedStorage<8, 8> mUnk45f558;
+    ::ll::TypedStorage<8, 8, ::ChunkPos> mOldChunkPos;
+    ::ll::TypedStorage<8, 8, ::ChunkPos> mNewChunkPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorChunkTransferEntry& operator=(ActorChunkTransferEntry const&);
-    ActorChunkTransferEntry(ActorChunkTransferEntry const&);
-    ActorChunkTransferEntry();
 };

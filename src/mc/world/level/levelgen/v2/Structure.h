@@ -2,11 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/spawn_category/Type.h"
+#include "mc/world/level/levelgen/v2/generation_step/Type.h"
+#include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
+
 // auto generated forward declare list
 // clang-format off
+class HashedString;
+class PoolAliasBinding;
 namespace br::worldgen { class GenerationStub; }
 namespace br::worldgen { class StructureInstance; }
 namespace br::worldgen { struct GenerationContext; }
+namespace br::worldgen { struct StructureSpawnOverride; }
 // clang-format on
 
 namespace br::worldgen {
@@ -15,19 +23,19 @@ struct Structure {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk20a705;
-    ::ll::UntypedStorage<8, 24> mUnk61e6e0;
-    ::ll::UntypedStorage<8, 32> mUnk25e7b0;
-    ::ll::UntypedStorage<8, 64> mUnkfdb371;
-    ::ll::UntypedStorage<1, 1>  mUnkc45736;
-    ::ll::UntypedStorage<8, 48> mUnk38a2bb;
-    ::ll::UntypedStorage<8, 24> mUnk2df662;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::TerrainAdjustment::Type> mAdjustment;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                  mBiomes;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mKey;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>>
+                                                                                    mMobs;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::GenerationStep::Type>                  mStep;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                       mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PoolAliasBinding>>> mPoolAliases;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     Structure& operator=(Structure const&);
-    Structure();
 
 public:
     // virtual functions

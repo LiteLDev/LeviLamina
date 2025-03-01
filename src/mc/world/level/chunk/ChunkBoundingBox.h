@@ -2,20 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BoundingBox;
+// clang-format on
+
 namespace br {
 
 struct ChunkBoundingBox {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk98c483;
+    ::ll::TypedStorage<4, 24, ::BoundingBox> box;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkBoundingBox& operator=(ChunkBoundingBox const&);
-    ChunkBoundingBox(ChunkBoundingBox const&);
-    ChunkBoundingBox();
 };
 
 } // namespace br

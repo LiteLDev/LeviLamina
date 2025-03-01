@@ -7,6 +7,7 @@
 class BlockLegacy;
 class ChunkLocalHeight;
 class LevelChunk;
+class PerlinSimplexNoise;
 struct OverworldBlendRules;
 // clang-format on
 
@@ -30,15 +31,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnkfa7be9;
-    ::ll::UntypedStorage<4, 16>   mUnk138ee8;
-    ::ll::UntypedStorage<4, 1024> mUnk7ea5bf;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mConversionBlendNoise;
+    ::ll::TypedStorage<4, 16, float[2][2]>                            mInterpCorners;
+    ::ll::TypedStorage<4, 1024, float[16][16]>                        mInterpTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConsoleChunkBlender& operator=(ConsoleChunkBlender const&);
-    ConsoleChunkBlender(ConsoleChunkBlender const&);
 
 public:
     // member functions

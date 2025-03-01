@@ -22,10 +22,55 @@ namespace br {
 
 class LevelChunkDataRegistry {
 public:
+    // LevelChunkDataRegistry inner types define
+    using Entity = ::br::ChunkEntity;
+
+    using StorageType = ::br::detail::StorageTypeHelper<
+        ::br::StructureType,
+        ::br::ChunkBoundingBox,
+        ::br::StructureKey,
+        ::br::FullStructureBoundingBox,
+        ::br::DynamicSpawnArea,
+        ::br::StaticSpawnArea,
+        ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88>  mUnk558de2;
-    ::ll::UntypedStorage<8, 680> mUnk6e8c47;
+    ::ll::TypedStorage<
+        8,
+        88,
+        ::entt::basic_storage<::br::ChunkEntity, ::br::ChunkEntity, ::std::allocator<::br::ChunkEntity>, void>>
+        mEntities;
+    ::ll::TypedStorage<
+        8,
+        680,
+        ::std::tuple<
+            ::entt::basic_storage<::br::StructureType, ::br::ChunkEntity, ::std::allocator<::br::StructureType>, void>,
+            ::entt::basic_storage<
+                ::br::ChunkBoundingBox,
+                ::br::ChunkEntity,
+                ::std::allocator<::br::ChunkBoundingBox>,
+                void>,
+            ::entt::basic_storage<::br::StructureKey, ::br::ChunkEntity, ::std::allocator<::br::StructureKey>, void>,
+            ::entt::basic_storage<
+                ::br::FullStructureBoundingBox,
+                ::br::ChunkEntity,
+                ::std::allocator<::br::FullStructureBoundingBox>,
+                void>,
+            ::entt::basic_storage<
+                ::br::DynamicSpawnArea,
+                ::br::ChunkEntity,
+                ::std::allocator<::br::DynamicSpawnArea>,
+                void>,
+            ::entt::
+                basic_storage<::br::StaticSpawnArea, ::br::ChunkEntity, ::std::allocator<::br::StaticSpawnArea>, void>,
+            ::entt::basic_storage<
+                ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>,
+                ::br::ChunkEntity,
+                ::std::allocator<::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>>,
+                void>>>
+        mData;
     // NOLINTEND
 
 public:

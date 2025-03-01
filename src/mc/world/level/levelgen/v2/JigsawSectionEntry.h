@@ -2,25 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/Rotation.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BoundingBox;
+class StructurePoolElement;
+namespace br::worldgen { struct JigsawJunction; }
+// clang-format on
+
 namespace br::worldgen {
 
 struct JigsawSectionEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk56e4ae;
-    ::ll::UntypedStorage<8, 8> mUnk317a08;
-    ::ll::UntypedStorage<8, 8> mUnk79100b;
-    ::ll::UntypedStorage<8, 8> mUnk5f15e9;
-    ::ll::UntypedStorage<8, 8> mUnk64b3e0;
-    ::ll::UntypedStorage<8, 8> mUnke736bb;
+    ::ll::TypedStorage<8, 8, ::StructurePoolElement const*>                        mElement;
+    ::ll::TypedStorage<8, 8, int const&>                                           mGroundOffset;
+    ::ll::TypedStorage<8, 8, ::Rotation const&>                                    mRot;
+    ::ll::TypedStorage<8, 8, ::BlockPos const&>                                    mPos;
+    ::ll::TypedStorage<8, 8, ::std::vector<::br::worldgen::JigsawJunction> const&> mJunctions;
+    ::ll::TypedStorage<8, 8, ::BoundingBox const&>                                 mBox;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawSectionEntry& operator=(JigsawSectionEntry const&);
-    JigsawSectionEntry(JigsawSectionEntry const&);
-    JigsawSectionEntry();
 };
 
 } // namespace br::worldgen

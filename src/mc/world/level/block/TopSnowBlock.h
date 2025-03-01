@@ -108,7 +108,7 @@ public:
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
 
     // vIndex: 98
-    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const
+    virtual bool canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const
         /*override*/;
 
     // vIndex: 97
@@ -226,7 +226,7 @@ public:
 
     MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& item) const;
+    MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
 
     MCAPI bool $canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos) const;
 

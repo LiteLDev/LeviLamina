@@ -13,6 +13,9 @@ class BlockPos;
 class BlockSource;
 class CompoundTag;
 class JigsawStructureBlockInfo;
+class LegacyStructureActorInfo;
+class LegacyStructureBlockInfo;
+class LegacyStructureBlockPalette;
 class LegacyStructureSettings;
 class Random;
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
@@ -22,18 +25,13 @@ class LegacyStructureTemplate : public ::ILegacyStructureTemplate, public ::IStr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk467b1d;
-    ::ll::UntypedStorage<4, 12> mUnk2575f4;
-    ::ll::UntypedStorage<8, 64> mUnk5003c3;
-    ::ll::UntypedStorage<8, 64> mUnk74807d;
-    ::ll::UntypedStorage<8, 24> mUnk70fc6f;
-    ::ll::UntypedStorage<8, 24> mUnk2fd089;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mAuthor;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                mSize;
+    ::ll::TypedStorage<8, 64, ::LegacyStructureBlockPalette>             mPalette;
+    ::ll::TypedStorage<8, 64, ::LegacyStructureBlockPalette>             mExtraBlockPalette;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LegacyStructureBlockInfo>> mBlockInfo;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LegacyStructureActorInfo>> mEntityInfo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyStructureTemplate& operator=(LegacyStructureTemplate const&);
-    LegacyStructureTemplate(LegacyStructureTemplate const&);
 
 public:
     // virtual functions

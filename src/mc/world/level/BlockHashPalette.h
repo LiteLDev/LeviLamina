@@ -30,7 +30,7 @@ public:
     virtual ::BlockPalette::PaletteType getPaletteType() /*override*/;
 
     // vIndex: 2
-    virtual void appendBlock(::Block const& block) /*override*/;
+    virtual void appendBlock(::Block const& blockState) /*override*/;
 
     // vIndex: 3
     virtual ::Block const& getBlock(uint const& networkId) const /*override*/;
@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::BlockPalette::PaletteType $getPaletteType();
 
-    MCAPI void $appendBlock(::Block const& block);
+    MCAPI void $appendBlock(::Block const& blockState);
 
     MCAPI ::Block const& $getBlock(uint const& networkId) const;
 

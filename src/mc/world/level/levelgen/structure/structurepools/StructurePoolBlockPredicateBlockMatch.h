@@ -10,6 +10,7 @@
 // clang-format off
 class Block;
 class BlockPos;
+class HashedString;
 class Randomize;
 namespace Util { class XXHash; }
 // clang-format on
@@ -18,14 +19,8 @@ class StructurePoolBlockPredicateBlockMatch : public ::IStructurePoolBlockPredic
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4d1c55;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString> const> mBlockMatchings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateBlockMatch& operator=(StructurePoolBlockPredicateBlockMatch const&);
-    StructurePoolBlockPredicateBlockMatch(StructurePoolBlockPredicateBlockMatch const&);
-    StructurePoolBlockPredicateBlockMatch();
 
 public:
     // virtual functions

@@ -8,15 +8,9 @@ struct Prop {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka58413;
-    ::ll::UntypedStorage<8, 16> mUnkbf1845;
+    ::ll::TypedStorage<8, 16, ::std::string_view> id;
+    ::ll::TypedStorage<8, 16, ::std::string_view> value;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Prop& operator=(Prop const&);
-    Prop(Prop const&);
-    Prop();
 };
 
 } // namespace br::worldgen::processors::JigsawReplacementHelpers

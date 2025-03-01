@@ -23,6 +23,11 @@ namespace br::worldgen { struct StructureSet; }
 
 struct JigsawStructureParser {
 public:
+    // JigsawStructureParser inner types define
+    using StructureProcessorList =
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>;
+
+public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::std::vector<::br::worldgen::JigsawStructure> prepareJigsawDefinitionData(

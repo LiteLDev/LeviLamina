@@ -17,15 +17,9 @@ class StructurePoolBlockPredicateStateMatchRandom : public ::IStructurePoolBlock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7256ee;
-    ::ll::UntypedStorage<4, 4> mUnkbc8514;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
+    ::ll::TypedStorage<4, 4, float const>    mProbability;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateStateMatchRandom& operator=(StructurePoolBlockPredicateStateMatchRandom const&);
-    StructurePoolBlockPredicateStateMatchRandom(StructurePoolBlockPredicateStateMatchRandom const&);
-    StructurePoolBlockPredicateStateMatchRandom();
 
 public:
     // virtual functions

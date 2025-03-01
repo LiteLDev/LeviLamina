@@ -14,16 +14,10 @@ struct PlayerItemInUse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnkafa66a;
-    ::ll::UntypedStorage<8, 152> mUnkf0096a;
-    ::ll::UntypedStorage<4, 8>   mUnkf50329;
+    ::ll::TypedStorage<1, 1, bool>                      mShouldSendInteractionGameEvents;
+    ::ll::TypedStorage<8, 152, ::ItemStack>             mItem;
+    ::ll::TypedStorage<4, 8, ::PlayerInventorySlotData> mSlot;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerItemInUse& operator=(PlayerItemInUse const&);
-    PlayerItemInUse(PlayerItemInUse const&);
-    PlayerItemInUse();
 
 public:
     // member functions

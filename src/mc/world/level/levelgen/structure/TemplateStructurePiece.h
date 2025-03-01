@@ -10,6 +10,8 @@
 class BlockPos;
 class BlockSource;
 class BoundingBox;
+class LegacyStructureSettings;
+class LegacyStructureTemplate;
 class Random;
 // clang-format on
 
@@ -17,17 +19,11 @@ class TemplateStructurePiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkd29f6b;
-    ::ll::UntypedStorage<8, 192> mUnkfd6081;
-    ::ll::UntypedStorage<4, 12>  mUnkf95a50;
-    ::ll::UntypedStorage<1, 1>   mUnk678ed7;
+    ::ll::TypedStorage<8, 8, ::LegacyStructureTemplate*>  mTemplate;
+    ::ll::TypedStorage<8, 192, ::LegacyStructureSettings> mSettings;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                 mTemplatePosition;
+    ::ll::TypedStorage<1, 1, bool>                        mPostProcessed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TemplateStructurePiece& operator=(TemplateStructurePiece const&);
-    TemplateStructurePiece(TemplateStructurePiece const&);
-    TemplateStructurePiece();
 
 public:
     // virtual functions

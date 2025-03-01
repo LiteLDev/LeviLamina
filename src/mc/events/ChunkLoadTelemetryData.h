@@ -63,20 +63,16 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkad3a61;
-    ::ll::UntypedStorage<4, 12> mUnk7e8f63;
-    ::ll::UntypedStorage<4, 12> mUnke520d6;
-    ::ll::UntypedStorage<4, 12> mUnk22eb06;
-    ::ll::UntypedStorage<4, 12> mUnkdcf7fe;
-    ::ll::UntypedStorage<4, 12> mUnk3c1e83;
-    ::ll::UntypedStorage<4, 12> mUnk1ff4d8;
+    ::ll::TypedStorage<4, 4, uint>                                          mServerSimDistance;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoading;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoadingInsideTickRange;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoadingOutsideTickRange;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading>
+        mServerChunkLoadingRequestedInsideTickRangeLoadedOutsideTickRange;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading>
+        mServerChunkLoadingRequestedOutsideTickRangeLoadedInsideTickRange;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ClientSubChunkCache> mClientSubChunkCache;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkLoadTelemetryData& operator=(ChunkLoadTelemetryData const&);
-    ChunkLoadTelemetryData(ChunkLoadTelemetryData const&);
-    ChunkLoadTelemetryData();
 
 public:
     // member functions

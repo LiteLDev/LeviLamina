@@ -14,6 +14,7 @@ class BlockSource;
 class HashedString;
 class IRandom;
 class Randomize;
+namespace Bedrock::Threading { class Mutex; }
 namespace Util { class XXHash; }
 // clang-format on
 
@@ -21,18 +22,11 @@ class StructurePoolBlockPredicateCappedRandomBlockReplacement : public ::IStruct
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk97713f;
-    ::ll::UntypedStorage<8, 16> mUnk122d19;
-    ::ll::UntypedStorage<8, 24> mUnk786fce;
-    ::ll::UntypedStorage<8, 80> mUnk962793;
+    ::ll::TypedStorage<4, 4, uint const>                                        mMaximumAmount;
+    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::HashedString> const> mBlockMappings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                        mCandidatePositions;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mCandidatePositionsLock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateCappedRandomBlockReplacement&
-    operator=(StructurePoolBlockPredicateCappedRandomBlockReplacement const&);
-    StructurePoolBlockPredicateCappedRandomBlockReplacement(StructurePoolBlockPredicateCappedRandomBlockReplacement const&);
-    StructurePoolBlockPredicateCappedRandomBlockReplacement();
 
 public:
     // virtual functions

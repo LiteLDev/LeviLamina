@@ -10,6 +10,8 @@
 // clang-format off
 class BlockPos;
 class IPositionalRandomFactory;
+class SimpleRandom;
+class XoroshiroRandom;
 struct Seed128Bit;
 // clang-format on
 
@@ -19,14 +21,8 @@ struct WorldGenRandom : public ::IRandom, public ::IRandomSeeded {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnka1fd0c;
+    ::ll::TypedStorage<8, 56, ::std::variant<::SimpleRandom, ::XoroshiroRandom>> mSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldGenRandom& operator=(WorldGenRandom const&);
-    WorldGenRandom(WorldGenRandom const&);
-    WorldGenRandom();
 
 public:
     // virtual functions

@@ -13,6 +13,7 @@
 class BlockPos;
 class ChunkSource;
 class CompoundTag;
+class EndDragonFight;
 class HashedString;
 class ILevel;
 class LevelChunk;
@@ -26,14 +27,8 @@ class TheEndDimension : public ::Dimension {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk251623;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndDragonFight>> mDragonFight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TheEndDimension& operator=(TheEndDimension const&);
-    TheEndDimension(TheEndDimension const&);
-    TheEndDimension();
 
 public:
     // virtual functions

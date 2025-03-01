@@ -3,28 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/Direction.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class IStructureConstraint;
+class StructureTemplate;
 // clang-format on
 
 class StructureTemplateFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk391576;
-    ::ll::UntypedStorage<4, 4>  mUnk325b16;
-    ::ll::UntypedStorage<1, 1>  mUnk42090f;
-    ::ll::UntypedStorage<8, 24> mUnk6cb61d;
+    ::ll::TypedStorage<8, 8, ::StructureTemplate*>                                      mStructure;
+    ::ll::TypedStorage<4, 4, int>                                                       mAdjustmentRadius;
+    ::ll::TypedStorage<1, 1, ::Direction::Type>                                         mFaceDirection;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::IStructureConstraint>>> mConstraints;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureTemplateFeature& operator=(StructureTemplateFeature const&);
-    StructureTemplateFeature(StructureTemplateFeature const&);
-    StructureTemplateFeature();
 
 public:
     // virtual functions

@@ -11,17 +11,15 @@ namespace br::worldgen {
 
 class VerticalAnchor {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkebbc0b;
-    ::ll::UntypedStorage<8, 8> mUnk1d0a64;
-    // NOLINTEND
+    // VerticalAnchor inner types define
+    using AnchorHandler = int (*)(::br::worldgen::WorldGenContext const&, int);
 
 public:
-    // prevent constructor by default
-    VerticalAnchor& operator=(VerticalAnchor const&);
-    VerticalAnchor(VerticalAnchor const&);
-    VerticalAnchor();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>                                                  mValue;
+    ::ll::TypedStorage<8, 8, int (*)(::br::worldgen::WorldGenContext const&, int)> mHandler;
+    // NOLINTEND
 
 public:
     // member functions

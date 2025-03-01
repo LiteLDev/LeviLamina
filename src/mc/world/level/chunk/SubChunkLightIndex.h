@@ -8,25 +8,19 @@ public:
     // NOLINTBEGIN
     union {
         struct {
-            uint mUnk668c59 : 4;
-            uint mUnk4f17c5 : 2;
-            uint mUnk323870 : 4;
-            uint mUnkcd69f1 : 2;
-            uint mUnkc3724e : 4;
-            uint mUnk350978 : 2;
-            uint mUnka01ef0 : 8;
+            uint mSubChunkBlockY : 4;
+            uint mChunkIndexY    : 2;
+            uint mSubChunkBlockZ : 4;
+            uint mChunkIndexZ    : 2;
+            uint mSubChunkBlockX : 4;
+            uint mChunkIndexX    : 2;
+            uint mPad            : 8;
         };
         struct {
-            uint mUnk7339ef : 18;
-            uint mUnka4f1b8 : 14;
+            uint mToDoIndex : 18;
+            uint mPad2      : 14;
         };
-        ::ll::UntypedStorage<4, 4> mUnk61bda9;
+        ::ll::TypedStorage<4, 4, uint> mData;
     };
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkLightIndex& operator=(SubChunkLightIndex const&);
-    SubChunkLightIndex(SubChunkLightIndex const&);
-    SubChunkLightIndex();
 };

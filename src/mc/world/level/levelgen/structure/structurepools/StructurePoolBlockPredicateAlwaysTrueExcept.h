@@ -18,15 +18,9 @@ class StructurePoolBlockPredicateAlwaysTrueExcept : public ::IStructurePoolBlock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb98d68;
-    ::ll::UntypedStorage<4, 4>  mUnk84c976;
+    ::ll::TypedStorage<8, 16, ::std::set<::Block const*>> mCannotReplace;
+    ::ll::TypedStorage<4, 4, float const>                 mProbability;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateAlwaysTrueExcept& operator=(StructurePoolBlockPredicateAlwaysTrueExcept const&);
-    StructurePoolBlockPredicateAlwaysTrueExcept(StructurePoolBlockPredicateAlwaysTrueExcept const&);
-    StructurePoolBlockPredicateAlwaysTrueExcept();
 
 public:
     // virtual functions

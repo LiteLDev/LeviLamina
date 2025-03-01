@@ -18,14 +18,8 @@ struct AppendLoot : public ::br::worldgen::processors::BlockEntity::ModifierType
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8ef1dd;
+    ::ll::TypedStorage<8, 32, ::std::string> mLootTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AppendLoot& operator=(AppendLoot const&);
-    AppendLoot(AppendLoot const&);
-    AppendLoot();
 
 public:
     // virtual functions

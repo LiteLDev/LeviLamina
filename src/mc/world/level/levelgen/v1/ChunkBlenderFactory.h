@@ -7,6 +7,7 @@
 class BlendingData;
 class ChunkBlender;
 class ChunkPos;
+class Dimension;
 namespace ChunkBlenderUtil { struct AttenuationData; }
 // clang-format on
 
@@ -56,19 +57,16 @@ public:
         BlendCheckEntry();
     };
 
+    using ChunkIntermediateAttenuationData =
+        ::std::vector<::std::array<::ChunkBlenderFactory::IntermediateAttenuationData, 4>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkd14be7;
-    ::ll::UntypedStorage<8, 8>  mUnkede22b;
-    ::ll::UntypedStorage<8, 8>  mUnk6e0b36;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::shared_ptr<::ChunkBlender>>> mAttenuatorCache;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mAttenuatorSharedMutex;
+    ::ll::TypedStorage<8, 8, ::Dimension&>        mDimension;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkBlenderFactory& operator=(ChunkBlenderFactory const&);
-    ChunkBlenderFactory(ChunkBlenderFactory const&);
-    ChunkBlenderFactory();
 
 public:
     // member functions

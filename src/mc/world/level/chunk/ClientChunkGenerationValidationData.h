@@ -7,51 +7,50 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPalette;
 class ChunkPos;
 class ChunkSource;
+class SubChunkPos;
+struct Bounds;
+struct ClientChunkGenerationDifferenceData;
+namespace GameLightingChecker { struct CheckAreaForLightingResults; }
 // clang-format on
 
 struct ClientChunkGenerationValidationData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkb6b9bf;
-    ::ll::UntypedStorage<1, 1>  mUnk4be317;
-    ::ll::UntypedStorage<8, 64> mUnk71bef6;
-    ::ll::UntypedStorage<1, 1>  mUnk331d2d;
-    ::ll::UntypedStorage<8, 64> mUnka215c2;
-    ::ll::UntypedStorage<8, 8>  mUnk681ba0;
-    ::ll::UntypedStorage<8, 16> mUnk6aa332;
-    ::ll::UntypedStorage<8, 16> mUnk79a67d;
-    ::ll::UntypedStorage<4, 48> mUnkca0f1b;
-    ::ll::UntypedStorage<4, 4>  mUnk89db48;
-    ::ll::UntypedStorage<1, 1>  mUnkba7009;
-    ::ll::UntypedStorage<1, 1>  mUnkaa2148;
-    ::ll::UntypedStorage<1, 1>  mUnkd49d46;
-    ::ll::UntypedStorage<2, 2>  mUnk831eb3;
-    ::ll::UntypedStorage<8, 8>  mUnke504b8;
-    ::ll::UntypedStorage<8, 8>  mUnk1db7ab;
-    ::ll::UntypedStorage<1, 1>  mUnk3e7b50;
-    ::ll::UntypedStorage<1, 1>  mUnkdd4995;
-    ::ll::UntypedStorage<1, 1>  mUnk8d7bf0;
-    ::ll::UntypedStorage<1, 1>  mUnk9a10c5;
-    ::ll::UntypedStorage<1, 1>  mUnkadba9e;
-    ::ll::UntypedStorage<4, 4>  mUnk476b36;
-    ::ll::UntypedStorage<8, 40> mUnkdfc828;
-    ::ll::UntypedStorage<8, 40> mUnk728d9d;
-    ::ll::UntypedStorage<8, 8>  mUnk1fa013;
-    ::ll::UntypedStorage<1, 1>  mUnka79a81;
-    ::ll::UntypedStorage<1, 1>  mUnkbb8a1f;
-    ::ll::UntypedStorage<4, 4>  mUnkab8adb;
-    ::ll::UntypedStorage<8, 24> mUnkef82dd;
-    ::ll::UntypedStorage<8, 8>  mUnkd84d6b;
+    ::ll::TypedStorage<1, 1, bool>                                   mDeterminismCollectData;
+    ::ll::TypedStorage<1, 1, bool>                                   mDeterminismShowDifferentBlockLocations;
+    ::ll::TypedStorage<8, 64, ::ClientChunkGenerationDifferenceData> mDeterminismData;
+    ::ll::TypedStorage<1, 1, bool>                                   mServerClientShowDifferentBlockLocation;
+    ::ll::TypedStorage<8, 64, ::ClientChunkGenerationDifferenceData> mServerClientData;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                             mLastChunkPosChecked;
+    ::ll::TypedStorage<8, 16, ::std::map<::ChunkPos, ::std::vector<::std::string>>> mServerSerializedChunks;
+    ::ll::TypedStorage<8, 16, ::std::map<::ChunkPos, ::std::vector<::std::string>>> mClientSerializedChunks;
+    ::ll::TypedStorage<4, 48, ::Bounds>                                             mChunksToQuery;
+    ::ll::TypedStorage<4, 4, int>                                                   mChunksToQueryRadius;
+    ::ll::TypedStorage<1, 1, bool>                                                  mRunningQuery;
+    ::ll::TypedStorage<1, 1, bool>                                                  mServerRespondedToQuery;
+    ::ll::TypedStorage<1, 1, bool>                                                  mClientRespondedToQuery;
+    ::ll::TypedStorage<2, 2, short>                                                 mDimensionBottomY;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                                            mLastClientPlayerPosition;
+    ::ll::TypedStorage<8, 8, ::BlockPalette*>                                       mServerGlobalBlockPalette;
+    ::ll::TypedStorage<1, 1, bool>                                                  mRunLightingCheck;
+    ::ll::TypedStorage<1, 1, bool>                                                  mServerCompletedLightingCheck;
+    ::ll::TypedStorage<1, 1, bool>                                                  mClientCompletedLightingCheck;
+    ::ll::TypedStorage<1, 1, bool>                                                  mLightingShowWrongPositionsServer;
+    ::ll::TypedStorage<1, 1, bool>                                                  mLightingShowWrongPositionsClient;
+    ::ll::TypedStorage<4, 4, int>                                                   mLightingBoundingBoxHalfEdgeSize;
+    ::ll::TypedStorage<8, 40, ::GameLightingChecker::CheckAreaForLightingResults>   mServerLightingResults;
+    ::ll::TypedStorage<8, 40, ::GameLightingChecker::CheckAreaForLightingResults>   mClientLightingResults;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                   mLightingCheckMutex;
+    ::ll::TypedStorage<1, 1, bool>                                                  mTrackRenderedSubChunksRebuilds;
+    ::ll::TypedStorage<1, 1, bool>                                                  mShowRenderedSubChunksNotRebuilt;
+    ::ll::TypedStorage<4, 4, int>                                                   mNumberOfRenderChunksChecked;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPos>> mSubChunksNotRebuiltSinceLastSubChunkRequest;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>           mRenderChunkCheckMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClientChunkGenerationValidationData& operator=(ClientChunkGenerationValidationData const&);
-    ClientChunkGenerationValidationData(ClientChunkGenerationValidationData const&);
-    ClientChunkGenerationValidationData();
 
 public:
     // virtual functions

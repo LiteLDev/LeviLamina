@@ -16,14 +16,8 @@ class NetworkChunkSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb979af;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>>> mChunkMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkChunkSource& operator=(NetworkChunkSource const&);
-    NetworkChunkSource(NetworkChunkSource const&);
-    NetworkChunkSource();
 
 public:
     // virtual functions

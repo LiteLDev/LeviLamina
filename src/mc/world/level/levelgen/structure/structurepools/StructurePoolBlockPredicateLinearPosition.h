@@ -18,17 +18,11 @@ class StructurePoolBlockPredicateLinearPosition : public ::IStructurePoolBlockPr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbb7f59;
-    ::ll::UntypedStorage<4, 4> mUnk314ba6;
-    ::ll::UntypedStorage<4, 4> mUnk9d7f9d;
-    ::ll::UntypedStorage<4, 4> mUnk14f8fd;
+    ::ll::TypedStorage<4, 4, float const> mMinChance;
+    ::ll::TypedStorage<4, 4, float const> mMaxChance;
+    ::ll::TypedStorage<4, 4, int const>   mMinDist;
+    ::ll::TypedStorage<4, 4, int const>   mMaxDist;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateLinearPosition& operator=(StructurePoolBlockPredicateLinearPosition const&);
-    StructurePoolBlockPredicateLinearPosition(StructurePoolBlockPredicateLinearPosition const&);
-    StructurePoolBlockPredicateLinearPosition();
 
 public:
     // virtual functions

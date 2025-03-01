@@ -13,6 +13,15 @@ struct FileInfo;
 
 class IFileChunkDownloader {
 public:
+    // IFileChunkDownloader inner types define
+    using WriteCompleteCallback = ::std::function<void(uint64, bool)>;
+
+    using DataCallback =
+        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>;
+
+    using EndCallback = ::std::function<void(::DownloaderState)>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

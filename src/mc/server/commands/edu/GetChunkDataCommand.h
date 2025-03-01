@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -10,23 +11,18 @@
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
+class Dimension;
 // clang-format on
 
 class GetChunkDataCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk86937b;
-    ::ll::UntypedStorage<4, 4> mUnk457507;
-    ::ll::UntypedStorage<4, 4> mUnk5ad02b;
-    ::ll::UntypedStorage<4, 4> mUnkea6e85;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimension;
+    ::ll::TypedStorage<4, 4, int>             mChunkX;
+    ::ll::TypedStorage<4, 4, int>             mChunkZ;
+    ::ll::TypedStorage<4, 4, int>             mHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GetChunkDataCommand& operator=(GetChunkDataCommand const&);
-    GetChunkDataCommand(GetChunkDataCommand const&);
-    GetChunkDataCommand();
 
 public:
     // virtual functions

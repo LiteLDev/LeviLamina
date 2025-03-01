@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
 class BlendingData;
 class BlendingDataProvider;
 class ChunkKey;
@@ -23,6 +24,7 @@ class LevelChunk;
 class LevelChunkMetaDataDictionary;
 class LevelStorageWriteBatch;
 class Scheduler;
+class TaskGroup;
 struct ActorUnloadedChunkTransferEntry;
 struct LevelChunkFinalDeleter;
 struct PersistentBlendData;
@@ -60,26 +62,24 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk23d05c;
-    ::ll::UntypedStorage<8, 8>  mUnk9aabdc;
-    ::ll::UntypedStorage<8, 64> mUnkfb28da;
-    ::ll::UntypedStorage<8, 8>  mUnka245fa;
-    ::ll::UntypedStorage<8, 8>  mUnk8e797c;
-    ::ll::UntypedStorage<8, 8>  mUnk32375c;
-    ::ll::UntypedStorage<8, 24> mUnk52a125;
-    ::ll::UntypedStorage<8, 24> mUnkcd56a8;
-    ::ll::UntypedStorage<8, 64> mUnkb461fc;
-    ::ll::UntypedStorage<8, 64> mUnk7f47fd;
-    ::ll::UntypedStorage<1, 1>  mUnk62b104;
-    ::ll::UntypedStorage<8, 8>  mUnkbe4b51;
-    ::ll::UntypedStorage<8, 32> mUnk918728;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DBChunkStorageKey, ::DBChunkStorage::ChunkCacheStatus>>
+                                                  mHasChunkCache;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mHasChunkCacheSharedMutex;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::pair<bool, ::std::shared_ptr<::BlendingData>>>>
+                                                                                          mChunkBlendingDataCache;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                         mChunkBlendingDataSharedMutex;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                         mAttenuatorSharedMutex;
+    ::ll::TypedStorage<8, 8, ::DBStorage&>                                                mStorage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::LevelStorageWriteBatch>>> mBufferPool;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter>>> mDiscardBatch;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>> mLiveChunksBeingSaved;
+    ::ll::
+        TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter>>>
+                                                             mDiscardedWhileLiveSaved;
+    ::ll::TypedStorage<1, 1, bool>                           mBatch;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>> mIOTaskGroup;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>             mCurrentLevelVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DBChunkStorage& operator=(DBChunkStorage const&);
-    DBChunkStorage(DBChunkStorage const&);
-    DBChunkStorage();
 
 public:
     // virtual functions

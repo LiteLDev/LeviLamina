@@ -70,7 +70,7 @@ public:
     ) /*override*/;
 
     // vIndex: 27
-    virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
 
     // vIndex: 43
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
@@ -150,7 +150,7 @@ public:
 
     MCAPI ::std::string const& $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
-    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 

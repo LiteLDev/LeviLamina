@@ -14,16 +14,10 @@ struct ImportStructureMetaData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkcb5cf3;
-    ::ll::UntypedStorage<8, 64> mUnke94435;
-    ::ll::UntypedStorage<8, 64> mUnka6e306;
+    ::ll::TypedStorage<1, 1, bool>                                                             mIsDirty;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, bool>>                       mNewStructuresDirty;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructureTemplate const*>> mNewStructureTemplates;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ImportStructureMetaData& operator=(ImportStructureMetaData const&);
-    ImportStructureMetaData(ImportStructureMetaData const&);
-    ImportStructureMetaData();
 
 public:
     // virtual functions

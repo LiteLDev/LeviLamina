@@ -22,15 +22,9 @@ class Capped : public ::br::worldgen::StructureProcessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk54681c;
-    ::ll::UntypedStorage<4, 32> mUnkb66182;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> mDelegate;
+    ::ll::TypedStorage<4, 32, ::IntProvider>                                                                mLimit;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Capped& operator=(Capped const&);
-    Capped(Capped const&);
-    Capped();
 
 public:
     // virtual functions

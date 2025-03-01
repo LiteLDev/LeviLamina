@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class Player;
 // clang-format on
 
@@ -11,18 +12,18 @@ namespace br::spawn {
 
 struct LocalMobCapCalc {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke1c62c;
-    ::ll::UntypedStorage<8, 24> mUnk5dc3e7;
-    ::ll::UntypedStorage<8, 24> mUnka8a35c;
-    // NOLINTEND
+    // LocalMobCapCalc inner types define
+    using MobCounts = ::std::array<int, 8>;
+
+    using PlayerList = ::std::vector<::Player const*>;
 
 public:
-    // prevent constructor by default
-    LocalMobCapCalc& operator=(LocalMobCapCalc const&);
-    LocalMobCapCalc(LocalMobCapCalc const&);
-    LocalMobCapCalc();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 8, ::BlockSource*>                                                      mRegion;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<int64, ::std::vector<::Player const*>>>> mPlayersNearChunk;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<::Player const*, ::std::array<int, 8>>>> mMobCounts;
+    // NOLINTEND
 };
 
 } // namespace br::spawn

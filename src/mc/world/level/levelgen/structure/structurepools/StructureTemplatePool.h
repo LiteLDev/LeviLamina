@@ -17,16 +17,10 @@ class StructureTemplatePool {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdb28a7;
-    ::ll::UntypedStorage<8, 24> mUnk305a7f;
-    ::ll::UntypedStorage<8, 32> mUnk23c3f6;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::StructurePoolElement const*>> mTemplates;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mFallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureTemplatePool& operator=(StructureTemplatePool const&);
-    StructureTemplatePool(StructureTemplatePool const&);
-    StructureTemplatePool();
 
 public:
     // member functions
