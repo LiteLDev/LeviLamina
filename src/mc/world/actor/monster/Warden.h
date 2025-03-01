@@ -45,7 +45,7 @@ public:
     virtual void normalTick() /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 147
     virtual bool checkSpawnRules(bool) /*override*/;
@@ -82,7 +82,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI void $setTarget(::Actor* target);
+    MCAPI void $setTarget(::Actor* entity);
 
     MCFOLD bool $checkSpawnRules(bool);
 

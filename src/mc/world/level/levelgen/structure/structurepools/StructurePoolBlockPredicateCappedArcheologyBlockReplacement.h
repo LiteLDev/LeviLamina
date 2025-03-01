@@ -17,15 +17,8 @@ class StructurePoolBlockPredicateCappedArcheologyBlockReplacement
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf26a55;
+    ::ll::TypedStorage<8, 32, ::std::string const> mLootTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateCappedArcheologyBlockReplacement&
-    operator=(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&);
-    StructurePoolBlockPredicateCappedArcheologyBlockReplacement(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&);
-    StructurePoolBlockPredicateCappedArcheologyBlockReplacement();
 
 public:
     // virtual functions

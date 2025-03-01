@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockLegacy;
 class BlockPos;
 class HashedString;
 class IBlockSource;
@@ -22,14 +23,8 @@ class BlockIgnore : public ::br::worldgen::StructureProcessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk17058f;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockLegacy const*>> mToIgnore;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockIgnore& operator=(BlockIgnore const&);
-    BlockIgnore(BlockIgnore const&);
-    BlockIgnore();
 
 public:
     // virtual functions

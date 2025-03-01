@@ -11,15 +11,9 @@ class ChunkTickOffsetManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk526c3b;
-    ::ll::UntypedStorage<8, 24> mUnk6edb58;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkPos>> mTickingChunksOffset;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkPos>> mClientTickingChunksOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkTickOffsetManager& operator=(ChunkTickOffsetManager const&);
-    ChunkTickOffsetManager(ChunkTickOffsetManager const&);
-    ChunkTickOffsetManager();
 
 public:
     // static functions

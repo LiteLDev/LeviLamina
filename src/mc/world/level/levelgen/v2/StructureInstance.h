@@ -4,9 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
 class BlockSource;
 class BoundingBox;
+class ChunkPos;
 class HashedString;
+namespace br::worldgen { class StructureSection; }
+namespace br::worldgen { struct Structure; }
 // clang-format on
 
 namespace br::worldgen {
@@ -15,18 +19,12 @@ class StructureInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk31ad38;
-    ::ll::UntypedStorage<8, 8>  mUnkaa2005;
-    ::ll::UntypedStorage<4, 24> mUnka4b9be;
-    ::ll::UntypedStorage<8, 8>  mUnka63029;
-    ::ll::UntypedStorage<8, 24> mUnk674b4d;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                         mPos;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                                                          mChunkPos;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                                                      mBox;
+    ::ll::TypedStorage<8, 8, ::br::worldgen::Structure const*>                                    mStructure;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::br::worldgen::StructureSection>>> mSections;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureInstance& operator=(StructureInstance const&);
-    StructureInstance(StructureInstance const&);
-    StructureInstance();
 
 public:
     // member functions

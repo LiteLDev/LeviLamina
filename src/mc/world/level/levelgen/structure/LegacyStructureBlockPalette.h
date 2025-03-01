@@ -11,14 +11,8 @@ class LegacyStructureBlockPalette {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk37e34c;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::Block const*>> mMapper;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyStructureBlockPalette& operator=(LegacyStructureBlockPalette const&);
-    LegacyStructureBlockPalette(LegacyStructureBlockPalette const&);
-    LegacyStructureBlockPalette();
 
 public:
     // member functions

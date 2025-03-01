@@ -8,14 +8,8 @@ struct StructureType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf95f8f;
+    ::ll::TypedStorage<8, 32, ::std::string> type;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureType& operator=(StructureType const&);
-    StructureType(StructureType const&);
-    StructureType();
 
 public:
     // member functions

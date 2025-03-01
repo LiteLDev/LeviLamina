@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace br::worldgen { struct Structure; }
 namespace br::worldgen { struct StructureSpawnOverride; }
 // clang-format on
 
@@ -14,14 +15,16 @@ class StructureSpawnRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk869b4b;
-    ::ll::UntypedStorage<8, 64> mUnkc9fc63;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::string,
+            ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>>>
+        mStaticStructures;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::weak_ptr<::br::worldgen::Structure>>>
+        mDynamicStructures;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureSpawnRegistry& operator=(StructureSpawnRegistry const&);
-    StructureSpawnRegistry(StructureSpawnRegistry const&);
 
 public:
     // member functions

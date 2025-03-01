@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class IRandom;
+namespace br::worldgen { class VerticalAnchor; }
 namespace br::worldgen { class WorldGenContext; }
 // clang-format on
 
@@ -17,15 +18,9 @@ class UniformHeight : public ::br::worldgen::HeightProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk70c53c;
-    ::ll::UntypedStorage<8, 16> mUnk32f493;
+    ::ll::TypedStorage<8, 16, ::br::worldgen::VerticalAnchor> mMinInclusive;
+    ::ll::TypedStorage<8, 16, ::br::worldgen::VerticalAnchor> mMaxInclusive;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UniformHeight& operator=(UniformHeight const&);
-    UniformHeight(UniformHeight const&);
-    UniformHeight();
 
 public:
     // virtual functions

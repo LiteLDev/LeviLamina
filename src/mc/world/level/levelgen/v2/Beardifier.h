@@ -6,6 +6,8 @@
 // clang-format off
 class ChunkPos;
 namespace br::worldgen { class StructureCache; }
+namespace br::worldgen { struct JigsawJunction; }
+namespace br::worldgen { struct Rigid; }
 // clang-format on
 
 namespace br::worldgen {
@@ -14,15 +16,14 @@ class Beardifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk81b59c;
-    ::ll::UntypedStorage<8, 24> mUnke6bbab;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::Rigid>>          mPieces;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawJunction>> mJunctions;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     Beardifier& operator=(Beardifier const&);
     Beardifier(Beardifier const&);
-    Beardifier();
 
 public:
     // member functions

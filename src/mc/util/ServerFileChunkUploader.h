@@ -8,6 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class FileChunkManager;
+class NetworkIdentifier;
+class PacketSender;
 struct FileChunkInfo;
 struct FileInfo;
 namespace Json { class Value; }
@@ -18,19 +21,13 @@ class ServerFileChunkUploader : public ::IFileChunkUploader,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk560ec7;
-    ::ll::UntypedStorage<8, 8>  mUnk4071d2;
-    ::ll::UntypedStorage<1, 1>  mUnk4af52c;
-    ::ll::UntypedStorage<8, 32> mUnk48687a;
-    ::ll::UntypedStorage<8, 32> mUnk42fb8e;
-    ::ll::UntypedStorage<8, 96> mUnk706bcd;
+    ::ll::TypedStorage<8, 8, ::PacketSender&>            mPacketSender;
+    ::ll::TypedStorage<8, 8, ::NetworkIdentifier const&> mSource;
+    ::ll::TypedStorage<1, 1, bool>                       mInitialized;
+    ::ll::TypedStorage<8, 32, ::std::string>             mName;
+    ::ll::TypedStorage<8, 32, ::std::string>             mFileHash;
+    ::ll::TypedStorage<8, 96, ::FileChunkManager>        mChunkManager;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerFileChunkUploader& operator=(ServerFileChunkUploader const&);
-    ServerFileChunkUploader(ServerFileChunkUploader const&);
-    ServerFileChunkUploader();
 
 public:
     // virtual functions

@@ -2,21 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class SubChunkBlockPos;
+struct Brightness;
+// clang-format on
+
 struct SubChunkLightUpdate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke310d2;
-    ::ll::UntypedStorage<1, 1> mUnk68f288;
-    ::ll::UntypedStorage<1, 1> mUnk73b183;
-    ::ll::UntypedStorage<1, 1> mUnk34e152;
-    ::ll::UntypedStorage<1, 1> mUnkf7c75d;
-    ::ll::UntypedStorage<1, 1> mUnk55b813;
+    ::ll::TypedStorage<4, 4, ::SubChunkBlockPos> mPos;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mOldBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mNewBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mOldAbsorption;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mNewAbsorption;
+    ::ll::TypedStorage<1, 1, bool>               mIsSkyLight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkLightUpdate& operator=(SubChunkLightUpdate const&);
-    SubChunkLightUpdate(SubChunkLightUpdate const&);
-    SubChunkLightUpdate();
 };

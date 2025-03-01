@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct OffscreenCaptureData;
+// clang-format on
+
 struct UIStructureVolumeOffscreenCaptureDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfa86d6;
+    ::ll::TypedStorage<8, 32, ::OffscreenCaptureData> mCaptureData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UIStructureVolumeOffscreenCaptureDescription& operator=(UIStructureVolumeOffscreenCaptureDescription const&);
-    UIStructureVolumeOffscreenCaptureDescription(UIStructureVolumeOffscreenCaptureDescription const&);
-    UIStructureVolumeOffscreenCaptureDescription();
 };

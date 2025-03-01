@@ -6,12 +6,6 @@ struct BiomeChunkState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkddc32c;
+    ::ll::TypedStorage<1, 1, uchar> snowLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeChunkState& operator=(BiomeChunkState const&);
-    BiomeChunkState(BiomeChunkState const&);
-    BiomeChunkState();
 };

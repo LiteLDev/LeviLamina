@@ -7,23 +7,21 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChunkPos;
+class ChunkViewOwner;
 class NetworkChunkPublisherUpdatePacket;
 class NetworkIdentifier;
+class SpinLockImpl;
 // clang-format on
 
 class ChunkGenerationManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd9b47e;
-    ::ll::UntypedStorage<8, 64> mUnk6f57f5;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl> mGenerationRequestLock;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkViewOwner, ::std::unordered_set<::ChunkPos>>>
+        mGenerationRequests;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkGenerationManager& operator=(ChunkGenerationManager const&);
-    ChunkGenerationManager(ChunkGenerationManager const&);
-    ChunkGenerationManager();
 
 public:
     // member functions

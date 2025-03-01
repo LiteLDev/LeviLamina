@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Level;
+namespace br::spawn { struct EntityType; }
 // clang-format on
 
 namespace br::spawn {
@@ -17,14 +18,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb96464;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::spawn::EntityType>> mEntityTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityTypeCache& operator=(EntityTypeCache const&);
-    EntityTypeCache(EntityTypeCache const&);
-    EntityTypeCache();
 
 public:
     // static functions

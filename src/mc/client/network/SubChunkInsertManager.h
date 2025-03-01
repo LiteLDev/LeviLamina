@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Player;
+class TaskGroup;
+// clang-format on
+
 class SubChunkInsertManager {
 public:
     // SubChunkInsertManager inner types declare
@@ -29,17 +35,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk7b78c2;
-    ::ll::UntypedStorage<8, 336> mUnkb0339f;
-    ::ll::UntypedStorage<8, 8>   mUnkd2c47c;
-    ::ll::UntypedStorage<8, 8>   mUnk94db9c;
-    ::ll::UntypedStorage<1, 1>   mUnk88dcd8;
-    ::ll::UntypedStorage<8, 64>  mUnk631899;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkInsertManager::SubChunkInsertTaskInfo>> mQueuedSubChunkTasks;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                                   mTaskGroup;
+    ::ll::TypedStorage<8, 8, uint64>                                                          mMaxInFlightTasksFloor;
+    ::ll::TypedStorage<8, 8, uint64>                                                          mMaxInFlightTasks;
+    ::ll::TypedStorage<1, 1, bool>                                                            mIsLeavingGame;
+    ::ll::TypedStorage<8, 64, ::std::function<::Player*()>>                                   mGetPrimaryLocalPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkInsertManager& operator=(SubChunkInsertManager const&);
-    SubChunkInsertManager(SubChunkInsertManager const&);
-    SubChunkInsertManager();
 };

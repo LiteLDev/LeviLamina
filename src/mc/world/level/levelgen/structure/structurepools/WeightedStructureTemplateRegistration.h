@@ -2,19 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/Projection.h"
+
+// auto generated forward declare list
+// clang-format off
+class StructurePoolElement;
+struct StructureTemplateRegistrationContext;
+// clang-format on
+
 struct WeightedStructureTemplateRegistration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb841fa;
-    ::ll::UntypedStorage<4, 4>  mUnka7e297;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>>
+                                  mElementFactory;
+    ::ll::TypedStorage<4, 4, int> mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeightedStructureTemplateRegistration& operator=(WeightedStructureTemplateRegistration const&);
-    WeightedStructureTemplateRegistration(WeightedStructureTemplateRegistration const&);
-    WeightedStructureTemplateRegistration();
 
 public:
     // member functions

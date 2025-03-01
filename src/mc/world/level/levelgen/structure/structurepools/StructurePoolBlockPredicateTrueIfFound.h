@@ -18,15 +18,9 @@ class StructurePoolBlockPredicateTrueIfFound : public ::IStructurePoolBlockPredi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkbec334;
-    ::ll::UntypedStorage<4, 4>  mUnk505d7c;
+    ::ll::TypedStorage<8, 16, ::std::set<::Block const*>> mReplacable;
+    ::ll::TypedStorage<4, 4, float const>                 mProbability;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateTrueIfFound& operator=(StructurePoolBlockPredicateTrueIfFound const&);
-    StructurePoolBlockPredicateTrueIfFound(StructurePoolBlockPredicateTrueIfFound const&);
-    StructurePoolBlockPredicateTrueIfFound();
 
 public:
     // virtual functions

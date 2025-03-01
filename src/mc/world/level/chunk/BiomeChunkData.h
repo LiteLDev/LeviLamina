@@ -6,12 +6,6 @@ struct BiomeChunkData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnkdc182b;
+    ::ll::TypedStorage<2, 2, ushort> biome;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeChunkData& operator=(BiomeChunkData const&);
-    BiomeChunkData(BiomeChunkData const&);
-    BiomeChunkData();
 };

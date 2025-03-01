@@ -2,22 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v2/JigsawSectionDataKey.h"
+
 namespace br::worldgen {
 
 struct JigsawPieceState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb3c2f2;
-    ::ll::UntypedStorage<8, 8> mUnk33b215;
-    ::ll::UntypedStorage<4, 4> mUnk73dc0a;
+    ::ll::TypedStorage<8, 8, ::br::worldgen::JigsawSectionDataKey> mPieceKey;
+    ::ll::TypedStorage<8, 8, uint64>                               mSpaceKey;
+    ::ll::TypedStorage<4, 4, int>                                  mDepth;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawPieceState& operator=(JigsawPieceState const&);
-    JigsawPieceState(JigsawPieceState const&);
-    JigsawPieceState();
 };
 
 } // namespace br::worldgen

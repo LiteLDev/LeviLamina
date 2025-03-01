@@ -17,16 +17,14 @@ namespace br::worldgen {
 
 class StructureHeightProvider : public ::br::worldgen::HeightProvider {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk50b369;
-    // NOLINTEND
+    // StructureHeightProvider inner types define
+    using Data = ::std::variant<::br::worldgen::ConstantHeight, ::br::worldgen::UniformHeight>;
 
 public:
-    // prevent constructor by default
-    StructureHeightProvider& operator=(StructureHeightProvider const&);
-    StructureHeightProvider(StructureHeightProvider const&);
-    StructureHeightProvider();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::std::variant<::br::worldgen::ConstantHeight, ::br::worldgen::UniformHeight>> mData;
+    // NOLINTEND
 
 public:
     // virtual functions

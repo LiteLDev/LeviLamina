@@ -18,18 +18,12 @@ class StructurePoolBlockPredicateAxisAlignedPosition : public ::IStructurePoolBl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk129e71;
-    ::ll::UntypedStorage<4, 4> mUnkd5b760;
-    ::ll::UntypedStorage<4, 4> mUnk7dc590;
-    ::ll::UntypedStorage<4, 4> mUnkec0754;
-    ::ll::UntypedStorage<1, 1> mUnk3c7c88;
+    ::ll::TypedStorage<4, 4, float const> mMinChance;
+    ::ll::TypedStorage<4, 4, float const> mMaxChance;
+    ::ll::TypedStorage<4, 4, int const>   mMinDist;
+    ::ll::TypedStorage<4, 4, int const>   mMaxDist;
+    ::ll::TypedStorage<1, 1, uchar const> mAxis;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateAxisAlignedPosition& operator=(StructurePoolBlockPredicateAxisAlignedPosition const&);
-    StructurePoolBlockPredicateAxisAlignedPosition(StructurePoolBlockPredicateAxisAlignedPosition const&);
-    StructurePoolBlockPredicateAxisAlignedPosition();
 
 public:
     // virtual functions

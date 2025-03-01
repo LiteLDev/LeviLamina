@@ -20,16 +20,10 @@ class ActorDimensionTransferManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk23419d;
-    ::ll::UntypedStorage<8, 24> mUnkafcfe2;
-    ::ll::UntypedStorage<8, 24> mUnk5f25b0;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IActorDimensionTransferer>>> mActorDimensionTransferer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>        mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PortalForcer> const>            mPortalForcer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorDimensionTransferManager& operator=(ActorDimensionTransferManager const&);
-    ActorDimensionTransferManager(ActorDimensionTransferManager const&);
-    ActorDimensionTransferManager();
 
 public:
     // member functions

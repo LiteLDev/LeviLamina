@@ -2,21 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/PostProcessSettings.h"
+#include "mc/world/level/levelgen/structure/Projection.h"
+
+// auto generated forward declare list
+// clang-format off
+class StructurePoolActorRule;
+class StructurePoolBlockRule;
+class StructurePoolBlockTagRule;
+// clang-format on
+
 struct StructurePoolElementSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk210338;
-    ::ll::UntypedStorage<8, 8> mUnkaa8a6e;
-    ::ll::UntypedStorage<8, 8> mUnk2550a8;
-    ::ll::UntypedStorage<1, 1> mUnkcd222d;
-    ::ll::UntypedStorage<1, 1> mUnk536b76;
-    ::ll::UntypedStorage<1, 1> mUnke3a3ed;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>    mBlockRules;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*> mBlockTagRules;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>    mActorRules;
+    ::ll::TypedStorage<1, 1, ::Projection>                                                         mProjection;
+    ::ll::TypedStorage<1, 1, ::PostProcessSettings>                                                mPostProcessSettings;
+    ::ll::TypedStorage<1, 1, bool> mReloadActorLootTables;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolElementSettings& operator=(StructurePoolElementSettings const&);
-    StructurePoolElementSettings(StructurePoolElementSettings const&);
-    StructurePoolElementSettings();
 };

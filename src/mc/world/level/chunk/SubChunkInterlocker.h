@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class SpinLockImpl;
 class SubChunkPos;
 // clang-format on
 
@@ -11,15 +12,9 @@ class SubChunkInterlocker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3a1355;
-    ::ll::UntypedStorage<8, 24> mUnk209163;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl>               mSpinLock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPos>> mLocked3x3x3SubChunks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkInterlocker& operator=(SubChunkInterlocker const&);
-    SubChunkInterlocker(SubChunkInterlocker const&);
-    SubChunkInterlocker();
 
 public:
     // member functions

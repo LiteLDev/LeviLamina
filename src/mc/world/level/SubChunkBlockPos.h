@@ -8,17 +8,11 @@ public:
     // NOLINTBEGIN
     union {
         struct {
-            ::ll::UntypedStorage<1, 1> mUnkd8d515;
-            ::ll::UntypedStorage<1, 1> mUnk2e8f1a;
-            ::ll::UntypedStorage<1, 1> mUnk8d27ff;
+            ::ll::TypedStorage<1, 1, uchar> x;
+            ::ll::TypedStorage<1, 1, uchar> y;
+            ::ll::TypedStorage<1, 1, uchar> z;
         };
-        ::ll::UntypedStorage<4, 4> mUnk46c9f8;
+        ::ll::TypedStorage<4, 4, uint> packed;
     };
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkBlockPos& operator=(SubChunkBlockPos const&);
-    SubChunkBlockPos(SubChunkBlockPos const&);
-    SubChunkBlockPos();
 };

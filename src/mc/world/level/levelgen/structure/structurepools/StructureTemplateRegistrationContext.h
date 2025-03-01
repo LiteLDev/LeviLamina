@@ -2,21 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class Experiments;
+class FeatureRegistry;
+class JigsawStructureElementRegistry;
+class StructureManager;
+// clang-format on
+
 struct StructureTemplateRegistrationContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb0e125;
-    ::ll::UntypedStorage<8, 8>  mUnka0d072;
-    ::ll::UntypedStorage<8, 8>  mUnk644c4a;
-    ::ll::UntypedStorage<8, 32> mUnk24f0d9;
-    ::ll::UntypedStorage<8, 8>  mUnka6a2de;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mManager;
+    ::ll::TypedStorage<8, 8, ::JigsawStructureElementRegistry&>                  mStructureRegistry;
+    ::ll::TypedStorage<8, 8, ::FeatureRegistry&>                                 mFeatureRegistry;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                                 mBaseGameVersion;
+    ::ll::TypedStorage<8, 8, ::Experiments const&>                               mExperiments;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     StructureTemplateRegistrationContext& operator=(StructureTemplateRegistrationContext const&);
-    StructureTemplateRegistrationContext();
 
 public:
     // member functions

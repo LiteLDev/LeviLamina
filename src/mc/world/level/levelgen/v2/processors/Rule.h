@@ -13,6 +13,7 @@ class IBlockSource;
 namespace Util { class XXHash; }
 namespace br::worldgen { struct StructureBlockInfo; }
 namespace br::worldgen { struct StructurePlaceSettings; }
+namespace br::worldgen::processors { struct RuleSet; }
 // clang-format on
 
 namespace br::worldgen::processors {
@@ -21,14 +22,8 @@ class Rule : public ::br::worldgen::StructureProcessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk60beef;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::processors::RuleSet>> mRules;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Rule& operator=(Rule const&);
-    Rule(Rule const&);
-    Rule();
 
 public:
     // virtual functions

@@ -2,11 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class CommandArea;
 class CompoundTag;
+class Dimension;
 class StructureSettings;
 // clang-format on
 
@@ -14,23 +18,22 @@ class StructureAnimationData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkf8f03e;
-    ::ll::UntypedStorage<8, 32>  mUnk69416d;
-    ::ll::UntypedStorage<8, 104> mUnked6527;
-    ::ll::UntypedStorage<4, 4>   mUnk74d064;
-    ::ll::UntypedStorage<4, 4>   mUnk9e7870;
-    ::ll::UntypedStorage<1, 1>   mUnkb1aa1a;
-    ::ll::UntypedStorage<8, 8>   mUnkf3f764;
-    ::ll::UntypedStorage<4, 12>  mUnkb908e5;
-    ::ll::UntypedStorage<4, 4>   mUnk4ff306;
-    ::ll::UntypedStorage<4, 4>   mUnk50f161;
+    ::ll::TypedStorage<8, 8, uint64>                           mTickQueued;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mStructureName;
+    ::ll::TypedStorage<8, 104, ::StructureSettings>            mStructureSettings;
+    ::ll::TypedStorage<4, 4, uint>                             mBlocksPlaced;
+    ::ll::TypedStorage<4, 4, uint>                             mTotalBlocks;
+    ::ll::TypedStorage<1, 1, uchar>                            mInitialStructureVersion;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandArea>> mCmdArea;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                      mPlacementPos;
+    ::ll::TypedStorage<4, 4, uint>                             mQueueID;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                  mTargetDimension;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     StructureAnimationData& operator=(StructureAnimationData const&);
     StructureAnimationData(StructureAnimationData const&);
-    StructureAnimationData();
 
 public:
     // member functions

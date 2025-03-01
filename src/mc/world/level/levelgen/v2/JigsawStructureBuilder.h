@@ -3,11 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/JigsawExpansion.h"
 #include "mc/world/level/levelgen/v2/StructureBuilder.h"
+#include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class PoolAliasBinding;
+namespace br::worldgen { class StructureHeightProvider; }
+namespace br::worldgen { struct DimensionPadding; }
 namespace br::worldgen { struct JigsawStructure; }
 // clang-format on
 
@@ -17,22 +22,16 @@ class JigsawStructureBuilder : public ::br::worldgen::StructureBuilder<::br::wor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkbb5d5d;
-    ::ll::UntypedStorage<4, 4>  mUnk506b8f;
-    ::ll::UntypedStorage<4, 8>  mUnkc17bb4;
-    ::ll::UntypedStorage<8, 32> mUnk9e3220;
-    ::ll::UntypedStorage<8, 32> mUnk63ea3e;
-    ::ll::UntypedStorage<8, 56> mUnk583b6e;
-    ::ll::UntypedStorage<1, 1>  mUnkcd9d57;
-    ::ll::UntypedStorage<8, 24> mUnk47f6a0;
-    ::ll::UntypedStorage<1, 1>  mUnk8fe22e;
+    ::ll::TypedStorage<1, 1, char>                                                  mMaxDepth;
+    ::ll::TypedStorage<4, 4, int>                                                   mMaxDistanceFromCenter;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>                      mDimensionPadding;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mStart;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mAnchorName;
+    ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>              mStartHeight;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type>             mProjectStartToHeightmap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PoolAliasBinding>>> mPoolAliases;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion>                       mExpansion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawStructureBuilder& operator=(JigsawStructureBuilder const&);
-    JigsawStructureBuilder(JigsawStructureBuilder const&);
-    JigsawStructureBuilder();
 
 public:
     // virtual functions

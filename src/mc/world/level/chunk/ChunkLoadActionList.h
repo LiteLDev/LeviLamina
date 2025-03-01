@@ -11,6 +11,7 @@
 // clang-format off
 class ChunkLoadedRequest;
 class Dimension;
+class DimensionDataSerializer;
 class IRequestAction;
 class LevelStorage;
 class ServerLevel;
@@ -20,16 +21,10 @@ class ChunkLoadActionList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfff3ed;
-    ::ll::UntypedStorage<8, 24> mUnkaef048;
-    ::ll::UntypedStorage<4, 4>  mUnkc0f0ae;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkLoadedRequest>> mChunkLoadedRequests;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkLoadedRequest>> mChunkLoadedRequestsWaitForTicking;
+    ::ll::TypedStorage<4, 4, ::DimensionDataSerializer>            mDimensionDataSerializer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkLoadActionList& operator=(ChunkLoadActionList const&);
-    ChunkLoadActionList(ChunkLoadActionList const&);
-    ChunkLoadActionList();
 
 public:
     // member functions

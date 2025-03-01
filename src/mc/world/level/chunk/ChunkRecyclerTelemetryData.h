@@ -7,8 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class ChunkPos;
 class Level;
 class LevelChunk;
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class ChunkRecyclerTelemetryData : public ::Bedrock::EnableNonOwnerReferences {
@@ -113,29 +115,24 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkabdde0;
-    ::ll::UntypedStorage<8, 16> mUnkab762c;
-    ::ll::UntypedStorage<8, 8>  mUnka27232;
-    ::ll::UntypedStorage<8, 8>  mUnk6f3d66;
-    ::ll::UntypedStorage<8, 8>  mUnk197f33;
-    ::ll::UntypedStorage<1, 1>  mUnk29689d;
-    ::ll::UntypedStorage<1, 1>  mUnk24c890;
-    ::ll::UntypedStorage<8, 8>  mUnk54538a;
-    ::ll::UntypedStorage<8, 8>  mUnk37df14;
-    ::ll::UntypedStorage<8, 80> mUnk61763f;
-    ::ll::UntypedStorage<4, 4>  mUnk5640e9;
-    ::ll::UntypedStorage<8, 8>  mUnkdc3e70;
-    ::ll::UntypedStorage<8, 8>  mUnkc87e17;
-    ::ll::UntypedStorage<8, 8>  mUnk4b6b98;
-    ::ll::UntypedStorage<8, 8>  mUnk59e21c;
-    ::ll::UntypedStorage<8, 8>  mUnk2551a0;
-    ::ll::UntypedStorage<8, 8>  mUnk206346;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkRecyclerTelemetryData::BucketContext>>      mTimeBuckets;
+    ::ll::TypedStorage<8, 16, ::std::map<::ChunkPos, ::ChunkRecyclerTelemetryData::ChunkData>> mChunkCache;
+    ::ll::TypedStorage<8, 8, ::ChunkRecyclerTelemetryData::TimeAccumulator>                    mTotalTime;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mDeletedChunks;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mGeneratedChunks;
+    ::ll::TypedStorage<1, 1, bool>                                                             mIsLocked;
+    ::ll::TypedStorage<1, 1, bool>                                                             mIsLevelStarted;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                          mLevelStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                       mDuration;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mMutex;
+    ::ll::TypedStorage<4, 4, int>                                                              mCurrentTick;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mOuterUpdateCount;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mInnerUpdateCount;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mChunkRadiusSum;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mOverworldPlayerSum;
+    ::ll::TypedStorage<8, 8, uint64>                                                           mMaximumOverworldPlayers;
+    ::ll::TypedStorage<8, 8, uint64> mActiveOverworldChunksSum;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkRecyclerTelemetryData& operator=(ChunkRecyclerTelemetryData const&);
-    ChunkRecyclerTelemetryData(ChunkRecyclerTelemetryData const&);
 
 public:
     // virtual functions

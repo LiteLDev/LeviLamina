@@ -4,12 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/client/multiplayer/ISubChunkManagerConnector.h"
+#include "mc/deps/core/math/Math.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 
 // auto generated forward declare list
 // clang-format off
 class ChunkSource;
+class Dimension;
 class LevelChunk;
+class SubChunkInsertManager;
+class SubChunkPos;
+class SubChunkRequestManager;
+namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class SubChunkManager : public ::ISubChunkManagerConnector {
@@ -39,18 +48,25 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk50bfa9;
-    ::ll::UntypedStorage<8, 448> mUnk8d019d;
-    ::ll::UntypedStorage<8, 312> mUnkfd9284;
-    ::ll::UntypedStorage<8, 128> mUnk152c73;
-    ::ll::UntypedStorage<8, 16>  mUnk8c704d;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::std::pair<::SubChunkPos, ::DimensionType>,
+            ::std::vector<::SubChunkManager::SubChunkChange>,
+            ::mce::Math::PairHash,
+            ::std::equal_to<::std::pair<::SubChunkPos, ::DimensionType>>>>
+                                                         mPendingSubChunkChanges;
+    ::ll::TypedStorage<8, 448, ::SubChunkInsertManager>  mSubChunkInsertManager;
+    ::ll::TypedStorage<8, 312, ::SubChunkRequestManager> mSubChunkRequestManager;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::
+            Publisher<void(::ChunkSource&, ::LevelChunk&, short, bool), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+                                                               mSubChunkLoaded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChangeDimensionSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkManager& operator=(SubChunkManager const&);
-    SubChunkManager(SubChunkManager const&);
-    SubChunkManager();
 
 public:
     // virtual functions

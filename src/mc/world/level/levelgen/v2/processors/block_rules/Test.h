@@ -20,15 +20,30 @@ namespace br::worldgen::processors::BlockRules {
 
 struct Test : public ::br::worldgen::processors::BlockRules::TestType {
 public:
+    // Test inner types define
+    using Type = ::std::variant<
+        ::br::worldgen::processors::BlockRules::AlwaysTrue,
+        ::br::worldgen::processors::BlockRules::BlockMatch,
+        ::br::worldgen::processors::BlockRules::RandomBlockMatch,
+        ::br::worldgen::processors::BlockRules::TagMatch>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb7493f;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::variant<
+            ::br::worldgen::processors::BlockRules::AlwaysTrue,
+            ::br::worldgen::processors::BlockRules::BlockMatch,
+            ::br::worldgen::processors::BlockRules::RandomBlockMatch,
+            ::br::worldgen::processors::BlockRules::TagMatch>>
+        mData;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     Test& operator=(Test const&);
-    Test();
 
 public:
     // virtual functions

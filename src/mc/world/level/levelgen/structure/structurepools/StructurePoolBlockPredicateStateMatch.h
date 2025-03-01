@@ -18,14 +18,8 @@ class StructurePoolBlockPredicateStateMatch : public ::IStructurePoolBlockPredic
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk610de9;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolBlockPredicateStateMatch& operator=(StructurePoolBlockPredicateStateMatch const&);
-    StructurePoolBlockPredicateStateMatch(StructurePoolBlockPredicateStateMatch const&);
-    StructurePoolBlockPredicateStateMatch();
 
 public:
     // virtual functions

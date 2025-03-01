@@ -2,22 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::spawn { struct LocalMobCapCalc; }
+// clang-format on
+
 namespace br::spawn {
 
 struct State {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk405f18;
-    ::ll::UntypedStorage<4, 32> mUnk771caf;
-    ::ll::UntypedStorage<8, 56> mUnk6b0688;
+    ::ll::TypedStorage<4, 4, int>                           mSpawnableChunkCount;
+    ::ll::TypedStorage<4, 32, ::std::array<int, 8>>         mobCategoryCounts;
+    ::ll::TypedStorage<8, 56, ::br::spawn::LocalMobCapCalc> mCalc;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    State& operator=(State const&);
-    State(State const&);
-    State();
 };
 
 } // namespace br::spawn

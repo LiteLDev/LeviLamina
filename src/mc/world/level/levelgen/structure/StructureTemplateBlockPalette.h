@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace br::worldgen { struct McStructureTemplateBlockPalette; }
+namespace br::worldgen { struct NbtStructureTemplateBlockPalette; }
+// clang-format on
+
 namespace br::worldgen {
 
 struct StructureTemplateBlockPalette {
@@ -16,15 +22,13 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkcf39b7;
-    ::ll::UntypedStorage<8, 32> mUnk7b196d;
+    ::ll::TypedStorage<4, 4, ::br::worldgen::StructureTemplateBlockPalette::Type> mType;
+    union {
+        ::ll::TypedStorage<8, 32, void*>                                            unset;
+        ::ll::TypedStorage<8, 32, ::br::worldgen::McStructureTemplateBlockPalette>  mcstructure;
+        ::ll::TypedStorage<8, 32, ::br::worldgen::NbtStructureTemplateBlockPalette> nbt;
+    } mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureTemplateBlockPalette& operator=(StructureTemplateBlockPalette const&);
-    StructureTemplateBlockPalette(StructureTemplateBlockPalette const&);
-    StructureTemplateBlockPalette();
 };
 
 } // namespace br::worldgen

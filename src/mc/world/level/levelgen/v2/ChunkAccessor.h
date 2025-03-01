@@ -8,6 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
+class Block;
+class BlockVolume;
+class ChunkPos;
 class Dimension;
 // clang-format on
 
@@ -17,18 +20,14 @@ class ChunkAccessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd0f08a;
-    ::ll::UntypedStorage<8, 8> mUnk12ffed;
-    ::ll::UntypedStorage<8, 8> mUnk68e9a8;
-    ::ll::UntypedStorage<8, 8> mUnka89f52;
-    ::ll::UntypedStorage<8, 8> mUnk4a051d;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Dimension*>>                    mDimension;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BiomeSource const*>>            mBiomeSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockVolume>>                 mBlockVolume;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::Block const*>>> mBlockBuffer;
+    ::ll::
+        TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>>>
+            mChunkHeightCache;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkAccessor& operator=(ChunkAccessor const&);
-    ChunkAccessor(ChunkAccessor const&);
-    ChunkAccessor();
 
 public:
     // member functions

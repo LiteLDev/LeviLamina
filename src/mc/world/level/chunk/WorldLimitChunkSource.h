@@ -10,20 +10,15 @@
 class BlockPos;
 class ChunkPos;
 class LevelChunk;
+struct Bounds;
 // clang-format on
 
 class WorldLimitChunkSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 48> mUnk24d0cd;
+    ::ll::TypedStorage<4, 48, ::Bounds> mLimitArea;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldLimitChunkSource& operator=(WorldLimitChunkSource const&);
-    WorldLimitChunkSource(WorldLimitChunkSource const&);
-    WorldLimitChunkSource();
 
 public:
     // virtual functions

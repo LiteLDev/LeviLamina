@@ -2,24 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ChunkPos;
+class JigsawStructureRegistry;
+namespace br::worldgen { class ChunkAccessor; }
+namespace br::worldgen { struct WorldGenRandom; }
+// clang-format on
+
 namespace br::worldgen {
 
 struct GenerationContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8da9b6;
-    ::ll::UntypedStorage<8, 72> mUnk5738e1;
-    ::ll::UntypedStorage<8, 8>  mUnk5fdc24;
-    ::ll::UntypedStorage<8, 8>  mUnk468cd5;
-    ::ll::UntypedStorage<8, 8>  mUnk814cef;
+    ::ll::TypedStorage<8, 8, ::JigsawStructureRegistry const&> mPools;
+    ::ll::TypedStorage<8, 72, ::br::worldgen::WorldGenRandom>  mRandom;
+    ::ll::TypedStorage<8, 8, int64>                            mLevelSeed;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                       mChunkPos;
+    ::ll::TypedStorage<8, 8, ::br::worldgen::ChunkAccessor&>   mChunkAccessor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GenerationContext& operator=(GenerationContext const&);
-    GenerationContext(GenerationContext const&);
-    GenerationContext();
 
 public:
     // member functions

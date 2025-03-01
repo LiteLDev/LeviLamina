@@ -9,6 +9,8 @@
 // clang-format off
 class ChunkSource;
 class Dimension;
+class ITickingAreaView;
+class Player;
 struct Bounds;
 struct Tick;
 // clang-format on
@@ -17,16 +19,10 @@ struct ChunksLoadedInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2a6d44;
-    ::ll::UntypedStorage<8, 8> mUnkb9c08b;
-    ::ll::UntypedStorage<8, 8> mUnk9ad6f7;
+    ::ll::TypedStorage<1, 1, ::ChunksLoadedStatus> mStatus;
+    ::ll::TypedStorage<8, 8, ::Player*>            mPlayer;
+    ::ll::TypedStorage<8, 8, ::ITickingAreaView*>  mTickingAreaView;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunksLoadedInfo& operator=(ChunksLoadedInfo const&);
-    ChunksLoadedInfo(ChunksLoadedInfo const&);
-    ChunksLoadedInfo();
 
 public:
     // static functions

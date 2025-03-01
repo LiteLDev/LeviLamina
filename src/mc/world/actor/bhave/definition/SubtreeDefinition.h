@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void load(::Json::Value node, ::BehaviorFactory const& factory) /*override*/;
+    virtual void load(::Json::Value value, ::BehaviorFactory const& factory) /*override*/;
 
     // vIndex: 0
     virtual ~SubtreeDefinition() /*override*/;
@@ -44,7 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Json::Value node, ::BehaviorFactory const& factory);
+    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
     // NOLINTEND
 
 public:

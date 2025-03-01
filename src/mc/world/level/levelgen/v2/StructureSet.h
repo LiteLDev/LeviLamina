@@ -23,15 +23,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk32f414;
-        ::ll::UntypedStorage<4, 4>  mUnk7bbdf1;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::br::worldgen::Structure const>> mStructure;
+        ::ll::TypedStorage<4, 4, int>                                                 mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Entry& operator=(Entry const&);
-        Entry(Entry const&);
-        Entry();
 
     public:
         // member functions
@@ -49,15 +43,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfaba15;
-    ::ll::UntypedStorage<8, 32> mUnk7eb7e1;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::StructureSet::Entry>> mItems;
+    ::ll::TypedStorage<8, 32, ::br::worldgen::StructurePlacement>                 mPlacement;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureSet& operator=(StructureSet const&);
-    StructureSet(StructureSet const&);
-    StructureSet();
 
 public:
     // member functions

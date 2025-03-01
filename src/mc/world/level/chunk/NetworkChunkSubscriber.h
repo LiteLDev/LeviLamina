@@ -2,19 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class ChunkViewSource;
+// clang-format on
+
 class NetworkChunkSubscriber {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkb99700;
-    ::ll::UntypedStorage<4, 4>  mUnk943b85;
-    ::ll::UntypedStorage<4, 4>  mUnk986de8;
-    ::ll::UntypedStorage<8, 8>  mUnkb39f4a;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                          mLastChunkUpdatePosition;
+    ::ll::TypedStorage<4, 4, uint>                                 mHandleForChunkBuildOrderUpdates;
+    ::ll::TypedStorage<4, 4, uint>                                 mBlockRadiusLimit;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkChunkSubscriber& operator=(NetworkChunkSubscriber const&);
-    NetworkChunkSubscriber(NetworkChunkSubscriber const&);
-    NetworkChunkSubscriber();
 };

@@ -2,24 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/Projection.h"
+
 namespace br::worldgen {
 
 struct JigsawJunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkf49797;
-    ::ll::UntypedStorage<4, 4> mUnk528d78;
-    ::ll::UntypedStorage<4, 4> mUnka493ea;
-    ::ll::UntypedStorage<4, 4> mUnkec8137;
-    ::ll::UntypedStorage<1, 1> mUnke8676c;
+    ::ll::TypedStorage<4, 4, int>          mSourceX;
+    ::ll::TypedStorage<4, 4, int>          mSourceGroundY;
+    ::ll::TypedStorage<4, 4, int>          mSourceZ;
+    ::ll::TypedStorage<4, 4, int>          mDeltaY;
+    ::ll::TypedStorage<1, 1, ::Projection> mDestProjection;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawJunction& operator=(JigsawJunction const&);
-    JigsawJunction(JigsawJunction const&);
-    JigsawJunction();
 };
 
 } // namespace br::worldgen

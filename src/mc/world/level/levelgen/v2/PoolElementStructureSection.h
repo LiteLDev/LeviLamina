@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 #include "mc/world/level/levelgen/v2/StructureSection.h"
 #include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
@@ -14,6 +15,7 @@ class BlockSource;
 class BoundingBox;
 class IRandom;
 class Random;
+class StructurePoolElement;
 namespace SharedTypes::v1_21_50 { struct PoolElementStructureSection; }
 namespace br::worldgen { struct JigsawJunction; }
 namespace br::worldgen { struct Rigid; }
@@ -25,18 +27,12 @@ class PoolElementStructureSection : public ::br::worldgen::StructureSection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk532ba1;
-    ::ll::UntypedStorage<4, 4>  mUnk4a3dcf;
-    ::ll::UntypedStorage<1, 1>  mUnk9707be;
-    ::ll::UntypedStorage<4, 12> mUnkcf1f7c;
-    ::ll::UntypedStorage<8, 24> mUnk7630f3;
+    ::ll::TypedStorage<8, 8, ::StructurePoolElement const*>                  mElement;
+    ::ll::TypedStorage<4, 4, int>                                            mGroundOffset;
+    ::ll::TypedStorage<1, 1, ::Rotation>                                     mRot;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                    mPosition;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawJunction>> mJunctions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PoolElementStructureSection& operator=(PoolElementStructureSection const&);
-    PoolElementStructureSection(PoolElementStructureSection const&);
-    PoolElementStructureSection();
 
 public:
     // virtual functions

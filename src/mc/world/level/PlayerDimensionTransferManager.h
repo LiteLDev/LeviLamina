@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,27 +22,23 @@ class PacketSender;
 class Player;
 class PlayerLimboActorManager;
 struct ActorUniqueID;
+namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class PlayerDimensionTransferManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7317e0;
-    ::ll::UntypedStorage<8, 8>  mUnka50677;
-    ::ll::UntypedStorage<8, 24> mUnk5c071b;
-    ::ll::UntypedStorage<8, 24> mUnkafdc4c;
-    ::ll::UntypedStorage<8, 16> mUnk27d8c9;
-    ::ll::UntypedStorage<8, 8>  mUnkacbc91;
-    ::ll::UntypedStorage<1, 1>  mUnk9b069c;
-    ::ll::UntypedStorage<8, 16> mUnk5f57fb;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerLimboActorManager> const> mPlayerLimboActorManager;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerDimensionTransferer>> const>
+                                                                                          mPlayerDimensionTransferer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>    mDimensionManager;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry> const>                          mEntityRegistry;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelCrashDumpManager>> const> mLevelCrashDumpManager;
+    ::ll::TypedStorage<1, 1, bool>                             mLevelFinishedInitializing;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemoved;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDimensionTransferManager& operator=(PlayerDimensionTransferManager const&);
-    PlayerDimensionTransferManager(PlayerDimensionTransferManager const&);
-    PlayerDimensionTransferManager();
 
 public:
     // member functions

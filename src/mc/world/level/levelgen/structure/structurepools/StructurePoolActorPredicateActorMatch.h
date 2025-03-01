@@ -14,14 +14,8 @@ class StructurePoolActorPredicateActorMatch : public ::IStructurePoolActorPredic
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcab376;
+    ::ll::TypedStorage<8, 32, ::std::string const> mActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePoolActorPredicateActorMatch& operator=(StructurePoolActorPredicateActorMatch const&);
-    StructurePoolActorPredicateActorMatch(StructurePoolActorPredicateActorMatch const&);
-    StructurePoolActorPredicateActorMatch();
 
 public:
     // virtual functions

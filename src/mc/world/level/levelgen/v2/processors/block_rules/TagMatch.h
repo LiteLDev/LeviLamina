@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class HashedString;
 class IRandom;
 namespace Util { class XXHash; }
 // clang-format on
@@ -18,14 +19,8 @@ struct TagMatch : public ::br::worldgen::processors::BlockRules::TestType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk96fca8;
+    ::ll::TypedStorage<8, 48, ::HashedString> mTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TagMatch& operator=(TagMatch const&);
-    TagMatch(TagMatch const&);
-    TagMatch();
 
 public:
     // virtual functions

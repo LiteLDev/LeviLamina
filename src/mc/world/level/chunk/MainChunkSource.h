@@ -17,14 +17,8 @@ class MainChunkSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk48482e;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>>> mChunkMap;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MainChunkSource& operator=(MainChunkSource const&);
-    MainChunkSource(MainChunkSource const&);
-    MainChunkSource();
 
 public:
     // virtual functions

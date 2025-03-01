@@ -2,6 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockPos;
+class BoundingBox;
+namespace br::worldgen { struct StructureProcessor; }
+// clang-format on
+
 namespace br::worldgen {
 
 struct StructurePlaceSettings {
@@ -15,19 +26,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkf9cc66;
-    ::ll::UntypedStorage<1, 1>  mUnka6ac05;
-    ::ll::UntypedStorage<4, 12> mUnkda395e;
-    ::ll::UntypedStorage<4, 24> mUnk608538;
-    ::ll::UntypedStorage<4, 4>  mUnkd26057;
-    ::ll::UntypedStorage<8, 24> mUnk976eed;
+    ::ll::TypedStorage<1, 1, ::Rotation>                                           rotation;
+    ::ll::TypedStorage<1, 1, ::Mirror>                                             mirror;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                          rotationPivot;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                                       chunkBB;
+    ::ll::TypedStorage<4, 4, ::br::worldgen::StructurePlaceSettings::RetainLiquid> liquids;
+    ::ll::
+        TypedStorage<8, 24, ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>>
+            processors;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePlaceSettings& operator=(StructurePlaceSettings const&);
-    StructurePlaceSettings(StructurePlaceSettings const&);
-    StructurePlaceSettings();
 
 public:
     // member functions

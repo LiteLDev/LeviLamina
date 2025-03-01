@@ -66,9 +66,9 @@ public:
 
     // vIndex: 1
     virtual bool load(
-        ::ResourceLocationPair const&    resourceLocation,
+        ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     // vIndex: 4
@@ -183,9 +183,9 @@ public:
     ) const;
 
     MCAPI bool $load(
-        ::ResourceLocationPair const&    resourceLocation,
+        ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;

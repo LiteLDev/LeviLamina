@@ -34,7 +34,7 @@ public:
 
     // vIndex: 52
     virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               instance,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
@@ -68,7 +68,7 @@ public:
     MCFOLD int $getCooldownTime() const;
 
     MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
+        ::ItemStackBase const&               instance,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory

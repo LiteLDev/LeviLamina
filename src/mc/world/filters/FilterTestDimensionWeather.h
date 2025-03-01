@@ -25,14 +25,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka6c8a1;
+    ::ll::TypedStorage<4, 4, ::FilterTestDimensionWeather::WeatherType> mWeather;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FilterTestDimensionWeather& operator=(FilterTestDimensionWeather const&);
-    FilterTestDimensionWeather(FilterTestDimensionWeather const&);
-    FilterTestDimensionWeather();
 
 public:
     // virtual functions

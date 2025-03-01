@@ -22,16 +22,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5b60bc;
-    ::ll::UntypedStorage<4, 4> mUnk83d370;
-    ::ll::UntypedStorage<1, 1> mUnk5b1cdd;
+    ::ll::TypedStorage<4, 4, int>                                         mSeparation;
+    ::ll::TypedStorage<4, 4, int>                                         mSpacing;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::RandomSpreadPlacement::Type> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RandomSpreadPlacement& operator=(RandomSpreadPlacement const&);
-    RandomSpreadPlacement(RandomSpreadPlacement const&);
-    RandomSpreadPlacement();
 
 public:
     // member functions

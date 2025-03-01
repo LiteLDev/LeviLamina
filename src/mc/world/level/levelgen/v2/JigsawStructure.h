@@ -3,11 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/JigsawExpansion.h"
 #include "mc/world/level/levelgen/v2/Structure.h"
+#include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace br::worldgen { class GenerationStub; }
+namespace br::worldgen { class StructureHeightProvider; }
+namespace br::worldgen { struct DimensionPadding; }
 namespace br::worldgen { struct GenerationContext; }
 // clang-format on
 
@@ -17,14 +21,14 @@ struct JigsawStructure : public ::br::worldgen::Structure {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk42e662;
-    ::ll::UntypedStorage<8, 32> mUnkfee9be;
-    ::ll::UntypedStorage<1, 1>  mUnkcef2bc;
-    ::ll::UntypedStorage<8, 56> mUnkd84b51;
-    ::ll::UntypedStorage<4, 4>  mUnk449e9c;
-    ::ll::UntypedStorage<4, 8>  mUnk5771aa;
-    ::ll::UntypedStorage<1, 1>  mUnk750b60;
-    ::ll::UntypedStorage<1, 1>  mUnk8c5cbf;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mAnchorName;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mStart;
+    ::ll::TypedStorage<1, 1, char>                                      mMaxDepth;
+    ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>  mStartHeight;
+    ::ll::TypedStorage<4, 4, int>                                       mMaxDistanceFromCenter;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>          mDimensionPadding;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type> mProjectStartToHeightmap;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion>           mExpansion;
     // NOLINTEND
 
 public:

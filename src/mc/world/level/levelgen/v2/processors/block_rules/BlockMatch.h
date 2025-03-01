@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockLegacy;
 class IRandom;
 namespace Util { class XXHash; }
 // clang-format on
@@ -18,14 +19,8 @@ struct BlockMatch : public ::br::worldgen::processors::BlockRules::TestType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka3c668;
+    ::ll::TypedStorage<8, 8, ::BlockLegacy const*> mBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockMatch& operator=(BlockMatch const&);
-    BlockMatch(BlockMatch const&);
-    BlockMatch();
 
 public:
     // virtual functions

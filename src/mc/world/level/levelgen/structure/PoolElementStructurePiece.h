@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/v1/AdjustmentEffect.h"
 
@@ -16,30 +17,28 @@ class BoundingBox;
 class ChunkPos;
 class Dimension;
 class Random;
+class StructurePoolElement;
+struct ActorDefinitionIdentifier;
+struct JigsawJunction;
 // clang-format on
 
 class PoolElementStructurePiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnkae4efc;
-    ::ll::UntypedStorage<4, 4>  mUnk98ec3b;
-    ::ll::UntypedStorage<4, 4>  mUnkdb7900;
-    ::ll::UntypedStorage<4, 4>  mUnkbce672;
-    ::ll::UntypedStorage<4, 4>  mUnk7c68cb;
-    ::ll::UntypedStorage<8, 8>  mUnkc93c20;
-    ::ll::UntypedStorage<4, 12> mUnkea11e1;
-    ::ll::UntypedStorage<1, 1>  mUnk8a1f71;
-    ::ll::UntypedStorage<4, 24> mUnkd032f6;
-    ::ll::UntypedStorage<8, 64> mUnkdb9bdf;
-    ::ll::UntypedStorage<4, 12> mUnkcaf6a7;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                mCachedPieceBounds;
+    ::ll::TypedStorage<4, 4, int>                           mCachedPieceBaseY;
+    ::ll::TypedStorage<4, 4, int>                           mCachedXCenter;
+    ::ll::TypedStorage<4, 4, int>                           mCachedZCenter;
+    ::ll::TypedStorage<4, 4, float>                         mCachedMaxRadius;
+    ::ll::TypedStorage<8, 8, ::StructurePoolElement const&> mElement;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                   mPosition;
+    ::ll::TypedStorage<1, 1, ::Rotation>                    mRotation;
+    ::ll::TypedStorage<4, 24, ::JigsawJunction>             mJigsawJunction;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>>
+                                          mEntitiesToPlace;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mRefPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PoolElementStructurePiece& operator=(PoolElementStructurePiece const&);
-    PoolElementStructurePiece(PoolElementStructurePiece const&);
-    PoolElementStructurePiece();
 
 public:
     // virtual functions

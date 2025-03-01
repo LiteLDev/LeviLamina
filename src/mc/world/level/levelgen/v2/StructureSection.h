@@ -23,14 +23,8 @@ class StructureSection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk14b55e;
+    ::ll::TypedStorage<4, 24, ::BoundingBox> mBoundingBox;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureSection& operator=(StructureSection const&);
-    StructureSection(StructureSection const&);
-    StructureSection();
 
 public:
     // virtual functions

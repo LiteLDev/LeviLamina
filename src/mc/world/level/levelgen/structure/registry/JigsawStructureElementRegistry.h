@@ -9,17 +9,17 @@ class StructurePoolElement;
 
 class JigsawStructureElementRegistry {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk786263;
-    ::ll::UntypedStorage<8, 64> mUnk475c95;
-    // NOLINTEND
+    // JigsawStructureElementRegistry inner types define
+    using StructureElementRegistry = ::std::vector<::std::unique_ptr<::StructurePoolElement>>;
+
+    using StructureElementLookupMap = ::std::unordered_map<::std::string, ::StructurePoolElement const*>;
 
 public:
-    // prevent constructor by default
-    JigsawStructureElementRegistry& operator=(JigsawStructureElementRegistry const&);
-    JigsawStructureElementRegistry(JigsawStructureElementRegistry const&);
-    JigsawStructureElementRegistry();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StructurePoolElement>>>           mElementRegistry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructurePoolElement const*>> mElementLookupMap;
+    // NOLINTEND
 
 public:
     // member functions

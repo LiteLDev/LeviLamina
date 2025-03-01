@@ -2,19 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class SubChunkPos;
+// clang-format on
+
 class SubChunkPosIterator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk930aa6;
-    ::ll::UntypedStorage<4, 12> mUnk3ceb0e;
-    ::ll::UntypedStorage<4, 12> mUnkcf1b1b;
-    ::ll::UntypedStorage<1, 1>  mUnk3bd65d;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos const> mMinCorner;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos const> mMaxCorner;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos>       mCurrentPos;
+    ::ll::TypedStorage<1, 1, bool>                 mDone;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkPosIterator& operator=(SubChunkPosIterator const&);
-    SubChunkPosIterator(SubChunkPosIterator const&);
-    SubChunkPosIterator();
 };

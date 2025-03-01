@@ -4,13 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/world/level/chunk/IRequestAction.h"
+#include "mc/world/level/levelgen/structure/structurepools/JigsawReplacement.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BoundingBox;
 class CompoundTag;
 class Dimension;
 class JigsawStructureElementRegistry;
 class ServerLevel;
+namespace br::worldgen { class PoolElementStructureSection; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -18,18 +22,12 @@ class JigsawStructurePostprocessAction : public ::IRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc35f4a;
-    ::ll::UntypedStorage<4, 12> mUnk5bb3c3;
-    ::ll::UntypedStorage<4, 24> mUnk3e6c5e;
-    ::ll::UntypedStorage<1, 1>  mUnkad06aa;
-    ::ll::UntypedStorage<1, 1>  mUnk6a3d2d;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::br::worldgen::PoolElementStructureSection>> mSection;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                    mOriginPos;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                                                 mChunkBounds;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawReplacement>                              mJigsawReplacement;
+    ::ll::TypedStorage<1, 1, bool>                                                           mIncludeEntities;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    JigsawStructurePostprocessAction& operator=(JigsawStructurePostprocessAction const&);
-    JigsawStructurePostprocessAction(JigsawStructurePostprocessAction const&);
-    JigsawStructurePostprocessAction();
 
 public:
     // virtual functions

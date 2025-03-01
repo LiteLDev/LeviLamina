@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 #include "mc/world/level/levelgen/v2/processors/StructureProcessor.h"
 #include "mc/world/level/levelgen/v2/processors/StructureProcessorType.h"
 
@@ -21,15 +22,9 @@ class Gravity : public ::br::worldgen::StructureProcessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9d5612;
-    ::ll::UntypedStorage<4, 4> mUnk3c273b;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type> mHeightmap;
+    ::ll::TypedStorage<4, 4, int>                                       mOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Gravity& operator=(Gravity const&);
-    Gravity(Gravity const&);
-    Gravity();
 
 public:
     // virtual functions

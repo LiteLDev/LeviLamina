@@ -9,17 +9,27 @@ class StructurePoolBlockTagRule;
 
 class JigsawStructureBlockTagRulesRegistry {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc54759;
-    ::ll::UntypedStorage<8, 64> mUnk1e71a5;
-    // NOLINTEND
+    // JigsawStructureBlockTagRulesRegistry inner types define
+    using BlockTagRulesRegistryMap =
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>;
+
+    using BlockTagRulesLookupMap =
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>;
 
 public:
-    // prevent constructor by default
-    JigsawStructureBlockTagRulesRegistry& operator=(JigsawStructureBlockTagRulesRegistry const&);
-    JigsawStructureBlockTagRulesRegistry(JigsawStructureBlockTagRulesRegistry const&);
-    JigsawStructureBlockTagRulesRegistry();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>>
+        mBlockTagRulesRegistry;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>>
+        mBlockTagRuleLookupMap;
+    // NOLINTEND
 
 public:
     // member functions

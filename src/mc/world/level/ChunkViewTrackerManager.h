@@ -17,16 +17,10 @@ class ChunkViewTrackerManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk7c81e8;
-    ::ll::UntypedStorage<8, 24> mUnke385cf;
-    ::ll::UntypedStorage<8, 24> mUnkcc42e4;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>    mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::ChunkViewSource>>>          mChunkViewTrackers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkViewTrackerManager& operator=(ChunkViewTrackerManager const&);
-    ChunkViewTrackerManager(ChunkViewTrackerManager const&);
-    ChunkViewTrackerManager();
 
 public:
     // member functions

@@ -6,15 +6,9 @@ class StructureIntegrityProcessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc757b4;
-    ::ll::UntypedStorage<4, 4> mUnk938b91;
+    ::ll::TypedStorage<4, 4, float> mIntegrity;
+    ::ll::TypedStorage<4, 4, uint>  mStartSeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureIntegrityProcessor& operator=(StructureIntegrityProcessor const&);
-    StructureIntegrityProcessor(StructureIntegrityProcessor const&);
-    StructureIntegrityProcessor();
 
 public:
     // member functions

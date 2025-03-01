@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/level/IPlayerDimensionTransferer.h"
 
 // auto generated forward declare list
@@ -23,28 +24,29 @@ class Player;
 class PlayerLimboActorManager;
 class PortalForcer;
 struct AddLimboActorHelper;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class PlayerDimensionTransferer : public ::IPlayerDimensionTransferer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk4ce031;
-    ::ll::UntypedStorage<1, 1>   mUnk48539d;
-    ::ll::UntypedStorage<8, 24>  mUnk972b0f;
-    ::ll::UntypedStorage<8, 8>   mUnk5600a9;
-    ::ll::UntypedStorage<8, 24>  mUnkafdad7;
-    ::ll::UntypedStorage<8, 24>  mUnk7cc77e;
-    ::ll::UntypedStorage<8, 24>  mUnk6dc614;
-    ::ll::UntypedStorage<8, 128> mUnkededb8;
-    ::ll::UntypedStorage<8, 128> mUnk6b8a9a;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerDimensionTransferProxy>> const>
+                                                                                   mPlayerDimensionTransferProxy;
+    ::ll::TypedStorage<1, 1, bool const>                                           mIsClientSide;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PortalForcer> const> mPortalForcer;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ISharedSpawnGetter>> const> mSharedSpawnGetter;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelStorage> const>              mLevelStorage;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LoadingScreenIdManager> const>    mLoadingScreenIdManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                    mPacketSender;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::DimensionType), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnAnyPlayerChangeDimensionPreSuspendRegion;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded>>
+        mOnAnyPlayerChangeDimensionPrepareRegionComplete;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerDimensionTransferer& operator=(PlayerDimensionTransferer const&);
-    PlayerDimensionTransferer(PlayerDimensionTransferer const&);
-    PlayerDimensionTransferer();
 
 public:
     // virtual functions

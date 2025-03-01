@@ -2,25 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/spawn_category/Type.h"
+
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace br::spawn {
 
 struct EntityType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4f2ddb;
-    ::ll::UntypedStorage<8, 48> mUnkddc014;
-    ::ll::UntypedStorage<1, 1>  mUnkb3681d;
-    ::ll::UntypedStorage<1, 1>  mUnkadf18f;
-    ::ll::UntypedStorage<4, 4>  mUnk278ed2;
-    ::ll::UntypedStorage<4, 4>  mUnk51fd0c;
+    ::ll::TypedStorage<4, 4, ::SpawnCategory::Type> mType;
+    ::ll::TypedStorage<8, 48, ::HashedString>       mId;
+    ::ll::TypedStorage<1, 1, bool>                  mIsSummonable;
+    ::ll::TypedStorage<1, 1, bool>                  mImmuneFire;
+    ::ll::TypedStorage<4, 4, float>                 mHeight;
+    ::ll::TypedStorage<4, 4, float>                 mWidth;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EntityType& operator=(EntityType const&);
-    EntityType(EntityType const&);
-    EntityType();
 
 public:
     // member functions

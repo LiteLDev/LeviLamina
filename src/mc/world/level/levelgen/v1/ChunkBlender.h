@@ -13,22 +13,18 @@
 class Biome;
 class BiomeRegistry;
 struct TerrainInfo;
+namespace ChunkBlenderUtil { struct AttenuationData; }
 // clang-format on
 
 class ChunkBlender {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5165a1;
-    ::ll::UntypedStorage<4, 8>  mUnkadfbc8;
-    ::ll::UntypedStorage<2, 2>  mUnk6cf752;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::array<::ChunkBlenderUtil::AttenuationData, 4>>>
+                                                      mChunkAttenuationData;
+    ::ll::TypedStorage<4, 8, ::DividedPos2d<4> const> mMinPos;
+    ::ll::TypedStorage<2, 2, short const>             mMinHeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkBlender& operator=(ChunkBlender const&);
-    ChunkBlender(ChunkBlender const&);
-    ChunkBlender();
 
 public:
     // member functions

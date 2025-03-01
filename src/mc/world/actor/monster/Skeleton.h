@@ -51,7 +51,7 @@ public:
     virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -107,7 +107,7 @@ public:
 
     MCAPI bool $canBeAffected(uint id) const;
 
-    MCFOLD void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* target);
 
     MCAPI void $normalTick();
 

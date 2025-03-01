@@ -12,14 +12,8 @@ class DimensionDataSerializer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkeb24b9;
+    ::ll::TypedStorage<4, 4, uint> mSaveCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DimensionDataSerializer& operator=(DimensionDataSerializer const&);
-    DimensionDataSerializer(DimensionDataSerializer const&);
-    DimensionDataSerializer();
 
 public:
     // member functions

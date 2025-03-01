@@ -18,6 +18,7 @@ struct Brightness;
 struct SubChunk;
 struct SubChunkLightIndex;
 struct SubChunkLightUpdate;
+struct SubtractiveLightInfo;
 // clang-format on
 
 class SubChunkRelighter {
@@ -28,30 +29,26 @@ public:
         SetOuterEdgeOfComputationBits                            = 1,
     };
 
+    using LightPair = ::SubChunkBrightnessStorage::LightPair;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>     mUnkd7efd2;
-    ::ll::UntypedStorage<8, 24576> mUnk247b51;
-    ::ll::UntypedStorage<1, 4096>  mUnka955ff;
-    ::ll::UntypedStorage<8, 768>   mUnkd07591;
-    ::ll::UntypedStorage<8, 384>   mUnka0b056;
-    ::ll::UntypedStorage<8, 384>   mUnk97e476;
-    ::ll::UntypedStorage<8, 24>    mUnkb53041;
-    ::ll::UntypedStorage<8, 48>    mUnk54a36d;
-    ::ll::UntypedStorage<8, 384>   mUnk3b2e93;
-    ::ll::UntypedStorage<1, 48>    mUnk590c49;
-    ::ll::UntypedStorage<8, 8>     mUnkef334f;
-    ::ll::UntypedStorage<8, 8>     mUnk236233;
-    ::ll::UntypedStorage<1, 1>     mUnk8d0aec;
-    ::ll::UntypedStorage<1, 1>     mUnk700671;
+    ::ll::TypedStorage<1, 1, bool>                                         mNeedToResetToDoBits;
+    ::ll::TypedStorage<8, 24576, ::std::bitset<196608>>                    mToDo;
+    ::ll::TypedStorage<1, 4096, ::std::array<uchar, 4096>>                 mOldAbsorption;
+    ::ll::TypedStorage<8, 768, ::std::vector<::SubChunkLightIndex>[2][16]> mAdditiveBlocksToProcess;
+    ::ll::TypedStorage<8, 384, ::std::vector<::SubChunkLightIndex>[16]>    mEdgeBlocksToProcess;
+    ::ll::TypedStorage<8, 384, ::std::vector<::SubChunkLightIndex>[16]>    mBlocksToProcess;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkLightIndex>>         mAbsorptionBlocksToProcess;
+    ::ll::TypedStorage<8, 48, ::std::vector<::SubtractiveLightInfo>[2]>    mSubtractiveBlocks;
+    ::ll::TypedStorage<8, 384, ::SubChunk* [3][4][4]>                      mSubChunkPtrArray;
+    ::ll::TypedStorage<1, 48, bool[3][4][4]>                               mSubChunkTouched;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                                   mCenterChunkPos;
+    ::ll::TypedStorage<8, 8, uint64>                                       mCenterSubChunkIndex;
+    ::ll::TypedStorage<1, 1, bool>                                         mOriginalLighting;
+    ::ll::TypedStorage<1, 1, ::SubChunkBrightnessStorage::LightPair>       mDefaultLightPair;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SubChunkRelighter& operator=(SubChunkRelighter const&);
-    SubChunkRelighter(SubChunkRelighter const&);
-    SubChunkRelighter();
 
 public:
     // member functions

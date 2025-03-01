@@ -6,6 +6,7 @@
 // clang-format off
 class Block;
 class BlockPos;
+class CompoundTag;
 // clang-format on
 
 namespace br::worldgen {
@@ -14,17 +15,11 @@ struct StructureBlockInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk451641;
-    ::ll::UntypedStorage<8, 8>  mUnk888151;
-    ::ll::UntypedStorage<8, 8>  mUnke2f28f;
-    ::ll::UntypedStorage<8, 16> mUnk45b43c;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                       mPos;
+    ::ll::TypedStorage<8, 8, ::Block const*>                    mBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                    mExtraBlock;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CompoundTag>> mTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructureBlockInfo& operator=(StructureBlockInfo const&);
-    StructureBlockInfo(StructureBlockInfo const&);
-    StructureBlockInfo();
 
 public:
     // member functions

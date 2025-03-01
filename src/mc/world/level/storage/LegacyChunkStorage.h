@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/storage/StorageVersion.h"
 
@@ -12,32 +13,29 @@ class Biome;
 class ChunkPos;
 class LevelChunk;
 class LevelStorage;
+class PerlinSimplexNoise;
+class RegionFile;
 struct LevelChunkFinalDeleter;
+namespace Bedrock::Threading { class Mutex; }
 // clang-format on
 
 class LegacyChunkStorage : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk29a516;
-    ::ll::UntypedStorage<8, 40> mUnk73f4a0;
-    ::ll::UntypedStorage<8, 32> mUnk349e98;
-    ::ll::UntypedStorage<8, 32> mUnk88bfc7;
-    ::ll::UntypedStorage<8, 8>  mUnka9d2ec;
-    ::ll::UntypedStorage<8, 8>  mUnkbb32d3;
-    ::ll::UntypedStorage<4, 4>  mUnkdabb51;
-    ::ll::UntypedStorage<8, 8>  mUnk91261c;
-    ::ll::UntypedStorage<8, 64> mUnk1a2ca8;
-    ::ll::UntypedStorage<8, 64> mUnk715963;
-    ::ll::UntypedStorage<8, 80> mUnk3be0c7;
-    ::ll::UntypedStorage<8, 80> mUnk68190f;
+    ::ll::TypedStorage<1, 1, bool>                                             mDone;
+    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const>                      mGrassNoise;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const>         mLevelPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const>         mImportedChunksPath;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RegionFile>>                  mRegionFile;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RegionFile>>                  mEntitiesFile;
+    ::ll::TypedStorage<4, 4, ::StorageVersion>                                 mLoadedStorageVersion;
+    ::ll::TypedStorage<8, 8, ::Biome&>                                         mDefaultBiome;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::string>> mChunkEntities;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::string>> mChunkBlockEntities;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mRegionFileMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mChunkMapMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyChunkStorage& operator=(LegacyChunkStorage const&);
-    LegacyChunkStorage(LegacyChunkStorage const&);
-    LegacyChunkStorage();
 
 public:
     // virtual functions

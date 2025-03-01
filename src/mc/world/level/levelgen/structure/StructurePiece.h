@@ -19,17 +19,11 @@ class StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnk8c6046;
-    ::ll::UntypedStorage<4, 4>  mUnkc77b68;
-    ::ll::UntypedStorage<4, 4>  mUnk85df9a;
-    ::ll::UntypedStorage<8, 16> mUnk6ab179;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>           mBoundingBox;
+    ::ll::TypedStorage<4, 4, int>                      mOrientation;
+    ::ll::TypedStorage<4, 4, int>                      mGenDepth;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<bool>> mTerrainAdjustmentToken;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StructurePiece& operator=(StructurePiece const&);
-    StructurePiece(StructurePiece const&);
-    StructurePiece();
 
 public:
     // virtual functions

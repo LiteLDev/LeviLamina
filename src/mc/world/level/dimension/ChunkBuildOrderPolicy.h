@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkPos;
+class SpinLockImpl;
 class Vec3;
 // clang-format on
 
@@ -50,17 +51,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkfaf08b;
-    ::ll::UntypedStorage<8, 32> mUnk6e03d6;
-    ::ll::UntypedStorage<8, 24> mUnk73508d;
-    ::ll::UntypedStorage<4, 4>  mUnk6c0761;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::ChunkBuildOrderPolicy::Influence>> mPositionMap;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                                 mChunkPosAsyncSpinLock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChunkBuildOrderPolicy::Influence>> mChunkPosAndDirectionAsync;
+    ::ll::TypedStorage<4, 4, uint>                                               mLastHandle;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ChunkBuildOrderPolicy& operator=(ChunkBuildOrderPolicy const&);
-    ChunkBuildOrderPolicy(ChunkBuildOrderPolicy const&);
-    ChunkBuildOrderPolicy();
 
 public:
     // virtual functions

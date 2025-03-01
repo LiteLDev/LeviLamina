@@ -6,13 +6,17 @@
 #include "mc/world/level/spawn/EntityPredicateToken.h"
 #include "mc/world/level/spawn/EntitySpawnReason.h"
 #include "mc/world/level/spawn/HeightmapToken.h"
+#include "mc/world/level/spawn/ObstructionPredicateToken.h"
 #include "mc/world/level/spawn/PlacementTypeToken.h"
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class IRandom;
+class Mob;
+namespace br::spawn { class PlacementType; }
 namespace br::spawn { struct EntityType; }
 // clang-format on
 
@@ -31,49 +35,47 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk721584;
-        ::ll::UntypedStorage<8, 8> mUnkfbd3cc;
+        ::ll::TypedStorage<8, 8, ::br::spawn::SpawnPlacements&> mParent;
+        ::ll::TypedStorage<8, 8, uint64>                        mIdx;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlacementRecord& operator=(PlacementRecord const&);
-        PlacementRecord(PlacementRecord const&);
-        PlacementRecord();
     };
 
     struct EntityRecord {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk1610da;
-        ::ll::UntypedStorage<2, 2> mUnk11b430;
-        ::ll::UntypedStorage<2, 2> mUnkd06401;
-        ::ll::UntypedStorage<2, 2> mUnk85589a;
+        ::ll::TypedStorage<1, 1, ::br::spawn::HeightmapToken>            mHeightmap;
+        ::ll::TypedStorage<2, 2, ::br::spawn::PlacementTypeToken>        mPlacement;
+        ::ll::TypedStorage<2, 2, ::br::spawn::EntityPredicateToken>      mEntity;
+        ::ll::TypedStorage<2, 2, ::br::spawn::ObstructionPredicateToken> mObstruction;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EntityRecord& operator=(EntityRecord const&);
-        EntityRecord(EntityRecord const&);
-        EntityRecord();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk94afb8;
-    ::ll::UntypedStorage<8, 24> mUnkdbc747;
-    ::ll::UntypedStorage<8, 24> mUnk5032c7;
-    ::ll::UntypedStorage<8, 24> mUnkbcbe53;
-    ::ll::UntypedStorage<8, 24> mUnkc2c742;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<::std::string, ::br::spawn::SpawnPlacements::EntityRecord>>>
+        mEntityRecords;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::tuple<
+            ::std::string,
+            ::std::function<
+                bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)>>>>
+        mEntityPredicates;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::tuple<
+            ::std::string,
+            ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)>>>>
+        mObstructionPredicates;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block const&)>>>>
+        mHeightmapTypes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::tuple<::std::string, ::std::unique_ptr<::br::spawn::PlacementType>>>>
+        mPlacementTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SpawnPlacements& operator=(SpawnPlacements const&);
-    SpawnPlacements(SpawnPlacements const&);
-    SpawnPlacements();
 
 public:
     // member functions
