@@ -37,7 +37,7 @@ bool SimulatedPlayer::simulateDestroyBlock(const BlockPos& pos, ScriptModuleMine
 
         BlockLegacy const& block = getDimensionBlockSource().getBlock(pos).getLegacyBlock();
 
-        if (block.mayPick() && mItemInUse->mUnkf0096a.as<ItemStack>().isNull()) {
+        if (block.mayPick() && mItemInUse->mItem->isNull()) {
             mDestroyingBlockPos  = pos;
             mDestroyingBlockFace = (uchar)face;
             return true;
