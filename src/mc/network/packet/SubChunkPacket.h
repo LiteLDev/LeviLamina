@@ -82,6 +82,9 @@ public:
         // NOLINTEND
 
     public:
+        SubChunkPacketData() = default;
+
+    public:
         // member functions
         // NOLINTBEGIN
         MCAPI SubChunkPacketData(
