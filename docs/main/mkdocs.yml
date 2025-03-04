@@ -1,10 +1,6 @@
 site_name: LeviLamina Docs
 repo_url: https://github.com/LiteLDev/LeviLamina
-docs_dir: .
-
-exclude_docs: |
-  /mkdocs.yml
-  /requirements.txt
+docs_dir: contents
 
 nav:
   - Home: index.md
