@@ -1,1 +1,171 @@
 # 表单指南
+
+LeviLamina提供了一套极简的表单API，允许开发者用几行代码实现复杂的表单功能。  
+表单API的头文件被存放于`ll/api/form`中，此外由于Minecraft的表单ID在运行时是唯一的，所以我们提供了**FormIdManager**
+用于获取Minecraft的表单ID，允许开发者自己实现一套表单API。
+
+## FormIdManager
+
+FormIdManager的头文件位于`ll/api/form/FormIdManager.h`，导出了`ll::form::FormIdManager::genFormId`方法，用于获取一个唯一的表单ID。
+
+### 示例
+
+```cpp
+#include "ll/api/form/FormIdManager.h"
+
+void test() { uint formId = ll::form::FormIdManager::genFormId(); }
+```
+
+## SimpleForm
+
+SimpleForm是一个简单的表单，提供了标题、内容和按钮。   
+SimpleForm的头文件位于`ll/api/form/SimpleForm.h`。  
+此外，由于SimpleForm的方法例如`addButton`返回SimpleForm的引用，所以可以链式调用。
+
+### 用法
+
+1. 引用头文件`ll/api/form/SimpleForm.h`
+2. 构造一个SimpleForm对象，可以使用带参数和不带参数的构造函数，使用带参数的构造函数需要传入标题和内容，使用不带参数的构造函数需要手动调用
+   `setTitle`和`setContent`方法来设置标题和内容
+3. 通过`appendButton`方法添加按钮
+4. 使用`sendTo`方法将表单发送给玩家，需要传入`Player`对象的引用和一个回调函数，回调函数的参数为`Player`
+   对象的引用、玩家选择的按钮索引和取消原因的枚举。具体参数可以参考头文件`ll/api/form/SimpleForm.h`中`Callback`的声明。
+
+!!! tip
+    当按钮的索引为-1时代表玩家取消的表单。  
+    `FormCancelReason`的本质是`std::optional<ModalFormCancelReason>`，所以你需要先判断其是否有值才能使用，并且你需要使用
+    `ModalFormCancelReason`的枚举值来判断取消的原因。示例中使用了`magic_enum`库来获取枚举值的名称。
+
+### 示例
+
+```cpp
+#include "ll/api/form/SimpleForm.h"
+#include "magic_enum/magic_enum.hpp"
+
+void sendSimpleFormToPlayer(Player& player) {
+    ll::form::SimpleForm form("I'm title", "I'm content");
+    // Or
+    //    ll::form::SimpleForm form;
+    //    form.setTitle("I'm title").setContent("I'm content");
+    form.addButton("Button1").addButton("Button2").sendTo(
+        player,
+        [](Player& player, int result, FormCancelReason reason) {
+            switch (selected): {
+                case 0:
+                    player.sendMessage("You clicked Button1");
+                    break;
+                case 1:
+                    player.sendMessage("You clicked Button2");
+                    break;
+                case -1:
+                    player.sendMessage("You closed the form");
+                    if (reason) {
+                        player.sendMessage("Reason: " + magic_enum::enum_name(reason));
+                    }
+                    break;
+                }
+        }
+    );
+}
+```
+
+## CustomForm
+
+CustomForm是一个复杂的表单，提供了标题、标签(Label)、输入框(Input)、开关(Toggle)、下拉框(Dropdown)、滚动条(Slider)
+和分段滚动条(StepSlider)。
+
+### 用法
+
+1. 引用头文件`ll/api/form/CustomForm.h`
+2. 构造一个CustomForm对象，可以使用带参数和不带参数的构造函数，使用带参数的构造函数需要传入标题，使用不带参数的构造函数需要手动调用
+   `setTitle`方法来设置标题
+3. 通过`appendLabel`、`appendInput`、`appendToggle`、`appendDropdown`、`appendSlider`和`appendStepSlider`方法添加各种元素。
+4. 使用`sendTo`方法将表单发送给玩家，需要传入`Player`对象的引用和一个回调函数，回调函数的参数为`Player`
+   对象的引用、表单的结果和取消原因的枚举。具体参数可以参考头文件`ll/api/form/CustomForm.h`中`Callback`的声明。
+
+!!! tip
+    表单的结果`CustomFormResult`实际上是`std::optional<std::unordered_map<std::string, CustomFormElementResult>>`
+    ，一个存储了元素名称和结果的无序关联容器。你可以通过元素名称来获取对应的结果，结果的类型是`CustomFormElementResult`
+    ，是一个联合体(`std::variant<std::monostate, uint64, double, std::string>`)，所以你需要先使用`std::holds_alternative`
+    判断其类型通过`std::get`获取。
+
+### 示例
+
+```cpp
+#include "ll/api/form/CustomForm.h"
+#include "magic_enum/magic_enum.hpp"
+
+void sendCustomFormToPlayer(Player& player) {
+    ll::form::CustomForm     form;
+    std::vector<std::string> names;
+    form.setTitle("CustomForm")
+        .appendLabel("label")
+        .appendInput("input1", "input")
+        .appendToggle("toggle", "toggle")
+        .appendSlider("slider", "slider", 0, 100, 1)
+        .appendStepSlider("stepSlider", "stepSlider", {"a", "b", "c"})
+        .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
+        .appendDropdown("emptydropdown", "empty dropdown", names)
+        .sendTo(player, [](Player& player, ll::form::CustomFormResult const& data, ll::form::FormCancelReason reason) {
+            if (!data) {
+                player.sendMessage("CustomForm callback canceled");
+                if (reason) {
+                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
+                }
+                return;
+            }
+            for (auto [name, result] : *data) {
+                if (std::holds_alternative<uint64_t>(var)) {
+                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<uint64_t>(var)));
+                } else if (std::holds_alternative<double>(var)) {
+                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<double>(var)));
+                } else if (std::holds_alternative<std::string>(var)) {
+                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<std::string>(var)));
+                }
+            }
+        });
+}
+```
+
+## ModalForm
+
+ModalForm是一个模态表单，提供了标题、内容和两个按钮，通常用于实现双项选择。
+
+### 用法
+
+1. 引用头文件`ll/api/form/ModalForm.h`
+2. 构造一个ModalForm对象，可以使用带参数和不带参数的构造函数，使用带参数的构造函数需要传入标题、内容、上按钮和下按钮，使用不带参数的构造函数需要手动调用
+   `setTitle`和`setContent`方法来设置标题和内容，`setUpperButton`和`setLowerButton`方法来设置上按钮和下按钮。
+3. 使用`sendTo`方法将表单发送给玩家，需要传入`Player`对象的引用和一个回调函数，回调函数的参数为`Player`
+   对象的引用、玩家选择的按钮结果和取消原因的枚举。具体参数可以参考头文件`ll/api/form/ModalForm.h`中`Callback`的声明。
+
+!!! tip
+    `ModalFormResult`实际上是`std::optional<ModalFormSelectedButton>`的别名，而`ModalFormSelectedButton`是一个Bool枚举，有`Upper = true`和
+    `Lower = false`两个值，分别代表上按钮和下按钮。
+
+### 示例
+
+```cpp
+#include "ll/api/form/ModalForm.h"
+#include "magic_enum/magic_enum.hpp"
+
+void sendModalFormToPlayer(Player& player) {
+    ll::form::ModalForm form;
+    form.setTitle("ModalForm")
+        .setUpperButton("Upper")
+        .setLowerButton("Lower")
+        .sendTo(
+            player,
+            [](Player& player, ll::form::ModalFormResult selected, ll::form::FormCancelReason cancelReason) {
+                if (!selected) {
+                    player.sendMessage("ModalForm callback canceled");
+                    if (cancelReason) {
+                        player.sendMessage("ModalForm callback cancelReason {}", magic_enum::enum_name(cancelReason));
+                    }
+                    return;
+                }
+                player.sendMessage("ModalForm callback {}", (bool)selected);
+            }
+        );
+}
+```
