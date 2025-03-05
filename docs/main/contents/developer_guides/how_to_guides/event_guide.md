@@ -34,7 +34,11 @@ void ListenEvents() {
 - Add class members and accessor methods for the event, and export methods using `__declspec(dllexport)`.
 
 !!! tip "About LLAPI"  
-    In LeviLamina, macros such as `LLAPI` essentially work by predefining `LL_EXPORT` using `add_defines("LL_EXPORT")` in `xmake.lua`. This ensures that methods are exported during LeviLamina compilation and become `__declspec(dllimport)` when referenced by other Mods, allowing them to import the methods. Below is a simple example of such a macro:
+    In LeviLamina, macros `LLAPI` essentially work by predefining `LL_EXPORT` using `add_defines("LL_EXPORT")` in
+    `xmake.lua`. This ensures that `LLAPI` means `__declspec(dllexport)` during LeviLamina compilation and become
+    `__declspec(dllimport)`
+    when referenced by other Mods, allowing them to import the methods. Below is a simple example of such a macro, In
+    practice you need to rename `MOD_EXPORT` and `MODAPI` to avoid conflicts with other mod's macros:
 
 ```cpp
 #ifdef MOD_EXPORT
@@ -44,8 +48,11 @@ void ListenEvents() {
 #endif
 ```
 
-This way, you only need to add `add_defines("MOD_EXPORT")` in your Mod's `xmake.lua` to export your Mod's methods.  
-If you want other Mods to use the events provided by your Mod without linking to your Mod, you can set the event's members to `public` or simply implement accessor methods in the header file. Additionally, it is recommended to declare and implement a `serialize` method in the event to facilitate outputting event information in the console.
+This way, you only need to add `add_defines(“MOD_EXPORT”)` to your Mod's `xmake.lua`, and then add `MODAPI` in front of
+the methods that need to be exported in order to export your Mod's methods.  
+If you want other Mods to use the events provided by your Mod without linking to your Mod, you can set the event's
+members to `public` or simply implement accessor methods in the header file. Additionally, it is recommended to declare
+and implement a `serialize` method in the event to facilitate outputting event information in the console.
 
 ```cpp
 #pragma once
