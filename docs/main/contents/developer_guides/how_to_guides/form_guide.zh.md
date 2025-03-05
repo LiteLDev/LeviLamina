@@ -49,21 +49,24 @@ void sendSimpleFormToPlayer(Player& player) {
     //    form.setTitle("I'm title").setContent("I'm content");
     form.addButton("Button1").addButton("Button2").sendTo(
         player,
-        [](Player& player, int result, FormCancelReason reason) {
-            switch (selected): {
-                case 0:
-                    player.sendMessage("You clicked Button1");
-                    break;
-                case 1:
-                    player.sendMessage("You clicked Button2");
-                    break;
-                case -1:
-                    player.sendMessage("You closed the form");
-                    if (reason) {
-                        player.sendMessage("Reason: " + magic_enum::enum_name(reason));
-                    }
-                    break;
+        [](Player& player, int selected, FormCancelReason reason) {
+            switch (selected) {
+            case 0: {
+                player.sendMessage("You clicked Button1");
+                break;
+            }
+            case 1: {
+                player.sendMessage("You clicked Button2");
+                break;
+            }
+            case -1: {
+                player.sendMessage("You closed the form");
+                if (reason) {
+                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
                 }
+                break;
+            }
+            }
         }
     );
 }
@@ -115,12 +118,12 @@ void sendCustomFormToPlayer(Player& player) {
                 return;
             }
             for (auto [name, result] : *data) {
-                if (std::holds_alternative<uint64_t>(var)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<uint64_t>(var)));
-                } else if (std::holds_alternative<double>(var)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<double>(var)));
-                } else if (std::holds_alternative<std::string>(var)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<std::string>(var)));
+                if (std::holds_alternative<uint64_t>(result)) {
+                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<uint64_t>(result)));
+                } else if (std::holds_alternative<double>(result)) {
+                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<double>(result)));
+                } else if (std::holds_alternative<std::string>(result)) {
+                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<std::string>(result)));
                 }
             }
         });
@@ -154,18 +157,15 @@ void sendModalFormToPlayer(Player& player) {
     form.setTitle("ModalForm")
         .setUpperButton("Upper")
         .setLowerButton("Lower")
-        .sendTo(
-            player,
-            [](Player& player, ll::form::ModalFormResult selected, ll::form::FormCancelReason cancelReason) {
-                if (!selected) {
-                    player.sendMessage("ModalForm callback canceled");
-                    if (cancelReason) {
-                        player.sendMessage("ModalForm callback cancelReason {}", magic_enum::enum_name(cancelReason));
-                    }
-                    return;
+        .sendTo(player, [](Player& player, ll::form::ModalFormResult selected, ll::form::FormCancelReason reason) {
+            if (!selected) {
+                player.sendMessage("ModalForm callback canceled");
+                if (reason) {
+                    player.sendMessage(fmt::format("ModalForm callback reason {}", magic_enum::enum_name(reason)));
                 }
-                player.sendMessage("ModalForm callback {}", (bool)selected);
+                return;
             }
-        );
+            player.sendMessage(fmt::format("ModalForm callback {}", (bool)selected));
+        });
 }
 ```

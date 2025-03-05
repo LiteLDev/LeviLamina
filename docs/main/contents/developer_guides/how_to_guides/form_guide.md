@@ -57,20 +57,23 @@ void sendSimpleFormToPlayer(Player& player) {
     //    form.setTitle("I'm title").setContent("I'm content");
     form.addButton("Button1").addButton("Button2").sendTo(
         player,
-        [](Player& player, int result, FormCancelReason reason) {
-            switch (result) {
-                case 0:
-                    player.sendMessage("You clicked Button1");
-                    break;
-                case 1:
-                    player.sendMessage("You clicked Button2");
-                    break;
-                case -1:
-                    player.sendMessage("You closed the form");
-                    if (reason) {
-                        player.sendMessage("Reason: " + magic_enum::enum_name(reason));
-                    }
-                    break;
+        [](Player& player, int selected, FormCancelReason reason) {
+            switch (selected) {
+            case 0: {
+                player.sendMessage("You clicked Button1");
+                break;
+            }
+            case 1: {
+                player.sendMessage("You clicked Button2");
+                break;
+            }
+            case -1: {
+                player.sendMessage("You closed the form");
+                if (reason) {
+                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
+                }
+                break;
+            }
             }
         }
     );
@@ -109,7 +112,7 @@ sliders.
 #include "magic_enum/magic_enum.hpp"
 
 void sendCustomFormToPlayer(Player& player) {
-    ll::form::CustomForm form;
+    ll::form::CustomForm     form;
     std::vector<std::string> names;
     form.setTitle("CustomForm")
         .appendLabel("label")
@@ -174,11 +177,11 @@ void sendModalFormToPlayer(Player& player) {
             if (!selected) {
                 player.sendMessage("ModalForm callback canceled");
                 if (reason) {
-                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
+                    player.sendMessage(fmt::format("ModalForm callback reason {}", magic_enum::enum_name(reason)));
                 }
                 return;
             }
-            player.sendMessage("ModalForm callback " + std::to_string((bool)selected));
+            player.sendMessage(fmt::format("ModalForm callback {}", (bool)selected));
         });
 }
 ```
