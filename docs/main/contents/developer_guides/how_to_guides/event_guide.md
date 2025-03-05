@@ -2,8 +2,10 @@
 
 ## Introduction
 
-LeviLamina includes a built-in event system that provides simple events as well as a way for Mods to publish their own events.  
-All built-in events are placed in the `ll/api/event/` directory and are categorized into subdirectories such as `command`, `entity`, `player`, `world`, etc.
+LeviLamina includes a built-in event system that provides simple events as well as a way for Mods to publish their own
+events.  
+All built-in events are placed in the `ll/api/event/` directory and are categorized into subdirectories such as
+`command`, `entity`, `player`, `world`, etc.
 
 ## Listening to Events
 
@@ -26,7 +28,8 @@ void ListenEvents() {
 
 ### Example: Server Started Event
 
-- Create a header file named `ServerStartedEvent.h` and define the `ServerStartedEvent` class in it, which inherits from the `ll::event::Event` class.
+- Create a header file named `ServerStartedEvent.h` and define the `ServerStartedEvent` class in it, which inherits from
+  the `ll::event::Event` class.
 
 !!! tip "About Cancellable Events"  
     If you want your event to be cancellable, inherit from the `ll::event::Cancellable<ll::event::Event>` class.
@@ -75,10 +78,12 @@ public:
 } // namespace ll::event::inline server
 ```
 
-- In `ServerStartedEvent.cpp`, implement the `serialize` and `server` methods for the `ServerStartedEvent` class. Also, call the `EventBus::publish` method when the event should be triggered.
+- In `ServerStartedEvent.cpp`, implement the `serialize` and `server` methods for the `ServerStartedEvent` class. Also,
+  call the `EventBus::publish` method when the event should be triggered.
 
 !!! tip "About Cancellable Events"  
-    If your event is cancellable, you also need to check the return value of `Event::isCancelled` to determine whether to cancel the event. For example:
+    If your event is cancellable, you also need to check the return value of `Event::isCancelled` to determine whether to
+    cancel the event. For example:
 
 ```cpp
 LL_TYPE_INSTANCE_HOOK(
@@ -100,9 +105,12 @@ LL_TYPE_INSTANCE_HOOK(
 }
 ```
 
-- In the source file, define a static function returning a `std::unique_ptr<EmitterBase>` and a class that inherits from `Emitter<emitterFactory, ServerStartedEvent>`, which we will call `ServerStartedEventEmitter`. This class is used to register the hook via the `HookRegistrar`.
+- In the source file, define a static function returning a `std::unique_ptr<EmitterBase>` and a class that inherits from
+  `Emitter<emitterFactory, ServerStartedEvent>`, which we will call `ServerStartedEventEmitter`. This class is used to
+  register the hook via the `HookRegistrar`.
 
-- After the class, implement the static function returning a `std::unique_ptr<EmitterBase>`, which returns a `std::unique_ptr<ServerStartedEventEmitter>` constructed using `std::make_unique`.
+- After the class, implement the static function returning a `std::unique_ptr<EmitterBase>`, which returns a
+  `std::unique_ptr<ServerStartedEventEmitter>` constructed using `std::make_unique`.
 
 ```cpp
 #include "ll/api/event/server/ServerStartedEvent.h"
