@@ -27,6 +27,7 @@ nav:
       - developer_guides/how_to_guides/i18n_guide.md
       - developer_guides/how_to_guides/item_guide.md
       - developer_guides/how_to_guides/command_guide.md
+      - developer_guides/how_to_guides/coro_guide.md
 
     - API 🔗: https://lamina.levimc.org/api
 
