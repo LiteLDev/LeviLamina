@@ -9,7 +9,7 @@ LeviLamina提供了一个简单的i18n类，用于为自身和Mod提供多语言
 ### 加载语言文件
 
 - 引用头文件`ll/api/i18n/I18n.h`。
-- 在Mod的`load`方法中调用`I18n::load`方法，传入语言文件所在路径，一般为文件夹，也可以使用单个json文件。LeviLamina提供了
+- 在Mod的`load`方法中调用`ll::i18n::getInstance().load`方法，传入语言文件所在路径，一般为文件夹，也可以使用单个json文件。LeviLamina提供了
   `Mod::getLangDir`方法供开发者获取规范的语言文件路径。
 
 ```cpp

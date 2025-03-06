@@ -22,11 +22,7 @@ This tutorial covers the following topics:
 - Calling Minecraft functions
 
 !!! info
-    All the source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you look at the source code while reading the tutorial. If you have installed [lip](https://futrime.github.io/lip), you can also run the following code to install the mod implemented in this tutorial in the LeviLamina instance environment.
-
-    ```shell
-    lip install github.com/futrime/better-suicide
-    ```
+    All the source code for this tutorial can be found at [futrime/better-suicide](https://github.com/futrime/better-suicide). We recommend that you look at the source code while reading the tutorial.
 
 ## Learn C++
 
@@ -52,7 +48,7 @@ Before developing mods (or learning C++), you need to set up a development envir
     If you are not using the latest version of Visual Studio 2022, MSVC, and Windows SDK, you may encounter problems in building, loading, and running mods later. If you encounter problems like `xxx is not a member of std`, please consider this possibility. The environment for testing the build of this tutorial is Visual Studio Community 2022 17.8.1, MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8), Windows 11 SDK (10.0.22000.0)
 
 !!! tip
-    Because the LeviLamina project is huge, if you use Visual Studio Code, its built-in Intellisense system may be overwhelmed. We recommend that you install the clangd plugin and use clangd for code checking and so on. After installing clangd and the corresponding plugin, you need to run the following command to generate `compile_commands.json`, and then restart VSCode to make clangd effective.
+    Because the LeviLamina project is huge, if you use Visual Studio Code, its built-in Intellisense system may be overwhelmed. We recommend that you install [the clangd extension](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) and use clangd for code checking and so on. After installing clangd and the corresponding extension, you need to run the following command to generate `compile_commands.json`, and then restart VSCode to make clangd effective.
 
     ```shell
     xmake project -k compile_commands
@@ -146,6 +142,12 @@ Then build:
 ```shell
 xmake
 ```
+
+!!! tip
+    You can also install the [XMake extension](https://marketplace.visualstudio.com/items?itemName=tboox.xmake-vscode) to
+    make building and generating `compile_commands.json` more convenient. By the way, before using the XMake extension to
+    generate `compile_commands.json`, you need to set **Compile Commands Directory** in the extension settings to `"."` so
+    that `clangd` can detect it.
 
 !!! failure
     Build failed? Try upgrading Visual Studio 2022, MSVC, and Windows SDK. Remember, be sure to upgrade to the latest version.

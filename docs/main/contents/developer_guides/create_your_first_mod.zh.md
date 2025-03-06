@@ -22,11 +22,7 @@
 - 调用Minecraft函数
 
 !!! info
-    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。如果你已经安装了[lip](https://futrime.github.io/lip)，你还可以直接运行以下代码在LeviLamina实例环境中安装本教程中实现的模组。
-
-    ```shell
-    lip install github.com/futrime/better-suicide
-    ```
+    本教程的所有源码可以在[futrime/better-suicide](https://github.com/futrime/better-suicide)找到。我们建议你一边看源码一边看教程。
 
 ## 学习C++
 
@@ -52,7 +48,7 @@
     如果你安装的不是最新版本的Visual Studio 2022、MSVC和Windows SDK，则后续在构建、加载、运行模组中有可能遇到问题。如果你遇到了类似`xxx is not a member of std`这样的问题，请考虑这个可能性。本教程测试构建的环境是Visual Studio Community 2022 17.8.1、MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)、Windows 11 SDK (10.0.22000.0)
 
 !!! tip
-    由于LeviLamina项目极大，如果你使用Visual Studio Code，其自带的Intellisense系统可能不堪重负。我们建议你安装clangd插件并使用clangd进行代码检查等。安装clangd和对应的插件后，你需要运行以下命令生成`compile_commands.json`，然后重启VSCode以使clangd生效。
+    由于LeviLamina项目极大，如果你使用Visual Studio Code，其自带的Intellisense系统可能不堪重负。我们建议你安装[clangd扩展](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)并使用clangd进行代码检查等。安装clangd和对应的扩展后，你需要运行以下命令生成`compile_commands.json`，然后重启VSCode以使clangd生效。
 
     ```shell
     xmake project -k compile_commands
@@ -146,6 +142,11 @@ xmake f -m debug
 ```shell
 xmake
 ```
+
+!!! tip
+    你也可以安装[xmake扩展](https://marketplace.visualstudio.com/items?itemName=tboox.xmake-vscode)来更方便地进行构建和生成
+    `compile_commands.json`，顺带一提，使用xmake扩展生成`compile_commands.json`前需要将扩展设置中的**Compile Commands
+    Directory**改为"."才能让clangd检测到。
 
 !!! failure
     构建失败了？尝试升级一下Visual Studio 2022、MSVC和Windows SDK吧。记住，一定要升级到最新版本。

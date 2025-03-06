@@ -9,7 +9,7 @@ LeviLamina provides a simple i18n class to support multilingual functionality fo
 ### Loading Language Files
 
 - Include the header file `ll/api/i18n/I18n.h`.
-- Call the `I18n::load` method in the `load` method of your mod, passing the path to the language files. This path is
+- Call the `ll::i18n::getInstance().load` method in the `load` method of your mod, passing the path to the language files. This path is
   typically a folder but can also be a single JSON file. LeviLamina provides the `Mod::getLangDir` method for developers
   to obtain the standard language file path.
 
