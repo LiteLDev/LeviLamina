@@ -19,6 +19,8 @@ Then, install LeviLamina bundled with Bedrock Dedicated Server using lip:
 
 ```shell
 lip install github.com/LiteLDev/LeviLamina@version
+# Example:
+lip install github.com/LiteLDev/LeviLamina@x.x.x
 ```
 
 You can find LeviLamina's version numbers in the [releases](https://github.com/LiteLDev/LeviLamina/releases).

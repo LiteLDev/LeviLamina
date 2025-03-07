@@ -76,6 +76,8 @@ cd myserver
 
 ```shell
 lip install github.com/LiteLDev/LeviLamina@版本
+# 示例:
+lip install github.com/LiteLDev/LeviLamina@x.x.x
 ```
 
 LeviLamina的版本号可以在[releases](https://github.com/LiteLDev/LeviLamina/releases)查看

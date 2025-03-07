@@ -27,6 +27,8 @@
 
 ```shell
 lip install github.com/LiteLDev/LeviLamina@版本
+# 示例:
+lip install github.com/LiteLDev/LeviLamina@x.x.x
 ```
 lip v0.25.0开始要求安装包时必须指定版本，LeviLamina的版本号可以在[releases](https://github.com/LiteLDev/LeviLamina/releases)查看
 

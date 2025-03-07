@@ -29,6 +29,8 @@ You can install LeviLamina in different ways, depending on your needs:
 
 ```shell
 lip install github.com/LiteLDev/LeviLamina@version
+# Example:
+lip install github.com/LiteLDev/LeviLamina@x.x.x
 ```
 Starting from lip v0.25.0, specifying a version is required when installing packages. You can find LeviLamina's
 version numbers in the [releases](https://github.com/LiteLDev/LeviLamina/releases).
