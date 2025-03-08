@@ -180,7 +180,7 @@ void ModRegistrar::loadAllMods() noexcept try {
     }
     for (auto& name : loadingQueueHash) {
         auto& manifest = manifests.at(name);
-        if (manifest.dependencies) {
+        if (manifest.dependencies && !manifest.dependencies->empty()) {
             bool denied = false;
             for (auto& dependency : *manifest.dependencies) {
                 if (!loadingQueueHash.contains(dependency.name)) {
@@ -191,8 +191,12 @@ void ModRegistrar::loadAllMods() noexcept try {
                 getLogger().error("{0} will not be loaded because the dependencies can't loaded"_tr(name));
                 continue;
             }
+            size_t nonSelfDependenciesCount = 0;
             for (auto& dependency : *manifest.dependencies) {
-                impl->deps.emplaceDependency(name, dependency.name);
+                if (impl->deps.emplaceDependency(name, dependency.name)) nonSelfDependenciesCount++;
+            }
+            if (nonSelfDependenciesCount == 0) {
+                impl->deps.emplace(name);
             }
         } else {
             impl->deps.emplace(name);
