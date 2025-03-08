@@ -180,7 +180,7 @@ void ModRegistrar::loadAllMods() noexcept try {
     }
     for (auto& name : loadingQueueHash) {
         auto& manifest = manifests.at(name);
-        if (manifest.dependencies) {
+        if (manifest.dependencies && !manifest.dependencies->empty()) {
             bool denied = false;
             for (auto& dependency : *manifest.dependencies) {
                 if (!loadingQueueHash.contains(dependency.name)) {
