@@ -14,20 +14,37 @@
 
 ```json
 {
-    "format_version": 2,
-    "tooth": "github.com/my-github-username/my-pack",
-    "version": "0.1.0",
-    "info": {
-        "name": "MyPack",
-        "description": "A great pack!",
-        "author": "My Name",
-        "tags": [
-            "pack"
-        ]
-    },
-    "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "1.0.x"
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "example.com/my-user/my-pack",
+  "version": "0.1.0",
+  "info": {
+    "name": "My Pack",
+    "description": "Description of my pack",
+    "tags": [
+      "pack"
+    ],
+    "avatar_url": "https://example.com/my-pack/avatar.png"
+  },
+  "variants": [
+    {
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "Required LeviLamina version range"
+      },
+      "assets": [
+        {
+          "type": "self",
+          "placements": [
+            {
+              "type": "dir",
+              "src": "my-mod/",
+              "dest": "plugins/my-mod/"
+            }
+          ]
+        }
+      ]
     }
+  ]
 }
 ```
 
@@ -39,7 +56,7 @@
 
 ### 尝试打包和安装整合包
 
-运行`lip tooth pack pack.tth`，将会在当前目录下生成一个`pack.tth`文件，这是一个打包好的整合包。你可以移动这个整合包到合适的地方，并使用`lip install pack.tth`尝试安装这个整合包。
+运行`lip pack pack.zip`，将会在当前目录下生成一个`pack.zip`文件，这是一个打包好的整合包。你可以移动这个整合包到合适的地方，并使用`lip install pack.zip`尝试安装这个整合包。
 
 ### 发布整合包
 

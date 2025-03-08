@@ -14,21 +14,37 @@ Create a `tooth.json` file in the export directory of the pack with the followin
 
 ```json
 {
-    "format_version": 2,
-    "tooth": "github.com/my-github-username/my-pack",
-    "version": "0.1.0",
-    "info": {
-        "name": "MyPack",
-        "description": "A great pack!",
-        "author": "My Name",
-        "tags": [
-            "pack"
-        ]
-    },
-    "dependencies": {
-        "github.com/LiteLDev/LeviLamina": "1.0.x",
-        "github.com/tooth-hub/another-pack": "2.0.x"
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "example.com/my-user/my-pack",
+  "version": "0.1.0",
+  "info": {
+    "name": "My Pack",
+    "description": "Description of my pack",
+    "tags": [
+      "pack"
+    ],
+    "avatar_url": "https://example.com/my-pack/avatar.png"
+  },
+  "variants": [
+    {
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "Required LeviLamina version range"
+      },
+      "assets": [
+        {
+          "type": "self",
+          "placements": [
+            {
+              "type": "dir",
+              "src": "my-mod/",
+              "dest": "plugins/my-mod/"
+            }
+          ]
+        }
+      ]
     }
+  ]
 }
 ```
 
@@ -40,7 +56,7 @@ For more information about `tooth.json`, please refer to <https://lip.levimc.org
 
 ### Trying to Pack and Install the Pack
 
-Run `lip tooth pack pack.tth`, which will generate a packaged pack file `pack.tth` in the current directory. You can move this pack to a suitable location and try to install it using `lip install pack.tth`.
+Run `lip pack pack.zip`, which will generate a packaged pack file `pack.zip` in the current directory. You can move this pack to a suitable location and try to install it using `lip install pack.zip`.
 
 ### Publishing the Pack
 

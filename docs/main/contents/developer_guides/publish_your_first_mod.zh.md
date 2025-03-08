@@ -30,46 +30,52 @@
 
 ```json
 {
-    "format_version": 2,
-    "tooth": "github.com/my-github-username/mod-name",
-    "version": "0.1.0",
-    "info": {
-        "name": "MyMod",
-        "description": "MyMod is a great mod!",
-        "source": "github.com/my-github-username/my-source-code",
-        "author": "My Name",
-        "tags": [
-            "mod",
-            "ll"
-        ]
-    },
-    "dependencies": {
-        "github.com/tooth-hub/another-mod": "2.0.x"
-    },
-    "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "1.0.x"
-    },
-    "files": {
-        "place": [
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "example.com/my-user/my-mod",
+  "version": "0.0.0",
+  "info": {
+    "name": "My Mod",
+    "description": "Description of my mod",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": "https://example.com/my-mod/avatar.png"
+  },
+  "variants": [
+    {
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "Required LeviLamina version range"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://example.com/my-mod/assets.zip"
+          ],
+          "placements": [
             {
-                "src": "mod-name/*",
-                "dest": "plugins/mod-name"
+              "type": "dir",
+              "src": "my-mod/",
+              "dest": "plugins/my-mod/"
             }
-        ]
+          ]
+        }
+      ]
     }
+  ]
 }
 ```
 
-替换`tooth`字段的值为你的模组的GitHub仓库地址，替换`version`字段的值为你的模组的版本号，填写`info`中各个字段的值，填写`dependencies`和`prerequisites`中各个字段的值。
-
-!!! note
-    `dependencies`在安装模组时，会自动安装依赖的模组，在卸载模组时，会自动卸载依赖的模组。但是`prerequisites`不会自动安装，而是在缺少依赖时报错。一般来说，`prerequisites`中的模组应当是一些基础性的、框架级别的包，例如`github.com/LiteLDev/LeviLamina`，以避免模组的卸载过程中误卸载了这些包。
+替换`tooth`字段的值为你的模组的GitHub仓库地址，替换`version`字段的值为你的模组的版本号，填写`info`中各个字段的值，填写`dependencies`中各个字段的值。
 
 更多关于`tooth.json`的信息，请参考<https://lip.levimc.org/zh/user-guide/files/tooth-json/>。
 
 ### 尝试打包和安装模组
 
-在模组导出目录中运行`lip tooth pack mod.tth`，将会在当前目录下生成一个`mod.tth`文件，这是一个打包好的模组。你可以移动这个模组到合适的地方，并使用`lip install mod.tth`尝试安装这个模组。
+在模组导出目录中运行`lip pack mod.zip`，将会在当前目录下生成一个`mod.zip`文件，这是一个打包好的模组。你可以移动这个模组到合适的地方，并使用`lip install mod.zip`尝试安装这个模组。
 
 ### 发布模组
 

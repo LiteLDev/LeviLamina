@@ -24,6 +24,6 @@ We also provide Docker Compose files for both Linux and Windows containers at [w
 
 - `GO_MODULE_PROXY_URL`: can be set to a Go module proxy URL to speed up the installation of LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
 
-- `PACKAGES`: can be set to a list of packages to install on first run. Each package must be a valid [lip specifier](https://docs.lippkg.com/commands/lip_install.html). Both local and remote lip teeth are supported. For local packages, you may need to mount the packages to the container.
+- `PACKAGES`: can be set to a list of packages to install on first run. Each package must be a valid [lip specifier](https://lip.levimc.org/user-guide/commands/lip-install/). Both local and remote lip teeth are supported. For local packages, you may need to mount the packages to the container.
 
 - `VERSION` (`LATEST`): can be set to a specific [LeviLamina](https://github.com/LiteLDev/LeviLamina/tags) version or `LATEST` to automatically download the latest version.

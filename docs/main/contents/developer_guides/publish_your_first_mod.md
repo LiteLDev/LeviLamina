@@ -30,46 +30,52 @@ Create a `tooth.json` file in the exported mod directory with the following cont
 
 ```json
 {
-    "format_version": 2,
-    "tooth": "github.com/my-github-username/mod-name",
-    "version": "0.1.0",
-    "info": {
-        "name": "MyMod",
-        "description": "MyMod is a great mod!",
-        "author": "My Name",
-        "source": "github.com/my-github-username/my-source-code",
-        "tags": [
-            "mod",
-            "ll"
-        ]
-    },
-    "dependencies": {
-        "github.com/tooth-hub/another-mod": "2.0.x"
-    },
-    "prerequisites": {
-        "github.com/LiteLDev/LeviLamina": "1.0.x"
-    },
-    "files": {
-        "place": [
+  "format_version": 3,
+  "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
+  "tooth": "example.com/my-user/my-mod",
+  "version": "0.0.0",
+  "info": {
+    "name": "My Mod",
+    "description": "Description of my mod",
+    "tags": [
+      "platform:levilamina",
+      "type:mod"
+    ],
+    "avatar_url": "https://example.com/my-mod/avatar.png"
+  },
+  "variants": [
+    {
+      "platform": "win-x64",
+      "dependencies": {
+        "github.com/LiteLDev/LeviLamina": "Required LeviLamina version range"
+      },
+      "assets": [
+        {
+          "type": "zip",
+          "urls": [
+            "https://example.com/my-mod/assets.zip"
+          ],
+          "placements": [
             {
-                "src": "mod-name/*",
-                "dest": "plugins/mod-name"
+              "type": "dir",
+              "src": "my-mod/",
+              "dest": "plugins/my-mod/"
             }
-        ]
+          ]
+        }
+      ]
     }
+  ]
 }
 ```
 
-Replace the value of the `tooth` field with the GitHub repository address of your mod, replace the value of the `version` field with the version number of your mod, fill in the values of the fields in the `info` section, and fill in the values of the fields in the `dependencies` and `prerequisites` sections.
-
-!!! note
-    The `dependencies` section automatically installs the required mods when installing the mod and uninstalls them when uninstalling the mod. However, the `prerequisites` section does not automatically install the required mods; instead, it throws an error if the dependencies are missing. Generally, the mods listed in the `prerequisites` section should be fundamental and framework-level packages, such as `github.com/LiteLDev/LeviLamina`, to avoid accidentally uninstalling them during the mod uninstallation process.
+Replace the value of the `tooth` field with the GitHub repository address of your mod, replace the value of the `version` field with the version number of your mod, fill in the values of the fields in the `info` section, and fill in the values of the fields in the `dependencies` sections.
 
 For more information about `tooth.json`, please refer to <https://lip.levimc.org/user-guide/files/tooth-json/>.
 
 ### Try Packing and Installing the Mod
 
-In the exported mod directory, run `lip tooth pack mod.tth`. This will generate a `mod.tth` file in the current directory, which is a packaged mod. You can move this mod to a suitable location and try installing it using `lip install mod.tth`.
+In the exported mod directory, run `lip pack mod.zip`. This will generate a `mod.zip` file in the current directory, which is a packaged mod. You can move this mod to a suitable location and try installing it using `lip install mod.zip`.
 
 ### Publish the Mod
 

@@ -31,6 +31,6 @@ docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://github.bibk.top -e G
 
 - `GO_MODULE_PROXY_URL`: 可以设置为 Go 模块代理 URL，以加快 LeviLamina 的安装速度。这在您处于防火墙后面或在网络连接较慢的国家时非常有用。
 
-- `PACKAGES`: 可以设置为首次运行时要安装的软件包列表。每个软件包必须是有效的 [lip 规范](https://docs.lippkg.com/commands/lip_install.html)。支持本地和远程 lip 包。对于本地软件包，您可能需要将软件包挂载到容器中。
+- `PACKAGES`: 可以设置为首次运行时要安装的软件包列表。每个软件包必须是有效的 [lip 规范](https://lip.levimc.org/zh/user-guide/commands/lip-install/)。支持本地和远程 lip 包。对于本地软件包，您可能需要将软件包挂载到容器中。
 
 - `VERSION` (`LATEST`): 可以设置为特定的 [LeviLamina](https://github.com/LiteLDev/LeviLamina/tags) 版本或 `LATEST` 以自动下载最新版本。
