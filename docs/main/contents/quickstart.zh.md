@@ -2,7 +2,7 @@
 
 ## 开始之前
 
-我们强烈推荐你使用 [lip](https://futrime.github.io/lip/zh/user-guide/installation/)
+我们强烈推荐你使用 [lip](https://lip.levimc.org/zh/user-guide/installation/)
 来进行模组安装。如果您尚未在本地安装，请前往查看。  
 以下内容针对使用 lip 的情况下进行快速入门。
 

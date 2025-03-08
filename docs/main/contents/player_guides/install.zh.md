@@ -22,7 +22,7 @@
 
 ### 通过 lip v0.25.0及以上版本安装
 
-1. 安装lip，可以参考[lip文档](https://futrime.github.io/lip/zh/user-guide/installation/)
+1. 安装lip，可以参考[lip文档](https://lip.levimc.org/zh/user-guide/installation/)
 2. 运行以下命令来安装LeviLamina:
 
 ```shell

@@ -4,7 +4,7 @@ In the tutorial [Create Your First Mod](create_your_first_mod.md), we created a 
 
 ### Prerequisites
 
-First, make sure you have installed [lip](https://futrime.github.io/lip).
+First, make sure you have installed [lip](https://lip.levimc.org).
 
 You should also have followed the steps in [Create Your First Mod](create_your_first_mod.md) to create a mod, where the exported mod directory has a structure similar to the following:
 
@@ -65,7 +65,7 @@ Replace the value of the `tooth` field with the GitHub repository address of you
 !!! note
     The `dependencies` section automatically installs the required mods when installing the mod and uninstalls them when uninstalling the mod. However, the `prerequisites` section does not automatically install the required mods; instead, it throws an error if the dependencies are missing. Generally, the mods listed in the `prerequisites` section should be fundamental and framework-level packages, such as `github.com/LiteLDev/LeviLamina`, to avoid accidentally uninstalling them during the mod uninstallation process.
 
-For more information about `tooth.json`, please refer to <https://futrime.github.io/lip/reference/tooth_json_file_reference/>.
+For more information about `tooth.json`, please refer to <https://lip.levimc.org/user-guide/files/tooth-json/>.
 
 ### Try Packing and Installing the Mod
 

@@ -24,7 +24,7 @@ You can install LeviLamina in different ways, depending on your needs:
 
 ### Installing via lip v0.25.0 and above
 
-1. Install lip by referring to the [lip documentation](https://futrime.github.io/lip/en/user-guide/installation/).
+1. Install lip by referring to the [lip documentation](https://lip.levimc.org/en/user-guide/installation/).
 2. Run the following command to install LeviLamina:
 
 ```shell
