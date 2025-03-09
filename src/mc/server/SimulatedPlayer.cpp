@@ -56,7 +56,7 @@ bool SimulatedPlayer::simulateDestroyLookAt(float handLength) {
     return simulateDestroyBlock(hitResult.mBlock, (ScriptModuleMinecraft::ScriptFacing)hitResult.mFacing);
 }
 
-::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
+::SimulatedPlayer* SimulatedPlayer::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
     auto result = static_cast<SimulatedPlayer*>(Player::tryGetFromEntity(entity, includeRemoved));
     if (result && result->isSimulated()) {
         return result;
