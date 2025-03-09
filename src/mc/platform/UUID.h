@@ -16,7 +16,7 @@ public:
 
     LLNDAPI static mce::UUID random();
 
-    [[nodiscard]] inline mce::UUID fromStringHash(std::string_view sv) {
+    [[nodiscard]] inline static mce::UUID fromStringHash(std::string_view sv) {
         return {ll::hash_utils::doHash(sv), ll::hash_utils::doHash2(sv)};
     }
 
