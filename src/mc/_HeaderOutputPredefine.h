@@ -109,6 +109,7 @@
 #pragma warning(push)
 #pragma warning(disable : 4702)
 #endif
+#define nsel_CONFIG_SELECT_EXPECTED 1
 #include "nonstd/expected.hpp"
 #ifdef _MSC_VER
 #pragma warning(pop)
