@@ -48,9 +48,9 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     hovertext.append("§8");
     hovertext.append(stack.getTypeName());
     hovertext.append("§r");
-    uint64_t max = stack.getItem()->getMaxDamage();
+    uint64 max = stack.getItem()->getMaxDamage();
     if (max != 0) {
-        uint64_t current = max - stack.getDamageValue();
+        uint64 current = max - stack.getDamageValue();
         hovertext.append(fmt::format("\n§7耐久: {} / {}§r", current, max));
     }
 

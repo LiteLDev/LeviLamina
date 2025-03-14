@@ -50,16 +50,7 @@ void registerFormTestCommand() {
                                 return;
                             }
                             for (auto [name, result] : *data) {
-                                static auto logDebugResult = [&](ll::form::CustomFormElementResult const& var) {
-                                    if (std::holds_alternative<uint64_t>(var)) {
-                                        logptr->info("CustomForm callback {} = {}", name, std::get<uint64_t>(var));
-                                    } else if (std::holds_alternative<double>(var)) {
-                                        logptr->info("CustomForm callback {} = {}", name, std::get<double>(var));
-                                    } else if (std::holds_alternative<std::string>(var)) {
-                                        logptr->info("CustomForm callback {} = {}", name, std::get<std::string>(var));
-                                    }
-                                };
-                                logDebugResult(result);
+                                visit([&](auto& v) { logptr->info("CustomForm callback {} = {}", name, v); }, result);
                             }
                         }
                     );

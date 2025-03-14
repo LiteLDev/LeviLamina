@@ -9,5 +9,4 @@ template <typename Return>
 struct ItemGameplayEvent;
 
 template <>
-struct ItemGameplayEvent<void>
-: ConstEventVariant<ShapedRecipeTriggeredEvent, CraftUpdateResultItemClientEvent> {};
+struct ItemGameplayEvent<void> : ConstEventVariant<ShapedRecipeTriggeredEvent, CraftUpdateResultItemClientEvent> {};

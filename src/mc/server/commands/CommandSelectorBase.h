@@ -44,18 +44,18 @@ public:
     ::CommandPosition                                                            mPosition{};
     ::Vec3                                                                       mBoxDeltas{};
     float                                                                        mRadiusMinSqr{0.0f};
-    float                                                                        mRadiusMaxSqr{std::numeric_limits<float>::max()};
-    uint64                                                                       mCount{std::numeric_limits<uint>::max()};
-    bool                                                                         mIncludeDeadPlayers{};
-    bool                                                                         mIsPositionBound{};
-    bool                                                                         mDistanceFiltered{};
-    bool                                                                         mPositionFiltered{};
-    bool                                                                         mCountFiltered{};
-    bool                                                                         mHaveDeltas{};
-    bool                                                                         mForcePlayer{};
-    bool                                                                         mExcludeAgents{};
-    bool                                                                         mIsExplicitIdSelector{};
-    bool                                                                         mForceDimensionFiltering{};
+    float  mRadiusMaxSqr{std::numeric_limits<float>::max()};
+    uint64 mCount{std::numeric_limits<uint>::max()};
+    bool   mIncludeDeadPlayers{};
+    bool   mIsPositionBound{};
+    bool   mDistanceFiltered{};
+    bool   mPositionFiltered{};
+    bool   mCountFiltered{};
+    bool   mHaveDeltas{};
+    bool   mForcePlayer{};
+    bool   mExcludeAgents{};
+    bool   mIsExplicitIdSelector{};
+    bool   mForceDimensionFiltering{};
     // NOLINTEND
 
     CommandSelectorBase() = default;
