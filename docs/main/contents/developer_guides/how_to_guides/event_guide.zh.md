@@ -112,9 +112,8 @@ LL_TYPE_INSTANCE_HOOK(
 #include "ll/api/event/EventRefObjSerializer.h"
 #include "ll/api/memory/Hook.h"
 
-#include "mc/gameplayhandlers/ServerInstanceEventHandler.h"
 #include "mc/nbt/CompoundTag.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/scripting/ServerScriptManager.h"
 
 namespace ll::event::inline server {
 
@@ -128,13 +127,14 @@ ServerInstance& ServerStartedEvent::server() const { return mInstance; }
 LL_TYPE_INSTANCE_HOOK(
     ServerStartedEventHook,
     ll::memory::HookPriority::Normal,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
-    origin(ins);
+    auto result = origin(ins);
     EventBus::getInstance().publish(ServerStartedEvent(ins));
+    return result;
 }
 
 static std::unique_ptr<EmitterBase> emitterFactory();

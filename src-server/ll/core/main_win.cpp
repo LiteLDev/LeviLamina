@@ -23,11 +23,10 @@
 #include "ll/api/utils/HashUtils.h"
 #include "ll/api/utils/SystemUtils.h"
 
-#include "mc/gameplayhandlers/ServerInstanceEventHandler.h"
 #include "mc/server/DedicatedServer.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/commands/StopCommand.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/scripting/ServerScriptManager.h"
 
 #include "ll/core/Config.h"
 #include "ll/core/CrashLogger.h"
@@ -229,18 +228,19 @@ LL_AUTO_STATIC_HOOK(LeviLaminaMainHook, HookPriority::High, "main"_sym, int, int
 LL_AUTO_TYPE_INSTANCE_HOOK(
     EnableAllModsHook,
     HookPriority::High,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
-    origin(ins);
+    auto result = origin(ins);
 
     CrashLogger::init();
 
     mod::ModRegistrar::getInstance().enableAllMods();
 
     setGamingStatus(GamingStatus::Running);
+    return result;
 }
 LL_AUTO_TYPE_INSTANCE_HOOK(
     DisableAllModsHook,

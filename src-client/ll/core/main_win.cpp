@@ -14,8 +14,8 @@
 #include "ll/core/gui/ImGuiHooks.h"
 #include "ll/core/mod/ModRegistrar.h"
 
+#include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
 #include "mc/world/level/Level.h"
 
 #include "mc/deps/core/string/StringHash.h"
@@ -60,13 +60,14 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     EnableAllModsHook,
     HookPriority::High,
     ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
     getLogger().debug("sendServerInitializeEnd");
 
-    origin(ins);
+    auto result                      = origin(ins);
     service::bedrock::serverInstance = std::addressof(ins);
 
     CrashLogger::init();
@@ -74,6 +75,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     mod::ModRegistrar::getInstance().enableAllMods();
 
     setGamingStatus(GamingStatus::Running);
+    return result;
 }
 LL_AUTO_TYPE_INSTANCE_HOOK(
     DisableAllModsHook,

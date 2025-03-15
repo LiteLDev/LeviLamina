@@ -6,22 +6,20 @@
 
 #include "ll/api/memory/Hook.h"
 #include "mc/server/commands/CommandOutput.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/scripting/ServerScriptManager.h"
 
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/server/commands/CommandBlockName.h"
 
 
 namespace {
 LL_AUTO_TYPE_INSTANCE_HOOK(
     testtttt,
     ll::memory::HookPriority::Low,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
     static auto ptr    = ll::io::LoggerRegistry::getInstance().getOrCreate("MolangTest");
@@ -62,6 +60,6 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         "query.homo_number: {}",
         ExpressionNode("query.homo_number", MolangVersion::Latest, {{HashedString{"default"}}}).evalAsFloat(parm)
     );
-    origin(ins);
+    return origin(ins);
 }
 } // namespace

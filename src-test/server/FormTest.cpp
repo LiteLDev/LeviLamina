@@ -15,7 +15,7 @@
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/player/Player.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
+#include "mc/scripting/ServerScriptManager.h"
 
 
 namespace ll::test::formtest {
@@ -100,13 +100,14 @@ void registerFormTestCommand() {
 LL_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
     ll::memory::HookPriority::Normal,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
-    origin(ins);
+    auto result = origin(ins);
     registerFormTestCommand();
+    return result;
 }
 
 ll::memory::HookRegistrar<registerBuiltinCommands> hooks{};

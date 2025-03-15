@@ -8,8 +8,8 @@
 #include "ll/api/service/Bedrock.h"
 
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/commands/CommandBlockName.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/command/runtime/RuntimeOverload.h"
 
@@ -81,12 +81,12 @@ struct ParamTest3 {
 LL_AUTO_TYPE_INSTANCE_HOOK(
     registerBuiltinCommands,
     ll::memory::HookPriority::Normal,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
-    origin(ins);
+    auto result = origin(ins);
 
     auto&       cmd    = CommandRegistrar::getInstance().getOrCreateCommand("t", "test tttttt");
     static auto lambda = [](CommandOrigin const&, CommandOutput& output, ParamTest const& param) {
@@ -172,4 +172,5 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
                 ll::getLogger().debug("{} : {}", k, v);
         }
     });
+    return result;
 }

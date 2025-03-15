@@ -2,7 +2,6 @@
 #include "ll/api/memory/Hook.h"
 
 #include "mc/server/DedicatedServerCommands.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 
 namespace ll::command {

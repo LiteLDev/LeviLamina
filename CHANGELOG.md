@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2025-03-15
+
+### Fixed
+
+- Added default constructor for SubChunkPacketData @ShrBox
+- Added missing operator== for InventorySource @ShrBox
+- Fixed mod not loaded when it dependencies is an empty array (#1633) @killcerr
+- Fixed mce::UUID::fromStringHash and SimulatedPlayer::tryGetFromEntity (#1634) @xiaoqch
+- Fixed CustomFormResult for dropdown element(#1637) @xiaoqch
+- Fixed wrong type of IDType @ShrBox
+- Replaced ServerInstanceEventCoordinator::sendServerInitializeEnd with ServerScriptManager::$onServerThreadStarted to fix [#1636] @ShrBox
+
 ## [1.1.0] - 2025-02-28
 
 ### Added
@@ -838,8 +850,10 @@ For lip and tooth-hub test only.
 [#1611]: https://github.com/LiteLDev/LeviLamina/issues/1611
 [#1622]: https://github.com/LiteLDev/LeviLamina/issues/1622
 [#1631]: https://github.com/LiteLDev/LeviLamina/issues/1631
+[#1636]: https://github.com/LiteLDev/LeviLamina/issues/1636
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.1.0-rc.1...v1.1.0
 [1.1.0-rc.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.1...v1.1.0-rc.1
 [1.0.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.0.0...v1.0.1

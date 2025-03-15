@@ -5,9 +5,9 @@
 #include "magic_enum/magic_enum.hpp"
 #include "mc/deps/json/Value.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/server/ServerLevel.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
 #include "mc/world/item/Item.h"
 #include "mc/world/item/ItemInstance.h"
 #include "nlohmann/json.hpp"
@@ -19,12 +19,12 @@
 LL_AUTO_TYPE_INSTANCE_HOOK(
     TestRecipesHook,
     HookPriority::Normal,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
-    origin(ins);
+    auto result = origin(ins);
 
     using namespace ll::string_utils;
 
@@ -149,6 +149,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         file << multitable.dump(4) << std::flush;
         file.close();
     }
+    return result;
 }
 
 #endif // TestRecipes

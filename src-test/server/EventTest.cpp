@@ -8,8 +8,8 @@
 #include "ll/api/utils/StringUtils.h"
 #include "ll/core/LeviLamina.h"
 #include "mc/network/packet/TextPacket.h"
+#include "mc/scripting/ServerScriptManager.h"
 #include "mc/server/ServerInstance.h"
-#include "mc/world/events/ServerInstanceEventCoordinator.h"
 
 #include "ll/api/event/DynamicListener.h"
 #include "ll/api/event/Emitter.h"
@@ -62,12 +62,12 @@ class TestEventEmitter
 LL_AUTO_TYPE_INSTANCE_HOOK(
     EventTestH,
     ll::memory::HookPriority::Normal,
-    ServerInstanceEventCoordinator,
-    &ServerInstanceEventCoordinator::sendServerInitializeEnd,
-    void,
+    ServerScriptManager,
+    &ServerScriptManager::$onServerThreadStarted,
+    EventResult,
     ::ServerInstance& ins
 ) {
-    origin(ins);
+    auto result = origin(ins);
 
     auto& bus = ll::event::EventBus::getInstance();
 
@@ -146,4 +146,5 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
         }
     };
     ll::getLogger().addSink(std::make_shared<BroadcastSink>());
+    return result;
 }
