@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    template <class T>
+    MCAPI void set(ushort id, T const& value);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);

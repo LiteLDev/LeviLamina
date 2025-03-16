@@ -31,6 +31,10 @@ public:
     using ID = ushort;
 
 public:
+    template <class T>
+    MCAPI void set(ushort id, T const& value);
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mItemsArray;
