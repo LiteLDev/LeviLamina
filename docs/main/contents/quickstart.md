@@ -2,32 +2,33 @@
 
 ## Before You Begin
 
-We strongly recommend using [lip](https://lip.levimc.org/user-guide/installation/) for mod installation. If you
-have not installed it locally yet, please go ahead and check it out.  
+We highly recommend using [lip](https://lip.levimc.org/user-guide/installation/) for a smooth mod installation experience. If you haven’t set it up locally yet, please visit the installation guide to get started.  
 The following content is for a quick start with using lip.
 
 ## Installing LeviLamina
 
-First, create a new directory for your Minecraft server and enter it:
+Begin by creating a directory for your Minecraft server and navigating into it:
 
 ```shell
 mkdir myserver
 cd myserver
 ```
 
-Then, install LeviLamina bundled with Bedrock Dedicated Server using lip:
+Then, install LeviLamina (bundled with Bedrock Dedicated Server) using lip:
 
 ```shell
-lip install github.com/LiteLDev/LeviLamina@version
-# Example:
-lip install github.com/LiteLDev/LeviLamina@x.x.x
+# Install the latest version
+lip install github.com/LiteLDev/LeviLamina
+
+# Install a specific version (replace x.y.z with the desired version)
+lip install github.com/LiteLDev/LeviLamina@x.y.z
 ```
 
-You can find LeviLamina's version numbers in the [releases](https://github.com/LiteLDev/LeviLamina/releases).
+Find the available version numbers in the [releases](https://github.com/LiteLDev/LeviLamina/releases).
 
 ## Running the Server
 
-To start the server, simply run `bedrock_server_mod.exe`:
+Launch your server by running:
 
 ```shell
 ./bedrock_server_mod.exe
@@ -35,104 +36,32 @@ To start the server, simply run `bedrock_server_mod.exe`:
 
 ## Updating LeviLamina
 
-Don't update LeviLamina in the same location when it comes to data security. Instead, we recommend creating a new
-directory, installing the new version of LeviLamina there, and subsequently copying the `worlds` directory from the old
-location to the new location. Then, follow the instructions provided by the mod developers to migrate the configuration
-files and data files of the mods you are using to the new directory.  
-For lip v0.25.0 and above, you can use the following command to upgrade LeviLamina:
+For optimal data security, do not update LeviLamina in the same directory. Instead, install the new version in a separate folder, then copy over your `worlds` directory and update your configuration as needed.
 
 ```shell
-lip install -U github.com/LiteLDev/LeviLamina@version
+# Update to the latest version
+lip update github.com/LiteLDev/LeviLamina
+
+# Update to a specific version (replace x.y.z with the desired version)
+lip update github.com/LiteLDev/LeviLamina@x.y.z
 ```
 
-If you are using lip v0.25.0 and below:
-
-```shell
-lip install --upgrade github.com/LiteLDev/LeviLamina
-```
+Find the available version numbers in the [releases](https://github.com/LiteLDev/LeviLamina/releases).
 
 ## Finding Mods
 
-Before installing a mod, you'll need to find what you want to install. The best place to find mods
-is [Bedrinth](https://bedrinth.com), the official mod index, but you can also find many mods elsewhere around the web.
+Before adding mods, explore your options. The best source is [Bedrinth](https://bedrinth.com), although you can discover many elsewhere around the web.
 
 ## Installing Mods
 
-For most mods, especially those on Bedrinth, you just need paste installation command from Bedrinth.  
-For example, to install [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat), you would run:
+Most mods—especially those listed on Bedrinth—can be installed by pasting the provided command. For example, to install [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
 
 ```shell
-lip install github.com/LiteLDev/LeviAntiCheat@version
+lip install github.com/LiteLDev/LeviAntiCheat
 ```
 
-However, some mods may require additional steps to install. Follow the instructions provided by the mod developers to
-install the mods you are using.
+Follow additional instructions provided by individual mod developers when needed.
 
 ## Troubleshooting
 
-If the problem occurred during playing the game, the first step to troubleshooting installing mods is to check the log
-of your server. Your server's most recent logs will be stored to the `logs/server-latest.log` file. You may need to
-scroll near the beginning of this file to see when mods were loaded.  
-Check [FAQ](faq.md) for frequently occurring problems.
-
-!!! tip
-    The description below only apply to lip v0.24.0 and below.
-
-If you see something like this:
-
-```plaintext
-ERROR: failed to parse and download specifier string list: failed to install specifier: failed to download from all Go proxies: failed to download from all Go proxies: [failed to download file: cannot download file (HTTP 404 Not Found): https://goproxy.io/github.com/tooth-hub/mymod/@v/v1.1.0.zip]
-```
-
-This means that the version of the mod you tried to install does not exist. You should double-check that you typed the
-mod name and version correctly.
-
-If you see something like this:
-
-```plaintext
-ERROR: failed to resolve dependencies: installed tooth github.com/tooth-hub/othermod does not match dependency 1.20.41
-```
-
-This means that the version of the mod you tried to install is incompatible with the installed version of another mod,
-LeviLamina or BDS. Try to install another version of the mod or update the installed mod.
-
-If your network cannot directly access GitHub or GoProxy, you can set up a proxy or mirror:
-
-## Configuring a Proxy or Mirror
-
-### For lip v0.25.0 and above
-
-You can use the following command to configure mirrors:
-
-```shell
-lip config set github_proxies=
-lip config set go_module_proxies=
-```
-
-### For lip v0.24.0 and below
-
-If you have a proxy available, use the following command to configure the proxy (supports socks5, http, https):
-
-```shell
-lip config ProxyURL
-```
-
-If you have mistakenly configured a proxy server when you don't have one, you can unconfigure it with the following
-command:
-
-```shell
-lip config ProxyURL ""
-```
-
-For example, if your proxy address is `http://127.0.0.1:8080`, you can use the following command to configure the proxy:
-
-```shell
-lip config ProxyURL http://127.0.0.1:8080
-```
-
-If you do not have a proxy available locally, you can use the following commands to configure a mirror source:
-
-```shell
-lip config GoModuleProxyURL
-lip config GitHubMirrorURL
-```
+If issues occur during gameplay, start by checking your server log located at `logs/server-latest.log`. Scroll near the beginning to review when mods were loaded, and refer to the [FAQ](faq.md) for common problems.

@@ -2,9 +2,9 @@
 
 ## 开始之前
 
-我们强烈推荐你使用 [lip](https://lip.levimc.org/zh/user-guide/installation/)
-来进行模组安装。如果您尚未在本地安装，请前往查看。  
-以下内容针对使用 lip 的情况下进行快速入门。
+我们强烈推荐使用 [lip](https://lip.levimc.org/user-guide/installation/) 来获得流畅的模组安装体验。如果您还未在本地进行配置，请先查阅安装指南以便快速启动。  
+
+以下内容为您提供使用 lip 的入门快速指南。
 
 ## 配置镜像
 
@@ -15,40 +15,6 @@
 ```shell
 lip config set github_proxies=https://github.bibk.top
 lip config set go_module_proxies=https://goproxy.cn
-```
-
-### 对于lip v0.24.0及以下版本
-
-如果你有**代理服务器**可用，使用以下命令配置代理（支持socks5，http，https）:
-
-```shell
-lip config ProxyURL
-```
-
-例如你的**代理服务器**地址是 `http://127.0.0.1:8080`，你可以使用以下命令配置代理:
-
-```shell
-lip config ProxyURL http://127.0.0.1:8080
-```
-
-如果你在没有代理服务器的情况下错误地配置了代理服务器，可以使用以下命令取消配置:
-
-```shell
-lip config ProxyURL ""
-```
-
-如果你本地没有代理可用，你可以使用以下命令配置**镜像源**:
-
-```shell
-lip config GoModuleProxyURL
-lip config GitHubMirrorURL
-```
-
-例如:
-
-```shell
-lip config GoModuleProxyURL https://goproxy.cn
-lip config GitHubMirrorURL https://github.bibk.top
 ```
 
 这两个镜像我们已在中国大陆测试过可用，当然你仍然可以使用其他镜像。
@@ -65,82 +31,61 @@ lip config GitHubMirrorURL https://github.bibk.top
 
 ## 安装LeviLamina
 
-首先，创建一个新目录用于您的Minecraft服务器，并进入该目录:
+首先，为你的 Minecraft 服务器创建一个目录并切换到该目录：
 
 ```shell
 mkdir myserver
 cd myserver
 ```
 
-然后，使用lip安装捆绑了Bedrock Dedicated Server的LeviLamina:
+接下来，使用 lip 安装 LeviLamina（内置 Bedrock Dedicated Server）：
 
 ```shell
-lip install github.com/LiteLDev/LeviLamina@版本
-# 示例:
-lip install github.com/LiteLDev/LeviLamina@x.x.x
+# Install the latest version
+lip install github.com/LiteLDev/LeviLamina
+
+# Install a specific version (replace x.y.z with the desired version)
+lip install github.com/LiteLDev/LeviLamina@x.y.z
 ```
 
-LeviLamina的版本号可以在[releases](https://github.com/LiteLDev/LeviLamina/releases)查看
+可在 [releases](https://github.com/LiteLDev/LeviLamina/releases) 查看可用版本号。
 
 ## 运行服务器
 
-要启动服务器，只需运行 `bedrock_server_mod.exe`:
+执行以下命令启动服务器:
 
 ```shell
 ./bedrock_server_mod.exe
 ```
 
-## 更新 LeviLamina
+## 更新LeviLamina
 
-不要在同一位置更新 LeviLamina，这样做会影响数据安全。相反，我们建议创建一个新目录，在那里安装 LeviLamina 的新版本，并随后将
-`worlds` 目录从旧位置复制到新位置。然后，按照模组开发者提供的说明迁移您正在使用的模组的配置文件和数据文件。  
-对于lip v0.25.0及以上版本，可以使用以下命令来更新LeviLamina:
+为确保数据安全，请勿在同一目录内更新 LeviLamina。建议在独立文件夹内安装新版本，然后复制 `worlds` 目录并按需更新配置：
 
 ```shell
-lip install -U github.com/LiteLDev/LeviLamina@版本
+# Update to the latest version
+lip update github.com/LiteLDev/LeviLamina
+
+# Update to a specific version (replace x.y.z with the desired version)
+lip update github.com/LiteLDev/LeviLamina@x.y.z
 ```
 
-如果你正在使用lip v0.24.0及以下版本:
+可在 [releases](https://github.com/LiteLDev/LeviLamina/releases) 查看可用版本号。
 
-```shell
-lip install --upgrade github.com/LiteLDev/LeviLamina
-```
+## 搜寻模组
 
-## 查找模组
-
-在安装模组之前，您需要找到想要安装的模组。最好的地方是 [Bedrinth](https://bedrinth.com)，但您也可以在其他网站上找到许多模组。
+在添加 Mods 之前，请先了解各种选项。最佳资源来源为 [Bedrinth](https://bedrinth.com)，当然你也可以在其他网站上找到更多资源。
 
 ## 安装模组
 
-对于大多数模组，特别是在Bedrinth上的模组，就只需要粘贴Bedrinth提供的安装命令就可以直接安装。  
-例如，要安装 [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat)，您可以运行:
+大多数 Mods（尤其是 Bedrinth 上列出的）都可通过运行提供的命令进行安装。例如，要安装 [LeviAntiCheat](https://github.com/LiteLDev/LeviAntiCheat):
 
 ```shell
-lip install github.com/LiteLDev/LeviAntiCheat@版本
+lip install github.com/LiteLDev/LeviAntiCheat
 ```
 
-但是，有些模组可能需要额外的安装步骤。请按照模组开发者提供的说明安装您正在使用的模组。
+如有需要，请遵循各个 Mod 开发者提供的进一步说明。
 
-## 故障排除
+## 问题排查
 
-如果问题发生在游戏过程中，解决安装模组的故障排除的第一步是检查服务器的日志。您服务器的最新日志将存储在
-`logs/server-latest.log` 文件中。您可能需要在该文件的开头附近滚动以查看模组何时被加载。  
-请查看 [FAQ](faq.md) 获取常见问题的答案。
-
-!!! tip
-    以下描述只适用于lip v0.24.0及以下版本。
-
-如果您看到类似以下内容:
-
-```plaintext
-ERROR: failed to parse and download specifier string list: failed to install specifier: failed to download from all Go proxies: failed to download from all Go proxies: [failed to download file: cannot download file (HTTP 404 Not Found): https://goproxy.io/github.com/tooth-hub/mymod/@v/v1.1.0.zip]
-```
-
-这意味着您尝试安装的模组版本不存在。您应该仔细检查您输入的模组名称和版本是否正确。  
-如果您看到类似以下内容:
-
-```plaintext
-ERROR: failed to resolve dependencies: installed tooth github.com/tooth-hub/othermod does not match dependency 1.20.41
-```
-
-这意味着您尝试安装的模组版本与另一个模组、LeviLamina 或 BDS 的已安装版本不兼容。尝试安装模组的另一个版本或更新已安装的模组。
+若游戏过程中遇到问题，请首先检查位于 `logs/server-latest.log` 的服务器日志。向上滚动查看 Mods 加载时间点，并参阅 [FAQ](faq.md) 了解常见问题的解决方案。
