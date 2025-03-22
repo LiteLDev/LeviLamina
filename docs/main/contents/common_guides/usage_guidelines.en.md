@@ -10,7 +10,7 @@ In short, we hope these guidelines help you understand what you can and cannot d
 
 ### Important Legal Agreements
 
-[The LeviLamina End User License Agreement](../../../EULA.en.md) (EULA) is a legal agreement between you and us ([*LeviMC*](https://github.com/LeviMC)). The EULA covers your use of *LeviLamina* products and governs your use of our website and how we resolve disputes. It is your responsibility to understand and comply with the EULA.
+[The LeviLamina End User License Agreement](https://github.com/LiteLDev/LeviLamina/blob/HEAD/EULA.en.md) (EULA) is a legal agreement between you and us ([*LeviMC*](https://github.com/LeviMC)). The EULA covers your use of *LeviLamina* products and governs your use of our website and how we resolve disputes. It is your responsibility to understand and comply with the EULA.
 
 These guidelines should be followed alongside the EULA but do not form part of the EULA. They exist because we currently believe that allowing some flexibility in the use of *LeviLamina* is a good idea.
 
@@ -22,7 +22,7 @@ For all uses (whether permitted or not):
 - All permissions and consents are granted at our discretion and may be revoked at any time if we deem it appropriate or if we do not like what you are doing.
 - All rights are expressly reserved.
 
-If you are interested in proposing a formal partnership with us, please maintain that interest, as we are currently **not** considering partnerships with other individuals, organizations, companies, etc. If you wish to report a violation of these guidelines, you can send us information through [our email](feedback@levimc.org). We **cannot** provide advice on whether a specific project complies with these guidelines. If you are unsure, you should consult with a lawyer for assistance.
+If you are interested in proposing a formal partnership with us, please maintain that interest, as we are currently **not** considering partnerships with other individuals, organizations, companies, etc. If you wish to report a violation of these guidelines, you can send us information through [our email](mailto:feedback@levimc.org). We **cannot** provide advice on whether a specific project complies with these guidelines. If you are unsure, you should consult with a lawyer for assistance.
 
 We will add more guidelines as we decide when and what to include—feel free to make requests.
 
@@ -83,7 +83,7 @@ Currently, we follow the commercial use guidelines of Minecraft’s usage rules.
 
 We love the idea of you, as part of our community, doing cool things, and we want to support your creativity. We understand that you may want to share your creations with others and even make money off what you've created. We want to empower you to create and share. At the same time, we want to limit those who would take things too far. Hopefully, these guidelines help you understand what we are okay with you doing and what we aren’t.
 
-If something isn’t covered by these guidelines and we haven’t explicitly said it’s okay, it probably means we don’t want you to do it. In any case, if it isn’t covered, please don’t do it without getting written permission from us. If something is specifically covered and permitted by these guidelines, our account terms, or the [End User License Agreement](../../../EULA.en.md) applicable to any of our games, then you don’t need to contact us.
+If something isn’t covered by these guidelines and we haven’t explicitly said it’s okay, it probably means we don’t want you to do it. In any case, if it isn’t covered, please don’t do it without getting written permission from us. If something is specifically covered and permitted by these guidelines, our account terms, or the [End User License Agreement](https://github.com/LiteLDev/LeviLamina/blob/HEAD/EULA.en.md) applicable to any of our games, then you don’t need to contact us.
 
 ## Historical Change Information
 

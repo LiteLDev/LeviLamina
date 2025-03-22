@@ -14,9 +14,10 @@ nav:
     - player_guides/troubleshooting.md
 
   - Developer Guides:
-    - developer_guides/create_your_first_mod.md
-    - developer_guides/publish_your_first_mod.md
-    - developer_guides/publish_your_first_pack.md
+    - Tutorials:
+      - developer_guides/tutorials/create_your_first_mod.md
+      - developer_guides/tutorials/publish_your_first_mod.md
+      - developer_guides/tutorials/publish_your_first_pack.md
 
     - How-to Guides:
       - developer_guides/how_to_guides/event_guide.md
@@ -102,7 +103,7 @@ plugins:
             Install on Docker: 在Docker上安装
             Developer Guides: 开发者指南
             Tutorials: 教程
-            How-to Guides: 如何做到···
+            How-to Guides: 如何做到······
             API 🔗: 接口 🔗
             Maintainer Guides: 维护者指南
 
