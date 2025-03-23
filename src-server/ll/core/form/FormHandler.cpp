@@ -39,15 +39,18 @@ nlohmann::ordered_json jsonCppValueToNlohmannOrderedJson(Json::Value const& valu
         return value.asString({});
     } else if (value.isBool()) {
         return value.asBool(false);
-    } else if (value.isIntegral()) {
-        auto intVal  = value.asInt64();
-        auto uintVal = value.asUInt64();
-        if (intVal >= 0 && static_cast<uint64>(intVal) == uintVal) {
-            return uintVal;
+    } else if (value.isNumeric()) {
+        switch (value.type()) {
+        case Json::ValueType::IntValue:
+            return value.asInt64();
+        case Json::ValueType::UintValue:
+            return value.asUInt64();
+        case Json::ValueType::RealValue:
+            return value.asDouble(0);
+            break;
+        default:
+            return nullptr;
         }
-        return intVal;
-    } else if (value.isDouble()) {
-        return value.asDouble(0);
     } else if (value.isNull()) {
         return nullptr;
     }
