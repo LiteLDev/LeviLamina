@@ -9,11 +9,6 @@ namespace ll::form {
 class Button {
 
 public:
-    struct ButtonImage {
-        std::string data{};
-        std::string type{"path"};
-    };
-
     using ButtonCallback = SimpleForm::ButtonCallback;
 
     std::string                mText{};

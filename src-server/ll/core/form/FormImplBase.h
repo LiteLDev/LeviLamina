@@ -5,6 +5,11 @@
 
 namespace ll::form {
 
+struct ButtonImage {
+    std::string data{};
+    std::string type{"path"};
+};
+
 class FormImpl {
 protected:
     virtual ~FormImpl()                                            = default;

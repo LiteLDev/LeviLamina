@@ -1,4 +1,5 @@
 
+#include <string>
 #include <utility>
 
 #include "ll/api/form/CustomForm.h"
@@ -241,6 +242,8 @@ public:
 class CustomForm::CustomFormImpl : public FormImpl {
 private:
     std::string                                     mTitle{};
+    std::optional<std::string>                      mSubmit{};
+    std::optional<ButtonImage>                      mIcon{};
     std::vector<std::shared_ptr<CustomFormElement>> mElements{};
 
 public:
@@ -251,6 +254,10 @@ public:
     explicit CustomFormImpl(std::string title) : mTitle(std::move(title)) {}
 
     void setTitle(std::string const& title) { mTitle = title; }
+
+    void setSubmitButton(std::string const& text) { mSubmit = text; }
+
+    void setIcon(std::string const& imageData, std::string const& imageType) { mIcon = {imageData, imageType}; }
 
     void append(std::shared_ptr<CustomFormElement> const& element) { mElements.push_back(element); }
 
@@ -269,6 +276,15 @@ protected:
             {   "type",                   "custom_form"},
             {"content", nlohmann::ordered_json::array()}
         };
+        if (mSubmit) {
+            form["submit"] = *mSubmit;
+        }
+        if (mIcon) {
+            form["icon"] = {
+                {"type", mIcon->type},
+                {"data", mIcon->data},
+            };
+        }
         for (auto& e : mElements) {
             nlohmann::ordered_json element = e->serialize();
             if (!element.empty()) {
@@ -287,6 +303,11 @@ CustomForm::~CustomForm() = default;
 
 CustomForm& CustomForm::setTitle(std::string const& title) {
     impl->setTitle(title);
+    return *this;
+}
+
+CustomForm& CustomForm::setSubmitButton(std::string const& text) {
+    impl->setSubmitButton(text);
     return *this;
 }
 
