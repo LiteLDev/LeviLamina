@@ -241,9 +241,9 @@ public:
         case IntValue:
             return Int64(value_.int_);
         case UintValue:
-            return isInt64() ? defaultValue : Int64(value_.uint_);
+            return isInt64() ? Int64(value_.uint_) : defaultValue;
         case RealValue:
-            return isInt64() ? defaultValue : Int64(value_.real_);
+            return isInt64() ? Int64(value_.real_) : defaultValue;
         case NullValue:
             return 0;
         case BooleanValue:
@@ -257,11 +257,11 @@ public:
     UInt64 asUInt64(UInt64 defaultValue = 0) const {
         switch (type()) {
         case IntValue:
-            return isUInt64() ? defaultValue : UInt64(value_.int_);
+            return isUInt64() ? UInt64(value_.int_) : defaultValue;
         case UintValue:
             return UInt64(value_.uint_);
         case RealValue:
-            return isUInt64() ? defaultValue : UInt64(value_.real_);
+            return isUInt64() ? UInt64(value_.real_) : defaultValue;
         case NullValue:
             return 0;
         case BooleanValue:
