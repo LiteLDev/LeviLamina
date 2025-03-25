@@ -32,7 +32,7 @@ chaining.
 2. Construct a SimpleForm object. You can use either a parameterized or parameterless constructor. The parameterized
    constructor requires a title and content, while the parameterless constructor requires manually calling the
    `setTitle` and `setContent` methods to set the title and content.
-3. Add buttons using the `appendButton` method.
+3. Add buttons using the `appendButton` method and add visual-only elements using `appendHeader`, `appendLabel`, and `appendDivider` methods.
 4. Use the `sendTo` method to send the form to a player. This requires passing a reference to a `Player` object and a
    callback function. The callback function parameters include a reference to the `Player` object, the index of the
    button selected by the player, and an enumeration of the cancellation reason. For detailed parameters, refer to the
@@ -55,9 +55,13 @@ void sendSimpleFormToPlayer(Player& player) {
     // Or
     //    ll::form::SimpleForm form;
     //    form.setTitle("I'm title").setContent("I'm content");
-    form.addButton("Button1").addButton("Button2").sendTo(
-        player,
-        [](Player& player, int selected, FormCancelReason reason) {
+    form.appendHeader("header")
+        .appendButton("Button1")
+        .appendDivider()
+        .appendHeader("header")
+        .appendLabel("label")
+        .appendButton("Button2")
+        .sendTo(player, [](Player& player, int selected, ll::form::FormCancelReason reason) {
             switch (selected) {
             case 0: {
                 player.sendMessage("You clicked Button1");
@@ -69,14 +73,13 @@ void sendSimpleFormToPlayer(Player& player) {
             }
             case -1: {
                 player.sendMessage("You closed the form");
-                if (reason) {
-                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
-                }
+                player.sendMessage(
+                    reason.transform(magic_enum::enum_name<ModalFormCancelReason>).value_or("Unknown Reason")
+                );
                 break;
             }
             }
-        }
-    );
+        });
 }
 ```
 
@@ -91,8 +94,8 @@ sliders.
 2. Construct a CustomForm object. You can use either a parameterized or parameterless constructor. The parameterized
    constructor requires a title, while the parameterless constructor requires manually calling the `setTitle` method to
    set the title.
-3. Add various elements using `appendLabel`, `appendInput`, `appendToggle`, `appendDropdown`, `appendSlider`, and
-   `appendStepSlider` methods.
+3. Add custom form elements using `appendInput`, `appendToggle`, `appendDropdown`, `appendSlider`, and
+   `appendStepSlider` methods and add visual-only elements using `appendHeader`, `appendLabel`, and `appendDivider` methods.
 4. Use the `sendTo` method to send the form to a player. This requires passing a reference to a `Player` object and a
    callback function. The callback function parameters include a reference to the `Player` object, the form result, and
    an enumeration of the cancellation reason. For detailed parameters, refer to the `Callback` declaration in the
@@ -115,31 +118,43 @@ void sendCustomFormToPlayer(Player& player) {
     ll::form::CustomForm     form;
     std::vector<std::string> names;
     form.setTitle("CustomForm")
+        .appendHeader("header")
         .appendLabel("label")
         .appendInput("input1", "input")
         .appendToggle("toggle", "toggle")
         .appendSlider("slider", "slider", 0, 100, 1)
+        .appendDivider()
         .appendStepSlider("stepSlider", "stepSlider", {"a", "b", "c"})
         .appendDropdown("dropdown", "dropdown", {"a", "b", "c"})
+        .appendLabel("label")
         .appendDropdown("emptydropdown", "empty dropdown", names)
-        .sendTo(player, [](Player& player, ll::form::CustomFormResult const& data, ll::form::FormCancelReason reason) {
-            if (!data) {
-                player.sendMessage("CustomForm callback canceled");
-                if (reason) {
-                    player.sendMessage("Reason: " + magic_enum::enum_name(reason));
+        .setSubmitButton("Apply")
+        .sendTo(
+            player,
+            [](Player& player, ll::form::CustomFormResult const& data, ll::form::FormCancelReason reason) {
+                if (!data) {
+                    player.sendMessage("CustomForm callback canceled");
+                    player.sendMessage(reason.transform(magic_enum::enum_name<ModalFormCancelReason>)
+                                            .value_or("Unknown Reason"));
+                    return;
                 }
-                return;
-            }
-            for (auto [name, result] : *data) {
-                if (std::holds_alternative<uint64_t>(result)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<uint64_t>(result)));
-                } else if (std::holds_alternative<double>(result)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<double>(result)));
-                } else if (std::holds_alternative<std::string>(result)) {
-                    player.sendMessage(fmt::format("CustomForm callback {} = {}", name, std::get<std::string>(result)));
+                for (auto [name, result] : *data) {
+                    if (std::holds_alternative<uint64_t>(result)) {
+                        player.sendMessage(
+                            fmt::format("CustomForm callback {} = {}", name, std::get<uint64_t>(result))
+                        );
+                    } else if (std::holds_alternative<double>(result)) {
+                        player.sendMessage(
+                            fmt::format("CustomForm callback {} = {}", name, std::get<double>(result))
+                        );
+                    } else if (std::holds_alternative<std::string>(result)) {
+                        player.sendMessage(
+                            fmt::format("CustomForm callback {} = {}", name, std::get<std::string>(result))
+                        );
+                    }
                 }
             }
-        });
+        );
 }
 ```
 
@@ -173,16 +188,18 @@ void sendModalFormToPlayer(Player& player) {
     form.setTitle("ModalForm")
         .setUpperButton("Upper")
         .setLowerButton("Lower")
-        .sendTo(player, [](Player& player, ll::form::ModalFormResult selected, ll::form::FormCancelReason reason) {
-            if (!selected) {
-                player.sendMessage("ModalForm callback canceled");
-                if (reason) {
-                    player.sendMessage(fmt::format("ModalForm callback reason {}", magic_enum::enum_name(reason)));
+        .sendTo(
+            player,
+            [](Player& player, ll::form::ModalFormResult selected, ll::form::FormCancelReason reason) {
+                if (!selected) {
+                    player.sendMessage("ModalForm callback canceled");
+                    player.sendMessage(reason.transform(magic_enum::enum_name<ModalFormCancelReason>)
+                                            .value_or("Unknown Reason"));
+                    return;
                 }
-                return;
+                player.sendMessage(fmt::format("ModalForm callback {}", (bool)selected));
             }
-            player.sendMessage(fmt::format("ModalForm callback {}", (bool)selected));
-        });
+        );
 }
 ```
 
