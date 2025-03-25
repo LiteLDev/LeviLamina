@@ -26,7 +26,11 @@ public:
 
     LLAPI CustomForm& setSubmitButton(std::string const& text);
 
+    LLAPI CustomForm& appendHeader(std::string const& text);
+    
     LLAPI CustomForm& appendLabel(std::string const& text);
+
+    LLAPI CustomForm& appendDivider();
 
     LLAPI CustomForm& appendInput(
         std::string const& name,
