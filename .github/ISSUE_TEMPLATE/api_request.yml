@@ -1,0 +1,23 @@
+name: API Request
+description: "Requests for Minecraft and LeviLamina APIs"
+title: "[API Request] "
+labels: ["api"]
+body:
+  - type: textarea
+    attributes:
+      label: "Requested APIs"
+      description: "Provide the names of all classes, methods and headers you are requesting."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Justify the Enhancement"
+      description: "Explain why we should add the APIs."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "Additional Context"
+      description: "Include any extra context or screenshots relating to your request."
