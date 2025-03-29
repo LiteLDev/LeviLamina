@@ -23,7 +23,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为基岩版提供必不
 ## EULA 和使用准则
 
 > [!WARNING]
-> **你应该仔细阅读并遵守我们的 [EULA](EULA.zh.md) 与 [使用准则](docs/main/common_guides/usage_guidelines.zh.md)。**
+> **你应该仔细阅读并遵守我们的 [EULA](EULA.zh.md) 与 [使用准则](docs/main/contents/common_guides/usage_guidelines.zh.md)。**
 
 ## 安装和使用
 

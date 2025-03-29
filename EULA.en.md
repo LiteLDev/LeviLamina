@@ -82,7 +82,7 @@ This summary is not part of the EULA and is provided for your reference. Please 
 
 ## 8. Miscellaneous
 
-We encourage you to do cool things—but please don't do what we have explicitly prohibited. We have compiled detailed [LeviLamina Usage Guidelines](docs/main/common_guides/usage_guidelines.en.md), outlining what you can and cannot do. These guidelines may change frequently, so please check them regularly.
+We encourage you to do cool things—but please don't do what we have explicitly prohibited. We have compiled detailed [LeviLamina Usage Guidelines](docs/main/contents/common_guides/usage_guidelines.en.md), outlining what you can and cannot do. These guidelines may change frequently, so please check them regularly.
 
 These guidelines are not part of this EULA, but we strongly recommend that you read and follow them. If you have any questions, feel free to contact us.
 

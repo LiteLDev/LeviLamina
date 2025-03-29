@@ -80,7 +80,7 @@
 
 ## 8. 其他
 
-我们鼓励您做一些很酷的事情——但请不要做我们已经明确禁止的事情。我们已经整理了详细的 [LeviLamina 使用指南](docs/main/common_guides/usage_guidelines.zh.md)，概述了您可以或不能做的事情。指南可能会频繁变动，请您随时查看。
+我们鼓励您做一些很酷的事情——但请不要做我们已经明确禁止的事情。我们已经整理了详细的 [LeviLamina 使用指南](docs/main/contents/common_guides/usage_guidelines.zh.md)，概述了您可以或不能做的事情。指南可能会频繁变动，请您随时查看。
 
 该指南不属于本 EULA 的一部分，但我们强烈建议您阅读并遵守。如果您有任何疑问，请随时联系我们。
 
