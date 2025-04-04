@@ -43,7 +43,7 @@ add_requires("symbolprovider v1.2.0")
 add_requires("trampoline 2024.11.7")
 
 if is_windows then
-add_requires("libhat 2024.9.22")
+add_requires("libhat 0.4.0")
 end
 
 if is_linux then
