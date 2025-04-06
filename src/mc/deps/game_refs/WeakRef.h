@@ -14,5 +14,5 @@ public:
     constexpr WeakRef(Base const& ptr) : Base(ptr) {}
     constexpr WeakRef(Base&& ptr) : Base(std::move(ptr)) {}
 
-    constexpr StackRefResult<T> lock() const { return StackRefResult<T>{*this}; }
+    constexpr StackRefResult<T> lock() const { return StackRefResult<T>{this->Base::lock()}; }
 };
