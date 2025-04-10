@@ -17,8 +17,8 @@
                 "github.com/LiteLDev/bds": "1.21.60",
                 "github.com/LiteLDev/CrashLogger": "1.3.*",
                 "github.com/LiteLDev/levilamina-loc": "1.5.*",
-                "github.com/LiteLDev/PeEditor": "3.8.*",
-                "github.com/LiteLDev/PreLoader": "1.12.*",
+                "github.com/LiteLDev/PeEditor": "3.9.*",
+                "github.com/LiteLDev/PreLoader": "1.13.*",
                 "github.com/LiteLDev/bedrock-runtime-data": "1.21.6010-server"
             },
             "assets": [
