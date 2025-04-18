@@ -4,32 +4,13 @@
 
 #include "ll/api/form/CustomForm.h"
 #include "ll/core/LeviLamina.h"
+#include "ll/core/form/CommonFormElements.h"
 #include "ll/core/form/CustomFormElement.h"
 #include "ll/core/form/FormHandler.h"
 #include "ll/core/form/FormImplBase.h"
 #include "mc/network/packet/ModalFormRequestPacket.h"
 
 namespace ll::form {
-
-class Label : public CustomFormElement {
-
-public:
-    std::string mText{};
-
-    explicit Label(std::string text) : CustomFormElement({}), mText(std::move(text)) {}
-    ~Label() override = default;
-
-    [[nodiscard]] Type getType() const override { return Type::Label; }
-
-    [[nodiscard]] nlohmann::ordered_json serialize() const override {
-        return {
-            {"type", "label"},
-            {"text",   mText}
-        };
-    }
-
-    [[nodiscard]] CustomFormElementResult parseResult(nlohmann::ordered_json const&) const override { return {}; }
-};
 
 class Input : public CustomFormElement {
 
@@ -241,10 +222,10 @@ public:
 
 class CustomForm::CustomFormImpl : public FormImpl {
 private:
-    std::string                                     mTitle{};
-    std::optional<std::string>                      mSubmit{};
-    std::optional<ButtonImage>                      mIcon{};
-    std::vector<std::shared_ptr<CustomFormElement>> mElements{};
+    std::string                                   mTitle{};
+    std::optional<std::string>                    mSubmit{};
+    std::optional<ButtonImage>                    mIcon{};
+    std::vector<std::shared_ptr<FormElementBase>> mElements{};
 
 public:
     using Callback = CustomForm::Callback;
@@ -259,10 +240,16 @@ public:
 
     void setIcon(std::string const& imageData, std::string const& imageType) { mIcon = {imageData, imageType}; }
 
-    void append(std::shared_ptr<CustomFormElement> const& element) { mElements.push_back(element); }
+    void append(std::shared_ptr<FormElementBase> const& element) { mElements.push_back(element); }
 
     void sendTo(Player& player, Callback callback) {
-        uint id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), mElements));
+        std::vector<std::shared_ptr<CustomFormElement>> elements{};
+        for (auto& element : mElements) {
+            if (element->getCategory() == FormElementBase::Category::Custom)
+                elements.push_back(std::reinterpret_pointer_cast<CustomFormElement>(element));
+        }
+
+        uint id = handler::addFormHandler(std::make_unique<handler::CustomFormHandler>(std::move(callback), std::move(elements)));
         auto json = serialize();
         ModalFormRequestPacket(id, json.dump()).sendTo(player);
     }
@@ -311,8 +298,18 @@ CustomForm& CustomForm::setSubmitButton(std::string const& text) {
     return *this;
 }
 
+CustomForm& CustomForm::appendHeader(std::string const& text) {
+    impl->append(std::make_shared<Header>(text));
+    return *this;
+}
+
 CustomForm& CustomForm::appendLabel(std::string const& text) {
     impl->append(std::make_shared<Label>(text));
+    return *this;
+}
+
+CustomForm& CustomForm::appendDivider() {
+    impl->append(std::make_shared<Divider>());
     return *this;
 }
 
