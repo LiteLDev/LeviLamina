@@ -26,9 +26,7 @@ public:
     using ClientRefT = std::reference_wrapper<ClientNetworkSystem>;
     using ServerRefT = std::reference_wrapper<ServerNetworkSystem>;
 
-    std::variant<ClientRefT, ServerRefT> ref;
-
-    ClientNetworkSystem& toClientNetworkSystem() { return std::get<ClientRefT>(ref).get(); }
+    ClientNetworkSystem& toClientNetworkSystem() { return std::get<ClientRefT>(*this).get(); }
 
 public:
     // member functions
