@@ -66,7 +66,8 @@ jobs:
       - run: |
           xmake -v -y
 
-      - run: |
+      - if: github.event_name == 'push'
+        run: |
           sentry-cli debug-files upload --include-sources bin/LeviLamina
 
       - uses: actions/upload-artifact@v4
