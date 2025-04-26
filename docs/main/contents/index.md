@@ -7,4 +7,4 @@
 
 LeviLamina is an unofficial mod loader that provides essential API support for Minecraft Bedrock Dedicated Server (BDS). It features a comprehensive API, a powerful event system, and utility interfaces, enabling developers to enhance BDS with new gameplay features effortlessly.
 
-Developers can create mods using languages such as C++, JavaScript, Lua, Python, and C#. This seamless integration allows for easy customization and an intuitive learning experience.
+Developers can create mods using C++. This seamless integration allows for easy customization and an intuitive learning experience.

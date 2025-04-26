@@ -16,7 +16,7 @@ A lightweight, modular, and versatile mod loader for Minecraft Bedrock Edition, 
 
 LeviLamina is an unofficial mod loader designed to provide essential API support for Minecraft Bedrock Edition. It features a comprehensive API, a range of utility interfaces, a powerful event system, and extensive support for basic interfaces. LeviLamina offers a solid foundation for augmenting Minecraft with additional gameplay features and functionalities, making the modding process effortless through its user-friendly development environment and flexible approach.
 
-Developers can easily write mods in languages such as C++, JavaScript, Lua, Python, C#, and more. This seamless integration allows developers to expand and personalize the game’s functionality effortlessly, providing an intuitive and highly flexible development experience.
+Developers can easily write mods in C++. This seamless integration allows developers to expand and personalize the game’s functionality effortlessly, providing an intuitive and highly flexible development experience.
 
 For more information, please refer to [the documentation](https://lamina.levimc.org).
 
